@@ -75,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_node__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextVariable__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.FontFamilyStyleClassItem__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IExtensibleTransformationMenuPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenuPartWithOutputConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenuReference__BehaviorDescriptor" />

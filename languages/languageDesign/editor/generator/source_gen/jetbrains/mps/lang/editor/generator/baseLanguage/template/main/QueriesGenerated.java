@@ -34,6 +34,7 @@ import jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.editor.behavior.StyleClass__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.StyleSheet__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.FontFamilyStyleClassItem__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration__BehaviorDescriptor;
@@ -657,8 +658,8 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_5298401719285810456(final PropertyMacroContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, 0x11abae334c9L, "underlined"), "2", "0");
   }
-  public static Object propertyMacro_GetPropertyValue_5358065249857948060(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"));
+  public static Object propertyMacro_GetPropertyValue_8143891393576906962(final PropertyMacroContext _context) {
+    return (String) FontFamilyStyleClassItem__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5298401719285920639(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, 0x11c55be37a1L, "value"));
@@ -1787,8 +1788,8 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }) == null;
   }
-  public static boolean ifMacro_Condition_5358065249857924248(final IfMacroContext _context) {
-    return isEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style")));
+  public static boolean ifMacro_Condition_8143891393576908646(final IfMacroContext _context) {
+    return FontFamilyStyleClassItem__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(_context.getNode()) != null;
   }
   public static boolean ifMacro_Condition_2409615978587297658(final IfMacroContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem")).isEmpty();
@@ -4936,7 +4937,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("6083395046986715886", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), null));
     pvqMethods.put("6083395046987233746", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "0"));
     pvqMethods.put("5298401719285810455", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "false"));
-    pvqMethods.put("5358065249857948059", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "style"));
+    pvqMethods.put("8143891393576906961", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "style"));
     pvqMethods.put("5298401719285920638", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "12"));
     pvqMethods.put("5298401719286024612", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "_layout_constraint_"));
     pvqMethods.put("5298401719286080811", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "_layout_next_line_"));
@@ -5241,7 +5242,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 73:
           return QueriesGenerated.propertyMacro_GetPropertyValue_5298401719285810456(ctx);
         case 74:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_5358065249857948060(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_8143891393576906962(ctx);
         case 75:
           return QueriesGenerated.propertyMacro_GetPropertyValue_5298401719285920639(ctx);
         case 76:
@@ -5588,7 +5589,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("3488897807490099243", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1184145018789", new QueriesGenerated.IfMC(i++));
     imcMethods.put("5540938954756745631", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("5358065249857924246", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8143891393576908644", new QueriesGenerated.IfMC(i++));
     imcMethods.put("2409615978587297657", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7943820734261953518", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3461111913280058468", new QueriesGenerated.IfMC(i++));
@@ -5883,7 +5884,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 65:
           return QueriesGenerated.ifMacro_Condition_5540938954756745633(ctx);
         case 66:
-          return QueriesGenerated.ifMacro_Condition_5358065249857924248(ctx);
+          return QueriesGenerated.ifMacro_Condition_8143891393576908646(ctx);
         case 67:
           return QueriesGenerated.ifMacro_Condition_2409615978587297658(ctx);
         case 68:
@@ -6876,9 +6877,6 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private static boolean eq_x583g4_a0b0tp(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
   private static boolean neq_x583g4_a0a0a1a106(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

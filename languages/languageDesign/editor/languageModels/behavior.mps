@@ -3445,18 +3445,13 @@
         <node concept="3clFbJ" id="4qPnysr_$rK" role="3cqZAp">
           <node concept="3clFbS" id="4qPnysr_$rM" role="3clFbx">
             <node concept="3cpWs6" id="4qPnysr_BY8" role="3cqZAp">
-              <node concept="2OqwBi" id="4qPnysr_DSp" role="3cqZAk">
-                <node concept="2OqwBi" id="4qPnysr_CEp" role="2Oq$k0">
-                  <node concept="2YIFZM" id="4qPnysr_C8L" role="2Oq$k0">
-                    <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
-                    <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
-                  </node>
-                  <node concept="liA8E" id="4qPnysr_Dz$" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~EditorSettings.getDefaultEditorFont():java.awt.Font" resolve="getDefaultEditorFont" />
-                  </node>
+              <node concept="2OqwBi" id="4qPnysr_CEp" role="3cqZAk">
+                <node concept="2YIFZM" id="4qPnysr_C8L" role="2Oq$k0">
+                  <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+                  <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
                 </node>
-                <node concept="liA8E" id="4qPnysr_F5Q" role="2OqNvi">
-                  <ref role="37wK5l" to="z60i:~Font.getFamily():java.lang.String" resolve="getFamily" />
+                <node concept="liA8E" id="4qPnysr_Dz$" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorSettings.getFontFamily():java.lang.String" resolve="getFontFamily" />
                 </node>
               </node>
             </node>
@@ -23230,29 +23225,40 @@
         <node concept="3clFbJ" id="SLohPpesKA" role="3cqZAp">
           <node concept="3clFbS" id="SLohPpesKC" role="3clFbx">
             <node concept="3cpWs6" id="SLohPpeqbW" role="3cqZAp">
-              <node concept="2OqwBi" id="SLohPpeqbX" role="3cqZAk">
-                <node concept="2OqwBi" id="SLohPpeqbY" role="2Oq$k0">
-                  <node concept="2YIFZM" id="SLohPpeqbZ" role="2Oq$k0">
-                    <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
-                    <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+              <node concept="10Nm6u" id="56fam7bqkVs" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="22lmx$" id="56fam7bqa4y" role="3clFbw">
+            <node concept="3fqX7Q" id="56fam7bqdWH" role="3uHU7w">
+              <node concept="2OqwBi" id="56fam7bqdWJ" role="3fr31v">
+                <node concept="2OqwBi" id="56fam7bqdWK" role="2Oq$k0">
+                  <node concept="2YIFZM" id="56fam7bqdWL" role="2Oq$k0">
+                    <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
+                    <ref role="1Pybhc" to="g51k:~FontRegistry" resolve="FontRegistry" />
                   </node>
-                  <node concept="liA8E" id="SLohPpeqc0" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~EditorSettings.getDefaultEditorFont():java.awt.Font" resolve="getDefaultEditorFont" />
+                  <node concept="liA8E" id="56fam7bqdWM" role="2OqNvi">
+                    <ref role="37wK5l" to="g51k:~FontRegistry.getAvailableFontFamilyNames():java.util.Set" resolve="getAvailableFontFamilyNames" />
                   </node>
                 </node>
-                <node concept="liA8E" id="SLohPpeqc1" role="2OqNvi">
-                  <ref role="37wK5l" to="z60i:~Font.getFamily():java.lang.String" resolve="getFamily" />
+                <node concept="liA8E" id="56fam7bqdWN" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                  <node concept="2OqwBi" id="56fam7bqdWO" role="37wK5m">
+                    <node concept="13iPFW" id="56fam7bqdWP" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="56fam7bqdWQ" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3clFbC" id="SLohPpeubZ" role="3clFbw">
-            <node concept="10Nm6u" id="SLohPpeup1" role="3uHU7w" />
-            <node concept="2OqwBi" id="SLohPpet2S" role="3uHU7B">
-              <node concept="13iPFW" id="SLohPpesPI" role="2Oq$k0" />
-              <node concept="3TrcHB" id="SLohPpetw0" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+            <node concept="3clFbC" id="SLohPpeubZ" role="3uHU7B">
+              <node concept="2OqwBi" id="SLohPpet2S" role="3uHU7B">
+                <node concept="13iPFW" id="SLohPpesPI" role="2Oq$k0" />
+                <node concept="3TrcHB" id="SLohPpetw0" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+                </node>
               </node>
+              <node concept="10Nm6u" id="SLohPpeup1" role="3uHU7w" />
             </node>
           </node>
         </node>

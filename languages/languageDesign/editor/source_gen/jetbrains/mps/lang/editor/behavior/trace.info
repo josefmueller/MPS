@@ -34,7 +34,7 @@
       <node id="1022705369068700931" at="27,0,28,0" concept="15" trace="REGISTRY" />
       <node id="1022705369068700931" at="29,0,30,0" concept="15" trace="getFontFamily_idSLohPpeqbF" />
       <node id="1022705369068700931" at="31,0,32,0" concept="15" trace="BH_METHODS" />
-      <node id="1022705369068708604" at="37,187,38,77" concept="12" />
+      <node id="1022705369068708604" at="37,429,38,18" concept="12" />
       <node id="1022705369068708620" at="39,5,40,180" concept="12" />
       <node id="1022705369068700931" at="43,62,44,20" concept="17" />
       <node id="1022705369068700931" at="48,114,49,21" concept="5" />
@@ -61,7 +61,7 @@
       <node id="1022705369068700931" at="66,0,77,0" concept="10" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="1022705369068700931" at="52,0,65,0" concept="10" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1022705369068700931" at="33,63,33,63" />
-      <scope id="1022705369068719144" at="37,187,38,77" />
+      <scope id="1022705369068719144" at="37,429,38,18" />
       <scope id="1022705369068700931" at="43,62,44,20" />
       <scope id="1022705369068700931" at="48,114,49,21" />
       <scope id="1022705369068700931" at="55,26,56,56" />
@@ -1370,7 +1370,7 @@
       <node id="1221239814344" at="180,5,181,181" concept="12" />
       <node id="1237383594092" at="183,81,184,278" concept="12" />
       <node id="5095082075499029710" at="186,86,187,472" concept="11" />
-      <node id="5095082075499167624" at="188,30,189,77" concept="12" />
+      <node id="5095082075499167624" at="188,30,189,58" concept="12" />
       <node id="5095082075499181971" at="190,5,191,101" concept="12" />
       <node id="1221216423619" at="193,77,194,458" concept="11" />
       <node id="1221216470359" at="195,173,196,75" concept="12" />
@@ -1544,7 +1544,7 @@
       <scope id="1225468896235" at="157,9,158,219" />
       <scope id="1221239766544" at="178,30,179,19" />
       <scope id="1223390694340" at="183,81,184,278" />
-      <scope id="5095082075499153138" at="188,30,189,77" />
+      <scope id="5095082075499153138" at="188,30,189,58" />
       <scope id="1221216460362" at="195,173,196,75" />
       <scope id="1221054010191" at="202,386,203,108" />
       <scope id="1221054045950" at="206,9,207,223" />

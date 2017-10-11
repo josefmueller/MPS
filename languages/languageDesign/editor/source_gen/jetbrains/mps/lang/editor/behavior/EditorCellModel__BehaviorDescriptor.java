@@ -186,7 +186,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static String getFontFamily_id4qPnysr_4es(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, "jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem"))).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, "jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem"));
     if ((firstItem == null)) {
-      return EditorSettings.getInstance().getDefaultEditorFont().getFamily();
+      return EditorSettings.getInstance().getFontFamily();
     }
     return FontFamilyStyleClassItem__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(firstItem);
   }

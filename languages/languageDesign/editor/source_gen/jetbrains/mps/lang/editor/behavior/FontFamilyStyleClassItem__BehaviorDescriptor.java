@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -34,8 +34,8 @@ public final class FontFamilyStyleClassItem__BehaviorDescriptor extends BaseBHDe
   }
 
   /*package*/ static String getFontFamily_idSLohPpeqbF(@NotNull SNode __thisNode__) {
-    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style")) == null) {
-      return EditorSettings.getInstance().getDefaultEditorFont().getFamily();
+    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style")) == null || !(FontRegistry.getInstance().getAvailableFontFamilyNames().contains(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"))))) {
+      return null;
     }
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"));
   }
