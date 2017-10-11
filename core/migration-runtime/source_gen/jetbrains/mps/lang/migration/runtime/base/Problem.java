@@ -4,9 +4,9 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.ReportItem;
-import jetbrains.mps.errors.item.ReportItemBase;
 
 import java.util.Collections;
 import java.util.Set;
@@ -34,7 +34,7 @@ public abstract class Problem<T> implements ReportItem, IssueKindReportItem {
 
   @Override
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return Collections.singleton(ReportItemBase.FLAVOUR_CLASS);
+    return Collections.singleton(FlavouredItem.FLAVOUR_CLASS);
   }
 
   public T getReason() {

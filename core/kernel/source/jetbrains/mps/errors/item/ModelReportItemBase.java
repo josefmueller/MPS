@@ -18,7 +18,6 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.HashSet;

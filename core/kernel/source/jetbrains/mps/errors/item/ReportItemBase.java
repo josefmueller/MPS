@@ -16,11 +16,7 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -86,8 +82,5 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
       }
     }
   }
-
-  public static final ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>(FlavouredItem.class, FlavouredItem::getClass);
-  public static final ReportItemFlavour<ReportItem, ReportItem> FLAVOUR_THIS = new SimpleReportItemFlavour<>(ReportItem.class, Function.identity());
 
 }

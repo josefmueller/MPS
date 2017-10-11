@@ -30,8 +30,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_CLASS;
-
 public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem, RuleIdFlavouredItem {
   private final LanguageRegistry myLanguageRegistry;
   private final QuickFixProvider myQuickFixProvider;

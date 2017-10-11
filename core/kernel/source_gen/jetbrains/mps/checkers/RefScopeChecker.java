@@ -24,7 +24,7 @@ import java.util.Set;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.errors.item.ReportItemBase;
+
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
 public class RefScopeChecker extends AbstractNodeChecker {
@@ -90,7 +90,7 @@ public class RefScopeChecker extends AbstractNodeChecker {
     }
     @Override
     public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
-      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE);
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), FlavouredItem.FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE);
     }
     @Override
     public SConceptFeature getConceptFeature() {

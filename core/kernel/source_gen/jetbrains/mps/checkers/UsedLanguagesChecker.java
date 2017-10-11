@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.errors.item.ReportItemBase;
 
 public class UsedLanguagesChecker extends AbstractNodeChecker {
   private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
@@ -88,7 +87,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
     }
     @Override
     public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
-      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, FLAVOUR_NODE);
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), FlavouredItem.FLAVOUR_CLASS, FLAVOUR_NODE);
     }
     @Override
     public boolean isAlive(SRepository repository) {

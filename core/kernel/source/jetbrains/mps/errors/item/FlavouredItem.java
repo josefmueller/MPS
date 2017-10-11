@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.errors.item;
 
+import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
+import java.util.function.Function;
 
 public interface FlavouredItem {
 
@@ -40,4 +42,8 @@ public interface FlavouredItem {
       return getApplicableClass().isAssignableFrom(reportItem.getClass());
     }
   }
+
+  ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>(FlavouredItem.class, FlavouredItem::getClass);
+  ReportItemFlavour<ReportItem, ReportItem> FLAVOUR_THIS = new SimpleReportItemFlavour<>(ReportItem.class, Function.identity());
+
 }

@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.FlavouredItem;
 import java.util.HashSet;
-import jetbrains.mps.errors.item.ReportItemBase;
+
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -128,7 +128,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
     }
     @Override
     public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
-      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, ReportItemBase.FLAVOUR_THIS);
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), FlavouredItem.FLAVOUR_CLASS, FlavouredItem.FLAVOUR_THIS);
     }
   }
   public static class MigrationReportItemNode extends WorkbenchMigrationProblemHandler.MigrationReportItem<SNodeReference> implements NodeReportItem {
