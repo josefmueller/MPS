@@ -6,7 +6,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class LanguageMissingProblem extends Problem {
+public abstract class LanguageMissingProblem extends Problem<SNode> {
   private SLanguage myLanguage;
 
   public LanguageMissingProblem(SLanguage language, SNode instance) {

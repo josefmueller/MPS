@@ -5,7 +5,7 @@ package jetbrains.mps.ide.migration.check;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class DependencyProblem extends Problem {
+public class DependencyProblem extends Problem<SModule> {
   private String myMessage;
 
   public DependencyProblem(SModule module, String message) {

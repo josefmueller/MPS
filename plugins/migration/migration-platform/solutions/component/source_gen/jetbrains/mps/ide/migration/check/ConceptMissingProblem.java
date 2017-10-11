@@ -6,7 +6,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptMissingProblem extends Problem {
+public class ConceptMissingProblem extends Problem<SNode> {
   private SAbstractConcept myConcept;
 
   public ConceptMissingProblem(SAbstractConcept concept, SNode instance) {
