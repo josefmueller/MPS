@@ -24,7 +24,6 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.typesystem.TypeSystemReporter;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -93,7 +92,7 @@ public class SubTypingManagerNew extends SubtypingManager {
             for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> pair : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
               InequationReplacementRule_Runtime rule = pair.o1;
               IsApplicable2Status status = pair.o2;
-              boolean affirmative = rule.checkInequation(subType, superType, new EquationInfo(null, null), status, isWeak);
+              boolean affirmative = rule.checkInequation(subType, superType, status, isWeak);
               return new Pair<Boolean, Boolean>(affirmative, true);
             }
             return new Pair<Boolean, Boolean>(false, false);

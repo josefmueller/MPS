@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -28,30 +29,31 @@ import java.util.List;
 
 public class EquationInfo {
 
-  private String myErrorString;
-  private SNode myNodeWithError;
+  private final String myErrorString;
+  @NotNull
+  private final SNode myNodeWithError;
 
-  private SNodeReference myRule;
+  private final SNodeReference myRule;
   private ArrayDeque<SNodeReference> myOuterRulesIds = null;
 
   private List<QuickFixProvider> myIntentionProviders;
 
-  private int myInequationPriority;
-  private boolean myIsStrong = false;
+  private int myInequationPriority = 0;
 
 
-  public EquationInfo(SNode nodeWithError, String errorString) {
+  public EquationInfo(@NotNull SNode nodeWithError, String errorString) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
+    myRule = null;
   }
 
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
+  public EquationInfo(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
     this(nodeWithError, errorString, ruleModel, ruleId);
     myInequationPriority = inequationPriority;
     addIntentionProvider(intentionProvider);
   }
 
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+  public EquationInfo(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRule = ruleModel != null && ruleId != null ? new SNodePointer(ruleModel, ruleId) : null;
@@ -74,6 +76,7 @@ public class EquationInfo {
     return myErrorString;
   }
 
+  @NotNull
   public SNode getNodeWithError() {
     return myNodeWithError;
   }
@@ -101,6 +104,7 @@ public class EquationInfo {
     }
   }
 
+  // set ids copied from outerInfo
   public void getOuterRulesIdFromInfo(EquationInfo outerInfo) {
     if (myOuterRulesIds == null) {
       myOuterRulesIds = new ArrayDeque<>(4);
@@ -121,10 +125,7 @@ public class EquationInfo {
   }
 
   boolean isStrong() {
-    return myIsStrong;
+    return false;
   }
 
-  void setStrong() {
-    myIsStrong = true;
-  }
 }

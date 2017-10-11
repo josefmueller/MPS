@@ -200,10 +200,7 @@ public class NodeMaps {
 
   public void reportEquationBroken(@NotNull EquationInfo info, SNode left, SNode right) {
     final IErrorReporter errorReporter;
-    if (info.getNodeWithError() == null) {
-      //todo
-      return;
-    } else if (info.getErrorString() != null) {
+    if (info.getErrorString() != null) {
       errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
         errorReporter.addIntentionProvider(quickFixProvider);
@@ -218,10 +215,7 @@ public class NodeMaps {
 
   public void reportSubTypeError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    if (equationInfo.getNodeWithError() == null) {
-      //todo
-      return;
-    } else if (equationInfo.getErrorString() == null) {
+    if (equationInfo.getErrorString() == null) {
       String strongString = isWeak ? "" : " strong";
       errorReporter = new EquationErrorReporterNew(equationInfo.getNodeWithError(), myState, "type ", subType,
         " is not a" + strongString + " subtype of ", superType, "", equationInfo);
@@ -237,10 +231,7 @@ public class NodeMaps {
 
   public void reportComparableError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    if (equationInfo.getNodeWithError() == null) {
-      //todo
-      return;
-    } else if (equationInfo.getErrorString() == null) {
+    if (equationInfo.getErrorString() == null) {
       String strongString = isWeak ? "" : " strongly";
       errorReporter = new EquationErrorReporterNew(equationInfo.getNodeWithError(), myState, "type ", subType, " is not" + strongString + " comparable with ",
                                                    superType, "", equationInfo);
