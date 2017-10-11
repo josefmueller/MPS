@@ -202,12 +202,12 @@ public class NodeMaps {
     final IErrorReporter errorReporter;
     if (info.getErrorString() != null) {
       errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
-      for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
-        errorReporter.addIntentionProvider(quickFixProvider);
-      }
     } else {
       errorReporter = new EquationErrorReporterNew(info.getNodeWithError(),
                                                    myState, "incompatible types: ", right, " and ", left, "", info);
+    }
+    for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
+      errorReporter.addIntentionProvider(quickFixProvider);
     }
     setAdditionalRulesIds(info, errorReporter);
     myState.getTypeCheckingContext().reportMessage(errorReporter);
