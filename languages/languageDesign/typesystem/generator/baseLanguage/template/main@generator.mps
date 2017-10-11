@@ -7645,7 +7645,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4D$C_6XM6wb" role="2OqNvi">
-                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportTypeError(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):void" resolve="reportTypeError" />
+                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportTypeError(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):jetbrains.mps.errors.IErrorReporter" resolve="reportTypeError" />
                 <node concept="10Nm6u" id="4D$C_6XM6wc" role="37wK5m">
                   <node concept="29HgVG" id="4D$C_6XM6wd" role="lGtFl">
                     <node concept="3NFfHV" id="4D$C_6XM6we" role="3NFExx">
@@ -8689,7 +8689,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4D$C_6XM6vw" role="2OqNvi">
-                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportTypeError(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):void" resolve="reportTypeError" />
+                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportTypeError(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):jetbrains.mps.errors.IErrorReporter" resolve="reportTypeError" />
                 <node concept="10Nm6u" id="4D$C_6XM6vx" role="37wK5m">
                   <node concept="29HgVG" id="4D$C_6XM6vy" role="lGtFl">
                     <node concept="3NFfHV" id="4D$C_6XM6vz" role="3NFExx">
@@ -13841,7 +13841,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4D$C_6XM6uR" role="2OqNvi">
-                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportWarning(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):void" resolve="reportWarning" />
+                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportWarning(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):jetbrains.mps.errors.IErrorReporter" resolve="reportWarning" />
                 <node concept="10Nm6u" id="4D$C_6XM6uS" role="37wK5m">
                   <node concept="29HgVG" id="4D$C_6XM6uT" role="lGtFl">
                     <node concept="3NFfHV" id="4D$C_6XM6uU" role="3NFExx">
@@ -19339,7 +19339,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4D$C_6XM6ue" role="2OqNvi">
-                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportInfo(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):void" resolve="reportInfo" />
+                <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportInfo(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget):jetbrains.mps.errors.IErrorReporter" resolve="reportInfo" />
                 <node concept="10Nm6u" id="4D$C_6XM6uf" role="37wK5m">
                   <node concept="29HgVG" id="4D$C_6XM6ug" role="lGtFl">
                     <node concept="3NFfHV" id="4D$C_6XM6uh" role="3NFExx">
