@@ -2553,5 +2553,53 @@
       </node>
     </node>
   </node>
+  <node concept="LiM7Y" id="rhJBLcXUks">
+    <property role="TrG5h" value="FontFamilyGenerationIfUnknown" />
+    <property role="3YCmrE" value="Font family should be set even if it is not present in the system" />
+    <node concept="1VRDdX" id="rhJBLcXUoP" role="LiRBU">
+      <property role="1VRkbk" value="No one will make a font with this name, I'm 98.5% sure." />
+      <property role="1VQu8m" value="30" />
+      <node concept="LIFWc" id="rhJBLcXUp7" role="lGtFl">
+        <property role="LIFWa" value="4" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="4" />
+        <property role="p6zMs" value="4" />
+        <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="rhJBLcXUri" role="LjaKd">
+      <node concept="1QHqEK" id="rhJBLcXUrf" role="3cqZAp">
+        <node concept="1QHqEC" id="rhJBLcXUrg" role="1QHqEI">
+          <node concept="3clFbS" id="rhJBLcXUrh" role="1bW5cS">
+            <node concept="3vlDli" id="rhJBLcXYwl" role="3cqZAp">
+              <node concept="Xl_RD" id="rhJBLcXYy6" role="3tpDZB">
+                <property role="Xl_RC" value="No one will make a font with this name, I'm 98.5% sure." />
+              </node>
+              <node concept="2OqwBi" id="rhJBLcXXZt" role="3tpDZA">
+                <node concept="2OqwBi" id="rhJBLcXXEJ" role="2Oq$k0">
+                  <node concept="2OqwBi" id="rhJBLcXVjc" role="2Oq$k0">
+                    <node concept="369mXd" id="rhJBLcXUPE" role="2Oq$k0" />
+                    <node concept="liA8E" id="rhJBLcXX_z" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="rhJBLcXXTG" role="2OqNvi">
+                    <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="rhJBLcXYhu" role="2OqNvi">
+                  <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+                  <node concept="10M0yZ" id="rhJBLcXYoJ" role="37wK5m">
+                    <ref role="1PxDUh" to="5ueo:~StyleAttributes" resolve="StyleAttributes" />
+                    <ref role="3cqZAo" to="5ueo:~StyleAttributes.FONT_FAMILY" resolve="FONT_FAMILY" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
