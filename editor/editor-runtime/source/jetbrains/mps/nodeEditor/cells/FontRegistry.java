@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Pair;
@@ -55,6 +58,7 @@ public class FontRegistry {
   private Map<String, Font> myFontsCache = new HashMap<String, Font>();
   private Map<Font, FontMetrics> myFontMetricsCache = new HashMap<Font, FontMetrics>();
   private Set<String> myAvailableFontFamilyNames;
+  private Set<String> myReportedFontFamilyNames = new HashSet<>();
 
   private FontRegistry() {
     loadStyledFonts();
@@ -124,6 +128,15 @@ public class FontRegistry {
       }
     }
     return myAvailableFontFamilyNames;
+  }
+
+  public void reportUnknownFontFamily(@NotNull String fontFamily) {
+    if (!myReportedFontFamilyNames.contains(fontFamily)) {
+      myReportedFontFamilyNames.add(fontFamily);
+      String message = "Custom font family \"" + fontFamily + "\" is supposed to be used in the editor, " +
+                       "but it's not available in your system.";
+      Notifications.Bus.notify(new Notification("Editor", "Unknown font", message, NotificationType.WARNING));
+    }
   }
 
   private Pair<String, Integer> getRealFontNameAndStyle(String fontName, int style) {

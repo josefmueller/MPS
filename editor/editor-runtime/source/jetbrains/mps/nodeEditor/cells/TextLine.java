@@ -26,8 +26,6 @@ import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -38,8 +36,6 @@ import java.awt.Graphics;
 import java.util.Set;
 
 public class TextLine {
-  private static final Logger LOG = LogManager.getLogger(TextLine.class);
-
   // COLORS: Remove hardcoded color
   private static final Color ERROR_COLOR =
       StyleRegistry.getInstance() != null && StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() :
@@ -180,7 +176,7 @@ public class TextLine {
       Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
       String styleFontFamily = myStyle.get(StyleAttributes.FONT_FAMILY);
       if (styleFontFamily != null && !FontRegistry.getInstance().getAvailableFontFamilyNames().contains(styleFontFamily)) {
-        LOG.warn("Unknown font " + styleFontFamily);
+        FontRegistry.getInstance().reportUnknownFontFamily(styleFontFamily);
         styleFontFamily = null;
       }
 
