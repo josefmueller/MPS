@@ -42,13 +42,6 @@ public class EquationInfo {
 
   private int myInequationPriority = 0;
 
-
-  public EquationInfo(@Nullable SNode nodeWithError, String errorString) {
-    myErrorString = errorString;
-    myNodeWithError = nodeWithError;
-    myRule = null;
-  }
-
   public EquationInfo(@Nullable SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
     this(nodeWithError, errorString, ruleModel, ruleId);
     myInequationPriority = inequationPriority;
