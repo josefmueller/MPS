@@ -1562,19 +1562,18 @@
           </node>
         </node>
         <node concept="3clFbF" id="6ySnuJfjn$4" role="3cqZAp">
-          <node concept="2YIFZM" id="6ySnuJfjn$5" role="3clFbG">
+          <node concept="2YIFZM" id="2cAUiAfVfJY" role="3clFbG">
+            <ref role="37wK5l" to="cyi7:~IgnoreUnversionedDialog.ignoreSelectedFiles(com.intellij.openapi.project.Project,java.util.List):void" resolve="ignoreSelectedFiles" />
             <ref role="1Pybhc" to="cyi7:~IgnoreUnversionedDialog" resolve="IgnoreUnversionedDialog" />
-            <ref role="37wK5l" to="cyi7:~IgnoreUnversionedDialog.ignoreSelectedFiles(com.intellij.openapi.project.Project,java.util.List,java.lang.Runnable):void" resolve="ignoreSelectedFiles" />
-            <node concept="2OqwBi" id="6ySnuJfjn$6" role="37wK5m">
-              <node concept="2WthIp" id="6ySnuJfjn$7" role="2Oq$k0" />
-              <node concept="1DTwFV" id="6ySnuJfjn$8" role="2OqNvi">
+            <node concept="2OqwBi" id="2cAUiAfVfJZ" role="37wK5m">
+              <node concept="2WthIp" id="2cAUiAfVfK0" role="2Oq$k0" />
+              <node concept="1DTwFV" id="2cAUiAfVfK1" role="2OqNvi">
                 <ref role="2WH_rO" node="6ySnuJfjn$b" resolve="project" />
               </node>
             </node>
-            <node concept="37vLTw" id="3GM_nagTuD$" role="37wK5m">
+            <node concept="37vLTw" id="2cAUiAfVfK2" role="37wK5m">
               <ref role="3cqZAo" node="6ySnuJfjnzH" resolve="unversionedFiles" />
             </node>
-            <node concept="10Nm6u" id="4og1RD2vhLf" role="37wK5m" />
           </node>
         </node>
       </node>
