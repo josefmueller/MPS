@@ -2671,64 +2671,50 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (mySearchPanel != null && mySearchPanel.isVisible() && mySearchPanel.isTextFieldFocused()) {
-      return null;
-    }
     if (isDisposed()) {
       return null;
     }
 
+    boolean isInSearchPanel = mySearchPanel != null && mySearchPanel.isVisible() && mySearchPanel.isTextFieldFocused();
+    boolean isInSubstituteChooser = myNodeSubstituteChooser.isVisible();
+
     //MPSDK
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
-      return myNodeSubstituteChooser.isVisible() ? null : getSelectedNode();
+      return isInSubstituteChooser || isInSearchPanel ? null : getSelectedNode();
     }
     if (dataId.equals(MPSCommonDataKeys.NODES.getName())) {
-      return myNodeSubstituteChooser.isVisible() ? null : getSelectedNodes();
+      return isInSubstituteChooser || isInSearchPanel ? null : getSelectedNodes();
     }
     if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODEL.getName())) {
-      return runRead(new Computable() {
-        @Override
-        public Object compute() {
-          SNode node = getRootCell().getSNode();
-          if (node == null) {
-            return null;
-          }
-          SModel model = node.getModel();
-          if (model == null) {
-            return null; //removed model
-          }
-          return model;
+      return runRead(() -> {
+        SNode node = getRootCell().getSNode();
+        if (node == null) {
+          return null;
         }
+        SModel model = node.getModel();
+        if (model == null) {
+          return null; //removed model
+        }
+        return model;
       });
     }
     if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODULE.getName())) {
-      // todo: copy-paste
-      return runRead(new Computable() {
-        @Override
-        public Object compute() {
-          SNode node = getRootCell().getSNode();
-          if (node == null) {
-            return null;
-          }
-          SModel model = node.getModel();
-          if (model == null) {
-            return null; //removed model
-          }
-          return model.getModule();
-        }
+      return runRead(() -> {
+        SModel model = MPSEditorDataKeys.CONTEXT_MODEL.getData(this);
+        return model == null ? null : model.getModule();
       });
     }
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CONTEXT.getName())) {
       return createEditorContextForActions();
     }
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CELL.getName())) {
-      return myNodeSubstituteChooser.isVisible() ? null : getSelectedCell();
+      return isInSubstituteChooser || isInSearchPanel ? null : getSelectedCell();
     }
     if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) {
-      return this;
+      return isInSearchPanel ? null : this;
     }
     if (dataId.equals(PlatformDataKeys.SELECTED_ITEM.getName())) {
-      return myNodeSubstituteChooser.isVisible() ? myNodeSubstituteChooser.getCurrentSubstituteAction() : null;
+      return isInSubstituteChooser || isInSearchPanel ? myNodeSubstituteChooser.getCurrentSubstituteAction() : null;
     }
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) {
       return ActionPlace.EDITOR;
