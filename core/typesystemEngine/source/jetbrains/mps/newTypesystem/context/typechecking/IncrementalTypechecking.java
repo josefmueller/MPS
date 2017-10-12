@@ -64,7 +64,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
+public class IncrementalTypechecking extends ReportingTypechecking<State, TypeSystemComponent> {
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private List<SModel> myReplacedModels = new ArrayList<SModel>();

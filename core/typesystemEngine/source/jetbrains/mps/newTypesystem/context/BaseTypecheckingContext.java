@@ -88,6 +88,8 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
     }
   }
 
+  // This method is here just for compatibility with generated code.
+  // It should be moved to implementor (also what about TracingTypecheckingContext?) right after NullErrorReporter removal.
   @Nullable
   public IErrorReporter createErrorReporter(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget, MessageStatus severity) {
     return null;

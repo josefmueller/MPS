@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * User: fyodor
  * Date: 4/29/14
  */
-public class TracingTypechecking extends BaseTypechecking<TargetState, TargetTypeheckingComponent> {
+public class TracingTypechecking extends ReportingTypechecking<TargetState, TargetTypeheckingComponent> {
 
   public TracingTypechecking(SNode node, TargetState state) {
     super(node, state);

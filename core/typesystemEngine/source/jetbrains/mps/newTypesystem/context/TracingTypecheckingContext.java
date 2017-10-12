@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * User: fyodor
  * Date: 11/7/12
  */
-public class TracingTypecheckingContext extends SimpleTypecheckingContext<TargetState, TracingTypechecking>{
+public class TracingTypecheckingContext extends ReportingTypecheckingContext<TargetState, TracingTypechecking> {
 
   public TracingTypecheckingContext(SNode node, TypeChecker typeChecker) {
     super(node, typeChecker);
@@ -50,11 +50,6 @@ public class TracingTypecheckingContext extends SimpleTypecheckingContext<Target
   @Override
   public boolean isSingleTypeComputation() {
     return false;
-  }
-
-  @Override
-  public void reportMessage(IErrorReporter errorReporter) {
-    getTypechecking().reportTypeError(errorReporter.getSNode(), errorReporter);
   }
 
 }

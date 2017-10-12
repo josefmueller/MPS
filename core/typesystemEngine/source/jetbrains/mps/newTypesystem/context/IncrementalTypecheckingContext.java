@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<State, IncrementalTypechecking> {
+public class IncrementalTypecheckingContext extends ReportingTypecheckingContext<State, IncrementalTypechecking> {
   private static Logger LOG = LogManager.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
@@ -175,16 +175,6 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     reporter.addIntentionProvider(intentionProvider);
     return reporter;
   }
-
-  @Override
-  public void reportMessage(IErrorReporter errorReporter) {
-    getTypechecking().reportTypeError(errorReporter);
-    // the following line messes up the typechecking even if the error is caused by a non-typechecking rule
-    // this further complicates incremental types calculation and produces unwanted results MPS-21481
-    // TODO: rethink the way errors affect the typechecking
-//    getTypechecking().addDependencyOnCurrent(nodeWithError, false);
-  }
-
 
   @Override
   protected void processDependency(SNode node, String ruleModel, String ruleId, boolean addDependency) {
