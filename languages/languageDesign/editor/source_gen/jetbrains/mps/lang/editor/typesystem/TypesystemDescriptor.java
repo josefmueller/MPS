@@ -105,6 +105,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_FontFamilyExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_PropertyExpressionCellSelector_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -213,7 +217,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_FontFamilyStyleClassItem_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_FontFamilyConstant_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

@@ -6680,16 +6680,14 @@
     <property role="34LRSv" value="font-family" />
     <property role="EcuMT" value="7418278005949660372" />
     <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
+    <node concept="PrWs8" id="6hgzQ4Z7fsM" role="PzmwI">
+      <ref role="PrY4T" node="6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
+    </node>
     <node concept="1TJgyj" id="6rN18FHIfNl" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="IQ2ns" value="7418278005949660373" />
       <ref role="20lvS9" node="4DrEZjt9c6c" resolve="QueryFunction_FontFamily" />
-    </node>
-    <node concept="1TJgyi" id="6rN18FHIfNV" role="1TKVEl">
-      <property role="IQ2nx" value="7418278005949660411" />
-      <property role="TrG5h" value="family" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="4DrEZjt9c6c">
@@ -6701,6 +6699,27 @@
     <property role="EcuMT" value="5358065249857880460" />
     <property role="34LRSv" value="font family function" />
     <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
+  </node>
+  <node concept="1TIwiD" id="6hgzQ4Z6Y0A">
+    <property role="EcuMT" value="7228435049763037222" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="TrG5h" value="FontFamilyLiteral" />
+    <property role="34LRSv" value="fontFamily/&lt;name&gt;/" />
+    <property role="R4oN_" value="font family constant" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="6hgzQ4Z7d0o" role="PzmwI">
+      <ref role="PrY4T" node="6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6hgzQ4Z7bF1">
+    <property role="EcuMT" value="7228435049763093185" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="TrG5h" value="FontFamilyConstant" />
+    <node concept="1TJgyi" id="6hgzQ4Z7bF2" role="1TKVEl">
+      <property role="IQ2nx" value="7228435049763093186" />
+      <property role="TrG5h" value="family" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
 </model>
 

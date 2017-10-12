@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,285,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,289,0" name="jetbrains.mps.lang.editor.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/1063333449539889377">
@@ -2179,44 +2179,6 @@
       <unit id="4575971948964591931" at="20,0,58,0" name="jetbrains.mps.lang.editor.typesystem.IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/4633730518060759757">
-    <file name="check_FontFamilyStyleClassItem_NonTypesystemRule.java">
-      <node id="4633730518060789406" at="23,7,24,60" concept="7" />
-      <node id="4633730518060789406" at="24,60,25,237" concept="7" />
-      <node id="4633730518060759757" at="29,50,30,168" concept="8" />
-      <node id="4633730518060759757" at="32,68,33,102" concept="8" />
-      <node id="4633730518060759757" at="35,30,36,17" concept="8" />
-      <node id="4633730518060759757" at="19,0,21,0" concept="1" trace="check_FontFamilyStyleClassItem_NonTypesystemRule#()V" />
-      <node id="4633730518060759757" at="29,0,32,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="4633730518060759757" at="32,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="4633730518060759757" at="35,0,38,0" concept="6" trace="overrides#()Z" />
-      <node id="4633730518060789406" at="22,415,26,7" concept="0" />
-      <node id="4633730518060796902" at="21,117,27,5" concept="5" />
-      <node id="4633730518060759757" at="21,0,29,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="4633730518060759757" at="19,61,19,61" />
-      <scope id="4633730518060759757" at="29,50,30,168" />
-      <scope id="4633730518060759757" at="32,68,33,102" />
-      <scope id="4633730518060759757" at="35,30,36,17" />
-      <scope id="4633730518060759757" at="19,0,21,0" />
-      <scope id="4633730518060789406" at="23,7,25,237">
-        <var name="_reporter_2309309498" id="4633730518060789406" />
-        <var name="errorTarget" id="4633730518060789406" />
-      </scope>
-      <scope id="4633730518060759757" at="29,0,32,0" />
-      <scope id="4633730518060759757" at="32,0,35,0">
-        <var name="argument" id="4633730518060759757" />
-      </scope>
-      <scope id="4633730518060759757" at="35,0,38,0" />
-      <scope id="4633730518060796904" at="22,415,26,7" />
-      <scope id="4633730518060759758" at="21,117,27,5" />
-      <scope id="4633730518060759757" at="21,0,29,0">
-        <var name="node" id="4633730518060759757" />
-        <var name="status" id="4633730518060759757" />
-        <var name="typeCheckingContext" id="4633730518060759757" />
-      </scope>
-      <unit id="4633730518060759757" at="18,0,39,0" name="jetbrains.mps.lang.editor.typesystem.check_FontFamilyStyleClassItem_NonTypesystemRule" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/4820515453820814937">
     <file name="typeof_ConceptEditorHintDeclarationReferenceExpression_InferenceRule.java">
       <node id="4820515453820815695" at="20,5,21,46" concept="7" />
@@ -2262,6 +2224,53 @@
         <var name="typeCheckingContext" id="4820515453820814937" />
       </scope>
       <unit id="4820515453820814937" at="16,0,42,0" name="jetbrains.mps.lang.editor.typesystem.typeof_ConceptEditorHintDeclarationReferenceExpression_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/491383275431663028">
+    <file name="typeof_FontFamilyExpression_InferenceRule.java">
+      <node id="491383275431667485" at="20,5,21,62" concept="7" />
+      <node id="491383275431667485" at="21,62,22,201" concept="7" />
+      <node id="491383275431667485" at="22,201,23,281" concept="3" />
+      <node id="491383275431663028" at="26,50,27,161" concept="8" />
+      <node id="491383275431663028" at="29,68,30,102" concept="8" />
+      <node id="491383275431663028" at="32,30,33,17" concept="8" />
+      <node id="491383275431667547" at="35,64,36,63" concept="7" />
+      <node id="491383275431667547" at="36,63,37,30" concept="7" />
+      <node id="491383275431667547" at="37,30,38,248" concept="3" />
+      <node id="491383275431667547" at="38,248,39,24" concept="8" />
+      <node id="491383275431663028" at="17,0,19,0" concept="1" trace="typeof_FontFamilyExpression_InferenceRule#()V" />
+      <node id="491383275431663028" at="26,0,29,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="491383275431663028" at="29,0,32,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="491383275431663028" at="32,0,35,0" concept="6" trace="overrides#()Z" />
+      <node id="491383275431667485" at="19,133,24,5" concept="0" />
+      <node id="491383275431667547" at="35,0,41,0" concept="11" trace="_quotation_createNode_nc5ktz_a1a2a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="491383275431663028" at="19,0,26,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="491383275431663028" at="17,54,17,54" />
+      <scope id="491383275431663028" at="26,50,27,161" />
+      <scope id="491383275431663028" at="29,68,30,102" />
+      <scope id="491383275431663028" at="32,30,33,17" />
+      <scope id="491383275431663028" at="17,0,19,0" />
+      <scope id="491383275431667485" at="20,5,23,281">
+        <var name="_info_12389875345" id="491383275431667485" />
+        <var name="_nodeToCheck_1029348928467" id="491383275431667485" />
+      </scope>
+      <scope id="491383275431663028" at="26,0,29,0" />
+      <scope id="491383275431663028" at="29,0,32,0">
+        <var name="argument" id="491383275431663028" />
+      </scope>
+      <scope id="491383275431663028" at="32,0,35,0" />
+      <scope id="491383275431667547" at="35,64,39,24">
+        <var name="facade" id="491383275431667547" />
+        <var name="quotedNode_1" id="491383275431667547" />
+      </scope>
+      <scope id="491383275431663029" at="19,133,24,5" />
+      <scope id="491383275431667547" at="35,0,41,0" />
+      <scope id="491383275431663028" at="19,0,26,0">
+        <var name="fontFamilyExpression" id="491383275431663028" />
+        <var name="status" id="491383275431663028" />
+        <var name="typeCheckingContext" id="491383275431663028" />
+      </scope>
+      <unit id="491383275431663028" at="16,0,42,0" name="jetbrains.mps.lang.editor.typesystem.typeof_FontFamilyExpression_InferenceRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/5126791860785247133">
@@ -3173,6 +3182,50 @@
         <var name="typeCheckingContext" id="6918029743850843009" />
       </scope>
       <unit id="6918029743850843009" at="21,0,58,0" name="jetbrains.mps.lang.editor.typesystem.typeof_ConceptFunctionParameter_targetNode_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/7228435049763095187">
+    <file name="check_FontFamilyConstant_NonTypesystemRule.java">
+      <node id="7228435049763095199" at="23,7,24,60" concept="7" />
+      <node id="7228435049763095199" at="24,60,25,237" concept="7" />
+      <node id="7228435049763095187" at="29,50,30,171" concept="8" />
+      <node id="7228435049763095187" at="32,68,33,102" concept="8" />
+      <node id="7228435049763095187" at="35,30,36,17" concept="8" />
+      <node id="7228435049763095207" at="38,55,39,43" concept="8" />
+      <node id="7228435049763095187" at="19,0,21,0" concept="1" trace="check_FontFamilyConstant_NonTypesystemRule#()V" />
+      <node id="7228435049763095187" at="29,0,32,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="7228435049763095187" at="32,0,35,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="7228435049763095187" at="35,0,38,0" concept="6" trace="overrides#()Z" />
+      <node id="7228435049763095207" at="38,0,41,0" concept="11" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="7228435049763095199" at="22,425,26,7" concept="0" />
+      <node id="7228435049763095197" at="21,117,27,5" concept="5" />
+      <node id="7228435049763095187" at="21,0,29,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="7228435049763095187" at="19,55,19,55" />
+      <scope id="7228435049763095187" at="29,50,30,171" />
+      <scope id="7228435049763095187" at="32,68,33,102" />
+      <scope id="7228435049763095187" at="35,30,36,17" />
+      <scope id="7228435049763095207" at="38,55,39,43" />
+      <scope id="7228435049763095187" at="19,0,21,0" />
+      <scope id="7228435049763095199" at="23,7,25,237">
+        <var name="_reporter_2309309498" id="7228435049763095199" />
+        <var name="errorTarget" id="7228435049763095199" />
+      </scope>
+      <scope id="7228435049763095187" at="29,0,32,0" />
+      <scope id="7228435049763095187" at="32,0,35,0">
+        <var name="argument" id="7228435049763095187" />
+      </scope>
+      <scope id="7228435049763095187" at="35,0,38,0" />
+      <scope id="7228435049763095207" at="38,0,41,0">
+        <var name="str" id="7228435049763095207" />
+      </scope>
+      <scope id="7228435049763095198" at="22,425,26,7" />
+      <scope id="7228435049763095188" at="21,117,27,5" />
+      <scope id="7228435049763095187" at="21,0,29,0">
+        <var name="node" id="7228435049763095187" />
+        <var name="status" id="7228435049763095187" />
+        <var name="typeCheckingContext" id="7228435049763095187" />
+      </scope>
+      <unit id="7228435049763095187" at="18,0,42,0" name="jetbrains.mps.lang.editor.typesystem.check_FontFamilyConstant_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/7806530711847278495">

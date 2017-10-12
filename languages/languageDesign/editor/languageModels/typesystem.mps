@@ -94,6 +94,7 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -6378,52 +6379,76 @@
       <ref role="1YaFvo" to="tpc2:3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
     </node>
   </node>
-  <node concept="18kY7G" id="41eklG9TvFd">
-    <property role="TrG5h" value="check_FontFamilyStyleClassItem" />
+  <node concept="1YbPZF" id="rhJBLcF1mO">
+    <property role="TrG5h" value="typeof_FontFamilyExpression" />
     <property role="3GE5qa" value="Stylesheet" />
-    <node concept="3clFbS" id="41eklG9TvFe" role="18ibNy">
-      <node concept="3clFbJ" id="41eklG9TCJA" role="3cqZAp">
-        <node concept="3clFbS" id="41eklG9TCJC" role="3clFbx">
-          <node concept="a7r0C" id="41eklG9TAUu" role="3cqZAp">
-            <node concept="Xl_RD" id="41eklG9TNyB" role="a7wSD">
-              <property role="Xl_RC" value="The font is not available" />
-            </node>
-            <node concept="1YBJjd" id="41eklG9TN4h" role="2OEOjV">
-              <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+    <node concept="3clFbS" id="rhJBLcF1mP" role="18ibNy">
+      <node concept="1Z5TYs" id="rhJBLcF2st" role="3cqZAp">
+        <node concept="mw_s8" id="rhJBLcF2tv" role="1ZfhKB">
+          <node concept="2c44tf" id="rhJBLcF2tr" role="mwGJk">
+            <node concept="17QB3L" id="rhJBLcF2Gj" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="rhJBLcF2sw" role="1ZfhK$">
+          <node concept="1Z2H0r" id="rhJBLcF1mV" role="mwGJk">
+            <node concept="1YBJjd" id="rhJBLcF1oF" role="1Z2MuG">
+              <ref role="1YBMHb" node="rhJBLcF1mR" resolve="fontFamilyExpression" />
             </node>
           </node>
         </node>
-        <node concept="1Wc70l" id="41eklG9TLcq" role="3clFbw">
-          <node concept="3y3z36" id="41eklG9TCBf" role="3uHU7B">
-            <node concept="2OqwBi" id="41eklG9TBFz" role="3uHU7B">
-              <node concept="1YBJjd" id="41eklG9TByE" role="2Oq$k0">
-                <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+      </node>
+    </node>
+    <node concept="1YaCAy" id="rhJBLcF1mR" role="1YuTPh">
+      <property role="TrG5h" value="fontFamilyExpression" />
+      <ref role="1YaFvo" to="tpc2:6hgzQ4Z6Y0A" resolve="FontFamilyLiteral" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6hgzQ4Z7caj">
+    <property role="TrG5h" value="check_FontFamilyConstant" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <node concept="3clFbS" id="6hgzQ4Z7cak" role="18ibNy">
+      <node concept="3clFbJ" id="6hgzQ4Z7cat" role="3cqZAp">
+        <node concept="3clFbS" id="6hgzQ4Z7cau" role="3clFbx">
+          <node concept="a7r0C" id="6hgzQ4Z7cav" role="3cqZAp">
+            <node concept="Xl_RD" id="6hgzQ4Z7caw" role="a7wSD">
+              <property role="Xl_RC" value="The font is not available" />
+            </node>
+            <node concept="1YBJjd" id="6hgzQ4Z7cax" role="2OEOjV">
+              <ref role="1YBMHb" node="6hgzQ4Z7cam" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="6hgzQ4Z7cay" role="3clFbw">
+          <node concept="2OqwBi" id="6hgzQ4Z7caz" role="3uHU7B">
+            <node concept="2OqwBi" id="6hgzQ4Z7ca$" role="2Oq$k0">
+              <node concept="1YBJjd" id="6hgzQ4Z7ca_" role="2Oq$k0">
+                <ref role="1YBMHb" node="6hgzQ4Z7cam" resolve="node" />
               </node>
-              <node concept="3TrcHB" id="41eklG9TBZx" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="family" />
+              <node concept="3TrcHB" id="6hgzQ4Z7cW5" role="2OqNvi">
+                <ref role="3TsBF5" to="tpc2:6hgzQ4Z7bF2" resolve="family" />
               </node>
             </node>
-            <node concept="10Nm6u" id="41eklG9TCDI" role="3uHU7w" />
+            <node concept="17RvpY" id="6hgzQ4Z7caB" role="2OqNvi" />
           </node>
-          <node concept="3fqX7Q" id="41eklG9TKHg" role="3uHU7w">
-            <node concept="2OqwBi" id="41eklG9TKHi" role="3fr31v">
-              <node concept="2OqwBi" id="41eklG9TKHj" role="2Oq$k0">
-                <node concept="2YIFZM" id="41eklG9TKHk" role="2Oq$k0">
-                  <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
+          <node concept="3fqX7Q" id="6hgzQ4Z7caC" role="3uHU7w">
+            <node concept="2OqwBi" id="6hgzQ4Z7caD" role="3fr31v">
+              <node concept="2OqwBi" id="6hgzQ4Z7caE" role="2Oq$k0">
+                <node concept="2YIFZM" id="6hgzQ4Z7caF" role="2Oq$k0">
                   <ref role="1Pybhc" to="g51k:~FontRegistry" resolve="FontRegistry" />
+                  <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
                 </node>
-                <node concept="liA8E" id="41eklG9TKHl" role="2OqNvi">
+                <node concept="liA8E" id="6hgzQ4Z7caG" role="2OqNvi">
                   <ref role="37wK5l" to="g51k:~FontRegistry.getAvailableFontFamilyNames():java.util.Set" resolve="getAvailableFontFamilyNames" />
                 </node>
               </node>
-              <node concept="liA8E" id="41eklG9TKHm" role="2OqNvi">
+              <node concept="liA8E" id="6hgzQ4Z7caH" role="2OqNvi">
                 <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
-                <node concept="2OqwBi" id="41eklG9TKHn" role="37wK5m">
-                  <node concept="1YBJjd" id="41eklG9TKHo" role="2Oq$k0">
-                    <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+                <node concept="2OqwBi" id="6hgzQ4Z7caI" role="37wK5m">
+                  <node concept="1YBJjd" id="6hgzQ4Z7caJ" role="2Oq$k0">
+                    <ref role="1YBMHb" node="6hgzQ4Z7cam" resolve="node" />
                   </node>
-                  <node concept="3TrcHB" id="41eklG9TKHp" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="family" />
+                  <node concept="3TrcHB" id="6hgzQ4Z7cK_" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpc2:6hgzQ4Z7bF2" resolve="family" />
                   </node>
                 </node>
               </node>
@@ -6432,9 +6457,9 @@
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="41eklG9TvFg" role="1YuTPh">
+    <node concept="1YaCAy" id="6hgzQ4Z7cam" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <ref role="1YaFvo" to="tpc2:6rN18FHIfNk" resolve="FontFamilyStyleClassItem" />
+      <ref role="1YaFvo" to="tpc2:6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
     </node>
   </node>
 </model>

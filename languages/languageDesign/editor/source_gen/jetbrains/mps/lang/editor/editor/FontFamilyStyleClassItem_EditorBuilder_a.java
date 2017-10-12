@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.behavior.FontFamilyStyleClassItem__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.FontFamilyConstant__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -129,7 +129,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   private String _StyleParameter_QueryFunction_w2alof_a0c0() {
-    return (String) FontFamilyStyleClassItem__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
+    return (String) FontFamilyConstant__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
   }
   public static class FontFamilyStyleClassItem_generic_cellMenu_w2alof_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontFamilyStyleClassItem_generic_cellMenu_w2alof_a0c0() {
@@ -146,10 +146,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if (eq_b3el4v_a0a0e51(parameterObject, "query")) {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "family"), null);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, 0x64508f613f1cbac2L, "family"), null);
         SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcd5L, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4a5babf4dd24c18cL, "jetbrains.mps.lang.editor.structure.QueryFunction_FontFamily")));
       } else {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "family"), parameterObject);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, 0x64508f613f1cbac2L, "family"), parameterObject);
       }
     }
     public boolean isReferentPresentation() {

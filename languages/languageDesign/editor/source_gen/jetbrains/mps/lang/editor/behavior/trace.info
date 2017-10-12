@@ -29,14 +29,14 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1022705369068700931">
-    <file name="FontFamilyStyleClassItem__BehaviorDescriptor.java">
+    <file name="FontFamilyConstant__BehaviorDescriptor.java">
       <node id="1022705369068700931" at="26,0,27,0" concept="15" trace="CONCEPT" />
       <node id="1022705369068700931" at="27,0,28,0" concept="15" trace="REGISTRY" />
       <node id="1022705369068700931" at="29,0,30,0" concept="15" trace="getFontFamily_idSLohPpeqbF" />
       <node id="1022705369068700931" at="31,0,32,0" concept="15" trace="BH_METHODS" />
       <node id="1022705369068708604" at="37,431,38,18" concept="12" />
       <node id="1022705369068708620" at="39,5,40,181" concept="12" />
-      <node id="1022705369068700931" at="43,62,44,20" concept="17" />
+      <node id="1022705369068700931" at="43,56,44,20" concept="17" />
       <node id="1022705369068700931" at="48,114,49,21" concept="5" />
       <node id="1022705369068700931" at="53,114,54,49" concept="11" />
       <node id="1022705369068700931" at="55,26,56,56" concept="20" />
@@ -49,7 +49,7 @@
       <node id="1022705369068700931" at="86,40,87,19" concept="12" />
       <node id="1022705369068700931" at="33,0,35,0" concept="16" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1022705369068719142" at="36,85,39,5" concept="9" />
-      <node id="1022705369068700931" at="43,0,46,0" concept="3" trace="FontFamilyStyleClassItem__BehaviorDescriptor#()V" />
+      <node id="1022705369068700931" at="43,0,46,0" concept="3" trace="FontFamilyConstant__BehaviorDescriptor#()V" />
       <node id="1022705369068700931" at="54,49,57,5" concept="9" />
       <node id="1022705369068700931" at="68,49,71,5" concept="9" />
       <node id="1022705369068700931" at="47,0,51,0" concept="10" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -62,7 +62,7 @@
       <node id="1022705369068700931" at="52,0,65,0" concept="10" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1022705369068700931" at="33,63,33,63" />
       <scope id="1022705369068719144" at="37,431,38,18" />
-      <scope id="1022705369068700931" at="43,62,44,20" />
+      <scope id="1022705369068700931" at="43,56,44,20" />
       <scope id="1022705369068700931" at="48,114,49,21" />
       <scope id="1022705369068700931" at="55,26,56,56" />
       <scope id="1022705369068700931" at="59,13,60,63" />
@@ -102,7 +102,7 @@
         <var name="node" id="1022705369068700931" />
         <var name="parameters" id="1022705369068700931" />
       </scope>
-      <unit id="1022705369068700931" at="25,0,90,0" name="jetbrains.mps.lang.editor.behavior.FontFamilyStyleClassItem__BehaviorDescriptor" />
+      <unit id="1022705369068700931" at="25,0,90,0" name="jetbrains.mps.lang.editor.behavior.FontFamilyConstant__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877183870">
@@ -1371,7 +1371,7 @@
       <node id="1237383594092" at="183,81,184,278" concept="12" />
       <node id="5095082075499029710" at="186,86,187,472" concept="11" />
       <node id="5095082075499167624" at="188,30,189,58" concept="12" />
-      <node id="5095082075499181971" at="190,5,191,101" concept="12" />
+      <node id="5095082075499181971" at="190,5,191,95" concept="12" />
       <node id="1221216423619" at="193,77,194,458" concept="11" />
       <node id="1221216470359" at="195,173,196,75" concept="12" />
       <node id="1221216651766" at="197,5,198,168" concept="12" />
@@ -1708,7 +1708,7 @@
       <scope id="1221220594209" at="176,82,181,181">
         <var name="firstItem" id="1221239741753" />
       </scope>
-      <scope id="5095082075499021215" at="186,86,191,101">
+      <scope id="5095082075499021215" at="186,86,191,95">
         <var name="firstItem" id="5095082075499029713" />
       </scope>
       <scope id="1221216397368" at="193,77,198,168">
