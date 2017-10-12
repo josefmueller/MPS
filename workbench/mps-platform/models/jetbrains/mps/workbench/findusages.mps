@@ -5659,7 +5659,7 @@
         <node concept="3clFbF" id="2s2BsXxOyGu" role="3cqZAp">
           <node concept="2YIFZM" id="2s2BsXxOyGv" role="3clFbG">
             <ref role="1Pybhc" to="cuwx:~IdTableBuilding" resolve="IdTableBuilding" />
-            <ref role="37wK5l" to="cuwx:~IdTableBuilding.registerIdIndexer(com.intellij.openapi.fileTypes.FileType,com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer):void" resolve="registerIdIndexer" />
+            <ref role="37wK5l" to="cuwx:~IdTableBuilding.registerIdIndexer(com.intellij.openapi.fileTypes.FileType,com.intellij.psi.impl.cache.impl.id.IdIndexer):void" resolve="registerIdIndexer" />
             <node concept="10M0yZ" id="2s2BsXxOyGw" role="37wK5m">
               <ref role="3cqZAo" to="ria8:~MPSPlatformFileTypeFactory.CLASS_FILE_TYPE" resolve="CLASS_FILE_TYPE" />
               <ref role="1PxDUh" to="ria8:~MPSPlatformFileTypeFactory" resolve="MPSPlatformFileTypeFactory" />
