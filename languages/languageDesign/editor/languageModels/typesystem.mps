@@ -6400,7 +6400,7 @@
                 <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
               </node>
               <node concept="3TrcHB" id="41eklG9TBZx" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="family" />
               </node>
             </node>
             <node concept="10Nm6u" id="41eklG9TCDI" role="3uHU7w" />
@@ -6423,7 +6423,7 @@
                     <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
                   </node>
                   <node concept="3TrcHB" id="41eklG9TKHp" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+                    <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="family" />
                   </node>
                 </node>
               </node>

@@ -2729,7 +2729,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.StyleClassItem", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/7418278005949660372");
-    b.prop("style", 0x66f3048aedb8fcfbL, "7418278005949660411");
+    b.prop("family", 0x66f3048aedb8fcfbL, "7418278005949660411");
     b.aggregate("query", 0x66f3048aedb8fcd5L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4a5babf4dd24c18cL).optional(true).ordered(true).multiple(false).origin("7418278005949660373").done();
     b.kind(ConceptKind.IMPLEMENTATION, StaticScope.NONE);
     b.alias("font-family");

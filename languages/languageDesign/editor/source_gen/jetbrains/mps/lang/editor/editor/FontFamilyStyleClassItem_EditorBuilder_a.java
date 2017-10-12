@@ -112,11 +112,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
   }
   private EditorCell createProperty_w2alof_c0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("style");
-    provider.setNoTargetText("<no style>");
+    provider.setRole("family");
+    provider.setNoTargetText("<no family>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
-    editorCell.setCellId("property_style");
+    editorCell.setCellId("property_family");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_FAMILY, _StyleParameter_QueryFunction_w2alof_a0c0());
     editorCell.getStyle().putAll(style);
@@ -146,10 +146,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if (eq_b3el4v_a0a0e51(parameterObject, "query")) {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"), null);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "family"), null);
         SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcd5L, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4a5babf4dd24c18cL, "jetbrains.mps.lang.editor.structure.QueryFunction_FontFamily")));
       } else {
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"), parameterObject);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "family"), parameterObject);
       }
     }
     public boolean isReferentPresentation() {
