@@ -14,6 +14,7 @@ import jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem;
 public class NotMigratedLibsError extends MigrationError {
   private Map<SModule, SModule> errors;
   public NotMigratedLibsError(Map<SModule, SModule> errors) {
+    super(13);
     this.errors = errors;
   }
   @Override

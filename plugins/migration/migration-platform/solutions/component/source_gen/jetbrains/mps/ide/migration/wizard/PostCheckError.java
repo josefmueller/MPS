@@ -20,6 +20,7 @@ public class PostCheckError extends MigrationError {
   private MigrationChecker myChecker;
 
   public PostCheckError(Project p, Iterable<ScriptApplied> migrationsToCheck, boolean haveBadCode, MigrationChecker checker) {
+    super(15);
     myProject = p;
     myHaveBadCode = haveBadCode;
     myMigrationsToCheck = migrationsToCheck;
