@@ -287,6 +287,41 @@
       <unit id="491383275435260964" at="16,0,44,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemPreviewTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/491383275436118968">
+    <file name="FontFamilyLiteralPreviewTest_Test.java">
+      <node id="491383275436118968" at="19,68,20,108" concept="0" />
+      <node id="491383275436118968" at="20,108,21,116" concept="0" />
+      <node id="491383275436118968" at="27,51,28,52" concept="0" />
+      <node id="491383275436118984" at="32,47,33,152" concept="3" />
+      <node id="491383275436118986" at="39,82,40,48" concept="3" />
+      <node id="491383275436118980" at="32,0,35,0" concept="1" trace="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="491383275436118986" at="39,0,42,0" concept="5" trace="eq_x0o4jd_a0a0a0a0b0a0a0a0a0a1a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="491383275436118968" at="18,0,23,0" concept="1" trace="test_FontFamilyLiteralPreviewTest#()V" />
+      <node id="491383275436118975" at="30,27,35,26" concept="0" />
+      <node id="491383275436118973" at="30,0,37,0" concept="1" trace="run#()V" />
+      <node id="491383275436118972" at="28,52,37,9" concept="0" />
+      <node id="491383275436118968" at="26,0,39,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="491383275436118983" at="32,47,33,152" />
+      <scope id="491383275436118986" at="39,82,40,48" />
+      <scope id="491383275436118968" at="19,68,21,116" />
+      <scope id="491383275436118980" at="32,0,35,0">
+        <var name="it" id="491383275436118980" />
+      </scope>
+      <scope id="491383275436118986" at="39,0,42,0">
+        <var name="a" id="491383275436118986" />
+        <var name="b" id="491383275436118986" />
+      </scope>
+      <scope id="491383275436118968" at="18,0,23,0" />
+      <scope id="491383275436118974" at="30,27,35,26" />
+      <scope id="491383275436118973" at="30,0,37,0" />
+      <scope id="491383275436118968" at="27,51,37,9" />
+      <scope id="491383275436118968" at="26,0,39,0" />
+      <unit id="491383275436118980" at="31,107,35,11" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test$TestBody$1$1" />
+      <unit id="491383275436118973" at="29,47,37,7" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test$TestBody$1" />
+      <unit id="491383275436118968" at="24,0,43,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test$TestBody" />
+      <unit id="491383275436118968" at="16,0,44,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test" />
+    </file>
+  </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/6519503956375921847">
     <file name="StyleOfSingleRoleChild_Test.java">
       <node id="6519503956375921847" at="13,62,14,108" concept="0" />

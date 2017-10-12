@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.behavior.FontFamilyConstant__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -94,6 +95,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("property_family");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, _StyleParameter_QueryFunction_9wf0bc_a0c0());
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new FontFamilyLiteral_EditorBuilder_a.FontFamilyLiteral_generic_cellMenu_9wf0bc_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
@@ -101,6 +105,9 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
+  }
+  private String _StyleParameter_QueryFunction_9wf0bc_a0c0() {
+    return (String) FontFamilyConstant__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
   }
   public static class FontFamilyLiteral_generic_cellMenu_9wf0bc_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontFamilyLiteral_generic_cellMenu_9wf0bc_a0c0() {

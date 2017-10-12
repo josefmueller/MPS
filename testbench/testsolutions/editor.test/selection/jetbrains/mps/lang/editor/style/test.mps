@@ -66,6 +66,7 @@
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="7418278005949660372" name="jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem" flags="ln" index="2biZxu" />
+      <concept id="7228435049763037222" name="jetbrains.mps.lang.editor.structure.FontFamilyLiteral" flags="ng" index="1riQX7" />
       <concept id="7228435049763093185" name="jetbrains.mps.lang.editor.structure.FontFamilyConstant" flags="ng" index="1rj3mw">
         <property id="7228435049763093186" name="family" index="1rj3mz" />
       </concept>
@@ -2461,6 +2462,94 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="rhJBLcW1eS">
+    <property role="TrG5h" value="FontFamilyLiteralPreviewTest" />
+    <property role="3YCmrE" value="Font family literal should be rendered with selected font family" />
+    <node concept="3clFbS" id="rhJBLcW1eV" role="LjaKd">
+      <node concept="1QHqEK" id="rhJBLcW1eW" role="3cqZAp">
+        <node concept="1QHqEC" id="rhJBLcW1eX" role="1QHqEI">
+          <node concept="3clFbS" id="rhJBLcW1eY" role="1bW5cS">
+            <node concept="2Hmddi" id="rhJBLcW1eZ" role="3cqZAp">
+              <node concept="2YIFZM" id="rhJBLcW1f0" role="2Hmdds">
+                <ref role="37wK5l" to="g51k:~CellFinderUtil.findChildByCondition(jetbrains.mps.openapi.editor.cells.EditorCell,org.jetbrains.mps.util.Condition,boolean,boolean):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="findChildByCondition" />
+                <ref role="1Pybhc" to="g51k:~CellFinderUtil" resolve="CellFinderUtil" />
+                <node concept="2OqwBi" id="rhJBLcW1f1" role="37wK5m">
+                  <node concept="369mXd" id="rhJBLcW1f2" role="2Oq$k0" />
+                  <node concept="liA8E" id="rhJBLcW1f3" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorComponent.getRootCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolve="getRootCell" />
+                  </node>
+                </node>
+                <node concept="1bVj0M" id="rhJBLcW1f4" role="37wK5m">
+                  <node concept="Rh6nW" id="rhJBLcW1f5" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="rhJBLcW1f6" role="1tU5fm" />
+                  </node>
+                  <node concept="3clFbS" id="rhJBLcW1f7" role="1bW5cS">
+                    <node concept="3clFbF" id="rhJBLcW1f8" role="3cqZAp">
+                      <node concept="1Wc70l" id="rhJBLcW1f9" role="3clFbG">
+                        <node concept="17R0WA" id="rhJBLcW1fa" role="3uHU7w">
+                          <node concept="Xl_RD" id="rhJBLcW1fb" role="3uHU7w">
+                            <property role="Xl_RC" value="Serif" />
+                          </node>
+                          <node concept="2OqwBi" id="rhJBLcW1fc" role="3uHU7B">
+                            <node concept="2OqwBi" id="rhJBLcW1fd" role="2Oq$k0">
+                              <node concept="1eOMI4" id="rhJBLcW1fe" role="2Oq$k0">
+                                <node concept="10QFUN" id="rhJBLcW1ff" role="1eOMHV">
+                                  <node concept="3uibUv" id="rhJBLcW1fg" role="10QFUM">
+                                    <ref role="3uigEE" to="g51k:~EditorCell_Label" resolve="EditorCell_Label" />
+                                  </node>
+                                  <node concept="37vLTw" id="rhJBLcW1fh" role="10QFUP">
+                                    <ref role="3cqZAo" node="rhJBLcW1f5" resolve="it" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="rhJBLcW1fi" role="2OqNvi">
+                                <ref role="37wK5l" to="g51k:~EditorCell_Label.getFont():java.awt.Font" resolve="getFont" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="rhJBLcW1fj" role="2OqNvi">
+                              <ref role="37wK5l" to="z60i:~Font.getFamily():java.lang.String" resolve="getFamily" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="rhJBLcW1fk" role="3uHU7B">
+                          <node concept="3VsKOn" id="rhJBLcW1fl" role="2Oq$k0">
+                            <ref role="3VsUkX" to="g51k:~EditorCell_Label" resolve="EditorCell_Label" />
+                          </node>
+                          <node concept="liA8E" id="rhJBLcW1fm" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Class.isInstance(java.lang.Object):boolean" resolve="isInstance" />
+                            <node concept="37vLTw" id="rhJBLcW1fn" role="37wK5m">
+                              <ref role="3cqZAo" node="rhJBLcW1f5" resolve="it" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbT" id="rhJBLcW1fo" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="3clFbT" id="rhJBLcW1fp" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1riQX7" id="rhJBLcW1xd" role="LiRBU">
+      <property role="1rj3mz" value="Serif" />
+      <node concept="LIFWc" id="rhJBLcW1Jt" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="1" />
+        <property role="p6zMs" value="1" />
+        <property role="LIFWd" value="Constant_9wf0bc_d0" />
       </node>
     </node>
   </node>
