@@ -15,6 +15,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeContainer;
   private ConceptPresentation props_PriorityStyle;
   private ConceptPresentation props_PriorityStyleCopy;
+  private ConceptPresentation props_SerifFromQueryNode;
+  private ConceptPresentation props_SerifNode;
   private ConceptPresentation props_TestConceptWithStyleAttributes;
   private ConceptPresentation props_TestInheritedAttribute;
   private ConceptPresentation props_TestSimpleAttribute;
@@ -66,6 +68,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PriorityStyleCopy = cpb.create();
         }
         return props_PriorityStyleCopy;
+      case LanguageConceptSwitch.SerifFromQueryNode:
+        if (props_SerifFromQueryNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("serifFromQueryNode");
+          props_SerifFromQueryNode = cpb.create();
+        }
+        return props_SerifFromQueryNode;
+      case LanguageConceptSwitch.SerifNode:
+        if (props_SerifNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("serifNode");
+          props_SerifNode = cpb.create();
+        }
+        return props_SerifNode;
       case LanguageConceptSwitch.TestConceptWithStyleAttributes:
         if (props_TestConceptWithStyleAttributes == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

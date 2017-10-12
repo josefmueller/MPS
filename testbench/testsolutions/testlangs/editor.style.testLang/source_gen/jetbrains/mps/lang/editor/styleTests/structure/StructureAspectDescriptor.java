@@ -18,6 +18,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodeContainer = createDescriptorForNodeContainer();
   /*package*/ final ConceptDescriptor myConceptPriorityStyle = createDescriptorForPriorityStyle();
   /*package*/ final ConceptDescriptor myConceptPriorityStyleCopy = createDescriptorForPriorityStyleCopy();
+  /*package*/ final ConceptDescriptor myConceptSerifFromQueryNode = createDescriptorForSerifFromQueryNode();
+  /*package*/ final ConceptDescriptor myConceptSerifNode = createDescriptorForSerifNode();
   /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = createDescriptorForTestConceptWithStyleAttributes();
   /*package*/ final ConceptDescriptor myConceptTestInheritedAttribute = createDescriptorForTestInheritedAttribute();
   /*package*/ final ConceptDescriptor myConceptTestSimpleAttribute = createDescriptorForTestSimpleAttribute();
@@ -30,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCustomFontContainer, myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
+    return Arrays.asList(myConceptCustomFontContainer, myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptSerifFromQueryNode, myConceptSerifNode, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
   }
 
   @Override
@@ -49,6 +51,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPriorityStyle;
       case LanguageConceptSwitch.PriorityStyleCopy:
         return myConceptPriorityStyleCopy;
+      case LanguageConceptSwitch.SerifFromQueryNode:
+        return myConceptSerifFromQueryNode;
+      case LanguageConceptSwitch.SerifNode:
+        return myConceptSerifNode;
       case LanguageConceptSwitch.TestConceptWithStyleAttributes:
         return myConceptTestConceptWithStyleAttributes;
       case LanguageConceptSwitch.TestInheritedAttribute:
@@ -114,6 +120,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL);
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8917170296719632542");
     b.alias("priorityStyleCopy");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSerifFromQueryNode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.styleTests", "SerifFromQueryNode", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x6d1be7c4cdf956fL);
+    b.class_(false, false, false);
+    b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/491383275435038063");
+    b.alias("serifFromQueryNode");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSerifNode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.styleTests", "SerifNode", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x6d1be7c4cdf954fL);
+    b.class_(false, false, false);
+    b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/491383275435038031");
+    b.alias("serifNode");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestConceptWithStyleAttributes() {

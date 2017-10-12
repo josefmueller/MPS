@@ -7,10 +7,12 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.ModelAccess;
-import junit.framework.Assert;
+import java.awt.Font;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import junit.framework.Assert;
 
 @MPSLaunch
 public class FontStyleInheritanceTest_Test extends BaseTransformationTest {
@@ -27,14 +29,18 @@ public class FontStyleInheritanceTest_Test extends BaseTransformationTest {
       initEditorComponent("8545423393708629228", "");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Assert.assertEquals("Serif", getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708669280"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_FAMILY));
-          Assert.assertEquals(50, (int) getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708669280"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_SIZE));
 
-          Assert.assertEquals("Serif", getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708641683"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_FAMILY));
-          Assert.assertEquals(30, (int) getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708641683"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_SIZE));
+          Font nodeWithoutCustomFont_font = CellFinderUtil.findChildByClass(getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708669280"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))), EditorCell_Label.class, true, true).getFont();
+          Assert.assertEquals("Serif", nodeWithoutCustomFont_font.getFamily());
+          Assert.assertEquals(50, nodeWithoutCustomFont_font.getSize());
 
-          Assert.assertEquals("SansSerif", getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708745749"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_FAMILY));
-          Assert.assertEquals(25, (int) getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708745749"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))).getStyle().get(StyleAttributes.FONT_SIZE));
+          Font nodeWithCustomFontSize_font = CellFinderUtil.findChildByClass(getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708641683"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))), EditorCell_Label.class, true, true).getFont();
+          Assert.assertEquals("Serif", nodeWithCustomFontSize_font.getFamily());
+          Assert.assertEquals(30, (int) nodeWithCustomFontSize_font.getSize());
+
+          Font nodeWithCustomFontSizeAndFamily_font = CellFinderUtil.findChildByClass(getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708745749"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))), EditorCell_Label.class, true, true).getFont();
+          Assert.assertEquals("SansSerif", nodeWithCustomFontSizeAndFamily_font.getFamily());
+          Assert.assertEquals(25, (int) nodeWithCustomFontSizeAndFamily_font.getSize());
         }
       });
     }

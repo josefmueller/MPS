@@ -59,6 +59,10 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="7228435049763037222" name="jetbrains.mps.lang.editor.structure.FontFamilyLiteral" flags="ng" index="1riQX7" />
+      <concept id="7228435049763093185" name="jetbrains.mps.lang.editor.structure.FontFamilyConstant" flags="ng" index="1rj3mw">
+        <property id="7228435049763093186" name="family" index="1rj3mz" />
+      </concept>
       <concept id="3982520150125052579" name="jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter" flags="ig" index="3sjG9q" />
       <concept id="3982520150113085419" name="jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration" flags="ig" index="3t5Usi">
         <property id="8714766435264464176" name="inherited" index="iBDjm" />
@@ -568,6 +572,32 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="rhJBLcRTlD">
+    <ref role="1XX52x" to="dekf:rhJBLcRTlf" resolve="SerifNode" />
+    <node concept="PMmxH" id="rhJBLcRTlF" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <node concept="2biZxu" id="rhJBLcRTlH" role="3F10Kt">
+        <property role="1rj3mz" value="Serif" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="rhJBLcRTm$">
+    <ref role="1XX52x" to="dekf:rhJBLcRTlJ" resolve="SerifFromQueryNode" />
+    <node concept="PMmxH" id="rhJBLcRTmA" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <node concept="2biZxu" id="rhJBLcRTmC" role="3F10Kt">
+        <node concept="2nvQDS" id="rhJBLcRTmE" role="2biZxv">
+          <node concept="3clFbS" id="rhJBLcRTmF" role="2VODD2">
+            <node concept="3clFbF" id="rhJBLcRTv4" role="3cqZAp">
+              <node concept="1riQX7" id="rhJBLcRTv3" role="3clFbG">
+                <property role="1rj3mz" value="Serif" />
               </node>
             </node>
           </node>

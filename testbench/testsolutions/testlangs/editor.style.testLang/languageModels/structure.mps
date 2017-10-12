@@ -126,5 +126,17 @@
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
+  <node concept="1TIwiD" id="rhJBLcRTlf">
+    <property role="EcuMT" value="491383275435038031" />
+    <property role="TrG5h" value="SerifNode" />
+    <property role="34LRSv" value="serifNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="rhJBLcRTlJ">
+    <property role="EcuMT" value="491383275435038063" />
+    <property role="TrG5h" value="SerifFromQueryNode" />
+    <property role="34LRSv" value="serifFromQueryNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

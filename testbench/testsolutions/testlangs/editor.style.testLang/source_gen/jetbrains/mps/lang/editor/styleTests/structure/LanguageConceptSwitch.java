@@ -15,10 +15,12 @@ public final class LanguageConceptSwitch {
   public static final int NodeContainer = 3;
   public static final int PriorityStyle = 4;
   public static final int PriorityStyleCopy = 5;
-  public static final int TestConceptWithStyleAttributes = 6;
-  public static final int TestInheritedAttribute = 7;
-  public static final int TestSimpleAttribute = 8;
-  public static final int UnapplyPriorityStyleCopy = 9;
+  public static final int SerifFromQueryNode = 6;
+  public static final int SerifNode = 7;
+  public static final int TestConceptWithStyleAttributes = 8;
+  public static final int TestInheritedAttribute = 9;
+  public static final int TestSimpleAttribute = 10;
+  public static final int UnapplyPriorityStyleCopy = 11;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L);
@@ -28,6 +30,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x74e28664f056014cL, NodeContainer);
     builder.put(0x7bc02723c1a34c76L, PriorityStyle);
     builder.put(0x7bc02723c1a3689eL, PriorityStyleCopy);
+    builder.put(0x6d1be7c4cdf956fL, SerifFromQueryNode);
+    builder.put(0x6d1be7c4cdf954fL, SerifNode);
     builder.put(0x5bb841570e741168L, TestConceptWithStyleAttributes);
     builder.put(0x7bc02723c1a35eddL, TestInheritedAttribute);
     builder.put(0x7bc02723c1a3595dL, TestSimpleAttribute);
