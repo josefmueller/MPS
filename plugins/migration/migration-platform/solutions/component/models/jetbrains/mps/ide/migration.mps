@@ -9,6 +9,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="v27p" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.startup(MPS.IDEA/)" />
@@ -346,6 +347,12 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -4310,6 +4317,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="2qlsNbJNT0p" role="3cqZAp" />
         <node concept="3cpWs8" id="2wbhCYFUjFY" role="3cqZAp">
           <node concept="3cpWsn" id="2wbhCYFUjFZ" role="3cpWs9">
             <property role="TrG5h" value="task" />
@@ -4341,16 +4349,63 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="2wbhCYFUjGf" role="3clF47">
-                      <node concept="YS8fn" id="2wbhCYFUjGg" role="3cqZAp">
-                        <node concept="2ShNRf" id="2wbhCYFUjGh" role="YScLw">
-                          <node concept="1pGfFk" id="2wbhCYFUjGi" role="2ShVmc">
-                            <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                            <node concept="2OqwBi" id="5cfG2XjCr0y" role="37wK5m">
-                              <node concept="37vLTw" id="5cfG2XjCqPs" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2wbhCYFUjGb" resolve="error" />
+                      <node concept="RRSsy" id="2qlsNbJNmzt" role="3cqZAp">
+                        <property role="RRSoG" value="error" />
+                        <node concept="2OqwBi" id="2qlsNbJNni3" role="RRSoy">
+                          <node concept="37vLTw" id="2qlsNbJNn0w" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2wbhCYFUjGb" resolve="error" />
+                          </node>
+                          <node concept="liA8E" id="2qlsNbJNnzT" role="2OqNvi">
+                            <ref role="37wK5l" to="o8ag:2htE_P_MrC7" resolve="getMessage" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2Gpval" id="2qlsNbJNnTY" role="3cqZAp">
+                        <node concept="2GrKxI" id="2qlsNbJNnU0" role="2Gsz3X">
+                          <property role="TrG5h" value="p" />
+                        </node>
+                        <node concept="2OqwBi" id="2qlsNbJNogF" role="2GsD0m">
+                          <node concept="37vLTw" id="2qlsNbJNo0z" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2wbhCYFUjGb" resolve="error" />
+                          </node>
+                          <node concept="liA8E" id="2qlsNbJNoxx" role="2OqNvi">
+                            <ref role="37wK5l" to="o8ag:2htE_P_MrCw" resolve="getProblems" />
+                            <node concept="2ShNRf" id="2qlsNbJNpgB" role="37wK5m">
+                              <node concept="1pGfFk" id="2qlsNbJNse6" role="2ShVmc">
+                                <ref role="37wK5l" to="xygl:~EmptyProgressIndicator.&lt;init&gt;()" resolve="EmptyProgressIndicator" />
                               </node>
-                              <node concept="liA8E" id="5cfG2XjCrgc" role="2OqNvi">
-                                <ref role="37wK5l" to="o8ag:5cfG2XjCdpx" resolve="getShortMessage" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="2qlsNbJNnU4" role="2LFqv$">
+                          <node concept="RRSsy" id="2qlsNbJNsnk" role="3cqZAp">
+                            <property role="RRSoG" value="error" />
+                            <node concept="3cpWs3" id="2qlsNbJNwRz" role="RRSoy">
+                              <node concept="3cpWs3" id="2qlsNbJNuMX" role="3uHU7B">
+                                <node concept="3cpWs3" id="2qlsNbJNs$O" role="3uHU7B">
+                                  <node concept="Xl_RD" id="2qlsNbJNsnm" role="3uHU7B">
+                                    <property role="Xl_RC" value="- " />
+                                  </node>
+                                  <node concept="2OqwBi" id="2qlsNbJNsDs" role="3uHU7w">
+                                    <node concept="2GrUjf" id="2qlsNbJNsAX" role="2Oq$k0">
+                                      <ref role="2Gs0qQ" node="2qlsNbJNnU0" resolve="p" />
+                                    </node>
+                                    <node concept="liA8E" id="2qlsNbJNsV_" role="2OqNvi">
+                                      <ref role="37wK5l" to="6f4m:3n7MNzO_JgU" resolve="getMessage" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="2qlsNbJNuP6" role="3uHU7w">
+                                  <property role="Xl_RC" value="; reason object: " />
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="2qlsNbJNyeO" role="3uHU7w">
+                                <node concept="2GrUjf" id="2qlsNbJNy2s" role="2Oq$k0">
+                                  <ref role="2Gs0qQ" node="2qlsNbJNnU0" resolve="p" />
+                                </node>
+                                <node concept="liA8E" id="2qlsNbJNy_m" role="2OqNvi">
+                                  <ref role="37wK5l" to="6f4m:3n7MNzOA6ls" resolve="getReason" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -4366,7 +4421,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2wbhCYFUkbQ" role="3cqZAp" />
         <node concept="3clFbF" id="2wbhCYFU3sX" role="3cqZAp">
           <node concept="2OqwBi" id="2wbhCYFUkGs" role="3clFbG">
             <node concept="37vLTw" id="2wbhCYFUjGl" role="2Oq$k0">
