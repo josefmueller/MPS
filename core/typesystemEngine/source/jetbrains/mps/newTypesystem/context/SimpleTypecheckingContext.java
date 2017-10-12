@@ -23,6 +23,7 @@ import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -84,6 +85,11 @@ public abstract class SimpleTypecheckingContext<
 
   @Override
   public void reportMessage(IErrorReporter errorReporter) {
+    // do nothing
+  }
+
+  @Override
+  public void reportEquationError(@NotNull EquationInfo info, State state, String before, SNode left, String between, SNode right, String after) {
     // do nothing
   }
 

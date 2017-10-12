@@ -16,27 +16,75 @@
 package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.context.typechecking.ReportingTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.function.Function;
 
 public abstract class ReportingTypecheckingContext<
     STATE extends State,
     TCHECK extends ReportingTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
   extends SimpleTypecheckingContext<STATE, TCHECK> {
 
+  private static Logger LOG = LogManager.getLogger(ReportingTypecheckingContext.class);
+
   public ReportingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+  }
+
+
+  public void reportEquationError(@NotNull EquationInfo info, State state, String before, SNode left, String between, SNode right, String after) {
+    reportEquationError(this, info, node -> new EquationErrorReporterNew(node, state, before, left, between, right, after, info));
+  }
+  private static void reportEquationError(TypeCheckingContext context, @NotNull EquationInfo equationInfo, Function<SNode, EquationErrorReporterNew> defaultReporterForNode) {
+     if (equationInfo.getNodeWithError() == null) {
+       String message = "Typing equation did not provide node to report.";
+       if (equationInfo.getRuleNode() != null) {
+         message += " Equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+       }
+       for (SNodeReference rule : equationInfo.getAdditionalRulesIds()) {
+         message += " Additional equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
+       }
+       if (equationInfo.getErrorString() != null) {
+         message += " Error message: " + equationInfo.getErrorString();
+       }
+       LOG.error(message);
+       return;
+    }
+    final IErrorReporter errorReporter;
+    if (equationInfo.getErrorString() == null) {
+      errorReporter = defaultReporterForNode.apply(equationInfo.getNodeWithError());
+    } else {
+      errorReporter = new SimpleErrorReporter(equationInfo.getNodeWithError(), equationInfo.getErrorString(), equationInfo.getRuleNode());
+    }
+    for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
+      errorReporter.addIntentionProvider(quickFixProvider);
+    }
+    setAdditionalRulesIds(equationInfo, errorReporter);
+    context.reportMessage(errorReporter);
+  }
+
+  private static void setAdditionalRulesIds(EquationInfo from, IErrorReporter to) {
+    if (from == null) {
+      return;
+    }
+    // XXX almost identical with HUtil.addAdditionalRuleIdsFromInfo(IErrorReporter,EquationInfo)
+    for (SNodeReference p : from.getAdditionalRulesIds()) {
+      to.additionalRule(p);
+    }
+
   }
 
   @Override

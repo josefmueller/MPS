@@ -17,11 +17,10 @@ package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.context.ReportingTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
@@ -39,10 +38,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Function;
 
 public class NodeMaps {
-  private static Logger LOG = LogManager.getLogger(NodeMaps.class);
 
   @StateObject
   private final Map<SNode, SNode> myNodesToTypes = new THashMap<SNode, SNode>();
@@ -203,52 +200,16 @@ public class NodeMaps {
     return myNodesToTypes.keySet();
   }
 
-  private void reportEquationError(@NotNull EquationInfo equationInfo, Function<SNode, EquationErrorReporterNew> defaultReporterForNode) {
-     if (equationInfo.getNodeWithError() == null) {
-       String message = "Typing equation did not provide node to report.";
-       if (equationInfo.getRuleNode() != null) {
-         message += " Equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
-       }
-       for (SNodeReference rule : equationInfo.getAdditionalRulesIds()) {
-         message += " Additional equation " + equationInfo.getRuleNode().getNodeId() + " from model " + equationInfo.getRuleNode().getModelReference();
-       }
-       if (equationInfo.getErrorString() != null) {
-         message += " Error message: " + equationInfo.getErrorString();
-       }
-       LOG.error(message);
-       return;
-    }
-    final IErrorReporter errorReporter;
-    if (equationInfo.getErrorString() == null) {
-      errorReporter = defaultReporterForNode.apply(equationInfo.getNodeWithError());
-    } else {
-      errorReporter = new SimpleErrorReporter(equationInfo.getNodeWithError(), equationInfo.getErrorString(), equationInfo.getRuleNode());
-    }
-    for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
-      errorReporter.addIntentionProvider(quickFixProvider);
-    }
-    setAdditionalRulesIds(equationInfo, errorReporter);
-    myState.getTypeCheckingContext().reportMessage(errorReporter);
-  }
-
   public void reportEquationBroken(@NotNull EquationInfo equationInfo, SNode left, SNode right) {
-    reportEquationError(equationInfo, nodeWithError -> {
-      return new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ", right, " and ", left, "", equationInfo);
-    });
+    myState.getTypeCheckingContext().reportEquationError(equationInfo, myState, "incompatible types: ", right, " and ", left, "");
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
-    reportEquationError(equationInfo, nodeWithError -> {
-      String strongString = isWeak ? "" : " strong";
-      return new EquationErrorReporterNew(nodeWithError, myState, "type ", subType," is not a" + strongString + " subtype of ", superType, "", equationInfo);
-    });
+    myState.getTypeCheckingContext().reportEquationError(equationInfo, myState, "type ", subType, " is not a" + (isWeak ? "" : " strong") + " subtype of ", superType, "");
   }
 
   public void reportComparableError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
-    reportEquationError(equationInfo, nodeWithError -> {
-      String strongString = isWeak ? "" : " strongly";
-      return new EquationErrorReporterNew(nodeWithError, myState, "type ", subType, " is not" + strongString + " comparable with ", superType, "", equationInfo);
-    });
+    myState.getTypeCheckingContext().reportEquationError(equationInfo, myState, "type ", subType, " is not" + (isWeak ? "" : " strongly") + " comparable with ", superType, "");
   }
 
   public Map<SNode, SNode> getNodesToTypes() {
@@ -259,14 +220,4 @@ public class NodeMaps {
     return Collections.unmodifiableMap(myNodesToErrors);
   }
 
-  private static void setAdditionalRulesIds(EquationInfo from, IErrorReporter to) {
-    if (from == null) {
-      return;
-    }
-    // XXX almost identical with HUtil.addAdditionalRuleIdsFromInfo(IErrorReporter,EquationInfo)
-    for (SNodeReference p : from.getAdditionalRulesIds()) {
-      to.additionalRule(p);
-    }
-
-  }
 }

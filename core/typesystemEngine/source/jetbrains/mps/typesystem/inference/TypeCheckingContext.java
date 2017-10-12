@@ -23,6 +23,7 @@ import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -205,6 +206,8 @@ public abstract class TypeCheckingContext {
   public abstract void checkRootInTraceMode(boolean refreshTypes);
 
   public abstract TypeSubstitution getSubstitution(SNode origNode);
+
+  public abstract void reportEquationError(@NotNull EquationInfo info, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right, String after);
 
   public static class NodeInfo {
     SNode myNode;
