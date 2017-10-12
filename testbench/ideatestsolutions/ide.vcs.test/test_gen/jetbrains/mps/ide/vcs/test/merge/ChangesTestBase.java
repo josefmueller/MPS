@@ -78,7 +78,9 @@ public abstract class ChangesTestBase {
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 
-    ourProject = ((MPSProject) ourEnvironment.openProject(new File(".")));
+    // Point to current directory with MPS project 
+    File mpsProject = new File("").getAbsoluteFile();
+    ourProject = ((MPSProject) ourEnvironment.openProject(mpsProject));
   }
 
   @AfterClass

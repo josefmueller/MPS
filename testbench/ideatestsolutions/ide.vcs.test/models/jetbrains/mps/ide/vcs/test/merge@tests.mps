@@ -696,6 +696,30 @@
           </node>
         </node>
         <node concept="3clFbH" id="6hwF4wZOyZ1" role="3cqZAp" />
+        <node concept="3SKdUt" id="_Q9OPrLBbV" role="3cqZAp">
+          <node concept="3SKdUq" id="_Q9OPrLBbX" role="3SKWNk">
+            <property role="3SKdUp" value="Point to current directory with MPS project" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="_Q9OPrLATO" role="3cqZAp">
+          <node concept="3cpWsn" id="_Q9OPrLATP" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="_Q9OPrLATL" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+            <node concept="2OqwBi" id="_Q9OPrLATQ" role="33vP2m">
+              <node concept="2ShNRf" id="_Q9OPrLATR" role="2Oq$k0">
+                <node concept="1pGfFk" id="_Q9OPrLATS" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="Xl_RD" id="_Q9OPrLATT" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="liA8E" id="_Q9OPrLATU" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.getAbsoluteFile():java.io.File" resolve="getAbsoluteFile" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6hwF4wZOcx6" role="3cqZAp">
           <node concept="37vLTI" id="6hwF4wZOcx8" role="3clFbG">
             <node concept="37vLTw" id="1oVBfwt35TC" role="37vLTJ">
@@ -712,13 +736,8 @@
                   </node>
                   <node concept="liA8E" id="1oVBfwt3ITi" role="2OqNvi">
                     <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-                    <node concept="2ShNRf" id="56cvcsnAsKb" role="37wK5m">
-                      <node concept="1pGfFk" id="56cvcsnADZ2" role="2ShVmc">
-                        <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                        <node concept="Xl_RD" id="56cvcsnAE2V" role="37wK5m">
-                          <property role="Xl_RC" value="." />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="_Q9OPrLATV" role="37wK5m">
+                      <ref role="3cqZAo" node="_Q9OPrLATP" resolve="mpsProject" />
                     </node>
                   </node>
                 </node>
