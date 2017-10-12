@@ -135,7 +135,6 @@
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageErrorItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFeatureFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.OutOfScopeReferenceReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.ReportItemBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -191,7 +190,6 @@
     <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageNotImportedReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.ReportItemBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

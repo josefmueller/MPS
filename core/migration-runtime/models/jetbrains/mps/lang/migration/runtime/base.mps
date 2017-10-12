@@ -43,6 +43,8 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
+    <import index="2gg1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors(MPS.Core/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
@@ -4030,6 +4032,83 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5nMUAz4Jf95" role="jymVt" />
+    <node concept="3clFb_" id="5nMUAz4Ku8y" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getIssueKind" />
+      <property role="DiZV1" value="true" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5nMUAz4Ku8z" role="1B3o_S" />
+      <node concept="3uibUv" id="5nMUAz4Ku8_" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="5nMUAz4Ku8B" role="3clF47">
+        <node concept="3clFbF" id="5nMUAz4KumG" role="3cqZAp">
+          <node concept="1rXfSq" id="5nMUAz4KumF" role="3clFbG">
+            <ref role="37wK5l" node="3n7MNzOOraF" resolve="getCategory" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5nMUAz4Ku8C" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5nMUAz4JfdN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getSeverity" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5nMUAz4JfdO" role="1B3o_S" />
+      <node concept="3uibUv" id="5nMUAz4JfdQ" role="3clF45">
+        <ref role="3uigEE" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+      </node>
+      <node concept="3clFbS" id="5nMUAz4JfdR" role="3clF47">
+        <node concept="3clFbF" id="5nMUAz4Jf$Y" role="3cqZAp">
+          <node concept="Rm8GO" id="5nMUAz4JfJb" role="3clFbG">
+            <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
+            <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5nMUAz4JfdS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5nMUAz4JfdV" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getIdFlavours" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5nMUAz4JfdW" role="1B3o_S" />
+      <node concept="3uibUv" id="5nMUAz4JqmG" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="5nMUAz4JqYx" role="11_B2D">
+          <ref role="3uigEE" to="d6hs:~FlavouredItem$ReportItemFlavour" resolve="FlavouredItem.ReportItemFlavour" />
+          <node concept="3qTvmN" id="5nMUAz4JqYy" role="11_B2D" />
+          <node concept="3qTvmN" id="5nMUAz4JqYz" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5nMUAz4Jfe3" role="3clF47">
+        <node concept="3clFbF" id="5nMUAz4Jpk0" role="3cqZAp">
+          <node concept="2YIFZM" id="5nMUAz4Jplp" role="3clFbG">
+            <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
+            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            <node concept="37vLTw" id="5nMUAz4Jpmm" role="37wK5m">
+              <ref role="3cqZAo" to="d6hs:~FlavouredItem.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
+            </node>
+            <node concept="3uibUv" id="5nMUAz4Jqd8" role="3PaCim">
+              <ref role="3uigEE" to="d6hs:~FlavouredItem$ReportItemFlavour" resolve="FlavouredItem.ReportItemFlavour" />
+              <node concept="3qTvmN" id="5nMUAz4Jqd9" role="11_B2D" />
+              <node concept="3qTvmN" id="5nMUAz4Jqda" role="11_B2D" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5nMUAz4KuiB" role="3cqZAp" />
+      </node>
+      <node concept="2AHcQZ" id="5nMUAz4Jfe4" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3n7MNzOOr6G" role="jymVt" />
     <node concept="3clFb_" id="3n7MNzOA6ls" role="jymVt">
       <property role="TrG5h" value="getReason" />
@@ -4049,6 +4128,12 @@
     <node concept="3Tm1VV" id="3n7MNzO_IjQ" role="1B3o_S" />
     <node concept="16euLQ" id="193i4_4XStO" role="16eVyc">
       <property role="TrG5h" value="T" />
+    </node>
+    <node concept="3uibUv" id="5nMUAz4IZsy" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~ReportItem" resolve="ReportItem" />
+    </node>
+    <node concept="3uibUv" id="5nMUAz4Ku1i" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
     </node>
   </node>
   <node concept="312cEu" id="6oJSkzEcNyO">

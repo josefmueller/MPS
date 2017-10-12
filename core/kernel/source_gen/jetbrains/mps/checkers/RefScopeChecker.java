@@ -24,7 +24,6 @@ import java.util.Set;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
 public class RefScopeChecker extends AbstractNodeChecker {

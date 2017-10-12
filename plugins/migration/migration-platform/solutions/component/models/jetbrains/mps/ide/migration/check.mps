@@ -233,6 +233,9 @@
     </node>
     <node concept="3uibUv" id="3n7MNzOAdTg" role="1zkMxy">
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+      <node concept="3uibUv" id="1Dc$d2EN$is" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="3n7MNzOBEGx">
@@ -330,6 +333,9 @@
     </node>
     <node concept="3uibUv" id="3n7MNzOBEHj" role="1zkMxy">
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+      <node concept="3uibUv" id="1Dc$d2ENzKd" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="3n7MNzODSA6">
@@ -838,6 +844,9 @@
     <node concept="3Tm1VV" id="193i4_4ZsTO" role="1B3o_S" />
     <node concept="3uibUv" id="193i4_4Zv5q" role="1zkMxy">
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+      <node concept="3uibUv" id="1Dc$d2EN$70" role="11_B2D">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="2htE_P_SIXm">

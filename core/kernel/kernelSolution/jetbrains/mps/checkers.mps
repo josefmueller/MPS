@@ -4372,9 +4372,9 @@
           <node concept="3clFbF" id="u6B29mFKVc" role="3cqZAp">
             <node concept="2ShNRf" id="u6B29mFBDN" role="3clFbG">
               <node concept="2i4dXS" id="u6B29mFDem" role="2ShVmc">
-                <node concept="10M0yZ" id="u6B29mFEp2" role="HW$Y0">
-                  <ref role="3cqZAo" to="d6hs:~ReportItemBase.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
-                  <ref role="1PxDUh" to="d6hs:~ReportItemBase" resolve="ReportItemBase" />
+                <node concept="10M0yZ" id="5nMUAz4M2IY" role="HW$Y0">
+                  <ref role="3cqZAo" to="d6hs:~FlavouredItem.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
+                  <ref role="1PxDUh" to="d6hs:~FlavouredItem" resolve="FlavouredItem" />
                 </node>
                 <node concept="37vLTw" id="u6B29mFKVm" role="HW$Y0">
                   <ref role="3cqZAo" to="d6hs:~NodeFlavouredItem.FLAVOUR_NODE" resolve="FLAVOUR_NODE" />
@@ -5709,9 +5709,9 @@
           <node concept="3clFbF" id="u6B29mGbo_" role="3cqZAp">
             <node concept="2ShNRf" id="u6B29mGboA" role="3clFbG">
               <node concept="2i4dXS" id="u6B29mGboB" role="2ShVmc">
-                <node concept="10M0yZ" id="u6B29mGboC" role="HW$Y0">
-                  <ref role="1PxDUh" to="d6hs:~ReportItemBase" resolve="ReportItemBase" />
-                  <ref role="3cqZAo" to="d6hs:~ReportItemBase.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
+                <node concept="10M0yZ" id="5nMUAz4M53o" role="HW$Y0">
+                  <ref role="3cqZAo" to="d6hs:~FlavouredItem.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
+                  <ref role="1PxDUh" to="d6hs:~FlavouredItem" resolve="FlavouredItem" />
                 </node>
                 <node concept="37vLTw" id="u6B29mGboO" role="HW$Y0">
                   <ref role="3cqZAo" to="d6hs:~NodeFlavouredItem.FLAVOUR_NODE" resolve="FLAVOUR_NODE" />

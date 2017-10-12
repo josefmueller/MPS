@@ -836,13 +836,12 @@
                   <node concept="3qTvmN" id="7dLX2A2OrYe" role="11_B2D" />
                   <node concept="3qTvmN" id="7dLX2A2OrYf" role="11_B2D" />
                 </node>
-                <node concept="10M0yZ" id="7dLX2A2OuD4" role="HW$Y0">
-                  <ref role="3cqZAo" to="d6hs:~ReportItemBase.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
-                  <ref role="1PxDUh" to="d6hs:~ReportItemBase" resolve="ReportItemBase" />
+                <node concept="10M0yZ" id="5nMUAz4Mrc4" role="HW$Y0">
+                  <ref role="3cqZAo" to="d6hs:~FlavouredItem.FLAVOUR_CLASS" resolve="FLAVOUR_CLASS" />
+                  <ref role="1PxDUh" to="d6hs:~FlavouredItem" resolve="FlavouredItem" />
                 </node>
-                <node concept="10M0yZ" id="7dLX2A2Owbo" role="HW$Y0">
-                  <ref role="3cqZAo" to="d6hs:~ReportItemBase.FLAVOUR_THIS" resolve="FLAVOUR_THIS" />
-                  <ref role="1PxDUh" to="d6hs:~ReportItemBase" resolve="ReportItemBase" />
+                <node concept="37vLTw" id="5nMUAz4Mu4i" role="HW$Y0">
+                  <ref role="3cqZAo" to="d6hs:~FlavouredItem.FLAVOUR_THIS" resolve="FLAVOUR_THIS" />
                 </node>
               </node>
             </node>
