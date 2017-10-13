@@ -19,12 +19,14 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     SAbstractConcept cncpt_a0c = concept;
     switch (index_2qnle6_a0c.index(cncpt_a0c)) {
       case 0:
-        return new NotEditableVaraileReference_Constraints();
+        return new Container_Constraints();
       case 1:
+        return new NotEditableVaraileReference_Constraints();
+      case 2:
         return new VariableDeclarationReference_Constraints();
       default:
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL)).seal();
+  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c1b61fd2cd1eefeL), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L), MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL)).seal();
 }

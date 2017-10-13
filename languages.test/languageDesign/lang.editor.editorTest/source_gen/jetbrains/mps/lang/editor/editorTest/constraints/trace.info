@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.lang.editor.editorTest.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,33,0" name="jetbrains.mps.lang.editor.editorTest.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)/4965160547087600886">
@@ -127,6 +127,19 @@
       <unit id="7428162988805013921" at="44,19,63,9" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1$1" />
       <unit id="7428162988805013921" at="36,151,65,5" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
       <unit id="7428162988805013921" at="28,0,70,0" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)/7789927720474629546">
+    <file name="Container_Constraints.java">
+      <node id="7789927720474629546" at="10,34,11,164" concept="9" />
+      <node id="7789927720474629546" at="14,55,15,174" concept="7" />
+      <node id="7789927720474629546" at="10,0,13,0" concept="1" trace="Container_Constraints#()V" />
+      <node id="7789927720474629546" at="14,0,17,0" concept="5" trace="getDefaultConcreteConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <scope id="7789927720474629546" at="10,34,11,164" />
+      <scope id="7789927720474629546" at="14,55,15,174" />
+      <scope id="7789927720474629546" at="10,0,13,0" />
+      <scope id="7789927720474629546" at="14,0,17,0" />
+      <unit id="7789927720474629546" at="9,0,18,0" name="jetbrains.mps.lang.editor.editorTest.constraints.Container_Constraints" />
     </file>
   </root>
 </debug-info>

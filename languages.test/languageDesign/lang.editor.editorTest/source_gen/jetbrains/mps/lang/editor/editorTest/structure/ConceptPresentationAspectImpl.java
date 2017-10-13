@@ -24,6 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CompletionChild;
   private ConceptPresentation props_CompletionParent;
   private ConceptPresentation props_Composition;
+  private ConceptPresentation props_Container;
   private ConceptPresentation props_DelTestAbstractChild;
   private ConceptPresentation props_DelTestChild1;
   private ConceptPresentation props_DelTestChildContainer;
@@ -65,9 +66,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MenuTraceTransformationChildSuper;
   private ConceptPresentation props_MenuTraceTransformationChildWithEnum;
   private ConceptPresentation props_NonEmptyProperty;
+  private ConceptPresentation props_NonSelectableContainer;
   private ConceptPresentation props_NotEditableVaraileReference;
   private ConceptPresentation props_PlusExpression;
   private ConceptPresentation props_ReferenceAnnotataion;
+  private ConceptPresentation props_Selectable;
+  private ConceptPresentation props_SelectableContainer;
   private ConceptPresentation props_SelectionChild;
   private ConceptPresentation props_SelectionContainer;
   private ConceptPresentation props_SideTranformWrapper;
@@ -211,6 +215,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Composition = cpb.create();
         }
         return props_Composition;
+      case LanguageConceptSwitch.Container:
+        if (props_Container == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Container = cpb.create();
+        }
+        return props_Container;
       case LanguageConceptSwitch.DelTestAbstractChild:
         if (props_DelTestAbstractChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -495,6 +505,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NonEmptyProperty = cpb.create();
         }
         return props_NonEmptyProperty;
+      case LanguageConceptSwitch.NonSelectableContainer:
+        if (props_NonSelectableContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("non selectable");
+          props_NonSelectableContainer = cpb.create();
+        }
+        return props_NonSelectableContainer;
       case LanguageConceptSwitch.NotEditableVaraileReference:
         if (props_NotEditableVaraileReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -516,6 +533,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ReferenceAnnotataion = cpb.create();
         }
         return props_ReferenceAnnotataion;
+      case LanguageConceptSwitch.Selectable:
+        if (props_Selectable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Selectable = cpb.create();
+        }
+        return props_Selectable;
+      case LanguageConceptSwitch.SelectableContainer:
+        if (props_SelectableContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("selectable");
+          props_SelectableContainer = cpb.create();
+        }
+        return props_SelectableContainer;
       case LanguageConceptSwitch.SelectionChild:
         if (props_SelectionChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -471,43 +471,12 @@ public class NodeEditorActions {
     }
   }
 
-  public static class SelectAll extends NavigationAction {
-    @Override
-    public boolean canExecute(EditorContext context) {
+  private static class SelectUpUtil {
+    public static boolean canExecute(EditorContext context) {
       return findTarget(context.getEditorComponent().getSelectionManager()) != null;
     }
 
-    @Override
-    public void execute(EditorContext context) {
-      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
-      Selection selection = selectionManager.getSelection();
-      EditorCell cell = selection.getSelectedCells().get(0);
-      while (cell.getParent() != null) {
-        cell = cell.getParent();
-        if (cell.isSelectable()) {
-          selectionManager.pushSelection(selectionManager.createSelection(cell));
-        }
-      }
-    }
-
-    private EditorCell findTarget(SelectionManager selectionManager) {
-      Selection selection = selectionManager.getSelection();
-      if (selection == null) {
-        return null;
-      }
-      EditorCell cell = selection.getSelectedCells().get(0);
-      return cell.getRootParent();
-    }
-  }
-
-  public static class SelectUp extends NavigationAction {
-    @Override
-    public boolean canExecute(EditorContext context) {
-      return findTarget(context.getEditorComponent().getSelectionManager()) != null;
-    }
-
-    @Override
-    public void execute(EditorContext context) {
+    public static void execute(EditorContext context) {
       SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
       EditorCell cell = findTarget(selectionManager);
       selectionManager.pushSelection(selectionManager.createSelection(cell));
@@ -516,7 +485,7 @@ public class NodeEditorActions {
       }
     }
 
-    private EditorCell findTarget(SelectionManager selectionManager) {
+    private static EditorCell findTarget(SelectionManager selectionManager) {
       Selection selection = selectionManager.getSelection();
       if (selection == null) {
         return null;
@@ -545,6 +514,32 @@ public class NodeEditorActions {
         parent = parent.getParent();
       }
       return null;
+    }
+  }
+
+  public static class SelectAll extends NavigationAction {
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return SelectUpUtil.canExecute(context);
+    }
+
+    @Override
+    public void execute(EditorContext context) {
+      while (canExecute(context)) {
+        SelectUpUtil.execute(context);
+      }
+    }
+  }
+
+  public static class SelectUp extends NavigationAction {
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return SelectUpUtil.canExecute(context);
+    }
+
+    @Override
+    public void execute(EditorContext context) {
+      SelectUpUtil.execute(context);
     }
   }
 

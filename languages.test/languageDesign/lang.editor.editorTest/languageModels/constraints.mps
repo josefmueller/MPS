@@ -68,6 +68,7 @@
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
+        <reference id="1213106917431" name="defaultConcreteConcept" index="1MND4H" />
         <child id="1213100494875" name="referent" index="1Mr941" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -107,6 +108,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -323,6 +327,11 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="1M2fIO" id="6KrovOGQXmE">
+    <property role="3GE5qa" value="selection" />
+    <ref role="1M2myG" to="68nn:6KrovOGOuVY" resolve="Container" />
+    <ref role="1MND4H" to="68nn:6KrovOGOuVX" resolve="SelectableContainer" />
   </node>
 </model>
 

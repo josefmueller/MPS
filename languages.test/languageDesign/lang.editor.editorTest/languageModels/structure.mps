@@ -1306,5 +1306,41 @@
       <ref role="AX2Wp" node="39A5F7XGj6M" resolve="MenuTraceEnum" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6KrovOGOuVW">
+    <property role="EcuMT" value="7789927720473980668" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="NonSelectableContainer" />
+    <property role="34LRSv" value="non selectable" />
+    <ref role="1TJDcQ" node="6KrovOGOuVY" resolve="Container" />
+  </node>
+  <node concept="1TIwiD" id="6KrovOGOuVX">
+    <property role="EcuMT" value="7789927720473980669" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="SelectableContainer" />
+    <property role="34LRSv" value="selectable" />
+    <ref role="1TJDcQ" node="6KrovOGOuVY" resolve="Container" />
+    <node concept="PrWs8" id="6KrovOGOuW0" role="PzmwI">
+      <ref role="PrY4T" node="6KrovOGOuVZ" resolve="Selectable" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6KrovOGOuVY">
+    <property role="EcuMT" value="7789927720473980670" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="Container" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6KrovOGOuW2" role="1TKVEi">
+      <property role="IQ2ns" value="7789927720473980674" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="containers" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6KrovOGOuVY" resolve="Container" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6KrovOGOuVZ">
+    <property role="EcuMT" value="7789927720473980671" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="Selectable" />
+  </node>
 </model>
 

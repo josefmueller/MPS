@@ -227,6 +227,73 @@
       <unit id="7023440913657702620" at="12,0,30,0" name="jetbrains.mps.lang.editor.selection.test.GoToReference_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7789927720473863959">
+    <file name="SelectAllAndSelectDown_Test.java">
+      <node id="7789927720473863959" at="13,62,14,112" concept="0" />
+      <node id="7789927720473863959" at="14,112,15,114" concept="0" />
+      <node id="7789927720473863959" at="21,51,22,72" concept="0" />
+      <node id="7789927720473879703" at="22,72,23,72" concept="0" />
+      <node id="7789927720473880862" at="23,72,24,73" concept="0" />
+      <node id="7789927720473880868" at="24,73,25,73" concept="0" />
+      <node id="7789927720473881055" at="25,73,26,73" concept="0" />
+      <node id="7789927720473863959" at="12,0,17,0" concept="1" trace="test_SelectAllAndSelectDown#()V" />
+      <node id="7789927720473863959" at="20,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7789927720473863959" at="13,62,15,114" />
+      <scope id="7789927720473863959" at="12,0,17,0" />
+      <scope id="7789927720473863959" at="21,51,26,73" />
+      <scope id="7789927720473863959" at="20,0,28,0" />
+      <unit id="7789927720473863959" at="18,0,29,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllAndSelectDown_Test$TestBody" />
+      <unit id="7789927720473863959" at="10,0,30,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllAndSelectDown_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7789927720474090862">
+    <file name="SelectUpThroughNonSelectable_Test.java">
+      <node id="7789927720474090862" at="13,68,14,112" concept="0" />
+      <node id="7789927720474090862" at="14,112,15,120" concept="0" />
+      <node id="7789927720474090862" at="21,51,22,72" concept="0" />
+      <node id="7789927720474557951" at="22,72,23,71" concept="0" />
+      <node id="7789927720474090862" at="12,0,17,0" concept="1" trace="test_SelectUpThroughNonSelectable#()V" />
+      <node id="7789927720474090862" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7789927720474090862" at="13,68,15,120" />
+      <scope id="7789927720474090862" at="21,51,23,71" />
+      <scope id="7789927720474090862" at="12,0,17,0" />
+      <scope id="7789927720474090862" at="20,0,25,0" />
+      <unit id="7789927720474090862" at="18,0,26,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpThroughNonSelectable_Test$TestBody" />
+      <unit id="7789927720474090862" at="10,0,27,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpThroughNonSelectable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7789927720474557984">
+    <file name="SelectUpNonSelectableRoot_Test.java">
+      <node id="7789927720474557984" at="13,65,14,112" concept="0" />
+      <node id="7789927720474557984" at="14,112,15,117" concept="0" />
+      <node id="7789927720474557984" at="21,51,22,72" concept="0" />
+      <node id="7789927720474558659" at="22,72,23,71" concept="0" />
+      <node id="7789927720474557984" at="12,0,17,0" concept="1" trace="test_SelectUpNonSelectableRoot#()V" />
+      <node id="7789927720474557984" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7789927720474557984" at="13,65,15,117" />
+      <scope id="7789927720474557984" at="21,51,23,71" />
+      <scope id="7789927720474557984" at="12,0,17,0" />
+      <scope id="7789927720474557984" at="20,0,25,0" />
+      <unit id="7789927720474557984" at="18,0,26,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpNonSelectableRoot_Test$TestBody" />
+      <unit id="7789927720474557984" at="10,0,27,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpNonSelectableRoot_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7789927720474561726">
+    <file name="SelectAllNonSelectableRoot_Test.java">
+      <node id="7789927720474561726" at="13,66,14,112" concept="0" />
+      <node id="7789927720474561726" at="14,112,15,118" concept="0" />
+      <node id="7789927720474561726" at="21,51,22,72" concept="0" />
+      <node id="7789927720474797620" at="22,72,23,72" concept="0" />
+      <node id="7789927720474561726" at="12,0,17,0" concept="1" trace="test_SelectAllNonSelectableRoot#()V" />
+      <node id="7789927720474561726" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7789927720474561726" at="13,66,15,118" />
+      <scope id="7789927720474561726" at="21,51,23,72" />
+      <scope id="7789927720474561726" at="12,0,17,0" />
+      <scope id="7789927720474561726" at="20,0,25,0" />
+      <unit id="7789927720474561726" at="18,0,26,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRoot_Test$TestBody" />
+      <unit id="7789927720474561726" at="10,0,27,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRoot_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/789834969242091856">
     <file name="Up_Test.java">
       <node id="789834969242091856" at="13,42,14,112" concept="0" />

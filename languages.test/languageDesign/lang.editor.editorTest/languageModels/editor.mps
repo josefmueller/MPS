@@ -4914,5 +4914,68 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="6KrovOGOuWt">
+    <property role="3GE5qa" value="selection" />
+    <ref role="1XX52x" to="68nn:6KrovOGOuVY" resolve="Container" />
+    <node concept="3EZMnI" id="6KrovOGQ9hp" role="2wV5jI">
+      <node concept="PMmxH" id="6KrovOGQ9Mt" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="OXEIz" id="6KrovOGQXmF" role="P5bDN">
+          <node concept="UkePV" id="6KrovOGQXwx" role="OY2wv">
+            <ref role="Ul1FP" to="68nn:6KrovOGOuVW" resolve="NonSelectableContainer" />
+          </node>
+          <node concept="UkePV" id="6KrovOGQXwz" role="OY2wv">
+            <ref role="Ul1FP" to="68nn:6KrovOGOuVX" resolve="SelectableContainer" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6KrovOGQ9h_" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="ljvvj" id="6KrovOGQ9hD" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="6KrovOGQ9hT" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="6KrovOGQ9wW" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:6KrovOGOuW2" resolve="containers" />
+        <node concept="pj6Ft" id="6KrovOGQ9xd" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="6KrovOGQ9xe" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="6KrovOGQ9xf" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="6KrovOGQ9wY" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="6KrovOGQ9hK" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="6KrovOGQ9v$" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="6KrovOGQ9hq" role="2iSdaV" />
+      <node concept="VPM3Z" id="6KrovOGQree" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+        <node concept="3nzxsE" id="6KrovOGQreg" role="3n$kyP">
+          <node concept="3clFbS" id="6KrovOGQreh" role="2VODD2">
+            <node concept="3clFbF" id="6KrovOGQrlq" role="3cqZAp">
+              <node concept="2OqwBi" id="6KrovOGQrx_" role="3clFbG">
+                <node concept="pncrf" id="6KrovOGQrlp" role="2Oq$k0" />
+                <node concept="1mIQ4w" id="6KrovOGQrW5" role="2OqNvi">
+                  <node concept="chp4Y" id="6KrovOGQscx" role="cj9EA">
+                    <ref role="cht4Q" to="68nn:6KrovOGOuVZ" resolve="Selectable" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
