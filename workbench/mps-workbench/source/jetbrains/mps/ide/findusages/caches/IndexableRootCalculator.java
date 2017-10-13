@@ -69,12 +69,17 @@ final class IndexableRootCalculator {
    * We are iterating over all modules, visible inside this project including libraries & core modules.
    * Thus we provide indices for libs.
    * Must be gone when some kind of BootRepository is introduced
+   *
+   * Internal: Recalculate cached collection of IndexableRoots if there is any invalid file it
+   * This allows to maintain contract of {@link com.intellij.util.indexing.IndexableSetContributor#getAdditionalProjectRootsToIndex(com.intellij.openapi.project.Project)}
+   * in our implementation {@link MPSIndexableSetContributor#getAdditionalProjectRootsToIndex(com.intellij.openapi.project.Project)}
+   *
    */
   @Hack
   @NotNull
   public Set<VirtualFile> getIndexableRoots() {
     Set<VirtualFile> indexableRoots = myRootsCache.get();
-    if (indexableRoots == null) {
+    if (indexableRoots == null || indexableRoots.stream().anyMatch(file -> !file.isValid())) {
       indexableRoots = calcRoots();
       myRootsCache.compareAndSet(null, indexableRoots);
     }
