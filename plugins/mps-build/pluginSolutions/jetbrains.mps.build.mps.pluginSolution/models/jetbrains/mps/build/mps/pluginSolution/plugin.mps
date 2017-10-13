@@ -579,6 +579,7 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
+      <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
         <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
       </concept>
@@ -12561,7 +12562,7 @@
                               </node>
                             </node>
                             <node concept="1zDrgl" id="2OJWaFGOVpJ" role="39821P">
-                              <ref role="1zDrgn" to="ffeo:6Iq8148fw_a" resolve="MPS" />
+                              <ref role="1zDrgn" to="ffeo:6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
                               <node concept="2c44tb" id="2OJWaFGOXry" role="lGtFl">
                                 <property role="2qtEX8" value="element" />
                                 <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/7753544965996647428/7753544965996647430" />
@@ -14619,10 +14620,8 @@
               </node>
             </node>
             <node concept="2oxUTD" id="3f6C5dcXlhu" role="2OqNvi">
-              <node concept="2YIFZM" id="3f6C5dcXliS" role="2oxUTC">
-                <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-                <ref role="37wK5l" to="w1kc:~CopyUtil.copy(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copy" />
-                <node concept="2OqwBi" id="3f6C5dcXlhR" role="37wK5m">
+              <node concept="2OqwBi" id="3zcnCKkKiab" role="2oxUTC">
+                <node concept="2OqwBi" id="3f6C5dcXlhR" role="2Oq$k0">
                   <node concept="37vLTw" id="2BHiRxglnmF" role="2Oq$k0">
                     <ref role="3cqZAo" node="3f6C5dcXlgp" resolve="projectRelative" />
                   </node>
@@ -14630,6 +14629,7 @@
                     <ref role="3Tt5mk" to="3ior:6mpuAlRaIJb" resolve="compositePart" />
                   </node>
                 </node>
+                <node concept="1$rogu" id="3zcnCKkKiu$" role="2OqNvi" />
               </node>
             </node>
           </node>
