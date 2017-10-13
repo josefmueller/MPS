@@ -7,10 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CommandHolder_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.COMMENT, new CommandHolder_Actions.CommandHolder_Actions_COMMENT(node));
+    editorCell.setAction(CellActionType.SELECT_ALL, new CommandHolder_Actions.CommandHolder_Actions_SELECT_ALL(node));
   }
   public static class CommandHolder_Actions_COMMENT extends AbstractCellAction {
     /*package*/ SNode myNode;
@@ -31,6 +33,27 @@ public class CommandHolder_Actions {
     }
     private static boolean eq_5bkq2_a0a0f1(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
+    }
+  }
+  public static class CommandHolder_Actions_SELECT_ALL extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public CommandHolder_Actions_SELECT_ALL(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      while (editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP) && !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command")))) {
+        editorContext.getSelectionManager().getSelection().executeAction(CellActionType.SELECT_UP);
+      }
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP);
     }
   }
 }
