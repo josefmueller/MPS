@@ -3249,13 +3249,13 @@
             </node>
             <node concept="3cpWs6" id="hn" role="3cqZAp">
               <node concept="1Wc70l" id="ht" role="3cqZAk">
-                <node concept="3clFbC" id="hu" role="3uHU7w">
-                  <node concept="359W_D" id="hw" role="3uHU7w">
+                <node concept="17R0WA" id="hu" role="3uHU7w">
+                  <node concept="37vLTw" id="hw" role="3uHU7B">
+                    <ref role="3cqZAo" node="he" resolve="link" />
+                  </node>
+                  <node concept="359W_D" id="hx" role="3uHU7w">
                     <ref role="359W_E" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
                     <ref role="359W_F" to="tpee:fz3vP1I" resolve="initializer" />
-                  </node>
-                  <node concept="37vLTw" id="hx" role="3uHU7B">
-                    <ref role="3cqZAo" node="he" resolve="link" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="hv" role="3uHU7B">

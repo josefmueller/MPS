@@ -2718,17 +2718,19 @@
       <node id="5536314641534779166" at="33,9,34,0" concept="10" />
       <node id="5536314641534779166" at="34,0,35,22" concept="8" />
       <node id="1227128029536558400" at="40,199,41,215" concept="7" />
-      <node id="1227128029536558406" at="41,215,42,495" concept="8" />
+      <node id="1227128029536558406" at="41,215,42,513" concept="8" />
       <node id="1227128029536558423" at="44,394,45,18" concept="8" />
       <node id="1227128029536558436" at="47,204,48,18" concept="8" />
       <node id="1227128029536558444" at="50,199,51,18" concept="8" />
       <node id="1227128029536558450" at="52,5,53,17" concept="8" />
       <node id="5536314641534779166" at="55,0,56,0" concept="11" trace="canBeChildBreakingPoint" />
+      <node id="5108287150803742027" at="56,65,57,46" concept="8" />
       <node id="5536314641534779166" at="20,0,23,0" concept="2" trace="ArrayLiteral_Constraints#()V" />
       <node id="5536314641534779166" at="30,0,33,9" concept="5" />
       <node id="1227128029536558421" at="43,5,46,5" concept="5" />
       <node id="1227128029536558434" at="46,5,49,5" concept="5" />
       <node id="1227128029536558442" at="49,5,52,5" concept="5" />
+      <node id="5108287150803742027" at="56,0,59,0" concept="12" trace="eq_hrc4au_a0a1a0a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="1227128029536558398" at="39,128,43,5" concept="5" />
       <node id="5536314641534779166" at="27,0,37,0" concept="6" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="5536314641534779166" at="25,103,37,6" concept="8" />
@@ -2739,10 +2741,15 @@
       <scope id="1227128029536558422" at="44,394,45,18" />
       <scope id="1227128029536558435" at="47,204,48,18" />
       <scope id="1227128029536558443" at="50,199,51,18" />
-      <scope id="1227128029536558399" at="40,199,42,495">
+      <scope id="5108287150803742027" at="56,65,57,46" />
+      <scope id="1227128029536558399" at="40,199,42,513">
         <var name="variableDeclaration" id="1227128029536558401" />
       </scope>
       <scope id="5536314641534779166" at="20,0,23,0" />
+      <scope id="5108287150803742027" at="56,0,59,0">
+        <var name="a" id="5108287150803742027" />
+        <var name="b" id="5108287150803742027" />
+      </scope>
       <scope id="5536314641534779166" at="28,127,35,22">
         <var name="result" id="5536314641534779166" />
       </scope>
@@ -2760,7 +2767,7 @@
         <var name="parentNode" id="5536314641534779166" />
       </scope>
       <unit id="5536314641534779166" at="26,15,37,5" name="jetbrains.mps.baseLanguage.constraints.ArrayLiteral_Constraints$1" />
-      <unit id="5536314641534779166" at="19,0,57,0" name="jetbrains.mps.baseLanguage.constraints.ArrayLiteral_Constraints" />
+      <unit id="5536314641534779166" at="19,0,60,0" name="jetbrains.mps.baseLanguage.constraints.ArrayLiteral_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)/5862977038373005231">
