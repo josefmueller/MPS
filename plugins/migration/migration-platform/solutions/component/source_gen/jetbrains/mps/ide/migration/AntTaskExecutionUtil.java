@@ -9,15 +9,26 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import java.util.Properties;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import jetbrains.mps.migration.global.MigrationOptions;
 
 public class AntTaskExecutionUtil {
   private static final Logger LOG = LogManager.getLogger(AntTaskExecutionUtil.class);
+  private static final String KEY_PREFIX = "mps.migration.";
+  private static final String ERR_CODE_KEY = KEY_PREFIX + "errcode";
+  private static final String RECOVERABLE_KEY = KEY_PREFIX + "recoverable";
+  private static final String MESSAGE_KEY = KEY_PREFIX + "message";
+  private static final String PROBLEMS_KEY = KEY_PREFIX + "problems";
+  private static final String OUT_FILE_NAME = "migration_result.properties";
+
   public static boolean migrate(final Project project) throws Exception {
     MigrationRegistry m = ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class);
     if (!(m.isMigrationRequired())) {
@@ -27,17 +38,28 @@ public class AntTaskExecutionUtil {
     MigrationSession session = new AntTaskExecutionUtil.MyMigrationSession(project);
     ProgressMonitorAdapter progress = new ProgressMonitorAdapter(new EmptyProgressIndicator());
 
+    final Properties properties = new Properties();
+    properties.setProperty(ERR_CODE_KEY, "0");
+
     MigrationTask task = new MigrationTask(session, progress) {
       @Override
       protected void error(MigrationError error) {
+        StringBuilder problems = new StringBuilder();
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error(error.getMessage());
         }
         for (Problem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
+          String problemMsg = p.getMessage() + " (reason object: " + p.getReason() + ")";
+          problems.append(problemMsg + "; ");
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("- " + p.getMessage() + "; reason object: " + p.getReason());
+            LOG.error("- " + problemMsg);
           }
         }
+
+        properties.setProperty(ERR_CODE_KEY, "" + error.getErrorCode());
+        properties.setProperty(RECOVERABLE_KEY, "" + error.canIgnore());
+        properties.setProperty(MESSAGE_KEY, "" + error.getMessage().replaceAll("\n", ""));
+        properties.setProperty(PROBLEMS_KEY, "" + problems.toString().replaceAll("\n", ""));
       }
     };
     task.run();
@@ -47,6 +69,17 @@ public class AntTaskExecutionUtil {
         project.getRepository().saveAll();
       }
     });
+
+    try {
+      File file = new File(OUT_FILE_NAME);
+      FileOutputStream fileOut = new FileOutputStream(file);
+      properties.store(fileOut, "");
+      fileOut.close();
+    } catch (IOException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Exception on saving result file " + OUT_FILE_NAME, e);
+      }
+    }
 
     return true;
   }
