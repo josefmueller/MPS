@@ -2106,18 +2106,28 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="2BGPXkExbah" role="3clF47">
+        <node concept="3SKdUt" id="4447aFimJRr" role="3cqZAp">
+          <node concept="3SKdUq" id="4447aFimJRt" role="3SKWNk">
+            <property role="3SKdUp" value="Convert project path to absolute" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="2BGPXkExbjQ" role="3cqZAp">
           <node concept="3cpWsn" id="2BGPXkExbjR" role="3cpWs9">
             <property role="TrG5h" value="projectFile" />
             <node concept="3uibUv" id="2BGPXkExbjS" role="1tU5fm">
               <ref role="3uigEE" to="guwi:~File" resolve="File" />
             </node>
-            <node concept="2ShNRf" id="2BGPXkExbjT" role="33vP2m">
-              <node concept="1pGfFk" id="2BGPXkExbjU" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="37vLTw" id="2BGPXkExbjV" role="37wK5m">
-                  <ref role="3cqZAo" node="5A5jZrz76OD" resolve="myProjectPath" />
+            <node concept="2OqwBi" id="4447aFimGcw" role="33vP2m">
+              <node concept="2ShNRf" id="2BGPXkExbjT" role="2Oq$k0">
+                <node concept="1pGfFk" id="2BGPXkExbjU" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="37vLTw" id="2BGPXkExbjV" role="37wK5m">
+                    <ref role="3cqZAo" node="5A5jZrz76OD" resolve="myProjectPath" />
+                  </node>
                 </node>
+              </node>
+              <node concept="liA8E" id="4447aFimJwc" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.getAbsoluteFile():java.io.File" resolve="getAbsoluteFile" />
               </node>
             </node>
           </node>

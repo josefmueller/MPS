@@ -35,7 +35,8 @@ public class FromProjectPathProjectStrategy extends ProjectStrategyBase {
 
   @NotNull
   private Project openProjectIfNotAlreadyOpened(Environment env) {
-    File projectFile = new File(myProjectPath);
+    // Convert project path to absolute 
+    File projectFile = new File(myProjectPath).getAbsoluteFile();
     Project openedProject = ((EnvironmentBase) env).getOpenedProject(projectFile);
     if (openedProject == null) {
       openedProject = env.openProject(projectFile);
