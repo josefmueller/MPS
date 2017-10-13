@@ -93,15 +93,12 @@ public class MigrationWorker extends MpsWorker {
           try {
             Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(TASK_EXEC_CLASS);
             Method method = euClass.getMethod("migrate", Project.class);
-            Object result = method.invoke(null, p);
-            if (!(((Boolean) result))) {
-              info("Nothing to migrate");
-            }
+            method.invoke(null, p);
             com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
             assert projects.length == 1 : "more than one project opened: " + projects.length;
             ProjectUtil.closeAndDispose(projects[0]);
           } catch (Exception e) {
-            error(e.getMessage());
+            throw new RuntimeException("Exception during migration", e);
           }
         }
       }, ModalityState.defaultModalityState());

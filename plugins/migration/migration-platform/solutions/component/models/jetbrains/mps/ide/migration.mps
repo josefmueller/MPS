@@ -347,6 +347,7 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
@@ -4267,6 +4268,13 @@
           <property role="Xl_RC" value="errcode" />
         </node>
       </node>
+      <node concept="z59LJ" id="7zEA_IIJBGN" role="lGtFl">
+        <node concept="TZ5HA" id="7zEA_IIJBGO" role="TZ5H$">
+          <node concept="1dT_AC" id="7zEA_IIJBGP" role="1dT_Ay">
+            <property role="1dT_AB" value="Coupled with string constant in MigrationTask.ERR_CODE_KEY" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="Wx3nA" id="7zEA_IIBoFd" role="jymVt">
       <property role="3TUv4t" value="true" />
@@ -4318,6 +4326,13 @@
       <node concept="Xl_RD" id="7zEA_IIC5d8" role="33vP2m">
         <property role="Xl_RC" value="migration_result.properties" />
       </node>
+      <node concept="z59LJ" id="7zEA_IIJmLh" role="lGtFl">
+        <node concept="TZ5HA" id="7zEA_IIJmLi" role="TZ5H$">
+          <node concept="1dT_AC" id="7zEA_IIJmLj" role="1dT_Ay">
+            <property role="1dT_AB" value="Coupled with string constant in MigrationTask.OUT_FILE_NAME" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="7zEA_IIBdPt" role="jymVt" />
     <node concept="2YIFZL" id="75eqTYkpFBD" role="jymVt">
@@ -4351,11 +4366,7 @@
         </node>
         <node concept="3clFbJ" id="60oBoEenix" role="3cqZAp">
           <node concept="3clFbS" id="60oBoEeniz" role="3clFbx">
-            <node concept="3cpWs6" id="75eqTYkpJCI" role="3cqZAp">
-              <node concept="3clFbT" id="75eqTYkpJRz" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
+            <node concept="3cpWs6" id="75eqTYkpJCI" role="3cqZAp" />
           </node>
           <node concept="3fqX7Q" id="60oBoEeo7i" role="3clFbw">
             <node concept="2OqwBi" id="60oBoEeo7k" role="3fr31v">
@@ -4434,7 +4445,7 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7zEA_IIBeq$" role="3cqZAp" />
+        <node concept="3clFbH" id="7zEA_IIFfuE" role="3cqZAp" />
         <node concept="3cpWs8" id="2wbhCYFUjFY" role="3cqZAp">
           <node concept="3cpWsn" id="2wbhCYFUjFZ" role="3cpWs9">
             <property role="TrG5h" value="task" />
@@ -4862,12 +4873,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7zEA_IIB20I" role="3cqZAp" />
-        <node concept="3cpWs6" id="75eqTYkpL2t" role="3cqZAp">
-          <node concept="3clFbT" id="75eqTYkpLv7" role="3cqZAk">
-            <property role="3clFbU" value="true" />
-          </node>
-        </node>
       </node>
       <node concept="37vLTG" id="KL8Aqll4oB" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -4876,7 +4881,7 @@
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="10P_77" id="75eqTYkpJcI" role="3clF45" />
+      <node concept="3cqZAl" id="7zEA_IIIZ6x" role="3clF45" />
       <node concept="3uibUv" id="75eqTYko1Ec" role="Sfmx6">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>

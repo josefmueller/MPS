@@ -24,16 +24,22 @@ import jetbrains.mps.migration.global.MigrationOptions;
 public class AntTaskExecutionUtil {
   private static final Logger LOG = LogManager.getLogger(AntTaskExecutionUtil.class);
   private static final String KEY_PREFIX = "mps.migration.";
+  /**
+   * Coupled with string constant in MigrationTask.ERR_CODE_KEY
+   */
   private static final String ERR_CODE_KEY = KEY_PREFIX + "errcode";
   private static final String RECOVERABLE_KEY = KEY_PREFIX + "recoverable";
   private static final String MESSAGE_KEY = KEY_PREFIX + "message";
   private static final String PROBLEMS_KEY = KEY_PREFIX + "problems";
+  /**
+   * Coupled with string constant in MigrationTask.OUT_FILE_NAME
+   */
   private static final String OUT_FILE_NAME = "migration_result.properties";
 
-  public static boolean migrate(final Project project) throws Exception {
+  public static void migrate(final Project project) throws Exception {
     MigrationRegistry m = ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class);
     if (!(m.isMigrationRequired())) {
-      return false;
+      return;
     }
 
     MigrationSession session = new AntTaskExecutionUtil.MyMigrationSession(project);
@@ -86,8 +92,6 @@ public class AntTaskExecutionUtil {
         LOG.error("Exception on saving result file " + OUT_FILE_NAME, e);
       }
     }
-
-    return true;
   }
 
   private static class MyMigrationSession extends MigrationSession.MigrationSessionBase {

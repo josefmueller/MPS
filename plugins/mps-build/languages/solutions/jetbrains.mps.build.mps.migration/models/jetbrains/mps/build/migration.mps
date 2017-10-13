@@ -86,16 +86,15 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
+        <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
@@ -155,12 +154,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
         <child id="1160998896846" name="condition" index="1gVkn0" />
         <child id="1160998916832" name="message" index="1gVpfI" />
@@ -279,7 +272,7 @@
       </node>
       <node concept="3Tm6S6" id="2hWPXztVkDs" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="1oo0A63Gy7a" role="jymVt" />
+    <node concept="2tJIrI" id="7zEA_IIIoaq" role="jymVt" />
     <node concept="3uibUv" id="KL8Aqll4mH" role="1zkMxy">
       <ref role="3uigEE" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
     </node>
@@ -684,46 +677,16 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3cpWs8" id="75eqTYkqlcb" role="3cqZAp">
-                            <node concept="3cpWsn" id="75eqTYkqlcc" role="3cpWs9">
-                              <property role="TrG5h" value="result" />
-                              <node concept="3uibUv" id="75eqTYkqlbX" role="1tU5fm">
-                                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                          <node concept="3clFbF" id="7zEA_IIIXMu" role="3cqZAp">
+                            <node concept="2OqwBi" id="75eqTYkqlcd" role="3clFbG">
+                              <node concept="37vLTw" id="75eqTYkqlce" role="2Oq$k0">
+                                <ref role="3cqZAo" node="75eqTYkqkc$" resolve="method" />
                               </node>
-                              <node concept="2OqwBi" id="75eqTYkqlcd" role="33vP2m">
-                                <node concept="37vLTw" id="75eqTYkqlce" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="75eqTYkqkc$" resolve="method" />
-                                </node>
-                                <node concept="liA8E" id="75eqTYkqlcf" role="2OqNvi">
-                                  <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                                  <node concept="10Nm6u" id="1oo0A63IOPy" role="37wK5m" />
-                                  <node concept="37vLTw" id="75eqTYkqlcg" role="37wK5m">
-                                    <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbJ" id="75eqTYkpMt5" role="3cqZAp">
-                            <node concept="3clFbS" id="75eqTYkpMt7" role="3clFbx">
-                              <node concept="3clFbF" id="75eqTYkpMCh" role="3cqZAp">
-                                <node concept="1rXfSq" id="75eqTYkpMCf" role="3clFbG">
-                                  <ref role="37wK5l" to="jo3e:KL8Aqlj5zc" resolve="info" />
-                                  <node concept="Xl_RD" id="60oBoEewFZ" role="37wK5m">
-                                    <property role="Xl_RC" value="Nothing to migrate" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3fqX7Q" id="75eqTYkpMvt" role="3clFbw">
-                              <node concept="1eOMI4" id="75eqTYkqlBu" role="3fr31v">
-                                <node concept="10QFUN" id="75eqTYkqlBv" role="1eOMHV">
-                                  <node concept="37vLTw" id="75eqTYkqlBt" role="10QFUP">
-                                    <ref role="3cqZAo" node="75eqTYkqlcc" resolve="result" />
-                                  </node>
-                                  <node concept="3uibUv" id="75eqTYkqlDl" role="10QFUM">
-                                    <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
-                                  </node>
+                              <node concept="liA8E" id="75eqTYkqlcf" role="2OqNvi">
+                                <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                                <node concept="10Nm6u" id="1oo0A63IOPy" role="37wK5m" />
+                                <node concept="37vLTw" id="75eqTYkqlcg" role="37wK5m">
+                                  <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
                                 </node>
                               </node>
                             </node>
@@ -788,15 +751,15 @@
                         </node>
                         <node concept="TDmWw" id="75eqTYkoETS" role="TEbGg">
                           <node concept="3clFbS" id="75eqTYkoETT" role="TDEfX">
-                            <node concept="3clFbF" id="75eqTYkoEZz" role="3cqZAp">
-                              <node concept="1rXfSq" id="75eqTYkoEZy" role="3clFbG">
-                                <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
-                                <node concept="2OqwBi" id="75eqTYkoF3w" role="37wK5m">
-                                  <node concept="37vLTw" id="75eqTYkoF2D" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="75eqTYkoETU" resolve="e" />
+                            <node concept="YS8fn" id="KL8Aqlj5r9" role="3cqZAp">
+                              <node concept="2ShNRf" id="KL8Aqlj5ra" role="YScLw">
+                                <node concept="1pGfFk" id="6ABb3DqLlTf" role="2ShVmc">
+                                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String,java.lang.Throwable)" resolve="RuntimeException" />
+                                  <node concept="Xl_RD" id="7zEA_IIFO3V" role="37wK5m">
+                                    <property role="Xl_RC" value="Exception during migration" />
                                   </node>
-                                  <node concept="liA8E" id="75eqTYkoF6A" role="2OqNvi">
-                                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                  <node concept="37vLTw" id="7zEA_IIFWhx" role="37wK5m">
+                                    <ref role="3cqZAo" node="75eqTYkoETU" resolve="e" />
                                   </node>
                                 </node>
                               </node>
