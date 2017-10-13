@@ -30,7 +30,7 @@ public class MigrationsMissingError extends MigrationError {
     return "Some migrations are missing.";
   }
   public String getMessage() {
-    return "Some migration scripts are missing.<br><br>" + "Missing scripts will be shown in ModelChecker after the migration wizard is closed.<br><br>" + "Migration can't continue.";
+    return "Some migration scripts are missing.\n\n" + "Missing scripts will be shown in ModelChecker after the migration wizard is closed.\n\n" + "Migration can't continue.";
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied, SModule>() {

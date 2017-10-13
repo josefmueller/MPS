@@ -31,11 +31,11 @@ public class PostCheckError extends MigrationError {
     return "Problems are detected after executing migrations.";
   }
   public String getMessage() {
-    String res = "Migration Assistant was unable to migrate some nodes in this project.<br><br>";
+    String res = "Migration Assistant was unable to migrate some nodes in this project.\n\n";
     if (myHaveBadCode) {
       res += "Problems will be shown in Model Checker tool when the project is loaded.";
     } else {
-      res += "Some code can't be migrated automatically and should be changed manually.<br>" + "Places to be changed manually will be shown in Model Checker tool after the project is loaded.<br>";
+      res += "Some code can't be migrated automatically and should be changed manually.\n" + "Places to be changed manually will be shown in Model Checker tool after the project is loaded.\n";
       res += "You can re-run search for not migrated code at any time by choosing MainMenu->Migrations->Run Pre-Update Check";
     }
     return res;

@@ -1022,17 +1022,28 @@
                                                   <node concept="Xl_RD" id="301Q3qjkbpa" role="3uHU7B">
                                                     <property role="Xl_RC" value="&lt;html&gt;" />
                                                   </node>
-                                                  <node concept="2OqwBi" id="301Q3qjkbpb" role="3uHU7w">
-                                                    <node concept="2OqwBi" id="301Q3qjkbpc" role="2Oq$k0">
-                                                      <node concept="37vLTw" id="301Q3qjkbpd" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
+                                                  <node concept="2OqwBi" id="7zEA_IICUSA" role="3uHU7w">
+                                                    <node concept="2OqwBi" id="301Q3qjkbpb" role="2Oq$k0">
+                                                      <node concept="2OqwBi" id="301Q3qjkbpc" role="2Oq$k0">
+                                                        <node concept="37vLTw" id="301Q3qjkbpd" role="2Oq$k0">
+                                                          <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
+                                                        </node>
+                                                        <node concept="liA8E" id="301Q3qjkbpe" role="2OqNvi">
+                                                          <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
+                                                        </node>
                                                       </node>
-                                                      <node concept="liA8E" id="301Q3qjkbpe" role="2OqNvi">
-                                                        <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
+                                                      <node concept="liA8E" id="301Q3qjkbpf" role="2OqNvi">
+                                                        <ref role="37wK5l" node="2htE_P_MrC7" resolve="getMessage" />
                                                       </node>
                                                     </node>
-                                                    <node concept="liA8E" id="301Q3qjkbpf" role="2OqNvi">
-                                                      <ref role="37wK5l" node="2htE_P_MrC7" resolve="getMessage" />
+                                                    <node concept="liA8E" id="7zEA_IICWko" role="2OqNvi">
+                                                      <ref role="37wK5l" to="wyt6:~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolve="replaceAll" />
+                                                      <node concept="Xl_RD" id="7zEA_IICX7A" role="37wK5m">
+                                                        <property role="Xl_RC" value="\n" />
+                                                      </node>
+                                                      <node concept="Xl_RD" id="7zEA_IICZkC" role="37wK5m">
+                                                        <property role="Xl_RC" value="&lt;br&gt;" />
+                                                      </node>
                                                     </node>
                                                   </node>
                                                 </node>
@@ -4968,10 +4979,10 @@
           <node concept="3cpWs3" id="ANqTy7mxfp" role="3clFbG">
             <node concept="3cpWs3" id="ANqTy7mxfq" role="3uHU7B">
               <node concept="Xl_RD" id="ANqTy7mxft" role="3uHU7B">
-                <property role="Xl_RC" value="The project depends on external modules that were not fully migrated.&lt;br&gt;&lt;br&gt;" />
+                <property role="Xl_RC" value="The project depends on external modules that were not fully migrated.\n" />
               </node>
               <node concept="Xl_RD" id="ANqTy7mxfu" role="3uHU7w">
-                <property role="Xl_RC" value="If the error is ignored, further migrations may be applied incorrectly.&lt;br&gt;" />
+                <property role="Xl_RC" value="If the error is ignored, further migrations may be applied incorrectly.\n" />
               </node>
             </node>
             <node concept="Xl_RD" id="3nmMoI1WmR8" role="3uHU7w">
@@ -5141,10 +5152,10 @@
           <node concept="3cpWs3" id="7u9mkj2dzmi" role="3clFbG">
             <node concept="3cpWs3" id="7u9mkj2dz6R" role="3uHU7B">
               <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7B">
-                <property role="Xl_RC" value="Some migration scripts are missing.&lt;br&gt;&lt;br&gt;" />
+                <property role="Xl_RC" value="Some migration scripts are missing.\n\n" />
               </node>
               <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
-                <property role="Xl_RC" value="Missing scripts will be shown in ModelChecker after the migration wizard is closed.&lt;br&gt;&lt;br&gt;" />
+                <property role="Xl_RC" value="Missing scripts will be shown in ModelChecker after the migration wizard is closed.\n\n" />
               </node>
             </node>
             <node concept="Xl_RD" id="7u9mkj2dzmq" role="3uHU7w">
@@ -5634,10 +5645,10 @@
         <node concept="3cpWs6" id="3nmMoI1WJFC" role="3cqZAp">
           <node concept="3cpWs3" id="3nmMoI1WF5e" role="3cqZAk">
             <node concept="Xl_RD" id="3nmMoI1WF5f" role="3uHU7B">
-              <property role="Xl_RC" value="Migration Assistant found some problems in the project.&lt;br&gt;&lt;br&gt;" />
+              <property role="Xl_RC" value="Migration Assistant found some problems in the project.\n\n" />
             </node>
             <node concept="Xl_RD" id="3nmMoI1WF5g" role="3uHU7w">
-              <property role="Xl_RC" value="It is recommended to fix problems before starting the migration.&lt;br&gt;" />
+              <property role="Xl_RC" value="It is recommended to fix problems before starting the migration.\n" />
             </node>
           </node>
         </node>
@@ -6522,7 +6533,7 @@
             <property role="TrG5h" value="res" />
             <node concept="17QB3L" id="5$2ALroS74u" role="1tU5fm" />
             <node concept="Xl_RD" id="5$2ALroS74x" role="33vP2m">
-              <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.&lt;br&gt;&lt;br&gt;" />
+              <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.\n\n" />
             </node>
           </node>
         </node>
@@ -6548,10 +6559,10 @@
                 <node concept="d57v9" id="5$2ALroShdO" role="3clFbG">
                   <node concept="3cpWs3" id="5$2ALroSiIL" role="37vLTx">
                     <node concept="Xl_RD" id="5$2ALroSiX9" role="3uHU7w">
-                      <property role="Xl_RC" value="Places to be changed manually will be shown in Model Checker tool after the project is loaded.&lt;br&gt;" />
+                      <property role="Xl_RC" value="Places to be changed manually will be shown in Model Checker tool after the project is loaded.\n" />
                     </node>
                     <node concept="Xl_RD" id="5$2ALroShM3" role="3uHU7B">
-                      <property role="Xl_RC" value="Some code can't be migrated automatically and should be changed manually.&lt;br&gt;" />
+                      <property role="Xl_RC" value="Some code can't be migrated automatically and should be changed manually.\n" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5$2ALroSgUN" role="37vLTJ">

@@ -24,6 +24,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -40,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

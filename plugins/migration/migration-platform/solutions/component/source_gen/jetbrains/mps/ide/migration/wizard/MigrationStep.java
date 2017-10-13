@@ -104,7 +104,7 @@ public class MigrationStep extends BaseStep {
 
             ApplicationManager.getApplication().invokeLater(new Runnable() {
               public void run() {
-                myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "<br><br>Continue migration?" + "</html>");
+                myErrorLabel.setText("<html>" + mySession.getError().getMessage().replaceAll("\n", "<br>") + "<br><br>Continue migration?" + "</html>");
                 myErrorPanel.setVisible(true);
               }
             }, ModalityState.stateForComponent(myErrorPanel));

@@ -12,9 +12,9 @@ import java.util.Map;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -73,15 +73,16 @@ public class MigrationWorker extends MpsWorker {
       info("Loaded project " + p);
       myEnvironment.flushAllEvents();
 
-      final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
-        public MPSCompilationResult compute() {
-          return new ModuleMaker().make(IterableUtil.asCollection(p.getProjectModulesWithGenerators()), new EmptyProgressMonitor(), myJavaCompilerOptions);
+      final Wrappers._T<MPSCompilationResult> mpsCompilationResult = new Wrappers._T<MPSCompilationResult>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          mpsCompilationResult.value = new ModuleMaker().make(IterableUtil.asCollection(p.getProjectModulesWithGenerators()), new EmptyProgressMonitor(), myJavaCompilerOptions);
         }
       });
-      if (mpsCompilationResult.isReloadingNeeded()) {
+      if (mpsCompilationResult.value.isReloadingNeeded()) {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
+            ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.value.getChangedModules());
           }
         });
       }

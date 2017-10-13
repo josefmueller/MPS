@@ -11,6 +11,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationChecker" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckerImpl" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutor" />

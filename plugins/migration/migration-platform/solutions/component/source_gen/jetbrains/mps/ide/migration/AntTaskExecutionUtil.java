@@ -15,6 +15,7 @@ import jetbrains.mps.ide.migration.wizard.MigrationError;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -48,11 +49,16 @@ public class AntTaskExecutionUtil {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error(error.getMessage());
         }
-        for (Problem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
-          String problemMsg = p.getMessage() + " (reason object: " + p.getReason() + ")";
-          problems.append(problemMsg + "; ");
+        for (final Problem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
+          final Wrappers._T<String> problemMsg = new Wrappers._T<String>();
+          project.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              problemMsg.value = p.getMessage() + " (reason object: " + p.getReason() + ")";
+            }
+          });
+          problems.append(problemMsg.value + "; ");
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("- " + problemMsg);
+            LOG.error("- " + problemMsg.value);
           }
         }
 

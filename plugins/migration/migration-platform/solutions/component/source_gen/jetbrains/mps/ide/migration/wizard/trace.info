@@ -64,10 +64,10 @@
       <node id="3201314612678605874" at="25,32,26,44" concept="4" />
       <node id="2610768507843040342" at="26,44,27,24" concept="4" />
       <node id="5985196147111750148" at="30,35,31,63" concept="11" />
-      <node id="6413859341759181087" at="33,30,34,97" concept="10" />
+      <node id="6413859341759181087" at="33,30,34,93" concept="10" />
       <node id="6413859341759187646" at="35,24,36,88" concept="4" />
-      <node id="6413859341759221428" at="37,12,38,196" concept="4" />
-      <node id="6413859341759575144" at="38,196,39,126" concept="4" />
+      <node id="6413859341759221428" at="37,12,38,192" concept="4" />
+      <node id="6413859341759575144" at="38,192,39,126" concept="4" />
       <node id="6413859341759243591" at="40,5,41,15" concept="11" />
       <node id="2885477569137232325" at="43,77,44,78" concept="10" />
       <node id="2885477569137240296" at="46,41,47,49" concept="4" />
@@ -78,7 +78,7 @@
       <node id="5985196147111748435" at="29,0,33,0" concept="9" trace="getShortMessage#()Ljava/lang/String;" />
       <node id="2885477569137190327" at="46,0,50,0" concept="9" trace="process#(Ljetbrains/mps/lang/migration/runtime/base/Problem;)Z" />
       <node id="4930617085365252337" at="53,0,57,0" concept="9" trace="canIgnore#()Z" />
-      <node id="6413859341759183817" at="34,97,40,5" concept="8" />
+      <node id="6413859341759183817" at="34,93,40,5" concept="8" />
       <node id="2885477569137170401" at="44,78,50,7" concept="4" />
       <node id="2620437876316153987" at="22,0,29,0" concept="3" trace="PostCheckError#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;ZLjetbrains/mps/ide/migration/MigrationChecker;)V" />
       <node id="2620437876316148123" at="33,0,43,0" concept="9" trace="getMessage#()Ljava/lang/String;" />
@@ -154,7 +154,7 @@
       <node id="6897806148586237732" at="24,61,25,14" concept="16" />
       <node id="4404440421171638754" at="25,14,26,25" concept="4" />
       <node id="5985196147111775121" at="29,35,30,42" concept="11" />
-      <node id="7935677192557016959" at="32,30,33,183" concept="11" />
+      <node id="7935677192557016959" at="32,30,33,175" concept="11" />
       <node id="8054806207102080971" at="37,47,38,30" concept="11" />
       <node id="7201972523306098874" at="42,59,43,39" concept="11" />
       <node id="4815078419494489549" at="49,49,50,112" concept="11" />
@@ -183,7 +183,7 @@
       <node id="8054806207102041710" at="45,35,72,8" concept="11" />
       <node id="2620437876316505142" at="35,0,74,0" concept="9" trace="getProblems#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljava/lang/Iterable;" />
       <scope id="5985196147111770864" at="29,35,30,42" />
-      <scope id="2620437876316505140" at="32,30,33,183" />
+      <scope id="2620437876316505140" at="32,30,33,175" />
       <scope id="8054806207102080970" at="37,47,38,30" />
       <scope id="7201972523306098873" at="42,59,43,39" />
       <scope id="8054806207102116623" at="49,49,50,112" />
@@ -321,7 +321,7 @@
       <node id="4930617085365322172" at="20,14,21,28" concept="4" />
       <node id="8224028748485561364" at="21,28,22,18" concept="4" />
       <node id="5985196147111756187" at="25,35,26,41" concept="11" />
-      <node id="3879509730044082920" at="28,30,29,150" concept="11" />
+      <node id="3879509730044082920" at="28,30,29,144" concept="11" />
       <node id="2885477569137259350" at="31,77,32,78" concept="10" />
       <node id="4512299119321474011" at="32,78,33,97" concept="12" />
       <node id="2885477569137259370" at="35,41,36,49" concept="4" />
@@ -336,7 +336,7 @@
       <node id="2885477569137259357" at="33,97,39,7" concept="4" />
       <node id="4930617085363954580" at="31,0,42,0" concept="9" trace="getProblems#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljava/lang/Iterable;" />
       <scope id="5985196147111754643" at="25,35,26,41" />
-      <scope id="4930617085363954545" at="28,30,29,150" />
+      <scope id="4930617085363954545" at="28,30,29,144" />
       <scope id="4930617085365357644" at="43,30,44,23" />
       <scope id="2885477569137259369" at="35,41,37,56" />
       <scope id="4930617085363954534" at="19,54,22,18" />
@@ -931,8 +931,8 @@
       <node id="3459283717708625443" at="100,33,101,21" concept="11" />
       <node id="3459283717708625448" at="102,13,103,99" concept="0" />
       <node id="3459283717708625455" at="103,99,104,0" concept="13" />
-      <node id="3459283717708625475" at="106,33,107,127" concept="4" />
-      <node id="7752918455363818910" at="107,127,108,46" concept="4" />
+      <node id="3459283717708625475" at="106,33,107,152" concept="4" />
+      <node id="7752918455363818910" at="107,152,108,46" concept="4" />
       <node id="3459283717708781949" at="110,62,111,0" concept="13" />
       <node id="3459283717708625500" at="112,54,113,30" concept="4" />
       <node id="3459283717708625510" at="114,13,115,0" concept="13" />
@@ -1104,7 +1104,7 @@
       <node id="6897806148586244757" at="16,61,17,14" concept="16" />
       <node id="699020670022587339" at="17,14,18,25" concept="4" />
       <node id="5985196147111760713" at="21,35,22,54" concept="11" />
-      <node id="699020670022587352" at="24,30,25,233" concept="11" />
+      <node id="699020670022587352" at="24,30,25,225" concept="11" />
       <node id="699020670022587364" at="27,30,28,16" concept="11" />
       <node id="699020670023361392" at="32,86,33,75" concept="11" />
       <node id="699020670022587348" at="24,0,27,0" concept="9" trace="getMessage#()Ljava/lang/String;" />
@@ -1115,7 +1115,7 @@
       <node id="699020670023238467" at="30,77,35,7" concept="11" />
       <node id="699020670022587366" at="30,0,37,0" concept="9" trace="getProblems#(Lcom/intellij/openapi/progress/ProgressIndicator;)Ljava/lang/Iterable;" />
       <scope id="5985196147111759722" at="21,35,22,54" />
-      <scope id="699020670022587351" at="24,30,25,233" />
+      <scope id="699020670022587351" at="24,30,25,225" />
       <scope id="699020670022587363" at="27,30,28,16" />
       <scope id="699020670023249245" at="32,86,33,75" />
       <scope id="699020670022587338" at="16,61,18,25" />
