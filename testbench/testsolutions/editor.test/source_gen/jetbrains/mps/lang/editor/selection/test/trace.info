@@ -328,6 +328,22 @@
       <unit id="789834969242110843" at="10,0,29,0" name="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/8476046843709171800">
+    <file name="CustomSelectAll_Test.java">
+      <node id="8476046843709171800" at="13,55,14,112" concept="0" />
+      <node id="8476046843709171800" at="14,112,15,107" concept="0" />
+      <node id="8476046843709171800" at="21,51,22,72" concept="0" />
+      <node id="1830938190578889005" at="22,72,23,72" concept="0" />
+      <node id="8476046843709171800" at="12,0,17,0" concept="1" trace="test_CustomSelectAll#()V" />
+      <node id="8476046843709171800" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8476046843709171800" at="13,55,15,107" />
+      <scope id="8476046843709171800" at="21,51,23,72" />
+      <scope id="8476046843709171800" at="12,0,17,0" />
+      <scope id="8476046843709171800" at="20,0,25,0" />
+      <unit id="8476046843709171800" at="18,0,26,0" name="jetbrains.mps.lang.editor.selection.test.CustomSelectAll_Test$TestBody" />
+      <unit id="8476046843709171800" at="10,0,27,0" name="jetbrains.mps.lang.editor.selection.test.CustomSelectAll_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/9080919888312354538">
     <file name="HomeWithLineSelection_fromFirstCell_Test.java">
       <node id="9080919888312354538" at="13,75,14,112" concept="0" />

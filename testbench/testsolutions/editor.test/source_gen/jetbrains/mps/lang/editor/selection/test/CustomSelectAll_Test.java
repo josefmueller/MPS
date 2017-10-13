@@ -8,19 +8,19 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class SelectUpThroughNonSelectable_Test extends BaseTransformationTest {
+public class CustomSelectAll_Test extends BaseTransformationTest {
   @Test
-  public void test_SelectUpThroughNonSelectable() throws Throwable {
+  public void test_CustomSelectAll() throws Throwable {
     initTest("${mps_home}", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
-    runTest("jetbrains.mps.lang.editor.selection.test.SelectUpThroughNonSelectable_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.selection.test.CustomSelectAll_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("1830938190578903811", "1830938190578903856");
-      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
+      initEditorComponent("1830938190578875294", "1830938190578881954");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectAll_Action");
     }
   }
 }

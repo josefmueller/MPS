@@ -1342,5 +1342,15 @@
     <property role="3GE5qa" value="selection" />
     <property role="TrG5h" value="Selectable" />
   </node>
+  <node concept="1TIwiD" id="7mwXV92Nrpr">
+    <property role="EcuMT" value="8476046843708290651" />
+    <property role="3GE5qa" value="selection" />
+    <property role="TrG5h" value="SelectableCustomizedContainer" />
+    <property role="34LRSv" value="selectable customized" />
+    <ref role="1TJDcQ" node="6KrovOGOuVY" resolve="Container" />
+    <node concept="PrWs8" id="7mwXV92SNwS" role="PzmwI">
+      <ref role="PrY4T" node="6KrovOGOuVZ" resolve="Selectable" />
+    </node>
+  </node>
 </model>
 

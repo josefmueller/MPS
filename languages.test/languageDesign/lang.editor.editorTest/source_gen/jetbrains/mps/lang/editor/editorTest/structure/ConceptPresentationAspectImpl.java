@@ -72,6 +72,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ReferenceAnnotataion;
   private ConceptPresentation props_Selectable;
   private ConceptPresentation props_SelectableContainer;
+  private ConceptPresentation props_SelectableCustomizedContainer;
   private ConceptPresentation props_SelectionChild;
   private ConceptPresentation props_SelectionContainer;
   private ConceptPresentation props_SideTranformWrapper;
@@ -546,6 +547,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SelectableContainer = cpb.create();
         }
         return props_SelectableContainer;
+      case LanguageConceptSwitch.SelectableCustomizedContainer:
+        if (props_SelectableCustomizedContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("selectable customized");
+          props_SelectableCustomizedContainer = cpb.create();
+        }
+        return props_SelectableCustomizedContainer;
       case LanguageConceptSwitch.SelectionChild:
         if (props_SelectionChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

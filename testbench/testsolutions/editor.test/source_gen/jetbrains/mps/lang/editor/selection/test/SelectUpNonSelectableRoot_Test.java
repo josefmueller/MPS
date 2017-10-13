@@ -19,7 +19,7 @@ public class SelectUpNonSelectableRoot_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("7789927720474558105", "7789927720474558135");
+      initEditorComponent("1830938190578899967", "1830938190578900004");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
     }
   }

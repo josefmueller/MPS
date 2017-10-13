@@ -119,6 +119,7 @@
       <concept id="7023088407745954385" name="jetbrains.mps.lang.editor.editorTest.structure.SelectionChild" flags="ng" index="8ESvz">
         <property id="7023088407745954386" name="flag" index="8ESvw" />
       </concept>
+      <concept id="8476046843708290651" name="jetbrains.mps.lang.editor.editorTest.structure.SelectableCustomizedContainer" flags="ng" index="Rrk7D" />
       <concept id="7789927720473980669" name="jetbrains.mps.lang.editor.editorTest.structure.SelectableContainer" flags="ng" index="10MCW0" />
       <concept id="7789927720473980668" name="jetbrains.mps.lang.editor.editorTest.structure.NonSelectableContainer" flags="ng" index="10MCW1" />
       <concept id="7789927720473980670" name="jetbrains.mps.lang.editor.editorTest.structure.Container" flags="ng" index="10MCW3">
@@ -1372,25 +1373,6 @@
   <node concept="LiM7Y" id="6KrovOGOTPI">
     <property role="3GE5qa" value="SelectUp" />
     <property role="TrG5h" value="SelectUpThroughNonSelectable" />
-    <node concept="10MCW0" id="6KrovOGPQLO" role="LiRBU">
-      <node concept="10MCW1" id="6KrovOGQqvo" role="10MCVZ">
-        <node concept="10MCW0" id="6KrovOGQrec" role="10MCVZ">
-          <node concept="LIFWc" id="6KrovOGQFJh" role="lGtFl">
-            <property role="LIFWa" value="0" />
-            <property role="LIFWd" value="Collection_xjnu6t_a" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="10MCW0" id="6KrovOGQFJv" role="LiZbd">
-      <node concept="10MCW1" id="6KrovOGQFJw" role="10MCVZ">
-        <node concept="10MCW0" id="6KrovOGQFJx" role="10MCVZ" />
-      </node>
-      <node concept="LIFWc" id="6KrovOGQFJR" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="LIFWd" value="Collection_xjnu6t_a" />
-      </node>
-    </node>
     <node concept="3clFbS" id="6KrovOGQFS1" role="LjaKd">
       <node concept="2HxZob" id="6KrovOGQFRZ" role="3cqZAp">
         <node concept="1iFQzN" id="6KrovOGQFSd" role="3iKnsn">
@@ -1398,26 +1380,29 @@
         </node>
       </node>
     </node>
+    <node concept="10MCW0" id="1_CN9lB9IG3" role="LiRBU">
+      <node concept="10MCW1" id="1_CN9lB9IGp" role="10MCVZ">
+        <node concept="10MCW0" id="1_CN9lB9IGr" role="10MCVZ">
+          <node concept="LIFWc" id="1_CN9lB9IGI" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="Collection_9uirrd_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="10MCW0" id="1_CN9lB9IGK" role="LiZbd">
+      <node concept="10MCW1" id="1_CN9lB9IGL" role="10MCVZ">
+        <node concept="10MCW0" id="1_CN9lB9IGM" role="10MCVZ" />
+      </node>
+      <node concept="LIFWc" id="1_CN9lB9IH8" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="LIFWd" value="Collection_9uirrd_a" />
+      </node>
+    </node>
   </node>
   <node concept="LiM7Y" id="6KrovOGQFSw">
     <property role="3GE5qa" value="SelectUp" />
     <property role="TrG5h" value="SelectUpNonSelectableRoot" />
-    <node concept="10MCW1" id="6KrovOGQFUp" role="LiRBU">
-      <node concept="10MCW0" id="6KrovOGQFUF" role="10MCVZ">
-        <node concept="LIFWc" id="6KrovOGQFUP" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="LIFWd" value="Collection_xjnu6t_a" />
-        </node>
-      </node>
-    </node>
-    <node concept="10MCW1" id="6KrovOGQFUR" role="LiZbd">
-      <node concept="10MCW0" id="6KrovOGQFUS" role="10MCVZ">
-        <node concept="LIFWc" id="6KrovOGQFUT" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="LIFWd" value="Collection_xjnu6t_a" />
-        </node>
-      </node>
-    </node>
     <node concept="3clFbS" id="6KrovOGQG35" role="LjaKd">
       <node concept="2HxZob" id="6KrovOGQG33" role="3cqZAp">
         <node concept="1iFQzN" id="6KrovOGQG3h" role="3iKnsn">
@@ -1425,41 +1410,103 @@
         </node>
       </node>
     </node>
+    <node concept="10MCW1" id="1_CN9lB9HJZ" role="LiRBU">
+      <node concept="10MCW0" id="1_CN9lB9HKe" role="10MCVZ">
+        <node concept="LIFWc" id="1_CN9lB9HKy" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_9uirrd_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="10MCW1" id="1_CN9lB9HK$" role="LiZbd">
+      <node concept="10MCW0" id="1_CN9lB9HK_" role="10MCVZ">
+        <node concept="LIFWc" id="1_CN9lB9HKA" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_9uirrd_a" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="LiM7Y" id="6KrovOGQGMY">
     <property role="3GE5qa" value="SelectAll" />
     <property role="TrG5h" value="SelectAllNonSelectableRoot" />
-    <node concept="10MCW1" id="6KrovOGRAdO" role="LiRBU">
-      <node concept="10MCW0" id="6KrovOGRAel" role="10MCVZ">
-        <node concept="10MCW0" id="6KrovOGRAfD" role="10MCVZ">
-          <node concept="10MCW0" id="6KrovOGRAen" role="10MCVZ">
-            <node concept="LIFWc" id="6KrovOGRAfv" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="0" />
-              <property role="p6zMs" value="0" />
-              <property role="LIFWd" value="empty_containers" />
+    <node concept="3clFbS" id="6KrovOGRAoQ" role="LjaKd">
+      <node concept="2HxZob" id="6KrovOGRAoO" role="3cqZAp">
+        <node concept="1iFQzN" id="6KrovOGRAp2" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7Nj6eEDgxTU" resolve="SelectAll" />
+        </node>
+      </node>
+    </node>
+    <node concept="10MCW1" id="1_CN9lB9GNk" role="LiRBU">
+      <node concept="10MCW0" id="1_CN9lB9GND" role="10MCVZ">
+        <node concept="10MCW0" id="1_CN9lB9GNV" role="10MCVZ">
+          <node concept="10MCW0" id="1_CN9lB9GOa" role="10MCVZ">
+            <node concept="LIFWc" id="1_CN9lB9GOu" role="lGtFl">
+              <property role="LIFWa" value="0" />
+              <property role="LIFWd" value="Collection_9uirrd_a" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="10MCW0" id="6KrovOGRAg2" role="10MCVZ" />
+      <node concept="10MCW0" id="1_CN9lB9GOw" role="10MCVZ" />
     </node>
-    <node concept="10MCW1" id="6KrovOGRAgg" role="LiZbd">
-      <node concept="10MCW0" id="6KrovOGRAgh" role="10MCVZ">
-        <node concept="10MCW0" id="6KrovOGRAgi" role="10MCVZ">
-          <node concept="10MCW0" id="6KrovOGRAgj" role="10MCVZ" />
+    <node concept="10MCW1" id="1_CN9lB9GOJ" role="LiZbd">
+      <node concept="10MCW0" id="1_CN9lB9GOK" role="10MCVZ">
+        <node concept="10MCW0" id="1_CN9lB9GOL" role="10MCVZ">
+          <node concept="10MCW0" id="1_CN9lB9GOM" role="10MCVZ" />
         </node>
-        <node concept="LIFWc" id="6KrovOGRAgG" role="lGtFl">
+        <node concept="LIFWc" id="1_CN9lB9GPb" role="lGtFl">
           <property role="LIFWa" value="0" />
-          <property role="LIFWd" value="Collection_xjnu6t_a" />
+          <property role="LIFWd" value="Collection_9uirrd_a" />
         </node>
       </node>
-      <node concept="10MCW0" id="6KrovOGRAgl" role="10MCVZ" />
+      <node concept="10MCW0" id="1_CN9lB9GOO" role="10MCVZ" />
     </node>
-    <node concept="3clFbS" id="6KrovOGRAoQ" role="LjaKd">
-      <node concept="2HxZob" id="6KrovOGRAoO" role="3cqZAp">
-        <node concept="1iFQzN" id="6KrovOGRAp2" role="3iKnsn">
+  </node>
+  <node concept="LiM7Y" id="7mwXV92QMxo">
+    <property role="3GE5qa" value="SelectAll" />
+    <property role="TrG5h" value="CustomSelectAll" />
+    <node concept="10MCW0" id="1_CN9lB9BIu" role="LiRBU">
+      <node concept="10MCW1" id="1_CN9lB9BIT" role="10MCVZ">
+        <node concept="Rrk7D" id="1_CN9lB9BJi" role="10MCVZ">
+          <node concept="10MCW0" id="1_CN9lB9BJD" role="10MCVZ">
+            <node concept="10MCW0" id="1_CN9lB9BJW" role="10MCVZ">
+              <node concept="10MCW0" id="1_CN9lB9BKb" role="10MCVZ">
+                <node concept="LIFWc" id="1_CN9lB9Dmg" role="lGtFl">
+                  <property role="LIFWa" value="5" />
+                  <property role="OXtK3" value="true" />
+                  <property role="p6zMq" value="5" />
+                  <property role="p6zMs" value="5" />
+                  <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="10MCW0" id="1_CN9lB9BKx" role="10MCVZ" />
+          <node concept="10MCW0" id="1_CN9lB9BKL" role="10MCVZ" />
+        </node>
+      </node>
+    </node>
+    <node concept="10MCW0" id="1_CN9lB9Dmy" role="LiZbd">
+      <node concept="10MCW1" id="1_CN9lB9Dmz" role="10MCVZ">
+        <node concept="Rrk7D" id="1_CN9lB9Dm$" role="10MCVZ">
+          <node concept="10MCW0" id="1_CN9lB9Dm_" role="10MCVZ">
+            <node concept="10MCW0" id="1_CN9lB9DmA" role="10MCVZ">
+              <node concept="10MCW0" id="1_CN9lB9DmB" role="10MCVZ" />
+            </node>
+          </node>
+          <node concept="10MCW0" id="1_CN9lB9DmD" role="10MCVZ" />
+          <node concept="10MCW0" id="1_CN9lB9DmE" role="10MCVZ" />
+          <node concept="LIFWc" id="1_CN9lB9Dn4" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="Collection_9uirrd_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="1_CN9lB9F4J" role="LjaKd">
+      <node concept="2HxZob" id="1_CN9lB9F4H" role="3cqZAp">
+        <node concept="1iFQzN" id="1_CN9lB9F4V" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:7Nj6eEDgxTU" resolve="SelectAll" />
         </node>
       </node>

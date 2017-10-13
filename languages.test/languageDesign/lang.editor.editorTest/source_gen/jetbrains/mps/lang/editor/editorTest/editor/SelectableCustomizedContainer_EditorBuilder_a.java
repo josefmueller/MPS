@@ -9,11 +9,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
-/*package*/ class Container_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class SelectableCustomizedContainer_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public Container_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public SelectableCustomizedContainer_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -25,16 +25,17 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_xjnu6t_a();
+    return createComponent_jw1r35_a();
   }
 
-  private EditorCell createComponent_xjnu6t_a() {
+  private EditorCell createComponent_jw1r35_a() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editorTest.editor.Container_EditorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
       bigCell.setBig(true);
       bigCell.setCellContext(getCellFactory().getCellContext());
     }
+    CustomSelectAll.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
 }
