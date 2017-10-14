@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.ui.content.Content;
 import org.apache.log4j.Level;
@@ -100,24 +99,19 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
-        {
-          Iterator<RunContentDescriptor> descriptor_it = ListSequence.fromList(descriptors).iterator();
-          RunContentDescriptor descriptor_var;
-          while (descriptor_it.hasNext()) {
-            descriptor_var = descriptor_it.next();
-            Content attachedContent = descriptor_var.getAttachedContent();
-            if (attachedContent == null) {
-              if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn("Attached content of descriptor " + descriptor_var.getDisplayName() + " is null.");
-              }
-            } else
-            if (attachedContent.getManager() == null) {
-              if (LOG.isEnabledFor(Level.WARN)) {
-                LOG.warn("Manager of attached content of descriptor " + descriptor_var.getDisplayName() + " is null.");
-              }
-            } else {
-              attachedContent.getManager().removeAllContents(true);
+        for (RunContentDescriptor descriptor : ListSequence.fromList(descriptors)) {
+          Content attachedContent = descriptor.getAttachedContent();
+          if (attachedContent == null) {
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("Attached content of descriptor " + descriptor.getDisplayName() + " is null.");
             }
+          } else
+          if (attachedContent.getManager() == null) {
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("Manager of attached content of descriptor " + descriptor.getDisplayName() + " is null.");
+            }
+          } else {
+            attachedContent.getManager().removeAllContents(true);
           }
         }
       }
@@ -143,14 +137,9 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
       }
     }).toListSequence();
     final List<RunContentDescriptor> descriptors = ListSequence.fromList(new ArrayList<RunContentDescriptor>());
-    {
-      Iterator<RunContentDescriptor> descriptor_it = ListSequence.fromList(contentManager.getAllDescriptors()).iterator();
-      RunContentDescriptor descriptor_var;
-      while (descriptor_it.hasNext()) {
-        descriptor_var = descriptor_it.next();
-        if (ListSequence.fromList(reloadableConfigurationNames).contains(descriptor_var.getDisplayName())) {
-          ListSequence.fromList(descriptors).addElement(descriptor_var);
-        }
+    for (RunContentDescriptor descriptor : ListSequence.fromList(contentManager.getAllDescriptors())) {
+      if (ListSequence.fromList(reloadableConfigurationNames).contains(descriptor.getDisplayName())) {
+        ListSequence.fromList(descriptors).addElement(descriptor);
       }
     }
     return descriptors;
