@@ -3430,7 +3430,7 @@
     <node concept="3Tm1VV" id="52KjdOfMzLJ" role="1B3o_S" />
     <node concept="3clFb_" id="52KjdOfM$Zf" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getRootComponent" />
+      <property role="TrG5h" value="getComponent" />
       <node concept="3uibUv" id="52KjdOfM$Zj" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>
@@ -3439,7 +3439,7 @@
     </node>
     <node concept="3clFb_" id="3EDrOip5qMn" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getFocusComponent" />
+      <property role="TrG5h" value="getPreferredFocusedComponent" />
       <node concept="3uibUv" id="3EDrOip5qMo" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>
@@ -3545,7 +3545,7 @@
               <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
             </node>
             <node concept="liA8E" id="2gquA6aPhfR" role="2OqNvi">
-              <ref role="37wK5l" node="3EDrOip5qMn" resolve="getFocusComponent" />
+              <ref role="37wK5l" node="3EDrOip5qMn" resolve="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -3815,7 +3815,7 @@
                     <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
                   </node>
                   <node concept="liA8E" id="5zhJtEaVXGS" role="2OqNvi">
-                    <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getRootComponent" />
+                    <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getComponent" />
                   </node>
                 </node>
               </node>
@@ -3879,7 +3879,7 @@
                 <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
               </node>
               <node concept="liA8E" id="31X3EnY2LpW" role="2OqNvi">
-                <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getRootComponent" />
+                <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getComponent" />
               </node>
             </node>
           </node>
@@ -4339,7 +4339,7 @@
                     <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
                   </node>
                   <node concept="liA8E" id="5zhJtEaVXJX" role="2OqNvi">
-                    <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getRootComponent" />
+                    <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getComponent" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="5zhJtEaVXJY" role="37wK5m">
@@ -4483,7 +4483,7 @@
                               <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
                             </node>
                             <node concept="liA8E" id="1KUoCipvE_z" role="2OqNvi">
-                              <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getRootComponent" />
+                              <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getComponent" />
                             </node>
                           </node>
                         </node>
@@ -4610,7 +4610,7 @@
                 <ref role="3cqZAo" node="5zhJtEaVUPa" resolve="myChooser" />
               </node>
               <node concept="liA8E" id="31X3EnY2LUm" role="2OqNvi">
-                <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getRootComponent" />
+                <ref role="37wK5l" node="52KjdOfM$Zf" resolve="getComponent" />
               </node>
             </node>
           </node>

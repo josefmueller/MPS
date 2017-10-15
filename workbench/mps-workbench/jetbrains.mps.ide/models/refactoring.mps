@@ -3500,7 +3500,7 @@
     </node>
     <node concept="3clFb_" id="4hHBpoi1Ls8" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getRootComponent" />
+      <property role="TrG5h" value="getComponent" />
       <node concept="3uibUv" id="4hHBpoi1Ls9" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>
@@ -3518,7 +3518,7 @@
     </node>
     <node concept="3clFb_" id="3EDrOip5His" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getFocusComponent" />
+      <property role="TrG5h" value="getPreferredFocusedComponent" />
       <node concept="3uibUv" id="3EDrOip5Hit" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>

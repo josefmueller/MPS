@@ -57,11 +57,11 @@ public class ModelOrNodeChooser implements ModelElementTargetChooser {
     return result;
   }
   @Override
-  public JComponent getRootComponent() {
+  public JComponent getComponent() {
     return myComponent;
   }
   @Override
-  public JComponent getFocusComponent() {
+  public JComponent getPreferredFocusedComponent() {
     return myTree;
   }
 }

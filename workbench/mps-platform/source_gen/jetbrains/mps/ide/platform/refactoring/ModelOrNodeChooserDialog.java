@@ -20,7 +20,7 @@ public abstract class ModelOrNodeChooserDialog extends RefactoringDialog {
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
-    return myChooser.getFocusComponent();
+    return myChooser.getPreferredFocusedComponent();
   }
   protected static class Filter {
     private String errorMessage;

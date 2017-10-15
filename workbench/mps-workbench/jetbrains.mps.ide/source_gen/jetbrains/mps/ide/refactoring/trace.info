@@ -700,12 +700,12 @@
       <node id="3548249452606133145" at="52,45,53,90" concept="3" />
       <node id="3548249452606133162" at="54,53,55,90" concept="3" />
       <node id="3548249452606133174" at="56,5,57,18" concept="9" />
-      <node id="4930770434913670928" at="60,40,61,23" concept="9" />
-      <node id="4227032065680825875" at="64,41,65,18" concept="9" />
+      <node id="4930770434913670928" at="60,36,61,23" concept="9" />
+      <node id="4227032065680825875" at="64,52,65,18" concept="9" />
       <node id="2441348466211462189" at="38,57,41,5" concept="6" />
       <node id="2441348466211483998" at="43,0,46,0" concept="7" trace="run#()V" />
-      <node id="4930770434913670920" at="59,0,63,0" concept="7" trace="getRootComponent#()Ljavax/swing/JComponent;" />
-      <node id="4227032065680790684" at="63,0,67,0" concept="7" trace="getFocusComponent#()Ljavax/swing/JComponent;" />
+      <node id="4930770434913670920" at="59,0,63,0" concept="7" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="4227032065680790684" at="63,0,67,0" concept="7" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
       <node id="2441348466211445173" at="28,0,33,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="2441348466211453018" at="33,0,38,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2441348466211465105" at="41,5,46,7" concept="3" />
@@ -717,8 +717,8 @@
       <scope id="2441348466211483999" at="43,25,44,36" />
       <scope id="3548249452606133144" at="52,45,53,90" />
       <scope id="3548249452606133161" at="54,53,55,90" />
-      <scope id="4930770434913670923" at="60,40,61,23" />
-      <scope id="4227032065680790688" at="64,41,65,18" />
+      <scope id="4930770434913670923" at="60,36,61,23" />
+      <scope id="4227032065680790688" at="64,52,65,18" />
       <scope id="2441348466211445177" at="28,41,31,27">
         <var name="helper" id="2441348466211451646" />
         <var name="treeNode" id="2441348466211451812" />

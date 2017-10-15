@@ -5,7 +5,7 @@ package jetbrains.mps.ide.platform.refactoring;
 import javax.swing.JComponent;
 
 public interface ModelElementTargetChooser {
-  JComponent getRootComponent();
-  JComponent getFocusComponent();
+  JComponent getComponent();
+  JComponent getPreferredFocusedComponent();
   NodeLocation getSelectedObject();
 }

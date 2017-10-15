@@ -28,14 +28,14 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   protected void doRefactoringAction() {
     final NodeLocation selectedObject = myChooser.getSelectedObject();
     if (!(selectedObject instanceof NodeLocation.NodeLocationChild)) {
-      JOptionPane.showMessageDialog(myChooser.getRootComponent(), "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(myChooser.getComponent(), "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
     final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
     ProjectHelper.toMPSProject(getProject()).getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SNode node = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(ProjectHelper.toMPSProject(getProject()).getRepository());
-        if (myNodeFilter == null || myNodeFilter.checkForObject(node, myNodeToMove, myNodeToMove.getModel(), myChooser.getRootComponent())) {
+        if (myNodeFilter == null || myNodeFilter.checkForObject(node, myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
           mySelectedObject = node;
           doRefactoring.value = true;
         }
@@ -56,7 +56,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
         myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myNodeToMove);
       }
     });
-    JComponent centerPanel = myChooser.getRootComponent();
+    JComponent centerPanel = myChooser.getComponent();
     centerPanel.setPreferredSize(new Dimension(400, 900));
     return centerPanel;
   }
