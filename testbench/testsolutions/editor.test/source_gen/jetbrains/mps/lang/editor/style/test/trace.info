@@ -6,6 +6,42 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/1715298588355861160">
+    <file name="FontFamilyStyleClassItemWarningTest_Test.java">
+      <node id="1715298588355861160" at="17,75,18,115" concept="0" />
+      <node id="1715298588355861160" at="18,115,19,152" concept="0" />
+      <node id="1715298588355861160" at="25,77,26,242" concept="2" />
+      <node id="1715298588355861160" at="26,242,27,123" concept="0" />
+      <node id="1715298588355861160" at="25,0,29,0" concept="1" trace="test_NodeWarningCheck1715298588355862323#()V" />
+      <node id="1715298588355861160" at="16,0,21,0" concept="1" trace="test_NodeWarningCheck1715298588355862323#()V" />
+      <scope id="1715298588355861160" at="17,75,19,152" />
+      <scope id="1715298588355861160" at="25,77,27,123">
+        <var name="operation" id="1715298588355861160" />
+      </scope>
+      <scope id="1715298588355861160" at="25,0,29,0" />
+      <scope id="1715298588355861160" at="16,0,21,0" />
+      <unit id="1715298588355861160" at="22,0,31,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test$TestBody" />
+      <unit id="1715298588355861160" at="14,0,32,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemWarningTest_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/1715298588355941884">
+    <file name="FontFamilyLiteralWarningTest_Test.java">
+      <node id="1715298588355941884" at="17,75,18,115" concept="0" />
+      <node id="1715298588355941884" at="18,115,19,145" concept="0" />
+      <node id="1715298588355941884" at="25,77,26,242" concept="2" />
+      <node id="1715298588355941884" at="26,242,27,123" concept="0" />
+      <node id="1715298588355941884" at="25,0,29,0" concept="1" trace="test_NodeWarningCheck1715298588355941914#()V" />
+      <node id="1715298588355941884" at="16,0,21,0" concept="1" trace="test_NodeWarningCheck1715298588355941914#()V" />
+      <scope id="1715298588355941884" at="17,75,19,145" />
+      <scope id="1715298588355941884" at="25,77,27,123">
+        <var name="operation" id="1715298588355941884" />
+      </scope>
+      <scope id="1715298588355941884" at="25,0,29,0" />
+      <scope id="1715298588355941884" at="16,0,21,0" />
+      <unit id="1715298588355941884" at="22,0,31,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test$TestBody" />
+      <unit id="1715298588355941884" at="14,0,32,0" name="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralWarningTest_Test" />
+    </file>
+  </root>
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/23293207022857579">
     <file name="StyleAttributeNonInheritanceTest_Test.java">
       <node id="23293207022857579" at="21,72,22,108" concept="0" />

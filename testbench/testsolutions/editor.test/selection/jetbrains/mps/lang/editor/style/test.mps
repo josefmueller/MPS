@@ -35,6 +35,10 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="1215511704609" name="jetbrains.mps.lang.test.structure.NodeWarningCheckOperation" flags="ng" index="29bkU" />
+      <concept id="1215603922101" name="jetbrains.mps.lang.test.structure.NodeOperationsContainer" flags="ng" index="7CXmI">
+        <child id="1215604436604" name="nodeOperations" index="7EUXB" />
+      </concept>
       <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
@@ -58,6 +62,12 @@
       <concept id="5773579205429866751" name="jetbrains.mps.lang.test.structure.EditorComponentExpression" flags="nn" index="369mXd" />
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
+      </concept>
+      <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
+      </concept>
+      <concept id="1216989428737" name="jetbrains.mps.lang.test.structure.TestNode" flags="ng" index="1qefOq">
+        <child id="1216989461394" name="nodeToCheck" index="1qenE9" />
       </concept>
       <concept id="1210673684636" name="jetbrains.mps.lang.test.structure.TestNodeAnnotation" flags="ng" index="3xLA65" />
       <concept id="1210674524691" name="jetbrains.mps.lang.test.structure.TestNodeReference" flags="nn" index="3xONca">
@@ -2597,6 +2607,28 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="1vdXJDyFxEC">
+    <property role="TrG5h" value="FontFamilyStyleClassItemWarningTest" />
+    <node concept="1qefOq" id="1vdXJDyFxEG" role="1SKRRt">
+      <node concept="2biZxu" id="1vdXJDyFxWK" role="1qenE9">
+        <property role="1rj3mz" value="Monospace" />
+        <node concept="7CXmI" id="1vdXJDyFxWM" role="lGtFl">
+          <node concept="29bkU" id="1vdXJDyFxWN" role="7EUXB" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1lH9Xt" id="1vdXJDyFPnW">
+    <property role="TrG5h" value="FontFamilyLiteralWarningTest" />
+    <node concept="1qefOq" id="1vdXJDyFPnX" role="1SKRRt">
+      <node concept="1riQX7" id="1vdXJDyFPnZ" role="1qenE9">
+        <property role="1rj3mz" value="Monospace" />
+        <node concept="7CXmI" id="1vdXJDyFPop" role="lGtFl">
+          <node concept="29bkU" id="1vdXJDyFPoq" role="7EUXB" />
         </node>
       </node>
     </node>
