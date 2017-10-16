@@ -54,10 +54,14 @@
   </dependency>
   <dependency className="jetbrains.mps.build.ant.MigrationTask" file="MigrationTask.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Properties" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />

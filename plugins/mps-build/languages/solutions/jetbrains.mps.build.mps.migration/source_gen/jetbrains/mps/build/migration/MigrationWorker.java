@@ -19,13 +19,13 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import java.lang.reflect.Method;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.ide.impl.ProjectUtil;
-import java.lang.reflect.InvocationTargetException;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
@@ -87,29 +87,21 @@ public class MigrationWorker extends MpsWorker {
       }
       myEnvironment.flushAllEvents();
 
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-            try {
-              Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(TASK_EXEC_CLASS);
-              Method method = euClass.getMethod("migrate", Project.class);
-              Object result = method.invoke(null, p);
-              if (!(((Boolean) result))) {
-                info("Nothing to migrate");
-              }
-              com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
-              assert projects.length == 1 : "more than one project opened: " + projects.length;
-              ProjectUtil.closeAndDispose(projects[0]);
-            } catch (Exception e) {
-              error(e.getMessage());
-            }
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          try {
+            Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(TASK_EXEC_CLASS);
+            Method method = euClass.getMethod("migrate", Project.class);
+            method.invoke(null, p);
+            com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
+            assert projects.length == 1 : "more than one project opened: " + projects.length;
+            ProjectUtil.closeAndDispose(projects[0]);
+          } catch (Exception e) {
+            throw new RuntimeException("Exception during migration", e);
           }
-        });
-      } catch (InterruptedException e) {
-        error(e.getMessage());
-      } catch (InvocationTargetException e) {
-        error(e.getMessage());
-      }
+        }
+      }, ModalityState.defaultModalityState());
+
       p.dispose();
       myEnvironment.flushAllEvents();
     }
