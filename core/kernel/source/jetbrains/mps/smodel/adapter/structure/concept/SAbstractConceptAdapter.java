@@ -361,7 +361,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
         return p;
       }
     }
-    return new InvalidProperty(getQualifiedName(), propertyName);
+    return new InvalidProperty(getQualifiedName(), propertyName == null ? "" : propertyName);
   }
 
   @NotNull
@@ -372,7 +372,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
         return r;
       }
     }
-    return new InvalidReferenceLink(getQualifiedName(), role);
+    return new InvalidReferenceLink(getQualifiedName(), role == null ? "" : role);
   }
 
   @NotNull
@@ -383,7 +383,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
         return l;
       }
     }
-    return new InvalidContainmentLink(getQualifiedName(), role);
+    return new InvalidContainmentLink(getQualifiedName(), role == null ? "" : role);
   }
 
   @Override
