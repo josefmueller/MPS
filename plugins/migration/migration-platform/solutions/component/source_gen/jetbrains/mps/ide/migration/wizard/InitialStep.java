@@ -131,7 +131,9 @@ public class InitialStep extends BaseStep {
 
         // module resave 
         if (mySession.getRequiredSteps().contains(MigrationSession.MigrationStepKind.RESAVE)) {
-          DefaultMutableTreeNode uroot = new InitialStep.MyTreeNode("Update Descriptors", migrationIcon);
+          DefaultMutableTreeNode uroot = new DefaultMutableTreeNode("Update Module Descriptors");
+          DefaultMutableTreeNode umig = new InitialStep.MyTreeNode("Update Versions in Descriptors", migrationIcon);
+          uroot.add(umig);
           root.add(uroot);
         }
 

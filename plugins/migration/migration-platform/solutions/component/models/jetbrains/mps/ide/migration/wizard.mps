@@ -2501,9 +2501,25 @@
               </node>
               <node concept="3clFbJ" id="cQNMA1GV0F" role="3cqZAp">
                 <node concept="3clFbS" id="cQNMA1GV0H" role="3clFbx">
+                  <node concept="3cpWs8" id="2gpxvJosLFz" role="3cqZAp">
+                    <node concept="3cpWsn" id="2gpxvJosLF$" role="3cpWs9">
+                      <property role="TrG5h" value="uroot" />
+                      <node concept="3uibUv" id="2gpxvJosLF_" role="1tU5fm">
+                        <ref role="3uigEE" to="rgfa:~DefaultMutableTreeNode" resolve="DefaultMutableTreeNode" />
+                      </node>
+                      <node concept="2ShNRf" id="2gpxvJosLFA" role="33vP2m">
+                        <node concept="1pGfFk" id="2gpxvJosLFB" role="2ShVmc">
+                          <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.&lt;init&gt;(java.lang.Object)" resolve="DefaultMutableTreeNode" />
+                          <node concept="Xl_RD" id="2gpxvJosLFC" role="37wK5m">
+                            <property role="Xl_RC" value="Update Module Descriptors" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3cpWs8" id="cQNMA1GdzU" role="3cqZAp">
                     <node concept="3cpWsn" id="cQNMA1GdzV" role="3cpWs9">
-                      <property role="TrG5h" value="uroot" />
+                      <property role="TrG5h" value="umig" />
                       <node concept="3uibUv" id="cQNMA1GdzW" role="1tU5fm">
                         <ref role="3uigEE" to="rgfa:~DefaultMutableTreeNode" resolve="DefaultMutableTreeNode" />
                       </node>
@@ -2511,11 +2527,24 @@
                         <node concept="1pGfFk" id="cQNMA1GdzY" role="2ShVmc">
                           <ref role="37wK5l" node="6t2iki4vQm7" resolve="InitialStep.MyTreeNode" />
                           <node concept="Xl_RD" id="cQNMA1GdzZ" role="37wK5m">
-                            <property role="Xl_RC" value="Update Descriptors" />
+                            <property role="Xl_RC" value="Update Versions in Descriptors" />
                           </node>
                           <node concept="37vLTw" id="cQNMA1HDq4" role="37wK5m">
                             <ref role="3cqZAo" node="6t2iki4wUPF" resolve="migrationIcon" />
                           </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="2gpxvJotz0P" role="3cqZAp">
+                    <node concept="2OqwBi" id="2gpxvJot_ij" role="3clFbG">
+                      <node concept="37vLTw" id="2gpxvJotz0N" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2gpxvJosLF$" resolve="uroot" />
+                      </node>
+                      <node concept="liA8E" id="2gpxvJotBoZ" role="2OqNvi">
+                        <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
+                        <node concept="37vLTw" id="2gpxvJotDyH" role="37wK5m">
+                          <ref role="3cqZAo" node="cQNMA1GdzV" resolve="umig" />
                         </node>
                       </node>
                     </node>
@@ -2527,8 +2556,8 @@
                       </node>
                       <node concept="liA8E" id="cQNMA1Hosp" role="2OqNvi">
                         <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
-                        <node concept="37vLTw" id="cQNMA1Hqyj" role="37wK5m">
-                          <ref role="3cqZAo" node="cQNMA1GdzV" resolve="uroot" />
+                        <node concept="37vLTw" id="2gpxvJotFOQ" role="37wK5m">
+                          <ref role="3cqZAo" node="2gpxvJosLF$" resolve="uroot" />
                         </node>
                       </node>
                     </node>
