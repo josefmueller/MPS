@@ -2153,11 +2153,14 @@
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                            <node concept="3clFbH" id="cQNMA1Dcum" role="3cqZAp" />
-                            <node concept="3clFbF" id="2_Nn7s1p4td" role="3cqZAp">
-                              <node concept="1rXfSq" id="2_Nn7s1p4te" role="3clFbG">
-                                <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
+                              <node concept="9aQIb" id="4uv05UC6DLw" role="9aQIa">
+                                <node concept="3clFbS" id="4uv05UC6DLx" role="9aQI4">
+                                  <node concept="3clFbF" id="4uv05UC6E6p" role="3cqZAp">
+                                    <node concept="1rXfSq" id="4uv05UC6E6o" role="3clFbG">
+                                      <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -2189,7 +2192,7 @@
         <node concept="10P_77" id="cQNMA1EKOf" role="1tU5fm" />
       </node>
       <node concept="3Tm6S6" id="1548xle07dZ" role="1B3o_S" />
-      <node concept="10P_77" id="1548xle07e0" role="3clF45" />
+      <node concept="3cqZAl" id="4uv05UC4WMq" role="3clF45" />
       <node concept="3clFbS" id="1548xle07bY" role="3clF47">
         <node concept="3cpWs8" id="1548xle3A9n" role="3cqZAp">
           <node concept="3cpWsn" id="1548xle3A9o" role="3cpWs9">
@@ -2228,11 +2231,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="1548xle07ce" role="3cqZAp">
-          <node concept="3SKdUq" id="1548xle07cf" role="3SKWNk">
-            <property role="3SKdUp" value="final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence)" />
           </node>
         </node>
         <node concept="3cpWs8" id="1548xle07cg" role="3cqZAp">
@@ -2280,11 +2278,18 @@
             </node>
           </node>
           <node concept="3clFbS" id="1548xle07cv" role="3clFbx">
-            <node concept="3cpWs6" id="1548xle07cw" role="3cqZAp">
-              <node concept="3clFbT" id="1548xle07cx" role="3cqZAk">
-                <property role="3clFbU" value="true" />
+            <node concept="3SKdUt" id="4uv05UC6gCM" role="3cqZAp">
+              <node concept="3SKdUq" id="4uv05UC6gCO" role="3SKWNk">
+                <property role="3SKdUp" value="user has postponed migration" />
               </node>
             </node>
+            <node concept="3cpWs6" id="1548xle07cw" role="3cqZAp" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="4uv05UC6xal" role="3cqZAp" />
+        <node concept="3clFbF" id="4uv05UC688l" role="3cqZAp">
+          <node concept="1rXfSq" id="4uv05UC688j" role="3clFbG">
+            <ref role="37wK5l" node="7FLry2XRgwU" resolve="resetMigrationQueuedFlag" />
           </node>
         </node>
         <node concept="3clFbH" id="1548xle07cy" role="3cqZAp" />
@@ -2498,11 +2503,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="1548xle07dU" role="3cqZAp">
-          <node concept="3clFbT" id="1548xle07dV" role="3cqZAk">
-            <property role="3clFbU" value="false" />
           </node>
         </node>
       </node>

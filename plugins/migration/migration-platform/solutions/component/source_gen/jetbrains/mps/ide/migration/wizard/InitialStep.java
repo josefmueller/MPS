@@ -278,7 +278,7 @@ public class InitialStep extends BaseStep {
 
   @Override
   public String cancelButtonLabel() {
-    return "Cancel";
+    return "Postpone";
   }
   @Override
   public String nextButtonLabel() {

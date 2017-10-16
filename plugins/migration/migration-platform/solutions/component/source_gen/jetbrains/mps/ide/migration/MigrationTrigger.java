@@ -299,24 +299,26 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
             if (resave.value || migrate.value) {
               startMigration(resave.value, migrate.value);
+            } else {
+              resetMigrationQueuedFlag();
             }
-
-            resetMigrationQueuedFlag();
           }
         }, ModalityState.NON_MODAL);
       }
     });
   }
 
-  private boolean startMigration(boolean update, boolean migrate) {
+  private void startMigration(boolean update, boolean migrate) {
     MigrationTrigger.MyMigrationSession session = new MigrationTrigger.MyMigrationSession(update, migrate);
     final MigrationWizard wizard = new MigrationWizard(myProject, session);
-    // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     boolean finished = wizard.showAndGet();
     final MigrationError errors = session.getError();
     if (!(finished) && errors == null) {
-      return true;
+      // user has postponed migration 
+      return;
     }
+
+    resetMigrationQueuedFlag();
 
     if (errors == null) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -349,7 +351,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         }
       });
     }
-    return false;
   }
 
   private void syncRefresh() {
