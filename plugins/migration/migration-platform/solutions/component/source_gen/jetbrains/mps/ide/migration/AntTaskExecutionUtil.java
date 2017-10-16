@@ -49,7 +49,7 @@ public class AntTaskExecutionUtil {
         }
 
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(error.getMessage());
+          LOG.error(error.getMessage().replaceAll("<br>", "\n"));
         }
         for (final Problem p : Sequence.fromIterable(error.getProblems(new EmptyProgressIndicator()))) {
           final Wrappers._T<String> problemMsg = new Wrappers._T<String>();
@@ -59,7 +59,7 @@ public class AntTaskExecutionUtil {
             }
           });
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("- " + problemMsg.value);
+            LOG.error("- " + problemMsg.value.replaceAll("<br>", "\n"));
           }
         }
 

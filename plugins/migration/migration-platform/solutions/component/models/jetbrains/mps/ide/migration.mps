@@ -4439,11 +4439,11 @@
     <node concept="Wx3nA" id="7zEA_IIBdgG" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="ERR_CODE_KEY" />
-      <node concept="3Tm6S6" id="7zEA_IIBdgD" role="1B3o_S" />
-      <node concept="17QB3L" id="7zEA_IIBdgE" role="1tU5fm" />
       <node concept="Xl_RD" id="8uyEdbJSoh" role="33vP2m">
         <property role="Xl_RC" value="mps.migration.errcode" />
       </node>
+      <node concept="3Tm6S6" id="7zEA_IIBdgD" role="1B3o_S" />
+      <node concept="17QB3L" id="7zEA_IIBdgE" role="1tU5fm" />
       <node concept="z59LJ" id="7zEA_IIJBGN" role="lGtFl">
         <node concept="TZ5HA" id="7zEA_IIJBGO" role="TZ5H$">
           <node concept="1dT_AC" id="7zEA_IIJBGP" role="1dT_Ay">
@@ -4622,12 +4622,23 @@
                       <node concept="3clFbH" id="8uyEdbK8qP" role="3cqZAp" />
                       <node concept="RRSsy" id="2qlsNbJNmzt" role="3cqZAp">
                         <property role="RRSoG" value="error" />
-                        <node concept="2OqwBi" id="2qlsNbJNni3" role="RRSoy">
-                          <node concept="37vLTw" id="2qlsNbJNn0w" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2wbhCYFUjGb" resolve="error" />
+                        <node concept="2OqwBi" id="5e8hOW27bst" role="RRSoy">
+                          <node concept="2OqwBi" id="2qlsNbJNni3" role="2Oq$k0">
+                            <node concept="37vLTw" id="2qlsNbJNn0w" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2wbhCYFUjGb" resolve="error" />
+                            </node>
+                            <node concept="liA8E" id="2qlsNbJNnzT" role="2OqNvi">
+                              <ref role="37wK5l" to="o8ag:2htE_P_MrC7" resolve="getMessage" />
+                            </node>
                           </node>
-                          <node concept="liA8E" id="2qlsNbJNnzT" role="2OqNvi">
-                            <ref role="37wK5l" to="o8ag:2htE_P_MrC7" resolve="getMessage" />
+                          <node concept="liA8E" id="5e8hOW27cbn" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolve="replaceAll" />
+                            <node concept="Xl_RD" id="5e8hOW27cUR" role="37wK5m">
+                              <property role="Xl_RC" value="&lt;br&gt;" />
+                            </node>
+                            <node concept="Xl_RD" id="5e8hOW27d8l" role="37wK5m">
+                              <property role="Xl_RC" value="\n" />
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -4710,8 +4721,19 @@
                               <node concept="Xl_RD" id="7zEA_IIBLOT" role="3uHU7B">
                                 <property role="Xl_RC" value="- " />
                               </node>
-                              <node concept="37vLTw" id="7zEA_IIByAc" role="3uHU7w">
-                                <ref role="3cqZAo" node="7zEA_IIByA0" resolve="problemMsg" />
+                              <node concept="2OqwBi" id="1Rix7XRGJ5G" role="3uHU7w">
+                                <node concept="37vLTw" id="7zEA_IIByAc" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7zEA_IIByA0" resolve="problemMsg" />
+                                </node>
+                                <node concept="liA8E" id="1Rix7XRGJzq" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~String.replaceAll(java.lang.String,java.lang.String):java.lang.String" resolve="replaceAll" />
+                                  <node concept="Xl_RD" id="1Rix7XRGK3b" role="37wK5m">
+                                    <property role="Xl_RC" value="&lt;br&gt;" />
+                                  </node>
+                                  <node concept="Xl_RD" id="1Rix7XRGK3c" role="37wK5m">
+                                    <property role="Xl_RC" value="\n" />
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>
