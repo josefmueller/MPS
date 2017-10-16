@@ -17,7 +17,6 @@ public class PreCheckError extends MigrationError {
   private boolean myCanIgnore;
   private Project myProject;
   public PreCheckError(Project p, boolean canIgnore) {
-    super(14);
     myCanIgnore = canIgnore;
     myProject = p;
   }

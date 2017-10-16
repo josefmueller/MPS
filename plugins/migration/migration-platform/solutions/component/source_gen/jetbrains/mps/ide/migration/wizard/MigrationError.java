@@ -6,20 +6,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 
 public abstract class MigrationError extends Exception {
-  private int myErrCode;
-
-  public MigrationError(int errcode) {
-    myErrCode = errcode;
-  }
-
-  /**
-   * Used by Ant task to report errors
-   * Codes 1-10 are reserved task-level events (e.g. "nothing to migrate")
-   * Codes 10-100 are reserved for problems during migration process (e.g. pre-check error)
-   * After the code is assigned and published, it's better not to change it as users may rely on it
-   */
-  public int getErrorCode() {
-    return myErrCode;
+  public MigrationError() {
   }
 
   public abstract String getShortMessage();

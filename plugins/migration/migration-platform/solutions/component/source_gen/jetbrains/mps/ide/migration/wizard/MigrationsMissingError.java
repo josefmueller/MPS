@@ -22,7 +22,6 @@ import jetbrains.mps.project.AbstractModule;
 public class MigrationsMissingError extends MigrationError {
   private List<ScriptApplied> errors;
   public MigrationsMissingError(List<ScriptApplied> errors) {
-    super(11);
     this.errors = errors;
   }
   @Override

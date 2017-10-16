@@ -8,10 +8,8 @@ import java.util.Collections;
 
 public class MigrationExceptionError extends MigrationError {
   public MigrationExceptionError() {
-    super(12);
   }
   public MigrationExceptionError(Throwable t) {
-    super(12);
     // todo 
   }
   @Override
