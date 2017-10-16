@@ -28,9 +28,6 @@ public class AntTaskExecutionUtil {
    * Coupled with string constant in MigrationTask.ERR_CODE_KEY
    */
   private static final String ERR_CODE_KEY = KEY_PREFIX + "errcode";
-  private static final String RECOVERABLE_KEY = KEY_PREFIX + "recoverable";
-  private static final String MESSAGE_KEY = KEY_PREFIX + "message";
-  private static final String PROBLEMS_KEY = KEY_PREFIX + "problems";
   /**
    * Coupled with string constant in MigrationTask.OUT_FILE_NAME
    */
@@ -68,10 +65,7 @@ public class AntTaskExecutionUtil {
           }
         }
 
-        properties.setProperty(ERR_CODE_KEY, "" + error.getErrorCode());
-        properties.setProperty(RECOVERABLE_KEY, "" + error.canIgnore());
-        properties.setProperty(MESSAGE_KEY, "" + error.getMessage().replaceAll("\n", ""));
-        properties.setProperty(PROBLEMS_KEY, "" + problems.toString().replaceAll("\n", ""));
+        properties.setProperty(ERR_CODE_KEY, "1");
       }
     };
     task.run();

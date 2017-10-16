@@ -7450,6 +7450,52 @@
         </node>
         <node concept="SfApY" id="7zEA_IIJrSA" role="3cqZAp">
           <node concept="3clFbS" id="7zEA_IIJrSB" role="SfCbr">
+            <node concept="3cpWs8" id="600xKN_C4ko" role="3cqZAp">
+              <node concept="3cpWsn" id="600xKN_C4kp" role="3cpWs9">
+                <property role="TrG5h" value="path" />
+                <node concept="17QB3L" id="600xKN_C4kh" role="1tU5fm" />
+                <node concept="3cpWs3" id="600xKN_C4kq" role="33vP2m">
+                  <node concept="37vLTw" id="600xKN_C4kr" role="3uHU7w">
+                    <ref role="3cqZAo" node="7zEA_IIJpWz" resolve="OUT_FILE_NAME" />
+                  </node>
+                  <node concept="3cpWs3" id="600xKN_C4ks" role="3uHU7B">
+                    <node concept="10M0yZ" id="600xKN_C4kt" role="3uHU7w">
+                      <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
+                      <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                    </node>
+                    <node concept="2OqwBi" id="600xKN_C4ku" role="3uHU7B">
+                      <node concept="2OqwBi" id="600xKN_C4kv" role="2Oq$k0">
+                        <node concept="1rXfSq" id="600xKN_C4kw" role="2Oq$k0">
+                          <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
+                        </node>
+                        <node concept="liA8E" id="600xKN_C4kx" role="2OqNvi">
+                          <ref role="37wK5l" to="gola:~Project.getBaseDir():java.io.File" resolve="getBaseDir" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="600xKN_C4ky" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="600xKN_C5yg" role="3cqZAp">
+              <node concept="3cpWsn" id="600xKN_C5yh" role="3cpWs9">
+                <property role="TrG5h" value="file" />
+                <node concept="3uibUv" id="600xKN_C5y6" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                </node>
+                <node concept="2ShNRf" id="600xKN_C5yi" role="33vP2m">
+                  <node concept="1pGfFk" id="600xKN_C5yj" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                    <node concept="37vLTw" id="600xKN_C5yk" role="37wK5m">
+                      <ref role="3cqZAo" node="600xKN_C4kp" resolve="path" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="7zEA_IIJw5S" role="3cqZAp">
               <node concept="3cpWsn" id="7zEA_IIJw5T" role="3cpWs9">
                 <property role="TrG5h" value="fis" />
@@ -7459,34 +7505,8 @@
                 <node concept="2ShNRf" id="7zEA_IIJw5U" role="33vP2m">
                   <node concept="1pGfFk" id="7zEA_IIJw5V" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~FileInputStream.&lt;init&gt;(java.io.File)" resolve="FileInputStream" />
-                    <node concept="2ShNRf" id="7zEA_IIJw5W" role="37wK5m">
-                      <node concept="1pGfFk" id="7zEA_IIJw5X" role="2ShVmc">
-                        <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                        <node concept="3cpWs3" id="jbb6413pSL" role="37wK5m">
-                          <node concept="37vLTw" id="jbb6413qLx" role="3uHU7w">
-                            <ref role="3cqZAo" node="7zEA_IIJpWz" resolve="OUT_FILE_NAME" />
-                          </node>
-                          <node concept="3cpWs3" id="jbb6413t$l" role="3uHU7B">
-                            <node concept="10M0yZ" id="jbb6413weB" role="3uHU7w">
-                              <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                            </node>
-                            <node concept="2OqwBi" id="jbb6413o4w" role="3uHU7B">
-                              <node concept="2OqwBi" id="jbb6413mdx" role="2Oq$k0">
-                                <node concept="1rXfSq" id="jbb6413lnM" role="2Oq$k0">
-                                  <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
-                                </node>
-                                <node concept="liA8E" id="jbb6413ne5" role="2OqNvi">
-                                  <ref role="37wK5l" to="gola:~Project.getBaseDir():java.io.File" resolve="getBaseDir" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="jbb6413p2P" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="600xKN_C5yl" role="37wK5m">
+                      <ref role="3cqZAo" node="600xKN_C5yh" resolve="file" />
                     </node>
                   </node>
                 </node>
@@ -7512,6 +7532,16 @@
                 </node>
                 <node concept="liA8E" id="7zEA_IIJxbj" role="2OqNvi">
                   <ref role="37wK5l" to="guwi:~FileInputStream.close():void" resolve="close" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="600xKN_C7pL" role="3cqZAp">
+              <node concept="2OqwBi" id="600xKN_C7Bt" role="3clFbG">
+                <node concept="37vLTw" id="600xKN_C7pJ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="600xKN_C5yh" resolve="file" />
+                </node>
+                <node concept="liA8E" id="600xKN_C7P9" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.delete():boolean" resolve="delete" />
                 </node>
               </node>
             </node>
