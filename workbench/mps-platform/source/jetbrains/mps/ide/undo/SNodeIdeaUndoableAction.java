@@ -18,7 +18,6 @@ package jetbrains.mps.ide.undo;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
-import jetbrains.mps.smodel.SNodeUndoableAction;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
@@ -27,21 +26,21 @@ import java.util.List;
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
   private final DocumentReference[] myAffectedDocuments;
-  private final SNodeUndoableAction[] myActions;
+  private final UndoItem[] myItems;
   private final SRepository myRepository;
 
-  SNodeIdeaUndoableAction(List<SNodeUndoableAction> actions, SRepository repository, boolean isGlobal, Collection<DocumentReference> affectedDocuments) {
+  SNodeIdeaUndoableAction(List<UndoItem> items, SRepository repository, boolean isGlobal, Collection<DocumentReference> affectedDocuments) {
     myIsGlobal = isGlobal;
     myRepository = repository;
-    myActions = actions.toArray(new SNodeUndoableAction[actions.size()]);
+    myItems = items.toArray(new UndoItem[items.size()]);
     myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[affectedDocuments.size()]);
   }
 
   @Override
   public final void undo() throws UnexpectedUndoException {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
-      for (int i = myActions.length - 1; i >= 0; i--) {
-        myActions[i].undo();
+      for (int i = myItems.length - 1; i >= 0; i--) {
+        myItems[i].undo();
       }
     });
   }
@@ -49,8 +48,8 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   @Override
   public final void redo() throws UnexpectedUndoException {
     myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
-      for (int i = 0; i < myActions.length; i++) {
-        myActions[i].redo();
+      for (int i = 0; i < myItems.length; i++) {
+        myItems[i].redo();
       }
     });
   }

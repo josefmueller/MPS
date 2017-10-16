@@ -20,11 +20,14 @@ import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.undo.UndoItem.RestoreVirtualFileInstance;
+import jetbrains.mps.ide.undo.UndoItem.UndoableActionWrapper;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.SNodeUndoableAction.VFSChange;
 import jetbrains.mps.smodel.undo.UndoContext;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,7 +47,7 @@ import java.util.Set;
  */
 public class UndoActionsCollector {
   private final UndoContext myUndoContext;
-  private List<SNodeUndoableAction> myActions = new ArrayList<>();
+  private List<UndoItem> myActions = new ArrayList<>();
   private boolean myIsGlobal = false;
   private Set<DocumentReference> myDocumentReferences = new LinkedHashSet<>();
   private Map<SModelId, List<VirtualFile>> myChangedFiles = new HashMap<>();
@@ -56,10 +59,11 @@ public class UndoActionsCollector {
 
   void addAction(SNodeUndoableAction action) {
     assert !myDisposed;
-    myActions.add(action);
-    myIsGlobal |= action.isGlobal();
+    myActions.add(new UndoableActionWrapper(action));
+    myIsGlobal |= action.getAssociatedVfsChange() != VFSChange.NOT_CHANGED;
 
-    for (SNode virtualFileNode : myUndoContext.getVirtualFileNodes(Collections.singletonList(action))) {
+    MPSNodeVirtualFile fileToUpdate = null;
+    for (SNode virtualFileNode : myUndoContext.getVirtualFileNodes(action)) {
       if (virtualFileNode.getModel() == null) {
         continue;
       }
@@ -67,12 +71,22 @@ public class UndoActionsCollector {
       assert file.hasValidMPSNode() :
           "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
 
+      assert action.getAssociatedVfsChange() == VFSChange.NOT_CHANGED || fileToUpdate == null || fileToUpdate.equals(file);
+      if (action.getAssociatedVfsChange() != VFSChange.NOT_CHANGED) {
+        fileToUpdate = file;
+      }
+
       Document document = MPSUndoUtil.getDoc(file);
       if (document == null) {
         continue;
       }
       myDocumentReferences.add(MPSUndoUtil.getRefForDoc(document));
       myChangedFiles.computeIfAbsent(virtualFileNode.getModel().getModelId(), k -> new ArrayList<>()).add(file);
+    }
+
+    if (fileToUpdate != null && action.getAssociatedVfsChange() != VFSChange.NOT_CHANGED) {
+      // restoring virtual file on undo if the file was deleted by original action
+      myActions.add(new RestoreVirtualFileInstance(fileToUpdate, action.getAssociatedVfsChange() == VFSChange.FILE_DELETED));
     }
   }
 

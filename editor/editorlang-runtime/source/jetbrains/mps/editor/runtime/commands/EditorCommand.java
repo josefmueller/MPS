@@ -61,6 +61,11 @@ public abstract class EditorCommand implements Runnable, UndoContext {
 
   @Override
   public Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> wrapped) {
+    return getVirtualFileNodes((SNodeUndoableAction) null);
+  }
+
+  @Override
+  public Iterable<SNode> getVirtualFileNodes(SNodeUndoableAction action) {
     return myContextNode == null ? Collections.emptyList() : Collections.singleton(myContextNode);
   }
 

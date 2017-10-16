@@ -37,13 +37,16 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
   static final String NODE_PREFIX = "node://";
 
-  private SNodeReference myNode;
+  @NotNull
+  private final SNodeReference myNode;
+  @NotNull
   private final RepositoryVirtualFiles myRepoFiles;
   private String myPath;
   private String myName;
   private String myPresentationName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
+  private boolean myValid = true;
 
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer, @NotNull RepositoryVirtualFiles vfs) {
     myNode = nodePointer;
@@ -152,9 +155,11 @@ public final class MPSNodeVirtualFile extends VirtualFile {
     // i.e. a real directory wherein the model file lives
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     // but why it's not MPSModelVirtualFile that serves as parent for node VF?
-    if (myNode == null || myNode.getModelReference() == null) return null;
+    if (!myValid || myNode.getModelReference() == null) {
+      return null;
+    }
     return new ModelAccessHelper(myRepoFiles.getRepository()).runReadAction(() -> {
-      if (myNode == null) {
+      if (!myValid) {
         // wow! this double check is needed even with the fact, that read action is run in the same thread
         // i.e. getParent() and this runnable are in the same thread
         // But! idea waits for the current write action to complete before proceeding to the read action
@@ -194,18 +199,24 @@ public final class MPSNodeVirtualFile extends VirtualFile {
 
   @Override
   public boolean isValid() {
-    return myNode != null;
+    return myValid;
   }
 
   /*package*/ void invalidate() {
-    if (myNode == null) {
+    if (!myValid) {
       // With proper fix of https://youtrack.jetbrains.com/issue/MPS-24244 (shared VFS notifier instance), shall not happen,
       // nevertheless, doesn't hurt to be alert.
       LOG.error("Attempt to invalidate already disposed file", new Throwable());
       return;
     }
     myRepoFiles.forgetVirtualFile(myNode);
-    myNode = null;
+    myValid = false;
+  }
+
+  public void revalidate() {
+    assert !myValid;
+    myRepoFiles.remindVirtualFile(myNode, this);
+    myValid = true;
   }
 
   // XXX what's the contract of the method???

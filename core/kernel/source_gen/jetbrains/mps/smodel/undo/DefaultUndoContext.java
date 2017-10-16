@@ -8,7 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DefaultUndoContext implements UndoContext {
@@ -18,15 +19,18 @@ public class DefaultUndoContext implements UndoContext {
     myRepository = repository;
   }
 
-
-
   @Override
   public Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> actions) {
-    return ListSequence.fromList(actions).select(new ISelector<SNodeUndoableAction, SNode>() {
-      public SNode select(SNodeUndoableAction it) {
-        return SNodeOperations.getContainingRoot(((SNode) it.getAffectedNode()));
+    return ListSequence.fromList(actions).translate(new ITranslator2<SNodeUndoableAction, SNode>() {
+      public Iterable<SNode> translate(SNodeUndoableAction it) {
+        return getVirtualFileNodes(it);
       }
     });
+  }
+
+  @Override
+  public Iterable<SNode> getVirtualFileNodes(SNodeUndoableAction action) {
+    return Sequence.<SNode>singleton(SNodeOperations.getContainingRoot((SNode) action.getAffectedNode()));
   }
 
   @Override

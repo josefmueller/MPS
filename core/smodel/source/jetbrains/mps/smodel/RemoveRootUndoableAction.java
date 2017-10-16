@@ -37,7 +37,7 @@ class RemoveRootUndoableAction extends SNodeUndoableAction {
   }
 
   @Override
-  public boolean isGlobal() {
-    return true;
+  public VFSChange getAssociatedVfsChange() {
+    return VFSChange.FILE_DELETED;
   }
 }

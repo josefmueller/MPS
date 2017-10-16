@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.model.SModel;
-
 import org.jetbrains.mps.openapi.model.SNode;
 
 class AddRootUndoableAction extends SNodeUndoableAction {
@@ -24,7 +23,7 @@ class AddRootUndoableAction extends SNodeUndoableAction {
 
   public AddRootUndoableAction(SNode root) {
     super(root);
-    myModel  = root.getModel();
+    myModel = root.getModel();
   }
 
   @Override
@@ -38,7 +37,7 @@ class AddRootUndoableAction extends SNodeUndoableAction {
   }
 
   @Override
-  public boolean isGlobal() {
-    return true;
+  public VFSChange getAssociatedVfsChange() {
+    return VFSChange.FILE_CREATED;
   }
 }

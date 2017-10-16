@@ -130,6 +130,11 @@ final class RepositoryVirtualFiles {
     myVirtualFiles.remove(nodeRef);
   }
 
+  /*package*/ void remindVirtualFile(SNodeReference nodePointer, MPSNodeVirtualFile vf) {
+    assert !hasVirtualFileFor(nodePointer);
+    myVirtualFiles.put(nodePointer, vf);
+  }
+
   @Nullable
   /*package*/ VirtualFile findFileByPath(final @NotNull String path) {
     try {
