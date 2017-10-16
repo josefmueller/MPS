@@ -38,14 +38,14 @@ public class MigrationTask extends MpsLoadTask {
     super.execute();
     Properties p = new Properties();
     try {
-      FileInputStream fis = new FileInputStream(new File(OUT_FILE_NAME));
+      FileInputStream fis = new FileInputStream(new File(getProject().getBaseDir().getAbsolutePath() + File.separator + OUT_FILE_NAME));
       p.load(fis);
       fis.close();
     } catch (IOException e) {
       throw new BuildException("can't read task output from " + OUT_FILE_NAME, e);
     }
     if (neq_ajmasp_a0d0j(p.getProperty(ERR_CODE_KEY), "0")) {
-      throw new BuildException();
+      throw new BuildException("Migration was not executed. See log for details.");
     }
   }
 

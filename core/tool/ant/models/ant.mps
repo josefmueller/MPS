@@ -7462,8 +7462,29 @@
                     <node concept="2ShNRf" id="7zEA_IIJw5W" role="37wK5m">
                       <node concept="1pGfFk" id="7zEA_IIJw5X" role="2ShVmc">
                         <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                        <node concept="37vLTw" id="7zEA_IIJw5Y" role="37wK5m">
-                          <ref role="3cqZAo" node="7zEA_IIJpWz" resolve="OUT_FILE_NAME" />
+                        <node concept="3cpWs3" id="jbb6413pSL" role="37wK5m">
+                          <node concept="37vLTw" id="jbb6413qLx" role="3uHU7w">
+                            <ref role="3cqZAo" node="7zEA_IIJpWz" resolve="OUT_FILE_NAME" />
+                          </node>
+                          <node concept="3cpWs3" id="jbb6413t$l" role="3uHU7B">
+                            <node concept="10M0yZ" id="jbb6413weB" role="3uHU7w">
+                              <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
+                              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+                            </node>
+                            <node concept="2OqwBi" id="jbb6413o4w" role="3uHU7B">
+                              <node concept="2OqwBi" id="jbb6413mdx" role="2Oq$k0">
+                                <node concept="1rXfSq" id="jbb6413lnM" role="2Oq$k0">
+                                  <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
+                                </node>
+                                <node concept="liA8E" id="jbb6413ne5" role="2OqNvi">
+                                  <ref role="37wK5l" to="gola:~Project.getBaseDir():java.io.File" resolve="getBaseDir" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="jbb6413p2P" role="2OqNvi">
+                                <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -7529,7 +7550,10 @@
             <node concept="YS8fn" id="7zEA_IIJEK3" role="3cqZAp">
               <node concept="2ShNRf" id="7zEA_IIJEOC" role="YScLw">
                 <node concept="1pGfFk" id="7zEA_IIJFnF" role="2ShVmc">
-                  <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;()" resolve="BuildException" />
+                  <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
+                  <node concept="Xl_RD" id="6pL2ddWIZD5" role="37wK5m">
+                    <property role="Xl_RC" value="Migration was not executed. See log for details." />
+                  </node>
                 </node>
               </node>
             </node>
