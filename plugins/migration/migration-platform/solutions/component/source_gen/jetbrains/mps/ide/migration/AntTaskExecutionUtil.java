@@ -23,11 +23,10 @@ import jetbrains.mps.migration.global.MigrationOptions;
 
 public class AntTaskExecutionUtil {
   private static final Logger LOG = LogManager.getLogger(AntTaskExecutionUtil.class);
-  private static final String KEY_PREFIX = "mps.migration.";
   /**
    * Coupled with string constant in MigrationTask.ERR_CODE_KEY
    */
-  private static final String ERR_CODE_KEY = KEY_PREFIX + "errcode";
+  private static final String ERR_CODE_KEY = "mps.migration.errcode";
   /**
    * Coupled with string constant in MigrationTask.OUT_FILE_NAME
    */
@@ -35,9 +34,6 @@ public class AntTaskExecutionUtil {
 
   public static void migrate(final Project project) throws Exception {
     MigrationRegistry m = ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class);
-    if (!(m.isMigrationRequired())) {
-      return;
-    }
 
     MigrationSession session = new AntTaskExecutionUtil.MyMigrationSession(project);
     ProgressMonitorAdapter progress = new ProgressMonitorAdapter(new EmptyProgressIndicator());
@@ -48,7 +44,6 @@ public class AntTaskExecutionUtil {
     MigrationTask task = new MigrationTask(session, progress) {
       @Override
       protected void error(MigrationError error) {
-        StringBuilder problems = new StringBuilder();
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error(error.getMessage());
         }
@@ -59,7 +54,6 @@ public class AntTaskExecutionUtil {
               problemMsg.value = p.getMessage() + " (reason object: " + p.getReason() + ")";
             }
           });
-          problems.append(problemMsg.value + "; ");
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("- " + problemMsg.value);
           }

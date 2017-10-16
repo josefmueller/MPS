@@ -4246,27 +4246,13 @@
   </node>
   <node concept="312cEu" id="75eqTYkpEpV">
     <property role="TrG5h" value="AntTaskExecutionUtil" />
-    <node concept="Wx3nA" id="7zEA_IICasA" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="KEY_PREFIX" />
-      <node concept="3Tm6S6" id="7zEA_IICasz" role="1B3o_S" />
-      <node concept="17QB3L" id="7zEA_IICas$" role="1tU5fm" />
-      <node concept="Xl_RD" id="7zEA_IICas_" role="33vP2m">
-        <property role="Xl_RC" value="mps.migration." />
-      </node>
-    </node>
     <node concept="Wx3nA" id="7zEA_IIBdgG" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="ERR_CODE_KEY" />
       <node concept="3Tm6S6" id="7zEA_IIBdgD" role="1B3o_S" />
       <node concept="17QB3L" id="7zEA_IIBdgE" role="1tU5fm" />
-      <node concept="3cpWs3" id="7zEA_IIC9Pq" role="33vP2m">
-        <node concept="37vLTw" id="7zEA_IICasD" role="3uHU7B">
-          <ref role="3cqZAo" node="7zEA_IICasA" resolve="KEY_PREFIX" />
-        </node>
-        <node concept="Xl_RD" id="7zEA_IIBdgF" role="3uHU7w">
-          <property role="Xl_RC" value="errcode" />
-        </node>
+      <node concept="Xl_RD" id="3FkU1vVnctP" role="33vP2m">
+        <property role="Xl_RC" value="mps.migration.errcode" />
       </node>
       <node concept="z59LJ" id="7zEA_IIJBGN" role="lGtFl">
         <node concept="TZ5HA" id="7zEA_IIJBGO" role="TZ5H$">
@@ -4318,21 +4304,6 @@
                 <node concept="3VsKOn" id="75eqTYkpGZ6" role="37wK5m">
                   <ref role="3VsUkX" node="5SsFeroaabl" resolve="MigrationRegistry" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="60oBoEenix" role="3cqZAp">
-          <node concept="3clFbS" id="60oBoEeniz" role="3clFbx">
-            <node concept="3cpWs6" id="75eqTYkpJCI" role="3cqZAp" />
-          </node>
-          <node concept="3fqX7Q" id="60oBoEeo7i" role="3clFbw">
-            <node concept="2OqwBi" id="60oBoEeo7k" role="3fr31v">
-              <node concept="37vLTw" id="75eqTYkpIzT" role="2Oq$k0">
-                <ref role="3cqZAo" node="75eqTYkpGg6" resolve="m" />
-              </node>
-              <node concept="liA8E" id="60oBoEeo7p" role="2OqNvi">
-                <ref role="37wK5l" node="4biA4YBz_63" resolve="isMigrationRequired" />
               </node>
             </node>
           </node>
@@ -4435,19 +4406,6 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="2wbhCYFUjGf" role="3clF47">
-                      <node concept="3cpWs8" id="7zEA_IIBwz1" role="3cqZAp">
-                        <node concept="3cpWsn" id="7zEA_IIBwz2" role="3cpWs9">
-                          <property role="TrG5h" value="problems" />
-                          <node concept="3uibUv" id="7zEA_IIBwz3" role="1tU5fm">
-                            <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
-                          </node>
-                          <node concept="2ShNRf" id="7zEA_IIBx3k" role="33vP2m">
-                            <node concept="1pGfFk" id="7zEA_IIBwXH" role="2ShVmc">
-                              <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node concept="RRSsy" id="2qlsNbJNmzt" role="3cqZAp">
                         <property role="RRSoG" value="error" />
                         <node concept="2OqwBi" id="2qlsNbJNni3" role="RRSoy">
@@ -4529,24 +4487,6 @@
                               </node>
                               <node concept="liA8E" id="7zEA_IIHN9J" role="2OqNvi">
                                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="7zEA_IIBxgG" role="3cqZAp">
-                            <node concept="2OqwBi" id="7zEA_IIBxyO" role="3clFbG">
-                              <node concept="37vLTw" id="7zEA_IIBxgE" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7zEA_IIBwz2" resolve="problems" />
-                              </node>
-                              <node concept="liA8E" id="7zEA_IIBy63" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                                <node concept="3cpWs3" id="7zEA_IIBLes" role="37wK5m">
-                                  <node concept="Xl_RD" id="7zEA_IIBLg_" role="3uHU7w">
-                                    <property role="Xl_RC" value="; " />
-                                  </node>
-                                  <node concept="37vLTw" id="7zEA_IIBEGt" role="3uHU7B">
-                                    <ref role="3cqZAo" node="7zEA_IIByA0" resolve="problemMsg" />
-                                  </node>
-                                </node>
                               </node>
                             </node>
                           </node>
