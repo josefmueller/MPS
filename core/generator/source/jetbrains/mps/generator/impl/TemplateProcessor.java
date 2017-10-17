@@ -324,7 +324,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     private SourceNodeQuery createNodeQuery() {
       SNode query = RuleUtil.getSourceNodeQuery(macro);
       if (query != null) {
-        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(new QueryKeyImpl(getMacroNodeRef(), query.getNodeId(), query));
+        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodeQuery(new QueryKeyImpl(getMacroNodeRef(), query.getNodeId()));
       } else {
         // <default> : propagate  current input node
         return new SourceNodeQuery() {
@@ -341,7 +341,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     private SourceNodesQuery createNodesQuery() {
       SNode nodesQuery = RuleUtil.getSourceNodesQuery(macro);
       if (nodesQuery != null) {
-        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodesQuery(new QueryKeyImpl(getMacroNodeRef(), nodesQuery.getNodeId(), nodesQuery));
+        return myTemplateProcessor.getQueryProvider(getMacroNodeRef()).getSourceNodesQuery(new QueryKeyImpl(getMacroNodeRef(), nodesQuery.getNodeId()));
       }
       if (RuleUtil.doesMacroRequireInput(macro)) {
         return null;
@@ -495,7 +495,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
     @Override
     public SNode getAnchorNode(@NotNull TemplateContext context, @NotNull SNode outputParent, @NotNull SNode outputNode) throws GenerationFailureException {
       if (myAnchorQuery == null) {
-        myAnchorQuery = context.getEnvironment().getQueryProvider(getMacroNodeRef()).getWeaveAnchorQuery(macro);
+        SNode aqNode = RuleUtil.getWeaveMacro_AnchorQuery(macro);
+        if (aqNode == null) {
+          // FIXME It's odd to know default implementation in here. Instead, QueryKey shall avoid knowledge of query condition node id
+          // FIXME same applies to IfMacro
+          myAnchorQuery = new QueryProviderBase.Defaults();
+        } else {
+          QueryKeyImpl qk = new QueryKeyImpl(getMacroNodeRef(), aqNode.getNodeId());
+          myAnchorQuery = context.getEnvironment().getQueryProvider(getMacroNodeRef()).getWeaveAnchorQuery(qk);
+        }
       }
       return myAnchorQuery.anchorNode(new WeavingAnchorContext(context, getMacroNodeRef(), outputParent, outputNode));
     }
@@ -552,7 +560,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       SNode function = RuleUtil.getIfMacro_ConditionFunction(macro);
       if (function != null) {
         myCondition =
-            templateProcessor.getQueryProvider(getMacroNodeRef()).getIfMacroCondition(new QueryKeyImpl(getMacroNodeRef(), function.getNodeId(), macro));
+            templateProcessor.getQueryProvider(getMacroNodeRef()).getIfMacroCondition(new QueryKeyImpl(getMacroNodeRef(), function.getNodeId()));
       } else {
         myCondition = new QueryProviderBase.Missing(macro);
       }

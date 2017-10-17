@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -143,7 +142,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       if (myCondition == null) {
         SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(myMappingConfiguration);
         if (condition != null) {
-          QueryKey identity = new QueryKeyImpl(getMappingNode(), condition.getNodeId(), myMappingConfiguration);
+          QueryKey identity = new QueryKeyImpl(getMappingNode(), condition.getNodeId());
           myCondition = generator.getQueryProvider(getMappingNode()).getMapConfigurationCondition(identity);
         } else {
           myCondition = new QueryProviderBase.Defaults();

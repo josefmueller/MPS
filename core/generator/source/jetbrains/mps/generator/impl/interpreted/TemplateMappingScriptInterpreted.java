@@ -70,7 +70,7 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
     if (myCodeBlock == null) {
       SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(scriptNode);
       if (codeBlock != null) {
-        QueryKey identity = new QueryKeyImpl(getScriptNode(), codeBlock.getNodeId(), scriptNode);
+        QueryKey identity = new QueryKeyImpl(getScriptNode(), codeBlock.getNodeId());
         myCodeBlock = generator.getQueryProvider(getScriptNode()).getScriptCodeBlock(identity);
       } else {
         myCodeBlock = new QueryProviderBase.Defaults();

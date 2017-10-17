@@ -44,7 +44,7 @@ public class TemplateDropRuleInterpreted extends DropRootRuleBase implements Tem
     if (myCondition == null) {
       SNode condition = RuleUtil.getDropRuleCondition(myRuleNode);
       if (condition != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId());
         myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropRuleCondition(identity);
       } else {
         myCondition = new QueryProviderBase.Defaults();

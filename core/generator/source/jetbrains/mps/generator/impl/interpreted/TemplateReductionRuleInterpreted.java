@@ -56,7 +56,7 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
     if (myCondition == null) {
       SNode condition = RuleUtil.getBaseRuleCondition(myRuleNode);
       if (condition != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId());
         myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getReductionRuleCondition(identity);
       } else {
         myCondition = new QueryProviderBase.Defaults();

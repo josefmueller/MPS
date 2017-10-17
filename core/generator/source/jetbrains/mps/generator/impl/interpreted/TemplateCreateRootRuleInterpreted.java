@@ -49,7 +49,7 @@ public class TemplateCreateRootRuleInterpreted extends CreateRootRuleBase implem
     if (myCondition == null) {
       SNode conditionFunction = RuleUtil.getCreateRootRuleCondition(myRuleNode);
       if (conditionFunction != null) {
-        QueryKeyImpl identity = new QueryKeyImpl(getRuleNode(), conditionFunction.getNodeId(), myRuleNode);
+        QueryKeyImpl identity = new QueryKeyImpl(getRuleNode(), conditionFunction.getNodeId());
         myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getCreateRootRuleCondition(identity);
       } else {
         myCondition = new QueryProviderBase.Defaults();

@@ -94,7 +94,7 @@ public abstract class RuleConsequenceProcessor {
           SNode caseConditionNode = RuleUtil.getInlineSwitch_caseCondition(switchCase);
           final InlineSwitchCaseCondition condition;
           if (caseConditionNode != null) {
-            QueryKey identity = new QueryKeyImpl(switchCase.getReference(), caseConditionNode.getNodeId(), switchCase);
+            QueryKey identity = new QueryKeyImpl(switchCase.getReference(), caseConditionNode.getNodeId());
             condition = qps.getQueryProvider(mySwitchNode.getReference()).getInlineSwitchCaseCondition(identity);
           } else {
             condition = new QueryProviderBase.Missing(switchCase);

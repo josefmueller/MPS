@@ -89,7 +89,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     if (myContentNodeQuery == null) {
       SNode contextQuery = RuleUtil.getWeaving_ContextNodeQuery(myRuleNode);
       if (contextQuery != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), contextQuery.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), contextQuery.getNodeId());
         myContentNodeQuery = environment.getQueryProvider(getRuleNode()).getWeaveRuleQuery(identity);
       } else {
         myContentNodeQuery = new QueryProviderBase.Defaults();
@@ -104,7 +104,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     if (myAnchorQuery == null) {
       SNode anchorQuery = RuleUtil.isNodeMacro(myRuleNode) ? RuleUtil.getWeaveMacro_AnchorQuery(myRuleNode) : RuleUtil.getWeaveRule_AnchorQuery(myRuleNode);
       if (anchorQuery != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), anchorQuery.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), anchorQuery.getNodeId());
         myAnchorQuery = context.getEnvironment().getQueryProvider(getRuleNode()).getWeaveAnchorQuery(identity);
       } else {
         myAnchorQuery = new QueryProviderBase.Defaults();
@@ -118,7 +118,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     if (myCondition == null) {
       SNode condition = RuleUtil.getBaseRuleCondition(myRuleNode);
       if (condition != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId());
         myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getWeaveRuleCondition(identity);
       } else {
         myCondition = new QueryProviderBase.Defaults();
@@ -234,7 +234,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
         environment.getLogger().error(getRuleNode(), "weaving rule: cannot create list of source nodes", GeneratorUtil.describeInput(context));
         return false;
       }
-      final SourceNodesQuery snq = environment.getQueryProvider(getRuleNode()).getSourceNodesQuery(new QueryKeyImpl(getRuleNode(), query.getNodeId(), query));
+      final SourceNodesQuery snq = environment.getQueryProvider(getRuleNode()).getSourceNodesQuery(new QueryKeyImpl(getRuleNode(), query.getNodeId()));
       Collection<SNode> queryNodes = environment.getQueryExecutor().evaluate(snq, new SourceSubstituteMacroNodesContext(context, query.getReference()));
       if (queryNodes.isEmpty()) {
         return false;

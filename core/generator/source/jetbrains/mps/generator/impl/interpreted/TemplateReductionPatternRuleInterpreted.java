@@ -72,7 +72,7 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
       // There are pattern : PatternExpression[1] and conditionFunction : BaseMappingRule_Condition[0..1] in PatternReduction_MappingRule,
       // and unlike other rules, getPatternRuleCondition() here corresponds to mandatory QG.checkPattern method,
       // which invokes conditionFunction if present.
-      myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(new QueryKeyImpl(getRuleNode(), getRuleNode().getNodeId(), myRuleNode));
+      myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(new QueryKeyImpl(getRuleNode(), getRuleNode().getNodeId()));
     }
     return myQuery.pattern(new PatternRuleContext(context, getRuleNode()));
   }

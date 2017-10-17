@@ -46,7 +46,7 @@ public class DropAttributeRuleInterpreted extends DropAttributeRuleBase {
     if (myCondition == null) {
       SNode condition = RuleUtil.getDropAttributeRule_Condition(myRuleNode);
       if (condition != null) {
-        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId(), myRuleNode);
+        QueryKey identity = new QueryKeyImpl(getRuleNode(), condition.getNodeId());
         myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropAttributeRuleCondition(identity);
       } else {
         myCondition = new QueryProviderBase.Defaults();
