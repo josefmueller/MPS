@@ -305,7 +305,7 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
@@ -818,9 +818,9 @@
                         <node concept="Xl_RD" id="7$NO6fvW2bv" role="37wK5m">
                           <property role="Xl_RC" value="Replace" />
                         </node>
-                        <node concept="10M0yZ" id="7$NO6fvW29k" role="37wK5m">
-                          <ref role="3cqZAo" to="hdhb:42hl10VH9K2" resolve="MIRRORED_APPLY_ICON" />
-                          <ref role="1PxDUh" node="7$NO6fvW29l" resolve="DiffButtonsPainter" />
+                        <node concept="10M0yZ" id="2ulDXJ9wEDt" role="37wK5m">
+                          <ref role="3cqZAo" to="xnls:~IdeIcons.APPLY_RIGHT" resolve="APPLY_RIGHT" />
+                          <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
                         </node>
                       </node>
                     </node>
@@ -10545,8 +10545,9 @@
                           <node concept="Xl_RD" id="2YaKrzowHi2" role="37wK5m">
                             <property role="Xl_RC" value="Replace" />
                           </node>
-                          <node concept="37vLTw" id="2YaKrzowHi5" role="37wK5m">
-                            <ref role="3cqZAo" to="hdhb:42hl10VH9K2" resolve="MIRRORED_APPLY_ICON" />
+                          <node concept="10M0yZ" id="2ulDXJ9wG0C" role="37wK5m">
+                            <ref role="3cqZAo" to="xnls:~IdeIcons.APPLY_RIGHT" resolve="APPLY_RIGHT" />
+                            <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
                           </node>
                         </node>
                       </node>

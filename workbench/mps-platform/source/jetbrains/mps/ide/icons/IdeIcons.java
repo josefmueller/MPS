@@ -76,6 +76,7 @@ public class IdeIcons {
   public static final Icon INSPECTOR_ICON = Toolwindows.ToolWindowInspection;
 
   public static final Icon APPLY = Diff.Arrow;
+  public static final Icon APPLY_RIGHT= Diff.ArrowRight;
   public static final Icon EXCLUDE = Diff.Remove;
   public static final Icon OPENED_FOLDER = AllIcons.Nodes.TreeOpen;
   public static final Icon CLOSED_FOLDER = AllIcons.Nodes.TreeClosed;

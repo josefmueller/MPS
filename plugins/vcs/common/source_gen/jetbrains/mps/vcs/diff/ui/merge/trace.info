@@ -1242,7 +1242,7 @@
         <var name="changeGroup" id="708166622413811524" />
         <var name="y" id="708166622413811526" />
       </scope>
-      <unit id="708166622413811559" at="28,180,32,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$1" />
+      <unit id="708166622413811559" at="28,161,32,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$1" />
       <unit id="708166622413811581" at="33,124,37,5" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$2" />
       <unit id="2034046503373010848" at="54,98,59,7" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$MyButton$1" />
       <unit id="708166622413811460" at="46,0,62,0" name="jetbrains.mps.vcs.diff.ui.merge.MergeButtonsPainter$MyButton" />

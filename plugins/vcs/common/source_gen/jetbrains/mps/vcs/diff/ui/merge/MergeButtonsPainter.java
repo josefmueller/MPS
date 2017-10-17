@@ -25,7 +25,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     int applyX = (isHighlightLeft() ? getX(0) : getX(1));
     int excludeX = (isHighlightLeft() ? getX(1) : getX(0));
-    FoldingAreaButton apply = new MergeButtonsPainter.MyButton(changeGroup, applyX, y, "Apply", (isHighlightLeft() ? MergeButtonsPainter.MIRRORED_APPLY_ICON : IdeIcons.APPLY), new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
+    FoldingAreaButton apply = new MergeButtonsPainter.MyButton(changeGroup, applyX, y, "Apply", (isHighlightLeft() ? IdeIcons.APPLY_RIGHT : IdeIcons.APPLY), new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
       public void invoke(MergeSession session, Iterable<ModelChange> changes) {
         session.applyChanges(changes);
       }

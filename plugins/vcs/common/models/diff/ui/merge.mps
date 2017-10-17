@@ -1174,9 +1174,9 @@
                   <node concept="1rXfSq" id="4hiugqyz8U0" role="3K4Cdx">
                     <ref role="37wK5l" to="hdhb:42hl10VH9Kp" resolve="isHighlightLeft" />
                   </node>
-                  <node concept="10M0yZ" id="BjUsE2KQV7" role="3K4E3e">
-                    <ref role="3cqZAo" to="hdhb:42hl10VH9K2" resolve="MIRRORED_APPLY_ICON" />
-                    <ref role="1PxDUh" node="BjUsE2KQV8" resolve="MergeButtonsPainter" />
+                  <node concept="10M0yZ" id="2ulDXJ9wNlB" role="3K4E3e">
+                    <ref role="3cqZAo" to="xnls:~IdeIcons.APPLY_RIGHT" resolve="APPLY_RIGHT" />
+                    <ref role="1PxDUh" to="xnls:~IdeIcons" resolve="IdeIcons" />
                   </node>
                 </node>
                 <node concept="1bVj0M" id="BjUsE2KQXB" role="37wK5m">
