@@ -4,7 +4,7 @@ package jetbrains.mps.lang.pattern.generator.baseLanguage.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
@@ -54,6 +54,7 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import org.jetbrains.annotations.Nullable;
@@ -70,19 +71,19 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static boolean dropAttr_Condition_6930688547477895005(final TemplateQueryContext _context) {
+  public static boolean dropAttr_Condition_6930688547477895005(final DropAttributeRuleContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
-  public static boolean dropAttr_Condition_6930688547477897339(final TemplateQueryContext _context) {
+  public static boolean dropAttr_Condition_6930688547477897339(final DropAttributeRuleContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
-  public static boolean dropAttr_Condition_2056074660033127916(final TemplateQueryContext _context) {
+  public static boolean dropAttr_Condition_2056074660033127916(final DropAttributeRuleContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
-  public static boolean dropAttr_Condition_2056074660033131216(final TemplateQueryContext _context) {
+  public static boolean dropAttr_Condition_2056074660033131216(final DropAttributeRuleContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
-  public static boolean dropAttr_Condition_6930688547477945952(final TemplateQueryContext _context) {
+  public static boolean dropAttr_Condition_6930688547477945952(final DropAttributeRuleContext _context) {
     return SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), false, false) != null;
   }
   public static boolean baseMappingRule_Condition_9046399079000776308(final BaseMappingRuleContext _context) {
@@ -729,6 +730,47 @@ public class QueriesGenerated extends QueryProviderBase {
       switch (methodKey) {
         case 0:
           return QueriesGenerated.baseMappingRule_Condition_9046399079000776308(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, DropAttributeRuleCondition> darcMethods = new HashMap<String, DropAttributeRuleCondition>();
+  {
+    int i = 0;
+    darcMethods.put("6930688547477894224", new QueriesGenerated.DARC(i++));
+    darcMethods.put("6930688547477894546", new QueriesGenerated.DARC(i++));
+    darcMethods.put("2056074660033127915", new QueriesGenerated.DARC(i++));
+    darcMethods.put("2056074660033131215", new QueriesGenerated.DARC(i++));
+    darcMethods.put("6930688547477945553", new QueriesGenerated.DARC(i++));
+  }
+  @Override
+  @NotNull
+  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
+    if (!(darcMethods.containsKey(id))) {
+      return super.getDropAttributeRuleCondition(identity);
+    }
+    return darcMethods.get(id);
+  }
+  private static class DARC implements DropAttributeRuleCondition {
+    private final int methodKey;
+    public DARC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Override
+    public boolean check(@NotNull DropAttributeRuleContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.dropAttr_Condition_6930688547477895005(ctx);
+        case 1:
+          return QueriesGenerated.dropAttr_Condition_6930688547477897339(ctx);
+        case 2:
+          return QueriesGenerated.dropAttr_Condition_2056074660033127916(ctx);
+        case 3:
+          return QueriesGenerated.dropAttr_Condition_2056074660033131216(ctx);
+        case 4:
+          return QueriesGenerated.dropAttr_Condition_6930688547477945952(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
