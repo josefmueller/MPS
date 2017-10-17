@@ -189,8 +189,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private static void appendNodeUniqueId(SNode node, StringBuilder sb) {
     SNode parent = node.getParent();
 
+    if (parent == null) {
+      return;
+    }
+    sb.append('_');
     boolean sym = true;
-    while (parent != null) {
+    do {
       int index = IterableUtil.asList(parent.getChildren(node.getContainmentLink())).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
@@ -203,7 +207,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       sym = !sym;
       node = parent;
       parent = node.getParent();
-    }
+    } while (parent != null);
   }
 
 
@@ -249,7 +253,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     } // if(contextNode != null)
 
     if (inputNode != null) {
-      uniqueNameBuffer.append('_');
       appendNodeUniqueId(inputNode, uniqueNameBuffer);
     }
 
