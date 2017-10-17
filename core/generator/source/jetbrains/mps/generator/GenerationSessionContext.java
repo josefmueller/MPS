@@ -41,6 +41,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Available from {@link ITemplateGenerator#getGeneratorSessionContext()}.
@@ -72,13 +73,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   private final Map<Object, Object> myTransientObjects;
   /**
-   * Step objects survive survive major step
+   * Step objects survive major step
    */
   private final Map<Object, Object> myStepObjects;
   /**
    * Session objects survive complete generation session for the given model
    */
   private final Map<Object, Object> mySessionObjects;
+
+  private final ConcurrentMap<SNodeReference, ConcurrentMap<String, AtomicInteger>> myIndexedNames;
 
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
@@ -96,10 +99,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myPerfTrace = performanceTracer;
     myLogger = logger;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
-    mySessionObjects = new ConcurrentHashMap<Object, Object>();
-    myTransientObjects = new ConcurrentHashMap<Object, Object>();
-    myStepObjects = new ConcurrentHashMap<Object, Object>();
-    myUsedNames = new ConcurrentHashMap<SNodeReference, Set<String>>();
+    mySessionObjects = new ConcurrentHashMap<>();
+    myTransientObjects = new ConcurrentHashMap<>();
+    myStepObjects = new ConcurrentHashMap<>();
+    myUsedNames = new ConcurrentHashMap<>();
+    myIndexedNames = new ConcurrentHashMap<>();
   }
 
   /**
@@ -115,8 +119,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
     // this copy cons indicate new major step, hence new empty maps
-    myTransientObjects = new ConcurrentHashMap<Object, Object>();
-    myStepObjects = new ConcurrentHashMap<Object, Object>();
+    myTransientObjects = new ConcurrentHashMap<>();
+    myStepObjects = new ConcurrentHashMap<>();
+    myIndexedNames = new ConcurrentHashMap<>();
   }
 
   public void clearTransientObjects() {
@@ -276,6 +281,21 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       uniqueNameBuffer.setLength(trimPos);
     }
     return uniqueName;
+  }
+
+
+  // baseName != null, contextNode may be null; noIndexForFirst == false means index is always added
+  // If noIndexForFirst == true, the sequence would be "baseName", "baseName1", "baseName2", ...
+  // if noIndexForFirst == false, the sequence is "baseName0", "baseName1", "baseName2", ...
+  public String createIndexedName(String baseName, SNode contextNode, boolean noIndexForFirst) {
+    SNodeReference key = contextNode == null ? myFakeNameTopContextNode : contextNode.getReference();
+    ConcurrentMap<String, AtomicInteger> nameIndex = myIndexedNames.computeIfAbsent(key, o -> new ConcurrentHashMap<>());
+    AtomicInteger index = nameIndex.computeIfAbsent(baseName, o -> new AtomicInteger(0));
+    int value = index.getAndIncrement();
+    if (value == 0 && noIndexForFirst) {
+      return baseName;
+    }
+    return baseName + value;
   }
 
   /**

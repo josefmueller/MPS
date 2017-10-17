@@ -161,8 +161,30 @@ public class TemplateQueryContext {
     return result != null ? result : node;
   }
 
+  /**
+   *
+   * @param baseName prefix
+   * @param contextNode optional extra context node. Contributes (if a named node) a name fragment to further distinguish names, holds used names
+   *                    (IOW, defines name visibility context). If no {@code contextNode} is specified, scope is global.
+   * @return value {@code baseName}[_{@code hash(contextNode)}][_{@code hash(getInputNode())}][_{@code counter}]
+   */
   public String createUniqueName(String baseName, SNode contextNode) {
     return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, getInputNode());
+  }
+
+  /**
+   *
+   * @param baseName prefix the name sequence would share
+   * @param contextNode optional context node (defaults to {@link #getInputNode()}) to keep last used index for {@code baseName}
+   * @param noIndexForFirst if {@code true}, the first value returned would be "baseName", second "baseName1", etc.
+   *                        When {@code false}, all names would get index, starting from 0.
+   * @return {@code baseName}[{@code counter}]
+   */
+  public String createIndexedName(String baseName, SNode contextNode, boolean noIndexForFirst) {
+    if (contextNode == null) {
+      contextNode = getInputNode();
+    }
+    return myGenerator.getGeneratorSessionContext().createIndexedName(baseName, contextNode, noIndexForFirst);
   }
 
   // user objects

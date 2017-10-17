@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GenerationContextOp_Base;
   private ConceptPresentation props_GenerationContextOp_ContextVarRef;
   private ConceptPresentation props_GenerationContextOp_CopyWithTrace;
+  private ConceptPresentation props_GenerationContextOp_CreateIndexedName;
   private ConceptPresentation props_GenerationContextOp_CreateUniqueName;
   private ConceptPresentation props_GenerationContextOp_DirtyNode;
   private ConceptPresentation props_GenerationContextOp_GenParameterRef;
@@ -70,6 +71,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GenerationContextOp_CopyWithTrace = cpb.create();
         }
         return props_GenerationContextOp_CopyWithTrace;
+      case LanguageConceptSwitch.GenerationContextOp_CreateIndexedName:
+        if (props_GenerationContextOp_CreateIndexedName == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("generate name with optional sequential suffix");
+          cpb.rawPresentation("name");
+          props_GenerationContextOp_CreateIndexedName = cpb.create();
+        }
+        return props_GenerationContextOp_CreateIndexedName;
       case LanguageConceptSwitch.GenerationContextOp_CreateUniqueName:
         if (props_GenerationContextOp_CreateUniqueName == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -600,5 +600,33 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
+  <node concept="1TIwiD" id="11UMvNigQBr">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="generate name with optional sequential suffix" />
+    <property role="TrG5h" value="GenerationContextOp_CreateIndexedName" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="name" />
+    <property role="EcuMT" value="1187483539462121947" />
+    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
+    <node concept="1TJgyi" id="11UMvNih8pQ" role="1TKVEl">
+      <property role="IQ2nx" value="1187483539462194806" />
+      <property role="TrG5h" value="skipFirstIndex" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyj" id="11UMvNigQBs" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="baseName" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1187483539462121948" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="11UMvNigQBt" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="contextNode" />
+      <property role="IQ2ns" value="1187483539462121949" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
 </model>
 
