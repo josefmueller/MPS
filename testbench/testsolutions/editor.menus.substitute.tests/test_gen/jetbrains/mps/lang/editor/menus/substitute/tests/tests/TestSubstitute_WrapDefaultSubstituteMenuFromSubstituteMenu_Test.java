@@ -6,15 +6,16 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class TestSubstitute_Wrapper_Test extends BaseTransformationTest {
+public class TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu_Test extends BaseTransformationTest {
   @Test
-  public void test_TestSubstitute_Wrapper() throws Throwable {
+  public void test_TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu() throws Throwable {
     initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Wrapper_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -23,6 +24,9 @@ public class TestSubstitute_Wrapper_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("8998492695590938557", "8998492695590938559");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
+      typeString("default");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
