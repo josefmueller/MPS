@@ -26,12 +26,10 @@
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
-        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <child id="1083172003582" name="member" index="M5hS2" />
       </concept>
       <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
-        <property id="1192116978809" name="javaIdentifier" index="2fHolG" />
         <property id="1083923523172" name="externalValue" index="1uS6qo" />
         <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
@@ -510,45 +508,6 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
-  <node concept="1TIwiD" id="h7JHHhJ">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="MultipleForeachLoop" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="foreach" />
-    <property role="3GE5qa" value="_obsolete" />
-    <property role="EcuMT" value="1176547808367" />
-    <ref role="1TJDcQ" to="tpee:gMLF5Fu" resolve="AbstractLoopStatement" />
-    <node concept="1TJgyj" id="h7JIe2B" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="loopVariable" />
-      <property role="20lbJX" value="1..n" />
-      <property role="IQ2ns" value="1176547942567" />
-      <ref role="20lvS9" node="h7JHPUg" resolve="MultipleForeachLoopVariable" />
-    </node>
-    <node concept="asaX9" id="7cq3qQ1_gsD" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="h7JHPUg">
-    <property role="TrG5h" value="MultipleForeachLoopVariable" />
-    <property role="3GE5qa" value="_obsolete" />
-    <property role="EcuMT" value="1176547843728" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="h7JHZdu" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="variable" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1176547881822" />
-      <ref role="20lvS9" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="h7JI2T5" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="iterable" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1176547896901" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="7cq3qQ1_gsE" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="h7Knyhh">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -902,27 +861,6 @@
       <property role="1iqoE4" value="${module}/icons/comparison.png" />
     </node>
   </node>
-  <node concept="AxPO7" id="hnFOH2D">
-    <property role="3lZH7k" value="custom" />
-    <property role="TrG5h" value="EquationDirection_Enum" />
-    <property role="3GE5qa" value="_obsolete" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="hnFOH2E" role="M5hS2">
-      <property role="1uS6qv" value="none" />
-      <property role="2fHolG" value="none" />
-      <property role="1uS6qo" value="none" />
-    </node>
-    <node concept="M4N5e" id="hnFONlZ" role="M5hS2">
-      <property role="1uS6qv" value="left" />
-      <property role="2fHolG" value="left" />
-      <property role="1uS6qo" value=":=" />
-    </node>
-    <node concept="M4N5e" id="hnFOQR_" role="M5hS2">
-      <property role="1uS6qv" value="right" />
-      <property role="2fHolG" value="right" />
-      <property role="1uS6qo" value="=:" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hp8hY$D">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -1189,20 +1127,6 @@
     <node concept="M4N5e" id="hCObwW2" role="M5hS2">
       <property role="1uS6qv" value="500" />
       <property role="1uS6qo" value="inf" />
-    </node>
-  </node>
-  <node concept="AxPO7" id="hDj1hvf">
-    <property role="3lZH7k" value="derive_from_internal_value" />
-    <property role="TrG5h" value="RestrictionKind" />
-    <property role="3GE5qa" value="_obsolete" />
-    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
-    <node concept="M4N5e" id="hDj1hvg" role="M5hS2">
-      <property role="1uS6qv" value="equals" />
-      <property role="1uS6qo" value=":==:" />
-    </node>
-    <node concept="M4N5e" id="hDj1po9" role="M5hS2">
-      <property role="1uS6qv" value="subtype" />
-      <property role="1uS6qo" value=":&lt;=:" />
     </node>
   </node>
   <node concept="1TIwiD" id="hGQ5zx_">
@@ -1760,36 +1684,6 @@
       </node>
     </node>
   </node>
-  <node concept="1TIwiD" id="i38Y6gu">
-    <property role="TrG5h" value="ConceptClauseLinkInfo" />
-    <property role="3GE5qa" value="_obsolete" />
-    <property role="EcuMT" value="1240322303006" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="i38Zuds" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="linkDeclaration" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1240322663260" />
-      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="i38ZqRZ" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="targetNode" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1240322649599" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyj" id="i3sYjqt" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="childIndex" />
-      <property role="IQ2ns" value="1240657901213" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="3kHI3RTA0ZE" role="lGtFl">
-      <property role="YLQ7P" value="Likely, pair to ConceptTypeClause, which has been deprecated and removed, and doesn't make sense on its own" />
-      <property role="YLPcu" value="3.3" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="72ZQJIMM0Vs">
     <property role="TrG5h" value="OverloadedOpTypeRule_OneTypeSpecified" />
     <property role="3GE5qa" value="definition.rule.overload" />
@@ -1882,22 +1776,6 @@
     <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="PrWs8" id="1653mnvAORm" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="5RZKUQ_HQq7">
-    <property role="TrG5h" value="NodeInfo" />
-    <property role="3GE5qa" value="_obsolete" />
-    <property role="EcuMT" value="6773347515165533831" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5RZKUQ_HQq8" role="1TKVEl">
-      <property role="TrG5h" value="modelId" />
-      <property role="IQ2nx" value="6773347515165533832" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="5RZKUQ_HQq9" role="1TKVEl">
-      <property role="TrG5h" value="nodeId" />
-      <property role="IQ2nx" value="6773347515165533833" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="2A0HSGJ0Ugb">
@@ -1997,32 +1875,6 @@
     <property role="3GE5qa" value="definition.conceptFunction" />
     <property role="EcuMT" value="6998169140110925844" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="1TIwiD" id="VKl2IWel1C">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="CaretPositionOperation" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="caretPosition" />
-    <property role="3GE5qa" value="_obsolete" />
-    <property role="EcuMT" value="1076452857759748200" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="VKl2IWel1D" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="VKl2IWel1I">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="WasSelectedNodeOperation" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="wasSelectedNode" />
-    <property role="3GE5qa" value="definition.statement" />
-    <property role="EcuMT" value="1076452857759748206" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="VKl2IWel1J" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
-    </node>
   </node>
   <node concept="PlHQZ" id="3SW4jvYrbtS">
     <property role="TrG5h" value="IRuleWithOneNode" />

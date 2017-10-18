@@ -26,12 +26,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptApplicableNodeReference = createDescriptorForApplicableNodeReference();
   /*package*/ final ConceptDescriptor myConceptAssertStatement = createDescriptorForAssertStatement();
   /*package*/ final ConceptDescriptor myConceptAttributedNodeExpression = createDescriptorForAttributedNodeExpression();
-  /*package*/ final ConceptDescriptor myConceptCaretPositionOperation = createDescriptorForCaretPositionOperation();
   /*package*/ final ConceptDescriptor myConceptCoerceExpression = createDescriptorForCoerceExpression();
   /*package*/ final ConceptDescriptor myConceptCoerceStatement = createDescriptorForCoerceStatement();
   /*package*/ final ConceptDescriptor myConceptCoerceStrongExpression = createDescriptorForCoerceStrongExpression();
   /*package*/ final ConceptDescriptor myConceptComparisonRule = createDescriptorForComparisonRule();
-  /*package*/ final ConceptDescriptor myConceptConceptClauseLinkInfo = createDescriptorForConceptClauseLinkInfo();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_ContextNode = createDescriptorForConceptFunctionParameter_ContextNode();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_EditorContext = createDescriptorForConceptFunctionParameter_EditorContext();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_Role = createDescriptorForConceptFunctionParameter_Role();
@@ -73,9 +71,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMessageStatement = createDescriptorForMessageStatement();
   /*package*/ final ConceptDescriptor myConceptMessageStatementAnnotation = createDescriptorForMessageStatementAnnotation();
   /*package*/ final ConceptDescriptor myConceptMessageTarget = createDescriptorForMessageTarget();
-  /*package*/ final ConceptDescriptor myConceptMultipleForeachLoop = createDescriptorForMultipleForeachLoop();
-  /*package*/ final ConceptDescriptor myConceptMultipleForeachLoopVariable = createDescriptorForMultipleForeachLoopVariable();
-  /*package*/ final ConceptDescriptor myConceptNodeInfo = createDescriptorForNodeInfo();
   /*package*/ final ConceptDescriptor myConceptNode_InferTypeOperation = createDescriptorForNode_InferTypeOperation();
   /*package*/ final ConceptDescriptor myConceptNode_TypeOperation = createDescriptorForNode_TypeOperation();
   /*package*/ final ConceptDescriptor myConceptNonTypesystemRule = createDescriptorForNonTypesystemRule();
@@ -131,7 +126,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptVariableConvertersContainer = createDescriptorForVariableConvertersContainer();
   /*package*/ final ConceptDescriptor myConceptWarningStatement = createDescriptorForWarningStatement();
   /*package*/ final ConceptDescriptor myConceptWarningStatementAnnotation = createDescriptorForWarningStatementAnnotation();
-  /*package*/ final ConceptDescriptor myConceptWasSelectedNodeOperation = createDescriptorForWasSelectedNodeOperation();
   /*package*/ final ConceptDescriptor myConceptWhenConcreteStatement = createDescriptorForWhenConcreteStatement();
   /*package*/ final ConceptDescriptor myConceptWhenConcreteVariableDeclaration = createDescriptorForWhenConcreteVariableDeclaration();
   /*package*/ final ConceptDescriptor myConceptWhenConcreteVariableReference = createDescriptorForWhenConcreteVariableReference();
@@ -143,7 +137,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractCheckingRule, myConceptAbstractComparableStatement, myConceptAbstractEquationStatement, myConceptAbstractInequationStatement, myConceptAbstractOverloadedOpsTypeRule, myConceptAbstractRule, myConceptAbstractSubtypingRule, myConceptAddDependencyStatement, myConceptApplicableNodeCondition, myConceptApplicableNodeReference, myConceptAssertStatement, myConceptAttributedNodeExpression, myConceptCaretPositionOperation, myConceptCoerceExpression, myConceptCoerceStatement, myConceptCoerceStrongExpression, myConceptComparisonRule, myConceptConceptClauseLinkInfo, myConceptConceptFunctionParameter_ContextNode, myConceptConceptFunctionParameter_EditorContext, myConceptConceptFunctionParameter_Role, myConceptConceptFunctionParameter_Selection, myConceptConceptFunctionParameter_isAggregation, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_var, myConceptConceptReference, myConceptCreateComparableEquationStatement, myConceptCreateComparableEquationStatementStrong, myConceptCreateEquationStatement, myConceptCreateGreaterThanInequationStatement, myConceptCreateLessThanInequationStatement, myConceptCreateStrongGreaterThanInequationStatement, myConceptCreateStrongLessThanInequationStatement, myConceptDefaultGroupReference, myConceptErrorInfoExpression, myConceptGetOperationType, myConceptIRuleWithOneNode, myConceptIRuleWithTwoNodes, myConceptImmediateSupertypesExpression, myConceptInequationReference, myConceptInequationReplacementRule, myConceptInferenceRule, myConceptInfoStatement, myConceptInfoStatementAnnotation, myConceptIsApplicableConceptFunction, myConceptIsReplacementRuleApplicable_ConceptFunction, myConceptIsStrongSubtypeExpression, myConceptIsSubtypeExpression, myConceptJoinContainer, myConceptJoinType, myConceptLeftOperandType_parameter, myConceptLinkPatternVariableReference, myConceptMatchStatement, myConceptMatchStatementItem, myConceptMeetContainer, myConceptMeetType, myConceptMessageStatement, myConceptMessageStatementAnnotation, myConceptMessageTarget, myConceptMultipleForeachLoop, myConceptMultipleForeachLoopVariable, myConceptNodeInfo, myConceptNode_InferTypeOperation, myConceptNode_TypeOperation, myConceptNonTypesystemRule, myConceptNormalTypeClause, myConceptOperation_parameter, myConceptOrStatement, myConceptOriginalNodeId, myConceptOverloadedOpIsApplicableFunction, myConceptOverloadedOpRulesContainer, myConceptOverloadedOpTypeRule_OneTypeSpecified, myConceptOverloadedOperatorTypeFunction, myConceptOverloadedOperatorTypeRule, myConceptOverridesConceptFunction, myConceptPatternCondition, myConceptPatternVariableReference, myConceptPrintToTrace, myConceptProcessed, myConceptPropertyMessageTarget, myConceptPropertyNameTarget, myConceptPropertyPatternVariableReference, myConceptQuickFixArgument, myConceptQuickFixArgumentReference, myConceptQuickFixDescriptionBlock, myConceptQuickFixExecuteBlock, myConceptQuickFixField, myConceptQuickFixFieldReference, myConceptQuickFixSetSelectionBlock, myConceptReferenceMessageTarget, myConceptReferenceRoleTarget, myConceptReplacementRuleReference, myConceptReportErrorStatement, myConceptReportErrorStatementAnnotation, myConceptRightOperandType_parameter, myConceptRuntimeErrorType, myConceptRuntimeHoleType, myConceptRuntimeListVariable, myConceptRuntimeTypeVariable, myConceptSelectionType, myConceptSubstituteTypeRule, myConceptSubtypingRule, myConceptSupersedeConceptFunction, myConceptTypeCheckerAccessExpression, myConceptTypeClause, myConceptTypeOfExpression, myConceptTypeVarDeclaration, myConceptTypeVarReference, myConceptTypesystemIntention, myConceptTypesystemIntentionArgument, myConceptTypesystemQuickFix, myConceptVariableConverterItem, myConceptVariableConverterItem_ApplicableBlock, myConceptVariableConverterItem_ConvertBlock, myConceptVariableConvertersContainer, myConceptWarningStatement, myConceptWarningStatementAnnotation, myConceptWasSelectedNodeOperation, myConceptWhenConcreteStatement, myConceptWhenConcreteVariableDeclaration, myConceptWhenConcreteVariableReference);
+    return Arrays.asList(myConceptAbstractCheckingRule, myConceptAbstractComparableStatement, myConceptAbstractEquationStatement, myConceptAbstractInequationStatement, myConceptAbstractOverloadedOpsTypeRule, myConceptAbstractRule, myConceptAbstractSubtypingRule, myConceptAddDependencyStatement, myConceptApplicableNodeCondition, myConceptApplicableNodeReference, myConceptAssertStatement, myConceptAttributedNodeExpression, myConceptCoerceExpression, myConceptCoerceStatement, myConceptCoerceStrongExpression, myConceptComparisonRule, myConceptConceptFunctionParameter_ContextNode, myConceptConceptFunctionParameter_EditorContext, myConceptConceptFunctionParameter_Role, myConceptConceptFunctionParameter_Selection, myConceptConceptFunctionParameter_isAggregation, myConceptConceptFunctionParameter_node, myConceptConceptFunctionParameter_var, myConceptConceptReference, myConceptCreateComparableEquationStatement, myConceptCreateComparableEquationStatementStrong, myConceptCreateEquationStatement, myConceptCreateGreaterThanInequationStatement, myConceptCreateLessThanInequationStatement, myConceptCreateStrongGreaterThanInequationStatement, myConceptCreateStrongLessThanInequationStatement, myConceptDefaultGroupReference, myConceptErrorInfoExpression, myConceptGetOperationType, myConceptIRuleWithOneNode, myConceptIRuleWithTwoNodes, myConceptImmediateSupertypesExpression, myConceptInequationReference, myConceptInequationReplacementRule, myConceptInferenceRule, myConceptInfoStatement, myConceptInfoStatementAnnotation, myConceptIsApplicableConceptFunction, myConceptIsReplacementRuleApplicable_ConceptFunction, myConceptIsStrongSubtypeExpression, myConceptIsSubtypeExpression, myConceptJoinContainer, myConceptJoinType, myConceptLeftOperandType_parameter, myConceptLinkPatternVariableReference, myConceptMatchStatement, myConceptMatchStatementItem, myConceptMeetContainer, myConceptMeetType, myConceptMessageStatement, myConceptMessageStatementAnnotation, myConceptMessageTarget, myConceptNode_InferTypeOperation, myConceptNode_TypeOperation, myConceptNonTypesystemRule, myConceptNormalTypeClause, myConceptOperation_parameter, myConceptOrStatement, myConceptOriginalNodeId, myConceptOverloadedOpIsApplicableFunction, myConceptOverloadedOpRulesContainer, myConceptOverloadedOpTypeRule_OneTypeSpecified, myConceptOverloadedOperatorTypeFunction, myConceptOverloadedOperatorTypeRule, myConceptOverridesConceptFunction, myConceptPatternCondition, myConceptPatternVariableReference, myConceptPrintToTrace, myConceptProcessed, myConceptPropertyMessageTarget, myConceptPropertyNameTarget, myConceptPropertyPatternVariableReference, myConceptQuickFixArgument, myConceptQuickFixArgumentReference, myConceptQuickFixDescriptionBlock, myConceptQuickFixExecuteBlock, myConceptQuickFixField, myConceptQuickFixFieldReference, myConceptQuickFixSetSelectionBlock, myConceptReferenceMessageTarget, myConceptReferenceRoleTarget, myConceptReplacementRuleReference, myConceptReportErrorStatement, myConceptReportErrorStatementAnnotation, myConceptRightOperandType_parameter, myConceptRuntimeErrorType, myConceptRuntimeHoleType, myConceptRuntimeListVariable, myConceptRuntimeTypeVariable, myConceptSelectionType, myConceptSubstituteTypeRule, myConceptSubtypingRule, myConceptSupersedeConceptFunction, myConceptTypeCheckerAccessExpression, myConceptTypeClause, myConceptTypeOfExpression, myConceptTypeVarDeclaration, myConceptTypeVarReference, myConceptTypesystemIntention, myConceptTypesystemIntentionArgument, myConceptTypesystemQuickFix, myConceptVariableConverterItem, myConceptVariableConverterItem_ApplicableBlock, myConceptVariableConverterItem_ConvertBlock, myConceptVariableConvertersContainer, myConceptWarningStatement, myConceptWarningStatementAnnotation, myConceptWhenConcreteStatement, myConceptWhenConcreteVariableDeclaration, myConceptWhenConcreteVariableReference);
   }
 
   @Override
@@ -174,8 +168,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAssertStatement;
       case LanguageConceptSwitch.AttributedNodeExpression:
         return myConceptAttributedNodeExpression;
-      case LanguageConceptSwitch.CaretPositionOperation:
-        return myConceptCaretPositionOperation;
       case LanguageConceptSwitch.CoerceExpression:
         return myConceptCoerceExpression;
       case LanguageConceptSwitch.CoerceStatement:
@@ -184,8 +176,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCoerceStrongExpression;
       case LanguageConceptSwitch.ComparisonRule:
         return myConceptComparisonRule;
-      case LanguageConceptSwitch.ConceptClauseLinkInfo:
-        return myConceptConceptClauseLinkInfo;
       case LanguageConceptSwitch.ConceptFunctionParameter_ContextNode:
         return myConceptConceptFunctionParameter_ContextNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_EditorContext:
@@ -268,12 +258,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptMessageStatementAnnotation;
       case LanguageConceptSwitch.MessageTarget:
         return myConceptMessageTarget;
-      case LanguageConceptSwitch.MultipleForeachLoop:
-        return myConceptMultipleForeachLoop;
-      case LanguageConceptSwitch.MultipleForeachLoopVariable:
-        return myConceptMultipleForeachLoopVariable;
-      case LanguageConceptSwitch.NodeInfo:
-        return myConceptNodeInfo;
       case LanguageConceptSwitch.Node_InferTypeOperation:
         return myConceptNode_InferTypeOperation;
       case LanguageConceptSwitch.Node_TypeOperation:
@@ -384,8 +368,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptWarningStatement;
       case LanguageConceptSwitch.WarningStatementAnnotation:
         return myConceptWarningStatementAnnotation;
-      case LanguageConceptSwitch.WasSelectedNodeOperation:
-        return myConceptWasSelectedNodeOperation;
       case LanguageConceptSwitch.WhenConcreteStatement:
         return myConceptWhenConcreteStatement;
       case LanguageConceptSwitch.WhenConcreteVariableDeclaration:
@@ -530,15 +512,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("attributedNode");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForCaretPositionOperation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "CaretPositionOperation", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc395068L);
-    b.class_(false, false, false);
-    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1076452857759748200");
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("caretPosition");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForCoerceExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "CoerceExpression", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1127a2a14aeL);
     b.class_(false, false, false);
@@ -583,15 +556,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("anotherNode", 0x114cb3d0f37L).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L).optional(false).ordered(true).multiple(false).origin("1188820750135").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
     b.alias("Comparison Rule");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForConceptClauseLinkInfo() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "ConceptClauseLinkInfo", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL);
-    b.class_(false, false, false);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1240322303006");
-    b.associate("linkDeclaration", 0x120c8fde35cL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("1240322663260").done();
-    b.aggregate("targetNode", 0x120c8fdadffL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1240322649599").done();
-    b.aggregate("childIndex", 0x120dcf9369dL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("1240657901213").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConceptFunctionParameter_ContextNode() {
@@ -969,32 +933,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "MessageTarget", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a65783L);
     b.class_(false, true, false);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1227096479619");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMultipleForeachLoop() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "MultipleForeachLoop", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1176547808367");
-    b.aggregate("loopVariable", 0x111efb8e0a7L).target(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L).optional(false).ordered(true).multiple(true).origin("1176547942567").done();
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("foreach");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMultipleForeachLoopVariable() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "MultipleForeachLoopVariable", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L);
-    b.class_(false, false, false);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1176547843728");
-    b.aggregate("variable", 0x111efb7f35eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL).optional(false).ordered(true).multiple(false).origin("1176547881822").done();
-    b.aggregate("iterable", 0x111efb82e45L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1176547896901").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForNodeInfo() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "NodeInfo", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x5dffc3ada5b76687L);
-    b.class_(false, false, false);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/6773347515165533831");
-    b.prop("modelId", 0x5dffc3ada5b76688L, "6773347515165533832");
-    b.prop("nodeId", 0x5dffc3ada5b76689L, "6773347515165533833");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNode_InferTypeOperation() {
@@ -1490,15 +1428,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/7992060018732187444");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForWasSelectedNodeOperation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "WasSelectedNodeOperation", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0xef0542bbc39506eL);
-    b.class_(false, false, false);
-    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
-    b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1076452857759748206");
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("wasSelectedNode");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWhenConcreteStatement() {

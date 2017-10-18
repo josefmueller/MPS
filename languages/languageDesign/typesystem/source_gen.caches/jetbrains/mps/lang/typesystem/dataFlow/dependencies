@@ -91,7 +91,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.IsSubtypeExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatementItem_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.MatchStatement_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.MultipleForeachLoop_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.NormalTypeClause_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PatternCondition_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.dataFlow.PropertyNameTarget_DataFlow" />
@@ -148,14 +147,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.dataFlow.MatchStatement_DataFlow" file="MatchStatement_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.dataFlow.MultipleForeachLoop_DataFlow" file="MultipleForeachLoop_DataFlow.java">
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

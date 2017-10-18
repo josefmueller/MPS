@@ -21,12 +21,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ApplicableNodeReference;
   private ConceptPresentation props_AssertStatement;
   private ConceptPresentation props_AttributedNodeExpression;
-  private ConceptPresentation props_CaretPositionOperation;
   private ConceptPresentation props_CoerceExpression;
   private ConceptPresentation props_CoerceStatement;
   private ConceptPresentation props_CoerceStrongExpression;
   private ConceptPresentation props_ComparisonRule;
-  private ConceptPresentation props_ConceptClauseLinkInfo;
   private ConceptPresentation props_ConceptFunctionParameter_ContextNode;
   private ConceptPresentation props_ConceptFunctionParameter_EditorContext;
   private ConceptPresentation props_ConceptFunctionParameter_Role;
@@ -68,9 +66,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MessageStatement;
   private ConceptPresentation props_MessageStatementAnnotation;
   private ConceptPresentation props_MessageTarget;
-  private ConceptPresentation props_MultipleForeachLoop;
-  private ConceptPresentation props_MultipleForeachLoopVariable;
-  private ConceptPresentation props_NodeInfo;
   private ConceptPresentation props_Node_InferTypeOperation;
   private ConceptPresentation props_Node_TypeOperation;
   private ConceptPresentation props_NonTypesystemRule;
@@ -126,7 +121,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_VariableConvertersContainer;
   private ConceptPresentation props_WarningStatement;
   private ConceptPresentation props_WarningStatementAnnotation;
-  private ConceptPresentation props_WasSelectedNodeOperation;
   private ConceptPresentation props_WhenConcreteStatement;
   private ConceptPresentation props_WhenConcreteVariableDeclaration;
   private ConceptPresentation props_WhenConcreteVariableReference;
@@ -212,13 +206,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AttributedNodeExpression = cpb.create();
         }
         return props_AttributedNodeExpression;
-      case LanguageConceptSwitch.CaretPositionOperation:
-        if (props_CaretPositionOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("caretPosition");
-          props_CaretPositionOperation = cpb.create();
-        }
-        return props_CaretPositionOperation;
       case LanguageConceptSwitch.CoerceExpression:
         if (props_CoerceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -246,18 +233,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ComparisonRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a61b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a51b0me);
           props_ComparisonRule = cpb.create();
         }
         return props_ComparisonRule;
-      case LanguageConceptSwitch.ConceptClauseLinkInfo:
-        if (props_ConceptClauseLinkInfo == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.presentationByReference(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL, 0x120c8fde35cL, "linkDeclaration", "", "");
-          props_ConceptClauseLinkInfo = cpb.create();
-        }
-        return props_ConceptClauseLinkInfo;
       case LanguageConceptSwitch.ConceptFunctionParameter_ContextNode:
         if (props_ConceptFunctionParameter_ContextNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -422,7 +401,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InequationReplacementRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a04b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a83b0me);
           props_InequationReplacementRule = cpb.create();
         }
         return props_InequationReplacementRule;
@@ -431,7 +410,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL);
           cpb.deprecateAggregation(0x115f0161343L, "dependency");
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a14b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a93b0me);
           props_InferenceRule = cpb.create();
         }
         return props_InferenceRule;
@@ -551,29 +530,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MessageTarget = cpb.create();
         }
         return props_MessageTarget;
-      case LanguageConceptSwitch.MultipleForeachLoop:
-        if (props_MultipleForeachLoop == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("foreach");
-          props_MultipleForeachLoop = cpb.create();
-        }
-        return props_MultipleForeachLoop;
-      case LanguageConceptSwitch.MultipleForeachLoopVariable:
-        if (props_MultipleForeachLoopVariable == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("MultipleForeachLoopVariable");
-          props_MultipleForeachLoopVariable = cpb.create();
-        }
-        return props_MultipleForeachLoopVariable;
-      case LanguageConceptSwitch.NodeInfo:
-        if (props_NodeInfo == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NodeInfo");
-          props_NodeInfo = cpb.create();
-        }
-        return props_NodeInfo;
       case LanguageConceptSwitch.Node_InferTypeOperation:
         if (props_Node_InferTypeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -594,7 +550,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NonTypesystemRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a46b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a95b0me);
           props_NonTypesystemRule = cpb.create();
         }
         return props_NonTypesystemRule;
@@ -637,7 +593,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OverloadedOpRulesContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a07b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a56b0me);
           props_OverloadedOpRulesContainer = cpb.create();
         }
         return props_OverloadedOpRulesContainer;
@@ -848,7 +804,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubstituteTypeRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a001b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a59b0me);
           props_SubstituteTypeRule = cpb.create();
         }
         return props_SubstituteTypeRule;
@@ -856,7 +812,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubtypingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a101b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a69b0me);
           props_SubtypingRule = cpb.create();
         }
         return props_SubtypingRule;
@@ -920,7 +876,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TypesystemQuickFix == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a011b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a501b0me);
           props_TypesystemQuickFix = cpb.create();
         }
         return props_TypesystemQuickFix;
@@ -949,7 +905,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_VariableConvertersContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.rawPresentation("Variable Converters Container");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a411b0se);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a901b0me);
           props_VariableConvertersContainer = cpb.create();
         }
         return props_VariableConvertersContainer;
@@ -967,13 +923,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_WarningStatementAnnotation = cpb.create();
         }
         return props_WarningStatementAnnotation;
-      case LanguageConceptSwitch.WasSelectedNodeOperation:
-        if (props_WasSelectedNodeOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("wasSelectedNode");
-          props_WasSelectedNodeOperation = cpb.create();
-        }
-        return props_WasSelectedNodeOperation;
       case LanguageConceptSwitch.WhenConcreteStatement:
         if (props_WhenConcreteStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
