@@ -49,6 +49,7 @@
       </concept>
       <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
+      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="308059530142752797" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized" flags="ng" index="2F$Pav">
         <child id="8371900013785948359" name="part" index="2$S_pN" />
         <child id="8371900013785948365" name="parameterQuery" index="2$S_pT" />
@@ -153,6 +154,7 @@
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
+        <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -361,6 +363,9 @@
       <node concept="3F0ifn" id="hHix4E$" role="3EZMnx">
         <property role="3F0ifm" value="get output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxcW" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="1iCGBv" id="hHix4E_" role="3EZMnx">
         <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
@@ -399,6 +404,9 @@
       <node concept="3F0ifn" id="hHix4EG" role="3EZMnx">
         <property role="3F0ifm" value="get output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxcY" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="1iCGBv" id="hHixuZ6" role="3EZMnx">
         <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
@@ -439,6 +447,9 @@
       <node concept="3F0ifn" id="hIfr$5W" role="3EZMnx">
         <property role="3F0ifm" value="get prev input" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxd2" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="1iCGBv" id="hIfr$5X" role="3EZMnx">
         <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
@@ -460,6 +471,9 @@
       <node concept="3F0ifn" id="hIfA3hl" role="3EZMnx">
         <property role="3F0ifm" value="get copied output for" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxcS" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F0ifn" id="hPfysra" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -539,6 +553,9 @@
       <node concept="3F0ifn" id="hIpkeNR" role="3EZMnx">
         <property role="3F0ifm" value="unique name from" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxmG" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F0ifn" id="hT7KT6t" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -641,6 +658,9 @@
       <node concept="3F0ifn" id="hLiAW7E" role="3EZMnx">
         <property role="3F0ifm" value="get output list" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxd0" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="1iCGBv" id="hLiCyKG" role="3EZMnx">
         <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
@@ -679,6 +699,9 @@
       <node concept="3F0ifn" id="hLmmKM6" role="3EZMnx">
         <property role="3F0ifm" value="pick output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxcU" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="1iCGBv" id="hLmmKM7" role="3EZMnx">
         <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
@@ -717,6 +740,9 @@
       <node concept="3F0ifn" id="hT2_fzU" role="3EZMnx">
         <property role="3F0ifm" value="get original copied input for" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxcQ" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F0ifn" id="hT2_fzV" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -792,6 +818,9 @@
       <node concept="3F0ifn" id="4FXH7d67CM0" role="3EZMnx">
         <property role="3F0ifm" value="is dirty" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <node concept="A1WHr" id="Hjn6ojnxmI" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F0ifn" id="4FXH7d67CM2" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -908,6 +937,9 @@
       <node concept="3F0ifn" id="4RJ0ilaVRzn" role="3EZMnx">
         <property role="3F0ifm" value="label" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnyaZ" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F1sOY" id="4RJ0ilaVSfA" role="3EZMnx">
         <ref role="1NtTu8" to="tpf3:4RJ0ilaVRHI" resolve="inputNode" />
@@ -949,6 +981,9 @@
       <node concept="3F0ifn" id="2cPzl2lSLsF" role="3EZMnx">
         <property role="3F0ifm" value="copy with trace" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnyaX" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F1sOY" id="2cPzl2lSM5L" role="3EZMnx">
         <ref role="1NtTu8" to="tpf3:2cPzl2lSLsJ" resolve="nodes" />
@@ -1264,6 +1299,9 @@
       <node concept="3F0ifn" id="11UMvNigQBU" role="3EZMnx">
         <property role="3F0ifm" value="name from" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
+        <node concept="A1WHr" id="Hjn6ojnxmE" role="3vIgyS">
+          <ref role="2ZyFGn" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+        </node>
       </node>
       <node concept="3F0ifn" id="11UMvNigQBV" role="3EZMnx">
         <property role="3F0ifm" value="(" />
