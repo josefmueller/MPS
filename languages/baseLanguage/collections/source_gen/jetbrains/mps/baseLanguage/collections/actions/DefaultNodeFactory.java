@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class DefaultNodeFactory_ {
+public class DefaultNodeFactory {
   public static class NodeFactory_8656797459614949039 implements NodeFactory {
     public void setup(final SNode newNode, final SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"))) {

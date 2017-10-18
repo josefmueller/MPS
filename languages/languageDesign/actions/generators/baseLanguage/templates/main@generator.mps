@@ -371,8 +371,9 @@
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
       <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
-      <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
-        <child id="1218047638032" name="baseName" index="2piZGb" />
+      <concept id="1187483539462121947" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateIndexedName" flags="nn" index="32eq0B">
+        <property id="1187483539462194806" name="skipFirstIndex" index="32f$Ya" />
+        <child id="1187483539462121948" name="baseName" index="32eq0w" />
       </concept>
       <concept id="2721957369897614808" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" flags="nn" index="1bhEwm">
         <reference id="2721957369897614810" name="varmacro" index="1bhEwk" />
@@ -6631,8 +6632,9 @@
               <node concept="3cpWs6" id="1EKi9wqH8qj" role="3cqZAp">
                 <node concept="2OqwBi" id="1EKi9wqH9xK" role="3cqZAk">
                   <node concept="1iwH7S" id="1EKi9wqH8OU" role="2Oq$k0" />
-                  <node concept="2piZGk" id="1EKi9wqH9MY" role="2OqNvi">
-                    <node concept="Xl_RD" id="1EKi9wqHa0C" role="2piZGb">
+                  <node concept="32eq0B" id="Hjn6oj4$J3" role="2OqNvi">
+                    <property role="32f$Ya" value="true" />
+                    <node concept="Xl_RD" id="1EKi9wqHa0C" role="32eq0w">
                       <property role="Xl_RC" value="DefaultNodeFactory" />
                     </node>
                   </node>

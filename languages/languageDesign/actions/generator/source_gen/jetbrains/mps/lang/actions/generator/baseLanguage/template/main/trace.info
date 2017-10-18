@@ -403,11 +403,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)/5664333325054109827">
     <file name="QueriesGenerated.java">
-      <node id="1923116859007469203" at="180,182,181,67" concept="6" />
+      <node id="1923116859007469203" at="180,182,181,74" concept="6" />
       <node id="5664333325054468814" at="182,5,183,175" concept="6" />
       <node id="5664333325055029650" at="619,120,620,187" concept="6" />
       <node id="1923116859007447437" at="179,112,182,5" concept="3" />
-      <scope id="1923116859007447439" at="180,182,181,67" />
+      <scope id="1923116859007447439" at="180,182,181,74" />
       <scope id="5664333325055028943" at="619,120,620,187" />
       <scope id="5664333325054462318" at="179,112,183,175" />
     </file>
