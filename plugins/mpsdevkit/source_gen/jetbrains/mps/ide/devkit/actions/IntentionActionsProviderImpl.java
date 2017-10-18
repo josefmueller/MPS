@@ -11,13 +11,15 @@ import jetbrains.mps.intentions.icons.IntentionIconProvider;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionActionsProviderImpl implements IntentionActionsProvider {
@@ -26,21 +28,32 @@ public class IntentionActionsProviderImpl implements IntentionActionsProvider {
     Icon icon = new IntentionIconProvider(intention.getDescriptor().getKind()).getIcon();
 
     AnAction[] actions = {new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
+      {
+        setIsAlwaysVisible(true);
+      }
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> params) {
-        final Project mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
-        mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-          public void run() {
-            SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
-            SNode intentionNode = (nodeRef == null ? null : nodeRef.resolve(mpsProject.getRepository()));
-            if (intentionNode == null) {
-              Messages.showErrorDialog(ProjectHelper.toIdeaProject(mpsProject), String.format("Could not find declaration for %s intention (%s)", intention.getClass().getSimpleName(), intention.getClass().getName()), "Intention Declaration");
-            } else {
-              NavigationSupport.getInstance().openNode(mpsProject, intentionNode, true, true);
-              NavigationSupport.getInstance().selectInTree(mpsProject, intentionNode, false);
-            }
+        final MPSProject mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
+        final SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
+        if (nodeRef == null || mpsProject == null) {
+          return;
+        }
+        final SRepository repo = mpsProject.getRepository();
+        if (!(new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return nodeRef.resolve(repo) != null;
           }
-        });
+        }))) {
+          Messages.showErrorDialog(mpsProject.getProject(), String.format("Could not find declaration for %s intention (%s)", intention.getClass().getSimpleName(), intention.getClass().getName()), "Intention Declaration");
+        } else {
+          new EditorNavigator(mpsProject).shallFocus(true).shallSelect(true).open(nodeRef);
+          new ProjectPaneNavigator(mpsProject).select(nodeRef);
+        }
+      }
+
+      @Override
+      protected void doUpdate(AnActionEvent e, Map<String, Object> params) {
+        setEnabledState(e.getPresentation(), intention.getDescriptor().getIntentionNodeReference() != null);
       }
     }, new BaseAction("Disable This Intention", "Disables this intention type", icon) {
       @Override
