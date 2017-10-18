@@ -58,6 +58,29 @@
       <unit id="2025581204008535354" at="10,0,28,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/3756708898179593010">
+    <file name="SelectAllNonSelectableRootThroughNonSelectable_Test.java">
+      <node id="3756708898179593010" at="17,86,18,112" concept="0" />
+      <node id="3756708898179593010" at="18,112,19,138" concept="0" />
+      <node id="3756708898179593010" at="25,51,26,72" concept="0" />
+      <node id="3756708898179594969" at="26,72,27,72" concept="0" />
+      <node id="3756708898179599423" at="29,27,30,345" concept="0" />
+      <node id="3756708898179600243" at="32,9,33,73" concept="0" />
+      <node id="3756708898179593610" at="29,0,32,0" concept="1" trace="run#()V" />
+      <node id="3756708898179593010" at="16,0,21,0" concept="1" trace="test_SelectAllNonSelectableRootThroughNonSelectable#()V" />
+      <node id="3756708898179593609" at="27,72,32,9" concept="0" />
+      <node id="3756708898179593010" at="24,0,35,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3756708898179593611" at="29,27,30,345" />
+      <scope id="3756708898179593010" at="17,86,19,138" />
+      <scope id="3756708898179593610" at="29,0,32,0" />
+      <scope id="3756708898179593010" at="16,0,21,0" />
+      <scope id="3756708898179593010" at="25,51,33,73" />
+      <scope id="3756708898179593010" at="24,0,35,0" />
+      <unit id="3756708898179593610" at="28,47,32,7" name="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test$TestBody$1" />
+      <unit id="3756708898179593010" at="22,0,36,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test$TestBody" />
+      <unit id="3756708898179593010" at="14,0,37,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllNonSelectableRootThroughNonSelectable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/4348968319430072522">
     <file name="SelectAll_Test.java">
       <node id="4348968319430072522" at="13,49,14,112" concept="0" />
