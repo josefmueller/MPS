@@ -37,21 +37,15 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
     Map<SNode, SNode> typeParamsToArgs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> substitutions = MapSequence.fromMap(new HashMap<SNode, SNode>());
     {
-      SNode typeParameter;
-      SNode typeVar;
-      Iterator<SNode> typeParameter_iterator = ListSequence.fromList(SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
-      Iterator<SNode> typeVar_iterator = ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).iterator();
-      while (true) {
-        if (!(typeParameter_iterator.hasNext())) {
-          break;
-        }
-        if (!(typeVar_iterator.hasNext())) {
-          break;
-        }
-        typeParameter = typeParameter_iterator.next();
-        typeVar = typeVar_iterator.next();
-        MapSequence.fromMap(typeParamsToArgs).put(typeVar, typeParameter);
-        MapSequence.fromMap(substitutions).put(typeVar, typeParameter);
+      Iterator<SNode> typeParameter_it = ListSequence.fromList(SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
+      Iterator<SNode> typeVar_it = ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).iterator();
+      SNode typeParameter_var;
+      SNode typeVar_var;
+      while (typeParameter_it.hasNext() && typeVar_it.hasNext()) {
+        typeParameter_var = typeParameter_it.next();
+        typeVar_var = typeVar_it.next();
+        MapSequence.fromMap(typeParamsToArgs).put(typeVar_var, typeParameter_var);
+        MapSequence.fromMap(substitutions).put(typeVar_var, typeParameter_var);
       }
     }
     for (SNode typeParameter : SLinkOperations.getChildren(classifierType, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))) {

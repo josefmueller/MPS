@@ -27,8 +27,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMField;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
@@ -310,34 +310,23 @@ public class ClassifierUpdater {
       }
 
       {
-        ASMType pt;
-        String pn;
-        List<ASMAnnotation> pa;
-        Iterator<ASMType> pt_iterator = ListSequence.fromList(c.getGenericParameterTypes()).iterator();
-        Iterator<String> pn_iterator = ListSequence.fromList(c.getParameterNames()).iterator();
-        Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(c.getParameterAnnotations()).iterator();
-        while (true) {
-          if (!(pt_iterator.hasNext())) {
-            break;
+        Iterator<ASMType> pt_it = ListSequence.fromList(c.getGenericParameterTypes()).iterator();
+        Iterator<String> pn_it = ListSequence.fromList(c.getParameterNames()).iterator();
+        Iterator<List<ASMAnnotation>> pa_it = ListSequence.fromList(c.getParameterAnnotations()).iterator();
+        ASMType pt_var;
+        String pn_var;
+        List<ASMAnnotation> pa_var;
+        while (pt_it.hasNext() && pn_it.hasNext() && pa_it.hasNext()) {
+          pt_var = pt_it.next();
+          pn_var = pn_it.next();
+          pa_var = pa_it.next();
+          if (!(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x451f9e9f920b7f7dL, "isStatic"))) && c.getGenericParameterTypes().get(0) == pt_var) {
+            continue;
           }
-          if (!(pn_iterator.hasNext())) {
-            break;
-          }
-          if (!(pa_iterator.hasNext())) {
-            break;
-          }
-          pt = pt_iterator.next();
-          pn = pn_iterator.next();
-          pa = pa_iterator.next();
-          {
-            if (!(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x451f9e9f920b7f7dL, "isStatic"))) && c.getGenericParameterTypes().get(0) == pt) {
-              continue;
-            }
 
-            SNode pd = _quotation_createNode_ol94f8_a0c0g0g0k0a0y(getTypeByASMType(pt, constructor, cls), pn);
-            addAnnotationsToParameter(pd, pa);
-            ListSequence.fromList(SLinkOperations.getChildren(constructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(pd);
-          }
+          SNode pd = _quotation_createNode_ol94f8_a0c0k0a0y(getTypeByASMType(pt_var, constructor, cls), pn_var);
+          addAnnotationsToParameter(pd, pa_var);
+          ListSequence.fromList(SLinkOperations.getChildren(constructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(pd);
         }
       }
       for (ASMType exception : c.getExceptionTypes()) {
@@ -410,30 +399,19 @@ public class ClassifierUpdater {
     updateTypeVariables(m, md, cls);
     SLinkOperations.setTarget(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), getTypeByASMType(m.getGenericReturnType(), md, cls));
     {
-      ASMType pt;
-      String pn;
-      List<ASMAnnotation> pa;
-      Iterator<ASMType> pt_iterator = ListSequence.fromList(m.getGenericParameterTypes()).iterator();
-      Iterator<String> pn_iterator = ListSequence.fromList(m.getParameterNames()).iterator();
-      Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(m.getParameterAnnotations()).iterator();
-      while (true) {
-        if (!(pt_iterator.hasNext())) {
-          break;
-        }
-        if (!(pn_iterator.hasNext())) {
-          break;
-        }
-        if (!(pa_iterator.hasNext())) {
-          break;
-        }
-        pt = pt_iterator.next();
-        pn = pn_iterator.next();
-        pa = pa_iterator.next();
-        {
-          SNode pd = _quotation_createNode_ol94f8_a0a0g0g0k0bb(getTypeByASMType(pt, md, cls), pn);
-          addAnnotationsToParameter(pd, pa);
-          ListSequence.fromList(SLinkOperations.getChildren(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(pd);
-        }
+      Iterator<ASMType> pt_it = ListSequence.fromList(m.getGenericParameterTypes()).iterator();
+      Iterator<String> pn_it = ListSequence.fromList(m.getParameterNames()).iterator();
+      Iterator<List<ASMAnnotation>> pa_it = ListSequence.fromList(m.getParameterAnnotations()).iterator();
+      ASMType pt_var;
+      String pn_var;
+      List<ASMAnnotation> pa_var;
+      while (pt_it.hasNext() && pn_it.hasNext() && pa_it.hasNext()) {
+        pt_var = pt_it.next();
+        pn_var = pn_it.next();
+        pa_var = pa_it.next();
+        SNode pd = _quotation_createNode_ol94f8_a0a0k0bb(getTypeByASMType(pt_var, md, cls), pn_var);
+        addAnnotationsToParameter(pd, pa_var);
+        ListSequence.fromList(SLinkOperations.getChildren(md, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(pd);
       }
     }
     for (ASMType exception : m.getExceptionTypes()) {
@@ -841,7 +819,7 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ol94f8_a0c0g0g0k0a0y(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ol94f8_a0c0k0a0y(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -859,7 +837,7 @@ public class ClassifierUpdater {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x4975dc2bdcfa0c49L, "StubStatementList"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ol94f8_a0a0g0g0k0bb(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ol94f8_a0a0k0bb(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

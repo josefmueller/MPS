@@ -16,9 +16,9 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMMethod;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMField;
-import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -213,32 +213,23 @@ public class ClassifierCacher {
       }
 
       {
-        ASMType pt;
-        String pn;
-        List<ASMAnnotation> pa;
-        Iterator<ASMType> pt_iterator = ListSequence.fromList(c.getGenericParameterTypes()).iterator();
-        Iterator<String> pn_iterator = ListSequence.fromList(c.getParameterNames()).iterator();
-        Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(c.getParameterAnnotations()).iterator();
-        while (true) {
-          if (!(pt_iterator.hasNext())) {
-            break;
-          }
-          if (!(pn_iterator.hasNext())) {
-            break;
-          }
-          if (!(pa_iterator.hasNext())) {
-            break;
-          }
-          pt = pt_iterator.next();
-          pn = pn_iterator.next();
-          pa = pa_iterator.next();
-          if (!(ac.isStatic()) && c.getGenericParameterTypes().get(0) == pt) {
+        Iterator<ASMType> pt_it = ListSequence.fromList(c.getGenericParameterTypes()).iterator();
+        Iterator<String> pn_it = ListSequence.fromList(c.getParameterNames()).iterator();
+        Iterator<List<ASMAnnotation>> pa_it = ListSequence.fromList(c.getParameterAnnotations()).iterator();
+        ASMType pt_var;
+        String pn_var;
+        List<ASMAnnotation> pa_var;
+        while (pt_it.hasNext() && pn_it.hasNext() && pa_it.hasNext()) {
+          pt_var = pt_it.next();
+          pn_var = pn_it.next();
+          pa_var = pa_it.next();
+          if (!(ac.isStatic()) && c.getGenericParameterTypes().get(0) == pt_var) {
             continue;
           }
 
           instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
-          getTypeByASMType(pt);
-          addAnnotationsToParameter(pa);
+          getTypeByASMType(pt_var);
+          addAnnotationsToParameter(pa_var);
         }
       }
       for (ASMAnnotation annotation : c.getAnnotations()) {
@@ -288,28 +279,19 @@ public class ClassifierCacher {
     updateTypeVariables(m);
     getTypeByASMType(m.getGenericReturnType());
     {
-      ASMType pt;
-      String pn;
-      List<ASMAnnotation> pa;
-      Iterator<ASMType> pt_iterator = ListSequence.fromList(m.getGenericParameterTypes()).iterator();
-      Iterator<String> pn_iterator = ListSequence.fromList(m.getParameterNames()).iterator();
-      Iterator<List<ASMAnnotation>> pa_iterator = ListSequence.fromList(m.getParameterAnnotations()).iterator();
-      while (true) {
-        if (!(pt_iterator.hasNext())) {
-          break;
-        }
-        if (!(pn_iterator.hasNext())) {
-          break;
-        }
-        if (!(pa_iterator.hasNext())) {
-          break;
-        }
-        pt = pt_iterator.next();
-        pn = pn_iterator.next();
-        pa = pa_iterator.next();
+      Iterator<ASMType> pt_it = ListSequence.fromList(m.getGenericParameterTypes()).iterator();
+      Iterator<String> pn_it = ListSequence.fromList(m.getParameterNames()).iterator();
+      Iterator<List<ASMAnnotation>> pa_it = ListSequence.fromList(m.getParameterAnnotations()).iterator();
+      ASMType pt_var;
+      String pn_var;
+      List<ASMAnnotation> pa_var;
+      while (pt_it.hasNext() && pn_it.hasNext() && pa_it.hasNext()) {
+        pt_var = pt_it.next();
+        pn_var = pn_it.next();
+        pa_var = pa_it.next();
         instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
-        getTypeByASMType(pt);
-        addAnnotationsToParameter(pa);
+        getTypeByASMType(pt_var);
+        addAnnotationsToParameter(pa_var);
       }
     }
     for (ASMType exception : m.getExceptionTypes()) {

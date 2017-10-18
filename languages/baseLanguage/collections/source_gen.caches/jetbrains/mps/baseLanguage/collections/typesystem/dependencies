@@ -1526,7 +1526,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.typesystem.typeof_AbstractContainerCreator_InferenceRule" file="typeof_AbstractContainerCreator_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />

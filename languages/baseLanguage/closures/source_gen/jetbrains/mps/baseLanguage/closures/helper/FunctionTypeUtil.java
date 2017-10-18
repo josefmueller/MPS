@@ -209,20 +209,14 @@ with_meet:
     SNode trgMethod = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(target)).first();
     doMapTVDS(resMap, SLinkOperations.getTarget(adMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), SLinkOperations.getTarget(trgMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")));
     {
-      SNode adParm;
-      SNode trgParm;
-      Iterator<SNode> adParm_iterator = ListSequence.fromList(SLinkOperations.getChildren(adMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
-      Iterator<SNode> trgParm_iterator = ListSequence.fromList(SLinkOperations.getChildren(trgMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
-      while (true) {
-        if (!(adParm_iterator.hasNext())) {
-          break;
-        }
-        if (!(trgParm_iterator.hasNext())) {
-          break;
-        }
-        adParm = adParm_iterator.next();
-        trgParm = trgParm_iterator.next();
-        doMapTVDS(resMap, SLinkOperations.getTarget(adParm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), SLinkOperations.getTarget(trgParm, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
+      Iterator<SNode> adParm_it = ListSequence.fromList(SLinkOperations.getChildren(adMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
+      Iterator<SNode> trgParm_it = ListSequence.fromList(SLinkOperations.getChildren(trgMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).iterator();
+      SNode adParm_var;
+      SNode trgParm_var;
+      while (adParm_it.hasNext() && trgParm_it.hasNext()) {
+        adParm_var = adParm_it.next();
+        trgParm_var = trgParm_it.next();
+        doMapTVDS(resMap, SLinkOperations.getTarget(adParm_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), SLinkOperations.getTarget(trgParm_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")));
       }
     }
     return resMap;

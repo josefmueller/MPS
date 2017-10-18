@@ -31,24 +31,18 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
         HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
       }
       {
-        SNode lp;
-        SNode rp;
-        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
-        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
-        while (true) {
-          if (!(lp_iterator.hasNext())) {
-            break;
-          }
-          if (!(rp_iterator.hasNext())) {
-            break;
-          }
-          lp = lp_iterator.next();
-          rp = rp_iterator.next();
+        Iterator<SNode> lp_it = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
+        Iterator<SNode> rp_it = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
+        SNode lp_var;
+        SNode rp_var;
+        while (lp_it.hasNext() && rp_it.hasNext()) {
+          lp_var = lp_it.next();
+          rp_var = rp_it.next();
           {
             SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968769054", 0, null);
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "816097550963331585", 0, null);
             _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-            typeCheckingContext.createLessThanInequality((SNode) lp, (SNode) rp, false, true, _info_12389875345);
+            typeCheckingContext.createLessThanInequality((SNode) lp_var, (SNode) rp_var, false, true, _info_12389875345);
           }
         }
       }
@@ -67,20 +61,14 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
         result_14532009 = false;
       }
       {
-        SNode lp;
-        SNode rp;
-        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
-        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
-        while (true) {
-          if (!(lp_iterator.hasNext())) {
-            break;
-          }
-          if (!(rp_iterator.hasNext())) {
-            break;
-          }
-          lp = lp_iterator.next();
-          rp = rp_iterator.next();
-          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) lp, (SNode) rp, true);
+        Iterator<SNode> lp_it = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
+        Iterator<SNode> rp_it = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).iterator();
+        SNode lp_var;
+        SNode rp_var;
+        while (lp_it.hasNext() && rp_it.hasNext()) {
+          lp_var = lp_it.next();
+          rp_var = rp_it.next();
+          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) lp_var, (SNode) rp_var, true);
         }
       }
     } else {

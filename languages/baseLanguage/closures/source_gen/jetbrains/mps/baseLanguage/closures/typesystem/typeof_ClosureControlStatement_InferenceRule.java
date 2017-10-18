@@ -52,23 +52,17 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccs, "Incorrect parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232455288552", null, errorTarget);
       }
       {
-        SNode pt;
-        SNode param;
-        Iterator<SNode> pt_iterator = ListSequence.fromList(fpts).iterator();
-        Iterator<SNode> param_iterator = ListSequence.fromList(params).iterator();
-        while (true) {
-          if (!(pt_iterator.hasNext())) {
-            break;
-          }
-          if (!(param_iterator.hasNext())) {
-            break;
-          }
-          pt = pt_iterator.next();
-          param = param_iterator.next();
+        Iterator<SNode> pt_it = ListSequence.fromList(fpts).iterator();
+        Iterator<SNode> param_it = ListSequence.fromList(params).iterator();
+        SNode pt_var;
+        SNode param_var;
+        while (pt_it.hasNext() && param_it.hasNext()) {
+          pt_var = pt_it.next();
+          param_var = param_it.next();
           {
-            SNode _nodeToCheck_1029348928467 = param;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534225483", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1236534227246", true), (SNode) pt, false, true, _info_12389875345);
+            SNode _nodeToCheck_1029348928467 = param_var;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "816097550963530082", 0, null);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "816097550963530084", true), (SNode) pt_var, false, true, _info_12389875345);
           }
         }
       }

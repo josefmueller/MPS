@@ -443,19 +443,16 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   private boolean replaceNotExpressions() {
     boolean finished = true;
     {
-      SNode notExpression;
-      Iterator<SNode> notExpression_iterator = ListSequence.fromList(SNodeOperations.getNodeDescendants(myWhatToEvaluate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+      Iterator<SNode> notExpression_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(myWhatToEvaluate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return TransformationUtil.isUnprocessed(it);
         }
       }).iterator();
-      while (true) {
-        if (!(notExpression_iterator.hasNext())) {
-          break;
-        }
-        notExpression = notExpression_iterator.next();
-        if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression")))) {
-          SLinkOperations.setTarget(notExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), _quotation_createNode_s72qk1_a0a0a0a2a2a1a42(SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"))));
+      SNode notExpression_var;
+      while (notExpression_it.hasNext()) {
+        notExpression_var = notExpression_it.next();
+        if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(notExpression_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression")))) {
+          SLinkOperations.setTarget(notExpression_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"), _quotation_createNode_s72qk1_a0a0a0a1a42(SLinkOperations.getTarget(notExpression_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression"))));
           finished = false;
         }
       }
@@ -790,7 +787,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_s72qk1_a0a0a0a2a2a1a42(Object parameter_1) {
+  private static SNode _quotation_createNode_s72qk1_a0a0a0a1a42(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

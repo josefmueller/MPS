@@ -623,13 +623,6 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1176547808367" name="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" flags="nn" index="3JHHlY">
-        <child id="1176547942567" name="loopVariable" index="3JIe6Q" />
-      </concept>
-      <concept id="1176547843728" name="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" flags="ng" index="3JHPY1">
-        <child id="1176547881822" name="variable" index="3JHZ9f" />
-        <child id="1176547896901" name="iterable" index="3JI2Xk" />
-      </concept>
       <concept id="1174657487114" name="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" flags="nn" index="1Z2H0r">
         <child id="1174657509053" name="term" index="1Z2MuG" />
       </concept>
@@ -751,6 +744,14 @@
         <child id="1225711182005" name="list" index="1y566C" />
         <child id="1225711191269" name="index" index="1y58nS" />
       </concept>
+      <concept id="9042586985346099698" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement" flags="nn" index="1_o_46">
+        <child id="9042586985346099734" name="forEach" index="1_o_by" />
+      </concept>
+      <concept id="9042586985346099733" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair" flags="ng" index="1_o_bx">
+        <child id="9042586985346099778" name="variable" index="1_o_aQ" />
+        <child id="9042586985346099735" name="input" index="1_o_bz" />
+      </concept>
+      <concept id="9042586985346099736" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable" flags="ng" index="1_o_bG" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
         <child id="1197932505799" name="map" index="3ElQJh" />
         <child id="1197932525128" name="key" index="3ElVtu" />
@@ -1111,14 +1112,12 @@
           <node concept="33vP2n" id="hTNYavz" role="2GsD0m" />
           <node concept="3clFbS" id="hTNYav$" role="2LFqv$" />
         </node>
-        <node concept="3JHHlY" id="hTNYbE4" role="3cqZAp">
-          <node concept="3JHPY1" id="hTNYbE5" role="3JIe6Q">
-            <node concept="3cpWsn" id="hTNYbE6" role="3JHZ9f">
-              <node concept="33vP2l" id="hTNYbE7" role="1tU5fm" />
-            </node>
-            <node concept="33vP2n" id="hTNYbE8" role="3JI2Xk" />
+        <node concept="1_o_46" id="Hjn6oj93p0" role="3cqZAp">
+          <node concept="1_o_bx" id="Hjn6oj93oX" role="1_o_by">
+            <node concept="1_o_bG" id="Hjn6oj93oY" role="1_o_aQ" />
+            <node concept="33vP2n" id="Hjn6oj93oW" role="1_o_bz" />
           </node>
-          <node concept="3clFbS" id="hTNYbE9" role="2LFqv$" />
+          <node concept="3clFbS" id="Hjn6oj93oZ" role="2LFqv$" />
         </node>
       </node>
     </node>

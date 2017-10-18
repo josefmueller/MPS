@@ -32,23 +32,17 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
       }
     } else {
       {
-        SNode argument;
-        SNode type;
-        Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, 0x3ee423fc2ad10ed0L, "actualArgument"))).iterator();
-        Iterator<SNode> type_iterator = ListSequence.fromList(argumentTypes).iterator();
-        while (true) {
-          if (!(argument_iterator.hasNext())) {
-            break;
-          }
-          if (!(type_iterator.hasNext())) {
-            break;
-          }
-          argument = argument_iterator.next();
-          type = type_iterator.next();
+        Iterator<SNode> argument_it = ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, 0x3ee423fc2ad10ed0L, "actualArgument"))).iterator();
+        Iterator<SNode> type_it = ListSequence.fromList(argumentTypes).iterator();
+        SNode argument_var;
+        SNode type_var;
+        while (argument_it.hasNext() && type_it.hasNext()) {
+          argument_var = argument_it.next();
+          type_var = type_it.next();
           {
-            SNode _nodeToCheck_1029348928467 = argument;
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418947751", 0, null);
-            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418947748", true), (SNode) type, false, true, _info_12389875345);
+            SNode _nodeToCheck_1029348928467 = argument_var;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "816097550962184026", 0, null);
+            typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "816097550962184030", true), (SNode) type_var, false, true, _info_12389875345);
           }
         }
       }

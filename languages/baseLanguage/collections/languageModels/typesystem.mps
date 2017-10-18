@@ -275,13 +275,6 @@
         <child id="1176543950311" name="supertypeExpression" index="3JuZjQ" />
       </concept>
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
-      <concept id="1176547808367" name="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop" flags="nn" index="3JHHlY">
-        <child id="1176547942567" name="loopVariable" index="3JIe6Q" />
-      </concept>
-      <concept id="1176547843728" name="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable" flags="ng" index="3JHPY1">
-        <child id="1176547881822" name="variable" index="3JHZ9f" />
-        <child id="1176547896901" name="iterable" index="3JI2Xk" />
-      </concept>
       <concept id="1176558773329" name="jetbrains.mps.lang.typesystem.structure.CoerceStatement" flags="nn" index="3Knyl0">
         <child id="1176558868203" name="body" index="3KnTvU" />
         <child id="1176558876970" name="pattern" index="3KnVwV" />
@@ -7388,43 +7381,40 @@
       </node>
       <node concept="3clFbJ" id="337bapJ9kdr" role="3cqZAp">
         <node concept="3clFbS" id="337bapJ9kds" role="3clFbx">
-          <node concept="3JHHlY" id="i0I2ITt" role="3cqZAp">
-            <node concept="3JHPY1" id="i0I2ITu" role="3JIe6Q">
-              <node concept="3cpWsn" id="i0I2ITv" role="3JHZ9f">
-                <property role="TrG5h" value="initValue" />
-                <node concept="3Tqbb2" id="i0I2ITw" role="1tU5fm" />
-              </node>
-              <node concept="2OqwBi" id="i0I2ITx" role="3JI2Xk">
-                <node concept="1YBJjd" id="i0I2ITy" role="2Oq$k0">
-                  <ref role="1YBMHb" node="i0I2GCJ" resolve="creator" />
-                </node>
-                <node concept="3Tsc0h" id="i0I2JIb" role="2OqNvi">
-                  <ref role="3TtcxE" to="tp2q:i0HW$Uw" resolve="initValue" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="i0I2IT$" role="2LFqv$">
-              <node concept="1ZobV4" id="i0I2IT_" role="3cqZAp">
+          <node concept="2Gpval" id="Hjn6ojg7j9" role="3cqZAp">
+            <node concept="3clFbS" id="Hjn6ojg7jg" role="2LFqv$">
+              <node concept="1ZobV4" id="Hjn6ojg7jh" role="3cqZAp">
                 <property role="Ob790" value="0" />
                 <property role="3wDh2S" value="true" />
-                <node concept="mw_s8" id="i0I2ITA" role="1ZfhKB">
-                  <node concept="2OqwBi" id="i0I2ITB" role="mwGJk">
-                    <node concept="1YBJjd" id="i0I2ITC" role="2Oq$k0">
+                <node concept="mw_s8" id="Hjn6ojg7ji" role="1ZfhKB">
+                  <node concept="2OqwBi" id="Hjn6ojg7jj" role="mwGJk">
+                    <node concept="1YBJjd" id="Hjn6ojg7jk" role="2Oq$k0">
                       <ref role="1YBMHb" node="i0I2GCJ" resolve="creator" />
                     </node>
-                    <node concept="3TrEf2" id="i0I2Kd2" role="2OqNvi">
+                    <node concept="3TrEf2" id="Hjn6ojg7jl" role="2OqNvi">
                       <ref role="3Tt5mk" to="tp2q:i0HW$Uv" resolve="elementType" />
                     </node>
                   </node>
                 </node>
-                <node concept="mw_s8" id="i0I2ITE" role="1ZfhK$">
-                  <node concept="1Z2H0r" id="i0I2ITF" role="mwGJk">
-                    <node concept="37vLTw" id="3GM_nagTu$5" role="1Z2MuG">
-                      <ref role="3cqZAo" node="i0I2ITv" resolve="initValue" />
+                <node concept="mw_s8" id="Hjn6ojg7jm" role="1ZfhK$">
+                  <node concept="1Z2H0r" id="Hjn6ojg7jn" role="mwGJk">
+                    <node concept="2GrUjf" id="Hjn6ojg7jq" role="1Z2MuG">
+                      <ref role="2Gs0qQ" node="Hjn6ojg7jp" resolve="initValue" />
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="2OqwBi" id="Hjn6ojg7jd" role="2GsD0m">
+              <node concept="1YBJjd" id="Hjn6ojg7je" role="2Oq$k0">
+                <ref role="1YBMHb" node="i0I2GCJ" resolve="creator" />
+              </node>
+              <node concept="3Tsc0h" id="Hjn6ojg7jf" role="2OqNvi">
+                <ref role="3TtcxE" to="tp2q:i0HW$Uw" resolve="initValue" />
+              </node>
+            </node>
+            <node concept="2GrKxI" id="Hjn6ojg7jp" role="2Gsz3X">
+              <property role="TrG5h" value="initValue" />
             </node>
           </node>
         </node>

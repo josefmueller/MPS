@@ -78,26 +78,20 @@ public class ListMigrationUtil {
       return false;
     }
     {
-      SNode argument;
-      ParameterType param;
-      Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).iterator();
-      Iterator<ParameterType> param_iterator = ListSequence.fromList(params).iterator();
-      while (true) {
-        if (!(argument_iterator.hasNext())) {
-          break;
-        }
-        if (!(param_iterator.hasNext())) {
-          break;
-        }
-        argument = argument_iterator.next();
-        param = param_iterator.next();
-        if (param == ParameterType.INT) {
-          if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType")))) {
+      Iterator<SNode> argument_it = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).iterator();
+      Iterator<ParameterType> param_it = ListSequence.fromList(params).iterator();
+      SNode argument_var;
+      ParameterType param_var;
+      while (argument_it.hasNext() && param_it.hasNext()) {
+        argument_var = argument_it.next();
+        param_var = param_it.next();
+        if (param_var == ParameterType.INT) {
+          if (!(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument_var), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType")))) {
             return false;
           }
         }
-        if (param == ParameterType.NOT_INT) {
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"))) {
+        if (param_var == ParameterType.NOT_INT) {
+          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(argument_var), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"))) {
             return false;
           }
         }
