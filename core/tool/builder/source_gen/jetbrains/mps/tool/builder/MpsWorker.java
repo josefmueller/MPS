@@ -81,7 +81,7 @@ public abstract class MpsWorker {
     return env;
   }
 
-  public static EnvironmentConfig createEnvConfig(Script whatToDo) {
+  public EnvironmentConfig createEnvConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.defaultConfig();
     for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
@@ -92,6 +92,17 @@ public abstract class MpsWorker {
     if (whatToDo.isLoadBootstrapLibraries()) {
       config = config.withBootstrapLibraries();
     }
+    for (String jar : whatToDo.getLibraryJars()) {
+      File jarFile = new File(jar);
+      if (!(jarFile.exists())) {
+        warning("Library " + jar + " does not exist.");
+      }
+      config = config.addLib(jar);
+    }
+    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+
     return config;
   }
 
