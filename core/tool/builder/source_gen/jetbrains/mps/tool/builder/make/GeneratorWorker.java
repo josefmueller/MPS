@@ -5,21 +5,21 @@ package jetbrains.mps.tool.builder.make;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
-import org.apache.log4j.Logger;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashSet;
+import java.io.File;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.log4j.Logger;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.common.ScriptProperties;
@@ -41,24 +41,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   public void work() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
-    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
-
-    for (String jar : myWhatToDo.getLibraryJars()) {
-      File jarFile = new File(jar);
-      if (!(jarFile.exists())) {
-        warning("Library " + jar + " does not exist.");
-      }
-      config = config.addLib(jar);
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
-    }
-
-    Environment environment = new GeneratorWorker.MyEnvironment(config);
-    environment.init();
-    setupEnvironment();
+    init();
     setGenerationProperties();
     boolean doneSomething = false;
 
@@ -102,6 +85,27 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
     dispose();
     showStatistic();
+  }
+
+  protected void init() {
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
+
+    for (String jar : myWhatToDo.getLibraryJars()) {
+      File jarFile = new File(jar);
+      if (!(jarFile.exists())) {
+        warning("Library " + jar + " does not exist.");
+      }
+      config = config.addLib(jar);
+    }
+    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+
+    Environment environment = new GeneratorWorker.MyEnvironment(config);
+    environment.init();
+    setupEnvironment();
   }
 
   public static void main(String[] args) {

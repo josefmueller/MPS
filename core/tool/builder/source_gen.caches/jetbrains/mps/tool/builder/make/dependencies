@@ -101,7 +101,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.QueueSequence" />
@@ -140,11 +139,8 @@
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
