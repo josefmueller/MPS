@@ -5,7 +5,7 @@ package jetbrains.mps.build.ant.generation;
 import jetbrains.mps.build.ant.MpsLoadTask;
 import jetbrains.mps.tool.common.GeneratorProperties;
 import jetbrains.mps.tool.common.JavaCompilerProperties;
-import jetbrains.mps.build.ant.LibraryDataType;
+import jetbrains.mps.build.ant.ModuleJarDataType;
 import java.io.File;
 import jetbrains.mps.tool.common.ScriptProperties;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class GenerateTask extends MpsLoadTask {
   public void addConfiguredChunk(Chunk chunk) {
     myWhatToDo.addChunk(chunk.getModules(), chunk.getBootstrap());
   }
-  public void addConfiguredLibrary(LibraryDataType jar) {
+  public void addConfiguredLibrary(ModuleJarDataType jar) {
     File file = jar.getFile();
     if (file == null) {
       return;
