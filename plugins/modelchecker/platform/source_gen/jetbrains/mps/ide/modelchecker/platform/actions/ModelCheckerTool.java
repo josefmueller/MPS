@@ -95,8 +95,8 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
       return CheckinHandler.ReturnResult.CANCEL;
     }
 
-    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
-    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);
+    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelCheckerIssueFinder.SEVERITY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelCheckerIssueFinder.SEVERITY_ERROR);
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";

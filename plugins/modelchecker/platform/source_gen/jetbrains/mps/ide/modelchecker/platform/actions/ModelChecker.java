@@ -4,14 +4,9 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.ide.messages.Icons;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,28 +17,12 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.MessageStatus;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
-  public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
-  public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
-  public static final String SEVERITY_ERROR = "Errors";
-  public static final String SEVERITY_WARNING = "Warnings";
-  public static final String SEVERITY_INFO = "Infos";
   private final List<SpecificChecker> mySpecificCheckers;
   public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
     mySpecificCheckers = specificCheckers;
-  }
-  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
-    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
-    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
   public List<IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
@@ -65,7 +44,7 @@ public class ModelChecker {
             public boolean accept(IssueKindReportItem it) {
               SNodeReference node = NodeReportItem.FLAVOUR_NODE.tryToGet(it);
               if (node != null) {
-                if (filterIssue(node.resolve(model.getRepository()))) {
+                if (ModelCheckerIssueFinder.filterIssue(node.resolve(model.getRepository()))) {
                   return true;
                 } else {
                   if (LOG.isEnabledFor(Level.ERROR)) {
@@ -91,33 +70,5 @@ public class ModelChecker {
     } finally {
       monitor.done();
     }
-  }
-  public static String getResultCategory(MessageStatus messageStatus) {
-    switch (messageStatus) {
-      case ERROR:
-        return ModelChecker.SEVERITY_ERROR;
-      case WARNING:
-        return ModelChecker.SEVERITY_WARNING;
-      case OK:
-        return ModelChecker.SEVERITY_INFO;
-      default:
-        return ModelChecker.SEVERITY_ERROR;
-    }
-  }
-  /**
-   * drops only issues in tests
-   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
-   */
-  public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
-    if (container == null) {
-      return true;
-    }
-    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
-        return false;
-      }
-    }
-    return true;
   }
 }

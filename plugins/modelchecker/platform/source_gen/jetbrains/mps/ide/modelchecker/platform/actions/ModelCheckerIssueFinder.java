@@ -25,6 +25,16 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.ide.messages.Icons;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.util.Pair;
 
 public class ModelCheckerIssueFinder extends BaseFinder {
   private final List<SpecificChecker> myExtraCheckers;
@@ -53,7 +63,7 @@ public class ModelCheckerIssueFinder extends BaseFinder {
         List<? extends IssueKindReportItem> results = moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
         rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
           public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return ModelChecker.getSearchResultForReportItem(it, module.getRepository());
+            return getSearchResultForReportItem(it, module.getRepository());
           }
         }).toListSequence());
         if (monitor.isCanceled()) {
@@ -66,7 +76,7 @@ public class ModelCheckerIssueFinder extends BaseFinder {
         List<IssueKindReportItem> results = modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
         rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
           public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return ModelChecker.getSearchResultForReportItem(it, modelDescriptor.getRepository());
+            return getSearchResultForReportItem(it, modelDescriptor.getRepository());
           }
         }).toListSequence());
         if (monitor.isCanceled()) {
@@ -130,5 +140,42 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       throw new IllegalArgumentException();
     }
     return itemsToCheck;
+  }
+  public static String getResultCategory(MessageStatus messageStatus) {
+    switch (messageStatus) {
+      case ERROR:
+        return SEVERITY_ERROR;
+      case WARNING:
+        return SEVERITY_WARNING;
+      case OK:
+        return SEVERITY_INFO;
+      default:
+        return SEVERITY_ERROR;
+    }
+  }
+  /**
+   * drops only issues in tests
+   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
+   */
+  public static boolean filterIssue(SNode node) {
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
+    if (container == null) {
+      return true;
+    }
+    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
+      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
+        return false;
+      }
+    }
+    return true;
+  }
+  public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
+  public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
+  public static final String SEVERITY_ERROR = "Errors";
+  public static final String SEVERITY_WARNING = "Warnings";
+  public static final String SEVERITY_INFO = "Infos";
+  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
+    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
+    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
 }

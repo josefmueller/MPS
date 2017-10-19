@@ -239,11 +239,11 @@ public class ModelCheckerViewer extends JPanel {
     @Override
     public Icon getCategoryIcon(String category) {
       if ((category != null && category.length() > 0)) {
-        if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
+        if (category.startsWith(ModelCheckerIssueFinder.SEVERITY_ERROR)) {
           return Icons.ERROR_ICON;
-        } else if (category.startsWith(ModelChecker.SEVERITY_WARNING)) {
+        } else if (category.startsWith(ModelCheckerIssueFinder.SEVERITY_WARNING)) {
           return Icons.WARNING_ICON;
-        } else if (category.startsWith(ModelChecker.SEVERITY_INFO)) {
+        } else if (category.startsWith(ModelCheckerIssueFinder.SEVERITY_INFO)) {
           return Icons.INFORMATION_ICON;
         }
       }
@@ -256,7 +256,7 @@ public class ModelCheckerViewer extends JPanel {
     }
     @Override
     public List<CategoryKind> getCategoryKinds() {
-      return Arrays.asList(ModelChecker.CATEGORY_KIND_SEVERITY, ModelChecker.CATEGORY_KIND_ISSUE_TYPE);
+      return Arrays.asList(ModelCheckerIssueFinder.CATEGORY_KIND_SEVERITY, ModelCheckerIssueFinder.CATEGORY_KIND_ISSUE_TYPE);
     }
     @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
