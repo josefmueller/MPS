@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:1eaccd1e-1515-4b6e-99be-c9ddeb36c896(jetbrains.mps.console.editor)/1157549163016427193">
+    <file name="CommandSelectAllTest_Test.java">
+      <node id="1157549163016427193" at="13,60,14,100" concept="0" />
+      <node id="1157549163016427193" at="14,100,15,100" concept="0" />
+      <node id="1157549163016427193" at="21,51,22,72" concept="0" />
+      <node id="1157549163016438937" at="22,72,23,72" concept="0" />
+      <node id="1157549163016427193" at="12,0,17,0" concept="1" trace="test_CommandSelectAllTest#()V" />
+      <node id="1157549163016427193" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1157549163016427193" at="13,60,15,100" />
+      <scope id="1157549163016427193" at="21,51,23,72" />
+      <scope id="1157549163016427193" at="12,0,17,0" />
+      <scope id="1157549163016427193" at="20,0,25,0" />
+      <unit id="1157549163016427193" at="18,0,26,0" name="jetbrains.mps.console.editor.CommandSelectAllTest_Test$TestBody" />
+      <unit id="1157549163016427193" at="10,0,27,0" name="jetbrains.mps.console.editor.CommandSelectAllTest_Test" />
+    </file>
+  </root>
+</debug-info>
+
