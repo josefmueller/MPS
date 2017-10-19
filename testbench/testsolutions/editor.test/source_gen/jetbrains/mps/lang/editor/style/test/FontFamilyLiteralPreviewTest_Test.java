@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
@@ -26,17 +25,13 @@ public class FontFamilyLiteralPreviewTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("491383275436120141", "");
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          Assert.assertNotNull(CellFinderUtil.findChildByCondition(getEditorComponent().getRootCell(), new Condition<EditorCell>() {
-            public boolean met(EditorCell it) {
-              return EditorCell_Label.class.isInstance(it) && eq_x0o4jd_a0a0a0a0b0a0a0a0a0a1a0c(((EditorCell_Label) it).getFont().getFamily(), "Serif");
-            }
-          }, true, true));
+      Assert.assertNotNull(CellFinderUtil.findChildByCondition(getEditorComponent().getRootCell(), new Condition<EditorCell>() {
+        public boolean met(EditorCell it) {
+          return EditorCell_Label.class.isInstance(it) && eq_x0o4jd_a0a0a0a0b0a1a0c(((EditorCell_Label) it).getFont().getFamily(), "Serif");
         }
-      });
+      }, true, true));
     }
-    private static boolean eq_x0o4jd_a0a0a0a0b0a0a0a0a0a1a0c(Object a, Object b) {
+    private static boolean eq_x0o4jd_a0a0a0a0b0a1a0c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

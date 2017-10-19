@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +26,7 @@ public class FontStyleInheritanceTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8545423393708629228", "");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      getEditorComponent().getCommandContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
 
           Font nodeWithoutCustomFont_font = CellFinderUtil.findChildByClass(getEditorComponent().findNodeCell(SNodeOperations.cast(getNodeById("8545423393708669280"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, "jetbrains.mps.lang.editor.styleTests"), 0x38990895c164873aL, "LeafNode")))), EditorCell_Label.class, true, true).getFont();

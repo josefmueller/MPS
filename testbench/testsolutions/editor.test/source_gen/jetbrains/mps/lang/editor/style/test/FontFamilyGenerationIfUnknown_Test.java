@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
@@ -23,11 +22,7 @@ public class FontFamilyGenerationIfUnknown_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("491383275436615221", "");
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          Assert.assertEquals("No one will make a font with this name, I'm 98.5% sure.", getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.FONT_FAMILY));
-        }
-      });
+      Assert.assertEquals("No one will make a font with this name, I'm 98.5% sure.", getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.FONT_FAMILY));
     }
   }
 }

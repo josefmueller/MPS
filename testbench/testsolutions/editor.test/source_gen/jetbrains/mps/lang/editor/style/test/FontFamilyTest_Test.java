@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import junit.framework.Assert;
@@ -24,12 +23,8 @@ public class FontFamilyTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("491383275435046101", "");
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          EditorCell_Label label = CellFinderUtil.findChildByClass(getEditorComponent().getSelectedCell(), EditorCell_Label.class, true, true);
-          Assert.assertEquals("Serif", label.getFont().getFamily());
-        }
-      });
+      EditorCell_Label label = CellFinderUtil.findChildByClass(getEditorComponent().getSelectedCell(), EditorCell_Label.class, true, true);
+      Assert.assertEquals("Serif", label.getFont().getFamily());
     }
   }
 }
