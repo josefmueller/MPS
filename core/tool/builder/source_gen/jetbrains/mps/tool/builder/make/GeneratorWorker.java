@@ -89,20 +89,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   protected void init() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
-    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
-
-    for (String jar : myWhatToDo.getLibraryJars()) {
-      File jarFile = new File(jar);
-      if (!(jarFile.exists())) {
-        warning("Library " + jar + " does not exist.");
-      }
-      config = config.addLib(jar);
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
-    }
-
+    EnvironmentConfig config = createEnvConfig(myWhatToDo);
     Environment environment = new GeneratorWorker.MyEnvironment(config);
     environment.init();
     setupEnvironment();

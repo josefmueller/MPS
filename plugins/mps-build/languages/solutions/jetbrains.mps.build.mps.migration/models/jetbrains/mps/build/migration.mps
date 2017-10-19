@@ -331,10 +331,9 @@
             <node concept="3uibUv" id="75eqTYkq9g0" role="1tU5fm">
               <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
-            <node concept="2YIFZM" id="75eqTYkq9g4" role="33vP2m">
-              <ref role="1Pybhc" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
-              <ref role="37wK5l" to="jo3e:5kpQnuAEKYu" resolve="createEnvConfig" />
-              <node concept="37vLTw" id="75eqTYkq9g5" role="37wK5m">
+            <node concept="1rXfSq" id="3tCNlYuDSWP" role="33vP2m">
+              <ref role="37wK5l" to="jo3e:3tCNlYuDMQB" resolve="createEnvConfig" />
+              <node concept="37vLTw" id="3tCNlYuDT4P" role="37wK5m">
                 <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
               </node>
             </node>
