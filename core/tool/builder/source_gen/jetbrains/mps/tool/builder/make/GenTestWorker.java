@@ -10,10 +10,6 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.tool.environment.Environment;
-import org.apache.log4j.Logger;
 import jetbrains.mps.project.Project;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -91,24 +87,9 @@ public class GenTestWorker extends GeneratorWorker {
 
   @Override
   public void work() {
+    init();
     myReporter.init();
-
-    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
-
-    for (String jar : myWhatToDo.getLibraryJars()) {
-      config = config.addLib(jar);
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
-    }
-
-    Environment environment = new GeneratorWorker.MyEnvironment(config);
-    environment.init();
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
-    setupEnvironment();
     setGenerationProperties();
-
     Project project = createDummyProject();
 
     final Set<SModule> modules = new LinkedHashSet<SModule>();
