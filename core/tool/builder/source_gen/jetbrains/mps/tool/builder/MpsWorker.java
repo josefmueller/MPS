@@ -108,6 +108,7 @@ public abstract class MpsWorker {
 
   public void workFromMain() {
     try {
+      setupEnvironment();
       work();
       System.exit(0);
     } catch (Throwable e) {

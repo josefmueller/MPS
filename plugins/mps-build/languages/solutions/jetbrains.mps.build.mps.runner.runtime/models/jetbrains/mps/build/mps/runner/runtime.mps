@@ -221,11 +221,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="3H7CugYe5mx" role="3clF47">
-        <node concept="3clFbF" id="3ag$5R8QIvJ" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyVt5" role="3clFbG">
-            <ref role="37wK5l" to="jo3e:KL8Aqlj5ou" resolve="setupEnvironment" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="3H7CugYe6U$" role="3cqZAp">
           <node concept="3cpWsn" id="3H7CugYe6U_" role="3cpWs9">
             <property role="TrG5h" value="project" />

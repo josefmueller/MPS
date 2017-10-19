@@ -41,7 +41,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   public void work() {
-    setupEnvironment();
     setGenerationProperties();
     boolean doneSomething = false;
 

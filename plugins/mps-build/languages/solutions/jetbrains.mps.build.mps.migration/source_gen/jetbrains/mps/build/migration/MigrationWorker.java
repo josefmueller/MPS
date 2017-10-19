@@ -65,8 +65,6 @@ public class MigrationWorker extends MpsWorker {
 
   @Override
   public void work() {
-    setupEnvironment();
-
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
       final Project p = myEnvironment.openProject(file);
