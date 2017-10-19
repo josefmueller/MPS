@@ -19,6 +19,16 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.MessageStatus;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
@@ -33,9 +43,9 @@ public class ModelChecker {
   }
   public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
     String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
-    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
+    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
-  public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor monitor) {
+  public List<IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     try {
@@ -48,10 +58,26 @@ public class ModelChecker {
         return results;
       }
 
-      for (SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
+      for (final SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
         try {
           List<? extends IssueKindReportItem> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
-          ListSequence.fromList(results).addSequence(ListSequence.fromList(specificCheckerResults));
+          ListSequence.fromList(results).addSequence(ListSequence.fromList(specificCheckerResults).where(new IWhereFilter<IssueKindReportItem>() {
+            public boolean accept(IssueKindReportItem it) {
+              SNodeReference node = NodeReportItem.FLAVOUR_NODE.tryToGet(it);
+              if (node != null) {
+                if (filterIssue(node.resolve(model.getRepository()))) {
+                  return true;
+                } else {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
+                    LOG.error("Specific checker " + specificChecker + " returned error that is supposed to be skipped. Node " + node.getNodeId() + " in model " + node.getModelReference());
+                  }
+                  return false;
+                }
+              } else {
+                return true;
+              }
+            }
+          }));
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Error while " + model.getName() + " model checking", t);
@@ -65,5 +91,33 @@ public class ModelChecker {
     } finally {
       monitor.done();
     }
+  }
+  public static String getResultCategory(MessageStatus messageStatus) {
+    switch (messageStatus) {
+      case ERROR:
+        return ModelChecker.SEVERITY_ERROR;
+      case WARNING:
+        return ModelChecker.SEVERITY_WARNING;
+      case OK:
+        return ModelChecker.SEVERITY_INFO;
+      default:
+        return ModelChecker.SEVERITY_ERROR;
+    }
+  }
+  /**
+   * drops only issues in tests
+   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
+   */
+  public static boolean filterIssue(SNode node) {
+    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
+    if (container == null) {
+      return true;
+    }
+    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
+      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
+        return false;
+      }
+    }
+    return true;
   }
 }

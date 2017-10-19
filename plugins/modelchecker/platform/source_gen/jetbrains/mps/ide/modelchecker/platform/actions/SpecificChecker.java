@@ -6,56 +6,7 @@ import java.util.List;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.errors.item.ReportItem;
-import jetbrains.mps.errors.item.NodeReportItem;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.errors.MessageStatus;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class SpecificChecker {
-  public SpecificChecker() {
-  }
   public abstract List<? extends IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressContext);
-  /**
-   * such method used to be called for adding error to collection, now it is performed directly: do we really need filtering?
-   */
-  protected static void addIssue(List<ReportItem> results, NodeReportItem reportItem, SRepository repository) {
-    if (filterIssue(reportItem.getNode().resolve(repository))) {
-      ListSequence.fromList(results).addElement(reportItem);
-    }
-  }
-  public static String getResultCategory(MessageStatus messageStatus) {
-    switch (messageStatus) {
-      case ERROR:
-        return ModelChecker.SEVERITY_ERROR;
-      case WARNING:
-        return ModelChecker.SEVERITY_WARNING;
-      case OK:
-        return ModelChecker.SEVERITY_INFO;
-      default:
-        return ModelChecker.SEVERITY_ERROR;
-    }
-  }
-  /**
-   * drops only issues in tests
-   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
-   */
-  public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
-    if (container == null) {
-      return true;
-    }
-    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
-        return false;
-      }
-    }
-    return true;
-  }
 }

@@ -6,7 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public abstract class AbstractNodeChecker {
-  public AbstractNodeChecker() {
-  }
   public abstract void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository);
 }

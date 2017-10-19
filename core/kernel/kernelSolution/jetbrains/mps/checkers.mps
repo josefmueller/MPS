@@ -464,11 +464,6 @@
     <property role="1sVAO0" value="true" />
     <property role="3GE5qa" value="node" />
     <node concept="3Tm1VV" id="6qi2OtU3u$n" role="1B3o_S" />
-    <node concept="3clFbW" id="6qi2OtU3u$o" role="jymVt">
-      <node concept="3cqZAl" id="6qi2OtU3u$p" role="3clF45" />
-      <node concept="3Tm1VV" id="6qi2OtU3u$q" role="1B3o_S" />
-      <node concept="3clFbS" id="6qi2OtU3u$r" role="3clF47" />
-    </node>
     <node concept="3clFb_" id="6qi2OtU3u$d" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="checkNode" />
