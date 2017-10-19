@@ -17,11 +17,11 @@ import java.io.File;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.log4j.Logger;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.Environment;
+import org.apache.log4j.Logger;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.PathManager;
@@ -41,7 +41,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   public void work() {
-    init();
+    setupEnvironment();
     setGenerationProperties();
     boolean doneSomething = false;
 
@@ -87,12 +87,12 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     showStatistic();
   }
 
-  protected void init() {
+  @Override
+  protected Environment createEnvironment() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    EnvironmentConfig config = createEnvConfig(myWhatToDo);
-    Environment environment = new GeneratorWorker.MyEnvironment(config);
+    Environment environment = new GeneratorWorker.MyEnvironment(createEnvConfig(myWhatToDo));
     environment.init();
-    setupEnvironment();
+    return environment;
   }
 
   public static void main(String[] args) {

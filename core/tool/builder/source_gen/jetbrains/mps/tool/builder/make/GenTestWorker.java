@@ -87,7 +87,7 @@ public class GenTestWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    init();
+    setupEnvironment();
     myReporter.init();
     setGenerationProperties();
     Project project = createDummyProject();

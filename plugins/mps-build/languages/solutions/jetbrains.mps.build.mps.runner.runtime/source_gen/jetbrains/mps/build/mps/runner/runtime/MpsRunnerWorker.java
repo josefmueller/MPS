@@ -26,7 +26,7 @@ public class MpsRunnerWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    init();
+    setupEnvironment();
     final Project project = createDummyProject();
 
     MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);
