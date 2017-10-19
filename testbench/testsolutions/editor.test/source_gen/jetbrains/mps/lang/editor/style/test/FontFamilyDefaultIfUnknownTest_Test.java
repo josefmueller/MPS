@@ -9,22 +9,23 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import junit.framework.Assert;
+import jetbrains.mps.nodeEditor.EditorSettings;
 
 @MPSLaunch
-public class FontFamilyTest_Test extends BaseTransformationTest {
+public class FontFamilyDefaultIfUnknownTest_Test extends BaseTransformationTest {
   @Test
-  public void test_FontFamilyTest() throws Throwable {
+  public void test_FontFamilyDefaultIfUnknownTest() throws Throwable {
     initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
-    runTest("jetbrains.mps.lang.editor.style.test.FontFamilyTest_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.style.test.FontFamilyDefaultIfUnknownTest_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("491383275435046101", "");
+      initEditorComponent("1157549163016326381", "");
       EditorCell_Label label = CellFinderUtil.findChildByClass(getEditorComponent().getSelectedCell(), EditorCell_Label.class, true, true);
-      Assert.assertEquals("Serif", label.getFont().getFamily());
+      Assert.assertEquals(EditorSettings.getInstance().getFontFamily(), label.getFont().getFamily());
     }
   }
 }

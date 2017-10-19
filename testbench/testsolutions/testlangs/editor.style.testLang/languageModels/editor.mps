@@ -625,9 +625,6 @@
       </node>
       <node concept="3F0ifn" id="10gsdiJCs$I" role="3EZMnx">
         <property role="3F0ifm" value="font family =" />
-        <node concept="lj46D" id="10gsdiJCs$J" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
         <node concept="Vb9p2" id="10gsdiJCvrS" role="3F10Kt">
           <property role="Vbekb" value="ITALIC" />
         </node>
@@ -638,11 +635,11 @@
           <property role="Vbekb" value="ITALIC" />
         </node>
       </node>
+      <node concept="3F0ifn" id="10gsdiJCT7V" role="3EZMnx">
+        <property role="3F0ifm" value="," />
+      </node>
       <node concept="3F0ifn" id="10gsdiJCs_j" role="3EZMnx">
         <property role="3F0ifm" value="font size =" />
-        <node concept="lj46D" id="10gsdiJCs_k" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
         <node concept="Vb9p2" id="10gsdiJCvrY" role="3F10Kt">
           <property role="Vbekb" value="ITALIC" />
         </node>

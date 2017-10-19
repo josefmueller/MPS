@@ -47,7 +47,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.addEditorCell(createConstant_w2x3rd_b0());
     editorCell.addEditorCell(createProperty_w2x3rd_c0());
     editorCell.addEditorCell(createConstant_w2x3rd_d0());
-    editorCell.addEditorCell(createProperty_w2x3rd_e0());
+    editorCell.addEditorCell(createConstant_w2x3rd_e0());
+    editorCell.addEditorCell(createProperty_w2x3rd_f0());
     return editorCell;
   }
   private EditorCell createComponent_w2x3rd_a0() {
@@ -58,7 +59,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font family =");
     editorCell.setCellId("Constant_w2x3rd_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -83,16 +83,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
     return editorCell;
   }
   private EditorCell createConstant_w2x3rd_d0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font size =");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_w2x3rd_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_w2x3rd_e0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font size =");
+    editorCell.setCellId("Constant_w2x3rd_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_w2x3rd_e0() {
+  private EditorCell createProperty_w2x3rd_f0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
     provider.setRole("fontSize");
     provider.setNoTargetText("<no fontSize>");
