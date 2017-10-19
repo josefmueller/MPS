@@ -883,6 +883,11 @@
             </node>
           </node>
           <node concept="3clFbS" id="KL8Aqlj5nj" role="SfCbr">
+            <node concept="3clFbF" id="3tCNlYuFU4N" role="3cqZAp">
+              <node concept="1rXfSq" id="3tCNlYuFU4L" role="3clFbG">
+                <ref role="37wK5l" node="KL8Aqlj5ou" resolve="setupEnvironment" />
+              </node>
+            </node>
             <node concept="3clFbF" id="KL8Aqlj5nk" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyz9wJ" role="3clFbG">
                 <ref role="37wK5l" node="KL8Aqlj5np" resolve="work" />
