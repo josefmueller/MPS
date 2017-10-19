@@ -76,8 +76,8 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
     return env;
   }
 

@@ -1765,9 +1765,9 @@
       <node concept="3Tm1VV" id="3ag$5R8QIuB" role="1B3o_S" />
       <node concept="3cqZAl" id="3ag$5R8QIuC" role="3clF45" />
       <node concept="3clFbS" id="3ag$5R8QIuD" role="3clF47">
-        <node concept="3clFbF" id="4Ncgb9xKDUL" role="3cqZAp">
-          <node concept="1rXfSq" id="4Ncgb9xKDUK" role="3clFbG">
-            <ref role="37wK5l" node="4Ncgb9xKDUH" resolve="init" />
+        <node concept="3clFbF" id="3tCNlYuEYvf" role="3cqZAp">
+          <node concept="1rXfSq" id="3tCNlYuEYvg" role="3clFbG">
+            <ref role="37wK5l" to="jo3e:KL8Aqlj5ou" resolve="setupEnvironment" />
           </node>
         </node>
         <node concept="3clFbF" id="3$vW3cvP1D7" role="3cqZAp">
@@ -2120,16 +2120,21 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4Ncgb9xKHmm" role="jymVt" />
-    <node concept="3clFb_" id="4Ncgb9xKDUH" role="jymVt">
-      <property role="TrG5h" value="init" />
-      <node concept="3Tmbuc" id="4Ncgb9xKG8k" role="1B3o_S" />
-      <node concept="3cqZAl" id="4Ncgb9xKDUJ" role="3clF45" />
-      <node concept="3clFbS" id="4Ncgb9xKDTu" role="3clF47">
+    <node concept="3clFb_" id="3tCNlYuECO8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createEnvironment" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3uibUv" id="3tCNlYuECO9" role="3clF45">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+      <node concept="3Tmbuc" id="3tCNlYuECOq" role="1B3o_S" />
+      <node concept="3clFbS" id="3tCNlYuECOs" role="3clF47">
         <node concept="3clFbF" id="4Ncgb9xKDTv" role="3cqZAp">
           <node concept="2OqwBi" id="4Ncgb9xKDTw" role="3clFbG">
             <node concept="2YIFZM" id="4Ncgb9xKDTx" role="2Oq$k0">
-              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
               <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
             </node>
             <node concept="liA8E" id="4Ncgb9xKDTy" role="2OqNvi">
               <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
@@ -2144,20 +2149,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="4Ncgb9xKDTB" role="3cqZAp">
-          <node concept="3cpWsn" id="4Ncgb9xKDTC" role="3cpWs9">
-            <property role="TrG5h" value="config" />
-            <node concept="1rXfSq" id="3tCNlYuDSWP" role="33vP2m">
-              <ref role="37wK5l" to="jo3e:3tCNlYuDMQB" resolve="createEnvConfig" />
-              <node concept="37vLTw" id="3tCNlYuDT4P" role="37wK5m">
-                <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="4Ncgb9xKDTE" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="4Ncgb9xKDUx" role="3cqZAp">
           <node concept="3cpWsn" id="4Ncgb9xKDUy" role="3cpWs9">
             <property role="TrG5h" value="environment" />
@@ -2167,8 +2158,11 @@
             <node concept="2ShNRf" id="4Ncgb9xKDU$" role="33vP2m">
               <node concept="1pGfFk" id="4Ncgb9xKDU_" role="2ShVmc">
                 <ref role="37wK5l" node="5kpQnuAv0sN" resolve="GeneratorWorker.MyEnvironment" />
-                <node concept="37vLTw" id="4Ncgb9xKDUA" role="37wK5m">
-                  <ref role="3cqZAo" node="4Ncgb9xKDTC" resolve="config" />
+                <node concept="1rXfSq" id="3tCNlYuELSi" role="37wK5m">
+                  <ref role="37wK5l" to="jo3e:3tCNlYuDMQB" resolve="createEnvConfig" />
+                  <node concept="37vLTw" id="3tCNlYuELSj" role="37wK5m">
+                    <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2184,11 +2178,14 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3ag$5R8QIvJ" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyVt5" role="3clFbG">
-            <ref role="37wK5l" to="jo3e:KL8Aqlj5ou" resolve="setupEnvironment" />
+        <node concept="3cpWs6" id="3tCNlYuENrN" role="3cqZAp">
+          <node concept="37vLTw" id="3tCNlYuEOxI" role="3cqZAk">
+            <ref role="3cqZAo" node="4Ncgb9xKDUy" resolve="environment" />
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="3tCNlYuECOt" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5A5jZrz133X" role="jymVt" />
@@ -4433,9 +4430,9 @@
       <node concept="3Tm1VV" id="1cjXdtLMu2Z" role="1B3o_S" />
       <node concept="3cqZAl" id="1cjXdtLMu30" role="3clF45" />
       <node concept="3clFbS" id="1cjXdtLMu31" role="3clF47">
-        <node concept="3clFbF" id="4Ncgb9xLz2p" role="3cqZAp">
-          <node concept="1rXfSq" id="4Ncgb9xLz2l" role="3clFbG">
-            <ref role="37wK5l" node="4Ncgb9xKDUH" resolve="init" />
+        <node concept="3clFbF" id="3ag$5R8QIvJ" role="3cqZAp">
+          <node concept="1rXfSq" id="4hiugqyyVt5" role="3clFbG">
+            <ref role="37wK5l" to="jo3e:KL8Aqlj5ou" resolve="setupEnvironment" />
           </node>
         </node>
         <node concept="3clFbF" id="KL8Aqll56Z" role="3cqZAp">
