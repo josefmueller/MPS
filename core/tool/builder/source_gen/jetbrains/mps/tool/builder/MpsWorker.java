@@ -108,7 +108,9 @@ public abstract class MpsWorker {
 
   public void workFromMain() {
     try {
-      setupEnvironment();
+      myEnvironment = createEnvironment();
+      make();
+
       work();
       System.exit(0);
     } catch (Throwable e) {
@@ -128,11 +130,6 @@ public abstract class MpsWorker {
       myEnvironment.dispose();
       myEnvironment = null;
     }
-  }
-
-  protected void setupEnvironment() {
-    myEnvironment = createEnvironment();
-    make();
   }
 
   protected void make() {
