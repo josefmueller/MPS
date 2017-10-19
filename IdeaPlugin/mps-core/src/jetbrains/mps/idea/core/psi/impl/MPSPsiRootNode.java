@@ -28,7 +28,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
-import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -39,6 +38,8 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
+import jetbrains.mps.idea.core.psi.MPSNodeFileViewProvider;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -61,23 +62,23 @@ import java.util.Collections;
  * Date: 3/5/13
  */
 public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinaryFile, MPSPsiRealNode {
-
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
   private final String myName;
   private final MPSPsiModel myModel;
   private VirtualFile mySeparateFile;
 
-  public MPSPsiRootNode(SNodeId nodeId, @NotNull String name, MPSPsiModel containingModel, PsiManager manager) {
+  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, MPSPsiModel containingModel, PsiManager manager) {
     super(manager);
-    myNodeId = nodeId;
+    myNodeId = nodeRef.getNodeId();
     myModel = containingModel;
     myName = name;
-    myViewProvider = new SingleRootFileViewProvider(manager, NodeVirtualFileSystem.getInstance().getFileFor(getProjectRepository(), getSNodeReference()), false);
+    MPSNodeVirtualFile nodeFile = NodeVirtualFileSystem.getInstance().getFileFor(ProjectHelper.getProjectRepository(manager.getProject()), nodeRef);
+    myViewProvider = new MPSNodeFileViewProvider(manager, nodeFile);
   }
 
-  public MPSPsiRootNode(SNodeId nodeId, @NotNull String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
-    this(nodeId, name, containingModel, manager);
+  public MPSPsiRootNode(SNodeReference nodeRef, @NotNull String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
+    this(nodeRef, name, containingModel, manager);
     mySeparateFile = virtualFile;
   }
 
@@ -284,9 +285,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   @Override
   public String getText() {
-    // implemented to avoid assertion error in PsiDocumentManagerImpl.getDocument(PsiFile)
-    // document.getTextLength() != file.getTextLength() fails
-    return myViewProvider.getPsi(getLanguage()).getText();
+    return null;
   }
 
   @Override

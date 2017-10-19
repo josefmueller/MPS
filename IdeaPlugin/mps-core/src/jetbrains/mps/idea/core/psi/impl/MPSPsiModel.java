@@ -408,9 +408,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       if (sNode.getContainingRoot() == sNode && sNode.getModel().getSource() instanceof FilePerRootDataSource) {
         final String name = extractName(sNode);
         final VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(((FilePerRootDataSource) sNode.getModel().getSource()).getFile(name + MPSExtentions.DOT_MODEL_ROOT));
-        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), name, this, getManager(), virtualFile);
+        replacementRoot = new MPSPsiRootNode(sNode.getReference(), name, this, getManager(), virtualFile);
       } else {
-        replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), this, getManager());
+        replacementRoot = new MPSPsiRootNode(sNode.getReference(), extractName(sNode), this, getManager());
       }
       replaceChild(rootNode, replacementRoot);
       ((PsiManagerEx) getManager()).getFileManager().setViewProvider(rootNode.getVirtualFile(), null);
@@ -457,10 +457,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         PsiFile psiFile = virtualFile != null ? tryReuseRootPsiFile(virtualFile) : null;
         rootNode = psiFile != null && psiFile instanceof MPSPsiRootNode
           ? (MPSPsiRootNode) psiFile :
-          new MPSPsiRootNode(root.getNodeId(), rootName, this, getManager(), virtualFile);
+          new MPSPsiRootNode(root.getReference(), rootName, this, getManager(), virtualFile);
 
       } else {
-        rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, this, getManager());
+        rootNode = new MPSPsiRootNode(root.getReference(), rootName, this, getManager());
       }
 
       addChildLast(rootNode);
@@ -566,6 +566,11 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
     assert nodes.size() <= 1 : "Non-unique mapping from psi nodes to their positions in the tree";
     return nodes.isEmpty() ? null : nodes.get(0);
+  }
+
+  public int getMaxNodePosition() {
+    // todo just store max index in a field
+    return myNodesOrder.values().stream().mapToInt(i -> i).max().orElse(0);
   }
 
   private String extractName(SNode sNode) {

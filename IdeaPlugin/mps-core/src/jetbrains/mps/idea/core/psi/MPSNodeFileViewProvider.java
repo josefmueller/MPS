@@ -29,6 +29,7 @@ import com.intellij.psi.PsiReference;
 import com.intellij.psi.SingleRootFileViewProvider;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
@@ -49,8 +50,6 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   private final static boolean EVENT_SYSTEM_ENABLED = false;
   private final static Language LANGUAGE = MPSLanguage.INSTANCE;
 
-  private static final String emptyString = "";
-
   public MPSNodeFileViewProvider(@NotNull PsiManager manager, @NotNull MPSNodeVirtualFile nodeFile) {
     super(manager, nodeFile, EVENT_SYSTEM_ENABLED, LANGUAGE);
   }
@@ -64,7 +63,9 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   @NotNull
   @Override
   public CharSequence getContents() {
-    return emptyString;
+    MPSPsiRootNode psiFile = (MPSPsiRootNode) getPsiInner(getBaseLanguage());
+    MPSPsiModel psiModel = psiFile.getContainingModel();
+    return new FakeTextContents(psiModel.getMaxNodePosition());
   }
 
   @NotNull
@@ -167,7 +168,9 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   @Nullable
   @Override
   public PsiElement findElementAt(int offset, @NotNull Language language) {
-    return null;
+    MPSPsiRootNode psiFile = (MPSPsiRootNode) getPsiInner(getBaseLanguage());
+    MPSPsiModel psiModel = psiFile.getContainingModel();
+    return psiModel.findNodeByPosition(offset);
   }
 
   @Nullable
