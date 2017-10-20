@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.NodeEditorActions;
+import java.util.function.BooleanSupplier;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CustomSelectAll {
@@ -21,17 +23,19 @@ public class CustomSelectAll {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, SNode node) {
-      while (editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP) && !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75a0f7b242cdb65bL, "jetbrains.mps.lang.editor.editorTest.structure.SelectableCustomizedContainer")))) {
-        editorContext.getSelectionManager().getSelection().executeAction(CellActionType.SELECT_UP);
-      }
+    public void execute_internal(final EditorContext editorContext, SNode node) {
+      NodeEditorActions.SelectUpUtil.executeWhile(editorContext, new BooleanSupplier() {
+        public boolean getAsBoolean() {
+          return !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75a0f7b242cdb65bL, "jetbrains.mps.lang.editor.editorTest.structure.SelectableCustomizedContainer")));
+        }
+      });
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP);
+      return NodeEditorActions.SelectUpUtil.canExecute(editorContext);
     }
   }
 }

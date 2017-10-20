@@ -38,6 +38,7 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Rectangle;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 @SuppressWarnings("WeakerAccess")
 public class NodeEditorActions {
@@ -471,7 +472,7 @@ public class NodeEditorActions {
     }
   }
 
-  private static class SelectUpUtil {
+  public static class SelectUpUtil {
     public static boolean canExecute(EditorContext context) {
       return findTarget(context.getEditorComponent().getSelectionManager()) != null;
     }
@@ -482,6 +483,12 @@ public class NodeEditorActions {
       selectionManager.pushSelection(selectionManager.createSelection(cell));
       if (cell instanceof EditorCell_Label) {
         ((EditorCell_Label) cell).selectWordOrAll();
+      }
+    }
+
+    public static void executeWhile(EditorContext context, BooleanSupplier condition) {
+      while (canExecute(context) && condition.getAsBoolean()) {
+        execute(context);
       }
     }
 
@@ -525,9 +532,7 @@ public class NodeEditorActions {
 
     @Override
     public void execute(EditorContext context) {
-      while (canExecute(context)) {
-        SelectUpUtil.execute(context);
-      }
+      SelectUpUtil.executeWhile(context, () -> true);
     }
   }
 

@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.NodeEditorActions;
+import java.util.function.BooleanSupplier;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CommandHolder_Actions {
@@ -43,17 +45,19 @@ public class CommandHolder_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, SNode node) {
-      while (editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP) && !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command")))) {
-        editorContext.getSelectionManager().getSelection().executeAction(CellActionType.SELECT_UP);
-      }
+    public void execute_internal(final EditorContext editorContext, SNode node) {
+      NodeEditorActions.SelectUpUtil.executeWhile(editorContext, new BooleanSupplier() {
+        public boolean getAsBoolean() {
+          return !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command")));
+        }
+      });
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return editorContext.getSelectionManager().getSelection().canExecuteAction(CellActionType.SELECT_UP);
+      return NodeEditorActions.SelectUpUtil.canExecute(editorContext);
     }
   }
 }
