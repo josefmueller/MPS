@@ -9079,8 +9079,8 @@
         <property role="TrG5h" value="errorCollector" />
         <node concept="3uibUv" id="4SGXHKgYZHM" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Consumer" resolve="Consumer" />
-          <node concept="3uibUv" id="4SGXHKgYZHS" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          <node concept="3uibUv" id="76Xff8JGulQ" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
           </node>
         </node>
       </node>
@@ -9097,8 +9097,8 @@
             <property role="TrG5h" value="errors" />
             <node concept="_YKpA" id="4SGXHKgZ2iq" role="1tU5fm">
               <node concept="3qUE_q" id="4SGXHKgZ2ix" role="_ZDj9">
-                <node concept="3uibUv" id="4SGXHKgZ2iy" role="3qUE_r">
-                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                <node concept="3uibUv" id="76Xff8JGuyn" role="3qUE_r">
+                  <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
                 </node>
               </node>
             </node>
@@ -9188,14 +9188,14 @@
           <node concept="3cpWsn" id="7dLX2A2SYph" role="3cpWs9">
             <property role="TrG5h" value="results" />
             <node concept="_YKpA" id="7dLX2A2SYpi" role="1tU5fm">
-              <node concept="3uibUv" id="7dLX2A2SYpk" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+              <node concept="3uibUv" id="76Xff8JGvNv" role="_ZDj9">
+                <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
               </node>
             </node>
             <node concept="2ShNRf" id="7dLX2A2SYpl" role="33vP2m">
               <node concept="Tc6Ow" id="7dLX2A2SYpm" role="2ShVmc">
-                <node concept="3uibUv" id="7dLX2A2SYpn" role="HW$YZ">
-                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                <node concept="3uibUv" id="76Xff8JGwmu" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
                 </node>
               </node>
             </node>
@@ -9303,8 +9303,8 @@
       </node>
       <node concept="_YKpA" id="7dLX2A2SXs0" role="3clF45">
         <node concept="3qUE_q" id="7dLX2A2SXs1" role="_ZDj9">
-          <node concept="3uibUv" id="7dLX2A2SXs2" role="3qUE_r">
-            <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          <node concept="3uibUv" id="76Xff8JGuVP" role="3qUE_r">
+            <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
           </node>
         </node>
       </node>
@@ -9315,8 +9315,8 @@
       <node concept="3uibUv" id="4SGXHKgYZD$" role="11_B2D">
         <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
       </node>
-      <node concept="3uibUv" id="4SGXHKgYZE7" role="11_B2D">
-        <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+      <node concept="3uibUv" id="76Xff8JFWfc" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
       </node>
     </node>
   </node>

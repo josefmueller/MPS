@@ -1422,38 +1422,38 @@
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199795829319">
     <file name="ModuleChecker.java">
       <node id="3719390199795829319" at="22,0,23,0" concept="15" trace="LOG" />
-      <node id="5633148658971845799" at="27,133,28,79" concept="11" />
-      <node id="5633148658971858520" at="29,69,30,36" concept="5" />
-      <node id="4399572642105377137" at="33,99,34,47" concept="11" />
+      <node id="5633148658971845799" at="27,130,28,76" concept="11" />
+      <node id="5633148658971858520" at="29,66,30,36" concept="5" />
+      <node id="4399572642105377137" at="33,96,34,47" concept="11" />
       <node id="3719390199795829333" at="34,47,35,73" concept="5" />
-      <node id="8318698445856826960" at="35,73,36,106" concept="11" />
+      <node id="8318698445856826960" at="35,73,36,100" concept="11" />
       <node id="7673981696209581123" at="39,60,40,56" concept="5" />
       <node id="2826098859735883611" at="40,56,41,22" concept="12" />
       <node id="3818729150937331019" at="45,42,46,71" concept="5" />
       <node id="3719390199795829347" at="48,15,49,21" concept="5" />
       <node id="8318698445856858241" at="50,5,51,19" concept="12" />
       <node id="3719390199795829327" at="23,0,25,0" concept="3" trace="ModuleChecker#()V" />
-      <node id="5633148658971852244" at="28,79,31,5" concept="8" />
+      <node id="5633148658971852244" at="28,76,31,5" concept="8" />
       <node id="3818729150937331019" at="44,27,47,7" concept="9" />
       <node id="5870062848022601578" at="39,0,43,0" concept="10" trace="process#(Ljetbrains/mps/project/validation/ModuleValidationProblem;)Z" />
       <node id="5870062848022599621" at="37,9,43,9" concept="5" />
       <node id="5633148658971835242" at="26,0,33,0" concept="10" trace="check#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <node id="3719390199795829345" at="36,106,50,5" concept="22" />
+      <node id="3719390199795829345" at="36,100,50,5" concept="22" />
       <node id="3719390199795829331" at="33,0,53,0" concept="10" trace="checkModule#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <scope id="3719390199795829330" at="23,26,23,26" />
-      <scope id="5633148658971852250" at="29,69,30,36" />
+      <scope id="5633148658971852250" at="29,66,30,36" />
       <scope id="3818729150937331019" at="45,42,46,71" />
       <scope id="3719390199795829346" at="48,15,49,21" />
       <scope id="3719390199795829327" at="23,0,25,0" />
       <scope id="5870062848022601580" at="39,60,41,22" />
-      <scope id="5633148658971852244" at="28,79,31,5">
+      <scope id="5633148658971852244" at="28,76,31,5">
         <var name="error" id="5633148658971852246" />
       </scope>
       <scope id="3719390199795829430" at="44,0,47,7">
         <var name="t" id="3719390199795829431" />
       </scope>
       <scope id="3719390199795829433" at="44,27,47,7" />
-      <scope id="5633148658971835259" at="27,133,31,5">
+      <scope id="5633148658971835259" at="27,130,31,5">
         <var name="errors" id="5633148658971845800" />
       </scope>
       <scope id="5870062848022601578" at="39,0,43,0">
@@ -1466,7 +1466,7 @@
         <var name="repository" id="5633148658971835247" />
         <var name="toCheck" id="5633148658971835245" />
       </scope>
-      <scope id="3719390199795829332" at="33,99,51,19">
+      <scope id="3719390199795829332" at="33,96,51,19">
         <var name="moduleName" id="4399572642105377138" />
         <var name="results" id="8318698445856826961" />
       </scope>

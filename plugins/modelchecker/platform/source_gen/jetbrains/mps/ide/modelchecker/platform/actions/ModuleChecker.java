@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.ModuleReportItem;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -18,22 +18,22 @@ import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ModuleValidationProblem;
 import org.apache.log4j.Level;
 
-public class ModuleChecker implements IChecker<SModule, IssueKindReportItem> {
+public class ModuleChecker implements IChecker<SModule, ModuleReportItem> {
   private static final Logger LOG = LogManager.getLogger(ModuleChecker.class);
   public ModuleChecker() {
   }
 
   @Override
-  public void check(SModule toCheck, SRepository repository, Consumer<IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
-    List<? extends IssueKindReportItem> errors = checkModule(toCheck, monitor);
-    for (IssueKindReportItem error : ListSequence.fromList(errors)) {
+  public void check(SModule toCheck, SRepository repository, Consumer<ModuleReportItem> errorCollector, ProgressMonitor monitor) {
+    List<? extends ModuleReportItem> errors = checkModule(toCheck, monitor);
+    for (ModuleReportItem error : ListSequence.fromList(errors)) {
       errorCollector.consume(error);
     }
   }
-  public List<? extends IssueKindReportItem> checkModule(SModule module, ProgressMonitor monitor) {
+  public List<? extends ModuleReportItem> checkModule(SModule module, ProgressMonitor monitor) {
     String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
-    final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
+    final List<ModuleReportItem> results = ListSequence.fromList(new ArrayList<ModuleReportItem>());
     try {
       ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
         public boolean process(ModuleValidationProblem vp) {

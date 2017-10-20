@@ -12,7 +12,7 @@ public abstract class AbstractNodeChecker implements IChecker<SNode, NodeReportI
   public abstract void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository);
 
   @Override
-  public void check(SNode toCheck, SRepository repository, final Consumer<NodeReportItem> errorCollector, ProgressMonitor monitor) {
+  public final void check(SNode toCheck, SRepository repository, final Consumer<NodeReportItem> errorCollector, ProgressMonitor monitor) {
     checkNode(toCheck, new LanguageErrorsCollector() {
       protected void addErrorInternal(NodeReportItem reportItem) {
         errorCollector.consume(reportItem);

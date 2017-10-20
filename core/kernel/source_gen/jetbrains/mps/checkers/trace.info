@@ -33,34 +33,28 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/1915871562652911288">
     <file name="LanguageErrorsCollector.java">
-      <node id="6773664074724582809" at="12,51,13,33" concept="4" />
-      <node id="5633148658971776395" at="17,44,18,19" concept="4" />
-      <node id="4716987871698317450" at="21,0,22,0" concept="9" trace="addErrorInternal#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
-      <node id="1915871562653499142" at="26,99,27,27" concept="11" />
-      <node id="1915871562653274581" at="23,0,25,0" concept="9" trace="addDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6773664074724585590" at="12,0,15,0" concept="9" trace="addError#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
-      <node id="1915871562653489027" at="26,0,29,0" concept="9" trace="runCheckingAction#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-      <node id="5633148658971775599" at="16,0,20,0" concept="9" trace="consume#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
-      <scope id="1915871562653274584" at="23,47,23,47" />
-      <scope id="6773664074724585593" at="12,51,13,33" />
-      <scope id="5633148658971775606" at="17,44,18,19" />
-      <scope id="4716987871698317450" at="21,0,22,0">
+      <node id="6773664074724582809" at="11,51,12,33" concept="4" />
+      <node id="4716987871698317450" at="15,0,16,0" concept="9" trace="addErrorInternal#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
+      <node id="1915871562653499142" at="20,99,21,27" concept="11" />
+      <node id="1915871562653274581" at="17,0,19,0" concept="9" trace="addDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6773664074724585590" at="11,0,14,0" concept="9" trace="addError#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
+      <node id="1915871562653489027" at="20,0,23,0" concept="9" trace="runCheckingAction#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+      <scope id="1915871562653274584" at="17,47,17,47" />
+      <scope id="6773664074724585593" at="11,51,12,33" />
+      <scope id="4716987871698317450" at="15,0,16,0">
         <var name="reportItem" id="4716987871698317462" />
       </scope>
-      <scope id="1915871562653489030" at="26,99,27,27" />
-      <scope id="1915871562653274581" at="23,0,25,0">
+      <scope id="1915871562653489030" at="20,99,21,27" />
+      <scope id="1915871562653274581" at="17,0,19,0">
         <var name="dependency" id="1915871562653274607" />
       </scope>
-      <scope id="6773664074724585590" at="12,0,15,0">
+      <scope id="6773664074724585590" at="11,0,14,0">
         <var name="reportItem" id="6773664074724585603" />
       </scope>
-      <scope id="1915871562653489027" at="26,0,29,0">
+      <scope id="1915871562653489027" at="20,0,23,0">
         <var name="action" id="1915871562653489154" />
       </scope>
-      <scope id="5633148658971775599" at="16,0,20,0">
-        <var name="item" id="5633148658971775603" />
-      </scope>
-      <unit id="1915871562652911288" at="10,0,31,0" name="jetbrains.mps.checkers.LanguageErrorsCollector" />
+      <unit id="1915871562652911288" at="9,0,25,0" name="jetbrains.mps.checkers.LanguageErrorsCollector" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/3364928926666856641">
@@ -1151,7 +1145,7 @@
       <node id="7390982340086720781" at="12,0,13,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="5633148658971989512" at="17,66,18,43" concept="4" />
       <node id="5633148658971988508" at="17,0,20,0" concept="9" trace="addErrorInternal#(Ljetbrains/mps/errors/item/NodeReportItem;)V" />
-      <node id="5633148658971966625" at="15,132,20,19" concept="4" />
+      <node id="5633148658971966625" at="15,138,20,19" concept="4" />
       <node id="5633148658971965165" at="14,0,22,0" concept="9" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
       <scope id="7390982340086720781" at="12,0,13,0">
         <var name="errorsCollector" id="7390982340086720787" />
@@ -1162,7 +1156,7 @@
       <scope id="5633148658971988508" at="17,0,20,0">
         <var name="reportItem" id="5633148658971988512" />
       </scope>
-      <scope id="5633148658971965180" at="15,132,20,19" />
+      <scope id="5633148658971965180" at="15,138,20,19" />
       <scope id="5633148658971965165" at="14,0,22,0">
         <var name="errorCollector" id="5633148658971965172" />
         <var name="monitor" id="5633148658971965175" />
@@ -1171,6 +1165,123 @@
       </scope>
       <unit id="5633148658971988501" at="16,27,20,5" name="jetbrains.mps.checkers.AbstractNodeChecker$1" />
       <unit id="7390982340086720780" at="11,0,23,0" name="jetbrains.mps.checkers.AbstractNodeChecker" />
+    </file>
+  </root>
+  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907765928169">
+    <file name="FilteringChecker.java">
+      <node id="8195773907765932866" at="12,0,13,0" concept="5" trace="myOrigin" />
+      <node id="8195773907765954436" at="13,0,14,0" concept="5" trace="myAccept" />
+      <node id="8195773907765982430" at="14,65,15,22" concept="4" />
+      <node id="8195773907765982441" at="15,22,16,22" concept="4" />
+      <node id="8195773907765950357" at="22,34,23,39" concept="4" />
+      <node id="8195773907765935477" at="26,6,27,59" concept="4" />
+      <node id="8195773907765985250" at="21,35,24,9" concept="8" />
+      <node id="8195773907765982422" at="14,0,18,0" concept="2" trace="FilteringChecker#(Ljetbrains/mps/checkers/IChecker;Ljava/util/function/Predicate;)V" />
+      <node id="8195773907765950355" at="21,0,26,0" concept="9" trace="consume#(null)V" />
+      <node id="8195773907765950353" at="19,115,26,6" concept="10" />
+      <node id="8195773907765933394" at="18,0,29,0" concept="9" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <scope id="8195773907765985252" at="22,34,23,39" />
+      <scope id="8195773907765982426" at="14,65,16,22" />
+      <scope id="8195773907765950356" at="21,35,24,9" />
+      <scope id="8195773907765982422" at="14,0,18,0">
+        <var name="accept" id="8195773907765982440" />
+        <var name="origin" id="8195773907765982429" />
+      </scope>
+      <scope id="8195773907765950355" at="21,0,26,0">
+        <var name="item" id="8195773907765950355" />
+      </scope>
+      <scope id="8195773907765933409" at="19,115,27,59">
+        <var name="consumer" id="8195773907765950354" />
+      </scope>
+      <scope id="8195773907765933394" at="18,0,29,0">
+        <var name="errorCollector" id="8195773907765933401" />
+        <var name="monitor" id="8195773907765933404" />
+        <var name="repository" id="8195773907765933399" />
+        <var name="toCheck" id="8195773907765933397" />
+      </scope>
+      <unit id="8195773907765950355" at="20,31,26,5" name="jetbrains.mps.checkers.FilteringChecker$1" />
+      <unit id="8195773907765928169" at="11,0,30,0" name="jetbrains.mps.checkers.FilteringChecker" />
+    </file>
+  </root>
+  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907765992281">
+    <file name="AggregatingChecker.java">
+      <node id="8195773907765992282" at="13,0,14,0" concept="5" trace="myOrigins" />
+      <node id="8195773907766005986" at="14,59,15,24" concept="4" />
+      <node id="8195773907766013707" at="19,68,20,65" concept="4" />
+      <node id="8195773907766005975" at="14,0,17,0" concept="2" trace="AggregatingChecker#(Ljava/util/List;)V" />
+      <node id="8195773907766010384" at="18,109,21,5" concept="7" />
+      <node id="8195773907766008695" at="17,0,23,0" concept="9" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <scope id="8195773907766005979" at="14,59,15,24" />
+      <scope id="8195773907766010387" at="19,68,20,65" />
+      <scope id="8195773907766005975" at="14,0,17,0">
+        <var name="origins" id="8195773907766005985" />
+      </scope>
+      <scope id="8195773907766008710" at="18,109,21,5" />
+      <scope id="8195773907766010384" at="18,109,21,5">
+        <var name="origin" id="8195773907766010385" />
+      </scope>
+      <scope id="8195773907766008695" at="17,0,23,0">
+        <var name="errorCollector" id="8195773907766008702" />
+        <var name="monitor" id="8195773907766008705" />
+        <var name="repository" id="8195773907766008700" />
+        <var name="toCheck" id="8195773907766008698" />
+      </scope>
+      <unit id="8195773907765992281" at="12,0,24,0" name="jetbrains.mps.checkers.AggregatingChecker" />
+    </file>
+  </root>
+  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907766032343">
+    <file name="SkippingChecker.java">
+      <node id="8195773907766032344" at="12,0,13,0" concept="5" trace="myOrigin" />
+      <node id="8195773907766032349" at="13,0,14,0" concept="5" trace="myAccept" />
+      <node id="8195773907766032364" at="14,64,15,22" concept="4" />
+      <node id="8195773907766032368" at="15,22,16,22" concept="4" />
+      <node id="8195773907766032409" at="20,33,21,67" concept="4" />
+      <node id="8195773907766048094" at="19,109,22,5" concept="8" />
+      <node id="8195773907766032360" at="14,0,18,0" concept="2" trace="SkippingChecker#(Ljetbrains/mps/checkers/IChecker;Ljava/util/function/Predicate;)V" />
+      <node id="8195773907766032377" at="18,0,24,0" concept="9" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <scope id="8195773907766048096" at="20,33,21,67" />
+      <scope id="8195773907766032363" at="14,64,16,22" />
+      <scope id="8195773907766032389" at="19,109,22,5" />
+      <scope id="8195773907766032360" at="14,0,18,0">
+        <var name="accept" id="8195773907766032374" />
+        <var name="origin" id="8195773907766032372" />
+      </scope>
+      <scope id="8195773907766032377" at="18,0,24,0">
+        <var name="errorCollector" id="8195773907766032383" />
+        <var name="monitor" id="8195773907766032386" />
+        <var name="repository" id="8195773907766032381" />
+        <var name="toCheck" id="8195773907766032379" />
+      </scope>
+      <unit id="8195773907766032343" at="11,0,25,0" name="jetbrains.mps.checkers.SkippingChecker" />
+    </file>
+  </root>
+  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907766053653">
+    <file name="IteratingChecker.java">
+      <node id="8195773907766053654" at="13,0,14,0" concept="5" trace="myOrigin" />
+      <node id="8195773907766053659" at="14,0,15,0" concept="5" trace="myIterate" />
+      <node id="8195773907766078614" at="15,122,16,22" concept="4" />
+      <node id="8195773907766078627" at="16,22,17,24" concept="4" />
+      <node id="8195773907766095555" at="21,72,22,67" concept="4" />
+      <node id="8195773907766088161" at="20,109,23,5" concept="7" />
+      <node id="8195773907766078604" at="15,0,19,0" concept="2" trace="IteratingChecker#(Ljetbrains/mps/checkers/IChecker;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
+      <node id="8195773907766053687" at="19,0,25,0" concept="9" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <scope id="8195773907766088164" at="21,72,22,67" />
+      <scope id="8195773907766078608" at="15,122,17,24" />
+      <scope id="8195773907766053699" at="20,109,23,5" />
+      <scope id="8195773907766088161" at="20,109,23,5">
+        <var name="element" id="8195773907766088162" />
+      </scope>
+      <scope id="8195773907766078604" at="15,0,19,0">
+        <var name="iterate" id="8195773907766078626" />
+        <var name="origin" id="8195773907766078613" />
+      </scope>
+      <scope id="8195773907766053687" at="19,0,25,0">
+        <var name="errorCollector" id="8195773907766053693" />
+        <var name="monitor" id="8195773907766053696" />
+        <var name="repository" id="8195773907766053691" />
+        <var name="toCheck" id="8195773907766053689" />
+      </scope>
+      <unit id="8195773907766053653" at="12,0,26,0" name="jetbrains.mps.checkers.IteratingChecker" />
     </file>
   </root>
 </debug-info>
