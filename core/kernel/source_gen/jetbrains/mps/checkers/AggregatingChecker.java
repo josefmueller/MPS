@@ -8,16 +8,25 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class AggregatingChecker<O, I extends ReportItem> implements IChecker<O, I> {
-  private List<IChecker<O, I>> myOrigins;
-  public AggregatingChecker(List<IChecker<O, I>> origins) {
+  private List<? extends IChecker<O, I>> myOrigins;
+  public AggregatingChecker(List<? extends IChecker<O, I>> origins) {
     myOrigins = origins;
   }
   @Override
   public void check(O toCheck, SRepository repository, Consumer<I> errorCollector, ProgressMonitor monitor) {
-    for (IChecker<O, I> origin : ListSequence.fromList(myOrigins)) {
-      origin.check(toCheck, repository, errorCollector, monitor);
+    monitor.start("Checking " + toCheck, ListSequence.fromList(myOrigins).count());
+    try {
+      for (IChecker<O, I> origin : ListSequence.fromList(myOrigins)) {
+        origin.check(toCheck, repository, errorCollector, monitor.subTask(1, SubProgressKind.AS_COMMENT));
+        if (monitor.isCanceled()) {
+          break;
+        }
+      }
+    } finally {
+      monitor.done();
     }
   }
 }

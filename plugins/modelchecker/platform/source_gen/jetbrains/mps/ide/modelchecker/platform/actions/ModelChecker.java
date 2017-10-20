@@ -13,13 +13,19 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Level;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.checkers.AggregatingChecker;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.checkers.FilteringChecker;
+import jetbrains.mps.checkers.CatchingChecker;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
+import org.apache.log4j.Level;
+import jetbrains.mps.checkers.SkippingChecker;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModelChecker implements IChecker<SModel, IssueKindReportItem> {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
@@ -34,6 +40,56 @@ public class ModelChecker implements IChecker<SModel, IssueKindReportItem> {
       errorCollector.consume(error);
     }
   }
+
+  public static IChecker<SModel, IssueKindReportItem> createOld(@NotNull List<SpecificChecker> specificCheckers) {
+    return new ModelChecker(specificCheckers);
+  }
+
+  public static IChecker<SModel, IssueKindReportItem> createNew(@NotNull List<SpecificChecker> specificCheckers) {
+    AggregatingChecker<SModel, IssueKindReportItem> catchingAggregation = new AggregatingChecker<SModel, IssueKindReportItem>(ListSequence.fromList(specificCheckers).select(new ISelector<SpecificChecker, FilteringChecker<SModel, IssueKindReportItem>>() {
+      public FilteringChecker<SModel, IssueKindReportItem> select(final SpecificChecker specificChecker) {
+        return new FilteringChecker<SModel, IssueKindReportItem>(new CatchingChecker<SModel, IssueKindReportItem>(specificChecker, new _FunctionTypes._return_P3_E0<String, SModel, Exception, SRepository>() {
+          public String invoke(SModel m, Exception e, SRepository repository) {
+            return "Exception while checking model " + m.getName();
+          }
+        }), new _FunctionTypes._return_P2_E0<Boolean, IssueKindReportItem, SRepository>() {
+          public Boolean invoke(IssueKindReportItem item, SRepository repository) {
+            SNodeReference node = NodeReportItem.FLAVOUR_NODE.tryToGet(item);
+            if (node != null) {
+              if (ModelCheckerIssueFinder.filterIssue(node.resolve(repository))) {
+                return true;
+              } else {
+                if (LOG.isEnabledFor(Level.ERROR)) {
+                  LOG.error("Specific checker " + specificChecker + " returned error that is supposed to be skipped. Node " + node.getNodeId() + " in model " + node.getModelReference());
+                }
+                return false;
+              }
+            } else {
+              return true;
+            }
+          }
+        });
+      }
+    }).toListSequence());
+
+    SkippingChecker<SModel, IssueKindReportItem> skipNullModules = new SkippingChecker<SModel, IssueKindReportItem>(catchingAggregation, new _FunctionTypes._return_P2_E0<Boolean, SModel, SRepository>() {
+      public Boolean invoke(SModel model, SRepository repository) {
+        SModule module = model.getModule();
+        if (module == null) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("Module is null for " + model.getName() + " model");
+          }
+          return false;
+        }
+        return true;
+      }
+    });
+
+
+    return skipNullModules;
+  }
+
+
   public List<IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());

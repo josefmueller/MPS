@@ -11,10 +11,12 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.errors.item.ModuleReportItem;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
@@ -60,25 +62,23 @@ public class ModelCheckerIssueFinder extends BaseFinder {
 
       ModuleChecker moduleChecker = new ModuleChecker();
       for (final SModule module : ListSequence.fromList(itemsToCheck.modules)) {
-        List<? extends IssueKindReportItem> results = moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
-        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
-          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return getSearchResultForReportItem(it, module.getRepository());
+        moduleChecker.check(module, module.getRepository(), new Consumer<ModuleReportItem>() {
+          public void consume(ModuleReportItem item) {
+            rv.getSearchResults().add(getSearchResultForReportItem(item, module.getRepository()));
           }
-        }).toListSequence());
+        }, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }
       }
 
-      ModelChecker modelChecker = new ModelChecker(getSpecificCheckers());
+      IChecker<SModel, IssueKindReportItem> modelChecker = ModelChecker.createNew(getSpecificCheckers());
       for (final SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
-        List<IssueKindReportItem> results = modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
-        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
-          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return getSearchResultForReportItem(it, modelDescriptor.getRepository());
+        modelChecker.check(modelDescriptor, modelDescriptor.getRepository(), new Consumer<IssueKindReportItem>() {
+          public void consume(IssueKindReportItem item) {
+            rv.getSearchResults().add(getSearchResultForReportItem(item, modelDescriptor.getRepository()));
           }
-        }).toListSequence());
+        }, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }
