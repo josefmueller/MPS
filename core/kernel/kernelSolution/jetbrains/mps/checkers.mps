@@ -7044,6 +7044,18 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="IMyJ9JjEwQ" role="jymVt">
+      <property role="TrG5h" value="myNameGetter" />
+      <node concept="3Tm6S6" id="IMyJ9JjEwR" role="1B3o_S" />
+      <node concept="1ajhzC" id="IMyJ9JjFrq" role="1tU5fm">
+        <node concept="3uibUv" id="IMyJ9JjFzA" role="1ajl9A">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+        <node concept="16syzq" id="IMyJ9JjFvu" role="1ajw0F">
+          <ref role="16sUi3" node="76Xff8JNDHy" resolve="O" />
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="76Xff8JNDHx" role="1B3o_S" />
     <node concept="16euLQ" id="76Xff8JNDHy" role="16eVyc">
       <property role="TrG5h" value="O" />
@@ -7077,6 +7089,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="IMyJ9JjH0Y" role="3cqZAp">
+          <node concept="37vLTI" id="IMyJ9JjHfz" role="3clFbG">
+            <node concept="37vLTw" id="IMyJ9JjHlg" role="37vLTx">
+              <ref role="3cqZAo" node="IMyJ9JjGjU" resolve="nameGetter" />
+            </node>
+            <node concept="37vLTw" id="IMyJ9JjH0W" role="37vLTJ">
+              <ref role="3cqZAo" node="IMyJ9JjEwQ" resolve="myNameGetter" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="76Xff8JNH3x" role="3clF46">
         <property role="TrG5h" value="origins" />
@@ -7091,6 +7113,17 @@
                 <ref role="16sUi3" node="76Xff8JNDHz" resolve="I" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="IMyJ9JjGjU" role="3clF46">
+        <property role="TrG5h" value="nameGetter" />
+        <node concept="1ajhzC" id="IMyJ9JjGxl" role="1tU5fm">
+          <node concept="3uibUv" id="IMyJ9JjGAy" role="1ajl9A">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+          <node concept="16syzq" id="IMyJ9JjGy5" role="1ajw0F">
+            <ref role="16sUi3" node="76Xff8JNDHy" resolve="O" />
           </node>
         </node>
       </node>
@@ -7136,8 +7169,13 @@
             <node concept="liA8E" id="3etVqSRKzMD" role="2OqNvi">
               <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
               <node concept="3cpWs3" id="3etVqSRKzME" role="37wK5m">
-                <node concept="37vLTw" id="76Xff8JQbJk" role="3uHU7w">
-                  <ref role="3cqZAo" node="76Xff8JNHHU" resolve="toCheck" />
+                <node concept="2Sg_IR" id="IMyJ9JjItZ" role="3uHU7w">
+                  <node concept="37vLTw" id="IMyJ9JjIu0" role="2SgG2M">
+                    <ref role="3cqZAo" node="IMyJ9JjEwQ" resolve="myNameGetter" />
+                  </node>
+                  <node concept="37vLTw" id="IMyJ9JjIHl" role="2SgHGx">
+                    <ref role="3cqZAo" node="76Xff8JNHHU" resolve="toCheck" />
+                  </node>
                 </node>
                 <node concept="Xl_RD" id="3etVqSRKzMH" role="3uHU7B">
                   <property role="Xl_RC" value="Checking " />

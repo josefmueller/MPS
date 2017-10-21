@@ -3656,6 +3656,9 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="IMyJ9Jk9nJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="2tJIrI" id="76Xff8JPQ_q" role="jymVt" />
     <node concept="2YIFZL" id="76Xff8JPRsa" role="jymVt">
@@ -3907,6 +3910,31 @@
                     </node>
                   </node>
                   <node concept="ANE8D" id="76Xff8JR0Pm" role="2OqNvi" />
+                </node>
+                <node concept="1bVj0M" id="IMyJ9JjWml" role="37wK5m">
+                  <node concept="3clFbS" id="IMyJ9JjWmn" role="1bW5cS">
+                    <node concept="3clFbF" id="IMyJ9Jk0rM" role="3cqZAp">
+                      <node concept="2OqwBi" id="IMyJ9Jk6Za" role="3clFbG">
+                        <node concept="2OqwBi" id="IMyJ9Jk1s8" role="2Oq$k0">
+                          <node concept="37vLTw" id="IMyJ9Jk0rL" role="2Oq$k0">
+                            <ref role="3cqZAo" node="IMyJ9JjXna" resolve="model" />
+                          </node>
+                          <node concept="liA8E" id="IMyJ9Jk605" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="IMyJ9Jk8hM" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTG" id="IMyJ9JjXna" role="1bW2Oz">
+                    <property role="TrG5h" value="model" />
+                    <node concept="3uibUv" id="IMyJ9JjXn9" role="1tU5fm">
+                      <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="3uibUv" id="76Xff8JR0Pn" role="1pMfVU">
                   <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
@@ -4425,6 +4453,9 @@
       <node concept="3uibUv" id="4SGXHKgZdou" role="11_B2D">
         <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
       </node>
+    </node>
+    <node concept="2AHcQZ" id="IMyJ9Jka42" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="3etVqSRKzPq">

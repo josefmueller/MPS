@@ -1206,36 +1206,39 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907765992281">
     <file name="AggregatingChecker.java">
-      <node id="8195773907765992282" at="14,0,15,0" concept="6" trace="myOrigins" />
-      <node id="8195773907766005986" at="15,69,16,24" concept="5" />
-      <node id="3719390199793466534" at="19,109,20,83" concept="5" />
-      <node id="8195773907766013707" at="22,70,23,106" concept="5" />
-      <node id="8195773907766583034" at="24,35,25,16" concept="2" />
-      <node id="8195773907766666968" at="28,15,29,21" concept="5" />
-      <node id="8195773907766005975" at="15,0,18,0" concept="3" trace="AggregatingChecker#(Ljava/util/List;)V" />
-      <node id="8195773907766581513" at="23,106,26,9" concept="9" />
-      <node id="8195773907766010384" at="21,9,27,7" concept="8" />
-      <node id="8195773907766671598" at="20,83,30,5" concept="19" />
-      <node id="8195773907766008695" at="18,0,32,0" concept="10" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="8195773907766005979" at="15,69,16,24" />
-      <scope id="8195773907766581515" at="24,35,25,16" />
-      <scope id="8195773907766671601" at="28,15,29,21" />
-      <scope id="8195773907766005975" at="15,0,18,0">
+      <node id="8195773907765992282" at="15,0,16,0" concept="6" trace="myOrigins" />
+      <node id="842888854125848630" at="16,0,17,0" concept="6" trace="myNameGetter" />
+      <node id="8195773907766005986" at="17,139,18,24" concept="5" />
+      <node id="842888854125858878" at="18,24,19,30" concept="5" />
+      <node id="3719390199793466534" at="22,109,23,104" concept="5" />
+      <node id="8195773907766013707" at="25,70,26,106" concept="5" />
+      <node id="8195773907766583034" at="27,35,28,16" concept="2" />
+      <node id="8195773907766666968" at="31,15,32,21" concept="5" />
+      <node id="8195773907766581513" at="26,106,29,9" concept="9" />
+      <node id="8195773907766005975" at="17,0,21,0" concept="3" trace="AggregatingChecker#(Ljava/util/List;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
+      <node id="8195773907766010384" at="24,9,30,7" concept="8" />
+      <node id="8195773907766671598" at="23,104,33,5" concept="19" />
+      <node id="8195773907766008695" at="21,0,35,0" concept="10" trace="check#(nullLorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
+      <scope id="8195773907766581515" at="27,35,28,16" />
+      <scope id="8195773907766671601" at="31,15,32,21" />
+      <scope id="8195773907766005979" at="17,139,19,30" />
+      <scope id="8195773907766005975" at="17,0,21,0">
+        <var name="nameGetter" id="842888854125855994" />
         <var name="origins" id="8195773907766005985" />
       </scope>
-      <scope id="8195773907766010387" at="22,70,26,9" />
-      <scope id="8195773907766010384" at="21,9,27,7">
+      <scope id="8195773907766010387" at="25,70,29,9" />
+      <scope id="8195773907766010384" at="24,9,30,7">
         <var name="origin" id="8195773907766010385" />
       </scope>
-      <scope id="8195773907766671600" at="21,9,27,7" />
-      <scope id="8195773907766008710" at="19,109,30,5" />
-      <scope id="8195773907766008695" at="18,0,32,0">
+      <scope id="8195773907766671600" at="24,9,30,7" />
+      <scope id="8195773907766008710" at="22,109,33,5" />
+      <scope id="8195773907766008695" at="21,0,35,0">
         <var name="errorCollector" id="8195773907766008702" />
         <var name="monitor" id="8195773907766008705" />
         <var name="repository" id="8195773907766008700" />
         <var name="toCheck" id="8195773907766008698" />
       </scope>
-      <unit id="8195773907765992281" at="13,0,33,0" name="jetbrains.mps.checkers.AggregatingChecker" />
+      <unit id="8195773907765992281" at="14,0,36,0" name="jetbrains.mps.checkers.AggregatingChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/8195773907766032343">

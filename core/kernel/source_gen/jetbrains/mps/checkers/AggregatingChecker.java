@@ -4,6 +4,7 @@ package jetbrains.mps.checkers;
 
 import jetbrains.mps.errors.item.ReportItem;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -12,12 +13,14 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class AggregatingChecker<O, I extends ReportItem> implements IChecker<O, I> {
   private List<? extends IChecker<O, I>> myOrigins;
-  public AggregatingChecker(List<? extends IChecker<O, I>> origins) {
+  private _FunctionTypes._return_P1_E0<? extends String, ? super O> myNameGetter;
+  public AggregatingChecker(List<? extends IChecker<O, I>> origins, _FunctionTypes._return_P1_E0<? extends String, ? super O> nameGetter) {
     myOrigins = origins;
+    myNameGetter = nameGetter;
   }
   @Override
   public void check(O toCheck, SRepository repository, Consumer<I> errorCollector, ProgressMonitor monitor) {
-    monitor.start("Checking " + toCheck, ListSequence.fromList(myOrigins).count());
+    monitor.start("Checking " + myNameGetter.invoke(toCheck), ListSequence.fromList(myOrigins).count());
     try {
       for (IChecker<O, I> origin : ListSequence.fromList(myOrigins)) {
         origin.check(toCheck, repository, errorCollector, monitor.subTask(1, SubProgressKind.AS_COMMENT));

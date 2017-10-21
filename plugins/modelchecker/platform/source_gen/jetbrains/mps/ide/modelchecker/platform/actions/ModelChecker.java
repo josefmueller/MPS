@@ -27,9 +27,11 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
+@Deprecated
 public class ModelChecker implements IChecker<SModel, IssueKindReportItem> {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
   private final List<SpecificChecker> mySpecificCheckers;
+  @Deprecated
   public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
     mySpecificCheckers = specificCheckers;
   }
@@ -41,6 +43,7 @@ public class ModelChecker implements IChecker<SModel, IssueKindReportItem> {
     }
   }
 
+  @Deprecated
   public static IChecker<SModel, IssueKindReportItem> createOld(@NotNull List<SpecificChecker> specificCheckers) {
     return new ModelChecker(specificCheckers);
   }
@@ -70,7 +73,11 @@ public class ModelChecker implements IChecker<SModel, IssueKindReportItem> {
           }
         });
       }
-    }).toListSequence());
+    }).toListSequence(), new _FunctionTypes._return_P1_E0<String, SModel>() {
+      public String invoke(SModel model) {
+        return model.getName().getLongName();
+      }
+    });
 
     SkippingChecker<SModel, IssueKindReportItem> skipNullModules = new SkippingChecker<SModel, IssueKindReportItem>(catchingAggregation, new _FunctionTypes._return_P2_E0<Boolean, SModel, SRepository>() {
       public Boolean invoke(SModel model, SRepository repository) {
