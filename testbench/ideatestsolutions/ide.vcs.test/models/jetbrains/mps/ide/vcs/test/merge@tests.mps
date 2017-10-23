@@ -373,12 +373,21 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345530174" name="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" flags="ng" index="P$Jll">
         <property id="5349172909345532826" name="text" index="P$JZL" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
@@ -7285,6 +7294,20 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="4SyTannYkcY" role="3cqZAp">
+          <node concept="3SKdUq" id="4SyTannYkd0" role="3SKWNk">
+            <property role="3SKdUp" value="In case fs is not updated, we need to stop waiting, so set timeout to 5 seconds" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4SyTannYgxO" role="3cqZAp">
+          <node concept="3cpWsn" id="4SyTannYgxP" role="3cpWs9">
+            <property role="TrG5h" value="fsUpdateTimeout" />
+            <node concept="10Oyi0" id="4SyTannYgxN" role="1tU5fm" />
+            <node concept="3cmrfG" id="4SyTannYgxQ" role="33vP2m">
+              <property role="3cmrfH" value="5000" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="4DNDPQS2L0r" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyZyF" role="3clFbG">
             <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
@@ -7506,6 +7529,9 @@
                 </node>
               </node>
             </node>
+            <node concept="37vLTw" id="4SyTannYgxR" role="37wK5m">
+              <ref role="3cqZAo" node="4SyTannYgxP" resolve="fsUpdateTimeout" />
+            </node>
           </node>
         </node>
       </node>
@@ -7570,6 +7596,9 @@
                 </node>
               </node>
             </node>
+            <node concept="3cmrfG" id="4SyTannWIhe" role="37wK5m">
+              <property role="3cmrfH" value="-1" />
+            </node>
           </node>
         </node>
       </node>
@@ -7621,6 +7650,9 @@
                 </node>
               </node>
             </node>
+            <node concept="3cmrfG" id="4SyTannWI2_" role="37wK5m">
+              <property role="3cmrfH" value="-1" />
+            </node>
           </node>
         </node>
       </node>
@@ -7661,41 +7693,132 @@
                 </node>
               </node>
             </node>
-            <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
-              <node concept="3fqX7Q" id="5YeG5fElPpr" role="2$JKZa">
-                <node concept="37vLTw" id="5YeG5fEm0gL" role="3fr31v">
-                  <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
-                <node concept="SfApY" id="3oUomEoN5mL" role="3cqZAp">
-                  <node concept="3clFbS" id="3oUomEoN5mM" role="SfCbr">
-                    <node concept="3clFbF" id="3oUomEoN5mN" role="3cqZAp">
-                      <node concept="2OqwBi" id="3oUomEoN5mO" role="3clFbG">
-                        <node concept="37vLTw" id="2BHiRxeun3l" role="2Oq$k0">
+            <node concept="3clFbJ" id="4SyTannWE$d" role="3cqZAp">
+              <node concept="3clFbS" id="4SyTannWE$f" role="3clFbx">
+                <node concept="SfApY" id="7YTeVpqHnlW" role="3cqZAp">
+                  <node concept="3clFbS" id="7YTeVpqHnlX" role="SfCbr">
+                    <node concept="3clFbF" id="4SyTannWGrT" role="3cqZAp">
+                      <node concept="2OqwBi" id="4SyTannWGrV" role="3clFbG">
+                        <node concept="37vLTw" id="4SyTannWGrW" role="2Oq$k0">
                           <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
                         </node>
-                        <node concept="liA8E" id="3oUomEoN5mQ" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Object.wait():void" resolve="wait" />
+                        <node concept="liA8E" id="4SyTannWGrX" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Object.wait(long):void" resolve="wait" />
+                          <node concept="37vLTw" id="4SyTannWGEt" role="37wK5m">
+                            <ref role="3cqZAo" node="4SyTannWiq9" resolve="timeout" />
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="TDmWw" id="3oUomEoN5mR" role="TEbGg">
-                    <node concept="3cpWsn" id="3oUomEoN5mS" role="TDEfY">
+                  <node concept="TDmWw" id="7YTeVpqHnlS" role="TEbGg">
+                    <node concept="3clFbS" id="7YTeVpqHnlT" role="TDEfX">
+                      <node concept="3clFbF" id="7YTeVpqHn$L" role="3cqZAp">
+                        <node concept="2OqwBi" id="7YTeVpqHnLW" role="3clFbG">
+                          <node concept="37vLTw" id="7YTeVpqHn$K" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7YTeVpqHnlU" resolve="e" />
+                          </node>
+                          <node concept="liA8E" id="7YTeVpqHocM" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWsn" id="7YTeVpqHnlU" role="TDEfY">
                       <property role="TrG5h" value="e" />
-                      <node concept="3uibUv" id="3oUomEoN5mT" role="1tU5fm">
+                      <node concept="3uibUv" id="7YTeVpqHnlV" role="1tU5fm">
                         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
                       </node>
                     </node>
-                    <node concept="3clFbS" id="3oUomEoN5mU" role="TDEfX">
-                      <node concept="3clFbF" id="3oUomEoN5mV" role="3cqZAp">
-                        <node concept="2OqwBi" id="3oUomEoN5mW" role="3clFbG">
-                          <node concept="37vLTw" id="3GM_nagTvgg" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3oUomEoN5mS" resolve="e" />
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="7YTeVpqHl55" role="3cqZAp">
+                  <node concept="3clFbS" id="7YTeVpqHl57" role="3clFbx">
+                    <node concept="3SKdUt" id="7YTeVpqIryG" role="3cqZAp">
+                      <node concept="3SKdUq" id="7YTeVpqIryI" role="3SKWNk">
+                        <property role="3SKdUp" value="Reset flag for next calls" />
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="7YTeVpqHmhM" role="3cqZAp">
+                      <node concept="37vLTI" id="7YTeVpqHmDS" role="3clFbG">
+                        <node concept="3clFbT" id="7YTeVpqHmJz" role="37vLTx">
+                          <property role="3clFbU" value="true" />
+                        </node>
+                        <node concept="37vLTw" id="7YTeVpqHmhK" role="37vLTJ">
+                          <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="7YTeVpqHPQX" role="3cqZAp">
+                      <node concept="2OqwBi" id="7YTeVpqHQfp" role="3clFbG">
+                        <node concept="10M0yZ" id="7YTeVpqHPSY" role="2Oq$k0">
+                          <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+                          <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                        </node>
+                        <node concept="liA8E" id="7YTeVpqHQ_r" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~PrintStream.print(java.lang.String):void" resolve="print" />
+                          <node concept="Xl_RD" id="7YTeVpqHRnR" role="37wK5m">
+                            <property role="Xl_RC" value="Runnable did not call waitCompleted. Ended by timeout" />
                           </node>
-                          <node concept="liA8E" id="3oUomEoN5mY" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="7YTeVpqHoqG" role="3clFbw">
+                    <node concept="37vLTw" id="7YTeVpqHoqI" role="3fr31v">
+                      <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eOSWO" id="4SyTannWGfq" role="3clFbw">
+                <node concept="3cmrfG" id="4SyTannWGk4" role="3uHU7w">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="37vLTw" id="4SyTannWEJK" role="3uHU7B">
+                  <ref role="3cqZAo" node="4SyTannWiq9" resolve="timeout" />
+                </node>
+              </node>
+              <node concept="9aQIb" id="4SyTannWHDo" role="9aQIa">
+                <node concept="3clFbS" id="4SyTannWHDp" role="9aQI4">
+                  <node concept="2$JKZl" id="3oUomEoN5mE" role="3cqZAp">
+                    <node concept="3fqX7Q" id="5YeG5fElPpr" role="2$JKZa">
+                      <node concept="37vLTw" id="5YeG5fEm0gL" role="3fr31v">
+                        <ref role="3cqZAo" node="3oUomEoN5m8" resolve="myWaitCompleted" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="3oUomEoN5mH" role="2LFqv$">
+                      <node concept="SfApY" id="3oUomEoN5mL" role="3cqZAp">
+                        <node concept="3clFbS" id="3oUomEoN5mM" role="SfCbr">
+                          <node concept="3clFbF" id="3oUomEoN5mN" role="3cqZAp">
+                            <node concept="2OqwBi" id="3oUomEoN5mO" role="3clFbG">
+                              <node concept="37vLTw" id="2BHiRxeun3l" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3Lj0jv7EEkd" resolve="myWaitLock" />
+                              </node>
+                              <node concept="liA8E" id="3oUomEoN5mQ" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~Object.wait():void" resolve="wait" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="TDmWw" id="3oUomEoN5mR" role="TEbGg">
+                          <node concept="3cpWsn" id="3oUomEoN5mS" role="TDEfY">
+                            <property role="TrG5h" value="e" />
+                            <node concept="3uibUv" id="3oUomEoN5mT" role="1tU5fm">
+                              <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="3oUomEoN5mU" role="TDEfX">
+                            <node concept="3clFbF" id="3oUomEoN5mV" role="3cqZAp">
+                              <node concept="2OqwBi" id="3oUomEoN5mW" role="3clFbG">
+                                <node concept="37vLTw" id="3GM_nagTvgg" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="3oUomEoN5mS" resolve="e" />
+                                </node>
+                                <node concept="liA8E" id="3oUomEoN5mY" role="2OqNvi">
+                                  <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -7711,6 +7834,24 @@
         <property role="TrG5h" value="waitScheduling" />
         <node concept="3uibUv" id="3oUomEoN5mq" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4SyTannWiq9" role="3clF46">
+        <property role="TrG5h" value="timeout" />
+        <node concept="10Oyi0" id="4SyTannWCyo" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="4SyTannWNvE" role="lGtFl">
+        <node concept="TUZQ0" id="4SyTannWNvH" role="3nqlJM">
+          <property role="TUZQ4" value="is runnable with work wait to finish, must call {@link ChangesManagerTestWaitHelper#waitCompleted()}" />
+          <node concept="zr_55" id="4SyTannWNvJ" role="zr_5Q">
+            <ref role="zr_51" node="3oUomEoN5mp" resolve="waitScheduling" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="4SyTannWNvK" role="3nqlJM">
+          <property role="TUZQ4" value="time to wait for runnable to be finished in milliseconds, -1 for wait until myWaitCompleted" />
+          <node concept="zr_55" id="4SyTannWNvM" role="zr_5Q">
+            <ref role="zr_51" node="4SyTannWiq9" resolve="timeout" />
+          </node>
         </node>
       </node>
     </node>

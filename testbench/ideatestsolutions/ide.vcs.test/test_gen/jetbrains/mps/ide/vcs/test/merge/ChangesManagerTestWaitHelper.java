@@ -36,6 +36,8 @@ public class ChangesManagerTestWaitHelper {
 
   public void waitForFileStatusChange(@NotNull final VirtualFile file, @NotNull final FileStatus expectedFileStatus) {
     final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
+    // In case fs is not updated, we need to stop waiting, so set timeout to 5 seconds 
+    int fsUpdateTimeout = 5000;
     waitForSomething(new Runnable() {
       public void run() {
         final Wrappers._T<FileStatusListener> listener = new Wrappers._T<FileStatusListener>();
@@ -68,7 +70,7 @@ public class ChangesManagerTestWaitHelper {
         ChangeListManagerImpl.getInstanceImpl(myProject).scheduleUpdate();
         stopIfNeeded.invoke();
       }
-    });
+    }, fsUpdateTimeout);
   }
 
   public void waitForChangesManager() {
@@ -80,7 +82,7 @@ public class ChangesManagerTestWaitHelper {
           }
         });
       }
-    });
+    }, -1);
   }
 
   public void waitForReloadFinished() {
@@ -97,19 +99,37 @@ public class ChangesManagerTestWaitHelper {
           };
         }
       }
-    });
+    }, -1);
   }
 
-  private void waitForSomething(Runnable waitScheduling) {
+  /**
+   * 
+   * @param waitScheduling is runnable with work wait to finish, must call {@link ChangesManagerTestWaitHelper#waitCompleted()}
+   * @param timeout time to wait for runnable to be finished in milliseconds, -1 for wait until myWaitCompleted
+   */
+  private void waitForSomething(Runnable waitScheduling, int timeout) {
     synchronized (myWaitLock) {
       assert myWaitCompleted;
       myWaitCompleted = false;
       waitScheduling.run();
-      while (!(myWaitCompleted)) {
+      if (timeout > 0) {
         try {
-          myWaitLock.wait();
+          myWaitLock.wait(timeout);
         } catch (InterruptedException e) {
           e.printStackTrace();
+        }
+        if (!(myWaitCompleted)) {
+          // Reset flag for next calls 
+          myWaitCompleted = true;
+          System.err.print("Runnable did not call waitCompleted. Ended by timeout");
+        }
+      } else {
+        while (!(myWaitCompleted)) {
+          try {
+            myWaitLock.wait();
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
         }
       }
     }
