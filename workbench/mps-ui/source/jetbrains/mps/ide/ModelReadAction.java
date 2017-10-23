@@ -26,7 +26,7 @@ import javax.swing.Icon;
 
 /**
  * Action with read access to model, delegates to Runnable for actual work
- * @deprecated uses static ModelAccess instance which is scheduled for removal.
+ * @deprecated uses static ModelAccess instance which is scheduled for removal. No uses in MPS or anywhere else.
  * @author Artem Tikhomirov
  */
 @Deprecated
