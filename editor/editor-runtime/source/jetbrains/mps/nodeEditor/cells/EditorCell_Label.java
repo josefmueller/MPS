@@ -553,10 +553,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     assert CellActionType.DELETE == actionType || CellActionType.BACKSPACE == actionType;
     if ("".equals(getText()) && getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
       // TODO: just use delete action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
-      CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, actionType);
-      if (deleteAction != null) {
-        deleteAction.execute(getContext());
-      }
+      getEditorComponent().getActionHandler().executeAction(this, actionType);
     }
   }
 

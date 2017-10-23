@@ -15,7 +15,6 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
@@ -100,15 +99,13 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
 
     editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
       protected void doExecute() {
-        CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(EditorCell_Empty.this, actionType);
-        if (ltAction == null) {
-          return;
-        }
-        ltAction.execute(editorContext);
-        EditorCell_STHint stHintCell = EditorCell_STHint.getSTHintCell(getSNode(), getEditorComponent());
-        if (stHintCell != null) {
-          stHintCell.changeText("" + event.getKeyChar());
-          stHintCell.end();
+        boolean wasExecuted = editorContext.getEditorComponent().getActionHandler().executeAction(EditorCell_Empty.this, actionType);
+        if (wasExecuted) {
+          EditorCell_STHint stHintCell = EditorCell_STHint.getSTHintCell(getSNode(), getEditorComponent());
+          if (stHintCell != null) {
+            stHintCell.changeText("" + event.getKeyChar());
+            stHintCell.end();
+          }
         }
       }
     });

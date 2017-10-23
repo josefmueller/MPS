@@ -37,7 +37,7 @@ public class CellAction_InsertIntoCollection extends AbstractCellAction {
   @Override
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
-    EditorCell contextCell = context.getContextCell();
+    EditorCell contextCell = context.getSelectedCell();
     myListHandler.insertNewChild(context, contextCell, before);
   }
 }

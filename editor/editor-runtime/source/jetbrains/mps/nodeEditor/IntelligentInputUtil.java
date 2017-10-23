@@ -279,9 +279,9 @@ public class IntelligentInputUtil {
 
     private boolean applyRigthTransform(String smallPattern, final String tail,
                                         final EditorCell cellForNewNode, SNode newNode) {
-      EditorCell selectableChild = CellFinderUtil.findLastSelectableLeaf(cellForNewNode, true);
-      CellAction rtAction = selectableChild != null ?
-                            myEditorContext.getEditorComponent().getActionHandler().getApplicableCellAction(selectableChild, CellActionType.RIGHT_TRANSFORM) :
+      EditorCell selectableLeaf = CellFinderUtil.findLastSelectableLeaf(cellForNewNode, true);
+      CellAction rtAction = selectableLeaf != null ?
+                            myEditorContext.getEditorComponent().getActionHandler().getApplicableCellAction(selectableLeaf, CellActionType.RIGHT_TRANSFORM) :
                             null;
 
       boolean hasSideActions = hasSideActions(cellForNewNode, Side.RIGHT, tail);
@@ -295,7 +295,7 @@ public class IntelligentInputUtil {
         ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
       }
 
-      rtAction.execute(myEditorContext);
+      myEditorContext.getEditorComponent().getActionHandler().executeAction(selectableLeaf, CellActionType.RIGHT_TRANSFORM);
 
       EditorCell rtHintCell = prepareSTCell(myEditorContext, newNode, tail);
       if (rtHintCell != null) {
@@ -400,9 +400,9 @@ public class IntelligentInputUtil {
 
     private boolean applyLeftTransform(final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode,
                                        boolean sourceCellRemains) {
-      CellAction ltAction =
-          myEditorContext.getEditorComponent().getActionHandler().getApplicableCellAction(CellFinderUtil.findFirstSelectableLeaf(cellForNewNode, true),
-                                                                                          CellActionType.LEFT_TRANSFORM);
+      EditorCell firstSelectableLeaf = CellFinderUtil.findFirstSelectableLeaf(cellForNewNode, true);
+      CellAction ltAction = myEditorContext.getEditorComponent().getActionHandler().getApplicableCellAction(firstSelectableLeaf,
+                                                                                                            CellActionType.LEFT_TRANSFORM);
       boolean hasSideActions = hasSideActions(cellForNewNode, Side.LEFT, head);
 
       if (ltAction == null || !hasSideActions) {
@@ -418,7 +418,7 @@ public class IntelligentInputUtil {
         ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
       }
 
-      ltAction.execute(myEditorContext);
+      myEditorContext.getEditorComponent().getActionHandler().executeAction(firstSelectableLeaf, CellActionType.LEFT_TRANSFORM);
 
       final EditorCell_Label ltCell = prepareSTCell(myEditorContext, newNode, head);
       if (ltCell instanceof EditorCell_STHint) {
