@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editor.tabs;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -29,7 +30,6 @@ import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFocusManager;
-import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -391,10 +391,17 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   }
 
-  private static class BaseNavigationAction extends ModelReadAction {
+  private static class BaseNavigationAction extends AnAction {
+    private final Runnable myDelegate;
+
     public BaseNavigationAction(Runnable delegate) {
-      super(null, delegate);
+      myDelegate = delegate;
       setEnabledInModalContext(true);
+    }
+
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+      myDelegate.run();
     }
   }
 
