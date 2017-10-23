@@ -5,8 +5,14 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.types.DataType;
 import java.io.File;
 
+/**
+ * 
+ * @deprecated use <repo><module jar="smth"></module jar="smth"></repo> instead
+ */
+@Deprecated
 public class ModuleJarDataType extends DataType {
   private File myJar;
+  @Deprecated
   public ModuleJarDataType() {
   }
   public File getFile() {
