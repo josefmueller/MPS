@@ -23,6 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = createDescriptorForTestConceptWithStyleAttributes();
   /*package*/ final ConceptDescriptor myConceptTestInheritedAttribute = createDescriptorForTestInheritedAttribute();
   /*package*/ final ConceptDescriptor myConceptTestSimpleAttribute = createDescriptorForTestSimpleAttribute();
+  /*package*/ final ConceptDescriptor myConceptURLCellContainer = createDescriptorForURLCellContainer();
   /*package*/ final ConceptDescriptor myConceptUnapplyPriorityStyleCopy = createDescriptorForUnapplyPriorityStyleCopy();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -32,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCustomFontContainer, myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptSerifFromQueryNode, myConceptSerifNode, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
+    return Arrays.asList(myConceptCustomFontContainer, myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptSerifFromQueryNode, myConceptSerifNode, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptURLCellContainer, myConceptUnapplyPriorityStyleCopy);
   }
 
   @Override
@@ -61,6 +62,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestInheritedAttribute;
       case LanguageConceptSwitch.TestSimpleAttribute:
         return myConceptTestSimpleAttribute;
+      case LanguageConceptSwitch.URLCellContainer:
+        return myConceptURLCellContainer;
       case LanguageConceptSwitch.UnapplyPriorityStyleCopy:
         return myConceptUnapplyPriorityStyleCopy;
       default:
@@ -158,6 +161,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8917170296719628637");
     b.prop("value", 0x7bc02723c1a35ed3L, "8917170296719630035");
     b.alias("test-simple-attribute");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForURLCellContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.styleTests", "URLCellContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x692a1b3ce85cd977L);
+    b.class_(false, false, false);
+    b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/7577899271414667639");
+    b.prop("customUrl", 0x2349ec7bddecf3dbL, "2542823481375781851");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnapplyPriorityStyleCopy() {

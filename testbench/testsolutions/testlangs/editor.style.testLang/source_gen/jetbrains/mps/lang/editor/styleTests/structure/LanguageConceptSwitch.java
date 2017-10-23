@@ -20,7 +20,8 @@ public final class LanguageConceptSwitch {
   public static final int TestConceptWithStyleAttributes = 8;
   public static final int TestInheritedAttribute = 9;
   public static final int TestSimpleAttribute = 10;
-  public static final int UnapplyPriorityStyleCopy = 11;
+  public static final int URLCellContainer = 11;
+  public static final int UnapplyPriorityStyleCopy = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L);
@@ -35,6 +36,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x5bb841570e741168L, TestConceptWithStyleAttributes);
     builder.put(0x7bc02723c1a35eddL, TestInheritedAttribute);
     builder.put(0x7bc02723c1a3595dL, TestSimpleAttribute);
+    builder.put(0x692a1b3ce85cd977L, URLCellContainer);
     builder.put(0x7bc02723c1a36a0fL, UnapplyPriorityStyleCopy);
     myIndex = builder.seal();
   }

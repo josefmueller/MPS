@@ -2,13 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="11,0,117,0" name="jetbrains.mps.lang.editor.styleTests.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,125,0" name="jetbrains.mps.lang.editor.styleTests.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="LanguageConceptSwitch.java">
-      <unit at="10,0,50,0" name="jetbrains.mps.lang.editor.styleTests.structure.LanguageConceptSwitch" />
+      <unit at="10,0,52,0" name="jetbrains.mps.lang.editor.styleTests.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,172,0" name="jetbrains.mps.lang.editor.styleTests.structure.StructureAspectDescriptor" />
+      <unit at="14,0,182,0" name="jetbrains.mps.lang.editor.styleTests.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

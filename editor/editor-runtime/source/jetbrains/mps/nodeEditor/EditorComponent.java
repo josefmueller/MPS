@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
@@ -38,6 +39,7 @@ import com.intellij.openapi.editor.impl.LeftHandScrollbarLayout;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
 import com.intellij.openapi.wm.WindowManager;
@@ -47,6 +49,7 @@ import com.intellij.psi.codeStyle.NameUtil;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.io.URLUtil;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
@@ -1930,7 +1933,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (mouseEvent.isAltDown()) {
         showCellError();
       } else {
-        goByCurrentReference();
+        jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
+        if (selectedCell != null) {
+          String url = selectedCell.getStyle().get(StyleAttributes.URL);
+          if (url != null) {
+            if (!url.startsWith(URLUtil.HTTP_PROTOCOL)) {
+              url = VirtualFileManager.constructUrl(URLUtil.HTTP_PROTOCOL, url);
+            }
+            BrowserUtil.browse(url);
+          } else {
+            goByCurrentReference();
+          }
+        }
       }
     }
   }
@@ -2990,7 +3004,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             return;
           }
           SNode snodeWRTReference = runRead(() -> isInvalid() ? null : APICellAdapter.getSNodeWRTReference(editorCell));
-          if (editorCell.getSNode() == snodeWRTReference) {
+          String url = editorCell.getStyle().get(StyleAttributes.URL);
+          if (editorCell.getSNode() == snodeWRTReference && url == null) {
             myLastReferenceCell = null;
             return;
           }

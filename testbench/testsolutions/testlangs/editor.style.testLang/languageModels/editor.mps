@@ -73,6 +73,11 @@
         <reference id="3982520150122346707" name="attribute" index="3tD7wE" />
         <child id="3982520150122341379" name="query" index="3tD6jU" />
       </concept>
+      <concept id="6681408443912431607" name="jetbrains.mps.lang.editor.structure.URLStyleClassItem" flags="ln" index="3u2Kpz">
+        <property id="6681408443912457593" name="url" index="3u2UNH" />
+        <child id="6681408443912431608" name="query" index="3u2KpG" />
+      </concept>
+      <concept id="6681408443912573553" name="jetbrains.mps.lang.editor.structure.QueryFunction_Url" flags="in" index="3u3nf_" />
       <concept id="9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" flags="ng" index="1wgc9g">
         <reference id="9122903797312247166" name="style" index="1wgcnl" />
       </concept>
@@ -601,6 +606,56 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="6$E6NNCndA0">
+    <ref role="1XX52x" to="dekf:6$E6NNCnd_R" resolve="URLCellContainer" />
+    <node concept="3EZMnI" id="6$E6NNCndA5" role="2wV5jI">
+      <node concept="l2Vlx" id="6$E6NNCndA6" role="2iSdaV" />
+      <node concept="3F0ifn" id="6$E6NNCndA2" role="3EZMnx">
+        <property role="3F0ifm" value="URL Cell Container" />
+      </node>
+      <node concept="3F0ifn" id="2d9V7JtVtwX" role="3EZMnx">
+        <property role="3F0ifm" value="custom url:" />
+      </node>
+      <node concept="3F0A7n" id="2d9V7JtVtK2" role="3EZMnx">
+        <ref role="1NtTu8" to="dekf:2d9V7JtVffr" resolve="customUrl" />
+        <node concept="ljvvj" id="2d9V7JtVtU_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6$E6NNCndAe" role="3EZMnx">
+        <property role="3F0ifm" value="cell with simple URL" />
+        <node concept="3u2Kpz" id="2d9V7JtVf6X" role="3F10Kt">
+          <property role="3u2UNH" value="www.jetbrains.com" />
+        </node>
+        <node concept="ljvvj" id="2d9V7JtVsSo" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="2d9V7JtVt2O" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6$E6NNCndAm" role="3EZMnx">
+        <property role="3F0ifm" value="cell with function URL" />
+        <node concept="3u2Kpz" id="2d9V7JtVf70" role="3F10Kt">
+          <node concept="3u3nf_" id="2d9V7JtVf72" role="3u2KpG">
+            <node concept="3clFbS" id="2d9V7JtVf73" role="2VODD2">
+              <node concept="3clFbF" id="2d9V7JtVffx" role="3cqZAp">
+                <node concept="2OqwBi" id="2d9V7JtVfsk" role="3clFbG">
+                  <node concept="pncrf" id="2d9V7JtVffw" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="2d9V7JtVfOs" role="2OqNvi">
+                    <ref role="3TsBF5" to="dekf:2d9V7JtVffr" resolve="customUrl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="lj46D" id="2d9V7JtVt2V" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
     </node>

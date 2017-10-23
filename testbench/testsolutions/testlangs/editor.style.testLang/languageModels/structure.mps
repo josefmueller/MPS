@@ -138,5 +138,15 @@
     <property role="34LRSv" value="serifFromQueryNode" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="6$E6NNCnd_R">
+    <property role="EcuMT" value="7577899271414667639" />
+    <property role="TrG5h" value="URLCellContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2d9V7JtVffr" role="1TKVEl">
+      <property role="IQ2nx" value="2542823481375781851" />
+      <property role="TrG5h" value="customUrl" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 

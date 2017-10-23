@@ -160,6 +160,9 @@
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
     </language>
     <language id="a936c42c-cb2c-4d64-a1dc-12986579a998" name="jetbrains.mps.lang.editor.styleTests">
+      <concept id="7577899271414667639" name="jetbrains.mps.lang.editor.styleTests.structure.URLCellContainer" flags="ng" index="21tG9b">
+        <property id="2542823481375781851" name="customUrl" index="3YDhYw" />
+      </concept>
       <concept id="8422442021223268684" name="jetbrains.mps.lang.editor.styleTests.structure.NodeContainer" flags="ng" index="24H8sC">
         <child id="8422442021223269806" name="node" index="24H8fa" />
       </concept>
@@ -196,6 +199,9 @@
         <child id="8427750732757990724" name="expected" index="3tpDZB" />
       </concept>
       <concept id="1171978097730" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" flags="nn" index="3vlDli" />
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -2630,6 +2636,89 @@
         <node concept="7CXmI" id="1vdXJDyFPop" role="lGtFl">
           <node concept="29bkU" id="1vdXJDyFPoq" role="7EUXB" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2d9V7JtVjrO">
+    <property role="TrG5h" value="URLStyleSimpleTest" />
+    <node concept="3clFbS" id="2d9V7JtVjrP" role="LjaKd">
+      <node concept="3vwNmj" id="2d9V7JtVsNt" role="3cqZAp">
+        <node concept="17R0WA" id="2d9V7JtVsut" role="3vwVQn">
+          <node concept="Xl_RD" id="2d9V7JtVs_9" role="3uHU7w">
+            <property role="Xl_RC" value="www.jetbrains.com" />
+          </node>
+          <node concept="2OqwBi" id="2d9V7JtVrE6" role="3uHU7B">
+            <node concept="2OqwBi" id="2d9V7JtVrsy" role="2Oq$k0">
+              <node concept="2OqwBi" id="2d9V7JtVp6e" role="2Oq$k0">
+                <node concept="369mXd" id="2d9V7JtVoDc" role="2Oq$k0" />
+                <node concept="liA8E" id="2d9V7JtVrod" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2d9V7JtVr$F" role="2OqNvi">
+                <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2d9V7JtVrP4" role="2OqNvi">
+              <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+              <node concept="10M0yZ" id="2d9V7JtVrTp" role="37wK5m">
+                <ref role="1PxDUh" to="5ueo:~StyleAttributes" resolve="StyleAttributes" />
+                <ref role="3cqZAo" to="5ueo:~StyleAttributes.URL" resolve="URL" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="21tG9b" id="2d9V7JtVjGW" role="LiRBU">
+      <node concept="LIFWc" id="2d9V7JtV$ix" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_4mbnlq_d0" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2d9V7JtVvek">
+    <property role="TrG5h" value="URLStyleFunctionTest" />
+    <node concept="3clFbS" id="2d9V7JtVvel" role="LjaKd">
+      <node concept="3vwNmj" id="2d9V7JtVvem" role="3cqZAp">
+        <node concept="17R0WA" id="2d9V7JtVven" role="3vwVQn">
+          <node concept="Xl_RD" id="2d9V7JtVveo" role="3uHU7w">
+            <property role="Xl_RC" value="jetbrains.com/mps" />
+          </node>
+          <node concept="2OqwBi" id="2d9V7JtVvep" role="3uHU7B">
+            <node concept="2OqwBi" id="2d9V7JtVveq" role="2Oq$k0">
+              <node concept="2OqwBi" id="2d9V7JtVver" role="2Oq$k0">
+                <node concept="369mXd" id="2d9V7JtVves" role="2Oq$k0" />
+                <node concept="liA8E" id="2d9V7JtVvet" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2d9V7JtVveu" role="2OqNvi">
+                <ref role="37wK5l" to="f4zo:~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style" resolve="getStyle" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2d9V7JtVvev" role="2OqNvi">
+              <ref role="37wK5l" to="hox0:~Style.get(jetbrains.mps.openapi.editor.style.StyleAttribute):java.lang.Object" resolve="get" />
+              <node concept="10M0yZ" id="2d9V7JtVvew" role="37wK5m">
+                <ref role="3cqZAo" to="5ueo:~StyleAttributes.URL" resolve="URL" />
+                <ref role="1PxDUh" to="5ueo:~StyleAttributes" resolve="StyleAttributes" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="21tG9b" id="2d9V7JtVvex" role="LiRBU">
+      <property role="3YDhYw" value="jetbrains.com/mps" />
+      <node concept="LIFWc" id="2d9V7JtVv_T" role="lGtFl">
+        <property role="LIFWa" value="9" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="9" />
+        <property role="p6zMs" value="9" />
+        <property role="LIFWd" value="Constant_4mbnlq_e0" />
       </node>
     </node>
   </node>

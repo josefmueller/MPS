@@ -20,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestConceptWithStyleAttributes;
   private ConceptPresentation props_TestInheritedAttribute;
   private ConceptPresentation props_TestSimpleAttribute;
+  private ConceptPresentation props_URLCellContainer;
   private ConceptPresentation props_UnapplyPriorityStyleCopy;
 
   @Override
@@ -103,6 +104,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSimpleAttribute = cpb.create();
         }
         return props_TestSimpleAttribute;
+      case LanguageConceptSwitch.URLCellContainer:
+        if (props_URLCellContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("URLCellContainer");
+          props_URLCellContainer = cpb.create();
+        }
+        return props_URLCellContainer;
       case LanguageConceptSwitch.UnapplyPriorityStyleCopy:
         if (props_UnapplyPriorityStyleCopy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

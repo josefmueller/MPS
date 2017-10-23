@@ -220,4 +220,6 @@ public class StyleAttributes {
   public static final StyleAttribute<SNode> NAVIGATABLE_NODE = new SimpleStyleAttribute<SNode>("navigatable-node", null, true);
 
   public static final StyleAttribute<Integer> MAX_WIDTH = new SimpleStyleAttribute<Integer>("max.width", null, true);
+
+  public static final StyleAttribute<String> URL = new SimpleStyleAttribute<>("url", null, true);
 }

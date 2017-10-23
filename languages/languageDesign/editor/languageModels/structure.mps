@@ -6674,35 +6674,20 @@
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
-  <node concept="1TIwiD" id="6hgzQ4Z6Y0A">
-    <property role="EcuMT" value="7228435049763037222" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="TrG5h" value="FontFamilyLiteral" />
-    <property role="34LRSv" value="fontFamily/&lt;name&gt;/" />
-    <property role="R4oN_" value="font family constant" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="PrWs8" id="6hgzQ4Z7d0o" role="PzmwI">
-      <ref role="PrY4T" node="6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
-    </node>
+  <node concept="PlHQZ" id="2bhdjkq5YX2">
+    <property role="EcuMT" value="2508844969609391938" />
+    <property role="3GE5qa" value="Menu" />
+    <property role="TrG5h" value="IConceptQuery" />
   </node>
-  <node concept="1TIwiD" id="4DrEZjt9c6c">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="QueryFunction_FontFamily" />
+  <node concept="1TIwiD" id="2bhdjkq5YX5">
+    <property role="TrG5h" value="QueryFunction_TransformationMenu_Concept" />
+    <property role="3GE5qa" value="Menu.Transformation" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="QueryFunction.Style" />
-    <property role="EcuMT" value="5358065249857880460" />
-    <property role="34LRSv" value="font family function" />
-    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
-  </node>
-  <node concept="PlHQZ" id="6hgzQ4Z7bF1">
-    <property role="EcuMT" value="7228435049763093185" />
-    <property role="3GE5qa" value="Stylesheet" />
-    <property role="TrG5h" value="FontFamilyConstant" />
-    <node concept="1TJgyi" id="6hgzQ4Z7bF2" role="1TKVEl">
-      <property role="IQ2nx" value="7228435049763093186" />
-      <property role="TrG5h" value="family" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <property role="R4oN_" value="returns the concept to include substitute menu for" />
+    <property role="EcuMT" value="2508844969609391941" />
+    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
+    <node concept="PrWs8" id="2bhdjkq5YX6" role="PzmwI">
+      <ref role="PrY4T" node="2bhdjkq5YX2" resolve="IConceptQuery" />
     </node>
   </node>
   <node concept="1TIwiD" id="6rN18FHIfNk">
@@ -6724,20 +6709,64 @@
       <ref role="20lvS9" node="4DrEZjt9c6c" resolve="QueryFunction_FontFamily" />
     </node>
   </node>
-  <node concept="PlHQZ" id="2bhdjkq5YX2">
-    <property role="EcuMT" value="2508844969609391938" />
-    <property role="3GE5qa" value="Menu" />
-    <property role="TrG5h" value="IConceptQuery" />
-  </node>
-  <node concept="1TIwiD" id="2bhdjkq5YX5">
-    <property role="TrG5h" value="QueryFunction_TransformationMenu_Concept" />
-    <property role="3GE5qa" value="Menu.Transformation" />
+  <node concept="1TIwiD" id="4DrEZjt9c6c">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="QueryFunction_FontFamily" />
     <property role="2_RsDV" value="none" />
-    <property role="R4oN_" value="returns the concept to include substitute menu for" />
-    <property role="EcuMT" value="2508844969609391941" />
-    <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
-    <node concept="PrWs8" id="2bhdjkq5YX6" role="PzmwI">
-      <ref role="PrY4T" node="2bhdjkq5YX2" resolve="IConceptQuery" />
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <property role="EcuMT" value="5358065249857880460" />
+    <property role="34LRSv" value="font family function" />
+    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
+  </node>
+  <node concept="1TIwiD" id="5MT8pi2GyvR">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="URLStyleClassItem" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="34LRSv" value="url" />
+    <property role="EcuMT" value="6681408443912431607" />
+    <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
+    <node concept="1TJgyj" id="5MT8pi2GyvS" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="6681408443912431608" />
+      <ref role="20lvS9" node="5MT8pi2H59L" resolve="QueryFunction_URL" />
+    </node>
+    <node concept="1TJgyi" id="5MT8pi2GCPT" role="1TKVEl">
+      <property role="IQ2nx" value="6681408443912457593" />
+      <property role="TrG5h" value="url" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5MT8pi2H59L">
+    <property role="TrG5h" value="QueryFunction_URL" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <property role="EcuMT" value="6681408443912573553" />
+    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
+  </node>
+  <node concept="1TIwiD" id="6hgzQ4Z6Y0A">
+    <property role="EcuMT" value="7228435049763037222" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="TrG5h" value="FontFamilyLiteral" />
+    <property role="34LRSv" value="fontFamily/&lt;name&gt;/" />
+    <property role="R4oN_" value="font family constant" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="6hgzQ4Z7d0o" role="PzmwI">
+      <ref role="PrY4T" node="6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6hgzQ4Z7bF1">
+    <property role="EcuMT" value="7228435049763093185" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="TrG5h" value="FontFamilyConstant" />
+    <node concept="1TJgyi" id="6hgzQ4Z7bF2" role="1TKVEl">
+      <property role="IQ2nx" value="7228435049763093186" />
+      <property role="TrG5h" value="family" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>
