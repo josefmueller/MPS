@@ -59,7 +59,6 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -74,18 +73,9 @@ import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
-import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
-import jetbrains.mps.nodeEditor.actions.CursorPositionTracker;
 import jetbrains.mps.nodeEditor.assist.DefaultContextAssistantManager;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_CopyNode;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_CutNode;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNode;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNodeRelative;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
-import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -103,11 +93,6 @@ import jetbrains.mps.nodeEditor.commands.CommandContextWrapper;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
 import jetbrains.mps.nodeEditor.deletionApprover.DeletionApproverImpl;
-import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
-import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
-import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
-import jetbrains.mps.nodeEditor.folding.CollapseAllCellAction;
-import jetbrains.mps.nodeEditor.folding.CollapseRecursivelyCellAction;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorHighlighter;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
@@ -334,7 +319,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
-  private HashMap<CellActionType, CellAction> myActionMap;
+  private EditorComponentActions myEditorComponentActions;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
@@ -461,58 +446,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myKbdHandlersStack = new Stack<>();
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
 
-    // --- init action map --
-    myActionMap = new HashMap<>();
-
-    // -- navigation
-    myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
-    myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
-    CursorPositionTracker cursorPositionTracker = new CursorPositionTracker(getEditorContext());
-    myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp(cursorPositionTracker));
-    myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown(cursorPositionTracker));
-    myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
-    myActionMap.put(CellActionType.PREV, new NodeEditorActions.MovePrev());
-    myActionMap.put(CellActionType.LOCAL_HOME, new NodeEditorActions.MoveLocal(true));
-    myActionMap.put(CellActionType.LOCAL_END, new NodeEditorActions.MoveLocal(false));
-
-    myActionMap.put(CellActionType.ROOT_HOME, new NodeEditorActions.MoveToRoot(true));
-    myActionMap.put(CellActionType.ROOT_END, new NodeEditorActions.MoveToRoot(false));
-    myActionMap.put(CellActionType.HOME, new NodeEditorActions.MoveHome());
-    myActionMap.put(CellActionType.END, new NodeEditorActions.MoveEnd());
-    myActionMap.put(CellActionType.PAGE_DOWN, new NodeEditorActions.MovePageUp());
-    myActionMap.put(CellActionType.PAGE_UP, new NodeEditorActions.MovePageDown());
-
-    myActionMap.put(CellActionType.SELECT_ALL, new NodeEditorActions.SelectAll());
-    myActionMap.put(CellActionType.SELECT_UP, new NodeEditorActions.SelectUp());
-    myActionMap.put(CellActionType.SELECT_DOWN, new NodeEditorActions.SelectDown());
-    myActionMap.put(CellActionType.SELECT_RIGHT, new NodeEditorActions.SideSelect(CellSide.RIGHT));
-    myActionMap.put(CellActionType.SELECT_LEFT, new NodeEditorActions.SideSelect(CellSide.LEFT));
-    myActionMap.put(CellActionType.SELECT_NEXT, new NodeEditorActions.EnlargeSelection(true));
-    myActionMap.put(CellActionType.SELECT_PREVIOUS, new NodeEditorActions.EnlargeSelection(false));
-
-    myActionMap.put(CellActionType.COPY, new CellAction_CopyNode());
-    myActionMap.put(CellActionType.CUT, new CellAction_CutNode());
-    myActionMap.put(CellActionType.PASTE, new CellAction_PasteNode());
-    myActionMap.put(CellActionType.PASTE_BEFORE, new CellAction_PasteNodeRelative(true));
-    myActionMap.put(CellActionType.PASTE_AFTER, new CellAction_PasteNodeRelative(false));
-
-    myActionMap.put(CellActionType.FOLD, new CellAction_FoldCell());
-    myActionMap.put(CellActionType.UNFOLD, new CellAction_UnfoldCell());
-    myActionMap.put(CellActionType.FOLD_ALL, new CollapseAllCellAction(true));
-    myActionMap.put(CellActionType.UNFOLD_ALL, new CollapseAllCellAction(false));
-    myActionMap.put(CellActionType.FOLD_RECURSIVELY, new CollapseRecursivelyCellAction(true));
-    myActionMap.put(CellActionType.UNFOLD_RECURSIVELY, new CollapseRecursivelyCellAction(false));
-    myActionMap.put(CellActionType.TOGGLE_FOLDING, new CallAction_ToggleCellFolding());
-
-    myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(Side.RIGHT));
-    myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(Side.LEFT));
-
-    myActionMap.put(CellActionType.COMPLETE, new NodeEditorActions.Complete());
-    myActionMap.put(CellActionType.COMPLETE_SMART, new CompleteSmart());
-
-    myActionMap.put(CellActionType.SHOW_MESSAGE, new ShowMessage());
-
-    myActionMap.put(CellActionType.COMMENT, new CellAction_CommentOrUncommentCurrentSelectedNode());
+   myEditorComponentActions = new EditorComponentActions(getEditorContext());
 
     registerKeyboardAction(new AbstractAction() {
       @Override
@@ -1713,16 +1647,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public CellAction getComponentAction(final CellActionType type) {
-    return runRead(new Computable<CellAction>() {
-      @Override
-      public CellAction compute() {
-        CellAction action = myActionMap.get(type);
-        if (action != null && action.canExecute(getEditorContext())) {
-          return action;
-        }
-        return null;
-      }
-    });
+    return myEditorComponentActions.getComponentAction(type);
   }
 
   public void relayout() {
