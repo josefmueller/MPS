@@ -131,6 +131,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   @Override
+  public boolean isModified() {
+    if (myModelDescriptor.isReadOnly()) {
+      return false;
+    }
+    return super.isModified();
+  }
+
+  @Override
   protected void save() {
     myModelProperties.saveChanges();
     // change of model properties might affect generation status. This explicit call is needed

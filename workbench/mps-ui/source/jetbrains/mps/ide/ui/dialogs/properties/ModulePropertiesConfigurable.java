@@ -218,6 +218,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   @Override
+  public boolean isModified() {
+    if (myModule.isReadOnly()) {
+      return false;
+    }
+    return super.isModified();
+  }
+
+  @Override
   protected void save() {
     // let facet instances serialize their data into facet descriptors. Would be better to do that for
     // changed (Tab.isModified()) facets only, but there's no (easy?) way to figure out module facet from a tab, thus
