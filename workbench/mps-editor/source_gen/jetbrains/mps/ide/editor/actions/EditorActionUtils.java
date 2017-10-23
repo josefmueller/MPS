@@ -18,8 +18,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,7 +48,8 @@ public class EditorActionUtils {
     return (editorCell instanceof EditorCell_Component ? null : editorCell);
   }
   /**
-   * Should be executed inside read action
+   * Should be executed inside write action as it reads and modifies a model, 
+   * and ActionHandler may want to grap command, therefore, model read won't suffice.
    */
   public static void callInsertAction(@NotNull EditorCell cell) {
     ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
@@ -73,6 +72,10 @@ public class EditorActionUtils {
     }
     actionHandler.executeAction(cell, CellActionType.INSERT);
   }
+
+  /**
+   * Expects model read lock
+   */
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
     EditorCell nextLeaf = (forward ? CellTraversalUtil.getNextLeaf(cell) : CellTraversalUtil.getPrevLeaf(cell));
@@ -84,7 +87,7 @@ public class EditorActionUtils {
     return null;
   }
   /**
-   * Should be executed inside read action
+   * Should be executed inside write action, see {@link jetbrains.mps.ide.editor.actions.EditorActionUtils#callInsertAction(EditorCell) } for details
    */
   public static void callInsertBeforeAction(@NotNull EditorCell cell) {
     ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
@@ -121,19 +124,11 @@ public class EditorActionUtils {
     }
 
     if (isOnRightBoundary(cell)) {
-      final EditorCell_Collection parentCell = cell.getParent();
+      EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        final EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
-        if (nextLeaf != null) {
-          final Wrappers._boolean ancestor = new Wrappers._boolean(false);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ancestor.value = SNodeOperations.isAncestor(parentCell.getSNode(), nextLeaf.getSNode());
-            }
-          });
-          if (ancestor.value) {
-            return true;
-          }
+        EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
+        if (nextLeaf != null && SNodeOperations.isAncestor(parentCell.getSNode(), nextLeaf.getSNode())) {
+          return true;
         }
         return hasSingleRolesAtRightBoundary(parentCell);
       }
@@ -153,19 +148,11 @@ public class EditorActionUtils {
     }
 
     if (isOnLeftBoundary(cell)) {
-      final EditorCell_Collection parentCell = cell.getParent();
+      EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        final EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(cell);
-        if (prevLeaf != null) {
-          final Wrappers._boolean ancestor = new Wrappers._boolean(false);
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ancestor.value = SNodeOperations.isAncestor(parentCell.getSNode(), prevLeaf.getSNode());
-            }
-          });
-          if (ancestor.value) {
-            return true;
-          }
+        EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(cell);
+        if (prevLeaf != null && SNodeOperations.isAncestor(parentCell.getSNode(), prevLeaf.getSNode())) {
+          return true;
         }
         return hasSingleRolesAtLeftBoundary((EditorCell) parentCell);
       }
@@ -180,15 +167,9 @@ public class EditorActionUtils {
     EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
     return nextLeaf == null || nextLeaf.getSNode() != cell.getSNode();
   }
-  private static boolean hasSingleRole(final EditorCell cell) {
-    final Wrappers._boolean result = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SContainmentLink l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLink(((SNode) cell.getSNode()));
-        result.value = l != null && l.isValid() && !(l.isMultiple());
-      }
-    });
-    return result.value;
+  private static boolean hasSingleRole(EditorCell cell) {
+    SContainmentLink l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLink(((SNode) cell.getSNode()));
+    return l != null && l.isValid() && !(l.isMultiple());
   }
   private static boolean isLinkCollection(EditorCell cell) {
     return cell.getRole() != null;

@@ -18,7 +18,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Set;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -72,8 +71,7 @@ public class HintsDialog extends DialogWrapper {
     }
     boolean rebuildRequired = myComponent.getUpdater().setInitialEditorHints(initialEditorHints);
     if (rebuildRequired) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
+      myComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           myComponent.rebuildEditorContent();
         }
