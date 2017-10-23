@@ -539,7 +539,11 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
         @Override
         protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
           final EditorContext editorContext = _context.getEditorContext();
-          return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "jetbrains.mps.baseLanguage.editor.ClassifierType_SmartReference");
+          SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+          return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor, "jetbrains.mps.baseLanguage.editor.ClassifierType_SmartReference");
+        }
+        private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+          return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
         }
       }
     }

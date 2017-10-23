@@ -287,7 +287,11 @@ public class ctor_IncompleteMemberInInterface extends SubstituteMenuBase {
       @Override
       protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
-        return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
+        SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+        return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
+      }
+      private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       }
     }
     private class SMP_Wrap_4je5xk_e0 extends WrapperSubstituteMenuPart {
@@ -333,7 +337,11 @@ public class ctor_IncompleteMemberInInterface extends SubstituteMenuBase {
       @Override
       protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
         final EditorContext editorContext = _context.getEditorContext();
-        return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
+        SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+        return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
+      }
+      private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
       }
     }
   }

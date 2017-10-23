@@ -222,9 +222,6 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
         return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BaseConcept_SubstituteMenu.SMP_Group_s3h0kg_a.SMP_Group_s3h0kg_b0.SMP_Include_s3h0kg_a1a());
       }
       public class SMP_Include_s3h0kg_a1a extends IncludeSubstituteMenuSubstituteMenuPart {
-        private SAbstractConcept getConcept(SubstituteMenuContext _context) {
-          return _context.getCurrentTargetNode().getConcept();
-        }
 
         @NotNull
         @Override
@@ -241,7 +238,11 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
         @Override
         protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
           final EditorContext editorContext = _context.getEditorContext();
-          return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
+          SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+          return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
+        }
+        private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+          return _context.getCurrentTargetNode().getConcept();
         }
       }
     }
