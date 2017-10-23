@@ -50,6 +50,9 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   private static LibraryInitializer INSTANCE;
 
   // fixme get rid of
+  // no uses in MPS, still in use from com.mbeddr.core.spawner
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public static LibraryInitializer getInstance() {
     return INSTANCE;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.library;
 
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.library.BaseLibraryManager.LibraryState;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
@@ -58,6 +55,14 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   @Override
   public void disposeComponent() {
     myLibraryInitializer.unload(Collections.<LibraryContributor>singletonList(this));
+  }
+
+  /**
+   *
+   * @return instance that deals with library initialization
+   */
+  public LibraryInitializer getInitializer() {
+    return myLibraryInitializer;
   }
 
   //-------libraries

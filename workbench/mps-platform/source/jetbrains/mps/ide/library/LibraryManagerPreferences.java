@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,6 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.AbstractAction;
@@ -43,14 +41,13 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LibraryManagerPreferences {
   private BaseLibraryManager myManager;
   private JPanel myMainPanel = new JPanel(new BorderLayout());
-  private DefaultListModel myListModel = new DefaultListModel();
-  private JList myLibrariesList = new JBList(myListModel);
+  private DefaultListModel<Library> myListModel = new DefaultListModel<>();
+  private JList<Library> myLibrariesList = new JBList<>(myListModel);
 
   private boolean myChanged;
   private JButton myRemoveButton;
@@ -102,7 +99,7 @@ public class LibraryManagerPreferences {
       public void valueChanged(ListSelectionEvent e) {
         int index = myLibrariesList.getSelectedIndex();
         if (index < 0) return;
-        Library l = (Library) myListModel.get(index);
+        Library l = myListModel.get(index);
         //todo add predef lib to view
         boolean predefined = false;
         myEditButton.setEnabled(!predefined);
@@ -117,26 +114,21 @@ public class LibraryManagerPreferences {
 
 
   private void updateModel(final boolean updateManager) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        Library oldSelection = (Library) myLibrariesList.getSelectedValue();
-        List<Library> libraries = new ArrayList<Library>(myManager.getUILibraries());
-        Collections.sort(libraries, new ToStringComparator());
-        myListModel.clear();
-        for (Library l : libraries) {
-          myListModel.addElement(l);
-        }
+    Library oldSelection = myLibrariesList.getSelectedValue();
+    List<Library> libraries = new ArrayList<>(myManager.getUILibraries());
+    libraries.sort(new ToStringComparator());
+    myListModel.clear();
+    for (Library l : libraries) {
+      myListModel.addElement(l);
+    }
 
-        if (oldSelection != null) {
-          myLibrariesList.setSelectedValue(oldSelection, true);
-        }
+    if (oldSelection != null) {
+      myLibrariesList.setSelectedValue(oldSelection, true);
+    }
 
-        if (updateManager) {
-          LibraryInitializer.getInstance().update();
-        }
-      }
-    });
+    if (updateManager) {
+      myManager.getInitializer().update();
+    }
   }
 
   private void remove() {
@@ -144,7 +136,7 @@ public class LibraryManagerPreferences {
     if (index == -1) {
       return;
     }
-    myManager.remove((Library) myListModel.get(index));
+    myManager.remove(myListModel.get(index));
     updateModel(true);
     myChanged = true;
   }
@@ -156,7 +148,7 @@ public class LibraryManagerPreferences {
       return;
     }
 
-    Library l = (Library) myListModel.get(index);
+    Library l = myListModel.get(index);
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, true, true, false, false);
     final VirtualFile result = FileChooser.chooseFile(descriptor, myMainPanel, null, LocalFileSystem.getInstance().findFileByPath(l.getPath()));
