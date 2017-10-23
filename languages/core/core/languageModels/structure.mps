@@ -521,5 +521,37 @@
     <property role="3GE5qa" value="attributes.migration" />
     <property role="TrG5h" value="MigrationAnnotation" />
   </node>
+  <node concept="1TIwiD" id="3emwrjqjJ6B">
+    <property role="EcuMT" value="3717301156197626279" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <property role="TrG5h" value="BasePlaceholder" />
+    <ref role="1TJDcQ" node="BpxLfMhSxq" resolve="ChildAttribute" />
+    <node concept="1TJgyj" id="3emwrjqjJ6X" role="1TKVEi">
+      <property role="IQ2ns" value="3717301156197626301" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="content" />
+      <ref role="20lvS9" node="3xhyJYa45Zm" resolve="IPlaceholderContent" />
+    </node>
+    <node concept="M6xJ_" id="3emwrjqjJ6C" role="lGtFl">
+      <property role="Hh88m" value="commentPlaceholder" />
+      <node concept="tn0Fv" id="3emwrjqjJ6E" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+      <node concept="trNpa" id="3emwrjqjJ6G" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+    </node>
+    <node concept="PrWs8" id="3emwrjqjJ6I" role="PzmwI">
+      <ref role="PrY4T" node="53J1IcJV913" resolve="ISkipConstraintsChecking" />
+    </node>
+    <node concept="PrWs8" id="3emwrjqjJ6N" role="PzmwI">
+      <ref role="PrY4T" node="1V3wYmOJsDm" resolve="IDontApplyTypesystemRules" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="3xhyJYa45Zm">
+    <property role="EcuMT" value="4058177569375150038" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <property role="TrG5h" value="IPlaceholderContent" />
+  </node>
 </model>
 

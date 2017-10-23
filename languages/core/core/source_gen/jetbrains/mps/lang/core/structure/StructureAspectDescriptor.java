@@ -15,6 +15,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAttribute = createDescriptorForAttribute();
   /*package*/ final ConceptDescriptor myConceptBaseCommentAttribute = createDescriptorForBaseCommentAttribute();
   /*package*/ final ConceptDescriptor myConceptBaseConcept = createDescriptorForBaseConcept();
+  /*package*/ final ConceptDescriptor myConceptBasePlaceholder = createDescriptorForBasePlaceholder();
   /*package*/ final ConceptDescriptor myConceptChildAttribute = createDescriptorForChildAttribute();
   /*package*/ final ConceptDescriptor myConceptExportScope = createDescriptorForExportScope();
   /*package*/ final ConceptDescriptor myConceptExportScopeModule = createDescriptorForExportScopeModule();
@@ -30,6 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptINamedConcept = createDescriptorForINamedConcept();
   /*package*/ final ConceptDescriptor myConceptIOldCommentAnnotation = createDescriptorForIOldCommentAnnotation();
   /*package*/ final ConceptDescriptor myConceptIOldCommentContainer = createDescriptorForIOldCommentContainer();
+  /*package*/ final ConceptDescriptor myConceptIPlaceholderContent = createDescriptorForIPlaceholderContent();
   /*package*/ final ConceptDescriptor myConceptIResolveInfo = createDescriptorForIResolveInfo();
   /*package*/ final ConceptDescriptor myConceptISkipConstraintsChecking = createDescriptorForISkipConstraintsChecking();
   /*package*/ final ConceptDescriptor myConceptISmartReferent = createDescriptorForISmartReferent();
@@ -58,7 +60,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentAnnotation, myConceptIOldCommentContainer, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentAnnotation, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -71,6 +73,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBaseCommentAttribute;
       case LanguageConceptSwitch.BaseConcept:
         return myConceptBaseConcept;
+      case LanguageConceptSwitch.BasePlaceholder:
+        return myConceptBasePlaceholder;
       case LanguageConceptSwitch.ChildAttribute:
         return myConceptChildAttribute;
       case LanguageConceptSwitch.ExportScope:
@@ -101,6 +105,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptIOldCommentAnnotation;
       case LanguageConceptSwitch.IOldCommentContainer:
         return myConceptIOldCommentContainer;
+      case LanguageConceptSwitch.IPlaceholderContent:
+        return myConceptIPlaceholderContent;
       case LanguageConceptSwitch.IResolveInfo:
         return myConceptIResolveInfo;
       case LanguageConceptSwitch.ISkipConstraintsChecking:
@@ -175,6 +181,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("shortDescription", 0x10d34f97574L, "1156234966388");
     b.prop("virtualPackage", 0x115eca8579fL, "1193676396447");
     b.aggregate("smodelAttribute", 0x47bf8397520e5942L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L).optional(true).ordered(true).multiple(true).origin("5169995583184591170").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForBasePlaceholder() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "BasePlaceholder", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.ChildAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x1ec383e5b4bdca56L);
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/3717301156197626279");
+    b.aggregate("content", 0x339681b4da4ef1bdL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x38518aff8a105fd6L).optional(true).ordered(true).multiple(false).origin("3717301156197626301").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForChildAttribute() {
@@ -278,6 +294,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "IOldCommentContainer", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L);
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/4123120730935488432");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIPlaceholderContent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "IPlaceholderContent", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x38518aff8a105fd6L);
+    b.interface_();
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/4058177569375150038");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIResolveInfo() {
