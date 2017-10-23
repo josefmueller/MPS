@@ -53,7 +53,6 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -538,14 +537,14 @@
               <node concept="3cpWsn" id="28" role="3cpWs9">
                 <property role="TrG5h" value="_nodeToCheck_1029348928467" />
                 <node concept="2OqwBi" id="29" role="33vP2m">
-                  <node concept="37vLTw" id="2b" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1T" resolve="statement" />
-                  </node>
-                  <node concept="3TrEf2" id="2c" role="2OqNvi">
+                  <node concept="3TrEf2" id="2b" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpib:1KXtTGFSJ6T" resolve="message" />
                   </node>
+                  <node concept="37vLTw" id="2c" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1T" resolve="statement" />
+                  </node>
                   <node concept="6wLe0" id="2d" role="lGtFl">
-                    <property role="6wLej" value="2034914114981264780" />
+                    <property role="6wLej" value="6863923094758803731" />
                     <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                   </node>
                 </node>
@@ -571,7 +570,7 @@
                       <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                     <node concept="Xl_RD" id="2l" role="37wK5m">
-                      <property role="Xl_RC" value="2034914114981264780" />
+                      <property role="Xl_RC" value="6863923094758803731" />
                     </node>
                     <node concept="3cmrfG" id="2m" role="37wK5m">
                       <property role="3cmrfH" value="0" />
@@ -607,14 +606,14 @@
                         <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                       </node>
                       <node concept="Xl_RD" id="2C" role="37wK5m">
-                        <property role="Xl_RC" value="2034914114981264782" />
+                        <property role="Xl_RC" value="6863923094758803736" />
                       </node>
                       <node concept="3clFbT" id="2D" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                     <node concept="6wLe0" id="2$" role="lGtFl">
-                      <property role="6wLej" value="2034914114981264782" />
+                      <property role="6wLej" value="6863923094758803736" />
                       <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                   </node>
@@ -624,7 +623,9 @@
                     <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>
                   <node concept="2c44tf" id="2G" role="10QFUP">
-                    <node concept="17QB3L" id="2H" role="2c44tc" />
+                    <node concept="3uibUv" id="2H" role="2c44tc">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3clFbT" id="2r" role="1EOqxR">
@@ -647,7 +648,7 @@
             </node>
           </node>
           <node concept="6wLe0" id="24" role="lGtFl">
-            <property role="6wLej" value="2034914114981264780" />
+            <property role="6wLej" value="6863923094758803731" />
             <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
           </node>
         </node>
@@ -885,14 +886,14 @@
               <node concept="3cpWsn" id="4j" role="3cpWs9">
                 <property role="TrG5h" value="_nodeToCheck_1029348928467" />
                 <node concept="2OqwBi" id="4k" role="33vP2m">
-                  <node concept="3TrEf2" id="4m" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
-                  </node>
-                  <node concept="37vLTw" id="4n" role="2Oq$k0">
+                  <node concept="37vLTw" id="4m" role="2Oq$k0">
                     <ref role="3cqZAo" node="43" resolve="logStatement" />
                   </node>
+                  <node concept="3TrEf2" id="4n" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
+                  </node>
                   <node concept="6wLe0" id="4o" role="lGtFl">
-                    <property role="6wLej" value="6813690308469672910" />
+                    <property role="6wLej" value="6863923094758801864" />
                     <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                   </node>
                 </node>
@@ -918,7 +919,7 @@
                       <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                     <node concept="Xl_RD" id="4w" role="37wK5m">
-                      <property role="Xl_RC" value="6813690308469672910" />
+                      <property role="Xl_RC" value="6863923094758801864" />
                     </node>
                     <node concept="3cmrfG" id="4x" role="37wK5m">
                       <property role="3cmrfH" value="0" />
@@ -954,14 +955,14 @@
                         <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                       </node>
                       <node concept="Xl_RD" id="4N" role="37wK5m">
-                        <property role="Xl_RC" value="6813690308469669795" />
+                        <property role="Xl_RC" value="6863923094758801869" />
                       </node>
                       <node concept="3clFbT" id="4O" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                     <node concept="6wLe0" id="4J" role="lGtFl">
-                      <property role="6wLej" value="6813690308469669795" />
+                      <property role="6wLej" value="6863923094758801869" />
                       <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                   </node>
@@ -971,7 +972,9 @@
                     <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>
                   <node concept="2c44tf" id="4R" role="10QFUP">
-                    <node concept="17QB3L" id="4S" role="2c44tc" />
+                    <node concept="3uibUv" id="4S" role="2c44tc">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3clFbT" id="4A" role="1EOqxR">
@@ -994,7 +997,7 @@
             </node>
           </node>
           <node concept="6wLe0" id="4f" role="lGtFl">
-            <property role="6wLej" value="6813690308469672910" />
+            <property role="6wLej" value="6863923094758801864" />
             <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
           </node>
         </node>
@@ -1360,7 +1363,7 @@
                     <ref role="3cqZAo" node="6U" resolve="msg" />
                   </node>
                   <node concept="6wLe0" id="7f" role="lGtFl">
-                    <property role="6wLej" value="5721587534047288601" />
+                    <property role="6wLej" value="6863923094758806596" />
                     <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                   </node>
                 </node>
@@ -1386,7 +1389,7 @@
                       <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                     <node concept="Xl_RD" id="7n" role="37wK5m">
-                      <property role="Xl_RC" value="5721587534047288601" />
+                      <property role="Xl_RC" value="6863923094758806596" />
                     </node>
                     <node concept="3cmrfG" id="7o" role="37wK5m">
                       <property role="3cmrfH" value="0" />
@@ -1422,14 +1425,14 @@
                         <property role="Xl_RC" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                       </node>
                       <node concept="Xl_RD" id="7E" role="37wK5m">
-                        <property role="Xl_RC" value="5721587534047288603" />
+                        <property role="Xl_RC" value="6863923094758806601" />
                       </node>
                       <node concept="3clFbT" id="7F" role="37wK5m">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                     <node concept="6wLe0" id="7A" role="lGtFl">
-                      <property role="6wLej" value="5721587534047288603" />
+                      <property role="6wLej" value="6863923094758806601" />
                       <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
                     </node>
                   </node>
@@ -1439,7 +1442,9 @@
                     <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                   </node>
                   <node concept="2c44tf" id="7I" role="10QFUP">
-                    <node concept="17QB3L" id="7J" role="2c44tc" />
+                    <node concept="3uibUv" id="7J" role="2c44tc">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3clFbT" id="7t" role="1EOqxR">
@@ -1462,7 +1467,7 @@
             </node>
           </node>
           <node concept="6wLe0" id="76" role="lGtFl">
-            <property role="6wLej" value="5721587534047288601" />
+            <property role="6wLej" value="6863923094758806596" />
             <property role="6wLeW" value="r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)" />
           </node>
         </node>

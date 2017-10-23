@@ -15,13 +15,13 @@ public final class LoggingRuntime {
   private static final Logger MSG_VIEW_LOG = LogManager.getLogger(MSG_VIEW_TOKEN);
 
   @Deprecated
-  public static void legacyLog(@NotNull Level level, String msg, @NotNull Class<?> sender, @Nullable Throwable throwable) {
+  public static void legacyLog(@NotNull Level level, Object msg, @NotNull Class<?> sender, @Nullable Throwable throwable) {
     LogManager.getLogger(sender).log(level, msg, throwable);
     logMsgView(level, msg, sender, throwable, null);
   }
 
-  public static void logMsgView(@NotNull Level level, String msg, @NotNull Class<?> sender, @Nullable Throwable throwable, @Nullable Project project) {
-    MessageObject msgObject = new MessageObject(msg, null, sender.toString(), project);
+  public static void logMsgView(@NotNull Level level, Object msg, @NotNull Class<?> sender, @Nullable Throwable throwable, @Nullable Project project) {
+    MessageObject msgObject = new MessageObject(msg.toString(), null, sender.toString(), project);
     MSG_VIEW_LOG.log(level, msgObject, throwable);
   }
 }

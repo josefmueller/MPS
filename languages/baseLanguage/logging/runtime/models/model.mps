@@ -195,7 +195,9 @@
       </node>
       <node concept="37vLTG" id="1KXtTGFRwGj" role="3clF46">
         <property role="TrG5h" value="msg" />
-        <node concept="17QB3L" id="4XBaoL6dhri" role="1tU5fm" />
+        <node concept="3uibUv" id="5X1zr0$GAbd" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="1KXtTGFRwGl" role="3clF46">
         <property role="TrG5h" value="sender" />
@@ -236,8 +238,13 @@
             <node concept="2ShNRf" id="1N_0P$wXrlO" role="33vP2m">
               <node concept="1pGfFk" id="1N_0P$wXsJT" role="2ShVmc">
                 <ref role="37wK5l" to="wwqx:~MessageObject.&lt;init&gt;(java.lang.String,java.lang.Object,java.lang.String,org.jetbrains.mps.openapi.project.Project)" resolve="MessageObject" />
-                <node concept="37vLTw" id="1N_0P$wXtNs" role="37wK5m">
-                  <ref role="3cqZAo" node="1N_0P$wXk53" resolve="msg" />
+                <node concept="2OqwBi" id="5X1zr0$GArt" role="37wK5m">
+                  <node concept="37vLTw" id="1N_0P$wXtNs" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1N_0P$wXk53" resolve="msg" />
+                  </node>
+                  <node concept="liA8E" id="5X1zr0$GAvU" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                  </node>
                 </node>
                 <node concept="10Nm6u" id="1N_0P$wXsLW" role="37wK5m" />
                 <node concept="2OqwBi" id="1N_0P$wXt5j" role="37wK5m">
@@ -288,7 +295,9 @@
       </node>
       <node concept="37vLTG" id="1N_0P$wXk53" role="3clF46">
         <property role="TrG5h" value="msg" />
-        <node concept="17QB3L" id="1N_0P$wXk54" role="1tU5fm" />
+        <node concept="3uibUv" id="5X1zr0$GAlO" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
       </node>
       <node concept="37vLTG" id="1N_0P$wXk55" role="3clF46">
         <property role="TrG5h" value="sender" />

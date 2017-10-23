@@ -10,10 +10,10 @@
       <node id="5721587534047405779" at="15,0,16,0" concept="2" trace="MSG_VIEW_LOG" />
       <node id="5721587534047535776" at="18,123,19,60" concept="0" />
       <node id="5721587534047551234" at="19,60,20,52" concept="0" />
-      <node id="2082074084068668585" at="23,151,24,87" concept="1" />
-      <node id="2082074084068639031" at="24,87,25,50" concept="0" />
-      <node id="2082074084068639021" at="23,0,27,0" concept="3" trace="logMsgView#(Lorg/apache/log4j/Level;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Throwable;Lorg/jetbrains/mps/openapi/project/Project;)V" />
-      <node id="2034914114980940549" at="17,0,22,0" concept="3" trace="legacyLog#(Lorg/apache/log4j/Level;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Throwable;)V" />
+      <node id="2082074084068668585" at="23,151,24,98" concept="1" />
+      <node id="2082074084068639031" at="24,98,25,50" concept="0" />
+      <node id="2082074084068639021" at="23,0,27,0" concept="3" trace="logMsgView#(Lorg/apache/log4j/Level;Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/Throwable;Lorg/jetbrains/mps/openapi/project/Project;)V" />
+      <node id="2034914114980940549" at="17,0,22,0" concept="3" trace="legacyLog#(Lorg/apache/log4j/Level;Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/Throwable;)V" />
       <scope id="2034914114980940550" at="18,123,20,52" />
       <scope id="2082074084068639022" at="23,151,25,50">
         <var name="msgObject" id="2082074084068668586" />

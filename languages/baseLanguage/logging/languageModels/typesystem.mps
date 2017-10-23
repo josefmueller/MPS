@@ -15,7 +15,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -70,22 +69,24 @@
     <property role="18ip37" value="true" />
     <property role="TrG5h" value="typeof_LogStatement" />
     <node concept="3clFbS" id="30LfEMLAnHI" role="18ibNy">
-      <node concept="2NvLDW" id="5Uf5NKHQOJe" role="3cqZAp">
-        <node concept="mw_s8" id="5Uf5NKHQOJh" role="1ZfhK$">
-          <node concept="1Z2H0r" id="5Uf5NKHQNYz" role="mwGJk">
-            <node concept="2OqwBi" id="5Uf5NKHQO8u" role="1Z2MuG">
-              <node concept="3TrEf2" id="5Uf5NKHQO_9" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
-              </node>
-              <node concept="1YBJjd" id="5Uf5NKHQNYN" role="2Oq$k0">
-                <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
-              </node>
+      <node concept="2NvLDW" id="5X1zr0$GG78" role="3cqZAp">
+        <node concept="mw_s8" id="5X1zr0$GG79" role="1ZfhKB">
+          <node concept="2c44tf" id="5X1zr0$GG7a" role="mwGJk">
+            <node concept="3uibUv" id="5X1zr0$GGsU" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="5Uf5NKHQOQ3" role="1ZfhKB">
-          <node concept="2c44tf" id="5Uf5NKHQOQ1" role="mwGJk">
-            <node concept="17QB3L" id="5Uf5NKHQOQn" role="2c44tc" />
+        <node concept="mw_s8" id="5X1zr0$GG7c" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5X1zr0$GG7d" role="mwGJk">
+            <node concept="2OqwBi" id="5X1zr0$GG7e" role="1Z2MuG">
+              <node concept="1YBJjd" id="5X1zr0$GG7g" role="2Oq$k0">
+                <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
+              </node>
+              <node concept="3TrEf2" id="5X1zr0$GGpf" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -140,22 +141,24 @@
   <node concept="1YbPZF" id="1KXtTGFSJNl">
     <property role="TrG5h" value="typeof_LogLowLevelStatement" />
     <node concept="3clFbS" id="1KXtTGFSJNm" role="18ibNy">
-      <node concept="2NvLDW" id="1KXtTGFSJQc" role="3cqZAp">
-        <node concept="mw_s8" id="1KXtTGFSJQd" role="1ZfhK$">
-          <node concept="1Z2H0r" id="1KXtTGFSJQe" role="mwGJk">
-            <node concept="2OqwBi" id="1KXtTGFSJQf" role="1Z2MuG">
-              <node concept="1YBJjd" id="1KXtTGFSJZP" role="2Oq$k0">
-                <ref role="1YBMHb" node="1KXtTGFSJNo" resolve="statement" />
-              </node>
-              <node concept="3TrEf2" id="1KXtTGFSKrH" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:1KXtTGFSJ6T" resolve="message" />
-              </node>
+      <node concept="2NvLDW" id="5X1zr0$GG$j" role="3cqZAp">
+        <node concept="mw_s8" id="5X1zr0$GG$k" role="1ZfhKB">
+          <node concept="2c44tf" id="5X1zr0$GG$l" role="mwGJk">
+            <node concept="3uibUv" id="5X1zr0$GHG_" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="1KXtTGFSJQi" role="1ZfhKB">
-          <node concept="2c44tf" id="1KXtTGFSJQj" role="mwGJk">
-            <node concept="17QB3L" id="1KXtTGFSJQk" role="2c44tc" />
+        <node concept="mw_s8" id="5X1zr0$GG$n" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5X1zr0$GG$o" role="mwGJk">
+            <node concept="2OqwBi" id="5X1zr0$GG$p" role="1Z2MuG">
+              <node concept="3TrEf2" id="5X1zr0$GH7S" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:1KXtTGFSJ6T" resolve="message" />
+              </node>
+              <node concept="1YBJjd" id="5X1zr0$GG$r" role="2Oq$k0">
+                <ref role="1YBMHb" node="1KXtTGFSJNo" resolve="statement" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -190,22 +193,24 @@
     <property role="18ip37" value="true" />
     <property role="TrG5h" value="typeof_MsgStatement" />
     <node concept="3clFbS" id="4XBaoL6chOo" role="18ibNy">
-      <node concept="2NvLDW" id="4XBaoL6chOp" role="3cqZAp">
-        <node concept="mw_s8" id="4XBaoL6chOq" role="1ZfhK$">
-          <node concept="1Z2H0r" id="4XBaoL6chOr" role="mwGJk">
-            <node concept="2OqwBi" id="4XBaoL6chOs" role="1Z2MuG">
-              <node concept="3TrEf2" id="4XBaoL6cjWp" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:4XBaoL6cc9u" resolve="message" />
-              </node>
-              <node concept="1YBJjd" id="4XBaoL6chOu" role="2Oq$k0">
-                <ref role="1YBMHb" node="4XBaoL6chOO" resolve="msg" />
-              </node>
+      <node concept="2NvLDW" id="5X1zr0$GHh4" role="3cqZAp">
+        <node concept="mw_s8" id="5X1zr0$GHh5" role="1ZfhKB">
+          <node concept="2c44tf" id="5X1zr0$GHh6" role="mwGJk">
+            <node concept="3uibUv" id="5X1zr0$GHK$" role="2c44tc">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="4XBaoL6chOv" role="1ZfhKB">
-          <node concept="2c44tf" id="4XBaoL6chOw" role="mwGJk">
-            <node concept="17QB3L" id="4XBaoL6chOx" role="2c44tc" />
+        <node concept="mw_s8" id="5X1zr0$GHh8" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5X1zr0$GHh9" role="mwGJk">
+            <node concept="2OqwBi" id="5X1zr0$GHha" role="1Z2MuG">
+              <node concept="3TrEf2" id="5X1zr0$GHCS" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpib:4XBaoL6cc9u" resolve="message" />
+              </node>
+              <node concept="1YBJjd" id="5X1zr0$GHhc" role="2Oq$k0">
+                <ref role="1YBMHb" node="4XBaoL6chOO" resolve="msg" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
