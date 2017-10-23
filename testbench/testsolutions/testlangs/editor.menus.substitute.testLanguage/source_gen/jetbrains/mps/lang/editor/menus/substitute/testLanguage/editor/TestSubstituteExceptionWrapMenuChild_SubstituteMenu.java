@@ -94,9 +94,10 @@ public class TestSubstituteExceptionWrapMenuChild_SubstituteMenu extends Substit
     @Override
     protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
+      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
     }
-    private SAbstractConcept getConcept(SubstituteMenuContext _context) {
+    private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
       throw new RuntimeException("Intentional exception - ignore this");
     }
   }

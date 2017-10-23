@@ -81,6 +81,13 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
     </node>
+    <node concept="1TJgyj" id="6$E6NNC2nvP" role="1TKVEi">
+      <property role="IQ2ns" value="7577899271409203189" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="wrapDefaultSubstituteMenuWithFunctionFromSubsitute" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    </node>
     <node concept="1TJgyj" id="1L4Jh90GOIX" role="1TKVEi">
       <property role="IQ2ns" value="2036960817570859965" />
       <property role="20lmBu" value="aggregation" />
@@ -134,6 +141,13 @@
       <property role="IQ2ns" value="8292814565107686126" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrapDefaultSubstituteMenuFromTransform" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+    </node>
+    <node concept="1TJgyj" id="6$E6NNC2UzN" role="1TKVEi">
+      <property role="IQ2ns" value="7577899271409346803" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="wrapDefaultSubstituteMenuWithFunctionFromTransform" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
     </node>

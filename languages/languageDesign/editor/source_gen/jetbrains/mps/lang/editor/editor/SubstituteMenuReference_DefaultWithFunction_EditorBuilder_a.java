@@ -51,7 +51,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     return editorCell;
   }
   private EditorCell createConstant_kk13yl_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default menu for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default substitute menu for");
     editorCell.setCellId("Constant_kk13yl_a0");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

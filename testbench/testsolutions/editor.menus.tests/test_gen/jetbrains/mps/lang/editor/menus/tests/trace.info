@@ -247,6 +247,78 @@
       <unit id="2344528742722136214" at="22,0,71,0" name="jetbrains.mps.lang.editor.menus.tests.MenuLoadingUtils" />
     </file>
   </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2508844969610667476">
+    <file name="SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test.java">
+      <node id="2508844969610667476" at="15,96,16,115" concept="1" />
+      <node id="2508844969610667476" at="16,115,17,145" concept="1" />
+      <node id="2508844969610667476" at="23,51,24,72" concept="1" />
+      <node id="2508844969610696870" at="24,72,25,71" concept="1" />
+      <node id="2508844969610704175" at="25,71,26,26" concept="1" />
+      <node id="2508844969610671663" at="26,26,27,82" concept="1" />
+      <node id="2508844969610667476" at="14,0,19,0" concept="2" trace="test_SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu#()V" />
+      <node id="2508844969610667476" at="22,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2508844969610667476" at="15,96,17,145" />
+      <scope id="2508844969610667476" at="23,51,27,82" />
+      <scope id="2508844969610667476" at="14,0,19,0" />
+      <scope id="2508844969610667476" at="22,0,29,0" />
+      <unit id="2508844969610667476" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test$TestBody" />
+      <unit id="2508844969610667476" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInSubstituteMenu_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2508844969610709251">
+    <file name="SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test.java">
+      <node id="2508844969610709251" at="15,100,16,115" concept="1" />
+      <node id="2508844969610709251" at="16,115,17,149" concept="1" />
+      <node id="2508844969610709251" at="23,51,24,72" concept="1" />
+      <node id="2508844969610709253" at="24,72,25,71" concept="1" />
+      <node id="2508844969610709255" at="25,71,26,26" concept="1" />
+      <node id="2508844969610709270" at="26,26,27,82" concept="1" />
+      <node id="2508844969610709251" at="14,0,19,0" concept="2" trace="test_SubstituteMenuReference_ReplaceWithQueryInTransformationMenu#()V" />
+      <node id="2508844969610709251" at="22,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2508844969610709251" at="15,100,17,149" />
+      <scope id="2508844969610709251" at="23,51,27,82" />
+      <scope id="2508844969610709251" at="14,0,19,0" />
+      <scope id="2508844969610709251" at="22,0,29,0" />
+      <unit id="2508844969610709251" at="20,0,30,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test$TestBody" />
+      <unit id="2508844969610709251" at="12,0,31,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_ReplaceWithQueryInTransformationMenu_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2508844969610723557">
+    <file name="SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test.java">
+      <node id="2508844969610723557" at="14,112,15,115" concept="1" />
+      <node id="2508844969610723557" at="15,115,16,161" concept="1" />
+      <node id="2508844969610723557" at="22,51,23,72" concept="1" />
+      <node id="2508844969610723559" at="23,72,24,71" concept="1" />
+      <node id="2508844969610723561" at="24,71,25,26" concept="1" />
+      <node id="2508844969610723562" at="25,26,26,162" concept="1" />
+      <node id="2508844969610723557" at="13,0,18,0" concept="2" trace="test_SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution#()V" />
+      <node id="2508844969610723557" at="21,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2508844969610723557" at="14,112,16,161" />
+      <scope id="2508844969610723557" at="22,51,26,162" />
+      <scope id="2508844969610723557" at="13,0,18,0" />
+      <scope id="2508844969610723557" at="21,0,28,0" />
+      <unit id="2508844969610723557" at="19,0,29,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test$TestBody" />
+      <unit id="2508844969610723557" at="11,0,30,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInTransformationContribution_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2508844969610782528">
+    <file name="SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test.java">
+      <node id="2508844969610782528" at="14,108,15,115" concept="1" />
+      <node id="2508844969610782528" at="15,115,16,157" concept="1" />
+      <node id="2508844969610782528" at="22,51,23,72" concept="1" />
+      <node id="2508844969610782530" at="23,72,24,71" concept="1" />
+      <node id="2508844969610782532" at="24,71,25,26" concept="1" />
+      <node id="2508844969610782533" at="25,26,26,162" concept="1" />
+      <node id="2508844969610782528" at="13,0,18,0" concept="2" trace="test_SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution#()V" />
+      <node id="2508844969610782528" at="21,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2508844969610782528" at="14,108,16,157" />
+      <scope id="2508844969610782528" at="22,51,26,162" />
+      <scope id="2508844969610782528" at="13,0,18,0" />
+      <scope id="2508844969610782528" at="21,0,28,0" />
+      <unit id="2508844969610782528" at="19,0,29,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test$TestBody" />
+      <unit id="2508844969610782528" at="11,0,30,0" name="jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)/2705676212746996045">
     <file name="Include_MenuAndTargetNodeCorrespondence_Test.java">
       <node id="2705676212746996045" at="26,80,27,122" concept="1" />

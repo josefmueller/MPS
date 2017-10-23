@@ -14,10 +14,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
@@ -51,9 +51,6 @@ public class TestSubstituteExceptionIncludeMenuChild_SubstituteMenu extends Subs
 
 
   public class SMP_Include_1tzb4w_a extends IncludeSubstituteMenuSubstituteMenuPart {
-    private SAbstractConcept getConcept(SubstituteMenuContext _context) {
-      throw new RuntimeException("Intentional exception - ignore this");
-    }
 
     @NotNull
     @Override
@@ -70,7 +67,11 @@ public class TestSubstituteExceptionIncludeMenuChild_SubstituteMenu extends Subs
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
+      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
+    }
+    private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
+      throw new RuntimeException("Intentional exception - ignore this");
     }
   }
   private class SMP_Action_1tzb4w_b extends SingleItemSubstituteMenuPart {
