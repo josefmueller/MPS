@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="c457c5de-6027-4104-ab9c-a31c5404ae8b" name="jetbrains.mps.samples.highlevel.simpleEditor" version="0" />
     <devkit ref="2a8d14e3-c26f-4f2f-ae52-28981c32e97a(jetbrains.mps.samples.highlevel.devkit.editor)" />
   </languages>
   <imports>
