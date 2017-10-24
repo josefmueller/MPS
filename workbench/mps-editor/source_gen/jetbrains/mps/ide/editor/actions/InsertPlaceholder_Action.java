@@ -12,8 +12,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
-import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 
 public class InsertPlaceholder_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -21,7 +19,7 @@ public class InsertPlaceholder_Action extends BaseAction {
   public InsertPlaceholder_Action() {
     super("Insert Placeholder", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
   @Override
   public boolean isDumbAware() {
@@ -54,23 +52,15 @@ public class InsertPlaceholder_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (editorCell.getEditorComponent().isDisposed()) {
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isDisposed()) {
       return;
     }
-    if (editorCell instanceof WithCaret) {
-      WithCaret withCaret = ((WithCaret) editorCell);
-      if (withCaret.isFirstCaretPosition()) {
-        if (!(withCaret.isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
-          EditorActionUtils.callInsertPlaceholderBeforeAction(editorCell);
-          return;
-        }
-      }
+
+    EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell)) {
+      EditorActionUtils.callInsertPlaceholderBeforeAction(editorCell);
+    } else {
+      EditorActionUtils.callInsertPlaceholderAction(editorCell);
     }
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().getRepository().getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        EditorActionUtils.callInsertPlaceholderAction(editorCell);
-      }
-    });
   }
 }

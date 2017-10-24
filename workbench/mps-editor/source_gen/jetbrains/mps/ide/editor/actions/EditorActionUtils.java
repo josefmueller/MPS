@@ -10,11 +10,11 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -48,17 +48,6 @@ public class EditorActionUtils {
     return (editorCell instanceof EditorCell_Component ? null : editorCell);
   }
   /**
-   * Should be executed inside write action as it reads and modifies a model, 
-   * and ActionHandler may want to grap command, therefore, model read won't suffice.
-   */
-  public static void callInsertAction(@NotNull EditorCell cell) {
-    if (cell.isErrorState() && APICellAdapter.validate(cell, false, true)) {
-      return;
-    }
-    EditorActionUtils.callAction(cell, CellActionType.INSERT, true);
-  }
-
-  /**
    * Expects model read lock
    */
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
@@ -72,6 +61,17 @@ public class EditorActionUtils {
     return null;
   }
   /**
+   * Should be executed inside write action as it reads and modifies a model, 
+   * and ActionHandler may want to grap command, therefore, model read won't suffice.
+   */
+  public static void callInsertAction(@NotNull EditorCell cell) {
+    if (cell.isErrorState() && APICellAdapter.validate(cell, false, true)) {
+      return;
+    }
+    EditorActionUtils.callAction(cell, CellActionType.INSERT, true);
+  }
+
+  /**
    * Should be executed inside write action, see {@link jetbrains.mps.ide.editor.actions.EditorActionUtils#callInsertAction(EditorCell) } for details
    */
   public static void callInsertBeforeAction(@NotNull EditorCell cell) {
@@ -81,6 +81,20 @@ public class EditorActionUtils {
     EditorActionUtils.callAction(cell, CellActionType.INSERT_BEFORE, false);
   }
 
+
+  /**
+   * Should be executed inside write action as it reads and modifies a model, 
+   * and ActionHandler may want to grap command, therefore, model read won't suffice.
+   */
+  public static void callInsertPlaceholderAction(@NotNull EditorCell cell) {
+    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER, true);
+  }
+  /**
+   * Should be executed inside write action, see {@link jetbrains.mps.ide.editor.actions.EditorActionUtils#callInsertPlaceholderAction(EditorCell) } for details
+   */
+  public static void callInsertPlaceholderBeforeAction(@NotNull EditorCell cell) {
+    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER_BEFORE, false);
+  }
 
   private static void callAction(EditorCell cell, CellActionType cellAction, boolean after) {
     ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
@@ -99,18 +113,6 @@ public class EditorActionUtils {
   }
 
 
-  /**
-   * Should be executed inside read action
-   */
-  public static void callInsertPlaceholderAction(@NotNull EditorCell cell) {
-    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER, true);
-  }
-  /**
-   * Should be executed inside read action
-   */
-  public static void callInsertPlaceholderBeforeAction(@NotNull EditorCell cell) {
-    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER_BEFORE, false);
-  }
 
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding

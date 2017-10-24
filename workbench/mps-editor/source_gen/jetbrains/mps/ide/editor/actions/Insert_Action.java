@@ -12,8 +12,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
-import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class Insert_Action extends BaseAction {
@@ -55,23 +53,20 @@ public class Insert_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
-    if (editorCell instanceof WithCaret) {
-      WithCaret withCaret = ((WithCaret) editorCell);
-      if (withCaret.isFirstCaretPosition()) {
-        if (!(withCaret.isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
-          EditorActionUtils.callInsertBeforeAction(editorCell);
-          return;
-        }
-      }
-    }
-    if (editorCell.getEditorComponent().isDisposed()) {
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isDisposed()) {
       return;
     }
 
-    if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
-      return;
+    EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+    if (InsertUtil.isAtFirstPositionOfCellWithCaret(editorCell)) {
+      EditorActionUtils.callInsertBeforeAction(editorCell);
+    } else {
+      if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
+        return;
+      } else {
+        EditorActionUtils.callInsertAction(editorCell);
+      }
     }
-    EditorActionUtils.callInsertAction(editorCell);
+
   }
 }
