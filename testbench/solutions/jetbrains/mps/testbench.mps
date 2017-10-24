@@ -18,7 +18,6 @@
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="4rvk" ref="r:7cb72aee-d3e2-47e9-9964-3abda6a73a9a(jetbrains.mps.make.service)" />
     <import index="uskx" ref="r:b63b6f93-e29a-4718-8cc3-affacae32340(jetbrains.mps.lang.resources.plugin)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="homv" ref="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
@@ -2430,12 +2429,8 @@
       <node concept="3clFbS" id="5INsqDGkIq_" role="3clF47">
         <node concept="3clFbF" id="5INsqDGlhsS" role="3cqZAp">
           <node concept="2OqwBi" id="5INsqDGlhyi" role="3clFbG">
-            <node concept="2YIFZM" id="5INsqDGlht$" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            </node>
             <node concept="liA8E" id="5INsqDGli$W" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
               <node concept="1bVj0M" id="5INsqDGli_U" role="37wK5m">
                 <node concept="3clFbS" id="5INsqDGli_V" role="1bW5cS">
                   <node concept="1DcWWT" id="5INsqDGkIHX" role="3cqZAp">
@@ -2456,10 +2451,10 @@
                     </node>
                     <node concept="3clFbS" id="5INsqDGkII3" role="2LFqv$">
                       <node concept="3clFbJ" id="5INsqDGkII4" role="3cqZAp">
-                        <node concept="2YIFZM" id="5INsqDGkII5" role="3clFbw">
-                          <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                          <ref role="37wK5l" to="unno:54ElNE$imKq" resolve="isGeneratable" />
-                          <node concept="37vLTw" id="5INsqDGkII6" role="37wK5m">
+                        <node concept="2YIFZM" id="MY2kIkb2ap" role="3clFbw">
+                          <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+                          <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+                          <node concept="37vLTw" id="MY2kIkb2aq" role="37wK5m">
                             <ref role="3cqZAo" node="5INsqDGkII1" resolve="descriptor" />
                           </node>
                         </node>
@@ -2477,6 +2472,19 @@
                     <node concept="3clFbT" id="5INsqDGkIIb" role="3cqZAk">
                       <property role="3clFbU" value="false" />
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2ShNRf" id="MY2kIkb2nf" role="2Oq$k0">
+              <node concept="1pGfFk" id="MY2kIkb3B2" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="MY2kIkb1Eb" role="37wK5m">
+                  <node concept="37vLTw" id="MY2kIkb1sh" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7Mz1eHGI2UI" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="MY2kIkb1OR" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                   </node>
                 </node>
               </node>

@@ -39,10 +39,10 @@ import jetbrains.mps.util.FileUtil;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -50,7 +50,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import java.util.Collections;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.messages.IMessageHandler;
@@ -247,10 +246,10 @@ public class ModuleGenerationHolder {
     myMessageHandler.cleanUp();
   }
   /*package*/ boolean needsGeneration() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         for (SModel descriptor : module.getModels()) {
-          if (SNodeOperations.isGeneratable(descriptor)) {
+          if (GenerationFacade.canGenerate(descriptor)) {
             return true;
           }
         }
