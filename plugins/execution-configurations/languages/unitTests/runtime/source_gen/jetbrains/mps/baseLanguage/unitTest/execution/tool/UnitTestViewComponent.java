@@ -54,7 +54,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   public UnitTestViewComponent(Project project, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     myProject = ProjectHelper.fromIdeaProject(project);
     myTestState = testRunState;
-    StatisticsTableModel statisticsModel = new StatisticsTableModel(myProject, myTestState);
+    StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, myProject, this);
     myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);

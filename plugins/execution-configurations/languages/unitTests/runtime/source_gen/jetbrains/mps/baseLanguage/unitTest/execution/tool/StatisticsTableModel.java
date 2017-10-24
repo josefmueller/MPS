@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.event.TableModelListener;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestStateListener;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import org.jetbrains.annotations.Nullable;
@@ -30,13 +29,9 @@ public class StatisticsTableModel implements TableModel {
   private final TestNameMap<TestCaseRow, TestMethodRow> myMap = new TestNameMap<TestCaseRow, TestMethodRow>();
   private final TestRunState myState;
 
-  public StatisticsTableModel(MPSProject project, final TestRunState state) {
+  public StatisticsTableModel(TestRunState state) {
     myState = state;
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        setTests(state.getTestsMap());
-      }
-    });
+    setTests(state.getTestsMap());
     myState.addListener(new TestStateListener() {
       @Override
       public void onTestStart(TestEvent event) {

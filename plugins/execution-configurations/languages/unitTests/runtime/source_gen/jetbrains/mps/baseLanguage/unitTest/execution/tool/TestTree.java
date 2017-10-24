@@ -204,20 +204,14 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public boolean hasFailedTests() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
       if (testCase == null) {
         continue;
       }
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
-        final Wrappers._T<String> className = new Wrappers._T<String>();
-        final Wrappers._T<String> methodName = new Wrappers._T<String>();
-        myProject.getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            className.value = testCase.getFqName();
-            methodName.value = method.getName();
-          }
-        });
-        TestMethodTreeNode treeNode = myMap.get(className.value, methodName.value);
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+        String className = testCase.getFqName();
+        String methodName = method.getName();
+        TestMethodTreeNode treeNode = myMap.get(className, methodName);
         if (method == null) {
           continue;
         }
@@ -259,17 +253,12 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public void selectFirstDefectNode() {
-    for (final ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
-      for (final ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
-        final Wrappers._T<String> className = new Wrappers._T<String>();
-        final Wrappers._T<String> methodName = new Wrappers._T<String>();
-        myProject.getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            className.value = testCase.getFqName();
-            methodName.value = method.getName();
-          }
-        });
-        TestMethodTreeNode testMethodTreeNode = myMap.get(className.value, methodName.value);
+    for (ITestNodeWrapper testCase : SetSequence.fromSet(MapSequence.fromMap(myState.getTestsMap()).keySet())) {
+      for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
+        String className = testCase.getFqName();
+        String methodName = method.getName();
+        // FIXME Is it true myMap.get(string, string) is the best way to find failed test??? 
+        TestMethodTreeNode testMethodTreeNode = myMap.get(className, methodName);
         if (isFailed(testMethodTreeNode)) {
           setCurrentNode(testMethodTreeNode);
           return;
