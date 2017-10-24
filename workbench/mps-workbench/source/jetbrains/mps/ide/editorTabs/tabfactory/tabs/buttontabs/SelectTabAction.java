@@ -18,12 +18,12 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionPopupMenu;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
@@ -127,8 +127,13 @@ class SelectTabAction extends ToggleAction {
         continue;
       }
       added.add(root);
-      final NodeChangeRunnable delegate = new NodeChangeRunnable(node.getReference(), myCallback);
-      result.add(new ModelReadAction(getActionName(node), "", IconManager.getIconFor(root), delegate));
+      final SNodeReference nodePtr = node.getReference();
+      result.add(new AnAction(getActionName(node), "", IconManager.getIconFor(root)) {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+          myProject.getModelAccess().runReadAction(() -> myCallback.changeNode(nodePtr));
+        }
+      });
     }
     return result;
   }

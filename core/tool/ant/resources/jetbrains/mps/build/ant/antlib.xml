@@ -1,5 +1,5 @@
 <antlib>
-  <typedef name="library" classname="jetbrains.mps.build.ant.LibraryDataType" />
+  <typedef name="library" classname="jetbrains.mps.build.ant.ModuleJarDataType" />
   <typedef name="jvmarg" classname="jetbrains.mps.build.ant.Arg" />
   <typedef name="jvmargs" classname="jetbrains.mps.build.ant.JvmArgs" />
   <typedef name="macro" classname="jetbrains.mps.build.ant.Macro" />

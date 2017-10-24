@@ -21,7 +21,7 @@
       <node id="3919148072087743742" at="22,134,23,70" concept="2" />
       <node id="6255157494753346969" at="26,37,27,61" concept="8" />
       <node id="5682549678865142841" at="29,47,30,66" concept="2" />
-      <node id="5682549678865142881" at="32,57,33,30" concept="7" />
+      <node id="5682549678865142881" at="32,59,33,30" concept="7" />
       <node id="5730725694409684876" at="34,23,35,13" concept="8" />
       <node id="5682549678865142889" at="36,5,37,53" concept="2" />
       <node id="5730725694409849167" at="37,53,38,34" concept="7" />
@@ -71,7 +71,7 @@
       <node id="978600701689998693" at="71,0,80,0" concept="6" trace="addConfiguredPlugin#(Ljetbrains/mps/build/ant/generation/Plugin;)V" />
       <node id="5730725694409686452" at="38,34,51,5" concept="5" />
       <node id="5682549678865143118" at="84,0,98,0" concept="6" trace="calculateClassPath#(Z)Ljava/util/Set;" />
-      <node id="5682549678865142877" at="32,0,53,0" concept="6" trace="addConfiguredLibrary#(Ljetbrains/mps/build/ant/LibraryDataType;)V" />
+      <node id="5682549678865142877" at="32,0,53,0" concept="6" trace="addConfiguredLibrary#(Ljetbrains/mps/build/ant/ModuleJarDataType;)V" />
       <scope id="5682549678865142820" at="26,37,27,61" />
       <scope id="5682549678865142840" at="29,47,30,66" />
       <scope id="5682549678865142888" at="34,23,35,13" />
@@ -133,7 +133,7 @@
       <scope id="5682549678865143118" at="84,0,98,0">
         <var name="fork" id="7757477914029821215" />
       </scope>
-      <scope id="5682549678865142880" at="32,57,51,5">
+      <scope id="5682549678865142880" at="32,59,51,5">
         <var name="file" id="5682549678865142882" />
         <var name="fname" id="5730725694409849168" />
       </scope>

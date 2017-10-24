@@ -331,10 +331,9 @@
             <node concept="3uibUv" id="75eqTYkq9g0" role="1tU5fm">
               <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
-            <node concept="2YIFZM" id="75eqTYkq9g4" role="33vP2m">
-              <ref role="1Pybhc" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
-              <ref role="37wK5l" to="jo3e:5kpQnuAEKYu" resolve="createEnvConfig" />
-              <node concept="37vLTw" id="75eqTYkq9g5" role="37wK5m">
+            <node concept="1rXfSq" id="3tCNlYuDSWP" role="33vP2m">
+              <ref role="37wK5l" to="jo3e:3tCNlYuDMQB" resolve="createEnvConfig" />
+              <node concept="37vLTw" id="3tCNlYuDT4P" role="37wK5m">
                 <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
               </node>
             </node>
@@ -421,12 +420,6 @@
       <node concept="3Tm1VV" id="KL8Aqll4qV" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqll4qW" role="3clF45" />
       <node concept="3clFbS" id="KL8Aqll4qX" role="3clF47">
-        <node concept="3clFbF" id="KL8Aqll4qY" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyZTM" role="3clFbG">
-            <ref role="37wK5l" to="jo3e:KL8Aqlj5ou" resolve="setupEnvironment" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="60oBoEeBFs" role="3cqZAp" />
         <node concept="3cpWs8" id="KL8Aqll4r6" role="3cqZAp">
           <node concept="3cpWsn" id="KL8Aqll4r7" role="3cpWs9">
             <property role="TrG5h" value="mpsProjects" />

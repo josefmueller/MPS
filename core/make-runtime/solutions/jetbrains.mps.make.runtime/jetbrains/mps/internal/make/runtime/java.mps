@@ -477,9 +477,97 @@
               </node>
             </node>
             <node concept="3clFbS" id="1RDXgiYp5Kf" role="TDEfX">
-              <node concept="3SKdUt" id="1RDXgiYp6pl" role="3cqZAp">
-                <node concept="3SKdUq" id="1RDXgiYp6pm" role="3SKWNk">
-                  <property role="3SKdUp" value="FIXME what could we do here? Log into IMessageHandler, once it's here, at least" />
+              <node concept="3cpWs8" id="Hjn6ojumta" role="3cqZAp">
+                <node concept="3cpWsn" id="Hjn6ojumtb" role="3cpWs9">
+                  <property role="TrG5h" value="msg" />
+                  <node concept="3uibUv" id="Hjn6ojumt1" role="1tU5fm">
+                    <ref role="3uigEE" to="et5u:~Message" resolve="Message" />
+                  </node>
+                  <node concept="2ShNRf" id="Hjn6ojumtc" role="33vP2m">
+                    <node concept="1pGfFk" id="Hjn6ojumtd" role="2ShVmc">
+                      <ref role="37wK5l" to="et5u:~Message.&lt;init&gt;(jetbrains.mps.messages.MessageKind,java.lang.Class,java.lang.String)" resolve="Message" />
+                      <node concept="Rm8GO" id="Hjn6ojumte" role="37wK5m">
+                        <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
+                        <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                      </node>
+                      <node concept="3VsKOn" id="Hjn6ojumtf" role="37wK5m">
+                        <ref role="3VsUkX" node="3KiLc2_D15v" resolve="FileProcessor" />
+                      </node>
+                      <node concept="3K4zz7" id="Hjn6ojumtg" role="37wK5m">
+                        <node concept="2OqwBi" id="Hjn6ojumth" role="3K4E3e">
+                          <node concept="2OqwBi" id="Hjn6ojumti" role="2Oq$k0">
+                            <node concept="37vLTw" id="Hjn6ojumtj" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1RDXgiYp5Kb" resolve="ex" />
+                            </node>
+                            <node concept="liA8E" id="Hjn6ojumtk" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="Hjn6ojumtl" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="Hjn6ojumtm" role="3K4GZi">
+                          <node concept="37vLTw" id="Hjn6ojumtn" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1RDXgiYp5Kb" resolve="ex" />
+                          </node>
+                          <node concept="liA8E" id="Hjn6ojumto" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                          </node>
+                        </node>
+                        <node concept="3clFbC" id="Hjn6ojumtp" role="3K4Cdx">
+                          <node concept="10Nm6u" id="Hjn6ojumtq" role="3uHU7w" />
+                          <node concept="2OqwBi" id="Hjn6ojumtr" role="3uHU7B">
+                            <node concept="37vLTw" id="Hjn6ojumts" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1RDXgiYp5Kb" resolve="ex" />
+                            </node>
+                            <node concept="liA8E" id="Hjn6ojumtt" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="Hjn6ojunos" role="3cqZAp">
+                <node concept="2OqwBi" id="Hjn6ojunDU" role="3clFbG">
+                  <node concept="37vLTw" id="Hjn6ojunoq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="Hjn6ojumtb" resolve="msg" />
+                  </node>
+                  <node concept="liA8E" id="Hjn6ojunH8" role="2OqNvi">
+                    <ref role="37wK5l" to="et5u:~Message.setException(java.lang.Throwable):jetbrains.mps.messages.Message" resolve="setException" />
+                    <node concept="37vLTw" id="Hjn6ojunVF" role="37wK5m">
+                      <ref role="3cqZAo" node="1RDXgiYp5Kb" resolve="ex" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="Hjn6ojuorV" role="3cqZAp">
+                <node concept="2OqwBi" id="Hjn6ojuoGy" role="3clFbG">
+                  <node concept="37vLTw" id="Hjn6ojuorT" role="2Oq$k0">
+                    <ref role="3cqZAo" node="Hjn6ojumtb" resolve="msg" />
+                  </node>
+                  <node concept="liA8E" id="Hjn6ojuoN1" role="2OqNvi">
+                    <ref role="37wK5l" to="et5u:~Message.setHintObject(java.lang.Object):jetbrains.mps.messages.Message" resolve="setHintObject" />
+                    <node concept="37vLTw" id="Hjn6ojupJw" role="37wK5m">
+                      <ref role="3cqZAo" node="3KiLc2_D17v" resolve="file" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="Hjn6ojugE9" role="3cqZAp">
+                <node concept="2OqwBi" id="Hjn6ojugHo" role="3clFbG">
+                  <node concept="37vLTw" id="Hjn6ojugE7" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4LvsGEyM3So" resolve="myMessageHandler" />
+                  </node>
+                  <node concept="liA8E" id="Hjn6ojugL3" role="2OqNvi">
+                    <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
+                    <node concept="37vLTw" id="Hjn6ojumtu" role="37wK5m">
+                      <ref role="3cqZAo" node="Hjn6ojumtb" resolve="msg" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

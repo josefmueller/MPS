@@ -13031,12 +13031,6 @@
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgruRf" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruRe" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1TaHNgiIbJb" resolve="MPS.Platform" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2a9bszgruRh" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruRg" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -13053,12 +13047,6 @@
           <node concept="3bR9La" id="2a9bszgruRo" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6Lg2" resolve="jetbrains.mps.smodel.resources" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2a9bszgruRt" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruRs" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
           </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruRR" role="3bR37C">

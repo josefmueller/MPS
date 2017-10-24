@@ -76,12 +76,12 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
     return env;
   }
 
-  public static EnvironmentConfig createEnvConfig(Script whatToDo) {
+  public EnvironmentConfig createEnvConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.defaultConfig();
     for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
@@ -92,11 +92,25 @@ public abstract class MpsWorker {
     if (whatToDo.isLoadBootstrapLibraries()) {
       config = config.withBootstrapLibraries();
     }
+    for (String jar : whatToDo.getLibraryJars()) {
+      File jarFile = new File(jar);
+      if (!(jarFile.exists())) {
+        warning("Library " + jar + " does not exist.");
+      }
+      config = config.addLib(jar);
+    }
+    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+
     return config;
   }
 
   public void workFromMain() {
     try {
+      myEnvironment = createEnvironment();
+      make();
+
       work();
       System.exit(0);
     } catch (Throwable e) {
@@ -116,11 +130,6 @@ public abstract class MpsWorker {
       myEnvironment.dispose();
       myEnvironment = null;
     }
-  }
-
-  protected void setupEnvironment() {
-    myEnvironment = createEnvironment();
-    make();
   }
 
   protected void make() {

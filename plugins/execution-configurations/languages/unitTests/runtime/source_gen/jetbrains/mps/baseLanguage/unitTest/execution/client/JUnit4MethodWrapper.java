@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
+import java.util.function.Function;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,11 +29,15 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    SNode clazz = check_lclll2_a0a0e(getNode(), this);
-    if ((clazz != null)) {
-      return new JUnit3TestWrapper(clazz);
-    }
-    return null;
+    return withNode(new Function<SNode, ITestNodeWrapper>() {
+      public ITestNodeWrapper apply(SNode n) {
+        SNode clazz = check_lclll2_a0a0a0a0e(n);
+        if ((clazz != null) && TestNodeWrapperFactory.JUnit4TestNodeWrapperFactory.canWrap(clazz)) {
+          return TestNodeWrapperFactory.JUnit4TestNodeWrapperFactory.wrap(clazz);
+        }
+        return null;
+      }
+    });
   }
 
   public static boolean isJUnit4TestMethod(SNode method) {
@@ -50,7 +55,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-  private static SNode check_lclll2_a0a0e(SNode checkedDotOperand, JUnit4MethodWrapper checkedDotThisExpression) {
+  private static SNode check_lclll2_a0a0a0a0e(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SNodeOperations.getNodeAncestor(checkedDotOperand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
     }

@@ -8,7 +8,6 @@ import com.intellij.util.Alarm;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.icons.AllIcons;
 
 public class TestTreeIconAnimator implements Disposable, Runnable {
@@ -60,15 +59,11 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   public void dispose() {
     cancelAlarm();
   }
-  private void updateTreeNode(@Nullable final BaseTestTreeNode node) {
+  private void updateTreeNode(@Nullable BaseTestTreeNode node) {
     if (node == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        node.renewPresentation();
-      }
-    });
+    node.renewPresentation();
   }
   private void cancelAlarm() {
     if (myAlarm != null) {

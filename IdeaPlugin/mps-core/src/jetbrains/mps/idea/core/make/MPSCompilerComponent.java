@@ -27,6 +27,7 @@ import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
@@ -52,11 +53,13 @@ public class MPSCompilerComponent implements ProjectComponent {
   private final Project myProject;
   private final CompilerManager compilerManager;
   private final CompilerConfiguration compilerConfiguration;
+  private final LibraryInitializer myLibraryInitializer;
 
-  public MPSCompilerComponent(Project project, CompilerManager compilerManager, CompilerConfiguration compilerConfiguration) {
+  public MPSCompilerComponent(Project project, CompilerManager compilerManager, CompilerConfiguration compilerConfiguration, MPSCoreComponents mpsCore) {
     myProject = project;
     this.compilerManager = compilerManager;
     this.compilerConfiguration = compilerConfiguration;
+    myLibraryInitializer = mpsCore.getLibraryInitializer();
   }
 
   @Override
@@ -85,7 +88,7 @@ public class MPSCompilerComponent implements ProjectComponent {
       final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
       final long start = System.nanoTime();
       ProjectHelper.fromIdeaProject(myProject).getModelAccess().runReadAction(() -> {
-        CachedRepositoryData cachedRepositoryData = new MPSRepositoryUtil(context).buildData(LibraryInitializer.getInstance().getModuleHandles());
+        CachedRepositoryData cachedRepositoryData = new MPSRepositoryUtil(context).buildData(myLibraryInitializer.getModuleHandles());
         ModelOutputStream mos = null;
         try {
           mos = new ModelOutputStream(new FileOutputStream(repositoryCache));

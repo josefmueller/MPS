@@ -12,10 +12,10 @@ import org.jdom.Document;
 import java.io.ByteArrayOutputStream;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
-import java.util.Collection;
-import java.io.OutputStream;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import java.util.Collection;
+import java.io.OutputStream;
 import java.io.InputStream;
 
 public class FileProcessor {
@@ -43,7 +43,10 @@ public class FileProcessor {
     try {
       JDOMUtil.writeDocument(document, bos);
     } catch (IOException ex) {
-      // FIXME what could we do here? Log into IMessageHandler, once it's here, at least 
+      Message msg = new Message(MessageKind.ERROR, FileProcessor.class, (ex.getMessage() == null ? ex.getClass().getName() : ex.getMessage()));
+      msg.setException(ex);
+      msg.setHintObject(file);
+      myMessageHandler.handle(msg);
     }
     return saveContent(new FileProcessor.FileContent(file, bos.toByteArray()));
   }

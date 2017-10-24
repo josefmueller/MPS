@@ -8,7 +8,20 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 
+/**
+ * FIXME  external code sometimes wraps access to methods of this class with model read. It's odd an confusing.
+ * Implementation sometime wrap node access to own model read, sometimes not (e.g. JUnit4TestWrapper does getNode()?.getFqName(), where 
+ * getNode() grabs model read, but there's no explicit read for getFqName, and it's up to external code to contribute some. This has to be refactored, 
+ * and clear contract what to expect from methods of this class has to be established. I.e. if getTestCase() of a wrapper with !isTestCase (i.e. test method)
+ * is allowed to return new instance each time; if a name (getFqnName) is expected to change and what's in getName().
+ * To me, the need to wrap access to the methods of this class with model read is an indicator of poor design.
+ */
 public interface ITestNodeWrapper<N extends SNode> {
+  /**
+   * 
+   * @deprecated 
+   */
+  @Deprecated
   N getNode();
   SNodeReference getNodePointer();
   boolean isTestCase();

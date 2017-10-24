@@ -73,7 +73,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -348,24 +347,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     fireChanged();
     setChanged();
   }
-
-  //----languages & devkits
-
-  /**
-   * @deprecated shall be removed once tests in MPS plugin got fixed (FacetTests.testAddRemoveUsedLanguage(), testFacetInitialized()
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public final Collection<SModuleReference> getUsedLanguagesReferences() {
-    assertCanRead();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) {
-      return Collections.emptySet();
-    }
-    return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
-  }
-
-  //----stubs
 
   // FIXME: MPS-19756
   // TODO: get rid of this code - generate the deployment descriptor during build process

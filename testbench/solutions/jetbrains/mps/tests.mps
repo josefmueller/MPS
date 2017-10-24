@@ -50,7 +50,6 @@
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
-    <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
     <import index="62xu" ref="r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)" />
@@ -1092,16 +1091,6 @@
     <node concept="2R4zua" id="4$ezt8YR0Bz" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.build.stripping.tests" />
       <property role="2R4zu8" value="c9bc8834-ad52-4c80-83d0-64827cf13fae" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="3ofMfJ4Yh7E">
-    <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
-      <property role="2R4zub" value="testPackagedLanguage.test" />
-      <property role="2R4zu8" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
-    </node>
-    <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
-      <property role="1wBEbI" value="true" />
-      <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="7ez5JvPiiEK">

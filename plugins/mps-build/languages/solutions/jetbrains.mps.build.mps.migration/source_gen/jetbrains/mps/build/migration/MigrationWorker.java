@@ -52,7 +52,7 @@ public class MigrationWorker extends MpsWorker {
 
   @Override
   protected Environment createEnvironment() {
-    EnvironmentConfig cfg = MpsWorker.createEnvConfig(myWhatToDo);
+    EnvironmentConfig cfg = createEnvConfig(myWhatToDo);
     cfg.addPlugin("migration", MigrationWorker.MIGRATION_PLUGIN);
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
@@ -65,8 +65,6 @@ public class MigrationWorker extends MpsWorker {
 
   @Override
   public void work() {
-    setupEnvironment();
-
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
       final Project p = myEnvironment.openProject(file);

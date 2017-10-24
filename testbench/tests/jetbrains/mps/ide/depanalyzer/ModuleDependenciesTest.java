@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.testbench.WriteAction;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -36,12 +33,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class ModuleDependenciesTest extends ModuleMpsTest {
   @Rule
-  public WriteAction wa = new WriteAction(); // FIXME shall pass proper ModelAccess in there
-
-  @BeforeClass
-  public static void setUp() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-  }
+  public WriteAction wa = new WriteAction(getModelAccess());
 
   private List<DepLink> findPaths(DepLink root, SModule target) {
     final SModuleReference targetRef = target.getModuleReference();

@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import java.util.function.Function;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,23 +28,26 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     myRepo = SNodeOperations.getModel(node).getRepository();
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public AbstractTestWrapper(@NotNull SNodeReference nodePointer) {
-    myNodePointer = nodePointer;
-    myRepo = null;
-  }
-
   /*package*/ SRepository getRepo() {
     return myRepo;
   }
 
+  /**
+   * 
+   * @deprecated dangerous to use. Are you going to grab model access to deal with the node?
+   */
   @Nullable
   @Override
+  @Deprecated
   public N getNode() {
-    return new ModelAccessHelper(myRepo).runReadAction(new Computable<N>() {
-      public N compute() {
-        return (N) ((SNodePointer) myNodePointer).resolve(myRepo);
+    return withNode(Function.<N>identity());
+  }
+
+  protected final <T> T withNode(final Function<N, T> fun) {
+    return new ModelAccessHelper(myRepo).runReadAction(new Computable<T>() {
+      public T compute() {
+        N resolved = (N) myNodePointer.resolve(myRepo);
+        return fun.apply(resolved);
       }
     });
   }
@@ -95,30 +98,23 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Override
   public String getName() {
-    SNode node = getNode();
-    if (node == null) {
-      return null;
-    }
-    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-      return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-    } else {
-      throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConcept(node));
-    }
+    return withNode(new Function<N, String>() {
+      public String apply(N node) {
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+          return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        } else if (node != null) {
+          throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConcept(node));
+        }
+        return null;
+      }
+    });
   }
 
   @Override
   public String getFqName() {
-    ITestNodeWrapper testCase = getTestCase();
-    if (isTestCase() || testCase == null) {
-      SNode node = getNode();
-      if (node == null) {
-        return null;
-      }
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-        return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      } else {
-        throw new UnsupportedOperationException("Should override getFqName for not INamedConcept: " + SNodeOperations.getConcept(node));
-      }
+    ITestNodeWrapper testCase;
+    if (isTestCase() || (testCase = getTestCase()) == null) {
+      return getName();
     }
     return testCase.getFqName() + "." + getName();
   }
@@ -126,11 +122,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Override
   public String getCachedFqName() {
     if (myFqName == null) {
-      myRepo.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          myFqName = getFqName();
-        }
-      });
+      myFqName = getFqName();
     }
     return myFqName;
   }

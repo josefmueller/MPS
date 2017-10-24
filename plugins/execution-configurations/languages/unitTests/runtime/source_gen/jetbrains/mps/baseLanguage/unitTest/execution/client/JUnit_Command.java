@@ -14,12 +14,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.debug.api.IDebugger;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -94,18 +93,13 @@ public class JUnit_Command {
     return getDebuggerConfiguration().getDebugger();
   }
 
-  private static String getProgramParameters(final List<ITestNodeWrapper> tests) {
-    final Wrappers._T<List<String>> testsCommandLine = new Wrappers._T<List<String>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        testsCommandLine.value = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count()));
-        for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
-          List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ? "-c" : "-m"), test.getFqName());
-          ListSequence.fromList(testsCommandLine.value).addSequence(ListSequence.fromList(parametersPart));
-        }
-      }
-    });
-    return IterableUtils.join(ListSequence.fromList(testsCommandLine.value), " ");
+  private static String getProgramParameters(List<ITestNodeWrapper> tests) {
+    List<String> testsCommandLine = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count()));
+    for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
+      List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ? "-c" : "-m"), test.getFqName());
+      ListSequence.fromList(testsCommandLine).addSequence(ListSequence.fromList(parametersPart));
+    }
+    return IterableUtils.join(ListSequence.fromList(testsCommandLine), " ");
   }
   private static TestsWithParameters getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
     TestParameters runParams = JUnit_Command.getMaxParams(tests);

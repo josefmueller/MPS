@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 
 public class InsertBefore_Action extends BaseAction {
@@ -21,7 +20,7 @@ public class InsertBefore_Action extends BaseAction {
   public InsertBefore_Action() {
     super("Insert New Element before Current", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
   @Override
   public boolean isDumbAware() {
@@ -61,13 +60,9 @@ public class InsertBefore_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property && ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit()) {
-          return;
-        }
-        EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
-      }
-    });
+    if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property && ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit()) {
+      return;
+    }
+    EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
   }
 }

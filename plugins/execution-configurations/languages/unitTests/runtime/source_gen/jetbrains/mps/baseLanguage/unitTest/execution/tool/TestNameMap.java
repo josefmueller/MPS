@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 
-public class TestNameMap<C, M> {
+/*package*/ class TestNameMap<C, M> {
   private final Map<String, C> myClassToTestCase = MapSequence.fromMap(new HashMap<String, C>());
   private final Map<String, Map<String, M>> myClassToMethodToMethodTest = MapSequence.fromMap(new HashMap<String, Map<String, M>>());
 

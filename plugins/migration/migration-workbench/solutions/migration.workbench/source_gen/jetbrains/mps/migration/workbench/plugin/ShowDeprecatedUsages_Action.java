@@ -19,12 +19,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.migration.util.DeprecatedUtil;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
-import com.intellij.openapi.application.ModalityState;
 
 public class ShowDeprecatedUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,7 +29,7 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
   public ShowDeprecatedUsages_Action() {
     super("Show Usages of Deprecated", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
     this.setMnemonic("d".charAt(0));
   }
   @Override
@@ -60,22 +57,17 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
-    SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
-    final Set<SNode> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-    final Set<SNode> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
-
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
-            MapSequence.fromMap(result).put("Deprecated library stuff", depLibs);
-            MapSequence.fromMap(result).put("Deprecated project stuff", depProj);
-            event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
-          }
-        });
+        Set<SModule> theirModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModules());
+        SetSequence.fromSet(theirModules).removeSequence(Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators()));
+        Set<SNode> depLibs = DeprecatedUtil.usagesOfDeprecated(new ModulesScope(theirModules), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+        Set<SNode> depProj = DeprecatedUtil.usagesOfDeprecated(event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope(), event.getData(MPSCommonDataKeys.MPS_PROJECT).getScope());
+        Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+        MapSequence.fromMap(result).put("Deprecated library stuff", depLibs);
+        MapSequence.fromMap(result).put("Deprecated project stuff", depProj);
+        event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
       }
-    }, ModalityState.NON_MODAL);
+    });
   }
 }

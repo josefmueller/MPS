@@ -5,12 +5,6 @@ package jetbrains.mps.build.mps.runner.runtime;
 import jetbrains.mps.tool.builder.make.GeneratorWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
-import org.apache.log4j.Logger;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import java.io.File;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.MpsRunnerProperties;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -22,6 +16,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import java.io.File;
 
 public class MpsRunnerWorker extends GeneratorWorker {
   public MpsRunnerWorker(Script whatToDo, MpsWorker.AntLogger logger) {
@@ -30,25 +26,6 @@ public class MpsRunnerWorker extends GeneratorWorker {
 
   @Override
   public void work() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-
-    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
-
-    for (String jar : myWhatToDo.getLibraryJars()) {
-      File jarFile = new File(jar);
-      if (!(jarFile.exists())) {
-        warning("Library " + jar + " does not exist.");
-      }
-      config = config.addLib(jar);
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(myWhatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
-    }
-
-    Environment environment = new MpsRunnerWorker.MyEnvironment(config);
-    environment.init();
-    setupEnvironment();
-
     final Project project = createDummyProject();
 
     MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);

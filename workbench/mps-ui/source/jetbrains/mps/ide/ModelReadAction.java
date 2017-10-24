@@ -18,6 +18,7 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,8 +26,11 @@ import javax.swing.Icon;
 
 /**
  * Action with read access to model, delegates to Runnable for actual work
+ * @deprecated uses static ModelAccess instance which is scheduled for removal. No uses in MPS or anywhere else.
  * @author Artem Tikhomirov
  */
+@Deprecated
+@ToRemove(version = 2017.3)
 public class ModelReadAction extends AnAction {
   @NotNull
   private final Runnable myDelegate;

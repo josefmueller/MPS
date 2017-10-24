@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.CoreMpsTest;
-import jetbrains.mps.PlatformMpsTest;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.Reference;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -36,8 +35,9 @@ import java.util.Iterator;
 
 public class PersistenceUtilTest extends CoreMpsTest {
 
+  // FIXME need access to Project which has been initialized for the test to take its ModelAccess instead of one from global repository
   @Rule
-  public WriteAction wa = new WriteAction(); // FIXME shall pass proper ModelAccess in there
+  public WriteAction wa = new WriteAction(ENV.getPlatform().findComponent(MPSModuleRepository.class).getModelAccess());
 
   private SModel createTestModel() {
     SModel result = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());

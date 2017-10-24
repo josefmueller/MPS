@@ -6,10 +6,9 @@ import jetbrains.mps.make.resources.IPropertiesIO;
 import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import java.io.IOException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Properties;
-import jetbrains.mps.smodel.ModelAccess;
 import java.io.InputStream;
+import jetbrains.mps.util.FileUtil;
 import java.util.HashMap;
 
 public class FlatFilePropertiesIO implements IPropertiesIO {
@@ -27,30 +26,21 @@ public class FlatFilePropertiesIO implements IPropertiesIO {
       return null;
     }
     IFile dir = descFile.getParent();
-    final IFile pf = dir.getDescendant("make.properties");
+    IFile pf = dir.getDescendant("make.properties");
     if (!(pf.exists())) {
       return null;
     }
-    final Wrappers._T<Properties> props = new Wrappers._T<Properties>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        InputStream is = null;
-        try {
-          is = pf.openInputStream();
-          props.value = new Properties();
-          props.value.load(is);
-        } catch (IOException e) {
-        } finally {
-          try {
-            if (is != null) {
-              is.close();
-            }
-          } catch (IOException ignore) {
-          }
-        }
-      }
-    });
-    return (Map<String, String>) ((props.value != null ? new HashMap(props.value) : null));
+    Properties props = null;
+    InputStream is = null;
+    try {
+      is = pf.openInputStream();
+      props = new Properties();
+      props.load(is);
+    } catch (IOException e) {
+    } finally {
+      FileUtil.closeFileSafe(is);
+    }
+    return (Map<String, String>) ((props != null ? new HashMap(props) : null));
   }
   @Override
   public Object getKey() {
