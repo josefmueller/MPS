@@ -255,6 +255,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/jetbrains.mps.build.mps.runner.test.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.properties/jetbrains.mps.core.properties.mpl" folder="core.languages.properties" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.properties/sandbox/jetbrains.mps.core.properties.sandbox.msd" folder="core.languages.properties" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.text/jetbrains.mps.lang.text.mpl" folder="core.languages.text" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" folder="core.languages.xml" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" folder="core.languages.xml" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.xml/sandbox/jetbrains.mps.core.xml.sandbox.msd" folder="core.languages.xml" />
