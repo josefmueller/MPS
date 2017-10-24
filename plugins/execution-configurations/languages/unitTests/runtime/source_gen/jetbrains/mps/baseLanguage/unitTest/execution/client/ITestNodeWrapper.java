@@ -17,6 +17,11 @@ import org.jetbrains.annotations.NonNls;
  * To me, the need to wrap access to the methods of this class with model read is an indicator of poor design.
  */
 public interface ITestNodeWrapper<N extends SNode> {
+  /**
+   * 
+   * @deprecated 
+   */
+  @Deprecated
   N getNode();
   SNodeReference getNodePointer();
   boolean isTestCase();

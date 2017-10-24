@@ -22,7 +22,6 @@
     <import index="mnlj" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.beans(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -366,23 +365,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
-        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
-      </concept>
-      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
-        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
-      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
-      </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -9882,23 +9870,16 @@
           <node concept="1rXfSq" id="4hiugqyzkkT" role="3clFbG">
             <ref role="37wK5l" to="7e8u:~MPSTreeNode.setNodeIdentifier(java.lang.String):void" resolve="setNodeIdentifier" />
             <node concept="2OqwBi" id="36vIONTtQz9" role="37wK5m">
-              <node concept="1eOMI4" id="2q2JH_NuTso" role="2Oq$k0">
-                <node concept="10QFUN" id="2q2JH_NuTsp" role="1eOMHV">
-                  <node concept="3uibUv" id="2q2JH_NuTsq" role="10QFUM">
-                    <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                  </node>
-                  <node concept="2OqwBi" id="2q2JH_NuTsr" role="10QFUP">
-                    <node concept="37vLTw" id="2BHiRxeumw3" role="2Oq$k0">
-                      <ref role="3cqZAo" node="36vIONTtQyL" resolve="myTestCase" />
-                    </node>
-                    <node concept="liA8E" id="2q2JH_NuTst" role="2OqNvi">
-                      <ref role="37wK5l" to="sfqd:56tRMpP_ejc" resolve="getNodePointer" />
-                    </node>
-                  </node>
+              <node concept="2OqwBi" id="2q2JH_NuTsr" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxeumw3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="36vIONTtQyL" resolve="myTestCase" />
+                </node>
+                <node concept="liA8E" id="2q2JH_NuTst" role="2OqNvi">
+                  <ref role="37wK5l" to="sfqd:56tRMpP_ejc" resolve="getNodePointer" />
                 </node>
               </node>
               <node concept="liA8E" id="36vIONTtQzh" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~SNodePointer.toString():java.lang.String" resolve="toString" />
+                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
               </node>
             </node>
           </node>
@@ -9906,22 +9887,12 @@
         <node concept="3clFbF" id="36vIONTtQzi" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyQVf" role="3clFbG">
             <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
-            <node concept="2OqwBi" id="36vIONTtQzl" role="37wK5m">
-              <node concept="1PxgMI" id="36vIONTtQzm" role="2Oq$k0">
-                <node concept="2OqwBi" id="36vIONTtQzn" role="1m5AlR">
-                  <node concept="37vLTw" id="2BHiRxeuJ_s" role="2Oq$k0">
-                    <ref role="3cqZAo" node="36vIONTtQyL" resolve="myTestCase" />
-                  </node>
-                  <node concept="liA8E" id="36vIONTtQzr" role="2OqNvi">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_ej8" resolve="getNode" />
-                  </node>
-                </node>
-                <node concept="chp4Y" id="714IaVdGYNU" role="3oSUPX">
-                  <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                </node>
+            <node concept="2OqwBi" id="36vIONTtQzn" role="37wK5m">
+              <node concept="37vLTw" id="2BHiRxeuJ_s" role="2Oq$k0">
+                <ref role="3cqZAo" node="36vIONTtQyL" resolve="myTestCase" />
               </node>
-              <node concept="3TrcHB" id="36vIONTtQzs" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="liA8E" id="MY2kIk6cpY" role="2OqNvi">
+                <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
               </node>
             </node>
           </node>

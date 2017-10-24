@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class TestCaseTreeNode extends BaseTestTreeNode {
   private final ITestNodeWrapper myTestCase;
@@ -16,8 +12,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     myTestCase = testCase;
     setUserObject(testCase);
     setToggleClickCount(-1);
-    setNodeIdentifier(((SNodePointer) myTestCase.getNodePointer()).toString());
-    setText(SPropertyOperations.getString(SNodeOperations.cast(myTestCase.getNode(), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    setNodeIdentifier(myTestCase.getNodePointer().toString());
+    setText(myTestCase.getName());
     setAdditionalText(myTestCase.getNodePointer().getModelReference().getName().getLongName());
   }
 
