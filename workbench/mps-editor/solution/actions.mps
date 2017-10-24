@@ -514,11 +514,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="3717301156197626279" name="jetbrains.mps.lang.core.structure.BasePlaceholder" flags="ng" index="3DQ70j" />
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -4192,38 +4187,6 @@
         <node concept="10P_77" id="6ofa_0tL2X8" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="6ofa_0tKICu" role="3clF47">
-        <node concept="3DQ70j" id="3xhyJYa2JZp" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2JVH" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2JxV" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2Juy" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2Jus" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2JqO" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2Jnd" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
-        <node concept="3DQ70j" id="3xhyJYa2JjB" role="lGtFl">
-          <property role="3V$3am" value="smodelAttribute" />
-          <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
-        </node>
         <node concept="3cpWs8" id="5OMo51zLP2H" role="3cqZAp">
           <node concept="3cpWsn" id="5OMo51zLP2I" role="3cpWs9">
             <property role="TrG5h" value="actionHandler" />
@@ -4279,8 +4242,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="69bBkiA7DtQ" role="3cqZAp" />
-            <node concept="3clFbH" id="6ofa_0tKICN" role="3cqZAp" />
             <node concept="3clFbJ" id="6ofa_0tKICO" role="3cqZAp">
               <node concept="3clFbS" id="6ofa_0tKICP" role="3clFbx">
                 <node concept="3SKdUt" id="6ofa_0tKICQ" role="3cqZAp">
@@ -4312,7 +4273,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="6ofa_0tKID1" role="3cqZAp" />
             <node concept="3clFbJ" id="6ofa_0tKID2" role="3cqZAp">
               <node concept="1Wc70l" id="6ofa_0tKID3" role="3clFbw">
                 <node concept="2OqwBi" id="6ofa_0tKID4" role="3uHU7w">

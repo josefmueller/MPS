@@ -439,15 +439,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="3717301156197626279" name="jetbrains.mps.lang.core.structure.BasePlaceholder" flags="ng" index="3DQ70j" />
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -554,10 +548,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="3DQ70j" id="2cLqkTm9peM" role="lGtFl">
-      <property role="3V$3am" value="item" />
-      <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1081293058843/1136930944870" />
     </node>
     <node concept="2PxR9H" id="8D0iRqYy6w" role="2QnnpI">
       <property role="2IlM53" value="caret_at_last_position" />
@@ -2843,14 +2833,6 @@
         <node concept="2h3Zct" id="5wR$28JlgvX" role="16NL0q">
           <property role="2h4Kg1" value="simple text" />
         </node>
-      </node>
-      <node concept="3DQ70j" id="2cLqkTm90QP" role="lGtFl">
-        <property role="3V$3am" value="features" />
-        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/8478191136883534237/8478191136883534238" />
-      </node>
-      <node concept="3DQ70j" id="5MT8pi2Gxsh" role="lGtFl">
-        <property role="3V$3am" value="smodelAttribute" />
-        <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
       </node>
       <node concept="ucgPf" id="3xhyJYa4JUt" role="3aKz83">
         <node concept="3clFbS" id="3xhyJYa4JUv" role="2VODD2">

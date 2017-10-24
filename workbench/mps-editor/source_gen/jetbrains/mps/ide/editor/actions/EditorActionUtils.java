@@ -74,13 +74,10 @@ public class EditorActionUtils {
     if (cell instanceof EditorCell_Label && !(isLinkCollection(cell))) {
       // Looking for the next child collection to the right from this cell 
       EditorCell cellWithRole = new ChildrenCollectionFinder(cell, after, false).find();
-
-
       if (cellWithRole == null) {
         // Looking for the next child collection in parents 
         cellWithRole = getSiblingCollectionForInsert(cell, after);
       }
-
       if (cellWithRole != null && actionHandler.executeAction(cellWithRole, cellAction)) {
         return;
       }
