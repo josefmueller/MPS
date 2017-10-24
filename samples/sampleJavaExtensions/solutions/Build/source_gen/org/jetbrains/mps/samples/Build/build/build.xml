@@ -520,6 +520,7 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-core/languages/text/jetbrains.mps.lang.text.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
