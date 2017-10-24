@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,8 @@
 
 package jetbrains.mps.idea.core.ui;
 
-import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -49,8 +46,6 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
   }
 
   public UsedLanguagesTable() {
-    // languages cannot be added/removed to/from module, they're derived from models
-    super(false);
   }
 
   public void reset(MPSConfigurationBean data) {
@@ -96,15 +91,6 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
   }
 
   @Override
-  protected List<SModuleReference> getAllVisibleElements() {
-    final List<SModuleReference> allLanguages = new ArrayList<SModuleReference>();
-    for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      allLanguages.add(language.getModuleReference());
-    }
-    return allLanguages;
-  }
-
-  @Override
   protected Comparator<SModuleReference> getComparator() {
     return MODULE_REFERENCE_COMPARATOR;
   }
@@ -114,25 +100,10 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
     return SModuleReference.class;
   }
 
-  @Override
-  protected String getChooserMessage() {
-    return MPSBundle.message("used.languages.chooser.title");
-  }
-
   private static final class SModuleReferenceComparator implements Comparator<SModuleReference> {
     @Override
     public int compare(SModuleReference o1, SModuleReference o2) {
       return o1.getModuleName().compareTo(o2.getModuleName());
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof SModuleReferenceComparator;
-    }
-
-    @Override
-    public int hashCode() {
-      return this.getClass().hashCode();
     }
   }
 }
