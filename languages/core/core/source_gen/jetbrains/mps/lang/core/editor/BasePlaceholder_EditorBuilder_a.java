@@ -107,7 +107,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
-      CommentPlaceholderEmptyCell_ActionMap.setCellActions(editorCell, myNode, getEditorContext());
+      BasePlaceholderEmptyCell_ActionMap.setCellActions(editorCell, myNode, getEditorContext());
       editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"), "jetbrains.mps.lang.core.editor.BasePlaceholder_TransformationMenu"));
       editorCell.setDefaultText("");
       editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
