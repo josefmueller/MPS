@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder;
 import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -203,7 +205,7 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   protected abstract List<? extends SNode> getNodesForList();
 
   private void addSeparatorCell(SNode prevNode, SNode nextNode) {
-    if (prevNode == null) {
+    if (prevNode == null || AttributeOperations.isChildAttribute(nextNode) && !CommentUtil.isComment(nextNode)) {
       return;
     }
     EditorCell separatorCell = createSeparatorCell(prevNode, nextNode);
