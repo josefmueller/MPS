@@ -1040,6 +1040,23 @@
       <unit id="4495101140903379754" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterPlaceholder_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/474718489011577918">
+    <file name="PlaceholderCompletion_Test.java">
+      <node id="474718489011577918" at="15,61,16,110" concept="0" />
+      <node id="474718489011577918" at="16,110,17,111" concept="0" />
+      <node id="474718489011577918" at="23,51,24,70" concept="0" />
+      <node id="474718489011577927" at="24,70,25,71" concept="0" />
+      <node id="474718489011578531" at="25,71,26,82" concept="0" />
+      <node id="474718489011577918" at="14,0,19,0" concept="1" trace="test_PlaceholderCompletion#()V" />
+      <node id="474718489011577918" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489011577918" at="15,61,17,111" />
+      <scope id="474718489011577918" at="23,51,26,82" />
+      <scope id="474718489011577918" at="14,0,19,0" />
+      <scope id="474718489011577918" at="22,0,28,0" />
+      <unit id="474718489011577918" at="20,0,29,0" name="jetbrains.mps.lang.editor.actions.test.PlaceholderCompletion_Test$TestBody" />
+      <unit id="474718489011577918" at="12,0,30,0" name="jetbrains.mps.lang.editor.actions.test.PlaceholderCompletion_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/5383578965096699346">
     <file name="DelOnSpecialChild1DeleteParent_Test.java">
       <node id="5383578965096699346" at="14,70,15,110" concept="0" />
