@@ -319,6 +319,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
+
+  private final Object myEditorcomponentActionsLock = new Object();
   private EditorComponentActions myEditorComponentActions;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
@@ -445,8 +447,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // --- keyboard handling ---
     myKbdHandlersStack = new Stack<>();
     myKbdHandlersStack.push(new EditorComponentKeyboardHandler(myKeymapHandler));
-
-   myEditorComponentActions = new EditorComponentActions(getEditorContext());
 
     registerKeyboardAction(new AbstractAction() {
       @Override
@@ -1645,8 +1645,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+
   @Override
   public CellAction getComponentAction(final CellActionType type) {
+    //todo ensure that this method is called only from EDT, write the contract and then get rid of synchronization
+    if (myEditorComponentActions == null) {
+      synchronized (myEditorcomponentActionsLock) {
+        if (myEditorComponentActions == null) {
+          myEditorComponentActions = new EditorComponentActions(this);
+        }
+      }
+    }
     return myEditorComponentActions.getComponentAction(type);
   }
 

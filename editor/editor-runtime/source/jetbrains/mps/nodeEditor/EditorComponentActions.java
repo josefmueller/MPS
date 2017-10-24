@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.folding.CollapseAllCellAction;
 import jetbrains.mps.nodeEditor.folding.CollapseRecursivelyCellAction;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.util.Computable;
@@ -44,15 +44,15 @@ class EditorComponentActions {
   private HashMap<CellActionType, CellAction> myActionMap;
 
   @NotNull
-  private EditorContext myEditorContext;
+  private EditorComponent myEditorComponent;
 
-  EditorComponentActions(@NotNull EditorContext editorContext) {
-    myEditorContext = editorContext;
+  EditorComponentActions(@NotNull EditorComponent editorComponent) {
+    myEditorComponent = editorComponent;
     myActionMap = new HashMap<>();
 
     myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
     myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
-    CursorPositionTracker cursorPositionTracker = new CursorPositionTracker(myEditorContext);
+    CursorPositionTracker cursorPositionTracker = new CursorPositionTracker(myEditorComponent.getEditorContext());
     myActionMap.put(CellActionType.UP, new NodeEditorActions.MoveUp(cursorPositionTracker));
     myActionMap.put(CellActionType.DOWN, new NodeEditorActions.MoveDown(cursorPositionTracker));
     myActionMap.put(CellActionType.NEXT, new NodeEditorActions.MoveNext());
@@ -106,7 +106,7 @@ class EditorComponentActions {
 
   CellAction getComponentAction(final CellActionType type) {
     final ComputeRunnable<CellAction> r = new ComputeRunnable<>(new ActionGetter(type));
-    myEditorContext.getRepository().getModelAccess().runReadAction(r);
+    myEditorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(r);
     return r.getResult();
   }
 
@@ -120,7 +120,7 @@ class EditorComponentActions {
     @Override
     public CellAction compute() {
       CellAction action = myActionMap.get(myType);
-      if (action != null && action.canExecute(myEditorContext)) {
+      if (action != null && action.canExecute(myEditorComponent.getEditorContext())) {
         return action;
       }
       return null;
