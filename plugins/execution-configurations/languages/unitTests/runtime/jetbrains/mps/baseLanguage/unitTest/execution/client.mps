@@ -9,7 +9,6 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
     <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
     <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
@@ -373,6 +372,18 @@
         <child id="1225797361612" name="parameter" index="1BdPVh" />
       </concept>
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers">
       <concept id="1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" flags="nn" index="2WthIp" />
       <concept id="1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" flags="ng" index="2WEnae">
@@ -473,6 +484,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -1435,6 +1447,38 @@
       <node concept="3clFbS" id="56tRMpP_ejK" role="3clF47" />
       <node concept="2AHcQZ" id="46IpDBbYxl9" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="Hl1mFRytJ2" role="lGtFl">
+      <node concept="TZ5HA" id="Hl1mFRytJ3" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRytJ4" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME  external code sometimes wraps access to methods of this class with model read. It's odd an confusing." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="Hl1mFRy$6O" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRy$6P" role="1dT_Ay">
+          <property role="1dT_AB" value="Implementation sometime wrap node access to own model read, sometimes not (e.g. JUnit4TestWrapper does getNode()?.getFqName(), where " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="Hl1mFRy$d0" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRy$d1" role="1dT_Ay">
+          <property role="1dT_AB" value="getNode() grabs model read, but there's no explicit read for getFqName, and it's up to external code to contribute some. This has to be refactored, " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="Hl1mFRy$d8" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRy$d9" role="1dT_Ay">
+          <property role="1dT_AB" value="and clear contract what to expect from methods of this class has to be established. I.e. if getTestCase() of a wrapper with !isTestCase (i.e. test method)" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="Hl1mFRy$di" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRy$dj" role="1dT_Ay">
+          <property role="1dT_AB" value="is allowed to return new instance each time; if a name (getFqnName) is expected to change and what's in getName()." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="Hl1mFRy$du" role="TZ5H$">
+        <node concept="1dT_AC" id="Hl1mFRy$dv" role="1dT_Ay">
+          <property role="1dT_AB" value="To me, the need to wrap access to the methods of this class with model read is an indicator of poor design." />
+        </node>
       </node>
     </node>
   </node>

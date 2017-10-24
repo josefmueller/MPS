@@ -1138,25 +1138,25 @@
   </root>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690179271">
     <file name="ITestNodeWrapper.java">
-      <node id="5881102044690179272" at="12,0,13,0" concept="7" trace="getNode#()null" />
-      <node id="5881102044690179276" at="13,0,14,0" concept="7" trace="getNodePointer#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5881102044690179280" at="14,0,15,0" concept="7" trace="isTestCase#()Z" />
-      <node id="5881102044690179305" at="23,0,24,0" concept="7" trace="getCachedFqName#()Ljava/lang/String;" />
-      <node id="5881102044690179284" at="15,0,17,0" concept="7" trace="getTestCase#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-      <node id="5881102044690179289" at="17,0,19,0" concept="7" trace="getTestMethods#()Ljava/lang/Iterable;" />
-      <node id="5881102044690179295" at="19,0,21,0" concept="7" trace="getName#()Ljava/lang/String;" />
-      <node id="5881102044690179300" at="21,0,23,0" concept="7" trace="getFqName#()Ljava/lang/String;" />
-      <node id="5881102044690179309" at="24,0,26,0" concept="7" trace="getTestRunParameters#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestParameters;" />
-      <scope id="5881102044690179272" at="12,0,13,0" />
-      <scope id="5881102044690179276" at="13,0,14,0" />
-      <scope id="5881102044690179280" at="14,0,15,0" />
-      <scope id="5881102044690179305" at="23,0,24,0" />
-      <scope id="5881102044690179284" at="15,0,17,0" />
-      <scope id="5881102044690179289" at="17,0,19,0" />
-      <scope id="5881102044690179295" at="19,0,21,0" />
-      <scope id="5881102044690179300" at="21,0,23,0" />
-      <scope id="5881102044690179309" at="24,0,26,0" />
-      <unit id="5881102044690179271" at="11,0,27,0" name="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+      <node id="5881102044690179272" at="20,0,21,0" concept="7" trace="getNode#()null" />
+      <node id="5881102044690179276" at="21,0,22,0" concept="7" trace="getNodePointer#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5881102044690179280" at="22,0,23,0" concept="7" trace="isTestCase#()Z" />
+      <node id="5881102044690179305" at="31,0,32,0" concept="7" trace="getCachedFqName#()Ljava/lang/String;" />
+      <node id="5881102044690179284" at="23,0,25,0" concept="7" trace="getTestCase#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="5881102044690179289" at="25,0,27,0" concept="7" trace="getTestMethods#()Ljava/lang/Iterable;" />
+      <node id="5881102044690179295" at="27,0,29,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="5881102044690179300" at="29,0,31,0" concept="7" trace="getFqName#()Ljava/lang/String;" />
+      <node id="5881102044690179309" at="32,0,34,0" concept="7" trace="getTestRunParameters#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestParameters;" />
+      <scope id="5881102044690179272" at="20,0,21,0" />
+      <scope id="5881102044690179276" at="21,0,22,0" />
+      <scope id="5881102044690179280" at="22,0,23,0" />
+      <scope id="5881102044690179305" at="31,0,32,0" />
+      <scope id="5881102044690179284" at="23,0,25,0" />
+      <scope id="5881102044690179289" at="25,0,27,0" />
+      <scope id="5881102044690179295" at="27,0,29,0" />
+      <scope id="5881102044690179300" at="29,0,31,0" />
+      <scope id="5881102044690179309" at="32,0,34,0" />
+      <unit id="5881102044690179271" at="19,0,35,0" name="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     </file>
   </root>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/5881102044690182514">

@@ -4,47 +4,38 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.openapi.navigation.EditorNavigator;
 
-public class TestMethodTreeNode extends BaseTestTreeNode {
+/*package*/ class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestMethod;
-  public TestMethodTreeNode(@NotNull Project project, @NotNull ITestNodeWrapper testMethod) {
-    super(project);
+
+  public TestMethodTreeNode(@NotNull ITestNodeWrapper testMethod) {
     setUserObject(testMethod);
     myTestMethod = testMethod;
     setNodeIdentifier(myTestMethod.getNodePointer().toString());
     setText(myTestMethod.getName());
   }
+
   public String getClassName() {
-    final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        ITestNodeWrapper testCase = myTestMethod.getTestCase();
-        if (testCase != null) {
-          className.value = testCase.getFqName();
-        }
-      }
-    });
-    return className.value;
+    String className = null;
+    ITestNodeWrapper testCase = myTestMethod.getTestCase();
+    if (testCase != null) {
+      className = testCase.getFqName();
+    }
+    return className;
   }
+
   public String getMethodName() {
-    final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        methodName.value = myTestMethod.getName();
-      }
-    });
-    return methodName.value;
+    return myTestMethod.getName();
   }
+
   @Override
   public boolean isLeaf() {
     return true;
   }
+
   @Override
-  public void doubleClick() {
-    new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(myTestMethod.getNodePointer());
+  public ITestNodeWrapper getTestWrapper() {
+    return myTestMethod;
   }
 }
