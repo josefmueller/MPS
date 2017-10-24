@@ -1024,6 +1024,22 @@
       <unit id="4247887444754152430" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeWithComment_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/4495101140903379754">
+    <file name="InsertPlaceholderAfterPlaceholder_Test.java">
+      <node id="4495101140903379754" at="13,73,14,110" concept="0" />
+      <node id="4495101140903379754" at="14,110,15,123" concept="0" />
+      <node id="4495101140903379754" at="21,51,22,72" concept="0" />
+      <node id="4495101140903379763" at="22,72,23,80" concept="0" />
+      <node id="4495101140903379754" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderAfterPlaceholder#()V" />
+      <node id="4495101140903379754" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4495101140903379754" at="13,73,15,123" />
+      <scope id="4495101140903379754" at="21,51,23,80" />
+      <scope id="4495101140903379754" at="12,0,17,0" />
+      <scope id="4495101140903379754" at="20,0,25,0" />
+      <unit id="4495101140903379754" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterPlaceholder_Test$TestBody" />
+      <unit id="4495101140903379754" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterPlaceholder_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/5383578965096699346">
     <file name="DelOnSpecialChild1DeleteParent_Test.java">
       <node id="5383578965096699346" at="14,70,15,110" concept="0" />
@@ -1500,6 +1516,134 @@
       <scope id="6047905657530835410" at="20,0,26,0" />
       <unit id="6047905657530835410" at="18,0,27,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncomment_Test$TestBody" />
       <unit id="6047905657530835410" at="10,0,28,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncomment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6866182640452618978">
+    <file name="InsertPlaceholderIntoEmptyMultipleCollection_Test.java">
+      <node id="6866182640452618978" at="13,84,14,110" concept="0" />
+      <node id="6866182640452618978" at="14,110,15,134" concept="0" />
+      <node id="6866182640452618978" at="21,51,22,72" concept="0" />
+      <node id="6866182640452683006" at="22,72,23,80" concept="0" />
+      <node id="6866182640452618978" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderIntoEmptyMultipleCollection#()V" />
+      <node id="6866182640452618978" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6866182640452618978" at="13,84,15,134" />
+      <scope id="6866182640452618978" at="21,51,23,80" />
+      <scope id="6866182640452618978" at="12,0,17,0" />
+      <scope id="6866182640452618978" at="20,0,25,0" />
+      <unit id="6866182640452618978" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoEmptyMultipleCollection_Test$TestBody" />
+      <unit id="6866182640452618978" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoEmptyMultipleCollection_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6866182640452683055">
+    <file name="InsertPlaceholderAfterChild_Test.java">
+      <node id="6866182640452683055" at="13,67,14,110" concept="0" />
+      <node id="6866182640452683055" at="14,110,15,117" concept="0" />
+      <node id="6866182640452683055" at="21,51,22,72" concept="0" />
+      <node id="6866182640452683062" at="22,72,23,80" concept="0" />
+      <node id="6866182640452683055" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderAfterChild#()V" />
+      <node id="6866182640452683055" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6866182640452683055" at="13,67,15,117" />
+      <scope id="6866182640452683055" at="21,51,23,80" />
+      <scope id="6866182640452683055" at="12,0,17,0" />
+      <scope id="6866182640452683055" at="20,0,25,0" />
+      <unit id="6866182640452683055" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterChild_Test$TestBody" />
+      <unit id="6866182640452683055" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6866182640452810057">
+    <file name="InsertPlaceholderBeforeChild_Test.java">
+      <node id="6866182640452810057" at="13,68,14,110" concept="0" />
+      <node id="6866182640452810057" at="14,110,15,118" concept="0" />
+      <node id="6866182640452810057" at="21,51,22,72" concept="0" />
+      <node id="6866182640452810066" at="22,72,23,80" concept="0" />
+      <node id="6866182640452810057" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderBeforeChild#()V" />
+      <node id="6866182640452810057" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6866182640452810057" at="13,68,15,118" />
+      <scope id="6866182640452810057" at="21,51,23,80" />
+      <scope id="6866182640452810057" at="12,0,17,0" />
+      <scope id="6866182640452810057" at="20,0,25,0" />
+      <unit id="6866182640452810057" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderBeforeChild_Test$TestBody" />
+      <unit id="6866182640452810057" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderBeforeChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6866182640452810111">
+    <file name="DontInsertPlaceholderIntoSingleChildRole_Test.java">
+      <node id="6866182640452810111" at="13,80,14,110" concept="0" />
+      <node id="6866182640452810111" at="14,110,15,130" concept="0" />
+      <node id="6866182640452810111" at="21,51,22,72" concept="0" />
+      <node id="6866182640452810120" at="22,72,23,80" concept="0" />
+      <node id="6866182640452810111" at="12,0,17,0" concept="1" trace="test_DontInsertPlaceholderIntoSingleChildRole#()V" />
+      <node id="6866182640452810111" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6866182640452810111" at="13,80,15,130" />
+      <scope id="6866182640452810111" at="21,51,23,80" />
+      <scope id="6866182640452810111" at="12,0,17,0" />
+      <scope id="6866182640452810111" at="20,0,25,0" />
+      <unit id="6866182640452810111" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DontInsertPlaceholderIntoSingleChildRole_Test$TestBody" />
+      <unit id="6866182640452810111" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DontInsertPlaceholderIntoSingleChildRole_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6866182640452810302">
+    <file name="InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromOpeningBrace_Test.java">
+      <node id="6866182640452810302" at="13,108,14,110" concept="0" />
+      <node id="6866182640452810302" at="14,110,15,158" concept="0" />
+      <node id="6866182640452810302" at="21,51,22,72" concept="0" />
+      <node id="6866182640452810309" at="22,72,23,80" concept="0" />
+      <node id="6866182640452810302" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromOpeningBrace#()V" />
+      <node id="6866182640452810302" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6866182640452810302" at="13,108,15,158" />
+      <scope id="6866182640452810302" at="21,51,23,80" />
+      <scope id="6866182640452810302" at="12,0,17,0" />
+      <scope id="6866182640452810302" at="20,0,25,0" />
+      <unit id="6866182640452810302" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromOpeningBrace_Test$TestBody" />
+      <unit id="6866182640452810302" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromOpeningBrace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6997653033586475516">
+    <file name="InsertNodeInsteadOfPlaceholder_Test.java">
+      <node id="6997653033586475516" at="13,70,14,110" concept="0" />
+      <node id="6997653033586475516" at="14,110,15,120" concept="0" />
+      <node id="6997653033586475516" at="21,51,22,72" concept="0" />
+      <node id="6997653033586475525" at="22,72,23,69" concept="0" />
+      <node id="6997653033586475516" at="12,0,17,0" concept="1" trace="test_InsertNodeInsteadOfPlaceholder#()V" />
+      <node id="6997653033586475516" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6997653033586475516" at="13,70,15,120" />
+      <scope id="6997653033586475516" at="21,51,23,69" />
+      <scope id="6997653033586475516" at="12,0,17,0" />
+      <scope id="6997653033586475516" at="20,0,25,0" />
+      <unit id="6997653033586475516" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertNodeInsteadOfPlaceholder_Test$TestBody" />
+      <unit id="6997653033586475516" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertNodeInsteadOfPlaceholder_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6997653033586569893">
+    <file name="InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromClosingBrace_Test.java">
+      <node id="6997653033586569893" at="13,108,14,110" concept="0" />
+      <node id="6997653033586569893" at="14,110,15,158" concept="0" />
+      <node id="6997653033586569893" at="21,51,22,72" concept="0" />
+      <node id="6997653033586569900" at="22,72,23,80" concept="0" />
+      <node id="6997653033586569893" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromClosingBrace#()V" />
+      <node id="6997653033586569893" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6997653033586569893" at="13,108,15,158" />
+      <scope id="6997653033586569893" at="21,51,23,80" />
+      <scope id="6997653033586569893" at="12,0,17,0" />
+      <scope id="6997653033586569893" at="20,0,25,0" />
+      <unit id="6997653033586569893" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromClosingBrace_Test$TestBody" />
+      <unit id="6997653033586569893" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderIntoNonEmptyEmptyMultipleCollectionFromClosingBrace_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/6997653033587256619">
+    <file name="InsertCustomPlaceholder_Test.java">
+      <node id="6997653033587256619" at="13,63,14,110" concept="0" />
+      <node id="6997653033587256619" at="14,110,15,113" concept="0" />
+      <node id="6997653033587256619" at="21,51,22,72" concept="0" />
+      <node id="6997653033587256628" at="22,72,23,80" concept="0" />
+      <node id="6997653033587256619" at="12,0,17,0" concept="1" trace="test_InsertCustomPlaceholder#()V" />
+      <node id="6997653033587256619" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6997653033587256619" at="13,63,15,113" />
+      <scope id="6997653033587256619" at="21,51,23,80" />
+      <scope id="6997653033587256619" at="12,0,17,0" />
+      <scope id="6997653033587256619" at="20,0,25,0" />
+      <unit id="6997653033587256619" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertCustomPlaceholder_Test$TestBody" />
+      <unit id="6997653033587256619" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertCustomPlaceholder_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7362595478849060640">

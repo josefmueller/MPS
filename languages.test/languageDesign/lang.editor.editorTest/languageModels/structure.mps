@@ -1352,5 +1352,43 @@
       <ref role="PrY4T" node="6KrovOGOuVZ" resolve="Selectable" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5X9_bIv87wC">
+    <property role="EcuMT" value="6866182640452532264" />
+    <property role="TrG5h" value="PlaceholderParent" />
+    <property role="3GE5qa" value="placeholder" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5X9_bIv87wE" role="1TKVEi">
+      <property role="IQ2ns" value="6866182640452532266" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChild" />
+      <ref role="20lvS9" node="5X9_bIv87wD" resolve="PlaceholderChild" />
+    </node>
+    <node concept="1TJgyj" id="5X9_bIv87wG" role="1TKVEi">
+      <property role="IQ2ns" value="6866182640452532268" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multipleChildren" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5X9_bIv87wD" resolve="PlaceholderChild" />
+    </node>
+    <node concept="1TJgyj" id="64sE5JwoRpT" role="1TKVEi">
+      <property role="IQ2ns" value="6997653033587013241" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="customPlaceholder" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="64sE5JwoRpS" resolve="CustomPlaceholder" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5X9_bIv87wD">
+    <property role="EcuMT" value="6866182640452532265" />
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="PlaceholderChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="64sE5JwoRpS">
+    <property role="EcuMT" value="6997653033587013240" />
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="CustomPlaceholder" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 
