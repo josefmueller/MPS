@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489010535049">
+    <file name="SplitRichWord_Test.java">
+      <node id="474718489010535049" at="13,53,14,113" concept="0" />
+      <node id="474718489010535049" at="14,113,15,100" concept="0" />
+      <node id="474718489010535049" at="21,51,22,70" concept="0" />
+      <node id="474718489010535064" at="22,70,23,22" concept="0" />
+      <node id="474718489010535049" at="12,0,17,0" concept="1" trace="test_SplitRichWord#()V" />
+      <node id="474718489010535049" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489010535049" at="13,53,15,100" />
+      <scope id="474718489010535049" at="21,51,23,22" />
+      <scope id="474718489010535049" at="12,0,17,0" />
+      <scope id="474718489010535049" at="20,0,25,0" />
+      <unit id="474718489010535049" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.SplitRichWord_Test$TestBody" />
+      <unit id="474718489010535049" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.SplitRichWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489010612879">
+    <file name="AddWordAfterRichWord_Test.java">
+      <node id="474718489010612879" at="13,60,14,113" concept="0" />
+      <node id="474718489010612879" at="14,113,15,107" concept="0" />
+      <node id="474718489010612879" at="21,51,22,70" concept="0" />
+      <node id="474718489010612887" at="22,70,23,26" concept="0" />
+      <node id="474718489010612879" at="12,0,17,0" concept="1" trace="test_AddWordAfterRichWord#()V" />
+      <node id="474718489010612879" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489010612879" at="13,60,15,107" />
+      <scope id="474718489010612879" at="21,51,23,26" />
+      <scope id="474718489010612879" at="12,0,17,0" />
+      <scope id="474718489010612879" at="20,0,25,0" />
+      <unit id="474718489010612879" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterRichWord_Test$TestBody" />
+      <unit id="474718489010612879" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterRichWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489010658122">
+    <file name="AddNewLineAfterWrapper_Test.java">
+      <node id="474718489010658122" at="13,62,14,113" concept="0" />
+      <node id="474718489010658122" at="14,113,15,109" concept="0" />
+      <node id="474718489010658122" at="21,51,22,70" concept="0" />
+      <node id="474718489011465445" at="22,70,23,69" concept="0" />
+      <node id="474718489010658122" at="12,0,17,0" concept="1" trace="test_AddNewLineAfterWrapper#()V" />
+      <node id="474718489010658122" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489010658122" at="13,62,15,109" />
+      <scope id="474718489010658122" at="21,51,23,69" />
+      <scope id="474718489010658122" at="12,0,17,0" />
+      <scope id="474718489010658122" at="20,0,25,0" />
+      <unit id="474718489010658122" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineAfterWrapper_Test$TestBody" />
+      <unit id="474718489010658122" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineAfterWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489011271580">
+    <file name="DeleteSpaceBetweenWordAndWrapperFromWrapper_Test.java">
+      <node id="474718489011271580" at="13,83,14,113" concept="0" />
+      <node id="474718489011271580" at="14,113,15,130" concept="0" />
+      <node id="474718489011271580" at="21,51,22,70" concept="0" />
+      <node id="474718489011271593" at="22,70,23,69" concept="0" />
+      <node id="474718489011271580" at="12,0,17,0" concept="1" trace="test_DeleteSpaceBetweenWordAndWrapperFromWrapper#()V" />
+      <node id="474718489011271580" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489011271580" at="13,83,15,130" />
+      <scope id="474718489011271580" at="21,51,23,69" />
+      <scope id="474718489011271580" at="12,0,17,0" />
+      <scope id="474718489011271580" at="20,0,25,0" />
+      <unit id="474718489011271580" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWrapper_Test$TestBody" />
+      <unit id="474718489011271580" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489011272201">
+    <file name="BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test.java">
+      <node id="474718489011272201" at="13,86,14,113" concept="0" />
+      <node id="474718489011272201" at="14,113,15,133" concept="0" />
+      <node id="474718489011272201" at="21,51,22,70" concept="0" />
+      <node id="474718489011272214" at="22,70,23,72" concept="0" />
+      <node id="474718489011272201" at="12,0,17,0" concept="1" trace="test_BackspaceSpaceBetweenWordAndWrapperFromWrapper#()V" />
+      <node id="474718489011272201" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="474718489011272201" at="13,86,15,133" />
+      <scope id="474718489011272201" at="21,51,23,72" />
+      <scope id="474718489011272201" at="12,0,17,0" />
+      <scope id="474718489011272201" at="20,0,25,0" />
+      <unit id="474718489011272201" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test$TestBody" />
+      <unit id="474718489011272201" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375521721889">
+    <file name="AddTextToPlaceholder_Test.java">
+      <node id="6328114375521721889" at="13,60,14,113" concept="0" />
+      <node id="6328114375521721889" at="14,113,15,107" concept="0" />
+      <node id="6328114375521721889" at="21,51,22,72" concept="0" />
+      <node id="6328114375521722536" at="22,72,23,22" concept="0" />
+      <node id="6328114375521721889" at="12,0,17,0" concept="1" trace="test_AddTextToPlaceholder#()V" />
+      <node id="6328114375521721889" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375521721889" at="13,60,15,107" />
+      <scope id="6328114375521721889" at="21,51,23,22" />
+      <scope id="6328114375521721889" at="12,0,17,0" />
+      <scope id="6328114375521721889" at="20,0,25,0" />
+      <unit id="6328114375521721889" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddTextToPlaceholder_Test$TestBody" />
+      <unit id="6328114375521721889" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddTextToPlaceholder_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375521722540">
+    <file name="AddWord_Test.java">
+      <node id="6328114375521722540" at="13,47,14,113" concept="0" />
+      <node id="6328114375521722540" at="14,113,15,94" concept="0" />
+      <node id="6328114375521722540" at="21,51,22,72" concept="0" />
+      <node id="6328114375521722550" at="22,72,23,25" concept="0" />
+      <node id="6328114375521722540" at="12,0,17,0" concept="1" trace="test_AddWord#()V" />
+      <node id="6328114375521722540" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375521722540" at="13,47,15,94" />
+      <scope id="6328114375521722540" at="21,51,23,25" />
+      <scope id="6328114375521722540" at="12,0,17,0" />
+      <scope id="6328114375521722540" at="20,0,25,0" />
+      <unit id="6328114375521722540" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWord_Test$TestBody" />
+      <unit id="6328114375521722540" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375521722561">
+    <file name="AddNodeWrapper_Test.java">
+      <node id="6328114375521722561" at="15,54,16,113" concept="0" />
+      <node id="6328114375521722561" at="16,113,17,101" concept="0" />
+      <node id="6328114375521722561" at="23,51,24,72" concept="0" />
+      <node id="6328114375521723452" at="24,72,25,71" concept="0" />
+      <node id="6328114375521722573" at="25,71,26,25" concept="0" />
+      <node id="6328114375521723605" at="26,25,27,82" concept="0" />
+      <node id="6328114375521722561" at="14,0,19,0" concept="1" trace="test_AddNodeWrapper#()V" />
+      <node id="6328114375521722561" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375521722561" at="15,54,17,101" />
+      <scope id="6328114375521722561" at="23,51,27,82" />
+      <scope id="6328114375521722561" at="14,0,19,0" />
+      <scope id="6328114375521722561" at="22,0,29,0" />
+      <unit id="6328114375521722561" at="20,0,30,0" name="jetbrains.mps.lang.text.test.editor.AddNodeWrapper_Test$TestBody" />
+      <unit id="6328114375521722561" at="12,0,31,0" name="jetbrains.mps.lang.text.test.editor.AddNodeWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375521723619">
+    <file name="AddWordAfterWrapper_Test.java">
+      <node id="6328114375521723619" at="13,59,14,113" concept="0" />
+      <node id="6328114375521723619" at="14,113,15,106" concept="0" />
+      <node id="6328114375521723619" at="21,51,22,72" concept="0" />
+      <node id="6328114375521723631" at="22,72,23,26" concept="0" />
+      <node id="6328114375521723619" at="12,0,17,0" concept="1" trace="test_AddWordAfterWrapper#()V" />
+      <node id="6328114375521723619" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375521723619" at="13,59,15,106" />
+      <scope id="6328114375521723619" at="21,51,23,26" />
+      <scope id="6328114375521723619" at="12,0,17,0" />
+      <scope id="6328114375521723619" at="20,0,25,0" />
+      <unit id="6328114375521723619" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterWrapper_Test$TestBody" />
+      <unit id="6328114375521723619" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375521723647">
+    <file name="SplitWord_Test.java">
+      <node id="6328114375521723647" at="13,49,14,113" concept="0" />
+      <node id="6328114375521723647" at="14,113,15,96" concept="0" />
+      <node id="6328114375521723647" at="21,51,22,72" concept="0" />
+      <node id="6328114375521723662" at="22,72,23,22" concept="0" />
+      <node id="6328114375521723647" at="12,0,17,0" concept="1" trace="test_SplitWord#()V" />
+      <node id="6328114375521723647" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375521723647" at="13,49,15,96" />
+      <scope id="6328114375521723647" at="21,51,23,22" />
+      <scope id="6328114375521723647" at="12,0,17,0" />
+      <scope id="6328114375521723647" at="20,0,25,0" />
+      <unit id="6328114375521723647" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.SplitWord_Test$TestBody" />
+      <unit id="6328114375521723647" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.SplitWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522038099">
+    <file name="AddNewLineOnTheEndOfTheLine_Test.java">
+      <node id="6328114375522038099" at="13,67,14,113" concept="0" />
+      <node id="6328114375522038099" at="14,113,15,114" concept="0" />
+      <node id="6328114375522038099" at="21,51,22,72" concept="0" />
+      <node id="474718489011390834" at="22,72,23,69" concept="0" />
+      <node id="6328114375522038099" at="12,0,17,0" concept="1" trace="test_AddNewLineOnTheEndOfTheLine#()V" />
+      <node id="6328114375522038099" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522038099" at="13,67,15,114" />
+      <scope id="6328114375522038099" at="21,51,23,69" />
+      <scope id="6328114375522038099" at="12,0,17,0" />
+      <scope id="6328114375522038099" at="20,0,25,0" />
+      <unit id="6328114375522038099" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheEndOfTheLine_Test$TestBody" />
+      <unit id="6328114375522038099" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheEndOfTheLine_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039439">
+    <file name="AddNewLineOnEmptyLine_Test.java">
+      <node id="6328114375522039439" at="13,61,14,113" concept="0" />
+      <node id="6328114375522039439" at="14,113,15,108" concept="0" />
+      <node id="6328114375522039439" at="21,51,22,72" concept="0" />
+      <node id="474718489011364914" at="22,72,23,69" concept="0" />
+      <node id="6328114375522039439" at="12,0,17,0" concept="1" trace="test_AddNewLineOnEmptyLine#()V" />
+      <node id="6328114375522039439" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039439" at="13,61,15,108" />
+      <scope id="6328114375522039439" at="21,51,23,69" />
+      <scope id="6328114375522039439" at="12,0,17,0" />
+      <scope id="6328114375522039439" at="20,0,25,0" />
+      <unit id="6328114375522039439" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnEmptyLine_Test$TestBody" />
+      <unit id="6328114375522039439" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnEmptyLine_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039480">
+    <file name="AddNewLineBeforeWrapper_Test.java">
+      <node id="6328114375522039480" at="13,63,14,113" concept="0" />
+      <node id="6328114375522039480" at="14,113,15,110" concept="0" />
+      <node id="6328114375522039480" at="21,51,22,72" concept="0" />
+      <node id="474718489011425423" at="22,72,23,69" concept="0" />
+      <node id="6328114375522039480" at="12,0,17,0" concept="1" trace="test_AddNewLineBeforeWrapper#()V" />
+      <node id="6328114375522039480" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039480" at="13,63,15,110" />
+      <scope id="6328114375522039480" at="21,51,23,69" />
+      <scope id="6328114375522039480" at="12,0,17,0" />
+      <scope id="6328114375522039480" at="20,0,25,0" />
+      <unit id="6328114375522039480" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineBeforeWrapper_Test$TestBody" />
+      <unit id="6328114375522039480" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineBeforeWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039583">
+    <file name="AddNewLineOnTheMiddleOfTheWord_Test.java">
+      <node id="6328114375522039583" at="13,70,14,113" concept="0" />
+      <node id="6328114375522039583" at="14,113,15,117" concept="0" />
+      <node id="6328114375522039583" at="21,51,22,72" concept="0" />
+      <node id="474718489011402770" at="22,72,23,69" concept="0" />
+      <node id="6328114375522039583" at="12,0,17,0" concept="1" trace="test_AddNewLineOnTheMiddleOfTheWord#()V" />
+      <node id="6328114375522039583" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039583" at="13,70,15,117" />
+      <scope id="6328114375522039583" at="21,51,23,69" />
+      <scope id="6328114375522039583" at="12,0,17,0" />
+      <scope id="6328114375522039583" at="20,0,25,0" />
+      <unit id="6328114375522039583" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheMiddleOfTheWord_Test$TestBody" />
+      <unit id="6328114375522039583" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheMiddleOfTheWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039646">
+    <file name="AddNewLineOnTheStartOfTheLine_Test.java">
+      <node id="6328114375522039646" at="13,69,14,113" concept="0" />
+      <node id="6328114375522039646" at="14,113,15,116" concept="0" />
+      <node id="6328114375522039646" at="21,51,22,72" concept="0" />
+      <node id="474718489011414243" at="22,72,23,69" concept="0" />
+      <node id="6328114375522039646" at="12,0,17,0" concept="1" trace="test_AddNewLineOnTheStartOfTheLine#()V" />
+      <node id="6328114375522039646" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039646" at="13,69,15,116" />
+      <scope id="6328114375522039646" at="21,51,23,69" />
+      <scope id="6328114375522039646" at="12,0,17,0" />
+      <scope id="6328114375522039646" at="20,0,25,0" />
+      <unit id="6328114375522039646" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheStartOfTheLine_Test$TestBody" />
+      <unit id="6328114375522039646" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineOnTheStartOfTheLine_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039770">
+    <file name="AddNewLineBetweenWordAndWrapperOnWord_Test.java">
+      <node id="6328114375522039770" at="13,77,14,113" concept="0" />
+      <node id="6328114375522039770" at="14,113,15,124" concept="0" />
+      <node id="6328114375522039770" at="21,51,22,72" concept="0" />
+      <node id="474718489011425427" at="22,72,23,69" concept="0" />
+      <node id="6328114375522039770" at="12,0,17,0" concept="1" trace="test_AddNewLineBetweenWordAndWrapperOnWord#()V" />
+      <node id="6328114375522039770" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039770" at="13,77,15,124" />
+      <scope id="6328114375522039770" at="21,51,23,69" />
+      <scope id="6328114375522039770" at="12,0,17,0" />
+      <scope id="6328114375522039770" at="20,0,25,0" />
+      <unit id="6328114375522039770" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineBetweenWordAndWrapperOnWord_Test$TestBody" />
+      <unit id="6328114375522039770" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNewLineBetweenWordAndWrapperOnWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039855">
+    <file name="AddWordAfterWord_Test.java">
+      <node id="6328114375522039855" at="13,56,14,113" concept="0" />
+      <node id="6328114375522039855" at="14,113,15,103" concept="0" />
+      <node id="6328114375522039855" at="21,51,22,72" concept="0" />
+      <node id="6328114375522039863" at="22,72,23,26" concept="0" />
+      <node id="6328114375522039855" at="12,0,17,0" concept="1" trace="test_AddWordAfterWord#()V" />
+      <node id="6328114375522039855" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039855" at="13,56,15,103" />
+      <scope id="6328114375522039855" at="21,51,23,26" />
+      <scope id="6328114375522039855" at="12,0,17,0" />
+      <scope id="6328114375522039855" at="20,0,25,0" />
+      <unit id="6328114375522039855" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterWord_Test$TestBody" />
+      <unit id="6328114375522039855" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWordAfterWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039892">
+    <file name="AddWordBeforeWord_Test.java">
+      <node id="6328114375522039892" at="13,57,14,113" concept="0" />
+      <node id="6328114375522039892" at="14,113,15,104" concept="0" />
+      <node id="6328114375522039892" at="21,51,22,72" concept="0" />
+      <node id="6328114375522039900" at="22,72,23,22" concept="0" />
+      <node id="6328114375522039892" at="12,0,17,0" concept="1" trace="test_AddWordBeforeWord#()V" />
+      <node id="6328114375522039892" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039892" at="13,57,15,104" />
+      <scope id="6328114375522039892" at="21,51,23,22" />
+      <scope id="6328114375522039892" at="12,0,17,0" />
+      <scope id="6328114375522039892" at="20,0,25,0" />
+      <unit id="6328114375522039892" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWordBeforeWord_Test$TestBody" />
+      <unit id="6328114375522039892" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWordBeforeWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039917">
+    <file name="AddWordBeforeWrapper_Test.java">
+      <node id="6328114375522039917" at="13,60,14,113" concept="0" />
+      <node id="6328114375522039917" at="14,113,15,107" concept="0" />
+      <node id="6328114375522039917" at="21,51,22,72" concept="0" />
+      <node id="6328114375522039925" at="22,72,23,22" concept="0" />
+      <node id="6328114375522039917" at="12,0,17,0" concept="1" trace="test_AddWordBeforeWrapper#()V" />
+      <node id="6328114375522039917" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039917" at="13,60,15,107" />
+      <scope id="6328114375522039917" at="21,51,23,22" />
+      <scope id="6328114375522039917" at="12,0,17,0" />
+      <scope id="6328114375522039917" at="20,0,25,0" />
+      <unit id="6328114375522039917" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddWordBeforeWrapper_Test$TestBody" />
+      <unit id="6328114375522039917" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddWordBeforeWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522039957">
+    <file name="BackspaceSpaceBetweenWords_Test.java">
+      <node id="6328114375522039957" at="13,66,14,113" concept="0" />
+      <node id="6328114375522039957" at="14,113,15,113" concept="0" />
+      <node id="6328114375522039957" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040769" at="22,72,23,72" concept="0" />
+      <node id="6328114375522039957" at="12,0,17,0" concept="1" trace="test_BackspaceSpaceBetweenWords#()V" />
+      <node id="6328114375522039957" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522039957" at="13,66,15,113" />
+      <scope id="6328114375522039957" at="21,51,23,72" />
+      <scope id="6328114375522039957" at="12,0,17,0" />
+      <scope id="6328114375522039957" at="20,0,25,0" />
+      <unit id="6328114375522039957" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWords_Test$TestBody" />
+      <unit id="6328114375522039957" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWords_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522040778">
+    <file name="DeleteSpaceBetweenWords_Test.java">
+      <node id="6328114375522040778" at="13,63,14,113" concept="0" />
+      <node id="6328114375522040778" at="14,113,15,110" concept="0" />
+      <node id="6328114375522040778" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040787" at="22,72,23,69" concept="0" />
+      <node id="6328114375522040778" at="12,0,17,0" concept="1" trace="test_DeleteSpaceBetweenWords#()V" />
+      <node id="6328114375522040778" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522040778" at="13,63,15,110" />
+      <scope id="6328114375522040778" at="21,51,23,69" />
+      <scope id="6328114375522040778" at="12,0,17,0" />
+      <scope id="6328114375522040778" at="20,0,25,0" />
+      <unit id="6328114375522040778" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWords_Test$TestBody" />
+      <unit id="6328114375522040778" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWords_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522040798">
+    <file name="BackspaceStartOfTheLineBetweenWords_Test.java">
+      <node id="6328114375522040798" at="13,75,14,113" concept="0" />
+      <node id="6328114375522040798" at="14,113,15,122" concept="0" />
+      <node id="6328114375522040798" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040807" at="22,72,23,72" concept="0" />
+      <node id="6328114375522040798" at="12,0,17,0" concept="1" trace="test_BackspaceStartOfTheLineBetweenWords#()V" />
+      <node id="6328114375522040798" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522040798" at="13,75,15,122" />
+      <scope id="6328114375522040798" at="21,51,23,72" />
+      <scope id="6328114375522040798" at="12,0,17,0" />
+      <scope id="6328114375522040798" at="20,0,25,0" />
+      <unit id="6328114375522040798" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceStartOfTheLineBetweenWords_Test$TestBody" />
+      <unit id="6328114375522040798" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceStartOfTheLineBetweenWords_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522040851">
+    <file name="DeleteStartOfTheLineBetweenWords_Test.java">
+      <node id="6328114375522040851" at="13,72,14,113" concept="0" />
+      <node id="6328114375522040851" at="14,113,15,119" concept="0" />
+      <node id="6328114375522040851" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040861" at="22,72,23,69" concept="0" />
+      <node id="6328114375522040851" at="12,0,17,0" concept="1" trace="test_DeleteStartOfTheLineBetweenWords#()V" />
+      <node id="6328114375522040851" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522040851" at="13,72,15,119" />
+      <scope id="6328114375522040851" at="21,51,23,69" />
+      <scope id="6328114375522040851" at="12,0,17,0" />
+      <scope id="6328114375522040851" at="20,0,25,0" />
+      <unit id="6328114375522040851" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteStartOfTheLineBetweenWords_Test$TestBody" />
+      <unit id="6328114375522040851" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteStartOfTheLineBetweenWords_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522040871">
+    <file name="DeleteLineBetweenWordAndWrapper_Test.java">
+      <node id="6328114375522040871" at="13,71,14,113" concept="0" />
+      <node id="6328114375522040871" at="14,113,15,118" concept="0" />
+      <node id="6328114375522040871" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040880" at="22,72,23,69" concept="0" />
+      <node id="6328114375522040871" at="12,0,17,0" concept="1" trace="test_DeleteLineBetweenWordAndWrapper#()V" />
+      <node id="6328114375522040871" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522040871" at="13,71,15,118" />
+      <scope id="6328114375522040871" at="21,51,23,69" />
+      <scope id="6328114375522040871" at="12,0,17,0" />
+      <scope id="6328114375522040871" at="20,0,25,0" />
+      <unit id="6328114375522040871" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWordAndWrapper_Test$TestBody" />
+      <unit id="6328114375522040871" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWordAndWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522040983">
+    <file name="BackspaceLineBetweenWordAndWrapper_Test.java">
+      <node id="6328114375522040983" at="13,74,14,113" concept="0" />
+      <node id="6328114375522040983" at="14,113,15,121" concept="0" />
+      <node id="6328114375522040983" at="21,51,22,72" concept="0" />
+      <node id="6328114375522040993" at="22,72,23,69" concept="0" />
+      <node id="6328114375522040983" at="12,0,17,0" concept="1" trace="test_BackspaceLineBetweenWordAndWrapper#()V" />
+      <node id="6328114375522040983" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522040983" at="13,74,15,121" />
+      <scope id="6328114375522040983" at="21,51,23,69" />
+      <scope id="6328114375522040983" at="12,0,17,0" />
+      <scope id="6328114375522040983" at="20,0,25,0" />
+      <unit id="6328114375522040983" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWordAndWrapper_Test$TestBody" />
+      <unit id="6328114375522040983" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWordAndWrapper_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522041002">
+    <file name="BackspaceLineBetweenWrappers_Test.java">
+      <node id="6328114375522041002" at="13,68,14,113" concept="0" />
+      <node id="6328114375522041002" at="14,113,15,115" concept="0" />
+      <node id="6328114375522041002" at="21,51,22,72" concept="0" />
+      <node id="6328114375522041012" at="22,72,23,72" concept="0" />
+      <node id="6328114375522041002" at="12,0,17,0" concept="1" trace="test_BackspaceLineBetweenWrappers#()V" />
+      <node id="6328114375522041002" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522041002" at="13,68,15,115" />
+      <scope id="6328114375522041002" at="21,51,23,72" />
+      <scope id="6328114375522041002" at="12,0,17,0" />
+      <scope id="6328114375522041002" at="20,0,25,0" />
+      <unit id="6328114375522041002" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWrappers_Test$TestBody" />
+      <unit id="6328114375522041002" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceLineBetweenWrappers_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522041052">
+    <file name="DeleteLineBetweenWrappers_Test.java">
+      <node id="6328114375522041052" at="13,65,14,113" concept="0" />
+      <node id="6328114375522041052" at="14,113,15,112" concept="0" />
+      <node id="6328114375522041052" at="21,51,22,72" concept="0" />
+      <node id="6328114375522041062" at="22,72,23,69" concept="0" />
+      <node id="6328114375522041052" at="12,0,17,0" concept="1" trace="test_DeleteLineBetweenWrappers#()V" />
+      <node id="6328114375522041052" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522041052" at="13,65,15,112" />
+      <scope id="6328114375522041052" at="21,51,23,69" />
+      <scope id="6328114375522041052" at="12,0,17,0" />
+      <scope id="6328114375522041052" at="20,0,25,0" />
+      <unit id="6328114375522041052" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWrappers_Test$TestBody" />
+      <unit id="6328114375522041052" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteLineBetweenWrappers_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522041077">
+    <file name="DeleteEmptyLine_Test.java">
+      <node id="6328114375522041077" at="13,55,14,113" concept="0" />
+      <node id="6328114375522041077" at="14,113,15,102" concept="0" />
+      <node id="6328114375522041077" at="21,51,22,72" concept="0" />
+      <node id="6328114375522041087" at="22,72,23,69" concept="0" />
+      <node id="6328114375522041077" at="12,0,17,0" concept="1" trace="test_DeleteEmptyLine#()V" />
+      <node id="6328114375522041077" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522041077" at="13,55,15,102" />
+      <scope id="6328114375522041077" at="21,51,23,69" />
+      <scope id="6328114375522041077" at="12,0,17,0" />
+      <scope id="6328114375522041077" at="20,0,25,0" />
+      <unit id="6328114375522041077" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.DeleteEmptyLine_Test$TestBody" />
+      <unit id="6328114375522041077" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.DeleteEmptyLine_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522041154">
+    <file name="BackspaceEmptyLine_Test.java">
+      <node id="6328114375522041154" at="13,58,14,113" concept="0" />
+      <node id="6328114375522041154" at="14,113,15,105" concept="0" />
+      <node id="6328114375522041154" at="21,51,22,72" concept="0" />
+      <node id="6328114375522041166" at="22,72,23,72" concept="0" />
+      <node id="6328114375522041154" at="12,0,17,0" concept="1" trace="test_BackspaceEmptyLine#()V" />
+      <node id="6328114375522041154" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522041154" at="13,58,15,105" />
+      <scope id="6328114375522041154" at="21,51,23,72" />
+      <scope id="6328114375522041154" at="12,0,17,0" />
+      <scope id="6328114375522041154" at="20,0,25,0" />
+      <unit id="6328114375522041154" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.BackspaceEmptyLine_Test$TestBody" />
+      <unit id="6328114375522041154" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.BackspaceEmptyLine_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522041259">
+    <file name="DeleteSpaceBetweenWordAndWrapperFromWord_Test.java">
+      <node id="6328114375522041259" at="14,80,15,113" concept="0" />
+      <node id="6328114375522041259" at="15,113,16,127" concept="0" />
+      <node id="6328114375522041259" at="22,51,23,72" concept="0" />
+      <node id="6328114375522061528" at="25,44,26,73" concept="0" />
+      <node id="6328114375522060973" at="25,0,28,0" concept="1" trace="run#()V" />
+      <node id="6328114375522041259" at="13,0,18,0" concept="1" trace="test_DeleteSpaceBetweenWordAndWrapperFromWord#()V" />
+      <node id="6328114375522060715" at="23,72,28,16" concept="0" />
+      <node id="6328114375522041259" at="21,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522060974" at="25,44,26,73" />
+      <scope id="6328114375522041259" at="14,80,16,127" />
+      <scope id="6328114375522060973" at="25,0,28,0" />
+      <scope id="6328114375522041259" at="13,0,18,0" />
+      <scope id="6328114375522041259" at="22,51,28,16" />
+      <scope id="6328114375522041259" at="21,0,30,0" />
+      <unit id="6328114375522060973" at="24,44,28,7" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWord_Test$TestBody$1" />
+      <unit id="6328114375522041259" at="19,0,31,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWord_Test$TestBody" />
+      <unit id="6328114375522041259" at="11,0,32,0" name="jetbrains.mps.lang.text.test.editor.DeleteSpaceBetweenWordAndWrapperFromWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522061918">
+    <file name="BackspaceSpaceBetweenWordAndWrapperFromWord_Test.java">
+      <node id="6328114375522061918" at="14,83,15,113" concept="0" />
+      <node id="6328114375522061918" at="15,113,16,130" concept="0" />
+      <node id="6328114375522061918" at="22,51,23,72" concept="0" />
+      <node id="6328114375522062052" at="25,44,26,76" concept="0" />
+      <node id="6328114375522062050" at="25,0,28,0" concept="1" trace="run#()V" />
+      <node id="6328114375522061918" at="13,0,18,0" concept="1" trace="test_BackspaceSpaceBetweenWordAndWrapperFromWord#()V" />
+      <node id="6328114375522062048" at="23,72,28,16" concept="0" />
+      <node id="6328114375522061918" at="21,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522062051" at="25,44,26,76" />
+      <scope id="6328114375522061918" at="14,83,16,130" />
+      <scope id="6328114375522062050" at="25,0,28,0" />
+      <scope id="6328114375522061918" at="13,0,18,0" />
+      <scope id="6328114375522061918" at="22,51,28,16" />
+      <scope id="6328114375522061918" at="21,0,30,0" />
+      <unit id="6328114375522062050" at="24,44,28,7" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWord_Test$TestBody$1" />
+      <unit id="6328114375522061918" at="19,0,31,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWord_Test$TestBody" />
+      <unit id="6328114375522061918" at="11,0,32,0" name="jetbrains.mps.lang.text.test.editor.BackspaceSpaceBetweenWordAndWrapperFromWord_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522062147">
+    <file name="AddNodeWrapperContent_Test.java">
+      <node id="6328114375522062147" at="15,61,16,113" concept="0" />
+      <node id="6328114375522062147" at="16,113,17,108" concept="0" />
+      <node id="6328114375522062147" at="23,51,24,72" concept="0" />
+      <node id="6328114375522062160" at="24,72,25,71" concept="0" />
+      <node id="6328114375522062162" at="25,71,26,33" concept="0" />
+      <node id="6328114375522062163" at="26,33,27,82" concept="0" />
+      <node id="6328114375522062147" at="14,0,19,0" concept="1" trace="test_AddNodeWrapperContent#()V" />
+      <node id="6328114375522062147" at="22,0,29,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522062147" at="15,61,17,108" />
+      <scope id="6328114375522062147" at="23,51,27,82" />
+      <scope id="6328114375522062147" at="14,0,19,0" />
+      <scope id="6328114375522062147" at="22,0,29,0" />
+      <unit id="6328114375522062147" at="20,0,30,0" name="jetbrains.mps.lang.text.test.editor.AddNodeWrapperContent_Test$TestBody" />
+      <unit id="6328114375522062147" at="12,0,31,0" name="jetbrains.mps.lang.text.test.editor.AddNodeWrapperContent_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522077964">
+    <file name="MakeWordUnderlined_Test.java">
+      <node id="6328114375522077964" at="17,58,18,113" concept="0" />
+      <node id="6328114375522077964" at="18,113,19,105" concept="0" />
+      <node id="6328114375522077964" at="25,51,26,72" concept="0" />
+      <node id="6328114375522077972" at="26,72,27,82" concept="0" />
+      <node id="6328114375522077974" at="27,82,28,122" concept="0" />
+      <node id="6328114375522077985" at="28,122,29,0" concept="2" />
+      <node id="6328114375522077964" at="16,0,21,0" concept="1" trace="test_MakeWordUnderlined#()V" />
+      <node id="6328114375522077964" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522077964" at="17,58,19,105" />
+      <scope id="6328114375522077964" at="25,51,29,0" />
+      <scope id="6328114375522077964" at="16,0,21,0" />
+      <scope id="6328114375522077964" at="24,0,31,0" />
+      <unit id="6328114375522077964" at="22,0,32,0" name="jetbrains.mps.lang.text.test.editor.MakeWordUnderlined_Test$TestBody" />
+      <unit id="6328114375522077964" at="14,0,33,0" name="jetbrains.mps.lang.text.test.editor.MakeWordUnderlined_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522082447">
+    <file name="BackspaceFirstLineFromStartAndWholeText_Test.java">
+      <node id="6328114375522082447" at="14,79,15,113" concept="0" />
+      <node id="6328114375522082447" at="15,113,16,126" concept="0" />
+      <node id="6328114375522082447" at="22,51,23,72" concept="0" />
+      <node id="6328114375522082591" at="25,44,26,76" concept="0" />
+      <node id="6328114375522082589" at="25,0,28,0" concept="1" trace="run#()V" />
+      <node id="6328114375522082447" at="13,0,18,0" concept="1" trace="test_BackspaceFirstLineFromStartAndWholeText#()V" />
+      <node id="6328114375522082587" at="23,72,28,16" concept="0" />
+      <node id="6328114375522082447" at="21,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522082590" at="25,44,26,76" />
+      <scope id="6328114375522082447" at="14,79,16,126" />
+      <scope id="6328114375522082589" at="25,0,28,0" />
+      <scope id="6328114375522082447" at="13,0,18,0" />
+      <scope id="6328114375522082447" at="22,51,28,16" />
+      <scope id="6328114375522082447" at="21,0,30,0" />
+      <unit id="6328114375522082589" at="24,44,28,7" name="jetbrains.mps.lang.text.test.editor.BackspaceFirstLineFromStartAndWholeText_Test$TestBody$1" />
+      <unit id="6328114375522082447" at="19,0,31,0" name="jetbrains.mps.lang.text.test.editor.BackspaceFirstLineFromStartAndWholeText_Test$TestBody" />
+      <unit id="6328114375522082447" at="11,0,32,0" name="jetbrains.mps.lang.text.test.editor.BackspaceFirstLineFromStartAndWholeText_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522082810">
+    <file name="DeleteLastLineFromStartAndWholeText_Test.java">
+      <node id="6328114375522082810" at="14,75,15,113" concept="0" />
+      <node id="6328114375522082810" at="15,113,16,122" concept="0" />
+      <node id="6328114375522082810" at="22,51,23,72" concept="0" />
+      <node id="6328114375522082826" at="25,44,26,73" concept="0" />
+      <node id="6328114375522082824" at="25,0,28,0" concept="1" trace="run#()V" />
+      <node id="6328114375522082810" at="13,0,18,0" concept="1" trace="test_DeleteLastLineFromStartAndWholeText#()V" />
+      <node id="6328114375522082822" at="23,72,28,16" concept="0" />
+      <node id="6328114375522082810" at="21,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522082825" at="25,44,26,73" />
+      <scope id="6328114375522082810" at="14,75,16,122" />
+      <scope id="6328114375522082824" at="25,0,28,0" />
+      <scope id="6328114375522082810" at="13,0,18,0" />
+      <scope id="6328114375522082810" at="22,51,28,16" />
+      <scope id="6328114375522082810" at="21,0,30,0" />
+      <unit id="6328114375522082824" at="24,44,28,7" name="jetbrains.mps.lang.text.test.editor.DeleteLastLineFromStartAndWholeText_Test$TestBody$1" />
+      <unit id="6328114375522082810" at="19,0,31,0" name="jetbrains.mps.lang.text.test.editor.DeleteLastLineFromStartAndWholeText_Test$TestBody" />
+      <unit id="6328114375522082810" at="11,0,32,0" name="jetbrains.mps.lang.text.test.editor.DeleteLastLineFromStartAndWholeText_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522083044">
+    <file name="AddNextPlaceholderFromText_Test.java">
+      <node id="6328114375522083044" at="13,66,14,113" concept="0" />
+      <node id="6328114375522083044" at="14,113,15,113" concept="0" />
+      <node id="6328114375522083044" at="21,51,22,72" concept="0" />
+      <node id="6328114375522083881" at="22,72,23,80" concept="0" />
+      <node id="6328114375522083044" at="12,0,17,0" concept="1" trace="test_AddNextPlaceholderFromText#()V" />
+      <node id="6328114375522083044" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522083044" at="13,66,15,113" />
+      <scope id="6328114375522083044" at="21,51,23,80" />
+      <scope id="6328114375522083044" at="12,0,17,0" />
+      <scope id="6328114375522083044" at="20,0,25,0" />
+      <unit id="6328114375522083044" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromText_Test$TestBody" />
+      <unit id="6328114375522083044" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromText_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522083892">
+    <file name="AddNextPlaceholderFromOutsideOfTheText_Test.java">
+      <node id="6328114375522083892" at="13,78,14,113" concept="0" />
+      <node id="6328114375522083892" at="14,113,15,125" concept="0" />
+      <node id="6328114375522083892" at="21,51,22,72" concept="0" />
+      <node id="6328114375522083902" at="22,72,23,80" concept="0" />
+      <node id="6328114375522083892" at="12,0,17,0" concept="1" trace="test_AddNextPlaceholderFromOutsideOfTheText#()V" />
+      <node id="6328114375522083892" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522083892" at="13,78,15,125" />
+      <scope id="6328114375522083892" at="21,51,23,80" />
+      <scope id="6328114375522083892" at="12,0,17,0" />
+      <scope id="6328114375522083892" at="20,0,25,0" />
+      <unit id="6328114375522083892" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromOutsideOfTheText_Test$TestBody" />
+      <unit id="6328114375522083892" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNextPlaceholderFromOutsideOfTheText_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/6328114375522083915">
+    <file name="AddNextNodeFromOutsideOfTheText_Test.java">
+      <node id="6328114375522083915" at="13,71,14,113" concept="0" />
+      <node id="6328114375522083915" at="14,113,15,118" concept="0" />
+      <node id="6328114375522083915" at="21,51,22,72" concept="0" />
+      <node id="6328114375522083925" at="22,72,23,69" concept="0" />
+      <node id="6328114375522083915" at="12,0,17,0" concept="1" trace="test_AddNextNodeFromOutsideOfTheText#()V" />
+      <node id="6328114375522083915" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6328114375522083915" at="13,71,15,118" />
+      <scope id="6328114375522083915" at="21,51,23,69" />
+      <scope id="6328114375522083915" at="12,0,17,0" />
+      <scope id="6328114375522083915" at="20,0,25,0" />
+      <unit id="6328114375522083915" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.AddNextNodeFromOutsideOfTheText_Test$TestBody" />
+      <unit id="6328114375522083915" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.AddNextNodeFromOutsideOfTheText_Test" />
+    </file>
+  </root>
+</debug-info>
+
