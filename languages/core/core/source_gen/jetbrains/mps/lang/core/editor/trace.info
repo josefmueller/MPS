@@ -1268,39 +1268,65 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/4058177569374868256">
     <file name="BasePlaceholderEmptyCell_ActionMap.java">
       <node id="4058177569374868256" at="16,95,17,160" concept="2" />
-      <node id="4058177569374868256" at="20,0,21,0" concept="3" trace="myNode" />
-      <node id="4058177569374868256" at="21,78,22,25" concept="2" />
-      <node id="4058177569374868256" at="24,54,25,56" concept="2" />
-      <node id="4058177569375105217" at="27,75,28,206" concept="6" />
-      <node id="4058177569375128464" at="28,206,29,152" concept="2" />
-      <node id="4058177569375007444" at="29,152,30,64" concept="2" />
-      <node id="4058177569374868256" at="16,0,19,0" concept="9" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="4058177569374868256" at="21,0,24,0" concept="1" trace="BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4058177569374868256" at="24,0,27,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="4058177569374868256" at="27,0,32,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4058177569374868256" at="16,95,17,160" />
-      <scope id="4058177569374868256" at="21,78,22,25" />
-      <scope id="4058177569374868256" at="24,54,25,56" />
-      <scope id="4058177569374868256" at="16,0,19,0">
+      <node id="4058177569374868256" at="17,160,18,174" concept="2" />
+      <node id="4058177569374868256" at="21,0,22,0" concept="3" trace="myNode" />
+      <node id="4058177569374868256" at="22,78,23,25" concept="2" />
+      <node id="4058177569374868256" at="25,54,26,56" concept="2" />
+      <node id="4058177569375105217" at="28,75,29,206" concept="6" />
+      <node id="4058177569375128464" at="29,206,30,152" concept="2" />
+      <node id="4058177569375007444" at="30,152,31,64" concept="2" />
+      <node id="4058177569374868256" at="35,0,36,0" concept="3" trace="myNode" />
+      <node id="4058177569374868256" at="36,85,37,25" concept="2" />
+      <node id="4058177569374868256" at="39,54,40,56" concept="2" />
+      <node id="474718489011904075" at="42,75,43,206" concept="6" />
+      <node id="474718489011904081" at="43,206,44,152" concept="2" />
+      <node id="474718489011904088" at="44,152,45,64" concept="2" />
+      <node id="4058177569374868256" at="22,0,25,0" concept="1" trace="BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4058177569374868256" at="25,0,28,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4058177569374868256" at="36,0,39,0" concept="1" trace="BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER_BEFORE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4058177569374868256" at="39,0,42,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4058177569374868256" at="16,0,20,0" concept="9" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4058177569374868256" at="28,0,33,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4058177569374868256" at="42,0,47,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4058177569374868256" at="22,78,23,25" />
+      <scope id="4058177569374868256" at="25,54,26,56" />
+      <scope id="4058177569374868256" at="36,85,37,25" />
+      <scope id="4058177569374868256" at="39,54,40,56" />
+      <scope id="4058177569374868256" at="16,95,18,174" />
+      <scope id="4058177569374868256" at="22,0,25,0">
+        <var name="node" id="4058177569374868256" />
+      </scope>
+      <scope id="4058177569374868256" at="25,0,28,0">
+        <var name="editorContext" id="4058177569374868256" />
+      </scope>
+      <scope id="4058177569375007435" at="28,75,31,64">
+        <var name="placeholder" id="4058177569375105218" />
+      </scope>
+      <scope id="4058177569374868256" at="36,0,39,0">
+        <var name="node" id="4058177569374868256" />
+      </scope>
+      <scope id="4058177569374868256" at="39,0,42,0">
+        <var name="editorContext" id="4058177569374868256" />
+      </scope>
+      <scope id="474718489011904074" at="42,75,45,64">
+        <var name="placeholder" id="474718489011904076" />
+      </scope>
+      <scope id="4058177569374868256" at="16,0,20,0">
         <var name="context" id="4058177569374868256" />
         <var name="editorCell" id="4058177569374868256" />
         <var name="node" id="4058177569374868256" />
       </scope>
-      <scope id="4058177569374868256" at="21,0,24,0">
-        <var name="node" id="4058177569374868256" />
-      </scope>
-      <scope id="4058177569374868256" at="24,0,27,0">
-        <var name="editorContext" id="4058177569374868256" />
-      </scope>
-      <scope id="4058177569375007435" at="27,75,30,64">
-        <var name="placeholder" id="4058177569375105218" />
-      </scope>
-      <scope id="4058177569374868256" at="27,0,32,0">
+      <scope id="4058177569374868256" at="28,0,33,0">
         <var name="editorContext" id="4058177569374868256" />
         <var name="node" id="4058177569374868256" />
       </scope>
-      <unit id="4058177569374868256" at="19,0,33,0" name="jetbrains.mps.lang.core.editor.BasePlaceholderEmptyCell_ActionMap$BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER" />
-      <unit id="4058177569374868256" at="15,0,34,0" name="jetbrains.mps.lang.core.editor.BasePlaceholderEmptyCell_ActionMap" />
+      <scope id="4058177569374868256" at="42,0,47,0">
+        <var name="editorContext" id="4058177569374868256" />
+        <var name="node" id="4058177569374868256" />
+      </scope>
+      <unit id="4058177569374868256" at="20,0,34,0" name="jetbrains.mps.lang.core.editor.BasePlaceholderEmptyCell_ActionMap$BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER" />
+      <unit id="4058177569374868256" at="34,0,48,0" name="jetbrains.mps.lang.core.editor.BasePlaceholderEmptyCell_ActionMap$BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER_BEFORE" />
+      <unit id="4058177569374868256" at="15,0,49,0" name="jetbrains.mps.lang.core.editor.BasePlaceholderEmptyCell_ActionMap" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/4058177569375149993">

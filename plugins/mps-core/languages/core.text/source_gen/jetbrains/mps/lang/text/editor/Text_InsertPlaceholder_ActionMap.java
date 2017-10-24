@@ -15,10 +15,33 @@ import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 public class Text_InsertPlaceholder_ActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT_PLACEHOLDER, new Text_InsertPlaceholder_ActionMap.Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER(node));
+    editorCell.setAction(CellActionType.INSERT_PLACEHOLDER_BEFORE, new Text_InsertPlaceholder_ActionMap.Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER_BEFORE(node));
   }
   public static class Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER extends AbstractCellAction {
     /*package*/ SNode myNode;
     public Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
+      SNode newPlaceholder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
+      ChildAttribute__BehaviorDescriptor.setLink_idBpxLfMirzM.invoke(newPlaceholder, ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(parent));
+      SNodeOperations.insertNextSiblingChild(parent, newPlaceholder);
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
+    }
+  }
+  public static class Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER_BEFORE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public Text_InsertPlaceholder_ActionMap_INSERT_PLACEHOLDER_BEFORE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {

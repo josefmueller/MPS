@@ -65,7 +65,7 @@ public class NodeWrapperElement_LeftBrace_ActionMap {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      NewElementStrategyFactory.createNewLineStrategy(node, editorContext, false, true).execute();
+      NewElementStrategyFactory.createNewLineStrategy(node, editorContext, true, true).execute();
     }
   }
 }

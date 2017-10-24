@@ -15,10 +15,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BasePlaceholderEmptyCell_ActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT_PLACEHOLDER, new BasePlaceholderEmptyCell_ActionMap.BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER(node));
+    editorCell.setAction(CellActionType.INSERT_PLACEHOLDER_BEFORE, new BasePlaceholderEmptyCell_ActionMap.BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER_BEFORE(node));
   }
   public static class BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER extends AbstractCellAction {
     /*package*/ SNode myNode;
     public BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode placeholder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x339681b4da4ef1a7L, "jetbrains.mps.lang.core.structure.BasePlaceholder"));
+      ChildAttribute__BehaviorDescriptor.setLink_idBpxLfMirzM.invoke(placeholder, ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(node));
+      SNodeOperations.insertNextSiblingChild(node, placeholder);
+    }
+  }
+  public static class BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER_BEFORE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public BasePlaceholderEmptyCell_ActionMap_INSERT_PLACEHOLDER_BEFORE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {

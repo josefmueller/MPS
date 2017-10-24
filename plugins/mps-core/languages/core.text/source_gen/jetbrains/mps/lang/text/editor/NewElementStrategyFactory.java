@@ -48,6 +48,7 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
     }
     @Override
     /*package*/ void execute() {
+      SNode currentLine = SNodeOperations.cast(SNodeOperations.getParent(myElement), MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, "jetbrains.mps.lang.text.structure.Line"));
       SNode currentSibling = SNodeOperations.cast(SNodeOperations.getNextSibling(myElement), MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35ee7L, "jetbrains.mps.lang.text.structure.TextElement"));
       SNode newElement = createNewElement();
       SNode newLine = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, "jetbrains.mps.lang.text.structure.Line"));
@@ -57,9 +58,9 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
         ListSequence.fromList(SLinkOperations.getChildren(newLine, MetaAdapterFactory.getContainmentLink(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, 0x2331694e561af167L, "elements"))).addElement(currentSibling);
         currentSibling = next;
       }
-      SNodeOperations.insertNextSiblingChild((SNodeOperations.cast(SNodeOperations.getParent(myElement), MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, "jetbrains.mps.lang.text.structure.Line"))), newLine);
+      SNodeOperations.insertNextSiblingChild(currentLine, newLine);
       if (mySelectNewLine) {
-        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, newElement, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, newElement, SelectionManager.FIRST_CELL, 0);
       }
     }
 
@@ -109,8 +110,11 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
       } else {
         SNodeOperations.insertPrevSiblingChild(myElement, newWord);
       }
+      myEditorContext.flushEvents();
       if (myAddNext) {
-        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, newWord, SelectionManager.FIRST_EDITABLE_CELL, 0);
+        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, newWord, SelectionManager.FIRST_CELL, 0);
+      } else {
+        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, myElement, SelectionManager.FIRST_CELL, 0);
       }
     }
     protected SNode createNewWord() {
@@ -170,15 +174,22 @@ import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
       return StringUtils.substring(myCurrentText, mySelectionEnd);
     }
     /*package*/ SNode getLeftWord() {
-      SNode newWord = SNodeOperations.copyNode(myWord);
-      SPropertyOperations.set(newWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), getLeftText());
-      return newWord;
+      return copyWord(getLeftText());
     }
     /*package*/ SNode getRightWord() {
-      SNode newWord = SNodeOperations.copyNode(myWord);
-      SPropertyOperations.set(newWord, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), getRightText());
-      return newWord;
+      return copyWord(getRightText());
+    }
+    /*package*/ SNode copyWord(String text) {
+      SNode copy = SNodeOperations.copyNode(myWord);
+      SPropertyOperations.set(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value"), text);
+      if (isEmptyString(SPropertyOperations.getString(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x229012ddae35f05L, "value")))) {
+        SPropertyOperations.set(copy, MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"), null);
+      }
+      return copy;
     }
 
+    private static boolean isEmptyString(String str) {
+      return str == null || str.length() == 0;
+    }
   }
 }

@@ -30,7 +30,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodeWrapperElement:
         if (props_NodeWrapperElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NodeWrapperElement");
+          cpb.shortDesc("element which wraps any node");
+          cpb.rawPresentation("node");
           props_NodeWrapperElement = cpb.create();
         }
         return props_NodeWrapperElement;

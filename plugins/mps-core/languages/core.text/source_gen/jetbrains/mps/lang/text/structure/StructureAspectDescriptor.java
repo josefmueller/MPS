@@ -64,6 +64,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.text.structure.TextElement", 0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35ee7L);
     b.origin("r:59e90602-6655-4552-86eb-441a42a9a0e4(jetbrains.mps.lang.text.structure)/3133179214568824809");
     b.aggregate("node", 0x2b7b49e536031feaL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).ordered(true).multiple(false).origin("3133179214568824810").done();
+    b.alias("node");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForText() {

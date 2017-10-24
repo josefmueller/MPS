@@ -1335,8 +1335,12 @@
       <property role="1uS6qo" value="CLICK" />
     </node>
     <node concept="M4N5e" id="3xhyJYa3zm9" role="M5hS2">
-      <property role="1uS6qv" value="insertplaceholder_action_id" />
+      <property role="1uS6qv" value="insert_placeholder_action_id" />
       <property role="1uS6qo" value="INSERT_PLACEHOLDER" />
+    </node>
+    <node concept="M4N5e" id="qmyvdpNLIC" role="M5hS2">
+      <property role="1uS6qv" value="insert_placeholder_before_action_id" />
+      <property role="1uS6qo" value="INSERT_PLACEHOLDER_BEFORE" />
     </node>
   </node>
   <node concept="1TIwiD" id="g_hAIk0">

@@ -38,7 +38,11 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
       }
     }
     if ((neighbour != null)) {
-      return new TextDeleteStrategyFactory.RemoveNeighbourStrategy(neighbour, editorContext, isForward);
+      if (SNodeOperations.isInstanceOf(neighbour, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word"))) {
+        return new TextDeleteStrategyFactory.SelectNeighbourWordStrategy(SNodeOperations.cast(neighbour, MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, "jetbrains.mps.lang.text.structure.Word")), editorContext, isForward);
+      } else {
+        return new TextDeleteStrategyFactory.RemoveNeighbourStrategy(neighbour, editorContext, isForward);
+      }
     } else {
       SNode currentLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, "jetbrains.mps.lang.text.structure.Line"));
       SNode neighbourLine = SNodeOperations.cast(((isForward ? SNodeOperations.getNextSibling(currentLine) : SNodeOperations.getPrevSibling(currentLine))), MetaAdapterFactory.getConcept(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x2331694e561af166L, "jetbrains.mps.lang.text.structure.Line"));
@@ -132,6 +136,23 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
       boolean wasApproved = DeletionApproverUtil.approve(myEditorContext, myNeighbour);
       if (!(wasApproved)) {
         SNodeOperations.deleteNode(myNeighbour);
+      }
+    }
+  }
+  private static class SelectNeighbourWordStrategy extends TextDeleteStrategyFactory.TextDeleteStrategy {
+    private SNode myNeighbour;
+
+    private SelectNeighbourWordStrategy(SNode neighbour, EditorContext editorContext, boolean isForward) {
+      super(editorContext, isForward);
+      myNeighbour = neighbour;
+    }
+
+    @Override
+    /*package*/ void execute() {
+      if (myIsForward) {
+        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, myNeighbour, SelectionManager.FIRST_CELL, 0);
+      } else {
+        SelectionUtil.selectLabelCellAnSetCaret(myEditorContext, myNeighbour, SelectionManager.LAST_CELL, -1);
       }
     }
   }
