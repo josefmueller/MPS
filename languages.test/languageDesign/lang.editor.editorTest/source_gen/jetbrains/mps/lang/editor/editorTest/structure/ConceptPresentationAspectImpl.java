@@ -70,6 +70,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NonSelectableContainer;
   private ConceptPresentation props_NotEditableVaraileReference;
   private ConceptPresentation props_PlaceholderChild;
+  private ConceptPresentation props_PlaceholderChildAttribute;
   private ConceptPresentation props_PlaceholderParent;
   private ConceptPresentation props_PlusExpression;
   private ConceptPresentation props_ReferenceAnnotataion;
@@ -537,6 +538,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PlaceholderChild = cpb.create();
         }
         return props_PlaceholderChild;
+      case LanguageConceptSwitch.PlaceholderChildAttribute:
+        if (props_PlaceholderChildAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PlaceholderChildAttribute");
+          props_PlaceholderChildAttribute = cpb.create();
+        }
+        return props_PlaceholderChildAttribute;
       case LanguageConceptSwitch.PlaceholderParent:
         if (props_PlaceholderParent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

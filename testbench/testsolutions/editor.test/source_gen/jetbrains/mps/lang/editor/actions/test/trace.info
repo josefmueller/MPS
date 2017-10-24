@@ -922,6 +922,54 @@
       <unit id="3597260497452978121" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.Comment_InsertBeforeComment_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3766420342434348696">
+    <file name="InsertPlaceholderAfterCommentedChild_Test.java">
+      <node id="3766420342434348696" at="13,76,14,110" concept="0" />
+      <node id="3766420342434348696" at="14,110,15,126" concept="0" />
+      <node id="3766420342434348696" at="21,51,22,72" concept="0" />
+      <node id="3766420342434348705" at="22,72,23,80" concept="0" />
+      <node id="3766420342434348696" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderAfterCommentedChild#()V" />
+      <node id="3766420342434348696" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3766420342434348696" at="13,76,15,126" />
+      <scope id="3766420342434348696" at="21,51,23,80" />
+      <scope id="3766420342434348696" at="12,0,17,0" />
+      <scope id="3766420342434348696" at="20,0,25,0" />
+      <unit id="3766420342434348696" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterCommentedChild_Test$TestBody" />
+      <unit id="3766420342434348696" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderAfterCommentedChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3766420342434348913">
+    <file name="DontInsertPlaceholderIntoSingleCommentedChildRole_Test.java">
+      <node id="3766420342434348913" at="13,89,14,110" concept="0" />
+      <node id="3766420342434348913" at="14,110,15,139" concept="0" />
+      <node id="3766420342434348913" at="21,51,22,72" concept="0" />
+      <node id="3766420342434348919" at="22,72,23,80" concept="0" />
+      <node id="3766420342434348913" at="12,0,17,0" concept="1" trace="test_DontInsertPlaceholderIntoSingleCommentedChildRole#()V" />
+      <node id="3766420342434348913" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3766420342434348913" at="13,89,15,139" />
+      <scope id="3766420342434348913" at="21,51,23,80" />
+      <scope id="3766420342434348913" at="12,0,17,0" />
+      <scope id="3766420342434348913" at="20,0,25,0" />
+      <unit id="3766420342434348913" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DontInsertPlaceholderIntoSingleCommentedChildRole_Test$TestBody" />
+      <unit id="3766420342434348913" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DontInsertPlaceholderIntoSingleCommentedChildRole_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3766420342434705071">
+    <file name="InsertPlaceholderOnAttribute_Test.java">
+      <node id="3766420342434705071" at="13,68,14,110" concept="0" />
+      <node id="3766420342434705071" at="14,110,15,118" concept="0" />
+      <node id="3766420342434705071" at="21,51,22,72" concept="0" />
+      <node id="3766420342434705077" at="22,72,23,80" concept="0" />
+      <node id="3766420342434705071" at="12,0,17,0" concept="1" trace="test_InsertPlaceholderOnAttribute#()V" />
+      <node id="3766420342434705071" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="3766420342434705071" at="13,68,15,118" />
+      <scope id="3766420342434705071" at="21,51,23,80" />
+      <scope id="3766420342434705071" at="12,0,17,0" />
+      <scope id="3766420342434705071" at="20,0,25,0" />
+      <unit id="3766420342434705071" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderOnAttribute_Test$TestBody" />
+      <unit id="3766420342434705071" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.InsertPlaceholderOnAttribute_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/3978304464958892276">
     <file name="Comment_EmptyStatementList_Test.java">
       <node id="3978304464958892276" at="13,66,14,110" concept="0" />

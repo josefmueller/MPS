@@ -1390,5 +1390,17 @@
     <property role="TrG5h" value="CustomPlaceholder" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="3h50PypBi81">
+    <property role="EcuMT" value="3766420342434505217" />
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="PlaceholderChildAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="3h50PypBi82" role="lGtFl">
+      <property role="Hh88m" value="attribute" />
+      <node concept="trNpa" id="3h50PypBjjO" role="EQaZv">
+        <ref role="trN6q" node="5X9_bIv87wD" resolve="PlaceholderChild" />
+      </node>
+    </node>
+  </node>
 </model>
 

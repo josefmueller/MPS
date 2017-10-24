@@ -5280,7 +5280,7 @@
     <property role="TrG5h" value="Custom_Placeholder_Action" />
     <ref role="1h_SK9" to="68nn:5X9_bIv87wC" resolve="PlaceholderParent" />
     <node concept="1hA7zw" id="64sE5JwoRqY" role="1h_SK8">
-      <property role="1hAc7j" value="insertplaceholder_action_id" />
+      <property role="1hAc7j" value="insert_placeholder_action_id" />
       <node concept="1hAIg9" id="64sE5JwoRqZ" role="1hA7z_">
         <node concept="3clFbS" id="64sE5JwoRr0" role="2VODD2">
           <node concept="3clFbJ" id="64sE5Jwp6jj" role="3cqZAp">
@@ -5343,6 +5343,20 @@
     <property role="3GE5qa" value="placeholder" />
     <ref role="1XX52x" to="68nn:64sE5JwoRpS" resolve="CustomPlaceholder" />
     <node concept="3F0ifn" id="64sE5Jwp6hw" role="2wV5jI" />
+  </node>
+  <node concept="24kQdi" id="3h50PypBi8c">
+    <property role="3GE5qa" value="placeholder" />
+    <ref role="1XX52x" to="68nn:3h50PypBi81" resolve="PlaceholderChildAttribute" />
+    <node concept="3EZMnI" id="3h50PypBi8e" role="2wV5jI">
+      <node concept="3F0ifn" id="3h50PypBi8l" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;attr" />
+      </node>
+      <node concept="2SsqMj" id="3h50PypBi8r" role="3EZMnx" />
+      <node concept="3F0ifn" id="3h50PypBi8z" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+      </node>
+      <node concept="l2Vlx" id="3h50PypBi8h" role="2iSdaV" />
+    </node>
   </node>
 </model>
 

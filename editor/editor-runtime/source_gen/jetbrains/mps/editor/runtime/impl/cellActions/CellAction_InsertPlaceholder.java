@@ -9,13 +9,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -52,8 +53,14 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
           parentNode = nodeLocation.getParent();
           childNode = nodeLocation.getContextNode();
           containmentLink = nodeLocation.getContainmentLink();
+          if (eq_d2uk49_a0d0b0c0h0f(containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))) {
+            if (SNodeOperations.isInstanceOf(((SNode) childNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))) {
+              containmentLink = ((SContainmentLink) BHReflection.invoke(SNodeOperations.cast(childNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
+            } else {
+              containmentLink = null;
+            }
+          }
           if (containmentLink != null && containmentLink.isMultiple() && parentNode != null) {
-
             return new CellAction_InsertPlaceholder.PlaceToInsert(parentNode, childNode, containmentLink);
           }
         }
@@ -110,4 +117,7 @@ public class CellAction_InsertPlaceholder extends AbstractCellAction {
     return null;
   }
 
+  private static boolean eq_d2uk49_a0d0b0c0h0f(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }

@@ -223,6 +223,7 @@
     <language id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest">
       <concept id="6997653033587013240" name="jetbrains.mps.lang.editor.editorTest.structure.CustomPlaceholder" flags="ng" index="21vXSz" />
       <concept id="5824791737913814352" name="jetbrains.mps.lang.editor.editorTest.structure.AttributeChild" flags="ng" index="GbBLD" />
+      <concept id="3766420342434505217" name="jetbrains.mps.lang.editor.editorTest.structure.PlaceholderChildAttribute" flags="ng" index="2HQ25p" />
       <concept id="9133079350911740822" name="jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild" flags="ng" index="2IcTNh">
         <child id="9133079350911740918" name="child" index="2IcTML" />
       </concept>
@@ -7414,6 +7415,139 @@
       <node concept="yd1bK" id="qmyvdpQ6qz" role="3cqZAp">
         <node concept="pLAjd" id="qmyvdpQ6q_" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3h50PypAFUo">
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="InsertPlaceholderAfterCommentedChild" />
+    <node concept="30quMj" id="3h50PypAFUp" role="LiRBU">
+      <node concept="1X3_iC" id="3h50PypAFVj" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="30quMi" id="3h50PypAFUq" role="8Wnug">
+          <node concept="LIFWc" id="3h50PypAFWe" role="lGtFl">
+            <property role="LIFWa" value="16" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="16" />
+            <property role="p6zMs" value="16" />
+            <property role="LIFWd" value="Constant_rvi6pt_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3h50PypAFUw" role="LjaKd">
+      <node concept="2HxZob" id="3h50PypAFUx" role="3cqZAp">
+        <node concept="1iFQzN" id="3h50PypAFUy" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3emwrjqk66J" resolve="InsertPlaceholder" />
+        </node>
+      </node>
+    </node>
+    <node concept="30quMj" id="3h50PypAFWo" role="LiZbd">
+      <node concept="1X3_iC" id="3h50PypAFWp" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="30quMi" id="3h50PypAFWq" role="8Wnug" />
+      </node>
+      <node concept="3DQ70j" id="3h50PypB7Hz" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="LIFWc" id="3h50PypB7ME" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_rkx1ed_a0a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3h50PypAFXL">
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="DontInsertPlaceholderIntoSingleCommentedChildRole" />
+    <node concept="30quMj" id="3h50PypAFXM" role="LiRBU">
+      <node concept="1X3_iC" id="3h50PypAFYz" role="lGtFl">
+        <property role="3V$3am" value="singleChild" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532266" />
+        <node concept="30quMi" id="3h50PypAFYp" role="8Wnug">
+          <node concept="LIFWc" id="3h50PypAFZ5" role="lGtFl">
+            <property role="LIFWa" value="15" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="15" />
+            <property role="p6zMs" value="15" />
+            <property role="LIFWd" value="Constant_rvi6pt_a0" />
+          </node>
+        </node>
+      </node>
+      <node concept="3DQ70j" id="3h50PypAFYK" role="lGtFl">
+        <property role="3V$3am" value="smodelAttribute" />
+        <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="3h50PypAFXQ" role="LjaKd">
+      <node concept="2HxZob" id="3h50PypAFXR" role="3cqZAp">
+        <node concept="1iFQzN" id="3h50PypAFXS" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3emwrjqk66J" resolve="InsertPlaceholder" />
+        </node>
+      </node>
+    </node>
+    <node concept="30quMj" id="3h50PypAFZj" role="LiZbd">
+      <node concept="1X3_iC" id="3h50PypAFZk" role="lGtFl">
+        <property role="3V$3am" value="singleChild" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532266" />
+        <node concept="30quMi" id="3h50PypAFZl" role="8Wnug">
+          <node concept="LIFWc" id="3h50PypAFZm" role="lGtFl">
+            <property role="LIFWa" value="15" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="15" />
+            <property role="p6zMs" value="15" />
+            <property role="LIFWd" value="Constant_rvi6pt_a0" />
+          </node>
+        </node>
+      </node>
+      <node concept="3DQ70j" id="3h50PypAFZn" role="lGtFl">
+        <property role="3V$3am" value="smodelAttribute" />
+        <property role="3V$3ak" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3h50PypC2UJ">
+    <property role="3GE5qa" value="placeholder" />
+    <property role="TrG5h" value="InsertPlaceholderOnAttribute" />
+    <node concept="30quMj" id="3h50PypC2UK" role="LiRBU">
+      <node concept="30quMi" id="3h50PypC2UM" role="30quMn">
+        <node concept="2HQ25p" id="3h50PypC3dO" role="lGtFl">
+          <node concept="LIFWc" id="3h50PypC3e_" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="5" />
+            <property role="p6zMs" value="5" />
+            <property role="LIFWd" value="Constant_wb8d24_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3h50PypC2UO" role="LjaKd">
+      <node concept="2HxZob" id="3h50PypC2UP" role="3cqZAp">
+        <node concept="1iFQzN" id="3h50PypC2UQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:3emwrjqk66J" resolve="InsertPlaceholder" />
+        </node>
+      </node>
+    </node>
+    <node concept="30quMj" id="3h50PypC3eB" role="LiZbd">
+      <node concept="30quMi" id="3h50PypC3eC" role="30quMn">
+        <node concept="2HQ25p" id="3h50PypC3eD" role="lGtFl" />
+      </node>
+      <node concept="3DQ70j" id="3h50PypC3f9" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="LIFWc" id="3h50PypC3fr" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_rkx1ed_a0a" />
         </node>
       </node>
     </node>
