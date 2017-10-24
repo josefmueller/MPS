@@ -1848,8 +1848,15 @@
     <node concept="1l3spV" id="73fHb9hpulD" role="1l3spN">
       <node concept="m$_wl" id="1DKsZw$POVR" role="39821P">
         <ref role="m_rDy" node="iTJcDIxtN1" resolve="jetbrains.mps.idea.vcs" />
-        <node concept="3_I8Xc" id="iTJcDIxtRy" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:3SChJ9XyqS7" resolve="META-INF" />
+        <node concept="398223" id="4qe746bVnKU" role="39821P">
+          <node concept="3_J27D" id="4qe746bVnKW" role="Nbhlr">
+            <node concept="3Mxwew" id="4qe746bVnLa" role="3MwsjC">
+              <property role="3MwjfP" value="META-INF" />
+            </node>
+          </node>
+          <node concept="3_I8Xc" id="iTJcDIxtRy" role="39821P">
+            <ref role="3_I8Xa" to="ffeo:3SChJ9XyqTP" />
+          </node>
         </node>
         <node concept="3_I8Xc" id="iTJcDIHi7I" role="39821P">
           <ref role="3_I8Xa" to="ffeo:79dnIA70i5s" resolve="languages" />
