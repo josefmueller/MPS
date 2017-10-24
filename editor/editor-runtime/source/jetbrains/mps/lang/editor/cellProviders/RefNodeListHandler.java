@@ -114,23 +114,31 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   protected SNode getAnchorNode(EditorCell anchorCell) {
-    SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
-    if (anchorNode != null) {
+    SNode anchorNodeTemp = (anchorCell != null ? anchorCell.getSNode() : null);
+    SNode anchorNodeResult = null;
+    if (anchorNodeTemp != null) {
       Collection<? extends SNode> listElements = IterableUtil.asCollection(
           AttributeOperations.getChildNodesAndAttributes(getNode(), ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole)));
-      // anchor should be directly referenced from "list owner"
-      while (anchorNode != null && !listElements.contains(anchorNode)) {
-        anchorNode = anchorNode.getParent();
+      if (!listElements.isEmpty()) {
+        // anchor should be directly referenced from "list owner"
+        while (anchorNodeTemp != null && anchorNodeTemp != getNode()) {
+          if (listElements.contains(anchorNodeTemp)) {
+            anchorNodeResult = anchorNodeTemp;
+            break;
+          } else {
+            anchorNodeTemp = anchorNodeTemp.getParent();
+          }
+        }
       }
     }
-    return anchorNode;
+    return anchorNodeResult;
   }
 
   @Override
   protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
     getNode().insertChildBefore(getElementRole(), nodeToInsert,
-        insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling());
+                                insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling());
   }
 
   @Override
@@ -153,6 +161,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
       SNode nodeToFilter = next;
       if (CommentUtil.isComment(next)) {
         nodeToFilter = CommentUtil.getCommentedNode(next);
+      } else if (AttributeOperations.isChildAttribute(next)) {
+        continue;
       }
       if (!filter(nodeToFilter)) {
         it.remove();
