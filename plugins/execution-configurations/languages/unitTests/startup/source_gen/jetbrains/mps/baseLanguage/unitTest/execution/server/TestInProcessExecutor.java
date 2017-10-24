@@ -33,7 +33,6 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
     myDispatcher = dispatcher;
     myNodes = nodes;
     myTestRunState = testRunState;
-    myFilter = new InProcessExecutionFilter();
   }
 
   private void waitWhileNotReady() {

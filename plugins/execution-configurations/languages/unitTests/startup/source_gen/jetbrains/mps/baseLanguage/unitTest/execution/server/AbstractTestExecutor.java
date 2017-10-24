@@ -17,13 +17,12 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   private static final Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
   /*package*/ static final int EXIT_CODE_FOR_EXCEPTION = -12345;
 
-  private IgnoringStoppableRunner myCurrentRunner = null;
-  /*package*/ Filter myFilter = new EmptyFilter();
+  private StoppableRunner myCurrentRunner = null;
   private RunListener myListener;
   private volatile boolean myStopping = false;
 
   @Nullable
-  private IgnoringStoppableRunner getCurrentRunner() {
+  private StoppableRunner getCurrentRunner() {
     return myCurrentRunner;
   }
 
@@ -64,7 +63,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   }
 
   protected void stopRun() {
-    IgnoringStoppableRunner currentRunner = this.getCurrentRunner();
+    StoppableRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
     myStopping = true;
@@ -72,7 +71,9 @@ public abstract class AbstractTestExecutor implements TestExecutor {
 
 
   private void updateRunner(Request request) {
-    myCurrentRunner = new IgnoringStoppableRunner(request, myStopping, myFilter);
+    //  FIXME boolean flag and extra runnable to monitor it is a bit too much, no? 
+    // when we updateRunner() on each step, why can't we check myStoping == true inside doExecute()? 
+    myCurrentRunner = new StoppableRunner(request, myStopping);
   }
 
   @NotNull

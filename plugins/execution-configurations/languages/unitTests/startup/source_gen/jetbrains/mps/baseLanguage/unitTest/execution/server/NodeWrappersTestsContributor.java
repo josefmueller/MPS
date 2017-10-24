@@ -7,6 +7,7 @@ import org.junit.runner.Request;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
 import org.jetbrains.annotations.NotNull;
@@ -14,14 +15,10 @@ import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.junit.runner.Runner;
-import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.notification.Failure;
 
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
@@ -35,20 +32,20 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     final List<Request> requestList = new ArrayList<Request>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (ITestNodeWrapper<?> testNode : myTestNodes) {
+        InProcessExecutionFilter filter = new InProcessExecutionFilter();
+        for (ITestNodeWrapper testNode : myTestNodes) {
           String fqName = testNode.getFqName();
-          final SModule module = getModuleByNode(testNode.getNode());
+          final SNode tn = testNode.getNode();
+          final SModule module = getModuleByNode(tn);
           if (testNode.isTestCase()) {
             Request requestForClass;
             try {
               final Class<?> aClass = loadTestClass(fqName, module);
-              requestForClass = Request.aClass(aClass);
+              requestForClass = filter.prepare(testNode, tn, Request.aClass(aClass));
             } catch (ClassNotFoundException e) {
-              requestForClass = new NodeWrappersTestsContributor.EmptyRequest(Description.createSuiteDescription(fqName), e);
+              requestForClass = Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
             }
-            TestNodeRequest request = new TestNodeRequest(requestForClass, testNode);
-            requestList.add(request);
-
+            requestList.add(requestForClass);
           } else {
             int index = fqName.lastIndexOf('.');
             String testFqName = fqName.substring(0, index);
@@ -56,12 +53,11 @@ public class NodeWrappersTestsContributor implements TestsContributor {
             Request requestForMethod;
             try {
               final Class aClass = loadTestClass(testFqName, module);
-              requestForMethod = Request.method(aClass, methodName);
+              requestForMethod = filter.prepare(testNode, tn, Request.method(aClass, methodName));
             } catch (ClassNotFoundException e) {
-              requestForMethod = new NodeWrappersTestsContributor.EmptyRequest(Description.createTestDescription(testFqName, methodName), e);
+              requestForMethod = Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
             }
-            TestNodeRequest request = new TestNodeRequest(requestForMethod, testNode);
-            requestList.add(request);
+            requestList.add(requestForMethod);
           }
         }
       }
@@ -82,33 +78,5 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     final SModel model = SNodeOperations.getModel(testNode);
     final SModuleReference moduleReference = model.getModule().getModuleReference();
     return ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-  }
-
-  private static class EmptyRequest extends Request {
-    private final Description myDescription;
-    private final Exception myException;
-
-    public EmptyRequest(Description description, Exception exception) {
-      myDescription = description;
-      myException = exception;
-    }
-
-    public Runner getRunner() {
-      return new NodeWrappersTestsContributor.EmptyRequest.IgnoringRunner();
-    }
-
-    private class IgnoringRunner extends Runner {
-      @Override
-      public Description getDescription() {
-        return myDescription;
-      }
-
-      @Override
-      public void run(RunNotifier notifier) {
-        notifier.fireTestStarted(myDescription);
-        notifier.fireTestAssumptionFailed(new Failure(myDescription, myException));
-        notifier.fireTestFinished(myDescription);
-      }
-    }
   }
 }
