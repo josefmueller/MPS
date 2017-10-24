@@ -88,6 +88,7 @@ import jetbrains.mps.smodel.SNodePointer;
     style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_8g1p9d_a2b0());
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8g1p9d_a3b0()));
     style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_8g1p9d_a4b0());
+    style.set(StyleAttributes.URL, _StyleParameter_QueryFunction_8g1p9d_a5b0());
     editorCell.getStyle().putAll(style);
     Word_ActionMap.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new Word_KeyMap());
@@ -117,6 +118,9 @@ import jetbrains.mps.smodel.SNodePointer;
       return MPSFonts.ITALIC;
     }
     return MPSFonts.PLAIN;
+  }
+  private String _StyleParameter_QueryFunction_8g1p9d_a5b0() {
+    return SPropertyOperations.getString(getNode(), MetaAdapterFactory.getProperty(0xc7fb639fbe784307L, 0x89b0b5959c3fa8c8L, 0x229012ddae35f04L, 0x57d1fa7f2af1d485L, "url"));
   }
   public static class ReplaceWith_TextElement_cellMenu_8g1p9d_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_TextElement_cellMenu_8g1p9d_a0b0() {

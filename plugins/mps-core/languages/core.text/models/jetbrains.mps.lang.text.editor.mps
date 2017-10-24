@@ -134,6 +134,10 @@
         <child id="7173407872095451092" name="menuReference" index="1IG6uw" />
       </concept>
       <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
+      <concept id="6681408443912431607" name="jetbrains.mps.lang.editor.structure.URLStyleClassItem" flags="ln" index="3u2Kpz">
+        <child id="6681408443912431608" name="query" index="3u2KpG" />
+      </concept>
+      <concept id="6681408443912573553" name="jetbrains.mps.lang.editor.structure.QueryFunction_URL" flags="in" index="3u3nf_" />
       <concept id="1219226236603" name="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" flags="ln" index="3vyZuw" />
       <concept id="1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" flags="ln" index="3$6MrZ">
         <property id="1215007802031" name="value" index="3$6WeP" />
@@ -790,6 +794,20 @@
                 <node concept="10M0yZ" id="5my7ZQEz2Ld" role="3cqZAk">
                   <ref role="3cqZAo" to="exr9:~MPSFonts.PLAIN" resolve="PLAIN" />
                   <ref role="1PxDUh" to="exr9:~MPSFonts" resolve="MPSFonts" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3u2Kpz" id="3h50PypIWCV" role="3F10Kt">
+          <node concept="3u3nf_" id="3h50PypIXlG" role="3u2KpG">
+            <node concept="3clFbS" id="3h50PypIXlH" role="2VODD2">
+              <node concept="3clFbF" id="3h50PypIXu6" role="3cqZAp">
+                <node concept="2OqwBi" id="3h50PypIXFJ" role="3clFbG">
+                  <node concept="pncrf" id="3h50PypIXu5" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="3h50PypIYqB" role="2OqNvi">
+                    <ref role="3TsBF5" to="zqge:5vhYBWEWti5" resolve="url" />
+                  </node>
                 </node>
               </node>
             </node>
