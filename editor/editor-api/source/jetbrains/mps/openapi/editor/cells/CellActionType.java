@@ -79,5 +79,8 @@ public enum CellActionType {
 
   COMMENT,
 
+  INSERT_PLACEHOLDER,
+  INSERT_PLACEHOLDER_BEFORE,
+
   CLICK
 }

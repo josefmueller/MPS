@@ -10,11 +10,11 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -53,25 +53,39 @@ public class EditorActionUtils {
    * Should be executed inside read action
    */
   public static void callInsertAction(@NotNull EditorCell cell) {
-    ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
     if (cell.isErrorState() && APICellAdapter.validate(cell, false, true)) {
       return;
     }
+    EditorActionUtils.callAction(cell, CellActionType.INSERT, true);
+  }
+  /**
+   * Should be executed inside read action
+   */
+  public static void callInsertBeforeAction(@NotNull EditorCell cell) {
+    if (cell.isErrorState() && APICellAdapter.validate(cell, true, true)) {
+      return;
+    }
+    EditorActionUtils.callAction(cell, CellActionType.INSERT_BEFORE, false);
+  }
 
+
+  private static void callAction(EditorCell cell, CellActionType cellAction, boolean after) {
+    ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
     if (cell instanceof EditorCell_Label && !(isLinkCollection(cell))) {
       // Looking for the next child collection to the right from this cell 
-      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, true, false).find();
+      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, after, false).find();
+
 
       if (cellWithRole == null) {
         // Looking for the next child collection in parents 
-        cellWithRole = getSiblingCollectionForInsert(cell, true);
+        cellWithRole = getSiblingCollectionForInsert(cell, after);
       }
 
-      if (cellWithRole != null && actionHandler.executeAction(cellWithRole, CellActionType.INSERT)) {
+      if (cellWithRole != null && actionHandler.executeAction(cellWithRole, cellAction)) {
         return;
       }
     }
-    actionHandler.executeAction(cell, CellActionType.INSERT);
+    actionHandler.executeAction(cell, cellAction);
   }
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
@@ -83,31 +97,20 @@ public class EditorActionUtils {
     }
     return null;
   }
+
   /**
    * Should be executed inside read action
    */
-  public static void callInsertBeforeAction(@NotNull EditorCell cell) {
-    ActionHandler actionHandler = cell.getEditorComponent().getActionHandler();
-    if (cell.isErrorState() && APICellAdapter.validate(cell, true, true)) {
-      return;
-    }
-
-    if (cell instanceof EditorCell_Label && !(isLinkCollection(cell))) {
-      // Looking for the prev. child collection (to the left from this cell) 
-      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, false, false).find();
-
-      if (cellWithRole == null) {
-        // Looking for the next child collection in parents 
-        cellWithRole = getSiblingCollectionForInsert(cell, false);
-      }
-
-      if (cellWithRole != null && actionHandler.executeAction(cellWithRole, CellActionType.INSERT_BEFORE)) {
-        return;
-      }
-    }
-
-    actionHandler.executeAction(cell, CellActionType.INSERT_BEFORE);
+  public static void callInsertPlaceholderAction(@NotNull EditorCell cell) {
+    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER, true);
   }
+  /**
+   * Should be executed inside read action
+   */
+  public static void callInsertPlaceholderBeforeAction(@NotNull EditorCell cell) {
+    EditorActionUtils.callAction(cell, CellActionType.INSERT_PLACEHOLDER_BEFORE, false);
+  }
+
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding
    * child collection below the cell returned from cell.getNextLeaf() or we should go on and insert

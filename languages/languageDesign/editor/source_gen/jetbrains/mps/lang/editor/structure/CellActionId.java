@@ -53,7 +53,8 @@ public enum CellActionId {
   TOGGLE_FOLDING("TOGGLE_FOLDING", "toggle_folding_action_id"),
   SHOW_MESSAGE("SHOW_MESSAGE", "show_message_action_id"),
   COMMENT("COMMENT", "comment_out_action_id"),
-  CLICK("CLICK", "click_action_id");
+  CLICK("CLICK", "click_action_id"),
+  INSERT_PLACEHOLDER("INSERT_PLACEHOLDER", "insertplaceholder_action_id");
 
   private final String myName;
   public String getName() {
@@ -119,6 +120,7 @@ public enum CellActionId {
     ListSequence.fromList(list).addElement(CellActionId.SHOW_MESSAGE);
     ListSequence.fromList(list).addElement(CellActionId.COMMENT);
     ListSequence.fromList(list).addElement(CellActionId.CLICK);
+    ListSequence.fromList(list).addElement(CellActionId.INSERT_PLACEHOLDER);
     return list;
   }
   public static CellActionId getDefault() {
@@ -268,6 +270,9 @@ public enum CellActionId {
     }
     if (value.equals(CellActionId.CLICK.getValueAsString())) {
       return CellActionId.CLICK;
+    }
+    if (value.equals(CellActionId.INSERT_PLACEHOLDER.getValueAsString())) {
+      return CellActionId.INSERT_PLACEHOLDER;
     }
     return CellActionId.getDefault();
   }

@@ -110,6 +110,9 @@
       <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X 10.5+" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.InsertPlaceholder_Action" class="jetbrains.mps.ide.editor.actions.InsertPlaceholder_Action">
+      <keyboard-shortcut first-keystroke="ctrl shift ENTER" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.Insert_Action" class="jetbrains.mps.ide.editor.actions.Insert_Action">
       <keyboard-shortcut first-keystroke=" ENTER" keymap="$default" />
     </action>
@@ -247,6 +250,7 @@
       <reference ref="jetbrains.mps.ide.editor.actions.Home_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.Insert_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.InsertBefore_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.InsertPlaceholder_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.LocalEnd_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.LocalHome_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.MoveDown_Action" />
