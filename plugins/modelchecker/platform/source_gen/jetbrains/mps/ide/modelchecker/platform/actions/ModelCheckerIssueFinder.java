@@ -4,18 +4,18 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import java.util.List;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.errors.item.ModuleReportItem;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.checkers.IChecker;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.IAbstractChecker;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
@@ -39,15 +39,15 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.Pair;
 
 public class ModelCheckerIssueFinder extends BaseFinder {
-  private final List<SpecificChecker> myExtraCheckers;
+  private final List<IChecker<SModel, ? extends IssueKindReportItem>> myExtraCheckers;
 
-  public ModelCheckerIssueFinder(List<SpecificChecker> extraCheckers) {
+  public ModelCheckerIssueFinder(List<IChecker<SModel, ? extends IssueKindReportItem>> extraCheckers) {
     myExtraCheckers = extraCheckers;
   }
-  public ModelCheckerIssueFinder(SpecificChecker... extraCheckers) {
+  public ModelCheckerIssueFinder(IChecker<SModel, ? extends IssueKindReportItem>... extraCheckers) {
     this(Arrays.asList(extraCheckers));
   }
-  protected final List<SpecificChecker> getSpecificCheckers() {
+  protected final List<IChecker<SModel, ? extends IssueKindReportItem>> getSpecificCheckers() {
     return myExtraCheckers;
   }
   @Override
@@ -62,23 +62,25 @@ public class ModelCheckerIssueFinder extends BaseFinder {
 
       ModuleChecker moduleChecker = new ModuleChecker();
       for (final SModule module : ListSequence.fromList(itemsToCheck.modules)) {
-        moduleChecker.check(module, module.getRepository(), new Consumer<ModuleReportItem>() {
-          public void consume(ModuleReportItem item) {
+        Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
+          public void consume(IssueKindReportItem item) {
             rv.getSearchResults().add(getSearchResultForReportItem(item, module.getRepository()));
           }
-        }, monitor.subTask(1, SubProgressKind.REPLACING));
+        };
+        moduleChecker.check(module, module.getRepository(), errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }
       }
 
-      IChecker<SModel, IssueKindReportItem> modelChecker = ModelChecker.createNew(getSpecificCheckers());
+      IAbstractChecker<SModel, ? extends IssueKindReportItem> modelChecker = ModelChecker.createNew(getSpecificCheckers());
       for (final SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
-        modelChecker.check(modelDescriptor, modelDescriptor.getRepository(), new Consumer<IssueKindReportItem>() {
+        Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
           public void consume(IssueKindReportItem item) {
             rv.getSearchResults().add(getSearchResultForReportItem(item, modelDescriptor.getRepository()));
           }
-        }, monitor.subTask(1, SubProgressKind.REPLACING));
+        };
+        modelChecker.check(modelDescriptor, modelDescriptor.getRepository(), errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
         if (monitor.isCanceled()) {
           break;
         }

@@ -301,6 +301,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -2278,6 +2281,23 @@
       <node concept="3cqZAl" id="2tRCcbzc1_0" role="3clF45" />
       <node concept="3Tm1VV" id="2tRCcbzc1_1" role="1B3o_S" />
     </node>
+    <node concept="3clFb_" id="3xfDcbRpjI2" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="3xfDcbRpjI4" role="1B3o_S" />
+      <node concept="17QB3L" id="3xfDcbRpjI5" role="3clF45" />
+      <node concept="3clFbS" id="3xfDcbRpjI9" role="3clF47">
+        <node concept="3clFbF" id="3xfDcbRpl2r" role="3cqZAp">
+          <node concept="Xl_RD" id="sQz2V6nukn" role="3clFbG">
+            <property role="Xl_RC" value="wrong aspect dependencies" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3xfDcbRpjIa" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="2tRCcbzc1Eu" role="jymVt">
       <property role="TrG5h" value="checkModel" />
       <node concept="_YKpA" id="2tRCcbzc1Hv" role="3clF45">
@@ -2314,22 +2334,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2tRCcbzc1EZ" role="3cqZAp">
-          <node concept="2OqwBi" id="2tRCcbzc1F0" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm5E5" role="2Oq$k0">
-              <ref role="3cqZAo" node="2tRCcbzc1H$" resolve="monitor" />
-            </node>
-            <node concept="liA8E" id="2tRCcbzc1F2" role="2OqNvi">
-              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="sQz2V6nukn" role="37wK5m">
-                <property role="Xl_RC" value="wrong aspect dependencies" />
-              </node>
-              <node concept="3cmrfG" id="2tRCcbzc1F4" role="37wK5m">
-                <property role="3cmrfH" value="1" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="2tRCcbzc5Ug" role="3cqZAp" />
         <node concept="3cpWs8" id="2tRCcbzc5Ul" role="3cqZAp">
           <node concept="3cpWsn" id="2tRCcbzc5Um" role="3cpWs9">
@@ -2355,16 +2359,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="1GAKH_suGGj" role="3clFbx">
-            <node concept="3clFbF" id="1GAKH_suGGv" role="3cqZAp">
-              <node concept="2OqwBi" id="1GAKH_suGGx" role="3clFbG">
-                <node concept="liA8E" id="1GAKH_suGG_" role="2OqNvi">
-                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.done():void" resolve="done" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm_pS" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2tRCcbzc1H$" resolve="monitor" />
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs6" id="1GAKH_suGGr" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTr4u" role="3cqZAk">
                 <ref role="3cqZAo" node="2tRCcbzc1Ey" resolve="results" />
@@ -2642,16 +2636,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2tRCcbzc1Hp" role="3cqZAp">
-          <node concept="2OqwBi" id="2tRCcbzc1Hq" role="3clFbG">
-            <node concept="liA8E" id="2tRCcbzc1Hs" role="2OqNvi">
-              <ref role="37wK5l" to="yyf4:~ProgressMonitor.done():void" resolve="done" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgm2I9" role="2Oq$k0">
-              <ref role="3cqZAo" node="2tRCcbzc1H$" resolve="monitor" />
             </node>
           </node>
         </node>
@@ -3817,6 +3801,23 @@
       <node concept="3Tm1VV" id="1_LT7K4oFQ7" role="1B3o_S" />
       <node concept="3clFbS" id="1_LT7K4oFQ9" role="3clF47" />
     </node>
+    <node concept="3clFb_" id="3xfDcbRoSJB" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="3xfDcbRoSJD" role="1B3o_S" />
+      <node concept="17QB3L" id="3xfDcbRoSJE" role="3clF45" />
+      <node concept="3clFbS" id="3xfDcbRoSJI" role="3clF47">
+        <node concept="3clFbF" id="3xfDcbRoUh$" role="3cqZAp">
+          <node concept="Xl_RD" id="sQz2V6nzAZ" role="3clFbG">
+            <property role="Xl_RC" value="illegal references" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3xfDcbRoSJJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="1_LT7K4oFZJ" role="jymVt">
       <property role="TrG5h" value="checkModel" />
       <node concept="3Tm1VV" id="1_LT7K4oFZK" role="1B3o_S" />
@@ -3898,22 +3899,6 @@
             <node concept="3cpWs6" id="1_LT7K4oG0k" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTt14" role="3cqZAk">
                 <ref role="3cqZAo" node="1_LT7K4oFZX" resolve="results" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1_LT7K4oG0m" role="3cqZAp">
-          <node concept="2OqwBi" id="1_LT7K4oG0n" role="3clFbG">
-            <node concept="37vLTw" id="1_LT7K4pfpd" role="2Oq$k0">
-              <ref role="3cqZAo" node="1_LT7K4oG2L" resolve="monitor" />
-            </node>
-            <node concept="liA8E" id="1_LT7K4oG0o" role="2OqNvi">
-              <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="sQz2V6nzAZ" role="37wK5m">
-                <property role="Xl_RC" value="illegal references" />
-              </node>
-              <node concept="3cmrfG" id="1_LT7K4oG0q" role="37wK5m">
-                <property role="3cmrfH" value="1" />
               </node>
             </node>
           </node>

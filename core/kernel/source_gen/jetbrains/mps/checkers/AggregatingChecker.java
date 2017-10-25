@@ -11,18 +11,18 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
-public class AggregatingChecker<O, I extends ReportItem> implements IChecker<O, I> {
-  private List<? extends IChecker<O, I>> myOrigins;
+public class AggregatingChecker<O, I extends ReportItem> implements IAbstractChecker<O, I> {
+  private List<? extends IAbstractChecker<O, ? extends I>> myOrigins;
   private _FunctionTypes._return_P1_E0<? extends String, ? super O> myNameGetter;
-  public AggregatingChecker(List<? extends IChecker<O, I>> origins, _FunctionTypes._return_P1_E0<? extends String, ? super O> nameGetter) {
+  public AggregatingChecker(List<? extends IAbstractChecker<O, ? extends I>> origins, _FunctionTypes._return_P1_E0<? extends String, ? super O> nameGetter) {
     myOrigins = origins;
     myNameGetter = nameGetter;
   }
   @Override
-  public void check(O toCheck, SRepository repository, Consumer<I> errorCollector, ProgressMonitor monitor) {
+  public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
     monitor.start("Checking " + myNameGetter.invoke(toCheck), ListSequence.fromList(myOrigins).count());
     try {
-      for (IChecker<O, I> origin : ListSequence.fromList(myOrigins)) {
+      for (IAbstractChecker<O, ? extends I> origin : ListSequence.fromList(myOrigins)) {
         origin.check(toCheck, repository, errorCollector, monitor.subTask(1, SubProgressKind.AS_COMMENT));
         if (monitor.isCanceled()) {
           break;

@@ -9,14 +9,14 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class FilteringChecker<O, I extends ReportItem> implements IChecker<O, I> {
-  private IChecker<O, I> myOrigin;
+  private IChecker<O, ? extends I> myOrigin;
   private _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> myAccept;
-  public FilteringChecker(IChecker origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> accept) {
+  public FilteringChecker(IChecker<O, ? extends I> origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> accept) {
     myOrigin = origin;
     myAccept = accept;
   }
   @Override
-  public void check(O toCheck, final SRepository repository, final Consumer<I> errorCollector, ProgressMonitor monitor) {
+  public void check(O toCheck, final SRepository repository, final Consumer<? super I> errorCollector, ProgressMonitor monitor) {
     Consumer<I> consumer = new Consumer<I>() {
       public void consume(I item) {
         if (myAccept.invoke(item, repository)) {
@@ -25,5 +25,9 @@ public class FilteringChecker<O, I extends ReportItem> implements IChecker<O, I>
       }
     };
     myOrigin.check(toCheck, repository, consumer, monitor);
+  }
+  @Override
+  public String getCategory() {
+    return myOrigin.getCategory();
   }
 }

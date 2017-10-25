@@ -9,6 +9,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.IChecker;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -22,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
@@ -42,7 +43,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     newViewer.checkModels(models, "models");
     return newViewer;
   }
-  public void checkModelsAndShowResult(List<SModel> models, SpecificChecker... checkers) {
+  public void checkModelsAndShowResult(List<SModel> models, IChecker<SModel, ? extends IssueKindReportItem>... checkers) {
     ModelCheckerViewer newViewer = createViewerForTab();
     ModelCheckerIssueFinder finder;
     jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);

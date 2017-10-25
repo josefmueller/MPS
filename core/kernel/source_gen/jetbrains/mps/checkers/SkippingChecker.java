@@ -8,15 +8,15 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-public class SkippingChecker<O, I extends ReportItem> implements IChecker<O, I> {
-  private IChecker<O, I> myOrigin;
+public class SkippingChecker<O, I extends ReportItem> implements IAbstractChecker<O, I> {
+  private IAbstractChecker<O, ? extends I> myOrigin;
   private _FunctionTypes._return_P2_E0<? extends Boolean, ? super O, ? super SRepository> myAccept;
-  public SkippingChecker(IChecker origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super O, ? super SRepository> accept) {
+  public SkippingChecker(IAbstractChecker<O, ? extends I> origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super O, ? super SRepository> accept) {
     myOrigin = origin;
     myAccept = accept;
   }
   @Override
-  public void check(O toCheck, SRepository repository, Consumer<I> errorCollector, ProgressMonitor monitor) {
+  public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
     if (myAccept.invoke(toCheck, repository)) {
       myOrigin.check(toCheck, repository, errorCollector, monitor);
     }

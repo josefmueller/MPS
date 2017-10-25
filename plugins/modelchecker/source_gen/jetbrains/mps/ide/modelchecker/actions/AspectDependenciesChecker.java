@@ -51,13 +51,15 @@ public class AspectDependenciesChecker extends SpecificChecker {
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
   @Override
+  public String getCategory() {
+    return "wrong aspect dependencies";
+  }
+  @Override
   public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor monitor) {
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
-    monitor.start("wrong aspect dependencies", 1);
 
     final int modelKind = getModelKind(model, null);
     if (modelKind == OTHER) {
-      monitor.done();
       return results;
     }
 
@@ -91,7 +93,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
         }
       }
     }
-    monitor.done();
     return results;
   }
   public int getModelKind(SModel model, @Nullable SReference reference) {

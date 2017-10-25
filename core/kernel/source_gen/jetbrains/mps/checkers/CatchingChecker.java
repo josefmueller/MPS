@@ -11,16 +11,16 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.apache.log4j.Level;
 
-public class CatchingChecker<O, I extends ReportItem> implements IChecker<O, I> {
+public class CatchingChecker<O, I extends ReportItem> implements IAbstractChecker<O, I> {
   private static final Logger LOG = LogManager.getLogger(CatchingChecker.class);
-  private IChecker<O, I> myOrigin;
+  private IAbstractChecker<O, ? extends I> myOrigin;
   private _FunctionTypes._return_P3_E0<? extends String, ? super O, ? super Exception, ? super SRepository> myMessage;
-  public CatchingChecker(IChecker<O, I> origin, _FunctionTypes._return_P3_E0<? extends String, ? super O, ? super Exception, ? super SRepository> message) {
+  public CatchingChecker(IAbstractChecker<O, ? extends I> origin, _FunctionTypes._return_P3_E0<? extends String, ? super O, ? super Exception, ? super SRepository> message) {
     myOrigin = origin;
     myMessage = message;
   }
   @Override
-  public void check(O toCheck, SRepository repository, Consumer<I> errorCollector, ProgressMonitor monitor) {
+  public void check(O toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
     try {
       myOrigin.check(toCheck, repository, errorCollector, monitor);
     } catch (Exception e) {

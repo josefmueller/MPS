@@ -9,14 +9,16 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class SpecificChecker implements IChecker<SModel, IssueKindReportItem> {
-  public abstract List<? extends IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressContext);
+
+  public List<? extends IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressContext) {
+    throw new UnsupportedOperationException();
+  }
   @Override
-  public void check(SModel toCheck, SRepository repository, Consumer<IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
+  public void check(SModel toCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
     List<? extends IssueKindReportItem> errors = checkModel(toCheck, monitor);
-    for (IssueKindReportItem error : ListSequence.fromList(errors)) {
+    for (IssueKindReportItem error : errors) {
       errorCollector.consume(error);
     }
   }

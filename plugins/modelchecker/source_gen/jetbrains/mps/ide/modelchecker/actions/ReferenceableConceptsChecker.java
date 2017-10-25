@@ -37,6 +37,10 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
   }
   @Override
+  public String getCategory() {
+    return "illegal references";
+  }
+  @Override
   public List<NodeReportItem> checkModel(final SModel model, final ProgressMonitor monitor) {
     final List<NodeReportItem> results = ListSequence.fromList(new ArrayList<NodeReportItem>());
     if (model == null || model == null || model.getModule() == null) {
@@ -46,7 +50,6 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     if (monitor.isCanceled()) {
       return results;
     }
-    monitor.start("illegal references", 1);
 
     if (SModuleOperations.isAspect(model, "structure")) {
       for (SNode concept : ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
