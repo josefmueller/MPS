@@ -11,6 +11,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import java.awt.Cursor;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import javax.swing.JPopupMenu;
 
 public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
   private String myTooltip;
@@ -18,6 +21,7 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
     super(node, null, "", owner);
     myTooltip = tooltip;
   }
+
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
   }
@@ -44,5 +48,27 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
   @Override
   public boolean showInGutter() {
     return false;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getNodeReference() {
+    SNode n = getNode();
+    return (n == null ? null : n.getReference());
+  }
+
+  @Nullable
+  @Override
+  public EditorCell getNodeCell(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    // DefaultEditorMessage has getNode but with legacy API component. 
+    if (editorComponent instanceof EditorComponent) {
+      return getCell((EditorComponent) editorComponent);
+    }
+    return editorComponent.findNodeCell(getNode(), true);
+  }
+
+  @Override
+  public JPopupMenu getPopupMenu() {
+    return null;
   }
 }

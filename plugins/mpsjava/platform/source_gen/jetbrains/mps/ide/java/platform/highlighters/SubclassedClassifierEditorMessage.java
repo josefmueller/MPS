@@ -10,11 +10,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import javax.swing.Icon;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
-import javax.swing.JPopupMenu;
 
 public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
@@ -38,17 +39,17 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
+
+  @Nullable
   @Override
-  public EditorCell getAnchorCell(EditorCell bigCell) {
-    EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myClassifierNameCellCondition, true);
-    return (returnTypeCell != null ? returnTypeCell : bigCell);
+  public EditorCell getAnchorCell(EditorComponent editorComponent) {
+    EditorCell nodeCell = getNodeCell(editorComponent);
+    EditorCell returnTypeCell = (nodeCell == null ? null : CellFinderUtil.findChildByCondition(nodeCell, myClassifierNameCellCondition, true));
+    return (returnTypeCell != null ? returnTypeCell : nodeCell);
   }
+
   @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action"));
-  }
-  @Override
-  public JPopupMenu getPopupMenu() {
-    return null;
   }
 }

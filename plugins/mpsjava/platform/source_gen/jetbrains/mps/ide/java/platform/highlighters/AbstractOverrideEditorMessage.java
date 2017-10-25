@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import javax.swing.JPopupMenu;
 
 public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private Condition<EditorCell> myReturnTypeCellCondition;
@@ -25,12 +25,9 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
     };
   }
   @Override
-  public EditorCell getAnchorCell(EditorCell bigCell) {
-    EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myReturnTypeCellCondition, true);
+  public EditorCell getAnchorCell(EditorComponent editorComponent) {
+    EditorCell bigCell = getNodeCell(editorComponent);
+    EditorCell returnTypeCell = (bigCell == null ? null : CellFinderUtil.findChildByCondition(bigCell, myReturnTypeCellCondition, true));
     return (returnTypeCell != null ? returnTypeCell : bigCell);
-  }
-  @Override
-  public JPopupMenu getPopupMenu() {
-    return null;
   }
 }

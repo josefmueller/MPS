@@ -20,54 +20,75 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/4952318787899710481">
     <file name="AbstractLeftEditorHighlighterMessage.java">
-      <node id="4952318787899710482" at="16,0,17,0" concept="4" trace="myTooltip" />
-      <node id="4952318787899710496" at="17,101,18,33" concept="14" />
-      <node id="4952318787899710501" at="18,33,19,24" concept="3" />
-      <node id="4952318787899710524" at="25,53,26,16" concept="9" />
-      <node id="4952318787899710535" at="30,66,31,98" concept="8" />
-      <node id="4952318787899710541" at="31,98,32,116" concept="9" />
-      <node id="4952318787899710560" at="33,5,34,17" concept="9" />
-      <node id="4952318787899710567" at="37,34,38,21" concept="9" />
-      <node id="4952318787899710573" at="41,38,42,58" concept="9" />
-      <node id="4952318787899710580" at="45,33,46,17" concept="9" />
-      <node id="4952318787899710507" at="21,0,24,0" concept="7" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="4952318787899710486" at="17,0,21,0" concept="2" trace="AbstractLeftEditorHighlighterMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
-      <node id="4952318787899710518" at="24,0,28,0" concept="7" trace="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
-      <node id="4952318787899710533" at="29,54,33,5" concept="6" />
-      <node id="4952318787899710563" at="36,0,40,0" concept="7" trace="getTooltipText#()Ljava/lang/String;" />
-      <node id="4952318787899710569" at="40,0,44,0" concept="7" trace="getMouseOverCursor#()Ljava/awt/Cursor;" />
-      <node id="4952318787899710576" at="44,0,48,0" concept="7" trace="showInGutter#()Z" />
-      <node id="4952318787899710527" at="28,0,36,0" concept="7" trace="sameAs#(Ljetbrains/mps/openapi/editor/message/SimpleEditorMessage;)Z" />
-      <scope id="4952318787899710516" at="22,84,22,84" />
-      <scope id="4952318787899710523" at="25,53,26,16" />
-      <scope id="4952318787899710566" at="37,34,38,21" />
-      <scope id="4952318787899710572" at="41,38,42,58" />
-      <scope id="4952318787899710579" at="45,33,46,17" />
-      <scope id="4952318787899710495" at="17,101,19,24" />
-      <scope id="4952318787899710534" at="30,66,32,116">
+      <node id="4952318787899710482" at="19,0,20,0" concept="4" trace="myTooltip" />
+      <node id="4952318787899710496" at="20,101,21,33" concept="14" />
+      <node id="4952318787899710501" at="21,33,22,24" concept="3" />
+      <node id="4952318787899710524" at="29,53,30,16" concept="9" />
+      <node id="4952318787899710535" at="34,66,35,98" concept="8" />
+      <node id="4952318787899710541" at="35,98,36,116" concept="9" />
+      <node id="4952318787899710560" at="37,5,38,17" concept="9" />
+      <node id="4952318787899710567" at="41,34,42,21" concept="9" />
+      <node id="4952318787899710573" at="45,38,46,58" concept="9" />
+      <node id="4952318787899710580" at="49,33,50,17" concept="9" />
+      <node id="1939987461390608076" at="55,44,56,24" concept="8" />
+      <node id="1939987461390609398" at="56,24,57,49" concept="9" />
+      <node id="1939987461390735861" at="62,95,63,71" concept="10" />
+      <node id="1939987461390665248" at="64,53,65,56" concept="9" />
+      <node id="1939987461390728098" at="66,5,67,57" concept="9" />
+      <node id="8432634623182578828" at="71,36,72,16" concept="9" />
+      <node id="4952318787899710507" at="25,0,28,0" concept="7" trace="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1939987461390659180" at="63,71,66,5" concept="6" />
+      <node id="4952318787899710486" at="20,0,24,0" concept="2" trace="AbstractLeftEditorHighlighterMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
+      <node id="4952318787899710518" at="28,0,32,0" concept="7" trace="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+      <node id="4952318787899710533" at="33,54,37,5" concept="6" />
+      <node id="4952318787899710563" at="40,0,44,0" concept="7" trace="getTooltipText#()Ljava/lang/String;" />
+      <node id="4952318787899710569" at="44,0,48,0" concept="7" trace="getMouseOverCursor#()Ljava/awt/Cursor;" />
+      <node id="4952318787899710576" at="48,0,52,0" concept="7" trace="showInGutter#()Z" />
+      <node id="8432634623182578824" at="70,0,74,0" concept="7" trace="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
+      <node id="1939987461390537207" at="53,0,59,0" concept="7" trace="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4952318787899710527" at="32,0,40,0" concept="7" trace="sameAs#(Ljetbrains/mps/openapi/editor/message/SimpleEditorMessage;)Z" />
+      <node id="1939987461390655339" at="60,0,69,0" concept="7" trace="getNodeCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="4952318787899710516" at="26,84,26,84" />
+      <scope id="4952318787899710523" at="29,53,30,16" />
+      <scope id="4952318787899710566" at="41,34,42,21" />
+      <scope id="4952318787899710572" at="45,38,46,58" />
+      <scope id="4952318787899710579" at="49,33,50,17" />
+      <scope id="1939987461390659182" at="64,53,65,56" />
+      <scope id="8432634623182578827" at="71,36,72,16" />
+      <scope id="4952318787899710495" at="20,101,22,24" />
+      <scope id="4952318787899710534" at="34,66,36,116">
         <var name="other" id="4952318787899710536" />
       </scope>
-      <scope id="4952318787899710507" at="21,0,24,0">
+      <scope id="1939987461390537214" at="55,44,57,49">
+        <var name="n" id="1939987461390608077" />
+      </scope>
+      <scope id="4952318787899710507" at="25,0,28,0">
         <var name="cell" id="4952318787899710514" />
         <var name="component" id="4952318787899710512" />
         <var name="graphics" id="4952318787899710510" />
       </scope>
-      <scope id="4952318787899710486" at="17,0,21,0">
+      <scope id="4952318787899710486" at="20,0,24,0">
         <var name="node" id="4952318787899710487" />
         <var name="owner" id="4952318787899710489" />
         <var name="tooltip" id="4952318787899710491" />
       </scope>
-      <scope id="4952318787899710518" at="24,0,28,0">
+      <scope id="4952318787899710518" at="28,0,32,0">
         <var name="component" id="4952318787899710521" />
       </scope>
-      <scope id="4952318787899710563" at="36,0,40,0" />
-      <scope id="4952318787899710569" at="40,0,44,0" />
-      <scope id="4952318787899710576" at="44,0,48,0" />
-      <scope id="4952318787899710532" at="29,54,34,17" />
-      <scope id="4952318787899710527" at="28,0,36,0">
+      <scope id="4952318787899710563" at="40,0,44,0" />
+      <scope id="4952318787899710569" at="44,0,48,0" />
+      <scope id="4952318787899710576" at="48,0,52,0" />
+      <scope id="8432634623182578824" at="70,0,74,0" />
+      <scope id="4952318787899710532" at="33,54,38,17" />
+      <scope id="1939987461390655348" at="62,95,67,57" />
+      <scope id="1939987461390537207" at="53,0,59,0" />
+      <scope id="4952318787899710527" at="32,0,40,0">
         <var name="message" id="4952318787899710530" />
       </scope>
-      <unit id="4952318787899710481" at="15,0,49,0" name="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
+      <scope id="1939987461390655339" at="60,0,69,0">
+        <var name="editorComponent" id="1939987461390655344" />
+      </scope>
+      <unit id="4952318787899710481" at="18,0,75,0" name="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
     </file>
   </root>
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/7398401354080376432">

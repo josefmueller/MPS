@@ -10,11 +10,8 @@ import javax.swing.Icon;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.util.StringUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.JPopupMenu;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
@@ -22,7 +19,6 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import javax.swing.JSeparator;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
@@ -40,20 +36,13 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
   public String getTooltipText() {
     return "<html><body>" + StringUtil.escapeXml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringUtil.escapeXml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ? "" : "<br><font color='red'>Invalid</br>")) + "</html></body>";
   }
+
+  @Nullable
   @Override
-  public SNode getNode() {
-    SRepository repo = ProjectHelper.getProjectRepository(myBreakpoint.getProject());
-    if (repo == null) {
-      // XXX friendly reminder to refactor EditorMessageIconProvider not to require SNode but SNodeReference 
-      // Usually, we've got smth to resolve ptr against in LeftEditorHighligher (or just need to match a renderer, ptr would suffice). 
-      repo = MPSModuleRepository.getInstance();
-    }
-    return myBreakpoint.getLocation().getNodePointer().resolve(repo);
+  public SNodeReference getNodeReference() {
+    return myBreakpoint.getLocation().getNodePointer();
   }
-  @Override
-  public EditorCell getAnchorCell(EditorCell bigCell) {
-    return BreakpointIconRenderer.getBreakpointIconAnchorCell(bigCell);
-  }
+
   @Override
   public JPopupMenu getPopupMenu() {
     if (!(myBreakpoint.isValid())) {

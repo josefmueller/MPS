@@ -50,24 +50,22 @@
       <node id="1349873286205749227" at="22,90,23,32" concept="13" />
       <node id="3721059191406272005" at="26,25,27,35" concept="8" />
       <node id="1349873286205785418" at="29,63,30,36" concept="8" />
-      <node id="8986044592317078940" at="33,48,34,70" concept="7" />
-      <node id="8986044592317078945" at="34,70,35,87" concept="8" />
-      <node id="8986044592317078951" at="36,5,37,16" concept="8" />
-      <node id="557086229177619927" at="39,36,40,160" concept="8" />
-      <node id="1349873286205736241" at="42,36,43,16" concept="8" />
+      <node id="2786528417096469714" at="34,68,35,51" concept="7" />
+      <node id="8986044592317078940" at="36,48,37,70" concept="7" />
+      <node id="8986044592317078945" at="37,70,38,87" concept="8" />
+      <node id="8986044592317078951" at="39,5,40,16" concept="8" />
+      <node id="557086229177619927" at="42,36,43,160" concept="8" />
       <node id="1349873286205743809" at="22,0,25,0" concept="1" trace="DSLComponentMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/message/EditorMessageOwner;Ljava/lang/String;)V" />
       <node id="1349873286205736185" at="26,0,29,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="1349873286205736196" at="29,0,32,0" concept="6" trace="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-      <node id="1349873286205736220" at="39,0,42,0" concept="6" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-      <node id="1349873286205736231" at="42,0,45,0" concept="6" trace="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
-      <node id="8986044592317078933" at="32,52,36,5" concept="5" />
-      <node id="1349873286205736207" at="32,0,39,0" concept="6" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1349873286205736220" at="42,0,45,0" concept="6" trace="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+      <node id="8986044592317078933" at="35,51,39,5" concept="5" />
+      <node id="1349873286205736207" at="33,0,42,0" concept="6" trace="getAnchorCell#(Ljetbrains/mps/openapi/editor/EditorComponent;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1349873286205743813" at="22,90,23,32" />
       <scope id="1349873286205736193" at="26,25,27,35" />
       <scope id="1349873286205736204" at="29,63,30,36" />
-      <scope id="1349873286205736228" at="39,36,40,160" />
-      <scope id="1349873286205736239" at="42,36,43,16" />
-      <scope id="8986044592317078938" at="33,48,35,87">
+      <scope id="1349873286205736228" at="42,36,43,160" />
+      <scope id="8986044592317078938" at="36,48,38,87">
         <var name="collection" id="8986044592317078939" />
       </scope>
       <scope id="1349873286205743809" at="22,0,25,0">
@@ -77,11 +75,12 @@
       </scope>
       <scope id="1349873286205736185" at="26,0,29,0" />
       <scope id="1349873286205736196" at="29,0,32,0" />
-      <scope id="1349873286205736220" at="39,0,42,0" />
-      <scope id="1349873286205736231" at="42,0,45,0" />
-      <scope id="1349873286205736217" at="32,52,37,16" />
-      <scope id="1349873286205736207" at="32,0,39,0">
-        <var name="cell" id="1349873286205736211" />
+      <scope id="1349873286205736220" at="42,0,45,0" />
+      <scope id="1349873286205736217" at="34,68,40,16">
+        <var name="cell" id="2786528417096469715" />
+      </scope>
+      <scope id="1349873286205736207" at="33,0,42,0">
+        <var name="editorComponent" id="1349873286205736211" />
       </scope>
       <unit id="1349873286205735780" at="19,0,46,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.DSLComponentMessage" />
     </file>

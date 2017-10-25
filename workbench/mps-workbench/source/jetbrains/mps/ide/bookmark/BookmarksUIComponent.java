@@ -33,6 +33,7 @@ import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -205,12 +206,12 @@ public class BookmarksUIComponent implements ProjectComponent {
 
   private static class BookmarkIconRenderer implements EditorMessageIconRenderer {
     private static final IconRendererType TYPE = new IconRendererType(3);
-    private final SNode myNode;
+    private final SNodeReference myNode;
     private final int myNumber;
     private final String myTooltip;
 
     private BookmarkIconRenderer(SNode node, int number) {
-      myNode = node;
+      myNode = node.getReference();
       myNumber = number;
       myTooltip = String.format("Bookmark %s(%s)", number != -1 ? number : "", node.getPresentation());
     }
@@ -226,7 +227,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     }
 
     @Override
-    public SNode getNode() {
+    public SNodeReference getNodeReference() {
       return myNode;
     }
 
@@ -237,11 +238,6 @@ public class BookmarksUIComponent implements ProjectComponent {
     @Override
     public IconRendererType getType() {
       return TYPE;
-    }
-
-    @Override
-    public jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell bigCell) {
-      return bigCell;
     }
 
     @Override

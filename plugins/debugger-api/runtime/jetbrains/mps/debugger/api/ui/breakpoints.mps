@@ -50,6 +50,7 @@
     <import index="bfoa" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view.icons(MPS.Platform/)" />
     <import index="7e8u" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.tree(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -463,124 +464,41 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="3SnNvqCbxd7" role="jymVt">
+    <node concept="2tJIrI" id="2qFJdjDyuLO" role="jymVt" />
+    <node concept="3clFb_" id="2qFJdjDyvDM" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getNode" />
+      <property role="TrG5h" value="getNodeReference" />
       <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="3SnNvqCbxd8" role="1B3o_S" />
-      <node concept="3uibUv" id="3oTAX9lRK9f" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2qFJdjDyvDN" role="1B3o_S" />
+      <node concept="2AHcQZ" id="2qFJdjDyvDP" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
-      <node concept="3clFbS" id="3SnNvqCbxda" role="3clF47">
-        <node concept="3cpWs8" id="6Wt48gGES1L" role="3cqZAp">
-          <node concept="3cpWsn" id="6Wt48gGES1M" role="3cpWs9">
-            <property role="TrG5h" value="repo" />
-            <node concept="3uibUv" id="6Wt48gGES1I" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-            </node>
-            <node concept="2YIFZM" id="6Wt48gGES1N" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.getProjectRepository(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.SRepository" resolve="getProjectRepository" />
-              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <node concept="2OqwBi" id="6Wt48gGES1O" role="37wK5m">
-                <node concept="37vLTw" id="6Wt48gGES1P" role="2Oq$k0">
-                  <ref role="3cqZAo" to="zobu:~BreakpointIconRenderrerEx.myBreakpoint" resolve="myBreakpoint" />
-                </node>
-                <node concept="liA8E" id="6Wt48gGES1Q" role="2OqNvi">
-                  <ref role="37wK5l" to="rw00:3SnNvqCaK3M" resolve="getProject" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6Wt48gGETLG" role="3cqZAp">
-          <node concept="3clFbS" id="6Wt48gGETLI" role="3clFbx">
-            <node concept="3SKdUt" id="6Wt48gGF8$q" role="3cqZAp">
-              <node concept="3SKdUq" id="6Wt48gGF8$s" role="3SKWNk">
-                <property role="3SKdUp" value="XXX friendly reminder to refactor EditorMessageIconProvider not to require SNode but SNodeReference" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="6Wt48gGFay2" role="3cqZAp">
-              <node concept="3SKdUq" id="6Wt48gGFay4" role="3SKWNk">
-                <property role="3SKdUp" value="Usually, we've got smth to resolve ptr against in LeftEditorHighligher (or just need to match a renderer, ptr would suffice)." />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6Wt48gGF6cl" role="3cqZAp">
-              <node concept="37vLTI" id="6Wt48gGF6S2" role="3clFbG">
-                <node concept="2YIFZM" id="6Wt48gGF7xP" role="37vLTx">
-                  <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                  <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                </node>
-                <node concept="37vLTw" id="6Wt48gGF6ck" role="37vLTJ">
-                  <ref role="3cqZAo" node="6Wt48gGES1M" resolve="repo" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="6Wt48gGF51L" role="3clFbw">
-            <node concept="10Nm6u" id="6Wt48gGF5ZL" role="3uHU7w" />
-            <node concept="37vLTw" id="6Wt48gGEUAt" role="3uHU7B">
-              <ref role="3cqZAo" node="6Wt48gGES1M" resolve="repo" />
-            </node>
-          </node>
-        </node>
+      <node concept="3uibUv" id="2qFJdjDyvDQ" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3clFbS" id="2qFJdjDyvDT" role="3clF47">
         <node concept="3cpWs6" id="3SnNvqCbxdb" role="3cqZAp">
-          <node concept="2OqwBi" id="6Wt48gGEF87" role="3cqZAk">
-            <node concept="2OqwBi" id="3SnNvqCbxdc" role="2Oq$k0">
-              <node concept="2OqwBi" id="3SnNvqCbxdd" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxeuMBx" role="2Oq$k0">
-                  <ref role="3cqZAo" to="zobu:~BreakpointIconRenderrerEx.myBreakpoint" resolve="myBreakpoint" />
-                </node>
-                <node concept="liA8E" id="3SnNvqCbxdf" role="2OqNvi">
-                  <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
-                </node>
+          <node concept="2OqwBi" id="3SnNvqCbxdc" role="3cqZAk">
+            <node concept="2OqwBi" id="3SnNvqCbxdd" role="2Oq$k0">
+              <node concept="37vLTw" id="2BHiRxeuMBx" role="2Oq$k0">
+                <ref role="3cqZAo" to="zobu:~BreakpointIconRenderrerEx.myBreakpoint" resolve="myBreakpoint" />
               </node>
-              <node concept="liA8E" id="3SnNvqCbxdg" role="2OqNvi">
-                <ref role="37wK5l" to="rw00:3SnNvqCaJWi" resolve="getNodePointer" />
+              <node concept="liA8E" id="3SnNvqCbxdf" role="2OqNvi">
+                <ref role="37wK5l" to="rw00:3SnNvqCaJeO" resolve="getLocation" />
               </node>
             </node>
-            <node concept="liA8E" id="6Wt48gGEGfE" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-              <node concept="37vLTw" id="6Wt48gGF1xo" role="37wK5m">
-                <ref role="3cqZAo" node="6Wt48gGES1M" resolve="repo" />
-              </node>
+            <node concept="liA8E" id="3SnNvqCbxdg" role="2OqNvi">
+              <ref role="37wK5l" to="rw00:3SnNvqCaJWi" resolve="getNodePointer" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="3SnNvqCbxdh" role="2AJF6D">
+      <node concept="2AHcQZ" id="2qFJdjDyvDU" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="3SnNvqCbxdp" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getAnchorCell" />
-      <property role="DiZV1" value="false" />
-      <node concept="3uibUv" id="6F8YhWAoGZ9" role="3clF45">
-        <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-      </node>
-      <node concept="3Tm1VV" id="3SnNvqCbxdq" role="1B3o_S" />
-      <node concept="37vLTG" id="3SnNvqCbxds" role="3clF46">
-        <property role="TrG5h" value="bigCell" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="6F8YhWAoImW" role="1tU5fm">
-          <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3SnNvqCbxdu" role="3clF47">
-        <node concept="3cpWs6" id="3SnNvqCbxdv" role="3cqZAp">
-          <node concept="2YIFZM" id="3SnNvqCbxdw" role="3cqZAk">
-            <ref role="1Pybhc" node="3SnNvqCbxaK" resolve="BreakpointIconRenderer" />
-            <ref role="37wK5l" to="zobu:~BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getBreakpointIconAnchorCell" />
-            <node concept="37vLTw" id="2BHiRxgm7Y$" role="37wK5m">
-              <ref role="3cqZAo" node="3SnNvqCbxds" resolve="bigCell" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3SnNvqCbxdy" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
+    <node concept="2tJIrI" id="2qFJdjDzbVF" role="jymVt" />
     <node concept="3clFb_" id="3SnNvqCbxdL" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getPopupMenu" />

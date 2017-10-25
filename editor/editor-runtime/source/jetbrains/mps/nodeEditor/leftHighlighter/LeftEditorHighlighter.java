@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -72,6 +73,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NavigableSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -466,11 +468,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   public void removeIconRenderer(SNode snode, IconRendererType type) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeIconRenderer() should be called in eventDispatchThread";
     boolean wasModified = false;
+    final SNodeReference ptr = snode == null ? null : snode.getReference();
     for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext(); ) {
       EditorMessageIconRenderer renderer = it.next();
-      // XXX I would prefer removeIconRenderer that takes SNodeReference instead of an SNode (e.g. BreakpointsUiComponentEx won't need to record
-      // renderer instances then).
-      if (renderer.getNode() == snode && (type == null || renderer.getType() == type)) {
+      if (Objects.equals(renderer.getNodeReference(), ptr) && Objects.equals(renderer.getType(), type)) {
         it.remove();
         wasModified = true;
       }
@@ -591,20 +592,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return anchorCell.getY() + anchorCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(final EditorMessageIconRenderer renderer) {
-    final jetbrains.mps.openapi.editor.cells.EditorCell[] cell = new jetbrains.mps.openapi.editor.cells.EditorCell[1];
-    myEditorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode rendererNode = renderer.getNode();
-        EditorCell nodeCell = myEditorComponent.findNodeCell(rendererNode);
-        if (nodeCell != null) {
-          cell[0] = renderer.getAnchorCell(nodeCell);
-        }
-        // no cell for node?..
-      }
-    });
-    return cell[0];
+  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(EditorMessageIconRenderer renderer) {
+    return renderer.getAnchorCell(myEditorComponent);
   }
 
   @Override
@@ -674,7 +663,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       if (e.getButton() == MouseEvent.BUTTON1 && action != null) {
         if (e.getID() == MouseEvent.MOUSE_CLICKED) {
           AnActionEvent actionEvent =
-              new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer.getNode()), ICON_AREA, action.getTemplatePresentation(),
+              new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer), ICON_AREA, action.getTemplatePresentation(),
                   ActionManager.getInstance(), e.getModifiers());
           action.update(actionEvent);
           action.actionPerformed(actionEvent);
@@ -848,22 +837,22 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private static class LeftEditorHighlighterDataContext implements DataContext {
-    private DataContext myEditorDataContext;
-    private SNode mySelectedNode;
-    private EditorCell myNodeCell;
+    private final DataContext myEditorDataContext;
+    private final SNode mySelectedNode;
+    private final EditorCell myNodeCell;
 
-    public LeftEditorHighlighterDataContext(@NotNull EditorComponent editorComponent, SNode selectedNode) {
+    public LeftEditorHighlighterDataContext(@NotNull EditorComponent editorComponent, EditorMessageIconRenderer renderer) {
       myEditorDataContext = DataManager.getInstance().getDataContext(editorComponent);
-      mySelectedNode = selectedNode;
-      myNodeCell = editorComponent.findNodeCell(mySelectedNode);
+      myNodeCell = renderer.getNodeCell(editorComponent);
+      mySelectedNode = myNodeCell == null ? null : myNodeCell.getSNode();
     }
 
     @Override
     public Object getData(@NonNls String dataId) {
-      if (MPSCommonDataKeys.NODE.getName().equals(dataId)) {
+      if (MPSCommonDataKeys.NODE.is(dataId)) {
         return mySelectedNode;
       }
-      if (MPSEditorDataKeys.EDITOR_CELL.getName().equals(dataId)) {
+      if (MPSEditorDataKeys.EDITOR_CELL.is(dataId)) {
         return myNodeCell;
       }
       return myEditorDataContext.getData(dataId);
