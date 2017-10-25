@@ -632,7 +632,7 @@
     <property role="TrG5h" value="ConstraintsChecker" />
     <property role="3GE5qa" value="node" />
     <node concept="3Tm1VV" id="6qi2OtU3uwR" role="1B3o_S" />
-    <node concept="3uibUv" id="6qi2OtU3uwW" role="1zkMxy">
+    <node concept="3uibUv" id="dTvp$YV7s5" role="1zkMxy">
       <ref role="3uigEE" node="6qi2OtU3u$c" resolve="AbstractNodeChecker" />
     </node>
     <node concept="3clFbW" id="6qi2OtU3uwS" role="jymVt">
@@ -641,6 +641,24 @@
       <node concept="3clFbS" id="6qi2OtU3uwV" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="5O9MfN8iLVH" role="jymVt" />
+    <node concept="3clFb_" id="dTvp$YVayR" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$YVayT" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$YVayU" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$YVayY" role="3clF47">
+        <node concept="3clFbF" id="dTvp$YVbJi" role="3cqZAp">
+          <node concept="10M0yZ" id="dTvp$YVbMa" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$YVayZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="1PHXAu1q14S" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="runCheck" />
@@ -1488,6 +1506,15 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sRvq" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="dTvp$YV8jN" role="EKbjA">
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+      <node concept="3uibUv" id="dTvp$YV9aO" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="3uibUv" id="dTvp$YV9$G" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
       </node>
     </node>
   </node>
@@ -3921,6 +3948,24 @@
       <node concept="3Tm1VV" id="6qi2OtU3tXt" role="1B3o_S" />
       <node concept="3clFbS" id="6qi2OtU3tXu" role="3clF47" />
     </node>
+    <node concept="3clFb_" id="dTvp$YV2l7" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$YV2l9" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$YV2la" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$YV2le" role="3clF47">
+        <node concept="3clFbF" id="dTvp$YV3L9" role="3cqZAp">
+          <node concept="10M0yZ" id="dTvp$YV3NZ" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$YV2lf" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="6qi2OtU3tXw" role="jymVt">
       <property role="TrG5h" value="checkNode" />
       <node concept="3cqZAl" id="6qi2OtU3tXx" role="3clF45" />
@@ -4623,6 +4668,15 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="dTvp$YUZ67" role="EKbjA">
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+      <node concept="3uibUv" id="dTvp$YUZYY" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="3uibUv" id="dTvp$YV16T" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="6qi2OtU3tVa">
     <property role="TrG5h" value="TargetConceptChecker" />
@@ -4635,6 +4689,24 @@
       <node concept="3cqZAl" id="6qi2OtU3tVd" role="3clF45" />
       <node concept="3Tm1VV" id="6qi2OtU3tVe" role="1B3o_S" />
       <node concept="3clFbS" id="6qi2OtU3tVf" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="dTvp$YV4U7" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$YV4U9" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$YV4Ua" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$YV4Ue" role="3clF47">
+        <node concept="3clFbF" id="dTvp$YV5dd" role="3cqZAp">
+          <node concept="10M0yZ" id="dTvp$YV5dJ" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$YV4Uf" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="3clFb_" id="6qi2OtU3tVh" role="jymVt">
       <property role="TrG5h" value="checkNode" />
@@ -4851,6 +4923,15 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sRD_" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="dTvp$YV4EA" role="EKbjA">
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+      <node concept="3uibUv" id="dTvp$YV4Hw" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="3uibUv" id="dTvp$YV4M7" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
       </node>
     </node>
   </node>
@@ -5206,6 +5287,23 @@
       <node concept="3clFbS" id="3TJpIwQlqFI" role="3clF47" />
       <node concept="3Tm1VV" id="3TJpIwQlqFJ" role="1B3o_S" />
       <node concept="3cqZAl" id="3TJpIwQlqFK" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="dTvp$YUS$$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$YUS$A" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$YUS$B" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$YUS$F" role="3clF47">
+        <node concept="3clFbF" id="dTvp$YUUMb" role="3cqZAp">
+          <node concept="Xl_RD" id="dTvp$YUW9E" role="3clFbG">
+            <property role="Xl_RC" value="language imports" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$YUS$G" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="3clFb_" id="3TJpIwQlqFM" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -5907,6 +6005,15 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="xAgc0H6J1d" role="1B3o_S" />
+    <node concept="3uibUv" id="dTvp$YUMOq" role="EKbjA">
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+      <node concept="3uibUv" id="dTvp$YUOJe" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="3uibUv" id="dTvp$YUQ$l" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="1EmyK$ncKqS">
     <property role="TrG5h" value="LanguageErrorsCollector" />
@@ -6055,10 +6162,37 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="dTvp$YUznJ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$YUznL" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$YUznM" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$YUznQ" role="3clF47">
+        <node concept="3clFbF" id="dTvp$YUzQj" role="3cqZAp">
+          <node concept="10M0yZ" id="dTvp$YUzQR" role="3clFbG">
+            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.STRUCTURE" resolve="STRUCTURE" />
+            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$YUznR" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3uibUv" id="3TJpIwQm7mu" role="1zkMxy">
       <ref role="3uigEE" node="6qi2OtU3u$c" resolve="AbstractNodeChecker" />
     </node>
     <node concept="3Tm1VV" id="45Q6RD6x0N8" role="1B3o_S" />
+    <node concept="3uibUv" id="dTvp$YUyZ0" role="EKbjA">
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+      <node concept="3uibUv" id="dTvp$YUz3l" role="11_B2D">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+      <node concept="3uibUv" id="dTvp$YUzgZ" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="7z7Xs6Zeka">
     <property role="TrG5h" value="IRootChecker" />
