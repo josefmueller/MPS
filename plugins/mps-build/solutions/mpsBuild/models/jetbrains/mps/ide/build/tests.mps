@@ -1433,10 +1433,10 @@
       </node>
       <node concept="1E1JtA" id="7wqdV6Y5fwj" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.lang.smodel.query.test" />
         <property role="3LESm3" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources and tests" />
+        <property role="TrG5h" value="jetbrains.mps.lang.smodel.query.test" />
         <node concept="3rtmxn" id="EpEP7iii7e" role="3bR31x">
           <node concept="3LXTmp" id="EpEP7iii7f" role="3rtmxm">
             <node concept="3qWCbU" id="EpEP7iii7g" role="3LXTna">
@@ -1447,8 +1447,8 @@
                 <property role="2Ry0Am" value="testbench" />
                 <node concept="2Ry0Ak" id="EpEP7iii7j" role="2Ry0An">
                   <property role="2Ry0Am" value="testsolutions" />
-                  <node concept="2Ry0Ak" id="EpEP7iii7k" role="2Ry0An">
-                    <property role="2Ry0Am" value="console.test" />
+                  <node concept="2Ry0Ak" id="7H155NdxMo4" role="2Ry0An">
+                    <property role="2Ry0Am" value="lang.smodel.query.test" />
                   </node>
                 </node>
               </node>
@@ -1460,9 +1460,9 @@
             <property role="2Ry0Am" value="testbench" />
             <node concept="2Ry0Ak" id="7wqdV6Y5fwm" role="2Ry0An">
               <property role="2Ry0Am" value="testsolutions" />
-              <node concept="2Ry0Ak" id="7wqdV6Y5fwn" role="2Ry0An">
-                <property role="2Ry0Am" value="console.test" />
-                <node concept="2Ry0Ak" id="5sHoYf5gLCa" role="2Ry0An">
+              <node concept="2Ry0Ak" id="55iTert_s4T" role="2Ry0An">
+                <property role="2Ry0Am" value="lang.smodel.query.test" />
+                <node concept="2Ry0Ak" id="55iTert_s7I" role="2Ry0An">
                   <property role="2Ry0Am" value="jetbrains.mps.lang.smodel.query.test.msd" />
                 </node>
               </node>
@@ -1485,6 +1485,32 @@
           <node concept="3bR9La" id="1NNq35A$1rA" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:ymnOULAU1u" resolve="jetbrains.mps.lang.test.runtime" />
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtA" id="7H155Ndqkyv" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.console.tests" />
+        <property role="3LESm3" value="8949b0e7-d938-48ba-8cfc-4a9bb44df0e8" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="7H155Ndqkyy" role="3LF7KH">
+          <node concept="2Ry0Ak" id="7H155NdqkDg" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="7H155NdqkGf" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="7H155NdqkJe" role="2Ry0An">
+                <property role="2Ry0Am" value="console.tests" />
+                <node concept="2Ry0Ak" id="7H155NdqkMd" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.console.tests.msd" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7H155NdqkOZ" role="3bR37C">
+          <node concept="3bR9La" id="7H155NdqkP0" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
           </node>
         </node>
       </node>
@@ -1694,6 +1720,9 @@
         </node>
         <node concept="L2wRC" id="7wqdV6Y5fD9" role="39821P">
           <ref role="L2wRA" node="7wqdV6Y5fwj" resolve="jetbrains.mps.lang.smodel.query.test" />
+        </node>
+        <node concept="L2wRC" id="7H155NdqtaC" role="39821P">
+          <ref role="L2wRA" node="7H155Ndqkyv" resolve="jetbrains.mps.console.tests" />
         </node>
         <node concept="L2wRC" id="53PdBITeVAr" role="39821P">
           <ref role="L2wRA" node="53PdBITeV7g" resolve="jetbrains.mps.lang.actions.test" />
