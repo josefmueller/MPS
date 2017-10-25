@@ -19,6 +19,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
+import jetbrains.mps.checkers.IAbstractChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
@@ -65,7 +68,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       case TYPESYSTEM:
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new TypesystemChecker(), IssueKindReportItem.TYPESYSTEM));
       case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), IssueKindReportItem.CONSTRAINTS));
+        for (IAbstractChecker<SNode, NodeReportItem> checker : ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()))) {
+          ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(checker, IssueKindReportItem.CONSTRAINTS));
+        }
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker()), IssueKindReportItem.CONSTRAINTS));
       case STRUCTURE:
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPRESS_ERRORS_CONDITION, new StructureChecker()), IssueKindReportItem.STRUCTURE));

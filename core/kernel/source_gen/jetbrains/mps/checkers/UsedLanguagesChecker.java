@@ -28,8 +28,6 @@ public class UsedLanguagesChecker extends AbstractNodeChecker implements IChecke
   private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
   private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
 
-  public UsedLanguagesChecker() {
-  }
   @Override
   public String getCategory() {
     return "language imports";

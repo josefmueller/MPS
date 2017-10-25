@@ -4,13 +4,12 @@ package jetbrains.mps.checkers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
-import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -20,7 +19,7 @@ import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
 
 public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecker, IAbstractChecker<SNode, NodeReportItem> {
-  private Set<AbstractNodeChecker> myRules;
+  private AbstractNodeChecker myRule;
 
   public interface ErrorSkipCondition {
     boolean skipSingleNode(SNode node);
@@ -56,11 +55,24 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     }
   };
 
-  public AbstractConstraintsCheckerRootCheckerAdapter(@NotNull AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker... rules) {
-    myRules = SetSequence.fromSetWithValues(new HashSet<AbstractNodeChecker>(), Sequence.fromArray(rules));
+  public static List<IRootChecker> createList(@NotNull final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker... rules) {
+    return Sequence.fromIterable(Sequence.fromArray(rules)).select(new ISelector<AbstractNodeChecker, IRootChecker>() {
+      public IRootChecker select(AbstractNodeChecker rule) {
+        IRootChecker adapter = create(skipCondition, rule);
+        return adapter;
+      }
+    }).toListSequence();
+  }
+
+  public static IRootChecker create(AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker rule) {
+    return new AbstractConstraintsCheckerRootCheckerAdapter(skipCondition, rule);
+  }
+
+  public AbstractConstraintsCheckerRootCheckerAdapter(@NotNull AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker rule) {
+    myRule = rule;
     mySkipCondition = skipCondition;
   }
-  public AbstractConstraintsCheckerRootCheckerAdapter(AbstractNodeChecker... rules) {
+  public AbstractConstraintsCheckerRootCheckerAdapter(AbstractNodeChecker rules) {
     this(SKIP_NOTHING_CONDITION, rules);
   }
 
@@ -97,9 +109,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
         fullCheckIterator.skipChildren();
         continue;
       }
-      for (AbstractNodeChecker checker : myRules) {
-        checker.checkNode(node, errorsCollector, repository);
-      }
+      myRule.checkNode(node, errorsCollector, repository);
     }
   }
 }

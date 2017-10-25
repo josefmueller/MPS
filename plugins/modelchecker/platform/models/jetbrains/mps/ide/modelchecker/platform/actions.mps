@@ -689,44 +689,53 @@
               <ref role="1Px2BO" node="3J4tNviCaHD" resolve="ModelCheckerSettings.CheckingLevel" />
             </node>
             <node concept="3clFbS" id="1VtEqfXHQkD" role="3Kbo56">
-              <node concept="3clFbF" id="1VtEqfXI$98" role="3cqZAp">
-                <node concept="2OqwBi" id="1VtEqfXI$99" role="3clFbG">
-                  <node concept="TSZUe" id="1VtEqfXI$9a" role="2OqNvi">
-                    <node concept="2YIFZM" id="3xfDcbRaX$o" role="25WWJ7">
-                      <ref role="1Pybhc" node="63oasX2dpcZ" resolve="RootCheckerSpecificCheckerAdapter" />
-                      <ref role="37wK5l" node="IMyJ9Jxkyf" resolve="createNew" />
-                      <node concept="2ShNRf" id="63oasX2fexB" role="37wK5m">
-                        <node concept="1pGfFk" id="63oasX2fexC" role="2ShVmc">
-                          <ref role="37wK5l" to="wsw7:45Q6RD6iAIS" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
-                          <node concept="10M0yZ" id="4QJbmJGVq9w" role="37wK5m">
-                            <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
-                            <ref role="3cqZAo" to="wsw7:45Q6RD6jHDq" resolve="SKIP_CONSTRAINTS_CONDITION" />
+              <node concept="2Gpval" id="dTvp$YWxTj" role="3cqZAp">
+                <node concept="2GrKxI" id="dTvp$YWxTl" role="2Gsz3X">
+                  <property role="TrG5h" value="checker" />
+                </node>
+                <node concept="3clFbS" id="dTvp$YWxTp" role="2LFqv$">
+                  <node concept="3clFbF" id="1VtEqfXI$98" role="3cqZAp">
+                    <node concept="2OqwBi" id="1VtEqfXI$99" role="3clFbG">
+                      <node concept="TSZUe" id="1VtEqfXI$9a" role="2OqNvi">
+                        <node concept="2YIFZM" id="dTvp$YW$a_" role="25WWJ7">
+                          <ref role="37wK5l" node="IMyJ9Jxkyf" resolve="createNew" />
+                          <ref role="1Pybhc" node="63oasX2dpcZ" resolve="RootCheckerSpecificCheckerAdapter" />
+                          <node concept="2GrUjf" id="dTvp$YWEB8" role="37wK5m">
+                            <ref role="2Gs0qQ" node="dTvp$YWxTl" resolve="checker" />
                           </node>
-                          <node concept="2ShNRf" id="1EmyK$n$2II" role="37wK5m">
-                            <node concept="1pGfFk" id="1EmyK$n$hwF" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:6qi2OtU3uwS" resolve="ConstraintsChecker" />
-                            </node>
-                          </node>
-                          <node concept="2ShNRf" id="1EmyK$n$i3B" role="37wK5m">
-                            <node concept="1pGfFk" id="1EmyK$n$jU5" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeChecker" />
-                            </node>
-                          </node>
-                          <node concept="2ShNRf" id="1EmyK$n$kxS" role="37wK5m">
-                            <node concept="1pGfFk" id="1EmyK$n$mno" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:6qi2OtU3tVc" resolve="TargetConceptChecker" />
-                            </node>
+                          <node concept="10M0yZ" id="dTvp$YW$aE" role="37wK5m">
+                            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
                           </node>
                         </node>
                       </node>
-                      <node concept="10M0yZ" id="a7HeXjWee1" role="37wK5m">
-                        <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
-                        <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+                      <node concept="37vLTw" id="1VtEqfXI$9d" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3etVqSRKzrG" resolve="checkers" />
                       </node>
                     </node>
                   </node>
-                  <node concept="37vLTw" id="1VtEqfXI$9d" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3etVqSRKzrG" resolve="checkers" />
+                </node>
+                <node concept="2YIFZM" id="dTvp$YWvX2" role="2GsD0m">
+                  <ref role="37wK5l" to="wsw7:dTvp$YWiwx" resolve="createList" />
+                  <ref role="1Pybhc" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
+                  <node concept="10M0yZ" id="4QJbmJGVq9w" role="37wK5m">
+                    <ref role="3cqZAo" to="wsw7:45Q6RD6jHDq" resolve="SKIP_CONSTRAINTS_CONDITION" />
+                    <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
+                  </node>
+                  <node concept="2ShNRf" id="1EmyK$n$2II" role="37wK5m">
+                    <node concept="1pGfFk" id="1EmyK$n$hwF" role="2ShVmc">
+                      <ref role="37wK5l" to="wsw7:6qi2OtU3uwS" resolve="ConstraintsChecker" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="1EmyK$n$i3B" role="37wK5m">
+                    <node concept="1pGfFk" id="1EmyK$n$jU5" role="2ShVmc">
+                      <ref role="37wK5l" to="wsw7:6qi2OtU3tXr" resolve="RefScopeChecker" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="1EmyK$n$kxS" role="37wK5m">
+                    <node concept="1pGfFk" id="1EmyK$n$mno" role="2ShVmc">
+                      <ref role="37wK5l" to="wsw7:6qi2OtU3tVc" resolve="TargetConceptChecker" />
+                    </node>
                   </node>
                 </node>
               </node>
