@@ -73,7 +73,7 @@ public class ModelCheckerIssueFinder extends BaseFinder {
         }
       }
 
-      IAbstractChecker<SModel, ? extends IssueKindReportItem> modelChecker = ModelChecker.createNew(getSpecificCheckers());
+      IAbstractChecker<SModel, ? extends IssueKindReportItem> modelChecker = ModelChecker.wrapSpecificCheckers(getSpecificCheckers());
       for (final SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
         Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
           public void consume(IssueKindReportItem item) {
