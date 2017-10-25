@@ -13,6 +13,7 @@ import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.common.RepositoryDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
@@ -82,7 +83,22 @@ public abstract class MpsWorker {
   }
 
   public EnvironmentConfig createEnvConfig(Script whatToDo) {
-    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
+    EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
+    RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
+    if (repo != null) {
+      if (repo.includeAllModules) {
+        config = config.withBootstrapLibraries().withWorkbenchPath();
+      }
+      // todo make this code more typed 
+      for (String lib : repo.folders) {
+        config = config.addLib(lib);
+      }
+      for (String lib : repo.files) {
+        config = config.addLib(lib);
+      }
+    } else {
+      config = config.withBootstrapLibraries().withWorkbenchPath();
+    }
     for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }

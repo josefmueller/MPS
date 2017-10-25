@@ -32,12 +32,13 @@ public class Script {
   private static final String ELEMENT_CHUNK = "chunk";
   private static final String ATTRIBUTE_BOOTSTRAP = "bootstrap";
   private static final String ELEMENT_LIBRARYJAR = "libraryJar";
+
+  private RepositoryDescriptor myRepo = null;
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
   private boolean myFailOnError = true;
-  private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private Level myLogLevel = Level.INFO;
@@ -46,7 +47,21 @@ public class Script {
   private boolean myLoadBootstrapLibraries = true;
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
+
+  /**
+   * 
+   * @deprecated use repository descriptor instead
+   */
+  @Deprecated
+  private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
+
   public Script() {
+  }
+  public RepositoryDescriptor getRepoDescriptor() {
+    return myRepo;
+  }
+  public void setRepoDescriptor(RepositoryDescriptor repo) {
+    myRepo = repo;
   }
   public void addModuleFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
@@ -282,6 +297,7 @@ public class Script {
     data.setLibraries(myLibraries);
     data.setMacros(myMacro);
     data.setProperties(myProperties);
+    data.setRepo(myRepo);
     data.setData(ELEMENT_TODO, prepareData());
     try {
       data.save(tmpFile);
@@ -345,6 +361,7 @@ public class Script {
     whatToDo.myProperties.putAll(data.getProperties());
     whatToDo.myMacro.putAll(data.getMacros());
     whatToDo.myLibraries.putAll(data.getLibraries());
+    whatToDo.myRepo = data.getRepo();
     whatToDo.parseData(data.getData(ELEMENT_TODO));
     return whatToDo;
   }

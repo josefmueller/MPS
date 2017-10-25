@@ -11,6 +11,9 @@ import java.io.IOException;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 
+/**
+ * todo: [MM] consider merging with Script. There's no point in duplicating all the methods
+ */
 public class ScriptData {
   public static final String ROOT_TASKDATA = "taskdata";
   public static final String PROP_WORKER = "worker";
@@ -22,8 +25,15 @@ public class ScriptData {
   public static final String NAME = "name";
   public static final String VALUE = "value";
   public static final String PATH = "path";
+
   public static final String ELEM_LIBRARIES = "libraries";
   public static final String ELEM_LIBRARY = "library";
+
+  private static final String ELEM_REPO = "repository";
+  private static final String ELEM_REPO_ALL_MODULES = "allModules";
+  private static final String ELEM_REPO_FOLDER = "folder";
+  private static final String ELEM_REPO_MODULEFILE = "module";
+
   private Element myXML;
   private String myWorker;
   private boolean myFailOnError = true;
@@ -33,6 +43,7 @@ public class ScriptData {
   private Map<String, String> myMacros = new LinkedHashMap<String, String>();
   private Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private Map<String, Element> myData = new LinkedHashMap<String, Element>();
+  private RepositoryDescriptor myRepo = null;
   public ScriptData() {
   }
   public void save(File file) throws IOException {
@@ -52,6 +63,10 @@ public class ScriptData {
 
     if (!(myLibraries.isEmpty())) {
       saveLibraries();
+    }
+
+    if (myRepo != null) {
+      saveRepo();
     }
 
     for (Element element : myData.values()) {
@@ -81,6 +96,33 @@ public class ScriptData {
     if (myData.containsKey(ELEM_LIBRARIES)) {
       loadLibraries(myData.remove(ELEM_LIBRARIES));
     }
+    if (myData.containsKey(ELEM_REPO)) {
+      loadRepo(myData.remove(ELEM_REPO));
+    }
+  }
+  public void saveRepo() {
+    Element elem = new Element(ELEM_REPO);
+
+    elem.setAttribute(ELEM_REPO_ALL_MODULES, myRepo.includeAllModules + "");
+
+    for (String f : myRepo.folders) {
+      elem.addContent(new Element(ELEM_REPO_FOLDER).setAttribute(PATH, f));
+    }
+    for (String f : myRepo.files) {
+      elem.addContent(new Element(ELEM_REPO_MODULEFILE).setAttribute(PATH, f));
+    }
+    setData(ELEM_REPO, elem);
+  }
+  public void loadRepo(Element repoXML) {
+    RepositoryDescriptor result = new RepositoryDescriptor();
+    result.includeAllModules = Boolean.parseBoolean(repoXML.getAttributeValue(ELEM_REPO_ALL_MODULES));
+    for (Element e : repoXML.getChildren(ELEM_REPO_FOLDER)) {
+      result.folders.add(e.getAttributeValue(PATH));
+    }
+    for (Element e : repoXML.getChildren(ELEM_REPO_MODULEFILE)) {
+      result.files.add(e.getAttributeValue(PATH));
+    }
+    setRepo(result);
   }
   private void loadLibraries(Element libraries) {
     for (Object o : libraries.getChildren(ELEM_LIBRARY)) {
@@ -113,6 +155,12 @@ public class ScriptData {
   }
   public Level getLogLevel() {
     return myLogLevel;
+  }
+  public RepositoryDescriptor getRepo() {
+    return myRepo;
+  }
+  public void setRepo(RepositoryDescriptor repo) {
+    myRepo = repo;
   }
   public void setLoadBootstrapLibraries(boolean isLoadBootstrapLibraries) {
     myLoadBootstrapLibraries = isLoadBootstrapLibraries;

@@ -61,6 +61,10 @@ public abstract class MpsLoadTask extends Task {
     myFork = fork;
   }
 
+  public void addConfiguredRepository(RepositoryDataType repo) {
+    myWhatToDo.setRepoDescriptor(repo.getDescriptor());
+  }
+
   public void addConfiguredExclude(ExcludeNested excludeInner) {
     for (File file : excludeInner.getExcludedFromDiffFiles()) {
       myWhatToDo.excludeFileFromDiff(file);

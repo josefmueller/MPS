@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.build.ant.AllModulesDataType" file="AllModulesDataType.java">
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.Arg" file="Arg.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
@@ -67,6 +70,15 @@
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.ModuleDataType" file="ModuleDataType.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.ModulesDataType" file="ModulesDataType.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.MpsLoadTask" file="MpsLoadTask.java">
     <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.File" />
@@ -101,6 +113,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="jetbrains.mps.build.ant.Macro" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
+    <classNode dependClassName="jetbrains.mps.build.ant.RepositoryDataType" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
@@ -124,6 +137,13 @@
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.Task" />
     <classNode extendsClassName="org.apache.tools.ant.taskdefs.ExecuteStreamHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.RepositoryDataType" file="RepositoryDataType.java">
+    <classNode dependClassName="jetbrains.mps.build.ant.AllModulesDataType" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ModuleDataType" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ModulesDataType" />
+    <classNode dependClassName="jetbrains.mps.tool.common.RepositoryDescriptor" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
 </dependenciesRoot>
 
