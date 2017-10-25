@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.junit.runner.notification.RunListener;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractTestExecutor implements TestExecutor {
   private static final Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
@@ -20,6 +20,11 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   private StoppableRunner myCurrentRunner = null;
   private RunListener myListener;
   private volatile boolean myStopping = false;
+  private final TestsContributor myTestContributor;
+
+  protected AbstractTestExecutor(@NotNull TestsContributor testContributor) {
+    myTestContributor = testContributor;
+  }
 
   @Nullable
   private StoppableRunner getCurrentRunner() {
@@ -30,8 +35,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   public void execute() {
     try {
       RunEventsDispatcher.getInstance().onTestRunStarted();
-      TestsContributor testsContributor = createTestsContributor();
-      Iterable<Request> requests = testsContributor.gatherTests();
+      Iterable<Request> requests = myTestContributor.gatherTests();
       JUnitCore jUnitCore = prepareJUnitCore(requests);
       doExecute(jUnitCore, requests);
     } catch (Throwable t) {
@@ -75,9 +79,6 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     // when we updateRunner() on each step, why can't we check myStoping == true inside doExecute()? 
     myCurrentRunner = new StoppableRunner(request, myStopping);
   }
-
-  @NotNull
-  protected abstract TestsContributor createTestsContributor();
 
   @Nullable
   protected RunListener getListener() {

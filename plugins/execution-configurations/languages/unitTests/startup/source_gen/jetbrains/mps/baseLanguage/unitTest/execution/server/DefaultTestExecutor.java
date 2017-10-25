@@ -12,12 +12,11 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class DefaultTestExecutor extends AbstractTestExecutor {
-  private final String[] myArgs;
   private final CommandOutputStream myOutStream;
   private final CommandOutputStream myErrStream;
 
-  public DefaultTestExecutor(String[] args) {
-    myArgs = args;
+  public DefaultTestExecutor(TestsContributor testsContributor) {
+    super(testsContributor);
     myOutStream = new CommandOutputStream(System.out);
     myErrStream = new CommandOutputStream(System.err);
   }
@@ -39,21 +38,11 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
     return new DefaultRunListener(myOutStream);
   }
 
-  @NotNull
-  @Override
-  protected TestsContributor createTestsContributor() {
-    try {
-      return new CommandLineTestsContributor(myArgs);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
   /**
    * Called when BTestCase is executed
    */
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-    DefaultTestExecutor executor = new DefaultTestExecutor(args);
+    DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(args));
     try {
       executor.run();
     } catch (Throwable t) {

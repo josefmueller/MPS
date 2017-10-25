@@ -358,6 +358,7 @@
                 <node concept="2ShNRf" id="5vTxdEzyTYT" role="37vLTx">
                   <node concept="1pGfFk" id="5vTxdEzyTYU" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
+                    <node concept="1jxXqW" id="2qFJdjDA_N2" role="37wK5m" />
                     <node concept="37vLTw" id="5vTxdEzyTYV" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzyTYt" resolve="testNodes" />
                     </node>
@@ -929,6 +930,7 @@
                 <node concept="2ShNRf" id="5vTxdEzz10y" role="33vP2m">
                   <node concept="1pGfFk" id="5vTxdEzz10z" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
+                    <node concept="1jxXqW" id="2qFJdjDACkA" role="37wK5m" />
                     <node concept="37vLTw" id="5vTxdEzz10$" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzz122" resolve="testNodes" />
                     </node>
@@ -1600,6 +1602,7 @@
                 <node concept="2ShNRf" id="5XEoQWrnLB" role="37vLTx">
                   <node concept="1pGfFk" id="5XEoQWrnLC" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
+                    <node concept="1jxXqW" id="2qFJdjDAEin" role="37wK5m" />
                     <node concept="37vLTw" id="5XEoQWrnLD" role="37wK5m">
                       <ref role="3cqZAo" node="5XEoQWrnLb" resolve="testNodes" />
                     </node>

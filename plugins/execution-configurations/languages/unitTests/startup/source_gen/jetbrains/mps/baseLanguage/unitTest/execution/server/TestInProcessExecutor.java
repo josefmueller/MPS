@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.FakeProcess;
 import com.intellij.util.WaitFor;
@@ -24,14 +23,13 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
   private static final int MSECS_TO_WAIT_FOR_START = 50 * 1000;
 
   private final TestEventsDispatcher myDispatcher;
-  private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestInProcessRunState myTestRunState;
   private final FakeProcess myFakeProcess = new FakeProcess();
   private volatile DefaultRunListener myTestRunListener = null;
 
-  public TestInProcessExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes, TestInProcessRunState testRunState) {
+  public TestInProcessExecutor(TestsContributor testsContributor, TestEventsDispatcher dispatcher, TestInProcessRunState testRunState) {
+    super(testsContributor);
     myDispatcher = dispatcher;
-    myNodes = nodes;
     myTestRunState = testRunState;
   }
 
@@ -109,12 +107,6 @@ public class TestInProcessExecutor extends AbstractTestExecutor {
       LOG.info(terminateMessage);
     }
     myDispatcher.onProcessTerminated(terminateMessage);
-  }
-
-  @NotNull
-  @Override
-  protected TestsContributor createTestsContributor() {
-    return new NodeWrappersTestsContributor(myNodes);
   }
 
   @NotNull
