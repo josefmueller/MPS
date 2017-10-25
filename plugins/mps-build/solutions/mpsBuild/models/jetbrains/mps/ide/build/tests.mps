@@ -1433,7 +1433,7 @@
       </node>
       <node concept="1E1JtA" id="7wqdV6Y5fwj" role="2G$12L">
         <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.console.test" />
+        <property role="TrG5h" value="jetbrains.mps.lang.smodel.query.test" />
         <property role="3LESm3" value="e735f546-7e3c-4043-85a9-9c4792e07c56" />
         <property role="2GAjPV" value="false" />
         <property role="aoJFB" value="sources and tests" />
@@ -1462,8 +1462,8 @@
               <property role="2Ry0Am" value="testsolutions" />
               <node concept="2Ry0Ak" id="7wqdV6Y5fwn" role="2Ry0An">
                 <property role="2Ry0Am" value="console.test" />
-                <node concept="2Ry0Ak" id="7wqdV6Y5f_b" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.console.test.msd" />
+                <node concept="2Ry0Ak" id="5sHoYf5gLCa" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.smodel.query.test.msd" />
                 </node>
               </node>
             </node>
@@ -1693,7 +1693,7 @@
           <ref role="L2wRA" node="53PdBITeVn8" resolve="jetbrains.mps.baseLanguage.test" />
         </node>
         <node concept="L2wRC" id="7wqdV6Y5fD9" role="39821P">
-          <ref role="L2wRA" node="7wqdV6Y5fwj" resolve="jetbrains.mps.console.test" />
+          <ref role="L2wRA" node="7wqdV6Y5fwj" resolve="jetbrains.mps.lang.smodel.query.test" />
         </node>
         <node concept="L2wRC" id="53PdBITeVAr" role="39821P">
           <ref role="L2wRA" node="53PdBITeV7g" resolve="jetbrains.mps.lang.actions.test" />
