@@ -12,9 +12,6 @@ public class RepositoryDataType extends DataType {
   public RepositoryDescriptor getDescriptor() {
     return myDescriptor;
   }
-  public void setIncludepluginmodules(boolean value) {
-    myDescriptor.includePluginModules = value;
-  }
   public void setIncludempsmodules(boolean value) {
     myDescriptor.includeStdModules = value;
   }
