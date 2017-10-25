@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.NodeEditorActions;
 import java.util.function.BooleanSupplier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CommandHolder_Actions {
@@ -45,10 +46,10 @@ public class CommandHolder_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(final EditorContext editorContext, SNode node) {
+    public void execute_internal(final EditorContext editorContext, final SNode node) {
       NodeEditorActions.SelectUpUtil.executeWhile(editorContext, new BooleanSupplier() {
         public boolean getAsBoolean() {
-          return !(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0).isInstanceOfConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL, "jetbrains.mps.console.base.structure.Command")));
+          return neq_5bkq2_a0a0a0a1a0a3c(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
         }
       });
     }
@@ -57,7 +58,10 @@ public class CommandHolder_Actions {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return NodeEditorActions.SelectUpUtil.canExecute(editorContext);
+      return NodeEditorActions.SelectUpUtil.canExecute(editorContext) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) != null);
+    }
+    private static boolean neq_5bkq2_a0a0a0a1a0a3c(Object a, Object b) {
+      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
 }
