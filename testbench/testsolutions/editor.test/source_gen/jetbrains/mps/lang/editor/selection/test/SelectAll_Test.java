@@ -19,7 +19,7 @@ public class SelectAll_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("4348968319430072523", "4348968319430072531");
+      initEditorComponent("6281786885169625884", "6281786885169625940");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectAll_Action");
     }
   }
