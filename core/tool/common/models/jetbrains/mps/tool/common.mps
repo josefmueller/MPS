@@ -4103,6 +4103,7 @@
         <property role="Xl_RC" value="path" />
       </node>
     </node>
+    <node concept="2tJIrI" id="ubtK7iZ_cf" role="jymVt" />
     <node concept="Wx3nA" id="KL8Aql8eFD" role="jymVt">
       <property role="TrG5h" value="ELEM_LIBRARIES" />
       <property role="3TUv4t" value="true" />
@@ -4121,6 +4122,7 @@
         <property role="Xl_RC" value="library" />
       </node>
     </node>
+    <node concept="2tJIrI" id="ubtK7iZDg_" role="jymVt" />
     <node concept="Wx3nA" id="6aGZllYVfZl" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="ELEM_REPO" />
@@ -4130,22 +4132,13 @@
         <property role="Xl_RC" value="repository" />
       </node>
     </node>
-    <node concept="Wx3nA" id="6aGZllYVyZa" role="jymVt">
+    <node concept="Wx3nA" id="ubtK7j0xdR" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ATT_REPO_MPSMODULES" />
-      <node concept="3Tm6S6" id="6aGZllYVyZ7" role="1B3o_S" />
-      <node concept="17QB3L" id="6aGZllYVyZ8" role="1tU5fm" />
-      <node concept="Xl_RD" id="6aGZllYVyZ9" role="33vP2m">
-        <property role="Xl_RC" value="mpsmodules" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="6aGZllYVAOj" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ATT_REPO_PLUGINMODULES" />
-      <node concept="3Tm6S6" id="6aGZllYVAOg" role="1B3o_S" />
-      <node concept="17QB3L" id="6aGZllYVAOh" role="1tU5fm" />
-      <node concept="Xl_RD" id="6aGZllYVAOi" role="33vP2m">
-        <property role="Xl_RC" value="pluginmodules" />
+      <property role="TrG5h" value="ELEM_REPO_ALL_MODULES" />
+      <node concept="3Tm6S6" id="ubtK7j0xdS" role="1B3o_S" />
+      <node concept="17QB3L" id="ubtK7j0xdT" role="1tU5fm" />
+      <node concept="Xl_RD" id="ubtK7j0xdU" role="33vP2m">
+        <property role="Xl_RC" value="allModules" />
       </node>
     </node>
     <node concept="Wx3nA" id="6aGZllYVH_k" role="jymVt">
@@ -4157,24 +4150,6 @@
         <property role="Xl_RC" value="folder" />
       </node>
     </node>
-    <node concept="Wx3nA" id="6aGZllYVPKf" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ATT_FOLDER_PATH" />
-      <node concept="3Tm6S6" id="6aGZllYVPKc" role="1B3o_S" />
-      <node concept="17QB3L" id="6aGZllYVPKd" role="1tU5fm" />
-      <node concept="Xl_RD" id="6aGZllYVPKe" role="33vP2m">
-        <property role="Xl_RC" value="path" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="6aGZllYVVfn" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ATT_FILE_PATH" />
-      <node concept="3Tm6S6" id="6aGZllYVVfk" role="1B3o_S" />
-      <node concept="17QB3L" id="6aGZllYVVfl" role="1tU5fm" />
-      <node concept="Xl_RD" id="6aGZllYVVfm" role="33vP2m">
-        <property role="Xl_RC" value="file" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="6aGZllYW3Fz" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="ELEM_REPO_MODULEFILE" />
@@ -4184,6 +4159,7 @@
         <property role="Xl_RC" value="module" />
       </node>
     </node>
+    <node concept="2tJIrI" id="ubtK7iZHkW" role="jymVt" />
     <node concept="312cEg" id="KL8Aql8eFL" role="jymVt">
       <property role="TrG5h" value="myXML" />
       <node concept="3Tm6S6" id="KL8Aql8eFM" role="1B3o_S" />
@@ -5027,52 +5003,26 @@
           </node>
         </node>
         <node concept="3clFbH" id="6aGZllYVEIH" role="3cqZAp" />
-        <node concept="3clFbF" id="6aGZllYVteX" role="3cqZAp">
-          <node concept="2OqwBi" id="6aGZllYVtMS" role="3clFbG">
-            <node concept="37vLTw" id="6aGZllYVteV" role="2Oq$k0">
+        <node concept="3clFbF" id="ubtK7j0w7t" role="3cqZAp">
+          <node concept="2OqwBi" id="ubtK7j0w7u" role="3clFbG">
+            <node concept="37vLTw" id="ubtK7j0w7v" role="2Oq$k0">
               <ref role="3cqZAo" node="6aGZllYVjSN" resolve="elem" />
             </node>
-            <node concept="liA8E" id="6aGZllYVtWl" role="2OqNvi">
+            <node concept="liA8E" id="ubtK7j0w7w" role="2OqNvi">
               <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-              <node concept="37vLTw" id="6aGZllYVyZl" role="37wK5m">
-                <ref role="3cqZAo" node="6aGZllYVyZa" resolve="ATT_REPO_MPSMODULES" />
+              <node concept="37vLTw" id="ubtK7j0B2G" role="37wK5m">
+                <ref role="3cqZAo" node="ubtK7j0xdR" resolve="ELEM_REPO_ALL_MODULES" />
               </node>
-              <node concept="3cpWs3" id="6aGZllYVwb_" role="37wK5m">
-                <node concept="Xl_RD" id="6aGZllYVwcc" role="3uHU7w">
+              <node concept="3cpWs3" id="ubtK7j0w7y" role="37wK5m">
+                <node concept="Xl_RD" id="ubtK7j0w7z" role="3uHU7w">
                   <property role="Xl_RC" value="" />
                 </node>
-                <node concept="2OqwBi" id="6aGZllYVuWn" role="3uHU7B">
-                  <node concept="37vLTw" id="6aGZllYVuQA" role="2Oq$k0">
+                <node concept="2OqwBi" id="ubtK7j0w7$" role="3uHU7B">
+                  <node concept="37vLTw" id="ubtK7j0w7_" role="2Oq$k0">
                     <ref role="3cqZAo" node="6aGZllYTY_Z" resolve="myRepo" />
                   </node>
-                  <node concept="2OwXpG" id="6aGZllYVv5W" role="2OqNvi">
-                    <ref role="2Oxat5" node="6aGZllYQuKO" resolve="includeStdModules" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6aGZllYVvbK" role="3cqZAp">
-          <node concept="2OqwBi" id="6aGZllYVvbL" role="3clFbG">
-            <node concept="37vLTw" id="6aGZllYVvbM" role="2Oq$k0">
-              <ref role="3cqZAo" node="6aGZllYVjSN" resolve="elem" />
-            </node>
-            <node concept="liA8E" id="6aGZllYVvbN" role="2OqNvi">
-              <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-              <node concept="37vLTw" id="6aGZllYVAOu" role="37wK5m">
-                <ref role="3cqZAo" node="6aGZllYVAOj" resolve="ATT_REPO_PLUGINMODULES" />
-              </node>
-              <node concept="3cpWs3" id="6aGZllYVwwL" role="37wK5m">
-                <node concept="Xl_RD" id="6aGZllYVwxo" role="3uHU7w">
-                  <property role="Xl_RC" value="" />
-                </node>
-                <node concept="2OqwBi" id="6aGZllYVvbP" role="3uHU7B">
-                  <node concept="37vLTw" id="6aGZllYVvbQ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6aGZllYTY_Z" resolve="myRepo" />
-                  </node>
-                  <node concept="2OwXpG" id="6aGZllYVwMZ" role="2OqNvi">
-                    <ref role="2Oxat5" node="6aGZllYQuTl" resolve="includePluginModules" />
+                  <node concept="2OwXpG" id="ubtK7j0Bz2" role="2OqNvi">
+                    <ref role="2Oxat5" node="ubtK7iYy6B" resolve="includeAllModules" />
                   </node>
                 </node>
               </node>
@@ -5100,8 +5050,8 @@
                     </node>
                     <node concept="liA8E" id="6aGZllYVjTd" role="2OqNvi">
                       <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                      <node concept="37vLTw" id="6aGZllYVPKq" role="37wK5m">
-                        <ref role="3cqZAo" node="6aGZllYVPKf" resolve="ATT_FOLDER_PATH" />
+                      <node concept="37vLTw" id="ubtK7j0rnL" role="37wK5m">
+                        <ref role="3cqZAo" node="KL8Aql8eF_" resolve="PATH" />
                       </node>
                       <node concept="37vLTw" id="6aGZllYVjTe" role="37wK5m">
                         <ref role="3cqZAo" node="6aGZllYVjTm" resolve="f" />
@@ -5147,8 +5097,8 @@
                     </node>
                     <node concept="liA8E" id="6aGZllYVTvX" role="2OqNvi">
                       <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                      <node concept="37vLTw" id="6aGZllYVVfy" role="37wK5m">
-                        <ref role="3cqZAo" node="6aGZllYVVfn" resolve="ATT_FILE_PATH" />
+                      <node concept="37vLTw" id="ubtK7j0rru" role="37wK5m">
+                        <ref role="3cqZAo" node="KL8Aql8eF_" resolve="PATH" />
                       </node>
                       <node concept="37vLTw" id="6aGZllYVTvZ" role="37wK5m">
                         <ref role="3cqZAo" node="6aGZllYVTw0" resolve="f" />
@@ -5205,54 +5155,27 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6aGZllYWf7M" role="3cqZAp">
-          <node concept="37vLTI" id="6aGZllYWf$9" role="3clFbG">
-            <node concept="2OqwBi" id="6aGZllYWfcq" role="37vLTJ">
-              <node concept="37vLTw" id="6aGZllYWf7K" role="2Oq$k0">
+        <node concept="3clFbF" id="ubtK7j0C6L" role="3cqZAp">
+          <node concept="37vLTI" id="ubtK7j0C6M" role="3clFbG">
+            <node concept="2OqwBi" id="ubtK7j0C6N" role="37vLTJ">
+              <node concept="37vLTw" id="ubtK7j0C6O" role="2Oq$k0">
                 <ref role="3cqZAo" node="6aGZllYWdn$" resolve="result" />
               </node>
-              <node concept="2OwXpG" id="6aGZllYWfeX" role="2OqNvi">
-                <ref role="2Oxat5" node="6aGZllYQuKO" resolve="includeStdModules" />
+              <node concept="2OwXpG" id="ubtK7j0EMp" role="2OqNvi">
+                <ref role="2Oxat5" node="ubtK7iYy6B" resolve="includeAllModules" />
               </node>
             </node>
-            <node concept="2YIFZM" id="6aGZllYWf5x" role="37vLTx">
+            <node concept="2YIFZM" id="ubtK7j0C6Q" role="37vLTx">
               <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
               <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-              <node concept="2OqwBi" id="6aGZllYWfKC" role="37wK5m">
-                <node concept="37vLTw" id="6aGZllYWfU7" role="2Oq$k0">
+              <node concept="2OqwBi" id="ubtK7j0C6R" role="37wK5m">
+                <node concept="37vLTw" id="ubtK7j0C6S" role="2Oq$k0">
                   <ref role="3cqZAo" node="6aGZllYV3q1" resolve="repoXML" />
                 </node>
-                <node concept="liA8E" id="6aGZllYWg9G" role="2OqNvi">
+                <node concept="liA8E" id="ubtK7j0C6T" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                  <node concept="37vLTw" id="6aGZllYWgd1" role="37wK5m">
-                    <ref role="3cqZAo" node="6aGZllYVyZa" resolve="ATT_REPO_MPSMODULES" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6aGZllYWgfu" role="3cqZAp">
-          <node concept="37vLTI" id="6aGZllYWgfv" role="3clFbG">
-            <node concept="2OqwBi" id="6aGZllYWgfw" role="37vLTJ">
-              <node concept="37vLTw" id="6aGZllYWgfx" role="2Oq$k0">
-                <ref role="3cqZAo" node="6aGZllYWdn$" resolve="result" />
-              </node>
-              <node concept="2OwXpG" id="6aGZllYWgoQ" role="2OqNvi">
-                <ref role="2Oxat5" node="6aGZllYQuTl" resolve="includePluginModules" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="6aGZllYWgfz" role="37vLTx">
-              <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-              <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-              <node concept="2OqwBi" id="6aGZllYWgf$" role="37wK5m">
-                <node concept="37vLTw" id="6aGZllYWgf_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6aGZllYV3q1" resolve="repoXML" />
-                </node>
-                <node concept="liA8E" id="6aGZllYWgfA" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                  <node concept="37vLTw" id="6aGZllYWgv3" role="37wK5m">
-                    <ref role="3cqZAo" node="6aGZllYVAOj" resolve="ATT_REPO_PLUGINMODULES" />
+                  <node concept="37vLTw" id="ubtK7j0EEk" role="37wK5m">
+                    <ref role="3cqZAo" node="ubtK7j0xdR" resolve="ELEM_REPO_ALL_MODULES" />
                   </node>
                 </node>
               </node>
@@ -5279,8 +5202,8 @@
                     </node>
                     <node concept="liA8E" id="6aGZllYWq2T" role="2OqNvi">
                       <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                      <node concept="37vLTw" id="6aGZllYWq6p" role="37wK5m">
-                        <ref role="3cqZAo" node="6aGZllYVPKf" resolve="ATT_FOLDER_PATH" />
+                      <node concept="37vLTw" id="ubtK7j0Emi" role="37wK5m">
+                        <ref role="3cqZAo" node="KL8Aql8eF_" resolve="PATH" />
                       </node>
                     </node>
                   </node>
@@ -5326,8 +5249,8 @@
                     </node>
                     <node concept="liA8E" id="6aGZllYWqbu" role="2OqNvi">
                       <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                      <node concept="37vLTw" id="6aGZllYWsHa" role="37wK5m">
-                        <ref role="3cqZAo" node="6aGZllYVVfn" resolve="ATT_FILE_PATH" />
+                      <node concept="37vLTw" id="ubtK7j0EuX" role="37wK5m">
+                        <ref role="3cqZAo" node="KL8Aql8eF_" resolve="PATH" />
                       </node>
                     </node>
                   </node>
@@ -10059,23 +9982,14 @@
   <node concept="312cEu" id="6aGZllYQgzH">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="RepositoryDescriptor" />
-    <node concept="312cEg" id="6aGZllYQuKO" role="jymVt">
+    <node concept="312cEg" id="ubtK7iYy6B" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="includeStdModules" />
+      <property role="TrG5h" value="includeAllModules" />
       <property role="3TUv4t" value="false" />
-      <node concept="3Tm1VV" id="6aGZllYQxXi" role="1B3o_S" />
-      <node concept="10P_77" id="6aGZllYQuKH" role="1tU5fm" />
-      <node concept="3clFbT" id="6aGZllYQuLP" role="33vP2m" />
-    </node>
-    <node concept="312cEg" id="6aGZllYQuTl" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="includePluginModules" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm1VV" id="6aGZllYQxY_" role="1B3o_S" />
-      <node concept="10P_77" id="6aGZllYQuTn" role="1tU5fm" />
-      <node concept="3clFbT" id="6aGZllYQuTo" role="33vP2m" />
+      <node concept="3Tm1VV" id="ubtK7iYy6C" role="1B3o_S" />
+      <node concept="10P_77" id="ubtK7iYy6D" role="1tU5fm" />
+      <node concept="3clFbT" id="ubtK7iYy6E" role="33vP2m" />
     </node>
     <node concept="312cEg" id="6aGZllYQt7F" role="jymVt">
       <property role="34CwA1" value="false" />

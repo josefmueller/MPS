@@ -12,8 +12,8 @@ public class RepositoryDataType extends DataType {
   public RepositoryDescriptor getDescriptor() {
     return myDescriptor;
   }
-  public void setIncludempsmodules(boolean value) {
-    myDescriptor.includeStdModules = value;
+  public void addConfiguredAllMpsModules(AllModulesDataType value) {
+    myDescriptor.includeAllModules = true;
   }
   public void addConfiguredModulesFolder(ModulesFolderDataType folder) {
     myDescriptor.folders.add(folder.getDir().getAbsolutePath());

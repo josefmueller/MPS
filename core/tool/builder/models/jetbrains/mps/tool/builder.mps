@@ -615,41 +615,36 @@
         </node>
         <node concept="3clFbJ" id="1O4zZOkaYzE" role="3cqZAp">
           <node concept="3clFbS" id="1O4zZOkaYzG" role="3clFbx">
-            <node concept="3clFbJ" id="1O4zZOkbty2" role="3cqZAp">
-              <node concept="3clFbS" id="1O4zZOkbty4" role="3clFbx">
-                <node concept="3clFbF" id="1O4zZOkbveu" role="3cqZAp">
-                  <node concept="37vLTI" id="1O4zZOkbvev" role="3clFbG">
-                    <node concept="2OqwBi" id="1O4zZOkbvew" role="37vLTx">
-                      <node concept="2OqwBi" id="1O4zZOkbvex" role="2Oq$k0">
-                        <node concept="37vLTw" id="1O4zZOkbvey" role="2Oq$k0">
+            <node concept="3clFbJ" id="ubtK7j1nQf" role="3cqZAp">
+              <node concept="3clFbS" id="ubtK7j1nQh" role="3clFbx">
+                <node concept="3clFbF" id="ubtK7j1onO" role="3cqZAp">
+                  <node concept="37vLTI" id="ubtK7j1ozV" role="3clFbG">
+                    <node concept="2OqwBi" id="ubtK7j1oDQ" role="37vLTx">
+                      <node concept="2OqwBi" id="ubtK7j2ci9" role="2Oq$k0">
+                        <node concept="37vLTw" id="ubtK7j1oB2" role="2Oq$k0">
                           <ref role="3cqZAo" node="5kpQnuAFrK6" resolve="config" />
                         </node>
-                        <node concept="liA8E" id="1O4zZOkbvez" role="2OqNvi">
+                        <node concept="liA8E" id="ubtK7j2cp9" role="2OqNvi">
                           <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="1O4zZOkbve$" role="2OqNvi">
+                      <node concept="liA8E" id="ubtK7j1oRB" role="2OqNvi">
                         <ref role="37wK5l" to="79ha:5hfNQWynXUe" resolve="withWorkbenchPath" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="1O4zZOkbve_" role="37vLTJ">
+                    <node concept="37vLTw" id="ubtK7j1onM" role="37vLTJ">
                       <ref role="3cqZAo" node="5kpQnuAFrK6" resolve="config" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="1O4zZOkbv7R" role="3clFbw">
-                <node concept="37vLTw" id="1O4zZOkbv3Z" role="2Oq$k0">
+              <node concept="2OqwBi" id="ubtK7j1og3" role="3clFbw">
+                <node concept="37vLTw" id="ubtK7j1oc5" role="2Oq$k0">
                   <ref role="3cqZAo" node="1O4zZOkaW$D" resolve="repo" />
                 </node>
-                <node concept="2OwXpG" id="1O4zZOkbvaN" role="2OqNvi">
-                  <ref role="2Oxat5" to="asz6:6aGZllYQuKO" resolve="includeStdModules" />
+                <node concept="2OwXpG" id="ubtK7j1olg" role="2OqNvi">
+                  <ref role="2Oxat5" to="asz6:ubtK7iYy6B" resolve="includeAllModules" />
                 </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="1O4zZOkbPgF" role="3cqZAp">
-              <node concept="3SKdUq" id="1O4zZOkbPgH" role="3SKWNk">
-                <property role="3SKdUp" value="todo plugin modules option - implement" />
               </node>
             </node>
             <node concept="3SKdUt" id="1O4zZOkb0GN" role="3cqZAp">

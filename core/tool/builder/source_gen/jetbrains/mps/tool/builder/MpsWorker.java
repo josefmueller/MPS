@@ -86,10 +86,9 @@ public abstract class MpsWorker {
     EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
     RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
     if (repo != null) {
-      if (repo.includeStdModules) {
+      if (repo.includeAllModules) {
         config = config.withBootstrapLibraries().withWorkbenchPath();
       }
-      // todo plugin modules option - implement 
       // todo make this code more typed 
       for (String lib : repo.folders) {
         config = config.addLib(lib);

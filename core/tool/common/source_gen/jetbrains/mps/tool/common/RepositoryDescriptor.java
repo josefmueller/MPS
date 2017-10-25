@@ -6,8 +6,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class RepositoryDescriptor {
-  public boolean includeStdModules = false;
-  public boolean includePluginModules = false;
+  public boolean includeAllModules = false;
   public Set<String> files = new HashSet<String>();
   public Set<String> folders = new HashSet<String>();
 }
