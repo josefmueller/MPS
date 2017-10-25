@@ -746,7 +746,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="A1WHu" id="7XjOxAicea2" role="3vIgyS">
-            <ref role="A1WHt" node="7clZIz_roF6" resolve="TestSubstituteParent_TransformationMenuPart_WrapDefaultSubstituteMenu" />
+            <ref role="A1WHt" node="7clZIz_roF6" resolve="TestSubstituteParent_WrapDefaultSubstituteMenu" />
           </node>
         </node>
         <node concept="3F2HdR" id="7XjOxAice9V" role="3EZMnx">
@@ -768,7 +768,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="A1WHu" id="6$E6NNC2U$V" role="3vIgyS">
-            <ref role="A1WHt" node="6$E6NNC3cI2" resolve="TestSubstituteParent_TransformationMenuPart_WrapDefaultSubstituteMenuWithFunction" />
+            <ref role="A1WHt" node="6$E6NNC3cI2" resolve="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
           </node>
         </node>
         <node concept="3F2HdR" id="6$E6NNC2U$O" role="3EZMnx">
@@ -790,7 +790,7 @@
             <property role="VOm3f" value="true" />
           </node>
           <node concept="A1WHu" id="7clZIz_rtGC" role="3vIgyS">
-            <ref role="A1WHt" node="41ZU75Xz32l" resolve="TestSubstituteParent_TransformationMenuPart_WrapNamedSubstituteMenu" />
+            <ref role="A1WHt" node="41ZU75Xz32l" resolve="TestSubstituteParent_WrapNamedSubstituteMenu" />
           </node>
         </node>
         <node concept="3F2HdR" id="7clZIz_rtGx" role="3EZMnx">
@@ -2606,7 +2606,7 @@
           </node>
         </node>
         <node concept="2kknPJ" id="7Nx4mSUs6tn" role="2klrvf">
-          <ref role="2ZyFGn" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+          <ref role="2ZyFGn" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
         </node>
       </node>
     </node>
@@ -3371,7 +3371,7 @@
                 <node concept="2oxUTD" id="6$E6NNC2q7e" role="2OqNvi">
                   <node concept="1PxgMI" id="6$E6NNC2w3T" role="2oxUTC">
                     <node concept="chp4Y" id="6$E6NNC2wg9" role="3oSUPX">
-                      <ref role="cht4Q" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+                      <ref role="cht4Q" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
                     </node>
                     <node concept="3N4pyC" id="6$E6NNC2q7f" role="1m5AlR" />
                   </node>
@@ -3464,7 +3464,7 @@
               </node>
               <node concept="3clFbF" id="6$E6NNC2uct" role="3cqZAp">
                 <node concept="35c_gC" id="6$E6NNC2ucs" role="3clFbG">
-                  <ref role="35c_gD" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+                  <ref role="35c_gD" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
                 </node>
               </node>
             </node>
@@ -4868,7 +4868,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="41ZU75Xz32l">
-    <property role="TrG5h" value="TestSubstituteParent_TransformationMenuPart_WrapNamedSubstituteMenu" />
+    <property role="TrG5h" value="TestSubstituteParent_WrapNamedSubstituteMenu" />
     <ref role="aqKnT" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
     <node concept="1Qtc8_" id="41ZU75Xz32m" role="IW6Ez">
       <node concept="3eGOoe" id="7clZIz_pytX" role="1Qtc8$" />
@@ -7990,7 +7990,7 @@
   </node>
   <node concept="Q6S24" id="7clZIz_ps6e">
     <property role="TrG5h" value="NamedSubstituteMenuToWrapFromTransformMenu" />
-    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     <node concept="3eGOop" id="7clZIz_ps6h" role="3ft7WO">
       <node concept="ucgPf" id="7clZIz_ps6j" role="3aKz83">
         <node concept="3clFbS" id="7clZIz_ps6l" role="2VODD2">
@@ -7998,12 +7998,12 @@
             <node concept="3cpWsn" id="7clZIz_ptDd" role="3cpWs9">
               <property role="TrG5h" value="node" />
               <node concept="3Tqbb2" id="7clZIz_ptDa" role="1tU5fm">
-                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
               </node>
               <node concept="2ShNRf" id="7clZIz_ptDe" role="33vP2m">
                 <node concept="3zrR0B" id="7clZIz_ptDf" role="2ShVmc">
                   <node concept="3Tqbb2" id="7clZIz_ptDg" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
                   </node>
                 </node>
               </node>
@@ -8039,7 +8039,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="7clZIz_roF6">
-    <property role="TrG5h" value="TestSubstituteParent_TransformationMenuPart_WrapDefaultSubstituteMenu" />
+    <property role="TrG5h" value="TestSubstituteParent_WrapDefaultSubstituteMenu" />
     <ref role="aqKnT" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
     <node concept="1Qtc8_" id="7clZIz_roF7" role="IW6Ez">
       <node concept="3eGOoe" id="7clZIz_roF8" role="1Qtc8$" />
@@ -8130,13 +8130,13 @@
           </node>
         </node>
         <node concept="2kknPJ" id="7clZIz_rtZZ" role="3c8P5H">
-          <ref role="2ZyFGn" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+          <ref role="2ZyFGn" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
         </node>
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="7clZIz_rrUc">
-    <ref role="1XX52x" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+    <ref role="1XX52x" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     <node concept="3EZMnI" id="7clZIz_rrUe" role="2wV5jI">
       <node concept="l2Vlx" id="7clZIz_rrUf" role="2iSdaV" />
       <node concept="3F0ifn" id="7clZIz_rrUg" role="3EZMnx">
@@ -8148,7 +8148,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="7clZIz_rtuI">
-    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     <node concept="3eGOop" id="7clZIz_rtog" role="3ft7WO">
       <node concept="ucgPf" id="7clZIz_rtoh" role="3aKz83">
         <node concept="3clFbS" id="7clZIz_rtoi" role="2VODD2">
@@ -8156,12 +8156,12 @@
             <node concept="3cpWsn" id="7clZIz_rtok" role="3cpWs9">
               <property role="TrG5h" value="node" />
               <node concept="3Tqbb2" id="7clZIz_rtol" role="1tU5fm">
-                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
               </node>
               <node concept="2ShNRf" id="7clZIz_rtom" role="33vP2m">
                 <node concept="3zrR0B" id="7clZIz_rton" role="2ShVmc">
                   <node concept="3Tqbb2" id="7clZIz_rtoo" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
                   </node>
                 </node>
               </node>
@@ -8197,14 +8197,14 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1L4Jh90GMWo">
-    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
     <node concept="3ft5Ry" id="1L4Jh90GMWr" role="3ft7WO">
-      <ref role="4PJHt" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+      <ref role="4PJHt" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
     </node>
   </node>
   <node concept="Q6S24" id="1L4Jh90GMWR">
     <property role="TrG5h" value="NamedSubstituteMenuToWrapFromSubstituteMenu" />
-    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
     <node concept="3eGOop" id="1L4Jh90GN38" role="3ft7WO">
       <node concept="ucgPf" id="1L4Jh90GN3a" role="3aKz83">
         <node concept="3clFbS" id="1L4Jh90GN3c" role="2VODD2">
@@ -8212,7 +8212,7 @@
             <node concept="2ShNRf" id="1L4Jh90GN6M" role="3clFbG">
               <node concept="3zrR0B" id="1L4Jh90GOqv" role="2ShVmc">
                 <node concept="3Tqbb2" id="1L4Jh90GOqx" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+                  <ref role="ehGHo" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
                 </node>
               </node>
             </node>
@@ -8227,7 +8227,7 @@
     </node>
   </node>
   <node concept="3ICXOK" id="6$E6NNC3cI2">
-    <property role="TrG5h" value="TestSubstituteParent_TransformationMenuPart_WrapDefaultSubstituteMenuWithFunction" />
+    <property role="TrG5h" value="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
     <ref role="aqKnT" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
     <node concept="1Qtc8_" id="6$E6NNC3cI3" role="IW6Ez">
       <node concept="3eGOoe" id="6$E6NNC3cI4" role="1Qtc8$" />
@@ -8284,7 +8284,7 @@
                 <node concept="TSZUe" id="6$E6NNC3cI_" role="2OqNvi">
                   <node concept="1PxgMI" id="6$E6NNC3hlD" role="25WWJ7">
                     <node concept="chp4Y" id="6$E6NNC3htJ" role="3oSUPX">
-                      <ref role="cht4Q" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                      <ref role="cht4Q" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
                     </node>
                     <node concept="3c8USq" id="6$E6NNC3cIA" role="1m5AlR" />
                   </node>
@@ -8349,7 +8349,7 @@
               </node>
               <node concept="3clFbF" id="6$E6NNC3ggr" role="3cqZAp">
                 <node concept="35c_gC" id="6$E6NNC3ggp" role="3clFbG">
-                  <ref role="35c_gD" to="wdez:7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+                  <ref role="35c_gD" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
                 </node>
               </node>
             </node>

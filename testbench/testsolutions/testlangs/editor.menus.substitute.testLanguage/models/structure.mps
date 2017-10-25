@@ -142,21 +142,21 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrapDefaultSubstituteMenuFromTransform" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     </node>
     <node concept="1TJgyj" id="6$E6NNC2UzN" role="1TKVEi">
       <property role="IQ2ns" value="7577899271409346803" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrapDefaultSubstituteMenuWithFunctionFromTransform" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     </node>
     <node concept="1TJgyj" id="41ZU75Xz30D" role="1TKVEi">
       <property role="IQ2ns" value="4647688914604929065" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrapNamedSubstituteMenuFromTransformMenu" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteConceptToWrapFromTransformMenu" />
+      <ref role="20lvS9" node="7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
     </node>
     <node concept="1TJgyj" id="7W01XocYQAh" role="1TKVEi">
       <property role="IQ2ns" value="9151323058739046801" />
@@ -272,7 +272,7 @@
       <property role="IQ2ns" value="8998492695587451564" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="conceptToWrap" />
-      <ref role="20lvS9" node="7Nx4mSUrZaE" resolve="TestSubstituteConceptToWrapFromSubstituteMenu" />
+      <ref role="20lvS9" node="7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrZaD">
@@ -282,7 +282,7 @@
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrZaE">
     <property role="EcuMT" value="8998492695587451562" />
-    <property role="TrG5h" value="TestSubstituteConceptToWrapFromSubstituteMenu" />
+    <property role="TrG5h" value="TestSubstituteToWrapFromSubstituteMenu" />
     <property role="34LRSv" value="default" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
@@ -896,7 +896,7 @@
   </node>
   <node concept="1TIwiD" id="7clZIz_rraI">
     <property role="EcuMT" value="8292814565107675822" />
-    <property role="TrG5h" value="TestSubstituteConceptToWrapFromTransformMenu" />
+    <property role="TrG5h" value="TestSubstituteToWrapFromTransformMenu" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="7clZIz_rrAV" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
