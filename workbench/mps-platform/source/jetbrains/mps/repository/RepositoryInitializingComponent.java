@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
@@ -69,8 +71,10 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
     myFS = PathManager.isFromSources() ? FileSystemExtPoint.getFS() : IoFileSystem.INSTANCE;
-    myContributors.add(new BootstrapLibraryContributor(myFS));
-    myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
+    if (!RuntimeFlags.isTestMode()) {
+      myContributors.add(new BootstrapLibraryContributor(myFS));
+      myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
+    }
     myContributors.add(new PluginLibraryContributor(myFS));
   }
 
