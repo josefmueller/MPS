@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-public abstract class AbstractNodeChecker implements IAbstractChecker<SNode, NodeReportItem> {
+public abstract class AbstractNodeChecker implements IChecker<SNode, NodeReportItem> {
   public abstract void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository);
 
   @Override

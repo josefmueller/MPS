@@ -621,7 +621,7 @@
       </node>
     </node>
     <node concept="3uibUv" id="4SGXHKgZuU_" role="EKbjA">
-      <ref role="3uigEE" node="3xfDcbRbJai" resolve="IAbstractChecker" />
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
       <node concept="3uibUv" id="4SGXHKgZvl1" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
@@ -6223,7 +6223,7 @@
       <node concept="3clFbS" id="45Q6RD6mTZD" role="3clF47" />
     </node>
     <node concept="3uibUv" id="IMyJ9JmdJq" role="3HQHJm">
-      <ref role="3uigEE" node="3xfDcbRbJai" resolve="IAbstractChecker" />
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
       <node concept="3uibUv" id="IMyJ9JmdKU" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
@@ -6240,7 +6240,7 @@
       <ref role="3uigEE" node="7z7Xs6Zeka" resolve="IRootChecker" />
     </node>
     <node concept="3uibUv" id="4SGXHKgZmYk" role="EKbjA">
-      <ref role="3uigEE" node="3xfDcbRbJai" resolve="IAbstractChecker" />
+      <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
       <node concept="3uibUv" id="4SGXHKgZoDQ" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
@@ -6648,6 +6648,29 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4SGXHKgZjq1" role="jymVt" />
+    <node concept="2tJIrI" id="dTvp$Z0yxi" role="jymVt" />
+    <node concept="3clFb_" id="dTvp$Z0zfP" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="dTvp$Z0zfR" role="1B3o_S" />
+      <node concept="17QB3L" id="dTvp$Z0zfS" role="3clF45" />
+      <node concept="3clFbS" id="dTvp$Z0zfW" role="3clF47">
+        <node concept="3clFbF" id="dTvp$Z0$5F" role="3cqZAp">
+          <node concept="2OqwBi" id="dTvp$Z0$$H" role="3clFbG">
+            <node concept="37vLTw" id="dTvp$Z0$5E" role="2Oq$k0">
+              <ref role="3cqZAo" node="2UMCgvoqxzk" resolve="myRule" />
+            </node>
+            <node concept="liA8E" id="dTvp$Z0_cl" role="2OqNvi">
+              <ref role="37wK5l" node="3xfDcbRdDB8" resolve="getCategory" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="dTvp$Z0zfX" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3clFb_" id="4SGXHKgZsSw" role="jymVt">
       <property role="TrG5h" value="check" />
       <property role="1EzhhJ" value="false" />

@@ -5,17 +5,15 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.checkers.IAbstractChecker;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.checkers.IteratingChecker;
-import jetbrains.mps.checkers.CategoryShowingChecker;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class RootCheckerSpecificCheckerAdapter {
 
-  public static IChecker<SModel, NodeReportItem> createNew(IAbstractChecker<SNode, NodeReportItem> checker, String category) {
-    return new IteratingChecker<SModel, SNode, NodeReportItem>(new CategoryShowingChecker.CategoryWrapper<SNode, NodeReportItem>(checker, category), new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
+  public static IChecker<SModel, NodeReportItem> createNew(IChecker<SNode, NodeReportItem> checker) {
+    return new IteratingChecker<SModel, SNode, NodeReportItem>(checker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
       public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
         return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
       }

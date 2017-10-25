@@ -7,6 +7,6 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
 
-public interface IRootChecker extends IAbstractChecker<SNode, NodeReportItem> {
+public interface IRootChecker extends IChecker<SNode, NodeReportItem> {
   void processErrors(SNode root, SRepository repository, Processor<NodeReportItem> processor);
 }

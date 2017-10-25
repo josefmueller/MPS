@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
 
-public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecker, IAbstractChecker<SNode, NodeReportItem> {
+public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecker, IChecker<SNode, NodeReportItem> {
   private AbstractNodeChecker myRule;
 
   public interface ErrorSkipCondition {
@@ -76,6 +76,11 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     this(SKIP_NOTHING_CONDITION, rules);
   }
 
+
+  @Override
+  public String getCategory() {
+    return myRule.getCategory();
+  }
   @Override
   public void check(SNode root, SRepository repository, final Consumer<? super NodeReportItem> errorCollector, final ProgressMonitor monitor) {
     processErrors(root, repository, new Processor<NodeReportItem>() {

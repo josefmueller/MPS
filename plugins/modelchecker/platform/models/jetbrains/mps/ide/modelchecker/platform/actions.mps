@@ -670,10 +670,6 @@
                           <ref role="37wK5l" to="k8ev:4yqv8vrxVuu" resolve="TypesystemChecker" />
                         </node>
                       </node>
-                      <node concept="10M0yZ" id="a7HeXjWeRJ" role="37wK5m">
-                        <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.TYPESYSTEM" resolve="TYPESYSTEM" />
-                        <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                      </node>
                     </node>
                   </node>
                   <node concept="37vLTw" id="1VtEqfXIyLV" role="2Oq$k0">
@@ -702,10 +698,6 @@
                           <ref role="1Pybhc" node="63oasX2dpcZ" resolve="RootCheckerSpecificCheckerAdapter" />
                           <node concept="2GrUjf" id="dTvp$YWEB8" role="37wK5m">
                             <ref role="2Gs0qQ" node="dTvp$YWxTl" resolve="checker" />
-                          </node>
-                          <node concept="10M0yZ" id="dTvp$YW$aE" role="37wK5m">
-                            <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                            <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
                           </node>
                         </node>
                       </node>
@@ -749,15 +741,11 @@
                         <node concept="1pGfFk" id="45Q6RD6iVbz" role="2ShVmc">
                           <ref role="37wK5l" to="wsw7:2UMCgvoqxz3" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
                           <node concept="2ShNRf" id="45Q6RD6iVbA" role="37wK5m">
-                            <node concept="1pGfFk" id="45Q6RD6jav_" role="2ShVmc">
-                              <ref role="37wK5l" to="wsw7:3TJpIwQlqFH" resolve="UsedLanguagesChecker" />
+                            <node concept="HV5vD" id="dTvp$Z4YLg" role="2ShVmc">
+                              <ref role="HV5vE" to="wsw7:3TJpIwQlqFz" resolve="UsedLanguagesChecker" />
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node concept="10M0yZ" id="a7HeXjWeCw" role="37wK5m">
-                        <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                        <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.CONSTRAINTS" resolve="CONSTRAINTS" />
                       </node>
                     </node>
                   </node>
@@ -793,10 +781,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node concept="10M0yZ" id="1PHXAu1oR5N" role="37wK5m">
-                        <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.STRUCTURE" resolve="STRUCTURE" />
-                        <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                       </node>
                     </node>
                   </node>
@@ -9972,19 +9956,13 @@
       <node concept="37vLTG" id="IMyJ9Jxkyg" role="3clF46">
         <property role="TrG5h" value="checker" />
         <node concept="3uibUv" id="3xfDcbR0VjG" role="1tU5fm">
-          <ref role="3uigEE" to="wsw7:3xfDcbRbJai" resolve="IAbstractChecker" />
+          <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
           <node concept="3uibUv" id="3xfDcbRiq16" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
           </node>
           <node concept="3uibUv" id="3xfDcbRiqIT" role="11_B2D">
             <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="IMyJ9Jxkyi" role="3clF46">
-        <property role="TrG5h" value="category" />
-        <node concept="3uibUv" id="IMyJ9Jxkyj" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
       <node concept="3uibUv" id="IMyJ9Jxkyk" role="3clF45">
@@ -10002,22 +9980,8 @@
           <node concept="2ShNRf" id="IMyJ9JxmdM" role="3clFbG">
             <node concept="1pGfFk" id="IMyJ9Jxn0m" role="2ShVmc">
               <ref role="37wK5l" to="wsw7:76Xff8JNYMc" resolve="IteratingChecker" />
-              <node concept="2ShNRf" id="3xfDcbRiwsn" role="37wK5m">
-                <node concept="1pGfFk" id="3xfDcbRixwK" role="2ShVmc">
-                  <ref role="37wK5l" to="wsw7:3xfDcbRjs4v" resolve="CategoryShowingChecker.CategoryWrapper" />
-                  <node concept="37vLTw" id="3xfDcbRixYK" role="37wK5m">
-                    <ref role="3cqZAo" node="IMyJ9Jxkyg" resolve="checker" />
-                  </node>
-                  <node concept="37vLTw" id="3xfDcbRiyTB" role="37wK5m">
-                    <ref role="3cqZAo" node="IMyJ9Jxkyi" resolve="category" />
-                  </node>
-                  <node concept="3uibUv" id="3xfDcbRjFgv" role="1pMfVU">
-                    <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                  </node>
-                  <node concept="3uibUv" id="3xfDcbRjFKL" role="1pMfVU">
-                    <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="dTvp$Z52_c" role="37wK5m">
+                <ref role="3cqZAo" node="IMyJ9Jxkyg" resolve="checker" />
               </node>
               <node concept="1bVj0M" id="IMyJ9Jxs3r" role="37wK5m">
                 <node concept="3clFbS" id="IMyJ9Jxs3t" role="1bW5cS">

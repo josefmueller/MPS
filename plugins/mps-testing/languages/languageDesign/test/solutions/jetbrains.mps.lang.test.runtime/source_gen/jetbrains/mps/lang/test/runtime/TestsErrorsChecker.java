@@ -23,10 +23,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Processor;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.checkers.IRootChecker;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.ErrorReportUtil;
@@ -123,13 +128,17 @@ public class TestsErrorsChecker {
         return true;
       }
     });
-    // todo: add UsedLanguageChecker 
-    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem reportItem) {
+    Consumer<NodeReportItem> errorCollector = new Consumer<NodeReportItem>() {
+      public void consume(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
-        return true;
       }
-    });
+    };
+    List<IRootChecker> checkers = ListSequence.fromList(new ArrayList<IRootChecker>());
+    // todo: add UsedLanguageChecker? 
+    ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
+    for (IRootChecker checker : ListSequence.fromList(checkers)) {
+      checker.check(myRoot, myRoot.getModel().getRepository(), errorCollector, new EmptyProgressMonitor());
+    }
     ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeReportItem>() {
       public boolean process(NodeReportItem vp) {
         SetSequence.fromSet(result).addElement(vp);
