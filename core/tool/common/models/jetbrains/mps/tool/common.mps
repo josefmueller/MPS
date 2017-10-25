@@ -617,15 +617,6 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="KL8Aql8epJ" role="jymVt">
-      <property role="TrG5h" value="myLoadBootstrapLibraries" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="KL8Aql8epK" role="1B3o_S" />
-      <node concept="10P_77" id="KL8Aql8epL" role="1tU5fm" />
-      <node concept="3clFbT" id="KL8Aql8epM" role="33vP2m">
-        <property role="3clFbU" value="true" />
-      </node>
-    </node>
     <node concept="312cEg" id="7SWBkX45D4w" role="jymVt">
       <property role="TrG5h" value="myChunks" />
       <property role="3TUv4t" value="true" />
@@ -1850,39 +1841,6 @@
         <node concept="3uibUv" id="KL8Aql8ewm" role="1tU5fm">
           <ref role="3uigEE" to="33ny:~List" resolve="List" />
           <node concept="17QB3L" id="KL8Aql8ewn" role="11_B2D" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="KL8Aql8ewo" role="jymVt">
-      <property role="TrG5h" value="isLoadBootstrapLibraries" />
-      <node concept="10P_77" id="KL8Aql8ewp" role="3clF45" />
-      <node concept="3Tm1VV" id="KL8Aql8ewq" role="1B3o_S" />
-      <node concept="3clFbS" id="KL8Aql8ewr" role="3clF47">
-        <node concept="3clFbF" id="KL8Aql8ews" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeuoUG" role="3clFbG">
-            <ref role="3cqZAo" node="KL8Aql8epJ" resolve="myLoadBootstrapLibraries" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="KL8Aql8ewu" role="jymVt">
-      <property role="TrG5h" value="setLoadBootstrapLibraries" />
-      <node concept="37vLTG" id="KL8Aql8ewv" role="3clF46">
-        <property role="TrG5h" value="load" />
-        <node concept="10P_77" id="KL8Aql8eww" role="1tU5fm" />
-      </node>
-      <node concept="3cqZAl" id="KL8Aql8ewx" role="3clF45" />
-      <node concept="3Tm1VV" id="KL8Aql8ewy" role="1B3o_S" />
-      <node concept="3clFbS" id="KL8Aql8ewz" role="3clF47">
-        <node concept="3clFbF" id="KL8Aql8ew$" role="3cqZAp">
-          <node concept="37vLTI" id="KL8Aql8ew_" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxghfSr" role="37vLTx">
-              <ref role="3cqZAo" node="KL8Aql8ewv" resolve="load" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeusK2" role="37vLTJ">
-              <ref role="3cqZAo" node="KL8Aql8epJ" resolve="myLoadBootstrapLibraries" />
-            </node>
-          </node>
         </node>
       </node>
     </node>
@@ -3330,19 +3288,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="KL8Aql8eAy" role="3cqZAp">
-          <node concept="2OqwBi" id="KL8Aql8eAz" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTsNW" role="2Oq$k0">
-              <ref role="3cqZAo" node="KL8Aql8eAk" resolve="data" />
-            </node>
-            <node concept="liA8E" id="KL8Aql8eA_" role="2OqNvi">
-              <ref role="37wK5l" node="KL8Aql8eM_" resolve="setLoadBootstrapLibraries" />
-              <node concept="37vLTw" id="2BHiRxeug4f" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aql8epJ" resolve="myLoadBootstrapLibraries" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="KL8Aql8eAB" role="3cqZAp">
           <node concept="2OqwBi" id="KL8Aql8eAC" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTsFD" role="2Oq$k0">
@@ -3943,26 +3888,6 @@
               </node>
               <node concept="2OwXpG" id="KL8Aql8eEh" role="2OqNvi">
                 <ref role="2Oxat5" node="KL8Aql8epr" resolve="myLogLevel" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="KL8Aql8eEi" role="3cqZAp">
-          <node concept="37vLTI" id="KL8Aql8eEj" role="3clFbG">
-            <node concept="2OqwBi" id="KL8Aql8eEk" role="37vLTx">
-              <node concept="37vLTw" id="3GM_nagTzp4" role="2Oq$k0">
-                <ref role="3cqZAo" node="KL8Aql8eDi" resolve="data" />
-              </node>
-              <node concept="liA8E" id="KL8Aql8eEm" role="2OqNvi">
-                <ref role="37wK5l" node="KL8Aql8eMJ" resolve="getLoadBootstrapLibraries" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="KL8Aql8eEn" role="37vLTJ">
-              <node concept="37vLTw" id="3GM_nagTwTY" role="2Oq$k0">
-                <ref role="3cqZAo" node="KL8Aql8eDY" resolve="whatToDo" />
-              </node>
-              <node concept="2OwXpG" id="KL8Aql8eEp" role="2OqNvi">
-                <ref role="2Oxat5" node="KL8Aql8epJ" resolve="myLoadBootstrapLibraries" />
               </node>
             </node>
           </node>
