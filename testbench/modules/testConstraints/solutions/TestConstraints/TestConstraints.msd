@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="TestConstraints" uuid="fa6333dc-8872-4c44-8576-d45f9752c17d" moduleVersion="0" compileInMPS="true">
+<solution name="TestConstraints" uuid="fa6333dc-8872-4c44-8576-d45f9752c17d" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

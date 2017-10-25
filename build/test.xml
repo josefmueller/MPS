@@ -145,6 +145,22 @@
       <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
+    <ant antfile="build/tests/mpsConstraints.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+    <ant antfile="build/tests/mpsText.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+    <ant antfile="build/tests/mpsDataFlow.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
+    <ant antfile="build/tests/mpsTypesystem.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
   </target>
 
   <target name="default" depends="check-project-structure, module-tests"/>
