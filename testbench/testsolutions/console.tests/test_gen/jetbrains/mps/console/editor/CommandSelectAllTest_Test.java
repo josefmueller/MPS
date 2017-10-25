@@ -11,7 +11,7 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 public class CommandSelectAllTest_Test extends BaseTransformationTest {
   @Test
   public void test_CommandSelectAllTest() throws Throwable {
-    initTest("${mps_home}", "r:1eaccd1e-1515-4b6e-99be-c9ddeb36c896(jetbrains.mps.console.editor)");
+    initTest("${mps_home}", "r:917991a1-3dab-4b0d-a9f3-7ff4a725c921(jetbrains.mps.console.editor@tests)");
     runTest("jetbrains.mps.console.editor.CommandSelectAllTest_Test$TestBody", "testMethod", false);
   }
 
