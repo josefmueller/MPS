@@ -5,9 +5,9 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.types.DataType;
 import java.io.File;
 
-public class ModulesFolderDataType extends DataType {
+public class ModulesDataType extends DataType {
   private File myDir;
-  public ModulesFolderDataType() {
+  public ModulesDataType() {
   }
   public File getDir() {
     return myDir;

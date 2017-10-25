@@ -75,7 +75,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.ModulesFolderDataType" file="ModulesFolderDataType.java">
+  <dependency className="jetbrains.mps.build.ant.ModulesDataType" file="ModulesDataType.java">
     <classNode dependClassName="java.io.File" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
@@ -141,7 +141,7 @@
   <dependency className="jetbrains.mps.build.ant.RepositoryDataType" file="RepositoryDataType.java">
     <classNode dependClassName="jetbrains.mps.build.ant.AllModulesDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.ModuleDataType" />
-    <classNode dependClassName="jetbrains.mps.build.ant.ModulesFolderDataType" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ModulesDataType" />
     <classNode dependClassName="jetbrains.mps.tool.common.RepositoryDescriptor" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>

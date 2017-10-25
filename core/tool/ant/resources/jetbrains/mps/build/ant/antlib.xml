@@ -13,9 +13,9 @@
   <taskdef name="runMPS" classname="jetbrains.mps.build.ant.generation.MpsRunnerTask" />
 
   <typedef name="repository" classname="jetbrains.mps.build.ant.RepositoryDataType" />
-  <typedef name="folder" classname="jetbrains.mps.build.ant.ModulesFolderDataType" />
+  <typedef name="modules" classname="jetbrains.mps.build.ant.ModulesDataType" />
   <typedef name="module" classname="jetbrains.mps.build.ant.ModuleDataType" />
-  <typedef name="all-mps-modules" classname="jetbrains.mps.build.ant.AllModulesDataType" />
+  <typedef name="allmpsmodules" classname="jetbrains.mps.build.ant.AllModulesDataType" />
 
   <typedef name="chunk" classname="jetbrains.mps.build.ant.generation.Chunk" />
   <typedef name="module" classname="jetbrains.mps.build.ant.generation.ModuleChunkPart" />

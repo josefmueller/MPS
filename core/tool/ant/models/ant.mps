@@ -7906,7 +7906,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="6aGZllYQgxg" role="jymVt">
-      <property role="TrG5h" value="addConfiguredModulesFolder" />
+      <property role="TrG5h" value="addConfiguredModules" />
       <node concept="3cqZAl" id="6aGZllYQgxh" role="3clF45" />
       <node concept="3Tm1VV" id="6aGZllYQgxi" role="1B3o_S" />
       <node concept="3clFbS" id="6aGZllYQgxj" role="3clF47">
@@ -7942,7 +7942,7 @@
       <node concept="37vLTG" id="6aGZllYQz$8" role="3clF46">
         <property role="TrG5h" value="folder" />
         <node concept="3uibUv" id="6aGZllYQz$7" role="1tU5fm">
-          <ref role="3uigEE" node="1TP$JLLo6rl" resolve="ModulesFolderDataType" />
+          <ref role="3uigEE" node="1TP$JLLo6rl" resolve="ModulesDataType" />
         </node>
       </node>
     </node>
@@ -7989,7 +7989,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1TP$JLLo6rl">
-    <property role="TrG5h" value="ModulesFolderDataType" />
+    <property role="TrG5h" value="ModulesDataType" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
     <property role="3GE5qa" value="repo" />
