@@ -97,23 +97,23 @@ public class NodeMaps {
   }
 
   @StateMethod
-  public void addError(SNode node, IErrorReporter errorReporter) {
+  public void addError(IErrorReporter errorReporter) {
     myState.assertIsInStateChangeAction();
-    List<IErrorReporter> errors = myNodesToErrors.get(node);
+    List<IErrorReporter> errors = myNodesToErrors.get(errorReporter.getSNode());
     if (errors == null) {
       errors = new LinkedList<IErrorReporter>();
-      myNodesToErrors.put(node, errors);
+      myNodesToErrors.put(errorReporter.getSNode(), errors);
     }
     errors.add(errorReporter);
   }
 
   @StateMethod
-  public void removeError(SNode node, IErrorReporter errorReporter) {
+  public void removeError(IErrorReporter errorReporter) {
     myState.assertIsInStateChangeAction();
-    List<IErrorReporter> errors = myNodesToErrors.get(node);
+    List<IErrorReporter> errors = myNodesToErrors.get(errorReporter.getSNode());
     errors.remove(errorReporter);
     if (errors.isEmpty()) {
-      myNodesToErrors.remove(node);
+      myNodesToErrors.remove(errorReporter.getSNode());
     }
   }
 
@@ -126,8 +126,8 @@ public class NodeMaps {
     return myState.getRepresentative(type);
   }
 
-  public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
-    myState.executeOperation(new AddErrorOperation(node, error, info));
+  public void addNodeToError(IErrorReporter error) {
+    myState.executeOperation(new AddErrorOperation(error));
   }
 
   public List<IErrorReporter> getNodeErrors(SNode node) {

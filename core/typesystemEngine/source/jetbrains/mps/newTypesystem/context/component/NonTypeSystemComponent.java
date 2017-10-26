@@ -193,13 +193,13 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
   }
 
   @Override
-  public void addError(SNode node, IErrorReporter errorReporter) {
+  public void addError(IErrorReporter errorReporter) {
     Map<SNode, List<IErrorReporter>> errorMap = myNodesToErrorsMap;
 
-    List<IErrorReporter> iErrorReporters = errorMap.get(node);
+    List<IErrorReporter> iErrorReporters = errorMap.get(errorReporter.getSNode());
     if (iErrorReporters == null) {
       iErrorReporters = new ArrayList<IErrorReporter>(1);
-      errorMap.put(node, iErrorReporters);
+      errorMap.put(errorReporter.getSNode(), iErrorReporters);
     }
     iErrorReporters.add(errorReporter);
 
@@ -226,7 +226,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       }
       errorsSet.add(errorReporter);
       // make sure the error is cleaned on the node deletion
-      addDependentNodes(currentNode, currentRule, Collections.singleton(node));
+      addDependentNodes(currentNode, currentRule, Collections.singleton(errorReporter.getSNode()));
     }
   }
 

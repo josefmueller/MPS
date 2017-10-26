@@ -21,14 +21,11 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class AddErrorOperation extends AbstractOperation {
-  private final SNode myNode;
   private final IErrorReporter myError;
 
-  // EquationInfo parameter is not in use since 2011 (cb90832), nobody cares
-  public AddErrorOperation(SNode node, IErrorReporter error, EquationInfo info) {
-    myNode = node;
+  public AddErrorOperation(IErrorReporter error) {
     myError = error;
-    mySource = myNode;
+    mySource = error.getSNode();
     myRule = error.getRuleNode();
   }
 
@@ -39,12 +36,12 @@ public class AddErrorOperation extends AbstractOperation {
 
   @Override
   public void doUndo(State state) {
-    state.getNodeMaps().removeError(myNode, myError);
+    state.getNodeMaps().removeError(myError);
   }
 
   @Override
   public void doRedo(State state) {
-    state.getNodeMaps().addError(myNode, myError);
+    state.getNodeMaps().addError(myError);
   }
 
   @Override

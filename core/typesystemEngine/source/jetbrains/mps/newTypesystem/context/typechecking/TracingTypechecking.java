@@ -50,7 +50,7 @@ public class TracingTypechecking extends ReportingTypechecking<TargetState, Targ
 
   private void putError(SNode node, IErrorReporter reporter) {
     if (!ErrorReportUtil.shouldReportError(node)) return;
-    getState().addError(node, reporter, null);
+    getState().addError(reporter);
   }
 
 }

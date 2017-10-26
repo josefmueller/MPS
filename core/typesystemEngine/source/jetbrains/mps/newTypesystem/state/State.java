@@ -334,8 +334,8 @@ public class State {
     return result;
   }
 
-  public void addError(SNode node, IErrorReporter error, EquationInfo info) {
-    myNodeMaps.addNodeToError(node, error, info);
+  public void addError(IErrorReporter error) {
+    myNodeMaps.addNodeToError(error);
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
