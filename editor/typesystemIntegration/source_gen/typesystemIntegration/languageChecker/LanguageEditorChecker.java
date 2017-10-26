@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Set;
-import jetbrains.mps.checkers.AbstractNodeChecker;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +52,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   private static final Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private boolean myMessagesChanged = false;
   private boolean myForceRunQuickFixes = false;
-  private Set<AbstractNodeChecker> myRules = SetSequence.fromSet(new HashSet<AbstractNodeChecker>());
+  private Set<AbstractNodeCheckerInEditor> myRules = SetSequence.fromSet(new HashSet<AbstractNodeCheckerInEditor>());
 
   private final ErrorComponents myErrorComponents;
 

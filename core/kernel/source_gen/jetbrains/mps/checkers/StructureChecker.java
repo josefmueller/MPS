@@ -9,8 +9,8 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 
-public class StructureChecker extends AbstractNodeChecker implements IChecker<SNode, NodeReportItem> {
-  public void checkNode(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
+public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
+  public void checkNodeInEditor(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
     ValidationUtil.validateSingleNode(node, new Processor<NodeReportItem>() {
       public boolean process(NodeReportItem vp) {
         errorsCollector.addError(vp);

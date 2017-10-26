@@ -28,7 +28,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
-public class RefScopeChecker extends AbstractNodeChecker implements IChecker<SNode, NodeReportItem> {
+public class RefScopeChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   public RefScopeChecker() {
   }
   @Override
@@ -36,7 +36,7 @@ public class RefScopeChecker extends AbstractNodeChecker implements IChecker<SNo
     return IssueKindReportItem.CONSTRAINTS;
   }
   @Override
-  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
+  public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     if (node == null || SNodeOperations.getModel(node) == null) {
       return;
     }

@@ -50,16 +50,16 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
     }
   };
 
-  public static List<IChecker<SNode, NodeReportItem>> createList(@NotNull final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker... rules) {
-    return Sequence.fromIterable(Sequence.fromArray(rules)).select(new ISelector<AbstractNodeChecker, IChecker<SNode, NodeReportItem>>() {
-      public IChecker<SNode, NodeReportItem> select(AbstractNodeChecker rule) {
+  public static List<IChecker<SNode, NodeReportItem>> createList(@NotNull final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor... rules) {
+    return Sequence.fromIterable(Sequence.fromArray(rules)).select(new ISelector<AbstractNodeCheckerInEditor, IChecker<SNode, NodeReportItem>>() {
+      public IChecker<SNode, NodeReportItem> select(AbstractNodeCheckerInEditor rule) {
         IChecker<SNode, NodeReportItem> rootChecker = AbstractConstraintsCheckerRootCheckerAdapter.create(skipCondition, rule);
         return rootChecker;
       }
     }).toListSequence();
   }
 
-  public static IChecker<SNode, NodeReportItem> create(final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeChecker rule) {
+  public static IChecker<SNode, NodeReportItem> create(final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor rule) {
     IteratingChecker<SNode, SNode, NodeReportItem> skippingSubtreeChecker = new IteratingChecker<SNode, SNode, NodeReportItem>(rule, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
       public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
         List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());

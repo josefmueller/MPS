@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class TargetConceptChecker extends AbstractNodeChecker implements IChecker<SNode, NodeReportItem> {
+public class TargetConceptChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   public TargetConceptChecker() {
   }
   @Override
@@ -24,7 +24,7 @@ public class TargetConceptChecker extends AbstractNodeChecker implements IChecke
     return IssueKindReportItem.CONSTRAINTS;
   }
   @Override
-  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
+  public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));

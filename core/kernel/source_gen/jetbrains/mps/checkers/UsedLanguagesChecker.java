@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.errors.item.FlavouredItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
-public class UsedLanguagesChecker extends AbstractNodeChecker implements IChecker<SNode, NodeReportItem> {
+public class UsedLanguagesChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
   private final SContainmentLink L = MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute");
 
@@ -32,7 +32,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker implements IChecke
   public String getCategory() {
     return "language imports";
   }
-  public void checkNode(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
+  public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     if (SNodeOperations.getParent(node) != null) {
       return;
     }

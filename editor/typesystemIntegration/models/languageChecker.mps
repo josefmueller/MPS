@@ -399,13 +399,13 @@
       <node concept="3Tm6S6" id="2v0ve8x$p7u" role="1B3o_S" />
       <node concept="2hMVRd" id="2v0ve8x$p7v" role="1tU5fm">
         <node concept="3uibUv" id="2v0ve8x$p7w" role="2hN53Y">
-          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
+          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
         </node>
       </node>
       <node concept="2ShNRf" id="2v0ve8x$p7x" role="33vP2m">
         <node concept="2i4dXS" id="2v0ve8x$p7y" role="2ShVmc">
           <node concept="3uibUv" id="2v0ve8x$p7z" role="HW$YZ">
-            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
+            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
           </node>
         </node>
       </node>
