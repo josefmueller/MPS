@@ -6192,33 +6192,6 @@
     <property role="TrG5h" value="IRootChecker" />
     <property role="3GE5qa" value="root" />
     <node concept="3Tm1VV" id="7z7Xs6Zekb" role="1B3o_S" />
-    <node concept="3clFb_" id="45Q6RD6mTZ_" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="processErrors" />
-      <node concept="37vLTG" id="45Q6RD6mU7V" role="3clF46">
-        <property role="TrG5h" value="root" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3Tqbb2" id="45Q6RD6nb_L" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="45Q6RD6mU7X" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="45Q6RD6mU7Y" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="45Q6RD6mTJH" role="3clF46">
-        <property role="TrG5h" value="processor" />
-        <node concept="3uibUv" id="45Q6RD6mTM8" role="1tU5fm">
-          <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="1PHXAu1tDPt" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="45Q6RD6mTZB" role="3clF45" />
-      <node concept="3Tm1VV" id="45Q6RD6mTZC" role="1B3o_S" />
-      <node concept="3clFbS" id="45Q6RD6mTZD" role="3clF47" />
-    </node>
     <node concept="3uibUv" id="IMyJ9JmdJq" role="3HQHJm">
       <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
       <node concept="3uibUv" id="IMyJ9JmdKU" role="11_B2D">

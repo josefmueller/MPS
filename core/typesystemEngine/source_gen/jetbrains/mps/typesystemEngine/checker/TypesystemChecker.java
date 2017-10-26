@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import java.util.Set;
-import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -17,43 +16,36 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import java.util.List;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 
 public class TypesystemChecker implements IRootChecker, IChecker<SNode, NodeReportItem> {
   private DefaultTypecheckingContextOwner myContextOwner = new DefaultTypecheckingContextOwner();
   public TypesystemChecker() {
   }
-  public Set<IErrorReporter> getErrors(SNode root, SRepository repository) {
-    final Set<IErrorReporter> errors = SetSequence.fromSet(new HashSet<IErrorReporter>());
+  public Set<NodeReportItem> getErrors(SNode root, SRepository repository) {
+    final Set<NodeReportItem> errors = SetSequence.fromSet(new HashSet<NodeReportItem>());
     TypeContextManager.getInstance().runTypeCheckingAction(myContextOwner, root, new ITypechecking.Action() {
       public void run(TypeCheckingContext typeContext) {
         for (Pair<SNode, List<IErrorReporter>> pair : typeContext.checkRootAndGetErrors(true)) {
-          SetSequence.fromSet(errors).addSequence(ListSequence.fromList(pair.o2));
+          for (IErrorReporter error : ListSequence.fromList(pair.o2)) {
+            SetSequence.fromSet(errors).addElement(new TypesystemReportItemAdapter(error));
+          }
         }
       }
     });
     return errors;
   }
   @Override
-  public void processErrors(SNode root, SRepository repository, final Processor<NodeReportItem> processor) {
-    SetSequence.fromSet(getErrors(root, repository)).visitAll(new IVisitor<IErrorReporter>() {
-      public void visit(IErrorReporter it) {
-        processor.process(new TypesystemReportItemAdapter(it));
-      }
-    });
-  }
-  @Override
   public void check(SNode root, SRepository repository, final Consumer<? super NodeReportItem> errorCollector, final ProgressMonitor monitor) {
-    SetSequence.fromSet(getErrors(root, repository)).visitAll(new IVisitor<IErrorReporter>() {
-      public void visit(IErrorReporter it) {
-        NodeReportItem adapter = new TypesystemReportItemAdapter(it);
-        errorCollector.consume(adapter);
+    SetSequence.fromSet(getErrors(root, repository)).visitAll(new IVisitor<NodeReportItem>() {
+      public void visit(NodeReportItem it) {
+        errorCollector.consume(it);
       }
     });
   }

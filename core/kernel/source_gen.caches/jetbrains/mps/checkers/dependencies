@@ -147,8 +147,6 @@
   <dependency className="jetbrains.mps.checkers.IRootChecker" file="IRootChecker.java">
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode extendsClassName="jetbrains.mps.checkers.IChecker" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.IteratingChecker" file="IteratingChecker.java">
