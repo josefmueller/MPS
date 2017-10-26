@@ -39,7 +39,7 @@ public class JUnitExecutor implements Executor {
 
   @Override
   public ProcessHandler execute() throws ExecutionException {
-    final String dirCachesPath = myJUnitSettings.getCachesPath();
+    final String dirCachesPath = myJUnitSettings.getCachesLocation();
     final boolean dirLock = RunCachesManager.acquireLock(dirCachesPath);
     ProcessHandler commandProcess = new JUnit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myTestNodes, this.prepareJavaParamsForTests(dirLock, dirCachesPath));
     commandProcess.addProcessListener(new ProcessAdapter() {

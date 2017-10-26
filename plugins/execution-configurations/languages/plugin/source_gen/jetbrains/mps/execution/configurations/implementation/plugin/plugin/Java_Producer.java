@@ -48,7 +48,7 @@ public class Java_Producer {
     @Override
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
-      if ((((SNode) BHReflection.invoke(source, SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null)) {
+      if ((((SNode) BHReflection.invoke0(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null)) {
         return null;
       }
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(source)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
@@ -90,7 +90,7 @@ public class Java_Producer {
       if (mainMethodCandidate == null) {
         return null;
       }
-      if (!(((boolean) (Boolean) BHReflection.invoke(mainMethodCandidate, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
+      if (!(((boolean) (Boolean) BHReflection.invoke0(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
         return null;
       }
       SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
@@ -132,13 +132,13 @@ public class Java_Producer {
     @Override
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
-      if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
+      if (!(((boolean) (Boolean) BHReflection.invoke0(source, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"), SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
         return null;
       }
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(source)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return null;
       }
-      String name = (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : ((String) BHReflection.invoke(source, SMethodTrimmedId.create("getUnitName", null, "431DWIovi3n"))));
+      String name = (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : ((String) BHReflection.invoke0(source, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"), SMethodTrimmedId.create("getUnitName", null, "431DWIovi3n"))));
       Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;

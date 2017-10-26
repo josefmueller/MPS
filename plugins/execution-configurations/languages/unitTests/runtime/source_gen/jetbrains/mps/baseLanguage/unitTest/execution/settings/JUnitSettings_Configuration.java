@@ -88,6 +88,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
   }
+  public boolean getOverrideCachesLocation() {
+    return myState.myOverrideCachesLocation;
+  }
   public boolean getDebug() {
     return myState.myDebug;
   }
@@ -121,6 +124,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
   }
+  public void setOverrideCachesLocation(boolean value) {
+    myState.myOverrideCachesLocation = value;
+  }
   public void setDebug(boolean value) {
     myState.myDebug = value;
   }
@@ -136,15 +142,22 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public void setRunType(int value) {
     myState.myRunType = value;
   }
-  public String getDefaultPath() {
+  public String getDefaultPathForCaches() {
     return new DefaultCachesPathChooser().chooseDir();
+  }
+  public String getCachesLocation() {
+    if (this.getOverrideCachesLocation()) {
+      return this.getCachesPath();
+    } else {
+      return getDefaultPathForCaches();
+    }
   }
   public SModuleReference getModuleReference() {
     if (this.getModuleRef() == null && this.getModule() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           // todo remove myModule and this code after 2017.3 
-          SModuleReference converted = check_7ateoo_a0b0a0a0a1(JUnitRunTypes.getModule_deprecated(JUnitSettings_Configuration.this.getModule()));
+          SModuleReference converted = check_7ateoo_a0b0a0a0a2(JUnitRunTypes.getModule_deprecated(JUnitSettings_Configuration.this.getModule()));
           if (converted == null) {
             converted = new ModuleReference(JUnitSettings_Configuration.this.getModule(), ModuleId.regular(new UUID(0, 0)));
           }
@@ -163,7 +176,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           // todo remove myModel and this code after 2017.3 
-          SModelReference converted = check_7ateoo_a0b0a0a0a2(JUnitRunTypes.getModel_deprecated(JUnitSettings_Configuration.this.getModel(), JUnitSettings_Configuration.this.getModule()));
+          SModelReference converted = check_7ateoo_a0b0a0a0a3(JUnitRunTypes.getModel_deprecated(JUnitSettings_Configuration.this.getModel(), JUnitSettings_Configuration.this.getModule()));
           if (converted == null) {
             converted = new jetbrains.mps.smodel.SModelReference(getModuleReference(), SModelId.regular(new UUID(0, 0)), JUnitSettings_Configuration.this.getModel());
           }
@@ -184,7 +197,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     this.setRunType(runType.ordinal());
   }
   public boolean canSaveCachesPath() {
-    return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
+    return this.getReuseCaches() && !(RunCachesManager.isLocked(getCachesLocation()));
   }
   public boolean canExecuteInProcess(Iterable<ITestNodeWrapper> testNodes) {
     return this.getInProcess() && !(this.getDebug());
@@ -254,8 +267,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     public String myModuleRef;
     public boolean myInProcess = true;
     public boolean myReuseCaches = true;
+    public boolean myOverrideCachesLocation = false;
     public boolean myDebug = false;
-    public String myCachesPath = getDefaultPath();
+    public String myCachesPath = getDefaultPathForCaches();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public int myRunType = JUnitRunTypes.PROJECT.ordinal();
@@ -270,6 +284,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
       state.myModuleRef = myModuleRef;
       state.myInProcess = myInProcess;
       state.myReuseCaches = myReuseCaches;
+      state.myOverrideCachesLocation = myOverrideCachesLocation;
       state.myDebug = myDebug;
       state.myCachesPath = myCachesPath;
       if (myTestCases != null) {
@@ -292,13 +307,13 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
   }
-  private static SModuleReference check_7ateoo_a0b0a0a0a1(SModule checkedDotOperand) {
+  private static SModuleReference check_7ateoo_a0b0a0a0a2(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SModelReference check_7ateoo_a0b0a0a0a2(SModel checkedDotOperand) {
+  private static SModelReference check_7ateoo_a0b0a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

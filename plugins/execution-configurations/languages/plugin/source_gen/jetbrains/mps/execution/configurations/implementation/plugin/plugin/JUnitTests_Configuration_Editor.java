@@ -28,7 +28,7 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
 
     JavaConfigurationEditorComponent javaEditorComponent = myJavaRunParameters.createEditor();
     JUnitConfigurationEditorComponent junitEditorComponent = myJUnitSettings.createEditor();
-    junitEditorComponent.attachJavaComponent(javaEditorComponent);
+    junitEditorComponent.attachJavaComponentsAndUpdateInProcessFlag(javaEditorComponent);
     panel.add(junitEditorComponent, LayoutUtil.createPanelConstraints(0));
     panel.add(javaEditorComponent, LayoutUtil.createPanelConstraints(1));
     return panel;

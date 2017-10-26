@@ -55,11 +55,11 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
   private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(ListSequence.fromListAndArray(new ArrayList<NodesDescriptor>(), new NodesDescriptor(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) != null);
+      return (((SNode) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) != null);
     }
   }), new NodesDescriptor(MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass")), SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))) && Java_Command.isUnitNode(node);
+      return ((boolean) (Boolean) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass")), MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"), SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))) && Java_Command.isUnitNode(node);
     }
   })));
   private JavaRunParameters1_Configuration myRunParameters = new JavaRunParameters1_Configuration(this.getProject());
@@ -71,7 +71,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       public void run() {
         SNode node = Java_Configuration.this.getNode().getNode().resolve(mpsProject.getRepository());
         if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
+          hasMainMethod.value = (((SNode) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
         }
       }
     });
@@ -138,7 +138,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
             SNode source = nodePointer.resolve(repository);
             if (!(SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
               SNode mainMethodCandidate = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), true, false);
-              if (mainMethodCandidate != null && ((boolean) (Boolean) BHReflection.invoke(mainMethodCandidate, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu")))) {
+              if (mainMethodCandidate != null && ((boolean) (Boolean) BHReflection.invoke0(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu")))) {
                 SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
                 source = classifier;
               } else {

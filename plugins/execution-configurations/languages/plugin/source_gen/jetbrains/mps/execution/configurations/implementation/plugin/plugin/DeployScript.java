@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.io.File;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import org.jetbrains.annotations.Nullable;
@@ -61,7 +61,7 @@ public class DeployScript {
 
     SNode deployScriptNode = DeployScriptCreator.createDeployScript(myProject, plugins, myModule.getBaseDirectory());
     model.addRootNode(deployScriptNode);
-    myDeployScriptPath = new File(myModule.getBaseDirectory(), ((String) BHReflection.invoke(deployScriptNode, SMethodTrimmedId.create("getOutputFileName", MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), "4gSHdTptyu0")))).getAbsolutePath();
+    myDeployScriptPath = new File(myModule.getBaseDirectory(), ((String) BHReflection.invoke0(deployScriptNode, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), SMethodTrimmedId.create("getOutputFileName", MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), "4gSHdTptyu0")))).getAbsolutePath();
     myArtifactsPath = new File(new File(new File(myModule.getBaseDirectory(), "build"), "artifacts"), SPropertyOperations.getString(deployScriptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))).getAbsolutePath();
 
     new ModelDependencyUpdate(model).updateUsedLanguages().updateImportedModels(projectRepo).updateModuleDependencies(projectRepo);
