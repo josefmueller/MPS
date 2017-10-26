@@ -44,7 +44,6 @@ public class Script {
   private Level myLogLevel = Level.INFO;
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private final List<String> myParameters = new ArrayList<String>();
-  private boolean myLoadBootstrapLibraries = true;
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
 
@@ -175,12 +174,6 @@ public class Script {
   public void updateParameters(List<String> parameters) {
     myParameters.addAll(parameters);
   }
-  public boolean isLoadBootstrapLibraries() {
-    return myLoadBootstrapLibraries;
-  }
-  public void setLoadBootstrapLibraries(boolean load) {
-    myLoadBootstrapLibraries = load;
-  }
   public Map<List<String>, Boolean> getChunks() {
     return Collections.unmodifiableMap(myChunks);
   }
@@ -293,7 +286,6 @@ public class Script {
     ScriptData data = new ScriptData();
     data.setFailOnError(myFailOnError);
     data.setLogLevel(myLogLevel);
-    data.setLoadBootstrapLibraries(myLoadBootstrapLibraries);
     data.setLibraries(myLibraries);
     data.setMacros(myMacro);
     data.setProperties(myProperties);
@@ -357,7 +349,6 @@ public class Script {
     Script whatToDo = new Script();
     whatToDo.myFailOnError = data.getFailOnError();
     whatToDo.myLogLevel = data.getLogLevel();
-    whatToDo.myLoadBootstrapLibraries = data.getLoadBootstrapLibraries();
     whatToDo.myProperties.putAll(data.getProperties());
     whatToDo.myMacro.putAll(data.getMacros());
     whatToDo.myLibraries.putAll(data.getLibraries());

@@ -838,33 +838,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="5kpQnuAGRGj" role="3cqZAp">
-          <node concept="2OqwBi" id="5kpQnuAGRKa" role="3clFbw">
-            <node concept="liA8E" id="5kpQnuAGVKM" role="2OqNvi">
-              <ref role="37wK5l" to="asz6:KL8Aql8ewo" resolve="isLoadBootstrapLibraries" />
-            </node>
-            <node concept="37vLTw" id="5kpQnuAGRH3" role="2Oq$k0">
-              <ref role="3cqZAo" node="5kpQnuAELi3" resolve="whatToDo" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="5kpQnuAGRGm" role="3clFbx">
-            <node concept="3clFbF" id="5kpQnuAGWkZ" role="3cqZAp">
-              <node concept="37vLTI" id="5kpQnuAGWom" role="3clFbG">
-                <node concept="2OqwBi" id="5kpQnuAGZSy" role="37vLTx">
-                  <node concept="liA8E" id="5kpQnuAH3Ty" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
-                  </node>
-                  <node concept="37vLTw" id="5kpQnuAGZPd" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5kpQnuAFrK6" resolve="config" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="5kpQnuAGWkY" role="37vLTJ">
-                  <ref role="3cqZAo" node="5kpQnuAFrK6" resolve="config" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="2Gpval" id="4Ncgb9xKDTG" role="3cqZAp">
           <node concept="2GrKxI" id="4Ncgb9xKDTH" role="2Gsz3X">
             <property role="TrG5h" value="jar" />

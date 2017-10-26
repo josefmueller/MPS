@@ -105,9 +105,6 @@ public abstract class MpsWorker {
     for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
       config = config.addLib(lib.value().getAbsolutePath());
     }
-    if (whatToDo.isLoadBootstrapLibraries()) {
-      config = config.withBootstrapLibraries();
-    }
     for (String jar : whatToDo.getLibraryJars()) {
       File jarFile = new File(jar);
       if (!(jarFile.exists())) {
