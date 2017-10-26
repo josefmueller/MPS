@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -49,7 +50,7 @@ public abstract class ReferenceReductionRuleBase implements ReferenceReductionRu
   }
 
   @Override
-  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     return true;
   }
 

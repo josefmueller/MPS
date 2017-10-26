@@ -46,5 +46,9 @@ public interface ReferenceReductionRule extends TemplateRuleWithCondition, Templ
   @NotNull
   SReferenceLink getApplicableLink();
 
+  // FIXME just to narrow-down throws clause until TemplateRuleWithCondition get fixed
+  @Override
+  boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException;
+
   void apply(@NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException;
 }

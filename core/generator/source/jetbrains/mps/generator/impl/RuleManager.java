@@ -28,17 +28,14 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Manages rules/templates/switches of a major step.
@@ -147,17 +144,13 @@ public class RuleManager {
    * @param inputNode not {@code null}
    * @return never {@code null}
    */
-  public Map<SReferenceLink, ReferenceReductionRule> getReferenceReductionRules(SNode inputNode) {
+  public List<ReferenceReductionRule> getReferenceReductionRules(SNode inputNode) {
     // it's assumed inputNode.isInstanceOf(associationLink.getOwner())
-    List<ReferenceReductionRule> rulesForLinkOwnerConcept = myReferenceRuleFinder.findReductionRules(inputNode);
-    if (rulesForLinkOwnerConcept == null) {
-      return Collections.emptyMap();
+    List<ReferenceReductionRule> rules = myReferenceRuleFinder.findReductionRules(inputNode);
+    if (rules == null) {
+      return Collections.emptyList();
     }
-    HashMap<SReferenceLink, ReferenceReductionRule> rv = new HashMap<>(rulesForLinkOwnerConcept.size() * 2);
-    for (ReferenceReductionRule rrr : rulesForLinkOwnerConcept) {
-      rv.put(rrr.getApplicableLink(), rrr);
-    }
-    return rv;
+    return rules;
   }
 
   public FastRuleFinder getSwitchRules(SNodeReference switch_) {

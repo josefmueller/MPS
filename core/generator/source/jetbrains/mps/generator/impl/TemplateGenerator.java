@@ -969,12 +969,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myEnv.getGenerator().recordCopyInputTrace(inputNode, inputNode);
       myEnv.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
-      Map<SReferenceLink, ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
+      List<ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
       if (!referenceRules.isEmpty()) {
-        for (SReference ref : inputNode.getReferences()) {
-          if (referenceRules.containsKey(ref.getLink())) {
-            ReferenceReductionRule rule = referenceRules.get(ref.getLink());
-            rule.apply(new DefaultTemplateContext(myEnv, inputNode, null));
+        DefaultTemplateContext templateContext = new DefaultTemplateContext(myEnv, inputNode, null);
+        for (ReferenceReductionRule rule : referenceRules) {
+          if (rule.isApplicable(templateContext)) {
+            rule.apply(templateContext);
           }
         }
       }
@@ -1052,12 +1052,24 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       CopyUtil.copyProperties(inputNode, outputNode);
       CopyUtil.copyUserObjects(inputNode, outputNode);
 
-      final Map<SReferenceLink, ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
+      final List<ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
+      final Set<SReferenceLink> handledReferences;
+      if (!referenceRules.isEmpty()) {
+        handledReferences = new HashSet<>();
+        DefaultTemplateContext templateContext = new DefaultTemplateContext(myEnv, inputNode, null);
+        for (ReferenceReductionRule rule : referenceRules) {
+          if (rule.isApplicable(templateContext)) {
+            handledReferences.add(rule.getApplicableLink());
+            rule.apply(templateContext);
+          }
+        }
+      } else {
+        handledReferences = Collections.emptySet();
+      }
+
 
       for (SReference inputReference : inputNode.getReferences()) {
-        if (referenceRules.containsKey(inputReference.getLink())) {
-          ReferenceReductionRule rule = referenceRules.get(inputReference.getLink());
-          rule.apply(new DefaultTemplateContext(myEnv, outputNode, null));
+        if (handledReferences.contains(inputReference.getLink())) {
           continue;
         }
         if (inputNodeModel != null) {

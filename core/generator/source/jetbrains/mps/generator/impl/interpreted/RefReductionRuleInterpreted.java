@@ -53,7 +53,7 @@ public class RefReductionRuleInterpreted extends ReferenceReductionRuleBase {
   }
 
   @Override
-  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
       if (myConditionKey == null) {
         myCondition = new QueryProviderBase.Defaults();
