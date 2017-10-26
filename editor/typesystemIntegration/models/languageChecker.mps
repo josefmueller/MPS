@@ -501,8 +501,8 @@
             </node>
             <node concept="TSZUe" id="2v0ve8x$pbz" role="2OqNvi">
               <node concept="2ShNRf" id="2v0ve8x$pb$" role="25WWJ7">
-                <node concept="1pGfFk" id="2v0ve8x$pb_" role="2ShVmc">
-                  <ref role="37wK5l" to="wsw7:3TJpIwQlqFH" resolve="UsedLanguagesChecker" />
+                <node concept="HV5vD" id="3RAxiQnBzDl" role="2ShVmc">
+                  <ref role="HV5vE" to="wsw7:3TJpIwQlqFz" resolve="UsedLanguagesChecker" />
                 </node>
               </node>
             </node>

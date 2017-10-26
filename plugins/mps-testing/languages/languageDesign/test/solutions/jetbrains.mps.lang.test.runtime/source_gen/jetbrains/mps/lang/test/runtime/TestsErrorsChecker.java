@@ -22,8 +22,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import org.jetbrains.mps.openapi.util.Processor;
 import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -31,8 +31,8 @@ import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Processor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
@@ -122,12 +122,11 @@ public class TestsErrorsChecker {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
     final Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
-    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem reportItem) {
+    new TypesystemChecker().check(myRoot, myRoot.getModel().getRepository(), new Consumer<NodeReportItem>() {
+      public void consume(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
-        return true;
       }
-    });
+    }, new EmptyProgressMonitor());
     Consumer<NodeReportItem> errorCollector = new Consumer<NodeReportItem>() {
       public void consume(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
