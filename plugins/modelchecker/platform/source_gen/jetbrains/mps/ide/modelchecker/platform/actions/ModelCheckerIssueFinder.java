@@ -54,7 +54,7 @@ public class ModelCheckerIssueFinder extends BaseFinder {
   public SearchResults<IssueKindReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
     ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
 
-    int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count() + 1;
+    int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count();
     monitor.start("Checking", work);
 
     try {

@@ -65,14 +65,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     List<IChecker<SModel, ? extends IssueKindReportItem>> checkers = ListSequence.fromList(new ArrayList<IChecker<SModel, ? extends IssueKindReportItem>>());
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new TypesystemChecker()));
+        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(new TypesystemChecker()));
       case CONSTRAINTS:
         for (IChecker<SNode, NodeReportItem> checker : ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()))) {
-          ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(checker));
+          ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(checker));
         }
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker())));
+        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker())));
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION, new StructureChecker())));
+        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION, new StructureChecker())));
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));

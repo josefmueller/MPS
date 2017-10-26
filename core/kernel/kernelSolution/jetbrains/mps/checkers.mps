@@ -8547,31 +8547,18 @@
                     </node>
                     <node concept="liA8E" id="3xfDcbR2IDD" role="2OqNvi">
                       <ref role="37wK5l" to="yyf4:~ProgressMonitor.subTask(int,org.jetbrains.mps.openapi.util.SubProgressKind):org.jetbrains.mps.openapi.util.ProgressMonitor" resolve="subTask" />
-                      <node concept="3cmrfG" id="3xfDcbR2IJr" role="37wK5m">
-                        <property role="3cmrfH" value="1" />
+                      <node concept="1LFfDK" id="IMyJ9JxeuK" role="37wK5m">
+                        <node concept="3cmrfG" id="IMyJ9Jxexo" role="1LF_Uc">
+                          <property role="3cmrfH" value="1" />
+                        </node>
+                        <node concept="37vLTw" id="IMyJ9Jxdx5" role="1LFl5Q">
+                          <ref role="3cqZAo" node="IMyJ9JxbwD" resolve="next" />
+                        </node>
                       </node>
                       <node concept="Rm8GO" id="3xfDcbR2Ncu" role="37wK5m">
                         <ref role="Rm8GQ" to="yyf4:~SubProgressKind.IGNORED" resolve="IGNORED" />
                         <ref role="1Px2BO" to="yyf4:~SubProgressKind" resolve="SubProgressKind" />
                       </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="IMyJ9Jxd8A" role="3cqZAp">
-              <node concept="2OqwBi" id="IMyJ9JxdjX" role="3clFbG">
-                <node concept="37vLTw" id="IMyJ9Jxd8$" role="2Oq$k0">
-                  <ref role="3cqZAo" node="76Xff8JNSH0" resolve="monitor" />
-                </node>
-                <node concept="liA8E" id="IMyJ9JxdtX" role="2OqNvi">
-                  <ref role="37wK5l" to="yyf4:~ProgressMonitor.advance(int):void" resolve="advance" />
-                  <node concept="1LFfDK" id="IMyJ9JxeuK" role="37wK5m">
-                    <node concept="3cmrfG" id="IMyJ9Jxexo" role="1LF_Uc">
-                      <property role="3cmrfH" value="1" />
-                    </node>
-                    <node concept="37vLTw" id="IMyJ9Jxdx5" role="1LFl5Q">
-                      <ref role="3cqZAo" node="IMyJ9JxbwD" resolve="next" />
                     </node>
                   </node>
                 </node>

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class RootCheckerSpecificCheckerAdapter {
 
-  public static IChecker<SModel, NodeReportItem> createNew(IChecker<SNode, NodeReportItem> checker) {
+  public static IChecker<SModel, NodeReportItem> create(IChecker<SNode, NodeReportItem> checker) {
     return new IteratingChecker<SModel, SNode, NodeReportItem>(checker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
       public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
         return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));

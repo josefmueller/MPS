@@ -59,9 +59,9 @@ public class FinderNode extends BaseLeaf {
 
   @Override
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
-    monitor.start(getTaskName(), 2);
+    monitor.start(getTaskName(), 10);
     try {
-      SearchResults results = myFinder.find(query, monitor.subTask(1, SubProgressKind.REPLACING));
+      SearchResults results = myFinder.find(query, monitor.subTask(9, SubProgressKind.REPLACING));
       //todo [MM] move sorting from here to code building the actual tree. Otherwise, at least results produced by different finders may remain unsorted
       if (FinderUtils.isAllResultsIsNodes(results)) {
         FinderUtils.sortNodeResultsByEditorPosition(results);

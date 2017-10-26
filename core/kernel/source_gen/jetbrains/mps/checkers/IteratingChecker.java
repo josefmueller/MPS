@@ -83,8 +83,7 @@ public class IteratingChecker<O, P, I extends ReportItem> implements IChecker<O,
     monitor.start("", iterator.remainingSize());
     while (iterator.hasNext() && !(monitor.isCanceled())) {
       Tuples._2<P, Integer> next = iterator.nextItem();
-      myOrigin.check(next._0(), repository, errorCollector, monitor.subTask(1, SubProgressKind.IGNORED));
-      monitor.advance((int) next._1());
+      myOrigin.check(next._0(), repository, errorCollector, monitor.subTask((int) next._1(), SubProgressKind.IGNORED));
     }
     monitor.done();
   }
