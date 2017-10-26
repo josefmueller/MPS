@@ -53,6 +53,20 @@
       <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
     <mkdir dir="${build.layout}/mps-console" />
+    <mkdir dir="${build.layout}/mps-console/META-INF" />
+    <echoxml file="${build.layout}/mps-console/META-INF/plugin.xml">
+      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+        <id>jetbrains.mps.console</id>
+        <name>MPS Console</name>
+        <version>2017.3</version>
+        <depends>jetbrains.mps.ide.make</depends>
+        <depends>jetbrains.mps.core</depends>
+        
+        <extensions defaultExtensionNs="com.intellij">
+          <mps.LanguageLibrary dir="/languages" />
+        </extensions>
+      </idea-plugin>
+    </echoxml>
     <mkdir dir="${build.layout}/mps-console/lib" />
     <mkdir dir="${build.tmp}/default/mps-console.jar" />
     <mkdir dir="${build.tmp}/default/mps-console.jar/META-INF" />
@@ -625,6 +639,9 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
+      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
+      <plugin path="${artifacts.mpsMakePlugin}/mps-make" />
+      <plugin path="${artifacts.mpsTesting}/mps-testing" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
