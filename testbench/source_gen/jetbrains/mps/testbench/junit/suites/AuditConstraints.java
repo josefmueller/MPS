@@ -11,7 +11,9 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.checkers.IRootChecker;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
@@ -35,10 +37,10 @@ public class AuditConstraints extends BaseCheckModulesTest {
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
-        List<IRootChecker> checkers = ListSequence.fromList(new ArrayList<IRootChecker>());
+        List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IChecker<SNode, NodeReportItem>>());
         ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
         ListSequence.fromList(checkers).addElement(AbstractConstraintsCheckerRootCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));
-        return new CheckingTestsUtil(statistic).applyChecker(models, ListSequence.fromList(checkers).toGenericArray(IRootChecker.class));
+        return new CheckingTestsUtil(statistic).applyChecker(models, checkers);
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

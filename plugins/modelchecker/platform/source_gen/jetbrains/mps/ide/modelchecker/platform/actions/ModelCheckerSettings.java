@@ -19,7 +19,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import jetbrains.mps.checkers.IRootChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
@@ -66,12 +67,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       case TYPESYSTEM:
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new TypesystemChecker()));
       case CONSTRAINTS:
-        for (IRootChecker checker : ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()))) {
+        for (IChecker<SNode, NodeReportItem> checker : ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()))) {
           ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(checker));
         }
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker())));
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPRESS_ERRORS_CONDITION, new StructureChecker())));
+        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.createNew(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION, new StructureChecker())));
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));

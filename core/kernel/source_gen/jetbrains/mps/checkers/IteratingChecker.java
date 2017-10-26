@@ -28,34 +28,46 @@ public class IteratingChecker<O, P, I extends ReportItem> implements IChecker<O,
     Tuples._2<T, Integer> nextItem();
   }
 
-  public static class CollectionIteratorWithProgress<T> implements IteratingChecker.IteratorWithProgress<T> {
-    private Iterator<T> myOrigin;
+  public static abstract class AbstractIteratorWithProgress<T> implements IteratingChecker.IteratorWithProgress<T> {
     private int myRemainingSize;
+    public AbstractIteratorWithProgress(int initialSize) {
+      myRemainingSize = initialSize;
+    }
+    @Override
+    public final T next() {
+      return nextItem()._0();
+    }
+    @Override
+    public final Tuples._2<T, Integer> nextItem() {
+      Tuples._2<T, Integer> next = nextItemInternal();
+      myRemainingSize -= (int) next._1();
+      return next;
+    }
+    public abstract Tuples._2<T, Integer> nextItemInternal();
+    @Override
+    public final int remainingSize() {
+      return myRemainingSize;
+    }
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+  }
+
+  public static class CollectionIteratorWithProgress<T> extends IteratingChecker.AbstractIteratorWithProgress<T> implements IteratingChecker.IteratorWithProgress<T> {
+    private Iterator<T> myOrigin;
     public CollectionIteratorWithProgress(Collection<T> collection) {
+      super(collection.size());
       myOrigin = collection.iterator();
-      myRemainingSize = collection.size();
     }
     @Override
     public boolean hasNext() {
       return myOrigin.hasNext();
     }
     @Override
-    public T next() {
-      return myOrigin.next();
-    }
-    @Override
-    public Tuples._2<T, Integer> nextItem() {
+    public Tuples._2<T, Integer> nextItemInternal() {
       T result = myOrigin.next();
-      myRemainingSize--;
       return MultiTuple.<T,Integer>from(result, 1);
-    }
-    @Override
-    public int remainingSize() {
-      return myRemainingSize;
-    }
-    @Override
-    public void remove() {
-      throw new UnsupportedOperationException();
     }
   }
 

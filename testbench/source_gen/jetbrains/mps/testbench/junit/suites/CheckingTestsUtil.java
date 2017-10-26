@@ -4,16 +4,18 @@ package jetbrains.mps.testbench.junit.suites;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.checkers.IRootChecker;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
-import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -29,7 +31,7 @@ public class CheckingTestsUtil {
     myStats = statistic;
   }
 
-  public List<String> applyChecker(final Iterable<SModel> models, final IRootChecker... checkers) {
+  public List<String> applyChecker(final Iterable<SModel> models, final List<IChecker<SNode, NodeReportItem>> checkers) {
     final List<String> errors = new ArrayList<String>();
     for (SModel sm : models) {
       if (!(SModelStereotype.isUserModel(sm))) {
@@ -41,13 +43,12 @@ public class CheckingTestsUtil {
       for (SNode root : SModelOperations.roots(((SModel) sm), null)) {
         final Set<NodeReportItem> reportItems = SetSequence.fromSet(new HashSet<NodeReportItem>());
         try {
-          for (IRootChecker checker : checkers) {
-            checker.processErrors(root, sm.getRepository(), new Processor<NodeReportItem>() {
-              public boolean process(NodeReportItem reportItem) {
+          for (IChecker<SNode, NodeReportItem> checker : ListSequence.fromList(checkers)) {
+            checker.check(root, sm.getRepository(), new Consumer<NodeReportItem>() {
+              public void consume(NodeReportItem reportItem) {
                 SetSequence.fromSet(reportItems).addElement(reportItem);
-                return true;
               }
-            });
+            }, new EmptyProgressMonitor());
           }
         } catch (IllegalStateException e) {
           errors.add(e.getMessage());
