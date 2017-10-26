@@ -87,7 +87,14 @@
       <implementation-class>jetbrains.mps.repository.DummyIdeaPluginFacetComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.repository.RepositoryInitializingComponent</implementation-class>
+      <implementation-class>jetbrains.mps.repository.FSNotificationsImprover</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.repository.MPSModulesLibraryInitializer</implementation-class>
+      <headless-implementation-class>jetbrains.mps.repository.EmptyLibraryInitializer</headless-implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.repository.PluginModulesLibraryInitializer</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.WatchedRoots</implementation-class>

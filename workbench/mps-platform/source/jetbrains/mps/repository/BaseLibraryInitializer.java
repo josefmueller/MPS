@@ -19,23 +19,18 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -46,7 +41,7 @@ import java.util.List;
  * Inits all mps distribution modules
  * When on sources {@link InternalFlag#isInternalMode()} almost the same happens
  */
-public final class RepositoryInitializingComponent implements ApplicationComponent {
+public class BaseLibraryInitializer implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
   private final FileSystem myFS;
   private final List<LibraryContributor> myContributors = new ArrayList<>();
@@ -54,34 +49,37 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
   /**
    * Notice, when we are starting from sources we want to treat all our mps modules as source modules. Such modules are a subject
    * to a frequent changes, so we'd rather to load the with idea fs.
-   *
+   * <p>
    * In the case of usual mps distribution all modules enlisted here are read-only, so they cannot be changed.
    * Thus we aren't supposed to use idea fs here (according to the idea fs recommendations) and we are using io-based fs.
    *
-   * @param coreComponents -- we want to load bootstrap libraries after we have all core components instatiated
-   * @param registryManager -- please see {@code ApplicationPluginManager#initComponent()}. fixme get rid of this dep
+   * @param coreComponents           -- we want to load bootstrap libraries after we have all core components instatiated
+   * @param registryManager          -- please see {@code ApplicationPluginManager#initComponent()}. fixme get rid of this dep
    * @param ideaPluginFacetComponent -- we want to load plugin library contributor after we have chosen the right idea plugin facet
    */
   @SuppressWarnings("UnusedParameters")
-  public RepositoryInitializingComponent(MPSCoreComponents coreComponents,
-                                         IRegistryManager registryManager,
-                                         IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                         IdeaFSComponent fs,
-                                         PersistentFS filesystem //see MPS-22970
+  public BaseLibraryInitializer(FSNotificationsImprover improver, //improve before loading any libs
+                                MPSCoreComponents coreComponents,
+                                IRegistryManager registryManager,
+                                IdeaPluginFacetComponent ideaPluginFacetComponent,
+                                IdeaFSComponent fs,
+                                PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
     myFS = PathManager.isFromSources() ? FileSystemExtPoint.getFS() : IoFileSystem.INSTANCE;
-    if (!RuntimeFlags.isTestMode()) {
-      myContributors.add(new BootstrapLibraryContributor(myFS));
-      myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
-    }
-    myContributors.add(new PluginLibraryContributor(myFS));
+  }
+
+  protected boolean addContributor(LibraryContributor c) {
+    return myContributors.add(c);
+  }
+
+  protected FileSystem getFS() {
+    return myFS;
   }
 
   @Override
   public void initComponent() {
     if (PathManager.isFromSources()) {
-      improveLoadingOnSources();
       ClassLoaderManager.getInstance().runNonReloadableTransaction(this::load);
     } else {
       load();
@@ -90,15 +88,6 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
 
   private void load() {
     myLibraryInitializer.load(myContributors);
-  }
-
-  /**
-   * here idea is the same as in {@code ProjectRootListenerComponent}
-   */
-  private void improveLoadingOnSources() {
-    ApplicationManager.getApplication().runReadAction(() -> {
-      myFS.getFile(PathManager.getHomePath()).addListener((monitor, event) -> {});
-    });
   }
 
   @Override
@@ -111,6 +100,6 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
   @NotNull
   @Override
   public String getComponentName() {
-    return "Repository Initializing Component";
+    return getClass().getSimpleName();
   }
 }
