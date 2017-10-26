@@ -6404,7 +6404,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="6hgzQ4Z7caj">
-    <property role="TrG5h" value="check_FontFamilyConstant" />
+    <property role="TrG5h" value="check_FontFamilyContainer" />
     <property role="3GE5qa" value="Stylesheet" />
     <node concept="3clFbS" id="6hgzQ4Z7cak" role="18ibNy">
       <node concept="3clFbJ" id="6hgzQ4Z7cat" role="3cqZAp">
@@ -6459,7 +6459,7 @@
     </node>
     <node concept="1YaCAy" id="6hgzQ4Z7cam" role="1YuTPh">
       <property role="TrG5h" value="node" />
-      <ref role="1YaFvo" to="tpc2:6hgzQ4Z7bF1" resolve="FontFamilyConstant" />
+      <ref role="1YaFvo" to="tpc2:6hgzQ4Z7bF1" resolve="FontFamilyContainer" />
     </node>
   </node>
 </model>

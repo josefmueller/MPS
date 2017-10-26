@@ -22,8 +22,8 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class FontFamilyConstant__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, "jetbrains.mps.lang.editor.structure.FontFamilyConstant");
+public final class FontFamilyContainer__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, "jetbrains.mps.lang.editor.structure.FontFamilyContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getFontFamily_idSLohPpeqbF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFontFamily").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("SLohPpeqbF").registry(REGISTRY).build();
@@ -40,7 +40,7 @@ public final class FontFamilyConstant__BehaviorDescriptor extends BaseBHDescript
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, 0x64508f613f1cbac2L, "family"));
   }
 
-  /*package*/ FontFamilyConstant__BehaviorDescriptor() {
+  /*package*/ FontFamilyContainer__BehaviorDescriptor() {
     super(REGISTRY);
   }
 

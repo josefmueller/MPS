@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.behavior.FontFamilyConstant__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.FontFamilyContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -107,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     return editorCell;
   }
   private String _StyleParameter_QueryFunction_9wf0bc_a0c0() {
-    return (String) FontFamilyConstant__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
+    return (String) FontFamilyContainer__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
   }
   public static class FontFamilyLiteral_generic_cellMenu_9wf0bc_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontFamilyLiteral_generic_cellMenu_9wf0bc_a0c0() {

@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.behavior.FontFamilyConstant__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.FontFamilyContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -129,7 +129,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   private String _StyleParameter_QueryFunction_w2alof_a0c0() {
-    return (String) FontFamilyConstant__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
+    return (String) FontFamilyContainer__BehaviorDescriptor.getFontFamily_idSLohPpeqbF.invoke(getNode());
   }
   public static class FontFamilyStyleClassItem_generic_cellMenu_w2alof_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontFamilyStyleClassItem_generic_cellMenu_w2alof_a0c0() {

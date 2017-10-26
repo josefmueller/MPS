@@ -154,7 +154,7 @@ public final class LanguageConceptSwitch {
   public static final int ExplicitHintsSpecification = 142;
   public static final int FirstPositionAllowedStyleClassItem = 143;
   public static final int FloatStyleClassItem = 144;
-  public static final int FontFamilyConstant = 145;
+  public static final int FontFamilyContainer = 145;
   public static final int FontFamilyLiteral = 146;
   public static final int FontFamilyStyleClassItem = 147;
   public static final int FontSizeStyleClassItem = 148;
@@ -579,7 +579,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3ae0865e9a712712L, ExplicitHintsSpecification);
     builder.put(0x11ae8b76d40L, FirstPositionAllowedStyleClassItem);
     builder.put(0x11ae41b27e5L, FloatStyleClassItem);
-    builder.put(0x64508f613f1cbac1L, FontFamilyConstant);
+    builder.put(0x64508f613f1cbac1L, FontFamilyContainer);
     builder.put(0x64508f613f1be026L, FontFamilyLiteral);
     builder.put(0x66f3048aedb8fcd4L, FontFamilyStyleClassItem);
     builder.put(0x1143be33e36L, FontSizeStyleClassItem);

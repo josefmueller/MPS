@@ -154,7 +154,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ExplicitHintsSpecification;
   private ConceptPresentation props_FirstPositionAllowedStyleClassItem;
   private ConceptPresentation props_FloatStyleClassItem;
-  private ConceptPresentation props_FontFamilyConstant;
+  private ConceptPresentation props_FontFamilyContainer;
   private ConceptPresentation props_FontFamilyLiteral;
   private ConceptPresentation props_FontFamilyStyleClassItem;
   private ConceptPresentation props_FontSizeStyleClassItem;
@@ -1476,12 +1476,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FloatStyleClassItem = cpb.create();
         }
         return props_FloatStyleClassItem;
-      case LanguageConceptSwitch.FontFamilyConstant:
-        if (props_FontFamilyConstant == null) {
+      case LanguageConceptSwitch.FontFamilyContainer:
+        if (props_FontFamilyContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_FontFamilyConstant = cpb.create();
+          props_FontFamilyContainer = cpb.create();
         }
-        return props_FontFamilyConstant;
+        return props_FontFamilyContainer;
       case LanguageConceptSwitch.FontFamilyLiteral:
         if (props_FontFamilyLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

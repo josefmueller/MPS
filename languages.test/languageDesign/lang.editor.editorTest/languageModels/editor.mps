@@ -26,6 +26,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
+    <import index="b8lf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selection(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
@@ -4957,8 +4958,8 @@
         <node concept="3clFbS" id="7mwXV92NZhi" role="2VODD2">
           <node concept="3clFbF" id="1LymjI9zX6z" role="3cqZAp">
             <node concept="2YIFZM" id="1LymjI9$0Ra" role="3clFbG">
-              <ref role="37wK5l" to="exr9:~NodeEditorActions$SelectUpUtil.executeWhile(jetbrains.mps.openapi.editor.EditorContext,java.util.function.BooleanSupplier):void" resolve="executeWhile" />
-              <ref role="1Pybhc" to="exr9:~NodeEditorActions$SelectUpUtil" resolve="NodeEditorActions.SelectUpUtil" />
+              <ref role="37wK5l" to="b8lf:~SelectUpUtil.executeWhile(jetbrains.mps.openapi.editor.EditorContext,java.util.function.BooleanSupplier):void" resolve="executeWhile" />
+              <ref role="1Pybhc" to="b8lf:~SelectUpUtil" resolve="SelectUpUtil" />
               <node concept="1Q80Hx" id="1LymjI9$138" role="37wK5m" />
               <node concept="1bVj0M" id="1LymjI9$15d" role="37wK5m">
                 <node concept="3clFbS" id="1LymjI9$15f" role="1bW5cS">
@@ -5008,8 +5009,8 @@
         <node concept="3clFbS" id="7mwXV92OcY4" role="2VODD2">
           <node concept="3clFbF" id="1LymjI9zT20" role="3cqZAp">
             <node concept="2YIFZM" id="1LymjI9zVUc" role="3clFbG">
-              <ref role="37wK5l" to="exr9:~NodeEditorActions$SelectUpUtil.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
-              <ref role="1Pybhc" to="exr9:~NodeEditorActions$SelectUpUtil" resolve="NodeEditorActions.SelectUpUtil" />
+              <ref role="37wK5l" to="b8lf:~SelectUpUtil.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+              <ref role="1Pybhc" to="b8lf:~SelectUpUtil" resolve="SelectUpUtil" />
               <node concept="1Q80Hx" id="1LymjI9zW2d" role="37wK5m" />
             </node>
           </node>

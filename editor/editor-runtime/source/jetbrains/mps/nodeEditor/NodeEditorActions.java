@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
+import jetbrains.mps.nodeEditor.selection.SelectUpUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
@@ -38,7 +39,6 @@ import org.jetbrains.mps.util.Condition;
 
 import java.awt.Rectangle;
 import java.util.List;
-import java.util.function.BooleanSupplier;
 
 @SuppressWarnings("WeakerAccess")
 public class NodeEditorActions {
@@ -469,58 +469,6 @@ public class NodeEditorActions {
     @Override
     public void execute(EditorContext context) {
       navigatePage(context, false);
-    }
-  }
-
-  public static class SelectUpUtil {
-    public static boolean canExecute(EditorContext context) {
-      return findTarget(context.getEditorComponent().getSelectionManager()) != null;
-    }
-
-    public static void execute(EditorContext context) {
-      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
-      EditorCell cell = findTarget(selectionManager);
-      selectionManager.pushSelection(selectionManager.createSelection(cell));
-      if (cell instanceof EditorCell_Label) {
-        ((EditorCell_Label) cell).selectWordOrAll();
-      }
-    }
-
-    public static void executeWhile(EditorContext context, BooleanSupplier condition) {
-      while (canExecute(context) && condition.getAsBoolean()) {
-        execute(context);
-      }
-    }
-
-    private static EditorCell findTarget(SelectionManager selectionManager) {
-      Selection selection = selectionManager.getSelection();
-      if (selection == null) {
-        return null;
-      }
-
-      EditorCell cell = selection.getSelectedCells().get(0);
-      if (cell instanceof EditorCell_Label && !((EditorCell_Label) cell).isEverythingSelected()) {
-        return cell;
-      }
-
-      if (cell.getParent() == null) {
-        return null;
-      }
-
-      while (cell.getParent() != null && cell.getParent().isTransparentCollection()) {
-        cell = cell.getParent();
-      }
-      EditorCell_Collection parent = cell.getParent();
-      while (parent != null) {
-        if (parent.isSelectable()) {
-          while (parent.getParent() != null && parent.getParent().isTransparentCollection() && parent.getParent().isSelectable()) {
-            parent = parent.getParent();
-          }
-          return parent;
-        }
-        parent = parent.getParent();
-      }
-      return null;
     }
   }
 

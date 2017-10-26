@@ -213,7 +213,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor = new QueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor();
   private final BHDescriptor myTransformationMenuReference_Named__BehaviorDescriptor = new TransformationMenuReference_Named__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_RefPresentation__BehaviorDescriptor = new QueryFunction_RefPresentation__BehaviorDescriptor();
-  private final BHDescriptor myFontFamilyConstant__BehaviorDescriptor = new FontFamilyConstant__BehaviorDescriptor();
+  private final BHDescriptor myFontFamilyContainer__BehaviorDescriptor = new FontFamilyContainer__BehaviorDescriptor();
   private final BHDescriptor myIExtensibleTransformationMenuPart__BehaviorDescriptor = new IExtensibleTransformationMenuPart__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_TransformationMenu_Extensible__BehaviorDescriptor = new QueryFunction_TransformationMenu_Extensible__BehaviorDescriptor();
   private final BHDescriptor mySubstituteMenuPart_Action__BehaviorDescriptor = new SubstituteMenuPart_Action__BehaviorDescriptor();
@@ -425,7 +425,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 82:
         return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
       case 83:
-        return myFontFamilyConstant__BehaviorDescriptor;
+        return myFontFamilyContainer__BehaviorDescriptor;
       case 84:
         return myForegroundColorStyleClassItem__BehaviorDescriptor;
       case 85:
