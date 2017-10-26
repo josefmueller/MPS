@@ -33,7 +33,6 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -85,8 +84,18 @@ public class UndoActionsCollector {
     }
 
     if (fileToUpdate != null && action.getAssociatedVfsChange() != VFSChange.NOT_CHANGED) {
-      // restoring virtual file on undo if the file was deleted by original action
-      myActions.add(new RestoreVirtualFileInstance(fileToUpdate, action.getAssociatedVfsChange() == VFSChange.FILE_DELETED));
+      boolean restoreOnUndo = action.getAssociatedVfsChange() == VFSChange.FILE_DELETED;
+      // restoring virtual file on:
+      // - undo if the file was deleted by original action
+      // - redo if the file was created by original action
+      // if the file is restored on redo, this action should be performed before redoing actual model modification
+      // in order to put file into VFS before making accessing it from the action.
+      RestoreVirtualFileInstance restoreVfAction = new RestoreVirtualFileInstance(fileToUpdate, restoreOnUndo);
+      if (restoreOnUndo) {
+        myActions.add(restoreVfAction);
+      } else {
+        myActions.add(myActions.size() - 1, restoreVfAction);
+      }
     }
   }
 
