@@ -1974,12 +1974,25 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
+    <node concept="1TJgyj" id="sLrzzejGPA" role="1TKVEi">
+      <property role="20kJfa" value="applicableConcept" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="518316622382812518" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
     <node concept="1TJgyj" id="2I_OWQOyPKU" role="1TKVEi">
       <property role="IQ2ns" value="3145152795238947898" />
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="1" />
       <property role="20kJfa" value="referentFunction" />
       <ref role="20lvS9" node="gZ$xsMr" resolve="ReferenceMacro_GetReferent" />
+    </node>
+    <node concept="1TJgyj" id="sLrzzejGPp" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conditionFunction" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="518316622382812505" />
+      <ref role="20lvS9" node="gZ0G5JE" resolve="BaseMappingRule_Condition" />
     </node>
   </node>
   <node concept="1TIwiD" id="7PoJpZpH$hz">

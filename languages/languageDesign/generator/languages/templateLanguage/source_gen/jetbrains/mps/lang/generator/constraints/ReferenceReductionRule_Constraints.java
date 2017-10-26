@@ -22,6 +22,10 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ReferenceReductionRule_Constraints extends BaseConstraintsDescriptor {
@@ -58,7 +62,40 @@ public class ReferenceReductionRule_Constraints extends BaseConstraintsDescripto
         };
       }
     });
+    references.put(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7316e38ce4ecd66L, "applicableConcept"), new BaseReferenceConstraintsDescriptor(MetaIdFactory.refId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7316e38ce4ecd66L), this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_l1mhrx_a0a0a0a0a1a0b0a2a2;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              if (_context.getReferenceNode() == null) {
+                return new EmptyScope();
+              }
+              final SNode linkOwner = LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link")));
+
+              return new FilteringScope(new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+                @Override
+                public boolean isExcluded(SNode node) {
+                  return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(node, linkOwner));
+                }
+              };
+            }
+          }
+        };
+      }
+    });
     return references;
   }
   private static SNodePointer breakingNode_l1mhrx_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "8612733435392950230");
+  private static SNodePointer breakingNode_l1mhrx_a0a0a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "518316622382817051");
 }

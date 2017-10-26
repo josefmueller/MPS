@@ -215,6 +215,14 @@ public final class RuleUtil {
     return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link"));
   }
 
+  public static SNode getReferenceReductionRule_ApplicableConcept(SNode rule) {
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7316e38ce4ecd66L, "applicableConcept"));
+  }
+
+  public static SNode getReferenceReductionRule_Condition(SNode rule) {
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7316e38ce4ecd59L, "conditionFunction"));
+  }
+
   public static SNode getReferenceReductionRule_Function(SNode rule) {
     return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x2ba5d3cdb48b5c3aL, "referentFunction"));
   }

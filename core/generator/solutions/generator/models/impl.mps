@@ -3353,6 +3353,62 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="sLrzzemLEM" role="jymVt" />
+    <node concept="2YIFZL" id="sLrzzemQJc" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getReferenceReductionRule_ApplicableConcept" />
+      <node concept="37vLTG" id="sLrzzemRDN" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="sLrzzemRDO" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="sLrzzemQ86" role="3clF47">
+        <node concept="3clFbF" id="sLrzzemRJB" role="3cqZAp">
+          <node concept="2OqwBi" id="sLrzzemRWs" role="3clFbG">
+            <node concept="37vLTw" id="sLrzzemRJA" role="2Oq$k0">
+              <ref role="3cqZAo" node="sLrzzemRDN" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="sLrzzemS6b" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:sLrzzejGPA" resolve="applicableConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="sLrzzemRmi" role="3clF45">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
+      <node concept="3Tm1VV" id="sLrzzemQ85" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="sLrzzemSMB" role="jymVt" />
+    <node concept="2YIFZL" id="sLrzzemS8F" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getReferenceReductionRule_Condition" />
+      <node concept="37vLTG" id="sLrzzemS8G" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="sLrzzemS8H" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="sLrzzemS8I" role="3clF47">
+        <node concept="3clFbF" id="sLrzzemS8J" role="3cqZAp">
+          <node concept="2OqwBi" id="sLrzzemS8K" role="3clFbG">
+            <node concept="37vLTw" id="sLrzzemS8L" role="2Oq$k0">
+              <ref role="3cqZAo" node="sLrzzemS8G" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="sLrzzemTGh" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:sLrzzejGPp" resolve="conditionFunction" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="sLrzzemS8N" role="3clF45">
+        <ref role="ehGHo" to="tpf8:gZ0G5JE" resolve="BaseMappingRule_Condition" />
+      </node>
+      <node concept="3Tm1VV" id="sLrzzemS8O" role="1B3o_S" />
+    </node>
     <node concept="2tJIrI" id="2TQHDnQfQDU" role="jymVt" />
     <node concept="2YIFZL" id="2TQHDnQfVna" role="jymVt">
       <property role="TrG5h" value="getReferenceReductionRule_Function" />

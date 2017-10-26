@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.runtime;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -26,16 +28,24 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public abstract class ReferenceReductionRuleBase implements ReferenceReductionRule {
   private final SNodeReference myRuleNode;
   private final SReferenceLink myApplicableLink;
+  private final SAbstractConcept myApplicableConcept;
 
-  protected ReferenceReductionRuleBase(@NotNull SNodeReference ruleNode, @NotNull SReferenceLink applicableLink) {
+  protected ReferenceReductionRuleBase(@NotNull SNodeReference ruleNode, @NotNull SReferenceLink applicableLink, @Nullable SAbstractConcept applicableConcept) {
     myRuleNode = ruleNode;
     myApplicableLink = applicableLink;
+    myApplicableConcept = applicableConcept == null ? applicableLink.getOwner() : applicableConcept;
   }
 
   @NotNull
   @Override
   public SReferenceLink getApplicableLink() {
     return myApplicableLink;
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getApplicableConcept() {
+     return myApplicableConcept;
   }
 
   @Override

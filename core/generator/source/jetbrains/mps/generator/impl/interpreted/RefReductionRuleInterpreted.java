@@ -21,38 +21,65 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
+import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro2;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.ReferenceReductionRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author Artem Tikhomirov
  */
 public class RefReductionRuleInterpreted extends ReferenceReductionRuleBase {
-
+  private final QueryKey myConditionKey;
+  private ReductionRuleCondition myCondition;
   private final QueryKey myQueryKey;
+  private ReferenceTargetQuery myQuery;
 
   public RefReductionRuleInterpreted(@NotNull SNode/*<ReferenceReductionRule>*/ rule) {
-    super(rule.getReference(), MetaAdapterByDeclaration.getReferenceLink(RuleUtil.getReferenceReductionRule_Link(rule)));
+    super(rule.getReference(), MetaAdapterByDeclaration.getReferenceLink(RuleUtil.getReferenceReductionRule_Link(rule)), _concept(rule));
+    SNode cond = RuleUtil.getReferenceReductionRule_Condition(rule);
+    myConditionKey = cond == null ? null : new QueryKeyImpl(getRuleNode(), cond.getNodeId());
     SNode function = RuleUtil.getReferenceReductionRule_Function(rule);
     myQueryKey = new QueryKeyImpl(getRuleNode(), function.getNodeId());
   }
 
   @Override
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+    if (myCondition == null) {
+      if (myConditionKey == null) {
+        myCondition = new QueryProviderBase.Defaults();
+      } else {
+        myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getReductionRuleCondition(myConditionKey);
+      }
+    }
+    return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode()));
+  }
+
+  @Override
   public void apply(@NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
-    GeneratorQueryProvider.Source gqps = context.getEnvironment();
-    final GeneratorQueryProvider queryProvider = gqps.getQueryProvider(getRuleNode());
-    ReferenceTargetQuery query = queryProvider.getReferenceTargetQuery(myQueryKey);
+    if (myQuery == null) {
+      GeneratorQueryProvider.Source gqps = context.getEnvironment();
+      final GeneratorQueryProvider queryProvider = gqps.getQueryProvider(getRuleNode());
+      myQuery = queryProvider.getReferenceTargetQuery(myQueryKey);
+    }
     /* FIXME should I take resolveInfo of present reference target, like in TemplateNode#getDefaultResolveInfo? */
     final String defaultResolveInfo = null;
-    ReferenceInfo_Macro2 ri = new ReferenceInfo_Macro2(query, context, getRuleNode(), defaultResolveInfo);
+    ReferenceInfo_Macro2 ri = new ReferenceInfo_Macro2(myQuery, context, getRuleNode(), defaultResolveInfo);
     SNode outputNode = context.getInput(); // FIXME likely, shall pass output node from outside. this is the node we set reference at.
     new PostponedReference(getApplicableLink(), outputNode, ri).registerWith(context.getEnvironment().getGenerator());
+  }
+
+  private static SAbstractConcept _concept(SNode rule) {
+    SNode applicableConcept = RuleUtil.getReferenceReductionRule_ApplicableConcept(rule);
+    return applicableConcept != null ? MetaAdapterByDeclaration.getConcept(applicableConcept) : null;
   }
 }

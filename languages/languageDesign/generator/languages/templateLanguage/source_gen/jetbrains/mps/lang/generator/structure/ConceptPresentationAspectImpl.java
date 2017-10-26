@@ -538,7 +538,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ReferenceReductionRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reduction rule for a reference");
-          cpb.presentationByReference(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link", "", "");
+          cpb.rawPresentation("ReferenceReductionRule");
           props_ReferenceReductionRule = cpb.create();
         }
         return props_ReferenceReductionRule;

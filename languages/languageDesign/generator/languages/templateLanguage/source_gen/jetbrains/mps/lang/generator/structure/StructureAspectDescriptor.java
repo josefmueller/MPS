@@ -922,7 +922,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3592736deb001cfdL);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/8612733435392875258");
     b.associate("link", 0x7786936d61b8dafdL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("8612733435392875261").done();
+    b.associate("applicableConcept", 0x7316e38ce4ecd66L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("518316622382812518").done();
     b.aggregate("referentFunction", 0x2ba5d3cdb48b5c3aL).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fe485cc9bL).optional(false).ordered(true).multiple(false).origin("3145152795238947898").done();
+    b.aggregate("conditionFunction", 0x7316e38ce4ecd59L).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b05beaL).optional(true).ordered(true).multiple(false).origin("518316622382812505").done();
     b.kind(ConceptKind.IMPLEMENTATION, StaticScope.GLOBAL);
     return b.create();
   }
