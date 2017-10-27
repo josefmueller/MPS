@@ -132,7 +132,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -143,6 +142,12 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
+        <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -1170,209 +1175,214 @@
             </node>
           </node>
         </node>
-        <node concept="2Gpval" id="ymNu2s8v4f" role="3cqZAp">
-          <node concept="2GrKxI" id="ymNu2s8v4h" role="2Gsz3X">
-            <property role="TrG5h" value="lang" />
-          </node>
-          <node concept="3clFbS" id="ymNu2s8v4l" role="2LFqv$">
-            <node concept="3cpWs8" id="ymNu2s8F3U" role="3cqZAp">
-              <node concept="3cpWsn" id="ymNu2s8F3V" role="3cpWs9">
-                <property role="TrG5h" value="actionAscpect" />
-                <node concept="3uibUv" id="11cLQV4zuxd" role="1tU5fm">
-                  <ref role="3uigEE" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
-                </node>
-                <node concept="2OqwBi" id="ymNu2s8FbM" role="33vP2m">
-                  <node concept="2GrUjf" id="ymNu2s8F7_" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="ymNu2s8v4h" resolve="lang" />
-                  </node>
-                  <node concept="liA8E" id="ymNu2s8FmT" role="2OqNvi">
-                    <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
-                    <node concept="3VsKOn" id="ymNu2s8G8y" role="37wK5m">
-                      <ref role="3VsUkX" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="JdMuPfnpc6" role="3cqZAp">
-              <node concept="3clFbS" id="JdMuPfnpc8" role="3clFbx">
-                <node concept="3N13vt" id="JdMuPfnLU$" role="3cqZAp" />
-              </node>
-              <node concept="3clFbC" id="JdMuPfnIW8" role="3clFbw">
-                <node concept="10Nm6u" id="JdMuPfnIXR" role="3uHU7w" />
-                <node concept="37vLTw" id="JdMuPfn$oa" role="3uHU7B">
-                  <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
-                </node>
-              </node>
-            </node>
-            <node concept="2Gpval" id="ymNu2s8HB0" role="3cqZAp">
-              <node concept="2GrKxI" id="ymNu2s8HB2" role="2Gsz3X">
-                <property role="TrG5h" value="copyPreProcessor" />
-              </node>
-              <node concept="2OqwBi" id="ymNu2s8HPK" role="2GsD0m">
-                <node concept="37vLTw" id="ymNu2s8HJj" role="2Oq$k0">
-                  <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
-                </node>
-                <node concept="liA8E" id="ymNu2s8HVs" role="2OqNvi">
-                  <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getCopyPreProcessors():java.util.Collection" resolve="getCopyPreProcessors" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="ymNu2s8HB6" role="2LFqv$">
-                <node concept="3clFbF" id="ymNu2s8Io_" role="3cqZAp">
-                  <node concept="37vLTI" id="ymNu2s8P7S" role="3clFbG">
-                    <node concept="2GrUjf" id="7tAVCvDGWQB" role="37vLTx">
-                      <ref role="2Gs0qQ" node="ymNu2s8HB2" resolve="copyPreProcessor" />
-                    </node>
-                    <node concept="3EllGN" id="ymNu2s8JQp" role="37vLTJ">
-                      <node concept="2OqwBi" id="ymNu2s8K2d" role="3ElVtu">
-                        <node concept="2GrUjf" id="ymNu2s8JZw" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="ymNu2s8HB2" resolve="copyPreProcessor" />
-                        </node>
-                        <node concept="liA8E" id="ymNu2s8Kfd" role="2OqNvi">
-                          <ref role="37wK5l" to="9eus:~CopyPreProcessor.getApplicableConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getApplicableConcept" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="ymNu2s8Io$" role="3ElQJh">
-                        <ref role="3cqZAo" node="ymNu2s7W1x" resolve="myCopyPreProcessors" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2Gpval" id="ymNu2s8Qnh" role="3cqZAp">
-              <node concept="2GrKxI" id="ymNu2s8Qnj" role="2Gsz3X">
-                <property role="TrG5h" value="pastePostProcessor" />
-              </node>
-              <node concept="2OqwBi" id="ymNu2s8QEk" role="2GsD0m">
-                <node concept="37vLTw" id="ymNu2s8QzD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
-                </node>
-                <node concept="liA8E" id="ymNu2s8QK0" role="2OqNvi">
-                  <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getPastePostProcessors():java.util.Collection" resolve="getPastePostProcessors" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="ymNu2s8Qnn" role="2LFqv$">
-                <node concept="3clFbF" id="ymNu2s8Ro3" role="3cqZAp">
-                  <node concept="37vLTI" id="ymNu2s8ZoR" role="3clFbG">
-                    <node concept="2GrUjf" id="ymNu2s90Lz" role="37vLTx">
-                      <ref role="2Gs0qQ" node="ymNu2s8Qnj" resolve="pastePostProcessor" />
-                    </node>
-                    <node concept="3EllGN" id="ymNu2s8RIM" role="37vLTJ">
-                      <node concept="2OqwBi" id="ymNu2s8RUA" role="3ElVtu">
-                        <node concept="2GrUjf" id="ymNu2s8RRT" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="ymNu2s8Qnj" resolve="pastePostProcessor" />
-                        </node>
-                        <node concept="liA8E" id="ymNu2s8S7z" role="2OqNvi">
-                          <ref role="37wK5l" to="9eus:~PastePostProcessor.getApplicableConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getApplicableConcept" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="ymNu2s8Ro2" role="3ElQJh">
-                        <ref role="3cqZAo" node="ymNu2s7W30" resolve="myPastePostProcessors" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2Gpval" id="4x7n4mEAzA" role="3cqZAp">
-              <node concept="2GrKxI" id="4x7n4mEAzC" role="2Gsz3X">
-                <property role="TrG5h" value="pasteWrapper" />
-              </node>
-              <node concept="2OqwBi" id="4x7n4mEAYz" role="2GsD0m">
-                <node concept="37vLTw" id="4x7n4mEAOL" role="2Oq$k0">
-                  <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
-                </node>
-                <node concept="liA8E" id="4x7n4mEBE9" role="2OqNvi">
-                  <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getPasteWrappers():java.util.Collection" resolve="getPasteWrappers" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="4x7n4mEAzG" role="2LFqv$">
-                <node concept="3clFbJ" id="4x7n4mECsP" role="3cqZAp">
-                  <node concept="3fqX7Q" id="4x7n4mEET3" role="3clFbw">
-                    <node concept="2OqwBi" id="4x7n4mEET5" role="3fr31v">
-                      <node concept="37vLTw" id="4x7n4mEET6" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
-                      </node>
-                      <node concept="2Nt0df" id="4x7n4mEET7" role="2OqNvi">
-                        <node concept="2OqwBi" id="4x7n4mEET8" role="38cxEo">
-                          <node concept="2GrUjf" id="4x7n4mEET9" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
-                          </node>
-                          <node concept="liA8E" id="11cLQV4zF_K" role="2OqNvi">
-                            <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="4x7n4mECsR" role="3clFbx">
-                    <node concept="3clFbF" id="4x7n4mEFPN" role="3cqZAp">
-                      <node concept="37vLTI" id="4x7n4mEQW$" role="3clFbG">
-                        <node concept="3EllGN" id="4x7n4mEGfl" role="37vLTJ">
-                          <node concept="2OqwBi" id="11cLQV4zAWL" role="3ElVtu">
-                            <node concept="2GrUjf" id="4x7n4mEGoy" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
-                            </node>
-                            <node concept="liA8E" id="11cLQV4zBjJ" role="2OqNvi">
-                              <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="4x7n4mEFPM" role="3ElQJh">
-                            <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
-                          </node>
-                        </node>
-                        <node concept="2ShNRf" id="4x7n4mETeq" role="37vLTx">
-                          <node concept="3rGOSV" id="4x7n4mETd1" role="2ShVmc">
-                            <node concept="3bZ5Sz" id="4x7n4mETd2" role="3rHrn6" />
-                            <node concept="3uibUv" id="11cLQV4zCGm" role="3rHtpV">
-                              <ref role="3uigEE" to="9eus:~PasteWrapper" resolve="PasteWrapper" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="4x7n4mET$s" role="3cqZAp">
-                  <node concept="37vLTI" id="4x7n4mF9rH" role="3clFbG">
-                    <node concept="2GrUjf" id="4x7n4mFdfx" role="37vLTx">
-                      <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
-                    </node>
-                    <node concept="3EllGN" id="4x7n4mEW0V" role="37vLTJ">
-                      <node concept="2OqwBi" id="4x7n4mEYj_" role="3ElVtu">
-                        <node concept="2GrUjf" id="4x7n4mEY24" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
-                        </node>
-                        <node concept="liA8E" id="4x7n4mEY_x" role="2OqNvi">
-                          <ref role="37wK5l" to="9eus:~PasteWrapper.getSourceConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getSourceConcept" />
-                        </node>
-                      </node>
-                      <node concept="3EllGN" id="4x7n4mEU6h" role="3ElQJh">
-                        <node concept="2OqwBi" id="4x7n4mEUpL" role="3ElVtu">
-                          <node concept="2GrUjf" id="4x7n4mEUgI" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
-                          </node>
-                          <node concept="liA8E" id="4x7n4mEUJZ" role="2OqNvi">
-                            <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="4x7n4mET$q" role="3ElQJh">
-                          <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="ymNu2s8udz" role="2GsD0m">
-            <node concept="37vLTw" id="ymNu2s8u2w" role="2Oq$k0">
+        <node concept="3clFbF" id="7DBGuZZ107c" role="3cqZAp">
+          <node concept="2OqwBi" id="7DBGuZZ10Qd" role="3clFbG">
+            <node concept="37vLTw" id="7DBGuZZ107a" role="2Oq$k0">
               <ref role="3cqZAo" node="ymNu2s6LOt" resolve="myLanguageRegistry" />
             </node>
-            <node concept="liA8E" id="ymNu2s8uC8" role="2OqNvi">
-              <ref role="37wK5l" to="vndm:~LanguageRegistry.getAvailableLanguages():java.util.Collection" resolve="getAvailableLanguages" />
+            <node concept="liA8E" id="7DBGuZZ11x7" role="2OqNvi">
+              <ref role="37wK5l" to="vndm:~LanguageRegistry.withAvailableLanguages(java.util.function.Consumer):void" resolve="withAvailableLanguages" />
+              <node concept="1bVj0M" id="7DBGuZZ11Ls" role="37wK5m">
+                <node concept="3clFbS" id="7DBGuZZ11Lt" role="1bW5cS">
+                  <node concept="3cpWs8" id="ymNu2s8F3U" role="3cqZAp">
+                    <node concept="3cpWsn" id="ymNu2s8F3V" role="3cpWs9">
+                      <property role="TrG5h" value="actionAscpect" />
+                      <node concept="3uibUv" id="11cLQV4zuxd" role="1tU5fm">
+                        <ref role="3uigEE" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
+                      </node>
+                      <node concept="2OqwBi" id="ymNu2s8FbM" role="33vP2m">
+                        <node concept="37vLTw" id="7DBGuZZ1tim" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7DBGuZZ1qmU" resolve="lang" />
+                        </node>
+                        <node concept="liA8E" id="ymNu2s8FmT" role="2OqNvi">
+                          <ref role="37wK5l" to="vndm:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
+                          <node concept="3VsKOn" id="ymNu2s8G8y" role="37wK5m">
+                            <ref role="3VsUkX" to="9eus:~ActionAspectDescriptor" resolve="ActionAspectDescriptor" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="JdMuPfnpc6" role="3cqZAp">
+                    <node concept="3clFbS" id="JdMuPfnpc8" role="3clFbx">
+                      <node concept="3cpWs6" id="7DBGuZZ1wbt" role="3cqZAp" />
+                    </node>
+                    <node concept="3clFbC" id="JdMuPfnIW8" role="3clFbw">
+                      <node concept="10Nm6u" id="JdMuPfnIXR" role="3uHU7w" />
+                      <node concept="37vLTw" id="JdMuPfn$oa" role="3uHU7B">
+                        <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2Gpval" id="ymNu2s8HB0" role="3cqZAp">
+                    <node concept="2GrKxI" id="ymNu2s8HB2" role="2Gsz3X">
+                      <property role="TrG5h" value="copyPreProcessor" />
+                    </node>
+                    <node concept="2OqwBi" id="ymNu2s8HPK" role="2GsD0m">
+                      <node concept="37vLTw" id="ymNu2s8HJj" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
+                      </node>
+                      <node concept="liA8E" id="ymNu2s8HVs" role="2OqNvi">
+                        <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getCopyPreProcessors():java.util.Collection" resolve="getCopyPreProcessors" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="ymNu2s8HB6" role="2LFqv$">
+                      <node concept="3clFbF" id="ymNu2s8Io_" role="3cqZAp">
+                        <node concept="37vLTI" id="ymNu2s8P7S" role="3clFbG">
+                          <node concept="2GrUjf" id="7tAVCvDGWQB" role="37vLTx">
+                            <ref role="2Gs0qQ" node="ymNu2s8HB2" resolve="copyPreProcessor" />
+                          </node>
+                          <node concept="3EllGN" id="ymNu2s8JQp" role="37vLTJ">
+                            <node concept="2OqwBi" id="ymNu2s8K2d" role="3ElVtu">
+                              <node concept="2GrUjf" id="ymNu2s8JZw" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="ymNu2s8HB2" resolve="copyPreProcessor" />
+                              </node>
+                              <node concept="liA8E" id="ymNu2s8Kfd" role="2OqNvi">
+                                <ref role="37wK5l" to="9eus:~CopyPreProcessor.getApplicableConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getApplicableConcept" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="ymNu2s8Io$" role="3ElQJh">
+                              <ref role="3cqZAo" node="ymNu2s7W1x" resolve="myCopyPreProcessors" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2Gpval" id="ymNu2s8Qnh" role="3cqZAp">
+                    <node concept="2GrKxI" id="ymNu2s8Qnj" role="2Gsz3X">
+                      <property role="TrG5h" value="pastePostProcessor" />
+                    </node>
+                    <node concept="2OqwBi" id="ymNu2s8QEk" role="2GsD0m">
+                      <node concept="37vLTw" id="ymNu2s8QzD" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
+                      </node>
+                      <node concept="liA8E" id="ymNu2s8QK0" role="2OqNvi">
+                        <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getPastePostProcessors():java.util.Collection" resolve="getPastePostProcessors" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="ymNu2s8Qnn" role="2LFqv$">
+                      <node concept="3clFbF" id="ymNu2s8Ro3" role="3cqZAp">
+                        <node concept="37vLTI" id="ymNu2s8ZoR" role="3clFbG">
+                          <node concept="2GrUjf" id="ymNu2s90Lz" role="37vLTx">
+                            <ref role="2Gs0qQ" node="ymNu2s8Qnj" resolve="pastePostProcessor" />
+                          </node>
+                          <node concept="3EllGN" id="ymNu2s8RIM" role="37vLTJ">
+                            <node concept="2OqwBi" id="ymNu2s8RUA" role="3ElVtu">
+                              <node concept="2GrUjf" id="ymNu2s8RRT" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="ymNu2s8Qnj" resolve="pastePostProcessor" />
+                              </node>
+                              <node concept="liA8E" id="ymNu2s8S7z" role="2OqNvi">
+                                <ref role="37wK5l" to="9eus:~PastePostProcessor.getApplicableConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getApplicableConcept" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="ymNu2s8Ro2" role="3ElQJh">
+                              <ref role="3cqZAo" node="ymNu2s7W30" resolve="myPastePostProcessors" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2Gpval" id="4x7n4mEAzA" role="3cqZAp">
+                    <node concept="2GrKxI" id="4x7n4mEAzC" role="2Gsz3X">
+                      <property role="TrG5h" value="pasteWrapper" />
+                    </node>
+                    <node concept="2OqwBi" id="4x7n4mEAYz" role="2GsD0m">
+                      <node concept="37vLTw" id="4x7n4mEAOL" role="2Oq$k0">
+                        <ref role="3cqZAo" node="ymNu2s8F3V" resolve="actionAscpect" />
+                      </node>
+                      <node concept="liA8E" id="4x7n4mEBE9" role="2OqNvi">
+                        <ref role="37wK5l" to="9eus:~ActionAspectDescriptor.getPasteWrappers():java.util.Collection" resolve="getPasteWrappers" />
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="4x7n4mEAzG" role="2LFqv$">
+                      <node concept="3clFbJ" id="4x7n4mECsP" role="3cqZAp">
+                        <node concept="3fqX7Q" id="4x7n4mEET3" role="3clFbw">
+                          <node concept="2OqwBi" id="4x7n4mEET5" role="3fr31v">
+                            <node concept="37vLTw" id="4x7n4mEET6" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
+                            </node>
+                            <node concept="2Nt0df" id="4x7n4mEET7" role="2OqNvi">
+                              <node concept="2OqwBi" id="4x7n4mEET8" role="38cxEo">
+                                <node concept="2GrUjf" id="4x7n4mEET9" role="2Oq$k0">
+                                  <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
+                                </node>
+                                <node concept="liA8E" id="11cLQV4zF_K" role="2OqNvi">
+                                  <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbS" id="4x7n4mECsR" role="3clFbx">
+                          <node concept="3clFbF" id="4x7n4mEFPN" role="3cqZAp">
+                            <node concept="37vLTI" id="4x7n4mEQW$" role="3clFbG">
+                              <node concept="3EllGN" id="4x7n4mEGfl" role="37vLTJ">
+                                <node concept="2OqwBi" id="11cLQV4zAWL" role="3ElVtu">
+                                  <node concept="2GrUjf" id="4x7n4mEGoy" role="2Oq$k0">
+                                    <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
+                                  </node>
+                                  <node concept="liA8E" id="11cLQV4zBjJ" role="2OqNvi">
+                                    <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="4x7n4mEFPM" role="3ElQJh">
+                                  <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
+                                </node>
+                              </node>
+                              <node concept="2ShNRf" id="4x7n4mETeq" role="37vLTx">
+                                <node concept="3rGOSV" id="4x7n4mETd1" role="2ShVmc">
+                                  <node concept="3bZ5Sz" id="4x7n4mETd2" role="3rHrn6" />
+                                  <node concept="3uibUv" id="11cLQV4zCGm" role="3rHtpV">
+                                    <ref role="3uigEE" to="9eus:~PasteWrapper" resolve="PasteWrapper" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="4x7n4mET$s" role="3cqZAp">
+                        <node concept="37vLTI" id="4x7n4mF9rH" role="3clFbG">
+                          <node concept="2GrUjf" id="4x7n4mFdfx" role="37vLTx">
+                            <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
+                          </node>
+                          <node concept="3EllGN" id="4x7n4mEW0V" role="37vLTJ">
+                            <node concept="2OqwBi" id="4x7n4mEYj_" role="3ElVtu">
+                              <node concept="2GrUjf" id="4x7n4mEY24" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
+                              </node>
+                              <node concept="liA8E" id="4x7n4mEY_x" role="2OqNvi">
+                                <ref role="37wK5l" to="9eus:~PasteWrapper.getSourceConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getSourceConcept" />
+                              </node>
+                            </node>
+                            <node concept="3EllGN" id="4x7n4mEU6h" role="3ElQJh">
+                              <node concept="2OqwBi" id="4x7n4mEUpL" role="3ElVtu">
+                                <node concept="2GrUjf" id="4x7n4mEUgI" role="2Oq$k0">
+                                  <ref role="2Gs0qQ" node="4x7n4mEAzC" resolve="pasteWrapper" />
+                                </node>
+                                <node concept="liA8E" id="4x7n4mEUJZ" role="2OqNvi">
+                                  <ref role="37wK5l" to="9eus:~PasteWrapper.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="4x7n4mET$q" role="3ElQJh">
+                                <ref role="3cqZAo" node="4x7n4mEirb" resolve="myPasteWrappers" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTG" id="7DBGuZZ1qmU" role="1bW2Oz">
+                  <property role="TrG5h" value="lang" />
+                  <node concept="3uibUv" id="7DBGuZZ1qmT" role="1tU5fm">
+                    <ref role="3uigEE" to="vndm:~LanguageRuntime" resolve="LanguageRuntime" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

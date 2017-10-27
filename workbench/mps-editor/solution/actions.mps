@@ -12,7 +12,6 @@
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -378,6 +377,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -10211,10 +10213,16 @@
     <property role="TrG5h" value="PushEditorHints" />
     <property role="2uzpH1" value="Push Editor Hints" />
     <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="1DS2jV" id="2OiVRCDoa2h" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="2OiVRCDoa2i" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="7DBGuZZ2JZk" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="7DBGuZZ2JZl" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="5n7qrXOOSV" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
@@ -10226,16 +10234,22 @@
         <node concept="3cpWs8" id="5whfvP6Ea2g" role="3cqZAp">
           <node concept="3cpWsn" id="5whfvP6Ea2h" role="3cpWs9">
             <property role="TrG5h" value="settings" />
+            <property role="3TUv4t" value="true" />
             <node concept="2ShNRf" id="5whfvP6EadQ" role="33vP2m">
               <node concept="1pGfFk" id="5whfvP6Exdc" role="2ShVmc">
-                <ref role="37wK5l" to="zwau:~ConceptEditorHintSettings.&lt;init&gt;(java.lang.Iterable)" resolve="ConceptEditorHintSettings" />
-                <node concept="2OqwBi" id="5OavP$2AXI2" role="37wK5m">
-                  <node concept="2YIFZM" id="5OavP$2AXz$" role="2Oq$k0">
-                    <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance():jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                    <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+                <ref role="37wK5l" to="zwau:~ConceptEditorHintSettings.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry)" resolve="ConceptEditorHintSettings" />
+                <node concept="2OqwBi" id="7DBGuZZ2MKs" role="37wK5m">
+                  <node concept="2OqwBi" id="7DBGuZZ2LWk" role="2Oq$k0">
+                    <node concept="2WthIp" id="7DBGuZZ2LWn" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="7DBGuZZ2LWp" role="2OqNvi">
+                      <ref role="2WH_rO" node="7DBGuZZ2JZk" resolve="mpsProject" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="5OavP$2AYcr" role="2OqNvi">
-                    <ref role="37wK5l" to="vndm:~LanguageRegistry.getAvailableLanguages():java.util.Collection" resolve="getAvailableLanguages" />
+                  <node concept="liA8E" id="7DBGuZZ2NxR" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="7DBGuZZ2NXw" role="37wK5m">
+                      <ref role="3VsUkX" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
+                    </node>
                   </node>
                 </node>
               </node>

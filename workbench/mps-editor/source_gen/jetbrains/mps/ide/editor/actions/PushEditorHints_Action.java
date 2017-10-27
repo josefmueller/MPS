@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
@@ -27,7 +29,7 @@ public class PushEditorHints_Action extends BaseAction {
   public PushEditorHints_Action() {
     super("Push Editor Hints", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -54,6 +56,13 @@ public class PushEditorHints_Action extends BaseAction {
       }
     }
     {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
       if (editorComponent != null && editorComponent.isInvalid()) {
         editorComponent = null;
@@ -67,7 +76,7 @@ public class PushEditorHints_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
+    final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getComponent(LanguageRegistry.class));
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         String[] initialEditorHints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getInitialEditorHints();

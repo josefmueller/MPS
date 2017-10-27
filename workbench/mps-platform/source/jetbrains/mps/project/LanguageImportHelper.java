@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,7 +238,6 @@ public final class LanguageImportHelper {
   private void chooseLanguage(final jetbrains.mps.util.Callback<SLanguage> addLanguageAction) {
     final SRepository repo = myProject.getRepository();
     final Reference<Collection<SLanguage>> projectScope = new Reference<>();
-    final Reference<Collection<SLanguage>> globalScope = new Reference<>();
 
     repo.getModelAccess().runReadAction(() -> {
       ArrayList<SLanguage> projectLanguages = new ArrayList<>(20);
@@ -247,11 +246,11 @@ public final class LanguageImportHelper {
         projectLanguages.add(MetaAdapterFactory.getLanguage(m.getModuleReference()));
       }
       projectScope.set(projectLanguages);
-      globalScope.set(LanguageRegistry.getInstance(repo).getAllLanguages());
     });
 
+    final LanguageRegistry languageRegistry = myProject.getComponent(LanguageRegistry.class);
     ChooseByNameData<SLanguage> gotoData = new ChooseByNameData<>(new LanguagesPresentation());
-    gotoData.setScope(projectScope.get(), globalScope.get());
+    gotoData.setScope(projectScope.get(), languageRegistry.getAllLanguages());
     gotoData.derivePrompts("language").setPrompts("Import language:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
 
     // we used to allow multiple selection, but didn't handle it in any special way

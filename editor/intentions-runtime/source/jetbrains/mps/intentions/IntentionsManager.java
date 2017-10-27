@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,6 @@ import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.IntentionFactory;
 import jetbrains.mps.openapi.intentions.Kind;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -89,14 +87,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private MyState myState = new MyState();
 
-  /**
-   * FIXME this field is here just for the sake of ModelAccess, ApplicationComponent shall not depend on any project-related stuff,
-   * rather shall get it from context.
-   */
-  private final MPSModuleRepository myRepository;
+  private final LanguageRegistry myLanguageRegistry;
 
   public IntentionsManager(MPSCoreComponents coreComponents) {
-    myRepository = coreComponents.getModuleRepository();
+    myLanguageRegistry = coreComponents.getPlatform().findComponent(LanguageRegistry.class);
   }
 
   public synchronized Kind getHighestAvailableBaseIntentionType(final SNode node, final EditorContext editorContext) {
@@ -236,35 +230,35 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
    * This list will be first sorted by the language FQ name and then sorted by presentation of each intention,
    * so result can be easily displayed in UI components.
    *
+   * @deprecated shall not expose LanguageRuntime, which is (a) implementation, (b) reloadable class not suited for map keys
    * @return combined sorted list of all available {@link IntentionFactory}
    */
+  @Deprecated
   @NotNull
   public synchronized Map<LanguageRuntime, Collection<IntentionFactory>> getAllIntentionFactories() {
-    return new ModelAccessHelper(myRepository).runReadAction(() -> {
-      Map<LanguageRuntime, Collection<IntentionFactory>> result = new HashMap<>();
+    Map<LanguageRuntime, Collection<IntentionFactory>> result = new HashMap<>();
 
-      for (LanguageRuntime lr : LanguageRegistry.getInstance(myRepository).getAvailableLanguages()) {
-        List<IntentionFactory> languageIntentions = new ArrayList<>();
-        result.put(lr, languageIntentions);
+    myLanguageRegistry.withAvailableLanguages(lr -> {
+      List<IntentionFactory> languageIntentions = new ArrayList<>();
+      result.put(lr, languageIntentions);
 
-        IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
-        if (intentionAspect != null) {
-          languageIntentions.addAll(intentionAspect.getAllIntentions());
-        } else {
-          jetbrains.mps.intentions.IntentionAspectDescriptor compatibilityIntentionAspect =
-              lr.getAspect(jetbrains.mps.intentions.IntentionAspectDescriptor.class);
-          if (compatibilityIntentionAspect != null) {
-            languageIntentions.addAll(compatibilityIntentionAspect.getAllAPIIntentions());
-          }
-        }
-
-        final ScriptAspectDescriptor scriptAspect = lr.getAspect(ScriptAspectDescriptor.class);
-        if (scriptAspect != null) {
-          languageIntentions.addAll(new MigrationRefactoringIntentions(lr, scriptAspect).getIntentions());
+      IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
+      if (intentionAspect != null) {
+        languageIntentions.addAll(intentionAspect.getAllIntentions());
+      } else {
+        jetbrains.mps.intentions.IntentionAspectDescriptor compatibilityIntentionAspect =
+            lr.getAspect(jetbrains.mps.intentions.IntentionAspectDescriptor.class);
+        if (compatibilityIntentionAspect != null) {
+          languageIntentions.addAll(compatibilityIntentionAspect.getAllAPIIntentions());
         }
       }
-      return result;
+
+      final ScriptAspectDescriptor scriptAspect = lr.getAspect(ScriptAspectDescriptor.class);
+      if (scriptAspect != null) {
+        languageIntentions.addAll(new MigrationRefactoringIntentions(lr, scriptAspect).getIntentions());
+      }
     });
+    return result;
   }
 
   //-------------visiting registered intentions---------------
@@ -273,7 +267,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     if (node.getModel() == null) {
       return true;
     }
-    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(editorContext.getRepository());
+    LanguageRegistry languageRegistry = myLanguageRegistry;
     // respect intentions from imported languages only
     ArrayList<IntentionAspectDescriptor> activeIntentionAspects = new ArrayList<>();
     ArrayList<jetbrains.mps.intentions.IntentionAspectDescriptor> activeCompatibilityIntentionAspects = new ArrayList<>();

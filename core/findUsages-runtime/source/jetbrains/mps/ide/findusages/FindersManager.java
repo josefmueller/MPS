@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -136,13 +135,8 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   }
 
   private void load() {
-    Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
-    if (availableLanguages == null) {
-      return;
-    }
-    for (LanguageRuntime language : availableLanguages) {
-      initFindersDescriptor(language);
-    }
+    // withAvailableLanguages doesn't require model read
+    myLanguageRegistry.withAvailableLanguages(this::initFindersDescriptor);
   }
 
   private void clear() {

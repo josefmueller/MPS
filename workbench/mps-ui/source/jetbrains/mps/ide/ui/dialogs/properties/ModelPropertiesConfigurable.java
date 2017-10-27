@@ -558,8 +558,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          Collection<SLanguage> languages =
-              new ModelAccessHelper(myProject.getRepository()).runReadAction(() -> LanguageRegistry.getInstance(myProject.getRepository()).getAllLanguages());
+          // XXX use of LanguageRegistry here effectively prevents us from specifying languages that are not yet deployed, is it what we want?
+          Collection<SLanguage> languages = myProject.getComponent(LanguageRegistry.class).getAllLanguages();
           List<SLanguage> list = CommonChoosers.showLanguageSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), languages);
           for (SLanguage l : list) {
             myEngagedLanguagesModel.addItem(l);

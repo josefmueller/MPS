@@ -126,20 +126,19 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @Deprecated
   @ToRemove(version = 3.4)
   //this method is here for compatibility purposes.
-  //remve as soon as there's no need in optimizing by-name stuff
+  //remove as soon as there's no need in optimizing by-name stuff
+  // which is unlikely to happen provided we have support for legacy persistence that needs by-name concepts.
   synchronized public SAbstractConcept getConceptByName(String conceptName) {
     if (myConceptByNameCache==null) {
-      myConceptByNameCache = new HashMap<String, SAbstractConcept>();
-      for (SLanguage l : LanguageRegistry.getInstance().getAllLanguages()) {
+      myConceptByNameCache = new HashMap<>();
+      for (SLanguage l : myLanguageRegistry.getAllLanguages()) {
         for (SAbstractConcept c : l.getConcepts()) {
           myConceptByNameCache.put(c.getQualifiedName(),c);
         }
       }
     }
 
-    SAbstractConcept cached = myConceptByNameCache.get(conceptName);
-    if (cached!=null) return cached;
-    return new InvalidConcept(conceptName);
+    return myConceptByNameCache.getOrDefault(conceptName, new InvalidConcept(conceptName));
   }
 
   synchronized private void clearConceptsCache() {

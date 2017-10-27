@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.hintsSettings;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider;
-import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -38,8 +38,8 @@ public class ConceptEditorHintSettings {
   public ConceptEditorHintSettings() {
   }
 
-  public ConceptEditorHintSettings(Iterable<LanguageRuntime> availableLanguages) {
-    for (LanguageRuntime language : availableLanguages) {
+  public ConceptEditorHintSettings(@NotNull LanguageRegistry languageRegistry) {
+    languageRegistry.withAvailableLanguages(language -> {
       EditorAspectDescriptor editorDescriptor = language.getAspect(EditorAspectDescriptor.class);
       if (editorDescriptor instanceof EditorHintsProvider) {
         String lang = language.getNamespace();
@@ -49,7 +49,7 @@ public class ConceptEditorHintSettings {
           }
         }
       }
-    }
+    });
   }
 
   @NotNull

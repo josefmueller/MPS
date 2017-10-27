@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -45,9 +46,11 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
   private final Project myProject;
   private LanguageRegistryListener myLanguageReloadListener;
   private boolean myLanguageRegistryChanged = false;
+  private final LanguageRegistry myLanguageRegistry;
 
   public ConceptEditorHintConfigurable(@NotNull Project project) {
     myProject = project;
+    myLanguageRegistry = ProjectHelper.fromIdeaProject(myProject).getComponent(LanguageRegistry.class);
   }
 
   @NotNull
@@ -82,25 +85,22 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
 
   private ConceptEditorHintPreferencesPage getPage() {
     if (myPage == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          mySettings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
-        }
-      });
+      mySettings = myLanguageRegistry == null ? new ConceptEditorHintSettings() : new ConceptEditorHintSettings(myLanguageRegistry);
       mySettings.updateSettings(ConceptEditorHintSettingsComponent.getInstance(myProject).getState().getEnabledHints());
       myPage = new ConceptEditorHintPreferencesPage(mySettings);
-      LanguageRegistry.getInstance().addRegistryListener(myLanguageReloadListener = new LanguageRegistryListener() {
-        @Override
-        public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
-          myLanguageRegistryChanged = true;
-        }
+      if (myLanguageRegistry != null) {
+        myLanguageRegistry.addRegistryListener(myLanguageReloadListener = new LanguageRegistryListener() {
+          @Override
+          public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
+            myLanguageRegistryChanged = true;
+          }
 
-        @Override
-        public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
-          myLanguageRegistryChanged = true;
-        }
-      });
+          @Override
+          public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
+            myLanguageRegistryChanged = true;
+          }
+        });
+      }
     }
     return myPage;
   }
@@ -147,8 +147,10 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable, Co
   @Override
   public void disposeUIResources() {
     myPage = null;
-    LanguageRegistry.getInstance().removeRegistryListener(myLanguageReloadListener);
-    myLanguageReloadListener = null;
+    if (myLanguageRegistry != null && myLanguageReloadListener != null) {
+      myLanguageRegistry.removeRegistryListener(myLanguageReloadListener);
+      myLanguageReloadListener = null;
+    }
   }
 
   @Override

@@ -34,9 +34,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.function.Consumer;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -174,12 +175,15 @@ import jetbrains.mps.smodel.SNodePointer;
     }
 
     private List<?> createParameterObjects_impl(SNode node, SNode currentChild, SNode defaultConceptOfChild, SAbstractConcept defaultChildConcept, IOperationContext operationContext, EditorContext editorContext) {
-      ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
-      for (LanguageRuntime lr : LanguageRegistry.getInstance(SNodeOperations.getModel(node).getRepository()).getAvailableLanguages()) {
-        for (GeneratorRuntime gr : lr.getGenerators()) {
-          rv.add(gr.getModuleReference());
+      final ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
+      LanguageRegistry languageRegistry = LanguageRegistry.getInstance(SNodeOperations.getModel(node).getRepository());
+      languageRegistry.withAvailableLanguages(new Consumer<LanguageRuntime>() {
+        public void accept(LanguageRuntime lr) {
+          for (GeneratorRuntime gr : lr.getGenerators()) {
+            rv.add(gr.getModuleReference());
+          }
         }
-      }
+      });
       return rv;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,12 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Consumer;
 
 import static java.lang.String.format;
 
@@ -60,7 +64,8 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private static LanguageRegistry INSTANCE;
 
   /**
-   * @deprecated use context-specific alternative {@link #getInstance(SRepository)}
+   * @deprecated obtain instance through {@link jetbrains.mps.components.ComponentHost#findComponent(Class) componentHost#findComponent(LanguageRegistry.class)}
+   *             or use context-specific alternative {@link #getInstance(SRepository)}.
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -84,6 +89,16 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private final Map<SLanguageId, LanguageRuntime> myLanguagesById = new HashMap<>();
 
   private final Map<SModuleReference, GeneratorRuntime> myGeneratorsWithCompiledRuntime = new HashMap<>();
+
+  /*
+   * Don't want to expose this lock right now, although perhaps would need to do it later, to facilitate scenarios with
+   * LanguageRegistry that are not satisfied with withAvailableLanguages (e.g. span longer lifecycle).
+   * At the moment, LR is updated inside repository's write action, and grabs myRuntimeInstanceAccess's write lock
+   * as well, which may lead to deadlock  (myRuntimeInstanceAccess.read + MA.read vs MA.write+myRuntimeInstanceAccess.write from another thread)
+   * and eventually we may split registry update out from model write, to run later, after write. Just need to sort out {@link LanguageRegistryListener}
+   * contract that tells events are dispatched in [write] (didn't find anyone to rely on this, though). With a split, we can mitigate deadlock risk.
+   */
+  private final ReadWriteLock myRuntimeInstanceAccess = new ReentrantReadWriteLock();
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<>();
 
@@ -273,20 +288,57 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     myLanguageListeners.remove(listener);
   }
 
-  /*
+  /**
    *   Collection is valid until the end of the current read action.
+   * @deprecated Use of the method demands read lock on a repository we load languages from, which is not something we'd like to expose, nor can
+   *             always afford to (e.g. old persistence formats need 'by name' concepts and access to LanguageRegistry (see MetaAdapterFactoryByName))
+   *             and it's odd to wrap code that merely parses model data stream with a model access on an odd repository.
+   *
+   *             Therefore, unless we have public, explicit access to LanguageRegistry lock mechanism, use {@link #withAvailableLanguages(Consumer)}
+   *             instead.
+   *
+   *             TODO when removing uses of the method, check if there's superficial model read around the code, and drop it as well, if possible.
    */
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public Collection<LanguageRuntime> getAvailableLanguages() {
     myRepository.getModelAccess().checkReadAccess();
-    return myLanguagesById.values();
+    try {
+      myRuntimeInstanceAccess.readLock().lock();
+      // 1. We return a copy of our collection, but the contract ('valid until the end of read action') holds true.
+      // 2. Although it's guaranteed by MA.checkReadAccess that we never get here while LR is updated, it doesn't hurt to be explicit about
+      //    access type. Just in case we move LR update out of model write some day.
+      return new ArrayList<>(myLanguagesById.values());
+    } finally {
+      myRuntimeInstanceAccess.readLock().unlock();
+    }
   }
 
-  public Collection<SLanguage> getAllLanguages() {
-    final Collection<LanguageRuntime> languages = getAvailableLanguages();
-    ArrayList<SLanguage> rv = new ArrayList<>(languages.size());
-    for (LanguageRuntime lr : languages) {
-      rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace()));
+  /**
+   * Synchronous access to actual languages in the registry.
+   * It's guaranteed no change to the set of languages happen while this method is working.
+   * BEWARE, {@code operation} shall not perform model read/write as it might lead to dead-lock
+   * (a thread starts model write and waits for write on myRuntimeInstanceAccess, while another thread had grabbed
+   * myRuntimeInstanceAccess read lock and consumer operation trues to grab model lock).
+   * @param operation invoked for each actual {@link LanguageRuntime}, minimalistic and simple.
+   */
+  public void withAvailableLanguages(@NotNull Consumer<LanguageRuntime> operation) {
+    try {
+      myRuntimeInstanceAccess.readLock().lock();
+      myLanguagesById.values().forEach(operation);
+    } finally {
+      myRuntimeInstanceAccess.readLock().unlock();
     }
+  }
+
+  /**
+   * @return snapshot of languages known to the registory at the given moment.
+   *         May not reflect actual state (a language might get unloaded), but as long as it's about identity objects, it's not that important to
+   *         keep the collection exact.
+   */
+  public Collection<SLanguage> getAllLanguages() {
+    ArrayList<SLanguage> rv = new ArrayList<>(100);
+    withAvailableLanguages(lr -> rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace())));
     return rv;
   }
 
@@ -297,15 +349,25 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Nullable
   public LanguageRuntime getLanguage(SLanguageId id) {
-    return myLanguagesById.get(id);
+    try {
+      myRuntimeInstanceAccess.readLock().lock();
+      return myLanguagesById.get(id);
+    } finally {
+      myRuntimeInstanceAccess.readLock().unlock();
+    }
   }
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
-    for (LanguageRuntime l : myLanguagesById.values()) {
-      if (l.getNamespace().equals(namespace)) {
-        return l;
+    try {
+      myRuntimeInstanceAccess.readLock().lock();
+      for (LanguageRuntime l : myLanguagesById.values()) {
+        if (Objects.equals(l.getNamespace(), namespace)) {
+          return l;
+        }
       }
+    } finally {
+      myRuntimeInstanceAccess.readLock().unlock();
     }
     return null;
   }
@@ -376,34 +438,44 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
     notifyUnload(languagesToUnload);
 
-    for (LanguageRuntime languageRuntime : languagesToUnload) {
-      myLanguagesById.remove(languageRuntime.getId());
+    try {
+      myRuntimeInstanceAccess.writeLock().lock();
+      for (LanguageRuntime languageRuntime : languagesToUnload) {
+        myLanguagesById.remove(languageRuntime.getId());
+      }
+      reinitialize();
+    } finally {
+      myRuntimeInstanceAccess.writeLock().unlock();
     }
-    reinitialize();
   }
 
   @Override
   public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
     Set<LanguageRuntime> loadedRuntimes = new LinkedHashSet<>();
-    for (Language language : collectLanguageModules(loadedModules)) {
-      try {
-        LanguageRuntime langRuntime = createRuntime(language);
-        if (langRuntime == null) {
-          continue;
+    try {
+      myRuntimeInstanceAccess.writeLock().lock();
+      for (Language language : collectLanguageModules(loadedModules)) {
+        try {
+          LanguageRuntime langRuntime = createRuntime(language);
+          if (langRuntime == null) {
+            continue;
+          }
+          SLanguageId sl = langRuntime.getId();
+          if (myLanguagesById.containsKey(sl)) {
+            String msg = String.format("There is already a language '%s'", myLanguagesById.get(sl));
+            LOG.error(msg, new IllegalArgumentException(msg));
+            continue;
+          }
+          myLanguagesById.put(sl, langRuntime);
+          loadedRuntimes.add(langRuntime);
+        } catch (LinkageError le) {
+          processLinkageErrorForLanguage(language, le);
         }
-        SLanguageId sl = langRuntime.getId();
-        if (myLanguagesById.containsKey(sl)) {
-          String msg = String.format("There is already a language '%s'", myLanguagesById.get(sl));
-          LOG.error(msg, new IllegalArgumentException(msg));
-          continue;
-        }
-        myLanguagesById.put(sl, langRuntime);
-        loadedRuntimes.add(langRuntime);
-      } catch (LinkageError le) {
-        processLinkageErrorForLanguage(language, le);
       }
+      reinitialize();
+    } finally {
+      myRuntimeInstanceAccess.writeLock().unlock();
     }
-    reinitialize();
 
     for (Generator generator : collectGeneratorModules(loadedModules)) {
       GeneratorRuntime generatorRuntime = createRuntime(generator);
