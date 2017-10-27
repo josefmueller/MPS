@@ -10,6 +10,11 @@ import jetbrains.mps.checkers.IteratingChecker;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
+/**
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class RootCheckerSpecificCheckerAdapter {
 
   public static IChecker<SModel, NodeReportItem> create(IChecker<SNode, NodeReportItem> checker) {

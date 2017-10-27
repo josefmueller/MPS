@@ -70,7 +70,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         for (IChecker<SNode, NodeReportItem> checker : ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()))) {
           ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(checker));
         }
-        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker())));
+        ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.create(IChecker.AbstractNodeChecker.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker())));
       case STRUCTURE:
         ListSequence.fromList(checkers).addElement(RootCheckerSpecificCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION, new StructureChecker())));
       default:

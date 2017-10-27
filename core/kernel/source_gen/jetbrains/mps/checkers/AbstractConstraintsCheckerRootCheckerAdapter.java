@@ -16,14 +16,15 @@ import java.util.ArrayList;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+/**
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class AbstractConstraintsCheckerRootCheckerAdapter {
 
-  public interface ErrorSkipCondition {
-    boolean skipSingleNode(SNode node);
-    boolean skipSubtree(SNode root);
-  }
 
-  public static final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition SKIP_CONSTRAINTS_CONDITION = new AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition() {
+  public static final IChecker.AbstractNodeChecker.ErrorSkipCondition SKIP_CONSTRAINTS_CONDITION = new IChecker.AbstractNodeChecker.ErrorSkipCondition() {
     public boolean skipSingleNode(SNode node) {
       return false;
     }
@@ -32,16 +33,8 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
     }
   };
 
-  public static final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition SKIP_NOTHING_CONDITION = new AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition() {
-    public boolean skipSingleNode(SNode node) {
-      return false;
-    }
-    public boolean skipSubtree(SNode root) {
-      return false;
-    }
-  };
 
-  public static final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition SUPPRESS_ERRORS_CONDITION = new AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition() {
+  public static final IChecker.AbstractNodeChecker.ErrorSkipCondition SUPPRESS_ERRORS_CONDITION = new IChecker.AbstractNodeChecker.ErrorSkipCondition() {
     public boolean skipSingleNode(SNode node) {
       return !(ErrorReportUtil.shouldReportError(node));
     }
@@ -50,7 +43,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
     }
   };
 
-  public static List<IChecker<SNode, NodeReportItem>> createList(@NotNull final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor... rules) {
+  public static List<IChecker<SNode, NodeReportItem>> createList(@NotNull final IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor... rules) {
     return Sequence.fromIterable(Sequence.fromArray(rules)).select(new ISelector<AbstractNodeCheckerInEditor, IChecker<SNode, NodeReportItem>>() {
       public IChecker<SNode, NodeReportItem> select(AbstractNodeCheckerInEditor rule) {
         IChecker<SNode, NodeReportItem> rootChecker = AbstractConstraintsCheckerRootCheckerAdapter.create(skipCondition, rule);
@@ -59,8 +52,8 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
     }).toListSequence();
   }
 
-  public static IChecker<SNode, NodeReportItem> create(final AbstractConstraintsCheckerRootCheckerAdapter.ErrorSkipCondition skipCondition, AbstractNodeCheckerInEditor rule) {
-    IteratingChecker<SNode, SNode, NodeReportItem> skippingSubtreeChecker = new IteratingChecker<SNode, SNode, NodeReportItem>(rule, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
+  public static <I extends NodeReportItem> IChecker<SNode, I> create(final IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition, IChecker.AbstractNodeChecker<I> rule) {
+    IteratingChecker<SNode, SNode, I> skippingSubtreeChecker = new IteratingChecker<SNode, SNode, I>(rule, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
       public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
         List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());
         DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(root);
@@ -75,7 +68,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
         return new IteratingChecker.CollectionIteratorWithProgress<SNode>(toCheck);
       }
     });
-    return new FilteringChecker<SNode, NodeReportItem>(skippingSubtreeChecker, new _FunctionTypes._return_P2_E0<Boolean, NodeReportItem, SRepository>() {
+    return new FilteringChecker<SNode, I>(skippingSubtreeChecker, new _FunctionTypes._return_P2_E0<Boolean, NodeReportItem, SRepository>() {
       public Boolean invoke(NodeReportItem reportItem, SRepository repository) {
         return !(skipCondition.skipSingleNode(reportItem.getNode().resolve(repository)));
       }

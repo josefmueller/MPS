@@ -363,14 +363,19 @@
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
@@ -740,9 +745,9 @@
                       <node concept="2YIFZM" id="3RAxiQnB8q_" role="37wK5m">
                         <ref role="37wK5l" to="wsw7:1valgbdIayF" resolve="create" />
                         <ref role="1Pybhc" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
-                        <node concept="10M0yZ" id="3RAxiQnBdG5" role="37wK5m">
+                        <node concept="10M0yZ" id="320sejm9vhL" role="37wK5m">
                           <ref role="3cqZAo" to="wsw7:45Q6RD6wv39" resolve="SKIP_NOTHING_CONDITION" />
-                          <ref role="1PxDUh" to="wsw7:2UMCgvoqxz1" resolve="AbstractConstraintsCheckerRootCheckerAdapter" />
+                          <ref role="1PxDUh" to="wsw7:3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
                         </node>
                         <node concept="2ShNRf" id="3RAxiQnB98b" role="37wK5m">
                           <node concept="HV5vD" id="3RAxiQnBb8O" role="2ShVmc">
@@ -7155,12 +7160,9 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3etVqSRRx9d" role="1B3o_S" />
-    <node concept="3uibUv" id="4SGXHKgZABp" role="EKbjA">
-      <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
-      <node concept="3uibUv" id="4SGXHKgZBZx" role="11_B2D">
-        <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-      </node>
-      <node concept="3uibUv" id="4SGXHKgZC1U" role="11_B2D">
+    <node concept="3uibUv" id="320sejmfVVH" role="1zkMxy">
+      <ref role="3uigEE" to="wsw7:3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+      <node concept="3uibUv" id="320sejmfXei" role="11_B2D">
         <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
       </node>
     </node>
@@ -10020,6 +10022,14 @@
     </node>
     <node concept="2tJIrI" id="IMyJ9Jxh4S" role="jymVt" />
     <node concept="3Tm1VV" id="63oasX2dpd0" role="1B3o_S" />
+    <node concept="3UR2Jj" id="320sejm8Zuu" role="lGtFl">
+      <node concept="TZ5HI" id="320sejm8Zuv" role="3nqlJM">
+        <node concept="TZ5HA" id="320sejm8Zuw" role="3HnX3l" />
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="320sejm8Zux" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
   </node>
 </model>
 

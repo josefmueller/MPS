@@ -35,6 +35,10 @@ public class ConstraintsChecker extends AbstractNodeCheckerInEditor implements I
   public String getCategory() {
     return IssueKindReportItem.CONSTRAINTS;
   }
+  @Override
+  public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
+    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+  }
   private void runCheck(LanguageErrorsCollector errorsCollector, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super CheckingNodeContext> check, _FunctionTypes._return_P1_E0<? extends NodeReportItem, ? super RuleIdFlavouredItem.TypesystemRuleId> reportItem) {
     final CheckingNodeContextImpl context = new CheckingNodeContextImpl();
     boolean success = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {

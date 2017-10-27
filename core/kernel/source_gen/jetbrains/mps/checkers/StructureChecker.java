@@ -22,4 +22,8 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
   public String getCategory() {
     return IssueKindReportItem.STRUCTURE;
   }
+  @Override
+  public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
+    return AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION;
+  }
 }

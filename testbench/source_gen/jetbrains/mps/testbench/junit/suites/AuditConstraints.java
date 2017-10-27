@@ -39,7 +39,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
         List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IChecker<SNode, NodeReportItem>>());
         ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
-        ListSequence.fromList(checkers).addElement(AbstractConstraintsCheckerRootCheckerAdapter.create(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));
+        ListSequence.fromList(checkers).addElement(AbstractConstraintsCheckerRootCheckerAdapter.create(IChecker.AbstractNodeChecker.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));
         return new CheckingTestsUtil(statistic).applyChecker(models, checkers);
       }
     });

@@ -61,6 +61,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -430,15 +431,18 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4yqv8vrxVut" role="1B3o_S" />
-    <node concept="3uibUv" id="4yqv8vrxVuy" role="EKbjA">
-      <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="IRootChecker" />
-    </node>
     <node concept="3uibUv" id="IMyJ9Jm7i3" role="EKbjA">
       <ref role="3uigEE" to="wsw7:4r$i1_aEwSg" resolve="IChecker" />
       <node concept="3uibUv" id="IMyJ9Jm8KW" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
       </node>
       <node concept="3uibUv" id="IMyJ9Jmam1" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="320sejmg31q" role="1zkMxy">
+      <ref role="3uigEE" to="wsw7:3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+      <node concept="3uibUv" id="320sejmg4Eo" role="11_B2D">
         <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
       </node>
     </node>

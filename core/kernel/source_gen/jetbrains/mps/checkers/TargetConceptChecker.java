@@ -24,6 +24,10 @@ public class TargetConceptChecker extends AbstractNodeCheckerInEditor implements
     return IssueKindReportItem.CONSTRAINTS;
   }
   @Override
+  public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
+    return AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION;
+  }
+  @Override
   public void checkNodeInEditor(SNode node, LanguageErrorsCollector errorsCollector, SRepository repository) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

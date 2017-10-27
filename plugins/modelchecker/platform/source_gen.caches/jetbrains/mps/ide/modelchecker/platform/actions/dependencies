@@ -349,6 +349,7 @@
     <classNode extendsClassName="jetbrains.mps.checkers.IAbstractChecker" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.platform.actions.RootCheckerSpecificCheckerAdapter" file="RootCheckerSpecificCheckerAdapter.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.IteratingChecker" />

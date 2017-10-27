@@ -40,7 +40,7 @@
       <node id="3719390199793465067" at="64,113,65,157" concept="11" />
       <node id="2224120312792493174" at="67,22,68,118" concept="5" />
       <node id="2224120312792498760" at="70,286,71,104" concept="5" />
-      <node id="4716987871696499421" at="72,9,73,243" concept="5" />
+      <node id="4716987871696499421" at="72,9,73,227" concept="5" />
       <node id="2224120312792314054" at="74,21,75,242" concept="5" />
       <node id="3719390199793465088" at="76,14,77,81" concept="5" />
       <node id="3719390199793465103" at="77,81,78,96" concept="5" />
@@ -152,7 +152,7 @@
         <var name="state" id="3719390199793464956" />
       </scope>
       <scope id="3719390199793464974" at="57,0,61,0" />
-      <scope id="2224120312792311081" at="69,23,73,243" />
+      <scope id="2224120312792311081" at="69,23,73,227" />
       <scope id="4306698225313691683" at="129,0,133,0">
         <var name="checks" id="5966764003861779337" />
         <var name="presentation" id="4306698225313692100" />
@@ -1591,20 +1591,20 @@
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/6978373592756359999">
     <file name="RootCheckerSpecificCheckerAdapter.java">
-      <node id="4057642946559002415" at="17,90,18,111" concept="12" />
-      <node id="842888854129459419" at="17,0,20,0" concept="10" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/checkers/IteratingChecker/CollectionIteratorWithProgress;" />
-      <node id="4057642946561991104" at="15,98,20,7" concept="12" />
-      <node id="842888854129428623" at="15,0,22,0" concept="16" trace="create#(Ljetbrains/mps/checkers/IChecker;)Ljetbrains/mps/checkers/IChecker;" />
-      <scope id="842888854129459421" at="17,90,18,111" />
-      <scope id="842888854129459419" at="17,0,20,0">
+      <node id="4057642946559002415" at="22,90,23,111" concept="12" />
+      <node id="842888854129459419" at="22,0,25,0" concept="10" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/checkers/IteratingChecker/CollectionIteratorWithProgress;" />
+      <node id="4057642946561991104" at="20,98,25,7" concept="12" />
+      <node id="842888854129428623" at="20,0,27,0" concept="16" trace="create#(Ljetbrains/mps/checkers/IChecker;)Ljetbrains/mps/checkers/IChecker;" />
+      <scope id="842888854129459421" at="22,90,23,111" />
+      <scope id="842888854129459419" at="22,0,25,0">
         <var name="model" id="842888854129459419" />
       </scope>
-      <scope id="842888854129428632" at="15,98,20,7" />
-      <scope id="842888854129428623" at="15,0,22,0">
+      <scope id="842888854129428632" at="20,98,25,7" />
+      <scope id="842888854129428623" at="20,0,27,0">
         <var name="checker" id="842888854129428624" />
       </scope>
-      <unit id="842888854129459419" at="16,76,20,5" name="jetbrains.mps.ide.modelchecker.platform.actions.RootCheckerSpecificCheckerAdapter$1" />
-      <unit id="6978373592756359999" at="13,0,24,0" name="jetbrains.mps.ide.modelchecker.platform.actions.RootCheckerSpecificCheckerAdapter" />
+      <unit id="842888854129459419" at="21,76,25,5" name="jetbrains.mps.ide.modelchecker.platform.actions.RootCheckerSpecificCheckerAdapter$1" />
+      <unit id="6978373592756359999" at="17,0,29,0" name="jetbrains.mps.ide.modelchecker.platform.actions.RootCheckerSpecificCheckerAdapter" />
     </file>
   </root>
 </debug-info>
