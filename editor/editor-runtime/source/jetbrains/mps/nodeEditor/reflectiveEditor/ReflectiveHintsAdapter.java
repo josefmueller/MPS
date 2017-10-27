@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -31,32 +32,27 @@ class ReflectiveHintsAdapter {
     myEditorComponent = editorComponent;
   }
 
-  private List<String> getExplicitEditorHintsForNode(SNode node) {
+  /* Possible reflectiveness hints for node:
+    BASE_REFLECTIVE_EDITOR_HINT
+    BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
+    BASE_NO_REFLECTIVE_EDITOR_HINT
+    BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
+    BASE_REFLECTIVE_EDITOR_HINT + BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
+    BASE_NO_REFLECTIVE_EDITOR_HINT + BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
+     */
+
+  boolean hasAnyOf(@NotNull SNode node, String... hints) {
     String[] explicitEditorHintsForNode = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
-    if (explicitEditorHintsForNode == null) {
-      return Collections.emptyList();
-    } else {
-      return Arrays.asList(explicitEditorHintsForNode);
-    }
+    return explicitEditorHintsForNode != null
+           && !Collections.disjoint(Arrays.asList(explicitEditorHintsForNode),
+                                    Arrays.asList(hints));
   }
 
-  @Nullable
-  String getHint(@NotNull SNode node) {
-    List<String> hints = getExplicitEditorHintsForNode(node);
-    for (String hint : ReflectiveHintsManager.REFLECTIVENESS_HINTS) {
-      if (hints.contains(hint)) {
-        return hint;
-      }
-    }
-    return null;
+  void addHints(@NotNull SNode node, @Nullable String... hints) {
+    myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), hints);
   }
 
-  void setHint(@NotNull SNode node, @Nullable() String string) {
-    for (String hint : ReflectiveHintsManager.REFLECTIVENESS_HINTS) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), hint);
-    }
-    if (string != null) {
-      myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), string);
-    }
+  void removeHints(@NotNull SNode node, @Nullable String... hints) {
+    myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), hints);
   }
 }
