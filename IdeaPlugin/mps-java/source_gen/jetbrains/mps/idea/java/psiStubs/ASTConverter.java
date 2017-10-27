@@ -39,6 +39,7 @@ import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.impl.source.tree.JavaSourceUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiAnnotation;
+import com.intellij.psi.PsiJavaCodeReferenceElement;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
@@ -439,15 +440,15 @@ public class ASTConverter {
     return clsType;
   }
   public SNode resolveAnnotation(PsiAnnotation a) {
-    String fqName = a.getQualifiedName();
+    SNode anno = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
 
-    // TODO q: handle this case? create dynamic reference? 
-    if (fqName == null) {
-      return null;
+    PsiJavaCodeReferenceElement ref = a.getNameReferenceElement();
+    if (ref == null) {
+      return anno;
     }
 
-    SNode anno = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
-    anno.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), anno, null, fqName));
+    String refText = JavaSourceUtil.getReferenceText(ref);
+    anno.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), anno, null, refText));
 
     return anno;
   }

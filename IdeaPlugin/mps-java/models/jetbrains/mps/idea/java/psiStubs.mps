@@ -3845,7 +3845,7 @@
               <ref role="37wK5l" node="4dhvpwi1jAy" resolve="convertType" />
               <node concept="2OqwBi" id="4dhvpwi1on2" role="37wK5m">
                 <node concept="liA8E" id="4dhvpwi1qg8" role="2OqNvi">
-                  <ref role="37wK5l" to="dj18:~PsiVariable.getType():com.intellij.psi.PsiType" resolve="getType" />
+                  <ref role="37wK5l" to="dj18:~PsiField.getType():com.intellij.psi.PsiType" resolve="getType" />
                 </node>
                 <node concept="37vLTw" id="4dhvpwi1mBR" role="2Oq$k0">
                   <ref role="3cqZAo" node="1qhkleFRgdG" resolve="x" />
@@ -4457,7 +4457,7 @@
                               <ref role="37wK5l" node="4dhvpwi1jAy" resolve="convertType" />
                               <node concept="2OqwBi" id="5HKVUeZlg74" role="37wK5m">
                                 <node concept="liA8E" id="5HKVUeZlg75" role="2OqNvi">
-                                  <ref role="37wK5l" to="dj18:~PsiVariable.getType():com.intellij.psi.PsiType" resolve="getType" />
+                                  <ref role="37wK5l" to="dj18:~PsiParameter.getType():com.intellij.psi.PsiType" resolve="getType" />
                                 </node>
                                 <node concept="37vLTw" id="5HKVUeZlg76" role="2Oq$k0">
                                   <ref role="3cqZAo" node="7emKVpsVBW3" resolve="it" />
@@ -5856,40 +5856,6 @@
       <property role="TrG5h" value="resolveAnnotation" />
       <node concept="3Tm1VV" id="7emKVptcw9O" role="1B3o_S" />
       <node concept="3clFbS" id="7emKVptcw9P" role="3clF47">
-        <node concept="3cpWs8" id="7emKVptcHt1" role="3cqZAp">
-          <node concept="3cpWsn" id="7emKVptcHt4" role="3cpWs9">
-            <property role="TrG5h" value="fqName" />
-            <node concept="2OqwBi" id="7emKVptcKb$" role="33vP2m">
-              <node concept="liA8E" id="7emKVptcMT5" role="2OqNvi">
-                <ref role="37wK5l" to="dj18:~PsiAnnotation.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-              </node>
-              <node concept="37vLTw" id="7emKVptcHx0" role="2Oq$k0">
-                <ref role="3cqZAo" node="7emKVptcwbz" resolve="a" />
-              </node>
-            </node>
-            <node concept="17QB3L" id="7emKVptcHsZ" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="7emKVptcw9W" role="3cqZAp" />
-        <node concept="3SKdUt" id="7emKVptcw9X" role="3cqZAp">
-          <node concept="3SKdUq" id="7emKVptcw9Y" role="3SKWNk">
-            <property role="3SKdUp" value="TODO q: handle this case? create dynamic reference?" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7emKVptcw9Z" role="3cqZAp">
-          <node concept="3clFbC" id="7emKVptcwa0" role="3clFbw">
-            <node concept="10Nm6u" id="7emKVptcwa1" role="3uHU7w" />
-            <node concept="37vLTw" id="7emKVptcRhL" role="3uHU7B">
-              <ref role="3cqZAo" node="7emKVptcHt4" resolve="fqName" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="7emKVptcwa3" role="3clFbx">
-            <node concept="3cpWs6" id="7emKVptcwa4" role="3cqZAp">
-              <node concept="10Nm6u" id="7emKVptcwa5" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7emKVptcwa6" role="3cqZAp" />
         <node concept="3cpWs8" id="7emKVptcwb1" role="3cqZAp">
           <node concept="3cpWsn" id="7emKVptcwb2" role="3cpWs9">
             <property role="TrG5h" value="anno" />
@@ -5903,6 +5869,52 @@
             <node concept="3Tqbb2" id="7emKVptcwb6" role="1tU5fm">
               <ref role="ehGHo" to="tpee:hiAHcMF" resolve="AnnotationInstance" />
             </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2fS8AmjkvLG" role="3cqZAp" />
+        <node concept="3cpWs8" id="R72z4ZWTB5" role="3cqZAp">
+          <node concept="3cpWsn" id="R72z4ZWTB6" role="3cpWs9">
+            <property role="TrG5h" value="ref" />
+            <node concept="3uibUv" id="R72z4ZWTB7" role="1tU5fm">
+              <ref role="3uigEE" to="dj18:~PsiJavaCodeReferenceElement" resolve="PsiJavaCodeReferenceElement" />
+            </node>
+            <node concept="2OqwBi" id="R72z4ZWaAE" role="33vP2m">
+              <node concept="37vLTw" id="R72z4ZW0__" role="2Oq$k0">
+                <ref role="3cqZAo" node="7emKVptcwbz" resolve="a" />
+              </node>
+              <node concept="liA8E" id="R72z4ZWbbj" role="2OqNvi">
+                <ref role="37wK5l" to="dj18:~PsiAnnotation.getNameReferenceElement():com.intellij.psi.PsiJavaCodeReferenceElement" resolve="getNameReferenceElement" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7emKVptcw9Z" role="3cqZAp">
+          <node concept="3clFbC" id="7emKVptcwa0" role="3clFbw">
+            <node concept="10Nm6u" id="7emKVptcwa1" role="3uHU7w" />
+            <node concept="37vLTw" id="2fS8Amjii2M" role="3uHU7B">
+              <ref role="3cqZAo" node="R72z4ZWTB6" resolve="ref" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="7emKVptcwa3" role="3clFbx">
+            <node concept="3cpWs6" id="7emKVptcwa4" role="3cqZAp">
+              <node concept="37vLTw" id="2fS8AmjkbfV" role="3cqZAk">
+                <ref role="3cqZAo" node="7emKVptcwb2" resolve="anno" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2fS8Amjii3G" role="3cqZAp" />
+        <node concept="3cpWs8" id="7emKVptcHt1" role="3cqZAp">
+          <node concept="3cpWsn" id="7emKVptcHt4" role="3cpWs9">
+            <property role="TrG5h" value="refText" />
+            <node concept="2YIFZM" id="R72z4ZW0qX" role="33vP2m">
+              <ref role="37wK5l" to="xuj9:~JavaSourceUtil.getReferenceText(com.intellij.psi.PsiJavaCodeReferenceElement):java.lang.String" resolve="getReferenceText" />
+              <ref role="1Pybhc" to="xuj9:~JavaSourceUtil" resolve="JavaSourceUtil" />
+              <node concept="37vLTw" id="2fS8AmjhcxU" role="37wK5m">
+                <ref role="3cqZAo" node="R72z4ZWTB6" resolve="ref" />
+              </node>
+            </node>
+            <node concept="17QB3L" id="7emKVptcHsZ" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbF" id="7emKVptcwb7" role="3cqZAp">
@@ -5925,7 +5937,7 @@
                   </node>
                   <node concept="10Nm6u" id="7emKVptd0K7" role="37wK5m" />
                   <node concept="37vLTw" id="7emKVptdeiH" role="37wK5m">
-                    <ref role="3cqZAo" node="7emKVptcHt4" resolve="fqName" />
+                    <ref role="3cqZAo" node="7emKVptcHt4" resolve="refText" />
                   </node>
                 </node>
               </node>
