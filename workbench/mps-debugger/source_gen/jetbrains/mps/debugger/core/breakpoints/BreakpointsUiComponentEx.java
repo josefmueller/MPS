@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.MouseEvent;
-import jetbrains.mps.smodel.ModelAccess;
 
 /**
  * 
@@ -192,7 +191,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     @Override
     public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
       if (e.getButton() == MouseEvent.BUTTON1) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
