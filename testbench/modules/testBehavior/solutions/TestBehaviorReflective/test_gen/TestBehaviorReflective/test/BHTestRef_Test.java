@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -426,6 +427,16 @@ public class BHTestRef_Test extends TestCase {
       }
     }.invoke();
     Assert.assertSame(true, boolMethod2);
+  }
+  public void test_nullability1() throws Exception {
+    SNode l = null;
+    Assert.assertEquals(null, ((Object) BHReflection.invoke(l, SMethodTrimmedId.create("bar", null, "6nxN9oSBS5Q"))));
+    Assert.assertEquals(0, ((int) (Integer) BHReflection.invoke(l, SMethodTrimmedId.create("foo", null, "6nxN9oSBS58"))));
+  }
+  public void test_nullability2() throws Exception {
+    SNode m = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, "BHL7.structure.M"));
+    Assert.assertEquals(null, ((Object) BHReflection.invoke(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, 0x65e1cc96389f81c7L, "myL")), SMethodTrimmedId.create("bar", null, "6nxN9oSBS5Q"))));
+    Assert.assertEquals(0, ((int) (Integer) BHReflection.invoke(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, 0x65e1cc96389f81c7L, "myL")), SMethodTrimmedId.create("foo", null, "6nxN9oSBS58"))));
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());

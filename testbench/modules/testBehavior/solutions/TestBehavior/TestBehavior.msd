@@ -20,7 +20,7 @@
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">424c173a-ee73-4dc9-bc43-d0051c9b1e8f(BHL6)</dependency>
     <dependency reexport="false">4239359f-6457-4d2a-b1e0-14d3f948db39(BHL7)</dependency>
-    <dependency reexport="false">beff1186-d062-491c-bb4e-4c63c5bc07f4(TestBehaviorReflective)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:43359135-f67c-4a3d-9fdd-a3d7dba50995:BHL1" version="0" />
@@ -51,7 +51,6 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="5de85764-70e6-4e9a-8618-d85dc0eb0843(TestBehavior)" version="0" />
-    <module reference="beff1186-d062-491c-bb4e-4c63c5bc07f4(TestBehaviorReflective)" version="0" />
     <module reference="6be63454-b482-4f5d-b8b7-d3f627e961a7(UtilSolution)" version="0" />
     <module reference="fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41(jetbrains.mps.core.tool.environment)" version="0" />
     <module reference="8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)" version="0" />
