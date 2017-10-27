@@ -32,6 +32,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
+import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkForConcept;
+
 /**
  * As for 3.2 -- we still have the behavior language which allows several methods with identical signature.
  * Moreover it urges us to point to the overridden method explicitly.
@@ -114,12 +116,6 @@ public final class SMethodImpl<T> implements SMethod<T> {
     return new SMethodImpl<T>(methodName, modifiers, returnType, concept, id, registry, parameters);
   }
 
-  private void checkForConcept(@NotNull SAbstractConcept concept) {
-    if (!concept.isSubConceptOf(myConcept)) {
-      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not a subconcept of " + myConcept);
-    }
-  }
-
   @Override
   public T invoke(@Nullable SNode operand, Object... parameters) {
     if (operand == null) {
@@ -145,7 +141,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(concreteConcept);
+    checkForConcept(concreteConcept, myConcept);
 
     if (myMethodModifiers.isPrivate()) {
       return invokeSpecial(operand, parameters);
@@ -161,7 +157,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(operand);
+    checkForConcept(operand, myConcept);
     if (myMethodModifiers.isPrivate()) {
       return invokeSpecial(operand, parameters);
     }
@@ -176,7 +172,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(operand.getConcept());
+    checkForConcept(operand.getConcept(), myConcept);
 
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
     return bhDescriptor.invokeSpecial(operand, this, parameters);
@@ -188,7 +184,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(operand);
+    checkForConcept(operand, myConcept);
 
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
     return bhDescriptor.invokeSpecial(operand, this, parameters);
@@ -200,7 +196,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(concept);
+    checkForConcept(concept, myConcept);
 
     if (myMethodModifiers.isPrivate()) {
       throw new IllegalArgumentException("Cannot invoke super method which is declared private" + this);
@@ -219,7 +215,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
       //noinspection unchecked
       return (T) getReturnType().getDefaultValue();
     }
-    checkForConcept(concept);
+    checkForConcept(concept, myConcept);
 
     if (myMethodModifiers.isPrivate()) {
       throw new IllegalArgumentException("Cannot invoke super method which is declared private" + this);
@@ -295,6 +291,7 @@ public final class SMethodImpl<T> implements SMethod<T> {
     return String.format("%s:%s(%s)%s", myReturnType.toString(), myName, myParameters, myMethodModifiers.toString());
   }
 
+  // FIXME remove -- do everything by id where we need it
   @Override
   public boolean equals(Object o) {
     if (o instanceof SMethod) {

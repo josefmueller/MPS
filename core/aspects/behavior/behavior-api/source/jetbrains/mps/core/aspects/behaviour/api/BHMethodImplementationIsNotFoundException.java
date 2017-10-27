@@ -18,14 +18,10 @@ package jetbrains.mps.core.aspects.behaviour.api;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Thrown whenever the method could not be found via the specific BHDescriptor
+ * Thrown whenever the method implementation could not be found via the specific BHDescriptor
  */
-public class BHMethodNotFoundException extends RuntimeException {
-  public BHMethodNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
-    super("The method '" + method + "' could not be found within the '" + descriptor + "'.");
-  }
-
-  public BHMethodNotFoundException(@NotNull String message) {
-    super(message);
+public class BHMethodImplementationIsNotFoundException extends RuntimeException {
+  public BHMethodImplementationIsNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
+    super("The method implementation '" + method + "' could not be found within the '" + descriptor + "'.");
   }
 }

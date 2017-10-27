@@ -18,14 +18,11 @@ package jetbrains.mps.core.aspects.behaviour.api;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Thrown whenever the method could not be found via the specific BHDescriptor
+ * Thrown whenever the method could not be found via the specific BHDescriptor virtual table
  */
-public class BHMethodNotFoundException extends RuntimeException {
-  public BHMethodNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
-    super("The method '" + method + "' could not be found within the '" + descriptor + "'.");
-  }
-
-  public BHMethodNotFoundException(@NotNull String message) {
-    super(message);
+public class BHMethodIsNotFoundInVTable extends RuntimeException {
+  public BHMethodIsNotFoundInVTable(@NotNull BHDescriptor descriptor, @NotNull SMethod<?> method) {
+    super("The method '" + method + "' could not be found within the '" + descriptor + "' virtual table.");
+    assert method.isVirtual();
   }
 }

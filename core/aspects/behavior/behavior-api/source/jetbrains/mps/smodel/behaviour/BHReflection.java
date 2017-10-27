@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
-import jetbrains.mps.core.aspects.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
@@ -25,7 +24,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -64,15 +62,16 @@ public final class BHReflection {
     return invoke0(operand, operand, methodId, parameters);
   }
 
+  /**
+   * NB: Here we call #invoke and not #invokeSpecial since the method could be a non-virtual invocation from one of the ancestors
+   * Separating #invoke in two #invokeNonVirtual and #invokeVirtual instructions we can get rid of
+   */
   public static Object invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
     if (operand == null) {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
     return bhDescriptor.invoke(operand, method, parameters);
   }
 
@@ -81,11 +80,20 @@ public final class BHReflection {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
+    return bhDescriptor.invoke(operand, method, parameters);
+  }
+
+  /**
+   * @return the correct method for Id (for virtual methods we look for a right implementation concept as well)
+   */
+  @NotNull
+  private static SMethod<?> findMethodByReflection(@NotNull SMethodId methodId, BHDescriptor bhDescriptor) {
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
       throw new BHNoSuchMethodException(methodId, bhDescriptor);
     }
-    return bhDescriptor.invoke(operand, method, parameters);
+    return method;
   }
 
   /**
@@ -96,10 +104,7 @@ public final class BHReflection {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
     return bhDescriptor.invokeSpecial(operand, method, parameters);
   }
 
@@ -108,10 +113,7 @@ public final class BHReflection {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
     return bhDescriptor.invokeSpecial(operand, method, parameters);
   }
 
@@ -124,10 +126,7 @@ public final class BHReflection {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
     return bhDescriptor.invokeSuper(operand, method, parameters);
   }
 
@@ -136,10 +135,7 @@ public final class BHReflection {
       return null;
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
-    SMethod<?> method = bhDescriptor.getMethod(methodId);
-    if (method == null) {
-      throw new BHNoSuchMethodException(methodId, bhDescriptor);
-    }
+    SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
     return bhDescriptor.invokeSuper(operand, method, parameters);
   }
 

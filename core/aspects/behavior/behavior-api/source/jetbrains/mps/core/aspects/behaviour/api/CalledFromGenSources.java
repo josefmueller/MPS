@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,14 @@
  */
 package jetbrains.mps.core.aspects.behaviour.api;
 
-import org.jetbrains.annotations.NotNull;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
 
 /**
- * Thrown whenever the method could not be found via the specific BHDescriptor
+ * The method invocations are generated from the concept behavior calls
+ *
+ * @author apyshkin
  */
-public class BHMethodNotFoundException extends RuntimeException {
-  public BHMethodNotFoundException(@NotNull BHDescriptor descriptor, @NotNull SMethod method) {
-    super("The method '" + method + "' could not be found within the '" + descriptor + "'.");
-  }
-
-  public BHMethodNotFoundException(@NotNull String message) {
-    super(message);
-  }
+@Target(ElementType.METHOD)
+@interface CalledFromGenSources {
 }
