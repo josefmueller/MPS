@@ -71,6 +71,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private SRepositoryRegistry myRepositoryRegistry;
   private FacetsRegistry myModuleFacetsRegistry;
   private PathMacros myPathMacros;
+  private ExtensionRegistry myExtensionRegistry;
 
   /**
    * made package-private
@@ -96,6 +97,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myLanguageRegistry = null;
     myRepositoryRegistry = null;
     myPathMacros = null;
+    myExtensionRegistry = null;
     myInitialized = false;
   }
 
@@ -123,7 +125,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new LanguageScopeFactory(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
-    init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
+    myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,
@@ -192,7 +194,8 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   @Override
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
     checkInitialized();
-    // A.isAssignable(B) not necessarily means C (instanceof A) could be safely cast to B, nevertheless, do not want to deal with it here and now,
+    // A.isAssignableFrom(B) not necessarily means componentClass C, instanceof A, could be safely cast to B,
+    // nevertheless, do not want to deal with it here and now (e.g. by == matching),
     // it's usually findComponent(A) anyway.
     if (LibraryInitializer.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myLibraryInitializer);
@@ -220,6 +223,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (PathMacros.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myPathMacros);
+    }
+    if (ExtensionRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myExtensionRegistry);
     }
     return null;
   }

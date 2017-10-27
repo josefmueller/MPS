@@ -54,7 +54,6 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,  //TODO: move this test to closed repository
-    jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,

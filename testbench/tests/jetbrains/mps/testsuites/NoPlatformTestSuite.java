@@ -37,6 +37,7 @@ import org.junit.runners.Suite.SuiteClasses;
     MPSPackageItemProviderTests.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.ide.blame.command.YouTrackStatsTest.class,
+    jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
 }

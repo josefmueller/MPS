@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,16 @@ package jetbrains.mps.idea.java.refactoring;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
+import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
-
 public class RegisterMoveStaticMemberPsiParticipant implements ProjectComponent {
+  private final MPSCoreComponents myComponents;
   private Project myProject;
   private ExtensionDescriptor myExtensionDescriptor;
 
@@ -47,28 +47,26 @@ public class RegisterMoveStaticMemberPsiParticipant implements ProjectComponent 
     }
   }
 
-  public RegisterMoveStaticMemberPsiParticipant(Project project) {
+  public RegisterMoveStaticMemberPsiParticipant(MPSCoreComponents coreComponents, Project project) {
+    myComponents = coreComponents;
     myProject = project;
   }
 
   @Override
   public void projectOpened() {
-    ExtensionRegistry.getInstance().registerExtensionDescriptor(myExtensionDescriptor = new ExtensionDescriptor() {
-      @Override
-      public Iterable<? extends ExtensionPoint> getExtensionPoints() {
-        return Collections.emptyList();
-      }
-
-      @Override
-      public Iterable<? extends Extension> getExtensions() {
-        return Collections.singletonList(new UpdatePsiReferencesParticipant_extension(myProject));
-      }
-    });
+    ExtensionRegistry extensionRegistry = myComponents.getPlatform().findComponent(ExtensionRegistry.class);
+    if (extensionRegistry != null) {
+      myExtensionDescriptor = new DefaultExtensionDescriptor(new UpdatePsiReferencesParticipant_extension(myProject));
+      extensionRegistry.registerExtensionDescriptor(myExtensionDescriptor);
+    }
   }
 
   @Override
   public void projectClosed() {
-    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(myExtensionDescriptor);
+    ExtensionRegistry extensionRegistry = myComponents.getPlatform().findComponent(ExtensionRegistry.class);
+    if (extensionRegistry != null && myExtensionDescriptor != null) {
+      extensionRegistry.unregisterExtensionDescriptor(myExtensionDescriptor);
+    }
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.structure;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.annotations.Immutable;
 
+@Immutable
 public class ExtensionPoint<T> {
 
   private final String myId;
@@ -38,10 +40,20 @@ public class ExtensionPoint<T> {
     myId = id;
   }
 
+  /**
+   * @deprecated obtain {@link ExtensionRegistry} instance through {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} and
+   *             invoke {@link ExtensionRegistry#getExtensions(ExtensionPoint)}, instead
+   */
+  @Deprecated
   public Iterable<? extends Extension<T>> getExtensions() {
     return ExtensionRegistry.getInstance().getExtensions(this);
   }
 
+  /**
+   * @deprecated obtain {@link ExtensionRegistry} instance through {@link jetbrains.mps.components.ComponentHost#findComponent(Class)} and
+   *             invoke {@link ExtensionRegistry#getObjects(ExtensionPoint)}, instead
+   */
+  @Deprecated
   public Iterable<T> getObjects() {
     return ExtensionRegistry.getInstance().getObjects(this);
   }

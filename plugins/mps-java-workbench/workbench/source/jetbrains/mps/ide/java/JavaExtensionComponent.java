@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,33 @@
 package jetbrains.mps.ide.java;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.java.actions.ExtensionDescriptor;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public final class JavaExtensionComponent implements ApplicationComponent {
-  private ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
+  private final ExtensionDescriptor myDescriptor = new ExtensionDescriptor();
+  private final MPSCoreComponents myComponents;
+
+  public JavaExtensionComponent(MPSCoreComponents mpsCoreComponents) {
+    myComponents = mpsCoreComponents;
+  }
 
   @Override
   public void initComponent() {
-    ExtensionRegistry.getInstance().registerExtensionDescriptor(myDescriptor);
+    ExtensionRegistry extensionRegistry = myComponents.getPlatform().findComponent(ExtensionRegistry.class);
+    if (extensionRegistry != null) {
+      extensionRegistry.registerExtensionDescriptor(myDescriptor);
+    }
   }
 
   @Override
   public void disposeComponent() {
-    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(myDescriptor);
+    ExtensionRegistry extensionRegistry = myComponents.getPlatform().findComponent(ExtensionRegistry.class);
+    if (extensionRegistry != null) {
+      extensionRegistry.unregisterExtensionDescriptor(myDescriptor);
+    }
   }
 
   @NotNull

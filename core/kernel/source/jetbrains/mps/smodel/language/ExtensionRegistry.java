@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -42,8 +44,8 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private static ExtensionRegistry INSTANCE;
 
-  private Map<SModule, String> myModuleToNamespace = new HashMap<SModule, String>();
-  private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
+  private Map<SModule, String> myModuleToNamespace = new HashMap<>();
+  private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<>();
   private SRepositoryListener myListener = new MyModuleRepositoryAdapter();
   @Nullable
   private ClassLoaderManager myClm;
@@ -61,6 +63,10 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     }
   };
 
+  /**
+   * @deprecated avoid static access, replace with {@link ComponentHost#findComponent(Class) componentHost.findComponent(ExtensionRegistry.class)}
+   */
+  @Deprecated
   public static ExtensionRegistry getInstance() {
     return INSTANCE;
   }
@@ -127,7 +133,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     registerExtensionPoints(extensionDescriptor.getExtensionPoints());
   }
 
-    public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+  public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     unregisterExtensionPoints(extensionDescriptor.getExtensionPoints());
     unregisterExtensions(extensionDescriptor.getExtensions());
   }
@@ -153,7 +159,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     // TODO: more flexible way of loading extensions from plugin solution
     String namespace = solution.getModuleName();
     String className = namespace + ".plugin.ExtensionDescriptor";
-    Object compiled = getObjectByClassName(className, solution, true);
+    Object compiled = getObjectByClassName(className, solution);
     if (compiled instanceof ExtensionDescriptor) {
       return (ExtensionDescriptor) compiled;
     }
@@ -163,7 +169,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ExtensionDescriptor findLanguageExtensionDescriptor(Language lang) {
     String namespace = lang.getModuleName();
     String className = namespace + ".plugin.ExtensionDescriptor";
-    Object compiled = getObjectByClassName(className, lang, true);
+    Object compiled = getObjectByClassName(className, lang);
     if (compiled instanceof ExtensionDescriptor) {
       return (ExtensionDescriptor) compiled;
     }
@@ -171,17 +177,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   }
 
   @Nullable
-  public static Object getObjectByClassName(String className, @Nullable SModule module, boolean avoidLogErrors) {
+  private Object getObjectByClassName(String className, @Nullable SModule module) {
     try {
-      if (module == null) {
+      if (false == module instanceof ReloadableModule) {
         return null;
       }
-
-      Class clazz = ClassLoaderManager.getInstance().getOwnClass(module, className);
-      if (clazz == null) {
-        return null;
-      }
-
+      Class clazz = ((ReloadableModule) module).getOwnClass(className);
       return clazz.newInstance();
     } catch (Throwable e) {
       LOG.debug("error loading class\"" + className + "\"", e);
