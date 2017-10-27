@@ -116,8 +116,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
           if (editorComponent == null) {
             return;
           }
-          final SNode sNode = editorComponent.getEditedNode();
-          selectNodeWithoutExpansion(sNode.getReference());
+          final SNodeReference sNode = editorComponent.getEditedNodePointer();
+          if (sNode != null) {
+            selectNodeWithoutExpansion(sNode);
+          }
         }
       }
     }
