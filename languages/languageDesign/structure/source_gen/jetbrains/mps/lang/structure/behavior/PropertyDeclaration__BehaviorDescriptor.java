@@ -13,11 +13,13 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SProperty;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -30,8 +32,9 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
   public static final SMethod<Boolean> isPrimitiveInteger_idhT23WS5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isPrimitiveInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hT23WS5").registry(REGISTRY).build();
   public static final SMethod<Boolean> isPrimitiveBoolean_idhT23T2l = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isPrimitiveBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hT23T2l").registry(REGISTRY).build();
   public static final SMethod<SNode> getConceptDeclaration_id2OF3rgRewqT = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getConceptDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OF3rgRewqT").registry(REGISTRY).build();
+  public static final SMethod<Boolean> is_id4MKjpUYnih4 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4MKjpUYnih4").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SProperty.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isPrimitiveString_idhT22swA, isPrimitiveInteger_idhT23WS5, isPrimitiveBoolean_idhT23T2l, getConceptDeclaration_id2OF3rgRewqT);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isPrimitiveString_idhT22swA, isPrimitiveInteger_idhT23WS5, isPrimitiveBoolean_idhT23T2l, getConceptDeclaration_id2OF3rgRewqT, is_id4MKjpUYnih4);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -47,6 +50,9 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
   }
   /*package*/ static SNode getConceptDeclaration_id2OF3rgRewqT(@NotNull SNode __thisNode__) {
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+  }
+  /*package*/ static boolean is_id4MKjpUYnih4(@NotNull SNode __thisNode__, SProperty property) {
+    return eq_fhtc43_a0a0r(MetaAdapterByDeclaration.getProperty(__thisNode__), property);
   }
 
   /*package*/ PropertyDeclaration__BehaviorDescriptor() {
@@ -73,6 +79,8 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
         return (T) ((Boolean) isPrimitiveBoolean_idhT23T2l(node));
       case 3:
         return (T) ((SNode) getConceptDeclaration_id2OF3rgRewqT(node));
+      case 4:
+        return (T) ((Boolean) is_id4MKjpUYnih4(node, (SProperty) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -100,5 +108,8 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static boolean eq_fhtc43_a0a0r(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
