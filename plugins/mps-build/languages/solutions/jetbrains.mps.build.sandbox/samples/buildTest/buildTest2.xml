@@ -86,14 +86,15 @@
     <ant antfile="../../../../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsConsolePlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsJavaWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsHttpSupportPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -223,10 +224,6 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
     <ant antfile="../../../../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
@@ -235,11 +232,23 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../../../../build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="../../../../build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsConsolePlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
@@ -248,10 +257,6 @@
       <target name="assemble" />
     </ant>
     <ant antfile="../../../../build/mpsJavaWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>

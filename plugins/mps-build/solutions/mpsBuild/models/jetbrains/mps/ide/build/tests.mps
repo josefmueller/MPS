@@ -7504,11 +7504,8 @@
         <ref role="398BVh" node="7ZKuP1Forh5" resolve="mps_home" />
       </node>
     </node>
-    <node concept="2sgV4H" id="7ZKuP1ForjM" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:ymnOULAEsd" resolve="mpsTesting" />
-      <node concept="398BVA" id="7ZKuP1ForjX" role="2JcizS">
-        <ref role="398BVh" node="7ZKuP1Forh5" resolve="mps_home" />
-      </node>
+    <node concept="2sgV4H" id="3E9C6pD2pcf" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:3E9C6pCXzPk" resolve="mpsConsolePlugin" />
     </node>
   </node>
   <node concept="1l3spW" id="3HV74$eh7kR">

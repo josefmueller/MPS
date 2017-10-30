@@ -52,6 +52,7 @@
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="3205778618063718746" name="jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml" flags="ng" index="yhzZL">
+        <property id="1004145947012803941" name="outputPath" index="BHXKe" />
         <child id="3205778618063718748" name="actions" index="yhzZR" />
       </concept>
       <concept id="331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" flags="lg" index="2zDL_w">
@@ -416,6 +417,7 @@
   </node>
   <node concept="yhzZL" id="2ONldtgyeW9">
     <property role="TrG5h" value="ConsoleActions" />
+    <property role="BHXKe" value="${module}/META-INF/" />
     <node concept="2zDL_w" id="2ONldtgyeWa" role="yhzZR">
       <node concept="2zDL_x" id="2ONldtgyeWc" role="2zDL_s">
         <ref role="2zDL_u" node="2ONldtgyeTV" resolve="ConsoleExecuteClosureEditorActions" />
