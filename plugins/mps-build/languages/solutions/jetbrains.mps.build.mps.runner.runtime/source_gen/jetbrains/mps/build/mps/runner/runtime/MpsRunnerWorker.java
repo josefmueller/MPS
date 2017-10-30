@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.tool.environment.Environment;
+import org.apache.log4j.Logger;
 import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -45,6 +47,14 @@ public class MpsRunnerWorker extends GeneratorWorker {
     }
 
     dispose();
+  }
+
+  @Override
+  protected Environment createEnvironment() {
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+    Environment environment = new MpsRunnerWorker.MyEnvironment(createEnvironmentConfig(myWhatToDo));
+    environment.init();
+    return environment;
   }
 
   private static boolean runClass(SModule module, String className, String methodName) {

@@ -406,9 +406,78 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="63P3E8$lHXM" role="jymVt" />
     <node concept="3Tm1VV" id="3H7CugYdV9c" role="1B3o_S" />
     <node concept="3uibUv" id="2E_b7aHCE4p" role="1zkMxy">
       <ref role="3uigEE" to="hhlx:3GGnItM97js" resolve="GeneratorWorker" />
+    </node>
+    <node concept="3clFb_" id="60oBoEfv6_" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createEnvironment" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3uibUv" id="60oBoEfv6A" role="3clF45">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+      <node concept="3Tmbuc" id="60oBoEfv6R" role="1B3o_S" />
+      <node concept="3clFbS" id="60oBoEfv6S" role="3clF47">
+        <node concept="3clFbF" id="4Ncgb9xKDTv" role="3cqZAp">
+          <node concept="2OqwBi" id="4Ncgb9xKDTw" role="3clFbG">
+            <node concept="2YIFZM" id="4Ncgb9xKDTx" role="2Oq$k0">
+              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
+              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
+            </node>
+            <node concept="liA8E" id="4Ncgb9xKDTy" role="2OqNvi">
+              <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
+              <node concept="2OqwBi" id="4Ncgb9xKDTz" role="37wK5m">
+                <node concept="liA8E" id="4Ncgb9xKDT$" role="2OqNvi">
+                  <ref role="37wK5l" to="asz6:KL8Aql8evO" resolve="getLogLevel" />
+                </node>
+                <node concept="37vLTw" id="4Ncgb9xKDT_" role="2Oq$k0">
+                  <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4Ncgb9xKDUx" role="3cqZAp">
+          <node concept="3cpWsn" id="4Ncgb9xKDUy" role="3cpWs9">
+            <property role="TrG5h" value="environment" />
+            <node concept="3uibUv" id="4Ncgb9xKDUz" role="1tU5fm">
+              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+            </node>
+            <node concept="2ShNRf" id="63P3E8$lRHx" role="33vP2m">
+              <node concept="1pGfFk" id="63P3E8$lSzq" role="2ShVmc">
+                <ref role="37wK5l" node="5kpQnuAv0sN" resolve="MpsRunnerWorker.MyEnvironment" />
+                <node concept="1rXfSq" id="1xFdx521j2e" role="37wK5m">
+                  <ref role="37wK5l" to="jo3e:63P3E8$mb3n" resolve="createEnvironmentConfig" />
+                  <node concept="37vLTw" id="1xFdx521jI4" role="37wK5m">
+                    <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4Ncgb9xKDUB" role="3cqZAp">
+          <node concept="2OqwBi" id="4Ncgb9xKDUC" role="3clFbG">
+            <node concept="37vLTw" id="4Ncgb9xKDUD" role="2Oq$k0">
+              <ref role="3cqZAo" node="4Ncgb9xKDUy" resolve="environment" />
+            </node>
+            <node concept="liA8E" id="4Ncgb9xKDUE" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3eUNqOk4TkZ" resolve="init" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3tCNlYuENrN" role="3cqZAp">
+          <node concept="37vLTw" id="3tCNlYuEOxI" role="3cqZAk">
+            <ref role="3cqZAo" node="4Ncgb9xKDUy" resolve="environment" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="60oBoEfv6T" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="3H7CugYimwG" role="jymVt" />
     <node concept="2YIFZL" id="5iKxrmkr3_D" role="jymVt">
