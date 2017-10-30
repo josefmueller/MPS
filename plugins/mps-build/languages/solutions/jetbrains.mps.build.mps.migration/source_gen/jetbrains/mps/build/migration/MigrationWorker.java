@@ -52,7 +52,7 @@ public class MigrationWorker extends MpsWorker {
 
   @Override
   protected Environment createEnvironment() {
-    EnvironmentConfig cfg = createEnvConfig(myWhatToDo);
+    EnvironmentConfig cfg = createEnvironmentConfig(myWhatToDo);
     cfg.addPlugin("migration", MigrationWorker.MIGRATION_PLUGIN);
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
