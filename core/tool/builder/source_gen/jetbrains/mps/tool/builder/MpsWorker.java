@@ -78,11 +78,47 @@ public abstract class MpsWorker {
 
   protected Environment createEnvironment() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
+    Environment env = MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
     return env;
   }
 
-  public EnvironmentConfig createEnvConfig(Script whatToDo) {
+  /**
+   * 
+   * @deprecated use non-static method
+   */
+  @Deprecated
+  public static EnvironmentConfig createEnvConfig(Script whatToDo) {
+    EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
+    RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
+    if (repo != null) {
+      if (repo.includeAllModules) {
+        config = config.withBootstrapLibraries().withWorkbenchPath();
+      }
+      // todo make this code more typed 
+      for (String lib : repo.folders) {
+        config = config.addLib(lib);
+      }
+      for (String lib : repo.files) {
+        config = config.addLib(lib);
+      }
+    } else {
+      config = config.withBootstrapLibraries().withWorkbenchPath();
+    }
+    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
+      config = config.addMacro(macro.key(), new File(macro.value()));
+    }
+    for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
+      config = config.addLib(lib.value().getAbsolutePath());
+    }
+    for (String jar : whatToDo.getLibraryJars()) {
+      File jarFile = new File(jar);
+      config = config.addLib(jar);
+    }
+
+    return config;
+  }
+
+  public final EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
     RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
     if (repo != null) {
@@ -111,9 +147,6 @@ public abstract class MpsWorker {
         warning("Library " + jar + " does not exist.");
       }
       config = config.addLib(jar);
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
     }
 
     return config;

@@ -89,7 +89,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
   @Override
   protected Environment createEnvironment() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    Environment environment = new GeneratorWorker.MyEnvironment(createEnvConfig(myWhatToDo));
+    Environment environment = new GeneratorWorker.MyEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
   }

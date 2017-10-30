@@ -27,6 +27,11 @@
     <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.LibraryDataType" file="LibraryDataType.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.MPSClasspathUtil" file="MPSClasspathUtil.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.UnsupportedEncodingException" />
@@ -68,11 +73,6 @@
   <dependency className="jetbrains.mps.build.ant.ModuleDataType" file="ModuleDataType.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.ant.ModuleJarDataType" file="ModuleJarDataType.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.ModulesDataType" file="ModulesDataType.java">

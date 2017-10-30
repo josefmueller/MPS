@@ -1196,23 +1196,54 @@
     </file>
   </root>
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/4003657351907893424">
-    <file name="ModuleJarDataType.java">
-      <node id="4003657351907893430" at="14,0,15,0" concept="6" trace="myJar" />
-      <node id="3643570831018858871" at="18,25,19,17" concept="12" />
-      <node id="5533869177019961376" at="21,33,22,75" concept="0" />
-      <node id="3643570831018858863" at="22,75,23,16" concept="5" />
-      <node id="4003657351907893437" at="15,0,18,0" concept="3" trace="ModuleJarDataType#()V" />
-      <node id="3643570831018858867" at="18,0,21,0" concept="10" trace="getFile#()Ljava/io/File;" />
-      <node id="3643570831018858857" at="21,0,25,0" concept="10" trace="setFile#(Ljava/io/File;)V" />
-      <scope id="4003657351907893440" at="16,30,16,30" />
-      <scope id="3643570831018858870" at="18,25,19,17" />
-      <scope id="3643570831018858862" at="21,33,23,16" />
-      <scope id="4003657351907893437" at="15,0,18,0" />
-      <scope id="3643570831018858867" at="18,0,21,0" />
-      <scope id="3643570831018858857" at="21,0,25,0">
+    <file name="LibraryDataType.java">
+      <node id="4003657351907893427" at="9,0,10,0" concept="6" trace="myName" />
+      <node id="4003657351907893430" at="10,0,11,0" concept="6" trace="myDir" />
+      <node id="4003657351907893433" at="11,0,12,0" concept="6" trace="myCompile" />
+      <node id="4003657351907893445" at="14,27,15,18" concept="12" />
+      <node id="4003657351907893453" at="17,36,18,18" concept="5" />
+      <node id="4003657351907893461" at="20,24,21,17" concept="12" />
+      <node id="4003657351907893469" at="23,32,24,16" concept="5" />
+      <node id="3643570831018858871" at="26,25,27,17" concept="12" />
+      <node id="3643570831018858863" at="29,33,30,16" concept="5" />
+      <node id="4003657351907893477" at="32,31,33,21" concept="12" />
+      <node id="4003657351907893485" at="35,43,36,24" concept="5" />
+      <node id="4003657351907893437" at="12,0,14,0" concept="3" trace="LibraryDataType#()V" />
+      <node id="4003657351907893441" at="14,0,17,0" concept="10" trace="getName#()Ljava/lang/String;" />
+      <node id="4003657351907893447" at="17,0,20,0" concept="10" trace="setName#(Ljava/lang/String;)V" />
+      <node id="4003657351907893457" at="20,0,23,0" concept="10" trace="getDir#()Ljava/io/File;" />
+      <node id="4003657351907893463" at="23,0,26,0" concept="10" trace="setDir#(Ljava/io/File;)V" />
+      <node id="3643570831018858867" at="26,0,29,0" concept="10" trace="getFile#()Ljava/io/File;" />
+      <node id="3643570831018858857" at="29,0,32,0" concept="10" trace="setFile#(Ljava/io/File;)V" />
+      <node id="4003657351907893473" at="32,0,35,0" concept="10" trace="getCompile#()Z" />
+      <node id="4003657351907893479" at="35,0,38,0" concept="10" trace="setCompile#(Z)V" />
+      <scope id="4003657351907893440" at="12,28,12,28" />
+      <scope id="4003657351907893444" at="14,27,15,18" />
+      <scope id="4003657351907893452" at="17,36,18,18" />
+      <scope id="4003657351907893460" at="20,24,21,17" />
+      <scope id="4003657351907893468" at="23,32,24,16" />
+      <scope id="3643570831018858870" at="26,25,27,17" />
+      <scope id="3643570831018858862" at="29,33,30,16" />
+      <scope id="4003657351907893476" at="32,31,33,21" />
+      <scope id="4003657351907893484" at="35,43,36,24" />
+      <scope id="4003657351907893437" at="12,0,14,0" />
+      <scope id="4003657351907893441" at="14,0,17,0" />
+      <scope id="4003657351907893447" at="17,0,20,0">
+        <var name="name" id="4003657351907893450" />
+      </scope>
+      <scope id="4003657351907893457" at="20,0,23,0" />
+      <scope id="4003657351907893463" at="23,0,26,0">
+        <var name="dir" id="4003657351907893466" />
+      </scope>
+      <scope id="3643570831018858867" at="26,0,29,0" />
+      <scope id="3643570831018858857" at="29,0,32,0">
         <var name="dir" id="3643570831018858860" />
       </scope>
-      <unit id="4003657351907893424" at="12,0,26,0" name="jetbrains.mps.build.ant.ModuleJarDataType" />
+      <scope id="4003657351907893473" at="32,0,35,0" />
+      <scope id="4003657351907893479" at="35,0,38,0">
+        <var name="compile" id="4003657351907893482" />
+      </scope>
+      <unit id="4003657351907893424" at="8,0,39,0" name="jetbrains.mps.build.ant.LibraryDataType" />
     </file>
   </root>
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/543659029747133032">
