@@ -275,7 +275,6 @@
     <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelsEventsCollector" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />

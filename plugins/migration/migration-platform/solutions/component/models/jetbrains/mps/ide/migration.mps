@@ -938,7 +938,7 @@
                     <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                   </node>
                   <node concept="liA8E" id="1eXobqYkQ5N" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                    <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="1eXobqYkQ5O" role="2LFqv$">
@@ -1317,6 +1317,14 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="ojSazP98ml" role="ukAjM">
+            <node concept="37vLTw" id="ojSazP9773" role="2Oq$k0">
+              <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+            </node>
+            <node concept="liA8E" id="ojSazP9adp" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>

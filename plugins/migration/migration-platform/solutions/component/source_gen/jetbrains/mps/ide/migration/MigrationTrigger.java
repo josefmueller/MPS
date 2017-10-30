@@ -17,9 +17,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SLanguageHierarchy;
@@ -37,6 +36,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -57,7 +57,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -146,9 +145,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private void initModuleVersionsWhereNeeded() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        for (SModule m : Sequence.fromIterable(myMpsProject.getModulesWithGenerators())) {
+        for (SModule m : ListSequence.fromList(myMpsProject.getProjectModulesWithGenerators())) {
           if (!((m instanceof AbstractModule))) {
             continue;
           }
