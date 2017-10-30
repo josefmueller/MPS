@@ -58,6 +58,12 @@ import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.CopyUtil;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.ArrayList;
+import java.util.ArrayDeque;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -322,9 +328,53 @@ public class NewModelDialog extends DialogWrapper {
           CopyUtil.copyModelContentAndPreserveIds(myClone, result);
         } else {
           // copy content and update references for targets in the same model to point to copied counterparts 
-          HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>();
+          // we gonna record each cloned node, map would be huge 
+          HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>(1 << 10);
+          ArrayList<SNode> newRoots = new ArrayList<SNode>();
+          ArrayDeque<SNode> queue = new ArrayDeque<SNode>();
           for (SNode r : myClone.getRootNodes()) {
-            result.addRootNode(CopyUtil.copy(r, nodeMap, true));
+            queue.addLast(r);
+            while (!(queue.isEmpty())) {
+              SNode n = queue.removeFirst();
+              SNode copy = result.createNode(n.getConcept());
+              nodeMap.put(n, copy);
+              CopyUtil.copyProperties(n, copy);
+              CopyUtil.copyUserObjects(n, copy);
+              SContainmentLink ownerLink = n.getContainmentLink();
+              if (ownerLink == null) {
+                newRoots.add(copy);
+              } else {
+                // add a copy as a child into our parent's copy. 
+                // We walk source model from top to bottom, no chance to lack mapping for parent node 
+                nodeMap.get(n.getParent()).addChild(ownerLink, copy);
+              }
+              for (SNode ch : n.getChildren()) {
+                queue.addLast(ch);
+              }
+            }
+          }
+          // Once map is ready, we can update references, so that references between original nodes are restored to their copies 
+          // despite lack of elements from newRoots, implicitly updates nodeMap.get(r) counterparts, i.e. new nodes 
+          for (SNode n : SNodeUtil.getDescendants(myClone.getRootNodes())) {
+            // XXX would be great to re-use code of CloneUtil from generator 
+            // This code is similar to CopyUtil.addReferences without odd arguments, static checks and dead branches. 
+            SNode copy = nodeMap.get(n);
+            if (copy == null) {
+              continue;
+            }
+            for (SReference ref : n.getReferences()) {
+              SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
+              if (targetNode != null) {
+                SNode newTarget = (nodeMap.containsKey(targetNode) ? nodeMap.get(targetNode) : targetNode);
+                copy.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), copy, newTarget));
+              } else {
+                String resolveInfo = (ref instanceof jetbrains.mps.smodel.SReference ? ((jetbrains.mps.smodel.SReference) ref).getResolveInfo() : null);
+                copy.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), copy, ref.getTargetNodeReference(), resolveInfo));
+              }
+            }
+          }
+          for (SNode r : newRoots) {
+            result.addRootNode(r);
           }
         }
         result.setChanged(true);
