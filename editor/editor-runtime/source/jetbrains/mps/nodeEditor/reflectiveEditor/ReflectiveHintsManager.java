@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.StreamSupport;
 
 public class ReflectiveHintsManager {
@@ -30,40 +32,55 @@ public class ReflectiveHintsManager {
   static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
 
   static final String[] REFLECTIVENESS_HINTS = new String[]{BASE_REFLECTIVE_EDITOR_HINT,
-                                                                 BASE_NO_REFLECTIVE_EDITOR_HINT,
-                                                                 BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
-                                                                 BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT};
+                                                            BASE_NO_REFLECTIVE_EDITOR_HINT,
+                                                            BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
+                                                            BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT};
   private static String[] REFLECTIVE_EDITOR_HINTS = new String[]{BASE_REFLECTIVE_EDITOR_HINT,
                                                                  BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT};
   private static String[] NO_REFLECTIVE_EDITOR_HINTS = new String[]{BASE_NO_REFLECTIVE_EDITOR_HINT,
                                                                     BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT};
-
-  private ReflectiveHintsAdapter myHintsProvider;
+  private EditorComponent myEditorComponent;
 
   public ReflectiveHintsManager(@NotNull EditorComponent editorComponent) {
-    myHintsProvider = new ReflectiveHintsAdapter(editorComponent);
+    myEditorComponent = editorComponent;
+  }
+
+  /* Possible reflectiveness hints for node:
+  BASE_REFLECTIVE_EDITOR_HINT
+  BASE_NO_REFLECTIVE_EDITOR_HINT
+  BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
+  BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
+  BASE_REFLECTIVE_EDITOR_HINT + BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
+  BASE_NO_REFLECTIVE_EDITOR_HINT + BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
+   */
+
+  private boolean hasAnyHint(@NotNull SNode node, String... hints) {
+    String[] explicitEditorHintsForNode = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
+    return explicitEditorHintsForNode != null
+           && !Collections.disjoint(Arrays.asList(explicitEditorHintsForNode),
+                                    Arrays.asList(hints));
   }
 
   /**
    * Checks if the node is shown in reflective editor.
    */
   private boolean isReflective(@NotNull SNode node) {
-    if (myHintsProvider.hasAnyOf(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
-        || (myHintsProvider.hasAnyOf(node, BASE_REFLECTIVE_EDITOR_HINT)
-            && !myHintsProvider.hasAnyOf(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
+    if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
+        || (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)
+            && !hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
       return true;
-    } else if (myHintsProvider.hasAnyOf(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)
-               || (myHintsProvider.hasAnyOf(node, BASE_NO_REFLECTIVE_EDITOR_HINT)
-                   && !myHintsProvider.hasAnyOf(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
+    } else if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)
+               || (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT)
+                   && !hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
       return false;
     }
     node = node.getParent();
 
     while (node != null) {
-      if (myHintsProvider.hasAnyOf(node, BASE_REFLECTIVE_EDITOR_HINT)) {
+      if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)) {
         return true;
       }
-      if (myHintsProvider.hasAnyOf(node, BASE_NO_REFLECTIVE_EDITOR_HINT)) {
+      if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT)) {
         return false;
       } else {
         node = node.getParent();
@@ -89,33 +106,33 @@ public class ReflectiveHintsManager {
       return true;
     }
     String sameHintForNode = hintForNode(isReflective);
-    if (myHintsProvider.hasAnyOf(node, sameHintForNode)) {
+    if (hasAnyHint(node, sameHintForNode)) {
       // We can expand the effect of the node for the whole subtree.
       return true;
     }
     String[] symmetricHints = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
     return StreamSupport.stream(SNodeUtil.getDescendants(node).spliterator(), false)
-                        .anyMatch(descendant -> myHintsProvider.hasAnyOf(descendant, symmetricHints));
+                        .anyMatch(descendant -> hasAnyHint(descendant, symmetricHints));
   }
 
   public void makeNode(boolean isReflective, @NotNull SNode node) {
     String newHint = hintForNode(isReflective);
     String symmetricHint = hintForNode(!isReflective);
 
-    assert !myHintsProvider.hasAnyOf(node, newHint);
-    if (myHintsProvider.hasAnyOf(node, symmetricHint)) {
-      myHintsProvider.removeHints(node, symmetricHint);
+    assert !hasAnyHint(node, newHint);
+    if (hasAnyHint(node, symmetricHint)) {
+      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), symmetricHint);
     } else {
-      myHintsProvider.addHints(node, newHint);
+      myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), newHint);
     }
   }
 
   public void makeSubtree(boolean isReflective, @NotNull SNode node) {
     for (SNode descendant : SNodeUtil.getDescendants(node, null, true)) {
-      myHintsProvider.removeHints(descendant, REFLECTIVENESS_HINTS);
+      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(), REFLECTIVENESS_HINTS);
     }
     if (canMakeNode(isReflective, node)) {
-      myHintsProvider.addHints(node, hintForSubtree(isReflective));
+      myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), hintForSubtree(isReflective));
     }
   }
 }

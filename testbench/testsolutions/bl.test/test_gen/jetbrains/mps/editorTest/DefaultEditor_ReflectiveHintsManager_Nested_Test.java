@@ -6,7 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -24,24 +23,24 @@ public class DefaultEditor_ReflectiveHintsManager_Nested_Test extends BaseTransf
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("3904983436469710698", "3904983436473440720");
-      ModelAccess.instance().runReadAction(new Runnable() {
+      initEditorComponent("3904983436469710698", "");
+      getEditorComponent().getCommandContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           ReflectiveHintsManager manager = new ReflectiveHintsManager(getEditorComponent());
-          manager.makeSubtree(ReflectiveHintsManager.REFLECTIVE, SNodeOperations.cast(getNodeById("3904983436470749874"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          manager.makeSubtree(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          manager.makeSubtree(ReflectiveHintsManager.REFLECTIVE, SNodeOperations.cast(getNodeById("3904983436470751053"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          manager.makeNode(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470751549"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          Assert.assertTrue(manager.canMakeNode(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470785562"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))));
+          manager.makeSubtree(true, SNodeOperations.cast(getNodeById("3904983436470749874"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          manager.makeSubtree(false, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          manager.makeSubtree(true, SNodeOperations.cast(getNodeById("3904983436470751053"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          manager.makeNode(false, SNodeOperations.cast(getNodeById("3904983436470751549"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          Assert.assertTrue(manager.canMakeNode(false, SNodeOperations.cast(getNodeById("3904983436470785562"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))));
 
-          manager.makeSubtree(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470751549"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          Assert.assertFalse(manager.canMakeNode(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470785562"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))));
+          manager.makeSubtree(false, SNodeOperations.cast(getNodeById("3904983436470751549"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          Assert.assertFalse(manager.canMakeNode(false, SNodeOperations.cast(getNodeById("3904983436470785562"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))));
 
-          Assert.assertFalse(manager.canMakeNode(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
-          Assert.assertTrue(manager.canMakeSubtree(ReflectiveHintsManager.REGULAR, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
+          Assert.assertFalse(manager.canMakeNode(false, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
+          Assert.assertTrue(manager.canMakeSubtree(false, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
 
-          manager.makeNode(ReflectiveHintsManager.REFLECTIVE, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
-          Assert.assertFalse(manager.canMakeNode(ReflectiveHintsManager.REFLECTIVE, SNodeOperations.cast(getNodeById("3904983436470751053"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
+          manager.makeNode(true, SNodeOperations.cast(getNodeById("3904983436470750535"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
+          Assert.assertFalse(manager.canMakeNode(true, SNodeOperations.cast(getNodeById("3904983436470751053"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))));
         }
       });
     }

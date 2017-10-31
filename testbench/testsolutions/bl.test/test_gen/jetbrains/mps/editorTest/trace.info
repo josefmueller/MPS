@@ -5778,39 +5778,39 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3904983436469710697">
     <file name="DefaultEditor_ReflectiveHintsManager_Nested_Test.java">
-      <node id="3904983436469710697" at="18,83,19,102" concept="2" />
-      <node id="3904983436469710697" at="19,102,20,119" concept="2" />
-      <node id="3904983436469710697" at="26,51,27,72" concept="2" />
-      <node id="3904983436470871857" at="29,27,30,92" concept="7" />
-      <node id="3904983436471370328" at="30,92,31,316" concept="2" />
-      <node id="3904983436471383293" at="31,316,32,313" concept="2" />
-      <node id="3904983436471387213" at="32,313,33,316" concept="2" />
-      <node id="3904983436471389871" at="33,316,34,310" concept="2" />
-      <node id="3904983436471413051" at="34,310,35,340" concept="2" />
-      <node id="3904983436474329482" at="35,340,36,0" concept="8" />
-      <node id="8763684698999327271" at="36,0,37,313" concept="2" />
-      <node id="8763684698999334752" at="37,313,38,341" concept="2" />
-      <node id="8763684698999532374" at="38,341,39,0" concept="8" />
-      <node id="8763684698999545892" at="39,0,40,333" concept="2" />
-      <node id="8763684698999543849" at="40,333,41,335" concept="2" />
-      <node id="8763684698999547863" at="41,335,42,0" concept="8" />
-      <node id="8763684698999548531" at="42,0,43,313" concept="2" />
-      <node id="8763684698999556934" at="43,313,44,336" concept="2" />
-      <node id="3904983436469710697" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Nested#()V" />
-      <node id="3904983436472053565" at="29,0,46,0" concept="6" trace="run#()V" />
-      <node id="3904983436472053563" at="27,72,46,9" concept="2" />
-      <node id="3904983436469710697" at="25,0,48,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="3904983436469710697" at="18,83,20,119" />
-      <scope id="3904983436469710697" at="17,0,22,0" />
-      <scope id="3904983436472053567" at="29,27,44,336">
+      <node id="3904983436469710697" at="17,83,18,102" concept="2" />
+      <node id="3904983436469710697" at="18,102,19,119" concept="2" />
+      <node id="3904983436469710697" at="25,51,26,53" concept="2" />
+      <node id="3904983436470871857" at="28,27,29,92" concept="7" />
+      <node id="3904983436471370328" at="29,92,30,287" concept="2" />
+      <node id="3904983436471383293" at="30,287,31,288" concept="2" />
+      <node id="3904983436471387213" at="31,288,32,287" concept="2" />
+      <node id="3904983436471389871" at="32,287,33,285" concept="2" />
+      <node id="3904983436471413051" at="33,285,34,315" concept="2" />
+      <node id="3904983436474329482" at="34,315,35,0" concept="8" />
+      <node id="8763684698999327271" at="35,0,36,288" concept="2" />
+      <node id="8763684698999334752" at="36,288,37,316" concept="2" />
+      <node id="8763684698999532374" at="37,316,38,0" concept="8" />
+      <node id="8763684698999545892" at="38,0,39,308" concept="2" />
+      <node id="8763684698999543849" at="39,308,40,310" concept="2" />
+      <node id="8763684698999547863" at="40,310,41,0" concept="8" />
+      <node id="8763684698999548531" at="41,0,42,284" concept="2" />
+      <node id="8763684698999556934" at="42,284,43,307" concept="2" />
+      <node id="3904983436469710697" at="16,0,21,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Nested#()V" />
+      <node id="3904983436472053565" at="28,0,45,0" concept="6" trace="run#()V" />
+      <node id="3904983436472053563" at="26,53,45,9" concept="2" />
+      <node id="3904983436469710697" at="24,0,47,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3904983436469710697" at="17,83,19,119" />
+      <scope id="3904983436469710697" at="16,0,21,0" />
+      <scope id="3904983436472053567" at="28,27,43,307">
         <var name="manager" id="3904983436470871858" />
       </scope>
-      <scope id="3904983436472053565" at="29,0,46,0" />
-      <scope id="3904983436469710697" at="26,51,46,9" />
-      <scope id="3904983436469710697" at="25,0,48,0" />
-      <unit id="3904983436472053565" at="28,47,46,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody$1" />
-      <unit id="3904983436469710697" at="23,0,49,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody" />
-      <unit id="3904983436469710697" at="15,0,50,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test" />
+      <scope id="3904983436472053565" at="28,0,45,0" />
+      <scope id="3904983436469710697" at="25,51,45,9" />
+      <scope id="3904983436469710697" at="24,0,47,0" />
+      <unit id="3904983436472053565" at="27,98,45,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody$1" />
+      <unit id="3904983436469710697" at="22,0,48,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody" />
+      <unit id="3904983436469710697" at="14,0,49,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3912044994180733921">
@@ -14615,38 +14615,38 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8763684699000103877">
     <file name="DefaultEditor_ReflectiveHintsManager_Subtrees_Test.java">
-      <node id="8763684699000103877" at="18,85,19,102" concept="2" />
-      <node id="8763684699000103877" at="19,102,20,121" concept="2" />
-      <node id="8763684699000103877" at="26,51,27,72" concept="2" />
-      <node id="8763684699000103914" at="29,27,30,92" concept="7" />
-      <node id="8763684699000124679" at="30,92,31,321" concept="2" />
-      <node id="8763684699000134449" at="31,321,32,324" concept="2" />
-      <node id="8763684699000139276" at="32,324,33,0" concept="8" />
-      <node id="8763684699000140466" at="33,0,34,338" concept="2" />
-      <node id="8763684699000103920" at="34,338,35,316" concept="2" />
-      <node id="8763684699000149777" at="35,316,36,340" concept="2" />
-      <node id="8763684699000139489" at="36,340,37,0" concept="8" />
-      <node id="8763684699000112515" at="37,0,38,335" concept="2" />
-      <node id="8763684699000118536" at="38,335,39,313" concept="2" />
-      <node id="8763684699000147447" at="39,313,40,0" concept="8" />
-      <node id="8763684699000148482" at="40,0,41,336" concept="2" />
-      <node id="8763684699000164863" at="41,336,42,344" concept="2" />
-      <node id="8763684699000172741" at="42,344,43,341" concept="2" />
-      <node id="8763684699000103877" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Subtrees#()V" />
-      <node id="8763684699000103912" at="29,0,45,0" concept="6" trace="run#()V" />
-      <node id="8763684699000103911" at="27,72,45,9" concept="2" />
-      <node id="8763684699000103877" at="25,0,47,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="8763684699000103877" at="18,85,20,121" />
-      <scope id="8763684699000103877" at="17,0,22,0" />
-      <scope id="8763684699000103913" at="29,27,43,341">
+      <node id="8763684699000103877" at="17,85,18,102" concept="2" />
+      <node id="8763684699000103877" at="18,102,19,121" concept="2" />
+      <node id="8763684699000103877" at="25,51,26,53" concept="2" />
+      <node id="8763684699000103914" at="28,27,29,92" concept="7" />
+      <node id="8763684699000124679" at="29,92,30,292" concept="2" />
+      <node id="8763684699000134449" at="30,292,31,295" concept="2" />
+      <node id="8763684699000139276" at="31,295,32,0" concept="8" />
+      <node id="8763684699000140466" at="32,0,33,309" concept="2" />
+      <node id="8763684699000103920" at="33,309,34,287" concept="2" />
+      <node id="8763684699000149777" at="34,287,35,315" concept="2" />
+      <node id="8763684699000139489" at="35,315,36,0" concept="8" />
+      <node id="8763684699000112515" at="36,0,37,310" concept="2" />
+      <node id="8763684699000118536" at="37,310,38,288" concept="2" />
+      <node id="8763684699000147447" at="38,288,39,0" concept="8" />
+      <node id="8763684699000148482" at="39,0,40,311" concept="2" />
+      <node id="8763684699000164863" at="40,311,41,319" concept="2" />
+      <node id="8763684699000172741" at="41,319,42,316" concept="2" />
+      <node id="8763684699000103877" at="16,0,21,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Subtrees#()V" />
+      <node id="8763684699000103912" at="28,0,44,0" concept="6" trace="run#()V" />
+      <node id="8763684699000103911" at="26,53,44,9" concept="2" />
+      <node id="8763684699000103877" at="24,0,46,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="8763684699000103877" at="17,85,19,121" />
+      <scope id="8763684699000103877" at="16,0,21,0" />
+      <scope id="8763684699000103913" at="28,27,42,316">
         <var name="manager" id="8763684699000103915" />
       </scope>
-      <scope id="8763684699000103912" at="29,0,45,0" />
-      <scope id="8763684699000103877" at="26,51,45,9" />
-      <scope id="8763684699000103877" at="25,0,47,0" />
-      <unit id="8763684699000103912" at="28,47,45,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody$1" />
-      <unit id="8763684699000103877" at="23,0,48,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody" />
-      <unit id="8763684699000103877" at="15,0,49,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test" />
+      <scope id="8763684699000103912" at="28,0,44,0" />
+      <scope id="8763684699000103877" at="25,51,44,9" />
+      <scope id="8763684699000103877" at="24,0,46,0" />
+      <unit id="8763684699000103912" at="27,98,44,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody$1" />
+      <unit id="8763684699000103877" at="22,0,47,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody" />
+      <unit id="8763684699000103877" at="14,0,48,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8777381699079285184">

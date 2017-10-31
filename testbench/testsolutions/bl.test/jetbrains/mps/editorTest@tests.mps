@@ -53,6 +53,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="vq9d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.reflectiveEditor(MPS.Editor/)" />
+    <import index="oulx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.commands(MPS.Editor/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -508,6 +509,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -70552,9 +70554,8 @@
                 </node>
                 <node concept="liA8E" id="3oLirVSEiAh" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZnyHa" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYddT" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="3oLirVSEj0R" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCcl0" resolve="if1" />
@@ -70569,9 +70570,8 @@
                 </node>
                 <node concept="liA8E" id="3oLirVSEjk0" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZnRKV" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYeYN" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="3oLirVSEjXb" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCbqp" resolve="if2" />
@@ -70586,9 +70586,8 @@
                 </node>
                 <node concept="liA8E" id="3oLirVSEkhg" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZnRx0" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYdPh" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="3oLirVSEl_N" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCavM" resolve="if3" />
@@ -70603,9 +70602,8 @@
                 </node>
                 <node concept="liA8E" id="3oLirVSEkUM" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeNode(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZnS0_" role="37wK5m">
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+                  <node concept="3clFbT" id="1iucgRUYfAj" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="3oLirVSElRJ" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSC8Xd" resolve="if4" />
@@ -70620,9 +70618,8 @@
                 </node>
                 <node concept="liA8E" id="3oLirVSEsnP" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZnS3H" role="37wK5m">
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+                  <node concept="3clFbT" id="1iucgRUYfX6" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="3oLirVSEsMr" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSEpmH" resolve="body" />
@@ -70638,9 +70635,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZooZH" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZoj$z" role="37wK5m">
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+                  <node concept="3clFbT" id="1iucgRUYgjW" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZopyI" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSC8Xd" resolve="if4" />
@@ -70655,9 +70651,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZopRH" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZopRI" role="37wK5m">
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+                  <node concept="3clFbT" id="1iucgRUYgEP" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZopRJ" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSEpmH" resolve="body" />
@@ -70673,9 +70668,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZpe5r" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZpe5s" role="37wK5m">
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+                  <node concept="3clFbT" id="1iucgRUYh1L" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZpe5t" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCbqp" resolve="if2" />
@@ -70690,9 +70684,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZpdwG" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZpdwH" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRV2VjY" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZpdwI" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCbqp" resolve="if2" />
@@ -70708,9 +70701,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZpf43" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeNode(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZpg0O" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYebS" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZpgmo" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCbqp" resolve="if2" />
@@ -70725,9 +70717,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZpgH9" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZph21" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYeyy" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZphoh" role="37wK5m">
                     <ref role="3xOPvv" node="3oLirVSCavM" resolve="if3" />
@@ -70737,86 +70728,18 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="312cEu" id="3oLirVSM9Bg" role="LiZbd">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="ShowReflectiveEditorTest" />
-      <node concept="2YIFZL" id="3oLirVSM9Bh" role="jymVt">
-        <property role="TrG5h" value="main" />
-        <node concept="37vLTG" id="3oLirVSM9Bi" role="3clF46">
-          <property role="TrG5h" value="args" />
-          <node concept="10Q1$e" id="3oLirVSM9Bj" role="1tU5fm">
-            <node concept="17QB3L" id="3oLirVSM9Bk" role="10Q1$1" />
-          </node>
-        </node>
-        <node concept="3cqZAl" id="3oLirVSM9Bl" role="3clF45" />
-        <node concept="3Tm1VV" id="3oLirVSM9Bm" role="1B3o_S" />
-        <node concept="3clFbS" id="3oLirVSM9Bn" role="3clF47">
-          <node concept="3clFbJ" id="3oLirVSM9Bo" role="3cqZAp">
-            <node concept="3clFbT" id="3oLirVSM9Bp" role="3clFbw">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="3clFbS" id="3oLirVSM9Bq" role="3clFbx">
-              <node concept="3clFbJ" id="3oLirVSM9Br" role="3cqZAp">
-                <node concept="3clFbT" id="3oLirVSM9Bs" role="3clFbw">
-                  <property role="3clFbU" value="false" />
-                </node>
-                <node concept="3clFbS" id="3oLirVSM9Bt" role="3clFbx">
-                  <node concept="3clFbJ" id="3oLirVSM9Bu" role="3cqZAp">
-                    <node concept="3clFbT" id="3oLirVSM9Bv" role="3clFbw">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                    <node concept="3clFbS" id="3oLirVSM9Bw" role="3clFbx">
-                      <node concept="3clFbJ" id="3oLirVSM9Bx" role="3cqZAp">
-                        <node concept="3clFbT" id="3oLirVSM9By" role="3clFbw">
-                          <property role="3clFbU" value="false" />
-                        </node>
-                        <node concept="3clFbS" id="3oLirVSM9Bz" role="3clFbx">
-                          <node concept="3clFbF" id="3oLirVSM9B$" role="3cqZAp">
-                            <node concept="2OqwBi" id="3oLirVSM9B_" role="3clFbG">
-                              <node concept="10M0yZ" id="3oLirVSM9BA" role="2Oq$k0">
-                                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                              </node>
-                              <node concept="liA8E" id="3oLirVSM9BB" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                                <node concept="Xl_RD" id="3oLirVSM9BC" role="37wK5m">
-                                  <property role="Xl_RC" value="hello" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3xLA65" id="3oLirVSM9BD" role="lGtFl">
-                              <property role="TrG5h" value="body" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3xLA65" id="3oLirVSM9BE" role="lGtFl">
-                          <property role="TrG5h" value="if4" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3xLA65" id="3oLirVSM9BF" role="lGtFl">
-                      <property role="TrG5h" value="if3" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3xLA65" id="3oLirVSM9BG" role="lGtFl">
-                  <property role="TrG5h" value="if2" />
-                </node>
-              </node>
-            </node>
-            <node concept="3xLA65" id="3oLirVSM9BH" role="lGtFl">
-              <property role="TrG5h" value="if1" />
+        <node concept="2OqwBi" id="1iucgRV8km3" role="ukAjM">
+          <node concept="2OqwBi" id="1iucgRV8hYS" role="2Oq$k0">
+            <node concept="369mXd" id="1iucgRV8hxp" role="2Oq$k0" />
+            <node concept="liA8E" id="1iucgRV8kh6" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getCommandContext():jetbrains.mps.openapi.editor.commands.CommandContext" resolve="getCommandContext" />
             </node>
           </node>
-        </node>
-        <node concept="LIFWc" id="3oLirVSPywB" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="LIFWd" value="Collection_fao2ea_a" />
+          <node concept="liA8E" id="1iucgRV8kuk" role="2OqNvi">
+            <ref role="37wK5l" to="oulx:~CommandContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+          </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="3oLirVSM9BI" role="1B3o_S" />
     </node>
   </node>
   <node concept="LiM7Y" id="7AuRcOZrmf5">
@@ -70961,9 +70884,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrrCT" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeNode(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZrs$R" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYk1J" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrt2V" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfv" resolve="body1" />
@@ -70978,12 +70900,11 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrtGO" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZrtGP" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYkD5" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
-                  <node concept="3xONca" id="7AuRcOZru5J" role="37wK5m">
-                    <ref role="3xOPvv" node="7AuRcOZrncX" resolve="body2" />
+                  <node concept="3xONca" id="1iucgRV2UeU" role="37wK5m">
+                    <ref role="3xOPvv" node="7AuRcOZrn0E" resolve="body2" />
                   </node>
                 </node>
               </node>
@@ -70996,9 +70917,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrvZj" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZrwaO" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYkZE" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrwyl" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfy" resolve="if2" />
@@ -71013,9 +70933,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrmfN" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZrmfO" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYlmi" role="37wK5m">
+                    <property role="3clFbU" value="true" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrnNs" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfy" resolve="if2" />
@@ -71030,9 +70949,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrxV9" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZryjd" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYhQg" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZryNN" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrn6e" resolve="body3" />
@@ -71048,9 +70966,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZroE$" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZroYI" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYicw" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrprq" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfz" resolve="if1" />
@@ -71065,9 +70982,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrq8p" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.makeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):void" resolve="makeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZrqtf" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYiyN" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrqUB" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfz" resolve="if1" />
@@ -71083,9 +70999,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrzvZ" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZrzSJ" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYiT9" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZr$q1" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrmfy" resolve="if2" />
@@ -71100,9 +71015,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZr_82" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeSubtree(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeSubtree" />
-                  <node concept="10M0yZ" id="7AuRcOZr_83" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYjfy" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrBKs" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrn0E" resolve="body2" />
@@ -71117,9 +71031,8 @@
                 </node>
                 <node concept="liA8E" id="7AuRcOZrB38" role="2OqNvi">
                   <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.canMakeNode(boolean,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canMakeNode" />
-                  <node concept="10M0yZ" id="7AuRcOZrB39" role="37wK5m">
-                    <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
-                    <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+                  <node concept="3clFbT" id="1iucgRUYj_Y" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                   <node concept="3xONca" id="7AuRcOZrC6c" role="37wK5m">
                     <ref role="3xOPvv" node="7AuRcOZrn6e" resolve="body3" />
@@ -71129,120 +71042,18 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="312cEu" id="7AuRcOZrmgP" role="LiZbd">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="ShowReflectiveEditorTest" />
-      <node concept="2YIFZL" id="7AuRcOZrmgQ" role="jymVt">
-        <property role="TrG5h" value="main" />
-        <node concept="37vLTG" id="7AuRcOZrmgR" role="3clF46">
-          <property role="TrG5h" value="args" />
-          <node concept="10Q1$e" id="7AuRcOZrmgS" role="1tU5fm">
-            <node concept="17QB3L" id="7AuRcOZrmgT" role="10Q1$1" />
-          </node>
-        </node>
-        <node concept="3cqZAl" id="7AuRcOZrmgU" role="3clF45" />
-        <node concept="3Tm1VV" id="7AuRcOZrmgV" role="1B3o_S" />
-        <node concept="3clFbS" id="7AuRcOZrmgW" role="3clF47">
-          <node concept="3clFbJ" id="7AuRcOZrmgX" role="3cqZAp">
-            <node concept="3clFbT" id="7AuRcOZrmgY" role="3clFbw">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="3clFbS" id="7AuRcOZrmgZ" role="3clFbx">
-              <node concept="3clFbJ" id="7AuRcOZrmh0" role="3cqZAp">
-                <node concept="3clFbT" id="7AuRcOZrmh1" role="3clFbw">
-                  <property role="3clFbU" value="false" />
-                </node>
-                <node concept="3clFbS" id="7AuRcOZrmh2" role="3clFbx">
-                  <node concept="3clFbJ" id="7AuRcOZrmh3" role="3cqZAp">
-                    <node concept="3clFbT" id="7AuRcOZrmh4" role="3clFbw">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                    <node concept="3clFbS" id="7AuRcOZrmh5" role="3clFbx">
-                      <node concept="3clFbJ" id="7AuRcOZrncJ" role="3cqZAp">
-                        <node concept="3clFbT" id="7AuRcOZrncK" role="3clFbw">
-                          <property role="3clFbU" value="false" />
-                        </node>
-                        <node concept="3clFbS" id="7AuRcOZrncL" role="3clFbx">
-                          <node concept="3clFbF" id="7AuRcOZrncM" role="3cqZAp">
-                            <node concept="2OqwBi" id="7AuRcOZrncN" role="3clFbG">
-                              <node concept="10M0yZ" id="7AuRcOZrncO" role="2Oq$k0">
-                                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                              </node>
-                              <node concept="liA8E" id="7AuRcOZrncP" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                                <node concept="Xl_RD" id="7AuRcOZrncQ" role="37wK5m">
-                                  <property role="Xl_RC" value="hello" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3xLA65" id="7AuRcOZrncR" role="lGtFl">
-                              <property role="TrG5h" value="body1" />
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="7AuRcOZrncS" role="3cqZAp">
-                            <node concept="2OqwBi" id="7AuRcOZrncT" role="3clFbG">
-                              <node concept="10M0yZ" id="7AuRcOZrncU" role="2Oq$k0">
-                                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                              </node>
-                              <node concept="liA8E" id="7AuRcOZrncV" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                                <node concept="Xl_RD" id="7AuRcOZrncW" role="37wK5m">
-                                  <property role="Xl_RC" value="hello" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3xLA65" id="7AuRcOZrncX" role="lGtFl">
-                              <property role="TrG5h" value="body2" />
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="7AuRcOZrncY" role="3cqZAp">
-                            <node concept="2OqwBi" id="7AuRcOZrncZ" role="3clFbG">
-                              <node concept="10M0yZ" id="7AuRcOZrnd0" role="2Oq$k0">
-                                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                              </node>
-                              <node concept="liA8E" id="7AuRcOZrnd1" role="2OqNvi">
-                                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                                <node concept="Xl_RD" id="7AuRcOZrnd2" role="37wK5m">
-                                  <property role="Xl_RC" value="hello" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3xLA65" id="7AuRcOZrnd3" role="lGtFl">
-                              <property role="TrG5h" value="body3" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3xLA65" id="7AuRcOZrnd4" role="lGtFl">
-                          <property role="TrG5h" value="if4" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3xLA65" id="7AuRcOZrmhg" role="lGtFl">
-                      <property role="TrG5h" value="if3" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3xLA65" id="7AuRcOZrmhh" role="lGtFl">
-                  <property role="TrG5h" value="if2" />
-                </node>
-              </node>
-            </node>
-            <node concept="3xLA65" id="7AuRcOZrmhi" role="lGtFl">
-              <property role="TrG5h" value="if1" />
+        <node concept="2OqwBi" id="1iucgRV8k_9" role="ukAjM">
+          <node concept="2OqwBi" id="1iucgRV8k_a" role="2Oq$k0">
+            <node concept="369mXd" id="1iucgRV8k_b" role="2Oq$k0" />
+            <node concept="liA8E" id="1iucgRV8k_c" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getCommandContext():jetbrains.mps.openapi.editor.commands.CommandContext" resolve="getCommandContext" />
             </node>
           </node>
-        </node>
-        <node concept="LIFWc" id="7AuRcOZrmhj" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="LIFWd" value="Collection_fao2ea_a" />
+          <node concept="liA8E" id="1iucgRV8k_d" role="2OqNvi">
+            <ref role="37wK5l" to="oulx:~CommandContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+          </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="7AuRcOZrmhk" role="1B3o_S" />
     </node>
   </node>
 </model>
