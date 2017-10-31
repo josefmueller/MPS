@@ -98,6 +98,7 @@ import jetbrains.mps.nodeEditor.highlighter.EditorHighlighter;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
@@ -1084,7 +1085,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           acquireTypeCheckingContext();
         }
 
-        myUpdater.applyReflectiveHintsForModel();
+        if (myNode != null && myNode.getModel() != null) {
+          ReflectiveHintsUtil.addModelHints(getEditorContext(), myNode.getModel());
+        }
+
         rebuildEditorContent();
 
         if (myNode != null && notifiesCreation()) {

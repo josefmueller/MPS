@@ -223,7 +223,6 @@ public class UpdaterImpl implements Updater {
   @Override
   public void clearExplicitHints() {
     myEditorHintsForNodeMap.clear();
-    applyReflectiveHintsForModel();
   }
 
   private void fireCellSynchronized(EditorCell cell) {
@@ -323,13 +322,6 @@ public class UpdaterImpl implements Updater {
 
     Set<SNodeReference> refTargets = myRelatedRefTargets.get(cell);
     return refTargets != null && refTargets.contains(modification.o2);
-  }
-
-  public void applyReflectiveHintsForModel() {
-    if (myEditorComponent.getEditedNode() != null) {
-      ReflectiveHintsUtil.addModelHints(myEditorComponent.getEditedNode().getContainingRoot(),
-                                        myEditorComponent.getEditorContext());
-    }
   }
 
   /**
