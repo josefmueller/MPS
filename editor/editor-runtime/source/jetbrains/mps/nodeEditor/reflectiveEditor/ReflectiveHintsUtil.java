@@ -24,7 +24,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.stream.Stream;
 
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_NO_REFLECTIVE_EDITOR_HINT;
@@ -60,15 +62,19 @@ public class ReflectiveHintsUtil {
       return;
     }
     Project ideaProject = ((MPSProject) mpsProject).getProject();
+    String[] initialEditorHints = editorContext.getEditorComponent()
+                                               .getUpdater()
+                                               .getInitialEditorHints();
+    Stream<String> hintStream = initialEditorHints != null
+                                ? Arrays.stream(initialEditorHints)
+                                        .filter(hint -> !hint.equals(BASE_REFLECTIVE_EDITOR_HINT))
+                                : Stream.empty();
     if (ReflectiveHintsForModelComponent.getInstance(ideaProject)
                                         .shouldShowReflectiveEditor(model.getReference())) {
-      editorContext.getEditorComponent()
-                   .getUpdater()
-                   .setInitialEditorHints(new String[]{BASE_REFLECTIVE_EDITOR_HINT});
-    } else {
-      editorContext.getEditorComponent()
-                   .getUpdater()
-                   .setInitialEditorHints(null);
+      hintStream = Stream.concat(hintStream, Stream.of(BASE_REFLECTIVE_EDITOR_HINT));
     }
+    editorContext.getEditorComponent()
+                 .getUpdater()
+                 .setInitialEditorHints(hintStream.toArray(String[]::new));
   }
 }
