@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -65,13 +66,16 @@ public class ReflectiveHintsManager {
    * Checks if the node is shown in reflective editor.
    */
   private boolean isReflective(@NotNull SNode node) {
+    SContainmentLink attributeLink = jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute;
+
     if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
         || (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)
             && !hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
       return true;
     } else if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)
                || (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT)
-                   && !hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
+                   && !hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT))
+               || attributeLink.equals(node.getContainmentLink())) {
       return false;
     }
     node = node.getParent();
@@ -80,7 +84,7 @@ public class ReflectiveHintsManager {
       if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)) {
         return true;
       }
-      if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT)) {
+      if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT) || attributeLink.equals(node.getContainmentLink())) {
         return false;
       } else {
         node = node.getParent();
