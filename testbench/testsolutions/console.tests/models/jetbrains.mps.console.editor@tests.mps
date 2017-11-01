@@ -135,5 +135,80 @@
   <node concept="2XOHcx" id="10gsdiJDoBW">
     <property role="2XOHcw" value="${mps_home}" />
   </node>
+  <node concept="LiM7Y" id="132wAsKJSLO">
+    <property role="TrG5h" value="EmptyConsoleSelectAllTest" />
+    <node concept="aymSD" id="132wAsKJSLP" role="LiRBU">
+      <node concept="3balQm" id="132wAsKJSLQ" role="aymYE" />
+      <node concept="2Clz$F" id="132wAsKJSLR" role="aymYO">
+        <property role="TrG5h" value="CommandHolder" />
+        <node concept="LIFWc" id="132wAsKJTB5" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_nvbf9m_a1a" />
+        </node>
+      </node>
+      <node concept="2_V_lH" id="132wAsKJSLX" role="1PhJh3">
+        <ref role="2_V_lI" node="132wAsKJSLR" resolve="CommandHolder" />
+      </node>
+    </node>
+    <node concept="aymSD" id="132wAsKJSLY" role="LiZbd">
+      <node concept="3balQm" id="132wAsKJSLZ" role="aymYE" />
+      <node concept="2Clz$F" id="132wAsKJSM0" role="aymYO">
+        <property role="TrG5h" value="CommandHolder" />
+      </node>
+      <node concept="2_V_lH" id="132wAsKJSM6" role="1PhJh3">
+        <ref role="2_V_lI" node="132wAsKJSM0" resolve="CommandHolder" />
+      </node>
+      <node concept="LIFWc" id="132wAsKKaOa" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="LIFWd" value="Collection_drvoix_a" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="132wAsKJSM7" role="LjaKd">
+      <node concept="2HxZob" id="132wAsKJSM8" role="3cqZAp">
+        <node concept="1iFQzN" id="132wAsKJSM9" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7Nj6eEDgxTU" resolve="SelectAll" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="132wAsKKSCW">
+    <property role="TrG5h" value="EmptyConsoleCommentTest" />
+    <node concept="aymSD" id="132wAsKKSCX" role="LiRBU">
+      <node concept="3balQm" id="132wAsKKSCY" role="aymYE" />
+      <node concept="2Clz$F" id="132wAsKKSCZ" role="aymYO">
+        <property role="TrG5h" value="CommandHolder" />
+        <node concept="LIFWc" id="132wAsKL1Yl" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_nvbf9m_a" />
+        </node>
+      </node>
+      <node concept="2_V_lH" id="132wAsKKSD1" role="1PhJh3">
+        <ref role="2_V_lI" node="132wAsKKSCZ" resolve="CommandHolder" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="132wAsKKSD7" role="LjaKd">
+      <node concept="2HxZob" id="132wAsKKSD8" role="3cqZAp">
+        <node concept="1iFQzN" id="132wAsKKSD9" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="aymSD" id="132wAsKL21Q" role="LiZbd">
+      <node concept="3balQm" id="132wAsKL21R" role="aymYE" />
+      <node concept="2Clz$F" id="132wAsKL21S" role="aymYO">
+        <property role="TrG5h" value="CommandHolder" />
+        <node concept="LIFWc" id="132wAsKL21T" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_nvbf9m_a" />
+        </node>
+      </node>
+      <node concept="2_V_lH" id="132wAsKL21U" role="1PhJh3">
+        <ref role="2_V_lI" node="132wAsKL21S" resolve="CommandHolder" />
+      </node>
+    </node>
+  </node>
 </model>
 
