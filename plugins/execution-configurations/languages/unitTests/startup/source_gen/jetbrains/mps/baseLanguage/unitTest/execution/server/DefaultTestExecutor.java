@@ -12,6 +12,8 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class DefaultTestExecutor extends AbstractTestExecutor {
+  public static final int EXIT_CODE_FOR_EXCEPTION = -12345;
+
   private final CommandOutputStream myOutStream;
   private final CommandOutputStream myErrStream;
 
@@ -60,9 +62,10 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
     }
   }
 
+  @Override
   protected void processThrowable(Throwable t) {
+    super.processThrowable(t);
     t.printStackTrace(System.err);
-    System.exit(EXIT_CODE_FOR_EXCEPTION);
   }
 
   protected void exit() {
@@ -70,12 +73,10 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
     if (env != null) {
       env.dispose();
     }
-
-    DefaultRunListener listener = ((DefaultRunListener) this.getListener());
-    if (listener == null) {
+    if (getExecutionError() != null) {
       System.exit(EXIT_CODE_FOR_EXCEPTION);
     } else {
-      System.exit(listener.getFailureCount());
+      System.exit(getFailureCount());
     }
   }
 }

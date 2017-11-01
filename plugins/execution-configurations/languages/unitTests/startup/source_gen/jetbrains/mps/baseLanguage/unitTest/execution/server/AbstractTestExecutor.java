@@ -10,17 +10,23 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.junit.runner.Result;
+import org.junit.runner.notification.StoppedByUserException;
+import org.apache.log4j.Level;
 
+/**
+ * In fact, it's a mechanism to execute tests using JUnit.
+ */
 public abstract class AbstractTestExecutor implements TestExecutor {
   private static final Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
-  /*package*/ static final int EXIT_CODE_FOR_EXCEPTION = -12345;
 
   private StoppableRunner myCurrentRunner = null;
   private RunListener myListener;
   private volatile boolean myStopping = false;
   private final TestsContributor myTestContributor;
+  private int myFailureCount = -1;
+  private Throwable myException;
 
   protected AbstractTestExecutor(@NotNull TestsContributor testContributor) {
     myTestContributor = testContributor;
@@ -33,15 +39,19 @@ public abstract class AbstractTestExecutor implements TestExecutor {
 
   @Override
   public void execute() {
+    myFailureCount = 0;
     try {
       RunEventsDispatcher.getInstance().onTestRunStarted();
       Iterable<Request> requests = myTestContributor.gatherTests();
       JUnitCore jUnitCore = prepareJUnitCore(requests);
       doExecute(jUnitCore, requests);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Exception in the test framework", t);
+      if (myListener != null) {
+        // no real reason, just it's nice to clean up after yourself 
+        jUnitCore.removeListener(myListener);
       }
+    } catch (Throwable t) {
+      // XXX myFailureCount may get invalid if exception is thrown from core.run 
+      processThrowable(t);
     } finally {
       RunEventsDispatcher.getInstance().onTestRunFinished();
     }
@@ -62,22 +72,49 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     for (Request request : requests) {
       updateRunner(request);
-      core.run(myCurrentRunner);
+      Result res = core.run(myCurrentRunner);
+      myFailureCount += res.getFailureCount();
     }
   }
 
-  protected void stopRun() {
+  public void stopRun() {
     StoppableRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
     myStopping = true;
   }
 
+  protected void processThrowable(Throwable t) {
+    if (!(t instanceof StoppedByUserException)) {
+      // StoppedByUserException means external intention to stop tests, no reason to log 
+      myException = t;
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Exception in the test framework", t);
+      }
+    }
+  }
 
   private void updateRunner(Request request) {
     //  FIXME boolean flag and extra runnable to monitor it is a bit too much, no? 
     // when we updateRunner() on each step, why can't we check myStoping == true inside doExecute()? 
     myCurrentRunner = new StoppableRunner(request, myStopping);
+  }
+
+  /**
+   * 
+   * @return -1 if tests were not executed, or number of failed tests otherwise.
+   */
+  public int getFailureCount() {
+    return myFailureCount;
+  }
+
+  /**
+   * 
+   * @return non-null if there's an unexpected exception during JUnit run
+   */
+  @Nullable
+  public Throwable getExecutionError() {
+    return myException;
   }
 
   @Nullable

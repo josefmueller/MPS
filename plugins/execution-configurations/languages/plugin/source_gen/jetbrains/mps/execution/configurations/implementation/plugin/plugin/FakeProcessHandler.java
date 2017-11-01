@@ -6,7 +6,6 @@ import com.intellij.execution.process.BaseOSProcessHandler;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.concurrent.Future;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.io.BaseOutputReader;
@@ -23,16 +22,14 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
   private static final Logger LOG = LogManager.getLogger(FakeProcessHandler.class);
   private final FakeProcess myFakeProcess;
   private final Future<?> myFuture;
-  private final TestInProcessExecutor myExecutor;
 
   private final FakeProcessHandler.BlockingReader myOutputReader = new FakeProcessHandler.BlockingReader(createProcessOutReader(), ProcessOutputTypes.STDOUT, "output stream of " + myPresentableName);
   private final FakeProcessHandler.BlockingReader myErrorReader = new FakeProcessHandler.BlockingReader(createProcessErrReader(), ProcessOutputTypes.STDERR, "error stream of " + myPresentableName);
 
-  public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future, TestInProcessExecutor executor) {
+  public FakeProcessHandler(@NotNull FakeProcess fakeProcess, Future<?> future) {
     super(fakeProcess, fakeProcess.toString(), null);
     myFakeProcess = fakeProcess;
     myFuture = future;
-    myExecutor = executor;
   }
 
   @NotNull
@@ -66,21 +63,20 @@ public class FakeProcessHandler extends BaseOSProcessHandler {
     }
     myOutputReader.startReading();
     myErrorReader.startReading();
-    myExecutor.setReady();
   }
 
-  private void terminate() {
-    myExecutor.terminateRun();
+  protected void requestTerminate() {
+    // no-op 
   }
 
   @Override
   protected void destroyProcessImpl() {
-    terminate();
+    requestTerminate();
   }
 
   @Override
   protected void detachProcessImpl() {
-    terminate();
+    requestTerminate();
   }
 
   @Override
