@@ -148,6 +148,7 @@ public abstract class MpsLoadTask extends Task {
       } catch (IOException e) {
         throw new BuildException(e);
       }
+      commandLine.add(getAdditionalArgs());
       Execute exe = new Execute(new MyExecuteStreamHandler(this));
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
@@ -184,6 +185,10 @@ public abstract class MpsLoadTask extends Task {
         throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
       }
     }
+  }
+
+  protected String getAdditionalArgs() {
+    return "";
   }
 
   private void outputBuildNumber() {

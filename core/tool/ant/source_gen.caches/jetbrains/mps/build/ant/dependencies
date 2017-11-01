@@ -7,6 +7,17 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.CustomMPSLoadTask" file="CustomMPSLoadTask.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.util.ArrayList" />
