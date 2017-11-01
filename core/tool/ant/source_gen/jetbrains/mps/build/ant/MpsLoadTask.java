@@ -21,6 +21,7 @@ import java.net.URLClassLoader;
 import org.apache.tools.ant.ProjectComponent;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.Collections;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
 import java.io.InputStream;
@@ -148,7 +149,9 @@ public abstract class MpsLoadTask extends Task {
       } catch (IOException e) {
         throw new BuildException(e);
       }
-      commandLine.add(getAdditionalArgs());
+      for (String s : getAdditionalArgs()) {
+        commandLine.add(s);
+      }
       Execute exe = new Execute(new MyExecuteStreamHandler(this));
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
@@ -187,8 +190,8 @@ public abstract class MpsLoadTask extends Task {
     }
   }
 
-  protected String getAdditionalArgs() {
-    return "";
+  protected List<String> getAdditionalArgs() {
+    return Collections.emptyList();
   }
 
   private void outputBuildNumber() {

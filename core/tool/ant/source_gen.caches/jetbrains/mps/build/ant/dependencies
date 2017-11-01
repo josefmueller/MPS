@@ -11,6 +11,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
@@ -112,6 +113,7 @@
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.net.URLClassLoader" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Hashtable" />
     <classNode dependClassName="java.util.LinkedHashSet" />
