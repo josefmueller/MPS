@@ -16,7 +16,10 @@
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.openapi.editor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.HashSet;
@@ -24,6 +27,11 @@ import java.util.Set;
 
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
   private Set<SModelReference> myModelsWithReflective = new HashSet<>();
+  private Project myProject;
+
+  public ReflectiveHintsForModelComponent(Project project) {
+    myProject = project;
+  }
 
   public static ReflectiveHintsForModelComponent getInstance(Project project) {
     return project.getComponent(ReflectiveHintsForModelComponent.class);
@@ -31,10 +39,19 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
 
   public void showReflectiveEditorByDefault(SModelReference modelReference) {
     myModelsWithReflective.add(modelReference);
+    redrawEditors(modelReference);
   }
 
   public void showRegularEditorByDefault(SModelReference modelReference) {
     myModelsWithReflective.remove(modelReference);
+    redrawEditors(modelReference);
+  }
+
+  private void redrawEditors(SModelReference modelReference) {
+    EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)
+                       .stream()
+                       .filter(editorComponent -> editorComponent.getEditorContext().getModel().getReference().equals(modelReference))
+                       .forEach(EditorComponent::rebuildEditorContent);
   }
 
   public boolean shouldShowReflectiveEditor(SModelReference modelReference) {
