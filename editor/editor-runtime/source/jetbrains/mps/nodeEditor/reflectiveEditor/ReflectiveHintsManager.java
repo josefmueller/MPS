@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -78,6 +82,8 @@ public class ReflectiveHintsManager {
                || attributeLink.equals(node.getContainmentLink())) {
       return false;
     }
+
+    SModel nodeModel = node.getModel();
     node = node.getParent();
 
     while (node != null) {
@@ -90,7 +96,14 @@ public class ReflectiveHintsManager {
         node = node.getParent();
       }
     }
-    return false;
+
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(myEditorComponent.getEditorContext().getRepository());
+    if (!(mpsProject instanceof MPSProject) || nodeModel == null) {
+      return false;
+    }
+    Project ideaProject = ((MPSProject) mpsProject).getProject();
+    return ReflectiveHintsForModelComponent.getInstance(ideaProject)
+                                           .shouldShowReflectiveEditor(nodeModel.getReference());
   }
 
   private String hintForNode(boolean isReflective) {
