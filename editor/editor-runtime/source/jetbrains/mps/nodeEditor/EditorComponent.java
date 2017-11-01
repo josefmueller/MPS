@@ -1085,10 +1085,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           acquireTypeCheckingContext();
         }
 
-        if (myNode != null && myNode.getModel() != null) {
-          ReflectiveHintsUtil.addModelHints(getEditorContext(), myNode.getModel());
-        }
-
         rebuildEditorContent();
 
         if (myNode != null && notifiesCreation()) {

@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
@@ -49,6 +50,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * User: shatalin
@@ -170,7 +172,9 @@ public class UpdateSessionImpl implements UpdateSession {
   @NotNull
   private String[] getInitialEditorHints(EditorContext editorContext) {
     if (myInitialEditorHints != null) {
-      return myInitialEditorHints;
+      return Stream.concat(Arrays.stream(myInitialEditorHints),
+                           ReflectiveHintsUtil.getModelHints(editorContext))
+                   .toArray(String[]::new);
     }
 
     Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(editorContext.getRepository()));
@@ -178,7 +182,9 @@ public class UpdateSessionImpl implements UpdateSession {
       return EMPTY_HINTS_ARRAY;
     }
     HintsState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
-    return state.getEnabledHints().toArray(EMPTY_HINTS_ARRAY);
+    return Stream.concat(state.getEnabledHints().stream(),
+                         ReflectiveHintsUtil.getModelHints(editorContext))
+                 .toArray(String[]::new);
   }
 
   @Nullable

@@ -56,25 +56,17 @@ public class ReflectiveHintsUtil {
             !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
   }
 
-  public static void addModelHints(EditorContext editorContext, SModel model) {
+  public static Stream<String> getModelHints(EditorContext editorContext) {
     jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(editorContext.getRepository());
     if (!(mpsProject instanceof MPSProject)) {
-      return;
+      return Stream.empty();
     }
     Project ideaProject = ((MPSProject) mpsProject).getProject();
-    String[] initialEditorHints = editorContext.getEditorComponent()
-                                               .getUpdater()
-                                               .getInitialEditorHints();
-    Stream<String> hintStream = initialEditorHints != null
-                                ? Arrays.stream(initialEditorHints)
-                                        .filter(hint -> !hint.equals(BASE_REFLECTIVE_EDITOR_HINT))
-                                : Stream.empty();
     if (ReflectiveHintsForModelComponent.getInstance(ideaProject)
-                                        .shouldShowReflectiveEditor(model.getReference())) {
-      hintStream = Stream.concat(hintStream, Stream.of(BASE_REFLECTIVE_EDITOR_HINT));
+                                        .shouldShowReflectiveEditor(editorContext.getModel().getReference())) {
+      return Stream.of(BASE_REFLECTIVE_EDITOR_HINT);
+    } else {
+      return Stream.empty();
     }
-    editorContext.getEditorComponent()
-                 .getUpdater()
-                 .setInitialEditorHints(hintStream.toArray(String[]::new));
   }
 }
