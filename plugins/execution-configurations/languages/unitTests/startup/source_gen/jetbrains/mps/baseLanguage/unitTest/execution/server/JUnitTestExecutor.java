@@ -16,10 +16,11 @@ import org.junit.runner.notification.StoppedByUserException;
 import org.apache.log4j.Level;
 
 /**
- * In fact, it's a mechanism to execute tests using JUnit.
+ * Mechanism to execute tests using JUnit.
+ * Tests are executed in the same thread.
  */
-public abstract class AbstractTestExecutor implements TestExecutor {
-  private static final Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
+public class JUnitTestExecutor implements TestExecutor {
+  private static final Logger LOG = LogManager.getLogger(JUnitTestExecutor.class);
 
   private StoppableRunner myCurrentRunner = null;
   private RunListener myListener;
@@ -28,13 +29,27 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   private int myFailureCount = -1;
   private Throwable myException;
 
-  protected AbstractTestExecutor(@NotNull TestsContributor testContributor) {
+  public JUnitTestExecutor(@NotNull TestsContributor testContributor) {
     myTestContributor = testContributor;
   }
 
   @Nullable
   private StoppableRunner getCurrentRunner() {
     return myCurrentRunner;
+  }
+
+  @Override
+  public void init() {
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Initializing " + getClass().getSimpleName());
+    }
+  }
+
+  @Override
+  public void dispose() {
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Disposing " + getClass().getSimpleName());
+    }
   }
 
   @Override
@@ -123,5 +138,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
   }
 
   @NotNull
-  protected abstract RunListener createListener(Iterable<Request> requests);
+  protected RunListener createListener(Iterable<Request> requests) {
+    return new DefaultRunListener(new CommandOutputStream(System.out));
+  }
 }

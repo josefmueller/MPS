@@ -11,7 +11,7 @@ import java.io.IOException;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
-public class DefaultTestExecutor extends AbstractTestExecutor {
+public class DefaultTestExecutor extends JUnitTestExecutor {
   public static final int EXIT_CODE_FOR_EXCEPTION = -12345;
 
   private final CommandOutputStream myOutStream;
@@ -24,6 +24,7 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
   }
 
   public void init() {
+    super.init();
     System.setOut(new PrintStream(myOutStream));
     System.setErr(new PrintStream(myErrStream));
     BasicConfigurator.configure();
@@ -32,11 +33,13 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
   public void dispose() {
     System.setOut(myOutStream.getOldStream());
     System.setErr(myErrStream.getOldStream());
+    super.dispose();
   }
 
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> iterable) {
+    // don't quite buy the reason why default implemenation could not be used and what's this magic about system out in init() 
     return new DefaultRunListener(myOutStream);
   }
 
@@ -76,6 +79,7 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
     if (getExecutionError() != null) {
       System.exit(EXIT_CODE_FOR_EXCEPTION);
     } else {
+      // we don't expect test cancellation requests here 
       System.exit(getFailureCount());
     }
   }

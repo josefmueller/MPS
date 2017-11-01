@@ -14701,12 +14701,12 @@
           <node concept="3cpWsn" id="4br3RNOO1vN" role="3cpWs9">
             <property role="TrG5h" value="executor" />
             <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="1Q6gjHMtT_T" role="1tU5fm">
-              <ref role="3uigEE" to="inrv:5Ti9jVZ8rF4" resolve="TestInProcessExecutor" />
+            <node concept="3uibUv" id="4br3RNORZ9A" role="1tU5fm">
+              <ref role="3uigEE" to="inrv:5Ti9jVZ8rxu" resolve="JUnitTestExecutor" />
             </node>
             <node concept="2ShNRf" id="iMwdHMbdhO" role="33vP2m">
               <node concept="1pGfFk" id="iMwdHMbdhP" role="2ShVmc">
-                <ref role="37wK5l" to="inrv:5Ti9jVZ8rFt" resolve="TestInProcessExecutor" />
+                <ref role="37wK5l" to="inrv:2qFJdjDCsCs" resolve="JUnitTestExecutor" />
                 <node concept="37vLTw" id="2qFJdjDD6zl" role="37wK5m">
                   <ref role="3cqZAo" node="2qFJdjDD4Df" resolve="myTestsContributor" />
                 </node>
@@ -14732,7 +14732,12 @@
         </node>
         <node concept="3SKdUt" id="4br3RNOPl_e" role="3cqZAp">
           <node concept="3SKdUq" id="4br3RNOPl_g" role="3SKWNk">
-            <property role="3SKdUp" value="can use TestInProcessRunState instead of both process and future parameter, isDone == TERMINATED, init() == INITIALIZED -&gt; READYTOEXECUTE" />
+            <property role="3SKdUp" value="can use TestInProcessRunState instead of both process and future parameter, isDone == TERMINATED, startNotify() == INITIALIZED -&gt; READYTOEXECUTE" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4br3RNORq8t" role="3cqZAp">
+          <node concept="3SKdUq" id="4br3RNORq8v" role="3SKWNk">
+            <property role="3SKdUp" value="Alternatively, FakeProcess.init may do INITIALIZED -&gt; READYTOEXECUTE, and rely on default ProcessHandler.isProcessTerminated implementation instead of Future.isDone" />
           </node>
         </node>
         <node concept="3cpWs8" id="4YWiRa6tu8q" role="3cqZAp">
@@ -14907,6 +14912,18 @@
                       <node concept="3Tm1VV" id="4YWiRa6t9vz" role="1B3o_S" />
                       <node concept="3cqZAl" id="4YWiRa6t9v_" role="3clF45" />
                       <node concept="3clFbS" id="4YWiRa6t9vA" role="3clF47">
+                        <node concept="3cpWs8" id="1nB28sfamZ" role="3cqZAp">
+                          <node concept="3cpWsn" id="1nB28sfan0" role="3cpWs9">
+                            <property role="TrG5h" value="oldTestMode" />
+                            <node concept="3uibUv" id="1nB28sfan1" role="1tU5fm">
+                              <ref role="3uigEE" to="fyhk:~TestMode" resolve="TestMode" />
+                            </node>
+                            <node concept="2YIFZM" id="1nB28sfasL" role="33vP2m">
+                              <ref role="37wK5l" to="fyhk:~RuntimeFlags.getTestMode():jetbrains.mps.TestMode" resolve="getTestMode" />
+                              <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="2GUZhq" id="7rXOJyztiKh" role="3cqZAp">
                           <node concept="3clFbS" id="7rXOJyztiKi" role="2GV8ay">
                             <node concept="3clFbF" id="7rXOJyzs3_V" role="3cqZAp">
@@ -14915,7 +14932,7 @@
                                   <ref role="3cqZAo" node="4YWiRa6sMsh" resolve="executor" />
                                 </node>
                                 <node concept="liA8E" id="7rXOJyzs3Ky" role="2OqNvi">
-                                  <ref role="37wK5l" to="inrv:5Ti9jVZ8rCr" resolve="init" />
+                                  <ref role="37wK5l" to="inrv:5Ti9jVZ8rFN" resolve="init" />
                                 </node>
                               </node>
                             </node>
@@ -14966,6 +14983,21 @@
                                     <ref role="Rm8GQ" to="fnd7:1$FrpHy4ufF" resolve="RUNNING" />
                                     <ref role="1Px2BO" to="fnd7:1$FrpHy4ufC" resolve="RunStateEnum" />
                                   </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="4br3RNORXp4" role="3cqZAp">
+                              <node concept="3SKdUq" id="4br3RNORXp6" role="3SKWNk">
+                                <property role="3SKdUp" value="FIXME replace RF.setTestMode with a code in NodeWrappersTestsContributor that adds a dedicated runner that would initialize BaseTransformationTest properly" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="5XEoQWqCbM" role="3cqZAp">
+                              <node concept="2YIFZM" id="5XEoQWqC$G" role="3clFbG">
+                                <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
+                                <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
+                                <node concept="Rm8GO" id="5XEoQWqCPd" role="37wK5m">
+                                  <ref role="Rm8GQ" to="fyhk:~TestMode.IN_PROCESS" resolve="IN_PROCESS" />
+                                  <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
                                 </node>
                               </node>
                             </node>
@@ -15133,13 +15165,22 @@
                             </node>
                           </node>
                           <node concept="3clFbS" id="7rXOJyztiKj" role="2GVbov">
+                            <node concept="3clFbF" id="5XEoQWqDtQ" role="3cqZAp">
+                              <node concept="2YIFZM" id="5XEoQWqDtR" role="3clFbG">
+                                <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
+                                <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
+                                <node concept="37vLTw" id="1nB28sfaux" role="37wK5m">
+                                  <ref role="3cqZAo" node="1nB28sfan0" resolve="oldTestMode" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="Bd1VU2Zluj" role="3cqZAp">
                               <node concept="2OqwBi" id="Bd1VU2Zluk" role="3clFbG">
                                 <node concept="37vLTw" id="Bd1VU2Zlul" role="2Oq$k0">
                                   <ref role="3cqZAo" node="4YWiRa6sMsh" resolve="executor" />
                                 </node>
                                 <node concept="liA8E" id="Bd1VU2Zlum" role="2OqNvi">
-                                  <ref role="37wK5l" to="inrv:5Ti9jVZ8rCB" resolve="dispose" />
+                                  <ref role="37wK5l" to="inrv:5Ti9jVZ8rHC" resolve="dispose" />
                                 </node>
                               </node>
                             </node>
@@ -15190,7 +15231,7 @@
         <property role="TrG5h" value="executor" />
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="4br3RNONXJA" role="1tU5fm">
-          <ref role="3uigEE" to="inrv:5Ti9jVZ8rxu" resolve="AbstractTestExecutor" />
+          <ref role="3uigEE" to="inrv:5Ti9jVZ8rxu" resolve="JUnitTestExecutor" />
         </node>
       </node>
     </node>

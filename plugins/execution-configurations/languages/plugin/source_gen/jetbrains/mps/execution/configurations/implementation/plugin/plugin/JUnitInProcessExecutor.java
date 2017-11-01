@@ -12,10 +12,11 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.TestInProcessExecutor;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor;
 import java.util.concurrent.Future;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.TestMode;
+import jetbrains.mps.RuntimeFlags;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 import com.intellij.util.WaitFor;
@@ -46,9 +47,10 @@ public class JUnitInProcessExecutor implements Executor {
     if (!(checkExecutionIsPossible())) {
       return new JUnitInProcessExecutor.EmptyProcessHandler();
     }
-    final TestInProcessExecutor executor = new TestInProcessExecutor(myTestsContributor);
+    final JUnitTestExecutor executor = new JUnitTestExecutor(myTestsContributor);
     final Future<?> future = doExecute(executor);
-    // can use TestInProcessRunState instead of both process and future parameter, isDone == TERMINATED, init() == INITIALIZED -> READYTOEXECUTE 
+    // can use TestInProcessRunState instead of both process and future parameter, isDone == TERMINATED, startNotify() == INITIALIZED -> READYTOEXECUTE 
+    // Alternatively, FakeProcess.init may do INITIALIZED -> READYTOEXECUTE, and rely on default ProcessHandler.isProcessTerminated implementation instead of Future.isDone 
     final FakeProcessHandler process = new FakeProcessHandler(myFakeProcess, future) {
       @Override
       public void startNotify() {
@@ -72,10 +74,11 @@ public class JUnitInProcessExecutor implements Executor {
     return process;
   }
 
-  private Future<?> doExecute(final AbstractTestExecutor executor) {
+  private Future<?> doExecute(final JUnitTestExecutor executor) {
     return ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
+        TestMode oldTestMode = RuntimeFlags.getTestMode();
         try {
           executor.init();
           waitUnlessProcessIsReady();
@@ -87,6 +90,8 @@ public class JUnitInProcessExecutor implements Executor {
             LOG.info("Executing tests in-process");
           }
           ourTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
+          // FIXME replace RF.setTestMode with a code in NodeWrappersTestsContributor that adds a dedicated runner that would initialize BaseTransformationTest properly 
+          RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
           executor.execute();
           // regular test execution ends in RUNNING state. If we are in TERMINATING state here already, it means PH.requestTerminate triggered execution stop. 
           boolean cancelled = ourTestRunState.isTerminating();
@@ -105,6 +110,7 @@ public class JUnitInProcessExecutor implements Executor {
           }
           myDispatcher.onProcessTerminated(terminateMessage);
         } finally {
+          RuntimeFlags.setTestMode(oldTestMode);
           executor.dispose();
           ourTestRunState.set(RunStateEnum.TERMINATED);
           JUnitInProcessExecutor.this.dispose();
