@@ -19721,7 +19721,7 @@
       </node>
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="FFFFFF" />
+          <property role="3MwjfP" value="E5E5E5" />
         </node>
       </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
