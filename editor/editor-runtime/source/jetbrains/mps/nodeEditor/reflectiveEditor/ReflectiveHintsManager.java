@@ -15,18 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.stream.StreamSupport;
 
 public class ReflectiveHintsManager {
@@ -36,74 +30,10 @@ public class ReflectiveHintsManager {
   static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
   static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
 
-  static final String[] REFLECTIVENESS_HINTS = new String[]{BASE_REFLECTIVE_EDITOR_HINT,
-                                                            BASE_NO_REFLECTIVE_EDITOR_HINT,
-                                                            BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
-                                                            BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT};
-  private static String[] REFLECTIVE_EDITOR_HINTS = new String[]{BASE_REFLECTIVE_EDITOR_HINT,
-                                                                 BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT};
-  private static String[] NO_REFLECTIVE_EDITOR_HINTS = new String[]{BASE_NO_REFLECTIVE_EDITOR_HINT,
-                                                                    BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT};
   private EditorComponent myEditorComponent;
 
   public ReflectiveHintsManager(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
-  }
-
-  /* Possible reflectiveness hints for node:
-  BASE_REFLECTIVE_EDITOR_HINT
-  BASE_NO_REFLECTIVE_EDITOR_HINT
-  BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
-  BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
-  BASE_REFLECTIVE_EDITOR_HINT + BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT
-  BASE_NO_REFLECTIVE_EDITOR_HINT + BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT
-   */
-
-  private boolean hasAnyHint(@NotNull SNode node, String... hints) {
-    String[] explicitEditorHintsForNode = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
-    return explicitEditorHintsForNode != null
-           && !Collections.disjoint(Arrays.asList(explicitEditorHintsForNode),
-                                    Arrays.asList(hints));
-  }
-
-  /**
-   * Checks if the node is shown in reflective editor.
-   */
-  private boolean isReflective(@NotNull SNode node) {
-    SContainmentLink attributeLink = jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute;
-
-    if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
-        || (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)
-            && !hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT))) {
-      return true;
-    } else if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)
-               || (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT)
-                   && !hasAnyHint(node, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT))
-               || attributeLink.equals(node.getContainmentLink())) {
-      return false;
-    }
-
-    SModel nodeModel = node.getModel();
-    node = node.getParent();
-
-    while (node != null) {
-      if (hasAnyHint(node, BASE_REFLECTIVE_EDITOR_HINT)) {
-        return true;
-      }
-      if (hasAnyHint(node, BASE_NO_REFLECTIVE_EDITOR_HINT) || attributeLink.equals(node.getContainmentLink())) {
-        return false;
-      } else {
-        node = node.getParent();
-      }
-    }
-
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(myEditorComponent.getEditorContext().getRepository());
-    if (!(mpsProject instanceof MPSProject) || nodeModel == null) {
-      return false;
-    }
-    Project ideaProject = ((MPSProject) mpsProject).getProject();
-    return ReflectiveHintsForModelComponent.getInstance(ideaProject)
-                                           .shouldShowReflectiveEditor(nodeModel.getReference());
   }
 
   private String hintForNode(boolean isReflective) {
@@ -115,29 +45,22 @@ public class ReflectiveHintsManager {
   }
 
   public boolean canMakeNode(boolean isReflective, @NotNull SNode node) {
-    return isReflective != isReflective(node);
+    return isReflective != ReflectiveHintsUtil.shouldShowReflectiveEditor(myEditorComponent.findNodeCell(node).getCellContext().getHints());
   }
 
   public boolean canMakeSubtree(boolean isReflective, @NotNull SNode node) {
-    if (canMakeNode(isReflective, node)) {
-      return true;
-    }
-    String sameHintForNode = hintForNode(isReflective);
-    if (hasAnyHint(node, sameHintForNode)) {
-      // We can expand the effect of the node for the whole subtree.
-      return true;
-    }
-    String[] symmetricHints = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
     return StreamSupport.stream(SNodeUtil.getDescendants(node).spliterator(), false)
-                        .anyMatch(descendant -> hasAnyHint(descendant, symmetricHints));
+                        .anyMatch(descendant -> canMakeNode(isReflective, descendant));
   }
 
   public void makeNode(boolean isReflective, @NotNull SNode node) {
     String newHint = hintForNode(isReflective);
     String symmetricHint = hintForNode(!isReflective);
 
-    assert !hasAnyHint(node, newHint);
-    if (hasAnyHint(node, symmetricHint)) {
+    assert canMakeNode(isReflective, node);
+
+    String[] nodeExplicitHints = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
+    if (nodeExplicitHints != null && Arrays.asList(nodeExplicitHints).contains(symmetricHint)) {
       myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), symmetricHint);
     } else {
       myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), newHint);
@@ -145,11 +68,13 @@ public class ReflectiveHintsManager {
   }
 
   public void makeSubtree(boolean isReflective, @NotNull SNode node) {
-    for (SNode descendant : SNodeUtil.getDescendants(node, null, true)) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(), REFLECTIVENESS_HINTS);
+    for (SNode descendant : SNodeUtil.getDescendants(node)) {
+      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(),
+                                                                      BASE_REFLECTIVE_EDITOR_HINT,
+                                                                      BASE_NO_REFLECTIVE_EDITOR_HINT,
+                                                                      BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
+                                                                      BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
     }
-    if (canMakeNode(isReflective, node)) {
-      myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), hintForSubtree(isReflective));
-    }
+    myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), hintForSubtree(isReflective));
   }
 }

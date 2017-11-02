@@ -20,11 +20,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Stream;
 
@@ -43,17 +39,11 @@ public class ReflectiveHintsUtil {
     }
   }
 
-  public static void removeReflectiveHints(EditorCellFactory cellFactory) {
-    for (String hint : ReflectiveHintsManager.REFLECTIVENESS_HINTS) {
-      cellFactory.removeCellContextHints(hint);
-    }
-  }
-
   public static boolean shouldShowReflectiveEditor(Collection<String> hints) {
-    return hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT) ||
-           (hints.contains(BASE_REFLECTIVE_EDITOR_HINT) &&
-            !hints.contains(BASE_NO_REFLECTIVE_EDITOR_HINT) &&
-            !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
+    return hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
+           || (hints.contains(BASE_REFLECTIVE_EDITOR_HINT)
+               && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_HINT)
+               && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
   }
 
   public static Stream<String> getModelHints(EditorContext editorContext) {

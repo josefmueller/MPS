@@ -120,11 +120,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         result = createCell(node, isInspector, editor);
         assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
       }
-      //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-      result.setCellContext(getCellContext());
     } finally {
       popCellContext();
     }
+    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
+    result.setCellContext(getCellContext());
     return result;
   }
 

@@ -233,7 +233,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
-    ReflectiveHintsUtil.removeReflectiveHints(getCellFactory());
+    ReflectiveHintsUtil.propagateReflectiveHints(getCellFactory());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {
