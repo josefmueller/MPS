@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.migration.ant;
+package jetbrains.mps.ant;
 
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
 import org.junit.Test;
@@ -28,24 +28,22 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
-public class TestMigrationResult {
-  private String myTestDir;
+public class TestAntTaskResult {
+  private String myTestResult;
 
-  public TestMigrationResult(String testDir) {
-    myTestDir = testDir;
+  public TestAntTaskResult(String testResult) {
+    myTestResult = testResult;
   }
 
   @Test
-  public void testMigration() {
-    assertTrue(new File(myTestDir + File.separator + "result.txt").exists());
+  public void testResult() {
+    assertTrue(new File(myTestResult).exists());
   }
 
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (String test: System.getProperty("test_home").split(",")){
-      res.add(new Object[]{test});
-    }
+    res.add(new Object[]{System.getProperty("test.result")});
     return res;
   }
 }

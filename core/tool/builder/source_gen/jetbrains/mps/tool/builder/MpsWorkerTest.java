@@ -7,6 +7,7 @@ import jetbrains.mps.tool.common.Script;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
+import java.io.IOException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.Project;
 
@@ -23,8 +24,13 @@ public class MpsWorkerTest extends MpsWorker {
   @Override
   public void work() {
     SModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
-    assert (module != null) == myIsPresent : myModuleRef.getModuleName() + " is " + ((myIsPresent ? "not " : ""));
-
+    if (module == null ^ myIsPresent) {
+      try {
+        new File("result.txt").createNewFile();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
     dispose();
   }
 

@@ -4,6 +4,7 @@
 
   <!--this will be specified by test.xml-->
   <property name="mps_build_home" location="build/artifacts/mps"/>
+  <property name="test_classes" location="${basedir}/testbench/testclasses"/>
 
   <!--this is needed by migration task to run, see MPS-23341
       the section should be removed as soon as the issue is fixed
@@ -23,19 +24,50 @@
     <pathelement location="${mps_build_home}/lib/log4j.jar"/>
   </path>
 
+  <path id="test_classpath">
+    <fileset dir="${mps_build_home}/lib">
+      <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${build.tmp}">
+      <include name="mps.class.path.jar" />
+    </fileset>
+    <pathelement path="${jdk.home}/lib/tools.jar" />
+    <pathelement path="${test_classes}"/>
+  </path>
+
   <taskdef name="custom" classname="jetbrains.mps.build.ant.CustomMPSLoadTask" classpathref="path.mps.ant.path"/>
 
   <property name="worker.class" value="jetbrains.mps.tool.builder.MpsWorkerTest"/>
   <property name="ref.baseLanguage" value="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"/>
 
+  <target name="compileTestClasses">
+    <mkdir dir="${test_classes}"/>
+    <javac destdir="${test_classes}" fork="false" includeantruntime="false" source="1.6" target="1.6">
+      <compilerarg value="-Xlint:none"/>
+      <classpath refid="test_classpath"/>
+      <src>
+        <path location="${basedir}/testbench/tests/jetbrains/mps/ant"/>
+      </src>
+    </javac>
+  </target>
 
-  <target name="checkAll">
+  <target name="checkAll" depends="compileTestClasses">
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} false">
       <jvmargs>
         <arg value="-Xmx1200m"/>
       </jvmargs>
       <repository/>
     </custom>
+
+    <!--todo remove duplication-->
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
+      <jvmarg value="-Dtest.result=${basedir}/result.txt"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
+      <formatter type="xml"/>
+    </junit>
+    <delete file="${basedir}/result.txt"/>
+
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <jvmargs>
         <arg value="-Xmx1200m"/>
@@ -44,6 +76,16 @@
       <allmpsmodules/>
       </repository>
     </custom>
+
+    <!--todo remove duplication-->
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
+      <jvmarg value="-Dtest.result=${basedir}/result.txt"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
+      <formatter type="xml"/>
+    </junit>
+    <delete file="${basedir}/result.txt"/>
+
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <jvmargs>
         <arg value="-Xmx1200m"/>
@@ -52,6 +94,16 @@
         <module file="${basedir}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl"/>
       </repository>
     </custom>
+
+    <!--todo remove duplication-->
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
+      <jvmarg value="-Dtest.result=${basedir}/result.txt"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
+      <formatter type="xml"/>
+    </junit>
+    <delete file="${basedir}/result.txt"/>
+
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <jvmargs>
         <arg value="-Xmx1200m"/>
@@ -60,5 +112,14 @@
         <modules dir="${basedir}/languages/baseLanguage/baseLanguage/"/>
       </repository>
     </custom>
+
+    <!--todo remove duplication-->
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
+      <classpath refid="test_classpath"/>
+      <jvmarg value="-Dtest.result=${basedir}/result.txt"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
+      <formatter type="xml"/>
+    </junit>
+    <delete file="${basedir}/result.txt"/>
   </target>
 </project>
