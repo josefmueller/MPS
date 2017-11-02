@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.openapi.editor.cells.optional.WithCaret;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
@@ -213,6 +214,9 @@ public class NextPreviousTraverser {
     EditorCell editorCell = ((jetbrains.mps.nodeEditor.EditorComponent) myLastEditor).findCellWeak(1, y + 1);
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
+      if (editorCell instanceof WithCaret) {
+        ((WithCaret) editorCell).setCaretVisible(false);
+      }
     } else {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
