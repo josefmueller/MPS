@@ -51,8 +51,6 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class Regexp_TransformationMenu extends TransformationMenuBase {
@@ -99,7 +97,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       result.add(new Regexp_TransformationMenu.TMP_WrapSM_luzgqn_b1());
       result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TMP_Action_luzgqn_c1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
       result.add(new Regexp_TransformationMenu.TMP_Param_luzgqn_d1());
-      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TMP_Param_luzgqn_e1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")));
+      result.add(new Regexp_TransformationMenu.TMP_WrapSM_luzgqn_e1());
       result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TMP_Param_luzgqn_f1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp")));
       result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TMP_Param_luzgqn_g1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp")));
     }
@@ -649,25 +647,12 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
 
     }
   }
-  private class TMP_Param_luzgqn_e1 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
-
-    @NotNull
-    @Override
-    protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
-      return new Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b(parameter).createItems(context);
-    }
-
-    @Nullable
-    @Override
-    protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
-      Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getNode(), null, 0, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")).getScope();
-      return (List<SNode>) refScope.getAvailableElements(null);
-    }
+  public class TMP_WrapSM_luzgqn_e1 extends WrapSubstituteMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized transformation menu part", new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056914")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "default substitute menu for " + "MatchVariableReferenceRegexp", new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "852282000895909408")));
       try {
         return super.createItems(context);
       } finally {
@@ -675,75 +660,36 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
     }
 
-    private class TMP_Action_luzgqn_a4b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-      private final SNode myParameterObject;
-      public TMP_Action_luzgqn_a4b(SNode parameterObject) {
-        myParameterObject = parameterObject;
-      }
-      @Nullable
-      protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b.Item item = new Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b.Item(context);
-        String description;
-        try {
-          description = "single item: " + item.getLabelText("");
-        } catch (Throwable t) {
-          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
-          return null;
-        }
-        context.getEditorMenuTrace().pushTraceInfo();
-        try {
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056937")));
-          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
-        } finally {
-          context.getEditorMenuTrace().popTraceInfo();
-        }
-        return item;
-      }
+    @Nullable
+    @Override
+    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
+      final EditorContext editorContext = _context.getEditorContext();
+      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(_context);
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor);
+    }
+    private SAbstractConcept getConceptToFindMenuFor(TransformationMenuContext _context) {
+      return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
+    }
 
-      private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
-        private final TransformationMenuContext _context;
-        private EditorMenuTraceInfo myEditorMenuTraceInfo;
-        private Item(TransformationMenuContext context) {
-          _context = context;
-        }
-        private void setTraceInfo(EditorMenuTraceInfo info) {
-          myEditorMenuTraceInfo = info;
-        }
-        @Nullable
-        @Override
-        public String getLabelText(String pattern) {
-          return "\\(" + SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ")";
-        }
 
+    @Override
+    protected TransformationMenuItem createTransformationItem(final SNode targetNode, final SubstituteMenuItem item, final TransformationMenuContext _context) {
+      final SubstituteItemProxy wrappedItem = new SubstituteItemProxy(item);
+      return new SubstituteMenuItemAsActionItem(item) {
         @Override
         public void execute(@NotNull String pattern) {
+          SNode createdNode = item.createNode(pattern);
           SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174bc30e7L, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp")), null);
-          SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")), null);
-          SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, 0x1118e0a5335L, "match"), myParameterObject);
           SNodeOperations.replaceWithAnother(_context.getNode(), seq);
           SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c59241L, "left"), _context.getNode());
-          SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c5a26fL, "right"), ref);
-          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), ref, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
-        }
-
-
-        @Nullable
-        @Override
-        public SAbstractConcept getOutputConcept() {
-          return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
+          SLinkOperations.setTarget(seq, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, 0x11174c5a26fL, "right"), createdNode);
+          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
         }
         @Override
         public String getShortDescriptionText(@NotNull String pattern) {
           return "";
         }
-
-
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myEditorMenuTraceInfo;
-        }
-      }
-
+      };
     }
   }
   private class TMP_Param_luzgqn_f1 extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
