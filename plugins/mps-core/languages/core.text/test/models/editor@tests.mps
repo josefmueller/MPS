@@ -2386,5 +2386,121 @@
       </node>
     </node>
   </node>
+  <node concept="LiM7Y" id="2sI5KT7rq2p">
+    <property role="TrG5h" value="SelectWordUp" />
+    <property role="3GE5qa" value="select" />
+    <node concept="30quMj" id="2sI5KT7rq2q" role="LiRBU">
+      <node concept="3DQ70j" id="2sI5KT7rq2r" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="1Pa9Pv" id="2sI5KT7rq2s" role="3DQ709">
+          <node concept="1PaTwC" id="2sI5KT7rq2t" role="1PaQFQ">
+            <node concept="3oM_SD" id="2sI5KT7rq2u" role="1PaTwD">
+              <property role="3oM_SC" value="word1" />
+              <node concept="LIFWc" id="2sI5KT7rq3c" role="lGtFl">
+                <property role="LIFWa" value="3" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="3" />
+                <property role="p6zMs" value="3" />
+                <property role="LIFWd" value="property_value" />
+              </node>
+            </node>
+            <node concept="3oM_SD" id="2sI5KT7rq2x" role="1PaTwD">
+              <property role="3oM_SC" value="word2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2sI5KT7rq2y" role="LjaKd">
+      <node concept="2HxZob" id="2sI5KT7rq2z" role="3cqZAp">
+        <node concept="1iFQzN" id="2sI5KT7rq2$" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+    </node>
+    <node concept="30quMj" id="2sI5KT7rq2W" role="LiZbd">
+      <node concept="3DQ70j" id="2sI5KT7rq2X" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="1Pa9Pv" id="2sI5KT7rq2Y" role="3DQ709">
+          <node concept="1PaTwC" id="2sI5KT7rq2Z" role="1PaQFQ">
+            <node concept="3oM_SD" id="2sI5KT7rq30" role="1PaTwD">
+              <property role="3oM_SC" value="word1" />
+              <node concept="LIFWc" id="2sI5KT7rq38" role="lGtFl">
+                <property role="LIFWa" value="3" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="5" />
+                <property role="LIFWd" value="property_value" />
+              </node>
+            </node>
+            <node concept="3oM_SD" id="2sI5KT7rq31" role="1PaTwD">
+              <property role="3oM_SC" value="word2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2sI5KT7rsU8">
+    <property role="TrG5h" value="SelectWordAndLine" />
+    <property role="3GE5qa" value="select" />
+    <node concept="30quMj" id="2sI5KT7rsU9" role="LiRBU">
+      <node concept="3DQ70j" id="2sI5KT7rsUa" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="1Pa9Pv" id="2sI5KT7rsUb" role="3DQ709">
+          <node concept="1PaTwC" id="2sI5KT7rsUc" role="1PaQFQ">
+            <node concept="3oM_SD" id="2sI5KT7rsUd" role="1PaTwD">
+              <property role="3oM_SC" value="word1" />
+              <node concept="LIFWc" id="2sI5KT7rsUq" role="lGtFl">
+                <property role="LIFWa" value="2" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="2" />
+                <property role="p6zMs" value="2" />
+                <property role="LIFWd" value="property_value" />
+              </node>
+            </node>
+            <node concept="3oM_SD" id="2sI5KT7rsUf" role="1PaTwD">
+              <property role="3oM_SC" value="word2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2sI5KT7rsUg" role="LjaKd">
+      <node concept="2HxZob" id="2sI5KT7rsUh" role="3cqZAp">
+        <node concept="1iFQzN" id="2sI5KT7rsUi" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="2sI5KT7rsUu" role="3cqZAp">
+        <node concept="1iFQzN" id="2sI5KT7rsUv" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Po2" resolve="SelectUp" />
+        </node>
+      </node>
+    </node>
+    <node concept="30quMj" id="2sI5KT7rsUj" role="LiZbd">
+      <node concept="3DQ70j" id="2sI5KT7rsUk" role="lGtFl">
+        <property role="3V$3am" value="multipleChildren" />
+        <property role="3V$3ak" value="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/6866182640452532264/6866182640452532268" />
+        <node concept="1Pa9Pv" id="2sI5KT7rsUl" role="3DQ709">
+          <node concept="1PaTwC" id="2sI5KT7rsUm" role="1PaQFQ">
+            <node concept="3oM_SD" id="2sI5KT7rsUn" role="1PaTwD">
+              <property role="3oM_SC" value="word1" />
+            </node>
+            <node concept="3oM_SD" id="2sI5KT7rsUp" role="1PaTwD">
+              <property role="3oM_SC" value="word2" />
+            </node>
+            <node concept="LIFWc" id="2sI5KT7rsUs" role="lGtFl">
+              <property role="LIFWa" value="0" />
+              <property role="LIFWd" value="Collection_78ent8_a" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

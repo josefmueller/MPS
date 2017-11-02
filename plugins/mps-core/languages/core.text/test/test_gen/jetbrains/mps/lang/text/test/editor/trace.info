@@ -3,6 +3,39 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/2823219366503227545">
+    <file name="SelectWordUp_Test.java">
+      <node id="2823219366503227545" at="13,52,14,113" concept="0" />
+      <node id="2823219366503227545" at="14,113,15,99" concept="0" />
+      <node id="2823219366503227545" at="21,51,22,72" concept="0" />
+      <node id="2823219366503227555" at="22,72,23,71" concept="0" />
+      <node id="2823219366503227545" at="12,0,17,0" concept="1" trace="test_SelectWordUp#()V" />
+      <node id="2823219366503227545" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2823219366503227545" at="13,52,15,99" />
+      <scope id="2823219366503227545" at="21,51,23,71" />
+      <scope id="2823219366503227545" at="12,0,17,0" />
+      <scope id="2823219366503227545" at="20,0,25,0" />
+      <unit id="2823219366503227545" at="18,0,26,0" name="jetbrains.mps.lang.text.test.editor.SelectWordUp_Test$TestBody" />
+      <unit id="2823219366503227545" at="10,0,27,0" name="jetbrains.mps.lang.text.test.editor.SelectWordUp_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/2823219366503239304">
+    <file name="SelectWordAndLine_Test.java">
+      <node id="2823219366503239304" at="13,57,14,113" concept="0" />
+      <node id="2823219366503239304" at="14,113,15,104" concept="0" />
+      <node id="2823219366503239304" at="21,51,22,72" concept="0" />
+      <node id="2823219366503239313" at="22,72,23,71" concept="0" />
+      <node id="2823219366503239326" at="23,71,24,71" concept="0" />
+      <node id="2823219366503239304" at="12,0,17,0" concept="1" trace="test_SelectWordAndLine#()V" />
+      <node id="2823219366503239304" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2823219366503239304" at="13,57,15,104" />
+      <scope id="2823219366503239304" at="21,51,24,71" />
+      <scope id="2823219366503239304" at="12,0,17,0" />
+      <scope id="2823219366503239304" at="20,0,26,0" />
+      <unit id="2823219366503239304" at="18,0,27,0" name="jetbrains.mps.lang.text.test.editor.SelectWordAndLine_Test$TestBody" />
+      <unit id="2823219366503239304" at="10,0,28,0" name="jetbrains.mps.lang.text.test.editor.SelectWordAndLine_Test" />
+    </file>
+  </root>
   <root nodeRef="r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)/474718489010535049">
     <file name="SplitRichWord_Test.java">
       <node id="474718489010535049" at="13,53,14,113" concept="0" />
