@@ -1443,11 +1443,11 @@
     <node concept="yHkDC" id="5gyVhZ17Jlr" role="yHkDi">
       <property role="TrG5h" value="myRunParameters" />
       <node concept="yHkIc" id="6oDdG_XwVAT" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
       <node concept="2ShNRf" id="6oDdG_XxkYo" role="33vP2m">
         <node concept="yHkDB" id="6oDdG_XxlHJ" role="2ShVmc">
-          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
           <node concept="2OqwBi" id="6oDdG_Xxohg" role="yHkDD">
             <node concept="2WthIp" id="6oDdG_Xxmtd" role="2Oq$k0" />
             <node concept="3a8Xsn" id="6oDdG_Xxq9b" role="2OqNvi" />
@@ -2337,11 +2337,11 @@
     <node concept="yHkDC" id="6woObKLCiTr" role="yHkDi">
       <property role="TrG5h" value="myJavaRunParameters" />
       <node concept="yHkIc" id="6woObKLCnqF" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
       <node concept="2ShNRf" id="6woObKLCiTt" role="33vP2m">
         <node concept="yHkDB" id="6woObKLCiTu" role="2ShVmc">
-          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
           <node concept="2OqwBi" id="6woObKLCiTv" role="yHkDD">
             <node concept="2WthIp" id="6woObKLCiTw" role="2Oq$k0" />
             <node concept="3a8Xsn" id="6woObKLCiTx" role="2OqNvi" />
@@ -13151,7 +13151,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1b7CZFPP8sw" role="1B3o_S" />
       <node concept="yHkHH" id="6oDdG_XwUV2" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
     </node>
     <node concept="312cEg" id="1b7CZFPPk8Z" role="jymVt">
@@ -13259,7 +13259,7 @@
       <node concept="37vLTG" id="1b7CZFPP8gS" role="3clF46">
         <property role="TrG5h" value="javaRunParameters" />
         <node concept="yHkHH" id="6oDdG_XwV2p" role="1tU5fm">
-          <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
         </node>
       </node>
       <node concept="37vLTG" id="1b7CZFPPjpY" role="3clF46">
@@ -13284,11 +13284,11 @@
             <property role="TrG5h" value="dirCachesPath" />
             <node concept="17QB3L" id="6lmAJjAKrqf" role="1tU5fm" />
             <node concept="2OqwBi" id="4eCVXiDXxfZ" role="33vP2m">
-              <node concept="2XshWL" id="5dbgjIncvpa" role="2OqNvi">
-                <ref role="2WH_rO" to="tty3:5dbgjInbZ3$" resolve="getCachesLocation" />
-              </node>
               <node concept="37vLTw" id="4eCVXiDXxbf" role="2Oq$k0">
                 <ref role="3cqZAo" node="78pvOus471K" resolve="myJUnitSettings" />
+              </node>
+              <node concept="2XshWL" id="5dbgjIncvpa" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:5dbgjInbZ3$" resolve="getCachesLocation" />
               </node>
             </node>
           </node>
@@ -13435,7 +13435,7 @@
           <node concept="3cpWsn" id="1b7CZFPP7I2" role="3cpWs9">
             <property role="TrG5h" value="javaRunParams" />
             <node concept="yHkHH" id="6oDdG_XwV9K" role="1tU5fm">
-              <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+              <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
             </node>
             <node concept="37vLTw" id="1b7CZFPP9ey" role="33vP2m">
               <ref role="3cqZAo" node="1b7CZFPP8HZ" resolve="myJavaRunParameters" />

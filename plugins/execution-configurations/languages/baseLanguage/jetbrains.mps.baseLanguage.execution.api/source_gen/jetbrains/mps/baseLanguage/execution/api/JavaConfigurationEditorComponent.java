@@ -6,13 +6,12 @@ import com.intellij.ui.components.JBPanel;
 import jetbrains.mps.execution.lib.ui.RawLineEditorComponent;
 import jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog;
 import com.intellij.ui.components.JBCheckBox;
-import org.jetbrains.annotations.Nullable;
-import com.intellij.openapi.project.Project;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.intellij.ui.components.JBLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
+import org.jetbrains.annotations.Nullable;
 
 public class JavaConfigurationEditorComponent extends JBPanel {
   private final RawLineEditorComponent myVmParameters;
@@ -20,22 +19,10 @@ public class JavaConfigurationEditorComponent extends JBPanel {
   private final FieldWithPathChooseDialog myWorkingDirectory;
   private final JBCheckBox myUseAlternativeJre;
   private final FieldWithPathChooseDialog myJreHome;
-  @Nullable
-  private final Project myProject;
 
-  /**
-   * 
-   * @deprecated pass the project as well
-   */
-  @Deprecated
   public JavaConfigurationEditorComponent() {
-    this(null);
-  }
-
-  public JavaConfigurationEditorComponent(@Nullable Project project) {
     super(new GridBagLayout());
 
-    myProject = project;
     myVmParameters = new RawLineEditorComponent();
     myVmParameters.setDialogCaption("VM parameters");
     myProgramParameters = new RawLineEditorComponent();
@@ -69,7 +56,7 @@ public class JavaConfigurationEditorComponent extends JBPanel {
     myProgramParameters.setText(javaOptions.programParameters());
     myVmParameters.setText(javaOptions.vmOptions());
     myJreHome.setText(javaOptions.jrePath());
-    myWorkingDirectory.setText((javaOptions.workingDirectory() != null ? javaOptions.workingDirectory() : myProject.getBasePath()));
+    myWorkingDirectory.setText(javaOptions.workingDirectory());
     myUseAlternativeJre.setSelected((boolean) javaOptions.useAlternativeJre());
     myJreHome.setEditable((boolean) javaOptions.useAlternativeJre());
   }
