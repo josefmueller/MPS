@@ -27,13 +27,9 @@
     <pathelement location="${mps_build_home}/lib/log4j.jar"/>
   </path>
 
-  <!--todo remove duplication with mpsAntTaskTest-->
   <path id="test_classpath">
     <fileset dir="${mps_build_home}/lib">
       <include name="**/*.jar" />
-    </fileset>
-    <fileset dir="${build.tmp}">
-      <include name="mps.class.path.jar" />
     </fileset>
     <pathelement path="${jdk.home}/lib/tools.jar" />
     <pathelement path="${test_classes}"/>
@@ -55,32 +51,24 @@
   <target name="checkAll" depends="compileTestClasses">
     <migrate project="${project.simpleMigration}">
       <macro name="mps_home" path="${mps_build_home}"/>
-      <jvmargs>
-        <arg value="-Xmx1200m" />
-      </jvmargs>
     </migrate>
 
-    <!--todo remove duplication with mpsAntTaskTest-->
     <junit fork="true" dir="${mps_build_home}" showoutput="true">
       <classpath refid="test_classpath"/>
-      <jvmarg value="-Dtest.result=${project.consMigrations}/result.txt"/>
-      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
-      <formatter type="xml"/>
+      <jvmarg value="-Dtest.output.dir=${project.simpleMigration}"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult" methods="testSimpleMigration"/>
+      <formatter type="xml" extension=".testSimpleMigration.xml"/>
     </junit>
 
     <migrate project="${project.consMigrations}">
       <macro name="mps_home" path="${mps_build_home}"/>
-      <jvmargs>
-        <arg value="-Xmx1200m" />
-      </jvmargs>
     </migrate>
 
-    <!--todo remove duplication-->
     <junit fork="true" dir="${mps_build_home}" showoutput="true">
       <classpath refid="test_classpath"/>
-      <jvmarg value="-Dtest.result=${project.simpleMigration}/result.txt"/>
-      <test name="jetbrains.mps.ant.TestAntTaskResult"/>
-      <formatter type="xml"/>
+      <jvmarg value="-Dtest.output.dir=${project.consMigrations}"/>
+      <test name="jetbrains.mps.ant.TestAntTaskResult" methods="testConsequentMigrations"/>
+      <formatter type="xml" extension=".testConsequentMigrations.xml"/>
     </junit>
   </target>
 </project>

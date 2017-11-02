@@ -15,35 +15,58 @@
  */
 package jetbrains.mps.ant;
 
-import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-@RunWith(value = TeamCityParameterizedRunner.class)
+/**
+ * The aim of this class is to write tests for ant tasks.
+ * The task under testing should create a file named "result.txt" in the working directory in case it succeeds.
+ * From the view of ant, the task is a regular task, after which a junit test (this class) is executed, which
+ * actually only checks an existance of "result.txt" under directory specified in "test.output.dir" system
+ * property.
+ * The class has many test methods, one for each actual test. This is needed to see a meaningful test name in the
+ * log. Actually, all test methods do the same thing - invoke testResult(). If you need to use this class to test
+ * a new task or task aspect, add a new @Test method
+ */
 public class TestAntTaskResult {
-  private String myTestResult;
-
-  public TestAntTaskResult(String testResult) {
-    myTestResult = testResult;
+  @Test
+  public void testRepository_Empty() {
+    testResult();
   }
 
   @Test
-  public void testResult() {
-    assertTrue(new File(myTestResult).exists());
+  public void testRepository_Allmpsmodules() {
+    testResult();
   }
 
-  @Parameterized.Parameters
-  public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
-    ArrayList<Object[]> res = new ArrayList<Object[]>();
-    res.add(new Object[]{System.getProperty("test.result")});
-    return res;
+  @Test
+  public void testRepository_Module() {
+    testResult();
+  }
+
+  @Test
+  public void testRepository_Modules() {
+    testResult();
+  }
+
+  @Test
+  public void testSimpleMigration() {
+    testResult();
+  }
+
+  @Test
+  public void testConsequentMigrations() {
+    testResult();
+  }
+
+  protected void testResult() {
+    String fname = System.getProperty("test.output.dir") + File.separator + "result.txt";
+    File file = new File(fname);
+    boolean exists = file.exists();
+    file.delete();
+    assertTrue(exists);
   }
 }
