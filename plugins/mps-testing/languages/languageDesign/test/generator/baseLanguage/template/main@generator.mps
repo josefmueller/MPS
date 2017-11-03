@@ -92,6 +92,7 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -1343,6 +1344,57 @@
           </node>
           <node concept="3Tm1VV" id="1BrKW0dgRsr" role="1B3o_S" />
           <node concept="3uibUv" id="1BrKW0dgRss" role="1zkMxy">
+            <ref role="3uigEE" to="tp6m:hPMdj4e" resolve="BaseEditorTestBody" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="H9$uslPoe8" role="3acgRq">
+      <ref role="30HIoZ" to="tp5g:H9$uslP7vo" resolve="IsActionApplicableExpression" />
+      <node concept="1Koe21" id="H9$uslPoe9" role="1lVwrX">
+        <node concept="312cEu" id="H9$uslPoea" role="1Koe22">
+          <property role="2bfB8j" value="true" />
+          <property role="TrG5h" value="A" />
+          <property role="1sVAO0" value="true" />
+          <node concept="3clFb_" id="H9$uslPoeb" role="jymVt">
+            <property role="1EzhhJ" value="false" />
+            <property role="TrG5h" value="foo" />
+            <property role="od$2w" value="false" />
+            <property role="DiZV1" value="false" />
+            <node concept="3clFbS" id="H9$uslPoec" role="3clF47">
+              <node concept="3cpWs6" id="5IYRzU$F$ZP" role="3cqZAp">
+                <node concept="1rXfSq" id="5IYRzU$FEti" role="3cqZAk">
+                  <ref role="37wK5l" to="tp6m:H9$uslKhHl" resolve="isActionApplicable" />
+                  <node concept="10Nm6u" id="5IYRzU$FEtj" role="37wK5m">
+                    <node concept="29HgVG" id="5IYRzU$FEtk" role="lGtFl">
+                      <node concept="3NFfHV" id="5IYRzU$FEtl" role="3NFExx">
+                        <node concept="3clFbS" id="5IYRzU$FEtm" role="2VODD2">
+                          <node concept="3clFbF" id="5IYRzU$FEtn" role="3cqZAp">
+                            <node concept="2OqwBi" id="5IYRzU$FEto" role="3clFbG">
+                              <node concept="30H73N" id="5IYRzU$FEtp" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="5IYRzU$FEtq" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tp5g:H9$uslP7vq" resolve="actionReference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="raruj" id="5IYRzU$FEtr" role="lGtFl" />
+                </node>
+              </node>
+            </node>
+            <node concept="10P_77" id="H9$uslPtKV" role="3clF45" />
+            <node concept="3uibUv" id="H9$uslPoep" role="Sfmx6">
+              <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+            </node>
+            <node concept="3uibUv" id="H9$uslPoeq" role="Sfmx6">
+              <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="H9$uslPoer" role="1B3o_S" />
+          <node concept="3uibUv" id="H9$uslPoes" role="1zkMxy">
             <ref role="3uigEE" to="tp6m:hPMdj4e" resolve="BaseEditorTestBody" />
           </node>
         </node>

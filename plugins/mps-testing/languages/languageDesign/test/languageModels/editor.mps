@@ -3873,5 +3873,20 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="H9$uslP7vu">
+    <property role="3GE5qa" value="expression" />
+    <ref role="1XX52x" to="tp5g:H9$uslP7vo" resolve="IsActionApplicableExpression" />
+    <node concept="3EZMnI" id="H9$uslP7vw" role="2wV5jI">
+      <node concept="PMmxH" id="H9$uslP7vx" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" node="hQUhkJ8" resolve="EditorOperation" />
+      </node>
+      <node concept="3F1sOY" id="H9$uslP7vy" role="3EZMnx">
+        <ref role="1NtTu8" to="tp5g:H9$uslP7vq" resolve="actionReference" />
+      </node>
+      <node concept="2iRfu4" id="H9$uslP7vz" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

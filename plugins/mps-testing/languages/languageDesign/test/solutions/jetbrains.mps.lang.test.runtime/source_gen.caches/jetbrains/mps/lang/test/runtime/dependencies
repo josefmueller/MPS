@@ -12,6 +12,7 @@
     <classNode dependClassName="com.intellij.openapi.command.undo.UndoManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
     <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -29,6 +30,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSFileNodeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -42,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionById" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MatchIntentionByIdAndParameter" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime._Adapters" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeEditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
@@ -61,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
     <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -481,6 +485,11 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime._Adapters" file="_Adapters.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
   </dependency>
 </dependenciesRoot>
 
