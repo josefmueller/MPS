@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.behavior.SuperExpression__BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 
 public final class ConceptMethodSuperCall {
   private final SNode myCall;
@@ -56,8 +55,8 @@ public final class ConceptMethodSuperCall {
     } else {
       SNode specifiedSuperConcept;
       specifiedSuperConcept = SuperExpression__BehaviorDescriptor.getSpecifiedSuperConcept_id2k7p7sTvKkb.invoke((SNodeOperations.cast(leftExpression, MetaAdapterFactory.getInterfaceConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x25076477397f04e3L, "jetbrains.mps.lang.behavior.structure.SuperExpression"))));
-      if (specifiedSuperConcept != null && !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(methodDecl))) {
-        // if there is no implementation we ignore the specified concept 
+      if (specifiedSuperConcept != null) {
+        // if there is no implementation in the provided concept we will fail on runtime 
         // fixme quickfix for this case 
         return new ConceptMethodSuperCall.InvokationTarget(specifiedSuperConcept, methodDecl, ConceptMethodSuperCall.InvokationType.INVOKE);
       } else {
