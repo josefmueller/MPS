@@ -6,6 +6,8 @@ import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.RuntimeFlags;
 import java.util.List;
+
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -612,7 +614,10 @@ public class SNodeOperations {
     }
     return (SNode) concept.getDeclarationNode();
   }
-  public static SAbstractConcept asSConcept(SNode node) {
+
+  @Contract(value = "null->null")
+  @Nullable
+  public static SAbstractConcept asSConcept(@Nullable SNode node) {
     if (node == null) {
       return null;
     }
