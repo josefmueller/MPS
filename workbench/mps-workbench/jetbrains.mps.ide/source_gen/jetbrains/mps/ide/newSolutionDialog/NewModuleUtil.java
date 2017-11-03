@@ -80,13 +80,25 @@ public class NewModuleUtil {
     SLanguage l = MetaAdapterFactory.getLanguage(language.getModuleReference());
     sandboxModel.addLanguage(l);
     sandboxModel.setLanguageImportVersion(l, language.getLanguageVersion());
+    // Here, we do not "know" that our language extends lang.core, so we'll need to update  
+    // language versions after compilation. Since it;s a usability problem, an ad-hoc fix is provided  
+    // in this exact case, see MPS-26592. This line may be removed when there's no "compilation on startup"  
+    // for user modules 
+    NewModuleUtil.fixCoreLanguage(sandboxModel);
     ((EditableSModel) sandboxModel).save();
 
     VersionFixer fixer = new VersionFixer(project.getRepository(), sandbox);
     fixer.addJustCreatedLanguageVersion(l, language.getLanguageVersion());
     fixer.updateImportVersions();
+
     sandbox.save();
     return sandbox;
+  }
+
+  private static void fixCoreLanguage(SModelInternal sandboxModel) {
+    SLanguage cl = MetaAdapterFactory.getLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    sandboxModel.addLanguage(cl);
+    sandboxModel.setLanguageImportVersion(cl, cl.getLanguageVersion());
   }
 
   /**
