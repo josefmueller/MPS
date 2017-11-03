@@ -19,6 +19,7 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.GenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ModifiedMarker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ReflectiveEditorForModelMarker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -27,6 +28,7 @@ import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -43,6 +45,7 @@ public class ProjectPaneTreeHighlighter {
   private final GenStatusUpdater myGenStatusVisitor;
   private final ErrorChecker myErrorVisitor;
   private final ModifiedMarker myModifiedMarker;
+  private final ReflectiveEditorForModelMarker myReflectiveEditorForModelMarker;
   // receives commands from node status analyzers (TreeUpdateVisitor instances, above) and re-dispatch tree update, batched, in EDT+Read
   private final TreeNodeUpdater myUpdater;
   // threads we'd like to use to analyze status of tree nodes
@@ -63,12 +66,16 @@ public class ProjectPaneTreeHighlighter {
     myGenStatusVisitor = new GenStatusUpdater(mpsProject);
     myErrorVisitor = new ErrorChecker(mpsProject);
     myModifiedMarker = new ModifiedMarker();
+    myReflectiveEditorForModelMarker = new ReflectiveEditorForModelMarker(
+        mpsProject.getComponent(ReflectiveHintsForModelComponent.class)
+    );
   }
 
   public void init() {
     myGenStatusVisitor.setUpdater(myUpdater);
     myErrorVisitor.setUpdater(myUpdater);
     myModifiedMarker.setUpdater(myUpdater);
+    myReflectiveEditorForModelMarker.setUpdater(myUpdater);
 
     myTree.addTreeNodeListener(myNodeListener);
   }
@@ -87,6 +94,7 @@ public class ProjectPaneTreeHighlighter {
     myGenStatusVisitor.setUpdater(null);
     myErrorVisitor.setUpdater(null);
     myModifiedMarker.setUpdater(null);
+    myReflectiveEditorForModelMarker.setUpdater(null);
   }
 
   private SModelNodeListeners getModelListeners() {
@@ -146,6 +154,7 @@ public class ProjectPaneTreeHighlighter {
       schedule(tn, myErrorVisitor);
       schedule(tn, myModifiedMarker);
       schedule(tn, myGenStatusVisitor);
+      schedule(tn, myReflectiveEditorForModelMarker);
     }
   }
 

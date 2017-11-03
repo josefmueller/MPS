@@ -16,22 +16,42 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.util.EqualUtil;
+
+import java.util.Arrays;
 
 public class AdditionalTextNodeUpdate extends NodeUpdate {
+  private static final String SEPARATOR = ", ";
+
   private final String myText;
 
   public AdditionalTextNodeUpdate(String addText) {
+    if (addText.contains(",")) {
+      throw new IllegalArgumentException("additional text cannot contain commas");
+    }
     myText = addText;
   }
 
   @Override
   public boolean needed(MPSTreeNode node) {
-    return !EqualUtil.equals(node.getAdditionalText(), myText);
+    String additionalText = node.getAdditionalText();
+    if (additionalText == null) {
+      return true;
+    }
+    String[] addTexts = additionalText.split(SEPARATOR);
+    return !Arrays.asList(addTexts).contains(myText);
   }
 
   @Override
   public void update(MPSTreeNode node) {
-    node.setAdditionalText(myText);
+    if (!needed(node)) {
+      return;
+    }
+
+    String additionalText = node.getAdditionalText();
+    if (additionalText == null) {
+      node.setAdditionalText(myText);
+    } else {
+      node.setAdditionalText(additionalText + SEPARATOR + myText);
+    }
   }
 }
