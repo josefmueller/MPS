@@ -43,6 +43,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
         return new CheckingTestsUtil(statistic).applyChecker(models, checkers);
       }
     });
+
     ourStats.report("Errors", statistic.getNumErrors());
     ourStats.report("Warnings", statistic.getNumWarnings());
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());

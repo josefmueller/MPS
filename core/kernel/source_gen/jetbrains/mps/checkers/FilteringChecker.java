@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-public class FilteringChecker<O, I extends ReportItem> implements IChecker<O, I> {
-  private IChecker<O, ? extends I> myOrigin;
+public class FilteringChecker<O, I extends ReportItem> implements IAbstractChecker<O, I> {
+  private IAbstractChecker<O, ? extends I> myOrigin;
   private _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> myAccept;
-  public FilteringChecker(IChecker<O, ? extends I> origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> accept) {
+  public FilteringChecker(IAbstractChecker<O, ? extends I> origin, _FunctionTypes._return_P2_E0<? extends Boolean, ? super I, ? super SRepository> accept) {
     myOrigin = origin;
     myAccept = accept;
   }
@@ -25,9 +25,5 @@ public class FilteringChecker<O, I extends ReportItem> implements IChecker<O, I>
       }
     };
     myOrigin.check(toCheck, repository, consumer, monitor);
-  }
-  @Override
-  public String getCategory() {
-    return myOrigin.getCategory();
   }
 }

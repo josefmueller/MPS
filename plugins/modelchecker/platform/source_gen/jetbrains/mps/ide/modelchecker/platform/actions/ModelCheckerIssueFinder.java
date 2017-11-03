@@ -12,6 +12,9 @@ import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.ide.modelchecker.platform.runtime.ModelCheckerUtil;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.checkers.IAbstractChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -21,12 +24,6 @@ import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.errors.MessageStatus;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -48,17 +45,21 @@ public class ModelCheckerIssueFinder extends BaseFinder {
   }
   @Override
   public SearchResults<IssueKindReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
-    ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
-    return ModelChecker.find(myRepository, monitor, itemsToCheck, getSpecificCheckers());
+    ModelCheckerUtil.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
+    final SearchResults<IssueKindReportItem> result = new SearchResults<IssueKindReportItem>();
+    Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
+      public void consume(IssueKindReportItem error) {
+        result.getSearchResults().add(ModelCheckerIssueFinder.getSearchResultForReportItem(error, myRepository));
+      }
+    };
+    IAbstractChecker<ModelCheckerUtil.ItemsToCheck, IssueKindReportItem> checker = ModelCheckerUtil.find(getSpecificCheckers(), ListSequence.fromListAndArray(new ArrayList<IChecker<SModule, ? extends IssueKindReportItem>>(), new ModuleChecker()), ModelCheckerSettings.getInstance().isCheckStubs());
+    checker.check(itemsToCheck, myRepository, errorCollector, monitor);
+    return result;
   }
-  public static class ItemsToCheck {
-    public List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    public List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
-  }
-  private ModelCheckerIssueFinder.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
+  private ModelCheckerUtil.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     final SearchScope scope = searchQuery.getScope();
-    ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = new ModelCheckerIssueFinder.ItemsToCheck();
+    ModelCheckerUtil.ItemsToCheck itemsToCheck = new ModelCheckerUtil.ItemsToCheck();
     // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder. 
     //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for 
     //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()! 
@@ -75,7 +76,6 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       SModule resolved = scope.resolve(mr);
       if (resolved != null) {
         ListSequence.fromList(itemsToCheck.modules).addElement(resolved);
-        ListSequence.fromList(itemsToCheck.models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(resolved)));
       }
     } else if (objectHolder.getObject() instanceof SModelReference) {
       SModelReference mr = (SModelReference) objectHolder.getObject();
@@ -99,22 +99,6 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       default:
         return SEVERITY_ERROR;
     }
-  }
-  /**
-   * drops only issues in tests
-   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
-   */
-  public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
-    if (container == null) {
-      return true;
-    }
-    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
-        return false;
-      }
-    }
-    return true;
   }
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
   public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");

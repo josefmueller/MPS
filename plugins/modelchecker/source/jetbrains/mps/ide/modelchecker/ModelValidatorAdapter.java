@@ -22,7 +22,6 @@ import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.ModelValidator;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerUtils;

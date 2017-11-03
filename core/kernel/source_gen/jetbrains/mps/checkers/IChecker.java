@@ -5,22 +5,17 @@ package jetbrains.mps.checkers;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.errors.item.NodeReportItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 
 /**
@@ -35,41 +30,6 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
   }
 
   abstract class AbstractModuleChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModule, I> {
-    private static List<SModel> getModels(SModule module, boolean checkStubs) {
-      List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
-      for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
-        if (SModelStereotype.isUserModel(modelDescriptor)) {
-          ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
-        }
-        if (checkStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
-          ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
-        }
-      }
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
-          ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModels(generator, checkStubs)));
-        }
-      }
-      return modelDescrpitors;
-    }
-    public static <I extends NodeReportItem> IChecker.AbstractModuleChecker<I> wrapModelChecker(IChecker.AbstractModelChecker<I> modelChecker, final boolean checkStubs) {
-      // todo: handle progress correctly 
-      final IChecker<SModule, I> result = new IteratingChecker<SModule, SModel, I>(modelChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SModel>, SModule>() {
-        public IteratingChecker.CollectionIteratorWithProgress<SModel> invoke(SModule module) {
-          return new IteratingChecker.CollectionIteratorWithProgress<SModel>(getModels(module, checkStubs));
-        }
-      });
-      return new IChecker.AbstractModuleChecker<I>() {
-        public String getCategory() {
-          return result.getCategory();
-        }
-        @Override
-        public void check(SModule toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-          result.check(toCheck, repository, errorCollector, monitor);
-        }
-      };
-    }
   }
 
   abstract class AbstractModelChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModel, I> {
@@ -93,7 +53,7 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
 
   abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
     public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapNodeChecker(final IChecker.AbstractNodeChecker<I> nodeChecker) {
-      IteratingChecker<SNode, SNode, I> skippingSubtreeChecker = new IteratingChecker<SNode, SNode, I>(nodeChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
+      final IteratingChecker<SNode, SNode, I> skippingChecker = new IteratingChecker<SNode, SNode, I>(nodeChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
           List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());
           DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(root);
@@ -103,23 +63,21 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
               fullCheckIterator.skipChildren();
               continue;
             }
+            if (nodeChecker.skipCondition().skipSingleNode(node)) {
+              continue;
+            }
             ListSequence.fromList(toCheck).addElement(node);
           }
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(toCheck);
         }
       });
-      final IChecker<SNode, I> filtering = new FilteringChecker<SNode, I>(skippingSubtreeChecker, new _FunctionTypes._return_P2_E0<Boolean, NodeReportItem, SRepository>() {
-        public Boolean invoke(NodeReportItem reportItem, SRepository repository) {
-          return !(nodeChecker.skipCondition().skipSingleNode(reportItem.getNode().resolve(repository)));
-        }
-      });
       return new IChecker.AbstractRootChecker<I>() {
         public String getCategory() {
-          return filtering.getCategory();
+          return skippingChecker.getCategory();
         }
         @Override
         public void check(SNode toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-          filtering.check(toCheck, repository, errorCollector, monitor);
+          skippingChecker.check(toCheck, repository, errorCollector, monitor);
         }
       };
     }

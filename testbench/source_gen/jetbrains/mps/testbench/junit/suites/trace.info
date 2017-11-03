@@ -792,14 +792,15 @@
       <node id="250369351435735089" at="40,129,41,282" concept="3" />
       <node id="250369351435785061" at="41,282,42,185" concept="3" />
       <node id="2966246705324349075" at="42,185,43,79" concept="9" />
-      <node id="2966246705324529137" at="45,7,46,56" concept="3" />
-      <node id="2966246705324529147" at="46,56,47,60" concept="3" />
-      <node id="9170334376387816389" at="47,60,48,117" concept="3" />
+      <node id="377573184520170549" at="45,7,46,0" concept="11" />
+      <node id="2966246705324529137" at="46,0,47,56" concept="3" />
+      <node id="2966246705324529147" at="47,56,48,60" concept="3" />
+      <node id="9170334376387816389" at="48,60,49,117" concept="3" />
       <node id="2966246705324522915" at="27,0,29,0" concept="12" trace="ourStats" />
       <node id="9170334376387816361" at="30,0,33,0" concept="1" trace="AuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="2966246705324347775" at="38,0,45,0" concept="7" trace="compute#()Ljava/util/List;" />
       <node id="2966246705324344414" at="36,72,45,7" concept="8" />
-      <node id="9170334376387816369" at="34,0,50,0" concept="7" trace="checkConstraints#()V" />
+      <node id="9170334376387816369" at="34,0,51,0" concept="7" trace="checkConstraints#()V" />
       <scope id="9170334376387816365" at="30,43,31,18" />
       <scope id="9170334376387816361" at="30,0,33,0">
         <var name="module" id="9170334376387816363" />
@@ -809,13 +810,13 @@
         <var name="models" id="9170334376387816372" />
       </scope>
       <scope id="2966246705324347775" at="38,0,45,0" />
-      <scope id="9170334376387816371" at="35,34,48,117">
+      <scope id="9170334376387816371" at="35,34,49,117">
         <var name="errors" id="2966246705324344417" />
         <var name="statistic" id="2966246705324507102" />
       </scope>
-      <scope id="9170334376387816369" at="34,0,50,0" />
+      <scope id="9170334376387816369" at="34,0,51,0" />
       <unit id="2966246705324347775" at="37,125,45,5" name="jetbrains.mps.testbench.junit.suites.AuditConstraints$1" />
-      <unit id="9170334376387816357" at="26,0,51,0" name="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
+      <unit id="9170334376387816357" at="26,0,52,0" name="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387870447">

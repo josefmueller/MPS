@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * 
@@ -53,7 +52,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
   }
 
   public static <I extends NodeReportItem> IChecker<SNode, I> create(final IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition, IChecker.AbstractNodeChecker<I> rule) {
-    IteratingChecker<SNode, SNode, I> skippingSubtreeChecker = new IteratingChecker<SNode, SNode, I>(rule, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
+    IteratingChecker<SNode, SNode, I> skippingChecker = new IteratingChecker<SNode, SNode, I>(rule, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
       public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
         List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());
         DescendantsTreeIterator fullCheckIterator = new DescendantsTreeIterator(root);
@@ -63,16 +62,15 @@ public class AbstractConstraintsCheckerRootCheckerAdapter {
             fullCheckIterator.skipChildren();
             continue;
           }
+          if (skipCondition.skipSingleNode(node)) {
+            continue;
+          }
           ListSequence.fromList(toCheck).addElement(node);
         }
         return new IteratingChecker.CollectionIteratorWithProgress<SNode>(toCheck);
       }
     });
-    return new FilteringChecker<SNode, I>(skippingSubtreeChecker, new _FunctionTypes._return_P2_E0<Boolean, NodeReportItem, SRepository>() {
-      public Boolean invoke(NodeReportItem reportItem, SRepository repository) {
-        return !(skipCondition.skipSingleNode(reportItem.getNode().resolve(repository)));
-      }
-    });
+    return skippingChecker;
   }
 
 }
