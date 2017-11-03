@@ -31,6 +31,9 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 /*package*/ class XmlAttribute_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -263,6 +266,9 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     AbstractCellListHandler handler = new XmlAttribute_EditorBuilder_a.valueListHandler_1uorir_d0a(myNode, "value", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_value_1");
+    if (nodeCondition_1uorir_a3a0()) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -326,6 +332,9 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
+  private boolean nodeCondition_1uorir_a3a0() {
+    return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"))).isEmpty();
   }
   private EditorCell createConstant_1uorir_e0a_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "\"");

@@ -227,8 +227,10 @@
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
+        <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
         <reference id="1081339532145" name="keyMap" index="34QXea" />
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
+        <child id="1198512004906" name="focusPolicyApplicable" index="cStSX" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
@@ -1194,6 +1196,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="5M4a$b5jg9F" role="3EZMnx">
+          <property role="1cu_pB" value="1" />
           <ref role="1NtTu8" to="iuxj:5M4a$b5jfOu" resolve="value" />
           <node concept="4$FPG" id="1QpaM9zFNEq" role="4_6I_">
             <node concept="3clFbS" id="1QpaM9zFNEr" role="2VODD2">
@@ -1213,6 +1216,21 @@
             <property role="3F0ifm" value="" />
             <node concept="VPxyj" id="5M4a$b5jlSB" role="3F10Kt">
               <property role="VOm3f" value="true" />
+            </node>
+          </node>
+          <node concept="pkWqt" id="7HS5t0qR5Ac" role="cStSX">
+            <node concept="3clFbS" id="7HS5t0qR5Ad" role="2VODD2">
+              <node concept="3clFbF" id="7HS5t0qR6i6" role="3cqZAp">
+                <node concept="2OqwBi" id="7HS5t0qR9aa" role="3clFbG">
+                  <node concept="2OqwBi" id="7HS5t0qR6vX" role="2Oq$k0">
+                    <node concept="pncrf" id="7HS5t0qR6i5" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="7HS5t0qR6Sr" role="2OqNvi">
+                      <ref role="3TtcxE" to="iuxj:5M4a$b5jfOu" resolve="value" />
+                    </node>
+                  </node>
+                  <node concept="1v1jN8" id="7HS5t0qRc8Z" role="2OqNvi" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
