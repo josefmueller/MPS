@@ -7,10 +7,6 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 @MPSLaunch
 public class DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test extends BaseTransformationTest {
@@ -26,15 +22,15 @@ public class DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test extend
     public void testMethodImpl() throws Exception {
       initEditorComponent("1283790316087559016", "1283790316087559047");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action");
-      Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getEditorComponent().getSelectedNode().getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action"));
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action");
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (SNode node : SNodeUtil.getDescendants(getEditorComponent().getSelectedNode())) {
-            Assert.assertNull(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()));
-          }
-        }
-      });
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action"));
     }
   }
 }
