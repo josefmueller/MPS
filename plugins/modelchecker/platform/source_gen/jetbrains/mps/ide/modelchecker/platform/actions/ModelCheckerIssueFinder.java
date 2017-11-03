@@ -12,17 +12,16 @@ import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.modelchecker.platform.runtime.ModelCheckerUtil;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.checkers.IAbstractChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
@@ -45,21 +44,23 @@ public class ModelCheckerIssueFinder extends BaseFinder {
   }
   @Override
   public SearchResults<IssueKindReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
-    ModelCheckerUtil.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
+    ModelCheckerBuilder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
     final SearchResults<IssueKindReportItem> result = new SearchResults<IssueKindReportItem>();
     Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
       public void consume(IssueKindReportItem error) {
         result.getSearchResults().add(ModelCheckerIssueFinder.getSearchResultForReportItem(error, myRepository));
       }
     };
-    IAbstractChecker<ModelCheckerUtil.ItemsToCheck, IssueKindReportItem> checker = ModelCheckerUtil.find(getSpecificCheckers(), ListSequence.fromListAndArray(new ArrayList<IChecker<SModule, ? extends IssueKindReportItem>>(), new ModuleChecker()), ModelCheckerSettings.getInstance().isCheckStubs());
-    checker.check(itemsToCheck, myRepository, errorCollector, monitor);
+    List<IChecker<?, ? extends IssueKindReportItem>> specificCheckers = ListSequence.fromList(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>());
+    ListSequence.fromList(specificCheckers).addSequence(ListSequence.fromList(getSpecificCheckers()));
+    ListSequence.fromList(specificCheckers).addElement(new ModuleChecker());
+    new ModelCheckerBuilder(ModelCheckerSettings.getInstance().isCheckStubs()).createChecker(specificCheckers).check(itemsToCheck, myRepository, errorCollector, monitor);
     return result;
   }
-  private ModelCheckerUtil.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
+  private ModelCheckerBuilder.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     final SearchScope scope = searchQuery.getScope();
-    ModelCheckerUtil.ItemsToCheck itemsToCheck = new ModelCheckerUtil.ItemsToCheck();
+    ModelCheckerBuilder.ItemsToCheck itemsToCheck = new ModelCheckerBuilder.ItemsToCheck();
     // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder. 
     //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for 
     //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()! 

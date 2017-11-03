@@ -5,21 +5,14 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.item.ModuleReportItem;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ModuleValidationProblem;
-import org.apache.log4j.Level;
 
 public class ModuleChecker implements IChecker<SModule, ModuleReportItem> {
-  private static final Logger LOG = LogManager.getLogger(ModuleChecker.class);
   public ModuleChecker() {
   }
 
@@ -28,30 +21,12 @@ public class ModuleChecker implements IChecker<SModule, ModuleReportItem> {
     return "module properties";
   }
   @Override
-  public void check(SModule toCheck, SRepository repository, Consumer<? super ModuleReportItem> errorCollector, ProgressMonitor monitor) {
-    List<? extends ModuleReportItem> errors = checkModule(toCheck, monitor);
-    for (ModuleReportItem error : errors) {
-      errorCollector.consume(error);
-    }
-  }
-  public List<? extends ModuleReportItem> checkModule(SModule module, ProgressMonitor monitor) {
-    String moduleName = module.getModuleName();
-    monitor.start("Checking " + moduleName + " module properties...", 1);
-    final List<ModuleReportItem> results = ListSequence.fromList(new ArrayList<ModuleReportItem>());
-    try {
-      ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
-        public boolean process(ModuleValidationProblem vp) {
-          ListSequence.fromList(results).addElement(vp);
-          return true;
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Error while " + moduleName + " module checking", t);
+  public void check(SModule module, SRepository repository, final Consumer<? super ModuleReportItem> errorCollector, ProgressMonitor monitor) {
+    ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
+      public boolean process(ModuleValidationProblem vp) {
+        errorCollector.consume((ModuleReportItem) vp);
+        return true;
       }
-    } finally {
-      monitor.done();
-    }
-    return results;
+    });
   }
 }

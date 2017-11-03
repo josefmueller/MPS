@@ -33,8 +33,8 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
   }
 
   abstract class AbstractModelChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModel, I> {
-    public static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapRootChecker(IChecker.AbstractNodeChecker<I> nodeChecker) {
-      final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(nodeChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
+    public static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapRootChecker(IChecker.AbstractRootChecker<I> rootChecker) {
+      final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
         }
@@ -44,8 +44,8 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
           return result.getCategory();
         }
         @Override
-        public void check(SModel toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-          result.check(toCheck, repository, errorCollector, monitor);
+        public void check(SModel model, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
+          result.check(model, repository, errorCollector, monitor);
         }
       };
     }
@@ -76,8 +76,8 @@ public interface IChecker<O, I extends ReportItem> extends IAbstractChecker<O, I
           return skippingChecker.getCategory();
         }
         @Override
-        public void check(SNode toCheck, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
-          skippingChecker.check(toCheck, repository, errorCollector, monitor);
+        public void check(SNode root, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
+          skippingChecker.check(root, repository, errorCollector, monitor);
         }
       };
     }
