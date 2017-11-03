@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -28,7 +29,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -82,17 +82,23 @@ public class ModelCheckerBuilder {
     for (IChecker<?, ? extends IssueKindReportItem> checker : ListSequence.fromList(specificCheckers)) {
       if (checker instanceof IChecker.AbstractModuleChecker) {
         ListSequence.fromList(moduleCheckers).addElement((IChecker.AbstractModuleChecker<? extends IssueKindReportItem>) checker);
+        continue;
       }
       if (checker instanceof IChecker.AbstractModelChecker) {
         ListSequence.fromList(modelCheckers).addElement((IChecker.AbstractModelChecker<? extends IssueKindReportItem>) checker);
+        continue;
       }
       if (checker instanceof IChecker.AbstractRootChecker) {
         ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapRootChecker((IChecker.AbstractRootChecker<?>) checker));
+        continue;
       }
       if (checker instanceof IChecker.AbstractNodeChecker) {
         ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapRootChecker(IChecker.AbstractRootChecker.wrapNodeChecker((IChecker.AbstractNodeChecker<?>) checker)));
+        continue;
       }
-      throw new IllegalStateException("IChecker implementor doesn't extend none of expected base classes: " + checker.getClass().getName());
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("IChecker implementor doesn't extend none of expected base classes: " + checker.getClass().getName());
+      }
     }
 
     return createChecker(modelCheckers, moduleCheckers);
@@ -102,11 +108,11 @@ public class ModelCheckerBuilder {
     return new IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem>() {
       public void check(ModelCheckerBuilder.ItemsToCheck itemsToCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
         List<SModule> modules = itemsToCheck.modules;
-        ListSequence.fromList(modules).addSequence(ListSequence.fromList(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
+        modules = ListSequence.fromList(modules).concat(ListSequence.fromList(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
           public Iterable<Generator> translate(Language language) {
             return language.getGenerators();
           }
-        }));
+        })).toListSequence();
         int work = ListSequence.fromList(itemsToCheck.models).count() + ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule it) {
             return getModelDescriptors(it);

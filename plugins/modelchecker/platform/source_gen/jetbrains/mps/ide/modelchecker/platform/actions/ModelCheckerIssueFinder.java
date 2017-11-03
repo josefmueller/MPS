@@ -5,21 +5,20 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import java.util.List;
 import jetbrains.mps.checkers.IChecker;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.checkers.ModelCheckerBuilder;
 import org.jetbrains.mps.openapi.util.Consumer;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.MessageStatus;
@@ -29,17 +28,15 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.util.Pair;
 
 public class ModelCheckerIssueFinder extends BaseFinder {
-  private final List<IChecker<SModel, ? extends IssueKindReportItem>> myExtraCheckers;
+  private final List<IChecker<?, ?>> myExtraCheckers;
   private final SRepository myRepository;
 
-  public ModelCheckerIssueFinder(SRepository repository, List<IChecker<SModel, ? extends IssueKindReportItem>> extraCheckers) {
+  public ModelCheckerIssueFinder(SRepository repository, List<? extends IChecker<?, ?>> extraCheckers) {
     myRepository = repository;
-    myExtraCheckers = extraCheckers;
+    myExtraCheckers = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
+    ListSequence.fromList(myExtraCheckers).addSequence(ListSequence.fromList(extraCheckers));
   }
-  public ModelCheckerIssueFinder(SRepository repository, IChecker<SModel, ? extends IssueKindReportItem>... extraCheckers) {
-    this(repository, Arrays.asList(extraCheckers));
-  }
-  protected final List<IChecker<SModel, ? extends IssueKindReportItem>> getSpecificCheckers() {
+  protected final List<IChecker<?, ?>> getSpecificCheckers() {
     return myExtraCheckers;
   }
   @Override

@@ -10,8 +10,8 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
@@ -43,7 +44,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     newViewer.checkModels(models, "models");
     return newViewer;
   }
-  public void checkModelsAndShowResult(List<SModel> models, IChecker<SModel, ? extends IssueKindReportItem>... checkers) {
+  public void checkModelsAndShowResult(List<SModel> models, IChecker<?, ?>... checkers) {
     ModelCheckerViewer newViewer = createViewerForTab();
     ModelCheckerIssueFinder finder;
     jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
@@ -51,7 +52,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     if (checkers == null || checkers.length == 0) {
       finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), ModelCheckerSettings.getInstance().getSpecificCheckers(mpsProject));
     } else {
-      finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), checkers);
+      finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), Sequence.fromIterable(Sequence.fromArray(checkers)).toListSequence());
     }
     String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getName().getValue() : String.format("%d models", ListSequence.fromList(models).count()));
     newViewer.runCheck(FindUtils.makeProvider(finder), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {
