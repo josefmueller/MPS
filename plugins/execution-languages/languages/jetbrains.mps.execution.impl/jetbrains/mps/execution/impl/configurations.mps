@@ -55,16 +55,8 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
-        <child id="1164879758292" name="body" index="SfCbr" />
-        <child id="1164903496223" name="catchClause" index="TEbGg" />
-      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
-      </concept>
-      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
-        <child id="1164903359218" name="catchBody" index="TDEfX" />
-        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
         <reference id="1182955020723" name="classConcept" index="1HBi2w" />
@@ -144,9 +136,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -173,12 +162,6 @@
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
-      </concept>
-      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
-        <child id="1144226360166" name="iterable" index="1DdaDG" />
-      </concept>
-      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
-        <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -210,7 +193,6 @@
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
-        <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
@@ -1040,141 +1022,13 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="1xg2vZtrX2d" role="3cqZAp">
-            <node concept="3cpWsn" id="1xg2vZtrX2c" role="3cpWs9">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="runManagerClass" />
-              <node concept="3uibUv" id="1xg2vZtrX2e" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                <node concept="3uibUv" id="1xg2vZtrX2f" role="11_B2D">
-                  <ref role="3uigEE" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
-                </node>
+          <node concept="3clFbF" id="79c7v7kJevm" role="3cqZAp">
+            <node concept="2OqwBi" id="79c7v7kJeBu" role="3clFbG">
+              <node concept="37vLTw" id="79c7v7kJevg" role="2Oq$k0">
+                <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
               </node>
-              <node concept="3VsKOn" id="1xg2vZtrX2h" role="33vP2m">
-                <ref role="3VsUkX" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
-              </node>
-            </node>
-          </node>
-          <node concept="SfApY" id="1xg2vZtrX2X" role="3cqZAp">
-            <node concept="TDmWw" id="1xg2vZtrX2Y" role="TEbGg">
-              <node concept="3clFbS" id="1xg2vZtrX2T" role="TDEfX">
-                <node concept="RRSsy" id="1xg2vZtsO6t" role="3cqZAp">
-                  <property role="RRSoG" value="error" />
-                  <node concept="Xl_RD" id="1xg2vZtsGGz" role="RRSoy">
-                    <property role="Xl_RC" value="Unable to access schemeManagers via reflection" />
-                  </node>
-                  <node concept="37vLTw" id="1xg2vZtsGG_" role="RRSow">
-                    <ref role="3cqZAo" node="1xg2vZtrX2P" resolve="e" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="1xg2vZtrX2P" role="TDEfY">
-                <property role="3TUv4t" value="false" />
-                <property role="TrG5h" value="e" />
-                <node concept="3uibUv" id="1xg2vZtrX2R" role="1tU5fm">
-                  <ref role="3uigEE" to="wyt6:~IllegalAccessException" resolve="IllegalAccessException" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="1xg2vZtrX2j" role="SfCbr">
-              <node concept="1DcWWT" id="1xg2vZtrX2k" role="3cqZAp">
-                <node concept="2OqwBi" id="1xg2vZts537" role="1DdaDG">
-                  <node concept="37vLTw" id="1xg2vZts536" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1xg2vZtrX2c" resolve="runManagerClass" />
-                  </node>
-                  <node concept="liA8E" id="1xg2vZts538" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getDeclaredFields():java.lang.reflect.Field[]" resolve="getDeclaredFields" />
-                  </node>
-                </node>
-                <node concept="3cpWsn" id="1xg2vZtrX2L" role="1Duv9x">
-                  <property role="3TUv4t" value="false" />
-                  <property role="TrG5h" value="f" />
-                  <node concept="3uibUv" id="1xg2vZtsuge" role="1tU5fm">
-                    <ref role="3uigEE" to="t6h5:~Field" resolve="Field" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="1xg2vZtrX2m" role="2LFqv$">
-                  <node concept="3clFbJ" id="1xg2vZtrX2n" role="3cqZAp">
-                    <node concept="2OqwBi" id="1xg2vZtrX2o" role="3clFbw">
-                      <node concept="2OqwBi" id="1xg2vZts0mr" role="2Oq$k0">
-                        <node concept="37vLTw" id="1xg2vZts0mq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1xg2vZtrX2L" resolve="f" />
-                        </node>
-                        <node concept="liA8E" id="1xg2vZts0ms" role="2OqNvi">
-                          <ref role="37wK5l" to="t6h5:~Field.getName():java.lang.String" resolve="getName" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="1xg2vZtrX2q" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                        <node concept="Xl_RD" id="1xg2vZtrX2r" role="37wK5m">
-                          <property role="Xl_RC" value="SchemeManager" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbS" id="1xg2vZtrX2t" role="3clFbx">
-                      <node concept="3clFbF" id="1xg2vZtrX2u" role="3cqZAp">
-                        <node concept="2OqwBi" id="1xg2vZtshWi" role="3clFbG">
-                          <node concept="37vLTw" id="1xg2vZtshWh" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1xg2vZtrX2L" resolve="f" />
-                          </node>
-                          <node concept="liA8E" id="1xg2vZtshWj" role="2OqNvi">
-                            <ref role="37wK5l" to="t6h5:~AccessibleObject.setAccessible(boolean):void" resolve="setAccessible" />
-                            <node concept="3clFbT" id="1xg2vZtshWk" role="37wK5m">
-                              <property role="3clFbU" value="true" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3cpWs8" id="1xg2vZtrX2y" role="3cqZAp">
-                        <node concept="3cpWsn" id="1xg2vZtrX2x" role="3cpWs9">
-                          <property role="3TUv4t" value="false" />
-                          <property role="TrG5h" value="schemeManager" />
-                          <node concept="3uibUv" id="1xg2vZtrX2z" role="1tU5fm">
-                            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                          </node>
-                          <node concept="2OqwBi" id="1xg2vZtsbcr" role="33vP2m">
-                            <node concept="37vLTw" id="1xg2vZtsbcq" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1xg2vZtrX2L" resolve="f" />
-                            </node>
-                            <node concept="liA8E" id="1xg2vZtsbcs" role="2OqNvi">
-                              <ref role="37wK5l" to="t6h5:~Field.get(java.lang.Object):java.lang.Object" resolve="get" />
-                              <node concept="37vLTw" id="1xg2vZtsbct" role="37wK5m">
-                                <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="1gVbGN" id="1xg2vZtrX2D" role="3cqZAp">
-                        <node concept="2ZW3vV" id="1xg2vZtrX2C" role="1gVkn0">
-                          <node concept="37vLTw" id="1xg2vZtrX2A" role="2ZW6bz">
-                            <ref role="3cqZAo" node="1xg2vZtrX2x" resolve="schemeManager" />
-                          </node>
-                          <node concept="3uibUv" id="1xg2vZtsBta" role="2ZW6by">
-                            <ref role="3uigEE" to="hq8m:~SchemeManager" resolve="SchemeManager" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="1xg2vZtrX2E" role="3cqZAp">
-                        <node concept="2OqwBi" id="1xg2vZtrX2F" role="3clFbG">
-                          <node concept="1eOMI4" id="1xg2vZtrX2J" role="2Oq$k0">
-                            <node concept="10QFUN" id="1xg2vZtrX2G" role="1eOMHV">
-                              <node concept="37vLTw" id="1xg2vZtrX2H" role="10QFUP">
-                                <ref role="3cqZAo" node="1xg2vZtrX2x" resolve="schemeManager" />
-                              </node>
-                              <node concept="3uibUv" id="1xg2vZtrX2I" role="10QFUM">
-                                <ref role="3uigEE" to="hq8m:~SchemeManager" resolve="SchemeManager" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="1xg2vZtrX2K" role="2OqNvi">
-                            <ref role="37wK5l" to="hq8m:~SchemeManager.reload():void" resolve="reload" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+              <node concept="liA8E" id="79c7v7kJeSK" role="2OqNvi">
+                <ref role="37wK5l" to="zjj4:~RunManagerImpl.reloadSchemes():void" resolve="reloadSchemes" />
               </node>
             </node>
           </node>

@@ -17,17 +17,12 @@
     <classNode dependClassName="com.intellij.execution.ui.RunContentManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="com.intellij.openapi.options.SchemeManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.content.Content" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.reflect.Field" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
