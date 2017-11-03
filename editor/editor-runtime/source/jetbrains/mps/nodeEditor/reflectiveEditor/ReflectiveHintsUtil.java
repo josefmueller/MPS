@@ -40,6 +40,9 @@ public class ReflectiveHintsUtil {
   }
 
   public static boolean shouldShowReflectiveEditor(Collection<String> hints) {
+    if (hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT) && hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)) {
+      throw new IllegalStateException("hints reflectiveEditorForNode and noReflectiveEditorForNode can't be set at the same time");
+    }
     return hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
            || (hints.contains(BASE_REFLECTIVE_EDITOR_HINT)
                && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_HINT)
