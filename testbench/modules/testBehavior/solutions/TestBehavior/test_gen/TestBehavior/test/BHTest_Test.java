@@ -29,10 +29,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import BHL7.behavior.L__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import java.io.File;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -465,7 +465,6 @@ public class BHTest_Test extends TestCase {
     // fix 
   }
   public void setUp() {
-    System.out.println("hahahah " + new File(".").getAbsolutePath());
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     myProject = env.openProject(new File(PROJECT_PATH));
   }

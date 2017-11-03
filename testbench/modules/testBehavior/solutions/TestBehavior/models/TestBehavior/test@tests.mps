@@ -4261,35 +4261,6 @@
     </node>
     <node concept="1KhYhu" id="6EMTxOPT4XR" role="1KhZu4">
       <node concept="3clFbS" id="6EMTxOPT4XS" role="2VODD2">
-        <node concept="3clFbF" id="50Zp5FhOsdu" role="3cqZAp">
-          <node concept="2OqwBi" id="50Zp5FhOsdr" role="3clFbG">
-            <node concept="10M0yZ" id="50Zp5FhOsds" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-            </node>
-            <node concept="liA8E" id="50Zp5FhOsdt" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="3cpWs3" id="50Zp5FhOwBH" role="37wK5m">
-                <node concept="Xl_RD" id="50Zp5FhOwGv" role="3uHU7B">
-                  <property role="Xl_RC" value="hahahah " />
-                </node>
-                <node concept="2OqwBi" id="50Zp5FhOw5U" role="3uHU7w">
-                  <node concept="2ShNRf" id="50Zp5FhOtZa" role="2Oq$k0">
-                    <node concept="1pGfFk" id="50Zp5FhOvNE" role="2ShVmc">
-                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                      <node concept="Xl_RD" id="50Zp5FhOvOD" role="37wK5m">
-                        <property role="Xl_RC" value="." />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="50Zp5FhOw_R" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="6EMTxOPTaUZ" role="3cqZAp">
           <node concept="3cpWsn" id="6EMTxOPTaV0" role="3cpWs9">
             <property role="TrG5h" value="env" />

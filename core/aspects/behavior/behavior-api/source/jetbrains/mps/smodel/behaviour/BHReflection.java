@@ -21,6 +21,7 @@ import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -48,17 +49,21 @@ public final class BHReflection {
     }
   }
 
+  /**
+   * @deprecated operand is not null actually, use #invoke0 below instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static Object invoke(@Nullable SNode operand, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     return invoke0(operand, operand.getConcept(), methodId, parameters);
   }
 
+  /**
+   * @deprecated operand is not null actually, use #invoke0 below instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static Object invoke(@Nullable SAbstractConcept operand, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     return invoke0(operand, operand, methodId, parameters);
   }
 
@@ -67,21 +72,15 @@ public final class BHReflection {
    * Separating #invoke in two #invokeNonVirtual and #invokeVirtual instructions we can get rid of
    */
   public static Object invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invoke(operand, method, parameters);
+    return method.invoke(operand, parameters);
   }
 
   public static Object invoke0(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invoke(operand, method, parameters);
+    return method.invoke(operand, parameters);
   }
 
   /**
@@ -100,21 +99,15 @@ public final class BHReflection {
    * invokes a method specifically in the concreteConcept behavior.
    */
   public static Object invokeSpecial(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invokeSpecial(operand, method, parameters);
+    return method.invokeSpecial(operand, parameters);
   }
 
   public static Object invokeSpecial(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invokeSpecial(operand, method, parameters);
+    return method.invokeSpecial(operand, parameters);
   }
 
   /**
@@ -122,12 +115,9 @@ public final class BHReflection {
    * invokes method implementation which is strictly after the given concrete concept in the ancestor linearization of the node's concept
    */
   public static Object invokeSuper(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
-    if (operand == null) {
-      return null;
-    }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invokeSuper(operand, method, parameters);
+    return method.invokeSuper(operand, concreteConcept, parameters);
   }
 
   public static Object invokeSuper(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
@@ -136,7 +126,7 @@ public final class BHReflection {
     }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = findMethodByReflection(methodId, bhDescriptor);
-    return bhDescriptor.invokeSuper(operand, method, parameters);
+    return method.invokeSuper(operand, concreteConcept, parameters);
   }
 
   @NotNull
