@@ -19,7 +19,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -44,36 +43,32 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching, true);
-    if (actions != null) {
-      return actions;
-    }
-
-    actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching, false);
-    if (actions == null) {
+    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(() -> {
+      List<SubstituteAction> actions = mySubstituteInfoCache.getActions(pattern, strictMatching);
+      if (actions != null) {
+        return new ArrayList<>(actions);
+      }
       actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
-    }
-    actions = getFilteredActions(pattern, actions, strictMatching);
-    mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, actions);
+      List<SubstituteAction> filteredActions = getFilteredActions(pattern, actions, strictMatching);
+      mySubstituteInfoCache.putActions(pattern, strictMatching, filteredActions);
 
-    return actions;
+      return filteredActions;
+    });
   }
 
   private List<SubstituteAction> getFilteredActions(String pattern, List<SubstituteAction> actions, boolean strict) {
     final Predicate<SubstituteAction> predicate = createFilter(pattern);
-    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction((Computable<List<SubstituteAction>>) () -> {
-      ArrayList<SubstituteAction> result = new ArrayList<>(actions.size());
-      for (SubstituteAction item : actions) {
-        try {
-          if (shouldAddItem(item, predicate, strict, pattern)) {
-            result.add(item);
-          }
-        } catch (Throwable th) {
-          LOG.error("Exception on executing code of the action: " + (item == null ? "null" : item.getClass()), th);
+    ArrayList<SubstituteAction> result = new ArrayList<>(actions.size());
+    for (SubstituteAction item : actions) {
+      try {
+        if (shouldAddItem(item, predicate, strict, pattern)) {
+          result.add(item);
         }
+      } catch (Throwable th) {
+        LOG.error("Exception on executing code of the action: " + (item == null ? "null" : item.getClass()), th);
       }
-      return result;
-    });
+    }
+    return result;
   }
 
   private boolean shouldAddItem(SubstituteAction item, Predicate<SubstituteAction> predicate, boolean strict, String pattern) {
