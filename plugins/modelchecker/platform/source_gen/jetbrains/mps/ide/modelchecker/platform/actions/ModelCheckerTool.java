@@ -49,9 +49,9 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
     assert mpsProject != null;
     if (checkers == null || checkers.length == 0) {
-      finder = new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(mpsProject));
+      finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), ModelCheckerSettings.getInstance().getSpecificCheckers(mpsProject));
     } else {
-      finder = new ModelCheckerIssueFinder(checkers);
+      finder = new ModelCheckerIssueFinder(mpsProject.getRepository(), checkers);
     }
     String title = (ListSequence.fromList(models).count() == 1 ? ListSequence.fromList(models).first().getName().getValue() : String.format("%d models", ListSequence.fromList(models).count()));
     newViewer.runCheck(FindUtils.makeProvider(finder), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {

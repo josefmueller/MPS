@@ -4,28 +4,75 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.checkers.IAbstractChecker;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.checkers.AggregatingChecker;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.util.Consumer;
+import jetbrains.mps.errors.item.NodeFlavouredItem;
+import jetbrains.mps.checkers.ErrorReportUtil;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.checkers.IAbstractChecker;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.checkers.AggregatingChecker;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.checkers.CatchingChecker;
 import jetbrains.mps.checkers.FilteringChecker;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.apache.log4j.Level;
 import jetbrains.mps.checkers.CategoryShowingChecker;
 import jetbrains.mps.checkers.SkippingChecker;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
+
+  public static SearchResults<IssueKindReportItem> find(final SRepository repository, ProgressMonitor monitor, ModelCheckerIssueFinder.ItemsToCheck itemsToCheck, List<IChecker<SModel, ? extends IssueKindReportItem>> specificCheckers) {
+
+    int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count();
+    monitor.start("Checking", work);
+
+    try {
+      final SearchResults<IssueKindReportItem> rv = new SearchResults<IssueKindReportItem>();
+      Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
+        public void consume(IssueKindReportItem result) {
+          // filter out suppressed 
+          if (NodeFlavouredItem.FLAVOUR_NODE.canGet(result)) {
+            if (!(ErrorReportUtil.shouldReportError(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(result).resolve(repository)))) {
+              return;
+            }
+          }
+          rv.getSearchResults().add(ModelCheckerIssueFinder.getSearchResultForReportItem(result, repository));
+        }
+      };
+
+      ModuleChecker moduleChecker = new ModuleChecker();
+      for (SModule module : ListSequence.fromList(itemsToCheck.modules)) {
+        moduleChecker.check(module, repository, errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
+        if (monitor.isCanceled()) {
+          break;
+        }
+      }
+
+      IAbstractChecker<SModel, ? extends IssueKindReportItem> modelChecker = ModelChecker.wrapSpecificCheckers(specificCheckers);
+      for (SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
+        modelChecker.check(modelDescriptor, repository, errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
+        if (monitor.isCanceled()) {
+          break;
+        }
+      }
+
+      return rv;
+    } finally {
+      monitor.done();
+    }
+  }
 
   public static IAbstractChecker<SModel, ? extends IssueKindReportItem> wrapSpecificCheckers(@NotNull List<IChecker<SModel, ? extends IssueKindReportItem>> specificCheckers) {
     AggregatingChecker<SModel, IssueKindReportItem> catchingAggregation = new AggregatingChecker<SModel, IssueKindReportItem>(ListSequence.fromList(specificCheckers).select(new ISelector<IChecker<SModel, ? extends IssueKindReportItem>, CatchingChecker<SModel, IssueKindReportItem>>() {

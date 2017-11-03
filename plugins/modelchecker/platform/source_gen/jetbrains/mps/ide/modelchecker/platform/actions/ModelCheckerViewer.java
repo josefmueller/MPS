@@ -214,7 +214,7 @@ public class ModelCheckerViewer extends JPanel {
     myUsagesView.setContents(issues);
   }
   private ModelCheckerIssueFinder newModelChecker() {
-    return new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(myProject));
+    return new ModelCheckerIssueFinder(myProject.getRepository(), ModelCheckerSettings.getInstance().getSpecificCheckers(myProject));
   }
   public static class MyNodeRepresentator implements INodeRepresentator<IssueKindReportItem> {
     public MyNodeRepresentator() {
