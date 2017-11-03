@@ -29,14 +29,17 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     if (SNodeOperations.isInstanceOf(iterableType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"))) {
       return;
     }
+    if ((SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, 0x10a6979f36bL, "variable")) == null)) {
+      return;
+    }
     {
-      GeneratedMatchingPattern pattern_gn1qzs_c0 = new Pattern_aftnu9_a0a0c0b(_quotation_createNode_aftnu9_a0a0a0c0b());
-      SNode coercedNode_gn1qzs_c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_c0);
-      if (coercedNode_gn1qzs_c0 != null) {
+      GeneratedMatchingPattern pattern_gn1qzs_d0 = new Pattern_aftnu9_a0a0d0b(_quotation_createNode_aftnu9_a0a0a0d0b());
+      SNode coercedNode_gn1qzs_d0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_d0);
+      if (coercedNode_gn1qzs_d0 != null) {
       } else {
         SNode variableType = SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, 0x10a6979f36bL, "variable")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
         // not an iterable or an erasure 
-        if (!((MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a0c0a2a2a1())))) {
+        if (!((MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a0c0a2a3a1())))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ? variableType : SLinkOperations.getTarget(foreachStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a697996feL, 0x10a6979f36bL, "variable"))), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
@@ -54,7 +57,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_aftnu9_a0a0a0c0b() {
+  private static SNode _quotation_createNode_aftnu9_a0a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -64,7 +67,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_aftnu9_a0a0c0a2a2a1() {
+  private static SNode _quotation_createNode_aftnu9_a0a0c0a2a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

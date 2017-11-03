@@ -631,7 +631,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0c0b" file="Pattern_aftnu9_a0a0c0b.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0d0b" file="Pattern_aftnu9_a0a0d0b.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
@@ -2927,7 +2927,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule" file="check_ForeachWithErasure_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0c0b" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0d0b" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
