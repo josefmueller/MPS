@@ -8,7 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /*package*/ class ReflectiveEditorUtil {
 
@@ -44,6 +47,13 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 
   public static void execute(AnActionEvent event, List<SNode> selectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes) {
 
+    SelectionManager selectionManager = editorComponent.getEditorContext().getSelectionManager();
+
+    List<List<SNode>> selectionStack = ListSequence.fromList(new ArrayList<List<SNode>>());
+    for (Selection node : Sequence.fromIterable(selectionManager.getSelectionStackIterable())) {
+      ListSequence.fromList(selectionStack).addElement(node.getSelectedNodes());
+    }
+
     ReflectiveHintsManager manager = new ReflectiveHintsManager(editorComponent);
     if (isForManyNodes) {
       for (SNode node : selectedNodes) {
@@ -58,12 +68,14 @@ import jetbrains.mps.openapi.editor.selection.Selection;
     editorComponent.rebuildEditorContent();
     editorComponent.getEditorContext().flushEvents();
 
-    if (selectedNodes.size() > 1) {
-      SelectionManager selectionManager = editorComponent.getEditorContext().getSelectionManager();
-      Selection selection = selectionManager.createRangeSelection(selectedNodes.get(0), selectedNodes.get(selectedNodes.size() - 1));
-      selectionManager.setSelection(selection);
-    } else {
-      editorComponent.getSelectionManager().setSelection(selectedNodes.get(0));
+    selectionManager.clearSelection();
+    for (List<SNode> nodes : ListSequence.fromList(selectionStack)) {
+      if (ListSequence.fromList(nodes).count() > 1) {
+        Selection rangeSelection = selectionManager.createRangeSelection(ListSequence.fromList(nodes).first(), ListSequence.fromList(nodes).last());
+        selectionManager.pushSelection(rangeSelection);
+      } else {
+        selectionManager.pushSelection(selectionManager.createSelection(editorComponent.findNodeCell(ListSequence.fromList(nodes).first())));
+      }
     }
   }
 
