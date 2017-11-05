@@ -433,6 +433,8 @@
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/SampleCustomAspect.build/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/SampleCustomAspect.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/source_gen" includeSubdirectories="true" />

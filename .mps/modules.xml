@@ -326,6 +326,7 @@
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/jetbrains.mps.samples.customAspect.documentation.mpl" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/jetbrains.mps.samples.customAspect.sampleLanguage.mpl" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/jetbrains.mps.samples.customAspect.sampleLanguage.sandbox.msd" folder="samples.customAspect" />
+      <modulePath path="$PROJECT_DIR$/samples/customAspect/solutions/SampleCustomAspect.build/SampleCustomAspect.build.msd" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.pluginSolution/jetbrains.mps.samples.customAspect.documentation.pluginSolution.msd" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/solutions/jetbrains.mps.samples.customAspect.documentation.runtime/jetbrains.mps.samples.customAspect.documentation.runtime.msd" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customizedDebugger/languages/jetbrains.mps.samples.customizedDebugger.Bottomline/jetbrains.mps.samples.customizedDebugger.Bottomline.mpl" folder="samples.customizedDebugger" />

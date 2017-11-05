@@ -52,9 +52,15 @@
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
       <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-modelchecker-platform-models">
+      <fileset dir="${mps_home}/plugins/modelchecker/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <jar destfile="${build.layout}/modelchecker.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/modelchecker" />
       <zipfileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" prefix="META-INF" />
+      <zipfileset file="${basedir}/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" prefix="modules/jetbrains.mps.ide.modelchecker.platform" />
+      <zipfileset dir="${basedir}/plugins/modelchecker/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.modelchecker.platform" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-modelchecker-platform-models" prefix="modules/jetbrains.mps.ide.modelchecker.platform/models" />
     </jar>
     <jar destfile="${build.layout}/samples.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/samples" />

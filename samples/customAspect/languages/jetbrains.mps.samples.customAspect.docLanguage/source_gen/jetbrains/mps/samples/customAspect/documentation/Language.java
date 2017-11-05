@@ -46,7 +46,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "39b6594d-7cca-44f2-a797-b0ceaead0f42(jetbrains.mps.samples.customAspect.docLanguage#2897519568668508166)"));
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "39b6594d-7cca-44f2-a797-b0ceaead0f42(jetbrains.mps.samples.customAspect.documentation#2897519568668508166)"));
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
