@@ -65,7 +65,7 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public SNodeReference getIntentionNodeReference() {
-    Collection<TypesystemRuleId> typesystemRuleIds = FLAVOUR_RULE_ID.tryToGet(myQuickFix);
+    Collection<TypesystemRuleId> typesystemRuleIds = FLAVOUR_RULE_ID.getCollection(myQuickFix);
     if (typesystemRuleIds.size() == 1) {
       return typesystemRuleIds.iterator().next().getSourceNode();
     }

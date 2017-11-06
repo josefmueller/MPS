@@ -56,7 +56,7 @@ public interface QuickFixReportItem extends ReportItem {
       new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>(EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<EditorQuickFix>(quickFixReportItem.getQuickFix())) {
         @NotNull
         @Override
-        public Collection<EditorQuickFix> getCollection(ReportItem reportItem) {
+        public Collection<EditorQuickFix> getCollection(FlavouredItem reportItem) {
           Collection<EditorQuickFix> result = super.getCollection(reportItem);
           Collection<QuickFixBase> baseQuickfixes = FLAVOUR_QUICKFIX.getCollection(reportItem);
           if (result.size() != baseQuickfixes.size()) {
