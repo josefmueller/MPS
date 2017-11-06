@@ -9600,11 +9600,11 @@
       <property role="3GE5qa" value="checking" />
       <node concept="312cEg" id="34euvBSBVeJ" role="jymVt">
         <property role="TrG5h" value="myIncludeStubs" />
-        <node concept="3Tm6S6" id="34euvBSBVeK" role="1B3o_S" />
-        <node concept="10P_77" id="34euvBSBVeL" role="1tU5fm" />
         <node concept="3clFbT" id="GPlTP7CTd5" role="33vP2m">
           <property role="3clFbU" value="false" />
         </node>
+        <node concept="3Tm6S6" id="34euvBSBVeK" role="1B3o_S" />
+        <node concept="10P_77" id="34euvBSBVeL" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="7X3$Ctw7ww3" role="1B3o_S" />
       <node concept="312cEg" id="6nj_ILmB0w5" role="jymVt">
@@ -10848,7 +10848,7 @@
                         <node concept="9aQIb" id="3xfDcbRcGTJ" role="9aQIa">
                           <node concept="3clFbS" id="3xfDcbRcGTK" role="9aQI4">
                             <node concept="RRSsy" id="3xfDcbRcGTL" role="3cqZAp">
-                              <property role="RRSoG" value="error" />
+                              <property role="RRSoG" value="info" />
                               <node concept="3cpWs3" id="3xfDcbRcGTM" role="RRSoy">
                                 <node concept="2OqwBi" id="3xfDcbRcGTN" role="3uHU7w">
                                   <node concept="37vLTw" id="3xfDcbRcGTO" role="2Oq$k0">

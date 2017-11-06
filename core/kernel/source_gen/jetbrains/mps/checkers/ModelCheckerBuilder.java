@@ -184,8 +184,8 @@ public class ModelCheckerBuilder {
           if (ErrorReportUtil.shouldReportError(node)) {
             return true;
           } else {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeRef.getNodeId() + " in model " + nodeRef.getModelReference());
+            if (LOG.isInfoEnabled()) {
+              LOG.info("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeRef.getNodeId() + " in model " + nodeRef.getModelReference());
             }
             return false;
           }
