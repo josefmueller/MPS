@@ -19,8 +19,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -31,11 +33,13 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteInfoFilterDecorator.class);
 
 
+  @NotNull
   private final SRepository myRepository;
-  private SubstituteInfo mySubstituteInfo;
+  @NotNull
+  private final SubstituteInfo mySubstituteInfo;
   private final SubstituteInfoCache mySubstituteInfoCache;
 
-  protected NodeSubstituteInfoFilterDecorator(SubstituteInfo substituteInfo, SRepository repository) {
+  protected NodeSubstituteInfoFilterDecorator(@NotNull SubstituteInfo substituteInfo, @NotNull SRepository repository) {
     mySubstituteInfo = substituteInfo;
     myRepository = repository;
     mySubstituteInfoCache = new SubstituteInfoCache();
@@ -108,4 +112,20 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
   }
 
   protected abstract Predicate<SubstituteAction> createFilter(String pattern);
+
+
+  /**
+   * Decorates the substitute info with the filter which checks if the matching text of the action matches the pattern by {@link PatternUtil#matchesPattern(String, String)}
+   */
+  public static SubstituteInfo createSubstituteInfoWithPatternMatchingFilter(@NotNull SubstituteInfo substituteInfo, @NotNull SRepository repository) {
+    return new NodeSubstituteInfoFilterDecorator(substituteInfo, repository) {
+      @Override
+      protected Predicate<SubstituteAction> createFilter(String pattern) {
+        return action -> {
+          String matchingText = action.getMatchingText(pattern);
+          return PatternUtil.matchesPattern(pattern, matchingText);
+        };
+      }
+    };
+  }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -23,6 +24,7 @@ public class EditorBasedReferenceResolverUtils {
     if (substituteInfo == null) {
       return false;
     }
+    substituteInfo = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, editorContext.getRepository());
     final SubstituteAction applicableSubstituteAction = EditorBasedReferenceResolverUtils.getApplicableSubstituteAction(substituteInfo, pattern);
     if (applicableSubstituteAction == null) {
       return false;

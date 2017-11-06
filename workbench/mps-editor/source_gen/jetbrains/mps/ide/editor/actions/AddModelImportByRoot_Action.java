@@ -26,6 +26,7 @@ import jetbrains.mps.project.ModelImportHelper;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -134,6 +135,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
         if (substituteInfo == null) {
           return;
         }
+        substituteInfo = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository());
         substituteInfo.invalidateActions();
         List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
         if (ListSequence.fromList(matchingActions).count() == 1) {

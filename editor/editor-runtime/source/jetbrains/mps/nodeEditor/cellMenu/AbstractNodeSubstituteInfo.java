@@ -32,9 +32,9 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -145,6 +145,13 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     }
   }
 
+  /**
+   * Returns the list of actions which returns true for {@link SubstituteAction#canSubstitute(String)} or
+   * {@link SubstituteAction#canSubstituteStrictly(String)} depending on the strictMatchingParameter
+   *
+   * This implementation does not filter the actions by matching text, so the client should filter the actions by matching text herself
+   * One of the options is to use {@link NodeSubstituteInfoFilterDecorator#createSubstituteInfoWithPatternMatchingFilter(SubstituteInfo, SRepository)}
+   */
   @Override
   public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction((Computable<List<SubstituteAction>>) () -> {

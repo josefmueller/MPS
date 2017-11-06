@@ -2427,22 +2427,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return false;
     }
 
-    substituteInfo = new NodeSubstituteInfoFilterDecorator(substituteInfo, getEditorContext().getRepository()) {
-      @Override
-      protected Predicate<SubstituteAction> createFilter(String pattern) {
-        MinusculeMatcher matcher = NameUtil.buildMatcher("*" + pattern).build();
-        return action -> {
-          if (pattern == null) {
-            return true;
-          }
-          String matchingText = action.getMatchingText(pattern);
-          if (matchingText == null) {
-            return false;
-          }
-          return matcher.matches(matchingText);
-        };
-      }
-    };
     // do substitute...
     LOG.debug("substitute info : " + substituteInfo);
     NodeSubstitutePatternEditor patternEditor = ((EditorCell) editorCell).createSubstitutePatternEditor();
@@ -2459,7 +2443,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     substituteInfo.invalidateActions();
     if (originalTextChanged || atTheEndOfLine) {
-      List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
+      SubstituteInfo substituteInfoWithPatternMatchingFilter = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, getRepository());
+      List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfoWithPatternMatchingFilter, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
         final SubstituteAction theAction = matchingActions.get(0);

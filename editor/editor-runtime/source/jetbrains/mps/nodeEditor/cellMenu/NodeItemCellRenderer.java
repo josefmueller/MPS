@@ -163,12 +163,8 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
     }
   }
 
-  private static FList<TextRange> getMatchingFragments(String pattern, String text) {
-    return getMatcher(pattern).matchingFragments(text);
-  }
-
-  private static MinusculeMatcher getMatcher(String pattern) {
-    return NameUtil.buildMatcher("*" + pattern).build();
+  private FList<TextRange> getMatchingFragments(String pattern, String text) {
+    return mySubstituteChooser.getMatcherFactory().createMatcher(pattern).matchingFragments(text);
   }
 
   private int getStyle(SubstituteAction action) {

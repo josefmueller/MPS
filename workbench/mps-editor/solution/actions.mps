@@ -9319,9 +9319,7 @@
                 <node concept="3cpWs8" id="1C72Z0GroC5" role="3cqZAp">
                   <node concept="3cpWsn" id="1C72Z0GroC6" role="3cpWs9">
                     <property role="TrG5h" value="pattern" />
-                    <node concept="3uibUv" id="1C72Z0GroC1" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                    </node>
+                    <node concept="17QB3L" id="rl3m0AKYH5" role="1tU5fm" />
                     <node concept="2OqwBi" id="1C72Z0GroC7" role="33vP2m">
                       <node concept="2OqwBi" id="1C72Z0GroC8" role="2Oq$k0">
                         <node concept="37vLTw" id="1C72Z0GroC9" role="2Oq$k0">
@@ -9714,6 +9712,31 @@
                     <node concept="3clFbC" id="4jh213bivb7" role="3clFbw">
                       <node concept="10Nm6u" id="4jh213bivb8" role="3uHU7w" />
                       <node concept="37vLTw" id="3GM_nagTtFV" role="3uHU7B">
+                        <ref role="3cqZAo" node="4jh213bivav" resolve="substituteInfo" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="rl3m0AL09M" role="3cqZAp">
+                    <node concept="37vLTI" id="rl3m0AL0yM" role="3clFbG">
+                      <node concept="2YIFZM" id="4fL_WHUKnAU" role="37vLTx">
+                        <ref role="37wK5l" to="6lvu:~NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(jetbrains.mps.openapi.editor.cells.SubstituteInfo,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.openapi.editor.cells.SubstituteInfo" resolve="createSubstituteInfoWithPatternMatchingFilter" />
+                        <ref role="1Pybhc" to="6lvu:~NodeSubstituteInfoFilterDecorator" resolve="NodeSubstituteInfoFilterDecorator" />
+                        <node concept="37vLTw" id="4fL_WHUKnAV" role="37wK5m">
+                          <ref role="3cqZAo" node="4jh213bivav" resolve="substituteInfo" />
+                        </node>
+                        <node concept="2OqwBi" id="4fL_WHUKnAW" role="37wK5m">
+                          <node concept="2OqwBi" id="4fL_WHUKnAX" role="2Oq$k0">
+                            <node concept="2WthIp" id="4fL_WHUKnAY" role="2Oq$k0" />
+                            <node concept="1DTwFV" id="4fL_WHUKnAZ" role="2OqNvi">
+                              <ref role="2WH_rO" node="30tYQkHUrow" resolve="editorContext" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="4fL_WHUKnB0" role="2OqNvi">
+                            <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="rl3m0AL09K" role="37vLTJ">
                         <ref role="3cqZAo" node="4jh213bivav" resolve="substituteInfo" />
                       </node>
                     </node>

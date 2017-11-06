@@ -10,9 +10,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   private EditorComponent myEditorComponent;
@@ -45,18 +42,6 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
         return;
       }
       EditorBasedReferenceResolverUtils.resolveInEditor(myEditorComponent, sourceNode, resolveInfo, myReference.getLink().getName());
-    }
-    private SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
-      SubstituteAction result = null;
-      for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {
-        if (nextAction.canSubstitute(resolveInfo)) {
-          if (result != null) {
-            return null;
-          }
-          result = nextAction;
-        }
-      }
-      return result;
     }
   }
 }

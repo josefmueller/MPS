@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.psi.codeStyle.MinusculeMatcher;
+import com.intellij.psi.codeStyle.NameUtil;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
@@ -55,6 +55,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 /**
  * Author: Sergey Dmitriev.
@@ -83,6 +84,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       moveToContextCell();
     }
   };
+  private MatcherFactory myMatcherFactory;
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -150,7 +152,27 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public void setNodeSubstituteInfo(@NotNull SubstituteInfo nodeSubstituteInfo) {
     assert !myIsVisible;
-    myNodeSubstituteInfo = nodeSubstituteInfo;
+    myNodeSubstituteInfo = new NodeSubstituteInfoFilterDecorator(nodeSubstituteInfo, getEditorComponent().getEditorContext().getRepository()) {
+      @Override
+      protected Predicate<SubstituteAction> createFilter(String pattern) {
+        MinusculeMatcher matcher = myMatcherFactory.createMatcher(pattern);
+        return action -> {
+          if (pattern == null) {
+            return true;
+          }
+          String matchingText = action.getMatchingText(pattern);
+          if (matchingText == null) {
+            return false;
+          }
+          return matcher.matches(matchingText);
+        };
+      }
+    };
+
+  }
+
+  MatcherFactory getMatcherFactory() {
+    return myMatcherFactory;
   }
 
   public void setPatternEditor(NodeSubstitutePatternEditor patternEditor) {
@@ -222,6 +244,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (myContextCell == null || myNodeSubstituteInfo == null) {
         throw new IllegalStateException("Context cell and substitute info must not be null to show the NodeSubstituteChooser");
       }
+      myMatcherFactory = new MatcherFactory();
       myEditorComponent.pushKeyboardHandler(this);
       rebuildMenuEntries();
       Point location = calcPatternEditorLocation();
@@ -245,6 +268,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (realUi) {
         getEditorWindow().removeComponentListener(myComponentListener);
       }
+      myMatcherFactory = null;
     }
     setUserChoseItem(false);
     myIsVisible = visible;

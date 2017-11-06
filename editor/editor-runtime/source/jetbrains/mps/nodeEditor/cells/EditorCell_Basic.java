@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.collections.Entry;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -184,7 +185,9 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
       return false;
     }
 
-    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+    SubstituteInfo substituteInfoWithPatternMatchingFilter =
+        NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, getContext().getRepository());
+    List<SubstituteAction> matchingActions = substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern, strict);
     return APICellAdapter.substituteIfPossible(this, canActivatePopup, pattern, matchingActions);
   }
 

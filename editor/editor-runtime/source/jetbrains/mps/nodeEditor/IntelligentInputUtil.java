@@ -40,12 +40,10 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class IntelligentInputUtil {
   private static final Logger LOG = Logger.getLogger(IntelligentInputUtil.class);
@@ -82,18 +80,13 @@ public class IntelligentInputUtil {
     }
 
     private SubstituteInfo createSubstituteInfo(final SubstituteInfo substituteInfo) {
+      SubstituteInfo result;
       if (substituteInfo == null) {
-        return new NullSubstituteInfo();
+        result = new NullSubstituteInfo();
+      } else {
+        result = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, myEditorContext.getRepository());
       }
-      return new NodeSubstituteInfoFilterDecorator(substituteInfo, myEditorContext.getRepository()) {
-        @Override
-        protected Predicate<SubstituteAction> createFilter(String pattern) {
-          return action -> {
-            String matchingText = action.getMatchingText(pattern);
-            return PatternUtil.matchesPattern(pattern, matchingText);
-          };
-        }
-      };
+      return result;
     }
 
     public boolean processCell() {

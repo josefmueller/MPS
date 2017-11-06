@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -58,10 +59,12 @@ public class APICellAdapter {
   }
 
   public static boolean validate(final EditorCell cell, final boolean strict, final boolean canActivatePopup) {
-    final SubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    SubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
       return false;
     }
+
+    final SubstituteInfo substituteInfoWithPatternMatchingFilter = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, cell.getContext().getRepository());
 
     if (cell instanceof EditorCell_Collection) {
       return false;
@@ -75,7 +78,7 @@ public class APICellAdapter {
     List<SubstituteAction> matchingActions = new ModelAccessHelper(cell.getContext().getRepository()).runReadAction(
         () -> TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) cell.getEditorComponent(),
                                                                           cell.getEditorComponent().getEditedNode(),
-                                                                          context -> substituteInfo.getMatchingActions(pattern, strict)));
+                                                                          context -> substituteInfoWithPatternMatchingFilter.getMatchingActions(pattern, strict)));
     return substituteIfPossible(cell, canActivatePopup, pattern, matchingActions);
   }
 
