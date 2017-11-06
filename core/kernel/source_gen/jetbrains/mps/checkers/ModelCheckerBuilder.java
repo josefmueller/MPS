@@ -109,15 +109,21 @@ public class ModelCheckerBuilder {
   }
 
   public static class ItemsToCheck {
+    public static ModelCheckerBuilder.ItemsToCheck forSingleModule(SModule module) {
+      ModelCheckerBuilder.ItemsToCheck result = new ModelCheckerBuilder.ItemsToCheck();
+      ListSequence.fromList(result.modules).addElement(module);
+      return result;
+    }
     public List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     public List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
   }
 
-  public IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem> createChecker(final List<IChecker<?, ? extends IssueKindReportItem>> specificCheckers) {
+  public IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem> createChecker(final List<? extends IChecker<?, ? extends IssueKindReportItem>> specificCheckers) {
     List<IChecker<SModel, ? extends IssueKindReportItem>> modelCheckers = ListSequence.fromList(new ArrayList<IChecker<SModel, ? extends IssueKindReportItem>>());
     List<IChecker<SModule, ? extends IssueKindReportItem>> moduleCheckers = ListSequence.fromList(new ArrayList<IChecker<SModule, ? extends IssueKindReportItem>>());
 
-    for (IChecker<?, ? extends IssueKindReportItem> checker : ListSequence.fromList(specificCheckers)) {
+    for (IChecker<?, ? extends IssueKindReportItem> it : ListSequence.fromList(specificCheckers)) {
+      IChecker<?, ? extends IssueKindReportItem> checker = it;
       if (checker instanceof IChecker.AbstractModuleChecker) {
         ListSequence.fromList(moduleCheckers).addElement((IChecker.AbstractModuleChecker<? extends IssueKindReportItem>) checker);
         continue;
@@ -142,7 +148,7 @@ public class ModelCheckerBuilder {
     return createChecker(modelCheckers, moduleCheckers);
   }
 
-  public IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem> createChecker(final List<IChecker<SModel, ? extends IssueKindReportItem>> specificModelCheckers, final List<IChecker<SModule, ? extends IssueKindReportItem>> specificModuleCheckers) {
+  private IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem> createChecker(final List<IChecker<SModel, ? extends IssueKindReportItem>> specificModelCheckers, final List<IChecker<SModule, ? extends IssueKindReportItem>> specificModuleCheckers) {
     return new IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem>() {
       public void check(ModelCheckerBuilder.ItemsToCheck itemsToCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
         List<SModule> modules = itemsToCheck.modules;
