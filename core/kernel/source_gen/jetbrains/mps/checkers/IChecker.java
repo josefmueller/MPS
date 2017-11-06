@@ -32,7 +32,7 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
   }
 
   abstract class AbstractModelChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModel, I> {
-    public static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapRootChecker(IChecker.AbstractRootChecker<I> rootChecker) {
+    public static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapRootChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
       final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
@@ -41,6 +41,10 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       return new IChecker.AbstractModelChecker<I>() {
         public String getCategory() {
           return result.getCategory();
+        }
+        @Override
+        public String toString() {
+          return rootChecker.toString();
         }
         @Override
         public void check(SModel model, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {
@@ -73,6 +77,10 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
       return new IChecker.AbstractRootChecker<I>() {
         public String getCategory() {
           return skippingChecker.getCategory();
+        }
+        @Override
+        public String toString() {
+          return nodeChecker.toString();
         }
         @Override
         public void check(SNode root, SRepository repository, Consumer<? super I> errorCollector, ProgressMonitor monitor) {

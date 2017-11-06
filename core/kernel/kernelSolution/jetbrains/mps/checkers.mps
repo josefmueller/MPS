@@ -6874,6 +6874,31 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFb_" id="3WzkGZcfgZ9" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="toString" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="3WzkGZcfgZa" role="1B3o_S" />
+                    <node concept="3uibUv" id="3WzkGZcfgZc" role="3clF45">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="3clFbS" id="3WzkGZcfgZt" role="3clF47">
+                      <node concept="3clFbF" id="3WzkGZcfk0w" role="3cqZAp">
+                        <node concept="2OqwBi" id="3WzkGZcfkFU" role="3clFbG">
+                          <node concept="37vLTw" id="3WzkGZcfk0t" role="2Oq$k0">
+                            <ref role="3cqZAo" node="320sejm8q08" resolve="rootChecker" />
+                          </node>
+                          <node concept="liA8E" id="3WzkGZcflt6" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="3WzkGZcfgZu" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
                   <node concept="3clFb_" id="320sejm8Jna" role="jymVt">
                     <property role="TrG5h" value="check" />
                     <property role="1EzhhJ" value="false" />
@@ -6952,6 +6977,7 @@
         </node>
         <node concept="37vLTG" id="320sejm8q08" role="3clF46">
           <property role="TrG5h" value="rootChecker" />
+          <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="320sejm8q09" role="1tU5fm">
             <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
             <node concept="16syzq" id="320sejm8q0a" role="11_B2D">
@@ -7195,6 +7221,31 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="3clFb_" id="3WzkGZcfahS" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="toString" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="3WzkGZcfahT" role="1B3o_S" />
+                    <node concept="3uibUv" id="3WzkGZcfahV" role="3clF45">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="3clFbS" id="3WzkGZcfaic" role="3clF47">
+                      <node concept="3clFbF" id="3WzkGZcfdf8" role="3cqZAp">
+                        <node concept="2OqwBi" id="3WzkGZcfdTL" role="3clFbG">
+                          <node concept="37vLTw" id="3WzkGZcfdf6" role="2Oq$k0">
+                            <ref role="3cqZAo" node="320sejm7mgg" resolve="nodeChecker" />
+                          </node>
+                          <node concept="liA8E" id="3WzkGZcfeFk" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="3WzkGZcfaid" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
                   <node concept="16syzq" id="320sejm7GLX" role="2Ghqu4">
                     <ref role="16sUi3" node="320sejm7maM" resolve="I" />
                   </node>
@@ -7273,6 +7324,7 @@
         </node>
         <node concept="37vLTG" id="320sejm7mgg" role="3clF46">
           <property role="TrG5h" value="nodeChecker" />
+          <property role="3TUv4t" value="true" />
           <node concept="3uibUv" id="320sejm7mgf" role="1tU5fm">
             <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
             <node concept="16syzq" id="320sejm7mxh" role="11_B2D">
@@ -10817,6 +10869,10 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="34euvBSJfNp" role="3clF46">
+        <property role="TrG5h" value="checkerName" />
+        <node concept="17QB3L" id="34euvBSJh40" role="1tU5fm" />
+      </node>
       <node concept="3clFbS" id="kXqcYjXlsT" role="3clF47">
         <node concept="3clFbF" id="kXqcYjXo9M" role="3cqZAp">
           <node concept="2ShNRf" id="3xfDcbRcGTh" role="3clFbG">
@@ -10929,8 +10985,8 @@
                                         <node concept="Xl_RD" id="3xfDcbRcGTU" role="3uHU7B">
                                           <property role="Xl_RC" value="Specific checker " />
                                         </node>
-                                        <node concept="37vLTw" id="kXqcYjXv3F" role="3uHU7w">
-                                          <ref role="3cqZAo" node="kXqcYjXmgT" resolve="specificChecker" />
+                                        <node concept="37vLTw" id="34euvBSJvFE" role="3uHU7w">
+                                          <ref role="3cqZAo" node="34euvBSJfNp" resolve="checkerName" />
                                         </node>
                                       </node>
                                       <node concept="Xl_RD" id="3xfDcbRcGTW" role="3uHU7w">
@@ -11197,6 +11253,14 @@
                                       <node concept="37vLTw" id="kXqcYjY8lE" role="37wK5m">
                                         <ref role="3cqZAo" node="76Xff8JR0Pk" resolve="specificChecker" />
                                       </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="34euvBSJp3a" role="37wK5m">
+                                    <node concept="37vLTw" id="34euvBSJnB2" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="76Xff8JR0Pk" resolve="specificChecker" />
+                                    </node>
+                                    <node concept="liA8E" id="34euvBSJKMw" role="2OqNvi">
+                                      <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                                     </node>
                                   </node>
                                 </node>

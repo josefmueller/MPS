@@ -197,7 +197,7 @@ public class ModelCheckerBuilder {
     };
   }
 
-  public static <O> IAbstractChecker<O, IssueKindReportItem> wrapWithFiltering(final IAbstractChecker<O, ? extends IssueKindReportItem> specificChecker) {
+  public static <O> IAbstractChecker<O, IssueKindReportItem> wrapWithFiltering(IAbstractChecker<O, ? extends IssueKindReportItem> specificChecker, final String checkerName) {
     return new FilteringChecker<O, IssueKindReportItem>(specificChecker, new _FunctionTypes._return_P2_E0<Boolean, IssueKindReportItem, SRepository>() {
       public Boolean invoke(IssueKindReportItem item, SRepository repository) {
         SNodeReference nodeRef = NodeReportItem.FLAVOUR_NODE.tryToGet(item);
@@ -207,7 +207,7 @@ public class ModelCheckerBuilder {
             return true;
           } else {
             if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Specific checker " + specificChecker + " returned error that is supposed to be skipped. Node " + nodeRef.getNodeId() + " in model " + nodeRef.getModelReference());
+              LOG.error("Specific checker " + checkerName + " returned error that is supposed to be skipped. Node " + nodeRef.getNodeId() + " in model " + nodeRef.getModelReference());
             }
             return false;
           }
@@ -236,7 +236,7 @@ public class ModelCheckerBuilder {
   public static <O> IAbstractChecker<O, IssueKindReportItem> aggreagateSpecificCheckers(@NotNull List<IChecker<O, ? extends IssueKindReportItem>> specificCheckers, final _FunctionTypes._return_P1_E0<? extends String, ? super O> getFqName) {
     AggregatingChecker<O, IssueKindReportItem> aggregation = new AggregatingChecker<O, IssueKindReportItem>(ListSequence.fromList(specificCheckers).select(new ISelector<IChecker<O, ? extends IssueKindReportItem>, CatchingChecker<O, IssueKindReportItem>>() {
       public CatchingChecker<O, IssueKindReportItem> select(IChecker<O, ? extends IssueKindReportItem> specificChecker) {
-        return new CatchingChecker<O, IssueKindReportItem>(wrapWithFiltering(new CategoryShowingChecker<O, IssueKindReportItem>(specificChecker)), new _FunctionTypes._return_P3_E0<String, O, Exception, SRepository>() {
+        return new CatchingChecker<O, IssueKindReportItem>(wrapWithFiltering(new CategoryShowingChecker<O, IssueKindReportItem>(specificChecker), specificChecker.toString()), new _FunctionTypes._return_P3_E0<String, O, Exception, SRepository>() {
           public String invoke(O m, Exception e, SRepository repository) {
             return "Exception while checking model " + getFqName.invoke(m);
           }
