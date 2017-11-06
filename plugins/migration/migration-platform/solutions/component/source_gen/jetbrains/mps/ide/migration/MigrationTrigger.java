@@ -7,16 +7,20 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
@@ -328,12 +332,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     } else {
       StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
-          final Wrappers._T<List<Problem>> problems = new Wrappers._T<List<Problem>>();
+          final Wrappers._T<List<IssueKindReportItem>> problems = new Wrappers._T<List<IssueKindReportItem>>();
           ProgressManager.getInstance().run(new Task.Modal(myProject, "Collecting Errors", false) {
             public void run(@NotNull final ProgressIndicator progressIndicator) {
               myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  problems.value = Sequence.fromIterable(errors.getProblems(progressIndicator)).toListSequence();
+                  problems.value = IterableUtil.asList(errors.getProblems(progressIndicator));
                 }
               });
             }

@@ -4,6 +4,7 @@ package jetbrains.mps.migration.workbench.components;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
+import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -45,17 +46,20 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   private static final Logger LOG = LogManager.getLogger(WorkbenchMigrationProblemHandler.class);
   private UsagesViewTool myUsagesTool;
   private ModelCheckerTool myMcTool;
+  private MPSProject myMPSProject;
 
-  public WorkbenchMigrationProblemHandler(Project project, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
-    super(project);
+  public WorkbenchMigrationProblemHandler(MPSProject project, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
+    super(project.getProject());
     myUsagesTool = usagesTool;
     myMcTool = mcTool;
+    myMPSProject = project;
   }
 
-  public void showProblems(Collection<Problem> problems) {
-    Iterable<SearchResult<IssueKindReportItem>> items = CollectionSequence.fromCollection(problems).select(new ISelector<Problem, SearchResult<IssueKindReportItem>>() {
-      public SearchResult<IssueKindReportItem> select(Problem p) {
-        return new SearchResult<IssueKindReportItem>(issueByProblem(p), p.getReason(), p.getCategory());
+  public void showProblems(Collection<IssueKindReportItem> problems) {
+    Iterable<SearchResult<IssueKindReportItem>> items = CollectionSequence.fromCollection(problems).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
+      public SearchResult<IssueKindReportItem> select(IssueKindReportItem p) {
+        String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(p);
+        return new SearchResult<IssueKindReportItem>(p, IssueKindReportItem.PATH_OBJECT.get(p).resolve(myMPSProject.getRepository()), issueKind);
       }
     }).where(new IWhereFilter<SearchResult<IssueKindReportItem>>() {
       public boolean accept(SearchResult<IssueKindReportItem> it) {
@@ -86,96 +90,21 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   }
 
   public void showNodes(final Map<String, Set<SNode>> toShow) {
-    final SearchResults sr = new SearchResults();
-    SetSequence.fromSet(MapSequence.fromMap(toShow).keySet()).translate(new ITranslator2<String, SearchResult>() {
-      public Iterable<SearchResult> translate(String k) {
-        return SetSequence.fromSet(MapSequence.fromMap(toShow).get(k)).select(new ISelector<SNode, SearchResult>() {
-          public SearchResult select(SNode node) {
-            return new SearchResult();
+    final SearchResults<SNode> sr = new SearchResults<>();
+    SetSequence.fromSet(MapSequence.fromMap(toShow).keySet()).translate(new ITranslator2<String, SearchResult<SNode>>() {
+      public Iterable<SearchResult<SNode>> translate(String k) {
+        return SetSequence.fromSet(MapSequence.fromMap(toShow).get(k)).select(new ISelector<SNode, SearchResult<SNode>>() {
+          public SearchResult<SNode> select(SNode node) {
+            return new SearchResult<SNode>();
           }
         });
       }
-    }).visitAll(new IVisitor<SearchResult>() {
-      public void visit(SearchResult it) {
+    }).visitAll(new IVisitor<SearchResult<SNode>>() {
+      public void visit(SearchResult<SNode> it) {
         sr.add(it);
       }
     });
     myUsagesTool.show(sr, "No results to show");
-  }
-
-  public static abstract class MigrationReportItem<T> implements IssueKindReportItem {
-    private String myMessage;
-    private T myReason;
-    public MigrationReportItem(T reason, String message) {
-      myMessage = message;
-      myReason = reason;
-    }
-    @Override
-    public String getIssueKind() {
-      return "migration problem";
-    }
-    @Override
-    public String getMessage() {
-      return myMessage;
-    }
-    @Override
-    public MessageStatus getSeverity() {
-      return MessageStatus.ERROR;
-    }
-    public T getReason() {
-      return myReason;
-    }
-    @Override
-    public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
-      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), FlavouredItem.FLAVOUR_CLASS, FLAVOUR_THIS);
-    }
-  }
-  public static class MigrationReportItemNode extends WorkbenchMigrationProblemHandler.MigrationReportItem<SNodeReference> implements NodeReportItem {
-    public MigrationReportItemNode(SNodeReference reason, String message) {
-      super(reason, message);
-    }
-    @Override
-    public SNodeReference getNode() {
-      return getReason();
-    }
-  }
-  public static class MigrationReportItemModel extends WorkbenchMigrationProblemHandler.MigrationReportItem<SModelReference> implements ModelFlavouredItem {
-    public MigrationReportItemModel(SModelReference reason, String message) {
-      super(reason, message);
-    }
-    @NotNull
-    @Override
-    public SModelReference getModel() {
-      return getReason();
-    }
-  }
-  public static class MigrationReportItemModule extends WorkbenchMigrationProblemHandler.MigrationReportItem<SModuleReference> implements ModuleFlavouredItem {
-    public MigrationReportItemModule(SModuleReference reason, String message) {
-      super(reason, message);
-    }
-    @NotNull
-    @Override
-    public SModuleReference getModule() {
-      return getReason();
-    }
-  }
-
-  private IssueKindReportItem issueByProblem(Problem p) {
-    Object r = p.getReason();
-    if (r instanceof SNode) {
-      return new WorkbenchMigrationProblemHandler.MigrationReportItemNode(((SNode) r).getReference(), p.getMessage());
-    }
-    if (r instanceof SModel) {
-      return new WorkbenchMigrationProblemHandler.MigrationReportItemModel(((SModel) r).getReference(), p.getMessage());
-    }
-    if (r instanceof SModule) {
-      return new WorkbenchMigrationProblemHandler.MigrationReportItemModule(((SModule) r).getModuleReference(), p.getMessage());
-    }
-
-    if (LOG.isEnabledFor(Level.ERROR)) {
-      LOG.error("Unknown issue type: " + r.getClass().getName());
-    }
-    return null;
   }
 
   @Override
