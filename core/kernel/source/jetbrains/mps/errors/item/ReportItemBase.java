@@ -46,7 +46,7 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
   }
 
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS));
+    return new HashSet<>(Collections.singletonList(FLAVOUR_CLASS));
   }
 
   public static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
@@ -75,7 +75,7 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
     }
     @NotNull
     public Collection<T> getCollection(ReportItem reportItem) {
-      if (canGet(reportItem) && get((I) reportItem) != null) {
+      if (canGet(reportItem)) {
         return get((I) reportItem);
       } else {
         return Collections.emptyList();

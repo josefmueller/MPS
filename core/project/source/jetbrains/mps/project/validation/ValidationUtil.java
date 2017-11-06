@@ -16,6 +16,8 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
+import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
 import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
@@ -95,8 +97,11 @@ public class ValidationUtil {
   public static boolean validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
     SLanguage lang = node.getConcept().getLanguage();
     if (!lang.isValid()) {
-      LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
-      return processor.process(error);
+      if (lang.getSourceModule() == null) {
+        processor.process(new LanguageAbsentInRepoProblem(lang, node));
+      } else {
+        processor.process(new LanguageNotLoadedProblem(lang, node));
+      }
     }
 
     SConcept concept = node.getConcept();

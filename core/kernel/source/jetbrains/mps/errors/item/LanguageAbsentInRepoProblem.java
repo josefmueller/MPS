@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.validation;
+package jetbrains.mps.errors.item;
 
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class LanguageMissingError extends NodeValidationProblem {
-  private SLanguage myLanguage;
-  private boolean myCompletelyAbsent;
-
-  public LanguageMissingError(SNode node, SLanguage language, boolean completelyAbsent) {
-    super(node, "Language " + language.getQualifiedName() + (completelyAbsent ? " not in repository" : " not loaded"));
-    myLanguage = language;
-    myCompletelyAbsent = completelyAbsent;
+public class LanguageAbsentInRepoProblem extends LanguageMissingProblem {
+  public LanguageAbsentInRepoProblem(SLanguage language, SNode instance) {
+    super(language, instance, "Language " + language + " is not in repository");
   }
 
-  public SLanguage getLanguage() {
-    return myLanguage;
+  public String getIssueKind() {
+    return "missing language (missing plugin?)";
   }
-
-  public boolean isCompletelyAbsent() {
-    return myCompletelyAbsent;
-  }
-
 }
