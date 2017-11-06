@@ -4,12 +4,6 @@ package jetbrains.mps.checkers;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -30,6 +24,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.NodeReportItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -44,23 +39,6 @@ public class ModelCheckerBuilder {
     this(new ModelCheckerBuilder.ModelsExtractorImpl().includeStubs(checkStubs));
   }
 
-
-  /**
-   * drops only issues in tests
-   * ErrorReportUtil.shouldReportError => SpecificChecker.filterIssue
-   */
-  public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
-    if (container == null) {
-      return true;
-    }
-    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
-        return false;
-      }
-    }
-    return true;
-  }
   public static abstract class ModelExtractor {
     public final List<SModel> getModels(SModule module) {
       Iterable<SModel> models = Sequence.fromIterable(getSubModules(module)).translate(new ITranslator2<SModule, SModel>() {
@@ -203,7 +181,7 @@ public class ModelCheckerBuilder {
         SNodeReference nodeRef = NodeReportItem.FLAVOUR_NODE.tryToGet(item);
         if (nodeRef != null) {
           SNode node = nodeRef.resolve(repository);
-          if (filterIssue(node) && ErrorReportUtil.shouldReportError(node)) {
+          if (ErrorReportUtil.shouldReportError(node)) {
             return true;
           } else {
             if (LOG.isEnabledFor(Level.ERROR)) {

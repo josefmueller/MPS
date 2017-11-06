@@ -15,13 +15,7 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CheckingTestsUtil {
   private final CheckingTestStatistic myStats;
@@ -43,14 +37,7 @@ public class CheckingTestsUtil {
 
     for (NodeReportItem reportItem : reportItems) {
       SNode node = reportItem.getNode().resolve(module.getRepository());
-      if (!(ErrorReportUtil.shouldReportError(node))) {
-        continue;
-      }
-
       if (reportItem.getSeverity().equals(MessageStatus.ERROR)) {
-        if (!(CheckingTestsUtil.filterIssue(node))) {
-          continue;
-        }
         myStats.reportError();
         errors.add("Error message: " + reportItem.getMessage() + "   model: " + node.getModel().getName().getValue() + " root: " + node.getContainingRoot() + " node: " + node);
       }
@@ -59,18 +46,6 @@ public class CheckingTestsUtil {
       }
     }
     return errors;
-  }
-  public static boolean filterIssue(SNode node) {
-    SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
-    if (container == null) {
-      return true;
-    }
-    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
-        return false;
-      }
-    }
-    return true;
   }
   public static String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
