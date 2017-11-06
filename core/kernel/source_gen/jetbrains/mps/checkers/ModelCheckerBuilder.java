@@ -57,7 +57,7 @@ public class ModelCheckerBuilder {
   }
 
   public static class ModelsExtractorImpl extends ModelCheckerBuilder.ModelExtractor {
-    private boolean myIncludeStubs = true;
+    private boolean myIncludeStubs = false;
     private boolean myIncludeGenerators = true;
     public ModelCheckerBuilder.ModelsExtractorImpl excludeGenerators() {
       myIncludeGenerators = false;
