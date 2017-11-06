@@ -1019,21 +1019,21 @@
     <jar destfile="${build.layout}/languages/text/jetbrains.mps.lang.text.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.text" />
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.xml" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.text/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps_home}/languages/util/core.text/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.text.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-core.text-models">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.text/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-util-core.text-models">
+      <fileset dir="${mps_home}/languages/util/core.text/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/text/jetbrains.mps.lang.text-src.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.text/source_gen">
+      <fileset dir="${mps_home}/languages/util/core.text/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <zipfileset file="${mps_home}/plugins/mps-core/languages/core.text/jetbrains.mps.lang.text.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-core.text-models" prefix="module/models" />
+      <zipfileset file="${mps_home}/languages/util/core.text/jetbrains.mps.lang.text.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-util-core.text-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/languages/languageDesign" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.access.jar" />
@@ -6031,7 +6031,7 @@
         <module file="${mps_home}/languages/languageDesign/smodel.query/jetbrains.mps.lang.smodel.query.mpl" bootstrap="true" />
         <module file="${mps_home}/core/squery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" bootstrap="true" />
-        <module file="${mps_home}/plugins/mps-core/languages/core.text/jetbrains.mps.lang.text.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/core.text/jetbrains.mps.lang.text.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" bootstrap="true" />
@@ -15174,12 +15174,12 @@
   </target>
   
   <target name="java.compile.jetbrains.mps.lang.text" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage.logging.runtime, java.compile.mps-editing, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.idea-platform, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-ui, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.descriptor.aspects, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.structure">
-    <mkdir dir="${mps_home}/plugins/mps-core/languages/core.text/source_gen" />
+    <mkdir dir="${mps_home}/languages/util/core.text/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.text" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.text" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-core/languages/core.text/source_gen" />
+        <path location="${mps_home}/languages/util/core.text/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-generator" />
@@ -15229,7 +15229,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.text">
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.text/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
+      <fileset dir="${mps_home}/languages/util/core.text/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, META-INF/services/**/*" />
     </copy>
   </target>
   

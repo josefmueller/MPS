@@ -72,12 +72,12 @@
       <fileset dir="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.text.test.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-core.text-test-models">
-      <fileset dir="${basedir}/plugins/mps-core/languages/core.text/test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-text.test-models">
+      <fileset dir="${basedir}/testbench/testsolutions/text.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.lang.text.test-src.jar" duplicate="preserve">
-      <zipfileset file="${basedir}/plugins/mps-core/languages/core.text/test/jetbrains.mps.lang.text.test.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-core.text-test-models" prefix="module/models" />
+      <zipfileset file="${basedir}/testbench/testsolutions/text.test/jetbrains.mps.lang.text.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-text.test-models" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -181,7 +181,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
-        <module file="${basedir}/plugins/mps-core/languages/core.text/test/jetbrains.mps.lang.text.test.msd" />
+        <module file="${basedir}/testbench/testsolutions/text.test/jetbrains.mps.lang.text.test.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -208,7 +208,7 @@
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.text.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.text.test" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${basedir}/plugins/mps-core/languages/core.text/test/test_gen/" />
+      <src path="${basedir}/testbench/testsolutions/text.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
@@ -251,7 +251,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.text.test">
-      <fileset dir="${basedir}/plugins/mps-core/languages/core.text/test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/testbench/testsolutions/text.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -390,6 +390,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/plugins/mps-core/languages/core.text/test/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/text.test/test_gen" />
   </target>
 </project>

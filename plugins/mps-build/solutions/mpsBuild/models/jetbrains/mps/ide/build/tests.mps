@@ -7592,19 +7592,13 @@
         </node>
         <node concept="55IIr" id="3HV74$eh7lg" role="3LF7KH">
           <node concept="2Ry0Ak" id="3HV74$eh7lh" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
+            <property role="2Ry0Am" value="testbench" />
             <node concept="2Ry0Ak" id="3HV74$eh7li" role="2Ry0An">
-              <property role="2Ry0Am" value="mps-core" />
+              <property role="2Ry0Am" value="testsolutions" />
               <node concept="2Ry0Ak" id="3HV74$eh7lj" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="3HV74$eh7lk" role="2Ry0An">
-                  <property role="2Ry0Am" value="core.text" />
-                  <node concept="2Ry0Ak" id="3HV74$eh7tn" role="2Ry0An">
-                    <property role="2Ry0Am" value="test" />
-                    <node concept="2Ry0Ak" id="3HV74$eh7ts" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.lang.text.test.msd" />
-                    </node>
-                  </node>
+                <property role="2Ry0Am" value="text.test" />
+                <node concept="2Ry0Ak" id="3HV74$eh7ts" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.text.test.msd" />
                 </node>
               </node>
             </node>

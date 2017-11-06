@@ -15184,16 +15184,13 @@
         <node concept="398BVA" id="3HV74$ebibD" role="3LF7KH">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="3HV74$ebibE" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
+            <property role="2Ry0Am" value="languages" />
             <node concept="2Ry0Ak" id="3HV74$ebibF" role="2Ry0An">
-              <property role="2Ry0Am" value="mps-core" />
+              <property role="2Ry0Am" value="util" />
               <node concept="2Ry0Ak" id="3HV74$ebibG" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
+                <property role="2Ry0Am" value="core.text" />
                 <node concept="2Ry0Ak" id="3HV74$ebibH" role="2Ry0An">
-                  <property role="2Ry0Am" value="core.text" />
-                  <node concept="2Ry0Ak" id="3HV74$ebpWs" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.lang.text.mpl" />
-                  </node>
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.text.mpl" />
                 </node>
               </node>
             </node>
