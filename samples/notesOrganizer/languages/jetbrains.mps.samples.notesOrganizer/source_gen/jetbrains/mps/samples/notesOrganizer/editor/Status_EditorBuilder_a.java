@@ -63,8 +63,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   private EditorCell createCollection_gjf57x_b0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_gjf57x_b0");
-    Checkbox_ActionMap_0.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addKeyMap(new Checkbox_KeyMap_0());
+    Checkbox_ActionMap_gjf57x_b0.setCellActions(editorCell, myNode, getEditorContext());
+    editorCell.addKeyMap(new Checkbox_KeyMap_gjf57x_b0());
     editorCell.addEditorCell(createAlternation_gjf57x_a1a());
     editorCell.addEditorCell(createConstant_gjf57x_b1a());
     return editorCell;

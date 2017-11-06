@@ -11,15 +11,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
-public class Checkbox_KeyMap_2 extends KeyMapImpl {
-  public Checkbox_KeyMap_2() {
+public class Checkbox_KeyMap_3jyf1k_f0 extends KeyMapImpl {
+  public Checkbox_KeyMap_3jyf1k_f0() {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
-    action = new Checkbox_KeyMap_2.Checkbox_KeyMap_2_Action0();
+    action = new Checkbox_KeyMap_3jyf1k_f0.Checkbox_KeyMap_3jyf1k_f0_Action0();
     this.putAction("none", "VK_SPACE", action);
   }
-  public static class Checkbox_KeyMap_2_Action0 extends KeyMapActionImpl {
-    public Checkbox_KeyMap_2_Action0() {
+  public static class Checkbox_KeyMap_3jyf1k_f0_Action0 extends KeyMapActionImpl {
+    public Checkbox_KeyMap_3jyf1k_f0_Action0() {
       this.setShownInPopupMenu(false);
     }
     public String getDescriptionText() {
