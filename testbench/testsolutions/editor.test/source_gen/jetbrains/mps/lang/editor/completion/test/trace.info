@@ -951,6 +951,80 @@
       <unit id="1384684774808509249" at="22,0,56,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceTransformationMenuWrapSubstituteMenu_Test" />
     </file>
   </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959506170">
+    <file name="CompleteMatchingTextStartsWithPatternImmediately_Test.java">
+      <node id="2070818307959506170" at="13,88,14,113" concept="0" />
+      <node id="2070818307959506170" at="14,113,15,141" concept="0" />
+      <node id="2070818307959506170" at="21,51,22,72" concept="0" />
+      <node id="2070818307959506174" at="22,72,23,24" concept="0" />
+      <node id="2070818307959506172" at="23,24,24,71" concept="0" />
+      <node id="2070818307959506170" at="12,0,17,0" concept="2" trace="test_CompleteMatchingTextStartsWithPatternImmediately#()V" />
+      <node id="2070818307959506170" at="20,0,26,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2070818307959506170" at="13,88,15,141" />
+      <scope id="2070818307959506170" at="21,51,24,71" />
+      <scope id="2070818307959506170" at="12,0,17,0" />
+      <scope id="2070818307959506170" at="20,0,26,0" />
+      <unit id="2070818307959506170" at="18,0,27,0" name="jetbrains.mps.lang.editor.completion.test.CompleteMatchingTextStartsWithPatternImmediately_Test$TestBody" />
+      <unit id="2070818307959506170" at="10,0,28,0" name="jetbrains.mps.lang.editor.completion.test.CompleteMatchingTextStartsWithPatternImmediately_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959549601">
+    <file name="CompleteCamelCasePatternImmediately_Test.java">
+      <node id="2070818307959549601" at="13,75,14,113" concept="0" />
+      <node id="2070818307959549601" at="14,113,15,128" concept="0" />
+      <node id="2070818307959549601" at="21,51,22,72" concept="0" />
+      <node id="2070818307959549603" at="22,72,23,23" concept="0" />
+      <node id="2070818307959549604" at="23,23,24,71" concept="0" />
+      <node id="2070818307959549601" at="12,0,17,0" concept="2" trace="test_CompleteCamelCasePatternImmediately#()V" />
+      <node id="2070818307959549601" at="20,0,26,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2070818307959549601" at="13,75,15,128" />
+      <scope id="2070818307959549601" at="21,51,24,71" />
+      <scope id="2070818307959549601" at="12,0,17,0" />
+      <scope id="2070818307959549601" at="20,0,26,0" />
+      <unit id="2070818307959549601" at="18,0,27,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCasePatternImmediately_Test$TestBody" />
+      <unit id="2070818307959549601" at="10,0,28,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCasePatternImmediately_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959549729">
+    <file name="DontCompleteNotCamelCasePatternAmbiguityImmediately_Test.java">
+      <node id="2070818307959549729" at="16,91,17,113" concept="0" />
+      <node id="2070818307959549729" at="17,113,18,144" concept="0" />
+      <node id="2070818307959549729" at="24,51,25,72" concept="0" />
+      <node id="2070818307959549731" at="25,72,26,23" concept="0" />
+      <node id="2070818307959549732" at="26,23,27,71" concept="0" />
+      <node id="2070818307959549910" at="27,71,28,162" concept="0" />
+      <node id="2070818307960487255" at="28,162,29,82" concept="0" />
+      <node id="2070818307959549905" at="29,82,30,0" concept="5" />
+      <node id="2070818307959549729" at="15,0,20,0" concept="2" trace="test_DontCompleteNotCamelCasePatternAmbiguityImmediately#()V" />
+      <node id="2070818307959549729" at="23,0,32,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2070818307959549729" at="16,91,18,144" />
+      <scope id="2070818307959549729" at="15,0,20,0" />
+      <scope id="2070818307959549729" at="24,51,30,0" />
+      <scope id="2070818307959549729" at="23,0,32,0" />
+      <unit id="2070818307959549729" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteNotCamelCasePatternAmbiguityImmediately_Test$TestBody" />
+      <unit id="2070818307959549729" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteNotCamelCasePatternAmbiguityImmediately_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959572660">
+    <file name="DontCompleteStringSearchImmediately_Test.java">
+      <node id="2070818307959572660" at="16,75,17,113" concept="0" />
+      <node id="2070818307959572660" at="17,113,18,128" concept="0" />
+      <node id="2070818307959572660" at="24,51,25,72" concept="0" />
+      <node id="2070818307959572662" at="25,72,26,24" concept="0" />
+      <node id="2070818307959572663" at="26,24,27,71" concept="0" />
+      <node id="2070818307959572665" at="27,71,28,162" concept="0" />
+      <node id="2070818307959586756" at="28,162,29,82" concept="0" />
+      <node id="2070818307959572679" at="29,82,30,0" concept="5" />
+      <node id="2070818307959572660" at="15,0,20,0" concept="2" trace="test_DontCompleteStringSearchImmediately#()V" />
+      <node id="2070818307959572660" at="23,0,32,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2070818307959572660" at="16,75,18,128" />
+      <scope id="2070818307959572660" at="15,0,20,0" />
+      <scope id="2070818307959572660" at="24,51,30,0" />
+      <scope id="2070818307959572660" at="23,0,32,0" />
+      <unit id="2070818307959572660" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteStringSearchImmediately_Test$TestBody" />
+      <unit id="2070818307959572660" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteStringSearchImmediately_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2786154196593923925">
     <file name="CompleteFullMatchingText_Test.java">
       <node id="2786154196593923925" at="16,64,17,113" concept="0" />
