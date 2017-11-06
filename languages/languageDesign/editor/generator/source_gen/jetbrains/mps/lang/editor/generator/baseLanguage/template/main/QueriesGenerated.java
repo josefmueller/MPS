@@ -34,7 +34,6 @@ import jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.lang.editor.behavior.StyleClass__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.StyleSheet__BehaviorDescriptor;
-import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.StyleKey__BehaviorDescriptor;
@@ -691,7 +690,7 @@ public class QueriesGenerated extends QueryProviderBase {
     String result = "";
     for (SNode tagWrapper : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x3212fe82cb95ffe6L, "tags")))) {
       if ((result != null && result.length() > 0)) {
-        result += SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR;
+        result += "|";
       }
       result += SPropertyOperations.getString_def(tagWrapper, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, 0x3212fe82cb95ffeaL, "tag"), null);
     }

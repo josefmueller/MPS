@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -95,8 +96,12 @@ public class ModelActions {
   // right-transform hint substitute
   //-------------------
 
+  /**
+   * @deprecated use {@link #createSideTransformSubstituteActions(EditorCell, Side)}
+   */
+  @Deprecated
   public static boolean canCreateSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
-    return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).canCreateActions();
+    return false;
   }
 
   /**
@@ -104,7 +109,7 @@ public class ModelActions {
    */
   @Deprecated
   public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
-    return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).createActions();
+    return new ArrayList<>();
   }
 
   public static List<SubstituteAction> createSideTransformSubstituteActions(@NotNull EditorCell cell, @NotNull SideTransformSubstituteInfo.Side side) {

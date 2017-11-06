@@ -14891,9 +14891,8 @@
                       <node concept="3clFbS" id="4A7H4EznQQb" role="3clFbx">
                         <node concept="3clFbF" id="4A7H4EznQQc" role="3cqZAp">
                           <node concept="d57v9" id="4A7H4EznQQd" role="3clFbG">
-                            <node concept="10M0yZ" id="4A7H4EznQQe" role="37vLTx">
-                              <ref role="1PxDUh" to="zce0:~SideTransformHintSubstituteActionsHelper" resolve="SideTransformHintSubstituteActionsHelper" />
-                              <ref role="3cqZAo" to="zce0:~SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR" resolve="SIDE_TRANSFORM_TAG_SEPARATOR" />
+                            <node concept="Xl_RD" id="1MX1$u8kqXf" role="37vLTx">
+                              <property role="Xl_RC" value="|" />
                             </node>
                             <node concept="37vLTw" id="3GM_nagTxfD" role="37vLTJ">
                               <ref role="3cqZAo" node="4A7H4EznQPZ" resolve="result" />
