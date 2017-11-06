@@ -13,18 +13,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -35,10 +37,14 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class ModelCheckerBuilder {
   private static final Logger LOG = LogManager.getLogger(ModelCheckerBuilder.class);
 
-  private boolean myCheckStubs;
-  public ModelCheckerBuilder(boolean checkStubs) {
-    myCheckStubs = checkStubs;
+  private final ModelCheckerBuilder.ModelExtractor myModelExtractor;
+  public ModelCheckerBuilder(ModelCheckerBuilder.ModelExtractor modelExtractor) {
+    myModelExtractor = modelExtractor;
   }
+  public ModelCheckerBuilder(boolean checkStubs) {
+    this(new ModelCheckerBuilder.ModelsExtractorImpl().includeStubs(checkStubs));
+  }
+
 
   /**
    * drops only issues in tests
@@ -56,18 +62,50 @@ public class ModelCheckerBuilder {
     }
     return true;
   }
-
-  private List<SModel> getModelDescriptors(SModule module) {
-    List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
-      if (SModelStereotype.isUserModel(modelDescriptor)) {
-        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
-      }
-      if (myCheckStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
-        ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
-      }
+  public static abstract class ModelExtractor {
+    public final List<SModel> getModels(SModule module) {
+      Iterable<SModel> models = Sequence.fromIterable(getSubModules(module)).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule m) {
+          return m.getModels();
+        }
+      });
+      return Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
+          return includeModel(it);
+        }
+      }).toListSequence();
     }
-    return modelDescrpitors;
+    public abstract Iterable<SModule> getSubModules(SModule module);
+    public abstract boolean includeModel(SModel model);
+  }
+
+  public static class ModelsExtractorImpl extends ModelCheckerBuilder.ModelExtractor {
+    private boolean myIncludeStubs = true;
+    private boolean myIncludeDoNotGenerate = true;
+    private boolean myIncludeGenerators = true;
+    public ModelCheckerBuilder.ModelsExtractorImpl excludeDoNoGenerate() {
+      myIncludeDoNotGenerate = false;
+      return this;
+    }
+    public ModelCheckerBuilder.ModelsExtractorImpl excludeGenerators() {
+      myIncludeGenerators = false;
+      return this;
+    }
+    public ModelCheckerBuilder.ModelsExtractorImpl includeStubs(boolean checkStubs) {
+      myIncludeStubs = checkStubs;
+      return this;
+    }
+    @Override
+    public Iterable<SModule> getSubModules(SModule module) {
+      List<SModule> result = ListSequence.fromListAndArray(new ArrayList<SModule>(), module);
+      if (myIncludeGenerators && module instanceof Language) {
+        ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
+      }
+      return result;
+    }
+    public boolean includeModel(SModel model) {
+      return (SModelStereotype.isUserModel(model) || (myIncludeStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model)))) && (myIncludeDoNotGenerate || GenerationFacade.canGenerate(model));
+    }
   }
 
   public static class ItemsToCheck {
@@ -108,14 +146,14 @@ public class ModelCheckerBuilder {
     return new IAbstractChecker<ModelCheckerBuilder.ItemsToCheck, IssueKindReportItem>() {
       public void check(ModelCheckerBuilder.ItemsToCheck itemsToCheck, SRepository repository, Consumer<? super IssueKindReportItem> errorCollector, ProgressMonitor monitor) {
         List<SModule> modules = itemsToCheck.modules;
-        modules = ListSequence.fromList(modules).concat(ListSequence.fromList(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
-          public Iterable<Generator> translate(Language language) {
-            return language.getGenerators();
+        modules = ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModule>() {
+          public Iterable<SModule> translate(SModule it) {
+            return myModelExtractor.getSubModules(it);
           }
-        })).toListSequence();
+        }).toListSequence();
         int work = ListSequence.fromList(itemsToCheck.models).count() + ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(modules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule it) {
-            return getModelDescriptors(it);
+            return myModelExtractor.getModels(it);
           }
         }).count();
         monitor.start("Checking", work);
@@ -145,7 +183,7 @@ public class ModelCheckerBuilder {
             if (monitor.isCanceled()) {
               break;
             }
-            for (SModel model : ListSequence.fromList(getModelDescriptors(module))) {
+            for (SModel model : ListSequence.fromList(myModelExtractor.getModels(module))) {
               generalModelChecker.check(model, repository, errorCollector, monitor.subTask(1, SubProgressKind.REPLACING));
               if (monitor.isCanceled()) {
                 break;

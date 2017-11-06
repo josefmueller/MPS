@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
@@ -36,7 +37,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
+        Collection<SModel> models = new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule);
         List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromList(new ArrayList<IChecker<SNode, NodeReportItem>>());
         ListSequence.fromList(checkers).addSequence(ListSequence.fromList(AbstractConstraintsCheckerRootCheckerAdapter.createList(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker())));
         ListSequence.fromList(checkers).addElement(AbstractConstraintsCheckerRootCheckerAdapter.create(IChecker.AbstractNodeChecker.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));

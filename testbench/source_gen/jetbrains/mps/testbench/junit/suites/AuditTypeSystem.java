@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.checkers.IChecker;
@@ -32,7 +33,7 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
+        Collection<SModel> models = new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule);
         return new CheckingTestsUtil(statistic).applyChecker(models, ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new TypesystemChecker()));
       }
     });
