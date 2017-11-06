@@ -31,6 +31,7 @@ import org.junit.Assume;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.generator.GenerationFacade;
 
 public class CheckProjectStructure extends BaseCheckModulesTest {
   public CheckProjectStructure(SModule module) {
@@ -175,7 +176,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         GenerationDependenciesCache genDeps = new GenerationDependenciesCache();
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeDoNoGenerate().getModels(myModule)) {
+        for (SModel sm : new CheckProjectStructure.TestsModelExtractor().excludeDoNoGenerate().getModels(myModule)) {
           SModule module = sm.getModule();
           if (module == null) {
             errors.add("Model without a module: " + sm.getReference().toString());
@@ -200,4 +201,17 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     });
     Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
+
+  public static class TestsModelExtractor extends ModelCheckerBuilder.ModelsExtractorImpl {
+    private boolean myIncludeDoNotGenerate = true;
+    public ModelCheckerBuilder.ModelsExtractorImpl excludeDoNoGenerate() {
+      myIncludeDoNotGenerate = false;
+      return this;
+    }
+    @Override
+    public boolean includeModel(SModel model) {
+      return super.includeModel(model) && (myIncludeDoNotGenerate || GenerationFacade.canGenerate(model));
+    }
+  }
+
 }

@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -81,12 +80,7 @@ public class ModelCheckerBuilder {
 
   public static class ModelsExtractorImpl extends ModelCheckerBuilder.ModelExtractor {
     private boolean myIncludeStubs = true;
-    private boolean myIncludeDoNotGenerate = true;
     private boolean myIncludeGenerators = true;
-    public ModelCheckerBuilder.ModelsExtractorImpl excludeDoNoGenerate() {
-      myIncludeDoNotGenerate = false;
-      return this;
-    }
     public ModelCheckerBuilder.ModelsExtractorImpl excludeGenerators() {
       myIncludeGenerators = false;
       return this;
@@ -104,7 +98,7 @@ public class ModelCheckerBuilder {
       return result;
     }
     public boolean includeModel(SModel model) {
-      return (SModelStereotype.isUserModel(model) || (myIncludeStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model)))) && (myIncludeDoNotGenerate || GenerationFacade.canGenerate(model));
+      return SModelStereotype.isUserModel(model) || (myIncludeStubs && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model)));
     }
   }
 

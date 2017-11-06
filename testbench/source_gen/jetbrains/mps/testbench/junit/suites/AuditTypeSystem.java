@@ -34,7 +34,7 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         Collection<SModel> models = new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule);
-        return new CheckingTestsUtil(statistic).applyChecker(models, ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new TypesystemChecker()));
+        return new CheckingTestsUtil(statistic).applyChecker(myModule, new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators(), ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new TypesystemChecker()));
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

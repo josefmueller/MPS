@@ -4024,11 +4024,11 @@
                       <node concept="2OqwBi" id="6nj_ILmELHB" role="2Oq$k0">
                         <node concept="2ShNRf" id="6nj_ILmEKXY" role="2Oq$k0">
                           <node concept="HV5vD" id="6nj_ILmEKXZ" role="2ShVmc">
-                            <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                            <ref role="HV5vE" node="34euvBSIas3" resolve="CheckProjectStructure.TestsModelExtractor" />
                           </node>
                         </node>
                         <node concept="liA8E" id="6nj_ILmEMcb" role="2OqNvi">
-                          <ref role="37wK5l" to="wsw7:6nj_ILmEmho" resolve="excludeDoNoGenerate" />
+                          <ref role="37wK5l" node="6nj_ILmEmho" resolve="excludeDoNoGenerate" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6nj_ILmEKY0" role="2OqNvi">
@@ -4074,6 +4074,93 @@
       <node concept="3Tm1VV" id="7X3$Ctw9JWS" role="1B3o_S" />
       <node concept="3cqZAl" id="7X3$Ctw9JWT" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="34euvBSIgEK" role="jymVt" />
+    <node concept="312cEu" id="34euvBSIas3" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="TrG5h" value="TestsModelExtractor" />
+      <node concept="312cEg" id="7X3$Ctw7wwf" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="myIncludeDoNotGenerate" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10P_77" id="7X3$Ctw7wwh" role="1tU5fm" />
+        <node concept="3Tm6S6" id="7X3$Ctw7wwi" role="1B3o_S" />
+        <node concept="3clFbT" id="6nj_ILmEx4t" role="33vP2m">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="6nj_ILmEmho" role="jymVt">
+        <property role="TrG5h" value="excludeDoNoGenerate" />
+        <node concept="3uibUv" id="6nj_ILmEn8x" role="3clF45">
+          <ref role="3uigEE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+        </node>
+        <node concept="3Tm1VV" id="6nj_ILmEmhr" role="1B3o_S" />
+        <node concept="3clFbS" id="6nj_ILmEmhs" role="3clF47">
+          <node concept="3clFbF" id="6nj_ILmEobF" role="3cqZAp">
+            <node concept="37vLTI" id="6nj_ILmEoI6" role="3clFbG">
+              <node concept="3clFbT" id="6nj_ILmEoSP" role="37vLTx">
+                <property role="3clFbU" value="false" />
+              </node>
+              <node concept="37vLTw" id="6nj_ILmEobE" role="37vLTJ">
+                <ref role="3cqZAo" node="7X3$Ctw7wwf" resolve="myIncludeDoNotGenerate" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="6nj_ILmEplJ" role="3cqZAp">
+            <node concept="Xjq3P" id="6nj_ILmEptS" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFb_" id="34euvBSIoSn" role="jymVt">
+        <property role="TrG5h" value="includeModel" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <property role="1EzhhJ" value="false" />
+        <node concept="37vLTG" id="34euvBSIoSo" role="3clF46">
+          <property role="TrG5h" value="model" />
+          <property role="3TUv4t" value="false" />
+          <node concept="3uibUv" id="34euvBSIoSp" role="1tU5fm">
+            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="34euvBSIoSH" role="1B3o_S" />
+        <node concept="10P_77" id="34euvBSIoSI" role="3clF45" />
+        <node concept="3clFbS" id="34euvBSIoSJ" role="3clF47">
+          <node concept="3cpWs6" id="7X3$Ctw7wx_" role="3cqZAp">
+            <node concept="1Wc70l" id="7X3$Ctw7wxA" role="3cqZAk">
+              <node concept="3nyPlj" id="34euvBSI6nA" role="3uHU7B">
+                <ref role="37wK5l" to="wsw7:34euvBSBVf8" resolve="includeModel" />
+                <node concept="37vLTw" id="34euvBSIr3j" role="37wK5m">
+                  <ref role="3cqZAo" node="34euvBSIoSo" resolve="model" />
+                </node>
+              </node>
+              <node concept="1eOMI4" id="6jEfGOHtm_G" role="3uHU7w">
+                <node concept="22lmx$" id="7X3$Ctw7wxD" role="1eOMHV">
+                  <node concept="37vLTw" id="34euvBSIvJe" role="3uHU7B">
+                    <ref role="3cqZAo" node="7X3$Ctw7wwf" resolve="myIncludeDoNotGenerate" />
+                  </node>
+                  <node concept="2YIFZM" id="6jEfGOHtpE6" role="3uHU7w">
+                    <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+                    <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+                    <node concept="37vLTw" id="6jEfGOHtpE7" role="37wK5m">
+                      <ref role="3cqZAo" node="34euvBSIoSo" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="34euvBSIoSK" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="34euvBSIas4" role="1B3o_S" />
+      <node concept="3uibUv" id="34euvBSIoRI" role="1zkMxy">
+        <ref role="3uigEE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="34euvBSIgQa" role="jymVt" />
   </node>
   <node concept="312cEu" id="3wYn_nuz8y5">
     <property role="TrG5h" value="ScopesTest" />
