@@ -19411,6 +19411,16 @@
             </node>
           </node>
         </node>
+        <node concept="398223" id="4IP11oWmC8g" role="39821P">
+          <node concept="3_J27D" id="4IP11oWmC8i" role="Nbhlr">
+            <node concept="3Mxwew" id="4IP11oWmCbE" role="3MwsjC">
+              <property role="3MwjfP" value="modules" />
+            </node>
+          </node>
+          <node concept="1bldCd" id="4IP11oWmCbG" role="39821P">
+            <ref role="3$exzV" node="4IP11oWmB07" resolve="jetbrains.mps.ide.modelchecker.platform" />
+          </node>
+        </node>
       </node>
       <node concept="3981dx" id="1nJh0raW9OF" role="39821P">
         <node concept="3_J27D" id="1nJh0raW9OG" role="Nbhlr">
