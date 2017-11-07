@@ -33,6 +33,7 @@ import java.util.Set;
 
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_REFLECTIVE_EDITOR_HINT;
 
+@SuppressWarnings("ComponentNotRegistered")
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
   private final Set<SModel> myModelsWithReflective = new HashSet<>();
   private final List<ReflectiveHintsForModelChangeListener> myChangeListeners = new ArrayList<>();
@@ -60,23 +61,33 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
   }
 
   public void addListener(ReflectiveHintsForModelChangeListener changeListener) {
-    myChangeListeners.add(changeListener);
+    synchronized (myChangeListeners) {
+      myChangeListeners.add(changeListener);
+    }
   }
 
   public void removeListener(ReflectiveHintsForModelChangeListener changeListener) {
-    myChangeListeners.remove(changeListener);
+    synchronized (myChangeListeners) {
+      myChangeListeners.remove(changeListener);
+    }
+  }
+
+  private void notifyListeners(SModel model) {
+    synchronized (myChangeListeners) {
+      myChangeListeners.forEach(changeListener -> changeListener.modelChanged(model));
+    }
   }
 
   public void showReflectiveEditorByDefault(SModel model) {
     myModelsWithReflective.add(model);
     redrawEditors(model);
-    myChangeListeners.forEach(changeListener -> changeListener.modelChanged(model));
+    notifyListeners(model);
   }
 
   public void showRegularEditorByDefault(SModel model) {
     myModelsWithReflective.remove(model);
     redrawEditors(model);
-    myChangeListeners.forEach(changeListener -> changeListener.modelChanged(model));
+    notifyListeners(model);
   }
 
   private void redrawEditors(SModel model) {
