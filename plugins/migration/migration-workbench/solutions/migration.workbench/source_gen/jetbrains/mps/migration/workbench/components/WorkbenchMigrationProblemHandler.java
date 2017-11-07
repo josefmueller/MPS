@@ -4,16 +4,13 @@ package jetbrains.mps.migration.workbench.components;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
-import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -28,38 +25,24 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.FlavouredItem;
-import java.util.HashSet;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.errors.item.NodeReportItem;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.errors.item.ModelFlavouredItem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.errors.item.ModuleFlavouredItem;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Level;
 
 public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent implements MigrationProblemHandler {
-  private static final Logger LOG = LogManager.getLogger(WorkbenchMigrationProblemHandler.class);
   private UsagesViewTool myUsagesTool;
   private ModelCheckerTool myMcTool;
-  private MPSProject myMPSProject;
+  private Project myMpsProject;
 
   public WorkbenchMigrationProblemHandler(MPSProject project, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
     super(project.getProject());
     myUsagesTool = usagesTool;
     myMcTool = mcTool;
-    myMPSProject = project;
+    myMpsProject = project;
   }
 
   public void showProblems(Collection<IssueKindReportItem> problems) {
     Iterable<SearchResult<IssueKindReportItem>> items = CollectionSequence.fromCollection(problems).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
       public SearchResult<IssueKindReportItem> select(IssueKindReportItem p) {
-        String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(p);
-        return new SearchResult<IssueKindReportItem>(p, IssueKindReportItem.PATH_OBJECT.get(p).resolve(myMPSProject.getRepository()), issueKind);
+        return new SearchResult<IssueKindReportItem>(p, IssueKindReportItem.PATH_OBJECT.get(p).resolve(myMpsProject.getRepository()), IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(p));
       }
     }).where(new IWhereFilter<SearchResult<IssueKindReportItem>>() {
       public boolean accept(SearchResult<IssueKindReportItem> it) {
@@ -90,7 +73,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   }
 
   public void showNodes(final Map<String, Set<SNode>> toShow) {
-    final SearchResults<SNode> sr = new SearchResults<>();
+    final SearchResults<SNode> sr = new SearchResults<SNode>();
     SetSequence.fromSet(MapSequence.fromMap(toShow).keySet()).translate(new ITranslator2<String, SearchResult<SNode>>() {
       public Iterable<SearchResult<SNode>> translate(String k) {
         return SetSequence.fromSet(MapSequence.fromMap(toShow).get(k)).select(new ISelector<SNode, SearchResult<SNode>>() {

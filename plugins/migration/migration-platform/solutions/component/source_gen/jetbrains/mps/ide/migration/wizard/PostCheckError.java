@@ -5,13 +5,14 @@ package jetbrains.mps.ide.migration.wizard;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.ide.migration.MigrationChecker;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 
 public class PostCheckError extends MigrationError {
   private Project myProject;
@@ -39,8 +40,8 @@ public class PostCheckError extends MigrationError {
     }
     return res;
   }
-  public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
-    final List<Problem> res = ListSequence.fromList(new ArrayList<Problem>());
+  public Iterable<IssueKindReportItem> getProblems(ProgressIndicator progressIndicator) {
+    final List<IssueKindReportItem> res = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     myChecker.findNotMigrated(new ProgressMonitorAdapter(progressIndicator), myMigrationsToCheck, new Processor<Problem>() {
       public boolean process(Problem p) {
         ListSequence.fromList(res).addElement(p);

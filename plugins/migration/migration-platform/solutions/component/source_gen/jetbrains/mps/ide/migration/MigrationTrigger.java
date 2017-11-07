@@ -7,20 +7,16 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
@@ -52,7 +48,8 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import java.util.ArrayList;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
 import com.intellij.openapi.application.Application;
 import com.intellij.util.WaitForProgressToShow;
@@ -337,7 +334,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             public void run(@NotNull final ProgressIndicator progressIndicator) {
               myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  problems.value = IterableUtil.asList(errors.getProblems(progressIndicator));
+                  problems.value = ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), errors.getProblems(progressIndicator));
                 }
               });
             }
