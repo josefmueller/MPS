@@ -42,6 +42,9 @@ public class JavaForeignIdBuilder {
   @Nullable
   public static SNodeId.Foreign computeNodeId(@NotNull PsiElement element) {
     PsiElement parent = element.getParent();
+    if (parent == null) {
+      return null;
+    }
     String prefix;
     if (parent instanceof PsiFile) {
       // element is root 
