@@ -18,20 +18,25 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 public class ReflectiveEditorForModelMarker extends TreeUpdateVisitor {
 
-  private final ReflectiveHintsForModelComponent myReflectiveHintsForModelComponent;
+  private final Project myProject;
 
-  public ReflectiveEditorForModelMarker(ReflectiveHintsForModelComponent reflectiveHintsForModelComponent) {
-    myReflectiveHintsForModelComponent = reflectiveHintsForModelComponent;
+  public ReflectiveEditorForModelMarker(Project mpsProject) {
+    this.myProject = mpsProject;
   }
 
   @Override
   public void visitModelNode(@NotNull SModelTreeNode node) {
-    if (myReflectiveHintsForModelComponent.shouldShowReflectiveEditor(node.getModel().getReference())) {
+    if (getComponent().shouldShowReflectiveEditor(node.getModel())) {
       addUpdate(node, new AdditionalTextNodeUpdate("reflective editor by default"));
     }
+  }
+
+  public ReflectiveHintsForModelComponent getComponent() {
+    return myProject.getComponent(ReflectiveHintsForModelComponent.class);
   }
 }

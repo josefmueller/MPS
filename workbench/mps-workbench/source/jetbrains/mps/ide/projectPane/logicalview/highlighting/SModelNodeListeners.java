@@ -18,6 +18,8 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelChangeListener;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
@@ -37,7 +39,7 @@ import java.util.stream.Collectors;
 
 /**
  * Control listeners that track changes to a model node.
- * Invoke {@link #startListening(SRepository,ModelGenerationStatusManager)}/{@link #stopListening(SRepository, ModelGenerationStatusManager )} to
+ * Invoke {@link #startListening(SRepository,ModelGenerationStatusManager,ReflectiveHintsForModelComponent)}/{@link #stopListening(SRepository, ModelGenerationStatusManager,ReflectiveHintsForModelComponent)} to
  * enable/disable listening, and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}
  * to include/exclude selected model tree node from update.
  */
@@ -45,6 +47,7 @@ public class SModelNodeListeners {
   private final ModelChangeListener myModelChangeListener;
   private final SRepositoryContentAdapter myRepositoryListener;
   private final ModelGenerationStatusListener myGenStatusListener;
+  private final ReflectiveHintsForModelChangeListener myReflectiveHintsForModelChangeListener;
 
   /**
    * There might be more than one tree node for the same model (e.g. one under language, another under @descriptor),
@@ -79,14 +82,22 @@ public class SModelNodeListeners {
         myTreeHighlighter.refreshGenerationStatusForTreeNodes(findTreeNodes(models));
       }
     };
+    myReflectiveHintsForModelChangeListener =
+        model -> myTreeHighlighter.refreshReflectiveHintsStatusForTreeNodes(findTreeNode(model));
   }
 
-  public void startListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
+  public void startListening(SRepository projectRepository,
+                             ModelGenerationStatusManager generationStatusManager,
+                             ReflectiveHintsForModelComponent reflectiveHintsForModelComponent) {
     new RepoListenerRegistrar(projectRepository, myRepositoryListener).attach();
     generationStatusManager.addGenerationStatusListener(myGenStatusListener);
+    reflectiveHintsForModelComponent.addListener(myReflectiveHintsForModelChangeListener);
   }
 
-  public void stopListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
+  public void stopListening(SRepository projectRepository,
+                            ModelGenerationStatusManager generationStatusManager,
+                            ReflectiveHintsForModelComponent reflectiveHintsForModelComponent) {
+    reflectiveHintsForModelComponent.removeListener(myReflectiveHintsForModelChangeListener);
     generationStatusManager.removeGenerationStatusListener(myGenStatusListener);
     new RepoListenerRegistrar(projectRepository, myRepositoryListener).detach();
   }

@@ -23,8 +23,9 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -33,8 +34,9 @@ import java.util.Set;
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_REFLECTIVE_EDITOR_HINT;
 
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
-  private Set<SModelReference> myModelsWithReflective = new HashSet<>();
-  private Project myProject;
+  private final Set<SModel> myModelsWithReflective = new HashSet<>();
+  private final List<ReflectiveHintsForModelChangeListener> myChangeListeners = new ArrayList<>();
+  private final Project myProject;
 
   public ReflectiveHintsForModelComponent(Project project) {
     myProject = project;
@@ -50,31 +52,41 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
       return Collections.emptyList();
     }
     Project ideaProject = ((MPSProject) mpsProject).getProject();
-    if (getInstance(ideaProject).shouldShowReflectiveEditor(editorContext.getModel().getReference())) {
+    if (getInstance(ideaProject).shouldShowReflectiveEditor(editorContext.getModel())) {
       return Collections.singletonList(BASE_REFLECTIVE_EDITOR_HINT);
     } else {
       return Collections.emptyList();
     }
   }
 
-  public void showReflectiveEditorByDefault(SModelReference modelReference) {
-    myModelsWithReflective.add(modelReference);
-    redrawEditors(modelReference);
+  public void addListener(ReflectiveHintsForModelChangeListener changeListener) {
+    myChangeListeners.add(changeListener);
   }
 
-  public void showRegularEditorByDefault(SModelReference modelReference) {
-    myModelsWithReflective.remove(modelReference);
-    redrawEditors(modelReference);
+  public void removeListener(ReflectiveHintsForModelChangeListener changeListener) {
+    myChangeListeners.remove(changeListener);
   }
 
-  private void redrawEditors(SModelReference modelReference) {
+  public void showReflectiveEditorByDefault(SModel model) {
+    myModelsWithReflective.add(model);
+    redrawEditors(model);
+    myChangeListeners.forEach(changeListener -> changeListener.modelChanged(model));
+  }
+
+  public void showRegularEditorByDefault(SModel model) {
+    myModelsWithReflective.remove(model);
+    redrawEditors(model);
+    myChangeListeners.forEach(changeListener -> changeListener.modelChanged(model));
+  }
+
+  private void redrawEditors(SModel model) {
     EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)
                        .stream()
-                       .filter(editorComponent -> editorComponent.getEditorContext().getModel().getReference().equals(modelReference))
+                       .filter(editorComponent -> editorComponent.getEditorContext().getModel().equals(model))
                        .forEach(EditorComponent::rebuildEditorContent);
   }
 
-  public boolean shouldShowReflectiveEditor(SModelReference modelReference) {
-    return myModelsWithReflective.contains(modelReference);
+  public boolean shouldShowReflectiveEditor(SModel model) {
+    return myModelsWithReflective.contains(model);
   }
 }

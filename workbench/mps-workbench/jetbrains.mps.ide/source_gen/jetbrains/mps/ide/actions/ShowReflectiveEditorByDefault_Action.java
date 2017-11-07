@@ -26,7 +26,7 @@ public class ShowReflectiveEditorByDefault_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(ReflectiveHintsForModelComponent.getInstance(event.getData(CommonDataKeys.PROJECT)).shouldShowReflectiveEditor(event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getReference()));
+    return !(ReflectiveHintsForModelComponent.getInstance(event.getData(CommonDataKeys.PROJECT)).shouldShowReflectiveEditor(event.getData(MPSCommonDataKeys.CONTEXT_MODEL)));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -53,6 +53,6 @@ public class ShowReflectiveEditorByDefault_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveHintsForModelComponent.getInstance(event.getData(CommonDataKeys.PROJECT)).showReflectiveEditorByDefault(event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getReference());
+    ReflectiveHintsForModelComponent.getInstance(event.getData(CommonDataKeys.PROJECT)).showReflectiveEditorByDefault(event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
   }
 }

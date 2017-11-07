@@ -28,7 +28,6 @@ import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -66,9 +65,7 @@ public class ProjectPaneTreeHighlighter {
     myGenStatusVisitor = new GenStatusUpdater(mpsProject);
     myErrorVisitor = new ErrorChecker(mpsProject);
     myModifiedMarker = new ModifiedMarker();
-    myReflectiveEditorForModelMarker = new ReflectiveEditorForModelMarker(
-        mpsProject.getComponent(ReflectiveHintsForModelComponent.class)
-    );
+    myReflectiveEditorForModelMarker = new ReflectiveEditorForModelMarker(mpsProject);
   }
 
   public void init() {
@@ -87,7 +84,7 @@ public class ProjectPaneTreeHighlighter {
       myModuleListeners = null;
     }
     if (myModelListeners != null) {
-      myModelListeners.stopListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
+      myModelListeners.stopListening(myProjectRepository, myGenStatusVisitor.getStatusManager(), myReflectiveEditorForModelMarker.getComponent());
       myModelListeners = null;
     }
     myExecutor.shutdownNow();
@@ -100,7 +97,7 @@ public class ProjectPaneTreeHighlighter {
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
       myModelListeners = new SModelNodeListeners(this);
-      myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
+      myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager(), myReflectiveEditorForModelMarker.getComponent());
     }
     return myModelListeners;
   }
@@ -161,6 +158,12 @@ public class ProjectPaneTreeHighlighter {
   /*package*/ void refreshGenerationStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
     for (SModelTreeNode tn : treeNodes) {
       schedule(tn, myGenStatusVisitor);
+    }
+  }
+
+  /*package*/ void refreshReflectiveHintsStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
+    for (SModelTreeNode tn : treeNodes) {
+      schedule(tn, myReflectiveEditorForModelMarker);
     }
   }
 

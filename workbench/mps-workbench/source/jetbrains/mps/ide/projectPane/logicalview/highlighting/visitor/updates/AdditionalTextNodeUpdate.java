@@ -25,7 +25,7 @@ public class AdditionalTextNodeUpdate extends NodeUpdate {
   private final String myText;
 
   public AdditionalTextNodeUpdate(String addText) {
-    if (addText.contains(SEPARATOR)) {
+    if (addText != null && addText.contains(SEPARATOR)) {
       throw new IllegalArgumentException("additional text cannot contain \"" + SEPARATOR + '"');
     }
     myText = addText;
@@ -35,7 +35,7 @@ public class AdditionalTextNodeUpdate extends NodeUpdate {
   public boolean needed(MPSTreeNode node) {
     String additionalText = node.getAdditionalText();
     if (additionalText == null) {
-      return true;
+      return myText != null;
     }
     String[] addTexts = additionalText.split(SEPARATOR);
     return !Arrays.asList(addTexts).contains(myText);

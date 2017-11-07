@@ -44076,16 +44076,11 @@
               </node>
             </node>
             <node concept="liA8E" id="1OwW6POKsiK" role="2OqNvi">
-              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showReflectiveEditorByDefault(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="showReflectiveEditorByDefault" />
-              <node concept="2OqwBi" id="1OwW6POKtyD" role="37wK5m">
-                <node concept="2OqwBi" id="1OwW6POKs_3" role="2Oq$k0">
-                  <node concept="2WthIp" id="1OwW6POKsl9" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="1OwW6POKtcb" role="2OqNvi">
-                    <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="1OwW6POKtJ7" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showReflectiveEditorByDefault(org.jetbrains.mps.openapi.model.SModel):void" resolve="showReflectiveEditorByDefault" />
+              <node concept="2OqwBi" id="1OwW6POKs_3" role="37wK5m">
+                <node concept="2WthIp" id="1OwW6POKsl9" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1OwW6POKtcb" role="2OqNvi">
+                  <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
                 </node>
               </node>
             </node>
@@ -44119,16 +44114,11 @@
                 </node>
               </node>
               <node concept="liA8E" id="1mKJl92ebTJ" role="2OqNvi">
-                <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="shouldShowReflectiveEditor" />
-                <node concept="2OqwBi" id="1mKJl92ebTK" role="37wK5m">
-                  <node concept="2OqwBi" id="1mKJl92ebTL" role="2Oq$k0">
-                    <node concept="2WthIp" id="1mKJl92ebTM" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="1mKJl92ebTN" role="2OqNvi">
-                      <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="1mKJl92ebTO" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="shouldShowReflectiveEditor" />
+                <node concept="2OqwBi" id="1mKJl92ebTL" role="37wK5m">
+                  <node concept="2WthIp" id="1mKJl92ebTM" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="1mKJl92ebTN" role="2OqNvi">
+                    <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
                   </node>
                 </node>
               </node>
@@ -44157,16 +44147,11 @@
               </node>
             </node>
             <node concept="liA8E" id="1mKJl92cwN4" role="2OqNvi">
-              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showRegularEditorByDefault(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="showRegularEditorByDefault" />
-              <node concept="2OqwBi" id="1mKJl92cwN5" role="37wK5m">
-                <node concept="2OqwBi" id="1mKJl92cwN6" role="2Oq$k0">
-                  <node concept="2WthIp" id="1mKJl92cwN7" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="1mKJl92cwN8" role="2OqNvi">
-                    <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="1mKJl92cwN9" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showRegularEditorByDefault(org.jetbrains.mps.openapi.model.SModel):void" resolve="showRegularEditorByDefault" />
+              <node concept="2OqwBi" id="1mKJl92cwN6" role="37wK5m">
+                <node concept="2WthIp" id="1mKJl92cwN7" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1mKJl92cwN8" role="2OqNvi">
+                  <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
                 </node>
               </node>
             </node>
@@ -44199,16 +44184,11 @@
               </node>
             </node>
             <node concept="liA8E" id="1mKJl92cwNm" role="2OqNvi">
-              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="shouldShowReflectiveEditor" />
-              <node concept="2OqwBi" id="1mKJl92cwNn" role="37wK5m">
-                <node concept="2OqwBi" id="1mKJl92cwNo" role="2Oq$k0">
-                  <node concept="2WthIp" id="1mKJl92cwNp" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="1mKJl92cwNq" role="2OqNvi">
-                    <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="1mKJl92cwNr" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="shouldShowReflectiveEditor" />
+              <node concept="2OqwBi" id="1mKJl92cwNo" role="37wK5m">
+                <node concept="2WthIp" id="1mKJl92cwNp" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1mKJl92cwNq" role="2OqNvi">
+                  <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
                 </node>
               </node>
             </node>
