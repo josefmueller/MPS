@@ -16,11 +16,13 @@
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.stream.StreamSupport;
 
 public class ReflectiveHintsManager {
@@ -36,6 +38,25 @@ public class ReflectiveHintsManager {
     myEditorComponent = editorComponent;
   }
 
+  public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
+    cellFactory.removeCellContextHints(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
+                                       BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+    if (cellFactory.getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_HINT)) {
+      cellFactory.removeCellContextHints(BASE_REFLECTIVE_EDITOR_HINT,
+                                         BASE_NO_REFLECTIVE_EDITOR_HINT);
+    }
+  }
+
+  public static boolean shouldShowReflectiveEditor(Collection<String> hints) {
+    if (hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT) && hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT)) {
+      throw new IllegalStateException("hints reflectiveEditorForNode and noReflectiveEditorForNode can't be set at the same time");
+    }
+    return hints.contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT)
+           || (hints.contains(BASE_REFLECTIVE_EDITOR_HINT)
+               && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_HINT)
+               && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
+  }
+
   private String hintForNode(boolean isReflective) {
     return isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
   }
@@ -45,7 +66,7 @@ public class ReflectiveHintsManager {
   }
 
   public boolean canMakeNode(boolean isReflective, @NotNull SNode node) {
-    return isReflective != ReflectiveHintsUtil.shouldShowReflectiveEditor(myEditorComponent.findNodeCell(node).getCellContext().getHints());
+    return isReflective != shouldShowReflectiveEditor(myEditorComponent.findNodeCell(node).getCellContext().getHints());
   }
 
   public boolean canMakeSubtree(boolean isReflective, @NotNull SNode node) {

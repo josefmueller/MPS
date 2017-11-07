@@ -25,8 +25,8 @@ public class AdditionalTextNodeUpdate extends NodeUpdate {
   private final String myText;
 
   public AdditionalTextNodeUpdate(String addText) {
-    if (addText.contains(",")) {
-      throw new IllegalArgumentException("additional text cannot contain commas");
+    if (addText.contains(SEPARATOR)) {
+      throw new IllegalArgumentException("additional text cannot contain \"" + SEPARATOR + '"');
     }
     myText = addText;
   }

@@ -24,7 +24,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -173,7 +174,7 @@ public class UpdateSessionImpl implements UpdateSession {
   private String[] getInitialEditorHints(EditorContext editorContext) {
     if (myInitialEditorHints != null) {
       return Stream.concat(Arrays.stream(myInitialEditorHints),
-                           ReflectiveHintsUtil.getModelHints(editorContext))
+                           ReflectiveHintsForModelComponent.getModelHintsByContext(editorContext).stream())
                    .toArray(String[]::new);
     }
 
@@ -183,7 +184,7 @@ public class UpdateSessionImpl implements UpdateSession {
     }
     HintsState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
     return Stream.concat(state.getEnabledHints().stream(),
-                         ReflectiveHintsUtil.getModelHints(editorContext))
+                         ReflectiveHintsForModelComponent.getModelHintsByContext(editorContext).stream())
                  .toArray(String[]::new);
   }
 
@@ -233,7 +234,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
-    ReflectiveHintsUtil.propagateReflectiveHints(getCellFactory());
+    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {

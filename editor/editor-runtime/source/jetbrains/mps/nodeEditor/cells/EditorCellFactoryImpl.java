@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -97,11 +97,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    boolean shouldShowReflectiveEditor = ReflectiveHintsUtil.shouldShowReflectiveEditor(getCellContext().getHints());
+    boolean shouldShowReflectiveEditor = ReflectiveHintsManager.shouldShowReflectiveEditor(getCellContext().getHints());
     pushCellContext();
     EditorCell result = null;
     try {
-      ReflectiveHintsUtil.propagateReflectiveHints(this);
+      ReflectiveHintsManager.propagateReflectiveHints(this);
 
       SConcept concept = node.getConcept();
       ConceptEditor editor = shouldShowReflectiveEditor ? null : getCachedEditor(concept, excludedEditors);

@@ -19,11 +19,18 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_REFLECTIVE_EDITOR_HINT;
 
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
   private Set<SModelReference> myModelsWithReflective = new HashSet<>();
@@ -35,6 +42,19 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
 
   public static ReflectiveHintsForModelComponent getInstance(Project project) {
     return project.getComponent(ReflectiveHintsForModelComponent.class);
+  }
+
+  public static List<String> getModelHintsByContext(EditorContext editorContext) {
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(editorContext.getRepository());
+    if (!(mpsProject instanceof MPSProject)) {
+      return Collections.emptyList();
+    }
+    Project ideaProject = ((MPSProject) mpsProject).getProject();
+    if (getInstance(ideaProject).shouldShowReflectiveEditor(editorContext.getModel().getReference())) {
+      return Collections.singletonList(BASE_REFLECTIVE_EDITOR_HINT);
+    } else {
+      return Collections.emptyList();
+    }
   }
 
   public void showReflectiveEditorByDefault(SModelReference modelReference) {
