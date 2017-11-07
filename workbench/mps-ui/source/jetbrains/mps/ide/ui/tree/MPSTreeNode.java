@@ -54,7 +54,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private Icon myExpandedIcon = IdeIcons.OPENED_FOLDER;
   private String myNodeIdentifier;
   private String myText;
-  private String myAdditionalText = null;
+  private Map<String, String> myAdditionalTextMap = new HashMap<>();
   private String myTooltipText;
   private Color myColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED"));
   // initialized once with the value of myColor the moment node is created, to facilitate nodes with pre-defined colors (initialized in cons)
@@ -325,10 +325,12 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
                     .max(Comparator.comparingInt(TreeMessage::getPriority))
                     .map(TreeMessage::getColor)
                     .ifPresent(this::setColor);
-      setAdditionalText(myTreeMessages.stream()
+      setAdditionalText("tree message",
+                        myTreeMessages.stream()
                                       .filter(TreeMessage::hasAdditionalText)
+                                      .max(Comparator.comparingInt(TreeMessage::getPriority))
                                       .map(TreeMessage::getAdditionalText)
-                                      .collect(Collectors.joining(", ")));
+                                      .orElse(null));
     }
   }
 
@@ -467,11 +469,43 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public final String getAdditionalText() {
-    return myAdditionalText;
+    if (myAdditionalTextMap.isEmpty()) {
+      return null;
+    }
+    return myAdditionalTextMap.values().stream()
+                              .collect(Collectors.joining(", "));
   }
 
+  /**
+   * Get additional text by its source.
+   * @param additionalTextSrc source of additional text.
+   * @return additional text.
+   * @see #setAdditionalText(String, String)
+   */
+  @Nullable
+  public final String getAdditionalText(String additionalTextSrc) {
+    return myAdditionalTextMap.get(additionalTextSrc);
+  }
+
+  /**
+   * Use {@link #setAdditionalText(String, String)}.
+   */
+  @Deprecated
   public final void setAdditionalText(String newAdditionalText) {
-    myAdditionalText = newAdditionalText;
+    setAdditionalText(null, newAdditionalText);
+  }
+
+  /**
+   * Set additional text.
+   * @param additionalTextSrc string which identifies source of additional text.
+   * @param newAdditionalText additional text.
+   */
+  public final void setAdditionalText(String additionalTextSrc, @Nullable String newAdditionalText) {
+    if (newAdditionalText == null) {
+      myAdditionalTextMap.remove(additionalTextSrc);
+    } else {
+      myAdditionalTextMap.put(additionalTextSrc, newAdditionalText);
+    }
   }
 
   public final String getText() {

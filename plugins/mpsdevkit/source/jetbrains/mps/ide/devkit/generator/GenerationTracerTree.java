@@ -65,7 +65,7 @@ final class GenerationTracerTree extends MPSTree {
     treeNode.setText(n.getText(repository));
     final SNodeReference target = n.getNavigateTarget();
     if (target != null && target.getModelReference() != null) {
-      treeNode.setAdditionalText(target.getModelReference().getModelName());
+      treeNode.setAdditionalText(GenerationTracerTree.class.getName(), target.getModelReference().getModelName());
     }
     treeNode.setIcon(n.getIcon(repository));
     for (TraceNodeUI ch : n.getChildren()) {

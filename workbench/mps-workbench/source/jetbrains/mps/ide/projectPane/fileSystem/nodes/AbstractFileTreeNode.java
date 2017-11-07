@@ -33,7 +33,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     myFile = file;
     myProject = project;
     if (showFullPath) {
-      setAdditionalText(myFile.getPresentableUrl());
+      setAdditionalText(AbstractFileTreeNode.class.getName(), myFile.getPresentableUrl());
     }
     setNodeIdentifier(myFile.getPath());
     setText(myFile.getName());

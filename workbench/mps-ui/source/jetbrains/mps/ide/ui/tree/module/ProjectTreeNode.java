@@ -44,7 +44,7 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
     if (ideaProject != null && ideaProject.getBaseDir() != null) {
       //noinspection ConstantConditions
-      setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
+      setAdditionalText(ProjectTreeNode.class.getName(), ideaProject.getBaseDir().getPresentableUrl());
     }
   }
 

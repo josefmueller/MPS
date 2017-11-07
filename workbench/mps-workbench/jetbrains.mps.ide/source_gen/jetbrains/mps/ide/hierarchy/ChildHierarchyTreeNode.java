@@ -54,7 +54,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
       errorTreeNode.setText(myHierarchyTree.nodePresentation(errorNode));
       errorTreeNode.setIcon(Icons.ERROR_ICON);
       errorTreeNode.setColor(Color.RED);
-      errorTreeNode.setAdditionalText(message);
+      errorTreeNode.setAdditionalText(ChildHierarchyTreeNode.class.getName(), message);
       add(errorTreeNode);
     }
     myInitialized = true;

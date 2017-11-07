@@ -22,7 +22,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     setNodeIdentifier(declaration.getNodeId().toString());
     setToggleClickCount(-1);
     setAutoExpandable(false);
-    setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
+    setAdditionalText(HierarchyTreeNode.class.getName(), SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
     setIcon(IconManager.getIconFor(declaration));
   }
 

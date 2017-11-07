@@ -16,42 +16,24 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-
-import java.util.Arrays;
+import jetbrains.mps.util.EqualUtil;
 
 public class AdditionalTextNodeUpdate extends NodeUpdate {
-  private static final String SEPARATOR = ", ";
-
+  private final String myUpdateSrc;
   private final String myText;
 
-  public AdditionalTextNodeUpdate(String addText) {
-    if (addText != null && addText.contains(SEPARATOR)) {
-      throw new IllegalArgumentException("additional text cannot contain \"" + SEPARATOR + '"');
-    }
+  public AdditionalTextNodeUpdate(String updateSrc, String addText) {
+    myUpdateSrc = updateSrc;
     myText = addText;
   }
 
   @Override
   public boolean needed(MPSTreeNode node) {
-    String additionalText = node.getAdditionalText();
-    if (additionalText == null) {
-      return myText != null;
-    }
-    String[] addTexts = additionalText.split(SEPARATOR);
-    return !Arrays.asList(addTexts).contains(myText);
+    return !EqualUtil.equals(node.getAdditionalText(myUpdateSrc), myText);
   }
 
   @Override
   public void update(MPSTreeNode node) {
-    if (!needed(node)) {
-      return;
-    }
-
-    String additionalText = node.getAdditionalText();
-    if (additionalText == null) {
-      node.setAdditionalText(myText);
-    } else {
-      node.setAdditionalText(additionalText + SEPARATOR + myText);
-    }
+    node.setAdditionalText(myUpdateSrc, myText);
   }
 }

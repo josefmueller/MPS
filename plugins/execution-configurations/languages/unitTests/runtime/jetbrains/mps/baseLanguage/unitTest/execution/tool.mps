@@ -9837,7 +9837,15 @@
         </node>
         <node concept="3clFbF" id="36vIONTtQzu" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzf0l" role="3clFbG">
-            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String):void" resolve="setAdditionalText" />
+            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String,java.lang.String):void" resolve="setAdditionalText" />
+            <node concept="2OqwBi" id="61LxzBQcfGQ" role="37wK5m">
+              <node concept="3VsKOn" id="61LxzBQceZr" role="2Oq$k0">
+                <ref role="3VsUkX" node="36vIONTtQyK" resolve="TestCaseTreeNode" />
+              </node>
+              <node concept="liA8E" id="61LxzBQcgdm" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
             <node concept="2OqwBi" id="6cEFRXIyEci" role="37wK5m">
               <node concept="2OqwBi" id="4DcpLEzkS6" role="2Oq$k0">
                 <node concept="liA8E" id="4DcpLEzkS7" role="2OqNvi">

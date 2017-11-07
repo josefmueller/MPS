@@ -9190,7 +9190,15 @@
                     <ref role="3cqZAo" node="51NkKCgB42Q" resolve="errorTreeNode" />
                   </node>
                   <node concept="liA8E" id="4$kvR95_k40" role="2OqNvi">
-                    <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String):void" resolve="setAdditionalText" />
+                    <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String,java.lang.String):void" resolve="setAdditionalText" />
+                    <node concept="2OqwBi" id="61LxzBQcofH" role="37wK5m">
+                      <node concept="3VsKOn" id="61LxzBQcnVE" role="2Oq$k0">
+                        <ref role="3VsUkX" node="51NkKCgB394" resolve="ChildHierarchyTreeNode" />
+                      </node>
+                      <node concept="liA8E" id="61LxzBQcpis" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                      </node>
+                    </node>
                     <node concept="37vLTw" id="4$kvR95_mEf" role="37wK5m">
                       <ref role="3cqZAo" node="51NkKCgB42K" resolve="message" />
                     </node>
@@ -11974,7 +11982,15 @@
         </node>
         <node concept="3clFbF" id="4$kvR95_aYc" role="3cqZAp">
           <node concept="1rXfSq" id="4$kvR95_aYa" role="3clFbG">
-            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String):void" resolve="setAdditionalText" />
+            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String,java.lang.String):void" resolve="setAdditionalText" />
+            <node concept="2OqwBi" id="61LxzBQcwnX" role="37wK5m">
+              <node concept="3VsKOn" id="61LxzBQcw42" role="2Oq$k0">
+                <ref role="3VsUkX" node="51NkKCgB390" resolve="HierarchyTreeNode" />
+              </node>
+              <node concept="liA8E" id="61LxzBQcwVt" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
             <node concept="2OqwBi" id="4$kvR95_e2B" role="37wK5m">
               <node concept="2OqwBi" id="4$kvR95_dBg" role="2Oq$k0">
                 <node concept="37vLTw" id="4$kvR95_d34" role="2Oq$k0">

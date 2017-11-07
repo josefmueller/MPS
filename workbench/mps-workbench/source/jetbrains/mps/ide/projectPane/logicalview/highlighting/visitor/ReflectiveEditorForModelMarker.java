@@ -31,9 +31,8 @@ public class ReflectiveEditorForModelMarker extends TreeUpdateVisitor {
 
   @Override
   public void visitModelNode(@NotNull SModelTreeNode node) {
-    if (getComponent().shouldShowReflectiveEditor(node.getModel())) {
-      addUpdate(node, new AdditionalTextNodeUpdate("reflective editor by default"));
-    }
+    String newText = getComponent().shouldShowReflectiveEditor(node.getModel()) ? "reflective editor by default" : null;
+    addUpdate(node, new AdditionalTextNodeUpdate(ReflectiveEditorForModelMarker.class.getName(), newText));
   }
 
   public ReflectiveHintsForModelComponent getComponent() {

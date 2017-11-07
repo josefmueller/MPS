@@ -134,7 +134,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   private void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
-    final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(status.getMessage());
+    final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage());
     for (TreeNode n = node; n != null; n = n.getParent()) {
       if (n instanceof NamespaceTextNode) {
         addUpdate((NamespaceTextNode) n, r);
@@ -168,10 +168,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     }
     public void update(GenerationStatus status) {
       if (myModelNode != null) {
-        addUpdate(myModelNode, new AdditionalTextNodeUpdate(status.getMessage()));
+        addUpdate(myModelNode, new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage()));
       }
       if (myModuleNode != null) {
-        addUpdate(myModuleNode, new AdditionalTextNodeUpdate(status.getMessage()));
+        addUpdate(myModuleNode, new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage()));
       }
     }
 

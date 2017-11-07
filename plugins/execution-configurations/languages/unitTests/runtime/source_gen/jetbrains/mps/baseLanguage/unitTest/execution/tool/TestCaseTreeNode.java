@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
     setToggleClickCount(-1);
     setNodeIdentifier(myTestCase.getNodePointer().toString());
     setText(myTestCase.getName());
-    setAdditionalText(myTestCase.getNodePointer().getModelReference().getName().getLongName());
+    setAdditionalText(TestCaseTreeNode.class.getName(), myTestCase.getNodePointer().getModelReference().getName().getLongName());
   }
 
   public String getClassName() {
