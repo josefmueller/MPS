@@ -44,7 +44,7 @@ public class MoveStaticField implements MoveNodesAction {
     });
     return result.value;
   }
-  public void execute(final MPSProject project, List<SNode> nodes) {
+  public void execute(MPSProject project, List<SNode> nodes) {
     final SNode target = SNodeOperations.cast(ListSequence.fromList(nodes).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
 
     final SNode whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
@@ -56,11 +56,8 @@ public class MoveStaticField implements MoveNodesAction {
     if (whereToMove == null) {
       return;
     }
-    project.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
-      }
-    });
+
+    MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
   }
 
   public static class NodeLocationClassifierMember extends NodeLocation.NodeLocationChild {
