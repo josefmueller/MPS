@@ -28,7 +28,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -111,17 +110,6 @@ public class RefactoringProcessor {
 
   public static <IP, FP> void performRefactoringUserInteractive(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor) {
     performRefactoringInProject(project, new DefaultRefactoringUI(project), refactoringName, participants, initialStates, doRefactor, null);
-  }
-
-  /**
-   * 
-   * @see jetbrains.mps.ide.platform.actions.core.RefactoringProcessor#performRefactoringInProject(Project, RefactoringUI, String, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>, List<IP>, _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession>, _FunctionTypes._void_P1_E0<? super RefactoringSession>) 
-   * @deprecated 
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static <IP, FP> void performRefactoringUserInteractive(MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor, _FunctionTypes._void_P1_E0<? super RefactoringSession> doCleanup) {
-    performRefactoringInProject(project, new DefaultRefactoringUI(project), refactoringName, participants, initialStates, doRefactor, doCleanup);
   }
 
   /**
