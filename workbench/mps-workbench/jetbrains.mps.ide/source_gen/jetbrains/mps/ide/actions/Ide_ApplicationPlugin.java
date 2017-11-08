@@ -105,6 +105,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowParameters_Action());
     addAction(new ShowReflectiveEditorByDefault_Action());
     addAction(new ShowRegularEditorByDefault_Action());
+    addAction(new ShowRegularEditorsByDefault_Action());
     addAction(new ShowTodoViewer_Action());
     addAction(new SubmitToTracker_Action());
     // groups 

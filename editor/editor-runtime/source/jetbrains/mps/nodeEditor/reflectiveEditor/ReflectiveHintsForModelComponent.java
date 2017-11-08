@@ -26,10 +26,12 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_REFLECTIVE_EDITOR_HINT;
 
@@ -60,12 +62,18 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
     }
   }
 
+  /**
+   * Add {@link ReflectiveHintsForModelChangeListener}. The method is thread-safe.
+   */
   public void addListener(ReflectiveHintsForModelChangeListener changeListener) {
     synchronized (myChangeListeners) {
       myChangeListeners.add(changeListener);
     }
   }
 
+  /**
+   * Remove {@link ReflectiveHintsForModelChangeListener}. The method is thread-safe.
+   */
   public void removeListener(ReflectiveHintsForModelChangeListener changeListener) {
     synchronized (myChangeListeners) {
       myChangeListeners.remove(changeListener);
@@ -78,25 +86,51 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
     }
   }
 
+  /**
+   * Use reflective editor by default for all nodes in the model. Should be run on EDT.
+   */
   public void showReflectiveEditorByDefault(SModel model) {
     myModelsWithReflective.add(model);
-    redrawEditors(model);
+    redrawEditors(Collections.singletonList(model));
     notifyListeners(model);
   }
 
+  /**
+   * Use regular editor by default for nodes in the model. Should be run on EDT.
+   */
   public void showRegularEditorByDefault(SModel model) {
     myModelsWithReflective.remove(model);
-    redrawEditors(model);
+    redrawEditors(Collections.singletonList(model));
     notifyListeners(model);
   }
 
-  private void redrawEditors(SModel model) {
+  /**
+   * Check if any model uses reflective editor by default. Should be run on EDT.
+   */
+  public boolean canResetReflectiveEditors() {
+    return !myModelsWithReflective.isEmpty();
+  }
+
+  /**
+   * Use regular editor by default for nodes in the project. Should be run on EDT.
+   */
+  public void showRegularEditorsByDefault() {
+    Set<SModel> oldSet = new HashSet<>(myModelsWithReflective);
+    myModelsWithReflective.clear();
+    redrawEditors(oldSet);
+    oldSet.forEach(this::notifyListeners);
+  }
+
+  private void redrawEditors(Collection<SModel> models) {
     EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)
                        .stream()
-                       .filter(editorComponent -> editorComponent.getEditorContext().getModel().equals(model))
+                       .filter(editorComponent -> models.contains(editorComponent.getEditorContext().getModel()))
                        .forEach(EditorComponent::rebuildEditorContent);
   }
 
+  /**
+   * Check if editors for nodes in the model should be shown in reflective editor by default. Should be run on EDT.
+   */
   public boolean shouldShowReflectiveEditor(SModel model) {
     return myModelsWithReflective.contains(model);
   }

@@ -48,6 +48,8 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       ProjectActions_ActionGroup.this.addAction(action);
     }
     ProjectActions_ActionGroup.this.addSeparator();
+    ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowRegularEditorsByDefault_Action");
+    ProjectActions_ActionGroup.this.addSeparator();
     {
       LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();

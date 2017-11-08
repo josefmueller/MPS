@@ -1079,6 +1079,10 @@
       <node concept="10WQ6h" id="1K00pPgqzi5" role="ftvYc">
         <property role="TrG5h" value="compileJava" />
       </node>
+      <node concept="2a7GMi" id="4xSFVmd4GKC" role="ftvYc" />
+      <node concept="tCFHf" id="4xSFVmd64YR" role="ftvYc">
+        <ref role="tCJdB" node="4xSFVmd5lvK" resolve="ShowRegularEditorsByDefault" />
+      </node>
       <node concept="2a7GMi" id="2JscfO0xKq0" role="ftvYc" />
       <node concept="10WQ6h" id="4wXNiF93rwy" role="ftvYc">
         <property role="TrG5h" value="runConfig" />
@@ -44191,6 +44195,58 @@
                   <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="sE7Ow" id="4xSFVmd5lvK">
+    <property role="3GE5qa" value="Menu.ProjectPane.Project.Actions" />
+    <property role="TrG5h" value="ShowRegularEditorsByDefault" />
+    <property role="2uzpH1" value="Show Regular Editors by Default in All Models" />
+    <node concept="1DS2jV" id="4xSFVmd5qby" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <node concept="1oajcY" id="4xSFVmd5qbz" role="1oa70y" />
+    </node>
+    <node concept="tnohg" id="4xSFVmd5lvL" role="tncku">
+      <node concept="3clFbS" id="4xSFVmd5lvM" role="2VODD2">
+        <node concept="3clFbF" id="4xSFVmd6665" role="3cqZAp">
+          <node concept="2OqwBi" id="4xSFVmd6666" role="3clFbG">
+            <node concept="2YIFZM" id="4xSFVmd6667" role="2Oq$k0">
+              <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+              <node concept="2OqwBi" id="4xSFVmd6668" role="37wK5m">
+                <node concept="2WthIp" id="4xSFVmd6669" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4xSFVmd666a" role="2OqNvi">
+                  <ref role="2WH_rO" node="4xSFVmd5qby" resolve="ideaProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="4xSFVmd666b" role="2OqNvi">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showRegularEditorsByDefault():void" resolve="showRegularEditorsByDefault" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2ScWuX" id="4xSFVmd5nMD" role="tmbBb">
+      <node concept="3clFbS" id="4xSFVmd5nME" role="2VODD2">
+        <node concept="3clFbF" id="4xSFVmd64DN" role="3cqZAp">
+          <node concept="2OqwBi" id="4xSFVmd656M" role="3clFbG">
+            <node concept="2YIFZM" id="4xSFVmd656N" role="2Oq$k0">
+              <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+              <node concept="2OqwBi" id="4xSFVmd656O" role="37wK5m">
+                <node concept="2WthIp" id="4xSFVmd656P" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4xSFVmd656Q" role="2OqNvi">
+                  <ref role="2WH_rO" node="4xSFVmd5qby" resolve="ideaProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="4xSFVmd65Xl" role="2OqNvi">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.canResetReflectiveEditors():boolean" resolve="canResetReflectiveEditors" />
             </node>
           </node>
         </node>

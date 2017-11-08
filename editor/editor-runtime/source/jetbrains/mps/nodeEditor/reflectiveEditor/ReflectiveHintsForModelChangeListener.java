@@ -18,5 +18,9 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public interface ReflectiveHintsForModelChangeListener {
+  /**
+   * Notifies that {@link ReflectiveHintsForModelComponent#shouldShowReflectiveEditor} for model was changed.
+   * This method is called on EDT.
+   */
   void modelChanged(SModel model);
 }
