@@ -22,6 +22,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -76,39 +77,43 @@ public class DefaultRefactoringUI implements RefactoringUI {
     });
   }
 
-  public void showRefactoringView(final Runnable performRefactoringTask, String refactoringName, SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
-    final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
-    RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
-      public void performAction(final RefactoringViewItem refactoringViewItem) {
-        myRepository.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            if (usagesModelTracker.isChanged()) {
-              Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
-            } else {
-              try {
-                performRefactoringTask.run();
-              } catch (RuntimeException exception) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error("Exception during refactoring: ", exception);
+  public void showRefactoringView(final Runnable performRefactoringTask, final String refactoringName, final SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
+        RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
+          public void performAction(final RefactoringViewItem refactoringViewItem) {
+            myRepository.getModelAccess().executeCommand(new Runnable() {
+              public void run() {
+                if (usagesModelTracker.isChanged()) {
+                  Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+                } else {
+                  try {
+                    performRefactoringTask.run();
+                  } catch (RuntimeException exception) {
+                    if (LOG.isEnabledFor(Level.ERROR)) {
+                      LOG.error("Exception during refactoring: ", exception);
+                    }
+                  }
+                  refactoringViewItem.close();
                 }
               }
-              refactoringViewItem.close();
-            }
+            });
           }
-        });
+        }, new Runnable() {
+          public void run() {
+            usagesModelTracker.dispose();
+          }
+        }, searchResults, new SearchTask() {
+          public boolean canExecute() {
+            return rerunTask.canExecute();
+          }
+          public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
+            usagesModelTracker.reset();
+            return rerunTask.execute(modelAccess, progressMonitor);
+          }
+        }, refactoringName);
       }
-    }, new Runnable() {
-      public void run() {
-        usagesModelTracker.dispose();
-      }
-    }, searchResults, new SearchTask() {
-      public boolean canExecute() {
-        return rerunTask.canExecute();
-      }
-      public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
-        usagesModelTracker.reset();
-        return rerunTask.execute(modelAccess, progressMonitor);
-      }
-    }, refactoringName);
+    });
   }
 }
