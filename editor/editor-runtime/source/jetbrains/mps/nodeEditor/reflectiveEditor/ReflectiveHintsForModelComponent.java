@@ -31,8 +31,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.BASE_REFLECTIVE_EDITOR_HINT;
-
 @SuppressWarnings("ComponentNotRegistered")
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
   private final Set<SModel> myModelsWithReflective = new HashSet<>();
@@ -54,7 +52,7 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
     }
     Project ideaProject = ((MPSProject) mpsProject).getProject();
     if (getInstance(ideaProject).shouldShowReflectiveEditor(editorContext.getModel())) {
-      return Collections.singletonList(BASE_REFLECTIVE_EDITOR_HINT);
+      return Collections.singletonList(ReflectiveHint.REFLECTIVE.getHint());
     } else {
       return Collections.emptyList();
     }
