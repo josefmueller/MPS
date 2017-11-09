@@ -15,15 +15,17 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForNode;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForSubtree;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.smodel.UndoHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.stream.StreamSupport;
 
 public class ReflectiveHintsManager {
 
@@ -31,12 +33,6 @@ public class ReflectiveHintsManager {
   static final String BASE_NO_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
   static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
   static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
-
-  private EditorComponent myEditorComponent;
-
-  public ReflectiveHintsManager(@NotNull EditorComponent editorComponent) {
-    myEditorComponent = editorComponent;
-  }
 
   public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
     cellFactory.removeCellContextHints(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
@@ -57,45 +53,8 @@ public class ReflectiveHintsManager {
                && !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
   }
 
-  private String hintForNode(boolean isReflective) {
-    return isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-  }
-
-  private String hintForSubtree(boolean isReflective) {
-    return isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
-  }
-
-  public boolean canMakeNode(boolean isReflective, @NotNull SNode node) {
-    return isReflective != shouldShowReflectiveEditor(myEditorComponent.findNodeCell(node).getCellContext().getHints());
-  }
-
-  public boolean canMakeSubtree(boolean isReflective, @NotNull SNode node) {
-    return StreamSupport.stream(SNodeUtil.getDescendants(node).spliterator(), false)
-                        .anyMatch(descendant -> canMakeNode(isReflective, descendant));
-  }
-
-  public void makeNode(boolean isReflective, @NotNull SNode node) {
-    String newHint = hintForNode(isReflective);
-    String symmetricHint = hintForNode(!isReflective);
-
-    assert canMakeNode(isReflective, node);
-
-    String[] nodeExplicitHints = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
-    if (nodeExplicitHints != null && Arrays.asList(nodeExplicitHints).contains(symmetricHint)) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), symmetricHint);
-    } else {
-      myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), newHint);
-    }
-  }
-
-  public void makeSubtree(boolean isReflective, @NotNull SNode node) {
-    for (SNode descendant : SNodeUtil.getDescendants(node)) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(),
-                                                                      BASE_REFLECTIVE_EDITOR_HINT,
-                                                                      BASE_NO_REFLECTIVE_EDITOR_HINT,
-                                                                      BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
-                                                                      BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
-    }
-    myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), hintForSubtree(isReflective));
+  public static ReflectiveHintsAction getAction(SNode node, EditorComponent editorComponent, boolean isReflective, boolean isForSubtree) {
+    return isForSubtree ? new ActionForSubtree(node, editorComponent, isReflective)
+                        : new ActionForNode(node, editorComponent, isReflective);
   }
 }
