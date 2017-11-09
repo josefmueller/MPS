@@ -6396,8 +6396,8 @@
                 <node concept="YeOm9" id="1OUHNoJWXMJ" role="2ShVmc">
                   <node concept="1Y3b0j" id="1OUHNoJWXMK" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
                     <ref role="1Y3XeK" to="xygl:~Task$Modal" resolve="Task.Modal" />
+                    <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
                     <node concept="3Tm1VV" id="1OUHNoJWXML" role="1B3o_S" />
                     <node concept="3clFb_" id="1OUHNoJWXMM" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -6584,6 +6584,12 @@
                                 <node concept="3Tm1VV" id="3BJTP_NmFvL" role="1B3o_S" />
                                 <node concept="3cqZAl" id="3BJTP_NmFvM" role="3clF45" />
                                 <node concept="3clFbS" id="3BJTP_NmFvP" role="3clF47">
+                                  <node concept="3cpWs8" id="7ti7cgdgJ91" role="3cqZAp">
+                                    <node concept="3cpWsn" id="7ti7cgdgJ94" role="3cpWs9">
+                                      <property role="TrG5h" value="changed" />
+                                      <node concept="10P_77" id="7ti7cgdgJ8Z" role="1tU5fm" />
+                                    </node>
+                                  </node>
                                   <node concept="3clFbF" id="4N6D1IQ3caQ" role="3cqZAp">
                                     <node concept="2OqwBi" id="4N6D1IQ3d5R" role="3clFbG">
                                       <node concept="2OqwBi" id="4N6D1IQ3cFY" role="2Oq$k0">
@@ -6598,79 +6604,68 @@
                                         <ref role="37wK5l" to="lui2:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
                                         <node concept="1bVj0M" id="XAmMejApUJ" role="37wK5m">
                                           <node concept="3clFbS" id="XAmMejApUL" role="1bW5cS">
+                                            <node concept="3clFbF" id="7ti7cgdh$E9" role="3cqZAp">
+                                              <node concept="37vLTI" id="7ti7cgdhA7F" role="3clFbG">
+                                                <node concept="37vLTw" id="7ti7cgdh$E7" role="37vLTJ">
+                                                  <ref role="3cqZAo" node="7ti7cgdgJ94" resolve="changed" />
+                                                </node>
+                                                <node concept="2OqwBi" id="7ti7cgdgRho" role="37vLTx">
+                                                  <node concept="37vLTw" id="7ti7cgdgRhp" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="2FW2ExVglPK" resolve="usagesModelTracker" />
+                                                  </node>
+                                                  <node concept="liA8E" id="7ti7cgdgRhq" role="2OqNvi">
+                                                    <ref role="37wK5l" to="u42p:7DGCeT2IL8S" resolve="isChanged" />
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
                                             <node concept="3clFbJ" id="2FW2ExVgrHC" role="3cqZAp">
-                                              <node concept="3clFbS" id="2FW2ExVgrHE" role="3clFbx">
-                                                <node concept="3clFbF" id="1u1ej4Gjrz3" role="3cqZAp">
-                                                  <node concept="2YIFZM" id="1u1ej4GjSr6" role="3clFbG">
-                                                    <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
-                                                    <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                                                    <node concept="37vLTw" id="1u1ej4Gjrz5" role="37wK5m">
-                                                      <ref role="3cqZAo" node="4N6D1IPLQz_" resolve="myProject" />
-                                                    </node>
-                                                    <node concept="Xl_RD" id="1u1ej4GjV1a" role="37wK5m">
-                                                      <property role="Xl_RC" value="Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again." />
-                                                    </node>
-                                                    <node concept="Xl_RD" id="1u1ej4GjWpL" role="37wK5m">
-                                                      <property role="Xl_RC" value="Changes Detected" />
-                                                    </node>
-                                                    <node concept="2YIFZM" id="1u1ej4GjSF4" role="37wK5m">
-                                                      <ref role="37wK5l" to="jkm4:~Messages.getErrorIcon():javax.swing.Icon" resolve="getErrorIcon" />
-                                                      <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
-                                                    </node>
-                                                  </node>
+                                              <node concept="3fqX7Q" id="7ti7cgdgM6D" role="3clFbw">
+                                                <node concept="37vLTw" id="7ti7cgdgSHi" role="3fr31v">
+                                                  <ref role="3cqZAo" node="7ti7cgdgJ94" resolve="changed" />
                                                 </node>
                                               </node>
-                                              <node concept="2OqwBi" id="2FW2ExVgsXu" role="3clFbw">
-                                                <node concept="37vLTw" id="2FW2ExVgsfc" role="2Oq$k0">
-                                                  <ref role="3cqZAo" node="2FW2ExVglPK" resolve="usagesModelTracker" />
-                                                </node>
-                                                <node concept="liA8E" id="2FW2ExVgtmr" role="2OqNvi">
-                                                  <ref role="37wK5l" to="u42p:7DGCeT2IL8S" resolve="isChanged" />
-                                                </node>
-                                              </node>
-                                              <node concept="9aQIb" id="1u1ej4GjpKs" role="9aQIa">
-                                                <node concept="3clFbS" id="1u1ej4GjpKt" role="9aQI4">
-                                                  <node concept="SfApY" id="2vOGnLEnvMQ" role="3cqZAp">
-                                                    <node concept="3clFbS" id="2vOGnLEnvMR" role="SfCbr">
-                                                      <node concept="3clFbF" id="XAmMejAqTl" role="3cqZAp">
-                                                        <node concept="2OqwBi" id="XAmMejAsIE" role="3clFbG">
-                                                          <node concept="37vLTw" id="XAmMejAs15" role="2Oq$k0">
-                                                            <ref role="3cqZAo" node="4N6D1IQ2Y90" resolve="performRefactoringTask" />
-                                                          </node>
-                                                          <node concept="liA8E" id="XAmMejAsWy" role="2OqNvi">
-                                                            <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
-                                                          </node>
+                                              <node concept="3clFbS" id="1u1ej4GjpKt" role="3clFbx">
+                                                <node concept="SfApY" id="2vOGnLEnvMQ" role="3cqZAp">
+                                                  <node concept="3clFbS" id="2vOGnLEnvMR" role="SfCbr">
+                                                    <node concept="3clFbF" id="XAmMejAqTl" role="3cqZAp">
+                                                      <node concept="2OqwBi" id="XAmMejAsIE" role="3clFbG">
+                                                        <node concept="37vLTw" id="XAmMejAs15" role="2Oq$k0">
+                                                          <ref role="3cqZAo" node="4N6D1IQ2Y90" resolve="performRefactoringTask" />
                                                         </node>
-                                                      </node>
-                                                    </node>
-                                                    <node concept="TDmWw" id="2vOGnLEnvMW" role="TEbGg">
-                                                      <node concept="3cpWsn" id="2vOGnLEnvMX" role="TDEfY">
-                                                        <property role="TrG5h" value="exception" />
-                                                        <node concept="3uibUv" id="2vOGnLEnvMY" role="1tU5fm">
-                                                          <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
-                                                        </node>
-                                                      </node>
-                                                      <node concept="3clFbS" id="2vOGnLEnvMZ" role="TDEfX">
-                                                        <node concept="RRSsy" id="3jYQuSB36AS" role="3cqZAp">
-                                                          <property role="RRSoG" value="error" />
-                                                          <node concept="Xl_RD" id="2vOGnLEnvN1" role="RRSoy">
-                                                            <property role="Xl_RC" value="Exception during refactoring: " />
-                                                          </node>
-                                                          <node concept="37vLTw" id="2vOGnLEnvN2" role="RRSow">
-                                                            <ref role="3cqZAo" node="2vOGnLEnvMX" resolve="exception" />
-                                                          </node>
+                                                        <node concept="liA8E" id="XAmMejAsWy" role="2OqNvi">
+                                                          <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
                                                         </node>
                                                       </node>
                                                     </node>
                                                   </node>
-                                                  <node concept="3clFbF" id="2vOGnLEnvN5" role="3cqZAp">
-                                                    <node concept="2OqwBi" id="2vOGnLEnvN6" role="3clFbG">
-                                                      <node concept="37vLTw" id="2vOGnLEnvN7" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="2vOGnLEnvMk" resolve="refactoringViewItem" />
+                                                  <node concept="TDmWw" id="2vOGnLEnvMW" role="TEbGg">
+                                                    <node concept="3cpWsn" id="2vOGnLEnvMX" role="TDEfY">
+                                                      <property role="TrG5h" value="exception" />
+                                                      <node concept="3uibUv" id="2vOGnLEnvMY" role="1tU5fm">
+                                                        <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
                                                       </node>
-                                                      <node concept="liA8E" id="2vOGnLEnvN8" role="2OqNvi">
-                                                        <ref role="37wK5l" to="u42p:3g3N8kb3DkX" resolve="close" />
+                                                    </node>
+                                                    <node concept="3clFbS" id="2vOGnLEnvMZ" role="TDEfX">
+                                                      <node concept="RRSsy" id="3jYQuSB36AS" role="3cqZAp">
+                                                        <property role="RRSoG" value="error" />
+                                                        <node concept="Xl_RD" id="2vOGnLEnvN1" role="RRSoy">
+                                                          <property role="Xl_RC" value="Exception during refactoring: " />
+                                                        </node>
+                                                        <node concept="37vLTw" id="2vOGnLEnvN2" role="RRSow">
+                                                          <ref role="3cqZAo" node="2vOGnLEnvMX" resolve="exception" />
+                                                        </node>
                                                       </node>
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node concept="3clFbF" id="2vOGnLEnvN5" role="3cqZAp">
+                                                  <node concept="2OqwBi" id="2vOGnLEnvN6" role="3clFbG">
+                                                    <node concept="37vLTw" id="2vOGnLEnvN7" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="2vOGnLEnvMk" resolve="refactoringViewItem" />
+                                                    </node>
+                                                    <node concept="liA8E" id="2vOGnLEnvN8" role="2OqNvi">
+                                                      <ref role="37wK5l" to="u42p:3g3N8kb3DkX" resolve="close" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -6679,6 +6674,32 @@
                                           </node>
                                         </node>
                                       </node>
+                                    </node>
+                                  </node>
+                                  <node concept="3clFbJ" id="7ti7cgdgK_C" role="3cqZAp">
+                                    <node concept="3clFbS" id="7ti7cgdgK_E" role="3clFbx">
+                                      <node concept="3clFbF" id="1u1ej4Gjrz3" role="3cqZAp">
+                                        <node concept="2YIFZM" id="1u1ej4GjSr6" role="3clFbG">
+                                          <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                                          <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                                          <node concept="37vLTw" id="1u1ej4Gjrz5" role="37wK5m">
+                                            <ref role="3cqZAo" node="4N6D1IPLQz_" resolve="myProject" />
+                                          </node>
+                                          <node concept="Xl_RD" id="1u1ej4GjV1a" role="37wK5m">
+                                            <property role="Xl_RC" value="Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again." />
+                                          </node>
+                                          <node concept="Xl_RD" id="1u1ej4GjWpL" role="37wK5m">
+                                            <property role="Xl_RC" value="Changes Detected" />
+                                          </node>
+                                          <node concept="2YIFZM" id="1u1ej4GjSF4" role="37wK5m">
+                                            <ref role="37wK5l" to="jkm4:~Messages.getErrorIcon():javax.swing.Icon" resolve="getErrorIcon" />
+                                            <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="37vLTw" id="7ti7cgdhyjT" role="3clFbw">
+                                      <ref role="3cqZAo" node="7ti7cgdgJ94" resolve="changed" />
                                     </node>
                                   </node>
                                 </node>
