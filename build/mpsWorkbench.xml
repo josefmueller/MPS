@@ -346,7 +346,7 @@
       <fileset dir="${build.tmp}/java/out/mps-workbench" />
       <fileset dir="${build.tmp}/java/out/typesystem-ui" />
       <fileset dir="${build.tmp}/java/out/MpsSupport" />
-      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
+      <fileset dir="${mps_home}/workbench/mps-ui/source_gen">
         <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
       </fileset>
       <fileset dir="${mps_home}/workbench/mps-editor/source_gen">

@@ -17863,7 +17863,7 @@
               <node concept="2Ry0Ak" id="WgHS__B4mC" role="iGT6I">
                 <property role="2Ry0Am" value="workbench" />
                 <node concept="2Ry0Ak" id="WgHS__B4mD" role="2Ry0An">
-                  <property role="2Ry0Am" value="mps-platform" />
+                  <property role="2Ry0Am" value="mps-ui" />
                   <node concept="2Ry0Ak" id="WgHS__B4mE" role="2Ry0An">
                     <property role="2Ry0Am" value="source_gen" />
                   </node>
