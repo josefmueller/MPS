@@ -43,8 +43,8 @@
     <file name="ToDoHighlighter.java">
       <node id="6316328094634608446" at="25,134,26,90" concept="10" />
       <node id="6316328094634608453" at="26,90,27,49" concept="10" />
-      <node id="6316328094634608471" at="29,253,30,234" concept="4" />
-      <node id="6316328094634608486" at="34,127,35,261" concept="4" />
+      <node id="6316328094634608471" at="29,399,30,234" concept="4" />
+      <node id="6316328094634608486" at="34,274,35,261" concept="4" />
       <node id="6316328094634608507" at="37,5,38,54" concept="11" />
       <node id="6316328094634559912" at="42,86,43,41" concept="10" />
       <node id="6316328094634559926" at="45,60,46,20" concept="11" />
@@ -60,8 +60,8 @@
       <node id="6316328094634559934" at="48,5,53,5" concept="8" />
       <node id="6316328094634559908" at="41,0,56,0" concept="9" trace="needsUpdateAfterPropertyEvent#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)Z" />
       <node id="6316328094634587589" at="24,0,40,0" concept="9" trace="update#(Ljetbrains/mps/nodeEditor/EditorComponent;ZZLjetbrains/mps/util/Cancellable;)Ljetbrains/mps/nodeEditor/checking/UpdateResult;" />
-      <scope id="6316328094634608470" at="29,253,30,234" />
-      <scope id="6316328094634608485" at="34,127,35,261" />
+      <scope id="6316328094634608470" at="29,399,30,234" />
+      <scope id="6316328094634608485" at="34,274,35,261" />
       <scope id="6316328094634559925" at="45,60,46,20" />
       <scope id="6316328094634559937" at="50,59,51,20" />
       <scope id="6316328094634608465" at="28,245,31,7" />
@@ -202,7 +202,7 @@
       <node id="8432634623182579485" at="184,41,185,57" concept="11" />
       <node id="8432634623182579401" at="187,11,188,248" concept="10" />
       <node id="8432634623182579412" at="189,37,190,19" concept="3" />
-      <node id="8432634623182579424" at="193,43,194,296" concept="11" />
+      <node id="8432634623182579424" at="193,43,194,447" concept="11" />
       <node id="8432634623182579433" at="197,38,198,98" concept="10" />
       <node id="8432634623182579440" at="198,98,199,85" concept="4" />
       <node id="8432634623182579447" at="200,84,201,79" concept="4" />
@@ -238,9 +238,9 @@
       <node id="8432634623182579749" at="274,9,275,21" concept="11" />
       <node id="8432634623182579762" at="280,185,281,207" concept="11" />
       <node id="8432634623182579768" at="283,197,284,221" concept="11" />
-      <node id="8432634623182579776" at="285,5,286,109" concept="11" />
-      <node id="8432634623182579786" at="288,62,289,118" concept="11" />
-      <node id="8432634623182579796" at="291,77,292,131" concept="11" />
+      <node id="8432634623182579776" at="285,5,286,248" concept="11" />
+      <node id="8432634623182579786" at="288,62,289,268" concept="11" />
+      <node id="8432634623182579796" at="291,77,292,281" concept="11" />
       <node id="8432634623182579807" at="294,54,295,51" concept="10" />
       <node id="8432634623182579815" at="296,196,297,18" concept="11" />
       <node id="8432634623182579823" at="299,180,300,37" concept="11" />
@@ -325,7 +325,7 @@
       <scope id="8432634623182579268" at="159,176,160,17" />
       <scope id="8432634623182579484" at="184,41,185,57" />
       <scope id="8432634623182579411" at="189,37,190,19" />
-      <scope id="8432634623182579423" at="193,43,194,296" />
+      <scope id="8432634623182579423" at="193,43,194,447" />
       <scope id="8432634623182579462" at="204,68,205,30" />
       <scope id="8432634623182579500" at="217,34,218,18" />
       <scope id="8432634623182579518" at="224,92,225,24" />
@@ -340,8 +340,8 @@
       <scope id="8432634623182579739" at="270,203,271,26" />
       <scope id="8432634623182579761" at="280,185,281,207" />
       <scope id="8432634623182579767" at="283,197,284,221" />
-      <scope id="8432634623182579785" at="288,62,289,118" />
-      <scope id="8432634623182579795" at="291,77,292,131" />
+      <scope id="8432634623182579785" at="288,62,289,268" />
+      <scope id="8432634623182579795" at="291,77,292,281" />
       <scope id="8432634623182579814" at="296,196,297,18" />
       <scope id="8432634623182579822" at="299,180,300,37" />
       <scope id="8432634623182579062" at="113,55,115,18" />
@@ -389,7 +389,7 @@
         <var name="method" id="8432634623182579223" />
       </scope>
       <scope id="8432634623182579446" at="200,84,207,13" />
-      <scope id="8432634623182579755" at="279,46,286,109" />
+      <scope id="8432634623182579755" at="279,46,286,248" />
       <scope id="8432634623182579162" at="133,77,141,9" />
       <scope id="8432634623182579304" at="167,155,175,9">
         <var name="overridingMethod" id="8432634623182579306" />
@@ -511,7 +511,7 @@
       </scope>
       <unit id="2342664260339519536" at="69,284,73,5" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$1" />
       <unit id="8432634623182579005" at="100,245,104,7" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$2" />
-      <unit id="8432634623182579229" at="147,299,151,5" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
+      <unit id="8432634623182579229" at="147,440,151,5" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$3" />
       <unit id="8432634623182579483" at="183,144,187,7" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$5" />
       <unit id="8432634623182579422" at="192,82,196,9" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$4" />
       <unit id="3154692939897421364" at="221,78,277,5" name="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$6" />

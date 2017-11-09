@@ -118,7 +118,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
           }
           for (SModel model : Sequence.fromIterable(module.getModels())) {
             for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
-              String testClassName = ((String) BHReflection.invoke(testCase, SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
+              String testClassName = ((String) BHReflection.invoke0(testCase, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
               try {
                 Class<?> testClass = moduleCL.loadClass(testClassName);
                 result.add(new DelegatingRunner(builder, testClass));

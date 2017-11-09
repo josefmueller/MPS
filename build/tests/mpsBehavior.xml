@@ -882,7 +882,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.TestBehavior" depends="java.compile.BHL1, java.compile.BHL2, java.compile.BHL3, java.compile.BHL4, java.compile.BHL5, java.compile.BHL6, java.compile.BHL7, java.compile.TestBehaviorReflective, java.compile.UtilSolution, fetchDependencies">
+  <target name="java.compile.TestBehavior" depends="java.compile.BHL1, java.compile.BHL2, java.compile.BHL3, java.compile.BHL4, java.compile.BHL5, java.compile.BHL6, java.compile.BHL7, java.compile.UtilSolution, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehavior/source_gen" />
     <mkdir dir="${build.tmp}/java/out/TestBehavior" />
     <javac2 destdir="${build.tmp}/java/out/TestBehavior" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -915,7 +915,6 @@
         <pathelement path="${build.tmp}/java/out/BHL5" />
         <pathelement path="${build.tmp}/java/out/BHL6" />
         <pathelement path="${build.tmp}/java/out/BHL7" />
-        <pathelement path="${build.tmp}/java/out/TestBehaviorReflective" />
         <pathelement path="${build.tmp}/java/out/UtilSolution" />
         <fileset file="${artifacts.mps}/lib/mps-tool.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />

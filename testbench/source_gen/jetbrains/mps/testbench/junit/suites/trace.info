@@ -53,7 +53,7 @@
       <node id="5060931773414838888" at="111,92,112,78" concept="8" />
       <node id="3818729150937331183" at="114,48,115,70" concept="3" />
       <node id="5060931773414838907" at="116,13,117,21" concept="2" />
-      <node id="768083588668005802" at="120,257,121,136" concept="8" />
+      <node id="768083588668005802" at="120,257,121,294" concept="8" />
       <node id="768083588668000992" at="122,19,123,71" concept="8" />
       <node id="1884528325078915068" at="123,71,124,69" concept="3" />
       <node id="3818729150937331193" at="126,51,127,106" concept="3" />
@@ -69,7 +69,7 @@
       <node id="7535322034160543407" at="76,67,82,5" concept="5" />
       <node id="5060931773414838896" at="112,78,118,11" concept="6" />
       <node id="1884528325076767161" at="51,0,58,0" concept="1" trace="MpsTestsSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-      <node id="768083588668045171" at="121,136,129,15" concept="15" />
+      <node id="768083588668045171" at="121,294,129,15" concept="15" />
       <node id="149846544988526529" at="88,103,97,7" concept="6" />
       <node id="6450649963067074493" at="59,0,69,0" concept="7" trace="initIdeaEnvironment#()Ljetbrains/mps/tool/environment/Environment;" />
       <node id="149846544987409740" at="87,80,98,5" concept="5" />

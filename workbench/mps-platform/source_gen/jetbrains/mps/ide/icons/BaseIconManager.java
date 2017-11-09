@@ -159,8 +159,8 @@ public class BaseIconManager {
     }
     RowIcon result = new RowIcon(2);
     result.setIcon(mainIcon, 0);
-    result.setIcon(getIconForResource(((IconResource) BHReflection.invoke(node, SMethodTrimmedId.create("getSideIcon", null, "6TtJ6IUjtJX")))), 1);
-    List<Icon> markIcons = ListSequence.fromList(((List<IconResource>) BHReflection.invoke(node, SMethodTrimmedId.create("getIconMarks", null, "6TtJ6IUkhQJ")))).select(new ISelector<IconResource, Icon>() {
+    result.setIcon(getIconForResource(((IconResource) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getSideIcon", null, "6TtJ6IUjtJX")))), 1);
+    List<Icon> markIcons = ListSequence.fromList(((List<IconResource>) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getIconMarks", null, "6TtJ6IUkhQJ")))).select(new ISelector<IconResource, Icon>() {
       public Icon select(IconResource it) {
         return getIconForResource(it);
       }

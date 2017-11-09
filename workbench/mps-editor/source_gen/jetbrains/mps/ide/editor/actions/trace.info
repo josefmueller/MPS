@@ -1756,8 +1756,8 @@
       <node id="6774261846361407508" at="104,222,105,172" concept="4" />
       <node id="6774261846361407470" at="105,172,106,224" concept="9" />
       <node id="2959838019447787233" at="106,224,107,333" concept="4" />
-      <node id="6774261846361407515" at="107,333,108,291" concept="4" />
-      <node id="6774261846361407524" at="108,291,109,200" concept="4" />
+      <node id="6774261846361407515" at="107,333,108,438" concept="4" />
+      <node id="6774261846361407524" at="108,438,109,200" concept="4" />
       <node id="6774261846361407533" at="109,200,110,206" concept="9" />
       <node id="6774261846361407539" at="110,206,111,184" concept="4" />
       <node id="6774261846361407546" at="111,184,112,59" concept="4" />
@@ -2600,7 +2600,7 @@
         <var name="_params" id="5238877291854194705" />
         <var name="event" id="5238877291854194705" />
       </scope>
-      <unit id="699163291708879686" at="48,661,52,9" name="jetbrains.mps.ide.editor.actions.Comment_Action$1$1" />
+      <unit id="699163291708879686" at="48,823,52,9" name="jetbrains.mps.ide.editor.actions.Comment_Action$1$1" />
       <unit id="548229885685660107" at="46,168,54,5" name="jetbrains.mps.ide.editor.actions.Comment_Action$1" />
       <unit id="5238877291854194705" at="25,0,84,0" name="jetbrains.mps.ide.editor.actions.Comment_Action" />
     </file>

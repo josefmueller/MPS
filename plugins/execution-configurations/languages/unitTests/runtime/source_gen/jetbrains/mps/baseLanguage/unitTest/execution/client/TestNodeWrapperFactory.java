@@ -29,7 +29,7 @@ public enum TestNodeWrapperFactory {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")) && SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
         return null;
       }
-      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).isEmpty()) {
+      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke0(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).isEmpty()) {
         return null;
       }
       if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
@@ -64,10 +64,10 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         SNode ancestor = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        if (!(((boolean) (Boolean) BHReflection.invoke(ancestor, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
+        if (!(((boolean) (Boolean) BHReflection.invoke0(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
           return false;
         }
-        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(((String) BHReflection.invoke(ancestor, SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))).equals(TestCase.class.getCanonicalName()))) {
+        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(((String) BHReflection.invoke0(ancestor, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))).equals(TestCase.class.getCanonicalName()))) {
           ancestor = check_kl7j79_a0a0d0b0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")));
         }
         return ancestor != null;

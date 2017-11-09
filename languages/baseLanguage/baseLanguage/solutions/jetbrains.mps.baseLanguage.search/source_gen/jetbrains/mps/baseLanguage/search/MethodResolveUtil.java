@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -47,7 +47,7 @@ public class MethodResolveUtil {
   }
 
   public static Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
-    if (((boolean) (Boolean) BHReflection.invoke(methodCall, SMethodTrimmedId.create("useScopesForMethodDeclarationFixer", null, "3EWPnx1lHq")))) {
+    if (((boolean) (Boolean) BHReflection.invoke0(methodCall, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), SMethodTrimmedId.create("useScopesForMethodDeclarationFixer", null, "3EWPnx1lHq")))) {
       return resolveMethodUsingScopes(methodCall, name);
     }
 
@@ -102,11 +102,11 @@ public class MethodResolveUtil {
   }
 
   private static Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return ((Map<SNode, SNode>) BHReflection.invoke(methodCall, SMethodTrimmedId.create("getTypesByTypeVars", null, "JfLh5LDMrj")));
+    return ((Map<SNode, SNode>) BHReflection.invoke0(methodCall, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), SMethodTrimmedId.create("getTypesByTypeVars", null, "JfLh5LDMrj")));
   }
 
   private static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
-    Iterable<SNode> availableMethodDeclarations = ((Iterable<SNode>) BHReflection.invoke(methodCall, SMethodTrimmedId.create("getAvailableMethodDeclarations", null, "50EF2fWdwEN"), methodName));
+    Iterable<SNode> availableMethodDeclarations = ((Iterable<SNode>) BHReflection.invoke0(methodCall, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"), SMethodTrimmedId.create("getAvailableMethodDeclarations", null, "50EF2fWdwEN"), methodName));
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + SNodeOperations.getConcept(methodCall).getQualifiedName();
     return availableMethodDeclarations;
   }
@@ -170,7 +170,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getNodeAncestor(methodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
             SNode anc = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            if (desc != null && anc != null && ((boolean) (Boolean) BHReflection.invoke(desc, SMethodTrimmedId.create("isDescendant", null, "6dL7A1DpKo1"), anc))) {
+            if (desc != null && anc != null && ((boolean) (Boolean) BHReflection.invoke0(desc, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), SMethodTrimmedId.create("isDescendant", null, "6dL7A1DpKo1"), anc))) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);

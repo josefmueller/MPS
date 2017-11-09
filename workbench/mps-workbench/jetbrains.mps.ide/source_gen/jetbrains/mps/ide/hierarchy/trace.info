@@ -1720,7 +1720,7 @@
       <node id="5797068448049414461" at="39,76,40,16" concept="15" />
       <node id="2299985075419915065" at="40,16,41,42" concept="4" />
       <node id="5797068448049414485" at="45,33,46,79" concept="17" />
-      <node id="5200543944415363027" at="47,5,48,177" concept="11" />
+      <node id="5200543944415363027" at="47,5,48,336" concept="11" />
       <node id="5797068448049414543" at="52,194,53,198" concept="10" />
       <node id="5797068448049414550" at="53,198,54,184" concept="10" />
       <node id="5797068448049414568" at="55,167,56,143" concept="4" />
@@ -1737,7 +1737,7 @@
       <node id="5200543944415564185" at="86,41,87,60" concept="11" />
       <node id="5200543944415564195" at="90,40,91,26" concept="11" />
       <node id="5200543944415608130" at="95,51,96,200" concept="11" />
-      <node id="5637778898984597338" at="100,44,101,146" concept="10" />
+      <node id="5637778898984597338" at="100,44,101,305" concept="10" />
       <node id="4565282503346041331" at="103,43,104,82" concept="10" />
       <node id="4565282503346062814" at="105,31,106,63" concept="4" />
       <node id="4565282503346072928" at="106,63,107,72" concept="4" />
@@ -1759,7 +1759,7 @@
       <node id="4565282503346013543" at="103,0,111,0" concept="9" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5200543944415564177" at="84,102,93,7" concept="10" />
       <node id="5797068448049414534" at="51,41,61,5" concept="8" />
-      <node id="4565282503345986612" at="101,146,111,11" concept="4" />
+      <node id="4565282503345986612" at="101,305,111,11" concept="4" />
       <node id="5797068448049414528" at="50,0,63,0" concept="9" trace="getParent#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4565282503345986527" at="100,0,113,0" concept="9" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4565282503345980573" at="98,7,113,7" concept="4" />
@@ -1788,7 +1788,7 @@
         <var name="isParentHierarchy" id="5797068448049414458" />
         <var name="repo" id="5797068448049414455" />
       </scope>
-      <scope id="5797068448049414478" at="44,101,48,177" />
+      <scope id="5797068448049414478" at="44,101,48,336" />
       <scope id="5797068448049414631" at="71,0,75,0" />
       <scope id="5797068448049414586" at="64,112,69,69">
         <var name="result" id="5637778898984789275" />

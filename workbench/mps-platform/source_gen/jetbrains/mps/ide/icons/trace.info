@@ -111,7 +111,7 @@
       <node id="1315815304215981421" at="157,90,158,70" concept="3" />
       <node id="1315815304215981428" at="159,5,160,36" concept="8" />
       <node id="1315815304215981434" at="160,36,161,32" concept="3" />
-      <node id="1315815304215981440" at="161,32,162,147" concept="3" />
+      <node id="1315815304215981440" at="161,32,162,286" concept="3" />
       <node id="1315815304215981462" at="164,43,165,38" concept="9" />
       <node id="1315815304215981470" at="168,38,169,26" concept="9" />
       <node id="1315815304215981482" at="172,56,173,94" concept="8" />
@@ -188,7 +188,7 @@
       <node id="1315815304216105631" at="223,31,230,5" concept="15" />
       <node id="1315815304215981477" at="171,24,179,5" concept="6" />
       <node id="1315815304216105663" at="232,22,240,7" concept="17" />
-      <node id="1315815304215981449" at="162,147,171,24" concept="8" />
+      <node id="1315815304215981449" at="162,286,171,24" concept="8" />
       <node id="1315815304215994089" at="183,0,194,0" concept="7" trace="getIconForConceptNoCache#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="1315815304215978059" at="128,0,143,0" concept="7" trace="getIconFor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljavax/swing/Icon;" />
       <node id="1315815304216105650" at="230,5,245,5" concept="15" />
@@ -333,7 +333,7 @@
       <scope id="1315815304216105616" at="222,0,252,0">
         <var name="is" id="1315815304216105618" />
       </scope>
-      <unit id="1315815304215981460" at="163,172,167,5" name="jetbrains.mps.ide.icons.BaseIconManager$1" />
+      <unit id="1315815304215981460" at="163,311,167,5" name="jetbrains.mps.ide.icons.BaseIconManager$1" />
       <unit id="1315815304215981468" at="167,17,171,5" name="jetbrains.mps.ide.icons.BaseIconManager$2" />
       <unit id="1315815304215925444" at="51,0,254,0" name="jetbrains.mps.ide.icons.BaseIconManager" />
     </file>
@@ -389,7 +389,7 @@
       <node id="6327362524872671619" at="187,90,188,70" concept="3" />
       <node id="6327362524872671631" at="189,5,190,36" concept="8" />
       <node id="6327362524872671637" at="190,36,191,32" concept="3" />
-      <node id="6327362524872671643" at="191,32,192,147" concept="3" />
+      <node id="6327362524872671643" at="191,32,192,286" concept="3" />
       <node id="4471816452907175771" at="194,43,195,38" concept="9" />
       <node id="4471816452907188281" at="198,38,199,26" concept="9" />
       <node id="6327362524872671663" at="202,56,203,94" concept="8" />
@@ -475,7 +475,7 @@
       <node id="5092212645363958371" at="226,0,233,0" concept="13" trace="getIconForExactConcept#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="3516943117795575971" at="261,75,268,7" concept="15" />
       <node id="6327362524872671658" at="201,24,209,5" concept="6" />
-      <node id="6327362524872671651" at="192,147,201,24" concept="8" />
+      <node id="6327362524872671651" at="192,286,201,24" concept="8" />
       <node id="2434140849679604811" at="285,0,295,0" concept="13" trace="getIconFor#(Ljetbrains/mps/smodel/MPSModuleOwner;)Ljavax/swing/Icon;" />
       <node id="5092212645364113363" at="213,0,225,0" concept="13" trace="getIconForConceptNoCache#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/smodel/runtime/IconResource;" />
       <node id="2434140849679604397" at="63,0,76,0" concept="12" trace="EMPTY_ICON" />
@@ -635,7 +635,7 @@
       <scope id="1136850375741606980" at="238,0,274,0">
         <var name="ir" id="1136850375741607027" />
       </scope>
-      <unit id="4471816452907172334" at="193,172,197,5" name="jetbrains.mps.ide.icons.IconManager$2" />
+      <unit id="4471816452907172334" at="193,311,197,5" name="jetbrains.mps.ide.icons.IconManager$2" />
       <unit id="4471816452907185144" at="197,17,201,5" name="jetbrains.mps.ide.icons.IconManager$3" />
       <unit id="2434140849679604402" at="63,44,75,3" name="jetbrains.mps.ide.icons.IconManager$1" />
       <unit id="2434140849679604371" at="59,0,296,0" name="jetbrains.mps.ide.icons.IconManager" />

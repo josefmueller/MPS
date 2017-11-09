@@ -34,7 +34,7 @@ public final class GeneratorUtilEx {
     return (v == null ? defaultValue : v);
   }
   public static String getPatternVariableName(SNode ref) {
-    return ((String) BHReflection.invoke(ref, SMethodTrimmedId.create("getVariableName", null, "2x5YKzmc1bX")));
+    return ((String) BHReflection.invoke0(ref, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"), SMethodTrimmedId.create("getVariableName", null, "2x5YKzmc1bX")));
   }
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new ArrayList<SNode>();

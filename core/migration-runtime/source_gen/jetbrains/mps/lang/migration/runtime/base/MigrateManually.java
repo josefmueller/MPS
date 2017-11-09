@@ -5,6 +5,7 @@ package jetbrains.mps.lang.migration.runtime.base;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class MigrateManually extends Problem<SNode> {
@@ -13,7 +14,7 @@ public class MigrateManually extends Problem<SNode> {
   public MigrateManually(SNode annotation) {
     super(SNodeOperations.getParent(annotation));
     myAnnotation = annotation;
-    myMsg = ((String) BHReflection.invoke(annotation, SMethodTrimmedId.create("getResultsMessage", null, "29O0pTxWdnZ")));
+    myMsg = ((String) BHReflection.invoke0(annotation, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), SMethodTrimmedId.create("getResultsMessage", null, "29O0pTxWdnZ")));
   }
   public String getCategory() {
     return "migrate manually";

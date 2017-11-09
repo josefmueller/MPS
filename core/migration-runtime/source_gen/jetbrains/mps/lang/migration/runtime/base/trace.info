@@ -119,25 +119,25 @@
   </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/2482611074348041737">
     <file name="MigrateManually.java">
-      <node id="2482611074348045238" at="11,0,12,0" concept="4" trace="myAnnotation" />
-      <node id="2203680882650260683" at="12,0,13,0" concept="4" trace="myMsg" />
-      <node id="2482611074348041742" at="13,44,14,49" concept="14" />
-      <node id="2482611074348045242" at="14,49,15,30" concept="3" />
-      <node id="2203680882650261687" at="15,30,16,122" concept="3" />
-      <node id="2482611074348083805" at="18,31,19,30" concept="9" />
-      <node id="2482611074348046248" at="22,30,23,17" concept="9" />
-      <node id="2482611074348041746" at="18,0,21,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
-      <node id="2482611074348082411" at="21,0,25,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="2482611074348041738" at="13,0,18,0" concept="1" trace="MigrateManually#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="2482611074348041749" at="18,31,19,30" />
-      <scope id="2482611074348082415" at="22,30,23,17" />
-      <scope id="2482611074348041741" at="13,44,16,122" />
-      <scope id="2482611074348041746" at="18,0,21,0" />
-      <scope id="2482611074348082411" at="21,0,25,0" />
-      <scope id="2482611074348041738" at="13,0,18,0">
+      <node id="2482611074348045238" at="12,0,13,0" concept="4" trace="myAnnotation" />
+      <node id="2203680882650260683" at="13,0,14,0" concept="4" trace="myMsg" />
+      <node id="2482611074348041742" at="14,44,15,49" concept="14" />
+      <node id="2482611074348045242" at="15,49,16,30" concept="3" />
+      <node id="2203680882650261687" at="16,30,17,283" concept="3" />
+      <node id="2482611074348083805" at="19,31,20,30" concept="9" />
+      <node id="2482611074348046248" at="23,30,24,17" concept="9" />
+      <node id="2482611074348041746" at="19,0,22,0" concept="7" trace="getCategory#()Ljava/lang/String;" />
+      <node id="2482611074348082411" at="22,0,26,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
+      <node id="2482611074348041738" at="14,0,19,0" concept="1" trace="MigrateManually#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2482611074348041749" at="19,31,20,30" />
+      <scope id="2482611074348082415" at="23,30,24,17" />
+      <scope id="2482611074348041741" at="14,44,17,283" />
+      <scope id="2482611074348041746" at="19,0,22,0" />
+      <scope id="2482611074348082411" at="22,0,26,0" />
+      <scope id="2482611074348041738" at="14,0,19,0">
         <var name="annotation" id="2482611074348041744" />
       </scope>
-      <unit id="2482611074348041737" at="10,0,26,0" name="jetbrains.mps.lang.migration.runtime.base.MigrateManually" />
+      <unit id="2482611074348041737" at="11,0,27,0" name="jetbrains.mps.lang.migration.runtime.base.MigrateManually" />
     </file>
   </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/3309033097909944438">
@@ -361,10 +361,10 @@
       <node id="3818729150937330515" at="81,45,82,110" concept="3" />
       <node id="3628660716136393040" at="83,11,84,17" concept="9" />
       <node id="1109674566550236492" at="87,188,88,22" concept="9" />
-      <node id="1109674566550326034" at="92,62,93,311" concept="9" />
+      <node id="1109674566550326034" at="92,62,93,463" concept="9" />
       <node id="1109674566550753649" at="99,47,100,254" concept="9" />
       <node id="1109674566550388666" at="102,32,103,240" concept="9" />
-      <node id="2975756678465538413" at="105,28,106,493" concept="3" />
+      <node id="2975756678465538413" at="105,28,106,645" concept="3" />
       <node id="5239783599555849151" at="108,7,109,32" concept="9" />
       <node id="1109674566550753650" at="111,90,112,46" concept="9" />
       <node id="5168866961623738091" at="38,0,41,0" concept="7" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
@@ -402,7 +402,7 @@
       <scope id="5239783599556083080" at="76,43,77,196" />
       <scope id="3818729150937330515" at="81,45,82,110" />
       <scope id="1109674566550236491" at="87,188,88,22" />
-      <scope id="1109674566550326033" at="92,62,93,311" />
+      <scope id="1109674566550326033" at="92,62,93,463" />
       <scope id="1109674566550753648" at="99,47,100,254" />
       <scope id="1109674566550753650" at="111,90,112,46" />
       <scope id="5168866961623738073" at="34,70,36,35" />
@@ -442,7 +442,7 @@
       <scope id="5168866961623738103" at="44,0,61,0">
         <var name="o" id="5168866961623738157" />
       </scope>
-      <scope id="2975756678465503704" at="71,25,106,493">
+      <scope id="2975756678465503704" at="71,25,106,645">
         <var name="current" id="5239783599555849096" />
         <var name="depModule" id="5239783599555849090" />
         <var name="executeAfter" id="1109674566550326023" />

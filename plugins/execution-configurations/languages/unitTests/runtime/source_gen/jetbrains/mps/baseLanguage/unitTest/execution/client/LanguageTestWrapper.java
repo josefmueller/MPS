@@ -51,7 +51,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     return withNode(new Function<SNode, ITestNodeWrapper>() {
       public ITestNodeWrapper apply(SNode n) {
         if (check_9og6tg_a0a0a0a4(n)) {
-          return TestNodeWrapperFactory.tryToWrap(((SNode) BHReflection.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), SMethodTrimmedId.create("getTestCase", null, "hGBgWVd"))));
+          return TestNodeWrapperFactory.tryToWrap(((SNode) BHReflection.invoke0(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), SMethodTrimmedId.create("getTestCase", null, "hGBgWVd"))));
         }
         return null;
       }
@@ -66,7 +66,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
         if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
           return LanguageTestWrapper.super.getTestMethods();
         }
-        return ListSequence.fromList(((List<SNode>) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).select(new ISelector<SNode, ITestNodeWrapper>() {
+        return ListSequence.fromList(((List<SNode>) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).select(new ISelector<SNode, ITestNodeWrapper>() {
           public ITestNodeWrapper select(SNode it) {
             return TestNodeWrapperFactory.tryToWrap(it);
           }
@@ -80,7 +80,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   public TestParameters getTestRunParameters() {
     return withNode(new Function<SNode, TestParameters>() {
       public TestParameters apply(SNode node) {
-        if (node != null && ((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
+        if (node != null && ((boolean) (Boolean) BHReflection.invoke0(node, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b08a01119L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
           Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
           List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
             public String select(String key) {
@@ -160,7 +160,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   public String getFqName() {
     return withNode(new Function<SNode, String>() {
       public String apply(SNode n) {
-        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) ? ((String) BHReflection.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("getClassName", null, "hGBnqtL"))) : LanguageTestWrapper.super.getFqName());
+        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) ? ((String) BHReflection.invoke0(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getClassName", null, "hGBnqtL"))) : LanguageTestWrapper.super.getFqName());
       }
     });
   }
@@ -170,7 +170,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   public String getName() {
     return withNode(new Function<SNode, String>() {
       public String apply(SNode n) {
-        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) ? ((String) BHReflection.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), SMethodTrimmedId.create("getTestName", null, "hGBohAB"))) : check_9og6tg_a0a0a0a0q(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
+        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) ? ((String) BHReflection.invoke0(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), SMethodTrimmedId.create("getTestName", null, "hGBohAB"))) : check_9og6tg_a0a0a0a0q(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
       }
     });
   }
@@ -182,7 +182,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   }
   private static String check_9og6tg_a0a0a0a0q(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((String) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("getSimpleClassName", null, "hSQIE8p")));
+      return ((String) BHReflection.invoke0(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getSimpleClassName", null, "hSQIE8p")));
     }
     return null;
   }
