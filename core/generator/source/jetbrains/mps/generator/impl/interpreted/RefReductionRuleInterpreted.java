@@ -26,7 +26,6 @@ import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro2;
-import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.ReferenceReductionRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
@@ -65,7 +64,7 @@ public class RefReductionRuleInterpreted extends ReferenceReductionRuleBase {
   }
 
   @Override
-  public void apply(@NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+  public void apply(@NotNull TemplateContext context, SNode outputNode) throws GenerationFailureException, GenerationCanceledException {
     if (myQuery == null) {
       GeneratorQueryProvider.Source gqps = context.getEnvironment();
       final GeneratorQueryProvider queryProvider = gqps.getQueryProvider(getRuleNode());
@@ -74,7 +73,6 @@ public class RefReductionRuleInterpreted extends ReferenceReductionRuleBase {
     /* FIXME should I take resolveInfo of present reference target, like in TemplateNode#getDefaultResolveInfo? */
     final String defaultResolveInfo = null;
     ReferenceInfo_Macro2 ri = new ReferenceInfo_Macro2(myQuery, context, getRuleNode(), defaultResolveInfo);
-    SNode outputNode = context.getInput(); // FIXME likely, shall pass output node from outside. this is the node we set reference at.
     new PostponedReference(getApplicableLink(), outputNode, ri).registerWith(context.getEnvironment().getGenerator());
   }
 
