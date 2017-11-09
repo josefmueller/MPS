@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /*package*/ class ReflectiveEditorUtil {
 
@@ -50,8 +51,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     SelectionManager selectionManager = editorComponent.getEditorContext().getSelectionManager();
 
     List<List<SNode>> selectionStack = ListSequence.fromList(new ArrayList<List<SNode>>());
-    for (Selection node : Sequence.fromIterable(selectionManager.getSelectionStackIterable())) {
-      ListSequence.fromList(selectionStack).addElement(node.getSelectedNodes());
+    for (Selection selection : Sequence.fromIterable(selectionManager.getSelectionStackIterable())) {
+      if (ListSequence.fromList(selectionStack).isEmpty() || neq_zbtwzp_a0a0a4a3(selection.getSelectedNodes(), ListSequence.fromList(selectionStack).last())) {
+        ListSequence.fromList(selectionStack).addElement(selection.getSelectedNodes());
+      }
     }
 
     ReflectiveHintsManager manager = new ReflectiveHintsManager(editorComponent);
@@ -69,14 +72,20 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     editorComponent.getEditorContext().flushEvents();
 
     selectionManager.clearSelection();
-    for (List<SNode> nodes : ListSequence.fromList(selectionStack)) {
-      if (ListSequence.fromList(nodes).count() > 1) {
-        Selection rangeSelection = selectionManager.createRangeSelection(ListSequence.fromList(nodes).first(), ListSequence.fromList(nodes).last());
+    for (List<SNode> selection : ListSequence.fromList(selectionStack)) {
+      if (ListSequence.fromList(selection).count() > 1) {
+        Selection rangeSelection = selectionManager.createRangeSelection(ListSequence.fromList(selection).first(), ListSequence.fromList(selection).last());
         selectionManager.pushSelection(rangeSelection);
       } else {
-        selectionManager.pushSelection(selectionManager.createSelection(editorComponent.findNodeCell(ListSequence.fromList(nodes).first())));
+        EditorCell nodeCell = editorComponent.findNodeCell(ListSequence.fromList(selection).first());
+        if (nodeCell.isSelectable()) {
+          selectionManager.pushSelection(selectionManager.createSelection(nodeCell));
+        }
       }
     }
   }
 
+  private static boolean neq_zbtwzp_a0a0a4a3(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
 }
