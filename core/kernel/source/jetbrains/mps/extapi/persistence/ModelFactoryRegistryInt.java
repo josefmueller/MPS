@@ -43,7 +43,7 @@ final class ModelFactoryRegistryInt implements ModelFactoryRegistry {
   private final List<ModelFactory> myFactories;
 
   ModelFactoryRegistryInt(Iterable<ModelFactory> factories) {
-    myFactories = IterableUtil.asList(factories);
+    myFactories = IterableUtil.copyToList(factories);
     Collections.reverse(myFactories);
   }
 
