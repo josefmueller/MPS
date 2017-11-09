@@ -58,6 +58,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
+    Classifier_Member_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

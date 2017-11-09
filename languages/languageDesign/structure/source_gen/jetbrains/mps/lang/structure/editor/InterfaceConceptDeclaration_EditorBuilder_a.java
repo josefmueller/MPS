@@ -388,6 +388,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -499,6 +500,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    AbstractConceptDeclaration_Link_Actions.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
