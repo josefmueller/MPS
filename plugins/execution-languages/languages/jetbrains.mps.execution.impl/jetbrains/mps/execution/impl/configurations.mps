@@ -160,6 +160,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -986,6 +987,30 @@
         <property role="DiZV1" value="false" />
         <property role="od$2w" value="false" />
         <node concept="3clFbS" id="1xg2vZtrX20" role="3clF47">
+          <node concept="3cpWs8" id="1xg2vZtrX29" role="3cqZAp">
+            <node concept="3cpWsn" id="1xg2vZtrX28" role="3cpWs9">
+              <property role="3TUv4t" value="false" />
+              <property role="TrG5h" value="runManager" />
+              <node concept="3uibUv" id="1xg2vZtrX2a" role="1tU5fm">
+                <ref role="3uigEE" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
+              </node>
+              <node concept="1rXfSq" id="1xg2vZtrX2b" role="33vP2m">
+                <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="6jU6GOqHdWV" role="3cqZAp">
+            <node concept="3cpWsn" id="6jU6GOqHdWW" role="3cpWs9">
+              <property role="TrG5h" value="selectedConfigurationId" />
+              <node concept="17QB3L" id="6jU6GOqHghR" role="1tU5fm" />
+              <node concept="1rXfSq" id="PTeMHU5Coq" role="33vP2m">
+                <ref role="37wK5l" node="PTeMHU5Com" resolve="getSelectedConfigurationId" />
+                <node concept="37vLTw" id="PTeMHU5Cop" role="37wK5m">
+                  <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1xg2vZtrX21" role="3cqZAp">
             <node concept="1rXfSq" id="1xg2vZtrX22" role="3clFbG">
               <ref role="37wK5l" node="4tfwdmbGnyj" resolve="clearAllRunConfigurations" />
@@ -993,8 +1018,8 @@
           </node>
           <node concept="3clFbF" id="1xg2vZtrX23" role="3cqZAp">
             <node concept="2OqwBi" id="1xg2vZtrX24" role="3clFbG">
-              <node concept="1rXfSq" id="1xg2vZtrX25" role="2Oq$k0">
-                <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
+              <node concept="37vLTw" id="6jU6GOqHdq$" role="2Oq$k0">
+                <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
               </node>
               <node concept="liA8E" id="1xg2vZtrX26" role="2OqNvi">
                 <ref role="37wK5l" to="zjj4:~RunManagerImpl.initializeConfigurationTypes(com.intellij.execution.configurations.ConfigurationType[]):void" resolve="initializeConfigurationTypes" />
@@ -1010,18 +1035,6 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="1xg2vZtrX29" role="3cqZAp">
-            <node concept="3cpWsn" id="1xg2vZtrX28" role="3cpWs9">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="runManager" />
-              <node concept="3uibUv" id="1xg2vZtrX2a" role="1tU5fm">
-                <ref role="3uigEE" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
-              </node>
-              <node concept="1rXfSq" id="1xg2vZtrX2b" role="33vP2m">
-                <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="79c7v7kJevm" role="3cqZAp">
             <node concept="2OqwBi" id="79c7v7kJeBu" role="3clFbG">
               <node concept="37vLTw" id="79c7v7kJevg" role="2Oq$k0">
@@ -1032,9 +1045,121 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbJ" id="6jU6GOqHixX" role="3cqZAp">
+            <node concept="3clFbS" id="6jU6GOqHixZ" role="3clFbx">
+              <node concept="3cpWs8" id="6jU6GOqHgSt" role="3cqZAp">
+                <node concept="3cpWsn" id="6jU6GOqHgSu" role="3cpWs9">
+                  <property role="TrG5h" value="toSelect" />
+                  <node concept="3uibUv" id="6jU6GOqHgSn" role="1tU5fm">
+                    <ref role="3uigEE" to="3v5a:~RunnerAndConfigurationSettings" resolve="RunnerAndConfigurationSettings" />
+                  </node>
+                  <node concept="2OqwBi" id="6jU6GOqHgSv" role="33vP2m">
+                    <node concept="37vLTw" id="6jU6GOqHgSw" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
+                    </node>
+                    <node concept="liA8E" id="6jU6GOqHgSx" role="2OqNvi">
+                      <ref role="37wK5l" to="zjj4:~RunManagerImpl.getConfigurationById(java.lang.String):com.intellij.execution.RunnerAndConfigurationSettings" resolve="getConfigurationById" />
+                      <node concept="37vLTw" id="6jU6GOqHgSy" role="37wK5m">
+                        <ref role="3cqZAo" node="6jU6GOqHdWW" resolve="selectedConfigurationId" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jU6GOqHdxL" role="3cqZAp">
+                <node concept="2OqwBi" id="6jU6GOqHelA" role="3clFbG">
+                  <node concept="37vLTw" id="6jU6GOqHedH" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1xg2vZtrX28" resolve="runManager" />
+                  </node>
+                  <node concept="liA8E" id="6jU6GOqHeAI" role="2OqNvi">
+                    <ref role="37wK5l" to="zjj4:~RunManagerImpl.setSelectedConfiguration(com.intellij.execution.RunnerAndConfigurationSettings):void" resolve="setSelectedConfiguration" />
+                    <node concept="37vLTw" id="6jU6GOqHhjH" role="37wK5m">
+                      <ref role="3cqZAo" node="6jU6GOqHgSu" resolve="toSelect" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="6jU6GOqHiS6" role="3clFbw">
+              <node concept="10Nm6u" id="6jU6GOqHiSZ" role="3uHU7w" />
+              <node concept="37vLTw" id="6jU6GOqHiGg" role="3uHU7B">
+                <ref role="3cqZAo" node="6jU6GOqHdWW" resolve="selectedConfigurationId" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3Tm1VV" id="1xg2vZtrX2Z" role="1B3o_S" />
         <node concept="3cqZAl" id="1xg2vZtrX30" role="3clF45" />
+      </node>
+      <node concept="2tJIrI" id="PTeMHU5CMz" role="jymVt" />
+      <node concept="3clFb_" id="PTeMHU5Com" role="jymVt">
+        <property role="TrG5h" value="getSelectedConfigurationId" />
+        <node concept="3Tm6S6" id="PTeMHU5Con" role="1B3o_S" />
+        <node concept="17QB3L" id="PTeMHU5Coo" role="3clF45" />
+        <node concept="37vLTG" id="PTeMHU5Coh" role="3clF46">
+          <property role="TrG5h" value="runManager" />
+          <node concept="3uibUv" id="PTeMHU5Coi" role="1tU5fm">
+            <ref role="3uigEE" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="PTeMHU5CnR" role="3clF47">
+          <node concept="3cpWs8" id="PTeMHU5CnU" role="3cqZAp">
+            <node concept="3cpWsn" id="PTeMHU5CnV" role="3cpWs9">
+              <property role="TrG5h" value="selectedConfiguration" />
+              <node concept="3uibUv" id="PTeMHU5CnW" role="1tU5fm">
+                <ref role="3uigEE" to="3v5a:~RunnerAndConfigurationSettings" resolve="RunnerAndConfigurationSettings" />
+              </node>
+              <node concept="2OqwBi" id="PTeMHU5CnX" role="33vP2m">
+                <node concept="37vLTw" id="PTeMHU5Coj" role="2Oq$k0">
+                  <ref role="3cqZAo" node="PTeMHU5Coh" resolve="runManager" />
+                </node>
+                <node concept="liA8E" id="PTeMHU5CnZ" role="2OqNvi">
+                  <ref role="37wK5l" to="zjj4:~RunManagerImpl.getSelectedConfiguration():com.intellij.execution.RunnerAndConfigurationSettings" resolve="getSelectedConfiguration" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="PTeMHU5Co0" role="3cqZAp">
+            <node concept="3cpWsn" id="PTeMHU5Co1" role="3cpWs9">
+              <property role="TrG5h" value="selectedConfigurationId" />
+              <node concept="17QB3L" id="PTeMHU5Co2" role="1tU5fm" />
+              <node concept="10Nm6u" id="PTeMHU5Co3" role="33vP2m" />
+            </node>
+          </node>
+          <node concept="3clFbJ" id="PTeMHU5Co4" role="3cqZAp">
+            <node concept="3clFbS" id="PTeMHU5Co5" role="3clFbx">
+              <node concept="3clFbF" id="PTeMHU5Co6" role="3cqZAp">
+                <node concept="37vLTI" id="PTeMHU5Co7" role="3clFbG">
+                  <node concept="2OqwBi" id="PTeMHU5Co8" role="37vLTx">
+                    <node concept="37vLTw" id="PTeMHU5Co9" role="2Oq$k0">
+                      <ref role="3cqZAo" node="PTeMHU5CnV" resolve="selectedConfiguration" />
+                    </node>
+                    <node concept="liA8E" id="PTeMHU5Coa" role="2OqNvi">
+                      <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getUniqueID():java.lang.String" resolve="getUniqueID" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="PTeMHU5Cob" role="37vLTJ">
+                    <ref role="3cqZAo" node="PTeMHU5Co1" resolve="selectedConfigurationId" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="PTeMHU5Coc" role="3clFbw">
+              <node concept="10Nm6u" id="PTeMHU5Cod" role="3uHU7w" />
+              <node concept="37vLTw" id="PTeMHU5Coe" role="3uHU7B">
+                <ref role="3cqZAo" node="PTeMHU5CnV" resolve="selectedConfiguration" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="PTeMHU5Cof" role="3cqZAp">
+            <node concept="37vLTw" id="PTeMHU5Cog" role="3cqZAk">
+              <ref role="3cqZAo" node="PTeMHU5Co1" resolve="selectedConfigurationId" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="PTeMHU5D4C" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
       </node>
     </node>
     <node concept="3UR2Jj" id="1mC8n7NOa9R" role="lGtFl">

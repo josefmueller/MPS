@@ -10,6 +10,7 @@
   <dependency className="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" file="RunConfigurationsStateManager.java">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
     <classNode dependClassName="com.intellij.execution.RunManagerEx" />
+    <classNode dependClassName="com.intellij.execution.RunnerAndConfigurationSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />
@@ -37,6 +38,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.plugins.PluginReloadingListener" />
   </dependency>
