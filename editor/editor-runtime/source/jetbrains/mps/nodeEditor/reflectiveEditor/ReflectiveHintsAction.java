@@ -16,11 +16,16 @@
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.update.Updater;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.*;
@@ -59,7 +64,19 @@ public abstract class ReflectiveHintsAction {
   public abstract void execute();
 
   private boolean isApplicableForNode(SNode node) {
-    return isReflective() != shouldShowReflectiveEditor(myEditorComponent.findNodeCell(node).getCellContext().getHints());
+    EditorCell nodeCell = myEditorComponent.findNodeCell(node);
+    return nodeCell != null && isReflective() != shouldShowReflectiveEditor(nodeCell.getCellContext());
+  }
+
+  final void removeRedundantHints() {
+    String[] explicitEditorHintsForNode = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(myAffectedNode.getReference());
+    if (explicitEditorHintsForNode != null) {
+      List<String> explicitHints = Arrays.asList(explicitEditorHintsForNode);
+      Set<String> allReflectiveHints = Arrays.stream(ReflectiveHint.values()).map(ReflectiveHint::getHint).collect(Collectors.toSet());
+      if (explicitHints.containsAll(allReflectiveHints)) {
+        myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(myAffectedNode.getReference(), allReflectiveHints.toArray(new String[allReflectiveHints.size()]));
+      }
+    }
   }
 
   public static class ActionForNode extends ReflectiveHintsAction {
@@ -72,22 +89,22 @@ public abstract class ReflectiveHintsAction {
       return Collections.singleton(getAffectedNode());
     }
 
-    private static String hintForNode(boolean isReflective) {
-      return isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-    }
-
     @Override
     public void execute() {
-      String newHint = hintForNode(isReflective());
-      String symmetricHint = hintForNode(!isReflective());
+      Updater updater = getEditorComponent().getUpdater();
 
-      assert isApplicable();
-
-      String[] nodeExplicitHints = getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getAffectedNode().getReference());
-      if (nodeExplicitHints != null && Arrays.asList(nodeExplicitHints).contains(symmetricHint)) {
-        getEditorComponent().getUpdater().removeExplicitEditorHintsForNode(getAffectedNode().getReference(), symmetricHint);
+      CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
+      if (isReflective()) {
+        if (contextState.equals(CellContextState.EMPTY)) {
+          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode());
+        }
+        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode());
+        ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode());
+      } else {
+        assert !contextState.equals(CellContextState.EMPTY);
+        ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode());
+        removeRedundantHints();
       }
-      getEditorComponent().getUpdater().addExplicitEditorHintsForNode(getAffectedNode().getReference(), newHint);
     }
   }
 
@@ -103,15 +120,34 @@ public abstract class ReflectiveHintsAction {
 
     @Override
     public void execute() {
-      for (SNode descendant : getAffectedNodes()) {
-        getEditorComponent().getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(),
-                                                                           BASE_REFLECTIVE_EDITOR_HINT,
-                                                                           BASE_NO_REFLECTIVE_EDITOR_HINT,
-                                                                           BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
-                                                                           BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+      CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
+      Updater updater = getEditorComponent().getUpdater();
+      removeAllSubtreeHints();
+      if (isReflective()) {
+        if (contextState.equals(CellContextState.EMPTY)) {
+          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode());
+        }
+        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode());
+        ReflectiveHint.DENY_FOR_CHILDREN.revoke(updater, getAffectedNode());
+      } else {
+        if (!contextState.equals(CellContextState.EMPTY)) {
+          ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode());
+          ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode());
+          removeRedundantHints();
+        }
       }
-      String newHint = isReflective() ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
-      getEditorComponent().getUpdater().addExplicitEditorHintsForNode(getAffectedNode().getReference(), newHint);
+    }
+
+    private void removeAllSubtreeHints() {
+      for (SNode descendant : SNodeUtil.getDescendants(getAffectedNode(), null, false)) {
+        removeAllHints(descendant);
+      }
+    }
+
+    private void removeAllHints(SNode node) {
+      for (ReflectiveHint reflectiveHint : ReflectiveHint.values()) {
+        reflectiveHint.revoke(getEditorComponent().getUpdater(), node);
+      }
     }
   }
 }

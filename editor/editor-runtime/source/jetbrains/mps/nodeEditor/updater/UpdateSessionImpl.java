@@ -210,6 +210,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location) {
     getCellFactory().pushCellContext();
     getCellFactory().setNodeLocation(location);
+    ReflectiveHintsManager.propagateReflectiveHints(node, getCellFactory());
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
@@ -234,7 +235,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
-    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
+    ReflectiveHintsManager.propagateReflectiveHints(attribute, getCellFactory());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {
