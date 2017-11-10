@@ -19,11 +19,15 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.Updater;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -35,6 +39,7 @@ public abstract class ReflectiveHintsAction {
   private final SNode myAffectedNode;
   private final EditorComponent myEditorComponent;
   private final boolean myIsReflective;
+  private Map<SNodeReference, CellContextState> myRecordedContextStates = new HashMap<>();
 
   private ReflectiveHintsAction(SNode affectedNode, EditorComponent editorComponent, boolean isReflective) {
     myAffectedNode = affectedNode;
@@ -62,6 +67,19 @@ public abstract class ReflectiveHintsAction {
   }
 
   public abstract void execute();
+
+  public void recordState() {
+    for (SNode node : getAffectedNodes()) {
+      CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(node).getCellContext());
+      myRecordedContextStates.put(node.getReference(), contextState);
+    }
+  }
+
+  public void restoreState() {
+    for (Entry<SNodeReference, CellContextState> state : myRecordedContextStates.entrySet()) {
+      state.getValue().applyStateForNode(state.getKey(), getEditorComponent().getUpdater());
+    }
+  }
 
   private boolean isApplicableForNode(SNode node) {
     EditorCell nodeCell = myEditorComponent.findNodeCell(node);

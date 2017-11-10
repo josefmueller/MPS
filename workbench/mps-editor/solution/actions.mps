@@ -169,11 +169,6 @@
         <child id="5538333046911298738" name="condition" index="1oa70y" />
       </concept>
     </language>
-    <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
-      <concept id="4820515453818318288" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression" flags="ng" index="2pYGij">
-        <reference id="4820515453818318891" name="hint" index="2pYH_C" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -12760,69 +12755,14 @@
       <node concept="3clFbS" id="5VKJnnYtxYH" role="3clF47">
         <node concept="2Gpval" id="5VKJnnYuVtH" role="3cqZAp">
           <node concept="3clFbS" id="5VKJnnYuVtJ" role="2LFqv$">
-            <node concept="2Gpval" id="5VKJnnYuXw3" role="3cqZAp">
-              <node concept="3clFbS" id="5VKJnnYuXwa" role="2LFqv$">
-                <node concept="3cpWs8" id="5VKJnnYuXwb" role="3cqZAp">
-                  <node concept="3cpWsn" id="5VKJnnYuXwc" role="3cpWs9">
-                    <property role="TrG5h" value="hints" />
-                    <node concept="10Q1$e" id="5VKJnnYuXwd" role="1tU5fm">
-                      <node concept="17QB3L" id="5VKJnnYuXwe" role="10Q1$1" />
-                    </node>
-                    <node concept="2OqwBi" id="5VKJnnYuXwf" role="33vP2m">
-                      <node concept="2OqwBi" id="5VKJnnYuXwg" role="2Oq$k0">
-                        <node concept="37vLTw" id="5VKJnnYuXwh" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5VKJnnYsPzp" resolve="myEditorComponent" />
-                        </node>
-                        <node concept="liA8E" id="5VKJnnYuXwi" role="2OqNvi">
-                          <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="5VKJnnYuXwj" role="2OqNvi">
-                        <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                        <node concept="2OqwBi" id="5VKJnnYuXwk" role="37wK5m">
-                          <node concept="2GrUjf" id="5VKJnnYuXw_" role="2Oq$k0">
-                            <ref role="2Gs0qQ" node="5VKJnnYuXw$" resolve="node" />
-                          </node>
-                          <node concept="liA8E" id="5VKJnnYuXwm" role="2OqNvi">
-                            <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="5VKJnnYuXwp" role="3cqZAp">
-                  <node concept="2OqwBi" id="5VKJnnYuXwq" role="3clFbG">
-                    <node concept="37vLTw" id="5VKJnnYuXwr" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5VKJnnYtB0U" resolve="myEditorHintsForNodeMap" />
-                    </node>
-                    <node concept="liA8E" id="5VKJnnYuXws" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-                      <node concept="2OqwBi" id="5VKJnnYuXwt" role="37wK5m">
-                        <node concept="2GrUjf" id="5VKJnnYuXwA" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="5VKJnnYuXw$" resolve="node" />
-                        </node>
-                        <node concept="liA8E" id="5VKJnnYuXwv" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="5VKJnnYuXww" role="37wK5m">
-                        <ref role="3cqZAo" node="5VKJnnYuXwc" resolve="hints" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="5VKJnnYuXw7" role="2GsD0m">
-                <node concept="2GrUjf" id="5VKJnnYuXw8" role="2Oq$k0">
+            <node concept="3clFbF" id="5doOoCeBolz" role="3cqZAp">
+              <node concept="2OqwBi" id="5doOoCeBopM" role="3clFbG">
+                <node concept="2GrUjf" id="5doOoCeBol8" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="5VKJnnYuVuj" resolve="action" />
                 </node>
-                <node concept="liA8E" id="5VKJnnYuXw9" role="2OqNvi">
-                  <ref role="37wK5l" to="vq9d:~ReflectiveHintsAction.getAffectedNodes():java.lang.Iterable" resolve="getAffectedNodes" />
+                <node concept="liA8E" id="5doOoCeBthq" role="2OqNvi">
+                  <ref role="37wK5l" to="vq9d:~ReflectiveHintsAction.recordState():void" resolve="recordState" />
                 </node>
-              </node>
-              <node concept="2GrKxI" id="5VKJnnYuXw$" role="2Gsz3X">
-                <property role="TrG5h" value="node" />
               </node>
             </node>
           </node>
@@ -12845,100 +12785,24 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5VKJnnYtKm3" role="3clF47">
-        <node concept="2Gpval" id="5VKJnnYv4sF" role="3cqZAp">
-          <node concept="2GrKxI" id="5VKJnnYv4sH" role="2Gsz3X">
-            <property role="TrG5h" value="entry" />
+        <node concept="2Gpval" id="5doOoCeBtG6" role="3cqZAp">
+          <node concept="3clFbS" id="5doOoCeBtG7" role="2LFqv$">
+            <node concept="3clFbF" id="5doOoCeBtG8" role="3cqZAp">
+              <node concept="2OqwBi" id="5doOoCeBtG9" role="3clFbG">
+                <node concept="2GrUjf" id="5doOoCeBtGa" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="5doOoCeBtGd" resolve="action" />
+                </node>
+                <node concept="liA8E" id="5doOoCeBtGb" role="2OqNvi">
+                  <ref role="37wK5l" to="vq9d:~ReflectiveHintsAction.restoreState():void" resolve="restoreState" />
+                </node>
+              </node>
+            </node>
           </node>
-          <node concept="2OqwBi" id="5VKJnnYv4LJ" role="2GsD0m">
-            <node concept="37vLTw" id="5VKJnnYv4uC" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYtB0U" resolve="myEditorHintsForNodeMap" />
-            </node>
-            <node concept="liA8E" id="5VKJnnYv5Bk" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.entrySet():java.util.Set" resolve="entrySet" />
-            </node>
+          <node concept="37vLTw" id="5doOoCeBtGc" role="2GsD0m">
+            <ref role="3cqZAo" node="5VKJnnYpPnh" resolve="myActions" />
           </node>
-          <node concept="3clFbS" id="5VKJnnYv4sL" role="2LFqv$">
-            <node concept="3clFbF" id="5VKJnnYv63F" role="3cqZAp">
-              <node concept="2OqwBi" id="5VKJnnYv6y$" role="3clFbG">
-                <node concept="2OqwBi" id="5VKJnnYv6be" role="2Oq$k0">
-                  <node concept="37vLTw" id="5VKJnnYv63E" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5VKJnnYsPzp" resolve="myEditorComponent" />
-                  </node>
-                  <node concept="liA8E" id="5VKJnnYv6rA" role="2OqNvi">
-                    <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="5VKJnnYv6MX" role="2OqNvi">
-                  <ref role="37wK5l" to="22ra:~Updater.removeExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String...):void" resolve="removeExplicitEditorHintsForNode" />
-                  <node concept="2OqwBi" id="5VKJnnYv6YQ" role="37wK5m">
-                    <node concept="2GrUjf" id="5VKJnnYv6QA" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="5VKJnnYv4sH" resolve="entry" />
-                    </node>
-                    <node concept="liA8E" id="5VKJnnYv8bJ" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Map$Entry.getKey():java.lang.Object" resolve="getKey" />
-                    </node>
-                  </node>
-                  <node concept="2pYGij" id="5bEJzg0blZS" role="37wK5m">
-                    <ref role="2pYH_C" to="tpco:5qxS_JiIay_" resolve="noReflectiveEditor" />
-                  </node>
-                  <node concept="2pYGij" id="5bEJzg0bmoe" role="37wK5m">
-                    <ref role="2pYH_C" to="tpco:676_ZcuIWet" resolve="noReflectiveEditorForNode" />
-                  </node>
-                  <node concept="2pYGij" id="5bEJzg0bmAT" role="37wK5m">
-                    <ref role="2pYH_C" to="tpco:3YRgRgnTV5p" resolve="reflectiveEditor" />
-                  </node>
-                  <node concept="2pYGij" id="5bEJzg0bmPV" role="37wK5m">
-                    <ref role="2pYH_C" to="tpco:676_ZcuIWes" resolve="reflectiveEditorForNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="5VKJnnYv920" role="3cqZAp">
-              <node concept="3clFbS" id="5VKJnnYv922" role="3clFbx">
-                <node concept="3clFbF" id="5VKJnnYvv2x" role="3cqZAp">
-                  <node concept="2OqwBi" id="5VKJnnYvv2z" role="3clFbG">
-                    <node concept="2OqwBi" id="5VKJnnYvv2$" role="2Oq$k0">
-                      <node concept="37vLTw" id="5VKJnnYvv2_" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5VKJnnYsPzp" resolve="myEditorComponent" />
-                      </node>
-                      <node concept="liA8E" id="5VKJnnYvv2A" role="2OqNvi">
-                        <ref role="37wK5l" to="cj4x:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="5VKJnnYvv2B" role="2OqNvi">
-                      <ref role="37wK5l" to="22ra:~Updater.addExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference,java.lang.String...):void" resolve="addExplicitEditorHintsForNode" />
-                      <node concept="2OqwBi" id="5VKJnnYvv2C" role="37wK5m">
-                        <node concept="2GrUjf" id="5VKJnnYvv2D" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="5VKJnnYv4sH" resolve="entry" />
-                        </node>
-                        <node concept="liA8E" id="5VKJnnYvv2E" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map$Entry.getKey():java.lang.Object" resolve="getKey" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="5VKJnnYvwd9" role="37wK5m">
-                        <node concept="2GrUjf" id="5VKJnnYvw1v" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="5VKJnnYv4sH" resolve="entry" />
-                        </node>
-                        <node concept="liA8E" id="5VKJnnYvxvH" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map$Entry.getValue():java.lang.Object" resolve="getValue" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3y3z36" id="5VKJnnYvtk7" role="3clFbw">
-                <node concept="10Nm6u" id="5VKJnnYvv15" role="3uHU7w" />
-                <node concept="2OqwBi" id="5VKJnnYv9fq" role="3uHU7B">
-                  <node concept="2GrUjf" id="5VKJnnYv9fr" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="5VKJnnYv4sH" resolve="entry" />
-                  </node>
-                  <node concept="liA8E" id="5VKJnnYvaPl" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~Map$Entry.getValue():java.lang.Object" resolve="getValue" />
-                  </node>
-                </node>
-              </node>
-            </node>
+          <node concept="2GrKxI" id="5doOoCeBtGd" role="2Gsz3X">
+            <property role="TrG5h" value="action" />
           </node>
         </node>
       </node>

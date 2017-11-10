@@ -787,7 +787,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />

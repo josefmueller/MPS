@@ -118,7 +118,7 @@
       </concept>
       <concept id="4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" flags="ng" index="2SqB2G" />
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
-      <concept id="2508844969609391941" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Concept" flags="ng" index="SLHDK" />
+      <concept id="2508844969609391941" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Concept" flags="in" index="SLHDK" />
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -684,22 +684,6 @@
     <node concept="2BsEeg" id="3Rc6kd0K$RQ" role="2ABdcP">
       <property role="TrG5h" value="comment" />
       <property role="2BUmq6" value="comment" />
-    </node>
-    <node concept="2BsEeg" id="3YRgRgnTV5p" role="2ABdcP">
-      <property role="2BUmq6" value="reflectiveEditor" />
-      <property role="TrG5h" value="reflectiveEditor" />
-    </node>
-    <node concept="2BsEeg" id="5qxS_JiIay_" role="2ABdcP">
-      <property role="TrG5h" value="noReflectiveEditor" />
-      <property role="2BUmq6" value="noReflectiveEditor" />
-    </node>
-    <node concept="2BsEeg" id="676_ZcuIWes" role="2ABdcP">
-      <property role="2BUmq6" value="reflectiveEditorForNode" />
-      <property role="TrG5h" value="reflectiveEditorForNode" />
-    </node>
-    <node concept="2BsEeg" id="676_ZcuIWet" role="2ABdcP">
-      <property role="TrG5h" value="noReflectiveEditorForNode" />
-      <property role="2BUmq6" value="noReflectiveEditorForNode" />
     </node>
   </node>
   <node concept="24kQdi" id="2ETBKOyksop">

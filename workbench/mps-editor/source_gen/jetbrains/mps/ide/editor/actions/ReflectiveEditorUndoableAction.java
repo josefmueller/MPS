@@ -15,10 +15,9 @@ import java.util.HashMap;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /*package*/ class ReflectiveEditorUndoableAction extends SNodeUndoableAction {
@@ -67,19 +66,13 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 
   private void recordHintsState() {
     for (ReflectiveHintsAction action : ListSequence.fromList(myActions)) {
-      for (SNode node : Sequence.fromIterable(action.getAffectedNodes())) {
-        String[] hints = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
-        myEditorHintsForNodeMap.put(node.getReference(), hints);
-      }
+      action.recordState();
     }
   }
 
   private void restoreHintState() {
-    for (Map.Entry<SNodeReference, String[]> entry : SetSequence.fromSet(myEditorHintsForNodeMap.entrySet())) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(entry.getKey(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode");
-      if (entry.getValue() != null) {
-        myEditorComponent.getUpdater().addExplicitEditorHintsForNode(entry.getKey(), entry.getValue());
-      }
+    for (ReflectiveHintsAction action : ListSequence.fromList(myActions)) {
+      action.restoreState();
     }
   }
 

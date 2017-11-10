@@ -18,8 +18,10 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.Updater;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -72,6 +74,14 @@ enum CellContextState {
     myHints = hints;
   }
 
+  void applyStateForNode(SNodeReference node, Updater updater) {
+    for (ReflectiveHint hint : ReflectiveHint.values()) {
+      updater.removeExplicitEditorHintsForNode(node, hint.getHint());
+    }
+    for (ReflectiveHint hint : myHints) {
+      updater.addExplicitEditorHintsForNode(node, hint.getHint());
+    }
+  }
 
   void propagateHintsForChildNodes(SNode node, EditorCellFactory cellFactory) {
     if (AttributeOperations.isAttribute(node) && !AttributeOperations.isChildAttribute(node)) {
