@@ -110,6 +110,9 @@
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
+      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
+        <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -123,8 +126,17 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -154,6 +166,7 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
@@ -506,13 +519,61 @@
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="5p4P5XpkxUL" role="AHCbl">
-          <property role="3F0ifm" value="&lt;...Nested states...&gt;" />
+        <node concept="1HlG4h" id="29xq$PBIrMX" role="AHCbl">
           <node concept="Vb9p2" id="5p4P5Xpk$n7" role="3F10Kt">
             <property role="Vbekb" value="ITALIC" />
           </node>
           <node concept="VechU" id="5p4P5Xpk$nh" role="3F10Kt">
             <property role="Vb096" value="darkGray" />
+          </node>
+          <node concept="1HfYo3" id="29xq$PBIrN1" role="1HlULh">
+            <node concept="3TQlhw" id="29xq$PBIrN5" role="1Hhtcw">
+              <node concept="3clFbS" id="29xq$PBIrN9" role="2VODD2">
+                <node concept="3clFbJ" id="29xq$PBIs7U" role="3cqZAp">
+                  <node concept="2OqwBi" id="29xq$PBIv_6" role="3clFbw">
+                    <node concept="2OqwBi" id="29xq$PBIsvy" role="2Oq$k0">
+                      <node concept="pncrf" id="29xq$PBIsgr" role="2Oq$k0" />
+                      <node concept="3Tsc0h" id="29xq$PBIsQj" role="2OqNvi">
+                        <ref role="3TtcxE" to="oyog:1id1$wMpeiN" resolve="states" />
+                      </node>
+                    </node>
+                    <node concept="1v1jN8" id="29xq$PBI$CT" role="2OqNvi" />
+                  </node>
+                  <node concept="3clFbS" id="29xq$PBIs7W" role="3clFbx">
+                    <node concept="3cpWs6" id="29xq$PBI$Oo" role="3cqZAp">
+                      <node concept="Xl_RD" id="29xq$PBI_bq" role="3cqZAk">
+                        <property role="Xl_RC" value="... no nested states ..." />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="9aQIb" id="29xq$PBIAZm" role="9aQIa">
+                    <node concept="3clFbS" id="29xq$PBIAZn" role="9aQI4">
+                      <node concept="3cpWs6" id="29xq$PBIBb2" role="3cqZAp">
+                        <node concept="3cpWs3" id="29xq$PBIPQF" role="3cqZAk">
+                          <node concept="Xl_RD" id="29xq$PBIQ83" role="3uHU7w">
+                            <property role="Xl_RC" value=" nested states ..." />
+                          </node>
+                          <node concept="3cpWs3" id="29xq$PBICBn" role="3uHU7B">
+                            <node concept="Xl_RD" id="29xq$PBIByx" role="3uHU7B">
+                              <property role="Xl_RC" value="... " />
+                            </node>
+                            <node concept="2OqwBi" id="29xq$PBIFUO" role="3uHU7w">
+                              <node concept="2OqwBi" id="29xq$PBID54" role="2Oq$k0">
+                                <node concept="pncrf" id="29xq$PBICNk" role="2Oq$k0" />
+                                <node concept="3Tsc0h" id="29xq$PBIDvg" role="2OqNvi">
+                                  <ref role="3TtcxE" to="oyog:1id1$wMpeiN" resolve="states" />
+                                </node>
+                              </node>
+                              <node concept="34oBXx" id="29xq$PBIKZK" role="2OqNvi" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
