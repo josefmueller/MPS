@@ -250,6 +250,8 @@
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -329,9 +331,7 @@
         <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -11919,62 +11919,37 @@
     </node>
     <node concept="tnohg" id="5SnwAr0vAmA" role="tncku">
       <node concept="3clFbS" id="5SnwAr0vAmB" role="2VODD2">
-        <node concept="3cpWs8" id="5VKJnnYubdA" role="3cqZAp">
-          <node concept="3cpWsn" id="5VKJnnYubdB" role="3cpWs9">
-            <property role="TrG5h" value="action" />
-            <node concept="3uibUv" id="5VKJnnYubdt" role="1tU5fm">
-              <ref role="3uigEE" node="1uWgLBS1O9E" resolve="ReflectiveEditorUndoableAction" />
-            </node>
-            <node concept="2ShNRf" id="5VKJnnYubdC" role="33vP2m">
-              <node concept="1pGfFk" id="5VKJnnYubdD" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
-                <node concept="2YIFZM" id="5VKJnnYubdE" role="37wK5m">
+        <node concept="3clFbF" id="5VKJnnYucVr" role="3cqZAp">
+          <node concept="2OqwBi" id="5VKJnnYudfy" role="3clFbG">
+            <node concept="2ShNRf" id="2NNFnjTkEze" role="2Oq$k0">
+              <node concept="1pGfFk" id="2NNFnjTkEzf" role="2ShVmc">
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
+                <node concept="2YIFZM" id="2NNFnjTkEzg" role="37wK5m">
                   <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                  <node concept="2OqwBi" id="5VKJnnYubdF" role="37wK5m">
-                    <node concept="2WthIp" id="5VKJnnYubdG" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="5VKJnnYubdH" role="2OqNvi">
+                  <node concept="2OqwBi" id="2NNFnjTkEzh" role="37wK5m">
+                    <node concept="2WthIp" id="2NNFnjTkEzi" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="2NNFnjTkEzj" role="2OqNvi">
                       <ref role="2WH_rO" node="3zc62tOilIE" resolve="node" />
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="5VKJnnYubdI" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYubdJ" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYubdK" role="2OqNvi">
+                <node concept="2OqwBi" id="2NNFnjTkEzk" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkEzl" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkEzm" role="2OqNvi">
                     <ref role="2WH_rO" node="5SnwAr0vD32" resolve="editorComponent" />
                   </node>
                 </node>
-                <node concept="3clFbT" id="5VKJnnYubdL" role="37wK5m">
+                <node concept="3clFbT" id="2NNFnjTkEzn" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
-                <node concept="3clFbT" id="5VKJnnYubdM" role="37wK5m">
+                <node concept="3clFbT" id="2NNFnjTkEzo" role="37wK5m">
                   <property role="3clFbU" value="false" />
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYucVr" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYudfy" role="3clFbG">
-            <node concept="37vLTw" id="5VKJnnYucVp" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYubdB" resolve="action" />
-            </node>
             <node concept="liA8E" id="5VKJnnYudJk" role="2OqNvi">
               <ref role="37wK5l" node="5VKJnnYpDbG" resolve="execute" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYuenD" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYueRT" role="3clFbG">
-            <node concept="2YIFZM" id="5VKJnnYueA3" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
-            </node>
-            <node concept="liA8E" id="5VKJnnYufia" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.addUndoableAction(jetbrains.mps.smodel.SNodeUndoableAction):void" resolve="addUndoableAction" />
-              <node concept="37vLTw" id="5VKJnnYufjn" role="37wK5m">
-                <ref role="3cqZAo" node="5VKJnnYubdB" resolve="action" />
-              </node>
             </node>
           </node>
         </node>
@@ -11986,7 +11961,7 @@
           <node concept="2OqwBi" id="5VKJnnYu8Xa" role="3clFbG">
             <node concept="2ShNRf" id="5VKJnnYu1lL" role="2Oq$k0">
               <node concept="1pGfFk" id="5VKJnnYu3Dv" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
                 <node concept="2YIFZM" id="5VKJnnYu4UI" role="37wK5m">
                   <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
@@ -12139,62 +12114,36 @@
     </node>
     <node concept="tnohg" id="1XfowaweGRi" role="tncku">
       <node concept="3clFbS" id="1XfowaweGRj" role="2VODD2">
-        <node concept="3cpWs8" id="5VKJnnYvYox" role="3cqZAp">
-          <node concept="3cpWsn" id="5VKJnnYvYoy" role="3cpWs9">
-            <property role="TrG5h" value="action" />
-            <node concept="3uibUv" id="5VKJnnYvYoz" role="1tU5fm">
-              <ref role="3uigEE" node="1uWgLBS1O9E" resolve="ReflectiveEditorUndoableAction" />
-            </node>
-            <node concept="2ShNRf" id="5VKJnnYvYo$" role="33vP2m">
-              <node concept="1pGfFk" id="5VKJnnYvYo_" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
-                <node concept="2YIFZM" id="5VKJnnYvZiU" role="37wK5m">
+        <node concept="3clFbF" id="5VKJnnYvYoI" role="3cqZAp">
+          <node concept="2OqwBi" id="5VKJnnYvYoJ" role="3clFbG">
+            <node concept="2ShNRf" id="2NNFnjTkFVM" role="2Oq$k0">
+              <node concept="1pGfFk" id="2NNFnjTkFVN" role="2ShVmc">
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
+                <node concept="2YIFZM" id="2NNFnjTkFVO" role="37wK5m">
                   <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                  <node concept="2OqwBi" id="5VKJnnYvZtg" role="37wK5m">
-                    <node concept="2WthIp" id="5VKJnnYvZtj" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="5VKJnnYvZtl" role="2OqNvi">
+                  <node concept="2OqwBi" id="2NNFnjTkFVP" role="37wK5m">
+                    <node concept="2WthIp" id="2NNFnjTkFVQ" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="2NNFnjTkFVR" role="2OqNvi">
                       <ref role="2WH_rO" node="3zc62tOisxw" resolve="node" />
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="5VKJnnYvYoD" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYvYoE" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYvYoF" role="2OqNvi">
+                <node concept="2OqwBi" id="2NNFnjTkFVS" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkFVT" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkFVU" role="2OqNvi">
                     <ref role="2WH_rO" node="1XfowaweGRg" resolve="editorComponent" />
                   </node>
                 </node>
-                <node concept="3clFbT" id="5VKJnnYvYoG" role="37wK5m" />
-                <node concept="3clFbT" id="5VKJnnYvYoH" role="37wK5m" />
+                <node concept="3clFbT" id="2NNFnjTkFVV" role="37wK5m" />
+                <node concept="3clFbT" id="2NNFnjTkFVW" role="37wK5m" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYvYoI" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvYoJ" role="3clFbG">
-            <node concept="37vLTw" id="5VKJnnYvYoK" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYvYoy" resolve="action" />
             </node>
             <node concept="liA8E" id="5VKJnnYvYoL" role="2OqNvi">
               <ref role="37wK5l" node="5VKJnnYpDbG" resolve="execute" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5VKJnnYvYoM" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvYoN" role="3clFbG">
-            <node concept="2YIFZM" id="5VKJnnYvYoO" role="2Oq$k0">
-              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
-              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="5VKJnnYvYoP" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.addUndoableAction(jetbrains.mps.smodel.SNodeUndoableAction):void" resolve="addUndoableAction" />
-              <node concept="37vLTw" id="5VKJnnYvYoQ" role="37wK5m">
-                <ref role="3cqZAo" node="5VKJnnYvYoy" resolve="action" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="5VKJnnYvYj_" role="3cqZAp" />
       </node>
     </node>
     <node concept="2ScWuX" id="1XfowaweGRy" role="tmbBb">
@@ -12203,7 +12152,7 @@
           <node concept="2OqwBi" id="5VKJnnYw0ts" role="3clFbG">
             <node concept="2ShNRf" id="5VKJnnYvZZa" role="2Oq$k0">
               <node concept="1pGfFk" id="5VKJnnYvZZb" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
                 <node concept="2YIFZM" id="5VKJnnYvZZc" role="37wK5m">
                   <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
                   <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
@@ -12356,8 +12305,18 @@
   </node>
   <node concept="312cEu" id="1uWgLBS1O9E">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
-    <property role="TrG5h" value="ReflectiveEditorUndoableAction" />
+    <property role="TrG5h" value="ReflectiveEditorAction" />
     <node concept="2tJIrI" id="5VKJnnYpjBj" role="jymVt" />
+    <node concept="312cEg" id="2NNFnjTkxm3" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myAffectedNode" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2NNFnjTkvzG" role="1B3o_S" />
+      <node concept="3uibUv" id="2NNFnjTkxlQ" role="1tU5fm">
+        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+      </node>
+    </node>
     <node concept="312cEg" id="5VKJnnYpPnh" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -12418,35 +12377,6 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="5VKJnnYtB0U" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myEditorHintsForNodeMap" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="5VKJnnYt$9S" role="1B3o_S" />
-      <node concept="3uibUv" id="5VKJnnYt_jr" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="5VKJnnYt_xF" role="11_B2D">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-        <node concept="10Q1$e" id="5VKJnnYt_A5" role="11_B2D">
-          <node concept="17QB3L" id="5VKJnnYtAVS" role="10Q1$1" />
-        </node>
-      </node>
-      <node concept="2ShNRf" id="5VKJnnYtDcl" role="33vP2m">
-        <node concept="1pGfFk" id="5VKJnnYtDKs" role="2ShVmc">
-          <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-          <node concept="3uibUv" id="5VKJnnYtFGm" role="1pMfVU">
-            <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-          </node>
-          <node concept="10Q1$e" id="5VKJnnYtG3q" role="1pMfVU">
-            <node concept="3uibUv" id="5VKJnnYtG3n" role="10Q1$1">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="5VKJnnYpqhn" role="jymVt" />
     <node concept="3clFbW" id="5VKJnnYplIG" role="jymVt">
       <node concept="37vLTG" id="5VKJnnYplTl" role="3clF46">
@@ -12475,16 +12405,20 @@
       </node>
       <node concept="3cqZAl" id="5VKJnnYplII" role="3clF45" />
       <node concept="3clFbS" id="5VKJnnYplIJ" role="3clF47">
-        <node concept="XkiVB" id="5VKJnnYpnq9" role="3cqZAp">
-          <ref role="37wK5l" to="w1kc:~SNodeUndoableAction.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeUndoableAction" />
-          <node concept="2OqwBi" id="5VKJnnYpouG" role="37wK5m">
-            <node concept="37vLTw" id="5VKJnnYpnsW" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYplTl" resolve="affectedNodes" />
+        <node concept="3clFbF" id="2NNFnjTkzs9" role="3cqZAp">
+          <node concept="37vLTI" id="2NNFnjTkzP5" role="3clFbG">
+            <node concept="2OqwBi" id="2NNFnjTk_41" role="37vLTx">
+              <node concept="37vLTw" id="2NNFnjTk$9y" role="2Oq$k0">
+                <ref role="3cqZAo" node="5VKJnnYplTl" resolve="affectedNodes" />
+              </node>
+              <node concept="1uHKPH" id="2NNFnjTk_Wm" role="2OqNvi" />
             </node>
-            <node concept="1uHKPH" id="5VKJnnYpqgy" role="2OqNvi" />
+            <node concept="37vLTw" id="2NNFnjTkzs7" role="37vLTJ">
+              <ref role="3cqZAo" node="2NNFnjTkxm3" resolve="myAffectedNode" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5VKJnnYsUg_" role="3cqZAp" />
+        <node concept="3clFbH" id="2NNFnjTkyUw" role="3cqZAp" />
         <node concept="3clFbF" id="5VKJnnYpQ4R" role="3cqZAp">
           <node concept="37vLTI" id="5VKJnnYpQFG" role="3clFbG">
             <node concept="2ShNRf" id="5VKJnnYpQOg" role="37vLTx">
@@ -13184,72 +13118,109 @@
             <ref role="37wK5l" node="5VKJnnYtaNC" resolve="restoreSelectionStack" />
           </node>
         </node>
+        <node concept="3clFbH" id="2NNFnjTkieP" role="3cqZAp" />
+        <node concept="3clFbF" id="2NNFnjTjFEx" role="3cqZAp">
+          <node concept="2OqwBi" id="2NNFnjTjFEz" role="3clFbG">
+            <node concept="2YIFZM" id="2NNFnjTjFE$" role="2Oq$k0">
+              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
+              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
+            </node>
+            <node concept="liA8E" id="2NNFnjTjFE_" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~UndoHelper.addUndoableAction(jetbrains.mps.smodel.SNodeUndoableAction):void" resolve="addUndoableAction" />
+              <node concept="2ShNRf" id="2NNFnjTjGD8" role="37wK5m">
+                <node concept="1pGfFk" id="2NNFnjTkBgc" role="2ShVmc">
+                  <ref role="37wK5l" node="2NNFnjTktmv" resolve="ReflectiveEditorAction.ReflectiveEditorUndoableAction" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3cqZAl" id="5VKJnnYpDdO" role="3clF45" />
       <node concept="3Tm1VV" id="5VKJnnYpDdN" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="5VKJnnYtqUc" role="jymVt" />
-    <node concept="3clFb_" id="5VKJnnYtrYN" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="doUndo" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tmbuc" id="5VKJnnYtrYO" role="1B3o_S" />
-      <node concept="3cqZAl" id="5VKJnnYtrYQ" role="3clF45" />
-      <node concept="3clFbS" id="5VKJnnYtrYR" role="3clF47">
-        <node concept="3clFbF" id="5VKJnnYtLB6" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtLB4" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtKm0" resolve="restoreHintState" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYtWM5" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtWM3" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtUxL" resolve="redraw" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYtLrR" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtLrS" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtaNC" resolve="restoreSelectionStack" />
+    <node concept="2tJIrI" id="2NNFnjTkngG" role="jymVt" />
+    <node concept="312cEu" id="2NNFnjTkrnB" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="ReflectiveEditorUndoableAction" />
+      <node concept="3clFbW" id="2NNFnjTktmv" role="jymVt">
+        <node concept="3cqZAl" id="2NNFnjTktmx" role="3clF45" />
+        <node concept="3Tm6S6" id="2NNFnjTktmy" role="1B3o_S" />
+        <node concept="3clFbS" id="2NNFnjTktmz" role="3clF47">
+          <node concept="XkiVB" id="2NNFnjTktG1" role="3cqZAp">
+            <ref role="37wK5l" to="w1kc:~SNodeUndoableAction.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="SNodeUndoableAction" />
+            <node concept="37vLTw" id="2NNFnjTkAaj" role="37wK5m">
+              <ref role="3cqZAo" node="2NNFnjTkxm3" resolve="myAffectedNode" />
+            </node>
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="5VKJnnYtrYS" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      <node concept="2tJIrI" id="2NNFnjTkAbM" role="jymVt" />
+      <node concept="3clFb_" id="2NNFnjTkAem" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="doUndo" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tmbuc" id="2NNFnjTkAen" role="1B3o_S" />
+        <node concept="3cqZAl" id="2NNFnjTkAep" role="3clF45" />
+        <node concept="3clFbS" id="2NNFnjTkAeq" role="3clF47">
+          <node concept="3clFbF" id="2NNFnjTkApy" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkApz" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtKm0" resolve="restoreHintState" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2NNFnjTkAp$" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkAp_" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtUxL" resolve="redraw" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2NNFnjTkApA" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkApB" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtaNC" resolve="restoreSelectionStack" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2NNFnjTkAer" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
       </node>
-    </node>
-    <node concept="2tJIrI" id="5VKJnnYtu4m" role="jymVt" />
-    <node concept="3clFb_" id="5VKJnnYtrYT" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="doRedo" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3Tmbuc" id="5VKJnnYtrYU" role="1B3o_S" />
-      <node concept="3cqZAl" id="5VKJnnYtrYW" role="3clF45" />
-      <node concept="3clFbS" id="5VKJnnYtrYX" role="3clF47">
-        <node concept="3clFbF" id="5VKJnnYtviI" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtviH" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtenp" resolve="doExecute" />
+      <node concept="2tJIrI" id="2NNFnjTkAm1" role="jymVt" />
+      <node concept="3clFb_" id="2NNFnjTkAes" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="doRedo" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tmbuc" id="2NNFnjTkAet" role="1B3o_S" />
+        <node concept="3cqZAl" id="2NNFnjTkAev" role="3clF45" />
+        <node concept="3clFbS" id="2NNFnjTkAew" role="3clF47">
+          <node concept="3clFbF" id="2NNFnjTkAru" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkArv" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtenp" resolve="doExecute" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2NNFnjTkArw" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkArx" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtUxL" resolve="redraw" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2NNFnjTkAry" role="3cqZAp">
+            <node concept="1rXfSq" id="2NNFnjTkArz" role="3clFbG">
+              <ref role="37wK5l" node="5VKJnnYtaNC" resolve="restoreSelectionStack" />
+            </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5VKJnnYtWVV" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtWVT" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtUxL" resolve="redraw" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYtS70" role="3cqZAp">
-          <node concept="1rXfSq" id="5VKJnnYtS71" role="3clFbG">
-            <ref role="37wK5l" node="5VKJnnYtaNC" resolve="restoreSelectionStack" />
-          </node>
+        <node concept="2AHcQZ" id="2NNFnjTkAex" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="5VKJnnYtrYY" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      <node concept="3Tm6S6" id="2NNFnjTkoBR" role="1B3o_S" />
+      <node concept="3uibUv" id="2NNFnjTksQo" role="1zkMxy">
+        <ref role="3uigEE" to="w1kc:~SNodeUndoableAction" resolve="SNodeUndoableAction" />
       </node>
     </node>
     <node concept="2tJIrI" id="3Pwcj9nKgp4" role="jymVt" />
-    <node concept="3uibUv" id="5VKJnnYpj_t" role="1zkMxy">
-      <ref role="3uigEE" to="w1kc:~SNodeUndoableAction" resolve="SNodeUndoableAction" />
-    </node>
   </node>
   <node concept="sE7Ow" id="6KvCG2PRuPP">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
@@ -13268,58 +13239,33 @@
     </node>
     <node concept="tnohg" id="6KvCG2PRuPU" role="tncku">
       <node concept="3clFbS" id="6KvCG2PRuPV" role="2VODD2">
-        <node concept="3cpWs8" id="5VKJnnYvCP1" role="3cqZAp">
-          <node concept="3cpWsn" id="5VKJnnYvCP2" role="3cpWs9">
-            <property role="TrG5h" value="action" />
-            <node concept="3uibUv" id="5VKJnnYvCOY" role="1tU5fm">
-              <ref role="3uigEE" node="1uWgLBS1O9E" resolve="ReflectiveEditorUndoableAction" />
-            </node>
-            <node concept="2ShNRf" id="5VKJnnYvCP3" role="33vP2m">
-              <node concept="1pGfFk" id="5VKJnnYvCP4" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
-                <node concept="2OqwBi" id="5VKJnnYvCP5" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYvCP6" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYvCP7" role="2OqNvi">
+        <node concept="3clFbF" id="5VKJnnYvCag" role="3cqZAp">
+          <node concept="2OqwBi" id="5VKJnnYvCai" role="3clFbG">
+            <node concept="2ShNRf" id="2NNFnjTkF6f" role="2Oq$k0">
+              <node concept="1pGfFk" id="2NNFnjTkF6g" role="2ShVmc">
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
+                <node concept="2OqwBi" id="2NNFnjTkF6h" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkF6i" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkF6j" role="2OqNvi">
                     <ref role="2WH_rO" node="6KvCG2PRxoN" resolve="selectedNodes" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="5VKJnnYvCP8" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYvCP9" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYvCPa" role="2OqNvi">
+                <node concept="2OqwBi" id="2NNFnjTkF6k" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkF6l" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkF6m" role="2OqNvi">
                     <ref role="2WH_rO" node="6KvCG2PRuPS" resolve="editorComponent" />
                   </node>
                 </node>
-                <node concept="3clFbT" id="5VKJnnYvCPb" role="37wK5m">
+                <node concept="3clFbT" id="2NNFnjTkF6n" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
-                <node concept="3clFbT" id="5VKJnnYvCPc" role="37wK5m">
+                <node concept="3clFbT" id="2NNFnjTkF6o" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYvCag" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvCai" role="3clFbG">
-            <node concept="37vLTw" id="5VKJnnYvCPd" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYvCP2" resolve="action" />
             </node>
             <node concept="liA8E" id="5VKJnnYvCat" role="2OqNvi">
               <ref role="37wK5l" node="5VKJnnYpDbG" resolve="execute" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYvE2Q" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvE2S" role="3clFbG">
-            <node concept="2YIFZM" id="5VKJnnYvE2T" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
-            </node>
-            <node concept="liA8E" id="5VKJnnYvE2U" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.addUndoableAction(jetbrains.mps.smodel.SNodeUndoableAction):void" resolve="addUndoableAction" />
-              <node concept="37vLTw" id="5VKJnnYvE2V" role="37wK5m">
-                <ref role="3cqZAo" node="5VKJnnYvCP2" resolve="action" />
-              </node>
             </node>
           </node>
         </node>
@@ -13331,7 +13277,7 @@
           <node concept="2OqwBi" id="5VKJnnYvyZ6" role="3clFbG">
             <node concept="2ShNRf" id="5VKJnnYvyZ7" role="2Oq$k0">
               <node concept="1pGfFk" id="5VKJnnYvyZ8" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
                 <node concept="2OqwBi" id="5VKJnnYvADH" role="37wK5m">
                   <node concept="2WthIp" id="5VKJnnYvAiH" role="2Oq$k0" />
                   <node concept="1DTwFV" id="5VKJnnYvBli" role="2OqNvi">
@@ -13378,56 +13324,31 @@
     </node>
     <node concept="tnohg" id="1ptS745ppN" role="tncku">
       <node concept="3clFbS" id="1ptS745ppO" role="2VODD2">
-        <node concept="3cpWs8" id="5VKJnnYvPVH" role="3cqZAp">
-          <node concept="3cpWsn" id="5VKJnnYvPVI" role="3cpWs9">
-            <property role="TrG5h" value="action" />
-            <node concept="3uibUv" id="5VKJnnYvPVJ" role="1tU5fm">
-              <ref role="3uigEE" node="1uWgLBS1O9E" resolve="ReflectiveEditorUndoableAction" />
-            </node>
-            <node concept="2ShNRf" id="5VKJnnYvPVK" role="33vP2m">
-              <node concept="1pGfFk" id="5VKJnnYvPVL" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
-                <node concept="2OqwBi" id="5VKJnnYvPVM" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYvPVN" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYvPVO" role="2OqNvi">
+        <node concept="3clFbF" id="5VKJnnYvPVU" role="3cqZAp">
+          <node concept="2OqwBi" id="5VKJnnYvPVV" role="3clFbG">
+            <node concept="2ShNRf" id="2NNFnjTkH4y" role="2Oq$k0">
+              <node concept="1pGfFk" id="2NNFnjTkH4z" role="2ShVmc">
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
+                <node concept="2OqwBi" id="2NNFnjTkH4$" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkH4_" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkH4A" role="2OqNvi">
                     <ref role="2WH_rO" node="1ptS745Y6c" resolve="selectedNodes" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="5VKJnnYvPVP" role="37wK5m">
-                  <node concept="2WthIp" id="5VKJnnYvPVQ" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VKJnnYvPVR" role="2OqNvi">
+                <node concept="2OqwBi" id="2NNFnjTkH4B" role="37wK5m">
+                  <node concept="2WthIp" id="2NNFnjTkH4C" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="2NNFnjTkH4D" role="2OqNvi">
                     <ref role="2WH_rO" node="1ptS745ppL" resolve="editorComponent" />
                   </node>
                 </node>
-                <node concept="3clFbT" id="5VKJnnYvPVS" role="37wK5m" />
-                <node concept="3clFbT" id="5VKJnnYvPVT" role="37wK5m">
+                <node concept="3clFbT" id="2NNFnjTkH4E" role="37wK5m" />
+                <node concept="3clFbT" id="2NNFnjTkH4F" role="37wK5m">
                   <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYvPVU" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvPVV" role="3clFbG">
-            <node concept="37vLTw" id="5VKJnnYvPVW" role="2Oq$k0">
-              <ref role="3cqZAo" node="5VKJnnYvPVI" resolve="action" />
-            </node>
             <node concept="liA8E" id="5VKJnnYvPVX" role="2OqNvi">
               <ref role="37wK5l" node="5VKJnnYpDbG" resolve="execute" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5VKJnnYvPVY" role="3cqZAp">
-          <node concept="2OqwBi" id="5VKJnnYvPVZ" role="3clFbG">
-            <node concept="2YIFZM" id="5VKJnnYvPW0" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
-            </node>
-            <node concept="liA8E" id="5VKJnnYvPW1" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.addUndoableAction(jetbrains.mps.smodel.SNodeUndoableAction):void" resolve="addUndoableAction" />
-              <node concept="37vLTw" id="5VKJnnYvPW2" role="37wK5m">
-                <ref role="3cqZAo" node="5VKJnnYvPVI" resolve="action" />
-              </node>
             </node>
           </node>
         </node>
@@ -13439,7 +13360,7 @@
           <node concept="2OqwBi" id="5VKJnnYvWan" role="3clFbG">
             <node concept="2ShNRf" id="5VKJnnYvVLi" role="2Oq$k0">
               <node concept="1pGfFk" id="5VKJnnYvVLj" role="2ShVmc">
-                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorUndoableAction" />
+                <ref role="37wK5l" node="5VKJnnYplIG" resolve="ReflectiveEditorAction" />
                 <node concept="2OqwBi" id="5VKJnnYvVLk" role="37wK5m">
                   <node concept="2WthIp" id="5VKJnnYvVLl" role="2Oq$k0" />
                   <node concept="1DTwFV" id="5VKJnnYvVLm" role="2OqNvi">

@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.UndoHelper;
 
 public class ShowReflectiveEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,7 +28,7 @@ public class ShowReflectiveEditor_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new ReflectiveEditorUndoableAction(Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false).isApplicable(event);
+    return new ReflectiveEditorAction(Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false).isApplicable(event);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -61,8 +60,6 @@ public class ShowReflectiveEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorUndoableAction action = new ReflectiveEditorUndoableAction(Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false);
-    action.execute();
-    UndoHelper.getInstance().addUndoableAction(action);
+    new ReflectiveEditorAction(Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false).execute();
   }
 }
