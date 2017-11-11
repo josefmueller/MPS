@@ -15,19 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.Updater;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 enum CellContextState {
   EMPTY() {
@@ -36,15 +33,16 @@ enum CellContextState {
       return true;
     }
   },
-  REFLECTIVE_FOR_SUBTREE(ReflectiveHint.REFLECTIVE) {
-    @Override
-    void propagateHintsForChildNodes(SNode node, EditorCellFactory cellFactory) {
-      doPropagateHintsForChildNodes(cellFactory);
-    }
-  },
+  REFLECTIVE_FOR_SUBTREE(ReflectiveHint.REFLECTIVE),
   REFLECTIVE_FOR_NODE_ONLY(ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_CHILDREN),
   REGULAR_FOR_SUBTREE(ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_NODE, ReflectiveHint.DENY_FOR_CHILDREN),
   REGULAR_FOR_NODE_ONLY(ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_NODE);
+
+  private final ReflectiveHint[] myHints;
+
+  CellContextState(ReflectiveHint... hints) {
+    myHints = hints;
+  }
 
   @NotNull
   static CellContextState getContextState(EditorCellContext cellContext) {
@@ -54,70 +52,46 @@ enum CellContextState {
         if (result == null) {
           result = cellContextState;
         } else {
-          return throwIllegalStateException(cellContext);
+          throw new AssertionError("More than one state matches the context. Hints: " + getReflectiveHintsFromCellContext(cellContext));
         }
       }
     }
     if (result == null) {
-      throwIllegalStateException(cellContext);
+      throw new AssertionError("Unknown state of the context. Hints: " + getReflectiveHintsFromCellContext(cellContext));
     }
     return result;
-  }
-
-  private static CellContextState throwIllegalStateException(EditorCellContext cellContext) {
-    throw new IllegalStateException("Illegal state of the context. Hints: " + getReflectiveHintsFromCellContext(cellContext));
-  }
-
-  private final ReflectiveHint[] myHints;
-
-  CellContextState(ReflectiveHint... hints) {
-    myHints = hints;
-  }
-
-  void applyStateForNode(SNodeReference node, Updater updater) {
-    for (ReflectiveHint hint : ReflectiveHint.values()) {
-      updater.removeExplicitEditorHintsForNode(node, hint.getHint());
-    }
-    for (ReflectiveHint hint : myHints) {
-      updater.addExplicitEditorHintsForNode(node, hint.getHint());
-    }
-  }
-
-  void propagateHintsForChildNodes(SNode node, EditorCellFactory cellFactory) {
-    if (AttributeOperations.isAttribute(node) && !AttributeOperations.isChildAttribute(node)) {
-      Arrays.asList(ReflectiveHint.values()).forEach(reflectiveHint -> reflectiveHint.removeFromCellFactory(cellFactory));
-    } else {
-      doPropagateHintsForChildNodes(cellFactory);
-    }
-  }
-
-
-  void doPropagateHintsForChildNodes(EditorCellFactory cellFactory) {
-    for (ReflectiveHint hint : myHints) {
-      hint.propagateHintsForChildNodes(cellFactory);
-    }
-  }
-
-
-  boolean forceShowRegularEditor() {
-    for (ReflectiveHint hint : myHints) {
-      if (hint.forceShowRegularEditor()) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  boolean isExactStateOfCellContext(EditorCellContext cellContext) {
-    Set<String> cellContextReflectiveHints = getReflectiveHintsFromCellContext(cellContext);
-    Set<String> myStringHints = Arrays.stream(myHints).map(ReflectiveHint::getHint).collect(Collectors.toSet());
-    return cellContextReflectiveHints.equals(myStringHints);
   }
 
   private static Set<String> getReflectiveHintsFromCellContext(EditorCellContext cellContext) {
     Collection<String> cellContextHints = cellContext.getHints();
     Set<String> allReflectiveHints = Arrays.stream(ReflectiveHint.values()).map(ReflectiveHint::getHint).collect(Collectors.toSet());
     return cellContextHints.stream().filter(allReflectiveHints::contains).collect(Collectors.toSet());
+  }
+
+  void applyStateForNode(SNodeReference node, Updater updater) {
+    for (ReflectiveHint hint : ReflectiveHint.values()) {
+      hint.revoke(updater, node);
+    }
+    for (ReflectiveHint hint : myHints) {
+      hint.apply(updater, node);
+    }
+  }
+
+  void propagateHintsForChildNodes(EditorCellFactory cellFactory) {
+    for (ReflectiveHint hint : myHints) {
+      hint.propagateHintForChildNodes(cellFactory);
+    }
+  }
+
+  boolean forceShowRegularEditor() {
+    return Arrays.stream(myHints)
+                 .anyMatch(ReflectiveHint::forceShowRegularEditor);
+  }
+
+  private boolean isExactStateOfCellContext(EditorCellContext cellContext) {
+    Set<String> cellContextReflectiveHints = getReflectiveHintsFromCellContext(cellContext);
+    Set<String> myStringHints = Arrays.stream(myHints).map(ReflectiveHint::getHint).collect(Collectors.toSet());
+    return cellContextReflectiveHints.equals(myStringHints);
   }
 
 }

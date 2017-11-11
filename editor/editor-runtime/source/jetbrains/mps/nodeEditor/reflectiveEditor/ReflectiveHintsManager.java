@@ -24,8 +24,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ReflectiveHintsManager {
 
-  public static void propagateReflectiveHints(SNode node, EditorCellFactory cellFactory) {
-    CellContextState.getContextState(cellFactory.getCellContext()).propagateHintsForChildNodes(node, cellFactory);
+  public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
+    CellContextState.getContextState(cellFactory.getCellContext()).propagateHintsForChildNodes(cellFactory);
   }
 
   public static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {

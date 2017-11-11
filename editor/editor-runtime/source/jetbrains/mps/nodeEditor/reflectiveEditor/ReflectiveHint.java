@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.Updater;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 
@@ -27,16 +27,14 @@ enum ReflectiveHint {
   DENY_FOR_NODE("jetbrains.mps.lang.core.editor.denyForNode", true, true),
   DENY_FOR_CHILDREN("jetbrains.mps.lang.core.editor.denyForChildren", false, true) {
     @Override
-    void propagateHintsForChildNodes(EditorCellFactory factory) {
-      super.propagateHintsForChildNodes(factory );
+    void propagateHintForChildNodes(EditorCellFactory factory) {
+      super.propagateHintForChildNodes(factory);
       factory.removeCellContextHints(REFLECTIVE.getHint());
     }
-  },;
+  };
 
   private final String myHint;
-
   private final boolean myForceShowRegularEditor;
-
   private final boolean myRemoveHintFromContextForChildNodes;
 
   ReflectiveHint(String hint, boolean forceShowRegularEditor, boolean removeHintFromContextForChildNodes) {
@@ -45,25 +43,21 @@ enum ReflectiveHint {
     myRemoveHintFromContextForChildNodes = removeHintFromContextForChildNodes;
   }
 
-  void apply(@NotNull Updater updater, @NotNull SNode node) {
-    String[] explicitEditorHintsForNode = updater.getExplicitEditorHintsForNode(node.getReference());
+  void apply(@NotNull Updater updater, @NotNull SNodeReference node) {
+    String[] explicitEditorHintsForNode = updater.getExplicitEditorHintsForNode(node);
     if (explicitEditorHintsForNode == null || !Arrays.asList(explicitEditorHintsForNode).contains(myHint)) {
-      updater.addExplicitEditorHintsForNode(node.getReference(), myHint);
+      updater.addExplicitEditorHintsForNode(node, myHint);
     }
   }
 
-  void propagateHintsForChildNodes(EditorCellFactory factory) {
+  void revoke(@NotNull Updater updater, @NotNull SNodeReference node) {
+    updater.removeExplicitEditorHintsForNode(node, myHint);
+  }
+
+  void propagateHintForChildNodes(EditorCellFactory factory) {
     if (myRemoveHintFromContextForChildNodes) {
       factory.removeCellContextHints(getHint());
     }
-  }
-
-  void revoke(@NotNull Updater updater, @NotNull SNode node) {
-    updater.removeExplicitEditorHintsForNode(node.getReference(), myHint);
-  }
-
-  void removeFromCellFactory(@NotNull EditorCellFactory factory) {
-    factory.removeCellContextHints(myHint);
   }
 
   public boolean forceShowRegularEditor() {

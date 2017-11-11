@@ -32,7 +32,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.*;
+import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.shouldShowReflectiveEditor;
 
 public abstract class ReflectiveHintsAction {
 
@@ -114,13 +114,13 @@ public abstract class ReflectiveHintsAction {
       CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
       if (isReflective()) {
         if (contextState.equals(CellContextState.EMPTY)) {
-          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode());
+          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode().getReference());
         }
-        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode());
-        ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode());
+        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode().getReference());
+        ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode().getReference());
       } else {
         assert !contextState.equals(CellContextState.EMPTY);
-        ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode());
+        ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode().getReference());
         removeRedundantHints();
       }
     }
@@ -143,14 +143,14 @@ public abstract class ReflectiveHintsAction {
       removeAllSubtreeHints();
       if (isReflective()) {
         if (contextState.equals(CellContextState.EMPTY)) {
-          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode());
+          ReflectiveHint.REFLECTIVE.apply(updater, getAffectedNode().getReference());
         }
-        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode());
-        ReflectiveHint.DENY_FOR_CHILDREN.revoke(updater, getAffectedNode());
+        ReflectiveHint.DENY_FOR_NODE.revoke(updater, getAffectedNode().getReference());
+        ReflectiveHint.DENY_FOR_CHILDREN.revoke(updater, getAffectedNode().getReference());
       } else {
         if (!contextState.equals(CellContextState.EMPTY)) {
-          ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode());
-          ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode());
+          ReflectiveHint.DENY_FOR_NODE.apply(updater, getAffectedNode().getReference());
+          ReflectiveHint.DENY_FOR_CHILDREN.apply(updater, getAffectedNode().getReference());
           removeRedundantHints();
         }
       }
@@ -164,7 +164,7 @@ public abstract class ReflectiveHintsAction {
 
     private void removeAllHints(SNode node) {
       for (ReflectiveHint reflectiveHint : ReflectiveHint.values()) {
-        reflectiveHint.revoke(getEditorComponent().getUpdater(), node);
+        reflectiveHint.revoke(getEditorComponent().getUpdater(), node.getReference());
       }
     }
   }
