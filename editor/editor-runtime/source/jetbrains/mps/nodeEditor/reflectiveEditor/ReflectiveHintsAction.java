@@ -25,13 +25,12 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHint.ALL_HINTS;
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.shouldShowReflectiveEditor;
 
 public abstract class ReflectiveHintsAction {
@@ -87,12 +86,14 @@ public abstract class ReflectiveHintsAction {
   }
 
   final void removeRedundantHints() {
-    String[] explicitEditorHintsForNode = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(myAffectedNode.getReference());
-    if (explicitEditorHintsForNode != null) {
-      List<String> explicitHints = Arrays.asList(explicitEditorHintsForNode);
-      Set<String> allReflectiveHints = Arrays.stream(ReflectiveHint.values()).map(ReflectiveHint::getHint).collect(Collectors.toSet());
-      if (explicitHints.containsAll(allReflectiveHints)) {
-        myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(myAffectedNode.getReference(), allReflectiveHints.toArray(new String[allReflectiveHints.size()]));
+    String[] explicitHints = myEditorComponent.getUpdater().getExplicitEditorHintsForNode(myAffectedNode.getReference());
+    if (explicitHints == null) {
+      return;
+    }
+    Set<ReflectiveHint> hintsForNode = ReflectiveHint.getReflectiveHints(Arrays.asList(explicitHints));
+    if (hintsForNode.equals(ALL_HINTS)) {
+      for (ReflectiveHint hint : ALL_HINTS) {
+        hint.revoke(myEditorComponent.getUpdater(), myAffectedNode.getReference());
       }
     }
   }
@@ -110,7 +111,6 @@ public abstract class ReflectiveHintsAction {
     @Override
     public void execute() {
       Updater updater = getEditorComponent().getUpdater();
-
       CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
       if (isReflective()) {
         if (contextState.equals(CellContextState.EMPTY)) {

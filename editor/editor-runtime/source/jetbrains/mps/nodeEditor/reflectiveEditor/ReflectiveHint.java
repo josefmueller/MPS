@@ -21,6 +21,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 enum ReflectiveHint {
   REFLECTIVE("jetbrains.mps.lang.core.editor.reflective", false, false),
@@ -33,6 +39,10 @@ enum ReflectiveHint {
     }
   };
 
+  static final Set<ReflectiveHint> ALL_HINTS = Arrays.stream(ReflectiveHint.values())
+                                                     .collect(Collectors.toSet());
+  private static final Map<String, ReflectiveHint> HINT_MAP = Arrays.stream(ReflectiveHint.values())
+                                                                    .collect(Collectors.toMap(ReflectiveHint::getHint, Function.identity()));
   private final String myHint;
   private final boolean myForceShowRegularEditor;
   private final boolean myRemoveHintFromContextForChildNodes;
@@ -41,6 +51,13 @@ enum ReflectiveHint {
     myHint = hint;
     myForceShowRegularEditor = forceShowRegularEditor;
     myRemoveHintFromContextForChildNodes = removeHintFromContextForChildNodes;
+  }
+
+  static Set<ReflectiveHint> getReflectiveHints(Collection<String> hintStrings) {
+    return hintStrings.stream()
+                      .map(HINT_MAP::get)
+                      .filter(Objects::nonNull)
+                      .collect(Collectors.toSet());
   }
 
   void apply(@NotNull Updater updater, @NotNull SNodeReference node) {
@@ -60,11 +77,11 @@ enum ReflectiveHint {
     }
   }
 
-  public boolean forceShowRegularEditor() {
+  boolean forceShowRegularEditor() {
     return myForceShowRegularEditor;
   }
 
-  public String getHint() {
+  String getHint() {
     return myHint;
   }
 }

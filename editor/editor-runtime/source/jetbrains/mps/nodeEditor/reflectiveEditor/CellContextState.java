@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -52,20 +51,16 @@ enum CellContextState {
         if (result == null) {
           result = cellContextState;
         } else {
-          throw new AssertionError("More than one state matches the context. Hints: " + getReflectiveHintsFromCellContext(cellContext));
+          throw new AssertionError("More than one state matches the context. Hints: "
+                                   + ReflectiveHint.getReflectiveHints(cellContext.getHints()));
         }
       }
     }
     if (result == null) {
-      throw new AssertionError("Unknown state of the context. Hints: " + getReflectiveHintsFromCellContext(cellContext));
+      throw new AssertionError("Unknown state of the context. Hints: "
+                               + ReflectiveHint.getReflectiveHints(cellContext.getHints()));
     }
     return result;
-  }
-
-  private static Set<String> getReflectiveHintsFromCellContext(EditorCellContext cellContext) {
-    Collection<String> cellContextHints = cellContext.getHints();
-    Set<String> allReflectiveHints = Arrays.stream(ReflectiveHint.values()).map(ReflectiveHint::getHint).collect(Collectors.toSet());
-    return cellContextHints.stream().filter(allReflectiveHints::contains).collect(Collectors.toSet());
   }
 
   void applyStateForNode(SNodeReference node, Updater updater) {
@@ -89,8 +84,9 @@ enum CellContextState {
   }
 
   private boolean isExactStateOfCellContext(EditorCellContext cellContext) {
-    Set<String> cellContextReflectiveHints = getReflectiveHintsFromCellContext(cellContext);
-    Set<String> myStringHints = Arrays.stream(myHints).map(ReflectiveHint::getHint).collect(Collectors.toSet());
+    Set<ReflectiveHint> cellContextReflectiveHints = ReflectiveHint.getReflectiveHints(cellContext.getHints());
+    Set<ReflectiveHint> myStringHints = Arrays.stream(myHints)
+                                              .collect(Collectors.toSet());
     return cellContextReflectiveHints.equals(myStringHints);
   }
 
