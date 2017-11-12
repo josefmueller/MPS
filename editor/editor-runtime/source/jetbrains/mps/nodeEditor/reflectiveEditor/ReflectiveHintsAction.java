@@ -26,7 +26,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.StreamSupport;
 
@@ -38,7 +37,7 @@ public abstract class ReflectiveHintsAction {
   private final SNode myAffectedNode;
   private final EditorComponent myEditorComponent;
   private final boolean myIsReflective;
-  private Map<SNodeReference, CellContextState> myRecordedContextStates = new HashMap<>();
+  private Map<SNodeReference, Set<ReflectiveHint>> myRecordedContextStates = new HashMap<>();
 
   private ReflectiveHintsAction(SNode affectedNode, EditorComponent editorComponent, boolean isReflective) {
     myAffectedNode = affectedNode;
@@ -69,14 +68,25 @@ public abstract class ReflectiveHintsAction {
 
   public void recordState() {
     for (SNode node : getAffectedNodes()) {
-      CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(node).getCellContext());
-      myRecordedContextStates.put(node.getReference(), contextState);
+      String[] allHints = getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference());
+      if (allHints != null) {
+        Set<ReflectiveHint> reflectiveHints = ReflectiveHint.getReflectiveHints(Arrays.asList(allHints));
+        myRecordedContextStates.put(node.getReference(), reflectiveHints);
+      }
     }
   }
 
   public void restoreState() {
-    for (Entry<SNodeReference, CellContextState> state : myRecordedContextStates.entrySet()) {
-      state.getValue().applyStateForNode(state.getKey(), getEditorComponent().getUpdater());
+    for (SNode node : getAffectedNodes()) {
+      for (ReflectiveHint hint : ReflectiveHint.values()) {
+        hint.revoke(getEditorComponent().getUpdater(), node.getReference());
+      }
+      Set<ReflectiveHint> recordedHints = myRecordedContextStates.get(node.getReference());
+      if (recordedHints != null) {
+        for (ReflectiveHint hint : recordedHints) {
+          hint.apply(getEditorComponent().getUpdater(), node.getReference());
+        }
+      }
     }
   }
 
