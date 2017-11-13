@@ -293,12 +293,14 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ClassifierType_NOT_subtypeOf_ClassifierType_InequationReplacementRule" file="ClassifierType_NOT_subtypeOf_ClassifierType_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
@@ -1320,6 +1322,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_VolatileStaticFieldNonFinal_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_parametersCount_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_switchArgument_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.classifierTypeWithSameClassifier_InequationReplacementRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.double_boxing_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.double_extends_floatingPoint_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.double_unboxing_SubtypingRule" />
@@ -4439,6 +4442,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.classifierTypeWithSameClassifier_InequationReplacementRule" file="classifierTypeWithSameClassifier_InequationReplacementRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.double_boxing_SubtypingRule" file="double_boxing_SubtypingRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
