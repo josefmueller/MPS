@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.checkers.IChecker;
+import jetbrains.mps.checkers.StructureChecker;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
 import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
@@ -52,6 +54,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -62,7 +65,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -72,6 +74,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
@@ -82,19 +85,26 @@ import java.util.List;
 import java.util.Set;
 
 public class ValidationUtil {
-  //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
-  //this won't show "concept missing" error
+
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
     for (SNode root : roots) {
-      for (SNode node : SNodeUtil.getDescendants(root)) {
-        if (!validateSingleNode(node, processor)) {
-          return;
+      EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
+      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false)).check(root, root.getModel().getRepository(), new Consumer<NodeReportItem>() {
+        @Override
+        public void consume(NodeReportItem nodeReportItem) {
+          if (!processor.process(nodeReportItem)) {
+            progressMonitor.cancel();
+          }
         }
-      }
+      }, progressMonitor);
     }
   }
 
-  public static boolean validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
+  //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
+  //this won't show "concept missing" error
+  public static void validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
     SLanguage lang = node.getConcept().getLanguage();
     if (!lang.isValid()) {
       if (lang.getSourceModule() == null) {
@@ -106,7 +116,8 @@ public class ValidationUtil {
 
     SConcept concept = node.getConcept();
     if (!concept.isValid()) {
-      return processor.process(new ConceptMissingError(node, concept));
+      processor.process(new ConceptMissingError(node, concept));
+      return;
     }
 
     // in case of props, refs, links, list should be better than set
@@ -116,7 +127,7 @@ public class ValidationUtil {
         continue;
       }
       if (!processor.process(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())))) {
-        return false;
+        return;
       }
     }
 
@@ -127,7 +138,7 @@ public class ValidationUtil {
         continue;
       }
       if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())))) {
-        return false;
+        return;
       }
     }
 
@@ -135,7 +146,7 @@ public class ValidationUtil {
     for (SReference r : node.getReferences()) {
       if (r.getTargetNodeReference().resolve(node.getModel().getRepository()) == null) {
         if (!processor.process(new UnresolvedReferenceReportItem(r, null))) {
-          return false;
+          return;
         }
       }
       SReferenceLink l = r.getLink();
@@ -143,7 +154,7 @@ public class ValidationUtil {
         continue;
       }
       if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName())))) {
-        return false;
+        return;
       }
     }
 
@@ -162,7 +173,7 @@ public class ValidationUtil {
         }
 
         if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())))) {
-          return false;
+          return;
         }
       }
       if (!link.isMultiple() && children.size() > 1) {
@@ -174,7 +185,7 @@ public class ValidationUtil {
         }
 
         if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())))) {
-          return false;
+          return;
         }
       }
     }
@@ -189,12 +200,11 @@ public class ValidationUtil {
           }
 
           if (!processor.process(new ConceptFeatureCardinalityError(node, ref, String.format("No reference in obligatory role %s", ref.getName())))) {
-            return false;
+            return;
           }
         }
       }
     }
-    return true;
   }
 
   public static void validateModel(@NotNull final SModel model, @NotNull Processor<? super ModelReportItem> processor) {

@@ -10,6 +10,13 @@ import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
+  private final boolean mySuppressErrors;
+  public StructureChecker(boolean suppressErrors) {
+    mySuppressErrors = suppressErrors;
+  }
+  public StructureChecker() {
+    this(true);
+  }
   public void checkNodeInEditor(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
     ValidationUtil.validateSingleNode(node, new Processor<NodeReportItem>() {
       public boolean process(NodeReportItem vp) {
@@ -24,6 +31,10 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
   }
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    return AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION;
+    if (mySuppressErrors) {
+      return AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION;
+    } else {
+      return IChecker.AbstractNodeChecker.SKIP_NOTHING_CONDITION;
+    }
   }
 }
