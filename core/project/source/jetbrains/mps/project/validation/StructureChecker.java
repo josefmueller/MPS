@@ -109,10 +109,6 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
     for (SContainmentLink link : concept.getContainmentLinks()) {
       Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
       if (!link.isOptional() && children.isEmpty()) {
-        // TODO this is a hack for constructor declarations
-        if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) {
-          continue;
-        }
 
         // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
         // todo state behavior on a meeting and remove this hack
