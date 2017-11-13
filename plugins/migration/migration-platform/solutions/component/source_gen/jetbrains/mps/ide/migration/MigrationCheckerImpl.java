@@ -28,23 +28,28 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
-import jetbrains.mps.util.NameUtil;
+import java.util.Map;
+import jetbrains.mps.errors.item.FlavouredItem;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.NodeReportItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.item.LanguageMissingProblem;
-import jetbrains.mps.project.validation.ConceptMissingError;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.project.validation.ConceptFeatureMissingError;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
+import jetbrains.mps.project.validation.StructureChecker;
+import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.progress.ProgressMonitorDecorator;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -142,69 +147,54 @@ public class MigrationCheckerImpl implements MigrationChecker {
 
         pm.advance(10);
 
-        final Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
-        final Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
-        final Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
+        Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
+        Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
+        Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
+        final Set<Map<FlavouredItem.ReportItemFlavour<?, ?>, Object>> alreadyReported = SetSequence.fromSet(new HashSet<Map<FlavouredItem.ReportItemFlavour<?, ?>, Object>>());
 
-outer:
-        for (SModule module : ListSequence.fromList(modules)) {
-          pm.step(NameUtil.compactNamespace(module.getModuleName()));
-          // find missing concepts, when language's not missing 
-          // find missing concept features when concept's not missing 
-          for (final EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
-            final Wrappers._boolean stop = new Wrappers._boolean(false);
-            ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeReportItem>() {
-              public boolean process(NodeReportItem vp) {
-                SNode node = vp.getNode().resolve(model.getRepository());
-                if (vp instanceof LanguageMissingProblem) {
-                  LanguageMissingProblem err = (LanguageMissingProblem) vp;
-                  if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
-                    return true;
-                  }
-                  SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
-                  if (!(processor.process(err))) {
-                    stop.value = true;
-                    return false;
-                  }
-                } else if (vp instanceof ConceptMissingError) {
-                  ConceptMissingError err = (ConceptMissingError) vp;
-                  SConcept concept = err.getConcept();
-                  if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
-                    return true;
-                  }
-                  SetSequence.fromSet(missingConcepts).addElement(concept);
-                  if (!(processor.process(err))) {
-                    stop.value = true;
-                    return false;
-                  }
-                } else if (vp instanceof ConceptFeatureMissingError) {
-                  ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
-                  SAbstractConcept concept = err.getConceptFeature().getOwner();
-                  if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getConceptFeature())) {
-                    return true;
-                  }
-                  SetSequence.fromSet(missingFeatures).addElement(err.getConceptFeature());
-                  if (!(processor.process(err))) {
-                    stop.value = true;
-                    return false;
-                  }
-                } else if (vp instanceof UnresolvedReferenceReportItem) {
-                  if (!(processor.process((UnresolvedReferenceReportItem) vp))) {
-                    stop.value = true;
-                    return false;
+        try {
+          for (SModule module : ListSequence.fromList(modules)) {
+            List<EditableSModel> models = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class).toListSequence();
+            ProgressMonitor moduleSubtask = pm.subTask(1, SubProgressKind.AS_COMMENT);
+            moduleSubtask.start(NameUtil.compactNamespace(module.getModuleName()), ListSequence.fromList(models).count());
+            // find missing concepts, when language's not missing 
+            // find missing concept features when concept's not missing 
+            for (EditableSModel model : ListSequence.fromList(models)) {
+              final Wrappers._boolean stop = new Wrappers._boolean(false);
+              IChecker.AbstractModelChecker<NodeReportItem> checker = IChecker.AbstractModelChecker.wrapRootChecker(IChecker.AbstractRootChecker.wrapNodeChecker((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(false, false, true, false, true)));
+              checker.check(model, myProject.getRepository(), new Consumer<NodeReportItem>() {
+                public void consume(NodeReportItem vp) {
+                  if (!(vp instanceof UnresolvedReferenceReportItem)) {
+                    Map<FlavouredItem.ReportItemFlavour<?, ?>, Object> kindFlavours = MapSequence.fromMap(new HashMap<FlavouredItem.ReportItemFlavour<?, ?>, Object>());
+                    for (FlavouredItem.ReportItemFlavour<?, ?> flavour : SetSequence.fromSet(vp.getIdFlavours())) {
+                      MapSequence.fromMap(kindFlavours).put(flavour, flavour.tryToGet(vp));
+                    }
+                    MapSequence.fromMap(kindFlavours).removeKey(NodeReportItem.FLAVOUR_NODE);
+                    if (!(SetSequence.fromSet(alreadyReported).contains(kindFlavours))) {
+                      if (!(processor.process(vp))) {
+                        stop.value = true;
+                      }
+                    }
+                  } else {
+                    if (!(processor.process(vp))) {
+                      stop.value = true;
+                    }
                   }
                 }
-
-                // ignore other errors 
-                return true;
+              }, new ProgressMonitorDecorator(moduleSubtask.subTask(1)) {
+                @Override
+                public boolean isCanceled() {
+                  return super.isCanceled() && !(stop.value);
+                }
+              });
+              if (stop.value) {
+                return;
               }
-            });
-            pm.advance(1);
-
-            if (stop.value) {
-              break outer;
             }
+            moduleSubtask.done();
           }
+        } finally {
+          pm.done();
         }
       }
     });
