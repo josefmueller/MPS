@@ -17,11 +17,8 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
-import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
 import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -56,15 +53,10 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -73,14 +65,12 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ValidationUtil {
@@ -90,7 +80,7 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
     for (SNode root : roots) {
       EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false)).check(root, root.getModel().getRepository(), nodeReportItem -> {
+      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
         if (!processor.process(nodeReportItem)) {
           progressMonitor.cancel();
         }
@@ -102,7 +92,7 @@ public class ValidationUtil {
   @ToRemove(version = 2018.1)
   public static void validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
     EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-    new StructureChecker(false).check(node, node.getModel().getRepository(), nodeReportItem -> {
+    new StructureChecker(false, true).check(node, node.getModel().getRepository(), nodeReportItem -> {
       if (!processor.process(nodeReportItem)) {
         progressMonitor.cancel();
       }

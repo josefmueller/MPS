@@ -478,10 +478,7 @@
                 <node concept="10QFUN" id="2z6v5unPmKW" role="10QFUP">
                   <node concept="2ShNRf" id="2z6v5unPmKX" role="10QFUP">
                     <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
-                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean)" resolve="StructureChecker" />
-                      <node concept="3clFbT" id="2z6v5unPmKZ" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
+                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
                     </node>
                   </node>
                   <node concept="3uibUv" id="2z6v5unPmL0" role="10QFUM">

@@ -22,9 +22,6 @@ import jetbrains.mps.checkers.LanguageErrorsCollector;
 import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
 import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
-import jetbrains.mps.project.validation.ConceptFeatureCardinalityError;
-import jetbrains.mps.project.validation.ConceptFeatureMissingError;
-import jetbrains.mps.project.validation.ConceptMissingError;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -36,7 +33,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 
 import java.util.Collection;
@@ -44,11 +40,15 @@ import java.util.List;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   private final boolean mySuppressErrors;
-  public StructureChecker(boolean suppressErrors) {
+  // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
+  // todo state behavior on a meeting and remove this hack
+  private final boolean myExcludeCardinalitiesInGenerator;
+  public StructureChecker(boolean suppressErrors, boolean excludeCardinalitiesInGenerator) {
     mySuppressErrors = suppressErrors;
+    myExcludeCardinalitiesInGenerator = excludeCardinalitiesInGenerator;
   }
   public StructureChecker() {
-    this(true);
+    this(true, false);
   }
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
@@ -109,10 +109,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
     for (SContainmentLink link : concept.getContainmentLinks()) {
       Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
       if (!link.isOptional() && children.isEmpty()) {
-
-        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-        // todo state behavior on a meeting and remove this hack
-        if (SModelStereotype.isGeneratorModel(node.getModel())) {
+        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
           continue;
         }
 
@@ -120,10 +117,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
         errorsCollector.addError(reportItem);
       }
       if (!link.isMultiple() && children.size() > 1) {
-
-        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-        // todo state behavior on a meeting and remove this hack
-        if (SModelStereotype.isGeneratorModel(node.getModel())) {
+        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
           continue;
         }
 
@@ -134,10 +128,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
     for (SReferenceLink ref : concept.getReferenceLinks()) {
       if (!ref.isOptional()) {
         if (node.getReference(ref) == null) {
-
-          // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-          // todo state behavior on a meeting and remove this hack
-          if (SModelStereotype.isGeneratorModel(node.getModel())) {
+          if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
             continue;
           }
 
