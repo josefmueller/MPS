@@ -40,6 +40,8 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" />
+    <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
+    <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -472,9 +474,22 @@
               <ref role="3cqZAo" node="2v0ve8x$p7t" resolve="myRules" />
             </node>
             <node concept="TSZUe" id="2v0ve8x$pbn" role="2OqNvi">
-              <node concept="2ShNRf" id="2v0ve8x$pbo" role="25WWJ7">
-                <node concept="HV5vD" id="15I3XUWeewD" role="2ShVmc">
-                  <ref role="HV5vE" to="wsw7:3TJpIwQm7lN" resolve="StructureChecker" />
+              <node concept="10QFUN" id="2z6v5unPmL1" role="25WWJ7">
+                <node concept="10QFUN" id="2z6v5unPmKW" role="10QFUP">
+                  <node concept="2ShNRf" id="2z6v5unPmKX" role="10QFUP">
+                    <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
+                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean)" resolve="StructureChecker" />
+                      <node concept="3clFbT" id="2z6v5unPmKZ" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="2z6v5unPmL0" role="10QFUM">
+                    <ref role="3uigEE" to="k2t0:~AbstractNodeCheckerInEditor" resolve="AbstractNodeCheckerInEditor" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="2z6v5unPmYb" role="10QFUM">
+                  <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
                 </node>
               </node>
             </node>

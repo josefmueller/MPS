@@ -21,7 +21,8 @@ import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
-import jetbrains.mps.checkers.StructureChecker;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
+import jetbrains.mps.project.validation.StructureChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
 )
@@ -67,7 +68,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         ListSequence.fromList(checkers).addElement(new TargetConceptChecker());
         ListSequence.fromList(checkers).addElement(new UsedLanguagesChecker());
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement(new StructureChecker());
+        ListSequence.fromList(checkers).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(true));
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));

@@ -70,6 +70,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -706,9 +707,22 @@
                     <ref role="3cqZAo" node="3etVqSRKzrG" resolve="checkers" />
                   </node>
                   <node concept="TSZUe" id="4aUWmf9LiE5" role="2OqNvi">
-                    <node concept="2ShNRf" id="3RAxiQnBe4g" role="25WWJ7">
-                      <node concept="HV5vD" id="3RAxiQnBe4h" role="2ShVmc">
-                        <ref role="HV5vE" to="wsw7:3TJpIwQm7lN" resolve="StructureChecker" />
+                    <node concept="10QFUN" id="2z6v5unPmL1" role="25WWJ7">
+                      <node concept="10QFUN" id="2z6v5unPmKW" role="10QFUP">
+                        <node concept="2ShNRf" id="2z6v5unPmKX" role="10QFUP">
+                          <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
+                            <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean)" resolve="StructureChecker" />
+                            <node concept="3clFbT" id="2z6v5unPmKZ" role="37wK5m">
+                              <property role="3clFbU" value="true" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3uibUv" id="2z6v5unPmL0" role="10QFUM">
+                          <ref role="3uigEE" to="k2t0:~AbstractNodeCheckerInEditor" resolve="AbstractNodeCheckerInEditor" />
+                        </node>
+                      </node>
+                      <node concept="3uibUv" id="2z6v5unPmYb" role="10QFUM">
+                        <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
                       </node>
                     </node>
                   </node>

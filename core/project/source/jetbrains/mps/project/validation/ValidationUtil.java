@@ -16,7 +16,6 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.checkers.StructureChecker;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
 import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
@@ -91,120 +90,23 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
     for (SNode root : roots) {
       EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false)).check(root, root.getModel().getRepository(), new Consumer<NodeReportItem>() {
-        @Override
-        public void consume(NodeReportItem nodeReportItem) {
-          if (!processor.process(nodeReportItem)) {
-            progressMonitor.cancel();
-          }
+      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false)).check(root, root.getModel().getRepository(), nodeReportItem -> {
+        if (!processor.process(nodeReportItem)) {
+          progressMonitor.cancel();
         }
       }, progressMonitor);
     }
   }
 
-  //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
-  //this won't show "concept missing" error
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static void validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
-    SLanguage lang = node.getConcept().getLanguage();
-    if (!lang.isValid()) {
-      if (lang.getSourceModule() == null) {
-        processor.process(new LanguageAbsentInRepoProblem(lang, node));
-      } else {
-        processor.process(new LanguageNotLoadedProblem(lang, node));
+    EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
+    new StructureChecker(false).check(node, node.getModel().getRepository(), nodeReportItem -> {
+      if (!processor.process(nodeReportItem)) {
+        progressMonitor.cancel();
       }
-    }
-
-    SConcept concept = node.getConcept();
-    if (!concept.isValid()) {
-      processor.process(new ConceptMissingError(node, concept));
-      return;
-    }
-
-    // in case of props, refs, links, list should be better than set
-    List<SProperty> props = IterableUtil.asList(concept.getProperties());
-    for (SProperty p : node.getProperties()) {
-      if (props.contains(p)) {
-        continue;
-      }
-      if (!processor.process(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())))) {
-        return;
-      }
-    }
-
-    List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
-    for (SNode n : node.getChildren()) {
-      SContainmentLink l = n.getContainmentLink();
-      if (links.contains(l)) {
-        continue;
-      }
-      if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())))) {
-        return;
-      }
-    }
-
-    List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
-    for (SReference r : node.getReferences()) {
-      if (r.getTargetNodeReference().resolve(node.getModel().getRepository()) == null) {
-        if (!processor.process(new UnresolvedReferenceReportItem(r, null))) {
-          return;
-        }
-      }
-      SReferenceLink l = r.getLink();
-      if (refs.contains(l)) {
-        continue;
-      }
-      if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName())))) {
-        return;
-      }
-    }
-
-    for (SContainmentLink link : concept.getContainmentLinks()) {
-      Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
-      if (!link.isOptional() && children.isEmpty()) {
-        // TODO this is a hack for constructor declarations
-        if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) {
-          continue;
-        }
-
-        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-        // todo state behavior on a meeting and remove this hack
-        if (SModelStereotype.isGeneratorModel(node.getModel())) {
-          continue;
-        }
-
-        if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())))) {
-          return;
-        }
-      }
-      if (!link.isMultiple() && children.size() > 1) {
-
-        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-        // todo state behavior on a meeting and remove this hack
-        if (SModelStereotype.isGeneratorModel(node.getModel())) {
-          continue;
-        }
-
-        if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())))) {
-          return;
-        }
-      }
-    }
-    for (SReferenceLink ref : concept.getReferenceLinks()) {
-      if (!ref.isOptional()) {
-        if (node.getReference(ref) == null) {
-
-          // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-          // todo state behavior on a meeting and remove this hack
-          if (SModelStereotype.isGeneratorModel(node.getModel())) {
-            continue;
-          }
-
-          if (!processor.process(new ConceptFeatureCardinalityError(node, ref, String.format("No reference in obligatory role %s", ref.getName())))) {
-            return;
-          }
-        }
-      }
-    }
+    }, progressMonitor);
   }
 
   public static void validateModel(@NotNull final SModel model, @NotNull Processor<? super ModelReportItem> processor) {
