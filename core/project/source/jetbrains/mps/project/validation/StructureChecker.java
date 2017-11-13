@@ -24,11 +24,13 @@ import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -43,33 +45,94 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
   // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
   // todo state behavior on a meeting and remove this hack
   private final boolean myExcludeCardinalitiesInGenerator;
-  public StructureChecker(boolean suppressErrors, boolean excludeCardinalitiesInGenerator) {
+
+  private final boolean myCheckMissingRuntimeLanguage;
+  private final boolean myCheckCardinalities;
+  private final boolean myCheckBrokenReferences;
+
+  public StructureChecker(boolean suppressErrors, boolean excludeCardinalitiesInGenerator, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
+                          boolean checkBrokenReferences) {
     mySuppressErrors = suppressErrors;
     myExcludeCardinalitiesInGenerator = excludeCardinalitiesInGenerator;
+    myCheckMissingRuntimeLanguage = checkMissingRuntimeLanguage;
+    myCheckCardinalities = checkCardinalities;
+    myCheckBrokenReferences = checkBrokenReferences;
   }
+
   public StructureChecker() {
-    this(true, false);
+    this(true, false, true, true, true);
   }
+
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
   public void checkNodeInEditor(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
+    if (myCheckMissingRuntimeLanguage) {
+      if (!checkMissingRuntimeLanguages(node, errorsCollector)) {
+        return;
+      }
+    }
+    if (myCheckCardinalities) {
+      checkCardinalities(node, errorsCollector);
+    }
+    if (myCheckBrokenReferences) {
+      for (SReference reference : node.getReferences()) {
+        if (reference.getTargetNodeReference().resolve(repository) == null) {
+          errorsCollector.addError(new UnresolvedReferenceReportItem(reference, null));
+        }
+      }
+    }
+  }
+
+  private void checkCardinalities(SNode node, LanguageErrorsCollector errorsCollector) {
+    SConcept concept = node.getConcept();
+    @NotNull SModel model = node.getModel();
+    for (SContainmentLink link : concept.getContainmentLinks()) {
+      Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
+      if (!link.isOptional() && children.isEmpty()) {
+
+        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
+          continue;
+        }
+
+        errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())));
+      }
+      if (!link.isMultiple() && children.size() > 1) {
+        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
+          continue;
+        }
+
+        errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())));
+      }
+    }
+    for (SReferenceLink refLink : concept.getReferenceLinks()) {
+      SReference reference = node.getReference(refLink);
+      if (!refLink.isOptional()) {
+        if (reference == null) {
+          if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
+            continue;
+          }
+
+          errorsCollector.addError(new ConceptFeatureCardinalityError(node, refLink, String.format("No reference in obligatory role %s", refLink.getName())));
+        }
+      }
+    }
+  }
+
+  private boolean checkMissingRuntimeLanguages(SNode node, LanguageErrorsCollector errorsCollector) {
     SLanguage lang = node.getConcept().getLanguage();
     if (!lang.isValid()) {
       if (lang.getSourceModule() == null) {
-        NodeReportItem reportItem = new LanguageAbsentInRepoProblem(lang, node);
-        errorsCollector.addError(reportItem);
+        errorsCollector.addError(new LanguageAbsentInRepoProblem(lang, node));
       } else {
-        NodeReportItem reportItem = new LanguageNotLoadedProblem(lang, node);
-        errorsCollector.addError(reportItem);
+        errorsCollector.addError(new LanguageNotLoadedProblem(lang, node));
       }
-      return;
+      return false;
     }
 
     SConcept concept = node.getConcept();
     if (!concept.isValid()) {
-      NodeReportItem reportItem = new ConceptMissingError(node, concept);
-      errorsCollector.addError(reportItem);
-      return;
+      errorsCollector.addError(new ConceptMissingError(node, concept));
+      return false;
     }
 
     // in case of props, refs, links, list should be better than set
@@ -78,8 +141,7 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       if (props.contains(p)) {
         continue;
       }
-      NodeReportItem reportItem = new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName()));
-      errorsCollector.addError(reportItem);
+      errorsCollector.addError(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())));
     }
 
     List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
@@ -88,60 +150,25 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       if (links.contains(l)) {
         continue;
       }
-      NodeReportItem reportItem = new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName()));
-      errorsCollector.addError(reportItem);
+      errorsCollector.addError(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())));
     }
 
     List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
     for (SReference r : node.getReferences()) {
-      if (r.getTargetNodeReference().resolve(node.getModel().getRepository()) == null) {
-        NodeReportItem reportItem = new UnresolvedReferenceReportItem(r, null);
-        errorsCollector.addError(reportItem);
-      }
       SReferenceLink l = r.getLink();
       if (refs.contains(l)) {
         continue;
       }
-      NodeReportItem reportItem = new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName()));
-      errorsCollector.addError(reportItem);
+      errorsCollector.addError(new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName())));
     }
-
-    for (SContainmentLink link : concept.getContainmentLinks()) {
-      Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
-      if (!link.isOptional() && children.isEmpty()) {
-        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
-          continue;
-        }
-
-        NodeReportItem reportItem = new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName()));
-        errorsCollector.addError(reportItem);
-      }
-      if (!link.isMultiple() && children.size() > 1) {
-        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
-          continue;
-        }
-
-        NodeReportItem reportItem = new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName()));
-        errorsCollector.addError(reportItem);
-      }
-    }
-    for (SReferenceLink ref : concept.getReferenceLinks()) {
-      if (!ref.isOptional()) {
-        if (node.getReference(ref) == null) {
-          if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(node.getModel())) {
-            continue;
-          }
-
-          NodeReportItem reportItem = new ConceptFeatureCardinalityError(node, ref, String.format("No reference in obligatory role %s", ref.getName()));
-          errorsCollector.addError(reportItem);
-        }
-      }
-    }
+    return true;
   }
+
   @Override
   public String getCategory() {
     return IssueKindReportItem.STRUCTURE;
   }
+
   @Override
   public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
     if (mySuppressErrors) {

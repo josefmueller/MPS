@@ -80,7 +80,7 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
     for (SNode root : roots) {
       EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
+      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false, true, true, true, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
         if (!processor.process(nodeReportItem)) {
           progressMonitor.cancel();
         }
@@ -92,7 +92,7 @@ public class ValidationUtil {
   @ToRemove(version = 2018.1)
   public static void validateSingleNode(SNode node, @NotNull Processor<? super NodeReportItem> processor) {
     EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-    new StructureChecker(false, true).check(node, node.getModel().getRepository(), nodeReportItem -> {
+    new StructureChecker(false, true, true, true, true).check(node, node.getModel().getRepository(), nodeReportItem -> {
       if (!processor.process(nodeReportItem)) {
         progressMonitor.cancel();
       }
