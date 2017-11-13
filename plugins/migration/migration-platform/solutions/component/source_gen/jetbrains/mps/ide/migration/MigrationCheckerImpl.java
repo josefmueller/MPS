@@ -24,12 +24,9 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.Set;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import java.util.Map;
 import jetbrains.mps.errors.item.FlavouredItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -147,9 +144,6 @@ public class MigrationCheckerImpl implements MigrationChecker {
 
         pm.advance(10);
 
-        Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
-        Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
-        Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
         final Set<Map<FlavouredItem.ReportItemFlavour<?, ?>, Object>> alreadyReported = SetSequence.fromSet(new HashSet<Map<FlavouredItem.ReportItemFlavour<?, ?>, Object>>());
 
         try {
@@ -174,6 +168,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
                       if (!(processor.process(vp))) {
                         stop.value = true;
                       }
+                      SetSequence.fromSet(alreadyReported).addElement(kindFlavours);
                     }
                   } else {
                     if (!(processor.process(vp))) {
