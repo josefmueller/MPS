@@ -32,7 +32,7 @@ public final class SubstituteMenu__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SNode getApplicableConcept_id1quYWAD18xk(@NotNull SNode __thisNode__) {
-    return ((SNode) IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu")));
+    return ((SNode) IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke0(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, "jetbrains.mps.lang.editor.structure.IMenu_Concept")));
   }
 
   /*package*/ SubstituteMenu__BehaviorDescriptor() {

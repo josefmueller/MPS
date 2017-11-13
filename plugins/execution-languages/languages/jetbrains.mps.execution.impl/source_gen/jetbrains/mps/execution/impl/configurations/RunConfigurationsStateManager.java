@@ -29,8 +29,8 @@ import com.intellij.execution.RunManagerEx;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
-import java.lang.reflect.Field;
-import com.intellij.openapi.options.SchemeManager;
+import com.intellij.execution.RunnerAndConfigurationSettings;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This component allows to create reloadable (!) run configurations within MPS.
@@ -165,24 +165,25 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     }
 
     public void restoreState() {
-      clearAllRunConfigurations();
-      getRunManager().initializeConfigurationTypes(ConfigurationType.CONFIGURATION_TYPE_EP.getExtensions());
       RunManagerImpl runManager = getRunManager();
-      Class<RunManagerImpl> runManagerClass = RunManagerImpl.class;
-      try {
-        for (Field f : runManagerClass.getDeclaredFields()) {
-          if (f.getName().endsWith("SchemeManager")) {
-            f.setAccessible(true);
-            Object schemeManager = f.get(runManager);
-            assert schemeManager instanceof SchemeManager;
-            ((SchemeManager) schemeManager).reload();
-          }
-        }
-      } catch (IllegalAccessException e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Unable to access schemeManagers via reflection", e);
-        }
+      String selectedConfigurationId = getSelectedConfigurationId(runManager);
+      clearAllRunConfigurations();
+      runManager.initializeConfigurationTypes(ConfigurationType.CONFIGURATION_TYPE_EP.getExtensions());
+      runManager.reloadSchemes();
+      if (selectedConfigurationId != null) {
+        RunnerAndConfigurationSettings toSelect = runManager.getConfigurationById(selectedConfigurationId);
+        runManager.setSelectedConfiguration(toSelect);
       }
+    }
+
+    @Nullable
+    private String getSelectedConfigurationId(RunManagerImpl runManager) {
+      RunnerAndConfigurationSettings selectedConfiguration = runManager.getSelectedConfiguration();
+      String selectedConfigurationId = null;
+      if (selectedConfiguration != null) {
+        selectedConfigurationId = selectedConfiguration.getUniqueID();
+      }
+      return selectedConfigurationId;
     }
   }
 }

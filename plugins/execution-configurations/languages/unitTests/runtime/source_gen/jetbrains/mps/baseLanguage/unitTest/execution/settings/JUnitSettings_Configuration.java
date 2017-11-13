@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jdom.Element;
@@ -17,7 +18,6 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import java.util.UUID;
@@ -38,7 +38,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -52,10 +51,11 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     }
     // We do not validate, only check if there is something to test, since validating everything be very slow 
     // see MPS-8781 JUnit run configuration check method performance. 
-    MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    Project project = myProject;
+    MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     checkCachesDirIsFreeToLock();
     checkInProcessRunIsSingle();
-    if (!((eq_jtq3ac_a0a0g0c(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
+    if (!((eq_jtq3ac_a0a0h0c(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
       check(mpsProject);
     }
   }
@@ -87,6 +87,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   public boolean getReuseCaches() {
     return myState.myReuseCaches;
+  }
+  public boolean getOverrideCachesLocation() {
+    return myState.myOverrideCachesLocation;
   }
   public boolean getDebug() {
     return myState.myDebug;
@@ -121,6 +124,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public void setReuseCaches(boolean value) {
     myState.myReuseCaches = value;
   }
+  public void setOverrideCachesLocation(boolean value) {
+    myState.myOverrideCachesLocation = value;
+  }
   public void setDebug(boolean value) {
     myState.myDebug = value;
   }
@@ -136,15 +142,23 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public void setRunType(int value) {
     myState.myRunType = value;
   }
-  public String getDefaultPath() {
+  public String getDefaultPathForCaches() {
     return new DefaultCachesPathChooser().chooseDir();
+  }
+  public String getCachesLocation() {
+    if (this.getOverrideCachesLocation()) {
+      return this.getCachesPath();
+    } else {
+      return getDefaultPathForCaches();
+    }
   }
   public SModuleReference getModuleReference() {
     if (this.getModuleRef() == null && this.getModule() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      Project project = myProject;
+      ProjectHelper.fromIdeaProject(project).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           // todo remove myModule and this code after 2017.3 
-          SModuleReference converted = check_7ateoo_a0b0a0a0a1(JUnitRunTypes.getModule_deprecated(JUnitSettings_Configuration.this.getModule()));
+          SModuleReference converted = check_7ateoo_a0b0a1a0a2(JUnitRunTypes.getModule_deprecated(JUnitSettings_Configuration.this.getModule()));
           if (converted == null) {
             converted = new ModuleReference(JUnitSettings_Configuration.this.getModule(), ModuleId.regular(new UUID(0, 0)));
           }
@@ -160,10 +174,11 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   public SModelReference getModelReference() {
     if (this.getModelRef() == null && this.getModel() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      Project project = myProject;
+      ProjectHelper.fromIdeaProject(project).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           // todo remove myModel and this code after 2017.3 
-          SModelReference converted = check_7ateoo_a0b0a0a0a2(JUnitRunTypes.getModel_deprecated(JUnitSettings_Configuration.this.getModel(), JUnitSettings_Configuration.this.getModule()));
+          SModelReference converted = check_7ateoo_a0b0a1a0a3(JUnitRunTypes.getModel_deprecated(JUnitSettings_Configuration.this.getModel(), JUnitSettings_Configuration.this.getModule()));
           if (converted == null) {
             converted = new jetbrains.mps.smodel.SModelReference(getModuleReference(), SModelId.regular(new UUID(0, 0)), JUnitSettings_Configuration.this.getModel());
           }
@@ -184,7 +199,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     this.setRunType(runType.ordinal());
   }
   public boolean canSaveCachesPath() {
-    return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
+    return this.getReuseCaches() && !(RunCachesManager.isLocked(getCachesLocation()));
   }
   public boolean canExecuteInProcess(Iterable<ITestNodeWrapper> testNodes) {
     return this.getInProcess() && !(this.getDebug());
@@ -254,8 +269,9 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     public String myModuleRef;
     public boolean myInProcess = true;
     public boolean myReuseCaches = true;
+    public boolean myOverrideCachesLocation = false;
     public boolean myDebug = false;
-    public String myCachesPath = getDefaultPath();
+    public String myCachesPath = getDefaultPathForCaches();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public int myRunType = JUnitRunTypes.PROJECT.ordinal();
@@ -270,6 +286,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
       state.myModuleRef = myModuleRef;
       state.myInProcess = myInProcess;
       state.myReuseCaches = myReuseCaches;
+      state.myOverrideCachesLocation = myOverrideCachesLocation;
       state.myDebug = myDebug;
       state.myCachesPath = myCachesPath;
       if (myTestCases != null) {
@@ -292,19 +309,19 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
   }
-  private static SModuleReference check_7ateoo_a0b0a0a0a1(SModule checkedDotOperand) {
+  private static SModuleReference check_7ateoo_a0b0a1a0a2(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SModelReference check_7ateoo_a0b0a0a0a2(SModel checkedDotOperand) {
+  private static SModelReference check_7ateoo_a0b0a1a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static boolean eq_jtq3ac_a0a0g0c(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0a0h0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

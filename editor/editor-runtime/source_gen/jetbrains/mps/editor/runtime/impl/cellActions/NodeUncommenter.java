@@ -74,7 +74,7 @@ public class NodeUncommenter {
   }
   private SContainmentLink getContainmentLink() {
     if (myContainmentLink == null) {
-      myContainmentLink = ((SContainmentLink) BHReflection.invoke(myComment, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
+      myContainmentLink = ((SContainmentLink) BHReflection.invoke0(myComment, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
     }
     return myContainmentLink;
   }

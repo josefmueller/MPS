@@ -94,7 +94,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     List<KeyMap> keyMaps = ListSequence.fromList(new ArrayList<KeyMap>());
     for (SNode keyMapDeclaration : ListSequence.fromList(declarations)) {
       try {
-        Class<KeyMap> keyMapClass = (Class<KeyMap>) languageRuntime.getClass().getClassLoader().loadClass(((String) BHReflection.invoke(keyMapDeclaration, SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))));
+        Class<KeyMap> keyMapClass = (Class<KeyMap>) languageRuntime.getClass().getClassLoader().loadClass(((String) BHReflection.invoke0(keyMapDeclaration, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))));
         KeyMap keyMap = keyMapClass.newInstance();
         if (keyMap.isApplicableToEveryModel()) {
           ListSequence.fromList(keyMaps).addElement(keyMap);

@@ -16,6 +16,8 @@
 package jetbrains.mps.core.aspects.behaviour;
 
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
+import jetbrains.mps.core.aspects.behaviour.api.BHMethodImplementationIsNotFoundException;
+import jetbrains.mps.core.aspects.behaviour.api.BHMethodIsNotFoundInVTable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
@@ -39,18 +41,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkForConcept;
+import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkNotStatic;
+import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkParameters;
+import static jetbrains.mps.core.aspects.behaviour.BehaviorChecker.checkStatic;
+
 /**
  * Common ancestor for all the generated behavior aspects (per concept).
  * Exploiting the idea of virtual table to yield the dynamic dispatch for behavior methods' invocation.
- */
 
-/**
  * TODO
  * Features:
  * Multiple dispatch?
  * Default parameter values?
+ *
+ * @author apyshkin
  */
-
 public abstract class BaseBHDescriptor implements BHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBHDescriptor.class);
 
@@ -79,20 +85,21 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private void checkInitialized() {
+  private void checkDescriptorIsInitialized() {
     if (!myInitialized) {
       throw new BHNotInitializedException(myConcept);
     }
   }
 
   private void initVirtualTables() {
-    myVTable = new SMethodVirtualTable(this, getDeclaredMethods());
+    myVTable = new SMethodVirtualTable(getDeclaredMethods());
     List<SAbstractConcept> ancestors = myAncestorCache.getAncestorsInvocationOrder();
     for (SAbstractConcept ancestor : ancestors) {
       if (ancestor != myConcept) {
         BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
         // now its vtable is initialized
         if (bhDescriptor instanceof BaseBHDescriptor) {
+          // fixme think how to get rid of this cast (vtable is not an API)
           SMethodVirtualTable vTable = ((BaseBHDescriptor) bhDescriptor).myVTable;
           myVTable.merge(vTable);
           mySuperVTable.merge(vTable);
@@ -196,11 +203,20 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     if (parameters.length > 0) {
       throw new IllegalArgumentException("For now one cannot pass arguments to a behavior constructor");
     }
+    if (constructor.getConcept() != getConcept()) {
+      throw new IllegalArgumentException("Concept of the passed constructor and the concept of the descriptor must coincide");
+    }
     SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, model, null, false);
     new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor, getParametersArray(Collections.<SParameter>emptyList(), parameters));
     return node;
   }
 
+  /**
+   * Presumably to move upwards to the interface however the status of node construction
+   * is not clear in the project MPS.
+   * There are already several similar approaches to construct a node and not everybody agrees that
+   * the main point for this activity is here, behavior rt.
+   */
   public void initNode(@NotNull SNode node) {
     SConstructor defaultConstructor = new SDefaultConstructorImpl(this, AccessPrivileges.PUBLIC);
     Object[] emptyParameters = new Object[0];
@@ -210,9 +226,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @Override
   public final <T> T invoke(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkNotStatic(method);
-    checkForConcept(operand.getConcept());
+    checkForConcept(operand.getConcept(), myConcept);
 
     if (method.isVirtual()) {
       return invokeVirtual(operand, method, parameters);
@@ -223,9 +239,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @Override
   public final <T> T invoke(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkStatic(method);
-    checkForConcept(operand);
+    checkForConcept(operand, myConcept);
 
     if (method.isVirtual()) {
       return invokeVirtual(operand, method, parameters);
@@ -236,9 +252,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @Override
   public final <T> T invokeSuper(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkNotStatic(method);
-    checkForConcept(operand.getConcept());
+    checkForConcept(operand.getConcept(), myConcept);
     assert method.isVirtual();
 
     return invokeVirtualSuper(operand, method, parameters);
@@ -246,49 +262,12 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   @Override
   public final <T> T invokeSuper(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkStatic(method);
-    checkForConcept(operand);
+    checkForConcept(operand, myConcept);
     assert method.isVirtual();
 
     return invokeVirtualSuper(operand, method, parameters);
-  }
-
-  private void checkForConcept(@NotNull SAbstractConcept concept) {
-    if (!concept.isSubConceptOf(myConcept)) {
-      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not a subconcept of " + myConcept);
-    }
-  }
-
-  private <T> void checkParameters(@NotNull SMethod<T> method, @NotNull Object[] parameters) {
-    List<SParameter> declaredParameters = method.getParameters();
-    boolean hasVarArg = !declaredParameters.isEmpty() && declaredParameters.get(declaredParameters.size() - 1) instanceof SVarArgParameter;
-    if (!hasVarArg) {
-      if (declaredParameters.size() != parameters.length) {
-        throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
-      }
-    }
-    for (int i = 0; i < parameters.length; ++i) {
-      if (parameters[i] != null) {
-        Class<?> aClass = parameters[i].getClass();
-        SJavaCompoundTypeImpl passedObjectType = new SJavaCompoundTypeImpl(aClass);
-        if (hasVarArg && (i >= declaredParameters.size() - 1)) { // that lies in a vararg argument
-          SArrayType varArgType = (SArrayType) declaredParameters.get(declaredParameters.size() - 1).getType();
-          if (parameters.length == declaredParameters.size()) { // an array could be passed
-            if (varArgType.isAssignableFrom(passedObjectType)) {
-              continue;
-            }
-          }
-          if (!varArgType.getInternalType().isAssignableFrom(passedObjectType)) {
-            throw new BHArgumentsDoNotMatch(method, parameters, declaredParameters, i);
-          }
-        } else {
-          if (!declaredParameters.get(i).getType().isAssignableFrom(passedObjectType)) {
-            throw new BHArgumentsDoNotMatch(method, parameters, declaredParameters, i);
-          }
-        }
-      }
-    }
   }
 
   private <T> T invokeNonVirtual(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters) {
@@ -302,8 +281,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   private <T> T invokeNonVirtualCommon(@NotNull NodeOrConcept nodeOrConcept, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
-    checkForConcept(nodeOrConcept.getConcept());
+    checkDescriptorIsInitialized();
+    checkForConcept(nodeOrConcept.getConcept(), myConcept);
 
     if (method.getModifiers().isPrivate()) {
       if (nodeOrConcept.getNode() != null) {
@@ -314,107 +293,80 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
     Iterable<SAbstractConcept> ancestors = myAncestorCache.getAncestorsInvocationOrder();
     for (SAbstractConcept ancestor : ancestors) {
-      BHDescriptor bhDescriptor = getBHDescriptor(ancestor);
-      if (bhDescriptor instanceof BaseBHDescriptor) {
-        BaseBHDescriptor baseBHDescriptor = (BaseBHDescriptor) bhDescriptor;
-        if (baseBHDescriptor.hasDeclaredMethod(method)) {
-          if (nodeOrConcept.getNode() != null) {
-            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getNode(), method, parameters);
-          } else {
-            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getConcept(), method, parameters);
-          }
+      BHDescriptor descriptor = getBHDescriptor(ancestor);
+      if (hasDeclaredMethod(descriptor, method)) {
+        if (nodeOrConcept.getNode() != null) {
+          return descriptor.invokeSpecial(nodeOrConcept.getNode(), method, parameters);
+        } else {
+          return descriptor.invokeSpecial(nodeOrConcept.getConcept(), method, parameters);
         }
-      } else {
-        throw new IllegalStateException("Unknown behavior descriptor in the '" + nodeOrConcept.getConcept() + "' ancestor tree : '" + bhDescriptor + "'");
       }
     }
     throw new BHMethodNotFoundException(this, method);
   }
 
-  private <T> void checkStatic(@NotNull SMethod<T> method) {
-    if (!method.isStatic()) {
-      throw new IllegalArgumentException("Method must be static");
-    }
-  }
-
-  private <T> void checkNotStatic(@NotNull SMethod<T> method) {
-    if (method.isStatic()) {
-      throw new IllegalArgumentException("Method must be static");
-    }
-  }
-
   private <T> T invokeVirtual(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, false);
-    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+    BHDescriptor descriptor = findDescriptorByVirtualMethod(method, false);
+    return descriptor.invokeSpecial(operand, method, parameters);
   }
 
   private <T> T invokeVirtual(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, false);
-    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+    BHDescriptor descriptor = findDescriptorByVirtualMethod(method, false);
+    return descriptor.invokeSpecial(operand, method, parameters);
   }
 
   private <T> T invokeVirtualSuper(SNode operand, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, true);
-    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+    BHDescriptor descriptor = findDescriptorByVirtualMethod(method, true);
+    return descriptor.invokeSpecial(operand, method, parameters);
   }
 
   private <T> T invokeVirtualSuper(SAbstractConcept operand, SMethod<T> method, Object... parameters) {
-    BaseBHDescriptor baseBHDescriptor = findDescriptorByVirtualMethod(method, true);
-    return baseBHDescriptor.invokeSpecial(operand, method, parameters);
+    BHDescriptor descriptor = findDescriptorByVirtualMethod(method, true);
+    return descriptor.invokeSpecial(operand, method, parameters);
   }
 
   @NotNull
-  private <T> BaseBHDescriptor findDescriptorByVirtualMethod(SMethod<T> method, boolean superOnly) {
+  private <T> BHDescriptor findDescriptorByVirtualMethod(SMethod<T> method, boolean superOnly) {
     assert method.isVirtual();
-    BHDescriptor bhDescriptor = superOnly ? mySuperVTable.get(method)
-                                          : myVTable.get(method);
-    if (bhDescriptor == null) {
-      throw new BHMethodNotFoundException(this, method);
+    SMethod<?> methodImplementation = superOnly ? mySuperVTable.get(method.getId())
+                                                : myVTable.get(method.getId());
+    if (methodImplementation == null) {
+      throw new BHMethodIsNotFoundInVTable(this, method);
     }
-    assert bhDescriptor instanceof BaseBHDescriptor;
-    return (BaseBHDescriptor) bhDescriptor;
+    if (methodImplementation.isAbstract()) {
+      throw new BHMethodImplementationIsNotFoundException(this, method);
+    }
+    return getBHDescriptor(methodImplementation.getConcept());
   }
 
   @Override
   public <T> T invokeSpecial(@NotNull SNode operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkNotStatic(method);
-    checkForConcept(operand.getConcept());
+    checkForConcept(operand.getConcept(), myConcept);
     @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
     if (parametersArray != null) {
-      checkParameters(method, parametersArray);
+      checkParameters(this, method, parametersArray);
     }
     return invokeSpecial0(operand, method, parametersArray);
   }
 
   @Override
   public <T> T invokeSpecial(@NotNull SAbstractConcept operand, @NotNull SMethod<T> method, Object... parameters) {
-    checkInitialized();
+    checkDescriptorIsInitialized();
     checkStatic(method);
-    checkForConcept(operand);
+    checkForConcept(operand, myConcept);
     @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
     if (parametersArray != null) {
-      checkParameters(method, parametersArray);
+      checkParameters(this, method, parametersArray);
     }
     return invokeSpecial0(operand, method, parametersArray);
-  }
-
-  @Nullable
-  @Override
-  public SMethod<?> getMethod(@NotNull SMethodId methodId) {
-    List<SMethod<?>> methods = getMethods();
-    for (SMethod<?> method : methods) {
-      if (method.getId().equals(methodId)) {
-        return method;
-      }
-    }
-    return null;
   }
 
   @NotNull
   @Override
   public List<SMethod<?>> getMethods() {
-    Set<SMethod<?>> result = new HashSet<SMethod<?>>();
+    Set<SMethod<?>> result = new HashSet<>();
     for (SAbstractConcept concept : myAncestorCache.getAncestorsConstructionOrder()) {
       BHDescriptor bhDescriptor = getBHDescriptor(concept);
       List<SMethod<?>> conceptMethods = bhDescriptor.getDeclaredMethods();
@@ -465,8 +417,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   /**
    * @return true iff the method exists (constructor is not a method here)
    **/
-  private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
-    return getDeclaredMethods().contains(method);
+  private static <T> boolean hasDeclaredMethod(BHDescriptor descriptor, @NotNull SMethod<T> method) {
+    return descriptor.getDeclaredMethods().contains(method);
   }
 
   @Override
@@ -496,20 +448,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
-    public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
-      super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
-    }
-  }
-
-  private class BHArgumentsDoNotMatch extends RuntimeException {
-    public BHArgumentsDoNotMatch(SMethod<?> method, Object[] parameters, List<SParameter> sParameters, int i) {
-      super("The parameter " + parameters[i] + " of the type " + parameters[i].getClass() + " does not match " + sParameters.get(i) +
-          " while calling " + method + " in the " + BaseBHDescriptor.this + " descriptor");
-    }
-  }
-
-  private class BHNotInitializedException extends RuntimeException {
+  public static final class BHNotInitializedException extends RuntimeException {
     public BHNotInitializedException(SAbstractConcept concept) {
       super("Behavior descriptor has not been initialized; concept :  " + concept);
     }

@@ -19,22 +19,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.Map;
-import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
+import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.impl.query.QueryKey;
-import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
+import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
-import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -90,6 +88,18 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }).isEmpty();
   }
+  public static boolean baseMappingRule_Condition_1357501089341499575(final BaseMappingRuleContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null;
+  }
+  public static boolean baseMappingRule_Condition_1357501089341591552(final BaseMappingRuleContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")) == null;
+  }
+  public static boolean baseMappingRule_Condition_1357501089341468249(final BaseMappingRuleContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null;
+  }
+  public static boolean baseMappingRule_Condition_1357501089341482261(final BaseMappingRuleContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")) == null;
+  }
   public static Object propertyMacro_GetPropertyValue_3248205251337162387(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e83eL, "trueText"));
   }
@@ -98,6 +108,12 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object propertyMacro_GetPropertyValue_1801654740563707790(final PropertyMacroContext _context) {
     return _context.createUniqueName("ToggleCheckboxAction", _context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_1357501089341472519(final PropertyMacroContext _context) {
+    return _context.createUniqueName("Checkbox_ActionMap", _context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_1357501089341485396(final PropertyMacroContext _context) {
+    return _context.createUniqueName("Checkbox_KeyMap", _context.getNode());
   }
   public static Object referenceMacro_GetReferent_8215612579904436705(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, 0x132a500f473d9055L, "parentStyleClass"));
@@ -138,6 +154,12 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_1801654740563710777(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x334adf8cb15f3fdfL, "propertyDeclaration"));
   }
+  public static Object referenceMacro_GetReferent_1357501089341497494(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox")), "defaultActionMap");
+  }
+  public static Object referenceMacro_GetReferent_1357501089341588667(final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox")), "defaultKeyMap");
+  }
   public static SNode sourceNodeQuery_8215612579904199776(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x1298d6f05780ea9aL, "ui"));
   }
@@ -176,36 +198,44 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode weaving_MappingRule_ContextNodeQuery_2597883321844050704(final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
-  public static void mappingScript_CodeBlock_4682006100573072638(final MappingScriptContext _context) {
-    ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) == null;
+  private final Map<String, ReductionRuleCondition> rrcMethods = new HashMap<String, ReductionRuleCondition>();
+  {
+    int i = 0;
+    rrcMethods.put("1357501089341497493", new QueriesGenerated.RRC(i++));
+    rrcMethods.put("1357501089341588666", new QueriesGenerated.RRC(i++));
+  }
+  @Override
+  @NotNull
+  public ReductionRuleCondition getReductionRuleCondition(@NotNull QueryKey identity) {
+    final String id = identity.getTemplateNode().getNodeId().toString();
+    if (!(rrcMethods.containsKey(id))) {
+      return super.getReductionRuleCondition(identity);
+    }
+    return rrcMethods.get(id);
+  }
+  private static class RRC implements ReductionRuleCondition {
+    private final int methodKey;
+    public RRC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Override
+    public boolean check(ReductionRuleQueryContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.baseMappingRule_Condition_1357501089341499575(ctx);
+        case 1:
+          return QueriesGenerated.baseMappingRule_Condition_1357501089341591552(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
-    }).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SNode emptyActionMap = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration")), null);
-        SPropertyOperations.set(emptyActionMap, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), _context.createUniqueName("Checkbox_ActionMap", null));
-        SModelOperations.addRootNode(_context.getModel(), emptyActionMap);
-        SLinkOperations.setTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap"), emptyActionMap);
-      }
-    });
-    ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")) == null;
-      }
-    }).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SNode emptyKeyMap = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration")), null);
-        SPropertyOperations.set(emptyKeyMap, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), _context.createUniqueName("Checkbox_KeyMap", null));
-        SModelOperations.addRootNode(_context.getModel(), emptyKeyMap);
-        SLinkOperations.setTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap"), emptyKeyMap);
-      }
-    });
+    }
   }
   private final Map<String, MapRootRuleCondition> mrrcMethods = new HashMap<String, MapRootRuleCondition>();
   {
     int i = 0;
     mrrcMethods.put("1801654740563814042", new QueriesGenerated.MRRC(i++));
+    mrrcMethods.put("1357501089341468164", new QueriesGenerated.MRRC(i++));
+    mrrcMethods.put("1357501089341481026", new QueriesGenerated.MRRC(i++));
   }
   @Override
   @NotNull
@@ -226,6 +256,10 @@ public class QueriesGenerated extends QueryProviderBase {
       switch (methodKey) {
         case 0:
           return QueriesGenerated.baseMappingRule_Condition_2597883321844157860(ctx);
+        case 1:
+          return QueriesGenerated.baseMappingRule_Condition_1357501089341468249(ctx);
+        case 2:
+          return QueriesGenerated.baseMappingRule_Condition_1357501089341482261(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -302,36 +336,6 @@ public class QueriesGenerated extends QueryProviderBase {
           return null;
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no anchor query method for rule %s (key: #%d)", ctx.getTemplateReference(), methodKey));
-      }
-    }
-  }
-  private final Map<String, ScriptCodeBlock> mscbMethods = new HashMap<String, ScriptCodeBlock>();
-  {
-    int i = 0;
-    mscbMethods.put("4682006100573072637", new QueriesGenerated.SCB(i++));
-  }
-  @Override
-  @NotNull
-  public ScriptCodeBlock getScriptCodeBlock(@NotNull QueryKey identity) {
-    final String id = identity.getTemplateNode().getNodeId().toString();
-    if (!(mscbMethods.containsKey(id))) {
-      return super.getScriptCodeBlock(identity);
-    }
-    return mscbMethods.get(id);
-  }
-  private static class SCB implements ScriptCodeBlock {
-    private final int methodKey;
-    public SCB(int methodKey) {
-      this.methodKey = methodKey;
-    }
-    @Override
-    public void invoke(MappingScriptContext ctx) throws GenerationFailureException {
-      switch (methodKey) {
-        case 0:
-          QueriesGenerated.mappingScript_CodeBlock_4682006100573072638(ctx);
-          return;
-        default:
-          throw new GenerationFailureException(String.format("There's no code block with method index %d ", methodKey));
       }
     }
   }
@@ -417,6 +421,8 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("3248205251337162384", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text"), "x"));
     pvqMethods.put("3248205251337162524", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text"), " "));
     pvqMethods.put("1801654740563707789", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ToggleCheckboxAction"));
+    pvqMethods.put("1357501089341472518", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "emptyActionMap"));
+    pvqMethods.put("1357501089341485395", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "emptyKeyMap"));
   }
   @NotNull
   @Override
@@ -442,6 +448,10 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetPropertyValue_3248205251337162527(ctx);
         case 2:
           return QueriesGenerated.propertyMacro_GetPropertyValue_1801654740563707790(ctx);
+        case 3:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1357501089341472519(ctx);
+        case 4:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_1357501089341485396(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -462,6 +472,8 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("1801654740563717865", new QueriesGenerated.RTQ(10, "ClassConcept"));
     rtqMethods.put("1801654740563710766", new QueriesGenerated.RTQ(11, "abstractClass"));
     rtqMethods.put("1801654740563710776", new QueriesGenerated.RTQ(12, "abstractClass"));
+    rtqMethods.put("1357501089341497493", new QueriesGenerated.RTQ(13, null));
+    rtqMethods.put("1357501089341588666", new QueriesGenerated.RTQ(14, null));
   }
   @NotNull
   @Override
@@ -507,6 +519,10 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563710767(ctx);
         case 12:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563710777(ctx);
+        case 13:
+          return QueriesGenerated.referenceMacro_GetReferent_1357501089341497494(ctx);
+        case 14:
+          return QueriesGenerated.referenceMacro_GetReferent_1357501089341588667(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

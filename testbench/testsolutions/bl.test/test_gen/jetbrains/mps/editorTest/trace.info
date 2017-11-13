@@ -1936,6 +1936,102 @@
       <unit id="1989240834983537719" at="12,0,31,0" name="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515606811">
+    <file name="InsertPlaceholderStatementInEmptyStatementList_Test.java">
+      <node id="1995955262515606811" at="13,86,14,102" concept="2" />
+      <node id="1995955262515606811" at="14,102,15,122" concept="2" />
+      <node id="1995955262515606811" at="21,51,22,72" concept="2" />
+      <node id="1995955262515606834" at="22,72,23,80" concept="2" />
+      <node id="1995955262515606811" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderStatementInEmptyStatementList#()V" />
+      <node id="1995955262515606811" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515606811" at="13,86,15,122" />
+      <scope id="1995955262515606811" at="21,51,23,80" />
+      <scope id="1995955262515606811" at="12,0,17,0" />
+      <scope id="1995955262515606811" at="20,0,25,0" />
+      <unit id="1995955262515606811" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementInEmptyStatementList_Test$TestBody" />
+      <unit id="1995955262515606811" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementInEmptyStatementList_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515608794">
+    <file name="InsertPlaceholderStatementAfterNode_Test.java">
+      <node id="1995955262515608794" at="13,75,14,102" concept="2" />
+      <node id="1995955262515608794" at="14,102,15,111" concept="2" />
+      <node id="1995955262515608794" at="21,51,22,72" concept="2" />
+      <node id="1995955262515608807" at="22,72,23,80" concept="2" />
+      <node id="1995955262515608794" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderStatementAfterNode#()V" />
+      <node id="1995955262515608794" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515608794" at="13,75,15,111" />
+      <scope id="1995955262515608794" at="21,51,23,80" />
+      <scope id="1995955262515608794" at="12,0,17,0" />
+      <scope id="1995955262515608794" at="20,0,25,0" />
+      <unit id="1995955262515608794" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementAfterNode_Test$TestBody" />
+      <unit id="1995955262515608794" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementAfterNode_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515610547">
+    <file name="InsertPlaceholderStatementBeforeNode_Test.java">
+      <node id="1995955262515610547" at="13,76,14,102" concept="2" />
+      <node id="1995955262515610547" at="14,102,15,112" concept="2" />
+      <node id="1995955262515610547" at="21,51,22,72" concept="2" />
+      <node id="1995955262515610568" at="22,72,23,80" concept="2" />
+      <node id="1995955262515610547" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderStatementBeforeNode#()V" />
+      <node id="1995955262515610547" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515610547" at="13,76,15,112" />
+      <scope id="1995955262515610547" at="21,51,23,80" />
+      <scope id="1995955262515610547" at="12,0,17,0" />
+      <scope id="1995955262515610547" at="20,0,25,0" />
+      <unit id="1995955262515610547" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementBeforeNode_Test$TestBody" />
+      <unit id="1995955262515610547" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderStatementBeforeNode_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515611222">
+    <file name="InsertPlaceholderMemberInEmptyClass_Test.java">
+      <node id="1995955262515611222" at="13,75,14,102" concept="2" />
+      <node id="1995955262515611222" at="14,102,15,111" concept="2" />
+      <node id="1995955262515611222" at="21,51,22,72" concept="2" />
+      <node id="1995955262515611243" at="22,72,23,80" concept="2" />
+      <node id="1995955262515611222" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderMemberInEmptyClass#()V" />
+      <node id="1995955262515611222" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515611222" at="13,75,15,111" />
+      <scope id="1995955262515611222" at="21,51,23,80" />
+      <scope id="1995955262515611222" at="12,0,17,0" />
+      <scope id="1995955262515611222" at="20,0,25,0" />
+      <unit id="1995955262515611222" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberInEmptyClass_Test$TestBody" />
+      <unit id="1995955262515611222" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberInEmptyClass_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515611603">
+    <file name="InsertPlaceholderMemberAfterNode_Test.java">
+      <node id="1995955262515611603" at="13,72,14,102" concept="2" />
+      <node id="1995955262515611603" at="14,102,15,108" concept="2" />
+      <node id="1995955262515611603" at="21,51,22,72" concept="2" />
+      <node id="1995955262515611605" at="22,72,23,80" concept="2" />
+      <node id="1995955262515611603" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderMemberAfterNode#()V" />
+      <node id="1995955262515611603" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515611603" at="13,72,15,108" />
+      <scope id="1995955262515611603" at="21,51,23,80" />
+      <scope id="1995955262515611603" at="12,0,17,0" />
+      <scope id="1995955262515611603" at="20,0,25,0" />
+      <unit id="1995955262515611603" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberAfterNode_Test$TestBody" />
+      <unit id="1995955262515611603" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberAfterNode_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1995955262515612310">
+    <file name="InsertPlaceholderMemberBeforeNode_Test.java">
+      <node id="1995955262515612310" at="13,73,14,102" concept="2" />
+      <node id="1995955262515612310" at="14,102,15,109" concept="2" />
+      <node id="1995955262515612310" at="21,51,22,72" concept="2" />
+      <node id="1995955262515612312" at="22,72,23,80" concept="2" />
+      <node id="1995955262515612310" at="12,0,17,0" concept="5" trace="test_InsertPlaceholderMemberBeforeNode#()V" />
+      <node id="1995955262515612310" at="20,0,25,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="1995955262515612310" at="13,73,15,109" />
+      <scope id="1995955262515612310" at="21,51,23,80" />
+      <scope id="1995955262515612310" at="12,0,17,0" />
+      <scope id="1995955262515612310" at="20,0,25,0" />
+      <unit id="1995955262515612310" at="18,0,26,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberBeforeNode_Test$TestBody" />
+      <unit id="1995955262515612310" at="10,0,27,0" name="jetbrains.mps.editorTest.InsertPlaceholderMemberBeforeNode_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2138084782796863470">
     <file name="FieldInitializerRequired1_Test.java">
       <node id="2138084782796863470" at="13,65,14,102" concept="2" />

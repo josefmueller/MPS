@@ -105,13 +105,13 @@ public final class SNodeUtil {
   }
   public static String getPresentation(SNode node) {
     try {
-      return ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
+      return ((String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
     } catch (Throwable t) {
       return node.getName();
     }
   }
   public static String getDetailedPresentation(SNode node) {
-    return ((String) (String) BHReflection.invoke(node, SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
+    return ((String) (String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
   }
   /**
    * 
@@ -122,7 +122,7 @@ public final class SNodeUtil {
     return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static int getMetaLevel(SNode node) {
-    return ((int) (Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
+    return ((int) (Integer) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
   }
   @Deprecated
   @ToRemove(version = 2017.3)

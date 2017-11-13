@@ -174,7 +174,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
@@ -1612,7 +1611,7 @@
                 <node concept="3clFbS" id="2k7p7sTBenk" role="3clFbx">
                   <node concept="3SKdUt" id="6LeUth2_rR0" role="3cqZAp">
                     <node concept="3SKdUq" id="6LeUth2_rR2" role="3SKWNk">
-                      <property role="3SKdUp" value="if there is no implementation we ignore the specified concept" />
+                      <property role="3SKdUp" value="if there is no implementation in the provided concept we will fail on runtime" />
                     </node>
                   </node>
                   <node concept="3SKdUt" id="6LeUth2_rR_" role="3cqZAp">
@@ -1638,23 +1637,11 @@
                     </node>
                   </node>
                 </node>
-                <node concept="1Wc70l" id="6LeUth2_ple" role="3clFbw">
-                  <node concept="3fqX7Q" id="6LeUth2_qWc" role="3uHU7w">
-                    <node concept="2OqwBi" id="6LeUth2_qWe" role="3fr31v">
-                      <node concept="37vLTw" id="6LeUth2_qWf" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2k7p7sTBemH" resolve="methodDecl" />
-                      </node>
-                      <node concept="2qgKlT" id="6LeUth2_rPW" role="2OqNvi">
-                        <ref role="37wK5l" to="tpek:hWjv7RO" resolve="isAbstract" />
-                      </node>
-                    </node>
+                <node concept="3y3z36" id="2k7p7sTBenw" role="3clFbw">
+                  <node concept="37vLTw" id="2k7p7sTBeny" role="3uHU7B">
+                    <ref role="3cqZAo" node="2k7p7sTBen3" resolve="specifiedSuperConcept" />
                   </node>
-                  <node concept="3y3z36" id="2k7p7sTBenw" role="3uHU7B">
-                    <node concept="37vLTw" id="2k7p7sTBeny" role="3uHU7B">
-                      <ref role="3cqZAo" node="2k7p7sTBen3" resolve="specifiedSuperConcept" />
-                    </node>
-                    <node concept="10Nm6u" id="2k7p7sTBenx" role="3uHU7w" />
-                  </node>
+                  <node concept="10Nm6u" id="2k7p7sTBenx" role="3uHU7w" />
                 </node>
                 <node concept="9aQIb" id="2k7p7sTBenz" role="9aQIa">
                   <node concept="3clFbS" id="2k7p7sTBen$" role="9aQI4">

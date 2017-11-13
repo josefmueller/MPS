@@ -45,7 +45,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     }
     if (this.myFieldInitialization == FieldInitializationPlace.STATICINIT) {
       SNode declaration = SNodeOperations.getNodeAncestor(this.getExpression(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
-      Iterable<SNode> staticInitializers = ((Iterable<SNode>) BHReflection.invoke(declaration, SMethodTrimmedId.create("staticInitializers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "2I6sE$IuBP7")));
+      Iterable<SNode> staticInitializers = ((Iterable<SNode>) BHReflection.invoke0(declaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SMethodTrimmedId.create("staticInitializers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "2I6sE$IuBP7")));
       SNode initializer;
       if (Sequence.fromIterable(staticInitializers).isNotEmpty()) {
         initializer = Sequence.fromIterable(staticInitializers).first();

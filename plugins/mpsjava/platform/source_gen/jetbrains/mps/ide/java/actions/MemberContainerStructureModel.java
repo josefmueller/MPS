@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,7 @@ public class MemberContainerStructureModel implements StructureViewModel {
 
   public MemberContainerStructureModel(MPSProject project, SNode memberContainer) {
     container = new MemberContainerStructureModel.Presentation(memberContainer);
-    members = ListSequence.fromList(((List<SNode>) BHReflection.invoke(memberContainer, SMethodTrimmedId.create("getMembers", null, "hEwJjl2")))).select(new ISelector<SNode, MemberContainerStructureModel.Presentation>() {
+    members = ListSequence.fromList(((List<SNode>) BHReflection.invoke0(memberContainer, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), SMethodTrimmedId.create("getMembers", null, "hEwJjl2")))).select(new ISelector<SNode, MemberContainerStructureModel.Presentation>() {
       public MemberContainerStructureModel.Presentation select(SNode it) {
         return new MemberContainerStructureModel.Presentation(it);
       }

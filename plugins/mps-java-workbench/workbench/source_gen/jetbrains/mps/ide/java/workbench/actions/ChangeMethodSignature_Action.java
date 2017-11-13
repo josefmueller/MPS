@@ -91,7 +91,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
         repo.saveAll();
-        baseMethod.value = ((SNode) BHReflection.invoke(((SNode) MapSequence.fromMap(_params).get("method")), SMethodTrimmedId.create("getBaseMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "4mmymf_0z7l")));
+        baseMethod.value = ((SNode) BHReflection.invoke0(((SNode) MapSequence.fromMap(_params).get("method")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), SMethodTrimmedId.create("getBaseMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "4mmymf_0z7l")));
         if (baseMethod.value != null) {
           message.value = "Method " + ((SNode) MapSequence.fromMap(_params).get("method")).getPresentation() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".\n";
           message.value += "Do you want to change signature of this method instead?";

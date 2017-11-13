@@ -22,21 +22,21 @@
       <node id="2479108860611089565" at="35,0,36,0" concept="3" trace="mySubstituteInfo" />
       <node id="1503962097793478114" at="36,143,37,30" concept="2" />
       <node id="3368017140643690481" at="37,30,38,40" concept="2" />
-      <node id="3368017140643690488" at="38,40,39,284" concept="7" />
+      <node id="3368017140643690488" at="38,40,39,431" concept="7" />
       <node id="3368017140643690424" at="40,41,41,13" concept="8" />
       <node id="2190776171358671436" at="43,208,44,121" concept="2" />
-      <node id="1503962097793478103" at="46,275,47,124" concept="2" />
+      <node id="1503962097793478103" at="46,422,47,124" concept="2" />
       <node id="1503962097793478127" at="48,5,49,115" concept="2" />
       <node id="2479108860611100296" at="49,115,50,38" concept="2" />
       <node id="2479108860610978831" at="53,36,54,37" concept="8" />
       <node id="2479108860610978833" at="55,5,56,104" concept="7" />
-      <node id="2479108860610978839" at="56,104,57,324" concept="7" />
-      <node id="2479108860611100008" at="57,324,58,0" concept="10" />
+      <node id="2479108860610978839" at="56,104,57,471" concept="7" />
+      <node id="2479108860611100008" at="57,471,58,0" concept="10" />
       <node id="2479108860611060386" at="59,392,60,61" concept="7" />
       <node id="2479108860611060452" at="60,61,61,64" concept="7" />
       <node id="2479108860610978904" at="61,64,62,161" concept="8" />
       <node id="2479108860610978917" at="63,5,64,148" concept="8" />
-      <node id="3368017140643690419" at="39,284,42,5" concept="5" />
+      <node id="3368017140643690419" at="39,431,42,5" concept="5" />
       <node id="3368017140643690425" at="42,5,45,5" concept="5" />
       <node id="659731673107302986" at="45,5,48,5" concept="5" />
       <node id="2479108860610978826" at="52,49,55,5" concept="5" />
@@ -45,7 +45,7 @@
       <node id="3368017140643570614" at="36,0,52,0" concept="1" trace="DefaultReferenceSubstituteInfoActionsFactory#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellMenu/DefaultReferenceSubstituteInfo;)V" />
       <scope id="3368017140643690423" at="40,41,41,13" />
       <scope id="3368017140643690431" at="43,208,44,121" />
-      <scope id="659731673107302987" at="46,275,47,124" />
+      <scope id="659731673107302987" at="46,422,47,124" />
       <scope id="2479108860610978830" at="53,36,54,37" />
       <scope id="2479108860610978881" at="59,392,62,161">
         <var name="link" id="2479108860611060453" />

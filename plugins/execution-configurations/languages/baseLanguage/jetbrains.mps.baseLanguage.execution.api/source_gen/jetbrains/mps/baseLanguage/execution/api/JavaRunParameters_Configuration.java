@@ -12,7 +12,11 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.util.PathManager;
+import java.io.File;
+import java.io.IOException;
 import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 
 public class JavaRunParameters_Configuration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(JavaRunParameters_Configuration.class);
@@ -37,6 +41,17 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
   public void setJavaRunParameters(JavaRunParameters value) {
     myState.myJavaRunParameters = value;
   }
+  /*package*/ String getDefaultWorkingDir() {
+    String userDir = PathManager.getUserDir();
+    if (userDir == null) {
+      try {
+        userDir = new File("").getCanonicalPath();
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+    return userDir;
+  }
   @Override
   public JavaRunParameters_Configuration clone() {
     JavaRunParameters_Configuration clone = null;
@@ -52,7 +67,7 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     return clone;
   }
   public class MyState {
-    public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, null, false);
+    public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, getDefaultWorkingDir(), false);
     public MyState() {
     }
     @Override
@@ -64,12 +79,14 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
       return state;
     }
   }
-  public JavaRunParameters_Configuration() {
+  public JavaRunParameters_Configuration(Project project) {
+    myProject = project;
   }
+  private final Project myProject;
   public JavaRunParameters_Configuration createCloneTemplate() {
-    return new JavaRunParameters_Configuration();
+    return new JavaRunParameters_Configuration(myProject);
   }
   public JavaRunParameters_Configuration_Editor getEditor() {
-    return new JavaRunParameters_Configuration_Editor();
+    return new JavaRunParameters_Configuration_Editor(myProject);
   }
 }

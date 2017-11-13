@@ -24,6 +24,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptI2 = createDescriptorForI2();
   /*package*/ final ConceptDescriptor myConceptI3 = createDescriptorForI3();
   /*package*/ final ConceptDescriptor myConceptK = createDescriptorForK();
+  /*package*/ final ConceptDescriptor myConceptL = createDescriptorForL();
+  /*package*/ final ConceptDescriptor myConceptM = createDescriptorForM();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -32,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH, myConceptI1, myConceptI2, myConceptI3, myConceptK);
+    return Arrays.asList(myConceptA, myConceptB, myConceptC, myConceptD, myConceptE, myConceptF, myConceptG, myConceptH, myConceptI1, myConceptI2, myConceptI3, myConceptK, myConceptL, myConceptM);
   }
 
   @Override
@@ -63,6 +65,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptI3;
       case LanguageConceptSwitch.K:
         return myConceptK;
+      case LanguageConceptSwitch.L:
+        return myConceptL;
+      case LanguageConceptSwitch.M:
+        return myConceptM;
       default:
         return null;
     }
@@ -150,6 +156,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL7", "K", 0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x66c9579bde227bd6L);
     b.class_(false, false, false);
     b.origin("r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)/7406547389145840598");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForL() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL7", "L", 0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f813cL);
+    b.class_(false, true, false);
+    b.origin("r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)/7341373813157757244");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForM() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL7", "M", 0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL);
+    b.class_(false, false, false);
+    b.origin("r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)/7341373813157757374");
+    b.aggregate("myL", 0x65e1cc96389f81c7L).target(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f813cL).optional(true).ordered(true).multiple(false).origin("7341373813157757383").done();
     return b.create();
   }
 }

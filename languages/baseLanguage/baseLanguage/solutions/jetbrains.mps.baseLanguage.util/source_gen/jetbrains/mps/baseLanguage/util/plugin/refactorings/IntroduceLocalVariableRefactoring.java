@@ -49,7 +49,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     SNode statementListContainer = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), false, false);
     SNode metaContainer = ListSequence.fromList(ancestors).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ((int) (Integer) BHReflection.invoke(it, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A"))) != ((int) (Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
+        return ((int) (Integer) BHReflection.invoke0(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A"))) != ((int) (Integer) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
       }
     });
     int statementListContainerIndex = ListSequence.fromList(ancestors).indexOf(statementListContainer);
@@ -66,7 +66,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
   @Override
   public void replaceNode(SNode node, SNode declaration) {
-    SNode reference = ((SNode) BHReflection.invoke(declaration, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
+    SNode reference = ((SNode) BHReflection.invoke0(declaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SMethodTrimmedId.create("createReference", null, "hEwJfME")));
     SNodeOperations.replaceWithAnother(node, reference);
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }

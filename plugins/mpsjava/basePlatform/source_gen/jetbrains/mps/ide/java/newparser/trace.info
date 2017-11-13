@@ -379,10 +379,10 @@
       <node id="5230012391903533582" at="671,5,672,411" concept="12" />
       <node id="5230012391903559015" at="673,32,674,18" concept="13" />
       <node id="414395969629956597" at="675,5,676,0" concept="15" />
-      <node id="5230012391903604060" at="678,289,679,17" concept="4" />
+      <node id="5230012391903604060" at="678,440,679,17" concept="4" />
       <node id="5230012391903626650" at="680,7,681,0" concept="15" />
-      <node id="5230012391903625904" at="681,0,682,297" concept="12" />
-      <node id="5230012391903629269" at="682,297,683,315" concept="12" />
+      <node id="5230012391903625904" at="681,0,682,448" concept="12" />
+      <node id="5230012391903629269" at="682,448,683,474" concept="12" />
       <node id="5230012391903685650" at="684,41,685,51" concept="14" />
       <node id="5230012391903686348" at="685,51,686,70" concept="14" />
       <node id="5230012391903686812" at="686,70,687,104" concept="14" />
@@ -391,7 +391,7 @@
       <node id="5230012391903887394" at="692,7,693,233" concept="12" />
       <node id="502936544108410388" at="694,27,695,20" concept="13" />
       <node id="5230012391903471978" at="697,5,698,0" concept="15" />
-      <node id="5230012391904281450" at="699,314,700,450" concept="12" />
+      <node id="5230012391904281450" at="699,461,700,609" concept="12" />
       <node id="5230012391904317777" at="701,27,702,17" concept="4" />
       <node id="5230012391904335999" at="704,188,705,17" concept="4" />
       <node id="7699938177176762418" at="706,7,707,219" concept="12" />
@@ -474,8 +474,8 @@
       <node id="3356719807427576697" at="839,75,840,0" concept="15" />
       <node id="2235632002330666863" at="840,0,841,95" concept="12" />
       <node id="2235632002330851901" at="843,39,844,177" concept="13" />
-      <node id="2235632002330720481" at="847,35,848,290" concept="6" />
-      <node id="2235632002330860409" at="848,290,849,0" concept="15" />
+      <node id="2235632002330720481" at="847,35,848,441" concept="6" />
+      <node id="2235632002330860409" at="848,441,849,0" concept="15" />
       <node id="2235632002330864740" at="851,7,852,0" concept="15" />
       <node id="2235632002330865362" at="852,0,853,35" concept="12" />
       <node id="2235632002330866019" at="853,35,854,35" concept="12" />
@@ -653,10 +653,10 @@
       <node id="4812116028889756128" at="662,74,665,7" concept="10" />
       <node id="5230012391903515589" at="668,59,671,5" concept="10" />
       <node id="5230012391903527005" at="672,411,675,5" concept="10" />
-      <node id="5230012391903580241" at="677,318,680,7" concept="10" />
+      <node id="5230012391903580241" at="677,465,680,7" concept="10" />
       <node id="5230012391903694436" at="689,7,692,7" concept="10" />
       <node id="502936544108410386" at="693,233,696,7" concept="10" />
-      <node id="5230012391904288926" at="700,450,703,7" concept="10" />
+      <node id="5230012391904288926" at="700,609,703,7" concept="10" />
       <node id="7699938177178183666" at="703,7,706,7" concept="10" />
       <node id="502936544108037422" at="707,219,710,7" concept="10" />
       <node id="4812116028889659380" at="718,0,721,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -739,7 +739,7 @@
       <node id="5645087958772145493" at="136,25,142,7" concept="6" />
       <node id="789530343629199666" at="222,25,228,11" concept="6" />
       <node id="4812116028889537213" at="660,0,666,5" concept="9" />
-      <node id="5230012391903650953" at="683,315,689,7" concept="10" />
+      <node id="5230012391903650953" at="683,474,689,7" concept="10" />
       <node id="2717473728239355529" at="915,0,921,5" concept="9" />
       <node id="2717473728244306583" at="953,0,959,5" concept="9" />
       <node id="3813618677922793315" at="128,0,135,0" concept="3" trace="JavaToMpsConverter#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/module/SRepository;Ljetbrains/mps/messages/IMessageHandler;)V" />
@@ -894,7 +894,7 @@
       <scope id="4812116028889756131" at="663,33,664,28" />
       <scope id="5230012391903515592" at="669,188,670,18" />
       <scope id="5230012391903527008" at="673,32,674,18" />
-      <scope id="5230012391903580242" at="678,289,679,17" />
+      <scope id="5230012391903580242" at="678,440,679,17" />
       <scope id="5230012391903694439" at="690,202,691,20" />
       <scope id="502936544108410387" at="694,27,695,20" />
       <scope id="5230012391904288929" at="701,27,702,17" />
@@ -1239,7 +1239,7 @@
         <var name="importAnnotation" id="3356719807428411462" />
         <var name="imps" id="3356719807428381521" />
       </scope>
-      <scope id="5230012391904259236" at="699,314,710,7">
+      <scope id="5230012391904259236" at="699,461,710,7">
         <var name="claz" id="5230012391904281453" />
         <var name="result" id="7699938177176762421" />
       </scope>
@@ -1334,7 +1334,7 @@
       <scope id="8751504818642105481" at="177,30,195,0" />
       <scope id="3068863004119346748" at="573,0,591,0" />
       <scope id="5285105605108144780" at="299,55,318,11" />
-      <scope id="5230012391903565580" at="677,318,696,7">
+      <scope id="5230012391903565580" at="677,465,696,7">
         <var name="enumClassCandidate" id="5230012391903629272" />
         <var name="enumClassCandidateName" id="5230012391903625907" />
         <var name="result" id="5230012391903887397" />
@@ -3497,7 +3497,7 @@
       <node id="7955092827316005932" at="350,57,351,552" concept="6" />
       <node id="6072020170586257594" at="351,552,352,421" concept="12" />
       <node id="6072020170586273153" at="353,61,354,38" concept="12" />
-      <node id="6072020170586257636" at="354,38,355,210" concept="12" />
+      <node id="6072020170586257636" at="354,38,355,369" concept="12" />
       <node id="8504030010051279150" at="356,32,357,23" concept="4" />
       <node id="8504030010051279154" at="358,13,359,0" concept="15" />
       <node id="8504030010051279068" at="359,0,360,48" concept="12" />
@@ -3551,7 +3551,7 @@
       <node id="5616839344933923164" at="312,0,315,0" concept="11" trace="getPackage#()Ljava/lang/String;" />
       <node id="5616839344933923171" at="315,0,318,0" concept="11" trace="getErrorMsg#()Ljava/lang/String;" />
       <node id="9025524024257344848" at="324,0,327,0" concept="17" trace="tryResolveUnknowns#(Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <node id="8504030010051279121" at="355,210,358,13" concept="10" />
+      <node id="8504030010051279121" at="355,369,358,13" concept="10" />
       <node id="8866365251086573445" at="381,76,384,17" concept="10" />
       <node id="6956162774782534776" at="407,58,410,9" concept="10" />
       <node id="6956162774782804705" at="413,43,416,9" concept="10" />
@@ -5252,7 +5252,7 @@
       <node id="336459899696535006" at="518,57,519,59" concept="6" />
       <node id="336459899696717905" at="519,59,520,16" concept="13" />
       <node id="6541262448935719068" at="522,64,523,17" concept="12" />
-      <node id="5358950978906554486" at="523,17,524,271" concept="12" />
+      <node id="5358950978906554486" at="523,17,524,413" concept="12" />
       <node id="6541262448935719133" at="525,49,526,20" concept="6" />
       <node id="5358950978906654872" at="527,59,528,52" concept="6" />
       <node id="5358950978906655288" at="529,12,530,39" concept="12" />
@@ -5416,7 +5416,7 @@
       <node id="3493766494546489170" at="379,16,391,11" concept="1" />
       <node id="3493766494546489300" at="410,0,422,0" concept="11" trace="convertStatement#(Lorg/eclipse/jdt/internal/compiler/ast/IfStatement;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546489617" at="496,10,508,5" concept="1" />
-      <node id="5358950978906654703" at="524,271,537,5" concept="10" />
+      <node id="5358950978906654703" at="524,413,537,5" concept="10" />
       <node id="3493766494546489016" at="330,0,344,0" concept="11" trace="convertStatement#(Lorg/eclipse/jdt/internal/compiler/ast/ExplicitConstructorCall;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546491827" at="541,0,555,0" concept="11" trace="getStatementListFromStatement#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/eclipse/jdt/internal/compiler/ast/Statement;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546489025" at="344,0,359,0" concept="11" trace="convertStatement#(Lorg/eclipse/jdt/internal/compiler/ast/ForeachStatement;)Lorg/jetbrains/mps/openapi/model/SNode;" />

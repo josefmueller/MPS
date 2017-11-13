@@ -674,13 +674,13 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    for (SNode singleNameImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(javaImports, SMethodTrimmedId.create("staticSingleName", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iJRa"))))) {
-      if (!(enumConstName.equals(((String) BHReflection.invoke(singleNameImport, SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY")))))) {
+    for (SNode singleNameImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke0(javaImports, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), SMethodTrimmedId.create("staticSingleName", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iJRa"))))) {
+      if (!(enumConstName.equals(((String) BHReflection.invoke0(singleNameImport, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY")))))) {
         continue;
       }
 
-      String enumClassCandidateName = ((String) BHReflection.invoke(singleNameImport, SMethodTrimmedId.create("withoutLastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "5ll4uk6512$")));
-      SNode enumClassCandidate = ((SNode) BHReflection.invoke(gateway, SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, enumClassCandidateName));
+      String enumClassCandidateName = ((String) BHReflection.invoke0(singleNameImport, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), SMethodTrimmedId.create("withoutLastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "5ll4uk6512$")));
+      SNode enumClassCandidate = ((SNode) BHReflection.invoke0(gateway, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, enumClassCandidateName));
       if ((enumClassCandidate == null)) {
         // seems like there is no need to continue 
         // we had import of the form: import static <class>.<ourName> 
@@ -696,8 +696,8 @@ public class JavaToMpsConverter {
       }
     }
 
-    for (SNode onDemandImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(javaImports, SMethodTrimmedId.create("staticOnDemand", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iCVz"))))) {
-      SNode claz = ((SNode) BHReflection.invoke(gateway, SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"))));
+    for (SNode onDemandImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke0(javaImports, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), SMethodTrimmedId.create("staticOnDemand", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iCVz"))))) {
+      SNode claz = ((SNode) BHReflection.invoke0(gateway, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"))));
       if ((claz == null)) {
         continue;
       }
@@ -845,7 +845,7 @@ public class JavaToMpsConverter {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        MapSequence.fromMap(importsByName).put(((String) BHReflection.invoke(it, SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY"))), it);
+        MapSequence.fromMap(importsByName).put(((String) BHReflection.invoke0(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY"))), it);
 
       }
     });

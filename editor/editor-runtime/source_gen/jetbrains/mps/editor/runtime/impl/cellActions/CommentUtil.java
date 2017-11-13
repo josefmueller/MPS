@@ -6,9 +6,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class CommentUtil {
   public static SNode commentOut(@NotNull SNode node) {
     SNode parent = SNodeOperations.getParent(node);
     if (parent == null) {
-      throw new IllegalArgumentException("Node to comment has no parent. Node: " + ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + node.getNodeId());
+      throw new IllegalArgumentException("Node to comment has no parent. Node: " + ((String) BHReflection.invoke0(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + node.getNodeId());
     }
     SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
@@ -49,7 +49,7 @@ public class CommentUtil {
   public static SNode uncomment(@NotNull SNode attribute) {
     SNode parent = SNodeOperations.getParent(attribute);
     if (parent == null) {
-      throw new IllegalArgumentException("Node to uncomment has no parent. Node: " + ((String) BHReflection.invoke(attribute, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + attribute.getNodeId());
+      throw new IllegalArgumentException("Node to uncomment has no parent. Node: " + ((String) BHReflection.invoke0(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + " Node id: " + attribute.getNodeId());
     }
     return new NodeUncommenter(attribute).uncomment();
   }

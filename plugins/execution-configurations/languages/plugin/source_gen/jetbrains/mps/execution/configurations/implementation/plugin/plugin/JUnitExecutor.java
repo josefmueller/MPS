@@ -5,7 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters1_Configuration;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import com.intellij.execution.process.ProcessHandler;
@@ -25,10 +25,10 @@ public class JUnitExecutor implements Executor {
   private final com.intellij.execution.Executor myExecutor;
   private final JUnitSettings_Configuration myJUnitSettings;
   private final IDebuggerSettings myDebuggerSettings;
-  private final JavaRunParameters1_Configuration myJavaRunParameters;
+  private final JavaRunParameters_Configuration myJavaRunParameters;
   private final List<ITestNodeWrapper> myTestNodes;
 
-  public JUnitExecutor(Project project, com.intellij.execution.Executor executor, JUnitSettings_Configuration jUnitSettings, IDebuggerSettings debuggerSettings, JavaRunParameters1_Configuration javaRunParameters, List<ITestNodeWrapper> testNodes) {
+  public JUnitExecutor(Project project, com.intellij.execution.Executor executor, JUnitSettings_Configuration jUnitSettings, IDebuggerSettings debuggerSettings, JavaRunParameters_Configuration javaRunParameters, List<ITestNodeWrapper> testNodes) {
     myProject = project;
     myExecutor = executor;
     myJUnitSettings = jUnitSettings;
@@ -39,7 +39,7 @@ public class JUnitExecutor implements Executor {
 
   @Override
   public ProcessHandler execute() throws ExecutionException {
-    final String dirCachesPath = myJUnitSettings.getCachesPath();
+    final String dirCachesPath = myJUnitSettings.getCachesLocation();
     final boolean dirLock = RunCachesManager.acquireLock(dirCachesPath);
     ProcessHandler commandProcess = new JUnit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myTestNodes, this.prepareJavaParamsForTests(dirLock, dirCachesPath));
     commandProcess.addProcessListener(new ProcessAdapter() {
@@ -54,7 +54,7 @@ public class JUnitExecutor implements Executor {
   }
 
   public JavaRunParameters prepareJavaParamsForTests(boolean dirLock, String cachesDir) {
-    JavaRunParameters1_Configuration javaRunParams = myJavaRunParameters;
+    JavaRunParameters_Configuration javaRunParams = myJavaRunParameters;
     JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
     String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
     if (vmFromJava == null) {

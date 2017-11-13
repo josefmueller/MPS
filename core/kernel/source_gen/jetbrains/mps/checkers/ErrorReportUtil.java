@@ -38,7 +38,7 @@ public class ErrorReportUtil {
         public boolean accept(SNode attr) {
           boolean res = false;
           try {
-            res = ((boolean) (Boolean) BHReflection.invoke(attr, SMethodTrimmedId.create("suppress", null, "2WmWrdnSpX7"), node));
+            res = ((boolean) (Boolean) BHReflection.invoke0(attr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"), SMethodTrimmedId.create("suppress", null, "2WmWrdnSpX7"), node));
           } catch (Throwable t) {
             if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Exception while invoking suppress() on node " + node, t);

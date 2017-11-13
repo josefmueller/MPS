@@ -8,13 +8,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 
-public class Checkbox_ActionMap_5 {
+public class Checkbox_ActionMap_7xa7wl_a {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.CLICK, new Checkbox_ActionMap_5.Checkbox_ActionMap_5_CLICK(node));
+    editorCell.setAction(CellActionType.CLICK, new Checkbox_ActionMap_7xa7wl_a.Checkbox_ActionMap_7xa7wl_a_CLICK(node));
   }
-  public static class Checkbox_ActionMap_5_CLICK extends AbstractCellAction {
+  public static class Checkbox_ActionMap_7xa7wl_a_CLICK extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public Checkbox_ActionMap_5_CLICK(SNode node) {
+    public Checkbox_ActionMap_7xa7wl_a_CLICK(SNode node) {
       this.myNode = node;
     }
     public String getDescriptionText() {

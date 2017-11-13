@@ -16,14 +16,14 @@ public final class SmartReferentUtil {
 
   public static String getPresentation(SNode reference, SNode referent) {
     if (SNodeOperations.isInstanceOf(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))) {
-      return ((String) BHReflection.invoke((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), SMethodTrimmedId.create("getPresentation", null, "69Qfsw3IoJg"), reference));
+      return ((String) BHReflection.invoke0((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"), SMethodTrimmedId.create("getPresentation", null, "69Qfsw3IoJg"), reference));
     }
     return null;
   }
 
   public static String getMatchingText(SNode reference, SNode referent) {
     if (SNodeOperations.isInstanceOf(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))) {
-      return ((String) BHReflection.invoke((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), SMethodTrimmedId.create("getMatchingText", null, "69Qfsw3InJX"), reference));
+      return ((String) BHReflection.invoke0((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"), SMethodTrimmedId.create("getMatchingText", null, "69Qfsw3InJX"), reference));
     }
     // IResolveInfo now uses to distinct matchingText and visibleMatchingText 
     if (SNodeOperations.isInstanceOf(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo"))) {
@@ -34,7 +34,7 @@ public final class SmartReferentUtil {
 
   public static String getVisibleMatchingText(SNode reference, SNode referent) {
     if (SNodeOperations.isInstanceOf(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))) {
-      return ((String) BHReflection.invoke((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), SMethodTrimmedId.create("getVisibleMatchingText", null, "69Qfsw3Ipre"), reference));
+      return ((String) BHReflection.invoke0((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"), SMethodTrimmedId.create("getVisibleMatchingText", null, "69Qfsw3Ipre"), reference));
     }
     return null;
   }
@@ -49,7 +49,7 @@ public final class SmartReferentUtil {
 
   public static String getDescriptionText(SNode reference, SNode referent) {
     if (SNodeOperations.isInstanceOf(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))) {
-      return ((String) BHReflection.invoke((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), SMethodTrimmedId.create("getDescriptionText", null, "69Qfsw3IqwE"), reference));
+      return ((String) BHReflection.invoke0((SNodeOperations.cast(referent, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L, "jetbrains.mps.lang.core.structure.ISmartReferent"), SMethodTrimmedId.create("getDescriptionText", null, "69Qfsw3IqwE"), reference));
     }
     // compatiblity with legacy. after 3.5 -> "return null" 
     return SPropertyOperations.getString(referent, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"));

@@ -172,8 +172,8 @@
              url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+EAP+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="3">
-      <build number="173.1074" version="2017.3 PPV">
-        <message>JetBrains MPS 2017.3 PPV is available.</message>
+      <build number="173.1176" version="2017.3 RC1">
+        <message>JetBrains MPS 2017.3 RC1 is available.</message>
         <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+EAP+Download+Page" download="true"/>
       </build>
     </channel>

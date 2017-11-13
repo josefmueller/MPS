@@ -27,6 +27,8 @@ import BHL7.behavior.K__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import BHL7.behavior.L__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -448,6 +450,16 @@ public class BHTest_Test extends TestCase {
       }
     });
     Assert.assertTrue(Sequence.fromIterable(seq).isEmpty());
+  }
+  public void test_nullability1() throws Exception {
+    SNode l = null;
+    Assert.assertEquals(null, L__BehaviorDescriptor.bar_id6nxN9oSBS5Q.invoke(l));
+    Assert.assertEquals(0, (int) L__BehaviorDescriptor.foo_id6nxN9oSBS58.invoke(l));
+  }
+  public void test_nullability2() throws Exception {
+    SNode m = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, "BHL7.structure.M"));
+    Assert.assertEquals(null, L__BehaviorDescriptor.bar_id6nxN9oSBS5Q.invoke(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, 0x65e1cc96389f81c7L, "myL"))));
+    Assert.assertEquals(0, (int) L__BehaviorDescriptor.foo_id6nxN9oSBS58.invoke(SLinkOperations.getTarget(m, MetaAdapterFactory.getContainmentLink(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x65e1cc96389f81beL, 0x65e1cc96389f81c7L, "myL"))));
   }
   public void test_seqConcept() throws Exception {
     // fix 

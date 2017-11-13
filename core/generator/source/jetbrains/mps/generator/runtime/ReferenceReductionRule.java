@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * {@implNote} use of TemplateRuleForConcept is dubious, just investigating if it makes any reasonable sense.
@@ -50,5 +51,5 @@ public interface ReferenceReductionRule extends TemplateRuleWithCondition, Templ
   @Override
   boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException;
 
-  void apply(@NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException;
+  void apply(@NotNull TemplateContext context, SNode outputNode) throws GenerationFailureException, GenerationCanceledException;
 }

@@ -974,7 +974,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         DefaultTemplateContext templateContext = new DefaultTemplateContext(myEnv, inputNode, null);
         for (ReferenceReductionRule rule : referenceRules) {
           if (rule.isApplicable(templateContext)) {
-            rule.apply(templateContext);
+            rule.apply(templateContext, inputNode);
           }
         }
       }
@@ -1060,7 +1060,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         for (ReferenceReductionRule rule : referenceRules) {
           if (rule.isApplicable(templateContext)) {
             handledReferences.add(rule.getApplicableLink());
-            rule.apply(templateContext);
+            rule.apply(templateContext, outputNode);
           }
         }
       } else {

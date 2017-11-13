@@ -114,7 +114,7 @@
       <node id="2808756344206270545" at="34,145,35,66" concept="8" />
       <node id="2808756344206270593" at="35,66,36,89" concept="8" />
       <node id="2034046503361624962" at="42,202,43,351" concept="4" />
-      <node id="1613979331507251758" at="44,20,45,128" concept="4" />
+      <node id="1613979331507251758" at="44,20,45,267" concept="4" />
       <node id="3221626724942248975" at="46,13,47,119" concept="10" />
       <node id="3221626724942316334" at="47,119,48,93" concept="10" />
       <node id="2034046503361622280" at="50,40,51,96" concept="4" />
@@ -133,7 +133,7 @@
       <node id="2808756344206463602" at="34,0,62,0" concept="12" trace="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/ide/findusages/findalgorithm/finders/IInterfacedFinder;Lcom/intellij/ui/awt/RelativePoint;)V" />
       <scope id="2808756344206284069" at="31,23,31,23" />
       <scope id="1613979331507240837" at="42,202,43,351" />
-      <scope id="1613979331507250899" at="44,20,45,128" />
+      <scope id="1613979331507250899" at="44,20,45,267" />
       <scope id="4109870623496337090" at="50,40,51,96" />
       <scope id="2808756344206284066" at="31,0,33,0" />
       <scope id="4109870623496325930" at="49,176,52,15" />

@@ -37,8 +37,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setCellId("Collection_c4zoug_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    Checkbox_ActionMap_4.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.addKeyMap(new Checkbox_KeyMap_4());
+    Checkbox_ActionMap_c4zoug_a.setCellActions(editorCell, myNode, getEditorContext());
+    editorCell.addKeyMap(new Checkbox_KeyMap_c4zoug_a());
     editorCell.addEditorCell(createAlternation_c4zoug_a0());
     return editorCell;
   }

@@ -420,7 +420,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setFoldable(true);
-    editorCell.setFoldedCell(createConstant_sjqidp_a01a());
+    editorCell.setFoldedCell(createReadOnlyModelAccessor_sjqidp_a01a());
     editorCell.addEditorCell(createCollection_sjqidp_a01a());
     editorCell.addEditorCell(createCollection_sjqidp_b01a());
     editorCell.addEditorCell(createCollection_sjqidp_c01a());
@@ -542,14 +542,29 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_sjqidp_a01a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<...Nested states...>");
-    editorCell.setCellId("Constant_sjqidp_a01a");
+  private EditorCell createReadOnlyModelAccessor_sjqidp_a01a() {
+    EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
+      public String getText() {
+        if (ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, 0x148d06483264e4b3L, "states"))).isEmpty()) {
+          return "... no nested states ...";
+        } else {
+          return "... " + ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L, 0x148d06483264e4b3L, "states"))).count() + " nested states ...";
+        }
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, myNode);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_sjqidp_a01a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_sjqidp_l0() {

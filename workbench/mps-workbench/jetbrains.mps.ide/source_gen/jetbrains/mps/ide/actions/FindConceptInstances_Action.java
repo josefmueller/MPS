@@ -19,8 +19,8 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class FindConceptInstances_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -81,7 +81,7 @@ public class FindConceptInstances_Action extends BaseAction {
               @Override
               public FindUsagesOptions getDefaultSearchOptions(String concept) {
                 FindUsagesOptions findUsagesOptions = container.getDefaultSearchOptions(concept);
-                findUsagesOptions.setFindersOptions(new FindersOptions(((String) BHReflection.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), SMethodTrimmedId.create("getGeneratedClassLongName", MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "hEwIc4S")))));
+                findUsagesOptions.setFindersOptions(new FindersOptions(((String) BHReflection.invoke0(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), SMethodTrimmedId.create("getGeneratedClassLongName", MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "hEwIc4S")))));
                 return findUsagesOptions;
               }
             };
@@ -110,7 +110,7 @@ public class FindConceptInstances_Action extends BaseAction {
     {
       final SNode conceptAspect = node;
       if (SNodeOperations.isInstanceOf(conceptAspect, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-        return ((SNode) BHReflection.invoke(conceptAspect, SMethodTrimmedId.create("getBaseConcept", null, "2hxg_BDjKM8")));
+        return ((SNode) BHReflection.invoke0(conceptAspect, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"), SMethodTrimmedId.create("getBaseConcept", null, "2hxg_BDjKM8")));
       }
     }
 

@@ -212,6 +212,8 @@
     <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
       <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.WordAddLink_Action" class="jetbrains.mps.ide.editor.actions.WordAddLink_Action"></action>
+    <action id="jetbrains.mps.ide.editor.actions.WordRemoveLink_Action" class="jetbrains.mps.ide.editor.actions.WordRemoveLink_Action"></action>
     <group id="EditorPopup_ActionGroupnew" />
     <group id="EditorPopup_ActionGroupshowIn" />
     <group id="EditorPopup_ActionGroupstructure" />
@@ -365,6 +367,8 @@
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ShowAsIntentions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.WordAddLink_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.WordRemoveLink_Action" />
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">

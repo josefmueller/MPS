@@ -74,7 +74,7 @@ public abstract class ReportItemBase implements ReportItem, IssueKindReportItem 
       super(applicableClass, getter);
     }
     @NotNull
-    public Collection<T> getCollection(ReportItem reportItem) {
+    public Collection<T> getCollection(FlavouredItem reportItem) {
       if (canGet(reportItem)) {
         return get((I) reportItem);
       } else {

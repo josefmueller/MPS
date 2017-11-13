@@ -19,9 +19,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import javax.annotation.Generated;
+
 /**
  * Represents a behavior method for a given {@link org.jetbrains.mps.openapi.language.SAbstractConcept}
  * It has a {@link SMethodId} which uniquely identifies the instance of {@link SMethod}.
+ * The current contract is that two <code>SMethod</code> are equal as soon as their ids are equal.
  *
  * The supposed way to call behavior methods is as follows.
  * If it is possible to get SMethod directly (from the generated fields of {@link BHDescriptor}) then one needs to
@@ -39,6 +42,7 @@ public interface SMethod<T> extends SExecutable {
   /**
    * @return {@link SMethodId} which uniquely identifies the behavior methods within the concept
    * NB: all inherited methods count as well
+   * However the id of the virtual method and its overrides is the same (!)
    */
   @NotNull SMethodId getId();
 
@@ -51,28 +55,36 @@ public interface SMethod<T> extends SExecutable {
    * invokes the method (trying to resolve the right method on runtime if it is virtual)
    * essentially invokes the #invoke0 method with the concept of the operand
    */
+  @CalledFromGenSources
   T invoke(@Nullable SNode operand, Object... parameters);
 
   /**
    * invokes the method in the case it is static (trying to resolve the right method on runtime if it is virtual)
    */
+  @CalledFromGenSources
   T invoke(@Nullable SAbstractConcept operand, Object... parameters);
 
   /**
    * invokes the virtual method as if applied to the node of the concreteConcept
    */
+  @CalledFromGenSources
   T invoke0(@Nullable SNode operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
 
+  @CalledFromGenSources
   T invoke0(@Nullable SAbstractConcept operand, @NotNull SAbstractConcept concreteConcept, Object... parameters);
 
   /**
    * invokes private method (no dynamic method resolve)
+   *
+   * generated from the super non-virtual invocations or the super<<exact concept>> invocations
    */
+  @CalledFromGenSources
   T invokeSpecial(@Nullable SNode operand, Object... parameters);
 
   /**
    * invokes private method (no dynamic method resolve)
    */
+  @CalledFromGenSources
   T invokeSpecial(@Nullable SAbstractConcept operand, Object... parameters);
 
   /**

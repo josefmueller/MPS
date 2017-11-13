@@ -46,7 +46,7 @@ public class MoveStaticMethod implements MoveNodesAction {
     });
     return result.value;
   }
-  public void execute(final MPSProject project, List<SNode> nodes) {
+  public void execute(MPSProject project, List<SNode> nodes) {
     final SNode target = SNodeOperations.cast(ListSequence.fromList(nodes).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
 
     final SNode whereToMove = MoveNodeDialog.getSelectedObject(project.getProject(), target, new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
@@ -58,38 +58,35 @@ public class MoveStaticMethod implements MoveNodesAction {
     if (whereToMove == null) {
       return;
     }
-    project.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project) {
-          @Override
-          public List<SNode> getNodesToSearch(SNode nodeToMove) {
-            return ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
-          }
-          @Override
-          public void process(List<SNode> nodesRootsToMove, Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
-            NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
-            copyMap.copyAndTrack(nodesRootsToMove);
-            Map<SNode, SNode> oldMembersToClasses = MapSequence.fromMap(new HashMap<SNode, SNode>());
-            for (SNode oldNode : ListSequence.fromList(nodesRootsToMove)) {
-              MapSequence.fromMap(oldMembersToClasses).put(oldNode, SNodeOperations.getNodeAncestor(oldNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
-            }
-            for (SNode oldNode : ListSequence.fromList(nodesRootsToMove)) {
-              SNode newNode = MapSequence.fromMap(copyMap.getCopyMap()).get(oldNode);
-              if (!(SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
-                throw new IllegalStateException();
-              }
-              SNode originalClass = MapSequence.fromMap(oldMembersToClasses).get(oldNode);
-              MoveStaticMethodRefactoring.replaceFields(newNode, originalClass);
-              MoveStaticMethodRefactoring.replaceMethods(newNode, originalClass);
-              if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
-                SNodeOperations.deleteNode(oldNode);
-              }
-              myNodeLocation.insertNode(myProject.getRepository(), newNode);
-            }
-          }
-        }).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
+
+    MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new MoveStaticField.NodeLocationClassifierMember(SNodeOperations.cast(whereToMove, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))), project) {
+      @Override
+      public List<SNode> getNodesToSearch(SNode nodeToMove) {
+        return ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove);
       }
-    });
+      @Override
+      public void process(List<SNode> nodesRootsToMove, Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
+        NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
+        copyMap.copyAndTrack(nodesRootsToMove);
+        Map<SNode, SNode> oldMembersToClasses = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        for (SNode oldNode : ListSequence.fromList(nodesRootsToMove)) {
+          MapSequence.fromMap(oldMembersToClasses).put(oldNode, SNodeOperations.getNodeAncestor(oldNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false));
+        }
+        for (SNode oldNode : ListSequence.fromList(nodesRootsToMove)) {
+          SNode newNode = MapSequence.fromMap(copyMap.getCopyMap()).get(oldNode);
+          if (!(SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
+            throw new IllegalStateException();
+          }
+          SNode originalClass = MapSequence.fromMap(oldMembersToClasses).get(oldNode);
+          MoveStaticMethodRefactoring.replaceFields(newNode, originalClass);
+          MoveStaticMethodRefactoring.replaceMethods(newNode, originalClass);
+          if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
+            SNodeOperations.deleteNode(oldNode);
+          }
+          myNodeLocation.insertNode(myProject.getRepository(), newNode);
+        }
+      }
+    }).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), target)));
   }
 
 }

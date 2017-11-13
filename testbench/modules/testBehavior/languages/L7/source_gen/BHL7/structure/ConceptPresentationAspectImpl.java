@@ -21,6 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_I2;
   private ConceptPresentation props_I3;
   private ConceptPresentation props_K;
+  private ConceptPresentation props_L;
+  private ConceptPresentation props_M;
 
   @Override
   @Nullable
@@ -108,6 +110,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_K = cpb.create();
         }
         return props_K;
+      case LanguageConceptSwitch.L:
+        if (props_L == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_L = cpb.create();
+        }
+        return props_L;
+      case LanguageConceptSwitch.M:
+        if (props_M == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("M");
+          props_M = cpb.create();
+        }
+        return props_M;
     }
     return null;
   }

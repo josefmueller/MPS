@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.util.IterableUtil;
 
@@ -47,7 +48,7 @@ public class FinderUtils {
   public static int compareBrothers(SNode n1, SNode n2) {
     if (SNodeOperations.getContainingLink(n1) == null || SNodeOperations.getContainingLink(n2) == null) {
       // if one of them is null, both must be null 
-      assert SNodeOperations.getContainingLink(n1) == null && SNodeOperations.getContainingLink(n2) == null : "Root node is supposed to be a 'brother' of another root node only. n1=" + ((String) BHReflection.invoke(n1, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + ", n2=" + ((String) BHReflection.invoke(n2, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
+      assert SNodeOperations.getContainingLink(n1) == null && SNodeOperations.getContainingLink(n2) == null : "Root node is supposed to be a 'brother' of another root node only. n1=" + ((String) BHReflection.invoke0(n1, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + ", n2=" + ((String) BHReflection.invoke0(n2, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
       return n1.getPresentation().compareTo(n2.getPresentation());
     }
 

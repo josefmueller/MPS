@@ -2,23 +2,23 @@
 <model ref="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
-    <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="-1" />
-    <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="-1" />
-    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="1" />
+    <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="0" />
+    <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="1" />
+    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="4dtg" ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)" />
@@ -1443,11 +1443,11 @@
     <node concept="yHkDC" id="5gyVhZ17Jlr" role="yHkDi">
       <property role="TrG5h" value="myRunParameters" />
       <node concept="yHkIc" id="6oDdG_XwVAT" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
       <node concept="2ShNRf" id="6oDdG_XxkYo" role="33vP2m">
         <node concept="yHkDB" id="6oDdG_XxlHJ" role="2ShVmc">
-          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
           <node concept="2OqwBi" id="6oDdG_Xxohg" role="yHkDD">
             <node concept="2WthIp" id="6oDdG_Xxmtd" role="2Oq$k0" />
             <node concept="3a8Xsn" id="6oDdG_Xxq9b" role="2OqNvi" />
@@ -2337,11 +2337,11 @@
     <node concept="yHkDC" id="6woObKLCiTr" role="yHkDi">
       <property role="TrG5h" value="myJavaRunParameters" />
       <node concept="yHkIc" id="6woObKLCnqF" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
       <node concept="2ShNRf" id="6woObKLCiTt" role="33vP2m">
         <node concept="yHkDB" id="6woObKLCiTu" role="2ShVmc">
-          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkDA" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
           <node concept="2OqwBi" id="6woObKLCiTv" role="yHkDD">
             <node concept="2WthIp" id="6woObKLCiTw" role="2Oq$k0" />
             <node concept="3a8Xsn" id="6woObKLCiTx" role="2OqNvi" />
@@ -2409,7 +2409,7 @@
                 <ref role="3cqZAo" node="3FQ5zX5utPT" resolve="junitEditorComponent" />
               </node>
               <node concept="liA8E" id="2MipI7yR$0y" role="2OqNvi">
-                <ref role="37wK5l" to="tty3:2MipI7yPTYG" resolve="attachJavaComponent" />
+                <ref role="37wK5l" to="tty3:2MipI7yPTYG" resolve="attachJavaComponentsAndUpdateInProcessFlag" />
                 <node concept="37vLTw" id="2MipI7yR_hd" role="37wK5m">
                   <ref role="3cqZAo" node="3FQ5zX5te01" resolve="javaEditorComponent" />
                 </node>
@@ -13151,7 +13151,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="1b7CZFPP8sw" role="1B3o_S" />
       <node concept="yHkHH" id="6oDdG_XwUV2" role="1tU5fm">
-        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+        <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
       </node>
     </node>
     <node concept="312cEg" id="1b7CZFPPk8Z" role="jymVt">
@@ -13259,7 +13259,7 @@
       <node concept="37vLTG" id="1b7CZFPP8gS" role="3clF46">
         <property role="TrG5h" value="javaRunParameters" />
         <node concept="yHkHH" id="6oDdG_XwV2p" role="1tU5fm">
-          <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+          <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
         </node>
       </node>
       <node concept="37vLTG" id="1b7CZFPPjpY" role="3clF46">
@@ -13287,8 +13287,8 @@
               <node concept="37vLTw" id="4eCVXiDXxbf" role="2Oq$k0">
                 <ref role="3cqZAo" node="78pvOus471K" resolve="myJUnitSettings" />
               </node>
-              <node concept="yHkDZ" id="4eCVXiDXxrA" role="2OqNvi">
-                <ref role="yHkDY" to="tty3:29IGCqrBT0S" resolve="myCachesPath" />
+              <node concept="2XshWL" id="5dbgjIncvpa" role="2OqNvi">
+                <ref role="2WH_rO" to="tty3:5dbgjInbZ3$" resolve="getCachesLocation" />
               </node>
             </node>
           </node>
@@ -13435,7 +13435,7 @@
           <node concept="3cpWsn" id="1b7CZFPP7I2" role="3cpWs9">
             <property role="TrG5h" value="javaRunParams" />
             <node concept="yHkHH" id="6oDdG_XwV9K" role="1tU5fm">
-              <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters1" />
+              <ref role="yHkHG" to="go48:6woObKLBCjU" resolve="JavaRunParameters" />
             </node>
             <node concept="37vLTw" id="1b7CZFPP9ey" role="33vP2m">
               <ref role="3cqZAo" node="1b7CZFPP8HZ" resolve="myJavaRunParameters" />
@@ -14599,6 +14599,12 @@
     </node>
     <node concept="2tJIrI" id="5iYlssmVZrZ" role="jymVt" />
     <node concept="3clFbW" id="5iYlssmVFgA" role="jymVt">
+      <node concept="37vLTG" id="2qFJdjDAnwF" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="2qFJdjDAyFm" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="3cqZAl" id="5iYlssmVFgB" role="3clF45" />
       <node concept="3clFbS" id="5iYlssmVFgD" role="3clF47">
         <node concept="3clFbF" id="1b7CZFPOR$D" role="3cqZAp">
@@ -14631,12 +14637,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="5iYlssmVF21" role="1B3o_S" />
-      <node concept="37vLTG" id="2qFJdjDAnwF" role="3clF46">
-        <property role="TrG5h" value="mpsProject" />
-        <node concept="3uibUv" id="2qFJdjDAyFm" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
       <node concept="37vLTG" id="5iYlssmVFkS" role="3clF46">
         <property role="TrG5h" value="testNodeWrappers" />
         <node concept="A3Dl8" id="5iYlssmYrPf" role="1tU5fm">
