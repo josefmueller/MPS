@@ -2,7 +2,7 @@
 <model ref="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="644x" ref="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
@@ -742,7 +742,7 @@
       <node concept="37vLTG" id="4Vsuddjh5hN" role="3clF46">
         <property role="TrG5h" value="jar" />
         <node concept="3uibUv" id="vAjk0V2eOn" role="1tU5fm">
-          <ref role="3uigEE" to="644x:3ufQioQQu2K" resolve="LibraryDataType" />
+          <ref role="3uigEE" to="644x:3ufQioQQu2K" resolve="ModuleJarDataType" />
         </node>
       </node>
     </node>

@@ -4,7 +4,7 @@
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -101,7 +101,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4XBaoL6c7MG">
-    <ref role="13h7C2" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    <ref role="13h7C2" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
     <node concept="13hLZK" id="4XBaoL6c7MH" role="13h7CW">
       <node concept="3clFbS" id="4XBaoL6c7MI" role="2VODD2" />
     </node>
@@ -229,7 +229,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4XBaoL6cbu5">
-    <ref role="13h7C2" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+    <ref role="13h7C2" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
     <node concept="13hLZK" id="4XBaoL6cbu6" role="13h7CW">
       <node concept="3clFbS" id="4XBaoL6cbu7" role="2VODD2" />
     </node>

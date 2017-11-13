@@ -2,7 +2,7 @@
 <model ref="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="rq9g" ref="r:25996281-7301-4cd9-9368-f68f49d5af63(jetbrains.mps.ide.ui.dialogs.properties)" />
@@ -187,6 +187,7 @@
     <node concept="3clFbW" id="1mBiRF0LAU4" role="jymVt">
       <node concept="3Tm1VV" id="1mBiRF0LAU5" role="1B3o_S" />
       <node concept="3clFbS" id="1mBiRF0LAU6" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Ln" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LAU7" role="jymVt">
       <property role="TrG5h" value="getListCellRendererComponent" />
@@ -319,6 +320,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Lk" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LB53" role="jymVt">
       <property role="TrG5h" value="getListCellRendererComponent" />
@@ -607,6 +609,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Lu" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LBIB" role="jymVt">
       <property role="TrG5h" value="getItemLabel" />
@@ -671,6 +674,7 @@
     <node concept="3clFbW" id="1mBiRF0LBJ2" role="jymVt">
       <node concept="3Tm1VV" id="1mBiRF0LBJ3" role="1B3o_S" />
       <node concept="3clFbS" id="1mBiRF0LBJ4" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Ly" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LBJ5" role="jymVt">
       <property role="TrG5h" value="getListCellRendererComponent" />
@@ -837,6 +841,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Lz" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LBKh" role="jymVt">
       <property role="TrG5h" value="getItemLabel" />
@@ -1171,6 +1176,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29L7" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LC6M" role="jymVt">
       <property role="TrG5h" value="getTableCellRendererComponent" />
@@ -1271,6 +1277,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Lr" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LCaU" role="jymVt">
       <property role="TrG5h" value="getItemLabel" />
@@ -1601,6 +1608,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29L_" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LD2p" role="jymVt">
       <property role="TrG5h" value="getListCellRendererComponent" />
