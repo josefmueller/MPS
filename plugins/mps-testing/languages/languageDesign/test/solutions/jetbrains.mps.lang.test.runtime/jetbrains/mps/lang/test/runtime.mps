@@ -7818,7 +7818,7 @@
                   <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                 </node>
                 <node concept="liA8E" id="ygzS0$E_AG" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.FlavouredItem):java.util.Collection" resolve="getCollection" />
+                  <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
                   <node concept="37vLTw" id="ygzS0$E_Tb" role="37wK5m">
                     <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
                   </node>
@@ -7852,7 +7852,7 @@
                       <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                     </node>
                     <node concept="liA8E" id="ygzS0$EDXR" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.FlavouredItem):java.util.Collection" resolve="getCollection" />
+                      <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
                       <node concept="37vLTw" id="ygzS0$EEcz" role="37wK5m">
                         <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
                       </node>

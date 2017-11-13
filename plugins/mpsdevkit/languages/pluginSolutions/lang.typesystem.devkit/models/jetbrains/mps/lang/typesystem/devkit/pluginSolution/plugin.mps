@@ -1049,7 +1049,7 @@
                     <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
                   </node>
                   <node concept="liA8E" id="2PIlT5T$_PH" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.FlavouredItem):java.util.Collection" resolve="getCollection" />
+                    <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
                     <node concept="37vLTw" id="2PIlT5T$_PI" role="37wK5m">
                       <ref role="3cqZAo" node="2PIlT5T$_Pk" resolve="mostRelevantReportItem" />
                     </node>
@@ -1158,7 +1158,7 @@
                     <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                   </node>
                   <node concept="liA8E" id="2PIlT5T$fjz" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.FlavouredItem):java.util.Collection" resolve="getCollection" />
+                    <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
                     <node concept="37vLTw" id="2PIlT5T$fj$" role="37wK5m">
                       <ref role="3cqZAo" node="2PIlT5T$fj6" resolve="mostRelevantReportItem" />
                     </node>
@@ -1357,7 +1357,7 @@
                       <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                     </node>
                     <node concept="liA8E" id="2PIlT5Tye4P" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.FlavouredItem):java.util.Collection" resolve="getCollection" />
+                      <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
                       <node concept="37vLTw" id="2PIlT5T$eOJ" role="37wK5m">
                         <ref role="3cqZAo" node="2PIlT5T$7yx" resolve="mostRelevantReportItem" />
                       </node>
