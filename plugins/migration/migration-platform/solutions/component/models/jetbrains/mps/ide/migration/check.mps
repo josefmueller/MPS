@@ -16,6 +16,7 @@
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -50,6 +51,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -198,6 +200,35 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7jW5$X5UA7H" role="jymVt" />
+    <node concept="3clFb_" id="7jW5$X5UAqD" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getModule" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7jW5$X5UAqE" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7jW5$X5UAqG" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="7jW5$X5UAqH" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3clFbS" id="7jW5$X5UAqP" role="3clF47">
+        <node concept="3clFbF" id="7jW5$X5UA_C" role="3cqZAp">
+          <node concept="2OqwBi" id="7jW5$X5UA_D" role="3clFbG">
+            <node concept="1rXfSq" id="7jW5$X5UA_E" role="2Oq$k0">
+              <ref role="37wK5l" to="6f4m:3n7MNzOA6ls" resolve="getReason" />
+            </node>
+            <node concept="liA8E" id="7jW5$X5UA_F" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7jW5$X5UAqQ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="193i4_4ZsTH" role="jymVt" />
     <node concept="3clFb_" id="193i4_4ZsTI" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -223,6 +254,9 @@
       <node concept="3uibUv" id="1Dc$d2EN$70" role="11_B2D">
         <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
       </node>
+    </node>
+    <node concept="3uibUv" id="7jW5$X5U_Yu" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
     </node>
   </node>
   <node concept="312cEu" id="2htE_P_SIXm">
@@ -633,12 +667,44 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7jW5$X5UDAP" role="jymVt" />
+    <node concept="3clFb_" id="7jW5$X5UG54" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getModule" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7jW5$X5UG55" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7jW5$X5UG57" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="7jW5$X5UG58" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3clFbS" id="7jW5$X5UG5g" role="3clF47">
+        <node concept="3clFbF" id="7jW5$X5UGKO" role="3cqZAp">
+          <node concept="2OqwBi" id="7jW5$X5UGKP" role="3clFbG">
+            <node concept="1rXfSq" id="7jW5$X5UGKQ" role="2Oq$k0">
+              <ref role="37wK5l" to="6f4m:3n7MNzOA6ls" resolve="getReason" />
+            </node>
+            <node concept="liA8E" id="7jW5$X5UGKR" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7jW5$X5UG5h" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="2htE_P_SIXR" role="1B3o_S" />
     <node concept="3uibUv" id="2htE_P_SIXS" role="1zkMxy">
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
       <node concept="3uibUv" id="6Z8qT6OVcZ9" role="11_B2D">
         <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
       </node>
+    </node>
+    <node concept="3uibUv" id="7jW5$X5UFwu" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
     </node>
   </node>
   <node concept="312cEu" id="ANqTy7p3iq">
@@ -742,6 +808,34 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="7jW5$X5U$Xb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getModule" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7jW5$X5U$Xc" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7jW5$X5U$Xe" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="7jW5$X5U$Xf" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3clFbS" id="7jW5$X5U$Xn" role="3clF47">
+        <node concept="3clFbF" id="7jW5$X5U_s$" role="3cqZAp">
+          <node concept="2OqwBi" id="7jW5$X5U_Ah" role="3clFbG">
+            <node concept="1rXfSq" id="7jW5$X5U_sz" role="2Oq$k0">
+              <ref role="37wK5l" to="6f4m:3n7MNzOA6ls" resolve="getReason" />
+            </node>
+            <node concept="liA8E" id="7jW5$X5U_L0" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7jW5$X5U$Xo" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="ANqTy7p3j$" role="1B3o_S" />
     <node concept="3uibUv" id="ANqTy7pHSe" role="1zkMxy">
       <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
@@ -769,6 +863,9 @@
       <node concept="2AHcQZ" id="ANqTy7pRP1" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+    </node>
+    <node concept="3uibUv" id="7jW5$X5U$wz" role="EKbjA">
+      <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
     </node>
   </node>
 </model>

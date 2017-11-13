@@ -4,8 +4,11 @@ package jetbrains.mps.ide.migration.check;
 
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.errors.item.ModuleReportItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class DependencyOnNotMigratedLibProblem extends Problem<SModule> {
+public class DependencyOnNotMigratedLibProblem extends Problem<SModule> implements ModuleReportItem {
   private SModule myDepModule;
   private SModule myProjectModule;
   public DependencyOnNotMigratedLibProblem(SModule projectModule, SModule depModule) {
@@ -15,6 +18,11 @@ public class DependencyOnNotMigratedLibProblem extends Problem<SModule> {
   }
   public String getMessage() {
     return "Module " + myProjectModule.getModuleName() + " depends on module " + myDepModule + ", which is not in project and is not fully migrated.";
+  }
+  @NotNull
+  @Override
+  public SModuleReference getModule() {
+    return getReason().getModuleReference();
   }
   @Override
   public String getCategory() {

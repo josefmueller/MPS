@@ -27,6 +27,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+/**
+ * implementors of this interface should extend one of the following interfaces: {@link NodeReportItem}, {@link ModelReportItem}, {@link ModuleReportItem}
+ */
 public interface IssueKindReportItem extends ReportItem {
 
   String getIssueKind();

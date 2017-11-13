@@ -4,8 +4,11 @@ package jetbrains.mps.ide.migration.check;
 
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.errors.item.ModuleReportItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class DependencyProblem extends Problem<SModule> {
+public class DependencyProblem extends Problem<SModule> implements ModuleReportItem {
   private String myMessage;
 
   public DependencyProblem(SModule module, String message) {
@@ -15,6 +18,12 @@ public class DependencyProblem extends Problem<SModule> {
 
   public String getMessage() {
     return myMessage;
+  }
+
+  @NotNull
+  @Override
+  public SModuleReference getModule() {
+    return getReason().getModuleReference();
   }
 
   public String getCategory() {
