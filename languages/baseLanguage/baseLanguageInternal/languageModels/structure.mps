@@ -270,9 +270,6 @@
       <property role="IQ2ns" value="1177590086595" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="PrWs8" id="hAZk9ND" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
-    </node>
   </node>
   <node concept="1TIwiD" id="htzuhxA">
     <property role="TrG5h" value="TypeHintExpression" />
