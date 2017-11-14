@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import java.util.Iterator;
 import jetbrains.mps.textgen.trace.DebugInfo;
@@ -58,7 +57,7 @@ public class JavaFileOpener_RequestHandler extends HttpRequestHandlerBase {
       if (project_serialized != null) {
         this.project = HttpSupportUtil.getProjectByName(project_serialized);
       } else {
-        this.project = ProjectManager.getInstance().getOpenedProjects().get(0);
+        this.project = HttpSupportUtil.getSomeProject();
       }
     }
     myCorrectRequest = correctRequest;

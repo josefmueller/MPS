@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.common.FileOpenUtil;
@@ -41,7 +40,7 @@ public class FileOpener_RequestHandler extends HttpRequestHandlerBase {
       if (project_serialized != null) {
         this.project = HttpSupportUtil.getProjectByName(project_serialized);
       } else {
-        this.project = ProjectManager.getInstance().getOpenedProjects().get(0);
+        this.project = HttpSupportUtil.getSomeProject();
       }
     }
     myCorrectRequest = correctRequest;

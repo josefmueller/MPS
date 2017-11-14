@@ -11,7 +11,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.ide.httpsupport.runtime.base.HttpSupportUtil;
-import jetbrains.mps.project.ProjectManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import io.netty.handler.codec.http.HttpResponseStatus;
@@ -43,7 +42,7 @@ public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
       if (project_serialized != null) {
         this.project = HttpSupportUtil.getProjectByName(project_serialized);
       } else {
-        this.project = ProjectManager.getInstance().getOpenedProjects().get(0);
+        this.project = HttpSupportUtil.getSomeProject();
       }
     }
     myCorrectRequest = correctRequest;

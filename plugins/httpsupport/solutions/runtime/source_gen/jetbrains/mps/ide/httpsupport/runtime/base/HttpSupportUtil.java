@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class HttpSupportUtil {
   private static final Logger LOG = LogManager.getLogger(HttpSupportUtil.class);
 
-
   @Nullable
   public static Project getProjectByName(@NotNull final String name) {
     List<Project> openedProjects = ProjectManager.getInstance().getOpenedProjects();
@@ -36,11 +35,19 @@ public class HttpSupportUtil {
     });
     if (project == null) {
       project = ListSequence.fromList(openedProjects).first();
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Can't find project '" + name + "'. Using '" + project.getName() + "' instead.");
+      if (project != null) {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("Can't find project '" + name + "'. Using '" + project.getName() + "' instead.");
+        }
       }
     }
     return project;
+  }
+
+  @Nullable
+  public static Project getSomeProject() {
+    List<Project> openedProjects = ProjectManager.getInstance().getOpenedProjects();
+    return ListSequence.fromList(openedProjects).first();
   }
 
   public static Integer parseInt(String str) {
