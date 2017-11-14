@@ -17,7 +17,6 @@ import java.util.Collections;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.tool.environment.Environment;
-import org.apache.log4j.Logger;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 
 public class GeneratorWorker extends BaseGeneratorWorker {
@@ -74,7 +73,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   protected Environment createEnvironment() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
     Environment environment = new MpsEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;

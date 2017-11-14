@@ -7,7 +7,6 @@ import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
-import org.apache.log4j.Logger;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
@@ -46,8 +45,6 @@ public class MigrationWorker extends MpsWorker {
 
     Environment environment = new IdeaEnvironment(cfg);
     environment.init();
-
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     return environment;
   }

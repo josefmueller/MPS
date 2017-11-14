@@ -33,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.MpsWorker" />
   </dependency>
 </dependenciesRoot>

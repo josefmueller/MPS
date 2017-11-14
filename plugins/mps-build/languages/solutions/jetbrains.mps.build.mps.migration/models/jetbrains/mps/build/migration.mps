@@ -342,26 +342,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="1oo0A63GDzl" role="3cqZAp" />
-        <node concept="3clFbF" id="60oBoEfyJC" role="3cqZAp">
-          <node concept="2OqwBi" id="60oBoEfyJD" role="3clFbG">
-            <node concept="2YIFZM" id="60oBoEfyJE" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
-              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
-            </node>
-            <node concept="liA8E" id="60oBoEfyJF" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
-              <node concept="2OqwBi" id="60oBoEfyJG" role="37wK5m">
-                <node concept="liA8E" id="60oBoEfyJH" role="2OqNvi">
-                  <ref role="37wK5l" to="asz6:KL8Aql8evO" resolve="getLogLevel" />
-                </node>
-                <node concept="37vLTw" id="60oBoEfyJI" role="2Oq$k0">
-                  <ref role="3cqZAo" to="jo3e:KL8Aqlj5lG" resolve="myWhatToDo" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1oo0A63GIdV" role="3cqZAp" />
         <node concept="3cpWs6" id="1oo0A63GIqE" role="3cqZAp">
           <node concept="37vLTw" id="1oo0A63GIMb" role="3cqZAk">
             <ref role="3cqZAo" node="7cOEBlPTW5Y" resolve="environment" />

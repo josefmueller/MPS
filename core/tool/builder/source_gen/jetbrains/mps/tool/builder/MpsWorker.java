@@ -78,9 +78,7 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    Environment env = MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
-    return env;
+    return MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
   }
 
   public EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
@@ -127,6 +125,7 @@ public abstract class MpsWorker {
 
   public void workFromMain() {
     try {
+      Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
       myEnvironment = createEnvironment();
       make();
 

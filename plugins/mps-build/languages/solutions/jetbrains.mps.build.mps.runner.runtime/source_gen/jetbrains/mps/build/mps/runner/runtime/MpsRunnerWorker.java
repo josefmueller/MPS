@@ -11,7 +11,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.tool.environment.Environment;
-import org.apache.log4j.Logger;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Method;
@@ -48,7 +47,6 @@ public class MpsRunnerWorker extends MpsWorker {
 
   @Override
   protected Environment createEnvironment() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
     Environment environment = new IdeaEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
