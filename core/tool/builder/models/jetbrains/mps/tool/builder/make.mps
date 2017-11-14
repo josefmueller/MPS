@@ -3779,8 +3779,8 @@
   </node>
   <node concept="312cEu" id="KL8Aqll4Th">
     <property role="TrG5h" value="GenTestWorker" />
-    <node concept="3uibUv" id="JPOEsuzOFe" role="1zkMxy">
-      <ref role="3uigEE" node="3GGnItM97js" resolve="GeneratorWorker" />
+    <node concept="3uibUv" id="4v8fy9OG$j5" role="1zkMxy">
+      <ref role="3uigEE" node="KL8Aqll4mG" resolve="BaseGeneratorWorker" />
     </node>
     <node concept="3Tm1VV" id="KL8Aqll4Ti" role="1B3o_S" />
     <node concept="312cEg" id="KL8Aqll4Tk" role="jymVt">
@@ -3858,7 +3858,7 @@
       </node>
       <node concept="3clFbS" id="KL8Aqll4TS" role="3clF47">
         <node concept="XkiVB" id="KL8Aqll4TT" role="3cqZAp">
-          <ref role="37wK5l" node="3GGnItM97pB" resolve="GeneratorWorker" />
+          <ref role="37wK5l" node="KL8Aqll4n0" resolve="BaseGeneratorWorker" />
           <node concept="37vLTw" id="2BHiRxglo$p" role="37wK5m">
             <ref role="3cqZAo" node="KL8Aqll4TO" resolve="whatToDo" />
           </node>

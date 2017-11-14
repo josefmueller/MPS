@@ -146,7 +146,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
-    <classNode extendsClassName="jetbrains.mps.tool.builder.make.GeneratorWorker" />
+    <classNode extendsClassName="jetbrains.mps.tool.builder.make.BaseGeneratorWorker" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.GeneratorWorker" file="GeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
