@@ -73,7 +73,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
           MessageCollectProcessor<ModelReportItem> collector = new MessageCollectProcessor<ModelReportItem>(false);
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
@@ -100,7 +100,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
           MessageCollectProcessor<NodeReportItem> collector = new MessageCollectProcessor<NodeReportItem>(false) {
             @Override
             protected String formatMessage(NodeReportItem problem) {
@@ -140,7 +140,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
           StringBuilder errorMessages = new StringBuilder();
           errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
           boolean withErrors = false;
@@ -176,7 +176,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         GenerationDependenciesCache genDeps = new GenerationDependenciesCache();
-        for (SModel sm : new CheckProjectStructure.TestsModelExtractor().excludeDoNoGenerate().getModels(myModule)) {
+        for (SModel sm : new CheckProjectStructure.TestsModelExtractor().excludeDoNoGenerate().excludeGenerators().getModels(myModule)) {
           SModule module = sm.getModule();
           if (module == null) {
             errors.add("Model without a module: " + sm.getReference().toString());

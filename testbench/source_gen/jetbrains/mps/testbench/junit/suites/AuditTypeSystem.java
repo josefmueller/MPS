@@ -32,7 +32,7 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
 
   @Test
   public void checkTypeSystem() {
-    Assume.assumeFalse(myModule instanceof Generator);
+    Assume.assumeFalse("typesystem checking is disabled for generators", myModule instanceof Generator);
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {

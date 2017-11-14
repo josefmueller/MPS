@@ -1617,8 +1617,11 @@
       <node concept="3clFbS" id="7X3$Ctw9fkm" role="3clF47">
         <node concept="3clFbF" id="EQtaUN5DCY" role="3cqZAp">
           <node concept="2YIFZM" id="EQtaUN5E7r" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assume.assumeFalse(boolean):void" resolve="assumeFalse" />
             <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
+            <ref role="37wK5l" to="rjhg:~Assume.assumeFalse(java.lang.String,boolean):void" resolve="assumeFalse" />
+            <node concept="Xl_RD" id="XJHGRPvUrJ" role="37wK5m">
+              <property role="Xl_RC" value="typesystem checking is disabled for generators" />
+            </node>
             <node concept="2ZW3vV" id="EQtaUN5F31" role="37wK5m">
               <node concept="3uibUv" id="EQtaUN5F6Z" role="2ZW6by">
                 <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
@@ -2484,9 +2487,14 @@
                 <node concept="3clFbS" id="3nWS7UXtvUP" role="1bW5cS">
                   <node concept="1DcWWT" id="2RMHhGkT$78" role="3cqZAp">
                     <node concept="2OqwBi" id="6nj_ILmEHyP" role="1DdaDG">
-                      <node concept="2ShNRf" id="6nj_ILmEGAZ" role="2Oq$k0">
-                        <node concept="HV5vD" id="6nj_ILmEHfc" role="2ShVmc">
-                          <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                      <node concept="2OqwBi" id="XJHGRPvsbY" role="2Oq$k0">
+                        <node concept="2ShNRf" id="6nj_ILmEGAZ" role="2Oq$k0">
+                          <node concept="HV5vD" id="6nj_ILmEHfc" role="2ShVmc">
+                            <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="XJHGRPvsF4" role="2OqNvi">
+                          <ref role="37wK5l" to="wsw7:6nj_ILmEp$R" resolve="excludeGenerators" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6nj_ILmEHZC" role="2OqNvi">
@@ -3118,9 +3126,14 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="6nj_ILmEJgD" role="1DdaDG">
-                      <node concept="2ShNRf" id="6nj_ILmEJgE" role="2Oq$k0">
-                        <node concept="HV5vD" id="6nj_ILmEJgF" role="2ShVmc">
-                          <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                      <node concept="2OqwBi" id="XJHGRPvtq$" role="2Oq$k0">
+                        <node concept="2ShNRf" id="6nj_ILmEJgE" role="2Oq$k0">
+                          <node concept="HV5vD" id="6nj_ILmEJgF" role="2ShVmc">
+                            <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="XJHGRPvueF" role="2OqNvi">
+                          <ref role="37wK5l" to="wsw7:6nj_ILmEp$R" resolve="excludeGenerators" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6nj_ILmEJgG" role="2OqNvi">
@@ -3501,9 +3514,14 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="6nj_ILmEKg5" role="1DdaDG">
-                      <node concept="2ShNRf" id="6nj_ILmEKg6" role="2Oq$k0">
-                        <node concept="HV5vD" id="6nj_ILmEKg7" role="2ShVmc">
-                          <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                      <node concept="2OqwBi" id="XJHGRPvvjs" role="2Oq$k0">
+                        <node concept="2ShNRf" id="6nj_ILmEKg6" role="2Oq$k0">
+                          <node concept="HV5vD" id="6nj_ILmEKg7" role="2ShVmc">
+                            <ref role="HV5vE" to="wsw7:7X3$Ctw7ww1" resolve="ModelCheckerBuilder.ModelsExtractorImpl" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="XJHGRPvvJ3" role="2OqNvi">
+                          <ref role="37wK5l" to="wsw7:6nj_ILmEp$R" resolve="excludeGenerators" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6nj_ILmEKg8" role="2OqNvi">
@@ -3911,14 +3929,19 @@
                       </node>
                     </node>
                     <node concept="2OqwBi" id="6nj_ILmEKXX" role="1DdaDG">
-                      <node concept="2OqwBi" id="6nj_ILmELHB" role="2Oq$k0">
-                        <node concept="2ShNRf" id="6nj_ILmEKXY" role="2Oq$k0">
-                          <node concept="HV5vD" id="6nj_ILmEKXZ" role="2ShVmc">
-                            <ref role="HV5vE" node="34euvBSIas3" resolve="CheckProjectStructure.TestsModelExtractor" />
+                      <node concept="2OqwBi" id="XJHGRPvyWG" role="2Oq$k0">
+                        <node concept="2OqwBi" id="6nj_ILmELHB" role="2Oq$k0">
+                          <node concept="2ShNRf" id="6nj_ILmEKXY" role="2Oq$k0">
+                            <node concept="HV5vD" id="XJHGRPv$Ca" role="2ShVmc">
+                              <ref role="HV5vE" node="34euvBSIas3" resolve="CheckProjectStructure.TestsModelExtractor" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="6nj_ILmEMcb" role="2OqNvi">
+                            <ref role="37wK5l" node="6nj_ILmEmho" resolve="excludeDoNoGenerate" />
                           </node>
                         </node>
-                        <node concept="liA8E" id="6nj_ILmEMcb" role="2OqNvi">
-                          <ref role="37wK5l" node="6nj_ILmEmho" resolve="excludeDoNoGenerate" />
+                        <node concept="liA8E" id="XJHGRPvzuO" role="2OqNvi">
+                          <ref role="37wK5l" to="wsw7:6nj_ILmEp$R" resolve="excludeGenerators" />
                         </node>
                       </node>
                       <node concept="liA8E" id="6nj_ILmEKY0" role="2OqNvi">
