@@ -2847,19 +2847,6 @@
       <ref role="3uigEE" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
     </node>
     <node concept="3Tm1VV" id="KL8Aqll4mI" role="1B3o_S" />
-    <node concept="312cEg" id="KL8Aqll4mJ" role="jymVt">
-      <property role="TrG5h" value="myMessageHandler" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="KL8Aqll4mK" role="1tU5fm">
-        <ref role="3uigEE" node="KL8Aqll4xp" resolve="BaseGeneratorWorker.MyMessageHandler" />
-      </node>
-      <node concept="3Tm6S6" id="KL8Aqll4mL" role="1B3o_S" />
-      <node concept="2ShNRf" id="KL8Aqll4mM" role="33vP2m">
-        <node concept="1pGfFk" id="KL8Aqll4mN" role="2ShVmc">
-          <ref role="37wK5l" node="KL8Aqll4xE" resolve="BaseGeneratorWorker.MyMessageHandler" />
-        </node>
-      </node>
-    </node>
     <node concept="3clFbW" id="KL8Aqll4n0" role="jymVt">
       <node concept="3Tm1VV" id="KL8Aqll4n1" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqll4n2" role="3clF45" />
@@ -2888,73 +2875,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3pEStHM64s$" role="jymVt" />
-    <node concept="3clFb_" id="KL8Aqll4nb" role="jymVt">
-      <property role="TrG5h" value="getMyMessageHandler" />
-      <node concept="3Tmbuc" id="KL8Aqll4nc" role="1B3o_S" />
-      <node concept="3clFbS" id="KL8Aqll4nd" role="3clF47">
-        <node concept="3clFbF" id="KL8Aqll4ne" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeudHq" role="3clFbG">
-            <ref role="3cqZAo" node="KL8Aqll4mJ" resolve="myMessageHandler" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="KL8Aqll4ng" role="3clF45">
-        <ref role="3uigEE" node="KL8Aqll4xp" resolve="BaseGeneratorWorker.MyMessageHandler" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3pEStHM63f0" role="jymVt" />
-    <node concept="3clFb_" id="KL8Aqll4nh" role="jymVt">
-      <property role="TrG5h" value="executeTask" />
-      <node concept="3Tmbuc" id="KL8Aqll4ni" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aqll4nj" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aqll4nk" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="KL8Aqll4nl" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="KL8Aqll4nm" role="3clF46">
-        <property role="TrG5h" value="go" />
-        <node concept="3uibUv" id="KL8Aqll4nn" role="1tU5fm">
-          <ref role="3uigEE" to="jo3e:KL8Aqlj5Dv" resolve="MpsWorker.ObjectsToProcess" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="KL8Aqll4no" role="3clF47">
-        <node concept="3clFbF" id="KL8Aqll4np" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyz97C" role="3clFbG">
-            <ref role="37wK5l" node="KL8Aqll4n_" resolve="setGenerationProperties" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="KL8Aqll4nr" role="3cqZAp">
-          <node concept="2OqwBi" id="KL8Aqll4ns" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxgmKGT" role="2Oq$k0">
-              <ref role="3cqZAo" node="KL8Aqll4nm" resolve="go" />
-            </node>
-            <node concept="liA8E" id="KL8Aqll4nu" role="2OqNvi">
-              <ref role="37wK5l" to="jo3e:KL8Aqlj5EG" resolve="hasAnythingToGenerate" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="KL8Aqll4nv" role="3clFbx">
-            <node concept="3clFbF" id="KL8Aqll4nw" role="3cqZAp">
-              <node concept="1rXfSq" id="4hiugqyzcMa" role="3clFbG">
-                <ref role="37wK5l" node="KL8Aqll4o$" resolve="generate" />
-                <node concept="37vLTw" id="2BHiRxgkX4B" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aqll4nk" resolve="project" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmaDu" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aqll4nm" resolve="go" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="KL8Aqll4n$" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3pEStHM65Ny" role="jymVt" />
     <node concept="3clFb_" id="KL8Aqll4n_" role="jymVt">
       <property role="TrG5h" value="setGenerationProperties" />
       <node concept="3Tmbuc" id="5reM9AD5odr" role="1B3o_S" />
@@ -3583,8 +3503,10 @@
                 <node concept="37vLTw" id="2BjwmTy0Sx$" role="37wK5m">
                   <ref role="3cqZAo" node="KL8Aqll4oB" resolve="project" />
                 </node>
-                <node concept="37vLTw" id="3pzB6wMVHV_" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aqll4mJ" resolve="myMessageHandler" />
+                <node concept="2ShNRf" id="KL8Aqll4mM" role="37wK5m">
+                  <node concept="1pGfFk" id="KL8Aqll4mN" role="2ShVmc">
+                    <ref role="37wK5l" node="KL8Aqll4xE" resolve="BaseGeneratorWorker.MyMessageHandler" />
+                  </node>
                 </node>
                 <node concept="3clFbT" id="3pzB6wMVHVA" role="37wK5m">
                   <property role="3clFbU" value="true" />

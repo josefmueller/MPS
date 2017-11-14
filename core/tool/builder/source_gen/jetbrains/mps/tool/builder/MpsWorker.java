@@ -162,7 +162,6 @@ public abstract class MpsWorker {
       });
     }
   }
-  protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
   protected abstract void showStatistic();
   protected StringBuffer formatErrorsReport(String taskName) {
     StringBuffer sb = new StringBuffer();

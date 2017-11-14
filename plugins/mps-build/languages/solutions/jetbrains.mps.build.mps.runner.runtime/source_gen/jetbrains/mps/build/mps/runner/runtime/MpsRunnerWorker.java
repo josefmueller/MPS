@@ -99,8 +99,6 @@ public class MpsRunnerWorker extends GeneratorWorker {
     runner.workFromMain();
   }
 
-  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
-  }
   protected void showStatistic() {
   }
 }

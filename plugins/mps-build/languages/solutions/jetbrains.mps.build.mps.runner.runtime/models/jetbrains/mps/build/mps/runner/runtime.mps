@@ -82,7 +82,6 @@
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
-        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -805,28 +804,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1Vi5mb_nfGf" role="jymVt" />
-    <node concept="3clFb_" id="1Vi5mb_nf6o" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="executeTask" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="1Vi5mb_nf6p" role="1B3o_S" />
-      <node concept="3cqZAl" id="1Vi5mb_nf6q" role="3clF45" />
-      <node concept="37vLTG" id="1Vi5mb_nf6r" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="1Vi5mb_nf6s" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1Vi5mb_nf6t" role="3clF46">
-        <property role="TrG5h" value="go" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="1Vi5mb_nf6u" role="1tU5fm">
-          <ref role="3uigEE" to="jo3e:KL8Aqlj5Dv" resolve="MpsWorker.ObjectsToProcess" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="1Vi5mb_nf6w" role="3clF47" />
-    </node>
     <node concept="3clFb_" id="1Vi5mb_nf6x" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="showStatistic" />

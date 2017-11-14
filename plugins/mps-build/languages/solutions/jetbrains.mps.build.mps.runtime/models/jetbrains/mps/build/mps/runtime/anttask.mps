@@ -1233,32 +1233,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1vtSNIfIAHF" role="jymVt" />
-    <node concept="3clFb_" id="5Npqc2YfUoI" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="executeTask" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="5Npqc2YfUoJ" role="1B3o_S" />
-      <node concept="3cqZAl" id="5Npqc2YfUoK" role="3clF45" />
-      <node concept="37vLTG" id="5Npqc2YfUoL" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="5Npqc2YfUoM" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5Npqc2YfUoN" role="3clF46">
-        <property role="TrG5h" value="go" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="5Npqc2YfUoO" role="1tU5fm">
-          <ref role="3uigEE" to="jo3e:KL8Aqlj5Dv" resolve="MpsWorker.ObjectsToProcess" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="5Npqc2YfUoP" role="3clF47" />
-      <node concept="2AHcQZ" id="3tYsUK_Sfv8" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1vtSNIfIAkv" role="jymVt" />
     <node concept="3clFb_" id="5Npqc2YfUoQ" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="showStatistic" />

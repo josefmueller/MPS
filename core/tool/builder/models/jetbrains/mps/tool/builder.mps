@@ -1281,28 +1281,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="KL8Aqlj5pw" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="executeTask" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="KL8Aqlj5px" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aqlj5py" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aqlj5pz" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aqlj5p$" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="KL8Aqlj5p_" role="3clF46">
-        <property role="TrG5h" value="go" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aqlj5pA" role="1tU5fm">
-          <ref role="3uigEE" node="KL8Aqlj5Dv" resolve="MpsWorker.ObjectsToProcess" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="KL8Aqlj5pB" role="3clF47" />
-    </node>
     <node concept="3clFb_" id="KL8Aqlj5pC" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="showStatistic" />
@@ -3581,29 +3559,6 @@
       <node concept="3cqZAl" id="1oo0A63FX9j" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="60oBoEf$xC" role="jymVt" />
-    <node concept="3clFb_" id="60oBoEf98d" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="executeTask" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="60oBoEf98e" role="1B3o_S" />
-      <node concept="3cqZAl" id="60oBoEf98f" role="3clF45" />
-      <node concept="37vLTG" id="60oBoEf98g" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="60oBoEf98h" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="60oBoEf98i" role="3clF46">
-        <property role="TrG5h" value="go" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="60oBoEf98j" role="1tU5fm">
-          <ref role="3uigEE" node="KL8Aqlj5Dv" resolve="MpsWorker.ObjectsToProcess" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="60oBoEf98l" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="60oBoEf9$X" role="jymVt" />
     <node concept="3clFb_" id="60oBoEf98m" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="showStatistic" />

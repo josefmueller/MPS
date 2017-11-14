@@ -35,10 +35,6 @@ public class GenModuleXmlWorker extends MpsWorker {
   }
 
   @Override
-  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
-  }
-
-  @Override
   protected void showStatistic() {
 
   }

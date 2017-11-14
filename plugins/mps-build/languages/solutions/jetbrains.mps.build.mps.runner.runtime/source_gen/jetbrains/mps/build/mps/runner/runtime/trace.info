@@ -46,8 +46,7 @@
       <node id="9171714904341540092" at="92,45,93,30" concept="5" />
       <node id="4271560773253816220" at="97,42,98,124" concept="4" />
       <node id="4271560773253816233" at="98,124,99,26" concept="1" />
-      <node id="2220861080746127768" at="102,0,104,0" concept="3" trace="executeTask#(Ljetbrains/mps/project/Project;Ljetbrains/mps/tool/builder/MpsWorker/ObjectsToProcess;)V" />
-      <node id="2220861080746127777" at="104,0,106,0" concept="3" trace="showStatistic#()V" />
+      <node id="2220861080746127777" at="102,0,104,0" concept="3" trace="showStatistic#()V" />
       <node id="4271560773252667308" at="25,0,28,0" concept="0" trace="MpsRunnerWorker#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;)V" />
       <node id="4271560773252705987" at="39,0,42,0" concept="3" trace="run#()V" />
       <node id="4271560773254306802" at="44,73,47,5" concept="2" />
@@ -66,8 +65,7 @@
         <var name="e" id="6102524510012717470" />
       </scope>
       <scope id="6102524510012717472" at="67,40,67,40" />
-      <scope id="2220861080746127776" at="102,78,102,78" />
-      <scope id="2220861080746127781" at="104,34,104,34" />
+      <scope id="2220861080746127781" at="102,34,102,34" />
       <scope id="4271560773252667315" at="25,71,26,28" />
       <scope id="4271560773252705988" at="39,25,40,68" />
       <scope id="4271560773254306804" at="45,26,46,78" />
@@ -91,11 +89,7 @@
       <scope id="4271560773253816219" at="97,42,99,26">
         <var name="runner" id="4271560773253816221" />
       </scope>
-      <scope id="2220861080746127768" at="102,0,104,0">
-        <var name="go" id="2220861080746127773" />
-        <var name="project" id="2220861080746127771" />
-      </scope>
-      <scope id="2220861080746127777" at="104,0,106,0" />
+      <scope id="2220861080746127777" at="102,0,104,0" />
       <scope id="4271560773252667308" at="25,0,28,0">
         <var name="logger" id="4271560773252667313" />
         <var name="whatToDo" id="4271560773252667311" />
@@ -135,7 +129,7 @@
       </scope>
       <unit id="4271560773252705987" at="38,48,42,5" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker$1" />
       <unit id="6132171475558674764" at="86,0,96,0" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker$MyEnvironment" />
-      <unit id="4271560773252657739" at="24,0,107,0" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+      <unit id="4271560773252657739" at="24,0,105,0" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
     </file>
   </root>
 </debug-info>
