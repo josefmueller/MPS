@@ -22,10 +22,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
+import java.net.URL;
+import java.net.MalformedURLException;
+import org.apache.log4j.Level;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
 import java.util.Set;
-import jetbrains.mps.util.PathManager;
 
 /**
  * Base class for all environments, represents a caching environment.
@@ -38,12 +42,13 @@ public abstract class EnvironmentBase implements Environment {
   private static final Logger LOG = LogManager.getLogger(EnvironmentBase.class);
   private static final String PLUGINS_PATH = "plugin.path";
 
+  protected final EnvironmentConfig myConfig;
   private boolean myInitialized;
   private int myRefCount;
-  protected final EnvironmentConfig myConfig;
   private LibraryInitializer myLibInitializer;
   private PathMacrosProvider myMacrosProvider;
   private final ProjectContainer myContainer = new ProjectContainer();
+  private ClassLoader myRootClassLoader = null;
 
   public static void initializeLog4j() {
     new Log4jInitializer().init();
@@ -63,6 +68,7 @@ public abstract class EnvironmentBase implements Environment {
     }
     myLibInitializer = libInitializer;
     initMacros();
+    myRootClassLoader = createRootClassLoader();
     initLibraries();
     EnvironmentContainer.setCurrent(this);
     retain();
@@ -97,7 +103,7 @@ public abstract class EnvironmentBase implements Environment {
       LOG.info("Initializing libraries");
     }
     final List<LibraryContributor> libContribs = ListSequence.fromList(new ArrayList<LibraryContributor>());
-    LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, rootClassLoader());
+    LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, myRootClassLoader);
     if (SetSequence.fromSet(myConfig.getLibs()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
     }
@@ -114,7 +120,47 @@ public abstract class EnvironmentBase implements Environment {
    * 2. As a root class loader for dumb idea plugin facet
    */
   @Nullable
-  protected abstract ClassLoader rootClassLoader();
+  protected final ClassLoader getRootClassLoader() {
+    return myRootClassLoader;
+  }
+
+  @Nullable
+  protected ClassLoader createRootClassLoader() {
+    List<URL> classpath = ListSequence.fromList(new ArrayList<URL>());
+    for (String cp : myConfig.getPluginClassPath()) {
+      File libJar = new File(cp);
+      if (!(libJar.exists())) {
+        continue;
+      }
+
+      if (libJar.isFile()) {
+        try {
+          ListSequence.fromList(classpath).addElement(libJar.toURI().toURL());
+        } catch (MalformedURLException e) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("", e);
+          }
+        }
+      } else {
+        File lib = new File(cp + File.separator + "lib");
+        if (!(lib.exists()) || !(lib.isDirectory())) {
+          continue;
+        }
+
+        for (File f : lib.listFiles(PathManager.JAR_FILE_FILTER)) {
+          try {
+            ListSequence.fromList(classpath).addElement(f.toURI().toURL());
+          } catch (MalformedURLException e) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("", e);
+            }
+          }
+        }
+      }
+    }
+
+    return new UrlClassLoader(classpath, LibraryInitializer.class.getClassLoader());
+  }
 
   @Override
   public synchronized void retain() {

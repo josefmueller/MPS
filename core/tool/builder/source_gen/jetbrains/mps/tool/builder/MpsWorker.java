@@ -17,6 +17,7 @@ import jetbrains.mps.tool.common.RepositoryDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
+import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -82,7 +83,7 @@ public abstract class MpsWorker {
     return env;
   }
 
-  public final EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
+  public EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
     RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
     if (repo != null) {
@@ -111,6 +112,14 @@ public abstract class MpsWorker {
         warning("Library " + jar + " does not exist.");
       }
       config = config.addLib(jar);
+    }
+
+    // todo make it a leagl part of the whatToDo if possible 
+    String pluginsPath = whatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
+    if (pluginsPath != null) {
+      for (String cp : pluginsPath.split(File.pathSeparator)) {
+        config.addPluginClassPath(cp);
+      }
     }
 
     return config;

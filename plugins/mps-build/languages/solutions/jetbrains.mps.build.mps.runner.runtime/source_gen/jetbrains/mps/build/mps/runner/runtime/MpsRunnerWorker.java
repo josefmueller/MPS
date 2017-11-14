@@ -13,12 +13,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.tool.environment.Environment;
 import org.apache.log4j.Logger;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.io.File;
 
 public class MpsRunnerWorker extends GeneratorWorker {
@@ -52,7 +50,7 @@ public class MpsRunnerWorker extends GeneratorWorker {
   @Override
   protected Environment createEnvironment() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    Environment environment = new MpsRunnerWorker.MyEnvironment(createEnvironmentConfig(myWhatToDo));
+    Environment environment = new IdeaEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
   }
@@ -81,17 +79,6 @@ public class MpsRunnerWorker extends GeneratorWorker {
       e.printStackTrace();
     }
     return true;
-  }
-
-  protected class MyEnvironment extends IdeaEnvironment {
-    public MyEnvironment(@NotNull EnvironmentConfig config) {
-      super(config);
-    }
-
-    @Override
-    protected ClassLoader rootClassLoader() {
-      return getClassLoader();
-    }
   }
 
   public static void main(String[] args) {

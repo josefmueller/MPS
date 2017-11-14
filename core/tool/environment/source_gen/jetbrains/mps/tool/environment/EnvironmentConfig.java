@@ -24,6 +24,7 @@ public class EnvironmentConfig {
   private final Set<PluginDescriptor> myPlugins = SetSequence.fromSet(new LinkedHashSet<PluginDescriptor>());
   private final Map<String, File> myMacros = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
   private final Set<String> myLibs = SetSequence.fromSet(new LinkedHashSet<String>());
+  private final Set<String> myPluginClassPath = SetSequence.fromSet(new LinkedHashSet<String>());
   private boolean myLoadPluginsByDefault = false;
 
   private EnvironmentConfig() {
@@ -49,6 +50,10 @@ public class EnvironmentConfig {
     return SetSequence.fromSet(myLibs).asUnmodifiable();
   }
 
+  public Set<String> getPluginClassPath() {
+    return myPluginClassPath;
+  }
+
   public EnvironmentConfig addPlugin(String path, String id) {
     SetSequence.fromSet(myPlugins).addElement(new PluginDescriptor(path, id));
     return this;
@@ -62,6 +67,10 @@ public class EnvironmentConfig {
   public EnvironmentConfig addLib(String libPath) {
     SetSequence.fromSet(myLibs).addElement(libPath);
     return this;
+  }
+
+  public void addPluginClassPath(String cp) {
+    SetSequence.fromSet(myPluginClassPath).addElement(cp);
   }
 
   public EnvironmentConfig withDefaultSamples() {
