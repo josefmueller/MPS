@@ -206,7 +206,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -249,6 +248,7 @@
   </registry>
   <node concept="312cEu" id="6rx4kZDk5Br">
     <property role="TrG5h" value="IdeaEnvironment" />
+    <property role="1EXbeo" value="true" />
     <node concept="3UR2Jj" id="1w0tHxV50Bo" role="lGtFl">
       <node concept="TZ5HA" id="1w0tHxV50Bp" role="TZ5H$">
         <node concept="1dT_AC" id="1w0tHxV50Bq" role="1dT_Ay">
@@ -302,7 +302,7 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3Tmbuc" id="6LlhC3WKiOP" role="1B3o_S" />
+      <node concept="3Tm1VV" id="3x_lgCAljIS" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6LlhC3WJXZg" role="jymVt" />
     <node concept="2YIFZL" id="6LlhC3WJZzD" role="jymVt">

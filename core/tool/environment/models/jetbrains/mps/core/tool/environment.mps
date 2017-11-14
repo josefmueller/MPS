@@ -29,8 +29,6 @@
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
-    <import index="jo3e" ref="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" />
-    <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -1589,6 +1587,7 @@
   </node>
   <node concept="312cEu" id="6rx4kZDk6yp">
     <property role="TrG5h" value="MpsEnvironment" />
+    <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="11RXB4md7v2" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1630,7 +1629,7 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3Tmbuc" id="6LlhC3WKir1" role="1B3o_S" />
+      <node concept="3Tm1VV" id="3x_lgCAloNG" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6LlhC3WJXZg" role="jymVt" />
     <node concept="2YIFZL" id="6LlhC3WJZzD" role="jymVt">
