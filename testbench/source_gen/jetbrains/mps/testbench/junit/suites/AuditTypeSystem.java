@@ -6,8 +6,6 @@ import org.junit.ClassRule;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
-import org.junit.Assume;
-import jetbrains.mps.smodel.Generator;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -32,7 +30,6 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
 
   @Test
   public void checkTypeSystem() {
-    Assume.assumeFalse("typesystem checking is disabled for generators", myModule instanceof Generator);
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
