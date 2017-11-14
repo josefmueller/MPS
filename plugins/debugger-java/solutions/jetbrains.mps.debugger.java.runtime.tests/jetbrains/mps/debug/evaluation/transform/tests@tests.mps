@@ -331,6 +331,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
     </language>
     <language id="7da4580f-9d75-4603-8162-51a896d78375" name="jetbrains.mps.debugger.java.evaluation">
       <concept id="4544608336420691672" name="jetbrains.mps.debugger.java.evaluation.structure.DebuggedType" flags="in" index="wGYZG">
@@ -2660,6 +2661,7 @@
           </node>
         </node>
       </node>
+      <node concept="15s5l7" id="3612dezLa9F" role="lGtFl" />
     </node>
     <node concept="1qefOq" id="4NKeWDvIyTW" role="1SKRRt">
       <node concept="3clFbS" id="4NKeWDvIyTY" role="1qenE9">
@@ -9233,6 +9235,7 @@
           </node>
         </node>
       </node>
+      <node concept="15s5l7" id="3612dezLcTc" role="lGtFl" />
     </node>
     <node concept="1qefOq" id="3JXev$1C332" role="1SKRRt">
       <node concept="3clFbS" id="3JXev$1C334" role="1qenE9">

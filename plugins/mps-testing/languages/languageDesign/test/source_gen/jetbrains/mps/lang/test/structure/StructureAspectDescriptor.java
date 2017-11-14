@@ -887,6 +887,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForTestNode() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.test", "TestNode", 0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L);
     b.origin("r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/1216989428737");
     b.aggregate("nodeToCheck", 0x11b5a397b92L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).ordered(true).multiple(false).origin("1216989461394").done();
     b.alias("test node");

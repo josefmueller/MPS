@@ -20,7 +20,9 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ" />
+      <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
+        <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+      </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
@@ -276,6 +278,7 @@
     </node>
     <node concept="3Tm1VV" id="h9B3WBN" role="1B3o_S" />
     <node concept="2AHcQZ" id="7THlWl_mJc3" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       <node concept="2b32R4" id="7THlWl_mJc5" role="lGtFl">
         <node concept="3JmXsc" id="7THlWl_mJc6" role="2P8S$">
           <node concept="3clFbS" id="7THlWl_mJc7" role="2VODD2">
@@ -624,6 +627,7 @@
       </node>
       <node concept="3Tm1VV" id="h9AOQsg" role="1B3o_S" />
       <node concept="2AHcQZ" id="7THlWl_mYjQ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         <node concept="2b32R4" id="7THlWl_mYjS" role="lGtFl">
           <node concept="3JmXsc" id="7THlWl_mYjT" role="2P8S$">
             <node concept="3clFbS" id="7THlWl_mYjU" role="2VODD2">
