@@ -15,10 +15,10 @@
     <file name="QueriesGenerated.java">
       <node id="648136571573522028" at="65,109,66,251" concept="0" />
       <node id="648136571573533223" at="68,109,69,247" concept="0" />
-      <node id="6164634611271252516" at="116,108,117,190" concept="0" />
+      <node id="3567142084943367793" at="116,108,117,190" concept="0" />
       <scope id="6164634611271252528" at="65,109,66,251" />
       <scope id="6164634611271252588" at="68,109,69,247" />
-      <scope id="6164634611271252515" at="116,108,117,190" />
+      <scope id="3567142084943367787" at="116,108,117,190" />
     </file>
   </root>
   <root nodeRef="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)/2840424593938271879">

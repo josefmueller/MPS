@@ -273,13 +273,6 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
-      <concept id="2822369470875160718" name="jetbrains.mps.lang.smodel.query.structure.NodesExpression" flags="ng" index="2Jgcaq" />
-      <concept id="4307205004131544317" name="jetbrains.mps.lang.smodel.query.structure.QueryExpression" flags="ng" index="1dNuzs">
-        <child id="4307205004132279624" name="parameter" index="1dOa5D" />
-      </concept>
-      <concept id="4307205004132277753" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterList" flags="ng" index="1dO9Bo" />
-    </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
@@ -288,7 +281,11 @@
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
     </language>
@@ -1086,17 +1083,19 @@
               <node concept="1Bd96e" id="7OcVEq$tODe" role="2OqNvi">
                 <node concept="2OqwBi" id="32notsQnRkA" role="1BdPVh">
                   <node concept="2OqwBi" id="32notsQjdfx" role="2Oq$k0">
-                    <node concept="2Jgcaq" id="7OcVEq$tQ5_" role="2Oq$k0">
-                      <node concept="1dO9Bo" id="7OcVEq$tQ5A" role="1dOa5D" />
-                      <node concept="29HgVG" id="7OcVEq$tQ5B" role="lGtFl">
-                        <node concept="3NFfHV" id="7OcVEq$tQ5C" role="3NFExx">
-                          <node concept="3clFbS" id="7OcVEq$tQ5D" role="2VODD2">
-                            <node concept="3clFbF" id="7OcVEq$tQ5E" role="3cqZAp">
-                              <node concept="2OqwBi" id="7OcVEq$tQ5F" role="3clFbG">
-                                <node concept="30H73N" id="7OcVEq$tQ5G" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="7OcVEq$tQ5H" role="2OqNvi">
+                    <node concept="2ShNRf" id="3612de$p2MG" role="2Oq$k0">
+                      <node concept="Tc6Ow" id="3612de$p6QG" role="2ShVmc">
+                        <node concept="3Tqbb2" id="3612de$p9eF" role="HW$YZ" />
+                      </node>
+                      <node concept="29HgVG" id="3612de$pbo$" role="lGtFl">
+                        <node concept="3NFfHV" id="3612de$pbo_" role="3NFExx">
+                          <node concept="3clFbS" id="3612de$pboA" role="2VODD2">
+                            <node concept="3clFbF" id="3612de$pboG" role="3cqZAp">
+                              <node concept="2OqwBi" id="3612de$pboB" role="3clFbG">
+                                <node concept="3TrEf2" id="3612de$pboE" role="2OqNvi">
                                   <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
                                 </node>
+                                <node concept="30H73N" id="3612de$pboF" role="2Oq$k0" />
                               </node>
                             </node>
                           </node>

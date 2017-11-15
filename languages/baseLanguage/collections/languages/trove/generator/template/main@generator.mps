@@ -252,7 +252,9 @@
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+        <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -400,7 +402,9 @@
           <node concept="3clFbF" id="4LiorovoZ4f" role="3cqZAp">
             <node concept="2ShNRf" id="4LiorovoZ4g" role="3clFbG">
               <node concept="Tc6Ow" id="4LiorovoZ4H" role="2ShVmc">
-                <node concept="3Tqbb2" id="4LiorovoZ5_" role="HW$YZ" />
+                <node concept="3Tqbb2" id="4LiorovoZ5_" role="HW$YZ">
+                  <ref role="ehGHo" to="tpee:gWaQbR$" resolve="PrimitiveType" />
+                </node>
                 <node concept="2c44tf" id="4LiorovoZ6t" role="HW$Y0">
                   <node concept="10PrrI" id="4LiorovoZ7L" role="2c44tc" />
                 </node>
