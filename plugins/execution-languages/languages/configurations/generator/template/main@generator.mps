@@ -961,8 +961,29 @@
           </node>
         </node>
       </node>
-      <node concept="gft3U" id="4JYgQwOw6BL" role="1lVwrX">
-        <node concept="Xjq3P" id="4JYgQwOw7Hf" role="gfFT$" />
+      <node concept="1Koe21" id="3612de$RaDH" role="1lVwrX">
+        <node concept="312cEu" id="3612de$RaN6" role="1Koe22">
+          <property role="TrG5h" value="AClass" />
+          <node concept="3clFb_" id="3612de$Rb4_" role="jymVt">
+            <property role="TrG5h" value="meth" />
+            <node concept="3cqZAl" id="3612de$Rb4B" role="3clF45" />
+            <node concept="3Tm1VV" id="3612de$Rb4C" role="1B3o_S" />
+            <node concept="3clFbS" id="3612de$Rb4D" role="3clF47">
+              <node concept="3cpWs8" id="3612de$RhBX" role="3cqZAp">
+                <node concept="3cpWsn" id="3612de$RhBY" role="3cpWs9">
+                  <property role="TrG5h" value="o" />
+                  <node concept="3uibUv" id="3612de$RhKv" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="Xjq3P" id="3612de$RhBZ" role="33vP2m">
+                    <node concept="raruj" id="3612de$RhC0" role="lGtFl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="3612de$RaN7" role="1B3o_S" />
+        </node>
       </node>
     </node>
     <node concept="3aamgX" id="6X8r2MLf4br" role="3acgRq">
@@ -1364,6 +1385,12 @@
           <node concept="3clFbW" id="4IJMzQ1z1Zi" role="jymVt">
             <node concept="3Tm1VV" id="4IJMzQ1z1Zk" role="1B3o_S" />
             <node concept="3clFbS" id="4IJMzQ1z1Zl" role="3clF47">
+              <node concept="XkiVB" id="3612de$RiyX" role="3cqZAp">
+                <ref role="37wK5l" to="dj99:~RunConfigurationBase.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.execution.configurations.ConfigurationFactory,java.lang.String)" resolve="RunConfigurationBase" />
+                <node concept="10Nm6u" id="3612de$RiMu" role="37wK5m" />
+                <node concept="10Nm6u" id="3612de$Rj27" role="37wK5m" />
+                <node concept="10Nm6u" id="3612de$RjhO" role="37wK5m" />
+              </node>
               <node concept="3clFbF" id="4IJMzQ1z1Zr" role="3cqZAp">
                 <node concept="2OqwBi" id="4IJMzQ1z1Zt" role="3clFbG">
                   <node concept="Xjq3P" id="4IJMzQ1z1Zs" role="2Oq$k0" />

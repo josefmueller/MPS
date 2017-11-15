@@ -38,9 +38,9 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -182,9 +182,6 @@
       <concept id="6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" flags="ng" index="2pNUuL">
         <property id="6666499814681447926" name="attrName" index="2pNUuO" />
         <child id="6666499814681541918" name="value" index="2pMdts" />
-      </concept>
-      <concept id="1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" flags="nn" index="3o6iSG">
-        <property id="1622293396948953704" name="value" index="3o6i5n" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -893,6 +890,7 @@
     <property role="3GE5qa" value="Custom" />
     <ref role="3gUMe" to="tgbt:qKmr2orM1i" resolve="ProjectPluginDeclaration" />
     <node concept="3clFb_" id="OZKIiQyzmm" role="13RCb5">
+      <property role="TrG5h" value="AClass" />
       <node concept="3cqZAl" id="OZKIiQyzmn" role="3clF45" />
       <node concept="3Tm1VV" id="OZKIiQyzmo" role="1B3o_S" />
       <node concept="3clFbS" id="OZKIiQyzmp" role="3clF47">
@@ -926,7 +924,7 @@
                 </node>
                 <node concept="2ShNRf" id="hDX78d_" role="33vP2m">
                   <node concept="1pGfFk" id="hDX78dB" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="37wK5l" node="hFOzoKy" resolve="GeneratedCustomProjectPlugin" />
                     <node concept="1ZhdrF" id="hFOywCo" role="lGtFl">
                       <property role="2qtEX8" value="baseMethodDeclaration" />
                       <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
@@ -984,6 +982,7 @@
     <property role="3GE5qa" value="Custom" />
     <ref role="3gUMe" to="tgbt:qKmr2orM1o" resolve="ApplicationPluginDeclaration" />
     <node concept="3clFb_" id="OZKIiQyzn4" role="13RCb5">
+      <property role="TrG5h" value="AClass" />
       <node concept="3cqZAl" id="OZKIiQyzn5" role="3clF45" />
       <node concept="3Tm1VV" id="OZKIiQyzn6" role="1B3o_S" />
       <node concept="3clFbS" id="OZKIiQyzn7" role="3clF47">
@@ -1008,7 +1007,7 @@
                 </node>
                 <node concept="2ShNRf" id="OZKIiQyzni" role="33vP2m">
                   <node concept="1pGfFk" id="OZKIiQyznj" role="2ShVmc">
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="37wK5l" node="hFOzzvq" resolve="GeneratedCustomApplicationPlugin" />
                     <node concept="1ZhdrF" id="OZKIiQyznk" role="lGtFl">
                       <property role="2qtEX8" value="baseMethodDeclaration" />
                       <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
@@ -3421,9 +3420,6 @@
               <property role="2pMdty" value="com.intellij" />
             </node>
           </node>
-        </node>
-        <node concept="3o6iSG" id="6TFj$ETovaT" role="gfFT$">
-          <property role="3o6i5n" value=" " />
         </node>
       </node>
       <node concept="30G5F_" id="6TFj$EThER1" role="30HLyM">

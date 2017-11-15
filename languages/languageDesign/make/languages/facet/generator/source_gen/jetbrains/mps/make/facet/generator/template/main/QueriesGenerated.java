@@ -367,16 +367,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_7320828025189345730(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
   }
-  public static SNode mapSrcMacro_mapper_8170824575195255808(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_mapper_3567142084950782013(final MapSrcMacroContext _context) {
     return _quotation_createNode_x583g4_a0a09();
   }
-  public static SNode mapSrcMacro_mapper_8170824575195255831(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_mapper_3567142084950849392(final MapSrcMacroContext _context) {
     return _quotation_createNode_x583g4_a0a19();
   }
-  public static SNode mapSrcMacro_mapper_8170824575195255858(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_mapper_3567142084950901870(final MapSrcMacroContext _context) {
     return _quotation_createNode_x583g4_a0a29();
   }
-  public static SNode mapSrcMacro_mapper_8170824575195255879(final MapSrcMacroContext _context) {
+  public static SNode mapSrcMacro_mapper_3567142084950904002(final MapSrcMacroContext _context) {
     return _quotation_createNode_x583g4_a0a39();
   }
   private final Map<String, ReductionRuleCondition> rrcMethods = new HashMap<String, ReductionRuleCondition>();
@@ -856,10 +856,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private final Map<String, MapNodeQuery> mnqMethods = new HashMap<String, MapNodeQuery>();
   {
-    mnqMethods.put("8170824575195255807", new QueriesGenerated.MNQ(0));
-    mnqMethods.put("8170824575195255830", new QueriesGenerated.MNQ(1));
-    mnqMethods.put("8170824575195255857", new QueriesGenerated.MNQ(2));
-    mnqMethods.put("8170824575195255878", new QueriesGenerated.MNQ(3));
+    mnqMethods.put("3567142084950782012", new QueriesGenerated.MNQ(0));
+    mnqMethods.put("3567142084950849391", new QueriesGenerated.MNQ(1));
+    mnqMethods.put("3567142084950901869", new QueriesGenerated.MNQ(2));
+    mnqMethods.put("3567142084950904001", new QueriesGenerated.MNQ(3));
   }
   @NotNull
   @Override
@@ -879,13 +879,13 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull MapSrcMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.mapSrcMacro_mapper_8170824575195255808(ctx);
+          return QueriesGenerated.mapSrcMacro_mapper_3567142084950782013(ctx);
         case 1:
-          return QueriesGenerated.mapSrcMacro_mapper_8170824575195255831(ctx);
+          return QueriesGenerated.mapSrcMacro_mapper_3567142084950849392(ctx);
         case 2:
-          return QueriesGenerated.mapSrcMacro_mapper_8170824575195255858(ctx);
+          return QueriesGenerated.mapSrcMacro_mapper_3567142084950901870(ctx);
         case 3:
-          return QueriesGenerated.mapSrcMacro_mapper_8170824575195255879(ctx);
+          return QueriesGenerated.mapSrcMacro_mapper_3567142084950904002(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

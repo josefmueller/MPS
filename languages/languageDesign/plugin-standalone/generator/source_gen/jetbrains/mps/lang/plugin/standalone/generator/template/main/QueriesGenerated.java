@@ -719,8 +719,8 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, ReferenceTargetQuery> rtqMethods = new HashMap<String, ReferenceTargetQuery>();
   {
     rtqMethods.put("7167571922052020448", new QueriesGenerated.RTQ(0, "PluginClass"));
-    rtqMethods.put("1215283464728", new QueriesGenerated.RTQ(1, "Object"));
-    rtqMethods.put("954695933596677588", new QueriesGenerated.RTQ(2, "Object"));
+    rtqMethods.put("1215283464728", new QueriesGenerated.RTQ(1, "GeneratedCustomProjectPlugin"));
+    rtqMethods.put("954695933596677588", new QueriesGenerated.RTQ(2, "GeneratedCustomApplicationPlugin"));
     rtqMethods.put("8540716876878811474", new QueriesGenerated.RTQ(3, "GeneratedAction_Template"));
     rtqMethods.put("8540716876878811523", new QueriesGenerated.RTQ(4, "MainGeneratedGroup"));
     rtqMethods.put("1370142512206465070", new QueriesGenerated.RTQ(5, "MainGeneratedGroup"));
