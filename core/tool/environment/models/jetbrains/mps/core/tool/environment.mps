@@ -1087,37 +1087,19 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5UWB9tiBhf" role="3clF47">
-        <node concept="3cpWs6" id="6BLo1Mgs4lk" role="3cqZAp">
-          <node concept="2OqwBi" id="6BLo1Mgs66X" role="3cqZAk">
-            <node concept="2OqwBi" id="6BLo1Mgs5ld" role="2Oq$k0">
-              <node concept="1rXfSq" id="6BLo1Mgs4WY" role="2Oq$k0">
-                <ref role="37wK5l" node="6BLo1MgryYq" resolve="withMakePlugin" />
-              </node>
-              <node concept="liA8E" id="6BLo1Mgs5Is" role="2OqNvi">
-                <ref role="37wK5l" node="6BLo1MgrFYe" resolve="withCorePlugin" />
-              </node>
+        <node concept="3clFbF" id="3oGpQhnFomX" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrCMe" role="3clFbG">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrCMf" role="37wK5m">
+              <property role="Xl_RC" value="mps-testing" />
             </node>
-            <node concept="liA8E" id="6BLo1Mgs6ww" role="2OqNvi">
-              <ref role="37wK5l" node="6BLo1MgrCMb" resolve="withTestingPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrCMg" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.testing" />
             </node>
           </node>
         </node>
-      </node>
-      <node concept="3Tm1VV" id="5UWB9tiBfe" role="1B3o_S" />
-      <node concept="3uibUv" id="5UWB9tiBha" role="3clF45">
-        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6BLo1MgrxLw" role="jymVt" />
-    <node concept="3clFb_" id="6BLo1MgryYq" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="withMakePlugin" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="6BLo1MgryYt" role="3clF47">
-        <node concept="3cpWs6" id="6BLo1MgrzpS" role="3cqZAp">
-          <node concept="1rXfSq" id="6BLo1MgrzHr" role="3cqZAk">
+        <node concept="3clFbF" id="3oGpQhnFt3C" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrzHr" role="3clFbG">
             <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
             <node concept="Xl_RD" id="6BLo1Mgr$8r" role="37wK5m">
               <property role="Xl_RC" value="mpsmake" />
@@ -1127,13 +1109,18 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs6" id="3oGpQhnFvdS" role="3cqZAp">
+          <node concept="1rXfSq" id="3oGpQhnFwHD" role="3cqZAk">
+            <ref role="37wK5l" node="6BLo1MgrFYe" resolve="withCorePlugin" />
+          </node>
+        </node>
       </node>
-      <node concept="3Tm1VV" id="6BLo1MgryyX" role="1B3o_S" />
-      <node concept="3uibUv" id="6BLo1MgryXS" role="3clF45">
+      <node concept="3Tm1VV" id="5UWB9tiBfe" role="1B3o_S" />
+      <node concept="3uibUv" id="5UWB9tiBha" role="3clF45">
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6BLo1MgrCpe" role="jymVt" />
+    <node concept="2tJIrI" id="6BLo1MgrxLw" role="jymVt" />
     <node concept="3clFb_" id="6BLo1MgrCpf" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="withVcsPlugin" />
@@ -1164,31 +1151,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6BLo1MgrCMa" role="jymVt" />
-    <node concept="3clFb_" id="6BLo1MgrCMb" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="withTestingPlugin" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="6BLo1MgrCMc" role="3clF47">
-        <node concept="3cpWs6" id="6BLo1MgrCMd" role="3cqZAp">
-          <node concept="1rXfSq" id="6BLo1MgrCMe" role="3cqZAk">
-            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-            <node concept="Xl_RD" id="6BLo1MgrCMf" role="37wK5m">
-              <property role="Xl_RC" value="mps-testing" />
-            </node>
-            <node concept="Xl_RD" id="6BLo1MgrCMg" role="37wK5m">
-              <property role="Xl_RC" value="jetbrains.mps.testing" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="6BLo1MgrCMh" role="1B3o_S" />
-      <node concept="3uibUv" id="6BLo1MgrCMi" role="3clF45">
-        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6BLo1MgrFYd" role="jymVt" />
     <node concept="3clFb_" id="6BLo1MgrFYe" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="withCorePlugin" />
@@ -1323,31 +1285,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3_WtNdZj_XO" role="jymVt" />
-    <node concept="3clFb_" id="3_WtNdZjBT1" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="withDevkitPlugin" />
-      <node concept="3clFbS" id="3_WtNdZjBT2" role="3clF47">
-        <node concept="3cpWs6" id="3_WtNdZjBT3" role="3cqZAp">
-          <node concept="1rXfSq" id="3_WtNdZjBT5" role="3cqZAk">
-            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-            <node concept="Xl_RD" id="3_WtNdZjBT6" role="37wK5m">
-              <property role="Xl_RC" value="mpsdevkit" />
-            </node>
-            <node concept="Xl_RD" id="3_WtNdZjBT7" role="37wK5m">
-              <property role="Xl_RC" value="jetbrains.mps.ide.devkit" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3_WtNdZjBTb" role="1B3o_S" />
-      <node concept="3uibUv" id="3_WtNdZjBTc" role="3clF45">
-        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="MVJ1IE6A6O" role="jymVt" />
     <node concept="3clFb_" id="5mza6QqhjgL" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="withBootstrapLibraries" />

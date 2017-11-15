@@ -78,19 +78,13 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return withMakePlugin().withCorePlugin().withTestingPlugin();
-  }
-
-  public EnvironmentConfig withMakePlugin() {
-    return addPlugin("mpsmake", "jetbrains.mps.ide.make");
+    addPlugin("mps-testing", "jetbrains.mps.testing");
+    addPlugin("mpsmake", "jetbrains.mps.ide.make");
+    return withCorePlugin();
   }
 
   public EnvironmentConfig withVcsPlugin() {
     return addPlugin("vcs", "jetbrains.mps.vcs").withGit4IdeaPlugin();
-  }
-
-  public EnvironmentConfig withTestingPlugin() {
-    return addPlugin("mps-testing", "jetbrains.mps.testing");
   }
 
   public EnvironmentConfig withCorePlugin() {
@@ -111,10 +105,6 @@ public class EnvironmentConfig {
 
   public EnvironmentConfig withMigrationPlugin() {
     return addPlugin("migration", "jetbrains.mps.ide.migration.workbench");
-  }
-
-  public EnvironmentConfig withDevkitPlugin() {
-    return addPlugin("mpsdevkit", "jetbrains.mps.ide.devkit");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
