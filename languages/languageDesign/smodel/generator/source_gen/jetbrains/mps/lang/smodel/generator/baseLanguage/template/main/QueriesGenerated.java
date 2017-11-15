@@ -45,7 +45,7 @@ import jetbrains.mps.lang.behavior.behavior.ConceptBehavior__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodSuperCall;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -62,9 +62,11 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.lang.smodel.behavior.ConceptIdentity__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 @Generated
@@ -855,7 +857,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2733396919553048692(final PropertyMacroContext _context) {
     // XXX not sure this gonna work for nodes that are tranient (i.e. if we generate enums from  
     // another, high-level, language). Perhaps, would need resort to NameUtil.namespaceFromLongName(node.model.name). 
-    return SPropertyOperations.getString(SModelOperations.getModuleStub(SNodeOperations.getModel(_context.getNode())), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe23L, "namespace"));
+    return SNodeOperations.getModel(_context.getNode()).getModule().getModuleName();
   }
   public static Object propertyMacro_GetPropertyValue_2733396919553103725(final PropertyMacroContext _context) {
     // FIXME likely, need a dedicated property in EnumerationDataTypeDeclaration to hold id value, but for now, live with SNodeId 
@@ -866,13 +868,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5769081855527325597(final PropertyMacroContext _context) {
-    return "0x" + Long.toHexString(((SLanguageId) _context.getVariable("var:idValue")).getHighBits()) + 'L';
+    return "0x" + Long.toHexString(((Tuples._2<SLanguageId, String>) _context.getVariable("var:idValue"))._0().getHighBits()) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_5769081855527325612(final PropertyMacroContext _context) {
-    return "0x" + Long.toHexString(((SLanguageId) _context.getVariable("var:idValue")).getLowBits()) + 'L';
+    return "0x" + Long.toHexString(((Tuples._2<SLanguageId, String>) _context.getVariable("var:idValue"))._0().getLowBits()) + 'L';
   }
   public static Object propertyMacro_GetPropertyValue_5769081855527325627(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, 0x5ef5a1e85338e19L, "moduleName"));
+    return ((Tuples._2<SLanguageId, String>) _context.getVariable("var:idValue"))._1();
   }
   public static Object referenceMacro_GetReferent_1170457360268(final ReferenceMacroContext _context) {
     return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode());
@@ -2244,7 +2246,11 @@ public class QueriesGenerated {
     return new ConceptMethodSuperCall(_context.getNode()).getMethodCallTarget();
   }
   public static Object insertMacro_varValue_5769081855527325634(final TemplateVarContext _context) {
-    return MetaIdByDeclaration.ref2LangId(ModuleIdentity__BehaviorDescriptor.getModuleReference_idnJmxU5cSSU.invoke(_context.getNode()));
+    SModuleReference moduleReference = ModuleIdentity__BehaviorDescriptor.getModuleReference_idnJmxU5cSSU.invoke(_context.getNode());
+    if (moduleReference == null) {
+      _context.showErrorMessage(_context.getNode(), "module pointer without valid module id");
+    }
+    return MultiTuple.<SLanguageId,String>from(MetaIdByDeclaration.ref2LangId(moduleReference), moduleReference.getModuleName());
   }
   private static SNode _quotation_createNode_x583g4_b0a2a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
