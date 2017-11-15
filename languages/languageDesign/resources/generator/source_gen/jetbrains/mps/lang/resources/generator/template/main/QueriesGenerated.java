@@ -18,8 +18,6 @@ import jetbrains.mps.lang.resources.behavior.OldIconBundle__BehaviorDescriptor;
 import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.resources.behavior.BaseURLFunction__BehaviorDescriptor;
-import jetbrains.mps.lang.resources.behavior.BaseURLLiteral__BehaviorDescriptor;
 import jetbrains.mps.lang.resources.behavior.BaseURL__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -109,13 +107,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534647002(final PropertyMacroContext _context) {
-    return (String) BaseURLFunction__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
+    return (String) BaseURL__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534669736(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x4197d5560e6a38b8L, 0x4197d5560e6a38f3L, "url"));
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534633940(final PropertyMacroContext _context) {
-    return (String) BaseURLLiteral__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
+    return (String) BaseURL__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4726480899536928300(final PropertyMacroContext _context) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL"))).getName().getLongName() + "." + BaseURL__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL")));
@@ -141,10 +139,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_2990235398086953187(final ReferenceMacroContext _context) {
     return (String) OldIconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
   }
-  public static Object referenceMacro_GetReferent_5979521222239280705(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3567142084951794087(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("map_IconContainer", null);
   }
-  public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3567142084951794094(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
   }
   public static boolean ifMacro_Condition_136778981607677981(final IfMacroContext _context) {
@@ -447,8 +445,8 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("2990235398086953121", new QueriesGenerated.RTQ(2, "IconResourceBundle"));
     rtqMethods.put("2990235398086953145", new QueriesGenerated.RTQ(3, "IconResourceBundle"));
     rtqMethods.put("2990235398086953186", new QueriesGenerated.RTQ(4, "IconResourceBundle"));
-    rtqMethods.put("5979521222239280704", new QueriesGenerated.RTQ(5, "TemplateClass"));
-    rtqMethods.put("5979521222239280711", new QueriesGenerated.RTQ(6, "FIELD"));
+    rtqMethods.put("3567142084951794086", new QueriesGenerated.RTQ(5, "TemplateClass"));
+    rtqMethods.put("3567142084951794093", new QueriesGenerated.RTQ(6, "FIELD"));
   }
   @NotNull
   @Override
@@ -479,9 +477,9 @@ public class QueriesGenerated extends QueryProviderBase {
         case 4:
           return QueriesGenerated.referenceMacro_GetReferent_2990235398086953187(ctx);
         case 5:
-          return QueriesGenerated.referenceMacro_GetReferent_5979521222239280705(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_3567142084951794087(ctx);
         case 6:
-          return QueriesGenerated.referenceMacro_GetReferent_5979521222239280712(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_3567142084951794094(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
