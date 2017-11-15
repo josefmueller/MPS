@@ -1052,6 +1052,7 @@
     <property role="TrG5h" value="weave_ExtractStaticMethod" />
     <ref role="3gUMe" to="tp68:373Y828UwF4" resolve="ExtractStaticMethodExpression" />
     <node concept="312cEu" id="7H3c2f3rqGy" role="13RCb5">
+      <property role="TrG5h" value="AClass" />
       <node concept="3Tm1VV" id="7H3c2f3rqGz" role="1B3o_S" />
       <node concept="2YIFZL" id="7H3c2f3rqGC" role="jymVt">
         <property role="TrG5h" value="METHOD" />
