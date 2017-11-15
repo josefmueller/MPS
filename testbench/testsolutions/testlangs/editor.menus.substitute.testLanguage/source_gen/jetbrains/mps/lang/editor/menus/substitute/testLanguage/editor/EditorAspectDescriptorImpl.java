@@ -55,6 +55,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChild2_Editor());
       case 16:
         return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChildSmartReference_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new TestSubstitute_DuplicationMenu_Parent_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -78,6 +80,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         return Collections.<TransformationMenu>singletonList(new TestSubstituteGrandChildWithConstraints_TransformationMenu());
       case 5:
         return Collections.<TransformationMenu>singletonList(new TestSubstituteSpecialSubChild_TransformationMenu());
+      case 6:
+        return Collections.<TransformationMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu_TransformationMenu());
       default:
     }
     return Collections.<TransformationMenu>emptyList();
@@ -153,6 +157,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         return Collections.<SubstituteMenu>singletonList(new TestSubstituteChildWithConstraintsWrapper3_SubstituteMenu());
       case 7:
         return Collections.<SubstituteMenu>singletonList(new TestSubstituteSubChildSmartReference_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
@@ -193,17 +205,66 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           }
         }
         break;
+      case 3:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new IncludeDefaultAndNullMenu()});
+            default:
+          }
+        }
+        break;
+      case 4:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_Menu_ToInclude1()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_Menu_ToInclude2()});
+            default:
+          }
+        }
+        break;
+      case 5:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_SameMenu_ToInclude()});
+            default:
+          }
+        }
+        break;
+      case 6:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0g1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_Menu_ToWrap1()});
+            case 1:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_Menu_ToWrap2()});
+            default:
+          }
+        }
+        break;
+      case 7:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0h1a6, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new TestSubstitute_SameMenu_ToWrap()});
+            default:
+          }
+        }
+        break;
       default:
     }
 
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff2fe4cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3aa7c75fL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x51ed57d5dc9c3b8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a99L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff2fe4cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3aa7c75fL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x51ed57d5dc9c3b8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a99L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a8L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0703eL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x41299cab94ed9982L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a99L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21687L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36ae2L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470cL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21687L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36ae2L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb28100fdcL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709aL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709dL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x41299cab94ed9982L), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb28100fdcL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709aL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL), MetaIdFactory.conceptId(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709dL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedTransformationMenu_EmptyCell", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.WrapSubstitute"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a4 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteSpecialChild_TransformationMenu"};
@@ -211,4 +272,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.ParameterizedByPrimitiveType"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenuForContribution", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.NamedSubstituteMenu_EmptyCell"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstituteSubChildSmartReference_SmartReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.IncludeDefaultAndNullMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_Menu_ToInclude1", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_Menu_ToInclude2"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_SameMenu_ToInclude"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0g1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_Menu_ToWrap1", "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_Menu_ToWrap2"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0h1a6 = new String[]{"jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.TestSubstitute_SameMenu_ToWrap"};
 }

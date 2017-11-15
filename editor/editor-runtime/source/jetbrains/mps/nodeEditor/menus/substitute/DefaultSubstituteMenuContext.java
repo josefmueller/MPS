@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -37,8 +38,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /**
@@ -54,6 +57,9 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
   private SAbstractConcept myTargetConcept;
   private EditorMenuTrace myEditorMenuTrace;
+  private Set<SubstituteMenuLookup> myUsedLookups = new HashSet<>();
+
+  private static final Logger LOG = Logger.getLogger(DefaultSubstituteMenuContext.class);
 
   DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
                                SContainmentLink containmentLink, SAbstractConcept targetConcept, SNode parentNode,
@@ -68,8 +74,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
 
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
-      SContainmentLink containmentLink, SNode parentNode,
-      SNode currentChild, EditorContext editorContext, EditorMenuTrace editorMenuTrace) {
+                                       SContainmentLink containmentLink, SNode parentNode,
+                                       SNode currentChild, EditorContext editorContext, EditorMenuTrace editorMenuTrace) {
     this(menuItemFactory, containmentLink, null, parentNode, currentChild, editorContext, editorMenuTrace);
   }
 
@@ -132,6 +138,11 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       assert getTargetConcept() != null;
       menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), getTargetConcept());
     }
+    if (myUsedLookups.contains(menuLookup)) {
+      LOG.info("Lookup + " + menuLookup + " vas already used within this context. Return empty collection to prevent items duplication");
+      return Collections.emptyList();
+    }
+    myUsedLookups.add(menuLookup);
     return myMenuItemFactory.createItems(this, menuLookup);
   }
 
@@ -150,24 +161,25 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
 
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
-      SNode currentChild, EditorContext editorContext) {
+                                                                         SNode currentChild, EditorContext editorContext) {
     return createInitialContextForNode(containmentLink, null, parentNode, currentChild, editorContext);
   }
 
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SAbstractConcept targetConcept, SNode parentNode,
-      SNode currentChild, EditorContext editorContext) {
+                                                                         SNode currentChild, EditorContext editorContext) {
     return createInitialContextForNode(containmentLink, targetConcept, parentNode, currentChild, editorContext, null);
   }
+
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SAbstractConcept targetConcept, SNode parentNode,
-      SNode currentChild, EditorContext editorContext, EditorMenuTrace trace) {
+                                                                         SNode currentChild, EditorContext editorContext, EditorMenuTrace trace) {
     return new DefaultSubstituteMenuContextBuilder(parentNode, editorContext)
-                                                    .setContainmentLink(containmentLink)
-                                                    .setTargetConcept(targetConcept)
-                                                    .setCurrentChild(currentChild)
-                                                    .setEditorMenuTrace(trace)
-                                                    .createDefaultSubstituteMenuContext();
+               .setContainmentLink(containmentLink)
+               .setTargetConcept(targetConcept)
+               .setCurrentChild(currentChild)
+               .setEditorMenuTrace(trace)
+               .createDefaultSubstituteMenuContext();
   }
 
   @Override
@@ -187,7 +199,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     DefaultSubstituteMenuContext that = (DefaultSubstituteMenuContext) o;
 
     return getParentNode().equals(that.getParentNode()) && getEditorContext().equals(that.getEditorContext()) &&
-        Objects.equals(getCurrentTargetNode(), that.getCurrentTargetNode()) && Objects.equals(getLink(), that.getLink()) && Objects.equals(getTargetConcept(), that.getTargetConcept());
+           Objects.equals(getCurrentTargetNode(), that.getCurrentTargetNode()) && Objects.equals(getLink(), that.getLink()) &&
+           Objects.equals(getTargetConcept(), that.getTargetConcept());
   }
 
   @NotNull

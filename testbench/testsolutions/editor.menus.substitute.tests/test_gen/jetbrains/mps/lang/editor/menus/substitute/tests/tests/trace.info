@@ -34,6 +34,48 @@
       <unit id="1179171206859335696" at="13,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test" />
     </file>
   </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/1892012100483626963">
+    <file name="TestSubstitute_DuplicationMenu_WrapDifferentMenus_Test.java">
+      <node id="1892012100483626963" at="17,89,18,132" concept="0" />
+      <node id="1892012100483626963" at="18,132,19,155" concept="0" />
+      <node id="1892012100483626963" at="25,51,26,72" concept="0" />
+      <node id="1892012100483626965" at="26,72,27,71" concept="0" />
+      <node id="1892012100483626967" at="27,71,28,100" concept="2" />
+      <node id="1892012100483626973" at="28,100,29,110" concept="0" />
+      <node id="1892012100483626983" at="29,110,30,82" concept="0" />
+      <node id="1892012100483626963" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_WrapDifferentMenus#()V" />
+      <node id="1892012100483626963" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1892012100483626963" at="17,89,19,155" />
+      <scope id="1892012100483626963" at="16,0,21,0" />
+      <scope id="1892012100483626963" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="1892012100483626968" />
+      </scope>
+      <scope id="1892012100483626963" at="24,0,32,0" />
+      <unit id="1892012100483626963" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_WrapDifferentMenus_Test$TestBody" />
+      <unit id="1892012100483626963" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_WrapDifferentMenus_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/1892012100483698076">
+    <file name="TestSubstitute_DuplicationMenu_IncludeDifferentMenus_Test.java">
+      <node id="1892012100483698076" at="17,92,18,132" concept="0" />
+      <node id="1892012100483698076" at="18,132,19,158" concept="0" />
+      <node id="1892012100483698076" at="25,51,26,72" concept="0" />
+      <node id="1892012100483698078" at="26,72,27,71" concept="0" />
+      <node id="1892012100483698080" at="27,71,28,100" concept="2" />
+      <node id="1892012100483698086" at="28,100,29,110" concept="0" />
+      <node id="1892012100483698096" at="29,110,30,82" concept="0" />
+      <node id="1892012100483698076" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_IncludeDifferentMenus#()V" />
+      <node id="1892012100483698076" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1892012100483698076" at="17,92,19,158" />
+      <scope id="1892012100483698076" at="16,0,21,0" />
+      <scope id="1892012100483698076" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="1892012100483698081" />
+      </scope>
+      <scope id="1892012100483698076" at="24,0,32,0" />
+      <unit id="1892012100483698076" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeDifferentMenus_Test$TestBody" />
+      <unit id="1892012100483698076" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeDifferentMenus_Test" />
+    </file>
+  </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3021388189909924565">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_Test.java">
       <node id="3021388189909924565" at="16,105,17,132" concept="0" />
@@ -321,6 +363,69 @@
       <unit id="4085424218237929650" at="13,0,32,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Single_SpecializedLink_Complete_EmptyCell_Test" />
     </file>
   </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287470431">
+    <file name="TestSubstitute_DuplicationMenu_SubconceptMenu_Test.java">
+      <node id="4572725119287470431" at="17,85,18,132" concept="0" />
+      <node id="4572725119287470431" at="18,132,19,151" concept="0" />
+      <node id="4572725119287470431" at="25,51,26,72" concept="0" />
+      <node id="4572725119287470977" at="26,72,27,71" concept="0" />
+      <node id="4572725119287541757" at="27,71,28,100" concept="2" />
+      <node id="4572725119287471768" at="28,100,29,110" concept="0" />
+      <node id="4572725119287548561" at="29,110,30,82" concept="0" />
+      <node id="4572725119287470431" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_SubconceptMenu#()V" />
+      <node id="4572725119287470431" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4572725119287470431" at="17,85,19,151" />
+      <scope id="4572725119287470431" at="16,0,21,0" />
+      <scope id="4572725119287470431" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="4572725119287541758" />
+      </scope>
+      <scope id="4572725119287470431" at="24,0,32,0" />
+      <unit id="4572725119287470431" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_SubconceptMenu_Test$TestBody" />
+      <unit id="4572725119287470431" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_SubconceptMenu_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287633384">
+    <file name="TestSubstitute_DuplicationMenu_IncludeSameMenuTwice_Test.java">
+      <node id="4572725119287633384" at="17,91,18,132" concept="0" />
+      <node id="4572725119287633384" at="18,132,19,157" concept="0" />
+      <node id="4572725119287633384" at="25,51,26,72" concept="0" />
+      <node id="4572725119287633386" at="26,72,27,71" concept="0" />
+      <node id="4572725119287633388" at="27,71,28,100" concept="2" />
+      <node id="4572725119287633394" at="28,100,29,110" concept="0" />
+      <node id="4572725119287633404" at="29,110,30,82" concept="0" />
+      <node id="4572725119287633384" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_IncludeSameMenuTwice#()V" />
+      <node id="4572725119287633384" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4572725119287633384" at="17,91,19,157" />
+      <scope id="4572725119287633384" at="16,0,21,0" />
+      <scope id="4572725119287633384" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="4572725119287633389" />
+      </scope>
+      <scope id="4572725119287633384" at="24,0,32,0" />
+      <unit id="4572725119287633384" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeSameMenuTwice_Test$TestBody" />
+      <unit id="4572725119287633384" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeSameMenuTwice_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287708216">
+    <file name="TestSubstitute_DuplicationMenu_WrapSameMenuTwice_Test.java">
+      <node id="4572725119287708216" at="17,88,18,132" concept="0" />
+      <node id="4572725119287708216" at="18,132,19,154" concept="0" />
+      <node id="4572725119287708216" at="25,51,26,72" concept="0" />
+      <node id="4572725119287708218" at="26,72,27,71" concept="0" />
+      <node id="4572725119287708220" at="27,71,28,100" concept="2" />
+      <node id="4572725119287708226" at="28,100,29,110" concept="0" />
+      <node id="4572725119287708236" at="29,110,30,82" concept="0" />
+      <node id="4572725119287708216" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_WrapSameMenuTwice#()V" />
+      <node id="4572725119287708216" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4572725119287708216" at="17,88,19,154" />
+      <scope id="4572725119287708216" at="16,0,21,0" />
+      <scope id="4572725119287708216" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="4572725119287708221" />
+      </scope>
+      <scope id="4572725119287708216" at="24,0,32,0" />
+      <unit id="4572725119287708216" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_WrapSameMenuTwice_Test$TestBody" />
+      <unit id="4572725119287708216" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_WrapSameMenuTwice_Test" />
+    </file>
+  </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4616565815313123214">
     <file name="TestSubstitute_TestWrappedItemConcept_Test.java">
       <node id="4616565815313123214" at="16,77,17,132" concept="0" />
@@ -375,6 +480,27 @@
       <scope id="4647688914604968764" at="20,0,25,0" />
       <unit id="4647688914604968764" at="18,0,26,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_WrapFromTransform_Test$TestBody" />
       <unit id="4647688914604968764" at="10,0,27,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_WrapFromTransform_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4695456347262482770">
+    <file name="TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu_Test.java">
+      <node id="4695456347262482770" at="17,100,18,132" concept="0" />
+      <node id="4695456347262482770" at="18,132,19,166" concept="0" />
+      <node id="4695456347262482770" at="25,51,26,72" concept="0" />
+      <node id="4695456347262482772" at="26,72,27,71" concept="0" />
+      <node id="4695456347262482774" at="27,71,28,100" concept="2" />
+      <node id="4695456347262482780" at="28,100,29,110" concept="0" />
+      <node id="4695456347262482790" at="29,110,30,82" concept="0" />
+      <node id="4695456347262482770" at="16,0,21,0" concept="1" trace="test_TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu#()V" />
+      <node id="4695456347262482770" at="24,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4695456347262482770" at="17,100,19,166" />
+      <scope id="4695456347262482770" at="16,0,21,0" />
+      <scope id="4695456347262482770" at="25,51,30,82">
+        <var name="nodeSubstituteChooser" id="4695456347262482775" />
+      </scope>
+      <scope id="4695456347262482770" at="24,0,32,0" />
+      <unit id="4695456347262482770" at="22,0,33,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu_Test$TestBody" />
+      <unit id="4695456347262482770" at="14,0,34,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/5476527677618977236">

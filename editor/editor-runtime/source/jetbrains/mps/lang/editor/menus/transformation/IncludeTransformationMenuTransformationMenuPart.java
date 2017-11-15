@@ -15,40 +15,63 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.nodeEditor.menus.substitute.DefaultSubstituteMenuContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 public abstract class IncludeTransformationMenuTransformationMenuPart implements TransformationMenuPart {
+  private static final Logger LOG = Logger.getLogger(DefaultSubstituteMenuContext.class);
 
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNodeLocation newNodeLocation = toNodeLocation(getNode(context), context.getEditorContext(), context.getNode(), context.getNodeLocation());
-    String newMenuLocation = getLocation(context);
-    TransformationMenuContext newContext = context.with(newNodeLocation, newMenuLocation);
+    SNode newNode;
+    String newMenuLocation;
+    TransformationMenuLookup menuLookup;
 
-    return newContext.createItems(getMenuLookup(context));
+    try {
+      newNode = getNode(context);
+      newMenuLocation = getLocation(context);
+      menuLookup = getMenuLookup(context);
+    } catch (Throwable t) {
+      LOG.error("Exception while executing code of the include transformation menu part " + this, t);
+      return Collections.emptyList();
+    }
+
+    SNodeLocation newNodeLocation = getNewNodeLocation(newNode, context);
+
+    return getNewContext(newNodeLocation, newMenuLocation, context).createItems(menuLookup);
+  }
+
+  private static TransformationMenuContext getNewContext(@NotNull SNodeLocation newNodeLocation, @Nullable String newMenuLocation, TransformationMenuContext oldContext) {
+    String oldMenuLocation = oldContext.getMenuLocation();
+    SNodeLocation oldNodeLocation = oldContext.getNodeLocation();
+    if ((newMenuLocation == null || newMenuLocation.equals(oldMenuLocation)) && (newNodeLocation.equals(oldNodeLocation))){
+      return oldContext;
+    } else {
+      return oldContext.with(newNodeLocation, newMenuLocation);
+    }
   }
 
   @NotNull
-  private static SNodeLocation toNodeLocation(@Nullable SNode node, EditorContext editorContext, SNode currentNode, SNodeLocation currentLocation) {
-    if (node == null || node == currentNode) {
-      return currentLocation;
+  private static SNodeLocation getNewNodeLocation(@Nullable SNode newNode, @NotNull TransformationMenuContext context) {
+    SNode currentNode = context.getNode();
+    if (newNode == null || newNode == currentNode) {
+      return context.getNodeLocation();
     }
     SNodeLocation nodeLocation = null;
-    final EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
+    final EditorCell nodeCell = context.getEditorContext().getEditorComponent().findNodeCell(newNode);
     if (nodeCell != null) {
       final EditorCellContext cellContext = nodeCell.getCellContext();
       //todo should we assert it is not null here?
@@ -56,7 +79,7 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
         nodeLocation = cellContext.getNodeLocation();
       }
     }
-    return nodeLocation != null ? nodeLocation : new SNodeLocation.FromNode(node);
+    return nodeLocation != null ? nodeLocation : new SNodeLocation.FromNode(newNode);
   }
 
   @Nullable
