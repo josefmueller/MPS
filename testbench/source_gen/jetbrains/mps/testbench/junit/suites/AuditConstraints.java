@@ -7,8 +7,6 @@ import jetbrains.mps.testbench.PerformanceMessenger;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.checkers.IChecker;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
@@ -18,10 +16,8 @@ import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
-import jetbrains.mps.checkers.ModelCheckerBuilder;
-import org.junit.Assert;
 
-public class AuditConstraints extends BaseCheckModulesTest {
+public class AuditConstraints extends BaseCheckerTest {
   @ClassRule
   public static final PerformanceMessenger ourStats = new PerformanceMessenger("auditConstraints");
 
@@ -31,16 +27,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
 
   @Test
   public void checkConstraints() {
-    final CheckingTestStatistic statistic = new CheckingTestStatistic();
-    List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker());
-        return new CheckingTestsUtil(statistic).applyChecker(myModule, new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators(), checkers);
-      }
-    });
-
-    ourStats.report("Errors", statistic.getNumErrors());
-    ourStats.report("Warnings", statistic.getNumWarnings());
-    Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+    List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker());
+    runCheck(checkers, AuditTypeSystem.ourStats, "Constraints and scopes errors");
   }
 }

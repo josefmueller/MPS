@@ -215,6 +215,90 @@
       <unit id="2577066619598079009" at="15,0,35,0" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil" />
     </file>
   </root>
+  <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943000351">
+    <file name="MPSAuditConstraints.java">
+      <node id="3567142084943000358" at="11,46,12,18" concept="14" />
+      <node id="3567142084943201225" at="14,41,15,239" concept="3" />
+      <node id="3567142084943201369" at="15,239,16,255" concept="3" />
+      <node id="3567142084943201297" at="16,255,17,260" concept="3" />
+      <node id="3567142084943201261" at="17,260,18,266" concept="3" />
+      <node id="3567142084943201402" at="22,34,23,29" concept="3" />
+      <node id="3567142084943199497" at="23,29,24,0" concept="11" />
+      <node id="3567142084943000373" at="24,0,25,29" concept="3" />
+      <node id="3567142084956900856" at="27,64,28,51" concept="9" />
+      <node id="3567142084956901233" at="30,64,31,51" concept="9" />
+      <node id="3567142084956901610" at="33,64,34,51" concept="9" />
+      <node id="3567142084956901987" at="36,64,37,51" concept="9" />
+      <node id="3567142084943000354" at="11,0,14,0" concept="1" trace="MPSAuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="3567142084956900856" at="27,0,30,0" concept="13" trace="neq_c18eo5_a1a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084956901233" at="30,0,33,0" concept="13" trace="neq_c18eo5_a1a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084956901610" at="33,0,36,0" concept="13" trace="neq_c18eo5_a1a2a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084956901987" at="36,0,39,0" concept="13" trace="neq_c18eo5_a1a3a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084943201398" at="14,0,20,0" concept="7" trace="processExcludedModules#()V" />
+      <node id="3567142084943000362" at="20,0,27,0" concept="7" trace="checkConstraints#()V" />
+      <scope id="3567142084943000357" at="11,46,12,18" />
+      <scope id="3567142084956900856" at="27,64,28,51" />
+      <scope id="3567142084956901233" at="30,64,31,51" />
+      <scope id="3567142084956901610" at="33,64,34,51" />
+      <scope id="3567142084956901987" at="36,64,37,51" />
+      <scope id="3567142084943000354" at="11,0,14,0">
+        <var name="module" id="3567142084943000360" />
+      </scope>
+      <scope id="3567142084943000366" at="22,34,25,29" />
+      <scope id="3567142084956900856" at="27,0,30,0">
+        <var name="a" id="3567142084956900856" />
+        <var name="b" id="3567142084956900856" />
+      </scope>
+      <scope id="3567142084956901233" at="30,0,33,0">
+        <var name="a" id="3567142084956901233" />
+        <var name="b" id="3567142084956901233" />
+      </scope>
+      <scope id="3567142084956901610" at="33,0,36,0">
+        <var name="a" id="3567142084956901610" />
+        <var name="b" id="3567142084956901610" />
+      </scope>
+      <scope id="3567142084956901987" at="36,0,39,0">
+        <var name="a" id="3567142084956901987" />
+        <var name="b" id="3567142084956901987" />
+      </scope>
+      <scope id="3567142084943201224" at="14,41,18,266" />
+      <scope id="3567142084943201398" at="14,0,20,0" />
+      <scope id="3567142084943000362" at="20,0,27,0" />
+      <unit id="3567142084943000351" at="10,0,40,0" name="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" />
+    </file>
+  </root>
+  <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943022134">
+    <file name="BaseCheckerTest.java">
+      <node id="3567142084943022150" at="18,42,19,18" concept="14" />
+      <node id="3567142084943022157" at="22,127,23,72" concept="8" />
+      <node id="3567142084943022194" at="25,37,26,148" concept="9" />
+      <node id="3567142084943022206" at="28,7,29,0" concept="11" />
+      <node id="3567142084943022207" at="29,0,30,53" concept="3" />
+      <node id="3567142084943022214" at="30,53,31,57" concept="3" />
+      <node id="9170334376387736872" at="31,57,32,103" concept="3" />
+      <node id="3567142084943022145" at="18,0,21,0" concept="1" trace="BaseCheckerTest#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="3567142084943022173" at="25,0,28,0" concept="7" trace="compute#()Ljava/util/List;" />
+      <node id="3567142084943022162" at="23,72,28,7" concept="8" />
+      <node id="3567142084943022154" at="22,0,34,0" concept="7" trace="runCheck#(Ljava/util/List;Ljetbrains/mps/testbench/PerformanceMessenger;Ljava/lang/String;)V" />
+      <scope id="3567142084943022149" at="18,42,19,18" />
+      <scope id="3567142084943022174" at="25,37,26,148" />
+      <scope id="3567142084943022145" at="18,0,21,0">
+        <var name="module" id="3567142084943022147" />
+      </scope>
+      <scope id="3567142084943022173" at="25,0,28,0" />
+      <scope id="3567142084943022156" at="22,127,32,103">
+        <var name="errors" id="3567142084943022163" />
+        <var name="statistic" id="3567142084943022158" />
+      </scope>
+      <scope id="3567142084943022154" at="22,0,34,0">
+        <var name="checkers" id="3567142084943089105" />
+        <var name="errorMessage" id="3567142084943139386" />
+        <var name="stats" id="3567142084943092605" />
+      </scope>
+      <unit id="3567142084943022173" at="24,125,28,5" name="jetbrains.mps.testbench.junit.suites.BaseCheckerTest$1" />
+      <unit id="3567142084943022134" at="16,0,35,0" name="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
+    </file>
+  </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/4052780437579008133">
     <file name="ScopesTest.java">
       <node id="1594630302363744830" at="38,104,39,71" concept="8" />
@@ -665,65 +749,37 @@
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387736840">
     <file name="AuditTypeSystem.java">
-      <node id="9170334376387736890" at="27,42,28,18" concept="14" />
-      <node id="2966246705324509932" at="32,33,33,72" concept="8" />
-      <node id="9170334376387736856" at="35,37,36,122" concept="8" />
-      <node id="2966246705324389191" at="36,122,37,244" concept="9" />
-      <node id="2966246705324525878" at="39,7,40,56" concept="3" />
-      <node id="2966246705324525895" at="40,56,41,60" concept="3" />
-      <node id="9170334376387736872" at="41,60,42,106" concept="3" />
-      <node id="2966246705324400517" at="24,0,26,0" concept="12" trace="ourStats" />
-      <node id="9170334376387736844" at="27,0,30,0" concept="1" trace="AuditTypeSystem#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="2966246705324335507" at="35,0,39,0" concept="7" trace="compute#()Ljava/util/List;" />
-      <node id="9170334376387736865" at="33,72,39,7" concept="8" />
-      <node id="9170334376387736852" at="31,0,44,0" concept="7" trace="checkTypeSystem#()V" />
-      <scope id="9170334376387736848" at="27,42,28,18" />
-      <scope id="2966246705324335508" at="35,37,37,244">
-        <var name="models" id="9170334376387736855" />
-      </scope>
-      <scope id="9170334376387736844" at="27,0,30,0">
+      <node id="9170334376387736890" at="20,42,21,18" concept="14" />
+      <node id="3567142084943153706" at="25,33,26,151" concept="3" />
+      <node id="2966246705324400517" at="17,0,19,0" concept="12" trace="ourStats" />
+      <node id="9170334376387736844" at="20,0,23,0" concept="1" trace="AuditTypeSystem#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="9170334376387736852" at="24,0,28,0" concept="7" trace="checkTypeSystem#()V" />
+      <scope id="9170334376387736848" at="20,42,21,18" />
+      <scope id="9170334376387736854" at="25,33,26,151" />
+      <scope id="9170334376387736844" at="20,0,23,0">
         <var name="module" id="9170334376387736846" />
       </scope>
-      <scope id="2966246705324335507" at="35,0,39,0" />
-      <scope id="9170334376387736854" at="32,33,42,106">
-        <var name="errors" id="9170334376387736864" />
-        <var name="statistic" id="2966246705324509933" />
-      </scope>
-      <scope id="9170334376387736852" at="31,0,44,0" />
-      <unit id="2966246705324335507" at="34,125,39,5" name="jetbrains.mps.testbench.junit.suites.AuditTypeSystem$1" />
-      <unit id="9170334376387736840" at="23,0,45,0" name="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" />
+      <scope id="9170334376387736852" at="24,0,28,0" />
+      <unit id="9170334376387736840" at="16,0,29,0" name="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387816357">
     <file name="AuditConstraints.java">
-      <node id="9170334376387816407" at="28,43,29,18" concept="14" />
-      <node id="2966246705324507101" at="33,34,34,72" concept="8" />
-      <node id="250369351435705557" at="36,37,37,242" concept="8" />
-      <node id="2966246705324349075" at="37,242,38,148" concept="9" />
-      <node id="377573184520170549" at="40,7,41,0" concept="11" />
-      <node id="2966246705324529137" at="41,0,42,56" concept="3" />
-      <node id="2966246705324529147" at="42,56,43,60" concept="3" />
-      <node id="9170334376387816389" at="43,60,44,117" concept="3" />
-      <node id="2966246705324522915" at="25,0,27,0" concept="12" trace="ourStats" />
-      <node id="9170334376387816361" at="28,0,31,0" concept="1" trace="AuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="2966246705324347775" at="36,0,40,0" concept="7" trace="compute#()Ljava/util/List;" />
-      <node id="2966246705324344414" at="34,72,40,7" concept="8" />
-      <node id="9170334376387816369" at="32,0,46,0" concept="7" trace="checkConstraints#()V" />
-      <scope id="9170334376387816365" at="28,43,29,18" />
-      <scope id="2966246705324347776" at="36,37,38,148">
+      <node id="9170334376387816407" at="24,43,25,18" concept="14" />
+      <node id="250369351435705557" at="29,34,30,238" concept="8" />
+      <node id="3567142084943155977" at="30,238,31,82" concept="3" />
+      <node id="2966246705324522915" at="21,0,23,0" concept="12" trace="ourStats" />
+      <node id="9170334376387816361" at="24,0,27,0" concept="1" trace="AuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="9170334376387816369" at="28,0,33,0" concept="7" trace="checkConstraints#()V" />
+      <scope id="9170334376387816365" at="24,43,25,18" />
+      <scope id="9170334376387816371" at="29,34,31,82">
         <var name="checkers" id="250369351435705560" />
       </scope>
-      <scope id="9170334376387816361" at="28,0,31,0">
+      <scope id="9170334376387816361" at="24,0,27,0">
         <var name="module" id="9170334376387816363" />
       </scope>
-      <scope id="2966246705324347775" at="36,0,40,0" />
-      <scope id="9170334376387816371" at="33,34,44,117">
-        <var name="errors" id="2966246705324344417" />
-        <var name="statistic" id="2966246705324507102" />
-      </scope>
-      <scope id="9170334376387816369" at="32,0,46,0" />
-      <unit id="2966246705324347775" at="35,125,40,5" name="jetbrains.mps.testbench.junit.suites.AuditConstraints$1" />
-      <unit id="9170334376387816357" at="24,0,47,0" name="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
+      <scope id="9170334376387816369" at="28,0,33,0" />
+      <unit id="9170334376387816357" at="20,0,34,0" name="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387870447">

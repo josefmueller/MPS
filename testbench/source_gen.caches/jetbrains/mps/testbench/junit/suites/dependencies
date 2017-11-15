@@ -5,51 +5,35 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.AuditConstraints" file="AuditConstraints.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkers.ConstraintsChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
-    <classNode dependClassName="jetbrains.mps.checkers.ModelCheckerBuilder" />
     <classNode dependClassName="jetbrains.mps.checkers.RefScopeChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.UsedLanguagesChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" file="AuditTypeSystem.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
-    <classNode dependClassName="jetbrains.mps.checkers.ModelCheckerBuilder" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" file="BaseCheckModulesTest.java">
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -76,6 +60,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.suites.BaseCheckerTest" file="BaseCheckerTest.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
+    <classNode dependClassName="jetbrains.mps.checkers.ModelCheckerBuilder" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.junit.Assert" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" file="BaseMpsSuite.java">
     <classNode dependClassName="java.lang.Class" />
@@ -174,6 +174,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" file="MPSAuditConstraints.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.Assume" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.AuditConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditTypesystem" file="MPSAuditTypesystem.java">
     <classNode dependClassName="java.lang.Override" />
