@@ -2504,6 +2504,12 @@
           <property role="TrG5h" value="jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849" />
           <property role="3LESm3" value="5cb70574-4ffb-4146-9211-dc924a83cfac" />
           <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="3612de_dEGw" role="3bR37C">
+            <node concept="3bR9La" id="3612de_dEGx" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2Ft10KpNiVO" role="3bR37C">
           <node concept="3bR9La" id="2Ft10KpNiVP" role="1SiIV1">
