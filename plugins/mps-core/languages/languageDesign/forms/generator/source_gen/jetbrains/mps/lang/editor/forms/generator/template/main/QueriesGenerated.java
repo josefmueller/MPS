@@ -133,9 +133,6 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_7024409093146625667(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"), false, false), MetaAdapterFactory.getReferenceLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x334adf8cb15f3fdfL, "propertyDeclaration"));
   }
-  public static Object referenceMacro_GetReferent_7024409093146625686(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, 0x132a500f473d9055L, "parentStyleClass"));
-  }
   public static Object referenceMacro_GetReferent_2597883321844426009(final ReferenceMacroContext _context) {
     return (SNode) SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x334adf8cb15f3fdfL, "propertyDeclaration")));
   }
@@ -166,6 +163,12 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_8215612579904199394(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x7203b81cfd6af4e6L, "label"));
   }
+  public static SNode sourceNodeQuery_3567142084951690510(final SourceSubstituteMacroNodeContext _context) {
+    return null;
+  }
+  public static SNode sourceNodeQuery_3567142084951710417(final SourceSubstituteMacroNodeContext _context) {
+    return null;
+  }
   public static SNode sourceNodeQuery_4682006100572905480(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x1298d6f05780ea9aL, "ui"));
   }
@@ -186,10 +189,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_8215612579904203781(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
   }
-  public static Iterable<SNode> sourceNodesQuery_8215612579904434461(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
-  }
-  public static Iterable<SNode> sourceNodesQuery_7024409093146625694(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3567142084951702890(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_2597883321844046124(final WeavingMappingRuleContext _context) {
@@ -344,6 +344,8 @@ public class QueriesGenerated extends QueryProviderBase {
     int i = 0;
     snqMethods.put("8215612579904199776", new QueriesGenerated.SNQ(i++));
     snqMethods.put("8215612579904199394", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("3567142084951690510", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("3567142084951710417", new QueriesGenerated.SNQ(i++));
     snqMethods.put("4682006100572905480", new QueriesGenerated.SNQ(i++));
     snqMethods.put("2597883321844336452", new QueriesGenerated.SNQ(i++));
     snqMethods.put("2597883321844374983", new QueriesGenerated.SNQ(i++));
@@ -370,10 +372,14 @@ public class QueriesGenerated extends QueryProviderBase {
         case 1:
           return QueriesGenerated.sourceNodeQuery_8215612579904199394(ctx);
         case 2:
-          return QueriesGenerated.sourceNodeQuery_4682006100572905480(ctx);
+          return QueriesGenerated.sourceNodeQuery_3567142084951690510(ctx);
         case 3:
-          return QueriesGenerated.sourceNodeQuery_2597883321844336452(ctx);
+          return QueriesGenerated.sourceNodeQuery_3567142084951710417(ctx);
         case 4:
+          return QueriesGenerated.sourceNodeQuery_4682006100572905480(ctx);
+        case 5:
+          return QueriesGenerated.sourceNodeQuery_2597883321844336452(ctx);
+        case 6:
           return QueriesGenerated.sourceNodeQuery_2597883321844374983(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -384,8 +390,7 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     int i = 0;
     snsqMethods.put("8215612579904203781", new QueriesGenerated.SNsQ(i++));
-    snsqMethods.put("8215612579904434461", new QueriesGenerated.SNsQ(i++));
-    snsqMethods.put("7024409093146625694", new QueriesGenerated.SNsQ(i++));
+    snsqMethods.put("3567142084951702890", new QueriesGenerated.SNsQ(i++));
   }
   @NotNull
   @Override
@@ -407,9 +412,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_8215612579904203781(ctx));
         case 1:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_8215612579904434461(ctx));
-        case 2:
-          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_7024409093146625694(ctx));
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_3567142084951702890(ctx));
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -465,15 +468,14 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("4319657350470163593", new QueriesGenerated.RTQ(3, "virtualPackage"));
     rtqMethods.put("8215612579904436042", new QueriesGenerated.RTQ(4, null));
     rtqMethods.put("7024409093146625666", new QueriesGenerated.RTQ(5, "virtualPackage"));
-    rtqMethods.put("7024409093146625685", new QueriesGenerated.RTQ(6, null));
-    rtqMethods.put("2597883321844426008", new QueriesGenerated.RTQ(7, "ClassConcept"));
-    rtqMethods.put("1801654740563739440", new QueriesGenerated.RTQ(8, "ToggleCheckboxAction"));
-    rtqMethods.put("1801654740563725844", new QueriesGenerated.RTQ(9, "ClassConcept"));
-    rtqMethods.put("1801654740563717865", new QueriesGenerated.RTQ(10, "ClassConcept"));
-    rtqMethods.put("1801654740563710766", new QueriesGenerated.RTQ(11, "abstractClass"));
-    rtqMethods.put("1801654740563710776", new QueriesGenerated.RTQ(12, "abstractClass"));
-    rtqMethods.put("1357501089341497493", new QueriesGenerated.RTQ(13, null));
-    rtqMethods.put("1357501089341588666", new QueriesGenerated.RTQ(14, null));
+    rtqMethods.put("2597883321844426008", new QueriesGenerated.RTQ(6, "ClassConcept"));
+    rtqMethods.put("1801654740563739440", new QueriesGenerated.RTQ(7, "ToggleCheckboxAction"));
+    rtqMethods.put("1801654740563725844", new QueriesGenerated.RTQ(8, "ClassConcept"));
+    rtqMethods.put("1801654740563717865", new QueriesGenerated.RTQ(9, "ClassConcept"));
+    rtqMethods.put("1801654740563710766", new QueriesGenerated.RTQ(10, "abstractClass"));
+    rtqMethods.put("1801654740563710776", new QueriesGenerated.RTQ(11, "abstractClass"));
+    rtqMethods.put("1357501089341497493", new QueriesGenerated.RTQ(12, null));
+    rtqMethods.put("1357501089341588666", new QueriesGenerated.RTQ(13, null));
   }
   @NotNull
   @Override
@@ -506,22 +508,20 @@ public class QueriesGenerated extends QueryProviderBase {
         case 5:
           return QueriesGenerated.referenceMacro_GetReferent_7024409093146625667(ctx);
         case 6:
-          return QueriesGenerated.referenceMacro_GetReferent_7024409093146625686(ctx);
-        case 7:
           return QueriesGenerated.referenceMacro_GetReferent_2597883321844426009(ctx);
-        case 8:
+        case 7:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563739441(ctx);
-        case 9:
+        case 8:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563725845(ctx);
-        case 10:
+        case 9:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563717866(ctx);
-        case 11:
+        case 10:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563710767(ctx);
-        case 12:
+        case 11:
           return QueriesGenerated.referenceMacro_GetReferent_1801654740563710777(ctx);
-        case 13:
+        case 12:
           return QueriesGenerated.referenceMacro_GetReferent_1357501089341497494(ctx);
-        case 14:
+        case 13:
           return QueriesGenerated.referenceMacro_GetReferent_1357501089341588667(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
