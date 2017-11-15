@@ -128,7 +128,6 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
         <child id="1214996921760" name="bound" index="3ztrMU" />
@@ -144,7 +143,6 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1068499141036" name="jetbrains.mps.baseLanguage.structure.BaseMethodCall" flags="nn" index="37wK5k" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -17069,13 +17067,11 @@
   <node concept="13MO4I" id="hNmNTR8">
     <property role="TrG5h" value="InferenceMethod_to_Method" />
     <ref role="3gUMe" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-    <node concept="3clF44" id="hNmOCy6" role="13RCb5">
-      <node concept="33vP2l" id="hNmOCy7" role="3clF45" />
-      <node concept="3clFbS" id="hNmOCy8" role="3clF47" />
-      <node concept="raruj" id="hNmOCYe" role="lGtFl" />
-      <node concept="29HgVG" id="hNmODAz" role="lGtFl">
-        <node concept="3NFfHV" id="hNmODA$" role="3NFExx">
-          <node concept="3clFbS" id="hNmODA_" role="2VODD2">
+    <node concept="10Nm6u" id="3612de$TMrG" role="13RCb5">
+      <node concept="raruj" id="3612de$TMrL" role="lGtFl" />
+      <node concept="29HgVG" id="3612de$TMB2" role="lGtFl">
+        <node concept="3NFfHV" id="3612de$TMBf" role="3NFExx">
+          <node concept="3clFbS" id="3612de$TMBg" role="2VODD2">
             <node concept="3cpWs8" id="hNmOH91" role="3cqZAp">
               <node concept="3cpWsn" id="hNmOH92" role="3cpWs9">
                 <property role="TrG5h" value="methodDeclaration" />
@@ -17138,11 +17134,11 @@
   <node concept="13MO4I" id="hNn4aXQ">
     <property role="TrG5h" value="InferenceMethodCall_to_MethodCall" />
     <ref role="3gUMe" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
-    <node concept="37wK5k" id="hNn4kbW" role="13RCb5">
-      <node concept="raruj" id="hNn4l29" role="lGtFl" />
-      <node concept="29HgVG" id="hNn4lGr" role="lGtFl">
-        <node concept="3NFfHV" id="hNn4lGs" role="3NFExx">
-          <node concept="3clFbS" id="hNn4lGt" role="2VODD2">
+    <node concept="10Nm6u" id="3612de$THRq" role="13RCb5">
+      <node concept="raruj" id="3612de$THRv" role="lGtFl" />
+      <node concept="29HgVG" id="3612de$THRx" role="lGtFl">
+        <node concept="3NFfHV" id="3612de$THRy" role="3NFExx">
+          <node concept="3clFbS" id="3612de$THRz" role="2VODD2">
             <node concept="3cpWs8" id="hNn4sO8" role="3cqZAp">
               <node concept="3cpWsn" id="hNn4sO9" role="3cpWs9">
                 <property role="TrG5h" value="methodCall" />

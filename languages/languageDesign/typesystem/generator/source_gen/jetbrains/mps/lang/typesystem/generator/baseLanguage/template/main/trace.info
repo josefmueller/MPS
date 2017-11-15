@@ -1789,7 +1789,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)/1223374642632">
     <file name="QueriesGenerated.java">
-      <node id="1223374852673" at="1665,102,1666,75" concept="7" />
+      <node id="1223374852673" at="1665,108,1666,75" concept="7" />
       <node id="1223374857415" at="1666,75,1667,256" concept="3" />
       <node id="1223381236471" at="1667,256,1668,389" concept="3" />
       <node id="1223380785166" at="1668,389,1669,29" concept="8" />
@@ -1803,7 +1803,7 @@
       <node id="1223374879509" at="3724,478,3725,171" concept="3" />
       <node id="1223374879509" at="3725,171,3726,24" concept="8" />
       <node id="1223374879509" at="3717,0,3728,0" concept="11" trace="_quotation_createNode_x583g4_a0a1a883#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1223374838181" at="1665,102,1669,29">
+      <scope id="3567142084951878096" at="1665,108,1669,29">
         <var name="methodDeclaration" id="1223374852674" />
       </scope>
       <scope id="1223374879509" at="3717,64,3726,24">
@@ -1816,7 +1816,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)/1223378906998">
     <file name="QueriesGenerated.java">
-      <node id="1223378980104" at="1671,102,1672,68" concept="7" />
+      <node id="1223378980104" at="1671,108,1672,68" concept="7" />
       <node id="1223378986553" at="1672,68,1673,255" concept="3" />
       <node id="1223381387252" at="1673,255,1674,382" concept="3" />
       <node id="1223378982705" at="1674,382,1675,22" concept="8" />
@@ -1830,7 +1830,7 @@
       <node id="1223379017017" at="3735,478,3736,161" concept="3" />
       <node id="1223379017017" at="3736,161,3737,24" concept="8" />
       <node id="1223379017017" at="3728,0,3739,0" concept="11" trace="_quotation_createNode_x583g4_a0a1a983#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1223378950941" at="1671,102,1675,22">
+      <scope id="3567142084951858659" at="1671,108,1675,22">
         <var name="methodCall" id="1223378980105" />
       </scope>
       <scope id="1223379017017" at="3728,64,3737,24">
