@@ -24,14 +24,14 @@ public final class InternalPartialFieldReference__BehaviorDescriptor extends Bas
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1122dd58737L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isLValue_idhEwIP$w = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIP$w").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isLValue_idhEwJgmE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgmE").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isLValue_idhEwIP$w);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isLValue_idhEwJgmE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static boolean isLValue_idhEwIP$w(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isLValue_idhEwJgmE(@NotNull SNode __thisNode__) {
     return true;
   }
 
@@ -52,7 +52,7 @@ public final class InternalPartialFieldReference__BehaviorDescriptor extends Bas
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Boolean) isLValue_idhEwIP$w(node));
+        return (T) ((Boolean) isLValue_idhEwJgmE(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
