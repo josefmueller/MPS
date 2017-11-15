@@ -248,6 +248,11 @@
       <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4">
         <property id="1199466066648" name="label" index="15JVff" />
       </concept>
+      <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
+        <child id="1184951007469" name="componentType" index="3$_nBY" />
+        <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
+      </concept>
+      <concept id="1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" flags="nn" index="3$GHV9" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -16012,7 +16017,10 @@
                         <node concept="2OqwBi" id="hSrxB3u" role="3uHU7w">
                           <node concept="1Rwk04" id="hSrxB3$" role="2OqNvi" />
                           <node concept="2ShNRf" id="3612de$fs94" role="2Oq$k0">
-                            <node concept="Tc6Ow" id="3612de$ft$M" role="2ShVmc" />
+                            <node concept="3$_iS1" id="3612de$mchb" role="2ShVmc">
+                              <node concept="3$GHV9" id="3612de$mchd" role="3$GQph" />
+                              <node concept="10Oyi0" id="3612de$mceQ" role="3$_nBY" />
+                            </node>
                             <node concept="29HgVG" id="3612de$fu$u" role="lGtFl">
                               <node concept="3NFfHV" id="3612de$fx7n" role="3NFExx">
                                 <node concept="3clFbS" id="3612de$fx7o" role="2VODD2">
