@@ -48,7 +48,8 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import java.util.ArrayList;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
 import com.intellij.openapi.application.Application;
 import com.intellij.util.WaitForProgressToShow;
@@ -328,12 +329,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     } else {
       StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
-          final Wrappers._T<List<Problem>> problems = new Wrappers._T<List<Problem>>();
+          final Wrappers._T<List<IssueKindReportItem>> problems = new Wrappers._T<List<IssueKindReportItem>>();
           ProgressManager.getInstance().run(new Task.Modal(myProject, "Collecting Errors", false) {
             public void run(@NotNull final ProgressIndicator progressIndicator) {
               myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  problems.value = Sequence.fromIterable(errors.getProblems(progressIndicator)).toListSequence();
+                  problems.value = ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), errors.getProblems(progressIndicator));
                 }
               });
             }

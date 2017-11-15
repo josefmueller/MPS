@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -27,7 +27,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.ide.migration.MigrationExecutor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.MigrationRegistry;
@@ -70,7 +71,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
       // todo 
     }
     @Override
-    public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
+    public void checkProject(ProgressMonitor m, Processor<IssueKindReportItem> processor) {
       if (mySettings.preError != 1) {
         return;
       }
@@ -93,7 +94,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
         }
       }));
       assert ref.value != null;
-      processor.process(new BrokenReferenceProblem(ref.value, "test error"));
+      processor.process(new UnresolvedReferenceReportItem(ref.value, null));
     }
     @Override
     public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {

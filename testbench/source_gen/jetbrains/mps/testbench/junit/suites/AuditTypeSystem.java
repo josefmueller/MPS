@@ -6,11 +6,19 @@ import org.junit.ClassRule;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
+import org.junit.Assume;
+import jetbrains.mps.smodel.Generator;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.junit.Assert;
 
@@ -24,11 +32,12 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
 
   @Test
   public void checkTypeSystem() {
+    Assume.assumeFalse(myModule instanceof Generator);
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
-        return new CheckingTestsUtil(statistic).applyChecker(models, new TypesystemChecker());
+        Collection<SModel> models = new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule);
+        return new CheckingTestsUtil(statistic).applyChecker(myModule, new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators(), ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new TypesystemChecker()));
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

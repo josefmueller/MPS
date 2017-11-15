@@ -1,65 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" file="BrokenReferenceProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" file="ConceptFeatureMissingProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.ConceptMissingProblem" file="ConceptMissingProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem" file="DependencyOnNotMigratedLibProblem.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode extendsClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.DependencyProblem" file="DependencyProblem.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode extendsClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.LanguageAbsentInRepoProblem" file="LanguageAbsentInRepoProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.check.LanguageMissingProblem" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.LanguageMissingProblem" file="LanguageMissingProblem.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.check.LanguageNotLoadedProblem" file="LanguageNotLoadedProblem.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependency" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.check.LanguageMissingProblem" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.check.MissingMigrationProblem" file="MissingMigrationProblem.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode extendsClassName="jetbrains.mps.errors.item.ModuleReportItem" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
 </dependenciesRoot>

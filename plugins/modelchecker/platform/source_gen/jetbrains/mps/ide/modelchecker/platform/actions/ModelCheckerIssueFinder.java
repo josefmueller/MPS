@@ -4,104 +4,60 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import java.util.List;
-import java.util.Arrays;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
-import jetbrains.mps.errors.item.NodeFlavouredItem;
-import jetbrains.mps.checkers.ErrorReportUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
+import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.ide.messages.Icons;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.util.Pair;
 
 public class ModelCheckerIssueFinder extends BaseFinder {
-  private final List<SpecificChecker> myExtraCheckers;
+  private final List<IChecker<?, ?>> myExtraCheckers;
+  private final SRepository myRepository;
 
-  public ModelCheckerIssueFinder(List<SpecificChecker> extraCheckers) {
-    myExtraCheckers = extraCheckers;
+  public ModelCheckerIssueFinder(SRepository repository, List<? extends IChecker<?, ?>> extraCheckers) {
+    myRepository = repository;
+    myExtraCheckers = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
+    ListSequence.fromList(myExtraCheckers).addSequence(ListSequence.fromList(extraCheckers));
   }
-  public ModelCheckerIssueFinder(SpecificChecker... extraCheckers) {
-    this(Arrays.asList(extraCheckers));
-  }
-  protected final List<SpecificChecker> getSpecificCheckers() {
+  protected final List<IChecker<?, ?>> getSpecificCheckers() {
     return myExtraCheckers;
   }
   @Override
   public SearchResults<IssueKindReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
-    ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
-
-    int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count() + 1;
-    monitor.start("Checking", work);
-
-    try {
-      final SearchResults<IssueKindReportItem> rv = new SearchResults<IssueKindReportItem>();
-
-      ModuleChecker moduleChecker = new ModuleChecker();
-      for (final SModule module : ListSequence.fromList(itemsToCheck.modules)) {
-        List<? extends IssueKindReportItem> results = moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
-        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
-          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return ModelChecker.getSearchResultForReportItem(it, module.getRepository());
-          }
-        }).toListSequence());
-        if (monitor.isCanceled()) {
-          break;
-        }
+    ModelCheckerBuilder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
+    final SearchResults<IssueKindReportItem> result = new SearchResults<IssueKindReportItem>();
+    Consumer<IssueKindReportItem> errorCollector = new Consumer<IssueKindReportItem>() {
+      public void consume(IssueKindReportItem error) {
+        result.getSearchResults().add(ModelCheckerIssueFinder.getSearchResultForReportItem(error, myRepository));
       }
-
-      ModelChecker modelChecker = new ModelChecker(getSpecificCheckers());
-      for (final SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
-        List<IssueKindReportItem> results = modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
-        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
-          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-            return ModelChecker.getSearchResultForReportItem(it, modelDescriptor.getRepository());
-          }
-        }).toListSequence());
-        if (monitor.isCanceled()) {
-          break;
-        }
-      }
-
-      // filter out suppressed 
-      List<SearchResult<IssueKindReportItem>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<IssueKindReportItem>>());
-      for (SearchResult<IssueKindReportItem> result : ListSequence.fromList(rv.getSearchResults())) {
-        if (NodeFlavouredItem.FLAVOUR_NODE.canGet(result.getObject())) {
-          if (!(ErrorReportUtil.shouldReportError(((SNode) result.getPathObject())))) {
-            ListSequence.fromList(toRemove).addElement(result);
-          }
-        }
-      }
-      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<IssueKindReportItem>>() {
-        public void visit(SearchResult<IssueKindReportItem> it) {
-          rv.remove(it);
-        }
-      });
-
-      return rv;
-    } finally {
-      monitor.done();
-    }
+    };
+    List<IChecker<?, ? extends IssueKindReportItem>> specificCheckers = ListSequence.fromList(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>());
+    ListSequence.fromList(specificCheckers).addSequence(ListSequence.fromList(getSpecificCheckers()));
+    ListSequence.fromList(specificCheckers).addElement(new ModuleChecker());
+    new ModelCheckerBuilder(ModelCheckerSettings.getInstance().isCheckStubs()).createChecker(specificCheckers).check(itemsToCheck, myRepository, errorCollector, monitor);
+    return result;
   }
-  private static class ItemsToCheck {
-    public List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    public List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
-  }
-  private ModelCheckerIssueFinder.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
+  private ModelCheckerBuilder.ItemsToCheck getItemsToCheck(SearchQuery searchQuery) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     final SearchScope scope = searchQuery.getScope();
-    ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = new ModelCheckerIssueFinder.ItemsToCheck();
+    ModelCheckerBuilder.ItemsToCheck itemsToCheck = new ModelCheckerBuilder.ItemsToCheck();
     // FIXME IT'S PLAIN WRONG TO PASS SET OF MODELS/MODULES TO CHECK THROUGH IHolder. 
     //       SearchScope tells where to look for, SearchQuery.getObjectHolder tells what to look for 
     //       That's why I didn't change scope.resolve here to use query.getSearchObjectResolver()! 
@@ -118,7 +74,6 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       SModule resolved = scope.resolve(mr);
       if (resolved != null) {
         ListSequence.fromList(itemsToCheck.modules).addElement(resolved);
-        ListSequence.fromList(itemsToCheck.models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(resolved)));
       }
     } else if (objectHolder.getObject() instanceof SModelReference) {
       SModelReference mr = (SModelReference) objectHolder.getObject();
@@ -130,5 +85,26 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       throw new IllegalArgumentException();
     }
     return itemsToCheck;
+  }
+  public static String getResultCategory(MessageStatus messageStatus) {
+    switch (messageStatus) {
+      case ERROR:
+        return SEVERITY_ERROR;
+      case WARNING:
+        return SEVERITY_WARNING;
+      case OK:
+        return SEVERITY_INFO;
+      default:
+        return SEVERITY_ERROR;
+    }
+  }
+  public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
+  public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
+  public static final String SEVERITY_ERROR = "Errors";
+  public static final String SEVERITY_WARNING = "Warnings";
+  public static final String SEVERITY_INFO = "Infos";
+  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
+    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
+    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
 }

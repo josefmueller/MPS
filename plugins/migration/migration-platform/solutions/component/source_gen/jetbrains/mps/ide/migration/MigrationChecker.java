@@ -6,11 +6,12 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 
 public interface MigrationChecker {
   void checkMigrations(ProgressMonitor m, Processor<ScriptApplied> processor);
   void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor);
-  void checkProject(ProgressMonitor m, Processor<Problem> processor);
+  void checkProject(ProgressMonitor m, Processor<IssueKindReportItem> processor);
   void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor);
 }

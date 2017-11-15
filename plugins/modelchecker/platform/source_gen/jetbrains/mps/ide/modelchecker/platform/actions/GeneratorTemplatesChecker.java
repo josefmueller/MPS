@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -27,6 +27,12 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
   public GeneratorTemplatesChecker() {
   }
 
+
+  @Override
+  public String getCategory() {
+    return "cross-templates references";
+  }
+
   @Override
   public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressMonitor) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
@@ -34,10 +40,6 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
     }
 
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
-    if (progressMonitor.isCanceled()) {
-      return results;
-    }
-    progressMonitor.start("cross-templates references", ListSequence.fromList(SModelOperations.roots(model, null)).count());
 
     for (SNode root : ListSequence.fromList(SModelOperations.roots(model, null))) {
       if (AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11017244494L, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null) {
@@ -46,10 +48,8 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
       if (progressMonitor.isCanceled()) {
         return results;
       }
-      progressMonitor.advance(1);
     }
 
-    progressMonitor.done();
     return results;
   }
 

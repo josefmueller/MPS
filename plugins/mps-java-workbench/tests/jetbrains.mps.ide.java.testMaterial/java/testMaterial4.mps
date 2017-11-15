@@ -2,7 +2,7 @@
 <model ref="r:b682db9b-749d-487b-b097-cbd5d76b3049(jetbrains.mps.ide.java.testMaterial4)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -171,6 +171,7 @@
     <node concept="3clFbW" id="2OnbqFWkYZg" role="jymVt">
       <node concept="3Tm1VV" id="2OnbqFWkYZh" role="1B3o_S" />
       <node concept="3clFbS" id="2OnbqFWkYZi" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Kp" role="3clF45" />
     </node>
     <node concept="2YIFZL" id="2OnbqFWkYZj" role="jymVt">
       <property role="TrG5h" value="foo" />
@@ -342,6 +343,7 @@
     <node concept="3clFbW" id="2OnbqFWkZ0l" role="jymVt">
       <node concept="3Tm6S6" id="2OnbqFWkZ0m" role="1B3o_S" />
       <node concept="3clFbS" id="2OnbqFWkZ0n" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Kv" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2OnbqFWkZ0o" role="jymVt">
       <property role="TrG5h" value="bar" />
@@ -448,6 +450,7 @@
     <node concept="3clFbW" id="2OnbqFWkZ13" role="jymVt">
       <node concept="3Tm6S6" id="2OnbqFWkZ14" role="1B3o_S" />
       <node concept="3clFbS" id="2OnbqFWkZ15" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Ky" role="3clF45" />
     </node>
   </node>
   <node concept="3HP615" id="2OnbqFWkZ16">
@@ -466,6 +469,7 @@
       <node concept="3clFbW" id="2OnbqFWkZ1a" role="jymVt">
         <node concept="3Tm1VV" id="2OnbqFWkZ1b" role="1B3o_S" />
         <node concept="3clFbS" id="2OnbqFWkZ1k" role="3clF47" />
+        <node concept="3cqZAl" id="EQtaUM29Kw" role="3clF45" />
       </node>
     </node>
     <node concept="312cEu" id="2OnbqFWkZ1c" role="jymVt">
@@ -474,6 +478,7 @@
       <node concept="3clFbW" id="2OnbqFWkZ1e" role="jymVt">
         <node concept="3Tm1VV" id="2OnbqFWkZ1f" role="1B3o_S" />
         <node concept="3clFbS" id="2OnbqFWkZ1l" role="3clF47" />
+        <node concept="3cqZAl" id="EQtaUM29Ks" role="3clF45" />
       </node>
     </node>
   </node>
@@ -483,6 +488,7 @@
     <node concept="3clFbW" id="2OnbqFWkZ1s" role="jymVt">
       <node concept="3Tm1VV" id="2OnbqFWkZ1t" role="1B3o_S" />
       <node concept="3clFbS" id="2OnbqFWkZ1u" role="3clF47" />
+      <node concept="3cqZAl" id="EQtaUM29Kt" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2OnbqFWkZ1v" role="jymVt">
       <property role="TrG5h" value="foo" />
@@ -531,6 +537,7 @@
       <node concept="3clFbW" id="2OnbqFWkZ1q" role="jymVt">
         <node concept="3Tm1VV" id="2OnbqFWkZ1r" role="1B3o_S" />
         <node concept="3clFbS" id="2OnbqFWkZ1G" role="3clF47" />
+        <node concept="3cqZAl" id="EQtaUM29Kq" role="3clF45" />
       </node>
     </node>
   </node>
@@ -558,6 +565,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Kx" role="3clF45" />
     </node>
     <node concept="3clFb_" id="2OnbqFWkZ25" role="jymVt">
       <property role="TrG5h" value="foo" />
@@ -572,6 +580,7 @@
       <node concept="3clFbW" id="2OnbqFWkZ1P" role="jymVt">
         <node concept="3Tm1VV" id="2OnbqFWkZ1Q" role="1B3o_S" />
         <node concept="3clFbS" id="2OnbqFWkZ29" role="3clF47" />
+        <node concept="3cqZAl" id="EQtaUM29Ku" role="3clF45" />
       </node>
     </node>
     <node concept="312cEu" id="2OnbqFWkZ1R" role="jymVt">
@@ -580,6 +589,7 @@
       <node concept="3clFbW" id="2OnbqFWkZ1T" role="jymVt">
         <node concept="3Tm1VV" id="2OnbqFWkZ1U" role="1B3o_S" />
         <node concept="3clFbS" id="2OnbqFWkZ2a" role="3clF47" />
+        <node concept="3cqZAl" id="EQtaUM29Kr" role="3clF45" />
       </node>
     </node>
     <node concept="3uibUv" id="_mhz_5YTfC" role="1zkMxy">

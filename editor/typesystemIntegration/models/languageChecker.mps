@@ -8,7 +8,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
@@ -40,6 +40,8 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" />
+    <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
+    <import index="k2t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.checkers(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -399,13 +401,13 @@
       <node concept="3Tm6S6" id="2v0ve8x$p7u" role="1B3o_S" />
       <node concept="2hMVRd" id="2v0ve8x$p7v" role="1tU5fm">
         <node concept="3uibUv" id="2v0ve8x$p7w" role="2hN53Y">
-          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
+          <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
         </node>
       </node>
       <node concept="2ShNRf" id="2v0ve8x$p7x" role="33vP2m">
         <node concept="2i4dXS" id="2v0ve8x$p7y" role="2ShVmc">
           <node concept="3uibUv" id="2v0ve8x$p7z" role="HW$YZ">
-            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeChecker" />
+            <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
           </node>
         </node>
       </node>
@@ -472,9 +474,19 @@
               <ref role="3cqZAo" node="2v0ve8x$p7t" resolve="myRules" />
             </node>
             <node concept="TSZUe" id="2v0ve8x$pbn" role="2OqNvi">
-              <node concept="2ShNRf" id="2v0ve8x$pbo" role="25WWJ7">
-                <node concept="HV5vD" id="15I3XUWeewD" role="2ShVmc">
-                  <ref role="HV5vE" to="wsw7:3TJpIwQm7lN" resolve="StructureChecker" />
+              <node concept="10QFUN" id="2z6v5unPmL1" role="25WWJ7">
+                <node concept="10QFUN" id="2z6v5unPmKW" role="10QFUP">
+                  <node concept="2ShNRf" id="2z6v5unPmKX" role="10QFUP">
+                    <node concept="1pGfFk" id="2z6v5unPmKY" role="2ShVmc">
+                      <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;()" resolve="StructureChecker" />
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="2z6v5unPmL0" role="10QFUM">
+                    <ref role="3uigEE" to="k2t0:~AbstractNodeCheckerInEditor" resolve="AbstractNodeCheckerInEditor" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="2z6v5unPmYb" role="10QFUM">
+                  <ref role="3uigEE" to="wsw7:6qi2OtU3u$c" resolve="AbstractNodeCheckerInEditor" />
                 </node>
               </node>
             </node>
@@ -501,8 +513,8 @@
             </node>
             <node concept="TSZUe" id="2v0ve8x$pbz" role="2OqNvi">
               <node concept="2ShNRf" id="2v0ve8x$pb$" role="25WWJ7">
-                <node concept="1pGfFk" id="2v0ve8x$pb_" role="2ShVmc">
-                  <ref role="37wK5l" to="wsw7:3TJpIwQlqFH" resolve="UsedLanguagesChecker" />
+                <node concept="HV5vD" id="3RAxiQnBzDl" role="2ShVmc">
+                  <ref role="HV5vE" to="wsw7:3TJpIwQlqFz" resolve="UsedLanguagesChecker" />
                 </node>
               </node>
             </node>

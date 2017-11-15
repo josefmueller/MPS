@@ -15,6 +15,7 @@ import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.NodeReportItem;
@@ -30,7 +31,7 @@ import org.junit.Assume;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import java.util.Collection;
+import jetbrains.mps.generator.GenerationFacade;
 
 public class CheckProjectStructure extends BaseCheckModulesTest {
   public CheckProjectStructure(SModule module) {
@@ -72,7 +73,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : extractModels(true)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
           MessageCollectProcessor<ModelReportItem> collector = new MessageCollectProcessor<ModelReportItem>(false);
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
@@ -99,7 +100,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : extractModels(true)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
           MessageCollectProcessor<NodeReportItem> collector = new MessageCollectProcessor<NodeReportItem>(false) {
             @Override
             protected String formatMessage(NodeReportItem problem) {
@@ -139,7 +140,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModel sm : extractModels(true)) {
+        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().getModels(myModule)) {
           StringBuilder errorMessages = new StringBuilder();
           errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
           boolean withErrors = false;
@@ -175,7 +176,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         GenerationDependenciesCache genDeps = new GenerationDependenciesCache();
-        for (SModel sm : extractModels(false)) {
+        for (SModel sm : new CheckProjectStructure.TestsModelExtractor().excludeDoNoGenerate().getModels(myModule)) {
           SModule module = sm.getModule();
           if (module == null) {
             errors.add("Model without a module: " + sm.getReference().toString());
@@ -201,7 +202,16 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 
-  private Collection<SModel> extractModels(boolean includeDontGenerate) {
-    return new ModelsExtractor(myModule, includeDontGenerate).includingGenerators().getModels();
+  public static class TestsModelExtractor extends ModelCheckerBuilder.ModelsExtractorImpl {
+    private boolean myIncludeDoNotGenerate = true;
+    public ModelCheckerBuilder.ModelsExtractorImpl excludeDoNoGenerate() {
+      myIncludeDoNotGenerate = false;
+      return this;
+    }
+    @Override
+    public boolean includeModel(SModel model) {
+      return super.includeModel(model) && (myIncludeDoNotGenerate || GenerationFacade.canGenerate(model));
+    }
   }
+
 }

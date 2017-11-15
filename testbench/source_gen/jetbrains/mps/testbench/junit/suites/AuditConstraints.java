@@ -9,13 +9,16 @@ import org.junit.Test;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
+import jetbrains.mps.checkers.IChecker;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import org.junit.Assert;
 
 public class AuditConstraints extends BaseCheckModulesTest {
@@ -31,10 +34,11 @@ public class AuditConstraints extends BaseCheckModulesTest {
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
-        return new CheckingTestsUtil(statistic).applyChecker(models, new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));
+        List<IChecker<SNode, NodeReportItem>> checkers = ListSequence.fromListAndArray(new ArrayList<IChecker<SNode, NodeReportItem>>(), new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker());
+        return new CheckingTestsUtil(statistic).applyChecker(myModule, new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators(), checkers);
       }
     });
+
     ourStats.report("Errors", statistic.getNumErrors());
     ourStats.report("Warnings", statistic.getNumWarnings());
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());

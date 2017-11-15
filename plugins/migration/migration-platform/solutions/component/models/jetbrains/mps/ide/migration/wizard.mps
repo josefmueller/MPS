@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -48,6 +48,7 @@
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
   </imports>
   <registry>
@@ -4547,8 +4548,8 @@
       <node concept="3clFbS" id="2htE_P_MrCx" role="3clF47" />
       <node concept="3Tm1VV" id="2htE_P_MrCy" role="1B3o_S" />
       <node concept="A3Dl8" id="2htE_P_MrCz" role="3clF45">
-        <node concept="3uibUv" id="2htE_P_MrC$" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtwddkW" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="P$JXv" id="2htE_P_PJ_z" role="lGtFl">
@@ -4982,8 +4983,8 @@
       </node>
       <node concept="3Tm1VV" id="ANqTy7mxfB" role="1B3o_S" />
       <node concept="A3Dl8" id="ANqTy7mxfC" role="3clF45">
-        <node concept="3uibUv" id="ANqTy7mxfD" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtweBms" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="ANqTy7mxfE" role="3clF47">
@@ -5133,8 +5134,8 @@
       </node>
       <node concept="3Tm1VV" id="2htE_P_OKgS" role="1B3o_S" />
       <node concept="A3Dl8" id="2htE_P_OKgT" role="3clF45">
-        <node concept="3uibUv" id="2htE_P_OKgU" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtweVDz" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="2htE_P_OKgV" role="3clF47">
@@ -5332,8 +5333,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3uibUv" id="7k0ZD$h8mQH" role="10QFUM">
-                          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                        <node concept="3uibUv" id="35jzWtwfg3V" role="10QFUM">
+                          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                         </node>
                       </node>
                     </node>
@@ -5456,8 +5457,8 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3uibUv" id="6Z8qT6OWEi6" role="10QFUM">
-                            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                          <node concept="3uibUv" id="35jzWtwfgPG" role="10QFUM">
+                            <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                           </node>
                         </node>
                       </node>
@@ -5616,8 +5617,8 @@
       </node>
       <node concept="3Tm1VV" id="4hH4xQo_Men" role="1B3o_S" />
       <node concept="A3Dl8" id="4hH4xQo_Meo" role="3clF45">
-        <node concept="3uibUv" id="4hH4xQo_Mep" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtwddwL" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="4hH4xQo_Meq" role="3clF47">
@@ -5625,14 +5626,14 @@
           <node concept="3cpWsn" id="2wbhCYFMbdn" role="3cpWs9">
             <property role="TrG5h" value="res" />
             <node concept="_YKpA" id="2wbhCYFMbdo" role="1tU5fm">
-              <node concept="3uibUv" id="2wbhCYFMbdp" role="_ZDj9">
-                <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+              <node concept="3uibUv" id="35jzWtwde61" role="_ZDj9">
+                <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
               </node>
             </node>
             <node concept="2ShNRf" id="2wbhCYFMbdq" role="33vP2m">
               <node concept="Tc6Ow" id="2wbhCYFMbdr" role="2ShVmc">
-                <node concept="3uibUv" id="2wbhCYFMbds" role="HW$YZ">
-                  <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                <node concept="3uibUv" id="35jzWtwdeHK" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                 </node>
               </node>
             </node>
@@ -5704,8 +5705,8 @@
                 </node>
                 <node concept="37vLTG" id="2wbhCYFMbdL" role="1bW2Oz">
                   <property role="TrG5h" value="p" />
-                  <node concept="3uibUv" id="2wbhCYFMbdM" role="1tU5fm">
-                    <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                  <node concept="3uibUv" id="35jzWtwdfH0" role="1tU5fm">
+                    <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                   </node>
                 </node>
               </node>
@@ -6283,8 +6284,8 @@
       </node>
       <node concept="3Tm1VV" id="2htE_P_OnpK" role="1B3o_S" />
       <node concept="A3Dl8" id="2htE_P_OnpL" role="3clF45">
-        <node concept="3uibUv" id="2htE_P_OnpM" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtwf$BO" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="2htE_P_OnpN" role="3clF47">
@@ -6292,8 +6293,8 @@
           <node concept="2YIFZM" id="2htE_P_OnLn" role="3cqZAk">
             <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <node concept="3uibUv" id="2htE_P_Orqw" role="3PaCim">
-              <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+            <node concept="3uibUv" id="35jzWtwf$Qw" role="3PaCim">
+              <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
             </node>
           </node>
         </node>
@@ -6533,8 +6534,8 @@
       </node>
       <node concept="3Tm1VV" id="2htE_P_Np6z" role="1B3o_S" />
       <node concept="A3Dl8" id="2htE_P_Np6$" role="3clF45">
-        <node concept="3uibUv" id="2htE_P_Np6_" role="A3Ik2">
-          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        <node concept="3uibUv" id="35jzWtweiuv" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="2htE_P_Np6A" role="3clF47">
@@ -6542,14 +6543,14 @@
           <node concept="3cpWsn" id="2wbhCYFM4B6" role="3cpWs9">
             <property role="TrG5h" value="res" />
             <node concept="_YKpA" id="2wbhCYFM4AX" role="1tU5fm">
-              <node concept="3uibUv" id="2wbhCYFM4B0" role="_ZDj9">
-                <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+              <node concept="3uibUv" id="35jzWtwej30" role="_ZDj9">
+                <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
               </node>
             </node>
             <node concept="2ShNRf" id="2wbhCYFM4B7" role="33vP2m">
               <node concept="Tc6Ow" id="2wbhCYFM4B8" role="2ShVmc">
-                <node concept="3uibUv" id="2wbhCYFM4B9" role="HW$YZ">
-                  <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                <node concept="3uibUv" id="35jzWtwejCg" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                 </node>
               </node>
             </node>
@@ -8472,8 +8473,8 @@
               <node concept="1bVj0M" id="2wbhCYFIwM7" role="37wK5m">
                 <node concept="37vLTG" id="2wbhCYFIwV8" role="1bW2Oz">
                   <property role="TrG5h" value="p" />
-                  <node concept="3uibUv" id="2wbhCYFIx2j" role="1tU5fm">
-                    <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                  <node concept="3uibUv" id="35jzWtwdj1I" role="1tU5fm">
+                    <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="2wbhCYFIwM8" role="1bW5cS">

@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="tpru" ref="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" />
@@ -401,6 +401,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Kj" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2deLAXtzjxK" role="jymVt" />
     <node concept="3clFb_" id="2juexGD4$UX" role="jymVt">
@@ -1025,6 +1026,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Kl" role="3clF45" />
     </node>
     <node concept="3clFb_" id="6gVcYMN7OxE" role="jymVt">
       <property role="TrG5h" value="getEvaluationContainer" />
@@ -1272,6 +1274,7 @@
           <ref role="3uigEE" to="d822:3L_P6qKH88z" resolve="DebugSession" />
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29Kk" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2Z8pu54WXp2" role="jymVt" />
     <node concept="3clFb_" id="3URxx275fMh" role="jymVt">

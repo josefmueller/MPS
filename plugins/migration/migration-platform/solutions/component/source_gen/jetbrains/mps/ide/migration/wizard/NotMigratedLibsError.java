@@ -4,7 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -26,7 +26,7 @@ public class NotMigratedLibsError extends MigrationError {
   public boolean canIgnore() {
     return true;
   }
-  public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
+  public Iterable<IssueKindReportItem> getProblems(ProgressIndicator progressIndicator) {
     return MapSequence.fromMap(errors).select(new ISelector<IMapping<SModule, SModule>, DependencyOnNotMigratedLibProblem>() {
       public DependencyOnNotMigratedLibProblem select(IMapping<SModule, SModule> it) {
         return new DependencyOnNotMigratedLibProblem(it.value(), it.key());

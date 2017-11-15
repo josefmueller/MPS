@@ -12,7 +12,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -38,6 +38,7 @@ import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationRegistry;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
 
@@ -75,7 +76,7 @@ public class RunPreUpdateCheck_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
+    final List<IssueKindReportItem> problems = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     final SRepository repos = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     repos.getModelAccess().runReadAction(new Runnable() {

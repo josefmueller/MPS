@@ -19,52 +19,51 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
-/**
- * @deprecated Dubious added value of the class don't justify its existence, will be removed after 3.1
- * Evgeny Gryaznov, 10/3/11
- */
-@Deprecated
-public class CancellationMonitor implements ProgressMonitor {
+public class ProgressMonitorDecorator implements ProgressMonitor {
 
-  private final ProgressMonitor wrapped;
+  private final ProgressMonitor myDelegate;
 
-  public CancellationMonitor(ProgressMonitor wrapped) {
-    this.wrapped = wrapped;
+  public ProgressMonitorDecorator(ProgressMonitor delegate) {
+    this.myDelegate = delegate;
   }
 
   @Override
   public void start(@NotNull String taskName, int totalWork) {
+    myDelegate.start(taskName, totalWork);
   }
 
   @Override
   public void advance(int work) {
+    myDelegate.advance(work);
   }
 
   @Override
   public void step(String title) {
+    myDelegate.step(title);
   }
 
   @Override
   public void done() {
-  }
-
-  @Override
-  public ProgressMonitor subTask(int work) {
-    return this;
-  }
-
-  @Override
-  public ProgressMonitor subTask(int work, SubProgressKind kind) {
-    return this;
+    myDelegate.done();
   }
 
   @Override
   public boolean isCanceled() {
-    return wrapped.isCanceled();
+    return myDelegate.isCanceled();
   }
 
   @Override
   public void cancel() {
-    wrapped.cancel();
+    myDelegate.cancel();
+  }
+
+  @Override
+  public ProgressMonitor subTask(int work) {
+    return myDelegate.subTask(work);
+  }
+
+  @Override
+  public ProgressMonitor subTask(int work, SubProgressKind kind) {
+    return myDelegate.subTask(work, kind);
   }
 }

@@ -69,6 +69,7 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -180,7 +181,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="7" role="39e2AY">
-          <ref role="39e2AS" node="H" resolve="substitute_WrapperType_SubstituteTypeRule" />
+          <ref role="39e2AS" node="I" resolve="substitute_WrapperType_SubstituteTypeRule" />
         </node>
       </node>
     </node>
@@ -204,7 +205,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="d" role="39e2AY">
-          <ref role="39e2AS" node="L" resolve="isApplicableAndPattern" />
+          <ref role="39e2AS" node="M" resolve="isApplicableAndPattern" />
         </node>
       </node>
     </node>
@@ -228,7 +229,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="j" role="39e2AY">
-          <ref role="39e2AS" node="J" resolve="substitution" />
+          <ref role="39e2AS" node="K" resolve="substitution" />
         </node>
       </node>
     </node>
@@ -246,33 +247,33 @@
     <property role="TrG5h" value="TypesystemDescriptor" />
     <node concept="3clFbW" id="q" role="jymVt">
       <node concept="3clFbS" id="t" role="3clF47">
-        <node concept="9aQIb" id="v" role="3cqZAp">
-          <node concept="3clFbS" id="w" role="9aQI4">
-            <node concept="3cpWs8" id="x" role="3cqZAp">
-              <node concept="3cpWsn" id="z" role="3cpWs9">
+        <node concept="9aQIb" id="w" role="3cqZAp">
+          <node concept="3clFbS" id="x" role="9aQI4">
+            <node concept="3cpWs8" id="y" role="3cqZAp">
+              <node concept="3cpWsn" id="$" role="3cpWs9">
                 <property role="TrG5h" value="substituteTypeRule" />
-                <node concept="3uibUv" id="$" role="1tU5fm">
+                <node concept="3uibUv" id="_" role="1tU5fm">
                   <ref role="3uigEE" to="qurh:~SubstituteType_Runtime" resolve="SubstituteType_Runtime" />
                 </node>
-                <node concept="2ShNRf" id="_" role="33vP2m">
-                  <node concept="1pGfFk" id="A" role="2ShVmc">
-                    <ref role="37wK5l" node="I" resolve="substitute_WrapperType_SubstituteTypeRule" />
+                <node concept="2ShNRf" id="A" role="33vP2m">
+                  <node concept="1pGfFk" id="B" role="2ShVmc">
+                    <ref role="37wK5l" node="J" resolve="substitute_WrapperType_SubstituteTypeRule" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="y" role="3cqZAp">
-              <node concept="2OqwBi" id="B" role="3clFbG">
-                <node concept="2OqwBi" id="C" role="2Oq$k0">
-                  <node concept="2OwXpG" id="E" role="2OqNvi">
+            <node concept="3clFbF" id="z" role="3cqZAp">
+              <node concept="2OqwBi" id="C" role="3clFbG">
+                <node concept="2OqwBi" id="D" role="2Oq$k0">
+                  <node concept="2OwXpG" id="F" role="2OqNvi">
                     <ref role="2Oxat5" to="qurh:~BaseHelginsDescriptor.mySubstituteTypeRules" resolve="mySubstituteTypeRules" />
                   </node>
-                  <node concept="Xjq3P" id="F" role="2Oq$k0" />
+                  <node concept="Xjq3P" id="G" role="2Oq$k0" />
                 </node>
-                <node concept="liA8E" id="D" role="2OqNvi">
+                <node concept="liA8E" id="E" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="G" role="37wK5m">
-                    <ref role="3cqZAo" node="z" resolve="substituteTypeRule" />
+                  <node concept="37vLTw" id="H" role="37wK5m">
+                    <ref role="3cqZAo" node="$" resolve="substituteTypeRule" />
                   </node>
                 </node>
               </node>
@@ -281,62 +282,64 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="u" role="1B3o_S" />
+      <node concept="3cqZAl" id="v" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="r" role="1B3o_S" />
     <node concept="3uibUv" id="s" role="1zkMxy">
       <ref role="3uigEE" to="qurh:~BaseHelginsDescriptor" resolve="BaseHelginsDescriptor" />
     </node>
   </node>
-  <node concept="312cEu" id="H">
+  <node concept="312cEu" id="I">
     <property role="3GE5qa" value="definition.rule" />
     <property role="TrG5h" value="substitute_WrapperType_SubstituteTypeRule" />
-    <node concept="3clFbW" id="I" role="jymVt">
-      <node concept="3clFbS" id="Q" role="3clF47" />
-      <node concept="3Tm1VV" id="R" role="1B3o_S" />
+    <node concept="3clFbW" id="J" role="jymVt">
+      <node concept="3clFbS" id="R" role="3clF47" />
+      <node concept="3Tm1VV" id="S" role="1B3o_S" />
+      <node concept="3cqZAl" id="T" role="3clF45" />
     </node>
-    <node concept="3clFb_" id="J" role="jymVt">
+    <node concept="3clFb_" id="K" role="jymVt">
       <property role="TrG5h" value="substitution" />
-      <node concept="37vLTG" id="S" role="3clF46">
+      <node concept="37vLTG" id="U" role="3clF46">
         <property role="3TUv4t" value="true" />
         <property role="TrG5h" value="wrapperType" />
-        <node concept="3Tqbb2" id="10" role="1tU5fm" />
+        <node concept="3Tqbb2" id="12" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="T" role="3clF46">
+      <node concept="37vLTG" id="V" role="3clF46">
         <property role="TrG5h" value="originalType" />
-        <node concept="3Tqbb2" id="11" role="1tU5fm" />
+        <node concept="3Tqbb2" id="13" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="U" role="3clF46">
+      <node concept="37vLTG" id="W" role="3clF46">
         <property role="TrG5h" value="typeCheckingContext" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="12" role="1tU5fm">
+        <node concept="3uibUv" id="14" role="1tU5fm">
           <ref role="3uigEE" to="u78q:~TypeCheckingContext" resolve="TypeCheckingContext" />
         </node>
       </node>
-      <node concept="37vLTG" id="V" role="3clF46">
+      <node concept="37vLTG" id="X" role="3clF46">
         <property role="TrG5h" value="status" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="13" role="1tU5fm">
+        <node concept="3uibUv" id="15" role="1tU5fm">
           <ref role="3uigEE" to="qurh:~IsApplicableStatus" resolve="IsApplicableStatus" />
         </node>
       </node>
-      <node concept="3Tm1VV" id="W" role="1B3o_S" />
-      <node concept="3clFbS" id="X" role="3clF47">
-        <node concept="3clFbF" id="14" role="3cqZAp">
-          <node concept="2ShNRf" id="15" role="3clFbG">
-            <node concept="1pGfFk" id="16" role="2ShVmc">
+      <node concept="3Tm1VV" id="Y" role="1B3o_S" />
+      <node concept="3clFbS" id="Z" role="3clF47">
+        <node concept="3clFbF" id="16" role="3cqZAp">
+          <node concept="2ShNRf" id="17" role="3clFbG">
+            <node concept="1pGfFk" id="18" role="2ShVmc">
               <ref role="37wK5l" to="u78q:~TypeSubstitution.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String)" resolve="TypeSubstitution" />
-              <node concept="37vLTw" id="17" role="37wK5m">
-                <ref role="3cqZAo" node="T" resolve="originalType" />
+              <node concept="37vLTw" id="19" role="37wK5m">
+                <ref role="3cqZAo" node="V" resolve="originalType" />
               </node>
-              <node concept="2Sg_IR" id="18" role="37wK5m">
-                <node concept="1bVj0M" id="1b" role="2SgG2M">
-                  <node concept="3clFbS" id="1c" role="1bW5cS">
-                    <node concept="3clFbF" id="1d" role="3cqZAp">
-                      <node concept="2OqwBi" id="1e" role="3clFbG">
-                        <node concept="37vLTw" id="1f" role="2Oq$k0">
-                          <ref role="3cqZAo" node="S" resolve="wrapperType" />
+              <node concept="2Sg_IR" id="1a" role="37wK5m">
+                <node concept="1bVj0M" id="1d" role="2SgG2M">
+                  <node concept="3clFbS" id="1e" role="1bW5cS">
+                    <node concept="3clFbF" id="1f" role="3cqZAp">
+                      <node concept="2OqwBi" id="1g" role="3clFbG">
+                        <node concept="37vLTw" id="1h" role="2Oq$k0">
+                          <ref role="3cqZAo" node="U" resolve="wrapperType" />
                         </node>
-                        <node concept="3TrEf2" id="1g" role="2OqNvi">
+                        <node concept="3TrEf2" id="1i" role="2OqNvi">
                           <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" resolve="wrapped" />
                         </node>
                       </node>
@@ -344,91 +347,91 @@
                   </node>
                 </node>
               </node>
-              <node concept="Xl_RD" id="19" role="37wK5m">
+              <node concept="Xl_RD" id="1b" role="37wK5m">
                 <property role="Xl_RC" value="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)" />
               </node>
-              <node concept="Xl_RD" id="1a" role="37wK5m">
+              <node concept="Xl_RD" id="1c" role="37wK5m">
                 <property role="Xl_RC" value="7323318266641941989" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="Y" role="3clF45">
+      <node concept="3uibUv" id="10" role="3clF45">
         <ref role="3uigEE" to="u78q:~TypeSubstitution" resolve="TypeSubstitution" />
       </node>
-      <node concept="6wLe0" id="Z" role="lGtFl">
+      <node concept="6wLe0" id="11" role="lGtFl">
         <property role="6wLej" value="7323318266641941989" />
         <property role="6wLeW" value="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)" />
       </node>
     </node>
-    <node concept="3clFb_" id="K" role="jymVt">
+    <node concept="3clFb_" id="L" role="jymVt">
       <property role="TrG5h" value="getApplicableConcept" />
-      <node concept="3bZ5Sz" id="1h" role="3clF45" />
-      <node concept="3clFbS" id="1i" role="3clF47">
-        <node concept="3cpWs6" id="1k" role="3cqZAp">
-          <node concept="35c_gC" id="1l" role="3cqZAk">
+      <node concept="3bZ5Sz" id="1j" role="3clF45" />
+      <node concept="3clFbS" id="1k" role="3clF47">
+        <node concept="3cpWs6" id="1m" role="3cqZAp">
+          <node concept="35c_gC" id="1n" role="3cqZAk">
             <ref role="35c_gD" to="jwoj:15xlXKdz5aW" resolve="WrapperType" />
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="1j" role="1B3o_S" />
+      <node concept="3Tm1VV" id="1l" role="1B3o_S" />
     </node>
-    <node concept="3clFb_" id="L" role="jymVt">
+    <node concept="3clFb_" id="M" role="jymVt">
       <property role="TrG5h" value="isApplicableAndPattern" />
-      <node concept="37vLTG" id="1m" role="3clF46">
+      <node concept="37vLTG" id="1o" role="3clF46">
         <property role="TrG5h" value="argument" />
-        <node concept="3Tqbb2" id="1q" role="1tU5fm" />
+        <node concept="3Tqbb2" id="1s" role="1tU5fm" />
       </node>
-      <node concept="3clFbS" id="1n" role="3clF47">
-        <node concept="9aQIb" id="1r" role="3cqZAp">
-          <node concept="3clFbS" id="1s" role="9aQI4">
-            <node concept="3cpWs6" id="1t" role="3cqZAp">
-              <node concept="2ShNRf" id="1u" role="3cqZAk">
-                <node concept="1pGfFk" id="1v" role="2ShVmc">
+      <node concept="3clFbS" id="1p" role="3clF47">
+        <node concept="9aQIb" id="1t" role="3cqZAp">
+          <node concept="3clFbS" id="1u" role="9aQI4">
+            <node concept="3cpWs6" id="1v" role="3cqZAp">
+              <node concept="2ShNRf" id="1w" role="3cqZAk">
+                <node concept="1pGfFk" id="1x" role="2ShVmc">
                   <ref role="37wK5l" to="qurh:~IsApplicableStatus.&lt;init&gt;(boolean,jetbrains.mps.lang.pattern.GeneratedMatchingPattern)" resolve="IsApplicableStatus" />
-                  <node concept="2OqwBi" id="1w" role="37wK5m">
-                    <node concept="2OqwBi" id="1y" role="2Oq$k0">
-                      <node concept="liA8E" id="1$" role="2OqNvi">
+                  <node concept="2OqwBi" id="1y" role="37wK5m">
+                    <node concept="2OqwBi" id="1$" role="2Oq$k0">
+                      <node concept="liA8E" id="1A" role="2OqNvi">
                         <ref role="37wK5l" to="mhbf:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
                       </node>
-                      <node concept="2JrnkZ" id="1_" role="2Oq$k0">
-                        <node concept="37vLTw" id="1A" role="2JrQYb">
-                          <ref role="3cqZAo" node="1m" resolve="argument" />
+                      <node concept="2JrnkZ" id="1B" role="2Oq$k0">
+                        <node concept="37vLTw" id="1C" role="2JrQYb">
+                          <ref role="3cqZAo" node="1o" resolve="argument" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="1z" role="2OqNvi">
+                    <node concept="liA8E" id="1_" role="2OqNvi">
                       <ref role="37wK5l" to="c17a:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
-                      <node concept="1rXfSq" id="1B" role="37wK5m">
-                        <ref role="37wK5l" node="K" resolve="getApplicableConcept" />
+                      <node concept="1rXfSq" id="1D" role="37wK5m">
+                        <ref role="37wK5l" node="L" resolve="getApplicableConcept" />
                       </node>
                     </node>
                   </node>
-                  <node concept="10Nm6u" id="1x" role="37wK5m" />
+                  <node concept="10Nm6u" id="1z" role="37wK5m" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="1o" role="3clF45">
+      <node concept="3uibUv" id="1q" role="3clF45">
         <ref role="3uigEE" to="qurh:~IsApplicableStatus" resolve="IsApplicableStatus" />
       </node>
-      <node concept="3Tm1VV" id="1p" role="1B3o_S" />
+      <node concept="3Tm1VV" id="1r" role="1B3o_S" />
     </node>
-    <node concept="3uibUv" id="M" role="EKbjA">
+    <node concept="3uibUv" id="N" role="EKbjA">
       <ref role="3uigEE" to="qurh:~SubstituteType_Runtime" resolve="SubstituteType_Runtime" />
     </node>
-    <node concept="3uibUv" id="N" role="1zkMxy">
+    <node concept="3uibUv" id="O" role="1zkMxy">
       <ref role="3uigEE" to="qurh:~AbstractSubstituteType_Runtime" resolve="AbstractSubstituteType_Runtime" />
-      <node concept="6wLe0" id="1C" role="lGtFl">
+      <node concept="6wLe0" id="1E" role="lGtFl">
         <property role="6wLej" value="7323318266641941989" />
         <property role="6wLeW" value="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)" />
       </node>
     </node>
-    <node concept="3Tm1VV" id="O" role="1B3o_S" />
-    <node concept="6wLe0" id="P" role="lGtFl">
+    <node concept="3Tm1VV" id="P" role="1B3o_S" />
+    <node concept="6wLe0" id="Q" role="lGtFl">
       <property role="6wLej" value="7323318266641941989" />
       <property role="6wLeW" value="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)" />
     </node>

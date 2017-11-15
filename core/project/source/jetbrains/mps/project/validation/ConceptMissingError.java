@@ -15,20 +15,26 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.NodeReportItemBase;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptMissingError extends NodeValidationProblem {
+public class ConceptMissingError extends NodeReportItemBase {
   private SConcept myConcept;
 
   public ConceptMissingError(SNode node, SConcept concept) {
     // in other place it used to be "No concept found for", "Concept of a node was not found"
-    super(node, "Missing concept " + concept.getName());
+    super(MessageStatus.ERROR, node.getReference(), "Concept " + concept.getName() + " was not found in language " + concept.getLanguage().getQualifiedName());
     myConcept = concept;
   }
 
   public SConcept getConcept() {
     return myConcept;
+  }
+
+  public String getIssueKind() {
+    return "missing concept";
   }
 
 }

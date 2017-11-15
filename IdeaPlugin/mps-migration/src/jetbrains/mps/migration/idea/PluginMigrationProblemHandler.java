@@ -25,6 +25,9 @@ import com.intellij.ui.content.ContentFactory;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.util.ui.MessageCategory;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.NodeFlavouredItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.idea.core.usages.NodeNavigatable;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
@@ -41,7 +44,7 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
   }
 
   @Override
-  public void showProblems(Collection<Problem> problems) {
+  public void showProblems(Collection<IssueKindReportItem> problems) {
     MigrationErrorView treeView = new MigrationErrorView(myProject);
     Content content = ContentFactory.SERVICE.getInstance().createContent(treeView.getComponent(), "Migration Problems", true);
 
@@ -51,10 +54,10 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
 
     contentManager.setSelectedContent(content);
 
-    for (Problem p : problems) {
+    for (IssueKindReportItem p : problems) {
       Navigatable nav = new MyNonNavigatable();
-      if (p.getReason() instanceof SNode) {
-        nav = new NodeNavigatable(((SNode) p.getReason()).getReference(), myProject) {
+      if (NodeFlavouredItem.FLAVOUR_NODE.canGet(p)) {
+        nav = new NodeNavigatable(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(p), myProject) {
           @Override
           public boolean isValid() {
             //todo ?
@@ -62,7 +65,7 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
           }
         };
       }
-      treeView.addMessage(MessageCategory.ERROR, new String[]{p.getMessage()}, p.getCategory(), nav, null, null, null);
+      treeView.addMessage(MessageCategory.ERROR, new String[]{p.getMessage()}, p.getIssueKind(), nav, null, null, null);
     }
 
     ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW).activate(null);

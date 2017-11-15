@@ -201,8 +201,8 @@ import java.util.*;
   }
 
   @Override
-  public void addError(SNode node, IErrorReporter reporter) {
-    getState().addError(node, reporter, null);
+  public void addError(IErrorReporter reporter) {
+    getState().addError(reporter);
   }
 
   @Override

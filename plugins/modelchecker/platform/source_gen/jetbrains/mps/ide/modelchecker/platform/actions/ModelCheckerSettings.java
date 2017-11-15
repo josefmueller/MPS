@@ -12,17 +12,17 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
+import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
-import jetbrains.mps.checkers.StructureChecker;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
+import jetbrains.mps.project.validation.StructureChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")
 )
@@ -57,16 +57,18 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public static ModelCheckerSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
-  public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
-    List<SpecificChecker> checkers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+  public List<IChecker<?, ?>> getSpecificCheckers(@NotNull Project mpsProject) {
+    List<IChecker<?, ?>> checkers = ListSequence.fromList(new ArrayList<IChecker<?, ?>>());
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
-        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new TypesystemChecker(), IssueKindReportItem.TYPESYSTEM, mpsProject.getRepository()));
+        ListSequence.fromList(checkers).addElement(new TypesystemChecker());
       case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), IssueKindReportItem.CONSTRAINTS, mpsProject.getRepository()));
-        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker()), IssueKindReportItem.CONSTRAINTS, mpsProject.getRepository()));
+        ListSequence.fromList(checkers).addElement(new ConstraintsChecker());
+        ListSequence.fromList(checkers).addElement(new RefScopeChecker());
+        ListSequence.fromList(checkers).addElement(new TargetConceptChecker());
+        ListSequence.fromList(checkers).addElement(new UsedLanguagesChecker());
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPRESS_ERRORS_CONDITION, new StructureChecker()), IssueKindReportItem.STRUCTURE, mpsProject.getRepository()));
+        ListSequence.fromList(checkers).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker());
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));

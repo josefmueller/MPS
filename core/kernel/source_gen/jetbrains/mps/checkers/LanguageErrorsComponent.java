@@ -163,7 +163,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
    * 
    * @return whether state has changed after the check
    */
-  public boolean check(@NotNull SNode root, Set<AbstractNodeChecker> checkers, SRepository repository, Cancellable c) {
+  public boolean check(@NotNull SNode root, Set<AbstractNodeCheckerInEditor> checkers, SRepository repository, Cancellable c) {
     prepareWorkForCheck();
 
     if (myFullCheckCompleted) {
@@ -220,7 +220,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
     }
   }
 
-  private void checkNode(SNode node, Set<AbstractNodeChecker> checkers, SRepository repository) {
+  private void checkNode(SNode node, Set<AbstractNodeCheckerInEditor> checkers, SRepository repository) {
     if (SNodeOperations.getModel(node) == null) {
       return;
     }
@@ -230,8 +230,8 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
     try {
       myCurrentNode = node;
       addDependency(node);
-      for (AbstractNodeChecker checker : checkers) {
-        checker.checkNode(node, this, repository);
+      for (AbstractNodeCheckerInEditor checker : checkers) {
+        checker.checkNodeInEditor(node, this, repository);
       }
     } finally {
       myCurrentNode = null;

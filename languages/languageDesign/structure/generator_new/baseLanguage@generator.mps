@@ -7,7 +7,7 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
@@ -1794,6 +1794,7 @@
         </node>
         <node concept="raruj" id="fWt6wM6" role="lGtFl" />
         <node concept="3Tm6S6" id="hCPNtbe" role="1B3o_S" />
+        <node concept="3cqZAl" id="EQtaUM29Ji" role="3clF45" />
       </node>
       <node concept="3clFb_" id="fWt6nj1" role="jymVt">
         <property role="TrG5h" value="getValue" />
@@ -1872,6 +1873,7 @@
           <node concept="10Oyi0" id="fWEv$Yu" role="1tU5fm" />
         </node>
         <node concept="raruj" id="fWExeyG" role="lGtFl" />
+        <node concept="3cqZAl" id="EQtaUM29Jj" role="3clF45" />
       </node>
       <node concept="3clFb_" id="fWExeyl" role="jymVt">
         <property role="TrG5h" value="getValue" />
@@ -1954,6 +1956,7 @@
           <node concept="10P_77" id="fWFS5uS" role="1tU5fm" />
         </node>
         <node concept="raruj" id="fWFS9eb" role="lGtFl" />
+        <node concept="3cqZAl" id="EQtaUM29Jh" role="3clF45" />
       </node>
       <node concept="3clFb_" id="fWFS5Q7" role="jymVt">
         <property role="TrG5h" value="getValue" />

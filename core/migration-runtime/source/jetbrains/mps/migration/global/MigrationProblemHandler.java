@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.migration.global;
 
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,7 +25,7 @@ import java.util.Map;
 import java.util.Set;
 
 public interface MigrationProblemHandler {
-  void showProblems(Collection<Problem> problems);
+  void showProblems(Collection<IssueKindReportItem> problems);
 
   void showNodes(Map<String, Set<SNode>> nodesByCategory);
 }

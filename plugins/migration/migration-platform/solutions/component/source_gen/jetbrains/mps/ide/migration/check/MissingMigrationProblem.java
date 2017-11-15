@@ -4,12 +4,15 @@ package jetbrains.mps.ide.migration.check;
 
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.errors.item.ModuleReportItem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public abstract class MissingMigrationProblem extends Problem<SModule> {
+public abstract class MissingMigrationProblem extends Problem<SModule> implements ModuleReportItem {
 
   public MissingMigrationProblem(SModule migrationProvider) {
     super(migrationProvider);
@@ -56,5 +59,11 @@ public abstract class MissingMigrationProblem extends Problem<SModule> {
 
   public String getCategory() {
     return "Missing migrations";
+  }
+
+  @NotNull
+  @Override
+  public SModuleReference getModule() {
+    return getReason().getModuleReference();
   }
 }

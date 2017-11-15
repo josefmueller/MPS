@@ -22,7 +22,7 @@ import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.ModelValidator;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssueFinder;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerUtils;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
@@ -63,8 +63,8 @@ public class ModelValidatorAdapter implements ModelValidator {
       return false;
     }
 
-    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
-    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);
+    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelCheckerIssueFinder.SEVERITY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelCheckerIssueFinder.SEVERITY_ERROR);
 
     if (errors != 0) {
       String msg = String.format("Model checker found %d errors and %d warnings. " + "Review them and don't generate models or ignore them?", errors, warnings);

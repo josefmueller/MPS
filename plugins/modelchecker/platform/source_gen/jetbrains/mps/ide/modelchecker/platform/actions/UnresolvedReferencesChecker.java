@@ -38,7 +38,6 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    monitor.start("unresolved references", 1);
     for (SNode node : SNodeUtil.getDescendants(model)) {
       if (monitor.isCanceled()) {
         break;
@@ -77,12 +76,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
               return false;
             }
 
-            SModuleReference moduleReference = check_xiru3y_a0f0c0a0a7a2a3a2(check_xiru3y_a0a5a2a0a0h0c0d0c(m2));
+            SModuleReference moduleReference = check_xiru3y_a0f0c0a0a7a2a2a2(check_xiru3y_a0a5a2a0a0h0c0c0c(m2));
             if (moduleReference == null) {
               return false;
             }
 
-            SModule module = check_xiru3y_a0i0c0a0a7a2a3a2(model);
+            SModule module = check_xiru3y_a0i0c0a0a7a2a2a2(model);
             if (module == null) {
               return false;
             }
@@ -93,22 +92,25 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         })));
       }
     }
-    monitor.done();
     return results;
   }
-  private static SModuleReference check_xiru3y_a0f0c0a0a7a2a3a2(SModule checkedDotOperand) {
+  @Override
+  public String getCategory() {
+    return "unresolved references";
+  }
+  private static SModuleReference check_xiru3y_a0f0c0a0a7a2a2a2(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0a5a2a0a0h0c0d0c(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a5a2a0a0h0c0c0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0i0c0a0a7a2a3a2(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0i0c0a0a7a2a2a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

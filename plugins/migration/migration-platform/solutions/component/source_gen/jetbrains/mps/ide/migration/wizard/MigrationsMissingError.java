@@ -4,7 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import java.util.List;
 import jetbrains.mps.ide.migration.ScriptApplied;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -31,7 +31,7 @@ public class MigrationsMissingError extends MigrationError {
   public String getMessage() {
     return "Some migration scripts are missing.\n\n" + "Missing scripts will be shown in ModelChecker after the migration wizard is closed.\n\n" + "Migration can't continue.";
   }
-  public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
+  public Iterable<IssueKindReportItem> getProblems(ProgressIndicator progressIndicator) {
     final List<SModule> modules = ListSequence.fromList(errors).select(new ISelector<ScriptApplied, SModule>() {
       public SModule select(ScriptApplied it) {
         return it.getModule();
@@ -42,27 +42,27 @@ public class MigrationsMissingError extends MigrationError {
         return it.getScriptReference();
       }
     }).distinct().toListSequence();
-    return ListSequence.fromList(sRefs).ofType(MigrationScriptReference.class).select(new ISelector<MigrationScriptReference, Problem>() {
-      public Problem select(final MigrationScriptReference it) {
+    return ListSequence.fromList(sRefs).ofType(MigrationScriptReference.class).select(new ISelector<MigrationScriptReference, IssueKindReportItem>() {
+      public IssueKindReportItem select(final MigrationScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
             return SetSequence.fromSet(MigrationModuleUtil.getUsedLanguages(module)).contains(it.getLanguage());
           }
         }).toListSequence();
-        return (Problem) new MissingMigrationProblem.MissingMigrationScriptProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
+        return (IssueKindReportItem) new MissingMigrationProblem.MissingMigrationScriptProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
           public Integer select(SModule module) {
             return module.getUsedLanguageVersion(it.getLanguage());
           }
         }).toListSequence()));
       }
-    }).concat(ListSequence.fromList(sRefs).ofType(RefactoringScriptReference.class).select(new ISelector<RefactoringScriptReference, Problem>() {
-      public Problem select(final RefactoringScriptReference it) {
+    }).concat(ListSequence.fromList(sRefs).ofType(RefactoringScriptReference.class).select(new ISelector<RefactoringScriptReference, IssueKindReportItem>() {
+      public IssueKindReportItem select(final RefactoringScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
             return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(module)).contains(it.getModule());
           }
         }).toListSequence();
-        return (Problem) new MissingMigrationProblem.MissingRefactoringLogProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
+        return (IssueKindReportItem) new MissingMigrationProblem.MissingRefactoringLogProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
           public Integer select(SModule module) {
             return ((AbstractModule) module).getDependencyVersion(it.getModule());
           }

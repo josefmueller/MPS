@@ -2,7 +2,7 @@
 <model ref="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -80,6 +80,7 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
@@ -159,6 +160,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29L6" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LB47" role="jymVt">
       <property role="TrG5h" value="getCellEditorValue" />
@@ -288,6 +290,7 @@
           </node>
         </node>
       </node>
+      <node concept="3cqZAl" id="EQtaUM29L8" role="3clF45" />
     </node>
     <node concept="3clFb_" id="1mBiRF0LB9r" role="jymVt">
       <property role="TrG5h" value="isEnabledFor" />

@@ -32,11 +32,12 @@ import jetbrains.mps.migration.global.CleanupProjectMigration;
 import org.jetbrains.mps.openapi.util.Processor;
 import java.util.HashMap;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class MigrationTask {
@@ -262,8 +263,8 @@ public class MigrationTask {
 
   private boolean checkModels(ProgressMonitor m) {
     final Wrappers._boolean hasErrors = new Wrappers._boolean(false);
-    mySession.getChecker().checkProject(m, new Processor<Problem>() {
-      public boolean process(Problem p) {
+    mySession.getChecker().checkProject(m, new Processor<IssueKindReportItem>() {
+      public boolean process(IssueKindReportItem p) {
         hasErrors.value = true;
         return false;
       }

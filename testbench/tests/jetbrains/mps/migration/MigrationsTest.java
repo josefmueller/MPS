@@ -18,6 +18,7 @@ package jetbrains.mps.migration;
 import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationExecutor;
@@ -98,7 +99,7 @@ public class MigrationsTest {
           }
 
           @Override
-          public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
+          public void checkProject(ProgressMonitor m, Processor<IssueKindReportItem> processor) {
 
           }
 

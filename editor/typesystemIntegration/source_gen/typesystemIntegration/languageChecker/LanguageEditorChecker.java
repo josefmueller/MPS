@@ -7,13 +7,13 @@ import jetbrains.mps.nodeEditor.checking.DisposableEditorChecker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Set;
-import jetbrains.mps.checkers.AbstractNodeChecker;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.checkers.ConstraintsChecker;
-import jetbrains.mps.checkers.StructureChecker;
+import jetbrains.mps.project.validation.StructureChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
 import jetbrains.mps.nodeEditor.checking.EditorChecker;
@@ -52,7 +52,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   private static final Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
   private boolean myMessagesChanged = false;
   private boolean myForceRunQuickFixes = false;
-  private Set<AbstractNodeChecker> myRules = SetSequence.fromSet(new HashSet<AbstractNodeChecker>());
+  private Set<AbstractNodeCheckerInEditor> myRules = SetSequence.fromSet(new HashSet<AbstractNodeCheckerInEditor>());
 
   private final ErrorComponents myErrorComponents;
 
@@ -60,7 +60,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   public LanguageEditorChecker(@NotNull SRepository projectRepo) {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
-    SetSequence.fromSet(myRules).addElement(new StructureChecker());
+    SetSequence.fromSet(myRules).addElement((AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
     SetSequence.fromSet(myRules).addElement(new UsedLanguagesChecker());
     myErrorComponents = new ErrorComponents(projectRepo);

@@ -15,8 +15,6 @@ import jetbrains.mps.errors.item.ModelReportItem;
 public class ModelPropertiesChecker extends SpecificChecker {
   @Override
   public List<? extends IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
-    monitor.start("model properties", 1);
-
     final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
 
     ValidationUtil.validateModel(model, new Processor<ModelReportItem>() {
@@ -25,7 +23,11 @@ public class ModelPropertiesChecker extends SpecificChecker {
         return true;
       }
     });
-    monitor.done();
     return results;
+  }
+
+  @Override
+  public String getCategory() {
+    return "model properties";
   }
 }
