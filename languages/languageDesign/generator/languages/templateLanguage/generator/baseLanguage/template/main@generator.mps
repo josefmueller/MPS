@@ -648,6 +648,7 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
         <property id="709746936026609029" name="linkRole" index="3V$3am" />
@@ -18699,6 +18700,7 @@
                   </node>
                 </node>
               </node>
+              <node concept="15s5l7" id="3612de$Z6NF" role="lGtFl" />
             </node>
             <node concept="3cpWs8" id="36hYR6_AUBl" role="3cqZAp">
               <node concept="3cpWsn" id="36hYR6_AUBm" role="3cpWs9">
@@ -25043,26 +25045,6 @@
     <property role="TrG5h" value="reduce_TemplateDeclarationRefInWeavingConsequence" />
     <property role="3GE5qa" value="generated.consequence" />
     <ref role="3gUMe" to="tpf8:h0j$61m" resolve="TemplateDeclarationReference" />
-    <node concept="1N15co" id="7Ydq8GQonr$" role="1s_3oS">
-      <property role="TrG5h" value="contextVar" />
-      <node concept="17QB3L" id="7Ydq8GQonr_" role="1N15GL" />
-    </node>
-    <node concept="1N15co" id="7Ydq8GQonrA" role="1s_3oS">
-      <property role="TrG5h" value="varindex" />
-      <node concept="10Q1$e" id="7Ydq8GQonrB" role="1N15GL">
-        <node concept="10Oyi0" id="7Ydq8GQonrC" role="10Q1$1" />
-      </node>
-    </node>
-    <node concept="1N15co" id="74$JSv7tLaf" role="1s_3oS">
-      <property role="TrG5h" value="outputContextNodeVar" />
-      <node concept="17QB3L" id="74$JSv7tLag" role="1N15GL" />
-    </node>
-    <node concept="1N15co" id="3uqP$qKE3Ff" role="1s_3oS">
-      <property role="TrG5h" value="weaveRule" />
-      <node concept="3Tqbb2" id="3uqP$qKE3Fg" role="1N15GL">
-        <ref role="ehGHo" to="tpf8:gZ0QclN" resolve="Weaving_MappingRule" />
-      </node>
-    </node>
     <node concept="2YIFZL" id="7Ydq8GQonrF" role="13RCb5">
       <property role="TrG5h" value="meth" />
       <node concept="37vLTG" id="7Ydq8GQonrG" role="3clF46">
@@ -25138,6 +25120,7 @@
             </node>
           </node>
           <node concept="raruj" id="3uqP$qKDVmB" role="lGtFl" />
+          <node concept="15s5l7" id="3612de$YEgV" role="lGtFl" />
         </node>
         <node concept="3cpWs8" id="7Ydq8GQonrV" role="3cqZAp">
           <node concept="3cpWsn" id="7Ydq8GQonrW" role="3cpWs9">
@@ -25235,6 +25218,26 @@
       </node>
       <node concept="3uibUv" id="7Ydq8GQonsL" role="Sfmx6">
         <ref role="3uigEE" to="r99j:~GenerationException" resolve="GenerationException" />
+      </node>
+    </node>
+    <node concept="1N15co" id="7Ydq8GQonr$" role="1s_3oS">
+      <property role="TrG5h" value="contextVar" />
+      <node concept="17QB3L" id="7Ydq8GQonr_" role="1N15GL" />
+    </node>
+    <node concept="1N15co" id="7Ydq8GQonrA" role="1s_3oS">
+      <property role="TrG5h" value="varindex" />
+      <node concept="10Q1$e" id="7Ydq8GQonrB" role="1N15GL">
+        <node concept="10Oyi0" id="7Ydq8GQonrC" role="10Q1$1" />
+      </node>
+    </node>
+    <node concept="1N15co" id="74$JSv7tLaf" role="1s_3oS">
+      <property role="TrG5h" value="outputContextNodeVar" />
+      <node concept="17QB3L" id="74$JSv7tLag" role="1N15GL" />
+    </node>
+    <node concept="1N15co" id="3uqP$qKE3Ff" role="1s_3oS">
+      <property role="TrG5h" value="weaveRule" />
+      <node concept="3Tqbb2" id="3uqP$qKE3Fg" role="1N15GL">
+        <ref role="ehGHo" to="tpf8:gZ0QclN" resolve="Weaving_MappingRule" />
       </node>
     </node>
   </node>
