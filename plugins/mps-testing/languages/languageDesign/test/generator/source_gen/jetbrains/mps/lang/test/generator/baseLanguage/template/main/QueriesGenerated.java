@@ -195,7 +195,7 @@ public class QueriesGenerated extends QueryProviderBase {
       _context.showErrorMessage(_context.getNode(), "A node in the 'before' section must be provided");
     }
     if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToEdit, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), false, new SAbstractConcept[]{})).isEmpty()) {
-      _context.showErrorMessage(_context.getNode(), "A node in the 'before' section must have at least one AnonymousCellAnnotation attached");
+      _context.showWarningMessage(_context.getNode(), "A node in the 'before' section must have at least one AnonymousCellAnnotation attached");
     }
     return nodeToEdit.getNodeId().toString();
   }

@@ -4873,6 +4873,9 @@
     <node concept="1Qtc8_" id="41ZU75Xz32m" role="IW6Ez">
       <node concept="3eGOoe" id="7clZIz_pytX" role="1Qtc8$" />
       <node concept="3c8P5G" id="41ZU75Xz32_" role="1Qtc8A">
+        <node concept="2kknPI" id="7clZIz_pxO9" role="3c8P5H">
+          <ref role="2kkw0f" node="7clZIz_ps6e" resolve="NamedSubstituteMenuToWrapFromTransformMenu" />
+        </node>
         <node concept="3c8PGw" id="41ZU75Xz32C" role="3c8PHt">
           <node concept="3clFbS" id="41ZU75Xz32E" role="2VODD2">
             <node concept="3cpWs8" id="41ZU75X$v__" role="3cqZAp">
@@ -4957,9 +4960,6 @@
               <node concept="7Obwk" id="41ZU75Xz5KV" role="3clFbG" />
             </node>
           </node>
-        </node>
-        <node concept="2kknPI" id="7clZIz_pxO9" role="3c8P5H">
-          <ref role="2kkw0f" node="7clZIz_ps6e" resolve="NamedSubstituteMenuToWrapFromTransformMenu" />
         </node>
       </node>
     </node>
@@ -6954,6 +6954,518 @@
     </node>
     <node concept="382kZG" id="47y0FrqhJDk" role="lGtFl" />
   </node>
+  <node concept="3p36aQ" id="6d5vlMPwDuk">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwDub" resolve="TestSubstituteExceptionReferenceMatchingTextChild" />
+    <node concept="3XHNnq" id="6d5vlMPwEu6" role="3ft7WO">
+      <ref role="3XGfJA" to="wdez:6d5vlMPwE$E" resolve="reference" />
+      <node concept="1WAQ3h" id="6d5vlMPwEWQ" role="1WZ6D9">
+        <node concept="3clFbS" id="6d5vlMPwEWS" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwF5h" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwF5i" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwF5j" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwF5k" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="6d5vlMPwDyA" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwDyB" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwDyC" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwDyD" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwDyE" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwDyF" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwDyG" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwDyH" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwDyI" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwDub" resolve="TestSubstituteExceptionReferenceMatchingTextChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="4LXLsLUyjOE">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
+    <node concept="2VfDsV" id="4LXLsLUyjOF" role="3ft7WO">
+      <node concept="1GpqWn" id="4LXLsLUyjOH" role="1Go12V">
+        <node concept="3clFbS" id="4LXLsLUyjOI" role="2VODD2">
+          <node concept="YS8fn" id="4LXLsLUyk5M" role="3cqZAp">
+            <node concept="2ShNRf" id="4LXLsLUyk5N" role="YScLw">
+              <node concept="1pGfFk" id="4LXLsLUyk5O" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="4LXLsLUyk5P" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="4LXLsLUykjV" role="3ft7WO">
+      <node concept="16NfWO" id="4LXLsLUykjW" role="upBLP">
+        <node concept="2h3Zct" id="4LXLsLUykjX" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="4LXLsLUykjY" role="3aKz83">
+        <node concept="3clFbS" id="4LXLsLUykjZ" role="2VODD2">
+          <node concept="3clFbF" id="4LXLsLUykk0" role="3cqZAp">
+            <node concept="2ShNRf" id="4LXLsLUykk1" role="3clFbG">
+              <node concept="3zrR0B" id="4LXLsLUykk2" role="2ShVmc">
+                <node concept="3Tqbb2" id="4LXLsLUykk3" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="4LXLsLUykjJ" role="3ft7WO" />
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwv8e">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
+    <node concept="3ft6gV" id="6d5vlMPwv8n" role="3ft7WO">
+      <node concept="3eGOop" id="6d5vlMPwwwo" role="3ft5RZ">
+        <node concept="16NfWO" id="6d5vlMPwwwp" role="upBLP">
+          <node concept="2h3Zct" id="6d5vlMPwwwq" role="16NeZM">
+            <property role="2h4Kg1" value="action" />
+          </node>
+        </node>
+        <node concept="ucgPf" id="6d5vlMPwwwr" role="3aKz83">
+          <node concept="3clFbS" id="6d5vlMPwwws" role="2VODD2">
+            <node concept="3clFbF" id="6d5vlMPwwwt" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwwwu" role="3clFbG">
+                <node concept="3zrR0B" id="6d5vlMPwwwv" role="2ShVmc">
+                  <node concept="3Tqbb2" id="6d5vlMPwwww" role="3zrR0E">
+                    <ref role="ehGHo" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3ft6gW" id="6d5vlMPwv8r" role="3ft5RY">
+        <node concept="3clFbS" id="6d5vlMPwv8s" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwvf$" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwvmP" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwvDk" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwwlL" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="6d5vlMPwxiP" role="3ft7WO" />
+    <node concept="3eGOop" id="6d5vlMPwwG2" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwwG3" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwwG4" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwwG5" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwwG6" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwwG7" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwwG8" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwwG9" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwwGa" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="6d5vlMPwwAd" role="3ft7WO" />
+  </node>
+  <node concept="Q6S24" id="7clZIz_ps6e">
+    <property role="TrG5h" value="NamedSubstituteMenuToWrapFromTransformMenu" />
+    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+    <node concept="3eGOop" id="7clZIz_ps6h" role="3ft7WO">
+      <node concept="ucgPf" id="7clZIz_ps6j" role="3aKz83">
+        <node concept="3clFbS" id="7clZIz_ps6l" role="2VODD2">
+          <node concept="3cpWs8" id="7clZIz_ptDc" role="3cqZAp">
+            <node concept="3cpWsn" id="7clZIz_ptDd" role="3cpWs9">
+              <property role="TrG5h" value="node" />
+              <node concept="3Tqbb2" id="7clZIz_ptDa" role="1tU5fm">
+                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+              </node>
+              <node concept="2ShNRf" id="7clZIz_ptDe" role="33vP2m">
+                <node concept="3zrR0B" id="7clZIz_ptDf" role="2ShVmc">
+                  <node concept="3Tqbb2" id="7clZIz_ptDg" role="3zrR0E">
+                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7clZIz_pseA" role="3cqZAp">
+            <node concept="37vLTI" id="7clZIz_puMH" role="3clFbG">
+              <node concept="Xl_RD" id="7clZIz_puT4" role="37vLTx">
+                <property role="Xl_RC" value="named menu to wrap from transform" />
+              </node>
+              <node concept="2OqwBi" id="7clZIz_ptZW" role="37vLTJ">
+                <node concept="37vLTw" id="7clZIz_ptDh" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7clZIz_ptDd" resolve="node" />
+                </node>
+                <node concept="3TrcHB" id="7clZIz_pucV" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7clZIz_pwFb" role="3cqZAp">
+            <node concept="37vLTw" id="7clZIz_pwF9" role="3clFbG">
+              <ref role="3cqZAo" node="7clZIz_ptDd" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="7clZIz_pwLQ" role="upBLP">
+        <node concept="2h3Zct" id="7clZIz_pwOi" role="16NeZM">
+          <property role="2h4Kg1" value="named menu to wrap from transform" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3ICXOK" id="6$E6NNC3cI2">
+    <property role="TrG5h" value="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
+    <ref role="aqKnT" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
+    <node concept="1Qtc8_" id="6$E6NNC3cI3" role="IW6Ez">
+      <node concept="3eGOoe" id="6$E6NNC3cI4" role="1Qtc8$" />
+      <node concept="3c8P5G" id="6$E6NNC3cI5" role="1Qtc8A">
+        <node concept="3c8PGw" id="6$E6NNC3cI6" role="3c8PHt">
+          <node concept="3clFbS" id="6$E6NNC3cI7" role="2VODD2">
+            <node concept="3cpWs8" id="6$E6NNC3cI8" role="3cqZAp">
+              <node concept="3cpWsn" id="6$E6NNC3cI9" role="3cpWs9">
+                <property role="TrG5h" value="b" />
+                <node concept="10P_77" id="6$E6NNC3cIa" role="1tU5fm" />
+                <node concept="1Wc70l" id="6$E6NNC3cIb" role="33vP2m">
+                  <node concept="3y3z36" id="6$E6NNC3cIc" role="3uHU7w">
+                    <node concept="10Nm6u" id="6$E6NNC3cId" role="3uHU7w" />
+                    <node concept="X5bN_" id="6$E6NNC3cIe" role="3uHU7B" />
+                  </node>
+                  <node concept="1Wc70l" id="6$E6NNC3cIf" role="3uHU7B">
+                    <node concept="1Wc70l" id="6$E6NNC3cIg" role="3uHU7B">
+                      <node concept="3y3z36" id="6$E6NNC3cIh" role="3uHU7B">
+                        <node concept="1Q80Hx" id="6$E6NNC3cIi" role="3uHU7B" />
+                        <node concept="10Nm6u" id="6$E6NNC3cIj" role="3uHU7w" />
+                      </node>
+                      <node concept="pVHWs" id="6$E6NNC3cIk" role="3uHU7w">
+                        <node concept="3y3z36" id="6$E6NNC3cIl" role="3uHU7B">
+                          <node concept="7Obwk" id="6$E6NNC3cIm" role="3uHU7B" />
+                          <node concept="10Nm6u" id="6$E6NNC3cIn" role="3uHU7w" />
+                        </node>
+                        <node concept="3y3z36" id="6$E6NNC3cIo" role="3uHU7w">
+                          <node concept="1rpKSd" id="6$E6NNC3cIp" role="3uHU7B" />
+                          <node concept="10Nm6u" id="6$E6NNC3cIq" role="3uHU7w" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3y3z36" id="6$E6NNC3cIr" role="3uHU7w">
+                      <node concept="3c8USq" id="6$E6NNC3cIs" role="3uHU7B" />
+                      <node concept="10Nm6u" id="6$E6NNC3cIt" role="3uHU7w" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6$E6NNC3cIu" role="3cqZAp">
+              <node concept="2OqwBi" id="6$E6NNC3cIv" role="3clFbG">
+                <node concept="2OqwBi" id="6$E6NNC3cIw" role="2Oq$k0">
+                  <node concept="1PxgMI" id="6$E6NNC3cIx" role="2Oq$k0">
+                    <node concept="chp4Y" id="6$E6NNC3cIy" role="3oSUPX">
+                      <ref role="cht4Q" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
+                    </node>
+                    <node concept="X5bN_" id="6$E6NNC3cIz" role="1m5AlR" />
+                  </node>
+                  <node concept="3Tsc0h" id="6$E6NNC3yWn" role="2OqNvi">
+                    <ref role="3TtcxE" to="wdez:6$E6NNC2UzN" resolve="wrapDefaultSubstituteMenuWithFunctionFromTransform" />
+                  </node>
+                </node>
+                <node concept="TSZUe" id="6$E6NNC3cI_" role="2OqNvi">
+                  <node concept="1PxgMI" id="6$E6NNC3hlD" role="25WWJ7">
+                    <node concept="chp4Y" id="6$E6NNC3htJ" role="3oSUPX">
+                      <ref role="cht4Q" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+                    </node>
+                    <node concept="3c8USq" id="6$E6NNC3cIA" role="1m5AlR" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2jZ$Xn" id="6$E6NNC3cIB" role="W7ev7">
+          <node concept="3clFbS" id="6$E6NNC3cIC" role="2VODD2">
+            <node concept="3cpWs8" id="6$E6NNC3cID" role="3cqZAp">
+              <node concept="3cpWsn" id="6$E6NNC3cIE" role="3cpWs9">
+                <property role="TrG5h" value="b" />
+                <node concept="10P_77" id="6$E6NNC3cIF" role="1tU5fm" />
+                <node concept="1Wc70l" id="6$E6NNC3cIG" role="33vP2m">
+                  <node concept="pVHWs" id="6$E6NNC3cIH" role="3uHU7w">
+                    <node concept="3y3z36" id="6$E6NNC3cII" role="3uHU7w">
+                      <node concept="10Nm6u" id="6$E6NNC3cIJ" role="3uHU7w" />
+                      <node concept="1rpKSd" id="6$E6NNC3cIK" role="3uHU7B" />
+                    </node>
+                    <node concept="3y3z36" id="6$E6NNC3cIL" role="3uHU7B">
+                      <node concept="7Obwk" id="6$E6NNC3cIM" role="3uHU7B" />
+                      <node concept="10Nm6u" id="6$E6NNC3cIN" role="3uHU7w" />
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="6$E6NNC3cIO" role="3uHU7B">
+                    <node concept="1Q80Hx" id="6$E6NNC3cIP" role="3uHU7B" />
+                    <node concept="10Nm6u" id="6$E6NNC3cIQ" role="3uHU7w" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6$E6NNC3cIR" role="3cqZAp">
+              <node concept="7Obwk" id="6$E6NNC3cIS" role="3clFbG" />
+            </node>
+          </node>
+        </node>
+        <node concept="3tp4HU" id="6$E6NNC3f_m" role="3c8P5H">
+          <node concept="SLHDK" id="6$E6NNC3f_n" role="3tp4HT">
+            <node concept="3clFbS" id="6$E6NNC3f_o" role="2VODD2">
+              <node concept="3cpWs8" id="6$E6NNC3fYT" role="3cqZAp">
+                <node concept="3cpWsn" id="6$E6NNC3fYU" role="3cpWs9">
+                  <property role="TrG5h" value="b" />
+                  <node concept="10P_77" id="6$E6NNC3fYV" role="1tU5fm" />
+                  <node concept="1Wc70l" id="6$E6NNC3fYW" role="33vP2m">
+                    <node concept="pVHWs" id="6$E6NNC3fYX" role="3uHU7w">
+                      <node concept="3y3z36" id="6$E6NNC3fYY" role="3uHU7w">
+                        <node concept="10Nm6u" id="6$E6NNC3fYZ" role="3uHU7w" />
+                        <node concept="1rpKSd" id="6$E6NNC3fZ0" role="3uHU7B" />
+                      </node>
+                      <node concept="3y3z36" id="6$E6NNC3fZ1" role="3uHU7B">
+                        <node concept="7Obwk" id="6$E6NNC3fZ2" role="3uHU7B" />
+                        <node concept="10Nm6u" id="6$E6NNC3fZ3" role="3uHU7w" />
+                      </node>
+                    </node>
+                    <node concept="3y3z36" id="6$E6NNC3fZ4" role="3uHU7B">
+                      <node concept="1Q80Hx" id="6$E6NNC3fZ5" role="3uHU7B" />
+                      <node concept="10Nm6u" id="6$E6NNC3fZ6" role="3uHU7w" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6$E6NNC3ggr" role="3cqZAp">
+                <node concept="35c_gC" id="6$E6NNC3ggp" role="3clFbG">
+                  <ref role="35c_gD" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwfe3">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
+    <node concept="3eGOop" id="6d5vlMPwsY9" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwsYa" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwsYb" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwsYc" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwsYd" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwsYe" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwsYf" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwsYg" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwsYh" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="6d5vlMPwfe6" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwkf_" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwkjI" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwfe8" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwfea" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwfhM" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwfhK" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwgvS" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwgvU" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NL3D" id="6d5vlMPwgIZ" role="upBLP">
+        <node concept="16Na2f" id="6d5vlMPwgJ0" role="16NL3A">
+          <node concept="3clFbS" id="6d5vlMPwgJ1" role="2VODD2">
+            <node concept="YS8fn" id="6d5vlMPwhOz" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwhW5" role="YScLw">
+                <node concept="1pGfFk" id="6d5vlMPwieL" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="6d5vlMPwimU" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwpm3">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwplU" resolve="TestSubstituteExceptionActionDescriptionTextChild" />
+    <node concept="3eGOop" id="6d5vlMPwks1" role="3ft7WO">
+      <node concept="16NL0t" id="6d5vlMPwkVN" role="upBLP">
+        <node concept="uGdhv" id="6d5vlMPwkZC" role="16NL0q">
+          <node concept="3clFbS" id="6d5vlMPwkZE" role="2VODD2">
+            <node concept="YS8fn" id="6d5vlMPwl83" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwl84" role="YScLw">
+                <node concept="1pGfFk" id="6d5vlMPwl85" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="6d5vlMPwl86" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="6d5vlMPwks2" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwks3" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwks4" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwks5" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwks6" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwks7" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwks8" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwks9" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwplU" resolve="TestSubstituteExceptionActionDescriptionTextChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7clZIz_rrUc">
+    <ref role="1XX52x" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+    <node concept="3EZMnI" id="7clZIz_rrUe" role="2wV5jI">
+      <node concept="l2Vlx" id="7clZIz_rrUf" role="2iSdaV" />
+      <node concept="3F0ifn" id="7clZIz_rrUg" role="3EZMnx">
+        <property role="3F0ifm" value="test substitute concept to wrap from transform" />
+      </node>
+      <node concept="3F0A7n" id="7clZIz_rrUh" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="7clZIz_rtuI">
+    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+    <node concept="3eGOop" id="7clZIz_rtog" role="3ft7WO">
+      <node concept="ucgPf" id="7clZIz_rtoh" role="3aKz83">
+        <node concept="3clFbS" id="7clZIz_rtoi" role="2VODD2">
+          <node concept="3cpWs8" id="7clZIz_rtoj" role="3cqZAp">
+            <node concept="3cpWsn" id="7clZIz_rtok" role="3cpWs9">
+              <property role="TrG5h" value="node" />
+              <node concept="3Tqbb2" id="7clZIz_rtol" role="1tU5fm">
+                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+              </node>
+              <node concept="2ShNRf" id="7clZIz_rtom" role="33vP2m">
+                <node concept="3zrR0B" id="7clZIz_rton" role="2ShVmc">
+                  <node concept="3Tqbb2" id="7clZIz_rtoo" role="3zrR0E">
+                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7clZIz_rtop" role="3cqZAp">
+            <node concept="37vLTI" id="7clZIz_rtoq" role="3clFbG">
+              <node concept="Xl_RD" id="7clZIz_rtor" role="37vLTx">
+                <property role="Xl_RC" value="default menu to wrap from transform" />
+              </node>
+              <node concept="2OqwBi" id="7clZIz_rtos" role="37vLTJ">
+                <node concept="37vLTw" id="7clZIz_rtot" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7clZIz_rtok" resolve="node" />
+                </node>
+                <node concept="3TrcHB" id="7clZIz_rtou" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="7clZIz_rtov" role="3cqZAp">
+            <node concept="37vLTw" id="7clZIz_rtow" role="3clFbG">
+              <ref role="3cqZAo" node="7clZIz_rtok" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="7clZIz_rtox" role="upBLP">
+        <node concept="2h3Zct" id="7clZIz_rtoy" role="16NeZM">
+          <property role="2h4Kg1" value="default menu to wrap from transform" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwG3s">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwG3i" resolve="TestSubstituteExceptionReferenceDescriptionTextChild" />
+    <node concept="3XHNnq" id="6d5vlMPwGhT" role="3ft7WO">
+      <ref role="3XGfJA" to="wdez:6d5vlMPwG3j" resolve="reference" />
+      <node concept="1WAQ3h" id="6d5vlMPwGA2" role="1WZ6hz">
+        <node concept="3clFbS" id="6d5vlMPwGA4" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwGhW" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwGhX" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwGhY" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwGhZ" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1W_72q" id="6d5vlMPwHi5" role="1WZ6D9">
+        <property role="1W_73P" value="action" />
+      </node>
+    </node>
+    <node concept="3VyMlK" id="6d5vlMPwG3t" role="3ft7WO" />
+  </node>
   <node concept="24kQdi" id="6d5vlMPwfdl">
     <property role="3GE5qa" value="exception" />
     <ref role="1XX52x" to="wdez:6d5vlMPwfdh" resolve="TestSubstituteExceptionParent" />
@@ -7344,62 +7856,26 @@
       </node>
     </node>
   </node>
-  <node concept="3p36aQ" id="6d5vlMPwfe3">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
-    <node concept="3eGOop" id="6d5vlMPwsY9" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwsYa" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwsYb" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwsYc" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwsYd" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwsYe" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwsYf" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwsYg" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwsYh" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
+  <node concept="Q6S24" id="1L4Jh90GMWR">
+    <property role="TrG5h" value="NamedSubstituteMenuToWrapFromSubstituteMenu" />
+    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
+    <node concept="3eGOop" id="1L4Jh90GN38" role="3ft7WO">
+      <node concept="ucgPf" id="1L4Jh90GN3a" role="3aKz83">
+        <node concept="3clFbS" id="1L4Jh90GN3c" role="2VODD2">
+          <node concept="3clFbF" id="1L4Jh90GN6O" role="3cqZAp">
+            <node concept="2ShNRf" id="1L4Jh90GN6M" role="3clFbG">
+              <node concept="3zrR0B" id="1L4Jh90GOqv" role="2ShVmc">
+                <node concept="3Tqbb2" id="1L4Jh90GOqx" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="3eGOop" id="6d5vlMPwfe6" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwkf_" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwkjI" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwfe8" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwfea" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwfhM" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwfhK" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwgvS" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwgvU" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NL3D" id="6d5vlMPwgIZ" role="upBLP">
-        <node concept="16Na2f" id="6d5vlMPwgJ0" role="16NL3A">
-          <node concept="3clFbS" id="6d5vlMPwgJ1" role="2VODD2">
-            <node concept="YS8fn" id="6d5vlMPwhOz" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwhW5" role="YScLw">
-                <node concept="1pGfFk" id="6d5vlMPwieL" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="6d5vlMPwimU" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+      <node concept="16NfWO" id="1L4Jh90GODA" role="upBLP">
+        <node concept="2h3Zct" id="1L4Jh90GOHo" role="16NeZM">
+          <property role="2h4Kg1" value="named" />
         </node>
       </node>
     </node>
@@ -7456,584 +7932,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwpm3">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwplU" resolve="TestSubstituteExceptionActionDescriptionTextChild" />
-    <node concept="3eGOop" id="6d5vlMPwks1" role="3ft7WO">
-      <node concept="16NL0t" id="6d5vlMPwkVN" role="upBLP">
-        <node concept="uGdhv" id="6d5vlMPwkZC" role="16NL0q">
-          <node concept="3clFbS" id="6d5vlMPwkZE" role="2VODD2">
-            <node concept="YS8fn" id="6d5vlMPwl83" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwl84" role="YScLw">
-                <node concept="1pGfFk" id="6d5vlMPwl85" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="6d5vlMPwl86" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="6d5vlMPwks2" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwks3" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwks4" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwks5" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwks6" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwks7" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwks8" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwks9" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwplU" resolve="TestSubstituteExceptionActionDescriptionTextChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwqxF">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwqxy" resolve="TestSubstituteExceptionActionIconChild" />
-    <node concept="3eGOop" id="6d5vlMPwm2v" role="3ft7WO">
-      <node concept="pEUQQ" id="6d5vlMPwmEB" role="upBLP">
-        <node concept="pEWwh" id="6d5vlMPwmED" role="pEUQP">
-          <node concept="3clFbS" id="6d5vlMPwmEF" role="2VODD2">
-            <node concept="YS8fn" id="6d5vlMPwm2z" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwm2$" role="YScLw">
-                <node concept="1pGfFk" id="6d5vlMPwm2_" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="6d5vlMPwm2A" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="6d5vlMPwm2w" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPws5d" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwm2B" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwm2C" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwm2D" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwm2E" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwm2F" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwm2G" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwqxy" resolve="TestSubstituteExceptionActionIconChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwsd_">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
-    <node concept="3eGOop" id="6d5vlMPwuWW" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwuWX" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwuWY" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwuWZ" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwuX0" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwuX1" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwuX2" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwuX3" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwuX4" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="6d5vlMPwuOa" role="3ft7WO" />
-    <node concept="3eGOop" id="6d5vlMPwsdM" role="3ft7WO">
-      <node concept="upBM7" id="6d5vlMPwsLz" role="upBLP">
-        <node concept="1NCAza" id="6d5vlMPwsL_" role="upBM6">
-          <node concept="3clFbS" id="6d5vlMPwsLB" role="2VODD2">
-            <node concept="YS8fn" id="6d5vlMPwsdQ" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwsdR" role="YScLw">
-                <node concept="1pGfFk" id="6d5vlMPwsdS" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="6d5vlMPwsdT" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="6d5vlMPwsdU" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwsdV" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwsdW" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwsdX" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwsdY" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwsdZ" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwse0" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwse1" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwv8e">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
-    <node concept="3ft6gV" id="6d5vlMPwv8n" role="3ft7WO">
-      <node concept="3eGOop" id="6d5vlMPwwwo" role="3ft5RZ">
-        <node concept="16NfWO" id="6d5vlMPwwwp" role="upBLP">
-          <node concept="2h3Zct" id="6d5vlMPwwwq" role="16NeZM">
-            <property role="2h4Kg1" value="action" />
-          </node>
-        </node>
-        <node concept="ucgPf" id="6d5vlMPwwwr" role="3aKz83">
-          <node concept="3clFbS" id="6d5vlMPwwws" role="2VODD2">
-            <node concept="3clFbF" id="6d5vlMPwwwt" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwwwu" role="3clFbG">
-                <node concept="3zrR0B" id="6d5vlMPwwwv" role="2ShVmc">
-                  <node concept="3Tqbb2" id="6d5vlMPwwww" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3ft6gW" id="6d5vlMPwv8r" role="3ft5RY">
-        <node concept="3clFbS" id="6d5vlMPwv8s" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwvf$" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwvmP" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwvDk" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwwlL" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="6d5vlMPwxiP" role="3ft7WO" />
-    <node concept="3eGOop" id="6d5vlMPwwG2" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwwG3" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwwG4" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwwG5" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwwG6" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwwG7" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwwG8" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwwG9" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwwGa" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="6d5vlMPwwAd" role="3ft7WO" />
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwy90">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwy8P" resolve="TestSubstituteExceptionConceptListChild" />
-    <node concept="1rTJD9" id="6d5vlMPwy93" role="3ft7WO">
-      <node concept="AZAyt" id="6d5vlMPwy95" role="AZAoy">
-        <node concept="3clFbS" id="6d5vlMPwy97" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwzVs" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwzVt" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwzVu" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwzVv" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="6d5vlMPwyT$" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwyT_" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwyTA" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwyTB" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwyTC" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwyTD" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwyTE" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwyTF" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwyTG" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwy8P" resolve="TestSubstituteExceptionConceptListChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwAvB">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwAvu" resolve="TestSubstituteExceptionIncludeMenuChild" />
-    <node concept="1s_PAr" id="6d5vlMPw_qH" role="3ft7WO">
-      <node concept="3tp4HU" id="6d5vlMPw_IQ" role="1s_PAo">
-        <node concept="3tp4HZ" id="6d5vlMPw_IR" role="3tp4HT">
-          <node concept="3clFbS" id="6d5vlMPw_IS" role="2VODD2">
-            <node concept="YS8fn" id="6d5vlMPwB2O" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwB2P" role="YScLw">
-                <node concept="1pGfFk" id="6d5vlMPwB2Q" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="6d5vlMPwB2R" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="6d5vlMPwBcE" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwBcF" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwBcG" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwBcH" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwBcI" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwBcJ" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwBcK" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwBcL" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwBcM" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwAvu" resolve="TestSubstituteExceptionIncludeMenuChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="6d5vlMPwBct" role="3ft7WO" />
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwCf2">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
-    <node concept="2F$Pav" id="6d5vlMPwCE$" role="3ft7WO">
-      <node concept="3eGOop" id="6d5vlMPwCNo" role="2$S_pN">
-        <node concept="ucgPf" id="6d5vlMPwCNq" role="3aKz83">
-          <node concept="3clFbS" id="6d5vlMPwCNs" role="2VODD2">
-            <node concept="3clFbF" id="6d5vlMPwCVL" role="3cqZAp">
-              <node concept="2ShNRf" id="6d5vlMPwCVJ" role="3clFbG">
-                <node concept="3zrR0B" id="6d5vlMPwDaE" role="2ShVmc">
-                  <node concept="3Tqbb2" id="6d5vlMPwDaG" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="6d5vlMPwCI$" role="2ZBHrp" />
-      <node concept="2$S_p_" id="6d5vlMPwCIB" role="2$S_pT">
-        <node concept="3clFbS" id="6d5vlMPwCIC" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwDnl" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwDnm" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwDnn" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwDno" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="6d5vlMPwCja" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwCjb" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwCjc" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwCjd" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwCje" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwCjf" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwCjg" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwCjh" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwCji" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwDuk">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwDub" resolve="TestSubstituteExceptionReferenceMatchingTextChild" />
-    <node concept="3XHNnq" id="6d5vlMPwEu6" role="3ft7WO">
-      <ref role="3XGfJA" to="wdez:6d5vlMPwE$E" resolve="reference" />
-      <node concept="1WAQ3h" id="6d5vlMPwEWQ" role="1WZ6D9">
-        <node concept="3clFbS" id="6d5vlMPwEWS" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwF5h" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwF5i" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwF5j" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwF5k" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="6d5vlMPwDyA" role="3ft7WO">
-      <node concept="16NfWO" id="6d5vlMPwDyB" role="upBLP">
-        <node concept="2h3Zct" id="6d5vlMPwDyC" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="6d5vlMPwDyD" role="3aKz83">
-        <node concept="3clFbS" id="6d5vlMPwDyE" role="2VODD2">
-          <node concept="3clFbF" id="6d5vlMPwDyF" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwDyG" role="3clFbG">
-              <node concept="3zrR0B" id="6d5vlMPwDyH" role="2ShVmc">
-                <node concept="3Tqbb2" id="6d5vlMPwDyI" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:6d5vlMPwDub" resolve="TestSubstituteExceptionReferenceMatchingTextChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwFjX">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwFjH" resolve="TestSubstituteExceptionReferenceVisibleMatchingTextChild" />
-    <node concept="3XHNnq" id="6d5vlMPwFjY" role="3ft7WO">
-      <ref role="3XGfJA" to="wdez:6d5vlMPwFjI" resolve="reference" />
-      <node concept="1WAQ3h" id="6d5vlMPwFGv" role="3PHfNJ">
-        <node concept="3clFbS" id="6d5vlMPwFGx" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwFk1" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwFk2" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwFk3" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwFk4" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1W_72q" id="6d5vlMPwG32" role="1WZ6D9">
-        <property role="1W_73P" value="action" />
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="6d5vlMPwG3s">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:6d5vlMPwG3i" resolve="TestSubstituteExceptionReferenceDescriptionTextChild" />
-    <node concept="3XHNnq" id="6d5vlMPwGhT" role="3ft7WO">
-      <ref role="3XGfJA" to="wdez:6d5vlMPwG3j" resolve="reference" />
-      <node concept="1WAQ3h" id="6d5vlMPwGA2" role="1WZ6hz">
-        <node concept="3clFbS" id="6d5vlMPwGA4" role="2VODD2">
-          <node concept="YS8fn" id="6d5vlMPwGhW" role="3cqZAp">
-            <node concept="2ShNRf" id="6d5vlMPwGhX" role="YScLw">
-              <node concept="1pGfFk" id="6d5vlMPwGhY" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="6d5vlMPwGhZ" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1W_72q" id="6d5vlMPwHi5" role="1WZ6D9">
-        <property role="1W_73P" value="action" />
-      </node>
-    </node>
-    <node concept="3VyMlK" id="6d5vlMPwG3t" role="3ft7WO" />
-  </node>
-  <node concept="3p36aQ" id="2yVdJHM8yqe">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
-    <node concept="3N5dw7" id="2yVdJHM8yLN" role="3ft7WO">
-      <node concept="3N5aqt" id="2yVdJHM8yLP" role="3Na0zg">
-        <node concept="3clFbS" id="2yVdJHM8yLR" role="2VODD2">
-          <node concept="3clFbF" id="2yVdJHM8z3k" role="3cqZAp">
-            <node concept="2ShNRf" id="2yVdJHM8z3l" role="3clFbG">
-              <node concept="3zrR0B" id="2yVdJHM8z3m" role="2ShVmc">
-                <node concept="3Tqbb2" id="2yVdJHM8z3n" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3tp4HU" id="2yVdJHM8yTI" role="2klrvf">
-        <node concept="3tp4HZ" id="2yVdJHM8yTJ" role="3tp4HT">
-          <node concept="3clFbS" id="2yVdJHM8yTK" role="2VODD2">
-            <node concept="YS8fn" id="2yVdJHM8zsA" role="3cqZAp">
-              <node concept="2ShNRf" id="2yVdJHM8zsB" role="YScLw">
-                <node concept="1pGfFk" id="2yVdJHM8zsC" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                  <node concept="Xl_RD" id="2yVdJHM8zsD" role="37wK5m">
-                    <property role="Xl_RC" value="Intentional exception - ignore this" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="2yVdJHM8yqn" role="3ft7WO">
-      <node concept="16NfWO" id="2yVdJHM8yqo" role="upBLP">
-        <node concept="2h3Zct" id="2yVdJHM8yqp" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="2yVdJHM8yqq" role="3aKz83">
-        <node concept="3clFbS" id="2yVdJHM8yqr" role="2VODD2">
-          <node concept="3clFbF" id="2yVdJHM8yqs" role="3cqZAp">
-            <node concept="2ShNRf" id="2yVdJHM8yqt" role="3clFbG">
-              <node concept="3zrR0B" id="2yVdJHM8yqu" role="2ShVmc">
-                <node concept="3Tqbb2" id="2yVdJHM8yqv" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="4LXLsLUyjOE">
-    <property role="3GE5qa" value="exception" />
-    <ref role="aqKnT" to="wdez:4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
-    <node concept="2VfDsV" id="4LXLsLUyjOF" role="3ft7WO">
-      <node concept="1GpqWn" id="4LXLsLUyjOH" role="1Go12V">
-        <node concept="3clFbS" id="4LXLsLUyjOI" role="2VODD2">
-          <node concept="YS8fn" id="4LXLsLUyk5M" role="3cqZAp">
-            <node concept="2ShNRf" id="4LXLsLUyk5N" role="YScLw">
-              <node concept="1pGfFk" id="4LXLsLUyk5O" role="2ShVmc">
-                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
-                <node concept="Xl_RD" id="4LXLsLUyk5P" role="37wK5m">
-                  <property role="Xl_RC" value="Intentional exception - ignore this" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3eGOop" id="4LXLsLUykjV" role="3ft7WO">
-      <node concept="16NfWO" id="4LXLsLUykjW" role="upBLP">
-        <node concept="2h3Zct" id="4LXLsLUykjX" role="16NeZM">
-          <property role="2h4Kg1" value="action" />
-        </node>
-      </node>
-      <node concept="ucgPf" id="4LXLsLUykjY" role="3aKz83">
-        <node concept="3clFbS" id="4LXLsLUykjZ" role="2VODD2">
-          <node concept="3clFbF" id="4LXLsLUykk0" role="3cqZAp">
-            <node concept="2ShNRf" id="4LXLsLUykk1" role="3clFbG">
-              <node concept="3zrR0B" id="4LXLsLUykk2" role="2ShVmc">
-                <node concept="3Tqbb2" id="4LXLsLUykk3" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3VyMlK" id="4LXLsLUykjJ" role="3ft7WO" />
-  </node>
-  <node concept="Q6S24" id="7clZIz_ps6e">
-    <property role="TrG5h" value="NamedSubstituteMenuToWrapFromTransformMenu" />
-    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-    <node concept="3eGOop" id="7clZIz_ps6h" role="3ft7WO">
-      <node concept="ucgPf" id="7clZIz_ps6j" role="3aKz83">
-        <node concept="3clFbS" id="7clZIz_ps6l" role="2VODD2">
-          <node concept="3cpWs8" id="7clZIz_ptDc" role="3cqZAp">
-            <node concept="3cpWsn" id="7clZIz_ptDd" role="3cpWs9">
-              <property role="TrG5h" value="node" />
-              <node concept="3Tqbb2" id="7clZIz_ptDa" role="1tU5fm">
-                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-              </node>
-              <node concept="2ShNRf" id="7clZIz_ptDe" role="33vP2m">
-                <node concept="3zrR0B" id="7clZIz_ptDf" role="2ShVmc">
-                  <node concept="3Tqbb2" id="7clZIz_ptDg" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="7clZIz_pseA" role="3cqZAp">
-            <node concept="37vLTI" id="7clZIz_puMH" role="3clFbG">
-              <node concept="Xl_RD" id="7clZIz_puT4" role="37vLTx">
-                <property role="Xl_RC" value="named menu to wrap from transform" />
-              </node>
-              <node concept="2OqwBi" id="7clZIz_ptZW" role="37vLTJ">
-                <node concept="37vLTw" id="7clZIz_ptDh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7clZIz_ptDd" resolve="node" />
-                </node>
-                <node concept="3TrcHB" id="7clZIz_pucV" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="7clZIz_pwFb" role="3cqZAp">
-            <node concept="37vLTw" id="7clZIz_pwF9" role="3clFbG">
-              <ref role="3cqZAo" node="7clZIz_ptDd" resolve="node" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="7clZIz_pwLQ" role="upBLP">
-        <node concept="2h3Zct" id="7clZIz_pwOi" role="16NeZM">
-          <property role="2h4Kg1" value="named menu to wrap from transform" />
         </node>
       </node>
     </node>
@@ -8135,63 +8033,321 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="7clZIz_rrUc">
-    <ref role="1XX52x" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-    <node concept="3EZMnI" id="7clZIz_rrUe" role="2wV5jI">
-      <node concept="l2Vlx" id="7clZIz_rrUf" role="2iSdaV" />
-      <node concept="3F0ifn" id="7clZIz_rrUg" role="3EZMnx">
-        <property role="3F0ifm" value="test substitute concept to wrap from transform" />
-      </node>
-      <node concept="3F0A7n" id="7clZIz_rrUh" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="7clZIz_rtuI">
-    <ref role="aqKnT" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-    <node concept="3eGOop" id="7clZIz_rtog" role="3ft7WO">
-      <node concept="ucgPf" id="7clZIz_rtoh" role="3aKz83">
-        <node concept="3clFbS" id="7clZIz_rtoi" role="2VODD2">
-          <node concept="3cpWs8" id="7clZIz_rtoj" role="3cqZAp">
-            <node concept="3cpWsn" id="7clZIz_rtok" role="3cpWs9">
-              <property role="TrG5h" value="node" />
-              <node concept="3Tqbb2" id="7clZIz_rtol" role="1tU5fm">
-                <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-              </node>
-              <node concept="2ShNRf" id="7clZIz_rtom" role="33vP2m">
-                <node concept="3zrR0B" id="7clZIz_rton" role="2ShVmc">
-                  <node concept="3Tqbb2" id="7clZIz_rtoo" role="3zrR0E">
-                    <ref role="ehGHo" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+  <node concept="3p36aQ" id="6d5vlMPwCf2">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
+    <node concept="2F$Pav" id="6d5vlMPwCE$" role="3ft7WO">
+      <node concept="3eGOop" id="6d5vlMPwCNo" role="2$S_pN">
+        <node concept="ucgPf" id="6d5vlMPwCNq" role="3aKz83">
+          <node concept="3clFbS" id="6d5vlMPwCNs" role="2VODD2">
+            <node concept="3clFbF" id="6d5vlMPwCVL" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwCVJ" role="3clFbG">
+                <node concept="3zrR0B" id="6d5vlMPwDaE" role="2ShVmc">
+                  <node concept="3Tqbb2" id="6d5vlMPwDaG" role="3zrR0E">
+                    <ref role="ehGHo" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="7clZIz_rtop" role="3cqZAp">
-            <node concept="37vLTI" id="7clZIz_rtoq" role="3clFbG">
-              <node concept="Xl_RD" id="7clZIz_rtor" role="37vLTx">
-                <property role="Xl_RC" value="default menu to wrap from transform" />
-              </node>
-              <node concept="2OqwBi" id="7clZIz_rtos" role="37vLTJ">
-                <node concept="37vLTw" id="7clZIz_rtot" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7clZIz_rtok" resolve="node" />
+        </node>
+      </node>
+      <node concept="17QB3L" id="6d5vlMPwCI$" role="2ZBHrp" />
+      <node concept="2$S_p_" id="6d5vlMPwCIB" role="2$S_pT">
+        <node concept="3clFbS" id="6d5vlMPwCIC" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwDnl" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwDnm" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwDnn" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwDno" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
                 </node>
-                <node concept="3TrcHB" id="7clZIz_rtou" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
               </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="7clZIz_rtov" role="3cqZAp">
-            <node concept="37vLTw" id="7clZIz_rtow" role="3clFbG">
-              <ref role="3cqZAo" node="7clZIz_rtok" resolve="node" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="16NfWO" id="7clZIz_rtox" role="upBLP">
-        <node concept="2h3Zct" id="7clZIz_rtoy" role="16NeZM">
-          <property role="2h4Kg1" value="default menu to wrap from transform" />
+    </node>
+    <node concept="3eGOop" id="6d5vlMPwCja" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwCjb" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwCjc" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwCjd" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwCje" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwCjf" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwCjg" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwCjh" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwCji" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwy90">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwy8P" resolve="TestSubstituteExceptionConceptListChild" />
+    <node concept="1rTJD9" id="6d5vlMPwy93" role="3ft7WO">
+      <node concept="AZAyt" id="6d5vlMPwy95" role="AZAoy">
+        <node concept="3clFbS" id="6d5vlMPwy97" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwzVs" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwzVt" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwzVu" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwzVv" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="6d5vlMPwyT$" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwyT_" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwyTA" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwyTB" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwyTC" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwyTD" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwyTE" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwyTF" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwyTG" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwy8P" resolve="TestSubstituteExceptionConceptListChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwFjX">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwFjH" resolve="TestSubstituteExceptionReferenceVisibleMatchingTextChild" />
+    <node concept="3XHNnq" id="6d5vlMPwFjY" role="3ft7WO">
+      <ref role="3XGfJA" to="wdez:6d5vlMPwFjI" resolve="reference" />
+      <node concept="1WAQ3h" id="6d5vlMPwFGv" role="3PHfNJ">
+        <node concept="3clFbS" id="6d5vlMPwFGx" role="2VODD2">
+          <node concept="YS8fn" id="6d5vlMPwFk1" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwFk2" role="YScLw">
+              <node concept="1pGfFk" id="6d5vlMPwFk3" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                <node concept="Xl_RD" id="6d5vlMPwFk4" role="37wK5m">
+                  <property role="Xl_RC" value="Intentional exception - ignore this" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1W_72q" id="6d5vlMPwG32" role="1WZ6D9">
+        <property role="1W_73P" value="action" />
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="2yVdJHM8yqe">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
+    <node concept="3N5dw7" id="2yVdJHM8yLN" role="3ft7WO">
+      <node concept="3N5aqt" id="2yVdJHM8yLP" role="3Na0zg">
+        <node concept="3clFbS" id="2yVdJHM8yLR" role="2VODD2">
+          <node concept="3clFbF" id="2yVdJHM8z3k" role="3cqZAp">
+            <node concept="2ShNRf" id="2yVdJHM8z3l" role="3clFbG">
+              <node concept="3zrR0B" id="2yVdJHM8z3m" role="2ShVmc">
+                <node concept="3Tqbb2" id="2yVdJHM8z3n" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3tp4HU" id="2yVdJHM8yTI" role="2klrvf">
+        <node concept="3tp4HZ" id="2yVdJHM8yTJ" role="3tp4HT">
+          <node concept="3clFbS" id="2yVdJHM8yTK" role="2VODD2">
+            <node concept="YS8fn" id="2yVdJHM8zsA" role="3cqZAp">
+              <node concept="2ShNRf" id="2yVdJHM8zsB" role="YScLw">
+                <node concept="1pGfFk" id="2yVdJHM8zsC" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="2yVdJHM8zsD" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="2yVdJHM8yqn" role="3ft7WO">
+      <node concept="16NfWO" id="2yVdJHM8yqo" role="upBLP">
+        <node concept="2h3Zct" id="2yVdJHM8yqp" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="2yVdJHM8yqq" role="3aKz83">
+        <node concept="3clFbS" id="2yVdJHM8yqr" role="2VODD2">
+          <node concept="3clFbF" id="2yVdJHM8yqs" role="3cqZAp">
+            <node concept="2ShNRf" id="2yVdJHM8yqt" role="3clFbG">
+              <node concept="3zrR0B" id="2yVdJHM8yqu" role="2ShVmc">
+                <node concept="3Tqbb2" id="2yVdJHM8yqv" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwqxF">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwqxy" resolve="TestSubstituteExceptionActionIconChild" />
+    <node concept="3eGOop" id="6d5vlMPwm2v" role="3ft7WO">
+      <node concept="pEUQQ" id="6d5vlMPwmEB" role="upBLP">
+        <node concept="pEWwh" id="6d5vlMPwmED" role="pEUQP">
+          <node concept="3clFbS" id="6d5vlMPwmEF" role="2VODD2">
+            <node concept="YS8fn" id="6d5vlMPwm2z" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwm2$" role="YScLw">
+                <node concept="1pGfFk" id="6d5vlMPwm2_" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="6d5vlMPwm2A" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="6d5vlMPwm2w" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPws5d" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwm2B" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwm2C" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwm2D" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwm2E" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwm2F" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwm2G" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwqxy" resolve="TestSubstituteExceptionActionIconChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwAvB">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwAvu" resolve="TestSubstituteExceptionIncludeMenuChild" />
+    <node concept="1s_PAr" id="6d5vlMPw_qH" role="3ft7WO">
+      <node concept="3tp4HU" id="6d5vlMPw_IQ" role="1s_PAo">
+        <node concept="3tp4HZ" id="6d5vlMPw_IR" role="3tp4HT">
+          <node concept="3clFbS" id="6d5vlMPw_IS" role="2VODD2">
+            <node concept="YS8fn" id="6d5vlMPwB2O" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwB2P" role="YScLw">
+                <node concept="1pGfFk" id="6d5vlMPwB2Q" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="6d5vlMPwB2R" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3eGOop" id="6d5vlMPwBcE" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwBcF" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwBcG" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwBcH" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwBcI" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwBcJ" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwBcK" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwBcL" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwBcM" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwAvu" resolve="TestSubstituteExceptionIncludeMenuChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="6d5vlMPwBct" role="3ft7WO" />
+  </node>
+  <node concept="3p36aQ" id="6d5vlMPwsd_">
+    <property role="3GE5qa" value="exception" />
+    <ref role="aqKnT" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
+    <node concept="3eGOop" id="6d5vlMPwuWW" role="3ft7WO">
+      <node concept="16NfWO" id="6d5vlMPwuWX" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwuWY" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwuWZ" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwuX0" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwuX1" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwuX2" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwuX3" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwuX4" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3VyMlK" id="6d5vlMPwuOa" role="3ft7WO" />
+    <node concept="3eGOop" id="6d5vlMPwsdM" role="3ft7WO">
+      <node concept="upBM7" id="6d5vlMPwsLz" role="upBLP">
+        <node concept="1NCAza" id="6d5vlMPwsL_" role="upBM6">
+          <node concept="3clFbS" id="6d5vlMPwsLB" role="2VODD2">
+            <node concept="YS8fn" id="6d5vlMPwsdQ" role="3cqZAp">
+              <node concept="2ShNRf" id="6d5vlMPwsdR" role="YScLw">
+                <node concept="1pGfFk" id="6d5vlMPwsdS" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+                  <node concept="Xl_RD" id="6d5vlMPwsdT" role="37wK5m">
+                    <property role="Xl_RC" value="Intentional exception - ignore this" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="6d5vlMPwsdU" role="upBLP">
+        <node concept="2h3Zct" id="6d5vlMPwsdV" role="16NeZM">
+          <property role="2h4Kg1" value="action" />
+        </node>
+      </node>
+      <node concept="ucgPf" id="6d5vlMPwsdW" role="3aKz83">
+        <node concept="3clFbS" id="6d5vlMPwsdX" role="2VODD2">
+          <node concept="3clFbF" id="6d5vlMPwsdY" role="3cqZAp">
+            <node concept="2ShNRf" id="6d5vlMPwsdZ" role="3clFbG">
+              <node concept="3zrR0B" id="6d5vlMPwse0" role="2ShVmc">
+                <node concept="3Tqbb2" id="6d5vlMPwse1" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -8202,154 +8358,427 @@
       <ref role="4PJHt" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
     </node>
   </node>
-  <node concept="Q6S24" id="1L4Jh90GMWR">
-    <property role="TrG5h" value="NamedSubstituteMenuToWrapFromSubstituteMenu" />
-    <ref role="aqKnT" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
-    <node concept="3eGOop" id="1L4Jh90GN38" role="3ft7WO">
-      <node concept="ucgPf" id="1L4Jh90GN3a" role="3aKz83">
-        <node concept="3clFbS" id="1L4Jh90GN3c" role="2VODD2">
-          <node concept="3clFbF" id="1L4Jh90GN6O" role="3cqZAp">
-            <node concept="2ShNRf" id="1L4Jh90GN6M" role="3clFbG">
-              <node concept="3zrR0B" id="1L4Jh90GOqv" role="2ShVmc">
-                <node concept="3Tqbb2" id="1L4Jh90GOqx" role="3zrR0E">
-                  <ref role="ehGHo" to="wdez:7Nx4mSUrZaE" resolve="TestSubstituteToWrapFromSubstituteMenu" />
+  <node concept="Q6S24" id="1D1LJGC416Q">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_Menu_ToInclude1" />
+    <ref role="aqKnT" to="wdez:1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
+    <node concept="3eGOop" id="1D1LJGC416R" role="3ft7WO">
+      <node concept="ucgPf" id="1D1LJGC416S" role="3aKz83">
+        <node concept="3clFbS" id="1D1LJGC416T" role="2VODD2">
+          <node concept="3clFbF" id="1D1LJGC416U" role="3cqZAp">
+            <node concept="2ShNRf" id="1D1LJGC416V" role="3clFbG">
+              <node concept="3zrR0B" id="1D1LJGC416W" role="2ShVmc">
+                <node concept="3Tqbb2" id="1D1LJGC416X" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
                 </node>
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="16NfWO" id="1L4Jh90GODA" role="upBLP">
-        <node concept="2h3Zct" id="1L4Jh90GOHo" role="16NeZM">
-          <property role="2h4Kg1" value="named" />
         </node>
       </node>
     </node>
   </node>
-  <node concept="3ICXOK" id="6$E6NNC3cI2">
-    <property role="TrG5h" value="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
-    <ref role="aqKnT" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-    <node concept="1Qtc8_" id="6$E6NNC3cI3" role="IW6Ez">
-      <node concept="3eGOoe" id="6$E6NNC3cI4" role="1Qtc8$" />
-      <node concept="3c8P5G" id="6$E6NNC3cI5" role="1Qtc8A">
-        <node concept="3c8PGw" id="6$E6NNC3cI6" role="3c8PHt">
-          <node concept="3clFbS" id="6$E6NNC3cI7" role="2VODD2">
-            <node concept="3cpWs8" id="6$E6NNC3cI8" role="3cqZAp">
-              <node concept="3cpWsn" id="6$E6NNC3cI9" role="3cpWs9">
-                <property role="TrG5h" value="b" />
-                <node concept="10P_77" id="6$E6NNC3cIa" role="1tU5fm" />
-                <node concept="1Wc70l" id="6$E6NNC3cIb" role="33vP2m">
-                  <node concept="3y3z36" id="6$E6NNC3cIc" role="3uHU7w">
-                    <node concept="10Nm6u" id="6$E6NNC3cId" role="3uHU7w" />
-                    <node concept="X5bN_" id="6$E6NNC3cIe" role="3uHU7B" />
-                  </node>
-                  <node concept="1Wc70l" id="6$E6NNC3cIf" role="3uHU7B">
-                    <node concept="1Wc70l" id="6$E6NNC3cIg" role="3uHU7B">
-                      <node concept="3y3z36" id="6$E6NNC3cIh" role="3uHU7B">
-                        <node concept="1Q80Hx" id="6$E6NNC3cIi" role="3uHU7B" />
-                        <node concept="10Nm6u" id="6$E6NNC3cIj" role="3uHU7w" />
-                      </node>
-                      <node concept="pVHWs" id="6$E6NNC3cIk" role="3uHU7w">
-                        <node concept="3y3z36" id="6$E6NNC3cIl" role="3uHU7B">
-                          <node concept="7Obwk" id="6$E6NNC3cIm" role="3uHU7B" />
-                          <node concept="10Nm6u" id="6$E6NNC3cIn" role="3uHU7w" />
-                        </node>
-                        <node concept="3y3z36" id="6$E6NNC3cIo" role="3uHU7w">
-                          <node concept="1rpKSd" id="6$E6NNC3cIp" role="3uHU7B" />
-                          <node concept="10Nm6u" id="6$E6NNC3cIq" role="3uHU7w" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3y3z36" id="6$E6NNC3cIr" role="3uHU7w">
-                      <node concept="3c8USq" id="6$E6NNC3cIs" role="3uHU7B" />
-                      <node concept="10Nm6u" id="6$E6NNC3cIt" role="3uHU7w" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="6$E6NNC3cIu" role="3cqZAp">
-              <node concept="2OqwBi" id="6$E6NNC3cIv" role="3clFbG">
-                <node concept="2OqwBi" id="6$E6NNC3cIw" role="2Oq$k0">
-                  <node concept="1PxgMI" id="6$E6NNC3cIx" role="2Oq$k0">
-                    <node concept="chp4Y" id="6$E6NNC3cIy" role="3oSUPX">
-                      <ref role="cht4Q" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
-                    </node>
-                    <node concept="X5bN_" id="6$E6NNC3cIz" role="1m5AlR" />
-                  </node>
-                  <node concept="3Tsc0h" id="6$E6NNC3yWn" role="2OqNvi">
-                    <ref role="3TtcxE" to="wdez:6$E6NNC2UzN" resolve="wrapDefaultSubstituteMenuWithFunctionFromTransform" />
-                  </node>
-                </node>
-                <node concept="TSZUe" id="6$E6NNC3cI_" role="2OqNvi">
-                  <node concept="1PxgMI" id="6$E6NNC3hlD" role="25WWJ7">
-                    <node concept="chp4Y" id="6$E6NNC3htJ" role="3oSUPX">
-                      <ref role="cht4Q" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
-                    </node>
-                    <node concept="3c8USq" id="6$E6NNC3cIA" role="1m5AlR" />
-                  </node>
+  <node concept="IW6AY" id="44DBaIkVsjb">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="aqKnT" to="wdez:44DBaIkVpA2" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" />
+    <node concept="1Qtc8_" id="44DBaIkVsjc" role="IW6Ez">
+      <node concept="3eGOoe" id="44DBaIkVsjg" role="1Qtc8$" />
+      <node concept="ulPW2" id="44DBaIkVsjj" role="1Qtc8A">
+        <node concept="2kknPI" id="44DBaIkVsjl" role="2ks2uz">
+          <ref role="2kkw0f" node="44DBaIkVpAb" resolve="IncludeDefaultAndNullMenu" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="1D1LJGC4240">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_Menu_ToWrap2" />
+    <ref role="aqKnT" to="wdez:1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
+    <node concept="3eGOop" id="1D1LJGC4241" role="3ft7WO">
+      <node concept="ucgPf" id="1D1LJGC4242" role="3aKz83">
+        <node concept="3clFbS" id="1D1LJGC4243" role="2VODD2">
+          <node concept="3clFbF" id="1D1LJGC4244" role="3cqZAp">
+            <node concept="2ShNRf" id="1D1LJGC4245" role="3clFbG">
+              <node concept="3zrR0B" id="1D1LJGC4246" role="2ShVmc">
+                <node concept="3Tqbb2" id="1D1LJGC4247" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="2jZ$Xn" id="6$E6NNC3cIB" role="W7ev7">
-          <node concept="3clFbS" id="6$E6NNC3cIC" role="2VODD2">
-            <node concept="3cpWs8" id="6$E6NNC3cID" role="3cqZAp">
-              <node concept="3cpWsn" id="6$E6NNC3cIE" role="3cpWs9">
-                <property role="TrG5h" value="b" />
-                <node concept="10P_77" id="6$E6NNC3cIF" role="1tU5fm" />
-                <node concept="1Wc70l" id="6$E6NNC3cIG" role="33vP2m">
-                  <node concept="pVHWs" id="6$E6NNC3cIH" role="3uHU7w">
-                    <node concept="3y3z36" id="6$E6NNC3cII" role="3uHU7w">
-                      <node concept="10Nm6u" id="6$E6NNC3cIJ" role="3uHU7w" />
-                      <node concept="1rpKSd" id="6$E6NNC3cIK" role="3uHU7B" />
-                    </node>
-                    <node concept="3y3z36" id="6$E6NNC3cIL" role="3uHU7B">
-                      <node concept="7Obwk" id="6$E6NNC3cIM" role="3uHU7B" />
-                      <node concept="10Nm6u" id="6$E6NNC3cIN" role="3uHU7w" />
-                    </node>
-                  </node>
-                  <node concept="3y3z36" id="6$E6NNC3cIO" role="3uHU7B">
-                    <node concept="1Q80Hx" id="6$E6NNC3cIP" role="3uHU7B" />
-                    <node concept="10Nm6u" id="6$E6NNC3cIQ" role="3uHU7w" />
-                  </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="3XP_kj6DiCA">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="aqKnT" to="wdez:3XP_kj6C72t" resolve="TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" />
+    <node concept="3N5dw7" id="2zpNKoSsG9w" role="3ft7WO">
+      <node concept="16NfWO" id="2zpNKoSsGTd" role="upBLP">
+        <node concept="2h3Zct" id="2zpNKoSsGWZ" role="16NeZM">
+          <property role="2h4Kg1" value="wrap menu 1" />
+        </node>
+      </node>
+      <node concept="3N5aqt" id="2zpNKoSsG9y" role="3Na0zg">
+        <node concept="3clFbS" id="2zpNKoSsG9$" role="2VODD2">
+          <node concept="3cpWs6" id="2zpNKoSsGEo" role="3cqZAp">
+            <node concept="3N4pyC" id="2zpNKoSsGLI" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="2kknPI" id="2zpNKoSsGde" role="2klrvf">
+        <ref role="2kkw0f" node="3XP_kj6DiCI" resolve="TestSubstitute_SameMenu_ToWrap" />
+      </node>
+    </node>
+    <node concept="3N5dw7" id="2zpNKoSsGX2" role="3ft7WO">
+      <node concept="16NfWO" id="2zpNKoSsGX3" role="upBLP">
+        <node concept="2h3Zct" id="2zpNKoSsGX4" role="16NeZM">
+          <property role="2h4Kg1" value="wrap menu 2" />
+        </node>
+      </node>
+      <node concept="3N5aqt" id="2zpNKoSsGX5" role="3Na0zg">
+        <node concept="3clFbS" id="2zpNKoSsGX6" role="2VODD2">
+          <node concept="3cpWs6" id="2zpNKoSsGX7" role="3cqZAp">
+            <node concept="3N4pyC" id="2zpNKoSsGX8" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="2kknPI" id="2zpNKoSsGX9" role="2klrvf">
+        <ref role="2kkw0f" node="3XP_kj6DiCI" resolve="TestSubstitute_SameMenu_ToWrap" />
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="3XP_kj6DiCI">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_SameMenu_ToWrap" />
+    <ref role="aqKnT" to="wdez:3XP_kj6C72t" resolve="TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" />
+    <node concept="3eGOop" id="3XP_kj6DiCJ" role="3ft7WO">
+      <node concept="ucgPf" id="3XP_kj6DiCK" role="3aKz83">
+        <node concept="3clFbS" id="3XP_kj6DiCL" role="2VODD2">
+          <node concept="3clFbF" id="3XP_kj6DiCM" role="3cqZAp">
+            <node concept="2ShNRf" id="3XP_kj6DiCN" role="3clFbG">
+              <node concept="3zrR0B" id="3XP_kj6DiCO" role="2ShVmc">
+                <node concept="3Tqbb2" id="3XP_kj6DiCP" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:3XP_kj6C72t" resolve="TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" />
                 </node>
               </node>
-            </node>
-            <node concept="3clFbF" id="6$E6NNC3cIR" role="3cqZAp">
-              <node concept="7Obwk" id="6$E6NNC3cIS" role="3clFbG" />
             </node>
           </node>
         </node>
-        <node concept="3tp4HU" id="6$E6NNC3f_m" role="3c8P5H">
-          <node concept="SLHDK" id="6$E6NNC3f_n" role="3tp4HT">
-            <node concept="3clFbS" id="6$E6NNC3f_o" role="2VODD2">
-              <node concept="3cpWs8" id="6$E6NNC3fYT" role="3cqZAp">
-                <node concept="3cpWsn" id="6$E6NNC3fYU" role="3cpWs9">
-                  <property role="TrG5h" value="b" />
-                  <node concept="10P_77" id="6$E6NNC3fYV" role="1tU5fm" />
-                  <node concept="1Wc70l" id="6$E6NNC3fYW" role="33vP2m">
-                    <node concept="pVHWs" id="6$E6NNC3fYX" role="3uHU7w">
-                      <node concept="3y3z36" id="6$E6NNC3fYY" role="3uHU7w">
-                        <node concept="10Nm6u" id="6$E6NNC3fYZ" role="3uHU7w" />
-                        <node concept="1rpKSd" id="6$E6NNC3fZ0" role="3uHU7B" />
-                      </node>
-                      <node concept="3y3z36" id="6$E6NNC3fZ1" role="3uHU7B">
-                        <node concept="7Obwk" id="6$E6NNC3fZ2" role="3uHU7B" />
-                        <node concept="10Nm6u" id="6$E6NNC3fZ3" role="3uHU7w" />
-                      </node>
-                    </node>
-                    <node concept="3y3z36" id="6$E6NNC3fZ4" role="3uHU7B">
-                      <node concept="1Q80Hx" id="6$E6NNC3fZ5" role="3uHU7B" />
-                      <node concept="10Nm6u" id="6$E6NNC3fZ6" role="3uHU7w" />
-                    </node>
-                  </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3XP_kj6C71h">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="1XX52x" to="wdez:3XP_kj6C70Y" resolve="TestSubstitute_DuplicationMenu_Parent" />
+    <node concept="3EZMnI" id="3XP_kj6C7aC" role="2wV5jI">
+      <node concept="l2Vlx" id="3XP_kj6C7aD" role="2iSdaV" />
+      <node concept="3F0ifn" id="3XP_kj6C7aE" role="3EZMnx">
+        <property role="3F0ifm" value="test substitute_ duplication menu_ parent" />
+      </node>
+      <node concept="3F0ifn" id="3XP_kj6C7aF" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="3XP_kj6C7aG" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="3XP_kj6C7aH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="3XP_kj6C7aI" role="3EZMnx">
+        <node concept="l2Vlx" id="3XP_kj6C7aJ" role="2iSdaV" />
+        <node concept="lj46D" id="3XP_kj6C7aK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7aL" role="3EZMnx">
+          <property role="3F0ifm" value="child subconcept" />
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7aM" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="3XP_kj6C7aN" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7aO" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="3XP_kj6C7aP" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:3XP_kj6C71u" resolve="childSubconcept" />
+          <node concept="lj46D" id="3XP_kj6C7aQ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7aR" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7aS" role="3EZMnx">
+          <node concept="ljvvj" id="3XP_kj6C7aT" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7aU" role="3EZMnx">
+          <property role="3F0ifm" value="child include same menu twice" />
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7aV" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="3XP_kj6C7aW" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7aX" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="3XP_kj6C7aY" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:3XP_kj6C7at" resolve="childIncludeSameMenuTwice" />
+          <node concept="lj46D" id="3XP_kj6C7aZ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7b0" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7b1" role="3EZMnx">
+          <node concept="ljvvj" id="3XP_kj6C7b2" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC41$1" role="3EZMnx">
+          <property role="3F0ifm" value="child include different menus" />
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC41zY" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="1D1LJGC41zZ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="1D1LJGC41$0" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1D1LJGC41zV" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1D1LJGC41zN" resolve="childIncludeDifferentMenus" />
+          <node concept="lj46D" id="1D1LJGC41zW" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="1D1LJGC41zX" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC41zT" role="3EZMnx">
+          <node concept="ljvvj" id="1D1LJGC41zU" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="44DBaIkVqwv" role="3EZMnx">
+          <property role="3F0ifm" value="child include deafult and null menu" />
+        </node>
+        <node concept="3F0ifn" id="44DBaIkVqws" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="44DBaIkVqwt" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="44DBaIkVqwu" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="44DBaIkVqwp" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:44DBaIkVpUA" resolve="childIncludeDefaultAndNullMenu" />
+          <node concept="lj46D" id="44DBaIkVqwq" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="44DBaIkVqwr" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="44DBaIkT675" role="3EZMnx">
+          <node concept="ljvvj" id="44DBaIkT676" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC42$p" role="3EZMnx">
+          <property role="3F0ifm" value="child wrap same menu twice" />
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC42$m" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="1D1LJGC42$n" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="1D1LJGC42$o" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1D1LJGC42$j" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:3XP_kj6C7aq" resolve="childWrapSameMenuTwice" />
+          <node concept="lj46D" id="1D1LJGC42$k" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="1D1LJGC42$l" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1D1LJGC42xt" role="3EZMnx">
+          <node concept="ljvvj" id="1D1LJGC42xu" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7b3" role="3EZMnx">
+          <property role="3F0ifm" value="child wrap different menus" />
+        </node>
+        <node concept="3F0ifn" id="3XP_kj6C7b4" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="3XP_kj6C7b5" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7b6" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="3XP_kj6C7b7" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1D1LJGC42xm" resolve="childWrapDifferentMenus" />
+          <node concept="lj46D" id="3XP_kj6C7b8" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3XP_kj6C7b9" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3XP_kj6C7ba" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="3XP_kj6C7bb" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="1D1LJGC41zC">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="aqKnT" to="wdez:1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
+    <node concept="1s_PAr" id="1D1LJGC41zD" role="3ft7WO">
+      <node concept="2kknPI" id="1D1LJGC41zF" role="1s_PAo">
+        <ref role="2kkw0f" node="1D1LJGC416Q" resolve="TestSubstitute_Menu_ToInclude1" />
+      </node>
+    </node>
+    <node concept="1s_PAr" id="1D1LJGC41zH" role="3ft7WO">
+      <node concept="2kknPI" id="1D1LJGC41zI" role="1s_PAo">
+        <ref role="2kkw0f" node="1D1LJGC41r4" resolve="TestSubstitute_Menu_ToInclude2" />
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="1D1LJGC42fJ">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="aqKnT" to="wdez:1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
+    <node concept="3N5dw7" id="1D1LJGC42fK" role="3ft7WO">
+      <node concept="16NfWO" id="1D1LJGC42fL" role="upBLP">
+        <node concept="2h3Zct" id="1D1LJGC42fM" role="16NeZM">
+          <property role="2h4Kg1" value="wrap menu 1" />
+        </node>
+      </node>
+      <node concept="3N5aqt" id="1D1LJGC42fN" role="3Na0zg">
+        <node concept="3clFbS" id="1D1LJGC42fO" role="2VODD2">
+          <node concept="3cpWs6" id="1D1LJGC42fP" role="3cqZAp">
+            <node concept="3N4pyC" id="1D1LJGC42fQ" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="2kknPI" id="1D1LJGC42fR" role="2klrvf">
+        <ref role="2kkw0f" node="1D1LJGC41JM" resolve="TestSubstitute_Menu_ToWrap1" />
+      </node>
+    </node>
+    <node concept="3N5dw7" id="1D1LJGC42fS" role="3ft7WO">
+      <node concept="16NfWO" id="1D1LJGC42fT" role="upBLP">
+        <node concept="2h3Zct" id="1D1LJGC42fU" role="16NeZM">
+          <property role="2h4Kg1" value="wrap menu 2" />
+        </node>
+      </node>
+      <node concept="3N5aqt" id="1D1LJGC42fV" role="3Na0zg">
+        <node concept="3clFbS" id="1D1LJGC42fW" role="2VODD2">
+          <node concept="3cpWs6" id="1D1LJGC42fX" role="3cqZAp">
+            <node concept="3N4pyC" id="1D1LJGC42fY" role="3cqZAk" />
+          </node>
+        </node>
+      </node>
+      <node concept="2kknPI" id="1D1LJGC42fZ" role="2klrvf">
+        <ref role="2kkw0f" node="1D1LJGC4240" resolve="TestSubstitute_Menu_ToWrap2" />
+      </node>
+    </node>
+  </node>
+  <node concept="3p36aQ" id="3XP_kj6CZj4">
+    <property role="3GE5qa" value="duplication" />
+    <ref role="aqKnT" to="wdez:3XP_kj6C72q" resolve="TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" />
+    <node concept="1s_PAr" id="3XP_kj6CZj7" role="3ft7WO">
+      <node concept="2kknPI" id="3XP_kj6CZja" role="1s_PAo">
+        <ref role="2kkw0f" node="3XP_kj6CXFQ" resolve="TestSubstitute_SameMenu_ToInclude" />
+      </node>
+    </node>
+    <node concept="1s_PAr" id="3XP_kj6CZjc" role="3ft7WO">
+      <node concept="2kknPI" id="3XP_kj6CZjd" role="1s_PAo">
+        <ref role="2kkw0f" node="3XP_kj6CXFQ" resolve="TestSubstitute_SameMenu_ToInclude" />
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="1D1LJGC41JM">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_Menu_ToWrap1" />
+    <ref role="aqKnT" to="wdez:1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
+    <node concept="3eGOop" id="1D1LJGC41JN" role="3ft7WO">
+      <node concept="ucgPf" id="1D1LJGC41JO" role="3aKz83">
+        <node concept="3clFbS" id="1D1LJGC41JP" role="2VODD2">
+          <node concept="3clFbF" id="1D1LJGC41JQ" role="3cqZAp">
+            <node concept="2ShNRf" id="1D1LJGC41JR" role="3clFbG">
+              <node concept="3zrR0B" id="1D1LJGC41JS" role="2ShVmc">
+                <node concept="3Tqbb2" id="1D1LJGC41JT" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
                 </node>
               </node>
-              <node concept="3clFbF" id="6$E6NNC3ggr" role="3cqZAp">
-                <node concept="35c_gC" id="6$E6NNC3ggp" role="3clFbG">
-                  <ref role="35c_gD" to="wdez:7clZIz_rraI" resolve="TestSubstituteToWrapFromTransformMenu" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="3XP_kj6CXFQ">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_SameMenu_ToInclude" />
+    <ref role="aqKnT" to="wdez:3XP_kj6C72q" resolve="TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" />
+    <node concept="3eGOop" id="3XP_kj6CXFR" role="3ft7WO">
+      <node concept="ucgPf" id="3XP_kj6CXFS" role="3aKz83">
+        <node concept="3clFbS" id="3XP_kj6CXFT" role="2VODD2">
+          <node concept="3clFbF" id="3XP_kj6CXJw" role="3cqZAp">
+            <node concept="2ShNRf" id="3XP_kj6CXJu" role="3clFbG">
+              <node concept="3zrR0B" id="3XP_kj6CZ3b" role="2ShVmc">
+                <node concept="3Tqbb2" id="3XP_kj6CZ3d" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:3XP_kj6C72q" resolve="TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="44DBaIkVpAb">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="IncludeDefaultAndNullMenu" />
+    <ref role="aqKnT" to="wdez:44DBaIkVpA2" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" />
+    <node concept="1s_PAr" id="44DBaIkVpA7" role="3ft7WO" />
+    <node concept="1s_PAr" id="44DBaIkVpA9" role="3ft7WO">
+      <node concept="2kknPJ" id="44DBaIkVpU$" role="1s_PAo">
+        <ref role="2ZyFGn" to="wdez:44DBaIkVpA2" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" />
+      </node>
+    </node>
+  </node>
+  <node concept="Q6S24" id="1D1LJGC41r4">
+    <property role="3GE5qa" value="duplication" />
+    <property role="TrG5h" value="TestSubstitute_Menu_ToInclude2" />
+    <ref role="aqKnT" to="wdez:1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
+    <node concept="3eGOop" id="1D1LJGC41r5" role="3ft7WO">
+      <node concept="ucgPf" id="1D1LJGC41r6" role="3aKz83">
+        <node concept="3clFbS" id="1D1LJGC41r7" role="2VODD2">
+          <node concept="3clFbF" id="1D1LJGC41r8" role="3cqZAp">
+            <node concept="2ShNRf" id="1D1LJGC41r9" role="3clFbG">
+              <node concept="3zrR0B" id="1D1LJGC41ra" role="2ShVmc">
+                <node concept="3Tqbb2" id="1D1LJGC41rb" role="3zrR0E">
+                  <ref role="ehGHo" to="wdez:1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
                 </node>
               </node>
             </node>

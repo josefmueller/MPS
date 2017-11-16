@@ -107,7 +107,9 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="cb6d5703-7c8e-46a9-b993-c1373dc0942f" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage">
-      <concept id="8292814565107675822" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrapFromTransformMenu" flags="ng" index="2mu4L6" />
+      <concept id="8292814565107675822" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteToWrapFromTransformMenu" flags="ng" index="2mu4L6" />
+      <concept id="1892012100483551196" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" flags="ng" index="Mks$B" />
+      <concept id="1892012100483553581" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" flags="ng" index="MktZm" />
       <concept id="8998492695591110495" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentToReference" flags="ng" index="16hHoL">
         <child id="8998492695591110508" name="children" index="16hHo2" />
       </concept>
@@ -144,12 +146,13 @@
       <concept id="8998492695587451566" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference" flags="ng" index="16zIf0">
         <reference id="8998492695591019042" name="childToReference" index="16hRdc" />
       </concept>
-      <concept id="8998492695587451562" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptToWrapFromSubstituteMenu" flags="ng" index="16zIf4" />
+      <concept id="8998492695587451562" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteToWrapFromSubstituteMenu" flags="ng" index="16zIf4" />
       <concept id="8998492695587451560" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild1" flags="ng" index="16zIf6">
         <child id="8998492695587451564" name="conceptToWrap" index="16zIf2" />
       </concept>
       <concept id="8998492695587451561" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2" flags="ng" index="16zIf7" />
       <concept id="8998492695587451568" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference" flags="ng" index="16zIfu" />
+      <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
       <concept id="7153261420283491153" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionParent" flags="ng" index="3mLoSd" />
       <concept id="368966953912091576" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialChildAttribute" flags="ng" index="1oPLr5" />
       <concept id="3262439767570552768" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraints" flags="ng" index="3qo1hI" />
@@ -165,6 +168,17 @@
       </concept>
       <concept id="9174907873153018649" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition2" flags="ng" index="3HqV$0" />
       <concept id="9174907873153018648" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition1" flags="ng" index="3HqV$1" />
+      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildSubconcept" flags="ng" index="3TPuk3" />
+      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_Parent" flags="ng" index="3TPulU">
+        <child id="1892012100483553523" name="childIncludeDifferentMenus" index="MktS8" />
+        <child id="1892012100483557462" name="childWrapDifferentMenus" index="MkuUH" />
+        <child id="4695456347262394022" name="childIncludeDefaultAndNullMenu" index="3lL08d" />
+        <child id="4572725119287324766" name="childSubconcept" index="3TPukq" />
+        <child id="4572725119287325341" name="childIncludeSameMenuTwice" index="3TPuvp" />
+        <child id="4572725119287325338" name="childWrapSameMenuTwice" index="3TPuvu" />
+      </concept>
+      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" flags="ng" index="3TPunp" />
+      <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" flags="ng" index="3TPunu" />
       <concept id="705057939849542068" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1" flags="ng" index="3V12v1" />
       <concept id="705057939849542067" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2" flags="ng" index="3V12v6" />
       <concept id="705057939849506459" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints" flags="ng" index="3V1b3I">
@@ -265,7 +279,6 @@
     </node>
     <node concept="16zE7j" id="7Nx4mSUDiuZ" role="LiZbd">
       <node concept="16zIf6" id="7Nx4mSUDoc8" role="16zJe4">
-        <node concept="16zIf4" id="7Nx4mSUDoc6" role="16zIf2" />
         <node concept="LIFWc" id="1L4Jh90IuTE" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
@@ -273,6 +286,7 @@
           <property role="p6zMs" value="0" />
           <property role="LIFWd" value="Constant_paj2j5_a0" />
         </node>
+        <node concept="16zIf4" id="7Nx4mSUDoc6" role="16zIf2" />
       </node>
     </node>
     <node concept="3clFbS" id="7Nx4mSUDiv2" role="LjaKd">
@@ -3420,313 +3434,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6d5vlMPx7Bg">
-    <property role="TrG5h" value="TestSubstituteExceptionActionCanSubstitute" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPx4Ib" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPx81O" role="LiRBU">
-      <node concept="LIFWc" id="6d5vlMPx81Q" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_actionCanSubstitute" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPxL1Y" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPxNPq" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPxNPu" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPxQO8" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPxQO9" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPxQO7" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPxQOa" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPxQOb" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPxQOc" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPxQXR" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPxRTv" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPxTkX" role="3uHU7w">
-            <node concept="3cmrfG" id="6d5vlMPxTl8" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-            <node concept="2OqwBi" id="6d5vlMPxSaj" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPxS1U" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPxQO9" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPxSkp" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPxRn$" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPxRhp" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPxQO9" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPxREM" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPxUcC">
-    <property role="TrG5h" value="TestSubstituteExceptionActionDescriptionText" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="3mLoSd" id="6d5vlMPxUcD" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPxvJU" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_actionDescriptionText" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPxUcF" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPxUcG" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPxUcH" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPxUcI" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPxUcJ" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPxUcK" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPxUcL" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPxUcM" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPxUcN" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPxUcO" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPxUcP" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPxUcQ" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPxUcS" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPxUcT" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPxUcJ" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPxUcU" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="3c5h9FPxGb7" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPxUcV" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPxUcW" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPxUcJ" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPxUcX" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPyfB5">
-    <property role="TrG5h" value="TestSubstituteExceptionActionIcon" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="3mLoSd" id="6d5vlMPyfB6" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPxw_i" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_actionIcon" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPyfB8" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPyfB9" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPyfBa" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPyfBb" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPyfBc" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPyfBd" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyfBe" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPyfBf" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPyfBg" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPyfBh" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPyfBi" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPyfBj" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPyfBk" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPyfBl" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPyfBc" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPyfBm" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPyfBn" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyfBo" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPyfBp" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPyfBc" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPyfBq" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPyhz6">
-    <property role="TrG5h" value="TestSubstituteExceptionActionType" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxO0D" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPyhz7" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPxxPQ" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_actionType" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPyhz9" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPyhza" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPyhzb" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_umy" resolve="CompleteSmart" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPyhzc" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPyhzd" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPyhze" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyhzf" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPyhzg" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPyhzh" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPyhzi" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPyhzj" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPyhzk" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPyhzl" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPyhzm" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPyhzd" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPyhzn" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPyhzo" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyhzp" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPyhzq" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPyhzd" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPyhzr" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPyjnf">
-    <property role="TrG5h" value="TestSubstituteExceptionActionMatchingText" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxd8y" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPyjng" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPxx0u" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_actionMatchingText" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPyjni" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPyjnj" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPyjnk" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPyjnl" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPyjnm" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPyjnn" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyjno" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPyjnp" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPyjnq" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPyjnr" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPyjns" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPyjnt" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPyjnu" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPyjnv" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPyjnm" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPyjnw" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPyjnx" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyjny" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPyjnz" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPyjnm" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPyjn$" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="6d5vlMPylsp">
     <property role="TrG5h" value="TestSubstituteExceptionConceptList" />
     <property role="3GE5qa" value="exception" />
@@ -3783,195 +3490,6 @@
               <ref role="3cqZAo" node="6d5vlMPylsw" resolve="nodeSubstituteChooser" />
             </node>
             <node concept="liA8E" id="6d5vlMPylsI" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPypBL">
-    <property role="TrG5h" value="TestSubstituteExceptionGroup" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxfd6" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPypBM" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPxzwA" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_group" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPypBO" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPypBP" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPypBQ" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPypBR" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPypBS" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPypBT" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPypBU" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPypBV" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPypBW" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPypBX" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPypBY" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPypBZ" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPypC0" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPypC1" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPypBS" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPypC2" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPypC3" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPypC4" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPypC5" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPypBS" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPypC6" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPyrhT">
-    <property role="TrG5h" value="TestSubstituteExceptionIncludeMenu" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxfBQ" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPyrhU" role="LiRBU">
-      <node concept="LIFWc" id="6d5vlMPytm7" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_includeMenu" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPyrhW" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPyrhX" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPyrhY" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPyrhZ" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPyri0" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPyri1" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyri2" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPyri3" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPyri4" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPyri5" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPyri6" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPyri7" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPyri8" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPyri9" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPyri0" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPyria" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPyrib" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPyric" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPyrid" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPyri0" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPyrie" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="6d5vlMPytm9">
-    <property role="TrG5h" value="TestSubstituteExceptionParameterized" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxg2T" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="6d5vlMPytma" role="LiRBU">
-      <node concept="LIFWc" id="3c5h9FPx$lY" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_parameterized" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="6d5vlMPytmc" role="LjaKd">
-      <node concept="2HxZob" id="6d5vlMPytmd" role="3cqZAp">
-        <node concept="1iFQzN" id="6d5vlMPytme" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="6d5vlMPytmf" role="3cqZAp">
-        <node concept="3cpWsn" id="6d5vlMPytmg" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="6d5vlMPytmh" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPytmi" role="33vP2m">
-            <node concept="369mXd" id="6d5vlMPytmj" role="2Oq$k0" />
-            <node concept="liA8E" id="6d5vlMPytmk" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="6d5vlMPytml" role="3cqZAp">
-        <node concept="1Wc70l" id="6d5vlMPytmm" role="3vwVQn">
-          <node concept="3clFbC" id="6d5vlMPytmn" role="3uHU7w">
-            <node concept="2OqwBi" id="6d5vlMPytmo" role="3uHU7B">
-              <node concept="37vLTw" id="6d5vlMPytmp" role="2Oq$k0">
-                <ref role="3cqZAo" node="6d5vlMPytmg" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="6d5vlMPytmq" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="6d5vlMPytmr" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6d5vlMPytms" role="3uHU7B">
-            <node concept="37vLTw" id="6d5vlMPytmt" role="2Oq$k0">
-              <ref role="3cqZAo" node="6d5vlMPytmg" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="6d5vlMPytmu" role="2OqNvi">
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
             </node>
           </node>
@@ -4156,334 +3674,6 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2yVdJHO5WOg">
-    <property role="TrG5h" value="TestSubstituteExceptionWrapMenu" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="2yVdJHO5WOh" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="2yVdJHO5WOi" role="LiRBU">
-      <node concept="LIFWc" id="2yVdJHOdLz2" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_wrapMenu" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="2yVdJHO5WOk" role="LjaKd">
-      <node concept="2HxZob" id="2yVdJHO5WOl" role="3cqZAp">
-        <node concept="1iFQzN" id="2yVdJHO5WOm" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="2yVdJHO5WOn" role="3cqZAp">
-        <node concept="3cpWsn" id="2yVdJHO5WOo" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="2yVdJHO5WOp" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="2yVdJHO5WOq" role="33vP2m">
-            <node concept="369mXd" id="2yVdJHO5WOr" role="2Oq$k0" />
-            <node concept="liA8E" id="2yVdJHO5WOs" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="2yVdJHO5WOu" role="3cqZAp">
-        <node concept="1Wc70l" id="2yVdJHO5WOv" role="3vwVQn">
-          <node concept="3clFbC" id="2yVdJHO5WOw" role="3uHU7w">
-            <node concept="2OqwBi" id="2yVdJHO5WOx" role="3uHU7B">
-              <node concept="37vLTw" id="2yVdJHO5WOy" role="2Oq$k0">
-                <ref role="3cqZAo" node="2yVdJHO5WOo" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="2yVdJHO5WOz" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="2yVdJHO5WO$" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="2yVdJHO5WO_" role="3uHU7B">
-            <node concept="37vLTw" id="2yVdJHO5WOA" role="2Oq$k0">
-              <ref role="3cqZAo" node="2yVdJHO5WOo" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="2yVdJHO5WOB" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="4LXLsLUy$Un">
-    <property role="TrG5h" value="TestSubstituteExceptionSubconceptsMenu" />
-    <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="4LXLsLUy$Uo" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
-    <node concept="3mLoSd" id="4LXLsLUy$Up" role="LiRBU">
-      <node concept="LIFWc" id="4LXLsLUyAYA" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_subconcepts" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="4LXLsLUy$Ur" role="LjaKd">
-      <node concept="2HxZob" id="4LXLsLUy$Us" role="3cqZAp">
-        <node concept="1iFQzN" id="4LXLsLUy$Ut" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3cpWs8" id="4LXLsLUy$Uu" role="3cqZAp">
-        <node concept="3cpWsn" id="4LXLsLUy$Uv" role="3cpWs9">
-          <property role="TrG5h" value="nodeSubstituteChooser" />
-          <node concept="3uibUv" id="4LXLsLUy$Uw" role="1tU5fm">
-            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
-          </node>
-          <node concept="2OqwBi" id="4LXLsLUy$Ux" role="33vP2m">
-            <node concept="369mXd" id="4LXLsLUy$Uy" role="2Oq$k0" />
-            <node concept="liA8E" id="4LXLsLUy$Uz" role="2OqNvi">
-              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3vwNmj" id="4LXLsLUy$U$" role="3cqZAp">
-        <node concept="1Wc70l" id="4LXLsLUy$U_" role="3vwVQn">
-          <node concept="3clFbC" id="4LXLsLUy$UA" role="3uHU7w">
-            <node concept="2OqwBi" id="4LXLsLUy$UB" role="3uHU7B">
-              <node concept="37vLTw" id="4LXLsLUy$UC" role="2Oq$k0">
-                <ref role="3cqZAo" node="4LXLsLUy$Uv" resolve="nodeSubstituteChooser" />
-              </node>
-              <node concept="liA8E" id="4LXLsLUy$UD" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-            <node concept="3cmrfG" id="4LXLsLUy$UE" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="4LXLsLUy$UF" role="3uHU7B">
-            <node concept="37vLTw" id="4LXLsLUy$UG" role="2Oq$k0">
-              <ref role="3cqZAo" node="4LXLsLUy$Uv" resolve="nodeSubstituteChooser" />
-            </node>
-            <node concept="liA8E" id="4LXLsLUy$UH" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="7clZIz_rK8w">
-    <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu" />
-    <node concept="16zE7j" id="7clZIz_rK8x" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJovR" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_hb2a" />
-      </node>
-    </node>
-    <node concept="16zE7j" id="7clZIz_rK8z" role="LiZbd">
-      <node concept="2mu4L6" id="7clZIz_s0Oa" role="XWXxo">
-        <property role="TrG5h" value="named menu to wrap from transform" />
-        <node concept="LIFWc" id="7clZIz_s0Qe" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="33" />
-          <property role="p6zMs" value="33" />
-          <property role="LIFWd" value="property_name" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="7clZIz_rK8A" role="LjaKd">
-      <node concept="2HxZob" id="7clZIz_rK8B" role="3cqZAp">
-        <node concept="1iFQzN" id="7clZIz_rK8C" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3vwNmj" id="7clZIz_rK8D" role="3cqZAp">
-        <node concept="1Wc70l" id="7clZIz_rK8E" role="3vwVQn">
-          <node concept="3clFbC" id="7clZIz_rK8F" role="3uHU7w">
-            <node concept="3cmrfG" id="7clZIz_rK8G" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-            <node concept="2OqwBi" id="7clZIz_rK8H" role="3uHU7B">
-              <node concept="2OqwBi" id="7clZIz_rK8I" role="2Oq$k0">
-                <node concept="369mXd" id="7clZIz_rK8J" role="2Oq$k0" />
-                <node concept="liA8E" id="7clZIz_rK8K" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-                </node>
-              </node>
-              <node concept="liA8E" id="7clZIz_rK8L" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7clZIz_rK8M" role="3uHU7B">
-            <node concept="2OqwBi" id="7clZIz_rK8N" role="2Oq$k0">
-              <node concept="369mXd" id="7clZIz_rK8O" role="2Oq$k0" />
-              <node concept="liA8E" id="7clZIz_rK8P" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7clZIz_rK8Q" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2TK7Tu" id="1L4Jh90G7AT" role="3cqZAp">
-        <property role="2TTd_B" value="named" />
-      </node>
-      <node concept="3vwNmj" id="1L4Jh90G7rm" role="3cqZAp">
-        <node concept="1Wc70l" id="1L4Jh90G7rn" role="3vwVQn">
-          <node concept="3clFbC" id="1L4Jh90G7ro" role="3uHU7w">
-            <node concept="3cmrfG" id="1L4Jh90G7rp" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-            <node concept="2OqwBi" id="1L4Jh90G7rq" role="3uHU7B">
-              <node concept="2OqwBi" id="1L4Jh90G7rr" role="2Oq$k0">
-                <node concept="369mXd" id="1L4Jh90G7rs" role="2Oq$k0" />
-                <node concept="liA8E" id="1L4Jh90G7rt" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1L4Jh90G7ru" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1L4Jh90G7rv" role="3uHU7B">
-            <node concept="2OqwBi" id="1L4Jh90G7rw" role="2Oq$k0">
-              <node concept="369mXd" id="1L4Jh90G7rx" role="2Oq$k0" />
-              <node concept="liA8E" id="1L4Jh90G7ry" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1L4Jh90G7rz" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="yd1bK" id="7clZIz_rK8R" role="3cqZAp">
-        <node concept="pLAjd" id="7clZIz_rK8S" role="yd6KS">
-          <property role="pLAjf" value="VK_ENTER" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1L4Jh90GX1q">
-    <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromSubstituteMenu" />
-    <node concept="16zE7j" id="1L4Jh90GX1r" role="LiRBU">
-      <node concept="LIFWc" id="1L4Jh90HMSQ" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_wrapNamedSubstituteMenuFromSubsitute" />
-      </node>
-    </node>
-    <node concept="16zE7j" id="1L4Jh90GX1t" role="LiZbd">
-      <node concept="16zIf6" id="1L4Jh90IiSX" role="1sXZqJ">
-        <node concept="16zIf4" id="1L4Jh90IiSW" role="16zIf2" />
-        <node concept="LIFWc" id="1L4Jh90IuZ5" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_paj2j5_a0" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="1L4Jh90GX1x" role="LjaKd">
-      <node concept="2HxZob" id="1L4Jh90GX1y" role="3cqZAp">
-        <node concept="1iFQzN" id="1L4Jh90GX1z" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
-        </node>
-      </node>
-      <node concept="3vwNmj" id="1L4Jh90GYz6" role="3cqZAp">
-        <node concept="1Wc70l" id="1L4Jh90GYz7" role="3vwVQn">
-          <node concept="3clFbC" id="1L4Jh90GYz8" role="3uHU7w">
-            <node concept="3cmrfG" id="1L4Jh90GYz9" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-            <node concept="2OqwBi" id="1L4Jh90GYza" role="3uHU7B">
-              <node concept="2OqwBi" id="1L4Jh90GYzb" role="2Oq$k0">
-                <node concept="369mXd" id="1L4Jh90GYzc" role="2Oq$k0" />
-                <node concept="liA8E" id="1L4Jh90GYzd" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1L4Jh90GYze" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1L4Jh90GYzf" role="3uHU7B">
-            <node concept="2OqwBi" id="1L4Jh90GYzg" role="2Oq$k0">
-              <node concept="369mXd" id="1L4Jh90GYzh" role="2Oq$k0" />
-              <node concept="liA8E" id="1L4Jh90GYzi" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1L4Jh90GYzj" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2TK7Tu" id="1L4Jh90GYzk" role="3cqZAp">
-        <property role="2TTd_B" value="named" />
-      </node>
-      <node concept="3vwNmj" id="1L4Jh90GYzl" role="3cqZAp">
-        <node concept="1Wc70l" id="1L4Jh90GYzm" role="3vwVQn">
-          <node concept="3clFbC" id="1L4Jh90GYzn" role="3uHU7w">
-            <node concept="3cmrfG" id="1L4Jh90GYzo" role="3uHU7w">
-              <property role="3cmrfH" value="1" />
-            </node>
-            <node concept="2OqwBi" id="1L4Jh90GYzp" role="3uHU7B">
-              <node concept="2OqwBi" id="1L4Jh90GYzq" role="2Oq$k0">
-                <node concept="369mXd" id="1L4Jh90GYzr" role="2Oq$k0" />
-                <node concept="liA8E" id="1L4Jh90GYzs" role="2OqNvi">
-                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-                </node>
-              </node>
-              <node concept="liA8E" id="1L4Jh90GYzt" role="2OqNvi">
-                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1L4Jh90GYzu" role="3uHU7B">
-            <node concept="2OqwBi" id="1L4Jh90GYzv" role="2Oq$k0">
-              <node concept="369mXd" id="1L4Jh90GYzw" role="2Oq$k0" />
-              <node concept="liA8E" id="1L4Jh90GYzx" role="2OqNvi">
-                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1L4Jh90GYzy" role="2OqNvi">
-              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="yd1bK" id="1L4Jh90GX1$" role="3cqZAp">
-        <node concept="pLAjd" id="1L4Jh90GX1_" role="yd6KS">
-          <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
@@ -4686,6 +3876,1282 @@
       <node concept="yd1bK" id="6$E6NNC3cqI" role="3cqZAp">
         <node concept="pLAjd" id="6$E6NNC3cqJ" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPytm9">
+    <property role="TrG5h" value="TestSubstituteExceptionParameterized" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPxg2T" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPytma" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPx$lY" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_parameterized" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPytmc" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPytmd" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPytme" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPytmf" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPytmg" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPytmh" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPytmi" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPytmj" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPytmk" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPytml" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPytmm" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPytmn" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPytmo" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPytmp" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPytmg" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPytmq" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPytmr" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPytms" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPytmt" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPytmg" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPytmu" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4LXLsLUy$Un">
+    <property role="TrG5h" value="TestSubstituteExceptionSubconceptsMenu" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="4LXLsLUy$Uo" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="4LXLsLUy$Up" role="LiRBU">
+      <node concept="LIFWc" id="4LXLsLUyAYA" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_subconcepts" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="4LXLsLUy$Ur" role="LjaKd">
+      <node concept="2HxZob" id="4LXLsLUy$Us" role="3cqZAp">
+        <node concept="1iFQzN" id="4LXLsLUy$Ut" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="4LXLsLUy$Uu" role="3cqZAp">
+        <node concept="3cpWsn" id="4LXLsLUy$Uv" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="4LXLsLUy$Uw" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="4LXLsLUy$Ux" role="33vP2m">
+            <node concept="369mXd" id="4LXLsLUy$Uy" role="2Oq$k0" />
+            <node concept="liA8E" id="4LXLsLUy$Uz" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="4LXLsLUy$U$" role="3cqZAp">
+        <node concept="1Wc70l" id="4LXLsLUy$U_" role="3vwVQn">
+          <node concept="3clFbC" id="4LXLsLUy$UA" role="3uHU7w">
+            <node concept="2OqwBi" id="4LXLsLUy$UB" role="3uHU7B">
+              <node concept="37vLTw" id="4LXLsLUy$UC" role="2Oq$k0">
+                <ref role="3cqZAo" node="4LXLsLUy$Uv" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="4LXLsLUy$UD" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="4LXLsLUy$UE" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4LXLsLUy$UF" role="3uHU7B">
+            <node concept="37vLTw" id="4LXLsLUy$UG" role="2Oq$k0">
+              <ref role="3cqZAo" node="4LXLsLUy$Uv" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="4LXLsLUy$UH" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7clZIz_rK8w">
+    <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu" />
+    <node concept="16zE7j" id="7clZIz_rK8x" role="LiRBU">
+      <node concept="LIFWc" id="3h50PypJovR" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_tkqw7v_hb2a" />
+      </node>
+    </node>
+    <node concept="16zE7j" id="7clZIz_rK8z" role="LiZbd">
+      <node concept="2mu4L6" id="7clZIz_s0Oa" role="XWXxo">
+        <property role="TrG5h" value="named menu to wrap from transform" />
+        <node concept="LIFWc" id="7clZIz_s0Qe" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="33" />
+          <property role="p6zMs" value="33" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="7clZIz_rK8A" role="LjaKd">
+      <node concept="2HxZob" id="7clZIz_rK8B" role="3cqZAp">
+        <node concept="1iFQzN" id="7clZIz_rK8C" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="7clZIz_rK8D" role="3cqZAp">
+        <node concept="1Wc70l" id="7clZIz_rK8E" role="3vwVQn">
+          <node concept="3clFbC" id="7clZIz_rK8F" role="3uHU7w">
+            <node concept="3cmrfG" id="7clZIz_rK8G" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="7clZIz_rK8H" role="3uHU7B">
+              <node concept="2OqwBi" id="7clZIz_rK8I" role="2Oq$k0">
+                <node concept="369mXd" id="7clZIz_rK8J" role="2Oq$k0" />
+                <node concept="liA8E" id="7clZIz_rK8K" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7clZIz_rK8L" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7clZIz_rK8M" role="3uHU7B">
+            <node concept="2OqwBi" id="7clZIz_rK8N" role="2Oq$k0">
+              <node concept="369mXd" id="7clZIz_rK8O" role="2Oq$k0" />
+              <node concept="liA8E" id="7clZIz_rK8P" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7clZIz_rK8Q" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="1L4Jh90G7AT" role="3cqZAp">
+        <property role="2TTd_B" value="named" />
+      </node>
+      <node concept="3vwNmj" id="1L4Jh90G7rm" role="3cqZAp">
+        <node concept="1Wc70l" id="1L4Jh90G7rn" role="3vwVQn">
+          <node concept="3clFbC" id="1L4Jh90G7ro" role="3uHU7w">
+            <node concept="3cmrfG" id="1L4Jh90G7rp" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="1L4Jh90G7rq" role="3uHU7B">
+              <node concept="2OqwBi" id="1L4Jh90G7rr" role="2Oq$k0">
+                <node concept="369mXd" id="1L4Jh90G7rs" role="2Oq$k0" />
+                <node concept="liA8E" id="1L4Jh90G7rt" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1L4Jh90G7ru" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1L4Jh90G7rv" role="3uHU7B">
+            <node concept="2OqwBi" id="1L4Jh90G7rw" role="2Oq$k0">
+              <node concept="369mXd" id="1L4Jh90G7rx" role="2Oq$k0" />
+              <node concept="liA8E" id="1L4Jh90G7ry" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1L4Jh90G7rz" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="7clZIz_rK8R" role="3cqZAp">
+        <node concept="pLAjd" id="7clZIz_rK8S" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPxUcC">
+    <property role="TrG5h" value="TestSubstituteExceptionActionDescriptionText" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="3mLoSd" id="6d5vlMPxUcD" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPxvJU" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_actionDescriptionText" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPxUcF" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPxUcG" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPxUcH" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPxUcI" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPxUcJ" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPxUcK" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPxUcL" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPxUcM" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPxUcN" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPxUcO" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPxUcP" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPxUcQ" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPxUcS" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPxUcT" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPxUcJ" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPxUcU" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="3c5h9FPxGb7" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPxUcV" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPxUcW" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPxUcJ" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPxUcX" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1L4Jh90GX1q">
+    <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromSubstituteMenu" />
+    <node concept="16zE7j" id="1L4Jh90GX1r" role="LiRBU">
+      <node concept="LIFWc" id="1L4Jh90HMSQ" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_wrapNamedSubstituteMenuFromSubsitute" />
+      </node>
+    </node>
+    <node concept="16zE7j" id="1L4Jh90GX1t" role="LiZbd">
+      <node concept="16zIf6" id="1L4Jh90IiSX" role="1sXZqJ">
+        <node concept="16zIf4" id="1L4Jh90IiSW" role="16zIf2" />
+        <node concept="LIFWc" id="1L4Jh90IuZ5" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_paj2j5_a0" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="1L4Jh90GX1x" role="LjaKd">
+      <node concept="2HxZob" id="1L4Jh90GX1y" role="3cqZAp">
+        <node concept="1iFQzN" id="1L4Jh90GX1z" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="1L4Jh90GYz6" role="3cqZAp">
+        <node concept="1Wc70l" id="1L4Jh90GYz7" role="3vwVQn">
+          <node concept="3clFbC" id="1L4Jh90GYz8" role="3uHU7w">
+            <node concept="3cmrfG" id="1L4Jh90GYz9" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="1L4Jh90GYza" role="3uHU7B">
+              <node concept="2OqwBi" id="1L4Jh90GYzb" role="2Oq$k0">
+                <node concept="369mXd" id="1L4Jh90GYzc" role="2Oq$k0" />
+                <node concept="liA8E" id="1L4Jh90GYzd" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1L4Jh90GYze" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1L4Jh90GYzf" role="3uHU7B">
+            <node concept="2OqwBi" id="1L4Jh90GYzg" role="2Oq$k0">
+              <node concept="369mXd" id="1L4Jh90GYzh" role="2Oq$k0" />
+              <node concept="liA8E" id="1L4Jh90GYzi" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1L4Jh90GYzj" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="1L4Jh90GYzk" role="3cqZAp">
+        <property role="2TTd_B" value="named" />
+      </node>
+      <node concept="3vwNmj" id="1L4Jh90GYzl" role="3cqZAp">
+        <node concept="1Wc70l" id="1L4Jh90GYzm" role="3vwVQn">
+          <node concept="3clFbC" id="1L4Jh90GYzn" role="3uHU7w">
+            <node concept="3cmrfG" id="1L4Jh90GYzo" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="1L4Jh90GYzp" role="3uHU7B">
+              <node concept="2OqwBi" id="1L4Jh90GYzq" role="2Oq$k0">
+                <node concept="369mXd" id="1L4Jh90GYzr" role="2Oq$k0" />
+                <node concept="liA8E" id="1L4Jh90GYzs" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1L4Jh90GYzt" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1L4Jh90GYzu" role="3uHU7B">
+            <node concept="2OqwBi" id="1L4Jh90GYzv" role="2Oq$k0">
+              <node concept="369mXd" id="1L4Jh90GYzw" role="2Oq$k0" />
+              <node concept="liA8E" id="1L4Jh90GYzx" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1L4Jh90GYzy" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="1L4Jh90GX1$" role="3cqZAp">
+        <node concept="pLAjd" id="1L4Jh90GX1_" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2yVdJHO5WOg">
+    <property role="TrG5h" value="TestSubstituteExceptionWrapMenu" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="2yVdJHO5WOh" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="2yVdJHO5WOi" role="LiRBU">
+      <node concept="LIFWc" id="2yVdJHOdLz2" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_wrapMenu" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="2yVdJHO5WOk" role="LjaKd">
+      <node concept="2HxZob" id="2yVdJHO5WOl" role="3cqZAp">
+        <node concept="1iFQzN" id="2yVdJHO5WOm" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="2yVdJHO5WOn" role="3cqZAp">
+        <node concept="3cpWsn" id="2yVdJHO5WOo" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="2yVdJHO5WOp" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="2yVdJHO5WOq" role="33vP2m">
+            <node concept="369mXd" id="2yVdJHO5WOr" role="2Oq$k0" />
+            <node concept="liA8E" id="2yVdJHO5WOs" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="2yVdJHO5WOu" role="3cqZAp">
+        <node concept="1Wc70l" id="2yVdJHO5WOv" role="3vwVQn">
+          <node concept="3clFbC" id="2yVdJHO5WOw" role="3uHU7w">
+            <node concept="2OqwBi" id="2yVdJHO5WOx" role="3uHU7B">
+              <node concept="37vLTw" id="2yVdJHO5WOy" role="2Oq$k0">
+                <ref role="3cqZAo" node="2yVdJHO5WOo" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="2yVdJHO5WOz" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="2yVdJHO5WO$" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2yVdJHO5WO_" role="3uHU7B">
+            <node concept="37vLTw" id="2yVdJHO5WOA" role="2Oq$k0">
+              <ref role="3cqZAo" node="2yVdJHO5WOo" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="2yVdJHO5WOB" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPx7Bg">
+    <property role="TrG5h" value="TestSubstituteExceptionActionCanSubstitute" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPx4Ib" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPx81O" role="LiRBU">
+      <node concept="LIFWc" id="6d5vlMPx81Q" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_actionCanSubstitute" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPxL1Y" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPxNPq" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPxNPu" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPxQO8" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPxQO9" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPxQO7" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPxQOa" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPxQOb" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPxQOc" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPxQXR" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPxRTv" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPxTkX" role="3uHU7w">
+            <node concept="3cmrfG" id="6d5vlMPxTl8" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="6d5vlMPxSaj" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPxS1U" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPxQO9" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPxSkp" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPxRn$" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPxRhp" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPxQO9" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPxREM" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPyfB5">
+    <property role="TrG5h" value="TestSubstituteExceptionActionIcon" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="3mLoSd" id="6d5vlMPyfB6" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPxw_i" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_actionIcon" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPyfB8" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPyfB9" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPyfBa" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPyfBb" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPyfBc" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPyfBd" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyfBe" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPyfBf" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPyfBg" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPyfBh" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPyfBi" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPyfBj" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPyfBk" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPyfBl" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPyfBc" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPyfBm" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPyfBn" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyfBo" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPyfBp" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPyfBc" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPyfBq" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPyhz6">
+    <property role="TrG5h" value="TestSubstituteExceptionActionType" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPxO0D" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPyhz7" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPxxPQ" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_actionType" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPyhz9" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPyhza" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPyhzb" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_umy" resolve="CompleteSmart" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPyhzc" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPyhzd" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPyhze" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyhzf" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPyhzg" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPyhzh" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPyhzi" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPyhzj" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPyhzk" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPyhzl" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPyhzm" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPyhzd" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPyhzn" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPyhzo" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyhzp" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPyhzq" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPyhzd" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPyhzr" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPyjnf">
+    <property role="TrG5h" value="TestSubstituteExceptionActionMatchingText" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPxd8y" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPyjng" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPxx0u" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_actionMatchingText" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPyjni" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPyjnj" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPyjnk" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPyjnl" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPyjnm" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPyjnn" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyjno" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPyjnp" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPyjnq" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPyjnr" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPyjns" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPyjnt" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPyjnu" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPyjnv" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPyjnm" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPyjnw" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPyjnx" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyjny" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPyjnz" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPyjnm" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPyjn$" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPypBL">
+    <property role="TrG5h" value="TestSubstituteExceptionGroup" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPxfd6" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPypBM" role="LiRBU">
+      <node concept="LIFWc" id="3c5h9FPxzwA" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_group" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPypBO" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPypBP" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPypBQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPypBR" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPypBS" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPypBT" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPypBU" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPypBV" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPypBW" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPypBX" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPypBY" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPypBZ" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPypC0" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPypC1" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPypBS" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPypC2" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPypC3" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPypC4" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPypC5" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPypBS" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPypC6" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6d5vlMPyrhT">
+    <property role="TrG5h" value="TestSubstituteExceptionIncludeMenu" />
+    <property role="3GE5qa" value="exception" />
+    <node concept="2ng5p9" id="3c5h9FPxfBQ" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional Exception - ignore this" />
+    </node>
+    <node concept="3mLoSd" id="6d5vlMPyrhU" role="LiRBU">
+      <node concept="LIFWc" id="6d5vlMPytm7" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_includeMenu" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="6d5vlMPyrhW" role="LjaKd">
+      <node concept="2HxZob" id="6d5vlMPyrhX" role="3cqZAp">
+        <node concept="1iFQzN" id="6d5vlMPyrhY" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="6d5vlMPyrhZ" role="3cqZAp">
+        <node concept="3cpWsn" id="6d5vlMPyri0" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="6d5vlMPyri1" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyri2" role="33vP2m">
+            <node concept="369mXd" id="6d5vlMPyri3" role="2Oq$k0" />
+            <node concept="liA8E" id="6d5vlMPyri4" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="6d5vlMPyri5" role="3cqZAp">
+        <node concept="1Wc70l" id="6d5vlMPyri6" role="3vwVQn">
+          <node concept="3clFbC" id="6d5vlMPyri7" role="3uHU7w">
+            <node concept="2OqwBi" id="6d5vlMPyri8" role="3uHU7B">
+              <node concept="37vLTw" id="6d5vlMPyri9" role="2Oq$k0">
+                <ref role="3cqZAo" node="6d5vlMPyri0" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="6d5vlMPyria" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="6d5vlMPyrib" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6d5vlMPyric" role="3uHU7B">
+            <node concept="37vLTw" id="6d5vlMPyrid" role="2Oq$k0">
+              <ref role="3cqZAo" node="6d5vlMPyri0" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="6d5vlMPyrie" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3XP_kj6D$CS">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_WrapSameMenuTwice" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="3XP_kj6D$CT" role="LjaKd">
+      <node concept="2HxZob" id="3XP_kj6D$CU" role="3cqZAp">
+        <node concept="1iFQzN" id="3XP_kj6D$CV" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3XP_kj6D$CW" role="3cqZAp">
+        <node concept="3cpWsn" id="3XP_kj6D$CX" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="3XP_kj6D$CY" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6D$CZ" role="33vP2m">
+            <node concept="369mXd" id="3XP_kj6D$D0" role="2Oq$k0" />
+            <node concept="liA8E" id="3XP_kj6D$D1" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="3XP_kj6D$D2" role="3cqZAp">
+        <node concept="1Wc70l" id="3XP_kj6D$D3" role="3vwVQn">
+          <node concept="3clFbC" id="3XP_kj6D$D4" role="3uHU7w">
+            <node concept="2OqwBi" id="3XP_kj6D$D6" role="3uHU7B">
+              <node concept="37vLTw" id="3XP_kj6D$D7" role="2Oq$k0">
+                <ref role="3cqZAo" node="3XP_kj6D$CX" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="3XP_kj6D$D8" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="3XP_kj6D$Kf" role="3uHU7w">
+              <property role="3cmrfH" value="2" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6D$D9" role="3uHU7B">
+            <node concept="37vLTw" id="3XP_kj6D$Da" role="2Oq$k0">
+              <ref role="3cqZAo" node="3XP_kj6D$CX" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="3XP_kj6D$Db" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="3XP_kj6D$Dc" role="3cqZAp">
+        <node concept="pLAjd" id="3XP_kj6D$Dd" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6D$De" role="LiRBU">
+      <node concept="LIFWc" id="1D1LJGC52Hd" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_childWrapSameMenuTwice" />
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6D$Dg" role="LiZbd">
+      <node concept="3TPunp" id="3XP_kj6D$Iy" role="3TPuvu">
+        <node concept="LIFWc" id="44DBaIkX0qt" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="61" />
+          <property role="p6zMs" value="61" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1D1LJGC4$Qs">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_IncludeDifferentMenus" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="1D1LJGC4$Qt" role="LjaKd">
+      <node concept="2HxZob" id="1D1LJGC4$Qu" role="3cqZAp">
+        <node concept="1iFQzN" id="1D1LJGC4$Qv" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="1D1LJGC4$Qw" role="3cqZAp">
+        <node concept="3cpWsn" id="1D1LJGC4$Qx" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="1D1LJGC4$Qy" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="1D1LJGC4$Qz" role="33vP2m">
+            <node concept="369mXd" id="1D1LJGC4$Q$" role="2Oq$k0" />
+            <node concept="liA8E" id="1D1LJGC4$Q_" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="1D1LJGC4$QA" role="3cqZAp">
+        <node concept="1Wc70l" id="1D1LJGC4$QB" role="3vwVQn">
+          <node concept="3clFbC" id="1D1LJGC4$QC" role="3uHU7w">
+            <node concept="2OqwBi" id="1D1LJGC4$QE" role="3uHU7B">
+              <node concept="37vLTw" id="1D1LJGC4$QF" role="2Oq$k0">
+                <ref role="3cqZAo" node="1D1LJGC4$Qx" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="1D1LJGC4$QG" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="1D1LJGC4G2X" role="3uHU7w">
+              <property role="3cmrfH" value="2" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1D1LJGC4$QH" role="3uHU7B">
+            <node concept="37vLTw" id="1D1LJGC4$QI" role="2Oq$k0">
+              <ref role="3cqZAo" node="1D1LJGC4$Qx" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="1D1LJGC4$QJ" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="1D1LJGC4$QK" role="3cqZAp">
+        <node concept="pLAjd" id="1D1LJGC4$QL" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC4$QM" role="LiRBU">
+      <node concept="LIFWc" id="1D1LJGC4UjN" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_childIncludeDifferentMenus" />
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC4$QO" role="LiZbd">
+      <node concept="Mks$B" id="1D1LJGC4AwJ" role="MktS8">
+        <node concept="LIFWc" id="1D1LJGC4AV$" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="64" />
+          <property role="p6zMs" value="64" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="44DBaIkVJ_i">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="44DBaIkVJ_j" role="LjaKd">
+      <node concept="2HxZob" id="44DBaIkVJ_k" role="3cqZAp">
+        <node concept="1iFQzN" id="44DBaIkVJ_l" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="44DBaIkVJ_m" role="3cqZAp">
+        <node concept="3cpWsn" id="44DBaIkVJ_n" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="44DBaIkVJ_o" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="44DBaIkVJ_p" role="33vP2m">
+            <node concept="369mXd" id="44DBaIkVJ_q" role="2Oq$k0" />
+            <node concept="liA8E" id="44DBaIkVJ_r" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="44DBaIkVJ_s" role="3cqZAp">
+        <node concept="1Wc70l" id="44DBaIkVJ_t" role="3vwVQn">
+          <node concept="3clFbC" id="44DBaIkVJ_u" role="3uHU7w">
+            <node concept="3cmrfG" id="44DBaIkVJ_v" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="44DBaIkVJ_w" role="3uHU7B">
+              <node concept="37vLTw" id="44DBaIkVJ_x" role="2Oq$k0">
+                <ref role="3cqZAo" node="44DBaIkVJ_n" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="44DBaIkVJ_y" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="44DBaIkVJ_z" role="3uHU7B">
+            <node concept="37vLTw" id="44DBaIkVJ_$" role="2Oq$k0">
+              <ref role="3cqZAo" node="44DBaIkVJ_n" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="44DBaIkVJ__" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="44DBaIkVJ_A" role="3cqZAp">
+        <node concept="pLAjd" id="44DBaIkVJ_B" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="44DBaIkVJ_C" role="LiRBU">
+      <node concept="3lL0kD" id="44DBaIkW3O_" role="3lL08d">
+        <node concept="LIFWc" id="KdAJwzlfrN" role="lGtFl">
+          <property role="LIFWa" value="10" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="70" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="44DBaIkVJ_E" role="LiZbd">
+      <node concept="3lL0kD" id="KdAJwzlfQE" role="3lL08d">
+        <node concept="LIFWc" id="KdAJwzlghx" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="70" />
+          <property role="p6zMs" value="70" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3XP_kj6CE_v">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_SubconceptMenu" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="3XP_kj6CE__" role="LjaKd">
+      <node concept="2HxZob" id="3XP_kj6CEI1" role="3cqZAp">
+        <node concept="1iFQzN" id="3XP_kj6CEI5" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3XP_kj6CVZX" role="3cqZAp">
+        <node concept="3cpWsn" id="3XP_kj6CVZY" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="3XP_kj6CVZU" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6CVZZ" role="33vP2m">
+            <node concept="369mXd" id="3XP_kj6CW00" role="2Oq$k0" />
+            <node concept="liA8E" id="3XP_kj6CW01" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="3XP_kj6CEUo" role="3cqZAp">
+        <node concept="1Wc70l" id="3XP_kj6CVVY" role="3vwVQn">
+          <node concept="3clFbC" id="3XP_kj6CXta" role="3uHU7w">
+            <node concept="3cmrfG" id="3XP_kj6CXtl" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="3XP_kj6CW60" role="3uHU7B">
+              <node concept="37vLTw" id="3XP_kj6CW1x" role="2Oq$k0">
+                <ref role="3cqZAo" node="3XP_kj6CVZY" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="3XP_kj6CWb0" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6CVHL" role="3uHU7B">
+            <node concept="37vLTw" id="3XP_kj6CW02" role="2Oq$k0">
+              <ref role="3cqZAo" node="3XP_kj6CVZY" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="3XP_kj6CVNT" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="3XP_kj6CXEh" role="3cqZAp">
+        <node concept="pLAjd" id="3XP_kj6CXEj" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6CE_N" role="LiRBU">
+      <node concept="LIFWc" id="1D1LJGC4VXF" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_childSubconcept" />
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6CE_P" role="LiZbd">
+      <node concept="3TPuk3" id="3XP_kj6CE_T" role="3TPukq">
+        <node concept="LIFWc" id="3XP_kj6CE_V" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="51" />
+          <property role="p6zMs" value="51" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1D1LJGC4jvj">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_WrapDifferentMenus" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="1D1LJGC4jvk" role="LjaKd">
+      <node concept="2HxZob" id="1D1LJGC4jvl" role="3cqZAp">
+        <node concept="1iFQzN" id="1D1LJGC4jvm" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="1D1LJGC4jvn" role="3cqZAp">
+        <node concept="3cpWsn" id="1D1LJGC4jvo" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="1D1LJGC4jvp" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="1D1LJGC4jvq" role="33vP2m">
+            <node concept="369mXd" id="1D1LJGC4jvr" role="2Oq$k0" />
+            <node concept="liA8E" id="1D1LJGC4jvs" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="1D1LJGC4jvt" role="3cqZAp">
+        <node concept="1Wc70l" id="1D1LJGC4jvu" role="3vwVQn">
+          <node concept="3clFbC" id="1D1LJGC4jvv" role="3uHU7w">
+            <node concept="2OqwBi" id="1D1LJGC4jvw" role="3uHU7B">
+              <node concept="37vLTw" id="1D1LJGC4jvx" role="2Oq$k0">
+                <ref role="3cqZAo" node="1D1LJGC4jvo" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="1D1LJGC4jvy" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+            <node concept="3cmrfG" id="1D1LJGC4jvz" role="3uHU7w">
+              <property role="3cmrfH" value="2" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1D1LJGC4jv$" role="3uHU7B">
+            <node concept="37vLTw" id="1D1LJGC4jv_" role="2Oq$k0">
+              <ref role="3cqZAo" node="1D1LJGC4jvo" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="1D1LJGC4jvA" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="1D1LJGC4jvB" role="3cqZAp">
+        <node concept="pLAjd" id="1D1LJGC4jvC" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC4jvD" role="LiRBU">
+      <node concept="LIFWc" id="1D1LJGC53xB" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_childWrapDifferentMenus" />
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC4jvF" role="LiZbd">
+      <node concept="MktZm" id="1D1LJGC4$r_" role="MkuUH">
+        <node concept="LIFWc" id="1D1LJGC4$Qq" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="61" />
+          <property role="p6zMs" value="61" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3XP_kj6DinC">
+    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_IncludeSameMenuTwice" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="3XP_kj6DinD" role="LjaKd">
+      <node concept="2HxZob" id="3XP_kj6DinE" role="3cqZAp">
+        <node concept="1iFQzN" id="3XP_kj6DinF" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3XP_kj6DinG" role="3cqZAp">
+        <node concept="3cpWsn" id="3XP_kj6DinH" role="3cpWs9">
+          <property role="TrG5h" value="nodeSubstituteChooser" />
+          <node concept="3uibUv" id="3XP_kj6DinI" role="1tU5fm">
+            <ref role="3uigEE" to="6lvu:~NodeSubstituteChooser" resolve="NodeSubstituteChooser" />
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6DinJ" role="33vP2m">
+            <node concept="369mXd" id="3XP_kj6DinK" role="2Oq$k0" />
+            <node concept="liA8E" id="3XP_kj6DinL" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="3XP_kj6DinM" role="3cqZAp">
+        <node concept="1Wc70l" id="3XP_kj6DinN" role="3vwVQn">
+          <node concept="3clFbC" id="3XP_kj6DinO" role="3uHU7w">
+            <node concept="3cmrfG" id="3XP_kj6DinP" role="3uHU7w">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="3XP_kj6DinQ" role="3uHU7B">
+              <node concept="37vLTw" id="3XP_kj6DinR" role="2Oq$k0">
+                <ref role="3cqZAo" node="3XP_kj6DinH" resolve="nodeSubstituteChooser" />
+              </node>
+              <node concept="liA8E" id="3XP_kj6DinS" role="2OqNvi">
+                <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3XP_kj6DinT" role="3uHU7B">
+            <node concept="37vLTw" id="3XP_kj6DinU" role="2Oq$k0">
+              <ref role="3cqZAo" node="3XP_kj6DinH" resolve="nodeSubstituteChooser" />
+            </node>
+            <node concept="liA8E" id="3XP_kj6DinV" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="3XP_kj6DinW" role="3cqZAp">
+        <node concept="pLAjd" id="3XP_kj6DinX" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6DinY" role="LiRBU">
+      <node concept="LIFWc" id="1D1LJGC4V8d" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_childIncludeSameMenuTwice" />
+      </node>
+    </node>
+    <node concept="3TPulU" id="3XP_kj6Dio0" role="LiZbd">
+      <node concept="3TPunu" id="3XP_kj6DiAV" role="3TPuvp">
+        <node concept="LIFWc" id="44DBaIkWPO8" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="64" />
+          <property role="p6zMs" value="64" />
+          <property role="LIFWd" value="constant_0" />
         </node>
       </node>
     </node>

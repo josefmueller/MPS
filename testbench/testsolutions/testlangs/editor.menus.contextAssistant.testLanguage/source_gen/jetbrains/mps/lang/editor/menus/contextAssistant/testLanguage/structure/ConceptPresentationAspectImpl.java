@@ -10,10 +10,25 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Child;
+  private ConceptPresentation props_ISameMenuApplicable;
   private ConceptPresentation props_OtherSubconceptOfChild;
   private ConceptPresentation props_Parent;
   private ConceptPresentation props_ParentCollapsed;
   private ConceptPresentation props_SubconceptOfChild;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildSubconcept;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildToIncludeSubstituteMenu;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus;
+  private ConceptPresentation props_TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice;
+  private ConceptPresentation props_TestAssistant_Duplication_Parent;
+  private ConceptPresentation props_TestAssistant_Duplication_SubInterface1;
+  private ConceptPresentation props_TestAssistant_Duplication_SubInterface2;
+  private ConceptPresentation props_TestAssistant_Duplication_SuperInterface;
 
   @Override
   @Nullable
@@ -27,6 +42,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Child = cpb.create();
         }
         return props_Child;
+      case LanguageConceptSwitch.ISameMenuApplicable:
+        if (props_ISameMenuApplicable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ISameMenuApplicable = cpb.create();
+        }
+        return props_ISameMenuApplicable;
       case LanguageConceptSwitch.OtherSubconceptOfChild:
         if (props_OtherSubconceptOfChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -55,6 +76,101 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubconceptOfChild = cpb.create();
         }
         return props_SubconceptOfChild;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu:
+        if (props_TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu");
+          props_TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes:
+        if (props_TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes");
+          props_TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode:
+        if (props_TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode");
+          props_TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations:
+        if (props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations");
+          props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes:
+        if (props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes");
+          props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode:
+        if (props_TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode");
+          props_TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildSubconcept:
+        if (props_TestAssistant_Duplication_ChildSubconcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildSubconcept");
+          props_TestAssistant_Duplication_ChildSubconcept = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildSubconcept;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildToIncludeSubstituteMenu:
+        if (props_TestAssistant_Duplication_ChildToIncludeSubstituteMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildToIncludeSubstituteMenu");
+          props_TestAssistant_Duplication_ChildToIncludeSubstituteMenu = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildToIncludeSubstituteMenu;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus:
+        if (props_TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus");
+          props_TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus;
+      case LanguageConceptSwitch.TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice:
+        if (props_TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice");
+          props_TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice = cpb.create();
+        }
+        return props_TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice;
+      case LanguageConceptSwitch.TestAssistant_Duplication_Parent:
+        if (props_TestAssistant_Duplication_Parent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestAssistant_Duplication_Parent");
+          props_TestAssistant_Duplication_Parent = cpb.create();
+        }
+        return props_TestAssistant_Duplication_Parent;
+      case LanguageConceptSwitch.TestAssistant_Duplication_SubInterface1:
+        if (props_TestAssistant_Duplication_SubInterface1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestAssistant_Duplication_SubInterface1 = cpb.create();
+        }
+        return props_TestAssistant_Duplication_SubInterface1;
+      case LanguageConceptSwitch.TestAssistant_Duplication_SubInterface2:
+        if (props_TestAssistant_Duplication_SubInterface2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestAssistant_Duplication_SubInterface2 = cpb.create();
+        }
+        return props_TestAssistant_Duplication_SubInterface2;
+      case LanguageConceptSwitch.TestAssistant_Duplication_SuperInterface:
+        if (props_TestAssistant_Duplication_SuperInterface == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestAssistant_Duplication_SuperInterface = cpb.create();
+        }
+        return props_TestAssistant_Duplication_SuperInterface;
     }
     return null;
   }

@@ -64,6 +64,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteSubChildSmartReference;
   private ConceptPresentation props_TestSubstituteToWrapFromSubstituteMenu;
   private ConceptPresentation props_TestSubstituteToWrapFromTransformMenu;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildSubconcept;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_Interface;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_Parent;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_SubInterface1;
+  private ConceptPresentation props_TestSubstitute_DuplicationMenu_SubInterface2;
 
   @Override
   @Nullable
@@ -451,6 +461,73 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteToWrapFromTransformMenu = cpb.create();
         }
         return props_TestSubstituteToWrapFromTransformMenu;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu:
+        if (props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu");
+          props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus:
+        if (props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus");
+          props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice:
+        if (props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice");
+          props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildSubconcept:
+        if (props_TestSubstitute_DuplicationMenu_ChildSubconcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildSubconcept");
+          props_TestSubstitute_DuplicationMenu_ChildSubconcept = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildSubconcept;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus:
+        if (props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus");
+          props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice:
+        if (props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice");
+          props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Interface:
+        if (props_TestSubstitute_DuplicationMenu_Interface == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSubstitute_DuplicationMenu_Interface = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_Interface;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Parent:
+        if (props_TestSubstitute_DuplicationMenu_Parent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSubstitute_DuplicationMenu_Parent");
+          props_TestSubstitute_DuplicationMenu_Parent = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_Parent;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface1:
+        if (props_TestSubstitute_DuplicationMenu_SubInterface1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSubstitute_DuplicationMenu_SubInterface1 = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_SubInterface1;
+      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface2:
+        if (props_TestSubstitute_DuplicationMenu_SubInterface2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSubstitute_DuplicationMenu_SubInterface2 = cpb.create();
+        }
+        return props_TestSubstitute_DuplicationMenu_SubInterface2;
     }
     return null;
   }

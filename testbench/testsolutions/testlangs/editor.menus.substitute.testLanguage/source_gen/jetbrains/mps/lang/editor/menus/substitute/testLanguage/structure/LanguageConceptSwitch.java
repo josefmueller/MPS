@@ -64,6 +64,16 @@ public final class LanguageConceptSwitch {
   public static final int TestSubstituteSubChildSmartReference = 52;
   public static final int TestSubstituteToWrapFromSubstituteMenu = 53;
   public static final int TestSubstituteToWrapFromTransformMenu = 54;
+  public static final int TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu = 55;
+  public static final int TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus = 56;
+  public static final int TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice = 57;
+  public static final int TestSubstitute_DuplicationMenu_ChildSubconcept = 58;
+  public static final int TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus = 59;
+  public static final int TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice = 60;
+  public static final int TestSubstitute_DuplicationMenu_Interface = 61;
+  public static final int TestSubstitute_DuplicationMenu_Parent = 62;
+  public static final int TestSubstitute_DuplicationMenu_SubInterface1 = 63;
+  public static final int TestSubstitute_DuplicationMenu_SubInterface2 = 64;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL);
@@ -122,6 +132,16 @@ public final class LanguageConceptSwitch {
     builder.put(0x7ce1116e3a6ff2aeL, TestSubstituteSubChildSmartReference);
     builder.put(0x7ce1116e3a6ff2aaL, TestSubstituteToWrapFromSubstituteMenu);
     builder.put(0x7315fee8e56db2aeL, TestSubstituteToWrapFromTransformMenu);
+    builder.put(0x41299cab94ed9982L, TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu);
+    builder.put(0x1a41c6fb28100fdcL, TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus);
+    builder.put(0x3f759544c6a0709aL, TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice);
+    builder.put(0x3f759544c6a07047L, TestSubstitute_DuplicationMenu_ChildSubconcept);
+    builder.put(0x1a41c6fb2810192dL, TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus);
+    builder.put(0x3f759544c6a0709dL, TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice);
+    builder.put(0x3f759544c6a07040L, TestSubstitute_DuplicationMenu_Interface);
+    builder.put(0x3f759544c6a0703eL, TestSubstitute_DuplicationMenu_Parent);
+    builder.put(0x3f759544c6a07041L, TestSubstitute_DuplicationMenu_SubInterface1);
+    builder.put(0x3f759544c6a07042L, TestSubstitute_DuplicationMenu_SubInterface2);
     myIndex = builder.seal();
   }
 

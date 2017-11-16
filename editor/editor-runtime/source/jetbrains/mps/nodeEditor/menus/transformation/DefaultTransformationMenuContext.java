@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuConte
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -42,8 +43,11 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /**
@@ -62,13 +66,17 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
+  private Set<TransformationMenuLookup> myUsedLookups = new HashSet<>();
+
+  private static final Logger LOG = Logger.getLogger(DefaultTransformationMenuContext.class);
+
   @NotNull
   public static DefaultTransformationMenuContext createInitialContextForCell(@NotNull EditorCell cell, @NotNull String menuLocation) {
     EditorContext editorContext = cell.getContext();
     SNodeLocation nodeLocation = nodeLocationFromCell(cell);
-    return new DefaultTransformationMenuContext(
-        new RecursionSafeMenuItemFactory<>(new DefaultTransformationMenuItemFactory(MenuUtil.getUsedLanguages(nodeLocation.getContextNode()))),
-        menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
+    return new DefaultTransformationMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultTransformationMenuItemFactory(MenuUtil.getUsedLanguages(
+                                                       nodeLocation.getContextNode()))),
+                                                   menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
   }
 
   @NotNull
@@ -110,9 +118,10 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     return new SNodeLocation.FromNode(cellNode);
   }
 
-  private DefaultTransformationMenuContext(
-                                              @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory, @NotNull String menuLocation,
-                                              @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation, @NotNull EditorMenuTrace editorMenuTrace) {
+  private DefaultTransformationMenuContext(@NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory,
+                                           @NotNull String menuLocation,
+                                           @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation,
+                                           @NotNull EditorMenuTrace editorMenuTrace) {
     myMenuItemFactory = menuItemFactory;
     myMenuLocation = menuLocation;
     myEditorContext = editorContext;
@@ -180,8 +189,13 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   public List<TransformationMenuItem> createItems(@Nullable TransformationMenuLookup menuLookup) {
     if (menuLookup == null) {
       menuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()),
-          myNodeLocation.getContextNode().getConcept());
+                                                       myNodeLocation.getContextNode().getConcept());
     }
+    if (myUsedLookups.contains(menuLookup)) {
+      LOG.info("Lookup + " + menuLookup + " vas already used within this context. Return empty collection to prevent items duplication");
+      return Collections.emptyList();
+    }
+    myUsedLookups.add(menuLookup);
 
     return myMenuItemFactory.createItems(this, menuLookup);
   }
