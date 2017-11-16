@@ -132,9 +132,11 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.function.Predicate" />
+    <classNode dependClassName="jetbrains.mps.checkers.AbstractNodeCheckerInEditor" />
     <classNode dependClassName="jetbrains.mps.checkers.ErrorReportUtil" />
     <classNode dependClassName="jetbrains.mps.checkers.IChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ModelCheckerBuilder" />
+    <classNode dependClassName="jetbrains.mps.checkers.ModelPropertiesChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.ModuleChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.IssueKindReportItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.ModelReportItem" />
@@ -147,6 +149,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.validation.MessageCollectProcessor" />
     <classNode dependClassName="jetbrains.mps.project.validation.NodeValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.StructureChecker" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />

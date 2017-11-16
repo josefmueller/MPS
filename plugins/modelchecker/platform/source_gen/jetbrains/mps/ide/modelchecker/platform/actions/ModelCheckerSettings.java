@@ -23,6 +23,7 @@ import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.checkers.UsedLanguagesChecker;
 import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.project.validation.StructureChecker;
+import jetbrains.mps.checkers.ModelPropertiesChecker;
 import jetbrains.mps.checkers.ModuleChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")

@@ -20,11 +20,11 @@ public class ModuleChecker extends IChecker.AbstractModuleChecker<ModuleReportIt
     return "module properties";
   }
   @Override
-  public void check(SModule module, SRepository repository, final Consumer<? super ModuleReportItem> errorCollector, ProgressMonitor monitor) {
+  public void check(SModule module, SRepository repository, final Consumer<? super ModuleReportItem> errorCollector, final ProgressMonitor monitor) {
     ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
       public boolean process(ModuleValidationProblem vp) {
         errorCollector.consume((ModuleReportItem) vp);
-        return true;
+        return monitor.isCanceled();
       }
     });
   }

@@ -21,11 +21,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.checkers.ModelPropertiesChecker;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.util.FilteringProcessor;
 import java.util.function.Predicate;
 import jetbrains.mps.checkers.ErrorReportUtil;
+import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
+import jetbrains.mps.project.validation.StructureChecker;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -45,7 +48,7 @@ public class CheckProjectStructure extends BaseCheckerTest {
   public static final PerformanceMessenger ourStats = new PerformanceMessenger("checkProjectStructure");
 
   @Test
-  @Order(value = 0)
+  @Order(value = 1)
   public void checkModulePropertiesOld() {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
@@ -64,14 +67,14 @@ public class CheckProjectStructure extends BaseCheckerTest {
     Assert.assertTrue("Module property or dependency errors:\n" + formatErrors(errors), errors.isEmpty());
   }
   @Test
-  @Order(value = 1)
+  @Order(value = 2)
   public void checkModuleProperties() {
     super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new ModuleChecker()), null, "Module property or dependency errors");
   }
 
   @Test
-  @Order(value = 2)
-  public void checkModels() {
+  @Order(value = 3)
+  public void checkModelsOld() {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -97,8 +100,14 @@ public class CheckProjectStructure extends BaseCheckerTest {
   }
 
   @Test
-  @Order(value = 3)
-  public void checkStructure() {
+  @Order(value = 4)
+  public void checkModels() {
+    super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new ModelPropertiesChecker()), null, "Model errors");
+  }
+
+  @Test
+  @Order(value = 5)
+  public void checkStructureOld() {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -137,8 +146,14 @@ public class CheckProjectStructure extends BaseCheckerTest {
   }
 
   @Test
-  @Order(value = 4)
-  public void checkReferences() {
+  @Order(value = 6)
+  public void checkStructure() {
+    super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), (AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(true, true, true, false)), null, "Structure errors:");
+  }
+
+  @Test
+  @Order(value = 7)
+  public void checkReferencesOld() {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -171,7 +186,13 @@ public class CheckProjectStructure extends BaseCheckerTest {
   }
 
   @Test
-  @Order(value = 5)
+  @Order(value = 8)
+  public void checkReferences() {
+    super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), (AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(false, false, false, true)), null, "Broken reference errors");
+  }
+
+  @Test
+  @Order(value = 9)
   public void checkGenerationStatus() {
     Assume.assumeFalse("Generation status is meaningless for packaged modules", myModule.isPackaged());
     final List<String> errors = new ArrayList<String>();
