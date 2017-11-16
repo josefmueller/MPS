@@ -98,6 +98,8 @@ import jetbrains.mps.nodeEditor.highlighter.EditorHighlighter;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelChangeListener;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
@@ -292,6 +294,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         rebuildEditorContent();
         myNodeSubstituteChooser.clearContent();
       });
+    }
+  };
+  private ReflectiveHintsForModelChangeListener myReflectiveHintsForModelChangeListener = model -> {
+    if (getEditorContext().getModel().equals(model)) {
+      rebuildEditorContent();
     }
   };
 
@@ -722,6 +729,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void attachListeners() {
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
     myClassLoaderManager.addClassesHandler(myClassesListener);
+
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(getRepository());
+    if (mpsProject != null && mpsProject instanceof MPSProject) {
+      Project ideaProject = ((MPSProject) mpsProject).getProject();
+      ReflectiveHintsForModelComponent.getInstance(ideaProject).addListener(myReflectiveHintsForModelChangeListener);
+    }
   }
 
   protected void notifyCreation() {
@@ -1439,6 +1452,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void detachListeners() {
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     myClassLoaderManager.removeClassesHandler(myClassesListener);
+
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(getRepository());
+    if (mpsProject != null && mpsProject instanceof MPSProject) {
+      Project ideaProject = ((MPSProject) mpsProject).getProject();
+      ReflectiveHintsForModelComponent.getInstance(ideaProject).removeListener(myReflectiveHintsForModelChangeListener);
+    }
   }
 
   public boolean hasValidSelectedNode() {

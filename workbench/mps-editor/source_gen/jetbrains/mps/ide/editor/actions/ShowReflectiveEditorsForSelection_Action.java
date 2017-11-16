@@ -6,6 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -28,7 +29,7 @@ public class ShowReflectiveEditorsForSelection_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new ReflectiveEditorAction(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, true).isApplicable(event);
+    return ReflectiveHintsManager.isApplicable(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), true, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,6 +61,6 @@ public class ShowReflectiveEditorsForSelection_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new ReflectiveEditorAction(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, true).execute();
+    ReflectiveHintsManager.execute(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), true, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
 }

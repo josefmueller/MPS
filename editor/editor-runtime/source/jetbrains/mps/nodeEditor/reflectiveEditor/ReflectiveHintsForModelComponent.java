@@ -16,18 +16,10 @@
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.editor.util.EditorComponentUtil;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -36,27 +28,9 @@ import java.util.Set;
 public class ReflectiveHintsForModelComponent implements ProjectComponent {
   private final Set<SModel> myModelsWithReflective = new HashSet<>();
   private final List<ReflectiveHintsForModelChangeListener> myChangeListeners = new ArrayList<>();
-  private final Project myProject;
-
-  public ReflectiveHintsForModelComponent(Project project) {
-    myProject = project;
-  }
 
   public static ReflectiveHintsForModelComponent getInstance(Project project) {
     return project.getComponent(ReflectiveHintsForModelComponent.class);
-  }
-
-  public static List<String> getModelHintsByContext(EditorContext editorContext) {
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(editorContext.getRepository());
-    if (!(mpsProject instanceof MPSProject)) {
-      return Collections.emptyList();
-    }
-    Project ideaProject = ((MPSProject) mpsProject).getProject();
-    if (getInstance(ideaProject).shouldShowReflectiveEditor(editorContext.getModel())) {
-      return Collections.singletonList(ReflectiveHint.REFLECTIVE.getHint());
-    } else {
-      return Collections.emptyList();
-    }
   }
 
   /**
@@ -88,7 +62,6 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
    */
   public void showReflectiveEditorByDefault(SModel model) {
     myModelsWithReflective.add(model);
-    redrawEditors(Collections.singletonList(model));
     notifyListeners(model);
   }
 
@@ -97,7 +70,6 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
    */
   public void showRegularEditorByDefault(SModel model) {
     myModelsWithReflective.remove(model);
-    redrawEditors(Collections.singletonList(model));
     notifyListeners(model);
   }
 
@@ -114,15 +86,7 @@ public class ReflectiveHintsForModelComponent implements ProjectComponent {
   public void showRegularEditorsByDefault() {
     Set<SModel> oldSet = new HashSet<>(myModelsWithReflective);
     myModelsWithReflective.clear();
-    redrawEditors(oldSet);
     oldSet.forEach(this::notifyListeners);
-  }
-
-  private void redrawEditors(Collection<SModel> models) {
-    EditorComponentUtil.getAllEditorComponents(FileEditorManager.getInstance(myProject), true)
-                       .stream()
-                       .filter(editorComponent -> models.contains(editorComponent.getEditorContext().getModel()))
-                       .forEach(EditorComponent::rebuildEditorContent);
   }
 
   /**

@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -42,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
@@ -51,7 +49,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Stream;
 
 /**
  * User: shatalin
@@ -152,6 +149,7 @@ public class UpdateSessionImpl implements UpdateSession {
     Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
       getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
+      ReflectiveHintsManager.initReflectiveHints(getNode().getModel(), getCellFactory(), getUpdater().getEditorContext().getRepository());
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
         getCellFactory().addCellContextHints(explicitHintsForNode);
@@ -173,9 +171,7 @@ public class UpdateSessionImpl implements UpdateSession {
   @NotNull
   private String[] getInitialEditorHints(EditorContext editorContext) {
     if (myInitialEditorHints != null) {
-      return Stream.concat(Arrays.stream(myInitialEditorHints),
-                           ReflectiveHintsForModelComponent.getModelHintsByContext(editorContext).stream())
-                   .toArray(String[]::new);
+      return myInitialEditorHints;
     }
 
     Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(editorContext.getRepository()));
@@ -183,9 +179,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return EMPTY_HINTS_ARRAY;
     }
     HintsState state = ConceptEditorHintSettingsComponent.getInstance(project).getState();
-    return Stream.concat(state.getEnabledHints().stream(),
-                         ReflectiveHintsForModelComponent.getModelHintsByContext(editorContext).stream())
-                 .toArray(String[]::new);
+    return state.getEnabledHints().toArray(EMPTY_HINTS_ARRAY);
   }
 
   @Nullable
@@ -210,7 +204,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location) {
     getCellFactory().pushCellContext();
     getCellFactory().setNodeLocation(location);
-    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
+    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory(), getUpdater().getEditorContext().getRepository());
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
@@ -235,7 +229,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
-    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
+    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory(), getUpdater().getEditorContext().getRepository());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {

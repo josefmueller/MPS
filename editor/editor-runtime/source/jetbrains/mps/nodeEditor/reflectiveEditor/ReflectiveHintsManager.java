@@ -15,16 +15,34 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForNode;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForSubtree;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+
+import java.util.List;
 
 public class ReflectiveHintsManager {
 
-  public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
+  public static void initReflectiveHints(SModel model, EditorCellFactory cellFactory, SRepository repository) {
+    if (model != null) {
+      jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(repository);
+      if (mpsProject instanceof MPSProject) {
+        Project ideaProject = ((MPSProject) mpsProject).getProject();
+        if (ReflectiveHintsForModelComponent.getInstance(ideaProject).shouldShowReflectiveEditor(model)) {
+          cellFactory.addCellContextHints(ReflectiveHint.REFLECTIVE.getHint());
+        }
+      }
+    }
+  }
+
+  public static void propagateReflectiveHints(EditorCellFactory cellFactory, SRepository repository) {
     CellContextState.getContextState(cellFactory.getCellContext()).propagateHintsForChildNodes(cellFactory);
   }
 
@@ -32,8 +50,13 @@ public class ReflectiveHintsManager {
     return !CellContextState.getContextState(cellContext).forceShowRegularEditor();
   }
 
-  public static ReflectiveHintsAction getAction(SNode node, EditorComponent editorComponent, boolean isReflective, boolean isForSubtree) {
-    return isForSubtree ? new ActionForSubtree(node, editorComponent, isReflective)
-                        : new ActionForNode(node, editorComponent, isReflective);
+  public static boolean isApplicable(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
+                                     EditorComponent editorComponent, AnActionEvent event) {
+    return new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).isApplicable(event);
+  }
+
+  public static void execute(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
+                             EditorComponent editorComponent) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).execute();
   }
 }

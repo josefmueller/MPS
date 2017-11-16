@@ -32,7 +32,7 @@ import java.util.stream.StreamSupport;
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHint.ALL_HINTS;
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.shouldShowReflectiveEditor;
 
-public abstract class ReflectiveHintsAction {
+abstract class ReflectiveHintsAction {
 
   private final SNode myAffectedNode;
   private final EditorComponent myEditorComponent;
@@ -49,24 +49,24 @@ public abstract class ReflectiveHintsAction {
     return myAffectedNode;
   }
 
-  public final EditorComponent getEditorComponent() {
+  final EditorComponent getEditorComponent() {
     return myEditorComponent;
   }
 
-  public final boolean isReflective() {
+  final boolean isReflective() {
     return myIsReflective;
   }
 
-  public abstract Iterable<SNode> getAffectedNodes();
+  abstract Iterable<SNode> getAffectedNodes();
 
-  public boolean isApplicable() {
+  boolean isApplicable() {
     return StreamSupport.stream(getAffectedNodes().spliterator(), false)
                         .anyMatch(this::isApplicableForNode);
   }
 
-  public abstract void execute();
+  abstract void execute();
 
-  public void recordState() {
+  void recordState() {
     for (SNode node : getAffectedNodes()) {
       String[] allHints = getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference());
       if (allHints != null) {
@@ -76,7 +76,7 @@ public abstract class ReflectiveHintsAction {
     }
   }
 
-  public void restoreState() {
+  void restoreState() {
     for (SNode node : getAffectedNodes()) {
       for (ReflectiveHint hint : ReflectiveHint.values()) {
         hint.revoke(getEditorComponent().getUpdater(), node.getReference());
@@ -108,18 +108,18 @@ public abstract class ReflectiveHintsAction {
     }
   }
 
-  public static class ActionForNode extends ReflectiveHintsAction {
+  static class ActionForNode extends ReflectiveHintsAction {
     ActionForNode(SNode affectedNode, EditorComponent editorComponent, boolean isReflective) {
       super(affectedNode, editorComponent, isReflective);
     }
 
     @Override
-    public Iterable<SNode> getAffectedNodes() {
+    Iterable<SNode> getAffectedNodes() {
       return Collections.singleton(getAffectedNode());
     }
 
     @Override
-    public void execute() {
+    void execute() {
       Updater updater = getEditorComponent().getUpdater();
       CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
       if (isReflective()) {
@@ -136,18 +136,18 @@ public abstract class ReflectiveHintsAction {
     }
   }
 
-  public static class ActionForSubtree extends ReflectiveHintsAction {
+  static class ActionForSubtree extends ReflectiveHintsAction {
     ActionForSubtree(SNode affectedNode, EditorComponent editorComponent, boolean isReflective) {
       super(affectedNode, editorComponent, isReflective);
     }
 
     @Override
-    public Iterable<SNode> getAffectedNodes() {
+    Iterable<SNode> getAffectedNodes() {
       return SNodeUtil.getDescendants(getAffectedNode());
     }
 
     @Override
-    public void execute() {
+    void execute() {
       CellContextState contextState = CellContextState.getContextState(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext());
       Updater updater = getEditorComponent().getUpdater();
       removeAllSubtreeHints();
