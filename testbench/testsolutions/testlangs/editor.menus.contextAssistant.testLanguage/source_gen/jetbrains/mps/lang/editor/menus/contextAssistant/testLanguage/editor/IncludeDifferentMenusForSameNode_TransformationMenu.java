@@ -24,9 +24,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_TransformationMenu extends TransformationMenuBase {
+public class IncludeDifferentMenusForSameNode_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -37,7 +36,7 @@ public class TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_Tra
   @Override
   public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287823058")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "IncludeDifferentMenusForSameNode", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4695456347261015773")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -50,18 +49,18 @@ public class TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_Tra
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_TransformationMenu.TMP_Include_85q8a5_a0());
-      result.add(new TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_TransformationMenu.TMP_Include_85q8a5_b0());
+      result.add(new IncludeDifferentMenusForSameNode_TransformationMenu.TMP_Include_mitews_a0());
+      result.add(new IncludeDifferentMenusForSameNode_TransformationMenu.TMP_Include_mitews_b0());
     }
     return result;
   }
 
-  public class TMP_Include_85q8a5_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_mitews_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "MenuToInclude", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287823061")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "MenuToInclude", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4695456347261015776")));
       try {
         return super.createItems(context);
       } finally {
@@ -76,20 +75,15 @@ public class TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_Tra
       final EditorContext editorContext = _context.getEditorContext();
 
       return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ISameMenuApplicable"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude");
-    }
-    @Nullable
-    @Override
-    protected SNode getNode(TransformationMenuContext _context) {
-      return _context.getNode();
     }
 
   }
-  public class TMP_Include_85q8a5_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_mitews_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "MenuToInclude", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287823067")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "MenuToInclude2", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4695456347261015782")));
       try {
         return super.createItems(context);
       } finally {
@@ -103,12 +97,7 @@ public class TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_Tra
       final SNode node = _context.getNode();
       final EditorContext editorContext = _context.getEditorContext();
 
-      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ISameMenuApplicable"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude");
-    }
-    @Nullable
-    @Override
-    protected SNode getNode(TransformationMenuContext _context) {
-      return SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ISameMenuApplicable"));
+      return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getInterfaceConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ISameMenuApplicable"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude2");
     }
 
   }

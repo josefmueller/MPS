@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 
-public class TestAssistant_Duplication_SuperInterface_TransformationMenu extends TransformationMenuBase {
+public class IncludeDefaultAndNullMenu_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -32,7 +32,7 @@ public class TestAssistant_Duplication_SuperInterface_TransformationMenu extends
   @Override
   public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestAssistant_Duplication_SuperInterface", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287851586")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "IncludeDefaultAndNullMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4695456347261860106")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -45,15 +45,15 @@ public class TestAssistant_Duplication_SuperInterface_TransformationMenu extends
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new TestAssistant_Duplication_SuperInterface_TransformationMenu.TMP_Action_wulule_a0());
+      result.add(new IncludeDefaultAndNullMenu_TransformationMenu.TMP_Action_e98cup_a0());
     }
     return result;
   }
 
-  private class TMP_Action_wulule_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_e98cup_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestAssistant_Duplication_SuperInterface_TransformationMenu.TMP_Action_wulule_a0.Item(context);
+      return new IncludeDefaultAndNullMenu_TransformationMenu.TMP_Action_e98cup_a0.Item(context);
     }
 
     private class Item extends ActionItemBase {
@@ -62,7 +62,7 @@ public class TestAssistant_Duplication_SuperInterface_TransformationMenu extends
       private Item(TransformationMenuContext context) {
         _context = context;
         _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287851594")));
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4695456347261860116")));
         myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
         context.getEditorMenuTrace().popTraceInfo();
       }

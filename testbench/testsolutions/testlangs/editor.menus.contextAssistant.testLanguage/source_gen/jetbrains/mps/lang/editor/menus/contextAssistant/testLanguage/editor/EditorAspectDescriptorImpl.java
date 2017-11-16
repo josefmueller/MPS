@@ -24,17 +24,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Child_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new OtherSubconceptOfChild_Editor());
+        return Collections.<ConceptEditor>singletonList(new Duplication_Parent_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Parent_Editor());
+        return Collections.<ConceptEditor>singletonList(new IncludeDefaultAndNullMenu_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new ParentCollapsed_Editor());
+        return Collections.<ConceptEditor>singletonList(new OtherSubconceptOfChild_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
+        return Collections.<ConceptEditor>singletonList(new Parent_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParentCollapsed_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new TestAssistant_Duplication_Parent_Editor());
+        return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -49,29 +49,29 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
       case 1:
-        return Collections.<TransformationMenu>singletonList(new Parent_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeDefaultAndNullMenu_TransformationMenu());
       case 2:
-        return Collections.<TransformationMenu>singletonList(new ParentCollapsed_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeDifferentMenusForDifferentNodes_TransformationMenu());
       case 3:
-        return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeDifferentMenusForSameNode_TransformationMenu());
       case 4:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeSameMenuForDifferentLocations_TransformationMenu());
       case 5:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeSameMenuForDifferentNodes_TransformationMenu());
       case 6:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new IncludeSameMenuTwiceForSameNode_TransformationMenu());
       case 7:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new Parent_TransformationMenu());
       case 8:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new ParentCollapsed_TransformationMenu());
       case 9:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
       case 10:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new SuperInterface_TransformationMenu());
       case 11:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new WrapDifferentSubstituteMenus_TransformationMenu());
       case 12:
-        return Collections.<TransformationMenu>singletonList(new TestAssistant_Duplication_SuperInterface_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new WrapSameSubstituteMenuTwice_TransformationMenu());
       default:
     }
     return Collections.<TransformationMenu>emptyList();
@@ -96,9 +96,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a4, menuId.getFqName())) {
             case 0:
-              return Arrays.asList(new TransformationMenu[]{new MenuToInclude()});
+              return Arrays.asList(new TransformationMenu[]{new IncludeDifferentSubstituteMenus()});
             case 1:
-              return Arrays.asList(new TransformationMenu[]{new MenuToInclude2()});
+              return Arrays.asList(new TransformationMenu[]{new IncludeSameSubstituteMenuTwice()});
             default:
           }
         }
@@ -107,9 +107,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0c1a4, menuId.getFqName())) {
             case 0:
-              return Arrays.asList(new TransformationMenu[]{new ParentNamedMenu()});
+              return Arrays.asList(new TransformationMenu[]{new MenuToInclude()});
             case 1:
-              return Arrays.asList(new TransformationMenu[]{new Parent_ContextAssistant_NamedMenu()});
+              return Arrays.asList(new TransformationMenu[]{new MenuToInclude2()});
             default:
           }
         }
@@ -136,9 +136,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a4, menuId.getFqName())) {
             case 0:
-              return Arrays.asList(new TransformationMenu[]{new IncludeDifferentSubstituteMenus()});
+              return Arrays.asList(new TransformationMenu[]{new ParentNamedMenu()});
             case 1:
-              return Arrays.asList(new TransformationMenu[]{new IncludeSameSubstituteMenuTwice()});
+              return Arrays.asList(new TransformationMenu[]{new Parent_ContextAssistant_NamedMenu()});
             default:
           }
         }
@@ -168,15 +168,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1a41c6fb280910b1L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94d8915aL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94ea85efL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e877L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e861L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1a41c6fb280c96b5L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0709dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a07040L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94ea85efL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1a41c6fb280910b1L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94d8915aL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94ea85efL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e877L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e861L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a07040L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1a41c6fb280c96b5L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0709dL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a0703eL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a7e879L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94ea85efL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a82ca7L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Recursive"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude2"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Parent_ContextAssistant_NamedMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeDifferentSubstituteMenus", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeSameSubstituteMenuTwice"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuToInclude2"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeDefaultAndNullMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.MenuWithDifferentLocations"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeDifferentSubstituteMenus", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeSameSubstituteMenuTwice"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Parent_ContextAssistant_NamedMenu"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedSubstituteMenuToInclude"};
 }

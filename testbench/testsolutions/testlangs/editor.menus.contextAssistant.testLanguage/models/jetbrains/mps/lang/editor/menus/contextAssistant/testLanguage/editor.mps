@@ -1049,7 +1049,7 @@
   </node>
   <node concept="IW6AY" id="3XP_kj6DYWi">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6DYxx" resolve="TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6DYxx" resolve="IncludeSameMenuTwiceForSameNode" />
     <node concept="1Qtc8_" id="3XP_kj6DYWj" role="IW6Ez">
       <node concept="2j_NTm" id="3XP_kj6DYWn" role="1Qtc8$" />
       <node concept="mvV$s" id="3XP_kj6DYWq" role="1Qtc8A">
@@ -1066,7 +1066,7 @@
   </node>
   <node concept="IW6AY" id="3XP_kj6E0Fi">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6DYxR" resolve="TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6DYxR" resolve="IncludeSameMenuForDifferentNodes" />
     <node concept="1Qtc8_" id="3XP_kj6E0Fj" role="IW6Ez">
       <node concept="2j_NTm" id="3XP_kj6E0Fk" role="1Qtc8$" />
       <node concept="mvV$s" id="3XP_kj6E0Fl" role="1Qtc8A">
@@ -1105,7 +1105,7 @@
   </node>
   <node concept="24kQdi" id="3XP_kj6E2N6">
     <property role="3GE5qa" value="duplication" />
-    <ref role="1XX52x" to="hsq4:3XP_kj6C70Y" resolve="TestAssistant_Duplication_Parent" />
+    <ref role="1XX52x" to="hsq4:3XP_kj6C70Y" resolve="Duplication_Parent" />
     <node concept="3EZMnI" id="3XP_kj6E2N8" role="2wV5jI">
       <node concept="l2Vlx" id="3XP_kj6E2N9" role="2iSdaV" />
       <node concept="3F0ifn" id="3XP_kj6E2Na" role="3EZMnx">
@@ -1434,12 +1434,12 @@
   </node>
   <node concept="IW6AY" id="3XP_kj6E2Ub">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6C72t" resolve="TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6C72t" resolve="WrapSameSubstituteMenuTwice" />
     <node concept="1Qtc8_" id="3XP_kj6E2Uc" role="IW6Ez">
       <node concept="2j_NTm" id="3XP_kj6E2Ug" role="1Qtc8$" />
       <node concept="3c8P5G" id="3XP_kj6E2Uj" role="1Qtc8A">
         <node concept="2kknPJ" id="3XP_kj6E2Uz" role="3c8P5H">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
         <node concept="3c8PGw" id="3XP_kj6E2Ul" role="3c8PHt">
           <node concept="3clFbS" id="3XP_kj6E2Um" role="2VODD2" />
@@ -1447,7 +1447,7 @@
       </node>
       <node concept="3c8P5G" id="3XP_kj6E2UU" role="1Qtc8A">
         <node concept="2kknPJ" id="3XP_kj6E2UV" role="3c8P5H">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
         <node concept="3c8PGw" id="3XP_kj6E2UW" role="3c8PHt">
           <node concept="3clFbS" id="3XP_kj6E2UX" role="2VODD2" />
@@ -1458,26 +1458,26 @@
   <node concept="3ICXOK" id="3XP_kj6E2VD">
     <property role="3GE5qa" value="duplication" />
     <property role="TrG5h" value="IncludeSameSubstituteMenuTwice" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6C70Y" resolve="TestAssistant_Duplication_Parent" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6C70Y" resolve="Duplication_Parent" />
     <node concept="1Qtc8_" id="3XP_kj6E2Vf" role="IW6Ez">
       <node concept="2j_NTm" id="3XP_kj6E2Vg" role="1Qtc8$" />
       <node concept="ulPW2" id="3XP_kj6E2W4" role="1Qtc8A">
         <ref role="2ks2v6" to="hsq4:3XP_kj6E2MI" resolve="childIncludeSameSubstituteMenuTwice" />
         <node concept="2kknPJ" id="3XP_kj6E2Wd" role="2ks2uz">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
       </node>
       <node concept="ulPW2" id="3XP_kj6E2Wf" role="1Qtc8A">
         <ref role="2ks2v6" to="hsq4:3XP_kj6E2MI" resolve="childIncludeSameSubstituteMenuTwice" />
         <node concept="2kknPJ" id="3XP_kj6E2Wg" role="2ks2uz">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
       </node>
     </node>
   </node>
   <node concept="IW6AY" id="3XP_kj6E7D2">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6C710" resolve="TestAssistant_Duplication_SuperInterface" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6C710" resolve="SuperInterface" />
     <node concept="1Qtc8_" id="3XP_kj6E7D3" role="IW6Ez">
       <node concept="2j_NTm" id="3XP_kj6E7D7" role="1Qtc8$" />
       <node concept="IWgqT" id="3XP_kj6E7Da" role="1Qtc8A">
@@ -1520,7 +1520,7 @@
   </node>
   <node concept="IW6AY" id="44DBaIkQ9rt">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:44DBaIkQ95q" resolve="TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode" />
+    <ref role="aqKnT" to="hsq4:44DBaIkQ95q" resolve="IncludeDifferentMenusForSameNode" />
     <node concept="1Qtc8_" id="44DBaIkQ9ru" role="IW6Ez">
       <node concept="2j_NTm" id="44DBaIkQ9rv" role="1Qtc8$" />
       <node concept="mvV$s" id="44DBaIkQ9rw" role="1Qtc8A">
@@ -1538,20 +1538,20 @@
   <node concept="3ICXOK" id="44DBaIkTnzK">
     <property role="3GE5qa" value="duplication" />
     <property role="TrG5h" value="IncludeDefaultAndNullMenu" />
-    <ref role="aqKnT" to="hsq4:44DBaIkTnzI" resolve="TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu" />
+    <ref role="aqKnT" to="hsq4:44DBaIkTnzI" resolve="IncludeDefaultAndNullMenu" />
     <node concept="1Qtc8_" id="44DBaIkTnzC" role="IW6Ez">
       <node concept="2j_NTm" id="44DBaIkTnzD" role="1Qtc8$" />
       <node concept="mvV$s" id="44DBaIkTnzE" role="1Qtc8A" />
       <node concept="mvV$s" id="44DBaIkTnzG" role="1Qtc8A">
         <node concept="A1WHr" id="44DBaIkTofq" role="A14EM">
-          <ref role="2ZyFGn" to="hsq4:44DBaIkTnzI" resolve="TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu" />
+          <ref role="2ZyFGn" to="hsq4:44DBaIkTnzI" resolve="IncludeDefaultAndNullMenu" />
         </node>
       </node>
     </node>
   </node>
   <node concept="IW6AY" id="44DBaIkTn$a">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:44DBaIkTnzI" resolve="TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu" />
+    <ref role="aqKnT" to="hsq4:44DBaIkTnzI" resolve="IncludeDefaultAndNullMenu" />
     <node concept="1Qtc8_" id="44DBaIkTn$b" role="IW6Ez">
       <node concept="IWgqT" id="44DBaIkTn$k" role="1Qtc8A">
         <node concept="1hCUdq" id="44DBaIkTn$m" role="1hCUd6">
@@ -1572,7 +1572,7 @@
   </node>
   <node concept="24kQdi" id="44DBaIkTofS">
     <property role="3GE5qa" value="duplication" />
-    <ref role="1XX52x" to="hsq4:44DBaIkTnzI" resolve="TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu" />
+    <ref role="1XX52x" to="hsq4:44DBaIkTnzI" resolve="IncludeDefaultAndNullMenu" />
     <node concept="3F0ifn" id="44DBaIkTofU" role="2wV5jI">
       <property role="3F0ifm" value="include default menu and null menu" />
       <node concept="A1WHu" id="44DBaIkTofX" role="3vIgyS">
@@ -1582,7 +1582,7 @@
   </node>
   <node concept="IW6AY" id="44DBaIkUCof">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:44DBaIkUCnJ" resolve="TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations" />
+    <ref role="aqKnT" to="hsq4:44DBaIkUCnJ" resolve="IncludeSameMenuForDifferentLocations" />
     <node concept="1Qtc8_" id="44DBaIkUCog" role="IW6Ez">
       <node concept="2j_NTm" id="44DBaIkUCok" role="1Qtc8$" />
       <node concept="mvV$s" id="44DBaIkUDc7" role="1Qtc8A">
@@ -1601,7 +1601,7 @@
   <node concept="3ICXOK" id="44DBaIkUCoq">
     <property role="3GE5qa" value="duplication" />
     <property role="TrG5h" value="MenuWithDifferentLocations" />
-    <ref role="aqKnT" to="hsq4:44DBaIkUCnJ" resolve="TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations" />
+    <ref role="aqKnT" to="hsq4:44DBaIkUCnJ" resolve="IncludeSameMenuForDifferentLocations" />
     <node concept="1Qtc8_" id="44DBaIkUCoo" role="IW6Ez">
       <node concept="2j_NTm" id="44DBaIkUCop" role="1Qtc8$" />
       <node concept="IWgqT" id="44DBaIkUCo$" role="1Qtc8A">
@@ -1639,7 +1639,7 @@
   </node>
   <node concept="IW6AY" id="1D1LJGC2h2N">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:1D1LJGC2h2L" resolve="TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes" />
+    <ref role="aqKnT" to="hsq4:1D1LJGC2h2L" resolve="IncludeDifferentMenusForDifferentNodes" />
     <node concept="1Qtc8_" id="1D1LJGC2h2O" role="IW6Ez">
       <node concept="2j_NTm" id="1D1LJGC2h2P" role="1Qtc8$" />
       <node concept="mvV$s" id="1D1LJGC2h2Q" role="1Qtc8A">
@@ -1672,7 +1672,7 @@
   <node concept="Q6S24" id="1D1LJGC2Y9R">
     <property role="3GE5qa" value="duplication" />
     <property role="TrG5h" value="NamedSubstituteMenuToInclude" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
     <node concept="3eGOop" id="1D1LJGC2Y9U" role="3ft7WO">
       <node concept="ucgPf" id="1D1LJGC2Y9W" role="3aKz83">
         <node concept="3clFbS" id="1D1LJGC2Y9Y" role="2VODD2">
@@ -1680,7 +1680,7 @@
             <node concept="2ShNRf" id="1D1LJGC2Yd$" role="3clFbG">
               <node concept="3zrR0B" id="1D1LJGC2Zq3" role="2ShVmc">
                 <node concept="3Tqbb2" id="1D1LJGC2Zq5" role="3zrR0E">
-                  <ref role="ehGHo" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+                  <ref role="ehGHo" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
                 </node>
               </node>
             </node>
@@ -1692,13 +1692,13 @@
   <node concept="3ICXOK" id="1D1LJGC2ZMp">
     <property role="3GE5qa" value="duplication" />
     <property role="TrG5h" value="IncludeDifferentSubstituteMenus" />
-    <ref role="aqKnT" to="hsq4:3XP_kj6C70Y" resolve="TestAssistant_Duplication_Parent" />
+    <ref role="aqKnT" to="hsq4:3XP_kj6C70Y" resolve="Duplication_Parent" />
     <node concept="1Qtc8_" id="1D1LJGC2ZMq" role="IW6Ez">
       <node concept="2j_NTm" id="1D1LJGC2ZMr" role="1Qtc8$" />
       <node concept="ulPW2" id="1D1LJGC2ZMs" role="1Qtc8A">
         <ref role="2ks2v6" to="hsq4:1D1LJGC2Zxu" resolve="childIncludeDifferentSubstituteMenus" />
         <node concept="2kknPJ" id="1D1LJGC2ZMt" role="2ks2uz">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
       </node>
       <node concept="ulPW2" id="1D1LJGC2ZMu" role="1Qtc8A">
@@ -1711,12 +1711,12 @@
   </node>
   <node concept="IW6AY" id="1D1LJGC39qQ">
     <property role="3GE5qa" value="duplication" />
-    <ref role="aqKnT" to="hsq4:1D1LJGC39qP" resolve="TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus" />
+    <ref role="aqKnT" to="hsq4:1D1LJGC39qP" resolve="WrapDifferentSubstituteMenus" />
     <node concept="1Qtc8_" id="1D1LJGC39qR" role="IW6Ez">
       <node concept="2j_NTm" id="1D1LJGC39qS" role="1Qtc8$" />
       <node concept="3c8P5G" id="1D1LJGC39qT" role="1Qtc8A">
         <node concept="2kknPJ" id="1D1LJGC39qU" role="3c8P5H">
-          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="TestAssistant_Duplication_ChildToIncludeSubstituteMenu" />
+          <ref role="2ZyFGn" to="hsq4:3XP_kj6E2MB" resolve="ToIncludeSubstituteMenu" />
         </node>
         <node concept="3c8PGw" id="1D1LJGC39qV" role="3c8PHt">
           <node concept="3clFbS" id="1D1LJGC39qW" role="2VODD2" />

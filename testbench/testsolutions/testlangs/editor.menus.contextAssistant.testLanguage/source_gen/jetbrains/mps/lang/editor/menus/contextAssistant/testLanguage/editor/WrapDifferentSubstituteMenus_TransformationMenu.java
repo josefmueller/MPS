@@ -27,8 +27,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
+import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 
-public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_TransformationMenu extends TransformationMenuBase {
+public class WrapDifferentSubstituteMenus_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -39,7 +40,7 @@ public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_Transfor
   @Override
   public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832203")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "WrapDifferentSubstituteMenus", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "1892012100483323574")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -52,18 +53,18 @@ public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_Transfor
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_TransformationMenu.TMP_WrapSM_z03in4_a0());
-      result.add(new TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_TransformationMenu.TMP_WrapSM_z03in4_b0());
+      result.add(new WrapDifferentSubstituteMenus_TransformationMenu.TMP_WrapSM_rrfg6m_a0());
+      result.add(new WrapDifferentSubstituteMenus_TransformationMenu.TMP_WrapSM_rrfg6m_b0());
     }
     return result;
   }
 
-  public class TMP_WrapSM_z03in4_a0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_rrfg6m_a0 extends WrapSubstituteMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "default substitute menu for " + "TestAssistant_Duplication_ChildToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832211")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "default substitute menu for " + "ToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "1892012100483323577")));
       try {
         return super.createItems(context);
       } finally {
@@ -75,7 +76,7 @@ public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_Transfor
     @Override
     protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a82ca7L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildToIncludeSubstituteMenu"));
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a82ca7L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ToIncludeSubstituteMenu"));
     }
 
 
@@ -90,12 +91,12 @@ public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_Transfor
       };
     }
   }
-  public class TMP_WrapSM_z03in4_b0 extends WrapSubstituteMenuTransformationMenuPart {
+  public class TMP_WrapSM_rrfg6m_b0 extends WrapSubstituteMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "default substitute menu for " + "TestAssistant_Duplication_ChildToIncludeSubstituteMenu", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "4572725119287832250")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "named substitute menu " + "NamedSubstituteMenuToInclude", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "1892012100483323581")));
       try {
         return super.createItems(context);
       } finally {
@@ -107,7 +108,7 @@ public class TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice_Transfor
     @Override
     protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a82ca7L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildToIncludeSubstituteMenu"));
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x3f759544c6a82ca7L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.ToIncludeSubstituteMenu"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedSubstituteMenuToInclude");
     }
 
 

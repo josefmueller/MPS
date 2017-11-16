@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes_TransformationMenu extends TransformationMenuBase {
+public class IncludeDifferentMenusForDifferentNodes_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -37,7 +37,7 @@ public class TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNod
   @Override
   public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "1892012100483092659")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "IncludeDifferentMenusForDifferentNodes", new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "1892012100483092659")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -50,13 +50,13 @@ public class TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNod
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.CONTEXT_ASSISTANT).contains(_context.getMenuLocation())) {
-      result.add(new TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes_TransformationMenu.TMP_Include_71y5y0_a0());
-      result.add(new TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes_TransformationMenu.TMP_Include_71y5y0_b0());
+      result.add(new IncludeDifferentMenusForDifferentNodes_TransformationMenu.TMP_Include_tyqtok_a0());
+      result.add(new IncludeDifferentMenusForDifferentNodes_TransformationMenu.TMP_Include_tyqtok_b0());
     }
     return result;
   }
 
-  public class TMP_Include_71y5y0_a0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_tyqtok_a0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
@@ -79,7 +79,7 @@ public class TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNod
     }
 
   }
-  public class TMP_Include_71y5y0_b0 extends IncludeTransformationMenuTransformationMenuPart {
+  public class TMP_Include_tyqtok_b0 extends IncludeTransformationMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {

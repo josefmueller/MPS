@@ -56,7 +56,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 16:
         return Collections.<ConceptEditor>singletonList(new TestSubstituteSubChildSmartReference_Editor());
       case 17:
-        return Collections.<ConceptEditor>singletonList(new TestSubstitute_DuplicationMenu_Parent_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestSubstitute_Parent_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -81,7 +81,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 5:
         return Collections.<TransformationMenu>singletonList(new TestSubstituteSpecialSubChild_TransformationMenu());
       case 6:
-        return Collections.<TransformationMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu());
       default:
     }
     return Collections.<TransformationMenu>emptyList();
@@ -158,13 +158,13 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 7:
         return Collections.<SubstituteMenu>singletonList(new TestSubstituteSubChildSmartReference_SubstituteMenu());
       case 8:
-        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_IncludeDifferentMenus_SubstituteMenu());
       case 9:
-        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_IncludeSameMenuTwice_SubstituteMenu());
       case 10:
-        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_WrapDifferentMenus_SubstituteMenu());
       case 11:
-        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new TestSubstitute_WrapSameMenuTwice_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();

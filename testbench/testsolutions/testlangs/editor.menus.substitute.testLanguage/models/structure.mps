@@ -653,106 +653,106 @@
   </node>
   <node concept="1TIwiD" id="3XP_kj6C72q">
     <property role="EcuMT" value="4572725119287324826" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" />
+    <property role="TrG5h" value="TestSubstitute_IncludeSameMenuTwice" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3XP_kj6C72t">
     <property role="EcuMT" value="4572725119287324829" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" />
+    <property role="TrG5h" value="TestSubstitute_WrapSameMenuTwice" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3XP_kj6C70Y">
     <property role="EcuMT" value="4572725119287324734" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_Parent" />
+    <property role="TrG5h" value="TestSubstitute_Parent" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3XP_kj6C71u" role="1TKVEi">
       <property role="IQ2ns" value="4572725119287324766" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childSubconcept" />
-      <ref role="20lvS9" node="3XP_kj6C710" resolve="TestSubstitute_DuplicationMenu_Interface" />
+      <ref role="20lvS9" node="3XP_kj6C710" resolve="TestSubstitute_Interface" />
     </node>
     <node concept="1TJgyj" id="3XP_kj6C7at" role="1TKVEi">
       <property role="IQ2ns" value="4572725119287325341" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childIncludeSameMenuTwice" />
-      <ref role="20lvS9" node="3XP_kj6C72q" resolve="TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" />
+      <ref role="20lvS9" node="3XP_kj6C72q" resolve="TestSubstitute_IncludeSameMenuTwice" />
     </node>
     <node concept="1TJgyj" id="1D1LJGC41zN" role="1TKVEi">
       <property role="IQ2ns" value="1892012100483553523" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childIncludeDifferentMenus" />
-      <ref role="20lvS9" node="1D1LJGC40Zs" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
+      <ref role="20lvS9" node="1D1LJGC40Zs" resolve="TestSubstitute_IncludeDifferentMenus" />
     </node>
     <node concept="1TJgyj" id="44DBaIkVpUA" role="1TKVEi">
       <property role="IQ2ns" value="4695456347262394022" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childIncludeDefaultAndNullMenu" />
-      <ref role="20lvS9" node="44DBaIkVpA2" resolve="TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" />
+      <ref role="20lvS9" node="44DBaIkVpA2" resolve="TestSubstitute_IncludeDefaultAndNullMenu" />
     </node>
     <node concept="1TJgyj" id="3XP_kj6C7aq" role="1TKVEi">
       <property role="IQ2ns" value="4572725119287325338" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childWrapSameMenuTwice" />
-      <ref role="20lvS9" node="3XP_kj6C72t" resolve="TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" />
+      <ref role="20lvS9" node="3XP_kj6C72t" resolve="TestSubstitute_WrapSameMenuTwice" />
     </node>
     <node concept="1TJgyj" id="1D1LJGC42xm" role="1TKVEi">
       <property role="IQ2ns" value="1892012100483557462" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childWrapDifferentMenus" />
-      <ref role="20lvS9" node="1D1LJGC41$H" resolve="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
+      <ref role="20lvS9" node="1D1LJGC41$H" resolve="TestSubstitute_WrapDifferentMenus" />
     </node>
   </node>
   <node concept="PlHQZ" id="3XP_kj6C711">
     <property role="EcuMT" value="4572725119287324737" />
     <property role="3GE5qa" value="duplication" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_SubInterface1" />
+    <property role="TrG5h" value="TestSubstitute_SubInterface1" />
     <node concept="PrWs8" id="3XP_kj6C715" role="PrDN$">
-      <ref role="PrY4T" node="3XP_kj6C710" resolve="TestSubstitute_DuplicationMenu_Interface" />
+      <ref role="PrY4T" node="3XP_kj6C710" resolve="TestSubstitute_Interface" />
     </node>
   </node>
   <node concept="PlHQZ" id="3XP_kj6C710">
     <property role="EcuMT" value="4572725119287324736" />
     <property role="3GE5qa" value="duplication" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_Interface" />
+    <property role="TrG5h" value="TestSubstitute_Interface" />
   </node>
   <node concept="PlHQZ" id="3XP_kj6C712">
     <property role="EcuMT" value="4572725119287324738" />
     <property role="3GE5qa" value="duplication" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_SubInterface2" />
+    <property role="TrG5h" value="TestSubstitute_SubInterface2" />
     <node concept="PrWs8" id="3XP_kj6C713" role="PrDN$">
-      <ref role="PrY4T" node="3XP_kj6C710" resolve="TestSubstitute_DuplicationMenu_Interface" />
+      <ref role="PrY4T" node="3XP_kj6C710" resolve="TestSubstitute_Interface" />
     </node>
   </node>
   <node concept="1TIwiD" id="3XP_kj6C717">
     <property role="EcuMT" value="4572725119287324743" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildSubconcept" />
+    <property role="TrG5h" value="TestSubstitute_Subconcept" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3XP_kj6C718" role="PzmwI">
-      <ref role="PrY4T" node="3XP_kj6C711" resolve="TestSubstitute_DuplicationMenu_SubInterface1" />
+      <ref role="PrY4T" node="3XP_kj6C711" resolve="TestSubstitute_SubInterface1" />
     </node>
     <node concept="PrWs8" id="3XP_kj6C71d" role="PzmwI">
-      <ref role="PrY4T" node="3XP_kj6C712" resolve="TestSubstitute_DuplicationMenu_SubInterface2" />
+      <ref role="PrY4T" node="3XP_kj6C712" resolve="TestSubstitute_SubInterface2" />
     </node>
   </node>
   <node concept="1TIwiD" id="44DBaIkVpA2">
     <property role="EcuMT" value="4695456347262392706" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" />
+    <property role="TrG5h" value="TestSubstitute_IncludeDefaultAndNullMenu" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="1D1LJGC40Zs">
     <property role="EcuMT" value="1892012100483551196" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" />
+    <property role="TrG5h" value="TestSubstitute_IncludeDifferentMenus" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="1D1LJGC41$H">
     <property role="EcuMT" value="1892012100483553581" />
-    <property role="TrG5h" value="TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" />
+    <property role="TrG5h" value="TestSubstitute_WrapDifferentMenus" />
     <property role="3GE5qa" value="duplication" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
