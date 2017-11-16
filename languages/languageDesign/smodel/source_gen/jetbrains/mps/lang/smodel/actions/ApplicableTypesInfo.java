@@ -12,6 +12,7 @@ public class ApplicableTypesInfo {
   public boolean myToModel = false;
   public SNode myLinkAccess = null;
   public boolean myLinkToConcept = false;
+
   public ApplicableTypesInfo() {
   }
 }
