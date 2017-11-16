@@ -21,6 +21,7 @@ import java.net.URLClassLoader;
 import org.apache.tools.ant.ProjectComponent;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
@@ -190,6 +191,7 @@ public abstract class MpsLoadTask extends Task {
     }
   }
 
+  @NotNull
   protected List<String> getAdditionalArgs() {
     return Collections.emptyList();
   }

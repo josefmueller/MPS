@@ -12,11 +12,13 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.MPSClasspathUtil" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
@@ -135,6 +137,7 @@
     <classNode dependClassName="org.apache.tools.ant.taskdefs.Execute" />
     <classNode dependClassName="org.apache.tools.ant.types.EnumeratedAttribute" />
     <classNode dependClassName="org.apache.tools.ant.util.JavaEnvUtils" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="org.apache.tools.ant.Task" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.MyExecuteStreamHandler" file="MyExecuteStreamHandler.java">

@@ -4,6 +4,8 @@ package jetbrains.mps.build.ant;
 
 import java.util.List;
 import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
+import java.util.Collections;
 import java.util.Set;
 import java.io.File;
 import org.apache.tools.ant.BuildException;
@@ -19,6 +21,7 @@ public class CustomMPSLoadTask extends MpsLoadTask {
 
   public void setArgs(String args) {
     myArgs = Arrays.asList(args.split(" "));
+
   }
 
   protected String getWorkerClass() {
@@ -26,8 +29,9 @@ public class CustomMPSLoadTask extends MpsLoadTask {
   }
 
   @Override
+  @NotNull
   protected List<String> getAdditionalArgs() {
-    return myArgs;
+    return (myArgs == null ? Collections.<String>emptyList() : myArgs);
   }
 
   @Override
