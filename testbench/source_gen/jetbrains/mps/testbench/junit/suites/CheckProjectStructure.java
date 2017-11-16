@@ -7,36 +7,22 @@ import org.junit.ClassRule;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.Test;
 import jetbrains.mps.testbench.junit.Order;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.project.validation.MessageCollectProcessor;
-import jetbrains.mps.project.validation.ValidationProblem;
-import jetbrains.mps.project.validation.ValidationUtil;
-import org.junit.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.checkers.ModuleChecker;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.checkers.ModelCheckerBuilder;
-import jetbrains.mps.errors.item.ModelReportItem;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.checkers.ModelPropertiesChecker;
-import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.project.validation.NodeValidationProblem;
-import jetbrains.mps.util.FilteringProcessor;
-import java.util.function.Predicate;
-import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.project.validation.StructureChecker;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.util.SNodeOperations;
 import org.junit.Assume;
+import java.util.List;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import org.junit.Assert;
+import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.generator.GenerationFacade;
 
 public class CheckProjectStructure extends BaseCheckerTest {
@@ -49,150 +35,30 @@ public class CheckProjectStructure extends BaseCheckerTest {
 
   @Test
   @Order(value = 1)
-  public void checkModulePropertiesOld() {
-    final List<String> errors = new ArrayList<String>();
-    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>(false);
-        ValidationUtil.validateModule(myModule, processor);
-        if (!(processor.getErrors().isEmpty())) {
-          StringBuilder errorMessages = new StringBuilder();
-          for (String item : processor.getErrors()) {
-            errorMessages.append("\t").append(item).append("\n");
-          }
-          errors.add("Error in module " + myModule.getModuleName() + ": " + errorMessages.toString());
-        }
-      }
-    });
-    Assert.assertTrue("Module property or dependency errors:\n" + formatErrors(errors), errors.isEmpty());
-  }
-  @Test
-  @Order(value = 2)
   public void checkModuleProperties() {
     super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new ModuleChecker()), null, "Module property or dependency errors");
   }
 
   @Test
-  @Order(value = 3)
-  public void checkModelsOld() {
-    final List<String> errors = new ArrayList<String>();
-    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
-          MessageCollectProcessor<ModelReportItem> collector = new MessageCollectProcessor<ModelReportItem>(false);
-          ValidationUtil.validateModel(sm, collector);
-          if (collector.getErrors().isEmpty()) {
-            continue;
-          }
-
-          final StringBuilder errorMessages = new StringBuilder();
-          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
-          ListSequence.fromList(((List<String>) collector.getErrors())).visitAll(new IVisitor<String>() {
-            public void visit(String it) {
-              errorMessages.append("\t").append(it).append("\n");
-            }
-          });
-          errors.add(errorMessages.toString());
-        }
-      }
-    });
-    Assert.assertTrue("Model errors:\n" + formatErrors(errors), errors.isEmpty());
-  }
-
-  @Test
-  @Order(value = 4)
+  @Order(value = 2)
   public void checkModels() {
     super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new ModelPropertiesChecker()), null, "Model errors");
   }
 
   @Test
-  @Order(value = 5)
-  public void checkStructureOld() {
-    final List<String> errors = new ArrayList<String>();
-    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
-          MessageCollectProcessor<NodeReportItem> collector = new MessageCollectProcessor<NodeReportItem>(false) {
-            @Override
-            protected String formatMessage(NodeReportItem problem) {
-              String err = super.formatMessage(problem);
-              if (problem instanceof NodeValidationProblem) {
-                err += err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
-              }
-              return err;
-            }
-          };
-          ValidationUtil.validateModelContent(sm.getRootNodes(), new FilteringProcessor<NodeReportItem>(collector, new Predicate<NodeReportItem>() {
-            public boolean test(NodeReportItem problem) {
-              return ErrorReportUtil.shouldReportError(problem.getNode().resolve(BaseCheckModulesTest.getContextProject().getRepository()));
-            }
-          }));
-          if (collector.getErrors().isEmpty()) {
-            continue;
-          }
-
-          final StringBuilder errorMessages = new StringBuilder();
-          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
-          ListSequence.fromList(((List<String>) collector.getErrors())).visitAll(new IVisitor<String>() {
-            public void visit(String it) {
-              errorMessages.append("\t").append(it).append("\n");
-            }
-          });
-          errors.add(errorMessages.toString());
-        }
-      }
-    });
-    Assert.assertTrue("Structure errors:\n" + formatErrors(errors), errors.isEmpty());
-  }
-
-  @Test
-  @Order(value = 6)
+  @Order(value = 3)
   public void checkStructure() {
     super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), (AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(true, true, true, false)), null, "Structure errors:");
   }
 
   @Test
-  @Order(value = 7)
-  public void checkReferencesOld() {
-    final List<String> errors = new ArrayList<String>();
-    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (SModel sm : new ModelCheckerBuilder.ModelsExtractorImpl().excludeGenerators().getModels(myModule)) {
-          StringBuilder errorMessages = new StringBuilder();
-          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
-          boolean withErrors = false;
-
-          for (SNode node : SNodeUtil.getDescendants(sm)) {
-            for (SReference ref : node.getReferences()) {
-              if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getLink())) {
-                continue;
-              }
-              if (SNodeOperations.getTargetNodeSilently(ref) != null) {
-                continue;
-              }
-
-              withErrors = true;
-              errorMessages.append("Broken reference in model {").append(node.getModel().getName().getLongName()).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
-            }
-          }
-
-          if (withErrors) {
-            errors.add("Broken References: " + errorMessages.toString());
-          }
-        }
-      }
-    });
-    Assert.assertTrue("Reference errors:\n" + formatErrors(errors), errors.isEmpty());
-  }
-
-  @Test
-  @Order(value = 8)
+  @Order(value = 4)
   public void checkReferences() {
     super.runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), (AbstractNodeCheckerInEditor) (AbstractNodeCheckerInEditor) new StructureChecker(false, false, false, true)), null, "Broken reference errors");
   }
 
   @Test
-  @Order(value = 9)
+  @Order(value = 5)
   public void checkGenerationStatus() {
     Assume.assumeFalse("Generation status is meaningless for packaged modules", myModule.isPackaged());
     final List<String> errors = new ArrayList<String>();
