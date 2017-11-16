@@ -15,33 +15,28 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.AbstractNodeCheckerInEditor;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.checkers.LanguageErrorsCollector;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.LanguageAbsentInRepoProblem;
 import jetbrains.mps.errors.item.LanguageNotLoadedProblem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 
 import java.util.Collection;
 import java.util.List;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
-  private final boolean mySuppressErrors;
 
   private final boolean myCheckMissingRuntimeLanguage;
   private final boolean myCheckCardinalities;
@@ -49,7 +44,6 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
 
   public StructureChecker(boolean suppressErrors, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
                           boolean checkBrokenReferences) {
-    mySuppressErrors = suppressErrors;
     myCheckMissingRuntimeLanguage = checkMissingRuntimeLanguage;
     myCheckCardinalities = checkCardinalities;
     myCheckBrokenReferences = checkBrokenReferences;
@@ -151,12 +145,4 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
     return IssueKindReportItem.STRUCTURE;
   }
 
-  @Override
-  public IChecker.AbstractNodeChecker.ErrorSkipCondition skipCondition() {
-    if (mySuppressErrors) {
-      return AbstractConstraintsCheckerRootCheckerAdapter.SUPPRESS_ERRORS_CONDITION;
-    } else {
-      return IChecker.AbstractNodeChecker.SKIP_NOTHING_CONDITION;
-    }
-  }
 }
