@@ -221,50 +221,42 @@
       <node id="3567142084943201225" at="14,41,15,239" concept="3" />
       <node id="3567142084943201297" at="15,239,16,260" concept="3" />
       <node id="3567142084943201261" at="16,260,17,266" concept="3" />
-      <node id="3567142084964387880" at="17,266,18,252" concept="3" />
-      <node id="3567142084943201402" at="22,34,23,29" concept="3" />
-      <node id="3567142084943199497" at="23,29,24,0" concept="11" />
-      <node id="3567142084943000373" at="24,0,25,29" concept="3" />
-      <node id="3567142084956900856" at="27,64,28,51" concept="9" />
-      <node id="3567142084956901610" at="30,64,31,51" concept="9" />
-      <node id="3567142084956901987" at="33,64,34,51" concept="9" />
-      <node id="3567142084964387883" at="36,64,37,51" concept="9" />
+      <node id="3567142084943201402" at="21,34,22,29" concept="3" />
+      <node id="3567142084943199497" at="22,29,23,0" concept="11" />
+      <node id="3567142084943000373" at="23,0,24,29" concept="3" />
+      <node id="3567142084956900856" at="26,64,27,51" concept="9" />
+      <node id="3567142084956901610" at="29,64,30,51" concept="9" />
+      <node id="3567142084956901987" at="32,64,33,51" concept="9" />
       <node id="3567142084943000354" at="11,0,14,0" concept="1" trace="MPSAuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="3567142084956900856" at="27,0,30,0" concept="13" trace="neq_c18eo5_a1a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3567142084956901610" at="30,0,33,0" concept="13" trace="neq_c18eo5_a1a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3567142084956901987" at="33,0,36,0" concept="13" trace="neq_c18eo5_a1a2a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3567142084964387883" at="36,0,39,0" concept="13" trace="neq_c18eo5_a1a3a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3567142084943201398" at="14,0,20,0" concept="7" trace="processExcludedModules#()V" />
-      <node id="3567142084943000362" at="20,0,27,0" concept="7" trace="checkConstraints#()V" />
+      <node id="3567142084956900856" at="26,0,29,0" concept="13" trace="neq_c18eo5_a1a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084956901610" at="29,0,32,0" concept="13" trace="neq_c18eo5_a1a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084956901987" at="32,0,35,0" concept="13" trace="neq_c18eo5_a1a2a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3567142084943201398" at="14,0,19,0" concept="7" trace="processExcludedModules#()V" />
+      <node id="3567142084943000362" at="19,0,26,0" concept="7" trace="checkConstraints#()V" />
       <scope id="3567142084943000357" at="11,46,12,18" />
-      <scope id="3567142084956900856" at="27,64,28,51" />
-      <scope id="3567142084956901610" at="30,64,31,51" />
-      <scope id="3567142084956901987" at="33,64,34,51" />
-      <scope id="3567142084964387883" at="36,64,37,51" />
+      <scope id="3567142084956900856" at="26,64,27,51" />
+      <scope id="3567142084956901610" at="29,64,30,51" />
+      <scope id="3567142084956901987" at="32,64,33,51" />
       <scope id="3567142084943000354" at="11,0,14,0">
         <var name="module" id="3567142084943000360" />
       </scope>
-      <scope id="3567142084943000366" at="22,34,25,29" />
-      <scope id="3567142084956900856" at="27,0,30,0">
+      <scope id="3567142084943201224" at="14,41,17,266" />
+      <scope id="3567142084943000366" at="21,34,24,29" />
+      <scope id="3567142084956900856" at="26,0,29,0">
         <var name="a" id="3567142084956900856" />
         <var name="b" id="3567142084956900856" />
       </scope>
-      <scope id="3567142084956901610" at="30,0,33,0">
+      <scope id="3567142084956901610" at="29,0,32,0">
         <var name="a" id="3567142084956901610" />
         <var name="b" id="3567142084956901610" />
       </scope>
-      <scope id="3567142084956901987" at="33,0,36,0">
+      <scope id="3567142084956901987" at="32,0,35,0">
         <var name="a" id="3567142084956901987" />
         <var name="b" id="3567142084956901987" />
       </scope>
-      <scope id="3567142084964387883" at="36,0,39,0">
-        <var name="a" id="3567142084964387883" />
-        <var name="b" id="3567142084964387883" />
-      </scope>
-      <scope id="3567142084943201224" at="14,41,18,252" />
-      <scope id="3567142084943201398" at="14,0,20,0" />
-      <scope id="3567142084943000362" at="20,0,27,0" />
-      <unit id="3567142084943000351" at="10,0,40,0" name="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" />
+      <scope id="3567142084943201398" at="14,0,19,0" />
+      <scope id="3567142084943000362" at="19,0,26,0" />
+      <unit id="3567142084943000351" at="10,0,36,0" name="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943022134">

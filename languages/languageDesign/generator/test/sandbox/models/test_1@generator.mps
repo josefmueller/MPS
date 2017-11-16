@@ -15,6 +15,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="q1l7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.template(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -206,6 +207,7 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1169569792945" name="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" flags="lg" index="1fMGax">
+        <reference id="1169569853122" name="template" index="1fMUZi" />
         <child id="1169569939267" name="sourceNodesQuery" index="1fNfTj" />
       </concept>
       <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
@@ -331,7 +333,9 @@
           <node concept="3cpWsn" id="hz3Diui" role="3cpWs9">
             <property role="TrG5h" value="i" />
             <node concept="10Oyi0" id="hz3Diuj" role="1tU5fm">
-              <node concept="1sPUBX" id="1WfddY$XHRB" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHRB" role="lGtFl">
+                <ref role="v9R2y" node="rez4bFHyO8" resolve="ExtendWithParams" />
+              </node>
             </node>
             <node concept="3cmrfG" id="hz3DoL3" role="33vP2m">
               <property role="3cmrfH" value="10" />
@@ -347,7 +351,9 @@
                   <node concept="3clFbS" id="hz7V3$v" role="2VODD2" />
                 </node>
               </node>
-              <node concept="1sPUBX" id="1WfddY$XHPW" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHPW" role="lGtFl">
+                <ref role="v9R2y" node="rez4bFHyO8" resolve="ExtendWithParams" />
+              </node>
             </node>
             <node concept="17Uvod" id="hz4eNo5" role="lGtFl">
               <property role="2qtEX9" value="name" />
@@ -366,7 +372,9 @@
         <node concept="3clFbF" id="hz4eS1r" role="3cqZAp">
           <node concept="2OqwBi" id="hz4eSj2" role="3clFbG">
             <node concept="Xjq3P" id="hz4eS1s" role="2Oq$k0">
-              <node concept="1sPUBX" id="1WfddY$XHP7" role="lGtFl" />
+              <node concept="1sPUBX" id="1WfddY$XHP7" role="lGtFl">
+                <ref role="v9R2y" node="rez4bFHyO8" resolve="ExtendWithParams" />
+              </node>
             </node>
             <node concept="liA8E" id="hz4eSK7" role="2OqNvi">
               <ref role="37wK5l" node="huf7HkX" resolve="aaa" />
@@ -436,6 +444,7 @@
                 <property role="3cmrfH" value="100" />
                 <node concept="1sPUBX" id="1WfddY$XHMT" role="lGtFl">
                   <ref role="2rW$FS" node="h$Kb0v_" resolve="aaa" />
+                  <ref role="v9R2y" node="rez4bFHyO8" resolve="ExtendWithParams" />
                 </node>
               </node>
             </node>
@@ -655,7 +664,9 @@
       <ref role="2VPoh2" node="hu4DnfF" resolve="Test_rootTemplate" />
       <ref role="2sBCQV" node="h$KcxCg" resolve="bbb" />
     </node>
-    <node concept="2VPoh5" id="hGNmZex" role="2VS0gm" />
+    <node concept="2VPoh5" id="hGNmZex" role="2VS0gm">
+      <ref role="2VPoh2" node="hGC3J6d" resolve="NotATemplate" />
+    </node>
     <node concept="30QchW" id="h$KfFef" role="30SoJX">
       <ref role="30HIoZ" to="tpee:fHWc73I" resolve="AndExpression" />
       <node concept="3gB$ML" id="h$KfFeh" role="3gCiVm">
@@ -687,6 +698,7 @@
         </node>
       </node>
       <node concept="1fMGax" id="hQjbfMq" role="1fOSGc">
+        <ref role="1fMUZi" node="hGPnt$j" resolve="default_switch_aaa" />
         <node concept="3JmXsc" id="hQjbfMr" role="1fNfTj">
           <node concept="3clFbS" id="hQjbfMs" role="2VODD2" />
         </node>
@@ -714,6 +726,7 @@
       </node>
     </node>
     <node concept="30QchW" id="hQWpJWL" role="30SoJX">
+      <ref role="30HIoZ" to="tpf8:hwb5Tbr" resolve="AbandonInput_RuleConsequence" />
       <node concept="jzcPr" id="hQWpJWM" role="1fOSGc" />
       <node concept="3gB$ML" id="hQWpJWN" role="3gCiVm">
         <node concept="3clFbS" id="hQWpJWO" role="2VODD2" />
