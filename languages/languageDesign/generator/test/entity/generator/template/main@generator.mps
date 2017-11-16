@@ -405,6 +405,7 @@
     <node concept="2ugBFh" id="4vmTtDyRXi7" role="2uJ4Wq">
       <property role="2ugz1c" value="0" />
       <ref role="2ugBSe" node="4vmTtDyRXvX" resolve="x" />
+      <ref role="_cVCT" node="4vmTtDyRX4e" resolve="ABean" />
       <node concept="2b32R4" id="4vmTtDyRXia" role="lGtFl">
         <node concept="3JmXsc" id="4vmTtDyRXid" role="2P8S$">
           <node concept="3clFbS" id="4vmTtDyRXie" role="2VODD2">

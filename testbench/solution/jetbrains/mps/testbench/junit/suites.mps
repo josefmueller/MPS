@@ -6473,6 +6473,31 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3612de_DwKC" role="3cqZAp">
+          <node concept="2YIFZM" id="3612de_DwKD" role="3clFbG">
+            <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
+            <ref role="37wK5l" to="rjhg:~Assume.assumeTrue(java.lang.String,boolean):void" resolve="assumeTrue" />
+            <node concept="Xl_RD" id="3612de_DwKE" role="37wK5m">
+              <property role="Xl_RC" value="sandbox module that should be dropped or cleaned" />
+            </node>
+            <node concept="17QLQc" id="3612de_DwKF" role="37wK5m">
+              <node concept="37shsh" id="3612de_DwKG" role="3uHU7w">
+                <node concept="20RdaH" id="3612de_Dxgf" role="37shsm">
+                  <property role="20Rdg5" value="c3df6320-4bbf-475f-a300-596aa5468029" />
+                  <property role="20Rdg7" value="jetbrains.mps.generator.sandbox" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3612de_DwKI" role="3uHU7B">
+                <node concept="37vLTw" id="3612de_DwKJ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7X3$Ctw3Yta" resolve="myModule" />
+                </node>
+                <node concept="liA8E" id="3612de_DwKK" role="2OqNvi">
+                  <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="3612de$nVcE" role="jymVt">

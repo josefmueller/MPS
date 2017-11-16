@@ -15,6 +15,7 @@ public class MPSAuditConstraints extends AuditConstraints {
     Assume.assumeTrue("too much red code", neq_c18eo5_a1a0a1(myModule.getModuleReference(), PersistenceFacade.getInstance().createModuleReference("857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)")));
     Assume.assumeTrue("internal concept is marked as not rootable", neq_c18eo5_a1a1a1(myModule.getModuleReference(), PersistenceFacade.getInstance().createModuleReference("e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspect#3274906159125927726)")));
     Assume.assumeTrue("broken skope with no possibility to suppress error", neq_c18eo5_a1a2a1(myModule.getModuleReference(), PersistenceFacade.getInstance().createModuleReference("9b03dd0d-f0d2-42fc-8909-d7710e678ca3(jetbrains.mps.build.mps#3189788309732033979)")));
+    Assume.assumeTrue("sandbox module that should be dropped or cleaned", neq_c18eo5_a1a3a1(myModule.getModuleReference(), PersistenceFacade.getInstance().createModuleReference("c3df6320-4bbf-475f-a300-596aa5468029(jetbrains.mps.generator.sandbox)")));
   }
   @Test
   @Override
@@ -30,6 +31,9 @@ public class MPSAuditConstraints extends AuditConstraints {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_c18eo5_a1a2a1(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
+  }
+  private static boolean neq_c18eo5_a1a3a1(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

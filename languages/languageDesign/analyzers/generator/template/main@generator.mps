@@ -2998,6 +2998,7 @@
             <property role="TrG5h" value="f" />
             <node concept="2eloPW" id="9V7Nft_xac" role="1tU5fm">
               <property role="2ely0U" value="CustomAnalyzerRunner" />
+              <ref role="3uigEE" to="mu20:9V7Nft_x9B" resolve="CustomAnalyzerRunner" />
               <node concept="raruj" id="9V7Nft_xad" role="lGtFl" />
               <node concept="17Uvod" id="9V7Nft_xIx" role="lGtFl">
                 <property role="2qtEX9" value="fqClassName" />

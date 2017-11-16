@@ -8126,6 +8126,7 @@
     <node concept="312cEu" id="i2vLUsX" role="13RCb5">
       <property role="TrG5h" value="NamedTuple" />
       <node concept="3uibUv" id="26zKq3osuiq" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Cloneable" resolve="Cloneable" />
         <node concept="2b32R4" id="26zKq3osuiA" role="lGtFl">
           <node concept="3JmXsc" id="26zKq3osuiB" role="2P8S$">
             <node concept="3clFbS" id="26zKq3osuiC" role="2VODD2">
@@ -8900,6 +8901,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="26zKq3osucu" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Cloneable" resolve="Cloneable" />
         <node concept="2b32R4" id="26zKq3osugP" role="lGtFl">
           <node concept="3JmXsc" id="26zKq3osugQ" role="2P8S$">
             <node concept="3clFbS" id="26zKq3osugR" role="2VODD2">
