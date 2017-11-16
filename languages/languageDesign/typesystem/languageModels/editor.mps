@@ -4267,36 +4267,6 @@
       <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
     </node>
   </node>
-  <node concept="24kQdi" id="4NZHKx96Bde">
-    <property role="3GE5qa" value="definition.statement" />
-    <ref role="1XX52x" to="tpd4:4NZHKx96Bdc" resolve="ReplacementRuleReference" />
-    <node concept="1iCGBv" id="4NZHKx96Bdg" role="2wV5jI">
-      <ref role="1NtTu8" to="tpd4:4NZHKx96Bdd" resolve="replacementRule" />
-      <node concept="1sVBvm" id="4NZHKx96Bdh" role="1sWHZn">
-        <node concept="3F0A7n" id="4NZHKx96Bdj" role="2wV5jI">
-          <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        </node>
-      </node>
-    </node>
-    <node concept="3F0A7n" id="3D1EYnXQsn1" role="6VMZX">
-      <ref role="1NtTu8" to="tpd4:3D1EYnXQsmZ" resolve="fqName" />
-      <node concept="pkWqt" id="3D1EYnXQsn2" role="pqm2j">
-        <node concept="3clFbS" id="3D1EYnXQsn3" role="2VODD2">
-          <node concept="3clFbF" id="3D1EYnXQsns" role="3cqZAp">
-            <node concept="2YIFZM" id="3D1EYnXQsnt" role="3clFbG">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-              <node concept="2OqwBi" id="3D1EYnXQsnu" role="37wK5m">
-                <node concept="pncrf" id="3D1EYnXQsnv" role="2Oq$k0" />
-                <node concept="I4A8Y" id="3D1EYnXQsnw" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="5dp1h9uUgO5">
     <property role="3GE5qa" value="definition.statement" />
     <ref role="1XX52x" to="tpd4:3Jyakw70jUR" resolve="AbstractComparableStatement" />

@@ -1076,13 +1076,6 @@
       <property role="IQ2ns" value="1320713984677695199" />
       <ref role="20lvS9" node="19k7_WyAGVy" resolve="DefaultGroupReference" />
     </node>
-    <node concept="1TJgyj" id="4NZHKx96Bdk" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="rulesToSkip" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="5548354512157832020" />
-      <ref role="20lvS9" node="4NZHKx96Bdc" resolve="ReplacementRuleReference" />
-    </node>
     <node concept="1TJgyi" id="hCOb7dq" role="1TKVEl">
       <property role="TrG5h" value="inequationPriority" />
       <property role="IQ2nx" value="1212056105818" />
@@ -1885,24 +1878,6 @@
     <property role="TrG5h" value="IRuleWithTwoNodes" />
     <property role="3GE5qa" value="definition.rule" />
     <property role="EcuMT" value="4484478261143582585" />
-  </node>
-  <node concept="1TIwiD" id="4NZHKx96Bdc">
-    <property role="TrG5h" value="ReplacementRuleReference" />
-    <property role="3GE5qa" value="definition.statement" />
-    <property role="EcuMT" value="5548354512157832012" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="3D1EYnXQsmZ" role="1TKVEl">
-      <property role="TrG5h" value="fqName" />
-      <property role="IQ2nx" value="4197825331980780991" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="4NZHKx96Bdd" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="replacementRule" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="5548354512157832013" />
-      <ref role="20lvS9" node="hv5pCJM" resolve="InequationReplacementRule" />
-    </node>
   </node>
   <node concept="1TIwiD" id="37365KnCftB">
     <property role="R5$K7" value="false" />

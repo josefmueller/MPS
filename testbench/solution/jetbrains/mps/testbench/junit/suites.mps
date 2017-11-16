@@ -6429,31 +6429,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3612de$oGhp" role="3cqZAp">
-          <node concept="2YIFZM" id="3612de_cWXJ" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assume.assumeTrue(java.lang.String,boolean):void" resolve="assumeTrue" />
-            <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
-            <node concept="Xl_RD" id="3612de_cWXK" role="37wK5m">
-              <property role="Xl_RC" value="drop concept ReplacementRuleReference ?" />
-            </node>
-            <node concept="17QLQc" id="3612de_cWXL" role="37wK5m">
-              <node concept="37shsh" id="3612de_cWXM" role="3uHU7w">
-                <node concept="20RdaH" id="3612de_cWXN" role="37shsm">
-                  <property role="20Rdg5" value="8fffa437-9500-4c6b-abfc-f4cb2335b059" />
-                  <property role="20Rdg7" value="jetbrains.mps.lang.typesystem#1174411220599" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="3612de_cWXO" role="3uHU7B">
-                <node concept="37vLTw" id="3612de_cWXP" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7X3$Ctw3Yta" resolve="myModule" />
-                </node>
-                <node concept="liA8E" id="3612de_cWXQ" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3612de$oGgh" role="3cqZAp">
           <node concept="2YIFZM" id="3612de_cX3C" role="3clFbG">
             <ref role="37wK5l" to="rjhg:~Assume.assumeTrue(java.lang.String,boolean):void" resolve="assumeTrue" />
