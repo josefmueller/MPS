@@ -206,7 +206,6 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
-      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -249,6 +248,7 @@
   </registry>
   <node concept="312cEu" id="6rx4kZDk5Br">
     <property role="TrG5h" value="IdeaEnvironment" />
+    <property role="1EXbeo" value="true" />
     <node concept="3UR2Jj" id="1w0tHxV50Bo" role="lGtFl">
       <node concept="TZ5HA" id="1w0tHxV50Bp" role="TZ5H$">
         <node concept="1dT_AC" id="1w0tHxV50Bq" role="1dT_Ay">
@@ -302,7 +302,7 @@
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="3Tmbuc" id="6LlhC3WKiOP" role="1B3o_S" />
+      <node concept="3Tm1VV" id="3x_lgCAljIS" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6LlhC3WJXZg" role="jymVt" />
     <node concept="2YIFZL" id="6LlhC3WJZzD" role="jymVt">
@@ -1737,29 +1737,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="8Pnvxglx0B" role="jymVt" />
-    <node concept="3clFb_" id="5A5jZryYOQ0" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="rootClassLoader" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3Tmbuc" id="5A5jZryYOQ2" role="1B3o_S" />
-      <node concept="3uibUv" id="5A5jZryYOQ3" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
-      </node>
-      <node concept="2AHcQZ" id="5A5jZryYOQ4" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="3clFbS" id="5A5jZryYOQ5" role="3clF47">
-        <node concept="3clFbF" id="5A5jZryYOQ7" role="3cqZAp">
-          <node concept="10Nm6u" id="5A5jZryYOQ6" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5A5jZrz4Edm" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="78Cs0exszi3" role="jymVt" />
     <node concept="312cEu" id="78Cs0exs$s0" role="jymVt">
       <property role="TrG5h" value="PostStartupActivitiesWaiter" />
       <property role="2bfB8j" value="false" />

@@ -17,6 +17,7 @@ import jetbrains.mps.tool.common.RepositoryDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
+import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -77,48 +78,10 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
-    Environment env = MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
-    return env;
+    return MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
   }
 
-  /**
-   * 
-   * @deprecated use non-static method
-   */
-  @Deprecated
-  public static EnvironmentConfig createEnvConfig(Script whatToDo) {
-    EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
-    RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
-    if (repo != null) {
-      if (repo.includeAllModules) {
-        config = config.withBootstrapLibraries().withWorkbenchPath();
-      }
-      // todo make this code more typed 
-      for (String lib : repo.folders) {
-        config = config.addLib(lib);
-      }
-      for (String lib : repo.files) {
-        config = config.addLib(lib);
-      }
-    } else {
-      config = config.withBootstrapLibraries().withWorkbenchPath();
-    }
-    for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
-      config = config.addMacro(macro.key(), new File(macro.value()));
-    }
-    for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
-      config = config.addLib(lib.value().getAbsolutePath());
-    }
-    for (String jar : whatToDo.getLibraryJars()) {
-      File jarFile = new File(jar);
-      config = config.addLib(jar);
-    }
-
-    return config;
-  }
-
-  public final EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
+  public EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
     RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
     if (repo != null) {
@@ -149,11 +112,20 @@ public abstract class MpsWorker {
       config = config.addLib(jar);
     }
 
+    // todo make it a leagl part of the whatToDo if possible 
+    String pluginsPath = whatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
+    if (pluginsPath != null) {
+      for (String cp : pluginsPath.split(File.pathSeparator)) {
+        config.addPluginClassPath(cp);
+      }
+    }
+
     return config;
   }
 
   public void workFromMain() {
     try {
+      Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
       myEnvironment = createEnvironment();
       make();
 
@@ -198,7 +170,6 @@ public abstract class MpsWorker {
       });
     }
   }
-  protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
   protected abstract void showStatistic();
   protected StringBuffer formatErrorsReport(String taskName) {
     StringBuffer sb = new StringBuffer();

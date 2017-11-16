@@ -27,7 +27,6 @@ import jetbrains.mps.vfs.DefaultCachingContext;
 import com.intellij.testFramework.PlatformTestUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
-import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.Semaphore;
 import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.project.DumbService;
@@ -36,7 +35,7 @@ import com.intellij.openapi.project.DumbService;
  * Use #getOrCreate method to construct this kind of environment
  * TODO: fix dispose methods
  */
-public class IdeaEnvironment extends EnvironmentBase {
+public final class IdeaEnvironment extends EnvironmentBase {
   private static final Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
   private IdeaTestApplication myIdeaApplication;
 
@@ -44,7 +43,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     EnvironmentBase.initializeLog4j();
   }
 
-  protected IdeaEnvironment(@NotNull EnvironmentConfig config) {
+  public IdeaEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
   }
 
@@ -248,12 +247,6 @@ public class IdeaEnvironment extends EnvironmentBase {
   @Override
   public Platform getPlatform() {
     return getMPSCoreComponents().getPlatform();
-  }
-
-  @Nullable
-  @Override
-  protected ClassLoader rootClassLoader() {
-    return null;
   }
 
   private static final class PostStartupActivitiesWaiter {

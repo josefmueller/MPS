@@ -63,7 +63,7 @@ import java.io.FileOutputStream;
 import jetbrains.mps.progress.ProgressMonitorBase;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
-public class GenTestWorker extends GeneratorWorker {
+public class GenTestWorker extends BaseGeneratorWorker {
   private final GenTestWorker.MyMessageHandler myMessageHandler = new GenTestWorker.MyMessageHandler();
   private boolean myTestFailed = false;
   private IMessageFormat myBuildServerMessageFormat;

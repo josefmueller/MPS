@@ -20,7 +20,7 @@ import java.io.File;
 import jetbrains.mps.core.tool.environment.util.FileMPSProject;
 import jetbrains.mps.util.FileUtil;
 
-public class MpsEnvironment extends EnvironmentBase {
+public final class MpsEnvironment extends EnvironmentBase {
   private static final Logger LOG = LogManager.getLogger(MpsEnvironment.class);
   private Platform myPlatform;
 
@@ -28,7 +28,7 @@ public class MpsEnvironment extends EnvironmentBase {
     EnvironmentBase.initializeLog4j();
   }
 
-  protected MpsEnvironment(@NotNull EnvironmentConfig config) {
+  public MpsEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
   }
 
@@ -72,7 +72,7 @@ public class MpsEnvironment extends EnvironmentBase {
           @Override
           @Nullable
           public ClassLoader getClassLoader() {
-            return rootClassLoader();
+            return getRootClassLoader();
           }
         };
       }
@@ -116,8 +116,4 @@ public class MpsEnvironment extends EnvironmentBase {
     return myPlatform;
   }
 
-  @Nullable
-  protected ClassLoader rootClassLoader() {
-    return MpsEnvironment.class.getClassLoader();
-  }
 }

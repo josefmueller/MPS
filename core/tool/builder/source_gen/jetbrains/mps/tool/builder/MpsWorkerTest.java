@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.Project;
 
 public class MpsWorkerTest extends MpsWorker {
   private SModuleReference myModuleRef;
@@ -37,9 +36,6 @@ public class MpsWorkerTest extends MpsWorker {
   public static void main(String[] args) {
     MpsWorkerTest testWorker = new MpsWorkerTest(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger(), ModuleReference.parseReference(args[1]), Boolean.parseBoolean(args[2]));
     testWorker.workFromMain();
-  }
-
-  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
   }
 
   protected void showStatistic() {

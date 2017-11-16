@@ -4,10 +4,10 @@ package jetbrains.mps.tool.builder.make;
 
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.GeneratorProperties;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.MResource;
@@ -30,21 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.messages.IMessage;
 
 public abstract class BaseGeneratorWorker extends MpsWorker {
-  private final BaseGeneratorWorker.MyMessageHandler myMessageHandler = new BaseGeneratorWorker.MyMessageHandler();
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
-  }
-
-  protected BaseGeneratorWorker.MyMessageHandler getMyMessageHandler() {
-    return myMessageHandler;
-  }
-
-  @Override
-  protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
-    setGenerationProperties();
-    if (go.hasAnythingToGenerate()) {
-      generate(project, go);
-    }
   }
 
   protected void setGenerationProperties() {
@@ -96,7 +83,7 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     info(s.toString());
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, go)).toListSequence();
     myEnvironment.flushAllEvents();
-    final MakeSession session = new MakeSession(project, myMessageHandler, true);
+    final MakeSession session = new MakeSession(project, new BaseGeneratorWorker.MyMessageHandler(), true);
     JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions);
     IScriptController controller = new IScriptController.Stub2(session, jcfi);
     Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());

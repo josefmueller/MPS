@@ -15,16 +15,22 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode, TreeElement {
+  private static final Logger LOG = LogManager.getLogger(ProjectModuleTreeNode.class);
+
   private final SModule myModule;
 
   public static ProjectModuleTreeNode createFor(Project project, SModule module) {
@@ -46,6 +52,9 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
 
   protected ProjectModuleTreeNode(@NotNull SModule module) {
     super(module.getModuleName());
+    if (!VisibleModuleRegistry.getInstance().isVisible(module)) {
+      LOG.error("Tree node was created for non-visible module " + module.getModuleName(), new Throwable());
+    }
     myModule = module;
   }
 
@@ -77,15 +86,15 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
 
   /**
    * Interface a tree could implement in case it hosts nodes for project modules and would like to override/control
-   *  what child nodes could show up there.
-   *
+   * what child nodes could show up there.
+   * <p>
    * There are different approaches to conditional children in a given node.
    * We've got SNodeTreeNode.NodeChildrenProvider to show node structure conditionally.
    * Besides, we've got TreeNodeParamProvider that provides same condition in a different way.
    * We could also pass a configuration object down to tree nodes, but it's cumbersome given depth of the tree.
    * Yet another approach is to cast treeNode.getTree() and ask it for specific configuration values (the simplest one).
    * Latter is not always possible as we keep nodes in [mps-ui] but trees that use them in [mps-workbench]
-   *   (this split is questionable itself, and perhaps proper structure might help to deal with configurations).
+   * (this split is questionable itself, and perhaps proper structure might help to deal with configurations).
    * Neither is appealing to me, though the one with delegation is most flexible, that's why I stick to it.
    * <p/>
    * Methods take non-null arguments and return {@code true} to indicate provider completed the structure, and
@@ -94,8 +103,11 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
    */
   public interface ModuleNodeChildrenProvider {
     boolean populate(MPSTreeNode treeNode, Language language);
+
     boolean populate(MPSTreeNode treeNode, Solution solution);
+
     boolean populate(MPSTreeNode treeNode, Generator generator);
+
     boolean populate(MPSTreeNode treeNode, DevKit devkit);
   }
 }
