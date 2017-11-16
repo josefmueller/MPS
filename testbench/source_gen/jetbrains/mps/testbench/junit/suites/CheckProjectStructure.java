@@ -7,9 +7,6 @@ import org.junit.Test;
 import jetbrains.mps.testbench.junit.Order;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
@@ -17,6 +14,7 @@ import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.checkers.ModelCheckerBuilder;
 import jetbrains.mps.errors.item.ModelReportItem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
@@ -44,23 +42,14 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
-        if (myModule instanceof Language) {
-          ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
-        }
-
-        for (SModule sm : modules) {
-          MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>(false);
-          ValidationUtil.validateModule(sm, processor);
-          if (processor.getErrors().isEmpty()) {
-            continue;
-          }
-
+        MessageCollectProcessor<ValidationProblem> processor = new MessageCollectProcessor<ValidationProblem>(false);
+        ValidationUtil.validateModule(myModule, processor);
+        if (!(processor.getErrors().isEmpty())) {
           StringBuilder errorMessages = new StringBuilder();
           for (String item : processor.getErrors()) {
             errorMessages.append("\t").append(item).append("\n");
           }
-          errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+          errors.add("Error in module " + myModule.getModuleName() + ": " + errorMessages.toString());
         }
       }
     });
