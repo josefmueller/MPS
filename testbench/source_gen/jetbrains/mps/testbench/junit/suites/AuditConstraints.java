@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 import java.util.List;
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.checkers.ConstraintsChecker;
@@ -26,7 +26,7 @@ public class AuditConstraints extends BaseCheckerTest {
 
   @Test
   public void checkConstraints() {
-    List<IChecker<?, NodeReportItem>> checkers = ListSequence.fromListAndArray(new ArrayList<IChecker<?, NodeReportItem>>(), new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker());
+    List<IChecker<?, ? extends IssueKindReportItem>> checkers = ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker(), new UsedLanguagesChecker());
     runCheck(checkers, AuditTypeSystem.ourStats, "Constraints and scopes errors");
   }
 }

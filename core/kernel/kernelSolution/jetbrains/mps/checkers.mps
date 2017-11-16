@@ -11332,5 +11332,121 @@
     </node>
     <node concept="3Tm1VV" id="3etVqSRKzPp" role="1B3o_S" />
   </node>
+  <node concept="312cEu" id="3etVqSRT$D7">
+    <property role="TrG5h" value="ModuleChecker" />
+    <property role="3GE5qa" value="module" />
+    <node concept="3clFbW" id="3etVqSRT$Df" role="jymVt">
+      <node concept="3cqZAl" id="3etVqSRT$Dg" role="3clF45" />
+      <node concept="3Tm1VV" id="3etVqSRT$Dh" role="1B3o_S" />
+      <node concept="3clFbS" id="3etVqSRT$Di" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="4SGXHKgYZFf" role="jymVt" />
+    <node concept="3clFb_" id="kXqcYjXa38" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getCategory" />
+      <node concept="3Tm1VV" id="kXqcYjXa3a" role="1B3o_S" />
+      <node concept="17QB3L" id="kXqcYjXa3b" role="3clF45" />
+      <node concept="3clFbS" id="kXqcYjXa3c" role="3clF47">
+        <node concept="3clFbF" id="kXqcYjXaSI" role="3cqZAp">
+          <node concept="Xl_RD" id="kXqcYjXaSH" role="3clFbG">
+            <property role="Xl_RC" value="module properties" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="kXqcYjXa3d" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="4SGXHKgYZHE" role="jymVt">
+      <property role="TrG5h" value="check" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="3Tm1VV" id="4SGXHKgYZHG" role="1B3o_S" />
+      <node concept="37vLTG" id="4SGXHKgYZHH" role="3clF46">
+        <property role="TrG5h" value="module" />
+        <node concept="3uibUv" id="4SGXHKgYZHU" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4SGXHKgYZHJ" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="4SGXHKgYZHK" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4SGXHKgYZHL" role="3clF46">
+        <property role="TrG5h" value="errorCollector" />
+        <node concept="3uibUv" id="4SGXHKgYZHM" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~Consumer" resolve="Consumer" />
+          <node concept="3qUtgH" id="3xfDcbR7DH7" role="11_B2D">
+            <node concept="3uibUv" id="3xfDcbR7DVc" role="3qUvdb">
+              <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4SGXHKgYZHO" role="3clF46">
+        <property role="TrG5h" value="monitor" />
+        <node concept="3uibUv" id="4SGXHKgYZHP" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="4SGXHKgZ314" role="3clF45" />
+      <node concept="3clFbS" id="4SGXHKgYZHV" role="3clF47">
+        <node concept="3clFbF" id="55QDKWLAHv5" role="3cqZAp">
+          <node concept="2YIFZM" id="55QDKWLAHJL" role="3clFbG">
+            <ref role="37wK5l" to="6if8:~ValidationUtil.validateModule(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.util.Processor):void" resolve="validateModule" />
+            <ref role="1Pybhc" to="6if8:~ValidationUtil" resolve="ValidationUtil" />
+            <node concept="37vLTw" id="6bXa3O$edS8" role="37wK5m">
+              <ref role="3cqZAo" node="4SGXHKgYZHH" resolve="module" />
+            </node>
+            <node concept="1bVj0M" id="55QDKWLAHXE" role="37wK5m">
+              <node concept="37vLTG" id="55QDKWLAI0j" role="1bW2Oz">
+                <property role="TrG5h" value="vp" />
+                <node concept="3uibUv" id="a7HeXjRmtD" role="1tU5fm">
+                  <ref role="3uigEE" to="6if8:~ModuleValidationProblem" resolve="ModuleValidationProblem" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="55QDKWLAHXG" role="1bW5cS">
+                <node concept="3clFbF" id="6bXa3O$egMx" role="3cqZAp">
+                  <node concept="2OqwBi" id="6bXa3O$eh3d" role="3clFbG">
+                    <node concept="37vLTw" id="6bXa3O$egMr" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4SGXHKgYZHL" resolve="errorCollector" />
+                    </node>
+                    <node concept="liA8E" id="6bXa3O$ehoF" role="2OqNvi">
+                      <ref role="37wK5l" to="yyf4:~Consumer.consume(java.lang.Object):void" resolve="consume" />
+                      <node concept="10QFUN" id="6bXa3O$ellv" role="37wK5m">
+                        <node concept="37vLTw" id="6bXa3O$ellu" role="10QFUP">
+                          <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
+                        </node>
+                        <node concept="3uibUv" id="6bXa3O$ellt" role="10QFUM">
+                          <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="2sSkv2aGpXr" role="3cqZAp">
+                  <node concept="3clFbT" id="2sSkv2aGqhs" role="3cqZAk">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4SGXHKgYZHW" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="3etVqSRT$Fg" role="1B3o_S" />
+    <node concept="3uibUv" id="4aUWmf9JWYf" role="1zkMxy">
+      <ref role="3uigEE" node="3RAxiQnEFam" resolve="IChecker.AbstractModuleChecker" />
+      <node concept="3uibUv" id="4aUWmf9JYma" role="11_B2D">
+        <ref role="3uigEE" to="d6hs:~ModuleReportItem" resolve="ModuleReportItem" />
+      </node>
+    </node>
+  </node>
 </model>
 

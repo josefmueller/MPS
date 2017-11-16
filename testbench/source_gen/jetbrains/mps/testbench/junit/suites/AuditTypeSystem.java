@@ -9,7 +9,7 @@ import org.junit.Test;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.checkers.IChecker;
-import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 
 public class AuditTypeSystem extends BaseCheckerTest {
@@ -22,6 +22,6 @@ public class AuditTypeSystem extends BaseCheckerTest {
 
   @Test
   public void checkTypeSystem() {
-    runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, NodeReportItem>>(), new TypesystemChecker()), ourStats, "Type system errors");
+    runCheck(ListSequence.fromListAndArray(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>(), new TypesystemChecker()), ourStats, "Type system errors");
   }
 }
