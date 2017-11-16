@@ -89,7 +89,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
         }, effectiveNode, "concept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_nullable_reference(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

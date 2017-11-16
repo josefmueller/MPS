@@ -20,6 +20,7 @@
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
+        <reference id="1225194240799" name="concept" index="13h7C2" />
         <child id="1225194240805" name="method" index="13h7CS" />
         <child id="1225194240801" name="constructor" index="13h7CW" />
       </concept>
@@ -186,6 +187,7 @@
       <ref role="30HIoZ" to="genb:70qA1hy$wwM" resolve="ParentScope" />
       <node concept="1Koe21" id="7PeWMFMLZd3" role="1lVwrX">
         <node concept="13h7C7" id="3612de$Vw4K" role="1Koe22">
+          <ref role="13h7C2" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
           <node concept="13i0hz" id="3612de$Vt2_" role="13h7CS">
             <property role="TrG5h" value="behaviorMeth" />
             <node concept="3cqZAl" id="3612de$Vt2J" role="3clF45" />
@@ -253,6 +255,7 @@
       <ref role="30HIoZ" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
       <node concept="1Koe21" id="7PeWMFMMASK" role="1lVwrX">
         <node concept="13h7C7" id="3612de$V_9z" role="1Koe22">
+          <ref role="13h7C2" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
           <node concept="13i0hz" id="3612de$V_9$" role="13h7CS">
             <property role="TrG5h" value="behaviorMeth" />
             <node concept="3cqZAl" id="3612de$V_9_" role="3clF45" />
@@ -555,6 +558,7 @@
       <ref role="30HIoZ" to="genb:70qA1hy$hAX" resolve="CompositeWithParentScopeExpression" />
       <node concept="1Koe21" id="7PeWMFMMpR3" role="1lVwrX">
         <node concept="13h7C7" id="3612de$VQGX" role="1Koe22">
+          <ref role="13h7C2" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
           <node concept="13i0hz" id="3612de$VQGY" role="13h7CS">
             <property role="TrG5h" value="behaviorMeth" />
             <node concept="3cqZAl" id="3612de$VQGZ" role="3clF45" />

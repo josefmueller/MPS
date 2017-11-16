@@ -73,7 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c60bb0a14L);
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L);
     b.origin("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)/1225194240794");
-    b.associate("concept", 0x11d43447b1fL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("1225194240799").done();
+    b.associate("concept", 0x11d43447b1fL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("1225194240799").done();
     b.aggregate("constructor", 0x11d43447b21L).target(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43471eedL).optional(false).ordered(true).multiple(false).origin("1225194240801").done();
     b.aggregate("method", 0x11d43447b25L).target(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL).optional(true).ordered(true).multiple(true).origin("1225194240805").done();
     b.alias("Concept Behavior");

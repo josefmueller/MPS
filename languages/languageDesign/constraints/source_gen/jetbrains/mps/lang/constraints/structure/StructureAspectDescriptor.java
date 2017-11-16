@@ -188,7 +188,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L);
     b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/1213093968558");
-    b.associate("concept", 0x11a720969b6L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("1213093996982").done();
+    b.associate("concept", 0x11a720969b6L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("1213093996982").done();
     b.associate("defaultConcreteConcept", 0x11a72ce9037L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(true).origin("1213106917431").done();
     b.aggregate("property", 0x11a7246dc3dL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L).optional(true).ordered(true).multiple(true).origin("1213098023997").done();
     b.aggregate("referent", 0x11a726c901bL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL).optional(true).ordered(true).multiple(true).origin("1213100494875").done();
