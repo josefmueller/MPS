@@ -5,7 +5,6 @@ package jetbrains.mps.testbench.junit.suites;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.checkers.IChecker;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -19,7 +18,7 @@ public abstract class BaseCheckerTest extends BaseCheckModulesTest {
     super(module);
   }
 
-  public void runCheck(final List<IChecker<SNode, NodeReportItem>> checkers, PerformanceMessenger stats, String errorMessage) {
+  public void runCheck(final List<IChecker<?, NodeReportItem>> checkers, PerformanceMessenger stats, String errorMessage) {
     final CheckingTestStatistic statistic = new CheckingTestStatistic();
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {

@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.AuditTypeSystem" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
@@ -29,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
@@ -72,7 +70,6 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />

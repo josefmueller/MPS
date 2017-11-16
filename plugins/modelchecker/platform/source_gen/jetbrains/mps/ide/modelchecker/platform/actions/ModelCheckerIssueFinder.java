@@ -50,7 +50,6 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     };
     List<IChecker<?, ? extends IssueKindReportItem>> specificCheckers = ListSequence.fromList(new ArrayList<IChecker<?, ? extends IssueKindReportItem>>());
     ListSequence.fromList(specificCheckers).addSequence(ListSequence.fromList(getSpecificCheckers()));
-    ListSequence.fromList(specificCheckers).addElement(new ModuleChecker());
     new ModelCheckerBuilder(ModelCheckerSettings.getInstance().isCheckStubs()).createChecker(specificCheckers).check(itemsToCheck, myRepository, errorCollector, monitor);
     return result;
   }

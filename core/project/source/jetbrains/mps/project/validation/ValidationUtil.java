@@ -80,7 +80,7 @@ public class ValidationUtil {
   public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeReportItem> processor) {
     for (SNode root : roots) {
       EmptyProgressMonitor progressMonitor = new EmptyProgressMonitor();
-      IChecker.AbstractRootChecker.wrapNodeChecker(new StructureChecker(false, true, true, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
+      IChecker.AbstractRootChecker.wrapToRootChecker(new StructureChecker(false, true, true, true)).check(root, root.getModel().getRepository(), nodeReportItem -> {
         if (!processor.process(nodeReportItem)) {
           progressMonitor.cancel();
         }

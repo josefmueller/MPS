@@ -305,6 +305,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -6652,15 +6655,175 @@
     <node concept="312cEu" id="3RAxiQnEFwn" role="jymVt">
       <property role="TrG5h" value="AbstractModelChecker" />
       <property role="1sVAO0" value="true" />
+      <node concept="2YIFZL" id="3612de_wNZB" role="jymVt">
+        <property role="TrG5h" value="wrapToModelChecker" />
+        <node concept="3uibUv" id="3612de_wNZC" role="3clF45">
+          <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+          <node concept="16syzq" id="3612de_wNZD" role="11_B2D">
+            <ref role="16sUi3" node="3612de_wO0K" resolve="I" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3612de_wNZE" role="1B3o_S" />
+        <node concept="3clFbS" id="3612de_wNZF" role="3clF47">
+          <node concept="3clFbJ" id="3612de_xr48" role="3cqZAp">
+            <node concept="2ZW3vV" id="3612de_xr49" role="3clFbw">
+              <node concept="3uibUv" id="3612de_xt3A" role="2ZW6by">
+                <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+              </node>
+              <node concept="37vLTw" id="3612de_xr4b" role="2ZW6bz">
+                <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3612de_xr4c" role="3clFbx">
+              <node concept="3cpWs6" id="3612de_xr4d" role="3cqZAp">
+                <node concept="10QFUN" id="3612de_xwoM" role="3cqZAk">
+                  <node concept="37vLTw" id="3612de_xwoL" role="10QFUP">
+                    <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+                  </node>
+                  <node concept="3uibUv" id="3612de_xwoJ" role="10QFUM">
+                    <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3612de_xbkF" role="3cqZAp">
+            <node concept="2ZW3vV" id="3612de_xbkG" role="3clFbw">
+              <node concept="3uibUv" id="3612de_xbkH" role="2ZW6by">
+                <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+              </node>
+              <node concept="37vLTw" id="3612de_xbkI" role="2ZW6bz">
+                <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3612de_xbkJ" role="3clFbx">
+              <node concept="3cpWs6" id="3612de_xdWT" role="3cqZAp">
+                <node concept="10QFUN" id="3612de_zKpb" role="3cqZAk">
+                  <node concept="2YIFZM" id="3612de_zKp6" role="10QFUP">
+                    <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                    <ref role="37wK5l" node="320sejm8pZh" resolve="wrapToModelChecker" />
+                    <node concept="10QFUN" id="3612de_zKp8" role="37wK5m">
+                      <node concept="37vLTw" id="3612de_zKp9" role="10QFUP">
+                        <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+                      </node>
+                      <node concept="3uibUv" id="3612de_zKpa" role="10QFUM">
+                        <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                        <node concept="3qTvmN" id="3612de_zUOB" role="11_B2D" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="3612de_zKp4" role="10QFUM">
+                    <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                    <node concept="16syzq" id="3612de_zKp5" role="11_B2D">
+                      <ref role="16sUi3" node="3612de_wO0K" resolve="I" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3612de_zjop" role="3cqZAp">
+            <node concept="2ZW3vV" id="3612de_zjoq" role="3clFbw">
+              <node concept="3uibUv" id="3612de_zlFf" role="2ZW6by">
+                <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+              </node>
+              <node concept="37vLTw" id="3612de_zjos" role="2ZW6bz">
+                <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3612de_zjot" role="3clFbx">
+              <node concept="3cpWs6" id="3612de_zVXg" role="3cqZAp">
+                <node concept="10QFUN" id="3612de_zVXh" role="3cqZAk">
+                  <node concept="2YIFZM" id="3612de_zVXi" role="10QFUP">
+                    <ref role="37wK5l" node="320sejm8pZh" resolve="wrapToModelChecker" />
+                    <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                    <node concept="2YIFZM" id="3612de_zVXj" role="37wK5m">
+                      <ref role="37wK5l" node="3612de_xJsP" resolve="wrapToRootChecker" />
+                      <ref role="1Pybhc" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                      <node concept="10QFUN" id="3612de_zVXk" role="37wK5m">
+                        <node concept="37vLTw" id="3612de_zVXl" role="10QFUP">
+                          <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+                        </node>
+                        <node concept="3uibUv" id="3612de_zVXm" role="10QFUM">
+                          <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+                          <node concept="3qTvmN" id="3612de_zVXn" role="11_B2D" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="3612de_zVXo" role="10QFUM">
+                    <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                    <node concept="16syzq" id="3612de_zVXp" role="11_B2D">
+                      <ref role="16sUi3" node="3612de_wO0K" resolve="I" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="YS8fn" id="3612de_xo5U" role="3cqZAp">
+            <node concept="2ShNRf" id="3612de_xoGS" role="YScLw">
+              <node concept="1pGfFk" id="3612de_xpHe" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                <node concept="3cpWs3" id="3612de_xENg" role="37wK5m">
+                  <node concept="2OqwBi" id="3612de_xHYe" role="3uHU7w">
+                    <node concept="3VsKOn" id="3612de_xGN0" role="2Oq$k0">
+                      <ref role="3VsUkX" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                    </node>
+                    <node concept="liA8E" id="3612de_xJdb" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                    </node>
+                  </node>
+                  <node concept="3cpWs3" id="3612de_xAfS" role="3uHU7B">
+                    <node concept="3cpWs3" id="3612de_xz4w" role="3uHU7B">
+                      <node concept="Xl_RD" id="3612de_xy54" role="3uHU7B">
+                        <property role="Xl_RC" value="Checker " />
+                      </node>
+                      <node concept="2OqwBi" id="3612de_xzMV" role="3uHU7w">
+                        <node concept="37vLTw" id="3612de_xzpx" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3612de_wO0M" resolve="checker" />
+                        </node>
+                        <node concept="liA8E" id="3612de_x$aR" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3612de_xBoD" role="3uHU7w">
+                      <property role="Xl_RC" value=" cannot be wrapped to " />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="16euLQ" id="3612de_wO0K" role="16eVyc">
+          <property role="TrG5h" value="I" />
+          <node concept="3uibUv" id="3612de_zmug" role="3ztrMU">
+            <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3612de_wO0M" role="3clF46">
+          <property role="TrG5h" value="checker" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="3612de_wO0N" role="1tU5fm">
+            <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+            <node concept="3qTvmN" id="3612de_wXMt" role="11_B2D" />
+            <node concept="16syzq" id="3612de_wO0O" role="11_B2D">
+              <ref role="16sUi3" node="3612de_wO0K" resolve="I" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2YIFZL" id="320sejm8pZh" role="jymVt">
-        <property role="TrG5h" value="wrapRootChecker" />
+        <property role="TrG5h" value="wrapToModelChecker" />
         <node concept="3uibUv" id="320sejm8pZi" role="3clF45">
           <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
           <node concept="16syzq" id="320sejm8pZj" role="11_B2D">
             <ref role="16sUi3" node="320sejm8q06" resolve="I" />
           </node>
         </node>
-        <node concept="3Tm1VV" id="320sejm8pZk" role="1B3o_S" />
+        <node concept="3Tm6S6" id="3612de_y_jy" role="1B3o_S" />
         <node concept="3clFbS" id="320sejm8pZl" role="3clF47">
           <node concept="3cpWs8" id="320sejm8sAg" role="3cqZAp">
             <node concept="3cpWsn" id="320sejm8sAh" role="3cpWs9">
@@ -6878,15 +7041,133 @@
     <node concept="312cEu" id="3RAxiQnEF_M" role="jymVt">
       <property role="TrG5h" value="AbstractRootChecker" />
       <property role="1sVAO0" value="true" />
+      <node concept="2YIFZL" id="3612de_xJsP" role="jymVt">
+        <property role="TrG5h" value="wrapToRootChecker" />
+        <node concept="3uibUv" id="3612de_xJsQ" role="3clF45">
+          <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+          <node concept="16syzq" id="3612de_xJsR" role="11_B2D">
+            <ref role="16sUi3" node="3612de_xJtD" resolve="I" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3612de_xJsS" role="1B3o_S" />
+        <node concept="3clFbS" id="3612de_xJsT" role="3clF47">
+          <node concept="3clFbJ" id="3612de_xJt4" role="3cqZAp">
+            <node concept="2ZW3vV" id="3612de_xJt5" role="3clFbw">
+              <node concept="3uibUv" id="3612de_xJt6" role="2ZW6by">
+                <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+              </node>
+              <node concept="37vLTw" id="3612de_xJt7" role="2ZW6bz">
+                <ref role="3cqZAo" node="3612de_xJtF" resolve="checker" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3612de_xJt8" role="3clFbx">
+              <node concept="3cpWs6" id="3612de_xJt9" role="3cqZAp">
+                <node concept="10QFUN" id="3612de_xJtb" role="3cqZAk">
+                  <node concept="37vLTw" id="3612de_xJtc" role="10QFUP">
+                    <ref role="3cqZAo" node="3612de_xJtF" resolve="checker" />
+                  </node>
+                  <node concept="3uibUv" id="3612de_xJtd" role="10QFUM">
+                    <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                    <node concept="16syzq" id="3612de_xJte" role="11_B2D">
+                      <ref role="16sUi3" node="3612de_xJtD" resolve="I" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3612de_xJtf" role="3cqZAp">
+            <node concept="2ZW3vV" id="3612de_xJtg" role="3clFbw">
+              <node concept="3uibUv" id="3612de_xJth" role="2ZW6by">
+                <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+              </node>
+              <node concept="37vLTw" id="3612de_xJti" role="2ZW6bz">
+                <ref role="3cqZAo" node="3612de_xJtF" resolve="checker" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3612de_xJtj" role="3clFbx">
+              <node concept="3cpWs6" id="3612de_xJtk" role="3cqZAp">
+                <node concept="2YIFZM" id="3612de_xJtm" role="3cqZAk">
+                  <ref role="37wK5l" node="320sejm7kBI" resolve="wrapToRootChecker" />
+                  <ref role="1Pybhc" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                  <node concept="10QFUN" id="3612de_xJtn" role="37wK5m">
+                    <node concept="37vLTw" id="3612de_xJto" role="10QFUP">
+                      <ref role="3cqZAo" node="3612de_xJtF" resolve="checker" />
+                    </node>
+                    <node concept="3uibUv" id="3612de_xJtp" role="10QFUM">
+                      <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+                      <node concept="16syzq" id="3612de_xJtq" role="11_B2D">
+                        <ref role="16sUi3" node="3612de_xJtD" resolve="I" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="YS8fn" id="3612de_xJtr" role="3cqZAp">
+            <node concept="2ShNRf" id="3612de_xJts" role="YScLw">
+              <node concept="1pGfFk" id="3612de_xJtt" role="2ShVmc">
+                <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                <node concept="3cpWs3" id="3612de_xJtu" role="37wK5m">
+                  <node concept="2OqwBi" id="3612de_xJtv" role="3uHU7w">
+                    <node concept="3VsKOn" id="3612de_xJtw" role="2Oq$k0">
+                      <ref role="3VsUkX" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                    </node>
+                    <node concept="liA8E" id="3612de_xJtx" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                    </node>
+                  </node>
+                  <node concept="3cpWs3" id="3612de_xJty" role="3uHU7B">
+                    <node concept="3cpWs3" id="3612de_xJtz" role="3uHU7B">
+                      <node concept="Xl_RD" id="3612de_xJt$" role="3uHU7B">
+                        <property role="Xl_RC" value="Checker " />
+                      </node>
+                      <node concept="2OqwBi" id="3612de_xJt_" role="3uHU7w">
+                        <node concept="37vLTw" id="3612de_xJtA" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3612de_xJtF" resolve="checker" />
+                        </node>
+                        <node concept="liA8E" id="3612de_xJtB" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3612de_xJtC" role="3uHU7w">
+                      <property role="Xl_RC" value=" cannot be wrapped to " />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="16euLQ" id="3612de_xJtD" role="16eVyc">
+          <property role="TrG5h" value="I" />
+          <node concept="3uibUv" id="3612de_xJtE" role="3ztrMU">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3612de_xJtF" role="3clF46">
+          <property role="TrG5h" value="checker" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="3612de_xJtG" role="1tU5fm">
+            <ref role="3uigEE" node="4r$i1_aEwSg" resolve="IChecker" />
+            <node concept="3qTvmN" id="3612de_xJtH" role="11_B2D" />
+            <node concept="16syzq" id="3612de_xJtI" role="11_B2D">
+              <ref role="16sUi3" node="3612de_xJtD" resolve="I" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2YIFZL" id="320sejm7kBI" role="jymVt">
-        <property role="TrG5h" value="wrapNodeChecker" />
+        <property role="TrG5h" value="wrapToRootChecker" />
         <node concept="3uibUv" id="320sejm7m0R" role="3clF45">
           <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
           <node concept="16syzq" id="320sejm7mfe" role="11_B2D">
             <ref role="16sUi3" node="320sejm7maM" resolve="I" />
           </node>
         </node>
-        <node concept="3Tm1VV" id="320sejm7kBL" role="1B3o_S" />
+        <node concept="3Tm6S6" id="3612de_yZNq" role="1B3o_S" />
         <node concept="3clFbS" id="320sejm7kBM" role="3clF47">
           <node concept="3cpWs8" id="320sejm97f2" role="3cqZAp">
             <node concept="3cpWsn" id="320sejm97f3" role="3cpWs9">
@@ -9908,136 +10189,78 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3N13vt" id="1odoqEKQS_p" role="3cqZAp" />
               </node>
-            </node>
-            <node concept="3clFbJ" id="6bXa3O$9nz5" role="3cqZAp">
-              <node concept="2ZW3vV" id="6bXa3O$9nz6" role="3clFbw">
-                <node concept="3uibUv" id="6bXa3O$9nz7" role="2ZW6by">
-                  <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
-                </node>
-                <node concept="37vLTw" id="34euvBSFxI1" role="2ZW6bz">
-                  <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="6bXa3O$9nz9" role="3clFbx">
-                <node concept="3clFbF" id="6bXa3O$9nza" role="3cqZAp">
-                  <node concept="2OqwBi" id="6bXa3O$9nzb" role="3clFbG">
-                    <node concept="37vLTw" id="6bXa3O$9nzc" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6bXa3O$94J5" resolve="modelCheckers" />
-                    </node>
-                    <node concept="TSZUe" id="6bXa3O$9nzd" role="2OqNvi">
-                      <node concept="10QFUN" id="6bXa3O$9nze" role="25WWJ7">
-                        <node concept="37vLTw" id="34euvBSFxI2" role="10QFUP">
-                          <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
-                        </node>
-                        <node concept="3uibUv" id="6bXa3O$9nzg" role="10QFUM">
-                          <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
-                          <node concept="3qUE_q" id="6bXa3O$9nzh" role="11_B2D">
-                            <node concept="3uibUv" id="6bXa3O$9nzi" role="3qUE_r">
-                              <ref role="3uigEE" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
-                            </node>
-                          </node>
-                        </node>
+              <node concept="3eNFk2" id="3612de_yjZx" role="3eNLev">
+                <node concept="3clFbS" id="3612de_yjZy" role="3eOfB_">
+                  <node concept="3clFbF" id="6bXa3O$9e_u" role="3cqZAp">
+                    <node concept="2OqwBi" id="6bXa3O$9e_v" role="3clFbG">
+                      <node concept="37vLTw" id="6bXa3O$9lwK" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6bXa3O$94J5" resolve="modelCheckers" />
                       </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3N13vt" id="1odoqEKQSAs" role="3cqZAp" />
-              </node>
-            </node>
-            <node concept="3clFbJ" id="6bXa3O$9e_p" role="3cqZAp">
-              <node concept="2ZW3vV" id="6bXa3O$9e_q" role="3clFbw">
-                <node concept="3uibUv" id="6bXa3O$9p6T" role="2ZW6by">
-                  <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
-                </node>
-                <node concept="37vLTw" id="34euvBSFxI3" role="2ZW6bz">
-                  <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="6bXa3O$9e_t" role="3clFbx">
-                <node concept="3clFbF" id="6bXa3O$9e_u" role="3cqZAp">
-                  <node concept="2OqwBi" id="6bXa3O$9e_v" role="3clFbG">
-                    <node concept="37vLTw" id="6bXa3O$9lwK" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6bXa3O$94J5" resolve="modelCheckers" />
-                    </node>
-                    <node concept="TSZUe" id="6bXa3O$9e_x" role="2OqNvi">
-                      <node concept="2YIFZM" id="6bXa3O$9uGN" role="25WWJ7">
-                        <ref role="37wK5l" node="320sejm8pZh" resolve="wrapRootChecker" />
-                        <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
-                        <node concept="10QFUN" id="6bXa3O$9xkw" role="37wK5m">
-                          <node concept="37vLTw" id="34euvBSFxI4" role="10QFUP">
+                      <node concept="TSZUe" id="6bXa3O$9e_x" role="2OqNvi">
+                        <node concept="2YIFZM" id="3612de_yJhI" role="25WWJ7">
+                          <ref role="37wK5l" node="3612de_wNZB" resolve="wrapToModelChecker" />
+                          <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                          <node concept="37vLTw" id="3612de_$5SG" role="37wK5m">
                             <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
                           </node>
-                          <node concept="3uibUv" id="6bXa3O$9xkt" role="10QFUM">
-                            <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
-                            <node concept="3qTvmN" id="6bXa3O$9Anm" role="11_B2D" />
-                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="3N13vt" id="1odoqEKQTK_" role="3cqZAp" />
-              </node>
-            </node>
-            <node concept="3clFbJ" id="6bXa3O$9oEv" role="3cqZAp">
-              <node concept="2ZW3vV" id="6bXa3O$9oEw" role="3clFbw">
-                <node concept="3uibUv" id="6bXa3O$9q8M" role="2ZW6by">
-                  <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
-                </node>
-                <node concept="37vLTw" id="34euvBSFxI5" role="2ZW6bz">
-                  <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="6bXa3O$9oEz" role="3clFbx">
-                <node concept="3clFbF" id="6bXa3O$9oE$" role="3cqZAp">
-                  <node concept="2OqwBi" id="6bXa3O$9oE_" role="3clFbG">
-                    <node concept="37vLTw" id="6bXa3O$9oEA" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6bXa3O$94J5" resolve="modelCheckers" />
+                <node concept="22lmx$" id="3612de_ynYu" role="3eO9$A">
+                  <node concept="22lmx$" id="3612de_ykSw" role="3uHU7B">
+                    <node concept="2ZW3vV" id="3612de_ykfH" role="3uHU7B">
+                      <node concept="3uibUv" id="3612de_yl72" role="2ZW6by">
+                        <ref role="3uigEE" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                      </node>
+                      <node concept="37vLTw" id="3612de_ykfJ" role="2ZW6bz">
+                        <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
+                      </node>
                     </node>
-                    <node concept="TSZUe" id="6bXa3O$9oEB" role="2OqNvi">
-                      <node concept="2YIFZM" id="6bXa3O$9E8u" role="25WWJ7">
-                        <ref role="37wK5l" node="320sejm8pZh" resolve="wrapRootChecker" />
-                        <ref role="1Pybhc" node="3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
-                        <node concept="2YIFZM" id="6bXa3O$9Ibm" role="37wK5m">
-                          <ref role="37wK5l" node="320sejm7kBI" resolve="wrapNodeChecker" />
-                          <ref role="1Pybhc" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
-                          <node concept="10QFUN" id="6bXa3O$9Jwi" role="37wK5m">
-                            <node concept="37vLTw" id="34euvBSFxI6" role="10QFUP">
-                              <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
-                            </node>
-                            <node concept="3uibUv" id="6bXa3O$9Jwk" role="10QFUM">
-                              <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
-                              <node concept="3qTvmN" id="6bXa3O$9Jwl" role="11_B2D" />
-                            </node>
-                          </node>
-                        </node>
+                    <node concept="2ZW3vV" id="3612de_ykZ_" role="3uHU7w">
+                      <node concept="3uibUv" id="3612de_ylh1" role="2ZW6by">
+                        <ref role="3uigEE" node="3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                      </node>
+                      <node concept="37vLTw" id="3612de_ykZB" role="2ZW6bz">
+                        <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="3N13vt" id="1odoqEKQY6h" role="3cqZAp" />
-              </node>
-            </node>
-            <node concept="RRSsy" id="1odoqEKOVz1" role="3cqZAp">
-              <property role="RRSoG" value="error" />
-              <node concept="3cpWs3" id="6bXa3O$bx4B" role="RRSoy">
-                <node concept="2OqwBi" id="6bXa3O$bCvG" role="3uHU7w">
-                  <node concept="2OqwBi" id="6bXa3O$bxE2" role="2Oq$k0">
-                    <node concept="37vLTw" id="34euvBSFxI7" role="2Oq$k0">
+                  <node concept="2ZW3vV" id="3612de_yoan" role="3uHU7w">
+                    <node concept="3uibUv" id="3612de_yomr" role="2ZW6by">
+                      <ref role="3uigEE" node="3RAxiQnEFHw" resolve="IChecker.AbstractNodeChecker" />
+                    </node>
+                    <node concept="37vLTw" id="3612de_yoap" role="2ZW6bz">
                       <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
                     </node>
-                    <node concept="liA8E" id="6bXa3O$bzRR" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="6bXa3O$bMBE" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
-                <node concept="Xl_RD" id="6bXa3O$btGC" role="3uHU7B">
-                  <property role="Xl_RC" value="IChecker implementor doesn't extend none of expected base classes: " />
+              </node>
+              <node concept="9aQIb" id="3612de_yoDF" role="9aQIa">
+                <node concept="3clFbS" id="3612de_yoDG" role="9aQI4">
+                  <node concept="RRSsy" id="1odoqEKOVz1" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="3cpWs3" id="6bXa3O$bx4B" role="RRSoy">
+                      <node concept="2OqwBi" id="6bXa3O$bCvG" role="3uHU7w">
+                        <node concept="2OqwBi" id="6bXa3O$bxE2" role="2Oq$k0">
+                          <node concept="37vLTw" id="34euvBSFxI7" role="2Oq$k0">
+                            <ref role="3cqZAo" node="34euvBSFxHT" resolve="checker" />
+                          </node>
+                          <node concept="liA8E" id="6bXa3O$bzRR" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6bXa3O$bMBE" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6bXa3O$btGC" role="3uHU7B">
+                        <property role="Xl_RC" value="IChecker implementor doesn't extend none of expected base classes: " />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

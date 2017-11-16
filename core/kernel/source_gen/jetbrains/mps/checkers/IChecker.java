@@ -32,7 +32,19 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
   }
 
   abstract class AbstractModelChecker<I extends IssueKindReportItem> extends IChecker.AbstractChecker<SModel, I> {
-    public static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapRootChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
+    public static <I extends IssueKindReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker<?, I> checker) {
+      if (checker instanceof IChecker.AbstractModelChecker) {
+        return (IChecker.AbstractModelChecker) checker;
+      }
+      if (checker instanceof IChecker.AbstractRootChecker) {
+        return (IChecker.AbstractModelChecker<I>) IChecker.AbstractModelChecker.wrapToModelChecker((IChecker.AbstractRootChecker<?>) checker);
+      }
+      if (checker instanceof IChecker.AbstractNodeChecker) {
+        return (IChecker.AbstractModelChecker<I>) IChecker.AbstractModelChecker.wrapToModelChecker(IChecker.AbstractRootChecker.wrapToRootChecker((IChecker.AbstractNodeChecker<?>) checker));
+      }
+      throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractModelChecker.class.getName());
+    }
+    private static <I extends NodeReportItem> IChecker.AbstractModelChecker<I> wrapToModelChecker(final IChecker.AbstractRootChecker<I> rootChecker) {
       final IChecker<SModel, I> result = new IteratingChecker<SModel, SNode, I>(rootChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SModel>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SModel model) {
           return new IteratingChecker.CollectionIteratorWithProgress<SNode>(SModelOperations.roots(model, null));
@@ -55,7 +67,16 @@ public interface IChecker<O, I extends IssueKindReportItem> extends IAbstractChe
   }
 
   abstract class AbstractRootChecker<I extends NodeReportItem> extends IChecker.AbstractChecker<SNode, I> {
-    public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapNodeChecker(final IChecker.AbstractNodeChecker<I> nodeChecker) {
+    public static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker<?, I> checker) {
+      if (checker instanceof IChecker.AbstractRootChecker) {
+        return (IChecker.AbstractRootChecker<I>) checker;
+      }
+      if (checker instanceof IChecker.AbstractNodeChecker) {
+        return IChecker.AbstractRootChecker.wrapToRootChecker((IChecker.AbstractNodeChecker<I>) checker);
+      }
+      throw new IllegalArgumentException("Checker " + checker.getClass() + " cannot be wrapped to " + IChecker.AbstractRootChecker.class.getName());
+    }
+    private static <I extends NodeReportItem> IChecker.AbstractRootChecker<I> wrapToRootChecker(final IChecker.AbstractNodeChecker<I> nodeChecker) {
       final IteratingChecker<SNode, SNode, I> skippingChecker = new IteratingChecker<SNode, SNode, I>(nodeChecker, new _FunctionTypes._return_P1_E0<IteratingChecker.CollectionIteratorWithProgress<SNode>, SNode>() {
         public IteratingChecker.CollectionIteratorWithProgress<SNode> invoke(SNode root) {
           List<SNode> toCheck = ListSequence.fromList(new ArrayList<SNode>());

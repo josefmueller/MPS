@@ -8546,11 +8546,11 @@
                                 </node>
                               </node>
                               <node concept="2YIFZM" id="6EV6$79Em43" role="33vP2m">
-                                <ref role="37wK5l" to="wsw7:320sejm8pZh" resolve="wrapRootChecker" />
                                 <ref role="1Pybhc" to="wsw7:3RAxiQnEFwn" resolve="IChecker.AbstractModelChecker" />
+                                <ref role="37wK5l" to="wsw7:3612de_wNZB" resolve="wrapToModelChecker" />
                                 <node concept="2YIFZM" id="6EV6$79Em44" role="37wK5m">
-                                  <ref role="37wK5l" to="wsw7:320sejm7kBI" resolve="wrapNodeChecker" />
                                   <ref role="1Pybhc" to="wsw7:3RAxiQnEF_M" resolve="IChecker.AbstractRootChecker" />
+                                  <ref role="37wK5l" to="wsw7:3612de_xJsP" resolve="wrapToRootChecker" />
                                   <node concept="10QFUN" id="6EV6$79Em45" role="37wK5m">
                                     <node concept="10QFUN" id="6EV6$79Em46" role="10QFUP">
                                       <node concept="2ShNRf" id="6EV6$79Em47" role="10QFUP">

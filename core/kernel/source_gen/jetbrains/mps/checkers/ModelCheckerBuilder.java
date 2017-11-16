@@ -98,22 +98,12 @@ public class ModelCheckerBuilder {
       IChecker<?, ? extends IssueKindReportItem> checker = it;
       if (checker instanceof IChecker.AbstractModuleChecker) {
         ListSequence.fromList(moduleCheckers).addElement((IChecker.AbstractModuleChecker<? extends IssueKindReportItem>) checker);
-        continue;
-      }
-      if (checker instanceof IChecker.AbstractModelChecker) {
-        ListSequence.fromList(modelCheckers).addElement((IChecker.AbstractModelChecker<? extends IssueKindReportItem>) checker);
-        continue;
-      }
-      if (checker instanceof IChecker.AbstractRootChecker) {
-        ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapRootChecker((IChecker.AbstractRootChecker<?>) checker));
-        continue;
-      }
-      if (checker instanceof IChecker.AbstractNodeChecker) {
-        ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapRootChecker(IChecker.AbstractRootChecker.wrapNodeChecker((IChecker.AbstractNodeChecker<?>) checker)));
-        continue;
-      }
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("IChecker implementor doesn't extend none of expected base classes: " + checker.getClass().getName());
+      } else if (checker instanceof IChecker.AbstractModelChecker || checker instanceof IChecker.AbstractRootChecker || checker instanceof IChecker.AbstractNodeChecker) {
+        ListSequence.fromList(modelCheckers).addElement(IChecker.AbstractModelChecker.wrapToModelChecker(checker));
+      } else {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("IChecker implementor doesn't extend none of expected base classes: " + checker.getClass().getName());
+        }
       }
     }
 
