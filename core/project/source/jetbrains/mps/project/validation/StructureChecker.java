@@ -42,25 +42,21 @@ import java.util.List;
 
 public class StructureChecker extends AbstractNodeCheckerInEditor implements IChecker<SNode, NodeReportItem> {
   private final boolean mySuppressErrors;
-  // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
-  // todo state behavior on a meeting and remove this hack
-  private final boolean myExcludeCardinalitiesInGenerator;
 
   private final boolean myCheckMissingRuntimeLanguage;
   private final boolean myCheckCardinalities;
   private final boolean myCheckBrokenReferences;
 
-  public StructureChecker(boolean suppressErrors, boolean excludeCardinalitiesInGenerator, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
+  public StructureChecker(boolean suppressErrors, boolean checkMissingRuntimeLanguage, boolean checkCardinalities,
                           boolean checkBrokenReferences) {
     mySuppressErrors = suppressErrors;
-    myExcludeCardinalitiesInGenerator = excludeCardinalitiesInGenerator;
     myCheckMissingRuntimeLanguage = checkMissingRuntimeLanguage;
     myCheckCardinalities = checkCardinalities;
     myCheckBrokenReferences = checkBrokenReferences;
   }
 
   public StructureChecker() {
-    this(true, false, true, true, true);
+    this(true, true, true, true);
   }
 
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
@@ -85,22 +81,12 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
 
   private void checkCardinalities(SNode node, LanguageErrorsCollector errorsCollector) {
     SConcept concept = node.getConcept();
-    @NotNull SModel model = node.getModel();
     for (SContainmentLink link : concept.getContainmentLinks()) {
       Collection<? extends SNode> children = IterableUtil.asCollection(node.getChildren(link));
       if (!link.isOptional() && children.isEmpty()) {
-
-        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
-          continue;
-        }
-
         errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())));
       }
       if (!link.isMultiple() && children.size() > 1) {
-        if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
-          continue;
-        }
-
         errorsCollector.addError(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())));
       }
     }
@@ -108,10 +94,6 @@ public class StructureChecker extends AbstractNodeCheckerInEditor implements ICh
       SReference reference = node.getReference(refLink);
       if (!refLink.isOptional()) {
         if (reference == null) {
-          if (myExcludeCardinalitiesInGenerator && SModelStereotype.isGeneratorModel(model)) {
-            continue;
-          }
-
           errorsCollector.addError(new ConceptFeatureCardinalityError(node, refLink, String.format("No reference in obligatory role %s", refLink.getName())));
         }
       }

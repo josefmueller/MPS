@@ -8555,11 +8555,8 @@
                                     <node concept="10QFUN" id="6EV6$79Em46" role="10QFUP">
                                       <node concept="2ShNRf" id="6EV6$79Em47" role="10QFUP">
                                         <node concept="1pGfFk" id="6EV6$79Em48" role="2ShVmc">
-                                          <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean,boolean,boolean,boolean,boolean)" resolve="StructureChecker" />
+                                          <ref role="37wK5l" to="6if8:~StructureChecker.&lt;init&gt;(boolean,boolean,boolean,boolean)" resolve="StructureChecker" />
                                           <node concept="3clFbT" id="6EV6$79Em49" role="37wK5m">
-                                            <property role="3clFbU" value="false" />
-                                          </node>
-                                          <node concept="3clFbT" id="6EV6$79Em4a" role="37wK5m">
                                             <property role="3clFbU" value="false" />
                                           </node>
                                           <node concept="3clFbT" id="6EV6$79Em4b" role="37wK5m">
