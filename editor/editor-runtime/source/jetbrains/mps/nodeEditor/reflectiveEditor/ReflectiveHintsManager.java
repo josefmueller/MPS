@@ -36,18 +36,20 @@ public class ReflectiveHintsManager {
       if (mpsProject instanceof MPSProject) {
         Project ideaProject = ((MPSProject) mpsProject).getProject();
         if (ReflectiveHintsForModelComponent.getInstance(ideaProject).shouldShowReflectiveEditor(model)) {
-          cellFactory.addCellContextHints(ReflectiveHint.REFLECTIVE.getHint());
+          ReflectiveHint.REFLECTIVE.addToCellFactory(cellFactory);
         }
       }
     }
   }
 
-  public static void propagateReflectiveHints(EditorCellFactory cellFactory, SRepository repository) {
-    CellContextState.getContextState(cellFactory.getCellContext()).propagateHintsForChildNodes(cellFactory);
+  public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
+    for (ReflectiveHint reflectiveHint : ReflectiveHint.values()) {
+      reflectiveHint.processForChild(cellFactory);
+    }
   }
 
   public static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {
-    return !CellContextState.getContextState(cellContext).forceShowRegularEditor();
+    return ReflectiveCellContextUtil.shouldShowReflectiveEditor(cellContext);
   }
 
   public static boolean isApplicable(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,

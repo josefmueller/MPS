@@ -55,12 +55,25 @@ class ReflectiveEditorAction {
 
   @NotNull
   private ReflectiveHintsAction getAction(EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes, SNode node) {
-    return isForManyNodes ? new ActionForSubtree(node, editorComponent, isReflective)
-                          : new ActionForNode(node, editorComponent, isReflective);
+    if (isForManyNodes) {
+      if (isReflective) {
+        return new MakeSubtreeReflectiveAction(node, editorComponent);
+      } else {
+        return new MakeSubtreeRegularAction(node, editorComponent);
+      }
+    } else {
+      if (isReflective) {
+        return new MakeNodeReflectiveAction(node, editorComponent);
+      } else {
+        return new MakeNodeRegularAction(node, editorComponent);
+      }
+    }
   }
 
   boolean isApplicable(AnActionEvent event) {
-    if (!myIsForManyNodes && myActions.size() > 1) { return false; }
+    if (!myIsForManyNodes && myActions.size() > 1) {
+      return false;
+    }
 
     boolean canMake = myActions.stream().anyMatch(ReflectiveHintsAction::isApplicable);
 
