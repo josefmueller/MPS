@@ -1362,7 +1362,7 @@
         <node concept="3F0ifn" id="3XP_kj6E2O7" role="3EZMnx">
           <property role="3F0ifm" value="child include same substitute menu twice" />
           <node concept="A1WHu" id="3XP_kj6EUEz" role="3vIgyS">
-            <ref role="A1WHt" node="1D1LJGC2ZMp" resolve="IncludeDifferentSubstituteMenus" />
+            <ref role="A1WHt" node="3XP_kj6E2VD" resolve="IncludeSameSubstituteMenuTwice" />
           </node>
         </node>
         <node concept="3F0ifn" id="3XP_kj6E2O8" role="3EZMnx">
@@ -1391,7 +1391,7 @@
         <node concept="3F0ifn" id="1D1LJGC2ZDD" role="3EZMnx">
           <property role="3F0ifm" value="child include different substitute menus" />
           <node concept="A1WHu" id="1D1LJGC2ZDE" role="3vIgyS">
-            <ref role="A1WHt" node="3XP_kj6E2VD" resolve="IncludeSameSubstituteMenuTwice" />
+            <ref role="A1WHt" node="1D1LJGC2ZMp" resolve="IncludeDifferentSubstituteMenus" />
           </node>
         </node>
         <node concept="3F0ifn" id="1D1LJGC2ZDA" role="3EZMnx">
