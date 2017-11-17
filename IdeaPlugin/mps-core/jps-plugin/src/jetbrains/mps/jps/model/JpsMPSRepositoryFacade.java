@@ -82,7 +82,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
   public static final UUID JDK_UUID = UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
-  private static final BaseMPSModuleOwner OWNER = new BaseMPSModuleOwner() {};
+  private static final BaseMPSModuleOwner OWNER = new BaseMPSModuleOwner();
 
   private Platform myPlatform;
   private MPSBaseLanguage myMPSBaseLanguage;

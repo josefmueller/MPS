@@ -51,7 +51,6 @@ import java.io.IOException;
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
-  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
 
   private static Environment CREATED_ENV;
 
