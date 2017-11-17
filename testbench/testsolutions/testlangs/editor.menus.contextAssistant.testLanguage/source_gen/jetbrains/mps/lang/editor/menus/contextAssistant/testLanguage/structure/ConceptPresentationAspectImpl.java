@@ -10,10 +10,25 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Child;
+  private ConceptPresentation props_Duplication_Parent;
+  private ConceptPresentation props_ISameMenuApplicable;
+  private ConceptPresentation props_IncludeDefaultAndNullMenu;
+  private ConceptPresentation props_IncludeDifferentMenusForDifferentNodes;
+  private ConceptPresentation props_IncludeDifferentMenusForSameNode;
+  private ConceptPresentation props_IncludeSameMenuForDifferentLocations;
+  private ConceptPresentation props_IncludeSameMenuForDifferentNodes;
+  private ConceptPresentation props_IncludeSameMenuTwiceForSameNode;
   private ConceptPresentation props_OtherSubconceptOfChild;
   private ConceptPresentation props_Parent;
   private ConceptPresentation props_ParentCollapsed;
+  private ConceptPresentation props_SubInterface1;
+  private ConceptPresentation props_SubInterface2;
+  private ConceptPresentation props_Subconcept;
   private ConceptPresentation props_SubconceptOfChild;
+  private ConceptPresentation props_SuperInterface;
+  private ConceptPresentation props_ToIncludeSubstituteMenu;
+  private ConceptPresentation props_WrapDifferentSubstituteMenus;
+  private ConceptPresentation props_WrapSameSubstituteMenuTwice;
 
   @Override
   @Nullable
@@ -27,6 +42,61 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Child = cpb.create();
         }
         return props_Child;
+      case LanguageConceptSwitch.Duplication_Parent:
+        if (props_Duplication_Parent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Duplication_Parent");
+          props_Duplication_Parent = cpb.create();
+        }
+        return props_Duplication_Parent;
+      case LanguageConceptSwitch.ISameMenuApplicable:
+        if (props_ISameMenuApplicable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ISameMenuApplicable = cpb.create();
+        }
+        return props_ISameMenuApplicable;
+      case LanguageConceptSwitch.IncludeDefaultAndNullMenu:
+        if (props_IncludeDefaultAndNullMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeDefaultAndNullMenu");
+          props_IncludeDefaultAndNullMenu = cpb.create();
+        }
+        return props_IncludeDefaultAndNullMenu;
+      case LanguageConceptSwitch.IncludeDifferentMenusForDifferentNodes:
+        if (props_IncludeDifferentMenusForDifferentNodes == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeDifferentMenusForDifferentNodes");
+          props_IncludeDifferentMenusForDifferentNodes = cpb.create();
+        }
+        return props_IncludeDifferentMenusForDifferentNodes;
+      case LanguageConceptSwitch.IncludeDifferentMenusForSameNode:
+        if (props_IncludeDifferentMenusForSameNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeDifferentMenusForSameNode");
+          props_IncludeDifferentMenusForSameNode = cpb.create();
+        }
+        return props_IncludeDifferentMenusForSameNode;
+      case LanguageConceptSwitch.IncludeSameMenuForDifferentLocations:
+        if (props_IncludeSameMenuForDifferentLocations == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeSameMenuForDifferentLocations");
+          props_IncludeSameMenuForDifferentLocations = cpb.create();
+        }
+        return props_IncludeSameMenuForDifferentLocations;
+      case LanguageConceptSwitch.IncludeSameMenuForDifferentNodes:
+        if (props_IncludeSameMenuForDifferentNodes == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeSameMenuForDifferentNodes");
+          props_IncludeSameMenuForDifferentNodes = cpb.create();
+        }
+        return props_IncludeSameMenuForDifferentNodes;
+      case LanguageConceptSwitch.IncludeSameMenuTwiceForSameNode:
+        if (props_IncludeSameMenuTwiceForSameNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeSameMenuTwiceForSameNode");
+          props_IncludeSameMenuTwiceForSameNode = cpb.create();
+        }
+        return props_IncludeSameMenuTwiceForSameNode;
       case LanguageConceptSwitch.OtherSubconceptOfChild:
         if (props_OtherSubconceptOfChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -48,6 +118,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ParentCollapsed = cpb.create();
         }
         return props_ParentCollapsed;
+      case LanguageConceptSwitch.SubInterface1:
+        if (props_SubInterface1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubInterface1 = cpb.create();
+        }
+        return props_SubInterface1;
+      case LanguageConceptSwitch.SubInterface2:
+        if (props_SubInterface2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubInterface2 = cpb.create();
+        }
+        return props_SubInterface2;
+      case LanguageConceptSwitch.Subconcept:
+        if (props_Subconcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Subconcept");
+          props_Subconcept = cpb.create();
+        }
+        return props_Subconcept;
       case LanguageConceptSwitch.SubconceptOfChild:
         if (props_SubconceptOfChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -55,6 +144,33 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SubconceptOfChild = cpb.create();
         }
         return props_SubconceptOfChild;
+      case LanguageConceptSwitch.SuperInterface:
+        if (props_SuperInterface == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SuperInterface = cpb.create();
+        }
+        return props_SuperInterface;
+      case LanguageConceptSwitch.ToIncludeSubstituteMenu:
+        if (props_ToIncludeSubstituteMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ToIncludeSubstituteMenu");
+          props_ToIncludeSubstituteMenu = cpb.create();
+        }
+        return props_ToIncludeSubstituteMenu;
+      case LanguageConceptSwitch.WrapDifferentSubstituteMenus:
+        if (props_WrapDifferentSubstituteMenus == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("WrapDifferentSubstituteMenus");
+          props_WrapDifferentSubstituteMenus = cpb.create();
+        }
+        return props_WrapDifferentSubstituteMenus;
+      case LanguageConceptSwitch.WrapSameSubstituteMenuTwice:
+        if (props_WrapSameSubstituteMenuTwice == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("WrapSameSubstituteMenuTwice");
+          props_WrapSameSubstituteMenuTwice = cpb.create();
+        }
+        return props_WrapSameSubstituteMenuTwice;
     }
     return null;
   }
