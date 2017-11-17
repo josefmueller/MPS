@@ -102,8 +102,8 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="cb6d5703-7c8e-46a9-b993-c1373dc0942f" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage">
-      <concept id="1892012100483551196" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" flags="ng" index="Mks$B" />
-      <concept id="1892012100483553581" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" flags="ng" index="MktZm" />
+      <concept id="1892012100483551196" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDifferentMenus" flags="ng" index="Mks$B" />
+      <concept id="1892012100483553581" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapDifferentMenus" flags="ng" index="MktZm" />
       <concept id="8998492695591110495" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentToReference" flags="ng" index="16hHoL">
         <child id="8998492695591110508" name="children" index="16hHo2" />
       </concept>
@@ -142,7 +142,7 @@
       </concept>
       <concept id="8998492695587451561" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2" flags="ng" index="16zIf7" />
       <concept id="8998492695587451568" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference" flags="ng" index="16zIfu" />
-      <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
+      <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
       <concept id="368966953912091576" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialChildAttribute" flags="ng" index="1oPLr5" />
       <concept id="3262439767570552768" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraints" flags="ng" index="3qo1hI" />
       <concept id="8629363476786100059" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialSubChild" flags="ng" index="3CkhW7" />
@@ -157,8 +157,8 @@
       </concept>
       <concept id="9174907873153018649" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition2" flags="ng" index="3HqV$0" />
       <concept id="9174907873153018648" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition1" flags="ng" index="3HqV$1" />
-      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildSubconcept" flags="ng" index="3TPuk3" />
-      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_Parent" flags="ng" index="3TPulU">
+      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Subconcept" flags="ng" index="3TPuk3" />
+      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Parent" flags="ng" index="3TPulU">
         <child id="1892012100483553523" name="childIncludeDifferentMenus" index="MktS8" />
         <child id="1892012100483557462" name="childWrapDifferentMenus" index="MkuUH" />
         <child id="4695456347262394022" name="childIncludeDefaultAndNullMenu" index="3lL08d" />
@@ -166,8 +166,8 @@
         <child id="4572725119287325341" name="childIncludeSameMenuTwice" index="3TPuvp" />
         <child id="4572725119287325338" name="childWrapSameMenuTwice" index="3TPuvu" />
       </concept>
-      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" flags="ng" index="3TPunp" />
-      <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" flags="ng" index="3TPunu" />
+      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapSameMenuTwice" flags="ng" index="3TPunp" />
+      <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeSameMenuTwice" flags="ng" index="3TPunu" />
       <concept id="705057939849542068" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1" flags="ng" index="3V12v1" />
       <concept id="705057939849542067" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2" flags="ng" index="3V12v6" />
       <concept id="705057939849506459" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints" flags="ng" index="3V1b3I">
@@ -3351,11 +3351,11 @@
     </node>
     <node concept="3TPulU" id="3XP_kj6D$Dg" role="LiZbd">
       <node concept="3TPunp" id="3XP_kj6D$Iy" role="3TPuvu">
-        <node concept="LIFWc" id="44DBaIkX0qt" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2DpZ" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="61" />
-          <property role="p6zMs" value="61" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
@@ -3417,22 +3417,22 @@
     </node>
     <node concept="3TPulU" id="44DBaIkVJ_C" role="LiRBU">
       <node concept="3lL0kD" id="44DBaIkW3O_" role="3lL08d">
-        <node concept="LIFWc" id="KdAJwzlfrN" role="lGtFl">
-          <property role="LIFWa" value="10" />
+        <node concept="LIFWc" id="7Bx1T8b2ySQ" role="lGtFl">
+          <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="70" />
+          <property role="p6zMs" value="46" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
     </node>
     <node concept="3TPulU" id="44DBaIkVJ_E" role="LiZbd">
       <node concept="3lL0kD" id="KdAJwzlfQE" role="3lL08d">
-        <node concept="LIFWc" id="KdAJwzlghx" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2zIS" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="70" />
-          <property role="p6zMs" value="70" />
+          <property role="p6zMq" value="46" />
+          <property role="p6zMs" value="46" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
@@ -3503,11 +3503,11 @@
     </node>
     <node concept="3TPulU" id="3XP_kj6CE_P" role="LiZbd">
       <node concept="3TPuk3" id="3XP_kj6CE_T" role="3TPukq">
-        <node concept="LIFWc" id="3XP_kj6CE_V" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2BIT" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="51" />
-          <property role="p6zMs" value="51" />
+          <property role="p6zMq" value="27" />
+          <property role="p6zMs" value="27" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
@@ -3578,11 +3578,11 @@
     </node>
     <node concept="3TPulU" id="3XP_kj6Dio0" role="LiZbd">
       <node concept="3TPunu" id="3XP_kj6DiAV" role="3TPuvp">
-        <node concept="LIFWc" id="44DBaIkWPO8" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2ATr" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="64" />
-          <property role="p6zMs" value="64" />
+          <property role="p6zMq" value="40" />
+          <property role="p6zMs" value="40" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
@@ -3653,11 +3653,11 @@
     </node>
     <node concept="3TPulU" id="1D1LJGC4jvF" role="LiZbd">
       <node concept="MktZm" id="1D1LJGC4$r_" role="MkuUH">
-        <node concept="LIFWc" id="1D1LJGC4$Qq" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2C$x" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="61" />
-          <property role="p6zMs" value="61" />
+          <property role="p6zMq" value="37" />
+          <property role="p6zMs" value="37" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
@@ -3728,11 +3728,11 @@
     </node>
     <node concept="3TPulU" id="1D1LJGC4$QO" role="LiZbd">
       <node concept="Mks$B" id="1D1LJGC4AwJ" role="MktS8">
-        <node concept="LIFWc" id="1D1LJGC4AV$" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2$$W" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="64" />
-          <property role="p6zMs" value="64" />
+          <property role="p6zMq" value="40" />
+          <property role="p6zMs" value="40" />
           <property role="LIFWd" value="constant_0" />
         </node>
       </node>
