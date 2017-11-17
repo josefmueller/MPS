@@ -64,16 +64,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteSubChildSmartReference;
   private ConceptPresentation props_TestSubstituteToWrapFromSubstituteMenu;
   private ConceptPresentation props_TestSubstituteToWrapFromTransformMenu;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildSubconcept;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_Interface;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_Parent;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_SubInterface1;
-  private ConceptPresentation props_TestSubstitute_DuplicationMenu_SubInterface2;
+  private ConceptPresentation props_TestSubstitute_IncludeDefaultAndNullMenu;
+  private ConceptPresentation props_TestSubstitute_IncludeDifferentMenus;
+  private ConceptPresentation props_TestSubstitute_IncludeSameMenuTwice;
+  private ConceptPresentation props_TestSubstitute_Interface;
+  private ConceptPresentation props_TestSubstitute_Parent;
+  private ConceptPresentation props_TestSubstitute_SubInterface1;
+  private ConceptPresentation props_TestSubstitute_SubInterface2;
+  private ConceptPresentation props_TestSubstitute_Subconcept;
+  private ConceptPresentation props_TestSubstitute_WrapDifferentMenus;
+  private ConceptPresentation props_TestSubstitute_WrapSameMenuTwice;
 
   @Override
   @Nullable
@@ -461,73 +461,73 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteToWrapFromTransformMenu = cpb.create();
         }
         return props_TestSubstituteToWrapFromTransformMenu;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu:
-        if (props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu == null) {
+      case LanguageConceptSwitch.TestSubstitute_IncludeDefaultAndNullMenu:
+        if (props_TestSubstitute_IncludeDefaultAndNullMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu");
-          props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu = cpb.create();
+          cpb.rawPresentation("TestSubstitute_IncludeDefaultAndNullMenu");
+          props_TestSubstitute_IncludeDefaultAndNullMenu = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus:
-        if (props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus == null) {
+        return props_TestSubstitute_IncludeDefaultAndNullMenu;
+      case LanguageConceptSwitch.TestSubstitute_IncludeDifferentMenus:
+        if (props_TestSubstitute_IncludeDifferentMenus == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus");
-          props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus = cpb.create();
+          cpb.rawPresentation("TestSubstitute_IncludeDifferentMenus");
+          props_TestSubstitute_IncludeDifferentMenus = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice:
-        if (props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice == null) {
+        return props_TestSubstitute_IncludeDifferentMenus;
+      case LanguageConceptSwitch.TestSubstitute_IncludeSameMenuTwice:
+        if (props_TestSubstitute_IncludeSameMenuTwice == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice");
-          props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice = cpb.create();
+          cpb.rawPresentation("TestSubstitute_IncludeSameMenuTwice");
+          props_TestSubstitute_IncludeSameMenuTwice = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildSubconcept:
-        if (props_TestSubstitute_DuplicationMenu_ChildSubconcept == null) {
+        return props_TestSubstitute_IncludeSameMenuTwice;
+      case LanguageConceptSwitch.TestSubstitute_Interface:
+        if (props_TestSubstitute_Interface == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildSubconcept");
-          props_TestSubstitute_DuplicationMenu_ChildSubconcept = cpb.create();
+          props_TestSubstitute_Interface = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildSubconcept;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus:
-        if (props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus == null) {
+        return props_TestSubstitute_Interface;
+      case LanguageConceptSwitch.TestSubstitute_Parent:
+        if (props_TestSubstitute_Parent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus");
-          props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus = cpb.create();
+          cpb.rawPresentation("TestSubstitute_Parent");
+          props_TestSubstitute_Parent = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice:
-        if (props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice == null) {
+        return props_TestSubstitute_Parent;
+      case LanguageConceptSwitch.TestSubstitute_SubInterface1:
+        if (props_TestSubstitute_SubInterface1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice");
-          props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice = cpb.create();
+          props_TestSubstitute_SubInterface1 = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Interface:
-        if (props_TestSubstitute_DuplicationMenu_Interface == null) {
+        return props_TestSubstitute_SubInterface1;
+      case LanguageConceptSwitch.TestSubstitute_SubInterface2:
+        if (props_TestSubstitute_SubInterface2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_TestSubstitute_DuplicationMenu_Interface = cpb.create();
+          props_TestSubstitute_SubInterface2 = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_Interface;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Parent:
-        if (props_TestSubstitute_DuplicationMenu_Parent == null) {
+        return props_TestSubstitute_SubInterface2;
+      case LanguageConceptSwitch.TestSubstitute_Subconcept:
+        if (props_TestSubstitute_Subconcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestSubstitute_DuplicationMenu_Parent");
-          props_TestSubstitute_DuplicationMenu_Parent = cpb.create();
+          cpb.rawPresentation("TestSubstitute_Subconcept");
+          props_TestSubstitute_Subconcept = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_Parent;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface1:
-        if (props_TestSubstitute_DuplicationMenu_SubInterface1 == null) {
+        return props_TestSubstitute_Subconcept;
+      case LanguageConceptSwitch.TestSubstitute_WrapDifferentMenus:
+        if (props_TestSubstitute_WrapDifferentMenus == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_TestSubstitute_DuplicationMenu_SubInterface1 = cpb.create();
+          cpb.rawPresentation("TestSubstitute_WrapDifferentMenus");
+          props_TestSubstitute_WrapDifferentMenus = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_SubInterface1;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface2:
-        if (props_TestSubstitute_DuplicationMenu_SubInterface2 == null) {
+        return props_TestSubstitute_WrapDifferentMenus;
+      case LanguageConceptSwitch.TestSubstitute_WrapSameMenuTwice:
+        if (props_TestSubstitute_WrapSameMenuTwice == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_TestSubstitute_DuplicationMenu_SubInterface2 = cpb.create();
+          cpb.rawPresentation("TestSubstitute_WrapSameMenuTwice");
+          props_TestSubstitute_WrapSameMenuTwice = cpb.create();
         }
-        return props_TestSubstitute_DuplicationMenu_SubInterface2;
+        return props_TestSubstitute_WrapSameMenuTwice;
     }
     return null;
   }

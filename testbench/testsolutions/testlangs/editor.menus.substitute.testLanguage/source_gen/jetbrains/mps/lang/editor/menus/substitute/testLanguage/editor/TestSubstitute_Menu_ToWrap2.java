@@ -26,7 +26,7 @@ public class TestSubstitute_Menu_ToWrap2 extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstitute_Menu_ToWrap2.SMP_Action_re1x1c_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstitute_Menu_ToWrap2.SMP_Action_re1x1c_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapDifferentMenus")));
     return result;
   }
 
@@ -71,7 +71,7 @@ public class TestSubstitute_Menu_ToWrap2 extends SubstituteMenuBase {
       private final SubstituteMenuContext _context;
       private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+        super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapDifferentMenus"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
       }
 
@@ -82,7 +82,7 @@ public class TestSubstitute_Menu_ToWrap2 extends SubstituteMenuBase {
       @Nullable
       @Override
       public SNode createNode(@NotNull String pattern) {
-        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus"));
+        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapDifferentMenus"));
       }
 
       @Override

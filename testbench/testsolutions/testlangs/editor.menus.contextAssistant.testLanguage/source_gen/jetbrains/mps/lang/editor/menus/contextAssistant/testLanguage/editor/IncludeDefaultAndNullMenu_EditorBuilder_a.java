@@ -13,11 +13,11 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 
-/*package*/ class TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class IncludeDefaultAndNullMenu_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public IncludeDefaultAndNullMenu_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -29,15 +29,15 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_50xods_a();
+    return createConstant_1naoec_a();
   }
 
-  private EditorCell createConstant_50xods_a() {
+  private EditorCell createConstant_1naoec_a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include default menu and null menu");
-    editorCell.setCellId("Constant_50xods_a");
+    editorCell.setCellId("Constant_1naoec_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeDefaultAndNullMenu"));
+    editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x41299cab94e578eeL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeDefaultAndNullMenu"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.IncludeDefaultAndNullMenu"));
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
     return editorCell;

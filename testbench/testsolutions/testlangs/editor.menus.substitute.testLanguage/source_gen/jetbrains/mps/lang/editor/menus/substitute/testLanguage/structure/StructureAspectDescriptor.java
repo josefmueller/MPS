@@ -67,16 +67,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestSubstituteSubChildSmartReference = createDescriptorForTestSubstituteSubChildSmartReference();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteToWrapFromSubstituteMenu = createDescriptorForTestSubstituteToWrapFromSubstituteMenu();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteToWrapFromTransformMenu = createDescriptorForTestSubstituteToWrapFromTransformMenu();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu = createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus = createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice = createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildSubconcept = createDescriptorForTestSubstitute_DuplicationMenu_ChildSubconcept();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildWrapDifferentMenus = createDescriptorForTestSubstitute_DuplicationMenu_ChildWrapDifferentMenus();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice = createDescriptorForTestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_Interface = createDescriptorForTestSubstitute_DuplicationMenu_Interface();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_Parent = createDescriptorForTestSubstitute_DuplicationMenu_Parent();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_SubInterface1 = createDescriptorForTestSubstitute_DuplicationMenu_SubInterface1();
-  /*package*/ final ConceptDescriptor myConceptTestSubstitute_DuplicationMenu_SubInterface2 = createDescriptorForTestSubstitute_DuplicationMenu_SubInterface2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_IncludeDefaultAndNullMenu = createDescriptorForTestSubstitute_IncludeDefaultAndNullMenu();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_IncludeDifferentMenus = createDescriptorForTestSubstitute_IncludeDifferentMenus();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_IncludeSameMenuTwice = createDescriptorForTestSubstitute_IncludeSameMenuTwice();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_Interface = createDescriptorForTestSubstitute_Interface();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_Parent = createDescriptorForTestSubstitute_Parent();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_SubInterface1 = createDescriptorForTestSubstitute_SubInterface1();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_SubInterface2 = createDescriptorForTestSubstitute_SubInterface2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_Subconcept = createDescriptorForTestSubstitute_Subconcept();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_WrapDifferentMenus = createDescriptorForTestSubstitute_WrapDifferentMenus();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitute_WrapSameMenuTwice = createDescriptorForTestSubstitute_WrapSameMenuTwice();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -85,7 +85,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstitituteAbstractChildAmbigousPosition, myConceptTestSubstitituteAbstractSubChildAmbigousPosition, myConceptTestSubstitituteChildAmbigousPosition1, myConceptTestSubstitituteChildAmbigousPosition2, myConceptTestSubstitituteChildOfWrapper, myConceptTestSubstitituteParentOfWrapper, myConceptTestSubstitituteSubChildAmbigousPosition1, myConceptTestSubstitituteSubChildAmbigousPosition2, myConceptTestSubstitituteWrapper, myConceptTestSubstituteAbstractChildWithConstraints, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteChildToSpecialize, myConceptTestSubstituteChildWithConstraints1, myConceptTestSubstituteChildWithConstraints2, myConceptTestSubstituteChildWithConstraints3, myConceptTestSubstituteChildWithConstraintsAbstractWrapper, myConceptTestSubstituteChildWithConstraintsToWrap, myConceptTestSubstituteChildWithConstraintsWrapper1, myConceptTestSubstituteChildWithConstraintsWrapper2, myConceptTestSubstituteChildWithConstraintsWrapper3, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteExceptionActionCanSubstituteChild, myConceptTestSubstituteExceptionActionDescriptionTextChild, myConceptTestSubstituteExceptionActionIconChild, myConceptTestSubstituteExceptionActionMatchingTextChild, myConceptTestSubstituteExceptionActionTypeChild, myConceptTestSubstituteExceptionConceptListChild, myConceptTestSubstituteExceptionGroupChild, myConceptTestSubstituteExceptionIncludeMenuChild, myConceptTestSubstituteExceptionParameterizedChild, myConceptTestSubstituteExceptionParent, myConceptTestSubstituteExceptionReferenceDescriptionTextChild, myConceptTestSubstituteExceptionReferenceMatchingTextChild, myConceptTestSubstituteExceptionReferenceVisibleMatchingTextChild, myConceptTestSubstituteExceptionSubconceptsChild, myConceptTestSubstituteExceptionSubconceptsSubChild, myConceptTestSubstituteExceptionWrapMenuChild, myConceptTestSubstituteGrandChildWithConstraints, myConceptTestSubstituteGrandChildWithConstraintsProhibited, myConceptTestSubstituteNotSubconceptOfChild, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteParentWithConstraints, myConceptTestSubstituteSpecialChild, myConceptTestSubstituteSpecialChildAttribute, myConceptTestSubstituteSpecialParent, myConceptTestSubstituteSpecialSubChild, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteToWrapFromSubstituteMenu, myConceptTestSubstituteToWrapFromTransformMenu, myConceptTestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu, myConceptTestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus, myConceptTestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice, myConceptTestSubstitute_DuplicationMenu_ChildSubconcept, myConceptTestSubstitute_DuplicationMenu_ChildWrapDifferentMenus, myConceptTestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice, myConceptTestSubstitute_DuplicationMenu_Interface, myConceptTestSubstitute_DuplicationMenu_Parent, myConceptTestSubstitute_DuplicationMenu_SubInterface1, myConceptTestSubstitute_DuplicationMenu_SubInterface2);
+    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstitituteAbstractChildAmbigousPosition, myConceptTestSubstitituteAbstractSubChildAmbigousPosition, myConceptTestSubstitituteChildAmbigousPosition1, myConceptTestSubstitituteChildAmbigousPosition2, myConceptTestSubstitituteChildOfWrapper, myConceptTestSubstitituteParentOfWrapper, myConceptTestSubstitituteSubChildAmbigousPosition1, myConceptTestSubstitituteSubChildAmbigousPosition2, myConceptTestSubstitituteWrapper, myConceptTestSubstituteAbstractChildWithConstraints, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteChildToSpecialize, myConceptTestSubstituteChildWithConstraints1, myConceptTestSubstituteChildWithConstraints2, myConceptTestSubstituteChildWithConstraints3, myConceptTestSubstituteChildWithConstraintsAbstractWrapper, myConceptTestSubstituteChildWithConstraintsToWrap, myConceptTestSubstituteChildWithConstraintsWrapper1, myConceptTestSubstituteChildWithConstraintsWrapper2, myConceptTestSubstituteChildWithConstraintsWrapper3, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteExceptionActionCanSubstituteChild, myConceptTestSubstituteExceptionActionDescriptionTextChild, myConceptTestSubstituteExceptionActionIconChild, myConceptTestSubstituteExceptionActionMatchingTextChild, myConceptTestSubstituteExceptionActionTypeChild, myConceptTestSubstituteExceptionConceptListChild, myConceptTestSubstituteExceptionGroupChild, myConceptTestSubstituteExceptionIncludeMenuChild, myConceptTestSubstituteExceptionParameterizedChild, myConceptTestSubstituteExceptionParent, myConceptTestSubstituteExceptionReferenceDescriptionTextChild, myConceptTestSubstituteExceptionReferenceMatchingTextChild, myConceptTestSubstituteExceptionReferenceVisibleMatchingTextChild, myConceptTestSubstituteExceptionSubconceptsChild, myConceptTestSubstituteExceptionSubconceptsSubChild, myConceptTestSubstituteExceptionWrapMenuChild, myConceptTestSubstituteGrandChildWithConstraints, myConceptTestSubstituteGrandChildWithConstraintsProhibited, myConceptTestSubstituteNotSubconceptOfChild, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteParentWithConstraints, myConceptTestSubstituteSpecialChild, myConceptTestSubstituteSpecialChildAttribute, myConceptTestSubstituteSpecialParent, myConceptTestSubstituteSpecialSubChild, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteToWrapFromSubstituteMenu, myConceptTestSubstituteToWrapFromTransformMenu, myConceptTestSubstitute_IncludeDefaultAndNullMenu, myConceptTestSubstitute_IncludeDifferentMenus, myConceptTestSubstitute_IncludeSameMenuTwice, myConceptTestSubstitute_Interface, myConceptTestSubstitute_Parent, myConceptTestSubstitute_SubInterface1, myConceptTestSubstitute_SubInterface2, myConceptTestSubstitute_Subconcept, myConceptTestSubstitute_WrapDifferentMenus, myConceptTestSubstitute_WrapSameMenuTwice);
   }
 
   @Override
@@ -202,26 +202,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestSubstituteToWrapFromSubstituteMenu;
       case LanguageConceptSwitch.TestSubstituteToWrapFromTransformMenu:
         return myConceptTestSubstituteToWrapFromTransformMenu;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu:
-        return myConceptTestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus:
-        return myConceptTestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice:
-        return myConceptTestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildSubconcept:
-        return myConceptTestSubstitute_DuplicationMenu_ChildSubconcept;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus:
-        return myConceptTestSubstitute_DuplicationMenu_ChildWrapDifferentMenus;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice:
-        return myConceptTestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Interface:
-        return myConceptTestSubstitute_DuplicationMenu_Interface;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_Parent:
-        return myConceptTestSubstitute_DuplicationMenu_Parent;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface1:
-        return myConceptTestSubstitute_DuplicationMenu_SubInterface1;
-      case LanguageConceptSwitch.TestSubstitute_DuplicationMenu_SubInterface2:
-        return myConceptTestSubstitute_DuplicationMenu_SubInterface2;
+      case LanguageConceptSwitch.TestSubstitute_IncludeDefaultAndNullMenu:
+        return myConceptTestSubstitute_IncludeDefaultAndNullMenu;
+      case LanguageConceptSwitch.TestSubstitute_IncludeDifferentMenus:
+        return myConceptTestSubstitute_IncludeDifferentMenus;
+      case LanguageConceptSwitch.TestSubstitute_IncludeSameMenuTwice:
+        return myConceptTestSubstitute_IncludeSameMenuTwice;
+      case LanguageConceptSwitch.TestSubstitute_Interface:
+        return myConceptTestSubstitute_Interface;
+      case LanguageConceptSwitch.TestSubstitute_Parent:
+        return myConceptTestSubstitute_Parent;
+      case LanguageConceptSwitch.TestSubstitute_SubInterface1:
+        return myConceptTestSubstitute_SubInterface1;
+      case LanguageConceptSwitch.TestSubstitute_SubInterface2:
+        return myConceptTestSubstitute_SubInterface2;
+      case LanguageConceptSwitch.TestSubstitute_Subconcept:
+        return myConceptTestSubstitute_Subconcept;
+      case LanguageConceptSwitch.TestSubstitute_WrapDifferentMenus:
+        return myConceptTestSubstitute_WrapDifferentMenus;
+      case LanguageConceptSwitch.TestSubstitute_WrapSameMenuTwice:
+        return myConceptTestSubstitute_WrapSameMenuTwice;
       default:
         return null;
     }
@@ -662,52 +662,32 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8292814565107675822");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x41299cab94ed9982L);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_IncludeDefaultAndNullMenu() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_IncludeDefaultAndNullMenu", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x41299cab94ed9982L);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4695456347262392706");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb28100fdcL);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_IncludeDifferentMenus() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_IncludeDifferentMenus", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb28100fdcL);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/1892012100483551196");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709aL);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_IncludeSameMenuTwice() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_IncludeSameMenuTwice", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709aL);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324826");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildSubconcept() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildSubconcept", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07047L);
-    b.class_(false, false, false);
-    b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07041L);
-    b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07042L);
-    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324743");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildWrapDifferentMenus() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL);
-    b.class_(false, false, false);
-    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/1892012100483553581");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709dL);
-    b.class_(false, false, false);
-    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324829");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_Interface() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_Interface", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07040L);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_Interface() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_Interface", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07040L);
     b.interface_();
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324736");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_Parent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_Parent", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0703eL);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_Parent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_Parent", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0703eL);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324734");
     b.aggregate("childSubconcept", 0x3f759544c6a0705eL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07040L).optional(true).ordered(true).multiple(false).origin("4572725119287324766").done();
@@ -718,18 +698,38 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("childWrapDifferentMenus", 0x1a41c6fb28102856L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL).optional(true).ordered(true).multiple(false).origin("1892012100483557462").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_SubInterface1() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_SubInterface1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07041L);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_SubInterface1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_SubInterface1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07041L);
     b.interface_();
     b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07040L);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324737");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstitute_DuplicationMenu_SubInterface2() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_DuplicationMenu_SubInterface2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07042L);
+  private static ConceptDescriptor createDescriptorForTestSubstitute_SubInterface2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_SubInterface2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07042L);
     b.interface_();
     b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07040L);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324738");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitute_Subconcept() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_Subconcept", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07047L);
+    b.class_(false, false, false);
+    b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07041L);
+    b.parent(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a07042L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324743");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitute_WrapDifferentMenus() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_WrapDifferentMenus", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x1a41c6fb2810192dL);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/1892012100483553581");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitute_WrapSameMenuTwice() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitute_WrapSameMenuTwice", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x3f759544c6a0709dL);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4572725119287324829");
     return b.create();
   }
 }

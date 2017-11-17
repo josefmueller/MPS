@@ -2325,14 +2325,14 @@
       </node>
     </node>
     <node concept="3TPulU" id="3XP_kj6ENGh" role="LiRBU">
-      <node concept="3TPunu" id="3XP_kj6ENGm" role="3TOBOl" />
-      <node concept="LIFWc" id="1D1LJGC3Txz" role="lGtFl">
+      <node concept="LIFWc" id="7Bx1T8b2M8Z" role="lGtFl">
         <property role="LIFWa" value="0" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_vgkltr_kb2a" />
+        <property role="LIFWd" value="Constant_kqu7x4_kb2a" />
       </node>
+      <node concept="3TPunu" id="3XP_kj6ENGm" role="3TOBOl" />
     </node>
   </node>
   <node concept="LiM7Y" id="3XP_kj6Eqgu">
@@ -2439,433 +2439,6 @@
           <property role="p6zMs" value="0" />
           <property role="LIFWd" value="constant_0" />
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1D1LJGC3f_Y">
-    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_WrapDifferentSubstituteMenus" />
-    <property role="3GE5qa" value="duplication" />
-    <node concept="3clFbS" id="1D1LJGC3f_Z" role="LjaKd">
-      <node concept="3clFbF" id="1D1LJGC3fA0" role="3cqZAp">
-        <node concept="2YIFZM" id="1D1LJGC3fA1" role="3clFbG">
-          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-          <node concept="1bVj0M" id="1D1LJGC3fA2" role="37wK5m">
-            <node concept="3clFbS" id="1D1LJGC3fA3" role="1bW5cS">
-              <node concept="3cpWs8" id="1D1LJGC3fA4" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC3fA5" role="3cpWs9">
-                  <property role="TrG5h" value="editorContext" />
-                  <node concept="3uibUv" id="1D1LJGC3fA6" role="1tU5fm">
-                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC3fA7" role="33vP2m">
-                    <node concept="369mXd" id="1D1LJGC3fA8" role="2Oq$k0" />
-                    <node concept="liA8E" id="1D1LJGC3fA9" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="1D1LJGC3fAa" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC3fAb" role="3cpWs9">
-                  <property role="TrG5h" value="contextAssistantManager" />
-                  <node concept="3uibUv" id="1D1LJGC3fAc" role="1tU5fm">
-                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC3fAd" role="33vP2m">
-                    <node concept="37vLTw" id="1D1LJGC3fAe" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1D1LJGC3fA5" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC3fAf" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="1D1LJGC3fAg" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC3fAh" role="3clFbG">
-                  <node concept="37vLTw" id="1D1LJGC3fAi" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC3fAj" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC3fAk" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC3fAl" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC3fAm" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC3fAn" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC3fAo" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC3fAp" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC3fAq" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC3fAr" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3vwNmj" id="1D1LJGC3fAs" role="3cqZAp">
-                <node concept="3clFbC" id="1D1LJGC3fAt" role="3vwVQn">
-                  <node concept="2OqwBi" id="1D1LJGC3fAu" role="3uHU7B">
-                    <node concept="2OqwBi" id="1D1LJGC3fAv" role="2Oq$k0">
-                      <node concept="37vLTw" id="1D1LJGC3fAw" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
-                      </node>
-                      <node concept="liA8E" id="1D1LJGC3fAx" role="2OqNvi">
-                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC3fAy" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                    </node>
-                  </node>
-                  <node concept="3cmrfG" id="1D1LJGC3fAz" role="3uHU7w">
-                    <property role="3cmrfH" value="2" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3TPulU" id="1D1LJGC3fA$" role="LiRBU">
-      <node concept="Mjl1e" id="1D1LJGC3uSu" role="MjdYU">
-        <node concept="LIFWc" id="1D1LJGC3vqa" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="constant_0" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1D1LJGC2dBY">
-    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentMenusForDifferentNodes" />
-    <property role="3GE5qa" value="duplication" />
-    <node concept="3clFbS" id="1D1LJGC2dBZ" role="LjaKd">
-      <node concept="3clFbF" id="1D1LJGC2dC0" role="3cqZAp">
-        <node concept="2YIFZM" id="1D1LJGC2dC1" role="3clFbG">
-          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-          <node concept="1bVj0M" id="1D1LJGC2dC2" role="37wK5m">
-            <node concept="3clFbS" id="1D1LJGC2dC3" role="1bW5cS">
-              <node concept="3cpWs8" id="1D1LJGC2dC4" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC2dC5" role="3cpWs9">
-                  <property role="TrG5h" value="editorContext" />
-                  <node concept="3uibUv" id="1D1LJGC2dC6" role="1tU5fm">
-                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC2dC7" role="33vP2m">
-                    <node concept="369mXd" id="1D1LJGC2dC8" role="2Oq$k0" />
-                    <node concept="liA8E" id="1D1LJGC2dC9" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="1D1LJGC2dCa" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC2dCb" role="3cpWs9">
-                  <property role="TrG5h" value="contextAssistantManager" />
-                  <node concept="3uibUv" id="1D1LJGC2dCc" role="1tU5fm">
-                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC2dCd" role="33vP2m">
-                    <node concept="37vLTw" id="1D1LJGC2dCe" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1D1LJGC2dC5" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC2dCf" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="1D1LJGC2dCg" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC2dCh" role="3clFbG">
-                  <node concept="37vLTw" id="1D1LJGC2dCi" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC2dCj" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC2dCk" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC2dCl" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC2dCm" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC2dCn" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC2dCo" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC2dCp" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC2dCq" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC2dCr" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3vwNmj" id="1D1LJGC2dCs" role="3cqZAp">
-                <node concept="3clFbC" id="1D1LJGC2dCt" role="3vwVQn">
-                  <node concept="2OqwBi" id="1D1LJGC2dCu" role="3uHU7B">
-                    <node concept="2OqwBi" id="1D1LJGC2dCv" role="2Oq$k0">
-                      <node concept="37vLTw" id="1D1LJGC2dCw" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
-                      </node>
-                      <node concept="liA8E" id="1D1LJGC2dCx" role="2OqNvi">
-                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC2dCy" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                    </node>
-                  </node>
-                  <node concept="3cmrfG" id="1D1LJGC2dCz" role="3uHU7w">
-                    <property role="3cmrfH" value="2" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3TPulU" id="1D1LJGC2dC$" role="LiRBU">
-      <node concept="Midpa" id="1D1LJGC2sZ0" role="Mier1">
-        <node concept="LIFWc" id="1D1LJGC2twG" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="constant_0" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="44DBaIkRM2M">
-    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentMenusForSameNode" />
-    <property role="3GE5qa" value="duplication" />
-    <node concept="3clFbS" id="44DBaIkRM2N" role="LjaKd">
-      <node concept="3clFbF" id="44DBaIkRM2O" role="3cqZAp">
-        <node concept="2YIFZM" id="44DBaIkRM2P" role="3clFbG">
-          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-          <node concept="1bVj0M" id="44DBaIkRM2Q" role="37wK5m">
-            <node concept="3clFbS" id="44DBaIkRM2R" role="1bW5cS">
-              <node concept="3cpWs8" id="44DBaIkRM2S" role="3cqZAp">
-                <node concept="3cpWsn" id="44DBaIkRM2T" role="3cpWs9">
-                  <property role="TrG5h" value="editorContext" />
-                  <node concept="3uibUv" id="44DBaIkRM2U" role="1tU5fm">
-                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
-                  </node>
-                  <node concept="2OqwBi" id="44DBaIkRM2V" role="33vP2m">
-                    <node concept="369mXd" id="44DBaIkRM2W" role="2Oq$k0" />
-                    <node concept="liA8E" id="44DBaIkRM2X" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="44DBaIkRM2Y" role="3cqZAp">
-                <node concept="3cpWsn" id="44DBaIkRM2Z" role="3cpWs9">
-                  <property role="TrG5h" value="contextAssistantManager" />
-                  <node concept="3uibUv" id="44DBaIkRM30" role="1tU5fm">
-                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
-                  </node>
-                  <node concept="2OqwBi" id="44DBaIkRM31" role="33vP2m">
-                    <node concept="37vLTw" id="44DBaIkRM32" role="2Oq$k0">
-                      <ref role="3cqZAo" node="44DBaIkRM2T" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="44DBaIkRM33" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="44DBaIkRM34" role="3cqZAp">
-                <node concept="2OqwBi" id="44DBaIkRM35" role="3clFbG">
-                  <node concept="37vLTw" id="44DBaIkRM36" role="2Oq$k0">
-                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="44DBaIkRM37" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="44DBaIkRM38" role="3cqZAp">
-                <node concept="2OqwBi" id="44DBaIkRM39" role="2Hmdds">
-                  <node concept="37vLTw" id="44DBaIkRM3a" role="2Oq$k0">
-                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="44DBaIkRM3b" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="44DBaIkRM3c" role="3cqZAp">
-                <node concept="2OqwBi" id="44DBaIkRM3d" role="2Hmdds">
-                  <node concept="37vLTw" id="44DBaIkRM3e" role="2Oq$k0">
-                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="44DBaIkRM3f" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3vwNmj" id="44DBaIkRM3g" role="3cqZAp">
-                <node concept="3clFbC" id="44DBaIkRM3h" role="3vwVQn">
-                  <node concept="2OqwBi" id="44DBaIkRM3i" role="3uHU7B">
-                    <node concept="2OqwBi" id="44DBaIkRM3j" role="2Oq$k0">
-                      <node concept="37vLTw" id="44DBaIkRM3k" role="2Oq$k0">
-                        <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
-                      </node>
-                      <node concept="liA8E" id="44DBaIkRM3l" role="2OqNvi">
-                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="44DBaIkRM3m" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                    </node>
-                  </node>
-                  <node concept="3cmrfG" id="44DBaIkRM3n" role="3uHU7w">
-                    <property role="3cmrfH" value="2" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3TPulU" id="44DBaIkRM3o" role="LiRBU">
-      <node concept="3lWgRL" id="44DBaIkRR51" role="3lWgqf">
-        <node concept="LIFWc" id="44DBaIkVb9Z" role="lGtFl">
-          <property role="LIFWa" value="0" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="constant_0" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="1D1LJGC35P$">
-    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentSubstituteMenus" />
-    <property role="3GE5qa" value="duplication" />
-    <node concept="3clFbS" id="1D1LJGC35P_" role="LjaKd">
-      <node concept="3clFbF" id="1D1LJGC35PA" role="3cqZAp">
-        <node concept="2YIFZM" id="1D1LJGC35PB" role="3clFbG">
-          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
-          <node concept="1bVj0M" id="1D1LJGC35PC" role="37wK5m">
-            <node concept="3clFbS" id="1D1LJGC35PD" role="1bW5cS">
-              <node concept="3cpWs8" id="1D1LJGC35PE" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC35PF" role="3cpWs9">
-                  <property role="TrG5h" value="editorContext" />
-                  <node concept="3uibUv" id="1D1LJGC35PG" role="1tU5fm">
-                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC35PH" role="33vP2m">
-                    <node concept="369mXd" id="1D1LJGC35PI" role="2Oq$k0" />
-                    <node concept="liA8E" id="1D1LJGC35PJ" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="1D1LJGC35PK" role="3cqZAp">
-                <node concept="3cpWsn" id="1D1LJGC35PL" role="3cpWs9">
-                  <property role="TrG5h" value="contextAssistantManager" />
-                  <node concept="3uibUv" id="1D1LJGC35PM" role="1tU5fm">
-                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
-                  </node>
-                  <node concept="2OqwBi" id="1D1LJGC35PN" role="33vP2m">
-                    <node concept="37vLTw" id="1D1LJGC35PO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1D1LJGC35PF" resolve="editorContext" />
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC35PP" role="2OqNvi">
-                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="1D1LJGC35PQ" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC35PR" role="3clFbG">
-                  <node concept="37vLTw" id="1D1LJGC35PS" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC35PT" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC35PU" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC35PV" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC35PW" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC35PX" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2Hmddi" id="1D1LJGC35PY" role="3cqZAp">
-                <node concept="2OqwBi" id="1D1LJGC35PZ" role="2Hmdds">
-                  <node concept="37vLTw" id="1D1LJGC35Q0" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
-                  </node>
-                  <node concept="liA8E" id="1D1LJGC35Q1" role="2OqNvi">
-                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3vwNmj" id="1D1LJGC35Q2" role="3cqZAp">
-                <node concept="3clFbC" id="1D1LJGC35Q3" role="3vwVQn">
-                  <node concept="2OqwBi" id="1D1LJGC35Q4" role="3uHU7B">
-                    <node concept="2OqwBi" id="1D1LJGC35Q5" role="2Oq$k0">
-                      <node concept="37vLTw" id="1D1LJGC35Q6" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
-                      </node>
-                      <node concept="liA8E" id="1D1LJGC35Q7" role="2OqNvi">
-                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="1D1LJGC35Q8" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                    </node>
-                  </node>
-                  <node concept="3cmrfG" id="1D1LJGC35Q9" role="3uHU7w">
-                    <property role="3cmrfH" value="2" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3TPulU" id="1D1LJGC35Qa" role="LiRBU">
-      <node concept="3TPunu" id="1D1LJGC35Qb" role="3TOBOl" />
-      <node concept="LIFWc" id="1D1LJGC3NSA" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_vgkltr_ob2a" />
       </node>
     </node>
   </node>
@@ -3073,12 +2646,12 @@
     </node>
     <node concept="3TPulU" id="44DBaIkTog_" role="LiRBU">
       <node concept="3lNeh5" id="44DBaIkTzZv" role="3lN5js">
-        <node concept="LIFWc" id="44DBaIkV5jk" role="lGtFl">
+        <node concept="LIFWc" id="7Bx1T8b2fj1" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_50xods_a" />
+          <property role="LIFWd" value="Constant_1naoec_a" />
         </node>
       </node>
     </node>
@@ -3181,6 +2754,433 @@
     <node concept="3TPulU" id="44DBaIkU$3o" role="LiRBU">
       <node concept="3lKL_4" id="44DBaIkULcp" role="3lKKYX">
         <node concept="LIFWc" id="44DBaIkVd9u" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="44DBaIkRM2M">
+    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentMenusForSameNode" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="44DBaIkRM2N" role="LjaKd">
+      <node concept="3clFbF" id="44DBaIkRM2O" role="3cqZAp">
+        <node concept="2YIFZM" id="44DBaIkRM2P" role="3clFbG">
+          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
+          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+          <node concept="1bVj0M" id="44DBaIkRM2Q" role="37wK5m">
+            <node concept="3clFbS" id="44DBaIkRM2R" role="1bW5cS">
+              <node concept="3cpWs8" id="44DBaIkRM2S" role="3cqZAp">
+                <node concept="3cpWsn" id="44DBaIkRM2T" role="3cpWs9">
+                  <property role="TrG5h" value="editorContext" />
+                  <node concept="3uibUv" id="44DBaIkRM2U" role="1tU5fm">
+                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
+                  </node>
+                  <node concept="2OqwBi" id="44DBaIkRM2V" role="33vP2m">
+                    <node concept="369mXd" id="44DBaIkRM2W" role="2Oq$k0" />
+                    <node concept="liA8E" id="44DBaIkRM2X" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="44DBaIkRM2Y" role="3cqZAp">
+                <node concept="3cpWsn" id="44DBaIkRM2Z" role="3cpWs9">
+                  <property role="TrG5h" value="contextAssistantManager" />
+                  <node concept="3uibUv" id="44DBaIkRM30" role="1tU5fm">
+                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                  </node>
+                  <node concept="2OqwBi" id="44DBaIkRM31" role="33vP2m">
+                    <node concept="37vLTw" id="44DBaIkRM32" role="2Oq$k0">
+                      <ref role="3cqZAo" node="44DBaIkRM2T" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="44DBaIkRM33" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="44DBaIkRM34" role="3cqZAp">
+                <node concept="2OqwBi" id="44DBaIkRM35" role="3clFbG">
+                  <node concept="37vLTw" id="44DBaIkRM36" role="2Oq$k0">
+                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="44DBaIkRM37" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="44DBaIkRM38" role="3cqZAp">
+                <node concept="2OqwBi" id="44DBaIkRM39" role="2Hmdds">
+                  <node concept="37vLTw" id="44DBaIkRM3a" role="2Oq$k0">
+                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="44DBaIkRM3b" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="44DBaIkRM3c" role="3cqZAp">
+                <node concept="2OqwBi" id="44DBaIkRM3d" role="2Hmdds">
+                  <node concept="37vLTw" id="44DBaIkRM3e" role="2Oq$k0">
+                    <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="44DBaIkRM3f" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vwNmj" id="44DBaIkRM3g" role="3cqZAp">
+                <node concept="3clFbC" id="44DBaIkRM3h" role="3vwVQn">
+                  <node concept="2OqwBi" id="44DBaIkRM3i" role="3uHU7B">
+                    <node concept="2OqwBi" id="44DBaIkRM3j" role="2Oq$k0">
+                      <node concept="37vLTw" id="44DBaIkRM3k" role="2Oq$k0">
+                        <ref role="3cqZAo" node="44DBaIkRM2Z" resolve="contextAssistantManager" />
+                      </node>
+                      <node concept="liA8E" id="44DBaIkRM3l" role="2OqNvi">
+                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="44DBaIkRM3m" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="44DBaIkRM3n" role="3uHU7w">
+                    <property role="3cmrfH" value="2" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="44DBaIkRM3o" role="LiRBU">
+      <node concept="3lWgRL" id="44DBaIkRR51" role="3lWgqf">
+        <node concept="LIFWc" id="44DBaIkVb9Z" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1D1LJGC2dBY">
+    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentMenusForDifferentNodes" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="1D1LJGC2dBZ" role="LjaKd">
+      <node concept="3clFbF" id="1D1LJGC2dC0" role="3cqZAp">
+        <node concept="2YIFZM" id="1D1LJGC2dC1" role="3clFbG">
+          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
+          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+          <node concept="1bVj0M" id="1D1LJGC2dC2" role="37wK5m">
+            <node concept="3clFbS" id="1D1LJGC2dC3" role="1bW5cS">
+              <node concept="3cpWs8" id="1D1LJGC2dC4" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC2dC5" role="3cpWs9">
+                  <property role="TrG5h" value="editorContext" />
+                  <node concept="3uibUv" id="1D1LJGC2dC6" role="1tU5fm">
+                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC2dC7" role="33vP2m">
+                    <node concept="369mXd" id="1D1LJGC2dC8" role="2Oq$k0" />
+                    <node concept="liA8E" id="1D1LJGC2dC9" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="1D1LJGC2dCa" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC2dCb" role="3cpWs9">
+                  <property role="TrG5h" value="contextAssistantManager" />
+                  <node concept="3uibUv" id="1D1LJGC2dCc" role="1tU5fm">
+                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC2dCd" role="33vP2m">
+                    <node concept="37vLTw" id="1D1LJGC2dCe" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1D1LJGC2dC5" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC2dCf" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1D1LJGC2dCg" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC2dCh" role="3clFbG">
+                  <node concept="37vLTw" id="1D1LJGC2dCi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC2dCj" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC2dCk" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC2dCl" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC2dCm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC2dCn" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC2dCo" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC2dCp" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC2dCq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC2dCr" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vwNmj" id="1D1LJGC2dCs" role="3cqZAp">
+                <node concept="3clFbC" id="1D1LJGC2dCt" role="3vwVQn">
+                  <node concept="2OqwBi" id="1D1LJGC2dCu" role="3uHU7B">
+                    <node concept="2OqwBi" id="1D1LJGC2dCv" role="2Oq$k0">
+                      <node concept="37vLTw" id="1D1LJGC2dCw" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1D1LJGC2dCb" resolve="contextAssistantManager" />
+                      </node>
+                      <node concept="liA8E" id="1D1LJGC2dCx" role="2OqNvi">
+                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC2dCy" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="1D1LJGC2dCz" role="3uHU7w">
+                    <property role="3cmrfH" value="2" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC2dC$" role="LiRBU">
+      <node concept="Midpa" id="1D1LJGC2sZ0" role="Mier1">
+        <node concept="LIFWc" id="1D1LJGC2twG" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1D1LJGC35P$">
+    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_IncludeDifferentSubstituteMenus" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="1D1LJGC35P_" role="LjaKd">
+      <node concept="3clFbF" id="1D1LJGC35PA" role="3cqZAp">
+        <node concept="2YIFZM" id="1D1LJGC35PB" role="3clFbG">
+          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
+          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+          <node concept="1bVj0M" id="1D1LJGC35PC" role="37wK5m">
+            <node concept="3clFbS" id="1D1LJGC35PD" role="1bW5cS">
+              <node concept="3cpWs8" id="1D1LJGC35PE" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC35PF" role="3cpWs9">
+                  <property role="TrG5h" value="editorContext" />
+                  <node concept="3uibUv" id="1D1LJGC35PG" role="1tU5fm">
+                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC35PH" role="33vP2m">
+                    <node concept="369mXd" id="1D1LJGC35PI" role="2Oq$k0" />
+                    <node concept="liA8E" id="1D1LJGC35PJ" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="1D1LJGC35PK" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC35PL" role="3cpWs9">
+                  <property role="TrG5h" value="contextAssistantManager" />
+                  <node concept="3uibUv" id="1D1LJGC35PM" role="1tU5fm">
+                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC35PN" role="33vP2m">
+                    <node concept="37vLTw" id="1D1LJGC35PO" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1D1LJGC35PF" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC35PP" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1D1LJGC35PQ" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC35PR" role="3clFbG">
+                  <node concept="37vLTw" id="1D1LJGC35PS" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC35PT" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC35PU" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC35PV" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC35PW" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC35PX" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC35PY" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC35PZ" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC35Q0" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC35Q1" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vwNmj" id="1D1LJGC35Q2" role="3cqZAp">
+                <node concept="3clFbC" id="1D1LJGC35Q3" role="3vwVQn">
+                  <node concept="2OqwBi" id="1D1LJGC35Q4" role="3uHU7B">
+                    <node concept="2OqwBi" id="1D1LJGC35Q5" role="2Oq$k0">
+                      <node concept="37vLTw" id="1D1LJGC35Q6" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1D1LJGC35PL" resolve="contextAssistantManager" />
+                      </node>
+                      <node concept="liA8E" id="1D1LJGC35Q7" role="2OqNvi">
+                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC35Q8" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="1D1LJGC35Q9" role="3uHU7w">
+                    <property role="3cmrfH" value="2" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC35Qa" role="LiRBU">
+      <node concept="LIFWc" id="7Bx1T8b2L$4" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="Constant_kqu7x4_ob2a" />
+      </node>
+      <node concept="3TPunu" id="1D1LJGC35Qb" role="3TOBOl" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1D1LJGC3f_Y">
+    <property role="TrG5h" value="ContextAssistant_DuplicationMenu_WrapDifferentSubstituteMenus" />
+    <property role="3GE5qa" value="duplication" />
+    <node concept="3clFbS" id="1D1LJGC3f_Z" role="LjaKd">
+      <node concept="3clFbF" id="1D1LJGC3fA0" role="3cqZAp">
+        <node concept="2YIFZM" id="1D1LJGC3fA1" role="3clFbG">
+          <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
+          <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+          <node concept="1bVj0M" id="1D1LJGC3fA2" role="37wK5m">
+            <node concept="3clFbS" id="1D1LJGC3fA3" role="1bW5cS">
+              <node concept="3cpWs8" id="1D1LJGC3fA4" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC3fA5" role="3cpWs9">
+                  <property role="TrG5h" value="editorContext" />
+                  <node concept="3uibUv" id="1D1LJGC3fA6" role="1tU5fm">
+                    <ref role="3uigEE" to="exr9:~EditorContext" resolve="EditorContext" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC3fA7" role="33vP2m">
+                    <node concept="369mXd" id="1D1LJGC3fA8" role="2Oq$k0" />
+                    <node concept="liA8E" id="1D1LJGC3fA9" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="1D1LJGC3fAa" role="3cqZAp">
+                <node concept="3cpWsn" id="1D1LJGC3fAb" role="3cpWs9">
+                  <property role="TrG5h" value="contextAssistantManager" />
+                  <node concept="3uibUv" id="1D1LJGC3fAc" role="1tU5fm">
+                    <ref role="3uigEE" to="2rdi:~ContextAssistantManager" resolve="ContextAssistantManager" />
+                  </node>
+                  <node concept="2OqwBi" id="1D1LJGC3fAd" role="33vP2m">
+                    <node concept="37vLTw" id="1D1LJGC3fAe" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1D1LJGC3fA5" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC3fAf" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorContext.getContextAssistantManager():jetbrains.mps.openapi.editor.assist.ContextAssistantManager" resolve="getContextAssistantManager" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1D1LJGC3fAg" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC3fAh" role="3clFbG">
+                  <node concept="37vLTw" id="1D1LJGC3fAi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC3fAj" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.updateImmediately():void" resolve="updateImmediately" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC3fAk" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC3fAl" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC3fAm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC3fAn" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveAssistant():jetbrains.mps.openapi.editor.assist.ContextAssistant" resolve="getActiveAssistant" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2Hmddi" id="1D1LJGC3fAo" role="3cqZAp">
+                <node concept="2OqwBi" id="1D1LJGC3fAp" role="2Hmdds">
+                  <node concept="37vLTw" id="1D1LJGC3fAq" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
+                  </node>
+                  <node concept="liA8E" id="1D1LJGC3fAr" role="2OqNvi">
+                    <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3vwNmj" id="1D1LJGC3fAs" role="3cqZAp">
+                <node concept="3clFbC" id="1D1LJGC3fAt" role="3vwVQn">
+                  <node concept="2OqwBi" id="1D1LJGC3fAu" role="3uHU7B">
+                    <node concept="2OqwBi" id="1D1LJGC3fAv" role="2Oq$k0">
+                      <node concept="37vLTw" id="1D1LJGC3fAw" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1D1LJGC3fAb" resolve="contextAssistantManager" />
+                      </node>
+                      <node concept="liA8E" id="1D1LJGC3fAx" role="2OqNvi">
+                        <ref role="37wK5l" to="2rdi:~ContextAssistantManager.getActiveMenuItems():java.util.List" resolve="getActiveMenuItems" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1D1LJGC3fAy" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                    </node>
+                  </node>
+                  <node concept="3cmrfG" id="1D1LJGC3fAz" role="3uHU7w">
+                    <property role="3cmrfH" value="2" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TPulU" id="1D1LJGC3fA$" role="LiRBU">
+      <node concept="Mjl1e" id="1D1LJGC3uSu" role="MjdYU">
+        <node concept="LIFWc" id="1D1LJGC3vqa" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
