@@ -181,12 +181,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     addProperties();
     addLabel("");
     addNewLine();
-    getCellFactory().pushCellContext();
-    try {
-      addChildren();
-    } finally {
-      getCellFactory().popCellContext();
-    }
+    addChildren();
     addAttributedEntity();
     popCollection();
     addLabel("}");

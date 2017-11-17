@@ -37,13 +37,11 @@ import java.awt.Component;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.ActionManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -292,9 +290,13 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     return myCurrentEditorComponent.getEditorContext();
   }
 
+  private AnActionEvent createEvent() {
+    return ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
+  }
+
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
     final AnAction action = ActionManager.getInstance().getAction(actionId);
-    final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
+    final AnActionEvent event = createEvent();
     runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         action.actionPerformed(event);
@@ -302,18 +304,16 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  protected boolean isActionApplicable(final String actionId) {
+  protected boolean isActionApplicable(final String actionId) throws InterruptedException, InvocationTargetException {
     final Wrappers._boolean isApplicable = new Wrappers._boolean();
-    myProject.getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
-      public Boolean invoke() {
+    runUndoableCommandInEDTAndWait(new Runnable() {
+      public void run() {
         AnAction action = ActionManager.getInstance().getAction(actionId);
-        if (!((action instanceof BaseAction))) {
-          return false;
-        }
-        AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
-        return isApplicable.value = ((BaseAction) action).isApplicable(event);
+        AnActionEvent event = createEvent();
+        action.update(event);
+        isApplicable.value = event.getPresentation().isEnabled();
       }
-    }));
+    });
     return isApplicable.value;
   }
 
