@@ -17,13 +17,9 @@ package jetbrains.mps.ant;
 
 import org.junit.Test;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 /**
  * The aim of this class is to write tests for ant tasks.
@@ -69,19 +65,8 @@ public class TestAntTaskResult {
   protected void testResult() {
     String fname = System.getProperty("test.output.dir") + File.separator + "result.txt";
     File file = new File(fname);
-    if (file.exists()) {
-      StringBuilder sb = new StringBuilder();
-      try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-        String line;
-        while ((line = br.readLine()) != null) {
-          sb.append(line);
-        }
-        fail(sb.toString());
-      } catch (IOException e) {
-        e.printStackTrace();
-        fail(e.getMessage());
-      }
-      file.delete();
-    }
+    boolean exists = file.exists();
+    file.delete();
+    assertTrue(exists);
   }
 }
