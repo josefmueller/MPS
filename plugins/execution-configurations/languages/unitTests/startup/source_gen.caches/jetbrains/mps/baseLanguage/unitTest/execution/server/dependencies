@@ -82,13 +82,11 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AssumptionFailedRunner" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.junit.runner.Request" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor" file="JUnitTestExecutor.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -128,6 +126,9 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleIsNotLoadableException" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" />
     <classNode dependClassName="jetbrains.mps.module.ModuleClassLoaderIsNullException" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -137,8 +138,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.junit.internal.runners.ErrorReportingRunner" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.StoppableRunner" file="StoppableRunner.java">

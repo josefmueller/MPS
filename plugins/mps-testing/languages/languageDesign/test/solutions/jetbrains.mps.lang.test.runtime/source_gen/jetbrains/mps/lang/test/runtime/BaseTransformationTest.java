@@ -4,8 +4,6 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -24,18 +22,11 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
   /*package*/ static final TestModelSaver CACHE = new TestModelSaver();
 
-  public static boolean isExecutionInProcess() {
-    return RuntimeFlags.getTestMode() == TestMode.IN_PROCESS;
-  }
-
   @NotNull
   private static TestRunner defaultTestRunner() {
-    if (isExecutionInProcess()) {
-      return new TransformationTestLightRunner();
-    } else {
-      Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
-      return new TransformationTestRunner(ideaEnv);
-    }
+    // it's expected that IDEA MPS plugin or in-process executor supply proper TestRunner using TransformationTestInitJUnitRunner 
+    Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
+    return new TransformationTestRunner(ideaEnv);
   }
 
   public BaseTransformationTest() {
@@ -73,6 +64,8 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
   private void initTests() {
     setTestRunner(defaultTestRunner());
+    // FIXME yes, listener is not registered when myRunner is initialized from outside; no, it's not intended. 
+    //       try to replace with regular @AfterClass or drop CACHE altogether. 
     registerTestsListener();
   }
 

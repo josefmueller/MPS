@@ -79,6 +79,9 @@ public class JUnitInProcessExecutor implements Executor {
       @Override
       public void run() {
         TestMode oldTestMode = RuntimeFlags.getTestMode();
+        // Though there's dedicated JUnit runner in NodeWrappersTestsContributor that provides proper in-process TestRunner runner for BaseTransformationTest instances, 
+        // it doesn't hurt to have this flag set anyway, just in case anyone asks if we are TestMode.isInsideTestEnvironment 
+        RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
         try {
           executor.init();
           waitUnlessProcessIsReady();
@@ -90,8 +93,6 @@ public class JUnitInProcessExecutor implements Executor {
             LOG.info("Executing tests in-process");
           }
           ourTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
-          // FIXME replace RF.setTestMode with a code in NodeWrappersTestsContributor that adds a dedicated runner that would initialize BaseTransformationTest properly 
-          RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
           executor.execute();
           // regular test execution ends in RUNNING state. If we are in TERMINATING state here already, it means PH.requestTerminate triggered execution stop. 
           boolean cancelled = ourTestRunState.isTerminating();

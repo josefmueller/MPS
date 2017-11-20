@@ -31,7 +31,6 @@ import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -114,9 +113,11 @@ public class IdeaPluginTestRunner extends Suite {
   private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, MPSProject mpsProject) throws Exception {
     Class<?> cls = module.getOwnClass(sModel.getName().getLongName() + "." + root.getName() + "_Test"); //NON-NLS
     ReloadableModule runtimeModule = (ReloadableModule) mpsProject.getRepository().getModule(LANG_TEST_RUNTIME);
-    Class<?> runnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin");
-    Constructor<?> constructor = runnerClass.getConstructor(Class.class, MPSProject.class);
-    return (Runner) constructor.newInstance(cls, mpsProject);
+    Class<?> junitRunnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner");
+    Class<?> testRunnerInterface = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TestRunner");
+    Class<?> testRunnerImplClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TransformationTestRunnerPlugin");
+    Object testRunnerImpl = testRunnerImplClass.getConstructor(MPSProject.class).newInstance(mpsProject);
+    return (Runner) junitRunnerClass.getConstructor(Class.class, testRunnerInterface).newInstance(cls, testRunnerImpl);
   }
 
   private static List<Runner> loadTestClassesFromModels(MPSProject mpsProject, String modelNames) throws Exception {

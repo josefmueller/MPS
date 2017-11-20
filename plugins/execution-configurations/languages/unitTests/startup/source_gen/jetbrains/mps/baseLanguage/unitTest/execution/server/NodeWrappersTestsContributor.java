@@ -13,13 +13,21 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
+//import jetbrains.mps.lang.test.runtime.TransformationTest;
+//import jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner;
+//import jetbrains.mps.lang.test.runtime.TransformationTestLightRunner;
+import org.junit.runners.model.InitializationError;
+import org.junit.internal.runners.ErrorReportingRunner;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+/**
+ * Knows hot to launch TransformationTest with TestRunner suited for in-process test execution
+ */
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
   private final Project myProject;
@@ -45,9 +53,9 @@ public class NodeWrappersTestsContributor implements TestsContributor {
           if (testNode.isTestCase()) {
             Request requestForClass;
             try {
-              final Class<?> aClass = loadTestClass(fqName, module);
-              requestForClass = filter.prepare(testNode, tn, Request.aClass(aClass));
-            } catch (ClassNotFoundException e) {
+              filter.check(testNode, tn);
+              requestForClass = requestForTestClass(fqName, module);
+            } catch (Exception e) {
               requestForClass = Request.runner(new AssumptionFailedRunner(e, Description.createSuiteDescription(fqName)));
             }
             requestList.add(requestForClass);
@@ -57,9 +65,10 @@ public class NodeWrappersTestsContributor implements TestsContributor {
             String methodName = fqName.substring(index + 1);
             Request requestForMethod;
             try {
-              final Class aClass = loadTestClass(testFqName, module);
-              requestForMethod = filter.prepare(testNode, tn, Request.method(aClass, methodName));
-            } catch (ClassNotFoundException e) {
+              filter.check(testNode, tn);
+              final Request classRequest = requestForTestClass(testFqName, module);
+              requestForMethod = classRequest.filterWith(Description.createTestDescription(testFqName, methodName));
+            } catch (Exception e) {
               requestForMethod = Request.runner(new AssumptionFailedRunner(e, Description.createTestDescription(testFqName, methodName)));
             }
             requestList.add(requestForMethod);
@@ -68,6 +77,20 @@ public class NodeWrappersTestsContributor implements TestsContributor {
         return requestList;
       }
     });
+  }
+
+  private Request requestForTestClass(String fqName, SModule module) throws ClassNotFoundException, ModuleClassLoaderIsNullException {
+    final Class<?> aClass = loadTestClass(fqName, module);
+//    if (TransformationTest.class.isAssignableFrom(aClass)) {
+//      try {
+//        // For TransformationTest, we need to supply proper TestRunner instance, and we do this with custom runner that invokes setTestRunner at appropiate time
+//        return Request.runner(new TransformationTestInitJUnitRunner(aClass, new TransformationTestLightRunner()));
+//      } catch (InitializationError ex) {
+//        return Request.runner(new ErrorReportingRunner(aClass, ex));
+//      }
+//    } else {
+      return Request.aClass(aClass);
+//    }
   }
 
   @NotNull

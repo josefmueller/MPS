@@ -14924,6 +14924,26 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3SKdUt" id="4br3RNORXp4" role="3cqZAp">
+                          <node concept="3SKdUq" id="4br3RNORXp6" role="3SKWNk">
+                            <property role="3SKdUp" value="Though there's dedicated JUnit runner in NodeWrappersTestsContributor that provides proper in-process TestRunner runner for BaseTransformationTest instances," />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="5UFD5GhEN7w" role="3cqZAp">
+                          <node concept="3SKdUq" id="5UFD5GhEN7y" role="3SKWNk">
+                            <property role="3SKdUp" value="it doesn't hurt to have this flag set anyway, just in case anyone asks if we are TestMode.isInsideTestEnvironment" />
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="5XEoQWqCbM" role="3cqZAp">
+                          <node concept="2YIFZM" id="5XEoQWqC$G" role="3clFbG">
+                            <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
+                            <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
+                            <node concept="Rm8GO" id="5XEoQWqCPd" role="37wK5m">
+                              <ref role="Rm8GQ" to="fyhk:~TestMode.IN_PROCESS" resolve="IN_PROCESS" />
+                              <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="2GUZhq" id="7rXOJyztiKh" role="3cqZAp">
                           <node concept="3clFbS" id="7rXOJyztiKi" role="2GV8ay">
                             <node concept="3clFbF" id="7rXOJyzs3_V" role="3cqZAp">
@@ -14983,21 +15003,6 @@
                                     <ref role="Rm8GQ" to="fnd7:1$FrpHy4ufF" resolve="RUNNING" />
                                     <ref role="1Px2BO" to="fnd7:1$FrpHy4ufC" resolve="RunStateEnum" />
                                   </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3SKdUt" id="4br3RNORXp4" role="3cqZAp">
-                              <node concept="3SKdUq" id="4br3RNORXp6" role="3SKWNk">
-                                <property role="3SKdUp" value="FIXME replace RF.setTestMode with a code in NodeWrappersTestsContributor that adds a dedicated runner that would initialize BaseTransformationTest properly" />
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="5XEoQWqCbM" role="3cqZAp">
-                              <node concept="2YIFZM" id="5XEoQWqC$G" role="3clFbG">
-                                <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
-                                <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
-                                <node concept="Rm8GO" id="5XEoQWqCPd" role="37wK5m">
-                                  <ref role="Rm8GQ" to="fyhk:~TestMode.IN_PROCESS" resolve="IN_PROCESS" />
-                                  <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
                                 </node>
                               </node>
                             </node>
