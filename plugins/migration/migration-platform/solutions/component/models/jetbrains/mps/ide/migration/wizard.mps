@@ -5632,7 +5632,7 @@
         <node concept="3cpWs6" id="3nmMoI1WJFC" role="3cqZAp">
           <node concept="3cpWs3" id="3nmMoI1WF5e" role="3cqZAk">
             <node concept="Xl_RD" id="3nmMoI1WF5f" role="3uHU7B">
-              <property role="Xl_RC" value="Migration Assistant found some problems in the project.\n\n" />
+              <property role="Xl_RC" value="Migration Assistant found some problems in the project.\n" />
             </node>
             <node concept="Xl_RD" id="3nmMoI1WF5g" role="3uHU7w">
               <property role="Xl_RC" value="It is recommended to fix problems before starting the migration.\n" />

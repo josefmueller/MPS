@@ -25,7 +25,7 @@ public class PreCheckError extends MigrationError {
     return "Errors were found in models";
   }
   public String getMessage() {
-    return "Migration Assistant found some problems in the project.\n\n" + "It is recommended to fix problems before starting the migration.\n";
+    return "Migration Assistant found some problems in the project.\n" + "It is recommended to fix problems before starting the migration.\n";
   }
   public Iterable<IssueKindReportItem> getProblems(ProgressIndicator progressIndicator) {
     final List<IssueKindReportItem> res = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
