@@ -115,6 +115,12 @@ public class FileProcessor {
       if (len != myContent.length) {
         return true;
       }
+      if (len == 0) {
+        return false;
+      }
+
+      // stream.read(byte[0]) never gives -1 
+      assert myContent.length > 0;
 
       byte[] res = new byte[Math.min(1 << 13, myContent.length)];
       InputStream stream = null;
