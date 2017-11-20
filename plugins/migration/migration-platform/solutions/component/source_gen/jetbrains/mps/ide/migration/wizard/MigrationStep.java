@@ -95,22 +95,23 @@ public class MigrationStep extends BaseStep {
               return;
             }
 
-            // here we either finished or have an error 
-            if (myTask.isComplete()) {
-              fireStateChanged();
-              return;
-            }
-            assert mySession.getError() != null : "not completed migration process with no errors";
+            if (mySession.getError() != null) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  StringBuilder sb = new StringBuilder();
+                  sb.append("<html>").append(mySession.getError().getMessage().replaceAll("\n", "<br>"));
+                  if (mySession.getError().canIgnore()) {
+                    sb.append("<br><br>Continue migration?");
+                  }
+                  sb.append("</html>");
+                  myErrorLabel.setText(sb.toString());
+                  myErrorPanel.setVisible(true);
+                }
+              }, ModalityState.stateForComponent(myErrorPanel));
 
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              public void run() {
-                myErrorLabel.setText("<html>" + mySession.getError().getMessage().replaceAll("\n", "<br>") + "<br><br>Continue migration?" + "</html>");
-                myErrorPanel.setVisible(true);
+              if (!(mySession.getError().canIgnore())) {
+                forceComplete();
               }
-            }, ModalityState.stateForComponent(myErrorPanel));
-
-            if (!(mySession.getError().canIgnore())) {
-              forceComplete();
             }
 
             fireStateChanged();
