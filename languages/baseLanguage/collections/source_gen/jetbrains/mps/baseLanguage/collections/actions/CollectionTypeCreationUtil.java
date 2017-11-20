@@ -20,7 +20,7 @@ public class CollectionTypeCreationUtil {
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"), SNodeOperations.deleteNode(maybeElementType));
     }
   }
-  public static void extractCollectionElementType(SNode newNode, SNode sampleNode) {
+  public static void extractAbstractContainerElementType(SNode newNode, SNode sampleNode) {
     SNode maybeElementType = extractElementType(sampleNode);
     if ((maybeElementType != null)) {
       SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, 0x4eec26fcbaf8c39cL, "elementType"), SNodeOperations.deleteNode(maybeElementType));
@@ -72,17 +72,9 @@ public class CollectionTypeCreationUtil {
           }
         }
         {
-          IMatchingPattern pattern_ddgnrw_d0b0a1a4 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
+          IMatchingPattern pattern_ddgnrw_d0b0a1a4 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType"));
           SNode coercedNode_ddgnrw_d0b0a1a4 = TypeChecker.getInstance().getRuntimeSupport().coerce_(sampleType, pattern_ddgnrw_d0b0a1a4);
           if (coercedNode_ddgnrw_d0b0a1a4 != null) {
-            return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(sampleType)).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
-          } else {
-          }
-        }
-        {
-          IMatchingPattern pattern_ddgnrw_e0b0a1a4 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType"));
-          SNode coercedNode_ddgnrw_e0b0a1a4 = TypeChecker.getInstance().getRuntimeSupport().coerce_(sampleType, pattern_ddgnrw_e0b0a1a4);
-          if (coercedNode_ddgnrw_e0b0a1a4 != null) {
             return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(sampleType)).first(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
           } else {
           }
