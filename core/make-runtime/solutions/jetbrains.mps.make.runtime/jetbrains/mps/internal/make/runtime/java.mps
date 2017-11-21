@@ -152,6 +152,7 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -1095,6 +1096,42 @@
                   <ref role="3cqZAo" node="3A8r4RO6URL" resolve="myContent" />
                 </node>
                 <node concept="1Rwk04" id="GlF49wajCZ" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="6etEsicE90e" role="3cqZAp">
+            <node concept="3clFbS" id="6etEsicE90g" role="3clFbx">
+              <node concept="3cpWs6" id="6etEsicEbbK" role="3cqZAp">
+                <node concept="3clFbT" id="6etEsicEclI" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="6etEsicEaP9" role="3clFbw">
+              <node concept="3cmrfG" id="6etEsicEaZV" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="37vLTw" id="6etEsicEa90" role="3uHU7B">
+                <ref role="3cqZAo" node="GlF49wajC_" resolve="len" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="6etEsicEiDH" role="3cqZAp" />
+          <node concept="3SKdUt" id="6etEsicEnoz" role="3cqZAp">
+            <node concept="3SKdUq" id="6etEsicEno_" role="3SKWNk">
+              <property role="3SKdUp" value="stream.read(byte[0]) never gives -1" />
+            </node>
+          </node>
+          <node concept="1gVbGN" id="6etEsicEezA" role="3cqZAp">
+            <node concept="3eOSWO" id="6etEsicEkQV" role="1gVkn0">
+              <node concept="3cmrfG" id="6etEsicEkRe" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="6etEsicEfND" role="3uHU7B">
+                <node concept="37vLTw" id="6etEsicEfF5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3A8r4RO6URL" resolve="myContent" />
+                </node>
+                <node concept="1Rwk04" id="6etEsicEfUG" role="2OqNvi" />
               </node>
             </node>
           </node>
