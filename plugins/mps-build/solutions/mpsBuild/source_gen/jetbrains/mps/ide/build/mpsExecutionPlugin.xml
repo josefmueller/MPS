@@ -570,9 +570,6 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-plugin-jetbrains">
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/plugin/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-unitTests-startup-models">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <jar destfile="${build.layout}/mps-execution-configurations/lib/execution-configurations.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/execution-configurations" />
       <zipfileset file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/jetbrains.mps.baseLanguage.execution.util.msd" prefix="modules/jetbrains.mps.baseLanguage.execution.util" />
@@ -587,9 +584,6 @@
       <zipfileset file="${basedir}/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin" />
       <zipfileset dir="${basedir}/plugins/execution-configurations/languages/plugin" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-plugin-jetbrains" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin/jetbrains" />
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/jetbrains.mps.baseLanguage.unitTest.execution.startup.msd" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution.startup" />
-      <zipfileset dir="${basedir}/plugins/execution-configurations/languages/unitTests/startup" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution.startup" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-unitTests-startup-models" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution.startup/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -745,7 +739,6 @@
       </chunk>
       <chunk>
         <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
-        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/jetbrains.mps.baseLanguage.unitTest.execution.startup.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" />
       </chunk>
@@ -1143,7 +1136,6 @@
     <mkdir dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
     <mkdir dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
     <mkdir dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
     <mkdir dir="${build.tmp}/java/out/execution-configurations" />
     <javac2 destdir="${build.tmp}/java/out/execution-configurations" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -1152,7 +1144,6 @@
         <path location="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
         <path location="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
         <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
-        <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -1192,7 +1183,6 @@
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1223,7 +1213,6 @@
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
   </target>

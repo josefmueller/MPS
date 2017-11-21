@@ -17,7 +17,6 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
-    <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
     <import index="tpnd" ref="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -51,6 +50,7 @@
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
     <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
+    <import index="4l68" ref="r:a8dde698-9468-4a76-b89d-abdfa4716001(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
@@ -5904,7 +5904,7 @@
                         <node concept="1pGfFk" id="PCmloRzxpX" role="2ShVmc">
                           <ref role="37wK5l" node="46IpDBbXS2Z" resolve="TestParameters" />
                           <node concept="3VsKOn" id="4eufay$VtME" role="37wK5m">
-                            <ref role="3VsUkX" to="inrv:2RMg39tndd6" resolve="CachingTestExecutor" />
+                            <ref role="3VsUkX" to="4l68:2RMg39tndd6" resolve="CachingTestExecutor" />
                           </node>
                           <node concept="2OqwBi" id="PCmloRzxpZ" role="37wK5m">
                             <node concept="2OqwBi" id="PCmloRzxq0" role="2Oq$k0">
@@ -10166,7 +10166,7 @@
             <node concept="1pGfFk" id="46IpDBc0ar8" role="2ShVmc">
               <ref role="37wK5l" node="46IpDBc0e5m" resolve="TestParameters" />
               <node concept="3VsKOn" id="4eufay$VqHH" role="37wK5m">
-                <ref role="3VsUkX" to="inrv:56tRMpP_bxe" resolve="DefaultTestExecutor" />
+                <ref role="3VsUkX" to="4l68:56tRMpP_bxe" resolve="DefaultTestExecutor" />
               </node>
               <node concept="37vLTw" id="39rFUW5A9wV" role="37wK5m">
                 <ref role="3cqZAo" node="39rFUW5A8ky" resolve="classPath" />
