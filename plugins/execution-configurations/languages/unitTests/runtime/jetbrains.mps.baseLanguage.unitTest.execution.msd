@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.baseLanguage.unitTest.execution" uuid="f618e99a-2641-465c-bb54-31fe76f9e285" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="jetbrains" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <facets>
