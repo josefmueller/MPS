@@ -650,6 +650,32 @@
       <node concept="3Tm1VV" id="X9k2kW5hMm" role="1B3o_S" />
       <node concept="17QB3L" id="X9k2kW5hMl" role="3clF45" />
     </node>
+    <node concept="2YIFZL" id="1h92vNLYdCm" role="jymVt">
+      <property role="TrG5h" value="getEnumMemberPresentation" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="1h92vNLYdKP" role="3clF46">
+        <property role="TrG5h" value="member" />
+        <node concept="3Tqbb2" id="1h92vNLYdKQ" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:fKM4N6M" resolve="EnumerationMemberDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1h92vNLYdCp" role="3clF47">
+        <node concept="3cpWs6" id="1h92vNLYdMW" role="3cqZAp">
+          <node concept="2OqwBi" id="1h92vNLYe2m" role="3cqZAk">
+            <node concept="37vLTw" id="1h92vNLYdQE" role="2Oq$k0">
+              <ref role="3cqZAo" node="1h92vNLYdKP" resolve="member" />
+            </node>
+            <node concept="3TrcHB" id="1h92vNLYejK" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:fLuS6p$" resolve="externalValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1h92vNLYdv2" role="1B3o_S" />
+      <node concept="17QB3L" id="1h92vNLYdBR" role="3clF45" />
+    </node>
     <node concept="2YIFZL" id="X9k2kW5hMx" role="jymVt">
       <property role="TrG5h" value="enumMemberForName" />
       <node concept="37vLTG" id="X9k2kW5hMZ" role="3clF46">
@@ -1202,20 +1228,18 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="2nIYwg$5cbC" role="3clFbw">
-                <node concept="2OqwBi" id="2nIYwg$5bRt" role="2Oq$k0">
-                  <node concept="37vLTw" id="2nIYwg$5bLZ" role="2Oq$k0">
+              <node concept="2YIFZM" id="2$DA$ibySI" role="3clFbw">
+                <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
+                <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
+                <node concept="2YIFZM" id="2$DA$ibz63" role="37wK5m">
+                  <ref role="1Pybhc" to="2k9e:~SEnumAdapter" resolve="SEnumAdapter" />
+                  <ref role="37wK5l" to="2k9e:~SEnumAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
+                  <node concept="37vLTw" id="2$DA$ibzaA" role="37wK5m">
                     <ref role="3cqZAo" node="2nIYwg$5a$Q" resolve="l" />
                   </node>
-                  <node concept="liA8E" id="2nIYwg$5bXw" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getPresentation():java.lang.String" resolve="getPresentation" />
-                  </node>
                 </node>
-                <node concept="liA8E" id="2nIYwg$5cHh" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="37vLTw" id="2nIYwg$5cLb" role="37wK5m">
-                    <ref role="3cqZAo" node="2nIYwg$4XPU" resolve="name" />
-                  </node>
+                <node concept="37vLTw" id="2$DA$ib$TO" role="37wK5m">
+                  <ref role="3cqZAo" node="2nIYwg$4XPU" resolve="name" />
                 </node>
               </node>
             </node>
@@ -1359,12 +1383,11 @@
                 <ref role="3cqZAo" node="2nIYwg$5hw5" resolve="enumMember" />
               </node>
             </node>
-            <node concept="2OqwBi" id="2nIYwg$535l" role="3K4GZi">
-              <node concept="37vLTw" id="2nIYwg$52TB" role="2Oq$k0">
+            <node concept="2YIFZM" id="1sWCqWM9pH3" role="3K4GZi">
+              <ref role="37wK5l" to="2k9e:~SEnumAdapter.getEnumMemberIdentifier(org.jetbrains.mps.openapi.language.SEnumerationLiteral):java.lang.String" resolve="getEnumMemberIdentifier" />
+              <ref role="1Pybhc" to="2k9e:~SEnumAdapter" resolve="SEnumAdapter" />
+              <node concept="37vLTw" id="1sWCqWM9rU0" role="37wK5m">
                 <ref role="3cqZAo" node="2nIYwg$5hw5" resolve="enumMember" />
-              </node>
-              <node concept="liA8E" id="2nIYwg$53fD" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getPresentation():java.lang.String" resolve="getPresentation" />
               </node>
             </node>
           </node>
