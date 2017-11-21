@@ -5,6 +5,92 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)/1322863731089341735">
+    <file name="EnumerationDatatypes_Test.java">
+      <node id="1322863731089341735" at="15,62,16,127" concept="0" />
+      <node id="1322863731089341735" at="16,127,17,130" concept="0" />
+      <node id="1322863731089341735" at="20,55,21,127" concept="0" />
+      <node id="1322863731089341735" at="21,127,22,123" concept="0" />
+      <node id="1322863731089341735" at="25,58,26,127" concept="0" />
+      <node id="1322863731089341735" at="26,127,27,126" concept="0" />
+      <node id="1322863731089341735" at="30,54,31,127" concept="0" />
+      <node id="1322863731089341735" at="31,127,32,122" concept="0" />
+      <node id="1322863731089341735" at="35,57,36,127" concept="0" />
+      <node id="1322863731089341735" at="36,127,37,125" concept="0" />
+      <node id="1322863731089411329" at="42,64,43,243" concept="0" />
+      <node id="1322863731089412461" at="43,243,44,243" concept="0" />
+      <node id="1322863731089422629" at="44,243,45,0" concept="4" />
+      <node id="1322863731089412555" at="45,0,46,250" concept="0" />
+      <node id="1322863731089412675" at="46,250,47,250" concept="0" />
+      <node id="1322863731089422804" at="47,250,48,0" concept="4" />
+      <node id="1322863731089412705" at="48,0,49,249" concept="0" />
+      <node id="1322863731089412741" at="49,249,50,249" concept="0" />
+      <node id="1322863731089414982" at="52,57,53,250" concept="0" />
+      <node id="1322863731089414988" at="53,250,54,250" concept="0" />
+      <node id="1322863731089422980" at="54,250,55,0" concept="4" />
+      <node id="1322863731089414994" at="55,0,56,257" concept="0" />
+      <node id="1322863731089415000" at="56,257,57,257" concept="0" />
+      <node id="1322863731089423026" at="57,257,58,0" concept="4" />
+      <node id="1322863731089415006" at="58,0,59,256" concept="0" />
+      <node id="1322863731089415012" at="59,256,60,256" concept="0" />
+      <node id="1322863731089419172" at="62,60,63,375" concept="0" />
+      <node id="1322863731089419178" at="63,375,64,375" concept="0" />
+      <node id="1322863731089423073" at="64,375,65,0" concept="4" />
+      <node id="1322863731089419184" at="65,0,66,389" concept="0" />
+      <node id="1322863731089419190" at="66,389,67,389" concept="0" />
+      <node id="1322863731089423119" at="67,389,68,0" concept="4" />
+      <node id="1322863731089419196" at="68,0,69,387" concept="0" />
+      <node id="1322863731089419202" at="69,387,70,387" concept="0" />
+      <node id="1322863731089423169" at="72,56,73,254" concept="0" />
+      <node id="1322863731089423175" at="73,254,74,254" concept="0" />
+      <node id="1322863731089423181" at="74,254,75,0" concept="4" />
+      <node id="1322863731089423182" at="75,0,76,256" concept="0" />
+      <node id="1322863731089423188" at="76,256,77,256" concept="0" />
+      <node id="1322863731089423194" at="77,256,78,0" concept="4" />
+      <node id="1322863731089423195" at="78,0,79,262" concept="0" />
+      <node id="1322863731089423201" at="79,262,80,262" concept="0" />
+      <node id="1322863731089428910" at="82,59,83,379" concept="0" />
+      <node id="1322863731089428916" at="83,379,84,379" concept="0" />
+      <node id="1322863731089428922" at="84,379,85,0" concept="4" />
+      <node id="1322863731089428923" at="85,0,86,388" concept="0" />
+      <node id="1322863731089428929" at="86,388,87,388" concept="0" />
+      <node id="1322863731089428935" at="87,388,88,0" concept="4" />
+      <node id="1322863731089428936" at="88,0,89,393" concept="0" />
+      <node id="1322863731089428942" at="89,393,90,393" concept="0" />
+      <node id="1322863731089341735" at="14,0,19,0" concept="1" trace="test_enumMemberPresentation#()V" />
+      <node id="1322863731089341735" at="19,0,24,0" concept="1" trace="test_enumMemberValue#()V" />
+      <node id="1322863731089341735" at="24,0,29,0" concept="1" trace="test_enumMemberForValue#()V" />
+      <node id="1322863731089341735" at="29,0,34,0" concept="1" trace="test_enumMemberName#()V" />
+      <node id="1322863731089341735" at="34,0,39,0" concept="1" trace="test_enumMemberForName#()V" />
+      <node id="1322863731089411085" at="42,0,52,0" concept="1" trace="test_enumMemberPresentation#()V" />
+      <node id="1322863731089414880" at="52,0,62,0" concept="1" trace="test_enumMemberValue#()V" />
+      <node id="1322863731089414979" at="62,0,72,0" concept="1" trace="test_enumMemberForValue#()V" />
+      <node id="1322863731089423166" at="72,0,82,0" concept="1" trace="test_enumMemberName#()V" />
+      <node id="1322863731089427333" at="82,0,92,0" concept="1" trace="test_enumMemberForName#()V" />
+      <scope id="1322863731089341735" at="15,62,17,130" />
+      <scope id="1322863731089341735" at="20,55,22,123" />
+      <scope id="1322863731089341735" at="25,58,27,126" />
+      <scope id="1322863731089341735" at="30,54,32,122" />
+      <scope id="1322863731089341735" at="35,57,37,125" />
+      <scope id="1322863731089341735" at="14,0,19,0" />
+      <scope id="1322863731089341735" at="19,0,24,0" />
+      <scope id="1322863731089341735" at="24,0,29,0" />
+      <scope id="1322863731089341735" at="29,0,34,0" />
+      <scope id="1322863731089341735" at="34,0,39,0" />
+      <scope id="1322863731089411085" at="42,64,50,249" />
+      <scope id="1322863731089414880" at="52,57,60,256" />
+      <scope id="1322863731089414979" at="62,60,70,387" />
+      <scope id="1322863731089423166" at="72,56,80,262" />
+      <scope id="1322863731089427333" at="82,59,90,393" />
+      <scope id="1322863731089411085" at="42,0,52,0" />
+      <scope id="1322863731089414880" at="52,0,62,0" />
+      <scope id="1322863731089414979" at="62,0,72,0" />
+      <scope id="1322863731089423166" at="72,0,82,0" />
+      <scope id="1322863731089427333" at="82,0,92,0" />
+      <unit id="1322863731089341735" at="40,0,95,0" name="jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody" />
+      <unit id="1322863731089341735" at="12,0,96,0" name="jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test" />
+    </file>
+  </root>
   <root nodeRef="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)/2282909602806268536">
     <file name="SLinkListAccess_ListModifyingOperaions_Test.java">
       <node id="2282909602806268536" at="25,43,26,127" concept="0" />

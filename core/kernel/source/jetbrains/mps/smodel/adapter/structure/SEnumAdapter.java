@@ -53,8 +53,9 @@ public class SEnumAdapter implements SEnumeration {
     ArrayList<Literal> literals = new ArrayList<>();
     for (SNode/*enummember<>*/ enumMember : SEnumOperations.getEnumMembers(enumDeclaration)) {
       String value = SEnumOperations.getEnumMemberValue(enumMember);
-      String presentation = SEnumOperations.getEnumMemberName(enumMember);
-      literals.add(new Literal(value, presentation));
+      String presentation = SEnumOperations.getEnumMemberPresentation(enumMember);
+      String identifier = SEnumOperations.getEnumMemberName(enumMember);
+      literals.add(new Literal(value, presentation, identifier));
     }
     myLiterals = literals.toArray(new Literal[literals.size()]);
     myDefaultLiteral = myLiterals[0];
@@ -111,16 +112,19 @@ public class SEnumAdapter implements SEnumeration {
   }
 
   private class Literal implements SEnumerationLiteral {
-    private final String myName;
+    private final String myValue;
     private final String myPresentation;
+    private final String myIdentifier;
 
     /**
-     * @param name correstponds to internalValue
-     * @param presentation getName() result
+     * @param value corresponds to internalValue
+     * @param presentation corresponds to externalValue
+     * @param identifier corresponds to identifier (result of {@code enumMember.getName() } invocation)
      */
-    Literal(@Nullable String name, String presentation) {
-      myName = name;
+    Literal(@Nullable String value, String presentation, String identifier) {
+      myValue = value;
       myPresentation = presentation;
+      myIdentifier = identifier;
     }
 
     @Override
@@ -128,14 +132,37 @@ public class SEnumAdapter implements SEnumeration {
       return SEnumAdapter.this;
     }
 
+    /**
+     * Literal presentation.
+     *
+     * Corresponds to {@code enumMemberDecl.externalValue } in stricture aspect
+     *         and to {@code enumMember.getPresentation() } in smodel lang.
+     * TODO There is should be {@code enumMember.presentation } operation is smodel lang (see MPS-27028)
+     */
     @Override
     public String getPresentation() {
       return myPresentation;
     }
 
+    /**
+     * Literal value.
+     *
+     * Corresponds to {@code enumMemberDecl.internalValue } in structure aspect
+     *         and to {@code enumMember.value } and {@code enum/.../.getMemberFromValue("...") } in smodel lang.
+     */
     @Override
     public String getName() {
-      return myName;
+      return myValue;
+    }
+
+    /**
+     * Literal identifier.
+     *
+     * Corresponds to {@code enumMemberDecl.getName() } in structure aspect
+     *         and to {@code enumMember.name } and {@code enum/.../.getMemberFromName("...") } in smodel lang.
+     */
+    public String getIdentifier() {
+      return myIdentifier;
     }
 
     @Override
@@ -145,7 +172,7 @@ public class SEnumAdapter implements SEnumeration {
           return true;
         }
         Literal other = (Literal) obj;
-        return getEnumeration().equals(other.getEnumeration()) && Objects.equals(myName, other.myName) && Objects.equals(myPresentation, other.myPresentation);
+        return getEnumeration().equals(other.getEnumeration()) && Objects.equals(myIdentifier, other.myIdentifier);
       }
       return false;
     }
@@ -159,5 +186,12 @@ public class SEnumAdapter implements SEnumeration {
     public String toString() {
       return getPresentation();
     }
+  }
+
+  public static String getEnumMemberIdentifier(SEnumerationLiteral enumMember) {
+    if (enumMember instanceof Literal) {
+      return ((Literal) enumMember).getIdentifier();
+    }
+    return null;
   }
 }

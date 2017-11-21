@@ -9,6 +9,16 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1192116978809" name="javaIdentifier" index="2fHolG" />
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -30,6 +40,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -154,6 +167,49 @@
       <property role="IQ2ns" value="2854075155748534272" />
       <ref role="20lvS9" node="1U0BydTaHd" resolve="ChildSubConcept" />
       <ref role="20ksaX" node="7Ac3mvq__F9" resolve="rightChild" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="19rKoRTP0VL">
+    <property role="TrG5h" value="Enum_DeriveFromPresentation" />
+    <property role="3GE5qa" value="enum_datatypes" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="19rKoRTP0VM" role="M5hS2">
+      <property role="1uS6qo" value="presentation_1" />
+      <property role="1uS6qv" value="value_1" />
+    </node>
+    <node concept="M4N5e" id="19rKoRTP0VN" role="M5hS2">
+      <property role="1uS6qo" value="presentation_2" />
+      <property role="1uS6qv" value="value_2" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="19rKoRTP0VQ">
+    <property role="TrG5h" value="Enum_DeriveFromInternalValue" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
+    <property role="3GE5qa" value="enum_datatypes" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="19rKoRTP0VR" role="M5hS2">
+      <property role="1uS6qo" value="presentation_1" />
+      <property role="1uS6qv" value="value_1" />
+    </node>
+    <node concept="M4N5e" id="19rKoRTP0VS" role="M5hS2">
+      <property role="1uS6qo" value="presentation_2" />
+      <property role="1uS6qv" value="value_2" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="19rKoRTP0VT">
+    <property role="TrG5h" value="Enum_CustomIdentifier" />
+    <property role="3lZH7k" value="custom" />
+    <property role="3GE5qa" value="enum_datatypes" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="19rKoRTP0VU" role="M5hS2">
+      <property role="1uS6qo" value="presentation_1" />
+      <property role="1uS6qv" value="value_1" />
+      <property role="2fHolG" value="identifier_1" />
+    </node>
+    <node concept="M4N5e" id="19rKoRTP0VV" role="M5hS2">
+      <property role="1uS6qo" value="presentation_2" />
+      <property role="1uS6qv" value="value_2" />
+      <property role="2fHolG" value="identifier_2" />
     </node>
   </node>
 </model>
