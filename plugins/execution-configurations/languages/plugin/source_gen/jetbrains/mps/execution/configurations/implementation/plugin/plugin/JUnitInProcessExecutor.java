@@ -30,15 +30,16 @@ public class JUnitInProcessExecutor implements Executor {
   private final NodeWrappersTestsContributor myTestsContributor;
   private final TestEventsDispatcher myDispatcher;
   private final FakeProcess myFakeProcess = new FakeProcess();
-  private static volatile TestInProcessRunState ourTestRunState = new TestInProcessRunState();
+  private final TestInProcessRunState myTestRunState;
 
   public JUnitInProcessExecutor(Project mpsProject, Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
     myDispatcher = dispatcher;
     myTestsContributor = new NodeWrappersTestsContributor(mpsProject, testNodeWrappers);
+    myTestRunState = TestInProcessRunState.getInstance();
   }
 
   private synchronized boolean checkExecutionIsPossible() {
-    boolean isPossible = ourTestRunState.advance(RunStateEnum.IDLE, RunStateEnum.INITIALIZED);
+    boolean isPossible = myTestRunState.advance(RunStateEnum.IDLE, RunStateEnum.INITIALIZED);
     return isPossible;
   }
 
@@ -61,8 +62,8 @@ public class JUnitInProcessExecutor implements Executor {
       @Override
       protected void requestTerminate() {
         // XXX why not isRunning() or at least !isTerminating && !isTerminated(); do we care to request stop few times? 
-        if (!(ourTestRunState.isTerminated())) {
-          ourTestRunState.advance(RunStateEnum.RUNNING, RunStateEnum.TERMINATING);
+        if (!(myTestRunState.isTerminated())) {
+          myTestRunState.advance(RunStateEnum.RUNNING, RunStateEnum.TERMINATING);
           executor.stopRun();
         }
         // once test execution is over, the runnable at thread pool get control, myFakeProcess receives exit code and is destroyed. 
@@ -85,18 +86,18 @@ public class JUnitInProcessExecutor implements Executor {
         try {
           executor.init();
           waitUnlessProcessIsReady();
-          assert ourTestRunState.isReady();
+          assert myTestRunState.isReady();
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Be aware of the execution of your own test code and its consequences when running tests in-process. " + "The code is being executed within the current MPS environment and might do a lot of damage if written without caution.");
           }
           if (LOG.isInfoEnabled()) {
             LOG.info("Executing tests in-process");
           }
-          ourTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
+          myTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
           executor.execute();
           // regular test execution ends in RUNNING state. If we are in TERMINATING state here already, it means PH.requestTerminate triggered execution stop. 
-          boolean cancelled = ourTestRunState.isTerminating();
-          ourTestRunState.advance(RunStateEnum.RUNNING, RunStateEnum.TERMINATING);
+          boolean cancelled = myTestRunState.isTerminating();
+          myTestRunState.advance(RunStateEnum.RUNNING, RunStateEnum.TERMINATING);
           if (executor.getExecutionError() != null) {
             myFakeProcess.setExitCode(DefaultTestExecutor.EXIT_CODE_FOR_EXCEPTION);
           } else if (cancelled) {
@@ -113,7 +114,7 @@ public class JUnitInProcessExecutor implements Executor {
         } finally {
           RuntimeFlags.setTestMode(oldTestMode);
           executor.dispose();
-          ourTestRunState.set(RunStateEnum.TERMINATED);
+          myTestRunState.set(RunStateEnum.TERMINATED);
           JUnitInProcessExecutor.this.dispose();
         }
       }
@@ -121,7 +122,7 @@ public class JUnitInProcessExecutor implements Executor {
   }
 
   /*package*/ void setReady() {
-    ourTestRunState.advance(RunStateEnum.INITIALIZED, RunStateEnum.READYTOEXECUTE);
+    myTestRunState.advance(RunStateEnum.INITIALIZED, RunStateEnum.READYTOEXECUTE);
   }
 
   /*package*/ void waitUnlessProcessIsReady() {
@@ -129,25 +130,18 @@ public class JUnitInProcessExecutor implements Executor {
     new WaitFor(MSECS_TO_WAIT_FOR_START) {
       @Override
       protected boolean condition() {
-        return ourTestRunState.isReady();
+        return myTestRunState.isReady();
       }
     };
-    if (!(ourTestRunState.isReady())) {
+    if (!(myTestRunState.isReady())) {
       throw new IllegalStateException("Process is not ready");
     }
-  }
-
-  /**
-   * FOR TEST USE ONLY
-   */
-  public static TestInProcessRunState getRunState() {
-    return ourTestRunState;
   }
 
   private void dispose() {
     // BaseOSProcessHandler waits for the process to be destroyed (FakeProcess.waitFor), and then dispatches ProcessHandler.notifyProcessTerminated 
     myFakeProcess.destroy();
-    ourTestRunState.reset();
+    myTestRunState.reset();
   }
 
   private class EmptyProcessHandler extends ProcessHandler {

@@ -51,7 +51,10 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -163,6 +166,22 @@
   <node concept="312cEu" id="1$FrpHy4ud$">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="TestInProcessRunState" />
+    <property role="1EXbeo" value="true" />
+    <node concept="Wx3nA" id="78MxLJAHm5c" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="ourInstance" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="78MxLJAHlyR" role="1B3o_S" />
+      <node concept="3uibUv" id="78MxLJAHm2q" role="1tU5fm">
+        <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestInProcessRunState" />
+      </node>
+      <node concept="2ShNRf" id="3jW1bnX81CI" role="33vP2m">
+        <node concept="1pGfFk" id="3jW1bnX81xY" role="2ShVmc">
+          <ref role="37wK5l" node="1$FrpHy4udC" resolve="TestInProcessRunState" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="1$FrpHy4ud_" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -175,6 +194,23 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="1$FrpHy4udB" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="78MxLJAHnrf" role="jymVt" />
+    <node concept="2YIFZL" id="78MxLJAHsh8" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getInstance" />
+      <node concept="3clFbS" id="78MxLJAHq5M" role="3clF47">
+        <node concept="3cpWs6" id="78MxLJAHsZx" role="3cqZAp">
+          <node concept="37vLTw" id="78MxLJAHt0t" role="3cqZAk">
+            <ref role="3cqZAo" node="78MxLJAHm5c" resolve="ourInstance" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="78MxLJAHsIJ" role="3clF45">
+        <ref role="3uigEE" node="1$FrpHy4ud$" resolve="TestInProcessRunState" />
+      </node>
+      <node concept="3Tm1VV" id="78MxLJAHq5K" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="22atqJwp7jj" role="jymVt" />
     <node concept="3clFbW" id="1$FrpHy4udC" role="jymVt">
@@ -202,7 +238,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="3jW1bnX82GY" role="1B3o_S" />
+      <node concept="3Tm6S6" id="78MxLJAHnl0" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5uCAHWJVbMN" role="jymVt" />
     <node concept="3clFb_" id="2A5UIbg69nv" role="jymVt">

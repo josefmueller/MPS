@@ -17,7 +17,6 @@
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
     <import index="sfqd" ref="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)" />
     <import index="awpe" ref="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" />
-    <import index="urs3" ref="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <import index="go48" ref="r:fc6b4266-fe93-4e02-bc36-aebff4c903c3(jetbrains.mps.baseLanguage.execution.api)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="mk8z" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.progress(MPS.Platform/)" />
@@ -44,7 +43,6 @@
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
     <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="ic9i" ref="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)" />
     <import index="fnd7" ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" />
     <import index="dj99" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.configurations(MPS.IDEA/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
@@ -2038,9 +2036,9 @@
           <node concept="1Wc70l" id="40rNy8FLS0y" role="3clFbw">
             <node concept="3y3z36" id="4YDgfhqaNU_" role="3uHU7w">
               <node concept="2OqwBi" id="4YDgfhqaNUB" role="3uHU7B">
-                <node concept="2YIFZM" id="4YDgfhqaNUC" role="2Oq$k0">
-                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitInProcessExecutor" />
-                  <ref role="37wK5l" to="ic9i:5vTxdEzDDpO" resolve="getRunState" />
+                <node concept="2YIFZM" id="78MxLJAHAzb" role="2Oq$k0">
+                  <ref role="37wK5l" to="fnd7:78MxLJAHsh8" resolve="getInstance" />
+                  <ref role="1Pybhc" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
                 </node>
                 <node concept="liA8E" id="4YDgfhqaNUD" role="2OqNvi">
                   <ref role="37wK5l" to="fnd7:2A5UIbg69nv" resolve="get" />

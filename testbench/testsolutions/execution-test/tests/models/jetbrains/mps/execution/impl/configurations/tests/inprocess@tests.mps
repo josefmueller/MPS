@@ -948,9 +948,9 @@
                 <node concept="3uibUv" id="5vTxdEzFcdk" role="1tU5fm">
                   <ref role="3uigEE" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
                 </node>
-                <node concept="2YIFZM" id="5vTxdEzF5UE" role="33vP2m">
-                  <ref role="37wK5l" to="ic9i:5vTxdEzDDpO" resolve="getRunState" />
-                  <ref role="1Pybhc" to="ic9i:5iYlssmVvC7" resolve="JUnitInProcessExecutor" />
+                <node concept="2YIFZM" id="78MxLJAHA7o" role="33vP2m">
+                  <ref role="37wK5l" to="fnd7:78MxLJAHsh8" resolve="getInstance" />
+                  <ref role="1Pybhc" to="fnd7:1$FrpHy4ud$" resolve="TestInProcessRunState" />
                 </node>
               </node>
             </node>

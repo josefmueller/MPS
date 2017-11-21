@@ -30,7 +30,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
+import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Reference;
@@ -220,7 +220,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     }
   }
   private void checkInProcessRunIsSingle() throws RuntimeConfigurationException {
-    if (this.getInProcess() && JUnitInProcessExecutor.getRunState().get() != RunStateEnum.IDLE) {
+    if (this.getInProcess() && TestInProcessRunState.getInstance().get() != RunStateEnum.IDLE) {
       throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
     }
   }

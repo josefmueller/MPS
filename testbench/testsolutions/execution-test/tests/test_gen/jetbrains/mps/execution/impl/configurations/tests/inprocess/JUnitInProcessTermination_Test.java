@@ -61,7 +61,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes, eventsDispatcher);
-        final TestInProcessRunState lightState = JUnitInProcessExecutor.getRunState();
+        final TestInProcessRunState lightState = TestInProcessRunState.getInstance();
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }

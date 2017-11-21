@@ -8,11 +8,16 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class TestInProcessRunState implements Comparable<TestInProcessRunState> {
+public final class TestInProcessRunState implements Comparable<TestInProcessRunState> {
   private static final Logger LOG = LogManager.getLogger(TestInProcessRunState.class);
+  private static final TestInProcessRunState ourInstance = new TestInProcessRunState();
   private final AtomicReference<RunStateEnum> myValue;
 
-  public TestInProcessRunState() {
+  public static TestInProcessRunState getInstance() {
+    return ourInstance;
+  }
+
+  private TestInProcessRunState() {
     myValue = new AtomicReference<RunStateEnum>(RunStateEnum.IDLE);
   }
 
