@@ -187,9 +187,7 @@
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
-        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
-      </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -4181,49 +4179,6 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="6qMd1Cr3QHQ" role="3clF47">
-        <node concept="3cpWs8" id="6qMd1Cr4cQz" role="3cqZAp">
-          <node concept="3cpWsn" id="6qMd1Cr4cQ$" role="3cpWs9">
-            <property role="TrG5h" value="projectModules" />
-            <node concept="3uibUv" id="6qMd1Cr4cQv" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="6qMd1Cr4cQy" role="11_B2D">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="6qMd1Cr4dxm" role="33vP2m">
-              <node concept="1pGfFk" id="6qMd1Cr4e0a" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
-                <node concept="1rXfSq" id="6qMd1Cr4cQ_" role="37wK5m">
-                  <ref role="37wK5l" to="z1c3:~ProjectBase.getProjectModules():java.util.List" resolve="getProjectModules" />
-                </node>
-                <node concept="3uibUv" id="6qMd1Cr4eLo" role="1pMfVU">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="6qMd1Cr4eSS" role="3cqZAp">
-          <node concept="3clFbS" id="6qMd1Cr4eSU" role="2LFqv$">
-            <node concept="3clFbF" id="6qMd1Cr4fDQ" role="3cqZAp">
-              <node concept="1rXfSq" id="6qMd1Cr4fDO" role="3clFbG">
-                <ref role="37wK5l" to="z1c3:~ProjectBase.removeModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="removeModule" />
-                <node concept="37vLTw" id="6qMd1Cr4fTG" role="37wK5m">
-                  <ref role="3cqZAo" node="6qMd1Cr4eSV" resolve="module" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="6qMd1Cr4eSV" role="1Duv9x">
-            <property role="TrG5h" value="module" />
-            <node concept="3uibUv" id="6qMd1Cr4f6F" role="1tU5fm">
-              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-            </node>
-          </node>
-          <node concept="37vLTw" id="6qMd1Cr4fnw" role="1DdaDG">
-            <ref role="3cqZAo" node="6qMd1Cr4cQ$" resolve="projectModules" />
-          </node>
-        </node>
         <node concept="3clFbF" id="6qMd1Cr4gfQ" role="3cqZAp">
           <node concept="1rXfSq" id="6qMd1Cr4gfO" role="3clFbG">
             <ref role="37wK5l" to="z1c3:~ProjectBase.projectClosed():void" resolve="projectClosed" />

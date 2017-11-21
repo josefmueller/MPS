@@ -61,7 +61,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
     myFile = pathDescriptor.getPath();
     myHidden = hidden;
     // SLibrary listens to file changes as it needs to react to create events anyway. ModuleFileTracker is a storage + change/delete handler.
-    myFileTracker = new ModuleFileTracker(false);
+    myFileTracker = new ModuleFileTracker(myRepository, false);
   }
 
   @NotNull

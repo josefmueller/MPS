@@ -69,7 +69,6 @@ public final class ModuleDeleteHelper {
     // fixme: MPS-18743
     modules.stream().filter(module -> module instanceof AbstractModule).forEach(module -> ((AbstractModule) module).save());
 
-    modules.forEach(this::removeFromProject);
 
     ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject.getRepository());
     modules.forEach((module) -> {
@@ -87,8 +86,13 @@ public final class ModuleDeleteHelper {
       if (!innerModule) {
         unregisterGeneratorFromLanguage(module);
       }
-      facade.unregisterModule(module);
+      if (myProject.isProjectModule(module)) {
+        myProject.removeModule(module);
+      } else {
+        facade.unregisterModule(module);
+      }
     });
+    ((ProjectBase) myProject).save();
   }
 
   private void unregisterGeneratorFromLanguage(@NotNull SModule module) {
@@ -140,14 +144,6 @@ public final class ModuleDeleteHelper {
           iterator.remove();
         }
       }
-    }
-  }
-
-  private void removeFromProject(SModule module) {
-    //remove from project
-    if (myProject.isProjectModule(module)) {
-      myProject.removeModule(module);
-      ((ProjectBase) myProject).save();
     }
   }
 

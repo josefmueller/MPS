@@ -21,9 +21,6 @@ import jetbrains.mps.components.CoreComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.ElementProjectDataSource;
-import java.util.List;
-import org.jetbrains.mps.openapi.module.SModule;
-import java.util.ArrayList;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
   private static final Logger LOG = LogManager.getLogger(FileMPSProject.class);
@@ -89,10 +86,6 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
   }
 
   private boolean close() {
-    List<SModule> projectModules = new ArrayList<SModule>(getProjectModules());
-    for (SModule module : projectModules) {
-      removeModule(module);
-    }
     projectClosed();
     assert getProjectModules().isEmpty();
     return true;

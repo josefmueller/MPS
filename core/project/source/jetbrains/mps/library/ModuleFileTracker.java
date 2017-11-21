@@ -26,6 +26,8 @@ import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Map;
@@ -36,7 +38,7 @@ import java.util.Set;
  * from and reacts to VFS notifications with module reload/update events. Handles File directly registered with {@link #track(IFile, SModule)} only.
  * Respects multiple modules per single file. Doesn't react to create events.
  * <p>
- * Implements {@link FileListener}, but listens to the files registered only if requested {@link #ModuleFileTracker(boolean)}. Thus, if there's an external code
+ * Implements {@link FileListener}, but listens to the files registered only if requested {@link #ModuleFileTracker(SRepository, boolean)}. Thus, if there's an external code
  * that listens to file changes, it may delegate to {@link #update(ProgressMonitor, FileSystemEvent)} to handle change/delete in addition to own activity.
  * </p>
  * <p>
@@ -46,14 +48,17 @@ import java.util.Set;
  * @since 3.5
  */
 public class ModuleFileTracker implements FileListener {
-  protected final Map<IFile, Set<SModule>> myFile2Module = new THashMap<>();
+  protected final SRepository myRepository;
+  protected final Map<IFile, Set<SModuleReference>> myFile2Module = new THashMap<>();
   private final boolean myListenToTrackedFiles;
 
   /**
+   * @param repository the repo to resolve modules against
    * @param listenToTrackedFiles {@code true} if this class shall listen to tracked file changes, {@code false} if external code
    *                             invokes {@link #update(ProgressMonitor, FileSystemEvent)} at proper moment.
    */
-  public ModuleFileTracker(boolean listenToTrackedFiles) {
+  public ModuleFileTracker(SRepository repository, boolean listenToTrackedFiles) {
+    myRepository = repository;
     myListenToTrackedFiles = listenToTrackedFiles;
   }
 
@@ -71,8 +76,8 @@ public class ModuleFileTracker implements FileListener {
    * @param module module read from the file
    */
   public void track(@NotNull IFile file, @NotNull SModule module) {
-    Set<SModule> modules = myFile2Module.computeIfAbsent(file, k -> new THashSet<>());
-    boolean added = modules.add(module);
+    Set<SModuleReference> modules = myFile2Module.computeIfAbsent(file, k -> new THashSet<>());
+    boolean added = modules.add(module.getModuleReference());
     if (added && myListenToTrackedFiles) {
       file.addListener(this);
     }
@@ -101,18 +106,18 @@ public class ModuleFileTracker implements FileListener {
 
   /**
    * Discard specific association between file and module. Does nothing if there's no such association.
-   * If it's the last association for the file, and the tracker {@link #ModuleFileTracker(boolean) listens to changes}, the tracker
+   * If it's the last association for the file, and the tracker {@link #ModuleFileTracker(SRepository, boolean) listens to changes}, the tracker
    * unregisters itself from file listeners.
    *
    * @param file   origin of the module
    * @param module module read from the file
    */
   public void forget(@NotNull IFile file, @NotNull SModule module) {
-    Set<SModule> modules = myFile2Module.get(file);
+    Set<SModuleReference> modules = myFile2Module.get(file);
     if (modules == null) {
       return;
     }
-    if (modules.remove(module)) {
+    if (modules.remove(module.getModuleReference())) {
       if (modules.isEmpty()) {
         myFile2Module.remove(file);
         if (myListenToTrackedFiles) {
@@ -124,8 +129,8 @@ public class ModuleFileTracker implements FileListener {
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    final Set<SModule> modules2Remove = new THashSet<>();
-    final Set<AbstractModule> modules2Reload = new THashSet<>();
+    final Set<SModuleReference> modules2Remove = new THashSet<>();
+    final Set<SModuleReference> modules2Reload = new THashSet<>();
 
     for (IFile file : event.getRemoved()) {
       for (IFile moduleFile : myFile2Module.keySet()) {
@@ -135,27 +140,37 @@ public class ModuleFileTracker implements FileListener {
       }
     }
     for (IFile file : event.getChanged()) {
-      Set<SModule> modules = myFile2Module.get(file);
-      if (modules == null) {
-        continue;
-      }
-      for (SModule m : modules) {
-        // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
-        if (m instanceof AbstractModule && !modules2Remove.contains(m)) {
-          modules2Reload.add(((AbstractModule) m));
+      Set<SModuleReference> mRefs = myFile2Module.get(file);
+      if (mRefs != null) {
+        for (SModuleReference mRef : mRefs) {
+          // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
+          if (!modules2Remove.contains(mRef)) {
+            SModule m = mRef.resolve(myRepository);
+            if (m instanceof AbstractModule) {
+              modules2Reload.add(mRef);
+            }
+          }
         }
       }
     }
 
-    // MPS-26338? due to the incorrect usage of the project in the idea plugin
-    //[MM] see MPS-26705
-    modules2Remove.removeIf((m) -> m.getRepository() == null);
-    modules2Reload.removeIf((m) -> m.getRepository() == null);
     // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
     //     do when a module/file is removed
     // XXX unregisterModule(Language) unregisters its generators as well (Language.dispose() -> MRF.unregister(all with owner == language). Is it nice?
-    modules2Remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
-    modules2Reload.forEach(SModuleOperations::reloadFromDisk);
+    myRepository.getModelAccess().runReadAction(() -> {
+      modules2Remove.forEach(mRef -> {
+        SModule module = mRef.resolve(myRepository);
+        if (module != null) {
+          new ModuleRepositoryFacade(myRepository).unregisterModule(module);
+        }
+      });
+      modules2Reload.forEach(mRef -> {
+        SModule module = mRef.resolve(myRepository);
+        if (module instanceof AbstractModule) {
+          SModuleOperations.reloadFromDisk((AbstractModule) module);
+        }
+      });
+    });
 
     event.getRemoved().forEach(this::forget);
   }

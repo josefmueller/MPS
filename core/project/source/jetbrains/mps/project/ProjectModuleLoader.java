@@ -159,7 +159,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
   private void removeAbsentModules(final Collection<Pair<ModulePath, SModule>> removedModules) {
     for (Pair<ModulePath, SModule> p : removedModules) {
       myProject.removeModule(p.o2);
-      new ModuleRepositoryFacade(myProject).unregisterModule(p.o2);
     }
   }
 

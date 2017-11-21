@@ -25,6 +25,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.LinkedHashSet;
@@ -44,29 +46,43 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
   /*
    * tracks changes and removals of files with descriptors of project modules
    */
-  private final ModuleFileTracker myDescriptorChangeListener = new ProjectModuleFileTracker();
+  private final ModuleFileTracker myDescriptorChangeListener;
 
   private final class ProjectModuleFileTracker extends ModuleFileTracker {
-    public ProjectModuleFileTracker() {
-      super(true);
+    public ProjectModuleFileTracker(@NotNull SRepository repository) {
+      super(repository, true);
     }
 
+    /**
+     * This overriding is awful especially considering the similarity of the bodies (!)
+     * fixme rather use composite here
+     *
+     * All these checks whether the module is not disposed are due to the problem of idea plugin
+     * project being a MPSProject which is absolutely incorrect (since the project file does not contain a descriptor, there are no virtual folders
+     * and there is no need in ProjectDescriptor filling the project with modules, since idea modules contribute mps modules via MPSFacet.
+     * The MPSFacet is also responsible for disposing the corresponding SModule there thus we might get disposed modules in the plugin environment
+     */
     @Override
     public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-      Set<SModule> modules2Remove = new LinkedHashSet<>();
+      Set<SModuleReference> mRefs2Remove = new LinkedHashSet<>();
       for (IFile file : event.getRemoved()) {
         for (IFile moduleFile : myFile2Module.keySet()) {
           if (moduleFile.toPath().startsWith(file.toPath())) {
-            modules2Remove.addAll(myFile2Module.get(moduleFile));
+            mRefs2Remove.addAll(myFile2Module.get(moduleFile));
           }
         }
       }
-      modules2Remove.forEach(module -> {
-        ModulePath path = myMpsProject.getPath(module);
+      mRefs2Remove.forEach(mRef -> {
+        ModulePath path = myMpsProject.getPath(mRef);
         if (path != null) {
           moduleNotFound(path);
         }
-        myMpsProject.removeModule0(module);
+        myRepository.getModelAccess().runReadAction(() -> {
+          SModule resolved = mRef.resolve(myRepository);
+          if (resolved != null) {
+            myMpsProject.removeModule0(resolved);
+          }
+        });
       });
       super.update(monitor, event);
     }
@@ -93,8 +109,9 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
     }
   };
 
-  ProjectModuleFileChangeListener(MPSProject mpsProject) {
+  ProjectModuleFileChangeListener(@NotNull MPSProject mpsProject) {
     myMpsProject = mpsProject;
+    myDescriptorChangeListener = new ProjectModuleFileTracker(mpsProject.getRepository());
   }
 
   @Override

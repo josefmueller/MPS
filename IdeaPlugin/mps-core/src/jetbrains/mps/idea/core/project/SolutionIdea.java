@@ -64,6 +64,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -99,6 +100,7 @@ public class SolutionIdea extends Solution {
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
     super(descriptor, null);
+
     myModule = module;
     myModelAccess = ProjectHelper.getModelAccess(myModule.getProject());
     assert myModelAccess != null;
@@ -315,11 +317,6 @@ public class SolutionIdea extends Solution {
 //        super.save();    //To change body of overridden methods use File | Settings | File Templates.
   }
 
-  @Override
-  public IFile getDescriptorFile() {
-    return getFileSystem().getFile(myModule.getModuleFilePath());
-  }
-
   private void handleFacetChanged(Facet facet) {
     if (skipFacetNotification(facet)) {
       return;
@@ -365,7 +362,7 @@ public class SolutionIdea extends Solution {
           if (compilerOutputPath == null) {
             return null;
           }
-          return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+          return FileSystem.getInstance().getFile(compilerOutputPath.getPath());
         }
       };
     }

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -25,12 +27,15 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.ImmutableReturn;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -39,10 +44,12 @@ import java.util.Map;
 /**
  * MPS Project basic implementation.
  * Stores a set of modules.
+ * Set of modules coincide with the modules in the underlying repository.
  * Supported always by a {@link ProjectDescriptor} which stores paths to the module descriptors
  * Doesn't manage lifecycle of a module descriptors other than "{@linkplain #update() update} 'em all" on demand.
  * Check {@code ModuleFileChangeListener} of [mps-platform] for change tracking.
  * However, tracks module renames (albeit in a bit weird way) to keep inner structures fit.
+ *
  *
  * FIXME
  * poor architecture results in the intertwined control flow between ProjectBase, ModuleLoader and ProjectDescriptor
@@ -54,12 +61,12 @@ public abstract class ProjectBase extends Project {
   private static final Logger LOG = LogManager.getLogger(ProjectBase.class);
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
-  private final Map<SModule, SModuleListenerBase> myModulesListeners = new HashMap<>();
+  private final Map<SModuleReference, SModuleListenerBase> myModulesListeners = new HashMap<>();
 
-  // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
+  // AP fixme must be final, however StandaloneMpsProject exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
   // contract : each project module must have a corresponding ModulePath in this map
-  private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
+  private final Map<SModuleReference, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ProjectModuleLoader myModuleLoader;
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull SRepositoryRegistry repositoryRegistry) {
@@ -75,7 +82,12 @@ public abstract class ProjectBase extends Project {
 
   @Nullable
   protected final ModulePath getPath(@NotNull SModule module) {
-    return myModuleToPathMap.get(module);
+    return getPath(module.getModuleReference());
+  }
+
+  @Nullable
+  final ModulePath getPath(@NotNull SModuleReference mRef) {
+    return myModuleToPathMap.get(mRef);
   }
 
   final boolean containsPath(@NotNull ModulePath modulePath) {
@@ -93,12 +105,14 @@ public abstract class ProjectBase extends Project {
   @Deprecated
   @Internal
   /*package*/ final void addModule0(@NotNull ModulePath path, @NotNull SModule module) {
-    if (myModuleToPathMap.containsKey(module)) {
+    if (myModuleToPathMap.containsKey(module.getModuleReference())) {
 //      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
       LOG.warn(module + " is already in " + this);
       return;
     }
-    myModuleToPathMap.put(module, path);
+    SRepositoryExt repository = (SRepositoryExt) getRepository();
+    repository.getModelAccess().runWriteAction(() -> repository.registerModule(module, this));
+    myModuleToPathMap.put(module.getModuleReference(), path);
     addRenameListener(module);
   }
 
@@ -117,14 +131,17 @@ public abstract class ProjectBase extends Project {
     if (module instanceof AbstractModule) {
       // ModuleRenameListener doesn't tolerate anything but AbstractModule. Not well-mannered, imo.
       ModuleRenameListener listener = new ModuleRenameListener();
-      myModulesListeners.put(module, listener);
+      myModulesListeners.put(module.getModuleReference(), listener);
       module.addModuleListener(listener);
     }
   }
 
+  /**
+   * force removal of the module from the project
+   */
   @Override
   public final void removeModule(@NotNull SModule module) {
-    if (!myModuleToPathMap.containsKey(module)) {
+    if (!myModuleToPathMap.containsKey(module.getModuleReference())) {
       LOG.warn("Module has not been registered in the project: " + module);
       return;
     }
@@ -135,15 +152,18 @@ public abstract class ProjectBase extends Project {
 
   /**
    * Method which intent is to update only the module <-> virtual path map
-   * not touching the project descriptor
+   * and remove the module from the repository but not to touch the project descriptor
    *
    * @see #addModule0(ModulePath, SModule)
    */
   @Internal
   /*package*/ final ModulePath removeModule0(@NotNull SModule module) {
-    final ModulePath modulePath = myModuleToPathMap.remove(module);
+    final ModulePath modulePath = myModuleToPathMap.remove(module.getModuleReference());
     assert modulePath != null;
-    module.removeModuleListener(myModulesListeners.remove(module));
+    SModuleListenerBase remove = myModulesListeners.remove(module.getModuleReference());
+    module.removeModuleListener(remove);
+    SRepositoryExt repository = (SRepositoryExt) getRepository();
+    repository.getModelAccess().runWriteAction(() -> repository.unregisterModule(module, this));
     return modulePath;
   }
 
@@ -158,8 +178,21 @@ public abstract class ProjectBase extends Project {
   }
 
   @NotNull
+  @ImmutableReturn
   public final List<SModule> getProjectModules() {
-    return new ArrayList<>(myModuleToPathMap.keySet());
+    List<SModule> result = new ArrayList<>();
+    SRepository repository = getRepository();
+    repository.getModelAccess().runReadAction(() -> {
+      for (SModuleReference mRef : myModuleToPathMap.keySet()) {
+        SModule resolved = mRef.resolve(repository);
+        if (resolved != null) {
+          result.add(resolved);
+        } else {
+          LOG.error("Module " + mRef + " is not found in the project repository", new Throwable());
+        }
+      }
+    });
+    return Collections.unmodifiableList(result);
   }
 
   /**
@@ -169,12 +202,9 @@ public abstract class ProjectBase extends Project {
 
   // AP: todo make final
   protected void update() {
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        loadModules();
-        fireModulesLoaded();
-      }
+    getModelAccess().runWriteAction(() -> {
+      loadModules();
+      fireModulesLoaded();
     });
   }
 
@@ -211,7 +241,6 @@ public abstract class ProjectBase extends Project {
     checkNotDisposed();
     LOG.info("Project '" + getName() + "' is closing");
     myProjectManager.projectClosed(this);
-    getModelAccess().runWriteAction(() -> new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this));
     getProjectModules().forEach(this::removeModule);
   }
 
@@ -236,14 +265,14 @@ public abstract class ProjectBase extends Project {
   }
 
   // Used to live in StandaloneMPSProject. I don't see why it's restricted to that one, provided any
-  // ProjectBase derivative knows aboud ModulePath and its virtual folder.
+  // ProjectBase derivative knows about ModulePath and its virtual folder.
   protected void setVirtualFolder(@NotNull SModule module, String newFolder) {
     // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
     ModulePath modulePath = getPath(module);
     if (modulePath != null) {
       ModulePath newPath = modulePath.withVirtualFolder(newFolder);
       myProjectDescriptor.replacePath(modulePath, newPath);
-      myModuleToPathMap.put(module, newPath);
+      myModuleToPathMap.put(module.getModuleReference(), newPath);
     } else {
       LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
     }
@@ -268,14 +297,14 @@ public abstract class ProjectBase extends Project {
       if (!(module instanceof AbstractModule)) {
         throw new IllegalArgumentException("Support only abstract module here " + module);
       }
-      ModulePath oldPath = myModuleToPathMap.remove(module);
+      ModulePath oldPath = myModuleToPathMap.remove(module.getModuleReference());
       IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
       if (descriptorFile == null) {
         throw new IllegalArgumentException("The descriptor file is null " + module);
       }
       ModulePath newPath = new ModulePath(descriptorFile.getPath(), oldPath.getVirtualFolder());
       myProjectDescriptor.replacePath(oldPath, newPath);
-      myModuleToPathMap.put(module, newPath);
+      myModuleToPathMap.put(module.getModuleReference(), newPath);
     }
   }
 }
