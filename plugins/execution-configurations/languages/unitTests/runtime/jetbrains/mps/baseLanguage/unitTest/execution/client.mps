@@ -5838,9 +5838,9 @@
                         </node>
                         <node concept="2OqwBi" id="PCmloRzxpy" role="33vP2m">
                           <node concept="2OqwBi" id="PCmloRzxpz" role="2Oq$k0">
-                            <node concept="2YIFZM" id="PCmloRzxp$" role="2Oq$k0">
-                              <ref role="1Pybhc" to="ic9i:7jEXsfiNGiU" resolve="JvmArgs" />
-                              <ref role="37wK5l" to="ic9i:46IpDBbYZ8G" resolve="getDefaultJvmArgs" />
+                            <node concept="2YIFZM" id="78MxLJAFpZ0" role="2Oq$k0">
+                              <ref role="37wK5l" to="go48:46IpDBbYZ8G" resolve="getDefaultJvmArgs" />
+                              <ref role="1Pybhc" to="go48:7jEXsfiNGiU" resolve="JvmArgs" />
                             </node>
                             <node concept="4Tj9Z" id="PCmloRzxp_" role="2OqNvi">
                               <node concept="2OqwBi" id="PCmloRzxpA" role="576Qk">

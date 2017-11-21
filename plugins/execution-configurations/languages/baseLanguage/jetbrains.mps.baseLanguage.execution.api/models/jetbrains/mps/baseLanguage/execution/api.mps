@@ -43,6 +43,7 @@
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" implicit="true" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
@@ -191,6 +192,7 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -3867,6 +3869,64 @@
         <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="7jEXsfiNGiU">
+    <property role="TrG5h" value="JvmArgs" />
+    <property role="1EXbeo" value="true" />
+    <node concept="2YIFZL" id="46IpDBbYZ8G" role="jymVt">
+      <property role="TrG5h" value="getDefaultJvmArgs" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="7jEXsfiNKao" role="3clF47">
+        <node concept="3clFbF" id="7jEXsfiNRpG" role="3cqZAp">
+          <node concept="2OqwBi" id="7jEXsfiO_95" role="3clFbG">
+            <node concept="1tenjt" id="7jEXsfiNRpJ" role="2Oq$k0">
+              <node concept="Xl_RD" id="7jEXsfiNRpK" role="1r8FgC">
+                <property role="Xl_RC" value="-client" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpL" role="1r8FgC">
+                <property role="Xl_RC" value="-Xss1024k" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpM" role="1r8FgC">
+                <property role="Xl_RC" value="-ea" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpN" role="1r8FgC">
+                <property role="Xl_RC" value="-Xmx1500m" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpO" role="1r8FgC">
+                <property role="Xl_RC" value="-XX:MaxPermSize=150m" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpP" role="1r8FgC">
+                <property role="Xl_RC" value="-XX:+HeapDumpOnOutOfMemoryError" />
+              </node>
+              <node concept="Xl_RD" id="7jEXsfiNRpQ" role="1r8FgC">
+                <property role="Xl_RC" value="-Dfile.encoding=UTF-8" />
+              </node>
+              <node concept="1eOMI4" id="7jEXsfiNRpR" role="1r8FgC">
+                <node concept="3K4zz7" id="7jEXsfiNRpS" role="1eOMHV">
+                  <node concept="Xl_RD" id="7jEXsfiNRpT" role="3K4E3e">
+                    <property role="Xl_RC" value=" -Dmps.internal=true" />
+                  </node>
+                  <node concept="Xl_RD" id="7jEXsfiNRpU" role="3K4GZi">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                  <node concept="2YIFZM" id="7jEXsfiNRpV" role="3K4Cdx">
+                    <ref role="37wK5l" to="fyhk:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
+                    <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2TNl2y" id="7jEXsfiO_ji" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="7jEXsfiO$Lh" role="3clF45">
+        <node concept="17QB3L" id="7jEXsfiO$Wa" role="_ZDj9" />
+      </node>
+      <node concept="3Tm1VV" id="7jEXsfiNIOO" role="1B3o_S" />
+    </node>
+    <node concept="3Tm1VV" id="7jEXsfiNGiV" role="1B3o_S" />
   </node>
 </model>
 

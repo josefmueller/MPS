@@ -14,6 +14,7 @@ import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
 import com.intellij.util.SystemProperties;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;

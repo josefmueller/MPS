@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs;
+import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor;
 import java.util.ArrayList;
