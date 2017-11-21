@@ -25562,13 +25562,10 @@
               <property role="2Ry0Am" value="plugins" />
               <node concept="2Ry0Ak" id="3IKDaVZorZl" role="2Ry0An">
                 <property role="2Ry0Am" value="execution-configurations" />
-                <node concept="2Ry0Ak" id="3IKDaVZorZm" role="2Ry0An">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3IKDaVZorZn" role="2Ry0An">
-                    <property role="2Ry0Am" value="ant" />
-                    <node concept="2Ry0Ak" id="3IKDaVZorZo" role="2Ry0An">
-                      <property role="2Ry0Am" value="source_gen" />
-                    </node>
+                <node concept="2Ry0Ak" id="3IKDaVZorZn" role="2Ry0An">
+                  <property role="2Ry0Am" value="ant.cmd" />
+                  <node concept="2Ry0Ak" id="3IKDaVZorZo" role="2Ry0An">
+                    <property role="2Ry0Am" value="source_gen" />
                   </node>
                 </node>
               </node>
@@ -25584,16 +25581,10 @@
               <property role="2Ry0Am" value="plugins" />
               <node concept="2Ry0Ak" id="3IKDaVZorZv" role="2Ry0An">
                 <property role="2Ry0Am" value="execution-configurations" />
-                <node concept="2Ry0Ak" id="3IKDaVZorZw" role="2Ry0An">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3IKDaVZorZx" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3IKDaVZorZy" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.api" />
-                      <node concept="2Ry0Ak" id="3IKDaVZorZz" role="2Ry0An">
-                        <property role="2Ry0Am" value="source_gen" />
-                      </node>
-                    </node>
+                <node concept="2Ry0Ak" id="3IKDaVZorZy" role="2Ry0An">
+                  <property role="2Ry0Am" value="java.cmd" />
+                  <node concept="2Ry0Ak" id="3IKDaVZorZz" role="2Ry0An">
+                    <property role="2Ry0Am" value="source_gen" />
                   </node>
                 </node>
               </node>
@@ -25609,13 +25600,10 @@
               <property role="2Ry0Am" value="plugins" />
               <node concept="2Ry0Ak" id="3IKDaVZoWAw" role="2Ry0An">
                 <property role="2Ry0Am" value="execution-configurations" />
-                <node concept="2Ry0Ak" id="3IKDaVZoWAx" role="2Ry0An">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3IKDaVZoWAy" role="2Ry0An">
-                    <property role="2Ry0Am" value="plugin" />
-                    <node concept="2Ry0Ak" id="3IKDaVZoWAz" role="2Ry0An">
-                      <property role="2Ry0Am" value="source_gen" />
-                    </node>
+                <node concept="2Ry0Ak" id="3IKDaVZoWAy" role="2Ry0An">
+                  <property role="2Ry0Am" value="plugin" />
+                  <node concept="2Ry0Ak" id="3IKDaVZoWAz" role="2Ry0An">
+                    <property role="2Ry0Am" value="source_gen" />
                   </node>
                 </node>
               </node>
@@ -25631,16 +25619,10 @@
               <property role="2Ry0Am" value="plugins" />
               <node concept="2Ry0Ak" id="3IKDaVZoWAD" role="2Ry0An">
                 <property role="2Ry0Am" value="execution-configurations" />
-                <node concept="2Ry0Ak" id="3IKDaVZoWAE" role="2Ry0An">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3IKDaVZoWAF" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTests" />
-                    <node concept="2Ry0Ak" id="3IKDaVZoWAG" role="2Ry0An">
-                      <property role="2Ry0Am" value="runtime" />
-                      <node concept="2Ry0Ak" id="3IKDaVZoWAH" role="2Ry0An">
-                        <property role="2Ry0Am" value="source_gen" />
-                      </node>
-                    </node>
+                <node concept="2Ry0Ak" id="3IKDaVZoWAG" role="2Ry0An">
+                  <property role="2Ry0Am" value="junit" />
+                  <node concept="2Ry0Ak" id="3IKDaVZoWAH" role="2Ry0An">
+                    <property role="2Ry0Am" value="source_gen" />
                   </node>
                 </node>
               </node>
@@ -25696,12 +25678,9 @@
             <node concept="2Ry0Ak" id="5xa9wY2vhaL" role="2Ry0An">
               <property role="2Ry0Am" value="execution-configurations" />
               <node concept="2Ry0Ak" id="5xa9wY2vhaM" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
+                <property role="2Ry0Am" value="ant.cmd" />
                 <node concept="2Ry0Ak" id="5xa9wY2vhaN" role="2Ry0An">
-                  <property role="2Ry0Am" value="ant" />
-                  <node concept="2Ry0Ak" id="5xa9wY2vhaO" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.ant.execution.msd" />
-                  </node>
+                  <property role="2Ry0Am" value="jetbrains.mps.ant.execution.msd" />
                 </node>
               </node>
             </node>
@@ -25806,16 +25785,10 @@
             <property role="2Ry0Am" value="plugins" />
             <node concept="2Ry0Ak" id="5xa9wY2vhaT" role="2Ry0An">
               <property role="2Ry0Am" value="execution-configurations" />
-              <node concept="2Ry0Ak" id="5xa9wY2vhaU" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="5xa9wY2vhaV" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="5xa9wY2vhaW" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.api" />
-                    <node concept="2Ry0Ak" id="5xa9wY2vhaX" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.util.msd" />
-                    </node>
-                  </node>
+              <node concept="2Ry0Ak" id="5xa9wY2vhaW" role="2Ry0An">
+                <property role="2Ry0Am" value="java.cmd" />
+                <node concept="2Ry0Ak" id="5xa9wY2vhaX" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.util.msd" />
                 </node>
               </node>
             </node>
@@ -25932,16 +25905,10 @@
             <property role="2Ry0Am" value="plugins" />
             <node concept="2Ry0Ak" id="5xa9wY2vhb2" role="2Ry0An">
               <property role="2Ry0Am" value="execution-configurations" />
-              <node concept="2Ry0Ak" id="5xa9wY2vhb3" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="5xa9wY2vhb4" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="5xa9wY2vhb5" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.startup" />
-                    <node concept="2Ry0Ak" id="5xa9wY2vhb6" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.startup.msd" />
-                    </node>
-                  </node>
+              <node concept="2Ry0Ak" id="5xa9wY2vhb5" role="2Ry0An">
+                <property role="2Ry0Am" value="java.startup" />
+                <node concept="2Ry0Ak" id="5xa9wY2vhb6" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.execution.startup.msd" />
                 </node>
               </node>
             </node>
@@ -25979,13 +25946,10 @@
             <property role="2Ry0Am" value="plugins" />
             <node concept="2Ry0Ak" id="5xa9wY2vhba" role="2Ry0An">
               <property role="2Ry0Am" value="execution-configurations" />
-              <node concept="2Ry0Ak" id="5xa9wY2vhbb" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="5xa9wY2vhbc" role="2Ry0An">
-                  <property role="2Ry0Am" value="plugin" />
-                  <node concept="2Ry0Ak" id="5xa9wY2vhbd" role="2Ry0An">
-                    <property role="2Ry0Am" value="jetbrains.mps.execution.configurations.implementation.plugin.msd" />
-                  </node>
+              <node concept="2Ry0Ak" id="5xa9wY2vhbc" role="2Ry0An">
+                <property role="2Ry0Am" value="plugin" />
+                <node concept="2Ry0Ak" id="5xa9wY2vhbd" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.execution.configurations.implementation.plugin.msd" />
                 </node>
               </node>
             </node>
@@ -26180,16 +26144,10 @@
             <property role="2Ry0Am" value="plugins" />
             <node concept="2Ry0Ak" id="5xa9wY2vhbi" role="2Ry0An">
               <property role="2Ry0Am" value="execution-configurations" />
-              <node concept="2Ry0Ak" id="5xa9wY2vhbj" role="2Ry0An">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="5xa9wY2vhbk" role="2Ry0An">
-                  <property role="2Ry0Am" value="unitTests" />
-                  <node concept="2Ry0Ak" id="5xa9wY2vhbl" role="2Ry0An">
-                    <property role="2Ry0Am" value="runtime" />
-                    <node concept="2Ry0Ak" id="5xa9wY2vhbm" role="2Ry0An">
-                      <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.unitTest.execution.msd" />
-                    </node>
-                  </node>
+              <node concept="2Ry0Ak" id="5xa9wY2vhbl" role="2Ry0An">
+                <property role="2Ry0Am" value="junit" />
+                <node concept="2Ry0Ak" id="5xa9wY2vhbm" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.unitTest.execution.msd" />
                 </node>
               </node>
             </node>

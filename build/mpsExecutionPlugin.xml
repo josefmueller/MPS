@@ -541,49 +541,49 @@
     <jar destfile="${build.layout}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" />
       <fileset dir="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.startup/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.execution.startup.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.startup-jetbrains">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-java.startup-models">
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.startup/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup-src.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen">
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.startup/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains.mps.baseLanguage.execution.startup.msd" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.startup-jetbrains" prefix="module/jetbrains" />
+      <zipfileset file="${basedir}/plugins/execution-configurations/java.startup/jetbrains.mps.baseLanguage.execution.startup.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-java.startup-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/mps-execution-configurations/lib" />
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.api-models">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-java.cmd-models">
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.cmd/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-unitTests-runtime-jetbrains">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-junit-models">
+      <fileset dir="${mps_home}/plugins/execution-configurations/junit/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-ant-models">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/ant/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-ant.cmd-models">
+      <fileset dir="${mps_home}/plugins/execution-configurations/ant.cmd/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-plugin-jetbrains">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/plugin/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-plugin-models">
+      <fileset dir="${mps_home}/plugins/execution-configurations/plugin/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-execution-configurations/lib/execution-configurations.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/execution-configurations" />
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/jetbrains.mps.baseLanguage.execution.util.msd" prefix="modules/jetbrains.mps.baseLanguage.execution.util" />
+      <zipfileset file="${basedir}/plugins/execution-configurations/java.cmd/jetbrains.mps.baseLanguage.execution.util.msd" prefix="modules/jetbrains.mps.baseLanguage.execution.util" />
       <zipfileset dir="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.execution.util" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.api-models" prefix="modules/jetbrains.mps.baseLanguage.execution.util/models" />
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-java.cmd-models" prefix="modules/jetbrains.mps.baseLanguage.execution.util/models" />
+      <zipfileset file="${basedir}/plugins/execution-configurations/junit/jetbrains.mps.baseLanguage.unitTest.execution.msd" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution" />
       <zipfileset dir="${basedir}/plugins/execution-configurations/languages/unitTests/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-unitTests-runtime-jetbrains" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution/jetbrains" />
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/ant/jetbrains.mps.ant.execution.msd" prefix="modules/jetbrains.mps.ant.execution" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-junit-models" prefix="modules/jetbrains.mps.baseLanguage.unitTest.execution/models" />
+      <zipfileset file="${basedir}/plugins/execution-configurations/ant.cmd/jetbrains.mps.ant.execution.msd" prefix="modules/jetbrains.mps.ant.execution" />
       <zipfileset dir="${basedir}/plugins/execution-configurations/languages/ant" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ant.execution" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-ant-models" prefix="modules/jetbrains.mps.ant.execution/models" />
-      <zipfileset file="${basedir}/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-ant.cmd-models" prefix="modules/jetbrains.mps.ant.execution/models" />
+      <zipfileset file="${basedir}/plugins/execution-configurations/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin" />
       <zipfileset dir="${basedir}/plugins/execution-configurations/languages/plugin" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-plugin-jetbrains" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin/jetbrains" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-plugin-models" prefix="modules/jetbrains.mps.execution.configurations.implementation.plugin/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -725,21 +725,21 @@
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
-        <module file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains.mps.baseLanguage.execution.startup.msd" />
+        <module file="${basedir}/plugins/execution-configurations/java.startup/jetbrains.mps.baseLanguage.execution.startup.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" />
         <module file="${mps_home}/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/plugin/jetbrains.mps.execution.languages.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" />
       </chunk>
       <chunk>
-        <module file="${basedir}/plugins/execution-configurations/languages/ant/jetbrains.mps.ant.execution.msd" />
-        <module file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/jetbrains.mps.baseLanguage.execution.util.msd" />
+        <module file="${basedir}/plugins/execution-configurations/ant.cmd/jetbrains.mps.ant.execution.msd" />
+        <module file="${basedir}/plugins/execution-configurations/java.cmd/jetbrains.mps.baseLanguage.execution.util.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" />
         <module file="${mps_home}/plugins/execution-languages/languages/devkit/devkit.devkit" />
       </chunk>
       <chunk>
-        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
-        <module file="${basedir}/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" />
+        <module file="${basedir}/plugins/execution-configurations/junit/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
+        <module file="${basedir}/plugins/execution-configurations/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" />
       </chunk>
       <jvmargs>
@@ -1132,18 +1132,18 @@
   </target>
   
   <target name="java.compile.execution-configurations" depends="java.compile.execution-languages, fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" />
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
+    <mkdir dir="${mps_home}/plugins/execution-configurations/ant.cmd/source_gen" />
+    <mkdir dir="${mps_home}/plugins/execution-configurations/java.cmd/source_gen" />
+    <mkdir dir="${mps_home}/plugins/execution-configurations/plugin/source_gen" />
+    <mkdir dir="${mps_home}/plugins/execution-configurations/junit/source_gen" />
     <mkdir dir="${build.tmp}/java/out/execution-configurations" />
     <javac2 destdir="${build.tmp}/java/out/execution-configurations" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" />
-        <path location="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
-        <path location="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
-        <path location="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
+        <path location="${mps_home}/plugins/execution-configurations/ant.cmd/source_gen" />
+        <path location="${mps_home}/plugins/execution-configurations/java.cmd/source_gen" />
+        <path location="${mps_home}/plugins/execution-configurations/plugin/source_gen" />
+        <path location="${mps_home}/plugins/execution-configurations/junit/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -1179,41 +1179,41 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/execution-configurations">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/ant.cmd/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.cmd/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/plugin/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/junit/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="java.compile.jetbrains.mps.baseLanguage.execution.startup">
-    <mkdir dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
+    <mkdir dir="${mps_home}/plugins/execution-configurations/java.startup/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
+        <path location="${mps_home}/plugins/execution-configurations/java.startup/source_gen" />
       </src>
       <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup">
-      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/java.startup/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="cleanSources">
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/java.startup/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/jetbrains.mps.execution.impl/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/plugin/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/library/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/ant.cmd/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/java.cmd/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/commands/generator/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/junit/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/plugin/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
   </target>
 </project>

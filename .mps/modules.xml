@@ -211,11 +211,11 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/jetbrains.mps.execution.api.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/languages/ant/jetbrains.mps.ant.execution.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/jetbrains.mps.baseLanguage.execution.util.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains.mps.baseLanguage.execution.startup.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/ant.cmd/jetbrains.mps.ant.execution.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/java.cmd/jetbrains.mps.baseLanguage.execution.util.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/java.startup/jetbrains.mps.baseLanguage.execution.startup.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/junit/jetbrains.mps.baseLanguage.unitTest.execution.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" folder="workbench.execution" />
