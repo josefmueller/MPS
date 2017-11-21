@@ -737,7 +737,7 @@
         <node concept="3cpWs6" id="1xyr94Tk8aX" role="3cqZAp">
           <node concept="2ShNRf" id="1xyr94Ti2hI" role="3cqZAk">
             <node concept="1pGfFk" id="1xyr94Ti2hJ" role="2ShVmc">
-              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(jetbrains.mps.project.MPSProject,com.intellij.openapi.vfs.VirtualFile)" resolve="MPSFileNodeEditor" />
+              <ref role="37wK5l" to="k3nr:~MPSFileNodeEditor.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.nodefs.MPSNodeVirtualFile)" resolve="MPSFileNodeEditor" />
               <node concept="10QFUN" id="6gJxm_KAQiU" role="37wK5m">
                 <node concept="3uibUv" id="6gJxm_KAR1_" role="10QFUM">
                   <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />

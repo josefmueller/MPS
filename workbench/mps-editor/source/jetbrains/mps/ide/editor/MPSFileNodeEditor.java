@@ -26,26 +26,20 @@ import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.util.UserDataHolderBase;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.BaseNodeEditor.BaseEditorState;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.JComponent;
@@ -67,39 +61,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private EditorState myDelayedState = null;
   private boolean mySelected;
 
-  // do not duplicate code that obtains MPSNodeVirtualFile from regular IDEA VirtualFile
-  // in MPSFileNodeEditorProvider and MPSFileNodeEditor
-  /*package*/ static class NodeFileComputable implements Computable<MPSNodeVirtualFile> {
-    private final SRepository myRepository;
-    private final IFile myFile;
-    private final String myNameToMatch;
-
-    public NodeFileComputable(SRepository repository, VirtualFile file) {
-      myRepository = repository;
-      myFile = VirtualFileUtils.toIFile(file.getParent());
-      myNameToMatch = file.getNameWithoutExtension();
-    }
-
-    @Override
-    public MPSNodeVirtualFile compute() {
-      SModel model = SModelFileTracker.getInstance(myRepository).findModel(myFile);
-      if (model != null) {
-        for (SNode node : model.getRootNodes()) {
-          if (myNameToMatch.equals(node.getName()) || myNameToMatch.equals(node.getNodeId().toString())) {
-            return NodeVirtualFileSystem.getInstance().getFileFor(myRepository, node);
-          }
-        }
-      }
-      return null;
-    }
-  }
-
-  public MPSFileNodeEditor(@NotNull MPSProject project, @NotNull VirtualFile file) {
+  public MPSFileNodeEditor(@NotNull MPSProject project, SRepository repository, @NotNull Computable<MPSNodeVirtualFile> nodeFileComputable) {
     this(project, null);
-    // FIXME MPSNodeVirtualFile is subclass of VirtualFile, how do we ensure proper cons is invoked?
-    assert !(file instanceof MPSNodeVirtualFile);
-    final SRepository repository = project.getRepository();
-    final NodeFileComputable nodeFileComputable = new NodeFileComputable(repository, file);
     // we expect new models (that may come from the file) could show up in the repository only as a command(repository modification) result
     repository.getModelAccess().addCommandListener(new CommandListenerAdapter() {
       @Override
@@ -296,7 +259,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   // expects model read, and likely EDT?
   private void recreateEditor(EditorState state) {
-    if (myProject.isDisposed() || !isValid() || waitingForNodeFile()) {
+    if (myProject.isDisposed() || !isValid() || waitingForNodeFile() || myFile.getNode() == null) {
       return;
     }
 
