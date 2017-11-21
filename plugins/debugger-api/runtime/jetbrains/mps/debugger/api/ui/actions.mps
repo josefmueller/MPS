@@ -2015,8 +2015,8 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Debugger API for MPS" />
-    <property role="9BnSO" value="173.1" />
-    <property role="9BnSK" value="2017.3" />
+    <property role="9BnSO" value="181.1" />
+    <property role="9BnSK" value="2018.1" />
   </node>
   <node concept="312cEu" id="24OxoGwTqg6">
     <property role="TrG5h" value="MuteBreakpoints" />
