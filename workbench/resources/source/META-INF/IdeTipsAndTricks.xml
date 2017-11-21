@@ -58,6 +58,9 @@
     <tipAndTrick file="ShowError.html"/>
     <tipAndTrick file="gotoModel.html"/>
     <tipAndTrick file="CompareTwoNodes.html"/>
+    <tipAndTrick file="GenericPlaceholder.html"/>
+    <tipAndTrick file="GenericPlaceholderComments.html"/>
+    <tipAndTrick file="NodePointer.html"/>
     <tipAndTrick file="HelpMenu.html"/>
     <tipAndTrick file="JetBrainsTV.html"/>
 
