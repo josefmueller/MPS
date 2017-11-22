@@ -13,6 +13,7 @@
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="v4w5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.aspects(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
@@ -125,6 +126,14 @@
       <node concept="2IRzkw" id="ghIDlF6GDj" role="2IRzpu" />
     </node>
     <node concept="qMXn0" id="ghIDlF6Hg1" role="QNr5C" />
+    <node concept="q3mfq" id="78qQRpbiEpU" role="QNr5C">
+      <property role="TrG5h" value="getDefaultDevkit" />
+      <node concept="3uibUv" id="78qQRpbiXRi" role="q3mfk">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="2IRzkw" id="78qQRpbiEqQ" role="2IRzpu" />
+    </node>
+    <node concept="qMXn0" id="78qQRpbiEoa" role="QNr5C" />
     <node concept="q3mfq" id="ghIDlF6HdH" role="QNr5C">
       <property role="TrG5h" value="getMainLanguages" />
       <node concept="3vKaQO" id="ghIDlF6HdW" role="q3mfk">

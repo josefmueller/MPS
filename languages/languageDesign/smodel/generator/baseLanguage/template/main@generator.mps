@@ -353,6 +353,9 @@
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
+      <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
+        <child id="8900764248744213871" name="contentNode" index="1Koe22" />
+      </concept>
       <concept id="1805153994415891174" name="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration" flags="ng" index="1N15co">
         <child id="1805153994415893199" name="type" index="1N15GL" />
       </concept>
@@ -21632,6 +21635,84 @@
     <node concept="gft3U" id="5N0kNHpsGsw" role="jxRDz">
       <node concept="10Nm6u" id="5N0kNHpsI8_" role="gfFT$">
         <node concept="29HgVG" id="5N0kNHpsI8A" role="lGtFl" />
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="6IZJ8Q4WR_Q">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="switch_DevkitIdentity_SModuleReference" />
+    <node concept="3aamgX" id="6IZJ8Q4WR_R" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:78qQRpbfVOr" resolve="DevkitPointer" />
+      <node concept="1Koe21" id="6IZJ8Q4WRGf" role="1lVwrX">
+        <node concept="2OqwBi" id="6IZJ8Q4WBxG" role="1Koe22">
+          <node concept="2YIFZM" id="6IZJ8Q4WBxH" role="2Oq$k0">
+            <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+            <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+          </node>
+          <node concept="liA8E" id="6IZJ8Q4WBxI" role="2OqNvi">
+            <ref role="37wK5l" to="dush:~PersistenceFacade.createModuleReference(java.lang.String):org.jetbrains.mps.openapi.module.SModuleReference" resolve="createModuleReference" />
+            <node concept="Xl_RD" id="6IZJ8Q4WBxJ" role="37wK5m">
+              <property role="Xl_RC" value="" />
+              <node concept="17Uvod" id="6IZJ8Q4WBxK" role="lGtFl">
+                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                <property role="2qtEX9" value="value" />
+                <node concept="3zFVjK" id="6IZJ8Q4WBxL" role="3zH0cK">
+                  <node concept="3clFbS" id="6IZJ8Q4WBxM" role="2VODD2">
+                    <node concept="3cpWs8" id="6IZJ8Q4WBxN" role="3cqZAp">
+                      <node concept="3cpWsn" id="6IZJ8Q4WBxO" role="3cpWs9">
+                        <property role="TrG5h" value="mr" />
+                        <node concept="3uibUv" id="6IZJ8Q4WBxP" role="1tU5fm">
+                          <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+                        </node>
+                        <node concept="2OqwBi" id="6IZJ8Q4WBxQ" role="33vP2m">
+                          <node concept="30H73N" id="6IZJ8Q4WSK$" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="6IZJ8Q4WD9_" role="2OqNvi">
+                            <ref role="37wK5l" to="tpeu:78qQRpbgix2" resolve="getModuleReference" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWs6" id="6IZJ8Q4WBxT" role="3cqZAp">
+                      <node concept="3K4zz7" id="6IZJ8Q4WBxU" role="3cqZAk">
+                        <node concept="2OqwBi" id="6IZJ8Q4WBxV" role="3K4GZi">
+                          <node concept="2YIFZM" id="6IZJ8Q4WBxW" role="2Oq$k0">
+                            <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                            <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                          </node>
+                          <node concept="liA8E" id="6IZJ8Q4WBxX" role="2OqNvi">
+                            <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.module.SModuleReference):java.lang.String" resolve="asString" />
+                            <node concept="37vLTw" id="6IZJ8Q4WBxY" role="37wK5m">
+                              <ref role="3cqZAo" node="6IZJ8Q4WBxO" resolve="mr" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="10Nm6u" id="6IZJ8Q4WBxZ" role="3K4E3e" />
+                        <node concept="3clFbC" id="6IZJ8Q4WBy0" role="3K4Cdx">
+                          <node concept="10Nm6u" id="6IZJ8Q4WBy1" role="3uHU7w" />
+                          <node concept="37vLTw" id="6IZJ8Q4WBy2" role="3uHU7B">
+                            <ref role="3cqZAo" node="6IZJ8Q4WBxO" resolve="mr" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="raruj" id="6IZJ8Q4WBy3" role="lGtFl" />
+        </node>
+      </node>
+    </node>
+    <node concept="1lLz0L" id="6IZJ8Q4WRA3" role="28wCFW">
+      <property role="1lMjX7" value="error" />
+      <property role="1lLB17" value="&quot;Need an instance of DevkitIdentity&quot;" />
+    </node>
+    <node concept="j$LIH" id="6IZJ8Q4WRA4" role="jxRDz">
+      <node concept="1lLz0L" id="6IZJ8Q4WRA5" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="&quot;Unsupported DevkitIdentity kind&quot;" />
       </node>
     </node>
   </node>
