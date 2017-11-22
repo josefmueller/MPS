@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -50,6 +51,15 @@ public abstract class LanguageAspectDescriptor implements OrderParticipant<Strin
 
   public void create(SModule language) {
 
+  }
+
+  @Nullable
+  //todo should be changed to SDevKit whn we have one
+  //todo the body to be removed after 18.1 (needed for compilation compatibility)
+  //todo should be made not-null when we have migrated to devkits instead of languages.
+  // For this ^ reason it's not annotated with @Nullable in generated inheritors
+  public SModuleReference getDefaultDevkit(){
+    return null;
   }
 
   @NotNull
