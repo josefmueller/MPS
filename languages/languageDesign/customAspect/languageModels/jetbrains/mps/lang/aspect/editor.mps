@@ -486,21 +486,33 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="3F0ifn" id="5iYmYly32cU" role="3EZMnx">
+            <property role="3F0ifm" value="default devkit:" />
+          </node>
+          <node concept="3F1sOY" id="78qQRpbinpK" role="3EZMnx">
+            <ref role="1NtTu8" to="hfbu:78qQRpbikFM" resolve="devkit" />
+          </node>
+          <node concept="2iRfu4" id="5iYmYly32cY" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="78qQRpbikVb" role="3EZMnx">
+          <node concept="VPM3Z" id="78qQRpbikVc" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="3F0ifn" id="78qQRpbikVd" role="3EZMnx">
             <property role="3F0ifm" value="main languages:" />
           </node>
-          <node concept="3F2HdR" id="5iYmYly32cV" role="3EZMnx">
+          <node concept="3F2HdR" id="78qQRpbikVe" role="3EZMnx">
             <ref role="1NtTu8" to="hfbu:5iYmYly31HR" resolve="mainLanguages" />
-            <node concept="2iRkQZ" id="5iYmYly32cW" role="2czzBx" />
-            <node concept="3F0ifn" id="5iYmYly32cX" role="2czzBI">
+            <node concept="2iRkQZ" id="78qQRpbikVf" role="2czzBx" />
+            <node concept="3F0ifn" id="78qQRpbikVg" role="2czzBI">
               <property role="ilYzB" value="&lt;no languages&gt;" />
             </node>
-            <node concept="OXEIz" id="5HOQcpHNOzF" role="1k68KV">
-              <node concept="1Y$tRT" id="78K1$5EbseJ" role="OY2wv">
+            <node concept="OXEIz" id="78qQRpbikVh" role="1k68KV">
+              <node concept="1Y$tRT" id="78qQRpbikVi" role="OY2wv">
                 <ref role="1Y$EBa" to="tpep:78K1$5Ebn5B" resolve="LoadedLanguages_CellMenu" />
               </node>
             </node>
           </node>
-          <node concept="2iRfu4" id="5iYmYly32cY" role="2iSdaV" />
+          <node concept="2iRfu4" id="78qQRpbikVj" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="5iYmYly32cZ" role="3EZMnx">
           <node concept="VPM3Z" id="5iYmYly32d0" role="3F10Kt">

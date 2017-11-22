@@ -25,6 +25,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -102,6 +105,10 @@
       <property role="20kJfa" value="mainLanguages" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" to="tp25:50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
+      <node concept="asaX9" id="78qQRpbikGe" role="lGtFl">
+        <property role="YLPcu" value="2018.1" />
+        <property role="YLQ7P" value="use devkit instead" />
+      </node>
     </node>
     <node concept="1TJgyj" id="5iYmYly31HX" role="1TKVEi">
       <property role="IQ2ns" value="6106419185511570301" />
@@ -109,6 +116,16 @@
       <property role="20kJfa" value="additionalLanguages" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" to="tp25:50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
+    </node>
+    <node concept="1TJgyj" id="78qQRpbikFM" role="1TKVEi">
+      <property role="IQ2ns" value="8222125370833980146" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="devkit" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:78qQRpbfOQY" resolve="DevkitIdentity" />
+      <node concept="t5JxF" id="78qQRpbikGc" role="lGtFl">
+        <property role="t5JxN" value="plays the same role as mainLanguages, but also imports solutions. Cardinality should be changed to [1] later" />
+      </node>
     </node>
     <node concept="1TJgyj" id="2Y$EcRKNZil" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
