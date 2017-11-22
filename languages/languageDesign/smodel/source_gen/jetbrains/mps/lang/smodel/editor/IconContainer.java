@@ -11,4 +11,5 @@ public class IconContainer {
   protected static IconResource RESOURCE_a0a4a41e3f = new IconResource("devkit.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a41e3f = new IconResource("language.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a41e3f_0 = new IconResource("lang-rt.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a41e3f_1 = new IconResource("devkit.png", IconContainer.class);
 }

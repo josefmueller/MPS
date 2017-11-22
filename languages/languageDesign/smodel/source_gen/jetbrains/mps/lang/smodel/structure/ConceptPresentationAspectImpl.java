@@ -42,6 +42,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Concept_IsSuperConceptOfOperation;
   private ConceptPresentation props_Concept_NewInstance;
   private ConceptPresentation props_ContainmentLinkId;
+  private ConceptPresentation props_DevkitIdentity;
+  private ConceptPresentation props_DevkitPointer;
   private ConceptPresentation props_EnumMemberReference;
   private ConceptPresentation props_EnumMemberValueRefExpression;
   private ConceptPresentation props_EnumMember_NameOperation;
@@ -425,6 +427,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ContainmentLinkId = cpb.create();
         }
         return props_ContainmentLinkId;
+      case LanguageConceptSwitch.DevkitIdentity:
+        if (props_DevkitIdentity == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DevkitIdentity = cpb.create();
+        }
+        return props_DevkitIdentity;
+      case LanguageConceptSwitch.DevkitPointer:
+        if (props_DevkitPointer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DevkitPointer");
+          props_DevkitPointer = cpb.create();
+        }
+        return props_DevkitPointer;
       case LanguageConceptSwitch.EnumMemberReference:
         if (props_EnumMemberReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
