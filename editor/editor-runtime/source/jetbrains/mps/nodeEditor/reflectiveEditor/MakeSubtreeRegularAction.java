@@ -39,7 +39,8 @@ class MakeSubtreeRegularAction extends ActionForSubtree {
     ReflectiveUpdaterHintsState updaterHintsState = ReflectiveUpdaterHintsState.load(getUpdater(), node);
     if (updaterHintsState.getHints().contains(REFLECTIVE)) {
       ReflectiveUpdaterHintsState.removeAllReflectiveHints(updater, node);
-    } else {
+    } else if (ReflectiveHint.getReflectiveHintsFromCellContext(getEditorComponent().findNodeCell(getAffectedNode()).getCellContext())
+                             .contains(REFLECTIVE)) {
       new ReflectiveUpdaterHintsState(node, Arrays.asList(DENY_FOR_CHILDREN, DENY_FOR_NODE)).save(updater);
     }
   }

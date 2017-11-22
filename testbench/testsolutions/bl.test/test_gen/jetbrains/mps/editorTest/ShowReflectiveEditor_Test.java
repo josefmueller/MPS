@@ -6,13 +6,15 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 
 @MPSLaunch
-public class DefaultEditor_ShowReflectiveEditor_Test extends BaseTransformationTest {
+public class ShowReflectiveEditor_Test extends BaseTransformationTest {
   @Test
-  public void test_DefaultEditor_ShowReflectiveEditor() throws Throwable {
+  public void test_ShowReflectiveEditor() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditor_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditor_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -21,6 +23,7 @@ public class DefaultEditor_ShowReflectiveEditor_Test extends BaseTransformationT
     public void testMethodImpl() throws Exception {
       initEditorComponent("2746054822153765834", "2746054822153767074");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
     }
   }
 }

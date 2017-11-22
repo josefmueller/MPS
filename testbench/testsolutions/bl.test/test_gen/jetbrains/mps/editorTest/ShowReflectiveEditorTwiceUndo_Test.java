@@ -10,11 +10,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import junit.framework.Assert;
 
 @MPSLaunch
-public class DefaultEditor_ShowReflectiveEditorTwiceUndo_Test extends BaseTransformationTest {
+public class ShowReflectiveEditorTwiceUndo_Test extends BaseTransformationTest {
   @Test
-  public void test_DefaultEditor_ShowReflectiveEditorTwiceUndo() throws Throwable {
+  public void test_ShowReflectiveEditorTwiceUndo() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorTwiceUndo_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorTwiceUndo_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
