@@ -788,7 +788,7 @@
     <node concept="Zd509" id="2jM9X_IgWGF" role="Zd508">
       <ref role="1bYAoF" node="2jM9X_IgWT1" resolve="HighlightCellDependencies" />
       <node concept="pLAjd" id="2jM9X_IgWGG" role="Zd501">
-        <property role="pLAjf" value="VK_F7" />
+        <property role="pLAjf" value="VK_H" />
         <property role="pLAjc" value="ctrl+alt+shift" />
       </node>
     </node>
