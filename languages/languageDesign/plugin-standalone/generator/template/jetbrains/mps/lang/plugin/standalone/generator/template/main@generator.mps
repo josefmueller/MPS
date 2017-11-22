@@ -42,6 +42,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="58f98fef-90ad-4b72-a390-fad66ec7005a" name="jetbrains.mps.core.properties">
@@ -298,6 +299,7 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -309,6 +311,7 @@
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -368,6 +371,7 @@
       <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" flags="nn" index="1nlBCl" />
+      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
@@ -3424,33 +3428,83 @@
       </node>
       <node concept="30G5F_" id="6TFj$EThER1" role="30HLyM">
         <node concept="3clFbS" id="6TFj$EThER2" role="2VODD2">
-          <node concept="3SKdUt" id="6TFj$ETov2K" role="3cqZAp">
-            <node concept="3SKdUq" id="6TFj$ETov2M" role="3SKWNk">
-              <property role="3SKdUp" value="XXX consider checking StandalonePluginDescriptor.needInitConfig - likely, if a solution uses init config," />
+          <node concept="3clFbJ" id="1VgYAgmtaaR" role="3cqZAp">
+            <node concept="3clFbS" id="1VgYAgmtaaT" role="3clFbx">
+              <node concept="3cpWs8" id="1VgYAgmtm5O" role="3cqZAp">
+                <node concept="3cpWsn" id="1VgYAgmtm5P" role="3cpWs9">
+                  <property role="TrG5h" value="optionalStandaloneMarker" />
+                  <node concept="3Tqbb2" id="1VgYAgmtm5L" role="1tU5fm">
+                    <ref role="ehGHo" to="tgbt:6xuWmJ1tgUs" resolve="StandalonePluginDescriptor" />
+                  </node>
+                  <node concept="2OqwBi" id="1VgYAgmtm5Q" role="33vP2m">
+                    <node concept="2OqwBi" id="1VgYAgmtm5R" role="2Oq$k0">
+                      <node concept="2OqwBi" id="1VgYAgmtm5S" role="2Oq$k0">
+                        <node concept="30H73N" id="1VgYAgmtm5T" role="2Oq$k0" />
+                        <node concept="I4A8Y" id="1VgYAgmtm5U" role="2OqNvi" />
+                      </node>
+                      <node concept="2RRcyG" id="1VgYAgmtm5V" role="2OqNvi">
+                        <ref role="2RRcyH" to="tgbt:6xuWmJ1tgUs" resolve="StandalonePluginDescriptor" />
+                      </node>
+                    </node>
+                    <node concept="1uHKPH" id="1VgYAgmtm5W" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1VgYAgmtsjV" role="3cqZAp">
+                <node concept="3SKdUq" id="1VgYAgmtsjX" role="3SKWNk">
+                  <property role="3SKdUp" value="if compileInMPS &amp;&amp; needInitConfig, it's MPS module with plugin, managed by ModulePluginContributor, therefore " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1VgYAgmtuWY" role="3cqZAp">
+                <node concept="3SKdUq" id="1VgYAgmtuWZ" role="3SKWNk">
+                  <property role="3SKdUp" value="extension is not needed." />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1VgYAgmw190" role="3cqZAp">
+                <node concept="3SKdUq" id="1VgYAgmw192" role="3SKWNk">
+                  <property role="3SKdUp" value="see PluginUtils for reasons why have to resort to originalModel here" />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1VgYAgmxeN8" role="3cqZAp">
+                <node concept="3SKdUq" id="1VgYAgmxeNa" role="3SKWNk">
+                  <property role="3SKdUp" value=" Perhaps, needInitConfig is a bit way too much here (parts loaded by &quot;.plugin.&quot; convention don't need " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="1VgYAgmxf8z" role="3cqZAp">
+                <node concept="3SKdUq" id="1VgYAgmxf8$" role="3SKWNk">
+                  <property role="3SKdUp" value="extension as well, I'd like to move forward gradually." />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="1VgYAgmtb2A" role="3cqZAp">
+                <node concept="3fqX7Q" id="1VgYAgmte9a" role="3cqZAk">
+                  <node concept="1eOMI4" id="1VgYAgmtud2" role="3fr31v">
+                    <node concept="1Wc70l" id="1VgYAgmttns" role="1eOMHV">
+                      <node concept="2OqwBi" id="1VgYAgmte9c" role="3uHU7B">
+                        <node concept="2OqwBi" id="1VgYAgmte9d" role="2Oq$k0">
+                          <node concept="2OqwBi" id="1VgYAgmte9e" role="2Oq$k0">
+                            <node concept="1iwH7S" id="1VgYAgmw0mc" role="2Oq$k0" />
+                            <node concept="1st3f0" id="1VgYAgmw0EA" role="2OqNvi" />
+                          </node>
+                          <node concept="13u695" id="1VgYAgmte9h" role="2OqNvi" />
+                        </node>
+                        <node concept="3TrcHB" id="1VgYAgmte9i" role="2OqNvi">
+                          <ref role="3TsBF5" to="hypd:5xDtKQA7vS$" resolve="compileInMPS" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="1VgYAgmts4H" role="3uHU7w">
+                        <node concept="37vLTw" id="1VgYAgmts4I" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1VgYAgmtm5P" resolve="optionalStandaloneMarker" />
+                        </node>
+                        <node concept="3TrcHB" id="1VgYAgmts4J" role="2OqNvi">
+                          <ref role="3TsBF5" to="tgbt:5WVtmyUzYGf" resolve="needInitConfig" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
-          </node>
-          <node concept="3SKdUt" id="6TFj$ETovoe" role="3cqZAp">
-            <node concept="3SKdUq" id="6TFj$ETovog" role="3SKWNk">
-              <property role="3SKdUp" value="it is loaded by MPS (compileInMPS==true), and ModulePluginContributor doesn't need this extension." />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="6TFj$ETovI6" role="3cqZAp">
-            <node concept="3SKdUq" id="6TFj$ETovI8" role="3SKWNk">
-              <property role="3SKdUp" value="However, for the first step, as a replacement for _PluginInitializer, would like to get this extension" />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="6TFj$ETow3Q" role="3cqZAp">
-            <node concept="3SKdUq" id="6TFj$ETow3S" role="3SKWNk">
-              <property role="3SKdUp" value="generated in every place where AppComponent used to be. Then, need to think over better approach to " />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="6TFj$ETowoU" role="3cqZAp">
-            <node concept="3SKdUq" id="6TFj$ETowoW" role="3SKWNk">
-              <property role="3SKdUp" value="plugin.xml description, lang.plugin.standalone role and MPS support for idea plugin generation." />
-            </node>
-          </node>
-          <node concept="3clFbF" id="6TFj$EThEZo" role="3cqZAp">
-            <node concept="22lmx$" id="6TFj$EThGx6" role="3clFbG">
+            <node concept="22lmx$" id="6TFj$EThGx6" role="3clFbw">
               <node concept="2YIFZM" id="6TFj$EThEZq" role="3uHU7B">
                 <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
                 <ref role="37wK5l" to="k6zk:_QrTcSDuIA" resolve="needAppPlugin" />
@@ -3460,13 +3514,18 @@
                 </node>
               </node>
               <node concept="2YIFZM" id="6TFj$EThGMO" role="3uHU7w">
-                <ref role="37wK5l" to="k6zk:_QrTcSDuIU" resolve="needProjectPlugin" />
                 <ref role="1Pybhc" to="k6zk:_QrTcSDuIw" resolve="PluginUtils" />
+                <ref role="37wK5l" to="k6zk:_QrTcSDuIU" resolve="needProjectPlugin" />
                 <node concept="2OqwBi" id="6TFj$EThGMP" role="37wK5m">
                   <node concept="1iwH7S" id="6TFj$EThGMQ" role="2Oq$k0" />
                   <node concept="1r8y6K" id="6TFj$EThGMR" role="2OqNvi" />
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="1VgYAgmtaUh" role="3cqZAp">
+            <node concept="3clFbT" id="1VgYAgmtaUP" role="3cqZAk">
+              <property role="3clFbU" value="false" />
             </node>
           </node>
         </node>

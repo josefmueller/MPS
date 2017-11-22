@@ -6,11 +6,11 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" implicit="true" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -86,6 +86,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -107,7 +113,13 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="6995935425733782641" name="jetbrains.mps.lang.smodel.structure.Model_GetModule" flags="nn" index="13u695" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+        <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -331,6 +343,16 @@
       <node concept="3cqZAl" id="5xbZY7f0ghn" role="3clF45" />
       <node concept="3Tm1VV" id="5xbZY7f09w4" role="1B3o_S" />
       <node concept="3clFbS" id="5xbZY7f09w5" role="3clF47">
+        <node concept="3SKdUt" id="1VgYAgmt3W9" role="3cqZAp">
+          <node concept="3SKdUq" id="1VgYAgmt3Wb" role="3SKWNk">
+            <property role="3SKdUp" value="likely, it's assumed there's plugin.xml that controls instantiation of corresponding app/project components." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="1VgYAgmt4cg" role="3cqZAp">
+          <node concept="3SKdUq" id="1VgYAgmt4ci" role="3SKWNk">
+            <property role="3SKdUp" value="however, it's not always the case, as we might want to generate plugin.xml ourselves and copy it into proper location" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="5xbZY7f0gh3" role="3cqZAp">
           <node concept="3clFbS" id="5xbZY7f0gh4" role="3clFbx">
             <node concept="3cpWs6" id="5xbZY7f0ghj" role="3cqZAp" />
@@ -386,6 +408,52 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="1VgYAgmt4r0" role="3cqZAp" />
+        <node concept="3clFbJ" id="1VgYAgmt4TY" role="3cqZAp">
+          <node concept="3clFbS" id="1VgYAgmt4U0" role="3clFbx">
+            <node concept="3SKdUt" id="1VgYAgmt7SJ" role="3cqZAp">
+              <node concept="3SKdUq" id="1VgYAgmt7SL" role="3SKWNk">
+                <property role="3SKdUp" value="it's an MPS module that would get loaded with PluginLoaderRegistry and contribute" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1VgYAgmt7SZ" role="3cqZAp">
+              <node concept="3SKdUq" id="1VgYAgmt7T0" role="3SKWNk">
+                <property role="3SKdUp" value="its app/project component parts through ModulePluginContributor's mechanism, which respects startup.properties file." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1VgYAgmw0lp" role="3cqZAp">
+              <node concept="3SKdUq" id="1VgYAgmw0lr" role="3SKWNk">
+                <property role="3SKdUp" value="Unfortunately, have no other way but resort to originalModel to find out 'compileInMPS' setting - node.model is transient and bears no reasonable value" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="1VgYAgmt7RQ" role="3cqZAp" />
+          </node>
+          <node concept="1Wc70l" id="1VgYAgmt7eU" role="3clFbw">
+            <node concept="2OqwBi" id="1VgYAgmt7Es" role="3uHU7w">
+              <node concept="37vLTw" id="1VgYAgmt7xH" role="2Oq$k0">
+                <ref role="3cqZAo" node="5xbZY7f0ggQ" resolve="node" />
+              </node>
+              <node concept="3TrcHB" id="1VgYAgmt7N8" role="2OqNvi">
+                <ref role="3TsBF5" to="tgbt:5WVtmyUzYGf" resolve="needInitConfig" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1VgYAgmt5uw" role="3uHU7B">
+              <node concept="2OqwBi" id="1VgYAgmt6li" role="2Oq$k0">
+                <node concept="2OqwBi" id="1VgYAgmt625" role="2Oq$k0">
+                  <node concept="37vLTw" id="1VgYAgmw06v" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5xbZY7f0ggS" resolve="genContext" />
+                  </node>
+                  <node concept="1st3f0" id="1VgYAgmw0gl" role="2OqNvi" />
+                </node>
+                <node concept="13u695" id="1VgYAgmt6s4" role="2OqNvi" />
+              </node>
+              <node concept="3TrcHB" id="1VgYAgmt6zC" role="2OqNvi">
+                <ref role="3TsBF5" to="hypd:5xDtKQA7vS$" resolve="compileInMPS" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1VgYAgmt4rW" role="3cqZAp" />
         <node concept="3cpWs8" id="H7h4IaYyXz" role="3cqZAp">
           <node concept="3cpWsn" id="H7h4IaYyX$" role="3cpWs9">
             <property role="TrG5h" value="correctName" />
@@ -455,7 +523,9 @@
       </node>
       <node concept="37vLTG" id="5xbZY7f0ggQ" role="3clF46">
         <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="5xbZY7f0gha" role="1tU5fm" />
+        <node concept="3Tqbb2" id="5xbZY7f0gha" role="1tU5fm">
+          <ref role="ehGHo" to="tgbt:6xuWmJ1tgUs" resolve="StandalonePluginDescriptor" />
+        </node>
       </node>
     </node>
   </node>

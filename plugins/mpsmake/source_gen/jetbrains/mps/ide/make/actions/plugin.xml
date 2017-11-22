@@ -14,7 +14,5 @@
     <mps.LanguageLibrary dir="/" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
   </extensions>
-  <extensions defaultExtensionNs="com.intellij">
-    <mps.PluginComponentContributor application="jetbrains.mps.ide.make.actions.Make_ApplicationPlugin" project="jetbrains.mps.ide.make.actions.Make_ProjectPlugin" />
-  </extensions>
+  
 </idea-plugin>

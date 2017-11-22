@@ -10,6 +10,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.plugin.standalone.generator.util.PluginUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration__BehaviorDescriptor;
@@ -17,12 +20,9 @@ import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration__BehaviorDescripto
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -82,12 +82,16 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, 0x5f3b7568ba8feb0fL, "needInitConfig")) && (PluginUtils.needAppPlugin(_context.getInputModel()) || PluginUtils.needProjectPlugin(_context.getInputModel()));
   }
   public static boolean baseMappingRule_Condition_7956539249523076545(final BaseMappingRuleContext _context) {
-    // XXX consider checking StandalonePluginDescriptor.needInitConfig - likely, if a solution uses init config, 
-    // it is loaded by MPS (compileInMPS==true), and ModulePluginContributor doesn't need this extension. 
-    // However, for the first step, as a replacement for _PluginInitializer, would like to get this extension 
-    // generated in every place where AppComponent used to be. Then, need to think over better approach to  
-    // plugin.xml description, lang.plugin.standalone role and MPS support for idea plugin generation. 
-    return PluginUtils.needAppPlugin(_context.getInputModel()) || PluginUtils.needProjectPlugin(_context.getInputModel());
+    if (PluginUtils.needAppPlugin(_context.getInputModel()) || PluginUtils.needProjectPlugin(_context.getInputModel())) {
+      SNode optionalStandaloneMarker = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"))).first();
+      // if compileInMPS && needInitConfig, it's MPS module with plugin, managed by ModulePluginContributor, therefore  
+      // extension is not needed. 
+      // see PluginUtils for reasons why have to resort to originalModel here 
+      //  Perhaps, needInitConfig is a bit way too much here (parts loaded by ".plugin." convention don't need  
+      // extension as well, I'd like to move forward gradually. 
+      return !((SPropertyOperations.getBoolean(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")) && SPropertyOperations.getBoolean(optionalStandaloneMarker, MetaAdapterFactory.getProperty(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x685ef16bc1750e9cL, 0x5f3b7568ba8feb0fL, "needInitConfig"))));
+    }
+    return false;
   }
   public static Object propertyMacro_GetPropertyValue_1215281686867(final PropertyMacroContext _context) {
     return (String) ApplicationPluginDeclaration__BehaviorDescriptor.getGeneratedName_idqKmr2orM46.invoke(_context.getNode());

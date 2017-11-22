@@ -1075,7 +1075,7 @@
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5882989260841555164">
     <file name="plugin.xml">
-      <unit id="5882989260841555164" at="1,0,20,14" name="jetbrains.mps.ide.make.actions.plugin" />
+      <unit id="5882989260841555164" at="1,0,18,14" name="jetbrains.mps.ide.make.actions.plugin" />
     </file>
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/6005576522675134787">
