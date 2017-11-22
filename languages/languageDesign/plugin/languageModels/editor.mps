@@ -3192,6 +3192,7 @@
           <property role="3F0ifm" value="version:" />
         </node>
         <node concept="3F0A7n" id="4mQiM_caQ5M" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
           <ref role="1NtTu8" to="tp4k:4mQiM_caNkp" resolve="version" />
         </node>
         <node concept="VPM3Z" id="4mQiM_caQ5H" role="3F10Kt">
@@ -3247,6 +3248,7 @@
           <property role="3F0ifm" value="Idea ver.:" />
         </node>
         <node concept="3F0A7n" id="4mQiM_caQ5P" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
           <ref role="1NtTu8" to="tp4k:4mQiM_caNkt" resolve="ideaVersion" />
         </node>
         <node concept="VPM3Z" id="4mQiM_caQ5z" role="3F10Kt">
