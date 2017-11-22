@@ -16,12 +16,15 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
+import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 public class ReflectiveEditorForModelMarker extends TreeUpdateVisitor {
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
 
   private final Project myProject;
 
@@ -32,7 +35,7 @@ public class ReflectiveEditorForModelMarker extends TreeUpdateVisitor {
   @Override
   public void visitModelNode(@NotNull SModelTreeNode node) {
     String newText = getComponent().shouldShowReflectiveEditor(node.getModel()) ? "reflective editor by default" : null;
-    addUpdate(node, new AdditionalTextNodeUpdate(ReflectiveEditorForModelMarker.class.getName(), newText));
+    addUpdate(node, new AdditionalTextNodeUpdate(TREE_ADDITIONAL_TEXT_OWNER, newText));
   }
 
   public ReflectiveHintsForModelComponent getComponent() {

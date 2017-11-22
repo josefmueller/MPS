@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.project.Project;
@@ -26,6 +27,9 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Font;
 
 public class ProjectTreeNode extends TextTreeNode implements TreeElement {
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
+
   private Project myProject;
 
   public ProjectTreeNode(Project project) {
@@ -44,7 +48,7 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
     if (ideaProject != null && ideaProject.getBaseDir() != null) {
       //noinspection ConstantConditions
-      setAdditionalText(ProjectTreeNode.class.getName(), ideaProject.getBaseDir().getPresentableUrl());
+      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER, ideaProject.getBaseDir().getPresentableUrl());
     }
   }
 

@@ -18,10 +18,14 @@ package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode {
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
+
   protected final VirtualFile myFile;
   protected final MPSProject myProject;
 
@@ -33,7 +37,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     myFile = file;
     myProject = project;
     if (showFullPath) {
-      setAdditionalText(AbstractFileTreeNode.class.getName(), myFile.getPresentableUrl());
+      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER, myFile.getPresentableUrl());
     }
     setNodeIdentifier(myFile.getPath());
     setText(myFile.getName());

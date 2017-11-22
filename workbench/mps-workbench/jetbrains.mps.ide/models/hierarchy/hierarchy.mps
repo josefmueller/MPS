@@ -8960,6 +8960,24 @@
   </node>
   <node concept="312cEu" id="51NkKCgB394">
     <property role="TrG5h" value="ChildHierarchyTreeNode" />
+    <node concept="Wx3nA" id="53U8lVsZzCR" role="jymVt">
+      <property role="TrG5h" value="TREE_ADDITIONAL_TEXT_OWNER" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="53U8lVsZzCS" role="1tU5fm">
+        <ref role="3uigEE" to="7e8u:~TreeAdditionalTextOwner" resolve="TreeAdditionalTextOwner" />
+      </node>
+      <node concept="2ShNRf" id="53U8lVsZzCT" role="33vP2m">
+        <node concept="YeOm9" id="53U8lVsZzCU" role="2ShVmc">
+          <node concept="1Y3b0j" id="53U8lVsZzCV" role="YeSDq">
+            <property role="1sVAO0" value="false" />
+            <property role="1EXbeo" value="false" />
+            <ref role="1Y3XeK" to="7e8u:~TreeAdditionalTextOwner" resolve="TreeAdditionalTextOwner" />
+            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="53U8lVsZzCW" role="1B3o_S" />
+    </node>
     <node concept="3Tm1VV" id="51NkKCgB40z" role="1B3o_S" />
     <node concept="3uibUv" id="51NkKCgB40_" role="1zkMxy">
       <ref role="3uigEE" node="51NkKCgB390" resolve="HierarchyTreeNode" />
@@ -9190,14 +9208,9 @@
                     <ref role="3cqZAo" node="51NkKCgB42Q" resolve="errorTreeNode" />
                   </node>
                   <node concept="liA8E" id="4$kvR95_k40" role="2OqNvi">
-                    <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String,java.lang.String):void" resolve="setAdditionalText" />
-                    <node concept="2OqwBi" id="61LxzBQcofH" role="37wK5m">
-                      <node concept="3VsKOn" id="61LxzBQcnVE" role="2Oq$k0">
-                        <ref role="3VsUkX" node="51NkKCgB394" resolve="ChildHierarchyTreeNode" />
-                      </node>
-                      <node concept="liA8E" id="61LxzBQcpis" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-                      </node>
+                    <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner,java.lang.String):void" resolve="setAdditionalText" />
+                    <node concept="37vLTw" id="53U8lVsZSY8" role="37wK5m">
+                      <ref role="3cqZAo" node="53U8lVsZzCR" resolve="TREE_ADDITIONAL_TEXT_OWNER" />
                     </node>
                     <node concept="37vLTw" id="4$kvR95_mEf" role="37wK5m">
                       <ref role="3cqZAo" node="51NkKCgB42K" resolve="message" />
@@ -11857,6 +11870,24 @@
   </node>
   <node concept="312cEu" id="51NkKCgB390">
     <property role="TrG5h" value="HierarchyTreeNode" />
+    <node concept="Wx3nA" id="53U8lVsZTPW" role="jymVt">
+      <property role="TrG5h" value="TREE_ADDITIONAL_TEXT_OWNER" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="53U8lVsZTPX" role="1tU5fm">
+        <ref role="3uigEE" to="7e8u:~TreeAdditionalTextOwner" resolve="TreeAdditionalTextOwner" />
+      </node>
+      <node concept="2ShNRf" id="53U8lVsZTPY" role="33vP2m">
+        <node concept="YeOm9" id="53U8lVsZTPZ" role="2ShVmc">
+          <node concept="1Y3b0j" id="53U8lVsZTQ0" role="YeSDq">
+            <property role="1sVAO0" value="false" />
+            <property role="1EXbeo" value="false" />
+            <ref role="1Y3XeK" to="7e8u:~TreeAdditionalTextOwner" resolve="TreeAdditionalTextOwner" />
+            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="53U8lVsZTQ1" role="1B3o_S" />
+    </node>
     <node concept="3Tm1VV" id="51NkKCgB4oa" role="1B3o_S" />
     <node concept="3uibUv" id="51NkKCgB4od" role="1zkMxy">
       <ref role="3uigEE" to="7e8u:~MPSTreeNode" resolve="MPSTreeNode" />
@@ -11982,14 +12013,9 @@
         </node>
         <node concept="3clFbF" id="4$kvR95_aYc" role="3cqZAp">
           <node concept="1rXfSq" id="4$kvR95_aYa" role="3clFbG">
-            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(java.lang.String,java.lang.String):void" resolve="setAdditionalText" />
-            <node concept="2OqwBi" id="61LxzBQcwnX" role="37wK5m">
-              <node concept="3VsKOn" id="61LxzBQcw42" role="2Oq$k0">
-                <ref role="3VsUkX" node="51NkKCgB390" resolve="HierarchyTreeNode" />
-              </node>
-              <node concept="liA8E" id="61LxzBQcwVt" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-              </node>
+            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setAdditionalText(jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner,java.lang.String):void" resolve="setAdditionalText" />
+            <node concept="37vLTw" id="53U8lVt05ct" role="37wK5m">
+              <ref role="3cqZAo" node="53U8lVsZTPW" resolve="TREE_ADDITIONAL_TEXT_OWNER" />
             </node>
             <node concept="2OqwBi" id="4$kvR95_e2B" role="37wK5m">
               <node concept="2OqwBi" id="4$kvR95_dBg" role="2Oq$k0">

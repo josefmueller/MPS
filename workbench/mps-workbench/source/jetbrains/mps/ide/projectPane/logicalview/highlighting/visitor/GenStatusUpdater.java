@@ -22,6 +22,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
+import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
@@ -41,6 +42,9 @@ import javax.swing.tree.TreeNode;
  * visitXXX methods require model read
  */
 public class GenStatusUpdater extends TreeUpdateVisitor {
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
+
   private final ModelGenerationStatusManager myGenerationStatusManager;
   private final Project myProject;
 
@@ -134,7 +138,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   private void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
-    final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage());
+    final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(TREE_ADDITIONAL_TEXT_OWNER, status.getMessage());
     for (TreeNode n = node; n != null; n = n.getParent()) {
       if (n instanceof NamespaceTextNode) {
         addUpdate((NamespaceTextNode) n, r);
@@ -168,10 +172,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     }
     public void update(GenerationStatus status) {
       if (myModelNode != null) {
-        addUpdate(myModelNode, new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage()));
+        addUpdate(myModelNode, new AdditionalTextNodeUpdate(TREE_ADDITIONAL_TEXT_OWNER, status.getMessage()));
       }
       if (myModuleNode != null) {
-        addUpdate(myModuleNode, new AdditionalTextNodeUpdate(GenStatusUpdater.class.getName(), status.getMessage()));
+        addUpdate(myModuleNode, new AdditionalTextNodeUpdate(TREE_ADDITIONAL_TEXT_OWNER, status.getMessage()));
       }
     }
 

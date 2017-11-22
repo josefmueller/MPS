@@ -18,6 +18,7 @@ package jetbrains.mps.ide.devkit.generator;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelReadRunnable;
@@ -30,6 +31,9 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 final class GenerationTracerTree extends MPSTree {
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
+
   private final GenerationTracerView myView;
   private TraceNodeUI myRootTracerNode;
   private Project myProject;
@@ -65,7 +69,7 @@ final class GenerationTracerTree extends MPSTree {
     treeNode.setText(n.getText(repository));
     final SNodeReference target = n.getNavigateTarget();
     if (target != null && target.getModelReference() != null) {
-      treeNode.setAdditionalText(GenerationTracerTree.class.getName(), target.getModelReference().getModelName());
+      treeNode.setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER, target.getModelReference().getModelName());
     }
     treeNode.setIcon(n.getIcon(repository));
     for (TraceNodeUI ch : n.getChildren()) {

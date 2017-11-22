@@ -46,6 +46,8 @@ import java.util.stream.Collectors;
  */
 public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
+  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
+  };
 
   private MPSTree myTree;
   private boolean myAdded;
@@ -54,7 +56,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private Icon myExpandedIcon = IdeIcons.OPENED_FOLDER;
   private String myNodeIdentifier;
   private String myText;
-  private Map<String, String> myAdditionalTextMap = new HashMap<>();
+  private Map<TreeAdditionalTextOwner, String> myAdditionalTextMap = new HashMap<>();
   private String myTooltipText;
   private Color myColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED"));
   // initialized once with the value of myColor the moment node is created, to facilitate nodes with pre-defined colors (initialized in cons)
@@ -325,7 +327,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
                     .max(Comparator.comparingInt(TreeMessage::getPriority))
                     .map(TreeMessage::getColor)
                     .ifPresent(this::setColor);
-      setAdditionalText("tree message",
+      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER,
                         myTreeMessages.stream()
                                       .filter(TreeMessage::hasAdditionalText)
                                       .max(Comparator.comparingInt(TreeMessage::getPriority))
@@ -478,17 +480,17 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
 
   /**
    * Get additional text by its source.
-   * @param additionalTextSrc source of additional text.
+   * @param treeAdditionalTextOwner owner of the additional text.
    * @return additional text.
-   * @see #setAdditionalText(String, String)
+   * @see #setAdditionalText(TreeAdditionalTextOwner, String)
    */
   @Nullable
-  public final String getAdditionalText(String additionalTextSrc) {
-    return myAdditionalTextMap.get(additionalTextSrc);
+  public final String getAdditionalText(TreeAdditionalTextOwner treeAdditionalTextOwner) {
+    return myAdditionalTextMap.get(treeAdditionalTextOwner);
   }
 
   /**
-   * Use {@link #setAdditionalText(String, String)}.
+   * Use {@link #setAdditionalText(TreeAdditionalTextOwner, String)}.
    */
   @Deprecated
   public final void setAdditionalText(String newAdditionalText) {
@@ -497,14 +499,14 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
 
   /**
    * Set additional text.
-   * @param additionalTextSrc string which identifies source of additional text.
+   * @param treeAdditionalTextOwner owner of the additional text.
    * @param newAdditionalText additional text.
    */
-  public final void setAdditionalText(String additionalTextSrc, @Nullable String newAdditionalText) {
+  public final void setAdditionalText(TreeAdditionalTextOwner treeAdditionalTextOwner, @Nullable String newAdditionalText) {
     if (newAdditionalText == null) {
-      myAdditionalTextMap.remove(additionalTextSrc);
+      myAdditionalTextMap.remove(treeAdditionalTextOwner);
     } else {
-      myAdditionalTextMap.put(additionalTextSrc, newAdditionalText);
+      myAdditionalTextMap.put(treeAdditionalTextOwner, newAdditionalText);
     }
   }
 
