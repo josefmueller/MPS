@@ -2824,5 +2824,29 @@
       <ref role="PrY4T" node="50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
     </node>
   </node>
+  <node concept="PlHQZ" id="78qQRpbfOQY">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="DevkitIdentity" />
+    <property role="EcuMT" value="8222125370833325502" />
+  </node>
+  <node concept="1TIwiD" id="78qQRpbfVOr">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="DevkitPointer" />
+    <property role="EcuMT" value="8222125370833354011" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="78qQRpbfVOs" role="1TKVEl">
+      <property role="TrG5h" value="devkitName" />
+      <property role="IQ2nx" value="8222125370833354012" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="78qQRpbfVOt" role="1TKVEl">
+      <property role="TrG5h" value="devkitId" />
+      <property role="IQ2nx" value="8222125370833354013" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="78qQRpbfVOv" role="PzmwI">
+      <ref role="PrY4T" node="78qQRpbfOQY" resolve="DevkitIdentity" />
+    </node>
+  </node>
 </model>
 
