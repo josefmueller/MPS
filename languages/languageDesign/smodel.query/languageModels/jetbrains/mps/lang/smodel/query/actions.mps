@@ -148,9 +148,9 @@
   </node>
   <node concept="37WguZ" id="31Tct3Tmt18">
     <property role="3GE5qa" value="query.parameter" />
-    <property role="TrG5h" value="ScopeParameterLiteral_factories" />
+    <property role="TrG5h" value="ScopeParameterLiteral_factories_old" />
     <node concept="37WvkG" id="31Tct3TnY01" role="37WGs$">
-      <ref role="37XkoT" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
+      <ref role="37XkoT" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
       <node concept="37Y9Zx" id="31Tct3TnY02" role="37ZfLb">
         <node concept="3clFbS" id="31Tct3TnY03" role="2VODD2">
           <node concept="3clFbF" id="31Tct3TnY04" role="3cqZAp">
@@ -158,10 +158,34 @@
               <node concept="2OqwBi" id="31Tct3TnY06" role="2Oq$k0">
                 <node concept="1r4Lsj" id="31Tct3TnY07" role="2Oq$k0" />
                 <node concept="3TrEf2" id="31Tct3TxOzG" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope" />
+                  <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope_old" />
                 </node>
               </node>
               <node concept="2DeJnY" id="31Tct3TxPN2" role="2OqNvi">
+                <ref role="1A9B2P" to="tpee:gEShNN5" resolve="GenericNewExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="37WguZ" id="238_VGTIKz_">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="ScopeParameterLiteral_factories" />
+    <node concept="37WvkG" id="238_VGTIKzA" role="37WGs$">
+      <ref role="37XkoT" to="3xdn:238_VGTIKuD" resolve="CustomScope" />
+      <node concept="37Y9Zx" id="238_VGTIKzB" role="37ZfLb">
+        <node concept="3clFbS" id="238_VGTIKzC" role="2VODD2">
+          <node concept="3clFbF" id="238_VGTIKzD" role="3cqZAp">
+            <node concept="2OqwBi" id="238_VGTIKzE" role="3clFbG">
+              <node concept="2OqwBi" id="238_VGTIKzF" role="2Oq$k0">
+                <node concept="1r4Lsj" id="238_VGTIKzG" role="2Oq$k0" />
+                <node concept="3TrEf2" id="238_VGTIKzH" role="2OqNvi">
+                  <ref role="3Tt5mk" to="3xdn:238_VGTIKuE" resolve="scope" />
+                </node>
+              </node>
+              <node concept="2DeJnY" id="238_VGTIKzI" role="2OqNvi">
                 <ref role="1A9B2P" to="tpee:gEShNN5" resolve="GenericNewExpression" />
               </node>
             </node>

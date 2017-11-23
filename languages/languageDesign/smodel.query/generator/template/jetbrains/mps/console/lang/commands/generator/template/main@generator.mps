@@ -292,19 +292,19 @@
       </node>
     </node>
     <node concept="3aamgX" id="31Tct3TnZp6" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
+      <ref role="30HIoZ" to="3xdn:2oWvAovDHkX" resolve="ModulesScope_old" />
       <node concept="j$656" id="31Tct3TnZp7" role="1lVwrX">
         <ref role="v9R2y" node="31Tct3TnZm2" resolve="reduce_ModuleScopeLiteral" />
       </node>
     </node>
     <node concept="3aamgX" id="31Tct3TvJ$n" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
+      <ref role="30HIoZ" to="3xdn:31Tct3Tk$xe" resolve="ModelScope_old" />
       <node concept="j$656" id="31Tct3TvJ$o" role="1lVwrX">
         <ref role="v9R2y" node="31Tct3TvJ$l" resolve="reduce_ModelScopeLiteral" />
       </node>
     </node>
     <node concept="3aamgX" id="31Tct3Tzi3N" role="3acgRq">
-      <ref role="30HIoZ" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
+      <ref role="30HIoZ" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
       <node concept="j$656" id="31Tct3Tzi3O" role="1lVwrX">
         <ref role="v9R2y" node="31Tct3Tzi3L" resolve="reduce_CustomScope" />
       </node>
@@ -811,8 +811,8 @@
   </node>
   <node concept="13MO4I" id="31Tct3TvJ$l">
     <property role="TrG5h" value="reduce_ModelScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="3gUMe" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="3gUMe" to="3xdn:31Tct3Tk$xe" resolve="ModelScope_old" />
     <node concept="312cEu" id="31Tct3TvJKU" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Main" />
@@ -840,7 +840,7 @@
                           <node concept="2OqwBi" id="4KyzTfiQCLG" role="3clFbG">
                             <node concept="30H73N" id="4KyzTfiQCJt" role="2Oq$k0" />
                             <node concept="3TrEf2" id="4KyzTfiQJ_Q" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3xdn:31Tct3Tk$xf" resolve="model" />
+                              <ref role="3Tt5mk" to="3xdn:31Tct3Tk$xf" resolve="model_old" />
                             </node>
                           </node>
                         </node>
@@ -859,8 +859,8 @@
   </node>
   <node concept="13MO4I" id="31Tct3Tzi3L">
     <property role="TrG5h" value="reduce_CustomScope" />
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="3gUMe" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="3gUMe" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
     <node concept="312cEu" id="31Tct3TziB0" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Main" />
@@ -888,7 +888,7 @@
                       <node concept="3clFbF" id="31Tct3Tzjmo" role="3cqZAp">
                         <node concept="2OqwBi" id="31Tct3Tzjmj" role="3clFbG">
                           <node concept="3TrEf2" id="31Tct3Tzjmm" role="2OqNvi">
-                            <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope" />
+                            <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope_old" />
                           </node>
                           <node concept="30H73N" id="31Tct3Tzjmn" role="2Oq$k0" />
                         </node>
@@ -906,8 +906,8 @@
   </node>
   <node concept="13MO4I" id="31Tct3TnZm2">
     <property role="TrG5h" value="reduce_ModuleScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="3gUMe" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="3gUMe" to="3xdn:2oWvAovDHkX" resolve="ModulesScope_old" />
     <node concept="312cEu" id="31Tct3TnZLz" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Main" />
@@ -935,7 +935,7 @@
                           <node concept="2OqwBi" id="4KyzTfiQVtN" role="3clFbG">
                             <node concept="30H73N" id="4KyzTfiQVrv" role="2Oq$k0" />
                             <node concept="3TrEf2" id="4KyzTfiQVy4" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="module" />
+                              <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="module_old" />
                             </node>
                           </node>
                         </node>
@@ -1234,7 +1234,7 @@
                                             </node>
                                             <node concept="1mIQ4w" id="72nsGSZeYr7" role="2OqNvi">
                                               <node concept="chp4Y" id="72nsGSZeYr8" role="cj9EA">
-                                                <ref role="cht4Q" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+                                                <ref role="cht4Q" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
                                               </node>
                                             </node>
                                           </node>
@@ -1256,7 +1256,7 @@
                                             <ref role="3cqZAo" node="72nsGSZeYrh" resolve="it" />
                                           </node>
                                           <node concept="chp4Y" id="714IaVdGZkc" role="3oSUPX">
-                                            <ref role="cht4Q" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+                                            <ref role="cht4Q" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
                                           </node>
                                         </node>
                                       </node>
@@ -1270,7 +1270,7 @@
                               </node>
                               <node concept="A3Dl8" id="72nsGSZeYrj" role="1tU5fm">
                                 <node concept="3Tqbb2" id="72nsGSZeYrk" role="A3Ik2">
-                                  <ref role="ehGHo" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+                                  <ref role="ehGHo" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
                                 </node>
                               </node>
                             </node>
@@ -1288,7 +1288,7 @@
                                   <node concept="1uHKPH" id="72nsGSZeYrs" role="2OqNvi" />
                                 </node>
                                 <node concept="3TrEf2" id="72nsGSZeYrt" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="3xdn:3J6h25QeYY9" resolve="value" />
+                                  <ref role="3Tt5mk" to="3xdn:3J6h25QeYY9" resolve="value_old" />
                                 </node>
                               </node>
                               <node concept="2OqwBi" id="72nsGSZeYru" role="3K4Cdx">

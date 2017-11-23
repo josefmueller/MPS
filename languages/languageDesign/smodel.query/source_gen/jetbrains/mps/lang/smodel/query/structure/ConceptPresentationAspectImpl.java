@@ -13,14 +13,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BLCommand_old;
   private ConceptPresentation props_BLExpression_old;
   private ConceptPresentation props_CustomScope;
+  private ConceptPresentation props_CustomScope_old;
   private ConceptPresentation props_ExpressionHelpProvider;
   private ConceptPresentation props_GlobalScope_old;
   private ConceptPresentation props_HelpProvider;
   private ConceptPresentation props_InstancesExpression;
   private ConceptPresentation props_ModelScope;
+  private ConceptPresentation props_ModelScope_old;
   private ConceptPresentation props_ModelsExpression;
   private ConceptPresentation props_ModulesExpression;
   private ConceptPresentation props_ModulesScope;
+  private ConceptPresentation props_ModulesScope_old;
   private ConceptPresentation props_NodesExpression;
   private ConceptPresentation props_OperationHelpProvider;
   private ConceptPresentation props_PrintExpression_old;
@@ -37,8 +40,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_QueryParameterIncludeReadOnly;
   private ConceptPresentation props_QueryParameterList;
   private ConceptPresentation props_QueryParameterScope;
+  private ConceptPresentation props_QueryParameterScope_old;
   private ConceptPresentation props_ReferencesExpression;
   private ConceptPresentation props_ScopeParameter;
+  private ConceptPresentation props_ScopeParameter_old;
   private ConceptPresentation props_ShowExpression_old;
   private ConceptPresentation props_UsagesExpression;
   private ConceptPresentation props_WithStatement;
@@ -84,6 +89,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CustomScope = cpb.create();
         }
         return props_CustomScope;
+      case LanguageConceptSwitch.CustomScope_old:
+        if (props_CustomScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f98575c9L);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x307931d0f985950eL, "scope_old");
+          cpb.shortDesc("? extends SearchScope");
+          cpb.rawPresentation("custom");
+          props_CustomScope_old = cpb.create();
+        }
+        return props_CustomScope_old;
       case LanguageConceptSwitch.ExpressionHelpProvider:
         if (props_ExpressionHelpProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -119,6 +134,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ModelScope = cpb.create();
         }
         return props_ModelScope;
+      case LanguageConceptSwitch.ModelScope_old:
+        if (props_ModelScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f952484eL);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x307931d0f952484fL, "model_old");
+          cpb.rawPresentation("models");
+          props_ModelScope_old = cpb.create();
+        }
+        return props_ModelScope_old;
       case LanguageConceptSwitch.ModelsExpression:
         if (props_ModelsExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -142,6 +166,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ModulesScope = cpb.create();
         }
         return props_ModulesScope;
+      case LanguageConceptSwitch.ModulesScope_old:
+        if (props_ModulesScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x307931d0f94af768L, "module_old");
+          cpb.rawPresentation("modules");
+          props_ModulesScope_old = cpb.create();
+        }
+        return props_ModulesScope_old;
       case LanguageConceptSwitch.NodesExpression:
         if (props_NodesExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -267,6 +300,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_QueryParameterScope = cpb.create();
         }
         return props_QueryParameterScope;
+      case LanguageConceptSwitch.QueryParameterScope_old:
+        if (props_QueryParameterScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x3bc64421763bef89L, "value_old");
+          cpb.shortDesc("used search scope");
+          cpb.rawPresentation("scope");
+          props_QueryParameterScope_old = cpb.create();
+        }
+        return props_QueryParameterScope_old;
       case LanguageConceptSwitch.ReferencesExpression:
         if (props_ReferencesExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -281,6 +324,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ScopeParameter = cpb.create();
         }
         return props_ScopeParameter;
+      case LanguageConceptSwitch.ScopeParameter_old:
+        if (props_ScopeParameter_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ScopeParameter_old = cpb.create();
+        }
+        return props_ScopeParameter_old;
       case LanguageConceptSwitch.ShowExpression_old:
         if (props_ShowExpression_old == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL);

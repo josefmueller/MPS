@@ -18,8 +18,10 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
-          return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories.NodeFactory_3492877759609298945());
+          return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories.NodeFactory_2362304834939062502());
         case 1:
+          return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories_old.NodeFactory_3492877759609298945());
+        case 2:
           return Collections.<NodeFactory>singletonList(new QueryExpression_NodeFactories.NodeFactory_4307205004138627840());
         default:
       }
@@ -31,5 +33,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   public boolean hasBuilders() {
     return false;
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CustomScope", "QueryExpression"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CustomScope", "CustomScope_old", "QueryExpression"};
 }

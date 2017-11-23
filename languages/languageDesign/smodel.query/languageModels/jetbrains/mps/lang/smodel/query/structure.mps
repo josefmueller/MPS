@@ -161,18 +161,24 @@
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eOJ">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <property role="TrG5h" value="QueryParameterScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <property role="TrG5h" value="QueryParameterScope_old" />
     <property role="34LRSv" value="scope" />
     <property role="R4oN_" value="used search scope" />
     <property role="EcuMT" value="4307205004132412719" />
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="1TJgyj" id="3J6h25QeYY9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="value" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="value_old" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="4307205004134707081" />
-      <ref role="20lvS9" node="3J6h25QeHPb" resolve="ScopeParameter" />
+      <ref role="20lvS9" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
+      <node concept="asaX9" id="238_VGTIK$y" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.query.structure.QueryParameterScope&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="238_VGTIKzU" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
@@ -180,60 +186,81 @@
     <property role="TrG5h" value="GlobalScope_old" />
     <property role="34LRSv" value="global" />
     <property role="EcuMT" value="4307205004134636866" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     <node concept="asaX9" id="7jPdBzQFQ21" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.ideCommands&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHPb">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <property role="TrG5h" value="ScopeParameter" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <property role="TrG5h" value="ScopeParameter_old" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="EcuMT" value="4307205004134636875" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="238_VGTIKzK" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <property role="TrG5h" value="ModulesScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <property role="TrG5h" value="ModulesScope_old" />
     <property role="34LRSv" value="modules" />
     <property role="EcuMT" value="2755216049126692157" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     <node concept="1TJgyj" id="31Tct3TiJtC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="module" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="module_old" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="3492877759607928680" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="238_VGTIK$H" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.query.structure.ModulesScope&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="238_VGTIK$4" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Tk$xe">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <property role="TrG5h" value="ModelScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <property role="TrG5h" value="ModelScope_old" />
     <property role="34LRSv" value="models" />
     <property role="EcuMT" value="3492877759608408142" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     <node concept="1TJgyj" id="31Tct3Tk$xf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="model" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="model_old" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="3492877759608408143" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="238_VGTIK$S" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.query.structure.ModelScope&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="238_VGTIK$e" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Txnn9">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <property role="TrG5h" value="CustomScope" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <property role="TrG5h" value="CustomScope_old" />
     <property role="34LRSv" value="custom" />
     <property role="R4oN_" value="? extends SearchScope" />
     <property role="EcuMT" value="3492877759611762121" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     <node concept="1TJgyj" id="31Tct3Txpke" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="scope" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="scope_old" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="3492877759611770126" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="238_VGTIK_3" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.query.structure.CustomScope&quot;" />
+      </node>
+    </node>
+    <node concept="asaX9" id="238_VGTIK$o" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
     </node>
   </node>
   <node concept="PlHQZ" id="64VftqErqMg">
@@ -438,7 +465,7 @@
     <property role="TrG5h" value="ProjectScope_old" />
     <property role="34LRSv" value="project" />
     <property role="EcuMT" value="4307205004134636962" />
-    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     <node concept="asaX9" id="6sWCsGPXu2C" role="lGtFl">
       <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.console.base&quot;" />
     </node>
@@ -454,6 +481,72 @@
   <node concept="PlHQZ" id="s5v6K2pSK7">
     <property role="EcuMT" value="505947336487701511" />
     <property role="TrG5h" value="QueryExpressionScopeProvider" />
+  </node>
+  <node concept="1TIwiD" id="238_VGTIKuy">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="ScopeParameter" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="EcuMT" value="2362304834939062178" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="238_VGTIKuz">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="QueryParameterScope" />
+    <property role="34LRSv" value="scope" />
+    <property role="R4oN_" value="used search scope" />
+    <property role="EcuMT" value="2362304834939062179" />
+    <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
+    <node concept="1TJgyj" id="238_VGTIKu$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2362304834939062180" />
+      <ref role="20lvS9" node="238_VGTIKuy" resolve="ScopeParameter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="238_VGTIKu_">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="ModulesScope" />
+    <property role="34LRSv" value="modules" />
+    <property role="EcuMT" value="2362304834939062181" />
+    <ref role="1TJDcQ" node="238_VGTIKuy" resolve="ScopeParameter" />
+    <node concept="1TJgyj" id="238_VGTIKuA" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="module" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2362304834939062182" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="238_VGTIKuB">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="ModelScope" />
+    <property role="34LRSv" value="models" />
+    <property role="EcuMT" value="2362304834939062183" />
+    <ref role="1TJDcQ" node="238_VGTIKuy" resolve="ScopeParameter" />
+    <node concept="1TJgyj" id="238_VGTIKuC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="model" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2362304834939062184" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="238_VGTIKuD">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="CustomScope" />
+    <property role="34LRSv" value="custom" />
+    <property role="R4oN_" value="? extends SearchScope" />
+    <property role="EcuMT" value="2362304834939062185" />
+    <ref role="1TJDcQ" node="238_VGTIKuy" resolve="ScopeParameter" />
+    <node concept="1TJgyj" id="238_VGTIKuE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="scope" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2362304834939062186" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
   </node>
 </model>
 

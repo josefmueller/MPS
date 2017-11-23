@@ -52,7 +52,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     return editorCell;
   }
   private boolean nodeCondition_pzkiaj_a0() {
-    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"));
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a2L, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"));
   }
   private EditorCell createError_pzkiaj_a0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no scope>");

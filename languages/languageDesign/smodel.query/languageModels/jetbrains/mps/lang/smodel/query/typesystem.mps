@@ -801,8 +801,8 @@
     </node>
   </node>
   <node concept="1YbPZF" id="31Tct3TjJCE">
-    <property role="TrG5h" value="typeof_ModuleScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="typeof_ModuleScopeLiteral_old" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <node concept="3clFbS" id="31Tct3TjJCF" role="18ibNy">
       <node concept="1ZobV4" id="4KyzTfiQUf2" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -813,7 +813,7 @@
                 <ref role="1YBMHb" node="31Tct3TjJCH" resolve="moduleScopeLiteral" />
               </node>
               <node concept="3TrEf2" id="4KyzTfiQUNe" role="2OqNvi">
-                <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="module" />
+                <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="module_old" />
               </node>
             </node>
           </node>
@@ -836,12 +836,12 @@
     </node>
     <node concept="1YaCAy" id="31Tct3TjJCH" role="1YuTPh">
       <property role="TrG5h" value="moduleScopeLiteral" />
-      <ref role="1YaFvo" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
+      <ref role="1YaFvo" to="3xdn:2oWvAovDHkX" resolve="ModulesScope_old" />
     </node>
   </node>
   <node concept="1YbPZF" id="31Tct3Tk$Pz">
-    <property role="TrG5h" value="typeof_ModelScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="typeof_ModelScopeLiteral_old" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <node concept="3clFbS" id="31Tct3Tk$P$" role="18ibNy">
       <node concept="1ZobV4" id="31Tct3TvI4i" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -852,7 +852,7 @@
                 <ref role="1YBMHb" node="31Tct3Tk$PA" resolve="modelScopeLiteral" />
               </node>
               <node concept="3TrEf2" id="4KyzTfiQMWr" role="2OqNvi">
-                <ref role="3Tt5mk" to="3xdn:31Tct3Tk$xf" resolve="model" />
+                <ref role="3Tt5mk" to="3xdn:31Tct3Tk$xf" resolve="model_old" />
               </node>
             </node>
           </node>
@@ -871,12 +871,12 @@
     </node>
     <node concept="1YaCAy" id="31Tct3Tk$PA" role="1YuTPh">
       <property role="TrG5h" value="modelScopeLiteral" />
-      <ref role="1YaFvo" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
+      <ref role="1YaFvo" to="3xdn:31Tct3Tk$xe" resolve="ModelScope_old" />
     </node>
   </node>
   <node concept="1YbPZF" id="31Tct3TxpmU">
-    <property role="TrG5h" value="typeof_CustomScope" />
-    <property role="3GE5qa" value="query.parameter.scope" />
+    <property role="TrG5h" value="typeof_CustomScope_old" />
+    <property role="3GE5qa" value="query.parameter.scope.old" />
     <node concept="3clFbS" id="31Tct3TxpmV" role="18ibNy">
       <node concept="1ZobV4" id="31Tct3Txrc7" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -894,7 +894,7 @@
                 <ref role="1YBMHb" node="31Tct3TxpmX" resolve="customScope" />
               </node>
               <node concept="3TrEf2" id="31Tct3Txr2M" role="2OqNvi">
-                <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope" />
+                <ref role="3Tt5mk" to="3xdn:31Tct3Txpke" resolve="scope_old" />
               </node>
             </node>
           </node>
@@ -903,7 +903,7 @@
     </node>
     <node concept="1YaCAy" id="31Tct3TxpmX" role="1YuTPh">
       <property role="TrG5h" value="customScope" />
-      <ref role="1YaFvo" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
+      <ref role="1YaFvo" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
     </node>
   </node>
   <node concept="1YbPZF" id="3F2FyKbNNPn">
@@ -956,6 +956,112 @@
     <node concept="1YaCAy" id="3F2FyKbNNPq" role="1YuTPh">
       <property role="TrG5h" value="scopeProvider" />
       <ref role="1YaFvo" to="3xdn:3F2FyKbNNqb" resolve="WithStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="238_VGTIKxG">
+    <property role="TrG5h" value="typeof_ModuleScopeLiteral" />
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <node concept="3clFbS" id="238_VGTIKxH" role="18ibNy">
+      <node concept="1ZobV4" id="238_VGTIKxI" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="238_VGTIKxJ" role="1ZfhK$">
+          <node concept="1Z2H0r" id="238_VGTIKxK" role="mwGJk">
+            <node concept="2OqwBi" id="238_VGTIKxL" role="1Z2MuG">
+              <node concept="1YBJjd" id="238_VGTIKxM" role="2Oq$k0">
+                <ref role="1YBMHb" node="238_VGTIKxU" resolve="moduleScopeLiteral" />
+              </node>
+              <node concept="3TrEf2" id="238_VGTIKxN" role="2OqNvi">
+                <ref role="3Tt5mk" to="3xdn:238_VGTIKuA" resolve="module" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="238_VGTIKxO" role="1ZfhKB">
+          <node concept="2c44tf" id="238_VGTIKxP" role="mwGJk">
+            <node concept="2usRSg" id="238_VGTIKxQ" role="2c44tc">
+              <node concept="3uibUv" id="238_VGTIKxR" role="2usUpS">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+              <node concept="A3Dl8" id="238_VGTIKxS" role="2usUpS">
+                <node concept="3uibUv" id="238_VGTIKxT" role="A3Ik2">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="238_VGTIKxU" role="1YuTPh">
+      <property role="TrG5h" value="moduleScopeLiteral" />
+      <ref role="1YaFvo" to="3xdn:238_VGTIKu_" resolve="ModulesScope" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="238_VGTIKyw">
+    <property role="TrG5h" value="typeof_ModelScopeLiteral" />
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <node concept="3clFbS" id="238_VGTIKyx" role="18ibNy">
+      <node concept="1ZobV4" id="238_VGTIKyy" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="238_VGTIKyz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="238_VGTIKy$" role="mwGJk">
+            <node concept="2OqwBi" id="238_VGTIKy_" role="1Z2MuG">
+              <node concept="1YBJjd" id="238_VGTIKyA" role="2Oq$k0">
+                <ref role="1YBMHb" node="238_VGTIKyI" resolve="modelScopeLiteral" />
+              </node>
+              <node concept="3TrEf2" id="238_VGTIKyB" role="2OqNvi">
+                <ref role="3Tt5mk" to="3xdn:238_VGTIKuC" resolve="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="238_VGTIKyC" role="1ZfhKB">
+          <node concept="2c44tf" id="238_VGTIKyD" role="mwGJk">
+            <node concept="2usRSg" id="238_VGTIKyE" role="2c44tc">
+              <node concept="H_c77" id="238_VGTIKyF" role="2usUpS" />
+              <node concept="A3Dl8" id="238_VGTIKyG" role="2usUpS">
+                <node concept="H_c77" id="238_VGTIKyH" role="A3Ik2" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="238_VGTIKyI" role="1YuTPh">
+      <property role="TrG5h" value="modelScopeLiteral" />
+      <ref role="1YaFvo" to="3xdn:238_VGTIKuB" resolve="ModelScope" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="238_VGTIKzf">
+    <property role="TrG5h" value="typeof_CustomScope" />
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <node concept="3clFbS" id="238_VGTIKzg" role="18ibNy">
+      <node concept="1ZobV4" id="238_VGTIKzh" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="238_VGTIKzi" role="1ZfhKB">
+          <node concept="2c44tf" id="238_VGTIKzj" role="mwGJk">
+            <node concept="3uibUv" id="238_VGTIKzk" role="2c44tc">
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="238_VGTIKzl" role="1ZfhK$">
+          <node concept="1Z2H0r" id="238_VGTIKzm" role="mwGJk">
+            <node concept="2OqwBi" id="238_VGTIKzn" role="1Z2MuG">
+              <node concept="1YBJjd" id="238_VGTIKzo" role="2Oq$k0">
+                <ref role="1YBMHb" node="238_VGTIKzq" resolve="customScope" />
+              </node>
+              <node concept="3TrEf2" id="238_VGTIKzp" role="2OqNvi">
+                <ref role="3Tt5mk" to="3xdn:238_VGTIKuE" resolve="scope" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="238_VGTIKzq" role="1YuTPh">
+      <property role="TrG5h" value="customScope" />
+      <ref role="1YaFvo" to="3xdn:238_VGTIKuD" resolve="CustomScope" />
     </node>
   </node>
 </model>
