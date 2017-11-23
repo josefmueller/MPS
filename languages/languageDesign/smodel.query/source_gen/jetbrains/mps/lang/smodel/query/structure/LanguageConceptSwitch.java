@@ -18,9 +18,9 @@ public final class LanguageConceptSwitch {
   public static final int GlobalScope_old = 6;
   public static final int HelpProvider = 7;
   public static final int InstancesExpression = 8;
-  public static final int ModelScope = 9;
-  public static final int ModelScope_old = 10;
-  public static final int ModelsExpression = 11;
+  public static final int ModelsExpression = 9;
+  public static final int ModelsScope = 10;
+  public static final int ModelsScope_old = 11;
   public static final int ModulesExpression = 12;
   public static final int ModulesScope = 13;
   public static final int ModulesScope_old = 14;
@@ -59,9 +59,9 @@ public final class LanguageConceptSwitch {
     builder.put(0x3bc64421763add42L, GlobalScope_old);
     builder.put(0x690b986730edd07L, HelpProvider);
     builder.put(0x6b643f33718aa10dL, InstancesExpression);
-    builder.put(0x20c897bb39bb07a7L, ModelScope);
-    builder.put(0x307931d0f952484eL, ModelScope_old);
     builder.put(0x5f41efb675beab2dL, ModelsExpression);
+    builder.put(0x20c897bb39bb07a7L, ModelsScope);
+    builder.put(0x307931d0f952484eL, ModelsScope_old);
     builder.put(0x5f41efb675cc2262L, ModulesExpression);
     builder.put(0x20c897bb39bb07a5L, ModulesScope);
     builder.put(0x263c7e661fa6d53dL, ModulesScope_old);

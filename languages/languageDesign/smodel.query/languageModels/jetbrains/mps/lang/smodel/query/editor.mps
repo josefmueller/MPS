@@ -110,6 +110,7 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1223387125302" name="jetbrains.mps.lang.editor.structure.QueryFunction_Boolean" flags="in" index="3nzxsE" />
       <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" flags="sg" stub="8104358048506729356" index="1xolST">
@@ -331,6 +332,9 @@
       <node concept="PMmxH" id="6kp4dbAr3YH" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <node concept="VPRnO" id="1N$kF6pXOFy" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3nxI2P" id="238_VGTNA6U" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -596,7 +600,7 @@
   </node>
   <node concept="24kQdi" id="31Tct3Tk$xC">
     <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="1XX52x" to="3xdn:31Tct3Tk$xe" resolve="ModelScope_old" />
+    <ref role="1XX52x" to="3xdn:31Tct3Tk$xe" resolve="ModelsScope_old" />
     <node concept="3EZMnI" id="31Tct3TvHU9" role="2wV5jI">
       <node concept="l2Vlx" id="31Tct3TvHUa" role="2iSdaV" />
       <node concept="PMmxH" id="31Tct3TvHUb" role="3EZMnx">
@@ -619,7 +623,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4KyzTfiR3Sp" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:31Tct3Tk$xf" resolve="model_old" />
+        <ref role="1NtTu8" to="3xdn:31Tct3Tk$xf" resolve="models_old" />
       </node>
       <node concept="3F0ifn" id="31Tct3TvHUj" role="3EZMnx">
         <property role="3F0ifm" value="]" />
@@ -1182,6 +1186,39 @@
       <node concept="1IAO7e" id="72nsGSZ9Q9H" role="1Qtc8A" />
     </node>
   </node>
+  <node concept="24kQdi" id="238_VGTIKuT">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <ref role="1XX52x" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
+    <node concept="1QoScp" id="238_VGTIKuU" role="2wV5jI">
+      <property role="1QpmdY" value="true" />
+      <node concept="1xolST" id="238_VGTIKuV" role="1QoS34">
+        <property role="1xolSY" value="&lt;no scope&gt;" />
+      </node>
+      <node concept="pkWqt" id="238_VGTIKuW" role="3e4ffs">
+        <node concept="3clFbS" id="238_VGTIKuX" role="2VODD2">
+          <node concept="3clFbF" id="238_VGTIKuY" role="3cqZAp">
+            <node concept="2OqwBi" id="238_VGTIKuZ" role="3clFbG">
+              <node concept="2OqwBi" id="238_VGTIKv0" role="2Oq$k0">
+                <node concept="pncrf" id="238_VGTIKv1" role="2Oq$k0" />
+                <node concept="2yIwOk" id="238_VGTIKv2" role="2OqNvi" />
+              </node>
+              <node concept="3O6GUB" id="238_VGTIKv3" role="2OqNvi">
+                <node concept="chp4Y" id="238_VGTIKv4" role="3QVz_e">
+                  <ref role="cht4Q" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="PMmxH" id="238_VGTIKv5" role="1QoVPY">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <node concept="VPRnO" id="238_VGTIKv6" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="24kQdi" id="238_VGTIKvf">
     <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:238_VGTIKuz" resolve="QueryParameterScope" />
@@ -1327,51 +1364,6 @@
       </node>
     </node>
   </node>
-  <node concept="3p36aQ" id="238_VGTIK$f">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:31Tct3Tk$xe" resolve="ModelScope_old" />
-  </node>
-  <node concept="3p36aQ" id="238_VGTIK$5">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:2oWvAovDHkX" resolve="ModulesScope_old" />
-  </node>
-  <node concept="24kQdi" id="238_VGTIKy6">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="1XX52x" to="3xdn:238_VGTIKuB" resolve="ModelScope" />
-    <node concept="3EZMnI" id="238_VGTIKy7" role="2wV5jI">
-      <node concept="l2Vlx" id="238_VGTIKy8" role="2iSdaV" />
-      <node concept="PMmxH" id="238_VGTIKy9" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F0ifn" id="238_VGTIKya" role="3EZMnx">
-        <property role="3F0ifm" value=":" />
-        <node concept="11L4FC" id="238_VGTIKyb" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="238_VGTIKyc" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="238_VGTIKyd" role="3EZMnx">
-        <property role="3F0ifm" value="[" />
-        <ref role="1k5W1q" to="tpen:hXb$RYA" resolve="LeftBracket" />
-        <node concept="11L4FC" id="238_VGTIKye" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F1sOY" id="238_VGTIKyf" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:238_VGTIKuC" resolve="model" />
-      </node>
-      <node concept="3F0ifn" id="238_VGTIKyg" role="3EZMnx">
-        <property role="3F0ifm" value="]" />
-        <ref role="1k5W1q" to="tpen:hXb$V4T" resolve="RightBracket" />
-      </node>
-    </node>
-  </node>
-  <node concept="3p36aQ" id="238_VGTIK$p">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
-  </node>
   <node concept="24kQdi" id="238_VGTIKxi">
     <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:238_VGTIKu_" resolve="ModulesScope" />
@@ -1397,7 +1389,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="238_VGTIKxr" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:238_VGTIKuA" resolve="module" />
+        <ref role="1NtTu8" to="3xdn:238_VGTIKuA" resolve="modules" />
       </node>
       <node concept="3F0ifn" id="238_VGTIKxs" role="3EZMnx">
         <property role="3F0ifm" value="]" />
@@ -1405,37 +1397,45 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="238_VGTIKuT">
+  <node concept="24kQdi" id="238_VGTIKy6">
     <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="1XX52x" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
-    <node concept="1QoScp" id="238_VGTIKuU" role="2wV5jI">
-      <property role="1QpmdY" value="true" />
-      <node concept="1xolST" id="238_VGTIKuV" role="1QoS34">
-        <property role="1xolSY" value="&lt;no scope&gt;" />
-      </node>
-      <node concept="pkWqt" id="238_VGTIKuW" role="3e4ffs">
-        <node concept="3clFbS" id="238_VGTIKuX" role="2VODD2">
-          <node concept="3clFbF" id="238_VGTIKuY" role="3cqZAp">
-            <node concept="2OqwBi" id="238_VGTIKuZ" role="3clFbG">
-              <node concept="2OqwBi" id="238_VGTIKv0" role="2Oq$k0">
-                <node concept="pncrf" id="238_VGTIKv1" role="2Oq$k0" />
-                <node concept="2yIwOk" id="238_VGTIKv2" role="2OqNvi" />
-              </node>
-              <node concept="3O6GUB" id="238_VGTIKv3" role="2OqNvi">
-                <node concept="chp4Y" id="238_VGTIKv4" role="3QVz_e">
-                  <ref role="cht4Q" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="PMmxH" id="238_VGTIKv5" role="1QoVPY">
+    <ref role="1XX52x" to="3xdn:238_VGTIKuB" resolve="ModelsScope" />
+    <node concept="3EZMnI" id="238_VGTIKy7" role="2wV5jI">
+      <node concept="l2Vlx" id="238_VGTIKy8" role="2iSdaV" />
+      <node concept="PMmxH" id="238_VGTIKy9" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <node concept="VPRnO" id="238_VGTIKv6" role="3F10Kt">
+      </node>
+      <node concept="3F0ifn" id="238_VGTIKya" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="238_VGTIKyb" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="238_VGTIKyc" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F0ifn" id="238_VGTIKyd" role="3EZMnx">
+        <property role="3F0ifm" value="[" />
+        <ref role="1k5W1q" to="tpen:hXb$RYA" resolve="LeftBracket" />
+        <node concept="11L4FC" id="238_VGTIKye" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="238_VGTIKyf" role="3EZMnx">
+        <ref role="1NtTu8" to="3xdn:238_VGTIKuC" resolve="models" />
+      </node>
+      <node concept="3F0ifn" id="238_VGTIKyg" role="3EZMnx">
+        <property role="3F0ifm" value="]" />
+        <ref role="1k5W1q" to="tpen:hXb$V4T" resolve="RightBracket" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="238_VGTIKyL">
+    <property role="3GE5qa" value="query.parameter.scope" />
+    <ref role="1XX52x" to="3xdn:238_VGTIKuD" resolve="CustomScope" />
+    <node concept="3F1sOY" id="238_VGTIKyM" role="2wV5jI">
+      <ref role="1ERwB7" node="238_VGTIKyV" resolve="CustomScope_Actions" />
+      <ref role="1NtTu8" to="3xdn:238_VGTIKuE" resolve="scope" />
     </node>
   </node>
   <node concept="1h_SRR" id="238_VGTIKyV">
@@ -1458,21 +1458,40 @@
       </node>
     </node>
   </node>
-  <node concept="3p36aQ" id="238_VGTIKzV">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
-  </node>
-  <node concept="24kQdi" id="238_VGTIKyL">
-    <property role="3GE5qa" value="query.parameter.scope" />
-    <ref role="1XX52x" to="3xdn:238_VGTIKuD" resolve="CustomScope" />
-    <node concept="3F1sOY" id="238_VGTIKyM" role="2wV5jI">
-      <ref role="1ERwB7" node="238_VGTIKyV" resolve="CustomScope_Actions" />
-      <ref role="1NtTu8" to="3xdn:238_VGTIKuE" resolve="scope" />
+  <node concept="24kQdi" id="238_VGTPJrO">
+    <property role="3GE5qa" value="query.parameter" />
+    <ref role="1XX52x" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+    <node concept="PMmxH" id="238_VGTPJrQ" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <node concept="3nxI2P" id="238_VGTPJGO" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+      <node concept="VPRnO" id="238_VGTPJrV" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+        <node concept="3nzxsE" id="238_VGTPJrW" role="3n$kyP">
+          <node concept="3clFbS" id="238_VGTPJrX" role="2VODD2">
+            <node concept="3clFbF" id="238_VGTPJrY" role="3cqZAp">
+              <node concept="1Wc70l" id="238_VGTPJrZ" role="3clFbG">
+                <node concept="3clFbC" id="238_VGTPJs0" role="3uHU7w">
+                  <node concept="10Nm6u" id="238_VGTPJs1" role="3uHU7w" />
+                  <node concept="2OqwBi" id="238_VGTPJs2" role="3uHU7B">
+                    <node concept="pncrf" id="238_VGTPJs3" role="2Oq$k0" />
+                    <node concept="YBYNd" id="238_VGTPJs4" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="3clFbC" id="238_VGTPJs5" role="3uHU7B">
+                  <node concept="2OqwBi" id="238_VGTPJs6" role="3uHU7B">
+                    <node concept="pncrf" id="238_VGTPJs7" role="2Oq$k0" />
+                    <node concept="YCak7" id="238_VGTPJs8" role="2OqNvi" />
+                  </node>
+                  <node concept="10Nm6u" id="238_VGTPJs9" role="3uHU7w" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
-  </node>
-  <node concept="3p36aQ" id="238_VGTIKzL">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter_old" />
   </node>
 </model>
 
