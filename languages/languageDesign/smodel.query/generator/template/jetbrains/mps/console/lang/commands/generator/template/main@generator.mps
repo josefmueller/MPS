@@ -2,8 +2,8 @@
 <model ref="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
@@ -811,7 +811,7 @@
   </node>
   <node concept="13MO4I" id="31Tct3TvJ$l">
     <property role="TrG5h" value="reduce_ModelScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="3gUMe" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
     <node concept="312cEu" id="31Tct3TvJKU" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -859,7 +859,7 @@
   </node>
   <node concept="13MO4I" id="31Tct3Tzi3L">
     <property role="TrG5h" value="reduce_CustomScope" />
-    <property role="3GE5qa" value="expression.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="3gUMe" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="312cEu" id="31Tct3TziB0" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -906,7 +906,7 @@
   </node>
   <node concept="13MO4I" id="31Tct3TnZm2">
     <property role="TrG5h" value="reduce_ModuleScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="3gUMe" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
     <node concept="312cEu" id="31Tct3TnZLz" role="13RCb5">
       <property role="2bfB8j" value="true" />

@@ -161,7 +161,7 @@
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eOJ">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="QueryParameterScope" />
     <property role="34LRSv" value="scope" />
     <property role="R4oN_" value="used search scope" />
@@ -176,7 +176,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="DEPRECATED.query.parameter" />
     <property role="TrG5h" value="GlobalScope_old" />
     <property role="34LRSv" value="global" />
     <property role="EcuMT" value="4307205004134636866" />
@@ -186,7 +186,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHPb">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="ScopeParameter" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -194,7 +194,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="ModulesScope" />
     <property role="34LRSv" value="modules" />
     <property role="EcuMT" value="2755216049126692157" />
@@ -208,7 +208,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Tk$xe">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="ModelScope" />
     <property role="34LRSv" value="models" />
     <property role="EcuMT" value="3492877759608408142" />
@@ -222,7 +222,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Txnn9">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="CustomScope" />
     <property role="34LRSv" value="custom" />
     <property role="R4oN_" value="? extends SearchScope" />
@@ -285,7 +285,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="4LU9FcrO3Hp">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="PrintNodeExpression_old" />
     <property role="34LRSv" value="#printNode" />
     <property role="R4oN_" value="print node copy" />
@@ -296,7 +296,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7gnNafF7YMD">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="PrintTextExpression_old" />
     <property role="34LRSv" value="#printText" />
     <property role="R4oN_" value="print as string" />
@@ -310,7 +310,7 @@
     <property role="TrG5h" value="BLCommand_old" />
     <property role="R4oN_" value="baseLanguage statements" />
     <property role="34LRSv" value="{" />
-    <property role="3GE5qa" value="bl" />
+    <property role="3GE5qa" value="DEPRECATED.bl" />
     <property role="EcuMT" value="5464054275389846505" />
     <node concept="1TJgyj" id="1yfzJNJreD_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -329,7 +329,7 @@
   <node concept="1TIwiD" id="DM6_$iqV$8">
     <property role="TrG5h" value="ProjectExpression_old" />
     <property role="34LRSv" value="#project" />
-    <property role="3GE5qa" value="bl.expression.query" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.query" />
     <property role="R4oN_" value="the current project" />
     <property role="EcuMT" value="752693057587755272" />
     <node concept="asaX9" id="6sWCsGPXu2H" role="lGtFl">
@@ -337,7 +337,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tuv">
-    <property role="3GE5qa" value="bl.expression" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression" />
     <property role="TrG5h" value="ShowExpression_old" />
     <property role="34LRSv" value="#show" />
     <property role="R4oN_" value="show in usage view" />
@@ -358,7 +358,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="5WpmwkrQrRs">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="PrintNodeReferenceExpression_old" />
     <property role="34LRSv" value="#printNodeRef" />
     <property role="R4oN_" value="print reference to the node" />
@@ -369,7 +369,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6_TW7xVaDdR">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="PrintExpression_old" />
     <property role="34LRSv" value="#print" />
     <property role="R4oN_" value="smart print depending on content" />
@@ -385,7 +385,7 @@
   <node concept="1TIwiD" id="6D0CP__oaBp">
     <property role="TrG5h" value="BLExpression_old" />
     <property role="R4oN_" value="baseLanguage expression" />
-    <property role="3GE5qa" value="bl" />
+    <property role="3GE5qa" value="DEPRECATED.bl" />
     <property role="EcuMT" value="7656298970878093785" />
     <node concept="1TJgyj" id="6D0CP__oaD2" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -402,7 +402,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6_TW7xVvrpf">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="PrintSequenceExpression_old" />
     <property role="34LRSv" value="#printSequence" />
     <property role="R4oN_" value="print size with link to usages view" />
@@ -413,7 +413,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="6M9lfhDDWgw">
-    <property role="3GE5qa" value="bl.expression.print" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <property role="TrG5h" value="AbstractPrintExpression_old" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
@@ -434,7 +434,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHQy">
-    <property role="3GE5qa" value="bl.expression.query.parameter" />
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.query.parameter" />
     <property role="TrG5h" value="ProjectScope_old" />
     <property role="34LRSv" value="project" />
     <property role="EcuMT" value="4307205004134636962" />

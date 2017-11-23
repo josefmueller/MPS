@@ -802,7 +802,7 @@
   </node>
   <node concept="1YbPZF" id="31Tct3TjJCE">
     <property role="TrG5h" value="typeof_ModuleScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3clFbS" id="31Tct3TjJCF" role="18ibNy">
       <node concept="1ZobV4" id="4KyzTfiQUf2" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -841,7 +841,7 @@
   </node>
   <node concept="1YbPZF" id="31Tct3Tk$Pz">
     <property role="TrG5h" value="typeof_ModelScopeLiteral" />
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3clFbS" id="31Tct3Tk$P$" role="18ibNy">
       <node concept="1ZobV4" id="31Tct3TvI4i" role="3cqZAp">
         <property role="3wDh2S" value="true" />
@@ -876,7 +876,7 @@
   </node>
   <node concept="1YbPZF" id="31Tct3TxpmU">
     <property role="TrG5h" value="typeof_CustomScope" />
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <node concept="3clFbS" id="31Tct3TxpmV" role="18ibNy">
       <node concept="1ZobV4" id="31Tct3Txrc7" role="3cqZAp">
         <property role="3wDh2S" value="true" />

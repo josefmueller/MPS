@@ -324,7 +324,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25Q6Dvx">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
     <node concept="3EZMnI" id="3J6h25Q6Dw$" role="2wV5jI">
       <node concept="l2Vlx" id="3J6h25Q6Dw_" role="2iSdaV" />
@@ -349,7 +349,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25QeHPz">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter" />
     <node concept="1QoScp" id="1N$kF6pZlFc" role="2wV5jI">
       <property role="1QpmdY" value="true" />
@@ -587,7 +587,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3TxpkB">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="3F1sOY" id="31Tct3Txpmx" role="2wV5jI">
       <ref role="1ERwB7" node="1N$kF6q0sBF" resolve="CustomScope_Actions" />
@@ -595,7 +595,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3Tk$xC">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:31Tct3Tk$xe" resolve="ModelScope" />
     <node concept="3EZMnI" id="31Tct3TvHU9" role="2wV5jI">
       <node concept="l2Vlx" id="31Tct3TvHUa" role="2iSdaV" />
@@ -628,7 +628,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3TiJu1">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <ref role="1XX52x" to="3xdn:2oWvAovDHkX" resolve="ModulesScope" />
     <node concept="3EZMnI" id="31Tct3TohN2" role="2wV5jI">
       <node concept="l2Vlx" id="31Tct3TohN3" role="2iSdaV" />
@@ -661,7 +661,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="qdYczXcLw1">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="QueryParameterScopeValue_Actions" />
     <ref role="1h_SK9" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
     <node concept="1hA7zw" id="qdYczXcLw2" role="1h_SK8">
@@ -781,7 +781,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="1N$kF6q0sBF">
-    <property role="3GE5qa" value="query.parameter" />
+    <property role="3GE5qa" value="query.parameter.scope" />
     <property role="TrG5h" value="CustomScope_Actions" />
     <ref role="1h_SK9" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
     <node concept="1hA7zw" id="1N$kF6q0sIh" role="1h_SK8">
@@ -847,39 +847,51 @@
     </node>
   </node>
   <node concept="3p36aQ" id="LPhQXjMTKn">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:6_TW7xVaDdR" resolve="PrintExpression_old" />
   </node>
   <node concept="3p36aQ" id="LPhQXjMTKp">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:5WpmwkrQrRs" resolve="PrintNodeReferenceExpression_old" />
   </node>
   <node concept="3p36aQ" id="LPhQXjMTKo">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:4LU9FcrO3Hp" resolve="PrintNodeExpression_old" />
   </node>
   <node concept="3p36aQ" id="LPhQXjMTKr">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:7gnNafF7YMD" resolve="PrintTextExpression_old" />
   </node>
   <node concept="3p36aQ" id="LPhQXjMTKq">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:6_TW7xVvrpf" resolve="PrintSequenceExpression_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz38">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.query" />
     <ref role="aqKnT" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz37">
+    <property role="3GE5qa" value="DEPRECATED.bl" />
     <ref role="aqKnT" to="3xdn:4Jke6BA4ffD" resolve="BLCommand_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz36">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.query.parameter" />
     <ref role="aqKnT" to="3xdn:3J6h25QeHQy" resolve="ProjectScope_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz35">
+    <property role="3GE5qa" value="DEPRECATED.bl" />
     <ref role="aqKnT" to="3xdn:6D0CP__oaBp" resolve="BLExpression_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz34">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression" />
     <ref role="aqKnT" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression_old" />
   </node>
   <node concept="3p36aQ" id="LPhQXjMXRX">
+    <property role="3GE5qa" value="DEPRECATED.query.parameter" />
     <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJz2y">
+    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
     <ref role="aqKnT" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
     <node concept="3ft6gV" id="1wEcoXjJz2$" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJz2_" role="3ft5RY">
