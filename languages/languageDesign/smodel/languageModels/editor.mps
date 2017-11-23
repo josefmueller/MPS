@@ -9867,5 +9867,14 @@
       <node concept="2EHx9g" id="78qQRpbgrNO" role="2iSdaV" />
     </node>
   </node>
+  <node concept="3p36aQ" id="4frscTR2LuO">
+    <property role="3GE5qa" value="identity" />
+    <ref role="aqKnT" to="tp25:78qQRpbfVOr" resolve="DevkitPointer" />
+    <node concept="1s_PAr" id="4frscTR2LvC" role="3ft7WO">
+      <node concept="2kknPI" id="4frscTR2LvE" role="1s_PAo">
+        <ref role="2kkw0f" node="78qQRpbfTCN" resolve="Devkits_Substitute" />
+      </node>
+    </node>
+  </node>
 </model>
 
