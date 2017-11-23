@@ -240,8 +240,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-api/languages/settings/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-api/languages/settings/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations/java.startup">
+    <content url="file://$MODULE_DIR$/../../plugins/execution-configurations">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/ant.cmd/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/java.cmd/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/java.startup/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/junit/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/plugin/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/commands">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/commands/generator/source_gen" isTestSource="false" />
@@ -765,7 +769,6 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="JetPad" level="project" />
-    <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
@@ -785,7 +788,6 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
-    <orderEntry type="module" module-name="execution-configurations-ant" />
     <orderEntry type="module" module-name="execution-languages-library" />
   </component>
 </module>

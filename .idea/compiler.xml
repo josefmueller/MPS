@@ -274,8 +274,16 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/common/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-api/languages/settings/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/ant.cmd/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/ant.cmd/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/java.cmd/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/java.cmd/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/java.startup/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/java.startup/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/junit/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/junit/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/plugin/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-configurations/plugin/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/commands/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/commands/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/configurations/generator/source_gen" includeSubdirectories="true" />
@@ -852,3 +860,4 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
+

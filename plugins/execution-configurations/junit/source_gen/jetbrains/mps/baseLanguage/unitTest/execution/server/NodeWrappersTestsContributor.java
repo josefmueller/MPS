@@ -14,9 +14,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
-//import jetbrains.mps.lang.test.runtime.TransformationTest;
-//import jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner;
-//import jetbrains.mps.lang.test.runtime.TransformationTestLightRunner;
+import jetbrains.mps.lang.test.runtime.TransformationTest;
+import jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner;
+import jetbrains.mps.lang.test.runtime.TransformationTestLightRunner;
 import org.junit.runners.model.InitializationError;
 import org.junit.internal.runners.ErrorReportingRunner;
 import org.jetbrains.annotations.NotNull;
@@ -81,16 +81,16 @@ public class NodeWrappersTestsContributor implements TestsContributor {
 
   private Request requestForTestClass(String fqName, SModule module) throws ClassNotFoundException, ModuleClassLoaderIsNullException {
     final Class<?> aClass = loadTestClass(fqName, module);
-//    if (TransformationTest.class.isAssignableFrom(aClass)) {
-//      try {
-//        // For TransformationTest, we need to supply proper TestRunner instance, and we do this with custom runner that invokes setTestRunner at appropiate time
-//        return Request.runner(new TransformationTestInitJUnitRunner(aClass, new TransformationTestLightRunner()));
-//      } catch (InitializationError ex) {
-//        return Request.runner(new ErrorReportingRunner(aClass, ex));
-//      }
-//    } else {
+    if (TransformationTest.class.isAssignableFrom(aClass)) {
+      try {
+        // For TransformationTest, we need to supply proper TestRunner instance, and we do this with custom runner that invokes setTestRunner at appropiate time 
+        return Request.runner(new TransformationTestInitJUnitRunner(aClass, new TransformationTestLightRunner()));
+      } catch (InitializationError ex) {
+        return Request.runner(new ErrorReportingRunner(aClass, ex));
+      }
+    } else {
       return Request.aClass(aClass);
-//    }
+    }
   }
 
   @NotNull

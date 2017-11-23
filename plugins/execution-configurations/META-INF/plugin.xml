@@ -11,10 +11,10 @@
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.mps</depends>
   <depends>jetbrains.mps.testing</depends>
+  <depends>jetbrains.mps.build</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
-    <mps.PluginComponentContributor application="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" project="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
   </extensions>
 </idea-plugin>

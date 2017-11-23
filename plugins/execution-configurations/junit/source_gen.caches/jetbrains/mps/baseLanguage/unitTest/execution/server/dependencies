@@ -79,13 +79,12 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.InProcessExecutionFilter" file="InProcessExecutionFilter.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor" file="JUnitTestExecutor.java">

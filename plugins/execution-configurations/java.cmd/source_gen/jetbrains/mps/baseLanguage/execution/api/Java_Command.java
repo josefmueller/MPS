@@ -33,8 +33,7 @@ import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept__BehaviorDescriptor;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -217,7 +216,7 @@ public class Java_Command {
       } else {
         // if there's more than 1 unit, find one holding position that matches main method 
         final SConcept staticMethodConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-        final String mainMethodTraceableProperty = ((String) BHReflection.invoke0(_quotation_createNode_yvpt_a0a2a0b0a5a1(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")));
+        final String mainMethodTraceableProperty = TraceableConcept__BehaviorDescriptor.getTraceableProperty_id4pl5GY7LKmH.invoke(_quotation_createNode_yvpt_a0a2a0b0a5a1());
         for (TraceablePositionInfo position : debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node)).getPositions()) {
           if (eq_kk96hj_a0a0a3a0b0a5a62(position.getConcept(), staticMethodConcept) && (eq_kk96hj_a0a0a0d0a1a0f0ab(position.getPropertyString(), mainMethodTraceableProperty))) {
             for (UnitPositionInfo upi : unitsForNode) {

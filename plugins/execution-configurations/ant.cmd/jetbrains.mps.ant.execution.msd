@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ant.execution" uuid="268ae620-360b-4da4-bb01-fad761632e6c" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+<solution name="jetbrains.mps.ant.execution" uuid="268ae620-360b-4da4-bb01-fad761632e6c" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -8,7 +8,6 @@
   <facets>
     <facet type="java" />
     <facet type="tests" />
-    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>

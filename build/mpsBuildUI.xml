@@ -268,8 +268,9 @@
       <library file="${artifacts.mpsDebuggerPlugin}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
       <library file="${artifacts.mpsDebuggerPlugin}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar" />
       <library file="${artifacts.mpsDebuggerPlugin}/mps-execution-api/lib/execution-api.jar" />
+      <library file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.ant.execution.jar" />
       <library file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar" />
-      <library file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/lib/execution-configurations.jar" />
+      <library file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.util.jar" />
       <library file="${artifacts.mpsExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands.jar" />
       <library file="${artifacts.mpsExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.jar" />
       <library file="${artifacts.mpsExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.pluginSolution.jar" />
@@ -392,7 +393,6 @@
       <classpath>
         <fileset file="${artifacts.mpsDebuggerPlugin}/mps-execution-api/lib/execution-api.jar" />
         <fileset file="${artifacts.mpsExecutionPlugin}/mps-execution-languages/lib/execution-languages.jar" />
-        <fileset file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/lib/execution-configurations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
@@ -417,6 +417,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mpsExecutionPlugin}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.ant.execution.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
         <fileset file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.preset.jar" />

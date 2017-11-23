@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="false">
+<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <facets>
-    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
-  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>

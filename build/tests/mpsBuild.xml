@@ -217,8 +217,9 @@
       <library file="${artifacts.mps}/plugins/mps-debugger-java/lib/debugger-java.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-api/lib/execution-api.jar" />
+      <library file="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.ant.execution.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar" />
-      <library file="${artifacts.mps}/plugins/mps-execution-configurations/lib/execution-configurations.jar" />
+      <library file="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.util.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands.jar" />
       <library file="${artifacts.mps}/plugins/mps-execution-languages/lib/execution-languages.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
@@ -310,8 +311,6 @@
       <src path="${basedir}/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/test_gen/" />
       <classpath>
         <fileset file="${artifacts.mps}/plugins/mps-execution-api/lib/execution-api.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-execution-languages/lib/execution-languages.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-execution-configurations/lib/execution-configurations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -340,6 +339,7 @@
         <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.ant.execution.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
@@ -434,8 +434,9 @@
       <pathelement location="${artifacts.mps}/plugins/mps-debugger-java/lib/debugger-java.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-api/lib/execution-api.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.ant.execution.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/lib/execution-configurations.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.util.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/lib/execution-languages.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
