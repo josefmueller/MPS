@@ -20,12 +20,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -35,6 +37,8 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
@@ -109,14 +113,15 @@ public class CreateRootNodeGroup extends BaseGroup {
       mainLanguages.add(BootstrapLanguages.getGeneratorLang());
     }
     mainLanguages.addAll(LanguageAspectSupport.getMainLanguages(targetModel));
-    for (SLanguage mainLang: mainLanguages) {
+    mainLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(targetModel));
+    for (SLanguage mainLang : mainLanguages) {
       addActionsForRoots(mainLang, targetModel, this);
     }
     addSeparator();
 
     Collection<SLanguage> additionalLanguages = LanguageAspectSupport.getAdditionalLanguages(targetModel);
     additionalLanguages.removeAll(mainLanguages);
-    for (SLanguage addLang: additionalLanguages){
+    for (SLanguage addLang : additionalLanguages) {
       String name = addLang.getQualifiedName();
       DefaultActionGroup langGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
       addActionsForRoots(addLang, targetModel, langGroup);

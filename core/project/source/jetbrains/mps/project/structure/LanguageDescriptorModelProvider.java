@@ -22,6 +22,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -32,6 +33,7 @@ import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
@@ -49,6 +51,7 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
@@ -121,6 +124,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
         aspects: for (SModel aspect : LanguageAspectSupport.getAspectModels(l)) {
           List<SLanguage> mainLanguages = new ArrayList<>(LanguageAspectSupport.getMainLanguages(aspect));
+          mainLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(aspect));
           for (SModule loadedModule : loadedModules) {
             if (loadedModule instanceof Language) {
               if (mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) {
@@ -253,7 +257,9 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
       Set<SLanguage> importsToAdd = new HashSet<>();
       Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
       for (SModel aspect : aspectModels) {
-        for (@NotNull SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
+        Collection<SLanguage> mainLanguages = new ArrayList<>(LanguageAspectSupport.getMainLanguages(aspect));
+        mainLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(aspect));
+        for (@NotNull SLanguage aspectLanguage : mainLanguages) {
           addEngagedOnGenerationLanguage(aspectLanguage);
           importsToRemove.remove(aspectLanguage);
           importsToAdd.add(aspectLanguage);

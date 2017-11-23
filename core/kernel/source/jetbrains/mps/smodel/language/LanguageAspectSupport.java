@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.aspects.InOrderSorter;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -90,6 +91,30 @@ public class LanguageAspectSupport {
     return null;
   }
 
+  @Nullable
+  public static SModuleReference getDefaultDevkit(SModel model) {
+    LanguageAspectDescriptor newAspect = getNewAspect(model);
+    if (newAspect == null) return null;
+    return newAspect.getDefaultDevkit();
+  }
+
+  @NotNull
+  public static Collection<SLanguage> getDefaultDevkitLanguages(SModel model) {
+    LanguageAspectDescriptor newAspect = getNewAspect(model);
+    if (newAspect == null) {
+      return Collections.emptyList();
+    }
+    SModuleReference dRef = newAspect.getDefaultDevkit();
+    if (dRef == null) {
+      return Collections.emptyList();
+    }
+    DevKit d = ((DevKit) dRef.resolve(model.getRepository()));
+    if (d == null) {
+      return Collections.emptyList();
+    }
+    return IterableUtil.asCollection(d.getAllExportedLanguageIds());
+  }
+
   public static Collection<SLanguage> getMainLanguages(SModel model) {
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect != null) return newAspect.getMainLanguages();
@@ -111,6 +136,8 @@ public class LanguageAspectSupport {
    * Need to come up with a way to specify devkits in an aspect declaration, perhaps like main/additional languages (though not sure I like it)?
    */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.1) //use getDefaultDevkit instead
   public static Collection<SModuleReference> getInitialDevKits(SModel model) {
     LanguageAspectDescriptor newAspect = getNewAspect(model);
     if (newAspect == null) {
