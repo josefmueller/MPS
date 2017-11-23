@@ -130,7 +130,7 @@ public class ClassLikeMembers_Contribution extends SubstituteMenuBase {
               SNodeOperations.deleteNode(it);
             }
           });
-          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject));
+          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject, _context.getModel()));
         }
 
         @Override
@@ -230,7 +230,7 @@ public class ClassLikeMembers_Contribution extends SubstituteMenuBase {
               SNodeOperations.deleteNode(it);
             }
           });
-          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject));
+          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject, _context.getModel()));
         }
 
         @Override
@@ -330,7 +330,7 @@ public class ClassLikeMembers_Contribution extends SubstituteMenuBase {
               SNodeOperations.deleteNode(it);
             }
           });
-          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject));
+          return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke(myParameterObject, _context.getModel()));
         }
 
         @Override

@@ -18,14 +18,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ClassLikeInitHelper {
-  public static void init(final SNode node, SNode descriptor, SModel futureModel) {
+  public static void init(final SNode node, SNode descriptor, final SModel futureModel) {
     if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0xea740fb893a13edL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.AutoInitDSLClass")))) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation")), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation")));
       SLinkOperations.setTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor"), descriptor);
     }
     Sequence.fromIterable(DSLDescriptor__BehaviorDescriptor.getClassLikeMembers_id2iCqkkxuhoj.invoke(descriptor)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNode newMember = DSLClassMember__BehaviorDescriptor.createForClass_id5BD$AU437jJ.invoke(it, node);
+        SNode newMember = DSLClassMember__BehaviorDescriptor.createForClass_id5BD$AU437jJ.invoke(it, node, futureModel);
         if ((newMember == null)) {
           return;
         }
@@ -48,7 +48,7 @@ public class ClassLikeInitHelper {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNode newMember = DSLClassMember__BehaviorDescriptor.createForClass_id5BD$AU437jJ.invoke(it, node);
+        SNode newMember = DSLClassMember__BehaviorDescriptor.createForClass_id5BD$AU437jJ.invoke(it, node, SNodeOperations.getModel(node));
         if ((newMember == null)) {
           return;
         }

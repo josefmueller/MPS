@@ -298,6 +298,7 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1227264722563" name="jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression" flags="nn" index="2YFouu" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -721,6 +722,10 @@
                 </node>
                 <node concept="2qgKlT" id="1Dz4WsDC1vn" role="2OqNvi">
                   <ref role="37wK5l" to="9nqt:7ay_HjIOVVe" resolve="create" />
+                  <node concept="2OqwBi" id="7stlEFlmpeM" role="37wK5m">
+                    <node concept="Q6c8r" id="7stlEFlmp6f" role="2Oq$k0" />
+                    <node concept="I4A8Y" id="7stlEFlmprm" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
               <node concept="chp4Y" id="714IaVdH06C" role="3oSUPX">
