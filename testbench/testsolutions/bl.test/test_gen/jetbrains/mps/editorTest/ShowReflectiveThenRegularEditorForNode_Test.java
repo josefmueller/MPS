@@ -25,15 +25,15 @@ public class ShowReflectiveThenRegularEditorForNode_Test extends BaseTransformat
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
       Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action"));
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
       Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
-      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action"));
     }
   }
 }

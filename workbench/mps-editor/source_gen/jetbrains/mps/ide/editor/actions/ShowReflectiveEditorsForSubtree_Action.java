@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
-public class ShowReflectiveEditorsForSelection_Action extends BaseAction {
+public class ShowReflectiveEditorsForSubtree_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowReflectiveEditorsForSelection_Action() {
+  public ShowReflectiveEditorsForSubtree_Action() {
     super("Show Reflective Editors", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);

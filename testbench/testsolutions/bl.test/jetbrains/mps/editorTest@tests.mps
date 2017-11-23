@@ -47598,7 +47598,7 @@
       <node concept="3vwNmj" id="5IYRzU$zYV7" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$zYV8" role="3vwVQn">
           <node concept="1iFQzN" id="5IYRzU$zYV9" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -47612,7 +47612,7 @@
       <node concept="3vwNmj" id="5IYRzU$_fPJ" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_fPK" role="3vwVQn">
           <node concept="1iFQzN" id="5IYRzU$_fPL" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -47648,7 +47648,7 @@
       <node concept="3vwNmj" id="5IYRzU$zXU$" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$zXU_" role="3vwVQn">
           <node concept="1iFQzN" id="5IYRzU$zXUA" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -47662,7 +47662,7 @@
       <node concept="3vFxKo" id="5IYRzU$_g1Z" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_g20" role="3vFALc">
           <node concept="1iFQzN" id="5IYRzU$_g21" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -70368,7 +70368,7 @@
     <node concept="3clFbS" id="17gW7Qsv4eA" role="LjaKd">
       <node concept="2HxZob" id="17gW7Qsv4eB" role="3cqZAp">
         <node concept="1iFQzN" id="17gW7Qsv4eC" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vwNmj" id="2RKhqU53GMU" role="3cqZAp">
@@ -70398,7 +70398,7 @@
       <node concept="3vFxKo" id="5IYRzU$_gL_" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_gBv" role="3vFALc">
           <node concept="1iFQzN" id="5IYRzU$_gBw" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -70412,13 +70412,13 @@
       <node concept="3vwNmj" id="5IYRzU$_gB$" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_gB_" role="3vwVQn">
           <node concept="1iFQzN" id="5IYRzU$_gBA" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
           </node>
         </node>
       </node>
       <node concept="2HxZob" id="17gW7Qsv4eT" role="3cqZAp">
         <node concept="1iFQzN" id="17gW7Qsv4eU" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vFxKo" id="2RKhqU53HeY" role="3cqZAp">
@@ -70448,7 +70448,7 @@
       <node concept="3vwNmj" id="5IYRzU$_gof" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_gog" role="3vwVQn">
           <node concept="1iFQzN" id="5IYRzU$_goh" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -70462,7 +70462,7 @@
       <node concept="3vFxKo" id="5IYRzU$_gol" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_gom" role="3vFALc">
           <node concept="1iFQzN" id="5IYRzU$_gon" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -70969,7 +70969,7 @@
   </node>
   <node concept="LiM7Y" id="2RKhqU52pRT">
     <property role="3GE5qa" value="reflectiveEditorActions" />
-    <property role="TrG5h" value="ShowReflectiveEditorsForSelectionUndo" />
+    <property role="TrG5h" value="ShowReflectiveEditorsForSubtreeUndo" />
     <node concept="312cEu" id="2RKhqU52pRU" role="LiRBU">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="ShowReflectiveEditorTest" />
@@ -71131,13 +71131,13 @@
     <node concept="3clFbS" id="2RKhqU52pSS" role="LjaKd">
       <node concept="2HxZob" id="2RKhqU52pT4" role="3cqZAp">
         <node concept="1iFQzN" id="2RKhqU52pT5" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vFxKo" id="2RKhqU52pT6" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU52pT7" role="3vFALc">
           <node concept="1iFQzN" id="2RKhqU52pT8" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71149,7 +71149,7 @@
       <node concept="3vwNmj" id="2RKhqU52pTb" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU52pTc" role="3vwVQn">
           <node concept="1iFQzN" id="2RKhqU52pTd" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71176,7 +71176,7 @@
   </node>
   <node concept="LiM7Y" id="2RKhqU52_sG">
     <property role="3GE5qa" value="reflectiveEditorActions" />
-    <property role="TrG5h" value="ShowReflectiveEditorsForSelectionUndoRedo" />
+    <property role="TrG5h" value="ShowReflectiveEditorsForSubtreeUndoRedo" />
     <node concept="312cEu" id="2RKhqU52_sH" role="LiRBU">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="ShowReflectiveEditorTest" />
@@ -71338,13 +71338,13 @@
     <node concept="3clFbS" id="2RKhqU52_tF" role="LjaKd">
       <node concept="2HxZob" id="2RKhqU52_tY" role="3cqZAp">
         <node concept="1iFQzN" id="2RKhqU52_tZ" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vFxKo" id="2RKhqU52_u0" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU52_u1" role="3vFALc">
           <node concept="1iFQzN" id="2RKhqU52_u2" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71356,7 +71356,7 @@
       <node concept="3vwNmj" id="2RKhqU52_u5" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU52_u6" role="3vwVQn">
           <node concept="1iFQzN" id="2RKhqU52_u7" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71368,7 +71368,7 @@
       <node concept="3vFxKo" id="2RKhqU52_ua" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU52_ub" role="3vFALc">
           <node concept="1iFQzN" id="2RKhqU52_uc" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71380,7 +71380,7 @@
       <node concept="3vwNmj" id="2RKhqU53FcS" role="3cqZAp">
         <node concept="uBuoZ" id="2RKhqU53FcT" role="3vwVQn">
           <node concept="1iFQzN" id="2RKhqU53FcU" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -71499,7 +71499,7 @@
       </node>
       <node concept="2HxZob" id="12QP9KlA64x" role="3cqZAp">
         <node concept="1iFQzN" id="12QP9KlA64y" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="61pEbXpXi96" role="3cqZAp" />
@@ -71722,7 +71722,7 @@
       </node>
       <node concept="2HxZob" id="61pEbXpZRx9" role="3cqZAp">
         <node concept="1iFQzN" id="61pEbXpZRxa" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="61pEbXpZRxb" role="3cqZAp" />
@@ -71766,7 +71766,7 @@
       </node>
       <node concept="2HxZob" id="61pEbXpZRxt" role="3cqZAp">
         <node concept="1iFQzN" id="61pEbXpZRxu" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="61pEbXpZRxv" role="3cqZAp" />
@@ -71945,7 +71945,7 @@
       </node>
       <node concept="2HxZob" id="61pEbXq0VJ4" role="3cqZAp">
         <node concept="1iFQzN" id="61pEbXq0VJ5" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="61pEbXq0VJ6" role="3cqZAp" />
@@ -72168,7 +72168,7 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUAxYy" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUAxYz" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="7zyLvtUAxY$" role="3cqZAp" />
@@ -72212,7 +72212,7 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUAxYQ" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUAxYR" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="7zyLvtUAxYS" role="3cqZAp" />
@@ -72442,7 +72442,7 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUBEEP" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUBEEQ" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="7zyLvtUBEER" role="3cqZAp" />
@@ -72621,7 +72621,7 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUDNLw" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUDNLx" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="2HxZob" id="7zyLvtUDOgj" role="3cqZAp">
@@ -72840,13 +72840,13 @@
       <node concept="3clFbH" id="68Moal7lGBr" role="3cqZAp" />
       <node concept="2HxZob" id="68Moal7lBDi" role="3cqZAp">
         <node concept="1iFQzN" id="68Moal7lBDj" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vFxKo" id="68Moal7lBDk" role="3cqZAp">
         <node concept="uBuoZ" id="68Moal7lBDl" role="3vFALc">
           <node concept="1iFQzN" id="68Moal7lBDm" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -72858,7 +72858,7 @@
       <node concept="3vwNmj" id="68Moal7lBDp" role="3cqZAp">
         <node concept="uBuoZ" id="68Moal7lBDq" role="3vwVQn">
           <node concept="1iFQzN" id="68Moal7lBDr" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+            <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -73009,7 +73009,7 @@
       </node>
       <node concept="2HxZob" id="53U8lVsTEJQ" role="3cqZAp">
         <node concept="1iFQzN" id="53U8lVsTEJR" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="53U8lVsTEJS" role="3cqZAp" />
@@ -73053,7 +73053,7 @@
       </node>
       <node concept="2HxZob" id="53U8lVsTEKa" role="3cqZAp">
         <node concept="1iFQzN" id="53U8lVsTEKb" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+          <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="53U8lVsTKef" role="3cqZAp" />

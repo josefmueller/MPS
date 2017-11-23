@@ -10,11 +10,11 @@ import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 
 @MPSLaunch
-public class ShowReflectiveEditorsForSelectionUndo_Test extends BaseTransformationTest {
+public class ShowReflectiveEditorsForSubtreeUndo_Test extends BaseTransformationTest {
   @Test
-  public void test_ShowReflectiveEditorsForSelectionUndo() throws Throwable {
+  public void test_ShowReflectiveEditorsForSubtreeUndo() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndo_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndo_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -22,10 +22,10 @@ public class ShowReflectiveEditorsForSelectionUndo_Test extends BaseTransformati
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3310222341975940602", "3310222341975940633");
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action");
-      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       invokeAction("$Undo");
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
 
 

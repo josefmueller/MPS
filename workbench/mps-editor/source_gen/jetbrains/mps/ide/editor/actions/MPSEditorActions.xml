@@ -208,9 +208,9 @@
       <keyboard-shortcut first-keystroke="alt shift M" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"></action>
-    <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action"></action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"></action>
     <action id="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"></action>
-    <action id="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action" class="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action"></action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action" class="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action"></action>
     <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
       <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default" />
     </action>
@@ -362,9 +362,9 @@
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ReflectiveEditorGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
-      <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" />
-      <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action" />
       <add-to-group group-id="EditorPopup_ActionGroupreflective" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ShowAsIntentions_ActionGroup">

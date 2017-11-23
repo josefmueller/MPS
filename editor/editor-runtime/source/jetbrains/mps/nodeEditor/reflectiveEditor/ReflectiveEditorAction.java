@@ -16,8 +16,6 @@
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForNode;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsAction.ActionForSubtree;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
@@ -36,26 +34,26 @@ class ReflectiveEditorAction {
   private final List<ReflectiveHintsAction> myActions;
   private final EditorComponent myEditorComponent;
   private final boolean myIsReflective;
-  private final boolean myIsForManyNodes;
+  private final boolean myIsForSubtree;
 
   private List<List<SNode>> mySelectionStack = new ArrayList<>();
 
-  ReflectiveEditorAction(List<SNode> affectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes) {
+  ReflectiveEditorAction(List<SNode> affectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForSubtree) {
     myAffectedNode = affectedNodes.get(0);
 
     myActions = new ArrayList<>();
     for (SNode node : affectedNodes) {
-      myActions.add(getAction(editorComponent, isReflective, isForManyNodes, node));
+      myActions.add(getAction(editorComponent, isReflective, isForSubtree, node));
     }
 
     myEditorComponent = editorComponent;
     myIsReflective = isReflective;
-    myIsForManyNodes = isForManyNodes;
+    myIsForSubtree = isForSubtree;
   }
 
   @NotNull
-  private ReflectiveHintsAction getAction(EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes, SNode node) {
-    if (isForManyNodes) {
+  private ReflectiveHintsAction getAction(EditorComponent editorComponent, boolean isReflective, boolean isForSubtree, SNode node) {
+    if (isForSubtree) {
       if (isReflective) {
         return new MakeSubtreeReflectiveAction(node, editorComponent);
       } else {
@@ -71,14 +69,10 @@ class ReflectiveEditorAction {
   }
 
   boolean isApplicable(AnActionEvent event) {
-    if (!myIsForManyNodes && myActions.size() > 1) {
-      return false;
-    }
-
     boolean canMake = myActions.stream().anyMatch(ReflectiveHintsAction::isApplicable);
 
     if (canMake) {
-      String plurality = myIsForManyNodes ? ("s for Subtree" + (myActions.size() > 1 ? "s" : "")) : "";
+      String plurality = (myIsForSubtree ? "s for Subtree" : "") + (myActions.size() > 1 ? "s" : "");
       String caption = String.format("Show %s Editor%s", myIsReflective ? "Reflective" : "Regular", plurality);
       event.getPresentation().setText(caption);
       return true;

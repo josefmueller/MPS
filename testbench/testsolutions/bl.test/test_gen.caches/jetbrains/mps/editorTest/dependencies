@@ -7227,7 +7227,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndoRedo_Test" file="ShowReflectiveEditorsForSelectionUndoRedo_Test.java">
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndoRedo_Test" file="ShowReflectiveEditorsForSubtreeUndoRedo_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -7238,7 +7238,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndo_Test" file="ShowReflectiveEditorsForSelectionUndo_Test.java">
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndo_Test" file="ShowReflectiveEditorsForSubtreeUndo_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

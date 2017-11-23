@@ -29,7 +29,7 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditorForChild_Test exte
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("1204383717210482930"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
         }
       });
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {

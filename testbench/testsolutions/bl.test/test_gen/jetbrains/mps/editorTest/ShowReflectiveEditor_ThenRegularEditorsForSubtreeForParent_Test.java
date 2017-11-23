@@ -37,7 +37,7 @@ public class ShowReflectiveEditor_ThenRegularEditorsForSubtreeForParent_Test ext
         }
       });
       Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {

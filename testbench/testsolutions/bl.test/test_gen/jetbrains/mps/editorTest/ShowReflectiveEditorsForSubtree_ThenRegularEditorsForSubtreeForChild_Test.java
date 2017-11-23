@@ -29,14 +29,14 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForChil
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("6942765840370464804"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
         }
       });
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("6942765840370464807"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
         }
       });
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSubtree_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {

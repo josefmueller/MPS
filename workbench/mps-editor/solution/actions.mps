@@ -11900,10 +11900,10 @@
     <property role="TrG5h" value="ShowReflectiveEditor" />
     <property role="2uzpH1" value="Show Reflective Editor" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="3zc62tOilIE" role="1NuT2Z">
-      <property role="TrG5h" value="node" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
-      <node concept="1oajcY" id="3zc62tOilIF" role="1oa70y" />
+    <node concept="1DS2jV" id="53U8lVt3nri" role="1NuT2Z">
+      <property role="TrG5h" value="selectedNodes" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODES" resolve="NODES" />
+      <node concept="1oajcY" id="53U8lVt3nrj" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="5SnwAr0vD32" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
@@ -11916,14 +11916,10 @@
           <node concept="2YIFZM" id="4bgbsETQLNB" role="3clFbG">
             <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-            <node concept="2YIFZM" id="4bgbsETQLNC" role="37wK5m">
-              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-              <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-              <node concept="2OqwBi" id="4bgbsETQLND" role="37wK5m">
-                <node concept="2WthIp" id="4bgbsETQLNE" role="2Oq$k0" />
-                <node concept="1DTwFV" id="4bgbsETQLNF" role="2OqNvi">
-                  <ref role="2WH_rO" node="3zc62tOilIE" resolve="node" />
-                </node>
+            <node concept="2OqwBi" id="53U8lVt3ohH" role="37wK5m">
+              <node concept="2WthIp" id="53U8lVt3ohK" role="2Oq$k0" />
+              <node concept="1DTwFV" id="53U8lVt3ohM" role="2OqNvi">
+                <ref role="2WH_rO" node="53U8lVt3nri" resolve="selectedNodes" />
               </node>
             </node>
             <node concept="3clFbT" id="4bgbsETQLNG" role="37wK5m">
@@ -11948,14 +11944,10 @@
           <node concept="2YIFZM" id="4bgbsETQgZj" role="3clFbG">
             <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.isApplicable(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):boolean" resolve="isApplicable" />
-            <node concept="2YIFZM" id="4bgbsETQhbM" role="37wK5m">
-              <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-              <node concept="2OqwBi" id="4bgbsETQhbN" role="37wK5m">
-                <node concept="2WthIp" id="4bgbsETQhbO" role="2Oq$k0" />
-                <node concept="1DTwFV" id="4bgbsETQhbP" role="2OqNvi">
-                  <ref role="2WH_rO" node="3zc62tOilIE" resolve="node" />
-                </node>
+            <node concept="2OqwBi" id="53U8lVt3o2H" role="37wK5m">
+              <node concept="2WthIp" id="53U8lVt3o2K" role="2Oq$k0" />
+              <node concept="1DTwFV" id="53U8lVt3o2M" role="2OqNvi">
+                <ref role="2WH_rO" node="53U8lVt3nri" resolve="selectedNodes" />
               </node>
             </node>
             <node concept="3clFbT" id="4bgbsETQhIr" role="37wK5m">
@@ -12060,10 +12052,10 @@
     <property role="TrG5h" value="ShowRegularEditor" />
     <property role="2uzpH1" value="Show Regular Editor" />
     <property role="1teQrl" value="true" />
-    <node concept="1DS2jV" id="3zc62tOisxw" role="1NuT2Z">
-      <property role="TrG5h" value="node" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODE" resolve="NODE" />
-      <node concept="1oajcY" id="3zc62tOisxx" role="1oa70y" />
+    <node concept="1DS2jV" id="53U8lVt3qu3" role="1NuT2Z">
+      <property role="TrG5h" value="selectedNodes" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.NODES" resolve="NODES" />
+      <node concept="1oajcY" id="53U8lVt3qu4" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="1XfowaweGRg" role="1NuT2Z">
       <property role="TrG5h" value="editorComponent" />
@@ -12076,14 +12068,10 @@
           <node concept="2YIFZM" id="4bgbsETQPvO" role="3clFbG">
             <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-            <node concept="2YIFZM" id="4bgbsETQPvP" role="37wK5m">
-              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-              <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-              <node concept="2OqwBi" id="4bgbsETQPvQ" role="37wK5m">
-                <node concept="2WthIp" id="4bgbsETQPvR" role="2Oq$k0" />
-                <node concept="1DTwFV" id="4bgbsETQPvS" role="2OqNvi">
-                  <ref role="2WH_rO" node="3zc62tOisxw" resolve="node" />
-                </node>
+            <node concept="2OqwBi" id="53U8lVt3qZ3" role="37wK5m">
+              <node concept="2WthIp" id="53U8lVt3qZ6" role="2Oq$k0" />
+              <node concept="1DTwFV" id="53U8lVt3qZ8" role="2OqNvi">
+                <ref role="2WH_rO" node="53U8lVt3qu3" resolve="selectedNodes" />
               </node>
             </node>
             <node concept="3clFbT" id="4bgbsETQPvT" role="37wK5m" />
@@ -12106,14 +12094,10 @@
           <node concept="2YIFZM" id="4bgbsETQNZj" role="3clFbG">
             <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.isApplicable(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):boolean" resolve="isApplicable" />
             <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-            <node concept="2YIFZM" id="4bgbsETQNZk" role="37wK5m">
-              <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-              <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-              <node concept="2OqwBi" id="4bgbsETQNZl" role="37wK5m">
-                <node concept="2WthIp" id="4bgbsETQNZm" role="2Oq$k0" />
-                <node concept="1DTwFV" id="4bgbsETQNZn" role="2OqNvi">
-                  <ref role="2WH_rO" node="3zc62tOisxw" resolve="node" />
-                </node>
+            <node concept="2OqwBi" id="53U8lVt3qIJ" role="37wK5m">
+              <node concept="2WthIp" id="53U8lVt3qIM" role="2Oq$k0" />
+              <node concept="1DTwFV" id="53U8lVt3qIO" role="2OqNvi">
+                <ref role="2WH_rO" node="53U8lVt3qu3" resolve="selectedNodes" />
               </node>
             </node>
             <node concept="3clFbT" id="4bgbsETQNZo" role="37wK5m" />
@@ -12255,7 +12239,7 @@
   </node>
   <node concept="sE7Ow" id="6KvCG2PRuPP">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
-    <property role="TrG5h" value="ShowReflectiveEditorsForSelection" />
+    <property role="TrG5h" value="ShowReflectiveEditorsForSubtree" />
     <property role="2uzpH1" value="Show Reflective Editors" />
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6KvCG2PRxoN" role="1NuT2Z">
@@ -12328,7 +12312,7 @@
   </node>
   <node concept="sE7Ow" id="1ptS745ppI">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
-    <property role="TrG5h" value="ShowRegularEditorsForSelection" />
+    <property role="TrG5h" value="ShowRegularEditorsForSubtree" />
     <property role="2uzpH1" value="Show Regular Editors" />
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1ptS745Y6c" role="1NuT2Z">
@@ -12711,13 +12695,13 @@
         <ref role="tCJdB" node="5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       </node>
       <node concept="tCFHf" id="1PXrQKSpx3o" role="ftvYc">
-        <ref role="tCJdB" node="6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
+        <ref role="tCJdB" node="6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSubtree" />
       </node>
       <node concept="tCFHf" id="14LA8YdF_UB" role="ftvYc">
         <ref role="tCJdB" node="1XfowaweGRd" resolve="ShowRegularEditor" />
       </node>
       <node concept="tCFHf" id="1ptS746TQt" role="ftvYc">
-        <ref role="tCJdB" node="1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
+        <ref role="tCJdB" node="1ptS745ppI" resolve="ShowRegularEditorsForSubtree" />
       </node>
     </node>
   </node>

@@ -243,8 +243,8 @@
       <node id="1204383717210480865" at="18,102,19,133" concept="2" />
       <node id="1204383717210480865" at="25,51,26,53" concept="2" />
       <node id="6942765840370125216" at="28,27,29,293" concept="2" />
-      <node id="1204383717210480929" at="31,9,32,96" concept="2" />
-      <node id="6942765840369787462" at="32,96,33,0" concept="8" />
+      <node id="1204383717210480929" at="31,9,32,94" concept="2" />
+      <node id="6942765840369787462" at="32,94,33,0" concept="8" />
       <node id="1204383717210586586" at="35,27,36,296" concept="2" />
       <node id="1204383717210598522" at="38,9,39,80" concept="2" />
       <node id="6942765840369789136" at="39,80,40,0" concept="8" />
@@ -1168,23 +1168,23 @@
       <node id="1283790316087559015" at="15,81,16,102" concept="2" />
       <node id="1283790316087559015" at="16,102,17,117" concept="2" />
       <node id="1283790316087559015" at="23,51,24,72" concept="2" />
-      <node id="1283790316087559079" at="24,72,25,96" concept="2" />
-      <node id="3310222341976280250" at="25,96,26,132" concept="2" />
+      <node id="1283790316087559079" at="24,72,25,94" concept="2" />
+      <node id="3310222341976280250" at="25,94,26,132" concept="2" />
       <node id="6610965663657036251" at="26,132,27,109" concept="2" />
-      <node id="6610965663657036901" at="27,109,28,122" concept="2" />
-      <node id="6610965663657036257" at="28,122,29,105" concept="2" />
-      <node id="6610965663657036260" at="29,105,30,118" concept="2" />
-      <node id="1283790316087559097" at="30,118,31,93" concept="2" />
-      <node id="3310222341976282046" at="31,93,32,133" concept="2" />
+      <node id="6610965663657036901" at="27,109,28,120" concept="2" />
+      <node id="6610965663657036257" at="28,120,29,105" concept="2" />
+      <node id="6610965663657036260" at="29,105,30,116" concept="2" />
+      <node id="1283790316087559097" at="30,116,31,91" concept="2" />
+      <node id="3310222341976282046" at="31,91,32,133" concept="2" />
       <node id="6610965663657035276" at="32,133,33,108" concept="2" />
-      <node id="6610965663657035279" at="33,108,34,121" concept="2" />
-      <node id="6610965663657035282" at="34,121,35,106" concept="2" />
-      <node id="6610965663657035285" at="35,106,36,119" concept="2" />
+      <node id="6610965663657035279" at="33,108,34,119" concept="2" />
+      <node id="6610965663657035282" at="34,119,35,106" concept="2" />
+      <node id="6610965663657035285" at="35,106,36,117" concept="2" />
       <node id="1283790316087559015" at="14,0,19,0" concept="5" trace="test_ShowReflectiveThenRegularEditorForSubtree#()V" />
       <node id="1283790316087559015" at="22,0,38,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="1283790316087559015" at="15,81,17,117" />
       <scope id="1283790316087559015" at="14,0,19,0" />
-      <scope id="1283790316087559015" at="23,51,36,119" />
+      <scope id="1283790316087559015" at="23,51,36,117" />
       <scope id="1283790316087559015" at="22,0,38,0" />
       <unit id="1283790316087559015" at="20,0,39,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditorForSubtree_Test$TestBody" />
       <unit id="1283790316087559015" at="12,0,40,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditorForSubtree_Test" />
@@ -2720,20 +2720,20 @@
       <node id="2746054822154165539" at="24,72,25,83" concept="2" />
       <node id="3310222341976279402" at="25,83,26,132" concept="2" />
       <node id="6610965663657031173" at="26,132,27,109" concept="2" />
-      <node id="6610965663656701639" at="27,109,28,121" concept="2" />
-      <node id="6610965663657033017" at="28,121,29,105" concept="2" />
-      <node id="6610965663657033071" at="29,105,30,118" concept="2" />
-      <node id="2746054822154435067" at="30,118,31,80" concept="2" />
+      <node id="6610965663656701639" at="27,109,28,119" concept="2" />
+      <node id="6610965663657033017" at="28,119,29,105" concept="2" />
+      <node id="6610965663657033071" at="29,105,30,116" concept="2" />
+      <node id="2746054822154435067" at="30,116,31,80" concept="2" />
       <node id="3310222341976278376" at="31,80,32,133" concept="2" />
       <node id="6610965663656697162" at="32,133,33,108" concept="2" />
-      <node id="6610965663656697508" at="33,108,34,121" concept="2" />
-      <node id="6610965663657033781" at="34,121,35,106" concept="2" />
-      <node id="6610965663657033855" at="35,106,36,119" concept="2" />
+      <node id="6610965663656697508" at="33,108,34,119" concept="2" />
+      <node id="6610965663657033781" at="34,119,35,106" concept="2" />
+      <node id="6610965663657033855" at="35,106,36,117" concept="2" />
       <node id="2746054822154165513" at="14,0,19,0" concept="5" trace="test_ShowReflectiveThenRegularEditorForNode#()V" />
       <node id="2746054822154165513" at="22,0,38,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="2746054822154165513" at="15,78,17,114" />
       <scope id="2746054822154165513" at="14,0,19,0" />
-      <scope id="2746054822154165513" at="23,51,36,119" />
+      <scope id="2746054822154165513" at="23,51,36,117" />
       <scope id="2746054822154165513" at="22,0,38,0" />
       <unit id="2746054822154165513" at="20,0,39,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditorForNode_Test$TestBody" />
       <unit id="2746054822154165513" at="12,0,40,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditorForNode_Test" />
@@ -3809,49 +3809,49 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3310222341975940601">
-    <file name="ShowReflectiveEditorsForSelectionUndo_Test.java">
-      <node id="3310222341975940601" at="15,77,16,102" concept="2" />
-      <node id="3310222341975940601" at="16,102,17,113" concept="2" />
+    <file name="ShowReflectiveEditorsForSubtreeUndo_Test.java">
+      <node id="3310222341975940601" at="15,75,16,102" concept="2" />
+      <node id="3310222341975940601" at="16,102,17,111" concept="2" />
       <node id="3310222341975940601" at="23,51,24,72" concept="2" />
-      <node id="3310222341975940676" at="24,72,25,96" concept="2" />
-      <node id="3310222341975940678" at="25,96,26,122" concept="2" />
-      <node id="3310222341975940681" at="26,122,27,28" concept="2" />
-      <node id="3310222341975940683" at="27,28,28,121" concept="2" />
-      <node id="3310222341975990333" at="28,121,29,133" concept="2" />
+      <node id="3310222341975940676" at="24,72,25,94" concept="2" />
+      <node id="3310222341975940678" at="25,94,26,120" concept="2" />
+      <node id="3310222341975940681" at="26,120,27,28" concept="2" />
+      <node id="3310222341975940683" at="27,28,28,119" concept="2" />
+      <node id="3310222341975990333" at="28,119,29,133" concept="2" />
       <node id="3310222341975990312" at="29,133,30,0" concept="8" />
       <node id="3310222341975940686" at="30,0,31,0" concept="8" />
-      <node id="3310222341975940601" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorsForSelectionUndo#()V" />
+      <node id="3310222341975940601" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorsForSubtreeUndo#()V" />
       <node id="3310222341975940601" at="22,0,33,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="3310222341975940601" at="15,77,17,113" />
+      <scope id="3310222341975940601" at="15,75,17,111" />
       <scope id="3310222341975940601" at="14,0,19,0" />
       <scope id="3310222341975940601" at="23,51,31,0" />
       <scope id="3310222341975940601" at="22,0,33,0" />
-      <unit id="3310222341975940601" at="20,0,34,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndo_Test$TestBody" />
-      <unit id="3310222341975940601" at="12,0,35,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndo_Test" />
+      <unit id="3310222341975940601" at="20,0,34,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndo_Test$TestBody" />
+      <unit id="3310222341975940601" at="12,0,35,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndo_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3310222341975988012">
-    <file name="ShowReflectiveEditorsForSelectionUndoRedo_Test.java">
-      <node id="3310222341975988012" at="15,81,16,102" concept="2" />
-      <node id="3310222341975988012" at="16,102,17,117" concept="2" />
+    <file name="ShowReflectiveEditorsForSubtreeUndoRedo_Test.java">
+      <node id="3310222341975988012" at="15,79,16,102" concept="2" />
+      <node id="3310222341975988012" at="16,102,17,115" concept="2" />
       <node id="3310222341975988012" at="23,51,24,72" concept="2" />
-      <node id="3310222341975988094" at="24,72,25,96" concept="2" />
-      <node id="3310222341975988096" at="25,96,26,122" concept="2" />
-      <node id="3310222341975988099" at="26,122,27,28" concept="2" />
-      <node id="3310222341975988101" at="27,28,28,121" concept="2" />
-      <node id="3310222341975988104" at="28,121,29,28" concept="2" />
-      <node id="3310222341975988106" at="29,28,30,122" concept="2" />
-      <node id="3310222341975988109" at="30,122,31,28" concept="2" />
-      <node id="3310222341976273720" at="31,28,32,121" concept="2" />
-      <node id="3310222341976273723" at="32,121,33,133" concept="2" />
-      <node id="3310222341975988012" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorsForSelectionUndoRedo#()V" />
+      <node id="3310222341975988094" at="24,72,25,94" concept="2" />
+      <node id="3310222341975988096" at="25,94,26,120" concept="2" />
+      <node id="3310222341975988099" at="26,120,27,28" concept="2" />
+      <node id="3310222341975988101" at="27,28,28,119" concept="2" />
+      <node id="3310222341975988104" at="28,119,29,28" concept="2" />
+      <node id="3310222341975988106" at="29,28,30,120" concept="2" />
+      <node id="3310222341975988109" at="30,120,31,28" concept="2" />
+      <node id="3310222341976273720" at="31,28,32,119" concept="2" />
+      <node id="3310222341976273723" at="32,119,33,133" concept="2" />
+      <node id="3310222341975988012" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorsForSubtreeUndoRedo#()V" />
       <node id="3310222341975988012" at="22,0,35,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="3310222341975988012" at="15,81,17,117" />
+      <scope id="3310222341975988012" at="15,79,17,115" />
       <scope id="3310222341975988012" at="14,0,19,0" />
       <scope id="3310222341975988012" at="23,51,33,133" />
       <scope id="3310222341975988012" at="22,0,35,0" />
-      <unit id="3310222341975988012" at="20,0,36,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndoRedo_Test$TestBody" />
-      <unit id="3310222341975988012" at="12,0,37,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSelectionUndoRedo_Test" />
+      <unit id="3310222341975988012" at="20,0,36,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndoRedo_Test$TestBody" />
+      <unit id="3310222341975988012" at="12,0,37,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtreeUndoRedo_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3310643382746679883">
@@ -9155,11 +9155,11 @@
       <node id="5835012958528646096" at="18,102,19,162" concept="2" />
       <node id="5835012958528646096" at="25,51,26,53" concept="2" />
       <node id="5835012958528646129" at="28,27,29,296" concept="2" />
-      <node id="5835012958528646134" at="31,9,32,96" concept="2" />
-      <node id="5835012958528646136" at="32,96,33,0" concept="8" />
+      <node id="5835012958528646134" at="31,9,32,94" concept="2" />
+      <node id="5835012958528646136" at="32,94,33,0" concept="8" />
       <node id="5835012958528646149" at="35,27,36,301" concept="2" />
-      <node id="5835012958528646154" at="38,9,39,93" concept="2" />
-      <node id="5835012958528668559" at="39,93,40,0" concept="8" />
+      <node id="5835012958528646154" at="38,9,39,91" concept="2" />
+      <node id="5835012958528668559" at="39,91,40,0" concept="8" />
       <node id="5835012958528668720" at="42,27,43,296" concept="2" />
       <node id="5835012958528668725" at="45,9,46,80" concept="2" />
       <node id="5835012958528646156" at="46,80,47,0" concept="8" />
@@ -11638,11 +11638,11 @@
       <node id="6942765840370464803" at="18,102,19,144" concept="2" />
       <node id="6942765840370464803" at="25,51,26,53" concept="2" />
       <node id="6942765840370464836" at="28,27,29,293" concept="2" />
-      <node id="6942765840370464841" at="31,9,32,96" concept="2" />
-      <node id="6942765840370464843" at="32,96,33,0" concept="8" />
+      <node id="6942765840370464841" at="31,9,32,94" concept="2" />
+      <node id="6942765840370464843" at="32,94,33,0" concept="8" />
       <node id="6942765840370464856" at="35,27,36,296" concept="2" />
-      <node id="6942765840370464861" at="38,9,39,93" concept="2" />
-      <node id="6942765840370464863" at="39,93,40,0" concept="8" />
+      <node id="6942765840370464861" at="38,9,39,91" concept="2" />
+      <node id="6942765840370464863" at="39,91,40,0" concept="8" />
       <node id="6942765840370464867" at="42,27,43,392" concept="2" />
       <node id="6942765840370464875" at="43,392,44,396" concept="2" />
       <node id="6942765840370469264" at="44,396,45,401" concept="2" />
@@ -11677,8 +11677,8 @@
       <node id="6942765840370744222" at="18,102,19,134" concept="2" />
       <node id="6942765840370744222" at="25,51,26,53" concept="2" />
       <node id="6942765840370744255" at="28,27,29,296" concept="2" />
-      <node id="6942765840370744260" at="31,9,32,96" concept="2" />
-      <node id="6942765840370744262" at="32,96,33,0" concept="8" />
+      <node id="6942765840370744260" at="31,9,32,94" concept="2" />
+      <node id="6942765840370744262" at="32,94,33,0" concept="8" />
       <node id="6942765840370744275" at="35,27,36,293" concept="2" />
       <node id="6942765840370744280" at="38,9,39,80" concept="2" />
       <node id="6942765840370744282" at="39,80,40,0" concept="8" />
@@ -12007,11 +12007,11 @@
       <node id="7075824227535211551" at="28,0,29,71" concept="2" />
       <node id="7075824227535211620" at="29,71,30,71" concept="2" />
       <node id="7075824227535210971" at="30,71,31,0" concept="8" />
-      <node id="7075824227535190610" at="31,0,32,96" concept="2" />
-      <node id="7075824227535190612" at="32,96,33,122" concept="2" />
-      <node id="7075824227535190615" at="33,122,34,28" concept="2" />
-      <node id="7075824227535190617" at="34,28,35,121" concept="2" />
-      <node id="7075824227535192043" at="35,121,36,28" concept="2" />
+      <node id="7075824227535190610" at="31,0,32,94" concept="2" />
+      <node id="7075824227535190612" at="32,94,33,120" concept="2" />
+      <node id="7075824227535190615" at="33,120,34,28" concept="2" />
+      <node id="7075824227535190617" at="34,28,35,119" concept="2" />
+      <node id="7075824227535192043" at="35,119,36,28" concept="2" />
       <node id="7075824227535190620" at="36,28,37,0" concept="8" />
       <node id="7075824227535212294" at="37,0,38,73" concept="2" />
       <node id="7075824227535192785" at="38,73,39,80" concept="2" />
@@ -14857,11 +14857,11 @@
       <node id="8710742295992475516" at="18,102,19,145" concept="2" />
       <node id="8710742295992475516" at="25,51,26,53" concept="2" />
       <node id="8710742295992475549" at="28,27,29,296" concept="2" />
-      <node id="8710742295992475554" at="31,9,32,96" concept="2" />
-      <node id="8710742295992475556" at="32,96,33,0" concept="8" />
+      <node id="8710742295992475554" at="31,9,32,94" concept="2" />
+      <node id="8710742295992475556" at="32,94,33,0" concept="8" />
       <node id="8710742295992475569" at="35,27,36,293" concept="2" />
-      <node id="8710742295992475574" at="38,9,39,93" concept="2" />
-      <node id="8710742295992475576" at="39,93,40,0" concept="8" />
+      <node id="8710742295992475574" at="38,9,39,91" concept="2" />
+      <node id="8710742295992475576" at="39,91,40,0" concept="8" />
       <node id="8710742295992475580" at="42,27,43,393" concept="2" />
       <node id="8710742295992475588" at="43,393,44,396" concept="2" />
       <node id="8710742295992475596" at="44,396,45,401" concept="2" />
@@ -14900,8 +14900,8 @@
       <node id="8710742295992773283" at="32,83,33,0" concept="8" />
       <node id="8710742295992773296" at="35,27,36,293" concept="2" />
       <node id="8710742295993053954" at="38,9,39,106" concept="2" />
-      <node id="8710742295992773301" at="39,106,40,93" concept="2" />
-      <node id="8710742295992773303" at="40,93,41,0" concept="8" />
+      <node id="8710742295992773301" at="39,106,40,91" concept="2" />
+      <node id="8710742295992773303" at="40,91,41,0" concept="8" />
       <node id="8710742295992773307" at="43,27,44,393" concept="2" />
       <node id="8710742295992773315" at="44,393,45,396" concept="2" />
       <node id="8710742295992773323" at="45,396,46,401" concept="2" />
@@ -14936,8 +14936,8 @@
       <node id="8710742295993334842" at="18,102,19,146" concept="2" />
       <node id="8710742295993334842" at="25,51,26,53" concept="2" />
       <node id="8710742295993334875" at="28,27,29,296" concept="2" />
-      <node id="8710742295993334880" at="31,9,32,96" concept="2" />
-      <node id="8710742295993336851" at="32,96,33,80" concept="2" />
+      <node id="8710742295993334880" at="31,9,32,94" concept="2" />
+      <node id="8710742295993336851" at="32,94,33,80" concept="2" />
       <node id="8710742295993337587" at="33,80,34,83" concept="2" />
       <node id="8710742295993334882" at="34,83,35,0" concept="8" />
       <node id="8710742295993334906" at="37,27,38,393" concept="2" />

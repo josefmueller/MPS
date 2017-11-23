@@ -15,10 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
-public class ShowRegularEditorsForSelection_Action extends BaseAction {
+public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowRegularEditorsForSelection_Action() {
+  public ShowRegularEditorsForSubtree_Action() {
     super("Show Regular Editors", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
