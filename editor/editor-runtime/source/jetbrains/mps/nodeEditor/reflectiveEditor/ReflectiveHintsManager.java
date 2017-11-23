@@ -52,9 +52,9 @@ public class ReflectiveHintsManager {
     return ReflectiveCellContextUtil.shouldShowReflectiveEditor(cellContext);
   }
 
-  public static boolean isApplicable(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
-                                     EditorComponent editorComponent, AnActionEvent event) {
-    return new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).isApplicable(event);
+  public static void update(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
+                            EditorComponent editorComponent, AnActionEvent event) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).update(event);
   }
 
   public static void execute(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,

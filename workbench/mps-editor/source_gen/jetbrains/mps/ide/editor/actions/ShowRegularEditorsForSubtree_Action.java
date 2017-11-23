@@ -4,6 +4,7 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
@@ -11,7 +12,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
@@ -19,7 +19,7 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ShowRegularEditorsForSubtree_Action() {
-    super("Show Regular Editors", "", ICON);
+    super("Show Regular Editors for Subtree", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -28,12 +28,8 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveHintsManager.isApplicable(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    ReflectiveHintsManager.update(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

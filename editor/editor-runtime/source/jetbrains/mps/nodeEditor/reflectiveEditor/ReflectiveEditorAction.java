@@ -68,17 +68,19 @@ class ReflectiveEditorAction {
     }
   }
 
-  boolean isApplicable(AnActionEvent event) {
+  void update(AnActionEvent event) {
     boolean canMake = myActions.stream().anyMatch(ReflectiveHintsAction::isApplicable);
 
     if (canMake) {
       String plurality = (myIsForSubtree ? "s for Subtree" : "") + (myActions.size() > 1 ? "s" : "");
       String caption = String.format("Show %s Editor%s", myIsReflective ? "Reflective" : "Regular", plurality);
       event.getPresentation().setText(caption);
-      return true;
+      event.getPresentation().setVisible(true);
+      event.getPresentation().setEnabled(true);
+    } else {
+      event.getPresentation().setVisible(false);
+      event.getPresentation().setEnabled(false);
     }
-
-    return false;
   }
 
   private void recordHintsState() {
