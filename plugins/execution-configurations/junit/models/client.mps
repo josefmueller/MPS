@@ -10120,9 +10120,9 @@
                         </node>
                         <node concept="2OqwBi" id="I2XxkKHsge" role="33vP2m">
                           <node concept="37shsh" id="I2XxkKHsgf" role="2Oq$k0">
-                            <node concept="20RdaH" id="I2XxkKHsgg" role="37shsm">
-                              <property role="20Rdg5" value="8b958198-128f-4136-80e5-ca9777caa869" />
-                              <property role="20Rdg7" value="jetbrains.mps.baseLanguage.unitTest.execution.startup" />
+                            <node concept="20RdaH" id="5_nOVozouw8" role="37shsm">
+                              <property role="20Rdg5" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
+                              <property role="20Rdg7" value="jetbrains.mps.baseLanguage.unitTest.execution" />
                             </node>
                           </node>
                           <node concept="liA8E" id="I2XxkKHsgh" role="2OqNvi">

@@ -61,7 +61,7 @@ public final class TestParameters {
   public static TestParameters calcDefault(final SRepository repo) {
     List<String> classPath = new ModelAccessHelper(repo).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        SModule m = PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo);
+        SModule m = PersistenceFacade.getInstance().createModuleReference("f618e99a-2641-465c-bb54-31fe76f9e285(jetbrains.mps.baseLanguage.unitTest.execution)").resolve(repo);
         return Java_Command.getClasspath(Sequence.<SModule>singleton(m));
       }
     });
