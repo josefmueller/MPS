@@ -816,9 +816,6 @@
     <node concept="2Tc6Op" id="1VgYAgmzpEb" role="2Tc6Ou">
       <property role="2Tc6Oq" value="jetbrains.mps.testing" />
     </node>
-    <node concept="2Tc6Op" id="1KavJoHpdL1" role="2Tc6Ou">
-      <property role="2Tc6Oq" value="jetbrains.mps.build" />
-    </node>
   </node>
   <node concept="3wDVqS" id="5gyVhZ17Jj8">
     <property role="TrG5h" value="Java" />
