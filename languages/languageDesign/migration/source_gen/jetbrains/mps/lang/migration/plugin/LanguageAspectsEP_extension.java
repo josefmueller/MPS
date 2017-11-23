@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.Language;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -57,6 +59,9 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
           }
         }).ofType(SModel.class).toListSequence();
       }
+      public SModuleReference getDefaultDevkit() {
+        return PersistenceFacade.getInstance().createModuleReference("2787ae0c-1f54-4fbf-b0b7-caf2b5beecbc(jetbrains.mps.devkit.aspect.migration)");
+      }
       @NotNull
       public Collection<SLanguage> getMainLanguages() {
         return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x9074634404fd4286L, 0x97d5b46ae6a81709L, "jetbrains.mps.lang.migration"));
@@ -67,7 +72,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public IconResource getIconResource() {
-        return IconContainer.RESOURCE_a0a6a0a0a1;
+        return IconContainer.RESOURCE_a0a7a0a0a1;
       }
       @Nullable
       public String getHelpUrl() {
@@ -76,6 +81,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
 
       private OrderDescriptor myOrderConstraints = new MPSAspects_Order();
+
 
 
 
