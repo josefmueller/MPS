@@ -33,10 +33,15 @@ public final class FileListenerAdapter implements FileSystemListener {
     myFileListener = fileListener;
   }
 
-  @Nullable
   @Override
   public IFile getFileToListen() {
     return myFile;
+  }
+
+  @NotNull
+  @Override
+  public FileListeningPreferences listeningPreferences() {
+    return myFileListener.listeningPreferences();
   }
 
   @Nullable

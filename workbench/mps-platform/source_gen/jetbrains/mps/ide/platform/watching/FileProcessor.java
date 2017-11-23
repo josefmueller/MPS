@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Map;
 import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -15,6 +14,7 @@ import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import java.util.Set;
 import java.util.LinkedHashSet;
@@ -23,8 +23,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.function.Function;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.vfs.FileSystemEvent;
 import java.util.HashSet;
@@ -33,26 +38,28 @@ import java.util.Arrays;
 
 public class FileProcessor extends ReloadParticipant {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
-  private FileSystemListenersContainer listenersContainer;
-  private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
-  private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
+  private final FileSystemListenersContainer myListenersContainer;
+  private final Map<FileSystemListener, FileProcessor.ListenerData> myListener2Data = new HashMap<FileSystemListener, FileProcessor.ListenerData>();
+  private final Queue<FileSystemListener> myPostNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
   private static final IdeaFileSystem FS = ((IdeaFileSystem) FileSystemExtPoint.getFS());
 
   public FileProcessor() {
-    listenersContainer = FS.getListenersContainer();
+    myListenersContainer = FS.getListenersContainer();
   }
 
   @Override
   public void update(ProgressMonitor monitor) {
-    if (MapSequence.fromMap(dataMap).isEmpty()) {
+    if (myListener2Data.isEmpty()) {
       return;
     }
-    monitor.start("", MapSequence.fromMap(dataMap).count() + 1);
+    monitor.start("", myListener2Data.size() + 1);
     long updateStartTime = System.currentTimeMillis();
     try {
-      for (FileSystemListener listener : Sequence.fromIterable(sortedListeners())) {
-        FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
-        if (!(listenersContainer.contains(listener))) {
+      // sorted according to #getListenerDependencies 
+      Iterable<FileSystemListener> sortedListeners = sortedListeners();
+      for (FileSystemListener listener : Sequence.fromIterable(sortedListeners)) {
+        FileProcessor.ListenerData data = MapSequence.fromMap(myListener2Data).get(listener);
+        if (!(myListenersContainer.contains(listener))) {
           monitor.advance(1);
           continue;
         }
@@ -64,8 +71,8 @@ public class FileProcessor extends ReloadParticipant {
       }
       long postNotifyBeginTime = System.currentTimeMillis();
       FileSystemListener listener;
-      while ((listener = QueueSequence.fromQueue(postNotify).removeFirstElement()) != null) {
-        FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
+      while ((listener = QueueSequence.fromQueue(myPostNotify).removeFirstElement()) != null) {
+        FileProcessor.ListenerData data = myListener2Data.get(listener);
         if (data.isNotified) {
           continue;
         }
@@ -80,22 +87,18 @@ public class FileProcessor extends ReloadParticipant {
   }
 
   private void notify(FileSystemListener listener, FileProcessor.ListenerData source) {
-    FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(listener);
-    if (data == null) {
-      data = new FileProcessor.ListenerData();
-      MapSequence.fromMap(dataMap).put(listener, data);
-      QueueSequence.fromQueue(postNotify).addLastElement(listener);
-    } else if (data.isNotified) {
-      return;
+    FileProcessor.ListenerData data = createNewDataIfAbsent(listener);
+    if (!(data.isNotified)) {
+      data.added.addAll(source.added);
+      data.changed.addAll(source.changed);
+      data.removed.addAll(source.removed);
+      QueueSequence.fromQueue(myPostNotify).addLastElement(listener);
     }
-    data.added.addAll(source.added);
-    data.changed.addAll(source.changed);
-    data.removed.addAll(source.removed);
   }
 
   private Iterable<FileSystemListener> sortedListeners() {
-    Set<FileSystemListener> result = new LinkedHashSet<FileSystemListener>(MapSequence.fromMap(dataMap).count());
-    for (FileSystemListener l : SetSequence.fromSet(MapSequence.fromMap(dataMap).keySet())) {
+    Set<FileSystemListener> result = new LinkedHashSet<FileSystemListener>(myListener2Data.size());
+    for (FileSystemListener l : SetSequence.fromSet(myListener2Data.keySet())) {
       visit(l, result);
     }
     return result;
@@ -113,7 +116,7 @@ public class FileProcessor extends ReloadParticipant {
 
     boolean readd = false;
     for (FileSystemListener dep : dependencies) {
-      if (MapSequence.fromMap(dataMap).containsKey(dep) && !(result.contains(dep))) {
+      if (myListener2Data.containsKey(dep) && !(result.contains(dep))) {
         visit(dep, result);
         readd = true;
       }
@@ -128,51 +131,105 @@ public class FileProcessor extends ReloadParticipant {
     return !(MPSFileTypesManager.isFileIgnored(file.getPath()));
   }
 
-  protected void processDelete(VirtualFile file) {
-    final IFile ifile = new IdeaFile(FS, file);
-    Sequence.fromIterable(get(ifile.getPath())).visitAll(new IVisitor<FileProcessor.ListenerData>() {
+  protected void processDelete(VirtualFile vFile) {
+    final IFile file = new IdeaFile(FS, vFile);
+    ListSequence.fromList(getData(file.getPath(), FileProcessor.EventKind.REMOVED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
-        it.removed.add(ifile);
+        it.removed.add(file);
       }
     });
   }
 
-  protected void processCreate(VirtualFile file) {
-    String path = file.getPath();
-    final IFile ifile = FS.getFile(path);
-    Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
+  protected void processCreate(VirtualFile vFile) {
+    String path = vFile.getPath();
+    final IFile file = FS.getFile(path);
+    ListSequence.fromList(getData(path, FileProcessor.EventKind.CREATED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
-        it.added.add(ifile);
+        it.added.add(file);
       }
     });
   }
 
-  protected void processContentChanged(VirtualFile file) {
-    String path = file.getPath();
-    final IFile ifile = FS.getFile(path);
-    Sequence.fromIterable(get(path)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
+  protected void processContentChanged(VirtualFile vFile) {
+    String path = vFile.getPath();
+    final IFile file = FS.getFile(path);
+    ListSequence.fromList(getData(path, FileProcessor.EventKind.CONTENT_CHANGED)).visitAll(new IVisitor<FileProcessor.ListenerData>() {
       public void visit(FileProcessor.ListenerData it) {
-        it.changed.add(ifile);
+        it.changed.add(file);
       }
     });
   }
 
   @Override
   public boolean isEmpty() {
-    return MapSequence.fromMap(dataMap).isEmpty();
+    return myListener2Data.isEmpty();
   }
 
-  public Iterable<FileProcessor.ListenerData> get(String path) {
-    return Sequence.fromIterable(listenersContainer.listeners(path)).select(new ISelector<FileSystemListener, FileProcessor.ListenerData>() {
-      public FileProcessor.ListenerData select(FileSystemListener it) {
-        FileProcessor.ListenerData data = MapSequence.fromMap(dataMap).get(it);
-        if (data == null) {
-          data = new FileProcessor.ListenerData();
-          MapSequence.fromMap(dataMap).put(it, data);
-        }
-        return data;
+  public List<FileProcessor.ListenerData> getData(final String eventPath, final FileProcessor.EventKind kind) {
+    FileSystemListenersContainer.ListenersForPath listeners = myListenersContainer.getListenersForPath(eventPath);
+    Iterable<FileSystemListener> ancestors = ListSequence.fromList(listeners.ancestorListeners).where(new IWhereFilter<FileSystemListener>() {
+      public boolean accept(FileSystemListener l) {
+        return acceptAncestor(eventPath, l, kind);
       }
     });
+    Iterable<FileSystemListener> concretePathListeners = listeners.concretePathListeners;
+    Iterable<FileSystemListener> descendants = ListSequence.fromList(listeners.descendantsListeners).where(new IWhereFilter<FileSystemListener>() {
+      public boolean accept(FileSystemListener l) {
+        return acceptDescendant(eventPath, l, kind);
+      }
+    });
+    List<FileSystemListener> allListeners = ListSequence.fromList(new ArrayList<FileSystemListener>());
+    ListSequence.fromList(allListeners).addSequence(Sequence.fromIterable(ancestors));
+    ListSequence.fromList(allListeners).addSequence(Sequence.fromIterable(concretePathListeners));
+    ListSequence.fromList(allListeners).addSequence(Sequence.fromIterable(descendants));
+    return ListSequence.fromList(allListeners).select(new ISelector<FileSystemListener, FileProcessor.ListenerData>() {
+      public FileProcessor.ListenerData select(FileSystemListener listener) {
+        return createNewDataIfAbsent(listener);
+      }
+    }).toListSequence();
+  }
+
+  private FileProcessor.ListenerData createNewDataIfAbsent(FileSystemListener listener) {
+    return myListener2Data.computeIfAbsent(listener, new Function<FileSystemListener, FileProcessor.ListenerData>() {
+      public FileProcessor.ListenerData apply(FileSystemListener it1) {
+        return new FileProcessor.ListenerData();
+      }
+    });
+  }
+
+  private enum EventKind {
+    REMOVED(),
+    CREATED(),
+    CONTENT_CHANGED()
+  }
+
+
+  private static boolean acceptDescendant(String eventPath, FileSystemListener listenerToChildFile, FileProcessor.EventKind kind) {
+    IFile childFile = listenerToChildFile.getFileToListen();
+    // contract to comment out later 
+    assert childFile.getPath().startsWith(eventPath);
+    if (kind == FileProcessor.EventKind.CREATED && listenerToChildFile.listeningPreferences().notifyOnParentCreation) {
+      return true;
+    } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToChildFile.listeningPreferences().notifyOnParentChange) {
+      return true;
+    } else if (kind == FileProcessor.EventKind.REMOVED && listenerToChildFile.listeningPreferences().notifyOnParentRemoval) {
+      return true;
+    }
+    return false;
+  }
+
+  private static boolean acceptAncestor(String eventPath, FileSystemListener listenerToParentFile, FileProcessor.EventKind kind) {
+    IFile parentFile = listenerToParentFile.getFileToListen();
+    // contract to comment out later 
+    assert eventPath.startsWith(parentFile.getPath());
+    if (kind == FileProcessor.EventKind.CREATED && listenerToParentFile.listeningPreferences().notifyOnChildCreation) {
+      return true;
+    } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToParentFile.listeningPreferences().notifyOnChildChange) {
+      return true;
+    } else if (kind == FileProcessor.EventKind.REMOVED && listenerToParentFile.listeningPreferences().notifyOnChildRemoval) {
+      return true;
+    }
+    return false;
   }
 
   private void printStat(String name, long beginTime) {
@@ -185,9 +242,9 @@ public class FileProcessor extends ReloadParticipant {
   }
 
   private class ListenerData implements FileSystemEvent {
-    private Set<IFile> added = new HashSet<IFile>();
-    private Set<IFile> removed = new HashSet<IFile>();
-    private Set<IFile> changed = new HashSet<IFile>();
+    private final Set<IFile> added = new HashSet<IFile>();
+    private final Set<IFile> removed = new HashSet<IFile>();
+    private final Set<IFile> changed = new HashSet<IFile>();
     private boolean isNotified;
 
     private ListenerData() {
@@ -217,10 +274,11 @@ public class FileProcessor extends ReloadParticipant {
     public String toString() {
       return String.format("[added: %s; removed: %s; changed: %s.", setToString(added), setToString(removed), setToString(changed));
     }
-
-    @NotNull
-    private String setToString(Set<?> set) {
-      return Arrays.toString(set.toArray());
-    }
   }
+
+  @NotNull
+  private static String setToString(Set<?> set) {
+    return Arrays.toString(set.toArray());
+  }
+
 }

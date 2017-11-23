@@ -7,34 +7,49 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.vfs.FileSystemListener;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
-import org.jetbrains.annotations.NotNull;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.FileListener;
+import org.jetbrains.annotations.Nullable;
+import java.util.Collections;
 
-public class FileSystemListenersContainer {
+/**
+ * Stores a tree of listeners stored per file.
+ * Supposed to be thread-safe
+ */
+public final class FileSystemListenersContainer {
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
-  private final FileSystemListenersContainer.Node root = new FileSystemListenersContainer.Node(null, null);
-  private final ConcurrentMap<FileSystemListener, String> myListeners = new ConcurrentHashMap<FileSystemListener, String>();
-  private final Pattern myPathSplitPattern;
+  private final FileSystemListenersContainer.Node myRootNode = new FileSystemListenersContainer.Node(null, null);
+  private final ConcurrentMap<FileSystemListener, String> myListener2Path = new ConcurrentHashMap<FileSystemListener, String>();
+
+  /*package*/ static class ListenersForPath {
+    /*package*/ final List<FileSystemListener> ancestorListeners = ListSequence.fromList(new ArrayList<FileSystemListener>());
+    /*package*/ final List<FileSystemListener> concretePathListeners = ListSequence.fromList(new ArrayList<FileSystemListener>());
+    /*package*/ final List<FileSystemListener> descendantsListeners = ListSequence.fromList(new ArrayList<FileSystemListener>());
+  }
 
   public FileSystemListenersContainer() {
-    myPathSplitPattern = Pattern.compile("/");
   }
 
   public void addListener(@NotNull FileSystemListener listener) {
-    if (myListeners.containsKey(listener)) {
+    if (myListener2Path.containsKey(listener)) {
       return;
     }
-    if (listener.getFileToListen() == null) {
+    IFile fileToListen = listener.getFileToListen();
+    if (fileToListen == null) {
       return;
     }
-    String path = listener.getFileToListen().getPath();
-    if (myListeners.putIfAbsent(listener, path) != null) {
+    String path = fileToListen.getPath();
+    if (myListener2Path.putIfAbsent(listener, path) != null) {
       return;
     }
 
-    FileSystemListenersContainer.Node curr = root;
+    FileSystemListenersContainer.Node currentNode = myRootNode;
 
     myLock.writeLock().lock();
     try {
@@ -42,115 +57,135 @@ public class FileSystemListenersContainer {
         if ((s == null || s.length() == 0)) {
           continue;
         }
-        curr = curr.child(s, true);
+        currentNode = currentNode.child(s, true);
       }
-      curr.addListener(listener);
+      currentNode.addListener(listener);
     } finally {
       myLock.writeLock().unlock();
     }
   }
 
   public void removeListener(@NotNull FileSystemListener listener) {
-    String path = myListeners.get(listener);
+    String path = myListener2Path.get(listener);
     if (path == null) {
       return;
     }
 
-    FileSystemListenersContainer.Node curr = root;
+    FileSystemListenersContainer.Node currentNode = myRootNode;
     myLock.writeLock().lock();
     try {
       for (String s : normalizeAndSplit(path)) {
         if ((s == null || s.length() == 0)) {
           continue;
         }
-        curr = curr.child(s, false);
-        if (curr == null) {
+        currentNode = currentNode.child(s, false);
+        if (currentNode == null) {
           return;
         }
       }
-      curr.removeListener(listener);
+      currentNode.removeListener(listener);
     } finally {
       myLock.writeLock().unlock();
     }
-    myListeners.remove(listener);
+    myListener2Path.remove(listener);
   }
 
-  public Iterable<FileSystemListener> listeners(@NotNull String path) {
-    FileSystemListenersContainer.Node curr = root;
-    List<FileSystemListener> result = new ArrayList<FileSystemListener>();
+  @NotNull
+  public FileSystemListenersContainer.ListenersForPath getListenersForPath(String eventPath) {
+    FileSystemListenersContainer.Node currentNode = myRootNode;
+    FileSystemListenersContainer.ListenersForPath result = new FileSystemListenersContainer.ListenersForPath();
     myLock.readLock().lock();
     try {
-      root.storeListeners(result);
-      for (String s : normalizeAndSplit(path)) {
+      for (String s : normalizeAndSplit(eventPath)) {
         if ((s == null || s.length() == 0)) {
           continue;
         }
-        curr = curr.child(s, false);
-        if (curr == null) {
+        currentNode.addListenersTo(result.ancestorListeners);
+        currentNode = currentNode.child(s, false);
+        if (currentNode == null) {
           return result;
         }
-        curr.storeListeners(result);
       }
+      currentNode.addListenersTo(result.concretePathListeners);
+      traverseChildrenOfPath(eventPath, result.descendantsListeners, currentNode);
     } finally {
       myLock.readLock().unlock();
     }
     return result;
   }
 
+  private void traverseChildrenOfPath(String eventPath, @NotNull List<FileSystemListener> result, @NotNull FileSystemListenersContainer.Node eventPathNode) {
+    List<FileSystemListenersContainer.Node> children = eventPathNode.getChildren();
+    for (FileSystemListenersContainer.Node child : ListSequence.fromList(children)) {
+      child.addListenersTo(result);
+      traverseChildrenOfPath(eventPath, result, child);
+    }
+  }
+
   private String[] normalizeAndSplit(@NotNull String path) {
-    String normalized = path.replace('\\', '/');
-    return myPathSplitPattern.split(normalized, 0);
+    String normalized = FileUtil.normalize(path);
+    return normalized.split(Path.UNIX_SEPARATOR);
   }
 
-  public boolean contains(@NotNull FileSystemListener listener) {
-    return myListeners.containsKey(listener);
+  public boolean contains(@NotNull FileListener listener) {
+    return myListener2Path.containsKey(listener);
   }
 
-  private static class Node {
-    private List<FileSystemListener> listeners;
-    private final String pathPart;
-    private final List<FileSystemListenersContainer.Node> children = new ArrayList<FileSystemListenersContainer.Node>(4);
-    private final FileSystemListenersContainer.Node parent;
+  private static final class Node {
+    @Nullable
+    private List<FileSystemListener> myListeners;
+    private final String myPathPart;
+    private final List<FileSystemListenersContainer.Node> myChildren = new ArrayList<FileSystemListenersContainer.Node>(4);
+    @Nullable
+    private final FileSystemListenersContainer.Node myParent;
 
-    /*package*/ Node(String pathPart, FileSystemListenersContainer.Node parent) {
-      this.parent = parent;
-      this.pathPart = pathPart;
+    /*package*/ Node(String pathPart, @Nullable FileSystemListenersContainer.Node parent) {
+      myParent = parent;
+      myPathPart = pathPart;
+    }
+
+    @NotNull
+    /*package*/ List<FileSystemListenersContainer.Node> getChildren() {
+      if (myChildren == null) {
+        return Collections.emptyList();
+      }
+      return Collections.unmodifiableList(myChildren);
     }
 
     /*package*/ FileSystemListenersContainer.Node child(String part, boolean create) {
       // we keep children list sorted and use binary search 
       int index = childIndex(part);
       if (index >= 0) {
-        return children.get(index);
+        return myChildren.get(index);
       }
       if (create) {
         FileSystemListenersContainer.Node child = new FileSystemListenersContainer.Node(part, this);
-        children.add(-index - 1, child);
+        myChildren.add(-index - 1, child);
         return child;
       }
       return null;
     }
 
     private void deleteIfEmpty() {
-      if (parent == null || !(children.isEmpty())) {
+      if (myParent == null || !(myChildren.isEmpty())) {
         return;
       }
-      if (listeners != null && !(listeners.isEmpty())) {
+      if (myListeners != null && !(myListeners.isEmpty())) {
         return;
       }
 
-      listeners = null;
-      parent.children.remove(this);
-      parent.deleteIfEmpty();
+      myListeners = null;
+      myParent.myChildren.remove(this);
+      myParent.deleteIfEmpty();
     }
 
     private int childIndex(String pathPart) {
       int low = 0;
-      int high = children.size() - 1;
+      int high = myChildren.size() - 1;
       while (low <= high) {
         int mid = (low + high) >>> 1;
-        FileSystemListenersContainer.Node c = children.get(mid);
-        int cmp = pathPart.compareTo(c.pathPart);
+        FileSystemListenersContainer.Node c = myChildren.get(mid);
+        int cmp = pathPart.compareTo(c.myPathPart);
         if (cmp < 0) {
           high = mid - 1;
         } else if (cmp > 0) {
@@ -162,21 +197,21 @@ public class FileSystemListenersContainer {
       return -(low + 1);
     }
 
-    /*package*/ void storeListeners(List<FileSystemListener> result) {
-      if (listeners != null) {
-        result.addAll(listeners);
+    /*package*/ void addListenersTo(List<FileSystemListener> res) {
+      if (myListeners != null) {
+        res.addAll(myListeners);
       }
     }
 
-    /*package*/ void addListener(FileSystemListener l) {
-      if (listeners == null) {
-        listeners = new ArrayList<FileSystemListener>(4);
+    /*package*/ void addListener(@NotNull FileSystemListener l) {
+      if (myListeners == null) {
+        myListeners = new ArrayList<FileSystemListener>(4);
       }
-      listeners.add(l);
+      myListeners.add(l);
     }
 
-    /*package*/ void removeListener(FileSystemListener l) {
-      if (listeners != null && listeners.remove(l)) {
+    /*package*/ void removeListener(@NotNull FileSystemListener l) {
+      if (myListeners != null && myListeners.remove(l)) {
         deleteIfEmpty();
       }
     }

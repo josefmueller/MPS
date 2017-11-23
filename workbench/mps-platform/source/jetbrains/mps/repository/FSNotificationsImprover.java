@@ -18,12 +18,8 @@ package jetbrains.mps.repository;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemExtPoint;
@@ -32,10 +28,6 @@ import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * here idea is the same as in {@code ProjectRootListenerComponent}

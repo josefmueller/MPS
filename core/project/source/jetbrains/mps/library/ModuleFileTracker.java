@@ -21,6 +21,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -56,6 +57,12 @@ public class ModuleFileTracker implements FileListener {
     myListenToTrackedFiles = listenToTrackedFiles;
   }
 
+  @NotNull
+  @Override
+  public FileListeningPreferences listeningPreferences() {
+    return FileListeningPreferences.construct().notifyOnDescendantCreation().notifyOnParentRemoval().build();
+  }
+
   /**
    * Associates given module with a file. Multiple modules per single file are allowed.
    * Multiple registration of the same File-Module pair is tolerated (XXX this is to avoid massive SLibrary refactoring, which may read same module and file).
@@ -77,10 +84,20 @@ public class ModuleFileTracker implements FileListener {
    * @param file origin of a module or few modules
    */
   public void forget(@NotNull IFile file) {
-    myFile2Module.remove(file);
-    if (myListenToTrackedFiles) {
-      file.removeListener(this);
-    } }
+    final Set<IFile> files2Remove = new THashSet<>();
+
+    for (IFile moduleFile : myFile2Module.keySet()) {
+      if (moduleFile.toPath().startsWith(file.toPath())) {
+        files2Remove.add(moduleFile);
+      }
+    }
+    for (IFile moduleFile : files2Remove) {
+      myFile2Module.remove(moduleFile);
+      if (myListenToTrackedFiles) {
+        moduleFile.removeListener(this);
+      }
+    }
+  }
 
   /**
    * Discard specific association between file and module. Does nothing if there's no such association.
@@ -107,13 +124,14 @@ public class ModuleFileTracker implements FileListener {
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    final Set<SModule> modules2remove = new THashSet<>();
-    final Set<AbstractModule> modules2reload = new THashSet<>();
+    final Set<SModule> modules2Remove = new THashSet<>();
+    final Set<AbstractModule> modules2Reload = new THashSet<>();
 
     for (IFile file : event.getRemoved()) {
-      Set<SModule> modules = myFile2Module.get(file);
-      if (modules != null) {
-        modules2remove.addAll(modules);
+      for (IFile moduleFile : myFile2Module.keySet()) {
+        if (moduleFile.toPath().startsWith(file.toPath())) {
+          modules2Remove.addAll(myFile2Module.get(moduleFile));
+        }
       }
     }
     for (IFile file : event.getChanged()) {
@@ -123,24 +141,21 @@ public class ModuleFileTracker implements FileListener {
       }
       for (SModule m : modules) {
         // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
-        if (m instanceof AbstractModule && !modules2remove.contains(m)) {
-          modules2reload.add(((AbstractModule) m));
+        if (m instanceof AbstractModule && !modules2Remove.contains(m)) {
+          modules2Reload.add(((AbstractModule) m));
         }
       }
     }
 
+    // MPS-26338? due to the incorrect usage of the project in the idea plugin
     //[MM] see MPS-26705
-    modules2remove.removeIf((m) -> {
-      return m.getRepository() == null;
-    });
-    modules2reload.removeIf((m) -> {
-      return m.getRepository() == null;
-    });
+    modules2Remove.removeIf((m) -> m.getRepository() == null);
+    modules2Reload.removeIf((m) -> m.getRepository() == null);
     // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
     //     do when a module/file is removed
     // XXX unregisterModule(Language) unregisters its generators as well (Language.dispose() -> MRF.unregister(all with owner == language). Is it nice?
-    modules2remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
-    modules2reload.forEach(SModuleOperations::reloadFromDisk);
+    modules2Remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
+    modules2Reload.forEach(SModuleOperations::reloadFromDisk);
 
     event.getRemoved().forEach(this::forget);
   }

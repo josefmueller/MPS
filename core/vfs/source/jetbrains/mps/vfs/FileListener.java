@@ -28,4 +28,10 @@ public interface FileListener {
    * listener gets here all the events
    */
   void update(ProgressMonitor monitor, @NotNull FileSystemEvent event);
+
+  @NotNull
+  default FileListeningPreferences listeningPreferences() {
+    // the default comes totally from the legacy -- it must be changed later [AP]
+    return FileListeningPreferences.construct().notifyOnDescendantCreation().notifyOnDescendantChange().notifyOnDescendantRemoval().build();
+  }
 }

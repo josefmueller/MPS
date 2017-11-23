@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.library.ModuleFileTracker;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystems;
 import jetbrains.mps.vfs.IFile;
@@ -54,9 +55,10 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
     public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
       Set<SModule> modules2Remove = new LinkedHashSet<>();
       for (IFile file : event.getRemoved()) {
-        Set<SModule> modules = myFile2Module.get(file);
-        if (modules != null) {
-          modules2Remove.addAll(modules);
+        for (IFile moduleFile : myFile2Module.keySet()) {
+          if (moduleFile.toPath().startsWith(file.toPath())) {
+            modules2Remove.addAll(myFile2Module.get(moduleFile));
+          }
         }
       }
       modules2Remove.forEach(module -> {
@@ -82,6 +84,12 @@ public final class ProjectModuleFileChangeListener implements ProjectModuleLoadi
       if (!event.getCreated().isEmpty()) {
         myMpsProject.update();
       }
+    }
+
+    @NotNull
+    @Override
+    public FileListeningPreferences listeningPreferences() {
+      return FileListeningPreferences.construct().notifyOnAncestorCreation().build();
     }
   };
 

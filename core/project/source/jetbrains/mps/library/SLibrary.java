@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.FileListener;
+import jetbrains.mps.vfs.FileListeningPreferences;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
@@ -61,6 +62,12 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
     myHidden = hidden;
     // SLibrary listens to file changes as it needs to react to create events anyway. ModuleFileTracker is a storage + change/delete handler.
     myFileTracker = new ModuleFileTracker(false);
+  }
+
+  @NotNull
+  @Override
+  public FileListeningPreferences listeningPreferences() {
+    return myFileTracker.listeningPreferences();
   }
 
   @NotNull

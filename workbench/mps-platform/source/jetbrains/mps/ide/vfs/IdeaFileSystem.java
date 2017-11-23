@@ -26,11 +26,9 @@ import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.CachingContext;
 import jetbrains.mps.vfs.CachingFile;
-import jetbrains.mps.vfs.CachingFileSystem;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.DefaultCachingContext;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -51,7 +49,7 @@ import java.util.stream.Collectors;
 public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystem.class);
 
-  private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
+  private final FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
 
   public IdeaFileSystem() {
   }

@@ -22,6 +22,9 @@ import java.util.Set;
 /**
  * FS event
  *
+ * FIXME we merge all the fs events into one pile illegally
+ * FIXME while sometimes we prefer to have a list of consequtive events
+ *
  * Created by apyshkin on 6/23/16.
  */
 public interface FileSystemEvent {
