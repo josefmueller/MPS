@@ -276,7 +276,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    * If there's module already (expected scenario), just updates its relation to another {@linkplain MPSModuleOwner module owner}
    *   (same module could get published with few owners)
    * @return instance of a module, either new one or existing from the facade's repository.
-   * @throws IllegalAccessException if handle describes unknown module kind.
+   * @throws IllegalArgumentException if handle describes unknown module kind.
    */
   @NotNull
   public SModule instantiateModule(@NotNull ModuleHandle handle, @NotNull MPSModuleOwner owner) {
