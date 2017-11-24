@@ -117,9 +117,6 @@
                 <mapping-set-element>
                   <mapping-node modelUID="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" nodeID="681855071694907969" />
                 </mapping-set-element>
-                <mapping-set-element>
-                  <mapping-node modelUID="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" nodeID="4930090896471982417" />
-                </mapping-set-element>
               </mapping-set>
             </external-mapping>
           </lesser-priority-mapping>
