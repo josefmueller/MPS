@@ -594,8 +594,8 @@
     <property role="3GE5qa" value="query.parameter.scope.old" />
     <ref role="1XX52x" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
     <node concept="3F1sOY" id="31Tct3Txpmx" role="2wV5jI">
-      <ref role="1ERwB7" node="1N$kF6q0sBF" resolve="CustomScope_Actions" />
       <ref role="1NtTu8" to="3xdn:31Tct3Txpke" resolve="scope_old" />
+      <ref role="1ERwB7" node="1N$kF6q0sBF" resolve="CustomScope_old_Actions" />
     </node>
   </node>
   <node concept="24kQdi" id="31Tct3Tk$xC">
@@ -786,7 +786,7 @@
   </node>
   <node concept="1h_SRR" id="1N$kF6q0sBF">
     <property role="3GE5qa" value="query.parameter.scope.old" />
-    <property role="TrG5h" value="CustomScope_Actions" />
+    <property role="TrG5h" value="CustomScope_old_Actions" />
     <ref role="1h_SK9" to="3xdn:31Tct3Txnn9" resolve="CustomScope_old" />
     <node concept="1hA7zw" id="1N$kF6q0sIh" role="1h_SK8">
       <property role="1hAc7j" value="backspace_action_id" />

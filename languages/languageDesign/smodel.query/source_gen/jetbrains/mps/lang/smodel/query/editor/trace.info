@@ -198,18 +198,18 @@
     </file>
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/2081879850498509291">
-    <file name="CustomScope_Actions.java">
-      <node id="2081879850498509291" at="14,95,15,112" concept="2" />
+    <file name="CustomScope_old_Actions.java">
+      <node id="2081879850498509291" at="14,95,15,120" concept="2" />
       <node id="2081879850498509291" at="18,0,19,0" concept="3" trace="myNode" />
-      <node id="2081879850498509291" at="19,54,20,25" concept="2" />
+      <node id="2081879850498509291" at="19,58,20,25" concept="2" />
       <node id="2081879850498509291" at="22,54,23,56" concept="2" />
       <node id="2081879850498509724" at="25,75,26,206" concept="2" />
       <node id="2081879850498509291" at="14,0,17,0" concept="8" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="2081879850498509291" at="19,0,22,0" concept="1" trace="CustomScope_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2081879850498509291" at="19,0,22,0" concept="1" trace="CustomScope_old_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2081879850498509291" at="22,0,25,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2081879850498509291" at="25,0,28,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="2081879850498509291" at="14,95,15,112" />
-      <scope id="2081879850498509291" at="19,54,20,25" />
+      <scope id="2081879850498509291" at="14,95,15,120" />
+      <scope id="2081879850498509291" at="19,58,20,25" />
       <scope id="2081879850498509291" at="22,54,23,56" />
       <scope id="2081879850498509715" at="25,75,26,206" />
       <scope id="2081879850498509291" at="14,0,17,0">
@@ -227,8 +227,8 @@
         <var name="editorContext" id="2081879850498509291" />
         <var name="node" id="2081879850498509291" />
       </scope>
-      <unit id="2081879850498509291" at="17,0,29,0" name="jetbrains.mps.lang.smodel.query.editor.CustomScope_Actions$CustomScope_Actions_BACKSPACE" />
-      <unit id="2081879850498509291" at="13,0,30,0" name="jetbrains.mps.lang.smodel.query.editor.CustomScope_Actions" />
+      <unit id="2081879850498509291" at="17,0,29,0" name="jetbrains.mps.lang.smodel.query.editor.CustomScope_old_Actions$CustomScope_old_Actions_BACKSPACE" />
+      <unit id="2081879850498509291" at="13,0,30,0" name="jetbrains.mps.lang.smodel.query.editor.CustomScope_old_Actions" />
     </file>
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)/2362304834939062201">
@@ -1401,7 +1401,7 @@
       <node id="3492877759611770151" at="71,41,72,24" concept="7" />
       <node id="3492877759611770151" at="78,118,79,226" concept="2" />
       <node id="3492877759611770151" at="81,41,82,40" concept="2" />
-      <node id="3492877759611770151" at="83,7,84,84" concept="2" />
+      <node id="3492877759611770151" at="83,7,84,88" concept="2" />
       <node id="3492877759611770151" at="87,44,88,41" concept="2" />
       <node id="3492877759611770151" at="88,41,89,223" concept="2" />
       <node id="3492877759611770151" at="90,11,91,56" concept="6" />
@@ -1465,7 +1465,7 @@
       <scope id="3492877759611770151" at="67,0,74,0">
         <var name="child" id="3492877759611770151" />
       </scope>
-      <scope id="3492877759611770151" at="77,70,84,84" />
+      <scope id="3492877759611770151" at="77,70,84,88" />
       <scope id="3492877759611770151" at="40,0,48,0" />
       <scope id="3492877759611770151" at="77,0,86,0">
         <var name="child" id="3492877759611770151" />

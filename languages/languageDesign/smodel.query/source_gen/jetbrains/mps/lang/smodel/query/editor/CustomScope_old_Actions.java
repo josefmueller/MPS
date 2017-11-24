@@ -10,20 +10,20 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class CustomScope_Actions {
+public class CustomScope_old_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.BACKSPACE, new CustomScope_Actions.CustomScope_Actions_BACKSPACE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new CustomScope_old_Actions.CustomScope_old_Actions_BACKSPACE(node));
   }
-  public static class CustomScope_Actions_BACKSPACE extends AbstractCellAction {
+  public static class CustomScope_old_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-    public CustomScope_Actions_BACKSPACE(SNode node) {
+    public CustomScope_old_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a2L, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"));
+      SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter_old"));
     }
   }
 }

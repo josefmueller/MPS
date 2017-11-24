@@ -281,7 +281,7 @@
                   <ref role="3cqZAo" node="1fzYukMfy3_" resolve="result" />
                 </node>
                 <node concept="Xl_RD" id="1fzYukMfNsx" role="37vLTx">
-                  <property role="Xl_RC" value="scope  (default = project)   specifies the boundaries of the lookup operation\n" />
+                  <property role="Xl_RC" value="scope  (default = editable)  specifies the boundaries of the lookup operation\n" />
                 </node>
               </node>
             </node>
@@ -289,7 +289,7 @@
           <node concept="2OqwBi" id="1fzYukMfNsz" role="3clFbw">
             <node concept="3JPx81" id="1fzYukMfNs_" role="2OqNvi">
               <node concept="35c_gC" id="5vtvfuzLSU2" role="25WWJ7">
-                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
+                <ref role="35c_gD" to="3xdn:238_VGTIKuz" resolve="QueryParameterScope" />
               </node>
             </node>
             <node concept="2OqwBi" id="1fzYukMhea3" role="2Oq$k0">
@@ -323,47 +323,6 @@
               <node concept="1fM9EW" id="1u_ffTozKcP" role="2Oq$k0" />
               <node concept="2qgKlT" id="38NtPr_SSBr" role="2OqNvi">
                 <ref role="37wK5l" node="3J6h25QXCDW" resolve="getSupportedParameters" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="1fzYukMfwEy" role="3cqZAp">
-          <node concept="3clFbS" id="1fzYukMfwEz" role="3clFbx">
-            <node concept="3clFbF" id="1fzYukMfMQL" role="3cqZAp">
-              <node concept="d57v9" id="1fzYukMfMQM" role="3clFbG">
-                <node concept="37vLTw" id="6ZYkX9dOCpg" role="37vLTJ">
-                  <ref role="3cqZAo" node="1fzYukMfy3_" resolve="result" />
-                </node>
-                <node concept="Xl_RD" id="1fzYukMfMQN" role="37vLTx">
-                  <property role="Xl_RC" value="r/o+   (default = false)     also search in read-only models\n" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="1fzYukMfwSx" role="3clFbw">
-            <node concept="3JPx81" id="1fzYukMfxGN" role="2OqNvi">
-              <node concept="35c_gC" id="5vtvfuzLT4M" role="25WWJ7">
-                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="1fzYukMheAP" role="2Oq$k0">
-              <node concept="1fM9EW" id="1u_ffTozKcN" role="2Oq$k0" />
-              <node concept="2qgKlT" id="1fzYukMheUP" role="2OqNvi">
-                <ref role="37wK5l" node="3J6h25QXCDW" resolve="getSupportedParameters" />
-              </node>
-            </node>
-          </node>
-          <node concept="9aQIb" id="1fzYukMfRSW" role="9aQIa">
-            <node concept="3clFbS" id="1fzYukMfRSX" role="9aQI4">
-              <node concept="3clFbF" id="1fzYukMfRXN" role="3cqZAp">
-                <node concept="d57v9" id="1fzYukMfS6t" role="3clFbG">
-                  <node concept="37vLTw" id="6ZYkX9dOhV9" role="37vLTJ">
-                    <ref role="3cqZAo" node="1fzYukMfy3_" resolve="result" />
-                  </node>
-                  <node concept="Xl_RD" id="1fzYukMfS$B" role="37vLTx">
-                    <property role="Xl_RC" value="Note: read-only models are included in the search scope\n" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>

@@ -81,7 +81,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getRole() == null) {
         editorCell.setRole("scope_old");
       }
-      CustomScope_Actions.setCellActions(editorCell, getNode(), getEditorContext());
+      CustomScope_old_Actions.setCellActions(editorCell, getNode(), getEditorContext());
     }
     @Override
     protected EditorCell createEmptyCell() {
