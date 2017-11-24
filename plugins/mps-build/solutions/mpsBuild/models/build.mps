@@ -357,6 +357,7 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
+        <property id="3497141547781541446" name="eap" index="2OjLBN" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
         <child id="6845119683729294884" name="progressColor" index="27hGoL" />
@@ -2277,7 +2278,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="2017.3" />
+            <property role="3MwjfP" value="2018.1" />
           </node>
         </node>
       </node>
@@ -19715,9 +19716,10 @@
       <ref role="1l3spb" node="3E9C6pCXzPk" resolve="mpsConsolePlugin" />
     </node>
     <node concept="1zClus" id="6Iq8148fw_a" role="3989C9">
-      <property role="2OjLBK" value="3" />
+      <property role="2OjLBK" value="1" />
       <property role="TrG5h" value="MPS" />
-      <property role="2OjLBL" value="2017" />
+      <property role="2OjLBL" value="2018" />
+      <property role="2OjLBN" value="true" />
       <node concept="NbPM2" id="2FTyjkjSqva" role="2gocG4">
         <node concept="3Mxwew" id="2FTyjkjSqv9" role="3MwsjC">
           <property role="3MwjfP" value="117" />
@@ -19763,12 +19765,12 @@
       <node concept="3$GE4K" id="57dcfYPx6EW" role="3$GE96">
         <node concept="3_J27D" id="57dcfYPx6EX" role="3$GE4B">
           <node concept="3Mxwew" id="57dcfYPx6F4" role="3MwsjC">
-            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20173/Default+Keymap+Reference" />
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" />
           </node>
         </node>
         <node concept="3_J27D" id="57dcfYPx6EY" role="3$GE4G">
           <node concept="3Mxwew" id="57dcfYPx6F2" role="3MwsjC">
-            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20173/Default+Keymap+Reference" />
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD20181/Default+Keymap+Reference" />
           </node>
         </node>
       </node>
@@ -19881,7 +19883,7 @@
         </node>
         <node concept="NbPM2" id="6Iq8148f_YW" role="HFWMp">
           <node concept="3Mxwew" id="6Iq8148f_YX" role="3MwsjC">
-            <property role="3MwjfP" value="MPS173" />
+            <property role="3MwjfP" value="MPS181" />
           </node>
         </node>
       </node>
@@ -20089,7 +20091,7 @@
             </node>
           </node>
           <node concept="1zDrgl" id="6Iq8148gFCu" role="39821P">
-            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
+            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2018.1" />
           </node>
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
@@ -27538,7 +27540,7 @@
     <property role="TrG5h" value="mps" />
     <property role="3GE5qa" value="ide.data" />
     <property role="26EafI" value="bin" />
-    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
+    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="JetBrains MPS 2018.1" />
     <node concept="26Ea6D" id="2lwFGYOW7EY" role="2hID6k">
       <property role="26Ea6C" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none" />
     </node>
@@ -27578,7 +27580,7 @@
     </node>
     <node concept="26Ea6D" id="2lwFGYOW7EZ" role="2hID6k">
       <property role="2eq24a" value="true" />
-      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061" />
+      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5071" />
     </node>
     <node concept="26EafG" id="BJYGrH08Xy" role="26Ea7d">
       <property role="26EafJ" value="lib/branding.jar" />
@@ -27649,7 +27651,7 @@
     </node>
     <node concept="26Ea6D" id="BJYGrH08XG" role="26FZ21">
       <property role="2eq24a" value="true" />
-      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061" />
+      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5071" />
     </node>
   </node>
   <node concept="1l3spW" id="4O0hKJpjIUQ">

@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.SEnumAdapter;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import java.util.Objects;
 
 public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
@@ -42,6 +43,9 @@ public class SEnumOperations {
   }
   public static String getEnumMemberValue(SNode member) {
     return SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
+  }
+  public static String getEnumMemberPresentation(SNode member) {
+    return SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
   }
   public static SNode enumMemberForName(SNode enumm, final String name) {
     return ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).findFirst(new IWhereFilter<SNode>() {
@@ -90,7 +94,7 @@ public class SEnumOperations {
   public static SEnumerationLiteral getMemberForName(String name, long uuidHigh, long uuidLow, String languageNameHint, long enumId, String enumNameHint) {
     SEnumeration e = getEnum(uuidHigh, uuidLow, languageNameHint, enumId, enumNameHint);
     for (SEnumerationLiteral l : e.getLiterals()) {
-      if (l.getPresentation().equals(name)) {
+      if (Objects.equals(SEnumAdapter.getEnumMemberIdentifier(l), name)) {
         return l;
       }
     }
@@ -102,7 +106,7 @@ public class SEnumOperations {
     return (literal == null && value == null ? e.getDefault() : literal);
   }
   public static String getMemberName(SEnumerationLiteral enumMember) {
-    return (enumMember == null ? null : enumMember.getPresentation());
+    return (enumMember == null ? null : SEnumAdapter.getEnumMemberIdentifier(enumMember));
   }
   public static String getMemberValue(SEnumerationLiteral enumMember) {
     return (enumMember == null ? null : enumMember.getName());

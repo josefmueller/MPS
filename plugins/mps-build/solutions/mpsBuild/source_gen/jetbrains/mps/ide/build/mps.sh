@@ -61,8 +61,8 @@ cd "$OLDPWD"
 # ---------------------------------------------------------------------
 if [ -n "$MPS_JDK" -a -x "$MPS_JDK/bin/java" ]; then
   JDK="$MPS_JDK"
-elif [ -s "$HOME/.MPS2017.3/config/mps.jdk" ]; then
-  JDK=`"$CAT" $HOME/.MPS2017.3/config/mps.jdk`
+elif [ -s "$HOME/.MPS2018.1/config/mps.jdk" ]; then
+  JDK=`"$CAT" $HOME/.MPS2018.1/config/mps.jdk`
   if [ ! -d "$JDK" ]; then
     JDK="$IDE_HOME/$JDK"
   fi
@@ -140,9 +140,9 @@ VM_OPTIONS_FILE=""
 if [ -n "$IDEA_VM_OPTIONS" -a -r "$IDEA_VM_OPTIONS" ]; then
   # explicit
   VM_OPTIONS_FILE="$IDEA_VM_OPTIONS"
-elif [ -r "$HOME/.MPS2017.3/mps$BITS.vmoptions" ]; then
+elif [ -r "$HOME/.MPS2018.1/mps$BITS.vmoptions" ]; then
   # user-overridden
-  VM_OPTIONS_FILE="$HOME/.MPS2017.3/mps$BITS.vmoptions"
+  VM_OPTIONS_FILE="$HOME/.MPS2018.1/mps$BITS.vmoptions"
 elif [ -r "$IDE_BIN_HOME/mps$BITS.vmoptions" ]; then
   # default, standard installation
   VM_OPTIONS_FILE="$IDE_BIN_HOME/mps$BITS.vmoptions"
@@ -164,17 +164,17 @@ if [ "$IS_EAP" = "true" ]; then
   OS_NAME=`echo "$OS_TYPE" | "$TR" '[:upper:]' '[:lower:]'`
   AGENT_LIB="yjpagent-$OS_NAME$BITS"
   if [ -r "$IDE_BIN_HOME/lib$AGENT_LIB.so" ]; then
-    AGENT="-agentlib:$AGENT_LIB=disablealloc,delay=10000,sessionname=MPS2017.3"
+    AGENT="-agentlib:$AGENT_LIB=disablealloc,delay=10000,sessionname=MPS2018.1"
   fi
 fi
 
 IDE_JVM_ARGS=""
 # 32 bit
 # ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5071"
 # 64 bit
 # ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5071"
 
 CLASSPATH="$IDE_HOME/lib/branding.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/mps-boot.jar"
@@ -196,7 +196,7 @@ fi
 # ---------------------------------------------------------------------
 IFS="$(printf '\n\t')"
 MAIN_CLASS=jetbrains.mps.Launcher
-IDEA_PATHS_SELECTOR=MPS2017.3
+IDEA_PATHS_SELECTOR=MPS2018.1
 LD_LIBRARY_PATH="$IDE_BIN_HOME:$LD_LIBRARY_PATH" "$JAVA_BIN" \
   ${AGENT} \
   "-Xbootclasspath/a:$IDE_HOME/lib/boot.jar" \

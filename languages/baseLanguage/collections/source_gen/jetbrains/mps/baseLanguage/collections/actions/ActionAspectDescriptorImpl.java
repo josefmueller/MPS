@@ -18,19 +18,19 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862098());
-        case 1:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862101());
-        case 2:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862104());
-        case 3:
-          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862107());
-        case 4:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1235567398001());
-        case 5:
-          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1235567424420());
-        case 6:
           return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7886927014685056895());
+        case 1:
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862098());
+        case 2:
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862101());
+        case 3:
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862104());
+        case 4:
+          return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7212626807240862107());
+        case 5:
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1235567398001());
+        case 6:
+          return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1235567424420());
         case 7:
           return Arrays.asList(new NodeFactory[]{new closure_operations.NodeFactory_1225110009888(), new set_ascending_order.NodeFactory_1225119833430()});
         case 8:
@@ -92,20 +92,18 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 36:
           return Arrays.asList(new NodeFactory[]{new closure_operations.NodeFactory_1225119114838(), new set_ascending_order.NodeFactory_1225119783187()});
         case 37:
-          return Collections.<NodeFactory>singletonList(new replace_sequence_type.NodeFactory_7246115176735619079());
-        case 38:
           return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_5699792037748117963());
-        case 39:
+        case 38:
           return Collections.<NodeFactory>singletonList(new single_argument_operations.NodeFactory_7072176981128389277());
-        case 40:
+        case 39:
           return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119174306());
-        case 41:
+        case 40:
           return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475279119());
-        case 42:
+        case 41:
           return Collections.<NodeFactory>singletonList(new creators.NodeFactory_1241475137153());
-        case 43:
+        case 42:
           return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119188770());
-        case 44:
+        case 43:
           return Collections.<NodeFactory>singletonList(new closure_operations.NodeFactory_1225119083460());
         default:
       }
@@ -117,5 +115,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   public boolean hasBuilders() {
     return false;
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AddAllElementsOperation", "AddElementOperation", "AddFirstElementOperation", "AddLastElementOperation", "AllOperation", "AnyOperation", "CollectionType", "ComparatorSortOperation", "ContainsAllOperation", "ContainsOperation", "CustomContainerDeclaration", "FindFirstOperation", "FindLastOperation", "FoldLeftOperation", "FoldRightOperation", "ForEachStatement", "GetElementOperation", "GetIndexOfOperation", "GetLastIndexOfOperation", "HashMapCreator", "HashSetCreator", "LinkedHashMapCreator", "LinkedHashSetCreator", "LinkedListCreator", "ListCreatorWithInit", "ListType", "MultiForEachStatement", "PushOperation", "ReduceLeftOperation", "ReduceRightOperation", "RemoveAllElementsOperation", "RemoveElementOperation", "RemoveWhereOperation", "SelectOperation", "SequenceType", "SetType", "SortOperation", "SortedSetType", "TestAddElementOperation", "TestRemoveElementOperation", "TranslateOperation", "TreeMapCreator", "TreeSetCreator", "VisitAllOperation", "WhereOperation"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractContainerType", "AddAllElementsOperation", "AddElementOperation", "AddFirstElementOperation", "AddLastElementOperation", "AllOperation", "AnyOperation", "ComparatorSortOperation", "ContainsAllOperation", "ContainsOperation", "CustomContainerDeclaration", "FindFirstOperation", "FindLastOperation", "FoldLeftOperation", "FoldRightOperation", "ForEachStatement", "GetElementOperation", "GetIndexOfOperation", "GetLastIndexOfOperation", "HashMapCreator", "HashSetCreator", "LinkedHashMapCreator", "LinkedHashSetCreator", "LinkedListCreator", "ListCreatorWithInit", "ListType", "MultiForEachStatement", "PushOperation", "ReduceLeftOperation", "ReduceRightOperation", "RemoveAllElementsOperation", "RemoveElementOperation", "RemoveWhereOperation", "SelectOperation", "SequenceType", "SetType", "SortOperation", "TestAddElementOperation", "TestRemoveElementOperation", "TranslateOperation", "TreeMapCreator", "TreeSetCreator", "VisitAllOperation", "WhereOperation"};
 }

@@ -187,8 +187,8 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   }
 
   private void setRoot(VirtualFile file) {
-    myDescriptor.setRoots(file);
     if (file != null) {
+      myDescriptor.setRoots(file);
       myDescriptor.setTitle(FileUtil.toSystemDependentName(file.getPath()));
     }
   }
