@@ -51,20 +51,6 @@ public final class FileListenerAdapter implements FileSystemListener {
   }
 
   @Override
-  public int hashCode() {
-    return 37 * myFile.hashCode() + myFileListener.hashCode();
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (obj instanceof FileListenerAdapter) {
-      return myFile.equals(((FileListenerAdapter) obj).myFile) &&
-          myFileListener.equals(((FileListenerAdapter) obj).myFileListener);
-    }
-    return false;
-  }
-
-  @Override
   public String toString() {
     return "FileListenerAdapter for " + myFileListener + "; file is " + myFile;
   }
