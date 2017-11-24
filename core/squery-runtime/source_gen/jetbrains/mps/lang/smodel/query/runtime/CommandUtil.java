@@ -148,23 +148,23 @@ public class CommandUtil {
   }
 
   public static SearchScope createScope(SModel model) {
-    return new ModelsScope(model);
+    return new EditableFilteringScope(new ModelsScope(model));
   }
   public static SearchScope createScope(SModule module) {
-    return new ModulesScope(module);
+    return new EditableFilteringScope(new ModulesScope(module));
   }
   public static SearchScope createScope(Iterable modelsAndModules) {
     Iterator<Object> it = modelsAndModules.iterator();
     if (!(it.hasNext())) {
       return new ModelsScope();
     }
-    return (it.next() instanceof SModule ? new ModulesScope(modelsAndModules) : new ModelsScope(modelsAndModules));
+    return (it.next() instanceof SModule ? new EditableFilteringScope(new ModulesScope(modelsAndModules)) : new EditableFilteringScope(new ModelsScope(modelsAndModules)));
   }
   public static SearchScope createScope(Project project) {
-    return new ProjectScope(project);
+    return new EditableFilteringScope(new ProjectScope(project));
   }
   public static SearchScope createScope(SearchScope searchScope) {
-    return searchScope;
+    return new EditableFilteringScope(searchScope);
   }
 
   private static SNode check_1pinza_a0a0a0a0b0a0a41(SNodeReference checkedDotOperand, SRepository repository) {
