@@ -457,11 +457,11 @@
     <ref role="1TJDcQ" node="6M9lfhDDWgw" resolve="AbstractPrintExpression" />
   </node>
   <node concept="1TIwiD" id="3J6h25QeHQy">
-    <property role="3GE5qa" value="query.parameter" />
-    <property role="TrG5h" value="ProjectScope" />
+    <property role="3GE5qa" value="query.parameter.old" />
+    <property role="TrG5h" value="ProjectScope_old" />
     <property role="34LRSv" value="project" />
     <property role="EcuMT" value="4307205004134636962" />
-    <ref role="1TJDcQ" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter" />
+    <ref role="1TJDcQ" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter_old" />
   </node>
   <node concept="1TIwiD" id="DM6_$iqV$8">
     <property role="TrG5h" value="ProjectExpression" />
@@ -482,6 +482,20 @@
       <property role="20kJfa" value="target" />
       <ref role="20lvS9" node="jysm2GH4xb" resolve="CommandHolder" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="238_VGTQRMc">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="ProjectScope" />
+    <property role="34LRSv" value="project" />
+    <property role="EcuMT" value="2362304834941189260" />
+    <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
+  </node>
+  <node concept="1TIwiD" id="238_VGTQRMM">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="ProjectEditableScope" />
+    <property role="34LRSv" value="editable" />
+    <property role="EcuMT" value="2362304834941189298" />
+    <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
   </node>
 </model>
 

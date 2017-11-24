@@ -2,17 +2,17 @@
 <model ref="r:834d62e5-8e63-445b-ae58-4c325432808d(jetbrains.mps.console.base.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="-1" />
-    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
+    <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -1228,9 +1228,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="3J6h25QOL62">
-    <property role="TrG5h" value="reduce_ProjectScopeLiteral" />
-    <property role="3GE5qa" value="expression.parameter" />
-    <ref role="3gUMe" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
+    <property role="TrG5h" value="reduce_ProjectScopeLiteral_old" />
+    <property role="3GE5qa" value="query.parameter.old" />
+    <ref role="3gUMe" to="eynw:3J6h25QeHQy" resolve="ProjectScope_old" />
     <node concept="312cEu" id="3J6h25QOMzM" role="13RCb5">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Main2" />
@@ -1309,10 +1309,105 @@
       </node>
     </node>
     <node concept="3aamgX" id="3J6h25QOL64" role="3acgRq">
-      <ref role="30HIoZ" to="eynw:3J6h25QeHQy" resolve="ProjectScope" />
+      <ref role="30HIoZ" to="eynw:3J6h25QeHQy" resolve="ProjectScope_old" />
       <node concept="j$656" id="3J6h25QOL65" role="1lVwrX">
-        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral" />
+        <ref role="v9R2y" node="3J6h25QOL62" resolve="reduce_ProjectScopeLiteral_old" />
       </node>
+    </node>
+    <node concept="3aamgX" id="238_VGTR4KG" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:238_VGTQRMc" resolve="ProjectScope" />
+      <node concept="j$656" id="238_VGTR4L1" role="1lVwrX">
+        <ref role="v9R2y" node="238_VGTQROP" resolve="reduce_ProjectScopeLiteral" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="238_VGTR4KO" role="3acgRq">
+      <ref role="30HIoZ" to="eynw:238_VGTQRMM" resolve="ProjectEditableScope" />
+      <node concept="j$656" id="238_VGTR4KY" role="1lVwrX">
+        <ref role="v9R2y" node="238_VGTQRMN" resolve="reduce_ProjectEditableScopeLiteral" />
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="238_VGTQRMN">
+    <property role="TrG5h" value="reduce_ProjectEditableScopeLiteral" />
+    <property role="3GE5qa" value="query.parameter" />
+    <ref role="3gUMe" to="eynw:238_VGTQRMM" resolve="ProjectEditableScope" />
+    <node concept="312cEu" id="238_VGTQRMO" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Main2" />
+      <node concept="2YIFZL" id="238_VGTQRMP" role="jymVt">
+        <property role="TrG5h" value="execute" />
+        <node concept="3cqZAl" id="238_VGTQRMQ" role="3clF45" />
+        <node concept="37vLTG" id="238_VGTQRMR" role="3clF46">
+          <property role="TrG5h" value="context" />
+          <node concept="3uibUv" id="238_VGTQRMS" role="1tU5fm">
+            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="238_VGTQRMT" role="1B3o_S" />
+        <node concept="3clFbS" id="238_VGTQRMU" role="3clF47">
+          <node concept="3clFbF" id="238_VGTQRMV" role="3cqZAp">
+            <node concept="2ShNRf" id="238_VGTQRMW" role="3clFbG">
+              <node concept="1pGfFk" id="238_VGTQS1N" role="2ShVmc">
+                <ref role="37wK5l" to="z1c3:~EditableFilteringScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope)" resolve="EditableFilteringScope" />
+                <node concept="2ShNRf" id="238_VGTQSih" role="37wK5m">
+                  <node concept="1pGfFk" id="238_VGTQSii" role="2ShVmc">
+                    <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                    <node concept="2OqwBi" id="238_VGTQSij" role="37wK5m">
+                      <node concept="37vLTw" id="238_VGTQSik" role="2Oq$k0">
+                        <ref role="3cqZAo" node="238_VGTQRMR" resolve="context" />
+                      </node>
+                      <node concept="liA8E" id="238_VGTQSil" role="2OqNvi">
+                        <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="raruj" id="238_VGTQRN1" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="238_VGTQRN2" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="238_VGTQROP">
+    <property role="TrG5h" value="reduce_ProjectScopeLiteral" />
+    <property role="3GE5qa" value="query.parameter" />
+    <ref role="3gUMe" to="eynw:238_VGTQRMc" resolve="ProjectScope" />
+    <node concept="312cEu" id="238_VGTQROQ" role="13RCb5">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="Main2" />
+      <node concept="2YIFZL" id="238_VGTQROR" role="jymVt">
+        <property role="TrG5h" value="execute" />
+        <node concept="3cqZAl" id="238_VGTQROS" role="3clF45" />
+        <node concept="37vLTG" id="238_VGTQROT" role="3clF46">
+          <property role="TrG5h" value="context" />
+          <node concept="3uibUv" id="238_VGTQROU" role="1tU5fm">
+            <ref role="3uigEE" to="qgo0:jysm2GDsTL" resolve="ConsoleContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="238_VGTQROV" role="1B3o_S" />
+        <node concept="3clFbS" id="238_VGTQROW" role="3clF47">
+          <node concept="3clFbF" id="238_VGTQROX" role="3cqZAp">
+            <node concept="2ShNRf" id="238_VGTQROY" role="3clFbG">
+              <node concept="1pGfFk" id="238_VGTQROZ" role="2ShVmc">
+                <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                <node concept="2OqwBi" id="238_VGTQRP0" role="37wK5m">
+                  <node concept="37vLTw" id="238_VGTQRP1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="238_VGTQROT" resolve="context" />
+                  </node>
+                  <node concept="liA8E" id="238_VGTQRP2" role="2OqNvi">
+                    <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
+                  </node>
+                </node>
+              </node>
+              <node concept="raruj" id="238_VGTQRP3" role="lGtFl" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="238_VGTQRP4" role="1B3o_S" />
     </node>
   </node>
 </model>

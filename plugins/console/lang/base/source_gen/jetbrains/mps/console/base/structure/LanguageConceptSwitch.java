@@ -39,11 +39,13 @@ public final class LanguageConceptSwitch {
   public static final int PrintNodeReferenceExpression = 27;
   public static final int PrintSequenceExpression = 28;
   public static final int PrintTextExpression = 29;
-  public static final int ProjectExpression = 30;
-  public static final int ProjectScope = 31;
-  public static final int Response = 32;
-  public static final int ResponseItem = 33;
-  public static final int TextResponseItem = 34;
+  public static final int ProjectEditableScope = 30;
+  public static final int ProjectExpression = 31;
+  public static final int ProjectScope = 32;
+  public static final int ProjectScope_old = 33;
+  public static final int Response = 34;
+  public static final int ResponseItem = 35;
+  public static final int TextResponseItem = 36;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L);
@@ -77,8 +79,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x5f195a051bd9bddcL, PrintNodeReferenceExpression);
     builder.put(0x6979f0787b7db64fL, PrintSequenceExpression);
     builder.put(0x7417cca3eb1feca9L, PrintTextExpression);
+    builder.put(0x20c897bb39db7cb2L, ProjectEditableScope);
     builder.put(0xa721a59126bb908L, ProjectExpression);
-    builder.put(0x3bc64421763adda2L, ProjectScope);
+    builder.put(0x20c897bb39db7c8cL, ProjectScope);
+    builder.put(0x3bc64421763adda2L, ProjectScope_old);
     builder.put(0x4e3b035171a5ba02L, Response);
     builder.put(0x4e3b035171b3583cL, ResponseItem);
     builder.put(0x4e3b035171b35c38L, TextResponseItem);

@@ -39,8 +39,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PrintNodeReferenceExpression;
   private ConceptPresentation props_PrintSequenceExpression;
   private ConceptPresentation props_PrintTextExpression;
+  private ConceptPresentation props_ProjectEditableScope;
   private ConceptPresentation props_ProjectExpression;
   private ConceptPresentation props_ProjectScope;
+  private ConceptPresentation props_ProjectScope_old;
   private ConceptPresentation props_Response;
   private ConceptPresentation props_ResponseItem;
   private ConceptPresentation props_TextResponseItem;
@@ -260,6 +262,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PrintTextExpression = cpb.create();
         }
         return props_PrintTextExpression;
+      case LanguageConceptSwitch.ProjectEditableScope:
+        if (props_ProjectEditableScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("editable");
+          props_ProjectEditableScope = cpb.create();
+        }
+        return props_ProjectEditableScope;
       case LanguageConceptSwitch.ProjectExpression:
         if (props_ProjectExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -275,6 +284,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ProjectScope = cpb.create();
         }
         return props_ProjectScope;
+      case LanguageConceptSwitch.ProjectScope_old:
+        if (props_ProjectScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
+          props_ProjectScope_old = cpb.create();
+        }
+        return props_ProjectScope_old;
       case LanguageConceptSwitch.Response:
         if (props_Response == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

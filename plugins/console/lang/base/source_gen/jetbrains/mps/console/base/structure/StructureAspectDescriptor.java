@@ -42,8 +42,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPrintNodeReferenceExpression = createDescriptorForPrintNodeReferenceExpression();
   /*package*/ final ConceptDescriptor myConceptPrintSequenceExpression = createDescriptorForPrintSequenceExpression();
   /*package*/ final ConceptDescriptor myConceptPrintTextExpression = createDescriptorForPrintTextExpression();
+  /*package*/ final ConceptDescriptor myConceptProjectEditableScope = createDescriptorForProjectEditableScope();
   /*package*/ final ConceptDescriptor myConceptProjectExpression = createDescriptorForProjectExpression();
   /*package*/ final ConceptDescriptor myConceptProjectScope = createDescriptorForProjectScope();
+  /*package*/ final ConceptDescriptor myConceptProjectScope_old = createDescriptorForProjectScope_old();
   /*package*/ final ConceptDescriptor myConceptResponse = createDescriptorForResponse();
   /*package*/ final ConceptDescriptor myConceptResponseItem = createDescriptorForResponseItem();
   /*package*/ final ConceptDescriptor myConceptTextResponseItem = createDescriptorForTextResponseItem();
@@ -55,7 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptCommandHolderRef, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
+    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptCommandHolderRef, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectEditableScope, myConceptProjectExpression, myConceptProjectScope, myConceptProjectScope_old, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
   }
 
   @Override
@@ -122,10 +124,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPrintSequenceExpression;
       case LanguageConceptSwitch.PrintTextExpression:
         return myConceptPrintTextExpression;
+      case LanguageConceptSwitch.ProjectEditableScope:
+        return myConceptProjectEditableScope;
       case LanguageConceptSwitch.ProjectExpression:
         return myConceptProjectExpression;
       case LanguageConceptSwitch.ProjectScope:
         return myConceptProjectScope;
+      case LanguageConceptSwitch.ProjectScope_old:
+        return myConceptProjectScope_old;
       case LanguageConceptSwitch.Response:
         return myConceptResponse;
       case LanguageConceptSwitch.ResponseItem:
@@ -381,6 +387,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("#printText");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForProjectEditableScope() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ProjectEditableScope", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x20c897bb39db7cb2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a2L);
+    b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/2362304834941189298");
+    b.alias("editable");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForProjectExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ProjectExpression", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa721a59126bb908L);
     b.class_(false, false, false);
@@ -390,9 +404,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProjectScope() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ProjectScope", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x3bc64421763adda2L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ProjectScope", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x20c897bb39db7c8cL);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL);
+    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a2L);
+    b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/2362304834941189260");
+    b.alias("project");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProjectScope_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ProjectScope_old", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x3bc64421763adda2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL);
     b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/4307205004134636962");
     b.alias("project");
     return b.create();
