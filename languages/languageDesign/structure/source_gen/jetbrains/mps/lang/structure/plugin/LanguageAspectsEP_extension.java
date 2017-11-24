@@ -79,6 +79,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
 
 
+
       public boolean canCreate(SModule language) {
         return CollectionSequence.fromCollection(getAspectModels(language)).isEmpty();
       }
