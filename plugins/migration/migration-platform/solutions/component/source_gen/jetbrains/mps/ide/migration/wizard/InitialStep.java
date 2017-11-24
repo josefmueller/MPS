@@ -109,11 +109,9 @@ public class InitialStep extends BaseStep {
     text.append("<html>");
     text.append("This project needs to be migrated.<br><br>");
 
-    text.append("This project uses older versions of languages and/or outdated project format. ");
-    text.append("To work correctly in the current environment, some migrations should be applied to the project. ");
-    text.append("If the migration is postponed, it is still possible to work with the project. ");
-    text.append("However, not migrated code may work slower or worse in some aspect, and typically will not work in next release. ");
-    text.append("It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.<br><br>");
+    text.append("The migration will update the code to reflect the recent changes in languages.<br>");
+    text.append("If you postpone the migration, it will still be possible to work with the project. However, your may experience sub-optimal performance and occasional glitches.<br>");
+    text.append("It is strongly recommended to run the migrations as soon as possible, since an upcoming language update may render your current code invalid.<br><br>");
 
     text.append("</html>");
     return text.toString();

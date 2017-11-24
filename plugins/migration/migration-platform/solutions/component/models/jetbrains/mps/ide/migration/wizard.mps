@@ -2349,7 +2349,7 @@
             <node concept="liA8E" id="4cCSMVLxukP" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="6fMyXCHiyYC" role="37wK5m">
-                <property role="Xl_RC" value="This project uses older versions of languages and/or outdated project format. " />
+                <property role="Xl_RC" value="The migration will update the code to reflect the recent changes in languages.&lt;br&gt;" />
               </node>
             </node>
           </node>
@@ -2362,7 +2362,7 @@
             <node concept="liA8E" id="4cCSMVLxx4B" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="6fMyXCHiAGT" role="37wK5m">
-                <property role="Xl_RC" value="To work correctly in the current environment, some migrations should be applied to the project. " />
+                <property role="Xl_RC" value="If you postpone the migration, it will still be possible to work with the project. However, your may experience sub-optimal performance and occasional glitches.&lt;br&gt;" />
               </node>
             </node>
           </node>
@@ -2375,33 +2375,7 @@
             <node concept="liA8E" id="4cCSMVLx_uN" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="6fMyXCHiNHg" role="37wK5m">
-                <property role="Xl_RC" value="If the migration is postponed, it is still possible to work with the project. " />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4cCSMVLx_w0" role="3cqZAp">
-          <node concept="2OqwBi" id="4cCSMVLx_w1" role="3clFbG">
-            <node concept="37vLTw" id="4cCSMVLx_w2" role="2Oq$k0">
-              <ref role="3cqZAo" node="6CdT9mpAQ9E" resolve="text" />
-            </node>
-            <node concept="liA8E" id="4cCSMVLx_w3" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="6fMyXCHiNHi" role="37wK5m">
-                <property role="Xl_RC" value="However, not migrated code may work slower or worse in some aspect, and typically will not work in next release. " />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4cCSMVLx_xa" role="3cqZAp">
-          <node concept="2OqwBi" id="4cCSMVLx_xb" role="3clFbG">
-            <node concept="37vLTw" id="4cCSMVLx_xc" role="2Oq$k0">
-              <ref role="3cqZAo" node="6CdT9mpAQ9E" resolve="text" />
-            </node>
-            <node concept="liA8E" id="4cCSMVLx_xd" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="6fMyXCHjL4h" role="37wK5m">
-                <property role="Xl_RC" value="It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.&lt;br&gt;&lt;br&gt;" />
+                <property role="Xl_RC" value="It is strongly recommended to run the migrations as soon as possible, since an upcoming language update may render your current code invalid.&lt;br&gt;&lt;br&gt;" />
               </node>
             </node>
           </node>
