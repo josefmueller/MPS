@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Clean;
   private ConceptPresentation props_ClickableGenerator;
   private ConceptPresentation props_GlobalScope;
+  private ConceptPresentation props_GlobalScope_old;
   private ConceptPresentation props_GlobalStatisticTarget;
   private ConceptPresentation props_INodeSetReference;
   private ConceptPresentation props_IStatisticsTarget;
@@ -36,6 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_StatCommand;
   private ConceptPresentation props_SubtreeStatisticsTarget;
   private ConceptPresentation props_UnloadModelsCommand;
+  private ConceptPresentation props_VisibleModulesScope;
   private ConceptPresentation props_WithDependencies;
 
   @Override
@@ -99,6 +101,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GlobalScope = cpb.create();
         }
         return props_GlobalScope;
+      case LanguageConceptSwitch.GlobalScope_old:
+        if (props_GlobalScope_old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("global");
+          props_GlobalScope_old = cpb.create();
+        }
+        return props_GlobalScope_old;
       case LanguageConceptSwitch.GlobalStatisticTarget:
         if (props_GlobalStatisticTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -237,6 +246,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_UnloadModelsCommand = cpb.create();
         }
         return props_UnloadModelsCommand;
+      case LanguageConceptSwitch.VisibleModulesScope:
+        if (props_VisibleModulesScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("visible");
+          props_VisibleModulesScope = cpb.create();
+        }
+        return props_VisibleModulesScope;
       case LanguageConceptSwitch.WithDependencies:
         if (props_WithDependencies == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

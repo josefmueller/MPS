@@ -428,11 +428,25 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
+    <property role="3GE5qa" value="query.parameter.old" />
+    <property role="TrG5h" value="GlobalScope_old" />
+    <property role="34LRSv" value="global" />
+    <property role="EcuMT" value="4307205004134636866" />
+    <ref role="1TJDcQ" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter_old" />
+  </node>
+  <node concept="1TIwiD" id="238_VGTQhoN">
     <property role="3GE5qa" value="query.parameter" />
     <property role="TrG5h" value="GlobalScope" />
     <property role="34LRSv" value="global" />
-    <property role="EcuMT" value="4307205004134636866" />
-    <ref role="1TJDcQ" to="3xdn:3J6h25QeHPb" resolve="ScopeParameter" />
+    <property role="EcuMT" value="2362304834941031987" />
+    <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
+  </node>
+  <node concept="1TIwiD" id="238_VGTQjNj">
+    <property role="3GE5qa" value="query.parameter" />
+    <property role="TrG5h" value="VisibleModulesScope" />
+    <property role="34LRSv" value="visible" />
+    <property role="EcuMT" value="2362304834941041875" />
+    <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
   </node>
 </model>
 

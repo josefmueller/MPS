@@ -17,26 +17,28 @@ public final class LanguageConceptSwitch {
   public static final int Clean = 5;
   public static final int ClickableGenerator = 6;
   public static final int GlobalScope = 7;
-  public static final int GlobalStatisticTarget = 8;
-  public static final int INodeSetReference = 9;
-  public static final int IStatisticsTarget = 10;
-  public static final int Make = 11;
-  public static final int ModelProperties = 12;
-  public static final int ModelReference = 13;
-  public static final int ModelStatisticsTarget = 14;
-  public static final int ModuleProperties = 15;
-  public static final int NodeReference = 16;
-  public static final int OfAspectOperation = 17;
-  public static final int ProjectStatisticsTarget = 18;
-  public static final int RebuildProjectCommand = 19;
-  public static final int RemoveGenSources = 20;
-  public static final int ShowBrokenReferences = 21;
-  public static final int ShowExpression = 22;
-  public static final int ShowGenPlan = 23;
-  public static final int StatCommand = 24;
-  public static final int SubtreeStatisticsTarget = 25;
-  public static final int UnloadModelsCommand = 26;
-  public static final int WithDependencies = 27;
+  public static final int GlobalScope_old = 8;
+  public static final int GlobalStatisticTarget = 9;
+  public static final int INodeSetReference = 10;
+  public static final int IStatisticsTarget = 11;
+  public static final int Make = 12;
+  public static final int ModelProperties = 13;
+  public static final int ModelReference = 14;
+  public static final int ModelStatisticsTarget = 15;
+  public static final int ModuleProperties = 16;
+  public static final int NodeReference = 17;
+  public static final int OfAspectOperation = 18;
+  public static final int ProjectStatisticsTarget = 19;
+  public static final int RebuildProjectCommand = 20;
+  public static final int RemoveGenSources = 21;
+  public static final int ShowBrokenReferences = 22;
+  public static final int ShowExpression = 23;
+  public static final int ShowGenPlan = 24;
+  public static final int StatCommand = 25;
+  public static final int SubtreeStatisticsTarget = 26;
+  public static final int UnloadModelsCommand = 27;
+  public static final int VisibleModulesScope = 28;
+  public static final int WithDependencies = 29;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L);
@@ -47,7 +49,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x4d7759afce9587adL, CallActionExpression);
     builder.put(0x276b371e74f88509L, Clean);
     builder.put(0x360b134fc0467d73L, ClickableGenerator);
-    builder.put(0x3bc64421763add42L, GlobalScope);
+    builder.put(0x20c897bb39d91633L, GlobalScope);
+    builder.put(0x3bc64421763add42L, GlobalScope_old);
     builder.put(0x67f2bafb7a579cb8L, GlobalStatisticTarget);
     builder.put(0x4843e803da101441L, INodeSetReference);
     builder.put(0x67f2bafb7a579cb2L, IStatisticsTarget);
@@ -67,6 +70,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x67f2bafb7a558c98L, StatCommand);
     builder.put(0x1cf75b72b0b3962bL, SubtreeStatisticsTarget);
     builder.put(0x75bb0160f191ddffL, UnloadModelsCommand);
+    builder.put(0x20c897bb39d93cd3L, VisibleModulesScope);
     builder.put(0x826e97ca237a1b1L, WithDependencies);
     myIndex = builder.seal();
   }
