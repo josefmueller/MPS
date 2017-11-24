@@ -265,6 +265,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ProjectEditableScope:
         if (props_ProjectEditableScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("editable project models");
           cpb.rawPresentation("editable");
           props_ProjectEditableScope = cpb.create();
         }
@@ -280,6 +281,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ProjectScope:
         if (props_ProjectScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("whole project");
           cpb.rawPresentation("project");
           props_ProjectScope = cpb.create();
         }

@@ -97,6 +97,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GlobalScope:
         if (props_GlobalScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("whole repository");
           cpb.rawPresentation("global");
           props_GlobalScope = cpb.create();
         }
@@ -249,6 +250,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.VisibleModulesScope:
         if (props_VisibleModulesScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("visible module in repository");
           cpb.rawPresentation("visible");
           props_VisibleModulesScope = cpb.create();
         }

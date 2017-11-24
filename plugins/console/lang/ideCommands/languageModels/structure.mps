@@ -439,6 +439,7 @@
     <property role="TrG5h" value="GlobalScope" />
     <property role="34LRSv" value="global" />
     <property role="EcuMT" value="2362304834941031987" />
+    <property role="R4oN_" value="whole repository" />
     <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
   </node>
   <node concept="1TIwiD" id="238_VGTQjNj">
@@ -446,6 +447,7 @@
     <property role="TrG5h" value="VisibleModulesScope" />
     <property role="34LRSv" value="visible" />
     <property role="EcuMT" value="2362304834941041875" />
+    <property role="R4oN_" value="visible module in repository" />
     <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
   </node>
 </model>
