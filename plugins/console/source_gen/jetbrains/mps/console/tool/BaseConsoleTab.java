@@ -47,13 +47,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.ModelImports;
-import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.project.ImportUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import javax.swing.KeyStroke;
@@ -83,8 +77,10 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Scanner;
@@ -99,6 +95,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Disposable {
@@ -298,34 +295,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
 
   protected void addNodeImports(SNode node) {
-    final SModelInternal modelInternal = (SModelInternal) myModel;
-    final AbstractModule module = ((AbstractModule) myModel.getModule());
-    final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
-    ModelDependencyScanner scan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
-    scan.walk(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}));
-    HashSet<SLanguage> languagesToImport = new HashSet<SLanguage>(scan.getUsedLanguages());
-    languagesToImport.removeAll(importedLanguages);
-    for (SLanguage usedLanguage : SetSequence.fromSet(languagesToImport)) {
-      modelInternal.addLanguage(usedLanguage);
-    }
-
-    HashSet<SModelReference> modelsToImport = new HashSet<SModelReference>(scan.getCrossModelReferences());
-    modelsToImport.removeAll(SModelOperations.getImportedModelUIDs(myModel));
-    for (SModelReference ref : SetSequence.fromSet(modelsToImport)) {
-      modelInternal.addModelImport(ref);
-      SModuleReference moduleRef;
-      if (ref.getModuleReference() != null) {
-        moduleRef = ref.getModuleReference();
-      } else {
-        // models with global identity may omit module reference, however, we still need to add their owning module 
-        // into dependencies to get the code compiled 
-        SModel usedModel = ref.resolve(myProject.getRepository());
-        moduleRef = (usedModel == null ? null : usedModel.getModule().getModuleReference());
-      }
-      if (moduleRef != null) {
-        module.addDependency(moduleRef, false);
-      }
-    }
+    ImportUtil.addModelDepsByNode(myProject.getRepository(), myModel, node);
   }
 
   protected BaseAction registerKeyShortcut(BaseAction a, int key) {
@@ -453,7 +423,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
     }
     try {
       final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadModelFromXml(state));
-      ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(it.getConcept().isValid());
         }
