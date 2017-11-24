@@ -34,8 +34,10 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Build (and optionally maintain) set of all languages, imported directly and indirectly.
@@ -248,16 +250,25 @@ public class ModelDependenciesManager {
 
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
+      super.beforeModuleRemoved(module);
       invalidateIfWatching(module);
     }
 
     @Override
     public void moduleChanged(SModule module) {
+      super.moduleChanged(module);
+      invalidateIfWatching(module);
+    }
+
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      super.moduleAdded(module);
       invalidateIfWatching(module);
     }
 
     @Override
     public void modelAdded(SModule module, SModel model) {
+      super.modelAdded(module, model);
       invalidateIfWatching(module);
     }
 
@@ -265,6 +276,19 @@ public class ModelDependenciesManager {
       if ((module instanceof Language)) {
         SLanguage languageId = MetaAdapterFactory.getLanguage(module.getModuleReference());
         if (myDepManager.isDependency(languageId)) {
+          myDepManager.invalidate();
+        }
+      }
+      if ((module instanceof DevKit)) {
+        List<SModuleReference> declaredDevkits = ((SModelInternal) myDepManager.getModel()).importedDevkits();
+        Set<DevKit> allDevkits = new HashSet<>();
+        for (SModuleReference ref : declaredDevkits) {
+          SModule devkit = ref.resolve(myRepository);
+          if (devkit instanceof DevKit) {
+            allDevkits.addAll(((DevKit) devkit).getAllExtendedDevkits());
+          }
+        }
+        if (allDevkits.contains(module)) {
           myDepManager.invalidate();
         }
       }
