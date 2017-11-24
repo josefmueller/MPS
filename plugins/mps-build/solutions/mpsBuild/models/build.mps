@@ -21372,6 +21372,12 @@
               <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
             </node>
           </node>
+          <node concept="1SiIV0" id="386pNXIB6Sp" role="3bR37C">
+            <node concept="3bR9La" id="386pNXIB6Sq" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="4DCXnKLylT$" resolve="jetbrains.mps.lang.makeup" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgrvhy" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrvhx" role="1SiIV1">
