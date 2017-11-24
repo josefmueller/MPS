@@ -295,7 +295,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
 
   protected void addNodeImports(SNode node) {
-    ImportUtil.addModelDepsByNode(myProject.getRepository(), myModel, node);
+    ImportUtil.addModelDepsByNode(myProject.getRepository(), myModel, node, true);
   }
 
   protected BaseAction registerKeyShortcut(BaseAction a, int key) {

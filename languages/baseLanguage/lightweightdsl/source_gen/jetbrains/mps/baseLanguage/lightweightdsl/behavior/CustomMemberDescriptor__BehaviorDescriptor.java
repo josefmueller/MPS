@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.project.ImportUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -41,7 +42,9 @@ public final class CustomMemberDescriptor__BehaviorDescriptor extends BaseBHDesc
   }
 
   /*package*/ static SNode create_id7ay_HjIOVVe(@NotNull SNode __thisNode__, SModel futureModel) {
-    return (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))), null);
+    SNode res = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))), null);
+    ImportUtil.addModelDepsByNode(futureModel.getRepository(), futureModel, res, false);
+    return SNodeOperations.cast(res, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
   }
   /*package*/ static Iterable<SNode> find_id2gzehMfi1$l(@NotNull SNode __thisNode__, SNode cls) {
     return SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))));

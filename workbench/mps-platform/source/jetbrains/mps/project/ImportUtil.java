@@ -32,7 +32,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class ImportUtil {
-  public static void addModelDepsByNode(SRepository repo, SModel model, SNode node){
+  public static void addModelDepsByNode(SRepository repo, SModel model, SNode node, boolean addModuleImports) {
     final SModelInternal modelInternal = (SModelInternal) model;
     final AbstractModule module = ((AbstractModule) model.getModule());
     final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
@@ -40,26 +40,33 @@ public class ImportUtil {
     scan.walk(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}));
     HashSet<SLanguage> languagesToImport = new HashSet<SLanguage>(scan.getUsedLanguages());
     languagesToImport.removeAll(importedLanguages);
-    for (SLanguage usedLanguage : SetSequence.fromSet(languagesToImport)) {
+    for (SLanguage usedLanguage : languagesToImport) {
       modelInternal.addLanguage(usedLanguage);
     }
 
     HashSet<SModelReference> modelsToImport = new HashSet<SModelReference>(scan.getCrossModelReferences());
     modelsToImport.removeAll(SModelOperations.getImportedModelUIDs(model));
-    for (SModelReference ref : SetSequence.fromSet(modelsToImport)) {
+    for (SModelReference ref : modelsToImport) {
       modelInternal.addModelImport(ref);
-      SModuleReference moduleRef;
-      if (ref.getModuleReference() != null) {
-        moduleRef = ref.getModuleReference();
-      } else {
-        // models with global identity may omit module reference, however, we still need to add their owning module
-        // into dependencies to get the code compiled
-        SModel usedModel = ref.resolve(repo);
-        moduleRef = (usedModel == null ? null : usedModel.getModule().getModuleReference());
+
+      if (addModuleImports) {
+        addModuleImport(repo, module, ref);
       }
-      if (moduleRef != null) {
-        module.addDependency(moduleRef, false);
-      }
+    }
+  }
+
+  private static void addModuleImport(SRepository repo, AbstractModule module, SModelReference ref) {
+    SModuleReference moduleRef;
+    if (ref.getModuleReference() != null) {
+      moduleRef = ref.getModuleReference();
+    } else {
+      // models with global identity may omit module reference, however, we still need to add their owning module
+      // into dependencies to get the code compiled
+      SModel usedModel = ref.resolve(repo);
+      moduleRef = (usedModel == null ? null : usedModel.getModule().getModuleReference());
+    }
+    if (moduleRef != null) {
+      module.addDependency(moduleRef, false);
     }
   }
 }

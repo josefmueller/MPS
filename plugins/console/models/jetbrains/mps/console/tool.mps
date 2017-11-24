@@ -6302,22 +6302,25 @@
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="2wDkRIgqBFm" role="3clF47">
         <node concept="3clFbF" id="7stlEFloDEL" role="3cqZAp">
-          <node concept="2YIFZM" id="7stlEFloEEq" role="3clFbG">
-            <ref role="37wK5l" to="z1c4:~ImportUtil.addModelDepsByNode(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SNode):void" resolve="addModelDepsByNode" />
+          <node concept="2YIFZM" id="7stlEFlq5wp" role="3clFbG">
+            <ref role="37wK5l" to="z1c4:~ImportUtil.addModelDepsByNode(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SNode,boolean):void" resolve="addModelDepsByNode" />
             <ref role="1Pybhc" to="z1c4:~ImportUtil" resolve="ImportUtil" />
-            <node concept="2OqwBi" id="7stlEFloFB5" role="37wK5m">
-              <node concept="37vLTw" id="7stlEFloFB6" role="2Oq$k0">
+            <node concept="2OqwBi" id="7stlEFlq5wq" role="37wK5m">
+              <node concept="37vLTw" id="7stlEFlq5wr" role="2Oq$k0">
                 <ref role="3cqZAo" node="758rrhN1tVs" resolve="myProject" />
               </node>
-              <node concept="liA8E" id="7stlEFloFB7" role="2OqNvi">
+              <node concept="liA8E" id="7stlEFlq5ws" role="2OqNvi">
                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
             </node>
-            <node concept="37vLTw" id="7stlEFloHCV" role="37wK5m">
+            <node concept="37vLTw" id="7stlEFlq5wt" role="37wK5m">
               <ref role="3cqZAo" node="6ysF3v1j_8r" resolve="myModel" />
             </node>
-            <node concept="37vLTw" id="7stlEFloIKq" role="37wK5m">
+            <node concept="37vLTw" id="7stlEFlq5wu" role="37wK5m">
               <ref role="3cqZAo" node="2wDkRIgqMvz" resolve="node" />
+            </node>
+            <node concept="3clFbT" id="7stlEFlq5wv" role="37wK5m">
+              <property role="3clFbU" value="true" />
             </node>
           </node>
         </node>
