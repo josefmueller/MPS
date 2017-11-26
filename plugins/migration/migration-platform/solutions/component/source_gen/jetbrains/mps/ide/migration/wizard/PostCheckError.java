@@ -31,7 +31,7 @@ public class PostCheckError extends MigrationError {
     return "Problems are detected after executing migrations.";
   }
   public String getMessage() {
-    String res = "Migration Assistant was unable to migrate some nodes in this project.\n\n";
+    String res = "Migration Assistant was unable to migrate some nodes in this project.\n";
     if (myHaveBadCode) {
       res += "Problems will be shown in Model Checker tool when the project is loaded.";
     } else {

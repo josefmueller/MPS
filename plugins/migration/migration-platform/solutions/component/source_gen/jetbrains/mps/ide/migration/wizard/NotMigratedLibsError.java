@@ -21,7 +21,7 @@ public class NotMigratedLibsError extends MigrationError {
     return "Some dependent modules are not migrated.";
   }
   public String getMessage() {
-    return "The project depends on external modules that were not fully migrated.\n" + "If the error is ignored, further migrations may be applied incorrectly.\n" + "It is recommended to migrate dependent modules first.\n\n";
+    return "The project depends on external modules that were not fully migrated.\n" + "If the error is ignored, further migrations may be applied incorrectly. " + "It is recommended to migrate dependent modules first.";
   }
   public boolean canIgnore() {
     return true;

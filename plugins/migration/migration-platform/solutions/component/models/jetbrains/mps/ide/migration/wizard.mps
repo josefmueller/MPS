@@ -4955,11 +4955,11 @@
                 <property role="Xl_RC" value="The project depends on external modules that were not fully migrated.\n" />
               </node>
               <node concept="Xl_RD" id="ANqTy7mxfu" role="3uHU7w">
-                <property role="Xl_RC" value="If the error is ignored, further migrations may be applied incorrectly.\n" />
+                <property role="Xl_RC" value="If the error is ignored, further migrations may be applied incorrectly. " />
               </node>
             </node>
             <node concept="Xl_RD" id="3nmMoI1WmR8" role="3uHU7w">
-              <property role="Xl_RC" value="It is recommended to migrate dependent modules first.\n\n" />
+              <property role="Xl_RC" value="It is recommended to migrate dependent modules first." />
             </node>
           </node>
         </node>
@@ -5119,7 +5119,7 @@
           <node concept="3cpWs3" id="7u9mkj2dzmi" role="3clFbG">
             <node concept="3cpWs3" id="7u9mkj2dz6R" role="3uHU7B">
               <node concept="Xl_RD" id="7u9mkj2dySe" role="3uHU7B">
-                <property role="Xl_RC" value="Some migration scripts are missing.\n\n" />
+                <property role="Xl_RC" value="Some migration scripts are missing.\n" />
               </node>
               <node concept="Xl_RD" id="7u9mkj2dzmo" role="3uHU7w">
                 <property role="Xl_RC" value="Missing scripts will be shown in ModelChecker after the migration wizard is closed.\n\n" />
@@ -5609,7 +5609,7 @@
               <property role="Xl_RC" value="Migration Assistant found some problems in the project.\n" />
             </node>
             <node concept="Xl_RD" id="3nmMoI1WF5g" role="3uHU7w">
-              <property role="Xl_RC" value="It is recommended to fix problems before starting the migration.\n" />
+              <property role="Xl_RC" value="It is recommended to fix problems before starting the migration." />
             </node>
           </node>
         </node>
@@ -6276,8 +6276,13 @@
       </node>
       <node concept="3clFbS" id="2htE_P_OnpG" role="3clF47">
         <node concept="3clFbF" id="2htE_P_On$N" role="3cqZAp">
-          <node concept="Xl_RD" id="2htE_P_On$M" role="3clFbG">
-            <property role="Xl_RC" value="Exception occurred while running migration. See log file for details." />
+          <node concept="3cpWs3" id="5omFVSXCUjS" role="3clFbG">
+            <node concept="Xl_RD" id="5omFVSXCZxl" role="3uHU7w">
+              <property role="Xl_RC" value="Migration can't continue." />
+            </node>
+            <node concept="Xl_RD" id="2htE_P_On$M" role="3uHU7B">
+              <property role="Xl_RC" value="Exception occurred while running migration. See log file for details.\n\n" />
+            </node>
           </node>
         </node>
       </node>
@@ -6475,7 +6480,7 @@
             <property role="TrG5h" value="res" />
             <node concept="17QB3L" id="5$2ALroS74u" role="1tU5fm" />
             <node concept="Xl_RD" id="5$2ALroS74x" role="33vP2m">
-              <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.\n\n" />
+              <property role="Xl_RC" value="Migration Assistant was unable to migrate some nodes in this project.\n" />
             </node>
           </node>
         </node>

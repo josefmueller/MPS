@@ -17,7 +17,7 @@ public class MigrationExceptionError extends MigrationError {
     return "Exception while running migration";
   }
   public String getMessage() {
-    return "Exception occurred while running migration. See log file for details.";
+    return "Exception occurred while running migration. See log file for details.\n\n" + "Migration can't continue.";
   }
   public Iterable<IssueKindReportItem> getProblems(ProgressIndicator progressIndicator) {
     return Collections.<IssueKindReportItem>emptyList();
