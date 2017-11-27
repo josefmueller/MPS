@@ -16,7 +16,6 @@ import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -27,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.EditableFilteringScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
@@ -64,12 +64,6 @@ public class CommandUtil {
     return (Set<SReference>) FindUsagesManager.getInstance().findUsages(scope, Collections.<SNode>singleton(node), new EmptyProgressMonitor());
   }
 
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static Collection<SNode> instances(SearchScope scope, SAbstractConcept concept) {
-    return instances(scope, concept, false);
-  }
-
   public static Collection<SNode> instances(SearchScope scope, SAbstractConcept concept, boolean exact) {
     return FindUsagesManager.getInstance().findInstances(scope, Collections.singleton(concept), exact, new EmptyProgressMonitor());
   }
@@ -80,11 +74,11 @@ public class CommandUtil {
         final SearchResults<SNode> res = new SearchResults<SNode>();
         Sequence.fromIterable(nodes).where(new IWhereFilter<SNodeReference>() {
           public boolean accept(SNodeReference it) {
-            return check_1pinza_a0a0a0a0b0a0a41(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a21(it, repository) != null;
           }
         }).visitAll(new IVisitor<SNodeReference>() {
           public void visit(SNodeReference it) {
-            res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0a0a41(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SNode>(check_1pinza_a0a0a0a0a0b0a0a21(it, repository), "usage"));
           }
         });
         return res;
@@ -98,11 +92,11 @@ public class CommandUtil {
         final SearchResults<SModel> res = new SearchResults<SModel>();
         Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
           public boolean accept(SModelReference it) {
-            return check_1pinza_a0a0a0a0b0a0a61(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a41(it, repository) != null;
           }
         }).visitAll(new IVisitor<SModelReference>() {
           public void visit(SModelReference it) {
-            res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0a0a61(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SModel>(check_1pinza_a0a0a0a0a0b0a0a41(it, repository), "usage"));
           }
         });
         return res;
@@ -116,11 +110,11 @@ public class CommandUtil {
         final SearchResults<SModule> res = new SearchResults<SModule>();
         Sequence.fromIterable(modules).where(new IWhereFilter<SModuleReference>() {
           public boolean accept(SModuleReference it) {
-            return check_1pinza_a0a0a0a0b0a0a81(it, repository) != null;
+            return check_1pinza_a0a0a0a0b0a0a61(it, repository) != null;
           }
         }).visitAll(new IVisitor<SModuleReference>() {
           public void visit(SModuleReference it) {
-            res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0a0a81(it, repository), "usage"));
+            res.getSearchResults().add(new SearchResult<SModule>(check_1pinza_a0a0a0a0a0b0a0a61(it, repository), "usage"));
           }
         });
         return res;
@@ -130,16 +124,16 @@ public class CommandUtil {
   }
 
   public static SNodeReference getNodeReference(SNode aNode) {
-    return check_1pinza_a0a02(aNode);
+    return check_1pinza_a0a81(aNode);
   }
   public static SNodeReference getReferenceReference(SReference aReference) {
-    return check_1pinza_a0a12(check_1pinza_a0a0v(aReference));
+    return check_1pinza_a0a91(check_1pinza_a0a0t(aReference));
   }
   public static SModelReference getModelReference(SModel aModel) {
-    return check_1pinza_a0a22(aModel);
+    return check_1pinza_a0a02(aModel);
   }
   public static SModuleReference getModuleReference(SModule aModule) {
-    return check_1pinza_a0a32(aModule);
+    return check_1pinza_a0a12(aModule);
   }
 
   @Deprecated
@@ -173,67 +167,67 @@ public class CommandUtil {
     return new EditableFilteringScope(searchScope);
   }
 
-  private static SNode check_1pinza_a0a0a0a0b0a0a41(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0b0a0a21(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0a0a0a0b0a0a41(SNodeReference checkedDotOperand, SRepository repository) {
+  private static SNode check_1pinza_a0a0a0a0a0b0a0a21(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0b0a0a61(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0b0a0a41(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModel check_1pinza_a0a0a0a0a0b0a0a61(SModelReference checkedDotOperand, SRepository repository) {
+  private static SModel check_1pinza_a0a0a0a0a0b0a0a41(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0b0a0a81(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0b0a0a61(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SModule check_1pinza_a0a0a0a0a0b0a0a81(SModuleReference checkedDotOperand, SRepository repository) {
+  private static SModule check_1pinza_a0a0a0a0a0b0a0a61(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-  private static SNodeReference check_1pinza_a0a02(SNode checkedDotOperand) {
+  private static SNodeReference check_1pinza_a0a81(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNodeReference check_1pinza_a0a12(SNode checkedDotOperand) {
+  private static SNodeReference check_1pinza_a0a91(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNode check_1pinza_a0a0v(SReference checkedDotOperand) {
+  private static SNode check_1pinza_a0a0t(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSourceNode();
     }
     return null;
   }
-  private static SModelReference check_1pinza_a0a22(SModel checkedDotOperand) {
+  private static SModelReference check_1pinza_a0a02(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SModuleReference check_1pinza_a0a32(SModule checkedDotOperand) {
+  private static SModuleReference check_1pinza_a0a12(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }

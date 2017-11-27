@@ -21,9 +21,6 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326896143883" name="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" flags="nn" index="0GJ7k" />
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
-      <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
-        <child id="414384289274416996" name="parts" index="3ft7WO" />
-      </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
@@ -93,10 +90,6 @@
         <child id="1136930944870" name="item" index="2QnnpI" />
       </concept>
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
-      <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
-        <child id="414384289274424750" name="condition" index="3ft5RY" />
-      </concept>
-      <concept id="414384289274418284" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition" flags="ig" index="3ft6gW" />
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
@@ -213,9 +206,6 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -848,65 +838,6 @@
         <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
       </node>
       <node concept="l2Vlx" id="4uVwhQyzpgj" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMTKn">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:6_TW7xVaDdR" resolve="PrintExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMTKp">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:5WpmwkrQrRs" resolve="PrintNodeReferenceExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMTKo">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:4LU9FcrO3Hp" resolve="PrintNodeExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMTKr">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:7gnNafF7YMD" resolve="PrintTextExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMTKq">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:6_TW7xVvrpf" resolve="PrintSequenceExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz38">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.query" />
-    <ref role="aqKnT" to="3xdn:DM6_$iqV$8" resolve="ProjectExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz37">
-    <property role="3GE5qa" value="DEPRECATED.bl" />
-    <ref role="aqKnT" to="3xdn:4Jke6BA4ffD" resolve="BLCommand_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz36">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.query.parameter" />
-    <ref role="aqKnT" to="3xdn:3J6h25QeHQy" resolve="ProjectScope_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz35">
-    <property role="3GE5qa" value="DEPRECATED.bl" />
-    <ref role="aqKnT" to="3xdn:6D0CP__oaBp" resolve="BLExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz34">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression" />
-    <ref role="aqKnT" to="3xdn:7mV0m3L$tuv" resolve="ShowExpression_old" />
-  </node>
-  <node concept="3p36aQ" id="LPhQXjMXRX">
-    <property role="3GE5qa" value="DEPRECATED.query.parameter" />
-    <ref role="aqKnT" to="3xdn:3J6h25QeHP2" resolve="GlobalScope_old" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJz2y">
-    <property role="3GE5qa" value="DEPRECATED.bl.expression.print" />
-    <ref role="aqKnT" to="3xdn:6M9lfhDDWgw" resolve="AbstractPrintExpression_old" />
-    <node concept="3ft6gV" id="1wEcoXjJz2$" role="3ft7WO">
-      <node concept="3ft6gW" id="1wEcoXjJz2_" role="3ft5RY">
-        <node concept="3clFbS" id="1wEcoXjJz2A" role="2VODD2">
-          <node concept="3clFbF" id="1wEcoXjJz2B" role="3cqZAp">
-            <node concept="3clFbT" id="1wEcoXjJz2C" role="3clFbG">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3J6h25Qa5Pj">

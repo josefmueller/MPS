@@ -12,13 +12,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAbstractPrintExpression_old = createDescriptorForAbstractPrintExpression_old();
-  /*package*/ final ConceptDescriptor myConceptBLCommand_old = createDescriptorForBLCommand_old();
-  /*package*/ final ConceptDescriptor myConceptBLExpression_old = createDescriptorForBLExpression_old();
   /*package*/ final ConceptDescriptor myConceptCustomScope = createDescriptorForCustomScope();
   /*package*/ final ConceptDescriptor myConceptCustomScope_old = createDescriptorForCustomScope_old();
   /*package*/ final ConceptDescriptor myConceptExpressionHelpProvider = createDescriptorForExpressionHelpProvider();
-  /*package*/ final ConceptDescriptor myConceptGlobalScope_old = createDescriptorForGlobalScope_old();
   /*package*/ final ConceptDescriptor myConceptHelpProvider = createDescriptorForHelpProvider();
   /*package*/ final ConceptDescriptor myConceptInstancesExpression = createDescriptorForInstancesExpression();
   /*package*/ final ConceptDescriptor myConceptModelsExpression = createDescriptorForModelsExpression();
@@ -29,13 +25,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptModulesScope_old = createDescriptorForModulesScope_old();
   /*package*/ final ConceptDescriptor myConceptNodesExpression = createDescriptorForNodesExpression();
   /*package*/ final ConceptDescriptor myConceptOperationHelpProvider = createDescriptorForOperationHelpProvider();
-  /*package*/ final ConceptDescriptor myConceptPrintExpression_old = createDescriptorForPrintExpression_old();
-  /*package*/ final ConceptDescriptor myConceptPrintNodeExpression_old = createDescriptorForPrintNodeExpression_old();
-  /*package*/ final ConceptDescriptor myConceptPrintNodeReferenceExpression_old = createDescriptorForPrintNodeReferenceExpression_old();
-  /*package*/ final ConceptDescriptor myConceptPrintSequenceExpression_old = createDescriptorForPrintSequenceExpression_old();
-  /*package*/ final ConceptDescriptor myConceptPrintTextExpression_old = createDescriptorForPrintTextExpression_old();
-  /*package*/ final ConceptDescriptor myConceptProjectExpression_old = createDescriptorForProjectExpression_old();
-  /*package*/ final ConceptDescriptor myConceptProjectScope_old = createDescriptorForProjectScope_old();
   /*package*/ final ConceptDescriptor myConceptQueryExpression = createDescriptorForQueryExpression();
   /*package*/ final ConceptDescriptor myConceptQueryExpressionScopeProvider = createDescriptorForQueryExpressionScopeProvider();
   /*package*/ final ConceptDescriptor myConceptQueryParameter = createDescriptorForQueryParameter();
@@ -47,7 +36,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReferencesExpression = createDescriptorForReferencesExpression();
   /*package*/ final ConceptDescriptor myConceptScopeParameter = createDescriptorForScopeParameter();
   /*package*/ final ConceptDescriptor myConceptScopeParameter_old = createDescriptorForScopeParameter_old();
-  /*package*/ final ConceptDescriptor myConceptShowExpression_old = createDescriptorForShowExpression_old();
   /*package*/ final ConceptDescriptor myConceptUsagesExpression = createDescriptorForUsagesExpression();
   /*package*/ final ConceptDescriptor myConceptWithStatement = createDescriptorForWithStatement();
   private final LanguageConceptSwitch myConceptIndex;
@@ -58,27 +46,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression_old, myConceptBLCommand_old, myConceptBLExpression_old, myConceptCustomScope, myConceptCustomScope_old, myConceptExpressionHelpProvider, myConceptGlobalScope_old, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelsExpression, myConceptModelsScope, myConceptModelsScope_old, myConceptModulesExpression, myConceptModulesScope, myConceptModulesScope_old, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptPrintExpression_old, myConceptPrintNodeExpression_old, myConceptPrintNodeReferenceExpression_old, myConceptPrintSequenceExpression_old, myConceptPrintTextExpression_old, myConceptProjectExpression_old, myConceptProjectScope_old, myConceptQueryExpression, myConceptQueryExpressionScopeProvider, myConceptQueryParameter, myConceptQueryParameterExact, myConceptQueryParameterIncludeReadOnly_old, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptQueryParameterScope_old, myConceptReferencesExpression, myConceptScopeParameter, myConceptScopeParameter_old, myConceptShowExpression_old, myConceptUsagesExpression, myConceptWithStatement);
+    return Arrays.asList(myConceptCustomScope, myConceptCustomScope_old, myConceptExpressionHelpProvider, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelsExpression, myConceptModelsScope, myConceptModelsScope_old, myConceptModulesExpression, myConceptModulesScope, myConceptModulesScope_old, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptQueryExpression, myConceptQueryExpressionScopeProvider, myConceptQueryParameter, myConceptQueryParameterExact, myConceptQueryParameterIncludeReadOnly_old, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptQueryParameterScope_old, myConceptReferencesExpression, myConceptScopeParameter, myConceptScopeParameter_old, myConceptUsagesExpression, myConceptWithStatement);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.AbstractPrintExpression_old:
-        return myConceptAbstractPrintExpression_old;
-      case LanguageConceptSwitch.BLCommand_old:
-        return myConceptBLCommand_old;
-      case LanguageConceptSwitch.BLExpression_old:
-        return myConceptBLExpression_old;
       case LanguageConceptSwitch.CustomScope:
         return myConceptCustomScope;
       case LanguageConceptSwitch.CustomScope_old:
         return myConceptCustomScope_old;
       case LanguageConceptSwitch.ExpressionHelpProvider:
         return myConceptExpressionHelpProvider;
-      case LanguageConceptSwitch.GlobalScope_old:
-        return myConceptGlobalScope_old;
       case LanguageConceptSwitch.HelpProvider:
         return myConceptHelpProvider;
       case LanguageConceptSwitch.InstancesExpression:
@@ -99,20 +79,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNodesExpression;
       case LanguageConceptSwitch.OperationHelpProvider:
         return myConceptOperationHelpProvider;
-      case LanguageConceptSwitch.PrintExpression_old:
-        return myConceptPrintExpression_old;
-      case LanguageConceptSwitch.PrintNodeExpression_old:
-        return myConceptPrintNodeExpression_old;
-      case LanguageConceptSwitch.PrintNodeReferenceExpression_old:
-        return myConceptPrintNodeReferenceExpression_old;
-      case LanguageConceptSwitch.PrintSequenceExpression_old:
-        return myConceptPrintSequenceExpression_old;
-      case LanguageConceptSwitch.PrintTextExpression_old:
-        return myConceptPrintTextExpression_old;
-      case LanguageConceptSwitch.ProjectExpression_old:
-        return myConceptProjectExpression_old;
-      case LanguageConceptSwitch.ProjectScope_old:
-        return myConceptProjectScope_old;
       case LanguageConceptSwitch.QueryExpression:
         return myConceptQueryExpression;
       case LanguageConceptSwitch.QueryExpressionScopeProvider:
@@ -135,8 +101,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptScopeParameter;
       case LanguageConceptSwitch.ScopeParameter_old:
         return myConceptScopeParameter_old;
-      case LanguageConceptSwitch.ShowExpression_old:
-        return myConceptShowExpression_old;
       case LanguageConceptSwitch.UsagesExpression:
         return myConceptUsagesExpression;
       case LanguageConceptSwitch.WithStatement:
@@ -150,29 +114,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForAbstractPrintExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.class_(false, true, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/7820875636626932768");
-    b.aggregate("object_old", 0x7417cca3eb1ff761L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("8365379837260461921").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBLCommand_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "BLCommand_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L);
-    b.class_(false, false, false);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/5464054275389846505");
-    b.aggregate("body_old", 0x188f8efcef6cea65L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(false).ordered(true).multiple(false).origin("1769790395579689573").done();
-    b.alias("{");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForBLExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "BLExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L);
-    b.class_(false, false, false);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/7656298970878093785");
-    b.aggregate("expression_old", 0x6a40a3596560aa42L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("7656298970878093890").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForCustomScope() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "CustomScope", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x20c897bb39bb07a9L);
     b.class_(false, false, false);
@@ -196,14 +137,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L);
     b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/7006261637496548496");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForGlobalScope_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "GlobalScope_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add42L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/4307205004134636866");
-    b.alias("global");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHelpProvider() {
@@ -288,62 +221,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/5932042262275648515");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForPrintExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "PrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b2a9377L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.parent(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x613b3dd6aa6dac90L);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/7600370246417552247");
-    b.alias("#print");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForPrintNodeExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "PrintNodeExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4c7a26b31bd03b59L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/5510759644748856153");
-    b.alias("#printNode");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForPrintNodeReferenceExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "PrintNodeReferenceExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x5f195a051bd9bddcL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/6852607286009511388");
-    b.alias("#printNodeRef");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForPrintSequenceExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "PrintSequenceExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6979f0787b7db64fL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/7600370246423000655");
-    b.alias("#printSequence");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForPrintTextExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "PrintTextExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x7417cca3eb1feca9L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.AbstractPrintExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/8365379837260459177");
-    b.alias("#printText");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForProjectExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "ProjectExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0xa721a59126bb908L);
-    b.class_(false, false, false);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/752693057587755272");
-    b.alias("#project");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForProjectScope_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "ProjectScope_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763adda2L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.smodel.query.structure.ScopeParameter_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/4307205004134636962");
-    b.alias("project");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForQueryExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "QueryExpression", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL);
     b.class_(false, true, false);
@@ -425,15 +302,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "ScopeParameter_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL);
     b.class_(false, true, false);
     b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/4307205004134636875");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForShowExpression_old() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "ShowExpression_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
-    b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/8483375838963816351");
-    b.aggregate("object_old", 0x6979f0787b81e875L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("7600370246423275637").done();
-    b.alias("#show");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUsagesExpression() {

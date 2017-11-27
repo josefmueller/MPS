@@ -9,13 +9,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_AbstractPrintExpression_old;
-  private ConceptPresentation props_BLCommand_old;
-  private ConceptPresentation props_BLExpression_old;
   private ConceptPresentation props_CustomScope;
   private ConceptPresentation props_CustomScope_old;
   private ConceptPresentation props_ExpressionHelpProvider;
-  private ConceptPresentation props_GlobalScope_old;
   private ConceptPresentation props_HelpProvider;
   private ConceptPresentation props_InstancesExpression;
   private ConceptPresentation props_ModelsExpression;
@@ -26,13 +22,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModulesScope_old;
   private ConceptPresentation props_NodesExpression;
   private ConceptPresentation props_OperationHelpProvider;
-  private ConceptPresentation props_PrintExpression_old;
-  private ConceptPresentation props_PrintNodeExpression_old;
-  private ConceptPresentation props_PrintNodeReferenceExpression_old;
-  private ConceptPresentation props_PrintSequenceExpression_old;
-  private ConceptPresentation props_PrintTextExpression_old;
-  private ConceptPresentation props_ProjectExpression_old;
-  private ConceptPresentation props_ProjectScope_old;
   private ConceptPresentation props_QueryExpression;
   private ConceptPresentation props_QueryExpressionScopeProvider;
   private ConceptPresentation props_QueryParameter;
@@ -44,7 +33,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ReferencesExpression;
   private ConceptPresentation props_ScopeParameter;
   private ConceptPresentation props_ScopeParameter_old;
-  private ConceptPresentation props_ShowExpression_old;
   private ConceptPresentation props_UsagesExpression;
   private ConceptPresentation props_WithStatement;
 
@@ -53,34 +41,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.AbstractPrintExpression_old:
-        if (props_AbstractPrintExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6c8954f469a7c420L);
-          cpb.deprecated(true);
-          cpb.deprecateAggregation(0x7417cca3eb1ff761L, "object_old");
-          props_AbstractPrintExpression_old = cpb.create();
-        }
-        return props_AbstractPrintExpression_old;
-      case LanguageConceptSwitch.BLCommand_old:
-        if (props_BLCommand_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x4bd43869e610f3e9L);
-          cpb.deprecated(true);
-          cpb.deprecateAggregation(0x188f8efcef6cea65L, "body_old");
-          cpb.shortDesc("baseLanguage statements");
-          cpb.rawPresentation("{");
-          props_BLCommand_old = cpb.create();
-        }
-        return props_BLCommand_old;
-      case LanguageConceptSwitch.BLExpression_old:
-        if (props_BLExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6a40a3596560a9d9L);
-          cpb.deprecated(true);
-          cpb.deprecateAggregation(0x6a40a3596560aa42L, "expression_old");
-          cpb.shortDesc("baseLanguage expression");
-          cpb.rawPresentation("BLExpression_old");
-          props_BLExpression_old = cpb.create();
-        }
-        return props_BLExpression_old;
       case LanguageConceptSwitch.CustomScope:
         if (props_CustomScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -104,14 +64,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ExpressionHelpProvider = cpb.create();
         }
         return props_ExpressionHelpProvider;
-      case LanguageConceptSwitch.GlobalScope_old:
-        if (props_GlobalScope_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("global");
-          props_GlobalScope_old = cpb.create();
-        }
-        return props_GlobalScope_old;
       case LanguageConceptSwitch.HelpProvider:
         if (props_HelpProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -188,68 +140,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OperationHelpProvider = cpb.create();
         }
         return props_OperationHelpProvider;
-      case LanguageConceptSwitch.PrintExpression_old:
-        if (props_PrintExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("smart print depending on content");
-          cpb.rawPresentation("#print");
-          props_PrintExpression_old = cpb.create();
-        }
-        return props_PrintExpression_old;
-      case LanguageConceptSwitch.PrintNodeExpression_old:
-        if (props_PrintNodeExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("print node copy");
-          cpb.rawPresentation("#printNode");
-          props_PrintNodeExpression_old = cpb.create();
-        }
-        return props_PrintNodeExpression_old;
-      case LanguageConceptSwitch.PrintNodeReferenceExpression_old:
-        if (props_PrintNodeReferenceExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("print reference to the node");
-          cpb.rawPresentation("#printNodeRef");
-          props_PrintNodeReferenceExpression_old = cpb.create();
-        }
-        return props_PrintNodeReferenceExpression_old;
-      case LanguageConceptSwitch.PrintSequenceExpression_old:
-        if (props_PrintSequenceExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("print size with link to usages view");
-          cpb.rawPresentation("#printSequence");
-          props_PrintSequenceExpression_old = cpb.create();
-        }
-        return props_PrintSequenceExpression_old;
-      case LanguageConceptSwitch.PrintTextExpression_old:
-        if (props_PrintTextExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("print as string");
-          cpb.rawPresentation("#printText");
-          props_PrintTextExpression_old = cpb.create();
-        }
-        return props_PrintTextExpression_old;
-      case LanguageConceptSwitch.ProjectExpression_old:
-        if (props_ProjectExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("the current project");
-          cpb.rawPresentation("#project");
-          props_ProjectExpression_old = cpb.create();
-        }
-        return props_ProjectExpression_old;
-      case LanguageConceptSwitch.ProjectScope_old:
-        if (props_ProjectScope_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("project");
-          props_ProjectScope_old = cpb.create();
-        }
-        return props_ProjectScope_old;
       case LanguageConceptSwitch.QueryExpression:
         if (props_QueryExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -330,16 +220,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ScopeParameter_old = cpb.create();
         }
         return props_ScopeParameter_old;
-      case LanguageConceptSwitch.ShowExpression_old:
-        if (props_ShowExpression_old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d79fL);
-          cpb.deprecated(true);
-          cpb.deprecateAggregation(0x6979f0787b81e875L, "object_old");
-          cpb.shortDesc("show in usage view");
-          cpb.rawPresentation("#show");
-          props_ShowExpression_old = cpb.create();
-        }
-        return props_ShowExpression_old;
       case LanguageConceptSwitch.UsagesExpression:
         if (props_UsagesExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
