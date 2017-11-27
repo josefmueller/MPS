@@ -228,7 +228,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         if (getActualCrossModelReferences().contains(modelReference)) {
           ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
               ProjectHelper.toIdeaProject(myProject), "Delete imported model",
-              "This model is used in model. Do you really what to delete it?", "Model state will become inconsistent") {
+              "This model is used in model. Do you really want to delete it?", "Model state will become inconsistent") {
             @Override
             public void doViewAction() {
               myFindActionButton.actionPerformed(null);
@@ -428,7 +428,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           if (inActualUse) {
             ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
                 ProjectHelper.toIdeaProject(myProject), "Delete used language",
-                "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+                "This language is used by model. Do you really want to delete it?", "Model state will become inconsistent") {
               @Override
               public void doViewAction() {
                 findUsages(entry);
