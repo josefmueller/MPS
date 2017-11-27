@@ -1080,7 +1080,8 @@
                           <property role="Xl_RC" value="custom" />
                         </node>
                         <node concept="asaX9" id="5C" role="lGtFl">
-                          <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+                          <property role="YLPcu" value="2018.1" />
+                          <property role="YLQ7P" value="use QueryParameterScope" />
                         </node>
                       </node>
                     </node>
@@ -1480,7 +1481,7 @@
                       <node concept="liA8E" id="84" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="85" role="37wK5m">
-                          <property role="Xl_RC" value="given models" />
+                          <property role="Xl_RC" value="specified models" />
                         </node>
                       </node>
                     </node>
@@ -1573,7 +1574,8 @@
                           <property role="Xl_RC" value="models" />
                         </node>
                         <node concept="asaX9" id="8C" role="lGtFl">
-                          <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+                          <property role="YLQ7P" value="use QueryParameterScope" />
+                          <property role="YLPcu" value="2018.1" />
                         </node>
                       </node>
                     </node>
@@ -1714,7 +1716,7 @@
                       <node concept="liA8E" id="9v" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="9w" role="37wK5m">
-                          <property role="Xl_RC" value="given modules" />
+                          <property role="Xl_RC" value="specified modules" />
                         </node>
                       </node>
                     </node>
@@ -1807,7 +1809,8 @@
                           <property role="Xl_RC" value="modules" />
                         </node>
                         <node concept="asaX9" id="a3" role="lGtFl">
-                          <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+                          <property role="YLQ7P" value="use QueryParameterScope" />
+                          <property role="YLPcu" value="2018.1" />
                         </node>
                       </node>
                     </node>
@@ -2897,7 +2900,7 @@
                         </node>
                         <node concept="asaX9" id="gE" role="lGtFl">
                           <property role="YLQ7P" value="use QueryParameterScope" />
-                          <property role="YLPcu" value="2017.3" />
+                          <property role="YLPcu" value="2018.1" />
                         </node>
                       </node>
                     </node>
@@ -3131,7 +3134,8 @@
                           <property role="Xl_RC" value="scope" />
                         </node>
                         <node concept="asaX9" id="i5" role="lGtFl">
-                          <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+                          <property role="YLQ7P" value="use QueryParameterScope" />
+                          <property role="YLPcu" value="2018.1" />
                         </node>
                       </node>
                     </node>

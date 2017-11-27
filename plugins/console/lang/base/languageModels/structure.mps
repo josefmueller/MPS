@@ -488,7 +488,7 @@
     <property role="TrG5h" value="ProjectScope" />
     <property role="34LRSv" value="project" />
     <property role="EcuMT" value="2362304834941189260" />
-    <property role="R4oN_" value="whole project" />
+    <property role="R4oN_" value="all project models" />
     <ref role="1TJDcQ" to="3xdn:238_VGTIKuy" resolve="ScopeParameter" />
   </node>
   <node concept="1TIwiD" id="238_VGTQRMM">

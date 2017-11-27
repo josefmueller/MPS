@@ -2770,7 +2770,7 @@
                       <node concept="liA8E" id="fZ" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="g0" role="37wK5m">
-                          <property role="Xl_RC" value="whole project" />
+                          <property role="Xl_RC" value="all project models" />
                         </node>
                       </node>
                     </node>

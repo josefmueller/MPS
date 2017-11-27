@@ -137,7 +137,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModelsScope:
         if (props_ModelsScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("given models");
+          cpb.shortDesc("specified models");
           cpb.rawPresentation("models");
           props_ModelsScope = cpb.create();
         }
@@ -161,7 +161,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModulesScope:
         if (props_ModulesScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("given modules");
+          cpb.shortDesc("specified modules");
           cpb.rawPresentation("modules");
           props_ModulesScope = cpb.create();
         }

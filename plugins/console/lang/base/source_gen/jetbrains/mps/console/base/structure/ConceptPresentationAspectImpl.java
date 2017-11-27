@@ -281,7 +281,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ProjectScope:
         if (props_ProjectScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("whole project");
+          cpb.shortDesc("all project models");
           cpb.rawPresentation("project");
           props_ProjectScope = cpb.create();
         }

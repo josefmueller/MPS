@@ -162,7 +162,7 @@
     <ref role="1TJDcQ" node="3J6h25Q2URP" resolve="QueryParameter" />
     <node concept="asaX9" id="238_VGTPI7q" role="lGtFl">
       <property role="YLQ7P" value="use QueryParameterScope" />
-      <property role="YLPcu" value="2017.3" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25Q6eOJ">
@@ -180,7 +180,8 @@
       <ref role="20lvS9" node="3J6h25QeHPb" resolve="ScopeParameter_old" />
     </node>
     <node concept="asaX9" id="238_VGTIKzU" role="lGtFl">
-      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+      <property role="YLQ7P" value="use QueryParameterScope" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="3J6h25QeHP2">
@@ -201,7 +202,8 @@
     <property role="EcuMT" value="4307205004134636875" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="asaX9" id="238_VGTIKzK" role="lGtFl">
-      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+      <property role="YLQ7P" value="use QueryParameterScope" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="2oWvAovDHkX">
@@ -218,7 +220,8 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="asaX9" id="238_VGTIK$4" role="lGtFl">
-      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+      <property role="YLQ7P" value="use QueryParameterScope" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Tk$xe">
@@ -235,7 +238,8 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="asaX9" id="238_VGTIK$e" role="lGtFl">
-      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+      <property role="YLQ7P" value="use QueryParameterScope" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="31Tct3Txnn9">
@@ -253,7 +257,8 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="asaX9" id="238_VGTIK$o" role="lGtFl">
-      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.smodel.query&quot;" />
+      <property role="YLPcu" value="2018.1" />
+      <property role="YLQ7P" value="use QueryParameterScope" />
     </node>
   </node>
   <node concept="PlHQZ" id="64VftqErqMg">
@@ -503,7 +508,7 @@
     <property role="TrG5h" value="ModulesScope" />
     <property role="34LRSv" value="modules" />
     <property role="EcuMT" value="2362304834939062181" />
-    <property role="R4oN_" value="given modules" />
+    <property role="R4oN_" value="specified modules" />
     <ref role="1TJDcQ" node="238_VGTIKuy" resolve="ScopeParameter" />
     <node concept="1TJgyj" id="238_VGTIKuA" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -518,7 +523,7 @@
     <property role="TrG5h" value="ModelsScope" />
     <property role="34LRSv" value="models" />
     <property role="EcuMT" value="2362304834939062183" />
-    <property role="R4oN_" value="given models" />
+    <property role="R4oN_" value="specified models" />
     <ref role="1TJDcQ" node="238_VGTIKuy" resolve="ScopeParameter" />
     <node concept="1TJgyj" id="238_VGTIKuC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
