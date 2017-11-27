@@ -789,5 +789,6 @@
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
     <orderEntry type="module" module-name="execution-languages-library" />
+    <orderEntry type="module" module-name="httpsupport" />
   </component>
 </module>

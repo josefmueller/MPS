@@ -33,7 +33,6 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="zfj2" ref="r:ebfb0797-fa90-42cb-9f6b-3e661ce06d64(jetbrains.mps.ide.httpsupport.behavior)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -4709,22 +4708,9 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpee:fz3vP1H" resolve="Type" />
       <node concept="gft3U" id="2QtnklMNr0K" role="1lVwrX">
-        <node concept="2OqwBi" id="2QtnklMNry1" role="gfFT$">
-          <node concept="2OqwBi" id="2lt1tUBvYwV" role="2Oq$k0">
-            <node concept="2YIFZM" id="2lt1tUBvYwW" role="2Oq$k0">
-              <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
-              <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="2lt1tUBvVdB" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
-            </node>
-          </node>
-          <node concept="liA8E" id="2QtnklMNscq" role="2OqNvi">
-            <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
-            <node concept="3cmrfG" id="2QtnklMNsgv" role="37wK5m">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
+        <node concept="2YIFZM" id="388YWwvT22N" role="gfFT$">
+          <ref role="37wK5l" to="ciba:388YWwvSPVf" resolve="getSomeProject" />
+          <ref role="1Pybhc" to="ciba:3OrGkZCn9ZQ" resolve="HttpSupportUtil" />
         </node>
       </node>
       <node concept="30G5F_" id="2QtnklMNnMO" role="30HLyM">

@@ -41,7 +41,7 @@ public class MissingModelImport extends ModelReportItemBase implements QuickFixR
   private final SModelReference myMissingImport;
 
   public MissingModelImport(@NotNull SModel model, @NotNull SModelReference missingImport) {
-    super(MessageStatus.WARNING, model.getReference(), String.format("Concepts from model %s are extended, but the model is not imported", model.getName().getValue()));
+    super(MessageStatus.WARNING, model.getReference(), String.format("Concepts from model %s are extended, but the model is not imported", missingImport.getModelName()));
     myMissingImport = missingImport;
   }
 

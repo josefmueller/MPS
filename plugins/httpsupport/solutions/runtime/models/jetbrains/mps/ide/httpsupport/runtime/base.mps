@@ -152,6 +152,7 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -393,7 +394,6 @@
   <node concept="312cEu" id="3OrGkZCn9ZQ">
     <property role="TrG5h" value="HttpSupportUtil" />
     <node concept="2tJIrI" id="3OrGkZCna0s" role="jymVt" />
-    <node concept="2tJIrI" id="40BYgt0aNRR" role="jymVt" />
     <node concept="2YIFZL" id="3OrGkZCna1q" role="jymVt">
       <property role="TrG5h" value="getProjectByName" />
       <node concept="3uibUv" id="3OrGkZCnaq1" role="3clF45">
@@ -491,34 +491,44 @@
                 </node>
               </node>
             </node>
-            <node concept="RRSsy" id="3jYQuSB36UC" role="3cqZAp">
-              <property role="RRSoG" value="warn" />
-              <node concept="3cpWs3" id="602uc2JODyb" role="RRSoy">
-                <node concept="Xl_RD" id="602uc2JODyt" role="3uHU7w">
-                  <property role="Xl_RC" value="' instead." />
+            <node concept="3clFbJ" id="388YWwvSVPS" role="3cqZAp">
+              <node concept="3clFbS" id="388YWwvSVPU" role="3clFbx">
+                <node concept="RRSsy" id="3jYQuSB36UC" role="3cqZAp">
+                  <property role="RRSoG" value="warn" />
+                  <node concept="3cpWs3" id="602uc2JODyb" role="RRSoy">
+                    <node concept="Xl_RD" id="602uc2JODyt" role="3uHU7w">
+                      <property role="Xl_RC" value="' instead." />
+                    </node>
+                    <node concept="3cpWs3" id="602uc2JOC13" role="3uHU7B">
+                      <node concept="3cpWs3" id="7CAL8BWt7f" role="3uHU7B">
+                        <node concept="3cpWs3" id="7CAL8BWt7g" role="3uHU7B">
+                          <node concept="Xl_RD" id="7CAL8BWt7h" role="3uHU7B">
+                            <property role="Xl_RC" value="Can't find project '" />
+                          </node>
+                          <node concept="37vLTw" id="3OrGkZCoAMH" role="3uHU7w">
+                            <ref role="3cqZAo" node="3OrGkZCnarH" resolve="name" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="7CAL8BWt7j" role="3uHU7w">
+                          <property role="Xl_RC" value="'. Using '" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="40BYgt0drvr" role="3uHU7w">
+                        <node concept="37vLTw" id="602uc2JOCi2" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7CAL8BWhzA" resolve="project" />
+                        </node>
+                        <node concept="liA8E" id="40BYgt0drCI" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node concept="3cpWs3" id="602uc2JOC13" role="3uHU7B">
-                  <node concept="3cpWs3" id="7CAL8BWt7f" role="3uHU7B">
-                    <node concept="3cpWs3" id="7CAL8BWt7g" role="3uHU7B">
-                      <node concept="Xl_RD" id="7CAL8BWt7h" role="3uHU7B">
-                        <property role="Xl_RC" value="Can't find project '" />
-                      </node>
-                      <node concept="37vLTw" id="3OrGkZCoAMH" role="3uHU7w">
-                        <ref role="3cqZAo" node="3OrGkZCnarH" resolve="name" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="7CAL8BWt7j" role="3uHU7w">
-                      <property role="Xl_RC" value="'. Using '" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="40BYgt0drvr" role="3uHU7w">
-                    <node concept="37vLTw" id="602uc2JOCi2" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7CAL8BWhzA" resolve="project" />
-                    </node>
-                    <node concept="liA8E" id="40BYgt0drCI" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
+              </node>
+              <node concept="3y3z36" id="388YWwvSXMy" role="3clFbw">
+                <node concept="10Nm6u" id="388YWwvSXNB" role="3uHU7w" />
+                <node concept="37vLTw" id="388YWwvSVVS" role="3uHU7B">
+                  <ref role="3cqZAo" node="7CAL8BWhzA" resolve="project" />
                 </node>
               </node>
             </node>
@@ -544,6 +554,49 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="1lOPnOXMciq" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="388YWwvSVwn" role="jymVt" />
+    <node concept="2YIFZL" id="388YWwvSPVf" role="jymVt">
+      <property role="TrG5h" value="getSomeProject" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="388YWwvSPVi" role="3clF47">
+        <node concept="3cpWs8" id="388YWwvSQAZ" role="3cqZAp">
+          <node concept="3cpWsn" id="388YWwvSQB2" role="3cpWs9">
+            <property role="TrG5h" value="openedProjects" />
+            <node concept="_YKpA" id="388YWwvSQAV" role="1tU5fm">
+              <node concept="3uibUv" id="388YWwvSQBz" role="_ZDj9">
+                <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="388YWwvSQ51" role="33vP2m">
+              <node concept="2YIFZM" id="388YWwvSQ2N" role="2Oq$k0">
+                <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
+                <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
+              </node>
+              <node concept="liA8E" id="388YWwvSQ81" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="388YWwvSQ0I" role="3cqZAp">
+          <node concept="2OqwBi" id="388YWwvSRfu" role="3cqZAk">
+            <node concept="37vLTw" id="388YWwvSQNe" role="2Oq$k0">
+              <ref role="3cqZAo" node="388YWwvSQB2" resolve="openedProjects" />
+            </node>
+            <node concept="1uHKPH" id="388YWwvSRzl" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="388YWwvSPPY" role="1B3o_S" />
+      <node concept="3uibUv" id="388YWwvSPUZ" role="3clF45">
+        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      </node>
+      <node concept="2AHcQZ" id="388YWwvSYnf" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>

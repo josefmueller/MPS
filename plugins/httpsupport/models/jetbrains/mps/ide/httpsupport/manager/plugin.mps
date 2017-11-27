@@ -27,6 +27,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -101,6 +102,8 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -147,11 +150,16 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -161,6 +169,7 @@
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -175,11 +184,18 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
       <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
@@ -222,6 +238,260 @@
   <node concept="312cEu" id="3xqp3A6t$Pr">
     <property role="TrG5h" value="MPSRequestManager" />
     <node concept="2tJIrI" id="5FAyHK_Ga7P" role="jymVt" />
+    <node concept="Wx3nA" id="2Zv85d0B_PJ" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="TRUSTED" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2Zv85d0B_s4" role="1B3o_S" />
+      <node concept="3uibUv" id="2Zv85d0B_Lh" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="2Zv85d0B_OM" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="2Zv85d0BAv$" role="33vP2m">
+        <node concept="1pGfFk" id="2Zv85d0BB5m" role="2ShVmc">
+          <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;(java.util.Collection)" resolve="HashSet" />
+          <node concept="3uibUv" id="2Zv85d0CJ3O" role="1pMfVU">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+          <node concept="2YIFZM" id="2Zv85d0BBvh" role="37wK5m">
+            <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
+            <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
+            <node concept="Xl_RD" id="2Zv85d0BBIQ" role="37wK5m">
+              <property role="Xl_RC" value="youtrack.jetbrains.com" />
+            </node>
+            <node concept="Xl_RD" id="2Zv85d0BC_2" role="37wK5m">
+              <property role="Xl_RC" value="teamcity.jetbrains.com" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2Zv85d0AOcq" role="jymVt" />
+    <node concept="3clFb_" id="2Zv85d0AOpQ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isAccessible" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2Zv85d0AOpR" role="1B3o_S" />
+      <node concept="10P_77" id="2Zv85d0AOpT" role="3clF45" />
+      <node concept="37vLTG" id="2Zv85d0AOpU" role="3clF46">
+        <property role="TrG5h" value="request" />
+        <node concept="3uibUv" id="2Zv85d0AOpV" role="1tU5fm">
+          <ref role="3uigEE" to="9xw8:~HttpRequest" resolve="HttpRequest" />
+        </node>
+        <node concept="2AHcQZ" id="2Zv85d0AOpW" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="2Zv85d0AOpX" role="3clF47">
+        <node concept="3SKdUt" id="4rrGGGbgFDr" role="3cqZAp">
+          <node concept="3SKdUq" id="4rrGGGbgFDt" role="3SKWNk">
+            <property role="3SKdUp" value="Do same things that super.isAccessible(request) does except that this definition " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4rrGGGbgGPd" role="3cqZAp">
+          <node concept="3SKdUq" id="4rrGGGbgGPe" role="3SKWNk">
+            <property role="3SKdUp" value="also accepts local requests that triggered by trusted hosts (not only by user directly)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4rrGGGbgIyK" role="3cqZAp">
+          <node concept="3SKdUq" id="4rrGGGbgIyM" role="3SKWNk">
+            <property role="3SKdUp" value="TODO At current stage user can not define their own trusted hosts (see MPS-27006)" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="4rrGGGbgFgb" role="3cqZAp" />
+        <node concept="3cpWs8" id="4rrGGGbg8Q8" role="3cqZAp">
+          <node concept="3cpWsn" id="4rrGGGbg8Q9" role="3cpWs9">
+            <property role="TrG5h" value="host" />
+            <node concept="3uibUv" id="4rrGGGbg8Qa" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="4rrGGGbg9jd" role="33vP2m">
+              <ref role="37wK5l" to="g1go:~NettyKt.getHost(io.netty.handler.codec.http.HttpRequest):java.lang.String" resolve="getHost" />
+              <ref role="1Pybhc" to="g1go:~NettyKt" resolve="NettyKt" />
+              <node concept="37vLTw" id="4rrGGGbg9kE" role="37wK5m">
+                <ref role="3cqZAo" node="2Zv85d0AOpU" resolve="request" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4rrGGGbg9Lj" role="3cqZAp">
+          <node concept="3clFbS" id="4rrGGGbg9Ll" role="3clFbx">
+            <node concept="3cpWs6" id="4rrGGGbgblz" role="3cqZAp">
+              <node concept="3clFbT" id="4rrGGGbgcsN" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="22lmx$" id="4rrGGGbgfmi" role="3clFbw">
+            <node concept="3fqX7Q" id="1RY0zwirMZ" role="3uHU7w">
+              <node concept="2YIFZM" id="1RY0zwirTm" role="3fr31v">
+                <ref role="37wK5l" to="g1go:~NettyKt.parseAndCheckIsLocalHost(java.lang.String):boolean" resolve="parseAndCheckIsLocalHost" />
+                <ref role="1Pybhc" to="g1go:~NettyKt" resolve="NettyKt" />
+                <node concept="3cpWs3" id="1RY0zwiybj" role="37wK5m">
+                  <node concept="Xl_RD" id="1RY0zwiyhE" role="3uHU7B">
+                    <property role="Xl_RC" value="http://" />
+                  </node>
+                  <node concept="37vLTw" id="1RY0zwirTn" role="3uHU7w">
+                    <ref role="3cqZAo" node="4rrGGGbg8Q9" resolve="host" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4rrGGGbgaBx" role="3uHU7B">
+              <node concept="37vLTw" id="4rrGGGbga99" role="2Oq$k0">
+                <ref role="3cqZAo" node="4rrGGGbg8Q9" resolve="host" />
+              </node>
+              <node concept="17RlXB" id="4rrGGGbgbi8" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4rrGGGbgcNO" role="3cqZAp" />
+        <node concept="3cpWs8" id="2Zv85d0AZ68" role="3cqZAp">
+          <node concept="3cpWsn" id="2Zv85d0AZ6b" role="3cpWs9">
+            <property role="TrG5h" value="referrer" />
+            <node concept="3uibUv" id="2Zv85d0AZ67" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="2Zv85d0AYTo" role="33vP2m">
+              <ref role="37wK5l" to="g1go:~NettyKt.getOrigin(io.netty.handler.codec.http.HttpRequest):java.lang.String" resolve="getOrigin" />
+              <ref role="1Pybhc" to="g1go:~NettyKt" resolve="NettyKt" />
+              <node concept="37vLTw" id="2Zv85d0AYY4" role="37wK5m">
+                <ref role="3cqZAo" node="2Zv85d0AOpU" resolve="request" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2Zv85d0AZke" role="3cqZAp">
+          <node concept="3clFbS" id="2Zv85d0AZkg" role="3clFbx">
+            <node concept="3clFbF" id="2Zv85d0B0_P" role="3cqZAp">
+              <node concept="37vLTI" id="2Zv85d0B0IB" role="3clFbG">
+                <node concept="2YIFZM" id="2Zv85d0B0RH" role="37vLTx">
+                  <ref role="37wK5l" to="g1go:~NettyKt.getReferrer(io.netty.handler.codec.http.HttpRequest):java.lang.String" resolve="getReferrer" />
+                  <ref role="1Pybhc" to="g1go:~NettyKt" resolve="NettyKt" />
+                  <node concept="37vLTw" id="2Zv85d0B0Si" role="37wK5m">
+                    <ref role="3cqZAo" node="2Zv85d0AOpU" resolve="request" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="2Zv85d0B0_N" role="37vLTJ">
+                  <ref role="3cqZAo" node="2Zv85d0AZ6b" resolve="referrer" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2Zv85d0AZAr" role="3clFbw">
+            <node concept="37vLTw" id="2Zv85d0AZw9" role="2Oq$k0">
+              <ref role="3cqZAo" node="2Zv85d0AZ6b" resolve="referrer" />
+            </node>
+            <node concept="17RlXB" id="2Zv85d0B0zR" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2Zv85d0B46m" role="3cqZAp">
+          <node concept="3clFbS" id="2Zv85d0B46o" role="3clFbx">
+            <node concept="3SKdUt" id="kMpyBaRj74" role="3cqZAp">
+              <node concept="3SKdUq" id="kMpyBaRj76" role="3SKWNk">
+                <property role="3SKdUp" value="refferer is local host" />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2Zv85d0B4L9" role="3cqZAp">
+              <node concept="3clFbT" id="2Zv85d0B4LF" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2Zv85d0B4qB" role="3clFbw">
+            <node concept="37vLTw" id="2Zv85d0B4kb" role="2Oq$k0">
+              <ref role="3cqZAo" node="2Zv85d0AZ6b" resolve="referrer" />
+            </node>
+            <node concept="17RlXB" id="2Zv85d0B4J7" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="4rrGGGbg7Jv" role="3cqZAp" />
+        <node concept="SfApY" id="2Zv85d0B1km" role="3cqZAp">
+          <node concept="3clFbS" id="2Zv85d0B1ko" role="SfCbr">
+            <node concept="3cpWs8" id="4rrGGGbg5pz" role="3cqZAp">
+              <node concept="3cpWsn" id="4rrGGGbg5p$" role="3cpWs9">
+                <property role="TrG5h" value="referrerHost" />
+                <node concept="3uibUv" id="4rrGGGbg5p_" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="2OqwBi" id="4rrGGGbg5pA" role="33vP2m">
+                  <node concept="2ShNRf" id="4rrGGGbg5pB" role="2Oq$k0">
+                    <node concept="1pGfFk" id="4rrGGGbg5pC" role="2ShVmc">
+                      <ref role="37wK5l" to="zf81:~URI.&lt;init&gt;(java.lang.String)" resolve="URI" />
+                      <node concept="37vLTw" id="4rrGGGbg5pD" role="37wK5m">
+                        <ref role="3cqZAo" node="2Zv85d0AZ6b" resolve="referrer" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4rrGGGbg5pE" role="2OqNvi">
+                    <ref role="37wK5l" to="zf81:~URI.getHost():java.lang.String" resolve="getHost" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="2Zv85d0BIJU" role="3cqZAp">
+              <node concept="22lmx$" id="4rrGGGbfXnr" role="3cqZAk">
+                <node concept="1Wc70l" id="4rrGGGbgi$q" role="3uHU7B">
+                  <node concept="2OqwBi" id="4rrGGGbgjit" role="3uHU7B">
+                    <node concept="37vLTw" id="4rrGGGbgknn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4rrGGGbg5p$" resolve="referrerHost" />
+                    </node>
+                    <node concept="17RvpY" id="4rrGGGbgjYg" role="2OqNvi" />
+                  </node>
+                  <node concept="2YIFZM" id="4rrGGGbfYBK" role="3uHU7w">
+                    <ref role="37wK5l" to="g1go:~NettyKt.isLocalHost(java.lang.String,boolean,boolean):boolean" resolve="isLocalHost" />
+                    <ref role="1Pybhc" to="g1go:~NettyKt" resolve="NettyKt" />
+                    <node concept="37vLTw" id="4rrGGGbfYY2" role="37wK5m">
+                      <ref role="3cqZAo" node="4rrGGGbg5p$" resolve="referrerHost" />
+                    </node>
+                    <node concept="3clFbT" id="4rrGGGbfZEI" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="3clFbT" id="4rrGGGbg0nB" role="37wK5m">
+                      <property role="3clFbU" value="false" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2Zv85d0CDN7" role="3uHU7w">
+                  <node concept="37vLTw" id="4rrGGGbg4BD" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2Zv85d0B_PJ" resolve="TRUSTED" />
+                  </node>
+                  <node concept="liA8E" id="2Zv85d0CEJG" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                    <node concept="37vLTw" id="2Zv85d0CFjp" role="37wK5m">
+                      <ref role="3cqZAo" node="4rrGGGbg5p$" resolve="referrerHost" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="2Zv85d0B1kp" role="TEbGg">
+            <node concept="3cpWsn" id="2Zv85d0B1kr" role="TDEfY">
+              <property role="TrG5h" value="e" />
+              <node concept="3uibUv" id="2Zv85d0Bef7" role="1tU5fm">
+                <ref role="3uigEE" to="zf81:~URISyntaxException" resolve="URISyntaxException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="2Zv85d0B1kv" role="TDEfX">
+              <node concept="3cpWs6" id="2Zv85d0B2Cf" role="3cqZAp">
+                <node concept="3clFbT" id="2Zv85d0B2CQ" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2Zv85d0AOpY" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2Zv85d0AOen" role="jymVt" />
     <node concept="3clFb_" id="3xqp3A6tBL6" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="isSupported" />

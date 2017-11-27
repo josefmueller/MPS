@@ -67,7 +67,7 @@ final class ChooserDialog<T> extends DialogWrapper {
           ChooserDialog.this.close(OK_EXIT_CODE);
         }
       }
-    }, ModalityState.stateForComponent(getWindow()), multiSelection);
+    }, ModalityState.any(), multiSelection);
     Disposer.register(getDisposable(), myChooser);
 
     MessageBusConnection connection = project.getMessageBus().connect();
