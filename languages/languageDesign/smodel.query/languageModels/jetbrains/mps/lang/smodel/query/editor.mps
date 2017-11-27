@@ -1460,7 +1460,7 @@
   </node>
   <node concept="24kQdi" id="238_VGTPJrO">
     <property role="3GE5qa" value="query.parameter" />
-    <ref role="1XX52x" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+    <ref role="1XX52x" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly_old" />
     <node concept="PMmxH" id="238_VGTPJrQ" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       <node concept="3nxI2P" id="238_VGTPJGO" role="3F10Kt">
@@ -1492,6 +1492,14 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="3p36aQ" id="6ZGnzY5LXxo">
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="aqKnT" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
+  </node>
+  <node concept="3p36aQ" id="6ZGnzY5LXxp">
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="aqKnT" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly_old" />
   </node>
 </model>
 

@@ -138,10 +138,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.ProjectScope_old_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryExpression_EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterList_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterScope_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterScope_old_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterScope_old_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.ScopeParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.ScopeParameter_old_Editor" />
@@ -546,14 +548,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_Editor" file="QueryParameterIncludeReadOnly_Editor.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_EditorBuilder_a" />
+  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_Editor" file="QueryParameterIncludeReadOnly_old_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_EditorBuilder_a" file="QueryParameterIncludeReadOnly_EditorBuilder_a.java">
+  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_EditorBuilder_a" file="QueryParameterIncludeReadOnly_old_EditorBuilder_a.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -565,6 +567,18 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterIncludeReadOnly_old_SubstituteMenu" file="QueryParameterIncludeReadOnly_old_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterList_Actions" file="QueryParameterList_Actions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -698,6 +712,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameterScope_old_SubstituteMenu" file="QueryParameterScope_old_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.editor.QueryParameter_Editor" file="QueryParameter_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.editor.QueryParameter_EditorBuilder_a" />

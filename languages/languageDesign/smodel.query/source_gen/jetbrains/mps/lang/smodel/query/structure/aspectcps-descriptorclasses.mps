@@ -477,7 +477,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_QueryParameterIncludeReadOnly" />
+      <property role="TrG5h" value="props_QueryParameterIncludeReadOnly_old" />
       <node concept="3uibUv" id="1z" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -2916,7 +2916,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="gH" role="37vLTJ">
-                        <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly" />
+                        <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly_old" />
                       </node>
                     </node>
                   </node>
@@ -2924,19 +2924,19 @@
                 <node concept="3clFbC" id="gk" role="3clFbw">
                   <node concept="10Nm6u" id="gK" role="3uHU7w" />
                   <node concept="37vLTw" id="gL" role="3uHU7B">
-                    <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly" />
+                    <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly_old" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="gi" role="3cqZAp">
                 <node concept="37vLTw" id="gM" role="3cqZAk">
-                  <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly" />
+                  <ref role="3cqZAo" node="u" resolve="props_QueryParameterIncludeReadOnly_old" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="gg" role="3Kbmr1">
               <ref role="1PxDUh" node="l5" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly" />
+              <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly_old" />
             </node>
           </node>
           <node concept="3KbdKl" id="2B" role="3KbHQx">
@@ -3986,7 +3986,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="QueryParameterIncludeReadOnly" />
+      <property role="TrG5h" value="QueryParameterIncludeReadOnly_old" />
       <node concept="3Tm1VV" id="na" role="1B3o_S" />
       <node concept="10Oyi0" id="nb" role="1tU5fm" />
       <node concept="3cmrfG" id="nc" role="33vP2m">
@@ -4575,7 +4575,7 @@
                 <property role="1adDun" value="0x3bc644217618ec86L" />
               </node>
               <node concept="37vLTw" id="qD" role="37wK5m">
-                <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly" />
+                <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly_old" />
               </node>
             </node>
           </node>
@@ -5141,12 +5141,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptQueryParameterIncludeReadOnly" />
+      <property role="TrG5h" value="myConceptQueryParameterIncludeReadOnly_old" />
       <node concept="3uibUv" id="u0" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="u1" role="33vP2m">
-        <ref role="37wK5l" node="sY" resolve="createDescriptorForQueryParameterIncludeReadOnly" />
+        <ref role="37wK5l" node="sY" resolve="createDescriptorForQueryParameterIncludeReadOnly_old" />
       </node>
     </node>
     <node concept="312cEg" id="se" role="jymVt">
@@ -5381,7 +5381,7 @@
               <ref role="3cqZAo" node="sc" resolve="myConceptQueryParameterExact" />
             </node>
             <node concept="37vLTw" id="v0" role="37wK5m">
-              <ref role="3cqZAo" node="sd" resolve="myConceptQueryParameterIncludeReadOnly" />
+              <ref role="3cqZAo" node="sd" resolve="myConceptQueryParameterIncludeReadOnly_old" />
             </node>
             <node concept="37vLTw" id="v1" role="37wK5m">
               <ref role="3cqZAo" node="se" resolve="myConceptQueryParameterList" />
@@ -5807,13 +5807,13 @@
             <node concept="3clFbS" id="xF" role="3Kbo56">
               <node concept="3cpWs6" id="xH" role="3cqZAp">
                 <node concept="37vLTw" id="xI" role="3cqZAk">
-                  <ref role="3cqZAo" node="sd" resolve="myConceptQueryParameterIncludeReadOnly" />
+                  <ref role="3cqZAo" node="sd" resolve="myConceptQueryParameterIncludeReadOnly_old" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="xG" role="3Kbmr1">
               <ref role="1PxDUh" node="l5" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly" />
+              <ref role="3cqZAo" node="lz" resolve="QueryParameterIncludeReadOnly_old" />
             </node>
           </node>
           <node concept="3KbdKl" id="vK" role="3KbHQx">
@@ -9765,7 +9765,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForQueryParameterIncludeReadOnly" />
+      <property role="TrG5h" value="createDescriptorForQueryParameterIncludeReadOnly_old" />
       <node concept="3clFbS" id="RO" role="3clF47">
         <node concept="3cpWs8" id="RR" role="3cqZAp">
           <node concept="3cpWsn" id="RX" role="3cpWs9">
@@ -9780,7 +9780,7 @@
                   <property role="Xl_RC" value="jetbrains.mps.lang.smodel.query" />
                 </node>
                 <node concept="Xl_RD" id="S2" role="37wK5m">
-                  <property role="Xl_RC" value="QueryParameterIncludeReadOnly" />
+                  <property role="Xl_RC" value="QueryParameterIncludeReadOnly_old" />
                 </node>
                 <node concept="1adDum" id="S3" role="37wK5m">
                   <property role="1adDun" value="0x1a8554c4eb8443baL" />

@@ -37,7 +37,7 @@ public final class LanguageConceptSwitch {
   public static final int QueryExpressionScopeProvider = 25;
   public static final int QueryParameter = 26;
   public static final int QueryParameterExact = 27;
-  public static final int QueryParameterIncludeReadOnly = 28;
+  public static final int QueryParameterIncludeReadOnly_old = 28;
   public static final int QueryParameterList = 29;
   public static final int QueryParameterScope = 30;
   public static final int QueryParameterScope_old = 31;
@@ -78,7 +78,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x7057c6c02678c07L, QueryExpressionScopeProvider);
     builder.put(0x3bc64421760badf5L, QueryParameter);
     builder.put(0x967fc67f6f09d70L, QueryParameterExact);
-    builder.put(0x3bc644217618ec86L, QueryParameterIncludeReadOnly);
+    builder.put(0x3bc644217618ec86L, QueryParameterIncludeReadOnly_old);
     builder.put(0x3bc644217616ddf9L, QueryParameterList);
     builder.put(0x20c897bb39bb07a3L, QueryParameterScope);
     builder.put(0x3bc644217618ed2fL, QueryParameterScope_old);

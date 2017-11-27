@@ -37,7 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_QueryExpressionScopeProvider;
   private ConceptPresentation props_QueryParameter;
   private ConceptPresentation props_QueryParameterExact;
-  private ConceptPresentation props_QueryParameterIncludeReadOnly;
+  private ConceptPresentation props_QueryParameterIncludeReadOnly_old;
   private ConceptPresentation props_QueryParameterList;
   private ConceptPresentation props_QueryParameterScope;
   private ConceptPresentation props_QueryParameterScope_old;
@@ -276,15 +276,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_QueryParameterExact = cpb.create();
         }
         return props_QueryParameterExact;
-      case LanguageConceptSwitch.QueryParameterIncludeReadOnly:
-        if (props_QueryParameterIncludeReadOnly == null) {
+      case LanguageConceptSwitch.QueryParameterIncludeReadOnly_old:
+        if (props_QueryParameterIncludeReadOnly_old == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("include read only");
           cpb.rawPresentation("r/o+");
-          props_QueryParameterIncludeReadOnly = cpb.create();
+          props_QueryParameterIncludeReadOnly_old = cpb.create();
         }
-        return props_QueryParameterIncludeReadOnly;
+        return props_QueryParameterIncludeReadOnly_old;
       case LanguageConceptSwitch.QueryParameterList:
         if (props_QueryParameterList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -13,11 +13,11 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-/*package*/ class QueryParameterIncludeReadOnly_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class QueryParameterIncludeReadOnly_old_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public QueryParameterIncludeReadOnly_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public QueryParameterIncludeReadOnly_old_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -29,10 +29,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
   }
 
   /*package*/ EditorCell createCell() {
-    return createComponent_mxks75_a();
+    return createComponent_bfdwp9_a();
   }
 
-  private EditorCell createComponent_mxks75_a() {
+  private EditorCell createComponent_bfdwp9_a() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
     if (bigCell != null) {
@@ -41,11 +41,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.STRIKE_OUT, true);
-    style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_mxks75_a1a());
+    style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_bfdwp9_a1a());
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private boolean _StyleParameter_QueryFunction_mxks75_a1a() {
+  private boolean _StyleParameter_QueryFunction_bfdwp9_a1a() {
     return SNodeOperations.getNextSibling(getNode()) == null && SNodeOperations.getPrevSibling(getNode()) == null;
   }
 }

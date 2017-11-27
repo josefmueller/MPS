@@ -40,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptQueryExpressionScopeProvider = createDescriptorForQueryExpressionScopeProvider();
   /*package*/ final ConceptDescriptor myConceptQueryParameter = createDescriptorForQueryParameter();
   /*package*/ final ConceptDescriptor myConceptQueryParameterExact = createDescriptorForQueryParameterExact();
-  /*package*/ final ConceptDescriptor myConceptQueryParameterIncludeReadOnly = createDescriptorForQueryParameterIncludeReadOnly();
+  /*package*/ final ConceptDescriptor myConceptQueryParameterIncludeReadOnly_old = createDescriptorForQueryParameterIncludeReadOnly_old();
   /*package*/ final ConceptDescriptor myConceptQueryParameterList = createDescriptorForQueryParameterList();
   /*package*/ final ConceptDescriptor myConceptQueryParameterScope = createDescriptorForQueryParameterScope();
   /*package*/ final ConceptDescriptor myConceptQueryParameterScope_old = createDescriptorForQueryParameterScope_old();
@@ -58,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression_old, myConceptBLCommand_old, myConceptBLExpression_old, myConceptCustomScope, myConceptCustomScope_old, myConceptExpressionHelpProvider, myConceptGlobalScope_old, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelsExpression, myConceptModelsScope, myConceptModelsScope_old, myConceptModulesExpression, myConceptModulesScope, myConceptModulesScope_old, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptPrintExpression_old, myConceptPrintNodeExpression_old, myConceptPrintNodeReferenceExpression_old, myConceptPrintSequenceExpression_old, myConceptPrintTextExpression_old, myConceptProjectExpression_old, myConceptProjectScope_old, myConceptQueryExpression, myConceptQueryExpressionScopeProvider, myConceptQueryParameter, myConceptQueryParameterExact, myConceptQueryParameterIncludeReadOnly, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptQueryParameterScope_old, myConceptReferencesExpression, myConceptScopeParameter, myConceptScopeParameter_old, myConceptShowExpression_old, myConceptUsagesExpression, myConceptWithStatement);
+    return Arrays.asList(myConceptAbstractPrintExpression_old, myConceptBLCommand_old, myConceptBLExpression_old, myConceptCustomScope, myConceptCustomScope_old, myConceptExpressionHelpProvider, myConceptGlobalScope_old, myConceptHelpProvider, myConceptInstancesExpression, myConceptModelsExpression, myConceptModelsScope, myConceptModelsScope_old, myConceptModulesExpression, myConceptModulesScope, myConceptModulesScope_old, myConceptNodesExpression, myConceptOperationHelpProvider, myConceptPrintExpression_old, myConceptPrintNodeExpression_old, myConceptPrintNodeReferenceExpression_old, myConceptPrintSequenceExpression_old, myConceptPrintTextExpression_old, myConceptProjectExpression_old, myConceptProjectScope_old, myConceptQueryExpression, myConceptQueryExpressionScopeProvider, myConceptQueryParameter, myConceptQueryParameterExact, myConceptQueryParameterIncludeReadOnly_old, myConceptQueryParameterList, myConceptQueryParameterScope, myConceptQueryParameterScope_old, myConceptReferencesExpression, myConceptScopeParameter, myConceptScopeParameter_old, myConceptShowExpression_old, myConceptUsagesExpression, myConceptWithStatement);
   }
 
   @Override
@@ -121,8 +121,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptQueryParameter;
       case LanguageConceptSwitch.QueryParameterExact:
         return myConceptQueryParameterExact;
-      case LanguageConceptSwitch.QueryParameterIncludeReadOnly:
-        return myConceptQueryParameterIncludeReadOnly;
+      case LanguageConceptSwitch.QueryParameterIncludeReadOnly_old:
+        return myConceptQueryParameterIncludeReadOnly_old;
       case LanguageConceptSwitch.QueryParameterList:
         return myConceptQueryParameterList;
       case LanguageConceptSwitch.QueryParameterScope:
@@ -373,8 +373,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("exact");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForQueryParameterIncludeReadOnly() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "QueryParameterIncludeReadOnly", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L);
+  private static ConceptDescriptor createDescriptorForQueryParameterIncludeReadOnly_old() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel.query", "QueryParameterIncludeReadOnly_old", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.smodel.query.structure.QueryParameter", 0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L);
     b.origin("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)/4307205004132412550");
