@@ -113,7 +113,11 @@ public class CreateRootNodeGroup extends BaseGroup {
       mainLanguages.add(BootstrapLanguages.getGeneratorLang());
     }
     mainLanguages.addAll(LanguageAspectSupport.getMainLanguages(targetModel));
-    mainLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(targetModel));
+    for (SLanguage lang : LanguageAspectSupport.getDefaultDevkitLanguages(targetModel)) {
+      if (!mainLanguages.contains(lang)) {
+        mainLanguages.add(lang);
+      }
+    }
     for (SLanguage mainLang : mainLanguages) {
       addActionsForRoots(mainLang, targetModel, this);
     }
