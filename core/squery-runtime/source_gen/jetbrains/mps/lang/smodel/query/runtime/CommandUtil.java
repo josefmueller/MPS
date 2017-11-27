@@ -142,9 +142,15 @@ public class CommandUtil {
     return check_1pinza_a0a32(aModule);
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static SearchScope createConsoleScope(@Nullable final SearchScope baseScope, final boolean includeReadOnly, QueryExecutionContext context) {
     SearchScope scope = (baseScope == null ? context.getDefaultSearchScope() : baseScope);
     return (includeReadOnly ? scope : new EditableFilteringScope(scope));
+  }
+
+  public static SearchScope selectScope(@Nullable final SearchScope baseScope, QueryExecutionContext context) {
+    return (baseScope == null ? context.getDefaultSearchScope() : baseScope);
   }
 
   public static SearchScope createScope(SModel model) {
