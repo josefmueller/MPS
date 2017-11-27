@@ -328,10 +328,12 @@
 
     <projectService serviceInterface="com.intellij.refactoring.listeners.RefactoringListenerManager"
                     serviceImplementation="com.intellij.refactoring.listeners.impl.RefactoringListenerManagerImpl"/>
+    -->
 
     <projectService serviceInterface="com.intellij.util.LogicalRootsManager"
                     serviceImplementation="com.intellij.util.LogicalRootsManagerImpl"/>
 
+    <!--
     <projectService serviceInterface="com.intellij.codeEditor.printing.ExportToHTMLSettings"
                     serviceImplementation="com.intellij.codeEditor.printing.ExportToHTMLSettings"/>
 
