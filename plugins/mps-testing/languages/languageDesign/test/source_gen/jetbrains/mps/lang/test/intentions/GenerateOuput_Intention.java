@@ -29,7 +29,8 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.references.ImmatureReferences;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
@@ -99,7 +100,8 @@ public final class GenerateOuput_Intention extends AbstractIntentionDescriptor i
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be5494L, "outputNodes"))).addElement(createTestNode_kwniwa_a0a0a4a0(SNodeOperations.cast(HUtil.copyIfNecessary(n), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
       }
       // we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes 
-      UndoHelper.getInstance().flushCommand();
+      ImmatureReferences.getInstance().cleanup();
+      UnregisteredNodes.instance().clear();
       TemporaryModels.getInstance().dispose(tempModel);
     }
     @Override

@@ -17,7 +17,8 @@ import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.references.ImmatureReferences;
+import jetbrains.mps.smodel.references.UnregisteredNodes;
 import java.util.Collection;
 
 public abstract class BaseMigrationTestBody extends BaseTestBody {
@@ -46,7 +47,8 @@ public abstract class BaseMigrationTestBody extends BaseTestBody {
       }
     }
     // we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes 
-    UndoHelper.getInstance().flushCommand();
+    ImmatureReferences.getInstance().cleanup();
+    UnregisteredNodes.instance().clear();
     TemporaryModels.getInstance().dispose(model);
   }
   public abstract Collection<SNode> getInputNodes();

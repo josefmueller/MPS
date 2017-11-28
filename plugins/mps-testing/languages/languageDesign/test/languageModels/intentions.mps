@@ -36,6 +36,7 @@
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
+    <import index="4szu" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.references(MPS.Core/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -1852,14 +1853,25 @@
             <property role="3SKdUp" value="we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes" />
           </node>
         </node>
-        <node concept="3clFbF" id="6dZNzDpM$Lk" role="3cqZAp">
-          <node concept="2OqwBi" id="6dZNzDpMBKr" role="3clFbG">
-            <node concept="2YIFZM" id="6dZNzDpMBg6" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
+        <node concept="3clFbF" id="3eDPCSVtdch" role="3cqZAp">
+          <node concept="2OqwBi" id="3eDPCSVtes5" role="3clFbG">
+            <node concept="2YIFZM" id="3eDPCSVte0y" role="2Oq$k0">
+              <ref role="1Pybhc" to="4szu:~ImmatureReferences" resolve="ImmatureReferences" />
+              <ref role="37wK5l" to="4szu:~ImmatureReferences.getInstance():jetbrains.mps.smodel.references.ImmatureReferences" resolve="getInstance" />
             </node>
-            <node concept="liA8E" id="6dZNzDpMChN" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~UndoHelper.flushCommand():void" resolve="flushCommand" />
+            <node concept="liA8E" id="3eDPCSVtf$J" role="2OqNvi">
+              <ref role="37wK5l" to="4szu:~ImmatureReferences.cleanup():void" resolve="cleanup" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3eDPCSVtjy0" role="3cqZAp">
+          <node concept="2OqwBi" id="3eDPCSVtktD" role="3clFbG">
+            <node concept="2YIFZM" id="3eDPCSVtjUN" role="2Oq$k0">
+              <ref role="37wK5l" to="4szu:~UnregisteredNodes.instance():jetbrains.mps.smodel.references.UnregisteredNodes" resolve="instance" />
+              <ref role="1Pybhc" to="4szu:~UnregisteredNodes" resolve="UnregisteredNodes" />
+            </node>
+            <node concept="liA8E" id="3eDPCSVtl$7" role="2OqNvi">
+              <ref role="37wK5l" to="4szu:~UnregisteredNodes.clear():void" resolve="clear" />
             </node>
           </node>
         </node>
