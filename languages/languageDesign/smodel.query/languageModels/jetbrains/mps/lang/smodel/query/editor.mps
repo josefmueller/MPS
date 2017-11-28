@@ -21,6 +21,9 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326896143883" name="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" flags="nn" index="0GJ7k" />
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
+      <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
+        <child id="414384289274416996" name="parts" index="3ft7WO" />
+      </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="6516520003787916624" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition" flags="ig" index="27VH4U" />
@@ -90,6 +93,9 @@
         <child id="1136930944870" name="item" index="2QnnpI" />
       </concept>
       <concept id="3360401466585705291" name="jetbrains.mps.lang.editor.structure.CellModel_ContextAssistant" flags="ng" index="18a60v" />
+      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
+        <reference id="697754674827630451" name="concept" index="4PJHt" />
+      </concept>
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
@@ -646,7 +652,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4KyzTfiR3Qo" role="3EZMnx">
-        <ref role="1NtTu8" to="3xdn:31Tct3TiJtC" resolve="module_old" />
+        <ref role="1NtTu8" to="3xdn:31Tct3TiJtC" resolve="modules_old" />
       </node>
       <node concept="3F0ifn" id="31Tct3Toi$L" role="3EZMnx">
         <property role="3F0ifm" value="]" />
@@ -1424,13 +1430,19 @@
       </node>
     </node>
   </node>
-  <node concept="3p36aQ" id="6ZGnzY5LXxo">
-    <property role="3GE5qa" value="query.parameter.scope.old" />
-    <ref role="aqKnT" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
-  </node>
   <node concept="3p36aQ" id="6ZGnzY5LXxp">
     <property role="3GE5qa" value="query.parameter.scope.old" />
     <ref role="aqKnT" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly_old" />
+    <node concept="3ft5Ry" id="4T7JBGSwuks" role="3ft7WO">
+      <ref role="4PJHt" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly_old" />
+    </node>
+  </node>
+  <node concept="3p36aQ" id="6ZGnzY5LXxo">
+    <property role="3GE5qa" value="query.parameter.scope.old" />
+    <ref role="aqKnT" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
+    <node concept="3ft5Ry" id="4T7JBGSwukn" role="3ft7WO">
+      <ref role="4PJHt" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope_old" />
+    </node>
   </node>
 </model>
 

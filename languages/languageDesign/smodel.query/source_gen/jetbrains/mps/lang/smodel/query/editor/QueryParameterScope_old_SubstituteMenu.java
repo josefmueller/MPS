@@ -9,6 +9,9 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -17,6 +20,20 @@ public class QueryParameterScope_old_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope_old")) {
+
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + "QueryParameterScope_old", new SNodePointer("r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.lang.smodel.query.editor)", "5640686494743127319")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
+    }, MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope_old")));
     return result;
   }
 

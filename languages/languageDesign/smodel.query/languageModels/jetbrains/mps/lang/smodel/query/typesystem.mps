@@ -813,7 +813,7 @@
                 <ref role="1YBMHb" node="31Tct3TjJCH" resolve="moduleScopeLiteral" />
               </node>
               <node concept="3TrEf2" id="4KyzTfiQUNe" role="2OqNvi">
-                <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="module_old" />
+                <ref role="3Tt5mk" to="3xdn:31Tct3TiJtC" resolve="modules_old" />
               </node>
             </node>
           </node>

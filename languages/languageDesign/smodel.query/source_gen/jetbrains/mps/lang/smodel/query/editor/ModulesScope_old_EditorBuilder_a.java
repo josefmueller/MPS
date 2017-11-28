@@ -80,14 +80,14 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
     return editorCell;
   }
   private EditorCell createRefNode_lan3wb_d0() {
-    SingleRoleCellProvider provider = new ModulesScope_old_EditorBuilder_a.module_oldSingleRoleHandler_lan3wb_d0(myNode, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old"), getEditorContext());
+    SingleRoleCellProvider provider = new ModulesScope_old_EditorBuilder_a.modules_oldSingleRoleHandler_lan3wb_d0(myNode, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old"), getEditorContext());
     return provider.createCell();
   }
-  private static class module_oldSingleRoleHandler_lan3wb_d0 extends SingleRoleCellProvider {
+  private static class modules_oldSingleRoleHandler_lan3wb_d0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public module_oldSingleRoleHandler_lan3wb_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public modules_oldSingleRoleHandler_lan3wb_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -100,8 +100,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old"), child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old"), child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old"), child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old"), child));
       installCellInfo(child, editorCell);
       return editorCell;
     }
@@ -110,19 +110,19 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old"), child));
+        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old"), child));
       }
       if (editorCell.getRole() == null) {
-        editorCell.setRole("module_old");
+        editorCell.setRole("modules_old");
       }
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old")));
       try {
         EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_module_old");
+        editorCell.setCellId("empty_modules_old");
         installCellInfo(null, editorCell);
         setCellContext(editorCell);
         return editorCell;
@@ -131,7 +131,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
       }
     }
     protected String getNoTargetText() {
-      return "<no module_old>";
+      return "<no modules_old>";
     }
   }
   private EditorCell createConstant_lan3wb_e0() {

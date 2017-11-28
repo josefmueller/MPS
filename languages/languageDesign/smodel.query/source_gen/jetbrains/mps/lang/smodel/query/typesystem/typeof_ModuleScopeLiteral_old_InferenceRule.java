@@ -21,7 +21,7 @@ public class typeof_ModuleScopeLiteral_old_InferenceRule extends AbstractInferen
   public void applyRule(final SNode moduleScopeLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(moduleScopeLiteral, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "module_old"));
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(moduleScopeLiteral, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, 0x307931d0f94af768L, "modules_old"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.lang.smodel.query.typesystem)", "5486105161151259586", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.lang.smodel.query.typesystem)", "5486105161151259588", true), (SNode) _quotation_createNode_g0m4zt_a1a2a0a0a1(), true, true, _info_12389875345);
       }
