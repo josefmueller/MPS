@@ -78,10 +78,10 @@ public class Command {
 
   private static final int DEFAULT_TIMEOUT = 5000;
 
-  private final HttpClient c;
+  private final HttpClient myHttpClient;
 
   public Command() {
-    c = new HttpClient();
+    myHttpClient = new HttpClient();
     setTimeouts(DEFAULT_TIMEOUT);
   }
 
@@ -93,10 +93,10 @@ public class Command {
    */
   public final void setTimeouts(int timeoutMillis) {
     // Final method, because called in constructor - avoiding road to hell.
-    HttpClientParams params = c.getParams();
+    HttpClientParams params = myHttpClient.getParams();
     params.setConnectionManagerTimeout(timeoutMillis);
     params.setSoTimeout(timeoutMillis);
-    c.setParams(params);
+    myHttpClient.setParams(params);
   }
 
 
@@ -108,13 +108,13 @@ public class Command {
    * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
    */
   public Response login(Query query) throws IOException {
-    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + LOGIN);
-    p.addParameter(LOGIN_PARAM_NAME, query.getUser());
-    p.addParameter(PASSWORD_PARAM_NAME, query.getPassword());
-    c.executeMethod(p);
+    PostMethod postMethod = getPostMethod(YOUTRACK_BASE_URL + LOGIN);
+    postMethod.addParameter(LOGIN_PARAM_NAME, query.getUser());
+    postMethod.addParameter(PASSWORD_PARAM_NAME, query.getPassword());
+    myHttpClient.executeMethod(postMethod);
 
-    int statusCode = p.getStatusCode();
-    String responseString = p.getResponseBodyAsString();
+    int statusCode = postMethod.getStatusCode();
+    String responseString = postMethod.getResponseBodyAsString();
     if (statusCode != 200 || !responseString.contains("ok")) {
       return new Response("Can't login into issue tracker", responseString, false, null);
     } else {
@@ -136,28 +136,28 @@ public class Command {
    */
   @NotNull
   public Response postIssue(String summary, String description, boolean hidden, File... files) throws IOException {
-    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
-    p.addParameter(PROJECT_PARAM_NAME, PROJECT);
-    p.addParameter(SUMMARY_PARAM_NAME, summary);
-    p.addParameter(DESCRIPTION_PARAM_NAME, description);
-    p.addParameter(TYPE_PARAM_NAME, EXCEPTION);
+    PostMethod postMethod = getPostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
+    postMethod.addParameter(PROJECT_PARAM_NAME, PROJECT);
+    postMethod.addParameter(SUMMARY_PARAM_NAME, summary);
+    postMethod.addParameter(DESCRIPTION_PARAM_NAME, description);
+    postMethod.addParameter(TYPE_PARAM_NAME, EXCEPTION);
     if (hidden) {
-      p.addParameter(PERMITTED_GROUP_PARAM_NAME, MPS_GROUP_NAME);
+      postMethod.addParameter(PERMITTED_GROUP_PARAM_NAME, MPS_GROUP_NAME);
     }
     if (files.length != 0) {
       List<Part> parts = new ArrayList<>();
-      for (NameValuePair nameValuePair : p.getParameters()) {
+      for (NameValuePair nameValuePair : postMethod.getParameters()) {
         parts.add(new StringPart(nameValuePair.getName(), nameValuePair.getValue()));
       }
       for (File file : files) {
         parts.add(new FilePart(file.getName(), file));
       }
-      p.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[parts.size()]), p.getParams()));
+      postMethod.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[parts.size()]), postMethod.getParams()));
     }
-    c.executeMethod(p);
+    myHttpClient.executeMethod(postMethod);
 
-    int statusCode = p.getStatusCode();
-    String responseString = p.getResponseBodyAsString();
+    int statusCode = postMethod.getStatusCode();
+    String responseString = postMethod.getResponseBodyAsString();
     if (statusCode == 200) {
       return new Response("Issue posted", responseString, true, null);
     } else {
@@ -245,12 +245,12 @@ public class Command {
    * and {@link Command#setIssueField(java.lang.String, java.lang.String, java.lang.String)}
    */
   private Response modifyIssueField(@NotNull String issueId, @NotNull String commandString, @NotNull String field, @NotNull String value) throws IOException {
-    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + String.format(ISSUE_COMMAND_FORMAT, issueId));
-    p.addParameter(commandString, String.format("%s %s", field, value));
-    c.executeMethod(p);
+    PostMethod postMethod = getPostMethod(YOUTRACK_BASE_URL + String.format(ISSUE_COMMAND_FORMAT, issueId));
+    postMethod.addParameter(commandString, String.format("%s %s", field, value));
+    myHttpClient.executeMethod(postMethod);
 
-    int statusCode = p.getStatusCode();
-    String responseString = p.getResponseBodyAsString();
+    int statusCode = postMethod.getStatusCode();
+    String responseString = postMethod.getResponseBodyAsString();
     if (statusCode == 200) {
       return new Response(RESPONSE_SUCCEEDED, responseString, true, null);
     } else {
@@ -270,7 +270,7 @@ public class Command {
   @NotNull
   public Response listVersions() throws IOException {
     GetMethod p = new GetMethod(YOUTRACK_BASE_URL + LIST_VERSIONS);
-    c.executeMethod(p);
+    myHttpClient.executeMethod(p);
 
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
@@ -308,16 +308,16 @@ public class Command {
    */
   public Response countUnresolvedIssues(Map<String, Integer> users2counts) throws IOException {
     // I read the warning regarding use of sync, but it doesn't return anything but -1 if I don't specify it.
-    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE + "counts?sync");
+    PostMethod postMethod = getPostMethod(YOUTRACK_BASE_URL + POST_ISSUE + "counts?sync");
     String fmt = "<query>project:MPS #unresolved Assignee: %s</query>\n";
     StringBuilder sb = new StringBuilder();
     users2counts.forEach((s, i) -> sb.append(String.format(fmt, s)));
     String text = String.format("<?xml version='1.0' encoding='UTF-8' standalone='yes'?>\n<queries>\n%s</queries>", sb);
-    p.setRequestEntity(new StringRequestEntity(text, "text/xml", "UTF-8"));
-    c.executeMethod(p);
+    postMethod.setRequestEntity(new StringRequestEntity(text, "text/xml", "UTF-8"));
+    myHttpClient.executeMethod(postMethod);
 
-    int statusCode = p.getStatusCode();
-    String responseString = p.getResponseBodyAsString();
+    int statusCode = postMethod.getStatusCode();
+    String responseString = postMethod.getResponseBodyAsString();
     if (statusCode == 200) {
       Response response = new Response(RESPONSE_SUCCEEDED, responseString, true, null);
       Element counts = response.getResponseXml();
@@ -340,6 +340,12 @@ public class Command {
     } else {
       return new Response(RESPONSE_FAILED, responseString, false, null);
     }
+  }
+
+  private PostMethod getPostMethod(String uri) {
+    PostMethod postMethod = new PostMethod(uri);
+    postMethod.getParams().setContentCharset("utf-8");
+    return postMethod;
   }
 
   /**
