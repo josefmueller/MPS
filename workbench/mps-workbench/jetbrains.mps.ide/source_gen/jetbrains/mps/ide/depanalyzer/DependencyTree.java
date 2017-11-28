@@ -8,7 +8,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.ide.ui.tree.TreeMessage;
 import java.awt.Color;
@@ -64,7 +64,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
     DepLink deps = new DependencyUtil(myModule.getRepository()).trackRuntime(isShowRuntime()).build(myModule);
     TextTreeNode root = new TextTreeNode(myModule.getModuleName());
-    root.setIcon(IconManager.getIconFor(myModule));
+    root.setIcon(myProject.getComponent(GlobalIconManager.class).getIconFor(myModule));
     populate(root, deps.allDependencies());
     return root;
   }
