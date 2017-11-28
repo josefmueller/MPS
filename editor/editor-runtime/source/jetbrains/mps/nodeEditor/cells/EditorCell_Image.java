@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,7 +33,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,7 +63,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     return model.getModule();
   }
 
-  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @Nullable SModule imageModule, String imagePath) {
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @NotNull SModule imageModule, String imagePath) {
     EditorCell_Image result = new EditorCell_Image(editorContext, node);
     result.setIcon(loadIcon(editorContext, imageModule, imagePath));
     return result;
@@ -162,14 +161,6 @@ public class EditorCell_Image extends EditorCell_Basic {
     myAlignment = alignment;
   }
 
-  protected void setImageFileName(String fileName) {
-    if (fileName != null && FileSystem.getInstance().getFileByPath(fileName).exists()) {
-      setImage(Toolkit.getDefaultToolkit().getImage(fileName));
-    } else {
-      setImage(null);
-    }
-  }
-
   private static Icon loadIcon(EditorContext context, SModule module, String iconPath) {
     String fullPath = MacrosFactory.forModule((AbstractModule) module).expandPath(iconPath);
     if (fullPath == null) {
@@ -179,14 +170,6 @@ public class EditorCell_Image extends EditorCell_Basic {
       ourIconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
     }
     return ourIconCache.get(fullPath);
-  }
-
-  @Nullable
-  private static AbstractModule toAbstractModule(SModule module) {
-    if (!(module instanceof AbstractModule)) {
-      return null;
-    }
-    return (AbstractModule) module;
   }
 
   protected void setImage(Image image) {
