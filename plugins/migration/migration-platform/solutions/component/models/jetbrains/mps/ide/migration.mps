@@ -4793,6 +4793,20 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="p14_OrrV3_" role="3cqZAp">
+            <node concept="2OqwBi" id="p14_OrrV3A" role="3clFbG">
+              <node concept="1rXfSq" id="p14_OrrV3B" role="2Oq$k0">
+                <ref role="37wK5l" to="o8ag:cQNMA1F9hm" resolve="getRequiredSteps" />
+              </node>
+              <node concept="liA8E" id="p14_OrrV3C" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                <node concept="Rm8GO" id="p14_OrrWlD" role="37wK5m">
+                  <ref role="Rm8GQ" to="o8ag:cQNMA1EOlP" resolve="RESAVE" />
+                  <ref role="1Px2BO" to="o8ag:cQNMA1ENsh" resolve="MigrationSession.MigrationStepKind" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="3ciAo9GojPk" role="3cqZAp">
             <node concept="2OqwBi" id="3ciAo9Gokps" role="3clFbG">
               <node concept="1rXfSq" id="3ciAo9GojPi" role="2Oq$k0">

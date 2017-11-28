@@ -92,6 +92,7 @@ public class AntTaskExecutionUtil {
       myProject = project;
       this.myChecker = new MigrationCheckerImpl(myProject, getMigrationRegistry());
       this.myExecutor = new MigrationExecutorImpl(myProject);
+      getRequiredSteps().add(MigrationSession.MigrationStepKind.RESAVE);
       getRequiredSteps().add(MigrationSession.MigrationStepKind.MIGRATE);
     }
     public Project getProject() {
