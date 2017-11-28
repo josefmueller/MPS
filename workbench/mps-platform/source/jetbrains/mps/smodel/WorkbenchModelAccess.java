@@ -272,10 +272,10 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               clearRepositoryStateCaches();
-              myWriteActionDispatcher.run(new CommandRunnable(() -> {
-                r.run();
+              myWriteActionDispatcher.run(() -> {
+                new CommandRunnable(r, project).run();
                 lockGranted.set(true);
-              }, project));
+              });
             } finally {
               getWriteLock().unlock();
             }
