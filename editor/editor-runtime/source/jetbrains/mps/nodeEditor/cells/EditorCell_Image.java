@@ -37,8 +37,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EditorCell_Image extends EditorCell_Basic {
-  private static Map<String, Icon> ourIconCache = new HashMap<String, Icon>();
-
   private ImageAlignment myAlignment = ImageAlignment.justify;
   private Icon myIcon;
 
@@ -166,10 +164,12 @@ public class EditorCell_Image extends EditorCell_Basic {
     if (fullPath == null) {
       return null;
     }
-    if (!ourIconCache.containsKey(fullPath)){
-      ourIconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
+    jetbrains.mps.nodeEditor.EditorContext ec = (jetbrains.mps.nodeEditor.EditorContext) context;
+    Map<String, Icon> iconCache = ec.getIconCache();
+    if (!iconCache.containsKey(fullPath)){
+      iconCache.put(fullPath, IconLoadHelper.loadIcon(fullPath));
     }
-    return ourIconCache.get(fullPath);
+    return iconCache.get(fullPath);
   }
 
   protected void setImage(Image image) {
@@ -184,7 +184,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     return myIcon;
   }
 
-  public static enum ImageAlignment {
+  public enum ImageAlignment {
     justify, center, title;
   }
 }

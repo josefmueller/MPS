@@ -47,7 +47,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import javax.swing.Icon;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev
@@ -62,6 +65,8 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   private EditorCell myContextCell;
   private IPerformanceTracer myPerformanceTracer = null;
+
+  private Map<String, Icon> myIconCache = new HashMap<String, Icon>();
 
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;
@@ -358,8 +363,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myEditorManager;
   }
 
+  public Map<String, Icon> getIconCache() {
+    return myIconCache;
+  }
+
   void reset() {
     myEditorManager = null;
+    myIconCache.clear();
   }
 
   @Nullable
