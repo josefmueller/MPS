@@ -153,9 +153,6 @@ http://www.w3c.org
 Java API for handling Windows ini file format
 http://ini4j.sourceforge.net/index.html
 
-LZ4 Java
-https://github.com/lz4/lz4-java
-
 Trilead SSH
 http://www.trilead.com/SSH_Library/
 
