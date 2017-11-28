@@ -1837,9 +1837,6 @@
                     <ref role="355D3u" to="gbdf:3NXJmdrmJUd" resolve="iconPath" />
                   </node>
                   <node concept="1Q80Hx" id="5xzMQBRCzi2" role="37wK5m" />
-                  <node concept="3clFbT" id="5xzMQBRCzi4" role="37wK5m">
-                    <property role="3clFbU" value="false" />
-                  </node>
                 </node>
               </node>
             </node>

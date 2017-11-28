@@ -4617,9 +4617,6 @@
                         <ref role="355D3u" to="tpc2:g_ubRTz" resolve="imageFile" />
                       </node>
                       <node concept="1Q80Hx" id="yYW$qszV2R" role="37wK5m" />
-                      <node concept="3clFbT" id="yYW$qszVX$" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
                     </node>
                   </node>
                 </node>

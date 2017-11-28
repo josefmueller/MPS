@@ -20,13 +20,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystems;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFileUtils;
 import java.awt.Dimension;
 import java.beans.PropertyChangeListener;
 import javax.swing.ImageIcon;
@@ -40,7 +36,7 @@ public class EditorUtil {
   }
 
 
-  public static JComponent createSelectIconButton(final SNode sourceNode, final SProperty property, final EditorContext context, boolean copy) {
+  public static JComponent createSelectIconButton(final SNode sourceNode, final SProperty property, final EditorContext context) {
     final AbstractModule module = (AbstractModule) sourceNode.getModel().getModule();
 
     return createSelectButton(sourceNode, property, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
@@ -51,13 +47,10 @@ public class EditorUtil {
       public String invoke(String shortPath) {
         return check_3m4h3r_a0a5a2a3(MacrosFactory.forModule(module), shortPath);
       }
-    }, copy);
-  }
-  public static JComponent createSelectButton(final SNode sourceNode, final SProperty property, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
-    return createSelectButton(sourceNode, property, context, files, shrinkPath, expandPath, false);
+    });
   }
 
-  public static JComponent createSelectButton(final SNode sourceNode, final SProperty property, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath, final boolean copy) {
+  public static JComponent createSelectButton(final SNode sourceNode, final SProperty property, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
     String filename = expandPath.invoke(SNodeAccessUtil.getProperty(sourceNode, property));
     final File baseFile = (filename == null ? null : new File(filename));
     final JButton button = new JButton();
@@ -81,30 +74,16 @@ public class EditorUtil {
           return;
         }
 
-        final Wrappers._T<IFile> result = new Wrappers._T<IFile>(FileSystems.getDefault().getFile(fileChooser.getSelectedFile().getAbsolutePath()));
-        if (result.value == null) {
+        IFile result = FileSystems.getDefault().getFile(fileChooser.getSelectedFile().getAbsolutePath());
+        if (result == null) {
           return;
         }
 
         ModelAccess modelAccess = context.getRepository().getModelAccess();
-        if (copy) {
-          modelAccess.runWriteAction(new Runnable() {
-            public void run() {
-              SModel model = sourceNode.getModel();
-              String outputRoot = ((AbstractModule) model.getModule()).getModuleSourceDir().getPath() + File.separator + "icons";
-              IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
 
-              // copy 
-              String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(result.value.getPath());
-              IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
+        // copying 
 
-              IFileUtils.copyFileContent(sourceFile, outputRootFile.getDescendant(sourceFile.getName()));
-              result.value = outputRootFile.getDescendant(sourceFile.getName());
-            }
-          });
-        }
-
-        final String pathToShow = shrinkPath.invoke(result.value.getPath());
+        final String pathToShow = shrinkPath.invoke(result.getPath());
         modelAccess.executeCommand(new Runnable() {
           @Override
           public void run() {
