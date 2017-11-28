@@ -1487,6 +1487,12 @@
             <ref role="3bR37D" to="ffeo:ymnOULAU1u" resolve="jetbrains.mps.lang.test.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6u$z$Fpn$ZZ" role="3bR37C">
+          <node concept="3bR9La" id="6u$z$Fpn_00" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="4BLpc15ezHv" role="2G$12L">
         <property role="BnDLt" value="true" />
