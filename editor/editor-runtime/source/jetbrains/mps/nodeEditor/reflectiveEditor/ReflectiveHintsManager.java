@@ -15,18 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.List;
 
 public class ReflectiveHintsManager {
 
@@ -50,15 +45,5 @@ public class ReflectiveHintsManager {
 
   public static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {
     return ReflectiveCellContextUtil.shouldShowReflectiveEditor(cellContext);
-  }
-
-  public static void update(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
-                            EditorComponent editorComponent, AnActionEvent event) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).update(event);
-  }
-
-  public static void execute(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
-                             EditorComponent editorComponent) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).execute();
   }
 }

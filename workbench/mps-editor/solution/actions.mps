@@ -11915,8 +11915,8 @@
       <node concept="3clFbS" id="5SnwAr0vAmB" role="2VODD2">
         <node concept="3clFbF" id="4bgbsETQLyR" role="3cqZAp">
           <node concept="2YIFZM" id="4bgbsETQLNB" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <node concept="2OqwBi" id="53U8lVt3ohH" role="37wK5m">
               <node concept="2WthIp" id="53U8lVt3ohK" role="2Oq$k0" />
               <node concept="1DTwFV" id="53U8lVt3ohM" role="2OqNvi">
@@ -11943,8 +11943,8 @@
       <node concept="3clFbS" id="3Qgx5JLFdoN" role="2VODD2">
         <node concept="3clFbF" id="3Qgx5JLFduI" role="3cqZAp">
           <node concept="2YIFZM" id="3Qgx5JLFjiD" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
             <node concept="2OqwBi" id="3Qgx5JLFjiE" role="37wK5m">
               <node concept="2WthIp" id="3Qgx5JLFjiF" role="2Oq$k0" />
               <node concept="1DTwFV" id="3Qgx5JLFjiG" role="2OqNvi">
@@ -12067,8 +12067,8 @@
       <node concept="3clFbS" id="1XfowaweGRj" role="2VODD2">
         <node concept="3clFbF" id="4bgbsETQPvN" role="3cqZAp">
           <node concept="2YIFZM" id="4bgbsETQPvO" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <node concept="2OqwBi" id="53U8lVt3qZ3" role="37wK5m">
               <node concept="2WthIp" id="53U8lVt3qZ6" role="2Oq$k0" />
               <node concept="1DTwFV" id="53U8lVt3qZ8" role="2OqNvi">
@@ -12093,8 +12093,8 @@
       <node concept="3clFbS" id="3Qgx5JLFklz" role="2VODD2">
         <node concept="3clFbF" id="3Qgx5JLFkru" role="3cqZAp">
           <node concept="2YIFZM" id="3Qgx5JLFktQ" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
             <node concept="2OqwBi" id="3Qgx5JLFktR" role="37wK5m">
               <node concept="2WthIp" id="3Qgx5JLFktS" role="2Oq$k0" />
               <node concept="1DTwFV" id="3Qgx5JLFktT" role="2OqNvi">
@@ -12257,8 +12257,8 @@
       <node concept="3clFbS" id="6KvCG2PRuPV" role="2VODD2">
         <node concept="3clFbF" id="4bgbsETQVN1" role="3cqZAp">
           <node concept="2YIFZM" id="4bgbsETQVUA" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <node concept="2OqwBi" id="4bgbsETQVUB" role="37wK5m">
               <node concept="2WthIp" id="4bgbsETQVUC" role="2Oq$k0" />
               <node concept="1DTwFV" id="4bgbsETQVUD" role="2OqNvi">
@@ -12285,8 +12285,8 @@
       <node concept="3clFbS" id="3Qgx5JLFjCd" role="2VODD2">
         <node concept="3clFbF" id="3Qgx5JLFjI8" role="3cqZAp">
           <node concept="2YIFZM" id="3Qgx5JLFjYK" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
             <node concept="2OqwBi" id="3Qgx5JLFjYL" role="37wK5m">
               <node concept="2WthIp" id="3Qgx5JLFjYM" role="2Oq$k0" />
               <node concept="1DTwFV" id="3Qgx5JLFjYN" role="2OqNvi">
@@ -12330,8 +12330,8 @@
       <node concept="3clFbS" id="1ptS745ppO" role="2VODD2">
         <node concept="3clFbF" id="4bgbsETR12g" role="3cqZAp">
           <node concept="2YIFZM" id="4bgbsETR12h" role="3clFbG">
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.execute(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent):void" resolve="execute" />
             <node concept="2OqwBi" id="4bgbsETR12i" role="37wK5m">
               <node concept="2WthIp" id="4bgbsETR12j" role="2Oq$k0" />
               <node concept="1DTwFV" id="4bgbsETR12k" role="2OqNvi">
@@ -12356,8 +12356,8 @@
       <node concept="3clFbS" id="3Qgx5JLFkOI" role="2VODD2">
         <node concept="3clFbF" id="3Qgx5JLFkUD" role="3cqZAp">
           <node concept="2YIFZM" id="3Qgx5JLFkX1" role="3clFbG">
-            <ref role="37wK5l" to="vq9d:~ReflectiveHintsManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-            <ref role="1Pybhc" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            <ref role="1Pybhc" to="vq9d:~ReflectiveEditorActionManager" resolve="ReflectiveEditorActionManager" />
+            <ref role="37wK5l" to="vq9d:~ReflectiveEditorActionManager.update(java.util.List,boolean,boolean,jetbrains.mps.openapi.editor.EditorComponent,com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
             <node concept="2OqwBi" id="3Qgx5JLFkX2" role="37wK5m">
               <node concept="2WthIp" id="3Qgx5JLFkX3" role="2Oq$k0" />
               <node concept="1DTwFV" id="3Qgx5JLFkX4" role="2OqNvi">
