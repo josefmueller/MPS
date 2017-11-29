@@ -92,6 +92,9 @@ public class Solution extends ReloadableModuleBase {
         jdkPackages.includeWithPrefix("java.");
         jdkPackages.includeWithPrefix("javax.");
         jdkPackages.includeWithPrefix("org.");
+        // java fx (from ext/jfxrt.jar)
+        jdkPackages.includeWithPrefix("javafx.");
+        jdkPackages.includeWithPrefix("netscape.javascript.");
         // sun.awt used in mbeddr
         jdkPackages.includeWithPrefix("sun.awt.");
         psc = jdkPackages;

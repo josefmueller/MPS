@@ -83,11 +83,15 @@ public final class CommonPaths {
   }
 
   public static List<String> getJDKPath() {
-    return itemToPath(getJDKClassPath());
+    List<String> result = itemToPath(getJDKClassPath());
+    if (SystemInfo.isJavaVersionAtLeast("1.7")) {
+      result.addAll(getJDK_JavaFXPath());
+    }
+    return result;
   }
 
-  private static List<String> getJDK_ToolsPath() {
-    String jarLocation = getJarFileLocation("com.sun.jdi.Field");
+  private static List<String> getJDK_jarPath(@NotNull String classFQName) {
+    String jarLocation = getJarFileLocation(classFQName);
     if (jarLocation != null) {
       File file = new File(jarLocation);
       if (file.exists()) {
@@ -95,6 +99,14 @@ public final class CommonPaths {
       }
     }
     return Collections.emptyList();
+  }
+
+  private static List<String> getJDK_ToolsPath() {
+    return getJDK_jarPath("com.sun.jdi.Field");
+  }
+
+  private static List<String> getJDK_JavaFXPath() {
+    return getJDK_jarPath("javafx.animation.Animation");
   }
 
   private static String getJarFileLocation(@NotNull String classFQName) {
