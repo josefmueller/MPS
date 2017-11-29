@@ -17,18 +17,23 @@ package jetbrains.mps.nodeEditor.reflectiveEditor;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.selection.Selection;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
 public class ReflectiveEditorActionManager {
-  public static void update(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
-                            EditorComponent editorComponent, AnActionEvent event) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).update(event);
+  public static void update(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent, AnActionEvent event) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree(editorComponent)).update(event);
   }
 
-  public static void execute(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree,
-                             EditorComponent editorComponent) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).execute();
+  public static void execute(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree(editorComponent)).execute();
+  }
+
+  private static boolean isForSubtree(EditorComponent editorComponent) {
+    Selection selection = editorComponent.getSelectionManager().getSelection();
+    return !(selection.getSelectedCells().get(0) instanceof EditorCell_Label);
   }
 }
