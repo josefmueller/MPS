@@ -171,15 +171,16 @@
       <node id="8654290870483603112" at="22,72,23,22" concept="0" />
       <node id="8654290870483603001" at="23,22,24,22" concept="0" />
       <node id="8654290870483603208" at="24,22,25,22" concept="0" />
-      <node id="8654290870483603132" at="25,22,26,22" concept="0" />
+      <node id="6252282388788980693" at="25,22,26,22" concept="0" />
+      <node id="8654290870483603132" at="26,22,27,22" concept="0" />
       <node id="8654290870483602994" at="12,0,17,0" concept="1" trace="test_QueryParameterList_Add2#()V" />
-      <node id="8654290870483602994" at="20,0,28,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="8654290870483602994" at="20,0,29,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="8654290870483602994" at="13,63,15,122" />
       <scope id="8654290870483602994" at="12,0,17,0" />
-      <scope id="8654290870483602994" at="21,51,26,22" />
-      <scope id="8654290870483602994" at="20,0,28,0" />
-      <unit id="8654290870483602994" at="18,0,29,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Add2_Test$TestBody" />
-      <unit id="8654290870483602994" at="10,0,30,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Add2_Test" />
+      <scope id="8654290870483602994" at="21,51,27,22" />
+      <scope id="8654290870483602994" at="20,0,29,0" />
+      <unit id="8654290870483602994" at="18,0,30,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Add2_Test$TestBody" />
+      <unit id="8654290870483602994" at="10,0,31,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Add2_Test" />
     </file>
   </root>
   <root nodeRef="r:ef2abb2b-cc5a-4776-8085-7767c2890554(jetbrains.mps.lang.smodel.query.test.editorTest@tests)/8654290870483604232">

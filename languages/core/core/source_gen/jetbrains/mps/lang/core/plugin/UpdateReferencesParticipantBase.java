@@ -191,9 +191,9 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
         progressMonitor.start("References in current project", 1);
         usages = (Set<SReference>) FindUsagesFacade.getInstance().findUsages(searchScope, SetSequence.fromSetWithValues(new HashSet<SNode>(), movedNodes), progressMonitor.subTask(1));
       } else {
-        progressMonitor.start("References in current project", Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).count());
+        progressMonitor.start("References in current project", Sequence.fromIterable(CommandUtil.references(CommandUtil.selectScope(null, context))).count());
         usages = CollectionSequence.fromCollection(new ArrayList<SReference>());
-        for (SReference ref : Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context)))) {
+        for (SReference ref : Sequence.fromIterable(CommandUtil.references(CommandUtil.selectScope(null, context)))) {
           if (ListSequence.fromList(initialStates).select(new ISelector<UpdateReferencesParticipantBase.NodeData<T>, SNodeReference>() {
             public SNodeReference select(UpdateReferencesParticipantBase.NodeData<T> it) {
               return it.baseData().reference();

@@ -32,7 +32,7 @@ public class SetGenRequiredToEmptyAspects extends BaseProjectMigration {
       final Wrappers._T<Iterable<SModel>> modelsToClean = new Wrappers._T<Iterable<SModel>>();
       project.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          modelsToClean.value = Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).ofType(Language.class).translate(new ITranslator2<Language, SModel>() {
+          modelsToClean.value = Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).ofType(Language.class).translate(new ITranslator2<Language, SModel>() {
             public Iterable<SModel> translate(Language it) {
               return it.getModels();
             }

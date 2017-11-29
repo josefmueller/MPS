@@ -1022,7 +1022,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
           return scope;
         }
       };
-      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7b0da3c650be8558L, "jetbrains.mps.lang.smodel.structure.AsNodeOperation"), false)).select(new ISelector<SNode, Problem>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7b0da3c650be8558L, "jetbrains.mps.lang.smodel.structure.AsNodeOperation"), false)).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
           return ((Problem) new NotMigratedNode(it) {
             public String getMessage() {
@@ -1031,7 +1031,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
           });
         }
       }));
-      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), false)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           SNode p = SNodeOperations.as(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
           if (p == null) {
@@ -1048,7 +1048,7 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
           });
         }
       }));
-      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), false)).select(new ISelector<SNode, Problem>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL, "jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation"), false)).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
           return ((Problem) new NotMigratedNode(it) {
             public String getMessage() {

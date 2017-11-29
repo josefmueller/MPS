@@ -33,7 +33,7 @@ public class RemoveHistoryFiles extends BaseProjectMigration {
           return scope;
         }
       };
-      Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ModelRoot>() {
+      Iterable<IFile> histFiles = Sequence.fromIterable(CommandUtil.modules(CommandUtil.selectScope(null, context))).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, ModelRoot>() {
         public Iterable<ModelRoot> translate(AbstractModule it) {
           return it.getModelRoots();
         }

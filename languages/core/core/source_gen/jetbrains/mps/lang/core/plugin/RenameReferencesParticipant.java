@@ -71,9 +71,9 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
       final SNode movingNode = initialState.resolve(repository);
       Collection<SReference> usages;
       if (movingNode != null) {
-        usages = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), movingNode);
+        usages = CommandUtil.usages(CommandUtil.selectScope(null, context), movingNode);
       } else {
-        usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SReference>() {
+        usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return eq_xv67ae_a0a0a0a0a0a0a0a4a1a8(it.getTargetNodeReference(), initialState);
           }

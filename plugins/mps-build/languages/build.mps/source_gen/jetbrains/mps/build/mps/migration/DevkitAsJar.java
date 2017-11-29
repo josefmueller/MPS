@@ -38,7 +38,7 @@ public class DevkitAsJar extends MigrationScriptBase {
           return scope;
         }
       };
-      for (SNode dk : CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), false)) {
+      for (SNode dk : CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), false)) {
         if (SLinkOperations.getTarget(dk, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")) == null) {
           continue;
         }

@@ -39,7 +39,7 @@ public class RemoveDeprecated_CellModelCollection_Properties extends MigrationSc
           return scope;
         }
       };
-      for (SModel model : Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context)))) {
+      for (SModel model : Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context)))) {
         ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             if (SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical")) && SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")) == null) {

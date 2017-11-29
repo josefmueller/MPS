@@ -45,7 +45,7 @@ public class RemoveOldActionStyles extends MigrationScriptBase {
           return scope;
         }
       };
-      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), false)).where(new IWhereFilter<SNode>() {
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return CommentUtil.isCommentedOut(it) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) == null);
         }
@@ -58,7 +58,7 @@ public class RemoveOldActionStyles extends MigrationScriptBase {
           SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), true, false));
         }
       });
-      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), false)).where(new IWhereFilter<SNode>() {
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return CommentUtil.isCommentedOut(it) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) == null);
         }
@@ -72,7 +72,7 @@ public class RemoveOldActionStyles extends MigrationScriptBase {
           SNodeOperations.deleteNode(SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), true, false));
         }
       });
-      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), false)).where(new IWhereFilter<SNode>() {
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           if (!((CommentUtil.isCommentedOut(it) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart"))).isEmpty() && eq_yhtva5_a0a0a0a0a0a0a0e0a0d(getContainingLink(it), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor"))))) {
             return false;

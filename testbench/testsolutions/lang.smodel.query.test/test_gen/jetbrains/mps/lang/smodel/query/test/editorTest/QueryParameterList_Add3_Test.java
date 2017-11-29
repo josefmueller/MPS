@@ -19,8 +19,8 @@ public class QueryParameterList_Add3_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("8654290870483604242", "8654290870483604233");
-      typeString("r");
+      initEditorComponent("6252282388788986399", "6252282388788986407");
+      typeString("e");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }

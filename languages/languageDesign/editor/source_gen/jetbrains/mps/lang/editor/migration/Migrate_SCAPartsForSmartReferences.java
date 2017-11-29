@@ -47,7 +47,7 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
           return scope;
         }
       };
-      Collection<SNode> SCAs = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), false);
+      Collection<SNode> SCAs = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), false);
 
       for (SNode sca : CollectionSequence.fromCollection(SCAs)) {
         final SNode conceptNode = SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept"));

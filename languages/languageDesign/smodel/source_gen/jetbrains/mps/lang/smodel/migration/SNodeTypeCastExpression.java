@@ -42,7 +42,7 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
           return scope;
         }
       };
-      Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")));
         }
@@ -51,7 +51,7 @@ public class SNodeTypeCastExpression extends MigrationScriptBase {
           RefactoringRuntime.changeContainmentLinkInstance(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression_old"), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression"));
         }
       });
-      Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+      Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression")));
         }
@@ -86,7 +86,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2__yield_ccrblf_a0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._2__yield_ccrblf_a0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression")));
                           }
@@ -108,7 +108,7 @@ __switch__:
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        this._6__yield_ccrblf_b0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SNode>() {
+                        this._6__yield_ccrblf_b0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"))) && SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, "jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression")));
                           }

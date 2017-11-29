@@ -19,11 +19,12 @@ public class QueryParameterList_Add2_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("8654290870483603042", "8654290870483602997");
-      typeString("r");
-      typeString("/");
-      typeString("o");
-      typeString("+");
+      initEditorComponent("6252282388788980291", "6252282388788980685");
+      typeString("e");
+      typeString("x");
+      typeString("a");
+      typeString("c");
+      typeString("t");
     }
   }
 }

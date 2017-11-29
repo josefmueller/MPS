@@ -37,7 +37,7 @@ public class RemoveDeprecated_CellModelListWithRole_Properties extends Migration
           return scope;
         }
       };
-      for (SModel model : Sequence.fromIterable(CommandUtil.models(CommandUtil.createConsoleScope(null, false, context)))) {
+      for (SModel model : Sequence.fromIterable(CommandUtil.models(CommandUtil.selectScope(null, context)))) {
         ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"))).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             SPropertyOperations.set(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02faL, "vertical"), null);

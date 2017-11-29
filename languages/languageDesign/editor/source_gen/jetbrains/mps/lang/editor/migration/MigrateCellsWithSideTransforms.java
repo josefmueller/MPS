@@ -47,12 +47,12 @@ public class MigrateCellsWithSideTransforms extends MigrationScriptBase {
           return scope;
         }
       };
-      Iterable<SNode> notMigratedAnchorTags = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), false)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> notMigratedAnchorTags = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) != null);
         }
       });
-      Iterable<SNode> notMigratedApplySideTransforms = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), false)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> notMigratedApplySideTransforms = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, "jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation"))) != null);
         }

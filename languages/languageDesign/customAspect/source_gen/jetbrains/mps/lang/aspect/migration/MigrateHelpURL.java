@@ -42,7 +42,7 @@ public class MigrateHelpURL extends MigrationScriptBase {
           return scope;
         }
       };
-      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.OldHelpURL"), false)).visitAll(new IVisitor<SNode>() {
+      CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.OldHelpURL"), false)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor"))) {
             SLinkOperations.setTarget(SNodeOperations.cast(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor")), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"), _quotation_createNode_glsjld_a0a0a0a0a0a0a6(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url"))));
@@ -61,7 +61,7 @@ public class MigrateHelpURL extends MigrationScriptBase {
           return scope;
         }
       };
-      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.OldHelpURL"), false)).select(new ISelector<SNode, Problem>() {
+      return CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.OldHelpURL"), false)).select(new ISelector<SNode, Problem>() {
         public Problem select(SNode it) {
           return ((Problem) new DeprecatedConceptNotMigratedProblem(it));
         }

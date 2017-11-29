@@ -55,7 +55,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
       };
       SCAs = extractSCAs(m);
 
-      Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
+      Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
 
       for (final SNode conceptNode : CollectionSequence.fromCollection(conceptNodes)) {
         SNode smartRefAttribute = SmartRefAttributeUtil.extractAttribute(conceptNode);

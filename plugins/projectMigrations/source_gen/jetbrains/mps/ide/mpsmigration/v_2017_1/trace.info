@@ -70,7 +70,7 @@
         <var name="project" id="3701865296871042765" />
       </scope>
       <unit id="3701865296871042770" at="27,48,31,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$1" />
-      <unit id="3701865296871042787" at="35,166,39,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2$1" />
+      <unit id="3701865296871042787" at="35,152,39,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2$1" />
       <unit id="3701865296871133866" at="39,23,43,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2$2" />
       <unit id="2840424593938849083" at="47,124,51,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$3" />
       <unit id="2840424593938149480" at="33,65,45,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.SetGenRequiredToEmptyAspects$2" />
@@ -146,7 +146,7 @@
         <var name="project" id="4140180342946030865" />
       </scope>
       <unit id="4140180342946106171" at="31,42,35,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$1" />
-      <unit id="2395946271875943794" at="36,174,40,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$2" />
+      <unit id="2395946271875943794" at="36,160,40,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$2" />
       <unit id="4140180342946156605" at="40,51,44,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$3" />
       <unit id="2395946271875984068" at="44,19,48,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$4" />
       <unit id="2395946271876042152" at="48,23,52,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$5" />

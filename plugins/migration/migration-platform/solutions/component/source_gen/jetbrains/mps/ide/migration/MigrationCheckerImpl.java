@@ -222,7 +222,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
               return scope;
             }
           };
-          for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), false)).where(new IWhereFilter<SNode>() {
+          for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return ((boolean) (Boolean) BHReflection.invoke0(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), SMethodTrimmedId.create("showInResults", null, "29O0pTxWdmG")));
             }

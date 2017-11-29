@@ -98,8 +98,8 @@
       </scope>
       <unit id="4726480899534874488" at="40,42,44,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$1" />
       <unit id="5462094956389986746" at="59,42,63,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$3" />
-      <unit id="5462094956389993827" at="64,286,68,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$4" />
-      <unit id="4726480899534889999" at="45,281,52,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$2" />
+      <unit id="5462094956389993827" at="64,272,68,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$4" />
+      <unit id="4726480899534889999" at="45,267,52,7" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL$2" />
       <unit id="4726480899534872883" at="25,0,83,0" name="jetbrains.mps.lang.aspect.migration.MigrateHelpURL" />
     </file>
   </root>
@@ -200,10 +200,10 @@
       <unit id="6590130501506363832" at="44,426,48,11" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$2$1" />
       <unit id="6590130501506405509" at="51,438,55,11" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$2$2" />
       <unit id="7680625225107058292" at="65,42,69,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$3" />
-      <unit id="7680625225107057704" at="70,305,74,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$4" />
+      <unit id="7680625225107057704" at="70,291,74,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$4" />
       <unit id="7680625225107381904" at="76,32,80,11" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$5$1" />
       <unit id="7680625225107062094" at="74,20,82,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$5" />
-      <unit id="6590130501506297872" at="42,301,58,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$2" />
+      <unit id="6590130501506297872" at="42,287,58,7" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference$2" />
       <unit id="6106419185511752382" at="22,0,90,0" name="jetbrains.mps.lang.aspect.migration.MigrateLanguageReference" />
     </file>
   </root>

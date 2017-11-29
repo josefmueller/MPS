@@ -107,10 +107,10 @@
         <var name="m" id="209204644145733812" />
       </scope>
       <unit id="209204644145733812" at="38,42,42,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$1" />
-      <unit id="209204644145733812" at="43,111,47,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$2" />
+      <unit id="209204644145733812" at="43,97,47,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$2" />
       <unit id="209204644145733812" at="47,22,51,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$3" />
       <unit id="209204644145733812" at="58,48,62,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$4" />
-      <unit id="209204644145733812" at="65,122,69,11" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$5$1" />
+      <unit id="209204644145733812" at="65,108,69,11" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$5$1" />
       <unit id="209204644145733812" at="69,23,73,11" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$5$2" />
       <unit id="209204644145733812" at="73,24,77,11" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$5$3" />
       <unit id="209204644145733812" at="63,38,79,7" name="jetbrains.mps.lang.extension.migration.ExtensionPoint_name$5" />
@@ -1027,11 +1027,11 @@
       <unit id="1654718075369661232" at="286,614,290,15" name="jetbrains.mps.lang.extension.migration.migrateExtension$24$2$7" />
       <unit id="1654718075369729517" at="290,30,294,15" name="jetbrains.mps.lang.extension.migration.migrateExtension$24$2$8" />
       <unit id="7363351619057182368" at="306,42,310,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$25" />
-      <unit id="6948371848611517378" at="311,338,315,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$26" />
-      <unit id="6948371848611571888" at="316,335,320,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$27" />
-      <unit id="6948371848611572992" at="321,343,325,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$28" />
-      <unit id="6948371848611573932" at="326,341,330,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$29" />
-      <unit id="6948371848611574972" at="331,339,335,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$30" />
+      <unit id="6948371848611517378" at="311,324,315,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$26" />
+      <unit id="6948371848611571888" at="316,321,320,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$27" />
+      <unit id="6948371848611572992" at="321,329,325,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$28" />
+      <unit id="6948371848611573932" at="326,327,330,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$29" />
+      <unit id="6948371848611574972" at="331,325,335,7" name="jetbrains.mps.lang.extension.migration.migrateExtension$30" />
       <unit id="7363351619057217549" at="337,57,342,5" name="jetbrains.mps.lang.extension.migration.migrateExtension$31" />
       <unit id="4174378934472474540" at="186,25,196,15" name="jetbrains.mps.lang.extension.migration.migrateExtension$18$1$1" />
       <unit id="1654718075369002973" at="135,17,148,11" name="jetbrains.mps.lang.extension.migration.migrateExtension$12$2" />

@@ -443,12 +443,12 @@
       <unit id="1703835097133380239" at="145,18,149,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$17" />
       <unit id="1703835097133380239" at="157,52,161,11" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$18$1" />
       <unit id="1703835097132832256" at="168,42,172,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$19" />
-      <unit id="1703835097132988084" at="173,294,177,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$20" />
-      <unit id="7613853987897844662" at="178,295,182,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$21" />
+      <unit id="1703835097132988084" at="173,280,177,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$20" />
+      <unit id="7613853987897844662" at="178,281,182,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$21" />
       <unit id="6195529124561621279" at="190,42,194,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$22" />
-      <unit id="7613853987897818853" at="195,325,199,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$23" />
+      <unit id="7613853987897818853" at="195,311,199,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$23" />
       <unit id="7613853987897818839" at="201,32,205,11" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$24$1" />
-      <unit id="7613853987897820254" at="208,326,212,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$25" />
+      <unit id="7613853987897820254" at="208,312,212,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$25" />
       <unit id="7613853987897820240" at="214,32,218,11" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$26$1" />
       <unit id="1703835097132997994" at="230,69,234,5" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$27" />
       <unit id="7613853987897818832" at="199,20,207,7" name="jetbrains.mps.lang.behavior.migration.MigrateStaticBehaviorThisAndSuper$24" />

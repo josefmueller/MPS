@@ -20,7 +20,7 @@ public class QueryParameterList_Delete6_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("4624377012799018919", "4624377012799019229");
+      initEditorComponent("4624377012799018919", "6252282388788988084");
       EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");

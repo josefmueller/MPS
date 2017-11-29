@@ -696,13 +696,13 @@
       </scope>
       <unit id="3897914186546516631" at="64,245,68,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$MigrationScriptRef$1" />
       <unit id="2770867049911125639" at="101,42,105,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$1" />
-      <unit id="2770867049911208109" at="107,330,111,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$2" />
+      <unit id="2770867049911208109" at="107,316,111,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$2" />
       <unit id="4969018317724184838" at="114,204,118,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$3$1" />
       <unit id="4969018317724217121" at="123,206,127,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$4$1" />
       <unit id="2770867049911465209" at="130,80,134,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$5" />
       <unit id="2770867049910416892" at="72,0,80,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$WriteSubconceptMigrationParticipant_extension" />
-      <unit id="4969018317724012910" at="112,340,120,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$3" />
-      <unit id="4969018317724217113" at="121,330,129,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$4" />
+      <unit id="4969018317724012910" at="112,326,120,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$3" />
+      <unit id="4969018317724217113" at="121,316,129,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$4" />
       <unit id="8071787975458913310" at="137,146,147,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$6$1" />
       <unit id="2770867049912316086" at="168,189,179,3" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$7" />
       <unit id="2770867049911664218" at="135,190,150,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant$6" />
@@ -753,7 +753,7 @@
       <node id="3628660716135353438" at="51,117,52,466" concept="4" />
       <node id="3628660716135353459" at="55,5,56,69" concept="9" />
       <node id="3628660716135353459" at="58,52,59,23" concept="10" />
-      <node id="3628660716135353461" at="61,8,62,200" concept="10" />
+      <node id="3628660716135353461" at="61,8,62,186" concept="10" />
       <node id="3628660716135353491" at="65,95,66,82" concept="4" />
       <node id="2705977012592163011" at="68,79,69,63" concept="9" />
       <node id="2705977012592163011" at="69,63,70,235" concept="9" />
@@ -800,7 +800,7 @@
       <scope id="3628660716135353345" at="33,0,40,0">
         <var name="movingNode" id="3628660716135353350" />
       </scope>
-      <scope id="3628660716135353459" at="55,5,62,200">
+      <scope id="3628660716135353459" at="55,5,62,186">
         <var name="context" id="3628660716135353459" />
         <var name="scope" id="3628660716135353459" />
       </scope>
@@ -854,7 +854,7 @@
       <node id="3628660716135449925" at="58,127,59,487" concept="4" />
       <node id="3628660716135449946" at="62,5,63,69" concept="9" />
       <node id="3628660716135449946" at="65,52,66,23" concept="10" />
-      <node id="3628660716135449948" at="68,8,69,196" concept="10" />
+      <node id="3628660716135449948" at="68,8,69,182" concept="10" />
       <node id="3628660716135449966" at="72,101,73,81" concept="4" />
       <node id="7217668918195679990" at="75,79,76,63" concept="9" />
       <node id="7217668918195679990" at="76,63,77,235" concept="9" />
@@ -905,7 +905,7 @@
       <scope id="3628660716135449832" at="35,0,42,0">
         <var name="movingNode" id="3628660716135449837" />
       </scope>
-      <scope id="3628660716135449946" at="62,5,69,196">
+      <scope id="3628660716135449946" at="62,5,69,182">
         <var name="context" id="3628660716135449946" />
         <var name="scope" id="3628660716135449946" />
       </scope>
@@ -958,7 +958,7 @@
       <node id="3628660716135496576" at="53,128,54,481" concept="4" />
       <node id="3628660716135496597" at="57,5,58,69" concept="9" />
       <node id="3628660716135496597" at="60,52,61,23" concept="10" />
-      <node id="3628660716135496599" at="63,8,64,196" concept="10" />
+      <node id="3628660716135496599" at="63,8,64,182" concept="10" />
       <node id="3628660716135496617" at="67,97,68,80" concept="4" />
       <node id="2705977012592173715" at="70,79,71,63" concept="9" />
       <node id="2705977012592173715" at="71,63,72,235" concept="9" />
@@ -1005,7 +1005,7 @@
       <scope id="3628660716135496467" at="34,0,41,0">
         <var name="movingNode" id="3628660716135496472" />
       </scope>
-      <scope id="3628660716135496597" at="57,5,64,196">
+      <scope id="3628660716135496597" at="57,5,64,182">
         <var name="context" id="3628660716135496597" />
         <var name="scope" id="3628660716135496597" />
       </scope>
@@ -2124,7 +2124,7 @@
       <unit id="5431366779095019865" at="83,260,87,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization$1" />
       <unit id="3286233802021801511" at="89,242,93,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization$2" />
       <unit id="7544716099134688608" at="102,42,106,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization$3" />
-      <unit id="7544716099134562356" at="107,178,111,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization$4" />
+      <unit id="7544716099134562356" at="107,164,111,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization$4" />
       <unit id="5632889823467559538" at="41,0,147,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization" />
     </file>
   </root>

@@ -30,7 +30,7 @@
       <node id="1110928002290223181" at="35,17,36,16" concept="10" />
       <node id="1110928002290397037" at="39,5,40,59" concept="9" />
       <node id="1110928002290397037" at="42,52,43,23" concept="10" />
-      <node id="6537222822500053456" at="45,8,46,266" concept="9" />
+      <node id="6537222822500053456" at="45,8,46,252" concept="9" />
       <node id="1110928002290228947" at="48,41,49,191" concept="10" />
       <node id="6537222822500059352" at="52,46,53,188" concept="10" />
       <node id="6537222822500065764" at="57,41,58,194" concept="10" />
@@ -165,7 +165,7 @@
       <node id="6537222822499848785" at="125,0,132,0" concept="8" trace="migrateEditorCellModels#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
       <node id="4862225818732375014" at="146,0,153,0" concept="8" trace="isChildOfNotEmptyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2420890806621138250" at="256,0,263,0" concept="8" trace="replaceNodeWithNotEmptyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6537222822500005201" at="46,266,55,9" concept="4" />
+      <node id="6537222822500005201" at="46,252,55,9" concept="4" />
       <node id="6537222822500065757" at="55,9,64,9" concept="4" />
       <node id="6537222822500069530" at="64,9,73,9" concept="4" />
       <node id="6537222822500084564" at="73,9,82,9" concept="4" />
@@ -573,7 +573,7 @@
         <var name="cellModel" id="1265112845350134233" />
       </scope>
       <unit id="1265112845350115501" at="40,42,44,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$1" />
-      <unit id="1265112845350411814" at="45,308,49,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$2" />
+      <unit id="1265112845350411814" at="45,294,49,7" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell$2" />
       <unit id="1265112845350114910" at="25,0,127,0" name="jetbrains.mps.lang.editor.migration.Migrate_EditorCellModelShowIfConditionsToEmptyCell" />
     </file>
   </root>
@@ -725,8 +725,8 @@
       <node id="3017733173186501878" at="41,42,42,207" concept="9" />
       <node id="3017733173186517179" at="43,5,44,59" concept="9" />
       <node id="3017733173186517179" at="46,52,47,23" concept="10" />
-      <node id="3017733173186518296" at="49,8,50,276" concept="9" />
-      <node id="3017733173186519047" at="50,276,51,0" concept="12" />
+      <node id="3017733173186518296" at="49,8,50,262" concept="9" />
+      <node id="3017733173186519047" at="50,262,51,0" concept="12" />
       <node id="3160346131750038159" at="52,65,53,195" concept="9" />
       <node id="3160346131750049995" at="53,195,54,0" concept="12" />
       <node id="3160346131749982124" at="54,0,55,81" concept="9" />
@@ -890,7 +890,7 @@
         <var name="m" id="306079339724313756" />
       </scope>
       <unit id="306079339724322822" at="34,42,38,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$1" />
-      <unit id="306079339724331675" at="39,317,43,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$2" />
+      <unit id="306079339724331675" at="39,303,43,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$2" />
       <unit id="306079339724347910" at="44,61,48,7" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform$3" />
       <unit id="306079339724313756" at="19,0,56,0" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform" />
     </file>
@@ -969,7 +969,7 @@
         <var name="parameter_1" id="3488897807489464516" />
       </scope>
       <unit id="3488897807489437464" at="37,42,41,7" name="jetbrains.mps.lang.editor.migration.Migrate_ReplaceChild_Params$1" />
-      <unit id="3488897807489437487" at="42,313,46,7" name="jetbrains.mps.lang.editor.migration.Migrate_ReplaceChild_Params$2" />
+      <unit id="3488897807489437487" at="42,299,46,7" name="jetbrains.mps.lang.editor.migration.Migrate_ReplaceChild_Params$2" />
       <unit id="3488897807489430390" at="22,0,72,0" name="jetbrains.mps.lang.editor.migration.Migrate_ReplaceChild_Params" />
     </file>
   </root>
@@ -995,7 +995,7 @@
       <node id="3564773582599019702" at="30,0,34,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3564773582599020832" at="36,59,41,8" concept="9" />
       <node id="3564773582599020845" at="44,0,54,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3564773582599020838" at="42,124,54,11" concept="4" />
+      <node id="3564773582599020838" at="42,110,54,11" concept="4" />
       <node id="3564773582599020834" at="41,8,55,7" concept="6" />
       <node id="3564773582599020832" at="34,42,56,5" concept="1" />
       <node id="3564773582599019702" at="34,0,58,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
@@ -1017,7 +1017,7 @@
       <scope id="3564773582599020845" at="44,0,54,0">
         <var name="it" id="3564773582599020845" />
       </scope>
-      <scope id="3564773582599020837" at="42,124,54,11" />
+      <scope id="3564773582599020837" at="42,110,54,11" />
       <scope id="3564773582599020834" at="41,8,55,7">
         <var name="model" id="3564773582599020835" />
       </scope>
@@ -1107,8 +1107,8 @@
         <var name="m" id="3841328616808513432" />
       </scope>
       <unit id="8525549501910192759" at="45,42,49,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$1" />
-      <unit id="1017604582913415771" at="50,339,54,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$2" />
-      <unit id="1017604582913419373" at="55,349,59,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$3" />
+      <unit id="1017604582913415771" at="50,325,54,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$2" />
+      <unit id="1017604582913419373" at="55,335,59,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$3" />
       <unit id="1017604582913425105" at="60,131,64,7" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms$4" />
       <unit id="3841328616808513432" at="24,0,75,0" name="jetbrains.mps.lang.editor.migration.MigrateCellsWithSideTransforms" />
     </file>
@@ -1265,15 +1265,15 @@
         <var name="m" id="4193262598833432576" />
       </scope>
       <unit id="128095057705324499" at="43,42,47,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$1" />
-      <unit id="128095057705328744" at="48,299,52,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$2" />
-      <unit id="4193262598833487767" at="61,300,65,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$4" />
+      <unit id="128095057705328744" at="48,285,52,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$2" />
+      <unit id="4193262598833487767" at="61,286,65,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$4" />
       <unit id="4170858035587458278" at="81,516,85,11" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$6$1" />
       <unit id="4170858035587458289" at="85,191,89,11" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$6$2" />
       <unit id="4170858035587609729" at="90,447,94,11" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$6$3" />
       <unit id="4193262598833706159" at="98,22,102,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$7" />
       <unit id="128095057705344041" at="52,22,60,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$3" />
       <unit id="4193262598833487775" at="65,22,74,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$5" />
-      <unit id="4193262598833706151" at="75,281,98,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$6" />
+      <unit id="4193262598833706151" at="75,267,98,7" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles$6" />
       <unit id="4193262598833432576" at="28,0,130,0" name="jetbrains.mps.lang.editor.migration.RemoveOldActionStyles" />
     </file>
   </root>
@@ -1285,7 +1285,7 @@
       <node id="4197767647585368956" at="30,17,31,16" concept="10" />
       <node id="4197767647585376350" at="34,5,35,59" concept="9" />
       <node id="4197767647585376350" at="37,52,38,23" concept="10" />
-      <node id="4197767647585382154" at="40,8,41,261" concept="9" />
+      <node id="4197767647585382154" at="40,8,41,247" concept="9" />
       <node id="4197767647585978042" at="42,61,43,308" concept="9" />
       <node id="4197767647585998127" at="43,308,44,190" concept="9" />
       <node id="4197767647585984790" at="44,190,45,106" concept="9" />
@@ -1348,7 +1348,7 @@
       <node id="4197767647587360887" at="90,0,104,0" concept="8" trace="extractMenuPart_ReferentPrimary#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4197767647587205954" at="58,0,80,11" concept="7" />
       <node id="4197767647586009815" at="46,0,81,9" concept="7" />
-      <node id="4197767647585388787" at="41,261,82,7" concept="6" />
+      <node id="4197767647585388787" at="41,247,82,7" concept="6" />
       <node id="4197767647585376350" at="33,42,83,5" concept="1" />
       <node id="4197767647585368956" at="33,0,85,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <scope id="4197767647585368956" at="22,30,23,64" />
@@ -1418,7 +1418,7 @@
         <var name="link" id="4197767647585998128" />
         <var name="refPresentation" id="4197767647585984793" />
       </scope>
-      <scope id="4197767647585388787" at="41,261,82,7">
+      <scope id="4197767647585388787" at="41,247,82,7">
         <var name="refCell" id="4197767647585388789" />
       </scope>
       <scope id="4197767647585376350" at="34,5,82,7">
@@ -3020,7 +3020,7 @@
         <var name="conceptToCounter" id="7597557897619167251" />
       </scope>
       <unit id="562388756450537283" at="80,42,84,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$1" />
-      <unit id="8810661107103759389" at="85,330,89,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$2" />
+      <unit id="8810661107103759389" at="85,316,89,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$2" />
       <unit id="6251423184563197312" at="270,141,274,7" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$3" />
       <unit id="7597557897617994990" at="335,0,372,0" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper$CellKey" />
       <unit id="562388756448624010" at="43,0,462,0" name="jetbrains.mps.lang.editor.migration.CellsWithSideTransformMigrationHelper" />
@@ -3037,8 +3037,8 @@
       <node id="7229159395332312470" at="52,52,53,23" concept="10" />
       <node id="2911380662349939763" at="55,8,56,28" concept="4" />
       <node id="2911380662349936994" at="56,28,57,0" concept="12" />
-      <node id="2115302367868201278" at="57,0,58,271" concept="9" />
-      <node id="2115302367868200249" at="58,271,59,0" concept="12" />
+      <node id="2115302367868201278" at="57,0,58,257" concept="9" />
+      <node id="2115302367868200249" at="58,257,59,0" concept="12" />
       <node id="1782525708519661708" at="60,87,61,86" concept="9" />
       <node id="3017733173183764617" at="62,42,63,28" concept="9" />
       <node id="3017733173183781777" at="63,28,64,120" concept="9" />
@@ -3328,7 +3328,7 @@
       <node id="8031857714602312808" at="28,0,32,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8031857714602415118" at="42,0,46,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8031857714602641587" at="34,59,39,8" concept="9" />
-      <node id="8031857714602331452" at="40,124,46,11" concept="4" />
+      <node id="8031857714602331452" at="40,110,46,11" concept="4" />
       <node id="8031857714602330734" at="39,8,47,7" concept="6" />
       <node id="8031857714602641587" at="32,42,48,5" concept="1" />
       <node id="8031857714602312808" at="32,0,50,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
@@ -3348,7 +3348,7 @@
       <scope id="8031857714602415118" at="42,0,46,0">
         <var name="it" id="8031857714602415118" />
       </scope>
-      <scope id="8031857714602330740" at="40,124,46,11" />
+      <scope id="8031857714602330740" at="40,110,46,11" />
       <scope id="8031857714602330734" at="39,8,47,7">
         <var name="model" id="8031857714602330736" />
       </scope>

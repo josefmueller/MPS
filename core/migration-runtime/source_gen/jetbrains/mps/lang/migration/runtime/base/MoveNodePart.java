@@ -44,9 +44,9 @@ public class MoveNodePart {
         }
       };
       if (targetFromNode != null) {
-        references = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), targetFromNode);
+        references = CommandUtil.usages(CommandUtil.selectScope(null, context), targetFromNode);
       } else {
-        references = CommandUtil.references(CommandUtil.createConsoleScope(null, false, context));
+        references = CommandUtil.references(CommandUtil.selectScope(null, context));
       }
     }
     return Sequence.fromIterable(references).where(new IWhereFilter<SReference>() {

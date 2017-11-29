@@ -228,9 +228,9 @@
         <var name="m" id="6471305449341895792" />
       </scope>
       <unit id="6471305449341994323" at="40,42,44,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$1" />
-      <unit id="1304837983361840720" at="45,282,49,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$2" />
+      <unit id="1304837983361840720" at="45,268,49,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$2" />
       <unit id="5462094956390018376" at="62,42,66,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$4" />
-      <unit id="5462094956390011137" at="67,289,71,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$5" />
+      <unit id="5462094956390011137" at="67,275,71,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$5" />
       <unit id="5462094956390014897" at="71,20,75,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$6" />
       <unit id="1304837983361845061" at="49,22,55,7" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration$3" />
       <unit id="6471305449341895792" at="25,0,90,0" name="jetbrains.mps.lang.test.migration.MigrationTestCase_migration" />
