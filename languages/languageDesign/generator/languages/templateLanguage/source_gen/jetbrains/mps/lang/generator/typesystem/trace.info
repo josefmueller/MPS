@@ -21,7 +21,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,141,0" name="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,145,0" name="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/1178562976720">
@@ -1749,6 +1749,78 @@
         <var name="typeCheckingContext" id="5659786285834495241" />
       </scope>
       <unit id="5659786285834495241" at="15,0,35,0" name="jetbrains.mps.lang.generator.typesystem.typeof_TemplateParameterDeclaration_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/6495695326613132490">
+    <file name="check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule.java">
+      <node id="6495695326613150774" at="28,123,29,56" concept="11" />
+      <node id="6495695326613150792" at="30,24,31,13" concept="12" />
+      <node id="6495695326613150794" at="32,5,33,39" concept="11" />
+      <node id="6495695326613150808" at="34,41,35,13" concept="12" />
+      <node id="6495695326613151335" at="36,5,37,0" concept="14" />
+      <node id="6495695326613151352" at="38,184,39,13" concept="12" />
+      <node id="6495695326613151121" at="40,5,41,0" concept="14" />
+      <node id="6495695326613151279" at="43,39,44,247" concept="12" />
+      <node id="6495695326613151308" at="48,39,49,247" concept="12" />
+      <node id="6495695326613151358" at="53,7,54,60" concept="11" />
+      <node id="6495695326613151358" at="54,60,55,392" concept="11" />
+      <node id="6495695326613132490" at="59,50,60,153" concept="12" />
+      <node id="6495695326613132490" at="62,68,63,102" concept="12" />
+      <node id="6495695326613132490" at="65,30,66,17" concept="12" />
+      <node id="6495695326613132490" at="26,0,28,0" concept="3" trace="check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule#()V" />
+      <node id="6495695326613150783" at="29,56,32,5" concept="9" />
+      <node id="6495695326613147309" at="33,39,36,5" concept="9" />
+      <node id="6495695326613151337" at="37,0,40,5" concept="9" />
+      <node id="6495695326613151277" at="43,0,46,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6495695326613151306" at="48,0,51,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6495695326613132490" at="59,0,62,0" concept="10" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6495695326613132490" at="62,0,65,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="6495695326613132490" at="65,0,68,0" concept="10" trace="overrides#()Z" />
+      <node id="6495695326613151358" at="52,58,56,7" concept="1" />
+      <node id="6495695326613151268" at="41,0,46,253" concept="11" />
+      <node id="6495695326613151297" at="46,253,51,406" concept="11" />
+      <node id="6495695326613151132" at="51,406,57,5" concept="9" />
+      <node id="6495695326613132490" at="28,0,59,0" concept="10" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="6495695326613132490" at="26,85,26,85" />
+      <scope id="6495695326613150784" at="30,24,31,13" />
+      <scope id="6495695326613147311" at="34,41,35,13" />
+      <scope id="6495695326613151338" at="38,184,39,13" />
+      <scope id="6495695326613151278" at="43,39,44,247" />
+      <scope id="6495695326613151307" at="48,39,49,247" />
+      <scope id="6495695326613132490" at="59,50,60,153" />
+      <scope id="6495695326613132490" at="62,68,63,102" />
+      <scope id="6495695326613132490" at="65,30,66,17" />
+      <scope id="6495695326613132490" at="26,0,28,0" />
+      <scope id="6495695326613151358" at="53,7,55,392">
+        <var name="_reporter_2309309498" id="6495695326613151358" />
+        <var name="errorTarget" id="6495695326613151358" />
+      </scope>
+      <scope id="6495695326613151277" at="43,0,46,0">
+        <var name="it" id="6495695326613151277" />
+      </scope>
+      <scope id="6495695326613151306" at="48,0,51,0">
+        <var name="it" id="6495695326613151306" />
+      </scope>
+      <scope id="6495695326613132490" at="59,0,62,0" />
+      <scope id="6495695326613132490" at="62,0,65,0">
+        <var name="argument" id="6495695326613132490" />
+      </scope>
+      <scope id="6495695326613132490" at="65,0,68,0" />
+      <scope id="6495695326613151133" at="52,58,56,7" />
+      <scope id="6495695326613132491" at="28,123,57,5">
+        <var name="classifierInTemplate" id="6495695326613151298" />
+        <var name="expressionInTemplate" id="6495695326613151269" />
+        <var name="model" id="6495695326613150775" />
+        <var name="module" id="6495695326613150795" />
+      </scope>
+      <scope id="6495695326613132490" at="28,0,59,0">
+        <var name="expression" id="6495695326613132490" />
+        <var name="status" id="6495695326613132490" />
+        <var name="typeCheckingContext" id="6495695326613132490" />
+      </scope>
+      <unit id="6495695326613151277" at="42,125,46,5" name="jetbrains.mps.lang.generator.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$1" />
+      <unit id="6495695326613151306" at="47,278,51,5" name="jetbrains.mps.lang.generator.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule$2" />
+      <unit id="6495695326613132490" at="25,0,69,0" name="jetbrains.mps.lang.generator.typesystem.check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/6636694971610575434">
