@@ -43,8 +43,6 @@
     <import index="5b0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.presentation(MPS.Core/)" />
     <import index="ryx4" ref="r:cb40950c-9102-4caf-8d31-b0388f359313(jetbrains.mps.kernel.language)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
-    <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" implicit="true" />
-    <import index="tpfj" ref="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" implicit="true" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
@@ -2652,7 +2650,7 @@
       </node>
       <node concept="3F0ifn" id="fDs9fzf" role="3EZMnx">
         <property role="3F0ifm" value="(" />
-        <ref role="1k5W1q" to="tpc5:hY9fg1G" resolve="LeftParenAfterName" />
+        <ref role="1k5W1q" node="hY9fg1G" resolve="LeftParenAfterName" />
         <node concept="2SqB2G" id="2VygjZZ9BrL" role="2SqHTX">
           <property role="TrG5h" value="leftParen" />
         </node>
@@ -2672,7 +2670,7 @@
       </node>
       <node concept="3F0ifn" id="fDs9fz8" role="3EZMnx">
         <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" to="tpfj:hFCSUmN" resolve="RightParen" />
+        <ref role="1k5W1q" node="hFCSUmN" resolve="RightParen" />
         <node concept="2SqB2G" id="2VygjZZ9BrN" role="2SqHTX">
           <property role="TrG5h" value="rightParen" />
         </node>
