@@ -5,6 +5,7 @@ package jetbrains.mps.ide.depanalyzer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
@@ -17,6 +18,7 @@ import java.util.Arrays;
   private static final Logger LOG = LogManager.getLogger(CycleBuilder.class);
   private final Condition<DepLink> elementMatch;
   private DepLink myTarget;
+  private Dependency myTargetKey;
   private final List<DepPath> myCycles = new ArrayList<DepPath>();
   private DepPath myCurrent;
   private final Set<DepLink> myReusedChecked = new HashSet<DepLink>();
@@ -36,6 +38,7 @@ import java.util.Arrays;
       LOG.debug(String.format("\nStart path cycle calculation from %s", depLink));
     }
     myTarget = depLink;
+    myTargetKey = myTarget.getRoleModuleKey();
     myCycles.clear();
     myReusedChecked.clear();
     myCurrent = new DepPath();
@@ -65,7 +68,7 @@ import java.util.Arrays;
       }
     })) {
       if (myCurrent.seen(ch)) {
-        if (eq_tn82ka_a0a0a0d0l(ch.getRoleModuleKey(), myTarget.getRoleModuleKey())) {
+        if (eq_tn82ka_a0a0a0d0m(ch.getRoleModuleKey(), myTargetKey)) {
           // cycle found 
           myCurrent.push(ch);
           myCycles.add(new DepPath(myCurrent));
@@ -91,7 +94,7 @@ import java.util.Arrays;
     Arrays.fill(rv, 0, myNestLevelDebug, ' ');
     return new String(rv);
   }
-  private static boolean eq_tn82ka_a0a0a0d0l(Object a, Object b) {
+  private static boolean eq_tn82ka_a0a0a0d0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

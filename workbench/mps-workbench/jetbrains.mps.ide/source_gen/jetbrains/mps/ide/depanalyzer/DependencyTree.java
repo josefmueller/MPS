@@ -15,8 +15,8 @@ import java.awt.Color;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -76,7 +76,8 @@ public class DependencyTree extends MPSTree implements DataProvider {
   }
 
   private void populate(MPSTreeNode root, Iterable<DepLink> allDependencies) {
-    final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
+    final TreeMessage DEPENDENCY_CYCLE = new TreeMessage(Color.RED, "dependency cycle", null);
+    final TreeMessage HAS_CYCLE = new TreeMessage(new Color(128, 0, 0), "module with dependency cycle", null);
     final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "language with bootstrap dependency", null);
 
     Iterable<SModuleReference> sortedModules = Sequence.fromIterable(allDependencies).select(new ISelector<DepLink, SModuleReference>() {
@@ -89,6 +90,11 @@ public class DependencyTree extends MPSTree implements DataProvider {
       }
     }, true);
 
+    final CycleBuilder cbDeps = new CycleBuilder(new Condition<DepLink>() {
+      public boolean met(DepLink dl) {
+        return dl.role.isDependency();
+      }
+    });
     for (final SModuleReference module : Sequence.fromIterable(sortedModules)) {
       Iterable<DepLink> moduleDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
         public boolean accept(DepLink it) {
@@ -100,28 +106,31 @@ public class DependencyTree extends MPSTree implements DataProvider {
       }
       ModuleDependencyNode n = new ModuleDependencyNode(module, moduleDeps, false);
       n.updateIcon(myModule.getRepository());
-      final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
-        public boolean met(DepLink dl) {
-          return dl.role.isDependency();
+      if (module.equals(myModule.getModuleReference())) {
+        n.addTreeMessage(DEPENDENCY_CYCLE);
+      } else {
+        // if there's any dependency with loop to itself, and role of each element of this path isDependency, then it's dependency cycle 
+        //  NOTE, selectMany ends up as TranslatingSequence, it we don't want cycles to be recalculated again and again on any  
+        // ModuleDependencyNode.isLeaf call, shall keep it calcualted in a collection once and for all (e.g. with toList) 
+        List<DepPath> cycles = Sequence.fromIterable(moduleDeps).translate(new ITranslator2<DepLink, DepPath>() {
+          public Iterable<DepPath> translate(DepLink dep) {
+            return cbDeps.cyclePaths(dep);
+          }
+        }).toListSequence();
+        if (ListSequence.fromList(cycles).isNotEmpty()) {
+          n.setCycles(cycles);
+          n.addTreeMessage(HAS_CYCLE);
         }
-      });
-      // if there's any dependency with loop to itself, and role of each element of this path isDependency, then it's dependency cycle 
-      //  NOTE, selectMany ends up as TranslatingSequence, it we don't want cycles to be recalculated again and again on any  
-      // ModuleDependencyNode.isLeaf call, shall keep it calcualted in a collection once and for all (e.g. with toList) 
-      List<DepPath> cycles = Sequence.fromIterable(moduleDeps).translate(new ITranslator2<DepLink, DepPath>() {
-        public Iterable<DepPath> translate(DepLink dep) {
-          return cb.cyclePaths(dep);
-        }
-      }).toListSequence();
-      if (ListSequence.fromList(cycles).isNotEmpty()) {
-        n.setCycles(cycles);
-        n.addTreeMessage(HAS_CYCLE);
       }
       root.add(n);
     }
     if (isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextTreeNode("Used Languages");
-      boolean hasBootstrapDep = false;
+      final CycleBuilder cbUsedLang = new CycleBuilder(new Condition<DepLink>() {
+        public boolean met(DepLink dl) {
+          return dl.role.isUsedLanguage();
+        }
+      });
       for (final SModuleReference module : Sequence.fromIterable(sortedModules)) {
         Iterable<DepLink> usedLangDeps = Sequence.fromIterable(allDependencies).where(new IWhereFilter<DepLink>() {
           public boolean accept(DepLink it) {
@@ -133,25 +142,20 @@ public class DependencyTree extends MPSTree implements DataProvider {
         }
         ModuleDependencyNode n = new ModuleDependencyNode(module, usedLangDeps, true);
         n.updateIcon(myModule.getRepository());
-        final CycleBuilder cb = new CycleBuilder(new Condition<DepLink>() {
-          public boolean met(DepLink dl) {
-            return dl.role.isUsedLanguage();
-          }
-        });
-        Iterable<DepPath> cycles = Sequence.fromIterable(usedLangDeps).translate(new ITranslator2<DepLink, DepPath>() {
-          public Iterable<DepPath> translate(DepLink dep) {
-            return cb.cyclePaths(dep);
-          }
-        });
-        if (Sequence.fromIterable(cycles).isNotEmpty()) {
-          hasBootstrapDep = true;
-          n.setCycles(cycles);
+        if (module.equals(myModule.getModuleReference())) {
           n.addTreeMessage(BOOTSTRAP_DEPENDENCY);
+        } else {
+          Iterable<DepPath> cycles = Sequence.fromIterable(usedLangDeps).translate(new ITranslator2<DepLink, DepPath>() {
+            public Iterable<DepPath> translate(DepLink dep) {
+              return cbUsedLang.cyclePaths(dep);
+            }
+          });
+          if (Sequence.fromIterable(cycles).isNotEmpty()) {
+            n.setCycles(cycles);
+            n.addTreeMessage(BOOTSTRAP_DEPENDENCY);
+          }
         }
         usedlanguages.add(n);
-      }
-      if (hasBootstrapDep) {
-        usedlanguages.addTreeMessage(BOOTSTRAP_DEPENDENCY);
       }
       if (usedlanguages.getChildCount() > 0) {
         root.add(usedlanguages);

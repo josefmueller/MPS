@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DepLink" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DepPath" />
+    <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
