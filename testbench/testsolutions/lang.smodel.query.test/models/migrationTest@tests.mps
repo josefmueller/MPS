@@ -92,6 +92,7 @@
         <property id="2482611074346661073" name="todo" index="13_zlf" />
         <property id="2482611074347169514" name="readableId" index="13BvtO" />
       </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7" />
     </language>
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
       <concept id="2362304834939062185" name="jetbrains.mps.lang.smodel.query.structure.CustomScope" flags="ng" index="psT0i">
@@ -300,6 +301,7 @@
                 <node concept="1dREyB" id="4T7JBGSxtAG" role="1dp2q7" />
               </node>
             </node>
+            <node concept="15s5l7" id="6u$z$FptIok" role="lGtFl" />
           </node>
           <node concept="3clFbF" id="4T7JBGSxppg" role="3cqZAp">
             <node concept="2Jgcaq" id="4T7JBGSxpph" role="3clFbG">
@@ -632,6 +634,7 @@
           <node concept="3clFbH" id="3eDPCSVuh98" role="3cqZAp" />
         </node>
       </node>
+      <node concept="15s5l7" id="6u$z$FptGCE" role="lGtFl" />
     </node>
   </node>
   <node concept="2XOHcx" id="7wqdV6Y563A">
