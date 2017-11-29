@@ -7607,6 +7607,18 @@
           <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
         </node>
       </node>
+      <node concept="1SiIV0" id="5r4$rjzxXd$" role="3bR37C">
+        <node concept="3bR9La" id="5r4$rjzxXd_" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="5r4$rjzxXdA" role="3bR37C">
+        <node concept="3bR9La" id="5r4$rjzxXdB" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
+        </node>
+      </node>
     </node>
     <node concept="398rNT" id="7ZKuP1Forh5" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
