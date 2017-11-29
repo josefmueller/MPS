@@ -748,18 +748,18 @@
         <var name="event" id="5424895382000009562" />
       </scope>
       <unit id="5424895382000053189" at="71,42,75,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$1" />
-      <unit id="5424895382000062215" at="76,372,80,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$2" />
+      <unit id="5424895382000062215" at="76,358,80,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$2" />
       <unit id="5424895382000054715" at="80,162,84,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$3" />
-      <unit id="1629739622220678100" at="85,372,89,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$4" />
+      <unit id="1629739622220678100" at="85,358,89,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$4" />
       <unit id="1629739622220678111" at="89,162,93,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$5" />
-      <unit id="1629739622220685585" at="94,372,98,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$6" />
+      <unit id="1629739622220685585" at="94,358,98,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$6" />
       <unit id="1629739622220685596" at="98,162,102,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$7" />
-      <unit id="5424895382000096364" at="103,331,107,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$8" />
-      <unit id="1629739622220726701" at="108,323,112,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$9" />
-      <unit id="1629739622220726932" at="113,319,117,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$10" />
-      <unit id="5424895382000097318" at="118,325,122,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$11" />
-      <unit id="1629739622220736825" at="123,325,127,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$12" />
-      <unit id="1629739622220742291" at="128,325,132,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$13" />
+      <unit id="5424895382000096364" at="103,317,107,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$8" />
+      <unit id="1629739622220726701" at="108,309,112,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$9" />
+      <unit id="1629739622220726932" at="113,305,117,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$10" />
+      <unit id="5424895382000097318" at="118,311,122,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$11" />
+      <unit id="1629739622220736825" at="123,311,127,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$12" />
+      <unit id="1629739622220742291" at="128,311,132,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$13" />
       <unit id="5785495490417445393" at="138,42,142,5" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$14" />
       <unit id="1697163102215652460" at="142,20,146,5" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$15" />
       <unit id="5424895382000009562" at="35,0,150,0" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action" />
@@ -991,24 +991,26 @@
       <node id="2885477569137457152" at="168,62,169,70" concept="13" />
       <node id="1711409189259435600" at="175,7,176,0" concept="15" />
       <node id="6423044698581831222" at="177,52,178,138" concept="6" />
-      <node id="4141068403140319948" at="179,12,180,111" concept="6" />
-      <node id="8331819490991827256" at="179,10,181,5" concept="1" />
+      <node id="4141068403140319948" at="181,27,182,115" concept="6" />
       <node id="6423044698579330206" at="59,95,62,5" concept="10" />
       <node id="6423044698579330206" at="64,66,67,7" concept="10" />
       <node id="6423044698579330206" at="70,56,73,7" concept="10" />
       <node id="6312257126984171354" at="159,0,162,0" concept="11" trace="select#(Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;)Ljetbrains/mps/ide/migration/ScriptApplied;" />
+      <node id="7468250534219217021" at="181,0,184,0" concept="11" trace="run#()V" />
       <node id="6423044698579330206" at="54,0,58,0" concept="11" trace="isDumbAware#()Z" />
       <node id="8331819490991709085" at="83,0,87,0" concept="11" trace="run#()V" />
       <node id="6312257126984171319" at="113,39,117,35" concept="10" />
       <node id="6312257126984171334" at="124,39,128,35" concept="10" />
       <node id="2885477569137190327" at="167,0,171,0" concept="11" trace="process#(Ljetbrains/mps/lang/migration/runtime/base/Problem;)Z" />
       <node id="6312257126984171350" at="157,19,162,19" concept="13" />
-      <node id="6423044698581820721" at="176,0,181,5" concept="10" />
+      <node id="7468250534219217019" at="179,12,184,9" concept="6" />
       <node id="6423044698579330206" at="48,0,54,0" concept="3" trace="RunPreUpdateCheck_Action#()V" />
       <node id="6423044698579330206" at="62,5,68,5" concept="1" />
       <node id="6423044698579330206" at="68,5,74,5" concept="1" />
       <node id="8331819490991709084" at="81,91,87,7" concept="6" />
       <node id="2885477569137170401" at="165,0,171,15" concept="6" />
+      <node id="8331819490991827256" at="179,10,185,5" concept="1" />
+      <node id="6423044698581820721" at="176,0,185,5" concept="10" />
       <node id="6423044698579330206" at="58,0,77,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="6312257126984171317" at="105,32,147,31" concept="19" />
       <node id="6312257126984171317" at="103,58,148,43" concept="5" />
@@ -1024,7 +1026,7 @@
       <node id="2277716516879960490" at="91,50,173,11" concept="6" />
       <node id="8331819490991709111" at="90,0,175,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <node id="8331819490991709103" at="88,0,175,7" concept="6" />
-      <node id="6423044698579330206" at="77,0,183,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="6423044698579330206" at="77,0,187,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="6423044698579330206" at="55,32,56,17" />
       <scope id="6423044698579330206" at="60,53,61,19" />
       <scope id="6423044698579330206" at="65,22,66,21" />
@@ -1033,7 +1035,7 @@
       <scope id="6312257126984171317" at="145,40,146,49" />
       <scope id="6312257126984171355" at="159,71,160,76" />
       <scope id="6423044698581820723" at="177,52,178,138" />
-      <scope id="8331819490991827257" at="179,12,180,111" />
+      <scope id="7468250534219217023" at="181,27,182,115" />
       <scope id="8331819490991709086" at="83,25,85,131">
         <var name="p" id="4815078419494508655" />
       </scope>
@@ -1049,6 +1051,7 @@
       <scope id="6312257126984171354" at="159,0,162,0">
         <var name="script" id="6312257126984171354" />
       </scope>
+      <scope id="7468250534219217021" at="181,0,184,0" />
       <scope id="6423044698579330206" at="48,37,52,36" />
       <scope id="6423044698579330206" at="54,0,58,0" />
       <scope id="6423044698579330206" at="63,5,67,7">
@@ -1061,6 +1064,7 @@
       <scope id="2885477569137190327" at="167,0,171,0">
         <var name="p" id="2885477569137190327" />
       </scope>
+      <scope id="8331819490991827257" at="179,12,184,9" />
       <scope id="6423044698579330206" at="48,0,54,0" />
       <scope id="6312257126984171319" at="113,39,119,40" />
       <scope id="6312257126984171334" at="124,39,130,40" />
@@ -1093,16 +1097,17 @@
       <scope id="8331819490991709111" at="90,0,175,0">
         <var name="progressIndicator" id="8331819490991709114" />
       </scope>
-      <scope id="6423044698579330206" at="78,96,181,5">
+      <scope id="6423044698579330206" at="78,96,185,5">
         <var name="modules" id="8331819490991709075" />
         <var name="problems" id="6423044698581822937" />
         <var name="repos" id="2277716516879961614" />
       </scope>
-      <scope id="6423044698579330206" at="77,0,183,0">
+      <scope id="6423044698579330206" at="77,0,187,0">
         <var name="_params" id="6423044698579330206" />
         <var name="event" id="6423044698579330206" />
       </scope>
       <unit id="6312257126984171354" at="158,65,162,17" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$2" />
+      <unit id="7468250534219217021" at="180,102,184,7" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$3" />
       <unit id="8331819490991709085" at="82,45,87,5" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$1" />
       <unit id="2885477569137190327" at="166,235,171,13" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$2" />
       <unit id="6312257126984171317" at="101,35,153,25" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$1$1$1" />
@@ -1111,7 +1116,7 @@
       <unit id="6312257126984171293" at="94,90,164,13" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1" />
       <unit id="2277716516879960492" at="92,49,173,9" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1" />
       <unit id="8331819490991709109" at="89,42,175,5" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2" />
-      <unit id="6423044698579330206" at="45,0,184,0" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action" />
+      <unit id="6423044698579330206" at="45,0,188,0" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action" />
     </file>
   </root>
   <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698579343489">
@@ -1939,7 +1944,7 @@
       </scope>
       <unit id="4815078419492250486" at="63,47,67,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1$1" />
       <unit id="153908316647730969" at="83,48,87,13" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1$2$1" />
-      <unit id="153908316647773836" at="88,140,92,13" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1$2$2" />
+      <unit id="153908316647773836" at="88,126,92,13" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1$2$2" />
       <unit id="3182084118592608017" at="164,49,168,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$1" />
       <unit id="7012529811902892077" at="174,104,178,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$2" />
       <unit id="7012529811902892089" at="178,23,182,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$3" />

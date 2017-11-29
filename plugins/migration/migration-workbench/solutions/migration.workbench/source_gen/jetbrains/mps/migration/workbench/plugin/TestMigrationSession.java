@@ -85,7 +85,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
                 return scope;
               }
             };
-            return ref.value = Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).translate(new ITranslator2<SNode, SReference>() {
+            return ref.value = Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).translate(new ITranslator2<SNode, SReference>() {
               public Iterable<SReference> translate(SNode it) {
                 return IterableUtil.asCollection(it.getReferences());
               }

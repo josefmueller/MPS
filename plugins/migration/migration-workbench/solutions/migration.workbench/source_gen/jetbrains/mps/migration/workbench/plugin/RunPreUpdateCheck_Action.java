@@ -177,7 +177,11 @@ __switch__:
     if (ListSequence.fromList(problems).isEmpty()) {
       Messages.showMessageDialog(event.getData(CommonDataKeys.PROJECT), "No problems found.\nProject can be migrated", "Migration", null);
     } else {
-      event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showProblems(problems);
+      event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showProblems(problems);
+        }
+      });
     }
   }
 }

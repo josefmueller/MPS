@@ -5842,27 +5842,44 @@
           </node>
           <node concept="9aQIb" id="7ew$qV_fA$S" role="9aQIa">
             <node concept="3clFbS" id="7ew$qV_fA$T" role="9aQI4">
-              <node concept="3clFbF" id="3_S1WmRLtFc" role="3cqZAp">
-                <node concept="2OqwBi" id="3_S1WmRLtNr" role="3clFbG">
-                  <node concept="2OqwBi" id="3_S1WmRLfXF" role="2Oq$k0">
-                    <node concept="liA8E" id="3_S1WmRLgYy" role="2OqNvi">
-                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                      <node concept="3VsKOn" id="3_S1WmRLhV$" role="37wK5m">
-                        <ref role="3VsUkX" to="bdll:~MigrationProblemHandler" resolve="MigrationProblemHandler" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="5$zfhXztNfy" role="2Oq$k0">
-                      <node concept="2WthIp" id="5$zfhXztNf_" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="5$zfhXztNfB" role="2OqNvi">
-                        <ref role="2WH_rO" node="5$zfhXzr51s" resolve="project" />
+              <node concept="1QHqEK" id="6u$z$FpKvxV" role="3cqZAp">
+                <node concept="1QHqEC" id="6u$z$FpKvxX" role="1QHqEI">
+                  <node concept="3clFbS" id="6u$z$FpKvxZ" role="1bW5cS">
+                    <node concept="3clFbF" id="3_S1WmRLtFc" role="3cqZAp">
+                      <node concept="2OqwBi" id="3_S1WmRLtNr" role="3clFbG">
+                        <node concept="2OqwBi" id="3_S1WmRLfXF" role="2Oq$k0">
+                          <node concept="liA8E" id="3_S1WmRLgYy" role="2OqNvi">
+                            <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                            <node concept="3VsKOn" id="3_S1WmRLhV$" role="37wK5m">
+                              <ref role="3VsUkX" to="bdll:~MigrationProblemHandler" resolve="MigrationProblemHandler" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="5$zfhXztNfy" role="2Oq$k0">
+                            <node concept="2WthIp" id="5$zfhXztNf_" role="2Oq$k0" />
+                            <node concept="1DTwFV" id="5$zfhXztNfB" role="2OqNvi">
+                              <ref role="2WH_rO" node="5$zfhXzr51s" resolve="project" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="3_S1WmRLu56" role="2OqNvi">
+                          <ref role="37wK5l" to="bdll:~MigrationProblemHandler.showProblems(java.util.Collection):void" resolve="showProblems" />
+                          <node concept="37vLTw" id="3_S1WmRLutO" role="37wK5m">
+                            <ref role="3cqZAo" node="5$zfhXzreRp" resolve="problems" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="3_S1WmRLu56" role="2OqNvi">
-                    <ref role="37wK5l" to="bdll:~MigrationProblemHandler.showProblems(java.util.Collection):void" resolve="showProblems" />
-                    <node concept="37vLTw" id="3_S1WmRLutO" role="37wK5m">
-                      <ref role="3cqZAo" node="5$zfhXzreRp" resolve="problems" />
+                </node>
+                <node concept="2OqwBi" id="6u$z$FpKwso" role="ukAjM">
+                  <node concept="2OqwBi" id="6u$z$FpKw0w" role="2Oq$k0">
+                    <node concept="2WthIp" id="6u$z$FpKw0z" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="6u$z$FpKxYE" role="2OqNvi">
+                      <ref role="2WH_rO" node="5$zfhXzr51q" resolve="mpsProject" />
                     </node>
+                  </node>
+                  <node concept="liA8E" id="6u$z$FpKyZz" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
               </node>
