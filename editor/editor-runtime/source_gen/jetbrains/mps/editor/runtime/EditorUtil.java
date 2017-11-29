@@ -6,88 +6,139 @@ import javax.swing.JComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.util.Condition;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import java.io.File;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import java.awt.Component;
-import javax.swing.SwingUtilities;
-import javax.swing.JFrame;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.fileChooser.FileChooser;
 import jetbrains.mps.vfs.FileSystems;
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.util.FileUtil;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.vfs.IFileUtils;
 import java.awt.Dimension;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import java.beans.PropertyChangeEvent;
 import java.awt.Image;
 import java.awt.Graphics;
-import jetbrains.mps.util.MacroHelper;
 
 public class EditorUtil {
   public EditorUtil() {
   }
 
-
-  public static JComponent createSelectIconButton(final SNode sourceNode, final SProperty property, final EditorContext context) {
-    final AbstractModule module = (AbstractModule) sourceNode.getModel().getModule();
-
-    return createSelectButton(sourceNode, property, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
+  public static JComponent createSelectImageButton(final SNode node, final SProperty property, final EditorContext context) {
+    final MacroHelper macros = MacrosFactory.forModule((AbstractModule) node.getModel().getModule());
+    return createSelectImageButton(node, property, context, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
-        return check_3m4h3r_a0a4a2a3(MacrosFactory.forModule(module), fullPath);
+        return check_3m4h3r_a0a3a1a2(macros, fullPath);
       }
     }, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String shortPath) {
-        return check_3m4h3r_a0a5a2a3(MacrosFactory.forModule(module), shortPath);
+        return check_3m4h3r_a0a4a1a2(macros, shortPath);
       }
     });
   }
 
-  public static JComponent createSelectButton(final SNode sourceNode, final SProperty property, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
-    String filename = expandPath.invoke(SNodeAccessUtil.getProperty(sourceNode, property));
-    final File baseFile = (filename == null ? null : new File(filename));
+  public static JComponent createSelectImageButton(final SNode node, final SProperty property, final EditorContext context, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
+    final Set<String> allowed = SetSequence.fromSetAndArray(new HashSet<String>(), "tiff", "tif", "gif", "jpeg", "jpg", "png", "ico");
+    final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileNoJarsDescriptor().withFileFilter(new Condition<VirtualFile>() {
+      public boolean value(VirtualFile f) {
+        return SetSequence.fromSet(allowed).contains(f.getExtension());
+      }
+    });
+    descriptor.setTitle("Select Image File");
+
+    final Wrappers._T<IFile> oldFile = new Wrappers._T<IFile>(null);
+    context.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        String filePath = expandPath.invoke(SNodeAccessUtil.getProperty(node, property));
+        if (filePath != null) {
+          oldFile.value = FileSystem.getInstance().getFile(filePath);
+          if (!(oldFile.value.exists())) {
+            oldFile.value = null;
+          }
+        }
+      }
+    });
+
+    final VirtualFile oldVFile = (oldFile.value == null ? null : ((IdeaFile) oldFile.value).getVirtualFile());
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        Component root = SwingUtilities.getRoot(button);
-        JFrame frame = (root instanceof JFrame ? (JFrame) root : null);
+        Project project = ProjectHelper.toIdeaProject(context.getOperationContext().getProject());
+        final VirtualFile chosenFile = FileChooser.chooseFile(descriptor, project, oldVFile);
 
-        final JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setMultiSelectionEnabled(false);
-        fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Image files", "tiff", "tif", "gif", "jpeg", "jpg", "png", "ico"));
-        // Leave all files filter for images with non-standard extensoin 
-        fileChooser.setAcceptAllFileFilterUsed(true);
-        fileChooser.setAccessory(new EditorUtil.ImagePreview(fileChooser));
-        fileChooser.setSelectedFile(baseFile);
-
-        int resultCode = fileChooser.showDialog(frame, "Choose");
-        if (resultCode != JFileChooser.APPROVE_OPTION || fileChooser.getSelectedFile() == null) {
+        final Wrappers._T<IFile> result = new Wrappers._T<IFile>(FileSystems.getDefault().getFile(chosenFile.getCanonicalPath()));
+        if (result.value == null) {
           return;
         }
 
-        IFile result = FileSystems.getDefault().getFile(fileChooser.getSelectedFile().getAbsolutePath());
-        if (result == null) {
-          return;
-        }
-
-        ModelAccess modelAccess = context.getRepository().getModelAccess();
-
-        // copying 
-
-        final String pathToShow = shrinkPath.invoke(result.getPath());
-        modelAccess.executeCommand(new Runnable() {
-          @Override
+        final Wrappers._T<IFile> moduleDir = new Wrappers._T<IFile>();
+        final Wrappers._boolean isUnderModule = new Wrappers._boolean();
+        context.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            SNodeAccessUtil.setProperty(sourceNode, property, pathToShow);
+            moduleDir.value = ((AbstractModule) node.getModel().getModule()).getModuleSourceDir();
+            isUnderModule.value = FileUtil.isAncestor(moduleDir.value.getPath(), chosenFile.getPath());
+          }
+        });
+
+        if (!(isUnderModule.value)) {
+          StringBuffer msg = new StringBuffer();
+          msg.append("The image file is outside of the module directory ");
+          msg.append("(" + moduleDir.value.getPath() + ").");
+          msg.append("\n");
+          msg.append("MPS will copy the file to <module>/icons folder.");
+          msg.append("\n");
+          msg.append("Would you like to proceed?");
+          int copyAnswer = Messages.showYesNoDialog(msg.toString(), "Copy Image", Messages.getQuestionIcon());
+          if (copyAnswer != Messages.YES) {
+            return;
+          }
+
+          final Wrappers._boolean success = new Wrappers._boolean(true);
+          context.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              IFile copiedFile = moduleDir.value.getDescendant("icons").getDescendant(chosenFile.getName());
+              if (copiedFile.exists()) {
+                int rewriteAnswer = Messages.showYesNoDialog("File alread exists.\nRewrite?", "Error", Messages.getWarningIcon());
+                if (rewriteAnswer != Messages.YES) {
+                  success.value = false;
+                  return;
+                }
+              }
+              IFileUtils.copyFileContent(result.value, copiedFile);
+              result.value = copiedFile;
+            }
+          });
+          if (!(success.value)) {
+            return;
+          }
+        }
+
+        context.getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            SNodeAccessUtil.setProperty(node, property, shrinkPath.invoke(result.value.getPath()));
           }
         });
       }
@@ -156,13 +207,13 @@ public class EditorUtil {
       }
     }
   }
-  private static String check_3m4h3r_a0a4a2a3(MacroHelper checkedDotOperand, String fullPath) {
+  private static String check_3m4h3r_a0a3a1a2(MacroHelper checkedDotOperand, String fullPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.shrinkPath(fullPath);
     }
     return null;
   }
-  private static String check_3m4h3r_a0a5a2a3(MacroHelper checkedDotOperand, String shortPath) {
+  private static String check_3m4h3r_a0a4a1a2(MacroHelper checkedDotOperand, String shortPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.expandPath(shortPath);
     }

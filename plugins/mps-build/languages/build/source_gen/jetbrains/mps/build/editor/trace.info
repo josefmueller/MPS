@@ -15116,7 +15116,7 @@
         <var name="editorCell" id="5617550519002745365" />
       </scope>
       <scope id="5617550519002745365" at="69,0,101,0" />
-      <unit id="6099797596647519868" at="261,221,269,5" name="jetbrains.mps.build.editor.BuildProject_EditorBuilder_a$2" />
+      <unit id="6099797596647519868" at="261,219,269,5" name="jetbrains.mps.build.editor.BuildProject_EditorBuilder_a$2" />
       <unit id="6099797596647519877" at="269,11,277,5" name="jetbrains.mps.build.editor.BuildProject_EditorBuilder_a$3" />
       <unit id="1841835149314906095" at="217,88,227,5" name="jetbrains.mps.build.editor.BuildProject_EditorBuilder_a$1" />
       <unit id="5617550519002745365" at="310,0,359,0" name="jetbrains.mps.build.editor.BuildProject_EditorBuilder_a$pluginsListHandler_vny568_j0" />
