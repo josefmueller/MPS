@@ -1198,6 +1198,15 @@
         <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
       </node>
     </node>
+    <node concept="2sgV4H" id="5r4$rjzsv1c" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:3E9C6pCXzPk" resolve="mpsConsolePlugin" />
+      <node concept="398BVA" id="5r4$rjzuia9" role="2JcizS">
+        <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="5r4$rjzuiad" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
     <node concept="22LTRH" id="53PdBITeUc9" role="1hWBAP">
       <property role="TrG5h" value="editor" />
       <node concept="22LTRF" id="53PdBITeVy$" role="22LTRK">

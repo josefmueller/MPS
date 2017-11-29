@@ -36,8 +36,8 @@
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)/2362304834940239554">
     <file name="QueriesGenerated.java">
-      <node id="2362304834940239569" at="116,108,117,194" concept="2" />
-      <scope id="2362304834940239568" at="116,108,117,194" />
+      <node id="2362304834940239569" at="116,108,117,195" concept="2" />
+      <scope id="2362304834940239568" at="116,108,117,195" />
     </file>
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)/3492877759609304450">

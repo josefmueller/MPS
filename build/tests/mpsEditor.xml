@@ -9,6 +9,7 @@
   <property name="artifacts.mpsBootstrapCore" location="${mps_home}" />
   <property name="artifacts.mpsTesting" location="${mps_home}/plugins" />
   <property name="artifacts.mps" location="${mps_home}" />
+  <property name="artifacts.mpsConsolePlugin" location="${mps_home}/plugins" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsCore}/build.properties" prefix="import.mpsCore" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />

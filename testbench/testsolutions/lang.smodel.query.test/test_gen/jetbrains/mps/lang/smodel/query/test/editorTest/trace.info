@@ -70,19 +70,20 @@
       <node id="8654290870483594275" at="26,76,27,76" concept="0" />
       <node id="8654290870483594473" at="27,76,28,76" concept="0" />
       <node id="8654290870483594489" at="28,76,29,76" concept="0" />
+      <node id="6252282388792522319" at="29,76,30,76" concept="0" />
       <node id="8654290870483594273" at="13,0,18,0" concept="1" trace="test_QueryParameterList_Delete3#()V" />
-      <node id="1241246198932925687" at="25,0,31,0" concept="1" trace="run#()V" />
-      <node id="1241246198932925685" at="23,72,31,16" concept="0" />
-      <node id="8654290870483594273" at="21,0,33,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="1241246198932925687" at="25,0,32,0" concept="1" trace="run#()V" />
+      <node id="1241246198932925685" at="23,72,32,16" concept="0" />
+      <node id="8654290870483594273" at="21,0,34,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="8654290870483594273" at="14,66,16,125" />
-      <scope id="1241246198932925688" at="25,44,29,76" />
       <scope id="8654290870483594273" at="13,0,18,0" />
-      <scope id="1241246198932925687" at="25,0,31,0" />
-      <scope id="8654290870483594273" at="22,51,31,16" />
-      <scope id="8654290870483594273" at="21,0,33,0" />
-      <unit id="1241246198932925687" at="24,44,31,7" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test$TestBody$1" />
-      <unit id="8654290870483594273" at="19,0,34,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test$TestBody" />
-      <unit id="8654290870483594273" at="11,0,35,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test" />
+      <scope id="1241246198932925688" at="25,44,30,76" />
+      <scope id="1241246198932925687" at="25,0,32,0" />
+      <scope id="8654290870483594273" at="22,51,32,16" />
+      <scope id="8654290870483594273" at="21,0,34,0" />
+      <unit id="1241246198932925687" at="24,44,32,7" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test$TestBody$1" />
+      <unit id="8654290870483594273" at="19,0,35,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test$TestBody" />
+      <unit id="8654290870483594273" at="11,0,36,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete3_Test" />
     </file>
   </root>
   <root nodeRef="r:ef2abb2b-cc5a-4776-8085-7767c2890554(jetbrains.mps.lang.smodel.query.test.editorTest@tests)/8654290870483596008">
@@ -145,22 +146,23 @@
       <node id="8654290870483601200" at="27,76,28,76" concept="0" />
       <node id="8654290870483601219" at="28,76,29,76" concept="0" />
       <node id="8654290870483601240" at="29,76,30,76" concept="0" />
-      <node id="8654290870483598922" at="32,16,33,0" concept="2" />
-      <node id="8654290870483598923" at="33,0,34,0" concept="2" />
-      <node id="8654290870483598924" at="34,0,35,0" concept="2" />
+      <node id="6252282388792516534" at="30,76,31,76" concept="0" />
+      <node id="8654290870483598922" at="33,16,34,0" concept="2" />
+      <node id="8654290870483598923" at="34,0,35,0" concept="2" />
+      <node id="8654290870483598924" at="35,0,36,0" concept="2" />
       <node id="8654290870483598918" at="13,0,18,0" concept="1" trace="test_QueryParameterList_Delete6#()V" />
-      <node id="1241246198932926901" at="25,0,32,0" concept="1" trace="run#()V" />
-      <node id="1241246198932926899" at="23,72,32,16" concept="0" />
-      <node id="8654290870483598918" at="21,0,37,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="1241246198932926901" at="25,0,33,0" concept="1" trace="run#()V" />
+      <node id="1241246198932926899" at="23,72,33,16" concept="0" />
+      <node id="8654290870483598918" at="21,0,38,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="8654290870483598918" at="14,66,16,125" />
       <scope id="8654290870483598918" at="13,0,18,0" />
-      <scope id="1241246198932926902" at="25,44,30,76" />
-      <scope id="1241246198932926901" at="25,0,32,0" />
-      <scope id="8654290870483598918" at="22,51,35,0" />
-      <scope id="8654290870483598918" at="21,0,37,0" />
-      <unit id="1241246198932926901" at="24,44,32,7" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test$TestBody$1" />
-      <unit id="8654290870483598918" at="19,0,38,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test$TestBody" />
-      <unit id="8654290870483598918" at="11,0,39,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test" />
+      <scope id="1241246198932926902" at="25,44,31,76" />
+      <scope id="1241246198932926901" at="25,0,33,0" />
+      <scope id="8654290870483598918" at="22,51,36,0" />
+      <scope id="8654290870483598918" at="21,0,38,0" />
+      <unit id="1241246198932926901" at="24,44,33,7" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test$TestBody$1" />
+      <unit id="8654290870483598918" at="19,0,39,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test$TestBody" />
+      <unit id="8654290870483598918" at="11,0,40,0" name="jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test" />
     </file>
   </root>
   <root nodeRef="r:ef2abb2b-cc5a-4776-8085-7767c2890554(jetbrains.mps.lang.smodel.query.test.editorTest@tests)/8654290870483602994">

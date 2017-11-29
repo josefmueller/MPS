@@ -27,6 +27,7 @@ public class QueryParameterList_Delete3_Test extends BaseTransformationTest {
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }
       }, false);
     }
