@@ -548,12 +548,12 @@
             <node concept="2Jgcaq" id="3eDPCSVuh8A" role="3clFbG">
               <node concept="1dO9Bo" id="3eDPCSVuh8B" role="1dOa5D">
                 <node concept="1dRE$e" id="3eDPCSVuh8C" role="1dp2q7">
-                  <node concept="1dZ9_z" id="3eDPCSVuh8D" role="1dZqIC" />
                   <node concept="13_zln" id="3eDPCSVuh8E" role="lGtFl">
                     <property role="13_zl8" value="not supported extension language" />
                     <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
                     <property role="13BvtO" value="Migrate Query Scopes" />
                   </node>
+                  <node concept="1dZ9_z" id="3eDPCSVuh8D" role="1dZqIC" />
                 </node>
               </node>
             </node>
@@ -595,17 +595,17 @@
             <node concept="2Jgcaq" id="3eDPCSVuh8S" role="3clFbG">
               <node concept="1dO9Bo" id="3eDPCSVuh8T" role="1dOa5D">
                 <node concept="1dRE$e" id="3eDPCSVuh8U" role="1dp2q7">
+                  <node concept="13_zln" id="3eDPCSVuh8Y" role="lGtFl">
+                    <property role="13_zl8" value="duplicated parameters" />
+                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+                    <property role="13BvtO" value="Migrate Query Scopes" />
+                  </node>
                   <node concept="39Z4gp" id="3eDPCSVuh8V" role="1dZqIC">
                     <node concept="2ShNRf" id="3eDPCSVuh8W" role="39Zaju">
                       <node concept="1pGfFk" id="3eDPCSVuh8X" role="2ShVmc">
                         <ref role="37wK5l" to="mte5:~GlobalScope.&lt;init&gt;()" resolve="GlobalScope" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="13_zln" id="3eDPCSVuh8Y" role="lGtFl">
-                    <property role="13_zl8" value="duplicated parameters" />
-                    <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-                    <property role="13BvtO" value="Migrate Query Scopes" />
                   </node>
                 </node>
                 <node concept="1dREyB" id="3eDPCSVuh8Z" role="1dp2q7">

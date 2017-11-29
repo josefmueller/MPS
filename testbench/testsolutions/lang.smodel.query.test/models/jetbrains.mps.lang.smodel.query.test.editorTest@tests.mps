@@ -4,7 +4,7 @@
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
+    <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
@@ -77,6 +77,11 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="2482611074346661065" name="jetbrains.mps.lang.core.structure.ReviewMigration" flags="ng" index="13_zln">
+        <property id="2482611074346661078" name="reasonShort" index="13_zl8" />
+        <property id="2482611074346661073" name="todo" index="13_zlf" />
+        <property id="2482611074347169514" name="readableId" index="13BvtO" />
+      </concept>
     </language>
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
       <concept id="7738379549910147341" name="jetbrains.mps.lang.smodel.query.structure.InstancesExpression" flags="ng" index="qVDSY">
@@ -89,7 +94,7 @@
       <concept id="4307205004132277753" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterList" flags="ng" index="1dO9Bo">
         <child id="4307205004141421222" name="parameter" index="1dp2q7" />
       </concept>
-      <concept id="4307205004132412550" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly" flags="ng" index="1dREyB" />
+      <concept id="4307205004132412550" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly_old" flags="ng" index="1dREyB" />
       <concept id="677787792397344112" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterExact" flags="ng" index="3Z_Q4n" />
     </language>
   </registry>
@@ -250,6 +255,11 @@
             <property role="p6zMs" value="4" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
           </node>
+          <node concept="13_zln" id="5r4$rjzcBi6" role="lGtFl">
+            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+            <property role="13BvtO" value="Migrate Query Scopes" />
+          </node>
         </node>
       </node>
     </node>
@@ -344,7 +354,13 @@
     </node>
     <node concept="2Jgcaq" id="7wqdV6Y5b_f" role="LiRBU">
       <node concept="1dO9Bo" id="7wqdV6Y5b_w" role="1dOa5D">
-        <node concept="1dREyB" id="7wqdV6Y5b_L" role="1dp2q7" />
+        <node concept="1dREyB" id="7wqdV6Y5b_L" role="1dp2q7">
+          <node concept="13_zln" id="5r4$rjzcBi8" role="lGtFl">
+            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+            <property role="13BvtO" value="Migrate Query Scopes" />
+          </node>
+        </node>
       </node>
       <node concept="LIFWc" id="1fr6Ir5KijT" role="lGtFl">
         <property role="ZRATv" value="true" />
@@ -418,6 +434,11 @@
             <property role="p6zMs" value="4" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
           </node>
+          <node concept="13_zln" id="5r4$rjzcBi4" role="lGtFl">
+            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+            <property role="13BvtO" value="Migrate Query Scopes" />
+          </node>
         </node>
       </node>
       <node concept="chp4Y" id="40H5AhznxxH" role="qVDSX">
@@ -452,6 +473,11 @@
             <property role="p6zMq" value="4" />
             <property role="p6zMs" value="4" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+          <node concept="13_zln" id="5r4$rjzcBia" role="lGtFl">
+            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+            <property role="13BvtO" value="Migrate Query Scopes" />
           </node>
         </node>
       </node>
@@ -493,6 +519,11 @@
             <property role="p6zMq" value="4" />
             <property role="p6zMs" value="4" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+          <node concept="13_zln" id="5r4$rjzcBic" role="lGtFl">
+            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
+            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
+            <property role="13BvtO" value="Migrate Query Scopes" />
           </node>
         </node>
       </node>
