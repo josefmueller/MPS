@@ -6,6 +6,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -69,6 +70,10 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
+        <property id="559557797393021807" name="stereotype" index="BaGAP" />
+        <property id="559557797393017702" name="name" index="BaHAW" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -77,13 +82,14 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="2482611074346661065" name="jetbrains.mps.lang.core.structure.ReviewMigration" flags="ng" index="13_zln">
-        <property id="2482611074346661078" name="reasonShort" index="13_zl8" />
-        <property id="2482611074346661073" name="todo" index="13_zlf" />
-        <property id="2482611074347169514" name="readableId" index="13BvtO" />
-      </concept>
     </language>
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query">
+      <concept id="2362304834939062179" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterScope" flags="ng" index="psT0o">
+        <child id="2362304834939062180" name="value" index="psT0v" />
+      </concept>
+      <concept id="2362304834939062183" name="jetbrains.mps.lang.smodel.query.structure.ModelsScope" flags="ng" index="psT0s">
+        <child id="2362304834939062184" name="models" index="psT0j" />
+      </concept>
       <concept id="7738379549910147341" name="jetbrains.mps.lang.smodel.query.structure.InstancesExpression" flags="ng" index="qVDSY">
         <child id="7738379549910147342" name="conceptArg" index="qVDSX" />
       </concept>
@@ -94,7 +100,6 @@
       <concept id="4307205004132277753" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterList" flags="ng" index="1dO9Bo">
         <child id="4307205004141421222" name="parameter" index="1dp2q7" />
       </concept>
-      <concept id="4307205004132412550" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly_old" flags="ng" index="1dREyB" />
       <concept id="677787792397344112" name="jetbrains.mps.lang.smodel.query.structure.QueryParameterExact" flags="ng" index="3Z_Q4n" />
     </language>
   </registry>
@@ -245,27 +250,28 @@
         </node>
       </node>
     </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5aLi" role="LiRBU">
-      <node concept="1dO9Bo" id="7wqdV6Y5aLz" role="1dOa5D">
-        <node concept="1dREyB" id="7wqdV6Y5aLO" role="1dp2q7">
-          <node concept="LIFWc" id="7wqdV6Y5aMd" role="lGtFl">
+    <node concept="qVDSY" id="5r4$rjzcGcd" role="LiRBU">
+      <node concept="chp4Y" id="5r4$rjzcGce" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcGcl" role="1dOa5D">
+        <node concept="3Z_Q4n" id="5r4$rjzcGct" role="1dp2q7">
+          <node concept="LIFWc" id="5r4$rjzcGqk" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="4" />
-            <property role="p6zMs" value="4" />
+            <property role="p6zMq" value="5" />
+            <property role="p6zMs" value="5" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-          <node concept="13_zln" id="5r4$rjzcBi6" role="lGtFl">
-            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-            <property role="13BvtO" value="Migrate Query Scopes" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5aMn" role="LiZbd">
-      <node concept="1dO9Bo" id="7wqdV6Y5aMC" role="1dOa5D">
-        <node concept="LIFWc" id="7wqdV6Y5aNf" role="lGtFl">
+    <node concept="qVDSY" id="5r4$rjzcGlg" role="LiZbd">
+      <node concept="chp4Y" id="5r4$rjzcGlh" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcGli" role="1dOa5D">
+        <node concept="LIFWc" id="5r4$rjzcGnP" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
@@ -352,17 +358,14 @@
       <node concept="3clFbH" id="7wqdV6Y5b$_" role="3cqZAp" />
       <node concept="3clFbH" id="7wqdV6Y5b$A" role="3cqZAp" />
     </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5b_f" role="LiRBU">
-      <node concept="1dO9Bo" id="7wqdV6Y5b_w" role="1dOa5D">
-        <node concept="1dREyB" id="7wqdV6Y5b_L" role="1dp2q7">
-          <node concept="13_zln" id="5r4$rjzcBi8" role="lGtFl">
-            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-            <property role="13BvtO" value="Migrate Query Scopes" />
-          </node>
-        </node>
+    <node concept="qVDSY" id="5r4$rjzcGqE" role="LiRBU">
+      <node concept="chp4Y" id="5r4$rjzcGqF" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
-      <node concept="LIFWc" id="1fr6Ir5KijT" role="lGtFl">
+      <node concept="1dO9Bo" id="5r4$rjzcGqG" role="1dOa5D">
+        <node concept="3Z_Q4n" id="5r4$rjzcGqH" role="1dp2q7" />
+      </node>
+      <node concept="LIFWc" id="5r4$rjzcGsU" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="1" />
@@ -370,12 +373,15 @@
         <property role="LIFWd" value="Constant_adikco_c1a" />
       </node>
     </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5bAL" role="LiZbd">
-      <node concept="LIFWc" id="7wqdV6Y5bDx" role="lGtFl">
+    <node concept="qVDSY" id="5r4$rjzcGsW" role="LiZbd">
+      <node concept="chp4Y" id="5r4$rjzcGsX" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="LIFWc" id="5r4$rjzcGvx" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="6" />
-        <property role="p6zMs" value="6" />
+        <property role="p6zMq" value="10" />
+        <property role="p6zMs" value="10" />
         <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
       </node>
     </node>
@@ -425,19 +431,21 @@
     </node>
     <node concept="qVDSY" id="40H5AhznxuB" role="LiRBU">
       <node concept="1dO9Bo" id="40H5AhznxuD" role="1dOa5D">
-        <node concept="3Z_Q4n" id="40H5Ahznxvl" role="1dp2q7" />
-        <node concept="1dREyB" id="40H5AhznxuF" role="1dp2q7">
-          <node concept="LIFWc" id="40H5AhznxuG" role="lGtFl">
+        <node concept="psT0o" id="5r4$rjzcGvB" role="1dp2q7">
+          <node concept="psT0s" id="5r4$rjzcGvQ" role="psT0v">
+            <node concept="BaHAS" id="5r4$rjzcGvW" role="psT0j">
+              <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.editorTest" />
+              <property role="BaGAP" value="tests" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Z_Q4n" id="40H5Ahznxvl" role="1dp2q7">
+          <node concept="LIFWc" id="5r4$rjzcGyM" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="4" />
-            <property role="p6zMs" value="4" />
+            <property role="p6zMq" value="5" />
+            <property role="p6zMs" value="5" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-          <node concept="13_zln" id="5r4$rjzcBi4" role="lGtFl">
-            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-            <property role="13BvtO" value="Migrate Query Scopes" />
           </node>
         </node>
       </node>
@@ -445,13 +453,69 @@
         <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
-    <node concept="qVDSY" id="40H5Ahznxzt" role="LiZbd">
-      <node concept="chp4Y" id="40H5AhznxzW" role="qVDSX">
+    <node concept="qVDSY" id="5r4$rjzcGyO" role="LiZbd">
+      <node concept="1dO9Bo" id="5r4$rjzcGyP" role="1dOa5D">
+        <node concept="psT0o" id="5r4$rjzcGyQ" role="1dp2q7">
+          <node concept="psT0s" id="5r4$rjzcGyR" role="psT0v">
+            <node concept="BaHAS" id="5r4$rjzcGyS" role="psT0j">
+              <property role="BaHAW" value="jetbrains.mps.lang.smodel.query.test.editorTest" />
+              <property role="BaGAP" value="tests" />
+            </node>
+            <node concept="LIFWc" id="5r4$rjzcGAg" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="1" />
+              <property role="p6zMs" value="1" />
+              <property role="LIFWd" value="Constant_1y4udd_e0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="chp4Y" id="5r4$rjzcGyV" role="qVDSX">
         <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
-      <node concept="1dO9Bo" id="40H5Ahznx_c" role="1dOa5D">
-        <node concept="3Z_Q4n" id="40H5AhznxAs" role="1dp2q7">
-          <node concept="LIFWc" id="40H5AhznxCg" role="lGtFl">
+    </node>
+  </node>
+  <node concept="LiM7Y" id="7wqdV6Y5cSM">
+    <property role="TrG5h" value="QueryParameterList_Add2" />
+    <node concept="3clFbS" id="7wqdV6Y5cSS" role="LjaKd">
+      <node concept="2TK7Tu" id="7wqdV6Y5cUC" role="3cqZAp">
+        <property role="2TTd_B" value="e" />
+      </node>
+      <node concept="2TK7Tu" id="7wqdV6Y5cST" role="3cqZAp">
+        <property role="2TTd_B" value="x" />
+      </node>
+      <node concept="2TK7Tu" id="7wqdV6Y5cW8" role="3cqZAp">
+        <property role="2TTd_B" value="a" />
+      </node>
+      <node concept="2TK7Tu" id="5r4$rjzcEJl" role="3cqZAp">
+        <property role="2TTd_B" value="c" />
+      </node>
+      <node concept="2TK7Tu" id="7wqdV6Y5cUW" role="3cqZAp">
+        <property role="2TTd_B" value="t" />
+      </node>
+    </node>
+    <node concept="qVDSY" id="5r4$rjzcED3" role="LiRBU">
+      <node concept="chp4Y" id="5r4$rjzcED4" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcEDh" role="1dOa5D">
+        <node concept="LIFWc" id="5r4$rjzcEJb" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_3efoba_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="qVDSY" id="5r4$rjzcEJd" role="LiZbd">
+      <node concept="chp4Y" id="5r4$rjzcEJe" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcEJh" role="1dOa5D">
+        <node concept="3Z_Q4n" id="5r4$rjzcG8J" role="1dp2q7">
+          <node concept="LIFWc" id="5r4$rjzcGar" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
             <property role="p6zMq" value="5" />
@@ -462,75 +526,11 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="7wqdV6Y5cSM">
-    <property role="TrG5h" value="QueryParameterList_Add2" />
-    <node concept="2Jgcaq" id="7wqdV6Y5cSP" role="LiZbd">
-      <node concept="1dO9Bo" id="7wqdV6Y5cUl" role="1dOa5D">
-        <node concept="1dREyB" id="7wqdV6Y5cUA" role="1dp2q7">
-          <node concept="LIFWc" id="7wqdV6Y5cVY" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="4" />
-            <property role="p6zMs" value="4" />
-            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-          <node concept="13_zln" id="5r4$rjzcBia" role="lGtFl">
-            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-            <property role="13BvtO" value="Migrate Query Scopes" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="7wqdV6Y5cSS" role="LjaKd">
-      <node concept="2TK7Tu" id="7wqdV6Y5cUC" role="3cqZAp">
-        <property role="2TTd_B" value="r" />
-      </node>
-      <node concept="2TK7Tu" id="7wqdV6Y5cST" role="3cqZAp">
-        <property role="2TTd_B" value="/" />
-      </node>
-      <node concept="2TK7Tu" id="7wqdV6Y5cW8" role="3cqZAp">
-        <property role="2TTd_B" value="o" />
-      </node>
-      <node concept="2TK7Tu" id="7wqdV6Y5cUW" role="3cqZAp">
-        <property role="2TTd_B" value="+" />
-      </node>
-    </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5cTy" role="LiRBU">
-      <node concept="1dO9Bo" id="7wqdV6Y5cTN" role="1dOa5D">
-        <node concept="LIFWc" id="7wqdV6Y5cVA" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_3efoba_a0a" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="7wqdV6Y5dc8">
     <property role="TrG5h" value="QueryParameterList_Add3" />
-    <node concept="2Jgcaq" id="7wqdV6Y5dc9" role="LiZbd">
-      <node concept="1dO9Bo" id="7wqdV6Y5dca" role="1dOa5D">
-        <node concept="1dREyB" id="7wqdV6Y5dcb" role="1dp2q7">
-          <node concept="LIFWc" id="7wqdV6Y5dcc" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="4" />
-            <property role="p6zMs" value="4" />
-            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
-          </node>
-          <node concept="13_zln" id="5r4$rjzcBic" role="lGtFl">
-            <property role="13_zl8" value="scope should be specified explicitly if you want to include read-only models" />
-            <property role="13_zlf" value="This node should have been migrated, but could not be migrated automatically since this code seems to be not valid. Please review this code and migrate manually if necessary." />
-            <property role="13BvtO" value="Migrate Query Scopes" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFbS" id="7wqdV6Y5dcd" role="LjaKd">
       <node concept="2TK7Tu" id="7wqdV6Y5dce" role="3cqZAp">
-        <property role="2TTd_B" value="r" />
+        <property role="2TTd_B" value="e" />
       </node>
       <node concept="2HxZob" id="7wqdV6Y5dea" role="3cqZAp">
         <node concept="1iFQzN" id="7wqdV6Y5deL" role="3iKnsn">
@@ -538,14 +538,33 @@
         </node>
       </node>
     </node>
-    <node concept="2Jgcaq" id="7wqdV6Y5dci" role="LiRBU">
-      <node concept="1dO9Bo" id="7wqdV6Y5dcj" role="1dOa5D">
-        <node concept="LIFWc" id="7wqdV6Y5dck" role="lGtFl">
+    <node concept="qVDSY" id="5r4$rjzcG8v" role="LiRBU">
+      <node concept="chp4Y" id="5r4$rjzcG8w" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcG8x" role="1dOa5D">
+        <node concept="LIFWc" id="5r4$rjzcG8y" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
           <property role="LIFWd" value="Constant_3efoba_a0a" />
+        </node>
+      </node>
+    </node>
+    <node concept="qVDSY" id="5r4$rjzcG8B" role="LiZbd">
+      <node concept="chp4Y" id="5r4$rjzcG8C" role="qVDSX">
+        <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="1dO9Bo" id="5r4$rjzcGat" role="1dOa5D">
+        <node concept="3Z_Q4n" id="5r4$rjzcGav" role="1dp2q7">
+          <node concept="LIFWc" id="5r4$rjzcGcb" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="5" />
+            <property role="p6zMs" value="5" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
         </node>
       </node>
     </node>
