@@ -31650,6 +31650,43 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2fHgbadLc5b" role="3cqZAp">
+          <node concept="3cpWsn" id="2fHgbadLc5c" role="3cpWs9">
+            <property role="TrG5h" value="scope" />
+            <node concept="3uibUv" id="2fHgbadLc59" role="1tU5fm">
+              <ref role="3uigEE" to="mte5:~ProjectScope" resolve="ProjectScope" />
+            </node>
+          </node>
+        </node>
+        <node concept="1QHqEK" id="2fHgbadLGEf" role="3cqZAp">
+          <node concept="1QHqEC" id="2fHgbadLGEh" role="1QHqEI">
+            <node concept="3clFbS" id="2fHgbadLGEj" role="1bW5cS">
+              <node concept="3clFbF" id="2fHgbadLcLv" role="3cqZAp">
+                <node concept="37vLTI" id="2fHgbadLcLx" role="3clFbG">
+                  <node concept="2ShNRf" id="2fHgbadLc5d" role="37vLTx">
+                    <node concept="1pGfFk" id="2fHgbadLc5e" role="2ShVmc">
+                      <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                      <node concept="37vLTw" id="2fHgbadLc5f" role="37wK5m">
+                        <ref role="3cqZAo" node="4HeMkQiYPZo" resolve="myProject" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="2fHgbadLcL_" role="37vLTJ">
+                    <ref role="3cqZAo" node="2fHgbadLc5c" resolve="scope" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2fHgbadLJrK" role="ukAjM">
+            <node concept="37vLTw" id="2fHgbadLIr9" role="2Oq$k0">
+              <ref role="3cqZAo" node="4HeMkQiYPZo" resolve="myProject" />
+            </node>
+            <node concept="liA8E" id="2fHgbadLK9i" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="3pNk_u$skEd" role="3cqZAp">
           <node concept="2OqwBi" id="3pNk_u$sl1s" role="3clFbG">
             <node concept="37vLTw" id="3pNk_u$skEb" role="2Oq$k0">
@@ -31680,13 +31717,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2ShNRf" id="66iqE7xTbui" role="37wK5m">
-                    <node concept="1pGfFk" id="66iqE7xTW3v" role="2ShVmc">
-                      <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
-                      <node concept="37vLTw" id="66iqE7xTWb9" role="37wK5m">
-                        <ref role="3cqZAo" node="4HeMkQiYPZo" resolve="myProject" />
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="2fHgbadLc5g" role="37wK5m">
+                    <ref role="3cqZAo" node="2fHgbadLc5c" resolve="scope" />
                   </node>
                 </node>
               </node>

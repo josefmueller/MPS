@@ -21,10 +21,11 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.IdeActions;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
-import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -84,7 +85,13 @@ public class TodoViewer extends JPanel {
       }
     }, ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
-    searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new GenericHolder<Project>(myProject), new ProjectScope(myProject)));
+    final Wrappers._T<ProjectScope> scope = new Wrappers._T<ProjectScope>();
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        scope.value = new ProjectScope(myProject);
+      }
+    });
+    searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new GenericHolder<Project>(myProject), scope.value));
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
     searchTodoAction.actionPerformed(AnActionEvent.createFromInputEvent(searchTodoAction, null, ActionPlaces.TODO_VIEW_TOOLBAR));
     getTool().openToolLater(true);

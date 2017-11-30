@@ -79,7 +79,7 @@ public final class MacrosFactory {
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MODULE)) {
         IFile anchorFolder = anchorFile.getParent();
-        if (anchorFile.toPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+        if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
           anchorFolder = anchorFolder.getParent();
         }
         String modelRelativePath = removePrefix(path);
@@ -92,7 +92,7 @@ public final class MacrosFactory {
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       IFile anchorFolder = anchorFile.getParent();
-      if (anchorFile.toPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+      if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
         anchorFolder = anchorFolder.getParent();
       }
       String prefix = IFileUtils.getCanonicalPath(anchorFolder);
