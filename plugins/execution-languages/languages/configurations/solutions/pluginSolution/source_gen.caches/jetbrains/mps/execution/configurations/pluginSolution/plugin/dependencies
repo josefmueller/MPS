@@ -115,7 +115,7 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddExecutor_Action" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.AddProducer_Action" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ExecutionConfigurations_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
@@ -169,7 +169,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ActionGroup" file="ShowAsIntentions_ActionGroup.java">
+  <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.ShowAsIntentions_ExecutionConfigurations_ActionGroup" file="ShowAsIntentions_ExecutionConfigurations_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

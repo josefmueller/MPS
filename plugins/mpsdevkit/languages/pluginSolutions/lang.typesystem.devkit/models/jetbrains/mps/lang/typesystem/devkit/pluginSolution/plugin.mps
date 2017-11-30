@@ -63,7 +63,6 @@
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
         <property id="1204991940915" name="caption" index="2f7twF" />
-        <property id="1205160812895" name="mnemonic" index="2pbE17" />
         <property id="1217005992861" name="isInvisibleWhenDisabled" index="1rdrE6" />
         <property id="1213283637680" name="isPopup" index="1XlLyE" />
         <child id="1204991552650" name="modifier" index="2f5YQi" />
@@ -1201,7 +1200,7 @@
     <property role="2f7twF" value="Go to Rule Which Caused Error" />
     <property role="1XlLyE" value="true" />
     <node concept="tT9cl" id="4vCqlNf_Cz7" role="2f5YQi">
-      <ref role="tU$_T" node="4KDfkUwMa_D" resolve="TypesystemActions" />
+      <ref role="tU$_T" node="4KDfkUwMa_D" resolve="TypesystemActions_Devkit" />
     </node>
     <node concept="2OiAzN" id="4vCqlNf_Cz8" role="ftER_">
       <node concept="2OiTZ2" id="4vCqlNf_Cz9" role="2Oj6PV">
@@ -1523,9 +1522,7 @@
     </node>
   </node>
   <node concept="tC5Ba" id="4KDfkUwMa_D">
-    <property role="2pbE17" value="T" />
-    <property role="TrG5h" value="TypesystemActions" />
-    <property role="2f7twF" value="Type System" />
+    <property role="TrG5h" value="TypesystemActions_Devkit" />
     <node concept="tT9cl" id="4KDfkUwMa_E" role="2f5YQi">
       <ref role="tU$_T" to="tprs:1GlxrIveqTo" resolve="DebugActions" />
       <ref role="2f8Tey" to="tprs:6f0maSpvK1u" resolve="types" />

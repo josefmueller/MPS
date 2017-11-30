@@ -409,7 +409,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.CreateReferenceConcept_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_LangStructure_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForAspect_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForNode_Action" />
@@ -418,7 +418,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_ActionGroup" file="ShowAsIntentions_ActionGroup.java">
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowAsIntentions_LangStructure_ActionGroup" file="ShowAsIntentions_LangStructure_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

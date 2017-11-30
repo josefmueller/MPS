@@ -1592,7 +1592,7 @@
     </node>
   </node>
   <node concept="tC5Ba" id="5GUyf6ontRY">
-    <property role="TrG5h" value="ShowAsIntentions" />
+    <property role="TrG5h" value="ShowAsIntentions_ExecutionConfigurations" />
     <node concept="ftmFs" id="5GUyf6ontS0" role="ftER_">
       <node concept="tCFHf" id="5GUyf6ontS3" role="ftvYc">
         <ref role="tCJdB" node="5GUyf6onde1" resolve="AddProducer" />

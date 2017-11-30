@@ -350,7 +350,7 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -2282,7 +2282,7 @@
     </node>
   </node>
   <node concept="tC5Ba" id="nMe5u0DxmB">
-    <property role="TrG5h" value="ShowAsIntentions" />
+    <property role="TrG5h" value="ShowAsIntentions_Generator" />
     <node concept="tT9cl" id="nMe5u0DxmF" role="2f5YQi">
       <ref role="tU$_T" to="ekwn:5YEoTZrFokU" resolve="ActionsAsIntentions" />
     </node>

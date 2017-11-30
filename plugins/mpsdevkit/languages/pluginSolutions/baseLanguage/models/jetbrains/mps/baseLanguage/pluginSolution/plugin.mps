@@ -1168,7 +1168,7 @@
     </node>
   </node>
   <node concept="tC5Ba" id="5GUyf6ogmUy">
-    <property role="TrG5h" value="ShowAsIntentions" />
+    <property role="TrG5h" value="ShowAsIntentions_BL" />
     <node concept="ftmFs" id="5GUyf6ognS2" role="ftER_">
       <node concept="tCFHf" id="5GUyf6ognS5" role="ftvYc">
         <ref role="tCJdB" node="5GUyf6ofMdg" resolve="CreateMethodDeclaration" />

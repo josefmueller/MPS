@@ -62,8 +62,6 @@
       </concept>
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
-        <property id="1204991940915" name="caption" index="2f7twF" />
-        <property id="1205160812895" name="mnemonic" index="2pbE17" />
         <child id="1204991552650" name="modifier" index="2f5YQi" />
         <child id="1207145245948" name="contents" index="ftER_" />
       </concept>
@@ -291,9 +289,7 @@
     </language>
   </registry>
   <node concept="tC5Ba" id="4KDfkUwMa_D">
-    <property role="2pbE17" value="T" />
-    <property role="TrG5h" value="TypesystemActions" />
-    <property role="2f7twF" value="Type System" />
+    <property role="TrG5h" value="TypesystemActions_Plugin" />
     <node concept="tT9cl" id="4KDfkUwMa_E" role="2f5YQi">
       <ref role="tU$_T" to="tprs:1GlxrIveqTo" resolve="DebugActions" />
       <ref role="2f8Tey" to="tprs:6f0maSpvK1u" resolve="types" />
@@ -1130,7 +1126,7 @@
     </node>
   </node>
   <node concept="tC5Ba" id="1um9r$LUDmF">
-    <property role="TrG5h" value="ShowAsIntentions" />
+    <property role="TrG5h" value="ShowAsIntentions_TypeSystem" />
     <node concept="ftmFs" id="1um9r$LUDs3" role="ftER_">
       <node concept="tCFHf" id="1um9r$LUDs6" role="ftvYc">
         <ref role="tCJdB" node="1um9r$LUw5S" resolve="ConvertInferenceRuleToCheckingRule" />

@@ -11250,7 +11250,7 @@
   </node>
   <node concept="tC5Ba" id="5GUyf6oj7sc">
     <property role="3GE5qa" value="Actions" />
-    <property role="TrG5h" value="ShowAsIntentions" />
+    <property role="TrG5h" value="ShowAsIntentions_LangStructure" />
     <node concept="ftmFs" id="5GUyf6oj7sm" role="ftER_">
       <node concept="tCFHf" id="5GUyf6oj7sp" role="ftvYc">
         <ref role="tCJdB" node="5GUyf6oiC6l" resolve="CreateReferenceConcept" />

@@ -23,10 +23,10 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new NewCreateRootRule_Action());
     addAction(new NewRootMappingRule_Action());
     // groups 
-    addGroup(new ShowAsIntentions_ActionGroup());
+    addGroup(new ShowAsIntentions_Generator_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_Generator_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());

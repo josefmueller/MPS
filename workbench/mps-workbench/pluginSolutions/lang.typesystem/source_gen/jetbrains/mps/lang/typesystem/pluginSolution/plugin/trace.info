@@ -98,30 +98,29 @@
     </file>
   </root>
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/1699587386715575723">
-    <file name="ShowAsIntentions_ActionGroup.java">
+    <file name="ShowAsIntentions_TypeSystem_ActionGroup.java">
       <node id="1699587386715575723" at="8,0,9,0" concept="11" trace="ID" />
-      <node id="1699587386715575723" at="9,41,10,34" concept="13" />
-      <node id="1699587386715575723" at="10,34,11,30" concept="2" />
+      <node id="1699587386715575723" at="9,52,10,45" concept="13" />
+      <node id="1699587386715575723" at="10,45,11,30" concept="2" />
       <node id="1699587386715575723" at="11,30,12,25" concept="2" />
-      <node id="1699587386715576070" at="12,25,13,145" concept="2" />
-      <node id="1699587386715575723" at="9,0,15,0" concept="1" trace="ShowAsIntentions_ActionGroup#()V" />
-      <scope id="1699587386715575723" at="9,41,13,145" />
+      <node id="1699587386715576070" at="12,25,13,156" concept="2" />
+      <node id="1699587386715575723" at="9,0,15,0" concept="1" trace="ShowAsIntentions_TypeSystem_ActionGroup#()V" />
+      <scope id="1699587386715575723" at="9,52,13,156" />
       <scope id="1699587386715575723" at="9,0,15,0" />
-      <unit id="1699587386715575723" at="7,0,16,0" name="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+      <unit id="1699587386715575723" at="7,0,16,0" name="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowAsIntentions_TypeSystem_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841908585">
-    <file name="TypesystemActions_ActionGroup.java">
+    <file name="TypesystemActions_Plugin_ActionGroup.java">
       <node id="5487985028841908585" at="8,0,9,0" concept="11" trace="ID" />
-      <node id="5487985028841908585" at="9,42,10,29" concept="13" />
-      <node id="5487985028841908585" at="10,29,11,30" concept="2" />
-      <node id="5487985028841908585" at="11,30,12,36" concept="2" />
-      <node id="5487985028841908585" at="12,36,13,25" concept="2" />
-      <node id="5487985028841908588" at="13,25,14,124" concept="2" />
-      <node id="5487985028841908585" at="9,0,16,0" concept="1" trace="TypesystemActions_ActionGroup#()V" />
-      <scope id="5487985028841908585" at="9,42,14,124" />
-      <scope id="5487985028841908585" at="9,0,16,0" />
-      <unit id="5487985028841908585" at="7,0,17,0" name="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_ActionGroup" />
+      <node id="5487985028841908585" at="9,49,10,42" concept="13" />
+      <node id="5487985028841908585" at="10,42,11,30" concept="2" />
+      <node id="5487985028841908585" at="11,30,12,25" concept="2" />
+      <node id="5487985028841908588" at="12,25,13,131" concept="2" />
+      <node id="5487985028841908585" at="9,0,15,0" concept="1" trace="TypesystemActions_Plugin_ActionGroup#()V" />
+      <scope id="5487985028841908585" at="9,49,13,131" />
+      <scope id="5487985028841908585" at="9,0,15,0" />
+      <unit id="5487985028841908585" at="7,0,16,0" name="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_Plugin_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841908720">
@@ -289,10 +288,10 @@
       <node id="7162597690967702203" at="21,30,22,63" concept="2" />
       <node id="7162597690967702203" at="22,63,23,41" concept="2" />
       <node id="7162597690967702203" at="23,41,24,14" concept="9" />
-      <node id="7162597690967702203" at="24,14,25,49" concept="2" />
-      <node id="7162597690967702203" at="25,49,26,50" concept="2" />
-      <node id="7162597690967702203" at="28,37,29,131" concept="2" />
-      <node id="7162597690967702203" at="29,131,30,134" concept="2" />
+      <node id="7162597690967702203" at="24,14,25,60" concept="2" />
+      <node id="7162597690967702203" at="25,60,26,57" concept="2" />
+      <node id="7162597690967702203" at="28,37,29,145" concept="2" />
+      <node id="7162597690967702203" at="29,145,30,138" concept="2" />
       <node id="7162597690967702203" at="32,48,33,92" concept="7" />
       <node id="7162597690967702203" at="33,92,34,71" concept="2" />
       <node id="7162597690967702203" at="34,71,35,15" concept="8" />
@@ -304,14 +303,14 @@
       <scope id="7162597690967702203" at="15,45,15,45" />
       <scope id="7162597690967702203" at="17,27,18,16" />
       <scope id="7162597690967702203" at="15,0,17,0" />
-      <scope id="7162597690967702203" at="28,37,30,134" />
+      <scope id="7162597690967702203" at="28,37,30,138" />
       <scope id="7162597690967702203" at="17,0,20,0" />
       <scope id="7162597690967702203" at="32,48,35,15">
         <var name="res" id="7162597690967702203" />
       </scope>
       <scope id="7162597690967702203" at="28,0,32,0" />
       <scope id="7162597690967702203" at="32,0,37,0" />
-      <scope id="7162597690967702203" at="20,30,26,50" />
+      <scope id="7162597690967702203" at="20,30,26,57" />
       <scope id="7162597690967702203" at="20,0,28,0" />
       <unit id="7162597690967702203" at="13,0,38,0" name="jetbrains.mps.lang.typesystem.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
     </file>

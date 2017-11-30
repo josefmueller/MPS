@@ -22,7 +22,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowHelpForNode_Action());
     addAction(new ShowHelpForRoot_Action());
     // groups 
-    addGroup(new ShowAsIntentions_ActionGroup());
+    addGroup(new ShowAsIntentions_LangStructure_ActionGroup());
     addGroup(new ShowHelp_ActionGroup());
     addGroup(new Structure_ActionGroup());
   }
@@ -31,6 +31,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_LangStructure_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
 }
