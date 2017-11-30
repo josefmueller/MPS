@@ -3296,12 +3296,14 @@
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.SwingConstants" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TodoFinder" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TodoViewer_Tool" />
