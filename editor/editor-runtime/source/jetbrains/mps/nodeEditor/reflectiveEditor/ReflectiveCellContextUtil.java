@@ -53,8 +53,7 @@ class ReflectiveCellContextUtil {
     EMPTY(false),
     REFLECTIVE_FOR_SUBTREE(true, ReflectiveHint.REFLECTIVE),
     REFLECTIVE_FOR_NODE_ONLY(true, ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_CHILDREN),
-    REGULAR_FOR_SUBTREE(false, ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_NODE, ReflectiveHint.DENY_FOR_CHILDREN),
-    REGULAR_FOR_NODE_ONLY(false, ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_NODE);
+    REGULAR_FOR_SUBTREE(false, ReflectiveHint.REFLECTIVE, ReflectiveHint.DENY_FOR_NODE, ReflectiveHint.DENY_FOR_CHILDREN);
 
     private final ReflectiveHint[] myHints;
     private final boolean myIsReflective;

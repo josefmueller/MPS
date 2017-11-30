@@ -58,7 +58,7 @@ class ReflectiveEditorAction {
       if (isReflective) {
         return new MakeNodeReflectiveAction(node, editorComponent);
       } else {
-        return new MakeNodeRegularAction(node, editorComponent);
+        throw new IllegalArgumentException("showing regular editor for node is not supported");
       }
     }
   }

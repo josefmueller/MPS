@@ -25,11 +25,11 @@ import java.util.List;
 
 public class ReflectiveEditorActionManager {
   public static void update(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent, AnActionEvent event) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree(editorComponent)).update(event);
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, !isReflective || isForSubtree(editorComponent)).update(event);
   }
 
   public static void execute(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree(editorComponent)).execute();
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, !isReflective || isForSubtree(editorComponent)).execute();
   }
 
   private static boolean isForSubtree(EditorComponent editorComponent) {

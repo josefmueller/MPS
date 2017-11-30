@@ -10,11 +10,11 @@ import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 
 @MPSLaunch
-public class ShowReflectiveEditorForNode_ThenRegularEditor_Test extends BaseTransformationTest {
+public class ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test extends BaseTransformationTest {
   @Test
-  public void test_ShowReflectiveEditorForNode_ThenRegularEditor() throws Throwable {
+  public void test_ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditor_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -28,8 +28,6 @@ public class ShowReflectiveEditorForNode_ThenRegularEditor_Test extends BaseTran
       Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
       Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
