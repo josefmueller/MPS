@@ -48,7 +48,9 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     for (SNode sourceNode : this.getNodesToRefactor()) {
       for (SNode reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(sourceNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), true, new SAbstractConcept[]{}))) {
         if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")) == myVariable) {
-          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"))));
+          SNode expr = SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")));
+          SNodeOperations.replaceWithAnother(reference, expr);
+          InlinePrecedenceUtil.parenthesiseIfNecessary(expr);
         }
       }
     }

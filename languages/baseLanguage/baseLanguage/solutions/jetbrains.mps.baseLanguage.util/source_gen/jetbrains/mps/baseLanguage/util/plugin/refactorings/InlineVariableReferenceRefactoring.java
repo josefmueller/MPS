@@ -56,6 +56,7 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       // ATM we do not inline if the last update was through a++ nor a+=1 type-of expressions 
       return myAssignment;
     }
+    InlinePrecedenceUtil.parenthesiseIfNecessary(nodeToSelect);
     this.optimizeDeclaration(variable);
     return nodeToSelect;
   }

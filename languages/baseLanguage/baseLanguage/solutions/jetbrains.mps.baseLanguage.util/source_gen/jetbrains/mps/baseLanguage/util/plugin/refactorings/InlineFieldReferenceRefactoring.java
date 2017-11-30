@@ -23,6 +23,7 @@ public class InlineFieldReferenceRefactoring extends InlineFieldRefactoring {
     SNode variable = SLinkOperations.getTarget(this.myReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"));
     SNode nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(variable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")));
     SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
+    InlinePrecedenceUtil.parenthesiseIfNecessary(nodeToSelect);
     this.optimizeDeclaration(variable);
     return nodeToSelect;
   }

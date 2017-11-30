@@ -120,7 +120,9 @@ public class InlineField_Action extends BaseAction {
           if (nodesCount == 0) {
             infoMessage.value = "Field " + fieldName + " is never used";
           } else {
-            yesNoMessage.value = "Inline field '" + fieldName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurence") + ")";
+            if (nodesCount > 1) {
+              yesNoMessage.value = "Inline field '" + fieldName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurrence") + ")";
+            }
           }
 
           ref.value = inlineVARef;

@@ -17,10 +17,14 @@ public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
   @Override
   public SNode doRefactoring() {
     for (SNode reference : this.findAllReferences(this.myVariable)) {
-      SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"))));
+      SNode expr = SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")));
+      SNodeOperations.replaceWithAnother(reference, expr);
+      InlinePrecedenceUtil.parenthesiseIfNecessary(expr);
     }
     for (SNode reference : this.findAllReferenceOperations(this.myVariable)) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getNodeAncestor(reference, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"))));
+      SNode expr = SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")));
+      SNodeOperations.replaceWithAnother(SNodeOperations.getNodeAncestor(reference, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), false, false), expr);
+      InlinePrecedenceUtil.parenthesiseIfNecessary(expr);
     }
     this.optimizeDeclaration(this.myVariable);
     return null;
