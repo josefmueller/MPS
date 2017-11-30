@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 

@@ -18,7 +18,6 @@ package jetbrains.mps.ide.devkit.generator;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelReadRunnable;
