@@ -262,7 +262,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   /*package*/ void findModuleUsages(List<SModuleReference> modules) {
     final SearchQuery query = new SearchQuery(new GenericHolder<Object>(modules), getModuleAndOwnedModelsScope());
-    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder()));
+    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new ModuleUsagesFinder(true)));
     showUsageImpl(query, provider);
     forceCancelCloseDialog();
   }
