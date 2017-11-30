@@ -47,7 +47,7 @@ abstract class ReflectiveHintsAction {
     return myEditorComponent;
   }
 
-  final boolean isReflective() {
+  private boolean isReflective() {
     return myIsReflective;
   }
 

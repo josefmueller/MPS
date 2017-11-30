@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ReflectiveHintsManager {
 
@@ -28,5 +30,30 @@ public class ReflectiveHintsManager {
 
   public static boolean shouldShowReflectiveEditor(EditorCellContext cellContext) {
     return ReflectiveCellContextUtil.shouldShowReflectiveEditor(cellContext);
+  }
+
+  public static boolean canMakeNodeReflective(SNode node, EditorComponent editorComponent) {
+    return new MakeNodeReflectiveAction(node, editorComponent).isApplicable();
+  }
+
+  public static void makeNodeReflective(SNode node, EditorComponent editorComponent) {
+    new MakeNodeReflectiveAction(node, editorComponent).execute();
+  }
+
+  public static boolean canMakeSubtree(SNode root, EditorComponent editorComponent, boolean isReflective) {
+    if (isReflective) {
+      return new MakeSubtreeReflectiveAction(root, editorComponent).isApplicable();
+    } else {
+      return new MakeSubtreeRegularAction(root, editorComponent).isApplicable();
+    }
+  }
+
+  public static void makeSubtree(SNode root, EditorComponent editorComponent, boolean isReflective) {
+    if (isReflective) {
+      new MakeSubtreeReflectiveAction(root, editorComponent).execute();
+    } else {
+      new MakeSubtreeRegularAction(root, editorComponent).execute();
+    }
+
   }
 }
