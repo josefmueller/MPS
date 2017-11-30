@@ -23,21 +23,25 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditor_ThenReflectiveEdi
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("8710742295993334843", "");
+      initEditorComponent("8335132831461797704", "");
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
-          getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8710742295993334846"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
+          getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8335132831461799372"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
         }
       });
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8710742295993334843"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))).getCellContext()));
-          Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8710742295993334846"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement")))).getCellContext()));
-          Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8710742295993334848"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))).getCellContext()));
+          Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8335132831461799369"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement")))).getCellContext()));
+          Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8335132831461799372"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement")))).getCellContext()));
+          Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getBigValidCellForNode(SNodeOperations.cast(getNodeById("8335132831461799374"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement")))).getCellContext()));
         }
       });
     }

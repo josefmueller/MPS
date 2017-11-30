@@ -27,9 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Font;
 
 public class ProjectTreeNode extends TextTreeNode implements TreeElement {
-  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
-  };
-
   private Project myProject;
 
   public ProjectTreeNode(Project project) {
@@ -48,7 +45,7 @@ public class ProjectTreeNode extends TextTreeNode implements TreeElement {
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(myProject);
     if (ideaProject != null && ideaProject.getBaseDir() != null) {
       //noinspection ConstantConditions
-      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER, ideaProject.getBaseDir().getPresentableUrl());
+      setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
     }
   }
 

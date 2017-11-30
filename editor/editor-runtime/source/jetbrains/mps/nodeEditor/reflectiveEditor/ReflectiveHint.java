@@ -80,10 +80,6 @@ enum ReflectiveHint {
     removeFromCellFactory(factory);
   }
 
-  void addToCellFactory(EditorCellFactory factory) {
-    factory.addCellContextHints(getHint());
-  }
-
   private void removeFromCellFactory(EditorCellFactory factory) {
     factory.removeCellContextHints(getHint());
   }

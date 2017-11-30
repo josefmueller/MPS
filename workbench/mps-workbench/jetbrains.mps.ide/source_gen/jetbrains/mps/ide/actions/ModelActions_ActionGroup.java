@@ -104,9 +104,6 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction(action);
     }
     ModelActions_ActionGroup.this.addSeparator();
-    ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowReflectiveEditorByDefault_Action");
-    ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowRegularEditorByDefault_Action");
-    ModelActions_ActionGroup.this.addSeparator();
     {
       LabelledAnchor action = new LabelledAnchor(ModelActions_ActionGroup.LABEL_ID_run);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();

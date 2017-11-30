@@ -39,15 +39,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Collectors;
 
 /**
  * @author Kostik
  */
 public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
   private static final Logger LOG = LogManager.getLogger(MPSTreeNode.class);
-  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
-  };
 
   private MPSTree myTree;
   private boolean myAdded;
@@ -56,7 +53,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private Icon myExpandedIcon = IdeIcons.OPENED_FOLDER;
   private String myNodeIdentifier;
   private String myText;
-  private Map<TreeAdditionalTextOwner, String> myAdditionalTextMap = new HashMap<>();
+  private String myAdditionalText = null;
   private String myTooltipText;
   private Color myColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED"));
   // initialized once with the value of myColor the moment node is created, to facilitate nodes with pre-defined colors (initialized in cons)
@@ -327,12 +324,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
                     .max(Comparator.comparingInt(TreeMessage::getPriority))
                     .map(TreeMessage::getColor)
                     .ifPresent(this::setColor);
-      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER,
-                        myTreeMessages.stream()
-                                      .filter(TreeMessage::hasAdditionalText)
-                                      .max(Comparator.comparingInt(TreeMessage::getPriority))
-                                      .map(TreeMessage::getAdditionalText)
-                                      .orElse(null));
+      myTreeMessages.stream()
+                    .filter(TreeMessage::hasAdditionalText)
+                    .max(Comparator.comparingInt(TreeMessage::getPriority))
+                    .map(TreeMessage::getAdditionalText)
+                    .ifPresent(this::setAdditionalText);
     }
   }
 
@@ -471,43 +467,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public final String getAdditionalText() {
-    if (myAdditionalTextMap.isEmpty()) {
-      return null;
-    }
-    return myAdditionalTextMap.values().stream()
-                              .collect(Collectors.joining(", "));
+    return myAdditionalText;
   }
 
-  /**
-   * Get additional text by its source.
-   * @param treeAdditionalTextOwner owner of the additional text.
-   * @return additional text.
-   * @see #setAdditionalText(TreeAdditionalTextOwner, String)
-   */
-  @Nullable
-  public final String getAdditionalText(TreeAdditionalTextOwner treeAdditionalTextOwner) {
-    return myAdditionalTextMap.get(treeAdditionalTextOwner);
-  }
-
-  /**
-   * Use {@link #setAdditionalText(TreeAdditionalTextOwner, String)}.
-   */
-  @Deprecated
   public final void setAdditionalText(String newAdditionalText) {
-    setAdditionalText(null, newAdditionalText);
-  }
-
-  /**
-   * Set additional text.
-   * @param treeAdditionalTextOwner owner of the additional text.
-   * @param newAdditionalText additional text.
-   */
-  public final void setAdditionalText(TreeAdditionalTextOwner treeAdditionalTextOwner, @Nullable String newAdditionalText) {
-    if (newAdditionalText == null) {
-      myAdditionalTextMap.remove(treeAdditionalTextOwner);
-    } else {
-      myAdditionalTextMap.put(treeAdditionalTextOwner, newAdditionalText);
-    }
+    myAdditionalText = newAdditionalText;
   }
 
   public final String getText() {

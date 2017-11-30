@@ -19,7 +19,6 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.GenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ModifiedMarker;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ReflectiveEditorForModelMarker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
@@ -44,7 +43,6 @@ public class ProjectPaneTreeHighlighter {
   private final GenStatusUpdater myGenStatusVisitor;
   private final ErrorChecker myErrorVisitor;
   private final ModifiedMarker myModifiedMarker;
-  private final ReflectiveEditorForModelMarker myReflectiveEditorForModelMarker;
   // receives commands from node status analyzers (TreeUpdateVisitor instances, above) and re-dispatch tree update, batched, in EDT+Read
   private final TreeNodeUpdater myUpdater;
   // threads we'd like to use to analyze status of tree nodes
@@ -65,14 +63,12 @@ public class ProjectPaneTreeHighlighter {
     myGenStatusVisitor = new GenStatusUpdater(mpsProject);
     myErrorVisitor = new ErrorChecker(mpsProject);
     myModifiedMarker = new ModifiedMarker();
-    myReflectiveEditorForModelMarker = new ReflectiveEditorForModelMarker(mpsProject);
   }
 
   public void init() {
     myGenStatusVisitor.setUpdater(myUpdater);
     myErrorVisitor.setUpdater(myUpdater);
     myModifiedMarker.setUpdater(myUpdater);
-    myReflectiveEditorForModelMarker.setUpdater(myUpdater);
 
     myTree.addTreeNodeListener(myNodeListener);
   }
@@ -84,20 +80,19 @@ public class ProjectPaneTreeHighlighter {
       myModuleListeners = null;
     }
     if (myModelListeners != null) {
-      myModelListeners.stopListening(myProjectRepository, myGenStatusVisitor.getStatusManager(), myReflectiveEditorForModelMarker.getComponent());
+      myModelListeners.stopListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
       myModelListeners = null;
     }
     myExecutor.shutdownNow();
     myGenStatusVisitor.setUpdater(null);
     myErrorVisitor.setUpdater(null);
     myModifiedMarker.setUpdater(null);
-    myReflectiveEditorForModelMarker.setUpdater(null);
   }
 
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
       myModelListeners = new SModelNodeListeners(this);
-      myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager(), myReflectiveEditorForModelMarker.getComponent());
+      myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
     }
     return myModelListeners;
   }
@@ -151,19 +146,12 @@ public class ProjectPaneTreeHighlighter {
       schedule(tn, myErrorVisitor);
       schedule(tn, myModifiedMarker);
       schedule(tn, myGenStatusVisitor);
-      schedule(tn, myReflectiveEditorForModelMarker);
     }
   }
 
   /*package*/ void refreshGenerationStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
     for (SModelTreeNode tn : treeNodes) {
       schedule(tn, myGenStatusVisitor);
-    }
-  }
-
-  /*package*/ void refreshReflectiveHintsStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
-    for (SModelTreeNode tn : treeNodes) {
-      schedule(tn, myReflectiveEditorForModelMarker);
     }
   }
 

@@ -15,27 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 public class ReflectiveHintsManager {
-
-  public static void initReflectiveHints(SModel model, EditorCellFactory cellFactory, SRepository repository) {
-    if (model != null) {
-      jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(repository);
-      if (mpsProject instanceof MPSProject) {
-        Project ideaProject = ((MPSProject) mpsProject).getProject();
-        if (ReflectiveHintsForModelComponent.getInstance(ideaProject).shouldShowReflectiveEditor(model)) {
-          ReflectiveHint.REFLECTIVE.addToCellFactory(cellFactory);
-        }
-      }
-    }
-  }
 
   public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
     for (ReflectiveHint reflectiveHint : ReflectiveHint.values()) {

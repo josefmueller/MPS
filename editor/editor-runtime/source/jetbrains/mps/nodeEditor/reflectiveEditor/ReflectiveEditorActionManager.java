@@ -34,6 +34,6 @@ public class ReflectiveEditorActionManager {
 
   private static boolean isForSubtree(EditorComponent editorComponent) {
     Selection selection = editorComponent.getSelectionManager().getSelection();
-    return !(selection.getSelectedCells().get(0) instanceof EditorCell_Label);
+    return selection != null && !(selection.getSelectedCells().get(0) instanceof EditorCell_Label);
   }
 }

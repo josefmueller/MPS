@@ -29,10 +29,10 @@ public class ShowReflectiveEditorTwiceUndo_Test extends BaseTransformationTest {
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
 
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
-      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
       invokeAction("$Undo");
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
       invokeAction("$Redo");
 
       invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");

@@ -23,6 +23,7 @@ public class ShowReflectiveEditorSavesSelectionStack_Test extends BaseTransforma
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
     }
   }
 }

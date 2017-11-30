@@ -88,10 +88,6 @@
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent</implementation-class>
-    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">

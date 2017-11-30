@@ -16,25 +16,22 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.util.EqualUtil;
 
 public class AdditionalTextNodeUpdate extends NodeUpdate {
-  private final TreeAdditionalTextOwner myTreeAdditionalTextOwner;
   private final String myText;
 
-  public AdditionalTextNodeUpdate(TreeAdditionalTextOwner treeAdditionalTextOwner, String addText) {
-    myTreeAdditionalTextOwner = treeAdditionalTextOwner;
+  public AdditionalTextNodeUpdate(String addText) {
     myText = addText;
   }
 
   @Override
   public boolean needed(MPSTreeNode node) {
-    return !EqualUtil.equals(node.getAdditionalText(myTreeAdditionalTextOwner), myText);
+    return !EqualUtil.equals(node.getAdditionalText(), myText);
   }
 
   @Override
   public void update(MPSTreeNode node) {
-    node.setAdditionalText(myTreeAdditionalTextOwner, myText);
+    node.setAdditionalText(myText);
   }
 }

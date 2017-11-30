@@ -23,9 +23,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractFileTreeNode extends MPSTreeNode {
-  private static final TreeAdditionalTextOwner TREE_ADDITIONAL_TEXT_OWNER = new TreeAdditionalTextOwner() {
-  };
-
   protected final VirtualFile myFile;
   protected final MPSProject myProject;
 
@@ -37,7 +34,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     myFile = file;
     myProject = project;
     if (showFullPath) {
-      setAdditionalText(TREE_ADDITIONAL_TEXT_OWNER, myFile.getPresentableUrl());
+      setAdditionalText(myFile.getPresentableUrl());
     }
     setNodeIdentifier(myFile.getPath());
     setText(myFile.getName());

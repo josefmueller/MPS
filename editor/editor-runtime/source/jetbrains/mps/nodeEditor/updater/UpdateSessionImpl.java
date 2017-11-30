@@ -149,7 +149,6 @@ public class UpdateSessionImpl implements UpdateSession {
     Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
       getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
-      ReflectiveHintsManager.initReflectiveHints(getNode().getModel(), getCellFactory(), getUpdater().getEditorContext().getRepository());
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
         getCellFactory().addCellContextHints(explicitHintsForNode);

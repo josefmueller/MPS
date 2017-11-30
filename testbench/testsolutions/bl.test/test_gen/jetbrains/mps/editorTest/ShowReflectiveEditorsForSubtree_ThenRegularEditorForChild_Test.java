@@ -29,13 +29,15 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditorForChild_Test exte
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("1204383717210482930"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
         }
       });
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("1204383717210483299"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
         }
       });
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
 
       getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
