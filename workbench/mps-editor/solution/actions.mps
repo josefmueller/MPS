@@ -1293,14 +1293,14 @@
     <node concept="Zd509" id="5ZVOsnj25$q" role="Zd508">
       <ref role="1bYAoF" node="5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       <node concept="pLAjd" id="5ZVOsnj25Ag" role="Zd501">
-        <property role="pLAjc" value="ctrl+shift" />
+        <property role="pLAjc" value="ctrl" />
         <property role="pLAjf" value="VK_CLOSE_BRACKET" />
       </node>
     </node>
     <node concept="Zd509" id="5ZVOsnj25Ay" role="Zd508">
       <ref role="1bYAoF" node="1XfowaweGRd" resolve="ShowRegularEditor" />
       <node concept="pLAjd" id="5ZVOsnj25Az" role="Zd501">
-        <property role="pLAjc" value="ctrl+shift" />
+        <property role="pLAjc" value="ctrl" />
         <property role="pLAjf" value="VK_OPEN_BRACKET" />
       </node>
     </node>
