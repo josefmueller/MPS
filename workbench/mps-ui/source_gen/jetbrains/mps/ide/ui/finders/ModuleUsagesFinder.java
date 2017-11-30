@@ -26,6 +26,10 @@ import jetbrains.mps.smodel.SModelStereotype;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModelInternal;
 
 /**
@@ -209,7 +213,10 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
   private static class ModuleUseInModel {
     private final SearchResults mySearchResults;
     private final Set<SModelReference> myModelsToFind;
+    private ModelUsagesFinder myModelUsageFinder;
+
     public ModuleUseInModel(SModule toFind, SearchResults toPopulate) {
+      myModelUsageFinder = new ModelUsagesFinder();
       myModelsToFind = new HashSet<SModelReference>();
       for (SModel m : toFind.getModels()) {
         myModelsToFind.add(m.getReference());
@@ -217,10 +224,21 @@ public class ModuleUsagesFinder extends BaseFinder implements IFinder {
       mySearchResults = toPopulate;
     }
     public void collect(SModel model) {
+      // getImportedModelUIDs doesn't report implicit model imports 
       for (SModelReference i : SModelOperations.getImportedModelUIDs(model)) {
         if (myModelsToFind.contains(i)) {
           mySearchResults.add(new SearchResult<SModel>(model, ModuleUsagesFinder.USED_BY));
           break;
+        }
+      }
+      // unless we have a mechanism to get complete set of model imports (including implicit), 
+      // we check models even if they don't import any model of interest explicitly 
+      List<SearchResult<Object>> res = mySearchResults.getSearchResults();
+      for (SModelReference mr : myModelsToFind) {
+        List<SearchResult<SNode>> found = myModelUsageFinder.doFind(mr, Collections.singleton(model), new EmptyProgressMonitor());
+        //  i know it's odd, but did you try to work merge SearchResult<Object> and SearchResult<SNode>? 
+        for (SearchResult sr : found) {
+          res.add(sr);
         }
       }
     }

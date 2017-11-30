@@ -11,9 +11,11 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
+import java.util.List;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 
 /**
  * Look up particular nodes in scope models with reference target pointing to SModelReference.
@@ -29,17 +31,25 @@ public class ModelUsagesFinder extends BaseFinder {
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
+    SModelReference modelReference;
     Object value = query.getObjectHolder().getObject();
     if (!(value instanceof SModelReference)) {
       return searchResults;
     }
-    SModelReference modelReference = (SModelReference) value;
+    modelReference = (SModelReference) value;
     searchResults.getSearchedNodes().add(modelReference);
     Collection<SModel> models = IterableUtil.asCollection(query.getScope().getModels());
-    monitor.start("Looking up references to a model", models.size());
-    for (SModel modelDescriptor : models) {
+    searchResults.getSearchResults().addAll(doFind(modelReference, models, monitor));
+    return searchResults;
+  }
+
+  /*package*/ List<SearchResult<SNode>> doFind(SModelReference what, Collection<SModel> where, ProgressMonitor monitor) {
+    // arguments != null 
+    List<SearchResult<SNode>> rv = new ArrayList<SearchResult<SNode>>();
+    monitor.start("Looking up references to a model", where.size());
+    for (SModel modelDescriptor : where) {
       if (monitor.isCanceled()) {
-        return searchResults;
+        break;
       }
       for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
         for (SReference reference : node.getReferences()) {
@@ -47,14 +57,14 @@ public class ModelUsagesFinder extends BaseFinder {
           if (targetModelReference == null) {
             continue;
           }
-          if (targetModelReference.equals(modelReference)) {
-            searchResults.getSearchResults().add(new SearchResult<SNode>(node, "nodes from model"));
+          if (targetModelReference.equals(what)) {
+            rv.add(new SearchResult<SNode>(node, "nodes from model"));
           }
         }
       }
       monitor.advance(1);
     }
     monitor.done();
-    return searchResults;
+    return rv;
   }
 }
