@@ -20,8 +20,6 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.UndoHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,7 +28,6 @@ import java.util.List;
 
 class ReflectiveEditorAction {
 
-  private final SNode myAffectedNode;
   private final List<ReflectiveHintsAction> myActions;
   private final EditorComponent myEditorComponent;
   private final boolean myIsReflective;
@@ -39,8 +36,6 @@ class ReflectiveEditorAction {
   private List<List<SNode>> mySelectionStack = new ArrayList<>();
 
   ReflectiveEditorAction(List<SNode> affectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForSubtree) {
-    myAffectedNode = affectedNodes.get(0);
-
     myActions = new ArrayList<>();
     for (SNode node : affectedNodes) {
       myActions.add(getAction(editorComponent, isReflective, isForSubtree, node));
@@ -80,18 +75,6 @@ class ReflectiveEditorAction {
     } else {
       event.getPresentation().setVisible(false);
       event.getPresentation().setEnabled(false);
-    }
-  }
-
-  private void recordHintsState() {
-    for (ReflectiveHintsAction action : myActions) {
-      action.recordState();
-    }
-  }
-
-  private void restoreHintState() {
-    for (ReflectiveHintsAction action : myActions) {
-      action.restoreState();
     }
   }
 
@@ -135,35 +118,10 @@ class ReflectiveEditorAction {
   }
 
   void execute() {
-    recordHintsState();
     recordSelectionStack();
     doExecute();
     redraw();
     restoreSelectionStack();
-
-    UndoHelper.getInstance().addUndoableAction(new ReflectiveEditorUndoableAction());
-  }
-
-
-  private class ReflectiveEditorUndoableAction extends SNodeUndoableAction {
-
-    private ReflectiveEditorUndoableAction() {
-      super(myAffectedNode);
-    }
-
-    @Override
-    protected void doUndo() {
-      restoreHintState();
-      redraw();
-      restoreSelectionStack();
-    }
-
-    @Override
-    protected void doRedo() {
-      doExecute();
-      redraw();
-      restoreSelectionStack();
-    }
   }
 
 }

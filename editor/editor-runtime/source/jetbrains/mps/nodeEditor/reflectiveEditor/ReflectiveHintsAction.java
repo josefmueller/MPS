@@ -23,8 +23,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.StreamSupport;
 
 import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.shouldShowReflectiveEditor;
@@ -34,7 +32,6 @@ abstract class ReflectiveHintsAction {
   private final SNode myAffectedNode;
   private final EditorComponent myEditorComponent;
   private final boolean myIsReflective;
-  private Set<ReflectiveUpdaterHintsState> myRecordedUpdaterStates = new HashSet<>();
 
   private ReflectiveHintsAction(SNode affectedNode, EditorComponent editorComponent, boolean isReflective) {
     myAffectedNode = affectedNode;
@@ -67,16 +64,6 @@ abstract class ReflectiveHintsAction {
   }
 
   abstract void execute();
-
-  void recordState() {
-    for (SNode node : getAffectedNodes()) {
-      myRecordedUpdaterStates.add(ReflectiveUpdaterHintsState.load(getUpdater(), node));
-    }
-  }
-
-  void restoreState() {
-    myRecordedUpdaterStates.forEach(updaterHintsState -> updaterHintsState.save(getUpdater()));
-  }
 
   private boolean isApplicableForNode(SNode node) {
     EditorCell nodeCell = myEditorComponent.findNodeCell(node);
