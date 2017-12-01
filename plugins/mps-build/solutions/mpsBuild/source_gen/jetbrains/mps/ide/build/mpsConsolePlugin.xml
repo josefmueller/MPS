@@ -687,7 +687,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mpsMakePlugin}/mps-make/solutions/jetbrains.mps.ide.make.jar" />
+      <library file="${artifacts.mpsMakePlugin}/mps-make/languages/jetbrains.mps.ide.make.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
@@ -1110,7 +1110,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make/solutions/jetbrains.mps.ide.make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/languages/jetbrains.mps.ide.make.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
@@ -1161,7 +1161,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mpsMakePlugin}/mps-make/solutions/jetbrains.mps.ide.make.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/languages/jetbrains.mps.ide.make.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
