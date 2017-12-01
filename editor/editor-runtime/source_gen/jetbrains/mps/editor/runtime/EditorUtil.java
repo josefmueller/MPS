@@ -49,14 +49,14 @@ public class EditorUtil {
 
   @Deprecated
   @ToRemove(version = 2018.1)
-  public static JComponent createSelectIconButton(final SNode sourceNode, final SProperty property, final EditorContext context, boolean copy) {
+  public static JComponent createSelectIconButton(final SNode node, final SProperty property, final EditorContext context, boolean copy) {
     // was used in mbeddr at the moment of 2017.3 
-    return createSelectImageButton(sourceNode, property, context);
+    return createSelectImageButton(node, property, context);
   }
 
-  public static JComponent createSelectImageButton(final SNode node, final SProperty property, final EditorContext context) {
-    final MacroHelper macros = MacrosFactory.forModule((AbstractModule) node.getModel().getModule());
-    return createSelectImageButton(node, property, context, new _FunctionTypes._return_P1_E0<String, String>() {
+  public static JComponent createSelectImageButton(final SNode sourceNode, final SProperty property, final EditorContext context) {
+    final MacroHelper macros = MacrosFactory.forModule((AbstractModule) sourceNode.getModel().getModule());
+    return createSelectImageButton(sourceNode, property, context, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
         return check_3m4h3r_a0a3a1a4(macros, fullPath);
       }

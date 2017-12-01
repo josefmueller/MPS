@@ -2336,75 +2336,9 @@
       <node concept="3cqZAl" id="6UDbxo8i0R0" role="3clF45" />
       <node concept="3clFbS" id="6UDbxo8i0R1" role="3clF47" />
     </node>
-    <node concept="2tJIrI" id="lnREv2SCOy" role="jymVt" />
-    <node concept="2YIFZL" id="lnREv2ShpJ" role="jymVt">
-      <property role="TrG5h" value="createSelectIconButton" />
-      <node concept="3Tm1VV" id="lnREv2ShpK" role="1B3o_S" />
-      <node concept="3uibUv" id="lnREv2ShpL" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-      </node>
-      <node concept="37vLTG" id="lnREv2ShpM" role="3clF46">
-        <property role="TrG5h" value="sourceNode" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="lnREv2ShpN" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="lnREv2ShpO" role="3clF46">
-        <property role="TrG5h" value="property" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="lnREv2ShpP" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="lnREv2ShpQ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="lnREv2ShpR" role="1tU5fm">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1tyjSjK6WGd" role="3clF46">
-        <property role="TrG5h" value="copy" />
-        <node concept="10P_77" id="1tyjSjK6Y2t" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="lnREv2ShpS" role="3clF47">
-        <node concept="3SKdUt" id="lnREv2SIlU" role="3cqZAp">
-          <node concept="3SKdUq" id="lnREv2SIlW" role="3SKWNk">
-            <property role="3SKdUp" value="was used in mbeddr at the moment of 2017.3" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="lnREv2SHzK" role="3cqZAp">
-          <node concept="1rXfSq" id="lnREv2SHHP" role="3cqZAk">
-            <ref role="37wK5l" node="6UDbxo8i0Rf" resolve="createSelectImageButton" />
-            <node concept="37vLTw" id="lnREv2SHSg" role="37wK5m">
-              <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
-            </node>
-            <node concept="37vLTw" id="lnREv2SI2X" role="37wK5m">
-              <ref role="3cqZAo" node="lnREv2ShpO" resolve="property" />
-            </node>
-            <node concept="37vLTw" id="lnREv2SIdm" role="37wK5m">
-              <ref role="3cqZAo" node="lnREv2ShpQ" resolve="context" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="lnREv2SGFM" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="lnREv2SGGC" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="lnREv2SGMx" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="lnREv2SH2l" role="2B70Vg">
-            <property role="$nhwW" value="2018.1" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1tyjSjK6Uiu" role="jymVt" />
+    <node concept="2tJIrI" id="AN0tL0jLAH" role="jymVt" />
     <node concept="2YIFZL" id="6UDbxo8i0Rf" role="jymVt">
-      <property role="TrG5h" value="createSelectImageButton" />
+      <property role="TrG5h" value="createSelectIconButton" />
       <node concept="3Tm1VV" id="6UDbxo8i0Rg" role="1B3o_S" />
       <node concept="3uibUv" id="6UDbxo8i0Rh" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
@@ -2430,7 +2364,73 @@
           <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
         </node>
       </node>
+      <node concept="37vLTG" id="1tyjSjK6WGd" role="3clF46">
+        <property role="TrG5h" value="copy" />
+        <node concept="10P_77" id="1tyjSjK6Y2t" role="1tU5fm" />
+      </node>
       <node concept="3clFbS" id="6UDbxo8i0Ro" role="3clF47">
+        <node concept="3SKdUt" id="AN0tL0jF_e" role="3cqZAp">
+          <node concept="3SKdUq" id="AN0tL0jF_f" role="3SKWNk">
+            <property role="3SKdUp" value="was used in mbeddr at the moment of 2017.3" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="lnREv2SHzK" role="3cqZAp">
+          <node concept="1rXfSq" id="lnREv2SHHP" role="3cqZAk">
+            <ref role="37wK5l" node="lnREv2ShpJ" resolve="createSelectImageButton" />
+            <node concept="37vLTw" id="AN0tL0jGur" role="37wK5m">
+              <ref role="3cqZAo" node="6UDbxo8i0Ri" resolve="node" />
+            </node>
+            <node concept="37vLTw" id="lnREv2SI2X" role="37wK5m">
+              <ref role="3cqZAo" node="6UDbxo8i0Rk" resolve="property" />
+            </node>
+            <node concept="37vLTw" id="lnREv2SIdm" role="37wK5m">
+              <ref role="3cqZAo" node="6UDbxo8i0Rm" resolve="context" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="AN0tL0jGOZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="AN0tL0jH6X" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="AN0tL0jHyK" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="AN0tL0jHQW" role="2B70Vg">
+            <property role="$nhwW" value="2018.1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="lnREv2SCOy" role="jymVt" />
+    <node concept="2YIFZL" id="lnREv2ShpJ" role="jymVt">
+      <property role="TrG5h" value="createSelectImageButton" />
+      <node concept="3Tm1VV" id="lnREv2ShpK" role="1B3o_S" />
+      <node concept="3uibUv" id="lnREv2ShpL" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpM" role="3clF46">
+        <property role="TrG5h" value="sourceNode" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpN" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpO" role="3clF46">
+        <property role="TrG5h" value="property" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpP" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpQ" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpR" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="lnREv2ShpS" role="3clF47">
         <node concept="3cpWs8" id="LiJMKzasLH" role="3cqZAp">
           <node concept="3cpWsn" id="LiJMKzasLI" role="3cpWs9">
             <property role="TrG5h" value="macros" />
@@ -2446,8 +2446,8 @@
                 </node>
                 <node concept="2OqwBi" id="LiJMKzau11" role="10QFUP">
                   <node concept="2OqwBi" id="LiJMKzau12" role="2Oq$k0">
-                    <node concept="37vLTw" id="LiJMKzau13" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6UDbxo8i0Ri" resolve="node" />
+                    <node concept="37vLTw" id="AN0tL0lA8P" role="2Oq$k0">
+                      <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
                     </node>
                     <node concept="liA8E" id="LiJMKzau14" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
@@ -2464,14 +2464,14 @@
         <node concept="3cpWs6" id="LiJMKzauhA" role="3cqZAp">
           <node concept="1rXfSq" id="LiJMKzauhB" role="3cqZAk">
             <ref role="37wK5l" node="1nhYb0FOxGa" resolve="createSelectImageButton" />
-            <node concept="37vLTw" id="LiJMKzauhC" role="37wK5m">
-              <ref role="3cqZAo" node="6UDbxo8i0Ri" resolve="node" />
+            <node concept="37vLTw" id="AN0tL0jI0N" role="37wK5m">
+              <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
             </node>
             <node concept="37vLTw" id="LiJMKzauhD" role="37wK5m">
-              <ref role="3cqZAo" node="6UDbxo8i0Rk" resolve="property" />
+              <ref role="3cqZAo" node="lnREv2ShpO" resolve="property" />
             </node>
             <node concept="37vLTw" id="LiJMKzauhE" role="37wK5m">
-              <ref role="3cqZAo" node="6UDbxo8i0Rm" resolve="context" />
+              <ref role="3cqZAo" node="lnREv2ShpQ" resolve="context" />
             </node>
             <node concept="1bVj0M" id="LiJMKzauhG" role="37wK5m">
               <node concept="3clFbS" id="LiJMKzauhH" role="1bW5cS">
@@ -2519,7 +2519,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1tyjSjK6ztg" role="jymVt" />
+    <node concept="2tJIrI" id="1tyjSjK6Uiu" role="jymVt" />
     <node concept="2YIFZL" id="1nhYb0FOxGa" role="jymVt">
       <property role="TrG5h" value="createSelectImageButton" />
       <node concept="3Tm1VV" id="1nhYb0FOxGb" role="1B3o_S" />

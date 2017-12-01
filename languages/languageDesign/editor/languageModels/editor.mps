@@ -4608,15 +4608,15 @@
               <node concept="3Fmcul" id="hF4FgOk" role="3FoqZy">
                 <node concept="3clFbS" id="hF4FgOl" role="2VODD2">
                   <node concept="3clFbF" id="yYW$qsz$G1" role="3cqZAp">
-                    <node concept="2YIFZM" id="yYW$qszE5R" role="3clFbG">
-                      <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
+                    <node concept="2YIFZM" id="AN0tL0jNIl" role="3clFbG">
+                      <ref role="37wK5l" to="7a0s:lnREv2ShpJ" resolve="createSelectImageButton" />
                       <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                      <node concept="pncrf" id="yYW$qszEjR" role="37wK5m" />
-                      <node concept="355D3s" id="yYW$qszSE_" role="37wK5m">
+                      <node concept="pncrf" id="AN0tL0jNIm" role="37wK5m" />
+                      <node concept="355D3s" id="AN0tL0jNIn" role="37wK5m">
                         <ref role="355D3t" to="tpc2:g_u4HTJ" resolve="CellModel_Image" />
                         <ref role="355D3u" to="tpc2:g_ubRTz" resolve="imageFile" />
                       </node>
-                      <node concept="1Q80Hx" id="yYW$qszV2R" role="37wK5m" />
+                      <node concept="1Q80Hx" id="AN0tL0jNIo" role="37wK5m" />
                     </node>
                   </node>
                 </node>

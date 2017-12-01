@@ -1828,15 +1828,15 @@
           <node concept="3Fmcul" id="4ttM7y2aZL7" role="3FoqZy">
             <node concept="3clFbS" id="4ttM7y2aZL8" role="2VODD2">
               <node concept="3clFbF" id="5xzMQBRCx7R" role="3cqZAp">
-                <node concept="2YIFZM" id="5xzMQBRCzi0" role="3clFbG">
-                  <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
+                <node concept="2YIFZM" id="AN0tL0jOEo" role="3clFbG">
+                  <ref role="37wK5l" to="7a0s:lnREv2ShpJ" resolve="createSelectImageButton" />
                   <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                  <node concept="pncrf" id="5xzMQBRCzi1" role="37wK5m" />
-                  <node concept="355D3s" id="5xzMQBRExAW" role="37wK5m">
+                  <node concept="pncrf" id="AN0tL0jOEp" role="37wK5m" />
+                  <node concept="355D3s" id="AN0tL0jOEq" role="37wK5m">
                     <ref role="355D3t" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
                     <ref role="355D3u" to="gbdf:3NXJmdrmJUd" resolve="iconPath" />
                   </node>
-                  <node concept="1Q80Hx" id="5xzMQBRCzi2" role="37wK5m" />
+                  <node concept="1Q80Hx" id="AN0tL0jOEr" role="37wK5m" />
                 </node>
               </node>
             </node>
