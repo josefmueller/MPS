@@ -1303,21 +1303,21 @@
     <node concept="Zd509" id="5ZVOsnj25$q" role="Zd508">
       <ref role="1bYAoF" node="5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       <node concept="pLAjd" id="5ZVOsnj25Ag" role="Zd501">
-        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjc" value="ctrl+shift" />
         <property role="pLAjf" value="VK_OPEN_BRACKET" />
       </node>
     </node>
     <node concept="Zd509" id="7prA6ZS4Qzr" role="Zd508">
       <ref role="1bYAoF" node="1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
       <node concept="pLAjd" id="7prA6ZS4Qzs" role="Zd501">
-        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjc" value="ctrl+shift" />
         <property role="pLAjf" value="VK_CLOSE_BRACKET" />
       </node>
     </node>
     <node concept="Zd509" id="5ZVOsnj25Ay" role="Zd508">
       <ref role="1bYAoF" node="1XfowaweGRd" resolve="ShowRegularEditor" />
       <node concept="pLAjd" id="5ZVOsnj25Az" role="Zd501">
-        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjc" value="ctrl+shift" />
         <property role="pLAjf" value="VK_P" />
       </node>
     </node>
@@ -12517,14 +12517,14 @@
       <ref role="2f8Tey" node="7hTob70Ru0K" resolve="reflective" />
     </node>
     <node concept="ftmFs" id="5SnwAr0vZP_" role="ftER_">
+      <node concept="tCFHf" id="14LA8YdF_UB" role="ftvYc">
+        <ref role="tCJdB" node="1XfowaweGRd" resolve="ShowRegularEditor" />
+      </node>
       <node concept="tCFHf" id="302gCSEbSCj" role="ftvYc">
         <ref role="tCJdB" node="5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       </node>
       <node concept="tCFHf" id="7prA6ZS4Q_t" role="ftvYc">
         <ref role="tCJdB" node="1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
-      </node>
-      <node concept="tCFHf" id="14LA8YdF_UB" role="ftvYc">
-        <ref role="tCJdB" node="1XfowaweGRd" resolve="ShowRegularEditor" />
       </node>
     </node>
   </node>

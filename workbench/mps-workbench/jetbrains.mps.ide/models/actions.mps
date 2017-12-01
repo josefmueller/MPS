@@ -14351,6 +14351,14 @@
         <property role="pLAjc" value="ctrl" />
       </node>
     </node>
+    <node concept="Zd509" id="LP5zVTAHlx" role="Zd508">
+      <ref role="1bYAoF" node="6PWCPPtWbjc" resolve="ShowParameters" />
+      <node concept="pLAjd" id="LP5zVTAHly" role="Zd501">
+        <property role="pLAjf" value="VK_P" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
   </node>
   <node concept="sE7Ow" id="4NhTXTAh4kv">
     <property role="TrG5h" value="ShowNodeInfo" />
@@ -36617,6 +36625,14 @@
       <node concept="pLAjd" id="1RsxAOl3vcs" role="Zd501">
         <property role="pLAjf" value="VK_O" />
         <property role="pLAjc" value="meta+alt" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="LP5zVTAHlz" role="Zd508">
+      <ref role="1bYAoF" node="6PWCPPtWbjc" resolve="ShowParameters" />
+      <node concept="pLAjd" id="LP5zVTAHl$" role="Zd501">
+        <property role="pLAjf" value="VK_P" />
+        <property role="pLAjc" value="ctrl" />
         <property role="3hacHL" value="replace all" />
       </node>
     </node>
