@@ -474,11 +474,6 @@
     <property role="TrG5h" value="IOldCommentContainer" />
     <property role="EcuMT" value="4123120730935488432" />
   </node>
-  <node concept="PlHQZ" id="ANVkWUjg7G">
-    <property role="3GE5qa" value="attributes.editing.comment" />
-    <property role="TrG5h" value="IOldCommentAnnotation" />
-    <property role="EcuMT" value="699163291708883436" />
-  </node>
   <node concept="PlHQZ" id="69Qfsw3InJo">
     <property role="EcuMT" value="7094926192234036184" />
     <property role="TrG5h" value="ISmartReferent" />

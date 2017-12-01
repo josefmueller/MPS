@@ -29,7 +29,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIDontSubstituteByDefault = createDescriptorForIDontSubstituteByDefault();
   /*package*/ final ConceptDescriptor myConceptIMetaLevelChanger = createDescriptorForIMetaLevelChanger();
   /*package*/ final ConceptDescriptor myConceptINamedConcept = createDescriptorForINamedConcept();
-  /*package*/ final ConceptDescriptor myConceptIOldCommentAnnotation = createDescriptorForIOldCommentAnnotation();
   /*package*/ final ConceptDescriptor myConceptIOldCommentContainer = createDescriptorForIOldCommentContainer();
   /*package*/ final ConceptDescriptor myConceptIPlaceholderContent = createDescriptorForIPlaceholderContent();
   /*package*/ final ConceptDescriptor myConceptIResolveInfo = createDescriptorForIResolveInfo();
@@ -60,7 +59,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentAnnotation, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptBasePlaceholder, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentContainer, myConceptIPlaceholderContent, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptMigrationAnnotation, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptReviewMigration, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -101,8 +100,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptIMetaLevelChanger;
       case LanguageConceptSwitch.INamedConcept:
         return myConceptINamedConcept;
-      case LanguageConceptSwitch.IOldCommentAnnotation:
-        return myConceptIOldCommentAnnotation;
       case LanguageConceptSwitch.IOldCommentContainer:
         return myConceptIOldCommentContainer;
       case LanguageConceptSwitch.IPlaceholderContent:
@@ -282,12 +279,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/1169194658468");
     b.prop("name", 0x110396ec041L, "1169194664001");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForIOldCommentAnnotation() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "IOldCommentAnnotation", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9b3ed4f3a4d01ecL);
-    b.interface_();
-    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/699163291708883436");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIOldCommentContainer() {
