@@ -19,19 +19,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -197,41 +191,6 @@ public enum JUnitRunTypes {
   };
 
   private JUnitRunTypes() {
-  }
-
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public static SModel getModel_deprecated(@Nls String modelName, String moduleName) {
-    if ((modelName == null || modelName.length() == 0)) {
-      return null;
-    }
-    if ((moduleName == null || moduleName.length() == 0)) {
-      return new ModuleRepositoryFacade(MPSModuleRepository.getInstance()).getModelByName(modelName);
-    }
-    SModule module = getModule_deprecated(moduleName);
-    if (module == null) {
-      return null;
-    }
-    for (SModel model : Sequence.fromIterable(module.getModels())) {
-      if (model.getName().getValue().equals(modelName)) {
-        return model;
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public static SModule getModule_deprecated(@Nls String moduleName) {
-    if ((moduleName == null || moduleName.length() == 0)) {
-      return null;
-    }
-    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(MPSModuleRepository.getInstance());
-    Collection<SModule> modulesByName = mrf.getModulesByName(moduleName);
-    // just take first one. We need to keep module reference instead of module name in configuration settings, though 
-    return (modulesByName.isEmpty() ? null : modulesByName.iterator().next());
   }
 
   public final List<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final MPSProject project) {
