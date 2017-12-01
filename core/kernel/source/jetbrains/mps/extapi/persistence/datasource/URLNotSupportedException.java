@@ -26,6 +26,6 @@ import java.text.MessageFormat;
  */
 public final class URLNotSupportedException extends Exception {
   public URLNotSupportedException(DataSourceFactoryFromURL factory, URL problemUrl) {
-    super(MessageFormat.format("Factory '{0}' is not able to construct data source given the '{1}'", factory, problemUrl));
+    super(MessageFormat.format("Factory ''{0}'' is not able to construct data source given the ''{1}''", factory, problemUrl));
   }
 }
