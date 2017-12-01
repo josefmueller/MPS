@@ -17,9 +17,9 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AddExecutor_Action());
     addAction(new AddProducer_Action());
     // groups 
-    addGroup(new ShowAsIntentions_ActionGroup());
+    addGroup(new ShowAsIntentions_ExecutionConfigurations_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_ExecutionConfigurations_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
 }

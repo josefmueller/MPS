@@ -4,8 +4,8 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,12 +27,12 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new GoToTypeErrorGroup_ActionGroup());
     addGroup(new InternalTypeSystemActions_ActionGroup());
-    addGroup(new TypesystemActions_ActionGroup());
+    addGroup(new TypesystemActions_Devkit_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
+    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_Devkit_ActionGroup.ID, null);
     insertGroupIntoAnother(InternalTypeSystemActions_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(TypesystemActions_Devkit_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
   }
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());

@@ -22,12 +22,12 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ConvertInferenceRuleToCheckingRule_Action());
     addAction(new ShowNodeType_Action());
     // groups 
-    addGroup(new ShowAsIntentions_ActionGroup());
-    addGroup(new TypesystemActions_ActionGroup());
+    addGroup(new ShowAsIntentions_TypeSystem_ActionGroup());
+    addGroup(new TypesystemActions_Plugin_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_TypeSystem_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
+    insertGroupIntoAnother(TypesystemActions_Plugin_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_types);
   }
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
