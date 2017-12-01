@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import java.util.Map;
 
 /**
  * Support for generated classes with query methods, like QueriesGenerated in generator and actions.
- * Refactored out from {@link QueryMethodGenerated} to facilitate reuse and better lifecycle control.
+ * Refactored out from {@code QueryMethodGenerated} to facilitate reuse and better lifecycle control.
  * {@implNote} Implementation of the class relies on unique method names.
  * XXX perhaps, shall evolve into facility that would use annotations to find out proper methods
  *

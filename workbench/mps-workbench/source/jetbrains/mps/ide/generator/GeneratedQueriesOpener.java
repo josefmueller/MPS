@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,34 +16,64 @@
 package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.ide.navigation.NavigationProvider;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.lang.reflect.Method;
 
-public class GeneratedQueriesOpener {
+public final class GeneratedQueriesOpener {
 
+  private final MPSProject myProject;
+
+  public GeneratedQueriesOpener(@NotNull MPSProject project) {
+    myProject = project;
+  }
+
+  /**
+   * @deprecated use instance method {{@link #openQueryMethod(SNode)}} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static boolean openQueryMethod(MPSProject project, SNode node) {
-    Class cls;
-    try {
-      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getReference().getModelReference(), true);
-    } catch (ClassNotFoundException e) {
+    return new GeneratedQueriesOpener(project).openQueryMethod(node);
+  }
+
+  // model read should be sufficient
+  public boolean openQueryMethod(@NotNull SNode node) {
+    NavigationProvider[] navProviders = NavigationProvider.EP_NAME.getExtensions();
+    if (navProviders.length == 0) {
       return false;
     }
 
-    final String tail = "_" + node.getNodeId().toString();
+    SModel model = node.getModel();
+    if (model == null || false == model.getModule() instanceof ReloadableModule) {
+      return false;
+    }
+    String packageName = model.getName().getLongName();
+    final String queriesClassName = packageName + ".QueriesGenerated";
+
+    Class cls;
+    try {
+      cls = ((ReloadableModule) model.getModule()).getOwnClass(queriesClassName);
+    } catch (Exception e) {
+      return false;
+    }
+    final String tail = '_' + node.getNodeId().toString();
+    final String projectPath = myProject.getProjectFile().getAbsolutePath();
     for (Method m : cls.getMethods()) {
       if (m.getName().endsWith(tail)) {
-        for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-          if (np.openMethod(project.getProjectFile().getAbsolutePath(), cls.getName(), m.getName(), m.getParameterTypes().length)) {
+        for (NavigationProvider np : navProviders) {
+          if (np.openMethod(projectPath, cls.getName(), m.getName(), m.getParameterTypes().length)) {
             return true;
           }
         }
         return false;
       }
     }
-
     return false;
   }
 }

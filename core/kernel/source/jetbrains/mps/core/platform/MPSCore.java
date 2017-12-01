@@ -48,7 +48,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
-import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -121,7 +120,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(new GlobalScope(myModuleRepository));
     init(new ImmatureReferences(myModuleRepository, myPersistenceFacade));
 
-    init(new QueryMethodGenerated(myClassLoaderManager));
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new LanguageScopeFactory(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));

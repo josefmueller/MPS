@@ -20,7 +20,7 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   public NavigateToGeneratedQuery_Action() {
     super("Generated Query", "Navigate to generated query method", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -29,8 +29,6 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     // check that node in generator? 
-    SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE));
-
     return (SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false) != null);
   }
   @Override
@@ -58,7 +56,11 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SNode fun = SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false);
-    GeneratedQueriesOpener.openQueryMethod(event.getData(MPSCommonDataKeys.MPS_PROJECT), fun);
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode fun = SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), true, false);
+        new GeneratedQueriesOpener(event.getData(MPSCommonDataKeys.MPS_PROJECT)).openQueryMethod(fun);
+      }
+    });
   }
 }
