@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -33,8 +34,9 @@ import java.util.List;
  * IFile implementation via {@link java.io.File}
  * TODO rewrite using {@link Path}.
  */
+@Immutable
 public class IoFile implements IFileEx {
-  @NotNull private File myFile; // always absolute
+  @NotNull private final File myFile; // always absolute
   private final static IoFileSystem ourFS = IoFileSystem.INSTANCE;
 
   public IoFile(@NotNull String path) {
@@ -87,7 +89,7 @@ public class IoFile implements IFileEx {
 
   @NotNull
   @Override
-  public UniPath toPath() {
+  public Path toPath() {
     return UniPath.fromString(myFile.getPath());
   }
 
@@ -148,21 +150,16 @@ public class IoFile implements IFileEx {
   }
 
   private boolean renameOrMove(File newIoFile) {
-    if (myFile.renameTo(newIoFile)) {
-      myFile = newIoFile;
-      return true;
-    } else {
-      return false;
-    }
+    return myFile.renameTo(newIoFile);
   }
 
   @Override
-  public boolean rename(String newName) {
+  public boolean rename(@NotNull String newName) {
     return renameOrMove(new File(myFile.getParentFile(), newName));
   }
 
   @Override
-  public boolean move(IFile newParent) {
+  public boolean move(@NotNull IFile newParent) {
     return renameOrMove(new File(new File(newParent.getPath()), myFile.getName()));
   }
 

@@ -612,7 +612,10 @@ public class FileUtil {
   public static String stripLastSlashes(@Nullable String path) {
     if (path == null) return null;
 
-    while (path.endsWith("/") || path.endsWith("\\")) {
+    while (path.endsWith(Path.UNIX_SEPARATOR) || path.endsWith(Path.WIN_SEPARATOR)) {
+      if (path.endsWith(Path.ARCHIVE_SEPARATOR)) {
+        break;
+      }
       path = path.substring(0, path.length() - 1);
     }
     return path;

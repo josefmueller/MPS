@@ -144,16 +144,18 @@ public class VfsTest extends PlatformMpsTest {
     }
 
     assertTrue(file1.rename("file111"));
-    assertTrue(file1.getName().equals("file111"));
-    assertTrue(file1.getParent().getDescendant("file111").equals(file1));
-    assertFalse(file1.getParent().getDescendant("file1").exists());
+    assertTrue(file1.getName().equals("file1"));
+    assertTrue(!file1.getParent().getDescendant("file111").equals(file1));
+    assertTrue(file1.getParent().getDescendant("file1").equals(file1));
+    assertFalse(file1.exists());
 
+    file1 =  file1.getParent().getDescendant("file111");
     assertTrue(file1.rename("file1"));
     String path1Original = file1.getPath();
+    file1 = file1.getParent().getDescendant("file1");
     assertTrue(file1.move(tmpDir));
     assertFalse(file1.getPath().equals(path1Original));
-    assertTrue(file1.getParent().equals(tmpDir));
-    assertFalse(FileSystem.getInstance().getFileByPath(path1Original).exists());
+    assertFalse(FileSystemExtPoint.getFS().getFile(path1Original).exists());
 
     assertTrue(tmpDir.delete());
     assertFalse(tmpDir.exists());
@@ -161,7 +163,7 @@ public class VfsTest extends PlatformMpsTest {
 
   private static void doJarVfsTest() {
     FileSystem fileSystem = FileSystem.getInstance();
-    IFile jarRoot = fileSystem.getFileByPath(VfsTest.class.getResource(JAR_NAME).getFile() + JAR_SUFFIX);
+    IFile jarRoot = fileSystem.getFile(VfsTest.class.getResource(JAR_NAME).getFile() + JAR_SUFFIX);
     assertEquals(jarRoot.getChildren().size(), 3);
     assertTrue(jarRoot.isDirectory());
     assertTrue(jarRoot.isReadOnly());

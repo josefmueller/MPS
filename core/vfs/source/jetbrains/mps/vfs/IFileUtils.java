@@ -112,11 +112,11 @@ public class IFileUtils {
   public static String getCanonicalPath(IFile file) {
     if (file == null) return null;
     final String absolutePath = file.getPath();
-    final int index = absolutePath.indexOf('!');
+    final int index = absolutePath.indexOf(Path.ARCHIVE_SEPARATOR);
     if (index == -1) {
       return FileUtil.getCanonicalPath(absolutePath);
     } else {
-      return FileUtil.getCanonicalPath(absolutePath.substring(0, index)) + "!" + absolutePath.substring(index + 1);
+      return FileUtil.getCanonicalPath(absolutePath.substring(0, index)) + Path.ARCHIVE_SEPARATOR + absolutePath.substring(index + 2);
     }
   }
 

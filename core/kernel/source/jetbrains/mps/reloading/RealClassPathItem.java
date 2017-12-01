@@ -18,6 +18,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -50,23 +51,23 @@ public abstract class RealClassPathItem extends AbstractClassPathItem {
   @NotNull
   public static RealClassPathItem create(@NotNull String path, @Nullable String caller) {
     IFile file = FS.getFile(path);
-    UniPath uniPath = file.toPath().toNormal();
+    Path fPath = file.toPath().toNormal();
     if (!file.exists()) {
-      notifyNonExistentCP(caller, file, uniPath);
-      return new NonExistingClassPathItem(uniPath.toString());
+      notifyNonExistentCP(caller, file, fPath);
+      return new NonExistingClassPathItem(fPath.toString());
     } else if (file.isArchive()) {
-      return new JarFileClassPathItem(FS, uniPath.toString());
+      return new JarFileClassPathItem(FS, fPath.toString());
     } else if (file.isDirectory()) {
-      return new FileClassPathItem(uniPath.toString());
+      return new FileClassPathItem(fPath.toString());
     } else if (file.isInArchive()) {
-      throw new IllegalArgumentException("Path variable `" + uniPath + "' points to the location inside the jar which is not supported");
+      throw new IllegalArgumentException("Path variable `" + fPath + "' points to the location inside the jar which is not supported");
     } else {
-      throw new IllegalArgumentException("Path variable `" + uniPath + "' does not point to a directory or to a jar/zip location");
+      throw new IllegalArgumentException("Path variable `" + fPath + "' does not point to a directory or to a jar/zip location");
     }
   }
 
-  private static void notifyNonExistentCP(@Nullable String caller, IFile file, UniPath uniPath) {
+  private static void notifyNonExistentCP(@Nullable String caller, IFile file, Path path) {
     String moduleString = caller == null ? "" : " in " + caller;
-    LOG.debug(String.format("Can't load class path item %s%s.%s", uniPath, moduleString, file.isDirectory() ? " Execute make in IDEA." : ""));
+    LOG.debug(String.format("Can't load class path item %s%s.%s", path, moduleString, file.isDirectory() ? " Execute make in IDEA." : ""));
   }
 }

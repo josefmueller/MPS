@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
@@ -62,14 +63,14 @@ import java.util.List;
  * This class mixes two different issues (as well as the {@link java.io.File}): it works with paths (which are strings) and
  * also it accesses the physical fs from time to time. I'd rather split it up.
  *
- * FIXME IFile is mutable
- * (as well as the java.io.File) I think it is unacceptable.
+ * IFile must be immutable
  * we define it as a pathname abstraction. That means that we cannot rename the IFile, we can only rename something
  * that lies at this pathname on disk. The IFile itself must not be touched in any way. Otherwise it is cumbersome.
  * The alternative is to reconsider the IFile contract.
  *
  * AP
  */
+@Immutable
 public interface IFile {
   /**
    * @return the file system which this file belongs to
@@ -98,8 +99,7 @@ public interface IFile {
    * @return the comprised path corresponding to this file
    * the path is system-dependent in that case (sic!)
    */
-  @NotNull
-  UniPath toPath();
+  @NotNull Path toPath();
 
   URL getUrl() throws MalformedURLException;
 
@@ -109,13 +109,11 @@ public interface IFile {
   @Nullable IFile getParent();
 
   /**
-   * shortcut to {@link #toPath()} {@link UniPath#isArchive()}
    * @return whether the underlying pathname points exactly to an archive file
    */
   boolean isArchive();
 
   /**
-   * shortcut to {@link #toPath()} {@link UniPath#isInArchive()}
    * @return whether the underlying pathname points to an archive file or some of its contents
    */
   boolean isInArchive();
@@ -194,17 +192,33 @@ public interface IFile {
    * @return whether it is a success
    */
   boolean createNewFile();
+
   boolean mkdirs();
 
   /**
    * FIXME document what happens if one deletes non-empty folder. IoFile seems to force deletion. Is it the contract?
-   * FIXME document what happens if this file doesn't exist (false == exists()).
+   * @return true if the deletion went with a success
    */
   boolean delete();
 
-  boolean rename(String newName);
-  boolean move(IFile newParent);
+  /**
+   * renames the file at which the instance of this <code>IFile</code> points (if it exists)
+   * the file stays under the same directory and changes its name to the <code>newName</code>
+   *
+   * @return true iff success
+//   * @deprecated use {@link #move(IFile)}
+   */
+//  @Deprecated
+  boolean rename(@NotNull String newName);
+
+  /**
+   * moves/renames the file at which the instance of this <code>IFile</code> points
+   * @return true iff success
+   */
+//  @Deprecated
+  boolean move(@NotNull IFile newParent);
 
   InputStream openInputStream() throws IOException;
+
   OutputStream openOutputStream() throws IOException;
 }

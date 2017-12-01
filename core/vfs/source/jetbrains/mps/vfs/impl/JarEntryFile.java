@@ -23,6 +23,7 @@ import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +38,7 @@ import java.util.List;
 /**
  * Todo rewrite using {@link Path}
  */
+@Immutable
 public class JarEntryFile implements IFileEx {
   public static final String JAR = "jar";
   private static final String DOT = ".";
@@ -163,12 +165,12 @@ public class JarEntryFile implements IFileEx {
   }
 
   @Override
-  public boolean rename(String newName) {
+  public boolean rename(@NotNull String newName) {
     return false;
   }
 
   @Override
-  public boolean move(IFile newParent) {
+  public boolean move(@NotNull IFile newParent) {
     return false;
   }
 
