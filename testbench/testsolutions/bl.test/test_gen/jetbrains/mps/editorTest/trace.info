@@ -2673,24 +2673,22 @@
       <node id="2746054822154165513" at="15,96,16,102" concept="2" />
       <node id="2746054822154165513" at="16,102,17,132" concept="2" />
       <node id="2746054822154165513" at="23,51,24,72" concept="2" />
-      <node id="8335132831462958100" at="24,72,25,69" concept="2" />
-      <node id="8335132831462958373" at="25,69,26,71" concept="2" />
-      <node id="2746054822154165539" at="26,71,27,83" concept="2" />
-      <node id="3310222341976279402" at="27,83,28,132" concept="2" />
-      <node id="8335132831462959235" at="28,132,29,108" concept="2" />
-      <node id="6610965663657033017" at="29,108,30,105" concept="2" />
-      <node id="2746054822154435067" at="30,105,31,80" concept="2" />
-      <node id="3310222341976278376" at="31,80,32,133" concept="2" />
-      <node id="6530296108550101646" at="32,133,33,108" concept="2" />
-      <node id="6610965663657033781" at="33,108,34,106" concept="2" />
+      <node id="2746054822154165539" at="24,72,25,83" concept="2" />
+      <node id="3310222341976279402" at="25,83,26,132" concept="2" />
+      <node id="8335132831462959235" at="26,132,27,108" concept="2" />
+      <node id="6610965663657033017" at="27,108,28,105" concept="2" />
+      <node id="2746054822154435067" at="28,105,29,80" concept="2" />
+      <node id="3310222341976278376" at="29,80,30,133" concept="2" />
+      <node id="6530296108550101646" at="30,133,31,108" concept="2" />
+      <node id="6610965663657033781" at="31,108,32,106" concept="2" />
       <node id="2746054822154165513" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree#()V" />
-      <node id="2746054822154165513" at="22,0,36,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="2746054822154165513" at="22,0,34,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="2746054822154165513" at="15,96,17,132" />
       <scope id="2746054822154165513" at="14,0,19,0" />
-      <scope id="2746054822154165513" at="23,51,34,106" />
-      <scope id="2746054822154165513" at="22,0,36,0" />
-      <unit id="2746054822154165513" at="20,0,37,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test$TestBody" />
-      <unit id="2746054822154165513" at="12,0,38,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test" />
+      <scope id="2746054822154165513" at="23,51,32,106" />
+      <scope id="2746054822154165513" at="22,0,34,0" />
+      <unit id="2746054822154165513" at="20,0,35,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test$TestBody" />
+      <unit id="2746054822154165513" at="12,0,36,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2834737865486664156">

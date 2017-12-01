@@ -47408,16 +47408,6 @@
     <property role="3GE5qa" value="reflectiveEditorActions" />
     <property role="TrG5h" value="ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree" />
     <node concept="3clFbS" id="2orW$Z0fPOy" role="LjaKd">
-      <node concept="2HxZob" id="7eGlMon2Ugk" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMon2Uie" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="7eGlMon2Uk_" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMon2UkA" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
-        </node>
-      </node>
       <node concept="2HxZob" id="2orW$Z0fPOz" role="3cqZAp">
         <node concept="1iFQzN" id="2orW$Z0fPO$" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
@@ -47513,9 +47503,12 @@
           <node concept="3clFbT" id="7eGlMon57J2" role="3clFbw">
             <property role="3clFbU" value="true" />
           </node>
-          <node concept="LIFWc" id="7eGlMon57Td" role="lGtFl">
+          <node concept="LIFWc" id="6wmfM0tBW1k" role="lGtFl">
             <property role="LIFWa" value="0" />
-            <property role="LIFWd" value="Collection_eb7h0d_a" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_eb7h0d_a0" />
           </node>
         </node>
       </node>

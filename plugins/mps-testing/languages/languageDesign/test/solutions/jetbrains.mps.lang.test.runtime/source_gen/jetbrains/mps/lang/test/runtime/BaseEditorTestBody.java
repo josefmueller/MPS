@@ -306,10 +306,10 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   protected boolean isActionApplicable(final String actionId) throws InterruptedException, InvocationTargetException {
     final Wrappers._boolean isApplicable = new Wrappers._boolean();
+    final AnAction action = ActionManager.getInstance().getAction(actionId);
+    final AnActionEvent event = createEvent();
     runUndoableCommandInEDTAndWait(new Runnable() {
       public void run() {
-        AnAction action = ActionManager.getInstance().getAction(actionId);
-        AnActionEvent event = createEvent();
         action.update(event);
         isApplicable.value = event.getPresentation().isEnabled();
       }

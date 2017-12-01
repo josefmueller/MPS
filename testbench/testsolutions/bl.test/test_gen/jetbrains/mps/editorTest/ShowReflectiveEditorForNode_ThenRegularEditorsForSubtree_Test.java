@@ -22,8 +22,6 @@ public class ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test exten
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8335132831463534074", "8335132831463538450");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveUp_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveDown_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
       Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));

@@ -3400,42 +3400,42 @@
             <node concept="10P_77" id="5IYRzU$FiuD" role="1tU5fm" />
           </node>
         </node>
+        <node concept="3cpWs8" id="1wmCOkkaH1U" role="3cqZAp">
+          <node concept="3cpWsn" id="1wmCOkkaH1V" role="3cpWs9">
+            <property role="TrG5h" value="action" />
+            <node concept="2OqwBi" id="1wmCOkkaH1W" role="33vP2m">
+              <node concept="2YIFZM" id="1wmCOkkaH1X" role="2Oq$k0">
+                <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="1wmCOkkaH1Y" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                <node concept="37vLTw" id="1wmCOkkaH1Z" role="37wK5m">
+                  <ref role="3cqZAo" node="H9$uslKhHn" resolve="actionId" />
+                </node>
+              </node>
+            </node>
+            <node concept="3uibUv" id="1wmCOkkaH20" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1wmCOkkaH2a" role="3cqZAp">
+          <node concept="3cpWsn" id="1wmCOkkaH2b" role="3cpWs9">
+            <property role="TrG5h" value="event" />
+            <node concept="3uibUv" id="1wmCOkkaH2c" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+            </node>
+            <node concept="1rXfSq" id="1wmCOkkd5a0" role="33vP2m">
+              <ref role="37wK5l" node="1wmCOkkcNY_" resolve="createEvent" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1wmCOkkaFhn" role="3cqZAp">
           <node concept="1rXfSq" id="1wmCOkkaFhl" role="3clFbG">
             <ref role="37wK5l" node="wUiM63ScWZ" resolve="runUndoableCommandInEDTAndWait" />
             <node concept="1bVj0M" id="1wmCOkkaH1S" role="37wK5m">
               <node concept="3clFbS" id="1wmCOkkaH1T" role="1bW5cS">
-                <node concept="3cpWs8" id="1wmCOkkaH1U" role="3cqZAp">
-                  <node concept="3cpWsn" id="1wmCOkkaH1V" role="3cpWs9">
-                    <property role="TrG5h" value="action" />
-                    <node concept="2OqwBi" id="1wmCOkkaH1W" role="33vP2m">
-                      <node concept="2YIFZM" id="1wmCOkkaH1X" role="2Oq$k0">
-                        <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
-                        <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
-                      </node>
-                      <node concept="liA8E" id="1wmCOkkaH1Y" role="2OqNvi">
-                        <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
-                        <node concept="37vLTw" id="1wmCOkkaH1Z" role="37wK5m">
-                          <ref role="3cqZAo" node="H9$uslKhHn" resolve="actionId" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="1wmCOkkaH20" role="1tU5fm">
-                      <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="1wmCOkkaH2a" role="3cqZAp">
-                  <node concept="3cpWsn" id="1wmCOkkaH2b" role="3cpWs9">
-                    <property role="TrG5h" value="event" />
-                    <node concept="3uibUv" id="1wmCOkkaH2c" role="1tU5fm">
-                      <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
-                    </node>
-                    <node concept="1rXfSq" id="1wmCOkkd5a0" role="33vP2m">
-                      <ref role="37wK5l" node="1wmCOkkcNY_" resolve="createEvent" />
-                    </node>
-                  </node>
-                </node>
                 <node concept="3clFbF" id="1wmCOkkaH2i" role="3cqZAp">
                   <node concept="2OqwBi" id="1wmCOkkaH2j" role="3clFbG">
                     <node concept="37vLTw" id="1wmCOkkaH2k" role="2Oq$k0">
