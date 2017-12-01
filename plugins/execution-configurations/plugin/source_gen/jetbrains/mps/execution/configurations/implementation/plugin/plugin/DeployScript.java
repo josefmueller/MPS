@@ -12,6 +12,7 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -33,12 +34,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.apache.log4j.Level;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.tempmodel.TempModule;
-import java.util.Collections;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.vfs.IFile;
 
 public class DeployScript {
   private static final Logger LOG = LogManager.getLogger(DeployScript.class);
@@ -50,10 +48,10 @@ public class DeployScript {
 
   public DeployScript(@NotNull Project project, List<SNodeReference> plugins) {
     myProject = project;
-    myModule = new DeployScript.TemporalModuleWithDescriptorFile();
+    myModule = new DeployScript.TemporalModuleWithDescriptorFile(FileUtil.createTmpDir().getAbsolutePath());
     SRepository projectRepo = project.getRepository();
     assert projectRepo instanceof SRepositoryExt;
-    ((SRepositoryExt) projectRepo).registerModule(myModule, myModule);
+    ((SRepositoryExt) projectRepo).registerModule(myModule, project);
 
     SModel model = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(myModule));
     SetSequence.fromSet(myModelsToMake).addElement(model);
@@ -110,25 +108,15 @@ public class DeployScript {
     });
   }
 
-  private static class TemporalModuleWithDescriptorFile extends TempModule {
-    private final File myDescriptorFile;
-    private final File myBaseDir;
-
-    private TemporalModuleWithDescriptorFile() {
-      super(Collections.<ModelRootDescriptor>emptySet(), true, true);
-      myBaseDir = FileUtil.createTmpDir();
-      // just anything 
-      myDescriptorFile = new File(myBaseDir, "module.msd");
-    }
-
-    @Override
-    public IFile getDescriptorFile() {
-      // who cares if this module has descriptor file? Do we need to extend TempModule? 
-      return IoFileSystem.INSTANCE.getFile(myDescriptorFile.getAbsolutePath());
+  private static class TemporalModuleWithDescriptorFile extends AbstractModule {
+    private TemporalModuleWithDescriptorFile(@NotNull String baseDir) {
+      super(IoFileSystem.INSTANCE.getFile(baseDir).getDescendant("module.msd"));
+      this.getModuleSourceDir();
     }
 
     public File getBaseDirectory() {
-      return myBaseDir;
+      IFile moduleSourceDir = getModuleSourceDir();
+      return new File(moduleSourceDir.getPath());
     }
 
     public boolean isPackaged() {

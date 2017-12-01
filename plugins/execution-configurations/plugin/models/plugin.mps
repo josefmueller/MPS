@@ -393,7 +393,6 @@
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
-        <child id="4972241301747169160" name="typeArgument" index="3PaCim" />
       </concept>
       <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
@@ -10410,6 +10409,15 @@
             <node concept="2ShNRf" id="4oL4a6slSbY" role="37vLTx">
               <node concept="1pGfFk" id="4oL4a6slSbZ" role="2ShVmc">
                 <ref role="37wK5l" node="79FiGkx5dQ7" resolve="DeployScript.TemporalModuleWithDescriptorFile" />
+                <node concept="2OqwBi" id="13efIFyDG2a" role="37wK5m">
+                  <node concept="2YIFZM" id="13efIFyDFE2" role="2Oq$k0">
+                    <ref role="37wK5l" to="18ew:~FileUtil.createTmpDir():java.io.File" resolve="createTmpDir" />
+                    <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                  </node>
+                  <node concept="liA8E" id="13efIFyDH7Q" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -10457,8 +10465,8 @@
               <node concept="37vLTw" id="4oL4a6slYO3" role="37wK5m">
                 <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
               </node>
-              <node concept="37vLTw" id="4oL4a6slYQ_" role="37wK5m">
-                <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
+              <node concept="37vLTw" id="13efIFyDHud" role="37wK5m">
+                <ref role="3cqZAo" node="4oL4a6slSn1" resolve="project" />
               </node>
             </node>
           </node>
@@ -10984,140 +10992,91 @@
       <property role="1sVAO0" value="false" />
       <property role="1EXbeo" value="false" />
       <property role="TrG5h" value="TemporalModuleWithDescriptorFile" />
-      <node concept="312cEg" id="79FiGkx5FhI" role="jymVt">
-        <property role="34CwA1" value="false" />
-        <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="myDescriptorFile" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3Tm6S6" id="79FiGkx5F3r" role="1B3o_S" />
-        <node concept="3uibUv" id="79FiGkx5FhG" role="1tU5fm">
-          <ref role="3uigEE" to="guwi:~File" resolve="File" />
-        </node>
+      <node concept="3uibUv" id="13efIFyDnaB" role="1zkMxy">
+        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
       </node>
-      <node concept="312cEg" id="79FiGkx7hEy" role="jymVt">
-        <property role="34CwA1" value="false" />
-        <property role="eg7rD" value="false" />
-        <property role="TrG5h" value="myBaseDir" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3Tm6S6" id="79FiGkx7hfS" role="1B3o_S" />
-        <node concept="3uibUv" id="79FiGkx7hEw" role="1tU5fm">
-          <ref role="3uigEE" to="guwi:~File" resolve="File" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="78Cs0expYiM" role="jymVt" />
       <node concept="3clFbW" id="79FiGkx5dQ7" role="jymVt">
+        <node concept="37vLTG" id="13efIFyDoZx" role="3clF46">
+          <property role="TrG5h" value="baseDir" />
+          <node concept="17QB3L" id="13efIFyDvHg" role="1tU5fm" />
+          <node concept="2AHcQZ" id="13efIFyDvQ$" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
         <node concept="3cqZAl" id="79FiGkx5dQ9" role="3clF45" />
         <node concept="3Tm6S6" id="79FiGkx5dQa" role="1B3o_S" />
         <node concept="3clFbS" id="79FiGkx5dQb" role="3clF47">
-          <node concept="XkiVB" id="79FiGkx5e2n" role="3cqZAp">
-            <ref role="37wK5l" to="tqvn:~TempModule.&lt;init&gt;(java.util.Set,boolean,boolean)" resolve="TempModule" />
-            <node concept="2YIFZM" id="x7D6lIHysK" role="37wK5m">
-              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-              <ref role="37wK5l" to="33ny:~Collections.emptySet():java.util.Set" resolve="emptySet" />
-              <node concept="3uibUv" id="x7D6lIHPtL" role="3PaCim">
-                <ref role="3uigEE" to="6qgz:~ModelRootDescriptor" resolve="ModelRootDescriptor" />
-              </node>
-            </node>
-            <node concept="3clFbT" id="79FiGkx5EYN" role="37wK5m">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="3clFbT" id="79FiGkx5EZG" role="37wK5m">
-              <property role="3clFbU" value="true" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="x7D6lIFgqd" role="3cqZAp">
-            <node concept="37vLTI" id="x7D6lIFgBF" role="3clFbG">
-              <node concept="37vLTw" id="x7D6lIFgqc" role="37vLTJ">
-                <ref role="3cqZAo" node="79FiGkx7hEy" resolve="myBaseDir" />
-              </node>
-              <node concept="2YIFZM" id="79FiGkx5G64" role="37vLTx">
-                <ref role="37wK5l" to="18ew:~FileUtil.createTmpDir():java.io.File" resolve="createTmpDir" />
-                <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-              </node>
-            </node>
-          </node>
-          <node concept="3SKdUt" id="5UoUQrSUAnQ" role="3cqZAp">
-            <node concept="3SKdUq" id="5UoUQrSUAo9" role="3SKWNk">
-              <property role="3SKdUp" value="just anything" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="79FiGkx5GaL" role="3cqZAp">
-            <node concept="37vLTI" id="79FiGkx5GA7" role="3clFbG">
-              <node concept="2ShNRf" id="79FiGkx5GTv" role="37vLTx">
-                <node concept="1pGfFk" id="79FiGkx5GQp" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
-                  <node concept="37vLTw" id="x7D6lIFh75" role="37wK5m">
-                    <ref role="3cqZAo" node="79FiGkx7hEy" resolve="myBaseDir" />
-                  </node>
-                  <node concept="Xl_RD" id="79FiGkx5J9f" role="37wK5m">
-                    <property role="Xl_RC" value="module.msd" />
+          <node concept="XkiVB" id="13efIFyDoAq" role="3cqZAp">
+            <ref role="37wK5l" to="z1c3:~AbstractModule.&lt;init&gt;(jetbrains.mps.vfs.IFile)" resolve="AbstractModule" />
+            <node concept="2OqwBi" id="13efIFyDsmI" role="37wK5m">
+              <node concept="2OqwBi" id="13efIFyDrj0" role="2Oq$k0">
+                <node concept="10M0yZ" id="13efIFyDr0N" role="2Oq$k0">
+                  <ref role="3cqZAo" to="amo1:~IoFileSystem.INSTANCE" resolve="INSTANCE" />
+                  <ref role="1PxDUh" to="amo1:~IoFileSystem" resolve="IoFileSystem" />
+                </node>
+                <node concept="liA8E" id="13efIFyDs1w" role="2OqNvi">
+                  <ref role="37wK5l" to="amo1:~IoFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                  <node concept="37vLTw" id="13efIFyDseU" role="37wK5m">
+                    <ref role="3cqZAo" node="13efIFyDoZx" resolve="baseDir" />
                   </node>
                 </node>
               </node>
-              <node concept="37vLTw" id="79FiGkx5GaK" role="37vLTJ">
-                <ref role="3cqZAo" node="79FiGkx5FhI" resolve="myDescriptorFile" />
+              <node concept="liA8E" id="13efIFyDsKN" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
+                <node concept="Xl_RD" id="13efIFyDsZu" role="37wK5m">
+                  <property role="Xl_RC" value="module.msd" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="13efIFyDwIE" role="3cqZAp">
+            <node concept="2OqwBi" id="13efIFyDz1Y" role="3clFbG">
+              <node concept="Xjq3P" id="13efIFyDyx0" role="2Oq$k0" />
+              <node concept="liA8E" id="13efIFyD$9J" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="2tJIrI" id="78Cs0expXEv" role="jymVt" />
-      <node concept="3clFb_" id="79FiGkx5JUJ" role="jymVt">
+      <node concept="3clFb_" id="79FiGkx7hRb" role="jymVt">
         <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDescriptorFile" />
+        <property role="TrG5h" value="getBaseDirectory" />
+        <property role="od$2w" value="false" />
         <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="79FiGkx5JUK" role="1B3o_S" />
-        <node concept="3uibUv" id="79FiGkx5JUM" role="3clF45">
-          <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+        <node concept="3uibUv" id="13efIFyDHRn" role="3clF45">
+          <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
-        <node concept="3clFbS" id="79FiGkx5JUQ" role="3clF47">
-          <node concept="3SKdUt" id="22JnV7jmpeh" role="3cqZAp">
-            <node concept="3SKdUq" id="22JnV7jmpej" role="3SKWNk">
-              <property role="3SKdUp" value="who cares if this module has descriptor file? Do we need to extend TempModule?" />
+        <node concept="3clFbS" id="79FiGkx7hRe" role="3clF47">
+          <node concept="3cpWs8" id="13efIFyDIGq" role="3cqZAp">
+            <node concept="3cpWsn" id="13efIFyDIGr" role="3cpWs9">
+              <property role="TrG5h" value="moduleSourceDir" />
+              <node concept="3uibUv" id="13efIFyDIGp" role="1tU5fm">
+                <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+              </node>
+              <node concept="1rXfSq" id="13efIFyDIGs" role="33vP2m">
+                <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
+              </node>
             </node>
           </node>
-          <node concept="3clFbF" id="79FiGkx5JZC" role="3cqZAp">
-            <node concept="2OqwBi" id="79FiGkx5KvA" role="3clFbG">
-              <node concept="10M0yZ" id="78Cs0exqQdJ" role="2Oq$k0">
-                <ref role="3cqZAo" to="amo1:~IoFileSystem.INSTANCE" resolve="INSTANCE" />
-                <ref role="1PxDUh" to="amo1:~IoFileSystem" resolve="IoFileSystem" />
-              </node>
-              <node concept="liA8E" id="79FiGkx5Lkc" role="2OqNvi">
-                <ref role="37wK5l" to="amo1:~IoFileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
-                <node concept="2OqwBi" id="79FiGkx5LUl" role="37wK5m">
-                  <node concept="37vLTw" id="79FiGkx5LkU" role="2Oq$k0">
-                    <ref role="3cqZAo" node="79FiGkx5FhI" resolve="myDescriptorFile" />
+          <node concept="3clFbF" id="13efIFyDJ2S" role="3cqZAp">
+            <node concept="2ShNRf" id="13efIFyDJKc" role="3clFbG">
+              <node concept="1pGfFk" id="13efIFyE9FA" role="2ShVmc">
+                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                <node concept="2OqwBi" id="13efIFyDJmr" role="37wK5m">
+                  <node concept="37vLTw" id="13efIFyDJ2Q" role="2Oq$k0">
+                    <ref role="3cqZAo" node="13efIFyDIGr" resolve="moduleSourceDir" />
                   </node>
-                  <node concept="liA8E" id="79FiGkx5R9B" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                  <node concept="liA8E" id="13efIFyDJy_" role="2OqNvi">
+                    <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="2AHcQZ" id="79FiGkx5JUR" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="78Cs0expZhF" role="jymVt" />
-      <node concept="3clFb_" id="79FiGkx7hRb" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getBaseDirectory" />
-        <property role="od$2w" value="false" />
-        <property role="DiZV1" value="false" />
-        <node concept="3clFbS" id="79FiGkx7hRe" role="3clF47">
-          <node concept="3clFbF" id="79FiGkx7i0n" role="3cqZAp">
-            <node concept="37vLTw" id="79FiGkx7i0m" role="3clFbG">
-              <ref role="3cqZAo" node="79FiGkx7hEy" resolve="myBaseDir" />
-            </node>
-          </node>
-        </node>
         <node concept="3Tm1VV" id="79FiGkx7hJp" role="1B3o_S" />
-        <node concept="3uibUv" id="79FiGkx7hR9" role="3clF45">
-          <ref role="3uigEE" to="guwi:~File" resolve="File" />
-        </node>
       </node>
       <node concept="2tJIrI" id="78Cs0exq0gn" role="jymVt" />
       <node concept="3clFb_" id="5buGkdNqp3" role="jymVt">
@@ -11141,9 +11100,6 @@
         <node concept="10P_77" id="5buGkdNqp1" role="3clF45" />
       </node>
       <node concept="3Tm6S6" id="79FiGkx5avm" role="1B3o_S" />
-      <node concept="3uibUv" id="79FiGkx5dIy" role="1zkMxy">
-        <ref role="3uigEE" to="tqvn:~TempModule" resolve="TempModule" />
-      </node>
     </node>
     <node concept="3Tm1VV" id="4oL4a6slLxp" role="1B3o_S" />
   </node>
