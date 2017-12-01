@@ -26172,22 +26172,6 @@
             </node>
           </node>
         </node>
-        <node concept="398223" id="5xa9wY2vh8b" role="39821P">
-          <node concept="L2wRC" id="5xa9wY2vh8c" role="39821P">
-            <ref role="L2wRA" node="5xa9wY2vh8H" resolve="jetbrains.mps.execution.commands" />
-          </node>
-          <node concept="L2wRC" id="5xa9wY2vh8d" role="39821P">
-            <ref role="L2wRA" node="5xa9wY2vh8W" resolve="jetbrains.mps.execution.configurations" />
-          </node>
-          <node concept="L2wRC" id="78GwwOvFrij" role="39821P">
-            <ref role="L2wRA" node="5xa9wY2vh9N" resolve="jetbrains.mps.execution.configurations.pluginSolution" />
-          </node>
-          <node concept="3_J27D" id="5xa9wY2vh8f" role="Nbhlr">
-            <node concept="3Mxwew" id="5xa9wY2vh8g" role="3MwsjC">
-              <property role="3MwjfP" value="languages" />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="m$_wl" id="35y4BF72kxA" role="39821P">
         <ref role="m_rDy" node="5CFKsRWVb8B" resolve="jetbrains.mps.execution.configurations" />
