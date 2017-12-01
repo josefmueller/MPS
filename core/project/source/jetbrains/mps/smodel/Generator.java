@@ -20,6 +20,7 @@ import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -76,6 +77,18 @@ public class Generator extends ReloadableModuleBase {
     int sharpIndex = uid.indexOf('#');
     myGeneratorDescriptor.setNamespace(newName + "#" + uid.substring(sharpIndex + 1));
     // FIXME why there's no fireModuleRenamed() as in super.rename()???
+
+    final String oldLanguageName = this.getSourceLanguage().getModuleName();
+    final IFile languageFolder = this.getSourceLanguage().getModuleSourceDir();
+    // Only rename generation output path if we expect language folder rename (is equal to language name)
+    if (languageFolder!= null && languageFolder.getName().equals(oldLanguageName)) {
+      // TODO: remove, when generator will call super method
+      // Update output path for generated files
+      final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(myGeneratorDescriptor);
+      if (generatorOutputPath != null && generatorOutputPath.contains(oldLanguageName)) {
+        ProjectPathUtil.setGeneratorOutputPath(myGeneratorDescriptor, generatorOutputPath.replace(oldLanguageName, newName));
+      }
+    }
   }
 
   @Override

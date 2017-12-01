@@ -73,6 +73,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -649,7 +650,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   // FIXME rename model roots
   public void rename(@NotNull String newName) throws DescriptorTargetFileAlreadyExistsException {
     SModuleReference oldRef = getModuleReference();
-    renameModels(getModuleName(), newName, true);
+    final String oldModuleName = getModuleName();
 
     save(); //see MPS-18743, need to save before setting descriptor
 
@@ -661,6 +662,49 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         throw new DescriptorTargetFileAlreadyExistsException(myDescriptorFile, newDescriptorName);
       }
       myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
+
+      // Rename module folder iff it is equals to module name
+      if (myDescriptorFile.getParent().getName().equals(oldModuleName)) {
+        myDescriptorFile.getParent().rename(newName);
+
+        // Update output path for generated files
+        final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
+        if (generatorOutputPath != null && generatorOutputPath.contains(this.getModuleName())) {
+          ProjectPathUtil.setGeneratorOutputPath(descriptor, generatorOutputPath.replace(oldModuleName, newName));
+        }
+
+        /* Update model roots in descriptor:
+         * After module folder was renamed model roots are updated in SModule,
+         * because IFile used here to store location,
+         * but not in ModuleDescriptor - location is stored as string.
+         * */
+        final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
+        modelRootDescriptors.clear();
+        for (ModelRoot root : myModuleReference.resolve(getRepository()).getModelRoots()) {
+          Memento memento = new MementoImpl();
+          root.save(memento);
+          ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
+          modelRootDescriptors.add(modelRootDescriptor);
+        }
+
+        // TODO: as soon as generator will have it's own descriptor file - remove this!
+        /* Have explicitly update generators model roots in language (there are no own descriptors for generators),
+         * because generators have been already renamed before language without folder rename,
+         * so they can't update their model roots earlier in own rename method.
+        * */
+        if (this instanceof Language) {
+          for(Generator generator : ((Language) this).getGenerators()) {
+            final Collection<ModelRootDescriptor> generatorMRDescriptors = generator.getModuleDescriptor().getModelRootDescriptors();
+            generatorMRDescriptors.clear();
+            for (ModelRoot root : generator.getModelRoots()) {
+              Memento memento = new MementoImpl();
+              root.save(memento);
+              ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
+              generatorMRDescriptors.add(modelRootDescriptor);
+            }
+          }
+        }
+      }
     }
 
     if (descriptor != null) {
@@ -669,6 +713,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     fireModuleRenamed(oldRef);
+
+    // Rename models after module to ensure, that they will have short new name without module prefix
+    renameModels(oldModuleName, newName, true);
   }
 
   /**
