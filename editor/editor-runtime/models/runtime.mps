@@ -9,6 +9,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -2334,6 +2335,72 @@
       <node concept="3Tm1VV" id="6UDbxo8i0QZ" role="1B3o_S" />
       <node concept="3cqZAl" id="6UDbxo8i0R0" role="3clF45" />
       <node concept="3clFbS" id="6UDbxo8i0R1" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="lnREv2SCOy" role="jymVt" />
+    <node concept="2YIFZL" id="lnREv2ShpJ" role="jymVt">
+      <property role="TrG5h" value="createSelectIconButton" />
+      <node concept="3Tm1VV" id="lnREv2ShpK" role="1B3o_S" />
+      <node concept="3uibUv" id="lnREv2ShpL" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpM" role="3clF46">
+        <property role="TrG5h" value="sourceNode" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpN" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpO" role="3clF46">
+        <property role="TrG5h" value="property" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpP" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="lnREv2ShpQ" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="lnREv2ShpR" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1tyjSjK6WGd" role="3clF46">
+        <property role="TrG5h" value="copy" />
+        <node concept="10P_77" id="1tyjSjK6Y2t" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="lnREv2ShpS" role="3clF47">
+        <node concept="3SKdUt" id="lnREv2SIlU" role="3cqZAp">
+          <node concept="3SKdUq" id="lnREv2SIlW" role="3SKWNk">
+            <property role="3SKdUp" value="was used in mbeddr at the moment of 2017.3" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="lnREv2SHzK" role="3cqZAp">
+          <node concept="1rXfSq" id="lnREv2SHHP" role="3cqZAk">
+            <ref role="37wK5l" node="6UDbxo8i0Rf" resolve="createSelectImageButton" />
+            <node concept="37vLTw" id="lnREv2SHSg" role="37wK5m">
+              <ref role="3cqZAo" node="lnREv2ShpM" resolve="sourceNode" />
+            </node>
+            <node concept="37vLTw" id="lnREv2SI2X" role="37wK5m">
+              <ref role="3cqZAo" node="lnREv2ShpO" resolve="property" />
+            </node>
+            <node concept="37vLTw" id="lnREv2SIdm" role="37wK5m">
+              <ref role="3cqZAo" node="lnREv2ShpQ" resolve="context" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="lnREv2SGFM" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="lnREv2SGGC" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="lnREv2SGMx" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="lnREv2SH2l" role="2B70Vg">
+            <property role="$nhwW" value="2018.1" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="1tyjSjK6Uiu" role="jymVt" />
     <node concept="2YIFZL" id="6UDbxo8i0Rf" role="jymVt">

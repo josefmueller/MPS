@@ -50,6 +50,7 @@
     <classNode dependClassName="java.beans.PropertyChangeEvent" />
     <classNode dependClassName="java.beans.PropertyChangeListener" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -71,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystems" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
