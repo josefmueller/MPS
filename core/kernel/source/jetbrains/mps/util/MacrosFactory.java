@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,14 @@ package jetbrains.mps.util;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public final class MacrosFactory {
   public static final String MODULE = "${module}";
@@ -49,6 +51,20 @@ public final class MacrosFactory {
     return null;
   }
 
+  @NotNull
+  public static MacroHelper forModule(SModule module) {
+    if (module instanceof AbstractModule && ((AbstractModule) module).getDescriptorFile() != null) {
+      return forModuleFile(((AbstractModule) module).getDescriptorFile());
+    }
+    return getGlobal();
+  }
+
+  /**
+   * @deprecated why wound anyone care to cast openapi.SModule to AbstractModule? Use {@link #forModule(SModule)} instead.
+   *
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static MacroHelper forModule(AbstractModule module) {
     // todo: if descriptor file == null?
     IFile file = module.getDescriptorFile();

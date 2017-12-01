@@ -23,6 +23,8 @@ import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.text.TextUnit;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -94,6 +96,7 @@ public class Makeup_Facet extends IFacet.Stub {
                 if (generatedTextUnits.isEmpty()) {
                   continue;
                 }
+                final MacroHelper moduleMacros = MacrosFactory.forModule(res.getModule());
                 //  FIXME would be nice to have output repository in TextGenOutcomeResource, much like for generator outcome 
                 // inspired by TextGen facet approach 
                 SRepository outputModelRepo = res.getTextGenResult().getModel().getRepository();
@@ -110,6 +113,12 @@ public class Makeup_Facet extends IFacet.Stub {
                       }
                       // TODO process macro/property values in the location, but assume it's absolute path for now 
                       String destination = SPropertyOperations.getString(annotationCopy, MetaAdapterFactory.getProperty(0xedf22a442bc4e5dL, 0x954f06aaaf51df00L, 0x10f9f9812b8fca93L, 0x10f9f9812b8fca94L, "location"));
+                      if ((destination == null || destination.length() == 0)) {
+                        continue;
+                      }
+                      if (MacrosFactory.containsMacro(destination)) {
+                        destination = moduleMacros.expandPath(destination);
+                      }
                       monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf(String.format("copy textgen outcome: %s --> %s", tu.getFileName(), destination))));
 
                       // next code could be outside of model read 

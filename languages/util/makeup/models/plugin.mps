@@ -18,6 +18,7 @@
     <import index="1kj4" ref="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -78,6 +79,7 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -417,6 +419,27 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3cpWs8" id="5sirwxf_IR5" role="3cqZAp">
+                  <node concept="3cpWsn" id="5sirwxf_IR6" role="3cpWs9">
+                    <property role="TrG5h" value="moduleMacros" />
+                    <property role="3TUv4t" value="true" />
+                    <node concept="3uibUv" id="5sirwxf_IQM" role="1tU5fm">
+                      <ref role="3uigEE" to="18ew:~MacroHelper" resolve="MacroHelper" />
+                    </node>
+                    <node concept="2YIFZM" id="5sirwxf_TCI" role="33vP2m">
+                      <ref role="37wK5l" to="18ew:~MacrosFactory.forModule(org.jetbrains.mps.openapi.module.SModule):jetbrains.mps.util.MacroHelper" resolve="forModule" />
+                      <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+                      <node concept="2OqwBi" id="5sirwxf_TCJ" role="37wK5m">
+                        <node concept="2GrUjf" id="5sirwxf_TCK" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="13TYo4FzYHQ" resolve="res" />
+                        </node>
+                        <node concept="liA8E" id="5sirwxf_TCL" role="2OqNvi">
+                          <ref role="37wK5l" to="tpcq:2Op6w9TzkM7" resolve="getModule" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3SKdUt" id="4DCXnKLuLrG" role="3cqZAp">
                   <node concept="3SKdUq" id="4DCXnKLuLrI" role="3SKWNk">
                     <property role="3SKdUp" value=" FIXME would be nice to have output repository in TextGenOutcomeResource, much like for generator outcome" />
@@ -556,6 +579,46 @@
                                     <node concept="3TrcHB" id="13TYo4F$q5o" role="2OqNvi">
                                       <ref role="3TsBF5" to="fy23:13TYo4FzWEk" resolve="location" />
                                     </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbJ" id="5sirwxf_XKT" role="3cqZAp">
+                                <node concept="3clFbS" id="5sirwxf_XKV" role="3clFbx">
+                                  <node concept="3N13vt" id="5sirwxfA0Ae" role="3cqZAp" />
+                                </node>
+                                <node concept="2OqwBi" id="5sirwxf_ZN6" role="3clFbw">
+                                  <node concept="37vLTw" id="5sirwxf_XXX" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="13TYo4F$q5l" resolve="destination" />
+                                  </node>
+                                  <node concept="17RlXB" id="5sirwxfA0q9" role="2OqNvi" />
+                                </node>
+                              </node>
+                              <node concept="3clFbJ" id="5sirwxfA124" role="3cqZAp">
+                                <node concept="3clFbS" id="5sirwxfA126" role="3clFbx">
+                                  <node concept="3clFbF" id="5sirwxfA28s" role="3cqZAp">
+                                    <node concept="37vLTI" id="5sirwxfA3m7" role="3clFbG">
+                                      <node concept="2OqwBi" id="5sirwxfA3Tg" role="37vLTx">
+                                        <node concept="37vLTw" id="5sirwxfA3Ap" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="5sirwxf_IR6" resolve="moduleMacros" />
+                                        </node>
+                                        <node concept="liA8E" id="5sirwxfA4jX" role="2OqNvi">
+                                          <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                                          <node concept="37vLTw" id="5sirwxfA7yP" role="37wK5m">
+                                            <ref role="3cqZAo" node="13TYo4F$q5l" resolve="destination" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="37vLTw" id="5sirwxfA28q" role="37vLTJ">
+                                        <ref role="3cqZAo" node="13TYo4F$q5l" resolve="destination" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="2YIFZM" id="5sirwxfA1rR" role="3clFbw">
+                                  <ref role="37wK5l" to="18ew:~MacrosFactory.containsMacro(java.lang.String):boolean" resolve="containsMacro" />
+                                  <ref role="1Pybhc" to="18ew:~MacrosFactory" resolve="MacrosFactory" />
+                                  <node concept="37vLTw" id="5sirwxfA1W5" role="37wK5m">
+                                    <ref role="3cqZAo" node="13TYo4F$q5l" resolve="destination" />
                                   </node>
                                 </node>
                               </node>
