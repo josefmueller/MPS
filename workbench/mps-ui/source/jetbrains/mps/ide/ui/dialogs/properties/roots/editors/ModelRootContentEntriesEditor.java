@@ -329,7 +329,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
         }
       }
       FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
-      fileChooserDescriptor.setTitle("Choose root folder for new model root");
+      fileChooserDescriptor.setTitle("Choose Root Folder for New Model Root");
 
       VirtualFile chosen = null;
       while (chosen == null) {
