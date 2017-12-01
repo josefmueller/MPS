@@ -18,7 +18,6 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
-import jetbrains.mps.ide.ui.tree.TreeAdditionalTextOwner;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.project.Project;
