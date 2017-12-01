@@ -237,13 +237,21 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   private void activateProjectWindow() {
-    if (SystemInfo.isLinux) return;
+    if (SystemInfo.isLinux) {
+      return;
+    }
 
     Frame window = (Frame) WindowManager.getInstance().suggestParentWindow(myProject);
-    if (window == null) return;
-    window.toFront();
-    window.setExtendedState(JFrame.ICONIFIED);
-    window.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    if (window == null) {
+      return;
+    }
+    if (window.getExtendedState() == JFrame.ICONIFIED) {
+      window.setExtendedState(JFrame.MAXIMIZED_BOTH); // NORMAL, perhaps?
+    } else {
+      window.setExtendedState(JFrame.NORMAL);
+    }
+    window.setVisible(true);
+    window.requestFocus();
   }
 
 
