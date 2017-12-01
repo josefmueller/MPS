@@ -24,7 +24,7 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_ThenRe
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8335132831461797704", "");
-      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      ReflectiveEditorActionsUtil.runReadInEDTAndWait(getEditorComponent(), new Runnable() {
         public void run() {
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8335132831461799372"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
         }

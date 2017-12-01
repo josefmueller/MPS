@@ -24,14 +24,14 @@ public class ShowReflectiveEditor_ThenRegularEditorsForSubtreeForParent_Test ext
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8710742295992773244", "");
-      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      ReflectiveEditorActionsUtil.runReadInEDTAndWait(getEditorComponent(), new Runnable() {
         public void run() {
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8710742295992773247"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfaa4bf0f2fL, "WhileStatement"))));
         }
       });
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
 
-      getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      ReflectiveEditorActionsUtil.runReadInEDTAndWait(getEditorComponent(), new Runnable() {
         public void run() {
           getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8710742295992773244"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement"))));
         }

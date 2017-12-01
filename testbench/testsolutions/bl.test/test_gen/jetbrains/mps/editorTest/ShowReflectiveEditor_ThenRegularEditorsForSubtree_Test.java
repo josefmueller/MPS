@@ -12,27 +12,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
-public class ShowReflectiveEditor_Test extends BaseTransformationTest {
+public class ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test extends BaseTransformationTest {
   @Test
-  public void test_ShowReflectiveEditor() throws Throwable {
+  public void test_ShowReflectiveEditor_ThenRegularEditorsForSubtree() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.ShowReflectiveEditor_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("2746054822153765834", "897648160455544792");
+      initEditorComponent("897648160460478605", "897648160460478620");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
-      Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
-      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
+      Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
-      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
 
       ReflectiveEditorActionsUtil.runReadInEDTAndWait(getEditorComponent(), new Runnable() {
         public void run() {
-          getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("897648160455541334"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"))));
+          getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("897648160460478613"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"))));
         }
       });
       Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
@@ -42,7 +43,6 @@ public class ShowReflectiveEditor_Test extends BaseTransformationTest {
 
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
     }
   }
 }
