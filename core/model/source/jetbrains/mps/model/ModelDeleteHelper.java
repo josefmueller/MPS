@@ -69,7 +69,9 @@ public class ModelDeleteHelper {
       IFile classesGenDir = javaFacet.getClassesLocation(myModel);
       if (classesGenDir != null) {
         possiblyEmptyDirsToPrune.add(classesGenDir.getParent()); // I don't expect model output dir to be top of the disk, don't care about parent == null
-        classesGenDir.delete();
+        if (classesGenDir.exists()) {
+          classesGenDir.delete();
+        }
       }
     }
 
