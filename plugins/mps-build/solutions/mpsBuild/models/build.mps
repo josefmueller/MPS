@@ -25684,7 +25684,7 @@
         <node concept="3rtmxn" id="EpEP7iii8o" role="3bR31x">
           <node concept="3LXTmp" id="EpEP7iii8p" role="3rtmxm">
             <node concept="3qWCbU" id="EpEP7iii8q" role="3LXTna">
-              <property role="3qWCbO" value="icons/**, resources/**" />
+              <property role="3qWCbO" value="icons/**, startup.properties" />
             </node>
             <node concept="55IIr" id="EpEP7iii8r" role="3LXTmr">
               <node concept="2Ry0Ak" id="EpEP7iii8s" role="iGT6I">

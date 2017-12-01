@@ -668,7 +668,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.execution.configurations.implementation.plugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.implementation.plugin" />
-      <fileset dir="${basedir}/plugins/execution-configurations/plugin" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/plugins/execution-configurations/plugin" includes="icons/**, startup.properties" />
       <fileset dir="${mps_home}/plugins/execution-configurations/plugin/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.implementation.plugin.jar" />
     </jar>

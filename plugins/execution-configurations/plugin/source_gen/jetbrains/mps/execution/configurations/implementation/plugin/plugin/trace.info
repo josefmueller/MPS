@@ -4472,7 +4472,7 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6893245555985399815">
     <file name="plugin.xml">
-      <unit id="6893245555985399815" at="1,0,23,14" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.plugin" />
+      <unit id="6893245555985399815" at="1,0,21,14" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.plugin" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/7162597690968026150">
@@ -4524,6 +4524,9 @@
         <var name="project" id="7162597690968026150" />
       </scope>
       <unit id="7162597690968026150" at="13,0,27,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
+    </file>
+    <file name="startup.properties">
+      <unit id="7162597690968026150" at="1,0,6,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.startup" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/8981187274662750476">
