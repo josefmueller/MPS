@@ -105,11 +105,6 @@ public class Generator extends ReloadableModuleBase {
   }
 
   @Override
-  public IFile getDescriptorFile() {
-    return null;
-  }
-
-  @Override
   protected void doSetModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
     LanguageDescriptor languageDescriptor = getSourceLanguage().getModuleDescriptor();

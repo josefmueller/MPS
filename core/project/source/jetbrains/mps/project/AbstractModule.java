@@ -119,7 +119,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * This is a rational idea since keeping the same information twice does not make sense.
    * Moreover moving or renaming a module gets just simpler
    */
-  @Nullable protected final IFile myDescriptorFile;
+  @Nullable private IFile myDescriptorFile;
   @NotNull private final FileSystem myFileSystem;
   private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
@@ -626,11 +626,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * ${module} expands to this method
    */
   public IFile getModuleSourceDir() {
-    return myDescriptorFile != null ? myDescriptorFile.getParent() : null;
+    return getDescriptorFile() != null ? getDescriptorFile().getParent() : null;
   }
 
   @Nullable
-  public IFile getDescriptorFile() {
+  public final IFile getDescriptorFile() {
 //    assertCanRead();   if getModuleSourceDir doesn't require read, why getDescriptorFile does?
     return myDescriptorFile;
   }
@@ -654,13 +654,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     save(); //see MPS-18743, need to save before setting descriptor
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (myDescriptorFile != null) {
-      String newDescriptorName = newName + MPSExtentions.DOT + FileUtil.getExtension(myDescriptorFile.getName());
+    IFile descriptorFile = getDescriptorFile();
+    if (descriptorFile != null) {
+      String newDescriptorName = newName + MPSExtentions.DOT + FileUtil.getExtension(descriptorFile.getName());
       //noinspection ConstantConditions
-      if (myDescriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
-        throw new DescriptorTargetFileAlreadyExistsException(myDescriptorFile, newDescriptorName);
+      if (descriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
+        throw new DescriptorTargetFileAlreadyExistsException(descriptorFile, newDescriptorName);
       }
-      myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
+      String newNameWithExt = newName + "." + FileUtil.getExtension(descriptorFile.getName());
+      descriptorFile.rename(newNameWithExt);
+      // update descriptor since IFile is immutable like java.io.File
+      myDescriptorFile = descriptorFile.getParent().getDescendant(newNameWithExt);
     }
 
     if (descriptor != null) {

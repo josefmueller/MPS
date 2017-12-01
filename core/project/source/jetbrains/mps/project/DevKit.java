@@ -191,7 +191,7 @@ public class DevKit extends AbstractModule {
     }
     try {
       DescriptorIO<DevkitDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().devkitDescriptorIO();
-      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+      io.writeToFile(getModuleDescriptor(), getDescriptorFile());
     } catch (Exception ex) {
       Logger.getLogger(getClass()).error("Save failed", ex);
     }

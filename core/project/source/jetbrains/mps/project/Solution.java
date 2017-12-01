@@ -144,8 +144,9 @@ public class Solution extends ReloadableModuleBase {
     if (mySolutionDescriptor.getNamespace() != null) {
       mp = new jetbrains.mps.project.structure.modules.ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getId());
     } else {
-      assert myDescriptorFile != null;
-      mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getId());
+      IFile descriptorFile = getDescriptorFile();
+      assert descriptorFile != null;
+      mp = new jetbrains.mps.project.structure.modules.ModuleReference(descriptorFile.getPath(), mySolutionDescriptor.getId());
     }
 
     setModuleReference(mp);
@@ -162,7 +163,7 @@ public class Solution extends ReloadableModuleBase {
     SModuleReference ref = this.getModuleReference();
     if (isBootstrapSolution(ref)) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
-    if (myDescriptorFile == null || isReadOnly()) return;
+    if (getDescriptorFile() == null || isReadOnly()) return;
 
     if (mySolutionDescriptor.getLoadException() != null){
       return;
@@ -170,7 +171,7 @@ public class Solution extends ReloadableModuleBase {
 
     try {
       DescriptorIO<SolutionDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().solutionDescriptorIO();
-      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+      io.writeToFile(getModuleDescriptor(), getDescriptorFile());
     } catch (Exception ex) {
       Logger.getLogger(getClass()).error("Save failed", ex);
     }

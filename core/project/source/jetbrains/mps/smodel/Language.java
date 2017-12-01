@@ -362,7 +362,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
     try {
       DescriptorIO<LanguageDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().languageDescriptorIO();
-      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+      io.writeToFile(getModuleDescriptor(), getDescriptorFile());
     } catch (Exception ex) {
       Logger.getLogger(getClass()).error("Save failed", ex);
     }
