@@ -6,24 +6,13 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.openapi.editor.selection.Selection;
 
 /*package*/ class ReflectiveEditorActionUtil {
-  public static void update(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent, AnActionEvent event) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, !(isReflective) || isForSubtree(editorComponent, affectedNodes)).update(event);
+  public static void update(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree, EditorComponent editorComponent, AnActionEvent event) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).update(event);
   }
-  public static void execute(List<SNode> affectedNodes, boolean isReflective, EditorComponent editorComponent) {
-    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, !(isReflective) || isForSubtree(editorComponent, affectedNodes)).execute();
-  }
-
-  private static boolean isForSubtree(EditorComponent editorComponent, List<SNode> nodes) {
-    if (nodes.size() > 1) {
-      return true;
-    } else {
-      Selection selection = editorComponent.getSelectionManager().getSelection();
-      return selection != null && selection.isExactlyCoveringCell(editorComponent.findNodeCell(nodes.get(0)));
-    }
-
+  public static void execute(List<SNode> affectedNodes, boolean isReflective, boolean isForSubtree, EditorComponent editorComponent) {
+    new ReflectiveEditorAction(affectedNodes, editorComponent, isReflective, isForSubtree).execute();
   }
 
 }

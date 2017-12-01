@@ -22,13 +22,15 @@ public class ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_Test e
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1283790316087559016", "1283790316087559047");
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action");
       Assert.assertTrue(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
+      Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
       Assert.assertFalse(ReflectiveHintsManager.shouldShowReflectiveEditor(getEditorComponent().getSelectedCell().getCellContext()));
       Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"));
+      Assert.assertTrue(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSubtree_Action"));
       Assert.assertFalse(isActionApplicable("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"));
     }
   }

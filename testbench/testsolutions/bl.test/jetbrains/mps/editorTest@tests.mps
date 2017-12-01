@@ -47430,10 +47430,17 @@
           </node>
         </node>
       </node>
+      <node concept="3vFxKo" id="324kzBegABN" role="3cqZAp">
+        <node concept="uBuoZ" id="324kzBegAE5" role="3vFALc">
+          <node concept="1iFQzN" id="324kzBegAE6" role="uBuoX">
+            <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          </node>
+        </node>
+      </node>
       <node concept="3vwNmj" id="7eGlMon2Uy3" role="3cqZAp">
         <node concept="uBuoZ" id="7eGlMon2U$7" role="3vwVQn">
           <node concept="1iFQzN" id="7eGlMon2U$8" role="uBuoX">
-            <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+            <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -47470,6 +47477,13 @@
         <node concept="uBuoZ" id="5EwhroOfDG$" role="3vwVQn">
           <node concept="1iFQzN" id="5EwhroOfDG_" role="uBuoX">
             <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="324kzBehaAz" role="3cqZAp">
+        <node concept="uBuoZ" id="324kzBehaA$" role="3vwVQn">
+          <node concept="1iFQzN" id="324kzBehaA_" role="uBuoX">
+            <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
           </node>
         </node>
       </node>
@@ -58060,8 +58074,8 @@
     </node>
   </node>
   <node concept="LiM7Y" id="2V5Y3KmbJ4M">
-    <property role="TrG5h" value="ShowReflectiveEditorForDeletedConcepts_Reference" />
-    <property role="3GE5qa" value="reflectiveEditorActions" />
+    <property role="TrG5h" value="DefaultEditor_ForDeletedConcepts_Reference" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="3YCmrE" value="Checking that the reflcetive editor is correctly rendered in case of the concept is invalid" />
     <node concept="3clFbS" id="2V5Y3KmbJ4N" role="LjaKd">
       <node concept="2HxZob" id="2V5Y3KmbJ4O" role="3cqZAp">
@@ -58254,8 +58268,8 @@
     </node>
   </node>
   <node concept="LiM7Y" id="1A9qTDfq4XR">
-    <property role="TrG5h" value="ShowReflectiveEditorForDeletedConcepts_Abstract" />
-    <property role="3GE5qa" value="reflectiveEditorActions" />
+    <property role="TrG5h" value="DefaultEditor_ForDeletedConcepts_Abstract" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered. Abstract concept should be rendered when the concept is invalid" />
     <node concept="3clFbS" id="1A9qTDfq4XS" role="LjaKd">
       <node concept="2HxZob" id="1A9qTDfq4XT" role="3cqZAp">
@@ -58297,8 +58311,8 @@
     </node>
   </node>
   <node concept="LiM7Y" id="1A9qTDfq4Xl">
-    <property role="TrG5h" value="ShowReflectiveEditorForDeletedConcepts_Property" />
-    <property role="3GE5qa" value="reflectiveEditorActions" />
+    <property role="TrG5h" value="DefaultEditor_ForDeletedConcepts_Property" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
     <node concept="3clFbS" id="1A9qTDfq4Xm" role="LjaKd">
       <node concept="2HxZob" id="1A9qTDfq4Xn" role="3cqZAp">
@@ -59677,8 +59691,8 @@
     </node>
   </node>
   <node concept="LiM7Y" id="1A9qTDfpZBw">
-    <property role="TrG5h" value="ShowReflectiveEditorForDeletedConcepts_Child" />
-    <property role="3GE5qa" value="reflectiveEditorActions" />
+    <property role="TrG5h" value="DefaultEditor_ForDeletedConcepts_Child" />
+    <property role="3GE5qa" value="defaultEditor" />
     <property role="3YCmrE" value="Checking that the reflective editor is correctly rendered in case of the concept is invalid" />
     <node concept="3clFbS" id="1A9qTDfpZBx" role="LjaKd">
       <node concept="2HxZob" id="1A9qTDfpZBy" role="3cqZAp">
@@ -70243,7 +70257,7 @@
     <node concept="3clFbS" id="17gW7Qsv4eA" role="LjaKd">
       <node concept="2HxZob" id="17gW7Qsv4eB" role="3cqZAp">
         <node concept="1iFQzN" id="17gW7Qsv4eC" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3vwNmj" id="2RKhqU53GMU" role="3cqZAp">
@@ -70270,9 +70284,16 @@
           </node>
         </node>
       </node>
-      <node concept="3vwNmj" id="5IYRzU$_gBx" role="3cqZAp">
-        <node concept="uBuoZ" id="5IYRzU$_gBy" role="3vwVQn">
-          <node concept="1iFQzN" id="5IYRzU$_gBz" role="uBuoX">
+      <node concept="3vFxKo" id="LP5zVT0J$D" role="3cqZAp">
+        <node concept="uBuoZ" id="LP5zVT0J$E" role="3vFALc">
+          <node concept="1iFQzN" id="LP5zVT0J$F" role="uBuoX">
+            <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="LP5zVT0JZY" role="3cqZAp">
+        <node concept="uBuoZ" id="LP5zVT0K1S" role="3vwVQn">
+          <node concept="1iFQzN" id="LP5zVT0K1T" role="uBuoX">
             <ref role="1iFR8X" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
           </node>
         </node>
@@ -70306,6 +70327,13 @@
           </node>
         </node>
       </node>
+      <node concept="3vwNmj" id="LP5zVSZF1N" role="3cqZAp">
+        <node concept="uBuoZ" id="LP5zVSZF1O" role="3vwVQn">
+          <node concept="1iFQzN" id="LP5zVSZF1P" role="uBuoX">
+            <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
+          </node>
+        </node>
+      </node>
       <node concept="3vFxKo" id="5IYRzU$_goi" role="3cqZAp">
         <node concept="uBuoZ" id="5IYRzU$_goj" role="3vFALc">
           <node concept="1iFQzN" id="5IYRzU$_gok" role="uBuoX">
@@ -70332,11 +70360,6 @@
       <node concept="2HxZob" id="68Moal7ucp3" role="3cqZAp">
         <node concept="1iFQzN" id="68Moal7ucp4" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:6KwcZ1G3Plp" resolve="SelectDown" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="5Fenlgc48s" role="3cqZAp">
-        <node concept="1iFQzN" id="5Fenlgc48t" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
         </node>
       </node>
     </node>
@@ -70481,7 +70504,7 @@
       </node>
       <node concept="2HxZob" id="61pEbXpZRx9" role="3cqZAp">
         <node concept="1iFQzN" id="61pEbXpZRxa" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="61pEbXpZRxb" role="3cqZAp" />
@@ -70704,7 +70727,7 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUAxYy" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUAxYz" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="7zyLvtUAxY$" role="3cqZAp" />
@@ -70925,16 +70948,6 @@
           </node>
         </node>
       </node>
-      <node concept="2HxZob" id="5FenlgfhIU" role="3cqZAp">
-        <node concept="1iFQzN" id="5FenlgfhNd" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="5FenlgfhTk" role="3cqZAp">
-        <node concept="1iFQzN" id="5FenlgfhTl" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
-        </node>
-      </node>
       <node concept="2HxZob" id="7zyLvtUBEEx" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUBEEy" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
@@ -71108,32 +71121,12 @@
       </node>
       <node concept="2HxZob" id="7zyLvtUDNLw" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUDNLx" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="7eGlMomZAHS" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMomZAMl" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="7eGlMomZATm" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMomZATn" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
+          <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="2HxZob" id="7zyLvtUDOgj" role="3cqZAp">
         <node concept="1iFQzN" id="7zyLvtUDOgk" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="7eGlMomZB5J" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMomZB5K" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBNZ" resolve="MoveUp" />
-        </node>
-      </node>
-      <node concept="2HxZob" id="7eGlMomZB5L" role="3cqZAp">
-        <node concept="1iFQzN" id="7eGlMomZB5M" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:R3$tg1aBO2" resolve="MoveDown" />
         </node>
       </node>
       <node concept="2HxZob" id="7zyLvtUDOrN" role="3cqZAp">
@@ -71376,7 +71369,7 @@
       </node>
       <node concept="2HxZob" id="53U8lVsTEJQ" role="3cqZAp">
         <node concept="1iFQzN" id="53U8lVsTEJR" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+          <ref role="1iFR8X" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
         </node>
       </node>
       <node concept="3clFbH" id="53U8lVsTEJS" role="3cqZAp" />

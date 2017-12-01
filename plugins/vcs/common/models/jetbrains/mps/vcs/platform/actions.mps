@@ -2989,6 +2989,9 @@
       <node concept="tCFHf" id="nEmtK1W19H" role="ftvYc">
         <ref role="tCJdB" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       </node>
+      <node concept="tCFHf" id="7prA6ZS4Q_B" role="ftvYc">
+        <ref role="tCJdB" to="ekwn:1wo9YwOHLtB" resolve="ShowReflectiveEditorsForSubtree" />
+      </node>
       <node concept="tCFHf" id="nEmtK1W19M" role="ftvYc">
         <ref role="tCJdB" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
       </node>

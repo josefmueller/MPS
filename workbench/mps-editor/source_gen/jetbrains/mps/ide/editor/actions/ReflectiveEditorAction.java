@@ -49,7 +49,7 @@ import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
       public boolean test(ReflectiveEditorAction.ReflectiveHintsAction action) {
         return action.isApplicable();
       }
-    });
+    }) && !((myActions.size() > 1 && !(myIsForSubtree)));
     if (canMake) {
       String plurality = ((myIsForSubtree ? "s for Subtree" : "")) + ((myActions.size() > 1 ? "s" : ""));
       String caption = String.format("Show %s Editor%s", (myIsReflective ? "Reflective" : "Regular"), plurality);

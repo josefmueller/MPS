@@ -54,6 +54,5 @@ public class ReflectiveHintsManager {
     } else {
       new MakeSubtreeRegularAction(root, editorComponent).execute();
     }
-
   }
 }

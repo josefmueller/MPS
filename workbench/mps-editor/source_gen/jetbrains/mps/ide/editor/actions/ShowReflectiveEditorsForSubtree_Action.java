@@ -14,11 +14,11 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
-public class ShowRegularEditor_Action extends BaseAction {
+public class ShowReflectiveEditorsForSubtree_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowRegularEditor_Action() {
-    super("Show Regular Editor", "", ICON);
+  public ShowReflectiveEditorsForSubtree_Action() {
+    super("Show Reflective Editors for Subtree", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -28,7 +28,7 @@ public class ShowRegularEditor_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorActionUtil.update(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
+    ReflectiveEditorActionUtil.update(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), true, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -56,6 +56,6 @@ public class ShowRegularEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorActionUtil.execute(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+    ReflectiveEditorActionUtil.execute(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), true, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
 }
