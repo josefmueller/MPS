@@ -192,7 +192,7 @@
       <library file="${artifacts.mps}/plugins/mps-console/lang/jetbrains.mps.console.ideCommands.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-console/lang/jetbrains.mps.console.scripts.jar" />
       <library file="${artifacts.mps}/plugins/mps-console/lib/mps-console.jar" />
-      <library file="${artifacts.mps}/plugins/mps-make/solutions/jetbrains.mps.ide.make.jar" />
+      <library file="${artifacts.mps}/plugins/mps-make/languages/jetbrains.mps.ide.make.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
@@ -372,7 +372,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-console/lang/jetbrains.mps.console.ideCommands.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-console/lang/jetbrains.mps.console.scripts.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-console/lib/mps-console.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-make/solutions/jetbrains.mps.ide.make.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-make/languages/jetbrains.mps.ide.make.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />

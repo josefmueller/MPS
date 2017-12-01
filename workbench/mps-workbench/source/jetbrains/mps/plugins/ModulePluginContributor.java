@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,17 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.ModuleNameUtil;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -94,27 +96,24 @@ public class ModulePluginContributor extends PluginContributor {
 
   @Nullable
   private Properties getComponentStartupConfiguration() {
-    // although getResource does look into dependencies and chances are we read configuration
-    // of another module, the fact we use loadOwnClass later prevents loading it second time.
-    // However, shall update fallback solution (try to load from config name, then try to load from fallback name)
-    // unless switch to files here
-    IFile dir = ((AbstractModule) myModule).getModuleSourceDir();
-    if (dir == null) {
-      return null;
-    }
-    IFile cfg = dir.getDescendant("startup.properties");
-    // Note, META-INF location won't work for groups of modules distributed as a single plugin, shall come up with better approach
-    if (!cfg.exists()) {
+    MacroHelper macroHelper = MacrosFactory.forModule(myModule);
+    // Note, META-INF nor ${module} location would work for groups of modules distributed as a single plugin, shall come up with better approach
+    String cfgFullPath = macroHelper.expandPath("${module}/startup.properties");
+    // note, for deployed modules, with META-INF/module.xml as anchor/descriptor file, there's a hack in ModuleMacros that uses META-INF/.. as ${module} value
+    File cfg = new File(cfgFullPath);
+    // I'd love to use IFile here, but MacroHelper gives me a string, not IFile, and, alas, there's no access to proper filesystem here
+    if (!cfg.exists() || !cfg.isFile()) {
       return null;
     }
     InputStream is = null;
     try {
-      is = cfg.openInputStream();
+      is = new FileInputStream(cfg);
       Properties rv = new Properties();
       rv.load(is);
       return rv;
     } catch (IOException ex) {
-      LOG.warn("Failed to read startup.properties for module " + myModule.getModuleName(), ex);
+      String m = "Failed to read startup.properties for module %s from location %s";
+      LOG.warn(String.format(m, myModule.getModuleName(), cfgFullPath), ex);
     } finally {
       if (is != null) {
         try {
