@@ -131,16 +131,6 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.search.NodeListChildrenSearchScope" file="NodeListChildrenSearchScope.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
   <dependency className="jetbrains.mps.smodel.search.SModelSearchUtil" file="SModelSearchUtil.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -159,38 +149,6 @@
   <dependency className="jetbrains.mps.smodel.search.SearchScopeWithNode" file="SearchScopeWithNode.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.search.SimpleSearchScope" file="SimpleSearchScope.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.search.SubnodesSearchScope" file="SubnodesSearchScope.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.search.UndefinedSearchScope" file="UndefinedSearchScope.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.ISearchScope" />
   </dependency>
 </dependenciesRoot>
 
