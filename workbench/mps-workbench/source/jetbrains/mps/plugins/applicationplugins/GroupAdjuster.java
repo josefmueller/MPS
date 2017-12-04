@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
@@ -68,13 +69,13 @@ public class GroupAdjuster {
 
     addPlace(ModuleActions_ActionGroup.ID, ActionPlace.MODULE_DEPENDENCIES);
 
-    ActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_POPUP_GROUP);
+    ActionGroup editorPopupGroup = (ActionGroup) ActionManager.getInstance().getAction(MPSActions.EDITOR_POPUP_GROUP);
     if (editorPopupGroup != null) {
       List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
       BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
     }
 
-    ActionGroup editorActionsGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_ACTIONS_GROUP);
+    ActionGroup editorActionsGroup = (ActionGroup) ActionManager.getInstance().getAction(MPSActions.EDITOR_ACTIONS_GROUP);
     if (editorActionsGroup != null) {
       List<AnAction> actionList = Arrays.asList(editorActionsGroup.getChildren(null));
       BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
