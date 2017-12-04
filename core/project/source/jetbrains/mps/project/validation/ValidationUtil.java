@@ -469,13 +469,32 @@ public class ValidationUtil {
     }
 
     ModuleDescriptor descriptor = module.getModuleDescriptor();
+    final boolean compiledInMPS = descriptor.getCompileInMPS();
     for (Dependency dep : descriptor.getDependencies()) {
       SModuleReference moduleRef = dep.getModuleRef();
-      if (moduleRef.resolve(repository) != null) {
-        continue;
-      }
-      if (!processor.process(new ModuleValidationProblem(module, MessageStatus.ERROR, "Can't find dependency: " + moduleRef.getModuleName()))) {
-        return false;
+      SModule depModule = moduleRef.resolve(repository);
+      if (depModule == null) {
+        if (!processor.process(new ModuleValidationProblem(module, MessageStatus.ERROR, "Can't find dependency: " + moduleRef.getModuleName()))) {
+          return false;
+        }
+        // fall-through
+      } else {
+        if (compiledInMPS || dep.getScope() != SDependencyScope.DEFAULT) {
+          // 1) module compiled in MPS can depend from both non-MPS and MPS-managed modules
+          // 2) dependencies like EXTENDS are possible between languages only (languages are compile in mps);
+          //    DESIGN and GENERATES-INTO are of no interest (no classloading), other kinds are not in use now.
+          continue;
+        }
+        // IDEA-compiled modules are likely loaded by IDEA and may lack access to classes managed by MPS classloaders.
+        ModuleDescriptor depModuleDescriptor;
+        if (depModule instanceof AbstractModule && (depModuleDescriptor = ((AbstractModule) depModule).getModuleDescriptor()) != null) {
+          if (depModuleDescriptor.getCompileInMPS()) {
+            String msg = "Dependency target %s has MPS-managed classloader, the module may fail to load dependent classes";
+            if (!processor.process(new ModuleValidationProblem(module, MessageStatus.WARNING, String.format(msg, depModule.getModuleName())))) {
+              return false;
+            }
+          }
+        }
       }
     }
     for (SModuleReference reference : descriptor.getUsedDevkits()) {

@@ -129,6 +129,12 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myGenOutputPath = path;
   }
 
+  @Override
+  public boolean getCompileInMPS() {
+    // although it's unlikely anyone gonna load classes of a generator from a dependent module, technically generator is compiled by MPS
+    // and it's better to say 'yes' rather than to fail with UnsupportedOperationException.
+    return true;
+  }
 
   @Override
   protected int getHeaderMarker() {

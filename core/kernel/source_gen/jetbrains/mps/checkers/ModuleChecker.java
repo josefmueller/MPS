@@ -24,7 +24,7 @@ public class ModuleChecker extends IChecker.AbstractModuleChecker<ModuleReportIt
     ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
       public boolean process(ModuleValidationProblem vp) {
         errorCollector.consume((ModuleReportItem) vp);
-        return monitor.isCanceled();
+        return !(monitor.isCanceled());
       }
     });
   }
