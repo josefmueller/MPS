@@ -123,8 +123,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Nullable protected final IFile myDescriptorFile;
   @NotNull private final FileSystem myFileSystem;
   private SModuleReference myModuleReference;
-  private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
-  private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
+  private Set<ModelRoot> mySModelRoots = new LinkedHashSet<>();
+  private Set<ModuleFacetBase> myFacets = new LinkedHashSet<>();
   private ModuleScope myScope = new ModuleScope();
 
   private boolean myChanged = false;
@@ -177,7 +177,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (descriptor == null) {
       return Collections.emptyList();
     }
-    HashSet<SDependency> result = new HashSet<SDependency>();
+    HashSet<SDependency> result = new HashSet<>();
     final SRepository repo = getRepository();
     if (repo == null) {
       throw new IllegalStateException("It is not possible to resolve all declared dependencies with a null repository : module " + this);
@@ -403,8 +403,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // 1 && 2
     if (sourcesDescriptorFile != null) {
       // stub model roots
-      List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
-      List<ModelRootDescriptor> toAdd = new ArrayList<ModelRootDescriptor>();
+      List<ModelRootDescriptor> toRemove = new ArrayList<>();
+      List<ModelRootDescriptor> toAdd = new ArrayList<>();
       for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
         String rootDescriptorType = rootDescriptor.getType();
         if (rootDescriptorType.equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) {
@@ -425,7 +425,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
             //
             // trying to load new format : replacing paths like **.jar!/module ->
             String contentPath = rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH);
-            List<String> paths = new LinkedList<String>();
+            List<String> paths = new LinkedList<>();
             for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
               paths.add(contentPath + File.separator + sourceRoot.get(FileBasedModelRoot.LOCATION));
             }
@@ -573,12 +573,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
     myFacets.clear();
 
-    Map<String, Memento> config = new HashMap<String, Memento>();
+    Map<String, Memento> config = new HashMap<>();
     for (ModuleFacetDescriptor facetDescriptors : descriptor.getModuleFacetDescriptors()) {
       config.put(facetDescriptors.getType(), facetDescriptors.getMemento());
     }
 
-    Set<String> types = new HashSet<String>();
+    Set<String> types = new HashSet<>();
     collectMandatoryFacetTypes(types);
     types.addAll(config.keySet());
 
@@ -779,7 +779,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   public List<String> getSourcePaths() {
     assertCanRead();
-    return new ArrayList<String>(SModuleOperations.getAllSourcePaths(this));
+    return new ArrayList<>(SModuleOperations.getAllSourcePaths(this));
   }
 
   public void updateModelsSet() {
@@ -792,7 +792,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       return Collections.emptyList();
     }
 
-    List<ModelRoot> result = new ArrayList<ModelRoot>();
+    List<ModelRoot> result = new ArrayList<>();
     for (ModelRootDescriptor modelRoot : descriptor.getModelRootDescriptors()) {
       try {
         ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(modelRoot.getType());
@@ -929,14 +929,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     @Override
     protected Set<SModule> getInitialModules() {
-      Set<SModule> result = new HashSet<SModule>();
+      Set<SModule> result = new HashSet<>();
       result.add(AbstractModule.this);
       return result;
     }
 
     @Override
     protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<Language>();
+      HashSet<Language> result = new HashSet<>();
       for (SLanguage l : AbstractModule.this.getUsedLanguages()) {
         SModule langModule = l.getSourceModule();
         if (langModule instanceof Language) {
