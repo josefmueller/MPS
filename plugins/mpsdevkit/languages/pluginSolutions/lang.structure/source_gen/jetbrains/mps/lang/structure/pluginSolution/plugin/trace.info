@@ -1384,7 +1384,7 @@
       <node id="5085963682937133787" at="33,0,36,0" concept="8" trace="getId#()Ljava/lang/String;" />
       <node id="5464540062509485730" at="55,92,58,7" concept="7" />
       <node id="5085963682937312288" at="66,90,69,9" concept="7" />
-      <node id="9088427053756758079" at="72,0,75,0" concept="8" trace="afterMove#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/core/plugin/UpdateReferencesParticipantBase/NodeData;" />
+      <node id="9088427053756758079" at="72,0,75,0" concept="8" trace="afterMove#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/core/pluginSolution/plugin/UpdateReferencesParticipantBase/NodeData;" />
       <node id="5085963682938244704" at="78,0,81,0" concept="14" trace="eq_m5uax2_a0a0a5#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="5085963682938249681" at="81,0,84,0" concept="14" trace="eq_m5uax2_a0a0a5_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="5464540062509480114" at="84,73,87,5" concept="7" />
@@ -1393,14 +1393,14 @@
       <node id="5464540062509532635" at="102,79,105,5" concept="7" />
       <node id="5085963682938239047" at="37,0,41,0" concept="8" trace="shouldUpdateReference#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/refactoring/participant/RefactoringSession;)Z" />
       <node id="8447707653679620556" at="43,234,48,5" concept="7" />
-      <node id="9088427053756758052" at="66,0,72,0" concept="8" trace="beforeMove#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/core/plugin/UpdateReferencesParticipantBase/NodeData;" />
+      <node id="9088427053756758052" at="66,0,72,0" concept="8" trace="beforeMove#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/core/pluginSolution/plugin/UpdateReferencesParticipantBase/NodeData;" />
       <node id="5464540062509480114" at="84,0,90,0" concept="14" trace="check_m5uax2_a0b0a0i#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="5464540062509480115" at="90,0,96,0" concept="14" trace="check_m5uax2_a0a1a0a8#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="5464540062509481332" at="96,0,102,0" concept="14" trace="check_m5uax2_a0a2a0a8#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="5464540062509532635" at="102,0,108,0" concept="14" trace="check_m5uax2_a0a0a0a0a0b0k#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="8447707653678484277" at="42,0,50,0" concept="8" trace="doUpdateReference#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Ljetbrains/mps/lang/core/plugin/UpdateReferencesParticipantBase/NodeData;Ljava/lang/String;)V" />
+      <node id="8447707653678484277" at="42,0,50,0" concept="8" trace="doUpdateReference#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Ljetbrains/mps/lang/core/pluginSolution/plugin/UpdateReferencesParticipantBase/NodeData;Ljava/lang/String;)V" />
       <node id="5085963682938298904" at="51,216,59,5" concept="7" />
-      <node id="5085963682938294013" at="50,0,61,0" concept="8" trace="doUpdateModelImport#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Ljetbrains/mps/lang/core/plugin/UpdateReferencesParticipantBase/NodeData;)V" />
+      <node id="5085963682938294013" at="50,0,61,0" concept="8" trace="doUpdateModelImport#(Ljava/util/List;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SReferenceLink;Ljetbrains/mps/lang/core/pluginSolution/plugin/UpdateReferencesParticipantBase/NodeData;)V" />
       <node id="9088427053756730751" at="64,166,75,6" concept="10" />
       <node id="5085963682937170711" at="62,0,77,0" concept="8" trace="getDataCollector#()Ljetbrains/mps/refactoring/participant/MoveNodeRefactoringParticipant/MoveNodeRefactoringDataCollector;" />
       <scope id="5085963682938390546" at="25,59,26,75" />

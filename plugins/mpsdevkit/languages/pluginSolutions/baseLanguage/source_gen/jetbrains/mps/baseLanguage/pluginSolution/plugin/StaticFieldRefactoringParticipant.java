@@ -11,7 +11,7 @@ import java.util.List;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase;
+import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 

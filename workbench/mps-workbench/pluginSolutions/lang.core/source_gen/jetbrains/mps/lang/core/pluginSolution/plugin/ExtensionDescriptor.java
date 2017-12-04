@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new GeneratorCache_extension()};
+  private Extension[] extensions = new Extension[]{new GeneratorCache_extension(), new UpdateReferencesParticipantBase.UpdateReferencesParticipant_extension(), new UpdateModelImports.UpdateModelImports_extension(), new RenameReferencesParticipant.RenameReferencesParticipant_extension()};
   public ExtensionDescriptor() {
   }
   @Override

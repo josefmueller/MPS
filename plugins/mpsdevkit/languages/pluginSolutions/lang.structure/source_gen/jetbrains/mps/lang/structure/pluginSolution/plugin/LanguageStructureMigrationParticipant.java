@@ -40,7 +40,7 @@ import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.core.plugin.UpdateModelImports;
+import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.SModule;
