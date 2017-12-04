@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -44,7 +43,7 @@ public class CreateRootRule_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ISearchScope.Adapter(new MappingRuleTemplateNodeSearchScope(SNodeOperations.getModel(_context.getContextNode())));
+            return new MappingRuleTemplateNodeSearchScope(SNodeOperations.getModel(_context.getContextNode()));
           }
         };
       }
