@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.languages" uuid="2fe588b4-688c-48ba-b903-0b7dc3d30070" moduleVersion="0" compileInMPS="false">
+<solution name="jetbrains.mps.execution.languages" uuid="2fe588b4-688c-48ba-b903-0b7dc3d30070" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <facets>
-    <facet pluginId="jetbrains.mps.execution.languages" type="ideaPlugin" />
-  </facets>
   <sourcePath />
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />

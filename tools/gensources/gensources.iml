@@ -261,6 +261,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/library">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/library/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/plugin">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/plugin/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/httpsupport/language">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/language/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/httpsupport/language/source_gen" isTestSource="false" />
@@ -788,7 +794,6 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
-    <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="httpsupport" />
   </component>
 </module>

@@ -294,6 +294,10 @@
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/demo/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/demo/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/demo/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/library/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/library/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/plugin/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/plugin/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/language/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/language/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/httpsupport/solutions/nodeaccess/source_gen" includeSubdirectories="true" />
