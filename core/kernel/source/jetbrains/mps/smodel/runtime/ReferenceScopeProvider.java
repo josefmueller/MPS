@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,8 @@ package jetbrains.mps.smodel.runtime;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.search.ISearchScope;
 
 public interface ReferenceScopeProvider {
-
-  @Deprecated
-  ISearchScope createSearchScope(IOperationContext operationContext, ReferenceConstraintsContext _context);
-
   Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context);
 
   boolean hasPresentation();

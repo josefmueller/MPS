@@ -875,65 +875,6 @@
       <unit id="8401916545537277021" at="14,0,96,0" name="jetbrains.mps.scope.CompositeScope" />
     </file>
   </root>
-  <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/8401916545537281524">
-    <file name="ScopeAdapter.java">
-      <node id="8401916545537307363" at="20,0,21,0" concept="4" trace="scope" />
-      <node id="8401916545537307369" at="21,36,22,23" concept="3" />
-      <node id="8401916545537307473" at="26,59,27,98" concept="8" />
-      <node id="8401916545537307497" at="28,28,29,68" concept="8" />
-      <node id="8401916545537307524" at="30,28,31,31" concept="8" />
-      <node id="8401916545537307548" at="32,37,33,22" concept="3" />
-      <node id="8401916545537307513" at="36,5,37,18" concept="9" />
-      <node id="8401916545537307457" at="40,40,41,32" concept="9" />
-      <node id="8401916545537307448" at="45,33,46,84" concept="9" />
-      <node id="8401916545537307435" at="55,88,56,59" concept="9" />
-      <node id="8401916545537281526" at="21,0,24,0" concept="1" trace="ScopeAdapter#(Ljetbrains/mps/scope/Scope;)V" />
-      <node id="8401916545537307535" at="31,31,34,9" concept="6" />
-      <node id="8401916545537307391" at="39,0,43,0" concept="7" trace="isInScope#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8401916545537307424" at="54,0,58,0" concept="7" trace="resolve#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8401916545537307399" at="43,0,48,0" concept="7" trace="getNodes#()Ljava/util/List;" />
-      <node id="8401916545537307515" at="29,68,35,7" concept="15" />
-      <node id="8401916545537307485" at="27,98,36,5" concept="6" />
-      <node id="8401916545537307418" at="49,106,58,6" concept="9" />
-      <node id="8401916545537307407" at="48,0,60,0" concept="7" trace="getReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
-      <node id="8401916545537307380" at="24,0,39,0" concept="7" trace="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
-      <scope id="8401916545537281529" at="21,36,22,23" />
-      <scope id="8401916545537307536" at="32,37,33,22" />
-      <scope id="8401916545537307396" at="40,40,41,32" />
-      <scope id="8401916545537307404" at="45,33,46,84" />
-      <scope id="8401916545537307434" at="55,88,56,59" />
-      <scope id="8401916545537281526" at="21,0,24,0">
-        <var name="scope" id="8401916545537307367" />
-      </scope>
-      <scope id="8401916545537307517" at="30,28,34,9">
-        <var name="node" id="8401916545537307525" />
-      </scope>
-      <scope id="8401916545537307391" at="39,0,43,0">
-        <var name="node" id="8401916545537307394" />
-      </scope>
-      <scope id="8401916545537307424" at="54,0,58,0">
-        <var name="referenceInfo" id="8401916545537307427" />
-        <var name="targetModelReference" id="8401916545537307429" />
-      </scope>
-      <scope id="8401916545537307399" at="43,0,48,0" />
-      <scope id="8401916545537307486" at="28,28,35,7">
-        <var name="it" id="8401916545537307498" />
-      </scope>
-      <scope id="8401916545537307414" at="49,106,58,6" />
-      <scope id="8401916545537307388" at="26,59,37,18">
-        <var name="result" id="8401916545537307474" />
-      </scope>
-      <scope id="8401916545537307407" at="48,0,60,0">
-        <var name="referenceNode" id="8401916545537307410" />
-        <var name="targetConcept" id="8401916545537307412" />
-      </scope>
-      <scope id="8401916545537307380" at="24,0,39,0">
-        <var name="condition" id="8401916545537307384" />
-      </scope>
-      <unit id="8401916545537307422" at="50,15,58,5" name="jetbrains.mps.scope.ScopeAdapter$1" />
-      <unit id="8401916545537281524" at="19,0,61,0" name="jetbrains.mps.scope.ScopeAdapter" />
-    </file>
-  </root>
   <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/8401916545537551267">
     <file name="ModelPlusImportedScope.java">
       <node id="4974571531361545984" at="13,98,14,62" concept="13" />

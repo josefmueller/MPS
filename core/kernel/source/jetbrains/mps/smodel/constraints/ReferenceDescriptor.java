@@ -21,13 +21,10 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.FilteringByConceptScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
@@ -36,7 +33,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -57,7 +53,6 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
  */
 public abstract class ReferenceDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferenceDescriptor.class));
-  private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
 
   // can be ErrorScope
   @NotNull
