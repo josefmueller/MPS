@@ -28,33 +28,6 @@
       <unit id="4642948870877862679" at="8,0,14,0" name="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
     </file>
   </root>
-  <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877886822">
-    <file name="ModelNodesSearchScope.java">
-      <node id="4642948870877886825" at="14,0,15,0" concept="5" trace="myModel" />
-      <node id="4642948870877886834" at="15,46,16,20" concept="4" />
-      <node id="5871435193454891498" at="20,59,21,48" concept="10" />
-      <node id="5871435193454873231" at="22,90,23,23" concept="4" />
-      <node id="5871435193454891487" at="24,5,25,18" concept="11" />
-      <node id="4642948870877886828" at="15,0,18,0" concept="2" trace="ModelNodesSearchScope#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="5871435193454873227" at="21,48,24,5" concept="7" />
-      <node id="4642948870877886838" at="18,0,27,0" concept="9" trace="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
-      <scope id="4642948870877886833" at="15,46,16,20" />
-      <scope id="5871435193454873230" at="22,90,23,23" />
-      <scope id="4642948870877886828" at="15,0,18,0">
-        <var name="model" id="4642948870877886831" />
-      </scope>
-      <scope id="5871435193454873227" at="21,48,24,5">
-        <var name="root" id="5871435193454873228" />
-      </scope>
-      <scope id="4642948870877886845" at="20,59,25,18">
-        <var name="result" id="5871435193454891499" />
-      </scope>
-      <scope id="4642948870877886838" at="18,0,27,0">
-        <var name="condition" id="4642948870877886842" />
-      </scope>
-      <unit id="4642948870877886822" at="13,0,28,0" name="jetbrains.mps.smodel.search.ModelNodesSearchScope" />
-    </file>
-  </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877886891">
     <file name="AbstractSearchScope.java">
       <node id="4642948870877887007" at="15,38,16,18" concept="11" />
@@ -128,35 +101,6 @@
       </scope>
       <scope id="4642948870877887070" at="12,0,15,0" />
       <unit id="4642948870877887054" at="7,0,16,0" name="jetbrains.mps.smodel.search.SearchScopeWithNode" />
-    </file>
-  </root>
-  <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877888908">
-    <file name="EmptySearchScope.java">
-      <node id="4642948870877888923" at="17,59,18,34" concept="11" />
-      <node id="4642948870877888948" at="24,88,25,20" concept="11" />
-      <node id="4642948870877888911" at="13,0,15,0" concept="2" trace="EmptySearchScope#()V" />
-      <node id="4642948870877888940" at="23,0,27,0" concept="9" trace="resolve#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4642948870877888915" at="15,0,20,0" concept="9" trace="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
-      <node id="4642948870877888936" at="21,100,27,6" concept="11" />
-      <node id="4642948870877888928" at="20,0,29,0" concept="9" trace="getReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
-      <scope id="4642948870877888914" at="13,29,13,29" />
-      <scope id="4642948870877888922" at="17,59,18,34" />
-      <scope id="4642948870877888947" at="24,88,25,20" />
-      <scope id="4642948870877888911" at="13,0,15,0" />
-      <scope id="4642948870877888940" at="23,0,27,0">
-        <var name="referenceInfo" id="4642948870877888943" />
-        <var name="targetModelReference" id="4642948870877888945" />
-      </scope>
-      <scope id="4642948870877888915" at="15,0,20,0">
-        <var name="condition" id="4642948870877888919" />
-      </scope>
-      <scope id="4642948870877888935" at="21,100,27,6" />
-      <scope id="4642948870877888928" at="20,0,29,0">
-        <var name="referenceNode" id="4642948870877888931" />
-        <var name="targetConcept" id="4642948870877888933" />
-      </scope>
-      <unit id="4642948870877888939" at="22,15,27,5" name="jetbrains.mps.smodel.search.EmptySearchScope$1" />
-      <unit id="4642948870877888908" at="12,0,30,0" name="jetbrains.mps.smodel.search.EmptySearchScope" />
     </file>
   </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877889221">

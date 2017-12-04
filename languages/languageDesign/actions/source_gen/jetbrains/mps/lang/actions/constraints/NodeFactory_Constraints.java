@@ -20,8 +20,10 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.ModelNodesSearchScope;
+import jetbrains.mps.scope.ListScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
@@ -51,7 +53,12 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
               // concepts from this language 
               Language language = Language.getLanguageForLanguageAspect(SNodeOperations.getModel(_context.getContextNode()));
               SModel structureModel = language.getStructureModelDescriptor();
-              return new ISearchScope.Adapter(new ModelNodesSearchScope(structureModel));
+              // XXX in fact, shall include concepts from extended languages as well 
+              return new ListScope(SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+                public String getName(SNode child) {
+                  return SPropertyOperations.getString(child, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+                }
+              };
             }
           }
         };
