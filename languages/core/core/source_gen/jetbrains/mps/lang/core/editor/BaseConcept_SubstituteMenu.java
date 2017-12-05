@@ -27,7 +27,6 @@ import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
@@ -187,13 +186,12 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
             @Nullable
             @Override
             public String getDescriptionText(@NotNull String pattern) {
-              String fqName = myParameterObject.getQualifiedName();
-              return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
+              return "lang: " + myParameterObject.getLanguage().getQualifiedName();
             }
             @Nullable
             @Override
             public IconResource getIcon(@NotNull String pattern) {
-              return IconResourceUtil.getIconResourceForConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+              return IconResourceUtil.getIconResourceForConcept(myParameterObject);
             }
           }
         }
