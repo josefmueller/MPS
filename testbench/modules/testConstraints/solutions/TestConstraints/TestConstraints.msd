@@ -26,8 +26,6 @@
     <module reference="fa6333dc-8872-4c44-8576-d45f9752c17d(TestConstraints)" version="0" />
     <module reference="2b800570-3758-4c14-86fb-871266fb9d11(constraints.test)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
   </dependencyVersions>
 </solution>
 

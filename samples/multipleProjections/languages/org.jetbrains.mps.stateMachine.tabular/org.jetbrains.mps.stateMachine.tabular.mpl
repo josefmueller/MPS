@@ -47,8 +47,6 @@
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="8d18a45b-ac7e-4d84-a539-75f1d720b09b(jetbrains.mps.samples.multipleProjections.requestTracking)" version="0" />
     <module reference="530533ee-f789-4c1e-ba56-de1bbf3afda7(jetbrains.mps.samples.multipleProjections.stateMachine)" version="0" />
     <module reference="9357c0ba-2430-4f01-b20a-cc8947960ac3(jetbrains.mps.samples.multipleProjections.stateMachine.tabular)" version="0" />

@@ -123,7 +123,7 @@ public class DeleteNodesHelper {
           public void run() {
             ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
-                SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+                SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, new GlobalScope(), "jetbrains.mps.lang.core.findUsages.NodeAndDescendantsUsages_Finder");
                 SetSequence.fromSet(results).addSequence(ListSequence.fromList(usages.getSearchResults()));
 
                 if (pi.isCanceled()) {

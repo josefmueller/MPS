@@ -186,6 +186,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
+    <import index="lgib" ref="r:3d049421-2cf2-4818-944e-c4d825789632(jetbrains.mps.lang.core.findUsages)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -29501,7 +29502,7 @@
                                                     <ref role="3cqZAo" node="6g54bkDa480" resolve="it" />
                                                   </node>
                                                   <node concept="zAVLb" id="3X$1g2Ty4lX" role="1C5ry4">
-                                                    <ref role="2$JaeB" to="tpci:hs82Tlp" resolve="NodeAndDescendantsUsages" />
+                                                    <ref role="2$JaeB" to="lgib:hs82Tlp" resolve="NodeAndDescendantsUsages" />
                                                   </node>
                                                 </node>
                                               </node>

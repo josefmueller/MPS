@@ -51,8 +51,6 @@
     <module reference="050560c9-658e-49c5-b8e7-9e4db4c7e97f(jetbrains.mps.lang.editor.diagram.testLanguage)" version="0" />
     <module reference="9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)" version="0" />
     <module reference="961e4f4d-48cb-4bb7-8176-73dd2ac5c8a5(jetbrains.mps.lang.editor.figures.sandbox)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
   </dependencyVersions>
   <extendedLanguages />
 </language>

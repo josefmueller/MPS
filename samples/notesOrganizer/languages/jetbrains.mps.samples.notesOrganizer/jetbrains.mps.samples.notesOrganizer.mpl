@@ -38,8 +38,6 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-        <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-        <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
         <module reference="4b0f115a-8868-4d72-8d61-97071eaaa5f1(jetbrains.mps.samples.notesOrganizer)" version="0" />
         <module reference="1e182802-30b4-4f9f-9de7-946005084052(jetbrains.mps.samples.notesOrganizer#8908453262579799816)" version="0" />
       </dependencyVersions>
@@ -108,8 +106,6 @@
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
     <module reference="4b0f115a-8868-4d72-8d61-97071eaaa5f1(jetbrains.mps.samples.notesOrganizer)" version="0" />
   </dependencyVersions>

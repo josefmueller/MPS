@@ -49,11 +49,9 @@
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)" version="0" />
         <module reference="86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)" version="0" />
-        <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
-        <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
         <module reference="b19b2d23-1869-41e0-9ee6-8eaad9ffcd84(jetbrains.mps.lang.util.order#174635545557533742)" version="0" />
-        <module reference="39b6594d-7cca-44f2-a797-b0ceaead0f42(jetbrains.mps.samples.customAspect.docLanguage#2897519568668508166)" version="0" />
         <module reference="22916f45-e98f-4433-9c1b-1b382cf5bd8d(jetbrains.mps.samples.customAspect.documentation)" version="0" />
+        <module reference="39b6594d-7cca-44f2-a797-b0ceaead0f42(jetbrains.mps.samples.customAspect.documentation#2897519568668508166)" version="0" />
         <module reference="dd209277-71c0-4f07-bfb3-3a07a1dce2ee(jetbrains.mps.samples.customAspect.documentation.runtime)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
@@ -63,6 +61,7 @@
   <dependencies>
     <dependency reexport="false" scope="generate-into">7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</dependency>
     <dependency reexport="false" scope="generate-into">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+    <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />

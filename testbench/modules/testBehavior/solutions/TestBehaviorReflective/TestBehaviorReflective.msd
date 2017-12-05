@@ -22,6 +22,7 @@
     <dependency reexport="false">43359135-f67c-4a3d-9fdd-a3d7dba50995(BHL1)</dependency>
     <dependency reexport="false">9dabd0d4-b67a-4eef-b645-d5534ca67594(BHL3)</dependency>
     <dependency reexport="false">424c173a-ee73-4dc9-bc43-d0051c9b1e8f(BHL6)</dependency>
+    <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />

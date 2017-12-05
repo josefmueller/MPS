@@ -394,7 +394,6 @@
         <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
@@ -461,8 +460,6 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
         <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime.jar" />
         <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures.library.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset dir="${artifacts.mps}/plugins/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
         <fileset dir="${artifacts.mps}/plugins/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
         <fileset dir="${artifacts.mps}/plugins/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
