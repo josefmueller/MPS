@@ -39,11 +39,9 @@
     <import index="xygl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.progress(MPS.IDEA/)" />
     <import index="mk8z" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.progress(MPS.Platform/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="4ugc" ref="r:bd779a69-a10b-4882-b646-c1303f2dd4f7(jetbrains.mps.refactoring.participant.plugin)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -1050,52 +1048,26 @@
     </node>
     <node concept="tkhdA" id="2W$k3RWu0dk" role="tmbBb">
       <node concept="3clFbS" id="2W$k3RWu0dl" role="2VODD2">
-        <node concept="3SKdUt" id="1lGS1KokkUv" role="3cqZAp">
-          <node concept="3SKdUq" id="1lGS1KokkUx" role="3SKWNk">
-            <property role="3SKdUp" value="if old refactoring is overrided we should execute other action instead" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1lGS1KokfIx" role="3cqZAp">
-          <node concept="3cpWsn" id="1lGS1KokfIy" role="3cpWs9">
-            <property role="TrG5h" value="oldRefactoringApplicable" />
-            <node concept="10P_77" id="1lGS1KokfIu" role="1tU5fm" />
-            <node concept="3trCAK" id="1lGS1KokfIz" role="33vP2m">
-              <ref role="3trCAN" to="2yc6:65fYhwGpKCS" resolve="MoveNodes" />
-              <node concept="2OqwBi" id="1lGS1KokfI$" role="3trCLF">
-                <node concept="2WthIp" id="1lGS1KokfI_" role="2Oq$k0" />
-                <node concept="3gHZIF" id="1lGS1KokfIA" role="2OqNvi">
-                  <ref role="2WH_rO" node="I5wdVHTn$u" resolve="nodesToMove" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1lGS1KokknB" role="3cqZAp" />
         <node concept="3clFbJ" id="6gEjUfBq$aW" role="3cqZAp">
-          <node concept="1Wc70l" id="1lGS1KokeH9" role="3clFbw">
-            <node concept="2YIFZM" id="42LwYUtqKqk" role="3uHU7B">
-              <ref role="37wK5l" node="55uxGWy8qqr" resolve="areSiblings" />
-              <ref role="1Pybhc" node="42LwYUtqJvj" resolve="MoveNodesUtil" />
-              <node concept="2OqwBi" id="6gEjUfBq$p1" role="37wK5m">
-                <node concept="2WthIp" id="6gEjUfBq$p4" role="2Oq$k0" />
-                <node concept="3gHZIF" id="6gEjUfBq$p6" role="2OqNvi">
-                  <ref role="2WH_rO" node="I5wdVHTn$u" resolve="nodesToMove" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="3AJCY8PTwqr" role="37wK5m">
-                <node concept="2OqwBi" id="3AJCY8PTw7J" role="2Oq$k0">
-                  <node concept="2WthIp" id="3AJCY8PTw7M" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="3AJCY8PTw7O" role="2OqNvi">
-                    <ref role="2WH_rO" node="I5wdVHTn$y" resolve="project" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="3AJCY8PTwUi" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
+          <node concept="2YIFZM" id="42LwYUtqKqk" role="3clFbw">
+            <ref role="37wK5l" node="55uxGWy8qqr" resolve="areSiblings" />
+            <ref role="1Pybhc" node="42LwYUtqJvj" resolve="MoveNodesUtil" />
+            <node concept="2OqwBi" id="6gEjUfBq$p1" role="37wK5m">
+              <node concept="2WthIp" id="6gEjUfBq$p4" role="2Oq$k0" />
+              <node concept="3gHZIF" id="6gEjUfBq$p6" role="2OqNvi">
+                <ref role="2WH_rO" node="I5wdVHTn$u" resolve="nodesToMove" />
               </node>
             </node>
-            <node concept="37vLTw" id="1lGS1KokfIB" role="3uHU7w">
-              <ref role="3cqZAo" node="1lGS1KokfIy" resolve="oldRefactoringApplicable" />
+            <node concept="2OqwBi" id="3AJCY8PTwqr" role="37wK5m">
+              <node concept="2OqwBi" id="3AJCY8PTw7J" role="2Oq$k0">
+                <node concept="2WthIp" id="3AJCY8PTw7M" role="2Oq$k0" />
+                <node concept="1DTwFV" id="3AJCY8PTw7O" role="2OqNvi">
+                  <ref role="2WH_rO" node="I5wdVHTn$y" resolve="project" />
+                </node>
+              </node>
+              <node concept="liA8E" id="3AJCY8PTwUi" role="2OqNvi">
+                <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="6gEjUfBq$aY" role="3clFbx">
