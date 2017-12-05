@@ -82,7 +82,7 @@ public class GroupAdjuster {
     }
 
     List<BaseGroup> mainMenuGroups = new ArrayList<>();
-    ActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
+    ActionGroup mainMenuGroup = (ActionGroup) ActionManager.getInstance().getAction(IdeActions.GROUP_MAIN_MENU);
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
