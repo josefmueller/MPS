@@ -8,7 +8,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="tpci" ref="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" />
+    <import index="lgib" ref="r:3d049421-2cf2-4818-944e-c4d825789632(jetbrains.mps.lang.core.findUsages)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -132,7 +132,7 @@
         <node concept="3clFbF" id="1aNzB2zVTEp" role="3cqZAp">
           <node concept="zAVLd" id="3X$1g2TxRCt" role="3clFbG">
             <node concept="zAVLb" id="3X$1g2TxRCu" role="1C5ry4">
-              <ref role="2$JaeB" to="tpci:hs82Tlp" resolve="NodeAndDescendantsUsages" />
+              <ref role="2$JaeB" to="lgib:hs82Tlp" resolve="NodeAndDescendantsUsages" />
             </node>
             <node concept="2OqwBi" id="3X$1g2TxRCv" role="2GiN3p">
               <node concept="50NuE" id="3X$1g2TxRCw" role="2Oq$k0" />

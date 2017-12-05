@@ -13,7 +13,7 @@
       <node id="4215631863113707988" at="26,68,27,16" concept="4" />
       <node id="1347577327951780494" at="29,69,30,235" concept="1" />
       <node id="6253304210158147116" at="32,88,33,104" concept="4" />
-      <node id="1347577327951780505" at="35,86,36,217" concept="4" />
+      <node id="1347577327951780505" at="35,86,36,212" concept="4" />
       <node id="1347577327951770664" at="17,0,20,0" concept="0" trace="Rename#()V" />
       <node id="1347577327951770664" at="20,0,23,0" concept="3" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
       <node id="1347577327951770664" at="23,0,26,0" concept="3" trace="getUserFriendlyName#()Ljava/lang/String;" />
@@ -27,7 +27,7 @@
       <scope id="1347577327951780470" at="26,68,27,16" />
       <scope id="1347577327951770667" at="29,69,30,235" />
       <scope id="6253304210158143010" at="32,88,33,104" />
-      <scope id="1347577327951780503" at="35,86,36,217" />
+      <scope id="1347577327951780503" at="35,86,36,212" />
       <scope id="1347577327951770664" at="17,0,20,0" />
       <scope id="1347577327951770664" at="20,0,23,0" />
       <scope id="1347577327951770664" at="23,0,26,0" />

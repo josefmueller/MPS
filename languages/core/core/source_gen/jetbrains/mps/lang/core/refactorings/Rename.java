@@ -33,6 +33,6 @@ public class Rename extends BaseRefactoring {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), refactoringContext.getCurrentScope(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), refactoringContext.getCurrentScope(), "jetbrains.mps.lang.core.findUsages.NodeAndDescendantsUsages_Finder");
   }
 }
