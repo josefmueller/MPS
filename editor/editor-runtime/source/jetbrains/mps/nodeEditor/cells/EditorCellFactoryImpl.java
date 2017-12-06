@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -25,8 +26,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -63,6 +62,11 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
+  /**
+   * @deprecated This hint has no meaning since 2018.1.
+   * Reflective editor actions are now controlled in package {@link jetbrains.mps.nodeEditor.reflectiveEditor}.
+   */
+  @Deprecated
   public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
 
   private final EditorContext myEditorContext;
@@ -99,10 +103,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
-    SConcept concept = node.getConcept();
-    ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
+    boolean shouldShowReflectiveEditor = ReflectiveHintsManager.shouldShowReflectiveEditor(getCellContext());
     EditorCell result = null;
+    SConcept concept = node.getConcept();
+    ConceptEditor editor = shouldShowReflectiveEditor ? null : getCachedEditor(concept, excludedEditors);
     if (editor != null) {
       try {
         result = createCell(node, isInspector, editor);
@@ -113,11 +117,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !isPushReflectiveEditorHintInContext;
+      boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !shouldShowReflectiveEditor;
       editor = shouldShowInterfaceEditor ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
+
     //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
     result.setCellContext(getCellContext());
     return result;

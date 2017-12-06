@@ -4,16 +4,15 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ShowRegularEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -28,13 +27,8 @@ public class ShowRegularEditor_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    String[] hints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference());
-    return (hints == null ? false : Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    ReflectiveEditorActionUtil.update(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), event);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -42,8 +36,8 @@ public class ShowRegularEditor_Action extends BaseAction {
       return false;
     }
     {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
+      List<SNode> p = event.getData(MPSCommonDataKeys.NODES);
+      MapSequence.fromMap(_params).put("selectedNodes", p);
       if (p == null) {
         return false;
       }
@@ -62,10 +56,6 @@ public class ShowRegularEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().removeExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).rebuildEditorContent();
-    editorContext.flushEvents();
-    editorContext.getSelectionManager().setSelection(((SNode) MapSequence.fromMap(_params).get("node")));
+    ReflectiveEditorActionUtil.execute(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), false, true, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
 }

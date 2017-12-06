@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -202,6 +203,7 @@ public class UpdateSessionImpl implements UpdateSession {
   public EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location) {
     getCellFactory().pushCellContext();
     getCellFactory().setNodeLocation(location);
+    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
@@ -226,7 +228,7 @@ public class UpdateSessionImpl implements UpdateSession {
 
     final EditorContext editorContext = getUpdater().getEditorContext();
     getCellFactory().pushCellContext();
-    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    ReflectiveHintsManager.propagateReflectiveHints(getCellFactory());
 
     final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {

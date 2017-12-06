@@ -1070,5 +1070,33 @@
       <ref role="1YaFvo" to="tp5g:hSLiM3w" resolve="EditorTestCase" />
     </node>
   </node>
+  <node concept="1YbPZF" id="5IYRzU$yPXN">
+    <property role="TrG5h" value="typeof_IsActionApplicableExpression" />
+    <property role="3GE5qa" value="expression" />
+    <node concept="3clFbS" id="5IYRzU$yPXO" role="18ibNy">
+      <node concept="1Z5TYs" id="5IYRzU$yQum" role="3cqZAp">
+        <node concept="mw_s8" id="5IYRzU$yQup" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5IYRzU$yPXU" role="mwGJk">
+            <node concept="1YBJjd" id="5IYRzU$yQ1p" role="1Z2MuG">
+              <ref role="1YBMHb" node="5IYRzU$yPXQ" resolve="isActionApplicableExpression" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5IYRzU$yQuA" role="1ZfhKB">
+          <node concept="2ShNRf" id="5IYRzU$yQuB" role="mwGJk">
+            <node concept="3zrR0B" id="5IYRzU$yQuC" role="2ShVmc">
+              <node concept="3Tqbb2" id="5IYRzU$yQuD" role="3zrR0E">
+                <ref role="ehGHo" to="tpee:f_0P_4Y" resolve="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5IYRzU$yPXQ" role="1YuTPh">
+      <property role="TrG5h" value="isActionApplicableExpression" />
+      <ref role="1YaFvo" to="tp5g:H9$uslP7vo" resolve="IsActionApplicableExpression" />
+    </node>
+  </node>
 </model>
 
