@@ -2344,18 +2344,12 @@
                 </node>
               </node>
             </node>
-            <node concept="1Wc70l" id="5ueUq77Z7jA" role="3uHU7B">
-              <node concept="2YIFZM" id="1_yOWEXecso" role="3uHU7B">
-                <ref role="37wK5l" to="4h87:3PMO5H7Xzu$" resolve="isEnabled" />
-                <ref role="1Pybhc" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
-              </node>
-              <node concept="3fqX7Q" id="5ueUq77ZbaV" role="3uHU7w">
-                <node concept="2YIFZM" id="5ueUq77ZbaX" role="3fr31v">
-                  <ref role="37wK5l" to="tqvn:~TemporaryModels.isTemporary(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isTemporary" />
-                  <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
-                  <node concept="37vLTw" id="3wy6fduFpJY" role="37wK5m">
-                    <ref role="3cqZAo" node="3wy6fduFpJS" resolve="model" />
-                  </node>
+            <node concept="3fqX7Q" id="5ueUq77ZbaV" role="3uHU7B">
+              <node concept="2YIFZM" id="5ueUq77ZbaX" role="3fr31v">
+                <ref role="37wK5l" to="tqvn:~TemporaryModels.isTemporary(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isTemporary" />
+                <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
+                <node concept="37vLTw" id="3wy6fduFpJY" role="37wK5m">
+                  <ref role="3cqZAo" node="3wy6fduFpJS" resolve="model" />
                 </node>
               </node>
             </node>

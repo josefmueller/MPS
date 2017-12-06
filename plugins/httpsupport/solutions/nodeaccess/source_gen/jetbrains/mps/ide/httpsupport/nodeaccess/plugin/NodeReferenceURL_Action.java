@@ -9,7 +9,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.annotations.NotNull;
@@ -19,6 +18,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
 import io.netty.handler.codec.http.QueryStringEncoder;
+import jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class NodeReferenceURL_Action extends BaseAction {
@@ -36,7 +36,7 @@ public class NodeReferenceURL_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModel model = SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE));
-    return MPSInternalPortManager.isEnabled() && !(TemporaryModels.isTemporary(model)) && !((model instanceof TransientSModel));
+    return !(TemporaryModels.isTemporary(model)) && !((model instanceof TransientSModel));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
