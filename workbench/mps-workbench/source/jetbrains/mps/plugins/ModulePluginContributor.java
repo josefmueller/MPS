@@ -18,17 +18,18 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.ModuleNameUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -100,14 +101,18 @@ public class ModulePluginContributor extends PluginContributor {
     // Note, META-INF nor ${module} location would work for groups of modules distributed as a single plugin, shall come up with better approach
     String cfgFullPath = macroHelper.expandPath("${module}/startup.properties");
     // note, for deployed modules, with META-INF/module.xml as anchor/descriptor file, there's a hack in ModuleMacros that uses META-INF/.. as ${module} value
-    File cfg = new File(cfgFullPath);
+    //
+    // AP, I beg your pardon, no idea where to take FS from if a module is not an instance of AbstractModule.
+    FileSystem fs = myModule instanceof AbstractModule ? ((AbstractModule) myModule).getFileSystem() : jetbrains.mps.vfs.FileSystem.getInstance();
+    // I'd be pretty much satisfied with new java.io.File(cfgFullPath), but it is not capable of paths inside a jar.
+    IFile cfg = fs.getFile(cfgFullPath);
     // I'd love to use IFile here, but MacroHelper gives me a string, not IFile, and, alas, there's no access to proper filesystem here
-    if (!cfg.exists() || !cfg.isFile()) {
+    if (!cfg.exists() || cfg.isDirectory()) {
       return null;
     }
     InputStream is = null;
     try {
-      is = new FileInputStream(cfg);
+      is = cfg.openInputStream();
       Properties rv = new Properties();
       rv.load(is);
       return rv;
