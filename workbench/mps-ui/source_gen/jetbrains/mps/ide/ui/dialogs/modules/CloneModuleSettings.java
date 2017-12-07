@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.modules;
 
 import jetbrains.mps.project.AbstractModule;
 import java.awt.Dimension;
-import jetbrains.mps.smodel.Language;
+import java.io.File;
 
 public class CloneModuleSettings extends AbstractModuleCreationSettings {
   private final AbstractModule myModuleOriginal;
@@ -24,7 +24,7 @@ public class CloneModuleSettings extends AbstractModuleCreationSettings {
 
   @Override
   protected String getDefaultModulePath() {
-    return getModuleRootPath((myModuleOriginal instanceof Language ? "languages" : "solutions"));
+    return myModuleOriginal.getModuleSourceDir().getParent().getPath() + File.separator;
   }
 
   public AbstractModule getOriginalModule() {

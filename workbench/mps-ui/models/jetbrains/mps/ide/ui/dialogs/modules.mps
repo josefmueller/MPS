@@ -18,6 +18,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -60,10 +61,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
@@ -165,11 +162,6 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
-      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
-        <child id="1163668914799" name="condition" index="3K4Cdx" />
-        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
-        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
-      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -750,24 +742,29 @@
       <node concept="3Tmbuc" id="4785PwA735i" role="1B3o_S" />
       <node concept="17QB3L" id="4785PwA735j" role="3clF45" />
       <node concept="3clFbS" id="4785PwA735v" role="3clF47">
-        <node concept="3clFbF" id="4785PwA7bC9" role="3cqZAp">
-          <node concept="1rXfSq" id="4785PwA7bC8" role="3clFbG">
-            <ref role="37wK5l" node="7lPRUbxwHH2" resolve="getModuleRootPath" />
-            <node concept="3K4zz7" id="4785PwA7jXz" role="37wK5m">
-              <node concept="2ZW3vV" id="4785PwA7oiq" role="3K4Cdx">
-                <node concept="3uibUv" id="4785PwA7oUw" role="2ZW6by">
-                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+        <node concept="3clFbF" id="2rFZURmU5fq" role="3cqZAp">
+          <node concept="3cpWs3" id="1QmSa45j1Y3" role="3clFbG">
+            <node concept="2OqwBi" id="2rFZURmU33b" role="3uHU7B">
+              <node concept="2OqwBi" id="5Ak$DMAFDj6" role="2Oq$k0">
+                <node concept="2OqwBi" id="2rFZURmTT6c" role="2Oq$k0">
+                  <node concept="37vLTw" id="2rFZURmTSx9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3rnI4tGswAq" resolve="myModuleOriginal" />
+                  </node>
+                  <node concept="liA8E" id="dXQIq3JGXt" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="4785PwA7mFq" role="2ZW6bz">
-                  <ref role="3cqZAo" node="3rnI4tGswAq" resolve="myModuleOriginal" />
+                <node concept="liA8E" id="5Ak$DMAFDSs" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="4785PwA7qt1" role="3K4E3e">
-                <property role="Xl_RC" value="languages" />
+              <node concept="liA8E" id="2rFZURmU3E5" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
               </node>
-              <node concept="Xl_RD" id="4785PwA7rlM" role="3K4GZi">
-                <property role="Xl_RC" value="solutions" />
-              </node>
+            </node>
+            <node concept="10M0yZ" id="BRNTLt2vRE" role="3uHU7w">
+              <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
+              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
             </node>
           </node>
         </node>
