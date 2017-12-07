@@ -3287,6 +3287,41 @@
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1wmCOkkcAd7" role="jymVt" />
+    <node concept="3clFb_" id="1wmCOkkcNY_" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createEvent" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1wmCOkkcNYC" role="3clF47">
+        <node concept="3cpWs6" id="1wmCOkkcWEc" role="3cqZAp">
+          <node concept="2YIFZM" id="1wmCOkkcY8c" role="3cqZAk">
+            <ref role="37wK5l" to="7bx7:~ActionUtils.createEvent(java.lang.String,com.intellij.openapi.actionSystem.DataContext):com.intellij.openapi.actionSystem.AnActionEvent" resolve="createEvent" />
+            <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
+            <node concept="10M0yZ" id="1wmCOkkcY8d" role="37wK5m">
+              <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
+              <ref role="3cqZAo" to="qkt:~ActionPlaces.MAIN_MENU" resolve="MAIN_MENU" />
+            </node>
+            <node concept="2OqwBi" id="1wmCOkkcY8e" role="37wK5m">
+              <node concept="37vLTw" id="1wmCOkkcY9l" role="2Oq$k0">
+                <ref role="3cqZAo" node="4rqOdQ4gXZH" resolve="DATA_MANAGER" />
+              </node>
+              <node concept="liA8E" id="1wmCOkkcY8f" role="2OqNvi">
+                <ref role="37wK5l" to="ddhc:~DataManager.getDataContext(java.awt.Component):com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
+                <node concept="1rXfSq" id="1wmCOkkcY8g" role="37wK5m">
+                  <ref role="37wK5l" node="1BrKW0d9mQ7" resolve="getEditorComponent" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="1wmCOkkcLH5" role="1B3o_S" />
+      <node concept="3uibUv" id="1wmCOkkcSqS" role="3clF45">
+        <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="wUiM63Q5qa" role="jymVt" />
     <node concept="3clFb_" id="1BrKW0db0tk" role="jymVt">
       <property role="TrG5h" value="invokeAction" />
@@ -3321,27 +3356,11 @@
         <node concept="3cpWs8" id="5s44y2LlH4f" role="3cqZAp">
           <node concept="3cpWsn" id="5s44y2LlH4g" role="3cpWs9">
             <property role="TrG5h" value="event" />
+            <node concept="1rXfSq" id="1wmCOkkd2rK" role="33vP2m">
+              <ref role="37wK5l" node="1wmCOkkcNY_" resolve="createEvent" />
+            </node>
             <node concept="3uibUv" id="5s44y2LlH4h" role="1tU5fm">
               <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
-            </node>
-            <node concept="2YIFZM" id="5s44y2LlH4i" role="33vP2m">
-              <ref role="1Pybhc" to="7bx7:~ActionUtils" resolve="ActionUtils" />
-              <ref role="37wK5l" to="7bx7:~ActionUtils.createEvent(java.lang.String,com.intellij.openapi.actionSystem.DataContext):com.intellij.openapi.actionSystem.AnActionEvent" resolve="createEvent" />
-              <node concept="10M0yZ" id="5s44y2LlH4j" role="37wK5m">
-                <ref role="3cqZAo" to="qkt:~ActionPlaces.MAIN_MENU" resolve="MAIN_MENU" />
-                <ref role="1PxDUh" to="qkt:~ActionPlaces" resolve="ActionPlaces" />
-              </node>
-              <node concept="2OqwBi" id="5s44y2LlH4k" role="37wK5m">
-                <node concept="37vLTw" id="5s44y2LlH4N" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4rqOdQ4gXZH" resolve="DATA_MANAGER" />
-                </node>
-                <node concept="liA8E" id="5s44y2LlH4m" role="2OqNvi">
-                  <ref role="37wK5l" to="ddhc:~DataManager.getDataContext(java.awt.Component):com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
-                  <node concept="1rXfSq" id="5s44y2LlH4n" role="37wK5m">
-                    <ref role="37wK5l" node="1BrKW0d9mQ7" resolve="getEditorComponent" />
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -3375,6 +3394,110 @@
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
       </node>
       <node concept="3Tmbuc" id="5s44y2Lmc9$" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="H9$uslNf0f" role="jymVt" />
+    <node concept="3clFb_" id="H9$uslKhHl" role="jymVt">
+      <property role="TrG5h" value="isActionApplicable" />
+      <property role="DiZV1" value="false" />
+      <node concept="10P_77" id="H9$uslNPsy" role="3clF45" />
+      <node concept="37vLTG" id="H9$uslKhHn" role="3clF46">
+        <property role="TrG5h" value="actionId" />
+        <property role="3TUv4t" value="true" />
+        <node concept="17QB3L" id="H9$uslKhHo" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="H9$uslKhHp" role="3clF47">
+        <node concept="3cpWs8" id="5IYRzU$FiuF" role="3cqZAp">
+          <node concept="3cpWsn" id="5IYRzU$FiuI" role="3cpWs9">
+            <property role="TrG5h" value="isApplicable" />
+            <node concept="10P_77" id="5IYRzU$FiuD" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1wmCOkkaH1U" role="3cqZAp">
+          <node concept="3cpWsn" id="1wmCOkkaH1V" role="3cpWs9">
+            <property role="TrG5h" value="action" />
+            <node concept="2OqwBi" id="1wmCOkkaH1W" role="33vP2m">
+              <node concept="2YIFZM" id="1wmCOkkaH1X" role="2Oq$k0">
+                <ref role="1Pybhc" to="qkt:~ActionManager" resolve="ActionManager" />
+                <ref role="37wK5l" to="qkt:~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="1wmCOkkaH1Y" role="2OqNvi">
+                <ref role="37wK5l" to="qkt:~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolve="getAction" />
+                <node concept="37vLTw" id="1wmCOkkaH1Z" role="37wK5m">
+                  <ref role="3cqZAo" node="H9$uslKhHn" resolve="actionId" />
+                </node>
+              </node>
+            </node>
+            <node concept="3uibUv" id="1wmCOkkaH20" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1wmCOkkaH2a" role="3cqZAp">
+          <node concept="3cpWsn" id="1wmCOkkaH2b" role="3cpWs9">
+            <property role="TrG5h" value="event" />
+            <node concept="3uibUv" id="1wmCOkkaH2c" role="1tU5fm">
+              <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+            </node>
+            <node concept="1rXfSq" id="1wmCOkkd5a0" role="33vP2m">
+              <ref role="37wK5l" node="1wmCOkkcNY_" resolve="createEvent" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1wmCOkkaFhn" role="3cqZAp">
+          <node concept="1rXfSq" id="1wmCOkkaFhl" role="3clFbG">
+            <ref role="37wK5l" node="wUiM63ScWZ" resolve="runUndoableCommandInEDTAndWait" />
+            <node concept="1bVj0M" id="1wmCOkkaH1S" role="37wK5m">
+              <node concept="3clFbS" id="1wmCOkkaH1T" role="1bW5cS">
+                <node concept="3clFbF" id="1wmCOkkaH2i" role="3cqZAp">
+                  <node concept="2OqwBi" id="1wmCOkkaH2j" role="3clFbG">
+                    <node concept="37vLTw" id="1wmCOkkaH2k" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1wmCOkkaH1V" resolve="action" />
+                    </node>
+                    <node concept="liA8E" id="1wmCOkkaH2l" role="2OqNvi">
+                      <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+                      <node concept="37vLTw" id="1wmCOkkaH2m" role="37wK5m">
+                        <ref role="3cqZAo" node="1wmCOkkaH2b" resolve="event" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1wmCOkkaH2n" role="3cqZAp">
+                  <node concept="37vLTI" id="1wmCOkkaH2o" role="3clFbG">
+                    <node concept="37vLTw" id="1wmCOkkaH2p" role="37vLTJ">
+                      <ref role="3cqZAo" node="5IYRzU$FiuI" resolve="isApplicable" />
+                    </node>
+                    <node concept="2OqwBi" id="1wmCOkkaH2q" role="37vLTx">
+                      <node concept="2OqwBi" id="1wmCOkkaH2r" role="2Oq$k0">
+                        <node concept="37vLTw" id="1wmCOkkaH2s" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1wmCOkkaH2b" resolve="event" />
+                        </node>
+                        <node concept="liA8E" id="1wmCOkkaH2t" role="2OqNvi">
+                          <ref role="37wK5l" to="qkt:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1wmCOkkaH2u" role="2OqNvi">
+                        <ref role="37wK5l" to="qkt:~Presentation.isEnabled():boolean" resolve="isEnabled" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5IYRzU$FrDA" role="3cqZAp">
+          <node concept="37vLTw" id="5IYRzU$FvM9" role="3cqZAk">
+            <ref role="3cqZAo" node="5IYRzU$FiuI" resolve="isApplicable" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="H9$uslKhHO" role="1B3o_S" />
+      <node concept="3uibUv" id="1wmCOkkbJ3H" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+      </node>
+      <node concept="3uibUv" id="1wmCOkkaNYw" role="Sfmx6">
+        <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+      </node>
     </node>
     <node concept="2tJIrI" id="5XB$uk$l3RN" role="jymVt" />
     <node concept="3clFb_" id="17A$fe9mbSD" role="jymVt">
@@ -14000,6 +14123,38 @@
   <node concept="312cEu" id="2GUmbo$ovlF">
     <property role="3GE5qa" value="transformation" />
     <property role="TrG5h" value="TransformationTestInitJUnitRunner" />
+    <node concept="3UR2Jj" id="5UFD5Gh_hkS" role="lGtFl">
+      <node concept="TZ5HA" id="5UFD5Gh_hkT" role="TZ5H$">
+        <node concept="1dT_AC" id="5UFD5Gh_hkU" role="1dT_Ay">
+          <property role="1dT_AB" value="JUnit4 runner that knows how to pump " />
+        </node>
+        <node concept="1dT_AA" id="5UFD5Gh_ih7" role="1dT_Ay">
+          <node concept="92FcH" id="5UFD5Gh_ihd" role="qph3F">
+            <node concept="TZ5HA" id="5UFD5Gh_ihf" role="2XjZqd" />
+            <node concept="VXe08" id="5UFD5Gh_t7r" role="92FcQ">
+              <ref role="VXe09" node="4_ksyPqMhZ7" resolve="TestRunner" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5UFD5Gh_ih6" role="1dT_Ay">
+          <property role="1dT_AB" value=" instance into " />
+        </node>
+        <node concept="1dT_AA" id="5UFD5Gh_EFj" role="1dT_Ay">
+          <node concept="92FcH" id="5UFD5Gh_EFu" role="qph3F">
+            <node concept="TZ5HA" id="5UFD5Gh_EFw" role="2XjZqd" />
+            <node concept="VXe08" id="5UFD5Gh_W5U" role="92FcQ">
+              <ref role="VXe09" node="e$hNri9cbt" resolve="TransformationTest" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5UFD5Gh_EFi" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+        <node concept="1dT_AC" id="5UFD5GhAeTC" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="1mh_ZUOQ_XW" role="jymVt">
       <property role="TrG5h" value="myTestRunner" />
       <node concept="3Tm6S6" id="1mh_ZUOQ_XX" role="1B3o_S" />
@@ -14148,10 +14303,10 @@
       <property role="TrG5h" value="TestInitStatement" />
       <node concept="312cEg" id="1mh_ZUOPgzG" role="jymVt">
         <property role="TrG5h" value="myTestObject" />
-        <node concept="3Tm6S6" id="1mh_ZUOPgzH" role="1B3o_S" />
         <node concept="3uibUv" id="5UFD5GhAlnO" role="1tU5fm">
           <ref role="3uigEE" node="e$hNri9cbt" resolve="TransformationTest" />
         </node>
+        <node concept="3Tm6S6" id="1mh_ZUOPgzH" role="1B3o_S" />
       </node>
       <node concept="312cEg" id="1mh_ZUOPlyb" role="jymVt">
         <property role="TrG5h" value="myTestStatement" />
@@ -14247,38 +14402,6 @@
     <node concept="3Tm1VV" id="2GUmbo$ovlG" role="1B3o_S" />
     <node concept="3uibUv" id="2GUmbo$qI9C" role="1zkMxy">
       <ref role="3uigEE" to="bbnd:~BlockJUnit4ClassRunner" resolve="BlockJUnit4ClassRunner" />
-    </node>
-    <node concept="3UR2Jj" id="5UFD5Gh_hkS" role="lGtFl">
-      <node concept="TZ5HA" id="5UFD5Gh_hkT" role="TZ5H$">
-        <node concept="1dT_AC" id="5UFD5Gh_hkU" role="1dT_Ay">
-          <property role="1dT_AB" value="JUnit4 runner that knows how to pump " />
-        </node>
-        <node concept="1dT_AA" id="5UFD5Gh_ih7" role="1dT_Ay">
-          <node concept="92FcH" id="5UFD5Gh_ihd" role="qph3F">
-            <node concept="TZ5HA" id="5UFD5Gh_ihf" role="2XjZqd" />
-            <node concept="VXe08" id="5UFD5Gh_t7r" role="92FcQ">
-              <ref role="VXe09" node="4_ksyPqMhZ7" resolve="TestRunner" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dT_AC" id="5UFD5Gh_ih6" role="1dT_Ay">
-          <property role="1dT_AB" value=" instance into " />
-        </node>
-        <node concept="1dT_AA" id="5UFD5Gh_EFj" role="1dT_Ay">
-          <node concept="92FcH" id="5UFD5Gh_EFu" role="qph3F">
-            <node concept="TZ5HA" id="5UFD5Gh_EFw" role="2XjZqd" />
-            <node concept="VXe08" id="5UFD5Gh_W5U" role="92FcQ">
-              <ref role="VXe09" node="e$hNri9cbt" resolve="TransformationTest" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dT_AC" id="5UFD5Gh_EFi" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-        <node concept="1dT_AC" id="5UFD5GhAeTC" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-      </node>
     </node>
   </node>
 </model>

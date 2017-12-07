@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -182,13 +181,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     addProperties();
     addLabel("");
     addNewLine();
-    getCellFactory().pushCellContext();
-    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
-    try {
-      addChildren();
-    } finally {
-      getCellFactory().popCellContext();
-    }
+    addChildren();
     addAttributedEntity();
     popCollection();
     addLabel("}");

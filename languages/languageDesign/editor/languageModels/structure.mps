@@ -4047,6 +4047,9 @@
     <node concept="PrWs8" id="50$LP2zuhSS" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="PrWs8" id="1wmCOkk8mk5" role="PzmwI">
+      <ref role="PrY4T" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5lsGCnS0u6x">
     <property role="3GE5qa" value="EditorContextHints" />

@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 
 /**
  * Control listeners that track changes to a model node.
- * Invoke {@link #startListening(SRepository,ModelGenerationStatusManager)}/{@link #stopListening(SRepository, ModelGenerationStatusManager )} to
+ * Invoke {@link #startListening(SRepository, ModelGenerationStatusManager)}/{@link #stopListening(SRepository, ModelGenerationStatusManager)} to
  * enable/disable listening, and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}
  * to include/exclude selected model tree node from update.
  */

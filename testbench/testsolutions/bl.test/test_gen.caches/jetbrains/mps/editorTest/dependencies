@@ -3134,104 +3134,48 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ForDeletedConcepts_Abstract_Test" file="DefaultEditor_ForDeletedConcepts_Abstract_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ForDeletedConcepts_Child_Test" file="DefaultEditor_ForDeletedConcepts_Child_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ForDeletedConcepts_Property_Test" file="DefaultEditor_ForDeletedConcepts_Property_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ForDeletedConcepts_Reference_Test" file="DefaultEditor_ForDeletedConcepts_Reference_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.editorTest.DefaultEditor_NoIdentifierProperty_Test" file="DefaultEditor_NoIdentifierProperty_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorAndMove_Test" file="DefaultEditor_ShowReflectiveEditorAndMove_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForAbstractChild_Test" file="DefaultEditor_ShowReflectiveEditorForAbstractChild_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForAttribute_Test" file="DefaultEditor_ShowReflectiveEditorForAttribute_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Abstract_Test" file="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Abstract_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Child_Test" file="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Child_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property_Test" file="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Reference_Test" file="DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Reference_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test" file="DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditor_Test" file="DefaultEditor_ShowReflectiveEditor_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-  </dependency>
-  <dependency className="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test" file="DefaultEditor_ShowReflectiveThenRegularEditor_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -6647,6 +6591,14 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" file="ReflectiveEditorActionsUtil.java">
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.editorTest.RematchAfterDeleteLeftParen_Test" file="RematchAfterDeleteLeftParen_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -7231,6 +7183,197 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorAndMove_Test" file="ShowReflectiveEditorAndMove_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorForAbstractChild_Test" file="ShowReflectiveEditorForAbstractChild_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorForAttribute_Test" file="ShowReflectiveEditorForAttribute_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorForInterfaceChild_Test" file="ShowReflectiveEditorForInterfaceChild_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test" file="ShowReflectiveEditorForNode_ThenRegularEditorsForSubtree_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorSavesSelectionStack_Test" file="ShowReflectiveEditorSavesSelectionStack_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditor_Test" file="ShowReflectiveEditor_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditor_ThenRegularEditorsForSubtreeForParent_Test" file="ShowReflectiveEditor_ThenRegularEditorsForSubtreeForParent_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test" file="ShowReflectiveEditor_ThenRegularEditorsForSubtree_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_Test" file="ShowReflectiveEditorsForSubtree_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForChild_Test" file="ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForChild_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForChild_ThenRegularEditor_Test" file="ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForChild_ThenRegularEditor_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForParent_Test" file="ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtreeForParent_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_Test" file="ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.editorTest.ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_ThenReflectiveEditor_Test" file="ShowReflectiveEditorsForSubtree_ThenRegularEditorsForSubtree_ThenReflectiveEditor_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.editorTest.ReflectiveEditorActionsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

@@ -31,6 +31,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -317,25 +318,17 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     if (myTree != null) {
       myTree.fireTreeNodeUpdated(this);
     }
-    Color c = null;
-    String additionalText = null;
     if (myTreeMessages != null) {
-      int maxColorPriority = Integer.MIN_VALUE;
-      int maxAdditionalTextPriority = Integer.MIN_VALUE;
-      for (TreeMessage message : myTreeMessages) {
-        if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
-          c = message.getColor();
-        }
-        if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
-          additionalText = message.getAdditionalText();
-        }
-      }
-    }
-    if (c != null) {
-      setColor(c);
-    }
-    if (additionalText != null) {
-      setAdditionalText(additionalText);
+      myTreeMessages.stream()
+                    .filter(TreeMessage::alternatesColor)
+                    .max(Comparator.comparingInt(TreeMessage::getPriority))
+                    .map(TreeMessage::getColor)
+                    .ifPresent(this::setColor);
+      myTreeMessages.stream()
+                    .filter(TreeMessage::hasAdditionalText)
+                    .max(Comparator.comparingInt(TreeMessage::getPriority))
+                    .map(TreeMessage::getAdditionalText)
+                    .ifPresent(this::setAdditionalText);
     }
   }
 

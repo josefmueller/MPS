@@ -8,19 +8,19 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property_Test extends BaseTransformationTest {
+public class ShowReflectiveEditorForInterfaceChild_Test extends BaseTransformationTest {
   @Test
-  public void test_DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property() throws Throwable {
+  public void test_ShowReflectiveEditorForInterfaceChild() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForDeletedConcepts_Property_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorForInterfaceChild_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("1840120233258930009", "1840120233258930012");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      initEditorComponent("3900306178895356126", "3900306178895356132");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
     }
   }
 }

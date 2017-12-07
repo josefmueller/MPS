@@ -302,6 +302,9 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_1863298100471496915(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x614c5660cccba06bL, 0xf48c620dd89b137L, "actionReference"));
   }
+  public static SNode sourceNodeQuery_6610965663658714965(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0xb4991e715d477d8L, 0xb4991e715d477daL, "actionReference"));
+  }
   public static SNode sourceNodeQuery_1765785632127538090(final SourceSubstituteMacroNodeContext _context) {
     SNode conceptId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
     ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(conceptId, SNodeOperations.getConcept(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x119e1d33213L, 0x119e1d356c6L, "declaration")))));
@@ -467,6 +470,7 @@ public class QueriesGenerated extends QueryProviderBase {
     snqMethods.put("4277730795458379007", new QueriesGenerated.SNQ(i++));
     snqMethods.put("1227010390721", new QueriesGenerated.SNQ(i++));
     snqMethods.put("1863298100471496915", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("6610965663658714965", new QueriesGenerated.SNQ(i++));
     snqMethods.put("1765785632127538090", new QueriesGenerated.SNQ(i++));
     snqMethods.put("3455411064017536710", new QueriesGenerated.SNQ(i++));
     snqMethods.put("1221567898644", new QueriesGenerated.SNQ(i++));
@@ -498,12 +502,14 @@ public class QueriesGenerated extends QueryProviderBase {
         case 3:
           return QueriesGenerated.sourceNodeQuery_1863298100471496915(ctx);
         case 4:
-          return QueriesGenerated.sourceNodeQuery_1765785632127538090(ctx);
+          return QueriesGenerated.sourceNodeQuery_6610965663658714965(ctx);
         case 5:
-          return QueriesGenerated.sourceNodeQuery_3455411064017536710(ctx);
+          return QueriesGenerated.sourceNodeQuery_1765785632127538090(ctx);
         case 6:
-          return QueriesGenerated.sourceNodeQuery_1221567898644(ctx);
+          return QueriesGenerated.sourceNodeQuery_3455411064017536710(ctx);
         case 7:
+          return QueriesGenerated.sourceNodeQuery_1221567898644(ctx);
+        case 8:
           return QueriesGenerated.sourceNodeQuery_8933192351752021163(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));

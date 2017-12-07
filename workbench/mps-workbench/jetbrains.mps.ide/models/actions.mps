@@ -187,6 +187,7 @@
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="lgib" ref="r:3d049421-2cf2-4818-944e-c4d825789632(jetbrains.mps.lang.core.findUsages)" />
+    <import index="vq9d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.reflectiveEditor(MPS.Editor/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -1072,7 +1073,7 @@
       <node concept="10WQ6h" id="1K00pPgqzi5" role="ftvYc">
         <property role="TrG5h" value="compileJava" />
       </node>
-      <node concept="2a7GMi" id="2JscfO0xKq0" role="ftvYc" />
+      <node concept="2a7GMi" id="4xSFVmd4GKC" role="ftvYc" />
       <node concept="10WQ6h" id="4wXNiF93rwy" role="ftvYc">
         <property role="TrG5h" value="runConfig" />
       </node>
@@ -14349,6 +14350,14 @@
       <node concept="pLAjd" id="3X1njRZInZ1" role="Zd501">
         <property role="pLAjf" value="VK_B" />
         <property role="pLAjc" value="ctrl" />
+      </node>
+    </node>
+    <node concept="Zd509" id="LP5zVTAHlx" role="Zd508">
+      <ref role="1bYAoF" node="6PWCPPtWbjc" resolve="ShowParameters" />
+      <node concept="pLAjd" id="LP5zVTAHly" role="Zd501">
+        <property role="pLAjf" value="VK_P" />
+        <property role="pLAjc" value="ctrl" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>
@@ -36649,6 +36658,14 @@
       <node concept="pLAjd" id="1RsxAOl3vcs" role="Zd501">
         <property role="pLAjf" value="VK_O" />
         <property role="pLAjc" value="meta+alt" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="LP5zVTAHlz" role="Zd508">
+      <ref role="1bYAoF" node="6PWCPPtWbjc" resolve="ShowParameters" />
+      <node concept="pLAjd" id="LP5zVTAHl$" role="Zd501">
+        <property role="pLAjf" value="VK_P" />
+        <property role="pLAjc" value="ctrl" />
         <property role="3hacHL" value="replace all" />
       </node>
     </node>

@@ -8,19 +8,21 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test extends BaseTransformationTest {
+public class ShowReflectiveEditorSavesSelectionStack_Test extends BaseTransformationTest {
   @Test
-  public void test_DefaultEditor_ShowReflectiveEditorForInterfaceChild() throws Throwable {
+  public void test_ShowReflectiveEditorSavesSelectionStack() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ShowReflectiveEditorSavesSelectionStack_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("3900306178895356126", "3900306178895356132");
+      initEditorComponent("7075824227537436707", "7075824227537437574");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectUp_Action");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
     }
   }
 }

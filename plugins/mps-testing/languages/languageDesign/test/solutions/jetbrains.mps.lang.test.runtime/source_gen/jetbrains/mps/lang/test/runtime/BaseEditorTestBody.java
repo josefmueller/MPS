@@ -37,11 +37,11 @@ import java.awt.Component;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.ActionManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -290,14 +290,31 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     return myCurrentEditorComponent.getEditorContext();
   }
 
+  private AnActionEvent createEvent() {
+    return ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
+  }
+
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
     final AnAction action = ActionManager.getInstance().getAction(actionId);
-    final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
+    final AnActionEvent event = createEvent();
     runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         action.actionPerformed(event);
       }
     });
+  }
+
+  protected boolean isActionApplicable(final String actionId) throws InterruptedException, InvocationTargetException {
+    final Wrappers._boolean isApplicable = new Wrappers._boolean();
+    final AnAction action = ActionManager.getInstance().getAction(actionId);
+    final AnActionEvent event = createEvent();
+    runUndoableCommandInEDTAndWait(new Runnable() {
+      public void run() {
+        action.update(event);
+        isApplicable.value = event.getPresentation().isEnabled();
+      }
+    });
+    return isApplicable.value;
   }
 
   private void flushEDTEvents() throws InvocationTargetException, InterruptedException {
