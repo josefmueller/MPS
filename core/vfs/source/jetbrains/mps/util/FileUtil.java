@@ -57,11 +57,16 @@ public class FileUtil {
   private static final String MPSTEMP = "mpstemp";
   private static final char DOT = '.';
 
+  @NotNull
   public static File createTmpDir() {
+    return createTmpDir(MPSTEMP);
+  }
+
+  public static File createTmpDir(@NotNull String prefix) {
     File tmp = getTempDir();
     for (int i = 0;; ++i) {
-      if (!new File(tmp, MPSTEMP + i).exists()) {
-        File tmpDir = new File(tmp, MPSTEMP + i);
+      if (!new File(tmp, prefix + i).exists()) {
+        File tmpDir = new File(tmp, prefix + i);
         boolean result = tmpDir.mkdir();
         if (!result) {
           throw new IllegalStateException("Could not create a directory " + tmpDir);
@@ -71,17 +76,22 @@ public class FileUtil {
     }
   }
 
+  @NotNull
   public static File createTmpFile() {
+    return createTmpFile(MPSTEMP);
+  }
+
+  public static File createTmpFile(@NotNull String prefix) {
     File tmp = getTempDir();
     int i = 0;
     while (true) {
-      if (!new File(tmp, MPSTEMP + i).exists()) {
+      if (!new File(tmp, prefix + i).exists()) {
         break;
       }
       i++;
     }
 
-    File result = new File(tmp, MPSTEMP + i);
+    File result = new File(tmp, prefix + i);
     try {
       result.createNewFile();
     } catch (IOException e) {

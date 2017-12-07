@@ -23,19 +23,14 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.Memento;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
@@ -45,6 +40,7 @@ import java.util.Set;
  */
 public class TempModule extends ReloadableModuleBase implements SModule, MPSModuleOwner {
   private final static Logger LOG = LogManager.getLogger(TempModule.class);
+
   private final ModuleDescriptor myDescriptor;
   private final JavaModuleFacet myJavaModuleFacet;
 
@@ -60,9 +56,10 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     dependenciesChanged();
 
     if (withJavaFacet) {
-      IFile sourcesGen = withSourceGen ? createTempDirectory("TempModule_source_gen") : null;
-      IFile classesGen = createTempDirectory("TempModule_classes_gen");
-      myJavaModuleFacet = new TempModuleJavaFacet(sourcesGen, classesGen);
+      myJavaModuleFacet = new NaiveJavaModuleFacet(this,
+                                                  withSourceGen ? "TEMP_SOURCE_GEN"
+                                                                : null,
+                                                   "TEMP_CLASSES_GEN");
     } else {
       myJavaModuleFacet = null;
     }
@@ -102,90 +99,5 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
-  }
-
-  private IFile createTempDirectory(String prefix) {
-    try {
-      final File temp;
-
-      temp = File.createTempFile(prefix, "");
-
-      if (!(temp.delete())) {
-        throw new IOException("Could not delete temp file: " + temp.getAbsolutePath());
-      }
-
-      if (!(temp.mkdir())) {
-        throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
-      }
-
-      return getFileSystem().getFile(temp.getAbsolutePath());
-    } catch (IOException e) {
-      LOG.error(e.toString(), e);
-      return null;
-    }
-  }
-
-  private class TempModuleJavaFacet implements JavaModuleFacet {
-    private final IFile mySourceGen;
-    private final IFile myClassesGen;
-
-    @NotNull
-    @Override
-    public String getFacetType() {
-      return FACET_TYPE;
-    }
-
-    public TempModuleJavaFacet(IFile sourceGen, IFile classesGen) {
-      mySourceGen = sourceGen;
-      myClassesGen = classesGen;
-    }
-
-    @Override
-    public boolean isCompileInMps() {
-      return true;
-    }
-
-    @Nullable
-    @Override
-    public IFile getOutputRoot() {
-      return mySourceGen;
-    }
-
-    @NotNull
-    @Override
-    public IFile getClassesGen() {
-      return myClassesGen;
-    }
-
-    @Override
-    public Set<String> getLibraryClassPath() {
-      return Collections.emptySet();
-    }
-
-    @Override
-    public Set<String> getClassPath() {
-      return Collections.singleton(getClassesGen().getPath());
-    }
-
-    @Override
-    public Set<String> getAdditionalSourcePaths() {
-      return Collections.emptySet();
-    }
-
-    @NotNull
-    @Override
-    public SModule getModule() {
-      return TempModule.this;
-    }
-
-    @Override
-    public void save(Memento memento) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void load(Memento memento) {
-      throw new UnsupportedOperationException();
-    }
   }
 }

@@ -203,18 +203,22 @@ public class IdeaFile implements IFileEx, CachingFile {
     } else {
       try {
         VirtualFile directory = createDirectories(truncateDirPath(myPath));
+        if (directory == null) {
+          throw new IllegalStateException("Could not create directory under the path '" + truncateDirPath(myPath));
+        }
         String fileName = truncateFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFilePtr = directory.createChildData(myFileSystem, fileName);
         return true;
       } catch (IOException e) {
-        LOG.error(null, e);
+        LOG.error("Got a problem while creating a new file", e);
         return false;
       }
     }
   }
 
   //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
+  @Nullable
   private VirtualFile createDirectories(final String directoryPath) throws IOException {
     return new WriteAction<VirtualFile>() {
       @Override
@@ -226,6 +230,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   }
 
   //this was copied from Idea's VfsUtil. The point of copying is changing the requestor not to get back-events during saving models
+  @Nullable
   private VirtualFile createDirectoryIfMissing(String directoryPath) throws IOException {
     String path = FileUtil.toSystemIndependentName(directoryPath);
     final VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByPath(path);

@@ -35,8 +35,13 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.tempmodel.NaiveJavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 
 public class DeployScript {
   private static final Logger LOG = LogManager.getLogger(DeployScript.class);
@@ -109,14 +114,23 @@ public class DeployScript {
   }
 
   private static class TemporalModuleWithDescriptorFile extends AbstractModule {
+    private final SModuleFacet myJavaModuleFacet;
+
     private TemporalModuleWithDescriptorFile(@NotNull String baseDir) {
       super(IoFileSystem.INSTANCE.getFile(baseDir).getDescendant("module.msd"));
-      this.getModuleSourceDir();
+      setModuleReference(new ModuleReference("Temporary module for deploy plugins run configuration", ModuleId.regular()));
+      myJavaModuleFacet = new NaiveJavaModuleFacet(this, "DEPLOY_MODULE_SOURCE_GEN", "DEPLOY_MODULE_CLASSES_GEN");
     }
 
     public File getBaseDirectory() {
       IFile moduleSourceDir = getModuleSourceDir();
       return new File(moduleSourceDir.getPath());
+    }
+
+    @NotNull
+    @Override
+    public Iterable<SModuleFacet> getFacets() {
+      return Collections.singleton(myJavaModuleFacet);
     }
 
     public boolean isPackaged() {

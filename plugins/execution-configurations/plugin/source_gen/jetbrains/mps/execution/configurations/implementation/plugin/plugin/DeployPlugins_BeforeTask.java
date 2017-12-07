@@ -86,13 +86,18 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
         return false;
       }
 
-      final ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-      console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
+      final ConsoleView[] console = new ConsoleView[1];
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {
+          console[0] = ConsoleCreator.createConsoleView(project, false);
+        }
+      }, ModalityState.NON_MODAL);
+      console[0].addMessageFilter(new StandaloneMPSStackTraceFilter(project));
 
       final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>();
       try {
         process.value = new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation);
-        console.attachToProcess(process.value);
+        console[0].attachToProcess(process.value);
       } catch (ExecutionException e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can not deploy plugins", e);
@@ -108,11 +113,11 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
           DefaultActionGroup group = new DefaultActionGroup();
           JPanel consolePanel = new JPanel(new BorderLayout());
           ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.TOOLBAR, group, false);
-          actionToolbar.setTargetComponent(console.getComponent());
+          actionToolbar.setTargetComponent(console[0].getComponent());
           consolePanel.add(actionToolbar.getComponent(), BorderLayout.WEST);
-          consolePanel.add(console.getComponent(), BorderLayout.CENTER);
+          consolePanel.add(console[0].getComponent(), BorderLayout.CENTER);
 
-          RunContentDescriptor descriptor = new RunContentDescriptor(console, process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a71a4e);
+          RunContentDescriptor descriptor = new RunContentDescriptor(console[0], process.value, consolePanel, "Deploy plugins", IconContainer.ICON_e0a0j0a0a81a4e);
 
           group.add(ActionManager.getInstance().getAction("Stop"));
           group.addSeparator();

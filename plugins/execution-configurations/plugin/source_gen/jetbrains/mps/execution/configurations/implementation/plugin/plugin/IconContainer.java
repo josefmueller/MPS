@@ -6,5 +6,5 @@ import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
 
 public class IconContainer {
-  protected static Icon ICON_e0a0j0a0a71a4e = IconLoader.findIcon("buildProject.png", IconContainer.class);
+  protected static Icon ICON_e0a0j0a0a81a4e = IconLoader.findIcon("buildProject.png", IconContainer.class);
 }
