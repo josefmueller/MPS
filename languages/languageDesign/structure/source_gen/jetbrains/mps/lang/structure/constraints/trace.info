@@ -528,31 +528,6 @@
       <unit id="199017432865781648" at="20,0,45,0" name="jetbrains.mps.lang.structure.constraints.DataTypeDeclaration_Constraints" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/4799451663045698430">
-    <file name="ConceptsScope.java">
-      <node id="2641476927091050999" at="23,73,24,58" concept="12" />
-      <node id="5773544763888791768" at="31,103,32,67" concept="7" />
-      <node id="4799451663045732457" at="36,57,37,260" concept="7" />
-      <node id="2641476927091050993" at="22,0,26,0" concept="1" trace="ConceptsScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
-      <node id="2641476927091020892" at="30,0,34,0" concept="11" trace="getAvailableConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
-      <node id="6311899720716100469" at="34,0,39,0" concept="5" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="2641476927091050996" at="23,73,24,58" />
-      <scope id="2641476927091020896" at="31,103,32,67" />
-      <scope id="6311899720716100477" at="36,57,37,260" />
-      <scope id="2641476927091050993" at="22,0,26,0">
-        <var name="contextNode" id="2641476927091051003" />
-        <var name="metaConcept" id="2641476927091051005" />
-      </scope>
-      <scope id="2641476927091020892" at="30,0,34,0">
-        <var name="contextNode" id="2641476927091021031" />
-        <var name="metaConcept" id="2641476927091021033" />
-      </scope>
-      <scope id="6311899720716100469" at="34,0,39,0">
-        <var name="target" id="6311899720716100472" />
-      </scope>
-      <unit id="4799451663045698430" at="19,0,40,0" name="jetbrains.mps.lang.structure.constraints.ConceptsScope" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/5115399642005556319">
     <file name="AbstractConceptDeclaration_Constraints.java">
       <node id="5115399642005556319" at="30,51,31,168" concept="12" />
@@ -966,24 +941,6 @@
       <unit id="7158114823470894679" at="128,50,132,5" name="jetbrains.mps.lang.structure.constraints.Concepts$13" />
       <unit id="7158114823470894670" at="132,18,136,5" name="jetbrains.mps.lang.structure.constraints.Concepts$14" />
       <unit id="5773544763888773767" at="29,0,148,0" name="jetbrains.mps.lang.structure.constraints.Concepts" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/609408910513951874">
-    <file name="LanguageConceptsScope.java">
-      <node id="5773544763888875726" at="27,76,28,236" concept="12" />
-      <node id="609408910513952009" at="32,57,33,260" concept="7" />
-      <node id="2641476927091169924" at="26,0,30,0" concept="1" trace="LanguageConceptsScope#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
-      <node id="609408910513952001" at="30,0,35,0" concept="5" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="2641476927091169929" at="27,76,28,236" />
-      <scope id="609408910513952008" at="32,57,33,260" />
-      <scope id="2641476927091169924" at="26,0,30,0">
-        <var name="metaConcept" id="2641476927091169934" />
-        <var name="model" id="2641476927091169925" />
-      </scope>
-      <scope id="609408910513952001" at="30,0,35,0">
-        <var name="target" id="609408910513952003" />
-      </scope>
-      <unit id="609408910513951874" at="23,0,36,0" name="jetbrains.mps.lang.structure.constraints.LanguageConceptsScope" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/7158114823470894537">

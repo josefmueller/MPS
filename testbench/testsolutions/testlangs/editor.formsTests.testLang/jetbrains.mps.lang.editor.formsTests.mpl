@@ -56,7 +56,6 @@
     <module reference="602c36ad-cc55-47ff-8c40-73d7f12f035c(jetbrains.mps.lang.editor.forms)" version="0" />
     <module reference="90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)" version="0" />
     <module reference="afb9a5fd-bc5d-4169-a225-42d8823d623a(jetbrains.mps.lang.editor.formsTests)" version="0" />
-    <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
     <module reference="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" version="1" />
     <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
