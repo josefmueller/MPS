@@ -10,17 +10,17 @@ import java.util.Map;
 import jetbrains.mps.util.ModuleNameUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog;
 import jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog;
-import jetbrains.mps.project.AbstractModule;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
@@ -72,17 +72,18 @@ public class CloneModule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    final StandaloneMPSProject project = as_i0xx9i_a0a0a6(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class);
+    final AbstractModule module = as_i0xx9i_a0a1a6(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class);
 
-    Map<ModelRoot, String> nonCloneable = CloneModule_Action.this.collectCloneErrorMessages(event.getData(MPSCommonDataKeys.MODULE).getModelRoots(), event);
-
-    if (!(nonCloneable.isEmpty())) {
+    Map<ModelRoot, String> nonCloneable = CloneModule_Action.this.collectCloneErrorMessages(module.getModelRoots(), event);
+    if (!(MapSequence.fromMap(nonCloneable).isEmpty())) {
       Messages.showErrorDialog(CloneModule_Action.this.getErrorMessage(nonCloneable, event), "Module can't be cloned");
       return;
     }
 
-    String virtualFolder = as_i0xx9i_a0a0f0g(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
+    String virtualFolder = project.getFolderFor(module);
+    final AbstractModuleCreationDialog dialog = new CloneModuleDialog(project, virtualFolder, module);
 
-    final AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a6(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         dialog.show();
@@ -92,7 +93,7 @@ public class CloneModule_Action extends BaseAction {
           return;
         }
 
-        ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+        ProjectPane projectPane = ProjectPane.getInstance(project);
         projectPane.selectModule(result, false);
       }
     }, ModalityState.current());
@@ -117,7 +118,7 @@ public class CloneModule_Action extends BaseAction {
     Map<ModelRoot, String> result = new HashMap<ModelRoot, String>();
     for (ModelRoot modelRoot : Sequence.fromIterable(modelRoots)) {
       if (!(modelRoot instanceof CopyableModelRoot)) {
-        result.put(modelRoot, "Cloning for this model root is not implemented");
+        MapSequence.fromMap(result).put(modelRoot, "Cloning for this model root is not implemented");
       }
     }
     return result;
@@ -125,10 +126,10 @@ public class CloneModule_Action extends BaseAction {
   private boolean supportsClonning(SModule module, final AnActionEvent event) {
     return !(module.isPackaged()) && (module instanceof Solution || module instanceof Language);
   }
-  private static <T> T as_i0xx9i_a0a0f0g(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a0a0a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_i0xx9i_a2a0a7a6(Object o, Class<T> type) {
+  private static <T> T as_i0xx9i_a0a1a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
