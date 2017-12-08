@@ -100,7 +100,7 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0a0c0g.getAccessoryModels().add(PersistenceFacade.getInstance().createModelReference(modelElement.getAttributeValue("modelUID")));
           }
 
-          GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper);
+          GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper, true);
           for (Element generatorElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "generators"), "generator"))) {
             GeneratorDescriptor gd = gdp.load(generatorElement);
             // as long as generator descriptors are part of language descriptor, no need to persist identity of a source language, we can 
@@ -234,7 +234,7 @@ public class LanguageDescriptorPersistence {
 
     if (!(descriptor.getGenerators().isEmpty())) {
       Element generators = new Element("generators");
-      GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper);
+      GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper, true);
       for (GeneratorDescriptor generatorDescriptor : ListSequence.fromList(descriptor.getGenerators())) {
         generators.addContent(gdp.save(generatorDescriptor));
       }
