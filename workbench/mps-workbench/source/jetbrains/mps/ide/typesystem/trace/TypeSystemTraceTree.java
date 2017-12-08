@@ -85,7 +85,6 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private EditorMessageOwner myMessageOwner;
 
   public TypeSystemTraceTree(Project mpsProject, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
-    myWarnModelAccess = false;
     myProject = mpsProject;
     myContextTracker = new TypecheckingContextTracker(node.getContainingRoot());
     myParent = parent;
@@ -114,6 +113,11 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myNodes = new HashSet<SNode>();
     myNodes.addAll(SNodeOperations.getNodeDescendants(node, null, false, new SConcept[]{}));
     myNodes.add(node);
+  }
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
   }
 
   /*package*/ MPSTree getDetailsTree() {
