@@ -37,6 +37,8 @@
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
   </dependency>
   <dependency className="jetbrains.mps.project.io.StandardDescriptorIOProvider" file="StandardDescriptorIOProvider.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
@@ -47,10 +49,17 @@
     <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
   </dependency>
