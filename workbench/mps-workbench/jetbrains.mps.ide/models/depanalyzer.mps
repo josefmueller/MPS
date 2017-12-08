@@ -2929,16 +2929,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1c6WnGgjlCx" role="3cqZAp">
-          <node concept="37vLTI" id="1c6WnGgjozY" role="3clFbG">
-            <node concept="3clFbT" id="1c6WnGgjqnx" role="37vLTx">
-              <property role="3clFbU" value="false" />
-            </node>
-            <node concept="37vLTw" id="1c6WnGgjlCv" role="37vLTJ">
-              <ref role="3cqZAo" to="7e8u:~MPSTree.myWarnModelAccess" resolve="myWarnModelAccess" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="AnAlNI7zW7" role="jymVt">

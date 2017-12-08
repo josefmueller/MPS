@@ -165,7 +165,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     myTree = new MPSTree() {
       {
         // it's not apparent whether access to the list of project modules requires model read or not
-        myWarnModelAccess = false;
         AbstractAction openEditorAction = new AbstractAction() {
           @Override
           public void actionPerformed(ActionEvent e) {

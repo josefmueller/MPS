@@ -28,8 +28,6 @@ import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelReadRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -84,10 +82,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private final Object myUpdateId = new Object();
 
   private boolean myDisposed = false;
-
-  // provisional flag until I refactor all MPSTree subclasses to be explicit about read actions. Drop once 2017.2 is out
-  // true indicates rebuild action needs implicit model access, false indicates it's ok to proceed without model read
-  protected boolean myWarnModelAccess = true;
 
   protected MPSTree() {
     // TreeModel instance shall be the same during lifetime of the MPSTree instance
@@ -545,17 +539,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           }
         };
       }
-      if (rebuildAction instanceof ModelReadRunnable) {
-        rebuildAction.run();
-      } else {
-        if (myWarnModelAccess) {
-          String msg = "MPSTree is generic class and shall not care about model read. Override %s#runRebuildAction and wrap Runnable with model read, instead";
-          LOG.warn(String.format(msg, getClass().getName()), new Throwable());
-          ModelAccess.instance().runReadAction(rebuildAction);
-        } else {
-          rebuildAction.run();
-        }
-      }
+      rebuildAction.run();
       if (restoreExpansion != null) {
         runWithoutExpansion(restoreExpansion);
       }

@@ -600,16 +600,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="59calaRM9$9" role="3cqZAp">
-          <node concept="37vLTI" id="59calaRMaLq" role="3clFbG">
-            <node concept="3clFbT" id="59calaRMbUL" role="37vLTx">
-              <property role="3clFbU" value="false" />
-            </node>
-            <node concept="37vLTw" id="59calaRM9$7" role="37vLTJ">
-              <ref role="3cqZAo" to="7e8u:~MPSTree.myWarnModelAccess" resolve="myWarnModelAccess" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="2Z8pu54WhTt" role="jymVt">

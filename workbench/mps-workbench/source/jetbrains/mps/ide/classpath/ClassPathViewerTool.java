@@ -80,8 +80,6 @@ public class ClassPathViewerTool extends BaseProjectTool {
     private SModule myInspectedModule;
 
     MyClassPathTree() {
-      // we manage
-      myWarnModelAccess = false;
     }
 
     void setModule(SModule m) {

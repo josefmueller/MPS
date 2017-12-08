@@ -68,7 +68,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
     });
     setRootVisible(false);
     setShowsRootHandles(true);
-    myWarnModelAccess = false;
   }
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {

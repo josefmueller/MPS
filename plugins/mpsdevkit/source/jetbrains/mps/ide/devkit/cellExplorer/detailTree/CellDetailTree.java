@@ -37,7 +37,6 @@ public class CellDetailTree extends MPSTreeWithAction {
   private EditorCell myCell;
 
   public CellDetailTree() {
-    myWarnModelAccess = false;
     setRootVisible(true);
   }
 

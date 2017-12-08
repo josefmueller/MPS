@@ -69,7 +69,6 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private EditorMessageOwner myMessageOwner;
 
   public TypeSystemStateTree(Project mpsProject, State state, EditorComponent editorComponent) {
-    myWarnModelAccess = false;
     myProject = mpsProject;
     myState = state;
     myEditorComponent = editorComponent;
