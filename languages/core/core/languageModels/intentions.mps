@@ -31,6 +31,7 @@
       <concept id="1194033889146" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1XNTG" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -90,6 +91,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -217,6 +219,7 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1761385620274348152" name="jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression" flags="nn" index="2CBFar" />
+      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -909,6 +912,19 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4gG1SihjmE$" role="3cqZAp">
+          <node concept="3cpWsn" id="4gG1SihjmE_" role="3cpWs9">
+            <property role="TrG5h" value="nodeOwner" />
+            <property role="3TUv4t" value="true" />
+            <node concept="H_c77" id="4gG1SihjmEz" role="1tU5fm" />
+            <node concept="2OqwBi" id="4gG1SihjmEA" role="33vP2m">
+              <node concept="37vLTw" id="4gG1SihjmEB" role="2Oq$k0">
+                <ref role="3cqZAo" node="5zAj$bduWWN" resolve="myNode" />
+              </node>
+              <node concept="I4A8Y" id="4gG1SihjmEC" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="5zAj$bdv0Fz" role="3cqZAp">
           <node concept="2OqwBi" id="5zAj$bdv0F$" role="1DdaDG">
             <node concept="2JrnkZ" id="5zAj$bdv0F_" role="2Oq$k0">
@@ -975,10 +991,20 @@
               <node concept="3clFbS" id="5zAj$bdv0FV" role="3clFbx">
                 <node concept="3N13vt" id="5zAj$bdv0FW" role="3cqZAp" />
               </node>
-              <node concept="3clFbC" id="5zAj$bdv0FX" role="3clFbw">
-                <node concept="10Nm6u" id="5zAj$bdv0FY" role="3uHU7w" />
-                <node concept="37vLTw" id="5zAj$bdv0FZ" role="3uHU7B">
-                  <ref role="3cqZAo" node="5zAj$bdv0FO" resolve="modelToImport" />
+              <node concept="22lmx$" id="3$LD7L$wpne" role="3clFbw">
+                <node concept="17R0WA" id="3$LD7L$wrr_" role="3uHU7w">
+                  <node concept="37vLTw" id="3$LD7L$wr_v" role="3uHU7w">
+                    <ref role="3cqZAo" node="5zAj$bdv0FO" resolve="modelToImport" />
+                  </node>
+                  <node concept="37vLTw" id="4gG1SihjmED" role="3uHU7B">
+                    <ref role="3cqZAo" node="4gG1SihjmE_" resolve="nodeOwner" />
+                  </node>
+                </node>
+                <node concept="3clFbC" id="5zAj$bdv0FX" role="3uHU7B">
+                  <node concept="37vLTw" id="5zAj$bdv0FZ" role="3uHU7B">
+                    <ref role="3cqZAo" node="5zAj$bdv0FO" resolve="modelToImport" />
+                  </node>
+                  <node concept="10Nm6u" id="5zAj$bdv0FY" role="3uHU7w" />
                 </node>
               </node>
             </node>
