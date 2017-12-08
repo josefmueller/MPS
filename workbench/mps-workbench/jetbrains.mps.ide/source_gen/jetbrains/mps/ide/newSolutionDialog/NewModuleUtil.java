@@ -16,15 +16,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
@@ -35,9 +33,6 @@ import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -108,29 +103,56 @@ public class NewModuleUtil {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_SOLUTION);
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    Solution module = (Solution) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
-    project.addModule(module);
+    Solution module = (Solution) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), project);
     new VersionFixer(project.getRepository(), module).updateImportVersions();
     module.save();
+
+    project.addModule(module);
     project.save();
     return module;
   }
 
   /**
-   * create new language module and register it with the project
+   * create new language module with nested generator and register both with the project
    */
   public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_LANGUAGE);
-    Language lang = createNewLanguage(namespace, descriptorFile, true, project);
-    project.addModule(lang);
-    new VersionFixer(project.getRepository(), lang).updateImportVersions();
-    for (Generator gen : CollectionSequence.fromCollection(lang.getGenerators())) {
-      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+
+    if (descriptorFile.exists()) {
+      throw new IllegalArgumentException("Descriptor file " + descriptorFile + " already exists");
     }
-    lang.save();
+    LanguageDescriptor languageDescriptor = createNewLanguageDescriptor(namespace, descriptorFile);
+
+    IFile generatorLocation = descriptorFile.getParent().getDescendant("generator");
+    IFile templateModelsLocation = generatorLocation.getDescendant("template");
+    templateModelsLocation.mkdirs();
+
+    //  it's the first and only generator in the language, no need to generate some unique long value 
+    final GeneratorDescriptor generatorDescriptor = createGeneratorDescriptor(languageDescriptor.getNamespace() + "#01", generatorLocation, templateModelsLocation);
+    generatorDescriptor.setSourceLanguage(languageDescriptor.getModuleReference());
+    languageDescriptor.getGenerators().add(generatorDescriptor);
+
+    ModuleRepositoryFacade projectRepoFacade = new ModuleRepositoryFacade(project);
+    Language language = (Language) projectRepoFacade.instantiateModule(new ModulesMiner.ModuleHandle(descriptorFile, languageDescriptor), project);
+    Generator generator = (Generator) projectRepoFacade.instantiateModule(new ModulesMiner.ModuleHandle(descriptorFile, generatorDescriptor), project);
+
+    try {
+      createMainLanguageAspects(language);
+    } catch (IOException e) {
+      // todo: ??? 
+      throw new RuntimeException(e);
+    }
+
+    createTemplateModelIfNoneYet(generator);
+
+    project.addModule(language);
+    // as long as generator lives under the language, and Project doesn't support standalone generators, no need for project.addModule(generator) 
+    new VersionFixer(project.getRepository(), language).updateImportVersions();
+    new VersionFixer(project.getRepository(), generator).updateImportVersions();
+    language.save();
+    generator.save();
     project.save();
-    return lang;
+    return language;
   }
 
   /**
@@ -140,10 +162,10 @@ public class NewModuleUtil {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_DEVKIT);
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
-    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-    DevKit module = (DevKit) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
-    project.addModule(module);
+    DevKit module = (DevKit) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), project);
     module.save();
+
+    project.addModule(module);
     project.save();
     return module;
   }
@@ -191,44 +213,6 @@ public class NewModuleUtil {
     }
 
     return null;
-  }
-
-  @Deprecated
-  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean createMainAspectModels, Project project) {
-    if (descriptorFile.exists()) {
-      throw new IllegalArgumentException("Descriptor file " + descriptorFile + " already exists");
-    }
-    LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
-
-    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    ModuleRepositoryFacade projectRepoFacade = new ModuleRepositoryFacade(project);
-    Language language = (Language) projectRepoFacade.instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
-    descriptor = language.getModuleDescriptor();
-
-    if (createMainAspectModels) {
-      try {
-        createMainLanguageAspects(language);
-      } catch (IOException e) {
-        // todo: ??? 
-        throw new RuntimeException(e);
-      }
-    }
-
-    IFile generatorLocation = descriptorFile.getParent().getDescendant("generator");
-    IFile templateModelsLocation = generatorLocation.getDescendant("template");
-    templateModelsLocation.mkdirs();
-
-    final GeneratorDescriptor generatorDescriptor = createGeneratorDescriptor(Generator.generateGeneratorUID(language), generatorLocation, templateModelsLocation);
-    generatorDescriptor.setSourceLanguage(language.getModuleReference());
-    descriptor.getGenerators().add(generatorDescriptor);
-    language.setModuleDescriptor(descriptor);
-    language.save();
-
-    final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);
-
-    createTemplateModelIfNoneYet(newGenerator);
-
-    return language;
   }
 
   public static void createTemplateModelIfNoneYet(Generator newGenerator) {
