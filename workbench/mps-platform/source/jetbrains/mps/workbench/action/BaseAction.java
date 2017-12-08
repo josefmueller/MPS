@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,14 +76,6 @@ public abstract class BaseAction extends AnAction {
 
   public boolean isApplicable(final AnActionEvent event, final Map<String, Object> _params) {
     return false;
-  }
-
-  // FIXME There is single use of this method, BaseConsoleTab and ExecuteActionAttachedToCurrentNode_Action,
-  //       Is there any reason to keep it?
-  //       FWIW, isApplicable(event, params) is in use for default duUpdate implementation is subclasses.
-  public boolean isApplicable(final AnActionEvent e) {
-    Map<String, Object> params = new ModelAccessHelper(getModelAccess(e)).runReadAction(new CollectActionData(e));
-    return params != null && isApplicable(e, params);
   }
 
   public void setMnemonic(char mnemonic) {

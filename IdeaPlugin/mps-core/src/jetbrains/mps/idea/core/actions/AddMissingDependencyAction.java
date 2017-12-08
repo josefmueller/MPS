@@ -182,7 +182,7 @@ public class AddMissingDependencyAction extends BaseAction {
   }
 
 
-  public boolean isApplicable(AnActionEvent e) {
+  private boolean isApplicable(AnActionEvent e) {
     Project project = e.getProject();
     if (project == null) {
       return false;

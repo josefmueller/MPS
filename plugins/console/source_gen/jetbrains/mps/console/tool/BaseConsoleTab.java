@@ -341,7 +341,9 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
       if (cell != preciseCell) {
         return false;
       }
-      return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action")).isApplicable(event);
+      BaseAction execAction = ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action"));
+      execAction.update(event);
+      return event.getPresentation().isEnabled();
     }
     protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
       ActionUtils.updateAndPerformAction(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.console.actions.ExecuteActionAttachedToCurrentNode_Action")), event);
