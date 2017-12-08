@@ -12,14 +12,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,24 +39,20 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(final AnActionEvent event, final Map<String, Object> _params) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     DataSource dataSource = event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource();
     if (dataSource instanceof FileDataSource) {
       VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile());
       assert virtualFile != null;
-      if (SNodeOperations.isRoot(event.getData(MPSCommonDataKeys.NODE)) && ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
+      if ((SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)) == null) && ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
         FileStatus fileStatus = event.getData(CommonDataKeys.PROJECT).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
         return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
       }
     } else if (dataSource instanceof FilePerRootDataSource) {
-      if (!(SNodeOperations.isRoot(event.getData(MPSCommonDataKeys.NODE)))) {
+      if ((SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)) != null)) {
         return false;
       }
-      String rootName = ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return event.getData(MPSCommonDataKeys.NODE).getName();
-        }
-      });
+      String rootName = event.getData(MPSCommonDataKeys.NODE).getName();
       VirtualFile virtualFile = VirtualFileUtils.getProjectVirtualFile(((FilePerRootDataSource) event.getData(MPSCommonDataKeys.CONTEXT_MODEL).getSource()).getFile(rootName + "." + MPSExtentions.MODEL_ROOT));
       assert virtualFile != null;
       if (ProjectLevelVcsManager.getInstance(event.getData(CommonDataKeys.PROJECT)).getVcsFor(virtualFile) != null) {
@@ -78,8 +72,8 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
       return false;
     }
     {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      if (p == null) {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node == null) {
         return false;
       }
     }
