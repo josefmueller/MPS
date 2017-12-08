@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.ColoredSideBorder;
 import com.intellij.ui.ColoredTreeCellRenderer;
 import com.intellij.ui.JBColor;
-import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
@@ -34,9 +33,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -198,11 +195,7 @@ public class GeneratorPrioritiesTree {
 
   public MappingConfig_AbstractRef getEditResult() {
     setCheckedUnder(myRootNode);
-    return ModelAccess.instance().runReadAction(new Computable<MappingConfig_AbstractRef>() {
-      public MappingConfig_AbstractRef compute() {
-        return getRootMapping();
-      }
-    });
+    return getRootMapping();
   }
 
   private MappingConfig_AbstractRef getRootMapping() {
