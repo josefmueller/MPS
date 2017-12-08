@@ -19,7 +19,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" file="DevkitDescriptorPersistence.java">
-    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
@@ -34,9 +33,6 @@
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -72,7 +68,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" file="LanguageDescriptorPersistence.java">
-    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -90,15 +85,10 @@
     <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -191,7 +181,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" file="SolutionDescriptorPersistence.java">
-    <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
@@ -211,9 +200,6 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

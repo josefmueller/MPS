@@ -27,7 +27,8 @@ import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.io.DescriptorIO;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -35,7 +36,6 @@ import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -347,7 +347,12 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       return;
     }
 
-    LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
+    try {
+      DescriptorIO<LanguageDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().languageDescriptorIO();
+      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+    } catch (Exception ex) {
+      Logger.getLogger(getClass()).error("Save failed", ex);
+    }
   }
 
   public List<SModel> getAccessoryModels() {

@@ -20,7 +20,6 @@ import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
 import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -30,8 +29,6 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -44,10 +41,10 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -77,6 +74,7 @@ import java.util.Set;
  * TODO rewrite module creation via existing functionality.
  * FIXME shall use TestModuleFactoryBase to create modules, and createEmptyProject() instead of temp dir and solutions added there.
  *       Once there's project, shall drop use of MPSModuleRepository (take one from Project),
+ *       OTOH, TestModuleFactoryBase seems to have in-memory storage, while this test needs real files to compile.
  * @see jetbrains.mps.classloading.ModulesReloadTest
  */
 public class TestMakeOnRealProject extends CoreMpsTest {
@@ -153,7 +151,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
   public void testNothingToCompileAfterCompilation() throws InterruptedException {
     doSolutionsCompilation();
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.<SModule>emptyList()));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.emptyList()));
     Assert.assertEquals(0, sources.getFilesToCompile().size());
   }
 
@@ -167,11 +165,11 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     IFile outputPath = myCreatedSolution.getFacet(JavaModuleFacet.class).getOutputRoot();
     IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
-    if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
+    if (!javaFile.setTimeStamp(time)) {
       Assert.fail("Can't touch the file " + javaFile);
     }
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.<SModule>emptyList()));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.emptyList()));
     Collection<JavaFile> filesToCompile = sources.getFilesToCompile();
     Assert.assertEquals(1, filesToCompile.size());
   }
@@ -277,6 +275,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setId(ModuleId.regular());
     solutionDescriptor.setNamespace(name);
+    solutionDescriptor.setOutputPath(runtimeSolutionDescriptorFile.getParent().getDescendant("src_gen").getPath());
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
     modelRoot.setContentRoot(runtimeSolutionDescriptorFile.getParent().getPath());
@@ -284,10 +283,12 @@ public class TestMakeOnRealProject extends CoreMpsTest {
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     solutionDescriptor.getDependencies().add(new Dependency(BootstrapLanguages.jdkRef(), true));
+
     runtimeSolutionDescriptorFile.createNewFile();
-    SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
-    ModuleHandle handle = new ModulesMiner().loadModuleHandle(runtimeSolutionDescriptorFile);
-    return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
+    ModuleHandle handle = new ModuleHandle(runtimeSolutionDescriptorFile, solutionDescriptor);
+    Solution solution = (Solution) new ModuleRepositoryFacade(ourRepository).instantiateModule(handle, myModuleOwner);
+    solution.save();
+    return solution;
   }
 
   private Language createNewLanguage() {
@@ -297,6 +298,8 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     d.setId(ModuleId.regular());
     d.setNamespace(languageNamespace);
     d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
+    d.setGenPath(descriptorFile.getParent().getDescendant("src_gen").getPath());
+
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
@@ -304,10 +307,10 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
     d.getModelRootDescriptors().add(modelRoot.toDescriptor());
 
-    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
-
-    ModuleHandle handle = new ModulesMiner().loadModuleHandle(descriptorFile);
-    return (Language) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
+    ModuleHandle handle = new ModuleHandle(descriptorFile, d);
+    Language language = (Language) new ModuleRepositoryFacade(ourRepository).instantiateModule(handle, myModuleOwner);
+    language.save();
+    return language;
   }
 
   private Solution createNewSolution() {
@@ -319,6 +322,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     solutionDescriptor.setId(ModuleId.regular());
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
+    solutionDescriptor.setOutputPath(descriptorFile.getParent().getDescendant("src_gen").getPath());
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
     modelRoot.setContentRoot(descriptorFile.getParent().getPath());
@@ -326,12 +330,12 @@ public class TestMakeOnRealProject extends CoreMpsTest {
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
-
-    ModuleHandle handle = new ModulesMiner().loadModuleHandle(descriptorFile);
-    final Solution rv = (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
+    ModuleHandle handle = new ModuleHandle(descriptorFile, solutionDescriptor);
+    final Solution rv = (Solution) new ModuleRepositoryFacade(ourRepository).instantiateModule(handle, myModuleOwner);
+    rv.save();
     final SModel m1 = rv.getModelRoots().iterator().next().createModel("m1");
     ((SModelInternal) m1).addLanguage(MetaAdapterFactory.getLanguage(myCreatedLanguage.getModuleReference()));
+    ((EditableSModel) m1).save();
     return rv;
   }
 }

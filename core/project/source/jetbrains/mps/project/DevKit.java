@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.project.io.DescriptorIO;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -25,6 +26,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -180,11 +182,16 @@ public class DevKit extends AbstractModule {
   public void save() {
     super.save();
 
+    // does this mean than once loaded with error, we have no chance to fix the module?
     if (myDescriptor.getLoadException() != null){
       return;
     }
-
-    DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
+    try {
+      DescriptorIO<DevkitDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().devkitDescriptorIO();
+      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+    } catch (Exception ex) {
+      Logger.getLogger(getClass()).error("Save failed", ex);
+    }
   }
 
   public String toString() {

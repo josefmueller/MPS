@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,23 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.ClassType;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.java.stub.PackageScopeControl;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.io.DescriptorIO;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.ClassType;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -167,7 +168,12 @@ public class Solution extends ReloadableModuleBase {
       return;
     }
 
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModule(this));
+    try {
+      DescriptorIO<SolutionDescriptor> io = DescriptorIOFacade.getInstance().standardProvider().solutionDescriptorIO();
+      io.writeToFile(getModuleDescriptor(), myDescriptorFile);
+    } catch (Exception ex) {
+      Logger.getLogger(getClass()).error("Save failed", ex);
+    }
   }
 
   public static boolean isBootstrapSolution(SModuleReference ref) {
