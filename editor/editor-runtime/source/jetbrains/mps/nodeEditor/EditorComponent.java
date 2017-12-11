@@ -44,8 +44,6 @@ import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.StatusBarEx;
-import com.intellij.psi.codeStyle.MinusculeMatcher;
-import com.intellij.psi.codeStyle.NameUtil;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
@@ -213,7 +211,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
@@ -320,8 +317,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
 
-  private final Object myEditorcomponentActionsLock = new Object();
-  private EditorComponentActions myEditorComponentActions;
+  private final Object myEditorComponentActionsLock = new Object();
+  private volatile EditorComponentActions myEditorComponentActions;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
@@ -1650,7 +1647,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public CellAction getComponentAction(final CellActionType type) {
     //todo ensure that this method is called only from EDT, write the contract and then get rid of synchronization
     if (myEditorComponentActions == null) {
-      synchronized (myEditorcomponentActionsLock) {
+      synchronized (myEditorComponentActionsLock) {
         if (myEditorComponentActions == null) {
           myEditorComponentActions = new EditorComponentActions(this);
         }
