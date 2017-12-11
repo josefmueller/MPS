@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -38,12 +39,15 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
   @Override
   @NotNull
   protected Set<VirtualFile> getAllExcludeRoots() {
-    final Set<VirtualFile> roots = new HashSet<VirtualFile>();
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    if (mpsProject == null) {
+      return Collections.emptySet();
+    }
 
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
+    return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Set<VirtualFile>>() {
       @Override
-      public void run() {
+      public Set<VirtualFile> compute() {
+        final Set<VirtualFile> roots = new HashSet<VirtualFile>();
         for (SModule module : mpsProject.getProjectModulesWithGenerators()) {
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
           if (facet == null) {
@@ -55,29 +59,21 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
             continue;
           }
 
-          // todo: this trash should be removed after reconsidering language packaging. see MPS-11757 for details
-          // XXX why not IFile.isPackaged()?
-          if (classesGen.getName().endsWith("." + MPSExtentions.MPS_ARCH)) {
-            continue;
-          }
-
           VirtualFile classesGenVF = VirtualFileUtils.getProjectVirtualFile(classesGen);
           if (classesGenVF != null) {
             roots.add(classesGenVF);
           }
 
-          if (((AbstractModule) module).getModuleSourceDir() != null) {
-            IFile classesDir = ((AbstractModule) module).getModuleSourceDir().getDescendant(AbstractModule.CLASSES);
-            if (classesDir.exists()) {
-              VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
-              if (classesVF != null) {
-                roots.add(classesVF);
-              }
+          if (classesGen.getParent() != null) {
+            IFile classesDir = classesGen.getParent().getDescendant(AbstractModule.CLASSES);
+            VirtualFile classesVF = VirtualFileUtils.getProjectVirtualFile(classesDir);
+            if (classesVF != null) {
+              roots.add(classesVF);
             }
           }
         }
+        return roots;
       }
     });
-    return roots;
   }
 }
