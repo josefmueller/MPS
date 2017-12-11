@@ -7,7 +7,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
-    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="-1" />
+    <use id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7" name="jetbrains.mps.lang.editor.editorTest" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
@@ -70333,6 +70333,80 @@
       <node concept="3Tm1VV" id="1IN3FLTO8EI" role="1B3o_S" />
     </node>
   </node>
+  <node concept="LiM7Y" id="2E2SuS5jP$R">
+    <property role="TrG5h" value="DeleteMethodWithDocComment" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="MPS-22655 Deleting a method does not delete its documentation comment" />
+    <node concept="3clFbS" id="2E2SuS5jP_7" role="LjaKd">
+      <node concept="3clFbF" id="2E2SuS5mq65" role="3cqZAp">
+        <node concept="2YIFZM" id="2E2SuS5mq66" role="3clFbG">
+          <ref role="1Pybhc" to="tp6m:5s44y2Lh6_5" resolve="EditorUtil" />
+          <ref role="37wK5l" to="tp6m:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="2E2SuS5mq67" role="37wK5m">
+            <node concept="3clFbS" id="2E2SuS5mq68" role="1bW5cS">
+              <node concept="2HxZob" id="2E2SuS5mq69" role="3cqZAp">
+                <node concept="1iFQzN" id="2E2SuS5mq6a" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="2E2SuS5mq6b" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="2E2SuS5jQ4n" role="LiRBU">
+      <property role="TrG5h" value="clazz" />
+      <node concept="2YIFZL" id="2E2SuS5jQa2" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="2E2SuS5jQa3" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="2E2SuS5jQa4" role="1tU5fm">
+            <node concept="17QB3L" id="2E2SuS5jQa5" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="2E2SuS5jQa6" role="3clF45" />
+        <node concept="3Tm1VV" id="2E2SuS5jQa7" role="1B3o_S" />
+        <node concept="3clFbS" id="2E2SuS5jQa8" role="3clF47" />
+        <node concept="P$JXv" id="2E2SuS5jQbg" role="lGtFl">
+          <node concept="TZ5HA" id="2E2SuS5jQbh" role="TZ5H$">
+            <node concept="1dT_AC" id="2E2SuS5jQbi" role="1dT_Ay">
+              <property role="1dT_AB" value="test" />
+            </node>
+          </node>
+          <node concept="TUZQ0" id="2E2SuS5jQbj" role="3nqlJM">
+            <property role="TUZQ4" value="args" />
+            <node concept="zr_55" id="2E2SuS5jQbl" role="zr_5Q">
+              <ref role="zr_51" node="2E2SuS5jQa3" resolve="args" />
+            </node>
+          </node>
+        </node>
+        <node concept="LIFWc" id="2E2SuS5sKwY" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="Constant_fao2ea_c0" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2E2SuS5jQ4o" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="2E2SuS5jQcI" role="LiZbd">
+      <property role="TrG5h" value="clazz" />
+      <node concept="2tJIrI" id="2E2SuS5r2Yp" role="jymVt">
+        <node concept="LIFWc" id="2E2SuS5r2ZW" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_s96plr_a" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2E2SuS5jQcV" role="1B3o_S" />
+    </node>
+  </node>
   <node concept="LiM7Y" id="1488IJS35vn">
     <property role="3GE5qa" value="intentions" />
     <property role="TrG5h" value="SurroundWithNegation_addingParens" />
@@ -70393,44 +70467,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="6OzM1Z2Qo4I">
-    <property role="3GE5qa" value="intentions" />
-    <property role="TrG5h" value="SurroundWithNegation_notAddingParens" />
-    <property role="3YCmrE" value="Checnking that surrounding with !(&lt;expr&gt;) intention is working &amp; selection is preserved if executed upon expression, niot wrapped into &quot;()&quot; by thia intention" />
-    <node concept="3clFbJ" id="6OzM1Z2Qo4J" role="LiRBU">
-      <node concept="3clFbS" id="6OzM1Z2Qo4K" role="3clFbx" />
-      <node concept="3clFbT" id="6OzM1Z2Qyje" role="3clFbw">
-        <property role="3clFbU" value="true" />
-        <node concept="LIFWc" id="6OzM1Z2Qz0E" role="lGtFl">
-          <property role="LIFWa" value="2" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="2" />
-          <property role="p6zMs" value="2" />
-          <property role="LIFWd" value="property_value" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="6OzM1Z2Qo4R" role="LjaKd">
-      <node concept="3D4uOY" id="6OzM1Z2Qo4S" role="3cqZAp">
-        <ref role="3D4uON" to="tpei:nfNq1Y3Y0$" resolve="SurroundWithNegation" />
-      </node>
-    </node>
-    <node concept="3clFbJ" id="6OzM1Z2Qz0U" role="LiZbd">
-      <node concept="3clFbS" id="6OzM1Z2Qz0V" role="3clFbx" />
-      <node concept="3fqX7Q" id="6OzM1Z2Qz8A" role="3clFbw">
-        <node concept="3clFbT" id="6OzM1Z2Qz0W" role="3fr31v">
-          <property role="3clFbU" value="true" />
-          <node concept="LIFWc" id="6OzM1Z2Qz9p" role="lGtFl">
-            <property role="LIFWa" value="2" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="2" />
-            <property role="p6zMs" value="2" />
-            <property role="LIFWd" value="property_value" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="6OzM1Z2Qvbq">
     <property role="3GE5qa" value="intentions" />
     <property role="TrG5h" value="SurroundWithNegation_forParens" />
@@ -70468,6 +70504,44 @@
             <property role="p6zMq" value="0" />
             <property role="p6zMs" value="0" />
             <property role="LIFWd" value="openParen" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6OzM1Z2Qo4I">
+    <property role="3GE5qa" value="intentions" />
+    <property role="TrG5h" value="SurroundWithNegation_notAddingParens" />
+    <property role="3YCmrE" value="Checnking that surrounding with !(&lt;expr&gt;) intention is working &amp; selection is preserved if executed upon expression, niot wrapped into &quot;()&quot; by thia intention" />
+    <node concept="3clFbJ" id="6OzM1Z2Qo4J" role="LiRBU">
+      <node concept="3clFbS" id="6OzM1Z2Qo4K" role="3clFbx" />
+      <node concept="3clFbT" id="6OzM1Z2Qyje" role="3clFbw">
+        <property role="3clFbU" value="true" />
+        <node concept="LIFWc" id="6OzM1Z2Qz0E" role="lGtFl">
+          <property role="LIFWa" value="2" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="2" />
+          <property role="p6zMs" value="2" />
+          <property role="LIFWd" value="property_value" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="6OzM1Z2Qo4R" role="LjaKd">
+      <node concept="3D4uOY" id="6OzM1Z2Qo4S" role="3cqZAp">
+        <ref role="3D4uON" to="tpei:nfNq1Y3Y0$" resolve="SurroundWithNegation" />
+      </node>
+    </node>
+    <node concept="3clFbJ" id="6OzM1Z2Qz0U" role="LiZbd">
+      <node concept="3clFbS" id="6OzM1Z2Qz0V" role="3clFbx" />
+      <node concept="3fqX7Q" id="6OzM1Z2Qz8A" role="3clFbw">
+        <node concept="3clFbT" id="6OzM1Z2Qz0W" role="3fr31v">
+          <property role="3clFbU" value="true" />
+          <node concept="LIFWc" id="6OzM1Z2Qz9p" role="lGtFl">
+            <property role="LIFWa" value="2" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="2" />
+            <property role="p6zMs" value="2" />
+            <property role="LIFWd" value="property_value" />
           </node>
         </node>
       </node>
