@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,14 +115,11 @@ public final class ModuleDeleteHelper {
     if (module instanceof AbstractModule) {
       AbstractModule curModule = (AbstractModule) module;
 
-      deleteFile(curModule.getDescriptorFile());
-
-      if (curModule.getModuleSourceDir() != null && deleteDirIfEmpty(curModule.getModuleSourceDir())) {
-        deleteFile(curModule.getModuleSourceDir());
-      }
-
-      if (curModule.getDescriptorFile() != null) {
-        IFile moduleFolder = curModule.getDescriptorFile().getParent();
+      IFile descriptorFile = curModule.getDescriptorFile();
+      if (descriptorFile != null) {
+        deleteFile(descriptorFile);
+        // XXX here we assume module file lives under a module-dedicated folder
+        IFile moduleFolder = descriptorFile.getParent();
         if (moduleFolder != null && deleteDirIfEmpty(moduleFolder)) {
           moduleFolder.delete();
         }
