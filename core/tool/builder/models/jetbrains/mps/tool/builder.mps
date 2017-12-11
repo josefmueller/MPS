@@ -639,16 +639,48 @@
                 </node>
               </node>
               <node concept="2GrKxI" id="63P3E8$mb3X" role="2Gsz3X">
-                <property role="TrG5h" value="lib" />
+                <property role="TrG5h" value="folder" />
               </node>
               <node concept="3clFbS" id="63P3E8$mb3Y" role="2LFqv$">
+                <node concept="3clFbJ" id="6$EJ2Rfi6NU" role="3cqZAp">
+                  <node concept="3clFbS" id="6$EJ2Rfi6NW" role="3clFbx">
+                    <node concept="3clFbF" id="6$EJ2RfibRf" role="3cqZAp">
+                      <node concept="1rXfSq" id="6$EJ2RfibRd" role="3clFbG">
+                        <ref role="37wK5l" node="KL8Aqlj5zm" resolve="warning" />
+                        <node concept="3cpWs3" id="6$EJ2RficmN" role="37wK5m">
+                          <node concept="2GrUjf" id="6$EJ2Rficnw" role="3uHU7w">
+                            <ref role="2Gs0qQ" node="63P3E8$mb3X" resolve="folder" />
+                          </node>
+                          <node concept="Xl_RD" id="6$EJ2RfibTV" role="3uHU7B">
+                            <property role="Xl_RC" value="Modules folder does not exist: " />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="6$EJ2Rfi6Ze" role="3clFbw">
+                    <node concept="2OqwBi" id="6$EJ2Rfiaw4" role="3fr31v">
+                      <node concept="2ShNRf" id="6$EJ2Rfi87I" role="2Oq$k0">
+                        <node concept="1pGfFk" id="6$EJ2Rfi9Q6" role="2ShVmc">
+                          <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                          <node concept="2GrUjf" id="6$EJ2Rfia49" role="37wK5m">
+                            <ref role="2Gs0qQ" node="63P3E8$mb3X" resolve="folder" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6$EJ2Rfiblj" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="63P3E8$mb3Z" role="3cqZAp">
                   <node concept="37vLTI" id="63P3E8$mb40" role="3clFbG">
                     <node concept="2OqwBi" id="63P3E8$mb41" role="37vLTx">
                       <node concept="liA8E" id="63P3E8$mb42" role="2OqNvi">
                         <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
                         <node concept="2GrUjf" id="63P3E8$mb43" role="37wK5m">
-                          <ref role="2Gs0qQ" node="63P3E8$mb3X" resolve="lib" />
+                          <ref role="2Gs0qQ" node="63P3E8$mb3X" resolve="folder" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="63P3E8$mb44" role="2Oq$k0">
@@ -672,16 +704,48 @@
                 </node>
               </node>
               <node concept="2GrKxI" id="63P3E8$mb4a" role="2Gsz3X">
-                <property role="TrG5h" value="lib" />
+                <property role="TrG5h" value="file" />
               </node>
               <node concept="3clFbS" id="63P3E8$mb4b" role="2LFqv$">
+                <node concept="3clFbJ" id="6$EJ2RficBv" role="3cqZAp">
+                  <node concept="3clFbS" id="6$EJ2RficBw" role="3clFbx">
+                    <node concept="3clFbF" id="6$EJ2RficBx" role="3cqZAp">
+                      <node concept="1rXfSq" id="6$EJ2RficBy" role="3clFbG">
+                        <ref role="37wK5l" node="KL8Aqlj5zm" resolve="warning" />
+                        <node concept="3cpWs3" id="6$EJ2RficBz" role="37wK5m">
+                          <node concept="2GrUjf" id="6$EJ2RficB$" role="3uHU7w">
+                            <ref role="2Gs0qQ" node="63P3E8$mb4a" resolve="file" />
+                          </node>
+                          <node concept="Xl_RD" id="6$EJ2RficB_" role="3uHU7B">
+                            <property role="Xl_RC" value="Module file does not exist: " />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3fqX7Q" id="6$EJ2RficBA" role="3clFbw">
+                    <node concept="2OqwBi" id="6$EJ2RficBB" role="3fr31v">
+                      <node concept="2ShNRf" id="6$EJ2RficBC" role="2Oq$k0">
+                        <node concept="1pGfFk" id="6$EJ2RficBD" role="2ShVmc">
+                          <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                          <node concept="2GrUjf" id="6$EJ2RficBE" role="37wK5m">
+                            <ref role="2Gs0qQ" node="63P3E8$mb4a" resolve="file" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="6$EJ2RficBF" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="63P3E8$mb4c" role="3cqZAp">
                   <node concept="37vLTI" id="63P3E8$mb4d" role="3clFbG">
                     <node concept="2OqwBi" id="63P3E8$mb4e" role="37vLTx">
                       <node concept="liA8E" id="63P3E8$mb4f" role="2OqNvi">
                         <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
                         <node concept="2GrUjf" id="63P3E8$mb4g" role="37wK5m">
-                          <ref role="2Gs0qQ" node="63P3E8$mb4a" resolve="lib" />
+                          <ref role="2Gs0qQ" node="63P3E8$mb4a" resolve="file" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="63P3E8$mb4h" role="2Oq$k0">

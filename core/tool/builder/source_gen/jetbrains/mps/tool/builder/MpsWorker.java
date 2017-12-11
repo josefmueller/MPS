@@ -14,9 +14,9 @@ import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.common.RepositoryDescriptor;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.io.File;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -89,11 +89,17 @@ public abstract class MpsWorker {
         config = config.withBootstrapLibraries().withWorkbenchPath();
       }
       // todo make this code more typed 
-      for (String lib : repo.folders) {
-        config = config.addLib(lib);
+      for (String folder : repo.folders) {
+        if (!(new File(folder).exists())) {
+          warning("Modules folder does not exist: " + folder);
+        }
+        config = config.addLib(folder);
       }
-      for (String lib : repo.files) {
-        config = config.addLib(lib);
+      for (String file : repo.files) {
+        if (!(new File(file).exists())) {
+          warning("Module file does not exist: " + file);
+        }
+        config = config.addLib(file);
       }
     } else {
       config = config.withBootstrapLibraries().withWorkbenchPath();
