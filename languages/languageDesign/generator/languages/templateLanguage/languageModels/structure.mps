@@ -726,7 +726,7 @@
       <property role="20kJfa" value="template" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1167514355421" />
-      <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="PrWs8" id="W$jG3B1L72" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />

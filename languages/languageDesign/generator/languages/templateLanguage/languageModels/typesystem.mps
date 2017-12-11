@@ -4308,9 +4308,7 @@
       <node concept="3cpWs8" id="6j1nfBdBP1l" role="3cqZAp">
         <node concept="3cpWsn" id="6j1nfBdBP1m" role="3cpWs9">
           <property role="TrG5h" value="template" />
-          <node concept="3Tqbb2" id="6j1nfBdBP1n" role="1tU5fm">
-            <ref role="ehGHo" to="tpck:h0TrEE$" resolve="INamedConcept" />
-          </node>
+          <node concept="3Tqbb2" id="6j1nfBdBP1n" role="1tU5fm" />
           <node concept="2OqwBi" id="6j1nfBdBP1o" role="33vP2m">
             <node concept="1YBJjd" id="6j1nfBdBP1p" role="2Oq$k0">
               <ref role="1YBMHb" node="6j1nfBdBP2i" resolve="rule" />

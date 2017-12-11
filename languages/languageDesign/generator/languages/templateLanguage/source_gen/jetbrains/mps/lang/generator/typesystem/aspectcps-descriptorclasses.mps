@@ -8509,9 +8509,7 @@
         <node concept="3cpWs8" id="KK" role="3cqZAp">
           <node concept="3cpWsn" id="KN" role="3cpWs9">
             <property role="TrG5h" value="template" />
-            <node concept="3Tqbb2" id="KO" role="1tU5fm">
-              <ref role="ehGHo" to="tpck:h0TrEE$" resolve="INamedConcept" />
-            </node>
+            <node concept="3Tqbb2" id="KO" role="1tU5fm" />
             <node concept="2OqwBi" id="KP" role="33vP2m">
               <node concept="37vLTw" id="KQ" role="2Oq$k0">
                 <ref role="3cqZAo" node="KC" resolve="rule" />
