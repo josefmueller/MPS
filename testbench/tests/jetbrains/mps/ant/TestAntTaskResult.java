@@ -53,6 +53,11 @@ public class TestAntTaskResult {
   }
 
   @Test
+  public void testRepository_JDK() {
+    testResult();
+  }
+
+  @Test
   public void testSimpleMigration() {
     testResult();
   }
