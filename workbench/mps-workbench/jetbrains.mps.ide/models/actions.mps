@@ -187,7 +187,6 @@
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="lgib" ref="r:3d049421-2cf2-4818-944e-c4d825789632(jetbrains.mps.lang.core.findUsages)" />
-    <import index="vq9d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.reflectiveEditor(MPS.Editor/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -37404,60 +37403,6 @@
       </node>
       <node concept="17QB3L" id="2aZcM6jmJCS" role="3clF45" />
       <node concept="3clFbS" id="2aZcM6jmAsL" role="3clF47">
-        <node concept="3cpWs8" id="2aZcM6jmYo2" role="3cqZAp">
-          <node concept="3cpWsn" id="2aZcM6jmYo1" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="path" />
-            <node concept="2EnYce" id="4CR$89e_IxK" role="33vP2m">
-              <node concept="2OqwBi" id="2aZcM6jmYo4" role="2Oq$k0">
-                <node concept="1eOMI4" id="2aZcM6jmYo8" role="2Oq$k0">
-                  <node concept="10QFUN" id="2aZcM6jmYo5" role="1eOMHV">
-                    <node concept="37vLTw" id="2aZcM6jmYo6" role="10QFUP">
-                      <ref role="3cqZAo" node="2aZcM6jmNiw" resolve="module" />
-                    </node>
-                    <node concept="3uibUv" id="2aZcM6jmYo7" role="10QFUM">
-                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="2aZcM6jmYo9" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
-                </node>
-              </node>
-              <node concept="liA8E" id="4CR$89e_HIM" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
-              </node>
-            </node>
-            <node concept="17QB3L" id="4CR$89e_HME" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="2aZcM6jmYoa" role="3cqZAp">
-          <node concept="3clFbC" id="2aZcM6jmYob" role="3clFbw">
-            <node concept="37vLTw" id="2aZcM6jmYoc" role="3uHU7B">
-              <ref role="3cqZAo" node="2aZcM6jmYo1" resolve="path" />
-            </node>
-            <node concept="10Nm6u" id="2aZcM6jmYod" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="2aZcM6jmYog" role="3clFbx">
-            <node concept="abc8K" id="4CR$89e_GFy" role="3cqZAp">
-              <node concept="Xl_RD" id="4CR$89e_Iyo" role="abp_N">
-                <property role="Xl_RC" value="null path for " />
-              </node>
-              <node concept="2OqwBi" id="4CR$89e_IGb" role="abp_N">
-                <node concept="liA8E" id="4CR$89e_Ja3" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                </node>
-                <node concept="37vLTw" id="4CR$89e_IC8" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2aZcM6jmNiw" resolve="module" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="2aZcM6jmYoe" role="3cqZAp">
-              <node concept="10Nm6u" id="2aZcM6jmYof" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2aZcM6jnrP1" role="3cqZAp" />
         <node concept="3clFbJ" id="3sQjGS1pw4P" role="3cqZAp">
           <node concept="3clFbS" id="3sQjGS1pw4R" role="3clFbx">
             <node concept="3cpWs6" id="3sQjGS1pwPQ" role="3cqZAp">

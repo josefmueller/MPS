@@ -16,7 +16,6 @@ import jetbrains.mps.module.ReloadableModule;
 import com.intellij.ide.plugins.cl.PluginClassLoader;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
-import jetbrains.mps.vfs.IFile;
 
 public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -64,12 +63,6 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     }
   }
   /*package*/ String getPluginIdForModule(SModule module, final AnActionEvent event) {
-    String path = check_z7ebk9_a0a0g(((AbstractModule) module).getModuleSourceDir());
-    if (path == null) {
-      System.out.println("null path for " + module.getModuleName());
-      return null;
-    }
-
     if (!(module instanceof ReloadableModule)) {
       return null;
     }
@@ -92,11 +85,5 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     moduleDescriptor.addFacetDescriptor(facet);
     moduleDescriptor.updateFacetDescriptor(facet);
     ((AbstractModule) module).save();
-  }
-  private static String check_z7ebk9_a0a0g(IFile checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getPath();
-    }
-    return null;
   }
 }
