@@ -3461,9 +3461,7 @@
     <node concept="2tJIrI" id="6_MLfNWH$be" role="jymVt" />
     <node concept="2YIFZL" id="3Ic$I9I8GWh" role="jymVt">
       <property role="TrG5h" value="getRootRuleTemplateNode" />
-      <node concept="3Tqbb2" id="3Ic$I9I8GWl" role="3clF45">
-        <ref role="ehGHo" to="tpck:h0TrEE$" resolve="INamedConcept" />
-      </node>
+      <node concept="3Tqbb2" id="3Ic$I9I8GWl" role="3clF45" />
       <node concept="3Tm1VV" id="3Ic$I9I8GWj" role="1B3o_S" />
       <node concept="3clFbS" id="3Ic$I9I8GWk" role="3clF47">
         <node concept="3clFbF" id="3Ic$I9I8GWo" role="3cqZAp">

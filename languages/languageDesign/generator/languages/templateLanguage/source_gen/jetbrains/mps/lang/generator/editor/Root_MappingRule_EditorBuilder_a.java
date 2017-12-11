@@ -500,7 +500,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
       }, myNode);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-      editorCell.setCellId("ReadOnlyModelAccessor_pxqe0v_a0d0");
+      editorCell.setCellId("templateName");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
