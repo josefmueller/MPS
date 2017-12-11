@@ -5100,75 +5100,75 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineFieldOperationRefactoringOnBinaryInDeclaration_Test" file="InlineFieldOperationRefactoringOnBinaryInDeclaration_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineFieldOperationRefactoringOnBinary_Test" file="InlineFieldOperationRefactoringOnBinary_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineFieldRefactoringOnBinaryInDeclaration_Test" file="InlineFieldRefactoringOnBinaryInDeclaration_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineFieldRefactoringOnBinary_Test" file="InlineFieldRefactoringOnBinary_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineRefactoringOnBinary_Test" file="InlineRefactoringOnBinary_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineRefactoringOnCastInDeclaration_Test" file="InlineRefactoringOnCastInDeclaration_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineRefactoringOnCast_Test" file="InlineRefactoringOnCast_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InlineRefactoringOnTernary_Test" file="InlineRefactoringOnTernary_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.editorTest.InsertBeforeInIf_Test" file="InsertBeforeInIf_Test.java">
