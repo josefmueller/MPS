@@ -2889,6 +2889,246 @@
       <unit id="6791439617122628436" at="19,0,44,0" name="jetbrains.mps.refactoringTest.ConvertAnonymousAbstractClassTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066808584">
+    <file name="InlineVariableBinaryInBinary_Test.java">
+      <node id="6923327169066808584" at="22,60,23,114" concept="1" />
+      <node id="6923327169066808584" at="23,114,24,123" concept="1" />
+      <node id="6923327169066808585" at="29,62,30,41" concept="1" />
+      <node id="6923327169066808585" at="30,41,31,41" concept="1" />
+      <node id="6923327169066808588" at="31,41,32,339" concept="5" />
+      <node id="6923327169066808593" at="32,339,33,26" concept="1" />
+      <node id="6923327169066808597" at="34,7,35,340" concept="5" />
+      <node id="6923327169066808597" at="35,340,36,339" concept="5" />
+      <node id="6923327169066808597" at="36,339,37,151" concept="1" />
+      <node id="6923327169066808584" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066808597" at="33,26,38,7" concept="0" />
+      <node id="6923327169066808585" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066808584" at="22,60,24,123" />
+      <scope id="6923327169066808597" at="34,7,37,151">
+        <var name="nodesAfter" id="6923327169066808597" />
+        <var name="nodesBefore" id="6923327169066808597" />
+      </scope>
+      <scope id="6923327169066808584" at="21,0,26,0" />
+      <scope id="6923327169066808585" at="29,62,38,7">
+        <var name="ref" id="6923327169066808589" />
+      </scope>
+      <scope id="6923327169066808585" at="29,0,40,0" />
+      <unit id="6923327169066808584" at="27,0,43,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinary_Test$TestBody" />
+      <unit id="6923327169066808584" at="19,0,44,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinary_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066891894">
+    <file name="InlineVariableBinaryInCast_Test.java">
+      <node id="6923327169066891894" at="22,60,23,114" concept="1" />
+      <node id="6923327169066891894" at="23,114,24,121" concept="1" />
+      <node id="6923327169066891895" at="29,62,30,41" concept="1" />
+      <node id="6923327169066891895" at="30,41,31,41" concept="1" />
+      <node id="6923327169066891898" at="31,41,32,339" concept="5" />
+      <node id="6923327169066891903" at="32,339,33,26" concept="1" />
+      <node id="6923327169066891907" at="34,7,35,340" concept="5" />
+      <node id="6923327169066891907" at="35,340,36,339" concept="5" />
+      <node id="6923327169066891907" at="36,339,37,151" concept="1" />
+      <node id="6923327169066891894" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066891907" at="33,26,38,7" concept="0" />
+      <node id="6923327169066891895" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066891894" at="22,60,24,121" />
+      <scope id="6923327169066891907" at="34,7,37,151">
+        <var name="nodesAfter" id="6923327169066891907" />
+        <var name="nodesBefore" id="6923327169066891907" />
+      </scope>
+      <scope id="6923327169066891894" at="21,0,26,0" />
+      <scope id="6923327169066891895" at="29,62,38,7">
+        <var name="ref" id="6923327169066891899" />
+      </scope>
+      <scope id="6923327169066891895" at="29,0,40,0" />
+      <unit id="6923327169066891894" at="27,0,43,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInCast_Test$TestBody" />
+      <unit id="6923327169066891894" at="19,0,44,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInCast_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066897727">
+    <file name="InlineVariableBinaryInCastOnDeclaration_Test.java">
+      <node id="6923327169066897727" at="22,60,23,114" concept="1" />
+      <node id="6923327169066897727" at="23,114,24,134" concept="1" />
+      <node id="6923327169066897728" at="29,62,30,41" concept="1" />
+      <node id="6923327169066897728" at="30,41,31,41" concept="1" />
+      <node id="6923327169066897731" at="31,41,32,346" concept="5" />
+      <node id="6923327169066897736" at="32,346,33,26" concept="1" />
+      <node id="6923327169066897740" at="34,7,35,340" concept="5" />
+      <node id="6923327169066897740" at="35,340,36,339" concept="5" />
+      <node id="6923327169066897740" at="36,339,37,151" concept="1" />
+      <node id="6923327169066897727" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066897740" at="33,26,38,7" concept="0" />
+      <node id="6923327169066897728" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066897727" at="22,60,24,134" />
+      <scope id="6923327169066897740" at="34,7,37,151">
+        <var name="nodesAfter" id="6923327169066897740" />
+        <var name="nodesBefore" id="6923327169066897740" />
+      </scope>
+      <scope id="6923327169066897727" at="21,0,26,0" />
+      <scope id="6923327169066897728" at="29,62,38,7">
+        <var name="ref" id="6923327169066897732" />
+      </scope>
+      <scope id="6923327169066897728" at="29,0,40,0" />
+      <unit id="6923327169066897727" at="27,0,43,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInCastOnDeclaration_Test$TestBody" />
+      <unit id="6923327169066897727" at="19,0,44,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInCastOnDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066955742">
+    <file name="InlineVariableBinaryInBinaryOnDeclaration_Test.java">
+      <node id="6923327169066955742" at="22,60,23,114" concept="1" />
+      <node id="6923327169066955742" at="23,114,24,136" concept="1" />
+      <node id="6923327169066955743" at="29,62,30,41" concept="1" />
+      <node id="6923327169066955743" at="30,41,31,41" concept="1" />
+      <node id="6923327169066955746" at="31,41,32,346" concept="5" />
+      <node id="6923327169066955751" at="32,346,33,26" concept="1" />
+      <node id="6923327169066955755" at="34,7,35,340" concept="5" />
+      <node id="6923327169066955755" at="35,340,36,339" concept="5" />
+      <node id="6923327169066955755" at="36,339,37,151" concept="1" />
+      <node id="6923327169066955742" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066955755" at="33,26,38,7" concept="0" />
+      <node id="6923327169066955743" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066955742" at="22,60,24,136" />
+      <scope id="6923327169066955755" at="34,7,37,151">
+        <var name="nodesAfter" id="6923327169066955755" />
+        <var name="nodesBefore" id="6923327169066955755" />
+      </scope>
+      <scope id="6923327169066955742" at="21,0,26,0" />
+      <scope id="6923327169066955743" at="29,62,38,7">
+        <var name="ref" id="6923327169066955747" />
+      </scope>
+      <scope id="6923327169066955743" at="29,0,40,0" />
+      <unit id="6923327169066955742" at="27,0,43,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinaryOnDeclaration_Test$TestBody" />
+      <unit id="6923327169066955742" at="19,0,44,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInBinaryOnDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066964256">
+    <file name="InlineFieldOperationBinary_Test.java">
+      <node id="6923327169066964256" at="22,60,23,114" concept="1" />
+      <node id="6923327169066964256" at="23,114,24,121" concept="1" />
+      <node id="6923327169066964257" at="29,62,30,41" concept="1" />
+      <node id="6923327169066964257" at="30,41,31,41" concept="1" />
+      <node id="6923327169067097923" at="31,41,32,345" concept="1" />
+      <node id="6923327169066964269" at="33,7,34,340" concept="5" />
+      <node id="6923327169066964269" at="34,340,35,339" concept="5" />
+      <node id="6923327169066964269" at="35,339,36,151" concept="1" />
+      <node id="6923327169066964256" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066964269" at="32,345,37,7" concept="0" />
+      <node id="6923327169066964257" at="29,0,39,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066964256" at="22,60,24,121" />
+      <scope id="6923327169066964269" at="33,7,36,151">
+        <var name="nodesAfter" id="6923327169066964269" />
+        <var name="nodesBefore" id="6923327169066964269" />
+      </scope>
+      <scope id="6923327169066964256" at="21,0,26,0" />
+      <scope id="6923327169066964257" at="29,62,37,7" />
+      <scope id="6923327169066964257" at="29,0,39,0" />
+      <unit id="6923327169066964256" at="27,0,42,0" name="jetbrains.mps.refactoringTest.InlineFieldOperationBinary_Test$TestBody" />
+      <unit id="6923327169066964256" at="19,0,43,0" name="jetbrains.mps.refactoringTest.InlineFieldOperationBinary_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066983460">
+    <file name="InlineFieldOperationBinaryOnDeclaration_Test.java">
+      <node id="6923327169066983460" at="22,60,23,114" concept="1" />
+      <node id="6923327169066983460" at="23,114,24,134" concept="1" />
+      <node id="6923327169066983461" at="29,62,30,41" concept="1" />
+      <node id="6923327169066983461" at="30,41,31,41" concept="1" />
+      <node id="6923327169067101874" at="31,41,32,337" concept="1" />
+      <node id="6923327169066983473" at="33,7,34,340" concept="5" />
+      <node id="6923327169066983473" at="34,340,35,339" concept="5" />
+      <node id="6923327169066983473" at="35,339,36,151" concept="1" />
+      <node id="6923327169066983460" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066983473" at="32,337,37,7" concept="0" />
+      <node id="6923327169066983461" at="29,0,39,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066983460" at="22,60,24,134" />
+      <scope id="6923327169066983473" at="33,7,36,151">
+        <var name="nodesAfter" id="6923327169066983473" />
+        <var name="nodesBefore" id="6923327169066983473" />
+      </scope>
+      <scope id="6923327169066983460" at="21,0,26,0" />
+      <scope id="6923327169066983461" at="29,62,37,7" />
+      <scope id="6923327169066983461" at="29,0,39,0" />
+      <unit id="6923327169066983460" at="27,0,42,0" name="jetbrains.mps.refactoringTest.InlineFieldOperationBinaryOnDeclaration_Test$TestBody" />
+      <unit id="6923327169066983460" at="19,0,43,0" name="jetbrains.mps.refactoringTest.InlineFieldOperationBinaryOnDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169066992495">
+    <file name="InlineFieldBinary_Test.java">
+      <node id="6923327169066992495" at="22,60,23,114" concept="1" />
+      <node id="6923327169066992495" at="23,114,24,112" concept="1" />
+      <node id="6923327169066992496" at="29,62,30,41" concept="1" />
+      <node id="6923327169066992496" at="30,41,31,41" concept="1" />
+      <node id="6923327169067094389" at="31,41,32,329" concept="1" />
+      <node id="6923327169066992508" at="33,7,34,340" concept="5" />
+      <node id="6923327169066992508" at="34,340,35,339" concept="5" />
+      <node id="6923327169066992508" at="35,339,36,151" concept="1" />
+      <node id="6923327169066992495" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169066992508" at="32,329,37,7" concept="0" />
+      <node id="6923327169066992496" at="29,0,39,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169066992495" at="22,60,24,112" />
+      <scope id="6923327169066992508" at="33,7,36,151">
+        <var name="nodesAfter" id="6923327169066992508" />
+        <var name="nodesBefore" id="6923327169066992508" />
+      </scope>
+      <scope id="6923327169066992495" at="21,0,26,0" />
+      <scope id="6923327169066992496" at="29,62,37,7" />
+      <scope id="6923327169066992496" at="29,0,39,0" />
+      <unit id="6923327169066992495" at="27,0,42,0" name="jetbrains.mps.refactoringTest.InlineFieldBinary_Test$TestBody" />
+      <unit id="6923327169066992495" at="19,0,43,0" name="jetbrains.mps.refactoringTest.InlineFieldBinary_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169067001394">
+    <file name="InlineFieldBinaryOnDeclaration_Test.java">
+      <node id="6923327169067001394" at="22,60,23,114" concept="1" />
+      <node id="6923327169067001394" at="23,114,24,125" concept="1" />
+      <node id="6923327169067001395" at="29,62,30,41" concept="1" />
+      <node id="6923327169067001395" at="30,41,31,41" concept="1" />
+      <node id="6923327169067001403" at="31,41,32,328" concept="1" />
+      <node id="6923327169067001407" at="33,7,34,340" concept="5" />
+      <node id="6923327169067001407" at="34,340,35,339" concept="5" />
+      <node id="6923327169067001407" at="35,339,36,151" concept="1" />
+      <node id="6923327169067001394" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169067001407" at="32,328,37,7" concept="0" />
+      <node id="6923327169067001395" at="29,0,39,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169067001394" at="22,60,24,125" />
+      <scope id="6923327169067001407" at="33,7,36,151">
+        <var name="nodesAfter" id="6923327169067001407" />
+        <var name="nodesBefore" id="6923327169067001407" />
+      </scope>
+      <scope id="6923327169067001394" at="21,0,26,0" />
+      <scope id="6923327169067001395" at="29,62,37,7" />
+      <scope id="6923327169067001395" at="29,0,39,0" />
+      <unit id="6923327169067001394" at="27,0,42,0" name="jetbrains.mps.refactoringTest.InlineFieldBinaryOnDeclaration_Test$TestBody" />
+      <unit id="6923327169067001394" at="19,0,43,0" name="jetbrains.mps.refactoringTest.InlineFieldBinaryOnDeclaration_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6923327169067008005">
+    <file name="InlineVariableBinaryInTernary_Test.java">
+      <node id="6923327169067008005" at="22,60,23,114" concept="1" />
+      <node id="6923327169067008005" at="23,114,24,124" concept="1" />
+      <node id="6923327169067008006" at="29,62,30,41" concept="1" />
+      <node id="6923327169067008006" at="30,41,31,41" concept="1" />
+      <node id="6923327169067008009" at="31,41,32,339" concept="5" />
+      <node id="6923327169067008014" at="32,339,33,26" concept="1" />
+      <node id="6923327169067008018" at="34,7,35,340" concept="5" />
+      <node id="6923327169067008018" at="35,340,36,339" concept="5" />
+      <node id="6923327169067008018" at="36,339,37,151" concept="1" />
+      <node id="6923327169067008005" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <node id="6923327169067008018" at="33,26,38,7" concept="0" />
+      <node id="6923327169067008006" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
+      <scope id="6923327169067008005" at="22,60,24,124" />
+      <scope id="6923327169067008018" at="34,7,37,151">
+        <var name="nodesAfter" id="6923327169067008018" />
+        <var name="nodesBefore" id="6923327169067008018" />
+      </scope>
+      <scope id="6923327169067008005" at="21,0,26,0" />
+      <scope id="6923327169067008006" at="29,62,38,7">
+        <var name="ref" id="6923327169067008010" />
+      </scope>
+      <scope id="6923327169067008006" at="29,0,40,0" />
+      <unit id="6923327169067008005" at="27,0,43,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInTernary_Test$TestBody" />
+      <unit id="6923327169067008005" at="19,0,44,0" name="jetbrains.mps.refactoringTest.InlineVariableBinaryInTernary_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/6974242407276765599">
     <file name="IntroduceVariableFromWildcards_Test.java">
       <node id="6974242407276765599" at="22,74,23,114" concept="1" />
