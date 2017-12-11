@@ -81,7 +81,7 @@
 
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <repository>
-        <module file="${basedir}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl"/>
+        <module file="${mps_build_home}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar"/>
       </repository>
     </custom>
 
@@ -95,7 +95,7 @@
 
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <repository>
-        <modules dir="${basedir}/languages/baseLanguage/baseLanguage/"/>
+        <module file="${mps_build_home}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar"/>
       </repository>
     </custom>
 
@@ -109,7 +109,7 @@
 
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.JDK} true">
       <repository>
-        <modules dir="${basedir}/lib/"/>
+        <modules dir="${mps_build_home}/lib/"/>
       </repository>
     </custom>
 
