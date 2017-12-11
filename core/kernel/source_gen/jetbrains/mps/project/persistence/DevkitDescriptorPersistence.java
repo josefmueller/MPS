@@ -11,10 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -66,77 +62,58 @@ public class DevkitDescriptorPersistence {
     }
   }
 
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.project.persistence.DevkitDescriptorPersistence#save(DevkitDescriptor) instance method} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static DevkitDescriptor loadDevKitDescriptor(IFile file) {
-    try {
-      Document document = JDOMUtil.loadDocument(file);
-      DevkitDescriptor descriptor = new DevkitDescriptorPersistence().load(document.getRootElement());
-      ModuleDescriptorPersistence.setTimestamp(descriptor, file);
-      return descriptor;
-    } catch (ModuleReadException ex) {
-      throw ex;
-    } catch (Exception e) {
-      throw new ModuleReadException(e);
-    }
-  }
-
   @NotNull
   public Element save(@NotNull final DevkitDescriptor descriptor) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        final Element result_raojav_a0a0a0g = new Element("dev-kit");
-        result_raojav_a0a0a0g.setAttribute("name", descriptor.getNamespace());
+        final Element result_raojav_a0a0a0e = new Element("dev-kit");
+        result_raojav_a0a0a0e.setAttribute("name", descriptor.getNamespace());
         if (descriptor.getId() != null) {
-          result_raojav_a0a0a0g.setAttribute("uuid", descriptor.getId().toString());
+          result_raojav_a0a0a0e.setAttribute("uuid", descriptor.getId().toString());
         }
 
         for (final SModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
-          result_raojav_a0a0a0g.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+          result_raojav_a0a0a0e.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
-              final Element result_raojav_a0a0a0a3a0a0a0g = new Element("exported-language");
-              result_raojav_a0a0a0a3a0a0a0g.setAttribute("name", lang.toString());
-              return result_raojav_a0a0a0a3a0a0a0g;
+              final Element result_raojav_a0a0a0a3a0a0a0e = new Element("exported-language");
+              result_raojav_a0a0a0a3a0a0a0e.setAttribute("name", lang.toString());
+              return result_raojav_a0a0a0a3a0a0a0e;
             }
           }.invoke());
         }
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
-          result_raojav_a0a0a0g.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+          result_raojav_a0a0a0e.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
-              final Element result_raojav_a0a0a0a5a0a0a0g = new Element("extendedDevKits");
+              final Element result_raojav_a0a0a0a5a0a0a0e = new Element("extendedDevKits");
               for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
-                result_raojav_a0a0a0a5a0a0a0g.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+                result_raojav_a0a0a0a5a0a0a0e.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
-                    final Element result_raojav_a0a0a0a0a0a0a0a5a0a0a0g = new Element("extendedDevKit");
-                    result_raojav_a0a0a0a0a0a0a0a5a0a0a0g.setText(ref.toString());
-                    return result_raojav_a0a0a0a0a0a0a0a5a0a0a0g;
+                    final Element result_raojav_a0a0a0a0a0a0a0a5a0a0a0e = new Element("extendedDevKit");
+                    result_raojav_a0a0a0a0a0a0a0a5a0a0a0e.setText(ref.toString());
+                    return result_raojav_a0a0a0a0a0a0a0a5a0a0a0e;
                   }
                 }.invoke());
               }
-              return result_raojav_a0a0a0a5a0a0a0g;
+              return result_raojav_a0a0a0a5a0a0a0e;
             }
           }.invoke());
         }
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
-          result_raojav_a0a0a0g.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+          result_raojav_a0a0a0e.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
-              final Element result_raojav_a0a0a0a7a0a0a0g = new Element("exported-solutions");
+              final Element result_raojav_a0a0a0a7a0a0a0e = new Element("exported-solutions");
               for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
-                result_raojav_a0a0a0a7a0a0a0g.addContent(new _FunctionTypes._return_P0_E0<Element>() {
+                result_raojav_a0a0a0a7a0a0a0e.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
-                    final Element result_raojav_a0a0a0a0a0a0a0a7a0a0a0g = new Element("exported-solution");
-                    result_raojav_a0a0a0a0a0a0a0a7a0a0a0g.setText(ref.toString());
-                    return result_raojav_a0a0a0a0a0a0a0a7a0a0a0g;
+                    final Element result_raojav_a0a0a0a0a0a0a0a7a0a0a0e = new Element("exported-solution");
+                    result_raojav_a0a0a0a0a0a0a0a7a0a0a0e.setText(ref.toString());
+                    return result_raojav_a0a0a0a0a0a0a0a7a0a0a0e;
                   }
                 }.invoke());
               }
-              return result_raojav_a0a0a0a7a0a0a0g;
+              return result_raojav_a0a0a0a7a0a0a0e;
             }
           }.invoke());
         }
@@ -144,10 +121,10 @@ public class DevkitDescriptorPersistence {
         if (descriptor.getAssociatedGenPlan() != null) {
           Element genPlanElement = new Element("generation-plan");
           genPlanElement.setAttribute("model", PersistenceFacade.getInstance().asString(descriptor.getAssociatedGenPlan()));
-          result_raojav_a0a0a0g.addContent(genPlanElement);
+          result_raojav_a0a0a0e.addContent(genPlanElement);
         }
 
-        return result_raojav_a0a0a0g;
+        return result_raojav_a0a0a0e;
       }
     }.invoke();
     return root;

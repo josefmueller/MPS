@@ -13,9 +13,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import java.util.List;
-import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -120,32 +117,6 @@ public class LanguageDescriptorPersistence {
     } catch (Exception ex) {
       throw new ModuleReadException(ex);
     }
-    return descriptor;
-  }
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.project.persistence.LanguageDescriptorPersistence#load(Element) instance method} instead.
-   */
-  @Deprecated
-  public static LanguageDescriptor loadLanguageDescriptor(final IFile file, MacroHelper macroHelper) {
-    LanguageDescriptor descriptor;
-
-    try {
-      Document document = JDOMUtil.loadDocument(file);
-      Element languageElement = document.getRootElement();
-      descriptor = new LanguageDescriptorPersistence(macroHelper).load(languageElement);
-    } catch (ModuleReadException ex) {
-      throw ex;
-    } catch (Exception e) {
-      throw new ModuleReadException(e);
-    }
-
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
-    for (GeneratorDescriptor gd : descriptor.getGenerators()) {
-      ModuleDescriptorPersistence.setTimestamp(gd, file);
-    }
-
     return descriptor;
   }
 

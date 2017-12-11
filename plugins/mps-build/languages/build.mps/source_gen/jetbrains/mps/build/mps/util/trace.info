@@ -3081,114 +3081,130 @@
   </root>
   <root nodeRef="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)/7444640161784526376">
     <file name="ModuleLoaderUtils.java">
-      <node id="8757919848289091451" at="29,108,30,49" concept="11" />
-      <node id="5177508097213614199" at="31,52,32,96" concept="12" />
-      <node id="5177508097213614205" at="33,59,34,96" concept="12" />
-      <node id="5177508097213614211" at="35,57,36,84" concept="12" />
-      <node id="8757919848289107317" at="37,5,38,87" concept="19" />
-      <node id="8757919848289100437" at="42,0,43,0" concept="6" trace="moduleSourceDir" />
-      <node id="7444640161785085582" at="43,0,44,0" concept="6" trace="myContext" />
-      <node id="7444640161785461140" at="44,0,45,0" concept="6" trace="myProject" />
-      <node id="7444640161786483110" at="45,0,46,0" concept="6" trace="reporter" />
-      <node id="8757919848289117892" at="47,125,48,45" concept="5" />
-      <node id="7444640161785085853" at="48,45,49,31" concept="5" />
-      <node id="7444640161785466352" at="49,31,50,36" concept="5" />
-      <node id="7444640161786616226" at="50,36,51,31" concept="5" />
-      <node id="8757919848289101907" at="55,25,56,20" concept="12" />
-      <node id="8757919848289101918" at="57,7,58,0" concept="14" />
-      <node id="8757919848289100561" at="59,77,60,63" concept="11" />
-      <node id="8757919848289100445" at="60,63,61,83" concept="12" />
-      <node id="8757919848289100836" at="63,34,64,38" concept="11" />
-      <node id="7141285424010638401" at="65,26,66,68" concept="11" />
-      <node id="7141285424010630894" at="66,68,67,95" concept="5" />
-      <node id="8757919848289101230" at="67,95,68,22" concept="12" />
-      <node id="8757919848289101207" at="69,9,70,0" concept="14" />
-      <node id="8757919848289101213" at="70,0,71,52" concept="11" />
-      <node id="8757919848289101683" at="71,52,72,27" concept="11" />
-      <node id="8757919848289101712" at="74,200,75,26" concept="5" />
-      <node id="8757919848289101739" at="75,26,76,18" concept="2" />
-      <node id="7141285424010590936" at="79,28,80,140" concept="5" />
-      <node id="8757919848289102079" at="80,140,81,22" concept="12" />
-      <node id="8757919848289102089" at="82,9,83,0" concept="14" />
-      <node id="8757919848289102215" at="83,0,84,112" concept="11" />
-      <node id="7141285424010602499" at="85,32,86,104" concept="11" />
-      <node id="7141285424010598890" at="86,104,87,130" concept="5" />
-      <node id="259899023428453013" at="87,130,88,22" concept="12" />
-      <node id="259899023428452953" at="89,9,90,0" concept="14" />
-      <node id="8757919848289102247" at="90,0,91,51" concept="11" />
-      <node id="8757919848289102259" at="91,51,92,118" concept="12" />
-      <node id="8757919848289100767" at="93,7,94,18" concept="12" />
-      <node id="8757919848289095101" at="97,55,98,63" concept="19" />
-      <node id="8757919848289101595" at="100,69,101,48" concept="12" />
-      <node id="8757919848289101823" at="54,53,57,7" concept="9" />
-      <node id="8757919848289101595" at="100,0,103,0" concept="16" trace="eq_krgnbt_a0a0f0d0g2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="8757919848289100183" at="58,0,62,7" concept="9" />
-      <node id="8757919848289101495" at="73,395,77,11" concept="9" />
-      <node id="8757919848289101758" at="78,9,82,9" concept="9" />
-      <node id="8757919848289095087" at="96,0,100,0" concept="10" trace="shrinkPath#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="8757919848289100918" at="64,38,69,9" concept="9" />
-      <node id="259899023428452958" at="84,112,89,9" concept="9" />
-      <node id="8757919848289095060" at="47,0,53,0" concept="3" trace="ModuleMacroHelper#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/build/util/Context;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/messages/IMessageHandler;)V" />
-      <node id="7325845222603761161" at="72,27,78,9" concept="8" />
-      <node id="5177508097213611961" at="30,49,37,5" concept="9" />
-      <node id="7444640161786702254" at="29,0,40,0" concept="16" trace="loadModuleDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/util/MacroHelper;)Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
-      <node id="8757919848289100782" at="62,7,93,7" concept="9" />
-      <node id="8757919848289095078" at="53,0,96,0" concept="10" trace="expandPath#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="5177508097213611963" at="31,52,32,96" />
-      <scope id="5177508097213611986" at="33,59,34,96" />
-      <scope id="5177508097213611993" at="35,57,36,84" />
-      <scope id="8757919848289101824" at="55,25,56,20" />
-      <scope id="8757919848289095093" at="97,55,98,63" />
-      <scope id="8757919848289101595" at="100,69,101,48" />
-      <scope id="8757919848289100184" at="59,77,61,83">
+      <node id="3519773938288278562" at="34,9,35,70" concept="11" />
+      <node id="1707568124276552285" at="35,70,36,47" concept="11" />
+      <node id="8757919848289091451" at="36,47,37,51" concept="11" />
+      <node id="5177508097213614199" at="38,54,39,68" concept="12" />
+      <node id="5177508097213614205" at="40,61,41,68" concept="12" />
+      <node id="5177508097213614211" at="42,59,43,60" concept="12" />
+      <node id="3519773938288344311" at="45,38,46,15" concept="19" />
+      <node id="842994667883030312" at="47,27,48,39" concept="19" />
+      <node id="8757919848289107317" at="49,5,50,87" concept="19" />
+      <node id="8757919848289100437" at="54,0,55,0" concept="6" trace="moduleSourceDir" />
+      <node id="7444640161785085582" at="55,0,56,0" concept="6" trace="myContext" />
+      <node id="7444640161785461140" at="56,0,57,0" concept="6" trace="myProject" />
+      <node id="7444640161786483110" at="57,0,58,0" concept="6" trace="reporter" />
+      <node id="8757919848289117892" at="59,125,60,45" concept="5" />
+      <node id="7444640161785085853" at="60,45,61,31" concept="5" />
+      <node id="7444640161785466352" at="61,31,62,36" concept="5" />
+      <node id="7444640161786616226" at="62,36,63,31" concept="5" />
+      <node id="8757919848289101907" at="67,25,68,20" concept="12" />
+      <node id="8757919848289101918" at="69,7,70,0" concept="14" />
+      <node id="8757919848289100561" at="71,77,72,63" concept="11" />
+      <node id="8757919848289100445" at="72,63,73,83" concept="12" />
+      <node id="8757919848289100836" at="75,34,76,38" concept="11" />
+      <node id="7141285424010638401" at="77,26,78,68" concept="11" />
+      <node id="7141285424010630894" at="78,68,79,95" concept="5" />
+      <node id="8757919848289101230" at="79,95,80,22" concept="12" />
+      <node id="8757919848289101207" at="81,9,82,0" concept="14" />
+      <node id="8757919848289101213" at="82,0,83,52" concept="11" />
+      <node id="8757919848289101683" at="83,52,84,27" concept="11" />
+      <node id="8757919848289101712" at="86,200,87,26" concept="5" />
+      <node id="8757919848289101739" at="87,26,88,18" concept="2" />
+      <node id="7141285424010590936" at="91,28,92,140" concept="5" />
+      <node id="8757919848289102079" at="92,140,93,22" concept="12" />
+      <node id="8757919848289102089" at="94,9,95,0" concept="14" />
+      <node id="8757919848289102215" at="95,0,96,112" concept="11" />
+      <node id="7141285424010602499" at="97,32,98,104" concept="11" />
+      <node id="7141285424010598890" at="98,104,99,130" concept="5" />
+      <node id="259899023428453013" at="99,130,100,22" concept="12" />
+      <node id="259899023428452953" at="101,9,102,0" concept="14" />
+      <node id="8757919848289102247" at="102,0,103,51" concept="11" />
+      <node id="8757919848289102259" at="103,51,104,118" concept="12" />
+      <node id="8757919848289100767" at="105,7,106,18" concept="12" />
+      <node id="8757919848289095101" at="109,55,110,63" concept="19" />
+      <node id="8757919848289101595" at="112,69,113,48" concept="12" />
+      <node id="8757919848289101823" at="66,53,69,7" concept="9" />
+      <node id="8757919848289101595" at="112,0,115,0" concept="16" trace="eq_krgnbt_a0a0f0d0g2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="8757919848289100183" at="70,0,74,7" concept="9" />
+      <node id="8757919848289101495" at="85,395,89,11" concept="9" />
+      <node id="8757919848289101758" at="90,9,94,9" concept="9" />
+      <node id="8757919848289095087" at="108,0,112,0" concept="10" trace="shrinkPath#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8757919848289100918" at="76,38,81,9" concept="9" />
+      <node id="259899023428452958" at="96,112,101,9" concept="9" />
+      <node id="8757919848289095060" at="59,0,65,0" concept="3" trace="ModuleMacroHelper#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/build/util/Context;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/messages/IMessageHandler;)V" />
+      <node id="7325845222603761161" at="84,27,90,9" concept="8" />
+      <node id="5177508097213611961" at="37,51,44,7" concept="9" />
+      <node id="842994667883030156" at="33,108,49,5" concept="20" />
+      <node id="7444640161786702254" at="33,0,52,0" concept="16" trace="loadModuleDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/util/MacroHelper;)Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
+      <node id="8757919848289100782" at="74,7,105,7" concept="9" />
+      <node id="8757919848289095078" at="65,0,108,0" concept="10" trace="expandPath#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="5177508097213611963" at="38,54,39,68" />
+      <scope id="5177508097213611986" at="40,61,41,68" />
+      <scope id="5177508097213611993" at="42,59,43,60" />
+      <scope id="3519773938288339283" at="45,0,46,15">
+        <var name="ex" id="3519773938288339284" />
+      </scope>
+      <scope id="3519773938288339286" at="45,38,46,15" />
+      <scope id="842994667883030306" at="47,0,48,39">
+        <var name="e" id="842994667883030307" />
+      </scope>
+      <scope id="842994667883030309" at="47,27,48,39" />
+      <scope id="8757919848289101824" at="67,25,68,20" />
+      <scope id="8757919848289095093" at="109,55,110,63" />
+      <scope id="8757919848289101595" at="112,69,113,48" />
+      <scope id="8757919848289100184" at="71,77,73,83">
         <var name="relPath" id="8757919848289100562" />
       </scope>
-      <scope id="8757919848289101497" at="74,200,76,18" />
-      <scope id="8757919848289101759" at="79,28,81,22" />
-      <scope id="8757919848289100919" at="65,26,68,22">
+      <scope id="8757919848289101497" at="86,200,88,18" />
+      <scope id="8757919848289101759" at="91,28,93,22" />
+      <scope id="8757919848289100919" at="77,26,80,22">
         <var name="msg" id="7141285424010638404" />
       </scope>
-      <scope id="259899023428452959" at="85,32,88,22">
+      <scope id="259899023428452959" at="97,32,100,22">
         <var name="msg" id="7141285424010602500" />
       </scope>
-      <scope id="8757919848289101595" at="100,0,103,0">
+      <scope id="8757919848289101595" at="112,0,115,0">
         <var name="a" id="8757919848289101595" />
         <var name="b" id="8757919848289101595" />
       </scope>
-      <scope id="8757919848289095063" at="47,125,51,31" />
-      <scope id="7325845222603761167" at="73,395,77,11" />
-      <scope id="8757919848289095087" at="96,0,100,0">
+      <scope id="8757919848289095063" at="59,125,63,31" />
+      <scope id="7325845222603761167" at="85,395,89,11" />
+      <scope id="8757919848289095087" at="108,0,112,0">
         <var name="string" id="8757919848289095090" />
       </scope>
-      <scope id="8757919848289095060" at="47,0,53,0">
+      <scope id="8757919848289095060" at="59,0,65,0">
         <var name="buildProject" id="1297803095922603850" />
         <var name="context" id="1297803095922603335" />
         <var name="moduleSourceDir" id="8757919848289117844" />
         <var name="reporter" id="7444640161786616170" />
       </scope>
-      <scope id="7325845222603761161" at="72,27,78,9">
+      <scope id="7325845222603761161" at="84,27,90,9">
         <var name="macro" id="7325845222603761163" />
       </scope>
-      <scope id="7444640161786702257" at="29,108,38,87">
+      <scope id="842994667883030157" at="34,9,44,7">
+        <var name="document" id="3519773938288278563" />
         <var name="path" id="8757919848289091452" />
+        <var name="root" id="1707568124276552286" />
       </scope>
-      <scope id="7444640161786702254" at="29,0,40,0">
+      <scope id="7444640161786702257" at="33,108,50,87" />
+      <scope id="7444640161786702254" at="33,0,52,0">
         <var name="helper" id="1297803095922412973" />
         <var name="moduleDescriptorFile" id="7444640161786702627" />
       </scope>
-      <scope id="8757919848289100783" at="63,34,92,118">
+      <scope id="8757919848289100783" at="75,34,104,118">
         <var name="found" id="8757919848289101684" />
         <var name="index" id="8757919848289100837" />
         <var name="localPath" id="8757919848289102216" />
         <var name="macroName" id="8757919848289101214" />
         <var name="relPath" id="8757919848289102248" />
       </scope>
-      <scope id="8757919848289095084" at="54,53,94,18" />
-      <scope id="8757919848289095078" at="53,0,96,0">
+      <scope id="8757919848289095084" at="66,53,106,18" />
+      <scope id="8757919848289095078" at="65,0,108,0">
         <var name="path" id="8757919848289095081" />
       </scope>
-      <unit id="8757919848289095058" at="41,0,104,0" name="jetbrains.mps.build.mps.util.ModuleLoaderUtils$ModuleMacroHelper" />
-      <unit id="7444640161784526376" at="28,0,105,0" name="jetbrains.mps.build.mps.util.ModuleLoaderUtils" />
+      <unit id="8757919848289095058" at="53,0,116,0" name="jetbrains.mps.build.mps.util.ModuleLoaderUtils$ModuleMacroHelper" />
+      <unit id="7444640161784526376" at="32,0,117,0" name="jetbrains.mps.build.mps.util.ModuleLoaderUtils" />
     </file>
   </root>
   <root nodeRef="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)/7444640161787506934">

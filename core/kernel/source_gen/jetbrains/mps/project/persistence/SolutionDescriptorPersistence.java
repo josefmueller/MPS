@@ -12,10 +12,6 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
 
 /**
  * XML/DOM persistence for a descriptor of Solution module
@@ -92,30 +88,6 @@ public class SolutionDescriptorPersistence {
     } catch (Exception ex) {
       throw new ModuleReadException(ex);
     }
-    return descriptor;
-  }
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.project.persistence.SolutionDescriptorPersistence#load(Element) instance method} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static SolutionDescriptor loadSolutionDescriptor(IFile file, MacroHelper macroHelper) {
-    SolutionDescriptor descriptor;
-    try {
-      Document document = JDOMUtil.loadDocument(file);
-      Element rootElement = document.getRootElement();
-
-      assert rootElement != null;
-      descriptor = new SolutionDescriptorPersistence(macroHelper).load(rootElement);
-
-    } catch (ModuleReadException ex) {
-      throw ex;
-    } catch (Exception e) {
-      throw new ModuleReadException(e);
-    }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 

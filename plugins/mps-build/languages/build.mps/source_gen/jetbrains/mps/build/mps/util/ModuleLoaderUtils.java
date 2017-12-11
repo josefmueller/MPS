@@ -5,10 +5,14 @@ package jetbrains.mps.build.mps.util;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
+import org.jdom.Element;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.build.util.Context;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.messages.IMessageHandler;
@@ -27,13 +31,21 @@ import jetbrains.mps.build.behavior.BuildFolderMacro__BehaviorDescriptor;
 
 public class ModuleLoaderUtils {
   /*package*/ static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, MacroHelper helper) {
-    String path = moduleDescriptorFile.getPath();
-    if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
-      return LanguageDescriptorPersistence.loadLanguageDescriptor(moduleDescriptorFile, helper);
-    } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
-      return SolutionDescriptorPersistence.loadSolutionDescriptor(moduleDescriptorFile, helper);
-    } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
-      return DevkitDescriptorPersistence.loadDevKitDescriptor(moduleDescriptorFile);
+    try {
+      Document document = JDOMUtil.loadDocument(moduleDescriptorFile);
+      Element root = document.getRootElement();
+      String path = moduleDescriptorFile.getPath();
+      if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
+        return new LanguageDescriptorPersistence(helper).load(root);
+      } else if (path.endsWith(MPSExtentions.DOT_SOLUTION)) {
+        return new SolutionDescriptorPersistence(helper).load(root);
+      } else if (path.endsWith(MPSExtentions.DOT_DEVKIT)) {
+        return new DevkitDescriptorPersistence().load(root);
+      }
+    } catch (ModuleReadException ex) {
+      throw ex;
+    } catch (Exception e) {
+      throw new ModuleReadException(e);
     }
     throw new RuntimeException("unknown file type: " + moduleDescriptorFile.getName());
   }
