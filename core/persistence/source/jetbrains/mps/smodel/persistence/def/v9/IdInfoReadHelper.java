@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,17 +134,17 @@ class IdInfoReadHelper {
   // Query. De-serialize ids, resolve indexes and retrieve meta-objects according to myInfoCollector state
 
   public SConcept readConcept(@NotNull String index) {
-    assert myConcepts.containsKey(index);
+    assert myConcepts.containsKey(index) : String.format("Bad concept index key: %s", index);
     return myConcepts.get(index);
   }
 
   public SProperty readProperty(@NotNull String index) {
-    assert myProperties.containsKey(index);
+    assert myProperties.containsKey(index) : String.format("Bad property index key: %s", index);
     return myProperties.get(index);
   }
 
   public SReferenceLink readAssociation(@NotNull String index) {
-    assert myAssociations.containsKey(index);
+    assert myAssociations.containsKey(index) : String.format("Bad association index key: %s", index);
     return myAssociations.get(index);
   }
 
@@ -153,7 +153,7 @@ class IdInfoReadHelper {
     if (index == null) {
       return null;
     }
-    assert myAggregations.containsKey(index);
+    assert myAggregations.containsKey(index) : String.format("Bad aggregation index key: %s", index);
     return myAggregations.get(index);
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
@@ -57,8 +57,8 @@ public class ModelReadException extends Exception {
       return "Couldn't read model because of invalid XML markup.\n" + cause.getMessage();
     } else if (cause instanceof SAXException) {
       return "Couldn't read model because of invalid SAX error.\n" + cause.getMessage();
-    } else if (cause != null) {
-      return "Couldn't read model.\n" + cause.getMessage();
+    } else if (cause != null && cause.getMessage() != null) {
+      return getMessage() + '\n' + cause.getMessage();
     } else {
       return getMessage();
     }

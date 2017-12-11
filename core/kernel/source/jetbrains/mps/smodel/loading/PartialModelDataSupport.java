@@ -89,7 +89,9 @@ public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupp
         }
         case FULLY_LOADED: {
           ModelLoadResult<T> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
-          if (myModel == null || fullModel.getModelData() == null) {
+          // when model fails to load (e.g. due to erroneous merge), fullModel.getModelData() could be instanceof InvalidSModel.
+          if (myModel == null || fullModel.getState() != ModelLoadingState.FULLY_LOADED) {
+            // no reason to go ahead and to try to update a model if there's nothing to update either in source or in destination
             res = fullModel;
           } else {
             myModel.enterUpdateMode();   //not to send events on changes
