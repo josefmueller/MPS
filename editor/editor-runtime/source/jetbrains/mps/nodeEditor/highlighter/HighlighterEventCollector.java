@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 package jetbrains.mps.nodeEditor.highlighter;
 
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
@@ -37,25 +37,25 @@ public class HighlighterEventCollector {
 
   private final List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
 
-  private final SModelCommandListener myAddCommandEventsListener = new SModelCommandListener() {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (RuntimeFlags.isTestMode()) return;
-      synchronized (myEventsLock) {
-        myLastEvents.addAll(events);
-      }
-    }
-  };
+  private ModelsEventsCollector myEventsCollector;
 
   // Listen to modelReplaced event.
   private final SRepositoryContentAdapter myModelReloadListener = new SRepositoryContentAdapter() {
+
+    @Override
+    protected boolean isIncluded(SModule module) {
+      return !module.isReadOnly();
+    }
+
     @Override
     protected void startListening(SModel model) {
       model.addModelListener(this);
+      getEventsCollector().startListeningToModel(model);
     }
 
     @Override
     protected void stopListening(SModel model) {
+      getEventsCollector().stopListeningToModel(model);
       model.removeModelListener(this);
     }
 
@@ -66,6 +66,10 @@ public class HighlighterEventCollector {
       }
     }
   };
+
+  /*package*/ ModelsEventsCollector getEventsCollector() {
+    return myEventsCollector;
+  }
 
   /**
    * Returns a copy of the internal list of collected events and clears the internal list.
@@ -82,16 +86,30 @@ public class HighlighterEventCollector {
   /**
    * Attach listeners to specified components.
    */
-  public void startListening(GlobalSModelEventsManager globalSModelEventsManager, SRepository repository) {
-    globalSModelEventsManager.addGlobalCommandListener(myAddCommandEventsListener);
+  public void startListening(SRepository repository) {
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
+    myEventsCollector = new ModelsEventsCollector(repository.getModelAccess()) {
+      @Override
+      protected void eventsHappened(List<SModelEvent> events) {
+        synchronized (myEventsLock) {
+          myLastEvents.addAll(events);
+        }
+      }
+    };
     new RepoListenerRegistrar(repository, myModelReloadListener).attach();
   }
 
   /**
    * Detach listeners previously attached to the components.
    */
-  public void stopListening(GlobalSModelEventsManager globalSModelEventsManager, SRepository repository) {
+  public void stopListening(SRepository repository) {
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
     new RepoListenerRegistrar(repository, myModelReloadListener).detach();
-    globalSModelEventsManager.removeGlobalCommandListener(myAddCommandEventsListener);
+    myEventsCollector.dispose();
+    myEventsCollector = null;
   }
 }

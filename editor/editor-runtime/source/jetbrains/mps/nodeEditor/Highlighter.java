@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,6 @@ import jetbrains.mps.nodeEditor.highlighter.IHighlighter;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import org.apache.log4j.LogManager;
@@ -78,7 +77,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   private final ApplicationAdapter myApplicationListener = new PauseDuringWriteAction();
   private final com.intellij.openapi.command.CommandAdapter myCommandListener = new PauseDuringCommandOrUndoTransparentAction();
 
-  private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   private ScheduledExecutorService myBackgroundExecutor;
   private ScheduleHighlighterUpdate myScheduleHighlighterUpdate;
@@ -122,7 +120,6 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     myMPSProject = mpsProject;
     myProject = project;
     myEditorList = new HighlighterEditorList(fileEditorManager);
-    myGlobalSModelEventsManager = coreComponents.getGlobalSModelEventsManager();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     myInspectorTool = inspector;
   }
@@ -130,7 +127,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
   @Override
   public void projectOpened() {
     myClassLoaderManager.addClassesHandler(myClassesListener);
-    myEventCollector.startListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
+    myEventCollector.startListening(myMPSProject.getRepository());
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -162,7 +159,7 @@ public class Highlighter implements IHighlighter, ProjectComponent {
     myMPSProject.getModelAccess().removeCommandListener(myCommandWatcher);
     CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
-    myEventCollector.stopListening(myGlobalSModelEventsManager, myMPSProject.getRepository());
+    myEventCollector.stopListening(myMPSProject.getRepository());
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;

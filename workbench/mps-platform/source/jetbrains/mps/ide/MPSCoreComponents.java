@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -101,14 +100,5 @@ public class MPSCoreComponents implements ApplicationComponent {
   @ToRemove(version = 0)
   public MPSModuleRepository getModuleRepository() {
     return myPlatform.findComponent(MPSModuleRepository.class);
-  }
-
-  /**
-   * @deprecated it's our implementation part, shall drop once no uses
-   */
-  @Deprecated
-  @ToRemove(version = 0)
-  public GlobalSModelEventsManager getGlobalSModelEventsManager() {
-    return GlobalSModelEventsManager.getInstance();
   }
 }

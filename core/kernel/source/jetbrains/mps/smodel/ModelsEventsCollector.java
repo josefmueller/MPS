@@ -38,6 +38,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * NOTE: USE OF THIS CLASS IS DISCOURAGED AS IT DEALS WITH LEGACY MODEL CHANGE NOTIFICATIONS
+ *
  * This class serves as a composite listener to events which come from multiple models during Command
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess#executeCommand(Runnable)
@@ -50,6 +52,8 @@ public abstract class ModelsEventsCollector {
    */
   private final Object myEventsLock = new Object();
 
+  private final org.jetbrains.mps.openapi.module.ModelAccess myModelAccess;
+
   private List<SModelEvent> myEvents = new ArrayList<>();
   private SModelListener myModelListener = new SModelDelegateListener();
   private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
@@ -59,8 +63,17 @@ public abstract class ModelsEventsCollector {
   private boolean myIsInCommand;
 
   public ModelsEventsCollector() {
-    ModelAccess.instance().addCommandListener(myCommandListener);
-    myIsInCommand = ModelAccess.instance().isInsideCommand();
+    this(ModelAccess.instance());
+  }
+
+  /**
+   * Support transition from legacy listeners to contemporary.
+   */
+  public ModelsEventsCollector(@NotNull org.jetbrains.mps.openapi.module.ModelAccess modelAccess) {
+    myModelAccess = modelAccess;
+    // XXX In fact, I don't see a reason to care about isInCommand state (and keep isCommandAction).
+    myIsInCommand = modelAccess.isCommandAction();
+    myModelAccess.addCommandListener(myCommandListener);
   }
 
   public void startListeningToModel(@NotNull SModel sm) {
@@ -90,7 +103,13 @@ public abstract class ModelsEventsCollector {
       myEvents = new ArrayList<>();
     }
 
-    ModelAccess.instance().runWriteAction(() -> eventsHappened(wrappedEvents));
+    if (myModelAccess.canWrite()) {
+      // in most cases, we are inside commandFinished() which is part of write action already
+      eventsHappened(wrappedEvents);
+    } else {
+      // there is code in editor that doesn flush() from unidentified state.
+      myModelAccess.runWriteAction(() -> eventsHappened(wrappedEvents));
+    }
   }
 
   /**
@@ -108,10 +127,10 @@ public abstract class ModelsEventsCollector {
   public void dispose() {
     checkNotDisposed();
 
-    for (SModel sm : new LinkedHashSet<SModel>(myModelsToListen)) {
+    for (SModel sm : new ArrayList<>(myModelsToListen)) {
       stopListeningToModel(sm);
     }
-    ModelAccess.instance().removeCommandListener(myCommandListener);
+    myModelAccess.removeCommandListener(myCommandListener);
     myDisposed = true;
   }
 
