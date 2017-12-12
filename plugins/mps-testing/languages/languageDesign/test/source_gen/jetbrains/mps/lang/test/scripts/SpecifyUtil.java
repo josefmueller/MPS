@@ -6,8 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.errors.item.NodeReportItem;
+import java.lang.ref.WeakReference;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -21,9 +22,25 @@ public class SpecifyUtil {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
   }
 
+  private static WeakReference<TestsErrorsChecker> ourLastCheck;
+  private static long ourLastTimestamp = 0;
+
   public static Iterable<NodeReportItem> getErrorReporters(SNode node) {
-    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
-    return checker.getErrors(node);
+    // FIXME ugly performance hack to avoid recalculation of node errors to replace another ugly hack with global command listener in TestsErrorsChecker 
+    // Would be great to have TestsErrorsChecker cached right inside SpecifyRuleReferences intention, but it's not possible to have custom field there. 
+    SNode containingRoot = SNodeOperations.getContainingRoot(node);
+    Iterable<NodeReportItem> errors;
+    TestsErrorsChecker checker = (ourLastCheck == null ? null : ourLastCheck.get());
+    // I assume that user can't change a node in 5 seconds %-/ 
+    //  it's mostly for isApplicable/execute pair in SpecifyRuleReferences intention 
+    if (checker == null || checker.getRoot() != containingRoot || ourLastTimestamp + 5000 < System.currentTimeMillis()) {
+      checker = new TestsErrorsChecker(containingRoot);
+      errors = checker.getErrors(node);
+      ourLastTimestamp = System.currentTimeMillis();
+    } else {
+      errors = checker.getErrors(node);
+    }
+    return errors;
   }
 
   public static void fillContainerWithRuleMessages(SNode node) {

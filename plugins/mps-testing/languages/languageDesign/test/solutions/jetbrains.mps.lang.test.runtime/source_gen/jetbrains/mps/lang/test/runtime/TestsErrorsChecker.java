@@ -6,17 +6,10 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import java.util.List;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.ModuleReloadListener;
-import java.util.Set;
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.MessageStatus;
+import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Consumer;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.List;
 import jetbrains.mps.checkers.IChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -44,44 +38,21 @@ import org.jetbrains.annotations.Nullable;
 @Deprecated
 public class TestsErrorsChecker {
   private static final Logger LOG = LogManager.getLogger(TestsErrorsChecker.class);
-  private SNode myRoot;
+  private final SNode myRoot;
 
   /**
    * contains cached warnings and errors for the current root
    */
-  private static TestsErrorsChecker.ModelErrorsHolder<NodeReportItem> ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder<NodeReportItem>();
-
-  /**
-   * clears our cache on any model change
-   */
-  private static SModelCommandListener ourModelChangesListener;
-
-  private static void initModelListener() {
-    if (ourModelChangesListener == null) {
-      ourModelChangesListener = new SModelCommandListener() {
-        public void eventsHappenedInCommand(List<SModelEvent> events) {
-          if (!(events.isEmpty())) {
-            ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
-          }
-        }
-      };
-      GlobalSModelEventsManager.getInstance().addGlobalCommandListener(ourModelChangesListener);
-      ClassLoaderManager.getInstance().addReloadListener(new ModuleReloadListener() {
-        public void modulesReloaded(Set<ReloadableModule> p0) {
-          ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
-        }
-      });
-    }
-  }
-
-  static {
-    initModelListener();
-  }
+  private TestsErrorsChecker.ModelErrorsHolder<NodeReportItem> ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder<NodeReportItem>();
 
   @Deprecated
   public TestsErrorsChecker(SNode root) {
     assert root == SNodeOperations.getContainingRoot(root);
     myRoot = root;
+  }
+
+  public SNode getRoot() {
+    return myRoot;
   }
 
   public Iterable<NodeReportItem> getAllErrors() {
@@ -113,7 +84,7 @@ public class TestsErrorsChecker {
   }
 
   private Iterable<NodeReportItem> getRootErrors() {
-    Set<NodeReportItem> cachedErrors = TestsErrorsChecker.ourModelErrorsHolder.get(myRoot);
+    Set<NodeReportItem> cachedErrors = ourModelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
@@ -151,7 +122,7 @@ public class TestsErrorsChecker {
         return node == null || !(ErrorReportUtil.manuallySuppressed(node.resolve(myRoot.getModel().getRepository())));
       }
     }));
-    TestsErrorsChecker.ourModelErrorsHolder.set(myRoot, res);
+    ourModelErrorsHolder.set(myRoot, res);
     return res;
   }
 
