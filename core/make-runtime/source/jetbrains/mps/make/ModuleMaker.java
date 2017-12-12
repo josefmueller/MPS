@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
@@ -119,19 +118,6 @@ public final class ModuleMaker {
         }
         monitor.advance(1);
       }
-    } finally {
-      monitor.done();
-    }
-  }
-
-  @NotNull
-  public MPSCompilationResult makeAndDeploy(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor,
-      @Nullable JavaCompilerOptions compilerOptions) {
-    monitor.start(BUILDING_MODULES, 4);
-    try {
-      MPSCompilationResult result = make(modules, monitor.subTask(3, SubProgressKind.REPLACING), compilerOptions);
-      ClassLoaderManager.getInstance().reloadModules(modules, monitor.subTask(1));
-      return result;
     } finally {
       monitor.done();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.ide.make;
 
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
@@ -38,6 +37,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.Collection;
 
@@ -49,6 +49,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
 
   private final MPSProject myMPSProject;
   private final ReloadManagerComponent myReloadManager;
+  private final MPSCoreComponents myComponents;
 
   @SuppressWarnings({"UnusedDeclaration"})
   public StartupModuleMakerImpl(Project project, StandaloneMPSProject mpsProject, ProjectLibraryManager plm, ReloadManagerComponent reloadManager,
@@ -56,6 +57,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
     super(project);
     myMPSProject = mpsProject;
     myReloadManager = reloadManager;
+    myComponents = components;
   }
 
   @Override
@@ -96,8 +98,12 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
     myMPSProject.getModelAccess().runWriteAction(() -> {
       final ModuleMaker maker = new ModuleMaker();
       myReloadManager.computeNoReload(() -> {
+        monitor.start("", 4);
         JavaCompilerOptions compilerOptions = JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject);
-        return maker.makeAndDeploy(modules, monitor, compilerOptions);
+        MPSCompilationResult result = maker.make(modules, monitor.subTask(3, SubProgressKind.REPLACING), compilerOptions);
+        myComponents.getClassLoaderManager().reloadModules(modules, monitor.subTask(1, SubProgressKind.REPLACING));
+        monitor.done();
+        return result; // of no use, in fact.
       });
     });
     LOG.info("Building on startup is finished");
