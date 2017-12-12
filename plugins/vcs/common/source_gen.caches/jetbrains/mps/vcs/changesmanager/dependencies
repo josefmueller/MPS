@@ -91,7 +91,6 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelDevKitEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEventVisitorAdapter" />
@@ -106,6 +105,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.EventConsumingMapping" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
@@ -212,11 +212,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.RepoListenerRegistrar" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelCommandListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -299,6 +299,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="com.intellij.openapi.vcs.impl.FileStatusProvider" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.SModelCommandListener" file="SModelCommandListener.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" file="SimpleCommandQueue.java">
     <classNode dependClassName="java.lang.AssertionError" />

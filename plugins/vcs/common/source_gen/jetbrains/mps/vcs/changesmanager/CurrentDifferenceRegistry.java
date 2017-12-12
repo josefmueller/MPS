@@ -24,7 +24,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelsEventsCollector;
@@ -232,9 +231,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
       for (SModelReference mr : SetSequence.fromSet(modelToEvents.keySet())) {
         Collection<SModelCommandListener> listeners = myListeners.get(mr);
-        if (listeners == null) {
-          continue;
-        }
         final ArrayList<SModelEvent> eventsForTheModel = new ArrayList<SModelEvent>(modelToEvents.get(mr));
         for (SModelCommandListener l : new ArrayList<SModelCommandListener>(listeners)) {
           l.eventsHappenedInCommand(eventsForTheModel);

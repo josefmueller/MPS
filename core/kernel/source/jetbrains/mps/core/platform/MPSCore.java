@@ -36,7 +36,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -108,7 +107,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myRepositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository(myRepositoryRegistry));
     init(new SModelRepository(myModuleRepository));
-    init(new GlobalSModelEventsManager(myModuleRepository));
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new DebugRegistry());
 

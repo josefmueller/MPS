@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;

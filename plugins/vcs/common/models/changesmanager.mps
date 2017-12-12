@@ -79,6 +79,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="5293379017992965193" name="jetbrains.mps.baseLanguage.structure.StubStatementList" flags="ig" index="2lzX1y" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
@@ -3516,8 +3517,8 @@
       </node>
       <node concept="37vLTG" id="6h1S4muH90Q" role="3clF46">
         <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="4W4PrCD3XDG" role="1tU5fm">
-          <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+        <node concept="3uibUv" id="1CWvv8TimKB" role="1tU5fm">
+          <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
         </node>
       </node>
     </node>
@@ -3550,8 +3551,8 @@
       </node>
       <node concept="37vLTG" id="6h1S4muHeZV" role="3clF46">
         <property role="TrG5h" value="listener" />
-        <node concept="3uibUv" id="4W4PrCD3XMZ" role="1tU5fm">
-          <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+        <node concept="3uibUv" id="1CWvv8TimOB" role="1tU5fm">
+          <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
         </node>
       </node>
     </node>
@@ -3937,8 +3938,8 @@
           <node concept="3uibUv" id="6h1S4muFnEX" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
           </node>
-          <node concept="3uibUv" id="4W4PrCD3YlK" role="11_B2D">
-            <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+          <node concept="3uibUv" id="1CWvv8TimSB" role="11_B2D">
+            <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
           </node>
         </node>
         <node concept="2ShNRf" id="6h1S4muFnSn" role="33vP2m">
@@ -3947,8 +3948,8 @@
             <node concept="3uibUv" id="6h1S4muFoNQ" role="1pMfVU">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
-            <node concept="3uibUv" id="4W4PrCD3Z2d" role="1pMfVU">
-              <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+            <node concept="3uibUv" id="1CWvv8TinHT" role="1pMfVU">
+              <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
             </node>
           </node>
         </node>
@@ -4023,8 +4024,8 @@
         </node>
         <node concept="37vLTG" id="6h1S4muF3aX" role="3clF46">
           <property role="TrG5h" value="listener" />
-          <node concept="3uibUv" id="4W4PrCD3Y91" role="1tU5fm">
-            <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+          <node concept="3uibUv" id="1CWvv8Tinyc" role="1tU5fm">
+            <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
           </node>
         </node>
       </node>
@@ -4098,8 +4099,8 @@
         </node>
         <node concept="37vLTG" id="6h1S4muFc1R" role="3clF46">
           <property role="TrG5h" value="listener" />
-          <node concept="3uibUv" id="4W4PrCD3XWi" role="1tU5fm">
-            <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+          <node concept="3uibUv" id="1CWvv8TiopK" role="1tU5fm">
+            <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
           </node>
         </node>
       </node>
@@ -4210,8 +4211,8 @@
                   <property role="TrG5h" value="listeners" />
                   <node concept="3uibUv" id="6h1S4muF_5g" role="1tU5fm">
                     <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-                    <node concept="3uibUv" id="4W4PrCD3ZIa" role="11_B2D">
-                      <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+                    <node concept="3uibUv" id="1CWvv8Tio_t" role="11_B2D">
+                      <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="6h1S4muF_5I" role="33vP2m">
@@ -4224,17 +4225,6 @@
                         <ref role="2Gs0qQ" node="6h1S4muFyuD" resolve="mr" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbJ" id="6h1S4muFB2U" role="3cqZAp">
-                <node concept="3clFbS" id="6h1S4muFB2X" role="3clFbx">
-                  <node concept="3N13vt" id="6h1S4muFBy$" role="3cqZAp" />
-                </node>
-                <node concept="3clFbC" id="6h1S4muFBxa" role="3clFbw">
-                  <node concept="10Nm6u" id="6h1S4muFBxN" role="3uHU7w" />
-                  <node concept="37vLTw" id="6h1S4muFBkd" role="3uHU7B">
-                    <ref role="3cqZAo" node="6h1S4muF_5H" resolve="listeners" />
                   </node>
                 </node>
               </node>
@@ -4276,8 +4266,8 @@
                 <node concept="2ShNRf" id="6h1S4muFFAE" role="2GsD0m">
                   <node concept="1pGfFk" id="6h1S4muFGqM" role="2ShVmc">
                     <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
-                    <node concept="3uibUv" id="4W4PrCD40C6" role="1pMfVU">
-                      <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+                    <node concept="3uibUv" id="1CWvv8Tip8p" role="1pMfVU">
+                      <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
                     </node>
                     <node concept="37vLTw" id="6h1S4muFGMP" role="37wK5m">
                       <ref role="3cqZAo" node="6h1S4muF_5H" resolve="listeners" />
@@ -4291,7 +4281,7 @@
                         <ref role="2Gs0qQ" node="6h1S4muFFjg" resolve="l" />
                       </node>
                       <node concept="liA8E" id="6h1S4muFIDY" role="2OqNvi">
-                        <ref role="37wK5l" to="j9co:~SModelCommandListener.eventsHappenedInCommand(java.util.List):void" resolve="eventsHappenedInCommand" />
+                        <ref role="37wK5l" node="~SModelCommandListener.eventsHappenedInCommand(java.util.List):void" resolve="eventsHappenedInCommand" />
                         <node concept="37vLTw" id="6h1S4muFIIv" role="37wK5m">
                           <ref role="3cqZAo" node="6h1S4muFBUd" resolve="eventsForTheModel" />
                         </node>
@@ -5051,8 +5041,8 @@
           <ref role="HV5vE" node="2QnDi8Qvcci" resolve="ChangesTracking.MyEventsCollector" />
         </node>
       </node>
-      <node concept="3uibUv" id="4W4PrCD1X9G" role="1tU5fm">
-        <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+      <node concept="3uibUv" id="1CWvv8TieVE" role="1tU5fm">
+        <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
       </node>
     </node>
     <node concept="312cEg" id="2JwSLRbzlmj" role="jymVt">
@@ -9801,8 +9791,8 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3uibUv" id="4W4PrCD1Y_h" role="EKbjA">
-        <ref role="3uigEE" to="j9co:~SModelCommandListener" resolve="SModelCommandListener" />
+      <node concept="3uibUv" id="1CWvv8Tifab" role="EKbjA">
+        <ref role="3uigEE" node="1CWvv8Ti6bz" resolve="SModelCommandListener" />
       </node>
       <node concept="3uibUv" id="4W4PrCD2mGG" role="1zkMxy">
         <ref role="3uigEE" to="j9co:~SModelEventVisitorAdapter" resolve="SModelEventVisitorAdapter" />
@@ -12074,6 +12064,28 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+  </node>
+  <node concept="3HP615" id="1CWvv8Ti6bz">
+    <property role="TrG5h" value="SModelCommandListener" />
+    <node concept="3clFb_" id="~SModelCommandListener.eventsHappenedInCommand(java.util.List):void" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="eventsHappenedInCommand" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1CWvv8Te9x2" role="1B3o_S" />
+      <node concept="2lzX1y" id="1CWvv8Te9x3" role="3clF47" />
+      <node concept="3cqZAl" id="1CWvv8Te9x4" role="3clF45" />
+      <node concept="37vLTG" id="1CWvv8Te9x7" role="3clF46">
+        <property role="TrG5h" value="events" />
+        <node concept="3uibUv" id="1CWvv8Te9x5" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="1CWvv8Te9x6" role="11_B2D">
+            <ref role="3uigEE" to="j9co:~SModelEvent" resolve="SModelEvent" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="1CWvv8Ti6b$" role="1B3o_S" />
   </node>
 </model>
 
