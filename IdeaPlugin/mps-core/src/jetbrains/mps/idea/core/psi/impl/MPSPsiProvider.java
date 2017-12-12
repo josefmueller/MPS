@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.ModelsEventsCollector;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -54,9 +54,10 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -94,8 +95,13 @@ public class MPSPsiProvider extends AbstractProjectComponent {
    * in {@link com.intellij.openapi.application.TransactionGuardImpl#performUserActivity(Runnable)})
    * or by invoking a transaction explicitly in the action.
    */
-  private SModelCommandListener myListener = new SModelCommandListener() {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
+  class MyModeEventsCollector extends ModelsEventsCollector {
+    MyModeEventsCollector(ModelAccess modelAccess) {
+      super(modelAccess);
+    }
+
+    @Override
+    protected void eventsHappened(List<SModelEvent> events) {
       Runnable processEvents = () -> myEventProcessor.process(events);
       if (TransactionGuard.getInstance().getContextTransaction() != null) {
         // the command that caused the events was in a transaction
@@ -114,6 +120,24 @@ public class MPSPsiProvider extends AbstractProjectComponent {
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
+  private ModelsEventsCollector myEventsCollector;
+
+  private final SRepositoryContentAdapter myRepoListener = new SRepositoryContentAdapter() {
+    @Override
+    protected boolean isIncluded(SModule module) {
+      return !module.isReadOnly();
+    }
+
+    @Override
+    protected void startListening(SModel model) {
+      myEventsCollector.startListeningToModel(model);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      myEventsCollector.stopListeningToModel(model);
+    }
+  };
 
   protected MPSPsiProvider(Project project) {
     super(project);
@@ -123,12 +147,15 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   }
 
   public void initComponent() {
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myListener);
+    myEventsCollector = new MyModeEventsCollector(ProjectHelper.getModelAccess(myProject));
+    new RepoListenerRegistrar(ProjectHelper.getProjectRepository(myProject), myRepoListener).attach();
     FileEditorDataProviderManager.getInstance(myProject).registerDataProvider(new PsiFileEditorDataProvider(), null);
   }
 
   public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
+    new RepoListenerRegistrar(ProjectHelper.getProjectRepository(myProject), myRepoListener).detach();
+    myEventsCollector.dispose();
+    myEventsCollector = null;
   }
 
   public PsiElement getPsi(SNodeReference nodeRef) {
