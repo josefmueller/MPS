@@ -87,7 +87,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMPSPlugin;
       case LanguageConceptSwitch.BuildMpsAspect:
         if (props_BuildMpsAspect == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L);
+          cpb.deprecateProperty(0x4e80d5b7ab57aaaL, "generationMaxPermSizeInMb");
           cpb.rawPresentation("mps settings");
           props_BuildMpsAspect = cpb.create();
         }

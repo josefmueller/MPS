@@ -3802,6 +3802,9 @@
         <node concept="3F0ifn" id="jC3lHUHwJZ" role="3EZMnx">
           <property role="3F0ifm" value="generation max perm size in mb" />
           <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+          <node concept="3nxI2P" id="7OnehgFA3CE" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
         <node concept="3F0A7n" id="jC3lHUHwK0" role="3EZMnx">
           <property role="1O74Pk" value="true" />

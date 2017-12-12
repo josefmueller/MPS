@@ -1232,6 +1232,10 @@
       <property role="TrG5h" value="generationMaxPermSizeInMb" />
       <property role="IQ2nx" value="353547257300482730" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <node concept="asaX9" id="7OnehgF_Y9U" role="lGtFl">
+        <property role="YLPcu" value="2018.1" />
+        <property role="YLQ7P" value="We target Java 8 which no longer has no MaxPermSize option." />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$ItR9u">
