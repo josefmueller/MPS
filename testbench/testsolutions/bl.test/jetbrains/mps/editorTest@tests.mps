@@ -120,6 +120,9 @@
       <concept id="1210674524691" name="jetbrains.mps.lang.test.structure.TestNodeReference" flags="nn" index="3xONca">
         <reference id="1210674534086" name="declaration" index="3xOPvv" />
       </concept>
+      <concept id="1227269295333560277" name="jetbrains.mps.lang.test.structure.InvokeSurroundWithIntentionStatement" flags="ng" index="3D4uOY">
+        <reference id="1227269295333560280" name="intention" index="3D4uON" />
+      </concept>
       <concept id="1230224281548" name="jetbrains.mps.lang.test.structure.MockAnnotation" flags="ng" index="1J5cVi" />
       <concept id="1225978065297" name="jetbrains.mps.lang.test.structure.SimpleNodeTest" flags="ng" index="1LZb2c" />
       <concept id="1225983109083" name="jetbrains.mps.lang.test.structure.EditorExpression" flags="nn" index="1Miqr6" />
@@ -10741,7 +10744,7 @@
             <node concept="3clFbF" id="6HxYJhjU7hG" role="3cqZAp">
               <node concept="2OqwBi" id="6HxYJhjU7S6" role="3clFbG">
                 <node concept="liA8E" id="6HxYJhjU9CO" role="2OqNvi">
-                  <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                   <node concept="Xl_RD" id="6HxYJhjU9CQ" role="37wK5m">
                     <property role="Xl_RC" value="1" />
                   </node>
@@ -10758,7 +10761,7 @@
               <node concept="3clFbF" id="6HxYJhjU9CX" role="3cqZAp">
                 <node concept="2OqwBi" id="6HxYJhjU9Wx" role="3clFbG">
                   <node concept="liA8E" id="6HxYJhjUbHs" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                     <node concept="Xl_RD" id="6HxYJhjUbHu" role="37wK5m">
                       <property role="Xl_RC" value="2" />
                     </node>
@@ -10786,7 +10789,7 @@
         <node concept="3clFbF" id="6HxYJhjUbH_" role="3cqZAp">
           <node concept="2OqwBi" id="6HxYJhjUc1J" role="3clFbG">
             <node concept="liA8E" id="6HxYJhjUdMl" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println():void" resolve="println" />
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
               <node concept="3K4zz7" id="6HxYJhjUebp" role="37wK5m">
                 <node concept="Xl_RD" id="6HxYJhjUebA" role="3K4GZi">
                   <property role="Xl_RC" value="2" />
@@ -70328,6 +70331,146 @@
         <node concept="3clFbS" id="1IN3FLTO8EF" role="3clF47" />
       </node>
       <node concept="3Tm1VV" id="1IN3FLTO8EI" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1488IJS35vn">
+    <property role="3GE5qa" value="intentions" />
+    <property role="TrG5h" value="SurroundWithNegation_addingParens" />
+    <property role="3YCmrE" value="Checnking that surrounding with !(&lt;expr&gt;) intention is working &amp; selection is preserved if executed upon expression wrapped in to &quot;()&quot; by this intention" />
+    <node concept="3clFbJ" id="1488IJS35Us" role="LiRBU">
+      <node concept="3clFbS" id="1488IJS38Bx" role="3clFbx" />
+      <node concept="3eOVzh" id="1488IJS3b0y" role="3clFbw">
+        <node concept="3cmrfG" id="1488IJS3b0F" role="3uHU7w">
+          <property role="3cmrfH" value="3" />
+        </node>
+        <node concept="3cpWs3" id="1488IJS39Iu" role="3uHU7B">
+          <node concept="3cmrfG" id="1488IJS38J6" role="3uHU7B">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="3cmrfG" id="1488IJS39IB" role="3uHU7w">
+            <property role="3cmrfH" value="2" />
+          </node>
+        </node>
+        <node concept="LIFWc" id="1488IJSajdF" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="1488IJS6mJx" role="LjaKd">
+      <node concept="3D4uOY" id="1488IJS6QAB" role="3cqZAp">
+        <ref role="3D4uON" to="tpei:nfNq1Y3Y0$" resolve="SurroundWithNegation" />
+      </node>
+    </node>
+    <node concept="3clFbJ" id="1488IJSaikQ" role="LiZbd">
+      <node concept="3clFbS" id="1488IJSaikR" role="3clFbx" />
+      <node concept="3fqX7Q" id="1488IJSajUo" role="3clFbw">
+        <node concept="1eOMI4" id="1488IJSajUu" role="3fr31v">
+          <node concept="3eOVzh" id="1488IJSaikS" role="1eOMHV">
+            <node concept="3cmrfG" id="1488IJSaikT" role="3uHU7w">
+              <property role="3cmrfH" value="3" />
+            </node>
+            <node concept="3cpWs3" id="1488IJSaikU" role="3uHU7B">
+              <node concept="3cmrfG" id="1488IJSaikV" role="3uHU7B">
+                <property role="3cmrfH" value="1" />
+              </node>
+              <node concept="3cmrfG" id="1488IJSaikW" role="3uHU7w">
+                <property role="3cmrfH" value="2" />
+              </node>
+            </node>
+            <node concept="LIFWc" id="LQ1VB0jcu7" role="lGtFl">
+              <property role="ZRATv" value="true" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="1" />
+              <property role="p6zMs" value="1" />
+              <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6OzM1Z2Qo4I">
+    <property role="3GE5qa" value="intentions" />
+    <property role="TrG5h" value="SurroundWithNegation_notAddingParens" />
+    <property role="3YCmrE" value="Checnking that surrounding with !(&lt;expr&gt;) intention is working &amp; selection is preserved if executed upon expression, niot wrapped into &quot;()&quot; by thia intention" />
+    <node concept="3clFbJ" id="6OzM1Z2Qo4J" role="LiRBU">
+      <node concept="3clFbS" id="6OzM1Z2Qo4K" role="3clFbx" />
+      <node concept="3clFbT" id="6OzM1Z2Qyje" role="3clFbw">
+        <property role="3clFbU" value="true" />
+        <node concept="LIFWc" id="6OzM1Z2Qz0E" role="lGtFl">
+          <property role="LIFWa" value="2" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="2" />
+          <property role="p6zMs" value="2" />
+          <property role="LIFWd" value="property_value" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="6OzM1Z2Qo4R" role="LjaKd">
+      <node concept="3D4uOY" id="6OzM1Z2Qo4S" role="3cqZAp">
+        <ref role="3D4uON" to="tpei:nfNq1Y3Y0$" resolve="SurroundWithNegation" />
+      </node>
+    </node>
+    <node concept="3clFbJ" id="6OzM1Z2Qz0U" role="LiZbd">
+      <node concept="3clFbS" id="6OzM1Z2Qz0V" role="3clFbx" />
+      <node concept="3fqX7Q" id="6OzM1Z2Qz8A" role="3clFbw">
+        <node concept="3clFbT" id="6OzM1Z2Qz0W" role="3fr31v">
+          <property role="3clFbU" value="true" />
+          <node concept="LIFWc" id="6OzM1Z2Qz9p" role="lGtFl">
+            <property role="LIFWa" value="2" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="2" />
+            <property role="p6zMs" value="2" />
+            <property role="LIFWd" value="property_value" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6OzM1Z2Qvbq">
+    <property role="3GE5qa" value="intentions" />
+    <property role="TrG5h" value="SurroundWithNegation_forParens" />
+    <property role="3YCmrE" value="Checnking that surrounding with !(&lt;expr&gt;) intention is working &amp; selection is preserved if executed upon parenthesis" />
+    <node concept="3clFbJ" id="6OzM1Z2Qvbr" role="LiRBU">
+      <node concept="3clFbS" id="6OzM1Z2Qvbs" role="3clFbx" />
+      <node concept="1eOMI4" id="6OzM1Z2Qw8O" role="3clFbw">
+        <node concept="3clFbT" id="6OzM1Z2QwlN" role="1eOMHV">
+          <property role="3clFbU" value="true" />
+        </node>
+        <node concept="LIFWc" id="6OzM1Z2QxaX" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="openParen" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="6OzM1Z2Qvbz" role="LjaKd">
+      <node concept="3D4uOY" id="6OzM1Z2Qvb$" role="3cqZAp">
+        <ref role="3D4uON" to="tpei:nfNq1Y3Y0$" resolve="SurroundWithNegation" />
+      </node>
+    </node>
+    <node concept="3clFbJ" id="6OzM1Z2Qxbf" role="LiZbd">
+      <node concept="3clFbS" id="6OzM1Z2Qxbg" role="3clFbx" />
+      <node concept="3fqX7Q" id="6OzM1Z2QxiH" role="3clFbw">
+        <node concept="1eOMI4" id="6OzM1Z2Qxbh" role="3fr31v">
+          <node concept="3clFbT" id="6OzM1Z2Qxbi" role="1eOMHV">
+            <property role="3clFbU" value="true" />
+          </node>
+          <node concept="LIFWc" id="6OzM1Z2QxjD" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="openParen" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
