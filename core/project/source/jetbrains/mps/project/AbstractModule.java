@@ -648,7 +648,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   // FIXME rename model roots
-  public void rename(@NotNull String newName) throws DescriptorTargetFileAlreadyExistsException {
+  public void rename(@NotNull String newModuleName) throws DescriptorTargetFileAlreadyExistsException {
     SModuleReference oldRef = getModuleReference();
     final String oldModuleName = getModuleName();
 
@@ -656,66 +656,74 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (myDescriptorFile != null) {
-      String newDescriptorName = newName + MPSExtentions.DOT + FileUtil.getExtension(myDescriptorFile.getName());
-      //noinspection ConstantConditions
-      if (myDescriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
-        throw new DescriptorTargetFileAlreadyExistsException(myDescriptorFile, newDescriptorName);
+      String newDescriptorName = newModuleName + MPSExtentions.DOT + FileUtil.getExtension(myDescriptorFile.getName());
+
+      // In case we just update descriptor
+      if (!myDescriptorFile.getName().equals(newDescriptorName)) {
+        //noinspection ConstantConditions
+        if (myDescriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
+          throw new DescriptorTargetFileAlreadyExistsException(myDescriptorFile, newDescriptorName);
+        }
+        myDescriptorFile.rename(newModuleName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
       }
-      myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
 
       // Rename module folder iff it is equals to module name
-      if (myDescriptorFile.getParent().getName().equals(oldModuleName)) {
-        myDescriptorFile.getParent().rename(newName);
-
-        // Update output path for generated files
-        final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
-        if (generatorOutputPath != null && generatorOutputPath.contains(this.getModuleName())) {
-          ProjectPathUtil.setGeneratorOutputPath(descriptor, generatorOutputPath.replace(oldModuleName, newName));
-        }
-
-        /* Update model roots in descriptor:
-         * After module folder was renamed model roots are updated in SModule,
-         * because IFile used here to store location,
-         * but not in ModuleDescriptor - location is stored as string.
-         * */
-        final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
-        modelRootDescriptors.clear();
-        for (ModelRoot root : myModuleReference.resolve(getRepository()).getModelRoots()) {
-          Memento memento = new MementoImpl();
-          root.save(memento);
-          ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
-          modelRootDescriptors.add(modelRootDescriptor);
-        }
-
-        // TODO: as soon as generator will have it's own descriptor file - remove this!
-        /* Have explicitly update generators model roots in language (there are no own descriptors for generators),
-         * because generators have been already renamed before language without folder rename,
-         * so they can't update their model roots earlier in own rename method.
-        * */
-        if (this instanceof Language) {
-          for(Generator generator : ((Language) this).getGenerators()) {
-            final Collection<ModelRootDescriptor> generatorMRDescriptors = generator.getModuleDescriptor().getModelRootDescriptors();
-            generatorMRDescriptors.clear();
-            for (ModelRoot root : generator.getModelRoots()) {
-              Memento memento = new MementoImpl();
-              root.save(memento);
-              ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
-              generatorMRDescriptors.add(modelRootDescriptor);
-            }
-          }
-        }
+      if (myDescriptorFile.getParent().getName().equals(oldModuleName) && !oldModuleName.equals(newModuleName)) {
+        myDescriptorFile.getParent().rename(newModuleName);
       }
+
+      updateModuleDescriptor(descriptor, newModuleName);
     }
 
     if (descriptor != null) {
-      descriptor.setNamespace(newName);
+      descriptor.setNamespace(newModuleName);
       setModuleDescriptor(descriptor);
     }
 
     fireModuleRenamed(oldRef);
 
     // Rename models after module to ensure, that they will have short new name without module prefix
-    renameModels(oldModuleName, newName, true);
+    renameModels(oldModuleName, newModuleName, true);
+  }
+
+  private void updateModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, @NotNull String newModuleName) {
+    // Update output path for generated files
+    final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(moduleDescriptor);
+    if (generatorOutputPath != null && generatorOutputPath.contains(moduleDescriptor.getNamespace())) {
+      ProjectPathUtil.setGeneratorOutputPath(moduleDescriptor, generatorOutputPath.replace(moduleDescriptor.getNamespace(), newModuleName));
+    }
+
+    /* Update model roots in descriptor:
+     * After module folder was renamed model roots are updated in SModule,
+     * because IFile used here to store location,
+     * but not in ModuleDescriptor - location is stored as string.
+     * */
+    final Collection<ModelRootDescriptor> modelRootDescriptors = moduleDescriptor.getModelRootDescriptors();
+    modelRootDescriptors.clear();
+    for (ModelRoot root : myModuleReference.resolve(getRepository()).getModelRoots()) {
+      Memento memento = new MementoImpl();
+      root.save(memento);
+      ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
+      modelRootDescriptors.add(modelRootDescriptor);
+    }
+
+    // TODO: as soon as generator will have it's own descriptor file - remove this!
+    /* Have explicitly update generators model roots in language (there are no own descriptors for generators),
+     * because generators have been already renamed before language without folder rename,
+     * so they can't update their model roots earlier in own rename method.
+     * */
+    if (this instanceof Language) {
+      for(Generator generator : ((Language) this).getGenerators()) {
+        final Collection<ModelRootDescriptor> generatorMRDescriptors = generator.getModuleDescriptor().getModelRootDescriptors();
+        generatorMRDescriptors.clear();
+        for (ModelRoot root : generator.getModelRoots()) {
+          Memento memento = new MementoImpl();
+          root.save(memento);
+          ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
+          generatorMRDescriptors.add(modelRootDescriptor);
+        }
+      }
+    }
   }
 
   /**

@@ -7,23 +7,42 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
+import javax.swing.JPanel;
+import java.util.List;
+import java.util.ArrayList;
 import java.awt.HeadlessException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.Renamer;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import org.apache.log4j.Level;
+import javax.swing.JComponent;
+import com.intellij.ui.components.JBPanel;
+import jetbrains.mps.vfs.path.UniPath;
+import jetbrains.mps.smodel.Language;
+import javax.swing.JLabel;
+import com.intellij.ui.components.JBLabel;
+import com.intellij.util.ui.UIUtil;
 
 public class RenameModuleDialog extends RenameDialog {
   private static final Logger LOG = LogManager.getLogger(RenameModuleDialog.class);
   private final AbstractModule myModule;
   private final MPSProject myProject;
+  private JPanel myOptionsPanel;
+  /**
+   * Expect maximum of two submodules for language: sandbox and runtime.
+   * There is no way to create other submodules from MPS UI, so other cases are rare.
+   */
+  private final List<AbstractModule> subModules = new ArrayList<AbstractModule>(2);
 
   public RenameModuleDialog(MPSProject project, AbstractModule module) throws HeadlessException {
     super(project.getProject(), module.getModuleName(), "module");
     myModule = module;
     myProject = project;
+    updateCentralPanel();
     setTitle("Rename Module");
   }
 
@@ -55,9 +74,31 @@ public class RenameModuleDialog extends RenameDialog {
   protected void doRefactoringAction() {
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
-        final String fqName = getCurrentValue();
+        final String newModuleName = getCurrentValue();
         try {
-          Renamer.renameModule(myModule, fqName);
+          String oldModuleName = myModule.getModuleName();
+          Renamer.renameModule(myModule, newModuleName);
+          // TODO: remove after MPS will state, that projct layout forbid submodules and migration will be applied. 
+          if (!(subModules.isEmpty())) {
+            for (AbstractModule subModule : subModules) {
+              final ModuleDescriptor subModuleDescriptor = subModule.getModuleDescriptor();
+              if (subModuleDescriptor == null) {
+                continue;
+              }
+
+              // Update generation path according to main module update 
+              final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(subModuleDescriptor);
+              if (generatorOutputPath != null) {
+                ProjectPathUtil.setGeneratorOutputPath(subModuleDescriptor, generatorOutputPath.replace(oldModuleName, newModuleName));
+              }
+
+              // Check if submodule name need to be updated with main module name 
+              String newSubModuleName = ((subModule.getModuleName().contains(oldModuleName) ? subModule.getModuleName().replaceFirst(oldModuleName, newModuleName) : subModule.getModuleName()));
+
+              // Rename even if name stays the same to update module descriptor 
+              subModule.rename(newSubModuleName);
+            }
+          }
         } catch (DescriptorTargetFileAlreadyExistsException e) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("", e);
@@ -66,5 +107,61 @@ public class RenameModuleDialog extends RenameDialog {
         RenameModuleDialog.super.doRefactoringAction();
       }
     });
+  }
+
+
+  @Nullable
+  @Override
+  protected JComponent createCenterPanel() {
+    myOptionsPanel = new JBPanel();
+    return myOptionsPanel;
+  }
+
+
+  /**
+   * Have to update info panel after initialization in {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#createCenterPanel() }, because last one happens in super constructor before {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#myModule } is set.
+   */
+  private void updateCentralPanel() {
+    final UniPath renamingModulePath = myModule.getModuleSourceDir().toPath();
+    // If folder and module name are different, folder will not be renamed, so no need to check submodules 
+    if (!(renamingModulePath.endsWith(myModule.getModuleName()))) {
+      return;
+    }
+
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        for (SModule module : myProject.getRepository().getModules()) {
+          if (!(module instanceof AbstractModule) || module.isPackaged() || module.isReadOnly() || ((AbstractModule) module).getModuleSourceDir() == null || module.equals(myModule) || (myModule instanceof Language && ((Language) myModule).getGenerators().contains(module))) {
+            continue;
+          }
+
+          UniPath modulePath = ((AbstractModule) module).getModuleSourceDir().toPath();
+          if (modulePath.startsWith(renamingModulePath)) {
+            subModules.add((AbstractModule) module);
+          }
+        }
+      }
+    });
+
+    if (subModules.isEmpty()) {
+      return;
+    }
+
+    StringBuilder builder = new StringBuilder();
+    builder.append("<ul>");
+    for (AbstractModule subModule : subModules) {
+      builder.append("<li>");
+      builder.append(subModule.getModuleName());
+      if (subModule.getModuleName().contains(myModule.getModuleName())) {
+        builder.append(" (will be renamed)");
+      }
+      builder.append("</li>");
+    }
+    builder.append("</ul>");
+
+
+    String info = String.format("<html><p>Module folder contains submodule(s):%s</p></html>", builder.toString());
+    JLabel label = new JBLabel(info, UIUtil.getInformationIcon(), JBLabel.LEFT);
+    myOptionsPanel.add(label);
   }
 }

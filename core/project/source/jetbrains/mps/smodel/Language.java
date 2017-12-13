@@ -291,11 +291,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void rename(@NotNull String newNamespace) throws DescriptorTargetFileAlreadyExistsException {
+  public void rename(@NotNull String newModuleName) throws DescriptorTargetFileAlreadyExistsException {
     for (Generator g : getGenerators()) {
-      g.rename(newNamespace);
+      g.rename(newModuleName);
     }
-    super.rename(newNamespace);
+    super.rename(newModuleName);
   }
 
   /**
