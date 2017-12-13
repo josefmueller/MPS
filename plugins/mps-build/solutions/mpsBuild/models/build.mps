@@ -34185,7 +34185,7 @@
     </node>
     <node concept="1l3spV" id="6pse5qHNfTZ" role="1l3spN">
       <node concept="m$_wl" id="5xhjlkpPhA8" role="39821P">
-        <ref role="m_rDy" node="5xhjlkpPhJu" resolve="httpSupport" />
+        <ref role="m_rDy" node="5xhjlkpPhJu" resolve="jetbrains.mps.ide.httpsupport" />
         <node concept="398223" id="6pse5qHNgj4" role="39821P">
           <node concept="3_J27D" id="6pse5qHNgj5" role="Nbhlr">
             <node concept="3Mxwew" id="6pse5qHNgj8" role="3MwsjC">
@@ -34249,7 +34249,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="5xhjlkpPhJu" role="3989C9">
-      <property role="m$_wk" value="httpSupport" />
+      <property role="m$_wk" value="jetbrains.mps.ide.httpsupport" />
       <node concept="3_J27D" id="5xhjlkpPhJw" role="m$_yQ">
         <node concept="3Mxwew" id="5xhjlkpPhZU" role="3MwsjC">
           <property role="3MwjfP" value="HTTP Support Plugin" />
