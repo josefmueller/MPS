@@ -153,7 +153,7 @@ public class MakeActionParameters {
   private Iterable<SModel> allModelsOf(SModule module) {
     Iterable<SModel> models = ((Iterable<SModel>) module.getModels());
     if (module instanceof Language) {
-      Iterable<Generator> generators = ((Language) module).getGenerators();
+      Iterable<Generator> generators = ((Language) module).getOwnedGenerators();
       return Sequence.fromIterable(models).concat(Sequence.fromIterable(generators).translate(new ITranslator2<Generator, SModel>() {
         public Iterable<SModel> translate(Generator gen) {
           return allModelsOf(gen);

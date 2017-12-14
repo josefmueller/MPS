@@ -14,11 +14,7 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
   </languages>
   <imports>
     <import index="rgfa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.tree(JDK/)" />
@@ -3216,7 +3212,7 @@
                 </node>
                 <node concept="2OqwBi" id="7iCFfvQNv_q" role="33vP2m">
                   <node concept="liA8E" id="7iCFfvQNv_r" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
+                    <ref role="37wK5l" to="w1kc:~Language.getOwnedGenerators():java.util.Collection" resolve="getOwnedGenerators" />
                   </node>
                   <node concept="1eOMI4" id="7iCFfvQNv_s" role="2Oq$k0">
                     <node concept="10QFUN" id="7iCFfvQNv_t" role="1eOMHV">
@@ -10226,10 +10222,8 @@
                     <node concept="3cpWsn" id="1JjaplOpbxS" role="3cpWs9">
                       <property role="TrG5h" value="projectModules" />
                       <node concept="A3Dl8" id="1JjaplOpbxT" role="1tU5fm">
-                        <node concept="3qUE_q" id="1JjaplOpbxU" role="A3Ik2">
-                          <node concept="3uibUv" id="1JjaplOpbxV" role="3qUE_r">
-                            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                          </node>
+                        <node concept="3uibUv" id="6p3LDcnqVSe" role="A3Ik2">
+                          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="1JjaplOpbxW" role="33vP2m">
@@ -10240,7 +10234,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="1JjaplOpby0" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                          <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
                         </node>
                       </node>
                     </node>
@@ -10252,35 +10246,13 @@
                       </node>
                       <node concept="2ShNRf" id="1KUoCipvydB" role="37vLTx">
                         <node concept="Tc6Ow" id="1KUoCipvydC" role="2ShVmc">
-                          <node concept="2OqwBi" id="2lEZ2a4ZP28" role="I$8f6">
-                            <node concept="2OqwBi" id="1JjaplOp7_o" role="2Oq$k0">
-                              <node concept="37vLTw" id="1JjaplOpc8X" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1JjaplOpbxS" resolve="projectModules" />
-                              </node>
-                              <node concept="UnYns" id="1JjaplOp7_q" role="2OqNvi">
-                                <node concept="3uibUv" id="1JjaplOp7_r" role="UnYnz">
-                                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                                </node>
-                              </node>
+                          <node concept="2OqwBi" id="1JjaplOp7_o" role="I$8f6">
+                            <node concept="37vLTw" id="1JjaplOpc8X" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1JjaplOpbxS" resolve="projectModules" />
                             </node>
-                            <node concept="3goQfb" id="2lEZ2a4ZP2k" role="2OqNvi">
-                              <node concept="1bVj0M" id="2lEZ2a4ZP2l" role="23t8la">
-                                <node concept="3clFbS" id="2lEZ2a4ZP2m" role="1bW5cS">
-                                  <node concept="3clFbF" id="2lEZ2a4ZP2n" role="3cqZAp">
-                                    <node concept="2OqwBi" id="2lEZ2a4ZP2o" role="3clFbG">
-                                      <node concept="37vLTw" id="1JjaplOp8SK" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="2lEZ2a4ZP2u" resolve="it" />
-                                      </node>
-                                      <node concept="liA8E" id="2lEZ2a4ZP2t" role="2OqNvi">
-                                        <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="Rh6nW" id="2lEZ2a4ZP2u" role="1bW2Oz">
-                                  <property role="TrG5h" value="it" />
-                                  <node concept="2jxLKc" id="2lEZ2a4ZP2v" role="1tU5fm" />
-                                </node>
+                            <node concept="UnYns" id="1JjaplOp7_q" role="2OqNvi">
+                              <node concept="3uibUv" id="6p3LDcnqWni" role="UnYnz">
+                                <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
                               </node>
                             </node>
                           </node>
@@ -10805,10 +10777,8 @@
                     <node concept="3cpWsn" id="56qcHJOgMU8" role="3cpWs9">
                       <property role="TrG5h" value="projectModules" />
                       <node concept="A3Dl8" id="56qcHJOgMU9" role="1tU5fm">
-                        <node concept="3qUE_q" id="56qcHJOgMUa" role="A3Ik2">
-                          <node concept="3uibUv" id="56qcHJOgMUb" role="3qUE_r">
-                            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                          </node>
+                        <node concept="3uibUv" id="6p3LDcnqSen" role="A3Ik2">
+                          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="56qcHJOgMUc" role="33vP2m">
@@ -10819,7 +10789,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="56qcHJOgMUg" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                          <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
                         </node>
                       </node>
                     </node>
@@ -10832,35 +10802,13 @@
                       <node concept="2ShNRf" id="56qcHJOgMUk" role="37vLTx">
                         <node concept="Tc6Ow" id="56qcHJOgMUl" role="2ShVmc">
                           <node concept="2OqwBi" id="56qcHJOhatW" role="I$8f6">
-                            <node concept="2OqwBi" id="56qcHJOgMUm" role="2Oq$k0">
-                              <node concept="2OqwBi" id="56qcHJOgMUn" role="2Oq$k0">
-                                <node concept="37vLTw" id="56qcHJOgMUo" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="56qcHJOgMU8" resolve="projectModules" />
-                                </node>
-                                <node concept="UnYns" id="56qcHJOgMUp" role="2OqNvi">
-                                  <node concept="3uibUv" id="56qcHJOgMUq" role="UnYnz">
-                                    <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                                  </node>
-                                </node>
+                            <node concept="2OqwBi" id="56qcHJOgMUn" role="2Oq$k0">
+                              <node concept="37vLTw" id="56qcHJOgMUo" role="2Oq$k0">
+                                <ref role="3cqZAo" node="56qcHJOgMU8" resolve="projectModules" />
                               </node>
-                              <node concept="3goQfb" id="56qcHJOgMUr" role="2OqNvi">
-                                <node concept="1bVj0M" id="56qcHJOgMUs" role="23t8la">
-                                  <node concept="3clFbS" id="56qcHJOgMUt" role="1bW5cS">
-                                    <node concept="3clFbF" id="56qcHJOgMUu" role="3cqZAp">
-                                      <node concept="2OqwBi" id="56qcHJOgMUv" role="3clFbG">
-                                        <node concept="37vLTw" id="56qcHJOgMUw" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="56qcHJOgMUy" resolve="it" />
-                                        </node>
-                                        <node concept="liA8E" id="56qcHJOgMUx" role="2OqNvi">
-                                          <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="Rh6nW" id="56qcHJOgMUy" role="1bW2Oz">
-                                    <property role="TrG5h" value="it" />
-                                    <node concept="2jxLKc" id="56qcHJOgMUz" role="1tU5fm" />
-                                  </node>
+                              <node concept="UnYns" id="56qcHJOgMUp" role="2OqNvi">
+                                <node concept="3uibUv" id="6p3LDcnqTva" role="UnYnz">
+                                  <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
                                 </node>
                               </node>
                             </node>

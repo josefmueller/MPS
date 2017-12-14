@@ -15,8 +15,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -50,12 +48,8 @@ public class BuildAllGeneratableGenerators_Action extends BaseAction {
     final Wrappers._T<List<SModule>> m = new Wrappers._T<List<SModule>>();
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
-        m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), Sequence.fromIterable(projectModules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
-          public Iterable<Generator> translate(Language it) {
-            return it.getGenerators();
-          }
-        }).where(new IWhereFilter<Generator>() {
+        Iterable<SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModulesWithGenerators();
+        m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), Sequence.fromIterable(projectModules).ofType(Generator.class).where(new IWhereFilter<Generator>() {
           public boolean accept(Generator it) {
             return it.generateTemplates();
           }

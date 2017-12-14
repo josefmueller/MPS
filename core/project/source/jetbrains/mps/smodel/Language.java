@@ -64,6 +64,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
   private static final Logger LOG = LogManager.getLogger(Language.class);
@@ -276,6 +277,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     setChanged();
   }
 
+  /**
+   * @return all generators that treat this language as their source one.
+   */
   public Collection<Generator> getGenerators() {
     SRepository repo = getRepository();
     if (repo == null) {
@@ -288,6 +292,15 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     // subordinates (e.g. new Generator(Language source) might tell source.iAmYourServant(this), which would keep collection of Generators
     // so that we don't need to go into repository). It just feels more flexible when the two are not bound too tightly (with expense of repository access).
     return new ModuleRepositoryFacade(repo).getModules(this, Generator.class);
+  }
+
+  /**
+   * PROVISIONAL API, DON'T USE UNLESS YOU'RE 100% SURE WHAT IS THE REASON FOR THAT, AND WHAT'S THE (UPCOMING) DIFFERENCE WITH {@link #getGenerators()}
+   * @return generators declared and controlled by this language module.
+   */
+  public Collection<Generator> getOwnedGenerators() {
+    Set<SModuleReference> ownedGenerators = getModuleDescriptor().getGenerators().stream().map(ModuleDescriptor::getModuleReference).collect(Collectors.toSet());
+    return getGenerators().stream().filter(g -> ownedGenerators.contains(g.getModuleReference())).collect(Collectors.toList());
   }
 
   @Override
