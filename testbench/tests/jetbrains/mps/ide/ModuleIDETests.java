@@ -22,6 +22,7 @@ import jetbrains.mps.module.ModuleDeleteHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.Generator;
@@ -39,6 +40,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -113,6 +115,38 @@ public class ModuleIDETests extends ModuleInProjectTest {
   }
 
   @Test
+  public void renameLanguageWithSubmodules() {
+    final Solution[] runtimeSolution = new Solution[1];
+    final Solution[] sandboxSolution = new Solution[1];
+    final Solution[] someUnexpectedSolution = new Solution[1];
+    final String someUnexpectedSolutionName = getNewModuleName();
+    renameModule(
+        (moduleName) -> {
+          File moduleFolder = new File(ourProject.getProjectFile(), "languages");
+          moduleFolder = new File(moduleFolder, moduleName);
+          final Language language = NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), ourProject);
+          try {
+            runtimeSolution[0] = NewModuleUtil.createRuntimeSolution(language, moduleFolder.getAbsolutePath(), ourProject);
+            language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution[0].getModuleReference());
+            sandboxSolution[0] = NewModuleUtil.createSandboxSolution(language, moduleFolder.getAbsolutePath(), ourProject);
+            someUnexpectedSolution[0] = NewModuleUtil.createSolution(someUnexpectedSolutionName, moduleFolder.getAbsolutePath() + File.separator+ someUnexpectedSolutionName, ourProject);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+          language.save();
+          return language;
+        },
+        (moduleName, module) -> {
+          Assert.assertTrue(module instanceof Language);
+          // Runtime and sandbox solutions must be renamed
+          Assert.assertTrue(runtimeSolution[0].getModuleName().contains(moduleName));
+          Assert.assertTrue(sandboxSolution[0].getModuleName().contains(moduleName));
+          // Unexpected solution must not be renamed
+          Assert.assertTrue(!someUnexpectedSolution[0].getModuleName().contains(moduleName));
+        });
+  }
+
+  @Test
   public void renameSolution() {
     renameModule(
         (moduleName) -> {
@@ -151,8 +185,9 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> moduleReference.set(moduleSupplier.get(moduleName)));
     invokeInCommand(() -> {
       AbstractModule module = moduleReference.get();
+      final Collection<AbstractModule> subModules = Renamer.getSubModules(ourProject.getRepository(), module);
       try {
-        Renamer.renameModule(module, newModuleName);
+        Renamer.renameModuleWithSubModules(module, newModuleName, subModules);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }
@@ -185,6 +220,11 @@ public class ModuleIDETests extends ModuleInProjectTest {
         Assert.assertTrue(contentDirectory.toPath().toString().contains(newModuleName));
       }
 
+      final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(module.getModuleDescriptor());
+      if (generatorOutputPath != null) {
+        Assert.assertTrue(generatorOutputPath.contains(newModuleName));
+      }
+
       // Check models namespace is changed
       for (SModel model : module.getModels()) {
         model.getName().getNamespace().equals(newModuleName);
@@ -196,6 +236,28 @@ public class ModuleIDETests extends ModuleInProjectTest {
       if (modelsFolder != null && modelsFolder.getChildren() != null) {
         for (IFile file : modelsFolder.getChildren()) {
           Assert.assertTrue(!file.getName().contains(newModuleName));
+        }
+      }
+
+      // Check submodules
+      for (AbstractModule subModule : subModules) {
+        Assert.assertTrue(subModule.getModuleSourceDir().toPath().startsWith(module.getModuleSourceDir().toPath()));
+
+        // Check that model roots content folder is updated
+        for (ModelRoot modelRoot : subModule.getModelRoots()) {
+          if (!(modelRoot instanceof FileBasedModelRoot)) {
+            continue;
+          }
+
+          final IFile contentDirectory = ((FileBasedModelRoot) modelRoot).getContentDirectory();
+          Assert.assertNotNull(contentDirectory);
+          Assert.assertTrue(contentDirectory.exists());
+          Assert.assertTrue(contentDirectory.toPath().startsWith(module.getModuleSourceDir().toPath()));
+        }
+
+        final String generatorOutputPathSub = ProjectPathUtil.getGeneratorOutputPath(subModule.getModuleDescriptor());
+        if (generatorOutputPathSub != null) {
+          Assert.assertTrue(generatorOutputPathSub.contains(newModuleName));
         }
       }
 
