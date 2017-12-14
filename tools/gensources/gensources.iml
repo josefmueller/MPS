@@ -183,6 +183,7 @@
     </content>
     <content url="file://$MODULE_DIR$/../../languages.test">
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.editorTest/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.ide.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.test.generation/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages.test/languageDesign/lang.editor.test.generation/source_gen" isTestSource="false" />
     </content>
@@ -775,6 +776,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="JetPad" level="project" />
+    <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="mps-testing" />
     <orderEntry type="module" module-name="migrationAssistant" />
@@ -794,6 +796,9 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
+    <orderEntry type="module" module-name="execution-configurations-ant" />
+    <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="httpsupport" />
   </component>
 </module>
+
