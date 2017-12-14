@@ -159,6 +159,19 @@ public class ModuleIDETests extends ModuleInProjectTest {
   }
 
   @Test
+  public void renameSolutionWithSpecialFolder() {
+    renameModule(
+        (moduleName) -> {
+          File moduleFolder = new File(ourProject.getProjectFile(), "solutions");
+          moduleFolder = new File(moduleFolder, moduleName);
+          // Create module with name different from folder name
+          return NewModuleUtil.createSolution(getNewModuleName(), moduleFolder.getAbsolutePath(), ourProject);
+        },
+        (moduleName, module) -> Assert.assertTrue(module instanceof Solution)
+    );
+  }
+
+  @Test
   public void renameDevkit() {
     renameModule(
         (moduleName) -> {
@@ -186,6 +199,10 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> {
       AbstractModule module = moduleReference.get();
       final Collection<AbstractModule> subModules = Renamer.getSubModules(ourProject.getRepository(), module);
+
+      // If module name is not equals to folder name, that folder should not be renamed
+      boolean mustBeMoved = module.getModuleName().equals(module.getModuleSourceDir().getName());
+
       try {
         Renamer.renameModuleWithSubModules(module, newModuleName, subModules);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
@@ -206,23 +223,22 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertNotNull(moduleDir);
       String moduleDirName = moduleDir.toPath().getFileName();
       Assert.assertNotNull(moduleDirName);
-      Assert.assertTrue(moduleDirName.equals(newModuleName));
+      Assert.assertTrue(mustBeMoved == moduleDirName.equals(newModuleName));
 
       // Check that model roots content folder is updated
       for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (!(modelRoot instanceof FileBasedModelRoot)) {
-          continue;
-        }
+        // Only expect FileBasedModelRoot here
+        Assert.assertTrue(modelRoot instanceof FileBasedModelRoot);
 
         final IFile contentDirectory = ((FileBasedModelRoot) modelRoot).getContentDirectory();
         Assert.assertNotNull(contentDirectory);
         Assert.assertTrue(contentDirectory.exists());
-        Assert.assertTrue(contentDirectory.toPath().toString().contains(newModuleName));
+        Assert.assertTrue(contentDirectory.toPath().startsWith(moduleDir.toPath()));
       }
 
       final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(module.getModuleDescriptor());
       if (generatorOutputPath != null) {
-        Assert.assertTrue(generatorOutputPath.contains(newModuleName));
+        Assert.assertTrue(mustBeMoved == generatorOutputPath.contains(newModuleName));
       }
 
       // Check models namespace is changed

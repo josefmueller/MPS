@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public final class Renamer {
   }
 
   /**
-   * TODO: remove after MPS will state, that project layout forbid submodules and migration will be applied.
+   * TODO: remove after MPS will state that project layout forbid submodules and migration will be applied.
    * If module name equals to module folder - both must be renamed.
    * This method handles update of modules, which folders are situated under renaming module folder
    *
@@ -117,6 +118,7 @@ public final class Renamer {
       }
     });
 
+    subModules.sort(Comparator.comparingInt(moduleToCompare -> moduleToCompare.getModuleSourceDir().toPath().toString().length()));
     return subModules;
   }
 

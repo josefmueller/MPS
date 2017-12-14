@@ -680,10 +680,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       setModuleDescriptor(descriptor);
     }
 
-    fireModuleRenamed(oldRef);
-
     // Rename models after module to ensure, that they will have short new name without module prefix
     renameModels(oldModuleName, newModuleName, true);
+
+    fireModuleRenamed(oldRef);
   }
 
   private void updateModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, @NotNull String newModuleName) {
