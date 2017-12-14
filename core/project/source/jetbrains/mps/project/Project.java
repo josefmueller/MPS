@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,7 +112,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
       for (SModule m : getProjectModules()) {
         result.add(m);
         if (m instanceof Language) {
-          result.addAll(((Language) m).getGenerators());
+          result.addAll(((Language) m).getOwnedGenerators());
         }
       }
     });
@@ -133,6 +133,10 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return getProjectModules().contains(module);
   }
 
+  /**
+   * Note, call {@code #getProjectModules(SModule.class)} is ambiguous, as it doesn't return generators that live under a project's language despite the fact
+   * Generator is instaoce of SModule, indeed.
+   */
   // AP todo transfer from Project to ProjectBase; helping method -- no need to be here
   @NotNull
   public final <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
@@ -192,10 +196,10 @@ public abstract class Project implements MPSModuleOwner, IProject {
       assert openProjects.contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 
       Set<SModule> result = new HashSet<SModule>();
-      result.addAll(getProjectModules(SModule.class));
+      result.addAll(getProjectModules());
 
       for (Language l : getProjectModules(Language.class)) {
-        result.addAll(l.getGenerators());
+        result.addAll(l.getOwnedGenerators());
       }
       return result;
     }

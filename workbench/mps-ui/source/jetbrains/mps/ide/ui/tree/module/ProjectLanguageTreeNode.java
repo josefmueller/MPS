@@ -105,7 +105,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(accessories);
     }
 
-    for (Generator generator : getModule().getGenerators()) {
+    for (Generator generator : getModule().getOwnedGenerators()) {
       MPSTreeNode generatorNode = createFor(myProject, generator);
       add(generatorNode);
     }

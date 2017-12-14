@@ -71,7 +71,7 @@ public class ModelCheckerBuilder {
     public Iterable<SModule> getSubModules(SModule module) {
       List<SModule> result = ListSequence.fromListAndArray(new ArrayList<SModule>(), module);
       if (myIncludeGenerators && module instanceof Language) {
-        ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
+        ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(((Language) module).getOwnedGenerators()));
       }
       return result;
     }

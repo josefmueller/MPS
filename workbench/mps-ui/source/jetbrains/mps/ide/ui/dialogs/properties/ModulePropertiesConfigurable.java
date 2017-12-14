@@ -582,7 +582,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
           }
           ModelScanner tms = new ModelScanner();
-          for (Generator g : ((Language) myModule).getGenerators()) {
+          for (Generator g : ((Language) myModule).getOwnedGenerators()) {
             g.getOwnTemplateModels().forEach(tms::scan);
           }
           tms.getTargetLanguages().forEach(l -> generationTargets.add(l.getSourceModuleReference()));
@@ -882,7 +882,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         languageDescriptor.getRuntimeModules().clear();
         languageDescriptor.getRuntimeModules().addAll(myTableItems);
-        for (Generator generator : ((Language) myModule).getGenerators()) {
+        for (Generator generator : ((Language) myModule).getOwnedGenerators()) {
           new VersionFixer(myModuleRepository, generator).updateImportVersions();
         }
       }

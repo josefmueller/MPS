@@ -58,7 +58,7 @@ public class LanguageImportFinder extends BaseFinder implements IFinder {
         }
         if (module instanceof Language) {
           collectUsagesInLanguage(lang, (Language) module, searchResults);
-          for (Generator g : ((Language) module).getGenerators()) {
+          for (Generator g : ((Language) module).getOwnedGenerators()) {
             collectUsagesInGenerator(lang, g, searchResults);
           }
         }

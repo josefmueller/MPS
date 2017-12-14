@@ -54,7 +54,7 @@ public final class ModuleDeleteHelper {
       LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
     } else {
       modules.stream().filter(m -> m instanceof Language).forEach(m -> {
-        List<SModule> generators = new ArrayList<>(((Language) m).getGenerators());
+        List<SModule> generators = new ArrayList<>(((Language) m).getOwnedGenerators());
         delete(generators, deleteFiles, true);
       });
       delete(modules, deleteFiles, false);

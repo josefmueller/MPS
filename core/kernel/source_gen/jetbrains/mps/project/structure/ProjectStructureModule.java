@@ -243,7 +243,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (file != null && moduleDescriptor != null) {
         if (myModule instanceof Language) {
           SNode langNode = new ProjectStructureBuilder((AbstractModule) myModule, this).convertLanguage();
-          ArrayList<Generator> generators = new ArrayList<Generator>(((Language) myModule).getGenerators());
+          ArrayList<Generator> generators = new ArrayList<Generator>(((Language) myModule).getOwnedGenerators());
           // I'd like to have predictable order in project model iteration, as well as generated code, that's why I sort here, not in templates. 
           Collections.sort(generators, new SModuleNameComparator());
           for (Generator g : generators) {

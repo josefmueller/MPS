@@ -156,12 +156,12 @@ public class OptimizeImportsHelper {
       }
       modelsToOptimize.add(model);
     }
-    for (Generator g : language.getGenerators()) {
+    for (Generator g : language.getOwnedGenerators()) {
       modelsToOptimize.addAll(g.getModels());
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize, new EmptyProgressMonitor());
     myRepository.saveAll();
-    for (Generator g : language.getGenerators()) {
+    for (Generator g : language.getOwnedGenerators()) {
       GeneratorModuleScanner gms = new GeneratorModuleScanner();
       gms.walkPriorityRules(g);
       result.myReport = optimizeModuleImports(g, result, gms.getReferencedGenerators()) + "\n\n" + result.myReport;
