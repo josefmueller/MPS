@@ -17,10 +17,8 @@
     <applicationService serviceInterface="com.intellij.lang.cacheBuilder.CacheBuilderRegistry"
                         serviceImplementation="com.intellij.lang.cacheBuilder.CacheBuilderRegistryImpl"/>
 
-    <!--
     <applicationService serviceInterface="com.intellij.codeInsight.intention.IntentionManager"
                         serviceImplementation="com.intellij.codeInsight.intention.impl.config.IntentionManagerImpl"/>
-    -->
     <!--MPS patch -->
     <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                         serviceImplementation="jetbrains.mps.codeStyle.MPSCodeStyleFacade"/>
@@ -124,10 +122,8 @@
 
     <applicationService serviceInterface="com.intellij.psi.statistics.StatisticsManager"
                         serviceImplementation="com.intellij.psi.statistics.impl.StatisticsManagerImpl"/>
-    <!--
     <applicationService serviceInterface="com.intellij.codeInsight.intention.impl.config.IntentionManagerSettings"
                         serviceImplementation="com.intellij.codeInsight.intention.impl.config.IntentionManagerSettings"/>
-    -->
     <applicationService serviceInterface="com.intellij.find.FindSettings"
                         serviceImplementation="com.intellij.find.impl.FindSettingsImpl"/>
     <applicationService serviceImplementation="com.intellij.find.impl.FindSettingsImpl$FindRecents"/>
@@ -242,10 +238,12 @@
 
     <projectService serviceInterface="com.intellij.psi.codeStyle.LegacyCodeStyleSettingsManager"
                     serviceImplementation="com.intellij.psi.codeStyle.LegacyCodeStyleSettingsManager"/>
+    -->
 
     <projectService serviceInterface="com.intellij.codeInsight.daemon.impl.analysis.HighlightingLevelManager"
                     serviceImplementation="com.intellij.codeInsight.daemon.impl.analysis.HighlightingSettingsPerFile"/>
 
+    <!--
     <projectService serviceInterface="com.intellij.find.findInProject.FindInProjectManager"
                     serviceImplementation="com.intellij.find.findInProject.FindInProjectManager"/>
     <projectService serviceInterface="com.intellij.find.replaceInProject.ReplaceInProjectManager"
