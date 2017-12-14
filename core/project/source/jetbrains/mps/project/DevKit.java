@@ -181,6 +181,9 @@ public class DevKit extends AbstractModule {
   @Override
   public void save() {
     super.save();
+    if (isReadOnly()) {
+      return;
+    }
 
     // does this mean than once loaded with error, we have no chance to fix the module?
     if (myDescriptor.getLoadException() != null){
