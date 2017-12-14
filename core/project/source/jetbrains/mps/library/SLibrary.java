@@ -18,8 +18,6 @@ package jetbrains.mps.library;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.EqualUtil;
@@ -117,6 +115,8 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
   private void collectAndRegisterModules() {
     final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
     List<ModuleHandle> moduleHandles = new ArrayList<>(modulesMiner.getCollectedModules());
+    // MM gives all modules, including those sharing descriptor file with their source language
+    // we expect this sequence sorted, with LanguageDescriptors first, as MRF doesn't tolerate generators coming in front of their languages yet.
     ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(myRepository);
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<>();
@@ -126,10 +126,8 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
       myFileTracker.track(moduleHandle.getFile(), module);
     }
     for (SModule module : loaded) {
-      // FIXME if there are generators among loaded, Generator.onModuleLoad() is invoked twice.
-      ((AbstractModule) module).onModuleLoad();
-      if (module instanceof Language) {
-        ((Language) module).getGenerators().forEach(Generator::onModuleLoad);
+      if (module instanceof AbstractModule) {
+        ((AbstractModule) module).onModuleLoad();
       }
     }
   }
