@@ -23086,7 +23086,6 @@
         </node>
         <node concept="1SiIV0" id="7u8Q3wDVFuO" role="3bR37C">
           <node concept="3bR9La" id="7u8Q3wDVFvd" role="1SiIV1">
-            <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
@@ -25760,6 +25759,12 @@
           <node concept="3bR9La" id="22atqJwqRDz" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="3fCcEmT2ZdI" resolve="jetbrains.mps.lang.test.util" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="59dmSAW33Iw" role="3bR37C">
+          <node concept="3bR9La" id="59dmSAW33Ix" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
           </node>
         </node>
       </node>
