@@ -203,7 +203,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       return GenerationStatus.REQUIRED;
     }
     if (module instanceof Language) {
-      for (Generator generator : ((Language) module).getGenerators()) {
+      for (Generator generator : ((Language) module).getOwnedGenerators()) {
         if (generationRequired(generator)) {
           return GenerationStatus.REQUIRED;
         }

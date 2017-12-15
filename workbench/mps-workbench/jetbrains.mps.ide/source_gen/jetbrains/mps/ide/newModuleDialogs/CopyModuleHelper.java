@@ -80,8 +80,8 @@ public final class CopyModuleHelper {
     copyModelRoots(myOriginal, copy);
     copyFacets(myOriginal, copy);
     if (myOriginal instanceof Language) {
-      Collection<Generator> copyGenerators = ((Language) copy).getGenerators();
-      Collection<Generator> originalGenerators = ((Language) myOriginal).getGenerators();
+      Collection<Generator> copyGenerators = ((Language) copy).getOwnedGenerators();
+      Collection<Generator> originalGenerators = ((Language) myOriginal).getOwnedGenerators();
       if (copyGenerators.size() != originalGenerators.size()) {
         throw new CopyNotSupportedException("Generators number do not match!");
       }

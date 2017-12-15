@@ -3510,7 +3510,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="5_O5XWaAvtr" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
+                    <ref role="37wK5l" to="w1kc:~Language.getOwnedGenerators():java.util.Collection" resolve="getOwnedGenerators" />
                   </node>
                 </node>
               </node>
@@ -3536,7 +3536,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="5_O5XWaAwrL" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
+                    <ref role="37wK5l" to="w1kc:~Language.getOwnedGenerators():java.util.Collection" resolve="getOwnedGenerators" />
                   </node>
                 </node>
               </node>
