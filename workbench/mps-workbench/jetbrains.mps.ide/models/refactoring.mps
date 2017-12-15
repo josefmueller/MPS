@@ -2838,8 +2838,8 @@
           <node concept="3cpWsn" id="4xnDkoPm$Bl" role="3cpWs9">
             <property role="TrG5h" value="renamingModulePath" />
             <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="4xnDkoPm$Bg" role="1tU5fm">
-              <ref role="3uigEE" to="eurq:~UniPath" resolve="UniPath" />
+            <node concept="3uibUv" id="3XD7mq23WEq" role="1tU5fm">
+              <ref role="3uigEE" to="eurq:~Path" resolve="Path" />
             </node>
             <node concept="2OqwBi" id="4xnDkoPm$Bm" role="33vP2m">
               <node concept="2OqwBi" id="4xnDkoPm$Bn" role="2Oq$k0">
@@ -2851,7 +2851,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4xnDkoPm$Bq" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
+                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.Path" resolve="toPath" />
               </node>
             </node>
           </node>
@@ -2891,7 +2891,7 @@
               <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
             </node>
             <node concept="liA8E" id="4xnDkoPozic" role="2OqNvi">
-              <ref role="37wK5l" to="eurq:~UniPath.endsWith(java.lang.String):boolean" resolve="endsWith" />
+              <ref role="37wK5l" to="eurq:~Path.endsWith(java.lang.String):boolean" resolve="endsWith" />
               <node concept="2OqwBi" id="4xnDkoPozid" role="37wK5m">
                 <node concept="37vLTw" id="4xnDkoPozie" role="2Oq$k0">
                   <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />

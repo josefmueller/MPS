@@ -23,7 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.path.UniPath;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -101,7 +101,7 @@ public final class Renamer {
     // Expect maximum of two submodules for language: sandbox and runtime.
     // There is no way to create other submodules from MPS UI, so other cases are rare.
     final List<AbstractModule> subModules = new ArrayList<>(2);
-    final UniPath renamingModulePath = module.getModuleSourceDir().toPath();
+    final Path renamingModulePath = module.getModuleSourceDir().toPath();
 
     repository.getModelAccess().runReadAction(() -> {
       for (SModule repositoryModule : repository.getModules()) {
@@ -111,7 +111,7 @@ public final class Renamer {
           continue;
         }
 
-        UniPath modulePath = ((AbstractModule) repositoryModule).getModuleSourceDir().toPath();
+        Path modulePath = ((AbstractModule) repositoryModule).getModuleSourceDir().toPath();
         if (modulePath.startsWith(renamingModulePath)) {
           subModules.add((AbstractModule) repositoryModule);
         }
