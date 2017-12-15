@@ -44,6 +44,7 @@ import jetbrains.mps.library.ModulesMiner;
 import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public abstract class MpsWorker {
   private static final Logger LOG = LogManager.getLogger(MpsWorker.class);
@@ -342,16 +343,23 @@ public abstract class MpsWorker {
       }
     }
   }
+  /**
+   * 
+   * @deprecated There's no need to wrap set of modules into this class, and there's no added value whatsoever.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   protected class ObjectsToProcess {
     private final Set<Project> myProjects = new LinkedHashSet<Project>();
     private final Set<SModule> myModules = new LinkedHashSet<SModule>();
-    private final Set<SModel> myModels = new LinkedHashSet<SModel>();
+
+    @Deprecated
     public ObjectsToProcess() {
     }
-    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<SModule> modules, Set<SModel> models) {
+    @Deprecated
+    public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<SModule> modules) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
-      myModels.addAll(models);
     }
     public Set<Project> getProjects() {
       return myProjects;
@@ -359,11 +367,8 @@ public abstract class MpsWorker {
     public Set<SModule> getModules() {
       return myModules;
     }
-    public Set<SModel> getModels() {
-      return myModels;
-    }
     public boolean hasAnythingToGenerate() {
-      return !(myModels.isEmpty()) || !(myProjects.isEmpty()) || !(myModules.isEmpty());
+      return !(myProjects.isEmpty()) || !(myModules.isEmpty());
     }
   }
 }

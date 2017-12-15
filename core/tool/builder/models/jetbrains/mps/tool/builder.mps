@@ -33,6 +33,7 @@
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -56,9 +57,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -128,6 +134,9 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -275,9 +284,13 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
@@ -2883,26 +2896,7 @@
           </node>
         </node>
       </node>
-      <node concept="312cEg" id="KL8Aqlj5DJ" role="jymVt">
-        <property role="TrG5h" value="myModels" />
-        <property role="34CwA1" value="false" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="KL8Aqlj5DK" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="3uibUv" id="KL8Aqlj5DL" role="11_B2D">
-            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-          </node>
-        </node>
-        <node concept="3Tm6S6" id="KL8Aqlj5DM" role="1B3o_S" />
-        <node concept="2ShNRf" id="KL8Aqlj5DN" role="33vP2m">
-          <node concept="1pGfFk" id="KL8Aqlj5DO" role="2ShVmc">
-            <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
-            <node concept="3uibUv" id="KL8Aqlj5DP" role="1pMfVU">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="2tJIrI" id="5BF5HLVxN6K" role="jymVt" />
       <node concept="3clFbW" id="KL8Aqlj5DQ" role="jymVt">
         <node concept="3Tm1VV" id="KL8Aqlj5DR" role="1B3o_S" />
         <node concept="3cqZAl" id="KL8Aqlj5DS" role="3clF45" />
@@ -2933,16 +2927,6 @@
             </node>
           </node>
         </node>
-        <node concept="37vLTG" id="KL8Aqlj5E4" role="3clF46">
-          <property role="TrG5h" value="models" />
-          <property role="3TUv4t" value="false" />
-          <node concept="3uibUv" id="KL8Aqlj5E5" role="1tU5fm">
-            <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-            <node concept="3uibUv" id="KL8Aqlj5E6" role="11_B2D">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbS" id="KL8Aqlj5E7" role="3clF47">
           <node concept="3clFbF" id="KL8Aqlj5E8" role="3cqZAp">
             <node concept="2OqwBi" id="KL8Aqlj5E9" role="3clFbG">
@@ -2966,19 +2950,6 @@
                 <ref role="37wK5l" to="33ny:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
                 <node concept="37vLTw" id="2BHiRxgmj29" role="37wK5m">
                   <ref role="3cqZAo" node="KL8Aqlj5E1" resolve="modules" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="KL8Aqlj5Ei" role="3cqZAp">
-            <node concept="2OqwBi" id="KL8Aqlj5Ej" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxeuDZm" role="2Oq$k0">
-                <ref role="3cqZAo" node="KL8Aqlj5DJ" resolve="myModels" />
-              </node>
-              <node concept="liA8E" id="KL8Aqlj5El" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
-                <node concept="37vLTw" id="2BHiRxgl3jv" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aqlj5E4" resolve="models" />
                 </node>
               </node>
             </node>
@@ -3023,25 +2994,6 @@
           </node>
         </node>
       </node>
-      <node concept="3clFb_" id="KL8Aqlj5E_" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getModels" />
-        <property role="DiZV1" value="false" />
-        <node concept="3Tm1VV" id="KL8Aqlj5EA" role="1B3o_S" />
-        <node concept="3uibUv" id="KL8Aqlj5EB" role="3clF45">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="3uibUv" id="KL8Aqlj5EC" role="11_B2D">
-            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="KL8Aqlj5ED" role="3clF47">
-          <node concept="3cpWs6" id="KL8Aqlj5EE" role="3cqZAp">
-            <node concept="37vLTw" id="2BHiRxeuqRn" role="3cqZAk">
-              <ref role="3cqZAo" node="KL8Aqlj5DJ" resolve="myModels" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="3clFb_" id="KL8Aqlj5EG" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="hasAnythingToGenerate" />
@@ -3051,25 +3003,13 @@
         <node concept="3clFbS" id="KL8Aqlj5EJ" role="3clF47">
           <node concept="3cpWs6" id="KL8Aqlj5EK" role="3cqZAp">
             <node concept="22lmx$" id="KL8Aqlj5EL" role="3cqZAk">
-              <node concept="22lmx$" id="KL8Aqlj5EM" role="3uHU7B">
-                <node concept="3fqX7Q" id="KL8Aqlj5EN" role="3uHU7B">
-                  <node concept="2OqwBi" id="KL8Aqlj5EO" role="3fr31v">
-                    <node concept="37vLTw" id="2BHiRxeuFKA" role="2Oq$k0">
-                      <ref role="3cqZAo" node="KL8Aqlj5DJ" resolve="myModels" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5EQ" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
-                    </node>
+              <node concept="3fqX7Q" id="KL8Aqlj5ER" role="3uHU7B">
+                <node concept="2OqwBi" id="KL8Aqlj5ES" role="3fr31v">
+                  <node concept="37vLTw" id="2BHiRxeuL9p" role="2Oq$k0">
+                    <ref role="3cqZAo" node="KL8Aqlj5Dx" resolve="myProjects" />
                   </node>
-                </node>
-                <node concept="3fqX7Q" id="KL8Aqlj5ER" role="3uHU7w">
-                  <node concept="2OqwBi" id="KL8Aqlj5ES" role="3fr31v">
-                    <node concept="37vLTw" id="2BHiRxeuL9p" role="2Oq$k0">
-                      <ref role="3cqZAo" node="KL8Aqlj5Dx" resolve="myProjects" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5EU" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
-                    </node>
+                  <node concept="liA8E" id="KL8Aqlj5EU" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Set.isEmpty():boolean" resolve="isEmpty" />
                   </node>
                 </node>
               </node>
@@ -3084,6 +3024,27 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3UR2Jj" id="5BF5HLV$tx6" role="lGtFl">
+        <node concept="TZ5HI" id="5BF5HLV$tx7" role="3nqlJM">
+          <node concept="TZ5HA" id="5BF5HLV$tx8" role="3HnX3l">
+            <node concept="1dT_AC" id="5BF5HLV$tTd" role="1dT_Ay">
+              <property role="1dT_AB" value="There's no need to wrap set of modules into this class, and there's no added value whatsoever." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5BF5HLV$tx9" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="5BF5HLV$tTf" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="5BF5HLV$uDO" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="5BF5HLV$uRW" role="2B70Vg">
+            <property role="$nhwW" value="2018.1" />
           </node>
         </node>
       </node>

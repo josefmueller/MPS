@@ -15,8 +15,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import java.util.Collections;
-import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Collection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
@@ -43,13 +42,6 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
 import jetbrains.mps.tool.common.ScriptProperties;
@@ -98,10 +90,9 @@ public class GenTestWorker extends BaseGeneratorWorker {
       }
     });
 
-    MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
-    if (go.hasAnythingToGenerate()) {
-      loadAndMake(project, go);
-      generate(project, go);
+    if (!(modules.isEmpty())) {
+      loadAndMake(project, modules);
+      generate(project, modules);
     } else {
       error("Could not find anything to test.");
     }
@@ -114,17 +105,9 @@ public class GenTestWorker extends BaseGeneratorWorker {
   }
 
   @Override
-  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
+  protected void generate(Project project, Collection<SModule> modules) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (Project p : go.getProjects()) {
-      s.append("\n    ");
-      s.append(p);
-    }
-    for (SModule m : go.getModules()) {
-      s.append("\n    ");
-      s.append(m);
-    }
-    for (SModel m : go.getModels()) {
+    for (SModule m : modules) {
       s.append("\n    ");
       s.append(m);
     }
@@ -193,7 +176,7 @@ public class GenTestWorker extends BaseGeneratorWorker {
       BuildMakeService bms = new BuildMakeService();
       myReporter.finishRun();
       myReporter.startRun(myWhatToDo.getProperty("ant.project.name"));
-      Future<IResult> result = bms.make(ms, collectResources(project, go.getModules(), go.getModels()), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
+      Future<IResult> result = bms.make(ms, collectResources(project, modules), null, ctl, new GenTestWorker.MyProgressMonitorBase(startTestFormat, finishTestFormat));
       if (!(result.get().isSucessful())) {
         myErrors.add("Make was not successful " + result.get().output());
       }
@@ -204,11 +187,11 @@ public class GenTestWorker extends BaseGeneratorWorker {
     }
   }
 
-  private void loadAndMake(final Project project, final MpsWorker.ObjectsToProcess go) {
+  private void loadAndMake(final Project project, final Collection<SModule> modules) {
     ModelAccess access = project.getRepository().getModelAccess();
     access.runReadAction(new Runnable() {
       public void run() {
-        new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
+        new ModuleMaker().make(modules, new EmptyProgressMonitor() {
           @Override
           public void step(String text) {
             // silently 
@@ -254,30 +237,6 @@ public class GenTestWorker extends BaseGeneratorWorker {
     }
     this.tmpPath = null;
     MapSequence.fromMap(path2tmp).clear();
-  }
-
-  private Iterable<IResource> collectResources(Project project, final Iterable<SModule> modules, final Iterable<SModel> models) {
-    final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-          public Iterable<SModel> translate(SModule m) {
-            return m.getModels();
-          }
-        }));
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
-          public Iterable<Generator> translate(Language it) {
-            return it.getGenerators();
-          }
-        }).translate(new ITranslator2<Generator, SModel>() {
-          public Iterable<SModel> translate(Generator gen) {
-            return gen.getModels();
-          }
-        }));
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));
-      }
-    });
-    return new ModelsToResources(result.value).resources();
   }
 
   private IFile tmpFile(String path) {

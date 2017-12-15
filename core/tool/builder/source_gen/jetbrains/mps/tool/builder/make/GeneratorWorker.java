@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashSet;
 import java.io.File;
-import java.util.Collections;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.tool.environment.Environment;
@@ -46,9 +45,8 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       if (bootstrap) {
         warning("Found bootstrap chunk " + chunk.key() + ". Generation may be impossible.");
       }
-      MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, Collections.EMPTY_SET);
-      if (go.hasAnythingToGenerate()) {
-        generate(project, go);
+      if (!(modules.isEmpty())) {
+        generate(project, modules);
         doneSomething = true;
       }
     }

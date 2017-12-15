@@ -8,8 +8,9 @@ import jetbrains.mps.tool.common.GeneratorProperties;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.project.Project;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.MakeSession;
@@ -19,11 +20,8 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.messages.IMessageHandler;
 import org.jetbrains.annotations.NotNull;
@@ -54,9 +52,6 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     settings.enableInplaceTransformations(inplace);
     settings.setShowBadChildWarning(warnings);
     settings.setCreateStaticReferences(useStaticRefs);
-    // incremental generation for Ant build doesn't make sense as we have no way to ensure 'unchanged' artifacts are still there 
-    settings.setIncremental(false);
-    settings.setIncrementalUseCache(false);
     settings.setCheckModelsBeforeGeneration(false);
     info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s, static references to replace dynamic is %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)], onoff[(useStaticRefs ? 0 : 1)]));
   }
@@ -66,22 +61,24 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     failBuild("generation");
   }
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.tool.builder.make.BaseGeneratorWorker#generate(Project, Collection<SModule>) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
+    generate(project, go.getModules());
+  }
+
+  protected void generate(Project project, Collection<SModule> modules) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (Project p : go.getProjects()) {
-      s.append("\n    ");
-      s.append(p);
-    }
-    for (SModule m : go.getModules()) {
-      s.append("\n    ");
-      s.append(m);
-    }
-    for (SModel m : go.getModels()) {
+    for (SModule m : modules) {
       s.append("\n    ");
       s.append(m);
     }
     info(s.toString());
-    Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, go)).toListSequence();
+    Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, modules)).toListSequence();
     myEnvironment.flushAllEvents();
     final MakeSession session = new MakeSession(project, new BaseGeneratorWorker.MyMessageHandler(), true);
     JavaCompileFacetInitializer jcfi = new JavaCompileFacetInitializer().skipCompilation(mySkipCompilation).setJavaCompileOptions(myJavaCompilerOptions);
@@ -100,31 +97,18 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
     myEnvironment.flushAllEvents();
   }
 
-  private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
-    return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
-      public Iterable<Generator> translate(Language it) {
-        return it.getGenerators();
-      }
-    }));
-  }
-
-  protected Iterable<MResource> collectResources(Project project, final MpsWorker.ObjectsToProcess go) {
+  protected Iterable<MResource> collectResources(Project project, final Collection<SModule> modules) {
+    // FIXME it's odd to have distinct set of modules but lock repository to access its modules. 
+    // Shall rather keem modules as part of the project 
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     project.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (Project p : go.getProjects()) {
-          for (SModule mod : p.getProjectModulesWithGenerators()) {
-            models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(mod.getModels()));
-          }
-        }
-        for (SModule mod : withGenerators(go.getModules())) {
+        for (SModule mod : modules) {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(mod.getModels()));
-        }
-        if (go.getModels() != null) {
-          models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
         }
       }
     });
+    // XXX resources() needs model access, isn't it? 
     return Sequence.fromIterable(new ModelsToResources(models.value).resources()).ofType(MResource.class);
   }
 
