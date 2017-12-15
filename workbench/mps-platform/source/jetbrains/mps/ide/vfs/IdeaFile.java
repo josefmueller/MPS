@@ -97,7 +97,7 @@ public class IdeaFile implements IFileEx, CachingFile {
 
   @NotNull
   @Override
-  public Path toPath() {
+  public UniPath toPath() {
     // idea stores all paths as system-independent while we want to distinguish the paths
     return UniPath.fromString(FileUtil.toSystemDependentName(getPath()));
   }

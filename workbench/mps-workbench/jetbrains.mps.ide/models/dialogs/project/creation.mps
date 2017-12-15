@@ -4980,7 +4980,7 @@
                   <ref role="3cqZAo" node="1pyYjDPRans" resolve="moduleDir" />
                 </node>
                 <node concept="liA8E" id="1pyYjDPRanG" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.Path" resolve="toPath" />
+                  <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
                 </node>
               </node>
               <node concept="liA8E" id="58TyP8j_tJt" role="2OqNvi">
@@ -5178,8 +5178,8 @@
               <node concept="37vLTw" id="3GM_nagTum0" role="2Oq$k0">
                 <ref role="3cqZAo" node="1pyYjDPRaoO" resolve="templateModelsPath" />
               </node>
-              <node concept="liA8E" id="1pyYjDPRaoX" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.Path" resolve="toPath" />
+              <node concept="liA8E" id="3R5e$_HRkYc" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
               </node>
             </node>
             <node concept="liA8E" id="eb0uW_jRya" role="2OqNvi">

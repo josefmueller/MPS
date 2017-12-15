@@ -93,7 +93,7 @@ public class RenameModuleDialog extends RenameDialog {
    * Have to update info panel after initialization in {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#createCenterPanel() }, because last one happens in super constructor before {@link jetbrains.mps.ide.refactoring.RenameModuleDialog#myModule } is set.
    */
   private void updateCentralPanel() {
-    final Path renamingModulePath = myModule.getModuleSourceDir().toPath();
+    final Path renamingModulePath = myModule.getModuleSourceDir().path();
     // If folder and module name are different, folder will not be renamed, so no need to check submodules 
     if (myModule.getModuleName() != null && myModule.getModuleName().equals(renamingModulePath.getFileName())) {
       mySubModules = Renamer.getSubModules(myProject.getRepository(), myModule);

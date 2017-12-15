@@ -9529,7 +9529,7 @@
                   <ref role="3cqZAo" node="15VbAzME8ww" resolve="projectFile" />
                 </node>
                 <node concept="liA8E" id="15VbAzME8y1" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.Path" resolve="toPath" />
+                  <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
                 </node>
               </node>
               <node concept="liA8E" id="15VbAzME8wP" role="2OqNvi">

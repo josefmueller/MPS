@@ -89,7 +89,7 @@ public class IoFile implements IFileEx {
 
   @NotNull
   @Override
-  public Path toPath() {
+  public UniPath toPath() {
     return UniPath.fromString(myFile.getPath());
   }
 

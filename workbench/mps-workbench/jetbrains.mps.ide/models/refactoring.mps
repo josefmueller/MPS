@@ -2851,8 +2851,8 @@
                   <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleSourceDir():jetbrains.mps.vfs.IFile" resolve="getModuleSourceDir" />
                 </node>
               </node>
-              <node concept="liA8E" id="4xnDkoPm$Bq" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.Path" resolve="toPath" />
+              <node concept="liA8E" id="3R5e$_HR_t9" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.path():jetbrains.mps.vfs.path.Path" resolve="path" />
               </node>
             </node>
           </node>

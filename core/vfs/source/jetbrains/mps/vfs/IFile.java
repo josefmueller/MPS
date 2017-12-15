@@ -43,7 +43,7 @@ import java.util.List;
  * @see #getPath() for an example
  * FIXME
  *
- * Also it is an MPS abstraction around the IDEA platform file system {@link com.intellij.openapi.vfs.VirtualFile}.
+ * Also it is an MPS abstraction around the IDEA platform file system {@code com.intellij.openapi.vfs.VirtualFile}.
  * IDEA provides an intelligent caching mechanism which might boost up the file system traversal (comparing to the {@link java.io.File}).
  * @see CachingFile
  *
@@ -96,10 +96,14 @@ public interface IFile {
   @NotNull String getPath();
 
   /**
-   * @return the comprised path corresponding to this file
-   * the path is system-dependent in that case (sic!)
+   * @deprecated use #path instead
    */
-  @NotNull Path toPath();
+  @Deprecated
+  @NotNull UniPath toPath();
+
+  @NotNull default Path path() {
+    return toPath();
+  }
 
   URL getUrl() throws MalformedURLException;
 
