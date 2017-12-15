@@ -95,7 +95,7 @@ public class RenameModuleDialog extends RenameDialog {
   private void updateCentralPanel() {
     final UniPath renamingModulePath = myModule.getModuleSourceDir().toPath();
     // If folder and module name are different, folder will not be renamed, so no need to check submodules 
-    if (renamingModulePath.endsWith(myModule.getModuleName())) {
+    if (myModule.getModuleName() != null && myModule.getModuleName().equals(renamingModulePath.getFileName())) {
       mySubModules = Renamer.getSubModules(myProject.getRepository(), myModule);
     } else {
       mySubModules = Collections.emptyList();

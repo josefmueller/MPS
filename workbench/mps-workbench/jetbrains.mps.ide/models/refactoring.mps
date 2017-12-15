@@ -278,6 +278,7 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
       </concept>
@@ -2886,17 +2887,35 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="4xnDkoPozia" role="3clFbw">
-            <node concept="37vLTw" id="4xnDkoPozib" role="2Oq$k0">
-              <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
-            </node>
-            <node concept="liA8E" id="4xnDkoPozic" role="2OqNvi">
-              <ref role="37wK5l" to="eurq:~UniPath.endsWith(java.lang.String):boolean" resolve="endsWith" />
-              <node concept="2OqwBi" id="4xnDkoPozid" role="37wK5m">
+          <node concept="1Wc70l" id="UiQGWJ_qgm" role="3clFbw">
+            <node concept="2OqwBi" id="UiQGWJ_spD" role="3uHU7w">
+              <node concept="liA8E" id="UiQGWJ_tfv" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="UiQGWJ_rqF" role="37wK5m">
+                  <node concept="37vLTw" id="UiQGWJ_r3B" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
+                  </node>
+                  <node concept="liA8E" id="UiQGWJ_s5P" role="2OqNvi">
+                    <ref role="37wK5l" to="eurq:~AbstractPath.getFileName():java.lang.String" resolve="getFileName" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4xnDkoPozid" role="2Oq$k0">
                 <node concept="37vLTw" id="4xnDkoPozie" role="2Oq$k0">
                   <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                 </node>
                 <node concept="liA8E" id="4xnDkoPozif" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="UiQGWJ_psG" role="3uHU7B">
+              <node concept="10Nm6u" id="UiQGWJ_qfm" role="3uHU7w" />
+              <node concept="2OqwBi" id="UiQGWJ_v4W" role="3uHU7B">
+                <node concept="37vLTw" id="UiQGWJ_uHW" role="2Oq$k0">
+                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                </node>
+                <node concept="liA8E" id="UiQGWJ_vuQ" role="2OqNvi">
                   <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                 </node>
               </node>
