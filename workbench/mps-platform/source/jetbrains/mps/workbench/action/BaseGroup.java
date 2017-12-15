@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,12 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.ActionPlace;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -141,7 +142,7 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
     if (project != null) {
       return ProjectHelper.getModelAccess(project);
     } else {
-      return MPSModuleRepository.getInstance().getModelAccess();
+      return ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getModuleRepository().getModelAccess();
     }
   }
 }

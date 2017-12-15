@@ -18,11 +18,12 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import gnu.trove.THashMap;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
@@ -177,7 +178,7 @@ public abstract class BaseAction extends AnAction {
     if (project != null && !project.isDisposed()) {
       return ProjectHelper.getModelAccess(project);
     } else {
-      return MPSModuleRepository.getInstance().getModelAccess();
+      return ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getModuleRepository().getModelAccess();
     }
   }
 
