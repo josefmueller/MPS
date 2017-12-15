@@ -2,13 +2,13 @@
 <model ref="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
@@ -49,9 +49,9 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mz8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.xmlb(MPS.IDEA/)" />
-    <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
+    <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -278,6 +278,7 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
       </concept>
@@ -2862,6 +2863,40 @@
           </node>
         </node>
         <node concept="3clFbJ" id="4xnDkoPovc8" role="3cqZAp">
+          <node concept="1Wc70l" id="UiQGWJ_qgm" role="3clFbw">
+            <node concept="2OqwBi" id="UiQGWJ_spD" role="3uHU7w">
+              <node concept="liA8E" id="UiQGWJ_tfv" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="UiQGWJ_rqF" role="37wK5m">
+                  <node concept="37vLTw" id="UiQGWJ_r3B" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
+                  </node>
+                  <node concept="liA8E" id="UiQGWJ_s5P" role="2OqNvi">
+                    <ref role="37wK5l" to="eurq:~Path.getFileName():java.lang.String" resolve="getFileName" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4xnDkoPozid" role="2Oq$k0">
+                <node concept="37vLTw" id="4xnDkoPozie" role="2Oq$k0">
+                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                </node>
+                <node concept="liA8E" id="4xnDkoPozif" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="UiQGWJ_psG" role="3uHU7B">
+              <node concept="10Nm6u" id="UiQGWJ_qfm" role="3uHU7w" />
+              <node concept="2OqwBi" id="UiQGWJ_v4W" role="3uHU7B">
+                <node concept="37vLTw" id="UiQGWJ_uHW" role="2Oq$k0">
+                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                </node>
+                <node concept="liA8E" id="UiQGWJ_vuQ" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbS" id="4xnDkoPovca" role="3clFbx">
             <node concept="3clFbF" id="684ZMLPnAZk" role="3cqZAp">
               <node concept="37vLTI" id="684ZMLPnCTd" role="3clFbG">
@@ -2882,22 +2917,6 @@
                 </node>
                 <node concept="37vLTw" id="684ZMLPnAZj" role="37vLTJ">
                   <ref role="3cqZAo" node="52AFxJVoR3s" resolve="mySubModules" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="4xnDkoPozia" role="3clFbw">
-            <node concept="37vLTw" id="4xnDkoPozib" role="2Oq$k0">
-              <ref role="3cqZAo" node="4xnDkoPm$Bl" resolve="renamingModulePath" />
-            </node>
-            <node concept="liA8E" id="4xnDkoPozic" role="2OqNvi">
-              <ref role="37wK5l" to="eurq:~Path.endsWith(java.lang.String):boolean" resolve="endsWith" />
-              <node concept="2OqwBi" id="4xnDkoPozid" role="37wK5m">
-                <node concept="37vLTw" id="4xnDkoPozie" role="2Oq$k0">
-                  <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
-                </node>
-                <node concept="liA8E" id="4xnDkoPozif" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
                 </node>
               </node>
             </node>
