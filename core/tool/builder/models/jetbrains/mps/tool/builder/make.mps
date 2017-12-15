@@ -2009,6 +2009,11 @@
             <property role="3SKdUp" value="Disposing &quot;project&quot; modules first" />
           </node>
         </node>
+        <node concept="3SKdUt" id="5BF5HLVDeaP" role="3cqZAp">
+          <node concept="3SKdUq" id="5BF5HLVDeaR" role="3SKWNk">
+            <property role="3SKdUp" value="XXX OTOH, processModuleFile didn't register the modules right into the project, but here we sort of assume we did." />
+          </node>
+        </node>
         <node concept="3cpWs8" id="1DBJYuK87FN" role="3cqZAp">
           <node concept="3cpWsn" id="1DBJYuK87FO" role="3cpWs9">
             <property role="TrG5h" value="repositoryFacade" />

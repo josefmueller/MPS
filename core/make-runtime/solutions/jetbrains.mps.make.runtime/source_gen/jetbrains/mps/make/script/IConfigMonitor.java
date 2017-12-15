@@ -9,8 +9,14 @@ public interface IConfigMonitor extends IJobMonitor {
   <T extends IOption> T relayQuery(IQuery<T> query);
   class Stub extends IJobMonitor.Stub implements IConfigMonitor {
     public Stub() {
-      super(new IProgress.Stub());
+      super();
     }
+    /**
+     * 
+     * 
+     * @deprecated do not use
+     */
+    @Deprecated
     public Stub(IProgress pro) {
       super(pro);
     }

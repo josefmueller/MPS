@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -44,16 +43,6 @@ public class ModelsToResources {
   }
 
   public Iterable<IResource> resources() {
-    return resources(false);
-  }
-
-  /**
-   * 
-   * @deprecated Use {@link jetbrains.mps.smodel.resources.ModelsToResources#resources() } instead. It's no longer responsibility of this class to check model generation status
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public Iterable<IResource> resources(boolean unused) {
     Iterable<SModel> smds = Sequence.fromIterable(models).where(myCanGenerateCondition).distinct();
     smds = Sequence.fromIterable(smds).sort(new ISelector<SModel, String>() {
       public String select(SModel desc) {
@@ -62,6 +51,7 @@ public class ModelsToResources {
     }, true);
     return arrangeByModule(smds);
   }
+
   private Iterable<IResource> arrangeByModule(Iterable<SModel> smds) {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>(null);
     return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModel>singleton(null))).translate(new ITranslator2<SModel, MResource>() {

@@ -1378,56 +1378,6 @@
       <unit id="5079576194953076171" at="16,0,185,0" name="jetbrains.mps.make.unittest.Targets_Test" />
     </file>
   </root>
-  <root nodeRef="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)/7797884084018584807">
-    <file name="LogReporting_Test.java">
-      <node id="7797884084018601009" at="15,45,16,95" concept="7" />
-      <node id="7797884084018601033" at="18,7,19,73" concept="2" />
-      <node id="7797884084018602165" at="19,73,20,70" concept="2" />
-      <node id="7797884084018602154" at="20,70,21,74" concept="2" />
-      <node id="7797884084018602143" at="21,74,22,77" concept="2" />
-      <node id="7797884084018602132" at="22,77,23,70" concept="2" />
-      <node id="7797884084018602176" at="23,70,24,74" concept="2" />
-      <node id="7797884084018613338" at="24,74,25,78" concept="2" />
-      <node id="2617540731012929806" at="25,78,26,70" concept="2" />
-      <node id="2617540731012929814" at="26,70,27,74" concept="2" />
-      <node id="2617540731012931059" at="27,74,28,79" concept="2" />
-      <node id="2361047209818820678" at="28,79,29,78" concept="2" />
-      <node id="7797884084018602198" at="29,78,30,77" concept="2" />
-      <node id="7797884084018602209" at="30,77,31,70" concept="2" />
-      <node id="7797884084018602220" at="31,70,32,74" concept="2" />
-      <node id="7797884084018602231" at="32,74,33,78" concept="2" />
-      <node id="7797884084018602253" at="33,78,34,71" concept="2" />
-      <node id="7797884084018602264" at="34,71,35,75" concept="2" />
-      <node id="7797884084018602275" at="35,75,36,79" concept="2" />
-      <node id="2617540731012934878" at="36,79,37,75" concept="2" />
-      <node id="7797884084018602297" at="37,75,38,74" concept="2" />
-      <node id="7797884084018587335" at="40,7,41,72" concept="7" />
-      <node id="7797884084018587323" at="41,72,42,44" concept="7" />
-      <node id="7797884084018587342" at="42,44,43,35" concept="2" />
-      <node id="7797884084018587355" at="43,35,44,30" concept="2" />
-      <node id="7797884084018587366" at="44,30,45,32" concept="2" />
-      <node id="7797884084018587379" at="45,32,46,30" concept="2" />
-      <node id="2361047209818819425" at="46,30,47,26" concept="2" />
-      <node id="7797884084018587390" at="47,26,48,33" concept="2" />
-      <node id="7797884084018596260" at="48,33,49,30" concept="2" />
-      <node id="7797884084018597236" at="49,30,50,30" concept="2" />
-      <node id="7797884084018587403" at="50,30,51,26" concept="2" />
-      <node id="7797884084018584809" at="53,0,55,0" concept="1" trace="LogReporting_Test#()V" />
-      <node id="7797884084018601018" at="16,95,40,7" concept="2" />
-      <node id="7797884084018587317" at="14,0,53,0" concept="6" trace="test_basic#()V" />
-      <scope id="7797884084018584812" at="53,30,53,30" />
-      <scope id="7797884084018584809" at="53,0,55,0" />
-      <scope id="7797884084018601032" at="18,7,38,74" />
-      <scope id="7797884084018587320" at="15,45,51,26">
-        <var name="logger" id="7797884084018601010" />
-        <var name="pro" id="7797884084018587324" />
-        <var name="strat" id="7797884084018587336" />
-      </scope>
-      <scope id="7797884084018587317" at="14,0,53,0" />
-      <unit id="7797884084018601029" at="17,25,40,5" name="jetbrains.mps.make.unittest.LogReporting_Test$1" />
-      <unit id="7797884084018584807" at="12,0,56,0" name="jetbrains.mps.make.unittest.LogReporting_Test" />
-    </file>
-  </root>
   <root nodeRef="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)/8963054271157682179">
     <file name="ScriptBuilder_Test.java">
       <node id="8963054271157683440" at="25,0,26,0" concept="3" trace="facets" />

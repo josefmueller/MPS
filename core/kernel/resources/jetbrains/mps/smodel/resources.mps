@@ -16,7 +16,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
@@ -222,10 +221,6 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -247,9 +242,6 @@
       </concept>
       <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
         <child id="3106559687488741665" name="line" index="2Xj1qM" />
-      </concept>
-      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
-        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
       </concept>
       <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
         <child id="6962838954693749192" name="tag" index="qph3F" />
@@ -460,27 +452,6 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="713BH0S$TAq" role="3clF47">
-        <node concept="3clFbF" id="713BH0S$U5L" role="3cqZAp">
-          <node concept="1rXfSq" id="713BH0S$U5K" role="3clFbG">
-            <ref role="37wK5l" node="6gLh390ElAV" resolve="resources" />
-            <node concept="3clFbT" id="713BH0S$U76" role="37wK5m">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="713BH0S$R8Q" role="1B3o_S" />
-      <node concept="A3Dl8" id="713BH0S$TAa" role="3clF45">
-        <node concept="3uibUv" id="713BH0S$U9K" role="A3Ik2">
-          <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6H4v4bGSHHe" role="jymVt" />
-    <node concept="3clFb_" id="6gLh390ElAV" role="jymVt">
-      <property role="TrG5h" value="resources" />
-      <node concept="3Tm1VV" id="6gLh390ElAX" role="1B3o_S" />
-      <node concept="3clFbS" id="6gLh390ElAY" role="3clF47">
         <node concept="3cpWs8" id="38la9jYO00S" role="3cqZAp">
           <node concept="3cpWsn" id="38la9jYO00T" role="3cpWs9">
             <property role="TrG5h" value="smds" />
@@ -553,48 +524,14 @@
           </node>
         </node>
       </node>
-      <node concept="A3Dl8" id="6gLh390ElAZ" role="3clF45">
-        <node concept="3uibUv" id="6gLh390ElB1" role="A3Ik2">
+      <node concept="3Tm1VV" id="713BH0S$R8Q" role="1B3o_S" />
+      <node concept="A3Dl8" id="713BH0S$TAa" role="3clF45">
+        <node concept="3uibUv" id="713BH0S$U9K" role="A3Ik2">
           <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
         </node>
       </node>
-      <node concept="37vLTG" id="38la9jYO01e" role="3clF46">
-        <property role="TrG5h" value="unused" />
-        <node concept="10P_77" id="38la9jYO01f" role="1tU5fm" />
-      </node>
-      <node concept="P$JXv" id="713BH0SD3By" role="lGtFl">
-        <node concept="TZ5HI" id="713BH0SD3Bz" role="3nqlJM">
-          <node concept="TZ5HA" id="713BH0SD3B$" role="3HnX3l">
-            <node concept="1dT_AC" id="713BH0SD5aY" role="1dT_Ay">
-              <property role="1dT_AB" value="Use " />
-            </node>
-            <node concept="1dT_AA" id="713BH0SD5b1" role="1dT_Ay">
-              <node concept="92FcH" id="713BH0SD5b7" role="qph3F">
-                <node concept="TZ5HA" id="713BH0SD5b9" role="2XjZqd" />
-                <node concept="VXe0Z" id="713BH0SDfrK" role="92FcQ">
-                  <ref role="VXe0S" node="713BH0S$TAn" resolve="resources" />
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="713BH0SD5b0" role="1dT_Ay">
-              <property role="1dT_AB" value=" instead. It's no longer responsibility of this class to check model generation status" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="713BH0SD3B_" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="713BH0SD43y" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="713BH0SD4W9" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="713BH0SD5aJ" role="2B70Vg">
-            <property role="$nhwW" value="2017.2" />
-          </node>
-        </node>
-      </node>
     </node>
+    <node concept="2tJIrI" id="6H4v4bGSHHe" role="jymVt" />
     <node concept="3clFb_" id="38la9jYNCby" role="jymVt">
       <property role="TrG5h" value="arrangeByModule" />
       <node concept="37vLTG" id="38la9jYNCbz" role="3clF46">

@@ -18,6 +18,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -36,9 +37,14 @@
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -115,6 +121,9 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -258,6 +267,9 @@
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8465538089690324397" name="jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag" flags="ng" index="TZ7YB">
         <property id="8465538089690324399" name="text" index="TZ7Y_" />
@@ -599,14 +611,6 @@
       <node concept="3uibUv" id="4TqQgK0rdON" role="EKbjA">
         <ref role="3uigEE" node="5mqBoD3U3Wy" resolve="IJobMonitor" />
       </node>
-      <node concept="312cEg" id="7NBK4ktl$zS" role="jymVt">
-        <property role="TrG5h" value="pstub" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3Tm6S6" id="7NBK4ktl$zT" role="1B3o_S" />
-        <node concept="3uibUv" id="7NBK4ktlCRD" role="1tU5fm">
-          <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
-        </node>
-      </node>
       <node concept="312cEg" id="5Pnc_qQuWQ7" role="jymVt">
         <property role="34CwA1" value="false" />
         <property role="eg7rD" value="false" />
@@ -619,7 +623,7 @@
       </node>
       <node concept="3clFbW" id="4TqQgK0rdOJ" role="jymVt">
         <node concept="37vLTG" id="7NBK4ktl$zP" role="3clF46">
-          <property role="TrG5h" value="pstub" />
+          <property role="TrG5h" value="ignored" />
           <node concept="3uibUv" id="7NBK4ktlCRC" role="1tU5fm">
             <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
           </node>
@@ -627,19 +631,6 @@
         <node concept="3cqZAl" id="4TqQgK0rdOK" role="3clF45" />
         <node concept="3Tm1VV" id="4TqQgK0rdOL" role="1B3o_S" />
         <node concept="3clFbS" id="4TqQgK0rdOM" role="3clF47">
-          <node concept="3clFbF" id="7NBK4ktl$zV" role="3cqZAp">
-            <node concept="37vLTI" id="7NBK4ktl$zW" role="3clFbG">
-              <node concept="2OqwBi" id="7NBK4ktl$zX" role="37vLTJ">
-                <node concept="Xjq3P" id="7NBK4ktl$zY" role="2Oq$k0" />
-                <node concept="2OwXpG" id="7NBK4ktl$zZ" role="2OqNvi">
-                  <ref role="2Oxat5" node="7NBK4ktl$zS" resolve="pstub" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="2BHiRxgmhCx" role="37vLTx">
-                <ref role="3cqZAo" node="7NBK4ktl$zP" resolve="pstub" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="5Pnc_qQuX23" role="3cqZAp">
             <node concept="37vLTI" id="5Pnc_qQuXaI" role="3clFbG">
               <node concept="10Nm6u" id="5Pnc_qQuXgg" role="37vLTx" />
@@ -649,26 +640,28 @@
             </node>
           </node>
         </node>
+        <node concept="P$JXv" id="5BF5HLVD6jj" role="lGtFl">
+          <node concept="TZ5HA" id="5BF5HLVD6jk" role="TZ5H$">
+            <node concept="1dT_AC" id="5BF5HLVD6jl" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+          <node concept="TZ5HI" id="5BF5HLVD6nG" role="3nqlJM">
+            <node concept="TZ5HA" id="5BF5HLVD6nH" role="3HnX3l">
+              <node concept="1dT_AC" id="5BF5HLVD6rQ" role="1dT_Ay">
+                <property role="1dT_AB" value="use another cons" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5BF5HLVD6nI" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        </node>
       </node>
       <node concept="3clFbW" id="44pXg$rPSXE" role="jymVt">
         <node concept="3cqZAl" id="44pXg$rPSXH" role="3clF45" />
         <node concept="3Tm1VV" id="44pXg$rPSXI" role="1B3o_S" />
         <node concept="3clFbS" id="44pXg$rPSXJ" role="3clF47">
-          <node concept="3clFbF" id="44pXg$rPSXK" role="3cqZAp">
-            <node concept="37vLTI" id="44pXg$rPSXL" role="3clFbG">
-              <node concept="2OqwBi" id="44pXg$rPSXM" role="37vLTJ">
-                <node concept="Xjq3P" id="44pXg$rPSXN" role="2Oq$k0" />
-                <node concept="2OwXpG" id="44pXg$rPSXO" role="2OqNvi">
-                  <ref role="2Oxat5" node="7NBK4ktl$zS" resolve="pstub" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="44pXg$rPSXT" role="37vLTx">
-                <node concept="1pGfFk" id="44pXg$rPUYR" role="2ShVmc">
-                  <ref role="37wK5l" node="7NBK4ktlwwS" resolve="IProgress.Stub" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="5Pnc_qQuXhu" role="3cqZAp">
             <node concept="37vLTI" id="5Pnc_qQuXhv" role="3clFbG">
               <node concept="10Nm6u" id="5Pnc_qQuXhw" role="37vLTx" />
@@ -683,21 +676,6 @@
         <node concept="3cqZAl" id="5Pnc_qQuYoK" role="3clF45" />
         <node concept="3Tm1VV" id="5Pnc_qQuYoL" role="1B3o_S" />
         <node concept="3clFbS" id="5Pnc_qQuYoM" role="3clF47">
-          <node concept="3clFbF" id="5Pnc_qQvv$Z" role="3cqZAp">
-            <node concept="37vLTI" id="5Pnc_qQvv_0" role="3clFbG">
-              <node concept="2OqwBi" id="5Pnc_qQvv_1" role="37vLTJ">
-                <node concept="Xjq3P" id="5Pnc_qQvv_2" role="2Oq$k0" />
-                <node concept="2OwXpG" id="5Pnc_qQvv_3" role="2OqNvi">
-                  <ref role="2Oxat5" node="7NBK4ktl$zS" resolve="pstub" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="5Pnc_qQvv_4" role="37vLTx">
-                <node concept="1pGfFk" id="5Pnc_qQvv_5" role="2ShVmc">
-                  <ref role="37wK5l" node="7NBK4ktlwwS" resolve="IProgress.Stub" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="5Pnc_qQuYGQ" role="3cqZAp">
             <node concept="37vLTI" id="5Pnc_qQuYO5" role="3clFbG">
               <node concept="37vLTw" id="5Pnc_qQuYVv" role="37vLTx">
@@ -2075,6 +2053,44 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="3UR2Jj" id="5BF5HLVD60V" role="lGtFl">
+        <node concept="TZ5HA" id="5BF5HLVD60W" role="TZ5H$">
+          <node concept="1dT_AC" id="5BF5HLVD60X" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="5BF5HLVD68L" role="3nqlJM">
+          <node concept="TZ5HA" id="5BF5HLVD68M" role="3HnX3l">
+            <node concept="1dT_AC" id="5BF5HLVD6gB" role="1dT_Ay">
+              <property role="1dT_AB" value="Do not use" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5BF5HLVD68N" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="5BF5HLVD5uY" role="lGtFl">
+      <node concept="TZ5HI" id="5BF5HLVD5AF" role="3nqlJM">
+        <node concept="TZ5HA" id="5BF5HLVD5AG" role="3HnX3l">
+          <node concept="1dT_AC" id="5BF5HLVD5ZY" role="1dT_Ay">
+            <property role="1dT_AB" value="Of no use any longer, scheduled for removal." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="5BF5HLVD5AH" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="5BF5HLVD5Io" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="5BF5HLVD5YM" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="5BF5HLVD5ZM" role="2B70Vg">
+          <property role="$nhwW" value="2018.1" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="3HP615" id="7eUbKP2Zue8">
@@ -2121,12 +2137,7 @@
         <node concept="3Tm1VV" id="4TqQgK0rdP8" role="1B3o_S" />
         <node concept="3clFbS" id="4TqQgK0rdP9" role="3clF47">
           <node concept="XkiVB" id="3MQtXko2bFA" role="3cqZAp">
-            <ref role="37wK5l" node="4TqQgK0rdOJ" resolve="IJobMonitor.Stub" />
-            <node concept="2ShNRf" id="3MQtXko2bFD" role="37wK5m">
-              <node concept="1pGfFk" id="3MQtXko2bFF" role="2ShVmc">
-                <ref role="37wK5l" node="7NBK4ktlwwS" resolve="IProgress.Stub" />
-              </node>
-            </node>
+            <ref role="37wK5l" node="44pXg$rPSXE" resolve="IJobMonitor.Stub" />
           </node>
         </node>
       </node>
@@ -2146,6 +2157,23 @@
           <node concept="3uibUv" id="3MQtXko2bFO" role="1tU5fm">
             <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
           </node>
+        </node>
+        <node concept="P$JXv" id="5BF5HLVD6Ed" role="lGtFl">
+          <node concept="TZ5HA" id="5BF5HLVD6Ee" role="TZ5H$">
+            <node concept="1dT_AC" id="5BF5HLVD6Ef" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+          <node concept="TZ5HI" id="5BF5HLVD6FY" role="3nqlJM">
+            <node concept="TZ5HA" id="5BF5HLVD6FZ" role="3HnX3l">
+              <node concept="1dT_AC" id="5BF5HLVD6I4" role="1dT_Ay">
+                <property role="1dT_AB" value="do not use" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="5BF5HLVD6G0" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
         </node>
       </node>
       <node concept="3clFbW" id="5Pnc_qQuW1m" role="jymVt">

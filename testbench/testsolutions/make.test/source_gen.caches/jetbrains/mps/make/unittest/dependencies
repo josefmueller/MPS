@@ -83,16 +83,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer" />
   </dependency>
-  <dependency className="jetbrains.mps.make.unittest.LogReporting_Test" file="LogReporting_Test.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
-    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
-    <classNode dependClassName="org.jmock.Expectations" />
-    <classNode dependClassName="org.jmock.integration.junit4.JMock" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-    <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
-  </dependency>
   <dependency className="jetbrains.mps.make.unittest.MockTestCase" file="MockTestCase.java">
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.jmock.Mockery" />

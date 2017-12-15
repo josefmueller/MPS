@@ -19,18 +19,20 @@ public interface IJobMonitor {
   MakeSession getSession();
 
   class Stub implements IJobMonitor {
-    private final IProgress pstub;
     private final MakeSession mySession;
-    public Stub(IProgress pstub) {
-      this.pstub = pstub;
+    /**
+     * 
+     * 
+     * @deprecated use another cons
+     */
+    @Deprecated
+    public Stub(IProgress ignored) {
       mySession = null;
     }
     public Stub() {
-      this.pstub = new IProgress.Stub();
       mySession = null;
     }
     public Stub(@NotNull MakeSession makeSession) {
-      this.pstub = new IProgress.Stub();
       mySession = makeSession;
     }
     @Override
