@@ -13,7 +13,8 @@ import java.io.IOException;
 import jetbrains.mps.project.Project;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.LinkedHashSet;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -89,12 +90,11 @@ public class GenTestWorker extends BaseGeneratorWorker {
   public void work() {
     myReporter.init();
     setGenerationProperties();
-    Project project = createDummyProject();
+    final Project project = createDummyProject();
 
-    final Set<SModule> modules = new LinkedHashSet<SModule>();
-    project.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        collectFromModuleFiles(modules);
+    Set<SModule> modules = new ModelAccessHelper(project.getModelAccess()).runWriteAction(new Computable<Set<SModule>>() {
+      public Set<SModule> compute() {
+        return collectFromModuleFiles(project.getRepository());
       }
     });
 

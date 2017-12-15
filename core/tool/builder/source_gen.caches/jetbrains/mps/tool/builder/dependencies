@@ -33,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptions" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
-    <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryExt" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -64,6 +63,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.MpsWorkerTest" file="MpsWorkerTest.java">
     <classNode dependClassName="java.io.File" />

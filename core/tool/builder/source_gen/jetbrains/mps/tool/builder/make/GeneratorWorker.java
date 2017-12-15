@@ -29,7 +29,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     setGenerationProperties();
     boolean doneSomething = false;
 
-    Project project = createDummyProject();
+    final Project project = createDummyProject();
     final Set<SModule> allModules = new HashSet<SModule>();
     for (IMapping<List<String>, Boolean> chunk : MapSequence.fromMap(myWhatToDo.getChunks())) {
       final List<String> modulePaths = chunk.key();
@@ -37,7 +37,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       project.getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           for (String modulePath : modulePaths) {
-            processModuleFile(new File(modulePath), modules);
+            processModuleFile(project.getRepository(), new File(modulePath), modules);
           }
         }
       });

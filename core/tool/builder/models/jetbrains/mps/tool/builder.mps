@@ -7,7 +7,6 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
   </languages>
   <imports>
     <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
@@ -34,7 +33,6 @@
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
-    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1889,18 +1887,49 @@
       <property role="TrG5h" value="collectFromModuleFiles" />
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="KL8Aqlj5tF" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aqlj5tG" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aqlj5tH" role="3clF46">
-        <property role="TrG5h" value="modules" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aqlj5tI" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="3uibUv" id="KL8Aqlj5tJ" role="11_B2D">
-            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-          </node>
+      <node concept="3uibUv" id="5BF5HLVvNE7" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="5BF5HLVvQp6" role="11_B2D">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5BF5HLVvQQ8" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <node concept="3uibUv" id="5BF5HLVwNWC" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="3clFbS" id="KL8Aqlj5tK" role="3clF47">
+        <node concept="3SKdUt" id="5BF5HLVwrEx" role="3cqZAp">
+          <node concept="3SKdUq" id="5BF5HLVwrEz" role="3SKWNk">
+            <property role="3SKdUp" value="XXX don't want to have ordering here but used to be that way in GenTestWorker and might be helpful" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5BF5HLVwwWY" role="3cqZAp">
+          <node concept="3SKdUq" id="5BF5HLVwwX0" role="3SKWNk">
+            <property role="3SKdUp" value="to reproduce errors/get predictable behavior." />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5BF5HLVvYj$" role="3cqZAp">
+          <node concept="3cpWsn" id="5BF5HLVvYjB" role="3cpWs9">
+            <property role="TrG5h" value="modules" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="KL8Aqlj5tI" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+              <node concept="3uibUv" id="KL8Aqlj5tJ" role="11_B2D">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1cjXdtLMu4e" role="33vP2m">
+              <node concept="1pGfFk" id="1cjXdtLMu4f" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
+                <node concept="3uibUv" id="1cjXdtLMu4g" role="1pMfVU">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3SKdUt" id="1Rh9RpurkD3" role="3cqZAp">
           <node concept="3SKdUq" id="1Rh9RpurkD5" role="3SKWNk">
             <property role="3SKdUp" value="FIXME GenTestWorker/GenTestTask still use module files as configuration argument (from Java code perspective, need to check actual tasks in scripts and generator thereof)" />
@@ -1926,14 +1955,34 @@
             <node concept="3clFbF" id="KL8Aqlj5tS" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyz9x1" role="3clFbG">
                 <ref role="37wK5l" node="KL8Aqlj5tW" resolve="processModuleFile" />
+                <node concept="37vLTw" id="5BF5HLVx5gY" role="37wK5m">
+                  <ref role="3cqZAo" node="5BF5HLVvQQ8" resolve="repo" />
+                </node>
                 <node concept="37vLTw" id="3GM_nagTsud" role="37wK5m">
                   <ref role="3cqZAo" node="KL8Aqlj5tP" resolve="moduleFile" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxgmv2b" role="37wK5m">
-                  <ref role="3cqZAo" node="KL8Aqlj5tH" resolve="modules" />
+                  <ref role="3cqZAo" node="5BF5HLVvYjB" resolve="modules" />
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5BF5HLVvQqQ" role="3cqZAp">
+          <node concept="37vLTw" id="5BF5HLVvQrK" role="3cqZAk">
+            <ref role="3cqZAo" node="5BF5HLVvYjB" resolve="modules" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="5BF5HLVwD7z" role="lGtFl">
+        <node concept="TZ5HA" id="5BF5HLVwD7$" role="TZ5H$">
+          <node concept="1dT_AC" id="5BF5HLVwD7_" role="1dT_Ay">
+            <property role="1dT_AB" value="XXX Perhaps, would be better to pass Project here so that we populate Project explicitly, rather" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5BF5HLVwFQI" role="TZ5H$">
+          <node concept="1dT_AC" id="5BF5HLVwFQJ" role="1dT_Ay">
+            <property role="1dT_AB" value="than collect some modules (under Project's MA lock!), but process them independently using ObjectsToProcess" />
           </node>
         </node>
       </node>
@@ -1944,6 +1993,12 @@
       <property role="DiZV1" value="false" />
       <node concept="3Tmbuc" id="5reM9AD4017" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqlj5tY" role="3clF45" />
+      <node concept="37vLTG" id="5BF5HLVwTd0" role="3clF46">
+        <property role="TrG5h" value="repo" />
+        <node concept="3uibUv" id="5BF5HLVwWfl" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
       <node concept="37vLTG" id="KL8Aqlj5tZ" role="3clF46">
         <property role="TrG5h" value="moduleSourceDescriptorFile" />
         <property role="3TUv4t" value="true" />
@@ -1962,6 +2017,16 @@
         </node>
       </node>
       <node concept="3clFbS" id="KL8Aqlj5u4" role="3clF47">
+        <node concept="3SKdUt" id="5BF5HLVwOCi" role="3cqZAp">
+          <node concept="3SKdUq" id="5BF5HLVwOCk" role="3SKWNk">
+            <property role="3SKdUp" value="XXX need a way to figure which FS to use here. Techically, it should come from a project as we are going to" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5BF5HLVwPIJ" role="3cqZAp">
+          <node concept="3SKdUq" id="5BF5HLVwPIL" role="3SKWNk">
+            <property role="3SKdUp" value="use these modules as part of the project." />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5BF5HLVuM0L" role="3cqZAp">
           <node concept="3cpWsn" id="5BF5HLVuM0M" role="3cpWs9">
             <property role="TrG5h" value="fs" />
@@ -2034,18 +2099,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="5BF5HLVv5Ll" role="3cqZAp">
-          <node concept="3cpWsn" id="5BF5HLVv5Lm" role="3cpWs9">
-            <property role="TrG5h" value="repo" />
-            <node concept="3uibUv" id="5BF5HLVv5Ln" role="1tU5fm">
-              <ref role="3uigEE" to="31cb:~SRepositoryExt" resolve="SRepositoryExt" />
-            </node>
-            <node concept="2YIFZM" id="5BF5HLVvfez" role="33vP2m">
-              <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-              <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="5BF5HLVv89A" role="3cqZAp">
           <node concept="3cpWsn" id="5BF5HLVv89B" role="3cpWs9">
             <property role="TrG5h" value="mrf" />
@@ -2056,7 +2109,7 @@
               <node concept="1pGfFk" id="5BF5HLVv9uH" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
                 <node concept="37vLTw" id="5BF5HLVv9vT" role="37wK5m">
-                  <ref role="3cqZAo" node="5BF5HLVv5Lm" resolve="repo" />
+                  <ref role="3cqZAo" node="5BF5HLVwTd0" resolve="repo" />
                 </node>
               </node>
             </node>

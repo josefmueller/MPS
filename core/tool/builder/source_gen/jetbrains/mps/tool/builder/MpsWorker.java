@@ -34,16 +34,16 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.LinkedHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.io.DescriptorIOFacade;
-import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
 import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
-import java.util.LinkedHashSet;
 
 public abstract class MpsWorker {
   private static final Logger LOG = LogManager.getLogger(MpsWorker.class);
@@ -217,11 +217,19 @@ public abstract class MpsWorker {
       }
     }
   }
-  protected void collectFromModuleFiles(Set<SModule> modules) {
+  /**
+   * XXX Perhaps, would be better to pass Project here so that we populate Project explicitly, rather
+   * than collect some modules (under Project's MA lock!), but process them independently using ObjectsToProcess
+   */
+  protected Set<SModule> collectFromModuleFiles(SRepository repo) {
+    // XXX don't want to have ordering here but used to be that way in GenTestWorker and might be helpful 
+    // to reproduce errors/get predictable behavior. 
+    Set<SModule> modules = new LinkedHashSet<SModule>();
     // FIXME GenTestWorker/GenTestTask still use module files as configuration argument (from Java code perspective, need to check actual tasks in scripts and generator thereof) 
     for (File moduleFile : myWhatToDo.getModules()) {
-      processModuleFile(moduleFile, modules);
+      processModuleFile(repo, moduleFile, modules);
     }
+    return modules;
   }
   /**
    * Discovers module(s) from specified location of a module descriptor, loads and registers them in
@@ -233,14 +241,15 @@ public abstract class MpsWorker {
    * @param moduleSourceDescriptorFile not null
    * @param modules collection to populate, not null.
    */
-  protected void processModuleFile(final File moduleSourceDescriptorFile, final Set<SModule> modules) {
+  protected void processModuleFile(SRepository repo, final File moduleSourceDescriptorFile, final Set<SModule> modules) {
+    // XXX need a way to figure which FS to use here. Techically, it should come from a project as we are going to 
+    // use these modules as part of the project. 
     final FileSystem fs = FileSystem.getInstance();
     IFile descriptorFile = fs.getFile(moduleSourceDescriptorFile.getPath());
     if (DescriptorIOFacade.getInstance().fromFileType(descriptorFile) == null) {
       info(String.format("File %s doesn't point to module descriptor, ignored", moduleSourceDescriptorFile));
       return;
     }
-    SRepositoryExt repo = MPSModuleRepository.getInstance();
     ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
     for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner().collectModules(descriptorFile).getCollectedModules()) {
       //  seems reasonable just to instantiate a module here and leave its registration to caller 
