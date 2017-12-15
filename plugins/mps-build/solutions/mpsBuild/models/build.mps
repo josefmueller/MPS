@@ -2,11 +2,11 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
   </languages>
   <imports />
   <registry>
@@ -33374,7 +33374,7 @@
     </node>
     <node concept="1l3spV" id="6pse5qHNfTZ" role="1l3spN">
       <node concept="m$_wl" id="5xhjlkpPhA8" role="39821P">
-        <ref role="m_rDy" node="5xhjlkpPhJu" resolve="httpSupport" />
+        <ref role="m_rDy" node="5xhjlkpPhJu" resolve="jetbrains.mps.ide.httpsupport" />
         <node concept="398223" id="6pse5qHNgj4" role="39821P">
           <node concept="3_J27D" id="6pse5qHNgj5" role="Nbhlr">
             <node concept="3Mxwew" id="6pse5qHNgj8" role="3MwsjC">
@@ -33438,7 +33438,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="5xhjlkpPhJu" role="3989C9">
-      <property role="m$_wk" value="httpSupport" />
+      <property role="m$_wk" value="jetbrains.mps.ide.httpsupport" />
       <node concept="3_J27D" id="5xhjlkpPhJw" role="m$_yQ">
         <node concept="3Mxwew" id="5xhjlkpPhZU" role="3MwsjC">
           <property role="3MwjfP" value="HTTP Support Plugin" />
