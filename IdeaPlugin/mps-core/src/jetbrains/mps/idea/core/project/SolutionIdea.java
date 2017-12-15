@@ -99,7 +99,7 @@ public class SolutionIdea extends Solution {
   private final SolutionIdea.MyLibrariesListener myLibrariesListener = new MyLibrariesListener();
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
-    super(descriptor, null);
+    super(descriptor, FileSystemExtPoint.getFS().getFile(module.getModuleFilePath()));
 
     myModule = module;
     myModelAccess = ProjectHelper.getModelAccess(myModule.getProject());
