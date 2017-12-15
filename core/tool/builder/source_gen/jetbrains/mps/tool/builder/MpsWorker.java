@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.tool.environment.MpsEnvironment;
@@ -33,17 +34,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collection;
-import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.ModuleFileTracker;
-import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.io.DescriptorIOFacade;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.library.ModulesMiner;
 import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -58,6 +54,8 @@ public abstract class MpsWorker {
   protected final boolean mySkipCompilation;
   private final MpsWorker.AntLogger myLogger;
   protected Environment myEnvironment;
+  private final BaseMPSModuleOwner myOwner = new BaseMPSModuleOwner();
+
 
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     myWhatToDo = whatToDo;
@@ -225,44 +223,30 @@ public abstract class MpsWorker {
       processModuleFile(moduleFile, modules);
     }
   }
-  protected void processModuleFile(final File moduleFile, final Set<SModule> modules) {
-    if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
+  /**
+   * Discovers module(s) from specified location of a module descriptor, loads and registers them in
+   * global (JUST FOR NOW) repository with custom owner.
+   * 
+   * The method used to filter out read-only module and DevKit which is odd provided we have no idea what's the reason to load the module in the first place.
+   * Now it's caller responsibility to deal with loaded modules and ignore those undesired as appropriate.
+   * 
+   * @param moduleSourceDescriptorFile not null
+   * @param modules collection to populate, not null.
+   */
+  protected void processModuleFile(final File moduleSourceDescriptorFile, final Set<SModule> modules) {
+    final FileSystem fs = FileSystem.getInstance();
+    IFile descriptorFile = fs.getFile(moduleSourceDescriptorFile.getPath());
+    if (DescriptorIOFacade.getInstance().fromFileType(descriptorFile) == null) {
+      info(String.format("File %s doesn't point to module descriptor, ignored", moduleSourceDescriptorFile));
       return;
     }
-    List<SModule> tmpmodules = new ArrayList<SModule>();
-    SModule moduleByFile = ModuleFileTracker.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
-    if (moduleByFile != null) {
-      tmpmodules = Collections.singletonList(moduleByFile);
-    } else {
-      // XXX moduleFile.getPath vs moduleFile.getAbsolutePath above - why is it different? 
-      IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-      // XXX new owner for each module?! 
-      BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
-      for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner().collectModules(file).getCollectedModules()) {
-        SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
-        if (module != null) {
-          tmpmodules.add(module);
-        }
-      }
-    }
-    for (SModule module : tmpmodules) {
+    SRepositoryExt repo = MPSModuleRepository.getInstance();
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(repo);
+    for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner().collectModules(descriptorFile).getCollectedModules()) {
+      //  seems reasonable just to instantiate a module here and leave its registration to caller 
+      SModule module = mrf.instantiateModule(moduleHandle, myOwner);
       info("Loaded module " + module);
-      // XXX it's suspicious to ignore read-only module and DevKit when we have no idea what's the reason to load the module in the first place. 
-      if (module.isReadOnly()) {
-        continue;
-      }
-      if (module instanceof DevKit) {
-        continue;
-      }
       modules.add(module);
-      // FIXME Although MM.getCollectedModules gives us Generator modules directly, keep this code to handle ModuleFileTracker case, it's a Set anyway. 
-      //       Have to decide whether that branch makes sense at all. ModuleFileTracker likely to change anyway, if we allow more modules per 1 file. 
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        for (Generator gen : language.getGenerators()) {
-          modules.add(gen);
-        }
-      }
     }
   }
 
