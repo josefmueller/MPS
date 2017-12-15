@@ -8,11 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GenerationFacade;
@@ -28,38 +24,12 @@ public final class RetainedUtil {
   }
   public static Map<SModule, Iterable<SModel>> collectModelsToRetain(Iterable<? extends IResource> input) {
     Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
-    Iterable<SModel> empty = ListSequence.fromList(new ArrayList<SModel>());
     for (IResource it : input) {
       MResource mres = ((MResource) it);
       SModule module = mres.module();
-      MapSequence.fromMap(retainedModels).put(module, empty);
-      if (module instanceof Language) {
-        // FIXME is there still a reason to record models of language's generators? Isn't generator module come as a distinct resource? 
-        // Perhaps, it doesn't hurt to supply more, OTOH is there any reason to? Modules are generated into distinct locations, why bother to mark 
-        // unrelated locations as retained? 
-        for (Generator gen : ((Language) module).getGenerators()) {
-          if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
-          }
-        }
-        // fall-through 
-      } else if (module instanceof Generator) {
-        Language slang = ((Generator) module).getSourceLanguage();
-        if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(generateableModels(slang)).toListSequence());
-        }
-        for (Generator gen : slang.getGenerators()) {
-          if (gen == module) {
-            continue;
-          }
-          if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
-          }
-        }
-        // fall-through 
-      }
+      // XXX why only generateable models? 
       Iterable<SModel> modelsToRetain = generateableModels(module);
-      MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
+      MapSequence.fromMap(retainedModels).put(module, Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
   }
