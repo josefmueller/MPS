@@ -4,10 +4,9 @@ package jetbrains.mps.tool.builder;
 
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.tool.common.Script;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.io.File;
-import java.io.IOException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class MpsWorkerTest extends MpsWorker {
@@ -22,14 +21,19 @@ public class MpsWorkerTest extends MpsWorker {
 
   @Override
   public void work() {
-    SModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
-    if (module == null ^ myIsPresent) {
-      try {
-        new File("result.txt").createNewFile();
-      } catch (IOException e) {
-        e.printStackTrace();
+    final MPSModuleRepository repo = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          SModule module = myModuleRef.resolve(repo);
+          if (module == null ^ myIsPresent) {
+            new File("result.txt").createNewFile();
+          }
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
-    }
+    });
     dispose();
   }
 
