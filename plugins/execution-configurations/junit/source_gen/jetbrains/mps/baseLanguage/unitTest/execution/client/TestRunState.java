@@ -268,10 +268,10 @@ public final class TestRunState {
         }
       }
     });
-    synchronized (this.myTestMethods) {
+    synchronized (myTestMethods) {
       for (String methodKey : methodsToRemove) {
-        if (ListSequence.fromList(this.myTestMethods).contains(methodKey)) {
-          ListSequence.fromList(this.myTestMethods).removeElement(methodKey);
+        if (ListSequence.fromList(myTestMethods).contains(methodKey)) {
+          ListSequence.fromList(myTestMethods).removeElement(methodKey);
         }
       }
     }
