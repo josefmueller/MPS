@@ -11,11 +11,12 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_ConceptIdentity;
   private ConceptPresentation props_ModelIdentity;
+  private ConceptPresentation props_ModelName;
+  private ConceptPresentation props_ModelPointer;
+  private ConceptPresentation props_ModuleIdentity;
+  private ConceptPresentation props_ModulePointer;
   private ConceptPresentation props_NodeIdentity;
-  private ConceptPresentation props_SModelReference;
-  private ConceptPresentation props_SModuleReference;
   private ConceptPresentation props_SNodeReference;
-  private ConceptPresentation props_TrivialModelId;
 
   @Override
   @Nullable
@@ -34,28 +35,41 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ModelIdentity = cpb.create();
         }
         return props_ModelIdentity;
+      case LanguageConceptSwitch.ModelName:
+        if (props_ModelName == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModelName");
+          props_ModelName = cpb.create();
+        }
+        return props_ModelName;
+      case LanguageConceptSwitch.ModelPointer:
+        if (props_ModelPointer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node<> presentation for openapi.model.SModelReference class");
+          cpb.rawPresentation("ModelPointer");
+          props_ModelPointer = cpb.create();
+        }
+        return props_ModelPointer;
+      case LanguageConceptSwitch.ModuleIdentity:
+        if (props_ModuleIdentity == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModuleIdentity = cpb.create();
+        }
+        return props_ModuleIdentity;
+      case LanguageConceptSwitch.ModulePointer:
+        if (props_ModulePointer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node<> presentation for openapi.module.SModuleReference");
+          cpb.rawPresentation("ModulePointer");
+          props_ModulePointer = cpb.create();
+        }
+        return props_ModulePointer;
       case LanguageConceptSwitch.NodeIdentity:
         if (props_NodeIdentity == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_NodeIdentity = cpb.create();
         }
         return props_NodeIdentity;
-      case LanguageConceptSwitch.SModelReference:
-        if (props_SModelReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("node<> presentation for openapi.model.SModelReference class");
-          cpb.rawPresentation("SModelReference");
-          props_SModelReference = cpb.create();
-        }
-        return props_SModelReference;
-      case LanguageConceptSwitch.SModuleReference:
-        if (props_SModuleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("node<> presentation for openapi.module.SModuleReference");
-          cpb.rawPresentation("SModuleReference");
-          props_SModuleReference = cpb.create();
-        }
-        return props_SModuleReference;
       case LanguageConceptSwitch.SNodeReference:
         if (props_SNodeReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -64,13 +78,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SNodeReference = cpb.create();
         }
         return props_SNodeReference;
-      case LanguageConceptSwitch.TrivialModelId:
-        if (props_TrivialModelId == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TrivialModelId");
-          props_TrivialModelId = cpb.create();
-        }
-        return props_TrivialModelId;
     }
     return null;
   }

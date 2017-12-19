@@ -444,7 +444,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="2BrVG2hhyGC">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <ref role="3_znuS" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="3__wT9" id="2BrVG2hhyGD" role="3_A6iZ">
       <node concept="3clFbS" id="2BrVG2hhyGE" role="2VODD2">

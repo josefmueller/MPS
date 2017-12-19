@@ -4053,7 +4053,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="v3WHCwUiHZ">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <ref role="13h7C2" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="13i0hz" id="7K4mn_BeEzv" role="13h7CS">
       <property role="TrG5h" value="getFQName" />

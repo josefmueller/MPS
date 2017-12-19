@@ -37,7 +37,7 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
   private final Collection<TemplateReductionRule> rules;
   public Mapping_mc_main(@NotNull TemplateModel model) {
     super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1139186732963"), "mc_main", model, false);
-    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mapping_mc_main.ReductionRule0(), new Mapping_mc_main.ReductionRule1(), new Mapping_mc_main.ReductionRule2(), new Mapping_mc_main.ReductionRule3(), new Mapping_mc_main.ReductionRule4(), new Mapping_mc_main.ReductionRule5(), new Mapping_mc_main.ReductionRule6(), new Mapping_mc_main.ReductionRule7(), new Mapping_mc_main.ReductionRule8(), new Mapping_mc_main.ReductionRule9(), new Mapping_mc_main.ReductionRule10(), new Mapping_mc_main.ReductionRule11(), new Mapping_mc_main.ReductionRule12(), new Mapping_mc_main.ReductionRule13(), new Mapping_mc_main.ReductionRule14(), new Mapping_mc_main.ReductionRule15(), new Mapping_mc_main.ReductionRule16(), new Mapping_mc_main.ReductionRule17(), new Mapping_mc_main.ReductionRule18(), new Mapping_mc_main.ReductionRule19(), new Mapping_mc_main.ReductionRule20(), new Mapping_mc_main.ReductionRule21(), new Mapping_mc_main.ReductionRule22(), new Mapping_mc_main.ReductionRule23(), new Mapping_mc_main.ReductionRule24(), new Mapping_mc_main.ReductionRule25(), new Mapping_mc_main.ReductionRule26(), new Mapping_mc_main.ReductionRule27(), new Mapping_mc_main.ReductionRule28(), new Mapping_mc_main.ReductionRule29(), new Mapping_mc_main.ReductionRule30(), new Mapping_mc_main.ReductionRule31(), new Mapping_mc_main.ReductionRule32(), new Mapping_mc_main.ReductionRule33(), new Mapping_mc_main.ReductionRule34(), new Mapping_mc_main.ReductionRule35(), new Mapping_mc_main.ReductionRule36(), new Mapping_mc_main.ReductionRule37(), new Mapping_mc_main.ReductionRule38(), new Mapping_mc_main.ReductionRule39(), new Mapping_mc_main.ReductionRule40(), new Mapping_mc_main.ReductionRule41(), new Mapping_mc_main.ReductionRule42());
+    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mapping_mc_main.ReductionRule0(), new Mapping_mc_main.ReductionRule1(), new Mapping_mc_main.ReductionRule2(), new Mapping_mc_main.ReductionRule3(), new Mapping_mc_main.ReductionRule4(), new Mapping_mc_main.ReductionRule5(), new Mapping_mc_main.ReductionRule6(), new Mapping_mc_main.ReductionRule7(), new Mapping_mc_main.ReductionRule8(), new Mapping_mc_main.ReductionRule9(), new Mapping_mc_main.ReductionRule10(), new Mapping_mc_main.ReductionRule11(), new Mapping_mc_main.ReductionRule12(), new Mapping_mc_main.ReductionRule13(), new Mapping_mc_main.ReductionRule14(), new Mapping_mc_main.ReductionRule15(), new Mapping_mc_main.ReductionRule16(), new Mapping_mc_main.ReductionRule17(), new Mapping_mc_main.ReductionRule18(), new Mapping_mc_main.ReductionRule19(), new Mapping_mc_main.ReductionRule20(), new Mapping_mc_main.ReductionRule21(), new Mapping_mc_main.ReductionRule22(), new Mapping_mc_main.ReductionRule23(), new Mapping_mc_main.ReductionRule24(), new Mapping_mc_main.ReductionRule25(), new Mapping_mc_main.ReductionRule26(), new Mapping_mc_main.ReductionRule27(), new Mapping_mc_main.ReductionRule28(), new Mapping_mc_main.ReductionRule29(), new Mapping_mc_main.ReductionRule30(), new Mapping_mc_main.ReductionRule31(), new Mapping_mc_main.ReductionRule32(), new Mapping_mc_main.ReductionRule33(), new Mapping_mc_main.ReductionRule34(), new Mapping_mc_main.ReductionRule35(), new Mapping_mc_main.ReductionRule36(), new Mapping_mc_main.ReductionRule37(), new Mapping_mc_main.ReductionRule38(), new Mapping_mc_main.ReductionRule39(), new Mapping_mc_main.ReductionRule40(), new Mapping_mc_main.ReductionRule41(), new Mapping_mc_main.ReductionRule42(), new Mapping_mc_main.ReductionRule43(), new Mapping_mc_main.ReductionRule44());
   }
   @Override
   public Collection<TemplateReductionRule> getReductionRules() {
@@ -1341,6 +1341,32 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Template_reduce_ModuleRefExpression().apply(environment, context);
       return tlist1;
+    }
+  }
+  public final class ReductionRule43 extends ReductionRuleBase {
+    public ReductionRule43() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546135624"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelRefExpression"), false);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = new Template_reduce_ModelRefExpression().apply(environment, context);
+      return tlist1;
+    }
+  }
+  public final class ReductionRule44 extends ReductionRuleBase {
+    public ReductionRule44() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "8958657035620775214"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645d088bL, "jetbrains.mps.lang.smodel.structure.ModelPointerType"), false);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"));
+      try {
+        tnode1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), tnode1, PersistenceFacade.getInstance().createModelReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)"), PersistenceFacade.getInstance().createNodeId("~SModelReference")));
+      } finally {
+      }
+      return TemplateUtil.singletonList(tnode1);
     }
   }
   private static SNodePointer rule_rbibyw_b0a0c0b7 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "4487960964133848931");

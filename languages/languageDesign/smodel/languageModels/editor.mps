@@ -35,6 +35,7 @@
     <import index="7hje" ref="r:63fa72b1-408f-44a1-b93f-c39e3d542904(jetbrains.mps.project.structure)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
+    <import index="25zl" ref="r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)" />
     <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
   </imports>
@@ -4551,7 +4552,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="v3WHCwUiHC">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <ref role="1XX52x" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="3EZMnI" id="v3WHCwUiHE" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY3x" role="3EZMnx">
@@ -5206,7 +5207,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="7K4mn_B9BB5">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <property role="TrG5h" value="ModelReferenceDelete" />
     <ref role="1h_SK9" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="1hA7zw" id="7K4mn_B9BB6" role="1h_SK8">
@@ -5252,6 +5253,7 @@
   </node>
   <node concept="PKFIW" id="7K4mn_BgW6h">
     <property role="TrG5h" value="ModelReferenceFQName" />
+    <property role="3GE5qa" value="reference.model" />
     <ref role="1XX52x" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="1QoScp" id="7K4mn_BgW6i" role="2wV5jI">
       <property role="1QpmdY" value="true" />
@@ -5310,7 +5312,7 @@
     </node>
   </node>
   <node concept="1Xs25n" id="7K4mn_B7Agr">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <property role="TrG5h" value="ModelReferenceCompletion" />
     <ref role="1XX52x" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="OXEIz" id="7K4mn_B7Ags" role="1XvlXI">
@@ -9884,6 +9886,42 @@
       <node concept="2kknPI" id="4frscTR2LvE" role="1s_PAo">
         <ref role="2kkw0f" node="78qQRpbfTCN" resolve="Devkits_Substitute" />
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="1Bs_61$nhee">
+    <property role="3GE5qa" value="reference.model" />
+    <ref role="1XX52x" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+    <node concept="3EZMnI" id="1Bs_61$nheg" role="2wV5jI">
+      <node concept="PMmxH" id="1Bs_61$nheh" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
+        <node concept="3$7jql" id="1Bs_61$nhei" role="3F10Kt">
+          <property role="3$6WeP" value="0" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1Bs_61$nhej" role="3EZMnx">
+        <property role="3F0ifm" value="/" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="1Bs_61$nhek" role="3EZMnx">
+        <ref role="1NtTu8" to="tp25:1Bs_61$ngwB" resolve="modelRef" />
+        <node concept="A1WHu" id="4J$bixNY2QK" role="3vIgyS">
+          <ref role="A1WHt" to="25zl:7cODfNsrd5u" resolve="AllRepositoryModels" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1Bs_61$nhem" role="3EZMnx">
+        <property role="3F0ifm" value="/" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="1Bs_61$nhen" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7LjyLJwEg4r">
+    <property role="3GE5qa" value="type" />
+    <ref role="1XX52x" to="tp25:1Bs_61$ngyb" resolve="ModelPointerType" />
+    <node concept="3F0ifn" id="7LjyLJwEgqi" role="2wV5jI">
+      <property role="3F0ifm" value="model-reference" />
+      <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
     </node>
   </node>
 </model>

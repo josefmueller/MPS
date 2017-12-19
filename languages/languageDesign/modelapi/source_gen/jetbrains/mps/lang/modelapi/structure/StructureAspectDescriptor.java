@@ -14,11 +14,12 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptIdentity = createDescriptorForConceptIdentity();
   /*package*/ final ConceptDescriptor myConceptModelIdentity = createDescriptorForModelIdentity();
+  /*package*/ final ConceptDescriptor myConceptModelName = createDescriptorForModelName();
+  /*package*/ final ConceptDescriptor myConceptModelPointer = createDescriptorForModelPointer();
+  /*package*/ final ConceptDescriptor myConceptModuleIdentity = createDescriptorForModuleIdentity();
+  /*package*/ final ConceptDescriptor myConceptModulePointer = createDescriptorForModulePointer();
   /*package*/ final ConceptDescriptor myConceptNodeIdentity = createDescriptorForNodeIdentity();
-  /*package*/ final ConceptDescriptor myConceptSModelReference = createDescriptorForSModelReference();
-  /*package*/ final ConceptDescriptor myConceptSModuleReference = createDescriptorForSModuleReference();
   /*package*/ final ConceptDescriptor myConceptSNodeReference = createDescriptorForSNodeReference();
-  /*package*/ final ConceptDescriptor myConceptTrivialModelId = createDescriptorForTrivialModelId();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -27,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptIdentity, myConceptModelIdentity, myConceptNodeIdentity, myConceptSModelReference, myConceptSModuleReference, myConceptSNodeReference, myConceptTrivialModelId);
+    return Arrays.asList(myConceptConceptIdentity, myConceptModelIdentity, myConceptModelName, myConceptModelPointer, myConceptModuleIdentity, myConceptModulePointer, myConceptNodeIdentity, myConceptSNodeReference);
   }
 
   @Override
@@ -38,16 +39,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptConceptIdentity;
       case LanguageConceptSwitch.ModelIdentity:
         return myConceptModelIdentity;
+      case LanguageConceptSwitch.ModelName:
+        return myConceptModelName;
+      case LanguageConceptSwitch.ModelPointer:
+        return myConceptModelPointer;
+      case LanguageConceptSwitch.ModuleIdentity:
+        return myConceptModuleIdentity;
+      case LanguageConceptSwitch.ModulePointer:
+        return myConceptModulePointer;
       case LanguageConceptSwitch.NodeIdentity:
         return myConceptNodeIdentity;
-      case LanguageConceptSwitch.SModelReference:
-        return myConceptSModelReference;
-      case LanguageConceptSwitch.SModuleReference:
-        return myConceptSModuleReference;
       case LanguageConceptSwitch.SNodeReference:
         return myConceptSNodeReference;
-      case LanguageConceptSwitch.TrivialModelId:
-        return myConceptTrivialModelId;
       default:
         return null;
     }
@@ -69,36 +72,48 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/9032177546942789331");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForModelName() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "ModelName", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L);
+    b.class_(true, false, false);
+    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/679099339649053840");
+    b.prop("value", 0x96ca5405afbf491L, "679099339649053841");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForModelPointer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "ModelPointer", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L);
+    b.class_(false, false, false);
+    b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L);
+    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193248");
+    b.prop("modelId", 0x19dc9460645c7f56L, "1863527487546097494");
+    b.aggregate("name", 0x96ca5405afc2bccL).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L).optional(false).ordered(true).multiple(false).origin("679099339649067980").done();
+    b.aggregate("moduleRef", 0x19dc9460645ce35cL).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L).optional(true).ordered(true).multiple(false).origin("1863527487546123100").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForModuleIdentity() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "ModuleIdentity", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L);
+    b.interface_();
+    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/679099339649067977");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForModulePointer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "ModulePointer", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L);
+    b.class_(false, false, false);
+    b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L);
+    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193249");
+    b.prop("moduleName", 0x19dc9460645ae969L, "1863527487545993577");
+    b.prop("moduleId", 0x19dc9460645c7f5cL, "1863527487546097500");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForNodeIdentity() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "NodeIdentity", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L);
     b.interface_();
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826268407");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForSModelReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "SModelReference", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L);
-    b.class_(false, false, false);
-    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193248");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSModuleReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "SModuleReference", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L);
-    b.class_(false, false, false);
-    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193249");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForSNodeReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "SNodeReference", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL);
     b.class_(false, false, false);
     b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/361130699826193247");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTrivialModelId() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.modelapi", "TrivialModelId", 0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b8cbL);
-    b.class_(false, false, false);
-    b.parent(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L);
-    b.origin("r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)/9032177546942789835");
-    b.prop("modelName", 0x7d58bd9fd9c8b8cfL, "9032177546942789839");
     return b.create();
   }
 }

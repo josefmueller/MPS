@@ -10,6 +10,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -2066,7 +2067,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ModelReferenceExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <property role="34LRSv" value="model" />
     <property role="EcuMT" value="559557797393017698" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
@@ -2847,6 +2848,30 @@
     <node concept="PrWs8" id="78qQRpbfVOv" role="PzmwI">
       <ref role="PrY4T" node="78qQRpbfOQY" resolve="DevkitIdentity" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="1Bs_61$nfRn">
+    <property role="EcuMT" value="1863527487546129879" />
+    <property role="3GE5qa" value="reference.model" />
+    <property role="TrG5h" value="ModelRefExpression" />
+    <property role="34LRSv" value="model-reference" />
+    <property role="R4oN_" value="Expression representing SModelReference of a model" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="1Bs_61$ngwB" role="1TKVEi">
+      <property role="IQ2ns" value="1863527487546132519" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modelRef" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Bs_61$ngyb">
+    <property role="EcuMT" value="1863527487546132619" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="ModelPointerType" />
+    <property role="34LRSv" value="model-reference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
 </model>
 

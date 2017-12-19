@@ -2526,7 +2526,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="v3WHCwUoyj">
-    <property role="3GE5qa" value="reference" />
+    <property role="3GE5qa" value="reference.model" />
     <ref role="1M2myG" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     <node concept="EnEH3" id="v3WHCwUoyk" role="1MhHOB">
       <ref role="EomxK" to="tp25:v3WHCwUoyi" resolve="fqName" />

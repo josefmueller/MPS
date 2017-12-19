@@ -12,23 +12,32 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myModelPointer__BehaviorDescriptor = new ModelPointer__BehaviorDescriptor();
+  private final BHDescriptor myModulePointer__BehaviorDescriptor = new ModulePointer__BehaviorDescriptor();
+  private final BHDescriptor myModelName__BehaviorDescriptor = new ModelName__BehaviorDescriptor();
+  private final BHDescriptor myModuleIdentity__BehaviorDescriptor = new ModuleIdentity__BehaviorDescriptor();
   private final BHDescriptor myModelIdentity__BehaviorDescriptor = new ModelIdentity__BehaviorDescriptor();
-  private final BHDescriptor myTrivialModelId__BehaviorDescriptor = new TrivialModelId__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
 
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
-    SAbstractConcept cncpt_a0f = concept;
-    switch (index_846f5o_a0f.index(cncpt_a0f)) {
+    SAbstractConcept cncpt_a0i = concept;
+    switch (index_846f5o_a0i.index(cncpt_a0i)) {
       case 0:
         return myModelIdentity__BehaviorDescriptor;
       case 1:
-        return myTrivialModelId__BehaviorDescriptor;
+        return myModelName__BehaviorDescriptor;
+      case 2:
+        return myModelPointer__BehaviorDescriptor;
+      case 3:
+        return myModuleIdentity__BehaviorDescriptor;
+      case 4:
+        return myModulePointer__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b8cbL)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0i = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afbf490L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x96ca5405afc2bc9L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L)).seal();
 }

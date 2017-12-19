@@ -11,21 +11,23 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int ConceptIdentity = 0;
   public static final int ModelIdentity = 1;
-  public static final int NodeIdentity = 2;
-  public static final int SModelReference = 3;
-  public static final int SModuleReference = 4;
-  public static final int SNodeReference = 5;
-  public static final int TrivialModelId = 6;
+  public static final int ModelName = 2;
+  public static final int ModelPointer = 3;
+  public static final int ModuleIdentity = 4;
+  public static final int ModulePointer = 5;
+  public static final int NodeIdentity = 6;
+  public static final int SNodeReference = 7;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL);
     builder.put(0x502fe7548a208f9L, ConceptIdentity);
     builder.put(0x7d58bd9fd9c8b6d3L, ModelIdentity);
+    builder.put(0x96ca5405afbf490L, ModelName);
+    builder.put(0x502fe7548a0e360L, ModelPointer);
+    builder.put(0x96ca5405afc2bc9L, ModuleIdentity);
+    builder.put(0x502fe7548a0e361L, ModulePointer);
     builder.put(0x502fe7548a208f7L, NodeIdentity);
-    builder.put(0x502fe7548a0e360L, SModelReference);
-    builder.put(0x502fe7548a0e361L, SModuleReference);
     builder.put(0x502fe7548a0e35fL, SNodeReference);
-    builder.put(0x7d58bd9fd9c8b8cbL, TrivialModelId);
     myIndex = builder.seal();
   }
 
