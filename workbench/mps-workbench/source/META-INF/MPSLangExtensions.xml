@@ -1064,10 +1064,11 @@
     -->
     <applicationService serviceInterface="com.intellij.codeInsight.FileModificationService"
                         serviceImplementation="com.intellij.codeInsight.CodeInsightUtilBase"/>
-    <!--
+    <!--MPS patch: use default implementation of TreeAnchorizer-->
     <applicationService serviceInterface="com.intellij.ide.util.treeView.TreeAnchorizer"
-                        serviceImplementation="com.intellij.ide.projectView.impl.nodes.PsiTreeAnchorizer"/>
+                        serviceImplementation="com.intellij.ide.util.treeView.TreeAnchorizer"/>
 
+    <!--
     <projectStructure.sourceRootEditHandler implementation="com.intellij.openapi.roots.ui.configuration.JavaModuleSourceRootEditHandler"/>
     <projectStructure.sourceRootEditHandler implementation="com.intellij.openapi.roots.ui.configuration.JavaTestSourceRootEditHandler"/>
 
