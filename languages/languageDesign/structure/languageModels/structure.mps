@@ -89,59 +89,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1TIwiD" id="f_TIwhg">
-    <property role="R5$K7" value="false" />
-    <property role="19KtqR" value="true" />
-    <property role="R5$K2" value="true" />
-    <property role="TrG5h" value="ConceptDeclaration" />
-    <property role="34LRSv" value="Concept" />
-    <property role="EcuMT" value="1071489090640" />
-    <ref role="1TJDcQ" node="h0PkWnZ" resolve="AbstractConceptDeclaration" />
-    <node concept="PrWs8" id="6OtXG9KbAAY" role="PzmwI">
-      <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
-    </node>
-    <node concept="PrWs8" id="1YcAZC571At" role="PzmwI">
-      <ref role="PrY4T" to="tpck:69Qfsw3InJo" resolve="ISmartReferent" />
-    </node>
-    <node concept="1TJgyi" id="fX9Ktp8" role="1TKVEl">
-      <property role="TrG5h" value="rootable" />
-      <property role="IQ2nx" value="1096454100552" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="gSMwhzt" role="1TKVEl">
-      <property role="TrG5h" value="iconPath" />
-      <property role="IQ2nx" value="1160488491229" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="4qBHWh_rs8W" role="lGtFl" />
-    </node>
-    <node concept="1TJgyi" id="4G1g3fIR8D8" role="1TKVEl">
-      <property role="TrG5h" value="staticScope" />
-      <property role="IQ2nx" value="5404671619616246344" />
-      <ref role="AX2Wp" node="4G1g3fIR8JB" resolve="StaticScope" />
-    </node>
-    <node concept="1TJgyj" id="f_TJDff" role="1TKVEi">
-      <property role="20kJfa" value="extends" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="1071489389519" />
-      <ref role="20lvS9" node="f_TIwhg" resolve="ConceptDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="h0Pzm$Y" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="implements" />
-      <property role="20lbJX" value="0..n" />
-      <property role="IQ2ns" value="1169129564478" />
-      <ref role="20lvS9" node="h0PrWoo" resolve="InterfaceConceptReference" />
-    </node>
-    <node concept="1TJgyj" id="5vfjF5cjTVP" role="1TKVEi">
-      <property role="IQ2ns" value="6327362524875300597" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon" />
-      <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
-    </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJRI" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/structure.png" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="f_TJgxE">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="true" />
@@ -398,6 +345,9 @@
     </node>
     <node concept="PrWs8" id="hOIE3lE" role="PzmwI">
       <ref role="PrY4T" node="hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
+    <node concept="PrWs8" id="1Bs_61$mdiU" role="PzmwI">
+      <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
     </node>
     <node concept="1TJgyj" id="f_TKVDF" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -780,6 +730,56 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRG" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/enum.png" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="f_TIwhg">
+    <property role="R5$K7" value="false" />
+    <property role="19KtqR" value="true" />
+    <property role="R5$K2" value="true" />
+    <property role="TrG5h" value="ConceptDeclaration" />
+    <property role="34LRSv" value="Concept" />
+    <property role="EcuMT" value="1071489090640" />
+    <ref role="1TJDcQ" node="h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    <node concept="PrWs8" id="1YcAZC571At" role="PzmwI">
+      <ref role="PrY4T" to="tpck:69Qfsw3InJo" resolve="ISmartReferent" />
+    </node>
+    <node concept="1TJgyi" id="fX9Ktp8" role="1TKVEl">
+      <property role="TrG5h" value="rootable" />
+      <property role="IQ2nx" value="1096454100552" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="gSMwhzt" role="1TKVEl">
+      <property role="TrG5h" value="iconPath" />
+      <property role="IQ2nx" value="1160488491229" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="4qBHWh_rs8W" role="lGtFl" />
+    </node>
+    <node concept="1TJgyi" id="4G1g3fIR8D8" role="1TKVEl">
+      <property role="TrG5h" value="staticScope" />
+      <property role="IQ2nx" value="5404671619616246344" />
+      <ref role="AX2Wp" node="4G1g3fIR8JB" resolve="StaticScope" />
+    </node>
+    <node concept="1TJgyj" id="f_TJDff" role="1TKVEi">
+      <property role="20kJfa" value="extends" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="1071489389519" />
+      <ref role="20lvS9" node="f_TIwhg" resolve="ConceptDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="h0Pzm$Y" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="implements" />
+      <property role="20lbJX" value="0..n" />
+      <property role="IQ2ns" value="1169129564478" />
+      <ref role="20lvS9" node="h0PrWoo" resolve="InterfaceConceptReference" />
+    </node>
+    <node concept="1TJgyj" id="5vfjF5cjTVP" role="1TKVEi">
+      <property role="IQ2ns" value="6327362524875300597" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRI" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/structure.png" />
     </node>
   </node>
 </model>
