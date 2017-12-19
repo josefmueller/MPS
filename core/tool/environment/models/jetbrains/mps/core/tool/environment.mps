@@ -144,7 +144,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -3985,26 +3985,25 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="6z7xhWktWXe" role="3clF47">
+        <node concept="3SKdUt" id="735HJCLsndB" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLsndC" role="3SKWNk">
+            <property role="3SKdUp" value="[MM]: looks like a hack, should we regenerate it to a regular plugin specification? " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="735HJCLsnbG" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLsnbH" role="3SKWNk">
+            <property role="3SKdUp" value="Probably, with plugin-set-ref to ensure the same plugin set is used" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="735HJCLsnoY" role="3cqZAp" />
+        <node concept="3SKdUt" id="735HJCLsmUj" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLsmUk" role="3SKWNk">
+            <property role="3SKdUp" value="typically, this property is set by generated ant scripts before running tests" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="6z7xhWktWXf" role="3cqZAp">
           <node concept="3clFbS" id="6z7xhWktWXg" role="3clFbx">
-            <node concept="3SKdUt" id="2$4oShLbc0e" role="3cqZAp">
-              <node concept="3SKdUq" id="2$4oShLbc0g" role="3SKWNk">
-                <property role="3SKdUp" value="this is always true except when running from ant" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="6z7xhWktWXh" role="3cqZAp">
-              <node concept="1rXfSq" id="2jln2VraZKn" role="3clFbG">
-                <ref role="37wK5l" node="5mza6QqdMOM" resolve="setPluginPath" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="2$4oShLbI5d" role="3cqZAp">
-              <node concept="1rXfSq" id="2$4oShLbE4X" role="3clFbG">
-                <ref role="37wK5l" node="2$4oShLbfTi" resolve="setIdeaPluginsToLoad0" />
-                <node concept="37vLTw" id="2$4oShLbEdi" role="37wK5m">
-                  <ref role="3cqZAo" node="6z7xhWktWXH" resolve="config" />
-                </node>
-              </node>
-            </node>
+            <node concept="3cpWs6" id="735HJCLsmy2" role="3cqZAp" />
           </node>
           <node concept="2OqwBi" id="6z7xhWktWXD" role="3clFbw">
             <node concept="2YIFZM" id="6z7xhWktWXE" role="2Oq$k0">
@@ -4014,7 +4013,26 @@
                 <ref role="3cqZAo" node="2Koq9V0scA0" resolve="PLUGINS_PATH" />
               </node>
             </node>
-            <node concept="17RlXB" id="6z7xhWktWXG" role="2OqNvi" />
+            <node concept="17RvpY" id="735HJCLsmux" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="735HJCLsmEo" role="3cqZAp" />
+        <node concept="3SKdUt" id="735HJCLsn3l" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLsn3n" role="3SKWNk">
+            <property role="3SKdUp" value="otherwise, we set it from config" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6z7xhWktWXh" role="3cqZAp">
+          <node concept="1rXfSq" id="2jln2VraZKn" role="3clFbG">
+            <ref role="37wK5l" node="5mza6QqdMOM" resolve="setPluginPathProperty" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2$4oShLbI5d" role="3cqZAp">
+          <node concept="1rXfSq" id="2$4oShLbE4X" role="3clFbG">
+            <ref role="37wK5l" node="2$4oShLbfTi" resolve="setPluginIdsPropertyFromConfig" />
+            <node concept="37vLTw" id="2$4oShLbEdi" role="37wK5m">
+              <ref role="3cqZAo" node="6z7xhWktWXH" resolve="config" />
+            </node>
           </node>
         </node>
       </node>
@@ -4029,7 +4047,7 @@
     </node>
     <node concept="2tJIrI" id="2$4oShLbctN" role="jymVt" />
     <node concept="2YIFZL" id="2$4oShLbfTi" role="jymVt">
-      <property role="TrG5h" value="setIdeaPluginsToLoad0" />
+      <property role="TrG5h" value="setPluginIdsPropertyFromConfig" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
@@ -4146,10 +4164,16 @@
     </node>
     <node concept="2tJIrI" id="5A5jZrz7AVC" role="jymVt" />
     <node concept="2YIFZL" id="5mza6QqdMOM" role="jymVt">
-      <property role="TrG5h" value="setPluginPath" />
+      <property role="TrG5h" value="setPluginPathProperty" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5mza6QqdMOP" role="3clF47">
+        <node concept="3SKdUt" id="735HJCLsqld" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLsqlf" role="3SKWNk">
+            <property role="3SKdUp" value="[MM]: why do we set ids from config, while path is not config-related?" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="735HJCLstzP" role="3cqZAp" />
         <node concept="3cpWs8" id="7P_U$gDQsbV" role="3cqZAp">
           <node concept="3cpWsn" id="7P_U$gDQsbW" role="3cpWs9">
             <property role="TrG5h" value="pluginPath" />

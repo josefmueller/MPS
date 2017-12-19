@@ -231,14 +231,20 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   protected static void setIdeaPluginsToLoad(EnvironmentConfig config) {
-    if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
-      // this is always true except when running from ant 
-      setPluginPath();
-      setIdeaPluginsToLoad0(config);
+    // [MM]: looks like a hack, should we regenerate it to a regular plugin specification?  
+    // Probably, with plugin-set-ref to ensure the same plugin set is used 
+
+    // typically, this property is set by generated ant scripts before running tests 
+    if (isNotEmptyString(System.getProperty(PLUGINS_PATH))) {
+      return;
     }
+
+    // otherwise, we set it from config 
+    setPluginPathProperty();
+    setPluginIdsPropertyFromConfig(config);
   }
 
-  private static void setIdeaPluginsToLoad0(EnvironmentConfig config) {
+  private static void setPluginIdsPropertyFromConfig(EnvironmentConfig config) {
     StringBuilder result = new StringBuilder();
     Set<PluginDescriptor> plugins = config.getPlugins();
     if (plugins == null) {
@@ -251,7 +257,9 @@ public abstract class EnvironmentBase implements Environment {
     System.setProperty("idea.load.plugins.id", result.toString());
   }
 
-  protected static void setPluginPath() {
+  protected static void setPluginPathProperty() {
+    // [MM]: why do we set ids from config, while path is not config-related? 
+
     StringBuilder pluginPath = new StringBuilder();
     File pluginDir = new File(PathManager.getPreInstalledPluginsPath());
     if (pluginDir.exists()) {
@@ -276,7 +284,7 @@ public abstract class EnvironmentBase implements Environment {
       super("#init() method must be called before using an environment");
     }
   }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }

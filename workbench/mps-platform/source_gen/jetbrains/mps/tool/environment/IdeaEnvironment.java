@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.project.ProjectManager;
@@ -72,7 +73,11 @@ public final class IdeaEnvironment extends EnvironmentBase {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating IDEA environment");
     }
-    EnvironmentBase.setSystemProperties(true);
+
+    System.setProperty("idea.is.internal", InternalFlag.isInternalMode() + "");
+    System.setProperty("idea.no.jre.check", "true");
+    System.setProperty("idea.load.plugins", "true");
+
     EnvironmentBase.setIdeaPluginsToLoad(myConfig);
 
     myIdeaApplication = createIdeaTestApp();

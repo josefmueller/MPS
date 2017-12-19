@@ -457,15 +457,50 @@
             <property role="Xl_RC" value="Creating IDEA environment" />
           </node>
         </node>
-        <node concept="3clFbF" id="5A5jZrz7Cia" role="3cqZAp">
-          <node concept="2YIFZM" id="5A5jZrz7CpJ" role="3clFbG">
-            <ref role="1Pybhc" to="79ha:3eUNqOk4feo" resolve="EnvironmentBase" />
-            <ref role="37wK5l" to="79ha:5mza6QqdC5e" resolve="setSystemProperties" />
-            <node concept="3clFbT" id="5A5jZrz7CyC" role="37wK5m">
-              <property role="3clFbU" value="true" />
+        <node concept="3clFbH" id="735HJCLsg_U" role="3cqZAp" />
+        <node concept="3clFbF" id="735HJCLsfLX" role="3cqZAp">
+          <node concept="2YIFZM" id="735HJCLsfLY" role="3clFbG">
+            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
+            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <node concept="Xl_RD" id="735HJCLsfLZ" role="37wK5m">
+              <property role="Xl_RC" value="idea.is.internal" />
+            </node>
+            <node concept="3cpWs3" id="735HJCLsfM0" role="37wK5m">
+              <node concept="Xl_RD" id="735HJCLsfM1" role="3uHU7w">
+                <property role="Xl_RC" value="" />
+              </node>
+              <node concept="2YIFZM" id="735HJCLsfM2" role="3uHU7B">
+                <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
+                <ref role="37wK5l" to="fyhk:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
+              </node>
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="735HJCLsfM3" role="3cqZAp">
+          <node concept="2YIFZM" id="735HJCLsfM4" role="3clFbG">
+            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
+            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <node concept="Xl_RD" id="735HJCLsfM5" role="37wK5m">
+              <property role="Xl_RC" value="idea.no.jre.check" />
+            </node>
+            <node concept="Xl_RD" id="735HJCLsfM6" role="37wK5m">
+              <property role="Xl_RC" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="735HJCLsfM7" role="3cqZAp">
+          <node concept="2YIFZM" id="735HJCLsfM8" role="3clFbG">
+            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
+            <node concept="Xl_RD" id="735HJCLsfM9" role="37wK5m">
+              <property role="Xl_RC" value="idea.load.plugins" />
+            </node>
+            <node concept="Xl_RD" id="735HJCLsfMb" role="37wK5m">
+              <property role="Xl_RC" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="735HJCLsgd2" role="3cqZAp" />
         <node concept="3clFbF" id="1d7Yb5Mjiro" role="3cqZAp">
           <node concept="2YIFZM" id="1d7Yb5MjJMG" role="3clFbG">
             <ref role="37wK5l" to="79ha:1d7Yb5MjouE" resolve="setIdeaPluginsToLoad" />
