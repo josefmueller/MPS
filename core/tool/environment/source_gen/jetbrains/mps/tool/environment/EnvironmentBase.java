@@ -28,7 +28,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.InternalFlag;
 import java.util.Set;
 
 /**
@@ -229,12 +228,6 @@ public abstract class EnvironmentBase implements Environment {
     myRefCount = 0;
     doDispose();
     EnvironmentContainer.clear();
-  }
-
-  protected static void setSystemProperties(boolean loadIdeaPlugins) {
-    System.setProperty("idea.is.internal", InternalFlag.isInternalMode() + "");
-    System.setProperty("idea.no.jre.check", "true");
-    System.setProperty("idea.load.plugins", loadIdeaPlugins + "");
   }
 
   protected static void setIdeaPluginsToLoad(EnvironmentConfig config) {

@@ -3979,67 +3979,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5A5jZrz7wfO" role="jymVt" />
-    <node concept="2YIFZL" id="5mza6QqdC5e" role="jymVt">
-      <property role="TrG5h" value="setSystemProperties" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="5mza6QqdC5h" role="3clF47">
-        <node concept="3clFbF" id="7P_U$gDQqhJ" role="3cqZAp">
-          <node concept="2YIFZM" id="7P_U$gDQqhK" role="3clFbG">
-            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
-            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-            <node concept="Xl_RD" id="7P_U$gDQqhL" role="37wK5m">
-              <property role="Xl_RC" value="idea.is.internal" />
-            </node>
-            <node concept="3cpWs3" id="2_AUN5GlYY4" role="37wK5m">
-              <node concept="Xl_RD" id="2_AUN5GlYYG" role="3uHU7w">
-                <property role="Xl_RC" value="" />
-              </node>
-              <node concept="2YIFZM" id="2_AUN5GlX6y" role="3uHU7B">
-                <ref role="1Pybhc" to="fyhk:~InternalFlag" resolve="InternalFlag" />
-                <ref role="37wK5l" to="fyhk:~InternalFlag.isInternalMode():boolean" resolve="isInternalMode" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7P_U$gDQqhS" role="3cqZAp">
-          <node concept="2YIFZM" id="7P_U$gDQqhT" role="3clFbG">
-            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
-            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-            <node concept="Xl_RD" id="7P_U$gDQqhU" role="37wK5m">
-              <property role="Xl_RC" value="idea.no.jre.check" />
-            </node>
-            <node concept="Xl_RD" id="7P_U$gDQqhV" role="37wK5m">
-              <property role="Xl_RC" value="true" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7P_U$gDQqhY" role="3cqZAp">
-          <node concept="2YIFZM" id="7P_U$gDQqhZ" role="3clFbG">
-            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
-            <node concept="Xl_RD" id="7P_U$gDQqi0" role="37wK5m">
-              <property role="Xl_RC" value="idea.load.plugins" />
-            </node>
-            <node concept="3cpWs3" id="2Koq9V0tMYn" role="37wK5m">
-              <node concept="Xl_RD" id="2Koq9V0tMYE" role="3uHU7w">
-                <property role="Xl_RC" value="" />
-              </node>
-              <node concept="37vLTw" id="2Koq9V0tMoi" role="3uHU7B">
-                <ref role="3cqZAo" node="5mza6QqdCbz" resolve="loadIdeaPlugins" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="5A5jZrz7A0d" role="1B3o_S" />
-      <node concept="3cqZAl" id="5mza6QqdC5c" role="3clF45" />
-      <node concept="37vLTG" id="5mza6QqdCbz" role="3clF46">
-        <property role="TrG5h" value="loadIdeaPlugins" />
-        <node concept="10P_77" id="5mza6QqdCby" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="2jln2VraYPI" role="jymVt" />
     <node concept="2YIFZL" id="1d7Yb5MjouE" role="jymVt">
       <property role="TrG5h" value="setIdeaPluginsToLoad" />
       <property role="IEkAT" value="false" />

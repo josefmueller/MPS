@@ -22,9 +22,9 @@ import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
 
-public final class EmptyLibraryInitializer implements ApplicationComponent {
+public final class CustomisableLibraryInitializer implements ApplicationComponent {
   @SuppressWarnings("UnusedParameters")
-  public EmptyLibraryInitializer() {
+  public CustomisableLibraryInitializer() {
   }
 
   @Override

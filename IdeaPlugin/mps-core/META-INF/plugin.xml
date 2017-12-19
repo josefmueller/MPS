@@ -91,7 +91,7 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.repository.MPSModulesLibraryInitializer</implementation-class>
-      <headless-implementation-class>jetbrains.mps.repository.EmptyLibraryInitializer</headless-implementation-class>
+      <headless-implementation-class>jetbrains.mps.repository.CustomisableLibraryInitializer</headless-implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.repository.PluginModulesLibraryInitializer</implementation-class>
