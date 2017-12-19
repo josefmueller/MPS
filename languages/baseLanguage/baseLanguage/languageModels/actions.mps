@@ -225,18 +225,6 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-      </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
@@ -7545,7 +7533,7 @@
                 </node>
                 <node concept="2YIFZM" id="qIwpvNWgKQ" role="3clFbw">
                   <ref role="1Pybhc" node="18ik2d67g12" resolve="PrecedenceUtil" />
-                  <ref role="37wK5l" node="qIwpvNWfTr" resolve="needsParensAroundCastExpression" />
+                  <ref role="37wK5l" node="qIwpvNWfTr" resolve="needsParensInsideCastExpression" />
                   <node concept="37vLTw" id="qIwpvNWgRU" role="37wK5m">
                     <ref role="3cqZAo" node="qIwpvNUgVF" resolve="parentCastExpression" />
                   </node>
@@ -7660,7 +7648,7 @@
     </node>
     <node concept="2tJIrI" id="qIwpvNWaYl" role="jymVt" />
     <node concept="2YIFZL" id="qIwpvNWfTr" role="jymVt">
-      <property role="TrG5h" value="needsParensAroundCastExpression" />
+      <property role="TrG5h" value="needsParensInsideCastExpression" />
       <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -7770,18 +7758,6 @@
       </node>
       <node concept="10P_77" id="qIwpvNW7CH" role="3clF45" />
       <node concept="3Tm1VV" id="qIwpvNW7aS" role="1B3o_S" />
-      <node concept="P$JXv" id="1aczNeXK1N4" role="lGtFl">
-        <node concept="TZ5HA" id="1aczNeXK1N5" role="TZ5H$">
-          <node concept="1dT_AC" id="1aczNeXK1N6" role="1dT_Ay">
-            <property role="1dT_AB" value="Note, the name is misguiding. It's not about parensesis around CastExpression, it's about parensesis" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="1aczNeXK2uO" role="TZ5H$">
-          <node concept="1dT_AC" id="1aczNeXK2uP" role="1dT_Ay">
-            <property role="1dT_AB" value="around expression INSIDE the cast." />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="2iI3$d2corb" role="jymVt" />
     <node concept="2YIFZL" id="3VO0F5J53_2" role="jymVt">

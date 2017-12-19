@@ -16,7 +16,7 @@ public class CastExpression_TextGen extends TextGenDescriptorBase {
     tgs.append("(");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type")));
     tgs.append(") ");
-    boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(ctx.getPrimaryInput());
+    boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensInsideCastExpression(ctx.getPrimaryInput());
     if (needsParensAroundCastExpression) {
       tgs.append("(");
     }

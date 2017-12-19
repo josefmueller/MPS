@@ -8114,7 +8114,7 @@
             <property role="TrG5h" value="needsParensAroundCastExpression" />
             <node concept="10P_77" id="JN" role="1tU5fm" />
             <node concept="2YIFZM" id="JO" role="33vP2m">
-              <ref role="37wK5l" to="tpcz:qIwpvNWfTr" resolve="needsParensAroundCastExpression" />
+              <ref role="37wK5l" to="tpcz:qIwpvNWfTr" resolve="needsParensInsideCastExpression" />
               <ref role="1Pybhc" to="tpcz:18ik2d67g12" resolve="PrecedenceUtil" />
               <node concept="2OqwBi" id="JP" role="37wK5m">
                 <node concept="37vLTw" id="JQ" role="2Oq$k0">

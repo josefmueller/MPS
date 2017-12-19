@@ -76,7 +76,7 @@ public class PrecedenceUtil {
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"))) {
       SNode parentCastExpression = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, "jetbrains.mps.baseLanguage.structure.CastExpression"));
-      if (PrecedenceUtil.needsParensAroundCastExpression(parentCastExpression)) {
+      if (PrecedenceUtil.needsParensInsideCastExpression(parentCastExpression)) {
         SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), contextNode);
         return result;
@@ -85,11 +85,7 @@ public class PrecedenceUtil {
     return contextNode;
   }
 
-  /**
-   * Note, the name is misguiding. It's not about parensesis around CastExpression, it's about parensesis
-   * around expression INSIDE the cast.
-   */
-  public static boolean needsParensAroundCastExpression(SNode castExpression) {
+  public static boolean needsParensInsideCastExpression(SNode castExpression) {
     SNode targetExpr = SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"));
     return !(((targetExpr == null) || (boolean) Expression__BehaviorDescriptor.constant_id1653mnvAgr2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(targetExpr))) || SNodeOperations.isInstanceOf(targetExpr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) || (!(SNodeOperations.isInstanceOf(targetExpr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) && !(SNodeOperations.isInstanceOf(targetExpr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")))) || PrecedenceUtil.isHigherPriority(targetExpr, castExpression)));
 
