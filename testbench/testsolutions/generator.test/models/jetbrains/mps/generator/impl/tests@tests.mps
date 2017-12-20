@@ -8,6 +8,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
   </languages>
   <imports>
     <import index="av9" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.cache(MPS.Core/)" />
@@ -171,6 +172,20 @@
         <child id="1205770614681" name="actualArgument" index="2XxRq1" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="361130699826193249" name="jetbrains.mps.lang.modelapi.structure.ModulePointer" flags="ng" index="1dCxOk">
+        <property id="1863527487546097500" name="moduleId" index="1XweGW" />
+        <property id="1863527487545993577" name="moduleName" index="1XxBO9" />
+      </concept>
+      <concept id="361130699826193248" name="jetbrains.mps.lang.modelapi.structure.ModelPointer" flags="ng" index="1dCxOl">
+        <property id="1863527487546097494" name="modelId" index="1XweGQ" />
+        <child id="679099339649067980" name="name" index="1j$8Uc" />
+        <child id="1863527487546123100" name="moduleRef" index="1Xw7sW" />
+      </concept>
+      <concept id="679099339649053840" name="jetbrains.mps.lang.modelapi.structure.ModelName" flags="ng" index="1j_P7g">
+        <property id="679099339649053841" name="value" index="1j_P7h" />
+      </concept>
+    </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
         <child id="8427750732757990725" name="actual" index="3tpDZA" />
@@ -201,6 +216,9 @@
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelRefExpression" flags="ng" index="1Xw6AR">
+        <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -941,24 +959,6 @@
         </node>
         <node concept="3clFbF" id="34$P6R9zD0A" role="3cqZAp">
           <node concept="37vLTI" id="34$P6R9zD0B" role="3clFbG">
-            <node concept="2OqwBi" id="2n9zn0CqNhK" role="37vLTx">
-              <node concept="liA8E" id="2n9zn0CqNhL" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
-              <node concept="2JrnkZ" id="2n9zn0CqNhM" role="2Oq$k0">
-                <node concept="BaHAS" id="2n9zn0CqNhN" role="2JrQYb">
-                  <property role="BaGAP" value="java_stub" />
-                  <property role="BaHAW" value="java.lang" />
-                  <property role="BaBD8" value="no fqName&gt;" />
-                  <node concept="2OqwBi" id="Tb4PsnoHBZ" role="up2gk">
-                    <node concept="1jxXqW" id="Tb4PsnoHAi" role="2Oq$k0" />
-                    <node concept="liA8E" id="Tb4PsnoHIB" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3EllGN" id="34$P6R9zD0C" role="37vLTJ">
               <node concept="2OqwBi" id="2n9zn0CqNhZ" role="3ElVtu">
                 <node concept="liA8E" id="2n9zn0CqNi0" role="2OqNvi">
@@ -975,6 +975,18 @@
               </node>
               <node concept="37vLTw" id="3GM_nagTuYk" role="3ElQJh">
                 <ref role="3cqZAo" node="34$P6R9zD0o" resolve="userObjects" />
+              </node>
+            </node>
+            <node concept="1Xw6AR" id="7LjyLJwEfRD" role="37vLTx">
+              <node concept="1dCxOl" id="7LjyLJwEfRE" role="1XwpL7">
+                <property role="1XweGQ" value="java:java.lang" />
+                <node concept="1j_P7g" id="7LjyLJwEfRF" role="1j$8Uc">
+                  <property role="1j_P7h" value="java.lang@java_stub" />
+                </node>
+                <node concept="1dCxOk" id="7LjyLJwEfRG" role="1Xw7sW">
+                  <property role="1XweGW" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+                  <property role="1XxBO9" value="JDK" />
+                </node>
               </node>
             </node>
           </node>
