@@ -4,7 +4,6 @@ package jetbrains.mps.tool.environment;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.PathMacrosProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
@@ -18,6 +17,7 @@ import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
 import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -44,7 +44,6 @@ public abstract class EnvironmentBase implements Environment {
   protected final EnvironmentConfig myConfig;
   private boolean myInitialized;
   private int myRefCount;
-  private LibraryInitializer myLibInitializer;
   private PathMacrosProvider myMacrosProvider;
   private final ProjectContainer myContainer = new ProjectContainer();
   private ClassLoader myRootClassLoader = null;
@@ -61,11 +60,10 @@ public abstract class EnvironmentBase implements Environment {
     myConfig = config;
   }
 
-  protected void init(@NotNull LibraryInitializer libInitializer) {
+  public void init() {
     if (myInitialized) {
       throw new IllegalStateException("Double initialization " + this);
     }
-    myLibInitializer = libInitializer;
     initMacros();
     myRootClassLoader = createRootClassLoader();
     EnvironmentContainer.setCurrent(this);
@@ -96,7 +94,7 @@ public abstract class EnvironmentBase implements Environment {
     return new MapPathMacrosProvider(realMacros);
   }
 
-  public List<LibraryContributor> initLibraries() {
+  public List<LibraryContributor> initLibraries(@NotNull LibraryInitializer libInitializer) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
     }
@@ -109,7 +107,7 @@ public abstract class EnvironmentBase implements Environment {
     if (myConfig.getPlugins() != null && SetSequence.fromSet(myConfig.getPlugins()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
     }
-    myLibInitializer.load(libContribs);
+    libInitializer.load(libContribs);
     return libContribs;
   }
 

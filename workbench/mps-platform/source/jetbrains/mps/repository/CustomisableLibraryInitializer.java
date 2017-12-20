@@ -28,7 +28,8 @@ public final class CustomisableLibraryInitializer extends BaseLibraryInitializer
                                         IRegistryManager registryManager, IdeaPluginFacetComponent ideaPluginFacetComponent, IdeaFSComponent fs,
                                         PersistentFS filesystem) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
-    for (LibraryContributor lc : ((IdeaEnvironment) EnvironmentContainer.get()).initLibraries()) {
+    IdeaEnvironment env = (IdeaEnvironment) EnvironmentContainer.get();
+    for (LibraryContributor lc : env.initLibraries(coreComponents.getLibraryInitializer())) {
       addContributor(lc);
     }
   }

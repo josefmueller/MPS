@@ -1731,6 +1731,11 @@
         <node concept="3clFbF" id="3eUNqOk7iCY" role="3cqZAp">
           <node concept="3nyPlj" id="3eUNqOk7iCX" role="3clFbG">
             <ref role="37wK5l" node="3eUNqOk6clf" resolve="init" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="735HJCLtfCL" role="3cqZAp">
+          <node concept="1rXfSq" id="735HJCLtfCJ" role="3clFbG">
+            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
             <node concept="2OqwBi" id="3eUNqOk9b60" role="37wK5m">
               <node concept="liA8E" id="2W5tzczG3S9" role="2OqNvi">
                 <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
@@ -1742,11 +1747,6 @@
                 <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="735HJCLtfCL" role="3cqZAp">
-          <node concept="1rXfSq" id="735HJCLtfCJ" role="3clFbG">
-            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
           </node>
         </node>
       </node>
@@ -2683,16 +2683,6 @@
       <node concept="3Tm6S6" id="3pEStHM4mmX" role="1B3o_S" />
       <node concept="10Oyi0" id="3pEStHM4mMk" role="1tU5fm" />
     </node>
-    <node concept="312cEg" id="5A5jZryYSWd" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myLibInitializer" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="5A5jZryYSFT" role="1B3o_S" />
-      <node concept="3uibUv" id="5A5jZryYSVR" role="1tU5fm">
-        <ref role="3uigEE" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
-      </node>
-    </node>
     <node concept="312cEg" id="3eUNqOk88p_" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -2819,7 +2809,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <node concept="3Tmbuc" id="7hYILd4VBBd" role="1B3o_S" />
+      <node concept="3Tm1VV" id="2KZwJXNrsa2" role="1B3o_S" />
       <node concept="3clFbS" id="3eUNqOk6cli" role="3clF47">
         <node concept="3clFbJ" id="3pEStHM4f3P" role="3cqZAp">
           <node concept="3clFbS" id="3pEStHM4f3R" role="3clFbx">
@@ -2839,16 +2829,6 @@
           </node>
           <node concept="37vLTw" id="3pEStHM4f6S" role="3clFbw">
             <ref role="3cqZAo" node="6LlhC3WLD99" resolve="myInitialized" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="3eUNqOk863f" role="3cqZAp">
-          <node concept="37vLTI" id="3eUNqOk864B" role="3clFbG">
-            <node concept="37vLTw" id="5A5jZryYTRl" role="37vLTx">
-              <ref role="3cqZAo" node="5A5jZryYTCG" resolve="libInitializer" />
-            </node>
-            <node concept="37vLTw" id="5A5jZryYTPV" role="37vLTJ">
-              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitializer" />
-            </node>
           </node>
         </node>
         <node concept="3clFbF" id="3eUNqOk8PRy" role="3cqZAp">
@@ -2890,15 +2870,6 @@
         </node>
       </node>
       <node concept="3cqZAl" id="3eUNqOk6cld" role="3clF45" />
-      <node concept="37vLTG" id="5A5jZryYTCG" role="3clF46">
-        <property role="TrG5h" value="libInitializer" />
-        <node concept="3uibUv" id="7hYILd4VBy4" role="1tU5fm">
-          <ref role="3uigEE" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
-        </node>
-        <node concept="2AHcQZ" id="5mffBJ2W9Mw" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="3eUNqOk7Hw1" role="jymVt" />
     <node concept="3clFb_" id="2jln2VqY69D" role="jymVt">
@@ -3152,6 +3123,15 @@
       <property role="TrG5h" value="initLibraries" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
+      <node concept="37vLTG" id="5A5jZryYTCG" role="3clF46">
+        <property role="TrG5h" value="libInitializer" />
+        <node concept="3uibUv" id="7hYILd4VBy4" role="1tU5fm">
+          <ref role="3uigEE" to="32g5:~LibraryInitializer" resolve="LibraryInitializer" />
+        </node>
+        <node concept="2AHcQZ" id="5mffBJ2W9Mw" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
       <node concept="3clFbS" id="2jln2VqYj4f" role="3clF47">
         <node concept="RRSsy" id="3jYQuSB36Bm" role="3cqZAp">
           <property role="RRSoG" value="info" />
@@ -3280,8 +3260,8 @@
         </node>
         <node concept="3clFbF" id="1vtSNIfMwTV" role="3cqZAp">
           <node concept="2OqwBi" id="1vtSNIfMxdF" role="3clFbG">
-            <node concept="37vLTw" id="5A5jZryYU5K" role="2Oq$k0">
-              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitializer" />
+            <node concept="37vLTw" id="2KZwJXNrgfy" role="2Oq$k0">
+              <ref role="3cqZAo" node="5A5jZryYTCG" resolve="libInitializer" />
             </node>
             <node concept="liA8E" id="1vtSNIfMy0P" role="2OqNvi">
               <ref role="37wK5l" to="32g5:~LibraryInitializer.load(java.util.List):void" resolve="load" />

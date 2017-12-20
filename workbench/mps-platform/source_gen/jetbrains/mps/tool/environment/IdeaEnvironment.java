@@ -7,12 +7,12 @@ import org.apache.log4j.LogManager;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
+import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import java.io.File;
 import java.util.List;
@@ -83,8 +83,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
     myIdeaApplication = createIdeaTestApp();
     disallowAccessToClosedProjectsDir();
 
-    MPSCoreComponents coreComponents = getMPSCoreComponents();
-    super.init(coreComponents.getLibraryInitializer());
+    super.init();
   }
 
   private void disallowAccessToClosedProjectsDir() {

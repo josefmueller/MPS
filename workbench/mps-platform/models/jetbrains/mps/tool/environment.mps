@@ -526,29 +526,10 @@
             <ref role="37wK5l" node="Pw_fmFMRo6" resolve="disallowAccessToClosedProjectsDir" />
           </node>
         </node>
-        <node concept="3clFbH" id="Pw_fmFMPm1" role="3cqZAp" />
-        <node concept="3cpWs8" id="5A5jZrz2zs3" role="3cqZAp">
-          <node concept="3cpWsn" id="5A5jZrz2zs4" role="3cpWs9">
-            <property role="TrG5h" value="coreComponents" />
-            <node concept="3uibUv" id="5A5jZrz2zs5" role="1tU5fm">
-              <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
-            </node>
-            <node concept="1rXfSq" id="5A5jZrz2$ar" role="33vP2m">
-              <ref role="37wK5l" node="5A5jZrz2$ao" resolve="getMPSCoreComponents" />
-            </node>
-          </node>
-        </node>
+        <node concept="3clFbH" id="2KZwJXNrjan" role="3cqZAp" />
         <node concept="3clFbF" id="3eUNqOk7G04" role="3cqZAp">
           <node concept="3nyPlj" id="3eUNqOk7G02" role="3clFbG">
             <ref role="37wK5l" to="79ha:3eUNqOk6clf" resolve="init" />
-            <node concept="2OqwBi" id="5A5jZrz2zPw" role="37wK5m">
-              <node concept="37vLTw" id="5A5jZrz2zNu" role="2Oq$k0">
-                <ref role="3cqZAo" node="5A5jZrz2zs4" resolve="coreComponents" />
-              </node>
-              <node concept="liA8E" id="7joLZli9Ea_" role="2OqNvi">
-                <ref role="37wK5l" to="3a50:~MPSCoreComponents.getLibraryInitializer():jetbrains.mps.library.LibraryInitializer" resolve="getLibraryInitializer" />
-              </node>
-            </node>
           </node>
         </node>
       </node>
