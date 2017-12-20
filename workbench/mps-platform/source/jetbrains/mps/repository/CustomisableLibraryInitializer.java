@@ -15,29 +15,21 @@
  */
 package jetbrains.mps.repository;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
+import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.workbench.action.IRegistryManager;
-import org.jetbrains.annotations.NotNull;
 
-public final class CustomisableLibraryInitializer implements ApplicationComponent {
-  @SuppressWarnings("UnusedParameters")
-  public CustomisableLibraryInitializer() {
-  }
-
-  @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return getClass().getSimpleName();
+public final class CustomisableLibraryInitializer extends BaseLibraryInitializer {
+  public CustomisableLibraryInitializer(FSNotificationsImprover improver, MPSCoreComponents coreComponents,
+                                        IRegistryManager registryManager, IdeaPluginFacetComponent ideaPluginFacetComponent, IdeaFSComponent fs,
+                                        PersistentFS filesystem) {
+    super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
+    for (LibraryContributor lc : ((IdeaEnvironment) EnvironmentContainer.get()).initLibraries()) {
+      addContributor(lc);
+    }
   }
 }

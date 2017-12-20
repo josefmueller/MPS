@@ -68,7 +68,6 @@ public abstract class EnvironmentBase implements Environment {
     myLibInitializer = libInitializer;
     initMacros();
     myRootClassLoader = createRootClassLoader();
-    initLibraries();
     EnvironmentContainer.setCurrent(this);
     retain();
     myInitialized = true;
@@ -97,7 +96,7 @@ public abstract class EnvironmentBase implements Environment {
     return new MapPathMacrosProvider(realMacros);
   }
 
-  private List<LibraryContributor> initLibraries() {
+  public List<LibraryContributor> initLibraries() {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
     }
@@ -106,6 +105,7 @@ public abstract class EnvironmentBase implements Environment {
     if (SetSequence.fromSet(myConfig.getLibs()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
     }
+    // todo this hould go away. Instead, a regular contributor for plugins should perform 
     if (myConfig.getPlugins() != null && SetSequence.fromSet(myConfig.getPlugins()).isNotEmpty()) {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
     }

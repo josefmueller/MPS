@@ -59,6 +59,7 @@ public final class MpsEnvironment extends EnvironmentBase {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     registerFacetFactory();
     super.init(myPlatform.findComponent(LibraryInitializer.class));
+    initLibraries();
   }
 
   private void registerFacetFactory() {

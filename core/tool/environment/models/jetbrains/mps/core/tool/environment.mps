@@ -1744,6 +1744,11 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="735HJCLtfCL" role="3cqZAp">
+          <node concept="1rXfSq" id="735HJCLtfCJ" role="3clFbG">
+            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="3eUNqOk7h2h" role="1B3o_S" />
       <node concept="3cqZAl" id="3eUNqOk7hpW" role="3clF45" />
@@ -2861,11 +2866,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3eUNqOk8PVf" role="3cqZAp">
-          <node concept="1rXfSq" id="3eUNqOk8PVd" role="3clFbG">
-            <ref role="37wK5l" node="2jln2VqYj4c" resolve="initLibraries" />
-          </node>
-        </node>
         <node concept="3clFbF" id="6LlhC3WLQMj" role="3cqZAp">
           <node concept="2YIFZM" id="6LlhC3WLQO8" role="3clFbG">
             <ref role="37wK5l" node="3Pdq2IL$A4K" resolve="setCurrent" />
@@ -3228,6 +3228,11 @@
             <node concept="3GX2aA" id="74F5dZ_1KLQ" role="2OqNvi" />
           </node>
         </node>
+        <node concept="3SKdUt" id="735HJCLtcuN" role="3cqZAp">
+          <node concept="3SKdUq" id="735HJCLtcuP" role="3SKWNk">
+            <property role="3SKdUp" value="todo this hould go away. Instead, a regular contributor for plugins should perform" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="74F5dZ_1Lm6" role="3cqZAp">
           <node concept="3clFbS" id="74F5dZ_1Lm8" role="3clFbx">
             <node concept="3clFbF" id="5hfNQWynuTH" role="3cqZAp">
@@ -3292,7 +3297,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm6S6" id="2jln2VqYhWf" role="1B3o_S" />
+      <node concept="3Tm1VV" id="735HJCLt90L" role="1B3o_S" />
       <node concept="_YKpA" id="1vtSNIfMBKP" role="3clF45">
         <node concept="3uibUv" id="1vtSNIfMBKR" role="_ZDj9">
           <ref role="3uigEE" to="je6q:~LibraryContributor" resolve="LibraryContributor" />
