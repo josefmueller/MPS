@@ -29,6 +29,10 @@ public final class CustomisableLibraryInitializer extends BaseLibraryInitializer
                                         PersistentFS filesystem) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
     IdeaEnvironment env = (IdeaEnvironment) EnvironmentContainer.get();
+    if (env == null) {
+      //this case is found in plugin tests, not sure what to do, leave as-it-was
+      return;
+    }
     for (LibraryContributor lc : env.initLibraries(coreComponents.getLibraryInitializer())) {
       addContributor(lc);
     }
