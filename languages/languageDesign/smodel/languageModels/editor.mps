@@ -38,6 +38,7 @@
     <import index="25zl" ref="r:7bd127a5-e641-4c13-b150-b9c9b96f76ae(jetbrains.mps.lang.modelapi.editor)" />
     <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="dvox" ref="r:9dfd3567-3b1f-4edb-85a0-3981ca2bfd8c(jetbrains.mps.lang.modelapi.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -83,6 +84,7 @@
       <concept id="6089045305654894367" name="jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named" flags="ng" index="2kknPI">
         <reference id="6089045305654944382" name="menu" index="2kkw0f" />
       </concept>
+      <concept id="6089045305654894366" name="jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Default" flags="ng" index="2kknPJ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -280,6 +282,9 @@
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
       </concept>
       <concept id="1165420626554" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler" flags="in" index="1ouSdP" />
+      <concept id="3308396621974588243" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution" flags="ng" index="3p309x">
+        <child id="7173407872095451092" name="menuReference" index="1IG6uw" />
+      </concept>
       <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="7580468736840446506" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model" flags="nn" index="1rpKSd" />
       <concept id="5329678514806335510" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts" flags="ng" index="1rTJD9">
@@ -9906,7 +9911,7 @@
       <node concept="3F1sOY" id="1Bs_61$nhek" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:1Bs_61$ngwB" resolve="modelRef" />
         <node concept="A1WHu" id="4J$bixNY2QK" role="3vIgyS">
-          <ref role="A1WHt" to="25zl:7cODfNsrd5u" resolve="AllRepositoryModels" />
+          <ref role="A1WHt" to="25zl:7cODfNsrd5u" resolve="AllRepositoryModels_TM" />
         </node>
       </node>
       <node concept="3F0ifn" id="1Bs_61$nhem" role="3EZMnx">
@@ -9922,6 +9927,34 @@
     <node concept="3F0ifn" id="7LjyLJwEgqi" role="2wV5jI">
       <property role="3F0ifm" value="model-reference" />
       <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+    </node>
+  </node>
+  <node concept="3p309x" id="6Qvu94t1Pcq">
+    <property role="3GE5qa" value="reference.model" />
+    <property role="TrG5h" value="AllRepoModels_MenuContrib" />
+    <node concept="2kknPJ" id="6Qvu94t1PeD" role="1IG6uw">
+      <ref role="2ZyFGn" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
+    </node>
+    <node concept="3ft6gV" id="6Qvu94t1Phu" role="3ft7WO">
+      <node concept="3ft6gW" id="6Qvu94t1Phw" role="3ft5RY">
+        <node concept="3clFbS" id="6Qvu94t1Phx" role="2VODD2">
+          <node concept="3clFbF" id="6Qvu94t1Rlp" role="3cqZAp">
+            <node concept="2OqwBi" id="6Qvu94t1R$t" role="3clFbG">
+              <node concept="3bvxqY" id="6Qvu94t1Rlo" role="2Oq$k0" />
+              <node concept="1mIQ4w" id="6Qvu94t1RSA" role="2OqNvi">
+                <node concept="chp4Y" id="6Qvu94t1S52" role="cj9EA">
+                  <ref role="cht4Q" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1s_PAr" id="6Qvu94t1Sgo" role="3ft5RZ">
+        <node concept="2kknPI" id="6Qvu94t1Sgw" role="1s_PAo">
+          <ref role="2kkw0f" to="25zl:3jNcCGJ$JEK" resolve="AllRepositoryModels_SM" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
