@@ -120,7 +120,7 @@ public final class CommonPaths {
       }
       return URLDecoder.decode(urls.o1, Charset.defaultCharset().name()).replace('/', File.separatorChar);
     } catch (ClassNotFoundException | UnsupportedEncodingException e) {
-      LOG.warn("", e);
+      LOG.warn("jar file for class " + classFQName + " could not be found", new Throwable());
       return null;
     }
   }
