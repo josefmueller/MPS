@@ -1397,13 +1397,13 @@
                       <node concept="liA8E" id="7o" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
                         <node concept="1adDum" id="7t" role="37wK5m">
-                          <property role="1adDun" value="0x7866978ea0f04cc7L" />
+                          <property role="1adDun" value="0x446c26eb2b7b4bf0L" />
                         </node>
                         <node concept="1adDum" id="7u" role="37wK5m">
-                          <property role="1adDun" value="0x81bc4d213d9375e1L" />
+                          <property role="1adDun" value="0x9b35f83fa582753eL" />
                         </node>
                         <node concept="1adDum" id="7v" role="37wK5m">
-                          <property role="1adDun" value="0x7c3f2da20e92b62L" />
+                          <property role="1adDun" value="0x7d58bd9fd9c8b6d3L" />
                         </node>
                       </node>
                     </node>

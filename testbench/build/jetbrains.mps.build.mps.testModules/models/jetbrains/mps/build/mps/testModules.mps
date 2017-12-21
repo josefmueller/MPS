@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:645f17f0-02ac-4c69-aeef-a809c800f9f6(jetbrains.mps.build.mps.testModules)">
+<model ref="r:645f17f0-02ac-4c69-aeef-a809c800f9f6(jetbrains.mps.build.mps.testModules)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
   </languages>
   <imports>
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
@@ -23,10 +23,13 @@
         <reference id="3298469228705268165" name="manifest" index="2Uj$mc" />
       </concept>
     </language>
-    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
-        <property id="559557797393021807" name="stereotype" index="BaGAP" />
-        <property id="559557797393017702" name="name" index="BaHAW" />
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="361130699826193248" name="jetbrains.mps.lang.modelapi.structure.ModelPointer" flags="ng" index="1dCxOl">
+        <property id="1863527487546097494" name="modelId" index="1XweGQ" />
+        <child id="679099339649067980" name="name" index="1j$8Uc" />
+      </concept>
+      <concept id="679099339649053840" name="jetbrains.mps.lang.modelapi.structure.ModelName" flags="ng" index="1j_P7g">
+        <property id="679099339649053841" name="value" index="1j_P7h" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -55,9 +58,11 @@
     <node concept="2Uj$md" id="3XdPonscwMG" role="2Uj_Yd">
       <ref role="2Uj$mc" to="2apo:6rP_NjK3fBF" resolve="CloneModule" />
     </node>
-    <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
-      <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generatedTests" />
-      <property role="BaGAP" value="" />
+    <node concept="1dCxOl" id="4JE22xb2zS5" role="3cVaLd">
+      <property role="1XweGQ" value="r:12897c41-1d23-444a-8c3d-8a254e74f9b6" />
+      <node concept="1j_P7g" id="4JE22xb2zS6" role="1j$8Uc">
+        <property role="1j_P7h" value="jetbrains.mps.ide.build.tests.generatedTests" />
+      </node>
     </node>
   </node>
 </model>
