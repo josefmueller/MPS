@@ -10,9 +10,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.util.annotation.ToRemove;
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import java.util.List;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.util.SNodeOperations;
@@ -65,17 +64,6 @@ public class EditorComponentUtil {
     return component;
   }
 
-  /**
-   * 
-   * @deprecated use the one with openapi parameters counterpart
-   * @param manager just to access idea project and grab InspectorTool
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static jetbrains.mps.nodeEditor.EditorComponent scrollToNode(@NotNull SNode node, @Nullable jetbrains.mps.nodeEditor.EditorComponent component, FileEditorManager manager) {
-    return (jetbrains.mps.nodeEditor.EditorComponent) scrollToNode(node, component);
-  }
   @NotNull
   public static List<jetbrains.mps.nodeEditor.EditorComponent> findComponentForNode(SNode node, FileEditorManager fileEditorManager) {
     List<jetbrains.mps.nodeEditor.EditorComponent> result = new ArrayList<jetbrains.mps.nodeEditor.EditorComponent>();
