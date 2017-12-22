@@ -31,25 +31,6 @@ public interface UndoHandler {
 
   public <T> T runNonUndoableAction(Computable<T> t);
 
-  /**
-   * @deprecated it's implementation-specific logic (whether {@link #addUndoableAction(SNodeUndoableAction)} shall actually register undoable action
-   * no reason to keep this in the API.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  default boolean needRegisterUndo() {
-    return false;
-  }
-
-  /**
-   * @deprecated is of no use for MPS, no reason to expose in the API.
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  default boolean isInsideUndoableCommand() {
-    return false;
-  }
-
   // tells the command is over and UndoHandler shall use whatever platform mechanism available to
   // register undoable action
   // FIXME why it's not a command listener, so that gets notifications about command start and command end? Won't need
