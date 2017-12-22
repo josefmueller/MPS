@@ -15,17 +15,26 @@
  */
 package jetbrains.mps.cache;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import org.apache.log4j.Logger;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 

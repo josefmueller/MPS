@@ -184,15 +184,6 @@ public class SModelRepository implements CoreComponent {
 
   //---------------------------events----------------------------
 
-  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    throw new UnsupportedOperationException("SModelRepositoryListener has been deprecated since MPS 3.2, use openapi change notification mechanism instead.");
-  }
-
-  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    throw new UnsupportedOperationException("SModelRepositoryListener has been deprecated since MPS 3.2, use openapi change notification mechanism instead.");
-  }
-
-
   // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
   //       This one takes full name, including stereotype, while getModelDescriptorsByModelName() cares about fqn only
   public SModel getModelDescriptor(String modelName) {
