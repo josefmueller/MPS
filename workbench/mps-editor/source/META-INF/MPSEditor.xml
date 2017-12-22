@@ -2,8 +2,6 @@
 <components>
 
   <extensionPoints>
-    <extensionPoint qualifiedName="jetbrains.mps.editorOpenHandler"
-                    interface="jetbrains.mps.ide.editor.EditorOpenHandler"/>
     <extensionPoint qualifiedName="jetbrains.mps.NodeEditorFactory"
                     area="IDEA_PROJECT"
                     interface="jetbrains.mps.ide.editor.NodeEditorFactory"/>
