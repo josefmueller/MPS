@@ -8,29 +8,30 @@ import org.apache.log4j.LogManager;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.apache.log4j.Level;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.modelapi.behavior.ModelIdentity__BehaviorDescriptor;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.ThreadUtils;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -55,7 +56,7 @@ public class RefreshTestProject_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, "jetbrains.mps.build.mps.testManifest.structure.TestProjectConfiguration"));
+    return (SLinkOperations.getTarget(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x6a7c966ca6903a21L, "target")) != null) && ListSequence.fromList(SLinkOperations.getChildren(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x2dc684499788dbc4L, "manifest"))).isNotEmpty();
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -109,59 +110,49 @@ public class RefreshTestProject_Action extends BaseAction {
         }
       }
     }, action, true, event.getData(CommonDataKeys.PROJECT));
-    if (!(done.value)) {
+    if (done.value) {
+      RefreshTestProject_Action.this.displayInfo(action + " completed successfully", event);
+    } else {
       RefreshTestProject_Action.this.displayInfo(action + " action cancelled", event);
     }
   }
   private boolean doExecute(ProgressIndicator proInd, final AnActionEvent event) {
-    final Wrappers._T<SModel> target = new Wrappers._T<SModel>();
-    final Wrappers._boolean ok = new Wrappers._boolean(true);
     final SRepository repo = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
-    repo.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        // shamelessly copypasted from the smodel lang's generator 
-        SNode targetRef = SLinkOperations.getTarget(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x6a7c966ca6903a21L, "target"));
-        target.value = new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(targetRef));
-        if (target.value == null) {
-          Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Not found target model: " + ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(targetRef), "Model Not Found");
-          ok.value = false;
-        }
+
+    final SModel target = new ModelAccessHelper(repo).runReadAction(new Computable<SModel>() {
+      public SModel compute() {
+        return ModelIdentity__BehaviorDescriptor.toModelReference_id1Bs_61$mvvu.invoke(SLinkOperations.getTarget(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x6a7c966ca6903a21L, "target"))).resolve(repo);
       }
     });
-    if (!(ok.value)) {
+    if (target == null) {
+      Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Could not find target model to generate tests into.", "Model Not Found");
       return false;
     }
 
-    final List<SNode> manifests = new ArrayList<SNode>();
-    repo.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        for (SNode mref : SLinkOperations.getChildren(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x2dc684499788dbc4L, "manifest"))) {
-          SNode manifest = SLinkOperations.getTarget(mref, MetaAdapterFactory.getReferenceLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, 0x2dc684499788c1c5L, "manifest"));
-
-          ListSequence.fromList(manifests).addElement(manifest);
-        }
-      }
-    });
-
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-
         repo.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            TestModuleBuildProjectTemplate template = new TestModuleBuildProjectTemplate(event.getData(MPSCommonDataKeys.MPS_PROJECT), target.value);
+            List<SNode> manifests = new ArrayList<SNode>();
+            for (SNode mref : SLinkOperations.getChildren(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876885L, 0x2dc684499788dbc4L, "manifest"))) {
+              SNode manifest = SLinkOperations.getTarget(mref, MetaAdapterFactory.getReferenceLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, 0x2dc684499788c1c5L, "manifest"));
+
+              ListSequence.fromList(manifests).addElement(manifest);
+            }
+            TestModuleBuildProjectTemplate template = new TestModuleBuildProjectTemplate(event.getData(MPSCommonDataKeys.MPS_PROJECT), target);
 
             final SNode bproj = template.createBuildProject(event.getData(MPSCommonDataKeys.NODE), manifests);
             SPropertyOperations.set(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "generated");
 
-            SNode existing = ListSequence.fromList(SModelOperations.roots(target.value, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
+            SNode existing = ListSequence.fromList(SModelOperations.roots(target, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0j(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                return eq_tlmhfo_a0a0a0a0a0a7a0a0a0a0a0a0a0f0j(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
             });
             if ((existing != null)) {
               SNodeOperations.replaceWithAnother(existing, bproj);
             } else {
-              SModelOperations.addRootNode(target.value, bproj);
+              SModelOperations.addRootNode(target, bproj);
             }
 
             ModuleLoader ml = new ModuleLoader(bproj, null, new DefaultMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()));
@@ -170,8 +161,7 @@ public class RefreshTestProject_Action extends BaseAction {
         });
       }
     });
-
-    return ok.value;
+    return true;
   }
   private void displayInfo(String info, final AnActionEvent event) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(event.getData(CommonDataKeys.PROJECT));
@@ -179,7 +169,7 @@ public class RefreshTestProject_Action extends BaseAction {
       frame.getStatusBar().setInfo(info);
     }
   }
-  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0j0j(Object a, Object b) {
+  private static boolean eq_tlmhfo_a0a0a0a0a0a7a0a0a0a0a0a0a0f0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

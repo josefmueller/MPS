@@ -67,7 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)/3298469228705179781");
     b.aggregate("manifest", 0x2dc684499788dbc4L).target(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L).optional(true).ordered(true).multiple(true).origin("3298469228705274820").done();
-    b.aggregate("target", 0x6a7c966ca6903a21L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L).optional(true).ordered(true).multiple(false).origin("7673173258527586849").done();
+    b.aggregate("target", 0x6a7c966ca6903a21L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L).optional(true).ordered(true).multiple(false).origin("7673173258527586849").done();
     b.alias("Test Project Configuration");
     return b.create();
   }
