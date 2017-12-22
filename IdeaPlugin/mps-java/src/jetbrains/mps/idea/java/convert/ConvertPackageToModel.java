@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,7 +208,7 @@ public class ConvertPackageToModel extends AnAction {
           ((SModelBase) sourceModel).deleteModelImport(targetModelRef);
           if (!newModelRef.equals(sourceModel.getReference())) {
             // avoiding self-import
-            ((SModelBase) sourceModel).addModelImport(newModelRef, false);
+            ((SModelBase) sourceModel).addModelImport(newModelRef);
           }
 
           // better create static references right away
