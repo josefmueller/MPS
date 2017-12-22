@@ -28,7 +28,7 @@ public final class CustomisableLibraryInitializer extends BaseLibraryInitializer
                                         IRegistryManager registryManager, IdeaPluginFacetComponent ideaPluginFacetComponent, IdeaFSComponent fs,
                                         PersistentFS filesystem) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
-    IdeaEnvironment env = (IdeaEnvironment) EnvironmentContainer.get();
+    IdeaEnvironment env = IdeaEnvironment.getInitializingEnvironment();
     if (env == null) {
       //this case is found in plugin tests, not sure what to do, leave as-it-was
       return;

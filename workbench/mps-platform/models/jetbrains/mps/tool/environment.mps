@@ -72,6 +72,11 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -249,6 +254,17 @@
   <node concept="312cEu" id="6rx4kZDk5Br">
     <property role="TrG5h" value="IdeaEnvironment" />
     <property role="1EXbeo" value="true" />
+    <node concept="Wx3nA" id="ZnkhVJWH1Z" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="ourInitializingEnv" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="ZnkhVJWFfx" role="1B3o_S" />
+      <node concept="3uibUv" id="ZnkhVJWGM9" role="1tU5fm">
+        <ref role="3uigEE" node="6rx4kZDk5Br" resolve="IdeaEnvironment" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="ZnkhVJWDS8" role="jymVt" />
     <node concept="3UR2Jj" id="1w0tHxV50Bo" role="lGtFl">
       <node concept="TZ5HA" id="1w0tHxV50Bp" role="TZ5H$">
         <node concept="1dT_AC" id="1w0tHxV50Bq" role="1dT_Ay">
@@ -305,6 +321,40 @@
       <node concept="3Tm1VV" id="3x_lgCAljIS" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6LlhC3WJXZg" role="jymVt" />
+    <node concept="2YIFZL" id="ZnkhVJWZq7" role="jymVt">
+      <property role="TrG5h" value="getInitializingEnvironment" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="ZnkhVJWVi9" role="3clF47">
+        <node concept="3cpWs6" id="ZnkhVJWXcd" role="3cqZAp">
+          <node concept="37vLTw" id="ZnkhVJWYck" role="3cqZAk">
+            <ref role="3cqZAo" node="ZnkhVJWH1Z" resolve="ourInitializingEnv" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="ZnkhVJWV2c" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5Br" resolve="IdeaEnvironment" />
+      </node>
+      <node concept="3Tm1VV" id="ZnkhVJWTCI" role="1B3o_S" />
+      <node concept="P$JXv" id="ZnkhVJX3w1" role="lGtFl">
+        <node concept="TZ5HA" id="ZnkhVJX3w2" role="TZ5H$">
+          <node concept="1dT_AC" id="ZnkhVJX3w3" role="1dT_Ay">
+            <property role="1dT_AB" value="This method should be used by environment-dependent application and project components to get initialization data" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="ZnkhVJX4IQ" role="TZ5H$">
+          <node concept="1dT_AC" id="ZnkhVJX4IR" role="1dT_Ay">
+            <property role="1dT_AB" value="from the environment. This differs from EnvironmentContainer.get() as one can ony obtain an already-initialized" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="ZnkhVJX4J8" role="TZ5H$">
+          <node concept="1dT_AC" id="ZnkhVJX4J9" role="1dT_Ay">
+            <property role="1dT_AB" value="environment from the latter" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="ZnkhVJX0Pq" role="jymVt" />
     <node concept="2YIFZL" id="6LlhC3WJZzD" role="jymVt">
       <property role="TrG5h" value="getOrCreate" />
       <property role="od$2w" value="false" />
@@ -507,6 +557,15 @@
             <ref role="1Pybhc" to="79ha:3eUNqOk4feo" resolve="EnvironmentBase" />
             <node concept="37vLTw" id="$Ws9FwscQT" role="37wK5m">
               <ref role="3cqZAo" to="79ha:3eUNqOk7wUa" resolve="myConfig" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="ZnkhVJWJhT" role="3cqZAp" />
+        <node concept="3clFbF" id="ZnkhVJWIBj" role="3cqZAp">
+          <node concept="37vLTI" id="ZnkhVJWJxs" role="3clFbG">
+            <node concept="Xjq3P" id="ZnkhVJWJES" role="37vLTx" />
+            <node concept="37vLTw" id="ZnkhVJWIBh" role="37vLTJ">
+              <ref role="3cqZAo" node="ZnkhVJWH1Z" resolve="ourInitializingEnv" />
             </node>
           </node>
         </node>
@@ -999,6 +1058,14 @@
                             <node concept="2YIFZM" id="2LK9TYv$Ut0" role="2Oq$k0">
                               <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
                               <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="ZnkhVJWQmj" role="3cqZAp">
+                          <node concept="37vLTI" id="ZnkhVJWRk3" role="3clFbG">
+                            <node concept="10Nm6u" id="ZnkhVJWRUv" role="37vLTx" />
+                            <node concept="37vLTw" id="ZnkhVJWQmh" role="37vLTJ">
+                              <ref role="3cqZAo" node="ZnkhVJWH1Z" resolve="ourInitializingEnv" />
                             </node>
                           </node>
                         </node>

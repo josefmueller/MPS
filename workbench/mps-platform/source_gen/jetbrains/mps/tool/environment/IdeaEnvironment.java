@@ -38,6 +38,8 @@ import com.intellij.openapi.project.DumbService;
  */
 public final class IdeaEnvironment extends EnvironmentBase {
   private static final Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
+  private static IdeaEnvironment ourInitializingEnv;
+
   private IdeaTestApplication myIdeaApplication;
 
   static {
@@ -46,6 +48,15 @@ public final class IdeaEnvironment extends EnvironmentBase {
 
   public IdeaEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
+  }
+
+  /**
+   * This method should be used by environment-dependent application and project components to get initialization data
+   * from the environment. This differs from EnvironmentContainer.get() as one can ony obtain an already-initialized
+   * environment from the latter
+   */
+  public static IdeaEnvironment getInitializingEnvironment() {
+    return ourInitializingEnv;
   }
 
   /**
@@ -79,6 +90,8 @@ public final class IdeaEnvironment extends EnvironmentBase {
     System.setProperty("idea.load.plugins", "true");
 
     EnvironmentBase.setIdeaPluginsToLoad(myConfig);
+
+    ourInitializingEnv = this;
 
     myIdeaApplication = createIdeaTestApp();
     disallowAccessToClosedProjectsDir();
@@ -158,6 +171,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
             myIdeaApplication.dispose();
           }
         });
+        ourInitializingEnv = null;
       }
     }, ModalityState.NON_MODAL);
   }
