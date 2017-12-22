@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -37,6 +36,8 @@ import java.util.List;
  * imports editing, how to specify dependencies (extra composite Dependency objects or plain SModelReference/SLanguage is ok),
  * if this interface is intrinsic part of openapi.SModel or just comes with a help thereof (i.e. model.getDependencies() manager object),
  * and how to dispatch change notifications.
+ *
+ * Please use utility {@link ModelImports} instead of cast to this class.
  */
 public interface SModelInternal extends ModelWithDisposeInfo  {
 
@@ -73,13 +74,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
    * @since 3.4
    */
   void addModelImport(@NotNull SModelReference modelReference);
-
-  /**
-   * @deprecated use {@link #addModelImport(SModelReference)} instead, second argument of this method is legacy.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void addModelImport(SModelReference modelReference, boolean firstVersion);
 
   void deleteModelImport(SModelReference modelReference);
 

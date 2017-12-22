@@ -145,7 +145,7 @@ public class ModelProperties {
     SModel smodel = myModelDescriptor;
     modelsInProps.removeAll(SModelOperations.getImportedModelUIDs(smodel));
     for (SModelReference modelReference : modelsInProps) {
-      ((SModelInternal) smodel).addModelImport(modelReference, false);
+      ((SModelInternal) smodel).addModelImport(modelReference);
     }
   }
   private void removeUnusedModels() {

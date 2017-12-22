@@ -19657,8 +19657,8 @@
       <node id="6287546302289294798" at="43,60,44,92" concept="6" />
       <node id="6287546302289294798" at="44,92,45,232" concept="12" />
       <node id="6287546302289294798" at="46,9,47,152" concept="12" />
-      <node id="6287546302289294798" at="47,152,48,91" concept="6" />
-      <node id="6287546302289294798" at="48,91,49,71" concept="6" />
+      <node id="6287546302289294798" at="47,152,48,81" concept="6" />
+      <node id="6287546302289294798" at="48,81,49,71" concept="6" />
       <node id="6287546302289224310" at="54,50,55,148" concept="13" />
       <node id="6287546302289224310" at="57,68,58,102" concept="13" />
       <node id="6287546302289224310" at="60,30,61,17" concept="13" />
@@ -19710,38 +19710,37 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6287546302289331498">
     <file name="makeReferenceStatic_QuickFix.java">
-      <node id="6287546302289331498" at="13,41,14,132" concept="18" />
-      <node id="6287546302289337825" at="16,44,17,35" concept="13" />
-      <node id="6287546302291390339" at="19,35,20,105" concept="12" />
-      <node id="6287546302291395205" at="20,105,21,39" concept="12" />
-      <node id="6287546302291399354" at="22,25,23,13" concept="13" />
-      <node id="6287546302291399387" at="24,5,25,0" concept="15" />
-      <node id="6287546302291399954" at="25,0,26,130" concept="12" />
-      <node id="6287546302291401592" at="26,130,27,99" concept="6" />
-      <node id="6287546302291406958" at="27,99,28,0" concept="15" />
-      <node id="6287546302291407816" at="28,0,29,24" concept="14" />
-      <node id="6287546302293377952" at="29,24,30,90" concept="6" />
-      <node id="6287546302293238931" at="30,90,31,0" concept="15" />
-      <node id="6287546302289331498" at="13,0,16,0" concept="3" trace="makeReferenceStatic_QuickFix#()V" />
-      <node id="6287546302289331498" at="16,0,19,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="6287546302291398721" at="21,39,24,5" concept="10" />
-      <node id="6287546302289331498" at="19,0,33,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6287546302289331498" at="13,41,14,132" />
-      <scope id="6287546302289336979" at="16,44,17,35" />
-      <scope id="6287546302291398724" at="22,25,23,13" />
-      <scope id="6287546302289331498" at="13,0,16,0" />
-      <scope id="6287546302289331498" at="16,0,19,0">
+      <node id="6287546302289331498" at="15,41,16,132" concept="18" />
+      <node id="6287546302289337825" at="18,44,19,35" concept="13" />
+      <node id="6287546302291390339" at="21,35,22,113" concept="12" />
+      <node id="6287546302291395205" at="22,113,23,39" concept="12" />
+      <node id="6287546302291399354" at="24,25,25,13" concept="13" />
+      <node id="6287546302291399387" at="26,5,27,0" concept="15" />
+      <node id="6287546302291399954" at="27,0,28,138" concept="12" />
+      <node id="6287546302291401592" at="28,138,29,107" concept="6" />
+      <node id="6287546302291406958" at="29,107,30,0" concept="15" />
+      <node id="6287546302291407816" at="30,0,31,24" concept="14" />
+      <node id="5067218352685339109" at="31,24,32,102" concept="6" />
+      <node id="6287546302289331498" at="15,0,18,0" concept="3" trace="makeReferenceStatic_QuickFix#()V" />
+      <node id="6287546302289331498" at="18,0,21,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6287546302291398721" at="23,39,26,5" concept="10" />
+      <node id="6287546302289331498" at="21,0,34,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6287546302289331498" at="15,41,16,132" />
+      <scope id="6287546302289336979" at="18,44,19,35" />
+      <scope id="6287546302291398724" at="24,25,25,13" />
+      <scope id="6287546302289331498" at="15,0,18,0" />
+      <scope id="6287546302289331498" at="18,0,21,0">
         <var name="node" id="6287546302289331498" />
       </scope>
-      <scope id="6287546302289331500" at="19,35,31,0">
+      <scope id="6287546302289331500" at="21,35,32,102">
         <var name="ref" id="6287546302291390340" />
         <var name="staticRef" id="6287546302291399955" />
         <var name="target" id="6287546302291395206" />
       </scope>
-      <scope id="6287546302289331498" at="19,0,33,0">
+      <scope id="6287546302289331498" at="21,0,34,0">
         <var name="node" id="6287546302289331498" />
       </scope>
-      <unit id="6287546302289331498" at="12,0,34,0" name="jetbrains.mps.baseLanguage.typesystem.makeReferenceStatic_QuickFix" />
+      <unit id="6287546302289331498" at="14,0,35,0" name="jetbrains.mps.baseLanguage.typesystem.makeReferenceStatic_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/6468716278885421770">

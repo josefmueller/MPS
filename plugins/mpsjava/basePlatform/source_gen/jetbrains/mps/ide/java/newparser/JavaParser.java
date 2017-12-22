@@ -380,7 +380,7 @@ public class JavaParser {
               public void visit(StaticReference it) {
                 SModelReference targetModel = it.getTargetSModelReference();
                 if (!(sourceModel.getReference().equals(targetModel))) {
-                  ((SModelInternal) sourceModel).addModelImport(targetModel, true);
+                  ((SModelInternal) sourceModel).addModelImport(targetModel);
                 }
               }
             });
@@ -414,11 +414,11 @@ public class JavaParser {
         if (target == null) {
           continue;
         }
-        node.setReferenceTarget(ref.getRole(), target);
+        node.setReferenceTarget(ref.getLink(), target);
 
         SModel targetModel = target.getModel();
         if (targetModel != null && !(ourModel.getReference().equals(targetModel.getReference()))) {
-          ((SModelInternal) ourModel).addModelImport(targetModel.getReference(), true);
+          ((SModelInternal) ourModel).addModelImport(targetModel.getReference());
         }
       }
     }

@@ -49,7 +49,7 @@ public class MigrationScriptBuilder {
   }
 
   public MigrationScriptBuilder addDependency(SModel m) {
-    ((SModelInternal) SNodeOperations.getModel(myScript)).addModelImport(m.getReference(), true);
+    ((SModelInternal) SNodeOperations.getModel(myScript)).addModelImport(m.getReference());
     return this;
   }
 

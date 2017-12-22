@@ -1021,7 +1021,7 @@ public class JavaToMpsConverter {
           SModelReference targetModelRef = it.getTargetSModelReference();
           if (!(sourceModel.getReference().equals(targetModelRef))) {
             // avoiding self-import 
-            ((SModelInternal) sourceModel).addModelImport(targetModelRef, true);
+            ((SModelInternal) sourceModel).addModelImport(targetModelRef);
           }
           node.setReference(it.getRole(), it);
         }

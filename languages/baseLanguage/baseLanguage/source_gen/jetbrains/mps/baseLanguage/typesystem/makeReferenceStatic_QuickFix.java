@@ -6,8 +6,10 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class makeReferenceStatic_QuickFix extends QuickFix_Runtime {
   public makeReferenceStatic_QuickFix() {
@@ -17,17 +19,16 @@ public class makeReferenceStatic_QuickFix extends QuickFix_Runtime {
     return "Make reference static";
   }
   public void execute(SNode node) {
-    SReference ref = node.getReference(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]));
+    SReference ref = node.getReference(((SReferenceLink) makeReferenceStatic_QuickFix.this.getField("role")[0]));
     SNode target = ref.getTargetNode();
     if (target == null) {
       return;
     }
 
-    SReference staticRef = StaticReference.create(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]), node, target);
-    node.setReference(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]), staticRef);
+    SReference staticRef = StaticReference.create(((SReferenceLink) makeReferenceStatic_QuickFix.this.getField("role")[0]), node, target);
+    node.setReference(((SReferenceLink) makeReferenceStatic_QuickFix.this.getField("role")[0]), staticRef);
 
     // add model import 
-    ((SModelBase) node.getModel()).addModelImport(target.getModel().getReference(), true);
-
+    new ModelImports(SNodeOperations.getModel(node)).addModelImport(target.getModel().getReference());
   }
 }

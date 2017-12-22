@@ -122,7 +122,7 @@ public class JUnit3TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
           SNode tref = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"));
           SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, 0x11c3fc56a6d10bbfL, "klass"), myParameterObject);
           ((AbstractModule) _context.getModel().getModule()).addDependency(SNodeOperations.getModel(myParameterObject).getModule().getModuleReference(), false);
-          ((SModelInternal) _context.getModel()).addModelImport(SNodeOperations.getModel(myParameterObject).getReference(), false);
+          ((SModelInternal) _context.getModel()).addModelImport(SNodeOperations.getModel(myParameterObject).getReference());
           return tref;
         }
 

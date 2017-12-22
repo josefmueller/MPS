@@ -173,7 +173,7 @@ public class CollectTests_Action extends BaseAction {
                         }
                       }))) {
                         ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(SNodeOperations.cast(tref, MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef")));
-                        ((SModelInternal) model).addModelImport(smodel.getReference(), false);
+                        ((SModelInternal) model).addModelImport(smodel.getReference());
                         ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
                       }
                     }

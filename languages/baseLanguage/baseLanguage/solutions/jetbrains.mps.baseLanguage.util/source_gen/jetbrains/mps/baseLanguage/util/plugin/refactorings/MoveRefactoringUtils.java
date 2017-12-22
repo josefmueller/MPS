@@ -44,7 +44,7 @@ public class MoveRefactoringUtils {
     if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }
-    ((SModelInternal) model).addModelImport(ref, false);
+    ((SModelInternal) model).addModelImport(ref);
 
     SModule module = model.getModule();
     if (module instanceof ReloadableModuleBase) {

@@ -7,7 +7,6 @@
   </languages>
   <imports>
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="5rc7" ref="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -547,7 +546,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1wEcoXjJjZu" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                   <node concept="2OqwBi" id="1wEcoXjJjZv" role="37wK5m">
                     <node concept="liA8E" id="1wEcoXjJjZw" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -558,9 +557,6 @@
                         <node concept="I4A8Y" id="1wEcoXjJjZ$" role="2OqNvi" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3clFbT" id="1wEcoXjJjZ_" role="37wK5m">
-                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
@@ -705,7 +701,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1wEcoXjJk1Z" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                   <node concept="2OqwBi" id="1wEcoXjJk20" role="37wK5m">
                     <node concept="liA8E" id="1wEcoXjJk21" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -716,9 +712,6 @@
                         <node concept="I4A8Y" id="1wEcoXjJk25" role="2OqNvi" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3clFbT" id="1wEcoXjJk26" role="37wK5m">
-                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
@@ -1048,7 +1041,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="1wEcoXjJk76" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                   <node concept="2OqwBi" id="1wEcoXjJk77" role="37wK5m">
                     <node concept="liA8E" id="1wEcoXjJk78" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -1059,9 +1052,6 @@
                         <node concept="I4A8Y" id="1wEcoXjJk7c" role="2OqNvi" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3clFbT" id="1wEcoXjJk7d" role="37wK5m">
-                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>

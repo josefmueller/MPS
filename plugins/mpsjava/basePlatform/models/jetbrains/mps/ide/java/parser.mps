@@ -34,8 +34,6 @@
     <import index="j3yq" ref="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
@@ -46,7 +44,6 @@
     <import index="bxo2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence.datasource(MPS.OpenAPI/)" />
     <import index="iyvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence.datasource(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="ox2m" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.eclipse.jdt.internal.compiler.apt.util(MPS.Core/)" />
     <import index="539" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.eclipse.jdt.internal.compiler.util(MPS.Core/)" />
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
@@ -13268,12 +13265,9 @@
                                           <node concept="3clFbF" id="yvC2iN38lj" role="3cqZAp">
                                             <node concept="2OqwBi" id="yvC2iN38lk" role="3clFbG">
                                               <node concept="liA8E" id="yvC2iN38lr" role="2OqNvi">
-                                                <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                                                <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                                                 <node concept="37vLTw" id="yvC2iN3eQp" role="37wK5m">
                                                   <ref role="3cqZAo" node="2IXrFxMWaMP" resolve="targetModel" />
-                                                </node>
-                                                <node concept="3clFbT" id="yvC2iN38lt" role="37wK5m">
-                                                  <property role="3clFbU" value="true" />
                                                 </node>
                                               </node>
                                               <node concept="1eOMI4" id="7GbE3x7SzBI" role="2Oq$k0">
@@ -13589,10 +13583,10 @@
                 <node concept="3clFbF" id="629gj0QHBHh" role="3cqZAp">
                   <node concept="2OqwBi" id="629gj0QHBWn" role="3clFbG">
                     <node concept="liA8E" id="629gj0QHCr2" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
+                      <ref role="37wK5l" to="mhbf:~SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
                       <node concept="2OqwBi" id="629gj0QIoMJ" role="37wK5m">
                         <node concept="liA8E" id="629gj0QIpOv" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SReference.getRole():java.lang.String" resolve="getRole" />
+                          <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                         </node>
                         <node concept="2GrUjf" id="629gj0QIold" role="2Oq$k0">
                           <ref role="2Gs0qQ" node="629gj0QHgw_" resolve="ref" />
@@ -13672,7 +13666,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="1169fzDtX3H" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                          <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                           <node concept="2OqwBi" id="2n9zn0CqNjs" role="37wK5m">
                             <node concept="liA8E" id="2n9zn0CqNjt" role="2OqNvi">
                               <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
@@ -13680,9 +13674,6 @@
                             <node concept="37vLTw" id="2n9zn0CqNju" role="2Oq$k0">
                               <ref role="3cqZAo" node="1169fzDtMCC" resolve="targetModel" />
                             </node>
-                          </node>
-                          <node concept="3clFbT" id="1169fzDu9JF" role="37wK5m">
-                            <property role="3clFbU" value="true" />
                           </node>
                         </node>
                       </node>
@@ -29877,12 +29868,9 @@
                                 </node>
                               </node>
                               <node concept="liA8E" id="3$JID3gCfnZ" role="2OqNvi">
-                                <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                                <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                                 <node concept="37vLTw" id="3$JID3gCq5p" role="37wK5m">
                                   <ref role="3cqZAo" node="3$JID3g$ZOl" resolve="targetModelRef" />
-                                </node>
-                                <node concept="3clFbT" id="3$JID3gCK$7" role="37wK5m">
-                                  <property role="3clFbU" value="true" />
                                 </node>
                               </node>
                             </node>

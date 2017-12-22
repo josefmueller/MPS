@@ -19,7 +19,6 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelLegacy;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -242,13 +241,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
       rv.add(ie.getModelReference());
     }
     return rv;
-  }
-
-  @Override
-  @Deprecated
-  public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    assertCanChange();
-    new SModelLegacy(getSModel()).addModelImport(modelReference, firstVersion);
   }
 
   @Override

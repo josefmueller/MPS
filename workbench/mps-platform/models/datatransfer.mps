@@ -3834,12 +3834,9 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="1U6F4ugnwYD" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+                              <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
                               <node concept="37vLTw" id="3GM_nagTvBy" role="37wK5m">
                                 <ref role="3cqZAo" node="1U6F4ugnwYz" resolve="imported" />
-                              </node>
-                              <node concept="3clFbT" id="1U6F4ugnwYF" role="37wK5m">
-                                <property role="3clFbU" value="false" />
                               </node>
                             </node>
                           </node>

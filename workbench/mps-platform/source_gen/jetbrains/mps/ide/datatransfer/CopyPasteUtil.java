@@ -367,7 +367,7 @@ public final class CopyPasteUtil {
       public void run() {
         //  model properties 
         for (SModelReference imported : requiredImports) {
-          ((SModelInternal) targetModel).addModelImport(imported, false);
+          ((SModelInternal) targetModel).addModelImport(imported);
         }
         for (SLanguage language : requiredLanguages) {
           ((SModelInternal) targetModel).addLanguage(language);

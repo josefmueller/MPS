@@ -5735,23 +5735,19 @@
             <ref role="37wK5l" node="5Gi8bfMd_o3" resolve="isDelete" />
           </node>
           <node concept="3clFbS" id="5Gi8bfMdDM1" role="3clFbx">
-            <node concept="3clFbF" id="5Gi8bfMdEH9" role="3cqZAp">
-              <node concept="2OqwBi" id="5Gi8bfMdEHd" role="3clFbG">
-                <node concept="1eOMI4" id="5WIcYaGhyU8" role="2Oq$k0">
-                  <node concept="10QFUN" id="5WIcYaGhyU9" role="1eOMHV">
-                    <node concept="2JrnkZ" id="5WIcYaGhyUb" role="10QFUP">
-                      <node concept="37vLTw" id="2BHiRxglnmv" role="2JrQYb">
-                        <ref role="3cqZAo" node="5Gi8bfMdBp5" resolve="model" />
-                      </node>
-                    </node>
-                    <node concept="3uibUv" id="4PzMkXRlK1U" role="10QFUM">
-                      <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+            <node concept="3clFbF" id="4pio3Un83Q9" role="3cqZAp">
+              <node concept="2OqwBi" id="4pio3Un85q7" role="3clFbG">
+                <node concept="2ShNRf" id="4pio3Un83Q5" role="2Oq$k0">
+                  <node concept="1pGfFk" id="4pio3Un85c8" role="2ShVmc">
+                    <ref role="37wK5l" to="w1kc:~ModelImports.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImports" />
+                    <node concept="37vLTw" id="4pio3Un85dM" role="37wK5m">
+                      <ref role="3cqZAo" node="5Gi8bfMdBp5" resolve="model" />
                     </node>
                   </node>
                 </node>
-                <node concept="liA8E" id="5Gi8bfMdEHh" role="2OqNvi">
-                  <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.deleteModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="deleteModelImport" />
-                  <node concept="37vLTw" id="2BHiRxeukna" role="37wK5m">
+                <node concept="liA8E" id="4pio3Un85DD" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~ModelImports.removeModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="removeModelImport" />
+                  <node concept="37vLTw" id="4pio3Un85Gc" role="37wK5m">
                     <ref role="3cqZAo" node="5Gi8bfMdBod" resolve="myModelReference" />
                   </node>
                 </node>
@@ -5760,27 +5756,20 @@
           </node>
           <node concept="9aQIb" id="5Gi8bfMdEH7" role="9aQIa">
             <node concept="3clFbS" id="5Gi8bfMdEH8" role="9aQI4">
-              <node concept="3clFbF" id="5Gi8bfMdDM3" role="3cqZAp">
-                <node concept="2OqwBi" id="5Gi8bfMdDMi" role="3clFbG">
-                  <node concept="1eOMI4" id="5WIcYaGhyYT" role="2Oq$k0">
-                    <node concept="10QFUN" id="5WIcYaGhyYU" role="1eOMHV">
-                      <node concept="2JrnkZ" id="5WIcYaGhyYW" role="10QFUP">
-                        <node concept="37vLTw" id="2BHiRxgl3kI" role="2JrQYb">
-                          <ref role="3cqZAo" node="5Gi8bfMdBp5" resolve="model" />
-                        </node>
-                      </node>
-                      <node concept="3uibUv" id="4PzMkXRlKQ$" role="10QFUM">
-                        <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
+              <node concept="3clFbF" id="4pio3Un8653" role="3cqZAp">
+                <node concept="2OqwBi" id="4pio3Un8654" role="3clFbG">
+                  <node concept="2ShNRf" id="4pio3Un8655" role="2Oq$k0">
+                    <node concept="1pGfFk" id="4pio3Un8656" role="2ShVmc">
+                      <ref role="37wK5l" to="w1kc:~ModelImports.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel)" resolve="ModelImports" />
+                      <node concept="37vLTw" id="4pio3Un8657" role="37wK5m">
+                        <ref role="3cqZAo" node="5Gi8bfMdBp5" resolve="model" />
                       </node>
                     </node>
                   </node>
-                  <node concept="liA8E" id="5Gi8bfMdEfc" role="2OqNvi">
-                    <ref role="37wK5l" to="g3l6:~SModelDescriptorStub.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
-                    <node concept="37vLTw" id="2BHiRxeuu3h" role="37wK5m">
+                  <node concept="liA8E" id="4pio3Un8658" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModelImports.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
+                    <node concept="37vLTw" id="4pio3Un8659" role="37wK5m">
                       <ref role="3cqZAo" node="5Gi8bfMdBod" resolve="myModelReference" />
-                    </node>
-                    <node concept="3clFbT" id="5Gi8bfMdEH6" role="37wK5m">
-                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>

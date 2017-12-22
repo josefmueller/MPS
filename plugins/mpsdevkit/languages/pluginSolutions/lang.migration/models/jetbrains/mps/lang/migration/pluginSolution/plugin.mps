@@ -862,7 +862,7 @@
               </node>
             </node>
             <node concept="liA8E" id="4dr7st0_ZVx" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference,boolean):void" resolve="addModelImport" />
+              <ref role="37wK5l" to="w1kc:~SModelInternal.addModelImport(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="addModelImport" />
               <node concept="2OqwBi" id="4dr7st0A1eM" role="37wK5m">
                 <node concept="2JrnkZ" id="4dr7st0A1d1" role="2Oq$k0">
                   <node concept="37vLTw" id="4dr7st0A0ZP" role="2JrQYb">
@@ -872,9 +872,6 @@
                 <node concept="liA8E" id="4dr7st0A1lE" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                 </node>
-              </node>
-              <node concept="3clFbT" id="4dr7st0A1uO" role="37wK5m">
-                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>

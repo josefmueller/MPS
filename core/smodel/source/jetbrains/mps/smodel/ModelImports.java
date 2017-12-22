@@ -29,13 +29,11 @@ import java.util.Collection;
  * <p/>
  * This class doesn't address model access.
  * <p/>
- * FIXME shall reside in [smodel], kept in [kernel] until SModelInternal moves there
- * (could not now as depends from Language module and smodel.SModel.ImportElement)
  *
  * @implNote This class is deemed as low-level API to model imports, contrary to
  * <code>jetbrains.mps.project.ModelImporter</code> that focuses on user interaction and input check.
  * OTOH, don't get confused with 'low-level'. This class is intended for SModel clients, not for SModel implementers, don't
- * use it from within {@link jetbrains.mps.extapi.model.SModelDescriptorStub} or {@link jetbrains.mps.extapi.model.SModelBase}.
+ * use it from within {@code jetbrains.mps.extapi.model.SModelDescriptorStub} or {@code jetbrains.mps.extapi.model.SModelBase}.
  *
  * @author Artem Tikhomirov
  * @since 3.4

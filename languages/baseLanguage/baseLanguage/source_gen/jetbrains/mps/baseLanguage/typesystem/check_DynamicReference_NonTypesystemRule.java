@@ -45,7 +45,7 @@ public class check_DynamicReference_NonTypesystemRule extends AbstractNonTypesys
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Dynamic reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6287546302289294798", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.makeReferenceStatic_QuickFix", true);
-          intentionProvider.putArgument("role", SLinkOperations.getRefLink(ref).getName());
+          intentionProvider.putArgument("role", SLinkOperations.getRefLink(ref));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }

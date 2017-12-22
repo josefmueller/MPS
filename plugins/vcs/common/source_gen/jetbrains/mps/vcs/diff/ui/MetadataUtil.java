@@ -181,7 +181,7 @@ public class MetadataUtil {
     });
     SetSequence.fromSet(imports).subtract(SetSequence.fromSet(oldImports)).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        modelBase.addModelImport(it, false);
+        modelBase.addModelImport(it);
       }
     });
 
