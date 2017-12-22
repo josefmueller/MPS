@@ -24,6 +24,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.editor.intentions.NodeTransformer" />
     <classNode dependClassName="jetbrains.mps.editor.intentions.NodeTransformerBasedIntentionFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.imageGen.testLanguage.intentions.AddExportAsImageAttribute" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />

@@ -242,6 +242,7 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" flags="ln" index="5jKBG" />
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
@@ -299,6 +300,10 @@
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
+      </concept>
+      <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
+        <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
+        <child id="1092060348987" name="contentNode" index="13RCb5" />
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
@@ -999,7 +1004,7 @@
                   </node>
                   <node concept="2ShNRf" id="1CTTqHRb_YE" role="37vLTx">
                     <node concept="1pGfFk" id="1CTTqHRb_YF" role="2ShVmc">
-                      <ref role="37wK5l" to="uxaq:~NodeTransformerBasedIntentionFactory.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory)" resolve="NodeTransformerBasedIntentionFactory" />
+                      <ref role="37wK5l" to="uxaq:~NodeTransformerBasedIntentionFactory.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,jetbrains.mps.editor.intentions.NodeTransformer$Kind)" resolve="NodeTransformerBasedIntentionFactory" />
                       <node concept="2ShNRf" id="1CTTqHRb_YG" role="37wK5m">
                         <node concept="1pGfFk" id="1CTTqHRb_YH" role="2ShVmc">
                           <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1020,6 +1025,13 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="2Rt7G71DOn3" role="37wK5m">
+                        <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+                        <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+                        <node concept="5jKBG" id="2Rt7G71DOn4" role="lGtFl">
+                          <ref role="v9R2y" node="2Rt7G71CVTl" resolve="NodeTransformerKind" />
                         </node>
                       </node>
                     </node>
@@ -1392,7 +1404,7 @@
             </node>
             <node concept="2ShNRf" id="1wwM2ppyOFR" role="37vLTx">
               <node concept="1pGfFk" id="1wwM2ppyUnV" role="2ShVmc">
-                <ref role="37wK5l" to="uxaq:~NodeTransformerBasedIntentionFactory.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory)" resolve="NodeTransformerBasedIntentionFactory" />
+                <ref role="37wK5l" to="uxaq:~NodeTransformerBasedIntentionFactory.&lt;init&gt;(jetbrains.mps.editor.intentions.NodeTransformerFactory,jetbrains.mps.editor.intentions.NodeTransformer$Kind)" resolve="NodeTransformerBasedIntentionFactory" />
                 <node concept="2ShNRf" id="1wwM2ppyV4X" role="37wK5m">
                   <node concept="1pGfFk" id="1wwM2ppyVwR" role="2ShVmc">
                     <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
@@ -1413,6 +1425,13 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="Rm8GO" id="2Rt7G71DQTG" role="37wK5m">
+                  <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+                  <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+                  <node concept="5jKBG" id="2Rt7G71DQTH" role="lGtFl">
+                    <ref role="v9R2y" node="2Rt7G71CVTl" resolve="NodeTransformerKind" />
                   </node>
                 </node>
               </node>
@@ -2969,71 +2988,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6Y8LBKccsCw" role="jymVt" />
-    <node concept="3clFb_" id="1wwM2ppGdPz" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getKind" />
-      <property role="DiZV1" value="false" />
-      <property role="IEkAT" value="false" />
-      <node concept="3uibUv" id="46nxkdGD7sV" role="3clF45">
-        <ref role="3uigEE" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
-      </node>
-      <node concept="3Tm1VV" id="1wwM2ppGdP$" role="1B3o_S" />
-      <node concept="3clFbS" id="1wwM2ppGdPB" role="3clF47">
-        <node concept="3cpWs6" id="4r1sDPiSv42" role="3cqZAp">
-          <node concept="2jeGV$" id="6wEWLXPIfgi" role="lGtFl">
-            <property role="TrG5h" value="isError" />
-            <node concept="2jfdEK" id="6wEWLXPIfgk" role="2jfP_Y">
-              <node concept="3clFbS" id="6wEWLXPIfgm" role="2VODD2">
-                <node concept="3clFbF" id="6wEWLXPIus4" role="3cqZAp">
-                  <node concept="2OqwBi" id="5xKN8rBABY9" role="3clFbG">
-                    <node concept="2OqwBi" id="63iz5ddjkox" role="2Oq$k0">
-                      <node concept="30H73N" id="63iz5ddjkdm" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="5xKN8rBAAi$" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp3j:5_2vHPPt4pL" resolve="priority" />
-                      </node>
-                    </node>
-                    <node concept="1mIQ4w" id="5xKN8rBACaH" role="2OqNvi">
-                      <node concept="chp4Y" id="5xKN8rBACs7" role="cj9EA">
-                        <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="10P_77" id="1AttYWGcR19" role="2jfP_h" />
-          </node>
-          <node concept="1W57fq" id="6wEWLXPIzwf" role="lGtFl">
-            <node concept="3IZrLx" id="6wEWLXPIzwh" role="3IZSJc">
-              <node concept="3clFbS" id="6wEWLXPIzwj" role="2VODD2">
-                <node concept="3clFbF" id="6wEWLXPI$cU" role="3cqZAp">
-                  <node concept="2OqwBi" id="6wEWLXPIEZU" role="3clFbG">
-                    <node concept="1iwH7S" id="6wEWLXPIERZ" role="2Oq$k0" />
-                    <node concept="1bhEwm" id="6wEWLXPIFci" role="2OqNvi">
-                      <ref role="1bhEwk" node="6wEWLXPIfgi" resolve="isError" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="gft3U" id="6wEWLXPIHIF" role="UU_$l">
-              <node concept="3cpWs6" id="6wEWLXPIIt1" role="gfFT$">
-                <node concept="Rm8GO" id="46nxkdGCjMg" role="3cqZAk">
-                  <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.INTENTION" resolve="INTENTION" />
-                  <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="Rm8GO" id="46nxkdGChi_" role="3cqZAk">
-            <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
-            <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4r1sDPiQpL4" role="jymVt" />
-    <node concept="2tJIrI" id="whfZfEtvQI" role="jymVt" />
     <node concept="3clFb_" id="whfZfEtxYy" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getApplicableConcept" />
@@ -3898,12 +3852,11 @@
                         <node concept="37vLTw" id="7wba5m6tDjn" role="37wK5m">
                           <ref role="3cqZAo" node="5ttX5GUkSsZ" resolve="editorContext" />
                         </node>
-                        <node concept="2OqwBi" id="46nxkdGDh5o" role="37wK5m">
-                          <node concept="Xjq3P" id="46nxkdGDh5p" role="2Oq$k0">
-                            <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
-                          </node>
-                          <node concept="liA8E" id="46nxkdGDh5q" role="2OqNvi">
-                            <ref role="37wK5l" node="1wwM2ppGdPz" resolve="getKind" />
+                        <node concept="Rm8GO" id="2Rt7G71Dz9A" role="37wK5m">
+                          <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+                          <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+                          <node concept="5jKBG" id="2Rt7G71Dz9B" role="lGtFl">
+                            <ref role="v9R2y" node="2Rt7G71CVTl" resolve="NodeTransformerKind" />
                           </node>
                         </node>
                         <node concept="37vLTw" id="46nxkdGD9at" role="37wK5m">
@@ -4083,12 +4036,11 @@
                           <node concept="37vLTw" id="7wba5m6tEcW" role="37wK5m">
                             <ref role="3cqZAo" node="5ttX5GUmXOY" resolve="editorContext" />
                           </node>
-                          <node concept="2OqwBi" id="46nxkdGDgwH" role="37wK5m">
-                            <node concept="Xjq3P" id="46nxkdGDgcD" role="2Oq$k0">
-                              <ref role="1HBi2w" node="6wolOhZxLiI" resolve="NewIntentionFactory" />
-                            </node>
-                            <node concept="liA8E" id="46nxkdGDgHl" role="2OqNvi">
-                              <ref role="37wK5l" node="1wwM2ppGdPz" resolve="getKind" />
+                          <node concept="Rm8GO" id="2Rt7G71D_Tc" role="37wK5m">
+                            <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+                            <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+                            <node concept="5jKBG" id="2Rt7G71D_Td" role="lGtFl">
+                              <ref role="v9R2y" node="2Rt7G71CVTl" resolve="NodeTransformerKind" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="46nxkdGD9q1" role="37wK5m">
@@ -4360,6 +4312,48 @@
     <node concept="1N15co" id="1KHvivZKB2j" role="1s_3oS">
       <property role="TrG5h" value="model" />
       <node concept="H_c77" id="1KHvivZKB2k" role="1N15GL" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="2Rt7G71CVTl">
+    <property role="3GE5qa" value="new" />
+    <property role="TrG5h" value="NodeTransformerKind" />
+    <ref role="3gUMe" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
+    <node concept="Rm8GO" id="2Rt7G71CWFv" role="13RCb5">
+      <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.ERROR_FIX" resolve="ERROR_FIX" />
+      <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+      <node concept="raruj" id="2Rt7G71CZt2" role="lGtFl" />
+      <node concept="1W57fq" id="2Rt7G71CZth" role="lGtFl">
+        <node concept="3IZrLx" id="2Rt7G71CZtk" role="3IZSJc">
+          <node concept="3clFbS" id="2Rt7G71CZtl" role="2VODD2">
+            <node concept="3SKdUt" id="2Rt7G71D27N" role="3cqZAp">
+              <node concept="3SKdUq" id="2Rt7G71D27P" role="3SKWNk">
+                <property role="3SKdUp" value=" XXX kind of odd way to check != null, provided priority is declared as ErrorIntentionPriority[0..1]" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="2Rt7G71D1EL" role="3cqZAp">
+              <node concept="2OqwBi" id="2Rt7G71D1EN" role="3clFbG">
+                <node concept="2OqwBi" id="2Rt7G71D1EO" role="2Oq$k0">
+                  <node concept="30H73N" id="2Rt7G71D1EP" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="2Rt7G71D1EQ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp3j:5_2vHPPt4pL" resolve="priority" />
+                  </node>
+                </node>
+                <node concept="1mIQ4w" id="2Rt7G71D1ER" role="2OqNvi">
+                  <node concept="chp4Y" id="2Rt7G71D1ES" role="cj9EA">
+                    <ref role="cht4Q" to="tp3j:5_2vHPPt4ol" resolve="ErrorIntentionPriority" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="gft3U" id="2Rt7G71D2NI" role="UU_$l">
+          <node concept="Rm8GO" id="2Rt7G71D3IM" role="gfFT$">
+            <ref role="Rm8GQ" to="uxaq:~NodeTransformer$Kind.INTENTION" resolve="INTENTION" />
+            <ref role="1Px2BO" to="uxaq:~NodeTransformer$Kind" resolve="NodeTransformer.Kind" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

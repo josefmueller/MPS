@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.IntentionFactory;
 import jetbrains.mps.openapi.intentions.Kind;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -32,10 +33,23 @@ import java.util.stream.Collectors;
  * Date: 15.05.17
  */
 public class NodeTransformerBasedIntentionFactory implements IntentionFactory {
-  private NodeTransformerFactory myFactory;
+  private final NodeTransformerFactory myFactory;
+  private final Kind myKind;
 
+  /**
+   * @deprecated use {@link #NodeTransformerBasedIntentionFactory(NodeTransformerFactory, NodeTransformer.Kind)} instead.
+   *             Code generated with 2017.3 may use this constructor, remove once 2018.1 is out
+   *
+   */
+  @ToRemove(version = 2018.1)
   public NodeTransformerBasedIntentionFactory(NodeTransformerFactory factory) {
     myFactory = factory;
+    myKind = Kind.NORMAL;
+  }
+
+  public NodeTransformerBasedIntentionFactory(NodeTransformerFactory factory, NodeTransformer.Kind kind) {
+    myFactory = factory;
+    myKind = kind == NodeTransformer.Kind.ERROR_FIX ? Kind.ERROR : Kind.NORMAL;
   }
 
   @Override
@@ -63,14 +77,7 @@ public class NodeTransformerBasedIntentionFactory implements IntentionFactory {
 
   @Override
   public Kind getKind() {
-    switch (myFactory.getKind()) {
-      case ERROR_FIX:
-        return Kind.ERROR;
-      case INTENTION:
-        return Kind.NORMAL;
-      default:
-        throw new IllegalStateException();
-    }
+    return myKind;
   }
 
   @Override

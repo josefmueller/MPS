@@ -196,9 +196,6 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_8879227374728238185(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"));
   }
-  public static boolean ifMacro_Condition_7506079045411026961(final IfMacroContext _context) {
-    return ((Boolean) _context.getVariable("var:isError"));
-  }
   public static boolean ifMacro_Condition_8036891771125785355(final IfMacroContext _context) {
     return (((SNode) _context.getVariable("var:isApplicable")) == null);
   }
@@ -210,6 +207,10 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static boolean ifMacro_Condition_6295456526792107240(final IfMacroContext _context) {
     return TypeCalculator.isParametrized(_context.getNode());
+  }
+  public static boolean ifMacro_Condition_3304831519086081876(final IfMacroContext _context) {
+    //  XXX kind of odd way to check != null, provided priority is declared as ErrorIntentionPriority[0..1] 
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority")), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority"));
   }
   public static SNode sourceNodeQuery_5264392666049483255(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -310,9 +311,6 @@ public class QueriesGenerated extends QueryProviderBase {
         return MetaIdByDeclaration.getConceptId(it).getIdValue();
       }
     }, true).toListSequence();
-  }
-  public static Object insertMacro_varValue_7506079045410944020(final TemplateVarContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority")), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x59427edd75744615L, "jetbrains.mps.lang.intentions.structure.ErrorIntentionPriority"));
   }
   public static Object insertMacro_varValue_8036891771125728385(final TemplateVarContext _context) {
     return SNodeOperations.cast(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)", "7538218632063982606"), SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, "jetbrains.mps.lang.intentions.structure.Intention"), true, false))).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
@@ -588,11 +586,11 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("2230972008180498305", new QueriesGenerated.IfMC(i++));
     imcMethods.put("2230972008180722561", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8879227374728238183", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("7506079045411026959", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8036891771125785353", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7271443492838287057", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1555068470914134306", new QueriesGenerated.IfMC(i++));
     imcMethods.put("6295456526792107238", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("3304831519086081873", new QueriesGenerated.IfMC(i++));
   }
   @NotNull
   @Override
@@ -634,15 +632,15 @@ public class QueriesGenerated extends QueryProviderBase {
         case 10:
           return QueriesGenerated.ifMacro_Condition_8879227374728238185(ctx);
         case 11:
-          return QueriesGenerated.ifMacro_Condition_7506079045411026961(ctx);
-        case 12:
           return QueriesGenerated.ifMacro_Condition_8036891771125785355(ctx);
-        case 13:
+        case 12:
           return QueriesGenerated.ifMacro_Condition_7271443492838287058(ctx);
-        case 14:
+        case 13:
           return QueriesGenerated.ifMacro_Condition_1555068470914134308(ctx);
-        case 15:
+        case 14:
           return QueriesGenerated.ifMacro_Condition_6295456526792107240(ctx);
+        case 15:
+          return QueriesGenerated.ifMacro_Condition_3304831519086081876(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -718,9 +716,8 @@ public class QueriesGenerated extends QueryProviderBase {
     vvqMethods.put("1889794043260126822", new QueriesGenerated.VVQ(0));
     vvqMethods.put("1889794043260126785", new QueriesGenerated.VVQ(1));
     vvqMethods.put("32126802637421737", new QueriesGenerated.VVQ(2));
-    vvqMethods.put("7506079045410944018", new QueriesGenerated.VVQ(3));
-    vvqMethods.put("8036891771125728383", new QueriesGenerated.VVQ(4));
-    vvqMethods.put("7271443492838287039", new QueriesGenerated.VVQ(5));
+    vvqMethods.put("8036891771125728383", new QueriesGenerated.VVQ(3));
+    vvqMethods.put("7271443492838287039", new QueriesGenerated.VVQ(4));
   }
   @NotNull
   @Override
@@ -746,10 +743,8 @@ public class QueriesGenerated extends QueryProviderBase {
         case 2:
           return QueriesGenerated.insertMacro_varValue_32126802637421739(ctx);
         case 3:
-          return QueriesGenerated.insertMacro_varValue_7506079045410944020(ctx);
-        case 4:
           return QueriesGenerated.insertMacro_varValue_8036891771125728385(ctx);
-        case 5:
+        case 4:
           return QueriesGenerated.insertMacro_varValue_7271443492838287040(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));

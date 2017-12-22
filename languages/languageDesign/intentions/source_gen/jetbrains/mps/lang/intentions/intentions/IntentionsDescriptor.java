@@ -12,6 +12,7 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import jetbrains.mps.editor.intentions.NodeTransformerBasedIntentionFactory;
+import jetbrains.mps.editor.intentions.NodeTransformer;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -36,7 +37,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
         if (true) {
           // Concept: IntentionDeclaration 
           intentions = new IntentionFactory[1];
-          intentions[0] = new NodeTransformerBasedIntentionFactory(new ConvertIntention());
+          intentions[0] = new NodeTransformerBasedIntentionFactory(new ConvertIntention(), NodeTransformer.Kind.INTENTION);
         }
         break;
       default:
@@ -49,7 +50,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
     IntentionFactory[] rv = new IntentionFactory[1];
-    rv[0] = new NodeTransformerBasedIntentionFactory(new ConvertIntention());
+    rv[0] = new NodeTransformerBasedIntentionFactory(new ConvertIntention(), NodeTransformer.Kind.INTENTION);
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b81b652bL)).seal();
