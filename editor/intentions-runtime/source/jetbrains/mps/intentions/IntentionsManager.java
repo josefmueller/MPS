@@ -245,12 +245,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
       if (intentionAspect != null) {
         languageIntentions.addAll(intentionAspect.getAllIntentions());
-      } else {
-        jetbrains.mps.intentions.IntentionAspectDescriptor compatibilityIntentionAspect =
-            lr.getAspect(jetbrains.mps.intentions.IntentionAspectDescriptor.class);
-        if (compatibilityIntentionAspect != null) {
-          languageIntentions.addAll(compatibilityIntentionAspect.getAllAPIIntentions());
-        }
       }
 
       final ScriptAspectDescriptor scriptAspect = lr.getAspect(ScriptAspectDescriptor.class);
@@ -270,7 +264,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     LanguageRegistry languageRegistry = myLanguageRegistry;
     // respect intentions from imported languages only
     ArrayList<IntentionAspectDescriptor> activeIntentionAspects = new ArrayList<>();
-    ArrayList<jetbrains.mps.intentions.IntentionAspectDescriptor> activeCompatibilityIntentionAspects = new ArrayList<>();
     // respect migration scripts from imported languages only
     ArrayList<MigrationRefactoringIntentions> activeIntentionsFromMigrationScripts = new ArrayList<>();
     for (SLanguage l : new SLanguageHierarchy(languageRegistry, SModelOperations.getAllLanguageImports(node.getModel())).getExtended()) {
@@ -281,11 +274,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       final IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
       if (intentionAspect != null) {
         activeIntentionAspects.add(intentionAspect);
-      } else {
-        jetbrains.mps.intentions.IntentionAspectDescriptor compatibiltiyIA = lr.getAspect(jetbrains.mps.intentions.IntentionAspectDescriptor.class);
-        if (compatibiltiyIA != null) {
-          activeCompatibilityIntentionAspects.add(compatibiltiyIA);
-        }
       }
       final ScriptAspectDescriptor scriptsAspect = lr.getAspect(ScriptAspectDescriptor.class);
       if (scriptsAspect != null) {
@@ -299,13 +287,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       ArrayList<IntentionFactory> intentionsForConcept = new ArrayList<>();
       for (IntentionAspectDescriptor intentionAspect : activeIntentionAspects) {
         final Collection<IntentionFactory> intentions = intentionAspect.getIntentions(concept);
-        if (intentions == null) {
-          continue;
-        }
-        intentionsForConcept.addAll(intentions);
-      }
-      for (jetbrains.mps.intentions.IntentionAspectDescriptor intentionAspect : activeCompatibilityIntentionAspects) {
-        final Collection<IntentionFactory> intentions = intentionAspect.getAPIIntentions(concept);
         if (intentions == null) {
           continue;
         }

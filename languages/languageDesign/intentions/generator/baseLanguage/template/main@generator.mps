@@ -4188,8 +4188,8 @@
       <property role="TrG5h" value="getDescriptor" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="1VQ0jyzrH2I" role="1B3o_S" />
-      <node concept="3uibUv" id="1VQ0jyzrH2K" role="3clF45">
-        <ref role="3uigEE" to="91lp:~IntentionDescriptor" resolve="IntentionDescriptor" />
+      <node concept="3uibUv" id="1i4SrHvBwxf" role="3clF45">
+        <ref role="3uigEE" to="nddn:~IntentionDescriptor" resolve="IntentionDescriptor" />
       </node>
       <node concept="3clFbS" id="1VQ0jyzrH2L" role="3clF47">
         <node concept="3clFbF" id="1VQ0jyzrH2N" role="3cqZAp">
