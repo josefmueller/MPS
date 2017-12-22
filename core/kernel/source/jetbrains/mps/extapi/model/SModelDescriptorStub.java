@@ -17,7 +17,6 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelLegacy;
@@ -199,12 +198,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public void addLanguage(Language language) {
-    assertCanChange();
-    new SModelLegacy(getSModel()).addLanguage(language);
-  }
-
-  @Override
   public void addLanguage(@NotNull SLanguage language) {
     assertCanChange();
     getSModel().addLanguage(language);
@@ -275,13 +268,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
-  @Override
-  @Deprecated
-  public final List<SModuleReference> engagedOnGenerationLanguages() {
-    assertCanRead();
-    return new SModelLegacy(getSModel()).engagedOnGenerationLanguages();
-  }
-
   @NotNull
   @Override
   public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
@@ -290,23 +276,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  @Deprecated
-  public final void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    assertCanChange();
-    new SModelLegacy(getSModel()).addEngagedOnGenerationLanguage(ref);
-  }
-
-  @Override
   public final void addEngagedOnGenerationLanguage(SLanguage lang) {
     assertCanChange();
     getSModel().addEngagedOnGenerationLanguage(lang);
-  }
-
-  @Override
-  @Deprecated
-  public final void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    assertCanChange();
-    new SModelLegacy(getSModel()).removeEngagedOnGenerationLanguage(ref);
   }
 
   @Override

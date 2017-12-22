@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,6 @@ import java.util.List;
  * if this interface is intrinsic part of openapi.SModel or just comes with a help thereof (i.e. model.getDependencies() manager object),
  * and how to dispatch change notifications.
  */
-// XXX move to [smodel] once ImportElement and Language dependencies gone
 public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addModelListener(@NotNull SModelListener listener);
@@ -50,13 +49,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   // FIXME refactor, rename to removeLanguage(SLanguage), expose in SModel
   void deleteLanguageId(@NotNull SLanguage ref);
-
-  /**
-   * @deprecated use {@link #addLanguage(SLanguage)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void addLanguage(Language language); // 2 uses in mbeddr
 
   void addLanguage(@NotNull SLanguage language);
 
@@ -92,35 +84,12 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   void deleteModelImport(SModelReference modelReference);
 
   /**
-   * @deprecated use {@link #getLanguagesEngagedOnGeneration()} or {@link SModelLegacy#engagedOnGenerationLanguages()} for transition.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  List<SModuleReference> engagedOnGenerationLanguages();
-
-  /**
    * @since 3.4
    */
   @NotNull
   Collection<SLanguage> getLanguagesEngagedOnGeneration();
 
-  /**
-   * @deprecated use {@link #addEngagedOnGenerationLanguage(SLanguage)} instead
-   * Shall move to SModelLegacy
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void addEngagedOnGenerationLanguage(SModuleReference ref);
-
   void addEngagedOnGenerationLanguage(SLanguage lang);
-
-  /**
-   * @deprecated use {@link #removeEngagedOnGenerationLanguage(SLanguage)} instead
-   * Shall move to SModelLegacy
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void removeEngagedOnGenerationLanguage(SModuleReference ref);
 
   void removeEngagedOnGenerationLanguage(SLanguage lang);
 
