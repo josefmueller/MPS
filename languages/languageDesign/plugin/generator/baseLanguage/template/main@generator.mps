@@ -3456,16 +3456,17 @@
         <node concept="3cqZAl" id="3P7s6VtYpQs" role="3clF45" />
         <node concept="3clFbS" id="3P7s6VtYpQu" role="3clF47">
           <node concept="XkiVB" id="3P7s6VtYpQx" role="3cqZAp">
-            <ref role="37wK5l" to="71xd:~BaseTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolve="BaseTool" />
+            <ref role="37wK5l" to="71xd:~BaseTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,java.util.Map,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean,boolean)" resolve="BaseTool" />
             <node concept="10Nm6u" id="3P7s6VtYpQy" role="37wK5m" />
             <node concept="Xl_RD" id="3P7s6VtYpQ$" role="37wK5m" />
-            <node concept="3cmrfG" id="3P7s6VtYpQA" role="37wK5m">
-              <property role="3cmrfH" value="1" />
-            </node>
+            <node concept="10Nm6u" id="7j0NltCti4x" role="37wK5m" />
             <node concept="10Nm6u" id="3P7s6VtYpQC" role="37wK5m" />
             <node concept="10M0yZ" id="3P7s6VtYpQE" role="37wK5m">
               <ref role="1PxDUh" to="jkny:~ToolWindowAnchor" resolve="ToolWindowAnchor" />
               <ref role="3cqZAo" to="jkny:~ToolWindowAnchor.BOTTOM" resolve="BOTTOM" />
+            </node>
+            <node concept="3clFbT" id="7j0NltCtjN9" role="37wK5m">
+              <property role="3clFbU" value="false" />
             </node>
             <node concept="3clFbT" id="3P7s6VtYpQG" role="37wK5m">
               <property role="3clFbU" value="true" />
