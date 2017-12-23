@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.plugins.cl.PluginClassLoader;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -62,7 +61,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
-    super(project, ID,2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
+    super(project, ID, shortcutsFromNumber(2), IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
   @Override

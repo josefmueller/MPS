@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
   private ContentManager myContentManager;
 
   public TabbedUsagesTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
-    super(project, id, number, icon, anchor, canCloseContent);
+    super(project, id, shortcutsFromNumber(number), icon, anchor, false, canCloseContent);
     myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
   }
 

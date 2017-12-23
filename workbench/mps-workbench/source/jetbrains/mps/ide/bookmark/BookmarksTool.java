@@ -42,7 +42,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   private TreeState myTreeState;
 
   public BookmarksTool(Project project) {
-    super(project, "Bookmarks", -1, null, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Bookmarks", null, null, ToolWindowAnchor.BOTTOM, false, true);
   }
 
   @Override

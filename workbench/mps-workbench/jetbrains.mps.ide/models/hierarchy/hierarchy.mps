@@ -615,15 +615,19 @@
       </node>
       <node concept="3clFbS" id="51NkKCgB3dI" role="3clF47">
         <node concept="XkiVB" id="3P7s6VtYkvg" role="3cqZAp">
-          <ref role="37wK5l" to="71xd:~BaseProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolve="BaseProjectTool" />
+          <ref role="37wK5l" to="71xd:~BaseProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,java.util.Map,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean,boolean)" resolve="BaseProjectTool" />
           <node concept="37vLTw" id="2BHiRxgmNFf" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB3dA" resolve="project" />
           </node>
           <node concept="37vLTw" id="2BHiRxgma6m" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB3dC" resolve="id" />
           </node>
-          <node concept="37vLTw" id="2BHiRxgmafu" role="37wK5m">
-            <ref role="3cqZAo" node="51NkKCgB3dE" resolve="number" />
+          <node concept="2YIFZM" id="5_d5WPPo58W" role="37wK5m">
+            <ref role="1Pybhc" to="71xd:~BaseTool" resolve="BaseTool" />
+            <ref role="37wK5l" to="71xd:~BaseTool.shortcutsFromNumber(int):java.util.Map" resolve="shortcutsFromNumber" />
+            <node concept="37vLTw" id="5_d5WPPo5PI" role="37wK5m">
+              <ref role="3cqZAo" node="51NkKCgB3dE" resolve="number" />
+            </node>
           </node>
           <node concept="37vLTw" id="2BHiRxgmFe9" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB3dG" resolve="icon" />
@@ -631,6 +635,9 @@
           <node concept="10M0yZ" id="3P7s6VtYkvu" role="37wK5m">
             <ref role="1PxDUh" to="jkny:~ToolWindowAnchor" resolve="ToolWindowAnchor" />
             <ref role="3cqZAo" to="jkny:~ToolWindowAnchor.RIGHT" resolve="RIGHT" />
+          </node>
+          <node concept="3clFbT" id="5_d5WPPnY8Y" role="37wK5m">
+            <property role="3clFbU" value="false" />
           </node>
           <node concept="3clFbT" id="3P7s6VtYkvw" role="37wK5m" />
         </node>

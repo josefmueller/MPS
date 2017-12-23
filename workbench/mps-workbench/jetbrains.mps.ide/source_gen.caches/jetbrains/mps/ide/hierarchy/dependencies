@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

@@ -36,7 +36,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
   private Project myProject;
 
   public ModelCheckerTool(Project project) {
-    super(project, "Model Checker", -1, ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Model Checker", null, ICON, ToolWindowAnchor.BOTTOM, true);
     myProject = project;
   }
   public ModelCheckerViewer checkModels(List<SModel> models) {

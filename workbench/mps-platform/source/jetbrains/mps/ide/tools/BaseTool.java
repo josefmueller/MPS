@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.ide.tools;
 import com.intellij.ide.actions.ActivateToolWindowAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
-import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbService;
@@ -31,7 +30,6 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -40,7 +38,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
-import java.awt.event.InputEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -65,24 +62,13 @@ public abstract class BaseTool {
 
   private JComponent myComponent = null;
 
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
-    this(project, id, number, icon, anchor, false, canCloseContent);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean sideTool, boolean canCloseContent) {
-    this(project, id, shortcutsFromNumber(number), icon, anchor, sideTool, canCloseContent);
-  }
-
   protected static Map<String, KeyStroke> shortcutsFromNumber(int number) {
-    Map<String, KeyStroke> result = new HashMap<>();
-    if (number != -1) {
-      result.put(KeymapManager.DEFAULT_IDEA_KEYMAP, KeyStroke.getKeyStroke("alt " + number));
-      result.put(KeymapManager.MAC_OS_X_KEYMAP, KeyStroke.getKeyStroke("meta " + number));
+    if (number == -1) {
+      return Collections.emptyMap();
     }
+    Map<String, KeyStroke> result = new HashMap<>(4);
+    result.put(KeymapManager.DEFAULT_IDEA_KEYMAP, KeyStroke.getKeyStroke("alt " + number));
+    result.put(KeymapManager.MAC_OS_X_KEYMAP, KeyStroke.getKeyStroke("meta " + number));
     return result;
   }
 
@@ -100,23 +86,6 @@ public abstract class BaseTool {
 
   public String getId() {
     return myId;
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public int getNumber() {
-    if (myShortcutsByKeymap != null) {
-      KeyStroke defaultKeystroke = myShortcutsByKeymap.get(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      if (defaultKeystroke != null) {
-        if (defaultKeystroke.getModifiers() == (InputEvent.ALT_MASK | InputEvent.ALT_DOWN_MASK)) {
-          char keyChar = defaultKeystroke.getKeyChar();
-          if (Character.isDigit(keyChar)) {
-            return Character.digit(keyChar, 10);
-          }
-        }
-      }
-    }
-    return -1;
   }
 
   public Icon getIcon() {

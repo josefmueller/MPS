@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,6 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
 
   private List<IDisposableTab> myTabList = new ArrayList<IDisposableTab>();
   private boolean myContentRemovedListenerAdded = false;
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  protected BaseTabbedProjectTool(Project project, String id, int number, Icon icon,
-      ToolWindowAnchor anchor, boolean canCloseContent) {
-    super(project, id, number, icon, anchor, canCloseContent);
-  }
 
   protected BaseTabbedProjectTool(Project project, String id, Map<String, KeyStroke> shortcutsByKeymap, Icon icon,
       ToolWindowAnchor anchor, boolean canCloseContent) {

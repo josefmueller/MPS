@@ -367,7 +367,7 @@
   <root nodeRef="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)/3137902298078256639">
     <file name="AnalyzeDependenciesViewTool.java">
       <node id="3137902298078374180" at="16,0,17,0" concept="4" trace="myDependenciesPanel" />
-      <node id="3137902298078275518" at="18,55,19,121" concept="15" />
+      <node id="3137902298078275518" at="18,55,19,130" concept="15" />
       <node id="3137902298078443748" at="23,31,24,99" concept="3" />
       <node id="3137902298078374834" at="27,55,28,51" concept="3" />
       <node id="3137902298078420809" at="28,51,29,37" concept="3" />
@@ -376,7 +376,7 @@
       <node id="208968426454131448" at="22,0,26,0" concept="8" trace="createTool#()V" />
       <node id="3137902298078371195" at="27,0,31,0" concept="8" trace="setContent#(Ljetbrains/mps/ide/platform/dependencyViewer/DependencyViewerScope;)V" />
       <node id="3137902298078439622" at="32,0,36,0" concept="8" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <scope id="3137902298078275516" at="18,55,19,121" />
+      <scope id="3137902298078275516" at="18,55,19,130" />
       <scope id="208968426454131452" at="23,31,24,99" />
       <scope id="3137902298078439628" at="33,36,34,31" />
       <scope id="3137902298078371198" at="27,55,29,37" />

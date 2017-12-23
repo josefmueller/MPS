@@ -7,6 +7,7 @@ import javax.swing.JScrollPane;
 import com.intellij.ide.OccurenceNavigatorSupport;
 import com.intellij.openapi.project.Project;
 import javax.swing.Icon;
+import jetbrains.mps.ide.tools.BaseTool;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
@@ -46,7 +47,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
-    super(project, id, number, icon, ToolWindowAnchor.RIGHT, false);
+    super(project, id, BaseTool.shortcutsFromNumber(number), icon, ToolWindowAnchor.RIGHT, false, false);
   }
   public MPSProject getMPSProject() {
     return getProject().getComponent(MPSProject.class);

@@ -49,7 +49,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
   private JPanel myComponent;
 
   public ClassPathViewerTool(Project project) {
-    super(project, "Classpath Explorer", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Classpath Explorer", null, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, false, true);
   }
 
   @Override

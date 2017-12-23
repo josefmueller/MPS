@@ -1382,16 +1382,14 @@
       <node concept="3Tm1VV" id="2Ic4of8PAuU" role="1B3o_S" />
       <node concept="3clFbS" id="2Ic4of8PAuW" role="3clF47">
         <node concept="XkiVB" id="2Ic4of8PAuY" role="3cqZAp">
-          <ref role="37wK5l" to="71xd:~BaseProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,int,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean)" resolve="BaseProjectTool" />
+          <ref role="37wK5l" to="71xd:~BaseProjectTool.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,java.util.Map,javax.swing.Icon,com.intellij.openapi.wm.ToolWindowAnchor,boolean,boolean)" resolve="BaseProjectTool" />
           <node concept="37vLTw" id="2Ic4of8PAv2" role="37wK5m">
             <ref role="3cqZAo" node="2Ic4of8PAuZ" resolve="project" />
           </node>
           <node concept="Xl_RD" id="2Ic4of8PAWF" role="37wK5m">
             <property role="Xl_RC" value="Dependencies Viewer" />
           </node>
-          <node concept="3cmrfG" id="2Ic4of8PBe0" role="37wK5m">
-            <property role="3cmrfH" value="-1" />
-          </node>
+          <node concept="10Nm6u" id="5_d5WPPmRMg" role="37wK5m" />
           <node concept="10M0yZ" id="2Ic4of8PBmT" role="37wK5m">
             <ref role="1PxDUh" to="z2i8:~AllIcons$Toolwindows" resolve="AllIcons.Toolwindows" />
             <ref role="3cqZAo" to="z2i8:~AllIcons$Toolwindows.ToolWindowInspection" resolve="ToolWindowInspection" />
@@ -1400,9 +1398,10 @@
             <ref role="1PxDUh" to="jkny:~ToolWindowAnchor" resolve="ToolWindowAnchor" />
             <ref role="3cqZAo" to="jkny:~ToolWindowAnchor.BOTTOM" resolve="BOTTOM" />
           </node>
-          <node concept="3clFbT" id="2Ic4of8PXbD" role="37wK5m">
+          <node concept="3clFbT" id="5_d5WPPmRVv" role="37wK5m">
             <property role="3clFbU" value="false" />
           </node>
+          <node concept="3clFbT" id="2Ic4of8PXbD" role="37wK5m" />
         </node>
       </node>
       <node concept="37vLTG" id="2Ic4of8PAuZ" role="3clF46">

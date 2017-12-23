@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public class CellExplorerTool extends BaseTabbedProjectTool {
   public static final Logger LOG = LogManager.getLogger(CellExplorerTool.class);
 
   public CellExplorerTool(Project project) {
-    super(project, "Cell Explorer", -1, MPSIcons.ToolWindows.CellExplorer, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Cell Explorer", null, MPSIcons.ToolWindows.CellExplorer, ToolWindowAnchor.BOTTOM, false);
   }
 
   @Override

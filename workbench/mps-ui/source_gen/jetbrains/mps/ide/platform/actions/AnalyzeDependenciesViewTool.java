@@ -16,7 +16,7 @@ public class AnalyzeDependenciesViewTool extends BaseProjectTool {
   private DependenciesPanel myDependenciesPanel;
 
   public AnalyzeDependenciesViewTool(Project project) {
-    super(project, "Dependencies Viewer", -1, AllIcons.Toolwindows.ToolWindowInspection, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Dependencies Viewer", null, AllIcons.Toolwindows.ToolWindowInspection, ToolWindowAnchor.BOTTOM, false, false);
   }
 
   @Override
