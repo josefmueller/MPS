@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String myConceptFqName;
   @Nullable
   private final SConceptId mySuperConceptId;
-  private final String mySuperConcept;
   private final boolean myInterfaceConcept;
   private final List<SConceptId> myParents;
   private final PropertyDescriptor[] myOwnProperties;
@@ -58,8 +57,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final boolean myFinal;
   private final boolean myIsRootable;
   private final String myConceptAlias;
-  private final String myConceptShortDescription;
-  private final String myHelpUrl;
   private final StaticScope myStaticScope;
   private final SNodeReference mySourceNodeRef;
   private final Object myLock = "";
@@ -68,9 +65,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private Map<SPropertyId, PropertyDescriptor> properties;
   private Map<SReferenceLinkId, ReferenceDescriptor> references;
   private Map<SContainmentLinkId, LinkDescriptor> links;
-  private Map<String, PropertyDescriptor> propertiesByName;
-  private Map<String, ReferenceDescriptor> referencesByName;
-  private Map<String, LinkDescriptor> linksByName;
   private volatile boolean myInitialized = false;
   private int myVersion;
 
@@ -79,7 +73,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       @NotNull SConceptId id,
       @NotNull String conceptFqName,
       @Nullable SConceptId superConceptId,
-      @Nullable String superConcept,
+      @Nullable String superConcept, // ignored
       boolean interfaceConcept,
       SConceptId[] parents,
       String[] parentNames, // ignored
@@ -90,15 +84,14 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       boolean isFinal,
       boolean isRootable,
       String conceptAlias,
-      String shortDescription,
-      String helpUrl,
+      String shortDescription, // ignored
+      String helpUrl, // ignored
       StaticScope staticScope,
       SNodeReference sourceNodeRef) {
     myVersion = version;
     myId = id;
     myConceptFqName = conceptFqName;
     mySuperConceptId = superConceptId;
-    mySuperConcept = superConcept;
     myInterfaceConcept = interfaceConcept;
     if (!interfaceConcept && !SNodeUtil.conceptId_BaseConcept.equals(id)) {
       // make sure parents include superconcept (e.g. ConceptDescendantsCache.loadConcept implicitly assumes BC in concept's hierarchy)
@@ -135,9 +128,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     myFinal = isFinal;
     myIsRootable = isRootable;
     myConceptAlias = conceptAlias == null ? "" : conceptAlias;
-    // short description and helpUrl are part of ConceptPresentation aspect, empty string is just to fulfil CD's contract
-    myConceptShortDescription = shortDescription == null ? "" : shortDescription;
-    myHelpUrl = helpUrl == null ? "" : helpUrl;
     myStaticScope = staticScope;
 
     // todo: common with StructureAspectInterpreted to new class!
@@ -191,38 +181,30 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     assert !myInitialized;
 
     Map<SPropertyId, PropertyDescriptor> propsMap = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
-    Map<String, PropertyDescriptor> propByNameMap = new LinkedHashMap<String, PropertyDescriptor>();
     for (PropertyDescriptor p : myOwnProperties) {
       propsMap.put(p.getId(), p);
-      propByNameMap.put(p.getName(), p);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (PropertyDescriptor pd : parentDescriptor.getPropertyDescriptors()) {
         propsMap.put(pd.getId(), pd);
-        propByNameMap.put(pd.getName(), pd);
       }
     }
     properties = Collections.unmodifiableMap(propsMap);
-    propertiesByName = Collections.unmodifiableMap(propByNameMap);
   }
 
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
     Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
-    HashMap<String, ReferenceDescriptor> refsByNameMap = new LinkedHashMap<String, ReferenceDescriptor>();
     for (ReferenceDescriptor r : myOwnReferences) {
       refsMap.put(r.getId(), r);
-      refsByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (ReferenceDescriptor rd : parentDescriptor.getReferenceDescriptors()) {
         refsMap.put(rd.getId(), rd);
-        refsByNameMap.put(rd.getName(), rd);
       }
     }
     references = Collections.unmodifiableMap(refsMap);
-    referencesByName = Collections.unmodifiableMap(refsByNameMap);
   }
 
   private void initChildNames(List<ConceptDescriptor> parentDescriptors) {
@@ -230,19 +212,15 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
     //ids
     Map<SContainmentLinkId, LinkDescriptor> linksMap = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
-    HashMap<String, LinkDescriptor> linksByNameMap = new LinkedHashMap<String, LinkDescriptor>();
     for (LinkDescriptor r : myOwnLinks) {
       linksMap.put(r.getId(), r);
-      linksByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (LinkDescriptor ld : parentDescriptor.getLinkDescriptors()) {
         linksMap.put(ld.getId(), ld);
-        linksByNameMap.put(ld.getName(), ld);
       }
     }
     links = Collections.unmodifiableMap(linksMap);
-    linksByName = Collections.unmodifiableMap(linksByNameMap);
   }
 
   /**
@@ -258,11 +236,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getConceptFqName() {
     return myConceptFqName;
-  }
-
-  @Override
-  public String getSuperConcept() {
-    return mySuperConcept;
   }
 
   @Override
@@ -296,16 +269,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     return myConceptAlias;
   }
 
-  @Override
-  public String getConceptShortDescription() {
-    return myConceptShortDescription;
-  }
-
-  @Override
-  public String getHelpUrl() {
-    return myHelpUrl;
-  }
-
   @Nullable
   @Override
   public SNodeReference getSourceNode() {
@@ -336,12 +299,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public Set<SPropertyId> getPropertyIds() {
-    init();
-    return properties.keySet();
-  }
-
-  @Override
   public Collection<PropertyDescriptor> getPropertyDescriptors() {
     init();
     return properties.values();
@@ -351,18 +308,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
     init();
     return properties.get(id);
-  }
-
-  @Override
-  public PropertyDescriptor getPropertyDescriptor(String name) {
-    init();
-    return propertiesByName.get(name);
-  }
-
-  @Override
-  public Set<SReferenceLinkId> getReferenceIds() {
-    init();
-    return references.keySet();
   }
 
   @Override
@@ -378,18 +323,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public ReferenceDescriptor getRefDescriptor(String name) {
-    init();
-    return referencesByName.get(name);
-  }
-
-  @Override
-  public Set<SContainmentLinkId> getLinkIds() {
-    init();
-    return links.keySet();
-  }
-
-  @Override
   public Collection<LinkDescriptor> getLinkDescriptors() {
     init();
     return links.values();
@@ -399,11 +332,5 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
     init();
     return links.get(id);
-  }
-
-  @Override
-  public LinkDescriptor getLinkDescriptor(String name) {
-    init();
-    return linksByName.get(name);
   }
 }

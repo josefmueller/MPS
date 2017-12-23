@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,20 +55,6 @@ public interface ConceptDescriptor {
 
   boolean isInterfaceConcept(); // since 3.0
 
-  /**
-   * @deprecated Use {@link ConceptPresentation#getShortDescription()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  String getConceptShortDescription(); // since 3.0
-
-  /**
-   * @deprecated Use {@link ConceptPresentation#getHelpUrl()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  String getHelpUrl(); // since 3.0
-
   @Nullable
   SNodeReference getSourceNode();
 
@@ -87,24 +73,7 @@ public interface ConceptDescriptor {
 
   Set<SConceptId> getAncestorsIds(); // since 3.2
 
-  /**
-   * @deprecated not in use
-   */
-  @Deprecated
-  @Nullable
-  @ToRemove(version = 3.5)
-  String getSuperConcept(); // since 3.0
-
   //------------ props
-
-  /**
-   * @deprecated there's no need to have accessor to collection of SPropertyId, uses indicate next we would access #getPropertyDescriptor(id)
-   *             hence collection of PropertyDescriptors is much more handy, use {@link #getPropertyDescriptors()}.
-   *             Since it's our own internal API, can remove as soon as necessary.
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  Set<SPropertyId> getPropertyIds(); // since 3.2
 
   /**
    * @return all properties (including those of parent concepts) in unspecified order, never {@code null}
@@ -113,17 +82,7 @@ public interface ConceptDescriptor {
 
   PropertyDescriptor getPropertyDescriptor(SPropertyId id); // since 3.2
 
-  @Deprecated
-  PropertyDescriptor getPropertyDescriptor(String name); // since 3.2
-
   //------------ refs
-
-  /**
-   * @deprecated see {@link #getPropertyIds()}
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  Set<SReferenceLinkId> getReferenceIds(); // since 3.2
 
   /**
    * @return all references aka association links (including those of parent concepts) in unspecified order, never {@code null}
@@ -132,17 +91,7 @@ public interface ConceptDescriptor {
 
   ReferenceDescriptor getRefDescriptor(SReferenceLinkId id); // since 3.2
 
-  @Deprecated
-  ReferenceDescriptor getRefDescriptor(String name); // since 3.2
-
   //------------ children
-
-  /**
-   * @deprecated see {@link #getPropertyIds()}
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  Set<SContainmentLinkId> getLinkIds(); // since 3.2
 
   /**
    * @return all containment aka aggregation links (including those of parent concepts) in unspecified order, never {@code null}
@@ -150,9 +99,6 @@ public interface ConceptDescriptor {
   Collection<LinkDescriptor> getLinkDescriptors(); // since 3.5
 
   LinkDescriptor getLinkDescriptor(SContainmentLinkId id); // since 3.2
-
-  @Deprecated
-  LinkDescriptor getLinkDescriptor(String name); // since 3.2
 
   //------------
 

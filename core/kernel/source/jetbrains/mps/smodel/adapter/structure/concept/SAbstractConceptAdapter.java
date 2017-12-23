@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,66 +159,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return d != null && d.getLinkDescriptor(((SContainmentLinkAdapterById) l).getId()) != null;
   }
 
-  @Override
-  @Deprecated
-  public SAbstractLink getLink(String role) {
-    // INTENTIONALLY DISTURBING
-    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
-    ConceptDescriptor nodeConcept = getConceptDescriptor();
-    if (nodeConcept == null) {
-      return null;
-    }
-
-    LinkDescriptor d = nodeConcept.getLinkDescriptor(role);
-    if (d != null) {
-      SContainmentLinkId linkId = d.getId();
-      return MetaAdapterFactory.getContainmentLink(linkId, role);
-    } else {
-      ReferenceDescriptor r = nodeConcept.getRefDescriptor(role);
-      if (r == null) {
-        return null;
-      }
-
-      SReferenceLinkId linkId = r.getId();
-      return MetaAdapterFactory.getReferenceLink(linkId, role);
-    }
-  }
-
-  @Override
-  public Iterable<SAbstractLink> getLinks() {
-    // INTENTIONALLY DISTURBING
-    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
-    ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
-    ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) {
-      return Collections.emptyList();
-    }
-
-    for (LinkDescriptor ld : cd.getLinkDescriptors()) {
-      result.add(MetaAdapterFactory.getContainmentLink(ld.getId(), ld.getName()));
-    }
-    return result;
-  }
-
-  @Override
-  @Deprecated
-  public SProperty getProperty(String name) {
-    // INTENTIONALLY DISTURBING
-    Logger.getLogger(SAbstractConceptAdapter.class).error("The method is scheduled for removal. There were no uses, do not introduce a new one", new Throwable());
-    ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) {
-      return null;
-    }
-
-    PropertyDescriptor d = cd.getPropertyDescriptor(name);
-    if (d == null) {
-      return new InvalidProperty(myFqName, name);
-    }
-
-    SPropertyId pid = d.getId();
-    return MetaAdapterFactory.getProperty(pid, name);
-  }
-
   public boolean hasProperty(SProperty p) {
     if (p instanceof InvalidProperty) {
       return false;
@@ -323,12 +263,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     if (pres != null) {
       return pres.getShortDescription();
     }
-    // fallback for legacy code
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) {
-      return "";
-    }
-    return d.getConceptShortDescription();
+    return "";
   }
 
   @NotNull
@@ -338,11 +273,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     if (pres != null) {
       return pres.getHelpUrl();
     }
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) {
-      return "";
-    }
-    return d.getHelpUrl();
+    return "";
   }
 
   /**

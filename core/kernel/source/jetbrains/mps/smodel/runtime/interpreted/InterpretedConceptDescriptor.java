@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,17 +65,12 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> myProperties;
-  private Map<String, PropertyDescriptor> myPropertiesByName;
   private Map<SReferenceLinkId, ReferenceDescriptor> myReferences;
-  private Map<String, ReferenceDescriptor> myReferencesByName;
   private Map<SContainmentLinkId, LinkDescriptor> myLinks;
-  private Map<String, LinkDescriptor> myLinksByName;
   private boolean isAbstract;
   private boolean isFinal;
   private boolean myIsRootable;
   private String conceptAlias;
-  private String shortDescription;
-  private String helpURL;
   private StaticScope staticScope;
   private volatile boolean myIsInitialized = false;
 
@@ -107,19 +102,10 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         isFinal = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_final));
         isAbstract = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_abstract));
         myIsRootable = SPropertyOperations.getBoolean(declaration.getProperty(SNodeUtil.property_Concept_Rootable));
-        helpURL = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_helpURL);
-        if (helpURL == null) {
-          helpURL = "";
-        }
 
         conceptAlias = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptAlias);
         if (conceptAlias == null) {
           conceptAlias = "";
-        }
-
-        shortDescription = declaration.getProperty(SNodeUtil.property_AbstractConceptDeclaration_conceptShortDescription);
-        if (shortDescription == null) {
-          shortDescription = "";
         }
 
         // scope
@@ -258,54 +244,42 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       // properties
       Map<SPropertyId, PropertyDescriptor> propertiesByIds = new LinkedHashMap<SPropertyId, PropertyDescriptor>();
-      Map<String, PropertyDescriptor> propertiesByName = new LinkedHashMap<String, PropertyDescriptor>();
 
       propertiesByIds.putAll(directPropertiesByIds);
-      propertiesByName.putAll(directPropertiesByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         for (PropertyDescriptor pd : parentDescriptor.getPropertyDescriptors()) {
           propertiesByIds.put(pd.getId(), pd);
-          propertiesByName.put(pd.getName(), pd);
         }
       }
 
       myProperties = Collections.unmodifiableMap(propertiesByIds);
-      myPropertiesByName = Collections.unmodifiableMap(propertiesByName);
 
       // references
       Map<SReferenceLinkId, ReferenceDescriptor> referencesByIds = new LinkedHashMap<SReferenceLinkId, ReferenceDescriptor>();
-      Map<String, ReferenceDescriptor> referencesByName = new LinkedHashMap<String, ReferenceDescriptor>();
 
       referencesByIds.putAll(directReferencesByIds);
-      referencesByName.putAll(directReferencesByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         for (ReferenceDescriptor rd : parentDescriptor.getReferenceDescriptors()) {
           referencesByIds.put(rd.getId(), rd);
-          referencesByName.put(rd.getName(), rd);
         }
       }
 
       myReferences = Collections.unmodifiableMap(referencesByIds);
-      myReferencesByName = Collections.unmodifiableMap(referencesByName);
 
       // children
       Map<SContainmentLinkId, LinkDescriptor> linksByIds = new LinkedHashMap<SContainmentLinkId, LinkDescriptor>();
-      Map<String, LinkDescriptor> linksByName = new LinkedHashMap<String, LinkDescriptor>();
 
       linksByIds.putAll(directLinksByIds);
-      linksByName.putAll(directLinksByName);
 
       for (ConceptDescriptor parentDescriptor : parentDescriptors) {
         for (LinkDescriptor ld : parentDescriptor.getLinkDescriptors()) {
           linksByIds.put(ld.getId(), ld);
-          linksByName.put(ld.getName(), ld);
         }
       }
 
       myLinks = Collections.unmodifiableMap(linksByIds);
-      myLinksByName = Collections.unmodifiableMap(linksByName);
 
       directPropertiesByIds = null;
       directReferencesByIds = null;
@@ -322,11 +296,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   @Override
   public String getConceptFqName() {
     return myQualifiedName;
-  }
-
-  @Override
-  public String getSuperConcept() {
-    return superConcept;
   }
 
   @Override
@@ -360,16 +329,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
     return conceptAlias;
   }
 
-  @Override
-  public String getConceptShortDescription() {
-    return shortDescription;
-  }
-
-  @Override
-  public String getHelpUrl() {
-    return helpURL;
-  }
-
   @Nullable
   @Override
   public SNodeReference getSourceNode() {
@@ -401,12 +360,6 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public Set<SPropertyId> getPropertyIds() {
-    init();
-    return myProperties.keySet();
-  }
-
-  @Override
   public Collection<PropertyDescriptor> getPropertyDescriptors() {
     init();
     return myProperties.values();
@@ -419,39 +372,15 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public PropertyDescriptor getPropertyDescriptor(String name) {
-    init();
-    return myPropertiesByName.get(name);
-  }
-
-  @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     init();
     return myReferences.get(id);
   }
 
   @Override
-  public ReferenceDescriptor getRefDescriptor(String name) {
-    init();
-    return myReferencesByName.get(name);
-  }
-
-  @Override
-  public Set<SContainmentLinkId> getLinkIds() {
-    init();
-    return myLinks.keySet();
-  }
-
-  @Override
   public Collection<LinkDescriptor> getLinkDescriptors() {
     init();
     return myLinks.values();
-  }
-
-  @Override
-  public Set<SReferenceLinkId> getReferenceIds() {
-    init();
-    return myReferences.keySet();
   }
 
   @Override
@@ -464,11 +393,5 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
   public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
     init();
     return myLinks.get(id);
-  }
-
-  @Override
-  public LinkDescriptor getLinkDescriptor(String name) {
-    init();
-    return myLinksByName.get(name);
   }
 }

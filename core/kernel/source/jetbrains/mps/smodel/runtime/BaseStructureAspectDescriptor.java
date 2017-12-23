@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.Collection;
 import java.util.Map;
@@ -31,13 +30,6 @@ public abstract class BaseStructureAspectDescriptor implements StructureAspectDe
   private volatile Map<SConceptId, ConceptDescriptor> myDescriptors;
 
   public abstract Collection<ConceptDescriptor> getDescriptors();
-
-  @Deprecated
-  @ToRemove(version = 3.4)
-  //this is needed only because in 3.3 there's overriding method with @Override annotation
-  public ConceptDescriptor getDescriptor(String fqName) {
-    throw new UnsupportedOperationException();
-  }
 
   @Override
   public ConceptDescriptor getDescriptor(SConceptId id) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,21 +107,9 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public String getSuperConcept() {
-    reportWarn();
-    return null;
-  }
-
-  @Override
   public boolean isInterfaceConcept() {
     reportWarn();
     return false;
-  }
-
-  @Override
-  public Set<SReferenceLinkId> getReferenceIds() {
-    reportWarn();
-    return Collections.emptySet();
   }
 
   @Override
@@ -134,30 +122,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     reportWarn();
     return null;
-  }
-
-  @Override
-  public PropertyDescriptor getPropertyDescriptor(String name) {
-    reportWarn();
-    return null;
-  }
-
-  @Override
-  public ReferenceDescriptor getRefDescriptor(String name) {
-    reportWarn();
-    return null;
-  }
-
-  @Override
-  public LinkDescriptor getLinkDescriptor(String name) {
-    reportWarn();
-    return null;
-  }
-
-  @Override
-  public Set<SContainmentLinkId> getLinkIds() {
-    reportWarn();
-    return Collections.emptySet();
   }
 
   @Override
@@ -176,12 +140,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   public StaticScope getStaticScope() {
     reportWarn();
     return StaticScope.GLOBAL;
-  }
-
-  @Override
-  public Set<SPropertyId> getPropertyIds() {
-    reportWarn();
-    return Collections.emptySet();
   }
 
   @Override
@@ -222,18 +180,6 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @NotNull
   @Override
   public String getConceptAlias() {
-    reportWarn();
-    return "";
-  }
-
-  @Override
-  public String getConceptShortDescription() {
-    reportWarn();
-    return "";
-  }
-
-  @Override
-  public String getHelpUrl() {
     reportWarn();
     return "";
   }

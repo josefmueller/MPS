@@ -43,7 +43,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   private static final Logger LOG = LogManager.getLogger(StructureAspectInterpreted.class);
   private volatile Map<SConceptId, ConceptDescriptor> myDescriptors;
-  private volatile Map<String, ConceptDescriptor> myDescriptorByName;
 
   private final Language myLanguage;
 
@@ -61,12 +60,6 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   public ConceptDescriptor getDescriptor(SConceptId id) {
     ensureInitialized();
     return myDescriptors.get(id);
-  }
-
-  @Override
-  public ConceptDescriptor getDescriptor(String fqName) {
-    ensureInitialized();
-    return myDescriptorByName.get(fqName);
   }
 
   protected void ensureInitialized() {
@@ -87,12 +80,10 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
           final SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
           if (structureModel == null) {
             LOG.warn("Structure aspect is null in the language " + myLanguage);
-            myDescriptorByName = new ConcurrentHashMap<String, ConceptDescriptor>();
             myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
             return;
           }
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
-          ConcurrentHashMap<String, ConceptDescriptor> descriptorsByName = new ConcurrentHashMap<String, ConceptDescriptor>();
           for (SNode root : structureModel.getRootNodes()) {
             SConcept concept = root.getConcept();
             if (!isConceptDeclaration(concept)) {
@@ -104,9 +95,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
             ConceptDescriptor cd = new InterpretedConceptDescriptor(root, conceptId, conceptName);
 
             descriptors.put(conceptId, cd);
-            descriptorsByName.put(conceptName, cd);
           }
-          myDescriptorByName = descriptorsByName;
           myDescriptors = descriptors;
         }
       }
