@@ -40,49 +40,4 @@ public class PluginContributor extends AbstractPluginFactory {
     }
     throw new IllegalArgumentException("Can't create instance: " + aClass);
   }
-
-  public static PluginContributor adapt(AbstractPluginFactory factory) {
-    if (factory instanceof PluginContributor) {
-      return (PluginContributor) factory;
-    }
-    return new AbstractPluginFactoryAdapter(factory);
-  }
-
-  private static class AbstractPluginFactoryAdapter extends PluginContributor {
-    private final AbstractPluginFactory myFactory;
-
-    public AbstractPluginFactoryAdapter(AbstractPluginFactory factory) {
-      myFactory = factory;
-    }
-
-    @Override
-    public BaseProjectPlugin createProjectPlugin() {
-      return create(BaseProjectPlugin.class);
-    }
-
-    @Override
-    public BaseApplicationPlugin createApplicationPlugin() {
-      return create(BaseApplicationPlugin.class);
-    }
-
-    @Override
-    public <T> T create(Class<T> aClass) {
-      return myFactory.create(aClass);
-    }
-
-    @Override
-    public int hashCode() {
-      return myFactory.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      return o instanceof AbstractPluginFactoryAdapter && (((AbstractPluginFactoryAdapter) o).myFactory == myFactory);
-    }
-
-    @Override
-    public String toString() {
-      return myFactory + " adapter";
-    }
-  }
 }

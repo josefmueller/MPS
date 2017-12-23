@@ -20,8 +20,8 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.util.xmlb.annotations.Attribute;
 
 /**
- * A replacement for {@link PluginFactoriesRegistry}. MPS used to generate ModelName_PluginInitializer class for a model with
- * {@code IdeaInitializerDescriptor} and uses of {@code lang.plugin.standalone}. The class injects a factory into {@link PluginFactoriesRegistry}
+ * A replacement for {@code PluginFactoriesRegistry}. MPS used to generate ModelName_PluginInitializer class for a model with
+ * {@code IdeaInitializerDescriptor} and uses of {@code lang.plugin.standalone}. The class injects a factory into {@code PluginFactoriesRegistry}
  * which contributes app/project component parts (declared with {@code lang.plugin.standalone} constructs) with the help of {@code BaseApplicationPlugin}
  * or {@code BaseProjectPlugin} subclasses. As the only need for this initializer is to have {@code PluginContributor} adapter for {@code PluginLoaderRegistry}
  * ready, the idea is to replace it with extension point {@code PluginLoaderRegistry} could query when appropriate.

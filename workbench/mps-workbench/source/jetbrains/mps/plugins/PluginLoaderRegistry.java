@@ -39,7 +39,6 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -211,23 +210,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     assert myCurrentContributors.isEmpty();
   }
 
-  /**
-   * Factories are registered via IdeaInitializerDescriptor generated code.
-   * They are initialized during the application initialization.
-   * Note that these contributors are registered once and NEVER unregistered
-   * This is one reason we need to get rid of them
-   *
-   * @deprecated mechanism will be disabled
-   *             replaced with {@linkplain #getContributorsFromExtPoint() extension point contributions}
-   */
-  @ToRemove(version = 3.3)
-  @Deprecated
-  private Set<PluginContributor> getFactoryContributors(Set<PluginContributor> currentContributors) {
-    final List<PluginContributor> pluginFactoriesRegistryContributors = getPluginFactoriesRegistryContributors();
-    return pluginFactoriesRegistryContributors.stream().filter(contributor -> !currentContributors.contains(contributor)).collect(
-        toCollection(LinkedHashSet::new));
-  }
-
   private Set<PluginContributor> getContributorsFromExtPoint() {
     class ExtPointContributor extends PluginContributor {
       private final ComponentContributorExtension myExtension;
@@ -292,18 +274,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       rv.add(new ExtPointContributor(ext));
     }
     return rv;
-  }
-
-  private static List<PluginContributor> getPluginFactoriesRegistryContributors() {
-    List<PluginContributor> pluginContributors;
-    pluginContributors = new ArrayList<>();
-
-    Collection<AbstractPluginFactory> pluginFactories = PluginFactoriesRegistry.flush();
-    for (AbstractPluginFactory factory : pluginFactories) {
-      pluginContributors.add(PluginContributor.adapt(factory));
-    }
-
-    return pluginContributors;
   }
 
   private void update() {
@@ -395,7 +365,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
         removeLoaders(monitor);
         removeContributors(monitor);
         addLoaders(monitor);
-        addFactories(monitor);
+        addIdeaExtPointPluginContributors(monitor);
         addContributors(monitor);
       } finally{
         myTaskInProgress = false;
@@ -410,10 +380,8 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       myCurrentContributors.addAll(contributorsToAdd);
     }
 
-    private void addFactories(ProgressMonitor monitor) {
-      Set<PluginContributor> factories = getFactoryContributors(myCurrentContributors);
-      // factory contributors were replaced with extension points, once we drop them (after 2017.3), have to remove
-      // getFactoryContributors() call above and rename the method (e.g. addIdeaNativePluginContributions).
+    private void addIdeaExtPointPluginContributors(ProgressMonitor monitor) {
+      Set<PluginContributor> factories = new LinkedHashSet<>();
       factories.addAll(getContributorsFromExtPoint());
       factories.removeAll(myCurrentContributors);
       LOG.debug("Loading " + factories.size() + " Factories");
