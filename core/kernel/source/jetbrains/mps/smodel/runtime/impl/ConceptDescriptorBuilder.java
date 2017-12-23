@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,22 +34,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Not in use except for languages generated prior to introduction of {@link ConceptDescriptorBuilder2} and kept that way (there are 2 in MPS codebase)
  * evgeny, 4/24/13
  */
 public class ConceptDescriptorBuilder {
-  private static final String[] EMPTY_STRINGS = new String[0];
   private static final SConceptId[] EMPTY_IDS = new SConceptId[0];
 
   private final String conceptFqName;
   private SConceptId id;
-  private String superConcept;
   private boolean isInterfaceConcept;
   private boolean isAbstract;
   private boolean isFinal;
   private boolean isRootable; //meaningless for interfaces
   private String conceptAlias;
-  private String shortDescription;
-  private String helpUrl;
   private StaticScope staticScope;
   private SConceptId superConceptId;
   private SConceptId[] parentIds;
@@ -75,7 +72,6 @@ public class ConceptDescriptorBuilder {
   }
 
   public ConceptDescriptorBuilder super_(@NotNull String qualifiedName) {
-    superConcept = qualifiedName;
     return this;
   }
 
@@ -158,12 +154,10 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder alias(@NotNull String alias, String shortDescription) {
     this.conceptAlias = alias;
-    this.shortDescription = shortDescription;
     return this;
   }
 
   public ConceptDescriptorBuilder helpURL(String value) {
-    helpUrl = value;
     return this;
   }
 
@@ -183,10 +177,8 @@ public class ConceptDescriptorBuilder {
         id,
         conceptFqName,
         superConceptId,
-        superConcept,
         isInterfaceConcept,
         parentIds == null ? EMPTY_IDS : parentIds,
-        null,
         ownProperties.toArray(new PropertyDescriptor[ownProperties.size()]),
         ownReferences.toArray(new ReferenceDescriptor[ownReferences.size()]),
         ownLinks.toArray(new LinkDescriptor[ownLinks.size()]),
@@ -194,8 +186,6 @@ public class ConceptDescriptorBuilder {
         isFinal,
         isRootable,
         conceptAlias == null ? "" : conceptAlias,
-        shortDescription == null ? "" : shortDescription,
-        helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope,
         sourceNodeRef);
   }

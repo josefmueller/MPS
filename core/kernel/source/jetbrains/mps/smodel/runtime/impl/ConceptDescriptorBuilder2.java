@@ -47,7 +47,6 @@ public class ConceptDescriptorBuilder2 {
   private final long myLanguageLowUUID;
   /*package*/ final SConceptId myConceptId;
   private SConceptId mySuperConceptId;
-  private String mySuperConceptQualifiedName;
   private boolean myIsFinal;
   private boolean myIsAbstract;
   private boolean myIsInterface;
@@ -75,8 +74,8 @@ public class ConceptDescriptorBuilder2 {
    * invoked [0..1] times
    */
   public ConceptDescriptorBuilder2 super_(String conceptQualifiedName, long langIdHigh, long langIdLow, long conceptId) {
-    // no need to specify name of superconcept, it's not in use
-    mySuperConceptQualifiedName = conceptQualifiedName;
+    // no need to specify name of superconcept (conceptQualifiedName), it's not in use
+    // we may supply a short name only, just as a hint
     mySuperConceptId = MetaIdFactory.conceptId(languageId(langIdHigh, langIdLow), conceptId);
     return this;
   }
@@ -189,7 +188,7 @@ public class ConceptDescriptorBuilder2 {
     ReferenceDescriptor[] assoc = myAssociations == null ? new ReferenceDescriptor[0] : myAssociations.toArray(new ReferenceDescriptor[myAssociations.size()]);
     LinkDescriptor[] aggr = myAggregations == null ? new LinkDescriptor[0] : myAggregations.toArray(new LinkDescriptor[myAggregations.size()]);
     SConceptId[] parents = myParents.toArray(new SConceptId[myParents.size()]);
-    return new CompiledConceptDescriptor(myVersion, myConceptId, conceptFQName, mySuperConceptId, mySuperConceptQualifiedName, myIsInterface, parents, null, pd, assoc, aggr, myIsAbstract, myIsFinal, myIsRoot, myAlias, null, null, myScope, /* FIXME myConceptKind, */myOrigin);
+    return new CompiledConceptDescriptor(myVersion, myConceptId, conceptFQName, mySuperConceptId, myIsInterface, parents, pd, assoc, aggr, myIsAbstract, myIsFinal, myIsRoot, myAlias, myScope, /* FIXME myConceptKind, */myOrigin);
   }
 
   /*package*/ void addProperty(PropertyDescriptor d) {

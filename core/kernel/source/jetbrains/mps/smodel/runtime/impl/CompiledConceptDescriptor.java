@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -73,10 +72,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       @NotNull SConceptId id,
       @NotNull String conceptFqName,
       @Nullable SConceptId superConceptId,
-      @Nullable String superConcept, // ignored
       boolean interfaceConcept,
       SConceptId[] parents,
-      String[] parentNames, // ignored
       PropertyDescriptor[] ownProperties,
       ReferenceDescriptor[] ownReferences,
       LinkDescriptor[] ownLinks,
@@ -84,8 +81,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       boolean isFinal,
       boolean isRootable,
       String conceptAlias,
-      String shortDescription, // ignored
-      String helpUrl, // ignored
       StaticScope staticScope,
       SNodeReference sourceNodeRef) {
     myVersion = version;
