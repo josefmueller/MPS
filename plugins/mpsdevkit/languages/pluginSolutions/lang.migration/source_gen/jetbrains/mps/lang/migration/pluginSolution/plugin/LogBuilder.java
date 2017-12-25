@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -41,7 +42,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class LogBuilder {
   private static final Logger LOG = LogManager.getLogger(LogBuilder.class);
   private static final String myId = "refactoringSession.logBuilder";
-  public static LogBuilder getBuilder(RefactoringSession session, SearchScope searchScope, SModule module) {
+  public static LogBuilder getBuilder(RefactoringSession session, SearchScope searchScope, SModule module, @Nullable String caption) {
     Map<SModuleReference, LogBuilder> moduleBuilders = (Map<SModuleReference, LogBuilder>) session.getObject(myId);
     if (moduleBuilders == null) {
       moduleBuilders = MapSequence.fromMap(new HashMap<SModuleReference, LogBuilder>());
@@ -50,15 +51,15 @@ public class LogBuilder {
 
     LogBuilder builder = MapSequence.fromMap(moduleBuilders).get(module.getModuleReference());
     if (builder == null) {
-      builder = new LogBuilder(session, searchScope, ((Language) module));
+      builder = new LogBuilder(session, searchScope, ((Language) module), caption);
       MapSequence.fromMap(moduleBuilders).put(module.getModuleReference(), builder);
     }
     return builder;
   }
   private SNode myRefactoringStep;
-  private LogBuilder(RefactoringSession session, final SearchScope searchScope, final Language module) {
+  private LogBuilder(RefactoringSession session, final SearchScope searchScope, final Language module, @Nullable String caption) {
     final int moduleVersion = module.getModuleVersion();
-    myRefactoringStep = createRefactoringLog_1o8b1n_a0b0d(moduleVersion, "RefactoringLog_" + moduleVersion);
+    myRefactoringStep = createRefactoringLog_1o8b1n_a0b0d(moduleVersion, (caption == null ? "RefactoringLog_" + moduleVersion : caption));
     session.registerChange(new Runnable() {
       public void run() {
         SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(module);

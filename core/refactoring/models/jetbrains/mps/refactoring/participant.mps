@@ -3499,7 +3499,6 @@
   </node>
   <node concept="312cEu" id="FLkVtyCNd2">
     <property role="TrG5h" value="RefactoringSessionImpl" />
-    <node concept="2tJIrI" id="FLkVtyCNgi" role="jymVt" />
     <node concept="312cEg" id="FLkVtyCQ9l" role="jymVt">
       <property role="TrG5h" value="myChanges" />
       <node concept="2ShNRf" id="FLkVtyCQ9p" role="33vP2m">
@@ -3516,7 +3515,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="3q3k9aXsiTL" role="jymVt" />
     <node concept="312cEg" id="FLkVtyCREI" role="jymVt">
       <property role="TrG5h" value="myObjects" />
       <node concept="3Tm6S6" id="FLkVtyCREJ" role="1B3o_S" />

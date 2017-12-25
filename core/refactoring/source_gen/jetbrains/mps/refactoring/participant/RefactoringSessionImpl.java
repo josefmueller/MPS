@@ -14,9 +14,7 @@ import org.apache.log4j.Level;
 
 public class RefactoringSessionImpl implements RefactoringSession {
   private static final Logger LOG = LogManager.getLogger(RefactoringSessionImpl.class);
-
   private List<Runnable> myChanges = ListSequence.fromList(new ArrayList<Runnable>());
-
   private Map<String, Object> myObjects = MapSequence.fromMap(new HashMap<String, Object>());
 
   public void putObject(String id, Object object) {

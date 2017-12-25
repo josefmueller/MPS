@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -78,6 +79,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     }
     return true;
   }
+
   @Override
   public List<RefactoringParticipant.Option> getAvailableOptions(List<SNodeReference> initialStates, SRepository repository) {
     if (isApplicable(initialStates, repository)) {
@@ -139,8 +141,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
         SNode targetNode = finalState.resolve(repository);
-        SModule targetModule = SNodeOperations.getModel(targetNode).getModule();
-        LogBuilder logBuilder = LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule);
+        LogBuilder logBuilder = LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule, "Move " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(sourceNode) + "->" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(targetNode));
         logBuilder.addOptions(selectedOptions);
         {
           Iterator<SerializingParticipantState<?, ?, SNode, SNode>> ps_it = ListSequence.fromList(participantStates).iterator();
