@@ -6580,16 +6580,16 @@
               <node concept="2ShNRf" id="2V3ml1v4r$Z" role="YScLw">
                 <node concept="1pGfFk" id="2V3ml1v4r_0" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-                  <node concept="3cpWs3" id="2V3ml1v4r_1" role="37wK5m">
-                    <node concept="Xl_RD" id="2V3ml1v4r_2" role="3uHU7w">
-                      <property role="Xl_RC" value=" has not module descriptor." />
+                  <node concept="3cpWs3" id="2V3ml1v4r_3" role="37wK5m">
+                    <node concept="Xl_RD" id="2V3ml1v4r_4" role="3uHU7B">
+                      <property role="Xl_RC" value="Module descriptor is null for module " />
                     </node>
-                    <node concept="3cpWs3" id="2V3ml1v4r_3" role="3uHU7B">
-                      <node concept="Xl_RD" id="2V3ml1v4r_4" role="3uHU7B">
-                        <property role="Xl_RC" value="Module " />
-                      </node>
-                      <node concept="37vLTw" id="5gIiJF06nMR" role="3uHU7w">
+                    <node concept="2OqwBi" id="4yPMgAVhDw5" role="3uHU7w">
+                      <node concept="37vLTw" id="5gIiJF06nMR" role="2Oq$k0">
                         <ref role="3cqZAo" node="5gIiJF05sx6" resolve="myModule" />
+                      </node>
+                      <node concept="liA8E" id="4yPMgAVhDLe" role="2OqNvi">
+                        <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
                       </node>
                     </node>
                   </node>
@@ -7298,9 +7298,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="7_8SJV8LXmU" role="lGtFl">
-        <node concept="TZ5HA" id="7_8SJV8LXmV" role="TZ5H$">
-          <node concept="1dT_AC" id="7_8SJV8LXmW" role="1dT_Ay" />
-        </node>
         <node concept="TUZQ0" id="7_8SJV8LXmX" role="3nqlJM">
           <property role="TUZQ4" value="true means the changes shouldn't be committed to the module" />
           <node concept="zr_55" id="7_8SJV8LXmZ" role="zr_5Q">

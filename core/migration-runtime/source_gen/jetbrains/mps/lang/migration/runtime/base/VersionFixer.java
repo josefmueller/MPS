@@ -54,7 +54,6 @@ public class VersionFixer {
 
   /**
    * 
-   * 
    * @param dryRun true means the changes shouldn't be committed to the module
    * @return true if the module differs from updated one
    */
@@ -62,7 +61,7 @@ public class VersionFixer {
     AbstractModule abstractModule = (AbstractModule) myModule;
     final ModuleDescriptor md = abstractModule.getModuleDescriptor();
     if (md == null) {
-      throw new IllegalStateException("Module " + myModule + " has not module descriptor.");
+      throw new IllegalStateException("Module descriptor is null for module " + myModule.getModuleName());
     }
 
     // this shows whether we can remove versions. If some dep or lang import is invalid, we do not do this as this  
