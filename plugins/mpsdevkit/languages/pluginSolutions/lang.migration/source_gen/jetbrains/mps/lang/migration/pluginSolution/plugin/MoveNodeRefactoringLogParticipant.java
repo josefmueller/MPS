@@ -141,7 +141,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
       }
       public void confirm(SNodeReference finalState, SRepository repository, RefactoringSession refactoringSession) {
         SNode targetNode = finalState.resolve(repository);
-        LogBuilder logBuilder = LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule, "Move " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(sourceNode) + "->" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(targetNode));
+        LogBuilder logBuilder = LogBuilder.getBuilder(refactoringSession, searchScope, sourceModule, "Update References: " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(sourceNode) + "->" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(targetNode));
         logBuilder.addOptions(selectedOptions);
         {
           Iterator<SerializingParticipantState<?, ?, SNode, SNode>> ps_it = ListSequence.fromList(participantStates).iterator();
