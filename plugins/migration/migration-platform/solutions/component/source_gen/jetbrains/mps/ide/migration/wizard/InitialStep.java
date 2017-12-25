@@ -214,7 +214,7 @@ public class InitialStep extends BaseStep {
           public void visit(RefactoringScriptReference it) {
             RefactoringScript rs = it.resolve(mySession.getProject(), false);
             String caption = (rs != null ? rs.getCaption() : "Missing: <script for version " + it.getFromVersion() + ">");
-            DefaultMutableTreeNode node = new DefaultMutableTreeNode(caption);
+            DefaultMutableTreeNode node = new InitialStep.MyTreeNode(caption, migrationIcon);
             MapSequence.fromMap(m2n).get(it.getModule()).add(node);
           }
         });

@@ -3418,9 +3418,12 @@
                             </node>
                             <node concept="2ShNRf" id="6fMyXCHuvQH" role="33vP2m">
                               <node concept="1pGfFk" id="6fMyXCHuvQI" role="2ShVmc">
-                                <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.&lt;init&gt;(java.lang.Object)" resolve="DefaultMutableTreeNode" />
+                                <ref role="37wK5l" node="6t2iki4vQm7" resolve="InitialStep.MyTreeNode" />
                                 <node concept="37vLTw" id="42BI$$mnFi0" role="37wK5m">
                                   <ref role="3cqZAo" node="42BI$$mnxwY" resolve="caption" />
+                                </node>
+                                <node concept="37vLTw" id="5F8F6pDfCwg" role="37wK5m">
+                                  <ref role="3cqZAo" node="6t2iki4wUPF" resolve="migrationIcon" />
                                 </node>
                               </node>
                             </node>
