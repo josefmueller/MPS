@@ -67,6 +67,10 @@ public class VersionFixer {
       throw new IllegalStateException("Module descriptor is null for module " + myModule.getModuleName());
     }
 
+    if (md.getLoadException() != null) {
+      return false;
+    }
+
     // we don't change anything until all dependenies and languages are there, accessible 
     if (!(areDepsSatisfied()) && myRemoveOddImports) {
       return false;
@@ -92,7 +96,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newDepVersions).visitAll(new IVisitor<IMapping<SModuleReference, Integer>>() {
         public void visit(IMapping<SModuleReference, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a31a11(md.getDependencyVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a51a11(md.getDependencyVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getDependencyVersions().put(it.key(), it.value());
@@ -120,7 +124,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newLangVersions).visitAll(new IVisitor<IMapping<SLanguage, Integer>>() {
         public void visit(IMapping<SLanguage, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a61a11(md.getLanguageVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a81a11(md.getLanguageVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getLanguageVersions().put(it.key(), it.value());
@@ -275,10 +279,10 @@ public class VersionFixer {
       }
     }
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a31a11(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a51a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a61a11(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a81a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
