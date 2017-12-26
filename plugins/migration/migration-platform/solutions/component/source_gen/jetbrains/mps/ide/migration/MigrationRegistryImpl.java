@@ -18,6 +18,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
@@ -83,8 +84,17 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
 
   public boolean importVersionsUpdateRequired(Iterable<SModule> modules) {
     // not to check once for every module later 
-    if (!(new VersionFixer(myMpsProject, null, true).areDepsSatisfied())) {
-      return false;
+    for (SModule module : ListSequence.fromList(myMpsProject.getProjectModulesWithGenerators())) {
+      if (!(new VersionFixer(myMpsProject, module, true).areDepsSatisfied())) {
+        return false;
+      }
+      if (!((module instanceof AbstractModule))) {
+        continue;
+      }
+      ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
+      if (descriptor != null && descriptor.getLoadException() != null) {
+        continue;
+      }
     }
 
     for (SModule module : Sequence.fromIterable(modules)) {
@@ -97,12 +107,22 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
   }
 
   public void doUpdateImportVersions(SModule module) {
+    if (!(new VersionFixer(myMpsProject, module, true).areDepsSatisfied())) {
+      return;
+    }
+    if (!((module instanceof AbstractModule))) {
+      return;
+    }
+    ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
+    if (descriptor != null && descriptor.getLoadException() != null) {
+      return;
+    }
+
     new VersionFixer(myMpsProject, module, true).updateImportVersions();
     if (module instanceof AbstractModule) {
-      (as_ufn3ol_a0a0a0b0n(module, AbstractModule.class)).save();
+      (as_ufn3ol_a0a0a0g0n(module, AbstractModule.class)).save();
     }
   }
-
 
   public ProjectMigration nextProjectStep(MigrationOptions options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
@@ -175,7 +195,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
         }
 
         if (preferredId instanceof MigrationScriptReference) {
-          final MigrationScriptReference mid = as_ufn3ol_a0a0a5a0a0a0a1a12(preferredId, MigrationScriptReference.class);
+          final MigrationScriptReference mid = as_ufn3ol_a0a0a5a0a0a0a1a02(preferredId, MigrationScriptReference.class);
           SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
               return SetSequence.fromSet(MigrationModuleUtil.getUsedLanguages(it)).contains(mid.getLanguage());
@@ -195,7 +215,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
             return;
           }
         } else if (preferredId instanceof RefactoringScriptReference) {
-          final RefactoringScriptReference rid = as_ufn3ol_a0a0a0f0a0a0a0b0v(preferredId, RefactoringScriptReference.class);
+          final RefactoringScriptReference rid = as_ufn3ol_a0a0a0f0a0a0a0b0u(preferredId, RefactoringScriptReference.class);
           SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
               return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(it)).contains(rid.getModule());
@@ -327,13 +347,13 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     return result;
   }
 
-  private static <T> T as_ufn3ol_a0a0a0b0n(Object o, Class<T> type) {
+  private static <T> T as_ufn3ol_a0a0a0g0n(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_ufn3ol_a0a0a5a0a0a0a1a12(Object o, Class<T> type) {
+  private static <T> T as_ufn3ol_a0a0a5a0a0a0a1a02(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_ufn3ol_a0a0a0f0a0a0a0b0v(Object o, Class<T> type) {
+  private static <T> T as_ufn3ol_a0a0a0f0a0a0a0b0u(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -19,10 +19,10 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashMap;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.LinkedHashSet;
@@ -63,17 +63,14 @@ public class VersionFixer {
   private boolean doUpdateImportVersions(final boolean dryRun) {
     AbstractModule abstractModule = (AbstractModule) myModule;
     final ModuleDescriptor md = abstractModule.getModuleDescriptor();
-    if (md == null) {
-      throw new IllegalStateException("Module descriptor is null for module " + myModule.getModuleName());
-    }
 
-    if (md.getLoadException() != null) {
-      return false;
-    }
+    assert md != null : "Module descriptor is null for module " + myModule.getModuleName();
+    assert md.getLoadException() == null : "Asked to update import versions in module " + myModule.getModuleName() + " with load exceptions";
 
-    // we don't change anything until all dependenies and languages are there, accessible 
-    if (!(areDepsSatisfied()) && myRemoveOddImports) {
-      return false;
+    if (myRemoveOddImports) {
+      // myRemoveOddImports is used on language+sandbox_solution creation since laguage is not valid yet 
+      // in other cases, we do not allow to update import versions (since broken deps may lead to incorrectly optimization) 
+      assert areDepsSatisfied(myModule) : "Not all dependencies of module " + myModule.getModuleName() + " are satisfied";
     }
 
     Map<SModuleReference, Integer> oldDepsFiltered = filterValidDependencyVersions(md.getDependencyVersions());
@@ -96,7 +93,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newDepVersions).visitAll(new IVisitor<IMapping<SModuleReference, Integer>>() {
         public void visit(IMapping<SModuleReference, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a51a11(md.getDependencyVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a41a11(md.getDependencyVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getDependencyVersions().put(it.key(), it.value());
@@ -124,7 +121,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newLangVersions).visitAll(new IVisitor<IMapping<SLanguage, Integer>>() {
         public void visit(IMapping<SLanguage, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a81a11(md.getLanguageVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a71a11(md.getLanguageVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getLanguageVersions().put(it.key(), it.value());
@@ -143,38 +140,41 @@ public class VersionFixer {
   }
 
   public boolean areDepsSatisfied() {
+    return areDepsSatisfied(myModule);
+  }
+
+  private boolean areDepsSatisfied(SModule module) {
     // [MM] beter to move this logic to AbstractModule and its inheritors 
-    for (SModule module : ListSequence.fromList(myProject.getProjectModulesWithGenerators())) {
-      Set<SLanguage> usedLanguages = module.getUsedLanguages();
-      if (SetSequence.fromSet(usedLanguages).any(new IWhereFilter<SLanguage>() {
-        public boolean accept(SLanguage it) {
-          return !(it.isValid());
+    Set<SLanguage> usedLanguages = module.getUsedLanguages();
+    if (SetSequence.fromSet(usedLanguages).any(new IWhereFilter<SLanguage>() {
+      public boolean accept(SLanguage it) {
+        return !(it.isValid());
+      }
+    })) {
+      return false;
+    }
+
+    Iterable<SDependency> deps = module.getDeclaredDependencies();
+    if (Sequence.fromIterable(deps).any(new IWhereFilter<SDependency>() {
+      public boolean accept(SDependency it) {
+        return it.getTarget() == null;
+      }
+    })) {
+      return false;
+    }
+
+    if (module instanceof AbstractModule) {
+      // todo this should be removed when there's API for accessing devkit "references" 
+      Set<SModuleReference> devkits = ((AbstractModule) module).collectLanguagesAndDevkits().devkits;
+      if (SetSequence.fromSet(devkits).any(new IWhereFilter<SModuleReference>() {
+        public boolean accept(SModuleReference it) {
+          return it.resolve(myProject.getRepository()) == null;
         }
       })) {
         return false;
-      }
-
-      Iterable<SDependency> deps = module.getDeclaredDependencies();
-      if (Sequence.fromIterable(deps).any(new IWhereFilter<SDependency>() {
-        public boolean accept(SDependency it) {
-          return it.getTarget() == null;
-        }
-      })) {
-        return false;
-      }
-
-      if (module instanceof AbstractModule) {
-        // todo this should be removed when there's API for accessing devkit "references" 
-        Set<SModuleReference> devkits = ((AbstractModule) module).collectLanguagesAndDevkits().devkits;
-        if (SetSequence.fromSet(devkits).any(new IWhereFilter<SModuleReference>() {
-          public boolean accept(SModuleReference it) {
-            return it.resolve(myProject.getRepository()) == null;
-          }
-        })) {
-          return false;
-        }
       }
     }
+
     return true;
   }
 
@@ -279,10 +279,10 @@ public class VersionFixer {
       }
     }
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a51a11(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a41a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a81a11(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a71a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
