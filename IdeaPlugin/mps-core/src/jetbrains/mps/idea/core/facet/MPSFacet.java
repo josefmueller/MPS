@@ -84,7 +84,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
         if (!getConfiguration().isLoaded()) {
           //this means we have just created this facet, need to set current dep versions
-          new VersionFixer(myMpsProject.getRepository(), mySolution).updateImportVersions();
+          new VersionFixer(myMpsProject, mySolution, false).updateImportVersions();
           mySolution.save();
         }
 
