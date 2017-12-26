@@ -146,7 +146,7 @@ public class MigrationsCheckUtil {
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           ensureInitialized(result, it);
-          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Language version (" + langVersion + ") is greater than the target version of last migration script (" + (maxVersion + 1) + ")");
+          CollectionSequence.fromCollection(MapSequence.fromMap(result).get(it)).addElement("Language version (" + langVersion + ") is not equal to the target version of last migration script (" + (maxVersion + 1) + ")");
         }
       });
     }

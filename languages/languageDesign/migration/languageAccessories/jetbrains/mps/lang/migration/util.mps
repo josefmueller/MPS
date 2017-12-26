@@ -1325,7 +1325,7 @@
                                     </node>
                                   </node>
                                   <node concept="Xl_RD" id="2T7ZPM5exWC" role="3uHU7w">
-                                    <property role="Xl_RC" value=") is greater than the target version of last migration script (" />
+                                    <property role="Xl_RC" value=") is not equal to the target version of last migration script (" />
                                   </node>
                                 </node>
                                 <node concept="1eOMI4" id="5wom5KubJa0" role="3uHU7w">
