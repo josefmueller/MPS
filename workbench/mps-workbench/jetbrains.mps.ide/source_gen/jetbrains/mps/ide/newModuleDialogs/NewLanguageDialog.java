@@ -40,9 +40,9 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
         Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, mySettings.getModuleLocation(), (MPSProject) myProject);
         ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
         language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
-        new VersionFixer(myProject.getRepository(), language).updateImportVersions();
+        new VersionFixer(myProject, language, false).updateImportVersions();
         for (Generator gen : CollectionSequence.fromCollection(language.getGenerators())) {
-          new VersionFixer(myProject.getRepository(), gen).updateImportVersions();
+          new VersionFixer(myProject, gen, false).updateImportVersions();
         }
         language.save();
       }

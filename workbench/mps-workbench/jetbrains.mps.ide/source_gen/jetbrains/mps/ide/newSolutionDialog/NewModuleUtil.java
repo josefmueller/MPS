@@ -61,7 +61,7 @@ public class NewModuleUtil {
     EditableSModel runtimeModel = createModel(runtime, namespace);
     runtimeModel.save();
 
-    new VersionFixer(project.getRepository(), runtime).updateImportVersions();
+    new VersionFixer(project, runtime, false).updateImportVersions();
     runtime.save();
     return runtime;
   }
@@ -82,7 +82,7 @@ public class NewModuleUtil {
     NewModuleUtil.fixCoreLanguage(sandboxModel);
     ((EditableSModel) sandboxModel).save();
 
-    VersionFixer fixer = new VersionFixer(project.getRepository(), sandbox);
+    VersionFixer fixer = new VersionFixer(project, sandbox, false);
     fixer.addJustCreatedLanguageVersion(l, language.getLanguageVersion());
     fixer.updateImportVersions();
 
@@ -104,7 +104,7 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     Solution module = (Solution) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), project);
-    new VersionFixer(project.getRepository(), module).updateImportVersions();
+    new VersionFixer(project, module, false).updateImportVersions();
     module.save();
 
     project.addModule(module);
@@ -147,8 +147,8 @@ public class NewModuleUtil {
 
     project.addModule(language);
     // as long as generator lives under the language, and Project doesn't support standalone generators, no need for project.addModule(generator) 
-    new VersionFixer(project.getRepository(), language).updateImportVersions();
-    new VersionFixer(project.getRepository(), generator).updateImportVersions();
+    new VersionFixer(project, language, false).updateImportVersions();
+    new VersionFixer(project, generator, false).updateImportVersions();
     language.save();
     generator.save();
     project.save();

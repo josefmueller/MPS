@@ -4,7 +4,7 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -19,9 +19,10 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.LinkedHashSet;
@@ -34,21 +35,23 @@ import org.apache.log4j.Level;
 
 public class VersionFixer {
   private static final Logger LOG = LogManager.getLogger(VersionFixer.class);
-  private SRepository myRepo;
+  private Project myProject;
   private SModule myModule;
+  private boolean myRemoveOddImports;
 
-  public VersionFixer(SRepository repo, SModule module) {
-    myRepo = repo;
+  public VersionFixer(Project p, SModule module, boolean removeOddImports) {
+    myProject = p;
     myModule = module;
+    myRemoveOddImports = removeOddImports;
   }
 
   public boolean importVersionsUpdateRequired() {
-    myRepo.getModelAccess().checkReadAccess();
+    myProject.getModelAccess().checkReadAccess();
     return doUpdateImportVersions(true);
   }
 
   public void updateImportVersions() {
-    myRepo.getModelAccess().checkWriteAccess();
+    myProject.getModelAccess().checkWriteAccess();
     doUpdateImportVersions(false);
   }
 
@@ -64,21 +67,19 @@ public class VersionFixer {
       throw new IllegalStateException("Module descriptor is null for module " + myModule.getModuleName());
     }
 
-    // this shows whether we can remove versions. If some dep or lang import is invalid, we do not do this as this  
-    // "invalid" import may cause another import to become "odd", which is wrong 
-    boolean canRemove = true;
+    // we don't change anything until all dependenies and languages are there, accessible 
+    if (!(areDepsSatisfied()) && myRemoveOddImports) {
+      return false;
+    }
 
     Map<SModuleReference, Integer> oldDepsFiltered = filterValidDependencyVersions(md.getDependencyVersions());
-    canRemove = canRemove && oldDepsFiltered.size() == md.getDependencyVersions().size();
-
     Map<SLanguage, Integer> langVersions = filterValidLanguageVersions(md.getLanguageVersions());
-    canRemove = canRemove && langVersions.size() == md.getLanguageVersions().size();
 
     final Wrappers._boolean changed = new Wrappers._boolean(false);
 
     Map<SModuleReference, Integer> newDepVersions = collectActualDependencyVersions(abstractModule, oldDepsFiltered);
     if (!(oldDepsFiltered.equals(newDepVersions))) {
-      if (canRemove) {
+      if (myRemoveOddImports) {
         Iterable<SModuleReference> keysToRemove = oldDepsFiltered.keySet();
         changed.value = changed.value || Sequence.fromIterable(keysToRemove).isNotEmpty();
         if (!(dryRun)) {
@@ -91,7 +92,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newDepVersions).visitAll(new IVisitor<IMapping<SModuleReference, Integer>>() {
         public void visit(IMapping<SModuleReference, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a71a01(md.getDependencyVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a31a11(md.getDependencyVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getDependencyVersions().put(it.key(), it.value());
@@ -102,7 +103,7 @@ public class VersionFixer {
 
     Map<SLanguage, Integer> newLangVersions = collectActualLanguageVersions(abstractModule, langVersions);
     if (!(langVersions.equals(newLangVersions))) {
-      if (canRemove) {
+      if (myRemoveOddImports) {
         Iterable<SLanguage> keysToRemove = SetSequence.fromSet(((Set<SLanguage>) langVersions.keySet())).where(new IWhereFilter<SLanguage>() {
           public boolean accept(SLanguage it) {
             return it.isValid();
@@ -119,7 +120,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newLangVersions).visitAll(new IVisitor<IMapping<SLanguage, Integer>>() {
         public void visit(IMapping<SLanguage, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a02a01(md.getLanguageVersions().get(it.key()), it.value());
+          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a61a11(md.getLanguageVersions().get(it.key()), it.value());
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getLanguageVersions().put(it.key(), it.value());
@@ -137,8 +138,44 @@ public class VersionFixer {
     return changed.value;
   }
 
+  public boolean areDepsSatisfied() {
+    // [MM] beter to move this logic to AbstractModule and its inheritors 
+    for (SModule module : ListSequence.fromList(myProject.getProjectModulesWithGenerators())) {
+      Set<SLanguage> usedLanguages = module.getUsedLanguages();
+      if (SetSequence.fromSet(usedLanguages).any(new IWhereFilter<SLanguage>() {
+        public boolean accept(SLanguage it) {
+          return !(it.isValid());
+        }
+      })) {
+        return false;
+      }
+
+      Iterable<SDependency> deps = module.getDeclaredDependencies();
+      if (Sequence.fromIterable(deps).any(new IWhereFilter<SDependency>() {
+        public boolean accept(SDependency it) {
+          return it.getTarget() == null;
+        }
+      })) {
+        return false;
+      }
+
+      if (module instanceof AbstractModule) {
+        // todo this should be removed when there's API for accessing devkit "references" 
+        Set<SModuleReference> devkits = ((AbstractModule) module).collectLanguagesAndDevkits().devkits;
+        if (SetSequence.fromSet(devkits).any(new IWhereFilter<SModuleReference>() {
+          public boolean accept(SModuleReference it) {
+            return it.resolve(myProject.getRepository()) == null;
+          }
+        })) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
   public void addJustCreatedLanguageVersion(SLanguage language, Integer version) {
-    myRepo.getModelAccess().checkWriteAccess();
+    myProject.getModelAccess().checkWriteAccess();
 
     AbstractModule abstractModule = (AbstractModule) myModule;
     ModuleDescriptor md = abstractModule.getModuleDescriptor();
@@ -172,7 +209,7 @@ public class VersionFixer {
     module.getRepository().getModelAccess().checkReadAccess();
     Map<SLanguage, Integer> newLangVersions = new HashMap<SLanguage, Integer>();
     Set<SLanguage> usedLanguages = module.getUsedLanguages();
-    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myRepo), usedLanguages);
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myProject.getRepository()), usedLanguages);
     Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtended();
     for (SLanguage lang : extendingLangsClosure) {
       if (!(lang.isValid())) {
@@ -191,7 +228,7 @@ public class VersionFixer {
     final Map<SModuleReference, Integer> versions = new HashMap<SModuleReference, Integer>(dependencyVersions);
     List<SModuleReference> missed = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).where(new IWhereFilter<SModuleReference>() {
       public boolean accept(SModuleReference it) {
-        return it.resolve(myRepo) == null;
+        return it.resolve(myProject.getRepository()) == null;
       }
     }).toListSequence();
     ListSequence.fromList(missed).visitAll(new IVisitor<SModuleReference>() {
@@ -238,10 +275,10 @@ public class VersionFixer {
       }
     }
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a71a01(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a31a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a02a01(Object a, Object b) {
+  private static boolean neq_bfw0l_a0a0a0a0a0a1a61a11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

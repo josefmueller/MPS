@@ -82,8 +82,13 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
   }
 
   public boolean importVersionsUpdateRequired(Iterable<SModule> modules) {
+    // not to check once for every module later 
+    if (!(new VersionFixer(myMpsProject, null, true).areDepsSatisfied())) {
+      return false;
+    }
+
     for (SModule module : Sequence.fromIterable(modules)) {
-      if (new VersionFixer(myMpsProject.getRepository(), module).importVersionsUpdateRequired()) {
+      if (new VersionFixer(myMpsProject, module, true).importVersionsUpdateRequired()) {
         return true;
       }
     }
@@ -92,7 +97,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
   }
 
   public void doUpdateImportVersions(SModule module) {
-    new VersionFixer(myMpsProject.getRepository(), module).updateImportVersions();
+    new VersionFixer(myMpsProject, module, true).updateImportVersions();
     if (module instanceof AbstractModule) {
       (as_ufn3ol_a0a0a0b0n(module, AbstractModule.class)).save();
     }

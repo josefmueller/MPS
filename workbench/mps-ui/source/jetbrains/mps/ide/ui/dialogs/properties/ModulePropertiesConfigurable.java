@@ -883,7 +883,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         languageDescriptor.getRuntimeModules().clear();
         languageDescriptor.getRuntimeModules().addAll(myTableItems);
         for (Generator generator : ((Language) myModule).getOwnedGenerators()) {
-          new VersionFixer(myModuleRepository, generator).updateImportVersions();
+          new VersionFixer(myProject, generator,true).updateImportVersions();
         }
       }
     }

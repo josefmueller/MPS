@@ -89,9 +89,9 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
                   if (myLanguageSettings.isRuntimeSolutionNeeded()) {
                     Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
                     language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
-                    new VersionFixer(project.getRepository(), language).updateImportVersions();
+                    new VersionFixer(project, language,false).updateImportVersions();
                     for (Generator gen : language.getGenerators()) {
-                      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+                      new VersionFixer(project, gen, false).updateImportVersions();
                     }
                     language.save();
                   }

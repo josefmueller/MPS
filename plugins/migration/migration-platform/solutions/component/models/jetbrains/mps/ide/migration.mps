@@ -5268,6 +5268,40 @@
       <node concept="3Tm1VV" id="2V3ml1v0Uyd" role="1B3o_S" />
       <node concept="10P_77" id="2V3ml1v0Uyf" role="3clF45" />
       <node concept="3clFbS" id="2V3ml1v0Uyi" role="3clF47">
+        <node concept="3SKdUt" id="4yPMgAVjUPg" role="3cqZAp">
+          <node concept="3SKdUq" id="4yPMgAVjUPi" role="3SKWNk">
+            <property role="3SKdUp" value="not to check once for every module later" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4yPMgAVj_qF" role="3cqZAp">
+          <node concept="3clFbS" id="4yPMgAVj_qH" role="3clFbx">
+            <node concept="3cpWs6" id="4yPMgAVjR6N" role="3cqZAp">
+              <node concept="3clFbT" id="4yPMgAVjR9j" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="4yPMgAVjPaD" role="3clFbw">
+            <node concept="2OqwBi" id="4yPMgAVjPaF" role="3fr31v">
+              <node concept="2ShNRf" id="4yPMgAVjPaG" role="2Oq$k0">
+                <node concept="1pGfFk" id="4yPMgAVjPaH" role="2ShVmc">
+                  <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
+                  <node concept="37vLTw" id="4yPMgAVjPaI" role="37wK5m">
+                    <ref role="3cqZAo" node="36$CdjYd4mG" resolve="myMpsProject" />
+                  </node>
+                  <node concept="10Nm6u" id="4yPMgAVjPaJ" role="37wK5m" />
+                  <node concept="3clFbT" id="4yPMgAVkI56" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="4yPMgAVjPaK" role="2OqNvi">
+                <ref role="37wK5l" to="6f4m:4yPMgAVi6lG" resolve="areDepsSatisfied" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4yPMgAVjBgX" role="3cqZAp" />
         <node concept="2Gpval" id="2V3ml1v56s5" role="3cqZAp">
           <node concept="2GrKxI" id="2V3ml1v56s7" role="2Gsz3X">
             <property role="TrG5h" value="module" />
@@ -5288,16 +5322,14 @@
                 <node concept="2ShNRf" id="CXwmDgUr$u" role="2Oq$k0">
                   <node concept="1pGfFk" id="CXwmDgUQac" role="2ShVmc">
                     <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
-                    <node concept="2OqwBi" id="CXwmDgUQAy" role="37wK5m">
-                      <node concept="37vLTw" id="CXwmDgUQeP" role="2Oq$k0">
-                        <ref role="3cqZAo" node="36$CdjYd4mG" resolve="myMpsProject" />
-                      </node>
-                      <node concept="liA8E" id="CXwmDgUReL" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                      </node>
+                    <node concept="37vLTw" id="CXwmDgUQeP" role="37wK5m">
+                      <ref role="3cqZAo" node="36$CdjYd4mG" resolve="myMpsProject" />
                     </node>
                     <node concept="2GrUjf" id="CXwmDgUZBG" role="37wK5m">
                       <ref role="2Gs0qQ" node="2V3ml1v56s7" resolve="module" />
+                    </node>
+                    <node concept="3clFbT" id="4yPMgAVkJXq" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
@@ -5336,16 +5368,14 @@
             <node concept="2ShNRf" id="5gIiJF06yvZ" role="2Oq$k0">
               <node concept="1pGfFk" id="5gIiJF06UUm" role="2ShVmc">
                 <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
-                <node concept="2OqwBi" id="5gIiJF06Vpq" role="37wK5m">
-                  <node concept="37vLTw" id="5gIiJF078Rq" role="2Oq$k0">
-                    <ref role="3cqZAo" node="36$CdjYd4mG" resolve="myMpsProject" />
-                  </node>
-                  <node concept="liA8E" id="5gIiJF079v6" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
+                <node concept="37vLTw" id="5gIiJF078Rq" role="37wK5m">
+                  <ref role="3cqZAo" node="36$CdjYd4mG" resolve="myMpsProject" />
                 </node>
                 <node concept="37vLTw" id="5gIiJF079Dq" role="37wK5m">
                   <ref role="3cqZAo" node="2V3ml1v0Uyn" resolve="module" />
+                </node>
+                <node concept="3clFbT" id="4yPMgAVkLQL" role="37wK5m">
+                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
