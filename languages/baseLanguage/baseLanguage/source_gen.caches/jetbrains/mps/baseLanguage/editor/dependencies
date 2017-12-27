@@ -5440,7 +5440,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclarationStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LocalVariableReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LongLiteral_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LongLiteral_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LoopLabelReference_Editor" />
@@ -5455,7 +5454,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.Number_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_SubstituteMenu" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParameterReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParensAroundEmptyExpression" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ParenthesizedExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.PlaceholderMember_Editor" />
@@ -8681,18 +8679,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.LocalVariableReference_SubstituteMenu" file="LocalVariableReference_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.LongLiteral_Editor" file="LongLiteral_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.LongLiteral_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -9159,18 +9145,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.editor.ParameterReference_SubstituteMenu" file="ParameterReference_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ParensAroundEmptyExpression" file="ParensAroundEmptyExpression.java">
