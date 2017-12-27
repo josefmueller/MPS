@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
-import jetbrains.mps.migration.global.ProjectVersion;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.SModuleOperations;
@@ -40,7 +39,6 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -56,16 +54,6 @@ public class ProjectFactory {
 
   public ProjectFactory(ProjectOptions options) {
     myOptions = options;
-  }
-
-  /**
-   * @deprecated parameter {@code currentProject} is not used any more.
-   * Use {@link ProjectFactory#ProjectFactory(jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions)} constructor instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public ProjectFactory(Project currentProject, ProjectOptions options) {
-    this(options);
   }
 
   public Project createProject() throws ProjectNotCreatedException {
