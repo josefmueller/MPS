@@ -20093,6 +20093,54 @@
           <node concept="1zDrgl" id="6Iq8148gFCu" role="39821P">
             <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
           </node>
+          <node concept="28jJK3" id="5gyid2dEaaf" role="39821P">
+            <node concept="55IIr" id="5gyid2dEaag" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEaah" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEaai" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEaaj" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaay" role="2Ry0An">
+                      <property role="2Ry0Am" value="splash@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="28jJK3" id="5gyid2dEabK" role="39821P">
+            <node concept="55IIr" id="5gyid2dEabL" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEabM" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEabN" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEabO" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaca" role="2Ry0An">
+                      <property role="2Ry0Am" value="mpsAbout@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="28jJK3" id="5gyid2dEa9F" role="39821P">
+            <node concept="55IIr" id="5gyid2dEa9H" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEa9P" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEa9U" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEa9Z" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaa4" role="2Ry0An">
+                      <property role="2Ry0Am" value="MPS_welcomeScreen@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
           <node concept="3_J27D" id="7u_tNvPwpfK" role="Nbhlr">
