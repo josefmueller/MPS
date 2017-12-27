@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SnapshotModelData;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -48,7 +48,7 @@ public class TestPersistenceHelper {
     // myTestModel is a copy of a sample model, detached to avoid model read access. 
     myTestModel = new ModelAccessHelper(repo).runReadAction(new Computable<TrivialModelDescriptor>() {
       public TrivialModelDescriptor compute() {
-        SModel testModel = new ModuleRepositoryFacade(repo).getModelByName("tests.testPersistence.testModel");
+        SModel testModel = PersistenceFacade.getInstance().createModelReference("r:b44bed60-e0f0-4d48-bb29-e0fdb2041a66(tests.testPersistence.testModel)").resolve(repo);
         SnapshotModelData mdClone = new SnapshotModelData(testModel.getReference());
         // XXX in fact, duplicates CloneUtil.cloneModelWithImports. Don't want dependency from generator, though. 
         // Perhaps, need a high-level mechanism to clone a model? 

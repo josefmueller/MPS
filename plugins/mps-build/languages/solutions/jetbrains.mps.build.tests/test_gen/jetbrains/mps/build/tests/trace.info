@@ -132,7 +132,7 @@
       <node id="4209004860870558823" at="74,41,75,75" concept="4" />
       <node id="4209004860870558828" at="75,75,76,439" concept="1" />
       <node id="4209004860870558836" at="76,439,77,440" concept="1" />
-      <node id="1029938204559747214" at="81,40,82,117" concept="5" />
+      <node id="1029938204559747214" at="81,40,82,176" concept="5" />
       <node id="4045247515868358877" at="81,0,84,0" concept="3" trace="getBuildTestsModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="4045247515868358881" at="51,0,55,0" concept="3" trace="test_topLevelJar#()V" />
       <node id="8104754176559709905" at="55,0,59,0" concept="3" trace="test_topLevelFolder#()V" />
@@ -146,7 +146,7 @@
       <node id="4045247515868358877" at="43,0,48,0" concept="3" trace="test_duplicatedNames#()V" />
       <node id="8104754176559709912" at="67,0,73,0" concept="3" trace="test_folderInJar#()V" />
       <node id="4209004860870558820" at="73,0,79,0" concept="3" trace="test_duplicatedNames#()V" />
-      <scope id="4045247515868358877" at="81,40,82,117" />
+      <scope id="4045247515868358877" at="81,40,82,176" />
       <scope id="4045247515868358877" at="19,51,21,99" />
       <scope id="4045247515868358877" at="24,54,26,102" />
       <scope id="4045247515868358877" at="29,57,31,105" />

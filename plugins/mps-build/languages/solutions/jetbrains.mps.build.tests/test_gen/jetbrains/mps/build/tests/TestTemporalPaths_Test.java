@@ -11,7 +11,7 @@ import jetbrains.mps.build.behavior.BuildLayout_NamedContainer__BehaviorDescript
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @MPSLaunch
 public class TestTemporalPaths_Test extends BaseTransformationTest {
@@ -79,7 +79,7 @@ public class TestTemporalPaths_Test extends BaseTransformationTest {
 
 
     public SModel getBuildTestsModel() {
-      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.build.tests@tests");
+      return PersistenceFacade.getInstance().createModelReference("r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)").resolve(myProject.getRepository());
     }
   }
 }

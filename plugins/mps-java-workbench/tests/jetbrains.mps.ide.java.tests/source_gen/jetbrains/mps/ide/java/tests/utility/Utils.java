@@ -77,7 +77,7 @@ public class Utils {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = new ModuleRepositoryFacade(SNodeOperations.getModel(expected).getRepository()).getModelByName("jetbrains.mps.ide.java.testMaterial.placeholder");
+      mdl = PersistenceFacade.getInstance().createModelReference("r:3b854700-e92a-453d-8d33-ea563b87dd15(jetbrains.mps.ide.java.testMaterial.placeholder)").resolve(SNodeOperations.getModel(expected).getRepository());
       FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
       List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);

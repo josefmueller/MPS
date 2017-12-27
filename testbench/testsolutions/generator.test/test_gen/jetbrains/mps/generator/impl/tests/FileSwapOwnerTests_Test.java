@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -159,14 +158,14 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     }
     public void test_baseLanguageStructure() throws Exception {
       addNodeById("1732396662099564446");
-      SModel sampleModel = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.baseLanguage.structure");
+      SModel sampleModel = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)").resolve(myProject.getRepository());
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       addNodeById("1732396662099564446");
-      SModel sampleModel = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test");
+      SModel sampleModel = PersistenceFacade.getInstance().createModelReference("r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)").resolve(myProject.getRepository());
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);

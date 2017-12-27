@@ -53,9 +53,9 @@
       <node id="1029938204559072940" at="89,0,90,51" concept="2" />
       <node id="1029938204559072948" at="90,51,91,126" concept="2" />
       <node id="1029938204559072959" at="91,126,92,71" concept="0" />
-      <node id="1029938204559073623" at="96,28,97,112" concept="3" />
-      <node id="1029938204559073895" at="99,28,100,112" concept="3" />
-      <node id="1029938204559073984" at="102,28,103,112" concept="3" />
+      <node id="1029938204559073623" at="96,28,97,171" concept="3" />
+      <node id="1029938204559073895" at="99,28,100,171" concept="3" />
+      <node id="1029938204559073984" at="102,28,103,171" concept="3" />
       <node id="1029938204559057131" at="96,0,99,0" concept="1" trace="model1#()Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1029938204559057131" at="99,0,102,0" concept="1" trace="model2#()Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="1029938204559057131" at="102,0,105,0" concept="1" trace="model3#()Lorg/jetbrains/mps/openapi/model/SModel;" />
@@ -69,9 +69,9 @@
       <node id="1029938204559058271" at="63,0,72,0" concept="1" trace="test_testModel3DoesntDependOnAnything#()V" />
       <node id="1029938204559058283" at="72,0,83,0" concept="1" trace="test_testModel1DependsOnModel2#()V" />
       <node id="1029938204559058298" at="83,0,94,0" concept="1" trace="test_testModel1DoesntDependOnModel3#()V" />
-      <scope id="1029938204559057131" at="96,28,97,112" />
-      <scope id="1029938204559057131" at="99,28,100,112" />
-      <scope id="1029938204559057131" at="102,28,103,112" />
+      <scope id="1029938204559057131" at="96,28,97,171" />
+      <scope id="1029938204559057131" at="99,28,100,171" />
+      <scope id="1029938204559057131" at="102,28,103,171" />
       <scope id="1029938204559057131" at="21,56,23,99" />
       <scope id="1029938204559057131" at="26,68,28,111" />
       <scope id="1029938204559057131" at="31,72,33,115" />
