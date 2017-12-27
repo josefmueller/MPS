@@ -20022,6 +20022,54 @@
           <node concept="1zDrgl" id="6Iq8148gFCu" role="39821P">
             <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2018.1" />
           </node>
+          <node concept="28jJK3" id="5gyid2dEaaf" role="39821P">
+            <node concept="55IIr" id="5gyid2dEaag" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEaah" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEaai" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEaaj" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaay" role="2Ry0An">
+                      <property role="2Ry0Am" value="splash@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="28jJK3" id="5gyid2dEabK" role="39821P">
+            <node concept="55IIr" id="5gyid2dEabL" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEabM" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEabN" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEabO" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaca" role="2Ry0An">
+                      <property role="2Ry0Am" value="mpsAbout@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="28jJK3" id="5gyid2dEa9F" role="39821P">
+            <node concept="55IIr" id="5gyid2dEa9H" role="28jJRO">
+              <node concept="2Ry0Ak" id="5gyid2dEa9P" role="iGT6I">
+                <property role="2Ry0Am" value="workbench" />
+                <node concept="2Ry0Ak" id="5gyid2dEa9U" role="2Ry0An">
+                  <property role="2Ry0Am" value="mps-icons" />
+                  <node concept="2Ry0Ak" id="5gyid2dEa9Z" role="2Ry0An">
+                    <property role="2Ry0Am" value="source" />
+                    <node concept="2Ry0Ak" id="5gyid2dEaa4" role="2Ry0An">
+                      <property role="2Ry0Am" value="MPS_welcomeScreen@2x.png" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
           <node concept="3_J27D" id="7u_tNvPwpfK" role="Nbhlr">
@@ -21668,11 +21716,6 @@
             <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
           </node>
         </node>
-        <node concept="1yeLz9" id="6DW_AMAzjPZ" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.build.mps.testManifest#3298469228705179758" />
-          <property role="3LESm3" value="5ccf4811-f749-4209-97a2-3370a32f8fb9" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="1SiIV0" id="6Qvu94t2IrC" role="3bR37C">
           <node concept="3bR9La" id="6Qvu94t2IrD" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -21695,6 +21738,11 @@
           <node concept="1Busua" id="6Qvu94t2IrJ" role="1SiIV1">
             <ref role="1Busuk" node="4SM2EuqHUPF" resolve="jetbrains.mps.lang.modelapi" />
           </node>
+        </node>
+        <node concept="1yeLz9" id="6DW_AMAzjPZ" role="1TViLv">
+          <property role="TrG5h" value="jetbrains.mps.build.mps.testManifest#3298469228705179758" />
+          <property role="3LESm3" value="5ccf4811-f749-4209-97a2-3370a32f8fb9" />
+          <property role="2GAjPV" value="false" />
         </node>
       </node>
       <node concept="1E1JtD" id="1Vi5mb_o9f_" role="2G$12L">

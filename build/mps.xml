@@ -93,6 +93,9 @@
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/splash.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/splash@2x.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout@2x.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen@2x.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/MPS-src.zip" />
