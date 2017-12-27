@@ -568,6 +568,7 @@
       <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
         <child id="1237721435808" name="initValue" index="HW$Y0" />
         <child id="1237721435807" name="elementType" index="HW$YZ" />
+        <child id="1237731803878" name="copyFrom" index="I$8f6" />
         <child id="1562299158920737514" name="initSize" index="3lWHg$" />
       </concept>
       <concept id="1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" flags="nn" index="2Jqq0_" />
@@ -3327,12 +3328,32 @@
       </node>
       <node concept="3Tm1VV" id="56tRMpP_ffk" role="1B3o_S" />
       <node concept="3clFbS" id="56tRMpP_ffl" role="3clF47">
-        <node concept="3clFbF" id="56tRMpP_ffm" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_ffn" role="3clFbG">
-            <node concept="2OwXpG" id="56tRMpP_ffo" role="2OqNvi">
-              <ref role="2Oxat5" node="56tRMpP_fhz" resolve="myTestMethods" />
+        <node concept="1HWtB8" id="6NKjxRIMzUu" role="3cqZAp">
+          <node concept="37vLTw" id="6NKjxRIM$6n" role="1HWFw0">
+            <ref role="3cqZAo" node="56tRMpP_fhz" resolve="myTestMethods" />
+          </node>
+          <node concept="3clFbS" id="6NKjxRIMzUy" role="1HWHxc">
+            <node concept="3cpWs8" id="6NKjxRIM$gq" role="3cqZAp">
+              <node concept="3cpWsn" id="6NKjxRIM$gr" role="3cpWs9">
+                <property role="TrG5h" value="rv" />
+                <node concept="_YKpA" id="6NKjxRIM$hY" role="1tU5fm">
+                  <node concept="17QB3L" id="6NKjxRIM$tD" role="_ZDj9" />
+                </node>
+                <node concept="2ShNRf" id="6NKjxRIM$$z" role="33vP2m">
+                  <node concept="Tc6Ow" id="6NKjxRIMV8Q" role="2ShVmc">
+                    <node concept="17QB3L" id="6NKjxRIMVGO" role="HW$YZ" />
+                    <node concept="37vLTw" id="6NKjxRIMWQ0" role="I$8f6">
+                      <ref role="3cqZAo" node="56tRMpP_fhz" resolve="myTestMethods" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="Xjq3P" id="56tRMpP_ffp" role="2Oq$k0" />
+            <node concept="3cpWs6" id="6NKjxRIMXBC" role="3cqZAp">
+              <node concept="37vLTw" id="6NKjxRIN3oL" role="3cqZAk">
+                <ref role="3cqZAo" node="6NKjxRIM$gr" resolve="rv" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

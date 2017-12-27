@@ -275,7 +275,10 @@ public class TestRunState {
   }
 
   public List<String> getUnusedMethods() {
-    return this.myTestMethods;
+    synchronized (myTestMethods) {
+      List<String> rv = ListSequence.fromListWithValues(new ArrayList<String>(), myTestMethods);
+      return rv;
+    }
   }
 
   public int getTotalTests() {
