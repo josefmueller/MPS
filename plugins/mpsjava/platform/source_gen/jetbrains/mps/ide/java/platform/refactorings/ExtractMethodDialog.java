@@ -368,19 +368,22 @@ public class ExtractMethodDialog extends RefactoringDialog {
           return;
         }
       }
+
+      final SNode[] results = {null};
       myContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myContext) {
         protected void doExecute() {
           SNode result = myRefactoring.doRefactor();
+          results[0] = result;
           myContext.select(result);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
             new ModelImports(myRefactoringModel).addModelImport(ref);
           }
-          if ((result != null)) {
-            new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result).process(ExtractMethodDialog.this.myRefactoring.getMatches(), myProject);
-          }
         }
       });
+      if ((results[0] != null)) {
+        new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, results[0]).process(ExtractMethodDialog.this.myRefactoring.getMatches(), myProject);
+      }
     }
     super.doRefactoringAction();
   }

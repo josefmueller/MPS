@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 
 public abstract class DuplicatesProcessor<T> {
   protected EditorContext myEditorContext;
@@ -30,18 +31,26 @@ public abstract class DuplicatesProcessor<T> {
         }
         highlightManager.repaintAndRebuildEditorMessages();
         if (shouldSubstitute == AskDialog.DialogResults.Replace) {
-          this.substitute(duplicate);
+          this.lockAndSubstitute(duplicate);
         } else if (shouldSubstitute == AskDialog.DialogResults.All) {
-          this.substitute(duplicate);
+          this.lockAndSubstitute(duplicate);
           replaceAll = true;
         } else if (shouldSubstitute == AskDialog.DialogResults.Cancel) {
           break;
         }
       } else {
-        this.substitute(duplicate);
+        this.lockAndSubstitute(duplicate);
       }
     }
   }
+  private void lockAndSubstitute(final T duplicate) {
+    myEditorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(myEditorContext) {
+      protected void doExecute() {
+        substitute(duplicate);
+      }
+    });
+  }
+
   protected abstract List<EditorMessage> createEditorMessages(T duplicate);
   public abstract void substitute(T duplicate);
 }
