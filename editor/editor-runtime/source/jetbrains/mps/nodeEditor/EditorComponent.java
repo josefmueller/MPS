@@ -473,17 +473,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }, KeyStroke.getKeyStroke("shift F3"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    registerKeyboardAction(new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        final jetbrains.mps.openapi.editor.cells.EditorCell cell = getSelectedCell();
-        if (cell == null) {
-          return;
-        }
-        getModelAccess().runReadAction(() -> showPopupMenu(cell.getX(), cell.getY()));
-      }
-    }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
     addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(final MouseEvent e) {
@@ -1243,10 +1232,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void showPopupMenu(MouseEvent e) {
-    showPopupMenu(e.getX(), e.getY());
-  }
-
-  private void showPopupMenu(int x, int y) {
     if (!myPopupMenuEnabled) {
       return;
     }
@@ -1264,7 +1249,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     );
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
-    popupMenu.show(EditorComponent.this, x, y);
+    popupMenu.show(EditorComponent.this, e.getX(), e.getY());
+    e.consume();
   }
 
   protected String getDefaultPopupGroupId() {
@@ -2440,7 +2426,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     substituteInfo.invalidateActions();
     if (originalTextChanged || atTheEndOfLine) {
-      SubstituteInfo substituteInfoWithPatternMatchingFilter = NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, getRepository());
+      SubstituteInfo substituteInfoWithPatternMatchingFilter =
+          NodeSubstituteInfoFilterDecorator.createSubstituteInfoWithPatternMatchingFilter(substituteInfo, getRepository());
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfoWithPatternMatchingFilter, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
