@@ -12113,7 +12113,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/215889526508767916">
     <file name="check_UnusedLocalVariableDeclaration_NonTypesystemRule.java">
-      <node id="215889526508858539" at="26,195,27,13" concept="13" />
+      <node id="215889526508858539" at="26,445,27,13" concept="13" />
       <node id="215889526508796011" at="30,39,31,229" concept="13" />
       <node id="215889526508832630" at="35,7,36,60" concept="12" />
       <node id="215889526508832630" at="36,60,37,426" concept="12" />
@@ -12135,7 +12135,7 @@
       <node id="215889526508832519" at="33,7,39,5" concept="10" />
       <node id="215889526508767916" at="25,0,41,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="215889526508767916" at="23,67,23,67" />
-      <scope id="215889526508845449" at="26,195,27,13" />
+      <scope id="215889526508845449" at="26,445,27,13" />
       <scope id="215889526508795622" at="30,39,31,229" />
       <scope id="215889526508767916" at="41,50,42,163" />
       <scope id="215889526508767916" at="44,68,45,102" />

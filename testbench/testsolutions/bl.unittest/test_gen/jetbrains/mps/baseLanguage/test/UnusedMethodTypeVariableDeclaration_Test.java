@@ -19,6 +19,11 @@ public class UnusedMethodTypeVariableDeclaration_Test extends BaseTransformation
     runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929723209", true);
   }
   @Test
+  public void test_NodeUnusedLocalVariableCheck215889526513017511() throws Throwable {
+    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526513017511", true);
+  }
+  @Test
   public void test_NodeTypeVariableIsNotNeededCheck6923385624928495830() throws Throwable {
     initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnusedMethodTypeVariableDeclaration_Test$TestBody", "test_NodeTypeVariableIsNotNeededCheck6923385624928495830", true);
@@ -35,6 +40,10 @@ public class UnusedMethodTypeVariableDeclaration_Test extends BaseTransformation
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929723209() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624929723209"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("3951985765451229489"));
+    }
+    public void test_NodeUnusedLocalVariableCheck215889526513017511() throws Exception {
+      SNode operation = SNodeOperations.cast(getRealNodeById("215889526513017511"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
+      INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("7430872850884076110"));
     }
     public void test_NodeTypeVariableIsNotNeededCheck6923385624928495830() throws Exception {
       SNode operation = SNodeOperations.cast(getRealNodeById("6923385624928495830"), MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1510445f8a2c272dL, "jetbrains.mps.lang.test.structure.INodesTestMethod"));
