@@ -49,9 +49,11 @@ public class DefaultRunListener extends RunListener {
   private void printSyncToken(String tokenPrefix, Description description) {
     StringBuilder builder = new StringBuilder();
     builder.append(tokenPrefix);
-    builder.append(description.getTestClass().getName());
-    if (description.getMethodName() != null) {
-      builder.append(':').append(description.getMethodName());
+    // Beware, description.getTestClass may be null. 
+    builder.append(description.getClassName());
+    String methodName = description.getMethodName();
+    if (methodName != null) {
+      builder.append(':').append(methodName);
     }
     Runtime runtime = Runtime.getRuntime();
     builder.append(":memory=").append(runtime.totalMemory() - runtime.freeMemory());

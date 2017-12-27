@@ -4402,6 +4402,11 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="6NKjxRILXOG" role="3cqZAp">
+          <node concept="3SKdUq" id="6NKjxRILXOI" role="3SKWNk">
+            <property role="3SKdUp" value="Beware, description.getTestClass may be null." />
+          </node>
+        </node>
         <node concept="3clFbF" id="1zHDQsywvkE" role="3cqZAp">
           <node concept="2OqwBi" id="1zHDQsywvkF" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTwzF" role="2Oq$k0">
@@ -4409,18 +4414,29 @@
             </node>
             <node concept="liA8E" id="1zHDQsywvkH" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="2OqwBi" id="1zHDQsywvjo" role="37wK5m">
-                <node concept="2OqwBi" id="1zHDQsywvjp" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxgm9J5" role="2Oq$k0">
-                    <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-                  </node>
-                  <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
-                    <ref role="37wK5l" to="cvlm:~Description.getTestClass():java.lang.Class" resolve="getTestClass" />
-                  </node>
+              <node concept="2OqwBi" id="1zHDQsywvjp" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm9J5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
                 </node>
-                <node concept="liA8E" id="1zHDQsywvjs" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
+                  <ref role="37wK5l" to="cvlm:~Description.getClassName():java.lang.String" resolve="getClassName" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6NKjxRILYHg" role="3cqZAp">
+          <node concept="3cpWsn" id="6NKjxRILYHh" role="3cpWs9">
+            <property role="TrG5h" value="methodName" />
+            <node concept="3uibUv" id="6NKjxRILYHd" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="6NKjxRILYHi" role="33vP2m">
+              <node concept="37vLTw" id="6NKjxRILYHj" role="2Oq$k0">
+                <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
+              </node>
+              <node concept="liA8E" id="6NKjxRILYHk" role="2OqNvi">
+                <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
               </node>
             </node>
           </node>
@@ -4428,13 +4444,8 @@
         <node concept="3clFbJ" id="1zHDQsywvkL" role="3cqZAp">
           <node concept="3y3z36" id="1zHDQsywvkM" role="3clFbw">
             <node concept="10Nm6u" id="1zHDQsywvkN" role="3uHU7w" />
-            <node concept="2OqwBi" id="1zHDQsywvpo" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxghf1W" role="2Oq$k0">
-                <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-              </node>
-              <node concept="liA8E" id="1zHDQsywvps" role="2OqNvi">
-                <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
-              </node>
+            <node concept="37vLTw" id="6NKjxRILYHl" role="3uHU7B">
+              <ref role="3cqZAo" node="6NKjxRILYHh" resolve="methodName" />
             </node>
           </node>
           <node concept="3clFbS" id="1zHDQsywvkR" role="3clFbx">
@@ -4453,13 +4464,8 @@
                 </node>
                 <node concept="liA8E" id="1zHDQsywvkY" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                  <node concept="2OqwBi" id="4BZqA32g2J_" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxgmb$a" role="2Oq$k0">
-                      <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-                    </node>
-                    <node concept="liA8E" id="4BZqA32g2JB" role="2OqNvi">
-                      <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
-                    </node>
+                  <node concept="37vLTw" id="6NKjxRILYHm" role="37wK5m">
+                    <ref role="3cqZAo" node="6NKjxRILYHh" resolve="methodName" />
                   </node>
                 </node>
               </node>
