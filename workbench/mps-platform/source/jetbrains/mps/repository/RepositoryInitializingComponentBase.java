@@ -41,7 +41,7 @@ import java.util.List;
  * Inits all mps distribution modules
  * When on sources {@link InternalFlag#isInternalMode()} almost the same happens
  */
-public class BaseLibraryInitializer implements ApplicationComponent {
+public class RepositoryInitializingComponentBase implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
   private final FileSystem myFS;
   private final List<LibraryContributor> myContributors = new ArrayList<>();
@@ -58,12 +58,12 @@ public class BaseLibraryInitializer implements ApplicationComponent {
    * @param ideaPluginFacetComponent -- we want to load plugin library contributor after we have chosen the right idea plugin facet
    */
   @SuppressWarnings("UnusedParameters")
-  public BaseLibraryInitializer(FSNotificationsImprover improver, //improve before loading any libs
-                                MPSCoreComponents coreComponents,
-                                IRegistryManager registryManager,
-                                IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                IdeaFSComponent fs,
-                                PersistentFS filesystem //see MPS-22970
+  public RepositoryInitializingComponentBase(FSNotificationsImprover improver, //improve before loading any libs
+                                             MPSCoreComponents coreComponents,
+                                             IRegistryManager registryManager,
+                                             IdeaPluginFacetComponent ideaPluginFacetComponent,
+                                             IdeaFSComponent fs,
+                                             PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
     myFS = PathManager.isFromSources() ? FileSystemExtPoint.getFS() : IoFileSystem.INSTANCE;

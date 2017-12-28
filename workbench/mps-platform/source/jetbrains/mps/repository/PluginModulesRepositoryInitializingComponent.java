@@ -18,23 +18,19 @@ package jetbrains.mps.repository;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
-import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.workbench.action.IRegistryManager;
 
-public final class CustomisableLibraryInitializer extends BaseLibraryInitializer {
-  public CustomisableLibraryInitializer(FSNotificationsImprover improver, MPSCoreComponents coreComponents,
-                                        IRegistryManager registryManager, IdeaPluginFacetComponent ideaPluginFacetComponent, IdeaFSComponent fs,
-                                        PersistentFS filesystem) {
+public final class PluginModulesRepositoryInitializingComponent extends RepositoryInitializingComponentBase {
+  @SuppressWarnings("UnusedParameters")
+  public PluginModulesRepositoryInitializingComponent(FSNotificationsImprover improver,
+                                                      MPSCoreComponents coreComponents,
+                                                      IRegistryManager registryManager,
+                                                      IdeaPluginFacetComponent ideaPluginFacetComponent,
+                                                      IdeaFSComponent fs,
+                                                      PersistentFS filesystem //see MPS-22970
+  ) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
-    IdeaEnvironment env = IdeaEnvironment.getInitializingEnvironment();
-    if (env == null) {
-      //this case is found in plugin tests, not sure what to do, leave as-it-was
-      return;
-    }
-    for (LibraryContributor lc : env.initLibraries(coreComponents.getLibraryInitializer())) {
-      addContributor(lc);
-    }
+    addContributor(new PluginLibraryContributor(getFS()));
   }
 }
