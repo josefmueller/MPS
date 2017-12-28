@@ -36,7 +36,6 @@ public final class TestRunState {
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
-  private volatile boolean myCompletedGracefully = true;
   private String myLostTest;
   private String myLostMethod;
   private int myTotalTests = 0;
@@ -172,16 +171,13 @@ public final class TestRunState {
       checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
-      this.myCompletedGracefully = true;
       this.updateView();
     }
   }
 
   private void finishTest() {
     synchronized (lock) {
-      if (this.myCompletedGracefully) {
-        this.myCompletedTests++;
-      }
+      this.myCompletedTests++;
       this.updateView();
       this.myCurrentClass = null;
       this.myCurrentMethod = null;
@@ -197,7 +193,6 @@ public final class TestRunState {
 
   private void ignoreTest() {
     synchronized (lock) {
-      this.myCompletedGracefully = false;
       this.updateView();
     }
   }

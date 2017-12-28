@@ -2,12 +2,12 @@
 <model ref="r:a8dde698-9468-4a76-b89d-abdfa4716001(jetbrains.mps.baseLanguage.unitTest.execution.server)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -38,6 +38,7 @@
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="456n" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.builders(JUnit/)" />
+    <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -332,9 +333,6 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
-        <child id="1151689745422" name="elementType" index="A3Ik2" />
-      </concept>
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -343,8 +341,6 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
-      <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
-      <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
     </language>
   </registry>
   <node concept="312cEu" id="56tRMpP_bxe">
@@ -1946,23 +1942,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ti9jVZ8ryq" role="3clF47">
-        <node concept="3cpWs8" id="5vTxdEzDg9E" role="3cqZAp">
-          <node concept="3cpWsn" id="5vTxdEzDg9F" role="3cpWs9">
-            <property role="TrG5h" value="reqSeq" />
-            <node concept="A3Dl8" id="5vTxdEzDj$Z" role="1tU5fm">
-              <node concept="3uibUv" id="5vTxdEzDj_1" role="A3Ik2">
-                <ref role="3uigEE" to="cvlm:~Request" resolve="Request" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="5vTxdEzDg9G" role="33vP2m">
-              <ref role="37wK5l" to="urs3:5Ffu4tBUwUU" resolve="fromIterable" />
-              <ref role="1Pybhc" to="urs3:5Ffu4tBUwT$" resolve="Sequence" />
-              <node concept="37vLTw" id="5vTxdEzDg9H" role="37wK5m">
-                <ref role="3cqZAo" node="5Ti9jVZ8ryn" resolve="requests" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="5Ti9jVZ8ryr" role="3cqZAp">
           <node concept="3cpWsn" id="5Ti9jVZ8rys" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -2000,40 +1979,6 @@
               <node concept="37vLTw" id="77hRUeKg$Lx" role="37wK5m">
                 <ref role="3cqZAo" node="77hRUeKgzaH" resolve="myListener" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="5vTxdEzD7Lx" role="3cqZAp">
-          <node concept="3clFbS" id="5vTxdEzD7L$" role="3clFbx">
-            <node concept="3cpWs8" id="1RD5RgvId14" role="3cqZAp">
-              <node concept="3cpWsn" id="1RD5RgvId15" role="3cpWs9">
-                <property role="TrG5h" value="firstRequest" />
-                <node concept="3uibUv" id="1RD5RgvId13" role="1tU5fm">
-                  <ref role="3uigEE" to="cvlm:~Request" resolve="Request" />
-                </node>
-                <node concept="2OqwBi" id="1RD5RgvId16" role="33vP2m">
-                  <node concept="37vLTw" id="1RD5RgvId17" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5vTxdEzDg9F" resolve="reqSeq" />
-                  </node>
-                  <node concept="1uHKPH" id="1RD5RgvId18" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="1RD5RgvIden" role="3cqZAp">
-              <node concept="1rXfSq" id="1RD5RgvIdem" role="3clFbG">
-                <ref role="37wK5l" node="1DJqn2eDUn1" resolve="updateRunner" />
-                <node concept="37vLTw" id="1RD5RgvIdhF" role="37wK5m">
-                  <ref role="3cqZAo" node="1RD5RgvId15" resolve="firstRequest" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3fqX7Q" id="2SyXq5NjUN4" role="3clFbw">
-            <node concept="2OqwBi" id="2SyXq5NjW7_" role="3fr31v">
-              <node concept="37vLTw" id="2SyXq5NjUN9" role="2Oq$k0">
-                <ref role="3cqZAo" node="5vTxdEzDg9F" resolve="reqSeq" />
-              </node>
-              <node concept="1v1jN8" id="2SyXq5NjWph" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -5099,6 +5044,9 @@
     <node concept="3clFb_" id="5iYlssmW6ov" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="check" />
+      <node concept="3uibUv" id="ZGAI0Smnlo" role="Sfmx6">
+        <ref role="3uigEE" to="inrv:7V0Nd1aTh1_" resolve="InProcessExecutionFilter.MPSException" />
+      </node>
       <node concept="3cqZAl" id="5UFD5GhCt8O" role="3clF45" />
       <node concept="3Tm1VV" id="5iYlssmW6ox" role="1B3o_S" />
       <node concept="37vLTG" id="MY2kIk9D46" role="3clF46">
@@ -5117,7 +5065,7 @@
             <node concept="YS8fn" id="5UFD5GhCB6a" role="3cqZAp">
               <node concept="2ShNRf" id="7wE3E_r5L0v" role="YScLw">
                 <node concept="1pGfFk" id="7wE3E_r5L0w" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
+                  <ref role="37wK5l" to="inrv:ZGAI0SlW2D" resolve="InProcessExecutionFilter.MPSException" />
                   <node concept="3cpWs3" id="7wE3E_r5L0x" role="37wK5m">
                     <node concept="Xl_RD" id="7wE3E_r5L0y" role="3uHU7w">
                       <property role="Xl_RC" value=" is ignored." />
@@ -5153,23 +5101,23 @@
         </node>
         <node concept="3clFbJ" id="6uueKdE3096" role="3cqZAp">
           <node concept="3clFbS" id="6uueKdE3097" role="3clFbx">
-            <node concept="YS8fn" id="5UFD5GhCABY" role="3cqZAp">
-              <node concept="2ShNRf" id="7wE3E_r5_Io" role="YScLw">
-                <node concept="1pGfFk" id="7wE3E_r5HDZ" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
-                  <node concept="3cpWs3" id="7wE3E_r5KQh" role="37wK5m">
-                    <node concept="Xl_RD" id="7wE3E_r5KQ_" role="3uHU7w">
+            <node concept="YS8fn" id="ZGAI0SlWtn" role="3cqZAp">
+              <node concept="2ShNRf" id="ZGAI0SlWto" role="YScLw">
+                <node concept="1pGfFk" id="ZGAI0SlWtp" role="2ShVmc">
+                  <ref role="37wK5l" to="inrv:ZGAI0SlW2D" resolve="InProcessExecutionFilter.MPSException" />
+                  <node concept="3cpWs3" id="ZGAI0SlWtq" role="37wK5m">
+                    <node concept="Xl_RD" id="ZGAI0SlWtr" role="3uHU7w">
                       <property role="Xl_RC" value=" is ignored." />
                     </node>
-                    <node concept="3cpWs3" id="7wE3E_r5Kjk" role="3uHU7B">
-                      <node concept="Xl_RD" id="7wE3E_r5HGY" role="3uHU7B">
+                    <node concept="3cpWs3" id="ZGAI0SlWts" role="3uHU7B">
+                      <node concept="Xl_RD" id="ZGAI0SlWtt" role="3uHU7B">
                         <property role="Xl_RC" value="The project properties given in the TestInfo file is impossible to set in-process. Test " />
                       </node>
-                      <node concept="2OqwBi" id="7wE3E_r5Kt2" role="3uHU7w">
-                        <node concept="37vLTw" id="7wE3E_r5KlB" role="2Oq$k0">
-                          <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
+                      <node concept="2OqwBi" id="ZGAI0SlWtu" role="3uHU7w">
+                        <node concept="37vLTw" id="ZGAI0SlWtv" role="2Oq$k0">
+                          <ref role="3cqZAo" to="inrv:MY2kIk9D46" resolve="testNodeWrapper" />
                         </node>
-                        <node concept="liA8E" id="7wE3E_r5KCW" role="2OqNvi">
+                        <node concept="liA8E" id="ZGAI0SlWtw" role="2OqNvi">
                           <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
                         </node>
                       </node>
@@ -5195,7 +5143,47 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="5UFD5GhCuCX" role="Sfmx6">
+    </node>
+    <node concept="2tJIrI" id="7V0Nd1aTgZD" role="jymVt" />
+    <node concept="312cEu" id="7V0Nd1aTh1_" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="true" />
+      <property role="TrG5h" value="MPSException" />
+      <node concept="3clFbW" id="ZGAI0SlW2D" role="jymVt">
+        <node concept="3cqZAl" id="ZGAI0SlW2E" role="3clF45" />
+        <node concept="3clFbS" id="ZGAI0SlW2G" role="3clF47">
+          <node concept="XkiVB" id="ZGAI0SlW45" role="3cqZAp">
+            <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;(java.lang.String)" resolve="Throwable" />
+            <node concept="37vLTw" id="ZGAI0SlW4H" role="37wK5m">
+              <ref role="3cqZAo" to="inrv:ZGAI0SlW36" resolve="msg" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="ZGAI0SlW2o" role="1B3o_S" />
+        <node concept="37vLTG" id="ZGAI0SlW36" role="3clF46">
+          <property role="TrG5h" value="msg" />
+          <node concept="17QB3L" id="ZGAI0SlW35" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="ZGAI0SlW5L" role="jymVt" />
+      <node concept="3clFb_" id="ZGAI0SlW7L" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="fillInStackTrace" />
+        <property role="od$2w" value="false" />
+        <property role="DiZV1" value="false" />
+        <property role="2aFKle" value="false" />
+        <node concept="3clFbS" id="ZGAI0SlW7O" role="3clF47">
+          <node concept="3cpWs6" id="ZGAI0SlWaa" role="3cqZAp">
+            <node concept="Xjq3P" id="ZGAI0SlWaP" role="3cqZAk" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="ZGAI0SlW70" role="1B3o_S" />
+        <node concept="3uibUv" id="ZGAI0SlW7H" role="3clF45">
+          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="ZGAI0Sp3J6" role="1zkMxy">
         <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
       </node>
     </node>
@@ -5210,6 +5198,7 @@
   <node concept="312cEu" id="6lmAJjAMvTk">
     <property role="3GE5qa" value="util" />
     <property role="TrG5h" value="StoppableRunner" />
+    <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="6lmAJjAMBR$" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -5473,9 +5462,13 @@
   <node concept="312cEu" id="MY2kIk9HdS">
     <property role="3GE5qa" value="util" />
     <property role="TrG5h" value="AssumptionFailedRunner" />
+    <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="MY2kIk9I94" role="jymVt">
       <property role="TrG5h" value="myTestDescription" />
       <property role="3TUv4t" value="true" />
+      <node concept="2AHcQZ" id="41rkO5$qVl8" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
       <node concept="3Tm6S6" id="MY2kIk9I95" role="1B3o_S" />
       <node concept="3uibUv" id="MY2kIk9I97" role="1tU5fm">
         <ref role="3uigEE" to="cvlm:~Description" resolve="Description" />
@@ -5523,6 +5516,9 @@
       </node>
       <node concept="37vLTG" id="MY2kIk9H_0" role="3clF46">
         <property role="TrG5h" value="testDescription" />
+        <node concept="2AHcQZ" id="41rkO5$qViy" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="3uibUv" id="MY2kIk9H$Z" role="1tU5fm">
           <ref role="3uigEE" to="cvlm:~Description" resolve="Description" />
         </node>
