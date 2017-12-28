@@ -1018,30 +1018,6 @@
       </node>
       <node concept="3Tm1VV" id="2F$QDg9Ev8W" role="1B3o_S" />
       <node concept="3clFbS" id="2F$QDg9Ev8X" role="3clF47">
-        <node concept="3clFbJ" id="7YykFxpRAKc" role="3cqZAp">
-          <node concept="3clFbS" id="7YykFxpRAKd" role="3clFbx">
-            <node concept="RRSsy" id="3jYQuSB33Va" role="3cqZAp">
-              <property role="RRSoG" value="error" />
-              <node concept="Xl_RD" id="7YykFxpRAKr" role="RRSoy">
-                <property role="Xl_RC" value="BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock" />
-              </node>
-              <node concept="2ShNRf" id="7YykFxpRAKt" role="RRSow">
-                <node concept="1pGfFk" id="7YykFxpRAKv" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;()" resolve="IllegalStateException" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7YykFxpRAKi" role="3clFbw">
-            <node concept="2YIFZM" id="7YykFxpRAKh" role="2Oq$k0">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-            </node>
-            <node concept="liA8E" id="7YykFxpRAKm" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModelAccess.canRead():boolean" resolve="canRead" />
-            </node>
-          </node>
-        </node>
         <node concept="SfApY" id="6E4VEGZQxD1" role="3cqZAp">
           <node concept="3clFbS" id="6E4VEGZQxD2" role="SfCbr">
             <node concept="3cpWs8" id="6E4VEGZQy7c" role="3cqZAp">
@@ -6086,6 +6062,21 @@
             </node>
           </node>
           <node concept="37vLTw" id="43LPOOeGBSW" role="ukAjM">
+            <ref role="3cqZAo" node="43LPOOeGBSQ" resolve="repo" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="6arEVVuIbu$" role="3cqZAp">
+          <node concept="1QHqEC" id="6arEVVuIbu_" role="1QHqEI">
+            <node concept="3clFbS" id="6arEVVuIbuA" role="1bW5cS">
+              <node concept="1HWtB8" id="6arEVVuIbuB" role="3cqZAp">
+                <node concept="37vLTw" id="6arEVVuIbuC" role="1HWFw0">
+                  <ref role="3cqZAo" node="6BB1EWX3JAh" resolve="LOCK" />
+                </node>
+                <node concept="3clFbS" id="6arEVVuIbuD" role="1HWHxc" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="6arEVVuIbxz" role="ukAjM">
             <ref role="3cqZAo" node="43LPOOeGBSQ" resolve="repo" />
           </node>
         </node>

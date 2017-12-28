@@ -226,6 +226,12 @@ public class ChangesTracking {
         }
       }
     });
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (LOCK) {
+        }
+      }
+    });
   }
 
   private boolean isUnderVcs(@NotNull SModel model) {
