@@ -266,7 +266,7 @@ public class ChangesTracking {
     DataSource ds = model.getSource();
     if (ds instanceof FileDataSource) {
       VirtualFile file = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) ds).getFile());
-      return FileStatusManager.getInstance(myProject).getStatus(file);
+      return (file == null ? FileStatus.UNKNOWN : FileStatusManager.getInstance(myProject).getStatus(file));
     } else if (ds instanceof FilePerRootDataSource) {
       // todo: do we need status at all? 
       return null;

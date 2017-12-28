@@ -6532,18 +6532,30 @@
               </node>
             </node>
             <node concept="3cpWs6" id="2LgKyNJiayA" role="3cqZAp">
-              <node concept="2OqwBi" id="2LgKyNJiayC" role="3cqZAk">
-                <node concept="2YIFZM" id="2LgKyNJiayD" role="2Oq$k0">
-                  <ref role="37wK5l" to="jlcu:~FileStatusManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.FileStatusManager" resolve="getInstance" />
-                  <ref role="1Pybhc" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
-                  <node concept="37vLTw" id="2LgKyNJiayE" role="37wK5m">
-                    <ref role="3cqZAo" node="2JwSLRbzlnZ" resolve="myProject" />
+              <node concept="3K4zz7" id="7Qr57QrXvMC" role="3cqZAk">
+                <node concept="10M0yZ" id="7Qr57QrXDBu" role="3K4E3e">
+                  <ref role="3cqZAo" to="jlcu:~FileStatus.UNKNOWN" resolve="UNKNOWN" />
+                  <ref role="1PxDUh" to="jlcu:~FileStatus" resolve="FileStatus" />
+                </node>
+                <node concept="3clFbC" id="7Qr57QrXneb" role="3K4Cdx">
+                  <node concept="10Nm6u" id="7Qr57QrXqIA" role="3uHU7w" />
+                  <node concept="37vLTw" id="7Qr57QrXiBI" role="3uHU7B">
+                    <ref role="3cqZAo" node="2LgKyNJ8d8I" resolve="file" />
                   </node>
                 </node>
-                <node concept="liA8E" id="2LgKyNJiayF" role="2OqNvi">
-                  <ref role="37wK5l" to="jlcu:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                  <node concept="37vLTw" id="2LgKyNJiayG" role="37wK5m">
-                    <ref role="3cqZAo" node="2LgKyNJ8d8I" resolve="file" />
+                <node concept="2OqwBi" id="2LgKyNJiayC" role="3K4GZi">
+                  <node concept="2YIFZM" id="2LgKyNJiayD" role="2Oq$k0">
+                    <ref role="37wK5l" to="jlcu:~FileStatusManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.FileStatusManager" resolve="getInstance" />
+                    <ref role="1Pybhc" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
+                    <node concept="37vLTw" id="2LgKyNJiayE" role="37wK5m">
+                      <ref role="3cqZAo" node="2JwSLRbzlnZ" resolve="myProject" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2LgKyNJiayF" role="2OqNvi">
+                    <ref role="37wK5l" to="jlcu:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
+                    <node concept="37vLTw" id="2LgKyNJiayG" role="37wK5m">
+                      <ref role="3cqZAo" node="2LgKyNJ8d8I" resolve="file" />
+                    </node>
                   </node>
                 </node>
               </node>
