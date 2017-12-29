@@ -74,6 +74,9 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
         final Wrappers._T<CheckTestStateListener> checkListener = new Wrappers._T<CheckTestStateListener>();
         myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
+            // CheckTestStateListener collects names from ITestNodeWrapper, which generally needs to access a model, 
+            // therefore, here's read action. Unlike JUnitCommand test, which is exectuted inside a command, this test 
+            // states it doesn't need write action to run. 
             checkListener.value = new CheckTestStateListener(success, failure);
             runState.addListener(checkListener.value);
           }

@@ -305,7 +305,10 @@
       <node id="4817461255759911189" at="122,32,123,26" concept="11" />
       <node id="4817461255760903560" at="131,40,132,23" concept="11" />
       <node id="8201582290548189895" at="136,39,137,22" concept="11" />
-      <node id="4817461255761476705" at="141,68,142,71" concept="11" />
+      <node id="3492362019010584899" at="141,68,142,109" concept="12" />
+      <node id="3492362019010585049" at="142,109,143,111" concept="12" />
+      <node id="3492362019010585203" at="143,111,144,125" concept="12" />
+      <node id="4817461255761476705" at="144,125,145,71" concept="11" />
       <node id="2786528417097566748" at="32,0,35,0" concept="3" trace="JUnitTestExecutor#(Ljetbrains/mps/baseLanguage/unitTest/execution/server/TestsContributor;)V" />
       <node id="3818729150937340872" at="42,22,45,5" concept="8" />
       <node id="3818729150937340878" at="49,25,52,5" concept="8" />
@@ -316,7 +319,6 @@
       <node id="6339244025083886689" at="79,33,83,5" concept="8" />
       <node id="4817461255760890193" at="130,0,134,0" concept="9" trace="getExecutionError#()Ljava/lang/Throwable;" />
       <node id="8201582290548188433" at="135,0,139,0" concept="9" trace="getListener#()Lorg/junit/runner/notification/RunListener;" />
-      <node id="6796535740154099907" at="140,0,144,0" concept="9" trace="createListener#(Ljava/lang/Iterable;)Lorg/junit/runner/notification/RunListener;" />
       <node id="6796535740154099890" at="87,89,92,5" concept="7" />
       <node id="1904857099551614401" at="112,0,117,0" concept="9" trace="updateRunner#(Lorg/junit/runner/Request;)V" />
       <node id="6796535740154100467" at="41,0,47,0" concept="9" trace="init#()V" />
@@ -324,6 +326,7 @@
       <node id="5097223082294409800" at="95,0,101,0" concept="9" trace="stopRun#()V" />
       <node id="6796535740154099882" at="87,0,94,0" concept="9" trace="doExecute#(Lorg/junit/runner/JUnitCore;Ljava/lang/Iterable;)V" />
       <node id="4817461255760879882" at="102,48,109,5" concept="8" />
+      <node id="6796535740154099907" at="140,0,147,0" concept="9" trace="createListener#(Ljava/lang/Iterable;)Lorg/junit/runner/notification/RunListener;" />
       <node id="4817461255759975626" at="102,0,111,0" concept="9" trace="processThrowable#(Ljava/lang/Throwable;)V" />
       <node id="6796535740154099862" at="75,0,86,0" concept="9" trace="prepareJUnitCore#(Ljava/lang/Iterable;)Lorg/junit/runner/JUnitCore;" />
       <node id="1029577880240174207" at="57,23,72,5" concept="20" />
@@ -337,7 +340,6 @@
       <scope id="4817461255759908433" at="122,32,123,26" />
       <scope id="4817461255760890197" at="131,40,132,23" />
       <scope id="8201582290548188436" at="136,39,137,22" />
-      <scope id="6796535740154099912" at="141,68,142,71" />
       <scope id="4817461255759835997" at="63,31,65,45" />
       <scope id="6796535740154099822" at="67,0,69,26">
         <var name="t" id="6796535740154099827" />
@@ -362,9 +364,7 @@
       </scope>
       <scope id="4817461255760890193" at="130,0,134,0" />
       <scope id="8201582290548188433" at="135,0,139,0" />
-      <scope id="6796535740154099907" at="140,0,144,0">
-        <var name="requests" id="6796535740154099909" />
-      </scope>
+      <scope id="6796535740154099912" at="141,68,145,71" />
       <scope id="6796535740154099889" at="87,89,92,5" />
       <scope id="6796535740154099890" at="87,89,92,5">
         <var name="request" id="6796535740154099892" />
@@ -381,6 +381,9 @@
         <var name="requests" id="6796535740154099885" />
       </scope>
       <scope id="4817461255759975629" at="102,48,109,5" />
+      <scope id="6796535740154099907" at="140,0,147,0">
+        <var name="requests" id="6796535740154099909" />
+      </scope>
       <scope id="6796535740154099839" at="58,9,66,7">
         <var name="jUnitCore" id="6796535740154099852" />
         <var name="requests" id="6796535740154099845" />
@@ -397,7 +400,7 @@
       </scope>
       <scope id="6796535740154099820" at="56,25,72,5" />
       <scope id="6796535740154099818" at="55,0,74,0" />
-      <unit id="6796535740154099806" at="22,0,145,0" name="jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor" />
+      <unit id="6796535740154099806" at="22,0,148,0" name="jetbrains.mps.baseLanguage.unitTest.execution.server.JUnitTestExecutor" />
     </file>
   </root>
   <root nodeRef="r:a8dde698-9468-4a76-b89d-abdfa4716001(jetbrains.mps.baseLanguage.unitTest.execution.server)/6796535740154100250">

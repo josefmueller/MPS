@@ -139,6 +139,9 @@ public class JUnitTestExecutor implements TestExecutor {
 
   @NotNull
   protected RunListener createListener(Iterable<Request> requests) {
+    // In fact, wrap of System.out makes little sense here. One of the CommandOutputStream ideas is to track 
+    // output and ensure there's \n in front of a synch token. However, any output to System.out here would go 
+    // unnoticed. For the COS to work as expected, a belly dance of DefaultTestExecutor is needed (when a COS is System.out) 
     return new DefaultRunListener(new CommandOutputStream(System.out));
   }
 }

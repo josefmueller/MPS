@@ -24,7 +24,8 @@ public class TestEvent {
   private final long myTime;
   public TestEvent(String token, Description description) {
     myToken = token;
-    myTestCaseName = description.getTestClass().getName();
+    // description.getTestClass() may be null (e.g. when failure indicates an issue with loading of test class) 
+    myTestCaseName = description.getClassName();
     myTestMethodName = description.getMethodName();
     Runtime runtime = Runtime.getRuntime();
     myMemoryUsage = runtime.totalMemory() - runtime.freeMemory();

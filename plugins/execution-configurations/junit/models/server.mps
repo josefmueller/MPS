@@ -2196,6 +2196,21 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ti9jVZ8rz8" role="3clF47">
+        <node concept="3SKdUt" id="31Rnc32ci53" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci55" role="3SKWNk">
+            <property role="3SKdUp" value="In fact, wrap of System.out makes little sense here. One of the CommandOutputStream ideas is to track" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="31Rnc32ci7p" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci7r" role="3SKWNk">
+            <property role="3SKdUp" value="output and ensure there's \n in front of a synch token. However, any output to System.out here would go" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="31Rnc32ci9N" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci9P" role="3SKWNk">
+            <property role="3SKdUp" value="unnoticed. For the COS to work as expected, a belly dance of DefaultTestExecutor is needed (when a COS is System.out)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4br3RNORFLx" role="3cqZAp">
           <node concept="2ShNRf" id="2SyXq5Nkh0B" role="3clFbG">
             <node concept="1pGfFk" id="2SyXq5Nkh0C" role="2ShVmc">

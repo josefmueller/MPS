@@ -369,6 +369,10 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
@@ -379,6 +383,12 @@
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -1434,6 +1444,7 @@
   <node concept="312cEu" id="56tRMpP_f5M">
     <property role="TrG5h" value="TestRunState" />
     <property role="3GE5qa" value="listener" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="56tRMpP_fiD" role="1B3o_S" />
     <node concept="Wx3nA" id="56tRMpP_f5N" role="jymVt">
       <property role="TrG5h" value="lock" />
@@ -3644,6 +3655,24 @@
         </node>
       </node>
     </node>
+    <node concept="3UR2Jj" id="31Rnc32cVJS" role="lGtFl">
+      <node concept="TZ5HA" id="31Rnc32cVJT" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc32cVJU" role="1dT_Ay">
+          <property role="1dT_AB" value="State of test execution; updates associated " />
+        </node>
+        <node concept="1dT_AA" id="31Rnc32d1_B" role="1dT_Ay">
+          <node concept="92FcH" id="31Rnc32d1_H" role="qph3F">
+            <node concept="TZ5HA" id="31Rnc32d1_J" role="2XjZqd" />
+            <node concept="VXe08" id="31Rnc32d5zF" role="92FcQ">
+              <ref role="VXe09" node="56tRMpP_Y8p" resolve="TestView" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="31Rnc32d1_A" role="1dT_Ay">
+          <property role="1dT_AB" value=" when there's a change." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="56tRMpP_fju">
     <property role="TrG5h" value="UnitTestProcessListener" />
@@ -3975,6 +4004,45 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_UyOW" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3UR2Jj" id="31Rnc32cpIT" role="lGtFl">
+      <node concept="TZ5HA" id="31Rnc32cpIU" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc32cpIV" role="1dT_Ay">
+          <property role="1dT_AB" value="Listener for an output of a Process, that parses TestEvent tokens in process's output stream and " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="31Rnc32c_uP" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc32c_uQ" role="1dT_Ay">
+          <property role="1dT_AB" value="update " />
+        </node>
+        <node concept="1dT_AA" id="31Rnc32cpRV" role="1dT_Ay">
+          <node concept="92FcH" id="31Rnc32cpS1" role="qph3F">
+            <node concept="TZ5HA" id="31Rnc32cpS3" role="2XjZqd" />
+            <node concept="VXe08" id="31Rnc32c_7w" role="92FcQ">
+              <ref role="VXe09" node="56tRMpP_f5M" resolve="TestRunState" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="31Rnc32cpRU" role="1dT_Ay">
+          <property role="1dT_AB" value=" with a help of TestEventsDispatcher." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="31Rnc32cB8S" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc32cB8T" role="1dT_Ay">
+          <property role="1dT_AB" value="You likely don't need this one unless there's " />
+        </node>
+        <node concept="1dT_AA" id="31Rnc32cB9a" role="1dT_Ay">
+          <node concept="92FcH" id="31Rnc32cB9g" role="qph3F">
+            <node concept="TZ5HA" id="31Rnc32cB9i" role="2XjZqd" />
+            <node concept="VXe08" id="31Rnc32cJ53" role="92FcQ">
+              <ref role="VXe09" node="56tRMpP_f5M" resolve="TestRunState" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="31Rnc32cB99" role="1dT_Ay">
+          <property role="1dT_AB" value=" you'd like to refresh." />
+        </node>
       </node>
     </node>
   </node>

@@ -9,6 +9,11 @@ import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 
+/**
+ * Listener for an output of a Process, that parses TestEvent tokens in process's output stream and 
+ * update {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with a help of TestEventsDispatcher.
+ * You likely don't need this one unless there's {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } you'd like to refresh.
+ */
 public class UnitTestProcessListener extends ProcessAdapter {
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;

@@ -175,6 +175,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -425,6 +431,21 @@
                   <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
                   <node concept="1bVj0M" id="5vTxdEzyTZc" role="37wK5m">
                     <node concept="3clFbS" id="5vTxdEzyTZd" role="1bW5cS">
+                      <node concept="3SKdUt" id="31Rnc32e5Sh" role="3cqZAp">
+                        <node concept="3SKdUq" id="31Rnc32e5Sj" role="3SKWNk">
+                          <property role="3SKdUp" value="CheckTestStateListener collects names from ITestNodeWrapper, which generally needs to access a model," />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="31Rnc32ebpl" role="3cqZAp">
+                        <node concept="3SKdUq" id="31Rnc32ebpn" role="3SKWNk">
+                          <property role="3SKdUp" value="therefore, here's read action. Unlike JUnitCommand test, which is exectuted inside a command, this test" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="31Rnc32eiZo" role="3cqZAp">
+                        <node concept="3SKdUq" id="31Rnc32eiZq" role="3SKWNk">
+                          <property role="3SKdUp" value="states it doesn't need write action to run." />
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="5vTxdEzyTZe" role="3cqZAp">
                         <node concept="37vLTI" id="5vTxdEzyTZf" role="3clFbG">
                           <node concept="2ShNRf" id="5vTxdEzyTZg" role="37vLTx">

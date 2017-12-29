@@ -144,6 +144,12 @@
       <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -329,19 +335,19 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="31Rnc32dTlj" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32dTll" role="3SKWNk">
+            <property role="3SKdUp" value="description.getTestClass() may be null (e.g. when failure indicates an issue with loading of test class)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1zHDQsywvjm" role="3cqZAp">
           <node concept="37vLTI" id="1zHDQsywvjn" role="3clFbG">
-            <node concept="2OqwBi" id="1zHDQsywvjo" role="37vLTx">
-              <node concept="2OqwBi" id="1zHDQsywvjp" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxglket" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1zHDQsywvnV" resolve="description" />
-                </node>
-                <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
-                  <ref role="37wK5l" to="cvlm:~Description.getTestClass():java.lang.Class" resolve="getTestClass" />
-                </node>
+            <node concept="2OqwBi" id="1zHDQsywvjp" role="37vLTx">
+              <node concept="37vLTw" id="2BHiRxglket" role="2Oq$k0">
+                <ref role="3cqZAo" node="1zHDQsywvnV" resolve="description" />
               </node>
-              <node concept="liA8E" id="1zHDQsywvjs" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+              <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
+                <ref role="37wK5l" to="cvlm:~Description.getClassName():java.lang.String" resolve="getClassName" />
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxeuA$K" role="37vLTJ">
