@@ -4,11 +4,15 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Description;
+import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import org.junit.runner.notification.Failure;
 
+/**
+ * JUnit test listener that spits out control sequences into supplied stream. 
+ * These control sequences are for external process to receive JUnit events.
+ */
 public class DefaultRunListener extends RunListener {
   private final CommandOutputStream myOutput;
-  private int myFailureCount = 0;
 
   public DefaultRunListener(CommandOutputStream out) {
     myOutput = out;
@@ -16,34 +20,30 @@ public class DefaultRunListener extends RunListener {
 
   @Override
   public void testFinished(Description description) throws Exception {
-    this.printSyncToken(("<FINISH_TEST>"), description);
+    this.printSyncToken(TestEvent.FINISH_TEST_PREFIX, description);
   }
 
   @Override
   public void testFailure(Failure failure) throws Exception {
-    this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
+    this.printSyncToken(TestEvent.FAILURE_TEST_PREFIX, failure.getDescription());
     failure.getException().printStackTrace(System.err);
-    this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
-    ++myFailureCount;
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_BEGIN>"), failure.getDescription());
+    this.printSyncToken(TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, failure.getDescription());
     failure.getException().printStackTrace(System.err);
-    this.printSyncToken(("<TEST_ASSUMPTION_FAILURE_END>"), failure.getDescription());
   }
 
   @Override
   public void testIgnored(Description description) {
-    this.printSyncToken(("<TEST_IGNORE_BEGIN>"), description);
+    this.printSyncToken(TestEvent.IGNORE_FAILURE_TEST_PREFIX, description);
     System.err.println(description + " ignored");
-    this.printSyncToken(("<TEST_IGNORE_END>"), description);
   }
 
   @Override
   public void testStarted(Description description) throws Exception {
-    printSyncToken(("<START_TEST>"), description);
+    printSyncToken(TestEvent.START_TEST_PREFIX, description);
   }
 
   private void printSyncToken(String tokenPrefix, Description description) {
@@ -64,9 +64,4 @@ public class DefaultRunListener extends RunListener {
       myOutput.flushSafe();
     }
   }
-
-  public int getFailureCount() {
-    return myFailureCount;
-  }
-
 }

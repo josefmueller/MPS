@@ -13,11 +13,8 @@ public class TestEvent {
   public static final String START_TEST_PREFIX = "<START_TEST>";
   public static final String FINISH_TEST_PREFIX = "<FINISH_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
-  public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
   public static final String ASSUMPTION_FAILURE_TEST_PREFIX = "<TEST_ASSUMPTION_FAILURE_BEGIN>";
-  public static final String ASSUMPTION_FAILURE_TEST_SUFFIX = "<TEST_ASSUMPTION_FAILURE_END>";
   public static final String IGNORE_FAILURE_TEST_PREFIX = "<TEST_IGNORE_BEGIN>";
-  public static final String IGNORE_FAILURE_TEST_SUFFIX = "<TEST_IGNORE_END>";
 
   private static List<String> ALL_TOKENS;
   private final String myToken;
@@ -118,7 +115,7 @@ public class TestEvent {
     if (messageString.startsWith(expectedToken)) {
       String params = messageString.substring(expectedToken.length());
       {
-        Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0pb;
+        Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0mb;
         Matcher _matcher_0 = _pattern_0.matcher(params);
         if (_matcher_0.matches()) {
           testEvent = new TestEvent(expectedToken, _matcher_0.group(1), _matcher_0.group(2), Long.parseLong(_matcher_0.group(3)), Long.parseLong(_matcher_0.group(4)));
@@ -129,7 +126,7 @@ public class TestEvent {
   }
 
   static {
-    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.FINISH_TEST_PREFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_SUFFIX, TestEvent.IGNORE_FAILURE_TEST_PREFIX, TestEvent.IGNORE_FAILURE_TEST_SUFFIX);
+    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.FINISH_TEST_PREFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX, TestEvent.IGNORE_FAILURE_TEST_PREFIX);
   }
-  private static Pattern REGEXP_6m48zo_a0a0b0b0pb = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
+  private static Pattern REGEXP_6m48zo_a0a0b0b0mb = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 }

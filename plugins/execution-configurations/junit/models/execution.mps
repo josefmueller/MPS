@@ -249,15 +249,6 @@
         <property role="Xl_RC" value="&lt;TEST_FAILURE_BEGIN&gt;" />
       </node>
     </node>
-    <node concept="Wx3nA" id="1zHDQsywvlA" role="jymVt">
-      <property role="TrG5h" value="FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="1zHDQsywvlB" role="1B3o_S" />
-      <node concept="17QB3L" id="1zHDQsywvlC" role="1tU5fm" />
-      <node concept="Xl_RD" id="1zHDQsywvlD" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_FAILURE_END&gt;" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="1zHDQsywvlE" role="jymVt">
       <property role="TrG5h" value="ASSUMPTION_FAILURE_TEST_PREFIX" />
       <property role="3TUv4t" value="true" />
@@ -267,15 +258,6 @@
         <property role="Xl_RC" value="&lt;TEST_ASSUMPTION_FAILURE_BEGIN&gt;" />
       </node>
     </node>
-    <node concept="Wx3nA" id="1zHDQsywvlI" role="jymVt">
-      <property role="TrG5h" value="ASSUMPTION_FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="1zHDQsywvlJ" role="1B3o_S" />
-      <node concept="17QB3L" id="1zHDQsywvlK" role="1tU5fm" />
-      <node concept="Xl_RD" id="1zHDQsywvlL" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_ASSUMPTION_FAILURE_END&gt;" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="5d37arGBotJ" role="jymVt">
       <property role="TrG5h" value="IGNORE_FAILURE_TEST_PREFIX" />
       <property role="3TUv4t" value="true" />
@@ -283,15 +265,6 @@
       <node concept="17QB3L" id="5d37arGBotL" role="1tU5fm" />
       <node concept="Xl_RD" id="5d37arGBotM" role="33vP2m">
         <property role="Xl_RC" value="&lt;TEST_IGNORE_BEGIN&gt;" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="5d37arGBotN" role="jymVt">
-      <property role="TrG5h" value="IGNORE_FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="5d37arGBotO" role="1B3o_S" />
-      <node concept="17QB3L" id="5d37arGBotP" role="1tU5fm" />
-      <node concept="Xl_RD" id="5d37arGBotQ" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_IGNORE_END&gt;" />
       </node>
     </node>
     <node concept="2tJIrI" id="5d37arGBomD" role="jymVt" />
@@ -1272,25 +1245,13 @@
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
                 </node>
-                <node concept="10M0yZ" id="1zHDQsywvnR" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="1zHDQsywvlA" resolve="FAILURE_TEST_SUFFIX" />
-                </node>
                 <node concept="10M0yZ" id="1zHDQsywvnS" role="HW$Y0">
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
                 </node>
-                <node concept="10M0yZ" id="1zHDQsywvnT" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="1zHDQsywvlI" resolve="ASSUMPTION_FAILURE_TEST_SUFFIX" />
-                </node>
                 <node concept="10M0yZ" id="5d37arGBFSg" role="HW$Y0">
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
-                </node>
-                <node concept="10M0yZ" id="5d37arGBFZ9" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="5d37arGBotN" resolve="IGNORE_FAILURE_TEST_SUFFIX" />
                 </node>
               </node>
             </node>
