@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.repository;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
@@ -23,9 +22,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.impl.IoFileSystem;

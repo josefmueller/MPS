@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.ant.AllModulesDataType" file="AllModulesDataType.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.Arg" file="Arg.java">
@@ -155,6 +156,7 @@
     <classNode extendsClassName="org.apache.tools.ant.taskdefs.ExecuteStreamHandler" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.RepositoryDataType" file="RepositoryDataType.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.build.ant.AllModulesDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.ModuleDataType" />
     <classNode dependClassName="jetbrains.mps.build.ant.ModulesDataType" />

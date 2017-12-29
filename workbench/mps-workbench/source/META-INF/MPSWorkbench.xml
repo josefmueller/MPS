@@ -7,11 +7,7 @@
       <implementation-class>jetbrains.mps.repository.FSNotificationsImprover</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.repository.MPSModulesRepositoryInitializingComponent</implementation-class>
-      <headless-implementation-class>jetbrains.mps.repository.CustomisableRepositoryInitializingComponent</headless-implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.repository.PluginModulesRepositoryInitializingComponent</implementation-class>
+      <implementation-class>jetbrains.mps.repository.RepositoryInitializingComponent</implementation-class>
     </component>
 
     <component>

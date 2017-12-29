@@ -30,7 +30,6 @@ public class ScriptData {
   public static final String ELEM_LIBRARY = "library";
 
   private static final String ELEM_REPO = "repository";
-  private static final String ELEM_REPO_ALL_MODULES = "allModules";
   private static final String ELEM_REPO_FOLDER = "folder";
   private static final String ELEM_REPO_MODULEFILE = "module";
 
@@ -103,7 +102,6 @@ public class ScriptData {
   public void saveRepo() {
     Element elem = new Element(ELEM_REPO);
 
-    elem.setAttribute(ELEM_REPO_ALL_MODULES, myRepo.includeAllModules + "");
 
     for (String f : myRepo.folders) {
       elem.addContent(new Element(ELEM_REPO_FOLDER).setAttribute(PATH, f));
@@ -115,7 +113,6 @@ public class ScriptData {
   }
   public void loadRepo(Element repoXML) {
     RepositoryDescriptor result = new RepositoryDescriptor();
-    result.includeAllModules = Boolean.parseBoolean(repoXML.getAttributeValue(ELEM_REPO_ALL_MODULES));
     for (Element e : repoXML.getChildren(ELEM_REPO_FOLDER)) {
       result.folders.add(e.getAttributeValue(PATH));
     }

@@ -637,35 +637,23 @@
         </node>
         <node concept="3clFbJ" id="63P3E8$mb3C" role="3cqZAp">
           <node concept="3clFbS" id="63P3E8$mb3D" role="3clFbx">
-            <node concept="3clFbJ" id="63P3E8$mb3E" role="3cqZAp">
-              <node concept="3clFbS" id="63P3E8$mb3F" role="3clFbx">
-                <node concept="3clFbF" id="63P3E8$mb3G" role="3cqZAp">
-                  <node concept="37vLTI" id="63P3E8$mb3H" role="3clFbG">
-                    <node concept="2OqwBi" id="63P3E8$mb3I" role="37vLTx">
-                      <node concept="2OqwBi" id="63P3E8$mb3J" role="2Oq$k0">
-                        <node concept="37vLTw" id="63P3E8$mb3K" role="2Oq$k0">
-                          <ref role="3cqZAo" node="63P3E8$mb3r" resolve="config" />
-                        </node>
-                        <node concept="liA8E" id="63P3E8$mb3L" role="2OqNvi">
-                          <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="63P3E8$mb3M" role="2OqNvi">
-                        <ref role="37wK5l" to="79ha:5hfNQWynXUe" resolve="withWorkbenchPath" />
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="63P3E8$mb3N" role="37vLTJ">
+            <node concept="3clFbF" id="63P3E8$mb3G" role="3cqZAp">
+              <node concept="37vLTI" id="63P3E8$mb3H" role="3clFbG">
+                <node concept="2OqwBi" id="63P3E8$mb3I" role="37vLTx">
+                  <node concept="2OqwBi" id="63P3E8$mb3J" role="2Oq$k0">
+                    <node concept="37vLTw" id="63P3E8$mb3K" role="2Oq$k0">
                       <ref role="3cqZAo" node="63P3E8$mb3r" resolve="config" />
                     </node>
+                    <node concept="liA8E" id="63P3E8$mb3L" role="2OqNvi">
+                      <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="63P3E8$mb3M" role="2OqNvi">
+                    <ref role="37wK5l" to="79ha:5hfNQWynXUe" resolve="withWorkbenchPath" />
                   </node>
                 </node>
-              </node>
-              <node concept="2OqwBi" id="63P3E8$mb3O" role="3clFbw">
-                <node concept="37vLTw" id="63P3E8$mb3P" role="2Oq$k0">
-                  <ref role="3cqZAo" node="63P3E8$mb3z" resolve="repo" />
-                </node>
-                <node concept="2OwXpG" id="63P3E8$mb3Q" role="2OqNvi">
-                  <ref role="2Oxat5" to="asz6:ubtK7iYy6B" resolve="includeAllModules" />
+                <node concept="37vLTw" id="63P3E8$mb3N" role="37vLTJ">
+                  <ref role="3cqZAo" node="63P3E8$mb3r" resolve="config" />
                 </node>
               </node>
             </node>

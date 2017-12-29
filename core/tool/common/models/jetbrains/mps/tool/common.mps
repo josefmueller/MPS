@@ -4132,15 +4132,6 @@
         <property role="Xl_RC" value="repository" />
       </node>
     </node>
-    <node concept="Wx3nA" id="ubtK7j0xdR" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ELEM_REPO_ALL_MODULES" />
-      <node concept="3Tm6S6" id="ubtK7j0xdS" role="1B3o_S" />
-      <node concept="17QB3L" id="ubtK7j0xdT" role="1tU5fm" />
-      <node concept="Xl_RD" id="ubtK7j0xdU" role="33vP2m">
-        <property role="Xl_RC" value="allModules" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="6aGZllYVH_k" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="ELEM_REPO_FOLDER" />
@@ -5003,32 +4994,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="6aGZllYVEIH" role="3cqZAp" />
-        <node concept="3clFbF" id="ubtK7j0w7t" role="3cqZAp">
-          <node concept="2OqwBi" id="ubtK7j0w7u" role="3clFbG">
-            <node concept="37vLTw" id="ubtK7j0w7v" role="2Oq$k0">
-              <ref role="3cqZAo" node="6aGZllYVjSN" resolve="elem" />
-            </node>
-            <node concept="liA8E" id="ubtK7j0w7w" role="2OqNvi">
-              <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-              <node concept="37vLTw" id="ubtK7j0B2G" role="37wK5m">
-                <ref role="3cqZAo" node="ubtK7j0xdR" resolve="ELEM_REPO_ALL_MODULES" />
-              </node>
-              <node concept="3cpWs3" id="ubtK7j0w7y" role="37wK5m">
-                <node concept="Xl_RD" id="ubtK7j0w7z" role="3uHU7w">
-                  <property role="Xl_RC" value="" />
-                </node>
-                <node concept="2OqwBi" id="ubtK7j0w7$" role="3uHU7B">
-                  <node concept="37vLTw" id="ubtK7j0w7_" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6aGZllYTY_Z" resolve="myRepo" />
-                  </node>
-                  <node concept="2OwXpG" id="ubtK7j0Bz2" role="2OqNvi">
-                    <ref role="2Oxat5" node="ubtK7iYy6B" resolve="includeAllModules" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="6aGZllYVFqF" role="3cqZAp" />
         <node concept="1DcWWT" id="6aGZllYVjT3" role="3cqZAp">
           <node concept="3clFbS" id="6aGZllYVjT4" role="2LFqv$">
@@ -5151,33 +5116,6 @@
             <node concept="2ShNRf" id="6aGZllYWdpn" role="33vP2m">
               <node concept="HV5vD" id="6aGZllYWdxS" role="2ShVmc">
                 <ref role="HV5vE" node="6aGZllYQgzH" resolve="RepositoryDescriptor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="ubtK7j0C6L" role="3cqZAp">
-          <node concept="37vLTI" id="ubtK7j0C6M" role="3clFbG">
-            <node concept="2OqwBi" id="ubtK7j0C6N" role="37vLTJ">
-              <node concept="37vLTw" id="ubtK7j0C6O" role="2Oq$k0">
-                <ref role="3cqZAo" node="6aGZllYWdn$" resolve="result" />
-              </node>
-              <node concept="2OwXpG" id="ubtK7j0EMp" role="2OqNvi">
-                <ref role="2Oxat5" node="ubtK7iYy6B" resolve="includeAllModules" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="ubtK7j0C6Q" role="37vLTx">
-              <ref role="1Pybhc" to="wyt6:~Boolean" resolve="Boolean" />
-              <ref role="37wK5l" to="wyt6:~Boolean.parseBoolean(java.lang.String):boolean" resolve="parseBoolean" />
-              <node concept="2OqwBi" id="ubtK7j0C6R" role="37wK5m">
-                <node concept="37vLTw" id="ubtK7j0C6S" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6aGZllYV3q1" resolve="repoXML" />
-                </node>
-                <node concept="liA8E" id="ubtK7j0C6T" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                  <node concept="37vLTw" id="ubtK7j0EEk" role="37wK5m">
-                    <ref role="3cqZAo" node="ubtK7j0xdR" resolve="ELEM_REPO_ALL_MODULES" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -9982,15 +9920,6 @@
   <node concept="312cEu" id="6aGZllYQgzH">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="RepositoryDescriptor" />
-    <node concept="312cEg" id="ubtK7iYy6B" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="includeAllModules" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm1VV" id="ubtK7iYy6C" role="1B3o_S" />
-      <node concept="10P_77" id="ubtK7iYy6D" role="1tU5fm" />
-      <node concept="3clFbT" id="ubtK7iYy6E" role="33vP2m" />
-    </node>
     <node concept="312cEg" id="6aGZllYQt7F" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />

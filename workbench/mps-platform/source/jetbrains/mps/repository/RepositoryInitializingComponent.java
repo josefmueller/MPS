@@ -19,20 +19,22 @@ import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
+import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.workbench.action.IRegistryManager;
 
-public final class MPSModulesRepositoryInitializingComponent extends RepositoryInitializingComponentBase {
+public final class RepositoryInitializingComponent extends RepositoryInitializingComponentBase {
   @SuppressWarnings("UnusedParameters")
-  public MPSModulesRepositoryInitializingComponent(FSNotificationsImprover improver,
-                                                   MPSCoreComponents coreComponents,
-                                                   IRegistryManager registryManager,
-                                                   IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                                   IdeaFSComponent fs,
-                                                   PersistentFS filesystem //see MPS-22970
+  public RepositoryInitializingComponent(FSNotificationsImprover improver,
+                                         MPSCoreComponents coreComponents,
+                                         IRegistryManager registryManager,
+                                         IdeaPluginFacetComponent ideaPluginFacetComponent,
+                                         IdeaFSComponent fs,
+                                         PersistentFS filesystem //see MPS-22970
   ) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
     addContributor(new BootstrapLibraryContributor(getFS()));
     addContributor(new WorkbenchLibraryContributor(getFS())); // needed only on sources
+    addContributor(new PluginLibraryContributor(getFS()));
   }
 }

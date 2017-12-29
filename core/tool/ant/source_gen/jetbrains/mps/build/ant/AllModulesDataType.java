@@ -4,7 +4,14 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.types.DataType;
 
+/**
+ * Occurences of <allmpsmodules></allmpsmodules> may be just removed
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class AllModulesDataType extends DataType {
+  @Deprecated
   public AllModulesDataType() {
   }
 }

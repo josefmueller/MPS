@@ -7,12 +7,12 @@ import org.apache.log4j.LogManager;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
-import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import java.io.File;
 import java.util.List;
@@ -38,7 +38,6 @@ import com.intellij.openapi.project.DumbService;
  */
 public final class IdeaEnvironment extends EnvironmentBase {
   private static final Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
-  private static IdeaEnvironment ourInitializingEnv;
 
   private IdeaTestApplication myIdeaApplication;
 
@@ -50,14 +49,6 @@ public final class IdeaEnvironment extends EnvironmentBase {
     super(config);
   }
 
-  /**
-   * This method should be used by environment-dependent application and project components to get initialization data
-   * from the environment. This differs from EnvironmentContainer.get() as one can ony obtain an already-initialized
-   * environment from the latter
-   */
-  public static IdeaEnvironment getInitializingEnvironment() {
-    return ourInitializingEnv;
-  }
 
   /**
    * creates a new IdeaEnvironment or returns the cached one
@@ -91,12 +82,13 @@ public final class IdeaEnvironment extends EnvironmentBase {
 
     EnvironmentBase.setIdeaPluginsToLoad(myConfig);
 
-    ourInitializingEnv = this;
-
     myIdeaApplication = createIdeaTestApp();
     disallowAccessToClosedProjectsDir();
 
     super.init();
+
+    MPSCoreComponents coreComponents = getMPSCoreComponents();
+    initLibraries(coreComponents.getLibraryInitializer());
   }
 
   private void disallowAccessToClosedProjectsDir() {
@@ -171,7 +163,6 @@ public final class IdeaEnvironment extends EnvironmentBase {
             myIdeaApplication.dispose();
           }
         });
-        ourInitializingEnv = null;
       }
     }, ModalityState.NON_MODAL);
   }
