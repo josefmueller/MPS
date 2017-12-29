@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import jetbrains.mps.lang.test.util.TestInProcessRunState;
@@ -57,7 +56,6 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
     public void startAndTerminate(final List<ITestNodeWrapper> testNodes) {
       try {
         final TestRunState runState = new TestRunState(testNodes, myProject);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         final TestInProcessRunState lightState = TestInProcessRunState.getInstance();
@@ -72,7 +70,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(runState));
 
         final int[] exitCode = {-1};
         final CountDownLatch latch = new CountDownLatch(1);

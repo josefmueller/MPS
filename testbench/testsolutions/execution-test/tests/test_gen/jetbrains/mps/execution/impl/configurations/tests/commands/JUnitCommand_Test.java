@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
@@ -60,8 +59,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
         TestRunState runState = new TestRunState(allTests, myProject);
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(runState));
         int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         if (exitcode != ListSequence.fromList(failure).count()) {
           Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);

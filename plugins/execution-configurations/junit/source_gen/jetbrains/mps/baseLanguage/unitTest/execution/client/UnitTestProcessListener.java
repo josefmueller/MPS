@@ -17,8 +17,8 @@ import com.intellij.execution.process.ProcessOutputTypes;
 public class UnitTestProcessListener extends ProcessAdapter {
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
-  public UnitTestProcessListener(TestEventsDispatcher dispatcher) {
-    myDispatcher = dispatcher;
+  public UnitTestProcessListener(TestRunState runState) {
+    myDispatcher = new TestEventsDispatcher(runState);
   }
 
   @Override
@@ -35,12 +35,12 @@ public class UnitTestProcessListener extends ProcessAdapter {
     TestEvent testEvent = TestEvent.parse(text.trim());
     if (testEvent != null) {
       myLastEvent = testEvent;
-      this.myDispatcher.onTestEvent(testEvent);
+      myDispatcher.onTestEvent(testEvent);
     } else {
       if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
         k = ProcessOutputTypes.STDERR;
       }
-      this.myDispatcher.onSimpleTextAvailable(text, k);
+      myDispatcher.onSimpleTextAvailable(text, k);
     }
   }
 }

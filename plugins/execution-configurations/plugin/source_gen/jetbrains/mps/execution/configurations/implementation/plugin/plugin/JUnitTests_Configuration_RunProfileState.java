@@ -22,7 +22,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
 import com.intellij.execution.process.ProcessListener;
@@ -64,7 +63,6 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
       throw new ExecutionException("Could not find tests to run");
     }
     TestRunState runState = new TestRunState(testNodes, mpsProject);
-    TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
     if (jUnitSettings.canExecuteInProcess(testNodes)) {
       processExecutor = new JUnitInProcessExecutor(mpsProject, testNodes);
@@ -73,7 +71,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     }
     ProcessHandler process = processExecutor.execute();
     final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);
-    ProcessListener listener = new UnitTestProcessListener(eventsDispatcher);
+    ProcessListener listener = new UnitTestProcessListener(runState);
     _FunctionTypes._void_P0_E0 disposeHandler = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         testViewComponent.dispose();

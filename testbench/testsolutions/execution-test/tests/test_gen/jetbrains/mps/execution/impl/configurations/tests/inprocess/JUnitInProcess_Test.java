@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import com.intellij.execution.process.ProcessHandler;
@@ -63,7 +62,6 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       try {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         final TestRunState runState = new TestRunState(testNodes, myProject);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         if (LOG.isInfoEnabled()) {
@@ -80,7 +78,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(runState));
         int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         int failedMustBe = ListSequence.fromList(failure).count();
         if (exitCode != failedMustBe) {

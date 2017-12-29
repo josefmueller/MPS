@@ -487,22 +487,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="6bfDvj8bDoW" role="3cqZAp">
-              <node concept="3cpWsn" id="6bfDvj8bDoX" role="3cpWs9">
-                <property role="TrG5h" value="eventsDispatcher" />
-                <node concept="3uibUv" id="6bfDvj8bDoY" role="1tU5fm">
-                  <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
-                </node>
-                <node concept="2ShNRf" id="6bfDvj8bDoZ" role="33vP2m">
-                  <node concept="1pGfFk" id="6bfDvj8bDp0" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpPByaK" resolve="TestEventsDispatcher" />
-                    <node concept="37vLTw" id="3GM_nagTrjL" role="37wK5m">
-                      <ref role="3cqZAo" node="6bfDvj8bDoD" resolve="runState" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="6bfDvj8bDp2" role="3cqZAp">
               <node concept="2LYoN1" id="6bfDvj8bDp3" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTsxA" role="2LYoN0">
@@ -511,8 +495,8 @@
                 <node concept="2ShNRf" id="6bfDvj8bDp5" role="2LYoN3">
                   <node concept="1pGfFk" id="6bfDvj8bDp6" role="2ShVmc">
                     <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                    <node concept="37vLTw" id="3GM_nagTBF_" role="37wK5m">
-                      <ref role="3cqZAo" node="6bfDvj8bDoX" resolve="eventsDispatcher" />
+                    <node concept="37vLTw" id="31Rnc32iRaZ" role="37wK5m">
+                      <ref role="3cqZAo" node="6bfDvj8bDoD" resolve="runState" />
                     </node>
                   </node>
                 </node>

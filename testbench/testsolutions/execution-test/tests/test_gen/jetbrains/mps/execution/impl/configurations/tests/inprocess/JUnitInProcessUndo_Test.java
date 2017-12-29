@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
 import com.intellij.execution.process.ProcessHandler;
@@ -54,10 +53,8 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
       try {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
         final TestRunState runState = new TestRunState(testNodes, myProject);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-        Executor processExecutor;
-        processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
+        Executor processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }
@@ -69,7 +66,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(runState));
         int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         if (exitcode != ListSequence.fromList(failure).count()) {
           Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);

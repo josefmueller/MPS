@@ -16,7 +16,6 @@
     <import index="ic9i" ref="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)" />
     <import index="uu3z" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.process(MPS.IDEA/)" />
     <import index="7fn4" ref="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="lk2n" ref="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)" />
     <import index="3v5a" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution(MPS.IDEA/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
@@ -345,22 +344,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="5vTxdEzyTYG" role="3cqZAp">
-              <node concept="3cpWsn" id="5vTxdEzyTYH" role="3cpWs9">
-                <property role="TrG5h" value="eventsDispatcher" />
-                <node concept="3uibUv" id="5vTxdEzyTYI" role="1tU5fm">
-                  <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
-                </node>
-                <node concept="2ShNRf" id="5vTxdEzyTYJ" role="33vP2m">
-                  <node concept="1pGfFk" id="5vTxdEzyTYK" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpPByaK" resolve="TestEventsDispatcher" />
-                    <node concept="37vLTw" id="5vTxdEzyTYL" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbH" id="5vTxdEzyTYM" role="3cqZAp" />
             <node concept="3cpWs8" id="5vTxdEzyTYN" role="3cqZAp">
               <node concept="3cpWsn" id="5vTxdEzyTYO" role="3cpWs9">
@@ -482,8 +465,8 @@
                   <node concept="2ShNRf" id="5vTxdEzyTZt" role="37wK5m">
                     <node concept="1pGfFk" id="5vTxdEzyTZu" role="2ShVmc">
                       <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                      <node concept="37vLTw" id="5vTxdEzyTZv" role="37wK5m">
-                        <ref role="3cqZAo" node="5vTxdEzyTYH" resolve="eventsDispatcher" />
+                      <node concept="37vLTw" id="31Rnc32hvRE" role="37wK5m">
+                        <ref role="3cqZAo" node="5vTxdEzyTYB" resolve="runState" />
                       </node>
                     </node>
                   </node>
@@ -930,22 +913,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="5vTxdEzz10l" role="3cqZAp">
-              <node concept="3cpWsn" id="5vTxdEzz10m" role="3cpWs9">
-                <property role="TrG5h" value="eventsDispatcher" />
-                <node concept="3uibUv" id="5vTxdEzz10n" role="1tU5fm">
-                  <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
-                </node>
-                <node concept="2ShNRf" id="5vTxdEzz10o" role="33vP2m">
-                  <node concept="1pGfFk" id="5vTxdEzz10p" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpPByaK" resolve="TestEventsDispatcher" />
-                    <node concept="37vLTw" id="5vTxdEzz10q" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzz10g" resolve="runState" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbH" id="5vTxdEzz10r" role="3cqZAp" />
             <node concept="3cpWs8" id="5vTxdEzz10s" role="3cqZAp">
               <node concept="3cpWsn" id="5vTxdEzz10t" role="3cpWs9">
@@ -1069,8 +1036,8 @@
                   <node concept="2ShNRf" id="5vTxdEzz116" role="37wK5m">
                     <node concept="1pGfFk" id="5vTxdEzz117" role="2ShVmc">
                       <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                      <node concept="37vLTw" id="5vTxdEzz118" role="37wK5m">
-                        <ref role="3cqZAo" node="5vTxdEzz10m" resolve="eventsDispatcher" />
+                      <node concept="37vLTw" id="31Rnc32hxgc" role="37wK5m">
+                        <ref role="3cqZAo" node="5vTxdEzz10g" resolve="runState" />
                       </node>
                     </node>
                   </node>
@@ -1610,22 +1577,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="5XEoQWrnLq" role="3cqZAp">
-              <node concept="3cpWsn" id="5XEoQWrnLr" role="3cpWs9">
-                <property role="TrG5h" value="eventsDispatcher" />
-                <node concept="3uibUv" id="5XEoQWrnLs" role="1tU5fm">
-                  <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
-                </node>
-                <node concept="2ShNRf" id="5XEoQWrnLt" role="33vP2m">
-                  <node concept="1pGfFk" id="5XEoQWrnLu" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpPByaK" resolve="TestEventsDispatcher" />
-                    <node concept="37vLTw" id="5XEoQWrnLv" role="37wK5m">
-                      <ref role="3cqZAo" node="5XEoQWrnLl" resolve="runState" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbH" id="5XEoQWrnLw" role="3cqZAp" />
             <node concept="3cpWs8" id="5XEoQWrnLx" role="3cqZAp">
               <node concept="3cpWsn" id="5XEoQWrnLy" role="3cpWs9">
@@ -1633,14 +1584,7 @@
                 <node concept="3uibUv" id="5XEoQWrnLz" role="1tU5fm">
                   <ref role="3uigEE" to="ic9i:1b7CZFPOU09" resolve="Executor" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="5XEoQWrnL$" role="3cqZAp">
-              <node concept="37vLTI" id="5XEoQWrnL_" role="3clFbG">
-                <node concept="37vLTw" id="5XEoQWrnLA" role="37vLTJ">
-                  <ref role="3cqZAo" node="5XEoQWrnLy" resolve="processExecutor" />
-                </node>
-                <node concept="2ShNRf" id="5XEoQWrnLB" role="37vLTx">
+                <node concept="2ShNRf" id="5XEoQWrnLB" role="33vP2m">
                   <node concept="1pGfFk" id="5XEoQWrnLC" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="1jxXqW" id="2qFJdjDAEin" role="37wK5m" />
@@ -1739,8 +1683,8 @@
                   <node concept="2ShNRf" id="31Rnc327pU1" role="37wK5m">
                     <node concept="1pGfFk" id="31Rnc327pU2" role="2ShVmc">
                       <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                      <node concept="37vLTw" id="31Rnc327pU3" role="37wK5m">
-                        <ref role="3cqZAo" node="5XEoQWrnLr" resolve="eventsDispatcher" />
+                      <node concept="37vLTw" id="31Rnc32hxU_" role="37wK5m">
+                        <ref role="3cqZAo" node="5XEoQWrnLl" resolve="runState" />
                       </node>
                     </node>
                   </node>
