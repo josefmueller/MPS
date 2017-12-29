@@ -222,7 +222,6 @@
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
-      <concept id="1225271546410" name="jetbrains.mps.baseLanguage.structure.TrimOperation" flags="nn" index="17S1cR" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -3719,65 +3718,44 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5VAf8qXCUht" role="jymVt" />
-    <node concept="3clFb_" id="56tRMpP_fkk" role="jymVt">
-      <property role="TrG5h" value="isTerminatedEvent" />
-      <node concept="10P_77" id="56tRMpP_fkl" role="3clF45" />
-      <node concept="3Tm6S6" id="56tRMpP_fkm" role="1B3o_S" />
-      <node concept="3clFbS" id="56tRMpP_fkn" role="3clF47">
-        <node concept="1DcWWT" id="56tRMpP_fko" role="3cqZAp">
-          <node concept="3clFbS" id="56tRMpP_fkp" role="2LFqv$">
-            <node concept="3clFbJ" id="56tRMpP_fkq" role="3cqZAp">
-              <node concept="2OqwBi" id="56tRMpP_fkr" role="3clFbw">
-                <node concept="2OqwBi" id="56tRMpP_fks" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTsG8" role="2Oq$k0">
-                    <ref role="3cqZAo" node="56tRMpP_fkA" resolve="element" />
-                  </node>
-                  <node concept="liA8E" id="56tRMpP_fku" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~StackTraceElement.getClassName():java.lang.String" resolve="getClassName" />
-                  </node>
+    <node concept="3clFb_" id="31Rnc32eHZQ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="processTerminated" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="31Rnc32eHZR" role="1B3o_S" />
+      <node concept="3cqZAl" id="31Rnc32eHZT" role="3clF45" />
+      <node concept="37vLTG" id="31Rnc32eHZU" role="3clF46">
+        <property role="TrG5h" value="event" />
+        <node concept="3uibUv" id="31Rnc32eHZV" role="1tU5fm">
+          <ref role="3uigEE" to="uu3z:~ProcessEvent" resolve="ProcessEvent" />
+        </node>
+        <node concept="2AHcQZ" id="31Rnc32eHZW" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="31Rnc32eHZX" role="3clF47">
+        <node concept="3clFbF" id="31Rnc32eIC$" role="3cqZAp">
+          <node concept="2OqwBi" id="31Rnc32eIC_" role="3clFbG">
+            <node concept="liA8E" id="31Rnc32eICD" role="2OqNvi">
+              <ref role="37wK5l" node="56tRMpPBy7H" resolve="onProcessTerminated" />
+              <node concept="2OqwBi" id="31Rnc32eICE" role="37wK5m">
+                <node concept="37vLTw" id="31Rnc32eICF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="31Rnc32eHZU" resolve="event" />
                 </node>
-                <node concept="liA8E" id="56tRMpP_fkv" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="2OqwBi" id="56tRMpP_fkw" role="37wK5m">
-                    <node concept="3VsKOn" id="56tRMpP_fkx" role="2Oq$k0">
-                      <ref role="3VsUkX" to="uu3z:~ProcessTerminatedListener" resolve="ProcessTerminatedListener" />
-                    </node>
-                    <node concept="liA8E" id="56tRMpP_fky" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="56tRMpP_fkz" role="3clFbx">
-                <node concept="3cpWs6" id="56tRMpP_fk$" role="3cqZAp">
-                  <node concept="3clFbT" id="56tRMpP_fk_" role="3cqZAk">
-                    <property role="3clFbU" value="true" />
-                  </node>
+                <node concept="liA8E" id="31Rnc32eICG" role="2OqNvi">
+                  <ref role="37wK5l" to="uu3z:~ProcessEvent.getText():java.lang.String" resolve="getText" />
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3cpWsn" id="56tRMpP_fkA" role="1Duv9x">
-            <property role="TrG5h" value="element" />
-            <node concept="3uibUv" id="56tRMpP_fkB" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~StackTraceElement" resolve="StackTraceElement" />
-            </node>
-          </node>
-          <node concept="2OqwBi" id="56tRMpP_fkC" role="1DdaDG">
-            <node concept="2YIFZM" id="56tRMpP_fkD" role="2Oq$k0">
-              <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-              <ref role="37wK5l" to="wyt6:~Thread.currentThread():java.lang.Thread" resolve="currentThread" />
-            </node>
-            <node concept="liA8E" id="56tRMpP_fkE" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Thread.getStackTrace():java.lang.StackTraceElement[]" resolve="getStackTrace" />
+            <node concept="37vLTw" id="31Rnc32eJ0r" role="2Oq$k0">
+              <ref role="3cqZAo" node="56tRMpP_fmD" resolve="myDispatcher" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="56tRMpP_fkF" role="3cqZAp">
-          <node concept="3clFbT" id="56tRMpP_fkG" role="3cqZAk">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
+      </node>
+      <node concept="2AHcQZ" id="31Rnc32eHZY" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5VAf8qXCURx" role="jymVt" />
@@ -3798,37 +3776,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="56tRMpP_fkO" role="3clF47">
-        <node concept="3clFbJ" id="56tRMpP_fkP" role="3cqZAp">
-          <node concept="3clFbS" id="56tRMpP_fkQ" role="3clFbx">
-            <node concept="3clFbF" id="56tRMpP_fkR" role="3cqZAp">
-              <node concept="2OqwBi" id="56tRMpP_fkS" role="3clFbG">
-                <node concept="2OqwBi" id="56tRMpP_fkT" role="2Oq$k0">
-                  <node concept="2OwXpG" id="56tRMpP_fkU" role="2OqNvi">
-                    <ref role="2Oxat5" node="56tRMpP_fmD" resolve="myDispatcher" />
-                  </node>
-                  <node concept="Xjq3P" id="56tRMpP_fkV" role="2Oq$k0" />
-                </node>
-                <node concept="liA8E" id="56tRMpP_fkW" role="2OqNvi">
-                  <ref role="37wK5l" node="56tRMpPBy7H" resolve="onProcessTerminated" />
-                  <node concept="2OqwBi" id="56tRMpP_fkX" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxgl3jt" role="2Oq$k0">
-                      <ref role="3cqZAo" node="56tRMpP_fkK" resolve="event" />
-                    </node>
-                    <node concept="liA8E" id="56tRMpP_fkZ" role="2OqNvi">
-                      <ref role="37wK5l" to="uu3z:~ProcessEvent.getText():java.lang.String" resolve="getText" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="56tRMpP_fl0" role="3clFbw">
-            <node concept="liA8E" id="56tRMpP_fl1" role="2OqNvi">
-              <ref role="37wK5l" node="56tRMpP_fkk" resolve="isTerminatedEvent" />
-            </node>
-            <node concept="Xjq3P" id="56tRMpP_fl2" role="2Oq$k0" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="56tRMpP_flh" role="3cqZAp">
           <node concept="3cpWsn" id="56tRMpP_fli" role="3cpWs9">
             <property role="TrG5h" value="text" />
@@ -3854,18 +3801,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="56tRMpP_flB" role="3cqZAp">
-          <node concept="3cpWsn" id="56tRMpP_flC" role="3cpWs9">
-            <property role="TrG5h" value="textTrimmed" />
-            <node concept="17QB3L" id="56tRMpP_flD" role="1tU5fm" />
-            <node concept="2OqwBi" id="56tRMpP_flE" role="33vP2m">
-              <node concept="37vLTw" id="3GM_nagTrg_" role="2Oq$k0">
-                <ref role="3cqZAo" node="56tRMpP_fli" resolve="text" />
-              </node>
-              <node concept="17S1cR" id="56tRMpP_flG" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="56tRMpP_flH" role="3cqZAp">
           <node concept="3cpWsn" id="56tRMpP_flI" role="3cpWs9">
             <property role="TrG5h" value="testEvent" />
@@ -3875,8 +3810,13 @@
             <node concept="2YIFZM" id="56tRMpP_flK" role="33vP2m">
               <ref role="1Pybhc" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
               <ref role="37wK5l" to="tpnd:1zHDQsywvhd" resolve="parse" />
-              <node concept="37vLTw" id="3GM_nagTsPt" role="37wK5m">
-                <ref role="3cqZAo" node="56tRMpP_flC" resolve="textTrimmed" />
+              <node concept="2OqwBi" id="31Rnc32f_Wj" role="37wK5m">
+                <node concept="37vLTw" id="31Rnc32f_Wk" role="2Oq$k0">
+                  <ref role="3cqZAo" node="56tRMpP_fli" resolve="text" />
+                </node>
+                <node concept="liA8E" id="31Rnc32f_Wl" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.trim():java.lang.String" resolve="trim" />
+                </node>
               </node>
             </node>
           </node>
@@ -4326,6 +4266,16 @@
               <node concept="3cpWsn" id="56tRMpPBy8H" role="1Duv9x">
                 <property role="TrG5h" value="lostTest" />
                 <node concept="17QB3L" id="56tRMpPBy8I" role="1tU5fm" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="31Rnc32fvXs" role="3cqZAp">
+              <node concept="3SKdUq" id="31Rnc32fvXu" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME it's odd to see an external code to manipulate with TestRunState internal stuff." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="31Rnc32fxrq" role="3cqZAp">
+              <node concept="3SKdUq" id="31Rnc32fxrs" role="3SKWNk">
+                <property role="3SKdUp" value="TestRunState could do it itself on terminate(). However, need to figure out if the message matching is vital here." />
               </node>
             </node>
           </node>

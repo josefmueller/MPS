@@ -27,6 +27,8 @@ public class TestEventsDispatcher {
         String lostClassName = lostTest.substring(0, lostTest.lastIndexOf("."));
         this.myState.looseTest(lostClassName, lostMethodName);
       }
+      // FIXME it's odd to see an external code to manipulate with TestRunState internal stuff. 
+      // TestRunState could do it itself on terminate(). However, need to figure out if the message matching is vital here. 
     }
     this.myState.terminate();
   }

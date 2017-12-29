@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import com.intellij.execution.process.ProcessAdapter;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
-import com.intellij.execution.process.ProcessTerminatedListener;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
@@ -21,26 +21,18 @@ public class UnitTestProcessListener extends ProcessAdapter {
     myDispatcher = dispatcher;
   }
 
-  private boolean isTerminatedEvent() {
-    for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-      if (element.getClassName().equals(ProcessTerminatedListener.class.getName())) {
-        return true;
-      }
-    }
-    return false;
+  @Override
+  public void processTerminated(@NotNull ProcessEvent event) {
+    myDispatcher.onProcessTerminated(event.getText());
   }
 
   @Override
   public void onTextAvailable(ProcessEvent event, Key k) {
-    if (this.isTerminatedEvent()) {
-      this.myDispatcher.onProcessTerminated(event.getText());
-    }
     String text = event.getText();
     if (text == null) {
       return;
     }
-    String textTrimmed = ((text == null ? null : text.trim()));
-    TestEvent testEvent = TestEvent.parse(textTrimmed);
+    TestEvent testEvent = TestEvent.parse(text.trim());
     if (testEvent != null) {
       myLastEvent = testEvent;
       this.myDispatcher.onTestEvent(testEvent);
