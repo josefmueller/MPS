@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessEvent;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
@@ -59,11 +58,11 @@ public class JavaCommand_Test extends BaseTransformationTest {
       final ProcessEvent[] failed = new ProcessEvent[1];
       final boolean[] printed = new boolean[1];
       // todo show progress window 
-      OutputRedirector.redirect(process, new ProcessAdapter() {
+      process.addProcessListener(new ProcessAdapter() {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a1a3a3c(event.getText(), expectedSysErr)) {
+            if (neq_849b2c_a0a0a0a0a0a0d0d2(event.getText(), expectedSysErr)) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -89,7 +88,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
     private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0c(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-    private static boolean neq_849b2c_a0a0a0a0a1a3a3c(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a0a0d0d2(Object a, Object b) {
       return !(((a != null ? a.equals(b) : a == b)));
     }
   }

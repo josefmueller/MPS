@@ -25,7 +25,6 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnit
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
@@ -70,7 +69,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
         int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         if (exitcode != ListSequence.fromList(failure).count()) {
           Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);

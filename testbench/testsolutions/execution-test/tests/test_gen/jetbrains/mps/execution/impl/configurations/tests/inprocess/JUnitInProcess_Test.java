@@ -25,7 +25,6 @@ import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnit
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
@@ -79,7 +78,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
         int exitCode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         int failedMustBe = ListSequence.fromList(failure).count();
         if (exitCode != failedMustBe) {

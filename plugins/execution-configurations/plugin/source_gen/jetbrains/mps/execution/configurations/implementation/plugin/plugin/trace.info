@@ -1504,25 +1504,26 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/5963359171344105821">
     <file name="DeployPlugins_Configuration_RunProfileState.java">
-      <node id="5963359171344105821" at="42,177,43,39" concept="5" />
-      <node id="5963359171344105821" at="43,39,44,32" concept="5" />
-      <node id="5963359171344105821" at="46,68,47,16" concept="11" />
-      <node id="5963359171344105821" at="49,45,50,16" concept="11" />
-      <node id="5963359171344105821" at="53,110,54,49" concept="10" />
-      <node id="4283566179239255029" at="54,49,55,65" concept="10" />
-      <node id="4283566179239263109" at="56,25,57,63" concept="18" />
-      <node id="8386475153645068395" at="58,5,59,0" concept="13" />
-      <node id="8386475153645079197" at="59,0,60,41" concept="10" />
-      <node id="5963359171344154863" at="60,41,61,0" concept="13" />
-      <node id="5963359171344154887" at="61,0,62,67" concept="10" />
-      <node id="5963359171344154895" at="63,79,64,23" concept="5" />
-      <node id="7911244941554258215" at="64,23,65,42" concept="5" />
-      <node id="5963359171344968269" at="65,42,66,69" concept="18" />
-      <node id="5963359171344154904" at="67,5,68,0" concept="13" />
-      <node id="5963359171344154905" at="68,0,69,75" concept="10" />
-      <node id="5963359171344154912" at="69,75,70,73" concept="5" />
-      <node id="5963359171344154919" at="70,73,71,0" concept="13" />
-      <node id="5963359171344154920" at="71,0,72,27" concept="10" />
+      <node id="5963359171344105821" at="41,177,42,39" concept="5" />
+      <node id="5963359171344105821" at="42,39,43,32" concept="5" />
+      <node id="5963359171344105821" at="45,68,46,16" concept="11" />
+      <node id="5963359171344105821" at="48,45,49,16" concept="11" />
+      <node id="5963359171344105821" at="52,110,53,49" concept="10" />
+      <node id="4283566179239255029" at="53,49,54,65" concept="10" />
+      <node id="4283566179239263109" at="55,25,56,63" concept="18" />
+      <node id="8386475153645068395" at="57,5,58,0" concept="13" />
+      <node id="8386475153645079197" at="58,0,59,41" concept="10" />
+      <node id="5963359171344154863" at="59,41,60,0" concept="13" />
+      <node id="5963359171344154887" at="60,0,61,67" concept="10" />
+      <node id="5963359171344154895" at="62,79,63,23" concept="5" />
+      <node id="7911244941554258215" at="63,23,64,42" concept="5" />
+      <node id="5963359171344968269" at="64,42,65,69" concept="18" />
+      <node id="5963359171344154904" at="66,5,67,0" concept="13" />
+      <node id="5963359171344154905" at="67,0,68,75" concept="10" />
+      <node id="5963359171344154912" at="68,75,69,73" concept="5" />
+      <node id="5963359171344154919" at="69,73,70,0" concept="13" />
+      <node id="5963359171344154920" at="70,0,71,27" concept="10" />
+      <node id="5963359171344154925" at="72,9,73,119" concept="5" />
       <node id="8386475153643740462" at="77,41,78,65" concept="10" />
       <node id="8386475153643981612" at="78,65,79,0" concept="13" />
       <node id="6826028245108326763" at="80,61,81,103" concept="12" />
@@ -1553,17 +1554,17 @@
       <node id="5963359171344582185" at="124,30,125,33" concept="5" />
       <node id="5963359171344105821" at="131,60,132,18" concept="11" />
       <node id="5963359171344105821" at="133,5,134,17" concept="11" />
-      <node id="5963359171344105821" at="38,0,40,0" concept="6" trace="myRunConfiguration" />
-      <node id="5963359171344105821" at="40,0,42,0" concept="6" trace="myEnvironment" />
-      <node id="5963359171344105821" at="46,0,49,0" concept="9" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
-      <node id="5963359171344105821" at="49,0,52,0" concept="9" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
-      <node id="4283566179239259217" at="55,65,58,5" concept="8" />
+      <node id="5963359171344105821" at="37,0,39,0" concept="6" trace="myRunConfiguration" />
+      <node id="5963359171344105821" at="39,0,41,0" concept="6" trace="myEnvironment" />
+      <node id="5963359171344105821" at="45,0,48,0" concept="9" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
+      <node id="5963359171344105821" at="48,0,51,0" concept="9" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
+      <node id="4283566179239259217" at="54,65,57,5" concept="8" />
       <node id="8386475153644778754" at="86,89,89,17" concept="8" />
       <node id="5963359171344582185" at="124,0,127,0" concept="9" trace="invoke#()V" />
       <node id="5963359171344105821" at="130,55,133,5" concept="8" />
-      <node id="5963359171344105821" at="42,0,46,0" concept="3" trace="DeployPlugins_Configuration_RunProfileState#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/DeployPlugins_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
+      <node id="5963359171344105821" at="41,0,45,0" concept="3" trace="DeployPlugins_Configuration_RunProfileState#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/DeployPlugins_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
       <node id="6826028245107028525" at="105,0,109,13" concept="8" />
-      <node id="5963359171344154893" at="62,67,67,5" concept="8" />
+      <node id="5963359171344154893" at="61,67,66,5" concept="8" />
       <node id="5963359171344582185" at="122,52,127,10" concept="11" />
       <node id="5963359171344105821" at="130,0,136,0" concept="15" trace="canExecute#(Ljava/lang/String;)Z" />
       <node id="8386475153645012397" at="89,17,98,17" concept="19" />
@@ -1572,12 +1573,12 @@
       <node id="6826028245108311914" at="79,0,100,13" concept="8" />
       <node id="6826028245107028501" at="76,59,110,11" concept="8" />
       <node id="6826028245107028495" at="75,0,112,0" concept="9" trace="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
-      <node id="5963359171344154925" at="73,9,112,9" concept="5" />
-      <node id="5963359171344154923" at="72,27,117,5" concept="19" />
-      <node id="5963359171344105821" at="52,0,130,0" concept="9" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
-      <scope id="5963359171344105821" at="46,68,47,16" />
-      <scope id="5963359171344105821" at="49,45,50,16" />
-      <scope id="4283566179239259220" at="56,25,57,63" />
+      <node id="6462589300834794034" at="73,119,112,9" concept="5" />
+      <node id="5963359171344154923" at="71,27,117,5" concept="19" />
+      <node id="5963359171344105821" at="51,0,130,0" concept="9" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
+      <scope id="5963359171344105821" at="45,68,46,16" />
+      <scope id="5963359171344105821" at="48,45,49,16" />
+      <scope id="4283566179239259220" at="55,25,56,63" />
       <scope id="8386475153644778757" at="87,44,88,27" />
       <scope id="8386475153645012420" at="94,0,95,50">
         <var name="e" id="8386475153645012421" />
@@ -1589,13 +1590,13 @@
       <scope id="8386475153645012429" at="96,41,97,38" />
       <scope id="5963359171344582185" at="124,30,125,33" />
       <scope id="5963359171344105821" at="131,60,132,18" />
-      <scope id="5963359171344105821" at="42,177,44,32" />
+      <scope id="5963359171344105821" at="41,177,43,32" />
       <scope id="6826028245107028526" at="106,65,108,40">
         <var name="application" id="6826028245107028528" />
       </scope>
-      <scope id="5963359171344105821" at="46,0,49,0" />
-      <scope id="5963359171344105821" at="49,0,52,0" />
-      <scope id="5963359171344154894" at="63,79,66,69" />
+      <scope id="5963359171344105821" at="45,0,48,0" />
+      <scope id="5963359171344105821" at="48,0,51,0" />
+      <scope id="5963359171344154894" at="62,79,65,69" />
       <scope id="8386475153645012398" at="90,21,93,62">
         <var name="document" id="8386475153645012400" />
       </scope>
@@ -1604,7 +1605,7 @@
       </scope>
       <scope id="5963359171344154940" at="113,36,116,64" />
       <scope id="5963359171344582185" at="124,0,127,0" />
-      <scope id="5963359171344105821" at="42,0,46,0">
+      <scope id="5963359171344105821" at="41,0,45,0">
         <var name="configuration" id="5963359171344105821" />
         <var name="environment" id="5963359171344105821" />
         <var name="executor" id="5963359171344105821" />
@@ -1631,8 +1632,8 @@
       <scope id="6826028245107028495" at="75,0,112,0">
         <var name="event" id="6826028245107028498" />
       </scope>
-      <scope id="5963359171344154924" at="73,9,112,9" />
-      <scope id="5963359171344105821" at="53,110,128,5">
+      <scope id="5963359171344154924" at="72,9,112,9" />
+      <scope id="5963359171344105821" at="52,110,128,5">
         <var name="console" id="5963359171344154906" />
         <var name="deployScriptLocation" id="5963359171344154888" />
         <var name="process" id="5963359171344154921" />
@@ -1640,13 +1641,13 @@
         <var name="projectFinal" id="8386475153645079198" />
         <var name="script" id="4283566179239255030" />
       </scope>
-      <scope id="5963359171344105821" at="52,0,130,0">
+      <scope id="5963359171344105821" at="51,0,130,0">
         <var name="executor" id="5963359171344105821" />
         <var name="runner" id="5963359171344105821" />
       </scope>
       <unit id="5963359171344582185" at="123,118,127,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState$2" />
-      <unit id="6826028245107028493" at="74,150,112,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState$1" />
-      <unit id="5963359171344105821" at="37,0,137,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState" />
+      <unit id="6826028245107028493" at="74,37,112,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState$1" />
+      <unit id="5963359171344105821" at="36,0,137,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769033909448">
@@ -3429,86 +3430,86 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769034024381">
     <file name="MPSInstance_Configuration_RunProfileState.java">
-      <node id="6062668769034024381" at="39,173,40,39" concept="5" />
-      <node id="6062668769034024381" at="40,39,41,32" concept="5" />
-      <node id="6062668769034024381" at="43,68,44,16" concept="11" />
-      <node id="6062668769034024381" at="46,45,47,16" concept="11" />
-      <node id="6062668769034024381" at="50,110,51,49" concept="10" />
-      <node id="7126833505589644375" at="51,49,52,27" concept="10" />
-      <node id="8679254744081422828" at="52,27,53,0" concept="13" />
-      <node id="2126857271956970318" at="53,0,54,115" concept="10" />
-      <node id="7126833505589713378" at="54,115,55,539" concept="5" />
-      <node id="4672139882865627940" at="59,59,60,41" concept="5" />
-      <node id="4672139882865627973" at="60,41,61,38" concept="5" />
-      <node id="7126833505589784337" at="64,5,65,0" concept="13" />
-      <node id="6062668769034024384" at="65,0,66,75" concept="10" />
-      <node id="6062668769034024391" at="66,75,67,73" concept="5" />
-      <node id="6062668769034024397" at="68,5,69,47" concept="10" />
-      <node id="6062668769034024397" at="69,47,70,47" concept="10" />
-      <node id="6062668769034024397" at="70,47,71,52" concept="5" />
-      <node id="6062668769034024397" at="73,30,74,33" concept="5" />
-      <node id="6062668769034024381" at="80,60,81,50" concept="11" />
-      <node id="6062668769034024381" at="84,60,85,18" concept="11" />
-      <node id="6062668769034024381" at="87,62,88,18" concept="11" />
-      <node id="6062668769034024381" at="89,5,90,17" concept="11" />
-      <node id="6062668769034024381" at="35,0,37,0" concept="6" trace="myRunConfiguration" />
-      <node id="6062668769034024381" at="37,0,39,0" concept="6" trace="myEnvironment" />
-      <node id="6062668769034024381" at="43,0,46,0" concept="9" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
-      <node id="6062668769034024381" at="46,0,49,0" concept="9" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
-      <node id="6062668769034024397" at="73,0,76,0" concept="9" trace="invoke#()V" />
-      <node id="6062668769034024381" at="83,55,86,5" concept="8" />
-      <node id="6062668769034024381" at="86,5,89,5" concept="8" />
-      <node id="6062668769034024381" at="39,0,43,0" concept="3" trace="MPSInstance_Configuration_RunProfileState#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MPSInstance_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
-      <node id="6062668769034024381" at="79,0,83,0" concept="9" trace="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
-      <node id="4672139882865627933" at="58,0,63,0" concept="9" trace="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
-      <node id="6062668769034024397" at="71,52,76,10" concept="11" />
-      <node id="4672139882865554569" at="56,29,63,9" concept="5" />
-      <node id="4672139882865554538" at="55,539,64,5" concept="8" />
-      <node id="6062668769034024381" at="83,0,92,0" concept="15" trace="canExecute#(Ljava/lang/String;)Z" />
-      <node id="6062668769034024397" at="67,73,77,5" concept="1" />
-      <node id="6062668769034024381" at="49,0,79,0" concept="9" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
-      <scope id="6062668769034024381" at="43,68,44,16" />
-      <scope id="6062668769034024381" at="46,45,47,16" />
-      <scope id="6062668769034024397" at="73,30,74,33" />
-      <scope id="6062668769034024381" at="80,60,81,50" />
-      <scope id="6062668769034024381" at="84,60,85,18" />
-      <scope id="6062668769034024381" at="87,62,88,18" />
-      <scope id="6062668769034024381" at="39,173,41,32" />
-      <scope id="4672139882865627938" at="59,59,61,38" />
-      <scope id="6062668769034024381" at="43,0,46,0" />
-      <scope id="6062668769034024381" at="46,0,49,0" />
-      <scope id="6062668769034024397" at="73,0,76,0" />
-      <scope id="6062668769034024381" at="39,0,43,0">
+      <node id="6062668769034024381" at="38,173,39,39" concept="5" />
+      <node id="6062668769034024381" at="39,39,40,32" concept="5" />
+      <node id="6062668769034024381" at="42,68,43,16" concept="11" />
+      <node id="6062668769034024381" at="45,45,46,16" concept="11" />
+      <node id="6062668769034024381" at="49,110,50,49" concept="10" />
+      <node id="7126833505589644375" at="50,49,51,27" concept="10" />
+      <node id="8679254744081422828" at="51,27,52,0" concept="13" />
+      <node id="2126857271956970318" at="52,0,53,115" concept="10" />
+      <node id="7126833505589713378" at="53,115,54,539" concept="5" />
+      <node id="4672139882865627940" at="58,59,59,41" concept="5" />
+      <node id="4672139882865627973" at="59,41,60,38" concept="5" />
+      <node id="7126833505589784337" at="63,5,64,0" concept="13" />
+      <node id="6062668769034024384" at="64,0,65,75" concept="10" />
+      <node id="6062668769034024391" at="65,75,66,73" concept="5" />
+      <node id="6062668769034024397" at="67,5,68,47" concept="10" />
+      <node id="6062668769034024397" at="68,47,69,47" concept="10" />
+      <node id="6062668769034024397" at="69,47,70,52" concept="5" />
+      <node id="6062668769034024397" at="72,30,73,33" concept="5" />
+      <node id="6062668769034024381" at="79,60,80,50" concept="11" />
+      <node id="6062668769034024381" at="83,60,84,18" concept="11" />
+      <node id="6062668769034024381" at="86,62,87,18" concept="11" />
+      <node id="6062668769034024381" at="88,5,89,17" concept="11" />
+      <node id="6062668769034024381" at="34,0,36,0" concept="6" trace="myRunConfiguration" />
+      <node id="6062668769034024381" at="36,0,38,0" concept="6" trace="myEnvironment" />
+      <node id="6062668769034024381" at="42,0,45,0" concept="9" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
+      <node id="6062668769034024381" at="45,0,48,0" concept="9" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
+      <node id="6062668769034024397" at="72,0,75,0" concept="9" trace="invoke#()V" />
+      <node id="6062668769034024381" at="82,55,85,5" concept="8" />
+      <node id="6062668769034024381" at="85,5,88,5" concept="8" />
+      <node id="6062668769034024381" at="38,0,42,0" concept="3" trace="MPSInstance_Configuration_RunProfileState#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MPSInstance_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
+      <node id="6062668769034024381" at="78,0,82,0" concept="9" trace="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+      <node id="4672139882865627933" at="57,0,62,0" concept="9" trace="processTerminated#(Lcom/intellij/execution/process/ProcessEvent;)V" />
+      <node id="6062668769034024397" at="70,52,75,10" concept="11" />
+      <node id="4672139882865554569" at="55,29,62,9" concept="5" />
+      <node id="4672139882865554538" at="54,539,63,5" concept="8" />
+      <node id="6062668769034024381" at="82,0,91,0" concept="15" trace="canExecute#(Ljava/lang/String;)Z" />
+      <node id="6062668769034024397" at="66,73,76,5" concept="1" />
+      <node id="6062668769034024381" at="48,0,78,0" concept="9" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
+      <scope id="6062668769034024381" at="42,68,43,16" />
+      <scope id="6062668769034024381" at="45,45,46,16" />
+      <scope id="6062668769034024397" at="72,30,73,33" />
+      <scope id="6062668769034024381" at="79,60,80,50" />
+      <scope id="6062668769034024381" at="83,60,84,18" />
+      <scope id="6062668769034024381" at="86,62,87,18" />
+      <scope id="6062668769034024381" at="38,173,40,32" />
+      <scope id="4672139882865627938" at="58,59,60,38" />
+      <scope id="6062668769034024381" at="42,0,45,0" />
+      <scope id="6062668769034024381" at="45,0,48,0" />
+      <scope id="6062668769034024397" at="72,0,75,0" />
+      <scope id="6062668769034024381" at="38,0,42,0">
         <var name="configuration" id="6062668769034024381" />
         <var name="environment" id="6062668769034024381" />
         <var name="executor" id="6062668769034024381" />
       </scope>
-      <scope id="6062668769034024381" at="79,0,83,0" />
-      <scope id="4672139882865627933" at="58,0,63,0">
+      <scope id="6062668769034024381" at="78,0,82,0" />
+      <scope id="4672139882865627933" at="57,0,62,0">
         <var name="event" id="4672139882865627936" />
       </scope>
-      <scope id="4672139882865554539" at="56,29,63,9" />
-      <scope id="6062668769034024381" at="83,55,90,17" />
-      <scope id="6062668769034024397" at="68,5,76,10">
+      <scope id="4672139882865554539" at="55,29,62,9" />
+      <scope id="6062668769034024381" at="82,55,89,17" />
+      <scope id="6062668769034024397" at="67,5,75,10">
         <var name="_consoleView" id="6062668769034024397" />
         <var name="_processHandler" id="6062668769034024397" />
       </scope>
-      <scope id="6062668769034024381" at="83,0,92,0">
+      <scope id="6062668769034024381" at="82,0,91,0">
         <var name="executorId" id="6062668769034024381" />
       </scope>
-      <scope id="6062668769034024381" at="50,110,77,5">
+      <scope id="6062668769034024381" at="49,110,76,5">
         <var name="console" id="6062668769034024385" />
         <var name="files" id="2126857271956970319" />
         <var name="process" id="7126833505589644376" />
         <var name="project" id="6062668769034024381" />
       </scope>
-      <scope id="6062668769034024381" at="49,0,79,0">
+      <scope id="6062668769034024381" at="48,0,78,0">
         <var name="executor" id="6062668769034024381" />
         <var name="runner" id="6062668769034024381" />
       </scope>
-      <unit id="6062668769034024397" at="72,118,76,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState$2" />
-      <unit id="4672139882865627931" at="57,45,63,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState$1" />
-      <unit id="6062668769034024381" at="34,0,93,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState" />
+      <unit id="6062668769034024397" at="71,118,75,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState$2" />
+      <unit id="4672139882865627931" at="56,37,62,7" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState$1" />
+      <unit id="6062668769034024381" at="33,0,92,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769034024422">

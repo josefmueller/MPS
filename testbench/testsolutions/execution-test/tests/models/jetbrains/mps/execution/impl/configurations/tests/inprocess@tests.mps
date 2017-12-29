@@ -461,18 +461,19 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="5vTxdEzyTZq" role="3cqZAp">
-              <node concept="2YIFZM" id="5vTxdEzyTZr" role="3clFbG">
-                <ref role="37wK5l" to="lk2n:3oW7HLfqDla" resolve="redirect" />
-                <ref role="1Pybhc" to="lk2n:3oW7HLfqDl9" resolve="OutputRedirector" />
-                <node concept="37vLTw" id="5vTxdEzyTZs" role="37wK5m">
+            <node concept="3clFbF" id="31Rnc327dX_" role="3cqZAp">
+              <node concept="2OqwBi" id="31Rnc327eus" role="3clFbG">
+                <node concept="37vLTw" id="31Rnc327dXz" role="2Oq$k0">
                   <ref role="3cqZAo" node="5vTxdEzyTZ0" resolve="process" />
                 </node>
-                <node concept="2ShNRf" id="5vTxdEzyTZt" role="37wK5m">
-                  <node concept="1pGfFk" id="5vTxdEzyTZu" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                    <node concept="37vLTw" id="5vTxdEzyTZv" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzyTYH" resolve="eventsDispatcher" />
+                <node concept="liA8E" id="31Rnc327fOS" role="2OqNvi">
+                  <ref role="37wK5l" to="uu3z:~ProcessHandler.addProcessListener(com.intellij.execution.process.ProcessListener):void" resolve="addProcessListener" />
+                  <node concept="2ShNRf" id="5vTxdEzyTZt" role="37wK5m">
+                    <node concept="1pGfFk" id="5vTxdEzyTZu" role="2ShVmc">
+                      <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
+                      <node concept="37vLTw" id="5vTxdEzyTZv" role="37wK5m">
+                        <ref role="3cqZAo" node="5vTxdEzyTYH" resolve="eventsDispatcher" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1050,18 +1051,19 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="5vTxdEzz113" role="3cqZAp">
-              <node concept="2YIFZM" id="5vTxdEzz114" role="3clFbG">
-                <ref role="37wK5l" to="lk2n:3oW7HLfqDla" resolve="redirect" />
-                <ref role="1Pybhc" to="lk2n:3oW7HLfqDl9" resolve="OutputRedirector" />
-                <node concept="37vLTw" id="5vTxdEzz115" role="37wK5m">
+            <node concept="3clFbF" id="31Rnc327iyt" role="3cqZAp">
+              <node concept="2OqwBi" id="31Rnc327iPA" role="3clFbG">
+                <node concept="37vLTw" id="31Rnc327iyr" role="2Oq$k0">
                   <ref role="3cqZAo" node="5vTxdEzz10D" resolve="process" />
                 </node>
-                <node concept="2ShNRf" id="5vTxdEzz116" role="37wK5m">
-                  <node concept="1pGfFk" id="5vTxdEzz117" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                    <node concept="37vLTw" id="5vTxdEzz118" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzz10m" resolve="eventsDispatcher" />
+                <node concept="liA8E" id="31Rnc327kZj" role="2OqNvi">
+                  <ref role="37wK5l" to="uu3z:~ProcessHandler.addProcessListener(com.intellij.execution.process.ProcessListener):void" resolve="addProcessListener" />
+                  <node concept="2ShNRf" id="5vTxdEzz116" role="37wK5m">
+                    <node concept="1pGfFk" id="5vTxdEzz117" role="2ShVmc">
+                      <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
+                      <node concept="37vLTw" id="5vTxdEzz118" role="37wK5m">
+                        <ref role="3cqZAo" node="5vTxdEzz10m" resolve="eventsDispatcher" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1722,18 +1724,19 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="5XEoQWrnM8" role="3cqZAp">
-              <node concept="2YIFZM" id="5XEoQWrnM9" role="3clFbG">
-                <ref role="37wK5l" to="lk2n:3oW7HLfqDla" resolve="redirect" />
-                <ref role="1Pybhc" to="lk2n:3oW7HLfqDl9" resolve="OutputRedirector" />
-                <node concept="37vLTw" id="5XEoQWrnMa" role="37wK5m">
+            <node concept="3clFbF" id="31Rnc327o7T" role="3cqZAp">
+              <node concept="2OqwBi" id="31Rnc327oAG" role="3clFbG">
+                <node concept="37vLTw" id="31Rnc327o7R" role="2Oq$k0">
                   <ref role="3cqZAo" node="5XEoQWrnLI" resolve="process" />
                 </node>
-                <node concept="2ShNRf" id="5XEoQWrnMb" role="37wK5m">
-                  <node concept="1pGfFk" id="5XEoQWrnMc" role="2ShVmc">
-                    <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
-                    <node concept="37vLTw" id="5XEoQWrnMd" role="37wK5m">
-                      <ref role="3cqZAo" node="5XEoQWrnLr" resolve="eventsDispatcher" />
+                <node concept="liA8E" id="31Rnc327pTY" role="2OqNvi">
+                  <ref role="37wK5l" to="uu3z:~ProcessHandler.addProcessListener(com.intellij.execution.process.ProcessListener):void" resolve="addProcessListener" />
+                  <node concept="2ShNRf" id="31Rnc327pU1" role="37wK5m">
+                    <node concept="1pGfFk" id="31Rnc327pU2" role="2ShVmc">
+                      <ref role="37wK5l" to="sfqd:56tRMpP_fmK" resolve="UnitTestProcessListener" />
+                      <node concept="37vLTw" id="31Rnc327pU3" role="37wK5m">
+                        <ref role="3cqZAo" node="5XEoQWrnLr" resolve="eventsDispatcher" />
+                      </node>
                     </node>
                   </node>
                 </node>

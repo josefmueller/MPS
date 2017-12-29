@@ -26,7 +26,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import java.util.concurrent.CountDownLatch;
 import com.intellij.execution.process.ProcessAdapter;
@@ -73,7 +72,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
             runState.addListener(checkListener.value);
           }
         });
-        OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
 
         final int[] exitCode = {-1};
         final CountDownLatch latch = new CountDownLatch(1);

@@ -127,7 +127,7 @@ public class ProcessHandlerBuilder {
   }
   private static CountDownLatch startCountDown(ProcessHandler process, final int[] exitCode) {
     final CountDownLatch countDown = new CountDownLatch(1);
-    OutputRedirector.redirect(process, new ProcessAdapter() {
+    process.addProcessListener(new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent event) {
         exitCode[0] = event.getExitCode();
