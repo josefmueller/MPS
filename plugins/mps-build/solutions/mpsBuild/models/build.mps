@@ -7585,12 +7585,6 @@
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgruKv" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruKu" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6KZG" resolve="jetbrains.mps.baseLanguage.closures" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2a9bszgruKx" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruKw" role="1SiIV1">
             <property role="3bR36h" value="false" />
