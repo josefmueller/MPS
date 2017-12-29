@@ -2770,9 +2770,6 @@
                     <node concept="37vLTw" id="1b7CZFPT6_H" role="37wK5m">
                       <ref role="3cqZAo" node="5gyVhZ1884o" resolve="testNodes" />
                     </node>
-                    <node concept="37vLTw" id="1b7CZFPT6_I" role="37wK5m">
-                      <ref role="3cqZAo" node="6wTSkUAl7_L" resolve="eventsDispatcher" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -14662,16 +14659,6 @@
         <ref role="3uigEE" to="4l68:5Ti9jVZ8rCG" resolve="NodeWrappersTestsContributor" />
       </node>
     </node>
-    <node concept="312cEg" id="1b7CZFPOQU1" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myDispatcher" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="1b7CZFPOQg8" role="1B3o_S" />
-      <node concept="3uibUv" id="1b7CZFPOQNt" role="1tU5fm">
-        <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
-      </node>
-    </node>
     <node concept="312cEg" id="1Q6gjHMsCO0" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -14707,16 +14694,6 @@
       </node>
       <node concept="3cqZAl" id="5iYlssmVFgB" role="3clF45" />
       <node concept="3clFbS" id="5iYlssmVFgD" role="3clF47">
-        <node concept="3clFbF" id="1b7CZFPOR$D" role="3cqZAp">
-          <node concept="37vLTI" id="1b7CZFPORCt" role="3clFbG">
-            <node concept="37vLTw" id="1b7CZFPORFX" role="37vLTx">
-              <ref role="3cqZAo" node="1b7CZFPOPbk" resolve="dispatcher" />
-            </node>
-            <node concept="37vLTw" id="1b7CZFPOR$C" role="37vLTJ">
-              <ref role="3cqZAo" node="1b7CZFPOQU1" resolve="myDispatcher" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2qFJdjDD4nt" role="3cqZAp">
           <node concept="37vLTI" id="2qFJdjDD4nv" role="3clFbG">
             <node concept="2ShNRf" id="2qFJdjDD4jR" role="37vLTx">
@@ -14754,12 +14731,6 @@
           <node concept="3uibUv" id="5iYlssmYrPh" role="A3Ik2">
             <ref role="3uigEE" to="sfqd:56tRMpP_ej7" resolve="ITestNodeWrapper" />
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1b7CZFPOPbk" role="3clF46">
-        <property role="TrG5h" value="dispatcher" />
-        <node concept="3uibUv" id="1b7CZFPOPAa" role="1tU5fm">
-          <ref role="3uigEE" to="sfqd:56tRMpPBy7G" resolve="TestEventsDispatcher" />
         </node>
       </node>
     </node>
@@ -15261,7 +15232,7 @@
                                 <node concept="17QB3L" id="4br3RNOQdHy" role="1tU5fm" />
                                 <node concept="3cpWs3" id="4br3RNOQdHz" role="33vP2m">
                                   <node concept="Xl_RD" id="4br3RNOQdH$" role="3uHU7B">
-                                    <property role="Xl_RC" value="Process finished with exit code " />
+                                    <property role="Xl_RC" value="in-process test execution finished with exit code " />
                                   </node>
                                   <node concept="2OqwBi" id="4br3RNOQfPi" role="3uHU7w">
                                     <node concept="37vLTw" id="4br3RNOQf6S" role="2Oq$k0">
@@ -15280,17 +15251,14 @@
                                 <ref role="3cqZAo" node="4br3RNOQdHx" resolve="terminateMessage" />
                               </node>
                             </node>
-                            <node concept="3clFbF" id="4br3RNOQdH_" role="3cqZAp">
-                              <node concept="2OqwBi" id="4br3RNOQdHA" role="3clFbG">
-                                <node concept="37vLTw" id="4br3RNOQdHB" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1b7CZFPOQU1" resolve="myDispatcher" />
-                                </node>
-                                <node concept="liA8E" id="4br3RNOQdHC" role="2OqNvi">
-                                  <ref role="37wK5l" to="sfqd:56tRMpPBy7H" resolve="onProcessTerminated" />
-                                  <node concept="37vLTw" id="4br3RNOQdHD" role="37wK5m">
-                                    <ref role="3cqZAo" node="4br3RNOQdHx" resolve="terminateMessage" />
-                                  </node>
-                                </node>
+                            <node concept="3SKdUt" id="31Rnc32go3M" role="3cqZAp">
+                              <node concept="3SKdUq" id="31Rnc32go3O" role="3SKWNk">
+                                <property role="3SKdUp" value="once this Future is completed (isDone() == true), FakeProcessHandler terminates and process listeners " />
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="31Rnc32gsAy" role="3cqZAp">
+                              <node concept="3SKdUq" id="31Rnc32gsA$" role="3SKWNk">
+                                <property role="3SKdUp" value="have a change to notify others (e.g. TestRunState though UnitTestProcessListener with TestEventsDispatcher)" />
                               </node>
                             </node>
                           </node>
@@ -15637,33 +15605,15 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="2AL$R6N7V_R" role="3cqZAp">
-            <node concept="2OqwBi" id="2AL$R6N7Wkn" role="3clFbG">
-              <node concept="37vLTw" id="2AL$R6N7V_Q" role="2Oq$k0">
-                <ref role="3cqZAo" node="1b7CZFPOQU1" resolve="myDispatcher" />
+          <node concept="3clFbF" id="31Rnc32gh6u" role="3cqZAp">
+            <node concept="1rXfSq" id="31Rnc32gh6s" role="3clFbG">
+              <ref role="37wK5l" to="uu3z:~ProcessHandler.notifyTextAvailable(java.lang.String,com.intellij.openapi.util.Key):void" resolve="notifyTextAvailable" />
+              <node concept="37vLTw" id="31Rnc32gimf" role="37wK5m">
+                <ref role="3cqZAo" node="KJkipGwl6G" resolve="terminateMessage" />
               </node>
-              <node concept="liA8E" id="2AL$R6N7WFz" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:56tRMpPBy9a" resolve="onSimpleTextAvailable" />
-                <node concept="37vLTw" id="2AL$R6N7WRS" role="37wK5m">
-                  <ref role="3cqZAo" node="KJkipGwl6G" resolve="terminateMessage" />
-                </node>
-                <node concept="10M0yZ" id="2AL$R6N8duC" role="37wK5m">
-                  <ref role="1PxDUh" to="uu3z:~ProcessOutputTypes" resolve="ProcessOutputTypes" />
-                  <ref role="3cqZAo" to="uu3z:~ProcessOutputTypes.STDERR" resolve="STDERR" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="5Ti9jVZ8rHw" role="3cqZAp">
-            <node concept="2OqwBi" id="5Ti9jVZ8rHx" role="3clFbG">
-              <node concept="37vLTw" id="5Ti9jVZ8rHy" role="2Oq$k0">
-                <ref role="3cqZAo" node="1b7CZFPOQU1" resolve="myDispatcher" />
-              </node>
-              <node concept="liA8E" id="5Ti9jVZ8rHz" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:56tRMpPBy7H" resolve="onProcessTerminated" />
-                <node concept="37vLTw" id="KJkipGwl6K" role="37wK5m">
-                  <ref role="3cqZAo" node="KJkipGwl6G" resolve="terminateMessage" />
-                </node>
+              <node concept="10M0yZ" id="2AL$R6N8duC" role="37wK5m">
+                <ref role="3cqZAo" to="uu3z:~ProcessOutputTypes.STDERR" resolve="STDERR" />
+                <ref role="1PxDUh" to="uu3z:~ProcessOutputTypes" resolve="ProcessOutputTypes" />
               </node>
             </node>
           </node>

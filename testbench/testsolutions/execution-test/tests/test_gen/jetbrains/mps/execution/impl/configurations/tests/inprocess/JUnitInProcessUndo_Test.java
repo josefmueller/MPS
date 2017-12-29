@@ -57,7 +57,7 @@ public class JUnitInProcessUndo_Test extends BaseTransformationTest {
         TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
         Executor processExecutor;
-        processExecutor = new JUnitInProcessExecutor(myProject, testNodes, eventsDispatcher);
+        processExecutor = new JUnitInProcessExecutor(myProject, testNodes);
         if (LOG.isInfoEnabled()) {
           LOG.info("Starting in-process-execution");
         }

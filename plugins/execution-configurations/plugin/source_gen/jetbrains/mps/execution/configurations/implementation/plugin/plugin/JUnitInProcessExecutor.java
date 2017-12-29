@@ -5,7 +5,6 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.lang.test.util.TestInProcessRunState;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -28,12 +27,10 @@ public class JUnitInProcessExecutor implements Executor {
   private static final Logger LOG = LogManager.getLogger(JUnitInProcessExecutor.class);
   private static final int MSECS_TO_WAIT_FOR_START = 50 * 1000;
   private final NodeWrappersTestsContributor myTestsContributor;
-  private final TestEventsDispatcher myDispatcher;
   private final FakeProcess myFakeProcess = new FakeProcess();
   private final TestInProcessRunState myTestRunState;
 
-  public JUnitInProcessExecutor(Project mpsProject, Iterable<ITestNodeWrapper> testNodeWrappers, TestEventsDispatcher dispatcher) {
-    myDispatcher = dispatcher;
+  public JUnitInProcessExecutor(Project mpsProject, Iterable<ITestNodeWrapper> testNodeWrappers) {
     myTestsContributor = new NodeWrappersTestsContributor(mpsProject, testNodeWrappers);
     myTestRunState = TestInProcessRunState.getInstance();
   }
@@ -106,11 +103,12 @@ public class JUnitInProcessExecutor implements Executor {
             myFakeProcess.setExitCode(executor.getFailureCount());
           }
           // copied from TestInProcessExecutor#terminateProcess(int), though not sure I see the point in TestEventsDispatcher use 
-          String terminateMessage = "Process finished with exit code " + myFakeProcess.exitValue();
+          String terminateMessage = "in-process test execution finished with exit code " + myFakeProcess.exitValue();
           if (LOG.isInfoEnabled()) {
             LOG.info(terminateMessage);
           }
-          myDispatcher.onProcessTerminated(terminateMessage);
+          // once this Future is completed (isDone() == true), FakeProcessHandler terminates and process listeners  
+          // have a change to notify others (e.g. TestRunState though UnitTestProcessListener with TestEventsDispatcher) 
         } finally {
           RuntimeFlags.setTestMode(oldTestMode);
           executor.dispose();
@@ -171,8 +169,7 @@ public class JUnitInProcessExecutor implements Executor {
     public void startNotify() {
       super.startNotify();
       String terminateMessage = "Only one test instance is allowed to run in process.\n" + "To run in the outer process change the corresponding property in the junit run configuration.\n" + "Process finished with exit code " + -1 + ".\n";
-      myDispatcher.onSimpleTextAvailable(terminateMessage, ProcessOutputTypes.STDERR);
-      myDispatcher.onProcessTerminated(terminateMessage);
+      notifyTextAvailable(terminateMessage, ProcessOutputTypes.STDERR);
       this.notifyProcessTerminated(-1);
     }
   }

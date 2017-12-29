@@ -368,22 +368,12 @@
                 <node concept="3uibUv" id="5vTxdEzyTYP" role="1tU5fm">
                   <ref role="3uigEE" to="ic9i:1b7CZFPOU09" resolve="Executor" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="5vTxdEzyTYQ" role="3cqZAp">
-              <node concept="37vLTI" id="5vTxdEzyTYR" role="3clFbG">
-                <node concept="37vLTw" id="5vTxdEzyTYS" role="37vLTJ">
-                  <ref role="3cqZAo" node="5vTxdEzyTYO" resolve="processExecutor" />
-                </node>
-                <node concept="2ShNRf" id="5vTxdEzyTYT" role="37vLTx">
+                <node concept="2ShNRf" id="5vTxdEzyTYT" role="33vP2m">
                   <node concept="1pGfFk" id="5vTxdEzyTYU" role="2ShVmc">
                     <ref role="37wK5l" to="ic9i:5iYlssmVFgA" resolve="JUnitInProcessExecutor" />
                     <node concept="1jxXqW" id="2qFJdjDA_N2" role="37wK5m" />
                     <node concept="37vLTw" id="5vTxdEzyTYV" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzyTYt" resolve="testNodes" />
-                    </node>
-                    <node concept="37vLTw" id="5vTxdEzyTYW" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzyTYH" resolve="eventsDispatcher" />
                     </node>
                   </node>
                 </node>
@@ -969,9 +959,6 @@
                     <node concept="1jxXqW" id="2qFJdjDACkA" role="37wK5m" />
                     <node concept="37vLTw" id="5vTxdEzz10$" role="37wK5m">
                       <ref role="3cqZAo" node="5vTxdEzz122" resolve="testNodes" />
-                    </node>
-                    <node concept="37vLTw" id="5vTxdEzz10_" role="37wK5m">
-                      <ref role="3cqZAo" node="5vTxdEzz10m" resolve="eventsDispatcher" />
                     </node>
                   </node>
                 </node>
@@ -1659,9 +1646,6 @@
                     <node concept="1jxXqW" id="2qFJdjDAEin" role="37wK5m" />
                     <node concept="37vLTw" id="5XEoQWrnLD" role="37wK5m">
                       <ref role="3cqZAo" node="5XEoQWrnLb" resolve="testNodes" />
-                    </node>
-                    <node concept="37vLTw" id="5XEoQWrnLE" role="37wK5m">
-                      <ref role="3cqZAo" node="5XEoQWrnLr" resolve="eventsDispatcher" />
                     </node>
                   </node>
                 </node>
