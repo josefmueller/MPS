@@ -10,14 +10,10 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
@@ -46,18 +42,15 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleTestCase() throws Exception {
-      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380")));
+      List<ITestNodeWrapper> wrappedTests = new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6937584626643047380"));
       this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public void test_startFailedTestCase() throws Exception {
-      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140")));
+      List<ITestNodeWrapper> wrappedTests = new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082034140"));
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), wrappedTests);
     }
 
 
-    public SModel getMyModel() {
-      return PersistenceFacade.getInstance().createModelReference("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)").resolve(myProject.getRepository());
-    }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> testNodes = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();

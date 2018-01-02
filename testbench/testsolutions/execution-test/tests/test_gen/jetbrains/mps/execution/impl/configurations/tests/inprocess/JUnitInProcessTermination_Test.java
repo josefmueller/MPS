@@ -8,14 +8,10 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor;
@@ -47,9 +43,7 @@ public class JUnitInProcessTermination_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_terminate() throws Exception {
-      SModel model = PersistenceFacade.getInstance().createModelReference("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)").resolve(myProject.getRepository());
-      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(model, Sequence.<SNodeReference>singleton(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090")));
-      this.startAndTerminate(wrappedTests);
+      this.startAndTerminate(new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", "6339244025082972090")));
     }
 
 
