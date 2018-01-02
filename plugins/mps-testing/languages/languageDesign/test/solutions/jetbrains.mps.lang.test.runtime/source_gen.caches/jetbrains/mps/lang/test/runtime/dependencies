@@ -130,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.junit.Before" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.CellReference" file="CellReference.java">

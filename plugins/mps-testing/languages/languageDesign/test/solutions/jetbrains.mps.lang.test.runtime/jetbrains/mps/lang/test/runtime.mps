@@ -7220,69 +7220,6 @@
       <node concept="3clFbS" id="3yZ0KeTxuOy" role="3clF47" />
       <node concept="3Tm1VV" id="3yZ0KeTxusK" role="1B3o_S" />
     </node>
-    <node concept="2tJIrI" id="3yZ0KeTxj3d" role="jymVt" />
-    <node concept="3clFbW" id="2VDNdDce3vK" role="jymVt">
-      <node concept="3cqZAl" id="2VDNdDce3vL" role="3clF45" />
-      <node concept="3clFbS" id="2VDNdDce3vM" role="3clF47">
-        <node concept="3clFbF" id="2VDNdDceaNq" role="3cqZAp">
-          <node concept="1rXfSq" id="2VDNdDceaNo" role="3clFbG">
-            <ref role="37wK5l" node="DRazW7Z8Gq" resolve="setTestRunner" />
-            <node concept="37vLTw" id="2VDNdDceaWu" role="37wK5m">
-              <ref role="3cqZAo" node="2VDNdDce6Sk" resolve="runner" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="2VDNdDce3vP" role="1B3o_S" />
-      <node concept="37vLTG" id="2VDNdDce6Sk" role="3clF46">
-        <property role="TrG5h" value="runner" />
-        <node concept="3uibUv" id="2VDNdDce6Sj" role="1tU5fm">
-          <ref role="3uigEE" node="4_ksyPqMhZ7" resolve="TestRunner" />
-        </node>
-        <node concept="2AHcQZ" id="2VDNdDce6WL" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="50N5GDnoD7C" role="jymVt" />
-    <node concept="3clFbW" id="e$hNri8RD9" role="jymVt">
-      <node concept="37vLTG" id="e$hNri8RDn" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="e$hNri8RDo" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="e$hNri8RDb" role="1B3o_S" />
-      <node concept="3cqZAl" id="e$hNri8RDa" role="3clF45" />
-      <node concept="3clFbS" id="e$hNri8RDc" role="3clF47">
-        <node concept="3clFbF" id="e$hNri8RDe" role="3cqZAp">
-          <node concept="37vLTI" id="e$hNri8RDf" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm8nW" role="37vLTx">
-              <ref role="3cqZAo" node="e$hNri8RDn" resolve="project" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeunoS" role="37vLTJ">
-              <ref role="3cqZAo" node="e$hNri9PeB" resolve="myProject" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7P8zeXPIrdy" role="3cqZAp">
-          <node concept="37vLTI" id="7P8zeXPIrdS" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeufOC" role="37vLTJ">
-              <ref role="3cqZAo" node="e$hNri9Pex" resolve="myModel" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxghbCm" role="37vLTx">
-              <ref role="3cqZAo" node="e$hNri8RDp" resolve="modelDescriptor" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="e$hNri8RDp" role="3clF46">
-        <property role="TrG5h" value="modelDescriptor" />
-        <node concept="3uibUv" id="e$hNri8RDq" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="DRazW7Z7EV" role="jymVt" />
     <node concept="3clFb_" id="DRazW7Z8Gq" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -7334,6 +7271,36 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7hSRFL3Omib" role="jymVt" />
+    <node concept="3clFb_" id="7hSRFL3OlKl" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="initTestRunner" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7hSRFL3OlKo" role="3clF47">
+        <node concept="3clFbJ" id="2VDNdDcf22T" role="3cqZAp">
+          <node concept="3clFbS" id="2VDNdDcf22V" role="3clFbx">
+            <node concept="3clFbF" id="7ApXrTOInTy" role="3cqZAp">
+              <node concept="1rXfSq" id="7ApXrTOInTx" role="3clFbG">
+                <ref role="37wK5l" node="7ApXrTOInTu" resolve="initTests" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2VDNdDcf2gG" role="3clFbw">
+            <node concept="10Nm6u" id="2VDNdDcf2ns" role="3uHU7w" />
+            <node concept="37vLTw" id="2VDNdDcf29H" role="3uHU7B">
+              <ref role="3cqZAo" node="e$hNri8RBd" resolve="myRunner" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7hSRFL3OkBC" role="1B3o_S" />
+      <node concept="3cqZAl" id="7hSRFL3Ol8p" role="3clF45" />
+      <node concept="2AHcQZ" id="7hSRFL3OnGF" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Before" resolve="Before" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="4_ksyPqPi8r" role="jymVt" />
     <node concept="3clFb_" id="e$hNri8RB$" role="jymVt">
       <property role="TrG5h" value="initTest" />
@@ -7379,21 +7346,6 @@
       </node>
       <node concept="3Tm1VV" id="1_xw4QB0RGG" role="1B3o_S" />
       <node concept="3clFbS" id="1_xw4QB0RGH" role="3clF47">
-        <node concept="3clFbJ" id="2VDNdDcf22T" role="3cqZAp">
-          <node concept="3clFbS" id="2VDNdDcf22V" role="3clFbx">
-            <node concept="3clFbF" id="7ApXrTOInTy" role="3cqZAp">
-              <node concept="1rXfSq" id="7ApXrTOInTx" role="3clFbG">
-                <ref role="37wK5l" node="7ApXrTOInTu" resolve="initTests" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="2VDNdDcf2gG" role="3clFbw">
-            <node concept="10Nm6u" id="2VDNdDcf2ns" role="3uHU7w" />
-            <node concept="37vLTw" id="2VDNdDcf29H" role="3uHU7B">
-              <ref role="3cqZAo" node="e$hNri8RBd" resolve="myRunner" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1_xw4QB0RGI" role="3cqZAp">
           <node concept="2OqwBi" id="1_xw4QB0RGJ" role="3clFbG">
             <node concept="liA8E" id="1_xw4QB0RGL" role="2OqNvi">
@@ -7532,6 +7484,16 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7hSRFL3Osrp" role="3cqZAp">
+          <node concept="3SKdUq" id="7hSRFL3Osrr" role="3SKWNk">
+            <property role="3SKdUp" value="FWIW, RunEventsDispatcher is likely to have sent testRunStarted already, as it's dispatched prior to Request processing (which leads to instantiation of this class)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7hSRFL3OAWv" role="3cqZAp">
+          <node concept="3SKdUq" id="7hSRFL3OAWx" role="3SKWNk">
+            <property role="3SKdUp" value="XXX if there are hundreds of tests running, does this code mean we have hundreds of listeners?" />
           </node>
         </node>
         <node concept="3clFbF" id="7ApXrTOIuLF" role="3cqZAp">

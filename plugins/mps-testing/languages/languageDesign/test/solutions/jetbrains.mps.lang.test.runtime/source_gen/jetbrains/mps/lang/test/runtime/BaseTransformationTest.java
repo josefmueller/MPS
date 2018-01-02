@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import org.junit.Before;
 import jetbrains.mps.lang.test.util.MpsTestRunListener;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
@@ -32,15 +33,6 @@ public abstract class BaseTransformationTest implements TransformationTest {
   public BaseTransformationTest() {
   }
 
-  public BaseTransformationTest(@NotNull TestRunner runner) {
-    setTestRunner(runner);
-  }
-
-  public BaseTransformationTest(Project project, SModel modelDescriptor) {
-    myProject = project;
-    myModel = modelDescriptor;
-  }
-
   @Override
   public void setTestRunner(TestRunner runner) {
     myRunner = runner;
@@ -51,14 +43,18 @@ public abstract class BaseTransformationTest implements TransformationTest {
     return myRunner;
   }
 
+  @Before
+  public void initTestRunner() {
+    if (myRunner == null) {
+      initTests();
+    }
+  }
+
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     initTest(projectName, model, false);
   }
 
   public void initTest(@NotNull String projectName, final String model, boolean reOpenProject) throws Exception {
-    if (myRunner == null) {
-      initTests();
-    }
     myRunner.initTest(this, projectName, model, reOpenProject);
   }
 
@@ -81,6 +77,8 @@ public abstract class BaseTransformationTest implements TransformationTest {
       public void testRunStarted() {
       }
     };
+    // FWIW, RunEventsDispatcher is likely to have sent testRunStarted already, as it's dispatched prior to Request processing (which leads to instantiation of this class) 
+    // XXX if there are hundreds of tests running, does this code mean we have hundreds of listeners? 
     RunEventsDispatcher.getInstance().addListener(listener);
   }
 
