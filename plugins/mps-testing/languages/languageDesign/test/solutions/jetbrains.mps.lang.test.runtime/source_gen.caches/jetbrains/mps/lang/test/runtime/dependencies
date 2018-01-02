@@ -120,8 +120,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestModelSaver" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.MpsTestRunListener" />
-    <classNode dependClassName="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
@@ -130,6 +128,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Before" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
   </dependency>

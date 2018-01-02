@@ -6,11 +6,17 @@ import org.jetbrains.mps.annotations.Singleton;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * 
+ * @deprecated There are no listeners, and it's our internal stuff, drop it.
+ */
 @Singleton
+@Deprecated
 public final class RunEventsDispatcher {
   private final List<MpsTestRunListener> myListeners = new CopyOnWriteArrayList<MpsTestRunListener>();
   private static final RunEventsDispatcher ourInstance = new RunEventsDispatcher();
 
+  @Deprecated
   private RunEventsDispatcher() {
   }
 

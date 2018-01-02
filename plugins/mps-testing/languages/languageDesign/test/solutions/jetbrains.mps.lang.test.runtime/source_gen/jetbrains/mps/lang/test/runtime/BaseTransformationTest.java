@@ -9,8 +9,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import org.junit.Before;
-import jetbrains.mps.lang.test.util.MpsTestRunListener;
-import jetbrains.mps.lang.test.util.RunEventsDispatcher;
+import org.junit.AfterClass;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -60,26 +59,14 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
   private void initTests() {
     setTestRunner(defaultTestRunner());
-    // FIXME yes, listener is not registered when myRunner is initialized from outside; no, it's not intended. 
-    //       try to replace with regular @AfterClass or drop CACHE altogether. 
-    registerTestsListener();
   }
 
-  private void registerTestsListener() {
-    MpsTestRunListener listener = new MpsTestRunListener() {
-      @Override
-      public void testRunFinished() {
-        CACHE.clean();
-        RunEventsDispatcher.getInstance().removeListener(this);
-      }
-
-      @Override
-      public void testRunStarted() {
-      }
-    };
-    // FWIW, RunEventsDispatcher is likely to have sent testRunStarted already, as it's dispatched prior to Request processing (which leads to instantiation of this class) 
-    // XXX if there are hundreds of tests running, does this code mean we have hundreds of listeners? 
-    RunEventsDispatcher.getInstance().addListener(listener);
+  @AfterClass
+  public static void cacheTearDown() {
+    // XXX as long as static field is shared between instances of multiple subclasses of this class, we may face cleared cache in the middle of execution 
+    // if tests are executed in parallel. Nevertheless, I don't feel it's much worse than global static RunEventsDispatcher mechanism with hundreds of listeners. 
+    // Besides, I'm not aware of any mechanism to run MPS tests in parallel. And yes, I'm going to drop this CACHE altogether soon. 
+    CACHE.clean();
   }
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {

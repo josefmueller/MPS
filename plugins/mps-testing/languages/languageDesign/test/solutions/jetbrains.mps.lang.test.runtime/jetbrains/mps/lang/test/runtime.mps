@@ -7399,120 +7399,47 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="5UFD5GhEPRe" role="3cqZAp">
-          <node concept="3SKdUq" id="5UFD5GhEPRg" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME yes, listener is not registered when myRunner is initialized from outside; no, it's not intended." />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7hSRFL3OW0j" role="jymVt" />
+    <node concept="2YIFZL" id="7hSRFL3OZtH" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="cacheTearDown" />
+      <node concept="3clFbS" id="7hSRFL3OXyK" role="3clF47">
+        <node concept="3SKdUt" id="7hSRFL3P48T" role="3cqZAp">
+          <node concept="3SKdUq" id="7hSRFL3P48V" role="3SKWNk">
+            <property role="3SKdUp" value="XXX as long as static field is shared between instances of multiple subclasses of this class, we may face cleared cache in the middle of execution" />
           </node>
         </node>
-        <node concept="3SKdUt" id="5UFD5GhET2o" role="3cqZAp">
-          <node concept="3SKdUq" id="5UFD5GhET2q" role="3SKWNk">
-            <property role="3SKdUp" value="      try to replace with regular @AfterClass or drop CACHE altogether." />
+        <node concept="3SKdUt" id="7hSRFL3P7f7" role="3cqZAp">
+          <node concept="3SKdUq" id="7hSRFL3P7f9" role="3SKWNk">
+            <property role="3SKdUp" value="if tests are executed in parallel. Nevertheless, I don't feel it's much worse than global static RunEventsDispatcher mechanism with hundreds of listeners." />
           </node>
         </node>
-        <node concept="3clFbF" id="7ApXrTOIuLQ" role="3cqZAp">
-          <node concept="1rXfSq" id="7ApXrTOIuLP" role="3clFbG">
-            <ref role="37wK5l" node="7ApXrTOIuLM" resolve="registerTestsListener" />
+        <node concept="3SKdUt" id="7hSRFL3P9Ra" role="3cqZAp">
+          <node concept="3SKdUq" id="7hSRFL3P9Rc" role="3SKWNk">
+            <property role="3SKdUp" value="Besides, I'm not aware of any mechanism to run MPS tests in parallel. And yes, I'm going to drop this CACHE altogether soon." />
           </node>
         </node>
+        <node concept="3clFbF" id="23$lmxdXwtF" role="3cqZAp">
+          <node concept="2OqwBi" id="23$lmxdXwVn" role="3clFbG">
+            <node concept="37vLTw" id="7hSRFL3P3Mb" role="2Oq$k0">
+              <ref role="3cqZAo" node="23$lmxdWFPd" resolve="CACHE" />
+            </node>
+            <node concept="liA8E" id="23$lmxdXxUm" role="2OqNvi">
+              <ref role="37wK5l" node="4zIz0VbYSyo" resolve="clean" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7hSRFL3OXyI" role="3clF45" />
+      <node concept="3Tm1VV" id="7hSRFL3OXyJ" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7hSRFL3P0rf" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~AfterClass" resolve="AfterClass" />
       </node>
     </node>
     <node concept="2tJIrI" id="7ApXrTOIv_F" role="jymVt" />
-    <node concept="3clFb_" id="7ApXrTOIuLM" role="jymVt">
-      <property role="TrG5h" value="registerTestsListener" />
-      <node concept="3Tm6S6" id="7ApXrTOIuLN" role="1B3o_S" />
-      <node concept="3cqZAl" id="7ApXrTOIuLO" role="3clF45" />
-      <node concept="3clFbS" id="7ApXrTOIuLs" role="3clF47">
-        <node concept="3cpWs8" id="7ApXrTOIuLt" role="3cqZAp">
-          <node concept="3cpWsn" id="7ApXrTOIuLu" role="3cpWs9">
-            <property role="TrG5h" value="listener" />
-            <node concept="3uibUv" id="7ApXrTOIuLv" role="1tU5fm">
-              <ref role="3uigEE" to="fnd7:70xkT3P5f2P" resolve="MpsTestRunListener" />
-            </node>
-            <node concept="2ShNRf" id="7ApXrTOIuLw" role="33vP2m">
-              <node concept="YeOm9" id="7ApXrTOIuLx" role="2ShVmc">
-                <node concept="1Y3b0j" id="7ApXrTOIuLy" role="YeSDq">
-                  <property role="2bfB8j" value="true" />
-                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <ref role="1Y3XeK" to="fnd7:70xkT3P5f2P" resolve="MpsTestRunListener" />
-                  <node concept="3Tm1VV" id="7ApXrTOIuLz" role="1B3o_S" />
-                  <node concept="3clFb_" id="7ApXrTOIuL$" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="testRunFinished" />
-                    <property role="DiZV1" value="false" />
-                    <property role="IEkAT" value="false" />
-                    <node concept="3Tm1VV" id="7ApXrTOIuL_" role="1B3o_S" />
-                    <node concept="3cqZAl" id="7ApXrTOIuLA" role="3clF45" />
-                    <node concept="3clFbS" id="7ApXrTOIuLB" role="3clF47">
-                      <node concept="3clFbF" id="23$lmxdXwtF" role="3cqZAp">
-                        <node concept="2OqwBi" id="23$lmxdXwVn" role="3clFbG">
-                          <node concept="37vLTw" id="23$lmxdXwtD" role="2Oq$k0">
-                            <ref role="3cqZAo" node="23$lmxdWFPd" resolve="CACHE" />
-                          </node>
-                          <node concept="liA8E" id="23$lmxdXxUm" role="2OqNvi">
-                            <ref role="37wK5l" node="4zIz0VbYSyo" resolve="clean" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbF" id="7ApXrTOJyyt" role="3cqZAp">
-                        <node concept="2OqwBi" id="7ApXrTOJyyu" role="3clFbG">
-                          <node concept="2YIFZM" id="7ApXrTOJyyv" role="2Oq$k0">
-                            <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-                            <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-                          </node>
-                          <node concept="liA8E" id="7ApXrTOJyyw" role="2OqNvi">
-                            <ref role="37wK5l" to="fnd7:7ApXrTOJw0W" resolve="removeListener" />
-                            <node concept="Xjq3P" id="7ApXrTOJyMb" role="37wK5m" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2AHcQZ" id="7ApXrTOIuLE" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                  <node concept="2tJIrI" id="23$lmxdWmTg" role="jymVt" />
-                  <node concept="3clFb_" id="23$lmxdW52$" role="jymVt">
-                    <property role="1EzhhJ" value="false" />
-                    <property role="TrG5h" value="testRunStarted" />
-                    <node concept="3cqZAl" id="23$lmxdW52_" role="3clF45" />
-                    <node concept="3Tm1VV" id="23$lmxdW52A" role="1B3o_S" />
-                    <node concept="3clFbS" id="23$lmxdW52D" role="3clF47" />
-                    <node concept="2AHcQZ" id="23$lmxdW52E" role="2AJF6D">
-                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="7hSRFL3Osrp" role="3cqZAp">
-          <node concept="3SKdUq" id="7hSRFL3Osrr" role="3SKWNk">
-            <property role="3SKdUp" value="FWIW, RunEventsDispatcher is likely to have sent testRunStarted already, as it's dispatched prior to Request processing (which leads to instantiation of this class)" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="7hSRFL3OAWv" role="3cqZAp">
-          <node concept="3SKdUq" id="7hSRFL3OAWx" role="3SKWNk">
-            <property role="3SKdUp" value="XXX if there are hundreds of tests running, does this code mean we have hundreds of listeners?" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="7ApXrTOIuLF" role="3cqZAp">
-          <node concept="2OqwBi" id="7ApXrTOIuLG" role="3clFbG">
-            <node concept="2YIFZM" id="7ApXrTOIuLH" role="2Oq$k0">
-              <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-              <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-            </node>
-            <node concept="liA8E" id="7ApXrTOIuLI" role="2OqNvi">
-              <ref role="37wK5l" to="fnd7:21nkJZKo3qt" resolve="addListener" />
-              <node concept="37vLTw" id="7ApXrTOIuLJ" role="37wK5m">
-                <ref role="3cqZAo" node="7ApXrTOIuLu" resolve="listener" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4_ksyPqPj3q" role="jymVt" />
     <node concept="3clFb_" id="e$hNri8RCI" role="jymVt">
       <property role="TrG5h" value="runTest" />
       <node concept="3uibUv" id="e$hNri8RD0" role="Sfmx6">
