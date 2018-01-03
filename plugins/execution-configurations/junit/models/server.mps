@@ -70,7 +70,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-        <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
@@ -1625,19 +1624,8 @@
             </node>
           </node>
         </node>
-        <node concept="2GUZhq" id="T9MU2ckbhZ" role="3cqZAp">
-          <node concept="3clFbS" id="5Ti9jVZ8rxZ" role="2GV8ay">
-            <node concept="3clFbF" id="23$lmxdVKFw" role="3cqZAp">
-              <node concept="2OqwBi" id="23$lmxdVKFx" role="3clFbG">
-                <node concept="2YIFZM" id="23$lmxdVKFy" role="2Oq$k0">
-                  <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-                  <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-                </node>
-                <node concept="liA8E" id="23$lmxdVKFz" role="2OqNvi">
-                  <ref role="37wK5l" to="fnd7:23$lmxdVRD5" resolve="onTestRunStarted" />
-                </node>
-              </node>
-            </node>
+        <node concept="SfApY" id="5LbRjS1mG7U" role="3cqZAp">
+          <node concept="3clFbS" id="5Ti9jVZ8rxZ" role="SfCbr">
             <node concept="3cpWs8" id="5Ti9jVZ8ry4" role="3cqZAp">
               <node concept="3cpWsn" id="5Ti9jVZ8ry5" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
@@ -1713,7 +1701,7 @@
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="5Ti9jVZ8rxI" role="TEXxN">
+          <node concept="TDmWw" id="5Ti9jVZ8rxI" role="TEbGg">
             <node concept="3clFbS" id="5Ti9jVZ8rxJ" role="TDEfX">
               <node concept="3SKdUt" id="4br3RNOLROA" role="3cqZAp">
                 <node concept="3SKdUq" id="4br3RNOLROC" role="3SKWNk">
@@ -1734,19 +1722,6 @@
               <property role="TrG5h" value="t" />
               <node concept="3uibUv" id="5Ti9jVZ8rxO" role="1tU5fm">
                 <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="T9MU2ckbi2" role="2GVbov">
-            <node concept="3clFbF" id="T9MU2ck_Qb" role="3cqZAp">
-              <node concept="2OqwBi" id="T9MU2ckAr4" role="3clFbG">
-                <node concept="2YIFZM" id="T9MU2ck_Tb" role="2Oq$k0">
-                  <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-                  <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-                </node>
-                <node concept="liA8E" id="T9MU2ckADV" role="2OqNvi">
-                  <ref role="37wK5l" to="fnd7:70xkT3P5oru" resolve="onTestRunFinished" />
-                </node>
               </node>
             </node>
           </node>
