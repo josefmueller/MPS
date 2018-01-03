@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.test.migrations;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
 import java.util.Collection;
@@ -18,9 +20,15 @@ import jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts;
 
 @MPSLaunch
 public class MigratePopularConceptAndNodeCasts_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MigratePopularConceptAndNodeCasts_Test.class, "${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
+
+  public MigratePopularConceptAndNodeCasts_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MigratePopularConceptAndNodeCasts_Test() throws Throwable {
-    initTest("${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
     runTest("jetbrains.mps.smodel.test.migrations.MigratePopularConceptAndNodeCasts_Test$TestBody", "testMethod", true);
   }
 

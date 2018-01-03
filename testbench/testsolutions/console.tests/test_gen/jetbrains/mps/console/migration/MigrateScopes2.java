@@ -4,6 +4,8 @@ package jetbrains.mps.console.migration;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
 import java.util.Collection;
@@ -18,9 +20,15 @@ import jetbrains.mps.lang.smodel.query.migration.MigrateScopes;
 
 @MPSLaunch
 public class MigrateScopes2 extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MigrateScopes2.class, "${mps_home}", "r:8feb8c9c-c715-455e-9cef-348e70ef202e(jetbrains.mps.console.migration@tests)", false);
+
+  public MigrateScopes2() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MigrateScopes2() throws Throwable {
-    initTest("${mps_home}", "r:8feb8c9c-c715-455e-9cef-348e70ef202e(jetbrains.mps.console.migration@tests)", false);
     runTest("jetbrains.mps.console.migration.MigrateScopes2$TestBody", "testMethod", true);
   }
 

@@ -4,6 +4,8 @@ package migrations.test.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
 import java.util.Collection;
@@ -19,9 +21,15 @@ import references.migration.MigrateReferences;
 
 @MPSLaunch
 public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MigrateDeclarationsReferences_Test.class, "${module}/../..", "r:fd0f5486-f8ee-4117-b081-77c304b23496(migrations.test.tests@tests)", false);
+
+  public MigrateDeclarationsReferences_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MigrateDeclarationsReferences_Test() throws Throwable {
-    initTest("${module}/../..", "r:fd0f5486-f8ee-4117-b081-77c304b23496(migrations.test.tests@tests)", false);
     runTest("migrations.test.tests.MigrateDeclarationsReferences_Test$TestBody", "testMethod", true);
   }
 
