@@ -11211,6 +11211,16 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3SKdUt" id="5iphLhCiTq1" role="3cqZAp">
+                      <node concept="3SKdUq" id="5iphLhCiTq3" role="3SKWNk">
+                        <property role="3SKdUp" value=" NOTE, with in-process execution, TestParametersCache instance kept in a static field would be re-used, hence clean shall" />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="5iphLhCj$Jh" role="3cqZAp">
+                      <node concept="3SKdUq" id="5iphLhCj$Jj" role="3SKWNk">
+                        <property role="3SKdUp" value="leave a state we can re-initialize in once again." />
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="5LbRjS1nVTp" role="3cqZAp">
                       <node concept="1rXfSq" id="5LbRjS1nVTn" role="3clFbG">
                         <ref role="37wK5l" node="4zIz0VbYSyo" resolve="clean" />
@@ -11524,6 +11534,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="5iphLhCiR9A" role="3cqZAp">
+          <node concept="37vLTI" id="5iphLhCiR$R" role="3clFbG">
+            <node concept="3clFbT" id="5iphLhCiRJO" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="37vLTw" id="5iphLhCiR9$" role="37vLTJ">
+              <ref role="3cqZAo" node="5LbRjS1ojZh" resolve="myInitialized" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3cqZAl" id="4zIz0VbYSym" role="3clF45" />
     </node>
@@ -11545,6 +11565,27 @@
       <node concept="TZ5HA" id="5LbRjS1rM5n" role="TZ5H$">
         <node concept="1dT_AC" id="5LbRjS1rM5o" role="1dT_Ay">
           <property role="1dT_AB" value="(I didn't find any standard mechanism, and writing custom runner is not the task I'd like to address now), we use static field in each generated test class." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5iphLhCiYHF" role="TZ5H$">
+        <node concept="1dT_AC" id="5iphLhCiYHG" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5iphLhCiZa2" role="TZ5H$">
+        <node concept="1dT_AC" id="5iphLhCiZa3" role="1dT_Ay">
+          <property role="1dT_AB" value="Intended use: static field with " />
+        </node>
+        <node concept="1dT_AA" id="5iphLhCiZaf" role="1dT_Ay">
+          <node concept="92FcH" id="5iphLhCiZal" role="qph3F">
+            <node concept="TZ5HA" id="5iphLhCiZan" role="2XjZqd" />
+            <node concept="VXe08" id="5iphLhCjwo4" role="92FcQ">
+              <ref role="VXe09" to="rjhg:~ClassRule" resolve="ClassRule" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5iphLhCiZae" role="1dT_Ay">
+          <property role="1dT_AB" value=" annotation in specific test class." />
         </node>
       </node>
     </node>
