@@ -4,15 +4,23 @@ package jetbrains.mps.lang.smodel.query.test.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class QueryParameterList_Delete6_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(QueryParameterList_Delete6_Test.class, "${mps_home}", "r:ef2abb2b-cc5a-4776-8085-7767c2890554(jetbrains.mps.lang.smodel.query.test.editorTest@tests)", false);
+
+  public QueryParameterList_Delete6_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_QueryParameterList_Delete6() throws Throwable {
-    initTest("${mps_home}", "r:ef2abb2b-cc5a-4776-8085-7767c2890554(jetbrains.mps.lang.smodel.query.test.editorTest@tests)");
     runTest("jetbrains.mps.lang.smodel.query.test.editorTest.QueryParameterList_Delete6_Test$TestBody", "testMethod", false);
   }
 

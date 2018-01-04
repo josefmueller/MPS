@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.multiple.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ConditionalPresentation_addQuery_RefNode_switch_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ConditionalPresentation_addQuery_RefNode_switch_Test.class, "${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)", false);
+
+  public ConditionalPresentation_addQuery_RefNode_switch_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ConditionalPresentation_addQuery_RefNode_switch() throws Throwable {
-    initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
     runTest("jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test$TestBody", "testMethod", false);
   }
 

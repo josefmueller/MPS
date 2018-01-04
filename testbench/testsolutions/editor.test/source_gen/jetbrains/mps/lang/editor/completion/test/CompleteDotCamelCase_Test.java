@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.completion.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
@@ -12,9 +14,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class CompleteDotCamelCase_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CompleteDotCamelCase_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
+
+  public CompleteDotCamelCase_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CompleteDotCamelCase() throws Throwable {
-    initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
     runTest("jetbrains.mps.lang.editor.completion.test.CompleteDotCamelCase_Test$TestBody", "testMethod", false);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.style.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -13,9 +15,15 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 
 @MPSLaunch
 public class FontFamilyDefaultIfUnknownTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FontFamilyDefaultIfUnknownTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+
+  public FontFamilyDefaultIfUnknownTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_FontFamilyDefaultIfUnknownTest() throws Throwable {
-    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     runTest("jetbrains.mps.lang.editor.style.test.FontFamilyDefaultIfUnknownTest_Test$TestBody", "testMethod", false);
   }
 

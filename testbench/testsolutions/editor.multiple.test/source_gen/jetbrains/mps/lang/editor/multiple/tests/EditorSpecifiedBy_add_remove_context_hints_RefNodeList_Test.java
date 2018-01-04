@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.multiple.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.class, "${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)", false);
+
+  public EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_EditorSpecifiedBy_add_remove_context_hints_RefNodeList() throws Throwable {
-    initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
     runTest("jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test$TestBody", "testMethod", false);
   }
 

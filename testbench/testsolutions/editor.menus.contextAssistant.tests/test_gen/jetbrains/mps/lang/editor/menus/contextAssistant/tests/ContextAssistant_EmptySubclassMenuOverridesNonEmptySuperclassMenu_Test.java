@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -16,9 +18,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test.class, "${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)", false);
+
+  public ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu() throws Throwable {
-    initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test$TestBody", "testMethod", false);
   }
 

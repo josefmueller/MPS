@@ -4,14 +4,22 @@ package jetbrains.mps.lang.smodel.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InsertPrevSiblingOperation_Focus_Test.class, "${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)", false);
+
+  public InsertPrevSiblingOperation_Focus_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    initTest("${mps_home}", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     runTest("jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test$TestBody", "testMethod", false);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.style.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
@@ -14,9 +16,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 @MPSLaunch
 public class FontFamilyStyleClassItemPreviewTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FontFamilyStyleClassItemPreviewTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+
+  public FontFamilyStyleClassItemPreviewTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_FontFamilyStyleClassItemPreviewTest() throws Throwable {
-    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     runTest("jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemPreviewTest_Test$TestBody", "testMethod", false);
   }
 
@@ -27,11 +35,11 @@ public class FontFamilyStyleClassItemPreviewTest_Test extends BaseTransformation
       initEditorComponent("491383275435260981", "");
       Assert.assertNotNull(CellFinderUtil.findChildByCondition(getEditorComponent().getSelectedCell(), new Condition<EditorCell>() {
         public boolean met(EditorCell it) {
-          return EditorCell_Label.class.isInstance(it) && eq_jwhbwi_a0a0a0a0b0a1a0c(((EditorCell_Label) it).getFont().getFamily(), "Serif");
+          return EditorCell_Label.class.isInstance(it) && eq_jwhbwi_a0a0a0a0b0a1a0g(((EditorCell_Label) it).getFont().getFamily(), "Serif");
         }
       }, true, true));
     }
-    private static boolean eq_jwhbwi_a0a0a0a0b0a1a0c(Object a, Object b) {
+    private static boolean eq_jwhbwi_a0a0a0a0b0a1a0g(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

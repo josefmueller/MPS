@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.diagram.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.jetpad.mapper.Mapper;
@@ -23,9 +25,15 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView
 
 @MPSLaunch
 public class BlockDecoratorTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(BlockDecoratorTest_Test.class, "${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)", false);
+
+  public BlockDecoratorTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_BlockDecoratorTest() throws Throwable {
-    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     runTest("jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody", "testMethod", false);
   }
 

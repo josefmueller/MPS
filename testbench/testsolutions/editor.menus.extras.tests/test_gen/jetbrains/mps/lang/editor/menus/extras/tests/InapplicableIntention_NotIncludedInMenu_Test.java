@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.extras.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils;
@@ -22,9 +24,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class InapplicableIntention_NotIncludedInMenu_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InapplicableIntention_NotIncludedInMenu_Test.class, "${mps_home}", "r:a1e8c439-e997-416b-a5dc-df7c3fd41b00(jetbrains.mps.lang.editor.menus.extras.tests@tests)", false);
+
+  public InapplicableIntention_NotIncludedInMenu_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_InapplicableIntention_NotIncludedInMenu() throws Throwable {
-    initTest("${mps_home}", "r:a1e8c439-e997-416b-a5dc-df7c3fd41b00(jetbrains.mps.lang.editor.menus.extras.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.extras.tests.InapplicableIntention_NotIncludedInMenu_Test$TestBody", "testMethod", false);
   }
 

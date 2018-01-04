@@ -4,14 +4,22 @@ package jetbrains.mps.lang.text.test.editor;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SelectWordUp_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SelectWordUp_Test.class, "${mps_home}", "r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)", false);
+
+  public SelectWordUp_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_SelectWordUp() throws Throwable {
-    initTest("${mps_home}", "r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)");
     runTest("jetbrains.mps.lang.text.test.editor.SelectWordUp_Test$TestBody", "testMethod", false);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.table.decTable.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -11,9 +13,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class CompleteRowInDecisionTable_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CompleteRowInDecisionTable_Test.class, "${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)", false);
+
+  public CompleteRowInDecisionTable_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CompleteRowInDecisionTable() throws Throwable {
-    initTest("${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)");
     runTest("jetbrains.mps.lang.editor.table.decTable.test.CompleteRowInDecisionTable_Test$TestBody", "testMethod", false);
   }
 

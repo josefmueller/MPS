@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.style.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -12,9 +14,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class FontFamilySimpleTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FontFamilySimpleTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+
+  public FontFamilySimpleTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_FontFamilySimpleTest() throws Throwable {
-    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     runTest("jetbrains.mps.lang.editor.style.test.FontFamilySimpleTest_Test$TestBody", "testMethod", false);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.forms.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.awt.Component;
@@ -11,9 +13,15 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class PlatformCheckbox_CLICK_Toggles_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(PlatformCheckbox_CLICK_Toggles_Test.class, "${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)", false);
+
+  public PlatformCheckbox_CLICK_Toggles_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_PlatformCheckbox_CLICK_Toggles() throws Throwable {
-    initTest("${mps_home}", "r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)");
     runTest("jetbrains.mps.lang.editor.forms.test.PlatformCheckbox_CLICK_Toggles_Test$TestBody", "testMethod", false);
   }
 

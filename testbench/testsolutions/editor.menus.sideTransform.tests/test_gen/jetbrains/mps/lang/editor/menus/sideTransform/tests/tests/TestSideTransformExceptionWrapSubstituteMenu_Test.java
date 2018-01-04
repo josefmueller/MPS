@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.sideTransform.tests.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
@@ -13,9 +15,15 @@ import org.apache.log4j.Priority;
 
 @MPSLaunch
 public class TestSideTransformExceptionWrapSubstituteMenu_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestSideTransformExceptionWrapSubstituteMenu_Test.class, "${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)", false);
+
+  public TestSideTransformExceptionWrapSubstituteMenu_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestSideTransformExceptionWrapSubstituteMenu() throws Throwable {
-    initTest("${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionWrapSubstituteMenu_Test$TestBody", "testMethod", false);
   }
 

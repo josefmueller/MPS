@@ -4,14 +4,22 @@ package jetbrains.mps.propertiesTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CustomPropertyReferences3_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CustomPropertyReferences3_Test.class, "${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)", false);
+
+  public CustomPropertyReferences3_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CustomPropertyReferences3() throws Throwable {
-    initTest("${mps_home}", "r:a7e6c515-be7c-48fa-b7c6-1ffad39a5d77(jetbrains.mps.propertiesTest@tests)");
     runTest("jetbrains.mps.propertiesTest.CustomPropertyReferences3_Test$TestBody", "testMethod", false);
   }
 

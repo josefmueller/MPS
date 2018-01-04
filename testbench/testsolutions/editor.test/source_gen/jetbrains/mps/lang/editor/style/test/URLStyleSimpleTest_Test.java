@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.style.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
@@ -11,9 +13,15 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 @MPSLaunch
 public class URLStyleSimpleTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(URLStyleSimpleTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+
+  public URLStyleSimpleTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_URLStyleSimpleTest() throws Throwable {
-    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     runTest("jetbrains.mps.lang.editor.style.test.URLStyleSimpleTest_Test$TestBody", "testMethod", false);
   }
 
@@ -22,9 +30,9 @@ public class URLStyleSimpleTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2542823481375800124", "");
-      Assert.assertTrue(eq_ra91zp_a0a1a0c(getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.URL), "www.jetbrains.com"));
+      Assert.assertTrue(eq_ra91zp_a0a1a0g(getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.URL), "www.jetbrains.com"));
     }
-    private static boolean eq_ra91zp_a0a1a0c(Object a, Object b) {
+    private static boolean eq_ra91zp_a0a1a0g(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

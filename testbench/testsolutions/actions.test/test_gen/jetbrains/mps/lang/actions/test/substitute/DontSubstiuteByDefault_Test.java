@@ -4,15 +4,23 @@ package jetbrains.mps.lang.actions.test.substitute;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
 
 @MPSLaunch
 public class DontSubstiuteByDefault_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(DontSubstiuteByDefault_Test.class, "${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)", false);
+
+  public DontSubstiuteByDefault_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_DontSubstiuteByDefault() throws Throwable {
-    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
     runTest("jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test$TestBody", "testMethod", false);
   }
 

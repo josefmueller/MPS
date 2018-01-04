@@ -4,14 +4,22 @@ package jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class refScopesInInputLang_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(refScopesInInputLang_Test.class, "${mps_home}", "r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)", false);
+
+  public refScopesInInputLang_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_refScopesInInputLang() throws Throwable {
-    initTest("${mps_home}", "r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)");
     runTest("jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test$TestBody", "testMethod", false);
   }
 

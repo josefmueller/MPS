@@ -4,14 +4,22 @@ package jetbrains.mps.lang.plugin.tests.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class Test_CompleteActionConstructorParameterDeclaration_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Test_CompleteActionConstructorParameterDeclaration_Test.class, "${mps_home}", "r:a5382851-1d9f-41aa-80d5-23778a1655eb(jetbrains.mps.lang.plugin.tests.editorTest@tests)", false);
+
+  public Test_CompleteActionConstructorParameterDeclaration_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_Test_CompleteActionConstructorParameterDeclaration() throws Throwable {
-    initTest("${mps_home}", "r:a5382851-1d9f-41aa-80d5-23778a1655eb(jetbrains.mps.lang.plugin.tests.editorTest@tests)");
     runTest("jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionConstructorParameterDeclaration_Test$TestBody", "testMethod", false);
   }
 

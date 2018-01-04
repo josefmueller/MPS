@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.substitute.tests.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
@@ -12,9 +14,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class TestSubstitute_TestWrappedItemConcept_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestSubstitute_TestWrappedItemConcept_Test.class, "${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)", false);
+
+  public TestSubstitute_TestWrappedItemConcept_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestSubstitute_TestWrappedItemConcept() throws Throwable {
-    initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemConcept_Test$TestBody", "testMethod", false);
   }
 
@@ -27,14 +35,14 @@ public class TestSubstitute_TestWrappedItemConcept_Test extends BaseTransformati
       List<SubstituteAction> matchingActions = getEditorComponent().getSelectedCell().getSubstituteInfo().getMatchingActions(matchingText, false);
       Assert.assertTrue(matchingActions.size() == 1);
       SubstituteAction action = matchingActions.get(0);
-      Assert.assertTrue(eq_s63k5q_a0a0f0a2_0(action.getDescriptionText(matchingText), "test substitute child of wrapper wrapper description text") && eq_s63k5q_a0a0f0a2(action.getMatchingText(matchingText), matchingText));
+      Assert.assertTrue(eq_s63k5q_a0a0f0a6_0(action.getDescriptionText(matchingText), "test substitute child of wrapper wrapper description text") && eq_s63k5q_a0a0f0a6(action.getMatchingText(matchingText), matchingText));
       typeString("test substitute child of wrapper wrapper matching text");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
-    private static boolean eq_s63k5q_a0a0f0a2(Object a, Object b) {
+    private static boolean eq_s63k5q_a0a0f0a6(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-    private static boolean eq_s63k5q_a0a0f0a2_0(Object a, Object b) {
+    private static boolean eq_s63k5q_a0a0f0a6_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

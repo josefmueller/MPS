@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.table.stateMachine.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -11,9 +13,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class MoveTransitionToAnotherRow_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MoveTransitionToAnotherRow_Test.class, "${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)", false);
+
+  public MoveTransitionToAnotherRow_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MoveTransitionToAnotherRow() throws Throwable {
-    initTest("${mps_home}", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)");
     runTest("jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherRow_Test$TestBody", "testMethod", false);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.text.test.editor;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -13,9 +15,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 @MPSLaunch
 public class MakeWordUnderlined_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MakeWordUnderlined_Test.class, "${mps_home}", "r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)", false);
+
+  public MakeWordUnderlined_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MakeWordUnderlined() throws Throwable {
-    initTest("${mps_home}", "r:6cf522f1-8af4-45dd-b0f5-721b6e5caab5(jetbrains.mps.lang.text.test.editor@tests)");
     runTest("jetbrains.mps.lang.text.test.editor.MakeWordUnderlined_Test$TestBody", "testMethod", false);
   }
 

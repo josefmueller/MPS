@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -15,9 +17,15 @@ import java.util.Collections;
 
 @MPSLaunch
 public class ContributionFromUnusedLanguage_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ContributionFromUnusedLanguage_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+  public ContributionFromUnusedLanguage_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ContributionFromUnusedLanguage() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.tests.ContributionFromUnusedLanguage_Test$TestBody", "testMethod", false);
   }
 
