@@ -9,17 +9,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -52,17 +51,6 @@ public class SModelUtil {
       return null;
     }
     return SPropertyOperations.getString(genLinkDecl, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-  }
-  public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
-    Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
-      if (SNodeOperations.isInstanceOf(superConcept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
-          SetSequence.fromSet(result).addElement((SNode) node);
-        }
-      }
-    }
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
   }
   @Deprecated
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
