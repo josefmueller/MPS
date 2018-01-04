@@ -559,57 +559,6 @@
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="41J4moeYzDe">
-    <property role="TrG5h" value="SearchScopeWithNode" />
-    <property role="1sVAO0" value="true" />
-    <node concept="3Tm1VV" id="41J4moeYzDf" role="1B3o_S" />
-    <node concept="3uibUv" id="41J4moeYzDg" role="1zkMxy">
-      <ref role="3uigEE" node="41J4moeYzAF" resolve="AbstractSearchScope" />
-    </node>
-    <node concept="312cEg" id="41J4moeYzDh" role="jymVt">
-      <property role="TrG5h" value="myEnclosingNode" />
-      <node concept="3uibUv" id="41J4moeYzDi" role="1tU5fm">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="3Tm6S6" id="41J4moeYzDj" role="1B3o_S" />
-    </node>
-    <node concept="3clFbW" id="41J4moeYzDk" role="jymVt">
-      <node concept="3Tm1VV" id="41J4moeYzDl" role="1B3o_S" />
-      <node concept="3cqZAl" id="41J4moeYzDm" role="3clF45" />
-      <node concept="37vLTG" id="41J4moeYzDn" role="3clF46">
-        <property role="TrG5h" value="enclosingNode" />
-        <node concept="3uibUv" id="41J4moeYzDo" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="41J4moeYzDp" role="3clF47">
-        <node concept="3clFbF" id="41J4moeYzDq" role="3cqZAp">
-          <node concept="37vLTI" id="41J4moeYzDr" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuq4C" role="37vLTJ">
-              <ref role="3cqZAo" node="41J4moeYzDh" resolve="myEnclosingNode" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgkWqX" role="37vLTx">
-              <ref role="3cqZAo" node="41J4moeYzDn" resolve="enclosingNode" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="41J4moeYzDu" role="jymVt">
-      <property role="TrG5h" value="getEnclosingNode" />
-      <node concept="3Tm1VV" id="41J4moeYzDv" role="1B3o_S" />
-      <node concept="3uibUv" id="41J4moeYzDw" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="3clFbS" id="41J4moeYzDx" role="3clF47">
-        <node concept="3cpWs6" id="41J4moeYzDy" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeudCN" role="3cqZAk">
-            <ref role="3cqZAo" node="41J4moeYzDh" resolve="myEnclosingNode" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="3HP615" id="41J4moeYtGn">
     <property role="TrG5h" value="IReferenceInfoResolver" />
     <node concept="3Tm1VV" id="41J4moeY$63" role="1B3o_S" />

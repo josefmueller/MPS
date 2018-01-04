@@ -87,22 +87,6 @@
       <unit id="4642948870877886891" at="12,0,53,0" name="jetbrains.mps.smodel.search.AbstractSearchScope" />
     </file>
   </root>
-  <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877887054">
-    <file name="SearchScopeWithNode.java">
-      <node id="4642948870877887057" at="8,0,9,0" concept="5" trace="myEnclosingNode" />
-      <node id="4642948870877887066" at="9,51,10,36" concept="4" />
-      <node id="4642948870877887074" at="12,35,13,27" concept="11" />
-      <node id="4642948870877887060" at="9,0,12,0" concept="2" trace="SearchScopeWithNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4642948870877887070" at="12,0,15,0" concept="9" trace="getEnclosingNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4642948870877887065" at="9,51,10,36" />
-      <scope id="4642948870877887073" at="12,35,13,27" />
-      <scope id="4642948870877887060" at="9,0,12,0">
-        <var name="enclosingNode" id="4642948870877887063" />
-      </scope>
-      <scope id="4642948870877887070" at="12,0,15,0" />
-      <unit id="4642948870877887054" at="7,0,16,0" name="jetbrains.mps.smodel.search.SearchScopeWithNode" />
-    </file>
-  </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877889221">
     <file name="ISearchScope.java">
       <node id="4642948870877889252" at="23,0,24,0" concept="9" trace="isInScope#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
