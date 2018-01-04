@@ -10,15 +10,6 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="org.junit.runners.ParentRunner" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.runners.DelegatingRunner" file="DelegatingRunner.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.junit.runner.Description" />
-    <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
-    <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
-    <classNode extendsClassName="org.junit.runner.Runner" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy" file="FromDirWithModulesProjectStrategy.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
