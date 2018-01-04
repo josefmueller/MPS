@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,79 +15,72 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InvalidUseOfBoundTypes_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public InvalidUseOfBoundTypes_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624927426896() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927426896", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795767328() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795767328", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624929530242() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624929530242", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795771260() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795771260", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624928690780() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624928690780", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795771535() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795771535", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368246786() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368246786", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795772004() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795772004", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298938() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298938", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795772509() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795772509", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298991() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298991", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795773025() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795773025", true);
   }
   @Test
   public void test_ErrorMessagesCheck4632498131795773624() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_ErrorMessagesCheck4632498131795773624", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6923385624927141945() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927141945", true);
   }
   @Test
   public void test_NodeInvalidUseOfBoundTypeCheck6405539316368313510() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368313510", true);
   }
 

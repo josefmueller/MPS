@@ -4,6 +4,8 @@ package jetbrains.mps.prioritiesTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,24 +21,30 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class TestBlPriorities_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestBlPriorities_Test.class, "${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
+
+
+  public TestBlPriorities_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_testBitwisePriorities() throws Throwable {
-    initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
     runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBitwisePriorities", true);
   }
   @Test
   public void test_testBooleanAndWithEqualsOperation() throws Throwable {
-    initTest("${mps_home}", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)", false);
     runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBooleanAndWithEqualsOperation", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testBitwisePriorities() throws Exception {
-      this.check(_quotation_createNode_p8h609_a0a0a0d(), 1 & 2 | 3 << 4 ^ 5 | 6);
+      this.check(_quotation_createNode_p8h609_a0a0a0i(), 1 & 2 | 3 << 4 ^ 5 | 6);
     }
     public void test_testBooleanAndWithEqualsOperation() throws Exception {
-      this.check(_quotation_createNode_p8h609_a0a0a1d(), true || false == false);
+      this.check(_quotation_createNode_p8h609_a0a0a1i(), true || false == false);
     }
 
 
@@ -92,12 +100,12 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       }
 
       if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
-        return eq_p8h609_a0a0l0h3(left, right);
+        return eq_p8h609_a0a0l0h8(left, right);
       }
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
-    private static SNode _quotation_createNode_p8h609_a0a0a0d() {
+    private static SNode _quotation_createNode_p8h609_a0a0a0i() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -142,7 +150,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_p8h609_a0a0a1d() {
+    private static SNode _quotation_createNode_p8h609_a0a0a1i() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -166,7 +174,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
       return quotedNode_1;
     }
-    private static boolean eq_p8h609_a0a0l0h3(Object a, Object b) {
+    private static boolean eq_p8h609_a0a0l0h8(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

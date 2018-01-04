@@ -4,6 +4,8 @@ package analyzers.test.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
@@ -22,19 +24,24 @@ import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 
 @MPSLaunch
 public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestProgramWithModeSpecified_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
+
+
+  public TestProgramWithModeSpecified_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_testNonEmptyInstructionsWithModeSpecified() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithModeSpecified", true);
   }
   @Test
   public void test_testNonEmptyInstructionsWithMoreSpecificModeSpecified() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testNonEmptyInstructionsWithMoreSpecificModeSpecified", true);
   }
   @Test
   public void test_testEmptyInstructionsWithModeSpecified() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestProgramWithModeSpecified_Test$TestBody", "test_testEmptyInstructionsWithModeSpecified", true);
   }
 
@@ -56,11 +63,11 @@ public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
       addNodeById("2955426575105884967");
       MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.<IDataFlowModeId>emptyList()));
       Program program = builder.buildProgram(SNodeOperations.cast(getNodeById("2955426575105884969"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, "testCustomAnalyzer"), 0x73a316f7f5468ed4L, "Root"))));
-      Assert.assertTrue(program.getInstructions().size() == 1 && eq_3f7mjy_a0a0d0c4(program.getEnd(), program.getInstructions().get(0)));
+      Assert.assertTrue(program.getInstructions().size() == 1 && eq_3f7mjy_a0a0d0c9(program.getEnd(), program.getInstructions().get(0)));
     }
 
 
-    private static boolean eq_3f7mjy_a0a0d0c4(Object a, Object b) {
+    private static boolean eq_3f7mjy_a0a0d0c9(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

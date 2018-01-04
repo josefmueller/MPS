@@ -4,10 +4,20 @@ package jetbrains.mps.baseLanguageInternal.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 
 @MPSLaunch
 public class InternalClassifier_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InternalClassifier_Test.class, "${mps_home}", "r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)", false);
+
+
+  public InternalClassifier_Test() {
+    super(ourParamCache);
+  }
+
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {

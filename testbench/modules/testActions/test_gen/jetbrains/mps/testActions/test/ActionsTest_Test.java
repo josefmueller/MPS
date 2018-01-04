@@ -4,6 +4,8 @@ package jetbrains.mps.testActions.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.Set;
@@ -12,9 +14,16 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class ActionsTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ActionsTest_Test.class, "${mps_home}", "r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)", true);
+
+
+  public ActionsTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_checkRoots() throws Throwable {
-    initTest("${mps_home}", "r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)", true);
     runTest("jetbrains.mps.testActions.test.ActionsTest_Test$TestBody", "test_checkRoots", true);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,24 +15,28 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class FeaturesAndLocations_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FeaturesAndLocations_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+
+  public FeaturesAndLocations_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeThisFeatureIsNotAllowedCheck4740302442485194061() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test$TestBody", "test_NodeThisFeatureIsNotAllowedCheck4740302442485194061", true);
   }
   @Test
   public void test_NodeMissingFeaturesCheck4740302442485174508() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test$TestBody", "test_NodeMissingFeaturesCheck4740302442485174508", true);
   }
   @Test
   public void test_ErrorMessagesCheck4740302442485195517() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test$TestBody", "test_ErrorMessagesCheck4740302442485195517", true);
   }
   @Test
   public void test_ErrorMessagesCheck4740302442485195092() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.FeaturesAndLocations_Test$TestBody", "test_ErrorMessagesCheck4740302442485195092", true);
   }
 

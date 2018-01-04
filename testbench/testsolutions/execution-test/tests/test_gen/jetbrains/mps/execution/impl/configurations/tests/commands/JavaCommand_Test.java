@@ -4,6 +4,8 @@ package jetbrains.mps.execution.impl.configurations.tests.commands;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -29,9 +31,16 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class JavaCommand_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(JavaCommand_Test.class, "${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+
+
+  public JavaCommand_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_startJavaByNode() throws Throwable {
-    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JavaCommand_Test$TestBody", "test_startJavaByNode", true);
   }
 
@@ -44,7 +53,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
           SModel model = PersistenceFacade.getInstance().createModelReference("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)").resolve(myProject.getRepository());
           SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
+              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
             }
           });
           pointer.value = new SNodePointer(mainNode);
@@ -62,7 +71,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a0a0d0d2(event.getText(), expectedSysErr)) {
+            if (neq_849b2c_a0a0a0a0a0a0d0d7(event.getText(), expectedSysErr)) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -85,10 +94,10 @@ public class JavaCommand_Test extends BaseTransformationTest {
         Assert.fail("Exit with code " + exitCode);
       }
     }
-    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0c(Object a, Object b) {
+    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0h(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-    private static boolean neq_849b2c_a0a0a0a0a0a0d0d2(Object a, Object b) {
+    private static boolean neq_849b2c_a0a0a0a0a0a0d0d7(Object a, Object b) {
       return !(((a != null ? a.equals(b) : a == b)));
     }
   }

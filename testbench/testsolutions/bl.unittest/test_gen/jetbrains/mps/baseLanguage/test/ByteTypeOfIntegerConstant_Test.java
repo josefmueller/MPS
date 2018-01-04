@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,119 +15,104 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class ByteTypeOfIntegerConstant_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ByteTypeOfIntegerConstant_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public ByteTypeOfIntegerConstant_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck7584461597503633394() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_ErrorMessagesCheck7584461597503633394", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510629042() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510629042", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510633860() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510633860", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510637620() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510637620", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510641910() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510641910", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510206320() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510206320", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510209271() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510209271", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510212033() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510212033", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510214984() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510214984", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510232532() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510232532", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510254868() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510254868", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510292205() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510292205", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510652182() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510652182", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510657001() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510657001", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510187378() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510187378", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510190135() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510190135", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510202673() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510202673", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510336207() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510336207", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510359963() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510359963", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510378057() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510378057", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510173709() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510173709", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510167190() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510167190", true);
   }
   @Test
   public void test_NodeErrorCheck7584461597510166125() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.ByteTypeOfIntegerConstant_Test$TestBody", "test_NodeErrorCheck7584461597510166125", true);
   }
 

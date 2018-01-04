@@ -4,6 +4,8 @@ package jetbrains.mps.traceInfo.testWeaving.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -12,44 +14,44 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
 public class TestWeaving_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestWeaving_Test.class, "${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
+
+
+  public TestWeaving_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_weave() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weave", true);
   }
   @Test
   public void test_weaveEach() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEach", true);
   }
   @Test
   public void test_weaveMany() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveMany", true);
   }
   @Test
   public void test_weaveEachMany() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachMany", true);
   }
   @Test
   public void test_weaveInterpreted() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveInterpreted", true);
   }
   @Test
   public void test_weaveEachInterpreted() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachInterpreted", true);
   }
   @Test
   public void test_weaveManyInterpreted() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveManyInterpreted", true);
   }
   @Test
   public void test_weaveEachManyInterpreted() throws Throwable {
-    initTest("${mps_home}", "r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)", false);
     runTest("jetbrains.mps.traceInfo.testWeaving.test.TestWeaving_Test$TestBody", "test_weaveEachManyInterpreted", true);
   }
 

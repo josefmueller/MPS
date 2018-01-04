@@ -4,6 +4,8 @@ package testSubstituteType.model;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,49 +15,48 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class OverridingInference_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(OverridingInference_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
+
+
+  public OverridingInference_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck6572489169071449300() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6572489169071449300", true);
   }
   @Test
   public void test_NodeErrorCheck6572489169071450944() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6572489169071450944", true);
   }
   @Test
   public void test_NodeErrorCheck6560794580689901218() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6560794580689901218", true);
   }
   @Test
   public void test_NodeErrorCheck6560794580689901568() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck6560794580689901568", true);
   }
   @Test
   public void test_NodeErrorCheck1870027727456331649() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456331649", true);
   }
   @Test
   public void test_NodeErrorCheck1870027727456349628() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456349628", true);
   }
   @Test
   public void test_NodeErrorCheck1870027727456331667() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1870027727456331667", true);
   }
   @Test
   public void test_NodeErrorCheck1042936571392548556() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_NodeErrorCheck1042936571392548556", true);
   }
   @Test
   public void test_ErrorMessagesCheck4113274076525493263() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.OverridingInference_Test$TestBody", "test_ErrorMessagesCheck4113274076525493263", true);
   }
 

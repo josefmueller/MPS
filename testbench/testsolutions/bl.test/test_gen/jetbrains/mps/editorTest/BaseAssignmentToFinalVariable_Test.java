@@ -4,6 +4,8 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,39 +15,40 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class BaseAssignmentToFinalVariable_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(BaseAssignmentToFinalVariable_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+
+
+  public BaseAssignmentToFinalVariable_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeCannotAssignValueToFinalCheck5706606249111788699() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck5706606249111788699", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck5706606249111798505() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck5706606249111798505", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6982528192101427028() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6982528192101427028", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6982528192101427038() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6982528192101427038", true);
   }
   @Test
   public void test_NodeCannotAssignValueToFinalCheck6549739314330314428() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6549739314330314428", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6549739314330060411() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6549739314330060411", true);
   }
   @Test
   public void test_ErrorMessagesCheck5706606249111739463() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.BaseAssignmentToFinalVariable_Test$TestBody", "test_ErrorMessagesCheck5706606249111739463", true);
   }
 

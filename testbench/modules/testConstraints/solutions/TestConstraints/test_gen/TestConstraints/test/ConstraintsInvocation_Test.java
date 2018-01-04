@@ -4,6 +4,8 @@ package TestConstraints.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,14 +15,20 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class ConstraintsInvocation_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ConstraintsInvocation_Test.class, "${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
+
+
+  public ConstraintsInvocation_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeUnknownRuleCheck730305212589682236() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInvocation_Test$TestBody", "test_NodeUnknownRuleCheck730305212589682236", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck730305212589682205() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInvocation_Test$TestBody", "test_NodeUnknownRuleCheck730305212589682205", true);
   }
 

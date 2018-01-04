@@ -4,6 +4,8 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,44 +15,44 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class ImplicitEnumMethodImplementation_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ImplicitEnumMethodImplementation_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+
+
+  public ImplicitEnumMethodImplementation_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck8841676161362742012() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362742012", true);
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362742874() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362742874", true);
   }
   @Test
   public void test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735", true);
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362737481() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362737481", true);
   }
   @Test
   public void test_NodeEnumConstantHasUnimplementedCheck8841676161362737703() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumConstantHasUnimplementedCheck8841676161362737703", true);
   }
   @Test
   public void test_NodeEnumConstantHasUnimplementedCheck8841676161362737723() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_NodeEnumConstantHasUnimplementedCheck8841676161362737723", true);
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362737639() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362737639", true);
   }
   @Test
   public void test_ErrorMessagesCheck8841676161362738093() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody", "test_ErrorMessagesCheck8841676161362738093", true);
   }
 

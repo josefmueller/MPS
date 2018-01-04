@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.test.smodelOperations;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
@@ -11,29 +13,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 
 @MPSLaunch
 public class EnumerationDatatypes_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(EnumerationDatatypes_Test.class, "${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
+
+
+  public EnumerationDatatypes_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_enumMemberPresentation() throws Throwable {
-    initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberPresentation", true);
   }
   @Test
   public void test_enumMemberValue() throws Throwable {
-    initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberValue", true);
   }
   @Test
   public void test_enumMemberForValue() throws Throwable {
-    initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberForValue", true);
   }
   @Test
   public void test_enumMemberName() throws Throwable {
-    initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberName", true);
   }
   @Test
   public void test_enumMemberForName() throws Throwable {
-    initTest("${mps_home}", "r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)", false);
     runTest("jetbrains.mps.smodel.test.smodelOperations.EnumerationDatatypes_Test$TestBody", "test_enumMemberForName", true);
   }
 

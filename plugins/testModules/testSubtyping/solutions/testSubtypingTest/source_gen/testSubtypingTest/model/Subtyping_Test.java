@@ -4,6 +4,8 @@ package testSubtypingTest.model;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,24 +15,28 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class Subtyping_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Subtyping_Test.class, "${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
+
+
+  public Subtyping_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck2078093584693310057() throws Throwable {
-    initTest("${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
     runTest("testSubtypingTest.model.Subtyping_Test$TestBody", "test_NodeErrorCheck2078093584693310057", true);
   }
   @Test
   public void test_NodeErrorCheck2078093584693358841() throws Throwable {
-    initTest("${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
     runTest("testSubtypingTest.model.Subtyping_Test$TestBody", "test_NodeErrorCheck2078093584693358841", true);
   }
   @Test
   public void test_NodeErrorCheck204609444630139535() throws Throwable {
-    initTest("${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
     runTest("testSubtypingTest.model.Subtyping_Test$TestBody", "test_NodeErrorCheck204609444630139535", true);
   }
   @Test
   public void test_ErrorMessagesCheck204609444630139319() throws Throwable {
-    initTest("${mps_home}", "r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)", false);
     runTest("testSubtypingTest.model.Subtyping_Test$TestBody", "test_ErrorMessagesCheck204609444630139319", true);
   }
 

@@ -4,6 +4,8 @@ package tests.testDepViewer.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -17,29 +19,32 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @MPSLaunch
 public class TestDepViewer_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestDepViewer_Test.class, "${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
+
+
+  public TestDepViewer_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_testPrecondition() throws Throwable {
-    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
     runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testPrecondition", true);
   }
   @Test
   public void test_testModel1DependsOnSomething() throws Throwable {
-    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
     runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnSomething", true);
   }
   @Test
   public void test_testModel3DoesntDependOnAnything() throws Throwable {
-    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
     runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel3DoesntDependOnAnything", true);
   }
   @Test
   public void test_testModel1DependsOnModel2() throws Throwable {
-    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
     runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DependsOnModel2", true);
   }
   @Test
   public void test_testModel1DoesntDependOnModel3() throws Throwable {
-    initTest("${mps_home}", "r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)", false);
     runTest("tests.testDepViewer.test.TestDepViewer_Test$TestBody", "test_testModel1DoesntDependOnModel3", true);
   }
 

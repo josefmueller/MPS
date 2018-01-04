@@ -4,6 +4,8 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,34 +15,36 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class UnusedFinalFields_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedFinalFields_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+
+
+  public UnusedFinalFields_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck8129007564265890534() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265890534", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564265890539() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265890539", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564265900849() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265900849", true);
   }
   @Test
   public void test_NodeErrorCheck1855868101957039779() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck1855868101957039779", true);
   }
   @Test
   public void test_ErrorMessagesCheck8129007564265890591() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_ErrorMessagesCheck8129007564265890591", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564265921306() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFinalFields_Test$TestBody", "test_NodeErrorCheck8129007564265921306", true);
   }
 

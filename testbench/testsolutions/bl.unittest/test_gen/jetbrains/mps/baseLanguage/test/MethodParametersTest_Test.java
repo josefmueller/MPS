@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -14,24 +16,28 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class MethodParametersTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MethodParametersTest_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public MethodParametersTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MethodParametersTest() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_MethodParametersTest", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929086232", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512877601() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.MethodParametersTest_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512877601", true);
   }
 

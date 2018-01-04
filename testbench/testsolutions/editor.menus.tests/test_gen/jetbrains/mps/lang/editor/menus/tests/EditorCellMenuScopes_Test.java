@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,34 +15,36 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class EditorCellMenuScopes_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(EditorCellMenuScopes_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+
+  public EditorCellMenuScopes_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_1068638940632614994", true);
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_1068638940632808481() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_1068638940632808481", true);
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583379447() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583379447", true);
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583467351() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583467351", true);
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583467622() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Default_concept_4091667478583467622", true);
   }
   @Test
   public void test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583468879() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.EditorCellMenuScopes_Test$TestBody", "test_ScopeOf_TransformationMenuReference_Named_menu_4091667478583468879", true);
   }
 

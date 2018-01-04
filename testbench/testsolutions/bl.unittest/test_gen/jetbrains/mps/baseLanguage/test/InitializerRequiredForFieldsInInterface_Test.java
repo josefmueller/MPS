@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,19 +15,24 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class InitializerRequiredForFieldsInInterface_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InitializerRequiredForFieldsInInterface_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public InitializerRequiredForFieldsInInterface_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck1187415722613141596() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InitializerRequiredForFieldsInInterface_Test$TestBody", "test_NodeErrorCheck1187415722613141596", true);
   }
   @Test
   public void test_NodeErrorCheck1187415722613794413() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InitializerRequiredForFieldsInInterface_Test$TestBody", "test_NodeErrorCheck1187415722613794413", true);
   }
   @Test
   public void test_ErrorMessagesCheck1187415722601361320() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InitializerRequiredForFieldsInInterface_Test$TestBody", "test_ErrorMessagesCheck1187415722601361320", true);
   }
 

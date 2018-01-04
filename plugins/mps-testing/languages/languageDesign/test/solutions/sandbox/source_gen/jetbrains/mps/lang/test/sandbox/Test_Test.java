@@ -4,6 +4,8 @@ package jetbrains.mps.lang.test.sandbox;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -14,44 +16,44 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class Test_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Test_Test.class, "${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
+
+
+  public Test_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_testError() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_testError", true);
   }
   @Test
   public void test_hasType() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasType", true);
   }
   @Test
   public void test_hasError() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasError", true);
   }
   @Test
   public void test_hasTypeInSet() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_hasTypeInSet", true);
   }
   @Test
   public void test_NodeTestinfoRootPointingTheCheck2276757138027830973() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTestinfoRootPointingTheCheck2276757138027830973", true);
   }
   @Test
   public void test_NodeTypeCheck6594325605663849546() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTypeCheck6594325605663849546", true);
   }
   @Test
   public void test_NodeErrorCheck6594325605663849637() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeErrorCheck6594325605663849637", true);
   }
   @Test
   public void test_NodeTypeSetCheck6594325605663852576() throws Throwable {
-    initTest("${mps_home}", "r:d7855642-243e-427f-900a-a50689578160(jetbrains.mps.lang.test.sandbox)", false);
     runTest("jetbrains.mps.lang.test.sandbox.Test_Test$TestBody", "test_NodeTypeSetCheck6594325605663852576", true);
   }
 

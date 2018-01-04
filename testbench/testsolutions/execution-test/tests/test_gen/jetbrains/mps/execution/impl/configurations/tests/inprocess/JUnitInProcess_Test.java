@@ -6,6 +6,8 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
@@ -28,14 +30,20 @@ import com.intellij.execution.ExecutionException;
 @MPSLaunch
 public class JUnitInProcess_Test extends BaseTransformationTest {
   private static final Logger LOG = LogManager.getLogger(JUnitInProcess_Test.class);
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitInProcess_Test.class, "${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
+
+
+  public JUnitInProcess_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_startSimpleTestCase() throws Throwable {
-    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startSimpleTestCase", false);
   }
   @Test
   public void test_startFailedTestCase() throws Throwable {
-    initTest("${mps_home}", "r:ff98d12f-bc65-4639-94c3-dee022b33791(jetbrains.mps.execution.impl.configurations.tests.inprocess@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.inprocess.JUnitInProcess_Test$TestBody", "test_startFailedTestCase", false);
   }
 

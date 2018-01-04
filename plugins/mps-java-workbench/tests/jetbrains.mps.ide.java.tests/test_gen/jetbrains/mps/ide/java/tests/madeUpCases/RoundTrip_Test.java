@@ -4,6 +4,8 @@ package jetbrains.mps.ide.java.tests.madeUpCases;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.ide.java.tests.utility.Utils;
@@ -12,34 +14,36 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
 public class RoundTrip_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(RoundTrip_Test.class, "${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
+
+
+  public RoundTrip_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_Simple() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Simple", true);
   }
   @Test
   public void test_Methods() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Methods", true);
   }
   @Test
   public void test_Fields() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_Fields", true);
   }
   @Test
   public void test_TypeVars() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_TypeVars", true);
   }
   @Test
   public void test_OuterClassThis() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_OuterClassThis", true);
   }
   @Test
   public void test_VarargMethods() throws Throwable {
-    initTest("${mps_home}", "r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)", false);
     runTest("jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody", "test_VarargMethods", true);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,24 +15,28 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class FinalMethodOverriding_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FinalMethodOverriding_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public FinalMethodOverriding_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883490516() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883490516", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883346737() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883346737", true);
   }
   @Test
   public void test_NodeMethodCanNotOverrideFinalCheck7471623575883519854() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_NodeMethodCanNotOverrideFinalCheck7471623575883519854", true);
   }
   @Test
   public void test_ErrorMessagesCheck7471623575883519712() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FinalMethodOverriding_Test$TestBody", "test_ErrorMessagesCheck7471623575883519712", true);
   }
 

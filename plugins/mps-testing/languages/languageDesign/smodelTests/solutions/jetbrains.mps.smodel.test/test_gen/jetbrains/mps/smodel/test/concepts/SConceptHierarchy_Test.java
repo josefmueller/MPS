@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.test.concepts;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
@@ -17,19 +19,24 @@ import jetbrains.mps.util.IterableUtil;
 
 @MPSLaunch
 public class SConceptHierarchy_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SConceptHierarchy_Test.class, "${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
+
+
+  public SConceptHierarchy_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_conceptHierarchy() throws Throwable {
-    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
     runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptHierarchy", true);
   }
   @Test
   public void test_conceptSuperConcept() throws Throwable {
-    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
     runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_conceptSuperConcept", true);
   }
   @Test
   public void test_defaultIfaceConcept() throws Throwable {
-    initTest("${mps_home}", "r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)", false);
     runTest("jetbrains.mps.smodel.test.concepts.SConceptHierarchy_Test$TestBody", "test_defaultIfaceConcept", true);
   }
 
