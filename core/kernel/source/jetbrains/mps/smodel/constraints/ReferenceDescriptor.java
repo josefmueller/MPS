@@ -26,9 +26,6 @@ import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.smodel.search.ISearchScope.Adapter;
-import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -151,9 +148,6 @@ public abstract class ReferenceDescriptor {
         if (myScopeProvider != null) {
           Scope searchScope = myScopeProvider.createScope(getOperationContext(getModule()), context);
           if (searchScope != null) {
-            if (myReference != null && searchScope instanceof Adapter) {
-              return new RefAdapter(((Adapter) searchScope).getSearchScope(), myReference);
-            }
             return new FilteringByConceptScope(searchScope, myLinkTarget);
           }
         }
@@ -207,7 +201,8 @@ public abstract class ReferenceDescriptor {
       //      it will be possible to do it without sources when information about link specialization will be generated.
       SNode conceptDeclaration = concreteConcept.getDeclarationNode();
 
-      SNode linkDeclaration = ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
+      SNode linkDeclaration = conceptDeclaration == null ? null :
+                              ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
 
       final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
       if (linkDeclarationTarget != null) {

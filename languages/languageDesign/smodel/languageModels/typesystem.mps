@@ -25,6 +25,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2300,11 +2301,16 @@
                           </node>
                         </node>
                         <node concept="3clFbS" id="hLiX8v_" role="3eOfB_">
+                          <node concept="3SKdUt" id="EW0iIEmv2f" role="3cqZAp">
+                            <node concept="3SKdUq" id="EW0iIEmv2h" role="3SKWNk">
+                              <property role="3SKdUp" value="see Node_GetReferentSearchScopeOperation deprecation" />
+                            </node>
+                          </node>
                           <node concept="1Z5TYs" id="hLiXksq" role="3cqZAp">
                             <node concept="mw_s8" id="hLiXlm$" role="1ZfhKB">
                               <node concept="2c44tf" id="hLiXlm_" role="mwGJk">
-                                <node concept="3uibUv" id="hLiXFGA" role="2c44tc">
-                                  <ref role="3uigEE" to="k6ay:~ISearchScope" resolve="ISearchScope" />
+                                <node concept="3uibUv" id="EW0iIEmv1E" role="2c44tc">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                                 </node>
                               </node>
                             </node>
@@ -6942,10 +6948,15 @@
     <property role="TrG5h" value="supertypesOf_SearchScopeType_ISearchScope" />
     <property role="3GE5qa" value="type" />
     <node concept="3clFbS" id="hLiZYV5" role="2sgrp5">
+      <node concept="3SKdUt" id="EW0iIEmv7n" role="3cqZAp">
+        <node concept="3SKdUq" id="EW0iIEmv7p" role="3SKWNk">
+          <property role="3SKdUp" value="see deprecation in Node_GetReferentSearchScopeOperation" />
+        </node>
+      </node>
       <node concept="3cpWs6" id="hLiZYV6" role="3cqZAp">
         <node concept="2c44tf" id="hLiZYV7" role="3cqZAk">
-          <node concept="3uibUv" id="hLj09wq" role="2c44tc">
-            <ref role="3uigEE" to="k6ay:~ISearchScope" resolve="ISearchScope" />
+          <node concept="3uibUv" id="EW0iIEmv6_" role="2c44tc">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
           </node>
         </node>
       </node>
