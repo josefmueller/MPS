@@ -20,9 +20,6 @@ import java.io.File;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.module.ReloadableModule;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -125,59 +122,6 @@ public class TransformationTestRunner implements TestRunner {
     return null;
   }
 
-  public void runTest(@NotNull final TransformationTest projectTest, final String className, final String methodName, boolean runInCommand) throws Throwable {
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Running the test " + methodName);
-    }
-    final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
-    final Throwable[] error = new Throwable[1];
-
-    projectTest.getProject().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        final SModule module = projectTest.getModelDescriptor().getModule();
-        if (!(module instanceof ReloadableModule)) {
-          error[0] = new IllegalArgumentException("module" + module + " is not reloadable -- cannot run tests in it");
-          return;
-        }
-        try {
-          clazz.value = ((ReloadableModule) module).getOwnClass(className);
-        } catch (Throwable t) {
-          error[0] = t;
-        }
-      }
-    });
-    if (error[0] != null) {
-      throw error[0];
-    }
-
-    final Object obj = clazz.value.newInstance();
-    clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
-    clazz.value.getField("myProject").set(obj, projectTest.getProject());
-    if (runInCommand) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          projectTest.getProject().getModelAccess().executeCommand(new Runnable() {
-            public void run() {
-              error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
-            }
-          });
-        }
-      });
-      myEnvironment.flushAllEvents();
-    } else {
-      error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
-    }
-    if (error[0] != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Test failed");
-      }
-      throw error[0];
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Test passed");
-    }
-  }
-
   private static void clearSystemClipboard() {
     if (GraphicsEnvironment.isHeadless()) {
       return;
@@ -208,17 +152,4 @@ public class TransformationTestRunner implements TestRunner {
     return provider;
   }
 
-  private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
-    Throwable exception = null;
-    try {
-      clazz.getMethod(methodName).invoke(obj);
-    } catch (NoSuchMethodException e) {
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      exception = e.getTargetException();
-    }
-    return exception;
-  }
 }

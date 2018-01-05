@@ -6,5 +6,4 @@ import org.jetbrains.annotations.NotNull;
 
 public interface TestRunner {
   void initTest(final TransformationTest test, @NotNull String projectPath, String modelName, boolean reOpenProject) throws Exception;
-  void runTest(final TransformationTest test, String className, final String methodName, boolean runInCommand) throws Throwable;
 }

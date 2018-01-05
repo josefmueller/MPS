@@ -42,11 +42,6 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     ModelAccess.instance().flushEventQueue();
   }
 
-  @Override
-  public void runTest(@NotNull final TransformationTest projectTest, String className, final String methodName, boolean runInCommand) throws Throwable {
-    super.runTest(projectTest, className, methodName, runInCommand);
-  }
-
   @Nullable
   private Project findAnyProjectWithModel(String modelName) {
     final SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelName);
