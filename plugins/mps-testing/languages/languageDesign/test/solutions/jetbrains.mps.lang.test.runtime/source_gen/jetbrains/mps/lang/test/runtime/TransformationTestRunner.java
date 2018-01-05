@@ -37,7 +37,7 @@ public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
-  private final Environment myEnvironment;
+  protected final Environment myEnvironment;
 
   public TransformationTestRunner(@NotNull Environment environment) {
     myEnvironment = environment;
@@ -90,6 +90,7 @@ public class TransformationTestRunner implements TestRunner {
 
 
   protected Project openTestProject(String projectPathName, boolean reopenProject) {
+    // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
     File projectToOpen = new File(expandedProjectPath);
     if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
