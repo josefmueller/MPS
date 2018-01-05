@@ -17,21 +17,21 @@ public class SModelSearchUtil {
     if (role == null) {
       return null;
     }
-    return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
+    return ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getLinkDeclarationByRole(role);
   }
   public static SNode findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
     // LinkDeclaration 
     if (role == null) {
       return null;
     }
-    return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
+    return ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
   public static List<SNode> getLinkDeclarations(SNode concept) {
     // uses in mbeddr 
-    return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    return ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
   }
   public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
-    List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<SNode> list = ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode link : list) {
       if (!(SNodeUtil.getLinkDeclaration_IsReference(link))) {
@@ -44,7 +44,7 @@ public class SModelSearchUtil {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
       @Override
       public List<SNode> compute() {
-        List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+        List<SNode> list = ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
         List<SNode> result = new ArrayList<SNode>();
         for (SNode link : list) {
           if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
@@ -57,13 +57,13 @@ public class SModelSearchUtil {
   }
   public static List<SNode> getPropertyDeclarations(SNode concept) {
     // uses in mbeddr 
-    return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
+    return ConceptAndSuperConceptsCache.getInstance(concept).getPropertyDeclarations();
   }
   @Nullable
   public static SNode findPropertyDeclaration(SNode concept, String propertyName) {
     if (concept == null || propertyName == null) {
       return null;
     }
-    return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
+    return ConceptAndSuperConceptsCache.getInstance(concept).getPropertyDeclarationByName(propertyName);
   }
 }
