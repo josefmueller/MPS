@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
@@ -206,7 +207,7 @@ public abstract class ReferenceDescriptor {
       //      it will be possible to do it without sources when information about link specialization will be generated.
       SNode conceptDeclaration = concreteConcept.getDeclarationNode();
 
-      SNode linkDeclaration = new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
+      SNode linkDeclaration = ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
 
       final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
       if (linkDeclarationTarget != null) {

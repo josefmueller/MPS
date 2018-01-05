@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * * Should be thread safe.
  */
-/*package*/ class ConceptAndSuperConceptsCache extends AbstractCache {
+public class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final Logger LOG = LogManager.getLogger(ConceptAndSuperConceptsCache.class);
   private static final CachesManager.CacheCreator<SNode> CREATOR = new CachesManager.CacheCreator<SNode>() {

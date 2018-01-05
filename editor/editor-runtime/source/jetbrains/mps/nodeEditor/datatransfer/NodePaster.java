@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -275,14 +276,14 @@ public class NodePaster {
     //todo[MM] !!! remove "role" here!!!
     List<SNode> links;
     if (role != null) {
-      SNode link = new ConceptAndSuperConceptsScope(sourceConcept).getMostSpecificLinkDeclarationByRole(role);
+      SNode link = ConceptAndSuperConceptsCache.getInstance(sourceConcept).getMostSpecificLinkDeclarationByRole(role);
       if (link != null) {
         links = Collections.singletonList(link);
       } else {
         links = Collections.emptyList();
       }
     } else {
-      links = new ConceptAndSuperConceptsScope(sourceConcept).getLinkDeclarationsExcludingOverridden();
+      links = ConceptAndSuperConceptsCache.getInstance(sourceConcept).getLinkDeclarationsExcludingOverridden();
     }
 
     for (SNode link : links) {

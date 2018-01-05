@@ -34,6 +34,7 @@
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="k6ay" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.search(MPS.Core/)" />
+    <import index="inbo" ref="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
   </imports>
@@ -620,38 +621,26 @@
             <property role="3SKdUp" value="here we are still looking at language sources because there is no information about specialized links in compiled language" />
           </node>
         </node>
-        <node concept="3cpWs8" id="2I_OWQO_ev0" role="3cqZAp">
-          <node concept="3cpWsn" id="2I_OWQO_ev1" role="3cpWs9">
-            <property role="TrG5h" value="linkSearchScope" />
-            <node concept="3uibUv" id="2I_OWQO_ev2" role="1tU5fm">
-              <ref role="3uigEE" to="k6ay:~ConceptAndSuperConceptsScope" resolve="ConceptAndSuperConceptsScope" />
-            </node>
-            <node concept="2ShNRf" id="2I_OWQO_ev3" role="33vP2m">
-              <node concept="1pGfFk" id="2I_OWQO_ev4" role="2ShVmc">
-                <ref role="37wK5l" to="k6ay:~ConceptAndSuperConceptsScope.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="ConceptAndSuperConceptsScope" />
-                <node concept="2OqwBi" id="2I_OWQO_ev5" role="37wK5m">
-                  <node concept="37vLTw" id="2I_OWQO_ev6" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2I_OWQO_euM" resolve="attributedNode" />
-                  </node>
-                  <node concept="3NT_Vc" id="2I_OWQO_ev7" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2I_OWQO_fv7" role="3cqZAp">
           <node concept="1PxgMI" id="2I_OWQO_ePx" role="3clFbG">
             <node concept="chp4Y" id="2I_OWQO_ePy" role="3oSUPX">
               <ref role="cht4Q" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
             </node>
             <node concept="2OqwBi" id="2I_OWQO_ePz" role="1m5AlR">
-              <node concept="37vLTw" id="2I_OWQO_eP$" role="2Oq$k0">
-                <ref role="3cqZAo" node="2I_OWQO_ev1" resolve="linkSearchScope" />
-              </node>
               <node concept="liA8E" id="2I_OWQO_eP_" role="2OqNvi">
-                <ref role="37wK5l" to="k6ay:~ConceptAndSuperConceptsScope.getMostSpecificLinkDeclarationByRole(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getMostSpecificLinkDeclarationByRole" />
+                <ref role="37wK5l" to="inbo:7mY9WXbe7Gp" resolve="getMostSpecificLinkDeclarationByRole" />
                 <node concept="37vLTw" id="2I_OWQO_ePA" role="37wK5m">
                   <ref role="3cqZAo" node="2I_OWQO_euS" resolve="linkRole" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="14eTo0LYi7t" role="2Oq$k0">
+                <ref role="1Pybhc" to="inbo:7mY9WXbe7BL" resolve="ConceptAndSuperConceptsCache" />
+                <ref role="37wK5l" to="inbo:7mY9WXbe7Cg" resolve="getInstance" />
+                <node concept="2OqwBi" id="2I_OWQO_ev5" role="37wK5m">
+                  <node concept="37vLTw" id="2I_OWQO_ev6" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2I_OWQO_euM" resolve="attributedNode" />
+                  </node>
+                  <node concept="3NT_Vc" id="2I_OWQO_ev7" role="2OqNvi" />
                 </node>
               </node>
             </node>
