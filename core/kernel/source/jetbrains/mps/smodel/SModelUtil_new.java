@@ -35,10 +35,6 @@ import java.util.List;
 public class SModelUtil_new {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
 
-  public static List<SNode> getConceptAndSuperConcepts(SNode topConcept) {
-    return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
-  }
-
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
     return instantiateConceptDeclaration(MetaAdapterByDeclaration.getConcept(conceptDeclaration), model, null, fullNodeStructure);
   }
