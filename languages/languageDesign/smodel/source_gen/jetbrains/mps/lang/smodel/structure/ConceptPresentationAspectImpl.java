@@ -1492,6 +1492,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SearchScope_ContainsOperation:
         if (props_SearchScope_ContainsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.shortDesc("test node visibility in scope");
           cpb.rawPresentation("contains");
           props_SearchScope_ContainsOperation = cpb.create();

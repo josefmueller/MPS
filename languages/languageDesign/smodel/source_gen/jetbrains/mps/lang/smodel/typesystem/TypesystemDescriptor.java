@@ -609,10 +609,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new supertypesOf_SearchScopeType_ISearchScope_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
       SubtypingRule_Runtime subtypingRule = new supertypesOf_SetType_SetType_elementSNode_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

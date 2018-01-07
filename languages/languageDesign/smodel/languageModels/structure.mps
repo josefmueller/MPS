@@ -1328,6 +1328,10 @@
       <property role="IQ2ns" value="1221170724607" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="asaX9" id="5j5ScoAVt7e" role="lGtFl">
+      <property role="YLQ7P" value="use Scope class instead" />
+      <property role="YLPcu" value="2018.1" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQ8GBOl">
     <property role="R5$K7" value="false" />

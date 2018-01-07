@@ -241,9 +241,5 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations" file="SearchScopeOperations.java">
-    <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
 </dependenciesRoot>
 

@@ -6943,29 +6943,6 @@
       <ref role="1YaFvo" to="tp25:gzTqbfa" resolve="SNodeType" />
     </node>
   </node>
-  <node concept="2sgARr" id="hLiZYV4">
-    <property role="2RFo0w" value="true" />
-    <property role="TrG5h" value="supertypesOf_SearchScopeType_ISearchScope" />
-    <property role="3GE5qa" value="type" />
-    <node concept="3clFbS" id="hLiZYV5" role="2sgrp5">
-      <node concept="3SKdUt" id="EW0iIEmv7n" role="3cqZAp">
-        <node concept="3SKdUq" id="EW0iIEmv7p" role="3SKWNk">
-          <property role="3SKdUp" value="see deprecation in Node_GetReferentSearchScopeOperation" />
-        </node>
-      </node>
-      <node concept="3cpWs6" id="hLiZYV6" role="3cqZAp">
-        <node concept="2c44tf" id="hLiZYV7" role="3cqZAk">
-          <node concept="3uibUv" id="EW0iIEmv6_" role="2c44tc">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="hLiZYV9" role="1YuTPh">
-      <property role="TrG5h" value="node" />
-      <ref role="1YaFvo" to="tp25:hLiUZJy" resolve="SearchScopeType" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="hLjfOUD">
     <property role="18ip37" value="true" />
     <property role="TrG5h" value="typeof_Node_GetReferentSearchScopeOperation" />
