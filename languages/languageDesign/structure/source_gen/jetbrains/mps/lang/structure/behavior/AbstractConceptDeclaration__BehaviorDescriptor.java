@@ -40,7 +40,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -257,10 +257,10 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     return abstractMethods;
   }
   /*package*/ static SNode findLinkDeclaration_idhEwILKz(@NotNull SNode __thisNode__, String role) {
-    return SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(__thisNode__, role), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+    return SNodeOperations.cast(ConceptAndSuperConceptsCache.getInstance(__thisNode__).getLinkDeclarationByRole(role), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
   /*package*/ static List<SNode> getLinkDeclarations_idhEwILKK(@NotNull SNode __thisNode__) {
-    return (List<SNode>) SModelSearchUtil.getLinkDeclarations(__thisNode__);
+    return (List<SNode>) ConceptAndSuperConceptsCache.getInstance(__thisNode__).getLinkDeclarationsExcludingOverridden();
   }
   /*package*/ static List<SNode> getReferenceLinkDeclarations_idhEwILL0(@NotNull SNode __thisNode__) {
     List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(__thisNode__);
@@ -279,12 +279,10 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     }).toListSequence();
   }
   /*package*/ static List<SNode> getPropertyDeclarations_idhEwILLM(@NotNull SNode __thisNode__) {
-    List<SNode> properties = SModelSearchUtil.getPropertyDeclarations(__thisNode__);
-    return (List<SNode>) properties;
+    return (List<SNode>) ConceptAndSuperConceptsCache.getInstance(__thisNode__).getPropertyDeclarations();
   }
   /*package*/ static SNode findPropertyDeclaration_idhK3S4A1(@NotNull SNode __thisNode__, String name) {
-    SNode p = SModelSearchUtil.findPropertyDeclaration(__thisNode__, name);
-    return SNodeOperations.cast(p, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+    return SNodeOperations.cast(ConceptAndSuperConceptsCache.getInstance(__thisNode__).getPropertyDeclarationByName(name), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
   /*package*/ static boolean isSubconceptOf_id73yVtVlWOga(@NotNull SNode __thisNode__, SNode superconcept) {
     if (superconcept == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
