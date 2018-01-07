@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
@@ -32,6 +33,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -74,7 +76,14 @@ public class ReferenceConceptUtil {
           }
         }
 
-        List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
+        List<SNode> links = new ArrayList<SNode>();
+        //this usage of ConceptAndSuperConceptsCache is inside a deprecated method, which will be removed soon
+        for (SNode link : ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden()) {
+          if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
+            links.add(link);
+          }
+        }
+
         if (expectedReferentRole != null) {
           for (SNode link : links) {
             if (expectedReferentRole.equals(SModelUtil.getLinkDeclarationRole(link))) {

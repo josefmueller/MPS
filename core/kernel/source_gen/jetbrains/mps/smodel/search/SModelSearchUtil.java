@@ -4,10 +4,6 @@ package jetbrains.mps.smodel.search;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 public class SModelSearchUtil {
@@ -19,41 +15,9 @@ public class SModelSearchUtil {
     }
     return ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getLinkDeclarationByRole(role);
   }
-  public static SNode findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
-    // LinkDeclaration 
-    if (role == null) {
-      return null;
-    }
-    return ConceptAndSuperConceptsCache.getInstance(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
-  }
   public static List<SNode> getLinkDeclarations(SNode concept) {
     // uses in mbeddr 
     return ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
-  }
-  public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
-    List<SNode> list = ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode link : list) {
-      if (!(SNodeUtil.getLinkDeclaration_IsReference(link))) {
-        result.add(link);
-      }
-    }
-    return result;
-  }
-  public static List<SNode> getReferenceLinkDeclarations(final SNode concept) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
-      @Override
-      public List<SNode> compute() {
-        List<SNode> list = ConceptAndSuperConceptsCache.getInstance(concept).getLinkDeclarationsExcludingOverridden();
-        List<SNode> result = new ArrayList<SNode>();
-        for (SNode link : list) {
-          if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
-            result.add(link);
-          }
-        }
-        return result;
-      }
-    });
   }
   public static List<SNode> getPropertyDeclarations(SNode concept) {
     // uses in mbeddr 
