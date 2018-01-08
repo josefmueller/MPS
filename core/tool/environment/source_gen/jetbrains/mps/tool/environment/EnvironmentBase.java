@@ -212,6 +212,13 @@ public abstract class EnvironmentBase implements Environment {
     }
   }
 
+
+  @Override
+  public void closeProject(@NotNull Project project) {
+    checkInitialized();
+    project.dispose();
+  }
+
   protected abstract void doDispose();
 
   protected abstract Project doOpenProject(@NotNull File projectFile);

@@ -12565,6 +12565,36 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3hj1t46fDUs" role="jymVt" />
+    <node concept="2tJIrI" id="3hj1t46fDVG" role="jymVt" />
+    <node concept="3clFb_" id="3hj1t46fE9g" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="closeProject" />
+      <node concept="3Tm1VV" id="3hj1t46fE9i" role="1B3o_S" />
+      <node concept="3cqZAl" id="3hj1t46fE9j" role="3clF45" />
+      <node concept="37vLTG" id="3hj1t46fE9k" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3hj1t46fE9l" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="3hj1t46fE9m" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3hj1t46fE9u" role="3clF47">
+        <node concept="YS8fn" id="3hj1t46fEr6" role="3cqZAp">
+          <node concept="2ShNRf" id="3hj1t46fEr7" role="YScLw">
+            <node concept="1pGfFk" id="3hj1t46fEr8" role="2ShVmc">
+              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3hj1t46fE9v" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="2ky3Rs1tGy5" role="jymVt" />
     <node concept="3clFb_" id="2ky3Rs1tGqG" role="jymVt">
       <property role="1EzhhJ" value="false" />

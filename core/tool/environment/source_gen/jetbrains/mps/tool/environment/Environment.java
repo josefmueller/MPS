@@ -44,6 +44,15 @@ public interface Environment extends Retainable {
   @NotNull
   Project openProject(@NotNull File projectFile);
 
+
+  /**
+   * Discards previously opened project. 
+   * Environment does its best to close the project but may choose to ignore request in certain scenarions (like in-process test execution, when closing an active project may affect user experience)
+   * 
+   * @param project an instance obtained from {@link #openProject(java.io.File)}
+   */
+  void closeProject(@NotNull Project project);
+
   void init();
 
   /**

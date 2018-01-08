@@ -51,6 +51,12 @@ public class LightEnvironment implements Environment {
     throw new UnsupportedOperationException();
   }
 
+
+  @Override
+  public void closeProject(@NotNull Project project) {
+    throw new UnsupportedOperationException();
+  }
+
   @Override
   public void release() {
   }

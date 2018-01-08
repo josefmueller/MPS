@@ -267,11 +267,19 @@
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -581,6 +589,43 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5A5jZrz4e5L" role="jymVt" />
+    <node concept="2tJIrI" id="3hj1t46fwe9" role="jymVt" />
+    <node concept="3clFb_" id="3hj1t46fvYr" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="closeProject" />
+      <node concept="3clFbS" id="3hj1t46fvYu" role="3clF47" />
+      <node concept="3Tm1VV" id="3hj1t46fvYv" role="1B3o_S" />
+      <node concept="3cqZAl" id="3hj1t46fvWy" role="3clF45" />
+      <node concept="37vLTG" id="3hj1t46fw6f" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3hj1t46fw6e" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="3hj1t46fwc8" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="3hj1t46fwgd" role="lGtFl">
+        <node concept="TUZQ0" id="3hj1t46fwgg" role="3nqlJM">
+          <property role="TUZQ4" value="an instance obtained from {@link #openProject(java.io.File)}" />
+          <node concept="zr_55" id="3hj1t46fwgi" role="zr_5Q">
+            <ref role="zr_51" node="3hj1t46fw6f" resolve="project" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3hj1t46fwiU" role="TZ5H$">
+          <node concept="1dT_AC" id="3hj1t46fwiV" role="1dT_Ay">
+            <property role="1dT_AB" value="Discards previously opened project. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3hj1t46fwAM" role="TZ5H$">
+          <node concept="1dT_AC" id="3hj1t46fwAN" role="1dT_Ay">
+            <property role="1dT_AB" value="Environment does its best to close the project but may choose to ignore request in certain scenarions (like in-process test execution, when closing an active project may affect user experience)" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3hj1t46fvUE" role="jymVt" />
     <node concept="3clFb_" id="3eUNqOk4TkZ" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
@@ -3872,6 +3917,44 @@
       </node>
       <node concept="2AHcQZ" id="5A5jZrz4DL6" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3hj1t46f$PU" role="jymVt" />
+    <node concept="2tJIrI" id="3hj1t46f_0F" role="jymVt" />
+    <node concept="3clFb_" id="3hj1t46fASQ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="closeProject" />
+      <node concept="3Tm1VV" id="3hj1t46fASS" role="1B3o_S" />
+      <node concept="3cqZAl" id="3hj1t46fAST" role="3clF45" />
+      <node concept="37vLTG" id="3hj1t46fASU" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3hj1t46fASV" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="3hj1t46fASW" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3hj1t46fAT4" role="3clF47">
+        <node concept="3clFbF" id="3hj1t46fCQV" role="3cqZAp">
+          <node concept="1rXfSq" id="3hj1t46fCQU" role="3clFbG">
+            <ref role="37wK5l" node="6LlhC3WLEQ3" resolve="checkInitialized" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3hj1t46fD1Z" role="3cqZAp">
+          <node concept="2OqwBi" id="3hj1t46fDg1" role="3clFbG">
+            <node concept="37vLTw" id="3hj1t46fD1X" role="2Oq$k0">
+              <ref role="3cqZAo" node="3hj1t46fASU" resolve="project" />
+            </node>
+            <node concept="liA8E" id="3hj1t46fDAL" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3hj1t46fAT5" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="3pEStHM4Tl5" role="jymVt" />
