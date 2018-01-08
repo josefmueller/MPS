@@ -57,14 +57,6 @@
       <repository/>
     </custom>
 
-    <!--todo remove duplication-->
-    <junit fork="true" dir="${mps_build_home}" showoutput="true">
-      <classpath refid="test_classpath"/>
-      <jvmarg value="-Dtest.output.dir=${basedir}"/>
-      <test name="jetbrains.mps.ant.TestAntTaskResult" methods="testRepository_Empty"/>
-      <formatter type="xml" extension=".testRepository_Empty.xml"/>
-    </junit>
-
     <custom mpshome="${mps_build_home}" worker="${worker.class}" args="${ref.baseLanguage} true">
       <repository>
         <allmpsmodules/>

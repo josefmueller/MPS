@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.closures.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -12,9 +14,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
 public class ClosureDataFlow_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ClosureDataFlow_Test.class, "${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
+
+
+  public ClosureDataFlow_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ClosureDataFlow() throws Throwable {
-    initTest("${mps_home}", "r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody", "test_ClosureDataFlow", true);
   }
 

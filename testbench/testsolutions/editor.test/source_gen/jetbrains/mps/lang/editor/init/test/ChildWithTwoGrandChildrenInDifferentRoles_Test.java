@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.init.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class ChildWithTwoGrandChildrenInDifferentRoles_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ChildWithTwoGrandChildrenInDifferentRoles_Test.class, "${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)", false);
+
+  public ChildWithTwoGrandChildrenInDifferentRoles_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ChildWithTwoGrandChildrenInDifferentRoles() throws Throwable {
-    initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
     runTest("jetbrains.mps.lang.editor.init.test.ChildWithTwoGrandChildrenInDifferentRoles_Test$TestBody", "testMethod", false);
   }
 

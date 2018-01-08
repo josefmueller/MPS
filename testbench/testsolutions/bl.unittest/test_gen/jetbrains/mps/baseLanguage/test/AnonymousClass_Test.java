@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -14,29 +16,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class AnonymousClass_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(AnonymousClass_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public AnonymousClass_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_AnonymousClass() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_AnonymousClass", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526511035151() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526511035151", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929101294", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526511035331() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.AnonymousClass_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526511035331", true);
   }
 

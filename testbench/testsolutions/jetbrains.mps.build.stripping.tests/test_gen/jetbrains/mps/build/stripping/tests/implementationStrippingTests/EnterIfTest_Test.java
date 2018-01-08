@@ -4,14 +4,22 @@ package jetbrains.mps.build.stripping.tests.implementationStrippingTests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class EnterIfTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(EnterIfTest_Test.class, "${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)", false);
+
+  public EnterIfTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_EnterIfTest() throws Throwable {
-    initTest("${mps_home}", "r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)");
     runTest("jetbrains.mps.build.stripping.tests.implementationStrippingTests.EnterIfTest_Test$TestBody", "testMethod", false);
   }
 

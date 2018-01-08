@@ -23,10 +23,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -73,6 +72,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -160,68 +160,75 @@ public class ChangesTracking {
     });
   }
 
-  private void update(boolean force) {
+  private void update(final boolean force) {
     myQueue.assertSoftlyIsCommandThread();
-    if (!(myDifference.isEnabled())) {
-      return;
-    }
-    if (!(isUnderVcs(myModelDescriptor))) {
-      return;
-    }
-
-    boolean isConflict = ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject);
-    FileStatus status = (isConflict ? FileStatus.MERGED_WITH_CONFLICTS : getStatus(myModelDescriptor));
-
-    // todo: make !force working for per-root persistence (here status==null) 
-    if (status != null && myStatusOnLastUpdate == status && !(force)) {
-      return;
-    }
 
     SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        myDifference.removeChangeSet();
-      }
-    });
-
-    myStatusOnLastUpdate = status;
-    if (FileStatus.NOT_CHANGED == status && !(force)) {
-      return;
-    }
-
-    final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
-    if (isAdded(myModelDescriptor) || isConflict) {
-      baseVersionModel.value = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
-    } else {
-      baseVersionModel.value = BaseVersionUtil.getBaseVersionModel(myModelDescriptor, myProject);
-      if (baseVersionModel.value == null) {
-        return;
-      }
-
-      if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())).any(new IWhereFilter<SModel.Problem>() {
-        public boolean accept(SModel.Problem it) {
-          return it.isError();
-        }
-      })) {
-        StringBuilder sb = new StringBuilder();
-        for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
-          sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
-        }
-        if (LOG.isEnabledFor(Level.WARN)) {
-          LOG.warn(sb.toString());
-        }
-        return;
-      }
-    }
-    repo.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
         synchronized (LOCK) {
+          if (myDisposed) {
+            return;
+          }
+          if (!(myDifference.isEnabled())) {
+            return;
+          }
+          if (!(isUnderVcs(myModelDescriptor))) {
+            return;
+          }
+
+          boolean isConflict = ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject);
+          FileStatus status = (isConflict ? FileStatus.MERGED_WITH_CONFLICTS : getStatus(myModelDescriptor));
+
+          // todo: make !force working for per-root persistence (here status==null) 
+          if (status != null && myStatusOnLastUpdate == status && !(force)) {
+            return;
+          }
+
+          myDifference.removeChangeSet();
+
+          myStatusOnLastUpdate = status;
+          if (FileStatus.NOT_CHANGED == status && !(force)) {
+            return;
+          }
+
+          SModel baseVersionModel = null;
+          if (isAdded(myModelDescriptor) || isConflict) {
+            baseVersionModel = new MergeTemporaryModel(myModelDescriptor.getReference(), true);
+          } else {
+            baseVersionModel = BaseVersionUtil.getBaseVersionModel(myModelDescriptor, myProject);
+            if (baseVersionModel == null) {
+              return;
+            }
+
+            if (Sequence.fromIterable(((Iterable<SModel.Problem>) baseVersionModel.getProblems())).any(new IWhereFilter<SModel.Problem>() {
+              public boolean accept(SModel.Problem it) {
+                return it.isError();
+              }
+            })) {
+              StringBuilder sb = new StringBuilder();
+              for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.getProblems())) {
+                sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
+              }
+              if (LOG.isEnabledFor(Level.WARN)) {
+                LOG.warn(sb.toString());
+              }
+              return;
+            }
+          }
+
           if (!(myDisposed)) {
-            DiffModelUtil.renameModel(baseVersionModel.value, "repository");
-            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
+            DiffModelUtil.renameModel(baseVersionModel, "repository");
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
           }
+        }
+      }
+    });
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (LOCK) {
         }
       }
     });
@@ -266,7 +273,7 @@ public class ChangesTracking {
     DataSource ds = model.getSource();
     if (ds instanceof FileDataSource) {
       VirtualFile file = VirtualFileUtils.getProjectVirtualFile(((FileDataSource) ds).getFile());
-      return FileStatusManager.getInstance(myProject).getStatus(file);
+      return (file == null ? FileStatus.UNKNOWN : FileStatusManager.getInstance(myProject).getStatus(file));
     } else if (ds instanceof FilePerRootDataSource) {
       // todo: do we need status at all? 
       return null;

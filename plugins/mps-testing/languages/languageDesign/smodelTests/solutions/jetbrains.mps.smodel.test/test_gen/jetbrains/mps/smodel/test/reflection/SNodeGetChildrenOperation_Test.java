@@ -4,6 +4,8 @@ package jetbrains.mps.smodel.test.reflection;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -20,44 +22,44 @@ import java.util.List;
 
 @MPSLaunch
 public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeGetChildrenOperation_Test.class, "${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
+
+
+  public SNodeGetChildrenOperation_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_childContainingLinks() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingLinks", true);
   }
   @Test
   public void test_childContaininLinksForSpecializedChildren() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContaininLinksForSpecializedChildren", true);
   }
   @Test
   public void test_childContainingRoles() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childContainingRoles", true);
   }
   @Test
   public void test_unspecifiedChildren() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_unspecifiedChildren", true);
   }
   @Test
   public void test_childOperationsOnNull() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childOperationsOnNull", true);
   }
   @Test
   public void test_childrenByLinkDeclaration() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclaration", true);
   }
   @Test
   public void test_childrenByLinkDeclarationSpecialized() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationSpecialized", true);
   }
   @Test
   public void test_childrenByLinkDeclarationOnNull() throws Throwable {
-    initTest("${mps_home}", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)", false);
     runTest("jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test$TestBody", "test_childrenByLinkDeclarationOnNull", true);
   }
 
@@ -113,7 +115,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertNull(SNodeOperations.getContainingLink(nullNode));
-      Assert.assertNull(check_vfao6t_a5a4j(SNodeOperations.getContainingLink(nullNode)));
+      Assert.assertNull(check_vfao6t_a5a4o(SNodeOperations.getContainingLink(nullNode)));
     }
     public void test_childrenByLinkDeclaration() throws Exception {
       addNodeById("8758390115029078425");
@@ -148,7 +150,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       input.addChild(link, unspecifiedChild);
       return link;
     }
-    private static String check_vfao6t_a5a4j(SContainmentLink checkedDotOperand) {
+    private static String check_vfao6t_a5a4o(SContainmentLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

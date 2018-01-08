@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
@@ -408,6 +408,7 @@
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
+      <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
       <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
         <child id="1218047638032" name="baseName" index="2piZGb" />
         <child id="1218049772449" name="contextNode" index="2pr8EU" />
@@ -3112,10 +3113,11 @@
                           </node>
                           <node concept="liA8E" id="4hxQpVmHmoT" role="2OqNvi">
                             <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String" resolve="asString" />
-                            <node concept="2YIFZM" id="4hxQpVmFnDD" role="37wK5m">
-                              <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
-                              <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
-                              <node concept="30H73N" id="4hxQpVmFnVB" role="37wK5m" />
+                            <node concept="2OqwBi" id="5iphLhCso$9" role="37wK5m">
+                              <node concept="1iwH7S" id="5iphLhCsocz" role="2Oq$k0" />
+                              <node concept="1bhEwm" id="5iphLhCsoQO" role="2OqNvi">
+                                <ref role="1bhEwl" node="5iphLhCqlz2" resolve="origin" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -3126,44 +3128,113 @@
               </node>
             </node>
           </node>
-          <node concept="1W57fq" id="4hxQpVmF4nX" role="lGtFl">
-            <node concept="3IZrLx" id="4hxQpVmF4o0" role="3IZSJc">
-              <node concept="3clFbS" id="4hxQpVmF4o1" role="2VODD2">
-                <node concept="3SKdUt" id="4hxQpVmFelm" role="3cqZAp">
-                  <node concept="3SKdUq" id="4hxQpVmFelo" role="3SKWNk">
-                    <property role="3SKdUp" value=" source node not specified or points to the same model, and we know trace to original" />
+          <node concept="2jeGV$" id="5iphLhCqlz2" role="lGtFl">
+            <property role="TrG5h" value="origin" />
+            <node concept="2jfdEK" id="5iphLhCqlz4" role="2jfP_Y">
+              <node concept="3clFbS" id="5iphLhCqlz6" role="2VODD2">
+                <node concept="3SKdUt" id="5iphLhCqpKA" role="3cqZAp">
+                  <node concept="3SKdUq" id="5iphLhCqpKB" role="3SKWNk">
+                    <property role="3SKdUp" value=" source node not specified or (likely, erroneously) points to the same (transient) model, " />
                   </node>
                 </node>
-                <node concept="3clFbF" id="4hxQpVmF8oD" role="3cqZAp">
-                  <node concept="1Wc70l" id="4hxQpVmF8oF" role="3clFbG">
-                    <node concept="1eOMI4" id="4hxQpVmF8oG" role="3uHU7B">
-                      <node concept="22lmx$" id="4hxQpVmF8oH" role="1eOMHV">
-                        <node concept="3clFbC" id="4hxQpVmF8oI" role="3uHU7w">
-                          <node concept="30H73N" id="4hxQpVmFdAm" role="3uHU7w" />
-                          <node concept="2OqwBi" id="4hxQpVmF8oK" role="3uHU7B">
-                            <node concept="30H73N" id="4hxQpVmFdgD" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="4hxQpVmF8oM" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbC" id="4hxQpVmF8oN" role="3uHU7B">
-                          <node concept="2OqwBi" id="4hxQpVmF8oO" role="3uHU7B">
-                            <node concept="30H73N" id="4hxQpVmFcKZ" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="4hxQpVmF8oQ" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
-                            </node>
-                          </node>
-                          <node concept="10Nm6u" id="4hxQpVmF8oR" role="3uHU7w" />
+                <node concept="3SKdUt" id="5iphLhCqFxs" role="3cqZAp">
+                  <node concept="3SKdUq" id="5iphLhCqFxt" role="3SKWNk">
+                    <property role="3SKdUp" value="therefore, we try to use generator's trace to original" />
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="5iphLhCqzG_" role="3cqZAp">
+                  <node concept="3clFbS" id="5iphLhCqzGB" role="3clFbx">
+                    <node concept="3cpWs6" id="5iphLhCqEw_" role="3cqZAp">
+                      <node concept="2YIFZM" id="5iphLhCqEL1" role="3cqZAk">
+                        <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
+                        <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
+                        <node concept="30H73N" id="5iphLhCqEL2" role="37wK5m" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="22lmx$" id="5iphLhCqpKF" role="3clFbw">
+                    <node concept="3clFbC" id="5iphLhCqpKG" role="3uHU7w">
+                      <node concept="30H73N" id="5iphLhCqpKH" role="3uHU7w" />
+                      <node concept="2OqwBi" id="5iphLhCqpKI" role="3uHU7B">
+                        <node concept="30H73N" id="5iphLhCqpKJ" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="5iphLhCqpKK" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
                         </node>
                       </node>
                     </node>
-                    <node concept="3y3z36" id="4hxQpVmF8oS" role="3uHU7w">
-                      <node concept="10Nm6u" id="4hxQpVmF8oT" role="3uHU7w" />
-                      <node concept="2YIFZM" id="4hxQpVmF8oU" role="3uHU7B">
-                        <ref role="37wK5l" to="fwk:~TracingUtil.getInput(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNodeReference" resolve="getInput" />
-                        <ref role="1Pybhc" to="fwk:~TracingUtil" resolve="TracingUtil" />
-                        <node concept="30H73N" id="4hxQpVmF8oV" role="37wK5m" />
+                    <node concept="3clFbC" id="5iphLhCqpKL" role="3uHU7B">
+                      <node concept="2OqwBi" id="5iphLhCqpKM" role="3uHU7B">
+                        <node concept="30H73N" id="5iphLhCqpKN" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="5iphLhCqpKO" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
+                        </node>
+                      </node>
+                      <node concept="10Nm6u" id="5iphLhCqpKP" role="3uHU7w" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="5iphLhCqGLW" role="3cqZAp">
+                  <node concept="3clFbS" id="5iphLhCqGLY" role="3clFbx">
+                    <node concept="3SKdUt" id="5iphLhCs8G6" role="3cqZAp">
+                      <node concept="3SKdUq" id="5iphLhCs8G8" role="3SKWNk">
+                        <property role="3SKdUp" value="if it points to a node in the same transient model, use it, but warn user not to expect anything good." />
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="5iphLhCrRUG" role="3cqZAp">
+                      <node concept="2OqwBi" id="5iphLhCrSq3" role="3clFbG">
+                        <node concept="1iwH7S" id="5iphLhCrRUE" role="2Oq$k0" />
+                        <node concept="2kEO4f" id="5iphLhCrTzX" role="2OqNvi">
+                          <node concept="Xl_RD" id="5iphLhCrUFy" role="2k5Stb">
+                            <property role="Xl_RC" value="Concept's source node is from the same transient model" />
+                          </node>
+                          <node concept="30H73N" id="5iphLhCrUfW" role="2k6f33" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbC" id="5iphLhCrPZw" role="3clFbw">
+                    <node concept="2OqwBi" id="5iphLhCrQOk" role="3uHU7w">
+                      <node concept="30H73N" id="5iphLhCrQoS" role="2Oq$k0" />
+                      <node concept="I4A8Y" id="5iphLhCrRwc" role="2OqNvi" />
+                    </node>
+                    <node concept="2OqwBi" id="5iphLhCqIP1" role="3uHU7B">
+                      <node concept="2OqwBi" id="5iphLhCqHvV" role="2Oq$k0">
+                        <node concept="30H73N" id="5iphLhCqH7b" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="5iphLhCqI7r" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
+                        </node>
+                      </node>
+                      <node concept="I4A8Y" id="5iphLhCqJay" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="5iphLhCrVPO" role="3cqZAp">
+                  <node concept="2OqwBi" id="5iphLhCs0yj" role="3cqZAk">
+                    <node concept="2OqwBi" id="5iphLhCrXjk" role="2Oq$k0">
+                      <node concept="30H73N" id="5iphLhCrWzH" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="5iphLhCrYkd" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpce:4mSE8vfOBGG" resolve="sourceNode" />
+                      </node>
+                    </node>
+                    <node concept="iZEcu" id="5iphLhCs10Q" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3uibUv" id="5iphLhCqoNb" role="2jfP_h">
+              <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+            </node>
+          </node>
+          <node concept="1W57fq" id="4hxQpVmF4nX" role="lGtFl">
+            <node concept="3IZrLx" id="4hxQpVmF4o0" role="3IZSJc">
+              <node concept="3clFbS" id="4hxQpVmF4o1" role="2VODD2">
+                <node concept="3clFbF" id="5iphLhCsmsC" role="3cqZAp">
+                  <node concept="3y3z36" id="5iphLhCsn7z" role="3clFbG">
+                    <node concept="10Nm6u" id="5iphLhCsnHH" role="3uHU7w" />
+                    <node concept="2OqwBi" id="5iphLhCsmEQ" role="3uHU7B">
+                      <node concept="1iwH7S" id="5iphLhCsmsB" role="2Oq$k0" />
+                      <node concept="1bhEwm" id="5iphLhCsmUA" role="2OqNvi">
+                        <ref role="1bhEwl" node="5iphLhCqlz2" resolve="origin" />
                       </node>
                     </node>
                   </node>

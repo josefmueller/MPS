@@ -4,6 +4,8 @@ package testSubstituteType.model;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,44 +15,44 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class WrappedType_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(WrappedType_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
+
+
+  public WrappedType_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeTypeCheck1470921783545306146() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545306146", true);
   }
   @Test
   public void test_NodeTypeCheck1470921783545306158() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545306158", true);
   }
   @Test
   public void test_NodeTypeCheck3904815702877839590() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck3904815702877839590", true);
   }
   @Test
   public void test_NodeTypeCheck3904815702877839445() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck3904815702877839445", true);
   }
   @Test
   public void test_NodeTypeCheck1470921783545282539() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeTypeCheck1470921783545282539", true);
   }
   @Test
   public void test_NodeErrorCheck1252378774017462261() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeErrorCheck1252378774017462261", true);
   }
   @Test
   public void test_NodeErrorCheck1470921783545305313() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_NodeErrorCheck1470921783545305313", true);
   }
   @Test
   public void test_ErrorMessagesCheck1252378774017462295() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.WrappedType_Test$TestBody", "test_ErrorMessagesCheck1252378774017462295", true);
   }
 

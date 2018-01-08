@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,99 +15,88 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class UnreachableStatements_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(UnreachableStatements_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public UnreachableStatements_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeUnusedVariableWarningCheck6923385624929494062() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnusedVariableWarningCheck6923385624929494062", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck6923385624927474426() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck6923385624927474426", true);
   }
   @Test
   public void test_ErrorMessagesCheck1216895632608() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck1216895632608", true);
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120514171() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120514171", true);
   }
   @Test
   public void test_ErrorMessagesCheck2557916264120514158() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2557916264120514158", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8245314650935054824", true);
   }
   @Test
   public void test_ErrorMessagesCheck8245314650935052537() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8245314650935052537", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813176762", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813173396() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813173396", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813179061() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813179061", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813180900() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813180900", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813195443() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813195443", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813186030() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813186030", true);
   }
   @Test
   public void test_NodeUnreachableCodeCheck2557916264120793751() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableCodeCheck2557916264120793751", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813197377() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813197377", true);
   }
   @Test
   public void test_ErrorMessagesCheck8768955936813203327() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8768955936813203327", true);
   }
   @Test
   public void test_NodeUnreachableNodeErrorCheck2575419463997245412() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck2575419463997245412", true);
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997245406() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997245406", true);
   }
   @Test
   public void test_ErrorMessagesCheck2575419463997271506() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2575419463997271506", true);
   }
 

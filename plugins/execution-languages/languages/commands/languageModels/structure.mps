@@ -8,12 +8,15 @@
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="id7i" ref="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="86gq" ref="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
@@ -324,6 +327,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="856705193941281814" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="t5JxF" id="5AJIFEltJOd" role="lGtFl">
+      <property role="t5JxN" value="XXX I highly doubt there's any reason to keep this expression and not to migrate it to bare ph.addListener() call. If you know any, please let me know." />
     </node>
   </node>
   <node concept="1TIwiD" id="7mEQKPeoqlQ">

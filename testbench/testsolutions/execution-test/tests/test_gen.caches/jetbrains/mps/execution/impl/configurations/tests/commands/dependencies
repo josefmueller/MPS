@@ -28,21 +28,17 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener" />
-    <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
-    <classNode dependClassName="jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper" />
+    <classNode dependClassName="jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="junit.framework.Assert" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -62,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
-    <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -70,13 +65,15 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

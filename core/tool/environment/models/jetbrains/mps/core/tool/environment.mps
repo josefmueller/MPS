@@ -3271,18 +3271,9 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="2jln2VqYOMg" role="3cqZAp">
-          <node concept="37vLTw" id="2jln2VqYQpS" role="3cqZAk">
-            <ref role="3cqZAo" node="2jln2VqYyZh" resolve="libContribs" />
-          </node>
-        </node>
       </node>
-      <node concept="3Tm1VV" id="735HJCLt90L" role="1B3o_S" />
-      <node concept="_YKpA" id="1vtSNIfMBKP" role="3clF45">
-        <node concept="3uibUv" id="1vtSNIfMBKR" role="_ZDj9">
-          <ref role="3uigEE" to="je6q:~LibraryContributor" resolve="LibraryContributor" />
-        </node>
-      </node>
+      <node concept="3Tmbuc" id="1sAB67TxiU3" role="1B3o_S" />
+      <node concept="3cqZAl" id="1sAB67TxhdC" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="3eUNqOk8Whh" role="jymVt" />
     <node concept="3clFb_" id="5mffBJ2WBJ9" role="jymVt">

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,19 +15,24 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class SampleConstraints_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SampleConstraints_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public SampleConstraints_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck2675718132411786726() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeUnknownRuleCheck2675718132411786726", true);
   }
   @Test
   public void test_ErrorMessagesCheck7638302724810894630() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_ErrorMessagesCheck7638302724810894630", true);
   }
 

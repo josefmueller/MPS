@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.table.matrix.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RemoveY_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(RemoveY_Test.class, "${mps_home}", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)", false);
+
+  public RemoveY_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_RemoveY() throws Throwable {
-    initTest("${mps_home}", "r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)");
     runTest("jetbrains.mps.lang.editor.table.matrix.test.RemoveY_Test$TestBody", "testMethod", false);
   }
 

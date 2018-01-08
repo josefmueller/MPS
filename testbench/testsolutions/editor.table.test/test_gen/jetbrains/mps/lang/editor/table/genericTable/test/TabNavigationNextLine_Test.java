@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.table.genericTable.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -11,9 +13,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class TabNavigationNextLine_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TabNavigationNextLine_Test.class, "${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)", false);
+
+  public TabNavigationNextLine_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TabNavigationNextLine() throws Throwable {
-    initTest("${mps_home}", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test@tests)");
     runTest("jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test$TestBody", "testMethod", false);
   }
 

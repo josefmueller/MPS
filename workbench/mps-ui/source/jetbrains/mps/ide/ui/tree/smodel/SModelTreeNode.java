@@ -65,28 +65,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
   private Icon myBaseIcon;
 
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public SModelTreeNode(SModel model,
-      String label,
-      boolean showLongName,
-      Condition<SNode> condition,
-      int countNamePart) {
-    myTextSource = showLongName ? new LongModelNameText() : new ShortModelNameText();
-    myModelDescriptor = model;
-    myNodesCondition = condition;
-    setUserObject(model.getName().getLongName());
-    if (myModelDescriptor != null) {
-      setNodeIdentifier(myModelDescriptor.toString());
-    } else {
-      setNodeIdentifier("");
-    }
-    setText(myTextSource.calculateText(this));
-    setBaseIcon(IconManager.getIconFor(model));
-    setIcon(IconManager.getIconFor(model));
-  }
-
-  public SModelTreeNode(@NotNull SModel model) {
+    public SModelTreeNode(@NotNull SModel model) {
     this(model, new LongModelNameText());
   }
 

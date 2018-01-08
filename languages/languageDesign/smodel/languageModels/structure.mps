@@ -2096,6 +2096,10 @@
         <property role="YLPcu" value="MPS 3.2" />
       </node>
     </node>
+    <node concept="asaX9" id="5C3R$hJlJ8f" role="lGtFl">
+      <property role="YLPcu" value="2018.1" />
+      <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-reference// instead and resolve with appropriate repository, if needed." />
+    </node>
   </node>
   <node concept="1TIwiD" id="59YAasRsvgM">
     <property role="TrG5h" value="SubconceptCase" />

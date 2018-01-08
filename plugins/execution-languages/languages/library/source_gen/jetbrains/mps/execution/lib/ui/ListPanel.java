@@ -32,11 +32,9 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import javax.swing.AbstractListModel;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 
 /**
  * This class was split up without thinking, just to make something work quickly.
@@ -162,30 +160,35 @@ public abstract class ListPanel<T> extends JPanel {
       fireContentsChanged(this, 0, ListSequence.fromList(myValues).count());
     }
   }
-  private class MyListAddAction extends ListAddAction {
+  private class MyListAddAction extends AnAction {
+    private final JList myList;
+
     public MyListAddAction(JList list) {
-      super(list);
+      super("Add", "Add", AllIcons.General.Add);
+      myList = list;
     }
 
+
     @Override
-    protected int doAdd(AnActionEvent p0) {
+    public void actionPerformed(AnActionEvent event) {
       List<SNodeReference> nodesList = getCandidates();
 
       NodeChooserDialog chooserDialog = ListPanel.this.createNodeChooserDialog(nodesList);
       chooserDialog.show();
       final SNodeReference resultNode = chooserDialog.getResult();
 
+      // FIXME please refactor this, please, please!!! 
       if (resultNode == null) {
-        return -1;
+        return;
       }
       final Wrappers._T<T> wrapper = new Wrappers._T<T>();
       myMpsProject.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          wrapper.value = wrap(((SNodePointer) resultNode).resolve(myMpsProject.getRepository()));
+          wrapper.value = wrap(resultNode.resolve(myMpsProject.getRepository()));
         }
       });
       if (wrapper.value == null) {
-        return -1;
+        return;
       }
       ListSequence.fromList(ListPanel.this.myValues).addElement(wrapper.value);
       if (ListPanel.this.myListener != null) {
@@ -193,23 +196,32 @@ public abstract class ListPanel<T> extends JPanel {
       }
       ListPanel.this.myListComponent.updateUI();
       ListPanel.this.myListModel.fireSomethingChanged();
-      return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
+      // return value used to be an index to select (though, in a bit cryptic manner, see BaseAddAction) 
+      myList.setSelectedIndex(ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value));
     }
 
     @Override
     public void update(AnActionEvent event) {
-      event.getPresentation().setEnabled(isEditable);
       super.update(event);
+      event.getPresentation().setEnabled(isEditable);
     }
   }
 
-  private class MyListRemoveAction extends ListRemoveAction {
-    public MyListRemoveAction(JList list) {
-      super(list);
+  private class MyListRemoveAction extends AnAction {
+    private final JList myList;
 
+    public MyListRemoveAction(JList list) {
+      super("Remove", "Remove", AllIcons.General.Remove);
+      myList = list;
     }
+
+
     @Override
-    protected void doRemove(AnActionEvent p0) {
+    public void actionPerformed(AnActionEvent event) {
+      int minSelectionIndex = myList.getMinSelectionIndex();
+      // XXX I cried with blood tears over the code below. 
+      //  ListPanel.this.myListComponent == myList,  
+      // and access to myListModel is mind-blowing. Need to find enough courage to refactor this mess. 
       for (Object value : ListPanel.this.myListComponent.getSelectedValuesList()) {
         for (final T node : ListPanel.this.myValues) {
           final Wrappers._T<String> fqName = new Wrappers._T<String>();
@@ -229,11 +241,14 @@ public abstract class ListPanel<T> extends JPanel {
       }
       ListPanel.this.myListComponent.updateUI();
       ListPanel.this.myListModel.fireSomethingChanged();
+      // index restore code came from base ListRemoveAction 
+      myList.setSelectedIndex(Math.min(myList.getModel().getSize() - 1, minSelectionIndex));
     }
+
     @Override
     public void update(AnActionEvent event) {
-      event.getPresentation().setEnabled(isEditable);
       super.update(event);
+      event.getPresentation().setEnabled(isEditable && myList.getSelectedIndices().length != 0);
     }
   }
 }

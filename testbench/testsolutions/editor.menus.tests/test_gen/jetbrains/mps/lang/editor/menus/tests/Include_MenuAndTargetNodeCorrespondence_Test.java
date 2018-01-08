@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.List;
@@ -22,19 +24,24 @@ import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
 public class Include_MenuAndTargetNodeCorrespondence_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Include_MenuAndTargetNodeCorrespondence_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+
+  public Include_MenuAndTargetNodeCorrespondence_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_targetNodeForMenuShouldReturnMenuConcept() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.Include_MenuAndTargetNodeCorrespondence_Test$TestBody", "test_targetNodeForMenuShouldReturnMenuConcept", true);
   }
   @Test
   public void test_MatchingMenuForCurrentNode6903010549536714073() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.Include_MenuAndTargetNodeCorrespondence_Test$TestBody", "test_MatchingMenuForCurrentNode6903010549536714073", true);
   }
   @Test
   public void test_NonMatchingMenuForCurrentNode6903010549536714075() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.Include_MenuAndTargetNodeCorrespondence_Test$TestBody", "test_NonMatchingMenuForCurrentNode6903010549536714075", true);
   }
 
@@ -44,7 +51,7 @@ public class Include_MenuAndTargetNodeCorrespondence_Test extends BaseTransforma
       addNodeById("2705676212747008271");
       addNodeById("6903010549536712693");
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), createSNodeType_sxmjox_a0a0a0c0a4());
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), createSNodeType_sxmjox_a0a0a0c0a9());
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(SNodeOperations.cast(getNodeById("2705676212747008292"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0xae2d2fe1c9d6e2eL, "QueryFunction_TransformationMenu_TargetNode")))));
         Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
@@ -59,7 +66,7 @@ public class Include_MenuAndTargetNodeCorrespondence_Test extends BaseTransforma
       INodesTestMethod__BehaviorDescriptor.perform_id1kgh5YabdhC.invoke(operation, getRealNodeById("6903010549536712731"));
     }
 
-    private static SNode createSNodeType_sxmjox_a0a0a0c0a4() {
+    private static SNode createSNodeType_sxmjox_a0a0a0c0a9() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
       n1.setReference(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), SReference.create(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), n1, facade.createModelReference("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)"), facade.createNodeId("2705676212746996052")));

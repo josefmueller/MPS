@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.NodeMatcher;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-/*package*/ class Pattern_ay21uv_a0b0c2 extends GeneratedMatcher {
-  public Pattern_ay21uv_a0b0c2(SNode patternNode, SNode orClause0, SNode orClause1, SNode orClause2, SNode orClause3) {
+/*package*/ class Pattern_ay21uv_a0b0c5 extends GeneratedMatcher {
+  public Pattern_ay21uv_a0b0c5(SNode patternNode, SNode orClause0, SNode orClause1, SNode orClause2, SNode orClause3) {
     super(patternNode, false);
 
     NodeMatcher disjunct0 = new NodeMatcher(myValues);

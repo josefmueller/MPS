@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,19 +15,24 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class CatchingUnthrownException_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CatchingUnthrownException_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public CatchingUnthrownException_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeCaughtExceptionCheck6923385624927429271() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624927429271", true);
   }
   @Test
   public void test_NodeCaughtExceptionCheck6923385624929290516() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_NodeCaughtExceptionCheck6923385624929290516", true);
   }
   @Test
   public void test_ErrorMessagesCheck1220012521451() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test$TestBody", "test_ErrorMessagesCheck1220012521451", true);
   }
 

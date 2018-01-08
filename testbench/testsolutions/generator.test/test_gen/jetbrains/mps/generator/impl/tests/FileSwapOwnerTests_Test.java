@@ -4,6 +4,8 @@ package jetbrains.mps.generator.impl.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -25,61 +27,58 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 
 @MPSLaunch
 public class FileSwapOwnerTests_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FileSwapOwnerTests_Test.class, "${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
+
+
+  public FileSwapOwnerTests_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_justWrite() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_justWrite", true);
   }
   @Test
   public void test_stringUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_stringUserObjects", true);
   }
   @Test
   public void test_intUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_intUserObjects", true);
   }
   @Test
   public void test_charUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_charUserObjects", true);
   }
   @Test
   public void test_numberUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_numberUserObjects", true);
   }
   @Test
   public void test_booleanUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_booleanUserObjects", true);
   }
   @Test
   public void test_mpsUserObjects() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_mpsUserObjects", true);
   }
   @Test
   public void test_baseLanguageStructure() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_baseLanguageStructure", true);
   }
   @Test
   public void test_testOverloadedOperatorsSandbox() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testOverloadedOperatorsSandbox", true);
   }
   @Test
   public void test_testSkipNodesWhileSaving() throws Throwable {
-    initTest("${mps_home}", "r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)", false);
     runTest("jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody", "test_testSkipNodesWhileSaving", true);
   }
 
@@ -159,14 +158,14 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest {
     }
     public void test_baseLanguageStructure() throws Exception {
       addNodeById("1732396662099564446");
-      SModel sampleModel = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.baseLanguage.structure");
+      SModel sampleModel = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)").resolve(myProject.getRepository());
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);
     }
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       addNodeById("1732396662099564446");
-      SModel sampleModel = new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test");
+      SModel sampleModel = PersistenceFacade.getInstance().createModelReference("r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)").resolve(myProject.getRepository());
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
       List<NodeDifference> matchNodes = new NodesMatcher().match(SModelOperations.roots(sampleModel, null), SModelOperations.roots(resultModel, null));
       Assert.assertNull(matchNodes);

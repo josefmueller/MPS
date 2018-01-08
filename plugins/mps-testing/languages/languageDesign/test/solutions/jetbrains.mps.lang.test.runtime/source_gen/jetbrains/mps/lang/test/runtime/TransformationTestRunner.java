@@ -9,8 +9,8 @@ import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.lang.reflect.InvocationTargetException;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ThreadUtils;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -63,43 +63,20 @@ public class TransformationTestRunner implements TestRunner {
       LOG.info("Initializing the test");
     }
     test.setProject(testProject);
-    TestModelSaver modelSaver = BaseTransformationTest.CACHE;
-    TransformationTest cachedTest = modelSaver.getTest();
-
-    SModel cachedModel = check_ovzmet_a0f0l(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0g0l(cachedTest);
-    String cachedModelName = check_ovzmet_a0h0l(check_ovzmet_a0a7a11(cachedModel));
-    if (cachedModelName != null && cachedModelName.equals(modelName)) {
-      if (LOG.isDebugEnabled()) {
-        LOG.debug("Using the cached model");
+    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        testProject.getModelAccess().executeCommand(new Runnable() {
+          @Override
+          public void run() {
+            SModel modelDescriptor = findModel(testProject.getRepository(), modelName);
+            test.setModelDescriptor(modelDescriptor);
+            test.init();
+          }
+        });
       }
-      test.setModelDescriptor(cachedModel);
-      test.setTransientModelDescriptor(cachedTransientModel);
-    } else {
-      if (LOG.isDebugEnabled()) {
-        LOG.debug("Recaching the model again");
-      }
-      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          testProject.getModelAccess().executeCommand(new Runnable() {
-            @Override
-            public void run() {
-              initialize(test, modelName);
-            }
-
-            private void initialize(final TransformationTest test, final String modelName) {
-              SModel modelDescriptor = findModel(testProject.getRepository(), modelName);
-              test.setModelDescriptor(modelDescriptor);
-              test.init();
-            }
-          });
-        }
-      });
-      if (exception != null) {
-        throw new RuntimeException(exception);
-      }
-      modelSaver.clean();
-      modelSaver.setTest(test);
+    });
+    if (exception != null) {
+      throw new RuntimeException(exception);
     }
   }
 
@@ -243,29 +220,5 @@ public class TransformationTestRunner implements TestRunner {
       exception = e.getTargetException();
     }
     return exception;
-  }
-  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-  private static SModel check_ovzmet_a0g0l(TransformationTest checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTransientModelDescriptor();
-    }
-    return null;
-  }
-  private static String check_ovzmet_a0h0l(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.toString();
-    }
-    return null;
-  }
-  private static SModelReference check_ovzmet_a0a7a11(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
   }
 }

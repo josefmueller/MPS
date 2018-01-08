@@ -15,7 +15,6 @@
     <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -32,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.persistence.PreinstalledModelFactoryTypes" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

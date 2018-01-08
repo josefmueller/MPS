@@ -46,17 +46,6 @@ import java.util.stream.Collectors;
 public final class LibraryInitializer implements CoreComponent, RepositoryReader<LibraryContributor> {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
 
-  // fixme get rid of
-  private static LibraryInitializer INSTANCE;
-
-  // fixme get rid of
-  // no uses in MPS, still in use from com.mbeddr.core.spawner
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public static LibraryInitializer getInstance() {
-    return INSTANCE;
-  }
-
   private final SRepository myRepository;
   private final ModelAccess myModelAccess;
   private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
@@ -64,10 +53,6 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
 
   @Override
   public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-    INSTANCE = this;
   }
 
   @Override
@@ -80,7 +65,6 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
       myLibraries.clear();
       myContributors.clear();
     });
-    INSTANCE = null;
   }
 
   public LibraryInitializer(@NotNull SRepository repository) {

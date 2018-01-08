@@ -4,14 +4,22 @@ package jetbrains.mps.console.editor;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class EmptyConsoleCommentTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(EmptyConsoleCommentTest_Test.class, "${mps_home}", "r:917991a1-3dab-4b0d-a9f3-7ff4a725c921(jetbrains.mps.console.editor@tests)", false);
+
+  public EmptyConsoleCommentTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_EmptyConsoleCommentTest() throws Throwable {
-    initTest("${mps_home}", "r:917991a1-3dab-4b0d-a9f3-7ff4a725c921(jetbrains.mps.console.editor@tests)");
     runTest("jetbrains.mps.console.editor.EmptyConsoleCommentTest_Test$TestBody", "testMethod", false);
   }
 

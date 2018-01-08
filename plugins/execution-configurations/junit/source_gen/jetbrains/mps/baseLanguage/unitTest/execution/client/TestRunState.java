@@ -23,7 +23,10 @@ import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import java.util.LinkedList;
 
-public class TestRunState {
+/**
+ * State of test execution; updates associated {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestView } when there's a change.
+ */
+public final class TestRunState {
   private static final Logger LOG = LogManager.getLogger(TestRunState.class);
   private static final Object lock = new Object();
   private final List<String> myTestMethods = ListSequence.fromList(new ArrayList<String>());
@@ -275,7 +278,10 @@ public class TestRunState {
   }
 
   public List<String> getUnusedMethods() {
-    return this.myTestMethods;
+    synchronized (myTestMethods) {
+      List<String> rv = ListSequence.fromListWithValues(new ArrayList<String>(), myTestMethods);
+      return rv;
+    }
   }
 
   public int getTotalTests() {

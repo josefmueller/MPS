@@ -699,6 +699,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModelReferenceExpression:
         if (props_ModelReferenceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L);
+          cpb.deprecated(true);
           cpb.deprecateProperty(0x7c3f2da20e98892L, "fqName");
           cpb.rawPresentation("model");
           props_ModelReferenceExpression = cpb.create();

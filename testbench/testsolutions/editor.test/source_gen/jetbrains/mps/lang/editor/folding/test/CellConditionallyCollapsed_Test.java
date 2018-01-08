@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.folding.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class CellConditionallyCollapsed_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CellConditionallyCollapsed_Test.class, "${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)", false);
+
+  public CellConditionallyCollapsed_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CellConditionallyCollapsed() throws Throwable {
-    initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
     runTest("jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test$TestBody", "testMethod", false);
   }
 

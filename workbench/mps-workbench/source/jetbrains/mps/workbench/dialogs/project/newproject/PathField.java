@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,10 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
-import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -84,15 +82,6 @@ public class PathField extends JPanel {
     return myPath;
   }
 
-  /**
-   * @deprecated  Not used any more
-   * */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public int getMode() {
-    return -1;
-  }
-
   public void setPath(String newValue) {
     myPath = newValue;
     final boolean isPathChangedByUser = myIsPathChangedByUser; //Save current flag state.
@@ -108,14 +97,6 @@ public class PathField extends JPanel {
     for (PathChangedListener listener : myListeners) {
       listener.firePathChanged(myPath);
     }
-  }
-
-  /**
-   * @deprecated  Not used any more
-   * */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public void setMode(int newValue) {
   }
 
   /*package*/ void choosePathClicked() {

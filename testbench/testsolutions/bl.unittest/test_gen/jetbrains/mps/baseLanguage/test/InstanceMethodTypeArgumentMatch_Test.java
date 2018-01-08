@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,204 +15,172 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class InstanceMethodTypeArgumentMatch_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InstanceMethodTypeArgumentMatch_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public InstanceMethodTypeArgumentMatch_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512839185() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512839185", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927021579() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927021579", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512847809() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512847809", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927441074() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927441074", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512856434() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512856434", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929572892() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929572892", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512865058() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512865058", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624929362829() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624929362829", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526512873683() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526512873683", true);
   }
   @Test
   public void test_NodeIncorrectNumberOfTypeCheck6923385624927009930() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIncorrectNumberOfTypeCheck6923385624927009930", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929166530() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929166530", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929708692() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929708692", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927049150() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927049150", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928378725() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928378725", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927611666() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927611666", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929723190() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929723190", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929895287() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929895287", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927258655() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927258655", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929700991() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929700991", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928822960() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928822960", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927647367() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927647367", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927575360() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927575360", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929215028() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929215028", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927277632() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927277632", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928923997() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928923997", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928928918() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928928918", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927080539() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927080539", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927748937() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927748937", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928028310() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928028310", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928777915() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928777915", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929577261() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929577261", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928383085() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928383085", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928303471() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928303471", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624928966307() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624928966307", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624929162156() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624929162156", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927120256() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927120256", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927908709() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927908709", true);
   }
   @Test
   public void test_NodeIsNotValidSubstituteForCheck6923385624927944514() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_NodeIsNotValidSubstituteForCheck6923385624927944514", true);
   }
   @Test
   public void test_ErrorMessagesCheck4817790028255000239() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.InstanceMethodTypeArgumentMatch_Test$TestBody", "test_ErrorMessagesCheck4817790028255000239", true);
   }
 

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.style.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.awt.Font;
@@ -15,9 +17,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class FontStyleInheritanceTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FontStyleInheritanceTest_Test.class, "${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)", false);
+
+  public FontStyleInheritanceTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_FontStyleInheritanceTest() throws Throwable {
-    initTest("${mps_home}", "r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)");
     runTest("jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test$TestBody", "testMethod", false);
   }
 

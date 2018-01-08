@@ -4,6 +4,8 @@ package jetbrains.mps.testRead.SNodeReadTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.Set;
@@ -30,79 +32,72 @@ import java.util.HashSet;
 
 @MPSLaunch
 public class SNodeReadAccess_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SNodeReadAccess_Test.class, "${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
+
+
+  public SNodeReadAccess_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_checkContract() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_checkContract", true);
   }
   @Test
   public void test_addChild() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_addChild", true);
   }
   @Test
   public void test_getChildren() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getChildren", true);
   }
   @Test
   public void test_getProperty() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getProperty", true);
   }
   @Test
   public void test_getReference() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReference", true);
   }
   @Test
   public void test_getReferenceTarget() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getReferenceTarget", true);
   }
   @Test
   public void test_getUserObject() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_getUserObject", true);
   }
   @Test
   public void test_hasProperty() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_hasProperty", true);
   }
   @Test
   public void test_insertChildBefore() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_insertChildBefore", true);
   }
   @Test
   public void test_putUserObject() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_putUserObject", true);
   }
   @Test
   public void test_removeChild() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_removeChild", true);
   }
   @Test
   public void test_setProperty() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setProperty", true);
   }
   @Test
   public void test_setReference() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReference", true);
   }
   @Test
   public void test_setReferenceTarget() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_setReferenceTarget", true);
   }
   @Test
   public void test_parameterLessMethods() throws Throwable {
-    initTest("${mps_home}", "r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)", false);
     runTest("jetbrains.mps.testRead.SNodeReadTest.SNodeReadAccess_Test$TestBody", "test_parameterLessMethods", true);
   }
 

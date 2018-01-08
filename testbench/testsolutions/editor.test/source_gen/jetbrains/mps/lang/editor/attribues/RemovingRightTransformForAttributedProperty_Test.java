@@ -4,15 +4,23 @@ package jetbrains.mps.lang.editor.attribues;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class RemovingRightTransformForAttributedProperty_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(RemovingRightTransformForAttributedProperty_Test.class, "${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)", false);
+
+  public RemovingRightTransformForAttributedProperty_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_RemovingRightTransformForAttributedProperty() throws Throwable {
-    initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
     runTest("jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody", "testMethod", false);
   }
 

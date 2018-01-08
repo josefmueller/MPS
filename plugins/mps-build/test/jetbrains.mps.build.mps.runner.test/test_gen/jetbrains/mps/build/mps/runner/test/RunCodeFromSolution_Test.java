@@ -10,7 +10,6 @@ import java.io.File;
 import junit.framework.Assert;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
@@ -53,7 +52,7 @@ public class RunCodeFromSolution_Test extends TestCase {
       ex.printStackTrace();
       Assert.fail("Exception during execution.");
     }
-    OutputRedirector.redirect(process, new ProcessAdapter() {
+    process.addProcessListener(new ProcessAdapter() {
       @Override
       public void onTextAvailable(ProcessEvent event, Key key) {
         if (ProcessOutputTypes.STDERR.equals(key)) {

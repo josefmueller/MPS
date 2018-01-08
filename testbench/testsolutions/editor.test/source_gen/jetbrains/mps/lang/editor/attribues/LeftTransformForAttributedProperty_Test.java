@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.attribues;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class LeftTransformForAttributedProperty_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(LeftTransformForAttributedProperty_Test.class, "${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)", false);
+
+  public LeftTransformForAttributedProperty_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_LeftTransformForAttributedProperty() throws Throwable {
-    initTest("${mps_home}", "r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)");
     runTest("jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test$TestBody", "testMethod", false);
   }
 

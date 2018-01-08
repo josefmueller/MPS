@@ -4,6 +4,8 @@ package testSubstituteType.model;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,59 +15,56 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class AnnotatedType_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(AnnotatedType_Test.class, "${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
+
+
+  public AnnotatedType_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeTypeCheck1470921783545289079() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545289079", true);
   }
   @Test
   public void test_NodeTypeCheck1470921783545475598() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545475598", true);
   }
   @Test
   public void test_NodeTypeCheck1470921783545475612() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeTypeCheck1470921783545475612", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155382069() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155382069", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155452234() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155452234", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155453375() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155453375", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155482970() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155482970", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155484751() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155484751", true);
   }
   @Test
   public void test_NodeErrorCheck8675420879155485361() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck8675420879155485361", true);
   }
   @Test
   public void test_NodeErrorCheck1470921783545427862() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_NodeErrorCheck1470921783545427862", true);
   }
   @Test
   public void test_ErrorMessagesCheck8675420879155382183() throws Throwable {
-    initTest("${mps_home}", "r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)", false);
     runTest("testSubstituteType.model.AnnotatedType_Test$TestBody", "test_ErrorMessagesCheck8675420879155382183", true);
   }
 

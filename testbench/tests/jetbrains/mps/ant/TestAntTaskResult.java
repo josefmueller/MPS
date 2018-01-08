@@ -33,11 +33,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestAntTaskResult {
   @Test
-  public void testRepository_Empty() {
-    testResult();
-  }
-
-  @Test
   public void testRepository_Allmpsmodules() {
     testResult();
   }

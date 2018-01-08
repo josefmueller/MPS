@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.label.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -11,9 +13,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class LabelWithBrackets_Update_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(LabelWithBrackets_Update_Test.class, "${mps_home}", "r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)", false);
+
+  public LabelWithBrackets_Update_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_LabelWithBrackets_Update() throws Throwable {
-    initTest("${mps_home}", "r:40a702b4-7737-42f4-8412-0355208396f3(jetbrains.mps.lang.editor.label.tests)");
     runTest("jetbrains.mps.lang.editor.label.tests.LabelWithBrackets_Update_Test$TestBody", "testMethod", false);
   }
 

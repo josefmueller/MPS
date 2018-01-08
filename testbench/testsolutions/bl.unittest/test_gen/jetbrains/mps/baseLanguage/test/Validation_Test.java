@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,44 +15,44 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class Validation_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Validation_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public Validation_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929443716() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443716", true);
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929443718() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929443718", true);
   }
   @Test
   public void test_ErrorMessagesCheck7868761255934329326() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_ErrorMessagesCheck7868761255934329326", true);
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929451248() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451248", true);
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929451250() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929451250", true);
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929609456() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609456", true);
   }
   @Test
   public void test_NodeRecursiveConstructorInvocationCheck6923385624929609458() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeRecursiveConstructorInvocationCheck6923385624929609458", true);
   }
   @Test
   public void test_NodeIllegalCombinationOfModifiersCheck6923385624927426848() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.Validation_Test$TestBody", "test_NodeIllegalCombinationOfModifiersCheck6923385624927426848", true);
   }
 

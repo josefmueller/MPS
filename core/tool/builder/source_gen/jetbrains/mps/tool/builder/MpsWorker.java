@@ -84,9 +84,7 @@ public abstract class MpsWorker {
     EnvironmentConfig config = EnvironmentConfig.emptyConfig().withDefaultSamples().withDefaultPlugins();
     RepositoryDescriptor repo = whatToDo.getRepoDescriptor();
     if (repo != null) {
-      if (repo.includeAllModules) {
-        config = config.withBootstrapLibraries().withWorkbenchPath();
-      }
+      config = config.withBootstrapLibraries().withWorkbenchPath();
       // todo make this code more typed 
       for (String folder : repo.folders) {
         if (!(new File(folder).exists())) {

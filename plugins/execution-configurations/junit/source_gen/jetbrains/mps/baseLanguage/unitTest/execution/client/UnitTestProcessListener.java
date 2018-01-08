@@ -4,46 +4,43 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import com.intellij.execution.process.ProcessAdapter;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
-import com.intellij.execution.process.ProcessTerminatedListener;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 
+/**
+ * Listener for an output of a Process, that parses TestEvent tokens in process's output stream and 
+ * update {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with a help of TestEventsDispatcher.
+ * You likely don't need this one unless there's {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } you'd like to refresh.
+ */
 public class UnitTestProcessListener extends ProcessAdapter {
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
-  public UnitTestProcessListener(TestEventsDispatcher dispatcher) {
-    myDispatcher = dispatcher;
+  public UnitTestProcessListener(TestRunState runState) {
+    myDispatcher = new TestEventsDispatcher(runState);
   }
 
-  private boolean isTerminatedEvent() {
-    for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
-      if (element.getClassName().equals(ProcessTerminatedListener.class.getName())) {
-        return true;
-      }
-    }
-    return false;
+  @Override
+  public void processTerminated(@NotNull ProcessEvent event) {
+    myDispatcher.onProcessTerminated(event.getText());
   }
 
   @Override
   public void onTextAvailable(ProcessEvent event, Key k) {
-    if (this.isTerminatedEvent()) {
-      this.myDispatcher.onProcessTerminated(event.getText());
-    }
     String text = event.getText();
     if (text == null) {
       return;
     }
-    String textTrimmed = ((text == null ? null : text.trim()));
-    TestEvent testEvent = TestEvent.parse(textTrimmed);
+    TestEvent testEvent = TestEvent.parse(text.trim());
     if (testEvent != null) {
       myLastEvent = testEvent;
-      this.myDispatcher.onTestEvent(testEvent);
+      myDispatcher.onTestEvent(testEvent);
     } else {
       if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
         k = ProcessOutputTypes.STDERR;
       }
-      this.myDispatcher.onSimpleTextAvailable(text, k);
+      myDispatcher.onSimpleTextAvailable(text, k);
     }
   }
 }

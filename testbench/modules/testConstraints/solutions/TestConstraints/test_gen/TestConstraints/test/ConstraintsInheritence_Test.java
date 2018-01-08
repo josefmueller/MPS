@@ -4,6 +4,8 @@ package TestConstraints.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,34 +15,36 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class ConstraintsInheritence_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ConstraintsInheritence_Test.class, "${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
+
+
+  public ConstraintsInheritence_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793796() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793796", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793812() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793812", true);
   }
   @Test
   public void test_ErrorMessagesCheck5816870305080792275() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_ErrorMessagesCheck5816870305080792275", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793804() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793804", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793825() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793825", true);
   }
   @Test
   public void test_NodeUnknownRuleCheck5816870305080793833() throws Throwable {
-    initTest("${mps_home}", "r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)", false);
     runTest("TestConstraints.test.ConstraintsInheritence_Test$TestBody", "test_NodeUnknownRuleCheck5816870305080793833", true);
   }
 

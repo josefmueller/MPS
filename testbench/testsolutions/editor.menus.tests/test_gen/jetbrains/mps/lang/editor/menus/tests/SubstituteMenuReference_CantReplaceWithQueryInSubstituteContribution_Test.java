@@ -4,15 +4,23 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
 
 @MPSLaunch
 public class SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+  public SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.tests.SubstituteMenuReference_CantReplaceWithQueryInSubstituteContribution_Test$TestBody", "testMethod", false);
   }
 

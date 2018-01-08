@@ -4,20 +4,28 @@ package jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
 
 @MPSLaunch
 public class WaitingTestCase_Test_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(WaitingTestCase_Test_Test.class, "${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
+
+
+  public WaitingTestCase_Test_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_test1() throws Throwable {
-    initTest("${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test1", true);
   }
   @Test
   public void test_test2() throws Throwable {
-    initTest("${mps_home}", "r:bbc844ac-dcda-4460-9717-8eb5d64b4778(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2.WaitingTestCase_Test_Test$TestBody", "test_test2", true);
   }
 

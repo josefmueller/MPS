@@ -4,6 +4,8 @@ package jetbrains.mps.internalCollections.test.typechecking;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -14,29 +16,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class TypeCheckingErrors_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TypeCheckingErrors_Test.class, "${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
+
+
+  public TypeCheckingErrors_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_mps18720() throws Throwable {
-    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
     runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_mps18720", true);
   }
   @Test
   public void test_varar_raw() throws Throwable {
-    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
     runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_varar_raw", true);
   }
   @Test
   public void test_lbt_subtypeof_param() throws Throwable {
-    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
     runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_lbt_subtypeof_param", true);
   }
   @Test
   public void test_meet_with_variable_excluded_from_lcs() throws Throwable {
-    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
     runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_meet_with_variable_excluded_from_lcs", true);
   }
   @Test
   public void test_NodeErrorCheck1089557578630058014() throws Throwable {
-    initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)", false);
     runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck1089557578630058014", true);
   }
 

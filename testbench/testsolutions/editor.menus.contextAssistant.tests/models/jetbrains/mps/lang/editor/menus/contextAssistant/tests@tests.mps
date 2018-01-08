@@ -8,7 +8,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="9a629f9a-abc9-4c29-b1b8-db7f349f7fbc" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
   </languages>
   <imports>
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
@@ -179,19 +179,19 @@
         <property id="379023083996575363" name="initiallyCollapsed" index="2u2RBZ" />
       </concept>
       <concept id="9025427969322494212" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.OtherSubconceptOfChild" flags="ng" index="$5QJJ" />
-      <concept id="1892012100483092657" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeDifferentMenusForDifferentNodes" flags="ng" index="Midpa" />
-      <concept id="1892012100483323573" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildWrapDifferentSubstituteMenus" flags="ng" index="Mjl1e" />
-      <concept id="4695456347262191087" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeSameMenuForDifferentLocations" flags="ng" index="3lKL_4" />
-      <concept id="4695456347261860078" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeDefaultAndNullMenu" flags="ng" index="3lNeh5" />
-      <concept id="4695456347261014362" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeDifferentMenusForSameNode" flags="ng" index="3lWgRL" />
+      <concept id="1892012100483092657" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeDifferentMenusForDifferentNodes" flags="ng" index="Midpa" />
+      <concept id="1892012100483323573" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.WrapDifferentSubstituteMenus" flags="ng" index="Mjl1e" />
+      <concept id="4695456347262191087" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeSameMenuForDifferentLocations" flags="ng" index="3lKL_4" />
+      <concept id="4695456347261860078" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeDefaultAndNullMenu" flags="ng" index="3lNeh5" />
+      <concept id="4695456347261014362" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeDifferentMenusForSameNode" flags="ng" index="3lWgRL" />
       <concept id="5578424278096849485" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent" flags="ng" index="1N2y4u">
         <child id="5578424278096849496" name="children" index="1N2y4b" />
       </concept>
       <concept id="5578424278096849458" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child" flags="ng" index="1N2y5x" />
-      <concept id="4572725119287814241" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeSameMenuTwiceForSameNode" flags="ng" index="3TOBO_" />
-      <concept id="4572725119287814263" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildIncludeSameMenuForDifferentNodes" flags="ng" index="3TOBON" />
-      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildSubconcept" flags="ng" index="3TPuk3" />
-      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_Parent" flags="ng" index="3TPulU">
+      <concept id="4572725119287814241" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeSameMenuTwiceForSameNode" flags="ng" index="3TOBO_" />
+      <concept id="4572725119287814263" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.IncludeSameMenuForDifferentNodes" flags="ng" index="3TOBON" />
+      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Subconcept" flags="ng" index="3TPuk3" />
+      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Duplication_Parent" flags="ng" index="3TPulU">
         <child id="1892012100483096634" name="childIncludeDifferentMenusForDifferentNodes" index="Mier1" />
         <child id="1892012100483356993" name="childWrapDifferentSubstituteMenus" index="MjdYU" />
         <child id="4695456347262194454" name="childIncludeSameMenuForDifferentLocations" index="3lKKYX" />
@@ -203,7 +203,7 @@
         <child id="4572725119287325341" name="childIncludeSameMenuTwiceForSameNode" index="3TPuvp" />
         <child id="4572725119287325338" name="childWrapSameSubstituteMenuTwice" index="3TPuvu" />
       </concept>
-      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestAssistant_Duplication_ChildWrapSameSubstituteMenuTwice" flags="ng" index="3TPunp" />
+      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.WrapSameSubstituteMenuTwice" flags="ng" index="3TPunp" />
       <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.TestContextAssistant_Duplication_ChildIncludeSameMenuTwiceForParentNode" flags="ng" index="3TPunu" />
       <concept id="1966322953445209147" name="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.SubconceptOfChild" flags="ng" index="3UxrLP" />
     </language>

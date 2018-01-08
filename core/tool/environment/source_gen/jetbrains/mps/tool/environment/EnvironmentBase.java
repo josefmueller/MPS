@@ -15,9 +15,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.core.tool.environment.util.CanonicalPath;
+import jetbrains.mps.library.LibraryInitializer;
 import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -94,7 +94,7 @@ public abstract class EnvironmentBase implements Environment {
     return new MapPathMacrosProvider(realMacros);
   }
 
-  public List<LibraryContributor> initLibraries(@NotNull LibraryInitializer libInitializer) {
+  protected void initLibraries(@NotNull LibraryInitializer libInitializer) {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing libraries");
     }
@@ -108,7 +108,6 @@ public abstract class EnvironmentBase implements Environment {
       ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
     }
     libInitializer.load(libContribs);
-    return libContribs;
   }
 
   /**

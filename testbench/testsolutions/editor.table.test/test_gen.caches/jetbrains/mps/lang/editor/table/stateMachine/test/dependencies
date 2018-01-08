@@ -9,6 +9,8 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -18,6 +20,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -27,6 +31,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -36,6 +42,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -45,6 +53,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -57,6 +67,8 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -69,6 +81,8 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -78,6 +92,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -87,6 +103,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -96,6 +114,8 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -108,6 +128,8 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

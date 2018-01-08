@@ -4,6 +4,8 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -18,11 +20,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class PatternProperty_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(PatternProperty_Test.class, "${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)", false);
+
   public PatternProperty_Test() {
+    super(ourParamCache);
   }
+
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.PatternProperty_Test$TestBody", "testProperty", true);
   }
   @MPSLaunch
@@ -33,8 +39,8 @@ public class PatternProperty_Test extends BaseTransformationTest {
       TestCase.assertTrue(match());
     }
     public boolean match() {
-      SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c2();
-      DefaultMatchingPattern pattern = new Pattern_xihehy_a0b0c2(_quotation_createNode_xihehy_a0a0b0c2());
+      SNode nodeToMatch = _quotation_createNode_xihehy_a0a0c5();
+      DefaultMatchingPattern pattern = new Pattern_xihehy_a0b0c5(_quotation_createNode_xihehy_a0a0b0c5());
       final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -46,7 +52,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
       Assert.assertEquals("something", pattern.getMatchedProperty("printed"));
       return true;
     }
-    private static SNode _quotation_createNode_xihehy_a0a0c2() {
+    private static SNode _quotation_createNode_xihehy_a0a0c5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -65,7 +71,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_xihehy_a0a0b0c2() {
+    private static SNode _quotation_createNode_xihehy_a0a0b0c5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

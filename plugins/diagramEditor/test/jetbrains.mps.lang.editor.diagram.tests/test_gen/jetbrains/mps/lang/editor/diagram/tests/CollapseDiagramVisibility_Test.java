@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.diagram.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import javax.swing.SwingUtilities;
@@ -14,9 +16,15 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 @MPSLaunch
 public class CollapseDiagramVisibility_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CollapseDiagramVisibility_Test.class, "${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)", false);
+
+  public CollapseDiagramVisibility_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CollapseDiagramVisibility() throws Throwable {
-    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     runTest("jetbrains.mps.lang.editor.diagram.tests.CollapseDiagramVisibility_Test$TestBody", "testMethod", false);
   }
 

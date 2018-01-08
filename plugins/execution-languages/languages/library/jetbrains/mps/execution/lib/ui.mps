@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -35,7 +35,6 @@
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
     <import index="7bx7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.action(MPS.Platform/)" />
     <import index="xygl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.progress(MPS.IDEA/)" />
-    <import index="ejis" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench.dialogs.project.components.parts.actions(MPS.Workbench/)" />
     <import index="mk8z" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.progress(MPS.Platform/)" />
     <import index="awpe" ref="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" />
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
@@ -191,6 +190,7 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
@@ -3085,12 +3085,38 @@
     <node concept="312cEu" id="1DeqbSMDT5L" role="jymVt">
       <property role="TrG5h" value="MyListAddAction" />
       <property role="2bfB8j" value="true" />
+      <node concept="312cEg" id="5kWneGv3x7n" role="jymVt">
+        <property role="TrG5h" value="myList" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="5kWneGv3x7o" role="1B3o_S" />
+        <node concept="3uibUv" id="5kWneGv3x7p" role="1tU5fm">
+          <ref role="3uigEE" to="dxuu:~JList" resolve="JList" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="5kWneGv3wAk" role="jymVt" />
       <node concept="3clFbW" id="1DeqbSMDT5M" role="jymVt">
         <node concept="3clFbS" id="1DeqbSMDT5N" role="3clF47">
           <node concept="XkiVB" id="1DeqbSMDT5O" role="3cqZAp">
-            <ref role="37wK5l" to="ejis:~ListAddAction.&lt;init&gt;(javax.swing.JList)" resolve="ListAddAction" />
-            <node concept="37vLTw" id="1DeqbSMDT5P" role="37wK5m">
-              <ref role="3cqZAo" node="1DeqbSMDT5S" resolve="list" />
+            <ref role="37wK5l" to="qkt:~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="AnAction" />
+            <node concept="Xl_RD" id="1mBiRF0LBaG" role="37wK5m">
+              <property role="Xl_RC" value="Add" />
+            </node>
+            <node concept="Xl_RD" id="1mBiRF0LBaH" role="37wK5m">
+              <property role="Xl_RC" value="Add" />
+            </node>
+            <node concept="10M0yZ" id="6XsdSphHn_9" role="37wK5m">
+              <ref role="1PxDUh" to="z2i8:~AllIcons$General" resolve="AllIcons.General" />
+              <ref role="3cqZAo" to="z2i8:~AllIcons$General.Add" resolve="Add" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="5kWneGv3yF2" role="3cqZAp">
+            <node concept="37vLTI" id="5kWneGv3zia" role="3clFbG">
+              <node concept="37vLTw" id="5kWneGv3_2e" role="37vLTx">
+                <ref role="3cqZAo" node="1DeqbSMDT5S" resolve="list" />
+              </node>
+              <node concept="37vLTw" id="5kWneGv3yF0" role="37vLTJ">
+                <ref role="3cqZAo" node="5kWneGv3x7n" resolve="myList" />
+              </node>
             </node>
           </node>
         </node>
@@ -3103,11 +3129,22 @@
           </node>
         </node>
       </node>
-      <node concept="2tJIrI" id="2_AUN5Gp7Wn" role="jymVt" />
-      <node concept="3Tm6S6" id="1DeqbSMDT5U" role="1B3o_S" />
-      <node concept="3clFb_" id="1DeqbSMDT5V" role="jymVt">
-        <property role="TrG5h" value="doAdd" />
-        <node concept="3clFbS" id="1DeqbSMDT5W" role="3clF47">
+      <node concept="2tJIrI" id="5kWneGv3D_v" role="jymVt" />
+      <node concept="2tJIrI" id="5kWneGv3DBN" role="jymVt" />
+      <node concept="3clFb_" id="5kWneGv3E9$" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="actionPerformed" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="5kWneGv3E9_" role="1B3o_S" />
+        <node concept="3cqZAl" id="5kWneGv3E9B" role="3clF45" />
+        <node concept="37vLTG" id="5kWneGv3E9C" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="5kWneGv3E9D" role="1tU5fm">
+            <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="5kWneGv3E9E" role="3clF47">
           <node concept="3cpWs8" id="1DeqbSMDT5X" role="3cqZAp">
             <node concept="3cpWsn" id="1DeqbSMDT5Y" role="3cpWs9">
               <property role="TrG5h" value="nodesList" />
@@ -3169,6 +3206,11 @@
             </node>
           </node>
           <node concept="3clFbH" id="1DeqbSMDT6k" role="3cqZAp" />
+          <node concept="3SKdUt" id="5kWneGv41eA" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv41eC" role="3SKWNk">
+              <property role="3SKdUp" value="FIXME please refactor this, please, please!!!" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="1DeqbSMDT6l" role="3cqZAp">
             <node concept="3clFbC" id="1DeqbSMDT6m" role="3clFbw">
               <node concept="10Nm6u" id="1DeqbSMDT6n" role="3uHU7w" />
@@ -3177,11 +3219,7 @@
               </node>
             </node>
             <node concept="3clFbS" id="1DeqbSMDT6p" role="3clFbx">
-              <node concept="3cpWs6" id="1DeqbSMDT6q" role="3cqZAp">
-                <node concept="3cmrfG" id="1DeqbSMDT6r" role="3cqZAk">
-                  <property role="3cmrfH" value="-1" />
-                </node>
-              </node>
+              <node concept="3cpWs6" id="1DeqbSMDT6q" role="3cqZAp" />
             </node>
           </node>
           <node concept="3cpWs8" id="1DeqbSMDT6s" role="3cqZAp">
@@ -3212,7 +3250,7 @@
                           <ref role="37wK5l" node="1DeqbSMDT0W" resolve="wrap" />
                           <node concept="2OqwBi" id="1DeqbSMDT6C" role="37wK5m">
                             <node concept="liA8E" id="1DeqbSMDT6D" role="2OqNvi">
-                              <ref role="37wK5l" to="w1kc:~SNodePointer.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
                               <node concept="2OqwBi" id="2_AUN5Go9Xf" role="37wK5m">
                                 <node concept="37vLTw" id="2_AUN5Gp2tQ" role="2Oq$k0">
                                   <ref role="3cqZAo" node="2_AUN5Goh6w" resolve="myMpsProject" />
@@ -3222,15 +3260,8 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="1eOMI4" id="1DeqbSMDT6F" role="2Oq$k0">
-                              <node concept="10QFUN" id="1DeqbSMDT6G" role="1eOMHV">
-                                <node concept="3uibUv" id="1DeqbSMDT6H" role="10QFUM">
-                                  <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                                </node>
-                                <node concept="37vLTw" id="1DeqbSMDT6I" role="10QFUP">
-                                  <ref role="3cqZAo" node="1DeqbSMDT6f" resolve="resultNode" />
-                                </node>
-                              </node>
+                            <node concept="37vLTw" id="1DeqbSMDT6I" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1DeqbSMDT6f" resolve="resultNode" />
                             </node>
                           </node>
                         </node>
@@ -3246,11 +3277,7 @@
           </node>
           <node concept="3clFbJ" id="1DeqbSMDT6K" role="3cqZAp">
             <node concept="3clFbS" id="1DeqbSMDT6L" role="3clFbx">
-              <node concept="3cpWs6" id="1DeqbSMDT6M" role="3cqZAp">
-                <node concept="3cmrfG" id="1DeqbSMDT6N" role="3cqZAk">
-                  <property role="3cmrfH" value="-1" />
-                </node>
-              </node>
+              <node concept="3cpWs6" id="1DeqbSMDT6M" role="3cqZAp" />
             </node>
             <node concept="3clFbC" id="1DeqbSMDT6O" role="3clFbw">
               <node concept="10Nm6u" id="1DeqbSMDT6P" role="3uHU7w" />
@@ -3337,37 +3364,43 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="1DeqbSMDT7o" role="3cqZAp">
-            <node concept="2OqwBi" id="1DeqbSMDT7p" role="3clFbG">
-              <node concept="2OqwBi" id="1DeqbSMDT7q" role="2Oq$k0">
-                <node concept="2OwXpG" id="1DeqbSMDT7r" role="2OqNvi">
-                  <ref role="2Oxat5" node="1DeqbSMDT0x" resolve="myValues" />
-                </node>
-                <node concept="Xjq3P" id="1DeqbSMDT7s" role="2Oq$k0">
-                  <ref role="1HBi2w" node="1DeqbSMDT0o" resolve="ListPanel" />
-                </node>
+          <node concept="3SKdUt" id="5kWneGv3Z0K" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv3Z0M" role="3SKWNk">
+              <property role="3SKdUp" value="return value used to be an index to select (though, in a bit cryptic manner, see BaseAddAction)" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="5kWneGv3Mr0" role="3cqZAp">
+            <node concept="2OqwBi" id="5kWneGv3Oni" role="3clFbG">
+              <node concept="37vLTw" id="5kWneGv3MqY" role="2Oq$k0">
+                <ref role="3cqZAo" node="5kWneGv3x7n" resolve="myList" />
               </node>
-              <node concept="2WmjW8" id="1DeqbSMDT7t" role="2OqNvi">
-                <node concept="37vLTw" id="3GM_nagTxJ2" role="25WWJ7">
-                  <ref role="3cqZAo" node="1DeqbSMDT6t" resolve="wrapper" />
+              <node concept="liA8E" id="5kWneGv3POZ" role="2OqNvi">
+                <ref role="37wK5l" to="dxuu:~JList.setSelectedIndex(int):void" resolve="setSelectedIndex" />
+                <node concept="2OqwBi" id="5kWneGv3QgG" role="37wK5m">
+                  <node concept="2OqwBi" id="5kWneGv3QgH" role="2Oq$k0">
+                    <node concept="2OwXpG" id="5kWneGv3QgI" role="2OqNvi">
+                      <ref role="2Oxat5" node="1DeqbSMDT0x" resolve="myValues" />
+                    </node>
+                    <node concept="Xjq3P" id="5kWneGv3QgJ" role="2Oq$k0">
+                      <ref role="1HBi2w" node="1DeqbSMDT0o" resolve="ListPanel" />
+                    </node>
+                  </node>
+                  <node concept="2WmjW8" id="5kWneGv3QgK" role="2OqNvi">
+                    <node concept="37vLTw" id="5kWneGv3QgL" role="25WWJ7">
+                      <ref role="3cqZAo" node="1DeqbSMDT6t" resolve="wrapper" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="37vLTG" id="1DeqbSMDT7v" role="3clF46">
-          <property role="TrG5h" value="p0" />
-          <node concept="3uibUv" id="1DeqbSMDT7w" role="1tU5fm">
-            <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
-          </node>
-        </node>
-        <node concept="10Oyi0" id="1DeqbSMDT7x" role="3clF45" />
-        <node concept="3Tmbuc" id="1DeqbSMDT7y" role="1B3o_S" />
-        <node concept="2AHcQZ" id="1DeqbSMDT7z" role="2AJF6D">
+        <node concept="2AHcQZ" id="5kWneGv3E9F" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="2tJIrI" id="2_AUN5Gp6Tg" role="jymVt" />
+      <node concept="2tJIrI" id="2_AUN5Gp7Wn" role="jymVt" />
+      <node concept="3Tm6S6" id="1DeqbSMDT5U" role="1B3o_S" />
       <node concept="3clFb_" id="7XbeqBA_E$$" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="update" />
@@ -3382,6 +3415,14 @@
           </node>
         </node>
         <node concept="3clFbS" id="7XbeqBA_E$D" role="3clF47">
+          <node concept="3clFbF" id="7XbeqBA_E$L" role="3cqZAp">
+            <node concept="3nyPlj" id="7XbeqBA_E$M" role="3clFbG">
+              <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+              <node concept="37vLTw" id="7XbeqBA_E$N" role="37wK5m">
+                <ref role="3cqZAo" node="7XbeqBA_E$B" resolve="event" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="7XbeqBA_E$E" role="3cqZAp">
             <node concept="2OqwBi" id="7XbeqBA_E$F" role="3clFbG">
               <node concept="2OqwBi" id="7XbeqBA_E$G" role="2Oq$k0">
@@ -3400,36 +3441,53 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbF" id="7XbeqBA_E$L" role="3cqZAp">
-            <node concept="3nyPlj" id="7XbeqBA_E$M" role="3clFbG">
-              <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-              <node concept="37vLTw" id="7XbeqBA_E$N" role="37wK5m">
-                <ref role="3cqZAo" node="7XbeqBA_E$B" resolve="event" />
-              </node>
-            </node>
-          </node>
         </node>
         <node concept="2AHcQZ" id="7XbeqBA_E$O" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3uibUv" id="KbH79c6fYR" role="1zkMxy">
-        <ref role="3uigEE" to="ejis:~ListAddAction" resolve="ListAddAction" />
+      <node concept="3uibUv" id="5kWneGv3w34" role="1zkMxy">
+        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
       </node>
     </node>
     <node concept="2tJIrI" id="2_AUN5GoT7C" role="jymVt" />
     <node concept="312cEu" id="1DeqbSMDT7_" role="jymVt">
       <property role="TrG5h" value="MyListRemoveAction" />
       <property role="2bfB8j" value="true" />
+      <node concept="312cEg" id="5kWneGv26cR" role="jymVt">
+        <property role="TrG5h" value="myList" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="5kWneGv26cS" role="1B3o_S" />
+        <node concept="3uibUv" id="5kWneGv26OO" role="1tU5fm">
+          <ref role="3uigEE" to="dxuu:~JList" resolve="JList" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="5kWneGv26S9" role="jymVt" />
       <node concept="3clFbW" id="1DeqbSMDT7A" role="jymVt">
         <node concept="3clFbS" id="1DeqbSMDT7B" role="3clF47">
-          <node concept="XkiVB" id="1DeqbSMDT7C" role="3cqZAp">
-            <ref role="37wK5l" to="ejis:~ListRemoveAction.&lt;init&gt;(javax.swing.JList)" resolve="ListRemoveAction" />
-            <node concept="37vLTw" id="1DeqbSMDT7D" role="37wK5m">
-              <ref role="3cqZAo" node="1DeqbSMDT7G" resolve="list" />
+          <node concept="XkiVB" id="5kWneGv2gq1" role="3cqZAp">
+            <ref role="37wK5l" to="qkt:~AnAction.&lt;init&gt;(java.lang.String,java.lang.String,javax.swing.Icon)" resolve="AnAction" />
+            <node concept="Xl_RD" id="1mBiRF0LBRA" role="37wK5m">
+              <property role="Xl_RC" value="Remove" />
+            </node>
+            <node concept="Xl_RD" id="1mBiRF0LBRB" role="37wK5m">
+              <property role="Xl_RC" value="Remove" />
+            </node>
+            <node concept="10M0yZ" id="6XsdSphHAjZ" role="37wK5m">
+              <ref role="1PxDUh" to="z2i8:~AllIcons$General" resolve="AllIcons.General" />
+              <ref role="3cqZAo" to="z2i8:~AllIcons$General.Remove" resolve="Remove" />
             </node>
           </node>
-          <node concept="3clFbH" id="2_AUN5GoT4e" role="3cqZAp" />
+          <node concept="3clFbF" id="5kWneGv29ht" role="3cqZAp">
+            <node concept="37vLTI" id="5kWneGv2c2r" role="3clFbG">
+              <node concept="37vLTw" id="5kWneGv2dPX" role="37vLTx">
+                <ref role="3cqZAo" node="1DeqbSMDT7G" resolve="list" />
+              </node>
+              <node concept="37vLTw" id="5kWneGv29hr" role="37vLTJ">
+                <ref role="3cqZAo" node="5kWneGv26cR" resolve="myList" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3Tm1VV" id="1DeqbSMDT7E" role="1B3o_S" />
         <node concept="3cqZAl" id="1DeqbSMDT7F" role="3clF45" />
@@ -3440,18 +3498,51 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm6S6" id="1DeqbSMDT7I" role="1B3o_S" />
-      <node concept="3clFb_" id="1DeqbSMDT7J" role="jymVt">
-        <property role="TrG5h" value="doRemove" />
-        <node concept="3Tmbuc" id="1DeqbSMDT7K" role="1B3o_S" />
-        <node concept="37vLTG" id="1DeqbSMDT7L" role="3clF46">
-          <property role="TrG5h" value="p0" />
-          <node concept="3uibUv" id="1DeqbSMDT7M" role="1tU5fm">
+      <node concept="2tJIrI" id="5kWneGv2dV4" role="jymVt" />
+      <node concept="2tJIrI" id="5kWneGv2qOF" role="jymVt" />
+      <node concept="3clFb_" id="5kWneGv2sc8" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="actionPerformed" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="5kWneGv2sc9" role="1B3o_S" />
+        <node concept="3cqZAl" id="5kWneGv2scb" role="3clF45" />
+        <node concept="37vLTG" id="5kWneGv2scc" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="5kWneGv2scd" role="1tU5fm">
             <ref role="3uigEE" to="qkt:~AnActionEvent" resolve="AnActionEvent" />
           </node>
         </node>
-        <node concept="3cqZAl" id="1DeqbSMDT7N" role="3clF45" />
-        <node concept="3clFbS" id="1DeqbSMDT7O" role="3clF47">
+        <node concept="3clFbS" id="5kWneGv2sce" role="3clF47">
+          <node concept="3cpWs8" id="5kWneGv2Y25" role="3cqZAp">
+            <node concept="3cpWsn" id="5kWneGv2Y26" role="3cpWs9">
+              <property role="TrG5h" value="minSelectionIndex" />
+              <node concept="10Oyi0" id="5kWneGv2Y24" role="1tU5fm" />
+              <node concept="2OqwBi" id="5kWneGv2Y27" role="33vP2m">
+                <node concept="37vLTw" id="5kWneGv2Y28" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5kWneGv26cR" resolve="myList" />
+                </node>
+                <node concept="liA8E" id="5kWneGv2Y29" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~JList.getMinSelectionIndex():int" resolve="getMinSelectionIndex" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5kWneGv2Wit" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv2Wiv" role="3SKWNk">
+              <property role="3SKdUp" value="XXX I cried with blood tears over the code below." />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5kWneGv34nF" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv34nG" role="3SKWNk">
+              <property role="3SKdUp" value=" ListPanel.this.myListComponent == myList, " />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5kWneGv2Xe6" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv2Xe7" role="3SKWNk">
+              <property role="3SKdUp" value="and access to myListModel is mind-blowing. Need to find enough courage to refactor this mess." />
+            </node>
+          </node>
           <node concept="1DcWWT" id="1DeqbSMDT7P" role="3cqZAp">
             <node concept="2OqwBi" id="1DeqbSMDT7Q" role="1DdaDG">
               <node concept="2OqwBi" id="1DeqbSMDT7R" role="2Oq$k0">
@@ -3625,11 +3716,53 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="5kWneGv32Tc" role="3cqZAp">
+            <node concept="3SKdUq" id="5kWneGv381W" role="3SKWNk">
+              <property role="3SKdUp" value="index restore code came from base ListRemoveAction" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="5kWneGv3bf3" role="3cqZAp">
+            <node concept="2OqwBi" id="5kWneGv3ciB" role="3clFbG">
+              <node concept="37vLTw" id="5kWneGv3bf1" role="2Oq$k0">
+                <ref role="3cqZAo" node="5kWneGv26cR" resolve="myList" />
+              </node>
+              <node concept="liA8E" id="5kWneGv3e8a" role="2OqNvi">
+                <ref role="37wK5l" to="dxuu:~JList.setSelectedIndex(int):void" resolve="setSelectedIndex" />
+                <node concept="2YIFZM" id="5kWneGv3n3_" role="37wK5m">
+                  <ref role="37wK5l" to="wyt6:~Math.min(int,int):int" resolve="min" />
+                  <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+                  <node concept="3cpWsd" id="5kWneGv3r38" role="37wK5m">
+                    <node concept="3cmrfG" id="5kWneGv3rOz" role="3uHU7w">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                    <node concept="2OqwBi" id="5kWneGv3jtQ" role="3uHU7B">
+                      <node concept="2OqwBi" id="5kWneGv3fMS" role="2Oq$k0">
+                        <node concept="37vLTw" id="5kWneGv3f8B" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5kWneGv26cR" resolve="myList" />
+                        </node>
+                        <node concept="liA8E" id="5kWneGv3je3" role="2OqNvi">
+                          <ref role="37wK5l" to="dxuu:~JList.getModel():javax.swing.ListModel" resolve="getModel" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5kWneGv3kUH" role="2OqNvi">
+                        <ref role="37wK5l" to="dxuu:~ListModel.getSize():int" resolve="getSize" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="5kWneGv3pPI" role="37wK5m">
+                    <ref role="3cqZAo" node="5kWneGv2Y26" resolve="minSelectionIndex" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
-        <node concept="2AHcQZ" id="1DeqbSMDT8V" role="2AJF6D">
+        <node concept="2AHcQZ" id="5kWneGv2scf" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="5kWneGv2qoK" role="jymVt" />
+      <node concept="3Tm6S6" id="1DeqbSMDT7I" role="1B3o_S" />
       <node concept="3clFb_" id="7XbeqBA_iC4" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="update" />
@@ -3644,6 +3777,14 @@
           </node>
         </node>
         <node concept="3clFbS" id="7XbeqBA_iCa" role="3clF47">
+          <node concept="3clFbF" id="1mBiRF0LBRP" role="3cqZAp">
+            <node concept="3nyPlj" id="1mBiRF0LBRQ" role="3clFbG">
+              <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+              <node concept="37vLTw" id="5kWneGv2nlS" role="37wK5m">
+                <ref role="3cqZAo" node="7XbeqBA_iC8" resolve="event" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="7XbeqBA_iIh" role="3cqZAp">
             <node concept="2OqwBi" id="7XbeqBA_DiC" role="3clFbG">
               <node concept="2OqwBi" id="7XbeqBA_j09" role="2Oq$k0">
@@ -3656,17 +3797,27 @@
               </node>
               <node concept="liA8E" id="7XbeqBA_EoR" role="2OqNvi">
                 <ref role="37wK5l" to="qkt:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
-                <node concept="37vLTw" id="7XbeqBA_ExF" role="37wK5m">
-                  <ref role="3cqZAo" node="7XbeqBAyo8l" resolve="isEditable" />
+                <node concept="1Wc70l" id="5kWneGv2oyk" role="37wK5m">
+                  <node concept="37vLTw" id="7XbeqBA_ExF" role="3uHU7B">
+                    <ref role="3cqZAo" node="7XbeqBAyo8l" resolve="isEditable" />
+                  </node>
+                  <node concept="3y3z36" id="1mBiRF0LBRY" role="3uHU7w">
+                    <node concept="2OqwBi" id="1mBiRF0LBRZ" role="3uHU7B">
+                      <node concept="2OqwBi" id="1mBiRF0LBS0" role="2Oq$k0">
+                        <node concept="37vLTw" id="2BHiRxeuUac" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5kWneGv26cR" resolve="myList" />
+                        </node>
+                        <node concept="liA8E" id="1mBiRF0LBS4" role="2OqNvi">
+                          <ref role="37wK5l" to="dxuu:~JList.getSelectedIndices():int[]" resolve="getSelectedIndices" />
+                        </node>
+                      </node>
+                      <node concept="1Rwk04" id="1mBiRF0LBS5" role="2OqNvi" />
+                    </node>
+                    <node concept="3cmrfG" id="1mBiRF0LBS6" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                  </node>
                 </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="7XbeqBA_iCe" role="3cqZAp">
-            <node concept="3nyPlj" id="7XbeqBA_iCd" role="3clFbG">
-              <ref role="37wK5l" to="ejis:~ListRemoveAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
-              <node concept="37vLTw" id="7XbeqBA_iCc" role="37wK5m">
-                <ref role="3cqZAo" node="7XbeqBA_iC8" resolve="event" />
               </node>
             </node>
           </node>
@@ -3675,8 +3826,8 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3uibUv" id="1DeqbSMDT8W" role="1zkMxy">
-        <ref role="3uigEE" to="ejis:~ListRemoveAction" resolve="ListRemoveAction" />
+      <node concept="3uibUv" id="5kWneGv259K" role="1zkMxy">
+        <ref role="3uigEE" to="qkt:~AnAction" resolve="AnAction" />
       </node>
     </node>
     <node concept="3UR2Jj" id="1DeqbSMJ8fU" role="lGtFl">

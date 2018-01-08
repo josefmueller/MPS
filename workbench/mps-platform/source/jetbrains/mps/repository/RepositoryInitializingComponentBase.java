@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.repository;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.InternalFlag;
@@ -23,9 +22,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.impl.IoFileSystem;
@@ -41,7 +38,7 @@ import java.util.List;
  * Inits all mps distribution modules
  * When on sources {@link InternalFlag#isInternalMode()} almost the same happens
  */
-public class BaseLibraryInitializer implements ApplicationComponent {
+public class RepositoryInitializingComponentBase implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
   private final FileSystem myFS;
   private final List<LibraryContributor> myContributors = new ArrayList<>();
@@ -58,12 +55,12 @@ public class BaseLibraryInitializer implements ApplicationComponent {
    * @param ideaPluginFacetComponent -- we want to load plugin library contributor after we have chosen the right idea plugin facet
    */
   @SuppressWarnings("UnusedParameters")
-  public BaseLibraryInitializer(FSNotificationsImprover improver, //improve before loading any libs
-                                MPSCoreComponents coreComponents,
-                                IRegistryManager registryManager,
-                                IdeaPluginFacetComponent ideaPluginFacetComponent,
-                                IdeaFSComponent fs,
-                                PersistentFS filesystem //see MPS-22970
+  public RepositoryInitializingComponentBase(FSNotificationsImprover improver, //improve before loading any libs
+                                             MPSCoreComponents coreComponents,
+                                             IRegistryManager registryManager,
+                                             IdeaPluginFacetComponent ideaPluginFacetComponent,
+                                             IdeaFSComponent fs,
+                                             PersistentFS filesystem //see MPS-22970
   ) {
     myLibraryInitializer = coreComponents.getLibraryInitializer();
     myFS = PathManager.isFromSources() ? FileSystemExtPoint.getFS() : IoFileSystem.INSTANCE;

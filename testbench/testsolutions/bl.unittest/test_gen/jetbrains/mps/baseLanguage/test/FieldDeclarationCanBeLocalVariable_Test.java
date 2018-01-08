@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,59 +15,56 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class FieldDeclarationCanBeLocalVariable_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(FieldDeclarationCanBeLocalVariable_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public FieldDeclarationCanBeLocalVariable_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck4914675704512537909() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512537909", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929133464() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929133464", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512538465() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512538465", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624927428315() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624927428315", true);
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2857825852305590976() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305590976", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512541562() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512541562", true);
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2857825852305591095() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305591095", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512555962() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512555962", true);
   }
   @Test
   public void test_NodeFieldCanBeConvertedIntoCheck6923385624929216447() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck6923385624929216447", true);
   }
   @Test
   public void test_NodeTheConditionIsAlwaysCheck2857825852305591300() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305591300", true);
   }
   @Test
   public void test_ErrorMessagesCheck4914675704512587973() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.FieldDeclarationCanBeLocalVariable_Test$TestBody", "test_ErrorMessagesCheck4914675704512587973", true);
   }
 

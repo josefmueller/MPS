@@ -144,6 +144,12 @@
       <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -249,15 +255,6 @@
         <property role="Xl_RC" value="&lt;TEST_FAILURE_BEGIN&gt;" />
       </node>
     </node>
-    <node concept="Wx3nA" id="1zHDQsywvlA" role="jymVt">
-      <property role="TrG5h" value="FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="1zHDQsywvlB" role="1B3o_S" />
-      <node concept="17QB3L" id="1zHDQsywvlC" role="1tU5fm" />
-      <node concept="Xl_RD" id="1zHDQsywvlD" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_FAILURE_END&gt;" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="1zHDQsywvlE" role="jymVt">
       <property role="TrG5h" value="ASSUMPTION_FAILURE_TEST_PREFIX" />
       <property role="3TUv4t" value="true" />
@@ -267,15 +264,6 @@
         <property role="Xl_RC" value="&lt;TEST_ASSUMPTION_FAILURE_BEGIN&gt;" />
       </node>
     </node>
-    <node concept="Wx3nA" id="1zHDQsywvlI" role="jymVt">
-      <property role="TrG5h" value="ASSUMPTION_FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="1zHDQsywvlJ" role="1B3o_S" />
-      <node concept="17QB3L" id="1zHDQsywvlK" role="1tU5fm" />
-      <node concept="Xl_RD" id="1zHDQsywvlL" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_ASSUMPTION_FAILURE_END&gt;" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="5d37arGBotJ" role="jymVt">
       <property role="TrG5h" value="IGNORE_FAILURE_TEST_PREFIX" />
       <property role="3TUv4t" value="true" />
@@ -283,15 +271,6 @@
       <node concept="17QB3L" id="5d37arGBotL" role="1tU5fm" />
       <node concept="Xl_RD" id="5d37arGBotM" role="33vP2m">
         <property role="Xl_RC" value="&lt;TEST_IGNORE_BEGIN&gt;" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="5d37arGBotN" role="jymVt">
-      <property role="TrG5h" value="IGNORE_FAILURE_TEST_SUFFIX" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="5d37arGBotO" role="1B3o_S" />
-      <node concept="17QB3L" id="5d37arGBotP" role="1tU5fm" />
-      <node concept="Xl_RD" id="5d37arGBotQ" role="33vP2m">
-        <property role="Xl_RC" value="&lt;TEST_IGNORE_END&gt;" />
       </node>
     </node>
     <node concept="2tJIrI" id="5d37arGBomD" role="jymVt" />
@@ -356,19 +335,19 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="31Rnc32dTlj" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32dTll" role="3SKWNk">
+            <property role="3SKdUp" value="description.getTestClass() may be null (e.g. when failure indicates an issue with loading of test class)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1zHDQsywvjm" role="3cqZAp">
           <node concept="37vLTI" id="1zHDQsywvjn" role="3clFbG">
-            <node concept="2OqwBi" id="1zHDQsywvjo" role="37vLTx">
-              <node concept="2OqwBi" id="1zHDQsywvjp" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxglket" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1zHDQsywvnV" resolve="description" />
-                </node>
-                <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
-                  <ref role="37wK5l" to="cvlm:~Description.getTestClass():java.lang.Class" resolve="getTestClass" />
-                </node>
+            <node concept="2OqwBi" id="1zHDQsywvjp" role="37vLTx">
+              <node concept="37vLTw" id="2BHiRxglket" role="2Oq$k0">
+                <ref role="3cqZAo" node="1zHDQsywvnV" resolve="description" />
               </node>
-              <node concept="liA8E" id="1zHDQsywvjs" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+              <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
+                <ref role="37wK5l" to="cvlm:~Description.getClassName():java.lang.String" resolve="getClassName" />
               </node>
             </node>
             <node concept="37vLTw" id="2BHiRxeuA$K" role="37vLTJ">
@@ -1272,25 +1251,13 @@
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
                 </node>
-                <node concept="10M0yZ" id="1zHDQsywvnR" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="1zHDQsywvlA" resolve="FAILURE_TEST_SUFFIX" />
-                </node>
                 <node concept="10M0yZ" id="1zHDQsywvnS" role="HW$Y0">
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
                 </node>
-                <node concept="10M0yZ" id="1zHDQsywvnT" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="1zHDQsywvlI" resolve="ASSUMPTION_FAILURE_TEST_SUFFIX" />
-                </node>
                 <node concept="10M0yZ" id="5d37arGBFSg" role="HW$Y0">
                   <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
                   <ref role="3cqZAo" node="5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
-                </node>
-                <node concept="10M0yZ" id="5d37arGBFZ9" role="HW$Y0">
-                  <ref role="1PxDUh" node="1zHDQsywvgL" resolve="TestEvent" />
-                  <ref role="3cqZAo" node="5d37arGBotN" resolve="IGNORE_FAILURE_TEST_SUFFIX" />
                 </node>
               </node>
             </node>

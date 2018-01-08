@@ -4,6 +4,8 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -22,11 +24,15 @@ import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
 public class Patternv2_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(Patternv2_Test.class, "${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)", false);
+
   public Patternv2_Test() {
+    super(ourParamCache);
   }
+
   @Test
   public void testMethod() throws Throwable {
-    this.initTest("${mps_home}", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
     this.runTest("jetbrains.mps.lang.pattern.test.Patternv2_Test$TestBody", "testv2", true);
   }
   @MPSLaunch
@@ -37,8 +43,8 @@ public class Patternv2_Test extends BaseTransformationTest {
       TestCase.assertTrue(match());
     }
     public boolean match() {
-      SNode nodeToMatch = _quotation_createNode_ofki36_a0a0c2();
-      DefaultMatchingPattern pattern = new Pattern_ofki36_a0b0c2(_quotation_createNode_ofki36_a0a0b0c2());
+      SNode nodeToMatch = _quotation_createNode_ofki36_a0a0c5();
+      DefaultMatchingPattern pattern = new Pattern_ofki36_a0b0c5(_quotation_createNode_ofki36_a0a0b0c5());
       final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -48,13 +54,13 @@ public class Patternv2_Test extends BaseTransformationTest {
         return true;
       }
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ofki36_a0a0a0g0c2());
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ofki36_a0a0a0g0c5());
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), pattern.getMatchedNode("ifbody"));
         Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
       return true;
     }
-    private static SNode _quotation_createNode_ofki36_a0a0c2() {
+    private static SNode _quotation_createNode_ofki36_a0a0c5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -111,7 +117,7 @@ public class Patternv2_Test extends BaseTransformationTest {
       quotedNode_12.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_5);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_ofki36_a0a0b0c2() {
+    private static SNode _quotation_createNode_ofki36_a0a0b0c5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -138,7 +144,7 @@ public class Patternv2_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), quotedNode_4);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_ofki36_a0a0a0g0c2() {
+    private static SNode _quotation_createNode_ofki36_a0a0a0g0c5() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

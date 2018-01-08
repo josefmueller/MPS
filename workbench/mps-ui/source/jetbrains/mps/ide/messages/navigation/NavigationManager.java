@@ -20,7 +20,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.navigation.NavigatableFactory;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
@@ -46,15 +45,6 @@ public class NavigationManager extends AbstractProjectComponent {
       o = ((IMessage) o).getHintObject();
     }
     return o != null && !getHandlers(o).isEmpty();
-  }
-
-  /**
-   * @deprecated use {@link #navigateTo(Object,boolean)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    navigateTo(o, focus);
   }
 
   /**

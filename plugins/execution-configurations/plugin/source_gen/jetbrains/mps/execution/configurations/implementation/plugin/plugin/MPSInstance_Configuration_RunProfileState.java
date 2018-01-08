@@ -17,7 +17,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.io.File;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.util.FileUtil;
@@ -54,7 +53,7 @@ public class MPSInstance_Configuration_RunProfileState extends DebuggerRunProfil
     final Tuples._2<File, File> files = myRunConfiguration.getMpsSettings().prepareFilesToOpenAndToDelete(project);
     process = new Mps_Command().setVirtualMachineParameters_String(myRunConfiguration.getMpsSettings().getVmOptions()).setJrePath_String(myRunConfiguration.getMpsSettings().getJrePath()).setConfigurationPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getConfigurationPath())).setSystemPath_String(myRunConfiguration.getMpsSettings().expandPath(myRunConfiguration.getMpsSettings().getSystemPath())).setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(files._0());
     if (files._1() != null) {
-      OutputRedirector.redirect(process, new ProcessAdapter() {
+      process.addProcessListener(new ProcessAdapter() {
         @Override
         public void processTerminated(ProcessEvent event) {
           super.processTerminated(event);

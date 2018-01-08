@@ -43,18 +43,18 @@
   </root>
   <root nodeRef="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)/3908032508224771401">
     <file name="OutputRedirector.java">
-      <node id="3908032508224771409" at="11,91,12,41" concept="3" />
-      <node id="3908032508224771414" at="12,41,13,19" concept="10" />
-      <node id="3908032508224771418" at="9,0,11,0" concept="1" trace="OutputRedirector#()V" />
-      <node id="3908032508224771402" at="11,0,15,0" concept="13" trace="redirect#(Lcom/intellij/execution/process/ProcessHandler;Lcom/intellij/execution/process/ProcessListener;)Lcom/intellij/execution/process/ProcessHandler;" />
-      <scope id="3908032508224771421" at="9,29,9,29" />
-      <scope id="3908032508224771418" at="9,0,11,0" />
-      <scope id="3908032508224771408" at="11,91,13,19" />
-      <scope id="3908032508224771402" at="11,0,15,0">
+      <node id="3908032508224771409" at="19,91,20,41" concept="3" />
+      <node id="3908032508224771414" at="20,41,21,19" concept="10" />
+      <node id="3908032508224771418" at="16,0,19,0" concept="1" trace="OutputRedirector#()V" />
+      <node id="3908032508224771402" at="19,0,23,0" concept="13" trace="redirect#(Lcom/intellij/execution/process/ProcessHandler;Lcom/intellij/execution/process/ProcessListener;)Lcom/intellij/execution/process/ProcessHandler;" />
+      <scope id="3908032508224771421" at="17,29,17,29" />
+      <scope id="3908032508224771408" at="19,91,21,19" />
+      <scope id="3908032508224771418" at="16,0,19,0" />
+      <scope id="3908032508224771402" at="19,0,23,0">
         <var name="handler" id="3908032508224771403" />
         <var name="listener" id="3908032508224771405" />
       </scope>
-      <unit id="3908032508224771401" at="8,0,16,0" name="jetbrains.mps.execution.api.commands.OutputRedirector" />
+      <unit id="3908032508224771401" at="13,0,24,0" name="jetbrains.mps.execution.api.commands.OutputRedirector" />
     </file>
   </root>
   <root nodeRef="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)/3908032508224771422">
@@ -147,7 +147,7 @@
       <node id="889694274152162015" at="56,0,62,0" concept="8" trace="append#(Ljetbrains/mps/execution/api/commands/CommandPart;)Ljetbrains/mps/execution/api/commands/ProcessHandlerBuilder;" />
       <node id="6339244025082445736" at="163,105,169,7" concept="3" />
       <node id="3908032508224771725" at="90,0,97,0" concept="8" trace="getCommandLine#(Ljava/lang/String;)Lcom/intellij/execution/configurations/GeneralCommandLine;" />
-      <node id="454072909645324576" at="129,59,136,7" concept="3" />
+      <node id="3492362019009243335" at="129,59,136,7" concept="3" />
       <node id="6339244025082418336" at="163,0,171,0" concept="13" trace="startLater#(Lcom/intellij/execution/process/ProcessHandler;J[I)V" />
       <node id="2459753140357986687" at="140,0,149,0" concept="13" trace="startAndWait#(Lcom/intellij/execution/process/ProcessHandler;)I" />
       <node id="454072909645324564" at="128,0,140,0" concept="13" trace="startCountDown#(Lcom/intellij/execution/process/ProcessHandler;[I)Ljava/util/concurrent/CountDownLatch;" />
@@ -292,7 +292,7 @@
       </scope>
       <unit id="3908032508224771652" at="73,134,77,7" name="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$1" />
       <unit id="5745550179872053216" at="164,66,169,5" name="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$3" />
-      <unit id="454072909645324581" at="130,43,136,5" name="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$2" />
+      <unit id="454072909645324581" at="130,35,136,5" name="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder$2" />
       <unit id="3908032508224771422" at="26,0,172,0" name="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     </file>
   </root>

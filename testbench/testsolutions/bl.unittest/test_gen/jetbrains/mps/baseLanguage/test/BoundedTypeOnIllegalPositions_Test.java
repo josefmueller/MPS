@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,44 +15,44 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class BoundedTypeOnIllegalPositions_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(BoundedTypeOnIllegalPositions_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public BoundedTypeOnIllegalPositions_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck5450156852674012813", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928692345", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928162737() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624928162737", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927429026() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeTypeSystemCheck6923385624927429026", true);
   }
   @Test
   public void test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_NodeThisTypeCantBeUsedInVariableCheck6923385624928299118", true);
   }
   @Test
   public void test_ErrorMessagesCheck6510041824235646887() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.BoundedTypeOnIllegalPositions_Test$TestBody", "test_ErrorMessagesCheck6510041824235646887", true);
   }
 

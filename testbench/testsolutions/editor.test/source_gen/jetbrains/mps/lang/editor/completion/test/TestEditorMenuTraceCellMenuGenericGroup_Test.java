@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.completion.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
@@ -22,9 +24,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @MPSLaunch
 public class TestEditorMenuTraceCellMenuGenericGroup_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestEditorMenuTraceCellMenuGenericGroup_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
+
+  public TestEditorMenuTraceCellMenuGenericGroup_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestEditorMenuTraceCellMenuGenericGroup() throws Throwable {
-    initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
     runTest("jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceCellMenuGenericGroup_Test$TestBody", "testMethod", false);
   }
 
@@ -45,13 +53,13 @@ public class TestEditorMenuTraceCellMenuGenericGroup_Test extends BaseTransforma
           EditorMenuTraceInfo editorMenuTraceInfo = action.getEditorMenuTraceInfo();
           EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.getNode("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774803494772"), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_lblqgg_a0a0a0a0a0a0a0a0b0g0a0a0a0d0a2(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text")), "constant cell");
+              return eq_lblqgg_a0a0a0a0a0a0a0a0b0g0a0a0a0d0a6(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text")), "constant cell");
             }
           }).first(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58784317L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group"))).first().getReference());
         }
       });
     }
-    private static boolean eq_lblqgg_a0a0a0a0a0a0a0a0b0g0a0a0a0d0a2(Object a, Object b) {
+    private static boolean eq_lblqgg_a0a0a0a0a0a0a0a0b0g0a0a0a0d0a6(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

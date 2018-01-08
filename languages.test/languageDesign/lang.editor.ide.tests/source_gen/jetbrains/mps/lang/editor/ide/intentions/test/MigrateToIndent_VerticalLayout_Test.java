@@ -4,15 +4,23 @@ package jetbrains.mps.lang.editor.ide.intentions.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
 
 @MPSLaunch
 public class MigrateToIndent_VerticalLayout_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(MigrateToIndent_VerticalLayout_Test.class, "${mps_home}", "r:ac7fc8d2-009b-4709-96f8-5178c2bb268c(jetbrains.mps.lang.editor.ide.intentions.test)", false);
+
+  public MigrateToIndent_VerticalLayout_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_MigrateToIndent_VerticalLayout() throws Throwable {
-    initTest("${mps_home}", "r:ac7fc8d2-009b-4709-96f8-5178c2bb268c(jetbrains.mps.lang.editor.ide.intentions.test)");
     runTest("jetbrains.mps.lang.editor.ide.intentions.test.MigrateToIndent_VerticalLayout_Test$TestBody", "testMethod", false);
   }
 

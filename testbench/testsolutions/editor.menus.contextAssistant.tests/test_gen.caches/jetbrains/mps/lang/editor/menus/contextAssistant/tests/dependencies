@@ -9,11 +9,13 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -27,9 +29,11 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -41,9 +45,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -55,9 +61,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -69,9 +77,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -83,9 +93,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -97,9 +109,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -111,9 +125,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -125,9 +141,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -139,9 +157,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -153,9 +173,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -167,9 +189,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -181,9 +205,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -196,11 +222,13 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -213,11 +241,13 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -232,10 +262,12 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -247,11 +279,13 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -264,10 +298,12 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -281,9 +317,11 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -300,10 +338,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -316,10 +356,12 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -332,10 +374,12 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

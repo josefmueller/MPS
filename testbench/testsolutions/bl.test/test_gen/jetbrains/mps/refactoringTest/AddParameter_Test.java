@@ -4,6 +4,8 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
@@ -23,9 +25,16 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class AddParameter_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(AddParameter_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+
+
+  public AddParameter_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_AddParameter() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.AddParameter_Test$TestBody", "test_AddParameter", true);
   }
 
@@ -35,7 +44,7 @@ public class AddParameter_Test extends BaseTransformationTest {
       addNodeById("1230052943764");
       addNodeById("1230052943773");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(getNodeById("1230052943766"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))));
-      ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(_quotation_createNode_pqwgtw_a0a3a0c());
+      ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addElement(_quotation_createNode_pqwgtw_a0a3a0h());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(getNodeById("1230052943766"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))));
       ref.doRefactoring();
       {
@@ -46,7 +55,7 @@ public class AddParameter_Test extends BaseTransformationTest {
     }
 
 
-    private static SNode _quotation_createNode_pqwgtw_a0a3a0c() {
+    private static SNode _quotation_createNode_pqwgtw_a0a3a0h() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

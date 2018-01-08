@@ -7,6 +7,9 @@ import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import java.util.regex.Pattern;
 
+/**
+ * Updates {@link jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState } with {@link jetbrains.mps.baseLanguage.unitTest.execution.TestEvent } and other events from a futher unspecified source (usually a listener of a test execution process)
+ */
 public class TestEventsDispatcher {
   private final TestRunState myState;
 
@@ -15,8 +18,8 @@ public class TestEventsDispatcher {
   }
 
   public void onProcessTerminated(String message) {
-    message = REPLREGEXP_a0a0e.matcher(message).replaceAll("");
-    if (REGEXP_d0rws9_a0a1a4.matcher(message).matches()) {
+    // FIXME this message mangling looks suspicious 
+    if (message != null && REGEXP_d0rws9_a0a0b0e.matcher(REPLREGEXP_a0a1a4.matcher(message).replaceAll("")).matches()) {
       // message looks like "Process exited with code 0" 
       // something, space, zero, then non-digit and maybe something else, or line end 
       // normal termination means we lost all unused tests 
@@ -27,11 +30,14 @@ public class TestEventsDispatcher {
         String lostClassName = lostTest.substring(0, lostTest.lastIndexOf("."));
         this.myState.looseTest(lostClassName, lostMethodName);
       }
+      // FIXME it's odd to see an external code to manipulate with TestRunState internal stuff. 
+      // TestRunState could do it itself on terminate(). However, need to figure out if the message matching is vital here. 
     }
     this.myState.terminate();
   }
 
   public void onSimpleTextAvailable(String text, Key key) {
+    // FIXME Key makes TestRunState depend from idea's execution API, which is not clean. 
     this.myState.outputText(text, key);
   }
 
@@ -50,6 +56,6 @@ public class TestEventsDispatcher {
       this.myState.onTestFailure(event);
     }
   }
-  private static Pattern REPLREGEXP_a0a0e = Pattern.compile("\\n", 0);
-  private static Pattern REGEXP_d0rws9_a0a1a4 = Pattern.compile(".*\\s0(?:\\D+.*|$)", 0);
+  private static Pattern REGEXP_d0rws9_a0a0b0e = Pattern.compile(".*\\s0(?:\\D+.*|$)", 0);
+  private static Pattern REPLREGEXP_a0a1a4 = Pattern.compile("\\n", 0);
 }

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,39 +15,40 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class TestExpectedType_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestExpectedType_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public TestExpectedType_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck4395293866213260523() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_ErrorMessagesCheck4395293866213260523", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317677991775() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317677991775", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317677995689() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317677995689", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317677999915() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317677999915", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317678002448() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317678002448", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317678005784() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317678005784", true);
   }
   @Test
   public void test_NodeExpectedTypeCheck8101092317678009113() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_NodeExpectedTypeCheck8101092317678009113", true);
   }
 

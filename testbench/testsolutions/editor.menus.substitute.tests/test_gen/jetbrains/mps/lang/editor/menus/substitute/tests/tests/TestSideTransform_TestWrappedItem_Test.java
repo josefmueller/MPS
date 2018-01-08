@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.substitute.tests.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
@@ -12,9 +14,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class TestSideTransform_TestWrappedItem_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestSideTransform_TestWrappedItem_Test.class, "${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)", false);
+
+  public TestSideTransform_TestWrappedItem_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestSideTransform_TestWrappedItem() throws Throwable {
-    initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test$TestBody", "testMethod", false);
   }
 
@@ -25,10 +33,10 @@ public class TestSideTransform_TestWrappedItem_Test extends BaseTransformationTe
       initEditorComponent("1179171206859335701", "1179171206859335703");
       typeString(" ");
       List<SubstituteAction> matchingActions = getEditorComponent().getSelectedCell().getSubstituteInfo().getMatchingActions("child matching text", false);
-      Assert.assertTrue(matchingActions.size() == 1 && eq_qmbq6r_a0a0d0a2(matchingActions.get(0).getDescriptionText("child matching text"), "child description text wrapper description text"));
+      Assert.assertTrue(matchingActions.size() == 1 && eq_qmbq6r_a0a0d0a6(matchingActions.get(0).getDescriptionText("child matching text"), "child description text wrapper description text"));
       typeString("child matching text");
     }
-    private static boolean eq_qmbq6r_a0a0d0a2(Object a, Object b) {
+    private static boolean eq_qmbq6r_a0a0d0a6(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

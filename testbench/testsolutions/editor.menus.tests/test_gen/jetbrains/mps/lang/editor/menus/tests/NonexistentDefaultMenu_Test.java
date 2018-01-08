@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,9 +15,16 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class NonexistentDefaultMenu_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(NonexistentDefaultMenu_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+
+  public NonexistentDefaultMenu_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.NonexistentDefaultMenu_Test$TestBody", "test_NodeIsNotDefinedImplicitDefaultCheck2153278993334499810", true);
   }
 

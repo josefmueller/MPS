@@ -4,6 +4,8 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
@@ -16,24 +18,28 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @MPSLaunch
 public class BreakStatement_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(BreakStatement_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+
+
+  public BreakStatement_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_noBreaks() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_noBreaks", true);
   }
   @Test
   public void test_oneBreak() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneBreak", true);
   }
   @Test
   public void test_oneContionue() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_oneContionue", true);
   }
   @Test
   public void test_breakAndContinue() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.BreakStatement_Test$TestBody", "test_breakAndContinue", true);
   }
 

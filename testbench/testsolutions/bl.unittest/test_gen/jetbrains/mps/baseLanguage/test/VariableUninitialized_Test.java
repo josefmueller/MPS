@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,29 +15,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class VariableUninitialized_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(VariableUninitialized_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public VariableUninitialized_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_VariableUninitialized() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_VariableUninitialized", true);
   }
   @Test
   public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928777982", true);
   }
   @Test
   public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeVariableInitializerIsRedundantWarningCheck6923385624927691402", true);
   }
   @Test
   public void test_NodeUnusedLocalVariableCheck215889526513019283() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_NodeUnusedLocalVariableCheck215889526513019283", true);
   }
   @Test
   public void test_ErrorMessagesCheck1216893950801() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.VariableUninitialized_Test$TestBody", "test_ErrorMessagesCheck1216893950801", true);
   }
 

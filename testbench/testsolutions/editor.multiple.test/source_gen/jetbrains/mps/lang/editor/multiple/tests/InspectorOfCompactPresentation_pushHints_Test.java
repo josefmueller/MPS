@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.multiple.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -14,9 +16,15 @@ import javax.swing.SwingUtilities;
 
 @MPSLaunch
 public class InspectorOfCompactPresentation_pushHints_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(InspectorOfCompactPresentation_pushHints_Test.class, "${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)", false);
+
+  public InspectorOfCompactPresentation_pushHints_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_InspectorOfCompactPresentation_pushHints() throws Throwable {
-    initTest("${mps_home}", "r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)");
     runTest("jetbrains.mps.lang.editor.multiple.tests.InspectorOfCompactPresentation_pushHints_Test$TestBody", "testMethod", false);
   }
 

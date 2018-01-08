@@ -9,7 +9,6 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -66,14 +65,14 @@ public class TwoModulesWithXRefsBuiltIndependently_Test extends TestCase {
         mpsDistrOption = "-Dmps_distribution=" + System.getProperty("mps_distribution");
       }
       ProcessHandler process1 = new Ant_Command().setOptions_String(mpsDistrOption).setTargetName_String("generate assemble").createProcess("testbench/modules/xmodel.build/p1.xml");
-      OutputRedirector.redirect(process1, textOutputAdapter);
+      process1.addProcessListener(textOutputAdapter);
       int exitCode = ProcessHandlerBuilder.startAndWait(process1);
       if (exitCode != 0) {
         Assert.fail("Exited with code " + exitCode);
       }
 
       ProcessHandler process2 = new Ant_Command().setOptions_String(mpsDistrOption).setTargetName_String("generate").createProcess("testbench/modules/xmodel.build/p2.xml");
-      OutputRedirector.redirect(process2, textOutputAdapter);
+      process2.addProcessListener(textOutputAdapter);
       exitCode = ProcessHandlerBuilder.startAndWait(process2);
       if (exitCode != 0) {
         Assert.fail("Exited with code " + exitCode);

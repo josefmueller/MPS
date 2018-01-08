@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.table.decTable.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class TypeCellInDecisionTable_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TypeCellInDecisionTable_Test.class, "${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)", false);
+
+  public TypeCellInDecisionTable_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TypeCellInDecisionTable() throws Throwable {
-    initTest("${mps_home}", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)");
     runTest("jetbrains.mps.lang.editor.table.decTable.test.TypeCellInDecisionTable_Test$TestBody", "testMethod", false);
   }
 

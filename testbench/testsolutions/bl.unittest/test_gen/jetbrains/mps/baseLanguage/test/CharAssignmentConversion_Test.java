@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,69 +15,64 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class CharAssignmentConversion_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CharAssignmentConversion_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public CharAssignmentConversion_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck7223665169660103878() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660103878", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660123927() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660123927", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660160142() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660160142", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660143447() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660143447", true);
   }
   @Test
   public void test_NodeWarningCheck7223665169660183281() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeWarningCheck7223665169660183281", true);
   }
   @Test
   public void test_NodeWarningCheck7223665169660183443() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeWarningCheck7223665169660183443", true);
   }
   @Test
   public void test_NodeWarningCheck7223665169660183621() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeWarningCheck7223665169660183621", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660172859() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660172859", true);
   }
   @Test
   public void test_NodeWarningCheck7223665169660183784() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeWarningCheck7223665169660183784", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660183937() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660183937", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660313242() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660313242", true);
   }
   @Test
   public void test_NodeErrorCheck7223665169660313416() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_NodeErrorCheck7223665169660313416", true);
   }
   @Test
   public void test_ErrorMessagesCheck7223665169660100154() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.CharAssignmentConversion_Test$TestBody", "test_ErrorMessagesCheck7223665169660100154", true);
   }
 

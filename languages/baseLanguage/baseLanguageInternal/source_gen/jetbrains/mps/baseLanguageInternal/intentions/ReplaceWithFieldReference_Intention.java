@@ -16,10 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public final class ReplaceWithFieldReference_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -53,20 +49,14 @@ public final class ReplaceWithFieldReference_Intention extends AbstractIntention
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode ref = _quotation_createNode_6kpc5h_a0a0a(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, 0x16007da97856bd8bL, "constant")));
-      SNodeOperations.replaceWithAnother(node, ref);
+      SNode fieldDecl = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, 0x16007da97856bd8bL, "constant"));
+      SNode fieldRef = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
+      SLinkOperations.setTarget(fieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), SNodeOperations.as(SNodeOperations.getParent(fieldDecl), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      SLinkOperations.setTarget(fieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), fieldDecl);
     }
     @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithFieldReference_Intention.this;
     }
-  }
-  private static SNode _quotation_createNode_6kpc5h_a0a0a(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940c80846L, "StaticFieldReference"), null, null, false);
-    quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), quotedNode_2, facade.createModelReference("r:c8f09818-27d0-4e31-9cdf-dedd92fee7ef(jetbrains.mps.baseLanguage.closures.util)"), facade.createNodeId("1225980323340")));
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), (SNode) parameter_1);
-    return quotedNode_2;
   }
 }

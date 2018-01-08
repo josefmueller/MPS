@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.diagram.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -15,9 +17,15 @@ import java.awt.event.MouseEvent;
 
 @MPSLaunch
 public class CreatePort_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(CreatePort_Test.class, "${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)", false);
+
+  public CreatePort_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_CreatePort() throws Throwable {
-    initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
     runTest("jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody", "testMethod", false);
   }
 

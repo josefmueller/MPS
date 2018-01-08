@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.actions.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class SubstituteAttributeChild_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(SubstituteAttributeChild_Test.class, "${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)", false);
+
+  public SubstituteAttributeChild_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_SubstituteAttributeChild() throws Throwable {
-    initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
     runTest("jetbrains.mps.lang.editor.actions.test.SubstituteAttributeChild_Test$TestBody", "testMethod", false);
   }
 

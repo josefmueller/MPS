@@ -5,7 +5,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="-1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
@@ -298,6 +298,15 @@
         <child id="1205770614681" name="actualArgument" index="2XxRq1" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="361130699826193248" name="jetbrains.mps.lang.modelapi.structure.ModelPointer" flags="ng" index="1dCxOl">
+        <property id="1863527487546097494" name="modelId" index="1XweGQ" />
+        <child id="679099339649067980" name="name" index="1j$8Uc" />
+      </concept>
+      <concept id="679099339649053840" name="jetbrains.mps.lang.modelapi.structure.ModelName" flags="ng" index="1j_P7g">
+        <property id="679099339649053841" name="value" index="1j_P7h" />
+      </concept>
+    </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNotNull" flags="nn" index="2Hmddi">
         <child id="7080278351417106681" name="expression" index="2Hmdds" />
@@ -326,11 +335,6 @@
         <property id="427659576753753627" name="moduleId" index="20Rdg5" />
         <property id="427659576753753625" name="moduleName" index="20Rdg7" />
       </concept>
-      <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
-        <property id="559557797393021807" name="stereotype" index="BaGAP" />
-        <property id="559557797393017702" name="name" index="BaHAW" />
-        <child id="1423104411233404408" name="repo" index="up2gk" />
-      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -346,6 +350,9 @@
         <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelRefExpression" flags="ng" index="1Xw6AR">
+        <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -4481,11 +4488,20 @@
                       <node concept="3cpWsn" id="6bWILpQSVs5" role="3cpWs9">
                         <property role="TrG5h" value="testModel" />
                         <node concept="H_c77" id="6bWILpQSVs3" role="1tU5fm" />
-                        <node concept="BaHAS" id="6bWILpQSVs6" role="33vP2m">
-                          <property role="BaHAW" value="tests.testPersistence.testModel" />
-                          <property role="BaGAP" value="" />
-                          <node concept="37vLTw" id="6bWILpQSVs7" role="up2gk">
-                            <ref role="3cqZAo" node="6bWILpQQYJf" resolve="repo" />
+                        <node concept="2OqwBi" id="5kWneGu3MD_" role="33vP2m">
+                          <node concept="1Xw6AR" id="5kWneGu3MDx" role="2Oq$k0">
+                            <node concept="1dCxOl" id="5kWneGu3MDy" role="1XwpL7">
+                              <property role="1XweGQ" value="r:b44bed60-e0f0-4d48-bb29-e0fdb2041a66" />
+                              <node concept="1j_P7g" id="5kWneGu3MDz" role="1j$8Uc">
+                                <property role="1j_P7h" value="tests.testPersistence.testModel" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="5kWneGu3MD$" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+                            <node concept="37vLTw" id="6bWILpQSVs7" role="37wK5m">
+                              <ref role="3cqZAo" node="6bWILpQQYJf" resolve="repo" />
+                            </node>
                           </node>
                         </node>
                       </node>

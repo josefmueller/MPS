@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.substitute.tests.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -11,9 +13,15 @@ import java.util.ArrayList;
 
 @MPSLaunch
 public class TestSubstitute_Group_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestSubstitute_Group_Test.class, "${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)", false);
+
+  public TestSubstitute_Group_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestSubstitute_Group() throws Throwable {
-    initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Group_Test$TestBody", "testMethod", false);
   }
 

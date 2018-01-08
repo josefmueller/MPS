@@ -23,9 +23,9 @@ import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.workbench.action.IRegistryManager;
 
-public final class PluginModulesLibraryInitializer extends BaseLibraryInitializer {
+public final class RepositoryInitializingComponent extends RepositoryInitializingComponentBase {
   @SuppressWarnings("UnusedParameters")
-  public PluginModulesLibraryInitializer(FSNotificationsImprover improver,
+  public RepositoryInitializingComponent(FSNotificationsImprover improver,
                                          MPSCoreComponents coreComponents,
                                          IRegistryManager registryManager,
                                          IdeaPluginFacetComponent ideaPluginFacetComponent,
@@ -33,6 +33,8 @@ public final class PluginModulesLibraryInitializer extends BaseLibraryInitialize
                                          PersistentFS filesystem //see MPS-22970
   ) {
     super(improver, coreComponents, registryManager, ideaPluginFacetComponent, fs, filesystem);
+    addContributor(new BootstrapLibraryContributor(getFS()));
+    addContributor(new WorkbenchLibraryContributor(getFS())); // needed only on sources
     addContributor(new PluginLibraryContributor(getFS()));
   }
 }

@@ -22,8 +22,9 @@ import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.textgen.trace.TracingUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.structure.generator_new.util.IdGenerationUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
@@ -51,7 +52,6 @@ import jetbrains.mps.smodel.presentation.SmartAliasHelper;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import java.util.HashMap;
@@ -165,7 +165,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")));
   }
   public static Object propertyMacro_GetPropertyValue_4927458743549784292(final PropertyMacroContext _context) {
-    return PersistenceFacade.getInstance().asString(TracingUtil.getInput(_context.getNode()));
+    return PersistenceFacade.getInstance().asString(((SNodeReference) _context.getVariable("var:origin")));
   }
   public static Object propertyMacro_GetPropertyValue_4927458743547865620(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -334,8 +334,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return false;
   }
   public static boolean ifMacro_Condition_4927458743549707776(final IfMacroContext _context) {
-    //  source node not specified or points to the same model, and we know trace to original 
-    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) == null || SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) == _context.getNode()) && TracingUtil.getInput(_context.getNode()) != null;
+    return ((SNodeReference) _context.getVariable("var:origin")) != null;
   }
   public static boolean ifMacro_Condition_4927458743550484650(final IfMacroContext _context) {
     // inspired by respective code from incl_Prop. We don't have sourceNode reference in PropertyDeclaration, hence need to look at the owner 
@@ -598,6 +597,18 @@ public class QueriesGenerated extends QueryProviderBase {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true);
+  }
+  public static Object insertMacro_varValue_6095981723599329476(final TemplateVarContext _context) {
+    //  source node not specified or (likely, erroneously) points to the same (transient) model,  
+    // therefore, we try to use generator's trace to original 
+    if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) == null || SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")) == _context.getNode()) {
+      return TracingUtil.getInput(_context.getNode());
+    }
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode"))) == SNodeOperations.getModel(_context.getNode())) {
+      // if it points to a node in the same transient model, use it, but warn user not to expect anything good. 
+      _context.showWarningMessage(_context.getNode(), "Concept's source node is from the same transient model");
+    }
+    return SNodeOperations.getPointer(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")));
   }
   public static Object insertMacro_varValue_2181124456585750556(final TemplateVarContext _context) {
     SNode cd = SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
@@ -1186,11 +1197,12 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, VariableValueQuery> vvqMethods = new HashMap<String, VariableValueQuery>();
   {
     vvqMethods.put("4630900134062319162", new QueriesGenerated.VVQ(0));
-    vvqMethods.put("2181124456585750554", new QueriesGenerated.VVQ(1));
-    vvqMethods.put("1444496069593706121", new QueriesGenerated.VVQ(2));
-    vvqMethods.put("8071309295074792057", new QueriesGenerated.VVQ(3));
-    vvqMethods.put("2106591422590124524", new QueriesGenerated.VVQ(4));
-    vvqMethods.put("1782525708520691863", new QueriesGenerated.VVQ(5));
+    vvqMethods.put("6095981723599329474", new QueriesGenerated.VVQ(1));
+    vvqMethods.put("2181124456585750554", new QueriesGenerated.VVQ(2));
+    vvqMethods.put("1444496069593706121", new QueriesGenerated.VVQ(3));
+    vvqMethods.put("8071309295074792057", new QueriesGenerated.VVQ(4));
+    vvqMethods.put("2106591422590124524", new QueriesGenerated.VVQ(5));
+    vvqMethods.put("1782525708520691863", new QueriesGenerated.VVQ(6));
   }
   @NotNull
   @Override
@@ -1212,14 +1224,16 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.insertMacro_varValue_4630900134062319164(ctx);
         case 1:
-          return QueriesGenerated.insertMacro_varValue_2181124456585750556(ctx);
+          return QueriesGenerated.insertMacro_varValue_6095981723599329476(ctx);
         case 2:
-          return QueriesGenerated.insertMacro_varValue_1444496069593706122(ctx);
+          return QueriesGenerated.insertMacro_varValue_2181124456585750556(ctx);
         case 3:
-          return QueriesGenerated.insertMacro_varValue_8071309295074792059(ctx);
+          return QueriesGenerated.insertMacro_varValue_1444496069593706122(ctx);
         case 4:
-          return QueriesGenerated.insertMacro_varValue_2106591422590124526(ctx);
+          return QueriesGenerated.insertMacro_varValue_8071309295074792059(ctx);
         case 5:
+          return QueriesGenerated.insertMacro_varValue_2106591422590124526(ctx);
+        case 6:
           return QueriesGenerated.insertMacro_varValue_1782525708520691865(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));

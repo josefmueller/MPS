@@ -4,6 +4,8 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,9 +25,16 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class ChangeMethodParametersForStatement_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ChangeMethodParametersForStatement_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+
+
+  public ChangeMethodParametersForStatement_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_changeMethodParametersForStatement() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test$TestBody", "test_changeMethodParametersForStatement", true);
   }
 

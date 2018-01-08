@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
@@ -15,9 +17,15 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
 
 @MPSLaunch
 public class IncludingSubstituteMenuForEmptyCell_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(IncludingSubstituteMenuForEmptyCell_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+  public IncludingSubstituteMenuForEmptyCell_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_IncludingSubstituteMenuForEmptyCell() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludingSubstituteMenuForEmptyCell_Test$TestBody", "testMethod", false);
   }
 

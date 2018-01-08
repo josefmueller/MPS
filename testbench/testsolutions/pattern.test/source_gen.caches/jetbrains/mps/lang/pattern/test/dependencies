@@ -7,9 +7,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_i79cpz_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_i79cpz_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -18,6 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -28,9 +30,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_ay21uv_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_ay21uv_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -38,6 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -48,9 +52,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_49ctdq_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_49ctdq_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -59,6 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -69,9 +75,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_qttyfe_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_qttyfe_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -79,6 +86,7 @@
     <classNode dependClassName="junit.framework.TestCase" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -86,8 +94,9 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_xihehy_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_xihehy_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -96,48 +105,49 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_49ctdq_a0b0c2" file="Pattern_49ctdq_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_49ctdq_a0b0c5" file="Pattern_49ctdq_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.lang.pattern.NodeMatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_ay21uv_a0b0c2" file="Pattern_ay21uv_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_ay21uv_a0b0c5" file="Pattern_ay21uv_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.lang.pattern.NodeMatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_i79cpz_a0b0c2" file="Pattern_i79cpz_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_i79cpz_a0b0c5" file="Pattern_i79cpz_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_o71ow3_a0b0c2" file="Pattern_o71ow3_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_o71ow3_a0b0c5" file="Pattern_o71ow3_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_ofki36_a0b0c2" file="Pattern_ofki36_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_ofki36_a0b0c5" file="Pattern_ofki36_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_oo3baa_a0b0c2" file="Pattern_oo3baa_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_oo3baa_a0b0c5" file="Pattern_oo3baa_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_qttyfe_a0b0c2" file="Pattern_qttyfe_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_qttyfe_a0b0c5" file="Pattern_qttyfe_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.lang.pattern.NodeMatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_xihehy_a0b0c2" file="Pattern_xihehy_a0b0c2.java">
+  <dependency className="jetbrains.mps.lang.pattern.test.Pattern_xihehy_a0b0c5" file="Pattern_xihehy_a0b0c5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
@@ -149,9 +159,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_o71ow3_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_o71ow3_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -160,6 +171,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -170,9 +182,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_ofki36_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_ofki36_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -181,6 +194,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
@@ -191,9 +205,10 @@
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.DefaultMatchingPattern" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_oo3baa_a0b0c2" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.test.Pattern_oo3baa_a0b0c5" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -202,6 +217,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>

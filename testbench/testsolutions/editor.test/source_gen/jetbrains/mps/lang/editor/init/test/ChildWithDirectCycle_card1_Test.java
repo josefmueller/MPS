@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.init.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -13,9 +15,15 @@ import org.apache.log4j.Priority;
 
 @MPSLaunch
 public class ChildWithDirectCycle_card1_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ChildWithDirectCycle_card1_Test.class, "${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)", false);
+
+  public ChildWithDirectCycle_card1_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ChildWithDirectCycle_card1() throws Throwable {
-    initTest("${mps_home}", "r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)");
     runTest("jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test$TestBody", "testMethod", false);
   }
 

@@ -4,23 +4,19 @@ package jetbrains.mps.execution.impl.configurations.tests.commands;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import java.util.List;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.execution.impl.configurations.util.JUnitWrapHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.execution.impl.configurations.util.TestNodeWrapHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import java.util.List;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.JUnit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
@@ -28,32 +24,33 @@ import com.intellij.execution.ExecutionException;
 
 @MPSLaunch
 public class JUnitCommand_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(JUnitCommand_Test.class, "${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
+
+
+  public JUnitCommand_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_startSimpleBTestCase() throws Throwable {
-    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startSimpleBTestCase", true);
   }
   @Test
   public void test_startFailedBTestCase() throws Throwable {
-    initTest("${mps_home}", "r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)", false);
     runTest("jetbrains.mps.execution.impl.configurations.tests.commands.JUnitCommand_Test$TestBody", "test_startFailedBTestCase", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_startSimpleBTestCase() throws Exception {
-      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "8128243960970299078")));
-      this.checkTests(wrappedTests, ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
+      this.checkTests(new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "8128243960970299078")), ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     }
     public void test_startFailedBTestCase() throws Exception {
-      List<ITestNodeWrapper> wrappedTests = new JUnitWrapHelper(myProject.getModelAccess()).wrapTests(this.getMyModel(), Sequence.<SNodeReference>singleton(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "7120092006645143730")));
-      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), wrappedTests);
+      this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), new TestNodeWrapHelper(myProject.getRepository()).discover(new SNodePointer("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)", "7120092006645143730")));
     }
 
 
-    public SModel getMyModel() {
-      return new ModuleRepositoryFacade(myProject.getRepository()).getModelByName("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests");
-    }
     public void checkTests(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failure) {
       try {
         List<ITestNodeWrapper> allTests = ListSequence.fromList(success).union(ListSequence.fromList(failure)).toListSequence();
@@ -61,8 +58,7 @@ public class JUnitCommand_Test extends BaseTransformationTest {
         TestRunState runState = new TestRunState(allTests, myProject);
         CheckTestStateListener checkListener = new CheckTestStateListener(success, failure);
         runState.addListener(checkListener);
-        TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-        OutputRedirector.redirect(process, new UnitTestProcessListener(eventsDispatcher));
+        process.addProcessListener(new UnitTestProcessListener(runState));
         int exitcode = ProcessHandlerBuilder.startAndWait(process, 30 * 1000);
         if (exitcode != ListSequence.fromList(failure).count()) {
           Assert.fail("Exit code must be equal to " + ListSequence.fromList(failure).count() + ", but " + exitcode);

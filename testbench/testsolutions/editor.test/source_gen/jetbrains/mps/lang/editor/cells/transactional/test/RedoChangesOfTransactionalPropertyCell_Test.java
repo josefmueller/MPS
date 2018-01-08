@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.cells.transactional.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class RedoChangesOfTransactionalPropertyCell_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(RedoChangesOfTransactionalPropertyCell_Test.class, "${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)", false);
+
+  public RedoChangesOfTransactionalPropertyCell_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_RedoChangesOfTransactionalPropertyCell() throws Throwable {
-    initTest("${mps_home}", "r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)");
     runTest("jetbrains.mps.lang.editor.cells.transactional.test.RedoChangesOfTransactionalPropertyCell_Test$TestBody", "testMethod", false);
   }
 

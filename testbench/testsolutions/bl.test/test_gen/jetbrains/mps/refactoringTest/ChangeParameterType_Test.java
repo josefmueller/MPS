@@ -4,6 +4,8 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
@@ -22,9 +24,16 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 @MPSLaunch
 public class ChangeParameterType_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ChangeParameterType_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+
+
+  public ChangeParameterType_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ChangeParameterType() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.ChangeParameterType_Test$TestBody", "test_ChangeParameterType", true);
   }
 
@@ -34,7 +43,7 @@ public class ChangeParameterType_Test extends BaseTransformationTest {
       addNodeById("1230052943884");
       addNodeById("1230052943897");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(getNodeById("1230052943886"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))));
-      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_69x5rj_a0d0a2());
+      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_69x5rj_a0d0a7());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(getNodeById("1230052943886"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))));
       ref.doRefactoring();
       {
@@ -45,7 +54,7 @@ public class ChangeParameterType_Test extends BaseTransformationTest {
     }
 
 
-    private static SNode _quotation_createNode_69x5rj_a0d0a2() {
+    private static SNode _quotation_createNode_69x5rj_a0d0a7() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x11d47da71ecL, "StringType"), null, null, false);

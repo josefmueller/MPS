@@ -37,7 +37,7 @@ public class FSNotificationsImprover implements ApplicationComponent {
   private FileListener myListener = null;
   private IFile myFile;
 
-  //parameters left untouched while extracting from BaseLibraryInitializer
+  //parameters left untouched while extracting from RepositoryInitializingComponentBase
   @SuppressWarnings("UnusedParameters")
   public FSNotificationsImprover(MPSCoreComponents coreComponents,
                                  IRegistryManager registryManager,

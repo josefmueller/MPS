@@ -4,14 +4,22 @@ package jetbrains.mps.lang.actions.test.substitute;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class AddMenuPart_SimpleItemSubstitute_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(AddMenuPart_SimpleItemSubstitute_Test.class, "${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)", false);
+
+  public AddMenuPart_SimpleItemSubstitute_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_AddMenuPart_SimpleItemSubstitute() throws Throwable {
-    initTest("${mps_home}", "r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)");
     runTest("jetbrains.mps.lang.actions.test.substitute.AddMenuPart_SimpleItemSubstitute_Test$TestBody", "testMethod", false);
   }
 

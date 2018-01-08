@@ -9,8 +9,6 @@ import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Level;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
@@ -18,6 +16,7 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.changes.BinaryContentRevision;
 import com.intellij.openapi.vcs.VcsException;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -50,11 +49,6 @@ public class BaseVersionUtil {
   }
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
-    if (ModelAccess.instance().canRead()) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
-      }
-    }
     try {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       if (vcs == null) {

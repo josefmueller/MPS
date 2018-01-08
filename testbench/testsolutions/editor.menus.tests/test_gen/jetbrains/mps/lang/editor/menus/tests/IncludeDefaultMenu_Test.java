@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,29 +15,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class IncludeDefaultMenu_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(IncludeDefaultMenu_Test.class, "${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
+
+
+  public IncludeDefaultMenu_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669727090() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669727090", true);
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669728885() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669728885", true);
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669729693() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669729693", true);
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669729758() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669729758", true);
   }
   @Test
   public void test_NodeConceptShouldBeSpecifiedCheck8095208975669730924() throws Throwable {
-    initTest("${mps_home}", "r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)", false);
     runTest("jetbrains.mps.lang.editor.menus.tests.IncludeDefaultMenu_Test$TestBody", "test_NodeConceptShouldBeSpecifiedCheck8095208975669730924", true);
   }
 

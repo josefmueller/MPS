@@ -33,7 +33,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.testbench.junit.runners.DelegatingRunner;
 
 /**
  * Currently used for ant tests
@@ -121,7 +120,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
               String testClassName = ((String) BHReflection.invoke0(testCase, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
               try {
                 Class<?> testClass = moduleCL.loadClass(testClassName);
-                result.add(new DelegatingRunner(builder, testClass));
+                result.add(builder.safeRunnerForClass(testClass));
               } catch (ClassNotFoundException e) {
                 if (LOG.isEnabledFor(Level.WARN)) {
                   LOG.warn("Cannot find the test class " + testClassName + "; will skip this test class");

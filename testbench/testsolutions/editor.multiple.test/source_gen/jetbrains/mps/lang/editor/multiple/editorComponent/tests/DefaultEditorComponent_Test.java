@@ -4,14 +4,22 @@ package jetbrains.mps.lang.editor.multiple.editorComponent.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class DefaultEditorComponent_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(DefaultEditorComponent_Test.class, "${mps_home}", "r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)", false);
+
+  public DefaultEditorComponent_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_DefaultEditorComponent() throws Throwable {
-    initTest("${mps_home}", "r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)");
     runTest("jetbrains.mps.lang.editor.multiple.editorComponent.tests.DefaultEditorComponent_Test$TestBody", "testMethod", false);
   }
 

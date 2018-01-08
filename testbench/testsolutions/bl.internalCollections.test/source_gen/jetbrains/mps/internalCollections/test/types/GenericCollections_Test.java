@@ -4,6 +4,8 @@ package jetbrains.mps.internalCollections.test.types;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,9 +15,16 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class GenericCollections_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(GenericCollections_Test.class, "${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)", false);
+
+
+  public GenericCollections_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck6699137465481874845() throws Throwable {
-    initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)", false);
     runTest("jetbrains.mps.internalCollections.test.types.GenericCollections_Test$TestBody", "test_ErrorMessagesCheck6699137465481874845", true);
   }
 

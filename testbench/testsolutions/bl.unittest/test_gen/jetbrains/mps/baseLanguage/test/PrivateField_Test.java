@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,29 +15,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class PrivateField_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(PrivateField_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public PrivateField_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeFieldIsNeverUsedCheck6923385624929265058() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeFieldIsNeverUsedCheck6923385624929265058", true);
   }
   @Test
   public void test_NodeIsAssignedButNeverAccessedCheck6923385624927087560() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927087560", true);
   }
   @Test
   public void test_NodeIsNeverAssignedCheck6923385624929108909() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeIsNeverAssignedCheck6923385624929108909", true);
   }
   @Test
   public void test_ErrorMessagesCheck7970711249077314345() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_ErrorMessagesCheck7970711249077314345", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564265008834() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.PrivateField_Test$TestBody", "test_NodeWarningCheck8129007564265008834", true);
   }
 

@@ -4,6 +4,8 @@ package analyzers.test.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,19 +15,24 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class TestAnalyzerWithConstructorParameters_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestAnalyzerWithConstructorParameters_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
+
+
+  public TestAnalyzerWithConstructorParameters_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck8332528989793491523() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test$TestBody", "test_NodeErrorCheck8332528989793491523", true);
   }
   @Test
   public void test_NodeErrorCheck8332528989793494654() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test$TestBody", "test_NodeErrorCheck8332528989793494654", true);
   }
   @Test
   public void test_ErrorMessagesCheck8332528989793494697() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test$TestBody", "test_ErrorMessagesCheck8332528989793494697", true);
   }
 

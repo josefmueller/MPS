@@ -50,11 +50,22 @@ public class MPSPackageFinder extends PsiElementFinder {
   @Nullable
   @Override
   public PsiPackage findPackage(@NotNull final String qualifiedName) {
+    final SModelName modelName;
+    try {
+      modelName = new SModelName(qualifiedName);
+    } catch (IllegalArgumentException ex) {
+      // It's ok, IDEA passes whatever text it likes here (see JavaClassReference#advancedResolveInner),
+      // and as long as there's no facility to check model name for validity, handling exception is the only way to get along with IDEA's perception of
+      // 'qualified name'.
+      // FWIW, I've checked PackagePrefixElementFinder implementation, and it doesn't recognize
+      // "package.qualified.name." (note trailing dot) as a valid package name, too.
+      return null;
+    }
     SRepository repository = ProjectHelper.getProjectRepository(myProject);
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiPackage>() {
       @Override
       public PsiPackage compute() {
-        for (SModel model : new ModuleRepositoryFacade(repository).getModelsByName(new SModelName(qualifiedName))) {
+        for (SModel model : new ModuleRepositoryFacade(repository).getModelsByName(modelName)) {
           SModule module = model.getModule();
           if (!(module instanceof SolutionIdea)) {
             continue;

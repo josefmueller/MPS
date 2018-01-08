@@ -4,6 +4,8 @@ package jetbrains.mps.debug.evaluation.transform.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
@@ -23,154 +25,132 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 @MPSLaunch
 public class TransformationUtil_Expressions_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TransformationUtil_Expressions_Test.class, "${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
+
+
+  public TransformationUtil_Expressions_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_lowLevelVariable() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_lowLevelVariable", true);
   }
   @Test
   public void test_variableInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_variableInternal", true);
   }
   @Test
   public void test_evaluatorsThisExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_evaluatorsThisExpression", true);
   }
   @Test
   public void test_thisInternalExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_thisInternalExpression", true);
   }
   @Test
   public void test_field() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_field", true);
   }
   @Test
   public void test_fieldInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_fieldInternal", true);
   }
   @Test
   public void test_localField() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localField", true);
   }
   @Test
   public void test_staticField() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticField", true);
   }
   @Test
   public void test_staticFieldInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticFieldInternal", true);
   }
   @Test
   public void test_localStaticField() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localStaticField", true);
   }
   @Test
   public void test_method() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_method", true);
   }
   @Test
   public void test_methodInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_methodInternal", true);
   }
   @Test
   public void test_localMethod() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_localMethod", true);
   }
   @Test
   public void test_staticMethod() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethod", true);
   }
   @Test
   public void test_staticMethodInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticMethodInternal", true);
   }
   @Test
   public void test_staticLocalMethod() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_staticLocalMethod", true);
   }
   @Test
   public void test_arrayAccessOperation() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayAccessOperation", true);
   }
   @Test
   public void test_arrayLengthOperation() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_arrayLengthOperation", true);
   }
   @Test
   public void test_instanceoff() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_instanceoff", true);
   }
   @Test
   public void test_superr() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_superr", true);
   }
   @Test
   public void test_constructor() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructor", true);
   }
   @Test
   public void test_constructorInternal() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_constructorInternal", true);
   }
   @Test
   public void test_plusExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusExpression", true);
   }
   @Test
   public void test_plusStringExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusStringExpression", true);
   }
   @Test
   public void test_equalsExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_equalsExpression", true);
   }
   @Test
   public void test_notEqualsExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_notEqualsExpression", true);
   }
   @Test
   public void test_notExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_notExpression", true);
   }
   @Test
   public void test_classExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_classExpression", true);
   }
   @Test
   public void test_classInternalExpression() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_classInternalExpression", true);
   }
   @Test
   public void test_throwNew() throws Throwable {
-    initTest("${mps_home}", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests@tests)", false);
     runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_throwNew", true);
   }
 
@@ -1011,7 +991,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.init();
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
       List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
-      SNode localInstanceMethodCall = _quotation_createNode_n7zrdh_a0fc0m13(arguments);
+      SNode localInstanceMethodCall = _quotation_createNode_n7zrdh_a0fc0m63(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), instanceMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(getNodeById("5543996881668550288"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression"))), localInstanceMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(getNodeById("5543996881668550286"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList"))), false).transformEvaluator();
@@ -1208,7 +1188,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.init();
       SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
       List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
-      SNode localStaticMethodCall = _quotation_createNode_n7zrdh_a0fc0p13(arguments);
+      SNode localStaticMethodCall = _quotation_createNode_n7zrdh_a0fc0p63(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), staticMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(getNodeById("607759879653675061"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))), localStaticMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(getNodeById("607759879653675044"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList"))), false).transformEvaluator();
@@ -2125,7 +2105,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
     public void dispose() {
       DebuggerInitializer.dispose();
     }
-    private static SNode _quotation_createNode_n7zrdh_a0fc0m13(Object parameter_1) {
+    private static SNode _quotation_createNode_n7zrdh_a0fc0m63(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
@@ -2138,7 +2118,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       }
       return quotedNode_2;
     }
-    private static SNode _quotation_createNode_n7zrdh_a0fc0p13(Object parameter_1) {
+    private static SNode _quotation_createNode_n7zrdh_a0fc0p63(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;

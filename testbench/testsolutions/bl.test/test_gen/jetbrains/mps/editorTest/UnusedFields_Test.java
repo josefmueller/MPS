@@ -4,6 +4,8 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,144 +15,124 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class UnusedFields_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(UnusedFields_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+
+
+  public UnusedFields_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeErrorCheck8129007564264183307() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264183307", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264201539() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264201539", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264258408() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264258408", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264741195() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264741195", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264258940() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264258940", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264259403() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264259403", true);
   }
   @Test
   public void test_NodeErrorCheck8129007564264259935() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeErrorCheck8129007564264259935", true);
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264174973() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264174973", true);
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264202932() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264202932", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264204542() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264204542", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264206968() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264206968", true);
   }
   @Test
   public void test_NodeWarningCheck5303038120596588890() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck5303038120596588890", true);
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264207116() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264207116", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264207668() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264207668", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264355259() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264355259", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264752913() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264752913", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264233837() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264233837", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264928589() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264928589", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264930520() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264930520", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264242225() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264242225", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264253108() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264253108", true);
   }
   @Test
   public void test_ErrorMessagesCheck8129007564264253493() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck8129007564264253493", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264256239() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264256239", true);
   }
   @Test
   public void test_NodeWarningCheck8129007564264268731() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck8129007564264268731", true);
   }
   @Test
   public void test_ErrorMessagesCheck1855868101957045111() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_ErrorMessagesCheck1855868101957045111", true);
   }
   @Test
   public void test_NodeWarningCheck1855868101957102635() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957102635", true);
   }
   @Test
   public void test_NodeWarningCheck1855868101957107421() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957107421", true);
   }
   @Test
   public void test_NodeWarningCheck1855868101957111173() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
     runTest("jetbrains.mps.editorTest.UnusedFields_Test$TestBody", "test_NodeWarningCheck1855868101957111173", true);
   }
 

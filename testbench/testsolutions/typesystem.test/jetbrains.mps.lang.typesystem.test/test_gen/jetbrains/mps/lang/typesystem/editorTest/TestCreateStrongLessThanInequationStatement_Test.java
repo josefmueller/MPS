@@ -4,14 +4,22 @@ package jetbrains.mps.lang.typesystem.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class TestCreateStrongLessThanInequationStatement_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestCreateStrongLessThanInequationStatement_Test.class, "${mps_home}", "r:ba36a6c7-bab0-4006-ad8b-187ac1fc8f66(jetbrains.mps.lang.typesystem.editorTest@tests)", false);
+
+  public TestCreateStrongLessThanInequationStatement_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestCreateStrongLessThanInequationStatement() throws Throwable {
-    initTest("${mps_home}", "r:ba36a6c7-bab0-4006-ad8b-187ac1fc8f66(jetbrains.mps.lang.typesystem.editorTest@tests)");
     runTest("jetbrains.mps.lang.typesystem.editorTest.TestCreateStrongLessThanInequationStatement_Test$TestBody", "testMethod", false);
   }
 

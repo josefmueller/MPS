@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,29 +15,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(WildCardsInAnonymousClassCreators_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public WildCardsInAnonymousClassCreators_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck8187342170694474094() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694474094", true);
   }
   @Test
   public void test_NodeSupertypeMayNotSpecifyCheck6923385624928216045() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624928216045", true);
   }
   @Test
   public void test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170694475514() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694475514", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170694479318() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694479318", true);
   }
 

@@ -4,6 +4,8 @@ package analyzers.test.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,14 +15,20 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class ExtendingNullableAnalyzer_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ExtendingNullableAnalyzer_Test.class, "${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
+
+
+  public ExtendingNullableAnalyzer_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck7974543756120908670() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.ExtendingNullableAnalyzer_Test$TestBody", "test_ErrorMessagesCheck7974543756120908670", true);
   }
   @Test
   public void test_NodeWarningCheck7078910619968857445() throws Throwable {
-    initTest("${mps_home}", "r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)", false);
     runTest("analyzers.test.tests.ExtendingNullableAnalyzer_Test$TestBody", "test_NodeWarningCheck7078910619968857445", true);
   }
 

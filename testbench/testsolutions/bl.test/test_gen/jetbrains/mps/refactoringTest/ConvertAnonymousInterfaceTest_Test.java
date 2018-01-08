@@ -4,6 +4,8 @@ package jetbrains.mps.refactoringTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ConvertAnonymousRefactoring;
@@ -18,9 +20,16 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class ConvertAnonymousInterfaceTest_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ConvertAnonymousInterfaceTest_Test.class, "${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
+
+
+  public ConvertAnonymousInterfaceTest_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_InterfaceTest() throws Throwable {
-    initTest("${mps_home}", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)", false);
     runTest("jetbrains.mps.refactoringTest.ConvertAnonymousInterfaceTest_Test$TestBody", "test_InterfaceTest", true);
   }
 

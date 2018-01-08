@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.menus.sideTransform.tests.tests;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
@@ -11,9 +13,15 @@ import junit.framework.Assert;
 
 @MPSLaunch
 public class TestSideTransformExceptionActionIcon_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestSideTransformExceptionActionIcon_Test.class, "${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)", false);
+
+  public TestSideTransformExceptionActionIcon_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_TestSideTransformExceptionActionIcon() throws Throwable {
-    initTest("${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)");
     runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransformExceptionActionIcon_Test$TestBody", "testMethod", false);
   }
 

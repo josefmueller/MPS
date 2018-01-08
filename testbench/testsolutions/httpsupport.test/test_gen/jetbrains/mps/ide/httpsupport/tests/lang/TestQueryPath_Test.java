@@ -4,6 +4,8 @@ package jetbrains.mps.ide.httpsupport.tests.lang;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,29 +15,32 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class TestQueryPath_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TestQueryPath_Test.class, "${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
+
+
+  public TestQueryPath_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_ErrorMessagesCheck529363524336252998() throws Throwable {
-    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336252998", true);
   }
   @Test
   public void test_NodeEmptySegmnetCheck529363524336253171() throws Throwable {
-    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_NodeEmptySegmnetCheck529363524336253171", true);
   }
   @Test
   public void test_ErrorMessagesCheck529363524336253166() throws Throwable {
-    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336253166", true);
   }
   @Test
   public void test_ErrorMessagesCheck529363524336254130() throws Throwable {
-    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336254130", true);
   }
   @Test
   public void test_ErrorMessagesCheck529363524336254163() throws Throwable {
-    initTest("${mps_home}", "r:9e9ac0ea-b755-4d57-b406-d0cd74445963(jetbrains.mps.ide.httpsupport.tests.lang@tests)", false);
     runTest("jetbrains.mps.ide.httpsupport.tests.lang.TestQueryPath_Test$TestBody", "test_ErrorMessagesCheck529363524336254163", true);
   }
 

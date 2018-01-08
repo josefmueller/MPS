@@ -4,14 +4,22 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
 public class LT_DotExpression_with_Cast_Current_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(LT_DotExpression_with_Cast_Current_Test.class, "${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)", false);
+
+  public LT_DotExpression_with_Cast_Current_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_LT_DotExpression_with_Cast_Current() throws Throwable {
-    initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
     runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Current_Test$TestBody", "testMethod", false);
   }
 

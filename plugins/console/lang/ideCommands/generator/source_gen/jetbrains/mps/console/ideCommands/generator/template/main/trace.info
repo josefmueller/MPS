@@ -71,8 +71,8 @@
   </root>
   <root nodeRef="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)/5582028874769203973">
     <file name="QueriesGenerated.java">
-      <node id="5582028874769203993" at="95,108,96,195" concept="0" />
-      <scope id="5582028874769203992" at="95,108,96,195" />
+      <node id="6141886156734135060" at="95,108,96,195" concept="0" />
+      <scope id="6141886156734135054" at="95,108,96,195" />
     </file>
   </root>
   <root nodeRef="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)/5582028874771857716">

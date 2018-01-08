@@ -7,7 +7,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
@@ -21,8 +21,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="tpe5" ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" />
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
-    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <import index="homv" ref="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)" />
@@ -3790,13 +3788,13 @@
                                       </node>
                                       <node concept="liA8E" id="1CBc8rDvvVN" role="2OqNvi">
                                         <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                                        <node concept="2ShNRf" id="1CBc8rDvvWj" role="37wK5m">
-                                          <node concept="1pGfFk" id="1CBc8rDvyxg" role="2ShVmc">
-                                            <ref role="37wK5l" to="oh7r:5ICuv4IMcm5" resolve="DelegatingRunner" />
-                                            <node concept="37vLTw" id="1CBc8rDvyxK" role="37wK5m">
-                                              <ref role="3cqZAo" node="1CBc8rDsOGR" resolve="builder" />
-                                            </node>
-                                            <node concept="37vLTw" id="ECLZhknlDu" role="37wK5m">
+                                        <node concept="2OqwBi" id="5iphLhCsYK0" role="37wK5m">
+                                          <node concept="37vLTw" id="5iphLhCsYmJ" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="1CBc8rDsOGR" resolve="builder" />
+                                          </node>
+                                          <node concept="liA8E" id="5iphLhCsZc4" role="2OqNvi">
+                                            <ref role="37wK5l" to="7cms:~RunnerBuilder.safeRunnerForClass(java.lang.Class):org.junit.runner.Runner" resolve="safeRunnerForClass" />
+                                            <node concept="37vLTw" id="5iphLhCsZBJ" role="37wK5m">
                                               <ref role="3cqZAo" node="ECLZhkngFx" resolve="testClass" />
                                             </node>
                                           </node>

@@ -17,7 +17,6 @@ import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
@@ -71,7 +70,8 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
 
     ProcessHandler process;
     try {
-      process = OutputRedirector.redirect(new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation), new ProcessAdapter() {
+      process = new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation);
+      process.addProcessListener(new ProcessAdapter() {
         @Override
         public void processTerminated(ProcessEvent event) {
           if (event.getExitCode() == 0) {

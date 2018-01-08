@@ -6,7 +6,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -70,7 +70,6 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
-        <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
@@ -307,12 +306,6 @@
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
-      </concept>
-    </language>
-    <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
-      <concept id="1585405235656310154" name="jetbrains.mps.baseLanguageInternal.structure.ConstantValue" flags="nn" index="1IlG0z">
-        <property id="1585405235656310169" name="className" index="1IlG0K" />
-        <reference id="1585405235656310155" name="constant" index="1IlG0y" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1631,19 +1624,8 @@
             </node>
           </node>
         </node>
-        <node concept="2GUZhq" id="T9MU2ckbhZ" role="3cqZAp">
-          <node concept="3clFbS" id="5Ti9jVZ8rxZ" role="2GV8ay">
-            <node concept="3clFbF" id="23$lmxdVKFw" role="3cqZAp">
-              <node concept="2OqwBi" id="23$lmxdVKFx" role="3clFbG">
-                <node concept="2YIFZM" id="23$lmxdVKFy" role="2Oq$k0">
-                  <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-                  <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-                </node>
-                <node concept="liA8E" id="23$lmxdVKFz" role="2OqNvi">
-                  <ref role="37wK5l" to="fnd7:23$lmxdVRD5" resolve="onTestRunStarted" />
-                </node>
-              </node>
-            </node>
+        <node concept="SfApY" id="5LbRjS1mG7U" role="3cqZAp">
+          <node concept="3clFbS" id="5Ti9jVZ8rxZ" role="SfCbr">
             <node concept="3cpWs8" id="5Ti9jVZ8ry4" role="3cqZAp">
               <node concept="3cpWsn" id="5Ti9jVZ8ry5" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
@@ -1719,7 +1701,7 @@
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="5Ti9jVZ8rxI" role="TEXxN">
+          <node concept="TDmWw" id="5Ti9jVZ8rxI" role="TEbGg">
             <node concept="3clFbS" id="5Ti9jVZ8rxJ" role="TDEfX">
               <node concept="3SKdUt" id="4br3RNOLROA" role="3cqZAp">
                 <node concept="3SKdUq" id="4br3RNOLROC" role="3SKWNk">
@@ -1740,19 +1722,6 @@
               <property role="TrG5h" value="t" />
               <node concept="3uibUv" id="5Ti9jVZ8rxO" role="1tU5fm">
                 <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="T9MU2ckbi2" role="2GVbov">
-            <node concept="3clFbF" id="T9MU2ck_Qb" role="3cqZAp">
-              <node concept="2OqwBi" id="T9MU2ckAr4" role="3clFbG">
-                <node concept="2YIFZM" id="T9MU2ck_Tb" role="2Oq$k0">
-                  <ref role="37wK5l" to="fnd7:21nkJZKo9oB" resolve="getInstance" />
-                  <ref role="1Pybhc" to="fnd7:21nkJZKnWjm" resolve="RunEventsDispatcher" />
-                </node>
-                <node concept="liA8E" id="T9MU2ckADV" role="2OqNvi">
-                  <ref role="37wK5l" to="fnd7:70xkT3P5oru" resolve="onTestRunFinished" />
-                </node>
               </node>
             </node>
           </node>
@@ -2202,6 +2171,21 @@
         </node>
       </node>
       <node concept="3clFbS" id="5Ti9jVZ8rz8" role="3clF47">
+        <node concept="3SKdUt" id="31Rnc32ci53" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci55" role="3SKWNk">
+            <property role="3SKdUp" value="In fact, wrap of System.out makes little sense here. One of the CommandOutputStream ideas is to track" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="31Rnc32ci7p" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci7r" role="3SKWNk">
+            <property role="3SKdUp" value="output and ensure there's \n in front of a synch token. However, any output to System.out here would go" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="31Rnc32ci9N" role="3cqZAp">
+          <node concept="3SKdUq" id="31Rnc32ci9P" role="3SKWNk">
+            <property role="3SKdUp" value="unnoticed. For the COS to work as expected, a belly dance of DefaultTestExecutor is needed (when a COS is System.out)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4br3RNORFLx" role="3cqZAp">
           <node concept="2ShNRf" id="2SyXq5Nkh0B" role="3clFbG">
             <node concept="1pGfFk" id="2SyXq5Nkh0C" role="2ShVmc">
@@ -4048,17 +4032,6 @@
         <ref role="3uigEE" node="56tRMpP_bCe" resolve="CommandOutputStream" />
       </node>
     </node>
-    <node concept="312cEg" id="77hRUeKgpAT" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myFailureCount" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="77hRUeKgoUO" role="1B3o_S" />
-      <node concept="10Oyi0" id="77hRUeKgpAs" role="1tU5fm" />
-      <node concept="3cmrfG" id="77hRUeKgq0t" role="33vP2m">
-        <property role="3cmrfH" value="0" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="5d37arGB$Ts" role="jymVt" />
     <node concept="3clFbW" id="56tRMpP_bxF" role="jymVt">
       <node concept="3cqZAl" id="56tRMpP_bxG" role="3clF45" />
@@ -4102,9 +4075,9 @@
             <node concept="Xjq3P" id="56tRMpP_by5" role="2Oq$k0" />
             <node concept="liA8E" id="56tRMpP_by6" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="4BZqA32g02q" role="37wK5m">
-                <property role="1IlG0K" value="no className&gt;" />
-                <ref role="1IlG0y" to="tpnd:1zHDQsywvlu" resolve="FINISH_TEST_PREFIX" />
+              <node concept="10M0yZ" id="31Rnc32c5rJ" role="37wK5m">
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="3cqZAo" to="tpnd:1zHDQsywvlu" resolve="FINISH_TEST_PREFIX" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm_jj" role="37wK5m">
                 <ref role="3cqZAo" node="56tRMpP_bxZ" resolve="description" />
@@ -4136,8 +4109,9 @@
           <node concept="2OqwBi" id="56tRMpP_byl" role="3clFbG">
             <node concept="liA8E" id="56tRMpP_bym" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="4BZqA32g2GV" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
+              <node concept="10M0yZ" id="31Rnc32c5oz" role="37wK5m">
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="3cqZAo" to="tpnd:1zHDQsywvly" resolve="FAILURE_TEST_PREFIX" />
               </node>
               <node concept="2OqwBi" id="56tRMpP_byo" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxgmNCO" role="2Oq$k0">
@@ -4170,32 +4144,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="56tRMpP_byz" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_by$" role="3clFbG">
-            <node concept="liA8E" id="56tRMpP_by_" role="2OqNvi">
-              <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="4BZqA32g2GW" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:1zHDQsywvlA" resolve="FAILURE_TEST_SUFFIX" />
-              </node>
-              <node concept="2OqwBi" id="56tRMpP_byB" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgmysQ" role="2Oq$k0">
-                  <ref role="3cqZAo" node="56tRMpP_byg" resolve="failure" />
-                </node>
-                <node concept="liA8E" id="56tRMpP_byD" role="2OqNvi">
-                  <ref role="37wK5l" to="k76n:~Failure.getDescription():org.junit.runner.Description" resolve="getDescription" />
-                </node>
-              </node>
-            </node>
-            <node concept="Xjq3P" id="56tRMpP_byE" role="2Oq$k0" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="77hRUeKgrCU" role="3cqZAp">
-          <node concept="2$rviw" id="77hRUeKgrCQ" role="3clFbG">
-            <node concept="37vLTw" id="77hRUeKgrLg" role="2$L3a6">
-              <ref role="3cqZAo" node="77hRUeKgpAT" resolve="myFailureCount" />
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="56tRMpP_byI" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -4218,8 +4166,9 @@
             <node concept="Xjq3P" id="56tRMpP_byR" role="2Oq$k0" />
             <node concept="liA8E" id="56tRMpP_byS" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="4BZqA32g2GX" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
+              <node concept="10M0yZ" id="31Rnc32c5m2" role="37wK5m">
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="3cqZAo" to="tpnd:1zHDQsywvlE" resolve="ASSUMPTION_FAILURE_TEST_PREFIX" />
               </node>
               <node concept="2OqwBi" id="56tRMpP_byU" role="37wK5m">
                 <node concept="37vLTw" id="2BHiRxgm8_0" role="2Oq$k0">
@@ -4251,25 +4200,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="56tRMpP_bz4" role="3cqZAp">
-          <node concept="2OqwBi" id="56tRMpP_bz5" role="3clFbG">
-            <node concept="Xjq3P" id="56tRMpP_bz6" role="2Oq$k0" />
-            <node concept="liA8E" id="56tRMpP_bz7" role="2OqNvi">
-              <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="4BZqA32g2GY" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:1zHDQsywvlI" resolve="ASSUMPTION_FAILURE_TEST_SUFFIX" />
-              </node>
-              <node concept="2OqwBi" id="56tRMpP_bz9" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgkZ2b" role="2Oq$k0">
-                  <ref role="3cqZAo" node="56tRMpP_byM" resolve="failure" />
-                </node>
-                <node concept="liA8E" id="56tRMpP_bzb" role="2OqNvi">
-                  <ref role="37wK5l" to="k76n:~Failure.getDescription():org.junit.runner.Description" resolve="getDescription" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="56tRMpP_bzf" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -4292,8 +4222,9 @@
             <node concept="Xjq3P" id="5d37arGBqg7" role="2Oq$k0" />
             <node concept="liA8E" id="5d37arGBqg8" role="2OqNvi">
               <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="5d37arGBqg9" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
+              <node concept="10M0yZ" id="31Rnc32c5jH" role="37wK5m">
+                <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+                <ref role="3cqZAo" to="tpnd:5d37arGBotJ" resolve="IGNORE_FAILURE_TEST_PREFIX" />
               </node>
               <node concept="37vLTw" id="5d37arGBqgb" role="37wK5m">
                 <ref role="3cqZAo" node="5d37arGBqg2" resolve="description" />
@@ -4316,20 +4247,6 @@
                 <node concept="37vLTw" id="5d37arGByyG" role="3uHU7B">
                   <ref role="3cqZAo" node="5d37arGBqg2" resolve="description" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5d37arGBqgk" role="3cqZAp">
-          <node concept="2OqwBi" id="5d37arGBqgl" role="3clFbG">
-            <node concept="Xjq3P" id="5d37arGBqgm" role="2Oq$k0" />
-            <node concept="liA8E" id="5d37arGBqgn" role="2OqNvi">
-              <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-              <node concept="1IlG0z" id="5d37arGBqgo" role="37wK5m">
-                <ref role="1IlG0y" to="tpnd:5d37arGBotN" resolve="IGNORE_FAILURE_TEST_SUFFIX" />
-              </node>
-              <node concept="37vLTw" id="5d37arGBqgq" role="37wK5m">
-                <ref role="3cqZAo" node="5d37arGBqg2" resolve="description" />
               </node>
             </node>
           </node>
@@ -4357,8 +4274,9 @@
         <node concept="3clFbF" id="56tRMpP_bzn" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzhK9" role="3clFbG">
             <ref role="37wK5l" node="56tRMpP_bzv" resolve="printSyncToken" />
-            <node concept="1IlG0z" id="4BZqA32g2GZ" role="37wK5m">
-              <ref role="1IlG0y" to="tpnd:1zHDQsywvlq" resolve="START_TEST_PREFIX" />
+            <node concept="10M0yZ" id="31Rnc32c5w2" role="37wK5m">
+              <ref role="1PxDUh" to="tpnd:1zHDQsywvgL" resolve="TestEvent" />
+              <ref role="3cqZAo" to="tpnd:1zHDQsywvlq" resolve="START_TEST_PREFIX" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm_5v" role="37wK5m">
               <ref role="3cqZAo" node="56tRMpP_bzj" resolve="description" />
@@ -4402,6 +4320,11 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="6NKjxRILXOG" role="3cqZAp">
+          <node concept="3SKdUq" id="6NKjxRILXOI" role="3SKWNk">
+            <property role="3SKdUp" value="Beware, description.getTestClass may be null." />
+          </node>
+        </node>
         <node concept="3clFbF" id="1zHDQsywvkE" role="3cqZAp">
           <node concept="2OqwBi" id="1zHDQsywvkF" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTwzF" role="2Oq$k0">
@@ -4409,18 +4332,29 @@
             </node>
             <node concept="liA8E" id="1zHDQsywvkH" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="2OqwBi" id="1zHDQsywvjo" role="37wK5m">
-                <node concept="2OqwBi" id="1zHDQsywvjp" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxgm9J5" role="2Oq$k0">
-                    <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-                  </node>
-                  <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
-                    <ref role="37wK5l" to="cvlm:~Description.getTestClass():java.lang.Class" resolve="getTestClass" />
-                  </node>
+              <node concept="2OqwBi" id="1zHDQsywvjp" role="37wK5m">
+                <node concept="37vLTw" id="2BHiRxgm9J5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
                 </node>
-                <node concept="liA8E" id="1zHDQsywvjs" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                <node concept="liA8E" id="1zHDQsywvjr" role="2OqNvi">
+                  <ref role="37wK5l" to="cvlm:~Description.getClassName():java.lang.String" resolve="getClassName" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6NKjxRILYHg" role="3cqZAp">
+          <node concept="3cpWsn" id="6NKjxRILYHh" role="3cpWs9">
+            <property role="TrG5h" value="methodName" />
+            <node concept="3uibUv" id="6NKjxRILYHd" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="6NKjxRILYHi" role="33vP2m">
+              <node concept="37vLTw" id="6NKjxRILYHj" role="2Oq$k0">
+                <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
+              </node>
+              <node concept="liA8E" id="6NKjxRILYHk" role="2OqNvi">
+                <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
               </node>
             </node>
           </node>
@@ -4428,13 +4362,8 @@
         <node concept="3clFbJ" id="1zHDQsywvkL" role="3cqZAp">
           <node concept="3y3z36" id="1zHDQsywvkM" role="3clFbw">
             <node concept="10Nm6u" id="1zHDQsywvkN" role="3uHU7w" />
-            <node concept="2OqwBi" id="1zHDQsywvpo" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxghf1W" role="2Oq$k0">
-                <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-              </node>
-              <node concept="liA8E" id="1zHDQsywvps" role="2OqNvi">
-                <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
-              </node>
+            <node concept="37vLTw" id="6NKjxRILYHl" role="3uHU7B">
+              <ref role="3cqZAo" node="6NKjxRILYHh" resolve="methodName" />
             </node>
           </node>
           <node concept="3clFbS" id="1zHDQsywvkR" role="3clFbx">
@@ -4453,13 +4382,8 @@
                 </node>
                 <node concept="liA8E" id="1zHDQsywvkY" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                  <node concept="2OqwBi" id="4BZqA32g2J_" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxgmb$a" role="2Oq$k0">
-                      <ref role="3cqZAo" node="56tRMpP_b$2" resolve="description" />
-                    </node>
-                    <node concept="liA8E" id="4BZqA32g2JB" role="2OqNvi">
-                      <ref role="37wK5l" to="cvlm:~Description.getMethodName():java.lang.String" resolve="getMethodName" />
-                    </node>
+                  <node concept="37vLTw" id="6NKjxRILYHm" role="37wK5m">
+                    <ref role="3cqZAo" node="6NKjxRILYHh" resolve="methodName" />
                   </node>
                 </node>
               </node>
@@ -4590,26 +4514,21 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="77hRUeKhLca" role="jymVt" />
-    <node concept="3clFb_" id="77hRUeKhNnP" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getFailureCount" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="77hRUeKhNnS" role="3clF47">
-        <node concept="3cpWs6" id="77hRUeKhNX_" role="3cqZAp">
-          <node concept="37vLTw" id="77hRUeKhNY1" role="3cqZAk">
-            <ref role="3cqZAo" node="77hRUeKgpAT" resolve="myFailureCount" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="77hRUeKhMJ$" role="1B3o_S" />
-      <node concept="10Oyi0" id="77hRUeKhNkD" role="3clF45" />
-    </node>
-    <node concept="2tJIrI" id="77hRUeKhyy8" role="jymVt" />
     <node concept="3Tm1VV" id="77hRUeKhvqz" role="1B3o_S" />
     <node concept="3uibUv" id="77hRUeKhB$L" role="1zkMxy">
       <ref role="3uigEE" to="k76n:~RunListener" resolve="RunListener" />
+    </node>
+    <node concept="3UR2Jj" id="31Rnc327Iq0" role="lGtFl">
+      <node concept="TZ5HA" id="31Rnc327Iq1" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc327Iq2" role="1dT_Ay">
+          <property role="1dT_AB" value="JUnit test listener that spits out control sequences into supplied stream. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="31Rnc327ICF" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc327ICG" role="1dT_Ay">
+          <property role="1dT_AB" value="These control sequences are for external process to receive JUnit events." />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="1b7CZFPGW70">

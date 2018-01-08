@@ -8,19 +8,18 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.lang.test.util.MpsTestRunListener;
-import jetbrains.mps.lang.test.util.RunEventsDispatcher;
+import org.junit.Before;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
+import org.junit.After;
 
 public abstract class BaseTransformationTest implements TransformationTest {
   private Project myProject;
   private SModel myModel;
   private SModel myTransientModel;
   private TestRunner myRunner;
-
-  /*package*/ static final TestModelSaver CACHE = new TestModelSaver();
+  private final TestParametersCache myParamCache;
 
   @NotNull
   private static TestRunner defaultTestRunner() {
@@ -30,15 +29,11 @@ public abstract class BaseTransformationTest implements TransformationTest {
   }
 
   public BaseTransformationTest() {
+    myParamCache = null;
   }
 
-  public BaseTransformationTest(@NotNull TestRunner runner) {
-    setTestRunner(runner);
-  }
-
-  public BaseTransformationTest(Project project, SModel modelDescriptor) {
-    myProject = project;
-    myModel = modelDescriptor;
+  public BaseTransformationTest(TestParametersCache paramCache) {
+    myParamCache = paramCache;
   }
 
   @Override
@@ -51,53 +46,61 @@ public abstract class BaseTransformationTest implements TransformationTest {
     return myRunner;
   }
 
+  @Before
+  public void setup() throws Exception {
+    if (myRunner == null) {
+      setTestRunner(defaultTestRunner());
+    }
+    if (myParamCache != null) {
+      //  invokes runner.iniTest() directly, without this.initTest() intermediary 
+      myParamCache.populate(this);
+    }
+  }
+
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     initTest(projectName, model, false);
   }
 
   public void initTest(@NotNull String projectName, final String model, boolean reOpenProject) throws Exception {
-    if (myRunner == null) {
-      initTests();
-    }
     myRunner.initTest(this, projectName, model, reOpenProject);
-  }
-
-  private void initTests() {
-    setTestRunner(defaultTestRunner());
-    // FIXME yes, listener is not registered when myRunner is initialized from outside; no, it's not intended. 
-    //       try to replace with regular @AfterClass or drop CACHE altogether. 
-    registerTestsListener();
-  }
-
-  private void registerTestsListener() {
-    MpsTestRunListener listener = new MpsTestRunListener() {
-      @Override
-      public void testRunFinished() {
-        CACHE.clean();
-        RunEventsDispatcher.getInstance().removeListener(this);
-      }
-
-      @Override
-      public void testRunStarted() {
-      }
-    };
-    RunEventsDispatcher.getInstance().addListener(listener);
   }
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     myRunner.runTest(this, className, methodName, runInCommand);
   }
 
+  /**
+   * FIXME Poor/unspecified contract. The method used to be invoked only once for a class with tests, although it's not apparent from the name.
+   */
   @Override
   public void init() {
+    // if we got here with myParamCache != null, it means it is being initialized, has invoked runner.initTest() which in turn got here. 
+    // In this case, the code below shall move into TestParametersCache which is responsible to manage (i.e. dispose) transient model. 
+    // However, for transition/migration period, we create a transient model here and let TPC pick it afterwards. This is to support tests that do not use 
+    // TestParametersCache as ClassRule 
     this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithAllImports();
   }
 
+  /**
+   * FIXME explain/justify contract, see {@link jetbrains.mps.lang.test.runtime.BaseTransformationTest#init() }
+   */
   @Override
   public void dispose() {
     TemporaryModels.getInstance().dispose(myTransientModel);
     myTransientModel = null;
+  }
+
+  @After
+  public void tearDown() {
+    if (myParamCache == null) {
+      getProject().getModelAccess().runWriteInEDT(new Runnable() {
+        public void run() {
+          dispose();
+        }
+      });
+      // otherwise, TPC does this for us after all tests of the class are executed 
+    }
   }
 
   @Override

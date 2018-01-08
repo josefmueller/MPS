@@ -7,7 +7,6 @@ import org.apache.log4j.LogManager;
 import org.junit.runner.notification.RunListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -56,7 +55,6 @@ public class JUnitTestExecutor implements TestExecutor {
   public void execute() {
     myFailureCount = 0;
     try {
-      RunEventsDispatcher.getInstance().onTestRunStarted();
       Iterable<Request> requests = myTestContributor.gatherTests();
       JUnitCore jUnitCore = prepareJUnitCore(requests);
       doExecute(jUnitCore, requests);
@@ -67,8 +65,6 @@ public class JUnitTestExecutor implements TestExecutor {
     } catch (Throwable t) {
       // XXX myFailureCount may get invalid if exception is thrown from core.run 
       processThrowable(t);
-    } finally {
-      RunEventsDispatcher.getInstance().onTestRunFinished();
     }
   }
 
@@ -139,6 +135,9 @@ public class JUnitTestExecutor implements TestExecutor {
 
   @NotNull
   protected RunListener createListener(Iterable<Request> requests) {
+    // In fact, wrap of System.out makes little sense here. One of the CommandOutputStream ideas is to track 
+    // output and ensure there's \n in front of a synch token. However, any output to System.out here would go 
+    // unnoticed. For the COS to work as expected, a belly dance of DefaultTestExecutor is needed (when a COS is System.out) 
     return new DefaultRunListener(new CommandOutputStream(System.out));
   }
 }

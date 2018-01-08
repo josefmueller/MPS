@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import org.junit.ClassRule;
+import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -13,109 +15,96 @@ import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 
 @MPSLaunch
 public class TypeInference_Test extends BaseTransformationTest {
+  @ClassRule
+  public static final TestParametersCache ourParamCache = new TestParametersCache(TypeInference_Test.class, "${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+
+
+  public TypeInference_Test() {
+    super(ourParamCache);
+  }
+
   @Test
   public void test_NodeTypeSystemCheck6923385624927474402() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927474402", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927959862() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927959862", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641462720() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641462720", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928271119() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928271119", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929494038() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929494038", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471587() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471587", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927940163() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927940163", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471608() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471608", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928215092() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928215092", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471627() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471627", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927005600() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927005600", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471646() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471646", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624928978334() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624928978334", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471667() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471667", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929302543() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929302543", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624929336374() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624929336374", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927563665() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927563665", true);
   }
   @Test
   public void test_NodeTypeSystemCheck6923385624927161380() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeTypeSystemCheck6923385624927161380", true);
   }
   @Test
   public void test_NodeErrorCheck8345119003641471688() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_NodeErrorCheck8345119003641471688", true);
   }
   @Test
   public void test_ErrorMessagesCheck488298296050687637() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_ErrorMessagesCheck488298296050687637", true);
   }
   @Test
   public void test_ErrorMessagesCheck7261441936922433825() throws Throwable {
-    initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     runTest("jetbrains.mps.baseLanguage.test.TypeInference_Test$TestBody", "test_ErrorMessagesCheck7261441936922433825", true);
   }
 

@@ -7933,19 +7933,9 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="ubtK7iYwKk" role="3clF47">
-        <node concept="3clFbF" id="ubtK7iYzkq" role="3cqZAp">
-          <node concept="37vLTI" id="ubtK7iYzkr" role="3clFbG">
-            <node concept="3clFbT" id="ubtK7iYzks" role="37vLTx">
-              <property role="3clFbU" value="true" />
-            </node>
-            <node concept="2OqwBi" id="ubtK7iYzkt" role="37vLTJ">
-              <node concept="37vLTw" id="ubtK7iYzku" role="2Oq$k0">
-                <ref role="3cqZAo" node="6aGZllYQxFF" resolve="myDescriptor" />
-              </node>
-              <node concept="2OwXpG" id="ubtK7iYzwi" role="2OqNvi">
-                <ref role="2Oxat5" to="asz6:ubtK7iYy6B" resolve="includeAllModules" />
-              </node>
-            </node>
+        <node concept="3SKdUt" id="1sAB67Twy0i" role="3cqZAp">
+          <node concept="3SKdUq" id="1sAB67Twy0j" role="3SKWNk">
+            <property role="3SKdUp" value="deprecated" />
           </node>
         </node>
       </node>
@@ -7956,6 +7946,24 @@
         <node concept="3uibUv" id="ubtK7j0IMQ" role="1tU5fm">
           <ref role="3uigEE" node="ubtK7j0IDC" resolve="AllModulesDataType" />
         </node>
+      </node>
+      <node concept="P$JXv" id="1sAB67Twy5n" role="lGtFl">
+        <node concept="TZ5HI" id="1sAB67Twy5o" role="3nqlJM">
+          <node concept="TZ5HA" id="1sAB67Twy5p" role="3HnX3l" />
+        </node>
+        <node concept="TZ5HA" id="1sAB67Twyef" role="TZ5H$">
+          <node concept="1dT_AC" id="1sAB67Twyeg" role="1dT_Ay">
+            <property role="1dT_AB" value="By default, now /lib and /languages and /workbench folders are already included" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1sAB67TwKgj" role="TZ5H$">
+          <node concept="1dT_AC" id="1sAB67TwKgk" role="1dT_Ay">
+            <property role="1dT_AB" value="Later, the task will be generated and only needed modules will be specified" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1sAB67Twy5q" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
     </node>
     <node concept="3clFb_" id="6aGZllYQgxg" role="jymVt">
@@ -8298,6 +8306,26 @@
       <node concept="3Tm1VV" id="ubtK7j0IDG" role="1B3o_S" />
       <node concept="3cqZAl" id="ubtK7j0IDH" role="3clF45" />
       <node concept="3clFbS" id="ubtK7j0IDI" role="3clF47" />
+    </node>
+    <node concept="3UR2Jj" id="1sAB67TwKgM" role="lGtFl">
+      <node concept="TZ5HI" id="1sAB67TwKgN" role="3nqlJM">
+        <node concept="TZ5HA" id="1sAB67TwKgO" role="3HnX3l" />
+      </node>
+      <node concept="TZ5HA" id="1sAB67TwKh1" role="TZ5H$">
+        <node concept="1dT_AC" id="1sAB67TwKh2" role="1dT_Ay">
+          <property role="1dT_AB" value="Occurences of " />
+        </node>
+        <node concept="2U$1Ah" id="1sAB67TwKh7" role="1dT_Ay">
+          <property role="2U$1Ai" value="allmpsmodules" />
+          <node concept="TZ5HA" id="1sAB67TwKh8" role="2U$1Aj" />
+        </node>
+        <node concept="1dT_AC" id="1sAB67TwKh6" role="1dT_Ay">
+          <property role="1dT_AB" value=" may be just removed" />
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="1sAB67TwKgP" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="7oFdQJwEW3N">
