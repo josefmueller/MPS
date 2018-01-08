@@ -628,6 +628,12 @@ public class SNodeOperations {
   public static SConcept asInstanceConcept(SAbstractConcept concept) {
     return MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
+  /**
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static SNode getContainingLinkDeclaration(SNode childNode) {
     if (childNode == null) {
       return null;
