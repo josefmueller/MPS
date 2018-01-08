@@ -46,7 +46,7 @@ public final class TestParametersCache implements TestRule {
     };
   }
 
-  public void populate(TransformationTest test) throws Exception {
+  public void populate(BaseTransformationTest test) throws Exception {
     assert test.getClass() == myOwner;
 
     if (myInitialized) {
@@ -55,7 +55,7 @@ public final class TestParametersCache implements TestRule {
       test.setTransientModelDescriptor(myTransientModel);
       return;
     }
-    test.getTestRunner().initTest(test, myProjectName, myModelRef, myReOpenProject);
+    test.initTest(myProjectName, myModelRef, myReOpenProject);
     myProject = test.getProject();
     myTestModel = test.getModelDescriptor();
     myTransientModel = test.getTransientModelDescriptor();
