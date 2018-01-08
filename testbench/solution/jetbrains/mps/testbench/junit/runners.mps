@@ -35,6 +35,8 @@
     <import index="bbnd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners(JUnit/)" />
     <import index="k76n" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.notification(JUnit/)" />
     <import index="nztd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.manipulation(JUnit/)" />
+    <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
+    <import index="jw4c" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.runners(JUnit/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4026,6 +4028,445 @@
       <node concept="2AHcQZ" id="61uE6zXlWQ_" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="7KC1aYnIc27">
+    <property role="TrG5h" value="PushEnvironmentRunnerBuilder" />
+    <property role="1EXbeo" value="true" />
+    <node concept="312cEg" id="7KC1aYnIfh8" role="jymVt">
+      <property role="TrG5h" value="myDelegateBuilder" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7KC1aYnIfh9" role="1B3o_S" />
+      <node concept="3uibUv" id="7KC1aYnIfhb" role="1tU5fm">
+        <ref role="3uigEE" to="7cms:~RunnerBuilder" resolve="RunnerBuilder" />
+      </node>
+    </node>
+    <node concept="312cEg" id="3hj1t46aI7i" role="jymVt">
+      <property role="TrG5h" value="myEnvironmentToPush" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="3hj1t46aI7l" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7KC1aYnIej2" role="jymVt" />
+    <node concept="3clFbW" id="7KC1aYnIehx" role="jymVt">
+      <node concept="3cqZAl" id="7KC1aYnIeh$" role="3clF45" />
+      <node concept="3Tm1VV" id="7KC1aYnIeh_" role="1B3o_S" />
+      <node concept="3clFbS" id="7KC1aYnIehA" role="3clF47">
+        <node concept="3clFbF" id="7KC1aYnIfhc" role="3cqZAp">
+          <node concept="37vLTI" id="7KC1aYnIfhe" role="3clFbG">
+            <node concept="37vLTw" id="7KC1aYnIfhh" role="37vLTJ">
+              <ref role="3cqZAo" node="7KC1aYnIfh8" resolve="myDelegateBuilder" />
+            </node>
+            <node concept="37vLTw" id="7KC1aYnIfhi" role="37vLTx">
+              <ref role="3cqZAo" node="7KC1aYnIehS" resolve="delegate" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3hj1t46aI7m" role="3cqZAp">
+          <node concept="37vLTI" id="3hj1t46aI7o" role="3clFbG">
+            <node concept="37vLTw" id="3hj1t46aI7r" role="37vLTJ">
+              <ref role="3cqZAo" node="3hj1t46aI7i" resolve="myEnvironmentToPush" />
+            </node>
+            <node concept="37vLTw" id="3hj1t46aI7s" role="37vLTx">
+              <ref role="3cqZAo" node="7KC1aYnIeiL" resolve="environmentToPush" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7KC1aYnIeiL" role="3clF46">
+        <property role="TrG5h" value="environmentToPush" />
+        <node concept="3uibUv" id="7KC1aYnIejD" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7KC1aYnIehS" role="3clF46">
+        <property role="TrG5h" value="delegate" />
+        <node concept="3uibUv" id="7KC1aYnIehR" role="1tU5fm">
+          <ref role="3uigEE" to="7cms:~RunnerBuilder" resolve="RunnerBuilder" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7KC1aYnIelt" role="jymVt" />
+    <node concept="3clFb_" id="7KC1aYnIelG" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="runnerForClass" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7KC1aYnIelH" role="1B3o_S" />
+      <node concept="3uibUv" id="7KC1aYnIelJ" role="3clF45">
+        <ref role="3uigEE" to="cvlm:~Runner" resolve="Runner" />
+      </node>
+      <node concept="37vLTG" id="7KC1aYnIelK" role="3clF46">
+        <property role="TrG5h" value="aClass" />
+        <node concept="3uibUv" id="7KC1aYnIelL" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="7KC1aYnIelM" role="11_B2D" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="7KC1aYnIelN" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+      </node>
+      <node concept="3clFbS" id="7KC1aYnIelO" role="3clF47">
+        <node concept="3clFbJ" id="7KC1aYnIeox" role="3cqZAp">
+          <node concept="3clFbS" id="7KC1aYnIeoz" role="3clFbx">
+            <node concept="3SKdUt" id="3hj1t46aKKs" role="3cqZAp">
+              <node concept="3SKdUq" id="3hj1t46aKKu" role="3SKWNk">
+                <property role="3SKdUp" value="Here, we assume it's generated (i.e. those we've full control over) tests that bear EnvironmentAware, therefore" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3hj1t46aLh7" role="3cqZAp">
+              <node concept="3SKdUq" id="3hj1t46aLh9" role="3SKWNk">
+                <property role="3SKdUp" value="we don't support neither @Ignored not @RunWith here." />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3hj1t46aADL" role="3cqZAp">
+              <node concept="3clFbS" id="3hj1t46aADN" role="3clFbx">
+                <node concept="3cpWs6" id="3hj1t46aBMA" role="3cqZAp">
+                  <node concept="2ShNRf" id="3hj1t46aBVK" role="3cqZAk">
+                    <node concept="1pGfFk" id="3hj1t46aG2z" role="2ShVmc">
+                      <ref role="37wK5l" to="jw4c:~JUnit38ClassRunner.&lt;init&gt;(junit.framework.Test)" resolve="JUnit38ClassRunner" />
+                      <node concept="2ShNRf" id="3hj1t46aITH" role="37wK5m">
+                        <node concept="1pGfFk" id="3hj1t46aJwZ" role="2ShVmc">
+                          <ref role="37wK5l" node="3hj1t46aHiP" resolve="PushEnvironmentRunnerBuilder.JUnit38SuiteAdapter" />
+                          <node concept="37vLTw" id="3hj1t46aJI4" role="37wK5m">
+                            <ref role="3cqZAo" node="7KC1aYnIelK" resolve="aClass" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3hj1t46aAYL" role="3clFbw">
+                <node concept="3VsKOn" id="3hj1t46aAN$" role="2Oq$k0">
+                  <ref role="3VsUkX" to="u132:~TestCase" resolve="TestCase" />
+                </node>
+                <node concept="liA8E" id="3hj1t46aBm7" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                  <node concept="37vLTw" id="3hj1t46aBui" role="37wK5m">
+                    <ref role="3cqZAo" node="7KC1aYnIelK" resolve="aClass" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="7KC1aYnIj5$" role="3cqZAp">
+              <node concept="2ShNRf" id="7KC1aYnIj61" role="3cqZAk">
+                <node concept="1pGfFk" id="7KC1aYnImvg" role="2ShVmc">
+                  <ref role="37wK5l" node="7KC1aYnIh65" resolve="PushEnvironmentRunnerBuilder.PushEnvJUnit4Runner" />
+                  <node concept="37vLTw" id="3hj1t46aPqw" role="37wK5m">
+                    <ref role="3cqZAo" node="7KC1aYnIelK" resolve="aClass" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7KC1aYnIe_8" role="3clFbw">
+            <node concept="liA8E" id="7KC1aYnIeX1" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+              <node concept="37vLTw" id="3hj1t46aBGF" role="37wK5m">
+                <ref role="3cqZAo" node="7KC1aYnIelK" resolve="aClass" />
+              </node>
+            </node>
+            <node concept="3VsKOn" id="7KC1aYnIf5A" role="2Oq$k0">
+              <ref role="3VsUkX" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="7KC1aYnIfd6" role="9aQIa">
+            <node concept="3clFbS" id="7KC1aYnIfd7" role="9aQI4">
+              <node concept="3cpWs6" id="7KC1aYnIfes" role="3cqZAp">
+                <node concept="2OqwBi" id="3hj1t46aYZ2" role="3cqZAk">
+                  <node concept="37vLTw" id="3hj1t46aYZ3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7KC1aYnIfh8" resolve="myDelegateBuilder" />
+                  </node>
+                  <node concept="liA8E" id="3hj1t46aYZ4" role="2OqNvi">
+                    <ref role="37wK5l" to="7cms:~RunnerBuilder.runnerForClass(java.lang.Class):org.junit.runner.Runner" resolve="runnerForClass" />
+                    <node concept="37vLTw" id="3hj1t46aYZ5" role="37wK5m">
+                      <ref role="3cqZAo" node="7KC1aYnIelK" resolve="aClass" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7KC1aYnIelP" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7KC1aYnIcat" role="jymVt" />
+    <node concept="312cEu" id="7KC1aYnIgeR" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="PushEnvJUnit4Runner" />
+      <node concept="2tJIrI" id="7KC1aYnIgYU" role="jymVt" />
+      <node concept="3clFbW" id="7KC1aYnIh65" role="jymVt">
+        <node concept="3cqZAl" id="7KC1aYnIh67" role="3clF45" />
+        <node concept="3clFbS" id="7KC1aYnIh69" role="3clF47">
+          <node concept="XkiVB" id="3hj1t46aThh" role="3cqZAp">
+            <ref role="37wK5l" to="bbnd:~BlockJUnit4ClassRunner.&lt;init&gt;(java.lang.Class)" resolve="BlockJUnit4ClassRunner" />
+            <node concept="37vLTw" id="3hj1t46aTpg" role="37wK5m">
+              <ref role="3cqZAo" node="7KC1aYnIhbW" resolve="klass" />
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="7KC1aYnIhbW" role="3clF46">
+          <property role="TrG5h" value="klass" />
+          <node concept="3uibUv" id="3hj1t46aQQx" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+            <node concept="3qTvmN" id="3hj1t46aRua" role="11_B2D" />
+          </node>
+        </node>
+        <node concept="3uibUv" id="3hj1t46aYH1" role="Sfmx6">
+          <ref role="3uigEE" to="7cms:~InitializationError" resolve="InitializationError" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3hj1t46bk_J" role="jymVt" />
+      <node concept="3clFb_" id="3hj1t46bmsp" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="withAfters" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tmbuc" id="3hj1t46bmsq" role="1B3o_S" />
+        <node concept="3uibUv" id="3hj1t46bmss" role="3clF45">
+          <ref role="3uigEE" to="7cms:~Statement" resolve="Statement" />
+        </node>
+        <node concept="37vLTG" id="3hj1t46bmst" role="3clF46">
+          <property role="TrG5h" value="method" />
+          <node concept="3uibUv" id="3hj1t46bmsu" role="1tU5fm">
+            <ref role="3uigEE" to="7cms:~FrameworkMethod" resolve="FrameworkMethod" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3hj1t46bmsv" role="3clF46">
+          <property role="TrG5h" value="target" />
+          <property role="3TUv4t" value="true" />
+          <node concept="3uibUv" id="3hj1t46bmsw" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3hj1t46bmsx" role="3clF46">
+          <property role="TrG5h" value="statement" />
+          <node concept="3uibUv" id="3hj1t46bmsy" role="1tU5fm">
+            <ref role="3uigEE" to="7cms:~Statement" resolve="Statement" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3hj1t46bmsz" role="3clF47">
+          <node concept="3SKdUt" id="5UFD5GhAzkB" role="3cqZAp">
+            <node concept="3SKdUq" id="5UFD5GhAzkD" role="3SKWNk">
+              <property role="3SKdUp" value="there's no specific reason to use withAfters, withBefores is the same" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="3hj1t46bmSH" role="3cqZAp">
+            <node concept="3SKdUq" id="3hj1t46bmSJ" role="3SKWNk">
+              <property role="3SKdUp" value="FIXME override createTest() and invoke cons(Environment), if present, to instantiate test object" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="3hj1t46bmNE" role="3cqZAp" />
+          <node concept="3cpWs8" id="3hj1t46botu" role="3cqZAp">
+            <node concept="3cpWsn" id="3hj1t46botv" role="3cpWs9">
+              <property role="TrG5h" value="withAfters" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="3hj1t46botr" role="1tU5fm">
+                <ref role="3uigEE" to="7cms:~Statement" resolve="Statement" />
+              </node>
+              <node concept="3nyPlj" id="3hj1t46botw" role="33vP2m">
+                <ref role="37wK5l" to="bbnd:~BlockJUnit4ClassRunner.withAfters(org.junit.runners.model.FrameworkMethod,java.lang.Object,org.junit.runners.model.Statement):org.junit.runners.model.Statement" resolve="withAfters" />
+                <node concept="37vLTw" id="3hj1t46botx" role="37wK5m">
+                  <ref role="3cqZAo" node="3hj1t46bmst" resolve="method" />
+                </node>
+                <node concept="37vLTw" id="3hj1t46boty" role="37wK5m">
+                  <ref role="3cqZAo" node="3hj1t46bmsv" resolve="target" />
+                </node>
+                <node concept="37vLTw" id="3hj1t46botz" role="37wK5m">
+                  <ref role="3cqZAo" node="3hj1t46bmsx" resolve="statement" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3hj1t46bqa7" role="3cqZAp">
+            <node concept="3clFbS" id="3hj1t46bqa9" role="3clFbx">
+              <node concept="3cpWs6" id="3hj1t46bs2E" role="3cqZAp">
+                <node concept="2ShNRf" id="3hj1t46bs63" role="3cqZAk">
+                  <node concept="YeOm9" id="3hj1t46bsQO" role="2ShVmc">
+                    <node concept="1Y3b0j" id="3hj1t46bsQR" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="7cms:~Statement" resolve="Statement" />
+                      <ref role="37wK5l" to="7cms:~Statement.&lt;init&gt;()" resolve="Statement" />
+                      <node concept="3Tm1VV" id="3hj1t46bsQS" role="1B3o_S" />
+                      <node concept="3clFb_" id="3hj1t46bsQT" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="evaluate" />
+                        <property role="DiZV1" value="false" />
+                        <property role="od$2w" value="false" />
+                        <node concept="3Tm1VV" id="3hj1t46bsQU" role="1B3o_S" />
+                        <node concept="3cqZAl" id="3hj1t46bsQW" role="3clF45" />
+                        <node concept="3uibUv" id="3hj1t46bsQX" role="Sfmx6">
+                          <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                        </node>
+                        <node concept="3clFbS" id="3hj1t46bsQY" role="3clF47">
+                          <node concept="3clFbF" id="3hj1t46buQ3" role="3cqZAp">
+                            <node concept="2OqwBi" id="3hj1t46bv3L" role="3clFbG">
+                              <node concept="1eOMI4" id="3hj1t46buQ1" role="2Oq$k0">
+                                <node concept="10QFUN" id="3hj1t46buPY" role="1eOMHV">
+                                  <node concept="3uibUv" id="3hj1t46buQN" role="10QFUM">
+                                    <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+                                  </node>
+                                  <node concept="37vLTw" id="3hj1t46buUa" role="10QFUP">
+                                    <ref role="3cqZAo" node="3hj1t46bmsv" resolve="target" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="3hj1t46bvcz" role="2OqNvi">
+                                <ref role="37wK5l" to="79ha:7KC1aYnI6li" resolve="setEnvironment" />
+                                <node concept="37vLTw" id="3hj1t46bvgH" role="37wK5m">
+                                  <ref role="3cqZAo" node="3hj1t46aI7i" resolve="myEnvironmentToPush" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="3hj1t46bvsY" role="3cqZAp">
+                            <node concept="2OqwBi" id="3hj1t46bvyC" role="3clFbG">
+                              <node concept="37vLTw" id="3hj1t46bvsW" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3hj1t46botv" resolve="withAfters" />
+                              </node>
+                              <node concept="liA8E" id="3hj1t46bxe$" role="2OqNvi">
+                                <ref role="37wK5l" to="7cms:~Statement.evaluate():void" resolve="evaluate" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2ZW3vV" id="3hj1t46bqn3" role="3clFbw">
+              <node concept="3uibUv" id="3hj1t46bqre" role="2ZW6by">
+                <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+              </node>
+              <node concept="37vLTw" id="3hj1t46bqeF" role="2ZW6bz">
+                <ref role="3cqZAo" node="3hj1t46bmsv" resolve="target" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="3hj1t46bxHo" role="3cqZAp">
+            <node concept="37vLTw" id="3hj1t46byZw" role="3cqZAk">
+              <ref role="3cqZAo" node="3hj1t46botv" resolve="withAfters" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3hj1t46bms$" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="3hj1t46aK8k" role="1zkMxy">
+        <ref role="3uigEE" to="bbnd:~BlockJUnit4ClassRunner" resolve="BlockJUnit4ClassRunner" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3hj1t46aGuM" role="jymVt" />
+    <node concept="312cEu" id="3hj1t46aGOl" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="JUnit38SuiteAdapter" />
+      <node concept="3clFbW" id="3hj1t46aHiP" role="jymVt">
+        <node concept="3cqZAl" id="3hj1t46aHiS" role="3clF45" />
+        <node concept="3clFbS" id="3hj1t46aHiT" role="3clF47">
+          <node concept="XkiVB" id="3hj1t46aHos" role="3cqZAp">
+            <ref role="37wK5l" to="u132:~TestSuite.&lt;init&gt;(java.lang.Class)" resolve="TestSuite" />
+            <node concept="37vLTw" id="3hj1t46aHoW" role="37wK5m">
+              <ref role="3cqZAo" node="3hj1t46aHkh" resolve="klass" />
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="3hj1t46aHkh" role="3clF46">
+          <property role="TrG5h" value="klass" />
+          <node concept="3uibUv" id="3hj1t46aHkg" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+            <node concept="3qTvmN" id="3hj1t46aHn7" role="11_B2D" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3hj1t46aHpP" role="jymVt" />
+      <node concept="3clFb_" id="3hj1t46aHrA" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="runTest" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="3hj1t46aHrB" role="1B3o_S" />
+        <node concept="3cqZAl" id="3hj1t46aHrD" role="3clF45" />
+        <node concept="37vLTG" id="3hj1t46aHrE" role="3clF46">
+          <property role="TrG5h" value="test" />
+          <node concept="3uibUv" id="3hj1t46aHrF" role="1tU5fm">
+            <ref role="3uigEE" to="u132:~Test" resolve="Test" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3hj1t46aHrG" role="3clF46">
+          <property role="TrG5h" value="result" />
+          <node concept="3uibUv" id="3hj1t46aHrH" role="1tU5fm">
+            <ref role="3uigEE" to="u132:~TestResult" resolve="TestResult" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3hj1t46aHrI" role="3clF47">
+          <node concept="3clFbJ" id="3hj1t46aHTa" role="3cqZAp">
+            <node concept="3clFbS" id="3hj1t46aHTc" role="3clFbx">
+              <node concept="3SKdUt" id="3hj1t46aHW8" role="3cqZAp">
+                <node concept="3SKdUq" id="3hj1t46aHWa" role="3SKWNk">
+                  <property role="3SKdUp" value=" well, could be assert as it's the first think we check in runnerForClass, above. Nevertheless, why not to check gracefully?" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="3hj1t46aHX6" role="3cqZAp">
+                <node concept="2OqwBi" id="3hj1t46aI1_" role="3clFbG">
+                  <node concept="1eOMI4" id="3hj1t46aHX4" role="2Oq$k0">
+                    <node concept="10QFUN" id="3hj1t46aHX1" role="1eOMHV">
+                      <node concept="3uibUv" id="3hj1t46aHXx" role="10QFUM">
+                        <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+                      </node>
+                      <node concept="37vLTw" id="3hj1t46aHYd" role="10QFUP">
+                        <ref role="3cqZAo" node="3hj1t46aHrE" resolve="test" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3hj1t46aI6e" role="2OqNvi">
+                    <ref role="37wK5l" to="79ha:7KC1aYnI6li" resolve="setEnvironment" />
+                    <node concept="37vLTw" id="3hj1t46aIoH" role="37wK5m">
+                      <ref role="3cqZAo" node="3hj1t46aI7i" resolve="myEnvironmentToPush" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2ZW3vV" id="3hj1t46aHLN" role="3clFbw">
+              <node concept="3uibUv" id="3hj1t46aHQi" role="2ZW6by">
+                <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+              </node>
+              <node concept="37vLTw" id="3hj1t46aHxh" role="2ZW6bz">
+                <ref role="3cqZAo" node="3hj1t46aHrE" resolve="test" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3hj1t46aHrN" role="3cqZAp">
+            <node concept="3nyPlj" id="3hj1t46aHrM" role="3clFbG">
+              <ref role="37wK5l" to="u132:~TestSuite.runTest(junit.framework.Test,junit.framework.TestResult):void" resolve="runTest" />
+              <node concept="37vLTw" id="3hj1t46aHrK" role="37wK5m">
+                <ref role="3cqZAo" node="3hj1t46aHrE" resolve="test" />
+              </node>
+              <node concept="37vLTw" id="3hj1t46aHrL" role="37wK5m">
+                <ref role="3cqZAo" node="3hj1t46aHrG" resolve="result" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="3hj1t46aHrJ" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="3hj1t46aHdP" role="1zkMxy">
+        <ref role="3uigEE" to="u132:~TestSuite" resolve="TestSuite" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7KC1aYnIc28" role="1B3o_S" />
+    <node concept="3uibUv" id="7KC1aYnIeh9" role="1zkMxy">
+      <ref role="3uigEE" to="7cms:~RunnerBuilder" resolve="RunnerBuilder" />
     </node>
   </node>
 </model>

@@ -1100,5 +1100,14 @@
       <unit id="824372260173098491" at="27,0,65,0" name="jetbrains.mps.tool.environment.Environment" />
     </file>
   </root>
+  <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/8946405811982722281">
+    <file name="EnvironmentAware.java">
+      <node id="8946405811982722386" at="11,0,12,0" concept="8" trace="setEnvironment#(Ljetbrains/mps/tool/environment/Environment;)V" />
+      <scope id="8946405811982722386" at="11,0,12,0">
+        <var name="env" id="8946405811982722416" />
+      </scope>
+      <unit id="8946405811982722281" at="10,0,13,0" name="jetbrains.mps.tool.environment.EnvironmentAware" />
+    </file>
+  </root>
 </debug-info>
 

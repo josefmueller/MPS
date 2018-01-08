@@ -450,6 +450,85 @@
       <unit id="6944172844332338536" at="12,0,24,0" name="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" />
     </file>
   </root>
+  <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/8946405811982745735">
+    <file name="PushEnvironmentRunnerBuilder.java">
+      <node id="8946405811982758984" at="20,0,21,0" concept="4" trace="myDelegateBuilder" />
+      <node id="3770363708349014482" at="21,0,22,0" concept="4" trace="myEnvironmentToPush" />
+      <node id="8946405811982758988" at="23,94,24,33" concept="3" />
+      <node id="3770363708349014486" at="24,33,25,44" concept="3" />
+      <node id="3770363708349025308" at="30,58,31,121" concept="11" />
+      <node id="3770363708349027399" at="31,121,32,62" concept="11" />
+      <node id="3770363708348988582" at="33,52,34,100" concept="10" />
+      <node id="8946405811982774628" at="35,7,36,74" concept="10" />
+      <node id="8946405811982758812" at="37,12,38,54" concept="10" />
+      <node id="3770363708349060177" at="44,80,45,19" concept="15" />
+      <node id="6821726771627046183" at="49,102,50,79" concept="11" />
+      <node id="3770363708349181485" at="50,79,51,106" concept="11" />
+      <node id="3770363708349181162" at="51,106,52,0" concept="12" />
+      <node id="3770363708349187934" at="52,0,53,79" concept="9" />
+      <node id="3770363708349214083" at="56,51,57,76" concept="3" />
+      <node id="3770363708349216574" at="57,76,58,34" concept="3" />
+      <node id="3770363708349225816" at="61,7,62,24" concept="10" />
+      <node id="3770363708349011484" at="67,53,68,19" concept="15" />
+      <node id="3770363708349013768" at="73,45,74,136" concept="11" />
+      <node id="3770363708349013830" at="74,136,75,70" concept="3" />
+      <node id="3770363708349011699" at="76,7,77,34" concept="3" />
+      <node id="8946405811982758726" at="37,10,39,5" concept="1" />
+      <node id="3770363708348983921" at="32,62,35,7" concept="7" />
+      <node id="8946405811982766469" at="44,0,47,0" concept="2" trace="PushEnvJUnit4Runner#(Ljava/lang/Class;)V" />
+      <node id="3770363708349011125" at="67,0,70,0" concept="2" trace="JUnit38SuiteAdapter#(Ljava/lang/Class;)V" />
+      <node id="8946405811982754913" at="23,0,27,0" concept="2" trace="PushEnvironmentRunnerBuilder#(Ljetbrains/mps/tool/environment/Environment;Lorg/junit/runners/model/RunnerBuilder;)V" />
+      <node id="3770363708349205945" at="56,0,60,0" concept="8" trace="evaluate#()V" />
+      <node id="3770363708349013578" at="72,55,76,7" concept="7" />
+      <node id="3770363708349202602" at="54,47,60,10" concept="10" />
+      <node id="3770363708349194887" at="53,79,61,7" concept="7" />
+      <node id="3770363708349011686" at="71,0,79,0" concept="8" trace="runTest#(Ljunit/framework/Test;Ljunit/framework/TestResult;)V" />
+      <node id="8946405811982755361" at="29,66,39,5" concept="7" />
+      <node id="8946405811982755180" at="28,0,41,0" concept="8" trace="runnerForClass#(Ljava/lang/Class;)Lorg/junit/runner/Runner;" />
+      <node id="3770363708349179673" at="48,0,64,0" concept="8" trace="withAfters#(Lorg/junit/runners/model/FrameworkMethod;Ljava/lang/Object;Lorg/junit/runners/model/Statement;)Lorg/junit/runners/model/Statement;" />
+      <scope id="3770363708348983923" at="33,52,34,100" />
+      <scope id="8946405811982758727" at="37,12,38,54" />
+      <scope id="8946405811982766473" at="44,80,45,19" />
+      <scope id="3770363708349011129" at="67,53,68,19" />
+      <scope id="8946405811982754918" at="23,94,25,44" />
+      <scope id="3770363708349205950" at="56,51,58,34" />
+      <scope id="3770363708349013580" at="73,45,75,70" />
+      <scope id="8946405811982766469" at="44,0,47,0">
+        <var name="klass" id="8946405811982766844" />
+      </scope>
+      <scope id="3770363708349011125" at="67,0,70,0">
+        <var name="klass" id="3770363708349011217" />
+      </scope>
+      <scope id="8946405811982754913" at="23,0,27,0">
+        <var name="delegate" id="8946405811982754936" />
+        <var name="environmentToPush" id="8946405811982754993" />
+      </scope>
+      <scope id="3770363708349205945" at="56,0,60,0" />
+      <scope id="3770363708349011694" at="72,55,77,34" />
+      <scope id="8946405811982755363" at="30,58,36,74" />
+      <scope id="3770363708349194889" at="54,47,60,10" />
+      <scope id="3770363708349011686" at="71,0,79,0">
+        <var name="result" id="3770363708349011692" />
+        <var name="test" id="3770363708349011690" />
+      </scope>
+      <scope id="8946405811982755188" at="29,66,39,5" />
+      <scope id="8946405811982755180" at="28,0,41,0">
+        <var name="aClass" id="8946405811982755184" />
+      </scope>
+      <scope id="3770363708349179683" at="49,102,62,24">
+        <var name="withAfters" id="3770363708349187935" />
+      </scope>
+      <scope id="3770363708349179673" at="48,0,64,0">
+        <var name="method" id="3770363708349179677" />
+        <var name="statement" id="3770363708349179681" />
+        <var name="target" id="3770363708349179679" />
+      </scope>
+      <unit id="3770363708349205943" at="55,19,60,9" name="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder$PushEnvJUnit4Runner$1" />
+      <unit id="3770363708349009173" at="66,0,80,0" name="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder$JUnit38SuiteAdapter" />
+      <unit id="8946405811982762935" at="42,0,65,0" name="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder$PushEnvJUnit4Runner" />
+      <unit id="8946405811982745735" at="19,0,81,0" name="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" />
+    </file>
+  </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/9085186120773985667">
     <file name="misc.xml">
       <unit id="9085186120773985667" at="1,0,11,10" name="jetbrains.mps.testbench.junit.runners.misc" />

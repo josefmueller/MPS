@@ -6656,5 +6656,33 @@
       </node>
     </node>
   </node>
+  <node concept="3HP615" id="7KC1aYnI6jD">
+    <property role="TrG5h" value="EnvironmentAware" />
+    <node concept="3clFb_" id="7KC1aYnI6li" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="setEnvironment" />
+      <node concept="3clFbS" id="7KC1aYnI6ll" role="3clF47" />
+      <node concept="3Tm1VV" id="7KC1aYnI6lm" role="1B3o_S" />
+      <node concept="3cqZAl" id="7KC1aYnI6l9" role="3clF45" />
+      <node concept="37vLTG" id="7KC1aYnI6lK" role="3clF46">
+        <property role="TrG5h" value="env" />
+        <node concept="3uibUv" id="7KC1aYnI6lJ" role="1tU5fm">
+          <ref role="3uigEE" node="HKKzfMjqRV" resolve="Environment" />
+        </node>
+        <node concept="2AHcQZ" id="7KC1aYnI6mE" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7KC1aYnI6jE" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7KC1aYnI6nm" role="lGtFl">
+      <node concept="TZ5HA" id="7KC1aYnI6nn" role="TZ5H$">
+        <node concept="1dT_AC" id="7KC1aYnI6no" role="1dT_Ay">
+          <property role="1dT_AB" value="Indication that a class implementing this interface needs an Environment dependency injected." />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

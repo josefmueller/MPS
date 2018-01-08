@@ -17,6 +17,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.tool.environment.Retainable" />
   </dependency>
+  <dependency className="jetbrains.mps.tool.environment.EnvironmentAware" file="EnvironmentAware.java">
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentBase" file="EnvironmentBase.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
