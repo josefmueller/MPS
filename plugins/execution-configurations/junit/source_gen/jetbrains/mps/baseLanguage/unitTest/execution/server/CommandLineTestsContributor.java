@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
+import jetbrains.mps.tool.environment.Environment;
 import java.io.IOException;
 import java.util.List;
 import java.util.LinkedList;
@@ -13,14 +15,17 @@ import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import org.junit.runner.Request;
+import org.junit.runner.Description;
 import org.apache.log4j.Level;
 
 public class CommandLineTestsContributor implements TestsContributor {
   private static final Logger LOG = LogManager.getLogger(CommandLineTestsContributor.class);
   private final String[] myArgs;
+  private final PushEnvironmentRunnerBuilder myRunnerBuilder;
 
-  public CommandLineTestsContributor(String[] args) throws IOException {
+  public CommandLineTestsContributor(Environment env, String[] args) throws IOException {
     myArgs = inlineFilesContents(args);
+    myRunnerBuilder = new PushEnvironmentRunnerBuilder(env);
   }
 
   private String[] inlineFilesContents(String[] args) throws IOException {
@@ -82,17 +87,18 @@ public class CommandLineTestsContributor implements TestsContributor {
     int index = methodString.lastIndexOf('.');
     String testClassName = methodString.substring(0, index);
     String testMethod = methodString.substring(index + 1);
-    Class<?> testClass = getTestClass(testClassName);
-    if (testClass != null) {
-      return Request.method(testClass, testMethod);
+    Request classReq = parseRequestFromClass(testClassName);
+    if (classReq == null) {
+      return null;
     }
-    return null;
+    // Copied from Request.method(Class<?>, String); all we care is uniqueId (built from class and methods names), so don't care about Class<> instance 
+    return classReq.filterWith(Description.createTestDescription(testClassName, testMethod));
   }
 
   private Request parseRequestFromClass(@NotNull String classString) {
     Class<?> testClass = getTestClass(classString);
     if (testClass != null) {
-      return Request.aClass(testClass);
+      return Request.runner(myRunnerBuilder.safeRunnerForClass(testClass));
     }
     return null;
   }

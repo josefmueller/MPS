@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.junit.runners;
 
 import org.junit.runners.model.RunnerBuilder;
 import jetbrains.mps.tool.environment.Environment;
+import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.Runner;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import junit.framework.TestCase;
@@ -19,6 +20,11 @@ import junit.framework.TestResult;
 public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
   private final RunnerBuilder myDelegateBuilder;
   /*package*/ final Environment myEnvironmentToPush;
+
+  public PushEnvironmentRunnerBuilder(Environment environmentToPush) {
+    this(environmentToPush, new AllDefaultPossibilitiesBuilder(true));
+    // true for suite just because I see no reason why to forbid it, though not sure there's none. 
+  }
 
   public PushEnvironmentRunnerBuilder(Environment environmentToPush, RunnerBuilder delegate) {
     myDelegateBuilder = delegate;

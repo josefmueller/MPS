@@ -3143,6 +3143,25 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3hj1t46bQSZ" role="3cqZAp">
+          <node concept="3cpWsn" id="3hj1t46bQT0" role="3cpWs9">
+            <property role="TrG5h" value="mpsEnvAwareBuilder" />
+            <node concept="3uibUv" id="3hj1t46bQT1" role="1tU5fm">
+              <ref role="3uigEE" to="7cms:~RunnerBuilder" resolve="RunnerBuilder" />
+            </node>
+            <node concept="2ShNRf" id="3hj1t46bRE8" role="33vP2m">
+              <node concept="1pGfFk" id="3hj1t46cbfu" role="2ShVmc">
+                <ref role="37wK5l" to="oh7r:7KC1aYnIehx" resolve="PushEnvironmentRunnerBuilder" />
+                <node concept="37vLTw" id="3hj1t46cbmo" role="37wK5m">
+                  <ref role="3cqZAo" node="5A5jZrz009f" resolve="myEnvironment" />
+                </node>
+                <node concept="37vLTw" id="3hj1t46cbxK" role="37wK5m">
+                  <ref role="3cqZAo" node="1CBc8rDsM$l" resolve="builder" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1CBc8rDqix_" role="3cqZAp">
           <node concept="37vLTI" id="1CBc8rDqjec" role="3clFbG">
             <node concept="37vLTw" id="1CBc8rDqix$" role="37vLTJ">
@@ -3153,8 +3172,8 @@
               <node concept="37vLTw" id="2BGPXkExD4w" role="37wK5m">
                 <ref role="3cqZAo" node="1CBc8rDpXoG" resolve="myContextProject" />
               </node>
-              <node concept="37vLTw" id="1CBc8rDsO2A" role="37wK5m">
-                <ref role="3cqZAo" node="1CBc8rDsM$l" resolve="builder" />
+              <node concept="37vLTw" id="3hj1t46cd2G" role="37wK5m">
+                <ref role="3cqZAo" node="3hj1t46bQT0" resolve="mpsEnvAwareBuilder" />
               </node>
             </node>
           </node>

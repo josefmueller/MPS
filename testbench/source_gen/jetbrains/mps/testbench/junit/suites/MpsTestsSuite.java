@@ -12,6 +12,7 @@ import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import java.util.Collections;
 import jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -52,7 +53,8 @@ public class MpsTestsSuite extends BaseMpsSuite {
     // todo: read config from annotations before start (project / ?) 
     myEnvironment = initIdeaEnvironment();
     myContextProject = myEnvironment.createProject(new FromModulesListProjectStrategy());
-    myChildren = createChildRunners(myContextProject, builder);
+    RunnerBuilder mpsEnvAwareBuilder = new PushEnvironmentRunnerBuilder(myEnvironment, builder);
+    myChildren = createChildRunners(myContextProject, mpsEnvAwareBuilder);
   }
 
   public Environment initIdeaEnvironment() {

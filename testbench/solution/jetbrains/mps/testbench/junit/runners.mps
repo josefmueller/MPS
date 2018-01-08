@@ -37,6 +37,7 @@
     <import index="nztd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.manipulation(JUnit/)" />
     <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
     <import index="jw4c" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.runners(JUnit/)" />
+    <import index="456n" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.builders(JUnit/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4049,6 +4050,38 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7KC1aYnIej2" role="jymVt" />
+    <node concept="3clFbW" id="3hj1t46dLX2" role="jymVt">
+      <node concept="3cqZAl" id="3hj1t46dLX3" role="3clF45" />
+      <node concept="3Tm1VV" id="3hj1t46dLX4" role="1B3o_S" />
+      <node concept="3clFbS" id="3hj1t46dLX5" role="3clF47">
+        <node concept="1VxSAg" id="3hj1t46dPgq" role="3cqZAp">
+          <ref role="37wK5l" node="7KC1aYnIehx" resolve="PushEnvironmentRunnerBuilder" />
+          <node concept="37vLTw" id="3hj1t46dPkt" role="37wK5m">
+            <ref role="3cqZAo" node="3hj1t46dLXe" resolve="environmentToPush" />
+          </node>
+          <node concept="2ShNRf" id="3hj1t46dPsg" role="37wK5m">
+            <node concept="1pGfFk" id="3hj1t46dQ9d" role="2ShVmc">
+              <ref role="37wK5l" to="456n:~AllDefaultPossibilitiesBuilder.&lt;init&gt;(boolean)" resolve="AllDefaultPossibilitiesBuilder" />
+              <node concept="3clFbT" id="3hj1t46dQkP" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3hj1t46dQqC" role="3cqZAp">
+          <node concept="3SKdUq" id="3hj1t46dQqE" role="3SKWNk">
+            <property role="3SKdUp" value="true for suite just because I see no reason why to forbid it, though not sure there's none." />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3hj1t46dLXe" role="3clF46">
+        <property role="TrG5h" value="environmentToPush" />
+        <node concept="3uibUv" id="3hj1t46dLXf" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3hj1t46dOn8" role="jymVt" />
     <node concept="3clFbW" id="7KC1aYnIehx" role="jymVt">
       <node concept="3cqZAl" id="7KC1aYnIeh$" role="3clF45" />
       <node concept="3Tm1VV" id="7KC1aYnIeh_" role="1B3o_S" />

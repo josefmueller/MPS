@@ -9,6 +9,8 @@ import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
 import java.io.IOException;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class DefaultTestExecutor extends JUnitTestExecutor {
@@ -47,13 +49,15 @@ public class DefaultTestExecutor extends JUnitTestExecutor {
    * Called when BTestCase is executed
    */
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-    DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(args));
+    Environment env = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
+    DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(env, args));
     try {
       executor.run();
     } catch (Throwable t) {
       executor.processThrowable(t);
     }
     executor.exit();
+    env.dispose();
   }
 
   protected void run() {

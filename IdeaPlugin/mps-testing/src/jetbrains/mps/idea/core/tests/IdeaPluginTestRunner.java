@@ -111,6 +111,11 @@ public class IdeaPluginTestRunner extends Suite {
   }
 
   private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, MPSProject mpsProject) throws Exception {
+    // FIXME likely, need an instance of PushEnvironmentRunnerBuilder, initialized with LightEnvironment, just need to sort out
+    //       dependencies first. PERB is from [testbench], which is likely may be available here through [mps-test] dependency
+    //       LightEnvironment is from j.m.lang.test.runtime, and, perhaps, need all this crappy logic to load it through proper module CL.
+    //       However, it's not obvious why could not LE reside in [testbench] or even [mps-environment]; then, there'd be no need in CL management.
+    //       Left as is for later consideration just to move forward with regular MPS tests
     Class<?> cls = module.getOwnClass(sModel.getName().getLongName() + "." + root.getName() + "_Test"); //NON-NLS
     ReloadableModule runtimeModule = (ReloadableModule) mpsProject.getRepository().getModule(LANG_TEST_RUNTIME);
     Class<?> junitRunnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner");

@@ -15,6 +15,9 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandLineTestsContributor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.test.CachesUtil" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor" />
   </dependency>
@@ -31,10 +34,13 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
   </dependency>
@@ -72,7 +78,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultRunListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.junit.runner.Request" />
@@ -125,22 +133,19 @@
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleIsNotLoadableException" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightEnvironment" />
     <classNode dependClassName="jetbrains.mps.module.ModuleClassLoaderIsNullException" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.internal.runners.ErrorReportingRunner" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Request" />
-    <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.StoppableRunner" file="StoppableRunner.java">

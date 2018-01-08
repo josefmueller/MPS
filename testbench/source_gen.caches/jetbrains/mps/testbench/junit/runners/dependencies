@@ -109,6 +109,7 @@
     <classNode dependClassName="junit.framework.TestCase" />
     <classNode dependClassName="junit.framework.TestResult" />
     <classNode dependClassName="junit.framework.TestSuite" />
+    <classNode dependClassName="org.junit.internal.builders.AllDefaultPossibilitiesBuilder" />
     <classNode dependClassName="org.junit.internal.runners.JUnit38ClassRunner" />
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runners.BlockJUnit4ClassRunner" />
