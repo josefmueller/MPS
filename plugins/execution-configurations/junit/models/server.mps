@@ -34,10 +34,8 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tp6m" ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <import index="7cms" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners.model(JUnit/)" />
-    <import index="jw4c" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.runners(JUnit/)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
-    <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
-    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
+    <import index="2t25" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.runners(Testbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2404,8 +2402,8 @@
       <property role="TrG5h" value="myRunnerBuilder" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3hj1t46ezIc" role="1B3o_S" />
-      <node concept="3uibUv" id="3hj1t46e$Qd" role="1tU5fm">
-        <ref role="3uigEE" to="oh7r:7KC1aYnIc27" resolve="PushEnvironmentRunnerBuilder" />
+      <node concept="3uibUv" id="2hkOsltu01I" role="1tU5fm">
+        <ref role="3uigEE" to="2t25:~PushEnvironmentRunnerBuilder" resolve="PushEnvironmentRunnerBuilder" />
       </node>
     </node>
     <node concept="2tJIrI" id="5$NvszvVKJO" role="jymVt" />
@@ -2479,7 +2477,7 @@
           <node concept="37vLTI" id="3hj1t46eAiC" role="3clFbG">
             <node concept="2ShNRf" id="3hj1t46eAo9" role="37vLTx">
               <node concept="1pGfFk" id="3hj1t46eARH" role="2ShVmc">
-                <ref role="37wK5l" to="oh7r:3hj1t46dLX2" resolve="PushEnvironmentRunnerBuilder" />
+                <ref role="37wK5l" to="2t25:~PushEnvironmentRunnerBuilder.&lt;init&gt;(jetbrains.mps.tool.environment.Environment)" resolve="PushEnvironmentRunnerBuilder" />
                 <node concept="2ShNRf" id="3hj1t46eATU" role="37wK5m">
                   <node concept="YeOm9" id="3Fhll9KNFA2" role="2ShVmc">
                     <node concept="1Y3b0j" id="3Fhll9KNFA5" role="YeSDq">
@@ -3249,8 +3247,8 @@
       <property role="TrG5h" value="myRunnerBuilder" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3hj1t46dEnR" role="1B3o_S" />
-      <node concept="3uibUv" id="3hj1t46dIjd" role="1tU5fm">
-        <ref role="3uigEE" to="oh7r:7KC1aYnIc27" resolve="PushEnvironmentRunnerBuilder" />
+      <node concept="3uibUv" id="2hkOslttW$A" role="1tU5fm">
+        <ref role="3uigEE" to="2t25:~PushEnvironmentRunnerBuilder" resolve="PushEnvironmentRunnerBuilder" />
       </node>
     </node>
     <node concept="2tJIrI" id="6BB1EWXdhT5" role="jymVt" />
@@ -3297,7 +3295,7 @@
             </node>
             <node concept="2ShNRf" id="3hj1t46dJwJ" role="37vLTx">
               <node concept="1pGfFk" id="3hj1t46dK1A" role="2ShVmc">
-                <ref role="37wK5l" to="oh7r:3hj1t46dLX2" resolve="PushEnvironmentRunnerBuilder" />
+                <ref role="37wK5l" to="2t25:~PushEnvironmentRunnerBuilder.&lt;init&gt;(jetbrains.mps.tool.environment.Environment)" resolve="PushEnvironmentRunnerBuilder" />
                 <node concept="37vLTw" id="3hj1t46dK50" role="37wK5m">
                   <ref role="3cqZAo" node="3hj1t46dEe_" resolve="env" />
                 </node>

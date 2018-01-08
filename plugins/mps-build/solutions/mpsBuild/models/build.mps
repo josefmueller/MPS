@@ -25959,6 +25959,18 @@
             <ref role="3bR37D" node="ymnOULAU0H" resolve="jetbrains.mps.lang.test" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2hkOslttK3d" role="3bR37C">
+          <node concept="3bR9La" id="2hkOslttK3e" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2hkOslt_Hwp" role="3bR37C">
+          <node concept="3bR9La" id="2hkOslt_Hwq" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="nbn5Dym2sp" resolve="Testbench" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="m$_wf" id="5CFKsRWV4Nl" role="3989C9">

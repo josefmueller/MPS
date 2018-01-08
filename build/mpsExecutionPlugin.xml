@@ -1366,11 +1366,11 @@
         <fileset file="${artifacts.mpsDebuggerPlugin}/mps-debugger-java/lib/debugger-java.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.util" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsTesting}/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest.execution" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.execution.languages" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.execution.library" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
