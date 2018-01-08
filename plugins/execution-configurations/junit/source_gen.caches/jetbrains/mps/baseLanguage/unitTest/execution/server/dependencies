@@ -119,6 +119,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" file="NodeWrappersTestsContributor.java">
+    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Exception" />

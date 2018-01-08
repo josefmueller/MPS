@@ -37,6 +37,7 @@
     <import index="jw4c" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.internal.runners(JUnit/)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
+    <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -107,6 +108,9 @@
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
+        <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -216,6 +220,7 @@
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
+        <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
       <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
@@ -278,6 +283,9 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
+      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
+        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -2462,14 +2470,83 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="2hkOslttGyv" role="3cqZAp">
+          <node concept="3SKdUq" id="2hkOslttGyx" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME need a LightEnvironment cons to pass Platform. Do this once start using Environment.getPlatform in JUnit tests (i.e. where LightEnvironment is consumed)" />
+          </node>
+        </node>
         <node concept="3clFbF" id="3hj1t46eA46" role="3cqZAp">
           <node concept="37vLTI" id="3hj1t46eAiC" role="3clFbG">
             <node concept="2ShNRf" id="3hj1t46eAo9" role="37vLTx">
               <node concept="1pGfFk" id="3hj1t46eARH" role="2ShVmc">
                 <ref role="37wK5l" to="oh7r:3hj1t46dLX2" resolve="PushEnvironmentRunnerBuilder" />
                 <node concept="2ShNRf" id="3hj1t46eATU" role="37wK5m">
-                  <node concept="HV5vD" id="3hj1t46eBpO" role="2ShVmc">
-                    <ref role="HV5vE" to="tp6m:2ky3Rs1t$JN" resolve="LightEnvironment" />
+                  <node concept="YeOm9" id="3Fhll9KNFA2" role="2ShVmc">
+                    <node concept="1Y3b0j" id="3Fhll9KNFA5" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                      <ref role="1Y3XeK" to="tp6m:2ky3Rs1t$JN" resolve="LightEnvironment" />
+                      <node concept="3Tm1VV" id="3Fhll9KNFA6" role="1B3o_S" />
+                      <node concept="2tJIrI" id="3Fhll9KNG9t" role="jymVt" />
+                      <node concept="3clFb_" id="3Fhll9KNGdv" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="TrG5h" value="openProject" />
+                        <property role="IEkAT" value="false" />
+                        <node concept="37vLTG" id="3Fhll9KNGdw" role="3clF46">
+                          <property role="TrG5h" value="projectFile" />
+                          <node concept="3uibUv" id="3Fhll9KNGdx" role="1tU5fm">
+                            <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                          </node>
+                          <node concept="2AHcQZ" id="3Fhll9KNGdy" role="2AJF6D">
+                            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                          </node>
+                        </node>
+                        <node concept="3uibUv" id="3Fhll9KNGdz" role="3clF45">
+                          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                        </node>
+                        <node concept="3Tm1VV" id="3Fhll9KNGd$" role="1B3o_S" />
+                        <node concept="2AHcQZ" id="3Fhll9KNGd_" role="2AJF6D">
+                          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                        </node>
+                        <node concept="2AHcQZ" id="3Fhll9KNGdE" role="2AJF6D">
+                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                        </node>
+                        <node concept="3clFbS" id="3Fhll9KNGdG" role="3clF47">
+                          <node concept="3cpWs6" id="3Fhll9KNGJ8" role="3cqZAp">
+                            <node concept="37vLTw" id="3Fhll9KNHaI" role="3cqZAk">
+                              <ref role="3cqZAo" node="2qFJdjDBJ$r" resolve="myProject" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFb_" id="3Fhll9KNGdK" role="jymVt">
+                        <property role="1EzhhJ" value="false" />
+                        <property role="2aFKle" value="false" />
+                        <property role="TrG5h" value="closeProject" />
+                        <node concept="3Tm1VV" id="3Fhll9KNGdL" role="1B3o_S" />
+                        <node concept="3cqZAl" id="3Fhll9KNGdM" role="3clF45" />
+                        <node concept="37vLTG" id="3Fhll9KNGdN" role="3clF46">
+                          <property role="TrG5h" value="project" />
+                          <node concept="3uibUv" id="3Fhll9KNGdO" role="1tU5fm">
+                            <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                          </node>
+                          <node concept="2AHcQZ" id="3Fhll9KNGdP" role="2AJF6D">
+                            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                          </node>
+                        </node>
+                        <node concept="2AHcQZ" id="3Fhll9KNGdU" role="2AJF6D">
+                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                        </node>
+                        <node concept="3clFbS" id="3Fhll9KNGdW" role="3clF47">
+                          <node concept="3SKdUt" id="3Fhll9KNGEm" role="3cqZAp">
+                            <node concept="3SKdUq" id="3Fhll9KNGEq" role="3SKWNk">
+                              <property role="3SKdUp" value="no-op, do not allow to close project" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2tJIrI" id="3Fhll9KNHkz" role="jymVt" />
+                    </node>
                   </node>
                 </node>
               </node>

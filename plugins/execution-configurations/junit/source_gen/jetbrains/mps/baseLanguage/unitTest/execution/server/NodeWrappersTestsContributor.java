@@ -7,6 +7,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.lang.test.runtime.LightEnvironment;
+import org.jetbrains.annotations.NotNull;
+import java.io.File;
 import org.junit.runner.Request;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -16,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -35,7 +36,20 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     myTestNodes = testNodes;
     myProject = mpsProject;
     myClassloaderManager = mpsProject.getComponent(ClassLoaderManager.class);
-    myRunnerBuilder = new PushEnvironmentRunnerBuilder(new LightEnvironment());
+    // FIXME need a LightEnvironment cons to pass Platform. Do this once start using Environment.getPlatform in JUnit tests (i.e. where LightEnvironment is consumed) 
+    myRunnerBuilder = new PushEnvironmentRunnerBuilder(new LightEnvironment() {
+
+      @NotNull
+      @Override
+      public Project openProject(@NotNull File projectFile) {
+        return myProject;
+      }
+      @Override
+      public void closeProject(@NotNull Project project) {
+        // no-op, do not allow to close project 
+      }
+
+    });
   }
 
   @Override
