@@ -411,6 +411,7 @@
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
     </language>
@@ -8932,54 +8933,98 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6tKhx9Vlove" role="3cqZAp">
-          <node concept="3cpWsn" id="6tKhx9Vlovf" role="3cpWs9">
-            <property role="TrG5h" value="list" />
-            <node concept="_YKpA" id="6tKhx9Vlov6" role="1tU5fm">
-              <node concept="3uibUv" id="6tKhx9Vlov9" role="_ZDj9">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        <node concept="3SKdUt" id="7gQSnkM0aNg" role="3cqZAp">
+          <node concept="3SKdUq" id="7gQSnkM0aNi" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Look, this is stupid. First, we collect library location as files, then translate them to toURI().toURL() only to get File path back here." />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7gQSnkM0Mr6" role="3cqZAp">
+          <node concept="3cpWsn" id="7gQSnkM0Mrc" role="3cpWs9">
+            <property role="TrG5h" value="rv" />
+            <node concept="_YKpA" id="7gQSnkM0Mre" role="1tU5fm">
+              <node concept="17QB3L" id="7gQSnkM0N5A" role="_ZDj9" />
+            </node>
+            <node concept="2ShNRf" id="7gQSnkM0N6X" role="33vP2m">
+              <node concept="Tc6Ow" id="7gQSnkM125h" role="2ShVmc">
+                <node concept="17QB3L" id="7gQSnkM12B3" role="HW$YZ" />
+                <node concept="2OqwBi" id="7gQSnkM13NA" role="3lWHg$">
+                  <node concept="37vLTw" id="7gQSnkM12VQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
+                  </node>
+                  <node concept="34oBXx" id="7gQSnkM15Pc" role="2OqNvi" />
+                </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="6tKhx9Vlovg" role="33vP2m">
-              <node concept="2OqwBi" id="6tKhx9Vlovh" role="2Oq$k0">
-                <node concept="37vLTw" id="6tKhx9Vlovi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
-                </node>
-                <node concept="3$u5V9" id="6tKhx9Vlovj" role="2OqNvi">
-                  <node concept="1bVj0M" id="6tKhx9Vlovk" role="23t8la">
-                    <node concept="3clFbS" id="6tKhx9Vlovl" role="1bW5cS">
-                      <node concept="3clFbF" id="6tKhx9Vlovm" role="3cqZAp">
-                        <node concept="2OqwBi" id="6tKhx9Vlovn" role="3clFbG">
-                          <node concept="37vLTw" id="6tKhx9Vlovo" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6tKhx9Vlovq" resolve="it" />
+          </node>
+        </node>
+        <node concept="2Gpval" id="7gQSnkM0LvW" role="3cqZAp">
+          <node concept="2GrKxI" id="7gQSnkM0LvY" role="2Gsz3X">
+            <property role="TrG5h" value="u" />
+          </node>
+          <node concept="37vLTw" id="7gQSnkM0LXd" role="2GsD0m">
+            <ref role="3cqZAo" node="6tKhx9VkQhv" resolve="urls" />
+          </node>
+          <node concept="3clFbS" id="7gQSnkM0Lw2" role="2LFqv$">
+            <node concept="3SKdUt" id="7gQSnkM0f1J" role="3cqZAp">
+              <node concept="3SKdUq" id="7gQSnkM0f1L" role="3SKWNk">
+                <property role="3SKdUp" value="NOTE, URL.getPath() gives URL segment with escaped characters (e.g. %20), therefore we resort to toURI to get them unescaped." />
+              </node>
+            </node>
+            <node concept="SfApY" id="7gQSnkM15QS" role="3cqZAp">
+              <node concept="3clFbS" id="7gQSnkM15QT" role="SfCbr">
+                <node concept="3clFbF" id="7gQSnkM15RF" role="3cqZAp">
+                  <node concept="2OqwBi" id="7gQSnkM16Bj" role="3clFbG">
+                    <node concept="37vLTw" id="7gQSnkM15RE" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7gQSnkM0Mrc" resolve="rv" />
+                    </node>
+                    <node concept="TSZUe" id="7gQSnkM18Fj" role="2OqNvi">
+                      <node concept="2OqwBi" id="7gQSnkM1alc" role="25WWJ7">
+                        <node concept="2OqwBi" id="7gQSnkM190Y" role="2Oq$k0">
+                          <node concept="2GrUjf" id="7gQSnkM18NQ" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="7gQSnkM0LvY" resolve="u" />
                           </node>
-                          <node concept="liA8E" id="6tKhx9Vlovp" role="2OqNvi">
-                            <ref role="37wK5l" to="zf81:~URL.getPath():java.lang.String" resolve="getPath" />
+                          <node concept="liA8E" id="7gQSnkM19Fu" role="2OqNvi">
+                            <ref role="37wK5l" to="zf81:~URL.toURI():java.net.URI" resolve="toURI" />
                           </node>
                         </node>
+                        <node concept="liA8E" id="7gQSnkM1bON" role="2OqNvi">
+                          <ref role="37wK5l" to="zf81:~URI.getPath():java.lang.String" resolve="getPath" />
+                        </node>
                       </node>
-                    </node>
-                    <node concept="Rh6nW" id="6tKhx9Vlovq" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="6tKhx9Vlovr" role="1tU5fm" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="ANE8D" id="6tKhx9Vlovs" role="2OqNvi" />
+              <node concept="TDmWw" id="7gQSnkM15QU" role="TEbGg">
+                <node concept="3cpWsn" id="7gQSnkM15QV" role="TDEfY">
+                  <property role="TrG5h" value="ex" />
+                  <node concept="3uibUv" id="7gQSnkM1eTa" role="1tU5fm">
+                    <ref role="3uigEE" to="zf81:~URISyntaxException" resolve="URISyntaxException" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="7gQSnkM15QX" role="TDEfX">
+                  <node concept="RRSsy" id="7gQSnkM1ewV" role="3cqZAp">
+                    <property role="RRSoG" value="error" />
+                    <node concept="Xl_RD" id="7gQSnkM1ewX" role="RRSoy">
+                      <property role="Xl_RC" value="Bad library location" />
+                    </node>
+                    <node concept="37vLTw" id="7gQSnkM1ewZ" role="RRSow">
+                      <ref role="3cqZAo" node="7gQSnkM15QV" resolve="ex" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="6tKhx9VkPU8" role="3cqZAp">
-          <node concept="37vLTw" id="6tKhx9Vlovt" role="3cqZAk">
-            <ref role="3cqZAo" node="6tKhx9Vlovf" resolve="list" />
+          <node concept="37vLTw" id="7gQSnkM1dBx" role="3cqZAk">
+            <ref role="3cqZAo" node="7gQSnkM0Mrc" resolve="rv" />
           </node>
         </node>
       </node>
       <node concept="_YKpA" id="6tKhx9VlfXo" role="3clF45">
-        <node concept="3uibUv" id="6tKhx9Vlp1C" role="_ZDj9">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-        </node>
+        <node concept="17QB3L" id="7gQSnkM1iR0" role="_ZDj9" />
       </node>
     </node>
     <node concept="2LYoGM" id="1_4F7FNqn4H" role="2LYoGV">

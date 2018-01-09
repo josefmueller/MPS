@@ -27,6 +27,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.net.URL;
 import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
+import java.net.URISyntaxException;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
@@ -154,12 +155,19 @@ public class JUnit_Command {
   private static List<String> collectFromLibFolder() {
     List<URL> urls = ListSequence.fromList(new ArrayList<URL>());
     ClassloaderUtil.addIDEALibraries(urls);
-    List<String> list = ListSequence.fromList(urls).select(new ISelector<URL, String>() {
-      public String select(URL it) {
-        return it.getPath();
+    // FIXME Look, this is stupid. First, we collect library location as files, then translate them to toURI().toURL() only to get File path back here. 
+    List<String> rv = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(urls).count()));
+    for (URL u : ListSequence.fromList(urls)) {
+      // NOTE, URL.getPath() gives URL segment with escaped characters (e.g. %20), therefore we resort to toURI to get them unescaped. 
+      try {
+        ListSequence.fromList(rv).addElement(u.toURI().getPath());
+      } catch (URISyntaxException ex) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Bad library location", ex);
+        }
       }
-    }).toListSequence();
-    return list;
+    }
+    return rv;
   }
   private static List<String> collectFromPreInstalledPluginsFolder() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
