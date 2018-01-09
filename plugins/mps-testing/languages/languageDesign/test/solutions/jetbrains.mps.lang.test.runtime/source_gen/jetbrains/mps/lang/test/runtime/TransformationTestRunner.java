@@ -23,18 +23,9 @@ import jetbrains.mps.project.ProjectManager;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
-import jetbrains.mps.project.PathMacrosProvider;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.core.tool.environment.util.CanonicalPath;
-import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
-import jetbrains.mps.project.PathMacros;
 
 public class TransformationTestRunner implements TestRunner {
   private static final Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-  private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
   protected final Environment myEnvironment;
@@ -49,7 +40,6 @@ public class TransformationTestRunner implements TestRunner {
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     clearSystemClipboard();
-    readSystemMacro();
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
     myEnvironment.flushAllEvents();
@@ -87,7 +77,6 @@ public class TransformationTestRunner implements TestRunner {
     }
     return modelDescriptor;
   }
-
 
   protected Project openTestProject(String projectPathName, boolean reopenProject) {
     // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
@@ -130,27 +119,4 @@ public class TransformationTestRunner implements TestRunner {
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
     clipboard.setContents(EMPTY_CLIPBOARD_CONTENT, EMPTY_CLIPBOARD_CONTENT);
   }
-
-  /**
-   * to enable such macros as ${charisma}; see MPS-10568
-   */
-  private static PathMacrosProvider readSystemMacro() {
-    final Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
-    for (IMapping<Object, Object> property : MapSequence.fromMap(System.getProperties())) {
-      if (property.key() instanceof String && property.value() instanceof String) {
-        String key = (String) property.key();
-        String value = (String) property.value();
-        if ((key != null && key.length() > 0) && key.startsWith(PATH_MACRO_PREFIX)) {
-          CanonicalPath path = new CanonicalPath(value);
-          if (path.isValidDirectory()) {
-            MapSequence.fromMap(macros).put(key.substring(PATH_MACRO_PREFIX.length()), path.getValue());
-          }
-        }
-      }
-    }
-    MapPathMacrosProvider provider = new MapPathMacrosProvider(macros);
-    PathMacros.getInstance().addMacrosProvider(provider);
-    return provider;
-  }
-
 }

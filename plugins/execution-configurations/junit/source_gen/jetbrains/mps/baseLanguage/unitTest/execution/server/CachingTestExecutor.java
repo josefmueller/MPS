@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.util.test.CachesUtil;
 import java.io.IOException;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 
 public class CachingTestExecutor extends DefaultTestExecutor {
   public CachingTestExecutor(TestsContributor testsContributor) {
@@ -23,7 +21,7 @@ public class CachingTestExecutor extends DefaultTestExecutor {
    * Called when ITestCase is executed (except for BTestCase)
    */
   public static void main(String[] args) throws IOException {
-    Environment env = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
+    Environment env = DefaultTestExecutor.startIdea();
     CachingTestExecutor executor = new CachingTestExecutor(new CommandLineTestsContributor(env, args));
     try {
       executor.run();
