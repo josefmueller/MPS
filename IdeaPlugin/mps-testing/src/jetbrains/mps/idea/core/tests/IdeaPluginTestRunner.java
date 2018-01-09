@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,10 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.runner.Runner;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
@@ -62,7 +56,7 @@ public class IdeaPluginTestRunner extends Suite {
       Reference<Throwable> error = new Reference<>();
       mpsFixture.getModelAccess().executeCommandInEDT(() -> {
         try {
-          result.addAll(loadTestRunners((MPSProject) mpsFixture.getMPSProject()));
+          result.addAll(loadTestRunners((MPSProject) mpsFixture.getMPSProject(), builder));
         } catch (Exception e) {
           error.set(e);
         }
@@ -80,79 +74,17 @@ public class IdeaPluginTestRunner extends Suite {
     return result;
   }
 
-  private static List<Runner> loadTestRunners(MPSProject mpsProject) throws Exception {
+  private static List<Runner> loadTestRunners(MPSProject mpsProject, RunnerBuilder builder) throws Exception {
+    EditorTestLoader tl = new EditorTestLoader(mpsProject, builder);
     String modelNames = System.getProperty(MODEL_NAMES_PROPERTY);
     if (modelNames != null) {
-      return loadTestClassesFromModels(mpsProject, modelNames);
+      return tl.loadTestClassesFromModels(modelNames).getResult();
     }
     String moduleNames = System.getProperty(MODULE_NAMES_PROPERTY);
     if (moduleNames != null) {
-      return loadTestClassesFromModules(mpsProject, moduleNames);
+      return tl.loadTestClassesFromModules(moduleNames).getResult();
     }
     return Collections.emptyList();
   }
 
-  private static List<Runner> loadTestClassesFromModules(MPSProject mpsProject, String moduleNames) throws Exception {
-    List<Runner> result = new ArrayList<>();
-    for (String nextModuleName : moduleNames.split(",")) {
-      ReloadableModule module = findModule(mpsProject, nextModuleName);
-      if (module == null) {
-        continue;
-      }
-      for (SModel model : module.getModels()) {
-        for (SNode root : model.getRootNodes()) {
-          if (isEditorTestCase(root)) {
-            result.add(createEditorTestRunner(root, model, module, mpsProject));
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, MPSProject mpsProject) throws Exception {
-    // FIXME likely, need an instance of PushEnvironmentRunnerBuilder, initialized with LightEnvironment, just need to sort out
-    //       dependencies first. PERB is from [testbench], which is likely may be available here through [mps-test] dependency
-    //       LightEnvironment is from j.m.lang.test.runtime, and, perhaps, need all this crappy logic to load it through proper module CL.
-    //       However, it's not obvious why could not LE reside in [testbench] or even [mps-environment]; then, there'd be no need in CL management.
-    //       Left as is for later consideration just to move forward with regular MPS tests
-    Class<?> cls = module.getOwnClass(sModel.getName().getLongName() + "." + root.getName() + "_Test"); //NON-NLS
-    ReloadableModule runtimeModule = (ReloadableModule) mpsProject.getRepository().getModule(LANG_TEST_RUNTIME);
-    Class<?> junitRunnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TransformationTestInitJUnitRunner");
-    Class<?> testRunnerInterface = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TestRunner");
-    Class<?> testRunnerImplClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.TransformationTestRunnerPlugin");
-    Object testRunnerImpl = testRunnerImplClass.getConstructor(MPSProject.class).newInstance(mpsProject);
-    return (Runner) junitRunnerClass.getConstructor(Class.class, testRunnerInterface).newInstance(cls, testRunnerImpl);
-  }
-
-  private static List<Runner> loadTestClassesFromModels(MPSProject mpsProject, String modelNames) throws Exception {
-    List<Runner> result = new ArrayList<>();
-    String[] modelRefs = modelNames.split(",");
-    for (String modelRef : modelRefs) {
-      SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
-      SModel model = modelReference.resolve(mpsProject.getRepository());
-      if (model != null && model.getModule() instanceof ReloadableModule) {
-        ReloadableModule module = (ReloadableModule) model.getModule();
-        for (SNode root : model.getRootNodes()) {
-          if (isEditorTestCase(root)) {
-            result.add(createEditorTestRunner(root, model, module, mpsProject));
-          }
-        }
-      }
-    }
-    return result;
-  }
-
-  private static boolean isEditorTestCase(SNode root) {
-    return "EditorTestCase".equals(root.getConcept().getName()); //NON-NLS
-  }
-
-  private static ReloadableModule findModule(MPSProject mpsProject, String moduleName) {
-    for (SModule sModule : mpsProject.getRepository().getModules()) {
-      if (moduleName.equals(sModule.getModuleName()) && sModule instanceof ReloadableModule) {
-        return (ReloadableModule) sModule;
-      }
-    }
-    return null;
-  }
 }

@@ -21,5 +21,7 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mps-environment" level="project" />
+    <orderEntry type="library" name="mps-test" level="project" />
   </component>
 </module>

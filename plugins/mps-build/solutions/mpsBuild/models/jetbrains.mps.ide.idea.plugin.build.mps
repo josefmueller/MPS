@@ -1962,6 +1962,12 @@
       <node concept="nCB5N" id="1mh_ZUPoA7a" role="nCB5Z">
         <ref role="nCB5Y" to="ffeo:16Vg0jOco3P" resolve="mps-platform" />
       </node>
+      <node concept="nCB5N" id="1OM_PD9ml1S" role="nCB5Z">
+        <ref role="nCB5Y" to="ffeo:1nB28rXacP" resolve="mps-environment" />
+      </node>
+      <node concept="nCB5N" id="1OM_PD9ml26" role="nCB5Z">
+        <ref role="nCB5Y" to="ffeo:1tWbYFNh9Av" resolve="mps-test" />
+      </node>
       <node concept="nCB5N" id="1mh_ZUPoI$W" role="nCB5Z">
         <ref role="nCB5Y" node="16Vg0jOdbWA" resolve="mps-plugin-core" />
       </node>
