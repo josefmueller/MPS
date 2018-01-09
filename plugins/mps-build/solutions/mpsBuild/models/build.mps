@@ -3846,6 +3846,12 @@
             <ref role="3bR37D" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
           </node>
         </node>
+        <node concept="1SiIV0" id="3QAEObd_Knm" role="3bR37C">
+          <node concept="3bR9La" id="3QAEObd_Knn" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1xb0AuwN7WS" resolve="JUnit" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="1xb0AuwMYDt" role="2G$12L">
         <property role="BnDLt" value="true" />
