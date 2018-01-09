@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.tool.environment.AbstractEnvironment" file="AbstractEnvironment.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.environment.CompositeProjectStrategy" file="CompositeProjectStrategy.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />

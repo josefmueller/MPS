@@ -92,6 +92,9 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
 
       // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
       String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
+      if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
+        throw new IllegalStateException("You shall specify project path with TestInfo root.");
+      }
       File projectToOpen = new File(expandedProjectPath);
       Project p = myEnvironment.openProject(projectToOpen);
       if (reOpenProject) {

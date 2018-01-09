@@ -406,21 +406,6 @@
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="org.junit.runners.BlockJUnit4ClassRunner" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" file="TransformationTestLightRunner.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightEnvironment" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
     <classNode dependClassName="java.awt.GraphicsEnvironment" />
     <classNode dependClassName="java.awt.Toolkit" />

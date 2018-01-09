@@ -118,12 +118,16 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" file="NodeWrappersTestsContributor.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -132,13 +136,16 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.InProcessExecutionFilter" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleIsNotLoadableException" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightEnvironment" />
     <classNode dependClassName="jetbrains.mps.module.ModuleClassLoaderIsNullException" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.AbstractEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

@@ -6,9 +6,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
-import jetbrains.mps.lang.test.runtime.LightEnvironment;
-import org.jetbrains.annotations.NotNull;
-import java.io.File;
 import org.junit.runner.Request;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -18,10 +15,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runner.Description;
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.tool.environment.AbstractEnvironment;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.MPSCoreComponents;
+import java.io.File;
+import jetbrains.mps.project.ProjectManager;
+import jetbrains.mps.ide.ThreadUtils;
+import java.io.IOException;
 
 /**
  * Knows hot to launch TransformationTest with TestRunner suited for in-process test execution
@@ -36,20 +41,7 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     myTestNodes = testNodes;
     myProject = mpsProject;
     myClassloaderManager = mpsProject.getComponent(ClassLoaderManager.class);
-    // FIXME need a LightEnvironment cons to pass Platform. Do this once start using Environment.getPlatform in JUnit tests (i.e. where LightEnvironment is consumed) 
-    myRunnerBuilder = new PushEnvironmentRunnerBuilder(new LightEnvironment() {
-
-      @NotNull
-      @Override
-      public Project openProject(@NotNull File projectFile) {
-        return myProject;
-      }
-      @Override
-      public void closeProject(@NotNull Project project) {
-        // no-op, do not allow to close project 
-      }
-
-    });
+    myRunnerBuilder = new PushEnvironmentRunnerBuilder(new NodeWrappersTestsContributor.InProcessEnvironment());
   }
 
   @Override
@@ -108,5 +100,55 @@ public class NodeWrappersTestsContributor implements TestsContributor {
   private static SModule getModuleByNode(SNode testNode) {
     final SModel model = SNodeOperations.getModel(testNode);
     return model.getModule();
+  }
+
+  /**
+   * Access existing runtime instance through Environment API. Looks up test projects among active, doesn't close any.
+   */
+  private static class InProcessEnvironment extends AbstractEnvironment {
+    /*package*/ InProcessEnvironment() {
+      super(ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getPlatform());
+    }
+
+    @NotNull
+    @Override
+    public Project openProject(@NotNull File projectFile) {
+      for (Project project : ProjectManager.getInstance().getOpenedProjects()) {
+        if (projectHasPath(project, projectFile)) {
+          return project;
+        }
+      }
+      throw new IllegalStateException(String.format("Test project '%s' is not open.", projectFile));
+    }
+
+    @Override
+    public void closeProject(@NotNull Project project) {
+      // no-op, do not allow to close project 
+    }
+
+
+    @Override
+    public void flushAllEvents() {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+        }
+      });
+    }
+
+    private static boolean projectHasPath(Project project, File path) {
+      File projectFile = project.getProjectFile();
+      if (projectFile == null) {
+        return false;
+      }
+      try {
+        String projectPath = projectFile.getCanonicalPath();
+        String testedPath = path.getCanonicalPath();
+        return projectPath.equals(testedPath);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      return false;
+    }
+
   }
 }
