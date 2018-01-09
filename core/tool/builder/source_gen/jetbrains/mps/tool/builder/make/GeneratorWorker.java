@@ -72,7 +72,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
 
   @Override
   protected Environment createEnvironment() {
-    Environment environment = new MpsEnvironment(createEnvironmentConfig(myWhatToDo));
+    MpsEnvironment environment = new MpsEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
   }

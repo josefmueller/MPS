@@ -11,7 +11,6 @@ import java.io.IOException;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class DefaultTestExecutor extends JUnitTestExecutor {
   public static final int EXIT_CODE_FOR_EXCEPTION = -12345;
@@ -76,10 +75,6 @@ public class DefaultTestExecutor extends JUnitTestExecutor {
   }
 
   protected void exit() {
-    Environment env = EnvironmentContainer.get();
-    if (env != null) {
-      env.dispose();
-    }
     if (getExecutionError() != null) {
       System.exit(EXIT_CODE_FOR_EXCEPTION);
     } else {

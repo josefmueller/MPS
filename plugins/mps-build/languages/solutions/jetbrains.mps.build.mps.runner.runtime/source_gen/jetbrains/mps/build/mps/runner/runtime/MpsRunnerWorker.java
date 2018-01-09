@@ -47,7 +47,7 @@ public class MpsRunnerWorker extends MpsWorker {
 
   @Override
   protected Environment createEnvironment() {
-    Environment environment = new IdeaEnvironment(createEnvironmentConfig(myWhatToDo));
+    IdeaEnvironment environment = new IdeaEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
   }

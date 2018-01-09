@@ -43,7 +43,7 @@ public class MigrationWorker extends MpsWorker {
     EnvironmentConfig cfg = createEnvironmentConfig(myWhatToDo);
     cfg.addPlugin("migration", MigrationWorker.MIGRATION_PLUGIN);
 
-    Environment environment = new IdeaEnvironment(cfg);
+    IdeaEnvironment environment = new IdeaEnvironment(cfg);
     environment.init();
 
     return environment;

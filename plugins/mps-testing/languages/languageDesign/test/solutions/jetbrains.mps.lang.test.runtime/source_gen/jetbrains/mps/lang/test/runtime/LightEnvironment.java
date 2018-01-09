@@ -41,10 +41,6 @@ public class LightEnvironment implements Environment {
     return null;
   }
 
-  @Override
-  public void init() {
-  }
-
   @NotNull
   @Override
   public Project openProject(@NotNull File projectFile) {

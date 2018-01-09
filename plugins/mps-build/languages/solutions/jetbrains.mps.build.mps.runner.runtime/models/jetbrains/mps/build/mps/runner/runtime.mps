@@ -420,8 +420,8 @@
         <node concept="3cpWs8" id="4Ncgb9xKDUx" role="3cqZAp">
           <node concept="3cpWsn" id="4Ncgb9xKDUy" role="3cpWs9">
             <property role="TrG5h" value="environment" />
-            <node concept="3uibUv" id="4Ncgb9xKDUz" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+            <node concept="3uibUv" id="2LhbskiyZ1f" role="1tU5fm">
+              <ref role="3uigEE" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
             </node>
             <node concept="2ShNRf" id="63P3E8$lRHx" role="33vP2m">
               <node concept="1pGfFk" id="63P3E8$lSzq" role="2ShVmc">
@@ -442,7 +442,7 @@
               <ref role="3cqZAo" node="4Ncgb9xKDUy" resolve="environment" />
             </node>
             <node concept="liA8E" id="4Ncgb9xKDUE" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk4TkZ" resolve="init" />
+              <ref role="37wK5l" to="cky9:3eUNqOk7mHv" resolve="init" />
             </node>
           </node>
         </node>

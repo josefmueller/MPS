@@ -318,8 +318,8 @@
         <node concept="3cpWs8" id="7cOEBlPTW5X" role="3cqZAp">
           <node concept="3cpWsn" id="7cOEBlPTW5Y" role="3cpWs9">
             <property role="TrG5h" value="environment" />
-            <node concept="3uibUv" id="5kpQnuAwgHV" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+            <node concept="3uibUv" id="2LhbskiyHRa" role="1tU5fm">
+              <ref role="3uigEE" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
             </node>
             <node concept="2ShNRf" id="5kpQnuAv7PE" role="33vP2m">
               <node concept="1pGfFk" id="1oo0A63GGet" role="2ShVmc">
@@ -337,7 +337,7 @@
               <ref role="3cqZAo" node="7cOEBlPTW5Y" resolve="environment" />
             </node>
             <node concept="liA8E" id="ZOLfRIiSa8" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk4TkZ" resolve="init" />
+              <ref role="37wK5l" to="cky9:3eUNqOk7mHv" resolve="init" />
             </node>
           </node>
         </node>
