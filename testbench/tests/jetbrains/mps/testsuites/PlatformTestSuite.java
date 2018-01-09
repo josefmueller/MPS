@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.testsuites;
 
 import jetbrains.mps.migration.MigrationsTest;
+import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -55,6 +56,6 @@ public class PlatformTestSuite extends OutputWatchingTestSuite {
   public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin().withMigrationPlugin());
 
   public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
-    super(aClass, builder);
+    super(aClass, new PushEnvironmentRunnerBuilder(ourEnvironment, builder));
   }
 }

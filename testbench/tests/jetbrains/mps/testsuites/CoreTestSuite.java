@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.testsuites;
 
+import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
@@ -82,6 +83,6 @@ public class CoreTestSuite extends OutputWatchingTestSuite {
   public static final Environment ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
   public CoreTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
-    super(aClass, builder);
+    super(aClass, new PushEnvironmentRunnerBuilder(ourEnvironment, builder));
   }
 }
