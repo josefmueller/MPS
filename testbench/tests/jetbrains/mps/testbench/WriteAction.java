@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,16 @@ import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
 
+import java.util.function.Supplier;
+
 public class WriteAction implements MethodRule {
-  private final ModelAccess myModelAccess;
+  private final Supplier<ModelAccess> myModelAccess;
 
   public WriteAction(ModelAccess modelAccess) {
+    this(() -> modelAccess);
+  }
+
+  public WriteAction(Supplier<ModelAccess> modelAccess) {
     myModelAccess = modelAccess;
   }
 
@@ -32,7 +38,7 @@ public class WriteAction implements MethodRule {
       public void evaluate() throws Throwable {
         final Throwable[] t = {null};
 
-        myModelAccess.runWriteAction(new Runnable() {
+        myModelAccess.get().runWriteAction(new Runnable() {
           public void run() {
             try {
               base.evaluate();

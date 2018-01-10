@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,14 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.vfs.impl.IoFileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -53,19 +51,14 @@ import java.util.concurrent.TimeUnit;
  * Since model under test is not attached to a repository, no model access control is in place.
  * @author Artem Tikhomirov
  */
-public class StubModelLazyLoadStressTest {
-  private static Environment ourPlatform;
+public class StubModelLazyLoadStressTest implements EnvironmentAware {
   private static final boolean DEBUG = Boolean.FALSE.booleanValue();
 
-  @BeforeClass
-  public static void setUp() {
-    ourPlatform = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-  }
-
-  @AfterClass
-  public static void tearDown() {
-    ourPlatform.release();
-    ourPlatform = null;
+  /**
+   * @param ignored bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment ignored) {
   }
 
   private static void trace(String message) {

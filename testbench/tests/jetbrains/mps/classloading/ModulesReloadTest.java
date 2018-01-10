@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Assume;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -47,8 +48,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModulesReloadTest extends ModuleMpsTest {
-  private static FacetFactory ourOldFacetFactory;
-  private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
+  private FacetFactory myOldFacetFactory;
+  private ClassLoaderManager myManager;
 
   private static final String CLASS_TO_LOAD = "Test";
   private static final File TEMP_DIR = createTempDir();
@@ -72,24 +73,36 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @BeforeClass
   public static void setUp() {
     new TestClassFileCreator(CLASS_TO_LOAD, TEMP_DIR_PATH).create();
-    attachTestJavaFacetFactory();
   }
 
   @AfterClass
   public static void tearDown() {
     FileUtil.delete(TEMP_DIR);
-    detachTestJavaFacetFactory();
   }
 
-  private static void attachTestJavaFacetFactory() {
-    ourOldFacetFactory = FacetsFacade.getInstance().getFacetFactory(JavaModuleFacet.FACET_TYPE);
-    FacetsFacade.getInstance().removeFactory(ourOldFacetFactory);
-    FacetsFacade.getInstance().addFactory(JavaModuleFacet.FACET_TYPE, FACET_FACTORY);
+  @Before
+  public void initClassloaderManager() {
+    myManager = getPlatform().findComponent(ClassLoaderManager.class);
   }
 
-  private static void detachTestJavaFacetFactory() {
-    FacetsFacade.getInstance().removeFactory(FACET_FACTORY);
-    FacetsFacade.getInstance().addFactory(JavaModuleFacet.FACET_TYPE, ourOldFacetFactory);
+  private FacetsFacade getFacetFacade() {
+    // FIXME would like to use getPlatform().findComponent(FacetsFacade.class) but can't as it's not a CoreComponent (FacetsRegistry is).
+    return FacetsFacade.getInstance();
+  }
+
+  @Before
+  public void attachTestJavaFacetFactory() {
+    FacetsFacade facetsFacade = getFacetFacade();
+    myOldFacetFactory = facetsFacade.getFacetFactory(JavaModuleFacet.FACET_TYPE);
+    facetsFacade.removeFactory(myOldFacetFactory);
+    facetsFacade.addFactory(JavaModuleFacet.FACET_TYPE, FACET_FACTORY);
+  }
+
+  @After
+  public void detachTestJavaFacetFactory() {
+    FacetsFacade facetsFacade = getFacetFacade();
+    facetsFacade.removeFactory(FACET_FACTORY);
+    facetsFacade.addFactory(JavaModuleFacet.FACET_TYPE, myOldFacetFactory);
   }
 
   @Test

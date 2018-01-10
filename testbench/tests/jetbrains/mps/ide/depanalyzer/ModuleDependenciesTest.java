@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class ModuleDependenciesTest extends ModuleMpsTest {
   @Rule
-  public WriteAction wa = new WriteAction(getModelAccess());
+  public WriteAction wa = new WriteAction(() -> getModelAccess()); // Environment instance is not available the moment @Rule value is consulted, hence Supplier.
 
   private List<DepLink> findPaths(DepLink root, SModule target) {
     final SModuleReference targetRef = target.getModuleReference();

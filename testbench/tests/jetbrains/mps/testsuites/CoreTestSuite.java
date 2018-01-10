@@ -75,7 +75,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.repo.RepoListenerTest.class,
     jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class,
-    jetbrains.mps.workbench.ProjectMpsTest.class,
+    jetbrains.mps.workbench.ProjectOpenCloseTest.class,
     jetbrains.mps.nodeEditor.EditorTestSuite.class
 })
 public class CoreTestSuite extends OutputWatchingTestSuite {

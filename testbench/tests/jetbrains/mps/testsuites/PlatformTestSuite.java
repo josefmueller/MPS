@@ -46,7 +46,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
     jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
-    jetbrains.mps.workbench.ProjectPlatformTest.class,
+    jetbrains.mps.workbench.ProjectOpenCloseTest.class,
     jetbrains.mps.ide.ModuleIDETests.class,
     jetbrains.mps.ide.FSTests.class,
     MigrationsTest.class

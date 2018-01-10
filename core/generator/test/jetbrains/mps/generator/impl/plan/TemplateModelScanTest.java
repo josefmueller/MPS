@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,11 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -35,20 +33,19 @@ import static org.hamcrest.CoreMatchers.equalTo;
 /**
  * @author Artem Tikhomirov
  */
-public class TemplateModelScanTest {
-  private static Environment ourEnvironment;
+public class TemplateModelScanTest implements EnvironmentAware {
+  private Environment ourEnvironment;
 
   @Rule
   public final ErrorCollector myErrors = new ErrorCollector();
 
-  @BeforeClass
-  public static void setup() {
-    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-  }
 
-  @AfterClass
-  public static void tearDown() {
-    ourEnvironment.release();
+  /**
+   * @param env Bare MPS Environment suffice.
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    ourEnvironment = env;
   }
 
   /**

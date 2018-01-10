@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.testbench;
 
-import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -24,6 +24,8 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -32,25 +34,35 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.After;
+import org.junit.Before;
 
 /**
- * Currently represents CoreMpsTest, which creates some platform to operate with modules
+ * Base test to operate with modules.
  * Suggests methods to create Solution, Language, DevKit.
  * Extend it to gain its toolkit to check module-related functional.
  *
  * for example look at
  * @see jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest
  */
-public class ModuleMpsTest extends CoreMpsTest {
+public class ModuleMpsTest implements EnvironmentAware {
   private final static Logger LOG = LogManager.getLogger(ModuleMpsTest.class);
-  private final TestModuleFactory myTestModuleFactory;
+  private TestModuleFactory myTestModuleFactory;
+  private Environment myEnvironment;
 
   public ModuleMpsTest() {
-    myTestModuleFactory = new TestModuleFactoryBase(getTestRepository());
   }
 
-  public ModuleMpsTest(@NotNull TestModuleFactory testModuleFactory) {
-    myTestModuleFactory = testModuleFactory;
+  /**
+   * @param env bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
+  }
+
+  @Before
+  public void instantiateModuleFactory() {
+    myTestModuleFactory = new TestModuleFactoryBase(getTestRepository());
   }
 
   @After
@@ -65,7 +77,11 @@ public class ModuleMpsTest extends CoreMpsTest {
    */
   @NotNull
   protected final SRepositoryExt getTestRepository() {
-    return ENV.getPlatform().findComponent(MPSModuleRepository.class);
+    return getPlatform().findComponent(MPSModuleRepository.class);
+  }
+
+  protected final Platform getPlatform() {
+    return myEnvironment.getPlatform();
   }
 
   protected final ModelAccess getModelAccess() {

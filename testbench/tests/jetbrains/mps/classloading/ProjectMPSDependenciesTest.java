@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,22 +15,22 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -49,15 +49,20 @@ import java.util.Set;
  *
  * TODO rewrite using the standard way to collect multiple errors
  */
-public class ProjectMPSDependenciesTest extends CoreMpsTest {
+public class ProjectMPSDependenciesTest implements EnvironmentAware {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
+
+  private Environment myEnvironment;
 
   @Rule
   public final ErrorCollector myErrors = new ErrorCollector();
 
-  @BeforeClass
-  public static void beforeTest(){
-    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+  /**
+   * @param env bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
   }
 
   @Test
@@ -94,7 +99,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   }
 
   private void addContributor(LibraryContributor contributor) {
-    ENV.getPlatform().findComponent(LibraryInitializer.class).load(Collections.singletonList(contributor));
+    getPlatform().findComponent(LibraryInitializer.class).load(Collections.singletonList(contributor));
   }
 
   private void checkDeps(final String levelIndicator) {
@@ -111,10 +116,14 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   }
 
   private ModulesWatcher getModulesWatcher() {
-    return ENV.getPlatform().findComponent(ClassLoaderManager.class).getModulesWatcher();
+    return getPlatform().findComponent(ClassLoaderManager.class).getModulesWatcher();
   }
 
   private SRepository getRepository() {
-    return ENV.getPlatform().findComponent(MPSModuleRepository.class);
+    return getPlatform().findComponent(MPSModuleRepository.class);
+  }
+
+  private Platform getPlatform() {
+    return myEnvironment.getPlatform();
   }
 }

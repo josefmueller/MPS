@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.compile;
 
-import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -23,36 +22,45 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Reference;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class EclipseJavaCompilerTest extends CoreMpsTest {
-  private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
-  @NotNull private static Project ourProject;
-  @NotNull private static Solution ourSolution;
+public class EclipseJavaCompilerTest implements EnvironmentAware {
+  @NotNull private Project myProject;
+  @NotNull private Solution mySolution;
+  private Environment myEnvironment;
 
-  @BeforeClass
-  public static void setUp() {
-    ourProject = openProject(PROJECT_PATH);
-    ourSolution = getSolution(ourProject, "TestCompileSolution");
+
+  /**
+   * @param env bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
   }
 
-  @AfterClass
-  public static void tearDown() {
-    if (ourProject != null) {
-      ourProject.dispose();
-    }
+  @Before
+  public void setUp() {
+    myProject = myEnvironment.openProject(new File("testbench/modules/testCompilation"));
+    mySolution = myProject.getProjectModules(Solution.class).stream().filter(s -> "TestCompileSolution".equals(s.getModuleName())).findFirst().get();
+  }
+
+  @After
+  public void tearDown() {
+    myEnvironment.closeProject(myProject);
   }
 
   @Test
@@ -81,11 +89,11 @@ public class EclipseJavaCompilerTest extends CoreMpsTest {
    */
   private boolean testRecompileClasses(final JavaVersion version) {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();
-    toCompile.add(ourSolution);
+    toCompile.add(mySolution);
 
     final Reference<Boolean> resultRef = new Reference<Boolean>();
     final Reference<Throwable> throwableRef = new Reference<Throwable>();
-    ourProject.getModelAccess().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
           ModuleMaker moduleMaker = new ModuleMaker();

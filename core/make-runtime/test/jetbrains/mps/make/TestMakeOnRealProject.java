@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.make;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
-import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -41,9 +40,12 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -51,7 +53,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -77,25 +78,30 @@ import java.util.Set;
  *       OTOH, TestModuleFactoryBase seems to have in-memory storage, while this test needs real files to compile.
  * @see jetbrains.mps.classloading.ModulesReloadTest
  */
-public class TestMakeOnRealProject extends CoreMpsTest {
+public class TestMakeOnRealProject implements EnvironmentAware {
   private static final String TEST_JAVA_FILE = "Test.java";
 
-  private static ModelAccess ourModelAccess;
-  private static SRepositoryExt ourRepository;
+  private Environment myEnvironment;
+  private ModelAccess ourModelAccess;
+  private SRepositoryExt ourRepository;
   private IFile myTmpDir;
   private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
   private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner();
 
-  @BeforeClass
-  public static void setUp() {
-    ourRepository = ENV.getPlatform().findComponent(MPSModuleRepository.class);
-    ourModelAccess = ourRepository.getModelAccess();
+  /**
+   * @param env bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
   }
 
   @Before
   public void beforeTest() throws IOException {
+    ourRepository = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
+    ourModelAccess = ourRepository.getModelAccess();
     createTmpModules();
   }
 

@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import java.io.File;
@@ -24,7 +26,19 @@ import java.util.List;
 
 import static org.junit.Assert.fail;
 
-public class MacrosTest extends CoreMpsTest {
+public class MacrosTest implements EnvironmentAware {
+
+  /**
+   * @param ignored bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment ignored) {
+    // This tests used to create MPS environment. Although it doesn't use Environment directly at the moment,
+    // I made it EnvironmentAware as we likely would need Platform some day to access MacrosFactory (which now implicitly uses
+    // PathMacros CoreComponent through its deprecated getInstance()). In case this test could be rewritten to test other than global
+    // MacroHelper implementation, we may move the test to environment-independent suite (now j.m.testsuites.NoPlatformTestSuite).
+  }
+
   @Test
   public void testExpand() {
     List<String> tests = generateExpandTests();

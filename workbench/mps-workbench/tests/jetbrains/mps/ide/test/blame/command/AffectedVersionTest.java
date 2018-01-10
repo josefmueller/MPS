@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,13 @@
 package jetbrains.mps.ide.test.blame.command;
 
 import com.intellij.openapi.application.ApplicationInfo;
-import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -28,7 +31,16 @@ import java.util.Set;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class AffectedVersionTest extends PlatformMpsTest {
+public class AffectedVersionTest implements EnvironmentAware {
+
+  /**
+   * @param env the test needs IDEA application, therefore it expects to be run with IdeaEnvironment
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    assert env instanceof IdeaEnvironment;
+  }
+
   @Test
   public void testVersion() throws IOException {
     String version = ApplicationInfo.getInstance().getFullVersion();

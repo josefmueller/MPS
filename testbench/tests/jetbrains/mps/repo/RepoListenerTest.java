@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.repo;
 
-import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
@@ -30,8 +29,8 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -46,20 +45,24 @@ import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
  * Check contract of SRepositoryListener and SRepositoryContentAdapter.
- * Lives in [testbench], not [smodel], as it depends from CoreMpsTest (though perhaps might have add [testbench] as test-only dependency for [smodel]???)
+ * Lives in [testbench], not [smodel], as the move would require [environment] as a 'test' dependency, and I don't want to deal with it right now
  * @author Artem Tikhomirov
  */
-public class RepoListenerTest extends CoreMpsTest {
+public class RepoListenerTest implements EnvironmentAware {
+  private Environment myEnvironment;
   private Project myProject;
 
-  @BeforeClass
-  public static void prepare() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+
+  /**
+   * @param env bare MPS environment suffice
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
   }
 
   @After
@@ -69,7 +72,7 @@ public class RepoListenerTest extends CoreMpsTest {
 
   private Project createProject() {
     closeProject();
-    return myProject = getEnvironment().createEmptyProject();
+    return myProject = myEnvironment.createEmptyProject();
   }
 
   private void closeProject() {
@@ -121,7 +124,7 @@ public class RepoListenerTest extends CoreMpsTest {
   @Test
   public void testGlobalAttach() {
     final AttachRepoListener l1 = new AttachRepoListener();
-    final SRepositoryRegistry repoRegistry = getEnvironment().getPlatform().findComponent(SRepositoryRegistry.class);
+    final SRepositoryRegistry repoRegistry = myEnvironment.getPlatform().findComponent(SRepositoryRegistry.class);
     assert repoRegistry != null;
     repoRegistry.addGlobalListener(l1);
     l1.checkStarted(1); // MPSModuleRepository.INSTANCE

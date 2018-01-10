@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,14 @@ package jetbrains.mps.workbench;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.testbench.TestModuleFactoryBase;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.Test;
@@ -33,11 +35,23 @@ import java.io.File;
 /**
  * Testing opening and closing projects
  * Adding and removing modules from them.
+ * Need an {@link Environment} to create/open projects at.
+ * Is supposed to work with both bare MPS and full-fledged IDEA Environment instances
  */
-public abstract class ProjectTestBase extends BaseMpsTest {
+public class ProjectOpenCloseTest implements EnvironmentAware {
   private static final FileSystem FS = FileSystem.getInstance();
 
+  private Environment myEnvironment;
   private TestModuleFactoryBase myTestModuleFactory;
+
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
+  }
+
+  private Environment getEnvironment() {
+    return myEnvironment;
+  }
 
   @Test
   public void addModule() {
