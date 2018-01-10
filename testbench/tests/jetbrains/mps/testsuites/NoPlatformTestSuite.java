@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import org.junit.runners.Suite.SuiteClasses;
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.ide.blame.command.YouTrackStatsTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
+    jetbrains.mps.editor.runtime.style.StyleTests.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
 }
