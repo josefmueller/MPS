@@ -17,9 +17,9 @@ package jetbrains.mps.testsuites;
 
 import jetbrains.mps.migration.MigrationsTest;
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
@@ -52,10 +52,22 @@ import org.junit.runners.model.RunnerBuilder;
     MigrationsTest.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
+  private static IdeaEnvironment ourEnvironment;
+
   // creating the platform environment for the first time
-  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin().withMigrationPlugin());
+  static {
+    EnvironmentConfig cfg = EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin().withMigrationPlugin();
+    ourEnvironment = new IdeaEnvironment(cfg);
+    ourEnvironment.init();
+  }
 
   public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
     super(aClass, new PushEnvironmentRunnerBuilder(ourEnvironment, builder));
+  }
+
+  @AfterClass
+  public static void tearDown() {
+    ourEnvironment.dispose();
+    ourEnvironment = null;
   }
 }

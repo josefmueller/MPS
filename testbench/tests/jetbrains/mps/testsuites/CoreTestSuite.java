@@ -16,9 +16,9 @@
 package jetbrains.mps.testsuites;
 
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
@@ -79,10 +79,21 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.nodeEditor.EditorTestSuite.class
 })
 public class CoreTestSuite extends OutputWatchingTestSuite {
-  // creating the platform environment for the first time
-  public static final Environment ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+  private static MpsEnvironment ourEnvironment;
+
+  // creating the environment for the first time
+  static {
+    ourEnvironment = new MpsEnvironment(EnvironmentConfig.defaultConfig());
+    ourEnvironment.init();
+  }
 
   public CoreTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
     super(aClass, new PushEnvironmentRunnerBuilder(ourEnvironment, builder));
+  }
+
+  @AfterClass
+  public static void tearDown() {
+    ourEnvironment.dispose();
+    ourEnvironment = null;
   }
 }
