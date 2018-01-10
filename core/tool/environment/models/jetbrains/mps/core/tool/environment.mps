@@ -1721,6 +1721,15 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6LlhC3WLQMj" role="3cqZAp">
+                <node concept="2YIFZM" id="6LlhC3WLQO8" role="3clFbG">
+                  <ref role="37wK5l" node="3Pdq2IL$A4K" resolve="setCurrent" />
+                  <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+                  <node concept="37vLTw" id="2NdVeS$vi9m" role="37wK5m">
+                    <ref role="3cqZAo" node="6LlhC3WMbEE" resolve="mpsEnv" />
+                  </node>
+                </node>
+              </node>
               <node concept="1gVbGN" id="6LlhC3WMdd1" role="3cqZAp">
                 <node concept="3clFbC" id="6LlhC3WMdpX" role="1gVkn0">
                   <node concept="37vLTw" id="6LlhC3WMdvs" role="3uHU7w">
@@ -2925,13 +2934,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6LlhC3WLQMj" role="3cqZAp">
-          <node concept="2YIFZM" id="6LlhC3WLQO8" role="3clFbG">
-            <ref role="37wK5l" node="3Pdq2IL$A4K" resolve="setCurrent" />
-            <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-            <node concept="Xjq3P" id="6LlhC3WLQP3" role="37wK5m" />
-          </node>
-        </node>
         <node concept="3clFbF" id="3pEStHM4lTu" role="3cqZAp">
           <node concept="1rXfSq" id="3pEStHM4lTs" role="3clFbG">
             <ref role="37wK5l" node="3pEStHM49S5" resolve="retain" />
@@ -4058,10 +4060,31 @@
             <ref role="37wK5l" node="3pEStHM4yBP" resolve="doDispose" />
           </node>
         </node>
-        <node concept="3clFbF" id="2eqc2bym5C_" role="3cqZAp">
-          <node concept="2YIFZM" id="2eqc2bym5CA" role="3clFbG">
-            <ref role="37wK5l" node="3Pdq2IL$A69" resolve="clear" />
-            <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+        <node concept="3clFbJ" id="2NdVeS$vGDz" role="3cqZAp">
+          <node concept="3clFbS" id="2NdVeS$vGD_" role="3clFbx">
+            <node concept="3SKdUt" id="2NdVeS$vHvq" role="3cqZAp">
+              <node concept="3SKdUq" id="2NdVeS$vHvs" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME it's not responsibility of EnvironmentBase to clear EnvironmentContainer." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="2NdVeS$vHwu" role="3cqZAp">
+              <node concept="3SKdUq" id="2NdVeS$vHww" role="3SKWNk">
+                <property role="3SKdUp" value="In fact, we don't need EC at all." />
+              </node>
+            </node>
+            <node concept="3clFbF" id="2eqc2bym5C_" role="3cqZAp">
+              <node concept="2YIFZM" id="2eqc2bym5CA" role="3clFbG">
+                <ref role="37wK5l" node="3Pdq2IL$A69" resolve="clear" />
+                <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="2NdVeS$vHeB" role="3clFbw">
+            <node concept="Xjq3P" id="2NdVeS$vHhJ" role="3uHU7w" />
+            <node concept="2YIFZM" id="2NdVeS$vGMR" role="3uHU7B">
+              <ref role="37wK5l" node="3eUNqOk6lzG" resolve="get" />
+              <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+            </node>
           </node>
         </node>
       </node>

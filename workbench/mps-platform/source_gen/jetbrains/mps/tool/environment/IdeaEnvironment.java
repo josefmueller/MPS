@@ -65,6 +65,7 @@ public final class IdeaEnvironment extends EnvironmentBase {
     } else {
       IdeaEnvironment ideaEnv = new IdeaEnvironment(config);
       ideaEnv.init();
+      EnvironmentContainer.setCurrent(ideaEnv);
       assert EnvironmentContainer.get() == ideaEnv;
       return ideaEnv;
     }

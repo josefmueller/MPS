@@ -44,6 +44,7 @@ public final class MpsEnvironment extends EnvironmentBase {
     } else {
       MpsEnvironment mpsEnv = new MpsEnvironment(config);
       mpsEnv.init();
+      EnvironmentContainer.setCurrent(mpsEnv);
       assert EnvironmentContainer.get() == mpsEnv;
       return mpsEnv;
     }

@@ -66,7 +66,6 @@ public abstract class EnvironmentBase implements Environment {
     }
     initMacros();
     myRootClassLoader = createRootClassLoader();
-    EnvironmentContainer.setCurrent(this);
     retain();
     myInitialized = true;
   }
@@ -231,7 +230,11 @@ public abstract class EnvironmentBase implements Environment {
     }
     myRefCount = 0;
     doDispose();
-    EnvironmentContainer.clear();
+    if (EnvironmentContainer.get() == this) {
+      // FIXME it's not responsibility of EnvironmentBase to clear EnvironmentContainer. 
+      // In fact, we don't need EC at all. 
+      EnvironmentContainer.clear();
+    }
   }
 
   protected static void setIdeaPluginsToLoad(EnvironmentConfig config) {

@@ -410,6 +410,15 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6LlhC3WLQMj" role="3cqZAp">
+                <node concept="2YIFZM" id="6LlhC3WLQO8" role="3clFbG">
+                  <ref role="37wK5l" to="79ha:3Pdq2IL$A4K" resolve="setCurrent" />
+                  <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+                  <node concept="37vLTw" id="2NdVeS$v$0d" role="37wK5m">
+                    <ref role="3cqZAo" node="6LlhC3WK4W3" resolve="ideaEnv" />
+                  </node>
+                </node>
+              </node>
               <node concept="1gVbGN" id="6LlhC3WMdwI" role="3cqZAp">
                 <node concept="3clFbC" id="6LlhC3WMdwJ" role="1gVkn0">
                   <node concept="37vLTw" id="6LlhC3WMe5k" role="3uHU7w">
