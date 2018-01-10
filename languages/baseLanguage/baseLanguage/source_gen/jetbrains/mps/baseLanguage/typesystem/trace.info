@@ -16202,26 +16202,29 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/4017912752406060665">
     <file name="ChangeExpectedType_QuickFix.java">
       <node id="4017912752406060665" at="15,40,16,132" concept="18" />
-      <node id="4017912752406084693" at="18,44,19,350" concept="13" />
-      <node id="4017912752406801648" at="22,257,23,511" concept="6" />
-      <node id="4017912752406844168" at="24,262,25,668" concept="6" />
+      <node id="4017912752406084693" at="18,44,19,727" concept="13" />
+      <node id="3921776795951113102" at="21,35,22,439" concept="12" />
+      <node id="4017912752406801648" at="23,257,24,415" concept="6" />
+      <node id="4017912752406844168" at="25,262,26,572" concept="6" />
       <node id="4017912752406060665" at="15,0,18,0" concept="3" trace="ChangeExpectedType_QuickFix#()V" />
       <node id="4017912752406060665" at="18,0,21,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4017912752406798449" at="21,35,26,5" concept="10" />
-      <node id="4017912752406060665" at="21,0,28,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4017912752406798449" at="22,439,27,5" concept="10" />
+      <node id="4017912752406060665" at="21,0,29,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="4017912752406060665" at="15,40,16,132" />
-      <scope id="4017912752406083999" at="18,44,19,350" />
-      <scope id="4017912752406798450" at="22,257,23,511" />
-      <scope id="4017912752406837466" at="24,262,25,668" />
+      <scope id="4017912752406083999" at="18,44,19,727" />
+      <scope id="4017912752406798450" at="23,257,24,415" />
+      <scope id="4017912752406837466" at="25,262,26,572" />
       <scope id="4017912752406060665" at="15,0,18,0" />
       <scope id="4017912752406060665" at="18,0,21,0">
         <var name="node" id="4017912752406060665" />
       </scope>
-      <scope id="4017912752406060667" at="21,35,26,5" />
-      <scope id="4017912752406060665" at="21,0,28,0">
+      <scope id="4017912752406060667" at="21,35,27,5">
+        <var name="actualType" id="3921776795951113105" />
+      </scope>
+      <scope id="4017912752406060665" at="21,0,29,0">
         <var name="node" id="4017912752406060665" />
       </scope>
-      <unit id="4017912752406060665" at="14,0,29,0" name="jetbrains.mps.baseLanguage.typesystem.ChangeExpectedType_QuickFix" />
+      <unit id="4017912752406060665" at="14,0,30,0" name="jetbrains.mps.baseLanguage.typesystem.ChangeExpectedType_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/419889540470201426">
