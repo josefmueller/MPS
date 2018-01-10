@@ -100,6 +100,7 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" file="PushEnvironmentRunnerBuilder.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -113,9 +114,7 @@
     <classNode dependClassName="org.junit.internal.runners.JUnit38ClassRunner" />
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runners.BlockJUnit4ClassRunner" />
-    <classNode dependClassName="org.junit.runners.model.FrameworkMethod" />
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
-    <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="org.junit.runners.model.RunnerBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" file="TeamCityParameterizedRunner.java">

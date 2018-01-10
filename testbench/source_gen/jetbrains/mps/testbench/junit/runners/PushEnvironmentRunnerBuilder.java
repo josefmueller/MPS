@@ -11,8 +11,6 @@ import junit.framework.TestCase;
 import org.junit.internal.runners.JUnit38ClassRunner;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
-import org.junit.runners.model.Statement;
-import org.junit.runners.model.FrameworkMethod;
 import junit.framework.TestSuite;
 import junit.framework.Test;
 import junit.framework.TestResult;
@@ -52,20 +50,14 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
     }
 
     @Override
-    protected Statement withAfters(FrameworkMethod method, final Object target, Statement statement) {
-      // there's no specific reason to use withAfters, withBefores is the same 
-      // FIXME override createTest() and invoke cons(Environment), if present, to instantiate test object 
-
-      final Statement withAfters = super.withAfters(method, target, statement);
+    protected Object createTest() throws Exception {
+      // FIXME Seems better to invoke cons(Environment), if present, to instantiate test object, rather than use setter.  
+      // Need another (marker) interface then (not to force empty EA.setEnvironment) 
+      Object target = super.createTest();
       if (target instanceof EnvironmentAware) {
-        return new Statement() {
-          public void evaluate() throws Throwable {
-            ((EnvironmentAware) target).setEnvironment(myEnvironmentToPush);
-            withAfters.evaluate();
-          }
-        };
+        ((EnvironmentAware) target).setEnvironment(myEnvironmentToPush);
       }
-      return withAfters;
+      return target;
     }
   }
 
