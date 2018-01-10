@@ -39,6 +39,8 @@ import org.junit.runners.Suite.SuiteClasses;
     jetbrains.mps.ide.blame.command.YouTrackStatsTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     jetbrains.mps.editor.runtime.style.StyleTests.class,
+    jetbrains.mps.text.TextAreaTest.class,
+    jetbrains.mps.text.TextBufferTest.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
 }

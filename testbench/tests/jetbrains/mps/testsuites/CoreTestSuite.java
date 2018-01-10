@@ -65,8 +65,6 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.smodel.ModelChangeListenerTest.class,
     jetbrains.mps.smodel.ModelUndoTest.class,
     jetbrains.mps.persistence.PersistenceUtilTest.class,
-    jetbrains.mps.text.TextAreaTest.class,
-    jetbrains.mps.text.TextBufferTest.class,
     jetbrains.mps.generator.impl.plan.TemplateModelScanTest.class,
     jetbrains.mps.generator.test.VariableNameSourceTest.class,
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
