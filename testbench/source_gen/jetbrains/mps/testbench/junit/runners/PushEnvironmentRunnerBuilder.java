@@ -12,8 +12,15 @@ import org.junit.internal.runners.JUnit38ClassRunner;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
 import junit.framework.TestSuite;
+import org.junit.runner.manipulation.Filterable;
+import java.util.List;
 import junit.framework.Test;
+import java.util.ArrayList;
 import junit.framework.TestResult;
+import org.junit.runner.manipulation.Filter;
+import org.junit.runner.manipulation.NoTestsRemainException;
+import java.util.Enumeration;
+import org.junit.runner.Description;
 
 public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
   private final RunnerBuilder myDelegateBuilder;
@@ -61,18 +68,53 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
     }
   }
 
-  /*package*/ class JUnit38SuiteAdapter extends TestSuite {
+  /**
+   * The reason we have to be Filterable is that JUnit38ClassRunner creates new TestSuite() rather than our subclass when asked to filter out some test cases 
+   * (see its JUnit38ClassRunner.filter() implementation). Alternative is to subclass JUnit38ClassRunner and provide own filter implementation that would create proper 
+   * TestSuite subclass
+   */
+  /*package*/ class JUnit38SuiteAdapter extends TestSuite implements Filterable {
+    private final List<Test> myFilteredTests;
+
     /*package*/ JUnit38SuiteAdapter(Class<?> klass) {
       super(klass);
+      myFilteredTests = new ArrayList<Test>();
     }
 
     @Override
     public void runTest(Test test, TestResult result) {
+      if (myFilteredTests.contains(test)) {
+        return;
+      }
       if (test instanceof EnvironmentAware) {
         //  well, could be assert as it's the first think we check in runnerForClass, above. Nevertheless, why not to check gracefully? 
         ((EnvironmentAware) test).setEnvironment(myEnvironmentToPush);
       }
       super.runTest(test, result);
+    }
+
+    @Override
+    public int testCount() {
+      return super.testCount() - myFilteredTests.size();
+    }
+
+    @Override
+    public int countTestCases() {
+      return super.countTestCases() - myFilteredTests.size();
+    }
+
+    @Override
+    public void filter(Filter filter) throws NoTestsRemainException {
+      for (Enumeration<Test> en = tests(); en.hasMoreElements();) {
+        Test t = en.nextElement();
+        if (t instanceof TestCase && filter.shouldRun(Description.createTestDescription(t.getClass(), ((TestCase) t).getName()))) {
+          continue;
+        }
+        myFilteredTests.add(t);
+      }
+      if (myFilteredTests.size() == super.testCount()) {
+        throw new NoTestsRemainException();
+      }
     }
   }
 }

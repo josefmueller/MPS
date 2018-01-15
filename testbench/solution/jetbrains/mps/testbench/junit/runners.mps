@@ -150,6 +150,7 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -204,6 +205,7 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
@@ -278,6 +280,7 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -4340,6 +4343,20 @@
     <node concept="312cEu" id="3hj1t46aGOl" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="JUnit38SuiteAdapter" />
+      <node concept="312cEg" id="2xUsQ1Xa8hN" role="jymVt">
+        <property role="34CwA1" value="false" />
+        <property role="eg7rD" value="false" />
+        <property role="TrG5h" value="myFilteredTests" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="2xUsQ1Xa7Bd" role="1B3o_S" />
+        <node concept="3uibUv" id="2xUsQ1Xa82R" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="2xUsQ1Xa8eF" role="11_B2D">
+            <ref role="3uigEE" to="u132:~Test" resolve="Test" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2xUsQ1Xa7dU" role="jymVt" />
       <node concept="3clFbW" id="3hj1t46aHiP" role="jymVt">
         <node concept="3cqZAl" id="3hj1t46aHiS" role="3clF45" />
         <node concept="3clFbS" id="3hj1t46aHiT" role="3clF47">
@@ -4347,6 +4364,21 @@
             <ref role="37wK5l" to="u132:~TestSuite.&lt;init&gt;(java.lang.Class)" resolve="TestSuite" />
             <node concept="37vLTw" id="3hj1t46aHoW" role="37wK5m">
               <ref role="3cqZAo" node="3hj1t46aHkh" resolve="klass" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2xUsQ1Xa8GC" role="3cqZAp">
+            <node concept="37vLTI" id="2xUsQ1Xaa$P" role="3clFbG">
+              <node concept="2ShNRf" id="2xUsQ1XaaHM" role="37vLTx">
+                <node concept="1pGfFk" id="2xUsQ1Xagrq" role="2ShVmc">
+                  <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                  <node concept="3uibUv" id="2xUsQ1XagRq" role="1pMfVU">
+                    <ref role="3uigEE" to="u132:~Test" resolve="Test" />
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="2xUsQ1Xa8GA" role="37vLTJ">
+                <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+              </node>
             </node>
           </node>
         </node>
@@ -4379,6 +4411,22 @@
           </node>
         </node>
         <node concept="3clFbS" id="3hj1t46aHrI" role="3clF47">
+          <node concept="3clFbJ" id="5UG38V_u6Kl" role="3cqZAp">
+            <node concept="3clFbS" id="5UG38V_u6Kn" role="3clFbx">
+              <node concept="3cpWs6" id="5UG38V_u8Ip" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="5UG38V_u7hw" role="3clFbw">
+              <node concept="37vLTw" id="5UG38V_u6NB" role="2Oq$k0">
+                <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+              </node>
+              <node concept="liA8E" id="5UG38V_u7Vu" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
+                <node concept="37vLTw" id="5UG38V_u8ir" role="37wK5m">
+                  <ref role="3cqZAo" node="3hj1t46aHrE" resolve="test" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbJ" id="3hj1t46aHTa" role="3cqZAp">
             <node concept="3clFbS" id="3hj1t46aHTc" role="3clFbx">
               <node concept="3SKdUt" id="3hj1t46aHW8" role="3cqZAp">
@@ -4432,8 +4480,236 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="2tJIrI" id="2xUsQ1Xajf6" role="jymVt" />
+      <node concept="3clFb_" id="2xUsQ1XajOM" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="testCount" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="2xUsQ1XajON" role="1B3o_S" />
+        <node concept="10Oyi0" id="2xUsQ1XajOP" role="3clF45" />
+        <node concept="3clFbS" id="2xUsQ1XajOQ" role="3clF47">
+          <node concept="3clFbF" id="2xUsQ1XajOT" role="3cqZAp">
+            <node concept="3cpWsd" id="2xUsQ1Xam3Q" role="3clFbG">
+              <node concept="2OqwBi" id="2xUsQ1XamF5" role="3uHU7w">
+                <node concept="37vLTw" id="2xUsQ1Xam9M" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+                </node>
+                <node concept="liA8E" id="2xUsQ1Xanjq" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                </node>
+              </node>
+              <node concept="3nyPlj" id="2xUsQ1XajOS" role="3uHU7B">
+                <ref role="37wK5l" to="u132:~TestSuite.testCount():int" resolve="testCount" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2xUsQ1XajOR" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2xUsQ1Xah5s" role="jymVt" />
+      <node concept="3clFb_" id="2xUsQ1XahDG" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="countTestCases" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="2xUsQ1XahDH" role="1B3o_S" />
+        <node concept="10Oyi0" id="2xUsQ1XahDJ" role="3clF45" />
+        <node concept="3clFbS" id="2xUsQ1XahDK" role="3clF47">
+          <node concept="3clFbF" id="2xUsQ1XahDN" role="3cqZAp">
+            <node concept="3cpWsd" id="2xUsQ1Xaoyq" role="3clFbG">
+              <node concept="2OqwBi" id="2xUsQ1Xap9L" role="3uHU7w">
+                <node concept="37vLTw" id="2xUsQ1XaoCm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+                </node>
+                <node concept="liA8E" id="2xUsQ1Xapzl" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                </node>
+              </node>
+              <node concept="3nyPlj" id="2xUsQ1XahDM" role="3uHU7B">
+                <ref role="37wK5l" to="u132:~TestSuite.countTestCases():int" resolve="countTestCases" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2xUsQ1XahDL" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2xUsQ1Xa61t" role="jymVt" />
+      <node concept="3clFb_" id="2xUsQ1Xa6p8" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="filter" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="2xUsQ1Xa6p9" role="1B3o_S" />
+        <node concept="3cqZAl" id="2xUsQ1Xa6pb" role="3clF45" />
+        <node concept="37vLTG" id="2xUsQ1Xa6pc" role="3clF46">
+          <property role="TrG5h" value="filter" />
+          <node concept="3uibUv" id="2xUsQ1Xa6pd" role="1tU5fm">
+            <ref role="3uigEE" to="nztd:~Filter" resolve="Filter" />
+          </node>
+        </node>
+        <node concept="3uibUv" id="2xUsQ1Xa6pe" role="Sfmx6">
+          <ref role="3uigEE" to="nztd:~NoTestsRemainException" resolve="NoTestsRemainException" />
+        </node>
+        <node concept="3clFbS" id="2xUsQ1Xa6ph" role="3clF47">
+          <node concept="1Dw8fO" id="2xUsQ1XaqSu" role="3cqZAp">
+            <node concept="3clFbS" id="2xUsQ1XaqSw" role="2LFqv$">
+              <node concept="3cpWs8" id="2xUsQ1XaqTr" role="3cqZAp">
+                <node concept="3cpWsn" id="2xUsQ1XaqTs" role="3cpWs9">
+                  <property role="TrG5h" value="t" />
+                  <node concept="3uibUv" id="2xUsQ1XaqTv" role="1tU5fm">
+                    <ref role="3uigEE" to="u132:~Test" resolve="Test" />
+                  </node>
+                  <node concept="2OqwBi" id="2xUsQ1XaqTw" role="33vP2m">
+                    <node concept="37vLTw" id="2xUsQ1XaqTx" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2xUsQ1XaqSP" resolve="en" />
+                    </node>
+                    <node concept="liA8E" id="2xUsQ1XaqTy" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Enumeration.nextElement():java.lang.Object" resolve="nextElement" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="2xUsQ1XatLt" role="3cqZAp">
+                <node concept="3clFbS" id="2xUsQ1XatLv" role="3clFbx">
+                  <node concept="3N13vt" id="2xUsQ1Xavqs" role="3cqZAp" />
+                </node>
+                <node concept="1Wc70l" id="2xUsQ1XauJ6" role="3clFbw">
+                  <node concept="2ZW3vV" id="2xUsQ1XatVC" role="3uHU7B">
+                    <node concept="3uibUv" id="2xUsQ1XatZU" role="2ZW6by">
+                      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
+                    </node>
+                    <node concept="37vLTw" id="2xUsQ1XatPn" role="2ZW6bz">
+                      <ref role="3cqZAo" node="2xUsQ1XaqTs" resolve="t" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="2xUsQ1Xashl" role="3uHU7w">
+                    <node concept="37vLTw" id="2xUsQ1Xas87" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2xUsQ1Xa6pc" resolve="filter" />
+                    </node>
+                    <node concept="liA8E" id="2xUsQ1XaspF" role="2OqNvi">
+                      <ref role="37wK5l" to="nztd:~Filter.shouldRun(org.junit.runner.Description):boolean" resolve="shouldRun" />
+                      <node concept="2YIFZM" id="2xUsQ1XasuG" role="37wK5m">
+                        <ref role="1Pybhc" to="cvlm:~Description" resolve="Description" />
+                        <ref role="37wK5l" to="cvlm:~Description.createTestDescription(java.lang.Class,java.lang.String):org.junit.runner.Description" resolve="createTestDescription" />
+                        <node concept="2OqwBi" id="2xUsQ1Xas$R" role="37wK5m">
+                          <node concept="37vLTw" id="2xUsQ1Xasxn" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2xUsQ1XaqTs" resolve="t" />
+                          </node>
+                          <node concept="liA8E" id="2xUsQ1XasDz" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="2xUsQ1XasV3" role="37wK5m">
+                          <node concept="1eOMI4" id="2xUsQ1Xav79" role="2Oq$k0">
+                            <node concept="10QFUN" id="2xUsQ1Xav76" role="1eOMHV">
+                              <node concept="3uibUv" id="2xUsQ1Xavb_" role="10QFUM">
+                                <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
+                              </node>
+                              <node concept="37vLTw" id="2xUsQ1Xav7b" role="10QFUP">
+                                <ref role="3cqZAo" node="2xUsQ1XaqTs" resolve="t" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="2xUsQ1Xavjm" role="2OqNvi">
+                            <ref role="37wK5l" to="u132:~TestCase.getName():java.lang.String" resolve="getName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="2xUsQ1Xav$O" role="3cqZAp">
+                <node concept="2OqwBi" id="2xUsQ1XavWC" role="3clFbG">
+                  <node concept="37vLTw" id="2xUsQ1Xav$M" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+                  </node>
+                  <node concept="liA8E" id="2xUsQ1XawAr" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                    <node concept="37vLTw" id="2xUsQ1XawYp" role="37wK5m">
+                      <ref role="3cqZAo" node="2xUsQ1XaqTs" resolve="t" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWsn" id="2xUsQ1XaqSP" role="1Duv9x">
+              <property role="TrG5h" value="en" />
+              <node concept="1rXfSq" id="2xUsQ1XarI0" role="33vP2m">
+                <ref role="37wK5l" to="u132:~TestSuite.tests():java.util.Enumeration" resolve="tests" />
+              </node>
+              <node concept="3uibUv" id="2xUsQ1XaqT9" role="1tU5fm">
+                <ref role="3uigEE" to="33ny:~Enumeration" resolve="Enumeration" />
+                <node concept="3uibUv" id="2xUsQ1XaqTc" role="11_B2D">
+                  <ref role="3uigEE" to="u132:~Test" resolve="Test" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2xUsQ1XaqTn" role="1Dwp0S">
+              <node concept="liA8E" id="2xUsQ1XaqTp" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Enumeration.hasMoreElements():boolean" resolve="hasMoreElements" />
+              </node>
+              <node concept="37vLTw" id="2xUsQ1XaqTq" role="2Oq$k0">
+                <ref role="3cqZAo" node="2xUsQ1XaqSP" resolve="en" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="2xUsQ1XaxOS" role="3cqZAp">
+            <node concept="3clFbS" id="2xUsQ1XaxOU" role="3clFbx">
+              <node concept="YS8fn" id="2xUsQ1Xa_lT" role="3cqZAp">
+                <node concept="2ShNRf" id="2xUsQ1Xa_nR" role="YScLw">
+                  <node concept="1pGfFk" id="2xUsQ1Xa_Qg" role="2ShVmc">
+                    <ref role="37wK5l" to="nztd:~NoTestsRemainException.&lt;init&gt;()" resolve="NoTestsRemainException" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbC" id="2xUsQ1Xa$8Z" role="3clFbw">
+              <node concept="3nyPlj" id="2xUsQ1Xa$Vq" role="3uHU7w">
+                <ref role="37wK5l" to="u132:~TestSuite.testCount():int" resolve="testCount" />
+              </node>
+              <node concept="2OqwBi" id="2xUsQ1XayxW" role="3uHU7B">
+                <node concept="37vLTw" id="2xUsQ1Xay1E" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2xUsQ1Xa8hN" resolve="myFilteredTests" />
+                </node>
+                <node concept="liA8E" id="2xUsQ1Xaz06" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2xUsQ1Xa6pi" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
       <node concept="3uibUv" id="3hj1t46aHdP" role="1zkMxy">
         <ref role="3uigEE" to="u132:~TestSuite" resolve="TestSuite" />
+      </node>
+      <node concept="3uibUv" id="2xUsQ1Xa5ip" role="EKbjA">
+        <ref role="3uigEE" to="nztd:~Filterable" resolve="Filterable" />
+      </node>
+      <node concept="3UR2Jj" id="2xUsQ1XaBA8" role="lGtFl">
+        <node concept="TZ5HA" id="2xUsQ1XaBA9" role="TZ5H$">
+          <node concept="1dT_AC" id="2xUsQ1XaBAa" role="1dT_Ay">
+            <property role="1dT_AB" value="The reason we have to be Filterable is that JUnit38ClassRunner creates new TestSuite() rather than our subclass when asked to filter out some test cases " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2xUsQ1XaCmx" role="TZ5H$">
+          <node concept="1dT_AC" id="2xUsQ1XaCmy" role="1dT_Ay">
+            <property role="1dT_AB" value="(see its JUnit38ClassRunner.filter() implementation). Alternative is to subclass JUnit38ClassRunner and provide own filter implementation that would create proper " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2xUsQ1XaCmF" role="TZ5H$">
+          <node concept="1dT_AC" id="2xUsQ1XaCmG" role="1dT_Ay">
+            <property role="1dT_AB" value="TestSuite subclass" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="7KC1aYnIc28" role="1B3o_S" />

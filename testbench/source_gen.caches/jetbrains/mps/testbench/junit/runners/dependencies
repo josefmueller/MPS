@@ -104,6 +104,9 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Enumeration" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
     <classNode dependClassName="junit.framework.Test" />
@@ -112,7 +115,11 @@
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="org.junit.internal.builders.AllDefaultPossibilitiesBuilder" />
     <classNode dependClassName="org.junit.internal.runners.JUnit38ClassRunner" />
+    <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
+    <classNode dependClassName="org.junit.runner.manipulation.Filter" />
+    <classNode dependClassName="org.junit.runner.manipulation.Filterable" />
+    <classNode dependClassName="org.junit.runner.manipulation.NoTestsRemainException" />
     <classNode dependClassName="org.junit.runners.BlockJUnit4ClassRunner" />
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode extendsClassName="org.junit.runners.model.RunnerBuilder" />
