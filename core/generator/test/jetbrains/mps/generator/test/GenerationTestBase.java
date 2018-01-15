@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,17 +18,13 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.testbench.PerformanceMessenger;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +48,7 @@ import java.io.IOException;
 public class GenerationTestBase {
   private static boolean DEBUG = false;
 
-  private static Environment CREATED_ENV;
+  private static MpsEnvironment CREATED_ENV;
 
   @ClassRule
   public static final PerformanceMessenger ourStats = new PerformanceMessenger("Generator.");
@@ -62,13 +58,14 @@ public class GenerationTestBase {
 
   @BeforeClass
   public static void init() throws Exception {
-    CREATED_ENV = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    CREATED_ENV = new MpsEnvironment(EnvironmentConfig.defaultConfig());
+    CREATED_ENV.init();
   }
 
   @AfterClass
   public static void clean() throws Exception {
     if (CREATED_ENV != null) {
-      CREATED_ENV.release();
+      CREATED_ENV.dispose();
       CREATED_ENV = null;
     }
   }
@@ -128,7 +125,7 @@ public class GenerationTestBase {
   }
 
   protected static void cleanup(final Project p) {
-    p.dispose();
+    CREATED_ENV.closeProject(p);
   }
 
   private static class TestMessageHandler implements IMessageHandler {

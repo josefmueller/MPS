@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
