@@ -133,6 +133,7 @@ public abstract class MpsWorker {
       make();
 
       work();
+      dispose();
       System.exit(0);
     } catch (Throwable e) {
       log(e);

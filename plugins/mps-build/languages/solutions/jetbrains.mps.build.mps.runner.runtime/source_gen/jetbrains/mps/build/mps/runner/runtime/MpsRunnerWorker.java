@@ -4,17 +4,24 @@ package jetbrains.mps.build.mps.runner.runtime;
 
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.MpsRunnerProperties;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.module.ReloadableModule;
+import java.util.List;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.function.Predicate;
+import java.lang.reflect.Modifier;
+import java.util.stream.Collectors;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.core.platform.Platform;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import java.io.File;
 
 public class MpsRunnerWorker extends MpsWorker {
@@ -24,25 +31,90 @@ public class MpsRunnerWorker extends MpsWorker {
 
   @Override
   public void work() {
-    final Project project = createDummyProject();
+    final MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);
+    final MPSModuleRepository repo = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
 
-    MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);
-    String className = properties.getStartClass();
-    String methodName = properties.getStartMethod();
-    final SModuleReference solutionRef = ModuleReference.parseReference(properties.getSolution());
-    final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
-    project.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        module.value = solutionRef.resolve(project.getRepository());
+    // XXX no idea why model write, perhaps, read would suffice 
+    Class<?> mainClass = new ModelAccessHelper(repo).runWriteAction(new Computable<Class<?>>() {
+      public Class<?> compute() {
+        SModuleReference solutionRef = ModuleReference.parseReference(properties.getSolution());
+        SModule module = solutionRef.resolve(repo);
+        if (!(module instanceof ReloadableModule)) {
+          return null;
+        }
+        try {
+          return ((ReloadableModule) module).getClass(properties.getStartClass());
+        } catch (ClassNotFoundException e) {
+          error(String.format("cannot find class '%s' in solution %s", properties.getStartClass(), solutionRef));
+        }
+        return null;
       }
     });
-
-    boolean isClassFound = runClass(module.value, className, methodName);
-    if (!(isClassFound)) {
-      error("cannot find class " + className + " in solution " + solutionRef);
+    if (mainClass == null) {
+      return;
     }
+    try {
+      final String methodName = properties.getStartMethod();
+      List<Method> methods = Arrays.stream(mainClass.getMethods()).filter(new Predicate<Method>() {
+        public boolean test(Method m) {
+          return methodName.equals(m.getName()) && Modifier.isStatic(m.getModifiers()) && m.getParameterCount() < 2;
+        }
+      }).collect(Collectors.<Method>toList());
+      if (methods.isEmpty()) {
+        error(String.format("No public static method %s in the class %s", methodName, mainClass.getName()));
+        return;
+      }
+      // First, look for methods with parameters. Prefer one with Environment over the one with Platform as more specific. 
+      // However, we shall not document or encourage use of Environment instead of Platform. Environment is mostly for our own use (MPS internals aware). 
+      // Most clients shall be fine with Platform. 
+      // XXX Perhaps, shall invoke instance method, and pass Platform as cons argument. 
+      //     Do we need an option to open a project and pass project instance into the method? 
+      // 
+      // I) public static void mpsMain(Environment env) 
+      for (Method m : methods) {
+        Class<?>[] parameterTypes = m.getParameterTypes();
+        if (parameterTypes.length != 1) {
+          continue;
+        }
+        if (parameterTypes[0].isAssignableFrom(Environment.class)) {
+          m.invoke(null, myEnvironment);
+          return;
+        }
+      }
+      // 
+      // II) public static void mpsMain(Platform p) 
+      for (Method m : methods) {
+        Class<?>[] parameterTypes = m.getParameterTypes();
+        if (parameterTypes.length != 1) {
+          continue;
+        }
+        if (parameterTypes[0].isAssignableFrom(Platform.class)) {
+          m.invoke(null, myEnvironment.getPlatform());
+          return;
+        }
+      }
+      // Otherwise, resort to no-arg method 
+      // III) public static mpsMain() 
+      for (Method m : methods) {
+        Class<?>[] parameterTypes = m.getParameterTypes();
+        if (parameterTypes.length != 0) {
+          continue;
+        }
+        m.invoke(null);
+        return;
+      }
+    } catch (InvocationTargetException ex) {
+      log(ex);
+    } catch (IllegalAccessException ex) {
+      log(ex);
+    }
+  }
 
-    dispose();
+
+  @Override
+  protected void make() {
+    // no-op, the runner is loaded from packaged distribution, nothing to make. 
+    // FWIW, I don't see a reason for make in base worker at all. Perhaps, should not be part of a worker, but separate reusable code. 
   }
 
   @Override
@@ -50,32 +122,6 @@ public class MpsRunnerWorker extends MpsWorker {
     IdeaEnvironment environment = new IdeaEnvironment(createEnvironmentConfig(myWhatToDo));
     environment.init();
     return environment;
-  }
-
-  private static boolean runClass(SModule module, String className, String methodName) {
-    Class cls = null;
-    if (!(module instanceof ReloadableModule)) {
-      return false;
-    }
-    try {
-      cls = ((ReloadableModule) (module)).getClass(className);
-    } catch (ClassNotFoundException e) {
-    }
-    if (cls == null) {
-      return false;
-    }
-    try {
-      // invoke public static method 
-      Method method = cls.getMethod(methodName);
-      method.invoke(null);
-    } catch (NoSuchMethodException e) {
-      e.printStackTrace();
-    } catch (InvocationTargetException e) {
-      e.printStackTrace();
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    }
-    return true;
   }
 
   public static void main(String[] args) {

@@ -62,6 +62,7 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -69,6 +70,7 @@
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
@@ -231,26 +233,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2FBMjpdcEp" role="3cqZAp">
-          <node concept="3cpWsn" id="2FBMjpdcEq" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="2UQRFFqpIEB" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2YIFZM" id="2UQRFFqpJlA" role="33vP2m">
-              <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-            </node>
-          </node>
-        </node>
-        <node concept="1gVbGN" id="2UQRFFqpK1y" role="3cqZAp">
-          <node concept="3y3z36" id="2UQRFFqpKuW" role="1gVkn0">
-            <node concept="10Nm6u" id="2UQRFFqpKDJ" role="3uHU7w" />
-            <node concept="37vLTw" id="2UQRFFqpKjC" role="3uHU7B">
-              <ref role="3cqZAo" node="2FBMjpdcEq" resolve="env" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1CZB82AuDt2" role="3cqZAp">
           <node concept="3cpWsn" id="1CZB82AuDt3" role="3cpWs9">
             <property role="TrG5h" value="project" />
@@ -258,8 +240,8 @@
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
             <node concept="2OqwBi" id="1CZB82AuDt4" role="33vP2m">
-              <node concept="37vLTw" id="1CZB82AuDt5" role="2Oq$k0">
-                <ref role="3cqZAo" node="2FBMjpdcEq" resolve="env" />
+              <node concept="37vLTw" id="5AcmpEOeqX0" role="2Oq$k0">
+                <ref role="3cqZAo" node="5AcmpEOeoA1" resolve="env" />
               </node>
               <node concept="liA8E" id="1CZB82AuDt6" role="2OqNvi">
                 <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
@@ -653,6 +635,12 @@
             <ref role="37wK5l" to="q2nv:4X5j05vMERW" resolve="mpsMain" />
             <ref role="1Pybhc" to="q2nv:4X5j05vMAGu" resolve="MainClass" />
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5AcmpEOeoA1" role="3clF46">
+        <property role="TrG5h" value="env" />
+        <node concept="3uibUv" id="5AcmpEOeoA0" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
         </node>
       </node>
     </node>
