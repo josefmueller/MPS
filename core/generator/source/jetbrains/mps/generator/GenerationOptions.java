@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -86,20 +85,6 @@ public class GenerationOptions {
 
   public boolean isStrictMode() {
     return myStrictMode;
-  }
-
-  /**
-   * @deprecated meaningless, do not use
-   */
-  @Deprecated
-  @ToRemove(version = 2017.3)
-  public boolean isRebuildAll() {
-    return false;
-  }
-
-  @NotNull
-  public IncrementalGenerationStrategy getIncrementalStrategy() {
-    throw new UnsupportedOperationException();
   }
 
   public int getNumberOfThreads() {
@@ -239,16 +224,7 @@ public class GenerationOptions {
       return this;
     }
 
-    /**
-     * @deprecated support for legacy incremental generation has been abandoned, the method is no-op
-     */
-    @Deprecated
-    @ToRemove(version = 2017.3)
-    public OptionsBuilder incremental(IncrementalGenerationStrategy incrementalStrategy) {
-      return this;
-    }
-
-    public OptionsBuilder generateInParallel(boolean generateInParallel, int numberOfThreads) {
+     public OptionsBuilder generateInParallel(boolean generateInParallel, int numberOfThreads) {
       myGenerateInParallel = generateInParallel;
       myNumberOfThreads = numberOfThreads;
       return this;
