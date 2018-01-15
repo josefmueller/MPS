@@ -69,32 +69,28 @@
       <node id="8514960456944801770" at="27,13,28,53" concept="9" />
       <node id="8514960456945574715" at="29,45,30,51" concept="3" />
       <node id="8514960456945580103" at="32,31,33,30" concept="3" />
-      <node id="878521226301294438" at="36,7,37,14" concept="3" />
-      <node id="1592025086119891527" at="40,42,41,196" concept="9" />
-      <node id="1592025086119891536" at="41,196,42,30" concept="3" />
-      <node id="108194650711167510" at="45,0,47,0" concept="8" trace="showStatistic#()V" />
+      <node id="1592025086119891527" at="39,42,40,196" concept="9" />
+      <node id="1592025086119891536" at="40,196,41,30" concept="3" />
       <node id="679099339648939375" at="28,53,31,11" concept="7" />
-      <node id="1592025086119891521" at="40,0,44,0" concept="14" trace="main#([Ljava/lang/String;)V" />
+      <node id="1592025086119891521" at="39,0,43,0" concept="14" trace="main#([Ljava/lang/String;)V" />
       <node id="8514960456944780545" at="16,0,21,0" concept="2" trace="MpsWorkerTest#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;Lorg/jetbrains/mps/openapi/module/SModuleReference;Z)V" />
       <node id="8514960456945579679" at="26,25,34,9" concept="18" />
       <node id="679099339648927198" at="26,0,36,0" concept="8" trace="run#()V" />
       <node id="679099339648921340" at="24,106,36,7" concept="3" />
-      <node id="878521226301294266" at="22,0,39,0" concept="8" trace="work#()V" />
-      <scope id="108194650711167514" at="45,34,45,34" />
+      <node id="878521226301294266" at="22,0,38,0" concept="8" trace="work#()V" />
       <scope id="679099339648939377" at="29,45,30,51" />
       <scope id="8514960456945579675" at="32,0,33,30">
         <var name="e" id="8514960456945579677" />
       </scope>
       <scope id="8514960456945579676" at="32,31,33,30" />
-      <scope id="1592025086119891525" at="40,42,42,30">
+      <scope id="1592025086119891525" at="39,42,41,30">
         <var name="testWorker" id="1592025086119891526" />
       </scope>
-      <scope id="108194650711167510" at="45,0,47,0" />
       <scope id="8514960456944780549" at="16,113,19,28" />
       <scope id="8514960456945579680" at="27,13,31,11">
         <var name="module" id="8514960456944801771" />
       </scope>
-      <scope id="1592025086119891521" at="40,0,44,0">
+      <scope id="1592025086119891521" at="39,0,43,0">
         <var name="args" id="1592025086119891522" />
       </scope>
       <scope id="8514960456944780545" at="16,0,21,0">
@@ -105,12 +101,12 @@
       </scope>
       <scope id="679099339648927199" at="26,25,34,9" />
       <scope id="679099339648927198" at="26,0,36,0" />
-      <scope id="878521226301294269" at="23,22,37,14">
+      <scope id="878521226301294269" at="23,22,36,7">
         <var name="repo" id="679099339648918905" />
       </scope>
-      <scope id="878521226301294266" at="22,0,39,0" />
+      <scope id="878521226301294266" at="22,0,38,0" />
       <unit id="679099339648927198" at="25,44,36,5" name="jetbrains.mps.tool.builder.MpsWorkerTest$1" />
-      <unit id="8514960456944541507" at="12,0,48,0" name="jetbrains.mps.tool.builder.MpsWorkerTest" />
+      <unit id="8514960456944541507" at="12,0,44,0" name="jetbrains.mps.tool.builder.MpsWorkerTest" />
     </file>
   </root>
   <root nodeRef="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)/878521226300773719">
@@ -174,7 +170,6 @@
       <node id="878521226300773952" at="162,46,163,123" concept="10" />
       <node id="878521226300773961" at="165,7,166,33" concept="3" />
       <node id="878521226300773978" at="171,27,172,99" concept="3" />
-      <node id="878521226300773992" at="177,0,178,0" concept="8" trace="showStatistic#()V" />
       <node id="878521226300774002" at="178,62,179,41" concept="9" />
       <node id="878521226300774009" at="180,35,181,21" concept="3" />
       <node id="878521226300774022" at="182,5,183,20" concept="3" />
@@ -330,7 +325,6 @@
       <scope id="878521226300773849" at="144,0,145,0" />
       <scope id="878521226300773895" at="146,42,147,46" />
       <scope id="4305429072761470470" at="171,27,172,99" />
-      <scope id="878521226300773992" at="177,0,178,0" />
       <scope id="878521226300774008" at="180,35,181,21" />
       <scope id="878521226300774059" at="190,35,191,21" />
       <scope id="878521226300774088" at="196,63,197,75" />

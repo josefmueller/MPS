@@ -66,7 +66,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       }
     });
 
-    dispose();
     showStatistic();
   }
 

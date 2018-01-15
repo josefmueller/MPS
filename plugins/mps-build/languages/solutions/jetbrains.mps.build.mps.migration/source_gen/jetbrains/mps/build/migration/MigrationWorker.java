@@ -90,8 +90,6 @@ public class MigrationWorker extends MpsWorker {
       p.dispose();
       myEnvironment.flushAllEvents();
     }
-
-    dispose();
   }
 
   private void addPluginsToClassPath() {
@@ -125,8 +123,5 @@ public class MigrationWorker extends MpsWorker {
   }
 
   protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
-  }
-
-  protected void showStatistic() {
   }
 }

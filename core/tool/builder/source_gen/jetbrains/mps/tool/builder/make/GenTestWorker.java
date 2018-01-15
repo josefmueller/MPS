@@ -97,11 +97,15 @@ public class GenTestWorker extends BaseGeneratorWorker {
       error("Could not find anything to test.");
     }
 
-    dispose();
-    showStatistic();
-
     myReporter.finishRun();
+    showStatistic();
+  }
+
+
+  @Override
+  protected void dispose() {
     cleanUp();
+    super.dispose();
   }
 
   @Override

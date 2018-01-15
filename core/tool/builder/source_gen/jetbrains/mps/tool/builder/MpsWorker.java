@@ -174,7 +174,7 @@ public abstract class MpsWorker {
       });
     }
   }
-  protected abstract void showStatistic();
+
   protected StringBuffer formatErrorsReport(String taskName) {
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < 100; i++) {

@@ -34,14 +34,10 @@ public class MpsWorkerTest extends MpsWorker {
         }
       }
     });
-    dispose();
   }
 
   public static void main(String[] args) {
     MpsWorkerTest testWorker = new MpsWorkerTest(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger(), ModuleReference.parseReference(args[1]), Boolean.parseBoolean(args[2]));
     testWorker.workFromMain();
-  }
-
-  protected void showStatistic() {
   }
 }

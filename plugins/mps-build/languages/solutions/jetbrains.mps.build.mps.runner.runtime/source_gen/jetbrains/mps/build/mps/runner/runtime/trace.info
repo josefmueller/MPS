@@ -63,7 +63,6 @@
       <node id="3992666880231552755" at="123,23,124,23" concept="7" />
       <node id="4271560773253816220" at="127,42,128,124" concept="6" />
       <node id="4271560773253816233" at="128,124,129,26" concept="2" />
-      <node id="2220861080746127777" at="132,0,134,0" concept="5" trace="showStatistic#()V" />
       <node id="4271560773252667308" at="28,0,31,0" concept="0" trace="MpsRunnerWorker#(Ljetbrains/mps/tool/common/Script;Ljetbrains/mps/tool/builder/MpsWorker/AntLogger;)V" />
       <node id="6452630887097755583" at="41,51,44,9" concept="4" />
       <node id="6452630887097784536" at="52,7,55,5" concept="4" />
@@ -86,7 +85,6 @@
       <node id="6452630887097755560" at="37,64,52,7" concept="6" />
       <node id="6102524510012717479" at="55,5,110,5" concept="12" />
       <node id="4271560773252699372" at="32,0,112,0" concept="5" trace="work#()V" />
-      <scope id="2220861080746127781" at="132,34,132,34" />
       <scope id="4271560773252667315" at="28,71,29,28" />
       <scope id="6452630887097755584" at="42,52,43,22" />
       <scope id="6452630887097755592" at="45,13,46,82" />
@@ -114,7 +112,6 @@
       <scope id="4271560773253816219" at="127,42,129,26">
         <var name="runner" id="4271560773253816221" />
       </scope>
-      <scope id="2220861080746127777" at="132,0,134,0" />
       <scope id="4271560773252667308" at="28,0,31,0">
         <var name="logger" id="4271560773252667313" />
         <var name="whatToDo" id="4271560773252667311" />
@@ -165,7 +162,7 @@
       <scope id="4271560773252699372" at="32,0,112,0" />
       <unit id="6452630887098024160" at="58,78,62,7" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker$2" />
       <unit id="6452630887097755567" at="38,72,52,5" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker$1" />
-      <unit id="4271560773252657739" at="27,0,135,0" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
+      <unit id="4271560773252657739" at="27,0,132,0" name="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
     </file>
   </root>
 </debug-info>

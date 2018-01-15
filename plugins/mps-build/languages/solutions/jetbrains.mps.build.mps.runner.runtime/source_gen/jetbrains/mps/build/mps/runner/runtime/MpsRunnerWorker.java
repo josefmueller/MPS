@@ -128,7 +128,4 @@ public class MpsRunnerWorker extends MpsWorker {
     MpsRunnerWorker runner = new MpsRunnerWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     runner.workFromMain();
   }
-
-  protected void showStatistic() {
-  }
 }

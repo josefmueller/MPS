@@ -1036,15 +1036,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="1Vi5mb_nfGf" role="jymVt" />
-    <node concept="3clFb_" id="1Vi5mb_nf6x" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="showStatistic" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="1Vi5mb_nf6y" role="1B3o_S" />
-      <node concept="3cqZAl" id="1Vi5mb_nf6z" role="3clF45" />
-      <node concept="3clFbS" id="1Vi5mb_nf6_" role="3clF47" />
-    </node>
   </node>
 </model>
 
