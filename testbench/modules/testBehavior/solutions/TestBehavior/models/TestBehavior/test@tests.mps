@@ -61,9 +61,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -81,6 +78,9 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -4261,30 +4261,14 @@
     </node>
     <node concept="1KhYhu" id="6EMTxOPT4XR" role="1KhZu4">
       <node concept="3clFbS" id="6EMTxOPT4XS" role="2VODD2">
-        <node concept="3cpWs8" id="6EMTxOPTaUZ" role="3cqZAp">
-          <node concept="3cpWsn" id="6EMTxOPTaV0" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="6EMTxOPTaUY" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2YIFZM" id="6EMTxOPTaV1" role="33vP2m">
-              <ref role="1Pybhc" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
-              <ref role="37wK5l" to="79ha:6LlhC3WJZzD" resolve="getOrCreate" />
-              <node concept="2YIFZM" id="6LXMTdV54dD" role="37wK5m">
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4uPaNIY9iOs" role="3cqZAp">
           <node concept="37vLTI" id="4uPaNIY9iS_" role="3clFbG">
             <node concept="37vLTw" id="4uPaNIY9iOq" role="37vLTJ">
               <ref role="3cqZAo" node="4uPaNIY9iLm" resolve="myProject" />
             </node>
             <node concept="2OqwBi" id="4uPaNIY9iFu" role="37vLTx">
-              <node concept="37vLTw" id="4uPaNIY9iFv" role="2Oq$k0">
-                <ref role="3cqZAo" node="6EMTxOPTaV0" resolve="env" />
+              <node concept="37vLTw" id="5AcmpEOrcU_" role="2Oq$k0">
+                <ref role="3cqZAo" to="ynox:5AcmpEOr55Q" resolve="myEnvironment" />
               </node>
               <node concept="liA8E" id="4uPaNIY9iFw" role="2OqNvi">
                 <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
@@ -4300,7 +4284,80 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="2xUsQ1X9N6D" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9N6F" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME This is a hack. MPSProject loads its modules and injects them into repository with classloading event dispatch paused (uses runNonReloadableTransaction)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NeC" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NeE" role="3SKWNk">
+            <property role="3SKdUp" value="      It seems the reason for this is assumption there's StartupModuleMaker that would compile dirty modules and then brand new and shiny languages can get loaded." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NmF" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NmH" role="3SKWNk">
+            <property role="3SKdUp" value="      However, in test app, there's DummyStartupModuleMakerImpl, which is no-op. Empty write action here is to force ModuleEventsDispatcher to flush batched " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9Nq_" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NqA" role="3SKWNk">
+            <property role="3SKdUp" value="      module-added events (it's puzzling whether its pause/proceed behavior, where events that happened during 'paused' state are not lost and get dispatched " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9Nux" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9Nuy" role="3SKWNk">
+            <property role="3SKdUp" value="      at the next 'actionFinished', is intended or not). Empty write action triggers MED.actionFinished, module-added events for project modules get propagated to" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NAK" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NAM" role="3SKWNk">
+            <property role="3SKdUp" value="      LanguageRegistry and behavior descriptors could get loaded afterwards (otherwise, tests issue " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NEK" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NEL" role="3SKWNk">
+            <property role="3SKdUp" value="      a warning &quot;No language for: BHL1.structure.A, while looking for the behavior descriptor&quot; and eventually fail." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NZE" role="3cqZAp" />
+        <node concept="3SKdUt" id="2xUsQ1X9NN7" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NN9" role="3SKWNk">
+            <property role="3SKdUp" value="      Perhaps, it's right not to compile project modules during test mode, and not to dispatch module-added events on project init. Instead, we can explicitly " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9NRb" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9NRc" role="3SKWNk">
+            <property role="3SKdUp" value="      make target projects in a test like this one (which knows it gonna use languages from the target project)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2xUsQ1X9Ve8" role="3cqZAp" />
+        <node concept="3SKdUt" id="2xUsQ1X9V5z" role="3cqZAp">
+          <node concept="3SKdUq" id="2xUsQ1X9V5_" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Note, despite the fact these tests (BHTest and BHTestRef) are referenced from tests.mpsBehavior build script, there's no invocation of mpsBehavior.xml from build/test.xml!" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2xUsQ1X9mVH" role="3cqZAp">
+          <node concept="2OqwBi" id="2xUsQ1X9ny2" role="3clFbG">
+            <node concept="2OqwBi" id="2xUsQ1X9ndG" role="2Oq$k0">
+              <node concept="37vLTw" id="2xUsQ1X9mVF" role="2Oq$k0">
+                <ref role="3cqZAo" node="4uPaNIY9iLm" resolve="myProject" />
+              </node>
+              <node concept="liA8E" id="2xUsQ1X9nsS" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2xUsQ1X9nRl" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <node concept="1bVj0M" id="2xUsQ1X9o5t" role="37wK5m">
+                <node concept="3clFbS" id="2xUsQ1X9o5u" role="1bW5cS" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="5AcmpEOr7Jp" role="1zkMxy">
+      <ref role="3uigEE" to="ynox:5AcmpEOr4by" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
 </model>

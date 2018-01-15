@@ -4933,6 +4933,18 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="1AgQzyEDXd1" role="3bR37C">
+          <node concept="3bR9La" id="1AgQzyEDXd2" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1AgQzyEDXd3" role="3bR37C">
+          <node concept="3bR9La" id="1AgQzyEDXd4" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="6sT62Z6Skji" role="2G$12L">
         <property role="BnDLt" value="true" />
