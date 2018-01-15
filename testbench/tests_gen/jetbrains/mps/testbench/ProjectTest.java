@@ -5,14 +5,14 @@ package jetbrains.mps.testbench;
 import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy;
+import org.junit.AfterClass;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 @RunWith(TeamCityParameterizedRunner.class)
 public class ProjectTest {
   private static Project ourContextProject;
+  private static MpsEnvironment ourEnvironment;
   private final ModuleGenerationHolder generationHolder;
 
   public ProjectTest(SModule module, ModuleGenerationHolder generationHolder) {
@@ -37,12 +38,20 @@ public class ProjectTest {
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     initTestEnvironment();
-    return createTestParametersFromModules(ourContextProject.getModules());
+    return createTestParametersFromModules(ourContextProject.getProjectModules());
   }
 
   public static void initTestEnvironment() throws InvocationTargetException, InterruptedException {
-    Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    ourContextProject = env.createProject(new FromProjectPathProjectStrategy());
+    ourEnvironment = new MpsEnvironment(EnvironmentConfig.defaultConfig());
+    ourEnvironment.init();
+    ourContextProject = ourEnvironment.createProject(new FromProjectPathProjectStrategy());
+  }
+
+  @AfterClass
+  public static void disposeEnvironment() {
+    ourEnvironment.closeProject(ourContextProject);
+    ourEnvironment.dispose();
+    ourEnvironment = null;
   }
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {

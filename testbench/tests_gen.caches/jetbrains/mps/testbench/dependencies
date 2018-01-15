@@ -82,10 +82,10 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.Order" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode dependClassName="org.junit.runner.RunWith" />
