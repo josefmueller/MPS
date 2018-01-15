@@ -7480,7 +7480,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner.runtime" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editing, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.platform, java.compile.mps-environment, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.idea-platform, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.mps-tool, java.compile.mps-ui">
+  <target name="java.compile.jetbrains.mps.build.mps.runner.runtime" depends="java.compile.mps-closures, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-editing, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.platform, java.compile.mps-environment, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.idea-platform, java.compile.mps-platform, java.compile.mps-debuginfo-api, java.compile.mps-textgen, java.compile.mps-tool, java.compile.mps-ui">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.runtime" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.runtime" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -7490,7 +7490,6 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-closures" />
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-core-components" />
@@ -7498,6 +7497,7 @@
         <pathelement path="${build.tmp}/java/out/vfs" />
         <pathelement path="${build.tmp}/java/out/util-core" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-project" />
         <pathelement path="${build.tmp}/java/out/mps-behavior-api" />
