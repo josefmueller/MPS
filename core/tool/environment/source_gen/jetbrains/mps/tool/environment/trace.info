@@ -573,31 +573,31 @@
   </root>
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/4417301346392321475">
     <file name="EnvironmentContainer.java">
-      <node id="4417301346392323010" at="13,0,14,0" concept="13" trace="ourCurrent" />
-      <node id="3727517784852748681" at="19,48,20,22" concept="10" />
-      <node id="4417301346392388301" at="24,50,25,107" concept="16" />
-      <node id="4417301346392391432" at="26,5,27,42" concept="4" />
-      <node id="3727517784852302620" at="31,29,32,73" concept="16" />
-      <node id="4417301346392422000" at="33,5,34,43" concept="4" />
-      <node id="3727517784852294369" at="15,0,17,0" concept="2" trace="EnvironmentContainer#()V" />
-      <node id="4417301346392387974" at="23,77,26,5" concept="7" />
-      <node id="3727517784852302615" at="30,48,33,5" concept="7" />
-      <node id="3727517784852748524" at="18,0,22,0" concept="14" trace="get#()Ljetbrains/mps/tool/environment/Environment;" />
-      <node id="4417301346392367408" at="23,0,29,0" concept="14" trace="setCurrent#(Ljetbrains/mps/tool/environment/Environment;)V" />
-      <node id="4417301346392367497" at="30,0,36,0" concept="14" trace="clear#()V" />
-      <scope id="3727517784852294372" at="15,34,15,34" />
-      <scope id="3727517784852748527" at="19,48,20,22" />
-      <scope id="4417301346392387977" at="24,50,25,107" />
-      <scope id="3727517784852302619" at="31,29,32,73" />
-      <scope id="3727517784852294369" at="15,0,17,0" />
-      <scope id="3727517784852748524" at="18,0,22,0" />
-      <scope id="4417301346392367412" at="23,77,27,42" />
-      <scope id="4417301346392367501" at="30,48,34,43" />
-      <scope id="4417301346392367408" at="23,0,29,0">
+      <node id="4417301346392323010" at="18,0,19,0" concept="13" trace="ourCurrent" />
+      <node id="3727517784852748681" at="25,48,26,22" concept="10" />
+      <node id="4417301346392388301" at="30,50,31,107" concept="16" />
+      <node id="4417301346392391432" at="32,5,33,42" concept="4" />
+      <node id="3727517784852302620" at="37,29,38,73" concept="16" />
+      <node id="4417301346392422000" at="39,5,40,43" concept="4" />
+      <node id="3727517784852294369" at="20,0,23,0" concept="2" trace="EnvironmentContainer#()V" />
+      <node id="4417301346392387974" at="29,77,32,5" concept="7" />
+      <node id="3727517784852302615" at="36,48,39,5" concept="7" />
+      <node id="3727517784852748524" at="24,0,28,0" concept="14" trace="get#()Ljetbrains/mps/tool/environment/Environment;" />
+      <node id="4417301346392367408" at="29,0,35,0" concept="14" trace="setCurrent#(Ljetbrains/mps/tool/environment/Environment;)V" />
+      <node id="4417301346392367497" at="36,0,42,0" concept="14" trace="clear#()V" />
+      <scope id="3727517784852294372" at="21,34,21,34" />
+      <scope id="3727517784852748527" at="25,48,26,22" />
+      <scope id="4417301346392387977" at="30,50,31,107" />
+      <scope id="3727517784852302619" at="37,29,38,73" />
+      <scope id="3727517784852294369" at="20,0,23,0" />
+      <scope id="3727517784852748524" at="24,0,28,0" />
+      <scope id="4417301346392367412" at="29,77,33,42" />
+      <scope id="4417301346392367501" at="36,48,40,43" />
+      <scope id="4417301346392367408" at="29,0,35,0">
         <var name="env" id="4417301346392367446" />
       </scope>
-      <scope id="4417301346392367497" at="30,0,36,0" />
-      <unit id="4417301346392321475" at="12,0,37,0" name="jetbrains.mps.tool.environment.EnvironmentContainer" />
+      <scope id="4417301346392367497" at="36,0,42,0" />
+      <unit id="4417301346392321475" at="15,0,43,0" name="jetbrains.mps.tool.environment.EnvironmentContainer" />
     </file>
   </root>
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/623745604705880298">
