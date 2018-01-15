@@ -1012,33 +1012,6 @@
       <ref role="lpD7v" to="9sj4:6otXYHBjQ0N" resolve="XmlConverterTest" />
     </node>
   </node>
-  <node concept="lpD6F" id="6j5OJw7t7vP">
-    <node concept="2R4zua" id="6j5OJw7t7vQ" role="2R4z3u">
-      <property role="2R4zub" value="jetbrains.mps.testbench" />
-      <property role="2R4zu8" value="e9000334-f5e2-4a2f-a0fc-9afd1d31e048" />
-    </node>
-    <node concept="lpD6A" id="6j5OJw7t7vR" role="lpD6w">
-      <ref role="lpD7v" to="f7ij:7X3$Ctw9fk8" resolve="AuditTypeSystem" />
-    </node>
-    <node concept="lpD6A" id="6j5OJw7t7vU" role="lpD6w">
-      <ref role="lpD7v" to="f7ij:7X3$Ctw9yI_" resolve="AuditConstraints" />
-    </node>
-    <node concept="lpD6A" id="6j5OJw7t7vX" role="lpD6w">
-      <ref role="lpD7v" to="f7ij:7X3$Ctw9JVJ" resolve="CheckProjectStructure" />
-    </node>
-    <node concept="lpD6A" id="6j5OJw7t7w1" role="lpD6w">
-      <ref role="lpD7v" to="f7ij:3wYn_nuz8y5" resolve="ScopesTest" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="6j5OJw7t8kP">
-    <node concept="2R4zua" id="6j5OJw7t8kQ" role="2R4z3u">
-      <property role="2R4zub" value="jetbrains.mps.testbench.make" />
-      <property role="2R4zu8" value="79f9d103-4ff6-4def-9c1a-27070f9ba255" />
-    </node>
-    <node concept="lpD6A" id="6j5OJw7t8kR" role="lpD6w">
-      <ref role="lpD7v" to="gp3f:7X3$CtwaMP1" resolve="ProjectTest" />
-    </node>
-  </node>
   <node concept="lpD6F" id="7Psq8BycRoy">
     <node concept="lpD6A" id="3P7Hp8k5FC_" role="lpD6w">
       <ref role="lpD7v" to="j5ir:6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
