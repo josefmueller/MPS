@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.junit.suites;
 
 import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
@@ -11,11 +12,10 @@ import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ProjectStrategy;
 import jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy;
+import org.junit.AfterClass;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,6 +24,7 @@ import java.util.HashSet;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseCheckModulesTest {
+  private static MpsEnvironment ourEnvironment;
   private static Project ourContextProject;
   protected final SModule myModule;
 
@@ -44,12 +45,18 @@ public class BaseCheckModulesTest {
   }
 
   protected static void initEnvironment() throws InvocationTargetException, InterruptedException {
-    Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-
+    ourEnvironment = new MpsEnvironment(EnvironmentConfig.defaultConfig());
+    ourEnvironment.init();
     ProjectStrategy strategy = new MPSCompositeProjectStrategy();
-    ourContextProject = env.createProject(strategy);
+    ourContextProject = ourEnvironment.createProject(strategy);
   }
 
+  @AfterClass
+  public static void disposeEnvironment() {
+    ourEnvironment.closeProject(ourContextProject);
+    ourEnvironment.dispose();
+    ourEnvironment = null;
+  }
 
   protected static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();

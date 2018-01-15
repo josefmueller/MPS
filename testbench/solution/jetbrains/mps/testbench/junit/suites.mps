@@ -471,6 +471,14 @@
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
     <property role="3GE5qa" value="checking" />
+    <node concept="Wx3nA" id="5AcmpEOpi7M" role="jymVt">
+      <property role="TrG5h" value="ourEnvironment" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="5AcmpEOpi7n" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
+      </node>
+      <node concept="3Tm6S6" id="5AcmpEOphLN" role="1B3o_S" />
+    </node>
     <node concept="3Tm1VV" id="7X3$Ctw3YsZ" role="1B3o_S" />
     <node concept="2AHcQZ" id="7X3$Ctw3Yt0" role="2AJF6D">
       <ref role="2AI5Lk" to="cvlm:~RunWith" resolve="RunWith" />
@@ -627,23 +635,32 @@
         <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
       </node>
       <node concept="3clFbS" id="7X3$Ctw3YtD" role="3clF47">
-        <node concept="3cpWs8" id="6LlhC3WLoBP" role="3cqZAp">
-          <node concept="3cpWsn" id="6LlhC3WLoBQ" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="6LlhC3WLoBR" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2YIFZM" id="6LlhC3WLoBS" role="33vP2m">
-              <ref role="1Pybhc" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
-              <ref role="37wK5l" to="79ha:6LlhC3WJZzD" resolve="getOrCreate" />
-              <node concept="2YIFZM" id="6LlhC3WLoBT" role="37wK5m">
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+        <node concept="3clFbF" id="5AcmpEOpkde" role="3cqZAp">
+          <node concept="37vLTI" id="5AcmpEOpkAR" role="3clFbG">
+            <node concept="2ShNRf" id="5AcmpEOpkJB" role="37vLTx">
+              <node concept="1pGfFk" id="5AcmpEOpwE5" role="2ShVmc">
+                <ref role="37wK5l" to="79ha:6rx4kZDkRyV" resolve="MpsEnvironment" />
+                <node concept="2YIFZM" id="6LlhC3WLoBT" role="37wK5m">
+                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                </node>
               </node>
+            </node>
+            <node concept="37vLTw" id="5AcmpEOpkdc" role="37vLTJ">
+              <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6pV9atG445" role="3cqZAp" />
+        <node concept="3clFbF" id="5AcmpEOpwVb" role="3cqZAp">
+          <node concept="2OqwBi" id="5AcmpEOpxav" role="3clFbG">
+            <node concept="37vLTw" id="5AcmpEOpwV9" role="2Oq$k0">
+              <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
+            </node>
+            <node concept="liA8E" id="5AcmpEOpxCt" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3eUNqOk7hpY" resolve="init" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1RTSjGsvf8l" role="3cqZAp">
           <node concept="3cpWsn" id="1RTSjGsvf8m" role="3cpWs9">
             <property role="TrG5h" value="strategy" />
@@ -663,8 +680,8 @@
               <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
             </node>
             <node concept="2OqwBi" id="2BGPXkExGHa" role="37vLTx">
-              <node concept="37vLTw" id="2BGPXkExGGd" role="2Oq$k0">
-                <ref role="3cqZAo" node="6LlhC3WLoBQ" resolve="env" />
+              <node concept="37vLTw" id="5AcmpEOpxUg" role="2Oq$k0">
+                <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
               </node>
               <node concept="liA8E" id="2BGPXkExGOt" role="2OqNvi">
                 <ref role="37wK5l" to="79ha:6rx4kZDk5oX" resolve="createProject" />
@@ -680,6 +697,49 @@
       <node concept="3cqZAl" id="6pV9atEQ3H" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2BGPXkExGoH" role="jymVt" />
+    <node concept="2YIFZL" id="5AcmpEOpeJj" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="disposeEnvironment" />
+      <node concept="3clFbS" id="5AcmpEOpelQ" role="3clF47">
+        <node concept="3clFbF" id="5AcmpEOpiuC" role="3cqZAp">
+          <node concept="2OqwBi" id="5AcmpEOpiD5" role="3clFbG">
+            <node concept="37vLTw" id="5AcmpEOpiuB" role="2Oq$k0">
+              <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
+            </node>
+            <node concept="liA8E" id="5AcmpEOpj3I" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3hj1t46fASQ" resolve="closeProject" />
+              <node concept="37vLTw" id="5AcmpEOpj5d" role="37wK5m">
+                <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5AcmpEOpj81" role="3cqZAp">
+          <node concept="2OqwBi" id="5AcmpEOpjj1" role="3clFbG">
+            <node concept="37vLTw" id="5AcmpEOpj7Z" role="2Oq$k0">
+              <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
+            </node>
+            <node concept="liA8E" id="5AcmpEOpjI1" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3eUNqOk4$fg" resolve="dispose" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5AcmpEOpjKq" role="3cqZAp">
+          <node concept="37vLTI" id="5AcmpEOpk6j" role="3clFbG">
+            <node concept="10Nm6u" id="5AcmpEOpk7B" role="37vLTx" />
+            <node concept="37vLTw" id="5AcmpEOpjKo" role="37vLTJ">
+              <ref role="3cqZAo" node="5AcmpEOpi7M" resolve="ourEnvironment" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="5AcmpEOpelO" role="3clF45" />
+      <node concept="3Tm1VV" id="5AcmpEOpelP" role="1B3o_S" />
+      <node concept="2AHcQZ" id="5AcmpEOpitn" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~AfterClass" resolve="AfterClass" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="5lulEoObh1L" role="jymVt" />
     <node concept="2YIFZL" id="7X3$Ctw3YtW" role="jymVt">
       <property role="TrG5h" value="createTestParametersFromModules" />
