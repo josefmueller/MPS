@@ -125,7 +125,7 @@ public interface SNode {
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
-   * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
+   * @param anchor a new child node will be inserted just after this node. If anchor is not specified,
    *               a new child is inserted as a first child. If anchor is the last child element, newly added
    *               child becomes tail of collection
    */
