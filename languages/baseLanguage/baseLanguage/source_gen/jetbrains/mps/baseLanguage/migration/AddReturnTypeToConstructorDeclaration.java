@@ -17,7 +17,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class AddReturnTypeToConstructorDeclaration extends MigrationScriptBase {
   public String getCaption() {
-    return "[internal] Add return type into constructor declarations";
+    return "Add return type into constructor declarations";
   }
   @Override
   public boolean isRerunnable() {
