@@ -24,7 +24,11 @@ public class check_CellActionMapDeclarationUsed_NonTypesystemRule extends Abstra
   public void applyRule(final SNode cellActionMapDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(cellActionMapDeclaration), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_i8xqqm_a0a0a0a0a0a0a0b(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), cellActionMapDeclaration);
+        return eq_i8xqqm_a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")), cellActionMapDeclaration);
+      }
+    }) == null) && (ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(cellActionMapDeclaration), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"))).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_i8xqqm_a0a0a0a0a0a0a0a1_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, 0x11126d75849L, "elementActionMap")), cellActionMapDeclaration);
       }
     }) == null)) {
       {
@@ -42,7 +46,10 @@ public class check_CellActionMapDeclarationUsed_NonTypesystemRule extends Abstra
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_i8xqqm_a0a0a0a0a0a0a0b(Object a, Object b) {
+  private static boolean eq_i8xqqm_a0a0a0a0a0a0a0a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_i8xqqm_a0a0a0a0a0a0a0a1_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
