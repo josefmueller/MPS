@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root nodeRef="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)/1277106018273911117">
+    <file name="VCSAspectDescriptor.java">
+      <node id="1277106018273979214" at="10,0,12,0" concept="0" trace="getDefaultStrategy#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/vcs/mergehints/runtime/VCSAspectDescriptor/Strategy;" />
+      <scope id="1277106018273979214" at="10,0,12,0">
+        <var name="c" id="1277106018273979379" />
+      </scope>
+      <unit id="1277106018274215677" at="16,0,18,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor$BaseVcsAspectDescriptor" />
+      <unit id="1277106018273978907" at="12,0,16,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor$Strategy" />
+      <unit id="1277106018273911117" at="9,0,19,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

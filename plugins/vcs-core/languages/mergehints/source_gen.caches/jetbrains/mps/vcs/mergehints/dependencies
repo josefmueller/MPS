@@ -5,6 +5,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
@@ -18,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.migration.MigrationDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.typesystem.TypesystemDescriptor" />

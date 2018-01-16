@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" file="VCSAspectDescriptor.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
+  </dependency>
+</dependenciesRoot>
+

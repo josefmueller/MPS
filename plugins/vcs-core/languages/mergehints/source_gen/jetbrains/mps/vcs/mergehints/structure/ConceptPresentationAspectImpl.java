@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_MergeHint;
+  private ConceptPresentation props_VCSHint;
+  private ConceptPresentation props_VCSHints;
 
   @Override
   @Nullable
@@ -19,10 +21,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MergeHint:
         if (props_MergeHint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("MergeHint");
           props_MergeHint = cpb.create();
         }
         return props_MergeHint;
+      case LanguageConceptSwitch.VCSHint:
+        if (props_VCSHint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b5L, "cncpt", "", "");
+          props_VCSHint = cpb.create();
+        }
+        return props_VCSHint;
+      case LanguageConceptSwitch.VCSHints:
+        if (props_VCSHints == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_VCSHints = cpb.create();
+        }
+        return props_VCSHints;
     }
     return null;
   }

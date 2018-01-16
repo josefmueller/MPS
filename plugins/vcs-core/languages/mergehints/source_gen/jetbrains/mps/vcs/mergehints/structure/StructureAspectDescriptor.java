@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMergeHint = createDescriptorForMergeHint();
+  /*package*/ final ConceptDescriptor myConceptVCSHint = createDescriptorForVCSHint();
+  /*package*/ final ConceptDescriptor myConceptVCSHints = createDescriptorForVCSHints();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -21,7 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMergeHint);
+    return Arrays.asList(myConceptMergeHint, myConceptVCSHint, myConceptVCSHints);
   }
 
   @Override
@@ -30,6 +32,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myConceptIndex.index(id)) {
       case LanguageConceptSwitch.MergeHint:
         return myConceptMergeHint;
+      case LanguageConceptSwitch.VCSHint:
+        return myConceptVCSHint;
+      case LanguageConceptSwitch.VCSHints:
+        return myConceptVCSHints;
       default:
         return null;
     }
@@ -45,6 +51,23 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
     b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/7313573869697839898");
     b.prop("hint", 0x75c17d085c8e0dbaL, "8485200647808748986");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForVCSHint() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.vcs.mergehints", "VCSHint", 0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL);
+    b.class_(false, false, false);
+    b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/4140018591229954300");
+    b.prop("strategy", 0x39744cf955c649b7L, "4140018591229954487");
+    b.associate("cncpt", 0x39744cf955c649b5L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("4140018591229954485").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForVCSHints() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.vcs.mergehints", "VCSHints", 0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L);
+    b.class_(false, false, true);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL);
+    b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/4140018591229954297");
+    b.aggregate("hints", 0x39744cf955c648faL).target(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL).optional(true).ordered(true).multiple(true).origin("4140018591229954298").done();
+    b.alias("VCS Hints");
     return b.create();
   }
 }
