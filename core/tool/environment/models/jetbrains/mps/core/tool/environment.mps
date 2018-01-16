@@ -311,6 +311,7 @@
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="4948473272651335344" name="jetbrains.mps.baseLanguage.javadoc.structure.EmptyBlockDocTag" flags="ng" index="1Ciki9" />
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
@@ -1792,6 +1793,26 @@
         <node concept="TZ5HA" id="6LlhC3WMj2e" role="TZ5H$">
           <node concept="1dT_AC" id="6LlhC3WMj2f" role="1dT_Ay">
             <property role="1dT_AB" value="creates a new MpsEnvironment or returns the cached one" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="ZWTyeZVC04" role="3nqlJM">
+          <node concept="TZ5HA" id="ZWTyeZVC05" role="3HnX3l">
+            <node concept="1dT_AC" id="ZWTyeZVCW$" role="1dT_Ay">
+              <property role="1dT_AB" value="Code that needs access to functionality of an Environment shall get its value configured from outside and not attempt to create one. The code that starts an environment doesn't need to re-use a cached instance." />
+            </node>
+          </node>
+        </node>
+        <node concept="1Ciki9" id="ZWTyeZVCWA" role="3nqlJM" />
+      </node>
+      <node concept="2AHcQZ" id="ZWTyeZVC06" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="ZWTyeZVCdZ" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="ZWTyeZVCEd" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="ZWTyeZVCWl" role="2B70Vg">
+            <property role="$nhwW" value="2018.1" />
           </node>
         </node>
       </node>

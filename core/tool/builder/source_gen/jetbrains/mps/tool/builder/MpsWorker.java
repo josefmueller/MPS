@@ -77,7 +77,9 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    return MpsEnvironment.getOrCreate(createEnvironmentConfig(myWhatToDo));
+    MpsEnvironment env = new MpsEnvironment(createEnvironmentConfig(myWhatToDo));
+    env.init();
+    return env;
   }
 
   public EnvironmentConfig createEnvironmentConfig(Script whatToDo) {
