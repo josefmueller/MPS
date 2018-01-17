@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.testbench.BaseMpsTest" file="BaseMpsTest.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -42,6 +44,16 @@
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runners.model.Statement" />
     <classNode extendsClassName="org.junit.rules.TestRule" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.ProjectCloneSupport" file="ProjectCloneSupport.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
   </dependency>
 </dependenciesRoot>
 

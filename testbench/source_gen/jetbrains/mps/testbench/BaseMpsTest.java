@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.UnzipUtil;
 import java.io.IOException;
@@ -55,7 +56,11 @@ public abstract class BaseMpsTest {
 
   /**
    * copies project to some [temporary] destination dir, after that opens it
+   * 
+   * @deprecated use ProjectCloneSupport instead
    */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   protected static Project openClonedProject(File source, final File destinationDir) {
     if (destinationDir.exists()) {
       FileUtil.delete(destinationDir);
@@ -77,6 +82,12 @@ public abstract class BaseMpsTest {
     return getEnvironment().openProject(destinationDir);
   }
 
+  /**
+   * 
+   * @deprecated use ProjectCloneSupport instead
+   */
+  @ToRemove(version = 2018.1)
+  @Deprecated
   protected static void closeClonedProject(final Project project, final File destinationDir) {
     Environment env = getEnvironment();
     env.flushAllEvents();

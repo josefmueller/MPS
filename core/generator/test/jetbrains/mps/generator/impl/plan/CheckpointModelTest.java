@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
@@ -41,10 +40,13 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 import org.hamcrest.CoreMatchers;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
@@ -55,9 +57,9 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -70,22 +72,28 @@ import java.util.List;
 /**
  * @author Artem Tikhomirov
  */
-public class CheckpointModelTest extends PlatformMpsTest {
+public class CheckpointModelTest implements EnvironmentAware {
   private static Project mpsProject;
 
   @Rule
   public final ErrorCollector myErrors = new ErrorCollector();
 
   private final IMessageHandler myGeneratorMessages = new LogHandler(Logger.getLogger(CheckpointModelTest.class));
+  private Environment myEnv;
 
-  @BeforeClass
-  public static void setup() {
-    mpsProject = ENV.openProject(new File(PathManager.getUserDir(), "languages/languageDesign/generator/project.xmodel.test1"));
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnv = env;
   }
 
-  @AfterClass
-  public static void tearDown() {
-    mpsProject.dispose();
+  @Before
+  public void setup() {
+    mpsProject = myEnv.openProject(new File(PathManager.getUserDir(), "languages/languageDesign/generator/project.xmodel.test1"));
+  }
+
+  @After
+  public void tearDown() {
+    myEnv.closeProject(mpsProject);
   }
 
   /**
