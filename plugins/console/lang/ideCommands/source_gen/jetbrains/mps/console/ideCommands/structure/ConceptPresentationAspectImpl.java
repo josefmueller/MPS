@@ -97,7 +97,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GlobalScope:
         if (props_GlobalScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("add modules in repository");
+          cpb.shortDesc("all modules in repository");
           cpb.rawPresentation("global");
           props_GlobalScope = cpb.create();
         }

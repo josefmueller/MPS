@@ -1044,7 +1044,7 @@
                       <node concept="liA8E" id="5u" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="5v" role="37wK5m">
-                          <property role="Xl_RC" value="add modules in repository" />
+                          <property role="Xl_RC" value="all modules in repository" />
                         </node>
                       </node>
                     </node>
