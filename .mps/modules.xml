@@ -216,8 +216,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/ant.cmd/jetbrains.mps.ant.execution.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/java.cmd/jetbrains.mps.baseLanguage.execution.util.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/java.startup/jetbrains.mps.baseLanguage.execution.startup.msd" folder="workbench.execution" />
-      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/junit/jetbrains.mps.baseLanguage.unitTest.execution.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-configurations/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" folder="workbench.execution" />
@@ -431,7 +431,6 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/jetbrains.mps.build.mps.testModules.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/ide.vcs.test/jetbrains.mps.ide.vcs.test.msd" folder="platform.vcs" />
-      <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/jetbrains.mps.migration.test.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.buildscript/jetbrains.mps.build.mps.runner.test.buildscript.msd" folder="platform.build.runner.test" />

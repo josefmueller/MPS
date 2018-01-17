@@ -45,10 +45,7 @@
     <import index="tizr" ref="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)" />
     <import index="5vzk" ref="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)" />
     <import index="9sj4" ref="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)" />
-    <import index="f7ij" ref="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)" />
-    <import index="gp3f" ref="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" />
     <import index="7fk5" ref="r:783567bb-6a97-47d3-ab6c-d2a82efd2145(jetbrains.mps.smodel.test.concepts@tests)" />
-    <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
@@ -1019,18 +1016,6 @@
     <node concept="2R4zua" id="7Psq8BycRtk" role="2R4z3u">
       <property role="2R4zub" value="jetbrains.mps.ide.vcs.test" />
       <property role="2R4zu8" value="9dc77d7d-3b66-403c-b568-37677f157448" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="441$Vdog_0U">
-    <node concept="lpD6D" id="441$VdogCzw" role="lpD6w">
-      <ref role="lpD7u" to="cl80:4JxJVgt40Xf" resolve="Migrations_Test" />
-    </node>
-    <node concept="lpD6D" id="4sZg1XOxVb" role="lpD6w">
-      <ref role="lpD7u" to="cl80:74sHQpDbWgb" resolve="MigrationAssistant_Test" />
-    </node>
-    <node concept="2R4zua" id="441$VdogCcI" role="2R4z3u">
-      <property role="2R4zub" value="jetbrains.mps.migration.test" />
-      <property role="2R4zu8" value="5cc84139-6daa-4cf6-9a75-d1505100aeb4" />
     </node>
   </node>
   <node concept="lpD6F" id="4$ezt8YQUyf">
