@@ -21,12 +21,12 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="yyt9" ref="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" />
     <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -103,7 +103,7 @@
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
-        <child id="1165602531693" name="superclass" index="1zkMxy" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -664,6 +664,13 @@
   </node>
   <node concept="312cEu" id="3efb7k2$8ZJ">
     <property role="TrG5h" value="TraceInfoTest" />
+    <node concept="312cEg" id="1KxguJLUY8p" role="jymVt">
+      <property role="TrG5h" value="myEnv" />
+      <node concept="3Tm6S6" id="1KxguJLUY8q" role="1B3o_S" />
+      <node concept="3uibUv" id="1KxguJLUY8s" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+    </node>
     <node concept="312cEg" id="3Gc6Q_RXVAc" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -685,14 +692,43 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3Gc6Q_RXUkY" role="jymVt" />
-    <node concept="3uibUv" id="Az_EN8PE7i" role="1zkMxy">
-      <ref role="3uigEE" to="yyt9:Az_EN8Pv6h" resolve="PlatformMpsTest" />
-    </node>
     <node concept="3Tm1VV" id="3efb7k2$8ZK" role="1B3o_S" />
     <node concept="3clFbW" id="3efb7k2$8ZL" role="jymVt">
       <node concept="3cqZAl" id="3efb7k2$8ZM" role="3clF45" />
       <node concept="3Tm1VV" id="3efb7k2$8ZN" role="1B3o_S" />
       <node concept="3clFbS" id="3efb7k2$8ZO" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="1KxguJLUV0l" role="jymVt" />
+    <node concept="3clFb_" id="1KxguJLUWzp" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="setEnvironment" />
+      <node concept="3Tm1VV" id="1KxguJLUWzr" role="1B3o_S" />
+      <node concept="3cqZAl" id="1KxguJLUWzs" role="3clF45" />
+      <node concept="37vLTG" id="1KxguJLUWzt" role="3clF46">
+        <property role="TrG5h" value="env" />
+        <node concept="3uibUv" id="1KxguJLUWzu" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        </node>
+        <node concept="2AHcQZ" id="1KxguJLUWzv" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1KxguJLUWzw" role="3clF47">
+        <node concept="3clFbF" id="1KxguJLUY8t" role="3cqZAp">
+          <node concept="37vLTI" id="1KxguJLUY8v" role="3clFbG">
+            <node concept="37vLTw" id="1KxguJLUY8y" role="37vLTJ">
+              <ref role="3cqZAo" node="1KxguJLUY8p" resolve="myEnv" />
+            </node>
+            <node concept="37vLTw" id="1KxguJLUY8z" role="37vLTx">
+              <ref role="3cqZAo" node="1KxguJLUWzt" resolve="env" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1KxguJLUWzx" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="2tJIrI" id="3Gc6Q_RXMOT" role="jymVt" />
     <node concept="3clFb_" id="3Gc6Q_RXOvF" role="jymVt">
@@ -707,19 +743,23 @@
             <node concept="37vLTw" id="3Gc6Q_RXWd6" role="37vLTJ">
               <ref role="3cqZAo" node="3Gc6Q_RXVAc" resolve="myProject" />
             </node>
-            <node concept="2YIFZM" id="1RTSjGsFQls" role="37vLTx">
-              <ref role="37wK5l" to="3ebz:1RTSjGsxmmw" resolve="openProject" />
-              <ref role="1Pybhc" to="3ebz:3eUNqOk3QI8" resolve="BaseMpsTest" />
-              <node concept="2ShNRf" id="75ChKjLGNa4" role="37wK5m">
-                <node concept="1pGfFk" id="75ChKjLGNa5" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                  <node concept="3cpWs3" id="75ChKjLGNa6" role="37wK5m">
-                    <node concept="2YIFZM" id="75ChKjLGNa7" role="3uHU7B">
-                      <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                      <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
-                    </node>
-                    <node concept="Xl_RD" id="75ChKjLGNa8" role="3uHU7w">
-                      <property role="Xl_RC" value="/languages/languageDesign/traceinfo" />
+            <node concept="2OqwBi" id="1KxguJLV9iQ" role="37vLTx">
+              <node concept="37vLTw" id="1KxguJLV8X_" role="2Oq$k0">
+                <ref role="3cqZAo" node="1KxguJLUY8p" resolve="myEnv" />
+              </node>
+              <node concept="liA8E" id="1KxguJLV9Dg" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                <node concept="2ShNRf" id="75ChKjLGNa4" role="37wK5m">
+                  <node concept="1pGfFk" id="75ChKjLGNa5" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                    <node concept="3cpWs3" id="75ChKjLGNa6" role="37wK5m">
+                      <node concept="2YIFZM" id="75ChKjLGNa7" role="3uHU7B">
+                        <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
+                        <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
+                      </node>
+                      <node concept="Xl_RD" id="75ChKjLGNa8" role="3uHU7w">
+                        <property role="Xl_RC" value="/languages/languageDesign/traceinfo" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -762,11 +802,16 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3Gc6Q_RXQEe" role="3clF47">
-        <node concept="3clFbF" id="3efb7k2$oSz" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyz8aR" role="3clFbG">
-            <ref role="37wK5l" node="3efb7k2$e7b" resolve="cleanup" />
-            <node concept="37vLTw" id="3Gc6Q_RXWkE" role="37wK5m">
-              <ref role="3cqZAo" node="3Gc6Q_RXVAc" resolve="myProject" />
+        <node concept="3clFbF" id="1KxguJLVaLW" role="3cqZAp">
+          <node concept="2OqwBi" id="1KxguJLVaXf" role="3clFbG">
+            <node concept="37vLTw" id="1KxguJLVaLU" role="2Oq$k0">
+              <ref role="3cqZAo" node="1KxguJLUY8p" resolve="myEnv" />
+            </node>
+            <node concept="liA8E" id="1KxguJLVbfn" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3hj1t46fvYr" resolve="closeProject" />
+              <node concept="37vLTw" id="1KxguJLVbky" role="37wK5m">
+                <ref role="3cqZAo" node="3Gc6Q_RXVAc" resolve="myProject" />
+              </node>
             </node>
           </node>
         </node>
@@ -793,7 +838,6 @@
         <ref role="2AI5Lk" to="rjhg:~After" resolve="After" />
       </node>
     </node>
-    <node concept="2tJIrI" id="6k4GBOyl5ML" role="jymVt" />
     <node concept="2tJIrI" id="6k4GBOylfHd" role="jymVt" />
     <node concept="3clFb_" id="6k4GBOyl87M" role="jymVt">
       <property role="TrG5h" value="precondition" />
@@ -1998,31 +2042,8 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="5A5jZrz46cs" role="jymVt" />
-    <node concept="3clFb_" id="3efb7k2$e7b" role="jymVt">
-      <property role="TrG5h" value="cleanup" />
-      <node concept="3cqZAl" id="3efb7k2$e7c" role="3clF45" />
-      <node concept="3Tm6S6" id="3efb7k2$lLE" role="1B3o_S" />
-      <node concept="3clFbS" id="3efb7k2$e7e" role="3clF47">
-        <node concept="3clFbF" id="5A5jZrz4bFQ" role="3cqZAp">
-          <node concept="2OqwBi" id="5A5jZrz4bHH" role="3clFbG">
-            <node concept="2YIFZM" id="1RTSjGsx2CC" role="2Oq$k0">
-              <ref role="1Pybhc" to="3ebz:3eUNqOk3QI8" resolve="BaseMpsTest" />
-              <ref role="37wK5l" to="3ebz:5A5jZrz6eRi" resolve="getEnvironment" />
-            </node>
-            <node concept="liA8E" id="5A5jZrz4bPL" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk4fPx" resolve="flushAllEvents" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="3efb7k2$e7h" role="3clF46">
-        <property role="TrG5h" value="p" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="1jvPZ1MMobW" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-        </node>
-      </node>
+    <node concept="3uibUv" id="1KxguJLUTsR" role="EKbjA">
+      <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
     </node>
   </node>
 </model>

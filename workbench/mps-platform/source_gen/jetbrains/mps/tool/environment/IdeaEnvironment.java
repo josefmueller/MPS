@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.RuntimeFlags;
@@ -52,8 +53,12 @@ public final class IdeaEnvironment extends EnvironmentBase {
 
   /**
    * creates a new IdeaEnvironment or returns the cached one
+   * 
+   * @deprecated Code that needs access to functionality of an Environment shall get its value configured from outside and not attempt to create one. The code that starts an environment doesn't need to re-use a cached instance.
    */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static Environment getOrCreate(@NotNull EnvironmentConfig config) {
     Environment currentEnv = EnvironmentContainer.get();
     if (currentEnv != null) {

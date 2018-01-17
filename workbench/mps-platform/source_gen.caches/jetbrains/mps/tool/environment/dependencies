@@ -13,6 +13,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess" />
     <classNode dependClassName="com.intellij.testFramework.PlatformTestUtil" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -38,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="jetbrains.mps.vfs.CachingFileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.DefaultCachingContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

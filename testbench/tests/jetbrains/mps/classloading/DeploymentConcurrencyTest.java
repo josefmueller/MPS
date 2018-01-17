@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,15 @@
  */
 package jetbrains.mps.classloading;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.tools.ant.taskdefs.Exec;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -41,26 +33,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class DeploymentConcurrencyTest extends BaseMpsTest {
+public class DeploymentConcurrencyTest implements EnvironmentAware {
   private final static Logger LOG = LogManager.getLogger(DeploymentConcurrencyTest.class);
 
   private final static int nThreads = 10;
   private final static long TIME_OUT_MS = 10000;
   private Environment myEnvironment;
 
-  private Environment createEnvironment() {
-    return IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-  }
-  @Before
-  public void beforeTest() {
-    if (myEnvironment == null) {
-      myEnvironment = createEnvironment();
-    }
-  }
-
-  @After
-  public void afterTest() {
-//    myEnvironment.dispose(); cannot restart idea environment for now
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnvironment = env;
   }
 
   @Test

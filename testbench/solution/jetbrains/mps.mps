@@ -233,6 +233,27 @@
     <node concept="3uibUv" id="5A5jZryZ5P_" role="1zkMxy">
       <ref role="3uigEE" to="3ebz:3eUNqOk3QI8" resolve="BaseMpsTest" />
     </node>
+    <node concept="3UR2Jj" id="1KxguJLVjti" role="lGtFl">
+      <node concept="TZ5HI" id="1KxguJLVjtj" role="3nqlJM">
+        <node concept="TZ5HA" id="1KxguJLVjtk" role="3HnX3l">
+          <node concept="1dT_AC" id="1KxguJLVjWr" role="1dT_Ay">
+            <property role="1dT_AB" value="There's no need to subclass this test. Mark your test as EnvironmentAware and include into a proper suite (the one that initializes Environment you need)." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="1KxguJLVjtl" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="1KxguJLVjtD" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="1KxguJLVjx8" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="1KxguJLVjWk" role="2B70Vg">
+          <property role="$nhwW" value="2018.1" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="Az_EN8PsTS">
     <property role="TrG5h" value="CoreMpsTest" />

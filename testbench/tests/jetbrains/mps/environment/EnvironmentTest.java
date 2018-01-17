@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,7 +29,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public abstract class EnvironmentTest extends BaseMpsTest {
+public abstract class EnvironmentTest {
   private Environment myEnvironment = null;
 
   protected abstract Environment createEnvironment();

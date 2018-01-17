@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,12 @@ package jetbrains.mps.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystem;
-import static org.junit.Assert.*;
-
+import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import java.io.File;
@@ -31,76 +31,70 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Collections;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 /**
  * Added on Oct 12, 2010
  *
  * @author Evgeny Gerashchenko
  */
-public class VfsTest extends PlatformMpsTest {
+public class VfsTest implements EnvironmentAware {
   private static final String SUBSUBDIR = "subdir" + File.separator + "subsubdir";
   private static final int FILE_SIZE = 20000;
 
   private static final String JAR_NAME = "testjar.zip";
   private static final String JAR_SUFFIX = "!/testjar";
 
-  private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
-    @Override
-    public void invokeTest(Runnable testRunnable) {
-      FileSystem oldFS = FileSystemExtPoint.getFS();
-      try {
-        FileSystemExtPoint.setFS(IoFileSystem.INSTANCE);
-        testRunnable.run();
-      } finally {
-        FileSystemExtPoint.setFS(oldFS);
-      }
+  private static void IO_FS_TEST(Runnable testRunnable) {
+    FileSystem oldFS = FileSystemExtPoint.getFS();
+    try {
+      FileSystemExtPoint.setFS(IoFileSystem.INSTANCE);
+      testRunnable.run();
+    } finally {
+      FileSystemExtPoint.setFS(oldFS);
     }
-  };
+  }
 
-  private static final TestInvoker IDEA_TEST_INVOKER = new TestInvoker() {
-    @Override
-    public void invokeTest(final Runnable testRunnable) {
-      FileSystem oldFS = FileSystemExtPoint.getFS();
-      try {
-        FileSystemExtPoint.setFS(new IdeaFileSystem());
-        final Throwable[] ex = new Throwable[1];
-        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-          @Override
-          public void run() {
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              @Override
-              public void run() {
-                try {
-                  testRunnable.run();
-                } catch (Throwable e) {
-                  ex[0] = e;
-                }
+  private static void IDEA_FS_TEST(final Runnable testRunnable) {
+    FileSystem oldFS = FileSystemExtPoint.getFS();
+    try {
+      FileSystemExtPoint.setFS(new IdeaFileSystem());
+      final Throwable[] ex = new Throwable[1];
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+              try {
+                testRunnable.run();
+              } catch (Throwable e) {
+                ex[0] = e;
               }
-            });
-          }
-        }, ModalityState.defaultModalityState());
-        if (ex[0] != null) {
-          ex[0].printStackTrace();
-          fail();
+            }
+          });
         }
-      } finally {
-        FileSystemExtPoint.setFS(oldFS);
+      }, ModalityState.defaultModalityState());
+      if (ex[0] != null) {
+        ex[0].printStackTrace();
+        fail();
       }
+    } finally {
+      FileSystemExtPoint.setFS(oldFS);
     }
-  };
+  }
 
-  private static final Runnable BASE_TEST_RUNNABLE = new Runnable() {
-    @Override
-    public void run() {
-      doBaseVfsTest();
-    }
-  };
+  private static final Runnable BASE_TEST_RUNNABLE = VfsTest::doBaseVfsTest;
 
-  private static final Runnable JAR_TEST_RUNNABLE = new Runnable() {
-    @Override
-    public void run() {
-      doJarVfsTest();
-    }
-  };
+  private static final Runnable JAR_TEST_RUNNABLE = VfsTest::doJarVfsTest;
+
+  @Override
+  public void setEnvironment(@NotNull Environment ignored) {
+    // Needs IdeaEnvironment, but doesn't utilize it
+  }
 
   private static void doBaseVfsTest() {
     IFile tmpDir = IFileUtils.createTmpDir();
@@ -203,25 +197,21 @@ public class VfsTest extends PlatformMpsTest {
 
   @Test
   public void baseIdeaVfsTest() {
-    IDEA_TEST_INVOKER.invokeTest(BASE_TEST_RUNNABLE);
+    IDEA_FS_TEST(BASE_TEST_RUNNABLE);
   }
 
   @Test
   public void baseIoVfsTest() {
-    IO_TEST_INVOKER.invokeTest(BASE_TEST_RUNNABLE);
+    IO_FS_TEST(BASE_TEST_RUNNABLE);
   }
 
   @Test
   public void jarIdeaVfsTest() {
-    IDEA_TEST_INVOKER.invokeTest(JAR_TEST_RUNNABLE);
+    IDEA_FS_TEST(JAR_TEST_RUNNABLE);
   }
 
   @Test
   public void jarIoVfsTest() {
-    IO_TEST_INVOKER.invokeTest(JAR_TEST_RUNNABLE);
-  }
-
-  private interface TestInvoker {
-    void invokeTest(Runnable testRunnable);
+    IO_FS_TEST(JAR_TEST_RUNNABLE);
   }
 }

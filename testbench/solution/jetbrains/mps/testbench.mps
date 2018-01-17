@@ -1794,6 +1794,27 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3eUNqOk3QI9" role="1B3o_S" />
+    <node concept="3UR2Jj" id="1KxguJLV$gv" role="lGtFl">
+      <node concept="TZ5HI" id="1KxguJLV$gw" role="3nqlJM">
+        <node concept="TZ5HA" id="1KxguJLV$gx" role="3HnX3l">
+          <node concept="1dT_AC" id="1KxguJLV_55" role="1dT_Ay">
+            <property role="1dT_AB" value="It's unlikely you can make use of this class. If you need an Environment instance, check EnvironmentAware. To deal with project modules, just do it yourself. To clone a project, use ProjectCloneSupport." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="1KxguJLV$gy" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="1KxguJLV$ia" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="1KxguJLV$Vk" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="1KxguJLV_4Y" role="2B70Vg">
+          <property role="$nhwW" value="2018.1" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5AcmpEOr4by">
     <property role="1sVAO0" value="true" />

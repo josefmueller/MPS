@@ -19,6 +19,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 
+// THIS TEST IS INACTIVE AS MPS DOES NOT SUPPORT SWITCH OF ENVIRONMENT NOW
 public class RestartingMps2MpsEnvironmentTest extends EnvironmentTest {
   @Override
   protected Environment createEnvironment() {

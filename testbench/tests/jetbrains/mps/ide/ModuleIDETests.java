@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,21 +57,21 @@ public class ModuleIDETests extends ModuleInProjectTest {
 
   private void checkGenerators(@NotNull Language language) {
     Collection<Generator> generators = language.getGenerators();
-    Assert.assertTrue(ourProject.getProjectModules().contains(language));
-    Assert.assertTrue(ourProject.getProjectModulesWithGenerators().containsAll(generators));
-    generators.forEach(g -> Assert.assertFalse(ourProject.getProjectModules().contains(g)));
+    Assert.assertTrue(myProject.getProjectModules().contains(language));
+    Assert.assertTrue(myProject.getProjectModulesWithGenerators().containsAll(generators));
+    generators.forEach(g -> Assert.assertFalse(myProject.getProjectModules().contains(g)));
   }
 
   @Test
   public void createSolution() {
     String solutionName = getNewModuleName();
     Reference<Solution> solutionRef = new Reference<>();
-    invokeInCommand(() -> solutionRef.set(NewModuleUtil.createSolution(solutionName, createNewDirInProject(), ModuleIDETests.ourProject)));
+    invokeInCommand(() -> solutionRef.set(NewModuleUtil.createSolution(solutionName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       Solution solution = solutionRef.get();
       Assert.assertNotNull(solution.getRepository());
       Assert.assertEquals(solutionName, solution.getModuleName());
-      Assert.assertTrue(ModuleIDETests.ourProject.getProjectModules().contains(solution));
+      Assert.assertTrue(myProject.getProjectModules().contains(solution));
     });
   }
 
@@ -79,12 +79,12 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void createLanguage() {
     String langName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(langName, createNewDirInProject(), ModuleIDETests.ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(langName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       Language language = langRef.get();
       Assert.assertNotNull(language.getRepository());
       Assert.assertEquals(langName, language.getModuleName());
-      Assert.assertTrue(ModuleIDETests.ourProject.getProjectModules().contains(language));
+      Assert.assertTrue(myProject.getProjectModules().contains(language));
 
       checkGenerators(language);
     });
@@ -93,12 +93,12 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void createDevkit() {
     String devkitName = getNewModuleName();
     Reference<DevKit> devkitRef = new Reference<>();
-    invokeInCommand(() -> devkitRef.set(NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> devkitRef.set(NewModuleUtil.createDevKit(devkitName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       DevKit devkit = devkitRef.get();
       Assert.assertNotNull(devkit.getRepository());
       Assert.assertEquals(devkitName, devkit.getModuleName());
-      Assert.assertTrue(ourProject.getProjectModules().contains(devkit));
+      Assert.assertTrue(myProject.getProjectModules().contains(devkit));
     });
   }
 
@@ -106,9 +106,9 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameLanguage() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(ourProject.getProjectFile(), "languages");
+          File moduleFolder = new File(myProject.getProjectFile(), "languages");
           moduleFolder = new File(moduleFolder, moduleName);
-          return NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), ourProject);
+          return NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
         (moduleName, module) -> Assert.assertTrue(module instanceof Language)
     );
@@ -122,14 +122,15 @@ public class ModuleIDETests extends ModuleInProjectTest {
     final String someUnexpectedSolutionName = getNewModuleName();
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(ourProject.getProjectFile(), "languages");
+          File moduleFolder = new File(myProject.getProjectFile(), "languages");
           moduleFolder = new File(moduleFolder, moduleName);
-          final Language language = NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), ourProject);
+          final Language language = NewModuleUtil.createLanguage(moduleName, moduleFolder.getAbsolutePath(), myProject);
           try {
-            runtimeSolution[0] = NewModuleUtil.createRuntimeSolution(language, moduleFolder.getAbsolutePath(), ourProject);
+            runtimeSolution[0] = NewModuleUtil.createRuntimeSolution(language, moduleFolder.getAbsolutePath(), myProject);
             language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution[0].getModuleReference());
-            sandboxSolution[0] = NewModuleUtil.createSandboxSolution(language, moduleFolder.getAbsolutePath(), ourProject);
-            someUnexpectedSolution[0] = NewModuleUtil.createSolution(someUnexpectedSolutionName, moduleFolder.getAbsolutePath() + File.separator+ someUnexpectedSolutionName, ourProject);
+            sandboxSolution[0] = NewModuleUtil.createSandboxSolution(language, moduleFolder.getAbsolutePath(), myProject);
+            someUnexpectedSolution[0] = NewModuleUtil.createSolution(someUnexpectedSolutionName, moduleFolder.getAbsolutePath() + File.separator+ someUnexpectedSolutionName,
+                                                                     myProject);
           } catch (IOException e) {
             e.printStackTrace();
           }
@@ -150,9 +151,9 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameSolution() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(ourProject.getProjectFile(), "solutions");
+          File moduleFolder = new File(myProject.getProjectFile(), "solutions");
           moduleFolder = new File(moduleFolder, moduleName);
-          return NewModuleUtil.createSolution(moduleName, moduleFolder.getAbsolutePath(), ourProject);
+          return NewModuleUtil.createSolution(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
         (moduleName, module) -> Assert.assertTrue(module instanceof Solution)
     );
@@ -162,10 +163,10 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameSolutionWithSpecialFolder() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(ourProject.getProjectFile(), "solutions");
+          File moduleFolder = new File(myProject.getProjectFile(), "solutions");
           moduleFolder = new File(moduleFolder, moduleName);
           // Create module with name different from folder name
-          return NewModuleUtil.createSolution(getNewModuleName(), moduleFolder.getAbsolutePath(), ourProject);
+          return NewModuleUtil.createSolution(getNewModuleName(), moduleFolder.getAbsolutePath(), myProject);
         },
         (moduleName, module) -> Assert.assertTrue(module instanceof Solution)
     );
@@ -175,9 +176,9 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void renameDevkit() {
     renameModule(
         (moduleName) -> {
-          File moduleFolder = new File(ourProject.getProjectFile(), "devkits");
+          File moduleFolder = new File(myProject.getProjectFile(), "devkits");
           moduleFolder = new File(moduleFolder, moduleName);
-          return NewModuleUtil.createDevKit(moduleName, moduleFolder.getAbsolutePath(), ourProject);
+          return NewModuleUtil.createDevKit(moduleName, moduleFolder.getAbsolutePath(), myProject);
         },
         (moduleName, module) -> Assert.assertTrue(module instanceof DevKit)
     );
@@ -198,7 +199,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> moduleReference.set(moduleSupplier.get(moduleName)));
     invokeInCommand(() -> {
       AbstractModule module = moduleReference.get();
-      final Collection<AbstractModule> subModules = Renamer.getSubModules(ourProject.getRepository(), module);
+      final Collection<AbstractModule> subModules = Renamer.getSubModules(myProject.getRepository(), module);
 
       // If module name is not equals to folder name, that folder should not be renamed
       boolean mustBeMoved = module.getModuleName().equals(module.getModuleSourceDir().getName());
@@ -287,7 +288,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void deleteModule() {
     String moduleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       deleteModule(lang, false);
@@ -296,7 +297,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       descriptorFile.refresh(new DefaultCachingContext(true, false));
       Assert.assertTrue(descriptorFile.exists());
 
-      Assert.assertFalse(ourProject.getProjectModules().contains(lang));
+      Assert.assertFalse(myProject.getProjectModules().contains(lang));
     });
   }
 
@@ -304,7 +305,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void deleteModuleWithFiles() {
     String moduleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       deleteModule(lang, true);
@@ -312,7 +313,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertNotNull(moduleSourceDir);
       moduleSourceDir.refresh(new DefaultCachingContext(true, true));
       Assert.assertFalse(moduleSourceDir.exists());
-      Assert.assertFalse(ourProject.getProjectModules().contains(lang));
+      Assert.assertFalse(myProject.getProjectModules().contains(lang));
     });
   }
 
@@ -330,7 +331,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     String moduleName = getNewModuleName();
     String newModuleName = getNewModuleName();
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       try {
@@ -343,7 +344,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       Assert.assertNotNull(descriptorFile);
       descriptorFile.refresh(new DefaultCachingContext(true, false));
       Assert.assertTrue(deleteFiles ^ descriptorFile.exists());
-      Assert.assertFalse(ourProject.getProjectModules().contains(lang));
+      Assert.assertFalse(myProject.getProjectModules().contains(lang));
     });
   }
 
@@ -351,9 +352,9 @@ public class ModuleIDETests extends ModuleInProjectTest {
   public void revertRenamedModule() {
     String oldModuleName = getNewModuleName();
     String newModuleName = getNewModuleName();
-    ProjectBackup projectBackup = new ProjectBackup(ourProject);
+    ProjectBackup projectBackup = new ProjectBackup(myProject);
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(oldModuleName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
@@ -364,7 +365,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
         throw new RuntimeException(e);
       }
       Assert.assertEquals(lang.getModuleName(), newModuleName);
-      Assert.assertTrue(ourProject.getProjectModules().contains(lang));
+      Assert.assertTrue(myProject.getProjectModules().contains(lang));
     });
     invokeInCommand(() -> {
       saveProjectInTest();
@@ -373,7 +374,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     refreshProjectRecursively();
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
-      List<SModule> projectModules = ourProject.getProjectModules();
+      List<SModule> projectModules = myProject.getProjectModules();
       Assert.assertTrue(projectModules.size() == 1);
       Assert.assertNotEquals("The old language must have been unregistered", lang, projectModules.get(0));
       Assert.assertNull(lang.getRepository());
@@ -394,16 +395,16 @@ public class ModuleIDETests extends ModuleInProjectTest {
 
   private void revertDeletedModule0(boolean deleteFiles) {
     String moduleName = getNewModuleName();
-    ProjectBackup projectBackup = new ProjectBackup(ourProject);
+    ProjectBackup projectBackup = new ProjectBackup(myProject);
     Reference<Language> langRef = new Reference<>();
-    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
+    invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), myProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
       deleteModule(lang, deleteFiles);
       Assert.assertFalse(deleteFiles && lang.getDescriptorFile().exists());
-      Assert.assertTrue(ourProject.getProjectModules().isEmpty());
+      Assert.assertTrue(myProject.getProjectModules().isEmpty());
     });
     invokeInCommand(() -> {
       saveProjectInTest();
@@ -413,15 +414,15 @@ public class ModuleIDETests extends ModuleInProjectTest {
 
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
-      Assert.assertTrue(ourProject.getProjectModules().size() == 1);
+      Assert.assertTrue(myProject.getProjectModules().size() == 1);
       Assert.assertTrue(lang.getDescriptorFile().exists());
-      lang = (Language) ourProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
+      lang = (Language) myProject.getProjectModules().get(0); // the module is changed when SMPSProject#update is called (like in this case)
       Assert.assertEquals(lang.getModuleName(), moduleName);
     });
   }
 
   private void deleteModule(AbstractModule lang, boolean deleteFiles) {
-    new ModuleDeleteHelper(ourProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
+    new ModuleDeleteHelper(myProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
   }
 }
 

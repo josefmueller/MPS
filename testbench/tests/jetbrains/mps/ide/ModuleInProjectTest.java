@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,11 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.testFramework.PlatformTestUtil;
-import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.DefaultCachingContext;
 import org.jetbrains.annotations.NotNull;
@@ -35,33 +36,42 @@ import org.junit.Before;
 import java.io.File;
 import java.io.IOException;
 
-public class ModuleInProjectTest extends PlatformMpsTest {
+public abstract class ModuleInProjectTest implements EnvironmentAware {
   private final static String MODULE_NAME_PREFIX = "TEST";
   // By default property is not set and tmp project will not be deleted after test. Use for debug proposes.
   private static final boolean SAVE_PROJECT =
       Boolean.parseBoolean(System.getProperty("mps.tests.module.in.project.save.test.project"));
   private static int ourModuleCounter = 0;
 
-  protected static MPSProject ourProject;
+  private Environment myEnv;
+  protected MPSProject myProject;
 
   protected static String getNewModuleName() {
     return MODULE_NAME_PREFIX + ++ourModuleCounter;
   }
 
+  /**
+   * @param env test needs IdeaEnvironment
+   */
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnv = env;
+  }
+
   @Before
   public void before() {
-    ModuleIDETests.ourProject = (MPSProject) getEnvironment().createEmptyProject();
+    myProject = (MPSProject) myEnv.createEmptyProject();
   }
 
   void saveProjectInTest() {
-    ourProject.save();
-    PlatformTestUtil.saveProject(ourProject.getProject());
+    myProject.save();
+    PlatformTestUtil.saveProject(myProject.getProject());
   }
 
   @After
   public void after() {
-    final VirtualFile projectDir = ModuleInProjectTest.ourProject.getProject().getBaseDir();
-    ModuleIDETests.ourProject.dispose();
+    final VirtualFile projectDir = myProject.getProject().getBaseDir();
+    myEnv.closeProject(myProject);
     if (!SAVE_PROJECT) {
       ApplicationManager.getApplication().invokeLater(() -> ApplicationManager.getApplication().runWriteAction(() -> {
         try {
@@ -74,7 +84,7 @@ public class ModuleInProjectTest extends PlatformMpsTest {
   }
 
   void refreshProjectRecursively() {
-    IdeaFile projectFile = new IdeaFileSystem().getFile(ModuleIDETests.ourProject.getProjectFile().toString());
+    IdeaFile projectFile = new IdeaFileSystem().getFile(myProject.getProjectFile().toString());
     projectFile.refresh(new DefaultCachingContext(true, true));
     ApplicationManager.getApplication().invokeAndWait(() -> {
       ((StoreAwareProjectManager) ProjectManager.getInstance()).flushChangedProjectFileAlarm(); // needed to trigger refresh on the project folder components in test environment
@@ -83,7 +93,7 @@ public class ModuleInProjectTest extends PlatformMpsTest {
 
   @NotNull
   String createNewDirInProject() {
-    String projectRoot = ModuleIDETests.ourProject.getProjectFile().getAbsolutePath();
+    String projectRoot = myProject.getProjectFile().getAbsolutePath();
     File file;
     for (int i = 0; (file = new File(projectRoot, String.valueOf(i))).exists(); ++i);
     return file.getAbsolutePath();
@@ -91,8 +101,8 @@ public class ModuleInProjectTest extends PlatformMpsTest {
 
   void invokeInCommand(@NotNull Runnable runnable) {
     Reference<Throwable> throwableReference = new Reference<>();
-    ModelAccess modelAccess = ModuleIDETests.ourProject.getRepository().getModelAccess();
-    ApplicationManager.getApplication().invokeAndWait(() -> modelAccess.executeCommand(() -> modelAccess.runWriteAction(() -> {
+    final ModelAccess modelAccess = myProject.getRepository().getModelAccess();
+    ApplicationManager.getApplication().invokeAndWait(() -> modelAccess.executeCommand(() -> {
       try {
         runnable.run();
       } catch (VirtualMachineError e) {
@@ -100,8 +110,8 @@ public class ModuleInProjectTest extends PlatformMpsTest {
       } catch (Throwable e) {
         throwableReference.set(e);
       }
-    })), ModalityState.NON_MODAL);
-    ENV.flushAllEvents();
+    }), ModalityState.NON_MODAL);
+    myEnv.flushAllEvents();
     if (!throwableReference.isNull()) {
       Throwable cause = throwableReference.get();
       if (cause instanceof RuntimeException) {

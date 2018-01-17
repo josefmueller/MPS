@@ -17,9 +17,11 @@
     <classNode dependClassName="java.lang.annotation.Target" />
   </dependency>
   <dependency className="jetbrains.mps.PlatformMpsTest" file="PlatformMpsTest.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.BeforeClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.BaseMpsTest" />
