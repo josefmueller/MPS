@@ -9,6 +9,7 @@ import org.junit.runner.Runner;
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import junit.framework.TestCase;
 import org.junit.internal.runners.JUnit38ClassRunner;
+import org.junit.internal.builders.AnnotatedBuilder;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
 import junit.framework.TestSuite;
@@ -46,7 +47,12 @@ public final class PushEnvironmentRunnerBuilder extends RunnerBuilder {
       }
       return new PushEnvironmentRunnerBuilder.PushEnvJUnit4Runner(aClass);
     } else {
-      return myDelegateBuilder.runnerForClass(aClass);
+      // push this environment-aware RunnerBuilder down to next RunWith runner, if any. 
+      Runner runWithRunner = new AnnotatedBuilder(this).runnerForClass(aClass);
+      if (runWithRunner instanceof EnvironmentAware) {
+        ((EnvironmentAware) runWithRunner).setEnvironment(myEnvironmentToPush);
+      }
+      return (runWithRunner == null ? myDelegateBuilder.runnerForClass(aClass) : runWithRunner);
     }
   }
 

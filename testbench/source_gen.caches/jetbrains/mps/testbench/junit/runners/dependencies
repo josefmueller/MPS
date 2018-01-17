@@ -73,6 +73,7 @@
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.annotation.Annotation" />
@@ -83,12 +84,13 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
@@ -97,6 +99,7 @@
     <classNode dependClassName="org.junit.runners.model.InitializationError" />
     <classNode dependClassName="org.junit.runners.model.RunnerBuilder" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.runners.BaseMpsRunner" />
+    <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder" file="PushEnvironmentRunnerBuilder.java">
     <classNode dependClassName="java.lang.Class" />
@@ -114,6 +117,7 @@
     <classNode dependClassName="junit.framework.TestResult" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="org.junit.internal.builders.AllDefaultPossibilitiesBuilder" />
+    <classNode dependClassName="org.junit.internal.builders.AnnotatedBuilder" />
     <classNode dependClassName="org.junit.internal.runners.JUnit38ClassRunner" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Runner" />
