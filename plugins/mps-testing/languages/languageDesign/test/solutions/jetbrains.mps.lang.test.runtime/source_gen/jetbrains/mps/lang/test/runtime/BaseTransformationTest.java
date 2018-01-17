@@ -10,8 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -61,12 +59,6 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
 
   @Before
   public void setup() throws Exception {
-    if (myRunner == null && myEnvironment == null) {
-      // it's expected that IDEA MPS plugin supply proper TestRunner using TransformationTestInitJUnitRunner 
-      // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder 
-      // FIXME remove this dependency once IDEA MPS plugin and IDEA test configurations switch to use of EnvironmentAware Runner. 
-      myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfigNoPluginsSpecified());
-    }
     if (myParamCache != null) {
       //  invokes this.initTest() for the first test in the class, reuse initialized values for subsequent tests from the same class 
       myParamCache.populate(this);
@@ -82,6 +74,8 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
       //  fallback for tests that still use TestRunner (e.g. editor tests from mps-as-idea-plugin) 
       myRunner.initTest(this, projectPath, model, reOpenProject);
     } else {
+      // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
+      // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
       if (myEnvironment == null) {
         String m = String.format("Test %s needs an Environment instance to access %s project instance", getClass().getName(), projectPath);
         throw new IllegalStateException(m);

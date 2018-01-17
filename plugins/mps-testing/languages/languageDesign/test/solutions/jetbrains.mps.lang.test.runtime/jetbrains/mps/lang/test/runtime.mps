@@ -6257,54 +6257,6 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="7hSRFL3OlKo" role="3clF47">
-        <node concept="3clFbJ" id="2VDNdDcf22T" role="3cqZAp">
-          <node concept="3clFbS" id="2VDNdDcf22V" role="3clFbx">
-            <node concept="3SKdUt" id="3hj1t46iz0T" role="3cqZAp">
-              <node concept="3SKdUq" id="3hj1t46iz0U" role="3SKWNk">
-                <property role="3SKdUp" value="it's expected that IDEA MPS plugin supply proper TestRunner using TransformationTestInitJUnitRunner" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="3hj1t46izwp" role="3cqZAp">
-              <node concept="3SKdUq" id="3hj1t46izwr" role="3SKWNk">
-                <property role="3SKdUp" value="MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="3hj1t46iABs" role="3cqZAp">
-              <node concept="3SKdUq" id="3hj1t46iABu" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME remove this dependency once IDEA MPS plugin and IDEA test configurations switch to use of EnvironmentAware Runner." />
-              </node>
-            </node>
-            <node concept="3clFbF" id="3hj1t46i_cP" role="3cqZAp">
-              <node concept="37vLTI" id="3hj1t46i_cR" role="3clFbG">
-                <node concept="2YIFZM" id="3hj1t46iz0Y" role="37vLTx">
-                  <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-                  <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-                  <node concept="2YIFZM" id="3hj1t46iz0Z" role="37wK5m">
-                    <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                    <ref role="37wK5l" to="79ha:2$4oShLawGj" resolve="defaultConfigNoPluginsSpecified" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="3hj1t46i__5" role="37vLTJ">
-                  <ref role="3cqZAo" node="3hj1t46gkWd" resolve="myEnvironment" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="1Wc70l" id="3hj1t46izzR" role="3clFbw">
-            <node concept="3clFbC" id="3hj1t46i$Fe" role="3uHU7w">
-              <node concept="10Nm6u" id="3hj1t46i_3I" role="3uHU7w" />
-              <node concept="37vLTw" id="3hj1t46i$9O" role="3uHU7B">
-                <ref role="3cqZAo" node="3hj1t46gkWd" resolve="myEnvironment" />
-              </node>
-            </node>
-            <node concept="3clFbC" id="2VDNdDcf2gG" role="3uHU7B">
-              <node concept="37vLTw" id="2VDNdDcf29H" role="3uHU7B">
-                <ref role="3cqZAo" node="e$hNri8RBd" resolve="myRunner" />
-              </node>
-              <node concept="10Nm6u" id="2VDNdDcf2ns" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="5LbRjS1pR8A" role="3cqZAp">
           <node concept="3clFbS" id="5LbRjS1pR8C" role="3clFbx">
             <node concept="3SKdUt" id="5LbRjS1q2La" role="3cqZAp">
@@ -6422,6 +6374,16 @@
           </node>
           <node concept="9aQIb" id="3hj1t46gJdG" role="9aQIa">
             <node concept="3clFbS" id="3hj1t46gJdH" role="9aQI4">
+              <node concept="3SKdUt" id="3hj1t46izwp" role="3cqZAp">
+                <node concept="3SKdUq" id="3hj1t46izwr" role="3SKWNk">
+                  <property role="3SKdUp" value="MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="5I2_qJjglr2" role="3cqZAp">
+                <node concept="3SKdUq" id="5I2_qJjglr3" role="3SKWNk">
+                  <property role="3SKdUp" value="namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too." />
+                </node>
+              </node>
               <node concept="3clFbJ" id="3hj1t46io4B" role="3cqZAp">
                 <node concept="3clFbS" id="3hj1t46io4D" role="3clFbx">
                   <node concept="3cpWs8" id="3hj1t46isqE" role="3cqZAp">
