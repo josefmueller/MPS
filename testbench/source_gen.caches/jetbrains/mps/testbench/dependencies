@@ -18,6 +18,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
+  <dependency className="jetbrains.mps.testbench.EnvironmentAwareTestCase" file="EnvironmentAwareTestCase.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.tool.environment.EnvironmentAware" />
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.PerformanceMessenger" file="PerformanceMessenger.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />

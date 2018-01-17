@@ -12,7 +12,6 @@
   <imports>
     <import index="g0pg" ref="r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)" />
     <import index="ynox" ref="r:d5b954f8-51a0-4e5e-8222-e5ceaabb7619(UtilSolution.util)" />
-    <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="9x1z" ref="r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(BHL2.structure)" />
     <import index="n871" ref="r:0766eaf2-1894-47af-9a97-3484d14d48e4(BHL7.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -30,6 +29,8 @@
     <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -4055,11 +4056,11 @@
               <ref role="3cqZAo" node="4uPaNIY9iLm" resolve="myProject" />
             </node>
             <node concept="2OqwBi" id="4uPaNIY9iFu" role="37vLTx">
-              <node concept="37vLTw" id="5AcmpEOrcgl" role="2Oq$k0">
-                <ref role="3cqZAo" to="ynox:5AcmpEOr55Q" resolve="myEnvironment" />
+              <node concept="37vLTw" id="1D4tfYtguhN" role="2Oq$k0">
+                <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
               </node>
               <node concept="liA8E" id="4uPaNIY9iFw" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                <ref role="37wK5l" to="ew0j:~Environment.openProject(java.io.File):jetbrains.mps.project.Project" resolve="openProject" />
                 <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
                   <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
@@ -4098,8 +4099,8 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="5AcmpEOrbYN" role="1zkMxy">
-      <ref role="3uigEE" to="ynox:5AcmpEOr4by" resolve="EnvironmentAwareTestCase" />
+    <node concept="3uibUv" id="1D4tfYtgu3j" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
 </model>

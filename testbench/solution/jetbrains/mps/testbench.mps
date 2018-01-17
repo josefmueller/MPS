@@ -22,6 +22,7 @@
     <import index="cvlm" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner(JUnit/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
     <import index="a19p" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.rules(JUnit/)" />
+    <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -101,6 +102,7 @@
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -1735,6 +1737,59 @@
       <node concept="3Tmbuc" id="5A5jZrz4B6T" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="3eUNqOk3QI9" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="5AcmpEOr4by">
+    <property role="1sVAO0" value="true" />
+    <property role="TrG5h" value="EnvironmentAwareTestCase" />
+    <node concept="312cEg" id="5AcmpEOr55Q" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myEnvironment" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tmbuc" id="5AcmpEOr52T" role="1B3o_S" />
+      <node concept="3uibUv" id="5AcmpEOr54t" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5AcmpEOr4Ya" role="jymVt" />
+    <node concept="3clFb_" id="5AcmpEOr4Zj" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="setEnvironment" />
+      <node concept="3Tm1VV" id="5AcmpEOr4Zl" role="1B3o_S" />
+      <node concept="3cqZAl" id="5AcmpEOr4Zm" role="3clF45" />
+      <node concept="37vLTG" id="5AcmpEOr4Zn" role="3clF46">
+        <property role="TrG5h" value="env" />
+        <node concept="3uibUv" id="5AcmpEOr4Zo" role="1tU5fm">
+          <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+        </node>
+        <node concept="2AHcQZ" id="5AcmpEOr4Zp" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5AcmpEOr4Zs" role="3clF47">
+        <node concept="3clFbF" id="5AcmpEOr583" role="3cqZAp">
+          <node concept="37vLTI" id="5AcmpEOr5mI" role="3clFbG">
+            <node concept="37vLTw" id="5AcmpEOr5o$" role="37vLTx">
+              <ref role="3cqZAo" node="5AcmpEOr4Zn" resolve="env" />
+            </node>
+            <node concept="37vLTw" id="5AcmpEOr582" role="37vLTJ">
+              <ref role="3cqZAo" node="5AcmpEOr55Q" resolve="myEnvironment" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5AcmpEOr4Zt" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="5AcmpEOr4bz" role="1B3o_S" />
+    <node concept="3uibUv" id="5AcmpEOr4cg" role="1zkMxy">
+      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
+    </node>
+    <node concept="3uibUv" id="5AcmpEOr4zM" role="EKbjA">
+      <ref role="3uigEE" to="79ha:7KC1aYnI6jD" resolve="EnvironmentAware" />
+    </node>
   </node>
 </model>
 
