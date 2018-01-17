@@ -213,6 +213,9 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -338,6 +341,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -877,6 +881,14 @@
             </node>
           </node>
         </node>
+        <node concept="1gVbGN" id="4jJzFEcqBWF" role="3cqZAp">
+          <node concept="2OqwBi" id="4jJzFEcqDx$" role="1gVkn0">
+            <node concept="37vLTw" id="4jJzFEcqCNB" role="2Oq$k0">
+              <ref role="3cqZAo" node="5GUyf6ogh9I" resolve="classifier" />
+            </node>
+            <node concept="3x8VRR" id="4jJzFEcqF7q" role="2OqNvi" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="6c4pZk5Axwr" role="3cqZAp">
           <node concept="3cpWsn" id="6c4pZk5Axws" role="3cpWs9">
             <property role="TrG5h" value="isSameClassifier" />
@@ -1155,13 +1167,24 @@
     <node concept="2ScWuX" id="5GUyf6ogg$r" role="tmbBb">
       <node concept="3clFbS" id="5GUyf6ogg$s" role="2VODD2">
         <node concept="3clFbF" id="5GUyf6oggMM" role="3cqZAp">
-          <node concept="3y3z36" id="5GUyf6oggR0" role="3clFbG">
-            <node concept="10Nm6u" id="5GUyf6oggSI" role="3uHU7w" />
-            <node concept="2OqwBi" id="5GUyf6oggMG" role="3uHU7B">
-              <node concept="2WthIp" id="5GUyf6oggMJ" role="2Oq$k0" />
-              <node concept="2XshWL" id="5GUyf6oggML" role="2OqNvi">
-                <ref role="2WH_rO" node="5GUyf6ogdAd" resolve="getMethodName" />
+          <node concept="1Wc70l" id="4jJzFEcqzt9" role="3clFbG">
+            <node concept="2OqwBi" id="4jJzFEcq_pD" role="3uHU7w">
+              <node concept="2OqwBi" id="4jJzFEcq$20" role="2Oq$k0">
+                <node concept="2WthIp" id="4jJzFEcqzBt" role="2Oq$k0" />
+                <node concept="2XshWL" id="4jJzFEcq$T8" role="2OqNvi">
+                  <ref role="2WH_rO" node="5GUyf6ogfpy" resolve="getClassifier" />
+                </node>
               </node>
+              <node concept="3x8VRR" id="4jJzFEcqAMp" role="2OqNvi" />
+            </node>
+            <node concept="3y3z36" id="5GUyf6oggR0" role="3uHU7B">
+              <node concept="2OqwBi" id="5GUyf6oggMG" role="3uHU7B">
+                <node concept="2WthIp" id="5GUyf6oggMJ" role="2Oq$k0" />
+                <node concept="2XshWL" id="5GUyf6oggML" role="2OqNvi">
+                  <ref role="2WH_rO" node="5GUyf6ogdAd" resolve="getMethodName" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="5GUyf6oggSI" role="3uHU7w" />
             </node>
           </node>
         </node>
