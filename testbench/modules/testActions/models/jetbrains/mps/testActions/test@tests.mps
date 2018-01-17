@@ -14,7 +14,6 @@
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
-        <property id="1031873601093404121" name="reOpenProject" index="2S5Rpb" />
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
@@ -294,7 +293,6 @@
   </node>
   <node concept="2XOHcx" id="3SXwVgLPXZf">
     <property role="2XOHcw" value="${mps_home}" />
-    <property role="2S5Rpb" value="true" />
   </node>
 </model>
 
