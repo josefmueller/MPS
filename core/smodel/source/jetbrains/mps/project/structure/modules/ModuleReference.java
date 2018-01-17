@@ -81,7 +81,7 @@ public final class ModuleReference implements SModuleReference {
     if (myModuleId == null) {
       return myModuleName;
     }
-    return myModuleId.toString() + "(" + myModuleName + ")";
+    return myModuleId.toString() + "(" + getModuleName() + ")";
   }
 
   public static SModuleReference parseReference(String text) {

@@ -111,7 +111,7 @@ public final class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   @Override
   public String serialize() {
-    return LINK_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + myName;
+    return LINK_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + getRoleName();
   }
 
   public static SContainmentLinkAdapterById deserialize(String s) {

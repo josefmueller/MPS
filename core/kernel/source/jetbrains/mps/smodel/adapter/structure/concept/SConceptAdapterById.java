@@ -119,7 +119,7 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
 
   @Override
   public String serialize() {
-    return CONCEPT_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + myFqName;
+    return CONCEPT_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + getQualifiedName();
   }
 
   public static SConceptAdapterById deserialize(String s) {

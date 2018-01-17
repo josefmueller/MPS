@@ -106,7 +106,7 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
 
   @Override
   public String serialize() {
-    return INTERFACE_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + myFqName;
+    return INTERFACE_PREFIX + ID_DELIM + myConceptId.serialize() + ID_DELIM + getQualifiedName();
   }
 
   public static SInterfaceConceptAdapterById deserialize(String s) {

@@ -113,7 +113,7 @@ public final class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   @Override
   public String serialize() {
-    return REF_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + myName;
+    return REF_PREFIX + ID_DELIM + myRoleId.serialize() + ID_DELIM + getRoleName();
   }
 
   public static SReferenceLinkAdapterById deserialize(String s) {

@@ -90,7 +90,7 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
 
   @Override
   public String serialize() {
-    return LANGUAGE_PREFIX + ID_DELIM + myLanguage.serialize() + ID_DELIM + myLanguageFqName;
+    return LANGUAGE_PREFIX + ID_DELIM + myLanguage.serialize() + ID_DELIM + getQualifiedName();
   }
 
   public static SLanguageAdapterById deserialize(String s) {
