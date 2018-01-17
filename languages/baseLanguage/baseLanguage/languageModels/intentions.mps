@@ -13660,7 +13660,7 @@
           </node>
           <node concept="2YIFZM" id="qIwpvNWgKQ" role="3clFbw">
             <ref role="1Pybhc" to="tpcz:18ik2d67g12" resolve="PrecedenceUtil" />
-            <ref role="37wK5l" to="tpcz:qIwpvNWfTr" resolve="needsParensAroundCastExpression" />
+            <ref role="37wK5l" to="tpcz:qIwpvNWfTr" resolve="needsParensInsideCastExpression" />
             <node concept="37vLTw" id="qIwpvO1le4" role="37wK5m">
               <ref role="3cqZAo" node="2Ed3_aY1Zmk" resolve="castExpression" />
             </node>
@@ -17798,6 +17798,16 @@
               <node concept="37vLTw" id="1$sy4tVGYqP" role="2Oq$k0">
                 <ref role="3cqZAo" node="1$sy4tVGYp_" resolve="field" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5d7cDYKX2TJ" role="3cqZAp">
+          <node concept="2YIFZM" id="5d7cDYKX2ZC" role="3clFbG">
+            <ref role="1Pybhc" to="tpen:5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+            <ref role="37wK5l" to="tpen:5d7cDYKWZmG" resolve="rewireFieldReferences" />
+            <node concept="2Sf5sV" id="2HbrBpSm$Rk" role="37wK5m" />
+            <node concept="37vLTw" id="2HbrBpSm$SE" role="37wK5m">
+              <ref role="3cqZAo" node="1$sy4tVGYp_" resolve="field" />
             </node>
           </node>
         </node>
