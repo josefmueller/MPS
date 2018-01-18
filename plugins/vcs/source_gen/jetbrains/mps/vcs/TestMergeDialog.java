@@ -4,16 +4,9 @@ package jetbrains.mps.vcs;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jdom.JDOMException;
-import java.io.IOException;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import java.util.Scanner;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSProject;
+import java.io.IOException;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
@@ -31,6 +24,12 @@ import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.diff.DiffManager;
 import com.intellij.diff.InvalidDiffRequestException;
 import org.apache.log4j.Level;
+import org.jdom.JDOMException;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import java.util.Scanner;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import com.intellij.openapi.util.IconLoader;
 
 /**
  * Class for analyzing merge driver dumps
@@ -39,20 +38,14 @@ public class TestMergeDialog {
   private static final Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 
 
-  public TestMergeDialog() {
+  private MPSProject myProject;
+
+  public TestMergeDialog(MPSProject mpsProject) {
+    myProject = mpsProject;
   }
 
-  public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
-    if (args.length == 0) {
-      System.out.print("Input path to model zip: ");
-      String line = new Scanner(System.in).nextLine();
-      args = new String[]{((line == null ? null : line.trim()))};
-    }
-    Environment ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    IconLoader.activate();
-    Project mpsProject = ENV.createEmptyProject();
-    assert mpsProject instanceof MPSProject;
-    com.intellij.openapi.project.Project ideaProject = ((MPSProject) mpsProject).getProject();
+  /*package*/ void run(String[] args) throws IOException {
+    Project ideaProject = myProject.getProject();
     final String[] models = new String[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
@@ -91,5 +84,21 @@ public class TestMergeDialog {
         LOG.error("", e);
       }
     }
+  }
+
+  public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
+    if (args.length == 0) {
+      System.out.print("Input path to model zip: ");
+      String line = new Scanner(System.in).nextLine();
+      args = new String[]{((line == null ? null : line.trim()))};
+    }
+    IdeaEnvironment ENV = new IdeaEnvironment(EnvironmentConfig.defaultConfig());
+    ENV.init();
+    IconLoader.activate();
+    jetbrains.mps.project.Project mpsProject = ENV.createEmptyProject();
+    assert mpsProject instanceof MPSProject;
+    new TestMergeDialog((MPSProject) mpsProject).run(args);
+    ENV.closeProject(mpsProject);
+    ENV.dispose();
   }
 }
