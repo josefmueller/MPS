@@ -67,10 +67,18 @@ public class TestModuleBuildProjectTemplate {
       for (Tuples._3<String, String, String> t : triples) {
         SNode la = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());
+        SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), t._2());
         try {
-          SNode path = new PathBuilder(target).buildRelative(relativePathHelper.makeRelative(t._1()));
+          PathBuilder pathBuilder = new PathBuilder(target);
+          String moduleFile = relativePathHelper.makeRelative(t._1());
+          SNode path = pathBuilder.buildRelative(moduleFile);
           SLinkOperations.setTarget(la, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), path);
-          SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), t._2());
+
+          SNode resourcesSelector = SLinkOperations.setNewChild(SLinkOperations.addNewChild(la, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xa99ab51d1ecc306L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleResources")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xa99ab51d1ecc306L, 0xa99ab51d1ecc307L, "files"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"));
+          // XXX this is not nice way to find module root location, but I can't come up with a better one now. 
+          String moduleDir = moduleFile.substring(0, moduleFile.lastIndexOf('/'));
+          SLinkOperations.setTarget(resourcesSelector, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir"), pathBuilder.buildRelative(moduleDir));
+          SPropertyOperations.set(SLinkOperations.addNewChild(resourcesSelector, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245f7L, "selectors"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, "jetbrains.mps.build.structure.BuildFileIncludesSelector")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, 0x7819f90ca2eb7bf8L, "pattern"), "icons/**, resources/**");
 
           ListSequence.fromList(result).addElement(la);
         } catch (RelativePathHelper.PathException ex) {
@@ -106,8 +114,15 @@ public class TestModuleBuildProjectTemplate {
 
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "sources and tests");
         try {
-          SNode path = new PathBuilder(target).buildRelative(relativePathHelper.makeRelative(t._1()));
+          PathBuilder pathBuilder = new PathBuilder(target);
+          String moduleFile = relativePathHelper.makeRelative(t._1());
+          SNode path = pathBuilder.buildRelative(moduleFile);
           SLinkOperations.setTarget(sol, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), path);
+          SNode resourcesSelector = SLinkOperations.setNewChild(SLinkOperations.addNewChild(sol, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources"), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xa99ab51d1ecc306L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleResources")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xa99ab51d1ecc306L, 0xa99ab51d1ecc307L, "files"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, "jetbrains.mps.build.structure.BuildInputFiles"));
+          // XXX this is not nice way to find module root location, but I can't come up with a better one now. 
+          String moduleDir = moduleFile.substring(0, moduleFile.lastIndexOf('/'));
+          SLinkOperations.setTarget(resourcesSelector, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245a6L, "dir"), pathBuilder.buildRelative(moduleDir));
+          SPropertyOperations.set(SLinkOperations.addNewChild(resourcesSelector, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L, 0x48d5d03db92245f7L, "selectors"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, "jetbrains.mps.build.structure.BuildFileIncludesSelector")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7819f90ca2eb7bf6L, 0x7819f90ca2eb7bf8L, "pattern"), "icons/**, resources/**");
           ListSequence.fromList(result).addElement(sol);
         } catch (RelativePathHelper.PathException ex) {
           if (LOG.isEnabledFor(Level.ERROR)) {
