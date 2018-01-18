@@ -36,6 +36,7 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -102,6 +103,7 @@
       <property role="1uS6qo" value="theirs" />
       <property role="1uS6qv" value="2" />
     </node>
+    <node concept="asaX9" id="4WGKd_KDsrY" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="3_Ojf_lL$zT">
     <property role="EcuMT" value="4140018591229954297" />
@@ -112,9 +114,9 @@
     <node concept="1TJgyj" id="3_Ojf_lL$zU" role="1TKVEi">
       <property role="IQ2ns" value="4140018591229954298" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="hints" />
+      <property role="20kJfa" value="concepts" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="3_Ojf_lL$zW" resolve="VCSHint" />
+      <ref role="20lvS9" node="3_Ojf_lL$zW" resolve="ConceptVCSDescriptor" />
     </node>
     <node concept="PrWs8" id="3_Ojf_lL$_P" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -122,12 +124,21 @@
   </node>
   <node concept="1TIwiD" id="3_Ojf_lL$zW">
     <property role="EcuMT" value="4140018591229954300" />
-    <property role="TrG5h" value="VCSHint" />
+    <property role="TrG5h" value="ConceptVCSDescriptor" />
+    <property role="34LRSv" value="concept" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="3_Ojf_lL$AR" role="1TKVEl">
-      <property role="IQ2nx" value="4140018591229954487" />
-      <property role="TrG5h" value="strategy" />
-      <ref role="AX2Wp" node="7n1vgxszwQh" resolve="Strategy" />
+    <node concept="1TJgyj" id="4WGKd_KDst1" role="1TKVEi">
+      <property role="IQ2ns" value="5705146868101924673" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="strategy" />
+      <ref role="20lvS9" node="4WGKd_KDsrX" resolve="MergeStrategy" />
+    </node>
+    <node concept="1TJgyj" id="4WGKd_KDfz9" role="1TKVEi">
+      <property role="IQ2ns" value="5705146868101871817" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="features" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="4WGKd_KDfxP" resolve="FeatureVCSDescriptor" />
     </node>
     <node concept="1TJgyj" id="3_Ojf_lL$AP" role="1TKVEi">
       <property role="IQ2ns" value="4140018591229954485" />
@@ -135,6 +146,63 @@
       <property role="20kJfa" value="cncpt" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4WGKd_KDfxP">
+    <property role="EcuMT" value="5705146868101871733" />
+    <property role="TrG5h" value="FeatureVCSDescriptor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4WGKd_KDssZ" role="1TKVEi">
+      <property role="IQ2ns" value="5705146868101924671" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="strategy" />
+      <ref role="20lvS9" node="4WGKd_KDsrX" resolve="MergeStrategy" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4WGKd_KDfBe">
+    <property role="EcuMT" value="5705146868101872078" />
+    <property role="TrG5h" value="LinkVCSDescriptor" />
+    <ref role="1TJDcQ" node="4WGKd_KDfxP" resolve="FeatureVCSDescriptor" />
+    <node concept="1TJgyj" id="4WGKd_KDfxR" role="1TKVEi">
+      <property role="IQ2ns" value="5705146868101871735" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="lnk" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4WGKd_KDfBg">
+    <property role="EcuMT" value="5705146868101872080" />
+    <property role="TrG5h" value="PropertyVCSDescriptor" />
+    <ref role="1TJDcQ" node="4WGKd_KDfxP" resolve="FeatureVCSDescriptor" />
+    <node concept="1TJgyj" id="4WGKd_KDfBh" role="1TKVEi">
+      <property role="IQ2ns" value="5705146868101871735" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="prop" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="4WGKd_KDsrX">
+    <property role="EcuMT" value="5705146868101924605" />
+    <property role="TrG5h" value="MergeStrategy" />
+  </node>
+  <node concept="1TIwiD" id="4WGKd_KDss0">
+    <property role="EcuMT" value="5705146868101924608" />
+    <property role="TrG5h" value="OursStrategy" />
+    <property role="34LRSv" value="ours" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4WGKd_KDss1" role="PzmwI">
+      <ref role="PrY4T" node="4WGKd_KDsrX" resolve="MergeStrategy" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4WGKd_KDssv">
+    <property role="EcuMT" value="5705146868101924639" />
+    <property role="TrG5h" value="TheirsStrategy" />
+    <property role="34LRSv" value="theirs" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4WGKd_KDssw" role="PzmwI">
+      <ref role="PrY4T" node="4WGKd_KDsrX" resolve="MergeStrategy" />
     </node>
   </node>
 </model>
