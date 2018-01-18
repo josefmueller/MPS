@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
@@ -34,7 +33,7 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
-import org.junit.AfterClass;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -58,7 +57,7 @@ import java.util.StringJoiner;
  *
  * @author Evgeny Gerashchenko
  */
-public class ProjectCreationTest {
+public class ProjectCreationTest implements EnvironmentAware {
   private static final String PROJECT_NAME = "CreatedTestProject";
   private static final String LANGUAGE_NAMESPACE = "CreatedLanguage";
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
@@ -79,7 +78,7 @@ public class ProjectCreationTest {
 
   // project/root/module/model_source_root/
   private static final String PATH_IN_PROJECT = "%s/%s/%s/%s/%s.%s";
-  private static Environment ourEnvironment;
+  private Environment myEnv;
 
   private static List<String> languageModels(String projectName, String languageNamespace) {
     final LanguageAspect[] aspects = new LanguageAspect[]{
@@ -103,9 +102,13 @@ public class ProjectCreationTest {
   private IFile myTmpDir;
   private Project myProject;
 
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnv = env;
+  }
+
   @BeforeClass
   public static void init() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<>();
     final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
     final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
@@ -117,11 +120,6 @@ public class ProjectCreationTest {
         Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
         PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
     PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
-  }
-
-  @AfterClass
-  public static void dispose() {
-    ourEnvironment.release();
   }
 
   @Test

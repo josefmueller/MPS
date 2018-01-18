@@ -65,7 +65,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
   @Test
   public void testNoCreatedChangesForNewModel() {
     final Wrappers._T<EditableSModel> newModel = new Wrappers._T<EditableSModel>();
-    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
+    getProject().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         SModule module = myDiff.getModelDescriptor().getModule();
         ModelRoot modelRoot = module.getModelRoots().iterator().next();
@@ -74,7 +74,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         newModel.value.save();
       }
     });
-    ourEnvironment.flushAllEvents();
+    myEnv.flushAllEvents();
 
     CurrentDifference newModelDiff = CurrentDifferenceRegistry.getInstance(myIdeaProject).getCurrentDifference(newModel.value);
 
@@ -86,7 +86,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a21a3(newModelDiff.getChangeSet())).isEmpty());
 
-    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
+    getProject().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), newModel.value.getModule(), newModel.value, false, true);
       }
@@ -111,7 +111,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
       }
     });
 
-    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
+    getProject().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         try {
           getTestModelFile().setBinaryContent(changedContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
@@ -120,7 +120,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         }
       }
     });
-    ourEnvironment.flushAllEvents();
+    myEnv.flushAllEvents();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.MODIFIED);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a5(myDiff.getChangeSet())).isNotEmpty());

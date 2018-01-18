@@ -16,8 +16,8 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import com.intellij.openapi.ui.TestDialog;
 import org.jetbrains.annotations.NotNull;
-import org.junit.Before;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.CopyUtil;
@@ -87,13 +87,6 @@ public class DiskMemoryConflictsTest implements EnvironmentAware {
     myEnv = env;
   }
 
-  @Before
-  public void setupProjectOnce() {
-    if (ourProject == null) {
-      ourProject = new ProjectCloneSupport(myEnv).cloneProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
-    }
-  }
-
   @AfterClass
   public static void deleteProjectClone() {
     ourProject.closeAndDelete();
@@ -101,6 +94,9 @@ public class DiskMemoryConflictsTest implements EnvironmentAware {
 
   @Before
   public void beforeTest() {
+    if (ourProject == null) {
+      ourProject = new ProjectCloneSupport(myEnv).cloneProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
+    }
     myModelAccess = ourProject.get().getModelAccess();
     Assert.assertNotNull(myModelAccess);
     myRepository = ourProject.get().getRepository();

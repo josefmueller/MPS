@@ -18,7 +18,10 @@
     <import index="lk2n" ref="r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
+    <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -86,14 +89,15 @@
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -182,6 +186,7 @@
       <concept id="1171931851043" name="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" flags="ig" index="3s_ewN">
         <property id="1171931851045" name="testCaseName" index="3s_ewP" />
         <child id="1171931851044" name="testMethodList" index="3s_ewO" />
+        <child id="8243879142738613220" name="afterTest" index="1KhZu3" />
         <child id="8243879142738613219" name="beforeTest" index="1KhZu4" />
       </concept>
       <concept id="1171931858461" name="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" flags="ng" index="3s_gsd">
@@ -195,6 +200,7 @@
         <child id="1172075534298" name="message" index="3_9lra" />
       </concept>
       <concept id="8243879142738608185" name="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" flags="in" index="1KhYhu" />
+      <concept id="8243879142738613213" name="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" flags="in" index="1KhZuU" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -217,6 +223,14 @@
         <property role="Xl_RC" value="testbench/modules/build.mps.runner.test" />
       </node>
       <node concept="3Tm6S6" id="74sHQpDbWx6" role="1B3o_S" />
+    </node>
+    <node concept="312cEg" id="nUYGvAFGD8" role="jymVt">
+      <property role="TrG5h" value="myProject" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="nUYGvAFGD9" role="1B3o_S" />
+      <node concept="3uibUv" id="nUYGvAFGDb" role="1tU5fm">
+        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      </node>
     </node>
     <node concept="2tJIrI" id="1ZVcZhrXDMh" role="jymVt" />
     <node concept="3clFb_" id="1ZVcZhrXDWP" role="jymVt">
@@ -637,47 +651,45 @@
     </node>
     <node concept="1KhYhu" id="1ZVcZhrXkJ6" role="1KhZu4">
       <node concept="3clFbS" id="1ZVcZhrXkJ7" role="2VODD2">
-        <node concept="3cpWs8" id="1ZVcZhrXrp$" role="3cqZAp">
-          <node concept="3cpWsn" id="1ZVcZhrXrp_" role="3cpWs9">
-            <property role="TrG5h" value="environmentConfig" />
-            <node concept="3uibUv" id="2UQRFFqpy6e" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-            </node>
-            <node concept="2YIFZM" id="63LKn8yO9qH" role="33vP2m">
-              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1ZVcZhrXryp" role="3cqZAp">
-          <node concept="3cpWsn" id="1ZVcZhrXryq" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="2UQRFFqpyyj" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2YIFZM" id="2UQRFFqpG8t" role="33vP2m">
-              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-              <node concept="37vLTw" id="2UQRFFqpG9P" role="37wK5m">
-                <ref role="3cqZAo" node="1ZVcZhrXrp_" resolve="environmentConfig" />
+        <node concept="3clFbF" id="nUYGvAFErp" role="3cqZAp">
+          <node concept="37vLTI" id="nUYGvAFErr" role="3clFbG">
+            <node concept="2OqwBi" id="nUYGvAFCDI" role="37vLTx">
+              <node concept="37vLTw" id="nUYGvAFCDJ" role="2Oq$k0">
+                <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1ZVcZhrXuiG" role="3cqZAp">
-          <node concept="2OqwBi" id="1ZVcZhrXupW" role="3clFbG">
-            <node concept="37vLTw" id="1ZVcZhrXupX" role="2Oq$k0">
-              <ref role="3cqZAo" node="1ZVcZhrXryq" resolve="env" />
-            </node>
-            <node concept="liA8E" id="1ZVcZhrXupY" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-              <node concept="2ShNRf" id="1ZVcZhrXuN5" role="37wK5m">
-                <node concept="1pGfFk" id="1ZVcZhrXCnM" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                  <node concept="37vLTw" id="1ZVcZhrXCp1" role="37wK5m">
-                    <ref role="3cqZAo" node="74sHQpDbWx3" resolve="PROJECT_PATH" />
+              <node concept="liA8E" id="nUYGvAFCDK" role="2OqNvi">
+                <ref role="37wK5l" to="ew0j:~Environment.openProject(java.io.File):jetbrains.mps.project.Project" resolve="openProject" />
+                <node concept="2ShNRf" id="nUYGvAFCDL" role="37wK5m">
+                  <node concept="1pGfFk" id="nUYGvAFCDM" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                    <node concept="37vLTw" id="nUYGvAFCDN" role="37wK5m">
+                      <ref role="3cqZAo" node="74sHQpDbWx3" resolve="PROJECT_PATH" />
+                    </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="nUYGvAFHUZ" role="37vLTJ">
+              <ref role="3cqZAo" node="nUYGvAFGD8" resolve="myProject" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3uibUv" id="nUYGvAFzSu" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
+    </node>
+    <node concept="1KhZuU" id="nUYGvAFCJU" role="1KhZu3">
+      <node concept="3clFbS" id="nUYGvAFCJV" role="2VODD2">
+        <node concept="3clFbF" id="nUYGvAFDk_" role="3cqZAp">
+          <node concept="2OqwBi" id="nUYGvAFDv4" role="3clFbG">
+            <node concept="37vLTw" id="nUYGvAFDk$" role="2Oq$k0">
+              <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
+            </node>
+            <node concept="liA8E" id="nUYGvAFDUY" role="2OqNvi">
+              <ref role="37wK5l" to="ew0j:~Environment.closeProject(jetbrains.mps.project.Project):void" resolve="closeProject" />
+              <node concept="37vLTw" id="nUYGvAFHMf" role="37wK5m">
+                <ref role="3cqZAo" node="nUYGvAFGD8" resolve="myProject" />
               </node>
             </node>
           </node>

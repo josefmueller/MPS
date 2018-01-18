@@ -2212,6 +2212,12 @@
           <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
         </node>
       </node>
+      <node concept="1SiIV0" id="nUYGvAFBBb" role="3bR37C">
+        <node concept="3bR9La" id="nUYGvAFBBc" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
+        </node>
+      </node>
     </node>
     <node concept="398rNT" id="2LuGVbI_yEZ" role="1l3spd">
       <property role="TrG5h" value="idea_home" />

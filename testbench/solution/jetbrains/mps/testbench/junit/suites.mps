@@ -3203,8 +3203,8 @@
       <property role="TrG5h" value="ourEnv" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2SnxzQPEmPr" role="1B3o_S" />
-      <node concept="3uibUv" id="2SnxzQPEmT_" role="1tU5fm">
-        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+      <node concept="3uibUv" id="3Y8TONRH4xT" role="1tU5fm">
+        <ref role="3uigEE" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6lIwBnqiz$r" role="1B3o_S" />
@@ -3273,7 +3273,7 @@
       <node concept="3clFbS" id="6lIwBnqiz$R" role="3clF47">
         <node concept="3cpWs8" id="a8z8zytENl" role="3cqZAp">
           <node concept="3cpWsn" id="a8z8zytENm" role="3cpWs9">
-            <property role="TrG5h" value="defaultConfig" />
+            <property role="TrG5h" value="config" />
             <node concept="2OqwBi" id="63DSRaTik3u" role="33vP2m">
               <node concept="2YIFZM" id="a8z8zytENn" role="2Oq$k0">
                 <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
@@ -3296,7 +3296,7 @@
         <node concept="3clFbF" id="MxMY3ahqgr" role="3cqZAp">
           <node concept="2OqwBi" id="MxMY3ahqqy" role="3clFbG">
             <node concept="37vLTw" id="MxMY3ahqgp" role="2Oq$k0">
-              <ref role="3cqZAo" node="a8z8zytENm" resolve="defaultConfig" />
+              <ref role="3cqZAo" node="a8z8zytENm" resolve="config" />
             </node>
             <node concept="liA8E" id="MxMY3ahqz2" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
@@ -3315,12 +3315,23 @@
             <node concept="37vLTw" id="2SnxzQPEn7Q" role="37vLTJ">
               <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
             </node>
-            <node concept="2YIFZM" id="2SnxzQPEnri" role="37vLTx">
-              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-              <node concept="37vLTw" id="2SnxzQPEnrj" role="37wK5m">
-                <ref role="3cqZAo" node="a8z8zytENm" resolve="defaultConfig" />
+            <node concept="2ShNRf" id="3Y8TONRGODz" role="37vLTx">
+              <node concept="1pGfFk" id="3Y8TONRH2y9" role="2ShVmc">
+                <ref role="37wK5l" to="cky9:6rx4kZDkRjb" resolve="IdeaEnvironment" />
+                <node concept="37vLTw" id="3Y8TONRH2BX" role="37wK5m">
+                  <ref role="3cqZAo" node="a8z8zytENm" resolve="config" />
+                </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3Y8TONRH3sG" role="3cqZAp">
+          <node concept="2OqwBi" id="3Y8TONRH3Sd" role="3clFbG">
+            <node concept="37vLTw" id="3Y8TONRH3sE" role="2Oq$k0">
+              <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
+            </node>
+            <node concept="liA8E" id="3Y8TONRH4Ps" role="2OqNvi">
+              <ref role="37wK5l" to="cky9:3eUNqOk7mHv" resolve="init" />
             </node>
           </node>
         </node>
@@ -3530,7 +3541,7 @@
                 <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
               </node>
               <node concept="liA8E" id="2SnxzQPEodR" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                <ref role="37wK5l" to="79ha:6rx4kZDk5DH" resolve="openProject" />
                 <node concept="2ShNRf" id="2SnxzQPEodS" role="37wK5m">
                   <node concept="1pGfFk" id="2SnxzQPEodT" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
@@ -3563,13 +3574,16 @@
       <node concept="3cqZAl" id="2SnxzQPEoiF" role="3clF45" />
       <node concept="3Tm1VV" id="2SnxzQPEoiG" role="1B3o_S" />
       <node concept="3clFbS" id="2SnxzQPEoiH" role="3clF47">
-        <node concept="3clFbF" id="2mki3EcintI" role="3cqZAp">
-          <node concept="2OqwBi" id="2mki3EcinAz" role="3clFbG">
-            <node concept="37vLTw" id="2mki3EcintG" role="2Oq$k0">
-              <ref role="3cqZAo" node="2SnxzQPEmgY" resolve="myProject" />
+        <node concept="3clFbF" id="3Y8TONRH4Z1" role="3cqZAp">
+          <node concept="2OqwBi" id="3Y8TONRH5aU" role="3clFbG">
+            <node concept="37vLTw" id="3Y8TONRH4YZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2SnxzQPEmTF" resolve="ourEnv" />
             </node>
-            <node concept="liA8E" id="2mki3EcinPw" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
+            <node concept="liA8E" id="3Y8TONRH5pJ" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3hj1t46fASQ" resolve="closeProject" />
+              <node concept="37vLTw" id="3Y8TONRH5ri" role="37wK5m">
+                <ref role="3cqZAo" node="2SnxzQPEmgY" resolve="myProject" />
+              </node>
             </node>
           </node>
         </node>

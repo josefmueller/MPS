@@ -4,13 +4,12 @@ package jetbrains.mps.testbench.junit.suites;
 
 import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner;
-import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.project.Project;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class BaseProjectsTest {
   public static final String MIGRATION_PLUGIN = "migration";
   public static final String MIGRATION_PLUGIN_ID = "jetbrains.mps.ide.migration.workbench";
 
-  private static Environment ourEnv;
+  private static IdeaEnvironment ourEnv;
 
   private String myProjectDir;
   private Project myProject;
@@ -36,11 +35,12 @@ public class BaseProjectsTest {
 
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
-    EnvironmentConfig defaultConfig = EnvironmentConfig.defaultConfig().withJavaPlugin();
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig().withJavaPlugin();
     // todo generalize it when there are more tests 
-    defaultConfig.addPlugin(MIGRATION_PLUGIN, MIGRATION_PLUGIN_ID);
+    config.addPlugin(MIGRATION_PLUGIN, MIGRATION_PLUGIN_ID);
 
-    ourEnv = IdeaEnvironment.getOrCreate(defaultConfig);
+    ourEnv = new IdeaEnvironment(config);
+    ourEnv.init();
     String projectsDir = System.getProperty("projects_dir");
     VirtualFile projectsRoot = LocalFileSystem.getInstance().findFileByPath(projectsDir);
 
@@ -70,7 +70,7 @@ public class BaseProjectsTest {
 
   @After
   public void closeProject() {
-    myProject.dispose();
+    ourEnv.closeProject(myProject);
   }
 
 

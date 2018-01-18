@@ -279,7 +279,7 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
     Assert.assertEquals(toString(Sequence.fromArray(changes)), toString(diff.getModelChanges()));
   }
   private void testDiffCorectness(final int ix, final _FunctionTypes._return_P2_E0<? extends ModelChange[], ? super SNode, ? super SNode> ch) {
-    ourProject.getModelAccess().runReadAction(new Runnable() {
+    getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // test with the same model 
         SNode n1 = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:e71f8bf8-158e-40c6-bd90-ff2f1a21d867(jetbrains.mps.ide.vcs.test.testdiff)", "2193727838071558326"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).getElement(ix), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"));

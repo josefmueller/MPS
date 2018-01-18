@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.testsuites;
 
-import jetbrains.mps.migration.MigrationsTest;
 import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -50,13 +49,15 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.workbench.ProjectOpenCloseTest.class,
     jetbrains.mps.ide.ModuleIDETests.class,
     jetbrains.mps.ide.FSTests.class,
-    MigrationsTest.class
+    jetbrains.mps.migration.MigrationsTest.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   private static IdeaEnvironment ourEnvironment;
 
   // creating the platform environment for the first time
   static {
+    // j.m.ide.test.merge tests need VCS plugin
+    // MigrationsTest needs "migration" plugin
     EnvironmentConfig cfg = EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin().withMigrationPlugin();
     ourEnvironment = new IdeaEnvironment(cfg);
     ourEnvironment.init();

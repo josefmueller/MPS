@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.migration.MigrationChecker;
-import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationExecutor;
 import jetbrains.mps.ide.migration.MigrationExecutorImpl;
 import jetbrains.mps.ide.migration.MigrationRegistry;
@@ -30,58 +29,63 @@ import jetbrains.mps.ide.migration.wizard.MigrationSession.MigrationSessionBase;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationOptions;
-import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.Pair;
-import junit.framework.Assert;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.Processor;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.util.List;
 
-public class MigrationsTest {
-  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.workbench";
+public class MigrationsTest implements EnvironmentAware {
   private static final String PROJECT_PATH = "testbench/modules/migrationLocalHist";
 
-  private static Environment ourEnv;
+  private Environment myEnv;
+  private Project myProject;
 
 
-  @BeforeClass
-  public static void setUp() {
-    ourEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().addPlugin("migration", MIGRATION_ASSISTANT_PLUGIN));
+  @Override
+  public void setEnvironment(@NotNull Environment env) {
+    myEnv = env;
   }
 
-  @AfterClass
-  public static void tearDown() {
-    ourEnv.dispose();
+  @Before
+  public void openProject() {
+    myProject = myEnv.openProject(new File(PROJECT_PATH));
+  }
+
+  @After
+  public void closeProject() {
+    myEnv.closeProject(myProject);
+    myProject = null;
   }
 
   @Test
   public void testMigrationAndLocalHistory() throws Exception {
-    Project project = ourEnv.openProject(new File(PROJECT_PATH));
 
-    TestMakeUtil.make(project);
+
+    TestMakeUtil.make(myProject);
     LocalHistoryImpl.getInstanceImpl().cleanupForNextTest();
 
     MigrationSession session = new MigrationSessionBase() {
       @Override
       public Project getProject() {
-        return project;
+        return myProject;
       }
 
       @Override
       public MigrationRegistry getMigrationRegistry() {
-        return project.getComponent(MigrationRegistry.class);
+        return myProject.getComponent(MigrationRegistry.class);
       }
 
       @Override
@@ -112,7 +116,7 @@ public class MigrationsTest {
 
       @Override
       public MigrationExecutor getExecutor() {
-        return new MigrationExecutorImpl(project);
+        return new MigrationExecutorImpl(myProject);
       }
 
       @Override
@@ -130,6 +134,5 @@ public class MigrationsTest {
     for (int i = 1; i < num - 1; i++) {
       Assert.assertTrue(changes.get(i).getName().startsWith(MigrationTask.APPLY));
     }
-    project.dispose();
   }
 }
