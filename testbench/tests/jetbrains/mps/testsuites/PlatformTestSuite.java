@@ -44,7 +44,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest.class,
     jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
-    jetbrains.mps.vfs.FSListeningTest.class,
+//    jetbrains.mps.vfs.FSListeningTest.class, Alex P., could you please tell whether we need this test or not?
     jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
     jetbrains.mps.workbench.ProjectOpenCloseTest.class,
     jetbrains.mps.ide.ModuleIDETests.class,
