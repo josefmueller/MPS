@@ -28,7 +28,7 @@ public class PropertyVCSDescriptor_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PropertyVCSDescriptor. Generated from implicit smart reference attribute.", new SNodePointer("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)", "5705146868101872080")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PropertyVCSDescriptor. Generated from the smart reference attribute.", new SNodePointer("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)", "5705146868102235648")));
     try {
       return super.createMenuItems(context);
     } finally {

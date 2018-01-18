@@ -86,6 +86,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.vcs.mergehints.structure.FeatureVCSDescriptor", 0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L);
     b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101872078");
     b.associate("lnk", 0x4f2cc0d970a4f877L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("5705146868101871735").done();
+    b.alias("link");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMergeHint() {
@@ -116,6 +117,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.vcs.mergehints.structure.FeatureVCSDescriptor", 0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L);
     b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101872080");
     b.associate("prop", 0x4f2cc0d970a4f877L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL).optional(false).origin("5705146868101872081").done();
+    b.alias("property");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTheirsStrategy() {

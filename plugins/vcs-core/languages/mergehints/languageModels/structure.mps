@@ -40,6 +40,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -162,6 +165,7 @@
   <node concept="1TIwiD" id="4WGKd_KDfBe">
     <property role="EcuMT" value="5705146868101872078" />
     <property role="TrG5h" value="LinkVCSDescriptor" />
+    <property role="34LRSv" value="link" />
     <ref role="1TJDcQ" node="4WGKd_KDfxP" resolve="FeatureVCSDescriptor" />
     <node concept="1TJgyj" id="4WGKd_KDfxR" role="1TKVEi">
       <property role="IQ2ns" value="5705146868101871735" />
@@ -170,10 +174,14 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
+    <node concept="RPilO" id="4WGKd_KECnY" role="lGtFl">
+      <ref role="RPilL" node="4WGKd_KDfxR" resolve="lnk" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4WGKd_KDfBg">
     <property role="EcuMT" value="5705146868101872080" />
     <property role="TrG5h" value="PropertyVCSDescriptor" />
+    <property role="34LRSv" value="property" />
     <ref role="1TJDcQ" node="4WGKd_KDfxP" resolve="FeatureVCSDescriptor" />
     <node concept="1TJgyj" id="4WGKd_KDfBh" role="1TKVEi">
       <property role="IQ2ns" value="5705146868101871735" />
@@ -181,6 +189,9 @@
       <property role="20kJfa" value="prop" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+    </node>
+    <node concept="RPilO" id="4WGKd_KECo0" role="lGtFl">
+      <ref role="RPilL" node="4WGKd_KDfBh" resolve="prop" />
     </node>
   </node>
   <node concept="PlHQZ" id="4WGKd_KDsrX">

@@ -17,7 +17,7 @@
       <unit at="10,0,44,0" name="jetbrains.mps.vcs.mergehints.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,139,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
+      <unit at="14,0,141,0" name="jetbrains.mps.vcs.mergehints.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/8485200647808748945">
