@@ -65,7 +65,9 @@ public class MpsTestsSuite extends BaseMpsSuite {
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
       config = config.addMacro(macro.key(), macro.value());
     }
-    return IdeaEnvironment.getOrCreate(config);
+    IdeaEnvironment rv = new IdeaEnvironment(config);
+    rv.init();
+    return rv;
   }
 
   private static Map<String, String> loadLibraries() {

@@ -79,7 +79,6 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
   }
   public void setUp() {
     project = ((MPSProject) myEnvironment.openProject(new File(PROJECT_PATH)));
-
     executeUnderLock(new Runnable() {
       public void run() {
         clonedModulesDirectory = IFileUtils.createTmpDir();
@@ -87,12 +86,12 @@ public class CloneModule_Test extends EnvironmentAwareTestCase {
     });
   }
   public void tearDown() {
-    myEnvironment.closeProject(project);
     executeUnderLock(new Runnable() {
       public void run() {
         clonedModulesDirectory.delete();
       }
     });
+    myEnvironment.closeProject(project);
   }
 
   public static void checkModule(AbstractModule module) {

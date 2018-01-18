@@ -1378,7 +1378,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="2_jX3OnJPxr" role="3cqZAp" />
         <node concept="3clFbF" id="2_jX3OnKJ9P" role="3cqZAp">
           <node concept="1rXfSq" id="2_jX3OnKJ9N" role="3clFbG">
             <ref role="37wK5l" node="2_jX3OnKGFn" resolve="executeUnderLock" />
@@ -1403,19 +1402,6 @@
     </node>
     <node concept="1KhZuU" id="2_jX3OnHT4p" role="1KhZu3">
       <node concept="3clFbS" id="2_jX3OnHT4q" role="2VODD2">
-        <node concept="3clFbF" id="nUYGvAFkcD" role="3cqZAp">
-          <node concept="2OqwBi" id="nUYGvAFkmR" role="3clFbG">
-            <node concept="37vLTw" id="nUYGvAFkcB" role="2Oq$k0">
-              <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
-            </node>
-            <node concept="liA8E" id="nUYGvAFmjF" role="2OqNvi">
-              <ref role="37wK5l" to="ew0j:~Environment.closeProject(jetbrains.mps.project.Project):void" resolve="closeProject" />
-              <node concept="37vLTw" id="nUYGvAFmpk" role="37wK5m">
-                <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2_jX3OnKJVz" role="3cqZAp">
           <node concept="1rXfSq" id="2_jX3OnKJVx" role="3clFbG">
             <ref role="37wK5l" node="2_jX3OnKGFn" resolve="executeUnderLock" />
@@ -1431,6 +1417,19 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="nUYGvAFkcD" role="3cqZAp">
+          <node concept="2OqwBi" id="nUYGvAFkmR" role="3clFbG">
+            <node concept="37vLTw" id="nUYGvAFkcB" role="2Oq$k0">
+              <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
+            </node>
+            <node concept="liA8E" id="nUYGvAFmjF" role="2OqNvi">
+              <ref role="37wK5l" to="ew0j:~Environment.closeProject(jetbrains.mps.project.Project):void" resolve="closeProject" />
+              <node concept="37vLTw" id="nUYGvAFmpk" role="37wK5m">
+                <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
               </node>
             </node>
           </node>

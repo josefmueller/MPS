@@ -4213,6 +4213,12 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="nUYGvAUGX3" role="3bR37C">
+          <node concept="3bR9La" id="nUYGvAUGX4" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="398rNT" id="5bAGsVFhMuh" role="1l3spd">
@@ -7296,12 +7302,6 @@
           <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
         </node>
       </node>
-      <node concept="1SiIV0" id="4C1xqj43c_$" role="3bR37C">
-        <node concept="3bR9La" id="4C1xqj43c__" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-        </node>
-      </node>
       <node concept="1SiIV0" id="4C1xqj43c_A" role="3bR37C">
         <node concept="3bR9La" id="4C1xqj43c_B" role="1SiIV1">
           <property role="3bR36h" value="false" />
@@ -7314,16 +7314,16 @@
           <ref role="3bR37D" to="ffeo:7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
         </node>
       </node>
-      <node concept="1SiIV0" id="4C1xqj43c_E" role="3bR37C">
-        <node concept="3bR9La" id="4C1xqj43c_F" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" to="ffeo:1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
-        </node>
-      </node>
       <node concept="1SiIV0" id="2MdW64IoKto" role="3bR37C">
         <node concept="3bR9La" id="2MdW64IoKtp" role="1SiIV1">
           <property role="3bR36h" value="false" />
           <ref role="3bR37D" to="ffeo:7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="nUYGvASNlb" role="3bR37C">
+        <node concept="3bR9La" id="nUYGvASNlc" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
         </node>
       </node>
     </node>

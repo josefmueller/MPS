@@ -14,15 +14,15 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
-    <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="twe9" ref="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
+    <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
+    <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -89,6 +89,9 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -166,6 +169,12 @@
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -3051,20 +3060,19 @@
     </node>
     <node concept="1KhYhu" id="6jMl7XILu80" role="1KhZu4">
       <node concept="3clFbS" id="6jMl7XILu81" role="2VODD2">
-        <node concept="3cpWs8" id="6EMTxOPTaUZ" role="3cqZAp">
-          <node concept="3cpWsn" id="6EMTxOPTaV0" role="3cpWs9">
-            <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="6EMTxOPTaUY" role="1tU5fm">
-              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-            </node>
-            <node concept="2YIFZM" id="6EMTxOPTaV1" role="33vP2m">
-              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-              <node concept="2YIFZM" id="6LXMTdV54dD" role="37wK5m">
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              </node>
-            </node>
+        <node concept="3SKdUt" id="nUYGvARotK" role="3cqZAp">
+          <node concept="3SKdUq" id="nUYGvARotM" role="3SKWNk">
+            <property role="3SKdUp" value="I don't care to close the project (a) can do it on per-test basis in BTestCase (no BeforeClass), (b) there are too many tests in this class " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="nUYGvARGUI" role="3cqZAp">
+          <node concept="3SKdUq" id="nUYGvARGUJ" role="3SKWNk">
+            <property role="3SKdUp" value="  (c) PushEnvironmentRunnerBuilder is not yet capable to invoke static setEnvironment (so that we could have static project field" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="nUYGvAS5v7" role="3cqZAp">
+          <node concept="3SKdUq" id="nUYGvAS5v9" role="3SKWNk">
+            <property role="3SKdUp" value="  (d) this test is executed from separate process (mpsSmartRefAttrMigration.xml) and nobody gets affected with the project left open." />
           </node>
         </node>
         <node concept="3clFbF" id="4uPaNIY9iOs" role="3cqZAp">
@@ -3078,11 +3086,11 @@
                   <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
                 </node>
                 <node concept="2OqwBi" id="4uPaNIY9iFu" role="10QFUP">
-                  <node concept="37vLTw" id="4uPaNIY9iFv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6EMTxOPTaV0" resolve="env" />
+                  <node concept="37vLTw" id="nUYGvARohY" role="2Oq$k0">
+                    <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
                   </node>
                   <node concept="liA8E" id="4uPaNIY9iFw" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                    <ref role="37wK5l" to="ew0j:~Environment.openProject(java.io.File):jetbrains.mps.project.Project" resolve="openProject" />
                     <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
                       <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
                         <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
@@ -3098,6 +3106,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="nUYGvARmBf" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
 </model>

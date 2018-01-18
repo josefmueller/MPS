@@ -599,11 +599,9 @@
         <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
     </node>
-    <node concept="312cEg" id="3Y8TONRIbVM" role="jymVt">
-      <property role="TrG5h" value="myProject" />
-      <property role="34CwA1" value="false" />
+    <node concept="Wx3nA" id="nUYGvAYA1H" role="jymVt">
+      <property role="TrG5h" value="ourProject" />
       <property role="3TUv4t" value="false" />
-      <property role="eg7rD" value="false" />
       <node concept="3uibUv" id="3Y8TONRIbVQ" role="1tU5fm">
         <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
@@ -745,6 +743,29 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="nUYGvAYNhX" role="3cqZAp">
+          <node concept="3SKdUq" id="nUYGvAYNhZ" role="3SKWNk">
+            <property role="3SKdUp" value="the right way to close project is Environment.closeProject(myProject), but at the momen PushEnvironmentRunnerBuilder does it with instance method only" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="nUYGvAYJO3" role="3cqZAp">
+          <node concept="2OqwBi" id="nUYGvAYKuu" role="3clFbG">
+            <node concept="37vLTw" id="nUYGvAYJO1" role="2Oq$k0">
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
+            </node>
+            <node concept="liA8E" id="nUYGvAYLs2" role="2OqNvi">
+              <ref role="37wK5l" to="z1c4:~MPSProject.dispose():void" resolve="dispose" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="nUYGvAYLQQ" role="3cqZAp">
+          <node concept="37vLTI" id="nUYGvAYMQz" role="3clFbG">
+            <node concept="10Nm6u" id="nUYGvAYN43" role="37vLTx" />
+            <node concept="37vLTw" id="nUYGvAYLQO" role="37vLTJ">
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="6hwF4wZObga" role="1B3o_S" />
       <node concept="2AHcQZ" id="6hwF4wZObgc" role="2AJF6D">
@@ -757,52 +778,72 @@
       <node concept="3cqZAl" id="3oUomEoMJtI" role="3clF45" />
       <node concept="3Tm1VV" id="6hwF4wZOyZ4" role="1B3o_S" />
       <node concept="3clFbS" id="3oUomEoMJtK" role="3clF47">
-        <node concept="3SKdUt" id="_Q9OPrLBbV" role="3cqZAp">
-          <node concept="3SKdUq" id="_Q9OPrLBbX" role="3SKWNk">
-            <property role="3SKdUp" value="Point to current directory with MPS project" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="_Q9OPrLATO" role="3cqZAp">
-          <node concept="3cpWsn" id="_Q9OPrLATP" role="3cpWs9">
-            <property role="TrG5h" value="mpsProject" />
-            <node concept="3uibUv" id="_Q9OPrLATL" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~File" resolve="File" />
-            </node>
-            <node concept="2OqwBi" id="_Q9OPrLATQ" role="33vP2m">
-              <node concept="2ShNRf" id="_Q9OPrLATR" role="2Oq$k0">
-                <node concept="1pGfFk" id="_Q9OPrLATS" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                  <node concept="Xl_RD" id="_Q9OPrLATT" role="37wK5m" />
-                </node>
-              </node>
-              <node concept="liA8E" id="_Q9OPrLATU" role="2OqNvi">
-                <ref role="37wK5l" to="guwi:~File.getAbsoluteFile():java.io.File" resolve="getAbsoluteFile" />
+        <node concept="3clFbJ" id="nUYGvAYGbW" role="3cqZAp">
+          <node concept="3clFbS" id="nUYGvAYGbY" role="3clFbx">
+            <node concept="3SKdUt" id="_Q9OPrLBbV" role="3cqZAp">
+              <node concept="3SKdUq" id="_Q9OPrLBbX" role="3SKWNk">
+                <property role="3SKdUp" value="Point to current directory with MPS project" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6hwF4wZOcx6" role="3cqZAp">
-          <node concept="37vLTI" id="6hwF4wZOcx8" role="3clFbG">
-            <node concept="37vLTw" id="3Y8TONRHQfN" role="37vLTJ">
-              <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
-            </node>
-            <node concept="1eOMI4" id="6qMd1Cr6wqR" role="37vLTx">
-              <node concept="10QFUN" id="6qMd1Cr6wqO" role="1eOMHV">
-                <node concept="3uibUv" id="6qMd1Cr6w$_" role="10QFUM">
-                  <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+            <node concept="3cpWs8" id="_Q9OPrLATO" role="3cqZAp">
+              <node concept="3cpWsn" id="_Q9OPrLATP" role="3cpWs9">
+                <property role="TrG5h" value="mpsProject" />
+                <node concept="3uibUv" id="_Q9OPrLATL" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
                 </node>
-                <node concept="2OqwBi" id="1oVBfwt3ITg" role="10QFUP">
-                  <node concept="37vLTw" id="3Y8TONRIqk$" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3Y8TONRHzY$" resolve="myEnv" />
+                <node concept="2OqwBi" id="_Q9OPrLATQ" role="33vP2m">
+                  <node concept="2ShNRf" id="_Q9OPrLATR" role="2Oq$k0">
+                    <node concept="1pGfFk" id="_Q9OPrLATS" role="2ShVmc">
+                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                      <node concept="Xl_RD" id="_Q9OPrLATT" role="37wK5m" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="1oVBfwt3ITi" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-                    <node concept="37vLTw" id="_Q9OPrLATV" role="37wK5m">
-                      <ref role="3cqZAo" node="_Q9OPrLATP" resolve="mpsProject" />
+                  <node concept="liA8E" id="_Q9OPrLATU" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getAbsoluteFile():java.io.File" resolve="getAbsoluteFile" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6hwF4wZOcx6" role="3cqZAp">
+              <node concept="37vLTI" id="6hwF4wZOcx8" role="3clFbG">
+                <node concept="37vLTw" id="3Y8TONRHQfN" role="37vLTJ">
+                  <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
+                </node>
+                <node concept="1eOMI4" id="6qMd1Cr6wqR" role="37vLTx">
+                  <node concept="10QFUN" id="6qMd1Cr6wqO" role="1eOMHV">
+                    <node concept="3uibUv" id="6qMd1Cr6w$_" role="10QFUM">
+                      <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+                    </node>
+                    <node concept="2OqwBi" id="1oVBfwt3ITg" role="10QFUP">
+                      <node concept="37vLTw" id="3Y8TONRIqk$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3Y8TONRHzY$" resolve="myEnv" />
+                      </node>
+                      <node concept="liA8E" id="1oVBfwt3ITi" role="2OqNvi">
+                        <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                        <node concept="37vLTw" id="_Q9OPrLATV" role="37wK5m">
+                          <ref role="3cqZAo" node="_Q9OPrLATP" resolve="mpsProject" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3SKdUt" id="6WdBD5spQdi" role="3cqZAp">
+              <node concept="3SKdUq" id="6WdBD5spQdk" role="3SKWNk">
+                <property role="3SKdUp" value="For whatever reason, tests with this superclass work only if there's 1 project dispose per class (open/close of the project in Before/After doesn't work)" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6WdBD5spVDw" role="3cqZAp">
+              <node concept="3SKdUq" id="6WdBD5spVDy" role="3SKWNk">
+                <property role="3SKdUp" value="Given there's odd magic with ourEnabled and the fact it's VCS, I don't want to dive into this sh!t now." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="nUYGvAYI3P" role="3clFbw">
+            <node concept="10Nm6u" id="nUYGvAYIJu" role="3uHU7w" />
+            <node concept="37vLTw" id="nUYGvAYGV7" role="3uHU7B">
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
             </node>
           </node>
         </node>
@@ -814,7 +855,7 @@
             </node>
             <node concept="2OqwBi" id="6qMd1Cr6xov" role="37vLTx">
               <node concept="37vLTw" id="6qMd1Cr6wTw" role="2Oq$k0">
-                <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+                <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
               </node>
               <node concept="liA8E" id="6qMd1Cr6ylZ" role="2OqNvi">
                 <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
@@ -1149,11 +1190,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="3Y8TONRIuQR" role="3cqZAp">
-          <node concept="3SKdUq" id="3Y8TONRIuQT" role="3SKWNk">
-            <property role="3SKdUp" value="didn't close the project to save some re-open time (how much? no idea!), as there are a lot of tests that utilize mps project itself" />
-          </node>
-        </node>
       </node>
       <node concept="2AHcQZ" id="6hwF4wZOyZw" role="2AJF6D">
         <ref role="2AI5Lk" to="rjhg:~After" resolve="After" />
@@ -1175,7 +1211,7 @@
       <node concept="3clFbS" id="3Y8TONRI08l" role="3clF47">
         <node concept="3clFbF" id="3Y8TONRIr3I" role="3cqZAp">
           <node concept="37vLTw" id="3Y8TONRIr3H" role="3clFbG">
-            <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+            <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
           </node>
         </node>
       </node>
@@ -1393,7 +1429,7 @@
           </node>
           <node concept="2OqwBi" id="3Y8TONRItw3" role="ukAjM">
             <node concept="37vLTw" id="3Y8TONRItw4" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
             </node>
             <node concept="liA8E" id="3Y8TONRItw5" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -1428,7 +1464,7 @@
                 <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
               <node concept="37vLTw" id="4d72gVMuQ_u" role="2Oq$k0">
-                <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+                <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
               </node>
             </node>
           </node>
@@ -1548,7 +1584,7 @@
           </node>
           <node concept="2OqwBi" id="3Y8TONRIsj6" role="ukAjM">
             <node concept="37vLTw" id="3Y8TONRIr$l" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
             </node>
             <node concept="liA8E" id="3Y8TONRItl5" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -1708,7 +1744,7 @@
           </node>
           <node concept="2OqwBi" id="3Y8TONRIub7" role="ukAjM">
             <node concept="37vLTw" id="3Y8TONRIub8" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+              <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
             </node>
             <node concept="liA8E" id="3Y8TONRIub9" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -1936,7 +1972,7 @@
                 <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
                 <node concept="2OqwBi" id="1eZSuKdTgHK" role="37wK5m">
                   <node concept="37vLTw" id="1eZSuKdTgcE" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3Y8TONRIbVM" resolve="myProject" />
+                    <ref role="3cqZAo" node="nUYGvAYA1H" resolve="ourProject" />
                   </node>
                   <node concept="liA8E" id="1eZSuKdThwK" role="2OqNvi">
                     <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />

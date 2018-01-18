@@ -59,7 +59,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 public abstract class ChangesTestBase implements EnvironmentAware {
   protected static boolean ourEnabled;
   protected Environment myEnv;
-  protected MPSProject myProject;
+  protected static MPSProject ourProject;
 
   protected Project myIdeaProject;
   protected ChangesManagerTestWaitHelper myWaitHelper;
@@ -87,15 +87,22 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   @AfterClass
   public static void tearDown() {
     ourEnabled = false;
+    // the right way to close project is Environment.closeProject(myProject), but at the momen PushEnvironmentRunnerBuilder does it with instance method only 
+    ourProject.dispose();
+    ourProject = null;
   }
 
   @Before
   public void init() {
-    // Point to current directory with MPS project 
-    File mpsProject = new File("").getAbsoluteFile();
-    myProject = ((MPSProject) myEnv.openProject(mpsProject));
+    if (ourProject == null) {
+      // Point to current directory with MPS project 
+      File mpsProject = new File("").getAbsoluteFile();
+      ourProject = ((MPSProject) myEnv.openProject(mpsProject));
+      // For whatever reason, tests with this superclass work only if there's 1 project dispose per class (open/close of the project in Before/After doesn't work) 
+      // Given there's odd magic with ourEnabled and the fact it's VCS, I don't want to dive into this sh!t now. 
+    }
 
-    myIdeaProject = myProject.getProject();
+    myIdeaProject = ourProject.getProject();
     CurrentDifferenceRegistry.getInstance(myIdeaProject).getCommandQueue().setHadExceptions(false);
     myWaitHelper = new ChangesManagerTestWaitHelper(myIdeaProject);
     myWaitHelper.waitForChangesManager();
@@ -136,12 +143,10 @@ public abstract class ChangesTestBase implements EnvironmentAware {
     });
     Assert.assertFalse(CurrentDifferenceRegistry.getInstance(myIdeaProject).getCommandQueue().hadExceptions());
     myWaitHelper.dispose();
-    // didn't close the project to save some re-open time (how much? no idea!), as there are a lot of tests that utilize mps project itself
-    myEnv.flushAllEvents();
   }
 
   protected MPSProject getProject() {
-    return myProject;
+    return ourProject;
   }
 
   protected void checkAndEnable() {
@@ -161,7 +166,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   protected void testChanges(Runnable change) {
     makeChangeAndWait(change);
 
-    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    ourProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ChangeSet cs = myDiff.getChangeSet();
         ChangeSet rebuiltChangeSet = ChangeSetBuilder.buildChangeSet(cs.getOldModel(), cs.getNewModel());
@@ -171,7 +176,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   }
 
   protected void makeChangeAndWait(Runnable change) {
-    myProject.getModelAccess().executeCommandInEDT(change);
+    ourProject.getModelAccess().executeCommandInEDT(change);
 
     myEnv.flushAllEvents();
     myWaitHelper.waitForChangesManager();
@@ -181,7 +186,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
     final NodeFileStatusMappingExt fsm = myIdeaProject.getComponent(NodeFileStatusMappingExt.class);
     final SModel model = myDiff.getModelDescriptor();
     // query for first time 
-    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+    ourProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         ListSequence.fromList(SModelOperations.roots(model, null)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode r) {
@@ -210,7 +215,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   }
 
   protected void revertMemChangesAndWait() {
-    myProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    ourProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         getTestModel().reloadFromSource();
       }
@@ -233,7 +238,7 @@ public abstract class ChangesTestBase implements EnvironmentAware {
   }
 
   protected EditableSModel getTestModel() {
-    return (EditableSModel) PersistenceFacade.getInstance().createModelReference("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)").resolve(myProject.getRepository());
+    return (EditableSModel) PersistenceFacade.getInstance().createModelReference("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)").resolve(ourProject.getRepository());
   }
 
   protected VirtualFile getTestModelFile() {
