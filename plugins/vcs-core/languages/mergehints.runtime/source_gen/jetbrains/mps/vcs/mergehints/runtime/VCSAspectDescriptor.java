@@ -8,7 +8,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public interface VCSAspectDescriptor extends ILanguageAspect {
   @Nullable
-  MergeStrategy getDefaultStrategy(SAbstractConcept c);
+  VCSConceptAspect getVCSDescriptor(SAbstractConcept c);
+
   abstract class BaseVcsAspectDescriptor implements VCSAspectDescriptor {
   }
 }

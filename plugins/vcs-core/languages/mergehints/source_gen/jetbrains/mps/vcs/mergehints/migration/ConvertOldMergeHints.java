@@ -9,14 +9,16 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import java.util.Collection;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
@@ -25,9 +27,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertOldMergeHints extends MigrationScriptBase {
   public String getCaption() {
@@ -53,17 +57,44 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
           return scope;
         }
       };
-      Collection<SNode> hints = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"), false);
-      if (CollectionSequence.fromCollection(hints).isEmpty()) {
+      // note: .toList is important here 
+      List<SNode> conceptsWithHints = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"), false, new SAbstractConcept[]{})).isNotEmpty();
+        }
+      }).toListSequence();
+      if (ListSequence.fromList(conceptsWithHints).isEmpty()) {
         return;
       }
 
-      final SNode hRoot = createOrGetHintsAspect(((Language) m));
-      CollectionSequence.fromCollection(hints).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          ListSequence.fromList(SLinkOperations.getChildren(hRoot, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L, 0x39744cf955c648faL, "hints"))).addElement(_quotation_createNode_fwc2c_a0a0a0a0e0c0g(SNodeOperations.getParent(it), SPropertyOperations.getInteger_def(it, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1") + ""));
+      SNode hRoot = createOrGetHintsAspect(((Language) m));
+
+      for (SNode cNode : ListSequence.fromList(conceptsWithHints)) {
+        SNode dNode = ListSequence.fromList(SLinkOperations.getChildren(hRoot, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648f9L, 0x39744cf955c648faL, "concepts"))).addElement(_quotation_createNode_fwc2c_a0a0a0g0c0g(cNode, convertHint(AttributeOperations.getAttribute(cNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))));
+        // note: .toList is important here 
+        List<SNode> propList = ListSequence.fromList(SLinkOperations.getChildren(cNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))) != null);
+          }
+        }).toListSequence();
+        for (SNode pNode : ListSequence.fromList(propList)) {
+          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(_quotation_createNode_fwc2c_a0a0a3a6a2a6(convertHint(AttributeOperations.getAttribute(pNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")))), pNode));
+          SNodeOperations.deleteNode(AttributeOperations.getAttribute(pNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
         }
-      });
+
+        // note: .toList is important here 
+        List<SNode> linkList = ListSequence.fromList(SLinkOperations.getChildren(cNode, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))) != null);
+          }
+        }).toListSequence();
+        for (SNode lNode : ListSequence.fromList(linkList)) {
+          ListSequence.fromList(SLinkOperations.getChildren(dNode, MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features"))).addElement(_quotation_createNode_fwc2c_a0a0a7a6a2a6(lNode, convertHint(AttributeOperations.getAttribute(lNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))))));
+          SNodeOperations.deleteNode(AttributeOperations.getAttribute(lNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
+        }
+
+        SNodeOperations.deleteNode(AttributeOperations.getAttribute(cNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
+      }
     }
   }
   @Override
@@ -91,7 +122,8 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
   }
 
 
-  public SNode createOrGetHintsAspect(Language l) {
+
+  private SNode createOrGetHintsAspect(Language l) {
     SModel md = SModuleOperations.getAspect(l, "vcs");
     if (md == null) {
       SModel struc = l.getStructureModelDescriptor();
@@ -109,12 +141,57 @@ public class ConvertOldMergeHints extends MigrationScriptBase {
     }
     return hRoot;
   }
-  private static SNode _quotation_createNode_fwc2c_a0a0a0a0e0c0g(Object parameter_1, Object parameter_2) {
+
+  private SNode convertHint(SNode cNode) {
+    return ((cNode == null) ? null : ((SPropertyOperations.hasValue(cNode, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, 0x75c17d085c8e0dbaL, "hint"), "1", "1") ? _quotation_createNode_fwc2c_a0a0a0m_0() : _quotation_createNode_fwc2c_a0a0a0m())));
+  }
+  private static SNode _quotation_createNode_fwc2c_a0a0a0g0c0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x39744cf955c648fcL, "VCSHint"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b7L, "strategy"), (String) parameter_2);
+    SNode quotedNode_4 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x39744cf955c648fcL, "ConceptVCSDescriptor"), null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b7L, "strategy"), "1");
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x39744cf955c649b5L, "cncpt"), (SNode) parameter_1);
+    quotedNode_4 = (SNode) parameter_2;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy"), HUtil.copyIfNecessary(quotedNode_4));
+    }
     return quotedNode_3;
+  }
+  private static SNode _quotation_createNode_fwc2c_a0a0a3a6a2a6(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x4f2cc0d970a4f9d0L, "PropertyVCSDescriptor"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9d0L, 0x4f2cc0d970a4f877L, "prop"), (SNode) parameter_2);
+    quotedNode_4 = (SNode) parameter_1;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), HUtil.copyIfNecessary(quotedNode_4));
+    }
+    return quotedNode_3;
+  }
+  private static SNode _quotation_createNode_fwc2c_a0a0a7a6a2a6(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x4f2cc0d970a4f9ceL, "LinkVCSDescriptor"), null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f9ceL, 0x4f2cc0d970a4f877L, "lnk"), (SNode) parameter_1);
+    quotedNode_4 = (SNode) parameter_2;
+    if (quotedNode_4 != null) {
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L, 0x4f2cc0d970a5c73fL, "strategy"), HUtil.copyIfNecessary(quotedNode_4));
+    }
+    return quotedNode_3;
+  }
+  private static SNode _quotation_createNode_fwc2c_a0a0a0m() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x4f2cc0d970a5c71fL, "TheirsStrategy"), null, null, false);
+    return quotedNode_1;
+  }
+  private static SNode _quotation_createNode_fwc2c_a0a0a0m_0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x37e03aa1728949bcL, 0x826930de5eceec76L, "jetbrains.mps.vcs.mergehints"), 0x4f2cc0d970a5c700L, "OursStrategy"), null, null, false);
+    return quotedNode_1;
   }
 }

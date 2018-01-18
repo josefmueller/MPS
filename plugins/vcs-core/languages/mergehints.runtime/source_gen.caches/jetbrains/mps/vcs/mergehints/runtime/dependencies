@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" file="MergeStrategy.java" />
   <dependency className="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" file="VCSAspectDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.VCSConceptAspect" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
@@ -12,9 +12,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.VCSConceptAspect" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.mergehints.runtime.VCSConceptAspect" file="VCSConceptAspect.java">
+    <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
   </dependency>
 </dependenciesRoot>
 
