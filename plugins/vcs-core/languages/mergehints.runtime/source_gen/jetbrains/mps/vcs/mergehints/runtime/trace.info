@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)/1277106018273911117">
     <file name="VCSAspectDescriptor.java">
-      <node id="1277106018273979214" at="10,0,12,0" concept="0" trace="getDefaultStrategy#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/vcs/mergehints/runtime/VCSAspectDescriptor/Strategy;" />
+      <node id="1277106018273979214" at="10,0,12,0" concept="2" trace="getDefaultStrategy#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/vcs/mergehints/runtime/MergeStrategy;" />
       <scope id="1277106018273979214" at="10,0,12,0">
         <var name="c" id="1277106018273979379" />
       </scope>
-      <unit id="1277106018274215677" at="16,0,18,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor$BaseVcsAspectDescriptor" />
-      <unit id="1277106018273978907" at="12,0,16,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor$Strategy" />
-      <unit id="1277106018273911117" at="9,0,19,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" />
+      <unit id="1277106018274215677" at="12,0,14,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor$BaseVcsAspectDescriptor" />
+      <unit id="1277106018273911117" at="9,0,15,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)/1277106018273978907">
+    <file name="MergeStrategy.java">
+      <unit id="1277106018273978907" at="6,0,10,0" name="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" />
+    </file>
+  </root>
+  <root nodeRef="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)/5705146868101010166">
+    <file name="VCSAspectUtil.java">
+      <node id="5705146868101052212" at="15,68,16,50" concept="3" />
+      <node id="5705146868101057766" at="16,50,17,79" concept="3" />
+      <node id="5705146868101059682" at="18,26,19,18" concept="4" />
+      <node id="5705146868101063184" at="20,5,21,0" concept="5" />
+      <node id="5705146868101062257" at="21,0,22,78" concept="3" />
+      <node id="5705146868101063408" at="23,25,24,18" concept="4" />
+      <node id="5705146868101063740" at="25,5,26,0" concept="5" />
+      <node id="5705146868101067137" at="26,0,27,40" concept="4" />
+      <node id="5705146868101067826" at="12,0,14,0" concept="0" trace="VCSAspectUtil#()V" />
+      <node id="5705146868101058830" at="17,79,20,5" concept="1" />
+      <node id="5705146868101063406" at="22,78,25,5" concept="1" />
+      <node id="5705146868101012018" at="15,0,29,0" concept="2" trace="getDefaultMergeStrategy#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljetbrains/mps/vcs/mergehints/runtime/MergeStrategy;" />
+      <scope id="5705146868101067830" at="12,27,12,27" />
+      <scope id="5705146868101058832" at="18,26,19,18" />
+      <scope id="5705146868101063407" at="23,25,24,18" />
+      <scope id="5705146868101067826" at="12,0,14,0" />
+      <scope id="5705146868101012022" at="15,68,27,40">
+        <var name="aspect" id="5705146868101062258" />
+        <var name="lang" id="5705146868101052213" />
+        <var name="runtime" id="5705146868101057767" />
+      </scope>
+      <scope id="5705146868101012018" at="15,0,29,0">
+        <var name="c" id="5705146868101012231" />
+      </scope>
+      <unit id="5705146868101010166" at="11,0,30,0" name="jetbrains.mps.vcs.mergehints.runtime.VCSAspectUtil" />
     </file>
   </root>
 </debug-info>

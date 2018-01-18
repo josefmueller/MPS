@@ -322,7 +322,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="3_Ojf_lLu1N" role="3clF45">
-        <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="VCSAspectDescriptor.Strategy" />
+        <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="16TciwZK16M" role="1B3o_S" />
       <node concept="37vLTG" id="16TciwZK16O" role="3clF46">
@@ -334,7 +334,7 @@
           <node concept="3cpWsn" id="16TciwZKk_t" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="3uibUv" id="16TciwZKk_u" role="1tU5fm">
-              <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="VCSAspectDescriptor.Strategy" />
+              <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
             </node>
             <node concept="10Nm6u" id="16TciwZKkGB" role="33vP2m" />
           </node>
@@ -372,8 +372,8 @@
               <node concept="3clFbF" id="16TciwZKzVH" role="3cqZAp">
                 <node concept="37vLTI" id="16TciwZK$Md" role="3clFbG">
                   <node concept="Rm8GO" id="3_Ojf_lLyad" role="37vLTx">
+                    <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
                     <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                    <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="VCSAspectDescriptor.Strategy" />
                     <node concept="1ZhdrF" id="3_Ojf_lLydc" role="lGtFl">
                       <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1083260308426" />
                       <property role="2qtEX8" value="enumConstantDeclaration" />
@@ -396,20 +396,14 @@
                               </node>
                               <node concept="3fl2lp" id="3_Ojf_lLwO3" role="3K4E3e">
                                 <ref role="3fl3PK" to="86l:16TciwZIYE0" resolve="OURS" />
-                                <node concept="3fl2lp" id="3_Ojf_lLwO4" role="3fl3PI">
-                                  <ref role="3fl3PK" to="86l:16TciwZIYCr" resolve="VCSAspectDescriptor.Strategy" />
-                                  <node concept="3B5_sB" id="3_Ojf_lLwO5" role="3fl3PI">
-                                    <ref role="3B5MYn" to="86l:16TciwZII5d" resolve="VCSAspectDescriptor" />
-                                  </node>
+                                <node concept="3B5_sB" id="3_Ojf_lLwO5" role="3fl3PI">
+                                  <ref role="3B5MYn" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
                                 </node>
                               </node>
                               <node concept="3fl2lp" id="3_Ojf_lLwO6" role="3K4GZi">
                                 <ref role="3fl3PK" to="86l:16TciwZIYFC" resolve="THEIRS" />
-                                <node concept="3fl2lp" id="3_Ojf_lLwO7" role="3fl3PI">
-                                  <ref role="3fl3PK" to="86l:16TciwZIYCr" resolve="VCSAspectDescriptor.Strategy" />
-                                  <node concept="3B5_sB" id="3_Ojf_lLwO8" role="3fl3PI">
-                                    <ref role="3B5MYn" to="86l:16TciwZII5d" resolve="VCSAspectDescriptor" />
-                                  </node>
+                                <node concept="3B5_sB" id="3_Ojf_lLwO8" role="3fl3PI">
+                                  <ref role="3B5MYn" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
                                 </node>
                               </node>
                             </node>
