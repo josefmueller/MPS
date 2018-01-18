@@ -75,7 +75,12 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static List<String> getVariableSuffixes_idhEwIzNo(@NotNull SNode __thisNode__) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (String s : NameUtil.splitByCamels(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__))) {
-      ListSequence.fromList(result).addElement(s);
+      // strip trailing underscores 
+      String validIdentifier = NameUtil.toValidIdentifier(s);
+      while (validIdentifier.length() > 1 && validIdentifier.endsWith("_")) {
+        validIdentifier = NameUtil.stripQuotes(validIdentifier, "", "___");
+      }
+      ListSequence.fromList(result).addElement(validIdentifier);
     }
     return result;
   }

@@ -15222,14 +15222,84 @@
             <node concept="17QB3L" id="1WXzn0mi1PU" role="1tU5fm" />
           </node>
           <node concept="3clFbS" id="1WXzn0mi1PR" role="2LFqv$">
+            <node concept="3SKdUt" id="5$AQHzBVBp5" role="3cqZAp">
+              <node concept="3SKdUq" id="5$AQHzBVBp7" role="3SKWNk">
+                <property role="3SKdUp" value="strip trailing underscores" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="5$AQHzBVBvL" role="3cqZAp">
+              <node concept="3cpWsn" id="5$AQHzBVBvM" role="3cpWs9">
+                <property role="TrG5h" value="validIdentifier" />
+                <node concept="3uibUv" id="5$AQHzBVBvI" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="2YIFZM" id="5$AQHzBVBvN" role="33vP2m">
+                  <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                  <ref role="37wK5l" to="18ew:~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolve="toValidIdentifier" />
+                  <node concept="37vLTw" id="5$AQHzBVBvO" role="37wK5m">
+                    <ref role="3cqZAo" node="1WXzn0mi1PQ" resolve="s" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2$JKZl" id="5$AQHzBVC8u" role="3cqZAp">
+              <node concept="3clFbS" id="5$AQHzBVC8w" role="2LFqv$">
+                <node concept="3clFbF" id="5$AQHzBVD9E" role="3cqZAp">
+                  <node concept="37vLTI" id="5$AQHzBVGpw" role="3clFbG">
+                    <node concept="37vLTw" id="5$AQHzBVD9D" role="37vLTJ">
+                      <ref role="3cqZAo" node="5$AQHzBVBvM" resolve="validIdentifier" />
+                    </node>
+                    <node concept="2YIFZM" id="5$AQHzBTnFH" role="37vLTx">
+                      <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                      <ref role="37wK5l" to="18ew:~NameUtil.stripQuotes(java.lang.String,java.lang.String,java.lang.String):java.lang.String" resolve="stripQuotes" />
+                      <node concept="37vLTw" id="5$AQHzBVBvP" role="37wK5m">
+                        <ref role="3cqZAo" node="5$AQHzBVBvM" resolve="validIdentifier" />
+                      </node>
+                      <node concept="Xl_RD" id="5$AQHzBTnZ9" role="37wK5m">
+                        <property role="Xl_RC" value="" />
+                      </node>
+                      <node concept="Xl_RD" id="5$AQHzBTo9p" role="37wK5m">
+                        <property role="Xl_RC" value="___" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1Wc70l" id="5$AQHzBVDek" role="2$JKZa">
+                <node concept="3eOSWO" id="5$AQHzBVFBf" role="3uHU7B">
+                  <node concept="3cmrfG" id="5$AQHzBVFBp" role="3uHU7w">
+                    <property role="3cmrfH" value="1" />
+                  </node>
+                  <node concept="2OqwBi" id="5$AQHzBVDRZ" role="3uHU7B">
+                    <node concept="37vLTw" id="5$AQHzBVDgZ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5$AQHzBVBvM" resolve="validIdentifier" />
+                    </node>
+                    <node concept="liA8E" id="5$AQHzBVEp$" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5$AQHzBVC$C" role="3uHU7w">
+                  <node concept="37vLTw" id="5$AQHzBVCfb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5$AQHzBVBvM" resolve="validIdentifier" />
+                  </node>
+                  <node concept="liA8E" id="5$AQHzBVD5K" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                    <node concept="Xl_RD" id="5$AQHzBVD7d" role="37wK5m">
+                      <property role="Xl_RC" value="_" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="1WXzn0mi1Q9" role="3cqZAp">
               <node concept="2OqwBi" id="1WXzn0mi1Qb" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTt2a" role="2Oq$k0">
                   <ref role="3cqZAo" node="1WXzn0mi1Q1" resolve="result" />
                 </node>
                 <node concept="TSZUe" id="1WXzn0mi1Qf" role="2OqNvi">
-                  <node concept="37vLTw" id="3GM_nagTAKR" role="25WWJ7">
-                    <ref role="3cqZAo" node="1WXzn0mi1PQ" resolve="s" />
+                  <node concept="37vLTw" id="5$AQHzBVGvO" role="25WWJ7">
+                    <ref role="3cqZAo" node="5$AQHzBVBvM" resolve="validIdentifier" />
                   </node>
                 </node>
               </node>
