@@ -552,10 +552,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.test3/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.test4/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/migrationAssistant">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/migrationAssistant/languages/updatedLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/migrationAssistant/solutions/migratingSolution/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/migrationLocalHist">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/migrationLocalHist/languages/NewLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/migrationLocalHist/languages/NewLanguage/source_gen" isTestSource="false" />

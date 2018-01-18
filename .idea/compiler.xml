@@ -634,8 +634,6 @@
       <directory url="file://$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
@@ -652,9 +650,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/build.mps.runner.test/jetbrains.mps.build.mps.runner.test.test4/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/build.mps.runner.test/project/solutions/jetbrains.mps.build.mps.runner.test.solution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/build.mps.runner.test/project/solutions/jetbrains.mps.build.mps.runner.test.solution/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/languages/updatedLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationLocalHist/languages/NewLanguage/sandbox/test_gen" includeSubdirectories="true" />
