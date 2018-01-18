@@ -31,6 +31,7 @@
         <child id="1083245396908" name="enumConstant" index="Qtgdg" />
       </concept>
       <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -50,6 +51,8 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
+        <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -149,17 +152,15 @@
       <node concept="3clFbS" id="4WGKd_KAbgQ" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4WGKd_KAbf_" role="jymVt" />
-    <node concept="3clFb_" id="4WGKd_K_XCM" role="jymVt">
+    <node concept="2YIFZL" id="4WGKd_KChIk" role="jymVt">
       <property role="TrG5h" value="getDefaultMergeStrategy" />
-      <node concept="3uibUv" id="4WGKd_K_XGV" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
-      </node>
-      <node concept="3Tm1VV" id="4WGKd_K_XCP" role="1B3o_S" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4WGKd_K_XCQ" role="3clF47">
         <node concept="3clFbF" id="4WGKd_KBLJR" role="3cqZAp">
           <node concept="2EnYce" id="4WGKd_KBLAn" role="3clFbG">
             <node concept="1rXfSq" id="4WGKd_KBLq3" role="2Oq$k0">
-              <ref role="37wK5l" node="4WGKd_KBIBc" resolve="getVCSAspect" />
+              <ref role="37wK5l" node="4WGKd_KChRU" resolve="getVCSAspect" />
               <node concept="37vLTw" id="4WGKd_KBNT3" role="37wK5m">
                 <ref role="3cqZAo" node="4WGKd_K_XG7" resolve="c" />
               </node>
@@ -172,23 +173,25 @@
       </node>
       <node concept="37vLTG" id="4WGKd_K_XG7" role="3clF46">
         <property role="TrG5h" value="c" />
-        <node concept="3uibUv" id="4WGKd_KBNHG" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+        <node concept="3uibUv" id="4WGKd_KCWwO" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
-    </node>
-    <node concept="2tJIrI" id="4WGKd_KBINW" role="jymVt" />
-    <node concept="3clFb_" id="4WGKd_KBM4m" role="jymVt">
-      <property role="TrG5h" value="getDefaultMergeStrategy" />
-      <node concept="3uibUv" id="4WGKd_KBM4n" role="3clF45">
+      <node concept="3uibUv" id="4WGKd_K_XGV" role="3clF45">
         <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
       </node>
-      <node concept="3Tm1VV" id="4WGKd_KBM4o" role="1B3o_S" />
+      <node concept="3Tm1VV" id="4WGKd_K_XCP" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4WGKd_KBINW" role="jymVt" />
+    <node concept="2YIFZL" id="4WGKd_KChNn" role="jymVt">
+      <property role="TrG5h" value="getDefaultMergeStrategy" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4WGKd_KBM4p" role="3clF47">
         <node concept="3clFbF" id="4WGKd_KBM4q" role="3cqZAp">
           <node concept="2EnYce" id="4WGKd_KBM4r" role="3clFbG">
             <node concept="1rXfSq" id="4WGKd_KBM4s" role="2Oq$k0">
-              <ref role="37wK5l" node="4WGKd_KBIBc" resolve="getVCSAspect" />
+              <ref role="37wK5l" node="4WGKd_KChRU" resolve="getVCSAspect" />
               <node concept="2OqwBi" id="4WGKd_KBSAo" role="37wK5m">
                 <node concept="37vLTw" id="4WGKd_KBSrH" role="2Oq$k0">
                   <ref role="3cqZAo" node="4WGKd_KBM4_" resolve="f" />
@@ -213,14 +216,16 @@
           <ref role="3uigEE" to="c17a:~SConceptFeature" resolve="SConceptFeature" />
         </node>
       </node>
+      <node concept="3uibUv" id="4WGKd_KBM4n" role="3clF45">
+        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KBM4o" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4WGKd_KBTgg" role="jymVt" />
-    <node concept="3clFb_" id="4WGKd_KBIBc" role="jymVt">
+    <node concept="2YIFZL" id="4WGKd_KChRU" role="jymVt">
       <property role="TrG5h" value="getVCSAspect" />
-      <node concept="3uibUv" id="4WGKd_KBOZY" role="3clF45">
-        <ref role="3uigEE" node="4WGKd_KBOsX" resolve="VCSConceptAspect" />
-      </node>
-      <node concept="3Tm1VV" id="4WGKd_KBIBe" role="1B3o_S" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
       <node concept="3clFbS" id="4WGKd_KBIBf" role="3clF47">
         <node concept="3cpWs8" id="4WGKd_KBIBp" role="3cqZAp">
           <node concept="3cpWsn" id="4WGKd_KBIBq" role="3cpWs9">
@@ -275,6 +280,10 @@
           <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
         </node>
       </node>
+      <node concept="3uibUv" id="4WGKd_KBOZY" role="3clF45">
+        <ref role="3uigEE" node="4WGKd_KBOsX" resolve="VCSConceptAspect" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KBIBe" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="4WGKd_K_XbR" role="1B3o_S" />
   </node>
