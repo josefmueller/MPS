@@ -1599,8 +1599,8 @@
           <node concept="3cpWsn" id="7n1vgxsABmF" role="3cpWs9">
             <property role="TrG5h" value="hint" />
             <node concept="2YIFZM" id="4WGKd_KCiz3" role="33vP2m">
-              <ref role="37wK5l" to="86l:4WGKd_KChNn" resolve="getDefaultMergeStrategy" />
               <ref role="1Pybhc" to="86l:4WGKd_K_XbQ" resolve="VCSAspectUtil" />
+              <ref role="37wK5l" to="86l:4WGKd_KFPA$" resolve="getDefaultMergeStrategy" />
               <node concept="37vLTw" id="4WGKd_KCiIW" role="37wK5m">
                 <ref role="3cqZAo" node="4k3fuHGsETj" resolve="myRole" />
               </node>
@@ -4112,7 +4112,7 @@
             <property role="TrG5h" value="hint" />
             <node concept="2YIFZM" id="4WGKd_KCMqc" role="33vP2m">
               <ref role="1Pybhc" to="86l:4WGKd_K_XbQ" resolve="VCSAspectUtil" />
-              <ref role="37wK5l" to="86l:4WGKd_KChNn" resolve="getDefaultMergeStrategy" />
+              <ref role="37wK5l" to="86l:4WGKd_KFPBR" resolve="getDefaultMergeStrategy" />
               <node concept="37vLTw" id="4WGKd_KCOoE" role="37wK5m">
                 <ref role="3cqZAo" node="2nH2HpRnsMo" resolve="myRole" />
               </node>

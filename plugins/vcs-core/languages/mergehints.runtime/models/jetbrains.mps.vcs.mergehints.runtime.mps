@@ -194,7 +194,7 @@
               <ref role="37wK5l" node="4WGKd_KChRU" resolve="getVCSAspect" />
               <node concept="2OqwBi" id="4WGKd_KBSAo" role="37wK5m">
                 <node concept="37vLTw" id="4WGKd_KBSrH" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4WGKd_KBM4_" resolve="f" />
+                  <ref role="3cqZAo" node="4WGKd_KBM4_" resolve="p" />
                 </node>
                 <node concept="liA8E" id="4WGKd_KBT4_" role="2OqNvi">
                   <ref role="37wK5l" to="c17a:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
@@ -204,22 +204,100 @@
             <node concept="liA8E" id="4WGKd_KBM4z" role="2OqNvi">
               <ref role="37wK5l" node="4WGKd_KBOCK" resolve="getDefaultStrategy" />
               <node concept="37vLTw" id="4WGKd_KBO1f" role="37wK5m">
-                <ref role="3cqZAo" node="4WGKd_KBM4_" resolve="f" />
+                <ref role="3cqZAo" node="4WGKd_KBM4_" resolve="p" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="37vLTG" id="4WGKd_KBM4_" role="3clF46">
-        <property role="TrG5h" value="f" />
-        <node concept="3uibUv" id="4WGKd_KBTXf" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SConceptFeature" resolve="SConceptFeature" />
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="4WGKd_KFPLF" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
         </node>
       </node>
       <node concept="3uibUv" id="4WGKd_KBM4n" role="3clF45">
         <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KBM4o" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4WGKd_KFPIQ" role="jymVt" />
+    <node concept="2YIFZL" id="4WGKd_KFPA$" role="jymVt">
+      <property role="TrG5h" value="getDefaultMergeStrategy" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4WGKd_KFPA_" role="3clF47">
+        <node concept="3clFbF" id="4WGKd_KFPAA" role="3cqZAp">
+          <node concept="2EnYce" id="4WGKd_KFPAB" role="3clFbG">
+            <node concept="1rXfSq" id="4WGKd_KFPAC" role="2Oq$k0">
+              <ref role="37wK5l" node="4WGKd_KChRU" resolve="getVCSAspect" />
+              <node concept="2OqwBi" id="4WGKd_KFPAD" role="37wK5m">
+                <node concept="37vLTw" id="4WGKd_KFPAE" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4WGKd_KFPAI" resolve="l" />
+                </node>
+                <node concept="liA8E" id="4WGKd_KFPAF" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="4WGKd_KFPAG" role="2OqNvi">
+              <ref role="37wK5l" node="4WGKd_KFMfc" resolve="getDefaultStrategy" />
+              <node concept="37vLTw" id="4WGKd_KFPAH" role="37wK5m">
+                <ref role="3cqZAo" node="4WGKd_KFPAI" resolve="l" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4WGKd_KFPAI" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4WGKd_KFPNx" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4WGKd_KFPAK" role="3clF45">
+        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KFPAL" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4WGKd_KFPKg" role="jymVt" />
+    <node concept="2YIFZL" id="4WGKd_KFPBR" role="jymVt">
+      <property role="TrG5h" value="getDefaultMergeStrategy" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4WGKd_KFPBS" role="3clF47">
+        <node concept="3clFbF" id="4WGKd_KFPBT" role="3cqZAp">
+          <node concept="2EnYce" id="4WGKd_KFPBU" role="3clFbG">
+            <node concept="1rXfSq" id="4WGKd_KFPBV" role="2Oq$k0">
+              <ref role="37wK5l" node="4WGKd_KChRU" resolve="getVCSAspect" />
+              <node concept="2OqwBi" id="4WGKd_KFPBW" role="37wK5m">
+                <node concept="37vLTw" id="4WGKd_KFPBX" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4WGKd_KFPC1" resolve="l" />
+                </node>
+                <node concept="liA8E" id="4WGKd_KFPBY" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="4WGKd_KFPBZ" role="2OqNvi">
+              <ref role="37wK5l" node="4WGKd_KFMfE" resolve="getDefaultStrategy" />
+              <node concept="37vLTw" id="4WGKd_KFPC0" role="37wK5m">
+                <ref role="3cqZAo" node="4WGKd_KFPC1" resolve="l" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4WGKd_KFPC1" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4WGKd_KFPUl" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4WGKd_KFPC3" role="3clF45">
+        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KFPC4" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4WGKd_KBTgg" role="jymVt" />
     <node concept="2YIFZL" id="4WGKd_KChRU" role="jymVt">
@@ -326,9 +404,45 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="37vLTG" id="4WGKd_KBOFU" role="3clF46">
-        <property role="TrG5h" value="f" />
-        <node concept="3uibUv" id="4WGKd_KBUay" role="1tU5fm">
-          <ref role="3uigEE" to="c17a:~SConceptFeature" resolve="SConceptFeature" />
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="4WGKd_KFMe6" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="4WGKd_KFMfc" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getDefaultStrategy" />
+      <node concept="3uibUv" id="4WGKd_KFMfd" role="3clF45">
+        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KFMfe" role="1B3o_S" />
+      <node concept="3clFbS" id="4WGKd_KFMff" role="3clF47" />
+      <node concept="2AHcQZ" id="4WGKd_KFMfg" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="37vLTG" id="4WGKd_KFMfh" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4WGKd_KFMi$" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="4WGKd_KFMfE" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getDefaultStrategy" />
+      <node concept="3uibUv" id="4WGKd_KFMfF" role="3clF45">
+        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+      </node>
+      <node concept="3Tm1VV" id="4WGKd_KFMfG" role="1B3o_S" />
+      <node concept="3clFbS" id="4WGKd_KFMfH" role="3clF47" />
+      <node concept="2AHcQZ" id="4WGKd_KFMfI" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="37vLTG" id="4WGKd_KFMfJ" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4WGKd_KFMma" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
         </node>
       </node>
     </node>

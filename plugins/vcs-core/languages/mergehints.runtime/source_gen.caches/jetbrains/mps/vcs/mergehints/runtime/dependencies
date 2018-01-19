@@ -14,12 +14,16 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.VCSAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.VCSConceptAspect" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergehints.runtime.VCSConceptAspect" file="VCSConceptAspect.java">
     <classNode dependClassName="jetbrains.mps.vcs.mergehints.runtime.MergeStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
   </dependency>
 </dependenciesRoot>
 
