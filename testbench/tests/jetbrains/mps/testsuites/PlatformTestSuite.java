@@ -49,7 +49,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.workbench.ProjectOpenCloseTest.class,
     jetbrains.mps.ide.ModuleIDETests.class,
     jetbrains.mps.ide.FSTests.class,
-    jetbrains.mps.migration.MigrationsTest.class
+    jetbrains.mps.migration.MigrationsTest.class,
+    jetbrains.mps.vfs.FSListeningTest.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   private static IdeaEnvironment ourEnvironment;

@@ -25,7 +25,6 @@ import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.junit.After;
 import org.junit.Assert;
