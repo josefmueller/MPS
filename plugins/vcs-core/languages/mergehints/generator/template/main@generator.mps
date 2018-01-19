@@ -11,11 +11,11 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="ucur" ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
-    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="86l" ref="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)" />
     <import index="x9km" ref="r:aae8a471-8cae-4fe5-80b6-376816bdad4a(jetbrains.mps.vcs.mergehints.plugin)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="ur19" ref="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
@@ -376,7 +376,7 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getDefaultStrategy" />
                         <node concept="3uibUv" id="4WGKd_KC9Vy" role="3clF45">
-                          <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                          <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                         </node>
                         <node concept="3Tm1VV" id="4WGKd_KC9Vz" role="1B3o_S" />
                         <node concept="2AHcQZ" id="4WGKd_KC9V_" role="2AJF6D">
@@ -385,8 +385,8 @@
                         <node concept="3clFbS" id="4WGKd_KC9VA" role="3clF47">
                           <node concept="3clFbF" id="4WGKd_KFERA" role="3cqZAp">
                             <node concept="Rm8GO" id="4WGKd_KFERC" role="3clFbG">
-                              <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                              <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                              <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+                              <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
                             </node>
                             <node concept="1sPUBX" id="4WGKd_KFFPr" role="lGtFl">
                               <ref role="v9R2y" node="4WGKd_KFGOJ" resolve="MergeStrategy" />
@@ -410,7 +410,7 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getDefaultStrategy" />
                         <node concept="3uibUv" id="4WGKd_KC9VD" role="3clF45">
-                          <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                          <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                         </node>
                         <node concept="3Tm1VV" id="4WGKd_KC9VE" role="1B3o_S" />
                         <node concept="2AHcQZ" id="4WGKd_KC9VG" role="2AJF6D">
@@ -427,8 +427,8 @@
                             <node concept="3clFbS" id="4WGKd_KG3ZE" role="3clFbx">
                               <node concept="3cpWs6" id="4WGKd_KG5X7" role="3cqZAp">
                                 <node concept="Rm8GO" id="4WGKd_KG6L4" role="3cqZAk">
-                                  <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                                  <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
                                   <node concept="1sPUBX" id="4WGKd_KG7W_" role="lGtFl">
                                     <ref role="v9R2y" node="4WGKd_KFGOJ" resolve="MergeStrategy" />
                                     <node concept="3NFfHV" id="4WGKd_KG8IA" role="1sPUBK">
@@ -524,7 +524,7 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getDefaultStrategy" />
                         <node concept="3uibUv" id="4WGKd_KGfho" role="3clF45">
-                          <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                          <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                         </node>
                         <node concept="3Tm1VV" id="4WGKd_KGfhp" role="1B3o_S" />
                         <node concept="2AHcQZ" id="4WGKd_KGfhq" role="2AJF6D">
@@ -541,8 +541,8 @@
                             <node concept="3clFbS" id="4WGKd_KGfhv" role="3clFbx">
                               <node concept="3cpWs6" id="4WGKd_KGfhw" role="3cqZAp">
                                 <node concept="Rm8GO" id="4WGKd_KGfhx" role="3cqZAk">
-                                  <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                                  <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
                                   <node concept="1sPUBX" id="4WGKd_KGfhy" role="lGtFl">
                                     <ref role="v9R2y" node="4WGKd_KFGOJ" resolve="MergeStrategy" />
                                     <node concept="3NFfHV" id="4WGKd_KGfhz" role="1sPUBK">
@@ -672,7 +672,7 @@
                         <property role="1EzhhJ" value="false" />
                         <property role="TrG5h" value="getDefaultStrategy" />
                         <node concept="3uibUv" id="4WGKd_KGvt6" role="3clF45">
-                          <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                          <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                         </node>
                         <node concept="3Tm1VV" id="4WGKd_KGvt7" role="1B3o_S" />
                         <node concept="2AHcQZ" id="4WGKd_KGvt8" role="2AJF6D">
@@ -689,8 +689,8 @@
                             <node concept="3clFbS" id="4WGKd_KGvtd" role="3clFbx">
                               <node concept="3cpWs6" id="4WGKd_KGvte" role="3cqZAp">
                                 <node concept="Rm8GO" id="4WGKd_KGvtf" role="3cqZAk">
-                                  <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                                  <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+                                  <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
                                   <node concept="1sPUBX" id="4WGKd_KGvtg" role="lGtFl">
                                     <ref role="v9R2y" node="4WGKd_KFGOJ" resolve="MergeStrategy" />
                                     <node concept="3NFfHV" id="4WGKd_KGvth" role="1sPUBK">
@@ -1020,8 +1020,8 @@
       <ref role="30HIoZ" to="6p:4WGKd_KDss0" resolve="OursStrategy" />
       <node concept="gft3U" id="4WGKd_KFHf6" role="1lVwrX">
         <node concept="Rm8GO" id="4WGKd_KFHfc" role="gfFT$">
-          <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
-          <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
+          <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+          <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
         </node>
       </node>
     </node>
@@ -1030,8 +1030,8 @@
       <ref role="30HIoZ" to="6p:4WGKd_KDssv" resolve="TheirsStrategy" />
       <node concept="gft3U" id="4WGKd_KFHfv" role="1lVwrX">
         <node concept="Rm8GO" id="4WGKd_KFHgg" role="gfFT$">
-          <ref role="Rm8GQ" to="86l:16TciwZIYFC" resolve="THEIRS" />
-          <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+          <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+          <ref role="Rm8GQ" to="ur19:16TciwZIYFC" resolve="THEIRS" />
         </node>
       </node>
     </node>

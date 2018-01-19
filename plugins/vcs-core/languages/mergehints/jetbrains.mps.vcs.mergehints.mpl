@@ -75,7 +75,6 @@
     <dependency reexport="false">64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)</dependency>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
-    <dependency reexport="false">63089e65-5c76-4c44-9eb6-15698b4444cf(jetbrains.mps.vcs.mergehints.runtime)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />
@@ -155,7 +154,6 @@
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
     <module reference="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" version="0" />
     <module reference="37e03aa1-7289-49bc-8269-30de5eceec76(jetbrains.mps.vcs.mergehints)" version="0" />
-    <module reference="63089e65-5c76-4c44-9eb6-15698b4444cf(jetbrains.mps.vcs.mergehints.runtime)" version="0" />
   </dependencyVersions>
   <runtime>
     <dependency reexport="false">63089e65-5c76-4c44-9eb6-15698b4444cf(jetbrains.mps.vcs.mergehints.runtime)</dependency>

@@ -28,6 +28,7 @@
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="86l" ref="r:03d3090f-cc5b-43a6-b212-e089f946314d(jetbrains.mps.vcs.mergehints.runtime)" />
+    <import index="ur19" ref="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -4867,7 +4868,7 @@
                   <node concept="3cpWsn" id="4WGKd_KDbDz" role="3cpWs9">
                     <property role="TrG5h" value="hint" />
                     <node concept="3uibUv" id="4WGKd_KDbDw" role="1tU5fm">
-                      <ref role="3uigEE" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                      <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                     </node>
                     <node concept="2OqwBi" id="4WGKd_KDbD$" role="33vP2m">
                       <node concept="37vLTw" id="4WGKd_KDbD_" role="2Oq$k0">
@@ -4906,8 +4907,8 @@
                         <node concept="1eOMI4" id="4WGKd_KDctt" role="3uHU7B">
                           <node concept="3clFbC" id="4WGKd_KDd1P" role="1eOMHV">
                             <node concept="Rm8GO" id="4WGKd_KDdfJ" role="3uHU7w">
-                              <ref role="Rm8GQ" to="86l:16TciwZIYE0" resolve="OURS" />
-                              <ref role="1Px2BO" to="86l:16TciwZIYCr" resolve="MergeStrategy" />
+                              <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
+                              <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
                             </node>
                             <node concept="37vLTw" id="4WGKd_KDcyz" role="3uHU7B">
                               <ref role="3cqZAo" node="4WGKd_KDbDz" resolve="hint" />

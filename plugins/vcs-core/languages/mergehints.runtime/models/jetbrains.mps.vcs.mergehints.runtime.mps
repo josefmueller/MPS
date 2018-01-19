@@ -12,6 +12,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="ur19" ref="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -27,10 +28,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" flags="ig" index="Qs71p">
-        <child id="1083245396908" name="enumConstant" index="Qtgdg" />
-      </concept>
-      <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
@@ -178,7 +175,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4WGKd_K_XGV" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_K_XCP" role="1B3o_S" />
     </node>
@@ -217,7 +214,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4WGKd_KBM4n" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KBM4o" role="1B3o_S" />
     </node>
@@ -256,7 +253,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4WGKd_KFPAK" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KFPAL" role="1B3o_S" />
     </node>
@@ -295,7 +292,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4WGKd_KFPC3" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KFPC4" role="1B3o_S" />
     </node>
@@ -365,18 +362,6 @@
     </node>
     <node concept="3Tm1VV" id="4WGKd_K_XbR" role="1B3o_S" />
   </node>
-  <node concept="Qs71p" id="16TciwZIYCr">
-    <property role="TrG5h" value="MergeStrategy" />
-    <node concept="QsSxf" id="16TciwZIYE0" role="Qtgdg">
-      <property role="TrG5h" value="OURS" />
-      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-    </node>
-    <node concept="QsSxf" id="16TciwZIYFC" role="Qtgdg">
-      <property role="TrG5h" value="THEIRS" />
-      <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-    </node>
-    <node concept="3Tm1VV" id="16TciwZIYCs" role="1B3o_S" />
-  </node>
   <node concept="3HP615" id="4WGKd_KBOsX">
     <property role="2bfB8j" value="true" />
     <property role="TrG5h" value="VCSConceptAspect" />
@@ -384,7 +369,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KBOwk" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KBOwl" role="1B3o_S" />
       <node concept="3clFbS" id="4WGKd_KBOwm" role="3clF47" />
@@ -396,7 +381,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KBOCL" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KBOCM" role="1B3o_S" />
       <node concept="3clFbS" id="4WGKd_KBOCN" role="3clF47" />
@@ -414,7 +399,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KFMfd" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KFMfe" role="1B3o_S" />
       <node concept="3clFbS" id="4WGKd_KFMff" role="3clF47" />
@@ -432,7 +417,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getDefaultStrategy" />
       <node concept="3uibUv" id="4WGKd_KFMfF" role="3clF45">
-        <ref role="3uigEE" node="16TciwZIYCr" resolve="MergeStrategy" />
+        <ref role="3uigEE" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
       </node>
       <node concept="3Tm1VV" id="4WGKd_KFMfG" role="1B3o_S" />
       <node concept="3clFbS" id="4WGKd_KFMfH" role="3clF47" />
