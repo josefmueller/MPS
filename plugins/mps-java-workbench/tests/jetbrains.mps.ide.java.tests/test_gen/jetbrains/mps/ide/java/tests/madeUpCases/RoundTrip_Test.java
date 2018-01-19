@@ -57,7 +57,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("4795297196607508732"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
-      Utils.checkStringStubs(genCode, SNodeOperations.cast(getNodeById("4795297196607508732"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
+      new Utils(myProject.getRepository()).checkStringStubs(genCode, SNodeOperations.cast(getNodeById("4795297196607508732"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
     }
     public void test_Methods() throws Exception {
       addNodeById("4795297196607456975");
@@ -67,7 +67,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("4795297196607508741"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
-      Utils.checkStringStubs(genCode, SNodeOperations.cast(getNodeById("4795297196607508741"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
+      new Utils(myProject.getRepository()).checkStringStubs(genCode, SNodeOperations.cast(getNodeById("4795297196607508741"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
     }
     public void test_Fields() throws Exception {
       addNodeById("4795297196607456975");
@@ -77,7 +77,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("8083368042256391114"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
-      Utils.checkStringStubs(genCode, SNodeOperations.cast(getNodeById("8083368042256391114"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
+      new Utils(myProject.getRepository()).checkStringStubs(genCode, SNodeOperations.cast(getNodeById("8083368042256391114"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
     }
     public void test_TypeVars() throws Exception {
       addNodeById("4795297196607456975");
@@ -87,7 +87,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("7030568040400121707"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101edd46144L, "Interface"))));
-      Utils.checkStringStubs(genCode, SNodeOperations.cast(getNodeById("7030568040400121707"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101edd46144L, "Interface"))));
+      new Utils(myProject.getRepository()).checkStringStubs(genCode, SNodeOperations.cast(getNodeById("7030568040400121707"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101edd46144L, "Interface"))));
     }
     public void test_OuterClassThis() throws Exception {
       addNodeById("4795297196607456975");
@@ -97,7 +97,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("1369191534307040156"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
-      Utils.checkString(genCode, SNodeOperations.cast(getNodeById("1369191534307040156"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))), false);
+      new Utils(myProject.getRepository()).checkString(genCode, SNodeOperations.cast(getNodeById("1369191534307040156"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))), false);
     }
     public void test_VarargMethods() throws Exception {
       addNodeById("4795297196607456975");
@@ -107,7 +107,7 @@ public class RoundTrip_Test extends BaseTransformationTest {
       addNodeById("1369191534307039900");
       addNodeById("1369191534311251473");
       String genCode = Utils.generateCode(SNodeOperations.cast(getNodeById("1369191534311251786"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
-      Utils.checkString(genCode, SNodeOperations.cast(getNodeById("1369191534311251786"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))), false);
+      new Utils(myProject.getRepository()).checkString(genCode, SNodeOperations.cast(getNodeById("1369191534311251786"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))), false);
     }
 
 

@@ -4,17 +4,16 @@ package jetbrains.mps.ide.java.tests.utility;
 
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.text.TextGeneratorEngine;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import java.util.List;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -36,7 +35,7 @@ import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
-import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
@@ -61,23 +60,23 @@ public class Utils {
     myRepo = repository;
   }
 
-  private static SModule getModule() {
-    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
+  private SModule getModule() {
+    return PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)").resolve(myRepo);
   }
 
   public static String generateCode(SNode node) {
     return TextGeneratorEngine.generateText(node);
   }
 
-  public static void checkStringStubs(String code, SNode expected) {
+  public void checkStringStubs(String code, SNode expected) {
     checkString(code, expected, true);
   }
 
-  public static void checkString(String code, final SNode expected, boolean onlyStubs) {
+  public void checkString(String code, final SNode expected, boolean onlyStubs) {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = PersistenceFacade.getInstance().createModelReference("r:3b854700-e92a-453d-8d33-ea563b87dd15(jetbrains.mps.ide.java.testMaterial.placeholder)").resolve(SNodeOperations.getModel(expected).getRepository());
+      mdl = PersistenceFacade.getInstance().createModelReference("r:3b854700-e92a-453d-8d33-ea563b87dd15(jetbrains.mps.ide.java.testMaterial.placeholder)").resolve(myRepo);
       FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
       List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
@@ -114,7 +113,7 @@ public class Utils {
     }
   }
 
-  public static void checkFile(IFile path, SNode expected) {
+  public void checkFile(IFile path, SNode expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule((SModuleBase) getModule());
     mr.setContentDirectory(path);
@@ -144,11 +143,7 @@ public class Utils {
 
   }
 
-  public static void checkStubModel(IFile dirPath, SModel expected) {
-    checkStubModels(dirPath, ListSequence.fromListAndArray(new ArrayList<SModel>(), expected));
-  }
-
-  public static void checkStubModels(IFile dirPath, List<SModel> expected) {
+  public void checkStubModels(IFile dirPath, SModelReference... expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule((SModuleBase) getModule());
     mr.setContentDirectory(dirPath);
@@ -161,18 +156,21 @@ public class Utils {
     }
 
     // normalizing 
-    for (SModel m : ListSequence.fromList(expected)) {
+    List<SModel> expectedModels = ListSequence.fromList(new ArrayList<SModel>());
+    for (SModelReference expmr : expected) {
+      SModel m = expmr.resolve(myRepo);
+      ListSequence.fromList(expectedModels).addElement(m);
       for (SNode root : ListSequence.fromList(SModelOperations.roots(m, null))) {
         NodePatcher.removeStatements(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
     }
-    compare(models, expected);
+    compare(models, expectedModels);
   }
 
-  public static void checkSourceModel(Project project, IFile dirPath, SModel expected) {
+  public void checkSourceModel(IFile dirPath, SModelReference expectedRef) {
     try {
-      SModule testMaterials = PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)").resolve(project.getRepository());
+      SModule testMaterials;
 
       String tmpDir = FileUtil.createTmpDir().getAbsolutePath();
 
@@ -188,7 +186,7 @@ public class Utils {
       TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc), false, true);
       testMaterials = tempModOpts.createModule();
 
-      DirParser dirParser = new DirParser(testMaterials, project.getModelAccess(), dirPath);
+      DirParser dirParser = new DirParser(testMaterials, myRepo.getModelAccess(), dirPath);
 
       dirParser.parseDirs();
 
@@ -196,6 +194,7 @@ public class Utils {
       assert ListSequence.fromList(parsedModels).count() == 1;
       final SModel resultModel = ListSequence.fromList(parsedModels).getElement(0);
 
+      SModel expected = expectedRef.resolve(myRepo);
       for (SNode root : ListSequence.fromList(SModelOperations.roots(expected, null))) {
         NodePatcher.fixNonStatic(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
@@ -217,8 +216,8 @@ public class Utils {
     JavaSourceStubModelRoot src2 = new JavaSourceStubModelRoot();
 
     // just 2 distinct modules 
-    SModule mod1 = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
-    SModule mod2 = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
+    SModule mod1 = PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)").resolve(myRepo);
+    SModule mod2 = PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)").resolve(myRepo);
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
     JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
@@ -271,12 +270,12 @@ public class Utils {
     Assert.assertSame("Different number of models: " + Sequence.fromIterable(leftModels).count() + " and " + Sequence.fromIterable(rightModels).count(), Sequence.fromIterable(leftModels).count(), Sequence.fromIterable(rightModels).count());
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(leftModels)) {
-      MapSequence.fromMap(leftModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
+      MapSequence.fromMap(leftModelMap).put(SModelOperations.getModelName(m), m);
     }
 
     Map<String, SModel> rightModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(rightModels)) {
-      MapSequence.fromMap(rightModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
+      MapSequence.fromMap(rightModelMap).put(SModelOperations.getModelName(m), m);
     }
 
     Assert.assertTrue(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet())) && SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())));
