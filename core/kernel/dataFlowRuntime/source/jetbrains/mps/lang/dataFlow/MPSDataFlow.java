@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,19 +20,20 @@ import jetbrains.mps.components.ComponentPlugin;
 
 /**
  * FIXME Once we re-write reflective classloading in DataFlow with regular language aspect, we unlikely need this component plugin.
+ *
+ * IMPORTANT: no-op at the moment. I don't want to remove the component plugin yet as I feel we'd need a factory for {@link MPSProgramBuilder}
+ * registered here as a discoverable CoreComponent, so that we can get MPSProgramBuilder instance correctly initialized with a LanguageRegistry instance
+ *
  * @author Artem Tikhomirov
  * @since 3.4
  */
 public class MPSDataFlow extends ComponentPlugin {
-  private ClassLoaderManager myClassLoaderManager;
 
   public MPSDataFlow(ClassLoaderManager clManager) {
-    myClassLoaderManager = clManager;
   }
 
   @Override
   public void init() {
-    super.init();
-    init(new DataFlowManager(null, myClassLoaderManager));
+    // no-op
   }
 }

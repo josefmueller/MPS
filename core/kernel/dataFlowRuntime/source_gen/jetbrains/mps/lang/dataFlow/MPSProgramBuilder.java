@@ -21,46 +21,31 @@ import java.util.Collection;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
+/**
+ * XXX likely, we need a factory for MPSProgramBuilder registered as a CoreComponent, so that we can supply proper LanguageRegistry instance 
+ * in here without need to force clients to care about proper context.
+ */
 public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
-  private DataFlowManager myDataFlowManager;
   private boolean myMayBeUnreachable = false;
   private SRepository myRepository;
 
   public MPSProgramBuilder() {
-    // todo remove after 3.4 
-    this.myDataFlowManager = DataFlowManager.getInstance();
   }
   public MPSProgramBuilder(InstructionBuilder builder) {
     super(builder);
-    // todo remove after 3.4 
-    this.myDataFlowManager = DataFlowManager.getInstance();
   }
   public MPSProgramBuilder(SRepository repository) {
     this.myRepository = repository;
-    // todo remove after 3.4 
-    this.myDataFlowManager = DataFlowManager.getInstance();
   }
   public MPSProgramBuilder(SRepository repository, InstructionBuilder builder) {
     super(builder);
     this.myRepository = repository;
-    // todo remove after 3.4 
-    this.myDataFlowManager = DataFlowManager.getInstance();
   }
   public MPSProgramBuilder(SRepository repository, InstructionBuilder builder, ProgramBuilderContext context) {
     super(builder, context);
     this.myRepository = repository;
-    // todo remove after 3.4 
-    this.myDataFlowManager = DataFlowManager.getInstance();
   }
 
-  /**
-   * 
-   * @deprecated 
-   */
-  @Deprecated
-  public MPSProgramBuilder(DataFlowManager dataFlowManager) {
-    this.myDataFlowManager = dataFlowManager;
-  }
   protected DataFlowBuilderContext createContext(SNode node) {
     return new DataFlowBuilderContext(node, this);
   }
@@ -76,14 +61,6 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       if (dataFlowBuilder != null) {
         dataFlowBuilder.build(createContext(snode));
         break;
-      }
-      // todo to remove after 3.4 
-      if (myDataFlowManager != null) {
-        DataFlowBuilder oldBuilder = this.myDataFlowManager.getBuilderFor(concept.getQualifiedName());
-        if (oldBuilder != null) {
-          oldBuilder.build(createContext(snode));
-          break;
-        }
       }
     }
   }
