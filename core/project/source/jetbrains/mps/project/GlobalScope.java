@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,12 +86,12 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   }
 
   @Override
-  public SModule resolve(SModuleReference reference) {
+  public SModule resolve(@NotNull SModuleReference reference) {
     return myRepository.getModule(reference.getModuleId());
   }
 
   @Override
-  public SModel resolve(SModelReference reference) {
+  public SModel resolve(@NotNull SModelReference reference) {
     return reference.resolve(myRepository);
   }
 }

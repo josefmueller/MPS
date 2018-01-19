@@ -1496,7 +1496,7 @@
               </node>
             </node>
             <node concept="liA8E" id="4_TMdeLkOq8" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~DefaultScope.resolve(org.jetbrains.mps.openapi.model.SModelReference):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+              <ref role="37wK5l" to="w1kc:~BaseScope.resolve(org.jetbrains.mps.openapi.model.SModelReference):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
               <node concept="2OqwBi" id="_hnoInnzV8" role="37wK5m">
                 <node concept="liA8E" id="_hnoInn$wN" role="2OqNvi">
                   <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />

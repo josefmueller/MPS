@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,7 @@ import jetbrains.mps.smodel.BaseScope;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.LinkedHashSet;
@@ -83,33 +81,6 @@ public abstract class FindUsagesScope extends BaseScope implements SearchScope, 
    */
   protected void scopeChanged() {
     // no-op
-  }
-  /**
-   * primitive default implementation, resolves to scope's models
-   */
-  @Override
-  public SModel resolve(@NotNull SModelReference reference) {
-    // XXX perhaps, shall just delegate to BaseScope.resolve()
-    for (SModel m : getModels()) {
-      if (reference.equals(m.getReference())) {
-        return m;
-      }
-    }
-    return null;
-  }
-
-  /**
-   * primitive default implementation, resolves to scope's modules
-   */
-  @Override
-  public SModule resolve(@NotNull SModuleReference reference) {
-    // XXX perhaps, shall just delegate to BaseScope.resolve()
-    for (SModule m : getModules()) {
-      if (reference.equals(m.getModuleReference())) {
-        return m;
-      }
-    }
-    return null;
   }
 
   @Override

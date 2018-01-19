@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,53 +72,6 @@ public abstract class DefaultScope extends BaseScope {
       }
     }
     return result;
-  }
-
-  @Override
-  public SModule resolve(SModuleReference reference) {
-    if (reference == null) {
-      return null;
-    }
-
-    SModule module = reference.resolve(MPSModuleRepository.getInstance());
-
-    if (module == null) {
-      return null;
-    }
-
-    synchronized (LOCK) {
-      initialize();
-      if (myVisibleModules.contains(module) || myUsedLanguages.contains(module) || myUsedDevkits.contains(module)) {
-        return module;
-      } else {
-        return null;
-      }
-    }
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-    if (reference == null) {
-      return null;
-    }
-
-    SModel model = reference.resolve(MPSModuleRepository.getInstance());
-
-    if (model == null) {
-      return null;
-    }
-
-    synchronized (LOCK) {
-      initialize();
-
-      if (myVisibleModules.contains(model.getModule())) return model;
-
-      for (Language l : myUsedLanguages) {
-        if (l.getAccessoryModels().contains(model)) return model;
-      }
-    }
-
-    return null;
   }
 
   protected Collection<Language> getInitialUsedLanguages() {
