@@ -213,7 +213,7 @@ public class VersionFixer {
     module.getRepository().getModelAccess().checkReadAccess();
     Map<SLanguage, Integer> newLangVersions = new HashMap<SLanguage, Integer>();
     Set<SLanguage> usedLanguages = module.getUsedLanguages();
-    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myProject.getRepository()), usedLanguages);
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(myProject.getComponent(LanguageRegistry.class), usedLanguages);
     Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtended();
     for (SLanguage lang : extendingLangsClosure) {
       if (!(lang.isValid())) {

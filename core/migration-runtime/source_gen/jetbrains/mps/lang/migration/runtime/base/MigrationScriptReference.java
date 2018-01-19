@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Level;
 
 public class MigrationScriptReference implements BaseScriptReference<MigrationScript> {
@@ -62,7 +61,7 @@ public class MigrationScriptReference implements BaseScriptReference<MigrationSc
   public MigrationScript resolve(Project p, boolean silent) {
     int current = this.getFromVersion();
 
-    MigrationAspectDescriptor md = LanguageRegistry.getInstance(MPSModuleRepository.getInstance()).getLanguage(language).getAspect(MigrationAspectDescriptor.class);
+    MigrationAspectDescriptor md = p.getComponent(LanguageRegistry.class).getLanguage(language).getAspect(MigrationAspectDescriptor.class);
     if (md == null && !(silent)) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration descriptor for language " + language + ".");

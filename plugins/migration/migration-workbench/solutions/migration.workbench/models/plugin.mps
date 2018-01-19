@@ -55,7 +55,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.ide.migration.util)" />
     <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
-    <import index="t99v" ref="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
@@ -3995,6 +3994,23 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3cpWs8" id="7q5dBpS7Uit" role="3cqZAp">
+                          <node concept="3cpWsn" id="7q5dBpS7Uiu" role="3cpWs9">
+                            <property role="TrG5h" value="mpsProject" />
+                            <property role="3TUv4t" value="true" />
+                            <node concept="3uibUv" id="7q5dBpS7Uir" role="1tU5fm">
+                              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+                            </node>
+                            <node concept="2OqwBi" id="7q5dBpS7Uiv" role="33vP2m">
+                              <node concept="2WthIp" id="7q5dBpS7Uiw" role="2Oq$k0">
+                                <ref role="32nkFo" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
+                              </node>
+                              <node concept="1DTwFV" id="7q5dBpS7Uix" role="2OqNvi">
+                                <ref role="2WH_rO" node="5$zfhXzjQau" resolve="mpsProject" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="2Gpval" id="1wrYbVZek5" role="3cqZAp">
                           <node concept="2GrKxI" id="1wrYbVZek6" role="2Gsz3X">
                             <property role="TrG5h" value="module" />
@@ -4039,20 +4055,14 @@
                                                 <node concept="2ShNRf" id="5$zfhXzqIMO" role="2Oq$k0">
                                                   <node concept="1pGfFk" id="5$zfhXzqIMP" role="2ShVmc">
                                                     <ref role="37wK5l" to="w1kc:~SLanguageHierarchy.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,java.util.Collection)" resolve="SLanguageHierarchy" />
-                                                    <node concept="2YIFZM" id="1v09psn9qep" role="37wK5m">
-                                                      <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                                                      <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                                                      <node concept="2OqwBi" id="1v09psn9rqe" role="37wK5m">
-                                                        <node concept="2OqwBi" id="1v09psn9qQc" role="2Oq$k0">
-                                                          <node concept="2WthIp" id="1v09psn9qQf" role="2Oq$k0">
-                                                            <ref role="32nkFo" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
-                                                          </node>
-                                                          <node concept="1DTwFV" id="1v09psn9qQh" role="2OqNvi">
-                                                            <ref role="2WH_rO" node="5$zfhXzjQau" resolve="mpsProject" />
-                                                          </node>
-                                                        </node>
-                                                        <node concept="liA8E" id="1v09psn9rLx" role="2OqNvi">
-                                                          <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                                    <node concept="2OqwBi" id="1v09psn9rqe" role="37wK5m">
+                                                      <node concept="37vLTw" id="7q5dBpS7Uiz" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="7q5dBpS7Uiu" resolve="mpsProject" />
+                                                      </node>
+                                                      <node concept="liA8E" id="7q5dBpS7R3F" role="2OqNvi">
+                                                        <ref role="37wK5l" to="z1c3:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                                        <node concept="3VsKOn" id="7q5dBpS7SSx" role="37wK5m">
+                                                          <ref role="3VsUkX" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -4116,13 +4126,8 @@
                                                                 </node>
                                                                 <node concept="liA8E" id="6fMyXCHNw0s" role="2OqNvi">
                                                                   <ref role="37wK5l" to="6f4m:6fMyXCHzvji" resolve="resolve" />
-                                                                  <node concept="2OqwBi" id="7nggT465e8a" role="37wK5m">
-                                                                    <node concept="2WthIp" id="7nggT465e8d" role="2Oq$k0">
-                                                                      <ref role="32nkFo" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
-                                                                    </node>
-                                                                    <node concept="1DTwFV" id="2fNWK0IuTDQ" role="2OqNvi">
-                                                                      <ref role="2WH_rO" node="5$zfhXzjQau" resolve="mpsProject" />
-                                                                    </node>
+                                                                  <node concept="37vLTw" id="7q5dBpS7Ui$" role="37wK5m">
+                                                                    <ref role="3cqZAo" node="7q5dBpS7Uiu" resolve="mpsProject" />
                                                                   </node>
                                                                   <node concept="3clFbT" id="6fMyXCHN$BX" role="37wK5m">
                                                                     <property role="3clFbU" value="true" />
@@ -4232,13 +4237,8 @@
                                         </node>
                                       </node>
                                       <node concept="2OqwBi" id="1wrYbVZekr" role="ukAjM">
-                                        <node concept="2OqwBi" id="1wrYbVZx2r" role="2Oq$k0">
-                                          <node concept="2WthIp" id="1wrYbVZx2u" role="2Oq$k0">
-                                            <ref role="32nkFo" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
-                                          </node>
-                                          <node concept="1DTwFV" id="1wrYbVZx2w" role="2OqNvi">
-                                            <ref role="2WH_rO" node="5$zfhXzjQau" resolve="mpsProject" />
-                                          </node>
+                                        <node concept="37vLTw" id="7q5dBpS7Uiy" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="7q5dBpS7Uiu" resolve="mpsProject" />
                                         </node>
                                         <node concept="liA8E" id="1wrYbVZekv" role="2OqNvi">
                                           <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -5093,15 +5093,14 @@
                                 <node concept="2ShNRf" id="4biA4YBBDth" role="2Oq$k0">
                                   <node concept="1pGfFk" id="4biA4YBBDti" role="2ShVmc">
                                     <ref role="37wK5l" to="w1kc:~SLanguageHierarchy.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,java.util.Collection)" resolve="SLanguageHierarchy" />
-                                    <node concept="2YIFZM" id="4biA4YBBDtj" role="37wK5m">
-                                      <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                                      <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                                      <node concept="2OqwBi" id="4biA4YBBDtk" role="37wK5m">
-                                        <node concept="37vLTw" id="4biA4YBBDtl" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="4zPpOEulQHU" resolve="mpsProject" />
-                                        </node>
-                                        <node concept="liA8E" id="4biA4YBBDtm" role="2OqNvi">
-                                          <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                    <node concept="2OqwBi" id="4biA4YBBDtk" role="37wK5m">
+                                      <node concept="37vLTw" id="4biA4YBBDtl" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="4zPpOEulQHU" resolve="mpsProject" />
+                                      </node>
+                                      <node concept="liA8E" id="7q5dBpS8H5T" role="2OqNvi">
+                                        <ref role="37wK5l" to="z1c4:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                        <node concept="3VsKOn" id="7q5dBpS8HTU" role="37wK5m">
+                                          <ref role="3VsUkX" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                                         </node>
                                       </node>
                                     </node>
@@ -5523,15 +5522,19 @@
                                                 <node concept="2ShNRf" id="5upD6B8OrW$" role="2Oq$k0">
                                                   <node concept="1pGfFk" id="5upD6B8OrW_" role="2ShVmc">
                                                     <ref role="37wK5l" to="w1kc:~SLanguageHierarchy.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,java.util.Collection)" resolve="SLanguageHierarchy" />
-                                                    <node concept="2YIFZM" id="5upD6B8OrWA" role="37wK5m">
-                                                      <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                                                      <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                                                      <node concept="2OqwBi" id="5upD6B8OrWB" role="37wK5m">
-                                                        <node concept="37vLTw" id="5upD6B8OrWC" role="2Oq$k0">
-                                                          <ref role="3cqZAo" node="5upD6B8OrX_" resolve="module" />
+                                                    <node concept="2OqwBi" id="7q5dBpS9yOv" role="37wK5m">
+                                                      <node concept="2OqwBi" id="7q5dBpS9xon" role="2Oq$k0">
+                                                        <node concept="2WthIp" id="7q5dBpS9xoq" role="2Oq$k0">
+                                                          <ref role="32nkFo" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
                                                         </node>
-                                                        <node concept="liA8E" id="5upD6B8OrWD" role="2OqNvi">
-                                                          <ref role="37wK5l" to="lui2:~SModule.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                                        <node concept="1DTwFV" id="7q5dBpS9xos" role="2OqNvi">
+                                                          <ref role="2WH_rO" node="5$zfhXzr51q" resolve="mpsProject" />
+                                                        </node>
+                                                      </node>
+                                                      <node concept="liA8E" id="7q5dBpS9$gY" role="2OqNvi">
+                                                        <ref role="37wK5l" to="z1c3:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                                        <node concept="3VsKOn" id="7q5dBpS9Ah1" role="37wK5m">
+                                                          <ref role="3VsUkX" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                                                         </node>
                                                       </node>
                                                     </node>

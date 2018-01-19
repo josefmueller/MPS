@@ -79,13 +79,14 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
         ProgressMonitorAdapter progressMonitor = new ProgressMonitorAdapter(progressIndicator);
         int steps = modules[0].size();
         progressMonitor.start("Running...", steps);
+        final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
         for (final SModule module : ListSequence.fromList(modules[0])) {
           progressMonitor.step(module.getModuleName());
           WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
             public void run() {
-              event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().executeCommand(new Runnable() {
+              mpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
                 public void run() {
-                  Set<SLanguage> languages = new SLanguageHierarchy(LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()), module.getUsedLanguages()).getExtended();
+                  Set<SLanguage> languages = new SLanguageHierarchy(mpsProject.getComponent(LanguageRegistry.class), module.getUsedLanguages()).getExtended();
                   Iterable<MigrationScript> scripts = SetSequence.fromSet(languages).translate(new ITranslator2<SLanguage, MigrationScript>() {
                     public Iterable<MigrationScript> translate(final SLanguage it) {
                       return new Iterable<MigrationScript>() {
@@ -128,7 +129,7 @@ __switch__:
                                     this.__CP__ = 2;
                                     break;
                                   case 4:
-                                    this._7_script = new MigrationScriptReference(it, _2_ver).resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT), true);
+                                    this._7_script = new MigrationScriptReference(it, _2_ver).resolve(mpsProject, true);
                                     this.__CP__ = 8;
                                     break;
                                   case 9:

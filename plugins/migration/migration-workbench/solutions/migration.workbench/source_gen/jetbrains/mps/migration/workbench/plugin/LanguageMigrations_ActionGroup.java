@@ -50,7 +50,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
 
     List<SLanguage> languages = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule module) {
-        return new SLanguageHierarchy(LanguageRegistry.getInstance(mpsProject.getRepository()), module.getUsedLanguages()).getExtended();
+        return new SLanguageHierarchy(mpsProject.getComponent(LanguageRegistry.class), module.getUsedLanguages()).getExtended();
       }
     }).distinct().sort(new ISelector<SLanguage, String>() {
       public String select(SLanguage it) {

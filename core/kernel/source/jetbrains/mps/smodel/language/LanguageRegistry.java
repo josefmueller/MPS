@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,9 @@ import java.util.function.Consumer;
 import static java.lang.String.format;
 
 /**
+ * Preferred way to obtain instance of {@code LanguageRegistry} is to query {@link jetbrains.mps.components.ComponentHost}, e.g.
+ * through {@code jetbrains.mps.core.platform.Platform} or {@link jetbrains.mps.project.Project#getComponent(Class)} which is aware of the MPS platform.
+ *
  * evgeny, 3/11/11
  */
 public class LanguageRegistry implements CoreComponent, MPSClassesListener {
@@ -74,6 +77,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   /**
+   * IMPORTANT: use {@link jetbrains.mps.components.ComponentHost#findComponent(Class) componentHost#findComponent(LanguageRegistry.class)} whenever \
+   * possible instead of this method. USE OF THIS METHOD IS DISCOURAGED.
+   * <p/>
    * At the moment, there's only 1 global LanguageRegistry. However, we move slowly towards independent
    * projects/non-global module repositories and thus would need repository-specific registries,
    * and use of the method is the proper way to  obtain registry and to think about proper

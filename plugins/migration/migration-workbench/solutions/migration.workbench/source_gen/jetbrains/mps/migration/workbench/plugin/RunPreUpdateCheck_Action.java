@@ -93,7 +93,7 @@ public class RunPreUpdateCheck_Action extends BaseAction {
           public void run() {
             Iterable<ScriptApplied> checks = ListSequence.fromList(modules).translate(new ITranslator2<SModule, ScriptApplied>() {
               public Iterable<ScriptApplied> translate(final SModule module) {
-                Set<SLanguage> allLanguages = new SLanguageHierarchy(LanguageRegistry.getInstance(module.getRepository()), module.getUsedLanguages()).getExtended();
+                Set<SLanguage> allLanguages = new SLanguageHierarchy(event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(LanguageRegistry.class), module.getUsedLanguages()).getExtended();
                 Iterable<MigrationScript> scripts = SetSequence.fromSet(allLanguages).translate(new ITranslator2<SLanguage, MigrationScript>() {
                   public Iterable<MigrationScript> translate(final SLanguage it) {
                     return new Iterable<MigrationScript>() {

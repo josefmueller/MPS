@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -496,7 +496,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected TableCellRenderer getTableCellRender() {
       SRepository contextRepo = myProject.getRepository();
       LanguageTableCellRenderer tcr = new LanguageTableCellRenderer(contextRepo);
-      tcr.addCellState(NotCondition.negate(new ValidImportCondition(contextRepo)), DependencyCellState.NOT_AVAILABLE);
+      tcr.addCellState(NotCondition.negate(new ValidImportCondition(myProject)), DependencyCellState.NOT_AVAILABLE);
       return tcr;
     }
 

@@ -55,7 +55,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (!(module instanceof Language)) {
       return null;
     }
-    LanguageRuntime lr = LanguageRegistry.getInstance(contextProject.getRepository()).getLanguage((Language) module);
+    LanguageRuntime lr = contextProject.getComponent(LanguageRegistry.class).getLanguage((Language) module);
     ScriptAspectDescriptor scriptAspect = (lr == null ? null : lr.getAspect(ScriptAspectDescriptor.class));
     if (scriptAspect == null) {
       return null;

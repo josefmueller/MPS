@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -384,7 +384,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       Set<SLanguage> inUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new ComputeUsedLanguages(myModelDescriptor));
       myInUseCondition = new IsLanguageInUse(inUse, myModelProperties.getUsedLanguages());
       LanguageTableCellRenderer usedInModel = new LanguageTableCellRenderer(contextRepo);
-      usedInModel.addCellState(NotCondition.negate(new ValidImportCondition(contextRepo)), DependencyCellState.NOT_AVAILABLE);
+      usedInModel.addCellState(NotCondition.negate(new ValidImportCondition(myProject)), DependencyCellState.NOT_AVAILABLE);
       usedInModel.addCellState(NotCondition.negate(myInUseCondition), DependencyCellState.UNUSED);
       return usedInModel;
     }

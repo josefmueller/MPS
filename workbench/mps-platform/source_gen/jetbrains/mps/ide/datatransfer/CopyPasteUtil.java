@@ -325,7 +325,7 @@ public final class CopyPasteUtil {
             additionalModels.add(modelReference);
           }
         }
-        LanguageRegistry langReg = LanguageRegistry.getInstance(mpsProject.getRepository());
+        LanguageRegistry langReg = mpsProject.getComponent(LanguageRegistry.class);
         Set<SLanguage> allVisibleLanguages = new SLanguageHierarchy(langReg, SModelOperations.getAllLanguageImports(targetModel)).getExtended();
         for (SLanguage lang : necessaryLanguages) {
           if (!(allVisibleLanguages.contains(lang))) {

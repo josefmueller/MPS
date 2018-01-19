@@ -36,7 +36,7 @@ public class ModulesClusterizer {
 
   /*package*/ ModulesClusterizer(MakeSession makeSession) {
     mySession = makeSession;
-    myLanguageRegistry = LanguageRegistry.getInstance(mySession.getProject().getRepository());
+    myLanguageRegistry = mySession.getProject().getComponent(LanguageRegistry.class);
   }
 
   public Iterable<Cluster> clusterize(Iterable<? extends IResource> res) {

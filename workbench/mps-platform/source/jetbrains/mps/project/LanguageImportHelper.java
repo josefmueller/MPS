@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,7 +219,7 @@ public final class LanguageImportHelper {
   }
 
   /*package*/ Set<SLanguage> getExtendedLanguages(SLanguage param) {
-    final LanguageRegistry languageRegistry = LanguageRegistry.getInstance(myProject.getRepository());
+    final LanguageRegistry languageRegistry = myProject.getComponent(LanguageRegistry.class);
     SLanguageHierarchy langHierarchy = new SLanguageHierarchy(languageRegistry, Collections.singleton(param));
     Set<SLanguage> langs = langHierarchy.getExtended();
     langs.remove(param);

@@ -1063,18 +1063,6 @@
               <ref role="3uigEE" to="vndm:~LanguageRuntime" resolve="LanguageRuntime" />
             </node>
             <node concept="2OqwBi" id="4B2IQdOqLr1" role="33vP2m">
-              <node concept="2YIFZM" id="4B2IQdOqLr2" role="2Oq$k0">
-                <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                <node concept="2OqwBi" id="7QakCu$sgef" role="37wK5m">
-                  <node concept="37vLTw" id="4B2IQdOqLr3" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4B2IQdOqK0a" resolve="contextProject" />
-                  </node>
-                  <node concept="liA8E" id="7QakCu$sgsM" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
-                </node>
-              </node>
               <node concept="liA8E" id="4B2IQdOqLr4" role="2OqNvi">
                 <ref role="37wK5l" to="vndm:~LanguageRegistry.getLanguage(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.language.LanguageRuntime" resolve="getLanguage" />
                 <node concept="10QFUN" id="4B2IQdOqLr5" role="37wK5m">
@@ -1083,6 +1071,17 @@
                   </node>
                   <node concept="37vLTw" id="4B2IQdOqLr7" role="10QFUP">
                     <ref role="3cqZAo" node="4B2IQdOqHky" resolve="module" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="7QakCu$sgef" role="2Oq$k0">
+                <node concept="37vLTw" id="4B2IQdOqLr3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4B2IQdOqK0a" resolve="contextProject" />
+                </node>
+                <node concept="liA8E" id="7QakCu$sgsM" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="7q5dBpSbv_s" role="37wK5m">
+                    <ref role="3VsUkX" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
                   </node>
                 </node>
               </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -184,9 +185,9 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
     private final SRepository myContextRepo;
     private final LanguageRegistry myLanguageRegistry;
 
-    public ValidImportCondition(@NotNull SRepository contextRepo) {
-      myContextRepo = contextRepo;
-      myLanguageRegistry = LanguageRegistry.getInstance(contextRepo);
+    public ValidImportCondition(@NotNull Project project) {
+      myContextRepo = project.getRepository();
+      myLanguageRegistry = project.getComponent(LanguageRegistry.class);
     }
 
     @Override

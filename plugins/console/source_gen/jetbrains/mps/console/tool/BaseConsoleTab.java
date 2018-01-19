@@ -265,7 +265,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
 
   protected void addBuiltInImports() {
     SLanguage base = MetaAdapterFactory.getLanguage(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, "jetbrains.mps.console.base");
-    Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(LanguageRegistry.getInstance(myProject.getRepository()), Collections.singleton(base)).getExtending();
+    Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(myProject.getComponent(LanguageRegistry.class), Collections.singleton(base)).getExtending();
     SModelInternal modelInternal = ((SModelInternal) myModel);
     for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {
       modelInternal.addLanguage(l);
