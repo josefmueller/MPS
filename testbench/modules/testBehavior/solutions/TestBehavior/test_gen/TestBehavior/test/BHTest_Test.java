@@ -30,11 +30,12 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import BHL7.behavior.L__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
+import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class BHTest_Test extends EnvironmentAwareTestCase {
-  private static final String PROJECT_PATH = "../testbench/modules/testBehavior";
+  private static final String PROJECT_PATH = "testbench/modules/testBehavior";
   /*package*/ Project myProject;
   public void test_conversion1() throws Exception {
     SNode nodeA = createA_a2wy8c_a0a0a0();
@@ -463,22 +464,21 @@ public class BHTest_Test extends EnvironmentAwareTestCase {
   }
   public void setUp() {
     myProject = myEnvironment.openProject(new File(PROJECT_PATH));
-    // FIXME This is a hack. MPSProject loads its modules and injects them into repository with classloading event dispatch paused (uses runNonReloadableTransaction) 
-    //       It seems the reason for this is assumption there's StartupModuleMaker that would compile dirty modules and then brand new and shiny languages can get loaded. 
-    //       However, in test app, there's DummyStartupModuleMakerImpl, which is no-op. Empty write action here is to force ModuleEventsDispatcher to flush batched  
-    //       module-added events (it's puzzling whether its pause/proceed behavior, where events that happened during 'paused' state are not lost and get dispatched  
-    //       at the next 'actionFinished', is intended or not). Empty write action triggers MED.actionFinished, module-added events for project modules get propagated to 
-    //       LanguageRegistry and behavior descriptors could get loaded afterwards (otherwise, tests issue  
-    //       a warning "No language for: BHL1.structure.A, while looking for the behavior descriptor" and eventually fail. 
+    // Piece of knowledge: 
+    // MPSProject loads its modules and injects them into repository with classloading event dispatch paused (uses runNonReloadableTransaction) 
+    // The reason for this is assumption there's StartupModuleMaker that would compile dirty modules and then brand new and shiny languages can get loaded. 
+    // However, in test app, there's DummyStartupModuleMakerImpl, which is no-op. Without languages properly registered, tests issue  
+    // a warning "No language for: BHL1.structure.A, while looking for the behavior descriptor" and eventually fail. 
+    // Nevertheless, it seems right NOT to compile project modules during test mode automatically. Instead, we can explicitly  
+    // make target projects in a test like this one (which knows it gonna use languages from the target project). 
+    // As for module-added events not being dispatched on project init, once we switch to distinct project and classloading repositories, there would be no need for  
+    // runNonReloadableTransaction, events from project repository won't trigger classloading anyway. 
     // 
-    //       Perhaps, it's right not to compile project modules during test mode, and not to dispatch module-added events on project init. Instead, we can explicitly  
-    //       make target projects in a test like this one (which knows it gonna use languages from the target project) 
-    // 
-    // FIXME Note, despite the fact these tests (BHTest and BHTestRef) are referenced from tests.mpsBehavior build script, there's no invocation of mpsBehavior.xml from build/test.xml! 
     myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
       }
     });
+    new TestMakeUtil(myEnvironment.getPlatform()).make(myProject);
   }
   private static SNode createA_a2wy8c_a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

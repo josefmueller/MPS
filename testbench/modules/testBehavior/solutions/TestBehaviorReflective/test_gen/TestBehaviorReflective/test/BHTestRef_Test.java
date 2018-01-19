@@ -18,11 +18,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
+import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class BHTestRef_Test extends EnvironmentAwareTestCase {
-  private static final String PROJECT_PATH = "../testbench/modules/testBehavior";
+  private static final String PROJECT_PATH = "testbench/modules/testBehavior";
   /*package*/ Project myProject;
   public void test_conversion1() throws Exception {
     SNode nodeA = createA_cc8y9n_a0a0a0();
@@ -438,11 +439,8 @@ public class BHTestRef_Test extends EnvironmentAwareTestCase {
   public void setUp() {
     // MpsEnvironment suffice 
     myProject = myEnvironment.openProject(new File(BHTestRef_Test.PROJECT_PATH));
-    //  FIXME get rid of this hack, see BHTest for details 
-    myProject.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-      }
-    });
+    // see BHTest for detailed explanation why we make project here 
+    new TestMakeUtil(myEnvironment.getPlatform()).make(myProject);
   }
   private static SNode createA_cc8y9n_a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

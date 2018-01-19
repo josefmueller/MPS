@@ -192,33 +192,40 @@
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/2577066619598079009">
     <file name="TestMakeUtil.java">
-      <node id="2709032633898804956" at="16,53,17,49" concept="10" />
-      <node id="2577066619598079480" at="17,49,18,107" concept="8" />
-      <node id="2577066619598079486" at="20,25,21,46" concept="8" />
-      <node id="2577066619598079491" at="21,46,22,186" concept="3" />
-      <node id="2577066619598079520" at="27,27,28,105" concept="3" />
-      <node id="2577066619598079518" at="27,0,30,0" concept="7" trace="run#()V" />
-      <node id="2577066619598079484" at="20,0,24,0" concept="7" trace="run#()V" />
-      <node id="2577066619598079517" at="25,57,30,9" concept="3" />
-      <node id="2577066619598079483" at="18,107,24,7" concept="3" />
-      <node id="2577066619598079512" at="24,7,31,5" concept="6" />
-      <node id="2577066619598079478" at="16,0,33,0" concept="13" trace="make#(Ljetbrains/mps/project/Project;)V" />
-      <scope id="2577066619598079519" at="27,27,28,105" />
-      <scope id="2577066619598079485" at="20,25,22,186">
-        <var name="maker" id="2577066619598079487" />
+      <node id="1045949688409696621" at="17,0,18,0" concept="4" trace="myPlatform" />
+      <node id="1045949688409696625" at="19,45,20,29" concept="3" />
+      <node id="1045949688409698151" at="23,46,24,49" concept="10" />
+      <node id="1045949688409698153" at="24,49,25,107" concept="8" />
+      <node id="1045949688409698159" at="27,25,28,46" concept="8" />
+      <node id="1045949688409698164" at="28,46,29,186" concept="3" />
+      <node id="1045949688409698188" at="34,27,35,123" concept="3" />
+      <node id="1045949688409676258" at="19,0,22,0" concept="1" trace="TestMakeUtil#(Ljetbrains/mps/core/platform/Platform;)V" />
+      <node id="1045949688409698186" at="34,0,37,0" concept="7" trace="run#()V" />
+      <node id="1045949688409698157" at="27,0,31,0" concept="7" trace="run#()V" />
+      <node id="1045949688409698185" at="32,57,37,9" concept="3" />
+      <node id="1045949688409698156" at="25,107,31,7" concept="3" />
+      <node id="1045949688409698180" at="31,7,38,5" concept="6" />
+      <node id="1045949688409698148" at="23,0,40,0" concept="7" trace="make#(Ljetbrains/mps/project/Project;)V" />
+      <scope id="1045949688409676261" at="19,45,20,29" />
+      <scope id="1045949688409698187" at="34,27,35,123" />
+      <scope id="1045949688409698158" at="27,25,29,186">
+        <var name="maker" id="1045949688409698160" />
       </scope>
-      <scope id="2577066619598079518" at="27,0,30,0" />
-      <scope id="2577066619598079484" at="20,0,24,0" />
-      <scope id="2577066619598079516" at="25,57,30,9" />
-      <scope id="2577066619598079479" at="16,53,31,5">
-        <var name="mpsCompilationResult" id="2577066619598079481" />
+      <scope id="1045949688409676258" at="19,0,22,0">
+        <var name="mpsPlatform" id="1045949688409696592" />
       </scope>
-      <scope id="2577066619598079478" at="16,0,33,0">
-        <var name="p" id="2577066619598079527" />
+      <scope id="1045949688409698186" at="34,0,37,0" />
+      <scope id="1045949688409698157" at="27,0,31,0" />
+      <scope id="1045949688409698184" at="32,57,37,9" />
+      <scope id="1045949688409698150" at="23,46,38,5">
+        <var name="mpsCompilationResult" id="1045949688409698154" />
       </scope>
-      <unit id="2577066619598079518" at="26,60,30,7" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil$2" />
-      <unit id="2577066619598079484" at="19,57,24,5" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil$1" />
-      <unit id="2577066619598079009" at="15,0,35,0" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil" />
+      <scope id="1045949688409698148" at="23,0,40,0">
+        <var name="p" id="1045949688409698198" />
+      </scope>
+      <unit id="1045949688409698186" at="33,60,37,7" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil$2" />
+      <unit id="1045949688409698157" at="26,57,31,5" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil$1" />
+      <unit id="2577066619598079009" at="16,0,41,0" name="jetbrains.mps.testbench.junit.suites.TestMakeUtil" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/3567142084943000351">
@@ -434,7 +441,7 @@
       <node id="3475627957063146072" at="60,7,61,0" concept="11" />
       <node id="3321270849807901413" at="61,0,62,20" concept="9" />
       <node id="910232766032178190" at="66,29,67,59" concept="3" />
-      <node id="2577066619598110516" at="67,59,68,33" concept="3" />
+      <node id="1045949688409706398" at="67,59,68,59" concept="3" />
       <node id="4578163338981429185" at="72,30,73,35" concept="3" />
       <node id="7308922687953975774" at="77,38,78,21" concept="9" />
       <node id="4549117124867217102" at="81,33,82,24" concept="9" />
@@ -454,7 +461,7 @@
       <scope id="3321270849807942829" at="72,30,73,35" />
       <scope id="7308922687953975773" at="77,38,78,21" />
       <scope id="4549117124867217101" at="81,33,82,24" />
-      <scope id="3321270849807935706" at="66,29,68,33" />
+      <scope id="3321270849807935706" at="66,29,68,59" />
       <scope id="7308922687953975590" at="32,0,35,0">
         <var name="projectDir" id="7308922687953975592" />
       </scope>

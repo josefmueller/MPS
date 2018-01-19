@@ -72,9 +72,7 @@ public class MigrationsTest implements EnvironmentAware {
 
   @Test
   public void testMigrationAndLocalHistory() throws Exception {
-
-
-    TestMakeUtil.make(myProject);
+    new TestMakeUtil(myEnv.getPlatform()).make(myProject);
     LocalHistoryImpl.getInstanceImpl().cleanupForNextTest();
 
     MigrationSession session = new MigrationSessionBase() {

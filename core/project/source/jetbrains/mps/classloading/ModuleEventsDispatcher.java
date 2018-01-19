@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,9 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.repository.WriteActionListener;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -35,12 +33,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * and dispatching batch (group) events to listeners.
  * It listens the start and finish of write action. It starts batching events at the start of write action
  * and yields the result at the end of write action.
+ * <p/>
+ * The class also supports pause/resume scenario to postpone dispatch of collected events to an appropriate moment.
+ * In fact, it's rather non-knowingly-inappropriate moment, as any first write action after resume dispatches all collected events.
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess#runWriteAction(Runnable)
  */
 public class ModuleEventsDispatcher implements WriteActionListener {
-  private static final Logger LOG = LogManager.getLogger(ModuleEventsDispatcher.class);
-
   private final BatchEventsProcessor myBatchEventsProcessor;
 
   private final List<SRepositoryBatchListener> myListeners = new CopyOnWriteArrayList<SRepositoryBatchListener>();

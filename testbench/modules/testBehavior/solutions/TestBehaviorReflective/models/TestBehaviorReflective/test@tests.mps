@@ -30,6 +30,7 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="ymld" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.suites(Testbench/)" />
     <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
   <registry>
@@ -226,7 +227,7 @@
       <property role="3TUv4t" value="true" />
       <node concept="17QB3L" id="2q6iWMfPnJt" role="1tU5fm" />
       <node concept="Xl_RD" id="74sHQpDbWx5" role="33vP2m">
-        <property role="Xl_RC" value="../testbench/modules/testBehavior" />
+        <property role="Xl_RC" value="testbench/modules/testBehavior" />
       </node>
       <node concept="3Tm6S6" id="74sHQpDbWx6" role="1B3o_S" />
     </node>
@@ -4074,25 +4075,30 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="2xUsQ1X9HKL" role="3cqZAp">
-          <node concept="3SKdUq" id="2xUsQ1X9HKN" role="3SKWNk">
-            <property role="3SKdUp" value=" FIXME get rid of this hack, see BHTest for details" />
+        <node concept="3SKdUt" id="7TV6gXQfGgQ" role="3cqZAp">
+          <node concept="3SKdUq" id="7TV6gXQfGgS" role="3SKWNk">
+            <property role="3SKdUp" value="see BHTest for detailed explanation why we make project here" />
           </node>
         </node>
-        <node concept="3clFbF" id="2xUsQ1X9mVH" role="3cqZAp">
-          <node concept="2OqwBi" id="2xUsQ1X9ny2" role="3clFbG">
-            <node concept="2OqwBi" id="2xUsQ1X9ndG" role="2Oq$k0">
-              <node concept="37vLTw" id="2xUsQ1X9mVF" role="2Oq$k0">
-                <ref role="3cqZAo" node="4uPaNIY9iLm" resolve="myProject" />
-              </node>
-              <node concept="liA8E" id="2xUsQ1X9nsS" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+        <node concept="3clFbF" id="7TV6gXQfF58" role="3cqZAp">
+          <node concept="2OqwBi" id="7TV6gXQfFKn" role="3clFbG">
+            <node concept="2ShNRf" id="7TV6gXQfF54" role="2Oq$k0">
+              <node concept="1pGfFk" id="7TV6gXQfFjc" role="2ShVmc">
+                <ref role="37wK5l" to="ymld:~TestMakeUtil.&lt;init&gt;(jetbrains.mps.core.platform.Platform)" resolve="TestMakeUtil" />
+                <node concept="2OqwBi" id="7TV6gXQfFsw" role="37wK5m">
+                  <node concept="37vLTw" id="7TV6gXQfFkd" role="2Oq$k0">
+                    <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
+                  </node>
+                  <node concept="liA8E" id="7TV6gXQfFBp" role="2OqNvi">
+                    <ref role="37wK5l" to="ew0j:~Environment.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="liA8E" id="2xUsQ1X9nRl" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
-              <node concept="1bVj0M" id="2xUsQ1X9o5t" role="37wK5m">
-                <node concept="3clFbS" id="2xUsQ1X9o5u" role="1bW5cS" />
+            <node concept="liA8E" id="7TV6gXQfFXz" role="2OqNvi">
+              <ref role="37wK5l" to="ymld:~TestMakeUtil.make(jetbrains.mps.project.Project):void" resolve="make" />
+              <node concept="37vLTw" id="7TV6gXQfG3U" role="37wK5m">
+                <ref role="3cqZAo" node="4uPaNIY9iLm" resolve="myProject" />
               </node>
             </node>
           </node>

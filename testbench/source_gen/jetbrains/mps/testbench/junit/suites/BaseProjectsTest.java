@@ -65,7 +65,7 @@ public class BaseProjectsTest {
   @Before
   public void openProject() {
     myProject = ourEnv.openProject(new File(myProjectDir));
-    TestMakeUtil.make(myProject);
+    new TestMakeUtil(ourEnv.getPlatform()).make(myProject);
   }
 
   @After
