@@ -12,8 +12,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptMigrationData_Component = createDescriptorForMigrationData_Component();
-  /*package*/ final ConceptDescriptor myConceptMigrationData_WholeModule = createDescriptorForMigrationData_WholeModule();
   /*package*/ final ConceptDescriptor myConceptNewComponent = createDescriptorForNewComponent();
   /*package*/ final ConceptDescriptor myConceptNewComponentMember = createDescriptorForNewComponentMember();
   /*package*/ final ConceptDescriptor myConceptOldComponent = createDescriptorForOldComponent();
@@ -26,17 +24,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMigrationData_Component, myConceptMigrationData_WholeModule, myConceptNewComponent, myConceptNewComponentMember, myConceptOldComponent, myConceptOldComponentMember);
+    return Arrays.asList(myConceptNewComponent, myConceptNewComponentMember, myConceptOldComponent, myConceptOldComponentMember);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.MigrationData_Component:
-        return myConceptMigrationData_Component;
-      case LanguageConceptSwitch.MigrationData_WholeModule:
-        return myConceptMigrationData_WholeModule;
       case LanguageConceptSwitch.NewComponent:
         return myConceptNewComponent;
       case LanguageConceptSwitch.NewComponentMember:
@@ -54,21 +48,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForMigrationData_Component() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("declarations", "MigrationData_Component", 0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x1b931c975a732860L);
-    b.class_(false, false, false);
-    b.origin("r:8ded2ed4-9c33-4e5f-8484-5e54968f4d4e(declarations.structure)/1986963296983656544");
-    b.prop("oldId", 0x1b931c975a732f6dL, "1986963296983658349");
-    b.prop("newId", 0x1b931c975a732f7bL, "1986963296983658363");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMigrationData_WholeModule() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("declarations", "MigrationData_WholeModule", 0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x1b931c975a732f8bL);
-    b.class_(false, false, false);
-    b.origin("r:8ded2ed4-9c33-4e5f-8484-5e54968f4d4e(declarations.structure)/1986963296983658379");
-    b.aggregate("entry", 0x1b931c975a732f9aL).target(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x1b931c975a732860L).optional(true).ordered(true).multiple(true).origin("1986963296983658394").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForNewComponent() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("declarations", "NewComponent", 0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049329d71L);
     b.class_(false, false, true);

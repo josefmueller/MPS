@@ -71,16 +71,16 @@
     <node concept="3ea_Bc" id="5JRx$mm1nbl" role="3ea0P7">
       <ref role="3ea_Bf" to="s8xh:14sMr$jTewL" resolve="MigrateReferences" />
     </node>
-    <node concept="1qefOq" id="26S_KM$7NEo" role="2lJPY$">
-      <node concept="zNr5x" id="26S_KM$7NEl" role="1qenE9">
+    <node concept="1qefOq" id="2SgQO3tJ$f" role="2lJPY$">
+      <node concept="zNr5x" id="2SgQO3tJ$c" role="1qenE9">
         <property role="TrG5h" value="comp1" />
       </node>
     </node>
-    <node concept="1qefOq" id="26S_KM$7NEp" role="2lJPY$">
-      <node concept="zNr5x" id="26S_KM$7NEm" role="1qenE9">
+    <node concept="1qefOq" id="2SgQO3tJ$g" role="2lJPY$">
+      <node concept="zNr5x" id="2SgQO3tJ$d" role="1qenE9">
         <property role="TrG5h" value="comp2" />
-        <node concept="zNoFp" id="26S_KM$7NEn" role="zNr5$">
-          <ref role="zNoFq" node="26S_KM$7NEm" resolve="comp2" />
+        <node concept="zNoFp" id="2SgQO3tJ$e" role="zNr5$">
+          <ref role="zNoFq" node="2SgQO3tJ$c" resolve="comp1" />
         </node>
       </node>
     </node>

@@ -9,8 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_MigrationData_Component;
-  private ConceptPresentation props_MigrationData_WholeModule;
   private ConceptPresentation props_NewComponent;
   private ConceptPresentation props_NewComponentMember;
   private ConceptPresentation props_OldComponent;
@@ -21,20 +19,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.MigrationData_Component:
-        if (props_MigrationData_Component == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MigrationData_Component");
-          props_MigrationData_Component = cpb.create();
-        }
-        return props_MigrationData_Component;
-      case LanguageConceptSwitch.MigrationData_WholeModule:
-        if (props_MigrationData_WholeModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MigrationData_WholeModule");
-          props_MigrationData_WholeModule = cpb.create();
-        }
-        return props_MigrationData_WholeModule;
       case LanguageConceptSwitch.NewComponent:
         if (props_NewComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
