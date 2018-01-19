@@ -14,8 +14,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -60,9 +59,10 @@ import org.jetbrains.mps.openapi.language.SLanguage;
         return;
       }
       final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      final SRepository repo = myProject.getRepository();
+      repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          module.value = MPSModuleRepository.getInstance().getModules().iterator().next();
+          module.value = repo.getModules().iterator().next();
         }
       });
       processor.process(new ScriptApplied(module.value, ListSequence.fromList(myManager.getModuleMig()).first().getReference()));
@@ -160,7 +160,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
       if (Sequence.fromIterable(modules).isEmpty()) {
         return Collections.emptyList();
       }
-      final Iterable<? extends SModule> modulesWithGenerators = myProject.getModulesWithGenerators();
+      final Iterable<SModule> modulesWithGenerators = myProject.getProjectModulesWithGenerators();
       if (Sequence.fromIterable(modules).any(new IWhereFilter<SModule>() {
         public boolean accept(SModule it) {
           return !(Sequence.fromIterable(modulesWithGenerators).contains(it));
@@ -205,9 +205,10 @@ import org.jetbrains.mps.openapi.language.SLanguage;
     }
     private Iterable<ScriptApplied> getModuleMigrationsApplied() {
       final Wrappers._T<Iterable<ScriptApplied>> res = new Wrappers._T<Iterable<ScriptApplied>>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      final SRepository repo = myProject.getRepository();
+      repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          final List<SModule> modules = Sequence.fromIterable(((Iterable<SModule>) MPSModuleRepository.getInstance().getModules())).take(3).toListSequence();
+          final List<SModule> modules = Sequence.fromIterable(((Iterable<SModule>) repo.getModules())).take(3).toListSequence();
           res.value = ListSequence.fromList(MyMigrationManager.this.getModuleMig()).translate(new ITranslator2<MigrationScript, ScriptApplied>() {
             public Iterable<ScriptApplied> translate(final MigrationScript script) {
               return ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
