@@ -29,7 +29,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.LogLowLevelStatement:
         if (props_LogLowLevelStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LogLowLevelStatement");
+          cpb.rawPresentation("log");
           props_LogLowLevelStatement = cpb.create();
         }
         return props_LogLowLevelStatement;
@@ -44,7 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MsgStatement:
         if (props_MsgStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MsgStatement");
+          cpb.rawPresentation("message");
           props_MsgStatement = cpb.create();
         }
         return props_MsgStatement;

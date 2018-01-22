@@ -163,6 +163,7 @@
     <property role="TrG5h" value="LogLowLevelStatement" />
     <property role="R5$K2" value="true" />
     <property role="R5$K7" value="false" />
+    <property role="34LRSv" value="log" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyi" id="1KXtTGFSJ6R" role="1TKVEl">
       <property role="IQ2nx" value="2034914114981261751" />
@@ -192,6 +193,7 @@
   <node concept="1TIwiD" id="5vyNLjQPqst">
     <property role="EcuMT" value="6332851714983831325" />
     <property role="TrG5h" value="MsgStatement" />
+    <property role="34LRSv" value="message" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="4XBaoL6cc9u" role="1TKVEi">
       <property role="IQ2ns" value="5721587534047265374" />

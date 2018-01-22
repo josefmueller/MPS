@@ -68,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("severity", 0x1c3d779b2be2f1b7L, "2034914114981261751");
     b.aggregate("message", 0x1c3d779b2be2f1b9L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("2034914114981261753").done();
     b.aggregate("throwable", 0x1c3d779b2be2f1bbL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("2034914114981261755").done();
+    b.alias("log");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLogStatement() {
@@ -94,6 +95,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("message", 0x4f67298c4630c25eL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("5721587534047265374").done();
     b.aggregate("throwable", 0x4f67298c4630c25fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("5721587534047265375").done();
     b.aggregate("project", 0x4f67298c4630c318L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("5721587534047265560").done();
+    b.alias("message");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPrintStatement() {
