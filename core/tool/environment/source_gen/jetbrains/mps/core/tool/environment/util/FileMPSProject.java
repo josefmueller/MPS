@@ -7,17 +7,15 @@ import jetbrains.mps.project.FileBasedProject;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
-import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.impl.IoFile;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
-import jetbrains.mps.components.CoreComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import jetbrains.mps.project.ElementProjectDataSource;
@@ -25,12 +23,10 @@ import jetbrains.mps.project.ElementProjectDataSource;
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
   private static final Logger LOG = LogManager.getLogger(FileMPSProject.class);
   private final File myProjectFile;
-  private Platform myPlatform;
 
   public FileMPSProject(@NotNull File file, @NotNull Platform mpsPlatform) {
-    super(new ProjectDescriptor(file.getName()), mpsPlatform.findComponent(SRepositoryRegistry.class));
+    super(new ProjectDescriptor(file.getName()), mpsPlatform);
     myProjectFile = file;
-    myPlatform = mpsPlatform;
     init();
   }
 
@@ -56,14 +52,6 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
   public void save() {
     MacroHelper helper = createMacroHelper();
     new ProjectDescriptorPersistence(getProjectFile(), helper).save(myProjectDescriptor);
-  }
-
-  @Override
-  public <T> T getComponent(Class<T> cls) {
-    if (CoreComponent.class.isAssignableFrom(cls)) {
-      return cls.cast(myPlatform.findComponent(cls.asSubclass(CoreComponent.class)));
-    }
-    return null;
   }
 
   /**

@@ -1372,6 +1372,9 @@
       <node concept="nCB5N" id="6xpZJctkiCT" role="nCB5Z">
         <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />
       </node>
+      <node concept="nCB5N" id="58sFILYIQE8" role="nCB5Z">
+        <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
+      </node>
     </node>
     <node concept="398b33" id="6g0vjebAkhc" role="3989C9">
       <property role="TrG5h" value="mps-textgen" />

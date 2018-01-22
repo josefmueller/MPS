@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,6 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.core.platform.Platform;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -44,12 +41,10 @@ import java.util.List;
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
-  private final Platform myPlatform;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
-    super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform().findComponent(SRepositoryRegistry.class));
+    super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform());
     myProject = project;
-    myPlatform = mpsCore.getPlatform();
   }
 
   @Override
@@ -57,7 +52,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
     ProjectModuleFileChangeListener listener = new ProjectModuleFileChangeListener(this);
     myListeners.add(listener);
     addListener(listener);
-    ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);
+    myPlatform.findComponent(ClassLoaderManager.class).runNonReloadableTransaction(this::update);
   }
 
   public void disposeComponent() {
@@ -129,8 +124,8 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   @Override
   public <T> T getComponent(Class<T> clazz) {
     T rv = getProject().getComponent(clazz);
-    if (rv == null && CoreComponent.class.isAssignableFrom(clazz)) {
-      rv = clazz.cast(myPlatform.findComponent(clazz.asSubclass(CoreComponent.class)));
+    if (rv == null ) {
+      return super.getComponent(clazz);
     }
     return rv;
   }

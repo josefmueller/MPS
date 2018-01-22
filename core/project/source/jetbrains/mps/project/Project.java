@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,9 +45,9 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   private boolean myDisposed;
 
-  protected Project(String name, SRepositoryRegistry repositoryRegistry) {
+  protected Project(String name, Platform mpsPlatform) {
     myName = name;
-    myRepository = new ProjectRepository(this, repositoryRegistry);
+    myRepository = new ProjectRepository(this, mpsPlatform.findComponent(MPSModuleRepository.class), mpsPlatform.findComponent(SRepositoryRegistry.class));
     myRepository.init();
   }
 

@@ -44,16 +44,18 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
+  private final SRepositoryExt myRootRepo;
 
-  public ProjectRepository(@NotNull Project project, @Nullable SRepositoryRegistry repositoryRegistry) {
+  public ProjectRepository(@NotNull Project project, @NotNull SRepositoryExt rootRepo, @Nullable SRepositoryRegistry repositoryRegistry) {
     super(repositoryRegistry);
     myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
+    myRootRepo = rootRepo;
   }
 
   @NotNull
-  private MPSModuleRepository getRootRepository() {
-    return myProject.getComponent(MPSModuleRepository.class);
+  private SRepositoryExt getRootRepository() {
+    return myRootRepo;
   }
 
   public Project getProject() {

@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -62,6 +61,7 @@ public abstract class ProjectBase extends Project {
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
   private final Map<SModuleReference, SModuleListenerBase> myModulesListeners = new HashMap<>();
+  protected final Platform myPlatform; // XXX perhaps, worth moving into superclass?
 
   // AP fixme must be final, however StandaloneMpsProject exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
@@ -69,10 +69,11 @@ public abstract class ProjectBase extends Project {
   private final Map<SModuleReference, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ProjectModuleLoader myModuleLoader;
 
-  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull SRepositoryRegistry repositoryRegistry) {
-    super(projectDescriptor.getName(), repositoryRegistry);
+  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull Platform mpsPlatform) {
+    super(projectDescriptor.getName(), mpsPlatform);
     myProjectDescriptor = projectDescriptor;
     myModuleLoader = new ProjectModuleLoader(this); // fixme: avoid
+    myPlatform = mpsPlatform;
   }
 
   @NotNull
@@ -252,6 +253,14 @@ public abstract class ProjectBase extends Project {
   @NotNull
   public String toString() {
     return "MPS Project [" + getName() + (isDisposed() ? ", disposed]" : "]");
+  }
+
+  @Override
+  public <T> T getComponent(Class<T> cls) {
+    if (CoreComponent.class.isAssignableFrom(cls)) {
+      return cls.cast(myPlatform.findComponent(cls.asSubclass(CoreComponent.class)));
+    }
+    return null;
   }
 
   /**
