@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.vcs.core" uuid="85836058-a162-41d7-bb1d-52e99d873f28" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
+<solution name="jetbrains.mps.ide.vcs.core" uuid="85836058-a162-41d7-bb1d-52e99d873f28" moduleVersion="0" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -9,9 +9,6 @@
       <sourceRoot location="svnkit.jar" />
     </modelRoot>
   </models>
-  <facets>
-    <facet pluginId="jetbrains.mps.vcs" type="ideaPlugin" />
-  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
@@ -19,9 +16,7 @@
     <dependency reexport="true">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
-    <dependency reexport="false">37e03aa1-7289-49bc-8269-30de5eceec76(jetbrains.mps.vcs.mergehints)</dependency>
     <dependency reexport="false">9ef82768-a1b1-451e-b136-5a86b2b5fdbb(jetbrains.mps.persistence)</dependency>
-    <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">63089e65-5c76-4c44-9eb6-15698b4444cf(jetbrains.mps.vcs.mergehints.runtime)</dependency>
   </dependencies>
   <languageVersions>
@@ -46,11 +41,8 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="85836058-a162-41d7-bb1d-52e99d873f28(jetbrains.mps.ide.vcs.core)" version="0" />
     <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
-    <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
-    <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
     <module reference="9ef82768-a1b1-451e-b136-5a86b2b5fdbb(jetbrains.mps.persistence)" version="0" />
     <module reference="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" version="0" />
-    <module reference="37e03aa1-7289-49bc-8269-30de5eceec76(jetbrains.mps.vcs.mergehints)" version="0" />
     <module reference="63089e65-5c76-4c44-9eb6-15698b4444cf(jetbrains.mps.vcs.mergehints.runtime)" version="0" />
   </dependencyVersions>
 </solution>
