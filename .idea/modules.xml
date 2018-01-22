@@ -93,6 +93,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/util/util-core.iml" filepath="$PROJECT_DIR$/core/util/util-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" group="plugins/vcs" />
       <module fileurl="file://$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" filepath="$PROJECT_DIR$/plugins/vcs-core/vcs-core.iml" group="plugins/vcs" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/vcs-platform/vcs-platform.iml" filepath="$PROJECT_DIR$/plugins/vcs-platform/vcs-platform.iml" group="plugins/vcs" />
       <module fileurl="file://$PROJECT_DIR$/core/vfs/vfs.iml" filepath="$PROJECT_DIR$/core/vfs/vfs.iml" group="core" />
     </modules>
   </component>
