@@ -172,8 +172,8 @@
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="3">
-      <build number="173.1609" version="2017.3.2">
-        <message>JetBrains MPS 2017.3.2 is available.</message>
+      <build number="173.1677" version="2017.3.3">
+        <message>JetBrains MPS 2017.3.3 is available.</message>
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
       </build>
     </channel>
@@ -182,8 +182,8 @@
              url="https://www.jetbrains.com/mps/download"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="3">
-      <build number="173.1609" version="2017.3.2">
-        <message>JetBrains MPS 2017.3.2 is available.</message>
+      <build number="173.1677" version="2017.3.3">
+        <message>JetBrains MPS 2017.3.3 is available.</message>
         <button name="Download" url="https://www.jetbrains.com/mps/download" download="true"/>
       </build>
     </channel>
