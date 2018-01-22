@@ -374,9 +374,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/vcs/languages">
+    <content url="file://$MODULE_DIR$/../../plugins/vcs/languages/modelmetadata">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/languages/modelmetadata/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/languages/mergehints.runtime/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/vcs/languages/mergehints">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/languages/mergehints/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
