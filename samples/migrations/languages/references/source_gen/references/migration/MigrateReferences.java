@@ -16,10 +16,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -52,20 +51,7 @@ public class MigrateReferences extends MigrationScriptBase {
         public void visit(SNode oldNode) {
           SNode newNode = _quotation_createNode_w5820p_a0a0a0a0a1a5(SLinkOperations.getTarget(oldNode, MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target")));
           ((jetbrains.mps.smodel.SNode) newNode).setId(((jetbrains.mps.smodel.SNode) oldNode).getNodeId());
-
-          // find the target of the old reference and its containing model 
-          SReference oldRef = oldNode.getReference(MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, 0x6aff2c104932a69aL, "target"));
-          SModel oldModel = oldRef.getTargetSModelReference().resolve(m.getRepository());
-
-          // get the new component instance 
-          SNode newTarget = oldModel.getNode(PersistenceFacade.getInstance().createNodeId(oldRef.getTargetNodeId().toString()));
-
-          // set the reference to point to it 
-          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getReferenceLink(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104932a6c9L, 0x6aff2c104932a6caL, "target"), (SNode) newTarget);
-
-
           SNodeOperations.replaceWithAnother(oldNode, newNode);
-
         }
       });
     }
