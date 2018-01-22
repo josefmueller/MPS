@@ -9,12 +9,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -44,28 +41,23 @@ public class MigrateDeclarations extends MigrationScriptBase {
         return !(SModuleOperations.isAspect(it, "migration"));
       }
     });
-    {
-      final SearchScope scope = CommandUtil.createScope(models);
-      QueryExecutionContext context = new QueryExecutionContext() {
-        public SearchScope getDefaultSearchScope() {
-          return scope;
-        }
-      };
-      Collection<SNode> components = CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "declarations.structure.OldComponent"), false);
-      CollectionSequence.fromCollection(components).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode oldNode) {
-          SNode newNode = _quotation_createNode_9wc3oy_a0a0a0a1a1a5(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-          ((jetbrains.mps.smodel.SNode) newNode).setId(((jetbrains.mps.smodel.SNode) oldNode).getNodeId());
-          SNodeOperations.replaceWithAnother(oldNode, newNode);
-        }
-      });
-    }
+    Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel m) {
+        return SModelOperations.nodes(m, MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "declarations.structure.OldComponent"));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode oldNode) {
+        SNode newNode = _quotation_createNode_9wc3oy_a0a0a0a1a5(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member")), SPropertyOperations.getString(oldNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        ((jetbrains.mps.smodel.SNode) newNode).setId(((jetbrains.mps.smodel.SNode) oldNode).getNodeId());
+        SNodeOperations.replaceWithAnother(oldNode, newNode);
+      }
+    });
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0);
   }
 
-  private static SNode _quotation_createNode_9wc3oy_a0a0a0a1a1a5(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_9wc3oy_a0a0a0a1a5(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
