@@ -16,7 +16,7 @@
       <root url="jar://$PROJECT_DIR$/lib/microba.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/nanoxml-2.2.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-imaging-1.0-RC.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/swingx-core-1.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/swingx-core-1.6.2-2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4-min.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/picocontainer.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
@@ -34,7 +34,7 @@
       <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole-1.0.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/ini4j-0.5.2-patched.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ini4j-0.5.5-2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/trilead-ssh2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.13.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik-all.jar!/" />
