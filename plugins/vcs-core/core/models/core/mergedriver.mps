@@ -330,9 +330,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -4754,191 +4762,222 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="3clFbS" id="2TzypFyLJlo" role="3clF47">
-        <node concept="3cpWs8" id="2TzypFyLJlp" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlq" role="3cpWs9">
-            <property role="TrG5h" value="diffOptions" />
-            <node concept="3uibUv" id="1nfFUxoh9B4" role="1tU5fm">
-              <ref role="3uigEE" to="c4kj:~SVNDiffOptions" resolve="SVNDiffOptions" />
-            </node>
-            <node concept="10Nm6u" id="2TzypFyLJls" role="33vP2m" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2TzypFyLJlt" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlu" role="3cpWs9">
-            <property role="TrG5h" value="merger" />
-            <node concept="3uibUv" id="1nfFUxoh9B0" role="1tU5fm">
-              <ref role="3uigEE" to="wd2e:~FSMergerBySequence" resolve="FSMergerBySequence" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJlw" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJlx" role="2ShVmc">
-                <ref role="37wK5l" to="wd2e:~FSMergerBySequence.&lt;init&gt;(byte[],byte[],byte[])" resolve="FSMergerBySequence" />
-                <node concept="37vLTw" id="2BHiRxeuvJX" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJ3k" resolve="myConflictStart" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuMC0" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJ3s" resolve="mySeparator" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuXfu" role="37wK5m">
-                  <ref role="3cqZAo" node="2TzypFyLJ3o" resolve="myConflictEnd" />
-                </node>
+        <node concept="1X3_iC" id="56HkYgiQ5L_" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJlp" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlq" role="3cpWs9">
+              <property role="TrG5h" value="diffOptions" />
+              <node concept="3uibUv" id="1nfFUxoh9B4" role="1tU5fm">
+                <ref role="3uigEE" to="c4kj:~SVNDiffOptions" resolve="SVNDiffOptions" />
               </node>
+              <node concept="10Nm6u" id="2TzypFyLJls" role="33vP2m" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2TzypFyLJl_" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlA" role="3cpWs9">
-            <property role="TrG5h" value="baseData" />
-            <node concept="3uibUv" id="25sCZOAyG6$" role="1tU5fm">
-              <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJlC" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJlD" role="2ShVmc">
-                <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
-                <node concept="2OqwBi" id="1nBtCnDCXgf" role="37wK5m">
-                  <node concept="liA8E" id="1nBtCnDCYMc" role="2OqNvi">
-                    <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
+        <node concept="1X3_iC" id="56HkYgiQ5LA" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJlt" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlu" role="3cpWs9">
+              <property role="TrG5h" value="merger" />
+              <node concept="3uibUv" id="1nfFUxoh9B0" role="1tU5fm">
+                <ref role="3uigEE" to="wd2e:~FSMergerBySequence" resolve="FSMergerBySequence" />
+              </node>
+              <node concept="2ShNRf" id="2TzypFyLJlw" role="33vP2m">
+                <node concept="1pGfFk" id="2TzypFyLJlx" role="2ShVmc">
+                  <ref role="37wK5l" to="wd2e:~FSMergerBySequence.&lt;init&gt;(byte[],byte[],byte[])" resolve="FSMergerBySequence" />
+                  <node concept="37vLTw" id="2BHiRxeuvJX" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJ3k" resolve="myConflictStart" />
                   </node>
-                  <node concept="37vLTw" id="2BHiRxgmv1z" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TzypFyLJle" resolve="baseContent" />
+                  <node concept="37vLTw" id="2BHiRxeuMC0" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJ3s" resolve="mySeparator" />
+                  </node>
+                  <node concept="37vLTw" id="2BHiRxeuXfu" role="37wK5m">
+                    <ref role="3cqZAo" node="2TzypFyLJ3o" resolve="myConflictEnd" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2TzypFyLJlF" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlG" role="3cpWs9">
-            <property role="TrG5h" value="localData" />
-            <node concept="3uibUv" id="2TzypFyLJlH" role="1tU5fm">
-              <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJlI" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJlJ" role="2ShVmc">
-                <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
-                <node concept="2OqwBi" id="1nBtCnDCZSA" role="37wK5m">
-                  <node concept="liA8E" id="1nBtCnDD1e0" role="2OqNvi">
-                    <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxgm8w8" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TzypFyLJlh" resolve="localContent" />
-                  </node>
-                </node>
+        <node concept="1X3_iC" id="56HkYgiQ5LB" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJl_" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlA" role="3cpWs9">
+              <property role="TrG5h" value="baseData" />
+              <node concept="3uibUv" id="25sCZOAyG6$" role="1tU5fm">
+                <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2TzypFyLJlL" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlM" role="3cpWs9">
-            <property role="TrG5h" value="latestData" />
-            <node concept="3uibUv" id="2TzypFyLJlN" role="1tU5fm">
-              <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJlO" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJlP" role="2ShVmc">
-                <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
-                <node concept="2OqwBi" id="1nBtCnDD2kH" role="37wK5m">
-                  <node concept="liA8E" id="1nBtCnDD3Ev" role="2OqNvi">
-                    <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxgmKeF" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TzypFyLJlk" resolve="latestContent" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2TzypFyLJlR" role="3cqZAp">
-          <node concept="3cpWsn" id="2TzypFyLJlS" role="3cpWs9">
-            <property role="TrG5h" value="out" />
-            <node concept="3uibUv" id="2TzypFyLJlT" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~ByteArrayOutputStream" resolve="ByteArrayOutputStream" />
-            </node>
-            <node concept="2ShNRf" id="2TzypFyLJlU" role="33vP2m">
-              <node concept="1pGfFk" id="2TzypFyLJlV" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~ByteArrayOutputStream.&lt;init&gt;()" resolve="ByteArrayOutputStream" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="SfApY" id="2TzypFyLJlW" role="3cqZAp">
-          <node concept="3clFbS" id="2TzypFyLJlX" role="SfCbr">
-            <node concept="3cpWs8" id="2TzypFyLJlY" role="3cqZAp">
-              <node concept="3cpWsn" id="2TzypFyLJlZ" role="3cpWs9">
-                <property role="TrG5h" value="mergeResult" />
-                <node concept="10Oyi0" id="2TzypFyLJm0" role="1tU5fm" />
-                <node concept="2OqwBi" id="2TzypFyLJm1" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTAuE" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TzypFyLJlu" resolve="merger" />
-                  </node>
-                  <node concept="liA8E" id="2TzypFyLJm3" role="2OqNvi">
-                    <ref role="37wK5l" to="wd2e:~FSMergerBySequence.merge(de.regnis.q.sequence.line.QSequenceLineRAData,de.regnis.q.sequence.line.QSequenceLineRAData,de.regnis.q.sequence.line.QSequenceLineRAData,org.tmatesoft.svn.core.wc.SVNDiffOptions,java.io.OutputStream,org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle):int" resolve="merge" />
-                    <node concept="37vLTw" id="3GM_nagTt3j" role="37wK5m">
-                      <ref role="3cqZAo" node="2TzypFyLJlA" resolve="baseData" />
+              <node concept="2ShNRf" id="2TzypFyLJlC" role="33vP2m">
+                <node concept="1pGfFk" id="2TzypFyLJlD" role="2ShVmc">
+                  <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
+                  <node concept="2OqwBi" id="1nBtCnDCXgf" role="37wK5m">
+                    <node concept="liA8E" id="1nBtCnDCYMc" role="2OqNvi">
+                      <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTBU5" role="37wK5m">
-                      <ref role="3cqZAo" node="2TzypFyLJlG" resolve="localData" />
+                    <node concept="37vLTw" id="2BHiRxgmv1z" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJle" resolve="baseContent" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagT$7p" role="37wK5m">
-                      <ref role="3cqZAo" node="2TzypFyLJlM" resolve="latestData" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="56HkYgiQ5LC" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJlF" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlG" role="3cpWs9">
+              <property role="TrG5h" value="localData" />
+              <node concept="3uibUv" id="2TzypFyLJlH" role="1tU5fm">
+                <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
+              </node>
+              <node concept="2ShNRf" id="2TzypFyLJlI" role="33vP2m">
+                <node concept="1pGfFk" id="2TzypFyLJlJ" role="2ShVmc">
+                  <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
+                  <node concept="2OqwBi" id="1nBtCnDCZSA" role="37wK5m">
+                    <node concept="liA8E" id="1nBtCnDD1e0" role="2OqNvi">
+                      <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTyZF" role="37wK5m">
-                      <ref role="3cqZAo" node="2TzypFyLJlq" resolve="diffOptions" />
+                    <node concept="37vLTw" id="2BHiRxgm8w8" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJlh" resolve="localContent" />
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTxOL" role="37wK5m">
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="56HkYgiQ5LD" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJlL" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlM" role="3cpWs9">
+              <property role="TrG5h" value="latestData" />
+              <node concept="3uibUv" id="2TzypFyLJlN" role="1tU5fm">
+                <ref role="3uigEE" to="69uv:~QSequenceLineRAData" resolve="QSequenceLineRAData" />
+              </node>
+              <node concept="2ShNRf" id="2TzypFyLJlO" role="33vP2m">
+                <node concept="1pGfFk" id="2TzypFyLJlP" role="2ShVmc">
+                  <ref role="37wK5l" to="69uv:~QSequenceLineRAByteData.&lt;init&gt;(byte[])" resolve="QSequenceLineRAByteData" />
+                  <node concept="2OqwBi" id="1nBtCnDD2kH" role="37wK5m">
+                    <node concept="liA8E" id="1nBtCnDD3Ev" role="2OqNvi">
+                      <ref role="37wK5l" node="1nBtCnD_OYI" resolve="getData" />
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxgmKeF" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJlk" resolve="latestContent" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="56HkYgiQ5LE" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2TzypFyLJlR" role="8Wnug">
+            <node concept="3cpWsn" id="2TzypFyLJlS" role="3cpWs9">
+              <property role="TrG5h" value="out" />
+              <node concept="3uibUv" id="2TzypFyLJlT" role="1tU5fm">
+                <ref role="3uigEE" to="guwi:~ByteArrayOutputStream" resolve="ByteArrayOutputStream" />
+              </node>
+              <node concept="2ShNRf" id="2TzypFyLJlU" role="33vP2m">
+                <node concept="1pGfFk" id="2TzypFyLJlV" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~ByteArrayOutputStream.&lt;init&gt;()" resolve="ByteArrayOutputStream" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="56HkYgiQ5LF" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="SfApY" id="2TzypFyLJlW" role="8Wnug">
+            <node concept="3clFbS" id="2TzypFyLJlX" role="SfCbr">
+              <node concept="3cpWs8" id="2TzypFyLJlY" role="3cqZAp">
+                <node concept="3cpWsn" id="2TzypFyLJlZ" role="3cpWs9">
+                  <property role="TrG5h" value="mergeResult" />
+                  <node concept="10Oyi0" id="2TzypFyLJm0" role="1tU5fm" />
+                  <node concept="2OqwBi" id="2TzypFyLJm1" role="33vP2m">
+                    <node concept="37vLTw" id="3GM_nagTAuE" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2TzypFyLJlu" resolve="merger" />
+                    </node>
+                    <node concept="liA8E" id="2TzypFyLJm3" role="2OqNvi">
+                      <ref role="37wK5l" to="wd2e:~FSMergerBySequence.merge(de.regnis.q.sequence.line.QSequenceLineRAData,de.regnis.q.sequence.line.QSequenceLineRAData,de.regnis.q.sequence.line.QSequenceLineRAData,org.tmatesoft.svn.core.wc.SVNDiffOptions,java.io.OutputStream,org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle):int" resolve="merge" />
+                      <node concept="37vLTw" id="3GM_nagTt3j" role="37wK5m">
+                        <ref role="3cqZAo" node="2TzypFyLJlA" resolve="baseData" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTBU5" role="37wK5m">
+                        <ref role="3cqZAo" node="2TzypFyLJlG" resolve="localData" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagT$7p" role="37wK5m">
+                        <ref role="3cqZAo" node="2TzypFyLJlM" resolve="latestData" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTyZF" role="37wK5m">
+                        <ref role="3cqZAo" node="2TzypFyLJlq" resolve="diffOptions" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTxOL" role="37wK5m">
+                        <ref role="3cqZAo" node="2TzypFyLJlS" resolve="out" />
+                      </node>
+                      <node concept="10M0yZ" id="2TzypFyLJm9" role="37wK5m">
+                        <ref role="3cqZAo" to="wd2e:~SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST" resolve="CHOOSE_MODIFIED_LATEST" />
+                        <ref role="1PxDUh" to="wd2e:~SVNDiffConflictChoiceStyle" resolve="SVNDiffConflictChoiceStyle" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="2TzypFyLJma" role="3cqZAp">
+                <node concept="1Ls8ON" id="2TzypFyLJmb" role="3cqZAk">
+                  <node concept="3K4zz7" id="2TzypFyLJmc" role="1Lso8e">
+                    <node concept="37vLTw" id="2BHiRxeoq9n" role="3K4E3e">
+                      <ref role="3cqZAo" node="2TzypFyLJ3P" resolve="CONFLICTS" />
+                    </node>
+                    <node concept="37vLTw" id="2BHiRxeooZa" role="3K4GZi">
+                      <ref role="3cqZAo" node="2TzypFyLJ3L" resolve="MERGED" />
+                    </node>
+                    <node concept="3clFbC" id="2TzypFyLJmf" role="3K4Cdx">
+                      <node concept="10M0yZ" id="2TzypFyLJmg" role="3uHU7w">
+                        <ref role="3cqZAo" to="wd2e:~FSMergerBySequence.CONFLICTED" resolve="CONFLICTED" />
+                        <ref role="1PxDUh" to="wd2e:~FSMergerBySequence" resolve="FSMergerBySequence" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTv2_" role="3uHU7B">
+                        <ref role="3cqZAo" node="2TzypFyLJlZ" resolve="mergeResult" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="2TzypFyLJmi" role="1Lso8e">
+                    <node concept="37vLTw" id="3GM_nagTyNW" role="2Oq$k0">
                       <ref role="3cqZAo" node="2TzypFyLJlS" resolve="out" />
                     </node>
-                    <node concept="10M0yZ" id="2TzypFyLJm9" role="37wK5m">
-                      <ref role="3cqZAo" to="wd2e:~SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST" resolve="CHOOSE_MODIFIED_LATEST" />
-                      <ref role="1PxDUh" to="wd2e:~SVNDiffConflictChoiceStyle" resolve="SVNDiffConflictChoiceStyle" />
+                    <node concept="liA8E" id="2TzypFyLJmk" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~ByteArrayOutputStream.toByteArray():byte[]" resolve="toByteArray" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="2TzypFyLJma" role="3cqZAp">
-              <node concept="1Ls8ON" id="2TzypFyLJmb" role="3cqZAk">
-                <node concept="3K4zz7" id="2TzypFyLJmc" role="1Lso8e">
-                  <node concept="37vLTw" id="2BHiRxeoq9n" role="3K4E3e">
-                    <ref role="3cqZAo" node="2TzypFyLJ3P" resolve="CONFLICTS" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxeooZa" role="3K4GZi">
-                    <ref role="3cqZAo" node="2TzypFyLJ3L" resolve="MERGED" />
-                  </node>
-                  <node concept="3clFbC" id="2TzypFyLJmf" role="3K4Cdx">
-                    <node concept="10M0yZ" id="2TzypFyLJmg" role="3uHU7w">
-                      <ref role="3cqZAo" to="wd2e:~FSMergerBySequence.CONFLICTED" resolve="CONFLICTED" />
-                      <ref role="1PxDUh" to="wd2e:~FSMergerBySequence" resolve="FSMergerBySequence" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagTv2_" role="3uHU7B">
-                      <ref role="3cqZAo" node="2TzypFyLJlZ" resolve="mergeResult" />
-                    </node>
-                  </node>
+            <node concept="TDmWw" id="2TzypFyLJml" role="TEbGg">
+              <node concept="3cpWsn" id="2TzypFyLJmm" role="TDEfY">
+                <property role="TrG5h" value="e" />
+                <node concept="3uibUv" id="2TzypFyLJmn" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
                 </node>
-                <node concept="2OqwBi" id="2TzypFyLJmi" role="1Lso8e">
-                  <node concept="37vLTw" id="3GM_nagTyNW" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2TzypFyLJlS" resolve="out" />
-                  </node>
-                  <node concept="liA8E" id="2TzypFyLJmk" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~ByteArrayOutputStream.toByteArray():byte[]" resolve="toByteArray" />
-                  </node>
+              </node>
+              <node concept="3clFbS" id="2TzypFyLJmo" role="TDEfX">
+                <node concept="3cpWs6" id="2TzypFyLJmp" role="3cqZAp">
+                  <node concept="10Nm6u" id="2TzypFyLJmq" role="3cqZAk" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="2TzypFyLJml" role="TEbGg">
-            <node concept="3cpWsn" id="2TzypFyLJmm" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="2TzypFyLJmn" role="1tU5fm">
-                <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="2TzypFyLJmo" role="TDEfX">
-              <node concept="3cpWs6" id="2TzypFyLJmp" role="3cqZAp">
-                <node concept="10Nm6u" id="2TzypFyLJmq" role="3cqZAk" />
-              </node>
-            </node>
-          </node>
+        </node>
+        <node concept="3cpWs6" id="56HkYgiQ62i" role="3cqZAp">
+          <node concept="10Nm6u" id="56HkYgiQ62M" role="3cqZAk" />
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RXTY" role="2AJF6D">

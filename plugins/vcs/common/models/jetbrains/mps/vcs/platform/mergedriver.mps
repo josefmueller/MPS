@@ -50,6 +50,7 @@
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="eydd" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.zip(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="eoo2" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -326,9 +327,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -3383,14 +3392,39 @@
               </node>
               <node concept="9aQIb" id="4sODTkdeH66" role="9aQIa">
                 <node concept="3clFbS" id="4sODTkdeH67" role="9aQI4">
-                  <node concept="3clFbF" id="4sODTkdeyEq" role="3cqZAp">
-                    <node concept="37vLTI" id="4sODTkdeyEs" role="3clFbG">
-                      <node concept="2YIFZM" id="4sODTkdeyOH" role="37vLTx">
-                        <ref role="1Pybhc" to="c4kj:~SVNWCUtil" resolve="SVNWCUtil" />
-                        <ref role="37wK5l" to="c4kj:~SVNWCUtil.getDefaultConfigurationDirectory():java.io.File" resolve="getDefaultConfigurationDirectory" />
+                  <node concept="1X3_iC" id="56HkYgiPZz4" role="lGtFl">
+                    <property role="3V$3am" value="statement" />
+                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                    <node concept="3clFbF" id="4sODTkdeyEq" role="8Wnug">
+                      <node concept="37vLTI" id="4sODTkdeyEs" role="3clFbG">
+                        <node concept="2YIFZM" id="4sODTkdeyOH" role="37vLTx">
+                          <ref role="1Pybhc" to="c4kj:~SVNWCUtil" resolve="SVNWCUtil" />
+                          <ref role="37wK5l" to="c4kj:~SVNWCUtil.getDefaultConfigurationDirectory():java.io.File" resolve="getDefaultConfigurationDirectory" />
+                        </node>
+                        <node concept="37vLTw" id="2BHiRxeuoL_" role="37vLTJ">
+                          <ref role="3cqZAo" node="4beN9J2DaXK" resolve="myConfigDir" />
+                        </node>
                       </node>
-                      <node concept="37vLTw" id="2BHiRxeuoL_" role="37vLTJ">
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="56HkYgiPIwL" role="3cqZAp">
+                    <node concept="37vLTI" id="56HkYgiPIwM" role="3clFbG">
+                      <node concept="37vLTw" id="56HkYgiPIwN" role="37vLTJ">
                         <ref role="3cqZAo" node="4beN9J2DaXK" resolve="myConfigDir" />
+                      </node>
+                      <node concept="2OqwBi" id="56HkYgiPIwO" role="37vLTx">
+                        <node concept="2OqwBi" id="56HkYgiPYrs" role="2Oq$k0">
+                          <node concept="10M0yZ" id="56HkYgiPYrr" role="2Oq$k0">
+                            <ref role="1PxDUh" to="ejh2:~SvnUtil" resolve="SvnUtil" />
+                            <ref role="3cqZAo" to="ejh2:~SvnUtil.USER_CONFIGURATION_PATH" resolve="USER_CONFIGURATION_PATH" />
+                          </node>
+                          <node concept="liA8E" id="56HkYgiPYrt" role="2OqNvi">
+                            <ref role="37wK5l" to="zn9m:~AtomicNotNullLazyValue.getValue():java.lang.Object" resolve="getValue" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="56HkYgiPIwQ" role="2OqNvi">
+                          <ref role="37wK5l" to="eoo2:~Path.toFile():java.io.File" resolve="toFile" />
+                        </node>
                       </node>
                     </node>
                   </node>
