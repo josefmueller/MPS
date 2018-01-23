@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -871,9 +871,16 @@ public class SModel implements SModelData, UpdateModeSupport {
       }
     }
 
-    if (updateRefs(myDevKits)) {
-      changed = true;
+    for (int i = 0; i < myDevKits.size(); i++) {
+      SModuleReference ref = myDevKits.get(i);
+      SModule module = ref.resolve(repository);
+      if (module != null) {
+        SModuleReference newRef = module.getModuleReference();
+        myDevKits.set(i, newRef);
+        changed = changed || ModuleReference.differs(ref, newRef);
+      }
     }
+
     return changed;
   }
 
@@ -888,20 +895,6 @@ public class SModel implements SModelData, UpdateModeSupport {
         }
       }
     }
-  }
-
-  private boolean updateRefs(List<SModuleReference> refs) {
-    boolean changed = false;
-    for (int i = 0; i < refs.size(); i++) {
-      SModuleReference ref = refs.get(i);
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-      if (module != null) {
-        SModuleReference newRef = module.getModuleReference();
-        refs.set(i, newRef);
-        changed = changed || ModuleReference.differs(ref, newRef);
-      }
-    }
-    return changed;
   }
 
   public SModel createEmptyCopy() {

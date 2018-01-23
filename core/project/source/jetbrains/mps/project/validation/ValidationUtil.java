@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -249,7 +248,7 @@ public class ValidationUtil {
     }
 
     if (m instanceof DevKit) {
-      validateDevkit((DevKit) m, processor);
+      validateDevkit((DevKit) m, m.getRepository(), processor);
     } else if (m instanceof Language) {
       new LanguageValidator((Language) m, m.getRepository(), processor).validate();
     } else if (m instanceof Generator) {
@@ -261,7 +260,7 @@ public class ValidationUtil {
     }
   }
 
-  private static void validateDevkit(final DevKit dk, Processor<? super ModuleValidationProblem> processor) {
+  private static void validateDevkit(DevKit dk, SRepository repo, Processor<? super ModuleValidationProblem> processor) {
     Throwable loadException = dk.getModuleDescriptor().getLoadException();
     if (loadException != null) {
       if (!processor.process(new ModuleValidationProblem(dk, MessageStatus.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) {
@@ -271,7 +270,7 @@ public class ValidationUtil {
     }
 
     for (SModuleReference extDevkit : dk.getModuleDescriptor().getExtendedDevkits()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) != null) {
+      if (extDevkit.resolve(repo) != null) {
         continue;
       }
       if (!processor.process(new ModuleValidationProblem(dk, MessageStatus.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) {
@@ -279,7 +278,7 @@ public class ValidationUtil {
       }
     }
     for (SModuleReference expLang : dk.getModuleDescriptor().getExportedLanguages()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(expLang) != null) {
+      if (expLang.resolve(repo) != null) {
         continue;
       }
       if (!processor.process(new ModuleValidationProblem(dk, MessageStatus.ERROR, "Can't find exported language: " + expLang.getModuleName()))) {
@@ -287,7 +286,7 @@ public class ValidationUtil {
       }
     }
     for (SModuleReference expSol : dk.getModuleDescriptor().getExportedSolutions()) {
-      if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) {
+      if (expSol.resolve(repo) != null) {
         continue;
       }
       if (!processor.process(new ModuleValidationProblem(dk, MessageStatus.ERROR, "Can't find exported language: " + expSol.getModuleName()))) {

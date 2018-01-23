@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
@@ -293,12 +292,5 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     } finally {
       LOG.info(String.format("Saving of the repository took %.3f s", (System.nanoTime() - beginTime) / 1e9));
     }
-  }
-
-  //-------------------DEPRECATED
-
-  @Deprecated //use ModuleRepositoryFacade instead
-  public SModule getModule(@NotNull SModuleReference ref) {
-    return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
 }

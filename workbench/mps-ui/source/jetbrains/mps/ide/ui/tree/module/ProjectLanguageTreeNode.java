@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.ShortModelNameText;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -112,7 +111,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
     for (SModuleReference mr : getModule().getRuntimeModulesReferences()) {
-      SModule m = ModuleRepositoryFacade.getInstance().getModule(mr);
+      SModule m = mr.resolve(myProject.getRepository());
       if (m == null || m == getModule()) {
         continue;
       }
