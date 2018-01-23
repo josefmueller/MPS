@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -81,16 +81,12 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
 
   private void buildCaches() {
     MapSequence.fromMap(myDescendantsCache).clear();
-    Iterable<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    Iterable<Language> languages = new ModuleRepositoryFacade(myRepostitory).getAllModules(Language.class);
     Iterable<SModel> structures = Sequence.fromIterable(languages).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
         return SModuleOperations.getAspect(it, "structure");
       }
-    }).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return it != null;
-      }
-    });
+    }).where(new NotNullWhereFilter<SModel>());
     Iterable<SNode> concepts = Sequence.fromIterable(structures).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return SModelOperations.roots(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));

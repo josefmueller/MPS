@@ -31,7 +31,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
   protected boolean myIsParentHierarchy;
   protected boolean myOnlyInOneModel;
   protected boolean myShowGeneratorModels;
-  private final SRepository myRepostitory;
+  protected final SRepository myRepostitory;
   private HierarchyTreeNode myTreeNode;
 
   public AbstractHierarchyTree(SRepository repostitory) {

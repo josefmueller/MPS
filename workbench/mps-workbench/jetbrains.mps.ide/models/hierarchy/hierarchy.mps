@@ -409,12 +409,12 @@
         <child id="1197687035757" name="valueType" index="3rHtpV" />
       </concept>
       <concept id="1208542034276" name="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation" flags="nn" index="1yHZxX" />
-      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
         <child id="1197932505799" name="map" index="3ElQJh" />
         <child id="1197932525128" name="key" index="3ElVtu" />
       </concept>
+      <concept id="31378964227347002" name="jetbrains.mps.baseLanguage.collections.structure.SelectNotNullOperation" flags="ng" index="1KnU$U" />
     </language>
   </registry>
   <node concept="312cEu" id="51NkKCgB397">
@@ -9894,9 +9894,13 @@
               </node>
             </node>
             <node concept="2OqwBi" id="4wG2MBHGmLR" role="33vP2m">
-              <node concept="2YIFZM" id="4wG2MBHGmLS" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getInstance():jetbrains.mps.smodel.ModuleRepositoryFacade" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+              <node concept="2ShNRf" id="7MS5MmiF0Gh" role="2Oq$k0">
+                <node concept="1pGfFk" id="7MS5MmiFmKD" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
+                  <node concept="37vLTw" id="7MS5MmiFqMb" role="37wK5m">
+                    <ref role="3cqZAo" node="1ZFc3Q13IiA" resolve="myRepostitory" />
+                  </node>
+                </node>
               </node>
               <node concept="liA8E" id="4wG2MBHGmLT" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getAllModules(java.lang.Class):java.util.Collection" resolve="getAllModules" />
@@ -9937,24 +9941,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="3zZkjj" id="4wG2MBHGH6w" role="2OqNvi">
-                <node concept="1bVj0M" id="4wG2MBHGH6x" role="23t8la">
-                  <node concept="3clFbS" id="4wG2MBHGH6y" role="1bW5cS">
-                    <node concept="3clFbF" id="4wG2MBHGH6z" role="3cqZAp">
-                      <node concept="3y3z36" id="4wG2MBHGH6$" role="3clFbG">
-                        <node concept="10Nm6u" id="4wG2MBHGH6_" role="3uHU7w" />
-                        <node concept="37vLTw" id="4wG2MBHGH6A" role="3uHU7B">
-                          <ref role="3cqZAo" node="4wG2MBHGH6B" resolve="it" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="4wG2MBHGH6B" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="4wG2MBHGH6C" role="1tU5fm" />
-                  </node>
-                </node>
-              </node>
+              <node concept="1KnU$U" id="7MS5MmiFrVF" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -10155,7 +10142,7 @@
     <node concept="312cEg" id="1ZFc3Q13IiA" role="jymVt">
       <property role="TrG5h" value="myRepostitory" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="1ZFc3Q13IiB" role="1B3o_S" />
+      <node concept="3Tmbuc" id="7MS5MmiEX1N" role="1B3o_S" />
       <node concept="3uibUv" id="1ZFc3Q13IiD" role="1tU5fm">
         <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
       </node>
