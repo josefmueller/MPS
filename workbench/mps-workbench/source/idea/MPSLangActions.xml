@@ -603,8 +603,8 @@
       -->
     </group>
 
-    <!--
     <group id="FavoritesViewPopupMenu">
+    <!--
       <reference ref="NewGroup"/>
       <reference ref="AssociateWithFileType"/>
       <separator/>
@@ -638,8 +638,10 @@
       <reference ref="ExternalToolsGroup"/>
       <separator/>
       <reference ref="ProjectViewPopupMenuSettingsGroup"/>
+      -->
     </group>
 
+    <!--
     <group id="ScopeViewPopupMenu">
       <reference ref="ProjectViewPopupMenu"/>
       <separator/>
