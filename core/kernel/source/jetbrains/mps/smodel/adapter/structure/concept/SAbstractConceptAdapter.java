@@ -319,7 +319,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Override
   public String toString() {
-    return myFqName;
+    return getQualifiedName();
   }
 
   public abstract String serialize();

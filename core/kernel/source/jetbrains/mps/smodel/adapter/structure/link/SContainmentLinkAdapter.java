@@ -112,7 +112,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public String toString() {
-    return myName;
+    return getName();
   }
 
   public abstract String serialize();

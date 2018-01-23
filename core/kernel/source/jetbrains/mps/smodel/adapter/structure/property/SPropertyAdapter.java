@@ -58,7 +58,7 @@ public abstract class SPropertyAdapter implements SProperty {
 
   @Override
   public String toString() {
-    return myPropertyName;
+    return getName();
   }
 
   @Override

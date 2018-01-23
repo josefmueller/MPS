@@ -136,7 +136,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public String toString() {
-    return myName;
+    return getName();
   }
 
   public abstract String serialize();

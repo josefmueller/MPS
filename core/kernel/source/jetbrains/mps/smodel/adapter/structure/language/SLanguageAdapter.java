@@ -55,12 +55,6 @@ public abstract class SLanguageAdapter implements SLanguage {
   public abstract SModuleReference getSourceModuleReference();
 
   @Override
-  @NotNull
-  public String getQualifiedName() {
-    return myLanguageFqName;
-  }
-
-  @Override
   public boolean isValid() {
     return getLanguageDescriptor() != null;
   }
@@ -128,7 +122,7 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   @Override
   public String toString() {
-    return myLanguageFqName;
+    return getQualifiedName();
   }
 
   public abstract String serialize();
