@@ -22,7 +22,7 @@ chmod a+x ~/${EXPLODED}/"$BUILD_NAME"/Contents/bin/restarter
 
 mkdir ~/${EXPLODED}/.background
 cp ~/${BG_PIC} ~/${EXPLODED}/.background
-ln -s /Applications ~/${EXPLODED}/" "
+ln -s /Applications ~/${EXPLODED}/"Applications"
 # allocate space for .DS_Store
 dd if=/dev/zero of=~/${EXPLODED}/DSStorePlaceHolder bs=1024 count=512
 
