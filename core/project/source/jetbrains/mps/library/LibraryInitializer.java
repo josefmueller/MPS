@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.RepositoryContributor;
@@ -46,7 +47,7 @@ import java.util.stream.Collectors;
 public final class LibraryInitializer implements CoreComponent, RepositoryReader<LibraryContributor> {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
 
-  private final SRepository myRepository;
+  private final SRepositoryExt myRepository;
   private final ModelAccess myModelAccess;
   private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
   private final Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
@@ -67,7 +68,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     });
   }
 
-  public LibraryInitializer(@NotNull SRepository repository) {
+  public LibraryInitializer(@NotNull SRepositoryExt repository) {
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }

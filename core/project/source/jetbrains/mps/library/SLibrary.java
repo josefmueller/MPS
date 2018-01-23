@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.project.AbstractModule;
@@ -29,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
@@ -49,13 +49,13 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
   @NotNull private final IFile myFile;
-  private final SRepository myRepository;
+  private final SRepositoryExt myRepository;
   private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
   private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<>();
   private ModuleFileTracker myFileTracker;
 
-  public SLibrary(@NotNull SRepository repoToUpdate, LibDescriptor pathDescriptor, boolean hidden) {
+  public SLibrary(@NotNull SRepositoryExt repoToUpdate, LibDescriptor pathDescriptor, boolean hidden) {
     myRepository = repoToUpdate;
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
     myFile = pathDescriptor.getPath();
@@ -99,7 +99,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   void dispose() {
     LOG.debug("Disposing " + this);
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    new ModuleRepositoryFacade(myRepository).unregisterModules(this);
     myFile.removeListener(this);
   }
 
