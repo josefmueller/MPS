@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.vcs.util.MergeStrategy;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -43,7 +43,7 @@ public abstract class ModelChange {
     return getMergeHint() != null;
   }
   @Nullable
-  public SNodeReference getMergeHint() {
+  public MergeStrategy getMergeHint() {
     return null;
   }
   @Override

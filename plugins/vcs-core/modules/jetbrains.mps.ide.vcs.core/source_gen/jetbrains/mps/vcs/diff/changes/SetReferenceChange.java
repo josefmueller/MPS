@@ -13,12 +13,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.vcs.util.MergeStrategy;
+import jetbrains.mps.vcs.mergehints.runtime.VCSAspectUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class SetReferenceChange extends NodeChange {
@@ -80,26 +77,16 @@ public class SetReferenceChange extends NodeChange {
       node.setReference(myRole, reference);
     }
   }
-  private SNodeReference myMergeHint = null;
-  private boolean myMergeHintLoaded = false;
   @Nullable
   @Override
-  public SNodeReference getMergeHint() {
+  public MergeStrategy getMergeHint() {
     // get "nonconflicting" attribute in metamodel  
-    if (!(myMergeHintLoaded)) {
-      myMergeHintLoaded = true;
-      SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId(false));
-      SNode c = SNodeOperations.getConceptDeclaration(n);
-      SNode linkDecl = SNodeOperations.as(myRole.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-      SNode hint = AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
-      if ((hint == null)) {
-        hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
-      }
-      if ((hint != null)) {
-        myMergeHint = new SNodePointer(hint);
-      }
+    SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId(false));
+    MergeStrategy hint = VCSAspectUtil.getDefaultMergeStrategy(myRole);
+    if (hint != null) {
+      return hint;
     }
-    return myMergeHint;
+    return VCSAspectUtil.getDefaultMergeStrategy(SNodeOperations.getConcept(n));
   }
   @Override
   public boolean isNonConflicting() {
@@ -123,19 +110,19 @@ public class SetReferenceChange extends NodeChange {
     }
     String what = "target";
     _FunctionTypes._return_P1_E0<? extends String, ? super SReference> formatRef = null;
-    if (neq_mgdhcs_a0h0s(oldRef.getTargetSModelReference(), newRef.getTargetSModelReference())) {
+    if (neq_mgdhcs_a0h0q(oldRef.getTargetSModelReference(), newRef.getTargetSModelReference())) {
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
           return String.format("[model=%s,\n  id=%s, resolveInfo=%s]", ref.getTargetSModelReference(), ref.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) ref).getResolveInfo());
         }
       };
-    } else if (neq_mgdhcs_a0a7a81(oldRef.getTargetNodeId(), newRef.getTargetNodeId())) {
+    } else if (neq_mgdhcs_a0a7a61(oldRef.getTargetNodeId(), newRef.getTargetNodeId())) {
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
           return String.format("[id=%s, resolveInfo=%s]", ref.getTargetNodeId(), ref.getTargetNodeId());
         }
       };
-    } else if (neq_mgdhcs_a0b7a81(((jetbrains.mps.smodel.SReference) oldRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) newRef).getResolveInfo())) {
+    } else if (neq_mgdhcs_a0b7a61(((jetbrains.mps.smodel.SReference) oldRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) newRef).getResolveInfo())) {
       what = "resolve info";
       formatRef = new _FunctionTypes._return_P1_E0<String, SReference>() {
         public String invoke(SReference ref) {
@@ -155,13 +142,13 @@ public class SetReferenceChange extends NodeChange {
     SNode node = getChangeSet().getOldModel().getNode(getAffectedNodeId(false));
     assert node != null;
     SReference ref = node.getReference(getRoleLink());
-    SModelReference targetModel = check_mgdhcs_a0d0t(ref);
-    if (eq_mgdhcs_a0e0t(getChangeSet().getOldModel().getReference(), targetModel)) {
+    SModelReference targetModel = check_mgdhcs_a0d0r(ref);
+    if (eq_mgdhcs_a0e0r(getChangeSet().getOldModel().getReference(), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }
 
-    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(true), myRole, targetModel, check_mgdhcs_e0a6a91(ref), check_mgdhcs_f0a6a91(((jetbrains.mps.smodel.SReference) ref)));
+    return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(true), myRole, targetModel, check_mgdhcs_e0a6a71(ref), check_mgdhcs_f0a6a71(((jetbrains.mps.smodel.SReference) ref)));
   }
   private static SReference check_mgdhcs_a0i0f(SNode checkedDotOperand, SReferenceLink myRole, SetReferenceChange checkedDotThisExpression) {
     if (null != checkedDotOperand) {
@@ -187,31 +174,31 @@ public class SetReferenceChange extends NodeChange {
     }
     return null;
   }
-  private static boolean neq_mgdhcs_a0h0s(Object a, Object b) {
+  private static boolean neq_mgdhcs_a0h0q(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_mgdhcs_a0a7a81(Object a, Object b) {
+  private static boolean neq_mgdhcs_a0a7a61(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_mgdhcs_a0b7a81(Object a, Object b) {
+  private static boolean neq_mgdhcs_a0b7a61(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SModelReference check_mgdhcs_a0d0t(SReference checkedDotOperand) {
+  private static SModelReference check_mgdhcs_a0d0r(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-  private static boolean eq_mgdhcs_a0e0t(Object a, Object b) {
+  private static boolean eq_mgdhcs_a0e0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodeId check_mgdhcs_e0a6a91(SReference checkedDotOperand) {
+  private static SNodeId check_mgdhcs_e0a6a71(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
-  private static String check_mgdhcs_f0a6a91(jetbrains.mps.smodel.SReference checkedDotOperand) {
+  private static String check_mgdhcs_f0a6a71(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }

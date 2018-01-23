@@ -7,14 +7,11 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcs.util.MergeStrategy;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.vcs.mergehints.runtime.VCSAspectUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -73,26 +70,16 @@ public class NodeGroupChange extends ModelChange {
   public int getResultBegin() {
     return myResultBegin;
   }
-  private SNodeReference myMergeHint = null;
-  private boolean myMergeHintLoaded = false;
   @Nullable
   @Override
-  public SNodeReference getMergeHint() {
+  public MergeStrategy getMergeHint() {
     // get "nonconflicting" attribute in metamodel  
-    if (!(myMergeHintLoaded)) {
-      myMergeHintLoaded = true;
-      SNode n = getParent(false);
-      SNode c = SNodeOperations.getConceptDeclaration(n);
-      SNode linkDecl = SNodeOperations.as(myRole.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
-      SNode hint = AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
-      if ((hint == null)) {
-        hint = AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
-      }
-      if ((hint != null)) {
-        myMergeHint = new SNodePointer(hint);
-      }
+    SNode n = getParent(false);
+    MergeStrategy hint = VCSAspectUtil.getDefaultMergeStrategy(myRole);
+    if (hint != null) {
+      return hint;
     }
-    return myMergeHint;
+    return VCSAspectUtil.getDefaultMergeStrategy(SNodeOperations.getConcept(n));
   }
   private SNode getParent(boolean isNewModel) {
     return ((isNewModel ? getChangeSet().getNewModel() : getChangeSet().getOldModel())).getNode(getParentNodeId(isNewModel));
@@ -188,7 +175,7 @@ public class NodeGroupChange extends ModelChange {
     String oldStuff = (myEnd - myBegin == 1 ? getRole() : NameUtil.formatNumericalString(myEnd - myBegin, getRole()));
     String newStuff = (myResultEnd - myResultBegin == 1 ? getRole() : NameUtil.formatNumericalString(myResultEnd - myResultBegin, getRole()));
     // FIXME get rid of this dirty magic with role names "pluralization". PLEASE!!! 
-    if (eq_yjf6x2_a0a7a82(newStuff, getRole()) && eq_yjf6x2_a0a7a82_0(oldStuff, getRole())) {
+    if (eq_yjf6x2_a0a7a62(newStuff, getRole()) && eq_yjf6x2_a0a7a62_0(oldStuff, getRole())) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
@@ -218,10 +205,10 @@ public class NodeGroupChange extends ModelChange {
   private static String nodeRange(int begin, int end) {
     return (begin + 1 == end ? String.format("node #%d", begin) : String.format("nodes #%d-%d", begin, end - 1));
   }
-  private static boolean eq_yjf6x2_a0a7a82(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a7a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_yjf6x2_a0a7a82_0(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a7a62_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
