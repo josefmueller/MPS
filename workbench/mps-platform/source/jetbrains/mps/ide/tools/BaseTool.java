@@ -278,7 +278,9 @@ public abstract class BaseTool {
     if (toolWindow == null) {
       toolWindow = myWindowManager.registerToolWindow(myId, myCanCloseContent, myAnchor, getProject(), true, mySideTool);
     }
-    toolWindow.setIcon(myIcon);
+    if (myIcon != null) {
+      toolWindow.setIcon(myIcon);
+    }
 
     toolWindow.setToHideOnEmptyContent(true);
     toolWindow.installWatcher(toolWindow.getContentManager());
