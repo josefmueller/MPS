@@ -214,15 +214,8 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
-        <property id="779128492853934523" name="cellId" index="1K8rM7" />
-        <property id="779128492853699361" name="side" index="1Kfyot" />
       </concept>
     </language>
   </registry>
@@ -2486,12 +2479,7 @@
         <node concept="3clFbF" id="2RDssu5UQSz" role="3cqZAp">
           <node concept="37vLTI" id="2RDssu5UQST" role="3clFbG">
             <node concept="2OqwBi" id="2RDssu5UQSF" role="37vLTJ">
-              <node concept="Xjq3P" id="2RDssu5UQS$" role="2Oq$k0">
-                <node concept="1KehLL" id="3tgOha1KWYo" role="lGtFl">
-                  <property role="1K8rM7" value="Constant_xaaxob_a0" />
-                  <property role="1Kfyot" value="right" />
-                </node>
-              </node>
+              <node concept="Xjq3P" id="2RDssu5UQS$" role="2Oq$k0" />
               <node concept="2OwXpG" id="2RDssu5UQSL" role="2OqNvi">
                 <ref role="2Oxat5" node="2RDssu5UQOm" resolve="wall" />
               </node>

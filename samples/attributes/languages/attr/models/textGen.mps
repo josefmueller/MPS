@@ -73,15 +73,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
-        <property id="779128492853935960" name="anchorTag" index="1K8rD$" />
-        <property id="779128492853934523" name="cellId" index="1K8rM7" />
-        <property id="779128492853699361" name="side" index="1Kfyot" />
       </concept>
     </language>
   </registry>
@@ -108,11 +102,6 @@
           <node concept="l8MVK" id="6fYGsMY872T" role="lcghm" />
           <node concept="2BGw6n" id="70l5j7RGcww" role="lcghm" />
           <node concept="3mW3T8" id="70l5j7RGcyO" role="lcghm" />
-          <node concept="1KehLL" id="70l5j7RGcmY" role="lGtFl">
-            <property role="1K8rM7" value="Constant_yuehr3_c0" />
-            <property role="1K8rD$" value="default_RTransform" />
-            <property role="1Kfyot" value="left" />
-          </node>
         </node>
       </node>
     </node>

@@ -117,16 +117,8 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
-        <property id="779128492853935960" name="anchorTag" index="1K8rD$" />
-        <property id="779128492853934523" name="cellId" index="1K8rM7" />
-        <property id="779128492853699361" name="side" index="1Kfyot" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -578,11 +570,6 @@
                     <node concept="1j4vBv" id="mvWKV3Hlnt" role="3uHU7w">
                       <node concept="3wQhme" id="mvWKV3Hlw9" role="1j34ZK">
                         <ref role="3wQlF0" node="mvWKV3HiCE" resolve="e" />
-                      </node>
-                      <node concept="1KehLL" id="mvWKV3Hlnz" role="lGtFl">
-                        <property role="1K8rM7" value="property_value" />
-                        <property role="1K8rD$" value="default_RTransform" />
-                        <property role="1Kfyot" value="right" />
                       </node>
                     </node>
                   </node>
