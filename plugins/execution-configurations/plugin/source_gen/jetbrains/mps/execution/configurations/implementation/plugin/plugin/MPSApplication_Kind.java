@@ -14,10 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
-public class MPS_Kind implements ConfigurationType {
+public class MPSApplication_Kind implements ConfigurationType {
   private static final Icon ICON = MPSIcons.MPS16x16;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-  public MPS_Kind() {
+  public MPSApplication_Kind() {
   }
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
@@ -29,21 +29,21 @@ public class MPS_Kind implements ConfigurationType {
   @NonNls
   @NotNull
   public String getId() {
-    return "MPS";
+    return "MPS Application";
   }
   public Icon getIcon() {
     return ICON;
   }
   public String getConfigurationTypeDescription() {
-    return null;
+    return getDisplayName();
   }
   public String getDisplayName() {
-    return "MPS";
+    return "MPS Application";
   }
   public void addForeignFactory(ConfigurationFactory factory) {
     ListSequence.fromList(myForeignFactories).addElement(factory);
   }
-  public static MPS_Kind getInstance() {
-    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), MPS_Kind.class);
+  public static MPSApplication_Kind getInstance() {
+    return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), MPSApplication_Kind.class);
   }
 }

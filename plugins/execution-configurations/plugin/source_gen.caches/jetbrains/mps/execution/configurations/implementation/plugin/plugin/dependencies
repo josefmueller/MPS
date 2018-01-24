@@ -158,7 +158,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPS_Kind" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSApplication_Kind" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_RunProfileState" file="DeployPlugins_Configuration_RunProfileState.java">
@@ -692,6 +692,22 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSApplication_Kind" file="MPSApplication_Kind.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
+    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration" file="MPSInstance_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
@@ -750,8 +766,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSApplication_Kind" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPS_Kind" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_RunProfileState" file="MPSInstance_Configuration_RunProfileState.java">
@@ -786,22 +802,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPS_Kind" file="MPS_Kind.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
-    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
-    <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_Factory" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Factory" />
-    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask" file="MakeDeployScripts_BeforeTask.java">
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
@@ -1111,7 +1111,7 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Producer" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JavaApplication_Kind" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Producer" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPS_Kind" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSApplication_Kind" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Remote_Kind" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.apache.log4j.Level" />

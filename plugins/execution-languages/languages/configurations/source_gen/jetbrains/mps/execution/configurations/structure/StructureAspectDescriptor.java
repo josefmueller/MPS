@@ -407,6 +407,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.parent(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL);
     b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/2401501559171345994");
+    b.prop("displayName", 0x73ca83ced1d489aaL, "8343626183964133802");
+    b.prop("description", 0x73ca83ced1d489acL, "8343626183964133804");
     b.aggregate("icon", 0x6e8fcf3625c61213L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL).optional(false).ordered(true).multiple(false).origin("7966814097310618131").done();
     b.alias("run configuration kind");
     return b.create();

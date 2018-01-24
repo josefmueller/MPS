@@ -4542,7 +4542,7 @@
     </node>
   </node>
   <node concept="3wDVqV" id="5gyVhZ18biK">
-    <property role="TrG5h" value="MPS" />
+    <property role="TrG5h" value="MPS Application" />
     <property role="3GE5qa" value="mps.newInstance" />
     <node concept="1QGGSu" id="5ixRteZZuPH" role="1bitO_">
       <node concept="10M0yZ" id="5ixRteZZErI" role="3xaMm5">
@@ -4554,7 +4554,7 @@
   <node concept="3wDVqS" id="5gyVhZ18biM">
     <property role="TrG5h" value="MPS Instance" />
     <property role="3GE5qa" value="mps.newInstance" />
-    <ref role="3wDP8j" node="5gyVhZ18biK" resolve="MPS" />
+    <ref role="3wDP8j" node="5gyVhZ18biK" resolve="MPS Application" />
     <node concept="yHkDC" id="q00jVsP9$_" role="yHkDi">
       <property role="TrG5h" value="myMpsSettings" />
       <node concept="yHkIc" id="4sYvxkKRzRf" role="1tU5fm">
@@ -11238,7 +11238,7 @@
   <node concept="3wDVqS" id="1Kl1LtkdZIb">
     <property role="3GE5qa" value="mps.deployPlugins.configuration" />
     <property role="TrG5h" value="Deploy Plugins" />
-    <ref role="3wDP8j" node="5gyVhZ18biK" resolve="MPS" />
+    <ref role="3wDP8j" node="5gyVhZ18biK" resolve="MPS Application" />
     <node concept="yHkHE" id="5b26T8O276q" role="yHkHi">
       <property role="TrG5h" value="getPluginsPath" />
       <node concept="3uibUv" id="5b26T8O276r" role="3clF45">

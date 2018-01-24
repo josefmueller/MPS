@@ -105,6 +105,16 @@
     <property role="34LRSv" value="run configuration kind" />
     <property role="EcuMT" value="2401501559171345994" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7fawWVhP8AE" role="1TKVEl">
+      <property role="IQ2nx" value="8343626183964133802" />
+      <property role="TrG5h" value="displayName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7fawWVhP8AG" role="1TKVEl">
+      <property role="IQ2nx" value="8343626183964133804" />
+      <property role="TrG5h" value="description" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="6UfNNo_Lx8j" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon" />

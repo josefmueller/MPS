@@ -484,7 +484,7 @@
       <unit id="2023531404351503243" at="14,0,48,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_Configuration_Editor" />
     </file>
     <file name="DeployPlugins_Configuration_Factory.java">
-      <node id="2023531404351503243" at="12,61,13,16" concept="16" />
+      <node id="2023531404351503243" at="12,72,13,16" concept="16" />
       <node id="2023531404351503243" at="15,72,16,84" concept="11" />
       <node id="2023531404351503243" at="19,27,20,28" concept="11" />
       <node id="2023531404351503243" at="23,25,24,32" concept="10" />
@@ -495,7 +495,7 @@
       <node id="2023531404351503243" at="24,32,27,5" concept="8" />
       <node id="2023531404351503243" at="18,0,22,0" concept="9" trace="getName#()Ljava/lang/String;" />
       <node id="2023531404351503243" at="22,0,30,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <scope id="2023531404351503243" at="12,61,13,16" />
+      <scope id="2023531404351503243" at="12,72,13,16" />
       <scope id="2023531404351503243" at="15,72,16,84" />
       <scope id="2023531404351503243" at="19,27,20,28" />
       <scope id="2023531404351503243" at="25,23,26,52" />
@@ -1988,7 +1988,7 @@
       <node id="6062668769033909641" at="25,89,26,84" concept="11" />
       <node id="6062668769033909641" at="30,25,31,30" concept="11" />
       <node id="6062668769033909641" at="33,25,34,16" concept="11" />
-      <node id="6062668769033909641" at="36,51,37,16" concept="11" />
+      <node id="6062668769033909641" at="36,51,37,28" concept="11" />
       <node id="6062668769033909641" at="39,34,40,30" concept="11" />
       <node id="6062668769033909641" at="42,63,43,66" concept="5" />
       <node id="6062668769033909641" at="45,52,46,115" concept="11" />
@@ -2003,7 +2003,7 @@
       <scope id="6062668769033909641" at="20,33,20,33" />
       <scope id="6062668769033909641" at="30,25,31,30" />
       <scope id="6062668769033909641" at="33,25,34,16" />
-      <scope id="6062668769033909641" at="36,51,37,16" />
+      <scope id="6062668769033909641" at="36,51,37,28" />
       <scope id="6062668769033909641" at="39,34,40,30" />
       <scope id="6062668769033909641" at="42,63,43,66" />
       <scope id="6062668769033909641" at="45,52,46,115" />
@@ -2282,7 +2282,7 @@
       <node id="6062668769034010588" at="25,89,26,84" concept="11" />
       <node id="6062668769034010588" at="30,25,31,25" concept="11" />
       <node id="6062668769034010588" at="33,25,34,16" concept="11" />
-      <node id="6062668769034010588" at="36,51,37,16" concept="11" />
+      <node id="6062668769034010588" at="36,51,37,28" concept="11" />
       <node id="6062668769034010588" at="39,34,40,25" concept="11" />
       <node id="6062668769034010588" at="42,63,43,66" concept="5" />
       <node id="6062668769034010588" at="45,47,46,110" concept="11" />
@@ -2297,7 +2297,7 @@
       <scope id="6062668769034010588" at="20,28,20,28" />
       <scope id="6062668769034010588" at="30,25,31,25" />
       <scope id="6062668769034010588" at="33,25,34,16" />
-      <scope id="6062668769034010588" at="36,51,37,16" />
+      <scope id="6062668769034010588" at="36,51,37,28" />
       <scope id="6062668769034010588" at="39,34,40,25" />
       <scope id="6062668769034010588" at="42,63,43,66" />
       <scope id="6062668769034010588" at="45,47,46,110" />
@@ -3129,7 +3129,7 @@
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769034024112">
-    <file name="MPS_Kind.java">
+    <file name="MPSApplication_Kind.java">
       <node id="6098399271965289837" at="18,0,19,0" concept="14" trace="ICON" />
       <node id="6062668769034024112" at="19,0,20,0" concept="6" trace="myForeignFactories" />
       <node id="6062668769034024112" at="22,61,23,101" concept="10" />
@@ -3137,27 +3137,27 @@
       <node id="6062668769034024112" at="24,90,25,92" concept="5" />
       <node id="6062668769034024112" at="25,92,26,89" concept="5" />
       <node id="6062668769034024112" at="26,89,27,84" concept="11" />
-      <node id="6062668769034024112" at="31,25,32,17" concept="11" />
+      <node id="6062668769034024112" at="31,25,32,29" concept="11" />
       <node id="6062668769034024112" at="34,25,35,16" concept="11" />
-      <node id="6062668769034024112" at="37,51,38,16" concept="11" />
-      <node id="6062668769034024112" at="40,34,41,17" concept="11" />
+      <node id="6062668769034024112" at="37,51,38,28" concept="11" />
+      <node id="6062668769034024112" at="40,34,41,29" concept="11" />
       <node id="6062668769034024112" at="43,63,44,66" concept="5" />
-      <node id="6062668769034024112" at="46,40,47,103" concept="11" />
-      <node id="6062668769034024112" at="20,0,22,0" concept="3" trace="MPS_Kind#()V" />
+      <node id="6062668769034024112" at="46,51,47,114" concept="11" />
+      <node id="6062668769034024112" at="20,0,22,0" concept="3" trace="MPSApplication_Kind#()V" />
       <node id="6062668769034024112" at="34,0,37,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
       <node id="6062668769034024112" at="37,0,40,0" concept="9" trace="getConfigurationTypeDescription#()Ljava/lang/String;" />
       <node id="6062668769034024112" at="40,0,43,0" concept="9" trace="getDisplayName#()Ljava/lang/String;" />
       <node id="6062668769034024112" at="43,0,46,0" concept="9" trace="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
-      <node id="6062668769034024112" at="46,0,49,0" concept="15" trace="getInstance#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MPS_Kind;" />
+      <node id="6062668769034024112" at="46,0,49,0" concept="15" trace="getInstance#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/MPSApplication_Kind;" />
       <node id="6062668769034024112" at="29,0,34,0" concept="9" trace="getId#()Ljava/lang/String;" />
       <node id="6062668769034024112" at="22,0,29,0" concept="9" trace="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
-      <scope id="6062668769034024112" at="20,21,20,21" />
-      <scope id="6062668769034024112" at="31,25,32,17" />
+      <scope id="6062668769034024112" at="20,32,20,32" />
+      <scope id="6062668769034024112" at="31,25,32,29" />
       <scope id="6062668769034024112" at="34,25,35,16" />
-      <scope id="6062668769034024112" at="37,51,38,16" />
-      <scope id="6062668769034024112" at="40,34,41,17" />
+      <scope id="6062668769034024112" at="37,51,38,28" />
+      <scope id="6062668769034024112" at="40,34,41,29" />
       <scope id="6062668769034024112" at="43,63,44,66" />
-      <scope id="6062668769034024112" at="46,40,47,103" />
+      <scope id="6062668769034024112" at="46,51,47,114" />
       <scope id="6062668769034024112" at="20,0,22,0" />
       <scope id="6062668769034024112" at="34,0,37,0" />
       <scope id="6062668769034024112" at="37,0,40,0" />
@@ -3171,7 +3171,7 @@
       </scope>
       <scope id="6062668769034024112" at="29,0,34,0" />
       <scope id="6062668769034024112" at="22,0,29,0" />
-      <unit id="6062668769034024112" at="17,0,50,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPS_Kind" />
+      <unit id="6062668769034024112" at="17,0,50,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSApplication_Kind" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6062668769034024114">
@@ -3397,7 +3397,7 @@
       <unit id="6062668769034024114" at="14,0,46,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MPSInstance_Configuration_Editor" />
     </file>
     <file name="MPSInstance_Configuration_Factory.java">
-      <node id="6062668769034024114" at="12,59,13,16" concept="16" />
+      <node id="6062668769034024114" at="12,70,13,16" concept="16" />
       <node id="6062668769034024114" at="15,72,16,82" concept="11" />
       <node id="6062668769034024114" at="19,27,20,26" concept="11" />
       <node id="6062668769034024114" at="23,25,24,32" concept="10" />
@@ -3408,7 +3408,7 @@
       <node id="6062668769034024114" at="24,32,27,5" concept="8" />
       <node id="6062668769034024114" at="18,0,22,0" concept="9" trace="getName#()Ljava/lang/String;" />
       <node id="6062668769034024114" at="22,0,30,0" concept="9" trace="getIcon#()Ljavax/swing/Icon;" />
-      <scope id="6062668769034024114" at="12,59,13,16" />
+      <scope id="6062668769034024114" at="12,70,13,16" />
       <scope id="6062668769034024114" at="15,72,16,82" />
       <scope id="6062668769034024114" at="19,27,20,26" />
       <scope id="6062668769034024114" at="25,23,26,52" />
@@ -3932,7 +3932,7 @@
       <node id="6391517972808447555" at="25,89,26,84" concept="11" />
       <node id="6391517972808447555" at="30,25,31,20" concept="11" />
       <node id="6391517972808447555" at="33,25,34,16" concept="11" />
-      <node id="6391517972808447555" at="36,51,37,16" concept="11" />
+      <node id="6391517972808447555" at="36,51,37,28" concept="11" />
       <node id="6391517972808447555" at="39,34,40,20" concept="11" />
       <node id="6391517972808447555" at="42,63,43,66" concept="5" />
       <node id="6391517972808447555" at="45,43,46,106" concept="11" />
@@ -3947,7 +3947,7 @@
       <scope id="6391517972808447555" at="20,24,20,24" />
       <scope id="6391517972808447555" at="30,25,31,20" />
       <scope id="6391517972808447555" at="33,25,34,16" />
-      <scope id="6391517972808447555" at="36,51,37,16" />
+      <scope id="6391517972808447555" at="36,51,37,28" />
       <scope id="6391517972808447555" at="39,34,40,20" />
       <scope id="6391517972808447555" at="42,63,43,66" />
       <scope id="6391517972808447555" at="45,43,46,106" />

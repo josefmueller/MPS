@@ -9,7 +9,7 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 
 public class DeployPlugins_Configuration_Factory extends ConfigurationFactory {
-  public DeployPlugins_Configuration_Factory(MPS_Kind type) {
+  public DeployPlugins_Configuration_Factory(MPSApplication_Kind type) {
     super(type);
   }
   public RunConfiguration createTemplateConfiguration(Project project) {

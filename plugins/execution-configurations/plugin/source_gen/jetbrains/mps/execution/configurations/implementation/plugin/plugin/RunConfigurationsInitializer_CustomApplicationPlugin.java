@@ -36,7 +36,7 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
     {
-      MPS_Kind runConfigurationKind = new MPS_Kind();
+      MPSApplication_Kind runConfigurationKind = new MPSApplication_Kind();
       ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }

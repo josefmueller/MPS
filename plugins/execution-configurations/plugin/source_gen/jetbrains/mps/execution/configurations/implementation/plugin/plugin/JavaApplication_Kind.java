@@ -34,7 +34,7 @@ public class JavaApplication_Kind implements ConfigurationType {
     return ICON;
   }
   public String getConfigurationTypeDescription() {
-    return null;
+    return getDisplayName();
   }
   public String getDisplayName() {
     return "Java Application";

@@ -106,6 +106,7 @@
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
+        <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
@@ -328,6 +329,36 @@
       </node>
       <node concept="3F1sOY" id="6UfNNo_Lx8m" role="3EZMnx">
         <ref role="1NtTu8" to="uhxm:6UfNNo_Lx8j" resolve="icon" />
+      </node>
+      <node concept="3EZMnI" id="7fawWVhP8AQ" role="3EZMnx">
+        <node concept="VPM3Z" id="7fawWVhP8AS" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="7fawWVhP8AU" role="3EZMnx">
+          <property role="3F0ifm" value="Name" />
+        </node>
+        <node concept="3F0ifn" id="7fawWVhP8Cd" role="3EZMnx" />
+        <node concept="3F0A7n" id="7fawWVhP8BS" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <property role="1$x2rV" value="&lt;use id&gt;" />
+          <ref role="1NtTu8" to="uhxm:7fawWVhP8AE" resolve="displayName" />
+        </node>
+        <node concept="2iRfu4" id="7fawWVhP8AV" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="7fawWVhP8Bk" role="3EZMnx">
+        <node concept="VPM3Z" id="7fawWVhP8Bl" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="7fawWVhP8Bm" role="3EZMnx">
+          <property role="3F0ifm" value="Description" />
+        </node>
+        <node concept="3F0ifn" id="7fawWVhP8C4" role="3EZMnx" />
+        <node concept="3F0A7n" id="7fawWVhP8BW" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <property role="1$x2rV" value="&lt;same as display name&gt;" />
+          <ref role="1NtTu8" to="uhxm:7fawWVhP8AG" resolve="description" />
+        </node>
+        <node concept="2iRfu4" id="7fawWVhP8Bo" role="2iSdaV" />
       </node>
     </node>
   </node>
