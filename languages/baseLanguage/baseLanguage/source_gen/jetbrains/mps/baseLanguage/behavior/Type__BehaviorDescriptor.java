@@ -78,7 +78,7 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
       // strip trailing underscores 
       String validIdentifier = NameUtil.toValidIdentifier(s);
       while (validIdentifier.length() > 1 && validIdentifier.endsWith("_")) {
-        validIdentifier = NameUtil.stripQuotes(validIdentifier, "", "___");
+        validIdentifier = NameUtil.stripQuotes(validIdentifier, "", "_");
       }
       ListSequence.fromList(result).addElement(validIdentifier);
     }
