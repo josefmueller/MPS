@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,21 @@
  */
 package jetbrains.mps.project.structure;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesListener;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
@@ -51,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
@@ -71,7 +66,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   private final static SModelId ourDescriptorModelId = new IntegerSModelId(0x0f010101);
 
   private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
-  private final ClassLoaderManager myClassLoaderManager;
+  private final LanguageRegistry myLanguageRegistry;
   private final RootChangeListener myListener = new RootChangeListener();
 
   private class RootChangeListener extends SNodeChangeListenerAdapter {
@@ -118,39 +113,40 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     }
   }
 
-  private final MPSClassesListener myAspectReloadListener = new MPSClassesListenerAdapter() {
+  private final LanguageRegistryListener myAspectReloadListener = new LanguageRegistryListener() {
     @Override
-    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
-      for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-        aspects: for (SModel aspect : LanguageAspectSupport.getAspectModels(l)) {
-          List<SLanguage> mainLanguages = new ArrayList<>(LanguageAspectSupport.getMainLanguages(aspect));
-          mainLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(aspect));
-          for (SModule loadedModule : loadedModules) {
-            if (loadedModule instanceof Language) {
-              if (mainLanguages.contains(MetaAdapterByDeclaration.getLanguage(((Language) loadedModule)))) {
-                SModelReference ref = getSModelReference(l);
-                LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
-                if (languageModelDescriptor != null) {
-                  languageModelDescriptor.updateGenerationLanguages();
-                }
+    public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
+      // no-op
+    }
 
-                break aspects;
-              }
-            }
-          }
-        }
+    @Override
+    public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
+      HashSet<SLanguage> loadedLanguages = new HashSet<>(100);
+      for (LanguageRuntime lr : languages) {
+        loadedLanguages.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace()));
       }
+      // check if any language module we track needs any of the reloaded languages. I don't care about language modules I don't track yet.
+      // Here, I assume that aspect model lists main/auxiliary languages of its aspect as 'used languages' and they are propagated up
+      // to module's used language. If there's a chance to have an aspect model that doesn't manifest its used languages, please let me know.
+      // The fact that I can encounter used languages of descriptor model itself doesn't bother me here, I just care to signal 'need to rebuild' event,
+      // it doesn't hurt if I refresh a bit more than utterly necessary.
+      myModels.forEach((mr, lmd) -> {
+        Set<SLanguage> moduleUsedLanguages = lmd.getModule().getUsedLanguages();
+        if (moduleUsedLanguages.stream().anyMatch(loadedLanguages::contains)) {
+          lmd.updateGenerationLanguages();
+        }
+      });
     }
   };
 
-  public LanguageDescriptorModelProvider(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
-    myClassLoaderManager.addClassesHandler(myAspectReloadListener);
+  public LanguageDescriptorModelProvider(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
+    myLanguageRegistry.addRegistryListener(myAspectReloadListener);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeClassesHandler(myAspectReloadListener);
+    myLanguageRegistry.removeRegistryListener(myAspectReloadListener);
     removeAll();
   }
 
