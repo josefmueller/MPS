@@ -38,7 +38,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.DefaultSourceRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
@@ -47,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.YetUnknownResolver" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.text.TextGeneratorEngine" />
@@ -74,7 +75,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

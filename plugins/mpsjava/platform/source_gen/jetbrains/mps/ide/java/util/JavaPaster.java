@@ -78,6 +78,7 @@ public class JavaPaster {
     JavaParser parser = new JavaParser();
 
     try {
+      // JavaParser.tryResolveUnknowns(nodes) ==> YetUnknownResolver 
       SNode context = null;
       if (FeatureKind.CLASS_CONTENT.equals(featureKind)) {
         context = SNodeOperations.getNodeAncestor(anchor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false);

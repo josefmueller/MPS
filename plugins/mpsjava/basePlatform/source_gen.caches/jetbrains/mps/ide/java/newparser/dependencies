@@ -162,7 +162,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.DirParser" file="DirParser.java">
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -170,9 +169,9 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccess" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.YetUnknownResolver" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -327,7 +326,6 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -339,19 +337,13 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.ASTConverter" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.ASTConverterWithExpressions" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.CommentHelper" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FullASTConverter" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccess" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -360,14 +352,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
-    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ASTNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
@@ -378,12 +365,9 @@
     <classNode dependClassName="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" file="JavaToMpsConverter.java">
     <classNode dependClassName="java.io.IOException" />
@@ -418,6 +402,7 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccessWithoutCommand" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.YetUnknownResolver" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -474,7 +459,42 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.ParseDepth" file="ParseDepth.java" />
+  <dependency className="jetbrains.mps.ide.java.newparser.YetUnknownResolver" file="YetUnknownResolver.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicBoolean" />
+    <classNode dependClassName="java.util.function.Consumer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.IncrementalModelAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
+    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.SubProgressKind" />
+  </dependency>
 </dependenciesRoot>
 

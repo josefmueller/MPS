@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.extapi.model.SModelBase;
-import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.ide.java.newparser.YetUnknownResolver;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Map;
@@ -83,16 +83,17 @@ public class Utils {
 
       final SNode result = SNodeOperations.cast(res.get(0), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       SModelOperations.addRootNode(mdl, result);
-      if (mdl instanceof SModelBase && SNodeOperations.getModel(expected) instanceof SModelBase) {
-        for (SLanguage langref : ((SModelBase) SNodeOperations.getModel(expected)).importedLanguageIds()) {
-          ((SModelBase) mdl).addLanguage(langref);
-        }
-      }
+      new ModelImports(mdl).copyUsedLanguagesFrom(SNodeOperations.getModel(expected));
 
       if (onlyStubs) {
         NodePatcher.removeStatements(expected);
       } else {
-        JavaParser.tryResolveUnknowns(Sequence.<SNode>singleton(result), new EmptyProgressMonitor());
+        YetUnknownResolver yur = new YetUnknownResolver(mdl, Sequence.<SNode>singleton(result));
+        final int MAX_ATTEMPTS = 10;
+        for (int i = 0; i < MAX_ATTEMPTS && yur.collectYetUnresolved(new EmptyProgressMonitor()); i++) {
+          yur.replaceYetUnresolved(new EmptyProgressMonitor());
+          yur.updateWithImportsOfResolved();
+        }
       }
       NodePatcher.fixNonStatic(expected);
       NodePatcher.fixNonStatic(result);

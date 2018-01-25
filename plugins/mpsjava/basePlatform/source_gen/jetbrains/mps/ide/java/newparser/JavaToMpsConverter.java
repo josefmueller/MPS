@@ -37,6 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -271,7 +272,15 @@ public class JavaToMpsConverter {
 
     // this happens on the level of expressions, but relies on top-level references (from class and method 
     // declarations) having been resolved 
-    JavaParser.tryResolveUnknowns(myAttachedRoots, progress.subTask(1), modelAccess);
+    ProgressMonitor resolvePM = progress.subTask(1);
+    resolvePM.start("", ListSequence.fromList(myModels).count());
+    for (SModel m : ListSequence.fromList(myModels)) {
+      // Here used to be a code JavaParser.tryToResolveUnknowns(myAttachedRoots...), which used to take model of a supplied node to update its imports 
+      // Now, with YetUnknownResolver that works on a per-model basis, need to group elements of myAttachedRoots by their model, hence intersect(), below 
+      YetUnknownResolver yur = new YetUnknownResolver(m, ListSequence.fromList(SModelOperations.roots(m, null)).intersect(ListSequence.fromList(myAttachedRoots)));
+      yur.tryResolveUnknowns(resolvePM.subTask(1, SubProgressKind.REPLACING), modelAccess);
+    }
+    resolvePM.done();
 
     resolveUpdatePass("type references", nodes, new _FunctionTypes._return_P1_E0<Iterable<SReference>, SNode>() {
       public Iterable<SReference> invoke(SNode node) {

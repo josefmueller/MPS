@@ -12,10 +12,10 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.io.IOException;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vfs.IFileUtils;
@@ -56,9 +56,13 @@ public class DirParser {
       @Override
       public void run() {
         for (SModel m : ListSequence.fromList(myAffectedModels)) {
-          Iterable<SNode> roots = SModelOperations.roots(m, null);
-          JavaParser.tryResolveUnknowns(roots, new EmptyProgressMonitor(), IncrementalModelAccess.INSIDE_COMMAND_OR_UPDATE_MODE);
-          JavaParser.tryResolveDynamicRefs(roots);
+          YetUnknownResolver yur = new YetUnknownResolver(m);
+          final int MAX_RESOLVES = 10;
+          for (int i = 0; i < MAX_RESOLVES && yur.collectYetUnresolved(new EmptyProgressMonitor()); i++) {
+            yur.replaceYetUnresolved(new EmptyProgressMonitor());
+            yur.updateWithImportsOfResolved();
+          }
+          JavaParser.tryResolveDynamicRefs(SModelOperations.roots(m, null));
         }
       }
     };

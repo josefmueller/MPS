@@ -34,7 +34,9 @@ import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import jetbrains.mps.ide.java.newparser.YetUnknownResolver;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.function.Consumer;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Collection;
@@ -177,11 +179,20 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
         // double check 
         return;
       }
-      SModel mi = getSModelInternal();
+      final SModel mi = getSModelInternal();
       try {
         myIsLoadInProgress = true;
         mi.enterUpdateMode();
-        JavaParser.tryResolveUnknowns(MapSequence.fromMap(myRootsById).values(), new EmptyProgressMonitor());
+        YetUnknownResolver yur = new YetUnknownResolver(this, MapSequence.fromMap(myRootsById).values());
+        final int RESOLVE_ATTEMPTS_LIMIT = 10;
+        for (int i = 0; i < RESOLVE_ATTEMPTS_LIMIT && yur.collectYetUnresolved(new EmptyProgressMonitor()); i++) {
+          yur.replaceYetUnresolved(new EmptyProgressMonitor());
+          yur.withImportsOfResolved(new Consumer<SModelReference>() {
+            public void accept(SModelReference mr) {
+              mi.addModelImport(new SModel.ImportElement(mr));
+            }
+          });
+        }
         setLoadingState(ModelLoadingState.FULLY_LOADED);
         fireModelStateChanged(oldState, ModelLoadingState.FULLY_LOADED);
       } finally {
