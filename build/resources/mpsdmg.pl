@@ -12,7 +12,7 @@ $bg_pic = $ARGV[1];
     &makeEntries(".DS_Store", Iloc_xy => [ 610, 170 ]),
     &makeEntries(".fseventsd", Iloc_xy => [ 660, 170 ]),
     &makeEntries(".Trashes", Iloc_xy => [ 710, 170 ]),
-    &makeEntries("Applications", Iloc_xy => [ 340, 167 ]),
+    &makeEntries("Applications", Iloc_xy => [ 335, 167 ]),
     &makeEntries(".",
         BKGD_alias => NewAliasMinimal("/Volumes/$name/.background/$bg_pic"),
         ICVO => 1,
