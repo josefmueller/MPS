@@ -207,7 +207,7 @@ public class FileProcessor extends ReloadParticipant {
   private static boolean acceptDescendant(String eventPath, FileSystemListener listenerToChildFile, FileProcessor.EventKind kind) {
     IFile childFile = listenerToChildFile.getFileToListen();
     // contract to comment out later 
-    assert childFile.getPath().startsWith(eventPath);
+    assert childFile.getPath().startsWith(eventPath) : "Contract is broken: " + childFile.getPath() + " does not start with " + eventPath;
     if (kind == FileProcessor.EventKind.CREATED && listenerToChildFile.listeningPreferences().notifyOnParentCreation) {
       return true;
     } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToChildFile.listeningPreferences().notifyOnParentChange) {
@@ -221,7 +221,7 @@ public class FileProcessor extends ReloadParticipant {
   private static boolean acceptAncestor(String eventPath, FileSystemListener listenerToParentFile, FileProcessor.EventKind kind) {
     IFile parentFile = listenerToParentFile.getFileToListen();
     // contract to comment out later 
-    assert eventPath.startsWith(parentFile.getPath());
+    assert eventPath.startsWith(parentFile.getPath()) : "Contract is broken: " + eventPath + " does not start with " + parentFile.getPath();
     if (kind == FileProcessor.EventKind.CREATED && listenerToParentFile.listeningPreferences().notifyOnChildCreation) {
       return true;
     } else if (kind == FileProcessor.EventKind.CONTENT_CHANGED && listenerToParentFile.listeningPreferences().notifyOnChildChange) {
