@@ -9,6 +9,9 @@
       <sourceRoot location="svnkit.jar" />
     </modelRoot>
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/plugins/vcs/lib/vcs-core.jar" />
+  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

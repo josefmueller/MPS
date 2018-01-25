@@ -23,7 +23,6 @@
     <dependency reexport="false">fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41(jetbrains.mps.core.tool.environment)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">b0d98700-54f0-4c39-a8e0-bb27733b8b38(jetbrains.mps.ide.vcs)</dependency>
-    <dependency reexport="false">af983f0b-607f-42e4-b8ed-b3db770ea368(jetbrains.mps.ide.vcs.platform.stub)</dependency>
     <dependency reexport="false">85836058-a162-41d7-bb1d-52e99d873f28(jetbrains.mps.ide.vcs.core)</dependency>
     <dependency reexport="false">6fd1293f-7f65-4ffd-99dc-4719eca7c171(jetbrains.mps.ide.vcs.platform)</dependency>
     <dependency reexport="false">8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)</dependency>
