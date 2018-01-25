@@ -39,7 +39,7 @@ import java.util.Set;
  */
 public class SLanguageHierarchy {
   private final static Logger LOG = LogManager.getLogger(SLanguageHierarchy.class);
-  private final static ErrorHandler DEFAULT_HANDLER = language -> LOG.warn("The language is not deployed " + language);
+  private final static ErrorHandler DEFAULT_HANDLER = language -> LOG.warn(String.format("The language '%s' is not deployed", language));
 
   private final LanguageRegistry myRegistry;
   private final Collection<SLanguage> myLanguages;
