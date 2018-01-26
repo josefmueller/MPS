@@ -121,7 +121,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new LanguageScopeFactory(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
-    myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
+    myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.structure.Extension;
+import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 import java.util.ArrayList;
@@ -58,6 +59,16 @@ public class BaseExtensionRegistry {
     myActiveExtensions.clear();
     myInactiveExtensions.clear();
     myExtensionPoints.clear();
+  }
+
+  public void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+    registerExtensions(extensionDescriptor.getExtensions());
+    registerExtensionPoints(extensionDescriptor.getExtensionPoints());
+  }
+
+  public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+    unregisterExtensionPoints(extensionDescriptor.getExtensionPoints());
+    unregisterExtensions(extensionDescriptor.getExtensions());
   }
 
   @SuppressWarnings("unchecked")
@@ -151,12 +162,7 @@ public class BaseExtensionRegistry {
   }
 
   private <T> Collection<Extension<T>> extensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
-    Collection<Extension<T>> extensions = store.get(id);
-    if (extensions == null) {
-      extensions = new ArrayList<Extension<T>>();
-      store.put(id, extensions);
-    }
-    return extensions;
+    return store.computeIfAbsent(id, k -> new ArrayList<>());
   }
 
   private <E> Collection<E> optExtensionsBucket(String id, Map<String, Collection<E>> store) {
