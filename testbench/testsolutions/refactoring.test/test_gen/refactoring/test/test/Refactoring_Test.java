@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
-import jetbrains.mps.lang.core.plugin.UpdateModelImports;
-import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase;
+import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
+import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant;
@@ -35,9 +35,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collection;
-import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.validation.BrokenReferenceError;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -117,9 +117,9 @@ public class Refactoring_Test extends TestCase {
               return scope;
             }
           };
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175149441"))));
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152726"))));
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152794"))));
+          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175149441"))));
+          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152726"))));
+          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152794"))));
         }
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI.SearchResultsChecker(options, ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
@@ -146,17 +146,17 @@ public class Refactoring_Test extends TestCase {
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
 
         Assert.assertTrue(CollectionSequence.fromCollection(getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "behavior"), null))).isEmpty());
-        Collection<ValidationProblem> sourceModelErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "behavior"), null));
-        Assert.assertTrue(CollectionSequence.fromCollection(sourceModelErrors).all(new IWhereFilter<ValidationProblem>() {
-          public boolean accept(ValidationProblem it) {
-            return it instanceof BrokenReferenceError;
+        Collection<ReportItem> sourceModelErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "behavior"), null));
+        Assert.assertTrue(CollectionSequence.fromCollection(sourceModelErrors).all(new IWhereFilter<ReportItem>() {
+          public boolean accept(ReportItem it) {
+            return it instanceof UnresolvedReferenceReportItem;
           }
         }));
         Set<SReference> expectedBrokenReferences = SetSequence.fromSetAndArray(new HashSet<SReference>(), SNodeOperations.getReference(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175194761"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SNodeOperations.getReference(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175194761"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier")), SNodeOperations.getReference(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.collect(SNodeOperations.ofConcept(SLinkOperations.collect(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticInitializers_id2I6sE$IuBP7.invoke(SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175194521"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, 0x11c7538039eL, "statementList")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).first(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
         Assert.assertFalse(SetSequence.fromSet(expectedBrokenReferences).contains(null));
-        Assert.assertTrue(eq_hy6ey0_a0a31a0a0a0a0g(SetSequence.fromSetWithValues(new HashSet<SReference>(), CollectionSequence.fromCollection(sourceModelErrors).ofType(BrokenReferenceError.class).select(new ISelector<BrokenReferenceError, SReference>() {
-          public SReference select(BrokenReferenceError it) {
-            return it.getReference();
+        Assert.assertTrue(eq_hy6ey0_a0a31a0a0a0a0g(SetSequence.fromSetWithValues(new HashSet<SReference>(), CollectionSequence.fromCollection(sourceModelErrors).ofType(UnresolvedReferenceReportItem.class).select(new ISelector<UnresolvedReferenceReportItem, SReference>() {
+          public SReference select(UnresolvedReferenceReportItem it) {
+            return it.getNode().resolve(project.getRepository()).getReference(it.getConceptFeature());
           }
         })), expectedBrokenReferences));
       }
@@ -179,7 +179,7 @@ public class Refactoring_Test extends TestCase {
     });
   }
   public void setUp() {
-    env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withDevkitPlugin());
+    env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     project = (env.openProject(new File(PROJECT_PATH)));
   }
   public void tearDown() {
@@ -187,10 +187,10 @@ public class Refactoring_Test extends TestCase {
   }
 
 
-  public static Collection<ValidationProblem> getErrors(Iterable<SNode> roots) {
-    final List<ValidationProblem> result = ListSequence.fromList(new ArrayList<ValidationProblem>());
-    ValidationUtil.validateModelContent(roots, new Processor<ValidationProblem>() {
-      public boolean process(ValidationProblem problem) {
+  public static Collection<ReportItem> getErrors(Iterable<SNode> roots) {
+    final List<ReportItem> result = ListSequence.fromList(new ArrayList<ReportItem>());
+    ValidationUtil.validateModelContent(roots, new Processor<ReportItem>() {
+      public boolean process(ReportItem problem) {
         ListSequence.fromList(result).addElement(problem);
         return true;
       }

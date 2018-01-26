@@ -204,9 +204,9 @@
       <node id="6227927907962761900" at="111,0,112,85" concept="7" />
       <node id="6227927907962734489" at="113,9,114,219" concept="7" />
       <node id="6227927907962734489" at="116,56,117,27" concept="8" />
-      <node id="7883921615534842870" at="119,12,120,276" concept="2" />
-      <node id="7883921615534842882" at="120,276,121,276" concept="2" />
-      <node id="7883921615534842898" at="121,276,122,276" concept="2" />
+      <node id="7883921615534842870" at="119,12,120,262" concept="2" />
+      <node id="7883921615534842882" at="120,262,121,262" concept="2" />
+      <node id="7883921615534842898" at="121,262,122,262" concept="2" />
       <node id="6227927907962725180" at="123,9,124,0" concept="10" />
       <node id="6227927907963012952" at="126,46,127,38" concept="8" />
       <node id="6227927907963673166" at="130,46,131,38" concept="8" />
@@ -219,11 +219,11 @@
       <node id="8444106438216294818" at="145,0,146,332" concept="2" />
       <node id="7883921615535022050" at="146,332,147,0" concept="10" />
       <node id="7883921615534774408" at="147,0,148,312" concept="2" />
-      <node id="7883921615534783299" at="148,312,149,298" concept="7" />
-      <node id="7883921615533993357" at="151,55,152,54" concept="8" />
+      <node id="7883921615534783299" at="148,312,149,291" concept="7" />
+      <node id="7883921615533993357" at="151,48,152,63" concept="8" />
       <node id="7883921615534317905" at="154,12,155,3188" concept="7" />
       <node id="7883921615534449937" at="155,3188,156,89" concept="2" />
-      <node id="7883921615532150835" at="158,61,159,37" concept="8" />
+      <node id="7883921615532150835" at="158,70,159,102" concept="8" />
       <node id="7883921615535863982" at="167,25,168,228" concept="7" />
       <node id="7883921615535863987" at="168,228,169,203" concept="7" />
       <node id="7883921615535863995" at="169,203,170,78" concept="2" />
@@ -234,11 +234,11 @@
       <node id="7883921615535864030" at="174,332,175,0" concept="10" />
       <node id="7883921615535864031" at="175,0,176,312" concept="2" />
       <node id="7883921615535909475" at="176,312,177,312" concept="2" />
-      <node id="4142316820336873786" at="181,23,182,91" concept="2" />
-      <node id="5167083683070684444" at="182,91,183,56" concept="2" />
+      <node id="4142316820336873786" at="181,23,182,72" concept="2" />
+      <node id="5167083683070684444" at="182,72,183,56" concept="2" />
       <node id="4142316820336882139" at="185,26,186,18" concept="2" />
-      <node id="7883921615531360426" at="190,80,191,101" concept="7" />
-      <node id="7883921615531419228" at="193,57,194,58" concept="2" />
+      <node id="7883921615531360426" at="190,73,191,87" concept="7" />
+      <node id="7883921615531419228" at="193,50,194,58" concept="2" />
       <node id="7883921615531501959" at="194,58,195,20" concept="8" />
       <node id="7883921615531278723" at="197,7,198,18" concept="8" />
       <node id="1646528537536978914" at="201,51,202,53" concept="7" />
@@ -250,18 +250,18 @@
       <node id="6227927907962734489" at="116,0,119,0" concept="6" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="6227927907962998615" at="126,0,129,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6227927907963673164" at="130,0,133,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="7883921615533993355" at="151,0,154,0" concept="6" trace="accept#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
-      <node id="7883921615532134474" at="158,0,161,0" concept="6" trace="select#(Ljetbrains/mps/project/validation/BrokenReferenceError;)Lorg/jetbrains/mps/openapi/model/SReference;" />
+      <node id="7883921615533993355" at="151,0,154,0" concept="6" trace="accept#(Ljetbrains/mps/errors/item/ReportItem;)Z" />
+      <node id="7883921615532134474" at="158,0,161,0" concept="6" trace="select#(Ljetbrains/mps/errors/item/UnresolvedReferenceReportItem;)Lorg/jetbrains/mps/openapi/model/SReference;" />
       <node id="8449002106978639305" at="185,0,188,0" concept="6" trace="tearDown#()V" />
       <node id="1646528537537049092" at="216,7,219,5" concept="5" />
       <node id="7883921615532196873" at="221,0,224,0" concept="12" trace="eq_hy6ey0_a0a31a0a0a0a0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="8449002106978639305" at="181,0,185,0" concept="6" trace="setUp#()V" />
-      <node id="7883921615531239878" at="193,0,197,0" concept="6" trace="process#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
+      <node id="7883921615531239878" at="193,0,197,0" concept="6" trace="process#(Ljetbrains/mps/errors/item/ReportItem;)Z" />
       <node id="6227927907962734489" at="114,219,119,12" concept="7" />
-      <node id="7883921615531747664" at="149,298,154,12" concept="2" />
+      <node id="7883921615531747664" at="149,291,154,12" concept="2" />
       <node id="7883921615532094773" at="156,89,161,40" concept="2" />
       <node id="1646528537536978109" at="206,29,211,13" concept="15" />
-      <node id="2977992321850375923" at="191,101,197,7" concept="2" />
+      <node id="2977992321850375923" at="191,87,197,7" concept="2" />
       <node id="1646528537536977762" at="206,0,214,0" concept="6" trace="run#()V" />
       <node id="6227927907962500674" at="124,0,133,14" concept="2" />
       <node id="2977992321850375086" at="190,0,200,0" concept="12" trace="getErrors#(Ljava/lang/Iterable;)Ljava/util/Collection;" />
@@ -288,8 +288,8 @@
       <scope id="6227927907962734489" at="116,56,117,27" />
       <scope id="6227927907962998616" at="126,46,127,38" />
       <scope id="6227927907963673165" at="130,46,131,38" />
-      <scope id="7883921615533993356" at="151,55,152,54" />
-      <scope id="7883921615532134475" at="158,61,159,37" />
+      <scope id="7883921615533993356" at="151,48,152,63" />
+      <scope id="7883921615532134475" at="158,70,159,102" />
       <scope id="2977992321850118426" at="185,26,186,18" />
       <scope id="1646528537536978110" at="207,17,208,29" />
       <scope id="1646528537536978111" at="209,0,210,25">
@@ -299,7 +299,7 @@
       <scope id="1646528537537049094" at="217,26,218,44" />
       <scope id="7883921615532196873" at="221,71,222,46" />
       <scope id="8449002106978657655" at="181,23,183,56" />
-      <scope id="7883921615531239883" at="193,57,195,20" />
+      <scope id="7883921615531239883" at="193,50,195,20" />
       <scope id="6227927907962734489" at="116,0,119,0" />
       <scope id="6227927907962998615" at="126,0,129,0">
         <var name="it" id="6227927907962998615" />
@@ -323,11 +323,11 @@
         <var name="problem" id="7883921615531239881" />
       </scope>
       <scope id="1646528537536977763" at="206,29,212,0" />
-      <scope id="2977992321850375090" at="190,80,198,18">
+      <scope id="2977992321850375090" at="190,73,198,18">
         <var name="result" id="7883921615531360429" />
       </scope>
       <scope id="1646528537536977762" at="206,0,214,0" />
-      <scope id="6227927907962734489" at="113,9,122,276">
+      <scope id="6227927907962734489" at="113,9,122,262">
         <var name="context" id="6227927907962734489" />
         <var name="scope" id="6227927907962734489" />
       </scope>
@@ -389,7 +389,7 @@
       <unit id="6227927907962998615" at="125,450,129,9" name="refactoring.test.test.Refactoring_Test$3$2" />
       <unit id="6227927907963673164" at="129,111,133,9" name="refactoring.test.test.Refactoring_Test$3$3" />
       <unit id="7883921615533993355" at="150,87,154,9" name="refactoring.test.test.Refactoring_Test$4$1" />
-      <unit id="7883921615532134474" at="157,207,161,9" name="refactoring.test.test.Refactoring_Test$4$2" />
+      <unit id="7883921615532134474" at="157,216,161,9" name="refactoring.test.test.Refactoring_Test$4$2" />
       <unit id="7883921615531239876" at="192,51,197,5" name="refactoring.test.test.Refactoring_Test$6" />
       <unit id="1646528537536977762" at="205,52,214,9" name="refactoring.test.test.Refactoring_Test$7$1" />
       <unit id="7883921615535863980" at="166,19,179,5" name="refactoring.test.test.Refactoring_Test$5" />
