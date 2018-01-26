@@ -128,13 +128,6 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
 
   @Override
   public void dispose() {
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        notifyUnload(myLanguagesById.values());
-        myLanguagesById.clear();
-      }
-    });
     myClassLoaderManager.removeListener(this);
     INSTANCE = null;
   }
@@ -299,7 +292,7 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
   @Deprecated
   @ToRemove(version = 2017.3)
   public Collection<LanguageRuntime> getAvailableLanguages() {
-    myRepository.getModelAccess().checkReadAccess();
+    // there are 2 uses in mbeddr
     try {
       myRuntimeInstanceAccess.readLock().lock();
       // 1. We return a copy of our collection, but the contract ('valid until the end of read action') holds true.
