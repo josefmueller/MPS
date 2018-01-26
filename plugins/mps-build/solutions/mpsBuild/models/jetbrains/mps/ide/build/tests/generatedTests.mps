@@ -186,7 +186,7 @@
           </node>
         </node>
         <node concept="1yeLz9" id="6PDkf12ZHur" role="1TViLv">
-          <property role="TrG5h" value="SourceLanguage#3334961109014792699" />
+          <property role="TrG5h" value="SourceLanguage#1631028407715559067" />
           <property role="3LESm3" value="ab4b39d5-c990-4997-a7ce-6cfe3ea55c85" />
           <property role="2GAjPV" value="false" />
         </node>
@@ -217,7 +217,7 @@
           </node>
         </node>
         <node concept="1yeLz9" id="6PDkf12ZHVK" role="1TViLv">
-          <property role="TrG5h" value="TargetLanguage#4142316820335877312" />
+          <property role="TrG5h" value="TargetLanguage#1631028407715559068" />
           <property role="3LESm3" value="a4813220-8b44-43ee-8c62-4baa22fb0e19" />
           <property role="2GAjPV" value="false" />
         </node>
@@ -1038,22 +1038,16 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6PDkf12JNry" role="3bR37C">
-          <node concept="3bR9La" id="6PDkf12JNrz" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="6PDkf12ZDcC" role="3bR37C">
-          <node concept="3bR9La" id="6PDkf12ZDcD" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="6PDkf12ZI2U" role="3bR37C">
           <node concept="3bR9La" id="6PDkf12ZI2V" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="6PDkf12ZDJ2" resolve="SourceLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3iBi5uuETPN" role="3bR37C">
+          <node concept="3bR9La" id="3iBi5uuETPO" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:5bqL32k0kue" resolve="jetbrains.mps.lang.core.pluginSolution" />
           </node>
         </node>
       </node>
