@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
-import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
@@ -199,24 +198,12 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    * and LR+TMI assume no changes in generator module while these generators are consumed.
    */
   private GeneratorRuntime createRuntime(Generator g) {
-    if (g.generateTemplates()) {
+    if (g.generateTemplates()) { // FIXME remove once we generate activator class for every generator, but don't forget to tolerate missing class
+      // when !g.generateTemplates for compatibility
       Language sourceLanguage = g.getSourceLanguage();
       final String rtClassName = sourceLanguage.getModuleName() + ".Generator";
       try {
-        Class<?> rtClass;
-        try {
-          rtClass = g.getOwnClass(rtClassName);
-        } catch (ClassNotFoundException ex) {
-          // FIXME compatibility with legacy generators that has been generated with Generator class along with Language RT class
-          // under language module. XXX need this unless provide module activator class name in module.xml/module descriptor so that
-          // can tell legacy module from a newer one (newer would have activator for Generator module, while legacy had none)
-          try {
-            rtClass = sourceLanguage.getOwnClass(rtClassName);
-          } catch (ModuleClassNotFoundException e) {
-            // no error here: Generator might be not compiled yet
-            return null;
-          }
-        }
+        Class<?> rtClass = g.getOwnClass(rtClassName);
         if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {
           final Class<? extends GeneratorRuntime> aClass = rtClass.asSubclass(GeneratorRuntime.class);
           final LanguageRuntime sourceLanguageRuntime = getLanguage(sourceLanguage);
@@ -224,9 +211,22 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
             throw new InstantiationException(String.format("Could not find language runtime for %s to attach generator %s to", sourceLanguage.getModuleName(),
                 g.getModuleName()));
           }
-          Constructor<? extends GeneratorRuntime> constructor = null;
-          // First, look up a newer constructor, the one that takes LanguageRegistry and LanguageRuntime
           Constructor<?>[] allConstructors = aClass.getConstructors();
+          // Provisional constructor for TemplateModule, that takes LanguageRegistry, LanguageRuntime and Generator module. @since 2018.1
+          // It's to substitute new TemplateModuleInterpreted from the LanguageRuntime subclass. We need it until all the generators are completely
+          // generated. Meanwhile we have a 'partially' interpreted generators, with TemplateModule/GeneratorRuntime being generated always.
+          for (Constructor<?> cons : allConstructors) {
+            if (cons.getParameterCount() != 3) {
+              continue;
+            }
+            Class<?>[] parameterTypes = cons.getParameterTypes();
+            if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class && parameterTypes[2] == Generator.class) {
+              //noinspection JavaReflectionMemberAccess
+              Constructor<? extends GeneratorRuntime> c = aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class, Generator.class);
+              return c.newInstance(this, sourceLanguageRuntime, g);
+            }
+          }
+          // Constructor for TemplateModule, the one that takes LanguageRegistry and LanguageRuntime. @since 2017.1
           for (Constructor<?> cons : allConstructors) {
             if (cons.getParameterCount() != 2) {
               continue;
@@ -234,29 +234,18 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
             Class<?>[] parameterTypes = cons.getParameterTypes();
             if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class) {
               //noinspection JavaReflectionMemberAccess
-              return aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class).newInstance(this, sourceLanguageRuntime);
+              Constructor<? extends GeneratorRuntime> c = aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class);
+              return c.newInstance(this, sourceLanguageRuntime);
             }
           }
-          for (Constructor<?> cons : allConstructors) {
-            if (cons.getParameterCount() != 1) {
-              continue;
-            }
-            final Class<?> paramType = cons.getParameterTypes()[0];
-            if (paramType == LanguageRuntime.class) {
-              //noinspection JavaReflectionMemberAccess
-              constructor = aClass.getConstructor(LanguageRuntime.class);
-              break;
-            }
-          }
-          if (constructor == null) {
-            LOG.error(String.format("No constructor to accept language runtime found in class %s of generator %s", rtClassName, g.getModuleName()));
-            return null;
-          } else {
-            return constructor.newInstance(sourceLanguageRuntime);
-          }
+          LOG.error(String.format("No proper constructor found in the class %s of generator %s", rtClassName, g.getModuleName()));
+          return null;
+        } else {
+          LOG.error(String.format("Generator runtime class %s from module %s is not an instance of GeneratorRuntime", rtClass.getName(), g.getModuleName()));
+          return null;
         }
       } catch (ClassNotFoundException e) {
-        LOG.error(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
+        LOG.warn(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
       } catch (InstantiationException | IllegalAccessException e) {
         LOG.error(String.format("Failed to instantiate runtime %s of generator %s", rtClassName, g.getModuleName()), e);
       } catch (NoSuchMethodException | InvocationTargetException e) {
