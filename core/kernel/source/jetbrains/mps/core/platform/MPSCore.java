@@ -118,10 +118,14 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(new GlobalScope(myModuleRepository));
     init(new ImmatureReferences(myModuleRepository, myPersistenceFacade));
 
+    // XXX. Sort of hack. There are LanguageRegistry listeners that expect extensions loaded (LDMP accesses LanguageAspectEP).
+    //      Therefore, it's necessary for ExtensionRegistry to get notified by CLM about loaded classes prior to LanguageRegistry,
+    //      so that ER could make extensions available to subsequent listeners of LR notifications.
+    //      Note, as long as CLM supports both legacy and new DeployListener, both ER and LR have to use same mechanism to keep the notification order.
+    myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
     myLanguageRegistry = init(new LanguageRegistry(myModuleRepository, myClassLoaderManager));
     init(new LanguageScopeFactory(myClassLoaderManager));
     init(new ConceptRegistry(myLanguageRegistry));
-    myExtensionRegistry = init(new ExtensionRegistry(myClassLoaderManager));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, myModuleRepository));
     init(new DescriptorModelComponent(myModuleRepository,

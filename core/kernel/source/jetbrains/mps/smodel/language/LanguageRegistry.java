@@ -16,10 +16,10 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -61,7 +62,7 @@ import static java.lang.String.format;
  *
  * evgeny, 3/11/11
  */
-public class LanguageRegistry implements CoreComponent, MPSClassesListener {
+public class LanguageRegistry implements CoreComponent, DeployListener {
   private static final Logger LOG = LogManager.getLogger(LanguageRegistry.class);
 
   private static LanguageRegistry INSTANCE;
@@ -122,7 +123,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-    myClassLoaderManager.addClassesHandler(this);
+    myClassLoaderManager.addListener(this);
   }
 
   @Override
@@ -134,7 +135,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         myLanguagesById.clear();
       }
     });
-    myClassLoaderManager.removeClassesHandler(this);
+    myClassLoaderManager.removeListener(this);
     INSTANCE = null;
   }
 
@@ -189,10 +190,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       // would like to have error + exception here, but there are tests (e.g. ModulesReloadTest) that legitimately expect non-compiled modules
       LOG.warn(String.format("Missing language runtime class for module %s (make failed?); resort to interpreted runtime", l.getModuleName()));
       return new InterpretedLanguageRuntime(l);
-    } catch (InstantiationException e) {
-      LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
-      return null;
-    } catch (IllegalAccessException e) {
+    } catch (InstantiationException | IllegalAccessException e) {
       LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
       return null;
     }
@@ -242,6 +240,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
             }
             Class<?>[] parameterTypes = cons.getParameterTypes();
             if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class) {
+              //noinspection JavaReflectionMemberAccess
               return aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class).newInstance(this, sourceLanguageRuntime);
             }
           }
@@ -250,16 +249,8 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
               continue;
             }
             final Class<?> paramType = cons.getParameterTypes()[0];
-            if (paramType == sourceLanguageRuntime.getClass()) {
-              // Generator classes used to accept instance of Language runtime class as their cons argument.
-              // However, once moved to own module and being generated from distinct descriptor model, the reference become cross-model one,
-              // and given the choice between export labels and base RT class as cons argument, the pick is no-brainer.
-              // FIXME drop this code as we no longer generate Generator rt class as part of language. Just find first cons with single argument
-              // compatible (cast, not ==) with LanguageRuntime.class
-              constructor = aClass.getConstructor(sourceLanguageRuntime.getClass());
-              break;
-            }
             if (paramType == LanguageRuntime.class) {
+              //noinspection JavaReflectionMemberAccess
               constructor = aClass.getConstructor(LanguageRuntime.class);
               break;
             }
@@ -419,9 +410,10 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
 
-  // MPSClassesListener part
+  // ClassLoaderManager/DeployListener part
   @Override
-  public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
+  public void onUnloaded(Set<ReloadableModule> unloadedModules, @NotNull ProgressMonitor monitor) {
+    monitor.start("Generator Runtime", 4);
     for (Generator generator : collectGeneratorModules(unloadedModules)) {
       GeneratorRuntime generatorRuntime = myGeneratorsWithCompiledRuntime.remove(generator.getModuleReference());
       if (generatorRuntime == null) {
@@ -431,7 +423,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();
       srcLangRuntime.unregister(generatorRuntime);
     }
+    monitor.advance(1);
 
+    monitor.step("Language Runtime");
     Set<LanguageRuntime> languagesToUnload = new HashSet<>();
     for (Language language : collectLanguageModules(unloadedModules)) {
       SLanguageId sl = MetaIdByDeclaration.getLanguageId(language);
@@ -441,8 +435,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         languagesToUnload.add(myLanguagesById.get(sl));
       }
     }
+    monitor.advance(1);
 
+    monitor.step("Language Registry Listeners");
     notifyUnload(languagesToUnload);
+    monitor.advance(1);
 
     try {
       myRuntimeInstanceAccess.writeLock().lock();
@@ -453,10 +450,12 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     } finally {
       myRuntimeInstanceAccess.writeLock().unlock();
     }
+    monitor.done();
   }
 
   @Override
-  public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
+  public void onLoaded(Set<ReloadableModule> loadedModules, @NotNull ProgressMonitor monitor) {
+    monitor.start("Language Runtime", 3);
     Set<LanguageRuntime> loadedRuntimes = new LinkedHashSet<>();
     try {
       myRuntimeInstanceAccess.writeLock().lock();
@@ -482,7 +481,9 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     } finally {
       myRuntimeInstanceAccess.writeLock().unlock();
     }
+    monitor.advance(1);
 
+    monitor.step("Generator Runtime");
     for (Generator generator : collectGeneratorModules(loadedModules)) {
       GeneratorRuntime generatorRuntime = createRuntime(generator);
       if (generatorRuntime == null) {
@@ -496,8 +497,12 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       LanguageRuntime srcLangRuntime = generatorRuntime.getSourceLanguage();
       srcLangRuntime.register(generatorRuntime);
     }
+    monitor.advance(1);
 
+    monitor.step("Language Registry Listeners");
     notifyLoad(loadedRuntimes);
+    monitor.advance(1);
+    monitor.done();
   }
 
   private Collection<Language> collectLanguageModules(Set<? extends SModule> modules) {
