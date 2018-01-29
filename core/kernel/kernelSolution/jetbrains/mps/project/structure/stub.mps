@@ -173,6 +173,13 @@
       <concept id="5497648299878491908" name="jetbrains.mps.baseLanguage.structure.BaseVariableReference" flags="nn" index="1M0zk4">
         <reference id="5497648299878491909" name="baseVariableDeclaration" index="1M0zk5" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1271,6 +1278,55 @@
         </node>
         <node concept="1DcWWT" id="3D5F99qcPOg" role="3cqZAp">
           <node concept="3clFbS" id="3D5F99qcPOh" role="2LFqv$">
+            <node concept="3clFbJ" id="5Ok3OgMuU9J" role="3cqZAp">
+              <node concept="3clFbS" id="5Ok3OgMuU9L" role="3clFbx">
+                <node concept="3SKdUt" id="5Ok3OgMuYdL" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMuYdN" role="3SKWNk">
+                    <property role="3SKdUp" value="this is a hacky workaround to deal with lack of dependency kind in node&lt;ModuleDependency&gt;" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5Ok3OgMv0PZ" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMv0Q1" role="3SKWNk">
+                    <property role="3SKdUp" value="The problem is design dependency between generators (in fact, the only dependency of this kind in MPS now)" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5Ok3OgMv0QR" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMv0QT" role="3SKWNk">
+                    <property role="3SKdUp" value="Unless we exclude them here, these dependencies get reflected as 'employed' generators in GenearatorRuntime class" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5Ok3OgMv0RN" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMv0RP" role="3SKWNk">
+                    <property role="3SKdUp" value="and affect generation plans (TemplateModuleInterpreted used to be smart enough not to treat DESIGN deps as 'employed' generators)." />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5Ok3OgMv0SN" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMv0SP" role="3SKWNk">
+                    <property role="3SKdUp" value="As long as DESIGN dependencies are used in generators only, and template for GeneratorRuntime would drop them anyway, I don't see" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5Ok3OgMv0TR" role="3cqZAp">
+                  <node concept="3SKdUq" id="5Ok3OgMv0Uf" role="3SKWNk">
+                    <property role="3SKdUp" value="too much trouble in filtering them out here. It's unlikely anyone expects node&lt;Module&gt; to give 100% honest representaion of an SModule instance, anyway." />
+                  </node>
+                </node>
+                <node concept="3N13vt" id="5Ok3OgMuViD" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="5Ok3OgMuUJw" role="3clFbw">
+                <node concept="Rm8GO" id="5Ok3OgMuVcK" role="3uHU7w">
+                  <ref role="Rm8GQ" to="lui2:~SDependencyScope.DESIGN" resolve="DESIGN" />
+                  <ref role="1Px2BO" to="lui2:~SDependencyScope" resolve="SDependencyScope" />
+                </node>
+                <node concept="2OqwBi" id="5Ok3OgMuUks" role="3uHU7B">
+                  <node concept="37vLTw" id="5Ok3OgMuUey" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3D5F99qcPOj" resolve="mdep" />
+                  </node>
+                  <node concept="liA8E" id="5Ok3OgMuUpY" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SDependency.getScope():org.jetbrains.mps.openapi.module.SDependencyScope" resolve="getScope" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="3D5F99qcPOL" role="3cqZAp">
               <node concept="2OqwBi" id="3D5F99qcPOM" role="3clFbG">
                 <node concept="2OqwBi" id="3D5F99qcPON" role="2Oq$k0">
@@ -1295,16 +1351,16 @@
           </node>
           <node concept="3cpWsn" id="3D5F99qcPOj" role="1Duv9x">
             <property role="TrG5h" value="mdep" />
-            <node concept="3uibUv" id="3D5F99qcPOr" role="1tU5fm">
-              <ref role="3uigEE" to="w0gx:~Dependency" resolve="Dependency" />
+            <node concept="3uibUv" id="5Ok3OgMuSvG" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SDependency" resolve="SDependency" />
             </node>
           </node>
           <node concept="2OqwBi" id="3D5F99qcPOm" role="1DdaDG">
-            <node concept="37vLTw" id="6mz0KzMDtXS" role="2Oq$k0">
-              <ref role="3cqZAo" node="3D5F99qcPI1" resolve="mySource" />
+            <node concept="37vLTw" id="5Ok3OgMuSdG" role="2Oq$k0">
+              <ref role="3cqZAo" node="6mz0KzMD31i" resolve="mySourceModule" />
             </node>
             <node concept="liA8E" id="3D5F99qcPOq" role="2OqNvi">
-              <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getDependencies():java.util.Collection" resolve="getDependencies" />
+              <ref role="37wK5l" to="lui2:~SModule.getDeclaredDependencies():java.lang.Iterable" resolve="getDeclaredDependencies" />
             </node>
           </node>
         </node>
@@ -1652,7 +1708,7 @@
                 <ref role="3cqZAo" node="2n3WChpmwat" resolve="source" />
               </node>
               <node concept="liA8E" id="2n3WChpmwaJ" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~Dependency.isReexport():boolean" resolve="isReexport" />
+                <ref role="37wK5l" to="lui2:~SDependency.isReexport():boolean" resolve="isReexport" />
               </node>
             </node>
           </node>
@@ -1674,7 +1730,7 @@
                   <ref role="3cqZAo" node="2n3WChpmwat" resolve="source" />
                 </node>
                 <node concept="liA8E" id="2n3WChpmwb7" role="2OqNvi">
-                  <ref role="37wK5l" to="w0gx:~Dependency.getModuleRef():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleRef" />
+                  <ref role="37wK5l" to="lui2:~SDependency.getTargetModule():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getTargetModule" />
                 </node>
               </node>
             </node>
@@ -1688,8 +1744,8 @@
       </node>
       <node concept="37vLTG" id="2n3WChpmwat" role="3clF46">
         <property role="TrG5h" value="source" />
-        <node concept="3uibUv" id="2n3WChpmwau" role="1tU5fm">
-          <ref role="3uigEE" to="w0gx:~Dependency" resolve="Dependency" />
+        <node concept="3uibUv" id="5Ok3OgMuSNW" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SDependency" resolve="SDependency" />
         </node>
       </node>
     </node>

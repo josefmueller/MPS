@@ -23,7 +23,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
@@ -138,7 +139,16 @@ public class ProjectStructureBuilder {
     for (ModelRootDescriptor root : mySource.getModelRootDescriptors()) {
       SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x19bfb4173fb52421L, "modelRoots")).add(convert(root));
     }
-    for (Dependency mdep : mySource.getDependencies()) {
+    for (SDependency mdep : mySourceModule.getDeclaredDependencies()) {
+      if (mdep.getScope() == SDependencyScope.DESIGN) {
+        // this is a hacky workaround to deal with lack of dependency kind in node<ModuleDependency> 
+        // The problem is design dependency between generators (in fact, the only dependency of this kind in MPS now) 
+        // Unless we exclude them here, these dependencies get reflected as 'employed' generators in GenearatorRuntime class 
+        // and affect generation plans (TemplateModuleInterpreted used to be smart enough not to treat DESIGN deps as 'employed' generators). 
+        // As long as DESIGN dependencies are used in generators only, and template for GeneratorRuntime would drop them anyway, I don't see 
+        // too much trouble in filtering them out here. It's unlikely anyone expects node<Module> to give 100% honest representaion of an SModule instance, anyway. 
+        continue;
+      }
       SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2cL, "dependencies")).add(convert(mdep));
     }
     for (SLanguage ref : mySourceModule.getUsedLanguages()) {
@@ -167,10 +177,10 @@ public class ProjectStructureBuilder {
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x3be012d639dffb7L, 0x3be012d639dffb8L, "value"), s);
     return result;
   }
-  private SNode convert(Dependency source) {
+  private SNode convert(SDependency source) {
     SNode dep = SModelOperations.createNewNode(myModel, null, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, "jetbrains.mps.lang.project.structure.ModuleDependency"));
     SPropertyOperations.set(dep, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x5869770da61dfe29L, "reexport"), "" + (source.isReexport()));
-    SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef"), convert(source.getModuleRef()));
+    SLinkOperations.setTarget(dep, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, 0x19bfb4173fb5241eL, "moduleRef"), convert(source.getTargetModule()));
     return dep;
   }
 
