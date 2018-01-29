@@ -51,10 +51,10 @@ public class HeadlessRefactoringUI implements RefactoringUI {
     @Override
     public List<RefactoringParticipant.Option> selectParticipants(List<RefactoringParticipant.Option> options) {
       for (RefactoringParticipant.Option option : ListSequence.fromList(getOptions())) {
-        Assert.assertTrue("Option " + option + " is expected but was not shown.", ListSequence.fromList(options).contains(option));
+        Assert.assertTrue("Option " + option.getId() + " is expected but was not shown.", ListSequence.fromList(options).contains(option));
       }
       for (RefactoringParticipant.Option option : ListSequence.fromList(options)) {
-        Assert.assertTrue("Option " + option + " was shown but is not expected.", ListSequence.fromList(getOptions()).contains(option));
+        Assert.assertTrue("Option " + option.getId() + " was shown but is not expected.", ListSequence.fromList(getOptions()).contains(option));
       }
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
     }
