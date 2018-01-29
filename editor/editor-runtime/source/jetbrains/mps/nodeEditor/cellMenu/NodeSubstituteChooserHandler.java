@@ -61,6 +61,7 @@ public class NodeSubstituteChooserHandler {
     myEditorCell = editorCell;
     myEditorComponent = editorComponent;
     mySubstituteInfo = createSubstituteInfoPatternMatchingDecorator(substituteInfo);
+    mySubstituteInfo.invalidateActions();
     myIsSmart = isSmart;
     myPatternEditor = patternEditor;
   }
@@ -79,12 +80,9 @@ public class NodeSubstituteChooserHandler {
     // caret is at the end of line
     boolean atTheEndOfLine = pattern.equals(myPatternEditor.getText());
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
-    mySubstituteInfo.invalidateActions();
 
-    SubstituteInfo substituteInfoWithPatternMatchingFilter =
-        createSubstituteInfoPatternMatchingDecorator(mySubstituteInfo);
     if (originalTextChanged || atTheEndOfLine) {
-      List<SubstituteAction> matchingActions = getMatchingActions(myEditorCell, substituteInfoWithPatternMatchingFilter, myIsSmart, pattern);
+      List<SubstituteAction> matchingActions = getMatchingActions(myEditorCell, mySubstituteInfo, myIsSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
         final SubstituteAction theAction = matchingActions.get(0);
