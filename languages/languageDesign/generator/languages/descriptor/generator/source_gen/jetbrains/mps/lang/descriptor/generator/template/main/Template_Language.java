@@ -21,9 +21,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.impl.reference.RefResolver;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -32,6 +29,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class Template_Language extends TemplateDeclarationBase implements TemplateDeclaration {
@@ -584,378 +582,201 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
         // TODO validate child 
       }
       {
-        Collection<SNode> tlist61 = null;
-        if (QueriesGenerated.ifMacro_Condition_8457928904959071093(new IfMacroContext(context2, ifMacroRef_ko6gu6_b0a0b0r0e0e))) {
-          final SNode tnode62 = environment.createOutputNode(myConcepts[14]);
-          try {
-            SNodeAccessUtil.setProperty(tnode62, myProperties[0], "getGenerators");
-            TemplateContext context28 = context2.subContext();
-            {
-              final SNode tnode63 = environment.createOutputNode(myConcepts[2]);
-              try {
-                tnode63.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode63, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Collection")));
-                TemplateContext context29 = context28.subContext();
-                {
-                  final SNode tnode64 = environment.createOutputNode(myConcepts[2]);
-                  try {
-                    tnode64.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode64, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateModule")));
-                  } finally {
-                  }
-                  tnode63.addChild(myAggregationLinks[13], tnode64);
-                  // TODO validate child 
-                }
-              } finally {
-              }
-              tnode62.addChild(myAggregationLinks[4], tnode63);
-              // TODO validate child 
-            }
-            {
-              final SNode tnode65 = environment.createOutputNode(myConcepts[1]);
-              try {
-              } finally {
-              }
-              tnode62.addChild(myAggregationLinks[0], tnode65);
-              // TODO validate child 
-            }
-            {
-              final SNode tnode66 = environment.createOutputNode(myConcepts[8]);
-              try {
-                TemplateContext context30 = context28.subContext();
-                {
-                  final SNode tnode67 = environment.createOutputNode(myConcepts[9]);
-                  try {
-                    TemplateContext context31 = context30.subContext();
-                    {
-                      Collection<SNode> tlist68 = null;
-                      if (QueriesGenerated.ifMacro_Condition_5554116809065233262(new IfMacroContext(context31, ifMacroRef_ko6gu6_b0a0b0b0b0b0b0e0b0b0r0e0e))) {
-                        final SNode tnode69 = environment.createOutputNode(myConcepts[12]);
-                        try {
-                          tnode69.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode69, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.asCollection(java.lang.Object...):java.util.Collection")));
-                          tnode69.setReference(myAssociationLinks[3], SReference.create(myAssociationLinks[3], tnode69, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-                          TemplateContext context32 = context31.subContext();
-                          {
-                            final List<SNode> tlist70 = new ArrayList<SNode>();
-                            final Iterable<SNode> loopList70 = QueriesGenerated.sourceNodesQuery_5554116809065233223(new SourceSubstituteMacroNodesContext(context32, loopMacroRef_ko6gu6_b0a0a1a3a1a1a1a1a1a1a4a1a1a71a4a4));
-                            for (SNode itnode70 : loopList70) {
-                              if (itnode70 == null) {
-                                continue;
-                              }
-                              TemplateContext context33 = context32.subContext(itnode70);
-                              Collection<SNode> tlist71 = null;
-                              if (QueriesGenerated.ifMacro_Condition_5554116809065233232(new IfMacroContext(context33, ifMacroRef_ko6gu6_b0a0d0c0d0b0b0b0b0b0b0e0b0b0r0e0e))) {
-                                final SNode tnode72 = environment.createOutputNode(myConcepts[24]);
-                                try {
-                                  TemplateContext context34 = context33.subContext();
-                                  {
-                                    final SNode tnode73 = environment.createOutputNode(myConcepts[25]);
-                                    try {
-                                      environment.resolve(new RefResolver(tnode73, myAssociationLinks[2], context34, new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233209"), "Generator") {
-                                        @Override
-                                        public Object resolve() {
-                                          return QueriesGenerated.referenceMacro_GetReferent_5554116809065233210(createQueryContext());
-                                        }
-                                      });
-                                      TemplateContext context35 = context34.subContext();
-                                      {
-                                        final SNode tnode74 = environment.createOutputNode(myConcepts[26]);
-                                        try {
-                                        } finally {
-                                        }
-                                        tnode73.addChild(myAggregationLinks[6], tnode74);
-                                        // TODO validate child 
-                                      }
-                                    } finally {
-                                    }
-                                    tnode72.addChild(myAggregationLinks[17], tnode73);
-                                    // TODO validate child 
-                                  }
-                                } finally {
-                                }
-                                tlist71 = TemplateUtil.singletonList(tnode72);
-                              } else {
-                                final SNode tnode75 = environment.createOutputNode(myConcepts[12]);
-                                try {
-                                  tnode75.setReference(myAssociationLinks[3], SReference.create(myAssociationLinks[3], tnode75, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
-                                  tnode75.setReference(myAssociationLinks[2], SReference.create(myAssociationLinks[2], tnode75, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil.createInterpretedGenerator(jetbrains.mps.smodel.language.LanguageRuntime,java.lang.String):jetbrains.mps.generator.runtime.TemplateModule")));
-                                  TemplateContext context36 = context33.subContext();
-                                  {
-                                    final SNode tnode76 = environment.createOutputNode(myConcepts[26]);
-                                    try {
-                                    } finally {
-                                    }
-                                    tnode75.addChild(myAggregationLinks[6], tnode76);
-                                    // TODO validate child 
-                                  }
-                                  {
-                                    final SNode tnode77 = environment.createOutputNode(myConcepts[13]);
-                                    try {
-                                      SNodeAccessUtil.setProperty(tnode77, myProperties[4], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5554116809065233243(new PropertyMacroContext(context36, null, propertyMacro_ko6gu6_c0a0c0a0b0e0b0a3a2a3a1a1a1a1a1a1a4a1a1a71a4a4))));
-                                    } finally {
-                                    }
-                                    tnode75.addChild(myAggregationLinks[6], tnode77);
-                                    // TODO validate child 
-                                  }
-                                } finally {
-                                }
-                                tlist71 = TemplateUtil.singletonList(tnode75);
-                              }
-                              if (tlist71 != null) {
-                                tlist70.addAll(tlist71);
-                              }
-                            }
-                            for (SNode child78 : TemplateUtil.asNotNull(tlist70)) {
-                              tnode69.addChild(myAggregationLinks[6], child78);
-                            }
-                            // TODO validate child 
-                          }
-                          {
-                            final SNode tnode79 = environment.createOutputNode(myConcepts[2]);
-                            try {
-                              tnode79.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode79, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateModule")));
-                            } finally {
-                            }
-                            tnode69.addChild(myAggregationLinks[18], tnode79);
-                            // TODO validate child 
-                          }
-                        } finally {
-                        }
-                        tlist68 = TemplateUtil.singletonList(tnode69);
-                      } else {
-                        final SNode tnode80 = environment.createOutputNode(myConcepts[27]);
-                        try {
-                        } finally {
-                        }
-                        tlist68 = TemplateUtil.singletonList(tnode80);
-                      }
-                      for (SNode child81 : TemplateUtil.asNotNull(tlist68)) {
-                        tnode67.addChild(myAggregationLinks[8], child81);
-                      }
-                      // TODO validate child 
-                    }
-                  } finally {
-                  }
-                  tnode66.addChild(myAggregationLinks[9], tnode67);
-                  // TODO validate child 
-                }
-              } finally {
-              }
-              tnode62.addChild(myAggregationLinks[10], tnode66);
-              // TODO validate child 
-            }
-            {
-              final SNode tnode82 = environment.createOutputNode(myConcepts[16]);
-              try {
-                tnode82.setReference(myAssociationLinks[4], SReference.create(myAssociationLinks[4], tnode82, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Override")));
-              } finally {
-              }
-              tnode62.addChild(myAggregationLinks[11], tnode82);
-              // TODO validate child 
-            }
-          } finally {
-          }
-          tlist61 = TemplateUtil.singletonList(tnode62);
-        }
-        for (SNode child83 : TemplateUtil.asNotNull(tlist61)) {
-          tnode2.addChild(myAggregationLinks[3], child83);
-        }
-        // TODO validate child 
-      }
-      {
-        final SNode tnode84 = environment.createOutputNode(myConcepts[14]);
+        final SNode tnode61 = environment.createOutputNode(myConcepts[14]);
         try {
-          SNodeAccessUtil.setProperty(tnode84, myProperties[6], "false");
-          SNodeAccessUtil.setProperty(tnode84, myProperties[7], "false");
-          SNodeAccessUtil.setProperty(tnode84, myProperties[5], "false");
-          SNodeAccessUtil.setProperty(tnode84, myProperties[0], "createAspect");
-          TemplateContext context37 = context2.subContext();
+          SNodeAccessUtil.setProperty(tnode61, myProperties[6], "false");
+          SNodeAccessUtil.setProperty(tnode61, myProperties[7], "false");
+          SNodeAccessUtil.setProperty(tnode61, myProperties[5], "false");
+          SNodeAccessUtil.setProperty(tnode61, myProperties[0], "createAspect");
+          TemplateContext context28 = context2.subContext();
           {
-            final SNode tnode85 = environment.createOutputNode(myConcepts[20]);
+            final SNode tnode62 = environment.createOutputNode(myConcepts[20]);
             try {
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[0], tnode85);
+            tnode61.addChild(myAggregationLinks[0], tnode62);
             // TODO validate child 
           }
           {
-            final SNode tnode86 = environment.createOutputNode(myConcepts[28]);
+            final SNode tnode63 = environment.createOutputNode(myConcepts[24]);
             try {
-              environment.nodeCopied(context37, tnode86, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361");
-              SNodeAccessUtil.setProperty(tnode86, myProperties[0], "T");
-              TemplateContext context38 = context37.subContext();
+              environment.nodeCopied(context28, tnode63, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361");
+              SNodeAccessUtil.setProperty(tnode63, myProperties[0], "T");
+              TemplateContext context29 = context28.subContext();
               {
-                final SNode tnode87 = environment.createOutputNode(myConcepts[2]);
+                final SNode tnode64 = environment.createOutputNode(myConcepts[2]);
                 try {
-                  tnode87.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode87, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~ILanguageAspect")));
+                  tnode64.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode64, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~ILanguageAspect")));
                 } finally {
                 }
-                tnode86.addChild(myAggregationLinks[19], tnode87);
+                tnode63.addChild(myAggregationLinks[17], tnode64);
                 // TODO validate child 
               }
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[20], tnode86);
+            tnode61.addChild(myAggregationLinks[18], tnode63);
             // TODO validate child 
           }
           {
-            final SNode tnode88 = environment.createOutputNode(myConcepts[29]);
+            final SNode tnode65 = environment.createOutputNode(myConcepts[25]);
             try {
-              environment.resolveInTemplateLater(tnode88, myAssociationLinks[5], templateNode_ko6gu6_c0a0a1a7a1a81a4a4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context37);
+              environment.resolveInTemplateLater(tnode65, myAssociationLinks[5], templateNode_ko6gu6_c0a0a1a7a1a71a4a4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context28);
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[4], tnode88);
+            tnode61.addChild(myAggregationLinks[4], tnode65);
             // TODO validate child 
           }
           {
-            final SNode tnode89 = environment.createOutputNode(myConcepts[21]);
+            final SNode tnode66 = environment.createOutputNode(myConcepts[21]);
             try {
-              SNodeAccessUtil.setProperty(tnode89, myProperties[0], "aspectClass");
-              TemplateContext context39 = context37.subContext();
+              SNodeAccessUtil.setProperty(tnode66, myProperties[0], "aspectClass");
+              TemplateContext context30 = context28.subContext();
               {
-                final SNode tnode90 = environment.createOutputNode(myConcepts[2]);
+                final SNode tnode67 = environment.createOutputNode(myConcepts[2]);
                 try {
-                  tnode90.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode90, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Class")));
-                  TemplateContext context40 = context39.subContext();
+                  tnode67.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode67, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Class")));
+                  TemplateContext context31 = context30.subContext();
                   {
-                    final SNode tnode91 = environment.createOutputNode(myConcepts[29]);
+                    final SNode tnode68 = environment.createOutputNode(myConcepts[25]);
                     try {
-                      environment.resolveInTemplateLater(tnode91, myAssociationLinks[5], templateNode_ko6gu6_c0a0a1a2a1a2a1a8a1a81a4a4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context40);
+                      environment.resolveInTemplateLater(tnode68, myAssociationLinks[5], templateNode_ko6gu6_c0a0a1a2a1a2a1a8a1a71a4a4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132722361", "T", context31);
                     } finally {
                     }
-                    tnode90.addChild(myAggregationLinks[13], tnode91);
+                    tnode67.addChild(myAggregationLinks[13], tnode68);
                     // TODO validate child 
                   }
                 } finally {
                 }
-                tnode89.addChild(myAggregationLinks[2], tnode90);
+                tnode66.addChild(myAggregationLinks[2], tnode67);
                 // TODO validate child 
               }
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[14], tnode89);
+            tnode61.addChild(myAggregationLinks[14], tnode66);
             // TODO validate child 
           }
           {
-            final SNode tnode92 = environment.createOutputNode(myConcepts[8]);
+            final SNode tnode69 = environment.createOutputNode(myConcepts[8]);
             try {
-              TemplateContext context41 = context37.subContext();
+              TemplateContext context32 = context28.subContext();
               {
-                Collection<SNode> tlist93 = null;
-                TemplateContext context42 = context41.subContext("aspectLoop");
-                final SNode tnode94 = environment.createOutputNode(myConcepts[30]);
+                Collection<SNode> tlist70 = null;
+                TemplateContext context33 = context32.subContext("aspectLoop");
+                final SNode tnode71 = environment.createOutputNode(myConcepts[26]);
                 try {
-                  TemplateContext context43 = context42.subContext();
+                  TemplateContext context34 = context33.subContext();
                   {
-                    final SNode tnode95 = environment.createOutputNode(myConcepts[8]);
+                    final SNode tnode72 = environment.createOutputNode(myConcepts[8]);
                     try {
-                      TemplateContext context44 = context43.subContext();
+                      TemplateContext context35 = context34.subContext();
                       {
-                        final List<SNode> tlist96 = new ArrayList<SNode>();
-                        final Iterable<SNode> loopList96 = QueriesGenerated.sourceNodesQuery_2030416617761783826(new SourceSubstituteMacroNodesContext(context44, loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a81a4a4));
-                        for (SNode itnode96 : loopList96) {
-                          if (itnode96 == null) {
+                        final List<SNode> tlist73 = new ArrayList<SNode>();
+                        final Iterable<SNode> loopList73 = QueriesGenerated.sourceNodesQuery_2030416617761783826(new SourceSubstituteMacroNodesContext(context35, loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a71a4a4));
+                        for (SNode itnode73 : loopList73) {
+                          if (itnode73 == null) {
                             continue;
                           }
-                          TemplateContext context45 = context44.subContext(itnode96);
-                          Collection<SNode> tlist97 = null;
-                          final Object varValue97 = QueriesGenerated.insertMacro_varValue_2030416617761783846(new TemplateVarContext(context45, varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a81a4a4));
-                          TemplateContext context46 = context45.withVariable("var:model", varValue97);
-                          Collection<SNode> tlist98 = null;
+                          TemplateContext context36 = context35.subContext(itnode73);
+                          Collection<SNode> tlist74 = null;
+                          final Object varValue74 = QueriesGenerated.insertMacro_varValue_2030416617761783846(new TemplateVarContext(context36, varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a71a4a4));
+                          TemplateContext context37 = context36.withVariable("var:model", varValue74);
+                          Collection<SNode> tlist75 = null;
                           try {
-                            TemplateContext switchContext98;
+                            TemplateContext switchContext75;
                             {
-                              final Map<String, Object> args98 = new HashMap<String, Object>();
-                              args98.put("model", ((SModel) context46.getVariable("var:model")));
-                              switchContext98 = context46.subContext(args98);
-                              switchContext98 = switchContext98.subContext(null, context46.getInput());
+                              final Map<String, Object> args75 = new HashMap<String, Object>();
+                              args75.put("model", ((SModel) context37.getVariable("var:model")));
+                              switchContext75 = context37.subContext(args75);
+                              switchContext75 = switchContext75.subContext(null, context37.getInput());
                             }
-                            tlist98 = environment.trySwitch(templateSwitchNodeNoInput_ko6gu6_a0a0c0g0c0b0b0b0d0b0b0j0b0s0e0e, switchContext98);
-                            if (tlist98 == null) {
-                              final SNode tnode99 = environment.createOutputNode(myConcepts[31]);
+                            tlist75 = environment.trySwitch(templateSwitchNodeNoInput_ko6gu6_a0a0c0g0c0b0b0b0d0b0b0j0b0r0e0e, switchContext75);
+                            if (tlist75 == null) {
+                              final SNode tnode76 = environment.createOutputNode(myConcepts[27]);
                               try {
-                                TemplateContext context47 = context46.subContext();
+                                TemplateContext context38 = context37.subContext();
                                 {
-                                  final SNode tnode100 = environment.createOutputNode(myConcepts[8]);
+                                  final SNode tnode77 = environment.createOutputNode(myConcepts[8]);
                                   try {
                                   } finally {
                                   }
-                                  tnode99.addChild(myAggregationLinks[21], tnode100);
+                                  tnode76.addChild(myAggregationLinks[19], tnode77);
                                   // TODO validate child 
                                 }
                                 {
-                                  final SNode tnode101 = environment.createOutputNode(myConcepts[32]);
+                                  final SNode tnode78 = environment.createOutputNode(myConcepts[28]);
                                   try {
-                                    SNodeAccessUtil.setProperty(tnode101, myProperties[11], "true");
+                                    SNodeAccessUtil.setProperty(tnode78, myProperties[11], "true");
                                   } finally {
                                   }
-                                  tnode99.addChild(myAggregationLinks[22], tnode101);
+                                  tnode76.addChild(myAggregationLinks[20], tnode78);
                                   // TODO validate child 
                                 }
                               } finally {
                               }
-                              if (tnode99 != null) {
-                                tlist98 = TemplateUtil.singletonList(tnode99);
+                              if (tnode76 != null) {
+                                tlist75 = TemplateUtil.singletonList(tnode76);
                               }
                             }
                           } finally {
                           }
-                          tlist97 = tlist98;
-                          if (tlist97 != null) {
-                            tlist96.addAll(tlist97);
+                          tlist74 = tlist75;
+                          if (tlist74 != null) {
+                            tlist73.addAll(tlist74);
                           }
                         }
-                        for (SNode child102 : TemplateUtil.asNotNull(tlist96)) {
-                          tnode95.addChild(myAggregationLinks[9], child102);
+                        for (SNode child79 : TemplateUtil.asNotNull(tlist73)) {
+                          tnode72.addChild(myAggregationLinks[9], child79);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
-                    tnode94.addChild(myAggregationLinks[23], tnode95);
+                    tnode71.addChild(myAggregationLinks[21], tnode72);
                     // TODO validate child 
                   }
                 } finally {
                 }
-                tlist93 = TemplateUtil.singletonList(tnode94);
-                environment.registerLabel(context41.getInput(), tnode94, "aspectLoop");
-                for (SNode child103 : TemplateUtil.asNotNull(tlist93)) {
-                  tnode92.addChild(myAggregationLinks[9], child103);
+                tlist70 = TemplateUtil.singletonList(tnode71);
+                environment.registerLabel(context32.getInput(), tnode71, "aspectLoop");
+                for (SNode child80 : TemplateUtil.asNotNull(tlist70)) {
+                  tnode69.addChild(myAggregationLinks[9], child80);
                 }
                 // TODO validate child 
               }
               {
-                final SNode tnode104 = environment.createOutputNode(myConcepts[19]);
+                final SNode tnode81 = environment.createOutputNode(myConcepts[19]);
                 try {
-                  TemplateContext context48 = context41.subContext();
+                  TemplateContext context39 = context32.subContext();
                   {
-                    final SNode tnode105 = environment.createOutputNode(myConcepts[27]);
+                    final SNode tnode82 = environment.createOutputNode(myConcepts[29]);
                     try {
                     } finally {
                     }
-                    tnode104.addChild(myAggregationLinks[12], tnode105);
+                    tnode81.addChild(myAggregationLinks[12], tnode82);
                     // TODO validate child 
                   }
                 } finally {
                 }
-                tnode92.addChild(myAggregationLinks[9], tnode104);
+                tnode69.addChild(myAggregationLinks[9], tnode81);
                 // TODO validate child 
               }
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[10], tnode92);
+            tnode61.addChild(myAggregationLinks[10], tnode69);
             // TODO validate child 
           }
           {
-            final SNode tnode106 = environment.createOutputNode(myConcepts[16]);
+            final SNode tnode83 = environment.createOutputNode(myConcepts[16]);
             try {
-              tnode106.setReference(myAssociationLinks[4], SReference.create(myAssociationLinks[4], tnode106, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode83.setReference(myAssociationLinks[4], SReference.create(myAssociationLinks[4], tnode83, PersistenceFacade.getInstance().createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
-            tnode84.addChild(myAggregationLinks[11], tnode106);
+            tnode61.addChild(myAggregationLinks[11], tnode83);
             // TODO validate child 
           }
         } finally {
         }
-        tnode2.addChild(myAggregationLinks[3], tnode84);
+        tnode2.addChild(myAggregationLinks[3], tnode61);
         // TODO validate child 
       }
     } finally {
@@ -966,7 +787,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
 
   @Override
   protected SConcept[] initConcepts() {
-    SConcept[] rv = new SConcept[33];
+    SConcept[] rv = new SConcept[30];
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept");
     rv[1] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10af9581ff1L, "PublicVisibility");
     rv[2] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType");
@@ -991,15 +812,12 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
     rv[21] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c77f1e94L, "ParameterDeclaration");
     rv[22] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x116b46a08c4L, "DotExpression");
     rv[23] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x118154a6332L, "InstanceMethodCallOperation");
-    rv[24] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10ab8473cc5L, "GenericNewExpression");
-    rv[25] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x11a59b0fbceL, "ClassCreator");
-    rv[26] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d4da00cL, "ThisExpression");
-    rv[27] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940cd6167L, "NullLiteral");
-    rv[28] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x1024639ed74L, "TypeVariableDeclaration");
-    rv[29] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x102467229d8L, "TypeVariableReference");
-    rv[30] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc092b6b77L, "BlockStatement");
-    rv[31] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement");
-    rv[32] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b201L, "BooleanConstant");
+    rv[24] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x1024639ed74L, "TypeVariableDeclaration");
+    rv[25] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x102467229d8L, "TypeVariableReference");
+    rv[26] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc092b6b77L, "BlockStatement");
+    rv[27] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b217L, "IfStatement");
+    rv[28] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b201L, "BooleanConstant");
+    rv[29] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940cd6167L, "NullLiteral");
     return rv;
   }
   @Override
@@ -1032,7 +850,7 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[24];
+    SContainmentLink[] rv = new SContainmentLink[22];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass");
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type");
@@ -1050,13 +868,11 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
     rv[14] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter");
     rv[15] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand");
     rv[16] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
-    rv[17] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator");
-    rv[18] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument");
-    rv[19] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound");
-    rv[20] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration");
-    rv[21] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue");
-    rv[22] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition");
-    rv[23] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements");
+    rv[17] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound");
+    rv[18] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration");
+    rv[19] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue");
+    rv[20] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition");
+    rv[21] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements");
     return rv;
   }
   private static SNodePointer template_ko6gu6_a0a3 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "9020561928507177266");
@@ -1070,14 +886,9 @@ public class Template_Language extends TemplateDeclarationBase implements Templa
   private static SNodePointer templateNode_ko6gu6_c0a0a1a1a1a1a3a2a1a1a8a1a51a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2800414547479235249");
   private static SNodePointer propertyMacro_ko6gu6_c0a0c0a0b0d0b0d0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2800414547479297312");
   private static SNodePointer propertyMacro_ko6gu6_c0a0c0a0b0e0b0c0b0c0b0b0d0c0b0b0i0b0p0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2800414547479294229");
-  private static SNodePointer loopMacroRef_ko6gu6_b0a0a1a3a1a1a1a1a1a1a4a1a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233222");
-  private static SNodePointer ifMacroRef_ko6gu6_b0a0d0c0d0b0b0b0b0b0b0e0b0b0r0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233231");
-  private static SNodePointer propertyMacro_ko6gu6_c0a0c0a0b0e0b0a3a2a3a1a1a1a1a1a1a4a1a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233242");
-  private static SNodePointer ifMacroRef_ko6gu6_b0a0b0b0b0b0b0e0b0b0r0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "5554116809065233261");
-  private static SNodePointer ifMacroRef_ko6gu6_b0a0b0r0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8457928904959071091");
-  private static SNodePointer templateNode_ko6gu6_c0a0a1a7a1a81a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "931939946132740133");
-  private static SNodePointer templateNode_ko6gu6_c0a0a1a2a1a2a1a8a1a81a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "931939946132745292");
-  private static SNodePointer loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a81a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783825");
-  private static SNodePointer varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a81a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783845");
-  private static SNodePointer templateSwitchNodeNoInput_ko6gu6_a0a0c0g0c0b0b0b0d0b0b0j0b0s0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761786951");
+  private static SNodePointer templateNode_ko6gu6_c0a0a1a7a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "931939946132740133");
+  private static SNodePointer templateNode_ko6gu6_c0a0a1a2a1a2a1a8a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "931939946132745292");
+  private static SNodePointer loopMacroRef_ko6gu6_b0a0a1a1a1a1a3a1a1a9a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783825");
+  private static SNodePointer varMacroRef_ko6gu6_b0a0a3a2a1a1a1a3a1a1a9a1a71a4a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761783845");
+  private static SNodePointer templateSwitchNodeNoInput_ko6gu6_a0a0c0g0c0b0b0b0d0b0b0j0b0r0e0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "2030416617761786951");
 }
