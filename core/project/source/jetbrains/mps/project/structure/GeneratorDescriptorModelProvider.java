@@ -135,8 +135,8 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
 
     @Override
     public boolean isGeneratable() {
-      return !myModule.isReadOnly() && myModule.generateTemplates(); // FIXME WORK IN PROGRESS, remove once templates are ready.
-//      return !myModule.isReadOnly();
+//      return !myModule.isReadOnly() && myModule.generateTemplates(); // FIXME WORK IN PROGRESS, remove once templates are ready.
+      return !myModule.isReadOnly();
     }
 
     @Override
