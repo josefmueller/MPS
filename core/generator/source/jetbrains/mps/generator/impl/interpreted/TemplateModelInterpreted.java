@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ import jetbrains.mps.generator.runtime.TemplateModelBase;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -38,10 +40,11 @@ import java.util.Collection;
 public class TemplateModelInterpreted extends TemplateModelBase {
 
   private final SModel myModel;
+  private Class<? extends GeneratorQueryProvider> myQueryProviderClass;
   private Collection<TemplateSwitchMapping> mySwitches;
   private Collection<TemplateMappingConfiguration> myMappings;
 
-  public TemplateModelInterpreted(TemplateModule module, SModel model) {
+  public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model) {
     super(module);
     myModel = model;
     mySwitches = new ArrayList<>();
@@ -49,7 +52,15 @@ public class TemplateModelInterpreted extends TemplateModelBase {
     init();
   }
 
+  public TemplateModelInterpreted(@NotNull TemplateModule module, @Nullable SModel model, @Nullable Class<? extends GeneratorQueryProvider> queryProviderClass) {
+    this(module, model);
+    myQueryProviderClass = queryProviderClass;
+  }
+
   private void init() {
+    if (myModel == null) {
+      return;
+    }
     for (SNode root : myModel.getRootNodes()) {
       SConcept c = root.getConcept();
       if (RuleUtil.concept_TemplateSwitch.equals(c)) {
@@ -93,6 +104,15 @@ public class TemplateModelInterpreted extends TemplateModelBase {
 
   @Override
   public GeneratorQueryProvider getQueryProvider() {
+    if (myQueryProviderClass != null) {
+      try {
+        return myQueryProviderClass.newInstance();
+      } catch (InstantiationException | IllegalAccessException ex) {
+        String msg = String.format("Failed to instantiate class with generated queries: %s", myQueryProviderClass.getName());
+        Logger.getLogger(TemplateModelInterpreted.class).error(msg, ex);
+        return null;
+      }
+    }
     String packageName = getSModelReference().getName().getLongName();
     String queriesClassName = packageName + ".QueriesGenerated";
     try {
