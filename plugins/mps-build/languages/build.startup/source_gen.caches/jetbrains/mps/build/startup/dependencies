@@ -12,8 +12,6 @@
     <classNode dependClassName="jetbrains.mps.build.startup.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.startup.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.startup.typesystem.TypesystemDescriptor" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

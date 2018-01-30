@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
-import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
@@ -27,6 +26,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -190,78 +190,103 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
   }
 
   /**
-   * For the time being, we instantiate runtime of generated generators only.
-   * We could have had TemplateModuleInterpreted instantiated here, but don't do that for few reasons
-   * (1) We are in [kernel] now, can't access code in [generator-engine] module. Would need to move the registry
-   * to [project], perhaps, to satisfy the dependency
-   * (2) TemplateModuleInterpreted doesn't work well when it lasts. It doesn't track model/module changes and may answer with stale info if
-   * the instance stays for a long time. Present approach is to ask language for generators (LR.getGenerators(), where new instance is created),
+   * We expect Generator RT class for any generator module, both interpreted and generated.
+   * However, in 2018.1 we tolerate no activator class case for compatibility with code generated with previous MPS releases.
+   * In this case, we resort to TemplateModuleInterpreted supplied from LanguageRuntime#getGenerators().
+   * <p/>
+   * Note, there's an entanglement with TemplateModuleInterpreted/TemplateModuleInterpreted2, they don't work well when last.
+   * Either doesn't track model/module changes and may answer with stale info if the instance stays for a long time.
+   * Prior to 2018.1, approach was to ask language for generators (LR.getGenerators(), where new instance is created),
    * and LR+TMI assume no changes in generator module while these generators are consumed.
+   * However, with activator class of generator module being there unless regenerated/reloaded, we may face issues, when template model is not in sync with
+   * generated code.
    */
   private GeneratorRuntime createRuntime(Generator g) {
-    if (g.generateTemplates()) {
-      Language sourceLanguage = g.getSourceLanguage();
-      final String rtClassName = sourceLanguage.getModuleName() + ".Generator";
-      try {
-        Class<?> rtClass;
-        try {
-          rtClass = g.getOwnClass(rtClassName);
-        } catch (ClassNotFoundException ex) {
-          // FIXME compatibility with legacy generators that has been generated with Generator class along with Language RT class
-          // under language module. XXX need this unless provide module activator class name in module.xml/module descriptor so that
-          // can tell legacy module from a newer one (newer would have activator for Generator module, while legacy had none)
-          try {
-            rtClass = sourceLanguage.getOwnClass(rtClassName);
-          } catch (ModuleClassNotFoundException e) {
-            // no error here: Generator might be not compiled yet
-            return null;
+    Language sourceLanguage = g.getSourceLanguage();
+    // A bit of history. The need for activator class name arise when we generate a code from a Generator module and load it at runtime.
+    // First, there were no activators at all. Then, activators for generator modules with 'generated' templates were introduced.
+    // They resorted to g.getSourceLanguage().getModuleName() + ".Generator", likely, not to deal with '#' in generator module name, and the fact
+    // that generator module name left to '#' is identical to source language anyway. E.g. GeneratorDescriptorModelProvider assumed that
+    // hash-less namespace of generator module was the same as source language. This was wrong, however, as there are generators that don't follow this
+    // pattern, and attempt to load activator class like getSourceLanguage().getModuleName() + ".Generator" would fail for them. It's time to get this fixed.
+    // Now, with activators generated for any Generator module,
+    // we have to deal with a case when there are multiple generators in a language (well, we had to deal with it anyway, just didn't encounter it for
+    // 'generated' templates). The idea is to use true name of generator module for activator class (except for '#...' suffix) as there seems to be no
+    // solid ground to keep left-hand side of generator module name equal to that of its source language. Provided it was derived from the language,
+    // existing compiled code (i.e. 'generated' generators) won't get broken as the value would be the same. There were no activators for generator modules
+    // with interpreted templates, therefore it's the right time to introduce the change.
+    // This code mimics GeneratorDescriptorModelProvider#getModelReference(), which controls name of a descriptor model (and, therefore, output location of
+    // the activator class which is generated from the model).
+    String mn = g.getModuleName();
+    int hashSign = mn.indexOf('#');
+    if (hashSign > 0) {
+      mn = mn.substring(0, hashSign);
+    }
+    // we used to mangle name with ordinal index of generator in its language (getSourceLanguage().getOwnedGenerators().indexOf(this))
+    // when there are few generators, but I don't think it's reasonable any more - it's easier to keep distinct generator modules in separate
+    // namespaces rather than to guess activator name based on index in uncontrolled collection. Besides, generating two+ modules into same location
+    // of their source language fools Make and leads to removal of activator of one of generated modules (same dir but file is not touched).
+//    ArrayList<Generator> ownedGenerators = new ArrayList<>();
+//    if (ownedGenerators.size() > 0 && ownedGenerators.indexOf(this) >= 0) {
+//      className += ownedGenerators.indexOf(this);
+//    }
+    final String rtClassName = NameUtil.longNameFromNamespaceAndShortName(mn, "Generator");
+
+    try {
+      Class<?> rtClass = g.getOwnClass(rtClassName);
+      if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {
+        final Class<? extends GeneratorRuntime> aClass = rtClass.asSubclass(GeneratorRuntime.class);
+        final LanguageRuntime sourceLanguageRuntime = getLanguage(sourceLanguage);
+        if (sourceLanguageRuntime == null) {
+          throw new InstantiationException(String.format("Could not find language runtime for %s to attach generator %s to", sourceLanguage.getModuleName(),
+              g.getModuleName()));
+        }
+        Constructor<?>[] allConstructors = aClass.getConstructors();
+        // Provisional constructor for TemplateModule, that takes LanguageRegistry, LanguageRuntime and Generator module. @since 2018.1
+        // It's to substitute new TemplateModuleInterpreted from the LanguageRuntime subclass. We need it until all the generators are completely
+        // generated. Meanwhile we have a 'partially' interpreted generators, with TemplateModule/GeneratorRuntime being generated always.
+        for (Constructor<?> cons : allConstructors) {
+          if (cons.getParameterCount() != 3) {
+            continue;
+          }
+          Class<?>[] parameterTypes = cons.getParameterTypes();
+          if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class && parameterTypes[2] == Generator.class) {
+            //noinspection JavaReflectionMemberAccess
+            Constructor<? extends GeneratorRuntime> c = aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class, Generator.class);
+            return c.newInstance(this, sourceLanguageRuntime, g);
           }
         }
-        if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {
-          final Class<? extends GeneratorRuntime> aClass = rtClass.asSubclass(GeneratorRuntime.class);
-          final LanguageRuntime sourceLanguageRuntime = getLanguage(sourceLanguage);
-          if (sourceLanguageRuntime == null) {
-            throw new InstantiationException(String.format("Could not find language runtime for %s to attach generator %s to", sourceLanguage.getModuleName(),
-                g.getModuleName()));
+        // Constructor for TemplateModule, the one that takes LanguageRegistry and LanguageRuntime. @since 2017.1
+        for (Constructor<?> cons : allConstructors) {
+          if (cons.getParameterCount() != 2) {
+            continue;
           }
-          Constructor<? extends GeneratorRuntime> constructor = null;
-          // First, look up a newer constructor, the one that takes LanguageRegistry and LanguageRuntime
-          Constructor<?>[] allConstructors = aClass.getConstructors();
-          for (Constructor<?> cons : allConstructors) {
-            if (cons.getParameterCount() != 2) {
-              continue;
-            }
-            Class<?>[] parameterTypes = cons.getParameterTypes();
-            if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class) {
-              //noinspection JavaReflectionMemberAccess
-              return aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class).newInstance(this, sourceLanguageRuntime);
-            }
-          }
-          for (Constructor<?> cons : allConstructors) {
-            if (cons.getParameterCount() != 1) {
-              continue;
-            }
-            final Class<?> paramType = cons.getParameterTypes()[0];
-            if (paramType == LanguageRuntime.class) {
-              //noinspection JavaReflectionMemberAccess
-              constructor = aClass.getConstructor(LanguageRuntime.class);
-              break;
-            }
-          }
-          if (constructor == null) {
-            LOG.error(String.format("No constructor to accept language runtime found in class %s of generator %s", rtClassName, g.getModuleName()));
-            return null;
-          } else {
-            return constructor.newInstance(sourceLanguageRuntime);
+          Class<?>[] parameterTypes = cons.getParameterTypes();
+          if (parameterTypes[0] == LanguageRegistry.class && parameterTypes[1] == LanguageRuntime.class) {
+            //noinspection JavaReflectionMemberAccess
+            Constructor<? extends GeneratorRuntime> c = aClass.getConstructor(LanguageRegistry.class, LanguageRuntime.class);
+            return c.newInstance(this, sourceLanguageRuntime);
           }
         }
-      } catch (ClassNotFoundException e) {
-        LOG.error(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
-      } catch (InstantiationException | IllegalAccessException e) {
-        LOG.error(String.format("Failed to instantiate runtime %s of generator %s", rtClassName, g.getModuleName()), e);
-      } catch (NoSuchMethodException | InvocationTargetException e) {
-        LOG.error(String.format("Failed to instantiate runtime %s of generator %s. Bad constructor?", rtClassName, g.getModuleName()), e);
+        LOG.error(String.format("No proper constructor found in the class %s of generator %s", rtClassName, g.getModuleName()));
+        return null;
+      } else {
+        LOG.error(String.format("Generator runtime class %s from module %s is not an instance of GeneratorRuntime", rtClass.getName(), g.getModuleName()));
+        return null;
       }
+    } catch (ClassNotFoundException e) {
+      if (g.generateTemplates()) {
+        LOG.warn(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
+      } else {
+        // FIXME this is compatibility code. Language RT generated prior to 2018.1 included #getGenerators() implementation for interpreted templates,
+        //       and generator module lacked any activator class. With 2018.1, we generate Generator RT class for every generator module (including interpreted)
+        //       Remove this code once 2018.1 is out.
+        LOG.debug(String.format("Failed to load runtime %s of generator %s", rtClassName, g.getModuleName()), e);
+      }
+    } catch (InstantiationException | IllegalAccessException e) {
+      LOG.error(String.format("Failed to instantiate runtime %s of generator %s", rtClassName, g.getModuleName()), e);
+    } catch (NoSuchMethodException | InvocationTargetException e) {
+      LOG.error(String.format("Failed to instantiate runtime %s of generator %s. Bad constructor?", rtClassName, g.getModuleName()), e);
     }
     return null;
   }

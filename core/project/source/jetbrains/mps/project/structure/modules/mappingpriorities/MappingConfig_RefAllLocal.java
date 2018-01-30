@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,5 +40,15 @@ public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
   @Override
   public String asString() {
     return "*";
+  }
+
+  @Override
+  public int hashCode() {
+    return MappingConfig_RefAllLocal.class.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return obj instanceof MappingConfig_RefAllLocal;
   }
 }

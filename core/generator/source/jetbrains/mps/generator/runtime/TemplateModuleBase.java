@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,14 +36,43 @@ import java.util.Set;
  */
 public abstract class TemplateModuleBase implements TemplateModule {
   private final LanguageRegistry myLanguageRegistry;
+  private final LanguageRuntime mySourceLanguage;
 
   protected TemplateModuleBase() {
-    this(LanguageRegistry.getInstance());
-    // FIXME compatibility code, drop once MPS 2017.1 is out
+    // I hope you know what you're doing using this cons.
+    // This may be reasonable e.g. in tests.
+    myLanguageRegistry = null;
+    mySourceLanguage = null;
   }
 
+  /**
+   * @deprecated shall use {@link #TemplateModuleBase(LanguageRegistry, LanguageRuntime)} instead
+   *             It's our generated code, once templates are fixed, this cons shall stay for another release for compatibility with generated code.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   protected TemplateModuleBase(LanguageRegistry languageRegistry) {
     myLanguageRegistry = languageRegistry;
+    mySourceLanguage = null;
+  }
+
+  /**
+   * @param languageRegistry not {@code null} (unless your subclass overrides all the methods of this base class that need that registry).
+   * @param sourceLanguage not {@code null}.
+   */
+  protected TemplateModuleBase(LanguageRegistry languageRegistry, LanguageRuntime sourceLanguage) {
+    myLanguageRegistry = languageRegistry;
+    mySourceLanguage = sourceLanguage;
+  }
+
+  @NotNull
+  @Override
+  public LanguageRuntime getSourceLanguage() {
+    if (mySourceLanguage == null) {
+      // TODO drop this check ince single arg cons gone.
+      throw new IllegalStateException("Subclasses that use TemplateModuleBase(LanguageRegistry) cons instead of TemplateModuleBase(LanguageRegistry, LanguageRuntime) one, shall override this method");
+    }
+    return mySourceLanguage;
   }
 
   @Override
@@ -118,7 +146,12 @@ public abstract class TemplateModuleBase implements TemplateModule {
     return getClass().getClassLoader().loadClass(qualifiedName);
   }
 
-  public final class ReferencedGenerators {
+  @Override
+  public String toString() {
+    return String.format("Generator runtime for %s", getAlias());
+  }
+
+  public static final class ReferencedGenerators {
     /*package*/ final Collection<SModuleReference> myExtendedGenerators = new ArrayList<>(4);
     /*package*/ final Collection<SModuleReference> myEmployedGenerators = new ArrayList<>(4);
 

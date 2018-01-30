@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MappingPriorityRule implements TemplateMappingPriorityRule, Copyable<MappingPriorityRule> {
   public static final String LEFT = "left";
@@ -116,5 +117,19 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule, Copyabl
       copy.setRight(myRight.copy());
     }
     return copy;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(myType, myLeft, myRight);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof MappingPriorityRule) {
+      MappingPriorityRule pr = (MappingPriorityRule) obj;
+      return myType == pr.myType && Objects.equals(myLeft, pr.myLeft) && Objects.equals(myRight, pr.myRight);
+    }
+    return false;
   }
 }

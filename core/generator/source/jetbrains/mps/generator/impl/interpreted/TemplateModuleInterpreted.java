@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,23 +54,14 @@ import java.util.stream.Collectors;
  * evgeny, 3/10/11
  */
 public class TemplateModuleInterpreted extends TemplateModuleBase {
-
-  private final LanguageRuntime sourceLanguage;
   private final Generator generator;
   private Collection<TemplateModel> myModels;
   private Collection<SLanguage> myTargetLanguages;
 
   public TemplateModuleInterpreted(LanguageRuntime sourceLanguage, @NotNull Generator generator) {
-    this.sourceLanguage = sourceLanguage;
+    super(null, sourceLanguage);
     this.generator = generator;
   }
-
-  @NotNull
-  @Override
-  public LanguageRuntime getSourceLanguage() {
-    return sourceLanguage;
-  }
-
 
   @NotNull
   @Override
@@ -161,11 +152,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   @Override
-  public Set<SLanguage> getQueryLanguages() {
-    return super.getQueryLanguages();
-  }
-
-  @Override
   public Collection<SLanguage> getTargetLanguages() {
     if (myTargetLanguages == null) {
       ModelScanner ms = new ModelScanner();
@@ -177,6 +163,11 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
       myTargetLanguages = ms.getTargetLanguages();
     }
     return myTargetLanguages;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("Interpreted Generator Runtime for %s", getAlias());
   }
 
   @Override

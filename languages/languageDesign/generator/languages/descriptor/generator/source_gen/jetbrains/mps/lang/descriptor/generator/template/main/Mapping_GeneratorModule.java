@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
+import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.runtime.CreateRootRuleBase;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 
@@ -41,7 +42,7 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
     super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303785"), "GeneratorModule", model, false);
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mapping_GeneratorModule.ReductionRule0(), new Mapping_GeneratorModule.ReductionRule1(), new Mapping_GeneratorModule.ReductionRule2(), new Mapping_GeneratorModule.ReductionRule3(), new Mapping_GeneratorModule.ReductionRule4(), new Mapping_GeneratorModule.ReductionRule5());
     createRules = TemplateUtil.<TemplateCreateRootRule>asCollection(new Mapping_GeneratorModule.CreateRootRule0());
-    rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mapping_GeneratorModule.RootMappingRule0());
+    rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mapping_GeneratorModule.RootMappingRule0(), new Mapping_GeneratorModule.RootMappingRule1());
   }
   @Override
   public boolean isApplicable(@NotNull ITemplateGenerator generator) {
@@ -348,9 +349,28 @@ public class Mapping_GeneratorModule extends MapConfigBase implements TemplateMa
       super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639681036"), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, "jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor"), false, false);
     }
     @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_1066600152715731682(new MapRootRuleContext(context, getRuleNode()));
+    }
+    @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new Template_GDClass().apply(environment, context);
+      return result;
+    }
+  }
+  public class RootMappingRule1 extends MapRootRuleBase implements TemplateRootMappingRule {
+    public RootMappingRule1() {
+      super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1066600152715707458"), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L, "jetbrains.mps.lang.descriptor.structure.GeneratorDescriptor"), false, false);
+    }
+    @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_1066600152715720536(new MapRootRuleContext(context, getRuleNode()));
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> result = new Template_InterpretedGeneratorRuntimeDescriptor().apply(environment, context);
       return result;
     }
   }

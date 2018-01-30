@@ -6,7 +6,7 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest__BehaviorDescriptor;
-import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
+import jetbrains.mps.lang.test.generator.template.util.TestsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
