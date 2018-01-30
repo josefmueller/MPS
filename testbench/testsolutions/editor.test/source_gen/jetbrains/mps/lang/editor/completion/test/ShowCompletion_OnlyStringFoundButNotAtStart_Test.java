@@ -13,17 +13,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class DontCompleteStringSearchImmediately_Test extends BaseTransformationTest {
+public class ShowCompletion_OnlyStringFoundButNotAtStart_Test extends BaseTransformationTest {
   @ClassRule
-  public static final TestParametersCache ourParamCache = new TestParametersCache(DontCompleteStringSearchImmediately_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ShowCompletion_OnlyStringFoundButNotAtStart_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
 
-  public DontCompleteStringSearchImmediately_Test() {
+  public ShowCompletion_OnlyStringFoundButNotAtStart_Test() {
     super(ourParamCache);
   }
 
   @Test
-  public void test_DontCompleteStringSearchImmediately() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.completion.test.DontCompleteStringSearchImmediately_Test$TestBody", "testMethod", false);
+  public void test_ShowCompletion_OnlyStringFoundButNotAtStart() throws Throwable {
+    runTest("jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyStringFoundButNotAtStart_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -31,7 +31,7 @@ public class DontCompleteStringSearchImmediately_Test extends BaseTransformation
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2070818307959572680", "2070818307959572682");
-      typeString("ull");
+      typeString("searchonly");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));

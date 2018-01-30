@@ -1042,94 +1042,213 @@
       <unit id="1384684774808509249" at="24,0,64,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceTransformationMenuWrapSubstituteMenu_Test" />
     </file>
   </root>
-  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959506170">
-    <file name="CompleteMatchingTextStartsWithPatternImmediately_Test.java">
-      <node id="2070818307959506170" at="17,66,18,25" concept="9" />
-      <node id="2070818307959506170" at="22,88,23,141" concept="1" />
-      <node id="2070818307959506170" at="29,51,30,72" concept="1" />
-      <node id="2070818307959506174" at="30,72,31,24" concept="1" />
-      <node id="2070818307959506172" at="31,24,32,71" concept="1" />
-      <node id="2070818307959506170" at="14,0,16,0" concept="7" trace="ourParamCache" />
-      <node id="2070818307959506170" at="17,0,20,0" concept="0" trace="CompleteMatchingTextStartsWithPatternImmediately_Test#()V" />
-      <node id="2070818307959506170" at="21,0,25,0" concept="3" trace="test_CompleteMatchingTextStartsWithPatternImmediately#()V" />
-      <node id="2070818307959506170" at="28,0,34,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="2070818307959506170" at="17,66,18,25" />
-      <scope id="2070818307959506170" at="22,88,23,141" />
-      <scope id="2070818307959506170" at="17,0,20,0" />
-      <scope id="2070818307959506170" at="29,51,32,71" />
-      <scope id="2070818307959506170" at="21,0,25,0" />
-      <scope id="2070818307959506170" at="28,0,34,0" />
-      <unit id="2070818307959506170" at="26,0,35,0" name="jetbrains.mps.lang.editor.completion.test.CompleteMatchingTextStartsWithPatternImmediately_Test$TestBody" />
-      <unit id="2070818307959506170" at="12,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteMatchingTextStartsWithPatternImmediately_Test" />
-    </file>
-  </root>
-  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959549601">
-    <file name="CompleteCamelCasePatternImmediately_Test.java">
-      <node id="2070818307959549601" at="17,53,18,25" concept="9" />
-      <node id="2070818307959549601" at="22,75,23,128" concept="1" />
-      <node id="2070818307959549601" at="29,51,30,72" concept="1" />
-      <node id="2070818307959549603" at="30,72,31,23" concept="1" />
-      <node id="2070818307959549604" at="31,23,32,71" concept="1" />
-      <node id="2070818307959549601" at="14,0,16,0" concept="7" trace="ourParamCache" />
-      <node id="2070818307959549601" at="17,0,20,0" concept="0" trace="CompleteCamelCasePatternImmediately_Test#()V" />
-      <node id="2070818307959549601" at="21,0,25,0" concept="3" trace="test_CompleteCamelCasePatternImmediately#()V" />
-      <node id="2070818307959549601" at="28,0,34,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="2070818307959549601" at="17,53,18,25" />
-      <scope id="2070818307959549601" at="22,75,23,128" />
-      <scope id="2070818307959549601" at="17,0,20,0" />
-      <scope id="2070818307959549601" at="29,51,32,71" />
-      <scope id="2070818307959549601" at="21,0,25,0" />
-      <scope id="2070818307959549601" at="28,0,34,0" />
-      <unit id="2070818307959549601" at="26,0,35,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCasePatternImmediately_Test$TestBody" />
-      <unit id="2070818307959549601" at="12,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCasePatternImmediately_Test" />
-    </file>
-  </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959549729">
-    <file name="DontCompleteNotCamelCasePatternAmbiguityImmediately_Test.java">
-      <node id="2070818307959549729" at="20,69,21,25" concept="9" />
-      <node id="2070818307959549729" at="25,91,26,144" concept="1" />
-      <node id="2070818307959549729" at="32,51,33,72" concept="1" />
-      <node id="2070818307959549731" at="33,72,34,23" concept="1" />
-      <node id="2070818307959549732" at="34,23,35,71" concept="1" />
-      <node id="2070818307959549910" at="35,71,36,162" concept="1" />
-      <node id="2070818307960487255" at="36,162,37,82" concept="1" />
-      <node id="2070818307959549905" at="37,82,38,0" concept="6" />
-      <node id="2070818307959549729" at="17,0,19,0" concept="7" trace="ourParamCache" />
-      <node id="2070818307959549729" at="20,0,23,0" concept="0" trace="DontCompleteNotCamelCasePatternAmbiguityImmediately_Test#()V" />
-      <node id="2070818307959549729" at="24,0,28,0" concept="3" trace="test_DontCompleteNotCamelCasePatternAmbiguityImmediately#()V" />
-      <node id="2070818307959549729" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="2070818307959549729" at="20,69,21,25" />
-      <scope id="2070818307959549729" at="25,91,26,144" />
-      <scope id="2070818307959549729" at="20,0,23,0" />
-      <scope id="2070818307959549729" at="24,0,28,0" />
-      <scope id="2070818307959549729" at="32,51,38,0" />
-      <scope id="2070818307959549729" at="31,0,40,0" />
-      <unit id="2070818307959549729" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteNotCamelCasePatternAmbiguityImmediately_Test$TestBody" />
-      <unit id="2070818307959549729" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteNotCamelCasePatternAmbiguityImmediately_Test" />
+    <file name="CompleteImmediately_OnlyCamelCaseButDifferentUpperCases_Test.java">
+      <node id="2070818307959549729" at="17,73,18,25" concept="9" />
+      <node id="2070818307959549729" at="22,95,23,148" concept="1" />
+      <node id="2070818307959549729" at="29,51,30,72" concept="1" />
+      <node id="2070818307959549731" at="30,72,31,32" concept="1" />
+      <node id="2070818307959549732" at="31,32,32,71" concept="1" />
+      <node id="2070818307959549905" at="32,71,33,0" concept="6" />
+      <node id="2070818307959549729" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="2070818307959549729" at="17,0,20,0" concept="0" trace="CompleteImmediately_OnlyCamelCaseButDifferentUpperCases_Test#()V" />
+      <node id="2070818307959549729" at="21,0,25,0" concept="3" trace="test_CompleteImmediately_OnlyCamelCaseButDifferentUpperCases#()V" />
+      <node id="2070818307959549729" at="28,0,35,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2070818307959549729" at="17,73,18,25" />
+      <scope id="2070818307959549729" at="22,95,23,148" />
+      <scope id="2070818307959549729" at="17,0,20,0" />
+      <scope id="2070818307959549729" at="21,0,25,0" />
+      <scope id="2070818307959549729" at="29,51,33,0" />
+      <scope id="2070818307959549729" at="28,0,35,0" />
+      <unit id="2070818307959549729" at="26,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyCamelCaseButDifferentUpperCases_Test$TestBody" />
+      <unit id="2070818307959549729" at="12,0,37,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyCamelCaseButDifferentUpperCases_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2070818307959572660">
-    <file name="DontCompleteStringSearchImmediately_Test.java">
-      <node id="2070818307959572660" at="20,53,21,25" concept="9" />
-      <node id="2070818307959572660" at="25,75,26,128" concept="1" />
+    <file name="ShowCompletion_OnlyStringFoundButNotAtStart_Test.java">
+      <node id="2070818307959572660" at="20,61,21,25" concept="9" />
+      <node id="2070818307959572660" at="25,83,26,136" concept="1" />
       <node id="2070818307959572660" at="32,51,33,72" concept="1" />
-      <node id="2070818307959572662" at="33,72,34,24" concept="1" />
-      <node id="2070818307959572663" at="34,24,35,71" concept="1" />
+      <node id="2070818307959572662" at="33,72,34,31" concept="1" />
+      <node id="2070818307959572663" at="34,31,35,71" concept="1" />
       <node id="2070818307959572665" at="35,71,36,162" concept="1" />
       <node id="2070818307959586756" at="36,162,37,82" concept="1" />
       <node id="2070818307959572679" at="37,82,38,0" concept="6" />
       <node id="2070818307959572660" at="17,0,19,0" concept="7" trace="ourParamCache" />
-      <node id="2070818307959572660" at="20,0,23,0" concept="0" trace="DontCompleteStringSearchImmediately_Test#()V" />
-      <node id="2070818307959572660" at="24,0,28,0" concept="3" trace="test_DontCompleteStringSearchImmediately#()V" />
+      <node id="2070818307959572660" at="20,0,23,0" concept="0" trace="ShowCompletion_OnlyStringFoundButNotAtStart_Test#()V" />
+      <node id="2070818307959572660" at="24,0,28,0" concept="3" trace="test_ShowCompletion_OnlyStringFoundButNotAtStart#()V" />
       <node id="2070818307959572660" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="2070818307959572660" at="20,53,21,25" />
-      <scope id="2070818307959572660" at="25,75,26,128" />
+      <scope id="2070818307959572660" at="20,61,21,25" />
+      <scope id="2070818307959572660" at="25,83,26,136" />
       <scope id="2070818307959572660" at="20,0,23,0" />
       <scope id="2070818307959572660" at="24,0,28,0" />
       <scope id="2070818307959572660" at="32,51,38,0" />
       <scope id="2070818307959572660" at="31,0,40,0" />
-      <unit id="2070818307959572660" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteStringSearchImmediately_Test$TestBody" />
-      <unit id="2070818307959572660" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.DontCompleteStringSearchImmediately_Test" />
+      <unit id="2070818307959572660" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyStringFoundButNotAtStart_Test$TestBody" />
+      <unit id="2070818307959572660" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyStringFoundButNotAtStart_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054249299288">
+    <file name="CompleteImmediately_OnlyStartsWithPattern_Test.java">
+      <node id="2769359054249299288" at="17,59,18,25" concept="9" />
+      <node id="2769359054249299288" at="22,81,23,134" concept="1" />
+      <node id="2769359054249299288" at="29,51,30,72" concept="1" />
+      <node id="2769359054249299290" at="30,72,31,32" concept="1" />
+      <node id="2769359054249299291" at="31,32,32,71" concept="1" />
+      <node id="2769359054249299293" at="32,71,33,0" concept="6" />
+      <node id="2769359054249299288" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054249299288" at="17,0,20,0" concept="0" trace="CompleteImmediately_OnlyStartsWithPattern_Test#()V" />
+      <node id="2769359054249299288" at="21,0,25,0" concept="3" trace="test_CompleteImmediately_OnlyStartsWithPattern#()V" />
+      <node id="2769359054249299288" at="28,0,35,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054249299288" at="17,59,18,25" />
+      <scope id="2769359054249299288" at="22,81,23,134" />
+      <scope id="2769359054249299288" at="17,0,20,0" />
+      <scope id="2769359054249299288" at="21,0,25,0" />
+      <scope id="2769359054249299288" at="29,51,33,0" />
+      <scope id="2769359054249299288" at="28,0,35,0" />
+      <unit id="2769359054249299288" at="26,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStartsWithPattern_Test$TestBody" />
+      <unit id="2769359054249299288" at="12,0,37,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStartsWithPattern_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054249347126">
+    <file name="CompleteImmediately_OnlyStringStartsPatternWithDifferentUpperCases_Test.java">
+      <node id="2769359054249347126" at="17,84,18,25" concept="9" />
+      <node id="2769359054249347126" at="22,106,23,159" concept="1" />
+      <node id="2769359054249347126" at="29,51,30,72" concept="1" />
+      <node id="2769359054249347128" at="30,72,31,34" concept="1" />
+      <node id="8027958516281896053" at="31,34,32,71" concept="1" />
+      <node id="2769359054249347147" at="32,71,33,0" concept="6" />
+      <node id="2769359054249347126" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054249347126" at="17,0,20,0" concept="0" trace="CompleteImmediately_OnlyStringStartsPatternWithDifferentUpperCases_Test#()V" />
+      <node id="2769359054249347126" at="21,0,25,0" concept="3" trace="test_CompleteImmediately_OnlyStringStartsPatternWithDifferentUpperCases#()V" />
+      <node id="2769359054249347126" at="28,0,35,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054249347126" at="17,84,18,25" />
+      <scope id="2769359054249347126" at="22,106,23,159" />
+      <scope id="2769359054249347126" at="17,0,20,0" />
+      <scope id="2769359054249347126" at="21,0,25,0" />
+      <scope id="2769359054249347126" at="29,51,33,0" />
+      <scope id="2769359054249347126" at="28,0,35,0" />
+      <unit id="2769359054249347126" at="26,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStringStartsPatternWithDifferentUpperCases_Test$TestBody" />
+      <unit id="2769359054249347126" at="12,0,37,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStringStartsPatternWithDifferentUpperCases_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054249401190">
+    <file name="ShowCompletion_OnlyCamelCaseButNotAtStart_Test.java">
+      <node id="2769359054249401190" at="20,59,21,25" concept="9" />
+      <node id="2769359054249401190" at="25,81,26,134" concept="1" />
+      <node id="2769359054249401190" at="32,51,33,72" concept="1" />
+      <node id="2769359054249401192" at="33,72,34,29" concept="1" />
+      <node id="2769359054249401193" at="34,29,35,71" concept="1" />
+      <node id="2769359054249401195" at="35,71,36,162" concept="1" />
+      <node id="2769359054249401209" at="36,162,37,82" concept="1" />
+      <node id="2769359054249401211" at="37,82,38,0" concept="6" />
+      <node id="2769359054249401190" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054249401190" at="20,0,23,0" concept="0" trace="ShowCompletion_OnlyCamelCaseButNotAtStart_Test#()V" />
+      <node id="2769359054249401190" at="24,0,28,0" concept="3" trace="test_ShowCompletion_OnlyCamelCaseButNotAtStart#()V" />
+      <node id="2769359054249401190" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054249401190" at="20,59,21,25" />
+      <scope id="2769359054249401190" at="25,81,26,134" />
+      <scope id="2769359054249401190" at="20,0,23,0" />
+      <scope id="2769359054249401190" at="24,0,28,0" />
+      <scope id="2769359054249401190" at="32,51,38,0" />
+      <scope id="2769359054249401190" at="31,0,40,0" />
+      <unit id="2769359054249401190" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyCamelCaseButNotAtStart_Test$TestBody" />
+      <unit id="2769359054249401190" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_OnlyCamelCaseButNotAtStart_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054249673316">
+    <file name="ShowCompletion_CaretAtTheEndAndThereIsOnlyStrictSubstituteAction_Test.java">
+      <node id="2769359054249673316" at="20,82,21,25" concept="9" />
+      <node id="2769359054249673316" at="25,104,26,157" concept="1" />
+      <node id="2769359054249673316" at="32,51,33,72" concept="1" />
+      <node id="2769359054249673319" at="33,72,34,71" concept="1" />
+      <node id="2769359054249673321" at="34,71,35,162" concept="1" />
+      <node id="2769359054249673335" at="35,162,36,82" concept="1" />
+      <node id="2769359054249673337" at="36,82,37,0" concept="6" />
+      <node id="2769359054249673316" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054249673316" at="20,0,23,0" concept="0" trace="ShowCompletion_CaretAtTheEndAndThereIsOnlyStrictSubstituteAction_Test#()V" />
+      <node id="2769359054249673316" at="24,0,28,0" concept="3" trace="test_ShowCompletion_CaretAtTheEndAndThereIsOnlyStrictSubstituteAction#()V" />
+      <node id="2769359054249673316" at="31,0,39,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054249673316" at="20,82,21,25" />
+      <scope id="2769359054249673316" at="25,104,26,157" />
+      <scope id="2769359054249673316" at="20,0,23,0" />
+      <scope id="2769359054249673316" at="24,0,28,0" />
+      <scope id="2769359054249673316" at="32,51,37,0" />
+      <scope id="2769359054249673316" at="31,0,39,0" />
+      <unit id="2769359054249673316" at="29,0,40,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CaretAtTheEndAndThereIsOnlyStrictSubstituteAction_Test$TestBody" />
+      <unit id="2769359054249673316" at="15,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CaretAtTheEndAndThereIsOnlyStrictSubstituteAction_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054249997886">
+    <file name="ShowCompletion_StringFoundAtStartAndNotAtStartAmbiguity_Test.java">
+      <node id="2769359054249997886" at="20,73,21,25" concept="9" />
+      <node id="2769359054249997886" at="25,95,26,148" concept="1" />
+      <node id="2769359054249997886" at="32,51,33,72" concept="1" />
+      <node id="2769359054249997888" at="33,72,34,36" concept="1" />
+      <node id="2769359054249997889" at="34,36,35,71" concept="1" />
+      <node id="2769359054249997891" at="35,71,36,162" concept="1" />
+      <node id="2769359054249997905" at="36,162,37,82" concept="1" />
+      <node id="2769359054249997907" at="37,82,38,0" concept="6" />
+      <node id="2769359054249997886" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054249997886" at="20,0,23,0" concept="0" trace="ShowCompletion_StringFoundAtStartAndNotAtStartAmbiguity_Test#()V" />
+      <node id="2769359054249997886" at="24,0,28,0" concept="3" trace="test_ShowCompletion_StringFoundAtStartAndNotAtStartAmbiguity#()V" />
+      <node id="2769359054249997886" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054249997886" at="20,73,21,25" />
+      <scope id="2769359054249997886" at="25,95,26,148" />
+      <scope id="2769359054249997886" at="20,0,23,0" />
+      <scope id="2769359054249997886" at="24,0,28,0" />
+      <scope id="2769359054249997886" at="32,51,38,0" />
+      <scope id="2769359054249997886" at="31,0,40,0" />
+      <unit id="2769359054249997886" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_StringFoundAtStartAndNotAtStartAmbiguity_Test$TestBody" />
+      <unit id="2769359054249997886" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_StringFoundAtStartAndNotAtStartAmbiguity_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054250269832">
+    <file name="ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test.java">
+      <node id="2769359054250269832" at="20,79,21,25" concept="9" />
+      <node id="2769359054250269832" at="25,101,26,154" concept="1" />
+      <node id="2769359054250269832" at="32,51,33,72" concept="1" />
+      <node id="2769359054250269834" at="33,72,34,25" concept="1" />
+      <node id="2769359054250269835" at="34,25,35,71" concept="1" />
+      <node id="2769359054250269837" at="35,71,36,162" concept="1" />
+      <node id="2769359054250269851" at="36,162,37,82" concept="1" />
+      <node id="2769359054250269853" at="37,82,38,0" concept="6" />
+      <node id="2769359054250269832" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054250269832" at="20,0,23,0" concept="0" trace="ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test#()V" />
+      <node id="2769359054250269832" at="24,0,28,0" concept="3" trace="test_ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity#()V" />
+      <node id="2769359054250269832" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054250269832" at="20,79,21,25" />
+      <scope id="2769359054250269832" at="25,101,26,154" />
+      <scope id="2769359054250269832" at="20,0,23,0" />
+      <scope id="2769359054250269832" at="24,0,28,0" />
+      <scope id="2769359054250269832" at="32,51,38,0" />
+      <scope id="2769359054250269832" at="31,0,40,0" />
+      <unit id="2769359054250269832" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test$TestBody" />
+      <unit id="2769359054250269832" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2769359054250313778">
+    <file name="ShowCompletion_CamelCasePatternAtStartNotAtStartAmbiguity_Test.java">
+      <node id="2769359054250313778" at="20,75,21,25" concept="9" />
+      <node id="2769359054250313778" at="25,97,26,150" concept="1" />
+      <node id="2769359054250313778" at="32,51,33,72" concept="1" />
+      <node id="2769359054250313780" at="33,72,34,30" concept="1" />
+      <node id="2769359054250313781" at="34,30,35,71" concept="1" />
+      <node id="2769359054250313783" at="35,71,36,162" concept="1" />
+      <node id="2769359054250313797" at="36,162,37,82" concept="1" />
+      <node id="2769359054250313799" at="37,82,38,0" concept="6" />
+      <node id="2769359054250313778" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="2769359054250313778" at="20,0,23,0" concept="0" trace="ShowCompletion_CamelCasePatternAtStartNotAtStartAmbiguity_Test#()V" />
+      <node id="2769359054250313778" at="24,0,28,0" concept="3" trace="test_ShowCompletion_CamelCasePatternAtStartNotAtStartAmbiguity#()V" />
+      <node id="2769359054250313778" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="2769359054250313778" at="20,75,21,25" />
+      <scope id="2769359054250313778" at="25,97,26,150" />
+      <scope id="2769359054250313778" at="20,0,23,0" />
+      <scope id="2769359054250313778" at="24,0,28,0" />
+      <scope id="2769359054250313778" at="32,51,38,0" />
+      <scope id="2769359054250313778" at="31,0,40,0" />
+      <unit id="2769359054250313778" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartNotAtStartAmbiguity_Test$TestBody" />
+      <unit id="2769359054250313778" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartNotAtStartAmbiguity_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2786154196593923925">
@@ -1227,6 +1346,52 @@
       <unit id="3631615103242345679" at="42,97,52,7" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test$TestBody$1" />
       <unit id="3631615103242345660" at="35,0,55,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test$TestBody" />
       <unit id="3631615103242345660" at="21,0,56,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/391899783184196706">
+    <file name="ShowCompletion_CamelCasePatternAtStartAmbiguity_Test.java">
+      <node id="391899783184196706" at="20,65,21,25" concept="9" />
+      <node id="391899783184196706" at="25,87,26,140" concept="1" />
+      <node id="391899783184196706" at="32,51,33,70" concept="1" />
+      <node id="391899783184196708" at="33,70,34,27" concept="1" />
+      <node id="391899783184196709" at="34,27,35,71" concept="1" />
+      <node id="391899783184196711" at="35,71,36,162" concept="1" />
+      <node id="391899783184196725" at="36,162,37,82" concept="1" />
+      <node id="391899783184196727" at="37,82,38,0" concept="6" />
+      <node id="391899783184196706" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="391899783184196706" at="20,0,23,0" concept="0" trace="ShowCompletion_CamelCasePatternAtStartAmbiguity_Test#()V" />
+      <node id="391899783184196706" at="24,0,28,0" concept="3" trace="test_ShowCompletion_CamelCasePatternAtStartAmbiguity#()V" />
+      <node id="391899783184196706" at="31,0,40,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="391899783184196706" at="20,65,21,25" />
+      <scope id="391899783184196706" at="25,87,26,140" />
+      <scope id="391899783184196706" at="20,0,23,0" />
+      <scope id="391899783184196706" at="24,0,28,0" />
+      <scope id="391899783184196706" at="32,51,38,0" />
+      <scope id="391899783184196706" at="31,0,40,0" />
+      <unit id="391899783184196706" at="29,0,41,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartAmbiguity_Test$TestBody" />
+      <unit id="391899783184196706" at="15,0,42,0" name="jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartAmbiguity_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/391899783184222441">
+    <file name="CompleteImmediately_OnlyStartsWithCamelCasePattern_Test.java">
+      <node id="391899783184222441" at="17,68,18,25" concept="9" />
+      <node id="391899783184222441" at="22,90,23,143" concept="1" />
+      <node id="391899783184222441" at="29,51,30,70" concept="1" />
+      <node id="391899783184222443" at="30,70,31,25" concept="1" />
+      <node id="391899783184222444" at="31,25,32,71" concept="1" />
+      <node id="391899783184222462" at="32,71,33,0" concept="6" />
+      <node id="391899783184222441" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="391899783184222441" at="17,0,20,0" concept="0" trace="CompleteImmediately_OnlyStartsWithCamelCasePattern_Test#()V" />
+      <node id="391899783184222441" at="21,0,25,0" concept="3" trace="test_CompleteImmediately_OnlyStartsWithCamelCasePattern#()V" />
+      <node id="391899783184222441" at="28,0,35,0" concept="3" trace="testMethodImpl#()V" />
+      <scope id="391899783184222441" at="17,68,18,25" />
+      <scope id="391899783184222441" at="22,90,23,143" />
+      <scope id="391899783184222441" at="17,0,20,0" />
+      <scope id="391899783184222441" at="21,0,25,0" />
+      <scope id="391899783184222441" at="29,51,33,0" />
+      <scope id="391899783184222441" at="28,0,35,0" />
+      <unit id="391899783184222441" at="26,0,36,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStartsWithCamelCasePattern_Test$TestBody" />
+      <unit id="391899783184222441" at="12,0,37,0" name="jetbrains.mps.lang.editor.completion.test.CompleteImmediately_OnlyStartsWithCamelCasePattern_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/5317209812044775659">

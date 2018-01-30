@@ -13,25 +13,25 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class DontCompleteNotCamelCasePatternAmbiguityImmediately_Test extends BaseTransformationTest {
+public class ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test extends BaseTransformationTest {
   @ClassRule
-  public static final TestParametersCache ourParamCache = new TestParametersCache(DontCompleteNotCamelCasePatternAmbiguityImmediately_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
+  public static final TestParametersCache ourParamCache = new TestParametersCache(ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test.class, "${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)", false);
 
-  public DontCompleteNotCamelCasePatternAmbiguityImmediately_Test() {
+  public ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test() {
     super(ourParamCache);
   }
 
   @Test
-  public void test_DontCompleteNotCamelCasePatternAmbiguityImmediately() throws Throwable {
-    runTest("jetbrains.mps.lang.editor.completion.test.DontCompleteNotCamelCasePatternAmbiguityImmediately_Test$TestBody", "testMethod", false);
+  public void test_ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity() throws Throwable {
+    runTest("jetbrains.mps.lang.editor.completion.test.ShowCompletion_CamelCasePatternAtStartAndStringFoundAmbiguity_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("2070818307959549734", "2070818307959549736");
-      typeString("se");
+      initEditorComponent("2769359054250269854", "2769359054250269856");
+      typeString("cCEA");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
