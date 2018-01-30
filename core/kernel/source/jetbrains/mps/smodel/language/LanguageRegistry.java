@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -202,18 +203,35 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   private GeneratorRuntime createRuntime(Generator g) {
     Language sourceLanguage = g.getSourceLanguage();
-    final String rtClassName;
-    if (sourceLanguage.getOwnedGenerators().size() > 1 && g.getModuleName().startsWith(sourceLanguage.getModuleName() + '#')) {
-      // if there's more than 1 generator in the language, their class name ends with ordinal suffix, see respective templates in j.m.lang.descriptor
-      int ordinal = new ArrayList<>(sourceLanguage.getOwnedGenerators()).indexOf(g);
-      if (ordinal >= 0) {
-        rtClassName = sourceLanguage.getModuleName() + ".Generator" + ordinal;
-      } else {
-        rtClassName = sourceLanguage.getModuleName() + ".Generator";
-      }
-    } else {
-      rtClassName = sourceLanguage.getModuleName() + ".Generator";
+    // A bit of history. The need for activator class name arise when we generate a code from a Generator module and load it at runtime.
+    // First, there were no activators at all. Then, activators for generator modules with 'generated' templates were introduced.
+    // They resorted to g.getSourceLanguage().getModuleName() + ".Generator", likely, not to deal with '#' in generator module name, and the fact
+    // that generator module name left to '#' is identical to source language anyway. E.g. GeneratorDescriptorModelProvider assumed that
+    // hash-less namespace of generator module was the same as source language. This was wrong, however, as there are generators that don't follow this
+    // pattern, and attempt to load activator class like getSourceLanguage().getModuleName() + ".Generator" would fail for them. It's time to get this fixed.
+    // Now, with activators generated for any Generator module,
+    // we have to deal with a case when there are multiple generators in a language (well, we had to deal with it anyway, just didn't encounter it for
+    // 'generated' templates). The idea is to use true name of generator module for activator class (except for '#...' suffix) as there seems to be no
+    // solid ground to keep left-hand side of generator module name equal to that of its source language. Provided it was derived from the language,
+    // existing compiled code (i.e. 'generated' generators) won't get broken as the value would be the same. There were no activators for generator modules
+    // with interpreted templates, therefore it's the right time to introduce the change.
+    // This code mimics GeneratorDescriptorModelProvider#getModelReference(), which controls name of a descriptor model (and, therefore, output location of
+    // the activator class which is generated from the model).
+    String mn = g.getModuleName();
+    int hashSign = mn.indexOf('#');
+    if (hashSign > 0) {
+      mn = mn.substring(0, hashSign);
     }
+    // we used to mangle name with ordinal index of generator in its language (getSourceLanguage().getOwnedGenerators().indexOf(this))
+    // when there are few generators, but I don't think it's reasonable any more - it's easier to keep distinct generator modules in separate
+    // namespaces rather than to guess activator name based on index in uncontrolled collection. Besides, generating two+ modules into same location
+    // of their source language fools Make and leads to removal of activator of one of generated modules (same dir but file is not touched).
+//    ArrayList<Generator> ownedGenerators = new ArrayList<>();
+//    if (ownedGenerators.size() > 0 && ownedGenerators.indexOf(this) >= 0) {
+//      className += ownedGenerators.indexOf(this);
+//    }
+    final String rtClassName = NameUtil.longNameFromNamespaceAndShortName(mn, "Generator");
+
     try {
       Class<?> rtClass = g.getOwnClass(rtClassName);
       if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {

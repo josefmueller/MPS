@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,7 @@ public class GeneratorDescriptorModelProvider extends DescriptorModelProvider {
     if (sharpIndex != -1) {
       moduleName = moduleName.substring(0, sharpIndex);
     }
+    // XXX name of the model has to match package name in Generator#getQualifiedActivatorClassName so that we can load generated class later.
     return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), myDescriptorModelId, new SModelName(moduleName, SModelStereotype.DESCRIPTOR));
   }
 

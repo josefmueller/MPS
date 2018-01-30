@@ -12,13 +12,13 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class Template_GeneratorRuntime extends TemplateDeclarationBase {
     final TemplateContext context = contextNoLabel.subContext("generator.descriptor");
     final SNode tnode1 = environment.createOutputNode(myConcepts[0]);
     try {
-      SNodeAccessUtil.setProperty(tnode1, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_263208052639706472(new PropertyMacroContext(context, "Generator", propertyMacro_zfkl79_c0a0c0a0d0e))));
+      SNodeAccessUtil.setProperty(tnode1, myProperties[0], "Generator");
       TemplateContext context1 = context.subContext();
       {
         final SNode tnode2 = environment.createOutputNode(myConcepts[1]);
@@ -1464,7 +1464,6 @@ public class Template_GeneratorRuntime extends TemplateDeclarationBase {
     rv[32] = MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId");
     return rv;
   }
-  private static SNodePointer propertyMacro_zfkl79_c0a0c0a0d0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639706471");
   private static SNodePointer ifMacroRef_zfkl79_b0a0b0e0d0e = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "263208052639706517");
   private static SNodePointer templateNode_zfkl79_c0a0a1a2a1a1a1a3a1a7a3a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3039597986479886419");
   private static SNodePointer templateNode_zfkl79_c0a0a1a3a1a1a1a3a1a7a3a4 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1066600152715791975");
