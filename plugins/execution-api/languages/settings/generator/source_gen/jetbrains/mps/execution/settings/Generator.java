@@ -37,8 +37,6 @@ public class Generator extends TemplateModuleInterpreted2 {
   @Override
   protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
     referencedGenerators.extended("0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)");
-    referencedGenerators.employed("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)");
-    referencedGenerators.employed("1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)");
   }
 
   @Override

@@ -202,8 +202,18 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
    */
   private GeneratorRuntime createRuntime(Generator g) {
     Language sourceLanguage = g.getSourceLanguage();
-    // XXX if there's more than 1 generator in the language, their class name ends with ordinal suffix, see respective templates in j.m.lang.descriptor
-    final String rtClassName = sourceLanguage.getModuleName() + ".Generator";
+    final String rtClassName;
+    if (sourceLanguage.getOwnedGenerators().size() > 1 && g.getModuleName().startsWith(sourceLanguage.getModuleName() + '#')) {
+      // if there's more than 1 generator in the language, their class name ends with ordinal suffix, see respective templates in j.m.lang.descriptor
+      int ordinal = new ArrayList<>(sourceLanguage.getOwnedGenerators()).indexOf(g);
+      if (ordinal >= 0) {
+        rtClassName = sourceLanguage.getModuleName() + ".Generator" + ordinal;
+      } else {
+        rtClassName = sourceLanguage.getModuleName() + ".Generator";
+      }
+    } else {
+      rtClassName = sourceLanguage.getModuleName() + ".Generator";
+    }
     try {
       Class<?> rtClass = g.getOwnClass(rtClassName);
       if (GeneratorRuntime.class.isAssignableFrom(rtClass)) {

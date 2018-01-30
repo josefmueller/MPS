@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.tuples.generator.template.main.QueriesGenerated;
-import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -34,10 +33,6 @@ public class Generator extends TemplateModuleInterpreted2 {
     models.templates("r:c71b740e-a20d-4190-9688-0f8df932da4d", QueriesGenerated.class);
   }
 
-  @Override
-  protected void fillReferencedGenerators(TemplateModuleBase.ReferencedGenerators referencedGenerators) {
-    referencedGenerators.employed("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)");
-  }
 
   @Override
   public Collection<SLanguage> getTargetLanguages() {

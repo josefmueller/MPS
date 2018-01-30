@@ -5,7 +5,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingPriorityRule" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
