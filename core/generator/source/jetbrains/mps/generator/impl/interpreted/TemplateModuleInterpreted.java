@@ -152,11 +152,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   @Override
-  public Set<SLanguage> getQueryLanguages() {
-    return super.getQueryLanguages();
-  }
-
-  @Override
   public Collection<SLanguage> getTargetLanguages() {
     if (myTargetLanguages == null) {
       ModelScanner ms = new ModelScanner();
@@ -168,6 +163,11 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
       myTargetLanguages = ms.getTargetLanguages();
     }
     return myTargetLanguages;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("Interpreted Generator Runtime for %s", getAlias());
   }
 
   @Override

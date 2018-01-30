@@ -146,6 +146,11 @@ public abstract class TemplateModuleBase implements TemplateModule {
     return getClass().getClassLoader().loadClass(qualifiedName);
   }
 
+  @Override
+  public String toString() {
+    return String.format("Generator runtime for %s", getAlias());
+  }
+
   public static final class ReferencedGenerators {
     /*package*/ final Collection<SModuleReference> myExtendedGenerators = new ArrayList<>(4);
     /*package*/ final Collection<SModuleReference> myEmployedGenerators = new ArrayList<>(4);

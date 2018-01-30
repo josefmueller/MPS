@@ -39,6 +39,9 @@ import java.util.stream.Collectors;
  * Besides, {@link #getModuleReference()} and {@link #getAlias()} may get overridden, to make this RT class as close as possible to future RT classes (
  * similar to that of fully-generated modules)
  *
+ * XXX {@link #loadClass(String)} is intentionally not overridden here. Default implementation uses CL of this class, which we expect to be proper module CL.
+ *     However, it might be possible to use myGenerator.loadOwnClass(), as the module have to come from proper repository, too (the one with modules being loaded).
+ *     The reason to use myGenerator.loadOwnClass is the 'own' restriction for classes, in case it helps.
  * @author Artem Tikhomirov
  * @since 2018.1
  */
