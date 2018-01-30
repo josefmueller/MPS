@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
@@ -92,5 +93,19 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
   @Override
   public String asString() {
     return myRefs.stream().map(MappingConfig_AbstractRef::asString).collect(Collectors.joining(", ", "{", "}"));
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(myRefs);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof MappingConfig_RefSet) {
+      MappingConfig_RefSet r = ((MappingConfig_RefSet) obj);
+      return Objects.equals(myRefs, r.myRefs);
+    }
+    return false;
   }
 }

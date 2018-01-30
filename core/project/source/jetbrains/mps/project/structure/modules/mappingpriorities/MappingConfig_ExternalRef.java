@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+
+import java.util.Objects;
 
 /**
  * FIXME Superfluous as long as {@link MappingConfig_SimpleRef} holds full-fledged {@link SModelReference}
@@ -106,5 +108,19 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   @Override
   public String asString() {
     return '[' + myGenerator.getModuleName() + ':' + myMappingConfig.asString() + ']';
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(myGenerator, myMappingConfig);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof MappingConfig_ExternalRef) {
+      MappingConfig_ExternalRef r = (MappingConfig_ExternalRef) obj;
+      return Objects.equals(myGenerator, r.myGenerator) && Objects.equals(myMappingConfig, r.myMappingConfig);
+    }
+    return false;
   }
 }

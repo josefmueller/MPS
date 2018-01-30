@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+
+import java.util.Objects;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   static final int PERSISTENCE_ID = 0x55550002;
@@ -132,5 +134,20 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
       sb.append(myConfigName == null ? myNodeID : myConfigName);
     }
     return sb.toString();
+  }
+
+  @Override
+  public int hashCode() {
+    // ignore myConfigName, it's not relevant for matching
+    return Objects.hash(myModelUID, myNodeID);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof MappingConfig_SimpleRef) {
+      MappingConfig_SimpleRef r = ((MappingConfig_SimpleRef) obj);
+      return Objects.equals(myModelUID, r.myModelUID) && Objects.equals(myNodeID, r.myNodeID);
+    }
+    return false;
   }
 }
