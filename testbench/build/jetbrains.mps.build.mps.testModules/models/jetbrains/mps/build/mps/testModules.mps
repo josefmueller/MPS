@@ -12,6 +12,7 @@
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
     <import index="2apo" ref="r:20ab6a94-5179-4062-a795-403815374f72(CloneModule.test.test@tests)" />
+    <import index="q08g" ref="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(refactoring.test.test@tests)" />
   </imports>
   <registry>
     <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
@@ -57,6 +58,9 @@
     </node>
     <node concept="2Uj$md" id="3XdPonscwMG" role="2Uj_Yd">
       <ref role="2Uj$mc" to="2apo:6rP_NjK3fBF" resolve="CloneModule" />
+    </node>
+    <node concept="2Uj$md" id="3iBi5uuKAAO" role="2Uj_Yd">
+      <ref role="2Uj$mc" to="q08g:6rP_NjK3fBF" resolve="RefactoringTest" />
     </node>
     <node concept="1dCxOl" id="4JE22xb2zS5" role="3cVaLd">
       <property role="1XweGQ" value="r:12897c41-1d23-444a-8c3d-8a254e74f9b6" />

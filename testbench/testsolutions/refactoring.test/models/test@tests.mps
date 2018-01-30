@@ -40,7 +40,8 @@
     <import index="8qtf" ref="r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)" />
     <import index="crsq" ref="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
-    <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
+    <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -216,7 +217,9 @@
       </concept>
     </language>
     <language id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest">
-      <concept id="3298469228705179778" name="jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest" flags="ng" index="2UguNb" />
+      <concept id="3298469228705179778" name="jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest" flags="ng" index="2UguNb">
+        <child id="563004820749542528" name="language" index="3ciXlA" />
+      </concept>
     </language>
     <language id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage">
       <concept id="6171083915388330090" name="jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression" flags="ng" index="1qvjxa">
@@ -286,6 +289,7 @@
       <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
         <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
       </concept>
+      <concept id="4040588429969069898" name="jetbrains.mps.lang.smodel.structure.LanguageReferenceExpression" flags="nn" index="3rNLEe" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
@@ -1866,11 +1870,11 @@
               <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
             </node>
             <node concept="2OqwBi" id="3iBi5uuGmhg" role="37vLTx">
-              <node concept="37vLTw" id="3iBi5uuGm7V" role="2Oq$k0">
-                <ref role="3cqZAo" to="3ebz:5AcmpEOr55Q" resolve="myEnvironment" />
+              <node concept="37vLTw" id="3iBi5uuKc14" role="2Oq$k0">
+                <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
               </node>
               <node concept="liA8E" id="3iBi5uuGpIh" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                <ref role="37wK5l" to="ew0j:~Environment.openProject(java.io.File):jetbrains.mps.project.Project" resolve="openProject" />
                 <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
                   <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
@@ -1889,11 +1893,11 @@
       <node concept="3clFbS" id="2_jX3OnHT4q" role="2VODD2">
         <node concept="3clFbF" id="3iBi5uuGwSX" role="3cqZAp">
           <node concept="2OqwBi" id="3iBi5uuGx1A" role="3clFbG">
-            <node concept="37vLTw" id="3iBi5uuGwSW" role="2Oq$k0">
-              <ref role="3cqZAo" to="3ebz:5AcmpEOr55Q" resolve="myEnvironment" />
+            <node concept="37vLTw" id="3iBi5uuKdiN" role="2Oq$k0">
+              <ref role="3cqZAo" to="83ig:~EnvironmentAwareTestCase.myEnvironment" resolve="myEnvironment" />
             </node>
             <node concept="liA8E" id="3iBi5uuGxmz" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3hj1t46fvYr" resolve="closeProject" />
+              <ref role="37wK5l" to="ew0j:~Environment.closeProject(jetbrains.mps.project.Project):void" resolve="closeProject" />
               <node concept="37vLTw" id="3iBi5uuGxsm" role="37wK5m">
                 <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
               </node>
@@ -1902,12 +1906,18 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="3iBi5uuG161" role="1zkMxy">
-      <ref role="3uigEE" to="3ebz:5AcmpEOr4by" resolve="EnvironmentAwareTestCase" />
+    <node concept="3uibUv" id="3iBi5uuKc4p" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
   <node concept="2UguNb" id="6rP_NjK3fBF">
     <property role="TrG5h" value="RefactoringTest" />
+    <node concept="3rNLEe" id="3iBi5uuKF8x" role="3ciXlA">
+      <property role="3rM5sR" value="0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64" />
+    </node>
+    <node concept="3rNLEe" id="3iBi5uuKF8H" role="3ciXlA">
+      <property role="3rM5sR" value="bf13acef-3fb7-4e3b-882a-bc94b7e487b3" />
+    </node>
   </node>
   <node concept="312cEu" id="5$JdMWP8FLf">
     <property role="TrG5h" value="HeadlessRefactoringUI" />
