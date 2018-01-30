@@ -7,24 +7,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="SourceLanguage.behavior.ConceptA_BehaviorDescriptor" file="ConceptA_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="SourceLanguage.behavior.ConceptB_BehaviorDescriptor" file="ConceptB_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="SourceLanguage.behavior.ConceptC_BehaviorDescriptor" file="ConceptC_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="SourceLanguage.behavior.Interface1_BehaviorDescriptor" file="Interface1_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
-  <dependency className="SourceLanguage.behavior.Interface2_BehaviorDescriptor" file="Interface2_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-  </dependency>
   <dependency className="SourceLanguage.behavior.OtherClass" file="OtherClass.java">
     <classNode dependClassName="SourceLanguage.behavior.SomeClass" />
   </dependency>

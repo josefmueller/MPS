@@ -7,21 +7,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="SourceLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="ConceptA_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptA_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptB_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptB_BehaviorDescriptor" />
-    </file>
-    <file name="ConceptC_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptC_BehaviorDescriptor" />
-    </file>
-    <file name="Interface1_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="SourceLanguage.behavior.Interface1_BehaviorDescriptor" />
-    </file>
-    <file name="Interface2_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="SourceLanguage.behavior.Interface2_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)/6426415869175149441">
     <file name="SomeClass.java">
