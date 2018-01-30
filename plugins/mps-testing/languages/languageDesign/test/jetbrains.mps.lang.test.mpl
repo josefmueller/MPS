@@ -10,7 +10,7 @@
     <generator alias="" namespace="jetbrains.mps.lang.test#1210261198005" uuid="fc4584d6-365c-4ceb-b660-b2c91933024d">
       <models>
         <modelRoot contentPath="${module}" type="default">
-          <sourceRoot location="generator/baseLanguage/template" />
+          <sourceRoot location="generator/template" />
         </modelRoot>
       </models>
       <external-templates>

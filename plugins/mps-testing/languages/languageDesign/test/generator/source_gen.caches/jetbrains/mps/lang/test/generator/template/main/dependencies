@@ -50,7 +50,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.test.generator.template.util.TestsUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
