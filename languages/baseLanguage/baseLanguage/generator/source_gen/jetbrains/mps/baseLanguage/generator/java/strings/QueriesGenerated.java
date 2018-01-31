@@ -141,16 +141,16 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_1482495884796567805(final SourceSubstituteMacroNodeContext _context) {
     return (SNode) IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(_context.getNode());
   }
-  public static SNode sourceNodeQuery_4723230619342922347(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1750438968355682278(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
   }
-  public static SNode sourceNodeQuery_4723230619342922357(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1750438968355682703(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
   }
-  public static SNode sourceNodeQuery_5351366134229435262(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1750438968355684573(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
   }
-  public static SNode sourceNodeQuery_5351366134229435272(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1750438968355683333(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
   }
   public static SNode sourceNodeQuery_3987319776542716744(final SourceSubstituteMacroNodeContext _context) {
@@ -293,10 +293,10 @@ public class QueriesGenerated extends QueryProviderBase {
     int i = 0;
     snqMethods.put("4592826945244850127", new QueriesGenerated.SNQ(i++));
     snqMethods.put("1482495884796567805", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("4723230619342922347", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("4723230619342922357", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("5351366134229435262", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("5351366134229435272", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1750438968355682278", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1750438968355682703", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1750438968355684573", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("1750438968355683333", new QueriesGenerated.SNQ(i++));
     snqMethods.put("3987319776542716744", new QueriesGenerated.SNQ(i++));
     snqMethods.put("3987319776542716779", new QueriesGenerated.SNQ(i++));
     snqMethods.put("3987319776542716787", new QueriesGenerated.SNQ(i++));
@@ -336,13 +336,13 @@ public class QueriesGenerated extends QueryProviderBase {
         case 1:
           return QueriesGenerated.sourceNodeQuery_1482495884796567805(ctx);
         case 2:
-          return QueriesGenerated.sourceNodeQuery_4723230619342922347(ctx);
+          return QueriesGenerated.sourceNodeQuery_1750438968355682278(ctx);
         case 3:
-          return QueriesGenerated.sourceNodeQuery_4723230619342922357(ctx);
+          return QueriesGenerated.sourceNodeQuery_1750438968355682703(ctx);
         case 4:
-          return QueriesGenerated.sourceNodeQuery_5351366134229435262(ctx);
+          return QueriesGenerated.sourceNodeQuery_1750438968355684573(ctx);
         case 5:
-          return QueriesGenerated.sourceNodeQuery_5351366134229435272(ctx);
+          return QueriesGenerated.sourceNodeQuery_1750438968355683333(ctx);
         case 6:
           return QueriesGenerated.sourceNodeQuery_3987319776542716744(ctx);
         case 7:
