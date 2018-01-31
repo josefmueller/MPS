@@ -17,6 +17,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class MappingConfigNormalRef_EditorBuilder_a extends AbstractEditorBuilder {
@@ -76,7 +77,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     return editorCell;
   }
   private boolean nodeCondition_x6ljyw_a1b0() {
-    return isNotEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x600daa40a8a549d9L, "mcName"))) && neq_3tuy2e_a0a0a11(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x600daa40a8a549d9L, "mcName")), SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID")));
+    return isNotEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x600daa40a8a549d9L, "mcName"))) && !(Objects.equals(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x600daa40a8a549d9L, "mcName")), SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID"))));
   }
   private EditorCell createConstant_x6ljyw_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "->");
@@ -129,9 +130,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private static boolean neq_3tuy2e_a0a0a11(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

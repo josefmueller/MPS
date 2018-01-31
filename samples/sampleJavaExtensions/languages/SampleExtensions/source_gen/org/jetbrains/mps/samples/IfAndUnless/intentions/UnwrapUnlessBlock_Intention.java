@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -41,7 +42,7 @@ public final class UnwrapUnlessBlock_Intention extends AbstractIntentionDescript
     SNode selectedNode = editorContext.getSelectedNode();
     for (SNode ancestor : ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, null, true))) {
       if (SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"))) {
-        return eq_d6nd9e_a0a0a0b0e(ancestor, node);
+        return Objects.equals(ancestor, node);
       }
     }
     return false;
@@ -85,8 +86,5 @@ public final class UnwrapUnlessBlock_Intention extends AbstractIntentionDescript
     public IntentionDescriptor getDescriptor() {
       return UnwrapUnlessBlock_Intention.this;
     }
-  }
-  private static boolean eq_d6nd9e_a0a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

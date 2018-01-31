@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,7 +25,7 @@ public class check_AssertStatementInsideEditorTestCase_NonTypesystemRule extends
       current = parent;
       parent = SNodeOperations.getParent(parent);
     }
-    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")) && eq_gkenzs_a0a3a1(current.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314cad13L, "code"))) {
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")) && Objects.equals(current.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314cad13L, "code"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(node, "This is a usual Java assert statement. For testing with JUnit use assert constructions from jetbrains.mps.baseLanguage.unitTest", "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "8396091035812119723", null, errorTarget);
@@ -39,8 +40,5 @@ public class check_AssertStatementInsideEditorTestCase_NonTypesystemRule extends
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_gkenzs_a0a3a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

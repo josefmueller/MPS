@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -85,7 +86,7 @@ public class ActionMigrationHelper {
   public static SNode getLastStatement(SNode statementList) {
     return ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).reversedList().findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !((eq_qgr84z_a0a0a0a0a0a0a0j(SNodeOperations.getConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
+        return !((Objects.equals(SNodeOperations.getConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))));
       }
     });
   }
@@ -103,7 +104,7 @@ public class ActionMigrationHelper {
     return expressionsToWrap;
   }
   public static void addModelImport(SModel model, SModel modelToImport) {
-    if (neq_qgr84z_a0a0l(modelToImport, model)) {
+    if (!(Objects.equals(modelToImport, model))) {
       SModelReference reference = modelToImport.getReference();
       if (model instanceof SModelInternal && !(((SModelInternal) model).getModelImports().contains(reference))) {
         ((SModelInternal) model).addModelImport(reference);
@@ -132,7 +133,7 @@ public class ActionMigrationHelper {
       SNode dot = createSelectingOperation(returnExpression);
       SNode selectingStatement = ActionMigrationHelper.wrapDotExpressionToStatement(dot);
       SNodeOperations.replaceWithAnother(returnStatement, selectingStatement);
-      if (neq_qgr84z_a0f0d0n(returnStatement, lastStatement)) {
+      if (!(Objects.equals(returnStatement, lastStatement))) {
         SNodeOperations.insertNextSiblingChild(selectingStatement, _quotation_createNode_qgr84z_a0a0a5a3a31());
       }
     }
@@ -181,14 +182,14 @@ public class ActionMigrationHelper {
     List<SModelReference> missingModelImports = findMissingModelImports(node, repository);
     for (SModelReference modelImport : ListSequence.fromList(missingModelImports)) {
       SModel resolve = modelImport.resolve(repository);
-      if ((oldModel.getModelImports().contains(modelImport) || eq_qgr84z_a0a0a0b0b0r(oldModel, resolve)) && !(newModel.getModelImports().contains(modelImport)) && neq_qgr84z_a0a1a1a71(newModel, resolve)) {
+      if ((oldModel.getModelImports().contains(modelImport) || Objects.equals(oldModel, resolve)) && !(newModel.getModelImports().contains(modelImport)) && !(Objects.equals(newModel, resolve))) {
         newModel.addModelImport(modelImport);
       }
     }
   }
   private static void addMissingLanguageImport(SNode node, SModelInternal oldModel, SModelInternal newModel) {
     SLanguage language = node.getConcept().getLanguage();
-    if ((oldModel.importedLanguageIds().contains(language) || eq_qgr84z_a0a0a1a81(language, MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"))) && !(newModel.importedLanguageIds().contains(language))) {
+    if ((oldModel.importedLanguageIds().contains(language) || Objects.equals(language, MetaAdapterFactory.getLanguage(0x982eb8df2c964bd7L, 0x996311712ea622e5L, "jetbrains.mps.lang.resources"))) && !(newModel.importedLanguageIds().contains(language))) {
       newModel.addLanguage(language);
     }
   }
@@ -216,11 +217,11 @@ public class ActionMigrationHelper {
       side = "";
     }
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"));
-    if (eq_qgr84z_a0c0v(side, "left")) {
+    if (Objects.equals(side, "left")) {
       addLeftPlaceInCell(result);
-    } else if (eq_qgr84z_a0a2a12(side, "")) {
+    } else if (Objects.equals(side, "")) {
       addRightPlaceInCell(result);
-    } else if (eq_qgr84z_a0b2a12(side, "both")) {
+    } else if (Objects.equals(side, "both")) {
       addLeftPlaceInCell(result);
       addRightPlaceInCell(result);
     }
@@ -246,24 +247,15 @@ public class ActionMigrationHelper {
     SModel conceptEditorAspect = ActionMigrationHelper.getEditorAspect(((Language) module));
     return ListSequence.fromList(SModelOperations.roots(conceptEditorAspect, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_qgr84z_a0a0a0a0a0a0a4a52(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), concept) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))) != null) && eq_qgr84z_a0a0a0a0a0a0e0z(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, 0x7ce019825aa4f13L, "transformTag")), tag);
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), concept) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))) != null) && Objects.equals(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, 0x7ce019825aa4f13L, "transformTag")), tag);
       }
     }).first();
-  }
-  private static boolean eq_qgr84z_a0a0a0a0a0a0a0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_qgr84z_a0a0l(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNode _quotation_createNode_qgr84z_a0a0a5a3a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc67c7feL, "ReturnStatement"), null, null, false);
     return quotedNode_1;
-  }
-  private static boolean neq_qgr84z_a0f0d0n(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNode _quotation_createNode_qgr84z_a0b0b0a0a1a41(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -294,29 +286,5 @@ public class ActionMigrationHelper {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc59b314L, "IntegerConstant"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "-1");
     return quotedNode_1;
-  }
-  private static boolean neq_qgr84z_a0a1a1a71(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_qgr84z_a0a0a0b0b0r(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0a0a1a81(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0c0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0a2a12(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0b2a12(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0a0a0a0a0a0e0z(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_qgr84z_a0a0a0a0a0a0a4a52(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

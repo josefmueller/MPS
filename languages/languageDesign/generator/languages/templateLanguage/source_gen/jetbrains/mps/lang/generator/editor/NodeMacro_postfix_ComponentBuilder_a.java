@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -70,7 +71,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     return editorCell;
   }
   private boolean nodeCondition_crgygw_a0a() {
-    return neq_f3owzj_a0a0j(myNode.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    return !(Objects.equals(myNode.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")));
   }
   private boolean nodeCondition_crgygw_a1a() {
     return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
@@ -188,8 +189,5 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     new nodeUnderMacroStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
-  }
-  private static boolean neq_f3owzj_a0a0j(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

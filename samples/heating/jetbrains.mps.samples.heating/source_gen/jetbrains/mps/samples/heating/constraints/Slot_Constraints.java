@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 
 public class Slot_Constraints extends BaseConstraintsDescriptor {
   public Slot_Constraints() {
@@ -35,14 +36,11 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "start";
         return (SPropertyOperations.getInteger(propertyValue)) >= 0 && (SPropertyOperations.getInteger(propertyValue)) <= 24 && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_wqhmm2_a0a0a0a0a0a0b0b0a1a0b0c(it, node) || SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) != (SPropertyOperations.getInteger(propertyValue));
+            return Objects.equals(it, node) || SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) != (SPropertyOperations.getInteger(propertyValue));
           }
         });
       }
     });
     return properties;
-  }
-  private static boolean eq_wqhmm2_a0a0a0a0a0a0b0b0a1a0b0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

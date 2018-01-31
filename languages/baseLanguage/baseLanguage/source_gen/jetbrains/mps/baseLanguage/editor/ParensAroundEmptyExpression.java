@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
@@ -53,7 +54,7 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   public class SMP_Group_z82rnb_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_z82rnb_a0a0a5(SNodeOperations.getConcept(_context.getCurrentTargetNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+      return Objects.equals(SNodeOperations.getConcept(_context.getCurrentTargetNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
     }
     @NotNull
     @Override
@@ -226,8 +227,5 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
         }
       }
     }
-  }
-  private static boolean eq_z82rnb_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

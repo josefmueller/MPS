@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -78,7 +79,7 @@ public final class AddPropertyMacroParam_property_Intention extends AbstractInte
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     final SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(node)))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_wcza7p_a0a0a0a0a0a0i0g(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), p);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), p);
       }
     }).first();
     if (propertyDeclaration == null) {
@@ -123,8 +124,5 @@ public final class AddPropertyMacroParam_property_Intention extends AbstractInte
     public Object getParameter() {
       return myParameter;
     }
-  }
-  private static boolean eq_wcza7p_a0a0a0a0a0a0i0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

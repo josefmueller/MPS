@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -92,7 +93,7 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return enclosingProperty == null || neq_pyukpt_a0a0a0a0a0a0a4a0a1a0a0a1a0b0a1a3(it, enclosingProperty);
+                  return enclosingProperty == null || !(Objects.equals(it, enclosingProperty));
                 }
               }));
             }
@@ -105,7 +106,7 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     SNode ancestor = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
     if (ancestor != null) {
-      if (eq_pyukpt_a0a0b0e(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property")), ancestor)) {
+      if (Objects.equals(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property")), ancestor)) {
         return false;
       }
     }
@@ -120,10 +121,4 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558652");
   private static SNodePointer breakingNode_pyukpt_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643668");
-  private static boolean neq_pyukpt_a0a0a0a0a0a0a4a0a1a0a0a1a0b0a1a3(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_pyukpt_a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

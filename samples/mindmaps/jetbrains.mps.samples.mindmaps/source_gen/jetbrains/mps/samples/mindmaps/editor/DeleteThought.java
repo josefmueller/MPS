@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DeleteThought {
@@ -32,7 +33,7 @@ public class DeleteThought {
 
       ListSequence.fromList(SLinkOperations.getChildren(mindMap, MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_tcgyjr_a0a0a0a0a0a0c0d1_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x1198689ff14c5dfL, "target")), node) || eq_tcgyjr_a0a0a0a0a0a0c0d1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x517b79625769ba9eL, "source")), node);
+          return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x1198689ff14c5dfL, "target")), node) || Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x517b79625769ba9eL, "source")), node);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -40,12 +41,6 @@ public class DeleteThought {
         }
       });
       SNodeOperations.deleteNode(node);
-    }
-    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d1(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d1_0(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class DeleteThought_BACKSPACE extends AbstractCellAction {
@@ -61,7 +56,7 @@ public class DeleteThought {
 
       ListSequence.fromList(SLinkOperations.getChildren(mindMap, MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_tcgyjr_a0a0a0a0a0a0c0d2_0(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x1198689ff14c5dfL, "target")), node) || eq_tcgyjr_a0a0a0a0a0a0c0d2(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x517b79625769ba9eL, "source")), node);
+          return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x1198689ff14c5dfL, "target")), node) || Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, 0x517b79625769ba9eL, "source")), node);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -69,12 +64,6 @@ public class DeleteThought {
         }
       });
       SNodeOperations.deleteNode(node);
-    }
-    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2_0(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

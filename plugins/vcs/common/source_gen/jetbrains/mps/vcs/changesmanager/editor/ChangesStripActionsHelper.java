@@ -29,6 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -185,7 +186,7 @@ public final class ChangesStripActionsHelper {
       final SContainmentLink commonRole = Sequence.fromIterable(links).first();
       if (Sequence.fromIterable(links).all(new IWhereFilter<SContainmentLink>() {
         public boolean accept(SContainmentLink r) {
-          return eq_ikrecr_a0a0a0a0a0d0u0t(r, commonRole);
+          return Objects.equals(r, commonRole);
         }
       })) {
         Iterable<Integer> indices = Sequence.fromIterable(children).select(new ISelector<SNode, Integer>() {
@@ -264,9 +265,6 @@ public final class ChangesStripActionsHelper {
       return checkedDotOperand.getBounds(true);
     }
     return null;
-  }
-  private static boolean eq_ikrecr_a0a0a0a0a0d0u0t(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static void check_ikrecr_a32a91(ChangeStripsPainter checkedDotOperand, ChangesStripActionsHelper checkedDotThisExpression) {
     if (null != checkedDotOperand) {

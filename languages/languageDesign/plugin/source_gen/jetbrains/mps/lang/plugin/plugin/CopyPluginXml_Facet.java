@@ -24,6 +24,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import java.util.Objects;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
@@ -84,7 +85,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                         new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                           @Override
                           public boolean acceptWritten(IFile file) {
-                            if (eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(file.getName(), "plugin.xml")) {
+                            if (Objects.equals(file.getName(), "plugin.xml")) {
                               pluginXml[0] = file;
                               monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + file + " to " + metaInf + " directory.")));
                               return false;
@@ -184,9 +185,6 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       public String pluginRoot() {
         return super._0();
       }
-    }
-    private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class TargetProperties implements IPropertiesPersistence {

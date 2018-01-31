@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import java.util.Objects;
 
 @MPSLaunch
 public class FontFamilyStyleClassItemPreviewTest_Test extends BaseTransformationTest {
@@ -35,12 +36,9 @@ public class FontFamilyStyleClassItemPreviewTest_Test extends BaseTransformation
       initEditorComponent("491383275435260981", "");
       Assert.assertNotNull(CellFinderUtil.findChildByCondition(getEditorComponent().getSelectedCell(), new Condition<EditorCell>() {
         public boolean met(EditorCell it) {
-          return EditorCell_Label.class.isInstance(it) && eq_jwhbwi_a0a0a0a0b0a1a0g(((EditorCell_Label) it).getFont().getFamily(), "Serif");
+          return EditorCell_Label.class.isInstance(it) && Objects.equals(((EditorCell_Label) it).getFont().getFamily(), "Serif");
         }
       }, true, true));
-    }
-    private static boolean eq_jwhbwi_a0a0a0a0b0a1a0g(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

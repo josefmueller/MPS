@@ -7,6 +7,7 @@ import org.apache.tools.ant.BuildException;
 import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.List;
 import java.util.LinkedHashSet;
@@ -47,7 +48,7 @@ public class MigrationTask extends MpsLoadTask {
     } catch (IOException e) {
       throw new BuildException("can't read task output from " + OUT_FILE_NAME, e);
     }
-    if (neq_ajmasp_a0d0j(p.getProperty(ERR_CODE_KEY), "0")) {
+    if (!(Objects.equals(p.getProperty(ERR_CODE_KEY), "0"))) {
       throw new BuildException("Migration was not executed. See log for details.");
     }
   }
@@ -74,8 +75,5 @@ public class MigrationTask extends MpsLoadTask {
       MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
     }
     return classPath;
-  }
-  private static boolean neq_ajmasp_a0d0j(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

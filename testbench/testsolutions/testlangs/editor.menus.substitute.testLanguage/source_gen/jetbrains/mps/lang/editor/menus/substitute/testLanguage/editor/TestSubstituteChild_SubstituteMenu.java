@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -105,7 +106,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
       tmpVar = tmpVar && _context.getLink() != null;
       tmpVar = tmpVar && _context.getEditorContext() != null;
 
-      return eq_ddv2zo_a0f0c5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0bfL, "simpleAction"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0bfL, "simpleAction"));
     }
     @NotNull
     @Override
@@ -244,7 +245,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a6(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0c1L, "parameterizedQuery"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fb0c1L, "parameterizedQuery"));
     }
     @NotNull
     @Override
@@ -365,7 +366,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_c extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a7(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eaL, "wrapDefaultSubstituteMenuFromSubsitute"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eaL, "wrapDefaultSubstituteMenuFromSubsitute"));
     }
     @NotNull
     @Override
@@ -511,7 +512,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_d extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a8(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x692a1b3ce80977f5L, "wrapDefaultSubstituteMenuWithFunctionFromSubsitute"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x692a1b3ce80977f5L, "wrapDefaultSubstituteMenuWithFunctionFromSubsitute"));
     }
     @NotNull
     @Override
@@ -663,7 +664,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_e extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a9(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x1c44bd1240b34bbdL, "wrapNamedSubstituteMenuFromSubsitute"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x1c44bd1240b34bbdL, "wrapNamedSubstituteMenuFromSubsitute"));
     }
     @NotNull
     @Override
@@ -809,7 +810,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_f extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a01(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eeL, "conceptsMenu"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2eeL, "conceptsMenu"));
     }
     @NotNull
     @Override
@@ -869,7 +870,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_g extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a11(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2f3L, "addConcept"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a6fe2f3L, "addConcept"));
     }
     @NotNull
     @Override
@@ -904,7 +905,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_h extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a21(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7057f1L, "subconcepts"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7057f1L, "subconcepts"));
     }
     @NotNull
     @Override
@@ -947,7 +948,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_i extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a31(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3aa5cde3L, "smartReference"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3aa5cde3L, "smartReference"));
     }
     @NotNull
     @Override
@@ -993,7 +994,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_j extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a41(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7111ffL, "childrenToContributeMenu"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7ce1116e3a7111ffL, "childrenToContributeMenu"));
     }
     @NotNull
     @Override
@@ -1039,7 +1040,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_k extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a51(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f0007d60cfb6991L, "superChild"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f0007d60cfb6991L, "superChild"));
     }
     @NotNull
     @Override
@@ -1125,7 +1126,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_Group_ddv2zo_m extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_ddv2zo_a0a0a71(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d2199230e174L, "notSubconcept"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d2199230e174L, "notSubconcept"));
     }
     @NotNull
     @Override
@@ -1156,41 +1157,5 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
         }
       }, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")));
     }
-  }
-  private static boolean eq_ddv2zo_a0f0c5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a6(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a11(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a31(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a41(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a51(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_ddv2zo_a0a0a71(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

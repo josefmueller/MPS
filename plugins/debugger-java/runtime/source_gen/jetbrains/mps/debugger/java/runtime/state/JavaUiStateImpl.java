@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
+import java.util.Objects;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
@@ -71,7 +72,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     if (thread == null) {
       return null;
     }
-    if (newContext == null || !((eq_vkri5_a0a0a3a9(newContext.getThread(), thread)))) {
+    if (newContext == null || !((Objects.equals(newContext.getThread(), thread)))) {
       return getEventProcessor().getContextManager().findContextForThread(thread.getThread());
     }
     return newContext;
@@ -138,8 +139,5 @@ public abstract class JavaUiStateImpl extends JavaUiState {
   }
   protected AbstractDebugSession.ExecutionState getExecutionState() {
     return myDebugSession.getExecutionState();
-  }
-  private static boolean eq_vkri5_a0a0a3a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

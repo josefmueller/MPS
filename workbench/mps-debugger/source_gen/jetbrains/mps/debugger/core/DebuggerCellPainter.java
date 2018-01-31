@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import org.jetbrains.mps.util.Condition;
+import java.util.Objects;
 
 public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E> {
   private static final int LEFT_MARGIN = 4;
@@ -178,11 +179,8 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       @Override
       public boolean met(EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 
-        return eq_mgy25g_a0b0a0a1a0f0x(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
+        return Objects.equals(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
       }
     }) != null;
-  }
-  private static boolean eq_mgy25g_a0b0a0a1a0f0x(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

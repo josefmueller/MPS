@@ -11,6 +11,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.model.TransientSModel;
+import java.util.Objects;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -39,7 +40,7 @@ public class CompareTransientModels_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientSModel && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientSModel && eq_5whyyr_a0a0a4(NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
+    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientSModel && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientSModel && Objects.equals(NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), NameUtil.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -81,8 +82,5 @@ public class CompareTransientModels_Action extends BaseAction {
     }).toListSequence();
     DiffRequest request = new SimpleDiffRequest("", contents, titles);
     DiffManager.getInstance().showDiff(((Project) MapSequence.fromMap(_params).get("project")), request);
-  }
-  private static boolean eq_5whyyr_a0a0a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

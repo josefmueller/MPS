@@ -49,6 +49,7 @@ import java.util.UUID;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.presentation.SmartAliasHelper;
+import java.util.Objects;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -562,7 +563,7 @@ public class QueriesGenerated extends QueryProviderBase {
           return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
         }
       })) {
-        if (eq_x583g4_a0a0e0a0le(SPropertyOperations.getString(reference, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedRole)) {
+        if (Objects.equals(SPropertyOperations.getString(reference, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedRole)) {
           SNode genuineReference = reference;
           while ((SLinkOperations.getTarget(genuineReference, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null)) {
             genuineReference = SLinkOperations.getTarget(genuineReference, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink"));
@@ -1319,8 +1320,5 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_x583g4_a0a0e0a0le(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

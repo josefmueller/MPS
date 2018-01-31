@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
@@ -46,7 +47,7 @@ public final class ConvertToItems_Intention extends AbstractIntentionDescriptor 
     return SNodeOperations.isInstanceOf(creator, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(creator, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_icoqxr_a0a0f(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"));
+    return Objects.equals(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"));
   }
   @Override
   public boolean isSurroundWith() {
@@ -75,8 +76,5 @@ public final class ConvertToItems_Intention extends AbstractIntentionDescriptor 
     public IntentionDescriptor getDescriptor() {
       return ConvertToItems_Intention.this;
     }
-  }
-  private static boolean eq_icoqxr_a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -14,14 +14,13 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/1156564534683188476">
     <file name="MakeOrRebuildModelsFromChangeList_Action.java">
       <node id="1156564534683188476" at="37,0,38,0" concept="13" trace="ICON" />
       <node id="3903119074522538562" at="39,0,40,0" concept="5" trace="rebuild" />
-      <node id="1156564534683188476" at="40,72,41,35" concept="15" />
+      <node id="1156564534683188476" at="40,72,41,35" concept="14" />
       <node id="1156564534683188476" at="41,35,42,31" concept="4" />
       <node id="1156564534683188476" at="42,31,43,35" concept="4" />
       <node id="1156564534683188476" at="43,35,44,40" concept="4" />
@@ -181,7 +180,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/1156564534683228178">
     <file name="MakeFromChangesView_ActionGroup.java">
       <node id="1156564534683228178" at="9,0,10,0" concept="13" trace="ID" />
-      <node id="1156564534683228178" at="10,44,11,37" concept="15" />
+      <node id="1156564534683228178" at="10,44,11,37" concept="14" />
       <node id="1156564534683228178" at="11,37,12,30" concept="4" />
       <node id="1156564534683228178" at="12,30,13,25" concept="4" />
       <node id="5964066876626835162" at="13,25,14,56" concept="4" />
@@ -200,104 +199,97 @@
   </root>
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/3877003870834324810">
     <file name="CompareTransientModels_Action.java">
-      <node id="3877003870834324810" at="29,0,30,0" concept="13" trace="ICON" />
-      <node id="3877003870834324810" at="31,42,32,38" concept="15" />
-      <node id="3877003870834324810" at="32,38,33,35" concept="4" />
-      <node id="3877003870834324810" at="33,35,34,40" concept="4" />
-      <node id="3877003870834324810" at="37,32,38,16" concept="10" />
-      <node id="3877003870834482566" at="41,87,42,487" concept="10" />
-      <node id="3877003870834324810" at="45,89,46,85" concept="4" />
-      <node id="3877003870834324810" at="50,53,51,19" concept="10" />
-      <node id="3877003870834324810" at="53,5,54,63" concept="9" />
-      <node id="3877003870834324810" at="54,63,55,52" concept="4" />
-      <node id="3877003870834324810" at="56,22,57,21" concept="10" />
-      <node id="3877003870834324810" at="60,5,61,56" concept="9" />
-      <node id="3877003870834324810" at="61,56,62,53" concept="4" />
-      <node id="3877003870834324810" at="63,22,64,21" concept="10" />
-      <node id="3877003870834324810" at="66,5,67,16" concept="10" />
-      <node id="584143917410156948" at="70,96,71,113" concept="9" />
-      <node id="584143917410274441" at="73,47,74,57" concept="10" />
-      <node id="584143917410252802" at="78,42,79,36" concept="10" />
-      <node id="584143917410151921" at="81,24,82,70" concept="9" />
-      <node id="584143917410151941" at="82,70,83,105" concept="4" />
-      <node id="1573732301438442697" at="85,63,86,46" concept="10" />
-      <node id="3877003870834324810" at="49,95,52,5" concept="7" />
-      <node id="3877003870834324810" at="55,52,58,7" concept="7" />
-      <node id="3877003870834324810" at="62,53,65,7" concept="7" />
-      <node id="584143917410273410" at="73,0,76,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lcom/intellij/diff/contents/DiffContent;" />
-      <node id="584143917410251540" at="78,0,81,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-      <node id="1573732301438442697" at="85,0,88,0" concept="14" trace="eq_5whyyr_a0a0a4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3877003870834324810" at="36,0,40,0" concept="8" trace="isDumbAware#()Z" />
-      <node id="3877003870834324810" at="40,0,44,0" concept="8" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="3877003870834324810" at="44,0,48,0" concept="8" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="3877003870834324810" at="31,0,36,0" concept="2" trace="CompareTransientModels_Action#()V" />
-      <node id="584143917410151897" at="71,113,76,24" concept="9" />
-      <node id="584143917410151912" at="76,24,81,24" concept="9" />
-      <node id="3877003870834324810" at="52,5,59,5" concept="1" />
-      <node id="3877003870834324810" at="59,5,66,5" concept="1" />
-      <node id="3877003870834324810" at="69,0,85,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="3877003870834324810" at="48,0,69,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="3877003870834324810" at="37,32,38,16" />
-      <scope id="3877003870834458321" at="41,87,42,487" />
-      <scope id="3877003870834324810" at="45,89,46,85" />
-      <scope id="3877003870834324810" at="50,53,51,19" />
-      <scope id="3877003870834324810" at="56,22,57,21" />
-      <scope id="3877003870834324810" at="63,22,64,21" />
-      <scope id="584143917410273411" at="73,47,74,57" />
-      <scope id="584143917410251541" at="78,42,79,36" />
-      <scope id="1573732301438442697" at="85,63,86,46" />
-      <scope id="3877003870834324810" at="31,42,34,40" />
-      <scope id="584143917410273410" at="73,0,76,0">
+      <node id="3877003870834324810" at="30,0,31,0" concept="13" trace="ICON" />
+      <node id="3877003870834324810" at="32,42,33,38" concept="14" />
+      <node id="3877003870834324810" at="33,38,34,35" concept="4" />
+      <node id="3877003870834324810" at="34,35,35,40" concept="4" />
+      <node id="3877003870834324810" at="38,32,39,16" concept="10" />
+      <node id="3877003870834482566" at="42,87,43,485" concept="10" />
+      <node id="3877003870834324810" at="46,89,47,85" concept="4" />
+      <node id="3877003870834324810" at="51,53,52,19" concept="10" />
+      <node id="3877003870834324810" at="54,5,55,63" concept="9" />
+      <node id="3877003870834324810" at="55,63,56,52" concept="4" />
+      <node id="3877003870834324810" at="57,22,58,21" concept="10" />
+      <node id="3877003870834324810" at="61,5,62,56" concept="9" />
+      <node id="3877003870834324810" at="62,56,63,53" concept="4" />
+      <node id="3877003870834324810" at="64,22,65,21" concept="10" />
+      <node id="3877003870834324810" at="67,5,68,16" concept="10" />
+      <node id="584143917410156948" at="71,96,72,113" concept="9" />
+      <node id="584143917410274441" at="74,47,75,57" concept="10" />
+      <node id="584143917410252802" at="79,42,80,36" concept="10" />
+      <node id="584143917410151921" at="82,24,83,70" concept="9" />
+      <node id="584143917410151941" at="83,70,84,105" concept="4" />
+      <node id="3877003870834324810" at="50,95,53,5" concept="7" />
+      <node id="3877003870834324810" at="56,52,59,7" concept="7" />
+      <node id="3877003870834324810" at="63,53,66,7" concept="7" />
+      <node id="584143917410273410" at="74,0,77,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lcom/intellij/diff/contents/DiffContent;" />
+      <node id="584143917410251540" at="79,0,82,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
+      <node id="3877003870834324810" at="37,0,41,0" concept="8" trace="isDumbAware#()Z" />
+      <node id="3877003870834324810" at="41,0,45,0" concept="8" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="3877003870834324810" at="45,0,49,0" concept="8" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="3877003870834324810" at="32,0,37,0" concept="2" trace="CompareTransientModels_Action#()V" />
+      <node id="584143917410151897" at="72,113,77,24" concept="9" />
+      <node id="584143917410151912" at="77,24,82,24" concept="9" />
+      <node id="3877003870834324810" at="53,5,60,5" concept="1" />
+      <node id="3877003870834324810" at="60,5,67,5" concept="1" />
+      <node id="3877003870834324810" at="70,0,86,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="3877003870834324810" at="49,0,70,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="3877003870834324810" at="38,32,39,16" />
+      <scope id="3877003870834458321" at="42,87,43,485" />
+      <scope id="3877003870834324810" at="46,89,47,85" />
+      <scope id="3877003870834324810" at="51,53,52,19" />
+      <scope id="3877003870834324810" at="57,22,58,21" />
+      <scope id="3877003870834324810" at="64,22,65,21" />
+      <scope id="584143917410273411" at="74,47,75,57" />
+      <scope id="584143917410251541" at="79,42,80,36" />
+      <scope id="3877003870834324810" at="32,42,35,40" />
+      <scope id="584143917410273410" at="74,0,77,0">
         <var name="model" id="584143917410273410" />
       </scope>
-      <scope id="584143917410251540" at="78,0,81,0">
+      <scope id="584143917410251540" at="79,0,82,0">
         <var name="model" id="584143917410251540" />
       </scope>
-      <scope id="1573732301438442697" at="85,0,88,0">
-        <var name="a" id="1573732301438442697" />
-        <var name="b" id="1573732301438442697" />
-      </scope>
-      <scope id="3877003870834324810" at="36,0,40,0" />
-      <scope id="3877003870834324810" at="40,0,44,0">
+      <scope id="3877003870834324810" at="37,0,41,0" />
+      <scope id="3877003870834324810" at="41,0,45,0">
         <var name="_params" id="3877003870834324810" />
         <var name="event" id="3877003870834324810" />
       </scope>
-      <scope id="3877003870834324810" at="44,0,48,0">
+      <scope id="3877003870834324810" at="45,0,49,0">
         <var name="_params" id="3877003870834324810" />
         <var name="event" id="3877003870834324810" />
       </scope>
-      <scope id="3877003870834324810" at="31,0,36,0" />
-      <scope id="3877003870834324810" at="53,5,58,7">
+      <scope id="3877003870834324810" at="32,0,37,0" />
+      <scope id="3877003870834324810" at="54,5,59,7">
         <var name="p" id="3877003870834324810" />
       </scope>
-      <scope id="3877003870834324810" at="60,5,65,7">
+      <scope id="3877003870834324810" at="61,5,66,7">
         <var name="p" id="3877003870834324810" />
       </scope>
-      <scope id="3877003870834324810" at="70,96,83,105">
+      <scope id="3877003870834324810" at="71,96,84,105">
         <var name="contents" id="584143917410151898" />
         <var name="request" id="584143917410151922" />
         <var name="sortedModels" id="584143917410156949" />
         <var name="titles" id="584143917410151913" />
       </scope>
-      <scope id="3877003870834324810" at="69,0,85,0">
+      <scope id="3877003870834324810" at="70,0,86,0">
         <var name="_params" id="3877003870834324810" />
         <var name="event" id="3877003870834324810" />
       </scope>
-      <scope id="3877003870834324810" at="49,95,67,16" />
-      <scope id="3877003870834324810" at="48,0,69,0">
+      <scope id="3877003870834324810" at="50,95,68,16" />
+      <scope id="3877003870834324810" at="49,0,70,0">
         <var name="_params" id="3877003870834324810" />
         <var name="event" id="3877003870834324810" />
       </scope>
-      <unit id="584143917410273410" at="72,80,76,5" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$1" />
-      <unit id="584143917410251540" at="77,73,81,5" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$2" />
-      <unit id="3877003870834324810" at="28,0,89,0" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" />
+      <unit id="584143917410273410" at="73,80,77,5" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$1" />
+      <unit id="584143917410251540" at="78,73,82,5" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action$2" />
+      <unit id="3877003870834324810" at="29,0,87,0" name="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" />
     </file>
   </root>
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/5047908084943665620">
     <file name="TestMergeAction_Action.java">
       <node id="5047908084943665620" at="38,0,39,0" concept="13" trace="LOG" />
       <node id="5047908084943665620" at="39,0,40,0" concept="13" trace="ICON" />
-      <node id="5047908084943665620" at="41,35,42,48" concept="15" />
+      <node id="5047908084943665620" at="41,35,42,48" concept="14" />
       <node id="5047908084943665620" at="42,48,43,35" concept="4" />
       <node id="5047908084943665620" at="43,35,44,40" concept="4" />
       <node id="5047908084943665620" at="47,32,48,16" concept="10" />
@@ -338,8 +330,8 @@
       <node id="5047908084943703423" at="72,96,78,6" concept="9" />
       <node id="5047908084943665620" at="54,5,61,5" concept="1" />
       <node id="5047908084943665620" at="61,5,68,5" concept="1" />
-      <node id="5047908084943919062" at="87,24,94,9" concept="16" />
-      <node id="4915141521380953057" at="98,136,106,9" concept="16" />
+      <node id="5047908084943919062" at="87,24,94,9" concept="15" />
+      <node id="4915141521380953057" at="98,136,106,9" concept="15" />
       <node id="5047908084943665620" at="50,0,71,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="5047908084943708029" at="83,0,108,0" concept="8" trace="run#()V" />
       <node id="1092784201483719405" at="81,52,108,7" concept="4" />
@@ -444,7 +436,7 @@
     <file name="ReRunMergeFromBackup_Action.java">
       <node id="7545884443035896082" at="48,0,49,0" concept="13" trace="LOG" />
       <node id="7545884443035896082" at="49,0,50,0" concept="13" trace="ICON" />
-      <node id="7545884443035896082" at="51,40,52,47" concept="15" />
+      <node id="7545884443035896082" at="51,40,52,47" concept="14" />
       <node id="7545884443035896082" at="52,47,53,35" concept="4" />
       <node id="7545884443035896082" at="53,35,54,40" concept="4" />
       <node id="7545884443035896082" at="57,32,58,16" concept="10" />
@@ -526,7 +518,7 @@
       <node id="1619763311840986297" at="155,110,170,5" concept="7" />
       <node id="7545884443035896213" at="155,0,172,0" concept="8" trace="selectMineModel#(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;" />
       <node id="7545884443035896082" at="79,0,103,0" concept="8" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="7545884443035896308" at="105,109,145,7" concept="16" />
+      <node id="7545884443035896308" at="105,109,145,7" concept="15" />
       <node id="7545884443035896304" at="104,96,146,5" concept="6" />
       <node id="7545884443035896082" at="103,0,149,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="7545884443035896082" at="57,32,58,16" />
@@ -630,7 +622,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035896373">
     <file name="ShowDifferencesWithModelOnDisk_Action.java">
       <node id="7545884443035896373" at="29,0,30,0" concept="13" trace="ICON" />
-      <node id="7545884443035896373" at="31,50,32,59" concept="15" />
+      <node id="7545884443035896373" at="31,50,32,59" concept="14" />
       <node id="7545884443035896373" at="32,59,33,35" concept="4" />
       <node id="7545884443035896373" at="33,35,34,41" concept="4" />
       <node id="7545884443035896373" at="37,32,38,16" concept="10" />
@@ -703,7 +695,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035896622">
     <file name="VCSModelActions_ActionGroup.java">
       <node id="7545884443035896622" at="8,0,9,0" concept="13" trace="ID" />
-      <node id="7545884443035896622" at="9,40,10,33" concept="15" />
+      <node id="7545884443035896622" at="9,40,10,33" concept="14" />
       <node id="7545884443035896622" at="10,33,11,30" concept="4" />
       <node id="7545884443035896622" at="11,30,12,25" concept="4" />
       <node id="7545884443035896626" at="12,25,13,113" concept="4" />
@@ -718,7 +710,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035919781">
     <file name="ShowDiffererenceWithCurrentRevision_Action.java">
       <node id="7545884443035919781" at="30,0,31,0" concept="13" trace="ICON" />
-      <node id="7545884443035919781" at="32,55,33,64" concept="15" />
+      <node id="7545884443035919781" at="32,55,33,64" concept="14" />
       <node id="7545884443035919781" at="33,64,34,35" concept="4" />
       <node id="7545884443035919781" at="34,35,35,40" concept="4" />
       <node id="7545884443035919781" at="38,32,39,16" concept="10" />
@@ -823,7 +815,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035919872">
     <file name="ShowDiffWithCurrRev_ActionGroup.java">
       <node id="7545884443035919872" at="8,0,9,0" concept="13" trace="ID" />
-      <node id="7545884443035919872" at="9,44,10,37" concept="15" />
+      <node id="7545884443035919872" at="9,44,10,37" concept="14" />
       <node id="7545884443035919872" at="10,37,11,30" concept="4" />
       <node id="7545884443035919872" at="11,30,12,25" concept="4" />
       <node id="7545884443035919875" at="12,25,13,122" concept="4" />
@@ -837,7 +829,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035924707">
     <file name="ModuleVcsActions_ActionGroup.java">
       <node id="7545884443035924707" at="8,0,9,0" concept="13" trace="ID" />
-      <node id="7545884443035924707" at="9,41,10,34" concept="15" />
+      <node id="7545884443035924707" at="9,41,10,34" concept="14" />
       <node id="7545884443035924707" at="10,34,11,30" concept="4" />
       <node id="7545884443035924707" at="11,30,12,25" concept="4" />
       <node id="7545884443035924709" at="12,25,13,98" concept="4" />
@@ -851,7 +843,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035924713">
     <file name="IgnoreModuleInVcs_Action.java">
       <node id="7545884443035924713" at="22,0,23,0" concept="13" trace="ICON" />
-      <node id="7545884443035924713" at="24,37,25,40" concept="15" />
+      <node id="7545884443035924713" at="24,37,25,40" concept="14" />
       <node id="7545884443035924713" at="25,40,26,35" concept="4" />
       <node id="7545884443035924713" at="26,35,27,40" concept="4" />
       <node id="7545884443035924713" at="30,32,31,16" concept="10" />
@@ -917,7 +909,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/7545884443035924748">
     <file name="AddModuleToVcs_Action.java">
       <node id="7545884443035924748" at="23,0,24,0" concept="13" trace="ICON" />
-      <node id="7545884443035924748" at="25,34,26,41" concept="15" />
+      <node id="7545884443035924748" at="25,34,26,41" concept="14" />
       <node id="7545884443035924748" at="26,41,27,35" concept="4" />
       <node id="7545884443035924748" at="27,35,28,40" concept="4" />
       <node id="7545884443035924748" at="31,32,32,16" concept="10" />
@@ -985,7 +977,7 @@
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/8199015172308449938">
     <file name="ShowNodeDifference_Action.java">
       <node id="8199015172308449938" at="19,0,20,0" concept="13" trace="ICON" />
-      <node id="8199015172308449938" at="21,38,22,98" concept="15" />
+      <node id="8199015172308449938" at="21,38,22,98" concept="14" />
       <node id="8199015172308449938" at="22,98,23,35" concept="4" />
       <node id="8199015172308449938" at="23,35,24,40" concept="4" />
       <node id="8199015172308449938" at="27,32,28,16" concept="10" />

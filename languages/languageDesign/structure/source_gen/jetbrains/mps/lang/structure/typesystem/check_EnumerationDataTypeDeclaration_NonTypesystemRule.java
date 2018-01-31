@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,8 +26,8 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   public check_EnumerationDataTypeDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode enumerationDataTypeDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final boolean deriveFromExternal = eq_t6q6ek_a0a0a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation");
-    final boolean deriveFromInternal = eq_t6q6ek_a0a1a1(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value");
+    final boolean deriveFromExternal = Objects.equals(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_presentation");
+    final boolean deriveFromInternal = Objects.equals(SPropertyOperations.getString_def(enumerationDataTypeDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x116d5fed0c2L, "memberIdentifierPolicy"), "derive_from_presentation"), "derive_from_internal_value");
 
     // Suggest using internal values, if they are present in all members 
     if (deriveFromExternal && ListSequence.fromList(SLinkOperations.getChildren(enumerationDataTypeDeclaration, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).all(new IWhereFilter<SNode>() {
@@ -49,7 +50,7 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
         // Warn about duplication in presentation 
         if (!(deriveFromExternal) && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_t6q6ek_a0a0a0a0a0a0b0a0a0a0g0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")));
+            return Objects.equals(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")));
           }
         }).isNotEmpty()) {
           {
@@ -61,7 +62,7 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
         // Report duplicate values 
         if (!(deriveFromInternal) && SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")) != null && ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_t6q6ek_a0a0a0a0a0a0e0a0a0a0g0b(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")));
+            return Objects.equals(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), SPropertyOperations.getString(member, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")));
           }
         }).isNotEmpty()) {
           {
@@ -80,7 +81,7 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
         } else {
           if (ListSequence.fromList(SNodeOperations.getAllSiblings(member, false)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(EnumerationMemberDeclaration__BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
+              return Objects.equals(EnumerationMemberDeclaration__BehaviorDescriptor.getConstantName_idi2Z$rBf.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"))), memberValidId);
             }
           }).isNotEmpty()) {
             String msg = (deriveFromExternal ? "presentation value" : (deriveFromInternal ? "internal value" : "java identifier"));
@@ -101,20 +102,5 @@ public class check_EnumerationDataTypeDeclaration_NonTypesystemRule extends Abst
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_t6q6ek_a0a0a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_t6q6ek_a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0b0a0a0a0g0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0e0a0a0a0g0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_t6q6ek_a0a0a0a0a0a0a0i0a0a0a0g0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.Objects;
 
 public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtime {
   public ChooseAppropriateMethodDeclaration_QuickFix() {
@@ -96,7 +97,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
 
       Iterable<SNode> methodsByName = Sequence.fromIterable(Members.visibleInstanceMethods(instanceType, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_8qmp5s_a0a0a0a0a0a4a2b0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
 
@@ -109,8 +110,5 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         }
       }
     }
-  }
-  private static boolean eq_8qmp5s_a0a0a0a0a0a4a2b0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

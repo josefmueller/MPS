@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -60,7 +61,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
       return false;
     }
 
-    return containmentLink.isMultiple() && (eq_a19vay_a0a0a7a5(containmentLink, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")) || DeleteLineAction.isVerticalCellLayout(parentCell));
+    return containmentLink.isMultiple() && (Objects.equals(containmentLink, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")) || DeleteLineAction.isVerticalCellLayout(parentCell));
   }
   private static boolean isVerticalCellLayout(@NotNull EditorCell_Collection cell) {
     CellLayout cellLayout = cell.getCellLayout();
@@ -75,7 +76,4 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
     return (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) ? ((SContainmentLink) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))) : node.getContainmentLink());
   }
 
-  private static boolean eq_a19vay_a0a0a7a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

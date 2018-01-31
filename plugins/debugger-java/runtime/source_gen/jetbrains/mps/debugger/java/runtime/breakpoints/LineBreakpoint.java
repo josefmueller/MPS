@@ -21,6 +21,7 @@ import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InvalidLineNumberException;
 import com.sun.jdi.InternalException;
 import org.jetbrains.annotations.Nullable;
+import java.util.Objects;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = LogManager.getLogger(LineBreakpoint.class);
@@ -114,7 +115,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       return false;
     }
 
-    return eq_owwtjm_a0d0o(getLocation(), ((LineBreakpoint) o).getLocation());
+    return Objects.equals(getLocation(), ((LineBreakpoint) o).getLocation());
   }
   @Override
   public int hashCode() {
@@ -122,8 +123,5 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean eq_owwtjm_a0d0o(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

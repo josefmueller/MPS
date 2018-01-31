@@ -26,6 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import java.util.Objects;
 
 public class RefactoringScriptReference implements BaseScriptReference<RefactoringScript> {
   private static final Logger LOG = LogManager.getLogger(RefactoringScriptReference.class);
@@ -99,7 +100,7 @@ public class RefactoringScriptReference implements BaseScriptReference<Refactori
             public RefactoringPartImpl select(final RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> participant) {
               List<SNode> participantParts = ListSequence.fromList(SLinkOperations.getChildren(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_z5nzcg_a0a0a0a0a0a0a0a0a0a0a0h0b0a0a0a0c0j(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
+                  return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant")), participant.getId());
                 }
               }).toListSequence();
               return new RefactoringPartImpl(SLinkOperations.getTarget(log, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x31ee543051f2333cL, "options")), participantParts, participant);
@@ -110,8 +111,5 @@ public class RefactoringScriptReference implements BaseScriptReference<Refactori
       }
     });
     return implementation.value;
-  }
-  private static boolean eq_z5nzcg_a0a0a0a0a0a0a0a0a0a0a0h0b0a0a0a0c0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

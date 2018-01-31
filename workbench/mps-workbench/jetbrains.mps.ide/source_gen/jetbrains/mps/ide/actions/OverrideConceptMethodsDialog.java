@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
+import java.util.Objects;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
@@ -91,7 +92,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
           String aRole = SNodeOperations.getContainingLink(a).getName();
           String bRole = SNodeOperations.getContainingLink(b).getName();
 
-          if (neq_6zqknj_a0d0c0a0a0a0d0l(aRole, bRole)) {
+          if (!(Objects.equals(aRole, bRole))) {
             return aRole.compareTo(bRole);
           }
 
@@ -109,8 +110,5 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
         return new SNodePointer(it);
       }
     }).toGenericArray(SNodePointer.class);
-  }
-  private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

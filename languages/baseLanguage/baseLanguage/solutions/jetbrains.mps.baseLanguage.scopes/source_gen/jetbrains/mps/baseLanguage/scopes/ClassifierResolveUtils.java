@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -123,7 +124,7 @@ public class ClassifierResolveUtils {
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return eq_8z6r2b_a0a0a0a0a0a0b0e(targetModelName, it.getName().getLongName());
+        return Objects.equals(targetModelName, it.getName().getLongName());
       }
     }).toListSequence();
     return resolveClassifierByFqNameWithNonStubPriority(models, classifierFqName);
@@ -140,7 +141,7 @@ public class ClassifierResolveUtils {
     // resolve without stubs 
     Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return neq_8z6r2b_a0a0a0a0a0a0f0f(SModelStereotype.getStereotype(it), stubStereoType);
+        return !(Objects.equals(SModelStereotype.getStereotype(it), stubStereoType));
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -150,7 +151,7 @@ public class ClassifierResolveUtils {
     // resolve with stubs 
     return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return eq_8z6r2b_a0a0a0a0a0a9a5(SModelStereotype.getStereotype(it), stubStereoType);
+        return Objects.equals(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
   }
@@ -615,14 +616,5 @@ public class ClassifierResolveUtils {
       return checkedDotOperand.getModule();
     }
     return null;
-  }
-  private static boolean eq_8z6r2b_a0a0a0a0a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_8z6r2b_a0a0a0a0a0a0f0f(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_8z6r2b_a0a0a0a0a0a9a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

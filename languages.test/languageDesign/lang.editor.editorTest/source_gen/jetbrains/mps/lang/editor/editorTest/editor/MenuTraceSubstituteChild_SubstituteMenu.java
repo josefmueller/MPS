@@ -38,6 +38,7 @@ import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPa
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.Objects;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import java.util.Arrays;
@@ -264,7 +265,7 @@ public class MenuTraceSubstituteChild_SubstituteMenu extends SubstituteMenuBase 
       }).collect(Collectors.toList());
     }
     private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
-      return eq_fxbim_a0a0b9(concept, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf543140230L, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteSubChild2"));
+      return Objects.equals(concept, MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf543140230L, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteSubChild2"));
     }
     @NotNull
     @Override
@@ -460,8 +461,5 @@ public class MenuTraceSubstituteChild_SubstituteMenu extends SubstituteMenuBase 
     private SAbstractConcept getConceptToFindMenuFor(SubstituteMenuContext _context) {
       return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L, "jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteChild");
     }
-  }
-  private static boolean eq_fxbim_a0a0b9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

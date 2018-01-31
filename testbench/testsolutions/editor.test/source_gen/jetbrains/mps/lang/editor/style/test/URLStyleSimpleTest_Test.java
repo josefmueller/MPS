@@ -9,6 +9,7 @@ import jetbrains.mps.lang.test.runtime.TestParametersCache;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import junit.framework.Assert;
+import java.util.Objects;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 @MPSLaunch
@@ -30,10 +31,7 @@ public class URLStyleSimpleTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2542823481375800124", "");
-      Assert.assertTrue(eq_ra91zp_a0a1a0g(getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.URL), "www.jetbrains.com"));
-    }
-    private static boolean eq_ra91zp_a0a1a0g(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
+      Assert.assertTrue(Objects.equals(getEditorComponent().getSelectedCell().getStyle().get(StyleAttributes.URL), "www.jetbrains.com"));
     }
   }
 }

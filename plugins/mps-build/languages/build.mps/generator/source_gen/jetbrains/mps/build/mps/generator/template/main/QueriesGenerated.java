@@ -19,6 +19,7 @@ import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescrip
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
 import jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor;
@@ -191,7 +192,7 @@ public class QueriesGenerated extends QueryProviderBase {
     // first, check if there's overriden location for the path 
     String result = ListSequence.fromList(SLinkOperations.getChildren(((Tuples._3<VisibleArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x3c765492deb1ce79L, "jarLocations"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a81(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
+        return Objects.equals(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"))), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -798,7 +799,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xad72aee24acb24dL, "stats")) != null);
   }
   public static boolean ifMacro_Condition_1462305029084461806(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque")) != null) && neq_x583g4_a0a0a381(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001aL, "icon32"))));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque")) != null) && !(Objects.equals(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001aL, "icon32")))));
   }
   public static boolean ifMacro_Condition_781140262679960794(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xad72aee24a9cbfeL, "icon128")) != null);
@@ -2930,14 +2931,8 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a3a81(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean neq_x583g4_a0a0a381(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0rk(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

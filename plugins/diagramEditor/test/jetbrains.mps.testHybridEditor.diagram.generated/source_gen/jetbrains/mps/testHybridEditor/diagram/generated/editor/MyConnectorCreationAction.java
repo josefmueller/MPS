@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,7 +64,7 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
           final Wrappers._boolean result = new Wrappers._boolean(false);
           repo.getModelAccess().runReadAction(new Runnable() {
             public void run() {
-              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getToId() instanceof SNode && eq_lbjacb_a0a0a0a0a0a5a0a0b0a0a0a0a5(SNodeOperations.getContainingLink(((SNode) connectionInfo.getToId())), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"))) {
+              if (connectionInfo.isValid() && SNodeOperations.isInstanceOf(connectionInfo.getFromNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getFromId() instanceof SNode && SNodeOperations.isInstanceOf(connectionInfo.getToNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && connectionInfo.getToId() instanceof SNode && Objects.equals(SNodeOperations.getContainingLink(((SNode) connectionInfo.getToId())), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"))) {
                 result.value = true;
               }
             }
@@ -106,8 +107,5 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
       return checkedDotOperand.booleanValue();
     }
     return false;
-  }
-  private static boolean eq_lbjacb_a0a0a0a0a0a5a0a0b0a0a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

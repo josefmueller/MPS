@@ -37,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
+import java.util.Objects;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
@@ -358,7 +359,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a3a0h0e0qb(sa.getScriptReference(), next.getScriptReference());
+          return Objects.equals(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -423,8 +424,5 @@ public class MigrationTask {
   }
   private static <T> T as_ajmasp_a0a0e0mb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
-  }
-  private static boolean eq_ajmasp_a0c0a0a3a0h0e0qb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

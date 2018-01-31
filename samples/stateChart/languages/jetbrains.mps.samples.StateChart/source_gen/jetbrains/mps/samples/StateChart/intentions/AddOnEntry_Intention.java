@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
@@ -42,7 +43,7 @@ public final class AddOnEntry_Intention extends AbstractIntentionDescriptor impl
     return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L, 0x5e8f0d038ab691b5L, "onEntry")), MetaAdapterFactory.getContainmentLink(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L, 0x5e8f0d038ab26ac2L, "operations"))).isEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_4vtywf_a0a0f(SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L, "jetbrains.mps.samples.StateChart.structure.State"), false, false), node);
+    return Objects.equals(SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L, "jetbrains.mps.samples.StateChart.structure.State"), false, false), node);
   }
   @Override
   public boolean isSurroundWith() {
@@ -69,8 +70,5 @@ public final class AddOnEntry_Intention extends AbstractIntentionDescriptor impl
     public IntentionDescriptor getDescriptor() {
       return AddOnEntry_Intention.this;
     }
-  }
-  private static boolean eq_4vtywf_a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

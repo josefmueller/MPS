@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
@@ -56,7 +57,7 @@ public final class JoinVariableDeclarationAndInitializer_Intention extends Abstr
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(declarationStmt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(initializerStmt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
         SNode assignment = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(initializerStmt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && eq_9fbomu_a0a0b0a0f0e(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), SLinkOperations.getTarget(declarationStmt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"))) && (boolean) AssignmentExpression__BehaviorDescriptor.canConvertToLocalVariableDeclaration_idhLFstkU.invoke(assignment)) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && Objects.equals(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), SLinkOperations.getTarget(declarationStmt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, 0xf8cc67c7f1L, "localVariableDeclaration"))) && (boolean) AssignmentExpression__BehaviorDescriptor.canConvertToLocalVariableDeclaration_idhLFstkU.invoke(assignment)) {
           return true;
         }
       }
@@ -102,8 +103,5 @@ public final class JoinVariableDeclarationAndInitializer_Intention extends Abstr
     public IntentionDescriptor getDescriptor() {
       return JoinVariableDeclarationAndInitializer_Intention.this;
     }
-  }
-  private static boolean eq_9fbomu_a0a0b0a0f0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

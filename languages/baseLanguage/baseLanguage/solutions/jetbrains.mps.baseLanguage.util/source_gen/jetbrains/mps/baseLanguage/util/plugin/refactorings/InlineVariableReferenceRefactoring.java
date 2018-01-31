@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
@@ -43,7 +44,7 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     } else if (SNodeOperations.isInstanceOf(myAssignment, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
       if (ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.cast(myAssignment, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_uj3i4l_a0a0a0a0a0a0a0a2a3(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), variable);
+          return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), variable);
         }
       }).isNotEmpty()) {
         // Assigments referring to the variable from their right side should not be inlined, since the resulting code will have different semantics than the original 
@@ -89,8 +90,5 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       curParent = SNodeOperations.getParent(curParent);
     }
     return SNodeOperations.cast(curParent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
-  }
-  private static boolean eq_uj3i4l_a0a0a0a0a0a0a0a2a3(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

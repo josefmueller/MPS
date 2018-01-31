@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -30,7 +31,7 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_pivjqh_a0a0a0a0a0a0a0b(SNodeOperations.getParent(it), SNodeOperations.getParent(typeVariableDeclaration));
+        return Objects.equals(SNodeOperations.getParent(it), SNodeOperations.getParent(typeVariableDeclaration));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -53,8 +54,5 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_pivjqh_a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

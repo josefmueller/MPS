@@ -35,6 +35,7 @@ import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept__BehaviorDescriptor;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import java.util.Objects;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -218,7 +219,7 @@ public class Java_Command {
         final SConcept staticMethodConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
         final String mainMethodTraceableProperty = TraceableConcept__BehaviorDescriptor.getTraceableProperty_id4pl5GY7LKmH.invoke(_quotation_createNode_yvpt_a0a2a0b0a5a1());
         for (TraceablePositionInfo position : debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node)).getPositions()) {
-          if (eq_kk96hj_a0a0a3a0b0a5a62(position.getConcept(), staticMethodConcept) && (eq_kk96hj_a0a0a0d0a1a0f0ab(position.getPropertyString(), mainMethodTraceableProperty))) {
+          if (Objects.equals(position.getConcept(), staticMethodConcept) && (Objects.equals(position.getPropertyString(), mainMethodTraceableProperty))) {
             for (UnitPositionInfo upi : unitsForNode) {
               if (upi.contains(position.getFileName(), position.getStartLine())) {
                 return upi.getUnitName();
@@ -413,11 +414,5 @@ public class Java_Command {
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean eq_kk96hj_a0a0a3a0b0a5a62(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_kk96hj_a0a0a0d0a1a0f0ab(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

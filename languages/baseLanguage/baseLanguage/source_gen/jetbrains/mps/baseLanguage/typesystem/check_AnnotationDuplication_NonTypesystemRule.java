@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -32,7 +33,7 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_qq1g71_a0a0a0a0a0a2a1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")), SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")));
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")), SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -51,8 +52,5 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_qq1g71_a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

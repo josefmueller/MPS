@@ -168,6 +168,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />

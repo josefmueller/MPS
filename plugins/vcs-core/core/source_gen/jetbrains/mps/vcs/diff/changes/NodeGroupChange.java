@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.util.NameUtil;
+import java.util.Objects;
 
 public class NodeGroupChange extends ModelChange {
   private final SNodeId myParentNodeId;
@@ -195,7 +196,7 @@ public class NodeGroupChange extends ModelChange {
     String oldStuff = (myEnd - myBegin == 1 ? role : NameUtil.formatNumericalString(myEnd - myBegin, role));
     String newStuff = (myResultEnd - myResultBegin == 1 ? role : NameUtil.formatNumericalString(myResultEnd - myResultBegin, role));
     // FIXME get rid of this dirty magic with role names "pluralization". PLEASE!!! 
-    if (eq_yjf6x2_a0a8a33(newStuff, role) && eq_yjf6x2_a0a8a33_0(oldStuff, role)) {
+    if (Objects.equals(newStuff, role) && Objects.equals(oldStuff, role)) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
@@ -236,11 +237,5 @@ public class NodeGroupChange extends ModelChange {
       return AttributeOperations.getChildNodesAndAttributes(checkedDotOperand, myRole);
     }
     return null;
-  }
-  private static boolean eq_yjf6x2_a0a8a33(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_yjf6x2_a0a8a33_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

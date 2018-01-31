@@ -15,6 +15,7 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.core.mergedriver.MergeDriverMain;
@@ -79,7 +80,7 @@ import java.io.IOException;
           if (cmd.contains("mps-merger.")) {
             // already installed 
 
-            if (dryRun && neq_k2wvr2_a0a2a2a3a1a01a5(line, configLine)) {
+            if (dryRun && !(Objects.equals(line, configLine))) {
               return AbstractInstaller.State.OUTDATED;
             }
             lineToReplace = i;
@@ -149,7 +150,7 @@ import java.io.IOException;
     }
 
     if (dryRun) {
-      if (lineToReplace != -1 && eq_k2wvr2_a0a0a71a5(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
+      if (lineToReplace != -1 && Objects.equals(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
         return AbstractInstaller.State.INSTALLED;
       } else {
         return AbstractInstaller.State.NOT_INSTALLED;
@@ -181,15 +182,6 @@ import java.io.IOException;
     return "svn";
   }
   public boolean sameAs(SvnInstaller other) {
-    return eq_k2wvr2_a0a0i(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
-  }
-  private static boolean neq_k2wvr2_a0a2a2a3a1a01a5(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_k2wvr2_a0a0a71a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_k2wvr2_a0a0i(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return Objects.equals(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
   }
 }

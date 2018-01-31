@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.actions.testLanguage.actions.StringHolder;
 import jetbrains.mps.util.Computable;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -79,7 +80,7 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
     }
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_mw8afp_a0a0c5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x232dec78ad89892aL, "addMenu_simpleItemSubstitute"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x232dec78ad89892aL, "addMenu_simpleItemSubstitute"));
     }
     @NotNull
     @Override
@@ -376,9 +377,6 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         }
       }
     }
-  }
-  private static boolean eq_mw8afp_a0a0c5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_mw8afp_a7a0c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

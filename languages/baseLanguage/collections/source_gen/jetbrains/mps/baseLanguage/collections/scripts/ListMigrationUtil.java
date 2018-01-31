@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -68,10 +69,10 @@ public class ListMigrationUtil {
   }
   private static boolean isApplicableMethod(SNode node, String name, List<ParameterType> params) {
     SNode declaration = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
-    if (neq_gtz9m1_a0b0g(SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name)) {
+    if (!(Objects.equals(SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name))) {
       return false;
     }
-    if (!((eq_gtz9m1_a0a0c0g(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util")))) {
+    if (!((Objects.equals(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).count() != ListSequence.fromList(params).count()) {
@@ -119,11 +120,5 @@ public class ListMigrationUtil {
       return true;
     }
     return false;
-  }
-  private static boolean neq_gtz9m1_a0b0g(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_gtz9m1_a0a0c0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

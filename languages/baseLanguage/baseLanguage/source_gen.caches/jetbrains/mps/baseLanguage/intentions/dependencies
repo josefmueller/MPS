@@ -710,11 +710,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.FlipBinaryOperation_Intention" file="FlipBinaryOperation_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BinaryOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
@@ -731,8 +731,8 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.IntentionUtils" file="IntentionUtils.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -912,11 +912,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.JoinVariableDeclarationAndInitializer_Intention" file="JoinVariableDeclarationAndInitializer_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -932,11 +932,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.MakeClassAbstractFromMethod_Intention" file="MakeClassAbstractFromMethod_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -951,11 +951,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.MakeClassAbstract_Intention" file="MakeClassAbstract_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -1284,11 +1284,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.OrToAndAndBack_Intention" file="OrToAndAndBack_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.IntentionUtils" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -2055,11 +2055,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" file="UnwrapIfThenBlock_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -2078,11 +2078,11 @@
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention" file="UnwrapTryCatch_Intention.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

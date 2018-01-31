@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 
@@ -546,12 +547,12 @@ public final class RefPresentationFunctionUtil {
       SModel constraintsAspect = SModuleOperations.getAspect(SNodeOperations.getModel(_conceptNode.value).getModule(), "constraints");
       SNode constraintsNode = ListSequence.fromList(SModelOperations.roots(constraintsAspect, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_5b8pgj_a0a0a0a0a0a1a1a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), _conceptNode.value);
+          return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), _conceptNode.value);
         }
       });
       SNode refConstraintNode = ListSequence.fromList(SLinkOperations.getChildren(constraintsNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a726c901bL, "referent"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_5b8pgj_a0a0a0a0a0a2a1a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
+          return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
         }
       });
 
@@ -566,11 +567,5 @@ public final class RefPresentationFunctionUtil {
       }).first();
     }
     return null;
-  }
-  private static boolean eq_5b8pgj_a0a0a0a0a0a1a1a41(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_5b8pgj_a0a0a0a0a0a2a1a41(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

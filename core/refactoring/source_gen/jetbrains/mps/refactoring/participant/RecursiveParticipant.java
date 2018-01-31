@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -29,7 +30,7 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject, Initia
       if (getParticipant() instanceof RecursiveParticipant) {
         if (Sequence.fromIterable(myParents).any(new IWhereFilter<RefactoringParticipant.ParticipantApplied>() {
           public boolean accept(RefactoringParticipant.ParticipantApplied parent) {
-            return eq_7nv468_a0a0a0a0a0a0a0a0d3(parent.getParticipant(), RecursiveParticipantApplied.this.getParticipant()) && ListSequence.fromList(parent.getInitialStates()).containsSequence(ListSequence.fromList(RecursiveParticipantApplied.this.getInitialStates())) && ListSequence.fromList(((List<Object>) RecursiveParticipantApplied.this.getInitialStates())).containsSequence(ListSequence.fromList(parent.getInitialStates()));
+            return Objects.equals(parent.getParticipant(), RecursiveParticipantApplied.this.getParticipant()) && ListSequence.fromList(parent.getInitialStates()).containsSequence(ListSequence.fromList(RecursiveParticipantApplied.this.getInitialStates())) && ListSequence.fromList(((List<Object>) RecursiveParticipantApplied.this.getInitialStates())).containsSequence(ListSequence.fromList(parent.getInitialStates()));
           }
         })) {
           // todo: checked exception 
@@ -44,9 +45,6 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject, Initia
       } else {
         return super.initChanges(repository, selectedOptions, searchScope, progressMonitor);
       }
-    }
-    private static boolean eq_7nv468_a0a0a0a0a0a0a0a0d3(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

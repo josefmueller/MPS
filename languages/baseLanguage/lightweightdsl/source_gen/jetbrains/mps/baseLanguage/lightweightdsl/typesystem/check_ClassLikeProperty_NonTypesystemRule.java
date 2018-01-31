@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -23,7 +24,7 @@ public class check_ClassLikeProperty_NonTypesystemRule extends AbstractNonTypesy
   public check_ClassLikeProperty_NonTypesystemRule() {
   }
   public void applyRule(final SNode property, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (neq_htkvcg_a0a0b(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+    if (!(Objects.equals(SPropertyOperations.getString(property, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
       SPropertyOperations.set(property, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
 
@@ -47,8 +48,5 @@ public class check_ClassLikeProperty_NonTypesystemRule extends AbstractNonTypesy
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_htkvcg_a0a0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

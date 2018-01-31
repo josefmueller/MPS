@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 
 public final class SModelOperations {
   public SModelOperations() {
@@ -137,15 +138,12 @@ public final class SModelOperations {
       SNode l = ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"))).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a3a01(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {
       SModel m = ProjectStructureModule.getInstance(repo).getModelByModule(module);
       return (m == null ? null : ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, "jetbrains.mps.lang.project.structure.Module"))).first());
     }
-  }
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a3a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

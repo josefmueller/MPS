@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -73,7 +74,7 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_f5121k_a0a0a0a0a0a0a0a0a0a0d0u(CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
+            return Objects.equals(CommandParameterDeclaration__BehaviorDescriptor.getFieldName_id6mJVBGGspQq.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -94,7 +95,7 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
       public Iterable<SNode> translate(final String it) {
         SNode first = Sequence.fromIterable(parameterDeclarations).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode decl) {
-            return eq_f5121k_a0a0a0a0a0a0a0a0a0a0c0v(CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
+            return Objects.equals(CommandParameterDeclaration__BehaviorDescriptor.getSetterLongName_id3gpm$NHlR8F.invoke(decl), it);
           }
         });
         if (first == null) {
@@ -192,11 +193,5 @@ public final class CommandDeclaration__BehaviorDescriptor extends BaseBHDescript
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, "jetbrains.mps.execution.commands.structure.CommandType"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), (SNode) p0);
     return n1;
-  }
-  private static boolean eq_f5121k_a0a0a0a0a0a0a0a0a0a0d0u(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_f5121k_a0a0a0a0a0a0a0a0a0a0c0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

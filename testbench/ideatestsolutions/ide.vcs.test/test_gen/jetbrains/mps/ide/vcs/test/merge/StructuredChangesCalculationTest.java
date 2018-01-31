@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.vcs.diff.changes.SetReferenceStructChange;
@@ -67,12 +68,12 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
       public ModelChange[] invoke(SNode n1, SNode n2) {
         SNode n11 = ListSequence.fromList(SNodeOperations.getNodeDescendants(n1, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode n) {
-            return eq_8ul4jo_a0a0a0a0a0a0a0a0b0c0f(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
+            return Objects.equals(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
           }
         });
         SNode n21 = ListSequence.fromList(SNodeOperations.getNodeDescendants(n2, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode n) {
-            return eq_8ul4jo_a0a0a0a0a0a1a0a0b0c0f(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
+            return Objects.equals(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
           }
         });
         return new ModelChange[]{new NodeGroupStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), 0, 1, 0, 0)};
@@ -87,12 +88,12 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
       public ModelChange[] invoke(SNode n1, SNode n2) {
         SNode n11 = ListSequence.fromList(SNodeOperations.getNodeDescendants(n1, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode n) {
-            return eq_8ul4jo_a0a0a0a0a0a0a0a0b0c0g(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
+            return Objects.equals(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
           }
         });
         SNode n21 = ListSequence.fromList(SNodeOperations.getNodeDescendants(n2, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false, new SAbstractConcept[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode n) {
-            return eq_8ul4jo_a0a0a0a0a0a1a0a0b0c0g(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
+            return Objects.equals(SPropertyOperations.getString(n, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "var");
           }
         });
         return new ModelChange[]{new NodeGroupStructChange(getChangeSet(), n11.getNodeId(), n21.getNodeId(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), 0, 0, 0, 1)};
@@ -334,17 +335,5 @@ public class StructuredChangesCalculationTest extends ChangesTestBase {
         testDiffCorrectness(n1, n3, changes2);
       }
     });
-  }
-  private static boolean eq_8ul4jo_a0a0a0a0a0a0a0a0b0c0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8ul4jo_a0a0a0a0a0a1a0a0b0c0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8ul4jo_a0a0a0a0a0a0a0a0b0c0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8ul4jo_a0a0a0a0a0a1a0a0b0c0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

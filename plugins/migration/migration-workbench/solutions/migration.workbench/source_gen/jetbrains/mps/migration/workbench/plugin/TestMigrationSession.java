@@ -41,6 +41,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
@@ -192,7 +193,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
         public boolean accept(final ScriptApplied sa) {
           return ListSequence.fromList(passedM).all(new IWhereFilter<ScriptApplied>() {
             public boolean accept(ScriptApplied it) {
-              return neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0l31(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
+              return !(Objects.equals(it.getScriptReference(), sa.getScriptReference())) || it.getModule() != sa.getModule();
             }
           });
         }
@@ -359,8 +360,5 @@ import org.jetbrains.mps.openapi.language.SLanguage;
   @Override
   public MigrationExecutor getExecutor() {
     return myExecutor;
-  }
-  private static boolean neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0l31(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

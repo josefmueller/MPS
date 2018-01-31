@@ -93,11 +93,11 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.commands.EditorCommandAdapter" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.CellUtil" />

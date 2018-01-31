@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.checkedDots.generator.referenceUtils.ReferenceConversionHelper" />

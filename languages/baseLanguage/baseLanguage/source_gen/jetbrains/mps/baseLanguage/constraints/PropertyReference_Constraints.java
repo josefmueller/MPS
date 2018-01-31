@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodePointer;
@@ -95,7 +96,7 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return enclosingProperty == null || neq_57atcm_a0a0a0a0a0a0a6a0a1a0a0a1a0b0a1a3(it, enclosingProperty);
+                  return enclosingProperty == null || !(Objects.equals(it, enclosingProperty));
                 }
               }));
             }
@@ -108,7 +109,7 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     SNode ancestor = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false);
     if (ancestor != null) {
-      if (eq_57atcm_a0a0b0e(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), ancestor)) {
+      if (Objects.equals(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property")), ancestor)) {
         return false;
       }
     }
@@ -116,10 +117,4 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558315");
   private static SNodePointer breakingNode_57atcm_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643512");
-  private static boolean neq_57atcm_a0a0a0a0a0a0a6a0a1a0a0a1a0b0a1a3(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_57atcm_a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

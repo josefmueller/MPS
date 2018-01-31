@@ -19,6 +19,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -73,7 +74,7 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
           layoutRelativeName.insert(0, BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(namedParent, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null));
           namedParent = SNodeOperations.as(SNodeOperations.getParent(namedParent), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"));
         }
-        return eq_lodnpl_a0f0d0c0r(BuildRelativePath__BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"))), layoutRelativeName.toString());
+        return Objects.equals(BuildRelativePath__BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"))), layoutRelativeName.toString());
       }
     }
 
@@ -135,8 +136,5 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_lodnpl_a0f0d0c0r(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

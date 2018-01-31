@@ -4,7 +4,7 @@
   <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.FilterElement_Queries" file="FilterElement_Queries.java" />
   <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.MapElement_Queries" file="MapElement_Queries.java" />
   <dependency className="jetbrains.mps.samples.LightweightDSL.plugin.definitions.SwingBuilder_Queries" file="SwingBuilder_Queries.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

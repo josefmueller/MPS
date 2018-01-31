@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Objects;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import java.io.FileNotFoundException;
@@ -97,7 +98,7 @@ import java.io.FileNotFoundException;
       boolean equal = ListSequence.fromList(section).count() == ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0g0t0e(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (!(Objects.equals(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i)))) {
             equal = false;
             break;
           }
@@ -150,8 +151,5 @@ import java.io.FileNotFoundException;
   @Override
   public String getAffectedVcsName() {
     return "Git";
-  }
-  private static boolean neq_btx4zt_a0a0a0g0t0e(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

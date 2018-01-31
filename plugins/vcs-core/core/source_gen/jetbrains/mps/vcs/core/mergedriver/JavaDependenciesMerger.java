@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Objects;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -59,7 +60,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     }
   }
   private static RootDependencies mergeRootDependencies(RootDependencies rd1, RootDependencies rd2) throws JavaDependenciesMerger.MergeException {
-    if (neq_bqsatu_a0a0f(rd1.getClassName(), rd2.getClassName())) {
+    if (!(Objects.equals(rd1.getClassName(), rd2.getClassName()))) {
       throw new JavaDependenciesMerger.MergeException("Different class names: " + rd1.getClassName() + " and " + rd2.getClassName());
     }
     Set<String> dependNodes = rd1.getDependencies();
@@ -72,8 +73,5 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     private MergeException(String msg) {
       super(msg);
     }
-  }
-  private static boolean neq_bqsatu_a0a0f(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

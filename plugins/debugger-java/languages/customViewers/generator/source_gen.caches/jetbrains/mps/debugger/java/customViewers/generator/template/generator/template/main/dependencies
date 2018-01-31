@@ -8,6 +8,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer__BehaviorDescriptor" />

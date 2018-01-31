@@ -5105,7 +5105,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.editor.forbid_Insert" file="forbid_Insert.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.EditorActionUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

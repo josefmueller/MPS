@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceStructChange;
 import org.jetbrains.annotations.NotNull;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -79,7 +80,7 @@ public class StructChangeSetBuilder {
   }
   private void buildForNode(final Map<SNode, SNode> oldToNewMap, @NotNull final SNode oldNode, @NotNull final SNode newNode) {
     // updates oldToNewMap with new mappings 
-    if (neq_okvhpb_a0b0j(SNodeOperations.getConcept(oldNode), SNodeOperations.getConcept(newNode))) {
+    if (!(Objects.equals(SNodeOperations.getConcept(oldNode), SNodeOperations.getConcept(newNode)))) {
       // todo: should be whole node change instead of going into details... 
     }
     MapSequence.fromMap(oldToNewMap).put(oldNode, newNode);
@@ -194,7 +195,7 @@ outer:
       if (oldRef == null) {
         continue;
       }
-      if (eq_okvhpb_a0a0c0a0q(oldRef.getTargetSModelReference(), myChangeSet.getOldModel().getReference()) && eq_okvhpb_a0a0c0a0q_0(ch.getTargetModelReference(), myChangeSet.getNewModel().getReference()) && eq_okvhpb_a0a2a0a61(MapSequence.fromMap(myOldToNewMap).get(oldRef.getTargetNodeId()), ch.getTargetNodeId())) {
+      if (Objects.equals(oldRef.getTargetSModelReference(), myChangeSet.getOldModel().getReference()) && Objects.equals(ch.getTargetModelReference(), myChangeSet.getNewModel().getReference()) && Objects.equals(MapSequence.fromMap(myOldToNewMap).get(oldRef.getTargetNodeId()), ch.getTargetNodeId())) {
         // ?? should the resolveInfo be the same ?? 
         ListSequence.fromList(myNewChanges).removeElement(ch);
       }
@@ -263,7 +264,7 @@ outer:
 
   private static boolean equalsNodeStructure(@NotNull SNode n1, @NotNull SNode n2, Map<SNode, SNode> oldToNewMap, boolean easyRef) {
     // updates oldToNewMap with new mapping if matched 
-    if (neq_okvhpb_a0b0bb(SNodeOperations.getConcept(n1), SNodeOperations.getConcept(n2))) {
+    if (!(Objects.equals(SNodeOperations.getConcept(n1), SNodeOperations.getConcept(n2)))) {
       return false;
     }
     Map<SNode, SNode> tempMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -334,20 +335,5 @@ outer:
       return checkedDotOperand.getResolveInfo();
     }
     return null;
-  }
-  private static boolean neq_okvhpb_a0b0j(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_okvhpb_a0a2a0a61(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_okvhpb_a0a0c0a0q(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_okvhpb_a0a0c0a0q_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_okvhpb_a0b0bb(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

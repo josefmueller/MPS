@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -57,7 +58,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
   public class SMP_Group_7ojsku_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_7ojsku_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d2199235476fL, "ambigousSameConcepts"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d2199235476fL, "ambigousSameConcepts"));
     }
     @NotNull
     @Override
@@ -105,7 +106,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
   public class SMP_Group_7ojsku_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_7ojsku_a0a0a6(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d21992386290L, "ambigousDifferentConcepts"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d21992386290L, "ambigousDifferentConcepts"));
     }
     @NotNull
     @Override
@@ -153,7 +154,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
   public class SMP_Group_7ojsku_c extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_7ojsku_a0a0a7(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d219923643dcL, "ambigousWrapSameConcepts"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d219923643dcL, "ambigousWrapSameConcepts"));
     }
     @NotNull
     @Override
@@ -277,7 +278,7 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
   public class SMP_Group_7ojsku_d extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_7ojsku_a0a0a8(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d219923862afL, "ambigousWrapDifferentConcepts"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL, 0x7f53d219923862afL, "ambigousWrapDifferentConcepts"));
     }
     @NotNull
     @Override
@@ -397,17 +398,5 @@ public class TestSubstitituteAbstractChildAmbigousPosition_SubstituteMenu extend
         return MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992386b19L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition2");
       }
     }
-  }
-  private static boolean eq_7ojsku_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_7ojsku_a0a0a6(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_7ojsku_a0a0a7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_7ojsku_a0a0a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

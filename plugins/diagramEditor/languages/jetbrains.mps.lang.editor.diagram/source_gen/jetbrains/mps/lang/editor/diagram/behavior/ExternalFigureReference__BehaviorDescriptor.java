@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -47,7 +48,7 @@ public final class ExternalFigureReference__BehaviorDescriptor extends BaseBHDes
   /*package*/ static SNode getFigureParameter_id1iN4mn3oxt8(@NotNull SNode __thisNode__, final String name) {
     return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL, 0xf301bf106a65713L, "figure")), MetaAdapterFactory.getContainmentLink(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L, 0x1e3b9cbb9f749440L, "fields"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_43kfoe_a0a0a0a0a0a0l(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
       }
     });
   }
@@ -99,8 +100,5 @@ public final class ExternalFigureReference__BehaviorDescriptor extends BaseBHDes
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_43kfoe_a0a0a0a0a0a0l(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

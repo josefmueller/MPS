@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.ConceptDescendantsCache;
 import java.util.function.Predicate;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.stream.Collectors;
+import java.util.Objects;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -92,7 +93,7 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
         }).collect(Collectors.toList());
       }
       private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
-        return neq_ygcyd4_a0a0a0a1e5(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule")) && neq_ygcyd4_a0a0a0a1e5_0(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence")) && neq_ygcyd4_a0a0a0b4f(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) && neq_ygcyd4_a0a0a1e5(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1180b1792dbL, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence"));
+        return !(Objects.equals(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"))) && !(Objects.equals(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"))) && !(Objects.equals(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7b85dded0be53d6cL, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"))) && !(Objects.equals(concept, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1180b1792dbL, "jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence")));
       }
       @NotNull
       @Override
@@ -189,17 +190,5 @@ public class RuleConsequence_SubstituteMenu extends SubstituteMenuBase {
         return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
       }
     }
-  }
-  private static boolean neq_ygcyd4_a0a0a0a1e5(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_ygcyd4_a0a0a0a1e5_0(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_ygcyd4_a0a0a0b4f(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_ygcyd4_a0a0a1e5(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

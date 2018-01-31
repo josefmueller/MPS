@@ -7,6 +7,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +32,7 @@ public final class ShowGetNameUsages_MigrationScript extends BaseMigrationScript
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return eq_th6w08_a0a0d0a0a0a0b0a(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "name");
+        return Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "name");
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
@@ -47,8 +48,5 @@ public final class ShowGetNameUsages_MigrationScript extends BaseMigrationScript
   @Override
   public SNodeReference getScriptNode() {
     return PersistenceFacade.getInstance().createNodeReference("r:06347ba9-55db-4390-a23e-cfba36a9507f(jetbrains.mps.lang.constraints.scripts)/6243486444683604044");
-  }
-  private static boolean eq_th6w08_a0a0d0a0a0a0b0a(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -42,6 +42,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -350,7 +351,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     return new Pair(inLanguageAncestors, notInLanguageAncestors);
   }
   /*package*/ static boolean is_id4MKjpUYmGW0(@NotNull SNode __thisNode__, SAbstractConcept concept) {
-    return eq_dtkihm_a0a0gc(MetaAdapterByDeclaration.getConcept(__thisNode__), concept);
+    return Objects.equals(MetaAdapterByDeclaration.getConcept(__thisNode__), concept);
   }
 
   /*package*/ AbstractConceptDeclaration__BehaviorDescriptor() {
@@ -452,8 +453,5 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean eq_dtkihm_a0a0gc(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

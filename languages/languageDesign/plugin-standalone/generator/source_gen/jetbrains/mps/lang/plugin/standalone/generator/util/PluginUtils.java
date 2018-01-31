@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Objects;
 import jetbrains.mps.util.NameUtil;
 
 public class PluginUtils {
@@ -40,13 +41,10 @@ public class PluginUtils {
     }
 
     String correctName = model.getModule().getModuleName() + ".plugin";
-    if (eq_l4wyvj_a0k0d(NameUtil.getModelLongName(model), correctName)) {
+    if (Objects.equals(NameUtil.getModelLongName(model), correctName)) {
       return;
     }
 
     genContext.showErrorMessage(node, "To be able to use plugin, you should name plugin model as '<ModuleName>.plugin'. For this model, the name should be " + correctName);
-  }
-  private static boolean eq_l4wyvj_a0k0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

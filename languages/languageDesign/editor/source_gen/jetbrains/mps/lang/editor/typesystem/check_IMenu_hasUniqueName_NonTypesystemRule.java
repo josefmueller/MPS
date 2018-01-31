@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,7 +27,7 @@ public class check_IMenu_hasUniqueName_NonTypesystemRule extends AbstractNonType
       if (otherNode == node) {
         continue;
       }
-      if (eq_fsojcd_a0b0a0b(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(otherNode), INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node))) {
+      if (Objects.equals(INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(otherNode), INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
@@ -43,8 +44,5 @@ public class check_IMenu_hasUniqueName_NonTypesystemRule extends AbstractNonType
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_fsojcd_a0b0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

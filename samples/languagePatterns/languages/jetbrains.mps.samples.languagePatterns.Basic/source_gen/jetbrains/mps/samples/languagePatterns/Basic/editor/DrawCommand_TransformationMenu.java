@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -124,7 +125,7 @@ public class DrawCommand_TransformationMenu extends TransformationMenuBase {
 
         @Override
         public void execute(@NotNull String pattern) {
-          SNode style = (eq_oy1rtc_a0a0a0g4g7(myParameterObject, "solid") ? SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc55L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine")), null) : SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666ff96L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine")), null));
+          SNode style = (Objects.equals(myParameterObject, "solid") ? SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc55L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine")), null) : SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666ff96L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine")), null));
           SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L, 0x313e78bb26670129L, "lineStyle"), style);
         }
 
@@ -142,8 +143,5 @@ public class DrawCommand_TransformationMenu extends TransformationMenuBase {
       }
 
     }
-  }
-  private static boolean eq_oy1rtc_a0a0a0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

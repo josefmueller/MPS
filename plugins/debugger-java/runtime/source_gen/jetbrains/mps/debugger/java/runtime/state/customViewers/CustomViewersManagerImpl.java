@@ -31,6 +31,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy;
+import java.util.Objects;
 import com.sun.jdi.ObjectReference;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -137,7 +138,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
     }
     String oldFactory = MapSequence.fromMap(objectIdToFactory).get(getValueId(value));
     String newFactory = factory.getClass().getName();
-    if (neq_2btpdq_a0e0o(oldFactory, newFactory)) {
+    if (!(Objects.equals(oldFactory, newFactory))) {
       MapSequence.fromMap(objectIdToFactory).put(getValueId(value), newFactory);
       session.refresh();
     }
@@ -185,8 +186,5 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
         MapSequence.fromMap(myObjectIdToFactory).removeKey((DebugSession) session);
       }
     }
-  }
-  private static boolean neq_2btpdq_a0e0o(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -30,7 +31,7 @@ public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractN
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ternaryOperatorExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && eq_r4e9e1_a0a1a1(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ternaryOperatorExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")), ternaryOperatorExpression)) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ternaryOperatorExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && Objects.equals(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ternaryOperatorExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")), ternaryOperatorExpression)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ternaryOperatorExpression, "A ternary operator must be wrapped in parenthesis when being a condition of a ternary operations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "818296778607035886", null, errorTarget);
@@ -50,8 +51,5 @@ public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractN
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_r4e9e1_a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

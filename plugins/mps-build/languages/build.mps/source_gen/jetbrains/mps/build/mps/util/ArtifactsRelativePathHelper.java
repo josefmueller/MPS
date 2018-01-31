@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Objects;
 
 public class ArtifactsRelativePathHelper {
   private VisibleArtifacts artifacts;
@@ -129,7 +130,7 @@ public class ArtifactsRelativePathHelper {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart"));
       }
     })) {
-      return eq_fa9ylc_a0a0b0i(SPropertyOperations.getString(left, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(right, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      return Objects.equals(SPropertyOperations.getString(left, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(right, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
     return false;
   }
@@ -137,8 +138,5 @@ public class ArtifactsRelativePathHelper {
     public RelativePathException(String p0) {
       super(p0);
     }
-  }
-  private static boolean eq_fa9ylc_a0a0b0i(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

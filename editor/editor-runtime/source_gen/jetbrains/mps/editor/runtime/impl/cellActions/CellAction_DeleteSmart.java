@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -53,7 +54,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     if (myCanBeNull) {
       return;
     }
-    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0m(SNodeOperations.getConcept(myTarget), myLinkTargetConcept);
+    myEnabled = !(link.isMultiple()) && !(Objects.equals(SNodeOperations.getConcept(myTarget), myLinkTargetConcept));
   }
 
   @Override
@@ -82,8 +83,5 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
         SLinkOperations.setTarget(mySource, myLink, defaultTarget);
       }
     }
-  }
-  private static boolean neq_89lc4r_a0a0k0m(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

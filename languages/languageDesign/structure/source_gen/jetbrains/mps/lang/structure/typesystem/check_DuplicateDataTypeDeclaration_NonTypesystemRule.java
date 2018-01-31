@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -32,7 +33,7 @@ public class check_DuplicateDataTypeDeclaration_NonTypesystemRule extends Abstra
 
     if (ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(dataTypeDeclaration), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return neq_c9zdt6_a0a0a0a0a0a4a1(it, dataTypeDeclaration) && name.equalsIgnoreCase(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return !(Objects.equals(it, dataTypeDeclaration)) && name.equalsIgnoreCase(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     })) {
       {
@@ -49,8 +50,5 @@ public class check_DuplicateDataTypeDeclaration_NonTypesystemRule extends Abstra
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_c9zdt6_a0a0a0a0a0a4a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

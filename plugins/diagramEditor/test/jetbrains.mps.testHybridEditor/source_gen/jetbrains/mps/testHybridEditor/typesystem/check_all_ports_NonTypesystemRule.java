@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,14 +25,14 @@ public class check_all_ports_NonTypesystemRule extends AbstractNonTypesystemRule
     for (SNode port : ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65702ffeL, "inputPorts")))) {
       boolean portResult = false;
       for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(block), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors")))) {
-        portResult = portResult || eq_p42nu0_a0a0a0b0b0b(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, 0xa10615a65703018L, "inputPort")), port);
+        portResult = portResult || Objects.equals(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, 0xa10615a65703018L, "inputPort")), port);
       }
       result = result && portResult;
     }
     for (SNode port : ListSequence.fromList(SLinkOperations.getChildren(block, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65703000L, "outputPorts")))) {
       boolean portResult = false;
       for (SNode connector : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(block), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, "jetbrains.mps.testHybridEditor.structure.Diagram")), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors")))) {
-        portResult = portResult || eq_p42nu0_a0a0a0b0c0b(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, 0xa10615a65703014L, "outputPort")), port);
+        portResult = portResult || Objects.equals(SLinkOperations.getTarget(connector, MetaAdapterFactory.getReferenceLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, 0xa10615a65703014L, "outputPort")), port);
       }
       result = result && portResult;
     }
@@ -50,11 +51,5 @@ public class check_all_ports_NonTypesystemRule extends AbstractNonTypesystemRule
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_p42nu0_a0a0a0b0b0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_p42nu0_a0a0a0b0c0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

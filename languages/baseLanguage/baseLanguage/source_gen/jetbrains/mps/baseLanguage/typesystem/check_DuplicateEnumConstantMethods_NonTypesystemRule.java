@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -31,7 +32,7 @@ public class check_DuplicateEnumConstantMethods_NonTypesystemRule extends Abstra
         final String erasureSignature = BaseMethodDeclaration__BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(method);
         SNode foundDuplicate = ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode other) {
-            return other != method && eq_pw1hme_a0a0a0a0a0a0a1a0a0a0a0a1(SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && erasureSignature.equals(BaseMethodDeclaration__BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(other));
+            return other != method && Objects.equals(SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && erasureSignature.equals(BaseMethodDeclaration__BehaviorDescriptor.getErasureSignature_id2t8d$bukubq.invoke(other));
           }
         });
         if ((foundDuplicate != null)) {
@@ -52,8 +53,5 @@ public class check_DuplicateEnumConstantMethods_NonTypesystemRule extends Abstra
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_pw1hme_a0a0a0a0a0a0a1a0a0a0a0a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

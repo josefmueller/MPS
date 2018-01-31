@@ -737,6 +737,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.editor.TupleIntefaceUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

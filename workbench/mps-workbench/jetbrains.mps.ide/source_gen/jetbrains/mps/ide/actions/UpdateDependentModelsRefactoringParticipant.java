@@ -35,6 +35,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReferenceBase;
 
@@ -119,7 +120,7 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
       }
     }).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference it) {
-        return eq_qwsmwp_a0a0a0a0a0a1a31(it.getTargetSModelReference(), oldModelReference);
+        return Objects.equals(it.getTargetSModelReference(), oldModelReference);
       }
     }).visitAll(new IVisitor<SReference>() {
       public void visit(SReference it) {
@@ -129,7 +130,4 @@ public class UpdateDependentModelsRefactoringParticipant extends RefactoringPart
     usageModel.setChanged(true);
   }
 
-  private static boolean eq_qwsmwp_a0a0a0a0a0a1a31(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

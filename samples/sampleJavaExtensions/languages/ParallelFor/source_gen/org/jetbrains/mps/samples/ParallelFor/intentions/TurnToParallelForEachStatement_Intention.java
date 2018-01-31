@@ -10,6 +10,7 @@ import jetbrains.mps.openapi.intentions.Kind;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import java.util.Objects;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -41,7 +42,7 @@ public final class TurnToParallelForEachStatement_Intention extends AbstractInte
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return eq_gp9k9k_a0a0e(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable"))), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068431790189"));
+    return Objects.equals(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable"))), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068431790189"));
   }
   @Override
   public boolean isSurroundWith() {
@@ -87,8 +88,5 @@ public final class TurnToParallelForEachStatement_Intention extends AbstractInte
     public IntentionDescriptor getDescriptor() {
       return TurnToParallelForEachStatement_Intention.this;
     }
-  }
-  private static boolean eq_gp9k9k_a0a0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -15,6 +15,7 @@ import com.sun.jdi.InternalException;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import org.jetbrains.annotations.NotNull;
+import java.util.Objects;
 
 public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = LogManager.getLogger(ExceptionBreakpoint.class);
@@ -71,7 +72,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       return false;
     }
 
-    return eq_bv30lc_a0d0j(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
+    return Objects.equals(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
   }
   @Override
   public int hashCode() {
@@ -100,8 +101,5 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       breakpoint.setSuspendPolicy(mySuspendPolicy);
       breakpoint.setLogMessage(myIsLogMessage);
     }
-  }
-  private static boolean eq_bv30lc_a0d0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

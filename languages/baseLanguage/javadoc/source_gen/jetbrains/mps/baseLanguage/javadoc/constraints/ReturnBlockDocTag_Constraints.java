@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
@@ -45,7 +46,7 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
 
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(parentNode, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment")), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag"))) || eq_ej62q3_a0a0a0a0a0a2a3(it, node);
+        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag"))) || Objects.equals(it, node);
       }
     })) {
       SNode returnType = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"));
@@ -54,7 +55,4 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
     return false;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "1227128029536560279");
-  private static boolean eq_ej62q3_a0a0a0a0a0a2a3(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

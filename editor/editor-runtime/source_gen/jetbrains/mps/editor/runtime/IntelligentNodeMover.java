@@ -30,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeIterable;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 
 public class IntelligentNodeMover {
@@ -284,7 +285,7 @@ public class IntelligentNodeMover {
   }
 
   private boolean isSimilarLink(@NotNull SContainmentLink link) {
-    return eq_9l6nqc_a0a0a53_0(link.getName(), getNodesCommonContainmentLink().getName()) && eq_9l6nqc_a0a0a53(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
+    return Objects.equals(link.getName(), getNodesCommonContainmentLink().getName()) && Objects.equals(link.getTargetConcept(), getNodesCommonContainmentLink().getTargetConcept());
   }
 
   private static class PlaceToMove {
@@ -332,11 +333,5 @@ public class IntelligentNodeMover {
       return ((SContainmentLink) BHReflection.invoke0(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf")));
     }
     return node.getContainmentLink();
-  }
-  private static boolean eq_9l6nqc_a0a0a53(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_9l6nqc_a0a0a53_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

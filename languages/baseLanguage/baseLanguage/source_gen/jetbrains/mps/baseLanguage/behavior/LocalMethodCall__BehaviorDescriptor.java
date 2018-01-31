@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -48,11 +49,11 @@ public final class LocalMethodCall__BehaviorDescriptor extends BaseBHDescriptor 
     SNode wrappingClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     return Sequence.fromIterable(Members.visibleStaticMethods(wrappingClassifier, __thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x9e839_a0a0a0a0a0a1a31(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
     }).union(Sequence.fromIterable(Members.visibleInstanceMethods(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(wrappingClassifier), __thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x9e839_a0a0a0a0a0a0b0n(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), methodName);
       }
     }));
 
@@ -107,11 +108,5 @@ public final class LocalMethodCall__BehaviorDescriptor extends BaseBHDescriptor 
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_x9e839_a0a0a0a0a0a1a31(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_x9e839_a0a0a0a0a0a0b0n(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

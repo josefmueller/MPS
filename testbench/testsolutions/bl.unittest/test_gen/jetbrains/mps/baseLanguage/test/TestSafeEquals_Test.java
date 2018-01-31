@@ -4,46 +4,23 @@ package jetbrains.mps.baseLanguage.test;
 
 import junit.framework.TestCase;
 import junit.framework.Assert;
+import java.util.Objects;
 
 public class TestSafeEquals_Test extends TestCase {
   public void test_test_eq() throws Exception {
     Object o = new Object();
-    Assert.assertTrue(eq_g71ru1_a0a1a0(o, o));
-    Assert.assertFalse(eq_g71ru1_a0a2a0(o, null));
-    Assert.assertFalse(eq_g71ru1_a0a3a0(null, o));
-    Assert.assertTrue(eq_g71ru1_a0a4a0(null, null));
+    Assert.assertTrue(Objects.equals(o, o));
+    Assert.assertFalse(Objects.equals(o, null));
+    Assert.assertFalse(Objects.equals(null, o));
+    Assert.assertTrue(Objects.equals(null, null));
   }
   public void test_test_ne() throws Exception {
     Object o = new Object();
-    Assert.assertFalse(neq_g71ru1_a0a1a1(o, o));
-    Assert.assertTrue(neq_g71ru1_a0a2a1(o, null));
-    Assert.assertTrue(neq_g71ru1_a0a3a1(null, o));
-    Assert.assertFalse(neq_g71ru1_a0a4a1(null, null));
+    Assert.assertFalse(!(Objects.equals(o, o)));
+    Assert.assertTrue(!(Objects.equals(o, null)));
+    Assert.assertTrue(!(Objects.equals(null, o)));
+    Assert.assertFalse(!(Objects.equals(null, null)));
   }
   public TestSafeEquals_Test() {
-  }
-  private static boolean eq_g71ru1_a0a1a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_g71ru1_a0a2a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_g71ru1_a0a3a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_g71ru1_a0a4a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_g71ru1_a0a1a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_g71ru1_a0a2a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_g71ru1_a0a3a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_g71ru1_a0a4a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

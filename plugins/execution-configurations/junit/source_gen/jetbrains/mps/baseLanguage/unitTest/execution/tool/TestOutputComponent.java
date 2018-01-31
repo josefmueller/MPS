@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.execution.ui.ConsoleViewContentType;
@@ -80,7 +81,7 @@ public class TestOutputComponent implements TestView {
   }
 
   public void filter(String filterClass, String filterMethod) {
-    if (neq_r62oz9_a0a0a71_0(filterClass, myFilterClass) || neq_r62oz9_a0a0a71(filterMethod, myFilterMethod)) {
+    if (!(Objects.equals(filterClass, myFilterClass)) || !(Objects.equals(filterMethod, myFilterMethod))) {
       myFilterClass = filterClass;
       myFilterMethod = filterMethod;
       myConsoleView.clear();
@@ -90,8 +91,8 @@ public class TestOutputComponent implements TestView {
 
   public void appendWithParameters(String testClass, String testMethod, String text, @NotNull Key type) {
     TestOutputComponent.IMessage message = myRootMessage.addMessage(testClass, testMethod, text, type);
-    if (((myFilterClass == null || myFilterClass.length() == 0) || eq_r62oz9_a0a0b0t(myFilterClass, testClass))) {
-      if (((myFilterMethod == null || myFilterMethod.length() == 0) || eq_r62oz9_a0a0a0b0t(myFilterMethod, testMethod))) {
+    if (((myFilterClass == null || myFilterClass.length() == 0) || Objects.equals(myFilterClass, testClass))) {
+      if (((myFilterMethod == null || myFilterMethod.length() == 0) || Objects.equals(myFilterMethod, testMethod))) {
         message.print();
       }
     }
@@ -246,7 +247,7 @@ public class TestOutputComponent implements TestView {
 
     @Override
     public boolean merges(String testClass, String testMethod) {
-      return eq_r62oz9_a0a0i53(myClassName, testClass);
+      return Objects.equals(myClassName, testClass);
     }
   }
 
@@ -270,7 +271,7 @@ public class TestOutputComponent implements TestView {
 
     @Override
     public boolean merges(String testClass, String testMethod) {
-      return eq_r62oz9_a0a0j73(testMethod, myMethod);
+      return Objects.equals(testMethod, myMethod);
     }
 
     @Override
@@ -364,23 +365,5 @@ public class TestOutputComponent implements TestView {
     public void print() {
       TestOutputComponent.print(myConsoleView, myKey, myText);
     }
-  }
-  private static boolean neq_r62oz9_a0a0a71(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_r62oz9_a0a0a71_0(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_r62oz9_a0a0a0b0t(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_r62oz9_a0a0b0t(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_r62oz9_a0a0i53(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_r62oz9_a0a0j73(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
@@ -51,7 +52,7 @@ public class MoveNodePart {
     }
     return Sequence.fromIterable(references).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference it) {
-        return eq_8rsufn_a0a0a0a0a0a0d0h(myFrom, it.getTargetNodeReference());
+        return Objects.equals(myFrom, it.getTargetNodeReference());
       }
     }).select(new ISelector<SReference, SNodeReference>() {
       public SNodeReference select(SReference it) {
@@ -73,7 +74,7 @@ public class MoveNodePart {
       }
     }).where(new IWhereFilter<SReference>() {
       public boolean accept(SReference it) {
-        return eq_8rsufn_a0a0a0a0a0a0a9(myFrom, it.getTargetNodeReference());
+        return Objects.equals(myFrom, it.getTargetNodeReference());
       }
     }).visitAll(new IVisitor<SReference>() {
       public void visit(SReference it) {
@@ -89,11 +90,5 @@ public class MoveNodePart {
   }
   public SNodeReference getTo() {
     return myTo;
-  }
-  private static boolean eq_8rsufn_a0a0a0a0a0a0d0h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8rsufn_a0a0a0a0a0a0a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

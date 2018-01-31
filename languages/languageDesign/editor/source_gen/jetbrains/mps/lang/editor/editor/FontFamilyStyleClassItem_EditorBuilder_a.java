@@ -38,6 +38,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
@@ -145,7 +146,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      if (eq_b3el4v_a0a0e51(parameterObject, "query")) {
+      if (Objects.equals(parameterObject, "query")) {
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x64508f613f1cbac1L, 0x64508f613f1cbac2L, "family"), null);
         SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcd5L, "query"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4a5babf4dd24c18cL, "jetbrains.mps.lang.editor.structure.QueryFunction_FontFamily")));
       } else {
@@ -159,9 +160,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     @Override
     protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
       return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "7418278005950247421"));
-    }
-    private static boolean eq_b3el4v_a0a0e51(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   private EditorCell createRefNode_w2alof_d0() {

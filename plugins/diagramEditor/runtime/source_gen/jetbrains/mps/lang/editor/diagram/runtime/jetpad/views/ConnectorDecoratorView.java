@@ -12,6 +12,7 @@ import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.GroupView;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Objects;
 import jetbrains.jetpad.model.event.SimpleEventSource;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 
@@ -112,7 +113,7 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
   private void updateSelectionView(GroupView selectionView) {
     selectionView.children().clear();
     for (Segment segment : Sequence.fromIterable(mySegments)) {
-      if (neq_2z6621_a0a0b0o(segment, Sequence.fromIterable(mySegments).last())) {
+      if (!(Objects.equals(segment, Sequence.fromIterable(mySegments).last()))) {
         ResizeHandleView handleView = new ResizeHandleView(segment.end);
         handleView.color.set(color.get());
         handleView.backgroundColor.set(backgroundColor.get());
@@ -140,8 +141,5 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
     public void set(T value) {
       fire(new PropertyChangeEvent(myDefautlValue, value));
     }
-  }
-  private static boolean neq_2z6621_a0a0b0o(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode;
+import java.util.Objects;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
@@ -45,17 +46,14 @@ public class CellAction_Uncomment extends AbstractCommentAction {
     } else {
       RestorableSelection firstSelection = super.createRestorableSelection(editorContext);
       RestorableSelection secondSelection = null;
-      if (eq_yhitdb_a0c0a1a8(check_yhitdb_a0c0a1a8(check_yhitdb_a0a2a0b0i(editorContext)), "LEFT_COMMENT_ANCHOR")) {
+      if (Objects.equals(check_yhitdb_a0c0a1a8(check_yhitdb_a0a2a0b0i(editorContext)), "LEFT_COMMENT_ANCHOR")) {
         secondSelection = new RestorableSelectionByNode(commentedNode, RestorableSelectionByNode.SelectionAnchor.START);
-      } else if (eq_yhitdb_a0a2a0b0i(check_yhitdb_a0a2a0b0i_0(check_yhitdb_a0a0c0a1a8(editorContext)), "RIGHT_COMMENT_ANCHOR")) {
+      } else if (Objects.equals(check_yhitdb_a0a2a0b0i_0(check_yhitdb_a0a0c0a1a8(editorContext)), "RIGHT_COMMENT_ANCHOR")) {
         secondSelection = new RestorableSelectionByNode(commentedNode, RestorableSelectionByNode.SelectionAnchor.END);
       }
       RestorableSelectionByNode thirdSelection = new RestorableSelectionByNode(commentedNode);
       return new RestorableSelectionComposite(firstSelection, secondSelection, thirdSelection);
     }
-  }
-  private static boolean eq_yhitdb_a0c0a1a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static String check_yhitdb_a0c0a1a8(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -68,9 +66,6 @@ public class CellAction_Uncomment extends AbstractCommentAction {
       return checkedDotOperand.getSelectedCell();
     }
     return null;
-  }
-  private static boolean eq_yhitdb_a0a2a0b0i(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static String check_yhitdb_a0a2a0b0i_0(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {

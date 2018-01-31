@@ -188,9 +188,9 @@
   <dependency className="jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test" file="QueueDequeStack_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Deque" />
     <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.PriorityQueue" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
@@ -240,6 +240,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.SortedSet" />
     <classNode dependClassName="java.util.TreeSet" />

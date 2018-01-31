@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.behaviour.BHReflection;
@@ -313,7 +314,7 @@ public final class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).ofType(SetReferenceChange.class).where(new IWhereFilter<SetReferenceChange>() {
         public boolean accept(SetReferenceChange ch) {
-          return eq_bow6nj_a0a0a0a0a0a1a3wb(ch.getRole(), event.getReference().getRole());
+          return Objects.equals(ch.getRole(), event.getReference().getRole());
         }
       }));
       invalidateDeletedRoot(event);
@@ -404,7 +405,7 @@ public final class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).ofType(SetPropertyChange.class).where(new IWhereFilter<SetPropertyChange>() {
         public boolean accept(SetPropertyChange ch) {
-          return eq_bow6nj_a0a0a0a0a0a1a11wb(ch.getPropertyName(), event.getPropertyName());
+          return Objects.equals(ch.getPropertyName(), event.getPropertyName());
         }
       }));
       invalidateDeletedRoot(event);
@@ -426,11 +427,5 @@ public final class MergeSession {
       checkedDotOperand.someChangesInvalidated();
     }
 
-  }
-  private static boolean eq_bow6nj_a0a0a0a0a0a1a3wb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_bow6nj_a0a0a0a0a0a1a11wb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

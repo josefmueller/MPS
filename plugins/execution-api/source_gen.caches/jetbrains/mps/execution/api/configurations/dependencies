@@ -19,6 +19,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />

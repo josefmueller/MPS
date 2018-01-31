@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
@@ -53,7 +54,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_3778147542049091524(final ReferenceMacroContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getOriginalInputModel(), MetaAdapterFactory.getConcept(0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x460f3ddb176b0a3cL, "jetbrains.mps.samples.highlevel.simpleStructure.structure.SimpleConceptDeclaration"))).findFirst(new IWhereFilter<org.jetbrains.mps.openapi.model.SNode>() {
       public boolean accept(org.jetbrains.mps.openapi.model.SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0g(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       }
     });
   }
@@ -159,8 +160,5 @@ public class QueriesGenerated extends QueryProviderBase {
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

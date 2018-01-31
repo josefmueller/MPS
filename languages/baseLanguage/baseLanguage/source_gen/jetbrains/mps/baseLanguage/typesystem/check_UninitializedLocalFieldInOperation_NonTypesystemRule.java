@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_UninitializedLocalFieldInOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -30,7 +31,7 @@ public class check_UninitializedLocalFieldInOperation_NonTypesystemRule extends 
       }
     }
 
-    if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && eq_uz0p75_a0a6a1(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
+    if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && Objects.equals(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
       VariableReferenceUtil.checkPrecedingWriteInstructions(typeCheckingContext, fieldReferenceOperation, body, field);
     }
 
@@ -43,8 +44,5 @@ public class check_UninitializedLocalFieldInOperation_NonTypesystemRule extends 
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_uz0p75_a0a6a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
@@ -23,7 +24,7 @@ public class check_EnumConstantMustUseExplicitConstructor_NonTypesystemRule exte
   }
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode enumClass = SNodeOperations.getNodeAncestor(enumConstant, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), false, false);
-    if ((enumClass == null) || eq_l7r8hn_a0a1a1(SNodeOperations.getParent(SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), enumClass)) {
+    if ((enumClass == null) || Objects.equals(SNodeOperations.getParent(SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), enumClass)) {
       return;
     }
 
@@ -46,8 +47,5 @@ public class check_EnumConstantMustUseExplicitConstructor_NonTypesystemRule exte
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_l7r8hn_a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

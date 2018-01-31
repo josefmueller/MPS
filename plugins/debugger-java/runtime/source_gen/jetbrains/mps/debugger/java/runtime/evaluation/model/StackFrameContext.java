@@ -53,6 +53,7 @@ import com.sun.jdi.FloatType;
 import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Objects;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import com.sun.jdi.ObjectReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -288,10 +289,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     final Wrappers._boolean visible = new Wrappers._boolean(false);
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
       public Boolean invoke(JavaLocalVariable variable) {
-        if (eq_4zsmpx_a0a0a0a0a1a21(variable.getName(), variableName)) {
+        if (Objects.equals(variable.getName(), variableName)) {
           try {
             String variableTypeSignature = TransformatorBuilder.getInstance().getJniSignatureFromType(variableType);
-            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.getLocalVariable().type().signature())) {
+            if (Objects.equals(variableTypeSignature, variable.getLocalVariable().type().signature())) {
               visible.value = true;
               return true;
             }
@@ -312,7 +313,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (thisObject == null) {
       return false;
     }
-    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
+    return Objects.equals(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
   @Override
   public boolean isStaticContextTypeValid(SNode staticContextType) {
@@ -395,14 +396,5 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, 0xf940d819f8L, "componentType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-  private static boolean eq_4zsmpx_a0a0a0a0a1a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_4zsmpx_a0c0n(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

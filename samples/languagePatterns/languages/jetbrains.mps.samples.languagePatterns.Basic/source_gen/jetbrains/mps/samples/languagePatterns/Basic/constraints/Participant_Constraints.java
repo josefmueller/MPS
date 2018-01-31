@@ -23,6 +23,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.ListScope;
@@ -59,7 +60,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
 
               final Iterable<SNode> alreadyParticipatingSingersButMe = ListSequence.fromList(SLinkOperations.getChildren(performance, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, 0x34c8853ae78de9acL, "participants"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return neq_wflc39_a0a0a0a0a0a0f0a0b0a0a0b0a1a0b0c(it, _context.getReferenceNode());
+                  return !(Objects.equals(it, _context.getReferenceNode()));
                 }
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode participant) {
@@ -71,7 +72,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
                 public boolean accept(final SNode singer) {
                   return Sequence.fromIterable(alreadyParticipatingSingersButMe).all(new IWhereFilter<SNode>() {
                     public boolean accept(SNode participatingSinger) {
-                      return neq_wflc39_a0a0a0a0a0a0a0a0a0a7a0a1a0a0a1a0b0a1a2(participatingSinger, singer);
+                      return !(Objects.equals(participatingSinger, singer));
                     }
                   });
                 }
@@ -86,10 +87,4 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847570");
-  private static boolean neq_wflc39_a0a0a0a0a0a0f0a0b0a0a0b0a1a0b0c(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a7a0a1a0a0a1a0b0a1a2(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
 }

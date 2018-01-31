@@ -119,6 +119,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
   </dependency>

@@ -17,6 +17,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -40,7 +41,7 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
     final String name = NameUtil.toConstantName(SPropertyOperations.getString(prop, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     SNode node = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != prop && eq_lxacuo_a0a0a0a0a0a0h0b(name, NameUtil.toConstantName(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+        return it != prop && Objects.equals(name, NameUtil.toConstantName(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
       }
     });
     if ((node != null)) {
@@ -58,8 +59,5 @@ public class check_PropertyDeclaration_NonTypesystemRule extends AbstractNonType
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_lxacuo_a0a0a0a0a0a0h0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

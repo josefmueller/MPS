@@ -62,6 +62,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import java.util.Objects;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.FetchDependenciesProcessor;
@@ -1691,7 +1692,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode weaving_MappingRule_ContextNodeQuery_8944013247820367860(final WeavingMappingRuleContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), "buildProjectToBwfProject"), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5a6271L, 0x2670d5989d5ace60L, "parts")), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, "jetbrains.mps.build.workflow.structure.BwfTaskPart"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0cp(SNodeOperations.getPointer(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task"))), new SNodePointer("r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)", "4701820937132277082"));
+        return Objects.equals(SNodeOperations.getPointer(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x36fb0dc9fd32c1b8L, 0x36fb0dc9fd32c1b9L, "task"))), new SNodePointer("r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)", "4701820937132277082"));
       }
     });
   }
@@ -3457,9 +3458,6 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0cp(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

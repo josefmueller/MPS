@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 
 public class IncompleteMemberHelper {
 
@@ -35,13 +36,13 @@ public class IncompleteMemberHelper {
     Iterable<SNode> availableElements = ClassifierScopes.getVisibleClassifiersScope(member, true).getAvailableElements(pattern);
     return pattern.equals("string") || pattern.equals("map") || pattern.equals("set") || pattern.equals("list") || pattern.equals("sorted_set") || pattern.equals("sorted_map") || Sequence.fromIterable(availableElements).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_fp5qrn_a0a0a0a0a0a0b0d(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), pattern);
+        return Objects.equals(SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), pattern);
       }
     }).isNotEmpty();
   }
 
   public static boolean canSubstitute(boolean strictly, String pattern, String matchingText) {
-    return ((strictly && eq_fp5qrn_a0a0a0a0f(pattern.trim(), matchingText)) || (!(strictly) && matchingText.startsWith(pattern.trim())));
+    return ((strictly && Objects.equals(pattern.trim(), matchingText)) || (!(strictly) && matchingText.startsWith(pattern.trim())));
   }
 
   public static boolean canBeField(SNode member) {
@@ -103,10 +104,4 @@ public class IncompleteMemberHelper {
     return clNode != null && SPropertyOperations.getString(clNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(memberName);
   }
 
-  private static boolean eq_fp5qrn_a0a0a0a0a0a0b0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_fp5qrn_a0a0a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

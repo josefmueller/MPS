@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
@@ -74,7 +75,7 @@ public class RemoveOldActionStyles extends MigrationScriptBase {
       });
       CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          if (!((CommentUtil.isCommentedOut(it) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart"))).isEmpty() && eq_yhtva5_a0a0a0a0a0a0a0e0a0d(getContainingLink(it), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor"))))) {
+          if (!((CommentUtil.isCommentedOut(it) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart"))).isEmpty() && Objects.equals(getContainingLink(it), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor"))))) {
             return false;
           }
 
@@ -119,9 +120,6 @@ public class RemoveOldActionStyles extends MigrationScriptBase {
 
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
-  }
-  private static boolean eq_yhtva5_a0a0a0a0a0a0a0e0a0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

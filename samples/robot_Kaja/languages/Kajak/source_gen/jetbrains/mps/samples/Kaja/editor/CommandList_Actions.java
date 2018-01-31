@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import java.util.Objects;
 
 public class CommandList_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,10 +28,7 @@ public class CommandList_Actions {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return eq_nax20z_a0a0f1(editorContext.getSelectedNode(), node);
-    }
-    private static boolean eq_nax20z_a0a0f1(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
+      return Objects.equals(editorContext.getSelectedNode(), node);
     }
   }
 }

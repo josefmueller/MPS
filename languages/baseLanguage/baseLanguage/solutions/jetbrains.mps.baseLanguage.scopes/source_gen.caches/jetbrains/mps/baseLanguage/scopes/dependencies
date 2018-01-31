@@ -18,6 +18,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.StringTokenizer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor" />
@@ -96,10 +97,10 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" file="ClassifierScopes.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor" />
@@ -128,6 +129,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
@@ -163,6 +165,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
   </dependency>
@@ -265,6 +268,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.GenericTypesUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />

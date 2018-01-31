@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -59,7 +60,7 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
 
           SNode entity = ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(data).get(check_6mkphx_a0a0a0d0d0c0b0d(SNodeOperations.getModel(SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept"))))), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_6mkphx_a0a0a0a0a0a0d0d0e0b0d(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode")), conceptNode);
+              return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode")), conceptNode);
             }
           }).first();
 
@@ -88,9 +89,6 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
       return checkedDotOperand.getModule();
     }
     return null;
-  }
-  private static boolean eq_6mkphx_a0a0a0a0a0a0d0d0e0b0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_6mkphx_a0a0a5a3a2a0a6(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

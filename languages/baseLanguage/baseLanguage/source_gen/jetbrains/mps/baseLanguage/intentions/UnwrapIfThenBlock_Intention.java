@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -41,7 +42,7 @@ public final class UnwrapIfThenBlock_Intention extends AbstractIntentionDescript
     SNode selectedNode = editorContext.getSelectedNode();
     for (SNode ancestor : ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, null, true))) {
       if (SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"))) {
-        return eq_qjygni_a0a0a0b0e(ancestor, node);
+        return Objects.equals(ancestor, node);
       }
     }
     return false;
@@ -85,8 +86,5 @@ public final class UnwrapIfThenBlock_Intention extends AbstractIntentionDescript
     public IntentionDescriptor getDescriptor() {
       return UnwrapIfThenBlock_Intention.this;
     }
-  }
-  private static boolean eq_qjygni_a0a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

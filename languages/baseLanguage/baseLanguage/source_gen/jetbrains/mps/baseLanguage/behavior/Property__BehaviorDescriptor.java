@@ -25,6 +25,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
@@ -118,12 +119,12 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
     String contextNodePackage = VisibilityUtil.packageName(contextNode);
     String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
     if ((setterVisibility == null)) {
-      return eq_49ixrf_a0a0i0hb(contextNodePackage, contextClassifierPackage);
+      return Objects.equals(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(setterVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
       String declarationClassifierPackage = VisibilityUtil.packageName(Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__));
-      if (eq_49ixrf_a0b0k0hb(contextNodePackage, declarationClassifierPackage)) {
+      if (Objects.equals(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
 
@@ -248,11 +249,5 @@ public final class Property__BehaviorDescriptor extends BaseBHDescriptor {
       return SNodeOperations.isInstanceOf(checkedDotOperand, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"));
     }
     return false;
-  }
-  private static boolean eq_49ixrf_a0a0i0hb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_49ixrf_a0b0k0hb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

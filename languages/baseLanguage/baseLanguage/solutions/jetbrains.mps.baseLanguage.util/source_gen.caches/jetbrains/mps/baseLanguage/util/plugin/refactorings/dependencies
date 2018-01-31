@@ -273,12 +273,12 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" file="ExtractMethodRefactoringParameters.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" />
@@ -422,6 +422,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" />
@@ -503,8 +504,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" file="InlineVariableReferenceRefactoring.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlinePrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

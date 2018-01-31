@@ -30,6 +30,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableAc
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
+import java.util.Objects;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -128,7 +129,7 @@ public class expressionToParenthesis extends TransformationMenuBase {
         @Override
         public void execute(@NotNull String pattern) {
           SNode parenthesisedNode = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getNode());
-          if (eq_f4aahd_a0b0g2e7(parenthesisedNode, _context.getNode())) {
+          if (Objects.equals(parenthesisedNode, _context.getNode())) {
             SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AttributeOperations.getAttribute(parenthesisedNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64a1ef64cd9b42ceL, "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"))), SelectionManager.FIRST_CELL, -1);
           } else {
             SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), SNodeOperations.cast(parenthesisedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), "openParen", -1);
@@ -216,7 +217,7 @@ public class expressionToParenthesis extends TransformationMenuBase {
         @Override
         public void execute(@NotNull String pattern) {
           SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(_context.getNode());
-          if (eq_f4aahd_a0b0g2e8(parens, _context.getNode())) {
+          if (Objects.equals(parens, _context.getNode())) {
             SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), AttributeOperations.getAttribute(parens, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2052c4520af308e1L, "jetbrains.mps.baseLanguage.structure.IncompleteRightParen"))), SelectionManager.LAST_CELL, -1);
           } else {
             SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), parens, SelectionManager.LAST_CELL, -1);
@@ -243,11 +244,5 @@ public class expressionToParenthesis extends TransformationMenuBase {
       }
 
     }
-  }
-  private static boolean eq_f4aahd_a0b0g2e7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_f4aahd_a0b0g2e8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

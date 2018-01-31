@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 
 public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_TemplateDeclaration_NonTypesystemRule() {
@@ -45,7 +46,7 @@ public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonType
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tf, String.format("Template Fragments shall reside under same parent node"), "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4888628500252455567", null, errorTarget);
           }
         }
-        if (neq_jyzgi6_a0b0a2a5a1(commonAggregationLink, fragmentParent.getContainmentLink())) {
+        if (!(Objects.equals(commonAggregationLink, fragmentParent.getContainmentLink()))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(tf, String.format("Template Fragments shall use same same containment link"), "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "4888628500252455578", null, errorTarget);
@@ -63,8 +64,5 @@ public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonType
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_jyzgi6_a0b0a2a5a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

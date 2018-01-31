@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.regex.Pattern;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -95,7 +96,7 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
   }
 
   private boolean hasRole(SNode link, String role) {
-    if (eq_nopsft_a0a0l(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), role)) {
+    if (Objects.equals(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), role)) {
       return true;
     }
     if ((SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null)) {
@@ -118,8 +119,5 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"), p0 + "");
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"), p1 + "");
     return n1;
-  }
-  private static boolean eq_nopsft_a0a0l(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -26,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildFolderMacro__BehaviorDescriptor;
 
@@ -83,7 +84,7 @@ public class ModuleLoaderUtils {
         String macroName = path.substring(2, index);
         SNode found = null;
         for (SNode macro : Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(myProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")))) {
-          if (eq_krgnbt_a0a0f0d0g2(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), macroName)) {
+          if (Objects.equals(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), macroName)) {
             found = macro;
             break;
           }
@@ -108,9 +109,6 @@ public class ModuleLoaderUtils {
     @Override
     public String shrinkPath(@Nullable String string) {
       throw new UnsupportedOperationException("cannot shrink");
-    }
-    private static boolean eq_krgnbt_a0a0f0d0g2(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
@@ -58,17 +59,17 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
       super.initialize(_context);
       condition = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0b0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc257b7aaaL, "removeDefaultsPart"));
+          return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc257b7aaaL, "removeDefaultsPart"));
         }
       }.compute();
       condition1 = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0c0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
+          return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
         }
       }.compute();
       condition2 = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0d0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc25762f5fL, "removePart"));
+          return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc25762f5fL, "removePart"));
         }
       }.compute();
     }
@@ -203,14 +204,5 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
         }
       }
     }
-  }
-  private static boolean eq_c1nwm3_a0a0a0a0a0b0d5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_c1nwm3_a0a0a0a0a0c0d5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_c1nwm3_a0a0a0a0a0d0d5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

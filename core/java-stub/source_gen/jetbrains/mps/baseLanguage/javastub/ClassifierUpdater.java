@@ -24,6 +24,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMField;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -186,7 +187,7 @@ public class ClassifierUpdater {
   private SNode findTypeVariableDeclaration(SNode genDecl, final String name) {
     return ListSequence.fromList(SLinkOperations.getChildren(genDecl, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_ol94f8_a0a0a0a0a0a0a71(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
       }
     }).first();
   }
@@ -1138,8 +1139,5 @@ public class ClassifierUpdater {
       quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-  private static boolean eq_ol94f8_a0a0a0a0a0a0a71(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

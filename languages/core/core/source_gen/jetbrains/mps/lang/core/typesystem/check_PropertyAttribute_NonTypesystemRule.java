@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -27,7 +28,7 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
     Iterable<SProperty> properties = SNodeOperations.getConcept(SNodeOperations.getParent(propertyAttribute)).getProperties();
     SProperty existingProperty = Sequence.fromIterable(properties).findFirst(new IWhereFilter<SProperty>() {
       public boolean accept(SProperty it) {
-        return eq_6m4pt_a0a0a0a0a0a1a1(it, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
+        return Objects.equals(it, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
       }
     });
     if (existingProperty == null) {
@@ -39,7 +40,7 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-    } else if (neq_6m4pt_a0a2a1(existingProperty.getName(), SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")))) {
+    } else if (!(Objects.equals(existingProperty.getName(), SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyAttribute, "Incorrect property name: " + SPropertyOperations.getString(propertyAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName")), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5394253938404357521", null, errorTarget);
@@ -68,11 +69,5 @@ public class check_PropertyAttribute_NonTypesystemRule extends AbstractNonTypesy
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_6m4pt_a0a0a0a0a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_6m4pt_a0a2a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

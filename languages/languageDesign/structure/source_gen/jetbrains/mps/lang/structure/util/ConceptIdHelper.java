@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
@@ -23,7 +24,7 @@ public class ConceptIdHelper {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(c));
     while (ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != c && eq_huw3go_a0a0a0a0a0a1a0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), result.value + "");
+        return it != c && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -35,7 +36,7 @@ public class ConceptIdHelper {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(p));
     while (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != p && eq_huw3go_a0a0a0a0a0a1a2(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), result.value + "");
+        return it != p && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -47,7 +48,7 @@ public class ConceptIdHelper {
     final Wrappers._long result = new Wrappers._long(ConceptIdHelper.getDefaultIdFromNode(l));
     while (ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != l && eq_huw3go_a0a0a0a0a0a1a4(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), result.value + "");
+        return it != l && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), result.value + "");
       }
     })) {
       result.value = randomLong();
@@ -83,15 +84,6 @@ public class ConceptIdHelper {
 
   private static long randomLong() {
     return ((long) (Math.random() * Long.MAX_VALUE));
-  }
-  private static boolean eq_huw3go_a0a0a0a0a0a1a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_huw3go_a0a0a0a0a0a1a2(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_huw3go_a0a0a0a0a0a1a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_huw3go_a0a0a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

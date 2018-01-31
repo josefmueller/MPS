@@ -373,6 +373,7 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
@@ -659,6 +660,7 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_SingleFile__BehaviorDescriptor" />
@@ -692,6 +694,7 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.FileSetUtil" />
@@ -767,6 +770,7 @@
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
@@ -1320,6 +1324,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -1908,6 +1913,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />

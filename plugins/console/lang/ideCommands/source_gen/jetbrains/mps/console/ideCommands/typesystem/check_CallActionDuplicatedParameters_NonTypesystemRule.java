@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -34,7 +35,7 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
       public ISequence<SNode> select(final SNode c) {
         return Sequence.fromIterable(parameters).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode p) {
-            return eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(p), c);
+            return Objects.equals(ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(p), c);
           }
         });
       }
@@ -59,8 +60,5 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

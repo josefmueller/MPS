@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -28,7 +29,7 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     Iterable<SNode> allSuperConcepts = AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(conceptDeclaration, ((boolean) false));
     boolean isStub = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a1a1(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "155087542027447621"));
+        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "155087542027447621"));
       }
     });
     if (isStub) {
@@ -37,11 +38,11 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
 
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a4a1(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
+        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
       }
     }) && Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a0e0b_0(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274783077719")) || eq_idyjwe_a0a0a0a0a0a0e0b(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
+        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274783077719")) || Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
       }
     })) {
       {
@@ -52,7 +53,7 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
 
     boolean isInterfacePart = Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0a6a1(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
+        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1319728274784973096"));
       }
     });
     if (isInterfacePart) {
@@ -60,13 +61,13 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
     }
     if (Sequence.fromIterable(allSuperConcepts).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_idyjwe_a0a0a0a0a0i0b(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
+        return Objects.equals(it, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "6999738288738427190"));
       }
     })) {
       final String stubName = "Stub" + SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       boolean stubExists = ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(conceptDeclaration), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_idyjwe_a0a0a0a0a0a0a1a8a1_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), stubName) && eq_idyjwe_a0a0a0a0a0a0a1a8a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), stubName) && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
         }
       }).isNotEmpty();
       if (!(stubExists)) {
@@ -89,29 +90,5 @@ public class check_ConceptDeclaration_NonTypesystemRule extends AbstractNonTypes
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0e0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0e0b_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a4a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a6a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a8a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0a0a1a8a1_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_idyjwe_a0a0a0a0a0i0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

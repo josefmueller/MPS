@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,7 +25,7 @@ public class check_IHasUniqueId_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode root : ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getInterfaceConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L, "jetbrains.mps.lang.extension.structure.IRootWithUniqueName")))) {
       if (root != node) {
-        if (!(neq_er4b3n_a0a0a0a0a1(IRootWithUniqueName__BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(root), IRootWithUniqueName__BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(node)))) {
+        if (!(!(Objects.equals(IRootWithUniqueName__BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(root), IRootWithUniqueName__BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(node))))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Duplicated name: " + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "195736285282743922", null, errorTarget);
         }
@@ -39,8 +40,5 @@ public class check_IHasUniqueId_NonTypesystemRule extends AbstractNonTypesystemR
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_er4b3n_a0a0a0a0a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

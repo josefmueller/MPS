@@ -5,11 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class VariableReferenceUtil {
   public static boolean referencesPointToSameVariableDeclaration(SNode left, SNode right) {
-    return SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && eq_oxnfbs_a0a0a0(VariableReferenceUtil.getVariableDeclarationAtEndOfChain(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))), VariableReferenceUtil.getVariableDeclarationAtEndOfChain(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))));
+    return SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && SNodeOperations.isInstanceOf(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")) && Objects.equals(VariableReferenceUtil.getVariableDeclarationAtEndOfChain(SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))), VariableReferenceUtil.getVariableDeclarationAtEndOfChain(SNodeOperations.cast(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"))));
   }
   public static SNode getVariableDeclarationAtEndOfChain(SNode ref) {
     if (ref == null) {
@@ -21,8 +22,5 @@ public class VariableReferenceUtil {
     } else {
       return declaration;
     }
-  }
-  private static boolean eq_oxnfbs_a0a0a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

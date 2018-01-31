@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -55,7 +56,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             String fullName = it.getModelName();
-            return eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
+            return Objects.equals(fullName, language.getModuleName() + "." + getPresentableAspectName());
           }
         }).ofType(SModel.class).toListSequence();
       }
@@ -105,9 +106,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
 
     };
-  }
-  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static String HELP_URL = URLFunction_ConfluenceDocUrl.getUrl() + "/Migrations";
 }

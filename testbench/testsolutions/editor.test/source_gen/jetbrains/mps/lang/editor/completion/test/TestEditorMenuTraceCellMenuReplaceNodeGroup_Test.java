@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 @MPSLaunch
@@ -52,14 +53,11 @@ public class TestEditorMenuTraceCellMenuReplaceNodeGroup_Test extends BaseTransf
           EditorMenuTraceInfo editorMenuTraceInfo = action.getEditorMenuTraceInfo();
           EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.getNode("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774803494772"), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_hty72o_a0a0a0a0a0a0a0a0b0f0a0a0a0d0a6(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text")), "constant cell");
+              return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text")), "constant cell");
             }
           }).first(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3fa975a0L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group"))).first().getReference());
         }
       });
-    }
-    private static boolean eq_hty72o_a0a0a0a0a0a0a0a0b0f0a0a0a0d0a6(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

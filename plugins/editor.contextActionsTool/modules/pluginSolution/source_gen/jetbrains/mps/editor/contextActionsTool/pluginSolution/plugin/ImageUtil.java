@@ -11,6 +11,7 @@ import java.awt.GraphicsConfiguration;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 import java.awt.Component;
+import java.util.Objects;
 import java.lang.reflect.Method;
 
 public class ImageUtil {
@@ -49,7 +50,7 @@ public class ImageUtil {
     if (icon instanceof ImageIcon) {
       return ((ImageIcon) icon);
     }
-    if (eq_9b5dri_a0b0f(icon.getClass().getName(), "com.intellij.openapi.util.IconLoader$CachedImageIcon")) {
+    if (Objects.equals(icon.getClass().getName(), "com.intellij.openapi.util.IconLoader$CachedImageIcon")) {
       try {
         Method getRealIcon = icon.getClass().getDeclaredMethod("getRealIcon");
         getRealIcon.setAccessible(true);
@@ -61,8 +62,5 @@ public class ImageUtil {
       }
     }
     return new ImageIcon(iconToImage(icon));
-  }
-  private static boolean eq_9b5dri_a0b0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

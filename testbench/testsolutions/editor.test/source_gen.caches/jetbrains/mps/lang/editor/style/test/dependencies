@@ -59,9 +59,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyLiteralPreviewTest_Test" file="FontFamilyLiteralPreviewTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
@@ -104,9 +104,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.style.test.FontFamilyStyleClassItemPreviewTest_Test" file="FontFamilyStyleClassItemPreviewTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
@@ -290,9 +290,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleFunctionTest_Test" file="URLStyleFunctionTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -304,9 +304,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.style.test.URLStyleSimpleTest_Test" file="URLStyleSimpleTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />

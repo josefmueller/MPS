@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
@@ -61,7 +62,7 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
   public class SMP_Group_evf1f9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) && eq_evf1f9_a0a0a0g(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended"));
+      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration")) && Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended"));
     }
     @NotNull
     @Override
@@ -184,9 +185,6 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
       }
 
     }
-  }
-  private static boolean eq_evf1f9_a0a0a0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_evf1f9_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

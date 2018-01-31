@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -27,7 +28,7 @@ public class check_LinkAttribute_NonTypesystemRule extends AbstractNonTypesystem
     Iterable<SReferenceLink> links = SNodeOperations.getConcept(SNodeOperations.getParent(linkAttribute)).getReferenceLinks();
     SReferenceLink existingLink = Sequence.fromIterable(links).findFirst(new IWhereFilter<SReferenceLink>() {
       public boolean accept(SReferenceLink it) {
-        return eq_efy873_a0a0a0a0a0a1a1(it, LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(linkAttribute));
+        return Objects.equals(it, LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(linkAttribute));
       }
     });
     if (existingLink == null) {
@@ -39,7 +40,7 @@ public class check_LinkAttribute_NonTypesystemRule extends AbstractNonTypesystem
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
-    } else if (neq_efy873_a0a2a1(existingLink.getRoleName(), SPropertyOperations.getString(linkAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole")))) {
+    } else if (!(Objects.equals(existingLink.getRoleName(), SPropertyOperations.getString(linkAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkAttribute, "Incorrect reference link name: " + SPropertyOperations.getString(linkAttribute, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole")), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5394253938404289649", null, errorTarget);
@@ -67,11 +68,5 @@ public class check_LinkAttribute_NonTypesystemRule extends AbstractNonTypesystem
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_efy873_a0a0a0a0a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_efy873_a0a2a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.debug.api.programState.GenericSourceCodeLocation;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.debug.api.source.SourcePosition;
+import java.util.Objects;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   private final Project myProject;
@@ -61,9 +62,6 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     PositionProvider posProvider = PositionProvider.getInstance(myProject);
     SourcePosition lastPointer = posProvider.getPosition(new GenericSourceCodeLocation(lastUnitName, lastFileName, lastLineNumber), mySession);
     SourcePosition nextPointer = posProvider.getPosition(new GenericSourceCodeLocation(nextUnitName, nextFileName, nextLineNumber), mySession);
-    return eq_xhry8p_a0e0h(lastPointer, nextPointer);
-  }
-  private static boolean eq_xhry8p_a0e0h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return Objects.equals(lastPointer, nextPointer);
   }
 }

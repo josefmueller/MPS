@@ -15,6 +15,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -45,7 +46,7 @@ public class check_TemplateSwitch_NonTypesystemRule extends AbstractNonTypesyste
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(templateSwitch, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).count(); i++) {
       SNode p1 = ListSequence.fromList(SLinkOperations.getChildren(templateSwitch, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).getElement(i);
       SNode p2 = ListSequence.fromList(SLinkOperations.getChildren(modified, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"))).getElement(i);
-      if (neq_cl1ui4_a0c0f0b(SPropertyOperations.getString(p1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(p2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+      if (!(Objects.equals(SPropertyOperations.getString(p1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(p2, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
         // names shall be identical as we identify them with strings in TemplateContext 
         {
           MessageTarget errorTarget = new NodeMessageTarget();
@@ -80,8 +81,5 @@ public class check_TemplateSwitch_NonTypesystemRule extends AbstractNonTypesyste
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_cl1ui4_a0c0f0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

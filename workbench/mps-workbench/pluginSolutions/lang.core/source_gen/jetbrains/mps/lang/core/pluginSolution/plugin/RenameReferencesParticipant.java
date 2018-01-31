@@ -19,6 +19,7 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -75,7 +76,7 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
       } else {
         usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return eq_xv67ae_a0a0a0a0a0a0a0a4a1a8(it.getTargetNodeReference(), initialState);
+            return Objects.equals(it.getTargetNodeReference(), initialState);
           }
         }).toListSequence();
       }
@@ -107,9 +108,6 @@ public class RenameReferencesParticipant extends RefactoringParticipantBase<SNod
         }
       }).toListSequence();
     }
-  }
-  private static boolean eq_xv67ae_a0a0a0a0a0a0a0a4a1a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_xv67ae_a0a1a2a0a0a0a0a1a0a0d0a0a0a0a5a1a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

@@ -15,6 +15,7 @@ import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 
 public class ContextManager {
   private static final Logger LOG = LogManager.getLogger(ContextManager.class);
@@ -95,7 +96,7 @@ public class ContextManager {
   public synchronized Context findContextForThread(final ThreadReference threadReference) {
     EventContext context = ListSequence.fromList(mySuspendedContexts).findFirst(new IWhereFilter<EventContext>() {
       public boolean accept(EventContext it) {
-        return eq_toclu7_a0a0a0a0a0a0a01(it.getThread(), threadReference);
+        return Objects.equals(it.getThread(), threadReference);
       }
     });
     if (context != null) {
@@ -116,8 +117,5 @@ public class ContextManager {
   }
   public synchronized boolean isPausedOnEvent(Context context) {
     return ListSequence.fromList(mySuspendedContexts).contains(context);
-  }
-  private static boolean eq_toclu7_a0a0a0a0a0a0a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

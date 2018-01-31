@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.structure.util.ConceptIdHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -38,7 +39,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
     } else {
       if (ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(acd), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return it != acd && eq_hcbjaj_a0a0a0a0a0a0a0a0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), SPropertyOperations.getString(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")));
+          return it != acd && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), SPropertyOperations.getString(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")));
         }
       })) {
         {
@@ -50,7 +51,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
-      } else if (neq_hcbjaj_a0a0a0a0b(SPropertyOperations.getString(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), ConceptIdHelper.getNodeIdString(acd))) {
+      } else if (!(Objects.equals(SPropertyOperations.getString(acd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId")), ConceptIdHelper.getNodeIdString(acd)))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(acd, "Node id and concept id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2819660830273583910", null, errorTarget);
@@ -77,7 +78,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
       } else {
         if (ListSequence.fromList(SLinkOperations.getChildren(acd, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return it != p && eq_hcbjaj_a0a0a0a0a0a0a0a0c0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")));
+            return it != p && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")));
           }
         })) {
           {
@@ -89,7 +90,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
               _reporter_2309309498.addIntentionProvider(intentionProvider);
             }
           }
-        } else if (neq_hcbjaj_a0a0a0a0c0b(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), ConceptIdHelper.getNodeIdString(p))) {
+        } else if (!(Objects.equals(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0x35a81382d82a4d9L, "propertyId")), ConceptIdHelper.getNodeIdString(p)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(p, "Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2819660830273589312", null, errorTarget);
@@ -117,7 +118,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
       } else {
         if (ListSequence.fromList(SLinkOperations.getChildren(acd, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return it != l && eq_hcbjaj_a0a0a0a0a0a0a0a0e0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")));
+            return it != l && Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")));
           }
         })) {
           {
@@ -129,7 +130,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
               _reporter_2309309498.addIntentionProvider(intentionProvider);
             }
           }
-        } else if (neq_hcbjaj_a0a0a0a0e0b(SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), ConceptIdHelper.getNodeIdString(l))) {
+        } else if (!(Objects.equals(SPropertyOperations.getString(l, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0x35a81382d82a4e4L, "linkId")), ConceptIdHelper.getNodeIdString(l)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(l, "Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2819660830273606558", null, errorTarget);
@@ -152,25 +153,7 @@ public class check_AbstractConceptDeclaration_Ids_NonTypesystemRule extends Abst
   public boolean overrides() {
     return false;
   }
-  private static boolean neq_hcbjaj_a0a0a0a0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_hcbjaj_a0a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean neq_hcbjaj_a0a0a0a0c0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_hcbjaj_a0a0a0a0a0a0a0a0c0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_hcbjaj_a0a0a0a0e0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_hcbjaj_a0a0a0a0a0a0a0a0e0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

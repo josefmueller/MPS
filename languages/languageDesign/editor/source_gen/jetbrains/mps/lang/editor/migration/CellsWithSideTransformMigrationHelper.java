@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.actions.migration.ActionMigrationHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -116,7 +117,7 @@ public class CellsWithSideTransformMigrationHelper {
       boolean containsDefaultTag = false;
       Set<SNode> menusFound = new HashSet<SNode>();
       for (String tag : sideTransformTags) {
-        if (eq_o8m9jz_a0a0a2a9a9_0(tag, null) || eq_o8m9jz_a0a0a2a9a9(tag, DEFAULT_TAG_NAME)) {
+        if (Objects.equals(tag, null) || Objects.equals(tag, DEFAULT_TAG_NAME)) {
           containsDefaultTag = true;
           menuWasFound = true;
           continue;
@@ -150,7 +151,7 @@ public class CellsWithSideTransformMigrationHelper {
         ListSequence.fromList(SLinkOperations.getChildren(additionalMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, 0x16be955f384efffcL, "sections"))).addElement(section);
         for (SNode apply : Sequence.fromIterable(applySideTransforms)) {
           String tag = SPropertyOperations.getString_def(apply, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, 0xc14e9fba94cb682L, "tag"), null);
-          if (tag == null || eq_o8m9jz_a0a0b0b0d0n0j(tag, "") || eq_o8m9jz_a0a1a1a3a31a9(tag, DEFAULT_TAG_NAME)) {
+          if (tag == null || Objects.equals(tag, "") || Objects.equals(tag, DEFAULT_TAG_NAME)) {
             SNode location = ActionMigrationHelper.createLocation(SPropertyOperations.getString_def(apply, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72449b609d0e77bbL, 0x72449b609d0f1475L, "side"), null));
             SNode includeMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"));
             SLinkOperations.setTarget(includeMenu, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, 0x1a0027b1197f7335L, "location"), location);
@@ -372,23 +373,11 @@ public class CellsWithSideTransformMigrationHelper {
 
 
 
-  private static boolean eq_o8m9jz_a0a0a2a9a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_o8m9jz_a0a0a2a9a9_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SNode _quotation_createNode_o8m9jz_a0a2a31a9() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0x65e54712ab56011cL, "TransformationLocation_Completion"), null, null, false);
     return quotedNode_1;
-  }
-  private static boolean eq_o8m9jz_a0a1a1a3a31a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_o8m9jz_a0a0b0b0d0n0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_o8m9jz_a0a6a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -91,7 +92,7 @@ public class MigrationDataUtil {
     }
     Tuples._2<MigrationScriptReference, SNode> result = ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, SNode>>() {
       public boolean accept(Tuples._2<MigrationScriptReference, SNode> it) {
-        return eq_hzite5_a0a0a0a0a0a0c0d(it._0(), script);
+        return Objects.equals(it._0(), script);
       }
     }).first();
     return (result == null ? null : result._1());
@@ -104,8 +105,5 @@ public class MigrationDataUtil {
       path = FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration";
     }
     return FileSystem.getInstance().getFileByPath(path);
-  }
-  private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

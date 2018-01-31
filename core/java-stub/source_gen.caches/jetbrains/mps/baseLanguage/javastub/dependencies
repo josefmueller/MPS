@@ -94,6 +94,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMNodeId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType" />

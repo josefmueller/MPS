@@ -11,6 +11,7 @@ import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 
 public class BaseMethodParameterInformationQuery implements ParametersInformation<SNode> {
   public BaseMethodParameterInformationQuery() {
@@ -33,11 +34,8 @@ public class BaseMethodParameterInformationQuery implements ParametersInformatio
     }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && eq_1nkmah_a0a0a0a0a0a2a4(SNodeOperations.getContainingLink(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")) && Objects.equals(SNodeOperations.getContainingLink(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
       }
     });
-  }
-  private static boolean eq_1nkmah_a0a0a0a0a0a2a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

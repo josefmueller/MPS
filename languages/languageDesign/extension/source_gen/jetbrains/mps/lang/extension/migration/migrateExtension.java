@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 import java.util.ArrayList;
@@ -137,7 +138,7 @@ public class migrateExtension extends MigrationScriptBase {
               ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))));
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a1a0a0c0d0a0a0a0b0f0d(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, 0x61a62b43e1534e9fL, "declaration"));
+                  return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, 0x61a62b43e1534e9fL, "declaration"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -200,7 +201,7 @@ public class migrateExtension extends MigrationScriptBase {
               ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))));
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a1a0a0c0e0a0a0a0b0h0d(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
+                  return Objects.equals(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -256,7 +257,7 @@ public class migrateExtension extends MigrationScriptBase {
               ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))));
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a1a0a0c0h0a0a0a0b0j0d(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e1534edcL, "fieldDeclaration"));
+                  return Objects.equals(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e1534edcL, "fieldDeclaration"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -265,7 +266,7 @@ public class migrateExtension extends MigrationScriptBase {
               });
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a2a0a0c0h0a0a0a0b0j0d(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253eeL, "activator"));
+                  return Objects.equals(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253eeL, "activator"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -274,7 +275,7 @@ public class migrateExtension extends MigrationScriptBase {
               });
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a3a0a0c0h0a0a0a0b0j0d(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253f6L, "deactivator"));
+                  return Objects.equals(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e15253f6L, "deactivator"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -285,7 +286,7 @@ public class migrateExtension extends MigrationScriptBase {
               ListSequence.fromList(SLinkOperations.getChildren(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)", "4103205777865557979"), newNode)).first(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(oldNode, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x6f6f7f3b7a17bd13L, "objectGetter")), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))));
               Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)", "4103205777865557979"), newNode)).first(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_2kk9yi_a0a0a0a0a0a6a0a0c0h0a0a0a0b0j0d(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
+                  return Objects.equals(ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
                 }
               }).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode it) {
@@ -397,9 +398,6 @@ public class migrateExtension extends MigrationScriptBase {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a1a0a0c0d0a0a0a0b0f0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SNode _quotation_createNode_2kk9yi_a0a7a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -459,9 +457,6 @@ public class migrateExtension extends MigrationScriptBase {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc6bf96dL, "VoidType"), null, null, false);
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), quotedNode_5);
     return quotedNode_2;
-  }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a1a0a0c0e0a0a0a0b0h0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_2kk9yi_a0a9a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -561,17 +556,5 @@ public class migrateExtension extends MigrationScriptBase {
     quotedNode_7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), quotedNode_15);
     quotedNode_18.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"), quotedNode_15);
     return quotedNode_7;
-  }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a1a0a0c0h0a0a0a0b0j0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a2a0a0c0h0a0a0a0b0j0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a3a0a0c0h0a0a0a0b0j0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_2kk9yi_a0a0a0a0a0a6a0a0c0h0a0a0a0b0j0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

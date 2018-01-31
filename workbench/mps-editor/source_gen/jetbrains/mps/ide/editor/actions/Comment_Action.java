@@ -8,6 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,7 +38,7 @@ public class Comment_Action extends BaseAction {
     if (selection == null || !(EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells()))) {
       return false;
     }
-    if (eq_fuv223_a0c0e(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getEditedNode(), event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode())) {
+    if (Objects.equals(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getEditedNode(), event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode())) {
       return false;
     }
     return Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getNodeAncestors(((SNode) event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode()), null, true), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldCommentContainer"))).where(new IWhereFilter<SNode>() {
@@ -69,8 +70,5 @@ public class Comment_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection().executeAction(CellActionType.COMMENT);
-  }
-  private static boolean eq_fuv223_a0c0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

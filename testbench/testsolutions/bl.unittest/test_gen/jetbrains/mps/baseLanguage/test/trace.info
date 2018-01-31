@@ -6,13 +6,11 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1005490780655151741">
     <file name="CaseInsensitiveDuplicatedClassifierName_Test.java">
-      <node id="1005490780655151741" at="22,57,23,25" concept="9" />
+      <node id="1005490780655151741" at="22,57,23,25" concept="7" />
       <node id="1005490780655151741" at="27,73,28,149" concept="3" />
       <node id="1005490780655151741" at="31,73,32,149" concept="3" />
       <node id="1005490780655151741" at="35,75,36,151" concept="3" />
@@ -25,7 +23,7 @@
       <node id="1005490780655151741" at="55,242,56,123" concept="3" />
       <node id="1005490780655151741" at="58,79,59,242" concept="5" />
       <node id="1005490780655151741" at="59,242,60,123" concept="3" />
-      <node id="1005490780655151741" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1005490780655151741" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1005490780655151741" at="22,0,25,0" concept="2" trace="CaseInsensitiveDuplicatedClassifierName_Test#()V" />
       <node id="1005490780655151741" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck1005490780657563849#()V" />
       <node id="1005490780655151741" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck1005490780657563829#()V" />
@@ -67,7 +65,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1100850602766269370">
     <file name="ArrayCreatorTest_Test.java">
-      <node id="1100850602766269370" at="22,34,23,25" concept="9" />
+      <node id="1100850602766269370" at="22,34,23,25" concept="7" />
       <node id="1100850602766269370" at="27,73,28,126" concept="3" />
       <node id="1100850602766269370" at="31,73,32,126" concept="3" />
       <node id="1100850602766269370" at="35,73,36,126" concept="3" />
@@ -83,7 +81,7 @@
       <node id="1100850602766269370" at="63,242,64,123" concept="3" />
       <node id="1100850602766269370" at="66,79,67,242" concept="5" />
       <node id="1100850602766269370" at="67,242,68,123" concept="3" />
-      <node id="1100850602766269370" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1100850602766269370" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1100850602766269370" at="22,0,25,0" concept="2" trace="ArrayCreatorTest_Test#()V" />
       <node id="1100850602766269370" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck1100850602766327583#()V" />
       <node id="1100850602766269370" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck1100850602766335141#()V" />
@@ -133,7 +131,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1187415722601183376">
     <file name="InitializerRequiredForFieldsInInterface_Test.java">
-      <node id="1187415722601183376" at="22,57,23,25" concept="9" />
+      <node id="1187415722601183376" at="22,57,23,25" concept="7" />
       <node id="1187415722601183376" at="27,73,28,149" concept="3" />
       <node id="1187415722601183376" at="31,73,32,149" concept="3" />
       <node id="1187415722601183376" at="35,77,36,153" concept="3" />
@@ -143,7 +141,7 @@
       <node id="1187415722601183376" at="47,242,48,123" concept="3" />
       <node id="1187415722601183376" at="50,79,51,242" concept="5" />
       <node id="1187415722601183376" at="51,242,52,123" concept="3" />
-      <node id="1187415722601183376" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1187415722601183376" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1187415722601183376" at="22,0,25,0" concept="2" trace="InitializerRequiredForFieldsInInterface_Test#()V" />
       <node id="1187415722601183376" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck1187415722613141596#()V" />
       <node id="1187415722601183376" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck1187415722613794413#()V" />
@@ -177,7 +175,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585456">
     <file name="OnlyStatementsCanUnreachable_Test.java">
-      <node id="1217271585456" at="22,46,23,25" concept="9" />
+      <node id="1217271585456" at="22,46,23,25" concept="7" />
       <node id="1217271585456" at="27,88,28,153" concept="3" />
       <node id="1217271585456" at="31,88,32,153" concept="3" />
       <node id="1217271585456" at="35,71,36,136" concept="3" />
@@ -187,7 +185,7 @@
       <node id="1217271585456" at="47,242,48,123" concept="3" />
       <node id="1217271585456" at="50,73,51,236" concept="5" />
       <node id="1217271585456" at="51,236,52,117" concept="3" />
-      <node id="1217271585456" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217271585456" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217271585456" at="22,0,25,0" concept="2" trace="OnlyStatementsCanUnreachable_Test#()V" />
       <node id="1217271585456" at="26,0,30,0" concept="4" trace="test_NodeTheConditionIsAlwaysCheck2857825852305743236#()V" />
       <node id="1217271585456" at="30,0,34,0" concept="4" trace="test_NodeUnreachableNodeErrorCheck2156906680117409679#()V" />
@@ -221,11 +219,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585523">
     <file name="ForLoop_Test.java">
-      <node id="1217271585523" at="21,25,22,25" concept="9" />
+      <node id="1217271585523" at="21,25,22,25" concept="7" />
       <node id="1217271585523" at="26,47,27,91" concept="3" />
       <node id="1225979304340" at="32,49,33,35" concept="3" />
       <node id="1215444253193" at="33,35,34,328" concept="3" />
-      <node id="1217271585523" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="1217271585523" at="17,0,19,0" concept="6" trace="ourParamCache" />
       <node id="1217271585523" at="21,0,24,0" concept="2" trace="ForLoop_Test#()V" />
       <node id="1217271585523" at="25,0,29,0" concept="4" trace="test_ForLoop#()V" />
       <node id="1225979304340" at="32,0,36,0" concept="4" trace="test_ForLoop#()V" />
@@ -241,7 +239,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585641">
     <file name="MethodParametersTest_Test.java">
-      <node id="1217271585641" at="23,38,24,25" concept="9" />
+      <node id="1217271585641" at="23,38,24,25" concept="7" />
       <node id="1217271585641" at="28,60,29,117" concept="3" />
       <node id="1217271585641" at="32,102,33,159" concept="3" />
       <node id="1217271585641" at="36,105,37,162" concept="3" />
@@ -254,7 +252,7 @@
       <node id="1217271585641" at="56,242,57,123" concept="3" />
       <node id="1217271585641" at="59,88,60,241" concept="5" />
       <node id="1217271585641" at="60,241,61,117" concept="3" />
-      <node id="1217271585641" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271585641" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271585641" at="23,0,26,0" concept="2" trace="MethodParametersTest_Test#()V" />
       <node id="1217271585641" at="27,0,31,0" concept="4" trace="test_MethodParametersTest#()V" />
       <node id="1217271585641" at="31,0,35,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624927544278#()V" />
@@ -294,7 +292,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585692">
     <file name="UnusedAssignment_Test.java">
-      <node id="1217271585692" at="23,34,24,25" concept="9" />
+      <node id="1217271585692" at="23,34,24,25" concept="7" />
       <node id="1217271585692" at="28,56,29,109" concept="3" />
       <node id="1217271585692" at="32,105,33,158" concept="3" />
       <node id="1217271585692" at="36,86,37,139" concept="3" />
@@ -304,7 +302,7 @@
       <node id="1217271585692" at="48,242,49,123" concept="3" />
       <node id="1217271585692" at="51,88,52,241" concept="5" />
       <node id="1217271585692" at="52,241,53,117" concept="3" />
-      <node id="1217271585692" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271585692" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271585692" at="23,0,26,0" concept="2" trace="UnusedAssignment_Test#()V" />
       <node id="1217271585692" at="27,0,31,0" concept="4" trace="test_UnusedAssignment#()V" />
       <node id="1217271585692" at="31,0,35,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928924551#()V" />
@@ -336,7 +334,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586138">
     <file name="UnreachableStatements_Test.java">
-      <node id="1217271586138" at="22,39,23,25" concept="9" />
+      <node id="1217271586138" at="22,39,23,25" concept="7" />
       <node id="1217271586138" at="27,89,28,147" concept="3" />
       <node id="1217271586138" at="31,88,32,146" concept="3" />
       <node id="1217271586138" at="35,71,36,129" concept="3" />
@@ -394,7 +392,7 @@
       <node id="1217271586138" at="175,242,176,123" concept="3" />
       <node id="1217271586138" at="178,79,179,242" concept="5" />
       <node id="1217271586138" at="179,242,180,123" concept="3" />
-      <node id="1217271586138" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217271586138" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217271586138" at="22,0,25,0" concept="2" trace="UnreachableStatements_Test#()V" />
       <node id="1217271586138" at="26,0,30,0" concept="4" trace="test_NodeUnusedVariableWarningCheck6923385624929494062#()V" />
       <node id="1217271586138" at="30,0,34,0" concept="4" trace="test_NodeUnreachableNodeErrorCheck6923385624927474426#()V" />
@@ -556,13 +554,13 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586324">
     <file name="ReadAction_Test.java">
-      <node id="1217271586324" at="22,28,23,25" concept="9" />
+      <node id="1217271586324" at="22,28,23,25" concept="7" />
       <node id="1217271586324" at="27,50,28,97" concept="3" />
       <node id="1217271586324" at="31,71,32,118" concept="3" />
       <node id="1225979300041" at="37,52,38,35" concept="3" />
       <node id="1217271586324" at="41,73,42,236" concept="5" />
       <node id="1217271586324" at="42,236,43,117" concept="3" />
-      <node id="1217271586324" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217271586324" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217271586324" at="22,0,25,0" concept="2" trace="ReadAction_Test#()V" />
       <node id="1225979300041" at="37,0,40,0" concept="4" trace="test_ReadAction#()V" />
       <node id="1217271586324" at="26,0,30,0" concept="4" trace="test_ReadAction#()V" />
@@ -586,7 +584,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586411">
     <file name="DataFlowInClosure_Test.java">
-      <node id="1217271586411" at="23,35,24,25" concept="9" />
+      <node id="1217271586411" at="23,35,24,25" concept="7" />
       <node id="1217271586411" at="28,57,29,111" concept="3" />
       <node id="1217271586411" at="32,105,33,159" concept="3" />
       <node id="1217271586411" at="36,86,37,140" concept="3" />
@@ -596,7 +594,7 @@
       <node id="1217271586411" at="48,242,49,123" concept="3" />
       <node id="1217271586411" at="51,88,52,241" concept="5" />
       <node id="1217271586411" at="52,241,53,117" concept="3" />
-      <node id="1217271586411" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271586411" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271586411" at="23,0,26,0" concept="2" trace="DataFlowInClosure_Test#()V" />
       <node id="1217271586411" at="27,0,31,0" concept="4" trace="test_DataFlowInClosure#()V" />
       <node id="1217271586411" at="31,0,35,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624928941627#()V" />
@@ -628,14 +626,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586585">
     <file name="UnexpectedReturnInAnonymousClass_Test.java">
-      <node id="1217271586585" at="23,50,24,25" concept="9" />
+      <node id="1217271586585" at="23,50,24,25" concept="7" />
       <node id="1217271586585" at="28,72,29,141" concept="3" />
       <node id="1217271586585" at="32,87,33,156" concept="3" />
       <node id="1225979304892" at="38,74,39,35" concept="3" />
       <node id="1215444400381" at="39,35,40,315" concept="3" />
       <node id="1217271586585" at="43,89,44,242" concept="5" />
       <node id="1217271586585" at="44,242,45,123" concept="3" />
-      <node id="1217271586585" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271586585" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271586585" at="23,0,26,0" concept="2" trace="UnexpectedReturnInAnonymousClass_Test#()V" />
       <node id="1217271586585" at="27,0,31,0" concept="4" trace="test_UnexpectedReturnInAnonymousClass#()V" />
       <node id="1217271586585" at="31,0,35,0" concept="4" trace="test_NodeReturnExpectedErrorCheck6923385624929494145#()V" />
@@ -659,7 +657,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587023">
     <file name="UnusedVariableDeclaration_Test.java">
-      <node id="1217271587023" at="22,43,23,25" concept="9" />
+      <node id="1217271587023" at="22,43,23,25" concept="7" />
       <node id="1217271587023" at="27,65,28,127" concept="3" />
       <node id="1217271587023" at="31,77,32,139" concept="3" />
       <node id="1217271587023" at="35,89,36,151" concept="3" />
@@ -674,7 +672,7 @@
       <node id="1217271587023" at="62,242,63,123" concept="3" />
       <node id="1217271587023" at="65,91,66,242" concept="5" />
       <node id="1217271587023" at="66,242,67,123" concept="3" />
-      <node id="1217271587023" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217271587023" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217271587023" at="22,0,25,0" concept="2" trace="UnusedVariableDeclaration_Test#()V" />
       <node id="1225979305492" at="49,0,52,0" concept="4" trace="test_UnusedVariableDeclaration#()V" />
       <node id="1217271587023" at="26,0,30,0" concept="4" trace="test_UnusedVariableDeclaration#()V" />
@@ -722,7 +720,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587074">
     <file name="AnonymousClass_Test.java">
-      <node id="1217271587074" at="23,32,24,25" concept="9" />
+      <node id="1217271587074" at="23,32,24,25" concept="7" />
       <node id="1217271587074" at="28,54,29,105" concept="3" />
       <node id="1217271587074" at="32,105,33,156" concept="3" />
       <node id="1217271587074" at="36,86,37,137" concept="3" />
@@ -738,7 +736,7 @@
       <node id="1217271587074" at="64,242,65,123" concept="3" />
       <node id="1217271587074" at="67,88,68,241" concept="5" />
       <node id="1217271587074" at="68,241,69,123" concept="3" />
-      <node id="1217271587074" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271587074" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271587074" at="23,0,26,0" concept="2" trace="AnonymousClass_Test#()V" />
       <node id="1217271587074" at="27,0,31,0" concept="4" trace="test_AnonymousClass#()V" />
       <node id="1217271587074" at="31,0,35,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051#()V" />
@@ -786,7 +784,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587656">
     <file name="VariableUninitialized_Test.java">
-      <node id="1217271587656" at="22,39,23,25" concept="9" />
+      <node id="1217271587656" at="22,39,23,25" concept="7" />
       <node id="1217271587656" at="27,61,28,119" concept="3" />
       <node id="1217271587656" at="31,102,32,160" concept="3" />
       <node id="1217271587656" at="35,105,36,163" concept="3" />
@@ -801,7 +799,7 @@
       <node id="1217271587656" at="62,241,63,117" concept="3" />
       <node id="1217271587656" at="65,73,66,236" concept="5" />
       <node id="1217271587656" at="66,236,67,117" concept="3" />
-      <node id="1217271587656" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217271587656" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217271587656" at="22,0,25,0" concept="2" trace="VariableUninitialized_Test#()V" />
       <node id="1225979303302" at="49,0,52,0" concept="4" trace="test_VariableUninitialized#()V" />
       <node id="1217271587656" at="26,0,30,0" concept="4" trace="test_VariableUninitialized#()V" />
@@ -849,14 +847,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271587918">
     <file name="IfStatementDataFlow_Test.java">
-      <node id="1217271587918" at="23,37,24,25" concept="9" />
+      <node id="1217271587918" at="23,37,24,25" concept="7" />
       <node id="1217271587918" at="28,59,29,115" concept="3" />
       <node id="1217271587918" at="32,102,33,158" concept="3" />
       <node id="1225979303578" at="38,61,39,35" concept="3" />
       <node id="1215444237482" at="39,35,40,325" concept="3" />
       <node id="1217271587918" at="43,104,44,242" concept="5" />
       <node id="1217271587918" at="44,242,45,123" concept="3" />
-      <node id="1217271587918" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="1217271587918" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="1217271587918" at="23,0,26,0" concept="2" trace="IfStatementDataFlow_Test#()V" />
       <node id="1217271587918" at="27,0,31,0" concept="4" trace="test_IfStatementDataFlow#()V" />
       <node id="1217271587918" at="31,0,35,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755#()V" />
@@ -880,7 +878,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217861204623">
     <file name="IfStatementWrongUnreachable_Test.java">
-      <node id="1217861204623" at="22,45,23,25" concept="9" />
+      <node id="1217861204623" at="22,45,23,25" concept="7" />
       <node id="1217861204623" at="27,71,28,135" concept="3" />
       <node id="1217861204623" at="31,88,32,152" concept="3" />
       <node id="1217861204623" at="35,71,36,135" concept="3" />
@@ -890,7 +888,7 @@
       <node id="1217861204623" at="47,242,48,123" concept="3" />
       <node id="1217861204623" at="50,73,51,236" concept="5" />
       <node id="1217861204623" at="51,236,52,117" concept="3" />
-      <node id="1217861204623" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217861204623" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217861204623" at="22,0,25,0" concept="2" trace="IfStatementWrongUnreachable_Test#()V" />
       <node id="1217861204623" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1217864879944#()V" />
       <node id="1217861204623" at="30,0,34,0" concept="4" trace="test_NodeUnreachableNodeErrorCheck6923385624927388248#()V" />
@@ -924,11 +922,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217866056908">
     <file name="UnusedAssignmentWithIF_Test.java">
-      <node id="1217866056908" at="22,40,23,25" concept="9" />
+      <node id="1217866056908" at="22,40,23,25" concept="7" />
       <node id="1217866056908" at="27,71,28,130" concept="3" />
       <node id="1217866056908" at="34,73,35,236" concept="5" />
       <node id="1217866056908" at="35,236,36,117" concept="3" />
-      <node id="1217866056908" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1217866056908" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1217866056908" at="22,0,25,0" concept="2" trace="UnusedAssignmentWithIF_Test#()V" />
       <node id="1217866056908" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1217866439753#()V" />
       <node id="1217866056908" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck1217866439753#()V" />
@@ -946,7 +944,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1220012417777">
     <file name="CatchingUnthrownException_Test.java">
-      <node id="1220012417777" at="22,43,23,25" concept="9" />
+      <node id="1220012417777" at="22,43,23,25" concept="7" />
       <node id="1220012417777" at="27,83,28,145" concept="3" />
       <node id="1220012417777" at="31,83,32,145" concept="3" />
       <node id="1220012417777" at="35,71,36,133" concept="3" />
@@ -956,7 +954,7 @@
       <node id="1220012417777" at="47,242,48,123" concept="3" />
       <node id="1220012417777" at="50,73,51,236" concept="5" />
       <node id="1220012417777" at="51,236,52,117" concept="3" />
-      <node id="1220012417777" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1220012417777" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1220012417777" at="22,0,25,0" concept="2" trace="CatchingUnthrownException_Test#()V" />
       <node id="1220012417777" at="26,0,30,0" concept="4" trace="test_NodeCaughtExceptionCheck6923385624927429271#()V" />
       <node id="1220012417777" at="30,0,34,0" concept="4" trace="test_NodeCaughtExceptionCheck6923385624929290516#()V" />
@@ -990,11 +988,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1220013369431">
     <file name="IfStatementWithReturns_Test.java">
-      <node id="1220013369431" at="22,40,23,25" concept="9" />
+      <node id="1220013369431" at="22,40,23,25" concept="7" />
       <node id="1220013369431" at="27,71,28,130" concept="3" />
       <node id="1220013369431" at="34,73,35,236" concept="5" />
       <node id="1220013369431" at="35,236,36,117" concept="3" />
-      <node id="1220013369431" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1220013369431" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1220013369431" at="22,0,25,0" concept="2" trace="IfStatementWithReturns_Test#()V" />
       <node id="1220013369431" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1220013512724#()V" />
       <node id="1220013369431" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck1220013512724#()V" />
@@ -1012,7 +1010,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1220265193995">
     <file name="UnusedParameters_Test.java">
-      <node id="1220265193995" at="22,34,23,25" concept="9" />
+      <node id="1220265193995" at="22,34,23,25" concept="7" />
       <node id="1220265193995" at="27,71,28,124" concept="3" />
       <node id="1220265193995" at="31,90,32,143" concept="3" />
       <node id="1220265193995" at="35,90,36,143" concept="3" />
@@ -1022,7 +1020,7 @@
       <node id="1220265193995" at="47,242,48,123" concept="3" />
       <node id="1220265193995" at="50,92,51,242" concept="5" />
       <node id="1220265193995" at="51,242,52,123" concept="3" />
-      <node id="1220265193995" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1220265193995" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1220265193995" at="22,0,25,0" concept="2" trace="UnusedParameters_Test#()V" />
       <node id="1220265193995" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1220265437276#()V" />
       <node id="1220265193995" at="30,0,34,0" concept="4" trace="test_NodeUnusedParameterWarningCheck6923385624929809514#()V" />
@@ -1056,11 +1054,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1222443174371">
     <file name="ListWithConceptFunction_Test.java">
-      <node id="1222443174371" at="22,41,23,25" concept="9" />
+      <node id="1222443174371" at="22,41,23,25" concept="7" />
       <node id="1222443174371" at="27,71,28,131" concept="3" />
       <node id="1222443174371" at="34,73,35,236" concept="5" />
       <node id="1222443174371" at="35,236,36,117" concept="3" />
-      <node id="1222443174371" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1222443174371" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1222443174371" at="22,0,25,0" concept="2" trace="ListWithConceptFunction_Test#()V" />
       <node id="1222443174371" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1222443330005#()V" />
       <node id="1222443174371" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck1222443330005#()V" />
@@ -1078,14 +1076,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1226936033402">
     <file name="CommentCanBeUnreachable_Test.java">
-      <node id="1226936033402" at="22,41,23,25" concept="9" />
+      <node id="1226936033402" at="22,41,23,25" concept="7" />
       <node id="1226936033402" at="27,89,28,149" concept="3" />
       <node id="1226936033402" at="31,71,32,131" concept="3" />
       <node id="1226936033402" at="38,91,39,242" concept="5" />
       <node id="1226936033402" at="39,242,40,123" concept="3" />
       <node id="1226936033402" at="42,73,43,236" concept="5" />
       <node id="1226936033402" at="43,236,44,117" concept="3" />
-      <node id="1226936033402" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1226936033402" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1226936033402" at="22,0,25,0" concept="2" trace="CommentCanBeUnreachable_Test#()V" />
       <node id="1226936033402" at="26,0,30,0" concept="4" trace="test_NodeUnusedVariableWarningCheck6923385624928604784#()V" />
       <node id="1226936033402" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck1226936244308#()V" />
@@ -1111,11 +1109,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1229349783966">
     <file name="CommandDataflowWithReturn_Test.java">
-      <node id="1229349783966" at="22,43,23,25" concept="9" />
+      <node id="1229349783966" at="22,43,23,25" concept="7" />
       <node id="1229349783966" at="27,71,28,133" concept="3" />
       <node id="1229349783966" at="34,73,35,236" concept="5" />
       <node id="1229349783966" at="35,236,36,117" concept="3" />
-      <node id="1229349783966" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1229349783966" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1229349783966" at="22,0,25,0" concept="2" trace="CommandDataflowWithReturn_Test#()V" />
       <node id="1229349783966" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck1229350096076#()V" />
       <node id="1229349783966" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck1229350096076#()V" />
@@ -1133,91 +1131,35 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1326302914272879450">
     <file name="TestSafeEquals_Test.java">
-      <node id="1326302914272888800" at="9,47,10,28" concept="5" />
-      <node id="1326302914272888807" at="10,28,11,46" concept="3" />
-      <node id="1326302914272888818" at="11,46,12,50" concept="3" />
-      <node id="1326302914272888826" at="12,50,13,50" concept="3" />
-      <node id="1326302914272888834" at="13,50,14,52" concept="3" />
-      <node id="1326302914272888847" at="16,47,17,28" concept="5" />
-      <node id="1326302914272888854" at="17,28,18,48" concept="3" />
-      <node id="1326302914272888862" at="18,48,19,50" concept="3" />
-      <node id="1326302914272888870" at="19,50,20,50" concept="3" />
-      <node id="1326302914272888882" at="20,50,21,54" concept="3" />
-      <node id="1326302914272888810" at="25,63,26,46" concept="6" />
-      <node id="1326302914272888821" at="28,63,29,46" concept="6" />
-      <node id="1326302914272888829" at="31,63,32,46" concept="6" />
-      <node id="1326302914272888837" at="34,63,35,46" concept="6" />
-      <node id="1326302914272888857" at="37,64,38,51" concept="6" />
-      <node id="1326302914272888865" at="40,64,41,51" concept="6" />
-      <node id="1326302914272888877" at="43,64,44,51" concept="6" />
-      <node id="1326302914272888885" at="46,64,47,51" concept="6" />
-      <node id="1326302914272879452" at="23,0,25,0" concept="2" trace="TestSafeEquals_Test#()V" />
-      <node id="1326302914272888810" at="25,0,28,0" concept="8" trace="eq_g71ru1_a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888821" at="28,0,31,0" concept="8" trace="eq_g71ru1_a0a2a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888829" at="31,0,34,0" concept="8" trace="eq_g71ru1_a0a3a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888837" at="34,0,37,0" concept="8" trace="eq_g71ru1_a0a4a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888857" at="37,0,40,0" concept="8" trace="neq_g71ru1_a0a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888865" at="40,0,43,0" concept="8" trace="neq_g71ru1_a0a2a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888877" at="43,0,46,0" concept="8" trace="neq_g71ru1_a0a3a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272888885" at="46,0,49,0" concept="8" trace="neq_g71ru1_a0a4a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1326302914272880326" at="9,0,16,0" concept="4" trace="test_test_eq#()V" />
-      <node id="1326302914272888841" at="16,0,23,0" concept="4" trace="test_test_ne#()V" />
-      <scope id="1326302914272879455" at="23,32,23,32" />
-      <scope id="1326302914272888810" at="25,63,26,46" />
-      <scope id="1326302914272888821" at="28,63,29,46" />
-      <scope id="1326302914272888829" at="31,63,32,46" />
-      <scope id="1326302914272888837" at="34,63,35,46" />
-      <scope id="1326302914272888857" at="37,64,38,51" />
-      <scope id="1326302914272888865" at="40,64,41,51" />
-      <scope id="1326302914272888877" at="43,64,44,51" />
-      <scope id="1326302914272888885" at="46,64,47,51" />
-      <scope id="1326302914272879452" at="23,0,25,0" />
-      <scope id="1326302914272888810" at="25,0,28,0">
-        <var name="a" id="1326302914272888810" />
-        <var name="b" id="1326302914272888810" />
-      </scope>
-      <scope id="1326302914272888821" at="28,0,31,0">
-        <var name="a" id="1326302914272888821" />
-        <var name="b" id="1326302914272888821" />
-      </scope>
-      <scope id="1326302914272888829" at="31,0,34,0">
-        <var name="a" id="1326302914272888829" />
-        <var name="b" id="1326302914272888829" />
-      </scope>
-      <scope id="1326302914272888837" at="34,0,37,0">
-        <var name="a" id="1326302914272888837" />
-        <var name="b" id="1326302914272888837" />
-      </scope>
-      <scope id="1326302914272888857" at="37,0,40,0">
-        <var name="a" id="1326302914272888857" />
-        <var name="b" id="1326302914272888857" />
-      </scope>
-      <scope id="1326302914272888865" at="40,0,43,0">
-        <var name="a" id="1326302914272888865" />
-        <var name="b" id="1326302914272888865" />
-      </scope>
-      <scope id="1326302914272888877" at="43,0,46,0">
-        <var name="a" id="1326302914272888877" />
-        <var name="b" id="1326302914272888877" />
-      </scope>
-      <scope id="1326302914272888885" at="46,0,49,0">
-        <var name="a" id="1326302914272888885" />
-        <var name="b" id="1326302914272888885" />
-      </scope>
-      <scope id="1326302914272880329" at="9,47,14,52">
+      <node id="1326302914272888800" at="10,47,11,28" concept="5" />
+      <node id="1326302914272888807" at="11,28,12,44" concept="3" />
+      <node id="1326302914272888818" at="12,44,13,48" concept="3" />
+      <node id="1326302914272888826" at="13,48,14,48" concept="3" />
+      <node id="1326302914272888834" at="14,48,15,50" concept="3" />
+      <node id="1326302914272888847" at="17,47,18,28" concept="5" />
+      <node id="1326302914272888854" at="18,28,19,48" concept="3" />
+      <node id="1326302914272888862" at="19,48,20,50" concept="3" />
+      <node id="1326302914272888870" at="20,50,21,50" concept="3" />
+      <node id="1326302914272888882" at="21,50,22,54" concept="3" />
+      <node id="1326302914272879452" at="24,0,26,0" concept="2" trace="TestSafeEquals_Test#()V" />
+      <node id="1326302914272880326" at="10,0,17,0" concept="4" trace="test_test_eq#()V" />
+      <node id="1326302914272888841" at="17,0,24,0" concept="4" trace="test_test_ne#()V" />
+      <scope id="1326302914272879455" at="24,32,24,32" />
+      <scope id="1326302914272879452" at="24,0,26,0" />
+      <scope id="1326302914272880329" at="10,47,15,50">
         <var name="o" id="1326302914272888801" />
       </scope>
-      <scope id="1326302914272888844" at="16,47,21,54">
+      <scope id="1326302914272888844" at="17,47,22,54">
         <var name="o" id="1326302914272888848" />
       </scope>
-      <scope id="1326302914272880326" at="9,0,16,0" />
-      <scope id="1326302914272888841" at="16,0,23,0" />
-      <unit id="1326302914272879450" at="8,0,50,0" name="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" />
+      <scope id="1326302914272880326" at="10,0,17,0" />
+      <scope id="1326302914272888841" at="17,0,24,0" />
+      <unit id="1326302914272879450" at="9,0,27,0" name="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1875480895987369575">
     <file name="Cardinalities_Test.java">
-      <node id="1875480895987369575" at="22,31,23,25" concept="9" />
+      <node id="1875480895987369575" at="22,31,23,25" concept="7" />
       <node id="1875480895987369575" at="27,73,28,123" concept="3" />
       <node id="1875480895987369575" at="31,73,32,123" concept="3" />
       <node id="1875480895987369575" at="35,73,36,123" concept="3" />
@@ -1227,7 +1169,7 @@
       <node id="1875480895987369575" at="47,242,48,123" concept="3" />
       <node id="1875480895987369575" at="50,75,51,242" concept="5" />
       <node id="1875480895987369575" at="51,242,52,123" concept="3" />
-      <node id="1875480895987369575" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="1875480895987369575" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="1875480895987369575" at="22,0,25,0" concept="2" trace="Cardinalities_Test#()V" />
       <node id="1875480895987369575" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck1875480895988114782#()V" />
       <node id="1875480895987369575" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck1875480895987852095#()V" />
@@ -1261,7 +1203,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/215889526513029895">
     <file name="UnusedLocalVariableDeclaration_Test.java">
-      <node id="215889526513029895" at="22,48,23,25" concept="9" />
+      <node id="215889526513029895" at="22,48,23,25" concept="7" />
       <node id="215889526513029895" at="27,104,28,171" concept="3" />
       <node id="215889526513029895" at="31,86,32,153" concept="3" />
       <node id="215889526513029895" at="35,76,36,143" concept="3" />
@@ -1292,7 +1234,7 @@
       <node id="215889526513029895" at="103,241,104,122" concept="3" />
       <node id="215889526513029895" at="106,78,107,241" concept="5" />
       <node id="215889526513029895" at="107,241,108,122" concept="3" />
-      <node id="215889526513029895" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="215889526513029895" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="215889526513029895" at="22,0,25,0" concept="2" trace="UnusedLocalVariableDeclaration_Test#()V" />
       <node id="215889526513029895" at="26,0,30,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck215889526509545817#()V" />
       <node id="215889526513029895" at="30,0,34,0" concept="4" trace="test_NodeUnusedLocalVariableCheck215889526509546049#()V" />
@@ -1382,7 +1324,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2176128700705692341">
     <file name="BoundedTypeOnIllegalPositions_Test.java">
-      <node id="2176128700705692341" at="22,47,23,25" concept="9" />
+      <node id="2176128700705692341" at="22,47,23,25" concept="7" />
       <node id="2176128700705692341" at="27,96,28,162" concept="3" />
       <node id="2176128700705692341" at="31,96,32,162" concept="3" />
       <node id="2176128700705692341" at="35,96,36,162" concept="3" />
@@ -1407,7 +1349,7 @@
       <node id="2176128700705692341" at="87,242,88,123" concept="3" />
       <node id="2176128700705692341" at="90,79,91,242" concept="5" />
       <node id="2176128700705692341" at="91,242,92,123" concept="3" />
-      <node id="2176128700705692341" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2176128700705692341" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2176128700705692341" at="22,0,25,0" concept="2" trace="BoundedTypeOnIllegalPositions_Test#()V" />
       <node id="2176128700705692341" at="26,0,30,0" concept="4" trace="test_NodeThisTypeCantBeUsedInVariableCheck6923385624929132045#()V" />
       <node id="2176128700705692341" at="30,0,34,0" concept="4" trace="test_NodeThisTypeCantBeUsedInVariableCheck6923385624928848231#()V" />
@@ -1481,7 +1423,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2654404125187242906">
     <file name="ClassifierNameUniqueness_Test.java">
-      <node id="2654404125187242906" at="22,42,23,25" concept="9" />
+      <node id="2654404125187242906" at="22,42,23,25" concept="7" />
       <node id="2654404125187242906" at="27,81,28,142" concept="3" />
       <node id="2654404125187242906" at="31,90,32,151" concept="3" />
       <node id="2654404125187242906" at="35,90,36,151" concept="3" />
@@ -1503,7 +1445,7 @@
       <node id="2654404125187242906" at="79,242,80,123" concept="3" />
       <node id="2654404125187242906" at="82,79,83,242" concept="5" />
       <node id="2654404125187242906" at="83,242,84,123" concept="3" />
-      <node id="2654404125187242906" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2654404125187242906" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2654404125187242906" at="22,0,25,0" concept="2" trace="ClassifierNameUniqueness_Test#()V" />
       <node id="2654404125187242906" at="26,0,30,0" concept="4" trace="test_NodeTheNestedTypeCheck2654404125187272997#()V" />
       <node id="2654404125187242906" at="30,0,34,0" concept="4" trace="test_NodeDuplicatedNameOfNestedCheck2654404125187273794#()V" />
@@ -1569,11 +1511,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2702384151996661689">
     <file name="SimpleUnreachable_Test.java">
-      <node id="2702384151996661689" at="22,35,23,25" concept="9" />
+      <node id="2702384151996661689" at="22,35,23,25" concept="7" />
       <node id="2702384151996661689" at="27,79,28,133" concept="3" />
       <node id="2702384151996661689" at="34,81,35,242" concept="5" />
       <node id="2702384151996661689" at="35,242,36,123" concept="3" />
-      <node id="2702384151996661689" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2702384151996661689" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2702384151996661689" at="22,0,25,0" concept="2" trace="SimpleUnreachable_Test#()V" />
       <node id="2702384151996661689" at="26,0,30,0" concept="4" trace="test_NodeUnreachableCheck3715262949174660907#()V" />
       <node id="2702384151996661689" at="34,0,38,0" concept="4" trace="test_NodeUnreachableCheck3715262949174660907#()V" />
@@ -1591,14 +1533,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/284804022098929234">
     <file name="AbstractPrivateMethod_Test.java">
-      <node id="284804022098929234" at="22,39,23,25" concept="9" />
+      <node id="284804022098929234" at="22,39,23,25" concept="7" />
       <node id="284804022098929234" at="27,73,28,131" concept="3" />
       <node id="284804022098929234" at="31,76,32,134" concept="3" />
       <node id="284804022098929234" at="38,75,39,242" concept="5" />
       <node id="284804022098929234" at="39,242,40,122" concept="3" />
       <node id="284804022098929234" at="42,78,43,241" concept="5" />
       <node id="284804022098929234" at="43,241,44,122" concept="3" />
-      <node id="284804022098929234" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="284804022098929234" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="284804022098929234" at="22,0,25,0" concept="2" trace="AbstractPrivateMethod_Test#()V" />
       <node id="284804022098929234" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck2834737865485399118#()V" />
       <node id="284804022098929234" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck284804022098937155#()V" />
@@ -1624,7 +1566,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2857825852308723196">
     <file name="SimplifyExpression_Test.java">
-      <node id="2857825852308723196" at="22,36,23,25" concept="9" />
+      <node id="2857825852308723196" at="22,36,23,25" concept="7" />
       <node id="2857825852308723196" at="27,88,28,143" concept="3" />
       <node id="2857825852308723196" at="31,83,32,138" concept="3" />
       <node id="2857825852308723196" at="35,75,36,130" concept="3" />
@@ -1742,7 +1684,7 @@
       <node id="2857825852308723196" at="335,241,336,122" concept="3" />
       <node id="2857825852308723196" at="338,79,339,242" concept="5" />
       <node id="2857825852308723196" at="339,242,340,123" concept="3" />
-      <node id="2857825852308723196" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2857825852308723196" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2857825852308723196" at="22,0,25,0" concept="2" trace="SimplifyExpression_Test#()V" />
       <node id="2857825852308723196" at="26,0,30,0" concept="4" trace="test_NodeTheConditionIsAlwaysCheck8245314650934534145#()V" />
       <node id="2857825852308723196" at="30,0,34,0" concept="4" trace="test_NodeCanBeSimplifiedCheck8626468694781659666#()V" />
@@ -2064,7 +2006,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/290469496750208032">
     <file name="FloatLiteral_Test.java">
-      <node id="290469496750208032" at="22,30,23,25" concept="9" />
+      <node id="290469496750208032" at="22,30,23,25" concept="7" />
       <node id="290469496750208032" at="27,76,28,125" concept="3" />
       <node id="290469496750208032" at="31,72,32,121" concept="3" />
       <node id="290469496750208032" at="35,76,36,125" concept="3" />
@@ -2074,7 +2016,7 @@
       <node id="290469496750208032" at="47,241,48,122" concept="3" />
       <node id="290469496750208032" at="50,78,51,241" concept="5" />
       <node id="290469496750208032" at="51,241,52,122" concept="3" />
-      <node id="290469496750208032" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="290469496750208032" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="290469496750208032" at="22,0,25,0" concept="2" trace="FloatLiteral_Test#()V" />
       <node id="290469496750208032" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck290469496750263895#()V" />
       <node id="290469496750208032" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck290469496750368664#()V" />
@@ -2108,7 +2050,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2908733373806051335">
     <file name="NestedNewExpression_Test.java">
-      <node id="2908733373806051335" at="22,37,23,25" concept="9" />
+      <node id="2908733373806051335" at="22,37,23,25" concept="7" />
       <node id="2908733373806051335" at="27,73,28,129" concept="3" />
       <node id="2908733373806051335" at="31,73,32,129" concept="3" />
       <node id="2908733373806051335" at="35,73,36,129" concept="3" />
@@ -2121,7 +2063,7 @@
       <node id="2908733373806051335" at="55,242,56,123" concept="3" />
       <node id="2908733373806051335" at="58,79,59,242" concept="5" />
       <node id="2908733373806051335" at="59,242,60,123" concept="3" />
-      <node id="2908733373806051335" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2908733373806051335" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2908733373806051335" at="22,0,25,0" concept="2" trace="NestedNewExpression_Test#()V" />
       <node id="2908733373806051335" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck2908733373809544465#()V" />
       <node id="2908733373806051335" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck1628645464085513077#()V" />
@@ -2163,7 +2105,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2970924421778354240">
     <file name="typeParameterDuplicationAndMisorder_Test.java">
-      <node id="2970924421778354240" at="22,53,23,25" concept="9" />
+      <node id="2970924421778354240" at="22,53,23,25" concept="7" />
       <node id="2970924421778354240" at="27,91,28,163" concept="3" />
       <node id="2970924421778354240" at="31,80,32,152" concept="3" />
       <node id="2970924421778354240" at="35,80,36,152" concept="3" />
@@ -2191,7 +2133,7 @@
       <node id="2970924421778354240" at="95,242,96,123" concept="3" />
       <node id="2970924421778354240" at="98,79,99,242" concept="5" />
       <node id="2970924421778354240" at="99,242,100,123" concept="3" />
-      <node id="2970924421778354240" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="2970924421778354240" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="2970924421778354240" at="22,0,25,0" concept="2" trace="typeParameterDuplicationAndMisorder_Test#()V" />
       <node id="2970924421778354240" at="26,0,30,0" concept="4" trace="test_NodeTypeVariableIsNotNeededCheck6923385624929116385#()V" />
       <node id="2970924421778354240" at="30,0,34,0" concept="4" trace="test_NodeUnnamedErrorCheck6923385624929116387#()V" />
@@ -2273,7 +2215,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/3983029200623345182">
     <file name="InstanceMethodDeclarationThrownExceptions_Test.java">
-      <node id="3983029200623345182" at="22,59,23,25" concept="9" />
+      <node id="3983029200623345182" at="22,59,23,25" concept="7" />
       <node id="3983029200623345182" at="27,79,28,157" concept="3" />
       <node id="3983029200623345182" at="31,77,32,155" concept="3" />
       <node id="3983029200623345182" at="35,79,36,157" concept="3" />
@@ -2295,7 +2237,7 @@
       <node id="3983029200623345182" at="79,241,80,123" concept="3" />
       <node id="3983029200623345182" at="82,91,83,241" concept="5" />
       <node id="3983029200623345182" at="83,241,84,123" concept="3" />
-      <node id="3983029200623345182" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="3983029200623345182" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="3983029200623345182" at="22,0,25,0" concept="2" trace="InstanceMethodDeclarationThrownExceptions_Test#()V" />
       <node id="3983029200623345182" at="26,0,30,0" concept="4" trace="test_NodeUnnamedErrorCheck143797558343291602#()V" />
       <node id="3983029200623345182" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck3983029200623373599#()V" />
@@ -2369,7 +2311,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4246614868164066709">
     <file name="Generics_Test.java">
-      <node id="4246614868164066709" at="22,26,23,25" concept="9" />
+      <node id="4246614868164066709" at="22,26,23,25" concept="7" />
       <node id="4246614868164066709" at="27,77,28,122" concept="3" />
       <node id="4246614868164066709" at="31,77,32,122" concept="3" />
       <node id="4246614868164066709" at="35,77,36,122" concept="3" />
@@ -2508,7 +2450,7 @@
       <node id="4246614868164066709" at="391,242,392,123" concept="3" />
       <node id="4246614868164066709" at="394,79,395,242" concept="5" />
       <node id="4246614868164066709" at="395,242,396,123" concept="3" />
-      <node id="4246614868164066709" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4246614868164066709" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4246614868164066709" at="22,0,25,0" concept="2" trace="Generics_Test#()V" />
       <node id="4246614868164066709" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck4246614868164066795#()V" />
       <node id="4246614868164066709" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck4246614868164066847#()V" />
@@ -2894,7 +2836,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4246614868164066988">
     <file name="MapperKind.java">
-      <node id="4246614868164066989" at="7,0,8,0" concept="7" trace="STRING" />
+      <node id="4246614868164066989" at="7,0,8,0" concept="6" trace="STRING" />
       <node id="4246614868164066995" at="8,0,10,0" concept="2" trace="MapperKind#()V" />
       <scope id="4246614868164066998" at="8,23,8,23" />
       <scope id="4246614868164066995" at="8,0,10,0" />
@@ -2913,7 +2855,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4395293866213195826">
     <file name="TestExpectedType_Test.java">
-      <node id="4395293866213195826" at="22,34,23,25" concept="9" />
+      <node id="4395293866213195826" at="22,34,23,25" concept="7" />
       <node id="4395293866213195826" at="27,77,28,130" concept="3" />
       <node id="4395293866213195826" at="31,80,32,133" concept="3" />
       <node id="4395293866213195826" at="35,80,36,133" concept="3" />
@@ -2935,7 +2877,7 @@
       <node id="4395293866213195826" at="79,242,80,123" concept="3" />
       <node id="4395293866213195826" at="82,82,83,242" concept="5" />
       <node id="4395293866213195826" at="83,242,84,123" concept="3" />
-      <node id="4395293866213195826" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4395293866213195826" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4395293866213195826" at="22,0,25,0" concept="2" trace="TestExpectedType_Test#()V" />
       <node id="4395293866213195826" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck4395293866213260523#()V" />
       <node id="4395293866213195826" at="30,0,34,0" concept="4" trace="test_NodeExpectedTypeCheck8101092317677991775#()V" />
@@ -3001,7 +2943,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4632498131795732451">
     <file name="InvalidUseOfBoundTypes_Test.java">
-      <node id="4632498131795732451" at="22,40,23,25" concept="9" />
+      <node id="4632498131795732451" at="22,40,23,25" concept="7" />
       <node id="4632498131795732451" at="27,89,28,148" concept="3" />
       <node id="4632498131795732451" at="31,77,32,136" concept="3" />
       <node id="4632498131795732451" at="35,89,36,148" concept="3" />
@@ -3047,7 +2989,7 @@
       <node id="4632498131795732451" at="143,242,144,123" concept="3" />
       <node id="4632498131795732451" at="146,91,147,242" concept="5" />
       <node id="4632498131795732451" at="147,242,148,123" concept="3" />
-      <node id="4632498131795732451" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4632498131795732451" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4632498131795732451" at="22,0,25,0" concept="2" trace="InvalidUseOfBoundTypes_Test#()V" />
       <node id="4632498131795732451" at="26,0,30,0" concept="4" trace="test_NodeInvalidUseOfBoundTypeCheck6923385624927426896#()V" />
       <node id="4632498131795732451" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck4632498131795767328#()V" />
@@ -3177,7 +3119,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4705425356438246924">
     <file name="FinalVarRefs_Test.java">
-      <node id="4705425356438246924" at="22,30,23,25" concept="9" />
+      <node id="4705425356438246924" at="22,30,23,25" concept="7" />
       <node id="4705425356438246924" at="27,77,28,126" concept="3" />
       <node id="4705425356438246924" at="31,97,32,146" concept="3" />
       <node id="4705425356438246924" at="35,73,36,122" concept="3" />
@@ -3202,7 +3144,7 @@
       <node id="4705425356438246924" at="87,242,88,123" concept="3" />
       <node id="4705425356438246924" at="90,94,91,242" concept="5" />
       <node id="4705425356438246924" at="91,242,92,123" concept="3" />
-      <node id="4705425356438246924" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4705425356438246924" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4705425356438246924" at="22,0,25,0" concept="2" trace="FinalVarRefs_Test#()V" />
       <node id="4705425356438246924" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck4705425356438246964#()V" />
       <node id="4705425356438246924" at="30,0,34,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedCheck6923385624929711095#()V" />
@@ -3276,7 +3218,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4817790028254995038">
     <file name="InstanceMethodTypeArgumentMatch_Test.java">
-      <node id="4817790028254995038" at="22,49,23,25" concept="9" />
+      <node id="4817790028254995038" at="22,49,23,25" concept="7" />
       <node id="4817790028254995038" at="27,105,28,173" concept="3" />
       <node id="4817790028254995038" at="31,86,32,154" concept="3" />
       <node id="4817790028254995038" at="35,105,36,173" concept="3" />
@@ -3397,7 +3339,7 @@
       <node id="4817790028254995038" at="343,242,344,123" concept="3" />
       <node id="4817790028254995038" at="346,79,347,242" concept="5" />
       <node id="4817790028254995038" at="347,242,348,123" concept="3" />
-      <node id="4817790028254995038" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4817790028254995038" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4817790028254995038" at="22,0,25,0" concept="2" trace="InstanceMethodTypeArgumentMatch_Test#()V" />
       <node id="4817790028254995038" at="26,0,30,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624927501558#()V" />
       <node id="4817790028254995038" at="30,0,34,0" concept="4" trace="test_NodeUnusedLocalVariableCheck215889526512839185#()V" />
@@ -3727,7 +3669,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4853049144093343618">
     <file name="GenericNewExpressionTypeParameters_Test.java">
-      <node id="4853049144093343618" at="22,52,23,25" concept="9" />
+      <node id="4853049144093343618" at="22,52,23,25" concept="7" />
       <node id="4853049144093343618" at="27,95,28,166" concept="3" />
       <node id="4853049144093343618" at="31,95,32,166" concept="3" />
       <node id="4853049144093343618" at="35,91,36,162" concept="3" />
@@ -3890,7 +3832,7 @@
       <node id="4853049144093343618" at="455,242,456,123" concept="3" />
       <node id="4853049144093343618" at="458,79,459,242" concept="5" />
       <node id="4853049144093343618" at="459,242,460,123" concept="3" />
-      <node id="4853049144093343618" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4853049144093343618" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4853049144093343618" at="22,0,25,0" concept="2" trace="GenericNewExpressionTypeParameters_Test#()V" />
       <node id="4853049144093343618" at="26,0,30,0" concept="4" trace="test_NodeWrongNumberOfTypeParametersCheck6923385624927777191#()V" />
       <node id="4853049144093343618" at="30,0,34,0" concept="4" trace="test_NodeWrongNumberOfTypeParametersCheck6923385624927838008#()V" />
@@ -4332,7 +4274,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/488298296050326101">
     <file name="TypeInference_Test.java">
-      <node id="488298296050326101" at="22,31,23,25" concept="9" />
+      <node id="488298296050326101" at="22,31,23,25" concept="7" />
       <node id="488298296050326101" at="27,78,28,128" concept="3" />
       <node id="488298296050326101" at="31,78,32,128" concept="3" />
       <node id="488298296050326101" at="35,73,36,123" concept="3" />
@@ -4396,7 +4338,7 @@
       <node id="488298296050326101" at="191,241,192,122" concept="3" />
       <node id="488298296050326101" at="194,79,195,242" concept="5" />
       <node id="488298296050326101" at="195,242,196,123" concept="3" />
-      <node id="488298296050326101" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="488298296050326101" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="488298296050326101" at="22,0,25,0" concept="2" trace="TypeInference_Test#()V" />
       <node id="488298296050326101" at="26,0,30,0" concept="4" trace="test_NodeTypeSystemCheck6923385624927474402#()V" />
       <node id="488298296050326101" at="30,0,34,0" concept="4" trace="test_NodeTypeSystemCheck6923385624927959862#()V" />
@@ -4574,7 +4516,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4914675704512523356">
     <file name="FieldDeclarationCanBeLocalVariable_Test.java">
-      <node id="4914675704512523356" at="22,52,23,25" concept="9" />
+      <node id="4914675704512523356" at="22,52,23,25" concept="7" />
       <node id="4914675704512523356" at="27,77,28,148" concept="3" />
       <node id="4914675704512523356" at="31,91,32,162" concept="3" />
       <node id="4914675704512523356" at="35,77,36,148" concept="3" />
@@ -4608,7 +4550,7 @@
       <node id="4914675704512523356" at="111,242,112,123" concept="3" />
       <node id="4914675704512523356" at="114,79,115,242" concept="5" />
       <node id="4914675704512523356" at="115,242,116,123" concept="3" />
-      <node id="4914675704512523356" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4914675704512523356" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4914675704512523356" at="22,0,25,0" concept="2" trace="FieldDeclarationCanBeLocalVariable_Test#()V" />
       <node id="4914675704512523356" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck4914675704512537909#()V" />
       <node id="4914675704512523356" at="30,0,34,0" concept="4" trace="test_NodeFieldCanBeConvertedIntoCheck6923385624929133464#()V" />
@@ -4706,7 +4648,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4928571864873974382">
     <file name="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType_Test.java">
-      <node id="4928571864873974382" at="22,73,23,25" concept="9" />
+      <node id="4928571864873974382" at="22,73,23,25" concept="7" />
       <node id="4928571864873974382" at="27,73,28,165" concept="3" />
       <node id="4928571864873974382" at="31,73,32,165" concept="3" />
       <node id="4928571864873974382" at="35,77,36,169" concept="3" />
@@ -4716,7 +4658,7 @@
       <node id="4928571864873974382" at="47,242,48,123" concept="3" />
       <node id="4928571864873974382" at="50,79,51,242" concept="5" />
       <node id="4928571864873974382" at="51,242,52,123" concept="3" />
-      <node id="4928571864873974382" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="4928571864873974382" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="4928571864873974382" at="22,0,25,0" concept="2" trace="FreshStaticFieldWithAbstractInitializerHasNoErrorOnType_Test#()V" />
       <node id="4928571864873974382" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck4928571864874057148#()V" />
       <node id="4928571864873974382" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck4928571864874096707#()V" />
@@ -4750,7 +4692,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/494962652073944531">
     <file name="TestMigrateCommentBlock_Test.java">
-      <node id="494962652073944531" at="27,41,28,25" concept="9" />
+      <node id="494962652073944531" at="27,41,28,25" concept="7" />
       <node id="494962652073944531" at="32,52,33,112" concept="3" />
       <node id="494962652073945241" at="38,54,39,40" concept="3" />
       <node id="494962652073945241" at="39,40,40,40" concept="3" />
@@ -4758,7 +4700,7 @@
       <node id="494962652074116837" at="42,7,43,333" concept="5" />
       <node id="494962652074116837" at="43,333,44,332" concept="5" />
       <node id="494962652074116837" at="44,332,45,151" concept="3" />
-      <node id="494962652073944531" at="23,0,25,0" concept="7" trace="ourParamCache" />
+      <node id="494962652073944531" at="23,0,25,0" concept="6" trace="ourParamCache" />
       <node id="494962652073944531" at="27,0,30,0" concept="2" trace="TestMigrateCommentBlock_Test#()V" />
       <node id="494962652073944531" at="31,0,35,0" concept="4" trace="test_MigrateBlock#()V" />
       <node id="494962652074116837" at="41,364,46,7" concept="1" />
@@ -4779,7 +4721,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/494962652073962808">
     <file name="TestMigrateCommentLines_Test.java">
-      <node id="494962652073962808" at="27,41,28,25" concept="9" />
+      <node id="494962652073962808" at="27,41,28,25" concept="7" />
       <node id="494962652073962808" at="32,52,33,112" concept="3" />
       <node id="494962652073962869" at="38,54,39,40" concept="3" />
       <node id="494962652073962869" at="39,40,40,40" concept="3" />
@@ -4787,7 +4729,7 @@
       <node id="494962652074118002" at="42,7,43,333" concept="5" />
       <node id="494962652074118002" at="43,333,44,332" concept="5" />
       <node id="494962652074118002" at="44,332,45,151" concept="3" />
-      <node id="494962652073962808" at="23,0,25,0" concept="7" trace="ourParamCache" />
+      <node id="494962652073962808" at="23,0,25,0" concept="6" trace="ourParamCache" />
       <node id="494962652073962808" at="27,0,30,0" concept="2" trace="TestMigrateCommentLines_Test#()V" />
       <node id="494962652073962808" at="31,0,35,0" concept="4" trace="test_MigrateBlock#()V" />
       <node id="494962652074118002" at="41,348,46,7" concept="1" />
@@ -4808,7 +4750,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5113180367541522955">
     <file name="TypesTest_BL_Test.java">
-      <node id="5113180367541522955" at="22,30,23,25" concept="9" />
+      <node id="5113180367541522955" at="22,30,23,25" concept="7" />
       <node id="5113180367541522955" at="27,72,28,121" concept="3" />
       <node id="5113180367541522955" at="31,72,32,121" concept="3" />
       <node id="5113180367541522955" at="35,72,36,121" concept="3" />
@@ -4947,7 +4889,7 @@
       <node id="5113180367541522955" at="391,242,392,123" concept="3" />
       <node id="5113180367541522955" at="394,79,395,242" concept="5" />
       <node id="5113180367541522955" at="395,242,396,123" concept="3" />
-      <node id="5113180367541522955" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="5113180367541522955" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="5113180367541522955" at="22,0,25,0" concept="2" trace="TypesTest_BL_Test#()V" />
       <node id="5113180367541522955" at="26,0,30,0" concept="4" trace="test_NodeTypeCheck5113180367541522974#()V" />
       <node id="5113180367541522955" at="30,0,34,0" concept="4" trace="test_NodeTypeCheck5113180367541522981#()V" />
@@ -5325,11 +5267,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5210914756411638023">
     <file name="RollBacksNewTypeSystem_Test.java">
-      <node id="5210914756411638023" at="21,40,22,25" concept="9" />
+      <node id="5210914756411638023" at="21,40,22,25" concept="7" />
       <node id="5210914756411638023" at="26,54,27,113" concept="3" />
       <node id="5210914756411638054" at="32,56,33,41" concept="3" />
       <node id="5210914756411638057" at="33,41,34,303" concept="3" />
-      <node id="5210914756411638023" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="5210914756411638023" at="17,0,19,0" concept="6" trace="ourParamCache" />
       <node id="5210914756411638023" at="21,0,24,0" concept="2" trace="RollBacksNewTypeSystem_Test#()V" />
       <node id="5210914756411638023" at="25,0,29,0" concept="4" trace="test_GenerationMode#()V" />
       <node id="5210914756411638054" at="32,0,36,0" concept="4" trace="test_GenerationMode#()V" />
@@ -5345,12 +5287,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5229232619738859562">
     <file name="FloatConstant2_Test.java">
-      <node id="5229232619738859562" at="17,32,18,25" concept="9" />
+      <node id="5229232619738859562" at="17,32,18,25" concept="7" />
       <node id="5229232619738859562" at="22,54,23,97" concept="3" />
       <node id="5229232619738859562" at="29,51,30,72" concept="3" />
       <node id="5229232619741824629" at="30,72,31,72" concept="3" />
       <node id="5229232619738859577" at="31,72,32,22" concept="3" />
-      <node id="5229232619738859562" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="5229232619738859562" at="14,0,16,0" concept="6" trace="ourParamCache" />
       <node id="5229232619738859562" at="17,0,20,0" concept="2" trace="FloatConstant2_Test#()V" />
       <node id="5229232619738859562" at="21,0,25,0" concept="4" trace="test_FloatConstant2#()V" />
       <node id="5229232619738859562" at="28,0,34,0" concept="4" trace="testMethodImpl#()V" />
@@ -5366,11 +5308,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5679018521759262129">
     <file name="GetElementOperationFollowedByPropertyAccess_Test.java">
-      <node id="5679018521759262129" at="22,61,23,25" concept="9" />
+      <node id="5679018521759262129" at="22,61,23,25" concept="7" />
       <node id="5679018521759262129" at="27,77,28,157" concept="3" />
       <node id="5679018521759262129" at="34,79,35,242" concept="5" />
       <node id="5679018521759262129" at="35,242,36,123" concept="3" />
-      <node id="5679018521759262129" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="5679018521759262129" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="5679018521759262129" at="22,0,25,0" concept="2" trace="GetElementOperationFollowedByPropertyAccess_Test#()V" />
       <node id="5679018521759262129" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck5679018521759346994#()V" />
       <node id="5679018521759262129" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck5679018521759346994#()V" />
@@ -5388,7 +5330,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5772383102104979493">
     <file name="PropertySetterReturn_Test.java">
-      <node id="5772383102104979493" at="22,38,23,25" concept="9" />
+      <node id="5772383102104979493" at="22,38,23,25" concept="7" />
       <node id="5772383102104979493" at="27,98,28,155" concept="3" />
       <node id="5772383102104979493" at="31,88,32,145" concept="3" />
       <node id="5772383102104979493" at="35,89,36,146" concept="3" />
@@ -5401,7 +5343,7 @@
       <node id="5772383102104979493" at="55,242,56,123" concept="3" />
       <node id="5772383102104979493" at="58,79,59,242" concept="5" />
       <node id="5772383102104979493" at="59,242,60,123" concept="3" />
-      <node id="5772383102104979493" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="5772383102104979493" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="5772383102104979493" at="22,0,25,0" concept="2" trace="PropertySetterReturn_Test#()V" />
       <node id="5772383102104979493" at="26,0,30,0" concept="4" trace="test_NodeNotLegalStatementTheExpressionCheck6696611297029671896#()V" />
       <node id="5772383102104979493" at="30,0,34,0" concept="4" trace="test_NodeTheConditionIsAlwaysCheck2857825852305744070#()V" />
@@ -5443,7 +5385,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5868639094257169531">
     <file name="FloatConstantType_Test.java">
-      <node id="5868639094257169531" at="23,35,24,25" concept="9" />
+      <node id="5868639094257169531" at="23,35,24,25" concept="7" />
       <node id="5868639094257169531" at="28,49,29,103" concept="3" />
       <node id="5868639094257169531" at="32,77,33,131" concept="3" />
       <node id="5868639094257281965" at="38,51,39,41" concept="3" />
@@ -5455,7 +5397,7 @@
       <node id="5868639094257290190" at="44,480,45,489" concept="0" />
       <node id="5868639094257169531" at="48,79,49,242" concept="5" />
       <node id="5868639094257169531" at="49,242,50,123" concept="3" />
-      <node id="5868639094257169531" at="19,0,21,0" concept="7" trace="ourParamCache" />
+      <node id="5868639094257169531" at="19,0,21,0" concept="6" trace="ourParamCache" />
       <node id="5868639094257169531" at="23,0,26,0" concept="2" trace="FloatConstantType_Test#()V" />
       <node id="5868639094257169531" at="27,0,31,0" concept="4" trace="test_testTypes#()V" />
       <node id="5868639094257169531" at="31,0,35,0" concept="4" trace="test_ErrorMessagesCheck5868639094267614275#()V" />
@@ -5479,11 +5421,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5868639094267614277">
     <file name="DoubleConstant1_Test.java">
-      <node id="5868639094267614277" at="17,33,18,25" concept="9" />
+      <node id="5868639094267614277" at="17,33,18,25" concept="7" />
       <node id="5868639094267614277" at="22,55,23,98" concept="3" />
       <node id="5868639094267614277" at="29,51,30,72" concept="3" />
       <node id="5868639094267617094" at="30,72,31,31" concept="3" />
-      <node id="5868639094267614277" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="5868639094267614277" at="14,0,16,0" concept="6" trace="ourParamCache" />
       <node id="5868639094267614277" at="17,0,20,0" concept="2" trace="DoubleConstant1_Test#()V" />
       <node id="5868639094267614277" at="21,0,25,0" concept="4" trace="test_DoubleConstant1#()V" />
       <node id="5868639094267614277" at="28,0,33,0" concept="4" trace="testMethodImpl#()V" />
@@ -5499,11 +5441,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5868639094267617112">
     <file name="DoubleConstant2_Test.java">
-      <node id="5868639094267617112" at="17,33,18,25" concept="9" />
+      <node id="5868639094267617112" at="17,33,18,25" concept="7" />
       <node id="5868639094267617112" at="22,55,23,98" concept="3" />
       <node id="5868639094267617112" at="29,51,30,72" concept="3" />
       <node id="5868639094267617127" at="30,72,31,32" concept="3" />
-      <node id="5868639094267617112" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="5868639094267617112" at="14,0,16,0" concept="6" trace="ourParamCache" />
       <node id="5868639094267617112" at="17,0,20,0" concept="2" trace="DoubleConstant2_Test#()V" />
       <node id="5868639094267617112" at="21,0,25,0" concept="4" trace="test_DoubleConstant2#()V" />
       <node id="5868639094267617112" at="28,0,33,0" concept="4" trace="testMethodImpl#()V" />
@@ -5519,11 +5461,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/5868639094267617184">
     <file name="FloatConstant1_Test.java">
-      <node id="5868639094267617184" at="17,32,18,25" concept="9" />
+      <node id="5868639094267617184" at="17,32,18,25" concept="7" />
       <node id="5868639094267617184" at="22,54,23,97" concept="3" />
       <node id="5868639094267617184" at="29,51,30,72" concept="3" />
       <node id="5868639094267617199" at="30,72,31,32" concept="3" />
-      <node id="5868639094267617184" at="14,0,16,0" concept="7" trace="ourParamCache" />
+      <node id="5868639094267617184" at="14,0,16,0" concept="6" trace="ourParamCache" />
       <node id="5868639094267617184" at="17,0,20,0" concept="2" trace="FloatConstant1_Test#()V" />
       <node id="5868639094267617184" at="21,0,25,0" concept="4" trace="test_FloatConstant1#()V" />
       <node id="5868639094267617184" at="28,0,33,0" concept="4" trace="testMethodImpl#()V" />
@@ -5539,7 +5481,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/595838485955053993">
     <file name="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java">
-      <node id="595838485955053993" at="22,67,23,25" concept="9" />
+      <node id="595838485955053993" at="22,67,23,25" concept="7" />
       <node id="595838485955053993" at="27,74,28,160" concept="3" />
       <node id="595838485955053993" at="31,86,32,172" concept="3" />
       <node id="595838485955053993" at="35,72,36,158" concept="3" />
@@ -5576,7 +5518,7 @@
       <node id="595838485955053993" at="119,241,120,122" concept="3" />
       <node id="595838485955053993" at="122,78,123,241" concept="5" />
       <node id="595838485955053993" at="123,241,124,122" concept="3" />
-      <node id="595838485955053993" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="595838485955053993" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="595838485955053993" at="22,0,25,0" concept="2" trace="WildCardTypeIsAValidSubstituteForBoundedParameter_Test#()V" />
       <node id="595838485955053993" at="26,0,30,0" concept="4" trace="test_NodeWarningCheck595838485961914360#()V" />
       <node id="595838485955053993" at="30,0,34,0" concept="4" trace="test_NodeUnusedLocalVariableCheck215889526513022166#()V" />
@@ -5682,7 +5624,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6011730950863071455">
     <file name="NullableAnalyzer_Test.java">
-      <node id="6011730950863071455" at="22,34,23,25" concept="9" />
+      <node id="6011730950863071455" at="22,34,23,25" concept="7" />
       <node id="6011730950863071455" at="27,90,28,143" concept="3" />
       <node id="6011730950863071455" at="31,90,32,143" concept="3" />
       <node id="6011730950863071455" at="35,90,36,143" concept="3" />
@@ -6052,7 +5994,7 @@
       <node id="6011730950863071455" at="1007,242,1008,123" concept="3" />
       <node id="6011730950863071455" at="1010,77,1011,242" concept="5" />
       <node id="6011730950863071455" at="1011,242,1012,123" concept="3" />
-      <node id="6011730950863071455" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="6011730950863071455" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="6011730950863071455" at="22,0,25,0" concept="2" trace="NullableAnalyzer_Test#()V" />
       <node id="6011730950863071455" at="26,0,30,0" concept="4" trace="test_NodeOperationCanProduceNPECheck6923385624927436728#()V" />
       <node id="6011730950863071455" at="30,0,34,0" concept="4" trace="test_NodeOperationCanProduceNPECheck6923385624929290285#()V" />
@@ -7046,11 +6988,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6639374232683434563">
     <file name="hasSameSignatureTest_Test.java">
-      <node id="6639374232683434563" at="22,38,23,25" concept="9" />
+      <node id="6639374232683434563" at="22,38,23,25" concept="7" />
       <node id="6639374232683434563" at="27,44,28,101" concept="3" />
       <node id="6639374232683434579" at="33,46,34,41" concept="3" />
       <node id="5157939743593410699" at="34,41,35,641" concept="3" />
-      <node id="6639374232683434563" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="6639374232683434563" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="6639374232683434563" at="22,0,25,0" concept="2" trace="hasSameSignatureTest_Test#()V" />
       <node id="6639374232683434563" at="26,0,30,0" concept="4" trace="test_list#()V" />
       <node id="6639374232683434579" at="33,0,37,0" concept="4" trace="test_list#()V" />
@@ -7066,7 +7008,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6640766779615010044">
     <file name="FieldCanBeLocalVar_Test.java">
-      <node id="6640766779615010044" at="22,36,23,25" concept="9" />
+      <node id="6640766779615010044" at="22,36,23,25" concept="7" />
       <node id="6640766779615010044" at="27,91,28,146" concept="3" />
       <node id="6640766779615010044" at="31,91,32,146" concept="3" />
       <node id="6640766779615010044" at="35,94,36,149" concept="3" />
@@ -7094,7 +7036,7 @@
       <node id="6640766779615010044" at="95,242,96,123" concept="3" />
       <node id="6640766779615010044" at="98,93,99,242" concept="5" />
       <node id="6640766779615010044" at="99,242,100,123" concept="3" />
-      <node id="6640766779615010044" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="6640766779615010044" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="6640766779615010044" at="22,0,25,0" concept="2" trace="FieldCanBeLocalVar_Test#()V" />
       <node id="6640766779615010044" at="26,0,30,0" concept="4" trace="test_NodeFieldCanBeConvertedIntoCheck6923385624929411102#()V" />
       <node id="6640766779615010044" at="30,0,34,0" concept="4" trace="test_NodeFieldCanBeConvertedIntoCheck6923385624927778166#()V" />
@@ -7176,7 +7118,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6649467621789725810">
     <file name="AnonymousClassJavaName_Test.java">
-      <node id="6649467621789725810" at="22,40,23,25" concept="9" />
+      <node id="6649467621789725810" at="22,40,23,25" concept="7" />
       <node id="6649467621789725810" at="27,53,28,112" concept="3" />
       <node id="6649467621789800767" at="33,55,34,41" concept="3" />
       <node id="6649467621789930734" at="34,41,35,512" concept="0" />
@@ -7184,7 +7126,7 @@
       <node id="6649467621790015035" at="36,512,37,514" concept="0" />
       <node id="6649467621790015071" at="37,514,38,514" concept="0" />
       <node id="7102466869931835904" at="38,514,39,518" concept="0" />
-      <node id="6649467621789725810" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="6649467621789725810" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="6649467621789725810" at="22,0,25,0" concept="2" trace="AnonymousClassJavaName_Test#()V" />
       <node id="6649467621789725810" at="26,0,30,0" concept="4" trace="test_testJavaNames#()V" />
       <node id="6649467621789800767" at="33,0,41,0" concept="4" trace="test_testJavaNames#()V" />
@@ -7200,11 +7142,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7187651930235347758">
     <file name="TestGenerationMode_Test.java">
-      <node id="7187651930235347758" at="21,36,22,25" concept="9" />
+      <node id="7187651930235347758" at="21,36,22,25" concept="7" />
       <node id="7187651930235347758" at="26,54,27,109" concept="3" />
       <node id="7187651930235347795" at="32,56,33,41" concept="3" />
       <node id="5210914756411573029" at="33,41,34,308" concept="3" />
-      <node id="7187651930235347758" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="7187651930235347758" at="17,0,19,0" concept="6" trace="ourParamCache" />
       <node id="7187651930235347758" at="21,0,24,0" concept="2" trace="TestGenerationMode_Test#()V" />
       <node id="7187651930235347758" at="25,0,29,0" concept="4" trace="test_GenerationMode#()V" />
       <node id="7187651930235347795" at="32,0,36,0" concept="4" trace="test_GenerationMode#()V" />
@@ -7220,11 +7162,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7209837885462471125">
     <file name="ReturnFromTry_Test.java">
-      <node id="7209837885462471125" at="21,31,22,25" concept="9" />
+      <node id="7209837885462471125" at="21,31,22,25" concept="7" />
       <node id="7209837885462471125" at="26,53,27,103" concept="3" />
       <node id="7209837885462539568" at="32,55,33,41" concept="3" />
       <node id="7209837885462541929" at="33,41,34,334" concept="3" />
-      <node id="7209837885462471125" at="17,0,19,0" concept="7" trace="ourParamCache" />
+      <node id="7209837885462471125" at="17,0,19,0" concept="6" trace="ourParamCache" />
       <node id="7209837885462471125" at="21,0,24,0" concept="2" trace="ReturnFromTry_Test#()V" />
       <node id="7209837885462471125" at="25,0,29,0" concept="4" trace="test_ReturnFromTry#()V" />
       <node id="7209837885462539568" at="32,0,36,0" concept="4" trace="test_ReturnFromTry#()V" />
@@ -7240,7 +7182,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7223665169660073540">
     <file name="CharAssignmentConversion_Test.java">
-      <node id="7223665169660073540" at="22,42,23,25" concept="9" />
+      <node id="7223665169660073540" at="22,42,23,25" concept="7" />
       <node id="7223665169660073540" at="27,73,28,134" concept="3" />
       <node id="7223665169660073540" at="31,73,32,134" concept="3" />
       <node id="7223665169660073540" at="35,73,36,134" concept="3" />
@@ -7280,7 +7222,7 @@
       <node id="7223665169660073540" at="127,242,128,123" concept="3" />
       <node id="7223665169660073540" at="130,79,131,242" concept="5" />
       <node id="7223665169660073540" at="131,242,132,123" concept="3" />
-      <node id="7223665169660073540" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7223665169660073540" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7223665169660073540" at="22,0,25,0" concept="2" trace="CharAssignmentConversion_Test#()V" />
       <node id="7223665169660073540" at="26,0,30,0" concept="4" trace="test_NodeErrorCheck7223665169660103878#()V" />
       <node id="7223665169660073540" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck7223665169660123927#()V" />
@@ -7394,7 +7336,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7254243749546841213">
     <file name="GenericMethodCall_Test.java">
-      <node id="7254243749546841213" at="22,35,23,25" concept="9" />
+      <node id="7254243749546841213" at="22,35,23,25" concept="7" />
       <node id="7254243749546841213" at="27,77,28,131" concept="3" />
       <node id="7254243749546841213" at="31,73,32,127" concept="3" />
       <node id="7254243749546841213" at="35,77,36,131" concept="3" />
@@ -7404,7 +7346,7 @@
       <node id="7254243749546841213" at="47,242,48,123" concept="3" />
       <node id="7254243749546841213" at="50,79,51,242" concept="5" />
       <node id="7254243749546841213" at="51,242,52,123" concept="3" />
-      <node id="7254243749546841213" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7254243749546841213" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7254243749546841213" at="22,0,25,0" concept="2" trace="GenericMethodCall_Test#()V" />
       <node id="7254243749546841213" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck7254243749546905063#()V" />
       <node id="7254243749546841213" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck7254243749547462195#()V" />
@@ -7438,7 +7380,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7430872850884066230">
     <file name="StaticMethodTypeArgumentsMatch_Test.java">
-      <node id="7430872850884066230" at="22,48,23,25" concept="9" />
+      <node id="7430872850884066230" at="22,48,23,25" concept="7" />
       <node id="7430872850884066230" at="27,105,28,172" concept="3" />
       <node id="7430872850884066230" at="31,86,32,153" concept="3" />
       <node id="7430872850884066230" at="35,105,36,172" concept="3" />
@@ -7676,7 +7618,7 @@
       <node id="7430872850884066230" at="655,242,656,123" concept="3" />
       <node id="7430872850884066230" at="658,79,659,242" concept="5" />
       <node id="7430872850884066230" at="659,242,660,123" concept="3" />
-      <node id="7430872850884066230" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7430872850884066230" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7430872850884066230" at="22,0,25,0" concept="2" trace="StaticMethodTypeArgumentsMatch_Test#()V" />
       <node id="7430872850884066230" at="26,0,30,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929474538#()V" />
       <node id="7430872850884066230" at="30,0,34,0" concept="4" trace="test_NodeUnusedLocalVariableCheck215889526512923052#()V" />
@@ -8318,7 +8260,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7430872850884076050">
     <file name="UnusedMethodTypeVariableDeclaration_Test.java">
-      <node id="7430872850884076050" at="22,53,23,25" concept="9" />
+      <node id="7430872850884076050" at="22,53,23,25" concept="7" />
       <node id="7430872850884076050" at="27,105,28,177" concept="3" />
       <node id="7430872850884076050" at="31,86,32,158" concept="3" />
       <node id="7430872850884076050" at="35,91,36,163" concept="3" />
@@ -8331,7 +8273,7 @@
       <node id="7430872850884076050" at="55,242,56,123" concept="3" />
       <node id="7430872850884076050" at="58,79,59,242" concept="5" />
       <node id="7430872850884076050" at="59,242,60,123" concept="3" />
-      <node id="7430872850884076050" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7430872850884076050" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7430872850884076050" at="22,0,25,0" concept="2" trace="UnusedMethodTypeVariableDeclaration_Test#()V" />
       <node id="7430872850884076050" at="26,0,30,0" concept="4" trace="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929723209#()V" />
       <node id="7430872850884076050" at="30,0,34,0" concept="4" trace="test_NodeUnusedLocalVariableCheck215889526513017511#()V" />
@@ -8373,7 +8315,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7471623575883264722">
     <file name="FinalMethodOverriding_Test.java">
-      <node id="7471623575883264722" at="22,39,23,25" concept="9" />
+      <node id="7471623575883264722" at="22,39,23,25" concept="7" />
       <node id="7471623575883264722" at="27,93,28,151" concept="3" />
       <node id="7471623575883264722" at="31,77,32,135" concept="3" />
       <node id="7471623575883264722" at="35,93,36,151" concept="3" />
@@ -8386,7 +8328,7 @@
       <node id="7471623575883264722" at="55,242,56,123" concept="3" />
       <node id="7471623575883264722" at="58,79,59,242" concept="5" />
       <node id="7471623575883264722" at="59,242,60,123" concept="3" />
-      <node id="7471623575883264722" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7471623575883264722" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7471623575883264722" at="22,0,25,0" concept="2" trace="FinalMethodOverriding_Test#()V" />
       <node id="7471623575883264722" at="26,0,30,0" concept="4" trace="test_NodeMethodCanNotOverrideFinalCheck7471623575883490516#()V" />
       <node id="7471623575883264722" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck7471623575883346737#()V" />
@@ -8428,7 +8370,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7584461597503625046">
     <file name="ByteTypeOfIntegerConstant_Test.java">
-      <node id="7584461597503625046" at="22,43,23,25" concept="9" />
+      <node id="7584461597503625046" at="22,43,23,25" concept="7" />
       <node id="7584461597503625046" at="27,77,28,139" concept="3" />
       <node id="7584461597503625046" at="31,73,32,135" concept="3" />
       <node id="7584461597503625046" at="35,73,36,135" concept="3" />
@@ -8498,7 +8440,7 @@
       <node id="7584461597503625046" at="207,242,208,123" concept="3" />
       <node id="7584461597503625046" at="210,75,211,242" concept="5" />
       <node id="7584461597503625046" at="211,242,212,123" concept="3" />
-      <node id="7584461597503625046" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7584461597503625046" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7584461597503625046" at="22,0,25,0" concept="2" trace="ByteTypeOfIntegerConstant_Test#()V" />
       <node id="7584461597503625046" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck7584461597503633394#()V" />
       <node id="7584461597503625046" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck7584461597510629042#()V" />
@@ -8692,7 +8634,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7584461597510495224">
     <file name="ShortTypeOfIntegerConstant_Test.java">
-      <node id="7584461597510495224" at="22,44,23,25" concept="9" />
+      <node id="7584461597510495224" at="22,44,23,25" concept="7" />
       <node id="7584461597510495224" at="27,77,28,140" concept="3" />
       <node id="7584461597510495224" at="31,73,32,136" concept="3" />
       <node id="7584461597510495224" at="35,73,36,136" concept="3" />
@@ -8762,7 +8704,7 @@
       <node id="7584461597510495224" at="207,242,208,123" concept="3" />
       <node id="7584461597510495224" at="210,75,211,242" concept="5" />
       <node id="7584461597510495224" at="211,242,212,123" concept="3" />
-      <node id="7584461597510495224" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7584461597510495224" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7584461597510495224" at="22,0,25,0" concept="2" trace="ShortTypeOfIntegerConstant_Test#()V" />
       <node id="7584461597510495224" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck7584461597510495229#()V" />
       <node id="7584461597510495224" at="30,0,34,0" concept="4" trace="test_NodeErrorCheck7584461597510745219#()V" />
@@ -8956,7 +8898,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7638302724810884631">
     <file name="SampleConstraints_Test.java">
-      <node id="7638302724810884631" at="22,35,23,25" concept="9" />
+      <node id="7638302724810884631" at="22,35,23,25" concept="7" />
       <node id="7638302724810884631" at="27,102,28,156" concept="3" />
       <node id="7638302724810884631" at="31,79,32,133" concept="3" />
       <node id="7638302724810884631" at="35,77,36,131" concept="3" />
@@ -8966,7 +8908,7 @@
       <node id="7638302724810884631" at="47,242,48,123" concept="3" />
       <node id="7638302724810884631" at="50,79,51,242" concept="5" />
       <node id="7638302724810884631" at="51,242,52,123" concept="3" />
-      <node id="7638302724810884631" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7638302724810884631" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7638302724810884631" at="22,0,25,0" concept="2" trace="SampleConstraints_Test#()V" />
       <node id="7638302724810884631" at="26,0,30,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724#()V" />
       <node id="7638302724810884631" at="30,0,34,0" concept="4" trace="test_NodeUnknownRuleCheck2675718132411786726#()V" />
@@ -9000,7 +8942,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7868761255934329294">
     <file name="Validation_Test.java">
-      <node id="7868761255934329294" at="22,28,23,25" concept="9" />
+      <node id="7868761255934329294" at="22,28,23,25" concept="7" />
       <node id="7868761255934329294" at="27,98,28,145" concept="3" />
       <node id="7868761255934329294" at="31,98,32,145" concept="3" />
       <node id="7868761255934329294" at="35,77,36,124" concept="3" />
@@ -9025,7 +8967,7 @@
       <node id="7868761255934329294" at="87,242,88,123" concept="3" />
       <node id="7868761255934329294" at="90,99,91,242" concept="5" />
       <node id="7868761255934329294" at="91,242,92,123" concept="3" />
-      <node id="7868761255934329294" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7868761255934329294" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7868761255934329294" at="22,0,25,0" concept="2" trace="Validation_Test#()V" />
       <node id="7868761255934329294" at="26,0,30,0" concept="4" trace="test_NodeRecursiveConstructorInvocationCheck6923385624929443716#()V" />
       <node id="7868761255934329294" at="30,0,34,0" concept="4" trace="test_NodeRecursiveConstructorInvocationCheck6923385624929443718#()V" />
@@ -9099,7 +9041,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7938578788783487529">
     <file name="PrivateMethod_Test.java">
-      <node id="7938578788783487529" at="22,31,23,25" concept="9" />
+      <node id="7938578788783487529" at="22,31,23,25" concept="7" />
       <node id="7938578788783487529" at="27,77,28,127" concept="3" />
       <node id="7938578788783487529" at="31,81,32,131" concept="3" />
       <node id="7938578788783487529" at="35,81,36,131" concept="3" />
@@ -9109,7 +9051,7 @@
       <node id="7938578788783487529" at="47,242,48,123" concept="3" />
       <node id="7938578788783487529" at="50,83,51,242" concept="5" />
       <node id="7938578788783487529" at="51,242,52,123" concept="3" />
-      <node id="7938578788783487529" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7938578788783487529" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7938578788783487529" at="22,0,25,0" concept="2" trace="PrivateMethod_Test#()V" />
       <node id="7938578788783487529" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck7938578788783487552#()V" />
       <node id="7938578788783487529" at="30,0,34,0" concept="4" trace="test_NodePrivateMethodCheck7938578788783488602#()V" />
@@ -9143,7 +9085,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7938578788783497186">
     <file name="PackageProtectedMethod_Test.java">
-      <node id="7938578788783497186" at="22,40,23,25" concept="9" />
+      <node id="7938578788783497186" at="22,40,23,25" concept="7" />
       <node id="7938578788783497186" at="27,77,28,136" concept="3" />
       <node id="7938578788783497186" at="31,90,32,149" concept="3" />
       <node id="7938578788783497186" at="35,90,36,149" concept="3" />
@@ -9153,7 +9095,7 @@
       <node id="7938578788783497186" at="47,242,48,123" concept="3" />
       <node id="7938578788783497186" at="50,92,51,242" concept="5" />
       <node id="7938578788783497186" at="51,242,52,123" concept="3" />
-      <node id="7938578788783497186" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7938578788783497186" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7938578788783497186" at="22,0,25,0" concept="2" trace="PackageProtectedMethod_Test#()V" />
       <node id="7938578788783497186" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck7938578788783497191#()V" />
       <node id="7938578788783497186" at="30,0,34,0" concept="4" trace="test_NodePackageProtectedMethodCheck7938578788783497198#()V" />
@@ -9187,7 +9129,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7938578788783522696">
     <file name="PackageProtectedField_Test.java">
-      <node id="7938578788783522696" at="22,39,23,25" concept="9" />
+      <node id="7938578788783522696" at="22,39,23,25" concept="7" />
       <node id="7938578788783522696" at="27,84,28,142" concept="3" />
       <node id="7938578788783522696" at="31,94,32,152" concept="3" />
       <node id="7938578788783522696" at="35,83,36,141" concept="3" />
@@ -9203,7 +9145,7 @@
       <node id="7938578788783522696" at="63,242,64,123" concept="3" />
       <node id="7938578788783522696" at="66,77,67,242" concept="5" />
       <node id="7938578788783522696" at="67,242,68,123" concept="3" />
-      <node id="7938578788783522696" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7938578788783522696" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7938578788783522696" at="22,0,25,0" concept="2" trace="PackageProtectedField_Test#()V" />
       <node id="7938578788783522696" at="26,0,30,0" concept="4" trace="test_NodeFieldIsNeverUsedCheck7938578788783522703#()V" />
       <node id="7938578788783522696" at="30,0,34,0" concept="4" trace="test_NodeIsAssignedButNeverAccessedCheck7938578788783522709#()V" />
@@ -9253,7 +9195,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/7970711249077196600">
     <file name="PrivateField_Test.java">
-      <node id="7970711249077196600" at="22,30,23,25" concept="9" />
+      <node id="7970711249077196600" at="22,30,23,25" concept="7" />
       <node id="7970711249077196600" at="27,84,28,133" concept="3" />
       <node id="7970711249077196600" at="31,94,32,143" concept="3" />
       <node id="7970711249077196600" at="35,83,36,132" concept="3" />
@@ -9269,7 +9211,7 @@
       <node id="7970711249077196600" at="63,242,64,123" concept="3" />
       <node id="7970711249077196600" at="66,77,67,242" concept="5" />
       <node id="7970711249077196600" at="67,242,68,123" concept="3" />
-      <node id="7970711249077196600" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="7970711249077196600" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="7970711249077196600" at="22,0,25,0" concept="2" trace="PrivateField_Test#()V" />
       <node id="7970711249077196600" at="26,0,30,0" concept="4" trace="test_NodeFieldIsNeverUsedCheck6923385624929265058#()V" />
       <node id="7970711249077196600" at="30,0,34,0" concept="4" trace="test_NodeIsAssignedButNeverAccessedCheck6923385624927087560#()V" />
@@ -9319,7 +9261,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/818296778600371163">
     <file name="UnwrappedTernaryOperator_Test.java">
-      <node id="818296778600371163" at="22,42,23,25" concept="9" />
+      <node id="818296778600371163" at="22,42,23,25" concept="7" />
       <node id="818296778600371163" at="27,88,28,149" concept="3" />
       <node id="818296778600371163" at="31,88,32,149" concept="3" />
       <node id="818296778600371163" at="35,76,36,137" concept="3" />
@@ -9329,7 +9271,7 @@
       <node id="818296778600371163" at="47,241,48,122" concept="3" />
       <node id="818296778600371163" at="50,78,51,241" concept="5" />
       <node id="818296778600371163" at="51,241,52,122" concept="3" />
-      <node id="818296778600371163" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="818296778600371163" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="818296778600371163" at="22,0,25,0" concept="2" trace="UnwrappedTernaryOperator_Test#()V" />
       <node id="818296778600371163" at="26,0,30,0" concept="4" trace="test_NodeTernaryOperatorMustBeCheck818296778600411956#()V" />
       <node id="818296778600371163" at="30,0,34,0" concept="4" trace="test_NodeTernaryOperatorMustBeCheck818296778609411375#()V" />
@@ -9363,7 +9305,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170692126565">
     <file name="WildCardsInTheClassDefinition_Test.java">
-      <node id="8187342170692126565" at="22,47,23,25" concept="9" />
+      <node id="8187342170692126565" at="22,47,23,25" concept="7" />
       <node id="8187342170692126565" at="27,90,28,156" concept="3" />
       <node id="8187342170692126565" at="31,77,32,143" concept="3" />
       <node id="8187342170692126565" at="35,77,36,143" concept="3" />
@@ -9382,7 +9324,7 @@
       <node id="8187342170692126565" at="71,242,72,123" concept="3" />
       <node id="8187342170692126565" at="74,79,75,242" concept="5" />
       <node id="8187342170692126565" at="75,242,76,123" concept="3" />
-      <node id="8187342170692126565" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="8187342170692126565" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="8187342170692126565" at="22,0,25,0" concept="2" trace="WildCardsInTheClassDefinition_Test#()V" />
       <node id="8187342170692126565" at="26,0,30,0" concept="4" trace="test_NodeSupertypeMayNotSpecifyCheck6923385624927497212#()V" />
       <node id="8187342170692126565" at="30,0,34,0" concept="4" trace="test_ErrorMessagesCheck8187342170692700619#()V" />
@@ -9440,7 +9382,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170694467176">
     <file name="WildCardsInAnonymousClassCreators_Test.java">
-      <node id="8187342170694467176" at="22,51,23,25" concept="9" />
+      <node id="8187342170694467176" at="22,51,23,25" concept="7" />
       <node id="8187342170694467176" at="27,77,28,147" concept="3" />
       <node id="8187342170694467176" at="31,90,32,160" concept="3" />
       <node id="8187342170694467176" at="35,99,36,169" concept="3" />
@@ -9456,7 +9398,7 @@
       <node id="8187342170694467176" at="63,242,64,123" concept="3" />
       <node id="8187342170694467176" at="66,79,67,242" concept="5" />
       <node id="8187342170694467176" at="67,242,68,123" concept="3" />
-      <node id="8187342170694467176" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="8187342170694467176" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="8187342170694467176" at="22,0,25,0" concept="2" trace="WildCardsInAnonymousClassCreators_Test#()V" />
       <node id="8187342170694467176" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck8187342170694474094#()V" />
       <node id="8187342170694467176" at="30,0,34,0" concept="4" trace="test_NodeSupertypeMayNotSpecifyCheck6923385624928216045#()V" />
@@ -9506,7 +9448,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/843236768048177679">
     <file name="FinalFieldTests_Test.java">
-      <node id="843236768048177679" at="22,33,23,25" concept="9" />
+      <node id="843236768048177679" at="22,33,23,25" concept="7" />
       <node id="843236768048177679" at="27,76,28,128" concept="3" />
       <node id="843236768048177679" at="31,97,32,149" concept="3" />
       <node id="843236768048177679" at="35,97,36,149" concept="3" />
@@ -9525,7 +9467,7 @@
       <node id="843236768048177679" at="71,242,72,123" concept="3" />
       <node id="843236768048177679" at="74,79,75,242" concept="5" />
       <node id="843236768048177679" at="75,242,76,123" concept="3" />
-      <node id="843236768048177679" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="843236768048177679" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="843236768048177679" at="22,0,25,0" concept="2" trace="FinalFieldTests_Test#()V" />
       <node id="843236768048177679" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck843236768048178247#()V" />
       <node id="843236768048177679" at="30,0,34,0" concept="4" trace="test_NodeVariableHasNotBeenInitializedCheck6923385624928056097#()V" />
@@ -9583,11 +9525,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/9092976468699800028">
     <file name="ForBreakUnreachable_Test.java">
-      <node id="9092976468699800028" at="22,37,23,25" concept="9" />
+      <node id="9092976468699800028" at="22,37,23,25" concept="7" />
       <node id="9092976468699800028" at="27,77,28,133" concept="3" />
       <node id="9092976468699800028" at="34,79,35,242" concept="5" />
       <node id="9092976468699800028" at="35,242,36,123" concept="3" />
-      <node id="9092976468699800028" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="9092976468699800028" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="9092976468699800028" at="22,0,25,0" concept="2" trace="ForBreakUnreachable_Test#()V" />
       <node id="9092976468699800028" at="26,0,30,0" concept="4" trace="test_ErrorMessagesCheck9092976468699800071#()V" />
       <node id="9092976468699800028" at="34,0,38,0" concept="4" trace="test_ErrorMessagesCheck9092976468699800071#()V" />
@@ -9605,7 +9547,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/966837649722289098">
     <file name="NonStaticInnerClassInstantiatedInStaticContext_Test.java">
-      <node id="966837649722289098" at="22,64,23,25" concept="9" />
+      <node id="966837649722289098" at="22,64,23,25" concept="7" />
       <node id="966837649722289098" at="27,89,28,172" concept="3" />
       <node id="966837649722289098" at="31,89,32,172" concept="3" />
       <node id="966837649722289098" at="35,89,36,172" concept="3" />
@@ -9624,7 +9566,7 @@
       <node id="966837649722289098" at="71,242,72,122" concept="3" />
       <node id="966837649722289098" at="74,78,75,241" concept="5" />
       <node id="966837649722289098" at="75,241,76,122" concept="3" />
-      <node id="966837649722289098" at="18,0,20,0" concept="7" trace="ourParamCache" />
+      <node id="966837649722289098" at="18,0,20,0" concept="6" trace="ourParamCache" />
       <node id="966837649722289098" at="22,0,25,0" concept="2" trace="NonStaticInnerClassInstantiatedInStaticContext_Test#()V" />
       <node id="966837649722289098" at="26,0,30,0" concept="4" trace="test_NodeNoEnclosingInstanceOfCheck6923385624927702653#()V" />
       <node id="966837649722289098" at="30,0,34,0" concept="4" trace="test_NodeNoEnclosingInstanceOfCheck6923385624929324173#()V" />

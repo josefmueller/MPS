@@ -12,6 +12,7 @@ import com.intellij.execution.configurations.RuntimeConfigurationError;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.Objects;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -50,7 +51,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
     MPSProject mpsProject = ProjectHelper.fromIdeaProject(project);
     checkCachesDirIsFreeToLock();
     checkInProcessRunIsSingle();
-    if (!((eq_jtq3ac_a0a0h0c(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
+    if (!((Objects.equals(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
       check(mpsProject);
     }
   }
@@ -259,8 +260,5 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
-  }
-  private static boolean eq_jtq3ac_a0a0h0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

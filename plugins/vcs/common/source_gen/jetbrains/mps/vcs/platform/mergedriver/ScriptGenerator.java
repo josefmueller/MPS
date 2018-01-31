@@ -11,6 +11,7 @@ import com.intellij.openapi.util.SystemInfo;
 import java.util.List;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
@@ -41,7 +42,7 @@ import com.intellij.openapi.ui.Messages;
           List<String> linesInFile = StringsIO.readLines(scriptFile);
           if (ListSequence.fromList(linesInFile).count() == lines.length) {
             for (int i = 0; i < lines.length; i++) {
-              if (neq_7mp2j8_a0a0a0b0a0a0d0d(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
+              if (!(Objects.equals(ListSequence.fromList(linesInFile).getElement(i), lines[i]))) {
                 return AbstractInstaller.State.OUTDATED;
               }
             }
@@ -62,8 +63,5 @@ import com.intellij.openapi.ui.Messages;
       Messages.showErrorDialog(project, "Can't create merger script: " + e.getMessage(), "Can't Create Merger Script");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
-  }
-  private static boolean neq_7mp2j8_a0a0a0b0a0a0d0d(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

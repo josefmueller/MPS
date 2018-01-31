@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.Main;
 import jetbrains.mps.smodel.SNodePointer;
@@ -53,7 +54,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
           SModel model = PersistenceFacade.getInstance().createModelReference("r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)").resolve(myProject.getRepository());
           SNode mainNode = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
+              return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), Main.class.getSimpleName());
             }
           });
           pointer.value = new SNodePointer(mainNode);
@@ -71,7 +72,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
         @Override
         public void onTextAvailable(ProcessEvent event, Key key) {
           if (ProcessOutputTypes.STDERR.equals(key)) {
-            if (neq_849b2c_a0a0a0a0a0a0d0d7(event.getText(), expectedSysErr)) {
+            if (!(Objects.equals(event.getText(), expectedSysErr))) {
               failed[0] = event;
               System.err.print(event.getText());
             } else {
@@ -93,12 +94,6 @@ public class JavaCommand_Test extends BaseTransformationTest {
       if (exitCode != 0) {
         Assert.fail("Exit with code " + exitCode);
       }
-    }
-    private static boolean eq_849b2c_a0a0a0a0a0a1a0a0a0a1a0h(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean neq_849b2c_a0a0a0a0a0a0d0d7(Object a, Object b) {
-      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
 }

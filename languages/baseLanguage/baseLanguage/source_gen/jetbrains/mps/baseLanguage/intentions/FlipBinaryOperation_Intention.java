@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.behavior.BinaryOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
@@ -62,7 +63,7 @@ public final class FlipBinaryOperation_Intention extends AbstractIntentionDescri
       SNode flippedOperator = BinaryOperation__BehaviorDescriptor.getFlippedOperator_id14Lzlw0K236.invoke(node);
       SLinkOperations.setTarget(flippedOperator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), SNodeOperations.copyNode(rightExpression));
       SLinkOperations.setTarget(flippedOperator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeOperations.copyNode(leftExpression));
-      if (neq_3om1sj_a0f0c7(node, flippedOperator)) {
+      if (!(Objects.equals(node, flippedOperator))) {
         SNodeOperations.replaceWithAnother(node, flippedOperator);
         SelectionUtil.selectCell(editorContext, flippedOperator, "ALIAS_EDITOR_COMPONENT");
       }
@@ -71,8 +72,5 @@ public final class FlipBinaryOperation_Intention extends AbstractIntentionDescri
     public IntentionDescriptor getDescriptor() {
       return FlipBinaryOperation_Intention.this;
     }
-  }
-  private static boolean neq_3om1sj_a0f0c7(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

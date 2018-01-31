@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
+import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -30,7 +31,7 @@ public class MethodSignature implements Signature {
       return false;
     }
     MethodSignature arg = (MethodSignature) object;
-    return eq_1fkaqj_a0c0e(this.singature, arg.singature);
+    return Objects.equals(this.singature, arg.singature);
   }
   public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, @Nullable MembersPopulatingContext context) {
     StringBuilder result = new StringBuilder();
@@ -61,8 +62,5 @@ public class MethodSignature implements Signature {
     }
     result.append(')');
     return result.toString();
-  }
-  private static boolean eq_1fkaqj_a0c0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

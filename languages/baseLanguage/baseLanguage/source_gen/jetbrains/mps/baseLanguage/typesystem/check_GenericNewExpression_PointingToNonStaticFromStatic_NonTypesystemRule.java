@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -39,7 +40,7 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
     }
     SNode method = ListSequence.fromList(SNodeOperations.getNodeAncestors(genericNewExpression, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb113eL, "jetbrains.mps.baseLanguage.structure.IClassifierMember"), false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode member) {
-        return eq_r95zp5_a0a0a0a0a0a3a1(SNodeOperations.getParent(member), SNodeOperations.getParent(target.value));
+        return Objects.equals(SNodeOperations.getParent(member), SNodeOperations.getParent(target.value));
       }
     });
     if ((method == null) || !((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(method))) {
@@ -61,8 +62,5 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_r95zp5_a0a0a0a0a0a3a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

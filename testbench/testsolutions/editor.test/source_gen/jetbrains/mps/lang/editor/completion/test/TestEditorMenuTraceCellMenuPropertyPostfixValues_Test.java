@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 
 @MPSLaunch
 public class TestEditorMenuTraceCellMenuPropertyPostfixValues_Test extends BaseTransformationTest {
@@ -51,14 +52,11 @@ public class TestEditorMenuTraceCellMenuPropertyPostfixValues_Test extends BaseT
           EditorMenuTraceInfo editorMenuTraceInfo = action.getEditorMenuTraceInfo();
           EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(SNodeOperations.getNode("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774803494772"), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, 0xfba0ec5415L, "cellModel")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_fmp4or_a0a0a0a0a0a0a0a0b0f0a0a0a0d0a6(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), SNodeOperations.getNode("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "1384684774804762046"));
+              return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), SNodeOperations.getNode("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "1384684774804762046"));
             }
           }).first(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10f3514bb7cL, "menuDescriptor")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, 0x10f34f82910L, "cellMenuPart")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f357f9ab7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"))).first().getReference());
         }
       });
-    }
-    private static boolean eq_fmp4or_a0a0a0a0a0a0a0a0b0f0a0a0a0d0a6(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

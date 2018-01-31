@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class check_UninitializedLocalField_NonTypesystemRule extends AbstractNon
         }
       }
 
-      if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && eq_i251yb_a0a4a0a1(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
+      if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && Objects.equals(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
         VariableReferenceUtil.checkPrecedingWriteInstructions(typeCheckingContext, variableReference, body, field);
       }
 
@@ -49,7 +50,7 @@ public class check_UninitializedLocalField_NonTypesystemRule extends AbstractNon
       if ((body == null)) {
         return;
       }
-      if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && eq_i251yb_a0a3a0a0b(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
+      if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && Objects.equals(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
         Program program = new MPSProgramBuilder().buildProgram(body);
         Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
         if (uninitializedReads.contains(variableReference)) {
@@ -95,11 +96,5 @@ public class check_UninitializedLocalField_NonTypesystemRule extends AbstractNon
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_i251yb_a0a4a0a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_i251yb_a0a3a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

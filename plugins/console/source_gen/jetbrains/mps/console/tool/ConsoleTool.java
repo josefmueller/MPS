@@ -27,6 +27,7 @@ import com.intellij.util.Base64Converter;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.util.xmlb.annotations.Tag;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -148,7 +149,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
   }
 
   public void loadState(ConsoleTool.MyState state) {
-    if (eq_xg3v07_a0a0fb(state.version, ConsoleTool.MyState.VERSION)) {
+    if (Objects.equals(state.version, ConsoleTool.MyState.VERSION)) {
       loadedState = state;
     }
   }
@@ -242,9 +243,6 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
       checkedDotOperand.setCloseable(false);
     }
 
-  }
-  private static boolean eq_xg3v07_a0a0fb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_xg3v07_a0a0a0jb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

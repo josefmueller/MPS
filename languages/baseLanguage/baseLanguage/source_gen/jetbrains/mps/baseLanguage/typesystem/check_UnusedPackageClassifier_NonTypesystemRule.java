@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -36,9 +37,9 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
         }
       }).any(new IWhereFilter<SReference>() {
         public boolean accept(SReference ref) {
-          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(ref), classifier) || ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTargetNode(ref), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false)).any(new IWhereFilter<SNode>() {
+          return Objects.equals(SLinkOperations.getTargetNode(ref), classifier) || ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTargetNode(ref), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(it, classifier);
+              return Objects.equals(it, classifier);
             }
           });
         }
@@ -75,11 +76,5 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_oirmva_a0a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

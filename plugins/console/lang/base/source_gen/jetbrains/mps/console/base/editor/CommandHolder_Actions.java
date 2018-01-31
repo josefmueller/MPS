@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import java.util.Objects;
 import jetbrains.mps.nodeEditor.selection.SelectUpUtil;
 import java.util.function.BooleanSupplier;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,10 +33,7 @@ public class CommandHolder_Actions {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      return eq_5bkq2_a0a0f1(editorContext.getSelectedNode(), node);
-    }
-    private static boolean eq_5bkq2_a0a0f1(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
+      return Objects.equals(editorContext.getSelectedNode(), node);
     }
   }
   public static class CommandHolder_Actions_SELECT_ALL extends AbstractCellAction {
@@ -50,7 +48,7 @@ public class CommandHolder_Actions {
 
       SelectUpUtil.executeWhile(editorContext, new BooleanSupplier() {
         public boolean getAsBoolean() {
-          return neq_5bkq2_a0a0a0a1a1a3c(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")));
+          return !(Objects.equals(editorContext.getSelectionManager().getSelection().getSelectedNodes().get(0), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"))));
         }
       });
     }
@@ -60,9 +58,6 @@ public class CommandHolder_Actions {
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
       return SelectUpUtil.canExecute(editorContext) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")) != null);
-    }
-    private static boolean neq_5bkq2_a0a0a0a1a1a3c(Object a, Object b) {
-      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
 }

@@ -32,6 +32,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.InsertMacroContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
@@ -321,7 +322,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_263208052639706738(final TemplateVarContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2bL, "model"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0uc(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")), SModelStereotype.GENERATOR);
+        return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5c5cb5cdd09abfb1L, "stereotype")), SModelStereotype.GENERATOR);
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -381,8 +382,5 @@ public class QueriesGenerated {
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0uc(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import junit.framework.Assert;
+import java.util.Objects;
 
 @MPSLaunch
 public class TestSideTransform_TestWrappedItem_Test extends BaseTransformationTest {
@@ -33,11 +34,8 @@ public class TestSideTransform_TestWrappedItem_Test extends BaseTransformationTe
       initEditorComponent("1179171206859335701", "1179171206859335703");
       typeString(" ");
       List<SubstituteAction> matchingActions = getEditorComponent().getSelectedCell().getSubstituteInfo().getMatchingActions("child matching text", false);
-      Assert.assertTrue(matchingActions.size() == 1 && eq_qmbq6r_a0a0d0a6(matchingActions.get(0).getDescriptionText("child matching text"), "child description text wrapper description text"));
+      Assert.assertTrue(matchingActions.size() == 1 && Objects.equals(matchingActions.get(0).getDescriptionText("child matching text"), "child description text wrapper description text"));
       typeString("child matching text");
-    }
-    private static boolean eq_qmbq6r_a0a0d0a6(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

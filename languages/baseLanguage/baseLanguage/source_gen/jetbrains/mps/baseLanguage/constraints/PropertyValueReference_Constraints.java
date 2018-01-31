@@ -29,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -91,7 +92,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0d(it, enclosingProperty);
+                  return Objects.equals(it, enclosingProperty);
                 }
               }));
             }
@@ -113,7 +114,4 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558341");
   private static SNodePointer breakingNode_yrz94z_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643333");
-  private static boolean eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

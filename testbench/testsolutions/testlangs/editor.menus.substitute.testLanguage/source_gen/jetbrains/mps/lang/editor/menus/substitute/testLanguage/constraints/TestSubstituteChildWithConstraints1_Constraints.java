@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TestSubstituteChildWithConstraints1_Constraints extends BaseConstraintsDescriptor {
@@ -35,10 +36,7 @@ public class TestSubstituteChildWithConstraints1_Constraints extends BaseConstra
     };
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    return neq_ecjzx0_a0a0d(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild"));
+    return !(Objects.equals(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild")));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583199");
-  private static boolean neq_ecjzx0_a0a0d(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
 }

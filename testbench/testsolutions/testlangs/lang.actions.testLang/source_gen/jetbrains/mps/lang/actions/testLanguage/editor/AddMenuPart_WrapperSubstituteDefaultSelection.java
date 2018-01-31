@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -55,7 +56,7 @@ public class AddMenuPart_WrapperSubstituteDefaultSelection extends SubstituteMen
   public class SMP_Group_pn01ee_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_pn01ee_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x27d631a3698368a7L, "addMenu_wrapperSubstituteDefaultSelection"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x27d631a3698368a7L, "addMenu_wrapperSubstituteDefaultSelection"));
     }
     @NotNull
     @Override
@@ -133,8 +134,5 @@ public class AddMenuPart_WrapperSubstituteDefaultSelection extends SubstituteMen
         return MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ee71badL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1");
       }
     }
-  }
-  private static boolean eq_pn01ee_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

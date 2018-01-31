@@ -18,6 +18,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Objects;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -178,7 +179,7 @@ public final class ModuleChecker {
 
   public boolean checkModuleReference(ModuleChecker.CheckType type) {
     String expectedModuleName = myModuleDescriptor.getNamespace();
-    if (type.doCheck && (neq_yr5c5g_a0a0b0r(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName))) {
+    if (type.doCheck && (!(Objects.equals(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName)))) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", should be: " + expectedModuleName);
       return false;
     }
@@ -187,7 +188,7 @@ public final class ModuleChecker {
     }
 
     String expectedModuleUUID = myModuleDescriptor.getId().toString();
-    if (type.doCheck && neq_yr5c5g_a0a5a71(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID)) {
+    if (type.doCheck && !(Objects.equals(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID))) {
       String m = "module id in import doesn't match file content %s, should be: %s";
       report(String.format(m, SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), myModuleDescriptor.getId()));
       return false;
@@ -691,7 +692,7 @@ public final class ModuleChecker {
           if (!(ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               SNode dep = (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")) ? SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")) : it);
-              return SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0fb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), relPath);
+              return SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && Objects.equals(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), relPath);
             }
           }))) {
             report("jar stub library should be extracted into build script: " + relPath);
@@ -701,7 +702,7 @@ public final class ModuleChecker {
         if (type.doPartialImport) {
           SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0fb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(p));
+              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && Objects.equals(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(p));
             }
           });
 
@@ -1055,17 +1056,5 @@ public final class ModuleChecker {
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cb9L, "module"), (SNode) p0);
     n1.setProperty(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cc1L, "reexport"), false + "");
     return n1;
-  }
-  private static boolean neq_yr5c5g_a0a0b0r(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_yr5c5g_a0a5a71(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0fb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0fb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

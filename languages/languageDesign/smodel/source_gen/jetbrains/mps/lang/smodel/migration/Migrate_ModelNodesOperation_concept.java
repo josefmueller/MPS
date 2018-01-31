@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -92,7 +93,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
             public void invoke(SNode oldNode, SNode newNode) {
               List<SNode> attributes = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode attr) {
-                  return eq_vs95qi_a0a0a0a0a0a0a0a0a2a3a0a0a0a1a0a3(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
+                  return Objects.equals(LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
                 }
               }).toListSequence();
               ListSequence.fromList(attributes).visitAll(new IVisitor<SNode>() {
@@ -151,8 +152,5 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, 0x1120c45d024L, "conceptDeclaration"), (SNode) parameter_1);
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument"), quotedNode_3);
     return quotedNode_2;
-  }
-  private static boolean eq_vs95qi_a0a0a0a0a0a0a0a0a2a3a0a0a0a1a0a3(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

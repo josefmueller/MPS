@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -71,7 +72,7 @@ public class MethodResolveUtil {
     } else {
       return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_zegw12_a0a0a0a0a1a0a0e0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
         }
       }), null);
     }
@@ -345,9 +346,6 @@ public class MethodResolveUtil {
     return result;
   }
 
-  private static boolean eq_zegw12_a0a0a0a0a1a0a0e0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SNode _quotation_createNode_zegw12_a1a0a0f0d0s(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

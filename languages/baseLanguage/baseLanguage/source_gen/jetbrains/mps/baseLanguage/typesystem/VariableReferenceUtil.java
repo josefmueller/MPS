@@ -27,6 +27,7 @@ import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import java.util.Iterator;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
+import java.util.Objects;
 
 public class VariableReferenceUtil {
   public VariableReferenceUtil() {
@@ -168,13 +169,10 @@ public class VariableReferenceUtil {
     Iterator<Instruction> iterator = instructions.iterator();
     while (iterator.hasNext()) {
       Instruction next = iterator.next();
-      if (next instanceof WriteInstruction && eq_oxnfbs_a0a1a3a21(((WriteInstruction) next).getVariable(), field)) {
+      if (next instanceof WriteInstruction && Objects.equals(((WriteInstruction) next).getVariable(), field)) {
         return true;
       }
     }
     return false;
-  }
-  private static boolean eq_oxnfbs_a0a1a3a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

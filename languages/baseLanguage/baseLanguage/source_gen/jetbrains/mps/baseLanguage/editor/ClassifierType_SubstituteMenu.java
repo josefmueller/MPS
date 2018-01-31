@@ -15,6 +15,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
@@ -76,17 +77,17 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
       super.initialize(_context);
       condition = new Computable<Boolean>() {
         public Boolean compute() {
-          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && eq_6wdawe_a0a0a0a0a0a1a3f(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"));
+          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"));
         }
       }.compute();
       condition_1 = new Computable<Boolean>() {
         public Boolean compute() {
-          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && eq_6wdawe_a0a0a0a0a0a2a3f(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"));
+          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"));
         }
       }.compute();
       condition_2 = new Computable<Boolean>() {
         public Boolean compute() {
-          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && eq_6wdawe_a0a0a0a0a0a3a3f(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"));
+          return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"));
         }
       }.compute();
     }
@@ -149,7 +150,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
         protected Iterable<? extends SNode> getParameters(final SubstituteMenuContext _context) {
           return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleClassesScope(_context.getParentNode()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"))) && neq_6wdawe_a0a0a0a0a0a0a0a2e7f(it, _context.getParentNode());
+              return !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"))) && !(Objects.equals(it, _context.getParentNode()));
             }
           }).toListSequence();
         }
@@ -397,7 +398,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
         protected Iterable<? extends SNode> getParameters(final SubstituteMenuContext _context) {
           return (List<SNode>) Sequence.fromIterable(ClassifierScopes.getVisibleInterfacesScope(_context.getParentNode()).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return neq_6wdawe_a0a0a0a0a0a0a0c4j5(it, _context.getParentNode());
+              return !(Objects.equals(it, _context.getParentNode()));
             }
           }).toListSequence();
         }
@@ -547,20 +548,5 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
         }
       }
     }
-  }
-  private static boolean eq_6wdawe_a0a0a0a0a0a1a3f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_6wdawe_a0a0a0a0a0a2a3f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_6wdawe_a0a0a0a0a0a3a3f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_6wdawe_a0a0a0a0a0a0a0a2e7f(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_6wdawe_a0a0a0a0a0a0a0c4j5(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

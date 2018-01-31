@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -83,10 +84,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     return editorCell;
   }
   private boolean nodeCondition_n0gj60_a2a() {
-    return neq_dowdhi_a0a0j(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getMemberValue(SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY")));
+    return !(Objects.equals(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getMemberValue(SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY"))));
   }
   private boolean nodeCondition_n0gj60_a3a() {
-    return eq_dowdhi_a0a0k(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getMemberValue(SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY")));
+    return Objects.equals(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getMemberValue(SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY")));
   }
   private EditorCell createConstant_n0gj60_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font-style");
@@ -142,7 +143,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
     public void handleAction_impl(SEnumerationLiteral parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), SEnumOperations.getMemberValue(parameterObject));
-      if (eq_dowdhi_a0b0e51(parameterObject, SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY"))) {
+      if (Objects.equals(parameterObject, SEnumOperations.getMember(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1006551b180L, "_FontStyle_Enum", 0x11c47b3e786L, "QUERY"))) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x11c47cb352dL, "query"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle")), null));
       }
     }
@@ -153,9 +154,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     @Override
     protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
       return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6699718426954288706"));
-    }
-    private static boolean eq_dowdhi_a0b0e51(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   private EditorCell createRefNode_n0gj60_d0() {
@@ -238,11 +236,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
         return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225473442525"));
       }
     }
-  }
-  private static boolean neq_dowdhi_a0a0j(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_dowdhi_a0a0k(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

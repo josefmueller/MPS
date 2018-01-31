@@ -396,6 +396,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="javax.swing.JComboBox" />
     <classNode dependClassName="javax.swing.JComponent" />

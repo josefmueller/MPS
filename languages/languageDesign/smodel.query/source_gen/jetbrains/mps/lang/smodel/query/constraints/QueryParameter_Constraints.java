@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.query.behavior.QueryExpression__BehaviorDescriptor;
@@ -38,13 +39,10 @@ public class QueryParameter_Constraints extends BaseConstraintsDescriptor {
     };
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
-    if (neq_2bkn6k_a0a0d(SNodeOperations.getContainingLink(parentNode), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter"))) {
+    if (!(Objects.equals(SNodeOperations.getContainingLink(parentNode), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter")))) {
       return false;
     }
     return Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression")))))).contains(SNodeOperations.castConcept(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.lang.smodel.query.structure.QueryParameter")));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.lang.smodel.query.constraints)", "1227128029536563386");
-  private static boolean neq_2bkn6k_a0a0d(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
 }

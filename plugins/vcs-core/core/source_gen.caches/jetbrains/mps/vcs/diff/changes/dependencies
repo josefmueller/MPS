@@ -143,10 +143,10 @@
   <dependency className="jetbrains.mps.vcs.diff.changes.NodeGroupChange" file="NodeGroupChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
@@ -215,9 +215,9 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceChange" file="SetReferenceChange.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -242,9 +242,9 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.NodeChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.SetReferenceStructChange" file="SetReferenceStructChange.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />

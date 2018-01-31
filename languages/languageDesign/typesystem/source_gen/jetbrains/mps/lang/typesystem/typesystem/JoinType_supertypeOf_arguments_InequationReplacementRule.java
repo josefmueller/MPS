@@ -8,6 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.CoerceUtil;
@@ -26,7 +27,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (eq_6boqzn_a0a0b0b(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
+      if (Objects.equals(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
         return true;
       }
     }
@@ -66,7 +67,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (eq_6boqzn_a0a0c0c(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
+      if (Objects.equals(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1269166727599073781", 0, null);
@@ -103,7 +104,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (eq_6boqzn_a0a0d0d(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
+      if (Objects.equals(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
         return result_14532009;
       }
@@ -131,14 +132,5 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
   }
   public SAbstractConcept getApplicableSupertypeConcept() {
     return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType");
-  }
-  private static boolean eq_6boqzn_a0a0b0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_6boqzn_a0a0c0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_6boqzn_a0a0d0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

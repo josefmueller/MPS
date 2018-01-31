@@ -30,6 +30,7 @@ import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -101,7 +102,7 @@ public class assignments extends TransformationMenuBase {
           SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getNode(), createdNode);
           // since BaseAssignmentExpressions are right-associative we should LT parent 
           // BaseAssignmentExpressions or it's lValue depenting on current position 
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) && eq_egrkpv_a0a4a0a0a1a6h(SNodeOperations.getContainingLink(source), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"))) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) && Objects.equals(SNodeOperations.getContainingLink(source), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue"))) {
             source = SNodeOperations.cast(SNodeOperations.getParent(source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"));
           }
           SNodeOperations.replaceWithAnother(source, createdNode);
@@ -150,8 +151,5 @@ public class assignments extends TransformationMenuBase {
         }
       };
     }
-  }
-  private static boolean eq_egrkpv_a0a4a0a0a1a6h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

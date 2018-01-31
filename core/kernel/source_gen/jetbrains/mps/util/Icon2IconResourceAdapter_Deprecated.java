@@ -15,6 +15,7 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
+import java.util.Objects;
 
 /**
  * 
@@ -67,13 +68,10 @@ public class Icon2IconResourceAdapter_Deprecated extends IconResource {
       return false;
     }
     Icon2IconResourceAdapter_Deprecated that = (Icon2IconResourceAdapter_Deprecated) o;
-    return eq_odhe5t_a0d0f(myIcon, that.myIcon);
+    return Objects.equals(myIcon, that.myIcon);
   }
   @Override
   public int hashCode() {
     return (myIcon == null ? 0 : myIcon.hashCode());
-  }
-  private static boolean eq_odhe5t_a0d0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

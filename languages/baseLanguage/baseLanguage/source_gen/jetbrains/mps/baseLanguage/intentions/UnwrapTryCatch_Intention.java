@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,7 +42,7 @@ public final class UnwrapTryCatch_Intention extends AbstractIntentionDescriptor 
     SNode selectedNode = editorContext.getSelectedNode();
     for (SNode ancestor : ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, null, true))) {
       if (SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3399756d2c03d422L, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"))) {
-        return eq_cj56ns_a0a0a0b0e(ancestor, node);
+        return Objects.equals(ancestor, node);
       }
     }
     return false;
@@ -86,8 +87,5 @@ public final class UnwrapTryCatch_Intention extends AbstractIntentionDescriptor 
     public IntentionDescriptor getDescriptor() {
       return UnwrapTryCatch_Intention.this;
     }
-  }
-  private static boolean eq_cj56ns_a0a0a0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

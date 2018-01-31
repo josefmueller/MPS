@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -28,7 +29,7 @@ public class check_UnusedLocalVariableDeclaration_NonTypesystemRule extends Abst
     }
     Iterable<SNode> refs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getNodeAncestor(localVariableDeclaration, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"), false, false), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_ohg6xl_a0a0a0a0a0a1a1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), localVariableDeclaration);
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), localVariableDeclaration);
       }
     });
     if (Sequence.fromIterable(refs).isEmpty()) {
@@ -49,8 +50,5 @@ public class check_UnusedLocalVariableDeclaration_NonTypesystemRule extends Abst
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_ohg6xl_a0a0a0a0a0a1a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

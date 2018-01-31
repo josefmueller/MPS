@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -55,7 +56,7 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       super.initialize(_context);
       condition = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_fvfxl9_a0a0a0a0a0b0b5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"));
+          return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"));
         }
       }.compute();
     }
@@ -173,8 +174,5 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
         }
       }
     }
-  }
-  private static boolean eq_fvfxl9_a0a0a0a0a0b0b5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -24,6 +24,7 @@ import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.Method;
 import com.sun.jdi.event.MethodEntryEvent;
 import com.sun.jdi.event.MethodExitEvent;
+import java.util.Objects;
 
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = LogManager.getLogger(MethodBreakpoint.class);
@@ -137,13 +138,10 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
       return false;
     }
 
-    return eq_spo82x_a0d0u(getLocation(), ((MethodBreakpoint) o).getLocation());
+    return Objects.equals(getLocation(), ((MethodBreakpoint) o).getLocation());
   }
   @Override
   public int hashCode() {
     return myNode.hashCode() + getKind().hashCode() * 31;
-  }
-  private static boolean eq_spo82x_a0d0u(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

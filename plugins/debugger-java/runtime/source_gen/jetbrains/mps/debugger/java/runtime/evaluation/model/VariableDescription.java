@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 /*package*/ class VariableDescription {
@@ -50,7 +51,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
   @Override
   public boolean equals(Object object) {
-    return eq_5ytd5s_a0a0m(myLowLevelName, ((VariableDescription) object).myLowLevelName);
+    return Objects.equals(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"));
@@ -62,8 +63,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25eedL, "isHigh"), "" + (highType != null));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"), lowType);
     return result;
-  }
-  private static boolean eq_5ytd5s_a0a0m(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

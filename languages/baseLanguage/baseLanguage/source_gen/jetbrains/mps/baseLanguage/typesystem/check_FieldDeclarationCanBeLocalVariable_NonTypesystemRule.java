@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
@@ -46,7 +47,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
     });
     Iterable<SNode> ops = (SNodeOperations.isInstanceOf(variableDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) ? ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(variableDeclaration), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_pk5n8v_a0a0a0a0a0a0a0e0b(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), variableDeclaration);
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), variableDeclaration);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -77,7 +78,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
 
     if (Sequence.fromIterable(methods).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_pk5n8v_a0a0a0a0a0l0b(it, Sequence.fromIterable(methods).first());
+        return Objects.equals(it, Sequence.fromIterable(methods).first());
       }
     })) {
       SNode method = Sequence.fromIterable(methods).first();
@@ -86,7 +87,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
       // find a read instruction for variableDeclaration not preceeded by a write instruction 
       boolean uninitializedRead = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<ReadInstruction>(), program.getUninitializedReads())).any(new IWhereFilter<ReadInstruction>() {
         public boolean accept(ReadInstruction it) {
-          return eq_pk5n8v_a0a0a0a0a0a4a11a1(it.getVariable(), variableDeclaration);
+          return Objects.equals(it.getVariable(), variableDeclaration);
         }
       });
 
@@ -113,14 +114,5 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_pk5n8v_a0a0a0a0a0a0a0e0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_pk5n8v_a0a0a0a0a0a4a11a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_pk5n8v_a0a0a0a0a0l0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

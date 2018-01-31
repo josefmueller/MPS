@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
+import java.util.Objects;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -125,7 +126,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     TreePath path = null;
     for (int i = 0; i < getRowCount(); ++i) {
       DiffModelTree.RootTreeNode node = as_5x0uld_a0a0a2a5(getPathForRow(i).getLastPathComponent(), DiffModelTree.RootTreeNode.class);
-      if (node != null && eq_5x0uld_a0a1a2a5(node.getRootId(), rootId)) {
+      if (node != null && Objects.equals(node.getRootId(), rootId)) {
         path = getPathForRow(i);
         break;
       }
@@ -164,7 +165,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   private DiffModelTree.RootTreeNode findRootNode(@Nullable final SNodeId nodeId) {
     return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
       public boolean accept(DiffModelTree.RootTreeNode r) {
-        return eq_5x0uld_a0a0a0a0a0a0p(nodeId, r.myRootId);
+        return Objects.equals(nodeId, r.myRootId);
       }
     });
   }
@@ -350,11 +351,5 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   }
   private static <T> T as_5x0uld_a0a0a2a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
-  }
-  private static boolean eq_5x0uld_a0a1a2a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_5x0uld_a0a0a0a0a0a0p(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

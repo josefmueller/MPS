@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -47,7 +48,7 @@ public class AddMenuPart_ConceptSubstitute extends SubstituteMenuBase {
   public class SMP_Group_1nroa3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_1nroa3_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x2c99ba4dd7187621L, "addMenu_conceptSubstitute"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x2c99ba4dd7187621L, "addMenu_conceptSubstitute"));
     }
     @NotNull
     @Override
@@ -105,8 +106,5 @@ public class AddMenuPart_ConceptSubstitute extends SubstituteMenuBase {
         }.createItems(_context);
       }
     }
-  }
-  private static boolean eq_1nroa3_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

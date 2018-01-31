@@ -11,6 +11,7 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import junit.framework.Assert;
+import java.util.Objects;
 
 @MPSLaunch
 public class TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test extends BaseTransformationTest {
@@ -35,16 +36,10 @@ public class TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test exten
       List<SubstituteAction> matchingActions = getEditorComponent().getSelectedCell().getSubstituteInfo().getMatchingActions(matchingText, false);
       Assert.assertTrue(matchingActions.size() == 1);
       SubstituteAction action = matchingActions.get(0);
-      Assert.assertTrue(eq_hlg04n_a0a0f0a6_0(action.getDescriptionText(matchingText), "child description text wrapper description text") && eq_hlg04n_a0a0f0a6(action.getMatchingText(matchingText), matchingText));
+      Assert.assertTrue(Objects.equals(action.getDescriptionText(matchingText), "child description text wrapper description text") && Objects.equals(action.getMatchingText(matchingText), matchingText));
 
       typeString("child matching text wrapper matching text");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-    }
-    private static boolean eq_hlg04n_a0a0f0a6(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_hlg04n_a0a0f0a6_0(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

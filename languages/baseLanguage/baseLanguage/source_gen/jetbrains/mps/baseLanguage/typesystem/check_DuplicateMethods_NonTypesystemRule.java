@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -34,7 +35,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
     for (final SNode ownMethod : ownMethods) {
       Iterable<SNode> ownDuplicates = ListSequence.fromList(Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(classifier)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_a1zes8_a0a0a0a0a0a0a4a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
       if (Sequence.fromIterable(ownDuplicates).count() > 1) {
@@ -43,7 +44,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
 
       Iterable<SNode> namesakes = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_a1zes8_a0a0a0a0a0a3a4a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
       if (Sequence.fromIterable(namesakes).count() < 2) {
@@ -61,11 +62,5 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_a1zes8_a0a0a0a0a0a0a4a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a1zes8_a0a0a0a0a0a3a4a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -18,6 +18,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -40,7 +41,7 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
     if (SNodeOperations.getIndexInParent(__thisNode__) == 0) {
       return false;
     }
-    return eq_5tsa61_a0b0m(SNodeOperations.getConcept(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConcept(__thisNode__));
+    return Objects.equals(SNodeOperations.getConcept(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
     return true;
@@ -103,8 +104,5 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_5tsa61_a0b0m(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

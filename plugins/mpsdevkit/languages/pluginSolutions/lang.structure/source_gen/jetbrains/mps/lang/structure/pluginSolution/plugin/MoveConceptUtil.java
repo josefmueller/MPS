@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 
 public class MoveConceptUtil {
 
@@ -77,7 +78,7 @@ public class MoveConceptUtil {
     }
     for (SModuleReference ext : ListSequence.fromList(MoveConceptUtil.calculateExtendsDependencies(conceptsToMove)).where(new IWhereFilter<SModuleReference>() {
       public boolean accept(SModuleReference it) {
-        return neq_ce40do_a0a0a0a0a0c0h(targetLanguage.getModuleReference(), it);
+        return !(Objects.equals(targetLanguage.getModuleReference(), it));
       }
     })) {
       targetLanguage.addExtendedLanguage(ext);
@@ -89,8 +90,5 @@ public class MoveConceptUtil {
       return checkedDotOperand.getModuleReference();
     }
     return null;
-  }
-  private static boolean neq_ce40do_a0a0a0a0a0c0h(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

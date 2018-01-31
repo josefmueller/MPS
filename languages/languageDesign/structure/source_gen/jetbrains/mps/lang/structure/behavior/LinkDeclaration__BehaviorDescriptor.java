@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -70,10 +71,10 @@ public final class LinkDeclaration__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static boolean is_id4MKjpUYniHA(@NotNull SNode __thisNode__, SAbstractLink link) {
     if (SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-      return eq_b4ii40_a0a0a0v(MetaAdapterByDeclaration.getContainmentLink(__thisNode__), link);
+      return Objects.equals(MetaAdapterByDeclaration.getContainmentLink(__thisNode__), link);
     }
     if (SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference")) {
-      return eq_b4ii40_a0a0b0v(MetaAdapterByDeclaration.getReferenceLink(__thisNode__), link);
+      return Objects.equals(MetaAdapterByDeclaration.getReferenceLink(__thisNode__), link);
     }
     throw new IllegalStateException(SPropertyOperations.getString_def(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference"));
   }
@@ -135,11 +136,5 @@ public final class LinkDeclaration__BehaviorDescriptor extends BaseBHDescriptor 
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_b4ii40_a0a0a0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_b4ii40_a0a0b0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

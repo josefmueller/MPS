@@ -9,6 +9,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration__BehaviorDescriptor" />

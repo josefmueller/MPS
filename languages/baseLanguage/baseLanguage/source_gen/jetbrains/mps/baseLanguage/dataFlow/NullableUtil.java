@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -65,7 +66,7 @@ public class NullableUtil {
           while (arg_it.hasNext() && param_it.hasNext()) {
             arg_var = arg_it.next();
             param_var = param_it.next();
-            if (eq_cmc61d_a0c0e0a0c0b0e(arg_var, source)) {
+            if (Objects.equals(arg_var, source)) {
               if (Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(param_var, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"))).contains(SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)", "~NotNull")) && NullableState.canBeNull(state)) {
                 String warning;
                 if (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
@@ -125,8 +126,5 @@ public class NullableUtil {
     }
     return null;
 
-  }
-  private static boolean eq_cmc61d_a0c0e0a0c0b0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

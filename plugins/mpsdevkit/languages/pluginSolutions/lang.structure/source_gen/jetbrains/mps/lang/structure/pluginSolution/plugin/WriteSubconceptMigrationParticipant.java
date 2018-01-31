@@ -26,6 +26,7 @@ import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipant
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -106,14 +107,14 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
       List<SNode> subConcepts = ListSequence.fromList(new ArrayList<SNode>());
       ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_8k3jue_a0a0a0a0a0a0a3a2a21(check_8k3jue_a0a0a0a0a0b0c0m(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"))), initialState._0().reference());
+          return Objects.equals(check_8k3jue_a0a0a0a0a0b0c0m(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"))), initialState._0().reference());
         }
       }).toListSequence());
       ListSequence.fromList(subConcepts).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.selectScope(null, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a21(it.getReference(), initialState._0().reference());
+              return Objects.equals(it.getReference(), initialState._0().reference());
             }
           });
         }
@@ -122,7 +123,7 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a21(it.getReference(), initialState._0().reference());
+              return Objects.equals(it.getReference(), initialState._0().reference());
             }
           });
         }
@@ -180,20 +181,11 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> getDataCollector() {
     return myDataCollector;
   }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a3a2a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SNodeReference check_8k3jue_a0a0a0a0a0b0c0m(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
-  }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode createIncludeMigrationPart_8k3jue_a0a1a1a0a0a0a0a0a5a2a21(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

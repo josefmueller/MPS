@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -113,7 +114,7 @@ public class ChangeSetBuilder {
     if (SNodeOperations.getModel(newNode).getReference().equals(newTargetModel)) {
       newTargetModel = null;
     }
-    if (eq_nbyrtw_a0a0i0p(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0p_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a51(check_nbyrtw_a0a8a51(((jetbrains.mps.smodel.SReference) oldReference)), check_nbyrtw_a0a8a51_0(((jetbrains.mps.smodel.SReference) newReference)))) {
+    if (Objects.equals(oldTargetId, newTargetId) && Objects.equals(oldTargetModel, newTargetModel) && Objects.equals(check_nbyrtw_a0a8a51(((jetbrains.mps.smodel.SReference) oldReference)), check_nbyrtw_a0a8a51_0(((jetbrains.mps.smodel.SReference) newReference)))) {
       // same references 
     } else {
       SModelReference targetModel = check_nbyrtw_a0a0a8a51(newReference);
@@ -373,15 +374,6 @@ public class ChangeSetBuilder {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
-  }
-  private static boolean eq_nbyrtw_a0a0i0p(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_nbyrtw_a0a0i0p_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_nbyrtw_a0a8a51(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static String check_nbyrtw_a0a8a51(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {

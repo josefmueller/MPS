@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Arrays;
 import jetbrains.mps.lang.dataFlow.framework.IDataFlowModeId;
+import java.util.Objects;
 
 @MPSLaunch
 public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
@@ -63,12 +64,9 @@ public class TestProgramWithModeSpecified_Test extends BaseTransformationTest {
       addNodeById("2955426575105884967");
       MPSProgramBuilder builder = new MPSProgramBuilder(null, new InstructionBuilder(), new ProgramBuilderContextImpl(Collections.<IDataFlowModeId>emptyList()));
       Program program = builder.buildProgram(SNodeOperations.cast(getNodeById("2955426575105884969"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, "testCustomAnalyzer"), 0x73a316f7f5468ed4L, "Root"))));
-      Assert.assertTrue(program.getInstructions().size() == 1 && eq_3f7mjy_a0a0d0c9(program.getEnd(), program.getInstructions().get(0)));
+      Assert.assertTrue(program.getInstructions().size() == 1 && Objects.equals(program.getEnd(), program.getInstructions().get(0)));
     }
 
 
-    private static boolean eq_3f7mjy_a0a0d0c9(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
   }
 }

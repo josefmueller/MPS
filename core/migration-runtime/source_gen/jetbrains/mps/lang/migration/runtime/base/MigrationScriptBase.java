@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import java.util.Objects;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -175,7 +176,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
 
     // we want this annotation to be shown as outermost one 
     SNode firstAnnot = ListSequence.fromList(AttributeOperations.getAttributeList(n, new IAttributeDescriptor.AllAttributes())).first();
-    if ((firstAnnot != null) && neq_6r1jyd_a0a11a03(firstAnnot, ann)) {
+    if ((firstAnnot != null) && !(Objects.equals(firstAnnot, ann))) {
       SNodeOperations.insertPrevSiblingChild(firstAnnot, ann);
     }
   }
@@ -211,8 +212,5 @@ public abstract class MigrationScriptBase implements MigrationScript {
     public Map<SModule, SNode> collectData(SModule myModule, MigrationScriptReference scriptReference) {
       return Collections.<SModule,SNode>emptyMap();
     }
-  }
-  private static boolean neq_6r1jyd_a0a11a03(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

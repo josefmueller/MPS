@@ -13,6 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class CheckboxUI_Text_validity_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -33,7 +34,7 @@ public class CheckboxUI_Text_validity_NonTypesystemRule extends AbstractNonTypes
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ui, "trueText is not set", "r:dcdc35e4-9e23-4315-b822-9c8981abf5fa(jetbrains.mps.lang.editor.forms.typesystem)", "5347446703374072706", null, errorTarget);
       }
     }
-    if (SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText")) != null && eq_6xi8tz_a0a2a1(SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText")), SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e83eL, "trueText")))) {
+    if (SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText")) != null && Objects.equals(SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText")), SPropertyOperations.getString(ui, MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e83eL, "trueText")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(ui, "trueText and falseText are the same", "r:dcdc35e4-9e23-4315-b822-9c8981abf5fa(jetbrains.mps.lang.editor.forms.typesystem)", "5347446703374074910", null, errorTarget);
@@ -48,8 +49,5 @@ public class CheckboxUI_Text_validity_NonTypesystemRule extends AbstractNonTypes
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_6xi8tz_a0a2a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

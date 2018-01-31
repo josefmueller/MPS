@@ -19,6 +19,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -52,7 +53,7 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
     return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
   }
   /*package*/ static boolean is_id4MKjpUYnih4(@NotNull SNode __thisNode__, SProperty property) {
-    return eq_fhtc43_a0a0r(MetaAdapterByDeclaration.getProperty(__thisNode__), property);
+    return Objects.equals(MetaAdapterByDeclaration.getProperty(__thisNode__), property);
   }
 
   /*package*/ PropertyDeclaration__BehaviorDescriptor() {
@@ -108,8 +109,5 @@ public final class PropertyDeclaration__BehaviorDescriptor extends BaseBHDescrip
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static boolean eq_fhtc43_a0a0r(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

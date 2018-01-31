@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.Project;
@@ -50,7 +51,7 @@ public class MoveNodesUtil {
         final SModel model = firstNode.getModel();
         result.value = ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_nlglo1_a0a0a0a0a0a0a4a0a0a0a2a2(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
+            return Objects.equals(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
           }
         });
       }
@@ -243,7 +244,4 @@ public class MoveNodesUtil {
   }
 
 
-  private static boolean eq_nlglo1_a0a0a0a0a0a0a4a0a0a0a2a2(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

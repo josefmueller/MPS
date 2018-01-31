@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class SNodeCompare {
     Map<String, String> aMap = (Map<String, String>) SNodeOperations.getProperties(a);
     Map<String, String> bMap = (Map<String, String>) SNodeOperations.getProperties(b);
     for (String p : SetSequence.fromSet(MapSequence.fromMap(aMap).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(bMap).keySet()))) {
-      if (neq_acety0_a0a0c0b(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p))) {
+      if (!(Objects.equals(MapSequence.fromMap(aMap).get(p), MapSequence.fromMap(bMap).get(p)))) {
         return false;
       }
     }
@@ -52,10 +53,10 @@ public class SNodeCompare {
         return false;
       }
 
-      if (neq_acety0_a0e0f0c(aRef.getTargetSModelReference(), bRef.getTargetSModelReference())) {
+      if (!(Objects.equals(aRef.getTargetSModelReference(), bRef.getTargetSModelReference()))) {
         return false;
       }
-      if (neq_acety0_a0f0f0c(((jetbrains.mps.smodel.SReference) aRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) bRef).getResolveInfo())) {
+      if (!(Objects.equals(((jetbrains.mps.smodel.SReference) aRef).getResolveInfo(), ((jetbrains.mps.smodel.SReference) bRef).getResolveInfo()))) {
         return false;
       }
       if (aRef instanceof DynamicReference || bRef instanceof DynamicReference) {
@@ -67,7 +68,7 @@ public class SNodeCompare {
         }
       } else {
         // both static 
-        if (neq_acety0_a0b0a6a5a2(aRef.getTargetNodeId(), bRef.getTargetNodeId())) {
+        if (!(Objects.equals(aRef.getTargetNodeId(), bRef.getTargetNodeId()))) {
           return false;
         }
       }
@@ -92,24 +93,6 @@ public class SNodeCompare {
     return true;
   }
   public static boolean nodeEquals(SNode a, SNode b) {
-    return eq_acety0_a0a0a0a0e(a.getConcept(), b.getConcept()) && eq_acety0_a0a0a0a0e_0(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
-  }
-  private static boolean neq_acety0_a0a0c0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_acety0_a0e0f0c(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_acety0_a0f0f0c(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_acety0_a0b0a6a5a2(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean eq_acety0_a0a0a0a0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_acety0_a0a0a0a0e_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return Objects.equals(a.getConcept(), b.getConcept()) && Objects.equals(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
 }

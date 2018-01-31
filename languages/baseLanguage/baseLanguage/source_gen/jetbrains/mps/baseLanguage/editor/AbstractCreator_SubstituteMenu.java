@@ -36,6 +36,7 @@ import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Objects;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
@@ -203,7 +204,7 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
               // replace all type vars with new ones 
               Iterable<SNode> typeVarRefs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_p790zr_a0a0a0a0a0a4a0a0a0a01a6e3f(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), originalVar);
+                  return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), originalVar);
                 }
               });
               for (SNode typeVar : Sequence.fromIterable(typeVarRefs)) {
@@ -378,8 +379,5 @@ public class AbstractCreator_SubstituteMenu extends SubstituteMenuBase {
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
-  }
-  private static boolean eq_p790zr_a0a0a0a0a0a4a0a0a0a01a6e3f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

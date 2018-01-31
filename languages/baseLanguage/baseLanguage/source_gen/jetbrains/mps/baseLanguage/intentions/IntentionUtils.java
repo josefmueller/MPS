@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -108,14 +109,14 @@ public class IntentionUtils {
   }
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
-    if (neq_k79hya_a0a0g(SNodeOperations.getConcept(node1), SNodeOperations.getConcept(node2))) {
+    if (!(Objects.equals(SNodeOperations.getConcept(node1), SNodeOperations.getConcept(node2)))) {
       return MultiTuple.<SNode,SNode>from(node1, node2);
     }
     SAbstractConcept concept = SNodeOperations.getConcept(node1);
 
     // todo: use ConceptRegistry/SConcept when it will possible 
     for (SProperty p : CollectionSequence.fromCollection(concept.getProperties())) {
-      if (neq_k79hya_a0a0e0g(node1.getProperty(p), node2.getProperty(p))) {
+      if (!(Objects.equals(node1.getProperty(p), node2.getProperty(p)))) {
         return MultiTuple.<SNode,SNode>from(node1, node2);
       }
     }
@@ -204,11 +205,5 @@ public class IntentionUtils {
       SNode parens = SNodeFactoryOperations.replaceWithNewChild(childExpr, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
       SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), childExpr);
     }
-  }
-  private static boolean neq_k79hya_a0a0g(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_k79hya_a0a0e0g(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

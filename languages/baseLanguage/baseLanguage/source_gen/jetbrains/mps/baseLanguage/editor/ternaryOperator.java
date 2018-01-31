@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Objects;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -105,7 +106,7 @@ public class ternaryOperator extends TransformationMenuBase {
         while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) == current) {
           current = SNodeOperations.cast(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
         }
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && eq_imvmmn_a0a0a3a6c7(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")), current))) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && Objects.equals(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")), current))) {
           SNode parens = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), null);
           SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), to);
           SNodeOperations.replaceWithAnother(current, parens);
@@ -134,8 +135,5 @@ public class ternaryOperator extends TransformationMenuBase {
       }
     }
 
-  }
-  private static boolean eq_imvmmn_a0a0a3a6c7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
@@ -46,7 +47,7 @@ public final class ConvertToList_Intention extends AbstractIntentionDescriptor i
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_63cojg_a0a0f(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"));
+    return Objects.equals(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"));
   }
   @Override
   public boolean isSurroundWith() {
@@ -79,9 +80,6 @@ public final class ConvertToList_Intention extends AbstractIntentionDescriptor i
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;
     }
-  }
-  private static boolean eq_63cojg_a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_mz75hy_a0a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

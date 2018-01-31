@@ -19,6 +19,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -197,7 +198,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     return part;
   }
   private void setOutputConcept(SNode oldAddMenuPart, SNode outputConceptPart) {
-    if (neq_uzg6hh_a0a0q(SLinkOperations.getTarget(oldAddMenuPart, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e8bfbfdL, 0x1121e8c4fafL, "concept")), SLinkOperations.getTarget(myBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept")))) {
+    if (!(Objects.equals(SLinkOperations.getTarget(oldAddMenuPart, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e8bfbfdL, 0x1121e8c4fafL, "concept")), SLinkOperations.getTarget(myBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept"))))) {
       SLinkOperations.setTarget(outputConceptPart, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, 0x6ee6ee2b84858889L, "outputConcept"), SLinkOperations.getTarget(oldAddMenuPart, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e8bfbfdL, 0x1121e8c4fafL, "concept")));
     }
   }
@@ -331,7 +332,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         final String name = SPropertyOperations.getString(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         SNode applicant = ListSequence.fromList(varDecls).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_uzg6hh_a0a0a0a0a0a2a1a71a52(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+            return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
           }
         });
         if (applicant != null) {
@@ -407,9 +408,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     quotedNode_12.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_8);
     return quotedNode_1;
   }
-  private static boolean neq_uzg6hh_a0a0q(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
   private static SNode _quotation_createNode_uzg6hh_a0a0a0a0m0z() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -424,8 +422,5 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), quotedNode_4);
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
     return quotedNode_1;
-  }
-  private static boolean eq_uzg6hh_a0a0a0a0a0a2a1a71a52(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

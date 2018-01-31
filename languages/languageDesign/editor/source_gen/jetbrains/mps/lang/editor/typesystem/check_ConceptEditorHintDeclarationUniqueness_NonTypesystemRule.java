@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -28,7 +29,7 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
       if (hintDeclarartion == conceptEditorHintDeclaration) {
         continue;
       }
-      if (eq_xcu13c_a0b0a0b(SPropertyOperations.getString(hintDeclarartion, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(conceptEditorHintDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+      if (Objects.equals(SPropertyOperations.getString(hintDeclarartion, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(conceptEditorHintDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
@@ -45,8 +46,5 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_xcu13c_a0b0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

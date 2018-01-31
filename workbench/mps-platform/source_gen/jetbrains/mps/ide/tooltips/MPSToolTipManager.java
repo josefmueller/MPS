@@ -12,6 +12,7 @@ import java.awt.Component;
 import javax.swing.JComponent;
 import java.awt.Point;
 import java.awt.Frame;
+import java.util.Objects;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.util.HtmlCharsUtil;
 import javax.swing.JLabel;
@@ -99,7 +100,7 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
   private void showToolTip(ToolTipData data, JComponent component, Point point, boolean rightAligned) {
     if (myToolTip != null) {
-      if (eq_k25xh9_a0a0a0r(myToolTip.getText(), data.getText())) {
+      if (Objects.equals(myToolTip.getText(), data.getText())) {
         return;
       }
       hideToolTip();
@@ -119,7 +120,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     if (text.contains("\n")) {
       text = "<html>" + HtmlCharsUtil.asHtml(text, false) + "</html>";
     }
-    if (eq_k25xh9_a0c0t(myText, text)) {
+    if (Objects.equals(myText, text)) {
       return;
     }
     myText = text;
@@ -151,11 +152,5 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
   public static MPSToolTipManager getInstance() {
     return (ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(MPSToolTipManager.class));
-  }
-  private static boolean eq_k25xh9_a0a0a0r(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_k25xh9_a0c0t(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

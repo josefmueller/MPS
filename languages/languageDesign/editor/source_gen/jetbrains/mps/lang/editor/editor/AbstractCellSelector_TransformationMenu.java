@@ -32,6 +32,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableAc
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -148,7 +149,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
           SNode orSelector = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"));
           SNode parent = SNodeOperations.getParent(_context.getNode());
           if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"))) {
-            if (eq_by8jv6_a0a0c0g2e7(_context.getNode().getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"))) {
+            if (Objects.equals(_context.getNode().getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"))) {
               SLinkOperations.setTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"), orSelector);
             } else {
               SLinkOperations.setTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"), orSelector);
@@ -243,7 +244,7 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
           SNode orSelector = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"));
           SNode parent = SNodeOperations.getParent(_context.getNode());
           if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector"))) {
-            if (eq_by8jv6_a0a0c0g2e8(_context.getNode().getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"))) {
+            if (Objects.equals(_context.getNode().getContainmentLink(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"))) {
               SLinkOperations.setTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"), orSelector);
             } else {
               SLinkOperations.setTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, "jetbrains.mps.lang.editor.structure.OrCellSelector")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"), orSelector);
@@ -421,11 +422,5 @@ public class AbstractCellSelector_TransformationMenu extends TransformationMenuB
       }
 
     }
-  }
-  private static boolean eq_by8jv6_a0a0c0g2e7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_by8jv6_a0a0c0g2e8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

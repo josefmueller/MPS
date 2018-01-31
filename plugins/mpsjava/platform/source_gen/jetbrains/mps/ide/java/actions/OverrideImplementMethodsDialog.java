@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
+import java.util.Objects;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -90,7 +91,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
           String aRole = SNodeOperations.getContainingLink(a).getName();
           String bRole = SNodeOperations.getContainingLink(b).getName();
 
-          if (neq_sivw9t_a0d0c0a0a0a0d0m(aRole, bRole)) {
+          if (!(Objects.equals(aRole, bRole))) {
             return aRole.compareTo(bRole);
           }
 
@@ -113,8 +114,5 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         return SNodeOperations.getPointer(it);
       }
     }).toGenericArray(SNodeReference.class);
-  }
-  private static boolean neq_sivw9t_a0d0c0a0a0a0d0m(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

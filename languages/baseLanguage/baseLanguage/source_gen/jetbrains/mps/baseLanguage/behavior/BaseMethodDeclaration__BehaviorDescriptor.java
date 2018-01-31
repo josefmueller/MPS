@@ -29,6 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Objects;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
@@ -214,7 +215,7 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
     return true;
   }
   /*package*/ static boolean hasSameSignature_idhEwIB0z(@NotNull SNode __thisNode__, SNode checked) {
-    if (neq_mtsu90_a0a0dc(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(checked, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+    if (!(Objects.equals(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(checked, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
@@ -512,8 +513,5 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
       quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
-  }
-  private static boolean neq_mtsu90_a0a0dc(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

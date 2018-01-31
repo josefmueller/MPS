@@ -6,6 +6,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.regex.Pattern;
+import java.util.Objects;
 
 public class SmartWrapper<T> {
   private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
@@ -40,15 +41,12 @@ public class SmartWrapper<T> {
     if (!(that instanceof SmartWrapper)) {
       return false;
     }
-    return eq_awov2t_a0c0h(this.towrap, ((SmartWrapper) that).towrap);
+    return Objects.equals(this.towrap, ((SmartWrapper) that).towrap);
   }
   @Override
   public int hashCode() {
     int h = 17;
     h *= (towrap != null ? towrap.hashCode() : 31);
     return h;
-  }
-  private static boolean eq_awov2t_a0c0h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

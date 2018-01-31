@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -40,7 +41,7 @@ public final class MakeClassAbstract_Intention extends AbstractIntentionDescript
     return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")));
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) && eq_gp1ln0_a0a0a5(SNodeOperations.getParent(childNode), node);
+    return SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) && Objects.equals(SNodeOperations.getParent(childNode), node);
   }
   @Override
   public boolean isSurroundWith() {
@@ -67,8 +68,5 @@ public final class MakeClassAbstract_Intention extends AbstractIntentionDescript
     public IntentionDescriptor getDescriptor() {
       return MakeClassAbstract_Intention.this;
     }
-  }
-  private static boolean eq_gp1ln0_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

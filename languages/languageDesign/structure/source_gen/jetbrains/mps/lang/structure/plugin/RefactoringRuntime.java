@@ -4,6 +4,7 @@ package jetbrains.mps.lang.structure.plugin;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class RefactoringRuntime {
 
   public static void changePropertyInstance(SNode node, final SProperty oldProp, final SProperty newProp) {
-    if (node.hasProperty(newProp) && neq_7voxfg_a0a0a0b(node.getProperty(oldProp), node.getProperty(newProp)) || node.getProperty(oldProp) == null) {
+    if (node.hasProperty(newProp) && !(Objects.equals(node.getProperty(oldProp), node.getProperty(newProp))) || node.getProperty(oldProp) == null) {
       // merge case 
       return;
     }
@@ -129,9 +130,6 @@ public class RefactoringRuntime {
       }
     });
     return result;
-  }
-  private static boolean neq_7voxfg_a0a0a0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static <T> T as_7voxfg_a0a0a0a6a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

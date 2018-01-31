@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
+import java.util.Objects;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 /*package*/ class DependencyHelper {
@@ -48,7 +49,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
     for (SReference ref : myNode.getReferences()) {
       SModelReference targetModelRef = ref.getTargetSModelReference();
       SModel modelToImport = (targetModelRef == null ? null : targetModelRef.resolve(myRepository));
-      if (modelToImport == null || eq_iea6ws_a0a2a2a9(nodeOwner, modelToImport)) {
+      if (modelToImport == null || Objects.equals(nodeOwner, modelToImport)) {
         continue;
       }
 
@@ -57,8 +58,5 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
       }
     }
     return rv;
-  }
-  private static boolean eq_iea6ws_a0a2a2a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

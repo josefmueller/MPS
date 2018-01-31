@@ -154,8 +154,8 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" file="CheckingTestStatistic.java" />
   <dependency className="jetbrains.mps.testbench.junit.suites.MPSAuditConstraints" file="MPSAuditConstraints.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.Assume" />

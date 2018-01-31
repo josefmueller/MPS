@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
@@ -48,7 +49,7 @@ public class RemoveByConditionPart extends SubstituteMenuBase {
   public class SMP_Group_tbd9d5_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_tbd9d5_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
     }
     @NotNull
     @Override
@@ -75,7 +76,7 @@ public class RemoveByConditionPart extends SubstituteMenuBase {
         }).collect(Collectors.toList());
       }
       private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
-        return neq_tbd9d5_a0a0b4f(concept, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25516733L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1"));
+        return !(Objects.equals(concept, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25516733L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1")));
       }
       @NotNull
       @Override
@@ -94,11 +95,5 @@ public class RemoveByConditionPart extends SubstituteMenuBase {
         return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
       }
     }
-  }
-  private static boolean eq_tbd9d5_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_tbd9d5_a0a0b4f(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

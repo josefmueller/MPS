@@ -1860,9 +1860,9 @@
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.NodeMacro_postfix_ComponentBuilder_a" file="NodeMacro_postfix_ComponentBuilder_a.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.CellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
@@ -2356,12 +2356,12 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.RuleConsequence_SubstituteMenu" file="RuleConsequence_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.function.Predicate" />
     <classNode dependClassName="java.util.stream.Collectors" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.ConceptMenusPart" />
@@ -2750,7 +2750,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" file="TemplateDeclarationParameterInformationQuery.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

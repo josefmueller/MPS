@@ -19,6 +19,7 @@ import java.util.function.Predicate;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.stream.Collectors;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 
@@ -54,7 +55,7 @@ public class Visibility_SubstituteMenu extends SubstituteMenuBase {
     }
     private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
       if (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && SNodeOperations.getParent(_context.getParentNode()) == null && _context.getLink() != null) {
-        return eq_m0xer7_a0a0a0b5(concept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
+        return Objects.equals(concept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
       }
       return true;
     }
@@ -74,8 +75,5 @@ public class Visibility_SubstituteMenu extends SubstituteMenuBase {
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
-  }
-  private static boolean eq_m0xer7_a0a0a0b5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

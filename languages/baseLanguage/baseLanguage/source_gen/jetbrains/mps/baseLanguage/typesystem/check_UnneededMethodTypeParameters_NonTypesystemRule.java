@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,7 +31,7 @@ public class check_UnneededMethodTypeParameters_NonTypesystemRule extends Abstra
           }
         }).all(new IWhereFilter<SNode>() {
           public boolean accept(SNode ref) {
-            return neq_ba4mce_a0a0a0a0a0a0a0a0a0a0a1(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), typeVarDeclaration);
+            return !(Objects.equals(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")), typeVarDeclaration));
           }
         });
         if (unused) {
@@ -50,8 +51,5 @@ public class check_UnneededMethodTypeParameters_NonTypesystemRule extends Abstra
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_ba4mce_a0a0a0a0a0a0a0a0a0a0a1(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

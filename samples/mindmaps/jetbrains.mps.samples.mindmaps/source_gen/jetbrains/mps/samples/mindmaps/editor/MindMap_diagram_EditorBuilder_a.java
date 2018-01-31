@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
@@ -124,7 +125,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
         }
       }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, "jetbrains.mps.samples.mindmaps.structure.Relationship"), MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_5yst3b_a0a0a0a0d1a2a0a1a0n(from, to);
+          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && !(Objects.equals(from, to));
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
@@ -147,7 +148,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bad3L, "jetbrains.mps.samples.mindmaps.structure.Relationship"), MetaAdapterFactory.getContainmentLink(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14758fL, 0x1198689ff14c5dbL, "relationships"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && neq_5yst3b_a0a0a0a0d0a0a0d31(from, to);
+          return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x33f294fd370a4a40L, 0x999b43f382910018L, 0x1198689ff14bac8L, "jetbrains.mps.samples.mindmaps.structure.Thought")) && !(Objects.equals(from, to));
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
@@ -247,11 +248,5 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
         createPalette();
       }
     }
-  }
-  private static boolean neq_5yst3b_a0a0a0a0d1a2a0a1a0n(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_5yst3b_a0a0a0a0d0a0a0d31(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

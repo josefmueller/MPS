@@ -5,6 +5,7 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import java.util.Objects;
 
 /**
  * This is not to held LanguageAspectDescriptors in actions, which can lead to memleaks
@@ -16,13 +17,10 @@ public class NewAspectModelActionHelper {
 
   public static LanguageAspectDescriptor getAspectById(String id) {
     for (LanguageAspectDescriptor ad : CollectionSequence.fromCollection(LanguageAspectSupport.collectAspects())) {
-      if (eq_u0fml6_a0a0a0c(ad.getClass().getName(), id)) {
+      if (Objects.equals(ad.getClass().getName(), id)) {
         return ad;
       }
     }
     return null;
-  }
-  private static boolean eq_u0fml6_a0a0a0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

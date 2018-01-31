@@ -49,12 +49,12 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />

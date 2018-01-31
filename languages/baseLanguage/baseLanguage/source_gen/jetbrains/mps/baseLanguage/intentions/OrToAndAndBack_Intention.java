@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -41,7 +42,7 @@ public final class OrToAndAndBack_Intention extends AbstractIntentionDescriptor 
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"));
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_x6eozt_a0a0f(SNodeOperations.getParent(childNode), node);
+    return Objects.equals(SNodeOperations.getParent(childNode), node);
   }
   @Override
   public boolean isSurroundWith() {
@@ -85,8 +86,5 @@ public final class OrToAndAndBack_Intention extends AbstractIntentionDescriptor 
     public IntentionDescriptor getDescriptor() {
       return OrToAndAndBack_Intention.this;
     }
-  }
-  private static boolean eq_x6eozt_a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

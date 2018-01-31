@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -93,7 +94,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newDepVersions).visitAll(new IVisitor<IMapping<SModuleReference, Integer>>() {
         public void visit(IMapping<SModuleReference, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a41a11(md.getDependencyVersions().get(it.key()), it.value());
+          boolean willBeChanged = !(Objects.equals(md.getDependencyVersions().get(it.key()), it.value()));
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getDependencyVersions().put(it.key(), it.value());
@@ -121,7 +122,7 @@ public class VersionFixer {
       }
       MapSequence.fromMap(newLangVersions).visitAll(new IVisitor<IMapping<SLanguage, Integer>>() {
         public void visit(IMapping<SLanguage, Integer> it) {
-          boolean willBeChanged = neq_bfw0l_a0a0a0a0a0a1a71a11(md.getLanguageVersions().get(it.key()), it.value());
+          boolean willBeChanged = !(Objects.equals(md.getLanguageVersions().get(it.key()), it.value()));
           changed.value = changed.value || willBeChanged;
           if (willBeChanged && !(dryRun)) {
             md.getLanguageVersions().put(it.key(), it.value());
@@ -278,11 +279,5 @@ public class VersionFixer {
         }
       }
     }
-  }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a41a11(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
-  }
-  private static boolean neq_bfw0l_a0a0a0a0a0a1a71a11(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

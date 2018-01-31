@@ -23,6 +23,7 @@ import com.sun.jdi.request.ModificationWatchpointRequest;
 import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
+import java.util.Objects;
 
 public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = LogManager.getLogger(FieldBreakpoint.class);
@@ -94,13 +95,10 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
       return false;
     }
 
-    return eq_he6f5h_a0d0n(getLocation(), ((FieldBreakpoint) o).getLocation());
+    return Objects.equals(getLocation(), ((FieldBreakpoint) o).getLocation());
   }
   @Override
   public int hashCode() {
     return myNode.hashCode() + getKind().hashCode() * 31;
-  }
-  private static boolean eq_he6f5h_a0d0n(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

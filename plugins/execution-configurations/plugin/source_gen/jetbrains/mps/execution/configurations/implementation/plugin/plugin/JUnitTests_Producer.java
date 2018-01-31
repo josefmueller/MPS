@@ -18,6 +18,7 @@ import com.intellij.execution.actions.ConfigurationContext;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -25,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -122,7 +122,7 @@ public class JUnitTests_Producer {
         if (mRef == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && eq_aarvwv_a0a2a3a6h(settings.getModuleReference(), mRef);
+        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && Objects.equals(settings.getModuleReference(), mRef);
       }
       return false;
     }
@@ -130,9 +130,6 @@ public class JUnitTests_Producer {
     @Override
     public JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b clone() {
       return (JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b) super.clone();
-    }
-    private static boolean eq_aarvwv_a0a2a3a6h(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static final class ProducerPart_SModel_f2w1m9_c extends BaseMpsProducer<SModel> {

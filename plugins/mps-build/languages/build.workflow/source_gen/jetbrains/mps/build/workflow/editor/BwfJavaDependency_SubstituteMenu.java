@@ -32,6 +32,7 @@ import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.Objects;
 
 public class BwfJavaDependency_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -115,7 +116,7 @@ public class BwfJavaDependency_SubstituteMenu extends SubstituteMenuBase {
       }).collect(Collectors.toList());
     }
     private boolean filterConcept(SubstituteMenuContext _context, SAbstractConcept concept) {
-      return neq_qn58zx_a0a0b6(concept, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency"));
+      return !(Objects.equals(concept, MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede06eL, "jetbrains.mps.build.workflow.structure.BwfJavaDependency")));
     }
     @NotNull
     @Override
@@ -133,8 +134,5 @@ public class BwfJavaDependency_SubstituteMenu extends SubstituteMenuBase {
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
-  }
-  private static boolean neq_qn58zx_a0a0b6(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

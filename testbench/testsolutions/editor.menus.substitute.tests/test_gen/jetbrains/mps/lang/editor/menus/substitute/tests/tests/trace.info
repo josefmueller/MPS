@@ -4,53 +4,44 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/1179171206859335696">
     <file name="TestSideTransform_TestWrappedItem_Test.java">
-      <node id="1179171206859335696" at="20,51,21,25" concept="8" />
-      <node id="1179171206859335696" at="25,73,26,139" concept="1" />
-      <node id="1179171206859335696" at="32,51,33,72" concept="1" />
-      <node id="1179171206859946879" at="33,72,34,22" concept="1" />
-      <node id="1179171206859755870" at="34,22,35,155" concept="3" />
-      <node id="1179171206859763093" at="35,155,36,192" concept="1" />
-      <node id="1179171206859335698" at="36,192,37,40" concept="1" />
-      <node id="1179171206859806377" at="39,67,40,48" concept="4" />
-      <node id="1179171206859335696" at="17,0,19,0" concept="6" trace="ourParamCache" />
-      <node id="1179171206859335696" at="20,0,23,0" concept="0" trace="TestSideTransform_TestWrappedItem_Test#()V" />
-      <node id="1179171206859806377" at="39,0,42,0" concept="7" trace="eq_qmbq6r_a0a0d0a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1179171206859335696" at="24,0,28,0" concept="2" trace="test_TestSideTransform_TestWrappedItem#()V" />
-      <node id="1179171206859335696" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="1179171206859335696" at="20,51,21,25" />
-      <scope id="1179171206859335696" at="25,73,26,139" />
-      <scope id="1179171206859806377" at="39,67,40,48" />
-      <scope id="1179171206859335696" at="20,0,23,0" />
-      <scope id="1179171206859806377" at="39,0,42,0">
-        <var name="a" id="1179171206859806377" />
-        <var name="b" id="1179171206859806377" />
-      </scope>
-      <scope id="1179171206859335696" at="24,0,28,0" />
-      <scope id="1179171206859335696" at="32,51,37,40">
+      <node id="1179171206859335696" at="21,51,22,25" concept="6" />
+      <node id="1179171206859335696" at="26,73,27,139" concept="1" />
+      <node id="1179171206859335696" at="33,51,34,72" concept="1" />
+      <node id="1179171206859946879" at="34,72,35,22" concept="1" />
+      <node id="1179171206859755870" at="35,22,36,155" concept="3" />
+      <node id="1179171206859763093" at="36,155,37,188" concept="1" />
+      <node id="1179171206859335698" at="37,188,38,40" concept="1" />
+      <node id="1179171206859335696" at="18,0,20,0" concept="5" trace="ourParamCache" />
+      <node id="1179171206859335696" at="21,0,24,0" concept="0" trace="TestSideTransform_TestWrappedItem_Test#()V" />
+      <node id="1179171206859335696" at="25,0,29,0" concept="2" trace="test_TestSideTransform_TestWrappedItem#()V" />
+      <node id="1179171206859335696" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1179171206859335696" at="21,51,22,25" />
+      <scope id="1179171206859335696" at="26,73,27,139" />
+      <scope id="1179171206859335696" at="21,0,24,0" />
+      <scope id="1179171206859335696" at="25,0,29,0" />
+      <scope id="1179171206859335696" at="33,51,38,40">
         <var name="matchingActions" id="1179171206859755871" />
       </scope>
-      <scope id="1179171206859335696" at="31,0,39,0" />
-      <unit id="1179171206859335696" at="29,0,43,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test$TestBody" />
-      <unit id="1179171206859335696" at="15,0,44,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test" />
+      <scope id="1179171206859335696" at="32,0,40,0" />
+      <unit id="1179171206859335696" at="30,0,41,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test$TestBody" />
+      <unit id="1179171206859335696" at="16,0,42,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSideTransform_TestWrappedItem_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/1892012100483626963">
     <file name="TestSubstitute_DuplicationMenu_WrapDifferentMenus_Test.java">
-      <node id="1892012100483626963" at="21,67,22,25" concept="8" />
+      <node id="1892012100483626963" at="21,67,22,25" concept="6" />
       <node id="1892012100483626963" at="26,89,27,155" concept="1" />
       <node id="1892012100483626963" at="33,51,34,72" concept="1" />
       <node id="1892012100483626965" at="34,72,35,71" concept="1" />
       <node id="1892012100483626967" at="35,71,36,100" concept="3" />
       <node id="1892012100483626973" at="36,100,37,110" concept="1" />
       <node id="1892012100483626983" at="37,110,38,82" concept="1" />
-      <node id="1892012100483626963" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="1892012100483626963" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="1892012100483626963" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_WrapDifferentMenus_Test#()V" />
       <node id="1892012100483626963" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_WrapDifferentMenus#()V" />
       <node id="1892012100483626963" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -68,14 +59,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/1892012100483698076">
     <file name="TestSubstitute_DuplicationMenu_IncludeDifferentMenus_Test.java">
-      <node id="1892012100483698076" at="21,70,22,25" concept="8" />
+      <node id="1892012100483698076" at="21,70,22,25" concept="6" />
       <node id="1892012100483698076" at="26,92,27,158" concept="1" />
       <node id="1892012100483698076" at="33,51,34,72" concept="1" />
       <node id="1892012100483698078" at="34,72,35,71" concept="1" />
       <node id="1892012100483698080" at="35,71,36,100" concept="3" />
       <node id="1892012100483698086" at="36,100,37,110" concept="1" />
       <node id="1892012100483698096" at="37,110,38,82" concept="1" />
-      <node id="1892012100483698076" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="1892012100483698076" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="1892012100483698076" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_IncludeDifferentMenus_Test#()V" />
       <node id="1892012100483698076" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_IncludeDifferentMenus#()V" />
       <node id="1892012100483698076" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -93,7 +84,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/2036960817570893914">
     <file name="TestSubstitute_WrapNamedSubstituteMenuFromSubstituteMenu_Test.java">
-      <node id="2036960817570893914" at="20,74,21,25" concept="8" />
+      <node id="2036960817570893914" at="20,74,21,25" concept="6" />
       <node id="2036960817570893914" at="25,96,26,162" concept="1" />
       <node id="2036960817570893914" at="32,51,33,72" concept="1" />
       <node id="2036960817570893922" at="33,72,34,71" concept="1" />
@@ -101,7 +92,7 @@
       <node id="2036960817570900180" at="35,162,36,26" concept="1" />
       <node id="2036960817570900181" at="36,26,37,162" concept="1" />
       <node id="2036960817570893924" at="37,162,38,82" concept="1" />
-      <node id="2036960817570893914" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="2036960817570893914" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="2036960817570893914" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapNamedSubstituteMenuFromSubstituteMenu_Test#()V" />
       <node id="2036960817570893914" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapNamedSubstituteMenuFromSubstituteMenu#()V" />
       <node id="2036960817570893914" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -117,14 +108,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/2935000035774418192">
     <file name="TestSubstituteExceptionWrapMenu_Test.java">
-      <node id="2935000035774418192" at="21,49,22,25" concept="8" />
+      <node id="2935000035774418192" at="21,49,22,25" concept="6" />
       <node id="2935000035774418192" at="26,71,27,137" concept="1" />
       <node id="2935000035774418192" at="33,51,34,53" concept="1" />
       <node id="2935000035774418197" at="34,53,35,71" concept="1" />
       <node id="2935000035774418199" at="35,71,36,100" concept="3" />
       <node id="2935000035774418206" at="36,100,37,110" concept="1" />
       <node id="2935000035774418192" at="41,69,42,53" concept="1" />
-      <node id="2935000035774418192" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="2935000035774418192" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="2935000035774418192" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionWrapMenu_Test#()V" />
       <node id="2935000035774418192" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionWrapMenu#()V" />
       <node id="2935000035774418192" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -147,13 +138,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3021388189909924565">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_Test.java">
-      <node id="3021388189909924565" at="20,83,21,25" concept="8" />
+      <node id="3021388189909924565" at="20,83,21,25" concept="6" />
       <node id="3021388189909924565" at="25,105,26,171" concept="1" />
       <node id="3021388189909924565" at="32,51,33,72" concept="1" />
       <node id="3021388189909924569" at="33,72,34,71" concept="1" />
       <node id="8315441706324361622" at="34,71,35,162" concept="1" />
       <node id="3021388189909924585" at="35,162,36,82" concept="1" />
-      <node id="3021388189909924565" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3021388189909924565" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3021388189909924565" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_Test#()V" />
       <node id="3021388189909924565" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell#()V" />
       <node id="3021388189909924565" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -169,13 +160,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3021388189909924973">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCell_Test.java">
-      <node id="3021388189909924973" at="20,81,21,25" concept="8" />
+      <node id="3021388189909924973" at="20,81,21,25" concept="6" />
       <node id="3021388189909924973" at="25,103,26,169" concept="1" />
       <node id="3021388189909924973" at="32,51,33,72" concept="1" />
       <node id="3021388189909924977" at="33,72,34,71" concept="1" />
       <node id="8315441706324361621" at="34,71,35,162" concept="1" />
       <node id="3021388189909924993" at="35,162,36,82" concept="1" />
-      <node id="3021388189909924973" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3021388189909924973" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3021388189909924973" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCell_Test#()V" />
       <node id="3021388189909924973" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCell#()V" />
       <node id="3021388189909924973" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -191,14 +182,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3262439767570555824">
     <file name="TestTransform_ChildWithConstraints_DifferentContext_CanBeAncestor_Test.java">
-      <node id="3262439767570555824" at="20,83,21,25" concept="8" />
+      <node id="3262439767570555824" at="20,83,21,25" concept="6" />
       <node id="3262439767570555824" at="25,105,26,171" concept="1" />
       <node id="3262439767570555824" at="32,51,33,72" concept="1" />
       <node id="3262439767570555832" at="33,72,34,22" concept="1" />
       <node id="3262439767570555833" at="34,22,35,71" concept="1" />
       <node id="8315441706324361642" at="35,71,36,99" concept="1" />
       <node id="3262439767570555843" at="36,99,37,82" concept="1" />
-      <node id="3262439767570555824" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3262439767570555824" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3262439767570555824" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_DifferentContext_CanBeAncestor_Test#()V" />
       <node id="3262439767570555824" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_DifferentContext_CanBeAncestor#()V" />
       <node id="3262439767570555824" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -214,14 +205,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3262439767570579571">
     <file name="TestTransform_ChildWithConstraints_DifferentContext_CanBeChild_Test.java">
-      <node id="3262439767570579571" at="20,80,21,25" concept="8" />
+      <node id="3262439767570579571" at="20,80,21,25" concept="6" />
       <node id="3262439767570579571" at="25,102,26,168" concept="1" />
       <node id="3262439767570579571" at="32,51,33,72" concept="1" />
       <node id="3262439767570579579" at="33,72,34,22" concept="1" />
       <node id="3262439767570579580" at="34,22,35,71" concept="1" />
       <node id="8315441706324361619" at="35,71,36,99" concept="1" />
       <node id="3262439767570579590" at="36,99,37,82" concept="1" />
-      <node id="3262439767570579571" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3262439767570579571" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3262439767570579571" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_DifferentContext_CanBeChild_Test#()V" />
       <node id="3262439767570579571" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_DifferentContext_CanBeChild#()V" />
       <node id="3262439767570579571" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -237,14 +228,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3262439767570580044">
     <file name="TestTransform_ChildWithConstraints_DifferentContext_CanBeParent_Test.java">
-      <node id="3262439767570580044" at="20,81,21,25" concept="8" />
+      <node id="3262439767570580044" at="20,81,21,25" concept="6" />
       <node id="3262439767570580044" at="25,103,26,169" concept="1" />
       <node id="3262439767570580044" at="32,51,33,72" concept="1" />
       <node id="3262439767570580052" at="33,72,34,22" concept="1" />
       <node id="3262439767570580053" at="34,22,35,71" concept="1" />
       <node id="8315441706324361635" at="35,71,36,99" concept="1" />
       <node id="3262439767570580063" at="36,99,37,82" concept="1" />
-      <node id="3262439767570580044" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3262439767570580044" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3262439767570580044" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_DifferentContext_CanBeParent_Test#()V" />
       <node id="3262439767570580044" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_DifferentContext_CanBeParent#()V" />
       <node id="3262439767570580044" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -260,13 +251,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3676420103152693397">
     <file name="TestSubstituteExceptionReferenceVisibleMatchingText_Test.java">
-      <node id="3676420103152693397" at="19,69,20,25" concept="8" />
+      <node id="3676420103152693397" at="19,69,20,25" concept="6" />
       <node id="3676420103152693397" at="24,91,25,157" concept="1" />
       <node id="3676420103152693397" at="31,51,32,53" concept="1" />
       <node id="3676420103152693402" at="32,53,33,71" concept="1" />
       <node id="3676420103152693404" at="33,71,34,100" concept="3" />
       <node id="3676420103152693410" at="34,100,35,110" concept="1" />
-      <node id="3676420103152693397" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="3676420103152693397" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="3676420103152693397" at="19,0,22,0" concept="0" trace="TestSubstituteExceptionReferenceVisibleMatchingText_Test#()V" />
       <node id="3676420103152693397" at="23,0,27,0" concept="2" trace="test_TestSubstituteExceptionReferenceVisibleMatchingText#()V" />
       <node id="3676420103152693397" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -284,13 +275,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/368966953912091110">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContextAndAttribute_Test.java">
-      <node id="368966953912091110" at="20,99,21,25" concept="8" />
+      <node id="368966953912091110" at="20,99,21,25" concept="6" />
       <node id="368966953912091110" at="25,121,26,187" concept="1" />
       <node id="368966953912091110" at="32,51,33,70" concept="1" />
       <node id="368966953912091116" at="33,70,34,71" concept="1" />
       <node id="8315441706324361653" at="34,71,35,162" concept="1" />
       <node id="368966953912091132" at="35,162,36,82" concept="1" />
-      <node id="368966953912091110" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="368966953912091110" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="368966953912091110" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContextAndAttribute_Test#()V" />
       <node id="368966953912091110" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContextAndAttribute#()V" />
       <node id="368966953912091110" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -306,13 +297,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3765314946602923140">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_ExistingChild_Test.java">
-      <node id="3765314946602923140" at="20,78,21,25" concept="8" />
+      <node id="3765314946602923140" at="20,78,21,25" concept="6" />
       <node id="3765314946602923140" at="25,100,26,166" concept="1" />
       <node id="3765314946602923140" at="32,51,33,72" concept="1" />
       <node id="3765314946602923144" at="33,72,34,71" concept="1" />
       <node id="8315441706324361646" at="34,71,35,162" concept="1" />
       <node id="3765314946602923160" at="35,162,36,82" concept="1" />
-      <node id="3765314946602923140" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3765314946602923140" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3765314946602923140" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_ExistingChild_Test#()V" />
       <node id="3765314946602923140" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_ExistingChild#()V" />
       <node id="3765314946602923140" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -328,11 +319,11 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3765314946602924435">
     <file name="TestSubstitute_Single_SpecializedLink_Enter_EmptyCell_Test.java">
-      <node id="3765314946602924435" at="17,71,18,25" concept="8" />
+      <node id="3765314946602924435" at="17,71,18,25" concept="6" />
       <node id="3765314946602924435" at="22,93,23,159" concept="1" />
       <node id="3765314946602924435" at="29,51,30,72" concept="1" />
       <node id="6920313902514671939" at="30,72,31,69" concept="1" />
-      <node id="3765314946602924435" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="3765314946602924435" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="3765314946602924435" at="17,0,20,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Enter_EmptyCell_Test#()V" />
       <node id="3765314946602924435" at="21,0,25,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Enter_EmptyCell#()V" />
       <node id="3765314946602924435" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
@@ -348,13 +339,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3765314946602966580">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_ExistingChildFromConstantCell_Test.java">
-      <node id="3765314946602966580" at="20,94,21,25" concept="8" />
+      <node id="3765314946602966580" at="20,94,21,25" concept="6" />
       <node id="3765314946602966580" at="25,116,26,182" concept="1" />
       <node id="3765314946602966580" at="32,51,33,72" concept="1" />
       <node id="3765314946602966585" at="33,72,34,71" concept="1" />
       <node id="8315441706324361627" at="34,71,35,162" concept="1" />
       <node id="3765314946602966601" at="35,162,36,82" concept="1" />
-      <node id="3765314946602966580" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3765314946602966580" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3765314946602966580" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_ExistingChildFromConstantCell_Test#()V" />
       <node id="3765314946602966580" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_ExistingChildFromConstantCell#()V" />
       <node id="3765314946602966580" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -370,13 +361,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3893943280296439197">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCellWithCustomMenu_Test.java">
-      <node id="3893943280296439197" at="20,95,21,25" concept="8" />
+      <node id="3893943280296439197" at="20,95,21,25" concept="6" />
       <node id="3893943280296439197" at="25,117,26,183" concept="1" />
       <node id="3893943280296439197" at="32,51,33,72" concept="1" />
       <node id="3893943280296439258" at="33,72,34,71" concept="1" />
       <node id="8315441706324361648" at="34,71,35,162" concept="1" />
       <node id="3893943280296439274" at="35,162,36,82" concept="1" />
-      <node id="3893943280296439197" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3893943280296439197" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3893943280296439197" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCellWithCustomMenu_Test#()V" />
       <node id="3893943280296439197" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_Custom_EmptyCellWithCustomMenu#()V" />
       <node id="3893943280296439197" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -392,13 +383,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3893943280296462940">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_WithCustomMenu_Test.java">
-      <node id="3893943280296462940" at="20,98,21,25" concept="8" />
+      <node id="3893943280296462940" at="20,98,21,25" concept="6" />
       <node id="3893943280296462940" at="25,120,26,186" concept="1" />
       <node id="3893943280296462940" at="32,51,33,72" concept="1" />
       <node id="3893943280296462944" at="33,72,34,71" concept="1" />
       <node id="8315441706324361633" at="34,71,35,162" concept="1" />
       <node id="3893943280296462960" at="35,162,36,82" concept="1" />
-      <node id="3893943280296462940" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="3893943280296462940" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="3893943280296462940" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_WithCustomMenu_Test#()V" />
       <node id="3893943280296462940" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_Custom_EmptyCell_WithCustomMenu#()V" />
       <node id="3893943280296462940" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -414,11 +405,11 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/402206775841930879">
     <file name="TestSubstitute_Multiple_SpecializedLink_Enter_EmptyCell_Test.java">
-      <node id="402206775841930879" at="17,73,18,25" concept="8" />
+      <node id="402206775841930879" at="17,73,18,25" concept="6" />
       <node id="402206775841930879" at="22,95,23,161" concept="1" />
       <node id="402206775841930879" at="29,51,30,70" concept="1" />
       <node id="6920313902514679010" at="30,70,31,69" concept="1" />
-      <node id="402206775841930879" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="402206775841930879" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="402206775841930879" at="17,0,20,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Enter_EmptyCell_Test#()V" />
       <node id="402206775841930879" at="21,0,25,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Enter_EmptyCell#()V" />
       <node id="402206775841930879" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
@@ -434,13 +425,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/402206775841984856">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_EmptyCell_Test.java">
-      <node id="402206775841984856" at="20,76,21,25" concept="8" />
+      <node id="402206775841984856" at="20,76,21,25" concept="6" />
       <node id="402206775841984856" at="25,98,26,164" concept="1" />
       <node id="402206775841984856" at="32,51,33,70" concept="1" />
       <node id="402206775841984860" at="33,70,34,71" concept="1" />
       <node id="8315441706324361634" at="34,71,35,162" concept="1" />
       <node id="402206775841984876" at="35,162,36,82" concept="1" />
-      <node id="402206775841984856" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="402206775841984856" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="402206775841984856" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_EmptyCell_Test#()V" />
       <node id="402206775841984856" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_EmptyCell#()V" />
       <node id="402206775841984856" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -456,13 +447,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/402206775841985364">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChild_Test.java">
-      <node id="402206775841985364" at="20,80,21,25" concept="8" />
+      <node id="402206775841985364" at="20,80,21,25" concept="6" />
       <node id="402206775841985364" at="25,102,26,168" concept="1" />
       <node id="402206775841985364" at="32,51,33,70" concept="1" />
       <node id="402206775841985369" at="33,70,34,71" concept="1" />
       <node id="8315441706324361631" at="34,71,35,162" concept="1" />
       <node id="402206775841985385" at="35,162,36,82" concept="1" />
-      <node id="402206775841985364" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="402206775841985364" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="402206775841985364" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChild_Test#()V" />
       <node id="402206775841985364" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChild#()V" />
       <node id="402206775841985364" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -478,13 +469,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/402206775841986083">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChildFromConstantCell_Test.java">
-      <node id="402206775841986083" at="20,96,21,25" concept="8" />
+      <node id="402206775841986083" at="20,96,21,25" concept="6" />
       <node id="402206775841986083" at="25,118,26,184" concept="1" />
       <node id="402206775841986083" at="32,51,33,70" concept="1" />
       <node id="402206775841986088" at="33,70,34,71" concept="1" />
       <node id="8315441706324361626" at="34,71,35,162" concept="1" />
       <node id="402206775841986104" at="35,162,36,82" concept="1" />
-      <node id="402206775841986083" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="402206775841986083" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="402206775841986083" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChildFromConstantCell_Test#()V" />
       <node id="402206775841986083" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_ExistingChildFromConstantCell#()V" />
       <node id="402206775841986083" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -500,13 +491,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4085424218237929650">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_EmptyCell_Test.java">
-      <node id="4085424218237929650" at="20,74,21,25" concept="8" />
+      <node id="4085424218237929650" at="20,74,21,25" concept="6" />
       <node id="4085424218237929650" at="25,96,26,162" concept="1" />
       <node id="4085424218237929650" at="32,51,33,72" concept="1" />
       <node id="4085424218237929657" at="33,72,34,71" concept="1" />
       <node id="8315441706324361616" at="34,71,35,162" concept="1" />
       <node id="4085424218237929659" at="35,162,36,82" concept="1" />
-      <node id="4085424218237929650" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="4085424218237929650" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="4085424218237929650" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_EmptyCell_Test#()V" />
       <node id="4085424218237929650" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_EmptyCell#()V" />
       <node id="4085424218237929650" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -522,14 +513,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287470431">
     <file name="TestSubstitute_DuplicationMenu_SubconceptMenu_Test.java">
-      <node id="4572725119287470431" at="21,63,22,25" concept="8" />
+      <node id="4572725119287470431" at="21,63,22,25" concept="6" />
       <node id="4572725119287470431" at="26,85,27,151" concept="1" />
       <node id="4572725119287470431" at="33,51,34,72" concept="1" />
       <node id="4572725119287470977" at="34,72,35,71" concept="1" />
       <node id="4572725119287541757" at="35,71,36,100" concept="3" />
       <node id="4572725119287471768" at="36,100,37,110" concept="1" />
       <node id="4572725119287548561" at="37,110,38,82" concept="1" />
-      <node id="4572725119287470431" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="4572725119287470431" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="4572725119287470431" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_SubconceptMenu_Test#()V" />
       <node id="4572725119287470431" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_SubconceptMenu#()V" />
       <node id="4572725119287470431" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -547,14 +538,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287633384">
     <file name="TestSubstitute_DuplicationMenu_IncludeSameMenuTwice_Test.java">
-      <node id="4572725119287633384" at="21,69,22,25" concept="8" />
+      <node id="4572725119287633384" at="21,69,22,25" concept="6" />
       <node id="4572725119287633384" at="26,91,27,157" concept="1" />
       <node id="4572725119287633384" at="33,51,34,72" concept="1" />
       <node id="4572725119287633386" at="34,72,35,71" concept="1" />
       <node id="4572725119287633388" at="35,71,36,100" concept="3" />
       <node id="4572725119287633394" at="36,100,37,110" concept="1" />
       <node id="4572725119287633404" at="37,110,38,82" concept="1" />
-      <node id="4572725119287633384" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="4572725119287633384" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="4572725119287633384" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_IncludeSameMenuTwice_Test#()V" />
       <node id="4572725119287633384" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_IncludeSameMenuTwice#()V" />
       <node id="4572725119287633384" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -572,14 +563,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4572725119287708216">
     <file name="TestSubstitute_DuplicationMenu_WrapSameMenuTwice_Test.java">
-      <node id="4572725119287708216" at="21,66,22,25" concept="8" />
+      <node id="4572725119287708216" at="21,66,22,25" concept="6" />
       <node id="4572725119287708216" at="26,88,27,154" concept="1" />
       <node id="4572725119287708216" at="33,51,34,72" concept="1" />
       <node id="4572725119287708218" at="34,72,35,71" concept="1" />
       <node id="4572725119287708220" at="35,71,36,100" concept="3" />
       <node id="4572725119287708226" at="36,100,37,110" concept="1" />
       <node id="4572725119287708236" at="37,110,38,82" concept="1" />
-      <node id="4572725119287708216" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="4572725119287708216" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="4572725119287708216" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_WrapSameMenuTwice_Test#()V" />
       <node id="4572725119287708216" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_WrapSameMenuTwice#()V" />
       <node id="4572725119287708216" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -597,51 +588,37 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4616565815313123214">
     <file name="TestSubstitute_TestWrappedItemConcept_Test.java">
-      <node id="4616565815313123214" at="20,55,21,25" concept="8" />
-      <node id="4616565815313123214" at="25,77,26,143" concept="1" />
-      <node id="4616565815313123214" at="32,51,33,72" concept="1" />
-      <node id="1179171206860327808" at="33,72,34,85" concept="3" />
-      <node id="1179171206860322974" at="34,85,35,146" concept="3" />
-      <node id="1179171206860322987" at="35,146,36,53" concept="1" />
-      <node id="1179171206860344179" at="36,53,37,55" concept="3" />
-      <node id="1179171206860360014" at="37,55,38,222" concept="1" />
-      <node id="5957872731948250852" at="38,222,39,75" concept="1" />
-      <node id="4616565815313123221" at="39,75,40,71" concept="1" />
-      <node id="1179171206860372654" at="42,67,43,48" concept="4" />
-      <node id="1179171206860322989" at="45,69,46,48" concept="4" />
-      <node id="4616565815313123214" at="17,0,19,0" concept="6" trace="ourParamCache" />
-      <node id="4616565815313123214" at="20,0,23,0" concept="0" trace="TestSubstitute_TestWrappedItemConcept_Test#()V" />
-      <node id="1179171206860372654" at="42,0,45,0" concept="7" trace="eq_s63k5q_a0a0f0a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1179171206860322989" at="45,0,48,0" concept="7" trace="eq_s63k5q_a0a0f0a6_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4616565815313123214" at="24,0,28,0" concept="2" trace="test_TestSubstitute_TestWrappedItemConcept#()V" />
-      <node id="4616565815313123214" at="31,0,42,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="4616565815313123214" at="20,55,21,25" />
-      <scope id="4616565815313123214" at="25,77,26,143" />
-      <scope id="1179171206860372654" at="42,67,43,48" />
-      <scope id="1179171206860322989" at="45,69,46,48" />
-      <scope id="4616565815313123214" at="20,0,23,0" />
-      <scope id="1179171206860372654" at="42,0,45,0">
-        <var name="a" id="1179171206860372654" />
-        <var name="b" id="1179171206860372654" />
-      </scope>
-      <scope id="1179171206860322989" at="45,0,48,0">
-        <var name="a" id="1179171206860322989" />
-        <var name="b" id="1179171206860322989" />
-      </scope>
-      <scope id="4616565815313123214" at="24,0,28,0" />
-      <scope id="4616565815313123214" at="32,51,40,71">
+      <node id="4616565815313123214" at="21,55,22,25" concept="6" />
+      <node id="4616565815313123214" at="26,77,27,143" concept="1" />
+      <node id="4616565815313123214" at="33,51,34,72" concept="1" />
+      <node id="1179171206860327808" at="34,72,35,85" concept="3" />
+      <node id="1179171206860322974" at="35,85,36,146" concept="3" />
+      <node id="1179171206860322987" at="36,146,37,53" concept="1" />
+      <node id="1179171206860344179" at="37,53,38,55" concept="3" />
+      <node id="1179171206860360014" at="38,55,39,212" concept="1" />
+      <node id="5957872731948250852" at="39,212,40,75" concept="1" />
+      <node id="4616565815313123221" at="40,75,41,71" concept="1" />
+      <node id="4616565815313123214" at="18,0,20,0" concept="5" trace="ourParamCache" />
+      <node id="4616565815313123214" at="21,0,24,0" concept="0" trace="TestSubstitute_TestWrappedItemConcept_Test#()V" />
+      <node id="4616565815313123214" at="25,0,29,0" concept="2" trace="test_TestSubstitute_TestWrappedItemConcept#()V" />
+      <node id="4616565815313123214" at="32,0,43,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="4616565815313123214" at="21,55,22,25" />
+      <scope id="4616565815313123214" at="26,77,27,143" />
+      <scope id="4616565815313123214" at="21,0,24,0" />
+      <scope id="4616565815313123214" at="25,0,29,0" />
+      <scope id="4616565815313123214" at="33,51,41,71">
         <var name="action" id="1179171206860344180" />
         <var name="matchingActions" id="1179171206860322975" />
         <var name="matchingText" id="1179171206860327809" />
       </scope>
-      <scope id="4616565815313123214" at="31,0,42,0" />
-      <unit id="4616565815313123214" at="29,0,49,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemConcept_Test$TestBody" />
-      <unit id="4616565815313123214" at="15,0,50,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemConcept_Test" />
+      <scope id="4616565815313123214" at="32,0,43,0" />
+      <unit id="4616565815313123214" at="30,0,44,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemConcept_Test$TestBody" />
+      <unit id="4616565815313123214" at="16,0,45,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemConcept_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4647688914604968764">
     <file name="TestSubstitute_WrapDefaultSubstituteMenuFromTransformMenu_Test.java">
-      <node id="4647688914604968764" at="20,75,21,25" concept="8" />
+      <node id="4647688914604968764" at="20,75,21,25" concept="6" />
       <node id="4647688914604968764" at="25,97,26,163" concept="1" />
       <node id="4647688914604968764" at="32,51,33,72" concept="1" />
       <node id="8292814565107182795" at="33,72,34,71" concept="1" />
@@ -649,7 +626,7 @@
       <node id="2036960817570673957" at="35,162,36,28" concept="1" />
       <node id="2036960817570670956" at="36,28,37,162" concept="1" />
       <node id="8292814565107273365" at="37,162,38,82" concept="1" />
-      <node id="4647688914604968764" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="4647688914604968764" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="4647688914604968764" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapDefaultSubstituteMenuFromTransformMenu_Test#()V" />
       <node id="4647688914604968764" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapDefaultSubstituteMenuFromTransformMenu#()V" />
       <node id="4647688914604968764" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -665,14 +642,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/4695456347262482770">
     <file name="TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu_Test.java">
-      <node id="4695456347262482770" at="21,78,22,25" concept="8" />
+      <node id="4695456347262482770" at="21,78,22,25" concept="6" />
       <node id="4695456347262482770" at="26,100,27,166" concept="1" />
       <node id="4695456347262482770" at="33,51,34,72" concept="1" />
       <node id="4695456347262482772" at="34,72,35,71" concept="1" />
       <node id="4695456347262482774" at="35,71,36,100" concept="3" />
       <node id="4695456347262482780" at="36,100,37,110" concept="1" />
       <node id="4695456347262482790" at="37,110,38,82" concept="1" />
-      <node id="4695456347262482770" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="4695456347262482770" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="4695456347262482770" at="21,0,24,0" concept="0" trace="TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu_Test#()V" />
       <node id="4695456347262482770" at="25,0,29,0" concept="2" trace="test_TestSubstitute_DuplicationMenu_IncludeDefaultMenuAndNullMenu#()V" />
       <node id="4695456347262482770" at="32,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -690,14 +667,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/5476527677618977236">
     <file name="TestSubstitute_Subconcepts_Test.java">
-      <node id="5476527677618977236" at="20,44,21,25" concept="8" />
+      <node id="5476527677618977236" at="20,44,21,25" concept="6" />
       <node id="5476527677618977236" at="25,66,26,132" concept="1" />
       <node id="5476527677618977236" at="32,51,33,72" concept="1" />
       <node id="5476527677618977241" at="33,72,34,71" concept="1" />
       <node id="8315441706324361660" at="34,71,35,85" concept="1" />
       <node id="8315441706324361656" at="35,85,36,99" concept="1" />
       <node id="5476527677619000301" at="36,99,37,82" concept="1" />
-      <node id="5476527677618977236" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="5476527677618977236" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="5476527677618977236" at="20,0,23,0" concept="0" trace="TestSubstitute_Subconcepts_Test#()V" />
       <node id="5476527677618977236" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Subconcepts#()V" />
       <node id="5476527677618977236" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -713,14 +690,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/5511779000991239831">
     <file name="TestSubstituteExceptionSubconceptsMenu_Test.java">
-      <node id="5511779000991239831" at="21,56,22,25" concept="8" />
+      <node id="5511779000991239831" at="21,56,22,25" concept="6" />
       <node id="5511779000991239831" at="26,78,27,144" concept="1" />
       <node id="5511779000991239831" at="33,51,34,53" concept="1" />
       <node id="5511779000991239836" at="34,53,35,71" concept="1" />
       <node id="5511779000991239838" at="35,71,36,100" concept="3" />
       <node id="5511779000991239844" at="36,100,37,110" concept="1" />
       <node id="5511779000991239831" at="41,69,42,53" concept="1" />
-      <node id="5511779000991239831" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="5511779000991239831" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="5511779000991239831" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionSubconceptsMenu_Test#()V" />
       <node id="5511779000991239831" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionSubconceptsMenu#()V" />
       <node id="5511779000991239831" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -743,56 +720,42 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/5957872731948642291">
     <file name="TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test.java">
-      <node id="5957872731948642291" at="20,74,21,25" concept="8" />
-      <node id="5957872731948642291" at="25,96,26,162" concept="1" />
-      <node id="5957872731948642291" at="32,51,33,72" concept="1" />
-      <node id="1179171206860373783" at="33,72,34,72" concept="3" />
-      <node id="1179171206860373787" at="34,72,35,146" concept="3" />
-      <node id="1179171206860373800" at="35,146,36,53" concept="1" />
-      <node id="1179171206860373806" at="36,53,37,55" concept="3" />
-      <node id="1179171206860373813" at="37,55,38,212" concept="1" />
-      <node id="1179171206860373778" at="38,212,39,0" concept="5" />
-      <node id="5957872731948642293" at="39,0,40,62" concept="1" />
-      <node id="5957872731948642294" at="40,62,41,71" concept="1" />
-      <node id="1179171206860373815" at="43,67,44,48" concept="4" />
-      <node id="1179171206860373821" at="46,69,47,48" concept="4" />
-      <node id="5957872731948642291" at="17,0,19,0" concept="6" trace="ourParamCache" />
-      <node id="5957872731948642291" at="20,0,23,0" concept="0" trace="TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test#()V" />
-      <node id="1179171206860373815" at="43,0,46,0" concept="7" trace="eq_hlg04n_a0a0f0a6#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="1179171206860373821" at="46,0,49,0" concept="7" trace="eq_hlg04n_a0a0f0a6_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="5957872731948642291" at="24,0,28,0" concept="2" trace="test_TestSubstitute_TestWrappedItemMatchingAndDescriptionText#()V" />
-      <node id="5957872731948642291" at="31,0,43,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="5957872731948642291" at="20,74,21,25" />
-      <scope id="5957872731948642291" at="25,96,26,162" />
-      <scope id="1179171206860373815" at="43,67,44,48" />
-      <scope id="1179171206860373821" at="46,69,47,48" />
-      <scope id="5957872731948642291" at="20,0,23,0" />
-      <scope id="1179171206860373815" at="43,0,46,0">
-        <var name="a" id="1179171206860373815" />
-        <var name="b" id="1179171206860373815" />
-      </scope>
-      <scope id="1179171206860373821" at="46,0,49,0">
-        <var name="a" id="1179171206860373821" />
-        <var name="b" id="1179171206860373821" />
-      </scope>
-      <scope id="5957872731948642291" at="24,0,28,0" />
-      <scope id="5957872731948642291" at="32,51,41,71">
+      <node id="5957872731948642291" at="21,74,22,25" concept="6" />
+      <node id="5957872731948642291" at="26,96,27,162" concept="1" />
+      <node id="5957872731948642291" at="33,51,34,72" concept="1" />
+      <node id="1179171206860373783" at="34,72,35,72" concept="3" />
+      <node id="1179171206860373787" at="35,72,36,146" concept="3" />
+      <node id="1179171206860373800" at="36,146,37,53" concept="1" />
+      <node id="1179171206860373806" at="37,53,38,55" concept="3" />
+      <node id="1179171206860373813" at="38,55,39,202" concept="1" />
+      <node id="1179171206860373778" at="39,202,40,0" concept="4" />
+      <node id="5957872731948642293" at="40,0,41,62" concept="1" />
+      <node id="5957872731948642294" at="41,62,42,71" concept="1" />
+      <node id="5957872731948642291" at="18,0,20,0" concept="5" trace="ourParamCache" />
+      <node id="5957872731948642291" at="21,0,24,0" concept="0" trace="TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test#()V" />
+      <node id="5957872731948642291" at="25,0,29,0" concept="2" trace="test_TestSubstitute_TestWrappedItemMatchingAndDescriptionText#()V" />
+      <node id="5957872731948642291" at="32,0,44,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5957872731948642291" at="21,74,22,25" />
+      <scope id="5957872731948642291" at="26,96,27,162" />
+      <scope id="5957872731948642291" at="21,0,24,0" />
+      <scope id="5957872731948642291" at="25,0,29,0" />
+      <scope id="5957872731948642291" at="33,51,42,71">
         <var name="action" id="1179171206860373807" />
         <var name="matchingActions" id="1179171206860373788" />
         <var name="matchingText" id="1179171206860373784" />
       </scope>
-      <scope id="5957872731948642291" at="31,0,43,0" />
-      <unit id="5957872731948642291" at="29,0,50,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test$TestBody" />
-      <unit id="5957872731948642291" at="15,0,51,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test" />
+      <scope id="5957872731948642291" at="32,0,44,0" />
+      <unit id="5957872731948642291" at="30,0,45,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test$TestBody" />
+      <unit id="5957872731948642291" at="16,0,46,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_TestWrappedItemMatchingAndDescriptionText_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/6920313902515134747">
     <file name="TestSubstitute_Multiple_SpecializedLink_Enter_ExistingChild_Test.java">
-      <node id="6920313902515134747" at="17,77,18,25" concept="8" />
+      <node id="6920313902515134747" at="17,77,18,25" concept="6" />
       <node id="6920313902515134747" at="22,99,23,165" concept="1" />
       <node id="6920313902515134747" at="29,51,30,72" concept="1" />
       <node id="6920313902515134751" at="30,72,31,69" concept="1" />
-      <node id="6920313902515134747" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="6920313902515134747" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="6920313902515134747" at="17,0,20,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Enter_ExistingChild_Test#()V" />
       <node id="6920313902515134747" at="21,0,25,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Enter_ExistingChild#()V" />
       <node id="6920313902515134747" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
@@ -808,13 +771,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939849524972">
     <file name="TestSubstitute_SubstituteChildWithConstraints_CanBeParent_Test.java">
-      <node id="705057939849524972" at="20,75,21,25" concept="8" />
+      <node id="705057939849524972" at="20,75,21,25" concept="6" />
       <node id="705057939849524972" at="25,97,26,163" concept="1" />
       <node id="705057939849524972" at="32,51,33,70" concept="1" />
       <node id="705057939849582795" at="33,70,34,71" concept="1" />
       <node id="8315441706324361647" at="34,71,35,99" concept="1" />
       <node id="705057939849587341" at="35,99,36,82" concept="1" />
-      <node id="705057939849524972" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939849524972" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939849524972" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_CanBeParent_Test#()V" />
       <node id="705057939849524972" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_CanBeParent#()V" />
       <node id="705057939849524972" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -830,13 +793,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939849690926">
     <file name="TestSubstitute_SubstituteChildWithConstraints_CanBeAncestor_Test.java">
-      <node id="705057939849690926" at="20,77,21,25" concept="8" />
+      <node id="705057939849690926" at="20,77,21,25" concept="6" />
       <node id="705057939849690926" at="25,99,26,165" concept="1" />
       <node id="705057939849690926" at="32,51,33,70" concept="1" />
       <node id="705057939849690933" at="33,70,34,71" concept="1" />
       <node id="8315441706324361649" at="34,71,35,99" concept="1" />
       <node id="705057939849690943" at="35,99,36,82" concept="1" />
-      <node id="705057939849690926" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939849690926" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939849690926" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_CanBeAncestor_Test#()V" />
       <node id="705057939849690926" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_CanBeAncestor#()V" />
       <node id="705057939849690926" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -852,13 +815,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939849831006">
     <file name="TestSubstitute_SubstituteChildWithConstraints_CanBeChild_Test.java">
-      <node id="705057939849831006" at="20,74,21,25" concept="8" />
+      <node id="705057939849831006" at="20,74,21,25" concept="6" />
       <node id="705057939849831006" at="25,96,26,162" concept="1" />
       <node id="705057939849831006" at="32,51,33,70" concept="1" />
       <node id="705057939849831013" at="33,70,34,71" concept="1" />
       <node id="8315441706324361628" at="34,71,35,99" concept="1" />
       <node id="705057939849831023" at="35,99,36,82" concept="1" />
-      <node id="705057939849831006" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939849831006" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939849831006" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_CanBeChild_Test#()V" />
       <node id="705057939849831006" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_CanBeChild#()V" />
       <node id="705057939849831006" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -874,13 +837,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939849904531">
     <file name="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeParent_Test.java">
-      <node id="705057939849904531" at="20,83,21,25" concept="8" />
+      <node id="705057939849904531" at="20,83,21,25" concept="6" />
       <node id="705057939849904531" at="25,105,26,171" concept="1" />
       <node id="705057939849904531" at="32,51,33,70" concept="1" />
       <node id="705057939849904538" at="33,70,34,71" concept="1" />
       <node id="8315441706324361629" at="34,71,35,99" concept="1" />
       <node id="705057939849904548" at="35,99,36,82" concept="1" />
-      <node id="705057939849904531" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939849904531" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939849904531" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeParent_Test#()V" />
       <node id="705057939849904531" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeParent#()V" />
       <node id="705057939849904531" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -896,13 +859,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939850082376">
     <file name="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeAncestor_Test.java">
-      <node id="705057939850082376" at="20,85,21,25" concept="8" />
+      <node id="705057939850082376" at="20,85,21,25" concept="6" />
       <node id="705057939850082376" at="25,107,26,173" concept="1" />
       <node id="705057939850082376" at="32,51,33,70" concept="1" />
       <node id="705057939850082384" at="33,70,34,71" concept="1" />
       <node id="8315441706324361632" at="34,71,35,99" concept="1" />
       <node id="705057939850082394" at="35,99,36,82" concept="1" />
-      <node id="705057939850082376" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939850082376" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939850082376" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeAncestor_Test#()V" />
       <node id="705057939850082376" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeAncestor#()V" />
       <node id="705057939850082376" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -918,13 +881,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939850083095">
     <file name="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeChild_Test.java">
-      <node id="705057939850083095" at="20,82,21,25" concept="8" />
+      <node id="705057939850083095" at="20,82,21,25" concept="6" />
       <node id="705057939850083095" at="25,104,26,170" concept="1" />
       <node id="705057939850083095" at="32,51,33,70" concept="1" />
       <node id="705057939850083103" at="33,70,34,71" concept="1" />
       <node id="8315441706324361623" at="34,71,35,99" concept="1" />
       <node id="705057939850083113" at="35,99,36,82" concept="1" />
-      <node id="705057939850083095" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939850083095" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939850083095" at="20,0,23,0" concept="0" trace="TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeChild_Test#()V" />
       <node id="705057939850083095" at="24,0,28,0" concept="2" trace="test_TestSubstitute_SubstituteChildWithConstraints_Wrapper_CanBeChild#()V" />
       <node id="705057939850083095" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -940,14 +903,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939850090903">
     <file name="TestTransform_ChildWithConstraints_CanBeChild_Test.java">
-      <node id="705057939850090903" at="20,63,21,25" concept="8" />
+      <node id="705057939850090903" at="20,63,21,25" concept="6" />
       <node id="705057939850090903" at="25,85,26,151" concept="1" />
       <node id="705057939850090903" at="32,51,33,70" concept="1" />
       <node id="705057939850307605" at="33,70,34,22" concept="1" />
       <node id="705057939850090910" at="34,22,35,71" concept="1" />
       <node id="8315441706324361654" at="35,71,36,99" concept="1" />
       <node id="705057939850090920" at="36,99,37,82" concept="1" />
-      <node id="705057939850090903" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939850090903" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939850090903" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_CanBeChild_Test#()V" />
       <node id="705057939850090903" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_CanBeChild#()V" />
       <node id="705057939850090903" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -963,14 +926,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939850159922">
     <file name="TestTransform_ChildWithConstraints_CanBeParent_Test.java">
-      <node id="705057939850159922" at="20,64,21,25" concept="8" />
+      <node id="705057939850159922" at="20,64,21,25" concept="6" />
       <node id="705057939850159922" at="25,86,26,152" concept="1" />
       <node id="705057939850159922" at="32,51,33,70" concept="1" />
       <node id="705057939850307813" at="33,70,34,22" concept="1" />
       <node id="705057939850159932" at="34,22,35,71" concept="1" />
       <node id="8315441706324361658" at="35,71,36,99" concept="1" />
       <node id="705057939850159942" at="36,99,37,82" concept="1" />
-      <node id="705057939850159922" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939850159922" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939850159922" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_CanBeParent_Test#()V" />
       <node id="705057939850159922" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_CanBeParent#()V" />
       <node id="705057939850159922" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -986,14 +949,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/705057939850159999">
     <file name="TestTransform_ChildWithConstraints_CanBeAncestor_Test.java">
-      <node id="705057939850159999" at="20,66,21,25" concept="8" />
+      <node id="705057939850159999" at="20,66,21,25" concept="6" />
       <node id="705057939850159999" at="25,88,26,154" concept="1" />
       <node id="705057939850159999" at="32,51,33,70" concept="1" />
       <node id="705057939850299144" at="33,70,34,22" concept="1" />
       <node id="705057939850160009" at="34,22,35,71" concept="1" />
       <node id="8315441706324361643" at="35,71,36,99" concept="1" />
       <node id="705057939850160019" at="36,99,37,82" concept="1" />
-      <node id="705057939850159999" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="705057939850159999" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="705057939850159999" at="20,0,23,0" concept="0" trace="TestTransform_ChildWithConstraints_CanBeAncestor_Test#()V" />
       <node id="705057939850159999" at="24,0,28,0" concept="2" trace="test_TestTransform_ChildWithConstraints_CanBeAncestor#()V" />
       <node id="705057939850159999" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -1009,14 +972,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420283722192">
     <file name="TestSubstituteExceptionActionCanSubstitute_Test.java">
-      <node id="7153261420283722192" at="21,60,22,25" concept="8" />
+      <node id="7153261420283722192" at="21,60,22,25" concept="6" />
       <node id="7153261420283722192" at="26,82,27,148" concept="1" />
       <node id="7153261420283722192" at="33,51,34,53" concept="1" />
       <node id="7153261420283903322" at="34,53,35,71" concept="1" />
       <node id="7153261420283915528" at="35,71,36,100" concept="3" />
       <node id="7153261420283916151" at="36,100,37,110" concept="1" />
       <node id="7153261420283722192" at="41,69,42,53" concept="1" />
-      <node id="7153261420283722192" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420283722192" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420283722192" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionActionCanSubstitute_Test#()V" />
       <node id="7153261420283722192" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionActionCanSubstitute#()V" />
       <node id="7153261420283722192" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1039,13 +1002,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420283929384">
     <file name="TestSubstituteExceptionActionDescriptionText_Test.java">
-      <node id="7153261420283929384" at="19,62,20,25" concept="8" />
+      <node id="7153261420283929384" at="19,62,20,25" concept="6" />
       <node id="7153261420283929384" at="24,84,25,150" concept="1" />
       <node id="7153261420283929384" at="31,51,32,53" concept="1" />
       <node id="7153261420283929388" at="32,53,33,71" concept="1" />
       <node id="7153261420283929390" at="33,71,34,100" concept="3" />
       <node id="7153261420283929396" at="34,100,35,110" concept="1" />
-      <node id="7153261420283929384" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420283929384" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="7153261420283929384" at="19,0,22,0" concept="0" trace="TestSubstituteExceptionActionDescriptionText_Test#()V" />
       <node id="7153261420283929384" at="23,0,27,0" concept="2" trace="test_TestSubstituteExceptionActionDescriptionText#()V" />
       <node id="7153261420283929384" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1063,13 +1026,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284017093">
     <file name="TestSubstituteExceptionActionIcon_Test.java">
-      <node id="7153261420284017093" at="19,51,20,25" concept="8" />
+      <node id="7153261420284017093" at="19,51,20,25" concept="6" />
       <node id="7153261420284017093" at="24,73,25,139" concept="1" />
       <node id="7153261420284017093" at="31,51,32,53" concept="1" />
       <node id="7153261420284017097" at="32,53,33,71" concept="1" />
       <node id="7153261420284017099" at="33,71,34,100" concept="3" />
       <node id="7153261420284017105" at="34,100,35,110" concept="1" />
-      <node id="7153261420284017093" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284017093" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284017093" at="19,0,22,0" concept="0" trace="TestSubstituteExceptionActionIcon_Test#()V" />
       <node id="7153261420284017093" at="23,0,27,0" concept="2" trace="test_TestSubstituteExceptionActionIcon#()V" />
       <node id="7153261420284017093" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1087,14 +1050,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284025030">
     <file name="TestSubstituteExceptionActionType_Test.java">
-      <node id="7153261420284025030" at="21,51,22,25" concept="8" />
+      <node id="7153261420284025030" at="21,51,22,25" concept="6" />
       <node id="7153261420284025030" at="26,73,27,139" concept="1" />
       <node id="7153261420284025030" at="33,51,34,53" concept="1" />
       <node id="7153261420284025034" at="34,53,35,76" concept="1" />
       <node id="7153261420284025036" at="35,76,36,100" concept="3" />
       <node id="7153261420284025042" at="36,100,37,110" concept="1" />
       <node id="7153261420284025030" at="41,69,42,53" concept="1" />
-      <node id="7153261420284025030" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284025030" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284025030" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionActionType_Test#()V" />
       <node id="7153261420284025030" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionActionType#()V" />
       <node id="7153261420284025030" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1117,14 +1080,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284032463">
     <file name="TestSubstituteExceptionActionMatchingText_Test.java">
-      <node id="7153261420284032463" at="21,59,22,25" concept="8" />
+      <node id="7153261420284032463" at="21,59,22,25" concept="6" />
       <node id="7153261420284032463" at="26,81,27,147" concept="1" />
       <node id="7153261420284032463" at="33,51,34,53" concept="1" />
       <node id="7153261420284032467" at="34,53,35,71" concept="1" />
       <node id="7153261420284032469" at="35,71,36,100" concept="3" />
       <node id="7153261420284032475" at="36,100,37,110" concept="1" />
       <node id="7153261420284032463" at="41,69,42,53" concept="1" />
-      <node id="7153261420284032463" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284032463" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284032463" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionActionMatchingText_Test#()V" />
       <node id="7153261420284032463" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionActionMatchingText#()V" />
       <node id="7153261420284032463" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1147,14 +1110,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284040985">
     <file name="TestSubstituteExceptionConceptList_Test.java">
-      <node id="7153261420284040985" at="21,52,22,25" concept="8" />
+      <node id="7153261420284040985" at="21,52,22,25" concept="6" />
       <node id="7153261420284040985" at="26,74,27,140" concept="1" />
       <node id="7153261420284040985" at="33,51,34,53" concept="1" />
       <node id="7153261420284040989" at="34,53,35,71" concept="1" />
       <node id="7153261420284040991" at="35,71,36,100" concept="3" />
       <node id="7153261420284040997" at="36,100,37,110" concept="1" />
       <node id="7153261420284040985" at="41,69,42,53" concept="1" />
-      <node id="7153261420284040985" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284040985" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284040985" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionConceptList_Test#()V" />
       <node id="7153261420284040985" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionConceptList#()V" />
       <node id="7153261420284040985" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1177,14 +1140,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284058097">
     <file name="TestSubstituteExceptionGroup_Test.java">
-      <node id="7153261420284058097" at="21,46,22,25" concept="8" />
+      <node id="7153261420284058097" at="21,46,22,25" concept="6" />
       <node id="7153261420284058097" at="26,68,27,134" concept="1" />
       <node id="7153261420284058097" at="33,51,34,53" concept="1" />
       <node id="7153261420284058101" at="34,53,35,71" concept="1" />
       <node id="7153261420284058103" at="35,71,36,100" concept="3" />
       <node id="7153261420284058109" at="36,100,37,110" concept="1" />
       <node id="7153261420284058097" at="41,69,42,53" concept="1" />
-      <node id="7153261420284058097" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284058097" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284058097" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionGroup_Test#()V" />
       <node id="7153261420284058097" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionGroup#()V" />
       <node id="7153261420284058097" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1207,14 +1170,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284064889">
     <file name="TestSubstituteExceptionIncludeMenu_Test.java">
-      <node id="7153261420284064889" at="21,52,22,25" concept="8" />
+      <node id="7153261420284064889" at="21,52,22,25" concept="6" />
       <node id="7153261420284064889" at="26,74,27,140" concept="1" />
       <node id="7153261420284064889" at="33,51,34,53" concept="1" />
       <node id="7153261420284064893" at="34,53,35,71" concept="1" />
       <node id="7153261420284064895" at="35,71,36,100" concept="3" />
       <node id="7153261420284064901" at="36,100,37,110" concept="1" />
       <node id="7153261420284064889" at="41,69,42,53" concept="1" />
-      <node id="7153261420284064889" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284064889" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284064889" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionIncludeMenu_Test#()V" />
       <node id="7153261420284064889" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionIncludeMenu#()V" />
       <node id="7153261420284064889" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1237,14 +1200,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284073353">
     <file name="TestSubstituteExceptionParameterized_Test.java">
-      <node id="7153261420284073353" at="21,54,22,25" concept="8" />
+      <node id="7153261420284073353" at="21,54,22,25" concept="6" />
       <node id="7153261420284073353" at="26,76,27,142" concept="1" />
       <node id="7153261420284073353" at="33,51,34,53" concept="1" />
       <node id="7153261420284073357" at="34,53,35,71" concept="1" />
       <node id="7153261420284073359" at="35,71,36,100" concept="3" />
       <node id="7153261420284073365" at="36,100,37,110" concept="1" />
       <node id="7153261420284073353" at="41,69,42,53" concept="1" />
-      <node id="7153261420284073353" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284073353" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284073353" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionParameterized_Test#()V" />
       <node id="7153261420284073353" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionParameterized#()V" />
       <node id="7153261420284073353" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1267,13 +1230,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284081817">
     <file name="TestSubstituteExceptionReferenceDescriptionText_Test.java">
-      <node id="7153261420284081817" at="19,65,20,25" concept="8" />
+      <node id="7153261420284081817" at="19,65,20,25" concept="6" />
       <node id="7153261420284081817" at="24,87,25,153" concept="1" />
       <node id="7153261420284081817" at="31,51,32,53" concept="1" />
       <node id="7153261420284081821" at="32,53,33,71" concept="1" />
       <node id="7153261420284081823" at="33,71,34,100" concept="3" />
       <node id="7153261420284081829" at="34,100,35,110" concept="1" />
-      <node id="7153261420284081817" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284081817" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284081817" at="19,0,22,0" concept="0" trace="TestSubstituteExceptionReferenceDescriptionText_Test#()V" />
       <node id="7153261420284081817" at="23,0,27,0" concept="2" trace="test_TestSubstituteExceptionReferenceDescriptionText#()V" />
       <node id="7153261420284081817" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1291,14 +1254,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284101272">
     <file name="TestSubstituteExceptionReferenceMatchingText_Test.java">
-      <node id="7153261420284101272" at="21,62,22,25" concept="8" />
+      <node id="7153261420284101272" at="21,62,22,25" concept="6" />
       <node id="7153261420284101272" at="26,84,27,150" concept="1" />
       <node id="7153261420284101272" at="33,51,34,53" concept="1" />
       <node id="7153261420284101276" at="34,53,35,71" concept="1" />
       <node id="7153261420284101278" at="35,71,36,100" concept="3" />
       <node id="7153261420284101284" at="36,100,37,110" concept="1" />
       <node id="7153261420284101272" at="41,69,42,53" concept="1" />
-      <node id="7153261420284101272" at="18,0,20,0" concept="6" trace="ourParamCache" />
+      <node id="7153261420284101272" at="18,0,20,0" concept="5" trace="ourParamCache" />
       <node id="7153261420284101272" at="21,0,24,0" concept="0" trace="TestSubstituteExceptionReferenceMatchingText_Test#()V" />
       <node id="7153261420284101272" at="25,0,29,0" concept="2" trace="test_TestSubstituteExceptionReferenceMatchingText#()V" />
       <node id="7153261420284101272" at="40,0,44,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
@@ -1321,7 +1284,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7577899271409203727">
     <file name="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromSubstituteMenu_Test.java">
-      <node id="7577899271409203727" at="20,88,21,25" concept="8" />
+      <node id="7577899271409203727" at="20,88,21,25" concept="6" />
       <node id="7577899271409203727" at="25,110,26,176" concept="1" />
       <node id="7577899271409203727" at="32,51,33,72" concept="1" />
       <node id="7577899271409203735" at="33,72,34,71" concept="1" />
@@ -1329,7 +1292,7 @@
       <node id="7577899271409203751" at="35,162,36,28" concept="1" />
       <node id="7577899271409203752" at="36,28,37,162" concept="1" />
       <node id="7577899271409203766" at="37,162,38,82" concept="1" />
-      <node id="7577899271409203727" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="7577899271409203727" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="7577899271409203727" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromSubstituteMenu_Test#()V" />
       <node id="7577899271409203727" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromSubstituteMenu#()V" />
       <node id="7577899271409203727" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -1345,7 +1308,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7577899271409419912">
     <file name="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromTransformMenu_Test.java">
-      <node id="7577899271409419912" at="20,87,21,25" concept="8" />
+      <node id="7577899271409419912" at="20,87,21,25" concept="6" />
       <node id="7577899271409419912" at="25,109,26,175" concept="1" />
       <node id="7577899271409419912" at="32,51,33,72" concept="1" />
       <node id="7577899271409419919" at="33,72,34,71" concept="1" />
@@ -1353,7 +1316,7 @@
       <node id="7577899271409419935" at="35,162,36,28" concept="1" />
       <node id="7577899271409419936" at="36,28,37,162" concept="1" />
       <node id="7577899271409419950" at="37,162,38,82" concept="1" />
-      <node id="7577899271409419912" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="7577899271409419912" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="7577899271409419912" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromTransformMenu_Test#()V" />
       <node id="7577899271409419912" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromTransformMenu#()V" />
       <node id="7577899271409419912" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -1369,14 +1332,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7688582785734921695">
     <file name="TestSubstitute_Multiple_SpecializedLink_Complete_PrimaryReplaceGroup_Test.java">
-      <node id="7688582785734921695" at="20,86,21,25" concept="8" />
+      <node id="7688582785734921695" at="20,86,21,25" concept="6" />
       <node id="7688582785734921695" at="25,108,26,174" concept="1" />
       <node id="7688582785734921695" at="32,51,33,72" concept="1" />
       <node id="7688582785734921700" at="33,72,34,71" concept="1" />
       <node id="8315441706324361659" at="34,71,35,162" concept="1" />
       <node id="7688582785735229718" at="35,162,36,28" concept="1" />
       <node id="7688582785734921716" at="36,28,37,82" concept="1" />
-      <node id="7688582785734921695" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="7688582785734921695" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="7688582785734921695" at="20,0,23,0" concept="0" trace="TestSubstitute_Multiple_SpecializedLink_Complete_PrimaryReplaceGroup_Test#()V" />
       <node id="7688582785734921695" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Multiple_SpecializedLink_Complete_PrimaryReplaceGroup#()V" />
       <node id="7688582785734921695" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -1392,14 +1355,14 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7688582785735223465">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_PrimaryReplaceGroup_Test.java">
-      <node id="7688582785735223465" at="20,84,21,25" concept="8" />
+      <node id="7688582785735223465" at="20,84,21,25" concept="6" />
       <node id="7688582785735223465" at="25,106,26,172" concept="1" />
       <node id="7688582785735223465" at="32,51,33,72" concept="1" />
       <node id="7688582785735223469" at="33,72,34,71" concept="1" />
       <node id="8315441706324361614" at="34,71,35,162" concept="1" />
       <node id="7688582785735230189" at="35,162,36,28" concept="1" />
       <node id="7688582785735223485" at="36,28,37,82" concept="1" />
-      <node id="7688582785735223465" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="7688582785735223465" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="7688582785735223465" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_PrimaryReplaceGroup_Test#()V" />
       <node id="7688582785735223465" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_PrimaryReplaceGroup#()V" />
       <node id="7688582785735223465" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -1415,13 +1378,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8032286684682627347">
     <file name="TestSubstitute_Group_Test.java">
-      <node id="8032286684682627347" at="19,38,20,25" concept="8" />
+      <node id="8032286684682627347" at="19,38,20,25" concept="6" />
       <node id="8032286684682627347" at="24,60,25,126" concept="1" />
       <node id="8032286684682627347" at="31,51,32,72" concept="1" />
       <node id="8032286684682627354" at="32,72,33,71" concept="1" />
       <node id="8032286684682627356" at="33,71,34,25" concept="1" />
       <node id="8032286684682627357" at="34,25,35,82" concept="1" />
-      <node id="8032286684682627347" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8032286684682627347" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8032286684682627347" at="19,0,22,0" concept="0" trace="TestSubstitute_Group_Test#()V" />
       <node id="8032286684682627347" at="23,0,27,0" concept="2" trace="test_TestSubstitute_Group#()V" />
       <node id="8032286684682627347" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1437,13 +1400,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8032286684683496414">
     <file name="TestSubstitute_CanExecute_Test.java">
-      <node id="8032286684683496414" at="19,43,20,25" concept="8" />
+      <node id="8032286684683496414" at="19,43,20,25" concept="6" />
       <node id="8032286684683496414" at="24,65,25,131" concept="1" />
       <node id="8032286684683496414" at="31,51,32,72" concept="1" />
       <node id="8032286684683496422" at="32,72,33,71" concept="1" />
       <node id="8032286684683496424" at="33,71,34,24" concept="1" />
       <node id="8032286684683496425" at="34,24,35,82" concept="1" />
-      <node id="8032286684683496414" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8032286684683496414" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8032286684683496414" at="19,0,22,0" concept="0" trace="TestSubstitute_CanExecute_Test#()V" />
       <node id="8032286684683496414" at="23,0,27,0" concept="2" trace="test_TestSubstitute_CanExecute#()V" />
       <node id="8032286684683496414" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1459,13 +1422,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8289277620556837834">
     <file name="TestSubstitute_Substitute_ChildWithConstraints_CanBeAncestor_GrandChild_Test.java">
-      <node id="8289277620556837834" at="20,89,21,25" concept="8" />
+      <node id="8289277620556837834" at="20,89,21,25" concept="6" />
       <node id="8289277620556837834" at="25,111,26,177" concept="1" />
       <node id="8289277620556837834" at="32,51,33,72" concept="1" />
       <node id="8289277620556837843" at="33,72,34,71" concept="1" />
       <node id="8315441706324361620" at="34,71,35,99" concept="1" />
       <node id="8289277620556837853" at="35,99,36,82" concept="1" />
-      <node id="8289277620556837834" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="8289277620556837834" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="8289277620556837834" at="20,0,23,0" concept="0" trace="TestSubstitute_Substitute_ChildWithConstraints_CanBeAncestor_GrandChild_Test#()V" />
       <node id="8289277620556837834" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Substitute_ChildWithConstraints_CanBeAncestor_GrandChild#()V" />
       <node id="8289277620556837834" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -1481,7 +1444,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8292814565107761696">
     <file name="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu_Test.java">
-      <node id="8292814565107761696" at="20,73,21,25" concept="8" />
+      <node id="8292814565107761696" at="20,73,21,25" concept="6" />
       <node id="8292814565107761696" at="25,95,26,161" concept="1" />
       <node id="8292814565107761696" at="32,51,33,72" concept="1" />
       <node id="8292814565107761703" at="33,72,34,71" concept="1" />
@@ -1489,7 +1452,7 @@
       <node id="2036960817570675129" at="35,162,36,26" concept="1" />
       <node id="2036960817570674390" at="36,26,37,162" concept="1" />
       <node id="8292814565107761719" at="37,162,38,82" concept="1" />
-      <node id="8292814565107761696" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="8292814565107761696" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="8292814565107761696" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu_Test#()V" />
       <node id="8292814565107761696" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu#()V" />
       <node id="8292814565107761696" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -1505,13 +1468,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8629363476786122186">
     <file name="TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContext_Test.java">
-      <node id="8629363476786122186" at="20,87,21,25" concept="8" />
+      <node id="8629363476786122186" at="20,87,21,25" concept="6" />
       <node id="8629363476786122186" at="25,109,26,175" concept="1" />
       <node id="8629363476786122186" at="32,51,33,72" concept="1" />
       <node id="368966953912090869" at="33,72,34,71" concept="1" />
       <node id="8315441706324361640" at="34,71,35,162" concept="1" />
       <node id="368966953912090885" at="35,162,36,82" concept="1" />
-      <node id="8629363476786122186" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="8629363476786122186" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="8629363476786122186" at="20,0,23,0" concept="0" trace="TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContext_Test#()V" />
       <node id="8629363476786122186" at="24,0,28,0" concept="2" trace="test_TestSubstitute_Single_SpecializedLink_Complete_WithChangeOfTheContext#()V" />
       <node id="8629363476786122186" at="31,0,38,0" concept="2" trace="testMethodImpl#()V" />
@@ -1527,12 +1490,12 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695587434683">
     <file name="TestSubstitute_SimpleAction_Test.java">
-      <node id="8998492695587434683" at="17,45,18,25" concept="8" />
+      <node id="8998492695587434683" at="17,45,18,25" concept="6" />
       <node id="8998492695587434683" at="22,67,23,133" concept="1" />
       <node id="8998492695587434683" at="29,51,30,72" concept="1" />
       <node id="8998492695590929593" at="30,72,31,26" concept="1" />
       <node id="8998492695590929600" at="31,26,32,71" concept="1" />
-      <node id="8998492695587434683" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695587434683" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="8998492695587434683" at="17,0,20,0" concept="0" trace="TestSubstitute_SimpleAction_Test#()V" />
       <node id="8998492695587434683" at="21,0,25,0" concept="2" trace="test_TestSubstitute_SimpleAction#()V" />
       <node id="8998492695587434683" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
@@ -1548,7 +1511,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590938556">
     <file name="TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu_Test.java">
-      <node id="8998492695590938556" at="20,76,21,25" concept="8" />
+      <node id="8998492695590938556" at="20,76,21,25" concept="6" />
       <node id="8998492695590938556" at="25,98,26,164" concept="1" />
       <node id="8998492695590938556" at="32,51,33,72" concept="1" />
       <node id="8998492695590938564" at="33,72,34,71" concept="1" />
@@ -1556,7 +1519,7 @@
       <node id="2036960817570899342" at="35,162,36,28" concept="1" />
       <node id="2036960817570899343" at="36,28,37,162" concept="1" />
       <node id="8998492695590954083" at="37,162,38,82" concept="1" />
-      <node id="8998492695590938556" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695590938556" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="8998492695590938556" at="20,0,23,0" concept="0" trace="TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu_Test#()V" />
       <node id="8998492695590938556" at="24,0,28,0" concept="2" trace="test_TestSubstitute_WrapDefaultSubstituteMenuFromSubstituteMenu#()V" />
       <node id="8998492695590938556" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -1572,13 +1535,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590961912">
     <file name="TestSubstitute_Parameterized_Test.java">
-      <node id="8998492695590961912" at="19,46,20,25" concept="8" />
+      <node id="8998492695590961912" at="19,46,20,25" concept="6" />
       <node id="8998492695590961912" at="24,68,25,134" concept="1" />
       <node id="8998492695590961912" at="31,51,32,72" concept="1" />
       <node id="8998492695590961919" at="32,72,33,71" concept="1" />
       <node id="8998492695590961921" at="33,71,34,22" concept="1" />
       <node id="8998492695590961922" at="34,22,35,82" concept="1" />
-      <node id="8998492695590961912" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695590961912" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695590961912" at="19,0,22,0" concept="0" trace="TestSubstitute_Parameterized_Test#()V" />
       <node id="8998492695590961912" at="23,0,27,0" concept="2" trace="test_TestSubstitute_Parameterized#()V" />
       <node id="8998492695590961912" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1594,13 +1557,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590964909">
     <file name="TestSubstitute_ConceptsMenu_Test.java">
-      <node id="8998492695590964909" at="19,45,20,25" concept="8" />
+      <node id="8998492695590964909" at="19,45,20,25" concept="6" />
       <node id="8998492695590964909" at="24,67,25,133" concept="1" />
       <node id="8998492695590964909" at="31,51,32,72" concept="1" />
       <node id="8998492695590964917" at="32,72,33,71" concept="1" />
       <node id="8998492695590964919" at="33,71,34,81" concept="1" />
       <node id="8998492695590964955" at="34,81,35,82" concept="1" />
-      <node id="8998492695590964909" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695590964909" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695590964909" at="19,0,22,0" concept="0" trace="TestSubstitute_ConceptsMenu_Test#()V" />
       <node id="8998492695590964909" at="23,0,27,0" concept="2" trace="test_TestSubstitute_ConceptsMenu#()V" />
       <node id="8998492695590964909" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1616,12 +1579,12 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590964981">
     <file name="TestSubstitute_AddConcept_Test.java">
-      <node id="8998492695590964981" at="19,43,20,25" concept="8" />
+      <node id="8998492695590964981" at="19,43,20,25" concept="6" />
       <node id="8998492695590964981" at="24,65,25,131" concept="1" />
       <node id="8998492695590964981" at="31,51,32,72" concept="1" />
       <node id="8998492695590964989" at="32,72,33,71" concept="1" />
       <node id="8998492695590964991" at="33,71,34,82" concept="1" />
-      <node id="8998492695590964981" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695590964981" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695590964981" at="19,0,22,0" concept="0" trace="TestSubstitute_AddConcept_Test#()V" />
       <node id="8998492695590964981" at="23,0,27,0" concept="2" trace="test_TestSubstitute_AddConcept#()V" />
       <node id="8998492695590964981" at="30,0,36,0" concept="2" trace="testMethodImpl#()V" />
@@ -1637,13 +1600,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695590967116">
     <file name="TestSubstitute_SmartReference_Test.java">
-      <node id="8998492695590967116" at="19,47,20,25" concept="8" />
+      <node id="8998492695590967116" at="19,47,20,25" concept="6" />
       <node id="8998492695590967116" at="24,69,25,135" concept="1" />
       <node id="8998492695590967116" at="31,51,32,72" concept="1" />
       <node id="8998492695590967124" at="32,72,33,71" concept="1" />
       <node id="8998492695591022739" at="33,71,34,22" concept="1" />
       <node id="8998492695591152951" at="34,22,35,82" concept="1" />
-      <node id="8998492695590967116" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695590967116" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695590967116" at="19,0,22,0" concept="0" trace="TestSubstitute_SmartReference_Test#()V" />
       <node id="8998492695590967116" at="23,0,27,0" concept="2" trace="test_TestSubstitute_SmartReference#()V" />
       <node id="8998492695590967116" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1659,12 +1622,12 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591032739">
     <file name="TestSubstitute_EmptyCell_Test.java">
-      <node id="8998492695591032739" at="19,42,20,25" concept="8" />
+      <node id="8998492695591032739" at="19,42,20,25" concept="6" />
       <node id="8998492695591032739" at="24,64,25,130" concept="1" />
       <node id="8998492695591032739" at="31,51,32,72" concept="1" />
       <node id="8998492695591032747" at="32,72,33,71" concept="1" />
       <node id="8998492695591032749" at="33,71,34,82" concept="1" />
-      <node id="8998492695591032739" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695591032739" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695591032739" at="19,0,22,0" concept="0" trace="TestSubstitute_EmptyCell_Test#()V" />
       <node id="8998492695591032739" at="23,0,27,0" concept="2" trace="test_TestSubstitute_EmptyCell#()V" />
       <node id="8998492695591032739" at="30,0,36,0" concept="2" trace="testMethodImpl#()V" />
@@ -1680,12 +1643,12 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591060953">
     <file name="TestSubstitute_Contribute_Test.java">
-      <node id="8998492695591060953" at="19,43,20,25" concept="8" />
+      <node id="8998492695591060953" at="19,43,20,25" concept="6" />
       <node id="8998492695591060953" at="24,65,25,131" concept="1" />
       <node id="8998492695591060953" at="31,51,32,72" concept="1" />
       <node id="8998492695591060961" at="32,72,33,71" concept="1" />
       <node id="8998492695591060963" at="33,71,34,82" concept="1" />
-      <node id="8998492695591060953" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695591060953" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695591060953" at="19,0,22,0" concept="0" trace="TestSubstitute_Contribute_Test#()V" />
       <node id="8998492695591060953" at="23,0,27,0" concept="2" trace="test_TestSubstitute_Contribute#()V" />
       <node id="8998492695591060953" at="30,0,36,0" concept="2" trace="testMethodImpl#()V" />
@@ -1701,13 +1664,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/8998492695591067986">
     <file name="TestSubstitute_NamedMenu_Test.java">
-      <node id="8998492695591067986" at="19,42,20,25" concept="8" />
+      <node id="8998492695591067986" at="19,42,20,25" concept="6" />
       <node id="8998492695591067986" at="24,64,25,130" concept="1" />
       <node id="8998492695591067986" at="31,51,32,72" concept="1" />
       <node id="8998492695591067994" at="32,72,33,71" concept="1" />
       <node id="8998492695591080237" at="33,71,34,25" concept="1" />
       <node id="8998492695591067996" at="34,25,35,82" concept="1" />
-      <node id="8998492695591067986" at="16,0,18,0" concept="6" trace="ourParamCache" />
+      <node id="8998492695591067986" at="16,0,18,0" concept="5" trace="ourParamCache" />
       <node id="8998492695591067986" at="19,0,22,0" concept="0" trace="TestSubstitute_NamedMenu_Test#()V" />
       <node id="8998492695591067986" at="23,0,27,0" concept="2" trace="test_TestSubstitute_NamedMenu#()V" />
       <node id="8998492695591067986" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
@@ -1723,16 +1686,16 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9151323058739140352">
     <file name="TestSubstitute_TestTransformMenuForConcreteConcept_Test.java">
-      <node id="9151323058739140352" at="18,68,19,25" concept="8" />
+      <node id="9151323058739140352" at="18,68,19,25" concept="6" />
       <node id="9151323058739140352" at="23,90,24,156" concept="1" />
       <node id="9151323058739140352" at="30,51,31,72" concept="1" />
       <node id="9151323058739140359" at="31,72,32,71" concept="1" />
       <node id="8315441706324361624" at="32,71,33,161" concept="1" />
       <node id="6524522039910450859" at="33,161,34,24" concept="1" />
       <node id="8315441706324361613" at="34,24,35,162" concept="1" />
-      <node id="6524522039910450378" at="35,162,36,0" concept="5" />
-      <node id="6524522039910333753" at="36,0,37,0" concept="5" />
-      <node id="9151323058739140352" at="15,0,17,0" concept="6" trace="ourParamCache" />
+      <node id="6524522039910450378" at="35,162,36,0" concept="4" />
+      <node id="6524522039910333753" at="36,0,37,0" concept="4" />
+      <node id="9151323058739140352" at="15,0,17,0" concept="5" trace="ourParamCache" />
       <node id="9151323058739140352" at="18,0,21,0" concept="0" trace="TestSubstitute_TestTransformMenuForConcreteConcept_Test#()V" />
       <node id="9151323058739140352" at="22,0,26,0" concept="2" trace="test_TestSubstitute_TestTransformMenuForConcreteConcept#()V" />
       <node id="9151323058739140352" at="29,0,39,0" concept="2" trace="testMethodImpl#()V" />
@@ -1748,13 +1711,13 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9174907873152785194">
     <file name="TestSubstitute_CheckNotSubconcept_Test.java">
-      <node id="9174907873152785194" at="18,51,19,25" concept="8" />
+      <node id="9174907873152785194" at="18,51,19,25" concept="6" />
       <node id="9174907873152785194" at="23,73,24,139" concept="1" />
       <node id="9174907873152785194" at="30,51,31,72" concept="1" />
       <node id="9174907873152785201" at="31,72,32,71" concept="1" />
       <node id="8315441706324361655" at="32,71,33,85" concept="1" />
       <node id="8315441706324361650" at="33,85,34,99" concept="1" />
-      <node id="9174907873152785194" at="15,0,17,0" concept="6" trace="ourParamCache" />
+      <node id="9174907873152785194" at="15,0,17,0" concept="5" trace="ourParamCache" />
       <node id="9174907873152785194" at="18,0,21,0" concept="0" trace="TestSubstitute_CheckNotSubconcept_Test#()V" />
       <node id="9174907873152785194" at="22,0,26,0" concept="2" trace="test_TestSubstitute_CheckNotSubconcept#()V" />
       <node id="9174907873152785194" at="29,0,36,0" concept="2" trace="testMethodImpl#()V" />
@@ -1770,11 +1733,11 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9174907873152871944">
     <file name="TestSubstitute_AmbigousPositionSameConcepts_Test.java">
-      <node id="9174907873152871944" at="17,61,18,25" concept="8" />
+      <node id="9174907873152871944" at="17,61,18,25" concept="6" />
       <node id="9174907873152871944" at="22,83,23,149" concept="1" />
       <node id="9174907873152871944" at="29,51,30,72" concept="1" />
       <node id="9174907873152872220" at="30,72,31,29" concept="1" />
-      <node id="9174907873152871944" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="9174907873152871944" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="9174907873152871944" at="17,0,20,0" concept="0" trace="TestSubstitute_AmbigousPositionSameConcepts_Test#()V" />
       <node id="9174907873152871944" at="21,0,25,0" concept="2" trace="test_TestSubstitute_AmbigousPositionSameConcepts#()V" />
       <node id="9174907873152871944" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
@@ -1790,11 +1753,11 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9174907873152961446">
     <file name="TestSubstitute_AmbigousPositionWrapSameConcepts_Test.java">
-      <node id="9174907873152961446" at="17,65,18,25" concept="8" />
+      <node id="9174907873152961446" at="17,65,18,25" concept="6" />
       <node id="9174907873152961446" at="22,87,23,153" concept="1" />
       <node id="9174907873152961446" at="29,51,30,72" concept="1" />
       <node id="9174907873152961453" at="30,72,31,32" concept="1" />
-      <node id="9174907873152961446" at="14,0,16,0" concept="6" trace="ourParamCache" />
+      <node id="9174907873152961446" at="14,0,16,0" concept="5" trace="ourParamCache" />
       <node id="9174907873152961446" at="17,0,20,0" concept="0" trace="TestSubstitute_AmbigousPositionWrapSameConcepts_Test#()V" />
       <node id="9174907873152961446" at="21,0,25,0" concept="2" trace="test_TestSubstitute_AmbigousPositionWrapSameConcepts#()V" />
       <node id="9174907873152961446" at="28,0,33,0" concept="2" trace="testMethodImpl#()V" />
@@ -1810,7 +1773,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9174907873153070666">
     <file name="TestSubstitute_AmbigousPositionDifferentConcepts_Test.java">
-      <node id="9174907873153070666" at="20,66,21,25" concept="8" />
+      <node id="9174907873153070666" at="20,66,21,25" concept="6" />
       <node id="9174907873153070666" at="25,88,26,154" concept="1" />
       <node id="9174907873153070666" at="32,51,33,72" concept="1" />
       <node id="9174907873153070673" at="33,72,34,29" concept="1" />
@@ -1818,7 +1781,7 @@
       <node id="8315441706324361661" at="35,85,36,99" concept="1" />
       <node id="9174907873153124503" at="36,99,37,81" concept="1" />
       <node id="9174907873153124594" at="37,81,38,82" concept="1" />
-      <node id="9174907873153070666" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="9174907873153070666" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="9174907873153070666" at="20,0,23,0" concept="0" trace="TestSubstitute_AmbigousPositionDifferentConcepts_Test#()V" />
       <node id="9174907873153070666" at="24,0,28,0" concept="2" trace="test_TestSubstitute_AmbigousPositionDifferentConcepts#()V" />
       <node id="9174907873153070666" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />
@@ -1834,7 +1797,7 @@
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/9174907873153124688">
     <file name="TestSubstitute_AmbigousPositionWrapDifferentConcepts_Test.java">
-      <node id="9174907873153124688" at="20,70,21,25" concept="8" />
+      <node id="9174907873153124688" at="20,70,21,25" concept="6" />
       <node id="9174907873153124688" at="25,92,26,158" concept="1" />
       <node id="9174907873153124688" at="32,51,33,72" concept="1" />
       <node id="9174907873153124695" at="33,72,34,32" concept="1" />
@@ -1842,7 +1805,7 @@
       <node id="8315441706324361662" at="35,85,36,99" concept="1" />
       <node id="9174907873153124710" at="36,99,37,81" concept="1" />
       <node id="9174907873153124712" at="37,81,38,82" concept="1" />
-      <node id="9174907873153124688" at="17,0,19,0" concept="6" trace="ourParamCache" />
+      <node id="9174907873153124688" at="17,0,19,0" concept="5" trace="ourParamCache" />
       <node id="9174907873153124688" at="20,0,23,0" concept="0" trace="TestSubstitute_AmbigousPositionWrapDifferentConcepts_Test#()V" />
       <node id="9174907873153124688" at="24,0,28,0" concept="2" trace="test_TestSubstitute_AmbigousPositionWrapDifferentConcepts#()V" />
       <node id="9174907873153124688" at="31,0,40,0" concept="2" trace="testMethodImpl#()V" />

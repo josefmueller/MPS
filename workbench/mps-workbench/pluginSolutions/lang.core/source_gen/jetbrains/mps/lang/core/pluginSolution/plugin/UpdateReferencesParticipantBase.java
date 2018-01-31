@@ -11,6 +11,7 @@ import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -81,7 +82,7 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
       return new NodeData<Void>(new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"))), ((Void) null));
     }
     private boolean isOverridingParticipant(UpdateReferencesParticipantBase.UpdateReferencesParticipant it) {
-      return this.getClass().isAssignableFrom(it.getClass()) && neq_82eo7d_a0a0a5d(this.getClass(), it.getClass());
+      return this.getClass().isAssignableFrom(it.getClass()) && !(Objects.equals(this.getClass(), it.getClass()));
     }
     @Override
     protected boolean shouldUpdateReference(final List<RefactoringParticipant.Option> selectedOptions, final SRepository repository, final SNode containingNode, final SReferenceLink role, final SNode movingNode, final RefactoringSession refactoringSession) {
@@ -98,9 +99,6 @@ public abstract class UpdateReferencesParticipantBase<T> extends RefactoringPart
         return false;
       }
       return super.shouldUpdateReference(selectedOptions, repository, containingNode, role, movingNode, refactoringSession);
-    }
-    private static boolean neq_82eo7d_a0a0a5d(Object a, Object b) {
-      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
 

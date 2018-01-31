@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import java.util.Objects;
 
 public class TestMethodRow implements TestStatisticsRow {
   private static final int UNDEFINED = -1;
@@ -88,12 +89,6 @@ public class TestMethodRow implements TestStatisticsRow {
   }
   @Override
   public boolean matches(String testCase, String testMethod) {
-    return testCase == null || (eq_52sp5f_a0a0a0a82(testCase, myTestCaseName) && (testMethod == null || eq_52sp5f_a0a0a0a0a82(testMethod, myTestMethodName)));
-  }
-  private static boolean eq_52sp5f_a0a0a0a0a82(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_52sp5f_a0a0a0a82(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return testCase == null || (Objects.equals(testCase, myTestCaseName) && (testMethod == null || Objects.equals(testMethod, myTestMethodName)));
   }
 }

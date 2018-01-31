@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
@@ -63,7 +64,7 @@ public class ActionTestChild1SubConcept_SubstituteMenu extends SubstituteMenuBas
   public class SMP_Group_6g8ikp_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return eq_6g8ikp_a0a0a5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x2c99ba4dd7323dbbL, "addMenu_genericQuery"));
+      return Objects.equals(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x2c99ba4dd7323dbbL, "addMenu_genericQuery"));
     }
     @NotNull
     @Override
@@ -102,8 +103,5 @@ public class ActionTestChild1SubConcept_SubstituteMenu extends SubstituteMenuBas
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
-  }
-  private static boolean eq_6g8ikp_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

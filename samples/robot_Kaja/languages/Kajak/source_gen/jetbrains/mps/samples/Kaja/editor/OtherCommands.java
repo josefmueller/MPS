@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import java.util.Objects;
 import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -164,7 +165,7 @@ public class OtherCommands extends TransformationMenuBase {
   public class TMP_Group_uewb7w_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      return eq_uewb7w_a0a0a9(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
+      return Objects.equals(SNodeOperations.getParent(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false, false)), SNodeOperations.getContainingRoot(_context.getNode()));
     }
 
     @NotNull
@@ -234,8 +235,5 @@ public class OtherCommands extends TransformationMenuBase {
       }
 
     }
-  }
-  private static boolean eq_uewb7w_a0a0a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

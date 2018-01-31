@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.behavior.IMethodCall__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
@@ -29,7 +30,7 @@ public class BaseMethodParameterInformationQueryUtil {
     }
 
     for (SNode member : Sequence.fromIterable(members)) {
-      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && eq_bha4h6_a0a0a6a1(SPropertyOperations.getString(SNodeOperations.cast(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
+      if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && Objects.equals(SPropertyOperations.getString(SNodeOperations.cast(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
         ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
       }
     }
@@ -82,8 +83,5 @@ public class BaseMethodParameterInformationQueryUtil {
       styledText.setBold(false);
     }
     styledText.append(")");
-  }
-  private static boolean eq_bha4h6_a0a0a6a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

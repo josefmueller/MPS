@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
@@ -43,7 +44,7 @@ public class AllWorkLeftExpression_subs extends SubstituteMenuBase {
   public class SMP_Group_q0pmcw_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement")) && eq_q0pmcw_a0a0a0f(MetaAdapterFactory.getContainmentLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, 0x29929a95c9f45e7L, "ofTotal"), _context.getLink());
+      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement")) && Objects.equals(MetaAdapterFactory.getContainmentLink(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, 0x29929a95c9f45e7L, "ofTotal"), _context.getLink());
     }
     @NotNull
     @Override
@@ -74,8 +75,5 @@ public class AllWorkLeftExpression_subs extends SubstituteMenuBase {
         }
       }, MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL, "jetbrains.mps.make.script.structure.AllWorkLeftExpression")));
     }
-  }
-  private static boolean eq_q0pmcw_a0a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

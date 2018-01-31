@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Objects;
 import java.util.Collections;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -38,7 +39,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_6gv83m_a0a0a0a0a0a0a2a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(localVariableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          return Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(localVariableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
     } else {
@@ -71,8 +72,5 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_6gv83m_a0a0a0a0a0a0a2a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

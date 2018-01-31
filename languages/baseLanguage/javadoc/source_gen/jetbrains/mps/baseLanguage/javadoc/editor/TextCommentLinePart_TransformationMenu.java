@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Objects;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -159,17 +160,17 @@ public class TextCommentLinePart_TransformationMenu extends TransformationMenuBa
           boolean isMethod = SNodeOperations.isInstanceOf(comment, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
 
           SNode tag = null;
-          if (eq_rifg0n_a0f0g4g7(myParameterObject, "@author")) {
+          if (Objects.equals(myParameterObject, "@author")) {
             tag = SNodeFactoryOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faee13eL, "jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag")));
           }
-          if (eq_rifg0n_a0g0g4g7(myParameterObject, "@since")) {
+          if (Objects.equals(myParameterObject, "@since")) {
             tag = SNodeFactoryOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag")));
           }
 
-          if (eq_rifg0n_a0i0g4g7(myParameterObject, "@version")) {
+          if (Objects.equals(myParameterObject, "@version")) {
             tag = SNodeFactoryOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag")));
           }
-          if (eq_rifg0n_a0j0g4g7(myParameterObject, "@deprecated")) {
+          if (Objects.equals(myParameterObject, "@deprecated")) {
             IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), false, false));
             _context.getEditorContext().selectWRTFocusPolicy(ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -177,19 +178,19 @@ public class TextCommentLinePart_TransformationMenu extends TransformationMenuBa
               }
             }).first());
           }
-          if (eq_rifg0n_a0k0g4g7(myParameterObject, "@see")) {
+          if (Objects.equals(myParameterObject, "@see")) {
             tag = SNodeFactoryOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252ca3abL, "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag")));
           }
-          if (eq_rifg0n_a0a11a6e6h(myParameterObject, "@param") && isClassifier) {
+          if (Objects.equals(myParameterObject, "@param") && isClassifier) {
             tag = SNodeFactoryOperations.addNewChild(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"), false, false), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag")));
           }
-          if (eq_rifg0n_a0a21a6e6h(myParameterObject, "@param") && isMethod) {
+          if (Objects.equals(myParameterObject, "@param") && isMethod) {
             tag = SNodeFactoryOperations.addNewChild(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), false, false), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag")));
           }
-          if (eq_rifg0n_a0a31a6e6h(myParameterObject, "@throws") && isMethod) {
+          if (Objects.equals(myParameterObject, "@throws") && isMethod) {
             tag = SNodeFactoryOperations.addNewChild(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), false, false), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag")));
           }
-          if (eq_rifg0n_a0a41a6e6h(myParameterObject, "@return") && isMethod) {
+          if (Objects.equals(myParameterObject, "@return") && isMethod) {
             tag = SNodeFactoryOperations.addNewChild(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), false, false), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f687050918eL, "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag")));
           }
 
@@ -210,32 +211,5 @@ public class TextCommentLinePart_TransformationMenu extends TransformationMenuBa
       }
 
     }
-  }
-  private static boolean eq_rifg0n_a0f0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0g0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0i0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0j0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0k0g4g7(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0a11a6e6h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0a21a6e6h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0a31a6e6h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_rifg0n_a0a41a6e6h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

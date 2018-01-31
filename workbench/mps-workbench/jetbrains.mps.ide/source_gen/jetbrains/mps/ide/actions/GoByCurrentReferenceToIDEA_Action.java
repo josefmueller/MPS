@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.LanguageID;
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -49,7 +50,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     String targetSter = SModelStereotype.getStereotype(SNodeOperations.getModel(targetNode));
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return eq_xgilk9_a0f0e(stubSter, targetSter);
+    return Objects.equals(stubSter, targetSter);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -149,8 +150,5 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       return checkedDotOperand.getAbsolutePath();
     }
     return null;
-  }
-  private static boolean eq_xgilk9_a0f0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

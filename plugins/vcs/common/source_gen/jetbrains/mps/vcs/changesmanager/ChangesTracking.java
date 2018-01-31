@@ -54,6 +54,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.MPSProject;
+import java.util.Objects;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -397,7 +398,7 @@ public class ChangesTracking {
 
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
-    if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a05(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
+    if (lastParentAndNewChildrenIds == null || !(Objects.equals(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId()))) {
       List<SNode> children = ngc.getChangedCollection(true);
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
@@ -688,8 +689,5 @@ public class ChangesTracking {
       return checkedDotOperand.getNodeId();
     }
     return null;
-  }
-  private static boolean neq_5iuzi5_a0a1a05(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

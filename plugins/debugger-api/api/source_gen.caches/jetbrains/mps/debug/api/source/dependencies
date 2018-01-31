@@ -29,6 +29,7 @@
   <dependency className="jetbrains.mps.debug.api.source.NodeSourcePosition" file="NodeSourcePosition.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.SourcePosition" />
   </dependency>
@@ -78,6 +79,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.SourcePosition" />
   </dependency>

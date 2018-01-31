@@ -210,8 +210,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.CheckVariableDoubling_NonTypesystemRule" file="CheckVariableDoubling_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -261,10 +261,10 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix" file="ChooseAppropriateMethodDeclaration_QuickFix.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ResolveUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
@@ -294,7 +294,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ClassifierType_NOT_subtypeOf_ClassifierType_InequationReplacementRule" file="ClassifierType_NOT_subtypeOf_ClassifierType_InequationReplacementRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -1476,9 +1476,9 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" file="VariableReferenceUtil.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList__BehaviorDescriptor" />
@@ -1789,7 +1789,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_AnnotationDuplication_NonTypesystemRule" file="check_AnnotationDuplication_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -1914,7 +1914,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_NonTypesystemRule" file="check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -2518,8 +2518,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_DuplicateClassifierNames_NonTypesystemRule" file="check_DuplicateClassifierNames_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -2541,8 +2541,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_DuplicateEnumConstantMethods_NonTypesystemRule" file="check_DuplicateEnumConstantMethods_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -2579,8 +2579,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_DuplicateMethods_NonTypesystemRule" file="check_DuplicateMethods_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor" />
@@ -2666,7 +2666,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_EnumConstantMustUseExplicitConstructor_NonTypesystemRule" file="check_EnumConstantMustUseExplicitConstructor_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -2794,8 +2794,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule" file="check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -2980,7 +2980,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule" file="check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -3168,8 +3168,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRule" file="check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
@@ -3204,9 +3204,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule" file="check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor" />
@@ -3593,7 +3593,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_PropertyNameUniqueness_NonTypesystemRule" file="check_PropertyNameUniqueness_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor" />
@@ -3837,7 +3837,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_TernaryOperatorExpression_NonTypesystemRule" file="check_TernaryOperatorExpression_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -3896,8 +3896,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationDuplicateName_NonTypesystemRule" file="check_TypeVariableDeclarationDuplicateName_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -3915,8 +3915,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_TypeVariableDeclarationForwardReferences_NonTypesystemRule" file="check_TypeVariableDeclarationForwardReferences_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -3963,7 +3963,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalFieldInOperation_NonTypesystemRule" file="check_UninitializedLocalFieldInOperation_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -3979,7 +3979,7 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UninitializedLocalField_NonTypesystemRule" file="check_UninitializedLocalField_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.VariableReferenceUtil" />
@@ -4112,7 +4112,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnneededMethodTypeParameters_NonTypesystemRule" file="check_UnneededMethodTypeParameters_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -4219,8 +4219,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnusedLocalVariableDeclaration_NonTypesystemRule" file="check_UnusedLocalVariableDeclaration_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -4240,8 +4240,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnusedPackageClassifier_NonTypesystemRule" file="check_UnusedPackageClassifier_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -4282,8 +4282,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UnusedPrivateClassifier_NonTypesystemRule" file="check_UnusedPrivateClassifier_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -4358,7 +4358,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_UsingStatement_NonTypesystemRule" file="check_UsingStatement_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -4467,7 +4467,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.classifierTypeWithSameClassifier_InequationReplacementRule" file="classifierTypeWithSameClassifier_InequationReplacementRule.java">
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

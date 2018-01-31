@@ -188,6 +188,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

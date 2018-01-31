@@ -14,6 +14,7 @@ import org.apache.log4j.Level;
 import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.execution.BeforeRunTask;
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +86,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       Object[] parameters = (Object[]) method.invoke(runConfiguration);
       Method configureMethod = Sequence.fromIterable(Sequence.fromArray(task.getClass().getMethods())).findFirst(new IWhereFilter<Method>() {
         public boolean accept(Method it) {
-          return eq_xh6sei_a0a0a0a0a0a3a0a11(it.getName(), getConfigureMethodName());
+          return Objects.equals(it.getName(), getConfigureMethodName());
         }
       });
       return (Boolean) configureMethod.invoke(task, parameters);
@@ -132,8 +133,5 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       setEnabled(true);
     }
     public abstract boolean execute(Project project, ExecutionEnvironment environment);
-  }
-  private static boolean eq_xh6sei_a0a0a0a0a0a3a0a11(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

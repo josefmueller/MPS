@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.Arrays;
+import java.util.Objects;
 import jetbrains.mps.util.WeakSet;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -127,7 +128,7 @@ public class Set_Test extends Util_Test {
   public void test_eq() throws Exception {
     Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
     Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
-    Assert.assertTrue(eq_c8cpc7_a0a2a61(seta, setb));
+    Assert.assertTrue(Objects.equals(seta, setb));
   }
   public void test_mps6232() throws Exception {
     Set<String> hs = SetSequence.fromSetAndArray(new HashSet<String>(), null);
@@ -195,8 +196,5 @@ public class Set_Test extends Util_Test {
     }
   }
   public Set_Test() {
-  }
-  private static boolean eq_c8cpc7_a0a2a61(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -11,6 +11,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
+import java.util.Objects;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,7 +37,7 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
 
   @Override
   protected boolean shouldUpdateReference(List<RefactoringParticipant.Option> selectedOptions, SRepository repository, SNode containingNode, SReferenceLink role, SNode movingNode, RefactoringSession refactoringSession) {
-    return eq_m5uax2_a0a0a5(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) || eq_m5uax2_a0a0a5_0(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
+    return Objects.equals(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")) || Objects.equals(role, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
   }
 
   @Override
@@ -75,12 +76,6 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     };
   }
 
-  private static boolean eq_m5uax2_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_m5uax2_a0a0a5_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SModule check_m5uax2_a0b0a0i(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

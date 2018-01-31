@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import java.util.Arrays;
 
 /*package*/ class CycleBuilder {
@@ -68,7 +69,7 @@ import java.util.Arrays;
       }
     })) {
       if (myCurrent.seen(ch)) {
-        if (eq_tn82ka_a0a0a0d0m(ch.getRoleModuleKey(), myTargetKey)) {
+        if (Objects.equals(ch.getRoleModuleKey(), myTargetKey)) {
           // cycle found 
           myCurrent.push(ch);
           myCycles.add(new DepPath(myCurrent));
@@ -93,8 +94,5 @@ import java.util.Arrays;
     char[] rv = new char[myNestLevelDebug];
     Arrays.fill(rv, 0, myNestLevelDebug, ' ');
     return new String(rv);
-  }
-  private static boolean eq_tn82ka_a0a0a0d0m(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

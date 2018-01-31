@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -129,7 +130,7 @@ with_meet:
     return type;
   }
   private static boolean isFunctionTypeClassifier(SNode classifier) {
-    return SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && eq_zgotlq_a0a0a5(SNodeOperations.getModel(classifier).getReference().getModelName(), SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_zgotlq_a0a0a0a0a0f(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))).getReference().getModelName());
+    return SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")) && Objects.equals(SNodeOperations.getModel(classifier).getReference().getModelName(), SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_zgotlq_a0a0a0a0a0f(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))).getReference().getModelName());
   }
   private static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
     if (isFunctionTypeClassifier(classifier)) {
@@ -346,8 +347,5 @@ with_meet:
       quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, 0x110daeaa84bL, "bound"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-  private static boolean eq_zgotlq_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.vcs.diff.StructChangeSet;
+import java.util.Objects;
 import jetbrains.mps.smodel.StaticReference;
 
 public class SetReferenceStructChange extends SetReferenceChange {
@@ -44,7 +45,7 @@ public class SetReferenceStructChange extends SetReferenceChange {
         StructChangeSet changeset = (StructChangeSet) getChangeSet();
         SNodeId targetNodeId = getTargetNodeId();
         SNodeId mapToOldId = changeset.mapToOldId(targetNodeId);
-        if (mapToOldId != null && eq_xjb9w7_a0a4a0c0a4a3(targetModelReference, changeset.getNewModel().getReference())) {
+        if (mapToOldId != null && Objects.equals(targetModelReference, changeset.getNewModel().getReference())) {
           targetNodeId = mapToOldId;
         }
         reference = new StaticReference(getRoleLink(), node, targetModelReference, targetNodeId, getResolveInfo());
@@ -60,24 +61,18 @@ public class SetReferenceStructChange extends SetReferenceChange {
     assert node != null;
     SReference ref = node.getReference(getRoleLink());
     SModelReference targetModel = check_xjb9w7_a0d0e(ref);
-    if (eq_xjb9w7_a0e0e(getChangeSet().getOldModel().getReference(), targetModel)) {
+    if (Objects.equals(getChangeSet().getOldModel().getReference(), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }
 
     return new SetReferenceStructChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(true), getAffectedNodeId(false), getRoleLink(), targetModel, check_xjb9w7_f0a6a4(ref), check_xjb9w7_g0a6a4(((jetbrains.mps.smodel.SReference) ref)));
   }
-  private static boolean eq_xjb9w7_a0a4a0c0a4a3(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SModelReference check_xjb9w7_a0d0e(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
-  }
-  private static boolean eq_xjb9w7_a0e0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNodeId check_xjb9w7_f0a6a4(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {

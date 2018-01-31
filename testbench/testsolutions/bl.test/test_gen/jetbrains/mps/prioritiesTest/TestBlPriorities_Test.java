@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Objects;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -100,7 +101,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       }
 
       if (SNodeOperations.isInstanceOf(e, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
-        return eq_p8h609_a0a0l0h8(left, right);
+        return Objects.equals(left, right);
       }
 
       throw new UnsupportedOperationException(e.getPresentation());
@@ -173,9 +174,6 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), quotedNode_4);
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
       return quotedNode_1;
-    }
-    private static boolean eq_p8h609_a0a0l0h8(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

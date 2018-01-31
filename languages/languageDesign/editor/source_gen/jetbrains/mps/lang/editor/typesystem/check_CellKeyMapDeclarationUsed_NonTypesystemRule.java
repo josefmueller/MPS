@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,7 +25,7 @@ public class check_CellKeyMapDeclarationUsed_NonTypesystemRule extends AbstractN
   public void applyRule(final SNode cellKeyMapDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(cellKeyMapDeclaration), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_o5tai_a0a0a0a0a0a0a0b(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")), cellKeyMapDeclaration);
+        return Objects.equals(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0xfbc4dbd371L, "keyMap")), cellKeyMapDeclaration);
       }
     }) == null)) {
       {
@@ -41,8 +42,5 @@ public class check_CellKeyMapDeclarationUsed_NonTypesystemRule extends AbstractN
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_o5tai_a0a0a0a0a0a0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

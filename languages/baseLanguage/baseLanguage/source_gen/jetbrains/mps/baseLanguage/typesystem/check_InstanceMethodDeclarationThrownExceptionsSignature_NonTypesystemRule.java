@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescri
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -51,16 +52,16 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
         }
         Iterable<SNode> superTypes = Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier);
 
-        if (!((eq_l20hbd_a0a0a0e0a0a0a0i0b(myClassifier, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
+        if (!((Objects.equals(myClassifier, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(it, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException"));
+            return Objects.equals(it, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException"));
           }
         }))) && !(ListSequence.fromList(superThrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             final SNode superClassifier = ThrownTypeVariableReferencesHelper.retrieveClassifier(it);
-            return superClassifier != null && (eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(myClassifier, superClassifier) || SetSequence.fromSet(Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier)).any(new IWhereFilter<SNode>() {
+            return superClassifier != null && (Objects.equals(myClassifier, superClassifier) || SetSequence.fromSet(Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier)).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(it, superClassifier);
+                return Objects.equals(it, superClassifier);
               }
             }));
           }
@@ -82,17 +83,5 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_l20hbd_a0a0a0e0a0a0a0i0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

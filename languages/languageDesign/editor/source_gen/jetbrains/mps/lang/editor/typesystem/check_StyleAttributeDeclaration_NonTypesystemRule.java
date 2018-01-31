@@ -16,6 +16,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -31,7 +32,7 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
     }
     if (!(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.collectMany(SModelOperations.roots(SNodeOperations.getModel(declaration), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet")), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, 0x1143b180146L, "styleClass")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return neq_6ch539_a0a0a0a0a0a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) || it == declaration;
+        return !(Objects.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) || it == declaration;
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -46,8 +47,5 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
   }
   public boolean overrides() {
     return false;
-  }
-  private static boolean neq_6ch539_a0a0a0a0a0a0b0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
   }
 }
