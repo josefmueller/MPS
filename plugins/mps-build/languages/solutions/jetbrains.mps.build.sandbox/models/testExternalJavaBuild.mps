@@ -76,8 +76,8 @@
         <property role="2Ry0Am" value="jetbrains.mps.build.sandbox" />
         <node concept="2Ry0Ak" id="6ZfgptGZYTw" role="2Ry0An">
           <property role="2Ry0Am" value="samples" />
-          <node concept="2Ry0Ak" id="6ZfgptH0jXt" role="2Ry0An">
-            <property role="2Ry0Am" value="buildTest" />
+          <node concept="2Ry0Ak" id="2lUZxZ7NGLb" role="2Ry0An">
+            <property role="2Ry0Am" value="ext-java" />
           </node>
         </node>
       </node>
@@ -108,8 +108,8 @@
         <property role="2Ry0Am" value="jetbrains.mps.build.sandbox" />
         <node concept="2Ry0Ak" id="70qJ_RossVf" role="2Ry0An">
           <property role="2Ry0Am" value="samples" />
-          <node concept="2Ry0Ak" id="70qJ_RossVg" role="2Ry0An">
-            <property role="2Ry0Am" value="buildTest" />
+          <node concept="2Ry0Ak" id="2lUZxZ7NGLd" role="2Ry0An">
+            <property role="2Ry0Am" value="ext-java" />
           </node>
         </node>
       </node>
