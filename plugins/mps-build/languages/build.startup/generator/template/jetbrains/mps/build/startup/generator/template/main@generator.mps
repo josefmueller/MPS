@@ -1104,7 +1104,7 @@
             <node concept="2pNNFK" id="7Muxx6JTrEQ" role="3o6s8t">
               <property role="2pNNFO" value="string" />
               <node concept="3o6iSG" id="7Muxx6JTrER" role="3o6s8t">
-                <property role="3o6i5n" value="-XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar" />
+                <property role="3o6i5n" value="-XX:+UseCompressedOops" />
               </node>
             </node>
             <node concept="2pNNFK" id="7Muxx6JTrES" role="3o6s8t">
@@ -1987,7 +1987,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="4eWOtEm22os" role="2DRAPQ">
-      <property role="2DPR8u" value="SET COMMON_JVM_ARGS=&quot;-XX:ErrorFile=%USERPROFILE%\java_error_in_IDEA_%%p.log&quot; &quot;-XX:HeapDumpPath=%USERPROFILE%\java_error_in_IDEA.hprof&quot; &quot;-Xbootclasspath/a:%IDE_HOME%/lib/boot.jar&quot; -Didea.paths.selector=%IDEA_PATHS_SELECTOR% %IDE_PROPERTIES_PROPERTY%" />
+      <property role="2DPR8u" value="SET COMMON_JVM_ARGS=&quot;-XX:ErrorFile=%USERPROFILE%\java_error_in_IDEA_%%p.log&quot; &quot;-XX:HeapDumpPath=%USERPROFILE%\java_error_in_IDEA.hprof&quot; -Didea.paths.selector=%IDEA_PATHS_SELECTOR% %IDE_PROPERTIES_PROPERTY%" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm22ts" role="2DRAPQ">
       <property role="2DPR8u" value="SET IDE_JVM_ARGS=-Didea.platform.prefix=Idea -Didea.jre.check=true" />
@@ -3573,9 +3573,6 @@
     </node>
     <node concept="2DRAP_" id="BsOHnjn0bH" role="2DRAPQ">
       <property role="2DPR8u" value="  ${AGENT} \" />
-    </node>
-    <node concept="2DRAP_" id="7C7qUK4tc1h" role="2DRAPQ">
-      <property role="2DPR8u" value="  &quot;-Xbootclasspath/a:$IDE_HOME/lib/boot.jar&quot; \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tclb" role="2DRAPQ">
       <property role="2DPR8u" value="  -classpath &quot;$CLASSPATH&quot; \" />

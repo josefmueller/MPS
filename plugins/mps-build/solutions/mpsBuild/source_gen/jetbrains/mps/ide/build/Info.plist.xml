@@ -113,7 +113,7 @@
       </dict>
       <!--Use Contents/bin/mps.vmoptions or ~/Library/Preferences/MPS2018.1/mps.vmoptions file to modify VMOptions-->
       <key>VMOptions</key>
-      <string>-XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar</string>
+      <string>-XX:+UseCompressedOops</string>
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/Contents/bin</string>
     </dict>

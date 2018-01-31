@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/resources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/platform.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/boot.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/util.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/bootstrap.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/icons.jar!/" />

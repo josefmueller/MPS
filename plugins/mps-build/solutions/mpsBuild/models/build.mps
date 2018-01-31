@@ -16541,19 +16541,6 @@
           </node>
         </node>
       </node>
-      <node concept="25zrj4" id="5xa9wY2vqbc" role="nCB5Z">
-        <node concept="2HycW7" id="5xa9wY2vqbd" role="25zrj5">
-          <node concept="398BVA" id="5xa9wY2vqbf" role="25ysHA">
-            <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="5xa9wY2vqbg" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="5xa9wY2vqbh" role="2Ry0An">
-                <property role="2Ry0Am" value="boot.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="25zrj4" id="5xa9wY2vqbj" role="nCB5Z">
         <node concept="2HycW7" id="5xa9wY2vqbk" role="25zrj5">
           <node concept="398BVA" id="5xa9wY2vqbm" role="25ysHA">
@@ -27339,9 +27326,6 @@
             </node>
             <node concept="3LWZYx" id="5bqL32jZK$7" role="3LXTna">
               <property role="3LWZYw" value="**/*.jar" />
-            </node>
-            <node concept="3LWZYq" id="5bqL32jZK$a" role="3LXTna">
-              <property role="3LWZYl" value="boot.jar" />
             </node>
           </node>
         </node>

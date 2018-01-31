@@ -632,7 +632,6 @@
         <path location="${mps_home}/startup/src" />
       </src>
       <classpath>
-        <fileset file="${mps_home}/lib/boot.jar" />
         <fileset file="${mps_home}/lib/bootstrap.jar" />
         <fileset file="${mps_home}/lib/trove4j.jar" />
         <fileset file="${mps_home}/lib/util.jar" />

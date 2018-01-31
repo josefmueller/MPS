@@ -30,7 +30,6 @@
   <path id="path.java.library.idea-jars">
     <fileset dir="${idea_home}/lib">
       <include name="**/*.jar" />
-      <exclude name="boot.jar" />
     </fileset>
   </path>
   
