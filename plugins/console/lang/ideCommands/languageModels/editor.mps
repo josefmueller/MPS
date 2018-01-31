@@ -30,9 +30,6 @@
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
-      <concept id="2000375450116454183" name="jetbrains.mps.lang.editor.structure.ISubstituteMenu" flags="ng" index="22mbnS">
-        <child id="414384289274416996" name="parts" index="3ft7WO" />
-      </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1597643335227097138" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_node" flags="ng" index="7Obwk" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
@@ -61,7 +58,6 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -69,9 +65,6 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
-      </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
-        <reference id="697754674827630451" name="concept" index="4PJHt" />
       </concept>
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
@@ -554,7 +547,7 @@
   </node>
   <node concept="24kQdi" id="59iQg8rz2HX">
     <property role="3GE5qa" value="expression.callAction" />
-    <ref role="1XX52x" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
+    <ref role="1XX52x" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
     <node concept="3EZMnI" id="3ZZC$G5C4uw" role="2wV5jI">
       <node concept="PMmxH" id="2wdLO7KhY6T" role="3EZMnx">
         <property role="1cu_pB" value="0" />
@@ -566,7 +559,7 @@
         <ref role="1k5W1q" to="tp2u:hGdV7pS" resolve="LeftAngleBracket" />
       </node>
       <node concept="1iCGBv" id="7Nk8HJUuNkV" role="3EZMnx">
-        <ref role="1NtTu8" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
+        <ref role="1NtTu8" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect_old" />
         <node concept="1sVBvm" id="7Nk8HJUuNkZ" role="1sWHZn">
           <node concept="3F0A7n" id="7Nk8HJUuNld" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -1060,11 +1053,7 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7K5">
     <property role="3GE5qa" value="make" />
-    <ref role="aqKnT" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-    <node concept="2VfDsV" id="1wEcoXjJ7K9" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJ7Ka" role="3ft7WO">
-      <ref role="4PJHt" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-    </node>
+    <ref role="aqKnT" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7Kb">
     <ref role="aqKnT" to="caxt:7mV0m3L$tRZ" resolve="UnloadModelsCommand" />

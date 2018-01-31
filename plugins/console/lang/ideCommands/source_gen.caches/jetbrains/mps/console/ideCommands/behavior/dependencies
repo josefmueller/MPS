@@ -111,7 +111,7 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModuleProperties__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_old__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RebuildProjectCommand__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.RemoveGenSources__BehaviorDescriptor" />
@@ -430,7 +430,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation__BehaviorDescriptor" file="OfAspectOperation__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.console.ideCommands.behavior.OfAspectOperation_old__BehaviorDescriptor" file="OfAspectOperation_old__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

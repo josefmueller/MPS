@@ -42,7 +42,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 9:
         return Collections.<ConceptEditor>singletonList(new NodeReference_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new OfAspectOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new OfAspectOperation_old_Editor());
       case 11:
         return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
       case 12:
@@ -92,7 +92,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return Collections.<SubstituteMenu>singletonList(new ModuleProperties_SubstituteMenu());
       case 3:
-        return Collections.<SubstituteMenu>singletonList(new OfAspectOperation_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new OfAspectOperation_old_SubstituteMenu());
       case 4:
         return Collections.<SubstituteMenu>singletonList(new RebuildProjectCommand_SubstituteMenu());
       case 5:

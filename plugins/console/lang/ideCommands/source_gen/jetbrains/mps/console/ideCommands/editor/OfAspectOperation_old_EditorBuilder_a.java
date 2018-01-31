@@ -22,11 +22,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet.RightAngleBracketStyleClass;
 
-/*package*/ class OfAspectOperation_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class OfAspectOperation_old_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public OfAspectOperation_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public OfAspectOperation_old_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -38,59 +38,59 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_1vnrru_a();
+    return createCollection_5j3pra_a();
   }
 
-  private EditorCell createCollection_1vnrru_a() {
+  private EditorCell createCollection_5j3pra_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_1vnrru_a");
+    editorCell.setCellId("Collection_5j3pra_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createComponent_1vnrru_a0());
-    editorCell.addEditorCell(createConstant_1vnrru_b0());
-    editorCell.addEditorCell(createRefCell_1vnrru_c0());
-    editorCell.addEditorCell(createConstant_1vnrru_d0());
+    editorCell.addEditorCell(createComponent_5j3pra_a0());
+    editorCell.addEditorCell(createConstant_5j3pra_b0());
+    editorCell.addEditorCell(createRefCell_5j3pra_c0());
+    editorCell.addEditorCell(createConstant_5j3pra_d0());
     return editorCell;
   }
-  private EditorCell createComponent_1vnrru_a0() {
+  private EditorCell createComponent_5j3pra_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createConstant_1vnrru_b0() {
+  private EditorCell createConstant_5j3pra_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
-    editorCell.setCellId("Constant_1vnrru_b0");
+    editorCell.setCellId("Constant_5j3pra_b0");
     Style style = new StyleImpl();
     new LeftAngleBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_1vnrru_c0() {
+  private EditorCell createRefCell_5j3pra_c0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new OfAspectOperation_EditorBuilder_a.Inline_Builder_1vnrru_a2a(getEditorContext(), myNode, effectiveNode).createCell();
+            return new OfAspectOperation_old_EditorBuilder_a.Inline_Builder_5j3pra_a2a(getEditorContext(), myNode, effectiveNode).createCell();
           }
-        }, effectiveNode, "requestedAspect");
+        }, effectiveNode, "requestedAspect_old");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_notnull(cell);
+        installDeleteActions_nullable_reference(cell);
         return cell;
       }
     };
-    provider.setRole("requestedAspect");
-    provider.setNoTargetText("<no requestedAspect>");
+    provider.setRole("requestedAspect_old");
+    provider.setNoTargetText("<no requestedAspect_old>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("requestedAspect");
+      editorCell.setRole("requestedAspect_old");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -100,19 +100,19 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_1vnrru_a2a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder_5j3pra_a2a extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_1vnrru_a2a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder_5j3pra_a2a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_1vnrru_a0c0();
+      return createProperty_5j3pra_a0c0();
     }
 
     @NotNull
@@ -121,7 +121,7 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
       return myNode;
     }
 
-    private EditorCell createProperty_1vnrru_a0c0() {
+    private EditorCell createProperty_5j3pra_a0c0() {
       CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -138,9 +138,9 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
       return editorCell;
     }
   }
-  private EditorCell createConstant_1vnrru_d0() {
+  private EditorCell createConstant_5j3pra_d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ">");
-    editorCell.setCellId("Constant_1vnrru_d0");
+    editorCell.setCellId("Constant_5j3pra_d0");
     Style style = new StyleImpl();
     new RightAngleBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
