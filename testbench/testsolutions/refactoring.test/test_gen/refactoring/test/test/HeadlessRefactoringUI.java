@@ -13,7 +13,6 @@ import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.Assert;
-import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -56,7 +55,9 @@ public class HeadlessRefactoringUI implements RefactoringUI {
       for (RefactoringParticipant.Option option : ListSequence.fromList(options)) {
         Assert.assertTrue("Option " + option.getId() + " was shown but is not expected.", ListSequence.fromList(getOptions()).contains(option));
       }
-      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
+
+      // this stops the process 
+      return null;
     }
     @Override
     public void runSearch(final _FunctionTypes._void_P1_E0<? super ProgressMonitor> task) {
@@ -89,14 +90,13 @@ public class HeadlessRefactoringUI implements RefactoringUI {
       for (Object result : shownResults) {
         Assert.assertTrue("SearchResult " + result + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
       }
-
       for (Object node : mySearchedNodes) {
         Assert.assertTrue("SearchNode " + node + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
       }
       for (Object node : searchResults.getSearchedNodes()) {
         Assert.assertTrue("SearchNode " + node + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains(node));
       }
-      // do nothing 
+      // do nothing, this in fact stops the process 
     }
   }
 }

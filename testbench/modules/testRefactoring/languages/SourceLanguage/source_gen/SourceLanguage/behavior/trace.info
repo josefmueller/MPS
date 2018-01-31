@@ -9,25 +9,25 @@
     </file>
   </root>
   <root nodeRef="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)/6426415869175149441">
-    <file name="SomeClass.java">
-      <node id="6426415869175152793" at="7,22,8,42" concept="2" />
-      <node id="6426415869175193598" at="8,42,9,21" concept="0" />
+    <file name="ClassNotToMove.java">
+      <node id="6426415869175152793" at="7,22,8,52" concept="2" />
+      <node id="6426415869175193598" at="8,52,9,21" concept="0" />
       <node id="6426415869175152726" at="7,0,11,0" concept="1" trace="main#()V" />
       <scope id="6426415869175152730" at="7,22,9,21">
         <var name="someClass" id="6426415869175152794" />
       </scope>
       <scope id="6426415869175152726" at="7,0,11,0" />
-      <unit id="6426415869175149441" at="6,0,12,0" name="SourceLanguage.behavior.SomeClass" />
+      <unit id="6426415869175149441" at="6,0,12,0" name="SourceLanguage.behavior.ClassNotToMove" />
     </file>
   </root>
   <root nodeRef="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)/6426415869175194521">
-    <file name="OtherClass.java">
-      <node id="6426415869175194760" at="7,10,8,42" concept="2" />
-      <node id="6426415869175195126" at="8,42,9,21" concept="0" />
+    <file name="ClassWithUsage.java">
+      <node id="6426415869175194760" at="7,10,8,52" concept="2" />
+      <node id="6426415869175195126" at="8,52,9,21" concept="0" />
       <scope id="6426415869175194735" at="7,10,9,21">
         <var name="someClass" id="6426415869175194761" />
       </scope>
-      <unit id="6426415869175194521" at="6,0,12,0" name="SourceLanguage.behavior.OtherClass" />
+      <unit id="6426415869175194521" at="6,0,12,0" name="SourceLanguage.behavior.ClassWithUsage" />
     </file>
   </root>
 </debug-info>

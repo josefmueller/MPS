@@ -7,9 +7,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="SourceLanguage.behavior.OtherClass" file="OtherClass.java">
-    <classNode dependClassName="SourceLanguage.behavior.SomeClass" />
+  <dependency className="SourceLanguage.behavior.ClassNotToMove" file="ClassNotToMove.java" />
+  <dependency className="SourceLanguage.behavior.ClassWithUsage" file="ClassWithUsage.java">
+    <classNode dependClassName="SourceLanguage.behavior.ClassNotToMove" />
   </dependency>
-  <dependency className="SourceLanguage.behavior.SomeClass" file="SomeClass.java" />
 </dependenciesRoot>
 

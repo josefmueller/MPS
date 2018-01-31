@@ -69,7 +69,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="5$JdMWP7ze1">
-    <property role="TrG5h" value="SomeClass" />
+    <property role="TrG5h" value="ClassNotToMove" />
     <node concept="3clFb_" id="5$JdMWP7$1m" role="jymVt">
       <property role="TrG5h" value="main" />
       <node concept="3cqZAl" id="5$JdMWP7$1o" role="3clF45" />
@@ -79,11 +79,11 @@
           <node concept="3cpWsn" id="5$JdMWP7$2q" role="3cpWs9">
             <property role="TrG5h" value="someClass" />
             <node concept="3uibUv" id="5$JdMWP7$2r" role="1tU5fm">
-              <ref role="3uigEE" node="5$JdMWP7ze1" resolve="SomeClass" />
+              <ref role="3uigEE" node="5$JdMWP7ze1" resolve="ClassNotToMove" />
             </node>
             <node concept="2ShNRf" id="5$JdMWP7$3u" role="33vP2m">
               <node concept="HV5vD" id="5$JdMWP7HYS" role="2ShVmc">
-                <ref role="HV5vE" node="5$JdMWP7ze1" resolve="SomeClass" />
+                <ref role="HV5vE" node="5$JdMWP7ze1" resolve="ClassNotToMove" />
               </node>
             </node>
           </node>
@@ -103,18 +103,18 @@
     <node concept="3Tm1VV" id="5$JdMWP7ze2" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5$JdMWP7Iep">
-    <property role="TrG5h" value="OtherClass" />
+    <property role="TrG5h" value="ClassWithUsage" />
     <node concept="1Pe0a1" id="5$JdMWP7IhH" role="jymVt">
       <node concept="3clFbS" id="5$JdMWP7IhJ" role="1Pe0a2">
         <node concept="3cpWs8" id="5$JdMWP7Ii8" role="3cqZAp">
           <node concept="3cpWsn" id="5$JdMWP7Ii9" role="3cpWs9">
             <property role="TrG5h" value="someClass" />
             <node concept="3uibUv" id="5$JdMWP7Iia" role="1tU5fm">
-              <ref role="3uigEE" node="5$JdMWP7ze1" resolve="SomeClass" />
+              <ref role="3uigEE" node="5$JdMWP7ze1" resolve="ClassNotToMove" />
             </node>
             <node concept="2ShNRf" id="5$JdMWP7IiK" role="33vP2m">
               <node concept="HV5vD" id="5$JdMWP7Inf" role="2ShVmc">
-                <ref role="HV5vE" node="5$JdMWP7ze1" resolve="SomeClass" />
+                <ref role="HV5vE" node="5$JdMWP7ze1" resolve="ClassNotToMove" />
               </node>
             </node>
           </node>
