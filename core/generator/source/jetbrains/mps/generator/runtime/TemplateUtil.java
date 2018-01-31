@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,6 +120,12 @@ public class TemplateUtil {
     }
   }
 
+  /**
+   * @deprecated This method has been in use from languages with interpreted generators (LanguageRuntime.getGenerators) to instantiate an interpreted TemplateModule
+   * prior to 2018.1.
+   */
+  @Deprecated
+  @ToRemove(version = 2018.1)
   public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
     Generator g = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(moduleReference), Generator.class);
     if (g == null) {

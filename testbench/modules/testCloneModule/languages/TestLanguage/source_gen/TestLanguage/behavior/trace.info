@@ -15,9 +15,6 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,32,0" name="TestLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="TestConcept_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="TestLanguage.behavior.TestConcept_BehaviorDescriptor" />
-    </file>
   </root>
   <root nodeRef="r:a0cfa131-f265-46e5-ac6c-04009f080e59(TestLanguage.behavior)/1150787974606675978">
     <file name="TestConcept__BehaviorDescriptor.java">

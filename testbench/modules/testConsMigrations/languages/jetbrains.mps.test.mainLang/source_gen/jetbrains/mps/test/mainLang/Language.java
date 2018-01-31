@@ -4,20 +4,19 @@ package jetbrains.mps.test.mainLang;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.test.mainLang.migration.MigrationDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static String MODULE_REF = "ca03d2f0-cb01-4ae7-b688-d32e45bbfcc1(jetbrains.mps.test.mainLang)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("ca03d2f0-cb01-4ae7-b688-d32e45bbfcc1");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.test.mainLang";
@@ -29,27 +28,17 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("ca03d2f0-cb01-4ae7-b688-d32e45bbfcc1"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
-  @Override
-  public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "aaf6176a-8b84-4b48-b9d4-6fc2e497494f(jetbrains.mps.test.mainLang#7287088426769162416)"));
-  }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
-    if (aspectClass.getName().equals("jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor")) {
-      if (aspectClass == EditorAspectDescriptor.class) {
-        return (T) new EditorAspectDescriptorBase();
-      }
-    }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor")) {
-      if (aspectClass == MigrationAspectDescriptor.class) {
-        return (T) new MigrationDescriptor();
-      }
+    if (aspectClass == MigrationAspectDescriptor.class) {
+      return aspectClass.cast(new MigrationDescriptor());
     }
     return null;
   }

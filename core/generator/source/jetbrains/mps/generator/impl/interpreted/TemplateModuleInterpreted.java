@@ -45,14 +45,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
  * Lifecycle of the module is not quite well defined now, it's assumed instances are not kept too long
  * for us to care about model changes (i.e. addition of a new template model or change in used languages)
+ * @deprecated has been superseded by {@link jetbrains.mps.generator.runtime.TemplateModuleInterpreted2}. Left for compatibility as long as there
+ *             are generated LanguageRuntime classes that instantiate this template module from within their getGenerator() (through TemplateUtil)
  * evgeny, 3/10/11
  */
+@Deprecated
 public class TemplateModuleInterpreted extends TemplateModuleBase {
   private final Generator generator;
   private Collection<TemplateModel> myModels;
