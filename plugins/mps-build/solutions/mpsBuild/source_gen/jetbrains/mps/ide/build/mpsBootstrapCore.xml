@@ -7176,6 +7176,8 @@
         <fileset file="${artifacts.IDEA}/lib/platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/idea.jar" />
         <fileset file="${artifacts.IDEA}/lib/openapi.jar" />
+        <fileset file="${artifacts.IDEA}/lib/platform-api.jar" />
+        <fileset file="${artifacts.IDEA}/lib/platform-impl.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />
@@ -7260,7 +7262,7 @@
       <classpath>
         <fileset file="${artifacts.IDEA}/lib/icons.jar" />
         <fileset file="${artifacts.IDEA}/lib/util.jar" />
-        <fileset file="${artifacts.IDEA}/lib/openapi.jar" />
+        <fileset file="${artifacts.IDEA}/lib/platform-api.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

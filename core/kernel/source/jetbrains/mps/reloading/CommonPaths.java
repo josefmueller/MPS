@@ -243,6 +243,8 @@ public final class CommonPaths {
   private static void addRepackedIdeaJars(CompositeClassPathItem result) {
     addIfExists(result, "lib/openapi.jar");
     addIfExists(result, "lib/platform.jar");
+    addIfExists(result, "lib/platform-api.jar");
+    addIfExists(result, "lib/platform-impl.jar");
   }
 
   private static void addIdeaJars(CompositeClassPathItem result) {

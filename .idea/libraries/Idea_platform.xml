@@ -37,6 +37,8 @@
       <root url="jar://$PROJECT_DIR$/lib/trilead-ssh2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.13.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/batik-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/platform-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/platform-api.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
