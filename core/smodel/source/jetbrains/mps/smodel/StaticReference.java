@@ -79,8 +79,22 @@ public final class StaticReference extends SReferenceBase {
     return immatureNode.getNodeId();
   }
 
+  @Override
+  //exclusively for debug purposes
+  public String toString() {
+    if (isDirect()){
+      return "StaticRef[immature]";
+    }
+    return "StaticRef[" +
+           "model:" + getTargetSModelReference() + ";" +
+           "nodeid:" + getTargetNodeId() +
+           "]";
+  }
+
   public synchronized void setTargetNodeId(SNodeId nodeId) {
-    if (!makeIndirect()) makeMature();
+    if (!makeIndirect()) {
+      makeMature();
+    }
     myTargetNodeId = nodeId;
   }
 
