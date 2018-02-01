@@ -243,7 +243,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.idea.svn.SvnConfiguration" />
-    <classNode dependClassName="org.tmatesoft.svn.core.wc.SVNWCUtil" />
+    <classNode dependClassName="org.jetbrains.idea.svn.SvnUtil" />
     <classNode extendsClassName="jetbrains.mps.vcs.platform.mergedriver.AbstractInstaller" />
   </dependency>
 </dependenciesRoot>

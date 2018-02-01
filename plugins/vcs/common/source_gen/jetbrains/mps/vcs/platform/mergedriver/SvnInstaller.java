@@ -6,7 +6,7 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import org.jetbrains.idea.svn.SvnConfiguration;
-//import org.tmatesoft.svn.core.wc.SVNWCUtil;
+import org.jetbrains.idea.svn.SvnUtil;
 import com.intellij.openapi.util.SystemInfo;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
@@ -19,8 +19,6 @@ import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.core.mergedriver.MergeDriverMain;
-import org.jetbrains.idea.svn.SvnUtil;
-
 import java.io.IOException;
 
 /*package*/ class SvnInstaller extends AbstractInstaller {
@@ -36,7 +34,6 @@ import java.io.IOException;
       if (useIdeConfig) {
         myConfigDir = new File(SvnConfiguration.getInstance(project).getConfigurationDirectory());
       } else {
-//        myConfigDir = SVNWCUtil.getDefaultConfigurationDirectory();
         myConfigDir = SvnUtil.USER_CONFIGURATION_PATH.getValue().toFile();
       }
     }

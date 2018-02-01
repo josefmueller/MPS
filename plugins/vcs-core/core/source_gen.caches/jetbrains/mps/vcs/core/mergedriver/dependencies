@@ -178,19 +178,11 @@
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.TextMerger" file="TextMerger.java">
-    <classNode dependClassName="de.regnis.q.sequence.line.QSequenceLineRAByteData" />
-    <classNode dependClassName="de.regnis.q.sequence.line.QSequenceLineRAData" />
-    <classNode dependClassName="java.io.ByteArrayOutputStream" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.FSMergerBySequence" />
-    <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle" />
-    <classNode dependClassName="org.tmatesoft.svn.core.wc.SVNDiffOptions" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
 </dependenciesRoot>
