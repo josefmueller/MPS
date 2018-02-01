@@ -77,7 +77,7 @@
       <node concept="3clFbS" id="5$JdMWP7$1q" role="3clF47">
         <node concept="3cpWs8" id="5$JdMWP7$2p" role="3cqZAp">
           <node concept="3cpWsn" id="5$JdMWP7$2q" role="3cpWs9">
-            <property role="TrG5h" value="someClass" />
+            <property role="TrG5h" value="sameClass" />
             <node concept="3uibUv" id="5$JdMWP7$2r" role="1tU5fm">
               <ref role="3uigEE" node="5$JdMWP7ze1" resolve="ClassNotToMove" />
             </node>
@@ -91,7 +91,7 @@
         <node concept="3clFbF" id="5$JdMWP7HZY" role="3cqZAp">
           <node concept="2OqwBi" id="5$JdMWP7I5C" role="3clFbG">
             <node concept="37vLTw" id="5$JdMWP7HZW" role="2Oq$k0">
-              <ref role="3cqZAo" node="5$JdMWP7$2q" resolve="someClass" />
+              <ref role="3cqZAo" node="5$JdMWP7$2q" resolve="sameClass" />
             </node>
             <node concept="liA8E" id="5$JdMWP7IdA" role="2OqNvi">
               <ref role="37wK5l" node="5$JdMWP7$1m" resolve="main" />

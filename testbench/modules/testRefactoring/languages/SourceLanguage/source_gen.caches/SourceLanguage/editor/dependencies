@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="SourceLanguage.editor.ClassToMove_NoParticipants" file="ClassToMove_NoParticipants.java" />
+  <dependency className="SourceLanguage.editor.ClassWithUsage" file="ClassWithUsage.java">
+    <classNode dependClassName="SourceLanguage.editor.ClassToMove_NoParticipants" />
+  </dependency>
   <dependency className="SourceLanguage.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>

@@ -32,9 +32,19 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.io.File;
 import java.util.Collection;
 import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
+import java.io.File;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.util.Reference;
@@ -110,13 +120,59 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI.SearchResultsChecker(options, ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
           public SNode select(SReference it) {
-            return it.getSourceNode();
+            return it.getTargetNode();
           }
         })), ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
           public SNode select(SReference it) {
-            return it.getTargetNode();
+            return it.getSourceNode();
           }
         }))));
+      }
+    });
+  }
+  public void test_moveClassUpdateReferences() throws Exception {
+    runCommand(new Runnable() {
+      public void run() {
+        SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "constraints");
+        List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:bd146201-753a-4f62-9de3-080d0101373f(SourceLanguage.constraints)", "3794080752246611243"));
+        Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
+
+        List<RefactoringParticipant.Option> options = ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
+
+        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+
+        Collection<ReportItem> sourceErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "constraints"), null));
+        Assert.assertTrue("" + sourceErrors, CollectionSequence.fromCollection(sourceErrors).isEmpty());
+        Collection<ReportItem> targetErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "constraints"), null));
+        Assert.assertTrue("" + targetErrors, CollectionSequence.fromCollection(targetErrors).isEmpty());
+      }
+    });
+  }
+  public void test_moveClassWithoutParticipants() throws Exception {
+    runCommand(new Runnable() {
+      public void run() {
+        SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "editor");
+        List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:44a0ff4c-6d4a-40cf-bc8a-75a422b1094a(SourceLanguage.editor)", "3794080752246611044"));
+        Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
+
+        List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
+
+        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+
+        Assert.assertTrue(CollectionSequence.fromCollection(getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "editor"), null))).isEmpty());
+        Collection<ReportItem> sourceModelErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "editor"), null));
+        Assert.assertTrue(CollectionSequence.fromCollection(sourceModelErrors).all(new IWhereFilter<ReportItem>() {
+          public boolean accept(ReportItem it) {
+            return it instanceof UnresolvedReferenceReportItem;
+          }
+        }));
+        Set<SReference> expectedBrokenReferences = SetSequence.fromSetAndArray(new HashSet<SReference>(), SNodeOperations.getReference(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNode("r:44a0ff4c-6d4a-40cf-bc8a-75a422b1094a(SourceLanguage.editor)", "3794080752246627979"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SNodeOperations.getReference(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getNode("r:44a0ff4c-6d4a-40cf-bc8a-75a422b1094a(SourceLanguage.editor)", "3794080752246627979"), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier")), SNodeOperations.getReference(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.collect(SNodeOperations.ofConcept(SLinkOperations.collect(SNodeOperations.ofConcept(SLinkOperations.getChildren(SLinkOperations.getTarget(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticInitializers_id2I6sE$IuBP7.invoke(SNodeOperations.getNode("r:44a0ff4c-6d4a-40cf-bc8a-75a422b1094a(SourceLanguage.editor)", "6426415869175194521"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, 0x11c7538039eL, "statementList")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))).first(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
+        Assert.assertFalse(SetSequence.fromSet(expectedBrokenReferences).contains(null));
+        Assert.assertEquals(expectedBrokenReferences, SetSequence.fromSetWithValues(new HashSet<SReference>(), CollectionSequence.fromCollection(sourceModelErrors).ofType(UnresolvedReferenceReportItem.class).select(new ISelector<UnresolvedReferenceReportItem, SReference>() {
+          public SReference select(UnresolvedReferenceReportItem it) {
+            return it.getNode().resolve(project.getRepository()).getReference(it.getConceptFeature());
+          }
+        })));
       }
     });
   }

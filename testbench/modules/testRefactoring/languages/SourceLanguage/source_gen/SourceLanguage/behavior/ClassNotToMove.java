@@ -5,7 +5,7 @@ package SourceLanguage.behavior;
 
 public class ClassNotToMove {
   public void main() {
-    ClassNotToMove someClass = new ClassNotToMove();
-    someClass.main();
+    ClassNotToMove sameClass = new ClassNotToMove();
+    sameClass.main();
   }
 }

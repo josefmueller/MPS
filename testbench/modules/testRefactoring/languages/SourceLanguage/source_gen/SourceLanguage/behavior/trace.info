@@ -14,7 +14,7 @@
       <node id="6426415869175193598" at="8,52,9,21" concept="0" />
       <node id="6426415869175152726" at="7,0,11,0" concept="1" trace="main#()V" />
       <scope id="6426415869175152730" at="7,22,9,21">
-        <var name="someClass" id="6426415869175152794" />
+        <var name="sameClass" id="6426415869175152794" />
       </scope>
       <scope id="6426415869175152726" at="7,0,11,0" />
       <unit id="6426415869175149441" at="6,0,12,0" name="SourceLanguage.behavior.ClassNotToMove" />
