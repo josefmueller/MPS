@@ -39,6 +39,7 @@
       <root url="jar://$PROJECT_DIR$/lib/batik-all.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/platform-impl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/platform-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jps-model.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
