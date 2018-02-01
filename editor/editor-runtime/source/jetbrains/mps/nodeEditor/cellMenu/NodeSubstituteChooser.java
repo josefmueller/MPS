@@ -72,7 +72,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private List<SubstituteAction> mySubstituteActions = new ArrayList<>();
   private boolean myMenuEmpty;
   private boolean myUserChoseItem;
-  private JList<SubstituteAction> myList = new JBList<>(new CollectionListModel<SubstituteAction>());
+  private JList<SubstituteAction> myList;
   private ISubstituteChooserUi myUi;
 
   private ComponentAdapter myComponentListener = new ComponentAdapter() {
@@ -84,19 +84,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
-    myList.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mousePressed(MouseEvent e) {
-        setUserChoseItem(true);
-      }
-
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2) {
-          doSubstituteSelection();
-        }
-      }
-    });
     myPatternEditor = new NodeSubstitutePatternEditor();
   }
 
@@ -204,6 +191,23 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myUi;
   }
 
+  private void initList() {
+    myList = new JBList<>(new CollectionListModel<SubstituteAction>());
+    myList.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mousePressed(MouseEvent e) {
+        setUserChoseItem(true);
+      }
+
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() == 2) {
+          doSubstituteSelection();
+        }
+      }
+    });
+  }
+
   /**
    * Makes the chooser visible or invisible.
    *
@@ -220,6 +224,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (myContextCell == null || myNodeSubstituteInfo == null) {
         throw new IllegalStateException("Context cell and substitute info must not be null to show the NodeSubstituteChooser");
       }
+      initList();
       myEditorComponent.pushKeyboardHandler(this);
       rebuildMenuEntries();
       Point location = calcPatternEditorLocation();
@@ -243,6 +248,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (realUi) {
         getEditorWindow().removeComponentListener(myComponentListener);
       }
+      myList = null;
     }
     setUserChoseItem(false);
     myIsVisible = visible;
@@ -373,7 +379,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return (CollectionListModel<SubstituteAction>) myList.getModel();
   }
 
-  public int getSelectionIndex() {
+  private int getSelectionIndex() {
     return myList.getSelectedIndex();
   }
 
@@ -401,7 +407,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  public void setSelectionIndex(int index) {
+  private void setSelectionIndex(int index) {
     if (index < 0) {
       index = myList.getModel().getSize() - 1;
     } else if (index >= myList.getModel().getSize()) {
