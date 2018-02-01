@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ public class GlobalModuleDependenciesManager {
   @Deprecated
   @ToRemove(version = 3.3)
   public Collection<Language> getUsedLanguages() {
-    Set<Language> result = new HashSet<Language>();
+    Set<Language> result = new HashSet<>();
     for (SModule module : myModules) {
       result.addAll(directlyUsedLanguages(module));
     }
@@ -188,6 +188,7 @@ public class GlobalModuleDependenciesManager {
 
     void langSourceModuleCannotBeResolved(@NotNull SLanguage languageWithoutSource);
 
+    // FIXME shall we drop this method, it's not invoked from anywhere
     void runtimeDependencyCannotBeFound(@NotNull SLanguage usedLang, @NotNull SModuleReference runtimeRef);
 
     void runtimeDependencyCannotBeFound(@NotNull SModuleReference runtimeRef);

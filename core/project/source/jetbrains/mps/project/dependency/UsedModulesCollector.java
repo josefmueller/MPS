@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -40,20 +41,9 @@ import static org.jetbrains.mps.openapi.module.SDependencyScope.GENERATES_INTO;
  */
 @Immutable
 public final class UsedModulesCollector {
-  private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache = new HashMap<>();
-  private final ModuleRepositoryFacade myRepositoryFacade;
+  private final Map<SLanguage, Collection<SModuleReference>> myLanguageRuntimesCache = new HashMap<>();
 
-  /**
-   * @deprecated please specify which repository to resolve dependencies in, {@link #UsedModulesCollector(ModuleRepositoryFacade)}
-   *             There's no real need to use ModuleRepositoryFacade, SRepository might suffice.
-   */
-  @Deprecated
   public UsedModulesCollector() {
-    this(ModuleRepositoryFacade.getInstance());
-  }
-
-  public UsedModulesCollector(@NotNull ModuleRepositoryFacade repositoryFacade) {
-    myRepositoryFacade = repositoryFacade;
   }
 
   @NotNull
@@ -82,7 +72,20 @@ public final class UsedModulesCollector {
 
     if (includeNonReexport) {
       if (runtimes) {
-        result.addAll(new RuntimesOfUsedLanguageCalculator(myRepositoryFacade, module, myLanguageRuntimesCache, handler).invoke());
+        SRepository contextRepo = module.getRepository();
+        assert contextRepo != null;
+        // FIXME in fact, it's caller responsibility to ensure proper read access with supplied SModule.
+        //       Read access added here just in case clients relied on ModuleRepositoryFacade.getModule(), which obtains read access when needed
+        contextRepo.getModelAccess().runReadAction(() -> {
+          for (SModuleReference mr : new RuntimesOfUsedLanguageCalculator(myLanguageRuntimesCache, handler).invoke(module)) {
+            SModule m = mr.resolve(contextRepo);
+            if (m == null) {
+              handler.runtimeDependencyCannotBeFound(mr);
+            } else {
+              result.add(m);
+            }
+          }
+        });
       }
     }
 

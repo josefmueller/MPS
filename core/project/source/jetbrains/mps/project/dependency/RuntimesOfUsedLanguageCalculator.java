@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.tempmodel.TempModule;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
@@ -49,20 +48,15 @@ import java.util.Set;
 class RuntimesOfUsedLanguageCalculator {
   private static final Logger LOG = LogManager.getLogger(RuntimesOfUsedLanguageCalculator.class);
 
-  @NotNull
-  private final ModuleRepositoryFacade myRepositoryFacade;
-  private final SModule myModule;
-  private final Strategy myStrategy;
-  private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache;
+  private final Map<SLanguage, Collection<SModuleReference>> myLanguageRuntimesCache;
+  private final ErrorHandler myErrorHandler;
 
-  public RuntimesOfUsedLanguageCalculator(@NotNull ModuleRepositoryFacade repositoryFacade, @NotNull SModule module, Map<SLanguage, Collection<SModule>> languageRuntimesCache, ErrorHandler errorHandler) {
-    myRepositoryFacade = repositoryFacade;
-    myModule = module;
-    myStrategy = isPackaged() ? new DeploymentStrategy(errorHandler) : new SourceStrategy(errorHandler);
+  public RuntimesOfUsedLanguageCalculator(Map<SLanguage, Collection<SModuleReference>> languageRuntimesCache, ErrorHandler errorHandler) {
     myLanguageRuntimesCache = languageRuntimesCache;
+    myErrorHandler = errorHandler;
   }
 
-  private boolean isPackaged() {
+  private static boolean isPackaged(SModule myModule) {
     if (myModule instanceof TempModule || myModule instanceof TransientSModule || myModule instanceof ProjectStructureModule) {
       return false;
     }
@@ -72,12 +66,13 @@ class RuntimesOfUsedLanguageCalculator {
   /**
    * @return the runtimes of the used languages
    */
-  public Set<SModule> invoke() {
-    return myStrategy.findRuntimes();
+  public Set<SModuleReference> invoke(@NotNull SModule module) {
+    Strategy strategy = isPackaged(module) ? new DeploymentStrategy() : new SourceStrategy();
+    return strategy.findRuntimes(module);
   }
 
   private interface Strategy {
-    Set<SModule> findRuntimes();
+    Set<SModuleReference> findRuntimes(SModule module);
   }
 
   /**
@@ -87,34 +82,27 @@ class RuntimesOfUsedLanguageCalculator {
    */
   @Hack
   private class DeploymentStrategy implements Strategy {
-    private final ErrorHandler myErrorHandler;
 
-    public DeploymentStrategy(ErrorHandler errorHandler) {
-      myErrorHandler = errorHandler;
+    public DeploymentStrategy() {
     }
 
     @Override
-    public Set<SModule> findRuntimes() {
-      Set<SModule> result = new HashSet<>();
-      ModuleDescriptor moduleDescriptor = ((AbstractModule) myModule).getModuleDescriptor();
+    public Set<SModuleReference> findRuntimes(SModule module) {
+      Set<SModuleReference> result = new HashSet<>();
+      ModuleDescriptor moduleDescriptor = ((AbstractModule) module).getModuleDescriptor();
       if (moduleDescriptor == null) {
-        LOG.warn("Module descriptor could not be found for the module " + myModule + "; falling back to the SourceStrategy.");
-        return new SourceStrategy(myErrorHandler).findRuntimes();
+        LOG.warn("Module descriptor could not be found for the module " + module + "; falling back to the SourceStrategy.");
+        return new SourceStrategy().findRuntimes(module);
       }
       DeploymentDescriptor descriptor = moduleDescriptor.getDeploymentDescriptor();
       if (descriptor == null) {
-        LOG.debug("The deployment descriptor could not be found for the module " + myModule + "; falling back to the SourceStrategy.");
-        return new SourceStrategy(myErrorHandler).findRuntimes();
+        LOG.debug("The deployment descriptor could not be found for the module " + module + "; falling back to the SourceStrategy.");
+        return new SourceStrategy().findRuntimes(module);
       }
       Collection<Dependency> dependencies = descriptor.getDependencies();
       for (Dependency dependency : dependencies) {
         SModuleReference runtimeRef = dependency.getModuleRef();
-        SModule runtime = myRepositoryFacade.getModule(runtimeRef);
-        if (runtime != null) {
-          result.add(runtime);
-        } else {
-          myErrorHandler.runtimeDependencyCannotBeFound(runtimeRef);
-        }
+        result.add(runtimeRef);
       }
       return result;
     }
@@ -124,32 +112,24 @@ class RuntimesOfUsedLanguageCalculator {
    * used when we do not have a deployed module; we have to look for the source module of the language to gather its runtimes
    */
   private class SourceStrategy implements Strategy {
-    private final ErrorHandler myErrorHandler;
-
-    public SourceStrategy(ErrorHandler errorHandler) {
-      myErrorHandler = errorHandler;
+    public SourceStrategy() {
     }
 
     @Override
-    public Set<SModule> findRuntimes() {
-      Set<SModule> result = new HashSet<>();
-      for (SLanguage usedLang : myModule.getUsedLanguages()) {
+    public Set<SModuleReference> findRuntimes(SModule module) {
+      Set<SModuleReference> result = new HashSet<>();
+      for (SLanguage usedLang : module.getUsedLanguages()) {
         if (usedLang.getSourceModule() == null) {
-          if (!(myModule instanceof TempModule)) {
+          if (!(module instanceof TempModule)) {
             myErrorHandler.langSourceModuleCannotBeResolved(usedLang);
           }
           continue;
         }
         if (!myLanguageRuntimesCache.containsKey(usedLang)) {
-          List<SModule> runtimes = new ArrayList<>();
+          List<SModuleReference> runtimes = new ArrayList<>();
           myLanguageRuntimesCache.put(usedLang, runtimes);
           for (SModuleReference runtimeRef : usedLang.getLanguageRuntimes()) {
-            SModule runtime = myRepositoryFacade.getModule(runtimeRef);
-            if (runtime != null) {
-              runtimes.add(runtime);
-            } else {
-              myErrorHandler.runtimeDependencyCannotBeFound(usedLang, runtimeRef);
-            }
+            runtimes.add(runtimeRef);
           }
         }
         result.addAll(myLanguageRuntimesCache.get(usedLang));
