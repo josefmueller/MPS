@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,6 +289,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ModelRootContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
+    private JTextField myGeneratorAlias;
     private JSpinner myLanguageVersion;
     private JSpinner myModuleVersion;
     private DefaultScope myPlanPickScope;
@@ -369,7 +370,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (hasLanguageVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.language.version"));
           panel.add(verLabel,
-                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                                         GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
           myLanguageVersion = new JSpinner(new SpinnerNumberModel((int) getLanguageVersion(), 0, getLanguageVersion() + 10000, 1));
@@ -377,13 +378,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
           panel.add(myLanguageVersion,
-                    new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                    new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                                         GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
         if (hasModuleVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.version"));
           panel.add(verLabel,
-                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                                         GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
           myModuleVersion = new JSpinner(new SpinnerNumberModel((int) getModuleVersion(), 0, getModuleVersion() + 10000, 1));
@@ -391,7 +392,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
           panel.add(myModuleVersion,
-                    new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                    new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                                         GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
 
@@ -411,6 +412,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         myPlanPanel = new GenPlanPickPanel(myProject, myPlanPickScope, "Generation plan for models using this devkit");
         myPlanPanel.setPlanModel(((DevkitDescriptor) myModuleDescriptor).getAssociatedGenPlan());
         return myPlanPanel;
+      } else if (myModule instanceof Generator && myModuleDescriptor instanceof GeneratorDescriptor) {
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayoutManager(1, 3));
+        JLabel l = new JLabel(PropertiesBundle.message("module.common.generator.alias"));
+        p.add(l, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                     GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+        myGeneratorAlias = new JTextField();
+        p.add(myGeneratorAlias,
+              new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_FIXED,
+                                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(250, -1), null, 0, false));
+        myGeneratorAlias.setText(((GeneratorDescriptor) myModuleDescriptor).getAlias());
+        p.add(new JPanel(), new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+                                                GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        return p;
       }
       return null;
     }
@@ -463,6 +479,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           //just continue omitting this field
         }
       }
+      if (myGeneratorAlias != null && !myGeneratorAlias.getText().equals(((GeneratorDescriptor) myModuleDescriptor).getAlias())) {
+        return true;
+      }
 
       return false;
     }
@@ -496,6 +515,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           } catch (NumberFormatException e) {
             //just continue omitting this field
           }
+        }
+        if (myGeneratorAlias != null) {
+          ((GeneratorDescriptor) myModuleDescriptor).setAlias(myGeneratorAlias.getText().trim());
         }
         myEntriesEditor.apply();
       }
@@ -883,7 +905,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         languageDescriptor.getRuntimeModules().clear();
         languageDescriptor.getRuntimeModules().addAll(myTableItems);
         for (Generator generator : ((Language) myModule).getOwnedGenerators()) {
-          new VersionFixer(myProject, generator,true).updateImportVersions();
+          new VersionFixer(myProject, generator, true).updateImportVersions();
         }
       }
     }

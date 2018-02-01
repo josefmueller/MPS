@@ -331,13 +331,13 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       final ErrorLabel errorLabel = new ErrorLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
       sourcesTab.add(errorLabel,
-          new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+          new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myTextFieldName = new JTextField();
       myTextFieldName.setText(getConfigItemName());
       sourcesTab.add(myTextFieldName,
-          new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+          new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
               GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
       myTextFieldName.addCaretListener(e -> {
         if(myTextFieldName.getText().isEmpty()) {
@@ -349,19 +349,19 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
       sourcesTab.add(label,
-          new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+          new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       JTextField textField = new JTextField();
       textField.setEditable(false);
       textField.setText(getConfigItemPath());
       sourcesTab.add(textField,
-          new GridConstraints(rowCount++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+          new GridConstraints(rowCount++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
               GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
 
       if (topComponent != null) {
         sourcesTab.add(topComponent,
-            new GridConstraints(rowCount++, 0, 1, 2, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
+            new GridConstraints(rowCount++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
                 GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
       }
 

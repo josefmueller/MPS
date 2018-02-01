@@ -80,6 +80,7 @@
         <constraint name="__context__" target="true" within="" contains="" />
       </searchConfiguration>
     </inspection_tool>
+    <inspection_tool class="SimplifiableIfStatement" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="VolatileArrayField" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="VolatileLongOrDoubleField" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="WeakerAccess" enabled="true" level="WEAK WARNING" enabled_by_default="true">
