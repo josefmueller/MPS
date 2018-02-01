@@ -140,7 +140,12 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
         List<RefactoringParticipant.Option> options = ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+      }
+    });
 
+    // not really needed, but still let's end the transaction before checking 
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
         Collection<ReportItem> sourceErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "constraints"), null));
         Assert.assertTrue("" + sourceErrors, CollectionSequence.fromCollection(sourceErrors).isEmpty());
         Collection<ReportItem> targetErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "constraints"), null));
@@ -158,7 +163,12 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
         List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+      }
+    });
 
+    // !!! a separate read action is needed as otherwise we'll not see broken refs due to UnregisteredNodes 
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
         Assert.assertTrue(CollectionSequence.fromCollection(getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "editor"), null))).isEmpty());
         Collection<ReportItem> sourceModelErrors = getErrors(SModelOperations.roots(SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")), "editor"), null));
         Assert.assertTrue(CollectionSequence.fromCollection(sourceModelErrors).all(new IWhereFilter<ReportItem>() {
