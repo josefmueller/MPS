@@ -227,6 +227,7 @@ class NodeSubstituteChooserUi implements ISubstituteChooserUi {
         height = preferredSize.height - myList.getFixedCellHeight() / 2;
       }
       int width = Math.min(getMaxWidth(), preferredSize.width);
+      width = Math.max(width, MY_MIN_CELL_WIDTH);
       return new Dimension(width, height);
     }
 
