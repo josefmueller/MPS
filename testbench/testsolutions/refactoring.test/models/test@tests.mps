@@ -1002,7 +1002,7 @@
                                             <ref role="3cqZAo" node="5pI2QXKS4Xp" resolve="it" />
                                           </node>
                                           <node concept="liA8E" id="5pI2QXKScVN" role="2OqNvi">
-                                            <ref role="37wK5l" to="mhbf:~SReference.getTargetNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTargetNode" />
+                                            <ref role="37wK5l" to="mhbf:~SReference.getSourceNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNode" />
                                           </node>
                                         </node>
                                       </node>
@@ -1034,7 +1034,7 @@
                                             <ref role="3cqZAo" node="5pI2QXKUDDi" resolve="it" />
                                           </node>
                                           <node concept="liA8E" id="5pI2QXKUDDh" role="2OqNvi">
-                                            <ref role="37wK5l" to="mhbf:~SReference.getSourceNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNode" />
+                                            <ref role="37wK5l" to="mhbf:~SReference.getTargetNode():org.jetbrains.mps.openapi.model.SNode" resolve="getTargetNode" />
                                           </node>
                                         </node>
                                       </node>

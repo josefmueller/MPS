@@ -110,11 +110,11 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI.SearchResultsChecker(options, ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
           public SNode select(SReference it) {
-            return it.getTargetNode();
+            return it.getSourceNode();
           }
         })), ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
           public SNode select(SReference it) {
-            return it.getSourceNode();
+            return it.getTargetNode();
           }
         }))));
       }
