@@ -2593,12 +2593,16 @@
               <ref role="3cqZAo" node="3o7jGk0JVr9" resolve="myExpectedResults" />
             </node>
           </node>
-          <node concept="3SKdUt" id="TShYP$BXaM" role="3cqZAp">
-            <node concept="3SKdUq" id="TShYP$BXaO" role="3SKWNk">
-              <property role="3SKdUp" value="the following may not be true since there may be other modules depending on those classes, e.g. the module with tests itself" />
+          <node concept="1X3_iC" id="TShYP$Cqql" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3SKdUt" id="TShYP$BXaM" role="8Wnug">
+              <node concept="3SKdUq" id="TShYP$BXaO" role="3SKWNk">
+                <property role="3SKdUp" value="the following may not be true since there may be other modules depending on those classes, e.g. the module with tests itself" />
+              </node>
             </node>
           </node>
-          <node concept="1X3_iC" id="TShYP$BWba" role="lGtFl">
+          <node concept="1X3_iC" id="TShYP$Cqqm" role="lGtFl">
             <property role="3V$3am" value="statement" />
             <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
             <node concept="2Gpval" id="3o7jGk0K00u" role="8Wnug">

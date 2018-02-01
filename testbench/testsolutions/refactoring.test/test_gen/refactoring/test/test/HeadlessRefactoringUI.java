@@ -87,7 +87,6 @@ public class HeadlessRefactoringUI implements RefactoringUI {
       for (Object result : myExpectedResults) {
         Assert.assertTrue("SearchResult " + result + " is expected but was not shown.", SetSequence.fromSet(shownResults).contains(result));
       }
-      // the following may not be true since there may be other modules depending on those classes, e.g. the module with tests itself 
       for (Object node : mySearchedNodes) {
         Assert.assertTrue("SearchNode " + node + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
       }
