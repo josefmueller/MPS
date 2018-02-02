@@ -11,6 +11,7 @@ import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer__BehaviorDescriptor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -50,9 +51,11 @@ public class SpecifyUtil {
     NodeOperationsContainer__BehaviorDescriptor.detachAllErrorOperations_id4QaU5oI0Q4j.invoke(operationsContainer);
     Iterable<NodeReportItem> reporters = SpecifyUtil.getErrorReporters(node);
     for (NodeReportItem reporter : reporters) {
-      SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter, SNodeOperations.getModel(node).getRepository());
+      @Nullable SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter, SNodeOperations.getModel(node).getRepository());
       NodeOperationsContainer__BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
-      SpecifyUtil.addModelImports(operationsContainer, ruleNode);
+      if (ruleNode != null) {
+        SpecifyUtil.addModelImports(operationsContainer, ruleNode);
+      }
     }
     new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixModuleDependencies();
   }

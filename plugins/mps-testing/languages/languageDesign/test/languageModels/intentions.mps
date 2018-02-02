@@ -1603,7 +1603,7 @@
       <node concept="3clFbS" id="6KNTF2XKThm" role="2VODD2">
         <node concept="3clFbF" id="6KNTF2XL1Ux" role="3cqZAp">
           <node concept="Xl_RD" id="6KNTF2XL1Uw" role="3clFbG">
-            <property role="Xl_RC" value="Specify Rule References In Test Annotation" />
+            <property role="Xl_RC" value="Specify Rule References in Test Annotation" />
           </node>
         </node>
       </node>
