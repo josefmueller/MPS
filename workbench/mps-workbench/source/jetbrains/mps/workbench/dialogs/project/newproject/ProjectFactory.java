@@ -66,23 +66,16 @@ public class ProjectFactory {
         if (error[0] != null) {
           return;
         }
-        String suffix;
-        if (myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED)) {
-          suffix = Project.DIRECTORY_STORE_FOLDER;
-        } else {
-          suffix = myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT;
-        }
 
-        final String projectFilePath = myOptions.getProjectPath() + File.separator + suffix;
+        final String projectFilePath = myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED)
+                                       ? myOptions.getProjectPath()
+                                       : myOptions.getProjectPath() + File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT;
         //MPS-22895 need to run in EDT
-        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-          @Override
-          public void run() {
-            try {
-              myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
-            } catch (Exception e) {
-              throw new RuntimeException(e);
-            }
+        ApplicationManager.getApplication().invokeAndWait(() -> {
+          try {
+            myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+          } catch (Exception e) {
+            throw new RuntimeException(e);
           }
         }, indicator.getModalityState());
       }
