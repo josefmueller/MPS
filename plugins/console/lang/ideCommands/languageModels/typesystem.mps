@@ -16,7 +16,6 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="zyb2" ref="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <import index="ydhz" ref="r:ae7d1f20-2cfe-46ef-a88a-193353a8b62b(jetbrains.mps.console.base.typesystem)" />
   </imports>
   <registry>
@@ -1103,7 +1102,7 @@
     </node>
     <node concept="1YaCAy" id="59iQg8rzHxk" role="1YuTPh">
       <property role="TrG5h" value="ofAspectOperation" />
-      <ref role="1YaFvo" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
+      <ref role="1YaFvo" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation_old" />
     </node>
   </node>
   <node concept="1YbPZF" id="6_TW7xV9dnY">
