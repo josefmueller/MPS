@@ -104,8 +104,8 @@
     <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
-    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
+    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="v23q" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi(MPS.IDEA/)" implicit="true" />
@@ -6516,6 +6516,7 @@
         <ref role="3uigEE" to="xk9i:14R2qyOCo9f" resolve="FieldWithPathChooseDialog" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8r7xG" role="jymVt" />
     <node concept="3clFbW" id="jOEsSnxsqu" role="jymVt">
       <node concept="3Tm1VV" id="jOEsSnxsqw" role="1B3o_S" />
       <node concept="3clFbS" id="jOEsSnxsqx" role="3clF47">
@@ -6682,6 +6683,7 @@
       </node>
       <node concept="3cqZAl" id="jOEsSnxsqv" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qP8e" role="jymVt" />
     <node concept="3clFb_" id="jOEsSnxw33" role="jymVt">
       <property role="TrG5h" value="reset" />
       <node concept="37vLTG" id="jOEsSnxw3V" role="3clF46">
@@ -6738,6 +6740,7 @@
         <node concept="17QB3L" id="jOEsSnxw4q" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qP8f" role="jymVt" />
     <node concept="3clFb_" id="jOEsSnxw4r" role="jymVt">
       <property role="TrG5h" value="getValue" />
       <node concept="1LlUBW" id="jOEsSnxw4T" role="3clF45">
@@ -6768,6 +6771,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qP8g" role="jymVt" />
     <node concept="3clFb_" id="7Mz_zRJBP4W" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setEditable" />
@@ -7181,6 +7185,9 @@
           <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
+      <node concept="3uibUv" id="1G1Y_eNAXXo" role="Sfmx6">
+        <ref role="3uigEE" to="3v5a:~ExecutionException" resolve="ExecutionException" />
+      </node>
     </node>
     <node concept="yHkHE" id="q00jVsP8GH" role="yHkHi">
       <property role="TrG5h" value="getProjectDir" />
@@ -7218,23 +7225,65 @@
         </node>
         <node concept="3clFbJ" id="q00jVsP8GW" role="3cqZAp">
           <node concept="3clFbS" id="q00jVsP8GX" role="3clFbx">
-            <node concept="3cpWs6" id="q00jVsP8GY" role="3cqZAp">
-              <node concept="2ShNRf" id="q00jVsP8GZ" role="3cqZAk">
-                <node concept="1pGfFk" id="q00jVsP8H0" role="2ShVmc">
-                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                  <node concept="2OqwBi" id="q00jVsP8H1" role="37wK5m">
-                    <node concept="2WthIp" id="q00jVsP8H2" role="2Oq$k0" />
-                    <node concept="2XshWL" id="q00jVsP8H3" role="2OqNvi">
-                      <ref role="2WH_rO" node="q00jVsP8ED" resolve="expandPath" />
-                      <node concept="2OqwBi" id="q00jVsP8H4" role="2XxRq1">
-                        <node concept="2WthIp" id="q00jVsP8H5" role="2Oq$k0" />
-                        <node concept="yHkDZ" id="q00jVsP8H6" role="2OqNvi">
-                          <ref role="yHkDY" node="q00jVsOUDo" resolve="myProjectToOpen" />
+            <node concept="3cpWs8" id="f5Mm8$hB2P" role="3cqZAp">
+              <node concept="3cpWsn" id="f5Mm8$hB2Q" role="3cpWs9">
+                <property role="TrG5h" value="file" />
+                <node concept="3uibUv" id="f5Mm8$hB2I" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                </node>
+                <node concept="2ShNRf" id="f5Mm8$hB2R" role="33vP2m">
+                  <node concept="1pGfFk" id="f5Mm8$hB2S" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                    <node concept="2OqwBi" id="f5Mm8$hB2T" role="37wK5m">
+                      <node concept="2WthIp" id="f5Mm8$hB2U" role="2Oq$k0" />
+                      <node concept="2XshWL" id="f5Mm8$hB2V" role="2OqNvi">
+                        <ref role="2WH_rO" node="q00jVsP8ED" resolve="expandPath" />
+                        <node concept="2OqwBi" id="f5Mm8$hB2W" role="2XxRq1">
+                          <node concept="2WthIp" id="f5Mm8$hB2X" role="2Oq$k0" />
+                          <node concept="yHkDZ" id="f5Mm8$hB2Y" role="2OqNvi">
+                            <ref role="yHkDY" node="q00jVsOUDo" resolve="myProjectToOpen" />
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="f5Mm8$hB$D" role="3cqZAp">
+              <node concept="3clFbS" id="f5Mm8$hB$F" role="3clFbx">
+                <node concept="2LYoGF" id="f5Mm8$hCNm" role="3cqZAp">
+                  <node concept="Xl_RD" id="f5Mm8$hFqs" role="2LYoNm">
+                    <property role="Xl_RC" value="No mps project is found" />
+                  </node>
+                </node>
+              </node>
+              <node concept="22lmx$" id="f5Mm8$hDOq" role="3clFbw">
+                <node concept="3fqX7Q" id="f5Mm8$hE1I" role="3uHU7w">
+                  <node concept="2OqwBi" id="f5Mm8$hEnA" role="3fr31v">
+                    <node concept="37vLTw" id="f5Mm8$hE1S" role="2Oq$k0">
+                      <ref role="3cqZAo" node="f5Mm8$hB2Q" resolve="file" />
+                    </node>
+                    <node concept="liA8E" id="f5Mm8$hFn2" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~File.isDirectory():boolean" resolve="isDirectory" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3fqX7Q" id="f5Mm8$hCGY" role="3uHU7B">
+                  <node concept="2OqwBi" id="f5Mm8$hCH0" role="3fr31v">
+                    <node concept="37vLTw" id="f5Mm8$hCH1" role="2Oq$k0">
+                      <ref role="3cqZAo" node="f5Mm8$hB2Q" resolve="file" />
+                    </node>
+                    <node concept="liA8E" id="f5Mm8$hCH2" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="q00jVsP8GY" role="3cqZAp">
+              <node concept="37vLTw" id="f5Mm8$hB2Z" role="3cqZAk">
+                <ref role="3cqZAo" node="f5Mm8$hB2Q" resolve="file" />
               </node>
             </node>
           </node>
@@ -7255,6 +7304,9 @@
       <node concept="3Tm6S6" id="q00jVsP8He" role="1B3o_S" />
       <node concept="3uibUv" id="q00jVsP8Hf" role="3clF45">
         <ref role="3uigEE" to="guwi:~File" resolve="File" />
+      </node>
+      <node concept="3uibUv" id="1G1Y_eNASO3" role="Sfmx6">
+        <ref role="3uigEE" to="3v5a:~ExecutionException" resolve="ExecutionException" />
       </node>
     </node>
     <node concept="yHkHE" id="q00jVsP8Hg" role="yHkHi">
@@ -7313,7 +7365,7 @@
                           <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                         </node>
                         <node concept="liA8E" id="q00jVsP8HC" role="2OqNvi">
-                          <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                          <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                           <node concept="2OqwBi" id="q00jVsP8HD" role="37wK5m">
                             <node concept="2OqwBi" id="q00jVsP8HE" role="2Oq$k0">
                               <node concept="2XshWL" id="q00jVsP8HF" role="2OqNvi">
@@ -7420,6 +7472,9 @@
           <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
+      <node concept="3uibUv" id="1G1Y_eNBLut" role="Sfmx6">
+        <ref role="3uigEE" to="3v5a:~ExecutionException" resolve="ExecutionException" />
+      </node>
     </node>
     <node concept="yHkDC" id="q00jVsOUD1" role="yHkDi">
       <property role="TrG5h" value="myVmOptions" />
@@ -7469,7 +7524,7 @@
       <property role="TrG5h" value="myOpenCurrentProject" />
       <node concept="10P_77" id="q00jVsOUDm" role="1tU5fm" />
       <node concept="3clFbT" id="q00jVsOUDn" role="33vP2m">
-        <property role="3clFbU" value="false" />
+        <property role="3clFbU" value="true" />
       </node>
     </node>
     <node concept="yHkDC" id="q00jVsOUDo" role="yHkDi">
@@ -7534,7 +7589,7 @@
           <node concept="3clFbS" id="q00jVsP3LA" role="3clFbx">
             <node concept="yHkDM" id="q00jVsP3LB" role="3cqZAp">
               <node concept="Xl_RD" id="q00jVsP3LC" role="yHkDO">
-                <property role="Xl_RC" value="Configuration path is empty." />
+                <property role="Xl_RC" value="Configuration path is empty" />
               </node>
             </node>
           </node>
@@ -7552,7 +7607,7 @@
           <node concept="3clFbS" id="q00jVsP3LJ" role="3clFbx">
             <node concept="yHkDM" id="q00jVsP3LK" role="3cqZAp">
               <node concept="Xl_RD" id="q00jVsP3LL" role="yHkDO">
-                <property role="Xl_RC" value="System path is empty." />
+                <property role="Xl_RC" value="System path is empty" />
               </node>
             </node>
           </node>
@@ -7564,6 +7619,143 @@
               </node>
             </node>
             <node concept="17RlXB" id="q00jVsP3LQ" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="f5Mm8$g1Le" role="3cqZAp">
+          <node concept="3clFbS" id="f5Mm8$g1Lg" role="3clFbx">
+            <node concept="3clFbJ" id="6ySaxs8rbgr" role="3cqZAp">
+              <node concept="3clFbS" id="6ySaxs8rbgt" role="3clFbx">
+                <node concept="3cpWs8" id="f5Mm8$g$JV" role="3cqZAp">
+                  <node concept="3cpWsn" id="f5Mm8$g$JW" role="3cpWs9">
+                    <property role="TrG5h" value="projectFile" />
+                    <node concept="3uibUv" id="f5Mm8$g$JS" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                    </node>
+                    <node concept="2ShNRf" id="f5Mm8$g$JX" role="33vP2m">
+                      <node concept="1pGfFk" id="f5Mm8$g$JY" role="2ShVmc">
+                        <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                        <node concept="2OqwBi" id="f5Mm8$g$OD" role="37wK5m">
+                          <node concept="2WthIp" id="f5Mm8$g$OE" role="2Oq$k0" />
+                          <node concept="yHkDZ" id="f5Mm8$g$OF" role="2OqNvi">
+                            <ref role="yHkDY" node="q00jVsOUDo" resolve="myProjectToOpen" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="f5Mm8$gcCS" role="3cqZAp">
+                  <node concept="3clFbS" id="f5Mm8$gcCU" role="3clFbx">
+                    <node concept="yHkDM" id="f5Mm8$gBcw" role="3cqZAp">
+                      <node concept="Xl_RD" id="f5Mm8$gBcx" role="yHkDO">
+                        <property role="Xl_RC" value="Project does not exist at the provided location" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="22lmx$" id="f5Mm8$gB0_" role="3clFbw">
+                    <node concept="3fqX7Q" id="f5Mm8$gAXT" role="3uHU7B">
+                      <node concept="2OqwBi" id="f5Mm8$gAXV" role="3fr31v">
+                        <node concept="37vLTw" id="f5Mm8$gAXW" role="2Oq$k0">
+                          <ref role="3cqZAo" node="f5Mm8$g$JW" resolve="projectFile" />
+                        </node>
+                        <node concept="liA8E" id="f5Mm8$gAXX" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3fqX7Q" id="f5Mm8$gB6b" role="3uHU7w">
+                      <node concept="2OqwBi" id="f5Mm8$gB6d" role="3fr31v">
+                        <node concept="37vLTw" id="f5Mm8$gB6e" role="2Oq$k0">
+                          <ref role="3cqZAo" node="f5Mm8$g$JW" resolve="projectFile" />
+                        </node>
+                        <node concept="liA8E" id="f5Mm8$gB6f" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.isDirectory():boolean" resolve="isDirectory" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="f5Mm8$gBsL" role="3cqZAp">
+                  <node concept="3cpWsn" id="f5Mm8$gBsM" role="3cpWs9">
+                    <property role="TrG5h" value="projectDotMpsFolderName" />
+                    <node concept="17QB3L" id="f5Mm8$gEX0" role="1tU5fm" />
+                    <node concept="10M0yZ" id="f5Mm8$gBsN" role="33vP2m">
+                      <ref role="3cqZAo" to="4nm9:~Project.DIRECTORY_STORE_FOLDER" resolve="DIRECTORY_STORE_FOLDER" />
+                      <ref role="1PxDUh" to="4nm9:~Project" resolve="Project" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="f5Mm8$gELX" role="3cqZAp">
+                  <node concept="3cpWsn" id="f5Mm8$gELY" role="3cpWs9">
+                    <property role="TrG5h" value="projectDotMpsFolder" />
+                    <node concept="3uibUv" id="f5Mm8$gELP" role="1tU5fm">
+                      <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                    </node>
+                    <node concept="2ShNRf" id="f5Mm8$gELZ" role="33vP2m">
+                      <node concept="1pGfFk" id="f5Mm8$gEM0" role="2ShVmc">
+                        <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.io.File,java.lang.String)" resolve="File" />
+                        <node concept="37vLTw" id="f5Mm8$gEM1" role="37wK5m">
+                          <ref role="3cqZAo" node="f5Mm8$g$JW" resolve="projectFile" />
+                        </node>
+                        <node concept="37vLTw" id="f5Mm8$gEM2" role="37wK5m">
+                          <ref role="3cqZAo" node="f5Mm8$gBsM" resolve="projectDotMpsFolderName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="f5Mm8$gFzV" role="3cqZAp">
+                  <node concept="3clFbS" id="f5Mm8$gFzW" role="3clFbx">
+                    <node concept="yHkDM" id="f5Mm8$gFzX" role="3cqZAp">
+                      <node concept="Xl_RD" id="f5Mm8$gFzY" role="yHkDO">
+                        <property role="Xl_RC" value="Project '.mps' folder does not exist at the provided location" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="22lmx$" id="f5Mm8$gFzZ" role="3clFbw">
+                    <node concept="3fqX7Q" id="f5Mm8$gF$0" role="3uHU7B">
+                      <node concept="2OqwBi" id="f5Mm8$gF$1" role="3fr31v">
+                        <node concept="37vLTw" id="f5Mm8$gFFu" role="2Oq$k0">
+                          <ref role="3cqZAo" node="f5Mm8$gELY" resolve="projectDotMpsFolder" />
+                        </node>
+                        <node concept="liA8E" id="f5Mm8$gF$3" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3fqX7Q" id="f5Mm8$gF$4" role="3uHU7w">
+                      <node concept="2OqwBi" id="f5Mm8$gF$5" role="3fr31v">
+                        <node concept="37vLTw" id="f5Mm8$gFGK" role="2Oq$k0">
+                          <ref role="3cqZAo" node="f5Mm8$gELY" resolve="projectDotMpsFolder" />
+                        </node>
+                        <node concept="liA8E" id="f5Mm8$gF$7" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.isDirectory():boolean" resolve="isDirectory" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="6ySaxs8rdOF" role="3clFbw">
+                <node concept="2OqwBi" id="6ySaxs8rdOH" role="3fr31v">
+                  <node concept="2OqwBi" id="6ySaxs8rdOI" role="2Oq$k0">
+                    <node concept="2WthIp" id="6ySaxs8rdOJ" role="2Oq$k0" />
+                    <node concept="yHkDZ" id="6ySaxs8rdOK" role="2OqNvi">
+                      <ref role="yHkDY" node="q00jVsOUDo" resolve="myProjectToOpen" />
+                    </node>
+                  </node>
+                  <node concept="17RlXB" id="6ySaxs8rdOL" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="f5Mm8$gaaT" role="3clFbw">
+            <node concept="2OqwBi" id="f5Mm8$gaaV" role="3fr31v">
+              <node concept="2WthIp" id="f5Mm8$gaaW" role="2Oq$k0" />
+              <node concept="yHkDZ" id="f5Mm8$gaaX" role="2OqNvi">
+                <ref role="yHkDY" node="q00jVsOUDl" resolve="myOpenCurrentProject" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -7867,6 +8059,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qBPc" role="jymVt" />
     <node concept="3clFb_" id="7Mz_zRJ$1yA" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="applyTo" />
@@ -8044,6 +8237,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qBPd" role="jymVt" />
     <node concept="3clFb_" id="7Mz_zRJ$rS6" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="resetFrom" />
@@ -8182,6 +8376,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6ySaxs8qBPe" role="jymVt" />
     <node concept="3clFb_" id="7Mz_zRJAaPU" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="setEditable" />

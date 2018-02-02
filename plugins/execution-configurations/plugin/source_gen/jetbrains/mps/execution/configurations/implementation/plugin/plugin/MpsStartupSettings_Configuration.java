@@ -9,14 +9,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
+import java.io.File;
+import com.intellij.openapi.project.Project;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.util.MacrosFactory;
-import java.io.File;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.project.Project;
+import com.intellij.execution.ExecutionException;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.FileUtil;
 import org.jdom.Document;
@@ -33,10 +34,23 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     if (isEmptyString(this.getConfigurationPath())) {
-      throw new RuntimeConfigurationError("Configuration path is empty.");
+      throw new RuntimeConfigurationError("Configuration path is empty");
     }
     if (isEmptyString(this.getSystemPath())) {
-      throw new RuntimeConfigurationError("System path is empty.");
+      throw new RuntimeConfigurationError("System path is empty");
+    }
+    if (!(this.getOpenCurrentProject())) {
+      if (!(isEmptyString(this.getProjectToOpen()))) {
+        File projectFile = new File(this.getProjectToOpen());
+        if (!(projectFile.exists()) || !(projectFile.isDirectory())) {
+          throw new RuntimeConfigurationError("Project does not exist at the provided location");
+        }
+        String projectDotMpsFolderName = Project.DIRECTORY_STORE_FOLDER;
+        File projectDotMpsFolder = new File(projectFile, projectDotMpsFolderName);
+        if (!(projectDotMpsFolder.exists()) || !(projectDotMpsFolder.isDirectory())) {
+          throw new RuntimeConfigurationError("Project '.mps' folder does not exist at the provided location");
+        }
+      }
     }
   }
   @Override
@@ -98,7 +112,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
   }
-  public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) {
+  public Tuples._2<File, File> prepareFilesToOpenAndToDelete(Project project) throws ExecutionException {
     File projectDir = getProjectDir(project);
     if (!(this.getOpenCurrentProject())) {
       return MultiTuple.<File,File>from(projectDir, (File) null);
@@ -126,21 +140,25 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
 
     return MultiTuple.<File,File>from(projectDir, temporalDir);
   }
-  private File getProjectDir(Project currentProject) {
+  private File getProjectDir(Project currentProject) throws ExecutionException {
     if (this.getOpenCurrentProject()) {
       return new File(currentProject.getBasePath());
     }
     if (this.getProjectToOpen() != null) {
-      return new File(expandPath(this.getProjectToOpen()));
+      File file = new File(expandPath(this.getProjectToOpen()));
+      if (!(file.exists()) || !(file.isDirectory())) {
+        throw new ExecutionException("No mps project is found");
+      }
+      return file;
     }
     return null;
   }
-  private void replacePathMacro(Element element, Project project) {
+  private void replacePathMacro(Element element, Project project) throws ExecutionException {
     String path = "path";
     String value = element.getAttributeValue(path);
     if ((value != null && value.length() > 0)) {
       // nooooooooo 
-      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
+      element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFile(getProjectDir(project).getPath())).expandPath(value.replace("$PROJECT_DIR$", getProjectDir(project).getPath())));
     }
     for (Element child : ListSequence.fromList(element.getChildren())) {
       replacePathMacro((Element) child, project);
@@ -165,7 +183,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     public String myJrePath;
     public String mySystemPath = shinkPath(Mps_Command.getDefaultSystemPath());
     public String myConfigurationPath = shinkPath(Mps_Command.getDefaultConfigurationPath());
-    public boolean myOpenCurrentProject = false;
+    public boolean myOpenCurrentProject = true;
     public String myProjectToOpen;
     public MyState() {
     }
