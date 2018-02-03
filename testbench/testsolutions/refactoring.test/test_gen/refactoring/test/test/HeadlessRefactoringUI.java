@@ -14,9 +14,9 @@ import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.Assert;
 import java.util.Set;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class HeadlessRefactoringUI implements RefactoringUI {
   private List<RefactoringParticipant.Option> myOptions;
@@ -70,28 +70,27 @@ public class HeadlessRefactoringUI implements RefactoringUI {
   }
 
   public static class SearchResultsChecker extends HeadlessRefactoringUI {
-    private Set<Object> myExpectedResults;
-    private Set<Object> mySearchedNodes;
-    public SearchResultsChecker(List<RefactoringParticipant.Option> options, List<Object> searchedNodes, List<Object> expectedResults) {
+    private Set<SNode> myExpectedResults;
+    private Set<SNode> mySearchedNodes;
+    public SearchResultsChecker(List<RefactoringParticipant.Option> options, List<SNode> searchedNodes, List<SNode> expectedResults) {
       super(options);
-      myExpectedResults = SetSequence.fromSetWithValues(new HashSet<Object>(), ListSequence.fromList(expectedResults).select(new ISelector<Object, Object>() {
-        public Object select(Object it) {
-          return it;
-        }
-      }));
-      mySearchedNodes = SetSequence.fromSetWithValues(new HashSet<Object>(), searchedNodes);
+      myExpectedResults = SetSequence.fromSetWithValues(new HashSet<SNode>(), expectedResults);
+      mySearchedNodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), searchedNodes);
     }
     @Override
     public void showRefactoringView(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession session) {
-      Set<Object> shownResults = searchResults.getResultObjects();
-      for (Object result : myExpectedResults) {
+      Set<SNode> shownResults = (Set<SNode>) searchResults.getResultObjects();
+      for (SNode result : SetSequence.fromSet(myExpectedResults)) {
         Assert.assertTrue("SearchResult " + result + " is expected but was not shown.", SetSequence.fromSet(shownResults).contains(result));
       }
-      for (Object node : mySearchedNodes) {
+      for (SNode result : SetSequence.fromSet(shownResults)) {
+        Assert.assertTrue("SearchResult " + result + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
+      }
+      for (SNode node : SetSequence.fromSet(mySearchedNodes)) {
         Assert.assertTrue("SearchNode " + node + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
       }
       for (Object node : searchResults.getSearchedNodes()) {
-        Assert.assertTrue("SearchNode " + node + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains(node));
+        Assert.assertTrue("SearchNode " + node + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains((SNode) node));
       }
       // do nothing, this in fact stops the process 
     }

@@ -26,24 +26,21 @@ import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
-import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collection;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import java.util.Set;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
@@ -91,42 +88,6 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
         ListSequence.fromList(expectedOptions).addElement(MoveNodeRefactoringLogParticipant.OPTION);
 
         MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI.OptionsChecker(expectedOptions));
-      }
-    });
-  }
-  public void test_moveClassSearchResults() throws Exception {
-    runCommand(new Runnable() {
-      public void run() {
-        SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "behavior");
-        List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175149441"));
-        Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
-
-        List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
-
-        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
-
-        List<SReference> usages = ListSequence.fromList(new ArrayList<SReference>());
-        {
-          final SearchScope scope = CommandUtil.createScope(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)")));
-          QueryExecutionContext context = new QueryExecutionContext() {
-            public SearchScope getDefaultSearchScope() {
-              return scope;
-            }
-          };
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175149441"))));
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152726"))));
-          ListSequence.fromList(usages).addSequence(CollectionSequence.fromCollection(CommandUtil.usages(CommandUtil.selectScope(null, context), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175152794"))));
-        }
-
-        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI.SearchResultsChecker(options, ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
-          public SNode select(SReference it) {
-            return it.getTargetNode();
-          }
-        })), ListSequence.fromListWithValues(new ArrayList<Object>(), ListSequence.fromList(usages).select(new ISelector<SReference, SNode>() {
-          public SNode select(SReference it) {
-            return it.getSourceNode();
-          }
-        }))));
       }
     });
   }
