@@ -81,18 +81,21 @@ public class HeadlessRefactoringUI implements RefactoringUI {
     public void showRefactoringView(final Runnable task, String refactoringName, SearchResults searchResults, SearchTask searchTask, RefactoringSession session) {
       Set<SNode> shownResults = (Set<SNode>) searchResults.getResultObjects();
       for (SNode result : SetSequence.fromSet(myExpectedResults)) {
-        Assert.assertTrue("SearchResult " + result + " is expected but was not shown.", SetSequence.fromSet(shownResults).contains(result));
+        Assert.assertTrue("SearchResult " + idString(result) + " is expected but was not shown.", SetSequence.fromSet(shownResults).contains(result));
       }
       for (SNode result : SetSequence.fromSet(shownResults)) {
-        Assert.assertTrue("SearchResult " + result + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
+        Assert.assertTrue("SearchResult " + idString(result) + " was shown but is not expected.", SetSequence.fromSet(myExpectedResults).contains(result));
       }
       for (SNode node : SetSequence.fromSet(mySearchedNodes)) {
-        Assert.assertTrue("SearchNode " + node + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
+        Assert.assertTrue("SearchNode " + idString(node) + " is expected but was not shown.", searchResults.getSearchedNodes().contains(node));
       }
       for (Object node : searchResults.getSearchedNodes()) {
-        Assert.assertTrue("SearchNode " + node + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains((SNode) node));
+        Assert.assertTrue("SearchNode " + idString((SNode) node) + " was shown but is not expected.", SetSequence.fromSet(mySearchedNodes).contains((SNode) node));
       }
       // do nothing, this in fact stops the process 
+    }
+    private String idString(SNode n) {
+      return n.getReference().toString() + "(" + n + ")";
     }
   }
 }

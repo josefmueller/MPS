@@ -38,11 +38,12 @@
       <node id="3893167010913174061" at="76,21,77,95" concept="1" />
       <node id="3893167010913566606" at="77,95,78,91" concept="1" />
       <node id="3893167010913412557" at="81,162,82,78" concept="6" />
-      <node id="3893167010913189907" at="83,67,84,140" concept="1" />
-      <node id="3893167010913189922" at="86,62,87,145" concept="1" />
-      <node id="3893167010913633785" at="89,63,90,133" concept="1" />
-      <node id="3893167010913633803" at="92,60,93,145" concept="1" />
+      <node id="3893167010913189907" at="83,67,84,150" concept="1" />
+      <node id="3893167010913189922" at="86,62,87,155" concept="1" />
+      <node id="3893167010913633785" at="89,63,90,143" concept="1" />
+      <node id="3893167010913633803" at="92,60,93,163" concept="1" />
       <node id="3893167010913195098" at="94,7,95,52" concept="8" />
+      <node id="6006982468243863311" at="97,38,98,57" concept="7" />
       <node id="3893167010912527625" at="23,0,26,0" concept="0" trace="HeadlessRefactoringUI#(Ljava/util/List;)V" />
       <node id="3893167010912523825" at="26,0,29,0" concept="5" trace="getOptions#()Ljava/util/List;" />
       <node id="3893167010911883913" at="47,0,50,0" concept="0" trace="OptionsChecker#(Ljava/util/List;)V" />
@@ -52,6 +53,7 @@
       <node id="3893167010913189918" at="85,7,88,7" concept="3" />
       <node id="3893167010913633764" at="88,7,91,7" concept="3" />
       <node id="3893167010913633797" at="91,7,94,7" concept="3" />
+      <node id="6006982468243864790" at="97,0,100,0" concept="5" trace="idString#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6426415869175446712" at="29,0,33,0" concept="5" trace="prepare#(Ljava/lang/Runnable;)V" />
       <node id="3893167010912582613" at="33,0,37,0" concept="5" trace="selectParticipants#(Ljava/util/List;)Ljava/util/List;" />
       <node id="6426415869175446720" at="37,0,41,0" concept="5" trace="runSearch#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
@@ -72,10 +74,11 @@
       <scope id="3893167010912147989" at="55,83,56,144" />
       <scope id="3893167010912651872" at="63,91,64,20" />
       <scope id="3893167010911956142" at="67,162,68,52" />
-      <scope id="3893167010913189906" at="83,67,84,140" />
-      <scope id="3893167010913189921" at="86,62,87,145" />
-      <scope id="3893167010913633766" at="89,63,90,133" />
-      <scope id="3893167010913633802" at="92,60,93,145" />
+      <scope id="3893167010913189906" at="83,67,84,150" />
+      <scope id="3893167010913189921" at="86,62,87,155" />
+      <scope id="3893167010913633766" at="89,63,90,143" />
+      <scope id="3893167010913633802" at="92,60,93,163" />
+      <scope id="6006982468243862577" at="97,38,98,57" />
       <scope id="3893167010912527625" at="23,0,26,0">
         <var name="options" id="3893167010912527633" />
       </scope>
@@ -101,6 +104,9 @@
       </scope>
       <scope id="3893167010913633797" at="91,7,94,7">
         <var name="node" id="3893167010913633798" />
+      </scope>
+      <scope id="6006982468243864790" at="97,0,100,0">
+        <var name="n" id="6006982468243863313" />
       </scope>
       <scope id="6426415869175446712" at="29,0,33,0">
         <var name="task" id="6426415869175446716" />
@@ -148,8 +154,8 @@
         <var name="task" id="3893167010912559592" />
       </scope>
       <unit id="3893167010911873838" at="46,0,71,0" name="refactoring.test.test.HeadlessRefactoringUI$OptionsChecker" />
-      <unit id="3893167010912559536" at="72,0,98,0" name="refactoring.test.test.HeadlessRefactoringUI$SearchResultsChecker" />
-      <unit id="6426415869175446607" at="21,0,99,0" name="refactoring.test.test.HeadlessRefactoringUI" />
+      <unit id="3893167010912559536" at="72,0,101,0" name="refactoring.test.test.HeadlessRefactoringUI$SearchResultsChecker" />
+      <unit id="6426415869175446607" at="21,0,102,0" name="refactoring.test.test.HeadlessRefactoringUI" />
     </file>
   </root>
   <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(refactoring.test.test@tests)/8449002106978639305">
