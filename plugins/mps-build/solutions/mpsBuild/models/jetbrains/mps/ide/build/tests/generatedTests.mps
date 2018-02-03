@@ -1115,6 +1115,18 @@
             <ref role="3bR37D" node="3iBi5uuKFaK" resolve="SourceLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1HzcSorDe82" role="3bR37C">
+          <node concept="3bR9La" id="1HzcSorDe83" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1HzcSorDe84" role="3bR37C">
+          <node concept="3bR9La" id="1HzcSorDe85" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L4x" resolve="jetbrains.mps.lang.constraints" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="13uUGR" id="3iBi5uuKFde" role="1l3spa">
