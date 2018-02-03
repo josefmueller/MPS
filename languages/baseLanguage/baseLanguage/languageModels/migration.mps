@@ -97,14 +97,12 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
-      <concept id="1068581242874" name="jetbrains.mps.baseLanguage.structure.ParameterReference" flags="ng" index="3cpWs2" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
-      <concept id="1068581242866" name="jetbrains.mps.baseLanguage.structure.LocalVariableReference" flags="ng" index="3cpWsa" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
@@ -1642,60 +1640,6 @@
                   <property role="3hQQBS" value="VariableReference" />
                   <node concept="spIps" id="4NuDqbiG3C0" role="2c44t1">
                     <ref role="spIpr" node="4NuDqbiG3BF" resolve="#var" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SqFnK" id="4NuDqbiG3A5" role="3cqZAp">
-          <node concept="2DMOqp" id="4NuDqbiG3A6" role="3SqFnn">
-            <node concept="2c44tf" id="4NuDqbiG3A7" role="HM535">
-              <node concept="3cpWsa" id="4NuDqbiG3C9" role="2c44tc">
-                <node concept="3jrphi" id="4NuDqbiG3Cd" role="lGtFl">
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                  <property role="2qtEX8" value="variableDeclaration" />
-                  <property role="3jrwYG" value="var" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3SqKpS" id="4NuDqbiG3Aa" role="3SqFn9">
-            <node concept="2c44tf" id="4NuDqbiG3Ab" role="2SEiMu">
-              <node concept="37vLTw" id="4NuDqbiG3Ac" role="2c44tc">
-                <node concept="2c44tb" id="4NuDqbiG3Ad" role="lGtFl">
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                  <property role="2qtEX8" value="variableDeclaration" />
-                  <property role="3hQQBS" value="VariableReference" />
-                  <node concept="spIps" id="4NuDqbiG3Cy" role="2c44t1">
-                    <ref role="spIpr" node="4NuDqbiG3Cd" resolve="#var" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SqFnK" id="4NuDqbiG3AJ" role="3cqZAp">
-          <node concept="2DMOqp" id="4NuDqbiG3AK" role="3SqFnn">
-            <node concept="2c44tf" id="4NuDqbiG3AL" role="HM535">
-              <node concept="3cpWs2" id="4NuDqbiG3CF" role="2c44tc">
-                <node concept="3jrphi" id="4NuDqbiG3CJ" role="lGtFl">
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                  <property role="2qtEX8" value="variableDeclaration" />
-                  <property role="3jrwYG" value="var" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3SqKpS" id="4NuDqbiG3AO" role="3SqFn9">
-            <node concept="2c44tf" id="4NuDqbiG3AP" role="2SEiMu">
-              <node concept="37vLTw" id="4NuDqbiG3AQ" role="2c44tc">
-                <node concept="2c44tb" id="4NuDqbiG3AR" role="lGtFl">
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
-                  <property role="2qtEX8" value="variableDeclaration" />
-                  <property role="3hQQBS" value="VariableReference" />
-                  <node concept="spIps" id="4NuDqbiG3D4" role="2c44t1">
-                    <ref role="spIpr" node="4NuDqbiG3CJ" resolve="#var" />
                   </node>
                 </node>
               </node>

@@ -77,16 +77,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a2a6" file="Pattern_88yha8_a2a6.java">
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a3a6" file="Pattern_88yha8_a3a6.java">
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.migration.Pattern_fbexqr_a0a5" file="Pattern_fbexqr_a0a5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -127,8 +117,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a0a6" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a1a6" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a2a6" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.migration.Pattern_88yha8_a3a6" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
