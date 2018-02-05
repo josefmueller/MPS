@@ -70,6 +70,7 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -113,6 +114,7 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -193,6 +195,10 @@
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537397872" name="jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag" flags="ng" index="x0GOo">
+        <property id="5858074156537397874" name="text" index="x0GOq" />
+        <child id="6832197706140448505" name="exceptionType" index="zrq5$" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
@@ -607,6 +613,33 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="3rjNyPdeGUq" role="3cqZAp">
+          <node concept="3clFbS" id="3rjNyPdeGUs" role="3clFbx">
+            <node concept="YS8fn" id="3rjNyPdeJFp" role="3cqZAp">
+              <node concept="2ShNRf" id="3rjNyPdeJHn" role="YScLw">
+                <node concept="1pGfFk" id="3rjNyPdeLo6" role="2ShVmc">
+                  <ref role="37wK5l" node="7S9zv5RY34Y" resolve="DescriptorIOException" />
+                  <node concept="2YIFZM" id="3rjNyPdeLxj" role="37wK5m">
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <node concept="Xl_RD" id="3rjNyPdeLx_" role="37wK5m">
+                      <property role="Xl_RC" value="File %s is not a recognized module descriptor" />
+                    </node>
+                    <node concept="37vLTw" id="3rjNyPdeM1e" role="37wK5m">
+                      <ref role="3cqZAo" node="6nRwuNsmkpA" resolve="moduleFile" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="3rjNyPdeHsB" role="3clFbw">
+            <node concept="10Nm6u" id="3rjNyPdeHFz" role="3uHU7w" />
+            <node concept="37vLTw" id="3rjNyPdeH9y" role="3uHU7B">
+              <ref role="3cqZAo" node="3rjNyPdcMcl" resolve="io" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="6nRwuNsmkP7" role="3cqZAp">
           <node concept="2OqwBi" id="3rjNyPdcNFO" role="3cqZAk">
             <node concept="37vLTw" id="3rjNyPdcMcs" role="2Oq$k0">
@@ -650,6 +683,53 @@
           <node concept="1dT_AC" id="3rjNyPdcXqR" role="1dT_Ay">
             <property role="1dT_AB" value="Have to align exception handling, i.e. either throw them as regular Java exception, or keep it within the ModuleDescriptor object and get clean read/write methods then." />
           </node>
+        </node>
+        <node concept="TZ5HA" id="3rjNyPdeGxV" role="TZ5H$">
+          <node concept="1dT_AC" id="3rjNyPdeGxW" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="x0GOo" id="3rjNyPdeGBD" role="3nqlJM">
+          <property role="x0GOq" value="now, only in case {@code moduleFile} argument is not a recognized module file (use {@link #isModuleDescriptorFile(IFile) to tell good from bad}" />
+          <node concept="3uibUv" id="3rjNyPdeGDh" role="zrq5$">
+            <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3rjNyPdeM88" role="jymVt" />
+    <node concept="3clFb_" id="3rjNyPdeMw2" role="jymVt">
+      <property role="TrG5h" value="isModuleDescriptorFile" />
+      <node concept="10P_77" id="3rjNyPdeRTH" role="3clF45" />
+      <node concept="3Tm1VV" id="3rjNyPdeMw5" role="1B3o_S" />
+      <node concept="3clFbS" id="3rjNyPdeMw6" role="3clF47">
+        <node concept="3cpWs6" id="3rjNyPdeONs" role="3cqZAp">
+          <node concept="3y3z36" id="3rjNyPdeRic" role="3cqZAk">
+            <node concept="10Nm6u" id="3rjNyPdeRAx" role="3uHU7w" />
+            <node concept="1rXfSq" id="3rjNyPdeP5V" role="3uHU7B">
+              <ref role="37wK5l" node="5CqXQtXn9vI" resolve="fromExtension" />
+              <node concept="1rXfSq" id="3rjNyPdePp8" role="37wK5m">
+                <ref role="37wK5l" node="7S9zv5RYafM" resolve="standardProvider" />
+              </node>
+              <node concept="1rXfSq" id="3rjNyPdePGy" role="37wK5m">
+                <ref role="37wK5l" node="7S9zv5RYafU" resolve="ideaProvider" />
+              </node>
+              <node concept="2OqwBi" id="3rjNyPdeQ_f" role="37wK5m">
+                <node concept="37vLTw" id="3rjNyPdeQiF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3rjNyPdeOwR" resolve="file" />
+                </node>
+                <node concept="liA8E" id="3rjNyPdeQWp" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3rjNyPdeOwR" role="3clF46">
+        <property role="TrG5h" value="file" />
+        <node concept="3uibUv" id="3rjNyPdeOwQ" role="1tU5fm">
+          <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
       </node>
     </node>

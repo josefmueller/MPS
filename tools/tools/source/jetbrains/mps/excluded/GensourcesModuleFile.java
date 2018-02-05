@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package jetbrains.mps.excluded;
 
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
@@ -25,8 +26,14 @@ import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 class GensourcesModuleFile {
   // gensources.iml constants
@@ -37,6 +44,7 @@ class GensourcesModuleFile {
   public static final String SOURCE_FOLDER = "sourceFolder";
   public static final String EXCLUDE_FOLDER = "excludeFolder";
 
+  private final Platform myPlatform;
   private final File myGensourcesIml;
   private final Document myResult;
   // initially blank; is populated with newly created CONTENT elements
@@ -50,7 +58,8 @@ class GensourcesModuleFile {
   // built
   private final Set<String> myGeneratedModuleContentRoots = new HashSet<String>();
 
-  public GensourcesModuleFile(File genSourcesIml) throws JDOMException, IOException  {
+  public GensourcesModuleFile(Platform mpsPlatform, File genSourcesIml) throws JDOMException, IOException  {
+    myPlatform = mpsPlatform;
     myGensourcesIml = genSourcesIml;
     myResult = JDOMUtil.loadDocument(genSourcesIml);
     myRootManagerElement = new Element(MODULE_ROOT_MANAGER);
@@ -92,7 +101,9 @@ class GensourcesModuleFile {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
-      MultiMap<String, String> mpsCompiledInfo = Utils.collectMPSCompiledModulesInfo(dir);
+      MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
+      moduleCollector.collect(dir);
+      MultiMap<String, String> mpsCompiledInfo = moduleCollector.getOutcome();
       for (Entry<String, Collection<String>> module : mpsCompiledInfo.entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
@@ -156,7 +167,9 @@ class GensourcesModuleFile {
     List<String> classesGen = new ArrayList<String>();
     // FIXME BLOODY SH!T. QUITE SIMILAR CODE IS ABOVE. I BEG YOU TO FIX ME
     for (File dir : sourceDirs) {
-      for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
+      MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
+      moduleCollector.collect(dir);
+      for (Entry<String, Collection<String>> module : moduleCollector.getOutcome().entrySet()) {
         for (String sourcePath : module.getValue()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;

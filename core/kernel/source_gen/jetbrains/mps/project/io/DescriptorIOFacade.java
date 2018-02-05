@@ -55,11 +55,21 @@ public class DescriptorIOFacade implements CoreComponent {
   /**
    * FIXME it's odd to declare DescriptorIOException provided ModuleDescriptor keeps loadException in case of load failure. 
    * Have to align exception handling, i.e. either throw them as regular Java exception, or keep it within the ModuleDescriptor object and get clean read/write methods then.
+   * 
+   * 
+   * @throws DescriptorIOException now, only in case {@code moduleFile} argument is not a recognized module file (use {@link #isModuleDescriptorFile(IFile) to tell good from bad}
    */
   public ModuleDescriptor readFromModuleFile(MacroHelper macroHelper, IFile moduleFile) throws DescriptorIOException {
     DescriptorIOProvider sp = new StandardDescriptorIOProvider(macroHelper);
     DescriptorIO<? extends ModuleDescriptor> io = fromExtension(sp, ideaProvider(), moduleFile.getPath());
+    if (io == null) {
+      throw new DescriptorIOException(String.format("File %s is not a recognized module descriptor", moduleFile));
+    }
     return io.readFromFile(moduleFile);
+  }
+
+  public boolean isModuleDescriptorFile(IFile file) {
+    return fromExtension(standardProvider(), ideaProvider(), file.getPath()) != null;
   }
 
   @Override

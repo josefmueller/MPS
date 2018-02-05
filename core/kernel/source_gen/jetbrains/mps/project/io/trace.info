@@ -57,20 +57,24 @@
       <node id="5177508097213614218" at="38,5,39,16" concept="7" />
       <node id="557142600900560817" at="47,50,48,20" concept="7" />
       <node id="5001722714629085915" at="51,67,52,75" concept="1" />
-      <node id="6492773836664925552" at="59,118,60,76" concept="6" />
-      <node id="3950727992098104084" at="60,76,61,106" concept="6" />
-      <node id="7347484171387358535" at="61,106,62,39" concept="7" />
-      <node id="7347484171387343996" at="66,22,67,40" concept="1" />
-      <node id="7347484171387344804" at="70,25,71,20" concept="1" />
+      <node id="6492773836664925552" at="62,118,63,76" concept="6" />
+      <node id="3950727992098104084" at="63,76,64,106" concept="6" />
+      <node id="3950727992098618073" at="65,21,66,114" concept="14" />
+      <node id="7347484171387358535" at="67,5,68,39" concept="7" />
+      <node id="3950727992098639068" at="71,53,72,85" concept="7" />
+      <node id="7347484171387343996" at="76,22,77,40" concept="1" />
+      <node id="7347484171387344804" at="80,25,81,20" concept="1" />
       <node id="557142600900286113" at="17,0,20,0" concept="0" trace="DescriptorIOFacade#()V" />
       <node id="5177508097213611918" at="20,0,23,0" concept="5" trace="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
       <node id="9081946191808734194" at="23,0,26,0" concept="5" trace="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
       <node id="9081946191808734202" at="26,0,29,0" concept="5" trace="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
       <node id="7347484171387350475" at="51,0,54,0" concept="0" trace="DescriptorIOFacade#(Ljetbrains/mps/util/MacroHelper/Source;)V" />
+      <node id="3950727992098606746" at="64,106,67,5" concept="4" />
+      <node id="3950727992098629634" at="71,0,74,0" concept="5" trace="isModuleDescriptorFile#(Ljetbrains/mps/vfs/IFile;)Z" />
       <node id="557142600900560812" at="46,0,50,0" concept="11" trace="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
-      <node id="7347484171387343020" at="65,0,69,0" concept="5" trace="init#()V" />
-      <node id="7347484171387343026" at="69,0,73,0" concept="5" trace="dispose#()V" />
-      <node id="7347484171387354905" at="59,0,64,0" concept="5" trace="readFromModuleFile#(Ljetbrains/mps/util/MacroHelper;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
+      <node id="7347484171387343020" at="75,0,79,0" concept="5" trace="init#()V" />
+      <node id="7347484171387343026" at="79,0,83,0" concept="5" trace="dispose#()V" />
+      <node id="7347484171387354905" at="62,0,70,0" concept="5" trace="readFromModuleFile#(Ljetbrains/mps/util/MacroHelper;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
       <node id="5177508097213611961" at="29,160,38,5" concept="4" />
       <node id="6492773836664903662" at="29,0,41,0" concept="11" trace="fromExtension#(Ljetbrains/mps/project/io/DescriptorIOProvider;Ljetbrains/mps/project/io/DescriptorIOProvider;Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
       <scope id="557142600900286116" at="17,31,18,30" />
@@ -83,8 +87,10 @@
       <scope id="5177508097213614222" at="36,60,37,49" />
       <scope id="557142600900560815" at="47,50,48,20" />
       <scope id="7347484171387350480" at="51,67,52,75" />
-      <scope id="7347484171387343024" at="66,22,67,40" />
-      <scope id="7347484171387343030" at="70,25,71,20" />
+      <scope id="3950727992098606748" at="65,21,66,114" />
+      <scope id="3950727992098629638" at="71,53,72,85" />
+      <scope id="7347484171387343024" at="76,22,77,40" />
+      <scope id="7347484171387343030" at="80,25,81,20" />
       <scope id="557142600900286113" at="17,0,20,0" />
       <scope id="5177508097213611918" at="20,0,23,0">
         <var name="file" id="5177508097213611928" />
@@ -94,14 +100,17 @@
       <scope id="7347484171387350475" at="51,0,54,0">
         <var name="macroHelperSource" id="7347484171387351623" />
       </scope>
-      <scope id="7347484171387354908" at="59,118,62,39">
+      <scope id="3950727992098629634" at="71,0,74,0">
+        <var name="file" id="3950727992098637879" />
+      </scope>
+      <scope id="557142600900560812" at="46,0,50,0" />
+      <scope id="7347484171387343020" at="75,0,79,0" />
+      <scope id="7347484171387343026" at="79,0,83,0" />
+      <scope id="7347484171387354908" at="62,118,68,39">
         <var name="io" id="3950727992098104085" />
         <var name="sp" id="6492773836664925553" />
       </scope>
-      <scope id="557142600900560812" at="46,0,50,0" />
-      <scope id="7347484171387343020" at="65,0,69,0" />
-      <scope id="7347484171387343026" at="69,0,73,0" />
-      <scope id="7347484171387354905" at="59,0,64,0">
+      <scope id="7347484171387354905" at="62,0,70,0">
         <var name="macroHelper" id="7347484171387357623" />
         <var name="moduleFile" id="7347484171387356774" />
       </scope>
@@ -111,7 +120,7 @@
         <var name="path" id="5177508097213611958" />
         <var name="standardProvider" id="6492773836664885126" />
       </scope>
-      <unit id="557142600900286111" at="12,0,74,0" name="jetbrains.mps.project.io.DescriptorIOFacade" />
+      <unit id="557142600900286111" at="12,0,84,0" name="jetbrains.mps.project.io.DescriptorIOFacade" />
     </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900286148">

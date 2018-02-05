@@ -1,5 +1,5 @@
 /*
-* Copyright 2003-2014 JetBrains s.r.o.
+* Copyright 2003-2018 JetBrains s.r.o.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
-import junit.framework.Assert;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.ElementNameAndAttributeQualifier;
 import org.custommonkey.xmlunit.XMLAssert;
@@ -31,6 +30,7 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.SAXException;
@@ -65,14 +65,14 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
-    GeneratorsRunner.generateGenSourcesIml();
+    GeneratorsRunner.generateGenSourcesIml(ourPlatform);
     checkHasSameContent(FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
   }
 
   @Test
   public void testCompilerXml() throws JDOMException, IOException, SAXException {
     String previousCompilerXml = FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE);
-    GeneratorsRunner.generateCompilerXmlFile();
+    GeneratorsRunner.generateCompilerXmlFile(ourPlatform);
     Diff diff = new Diff(FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
     diff.overrideElementQualifier(new ElementNameAndAttributeQualifier());
     XMLAssert.assertXMLEqual("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", diff, true);
@@ -122,9 +122,11 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   public void testEveryJavaFileIsCompiledInMPSOrInSourceFolder() throws JDOMException, IOException {
     File root = new File(".");
     MultiMap<String, String> sources = GensourcesModuleFile.getSourceFolders(root);
-    MultiMap<String, String> mpsModules = Utils.collectMPSCompiledModulesInfo(root);
+    MPSModuleCollector moduleCollector = new MPSModuleCollector(ourPlatform);
+    moduleCollector.collect(root);
+    MultiMap<String, String> mpsModules = moduleCollector.getOutcome();
 
-    Set<String> allSources = new HashSet<String>();
+    Set<String> allSources = new HashSet<>();
     allSources.addAll(sources.values());
     allSources.addAll(mpsModules.values());
 
@@ -217,7 +219,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
 
   private void showGensources(String diff) throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
-    GeneratorsRunner.generateGenSourcesIml();
+    GeneratorsRunner.generateGenSourcesIml(ourPlatform);
     Assert.assertEquals(diff, FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
   }
 }

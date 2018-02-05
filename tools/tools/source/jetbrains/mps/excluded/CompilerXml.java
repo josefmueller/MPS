@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.excluded;
 
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -35,9 +36,14 @@ class CompilerXml {
   private static final String COMPILER_CONFIGURATION = "CompilerConfiguration";
   private static final String DIRECTORY = "directory";
   private static final String URL = "url";
+  private final Platform myPlatform;
+
+  public CompilerXml(Platform mpsPlatform) {
+    myPlatform = mpsPlatform;
+  }
 
   // excludes generated dirs of the sourceDirs. also excludes explicitly the excludeDirs
-  public static void updateCompilerExcludes(File compilerXmlFile, File[] sourceDirs, File[] excludeDirs) throws JDOMException, IOException {
+  public void updateCompilerExcludes(File compilerXmlFile, File[] sourceDirs, File[] excludeDirs) throws JDOMException, IOException {
     Document compiler = JDOMUtil.loadDocument(compilerXmlFile);
 
     Element rootElement = Utils.getComponentWithName(compiler, COMPILER_CONFIGURATION);
@@ -45,7 +51,9 @@ class CompilerXml {
     excludeXml.removeChildren(DIRECTORY);
 
     List<String> paths = new ArrayList<String>();
-    for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(sourceDirs).entrySet()) {
+    MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
+    moduleCollector.collect(sourceDirs);
+    for (Entry<String, Collection<String>> module : moduleCollector.getOutcome().entrySet()) {
       for (String sourcePath : module.getValue()) {
         paths.add(convertRelPathToProject(sourcePath));
       }
