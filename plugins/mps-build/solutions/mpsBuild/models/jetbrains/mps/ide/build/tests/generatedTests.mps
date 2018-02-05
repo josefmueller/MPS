@@ -127,6 +127,7 @@
         <child id="9200313594498201639" name="generator" index="1TViLv" />
       </concept>
       <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
+        <property id="8369506495128725901" name="compact" index="BnDLt" />
         <property id="322010710375892619" name="uuid" index="3LESm3" />
         <child id="322010710375956261" name="path" index="3LF7KH" />
       </concept>
@@ -601,6 +602,140 @@
           <property role="2GAjPV" value="false" />
         </node>
       </node>
+      <node concept="1E1JtD" id="5dt5FDZPQpM" role="2G$12L">
+        <property role="TrG5h" value="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
+        <property role="3LESm3" value="3e00419d-4801-4bad-bf2a-50479218fb53" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="5dt5FDZPQpN" role="3LF7KH">
+          <node concept="2Ry0Ak" id="5dt5FDZPQpO" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="5dt5FDZPQpP" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="5dt5FDZPQpQ" role="2Ry0An">
+                <property role="2Ry0Am" value="testRefactoring" />
+                <node concept="2Ry0Ak" id="5dt5FDZPQpR" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="5dt5FDZPQpS" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
+                    <node concept="2Ry0Ak" id="5dt5FDZPQ$j" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3rtmxn" id="5dt5FDZPQpU" role="3bR31x">
+          <node concept="3LXTmp" id="5dt5FDZPQpV" role="3rtmxm">
+            <node concept="55IIr" id="5dt5FDZPQpW" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5dt5FDZPQpX" role="iGT6I">
+                <property role="2Ry0Am" value="testbench" />
+                <node concept="2Ry0Ak" id="5dt5FDZPQpY" role="2Ry0An">
+                  <property role="2Ry0Am" value="modules" />
+                  <node concept="2Ry0Ak" id="5dt5FDZPQpZ" role="2Ry0An">
+                    <property role="2Ry0Am" value="testRefactoring" />
+                    <node concept="2Ry0Ak" id="5dt5FDZPQq0" role="2Ry0An">
+                      <property role="2Ry0Am" value="languages" />
+                      <node concept="2Ry0Ak" id="5dt5FDZPQq1" role="2Ry0An">
+                        <property role="2Ry0Am" value="TargetLanguage" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="5dt5FDZPQq2" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+          </node>
+        </node>
+        <node concept="1yeLz9" id="5dt5FDZPQq3" role="1TViLv">
+          <property role="TrG5h" value="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage#01" />
+          <property role="3LESm3" value="c7306d4f-73b8-46fd-87ca-a92db67c6e6e" />
+          <property role="2GAjPV" value="false" />
+        </node>
+      </node>
+      <node concept="1E1JtD" id="5dt5FDZPQFQ" role="2G$12L">
+        <property role="TrG5h" value="jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage" />
+        <property role="3LESm3" value="2f6eb168-4811-48ad-becb-56fd47d21d59" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="5dt5FDZPQFR" role="3LF7KH">
+          <node concept="2Ry0Ak" id="5dt5FDZPQFS" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="5dt5FDZPQFT" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="5dt5FDZPQFU" role="2Ry0An">
+                <property role="2Ry0Am" value="testRefactoring" />
+                <node concept="2Ry0Ak" id="5dt5FDZPQFV" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="5dt5FDZPQFW" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage" />
+                    <node concept="2Ry0Ak" id="5dt5FDZPQO7" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3rtmxn" id="5dt5FDZPQFY" role="3bR31x">
+          <node concept="3LXTmp" id="5dt5FDZPQFZ" role="3rtmxm">
+            <node concept="55IIr" id="5dt5FDZPQG0" role="3LXTmr">
+              <node concept="2Ry0Ak" id="5dt5FDZPQG1" role="iGT6I">
+                <property role="2Ry0Am" value="testbench" />
+                <node concept="2Ry0Ak" id="5dt5FDZPQG2" role="2Ry0An">
+                  <property role="2Ry0Am" value="modules" />
+                  <node concept="2Ry0Ak" id="5dt5FDZPQG3" role="2Ry0An">
+                    <property role="2Ry0Am" value="testRefactoring" />
+                    <node concept="2Ry0Ak" id="5dt5FDZPQG4" role="2Ry0An">
+                      <property role="2Ry0Am" value="languages" />
+                      <node concept="2Ry0Ak" id="5dt5FDZPQG5" role="2Ry0An">
+                        <property role="2Ry0Am" value="TargetLanguage" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="5dt5FDZPQG6" role="3LXTna">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+          </node>
+        </node>
+        <node concept="1yeLz9" id="5dt5FDZPQG7" role="1TViLv">
+          <property role="TrG5h" value="jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage#01" />
+          <property role="3LESm3" value="c199f414-ba46-4d0a-b7ab-303f55964cde" />
+          <property role="2GAjPV" value="false" />
+        </node>
+      </node>
+      <node concept="1E1JtA" id="5dt5FDZPR6T" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
+        <property role="3LESm3" value="8d635824-b34e-4ee8-b0c4-c9308969a2a0" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="5dt5FDZPRlN" role="3LF7KH">
+          <node concept="2Ry0Ak" id="5dt5FDZPRlO" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="5dt5FDZPRlP" role="2Ry0An">
+              <property role="2Ry0Am" value="modules" />
+              <node concept="2Ry0Ak" id="5dt5FDZPRlQ" role="2Ry0An">
+                <property role="2Ry0Am" value="testRefactoring" />
+                <node concept="2Ry0Ak" id="5dt5FDZPRlR" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="5dt5FDZPRlS" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
+                    <node concept="2Ry0Ak" id="5dt5FDZPRqv" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.msd" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2G$12M" id="3iBi5uuKFdd" role="3989C9">
       <property role="TrG5h" value="mpsTestModules-tests" />
@@ -1019,12 +1154,6 @@
             <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
           </node>
         </node>
-        <node concept="1SiIV0" id="3iBi5uuKFga" role="3bR37C">
-          <node concept="3bR9La" id="3iBi5uuKFgb" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="3iBi5uuKFgc" role="3bR37C">
           <node concept="3bR9La" id="3iBi5uuKFgd" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -1079,22 +1208,10 @@
             <ref role="3bR37D" to="ffeo:5bqL32k0kxU" resolve="jetbrains.mps.lang.structure.pluginSolution" />
           </node>
         </node>
-        <node concept="1SiIV0" id="3iBi5uuKFgu" role="3bR37C">
-          <node concept="3bR9La" id="3iBi5uuKFgv" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="3iBi5uuKFgw" role="3bR37C">
           <node concept="3bR9La" id="3iBi5uuKFgx" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3iBi5uuKFgy" role="3bR37C">
-          <node concept="3bR9La" id="3iBi5uuKFgz" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="3iBi5uuKFb1" resolve="TargetLanguage" />
           </node>
         </node>
         <node concept="1SiIV0" id="3iBi5uuKFg$" role="3bR37C">
@@ -1125,6 +1242,36 @@
           <node concept="3bR9La" id="1HzcSorDe85" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L4x" resolve="jetbrains.mps.lang.constraints" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5dt5FDZPQCO" role="3bR37C">
+          <node concept="3bR9La" id="5dt5FDZPQCP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5dt5FDZPRvo" role="3bR37C">
+          <node concept="3bR9La" id="5dt5FDZPRvp" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5dt5FDZPQpM" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5dt5FDZPRDu" role="3bR37C">
+          <node concept="3bR9La" id="5dt5FDZPRDv" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5dt5FDZPR6T" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5dt5FDZQsA_" role="3bR37C">
+          <node concept="3bR9La" id="5dt5FDZQsAA" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1ia2VB5guYy" resolve="MPS.IDEA" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1BjfD$l$br9" role="3bR37C">
+          <node concept="3bR9La" id="1BjfD$l$bra" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6LgV" resolve="jetbrains.mps.make.runtime" />
           </node>
         </node>
       </node>
@@ -1183,6 +1330,15 @@
         </node>
         <node concept="L2wRC" id="3iBi5uuKFd0" role="39821P">
           <ref role="L2wRA" node="3iBi5uuKFb1" resolve="TargetLanguage" />
+        </node>
+        <node concept="L2wRC" id="5dt5FDZPRJ9" role="39821P">
+          <ref role="L2wRA" node="5dt5FDZPQpM" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
+        </node>
+        <node concept="L2wRC" id="5dt5FDZPRO0" role="39821P">
+          <ref role="L2wRA" node="5dt5FDZPQFQ" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage" />
+        </node>
+        <node concept="L2wRC" id="5dt5FDZPROb" role="39821P">
+          <ref role="L2wRA" node="5dt5FDZPR6T" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
         </node>
       </node>
       <node concept="398223" id="3iBi5uuKFds" role="39821P">

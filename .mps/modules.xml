@@ -470,8 +470,11 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" folder="tests.testPackaged" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testPersistence/tests.testPersistence.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testRead/jetbrains.mps.testRead.msd" folder="tests" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/SourceLanguage/SourceLanguage.mpl" folder="tests.testRefactoring" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/TargetLanguage/TargetLanguage.mpl" folder="tests.testRefactoring" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/SourceLanguage/SourceLanguage.mpl" folder="tests.testRefactoring.material" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/TargetLanguage/TargetLanguage.mpl" folder="tests.testRefactoring.material" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.msd" folder="tests.testRefactoring.material.moveConcept" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/testbench/solution/jetbrains.mps.testbench.msd" folder="tests" />
