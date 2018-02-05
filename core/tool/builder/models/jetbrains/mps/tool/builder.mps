@@ -2085,6 +2085,30 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="7EKjWD24hyF" role="3cqZAp">
+          <node concept="3cpWsn" id="7EKjWD24hyG" role="3cpWs9">
+            <property role="TrG5h" value="descriptorIOFacade" />
+            <node concept="3uibUv" id="7EKjWD24hyD" role="1tU5fm">
+              <ref role="3uigEE" to="keqv:uVnzTvTxqv" resolve="DescriptorIOFacade" />
+            </node>
+            <node concept="2OqwBi" id="7EKjWD24hyH" role="33vP2m">
+              <node concept="2OqwBi" id="7EKjWD24hyI" role="2Oq$k0">
+                <node concept="37vLTw" id="7EKjWD24hyJ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="KL8Aqlj5lM" resolve="myEnvironment" />
+                </node>
+                <node concept="liA8E" id="7EKjWD24hyK" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7EKjWD24hyL" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="7EKjWD24hyM" role="37wK5m">
+                  <ref role="3VsUkX" to="keqv:uVnzTvTxqv" resolve="DescriptorIOFacade" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="KL8Aqlj5u5" role="3cqZAp">
           <node concept="3clFbS" id="KL8Aqlj5u6" role="3clFbx">
             <node concept="3clFbF" id="5BF5HLVuOSH" role="3cqZAp">
@@ -2107,15 +2131,14 @@
           <node concept="3clFbC" id="KL8Aqlj5u8" role="3clFbw">
             <node concept="10Nm6u" id="KL8Aqlj5u9" role="3uHU7w" />
             <node concept="2OqwBi" id="KL8Aqlj5ua" role="3uHU7B">
-              <node concept="2YIFZM" id="KL8Aqlj5ub" role="2Oq$k0">
-                <ref role="37wK5l" to="keqv:uVnzTvU$uG" resolve="getInstance" />
-                <ref role="1Pybhc" to="keqv:uVnzTvTxqv" resolve="DescriptorIOFacade" />
-              </node>
               <node concept="liA8E" id="KL8Aqlj5uc" role="2OqNvi">
                 <ref role="37wK5l" to="keqv:4vqd2Vc83Ye" resolve="fromFileType" />
                 <node concept="37vLTw" id="5BF5HLVuQnL" role="37wK5m">
                   <ref role="3cqZAo" node="5BF5HLVuQnE" resolve="descriptorFile" />
                 </node>
+              </node>
+              <node concept="37vLTw" id="7EKjWD24hyN" role="2Oq$k0">
+                <ref role="3cqZAo" node="7EKjWD24hyG" resolve="descriptorIOFacade" />
               </node>
             </node>
           </node>

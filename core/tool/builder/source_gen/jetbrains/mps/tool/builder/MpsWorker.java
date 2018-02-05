@@ -248,7 +248,8 @@ public abstract class MpsWorker {
     // use these modules as part of the project. 
     final FileSystem fs = FileSystem.getInstance();
     IFile descriptorFile = fs.getFile(moduleSourceDescriptorFile.getPath());
-    if (DescriptorIOFacade.getInstance().fromFileType(descriptorFile) == null) {
+    DescriptorIOFacade descriptorIOFacade = myEnvironment.getPlatform().findComponent(DescriptorIOFacade.class);
+    if (descriptorIOFacade.fromFileType(descriptorFile) == null) {
       info(String.format("File %s doesn't point to module descriptor, ignored", moduleSourceDescriptorFile));
       return;
     }
