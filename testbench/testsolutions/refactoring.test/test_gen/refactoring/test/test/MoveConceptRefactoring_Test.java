@@ -8,15 +8,15 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import junit.framework.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
-import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant;
@@ -58,15 +58,18 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         sourceModule.value = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("3e00419d-4801-4bad-bf2a-50479218fb53(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage)"));
+        Assert.assertNotNull(sourceModule.value);
         targetModule.value = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage)"));
+        Assert.assertNotNull(targetModule.value);
       }
     });
 
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
-        List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213"));
-        Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
+        Assert.assertNotNull(targetModel);
+        SNode nodeToMove = SNodeOperations.getNode("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213");
+        Assert.assertNotNull(nodeToMove);
 
         List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
 
@@ -79,7 +82,7 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
         ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
         ListSequence.fromList(options).addElement(MoveNodeRefactoringLogParticipant.OPTION);
 
-        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove)), new HeadlessRefactoringUI(options));
       }
     });
 
