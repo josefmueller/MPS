@@ -28,14 +28,9 @@
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
-        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
-      </concept>
-      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
-        <reference id="1188214555875" name="key" index="2B6OnR" />
-        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
@@ -193,13 +188,13 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="2580416627845338977" name="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" flags="ng" index="1SXeKx" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
@@ -561,7 +556,7 @@
     <node concept="2tJIrI" id="6nRwuNsmjcJ" role="jymVt" />
     <node concept="3clFb_" id="6nRwuNsmjWp" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="fromModuleFile" />
+      <property role="TrG5h" value="readFromModuleFile" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
@@ -582,41 +577,51 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="6nRwuNsmkP7" role="3cqZAp">
-          <node concept="10QFUN" id="6nRwuNsmml2" role="3cqZAk">
-            <node concept="3uibUv" id="6nRwuNsmm_d" role="10QFUM">
+        <node concept="3cpWs8" id="3rjNyPdcMck" role="3cqZAp">
+          <node concept="3cpWsn" id="3rjNyPdcMcl" role="3cpWs9">
+            <property role="TrG5h" value="io" />
+            <node concept="3uibUv" id="3rjNyPdcMc9" role="1tU5fm">
               <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
-              <node concept="3uibUv" id="6nRwuNsmnaG" role="11_B2D">
-                <ref role="3uigEE" to="w0gx:~ModuleDescriptor" resolve="ModuleDescriptor" />
+              <node concept="3qUE_q" id="3rjNyPdcMcg" role="11_B2D">
+                <node concept="3uibUv" id="3rjNyPdcMch" role="3qUE_r">
+                  <ref role="3uigEE" to="w0gx:~ModuleDescriptor" resolve="ModuleDescriptor" />
+                </node>
               </node>
             </node>
-            <node concept="1rXfSq" id="6nRwuNsml1I" role="10QFUP">
+            <node concept="1rXfSq" id="3rjNyPdcMcm" role="33vP2m">
               <ref role="37wK5l" node="5CqXQtXn9vI" resolve="fromExtension" />
-              <node concept="37vLTw" id="5CqXQtXnl2b" role="37wK5m">
+              <node concept="37vLTw" id="3rjNyPdcMcn" role="37wK5m">
                 <ref role="3cqZAo" node="5CqXQtXnePL" resolve="sp" />
               </node>
-              <node concept="1rXfSq" id="5CqXQtXnd7b" role="37wK5m">
+              <node concept="1rXfSq" id="3rjNyPdcMco" role="37wK5m">
                 <ref role="37wK5l" node="7S9zv5RYafU" resolve="ideaProvider" />
               </node>
-              <node concept="2OqwBi" id="5CqXQtXnbKs" role="37wK5m">
-                <node concept="37vLTw" id="6nRwuNsmlkx" role="2Oq$k0">
+              <node concept="2OqwBi" id="3rjNyPdcMcp" role="37wK5m">
+                <node concept="37vLTw" id="3rjNyPdcMcq" role="2Oq$k0">
                   <ref role="3cqZAo" node="6nRwuNsmkpA" resolve="moduleFile" />
                 </node>
-                <node concept="liA8E" id="5CqXQtXncfD" role="2OqNvi">
+                <node concept="liA8E" id="3rjNyPdcMcr" role="2OqNvi">
                   <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="3Tm1VV" id="6nRwuNsmjEq" role="1B3o_S" />
-      <node concept="3uibUv" id="6nRwuNsmjTj" role="3clF45">
-        <ref role="3uigEE" node="uVnzTvTxr4" resolve="DescriptorIO" />
-        <node concept="3uibUv" id="6nRwuNsmjVN" role="11_B2D">
-          <ref role="3uigEE" to="w0gx:~ModuleDescriptor" resolve="ModuleDescriptor" />
+        <node concept="3cpWs6" id="6nRwuNsmkP7" role="3cqZAp">
+          <node concept="2OqwBi" id="3rjNyPdcNFO" role="3cqZAk">
+            <node concept="37vLTw" id="3rjNyPdcMcs" role="2Oq$k0">
+              <ref role="3cqZAo" node="3rjNyPdcMcl" resolve="io" />
+            </node>
+            <node concept="liA8E" id="3rjNyPdcO15" role="2OqNvi">
+              <ref role="37wK5l" node="uVnzTvU$mH" resolve="readFromFile" />
+              <node concept="37vLTw" id="3rjNyPdcOms" role="37wK5m">
+                <ref role="3cqZAo" node="6nRwuNsmkpA" resolve="moduleFile" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
+      <node concept="3Tm1VV" id="6nRwuNsmjEq" role="1B3o_S" />
       <node concept="37vLTG" id="6nRwuNsmkAR" role="3clF46">
         <property role="TrG5h" value="macroHelper" />
         <node concept="3uibUv" id="6nRwuNsmkNU" role="1tU5fm">
@@ -629,12 +634,21 @@
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
       </node>
-      <node concept="2AHcQZ" id="5CqXQtXnlTn" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~SuppressWarnings" resolve="SuppressWarnings" />
-        <node concept="1SXeKx" id="5CqXQtXnmKs" role="2B76xF">
-          <ref role="2B6OnR" to="wyt6:~SuppressWarnings.value()" resolve="value" />
-          <node concept="Xl_RD" id="5CqXQtXnmKr" role="2B70Vg">
-            <property role="Xl_RC" value="unchecked" />
+      <node concept="3uibUv" id="6nRwuNsmjVN" role="3clF45">
+        <ref role="3uigEE" to="w0gx:~ModuleDescriptor" resolve="ModuleDescriptor" />
+      </node>
+      <node concept="3uibUv" id="3rjNyPdcOFp" role="Sfmx6">
+        <ref role="3uigEE" node="7S9zv5RY34K" resolve="DescriptorIOException" />
+      </node>
+      <node concept="P$JXv" id="3rjNyPdcX8M" role="lGtFl">
+        <node concept="TZ5HA" id="3rjNyPdcX8N" role="TZ5H$">
+          <node concept="1dT_AC" id="3rjNyPdcX8O" role="1dT_Ay">
+            <property role="1dT_AB" value="FIXME it's odd to declare DescriptorIOException provided ModuleDescriptor keeps loadException in case of load failure. " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="3rjNyPdcXqQ" role="TZ5H$">
+          <node concept="1dT_AC" id="3rjNyPdcXqR" role="1dT_Ay">
+            <property role="1dT_AB" value="Have to align exception handling, i.e. either throw them as regular Java exception, or keep it within the ModuleDescriptor object and get clean read/write methods then." />
           </node>
         </node>
       </node>

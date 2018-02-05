@@ -52,10 +52,14 @@ public class DescriptorIOFacade implements CoreComponent {
     STANDARD_FACTORY = new StandardDescriptorIOProvider(macroHelperSource);
   }
 
-  @SuppressWarnings("unchecked")
-  public DescriptorIO<ModuleDescriptor> fromModuleFile(MacroHelper macroHelper, IFile moduleFile) {
+  /**
+   * FIXME it's odd to declare DescriptorIOException provided ModuleDescriptor keeps loadException in case of load failure. 
+   * Have to align exception handling, i.e. either throw them as regular Java exception, or keep it within the ModuleDescriptor object and get clean read/write methods then.
+   */
+  public ModuleDescriptor readFromModuleFile(MacroHelper macroHelper, IFile moduleFile) throws DescriptorIOException {
     DescriptorIOProvider sp = new StandardDescriptorIOProvider(macroHelper);
-    return (DescriptorIO<ModuleDescriptor>) fromExtension(sp, ideaProvider(), moduleFile.getPath());
+    DescriptorIO<? extends ModuleDescriptor> io = fromExtension(sp, ideaProvider(), moduleFile.getPath());
+    return io.readFromFile(moduleFile);
   }
 
   @Override
