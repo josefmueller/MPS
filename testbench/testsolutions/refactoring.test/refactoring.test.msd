@@ -24,9 +24,7 @@
     <dependency reexport="false">920eaa0e-ecca-46bc-bee7-4e5c59213dd6(Testbench)</dependency>
     <dependency reexport="false">3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)</dependency>
     <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
-    <dependency reexport="false">3e00419d-4801-4bad-bf2a-50479218fb53(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage)</dependency>
     <dependency reexport="false">8f6725be-608d-433b-98fd-844f816eb05f(jetbrains.mps.ide.make)</dependency>
-    <dependency reexport="false">8d635824-b34e-4ee8-b0c4-c9308969a2a0(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution)</dependency>
     <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
   </dependencies>
@@ -82,8 +80,6 @@
     <module reference="a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)" version="0" />
     <module reference="5187f5c9-b8a8-4309-90b3-14f9919bd2d8(jetbrains.mps.refactoring)" version="0" />
     <module reference="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" version="0" />
-    <module reference="8d635824-b34e-4ee8-b0c4-c9308969a2a0(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution)" version="0" />
-    <module reference="3e00419d-4801-4bad-bf2a-50479218fb53(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage)" version="0" />
     <module reference="e6368d5c-b931-4d4d-9941-07b7da7d2e2d(jetbrains.mps.tool.builder)" version="0" />
     <module reference="64b24ebe-97a2-466e-83d8-bd3afefcbb41(refactoring.test)" version="0" />
   </dependencyVersions>
