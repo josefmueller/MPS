@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -27,12 +27,10 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 
 class GensourcesModuleFile {
@@ -99,16 +97,15 @@ class GensourcesModuleFile {
       myRootManagerElement.addContent(contentRoot);
 
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
-      List<String> sourceGenFolders = new ArrayList<String>();
-      List<String> classesGenFolders = new ArrayList<String>();
+      List<String> sourceGenFolders = new ArrayList<>();
+      List<String> classesGenFolders = new ArrayList<>();
       MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
       moduleCollector.collect(dir);
-      MultiMap<String, String> mpsCompiledInfo = moduleCollector.getOutcome();
-      for (Entry<String, Collection<String>> module : mpsCompiledInfo.entrySet()) {
-        for (String sourcePath : module.getValue()) {
+      for (DescriptorEntry module : moduleCollector.getOutcome()) {
+        for (String sourcePath : module.getSourcePaths()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           if (!sourcesIncluded.contains(sourceCanonical)) {
-            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getModuleDir() + "\ngenerates into\n" + sourcePath;
             if (new File(sourcePath).exists()) {
               myGeneratedModuleSources.add(sourcePath);
               String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
@@ -116,11 +113,10 @@ class GensourcesModuleFile {
             }
           }
         }
-      }
-      for (String modulePath : mpsCompiledInfo.keySet()) {
         // todo: rewrite this code using ProjectPathUtil
-        if (new File(modulePath + '/' + AbstractModule.CLASSES_GEN).exists()) { // why would anyone keep non-existing folders?
-          String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + '/' + AbstractModule.CLASSES_GEN;
+        IFile classesGen = module.getModuleDir().getDescendant(AbstractModule.CLASSES_GEN);
+        if (classesGen.exists()) { // why would anyone keep non-existing folders?
+          String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(classesGen.getPath());
           classesGenFolders.add(cgFolder);
         }
       }
@@ -163,23 +159,23 @@ class GensourcesModuleFile {
   public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
     Set<String> modelRoots = new HashSet<String>(myRegularModuleContentRoots);
     modelRoots.addAll(myGeneratedModuleContentRoots);
-    List<String> sourceGen = new ArrayList<String>();
-    List<String> classesGen = new ArrayList<String>();
+    List<String> sourceGen = new ArrayList<>();
+    List<String> classesGen = new ArrayList<>();
     // FIXME BLOODY SH!T. QUITE SIMILAR CODE IS ABOVE. I BEG YOU TO FIX ME
     for (File dir : sourceDirs) {
       MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
       moduleCollector.collect(dir);
-      for (Entry<String, Collection<String>> module : moduleCollector.getOutcome().entrySet()) {
-        for (String sourcePath : module.getValue()) {
+      for (DescriptorEntry module : moduleCollector.getOutcome()) {
+        for (String sourcePath : module.getSourcePaths()) {
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
-          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getModuleDir() + "\ngenerates into\n" + sourcePath;
           if (new File(sourcePath).exists()) {
             sourceGen.add(sourcePath);
           }
         }
-        String classesPath = module.getKey() + '/' + AbstractModule.CLASSES_GEN;
-        if (new File(classesPath).exists()) {
-          classesGen.add(classesPath);
+        IFile classes = module.getModuleDir().getDescendant(AbstractModule.CLASSES_GEN);
+        if (classes.exists()) {
+          classesGen.add(classes.getPath());
         }
       }
     }

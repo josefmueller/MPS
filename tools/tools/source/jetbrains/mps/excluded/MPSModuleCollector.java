@@ -27,12 +27,14 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
-import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.openapi.FileSystem;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Utility to gather path information from MPS module files (.mpl, .msd, etc) relevant for generation of IDEA configuration files.
@@ -40,19 +42,18 @@ import java.io.File;
  * @since 2018.1
  */
 class MPSModuleCollector {
-  private final MultiMap<String, String> result;
+  private final List<DescriptorEntry> myResult;
   private final FileSystem myFileSystem;
   private final DescriptorIOFacade myDescriptorIO;
 
   public MPSModuleCollector(Platform mpsPlatform) {
-    result = new MultiMap<>();
+    myResult = new ArrayList<>(30);
     myFileSystem = IoFileSystem.INSTANCE;
     myDescriptorIO = mpsPlatform.findComponent(DescriptorIOFacade.class);
   }
 
-  // FIXME MultiMap is ugly legacy, just need to refactor client code first.
-  public MultiMap<String, String> getOutcome() {
-    return result;
+  public Collection<DescriptorEntry> getOutcome() {
+    return myResult;
   }
 
   public void collect(File... dirs) {
@@ -94,6 +95,7 @@ class MPSModuleCollector {
       }
 
       IFile moduleDir = moduleIFile.getParent();
+      DescriptorEntry de = new DescriptorEntry(moduleDir);
       if (md instanceof SolutionDescriptor) {
         SolutionDescriptor sd = ((SolutionDescriptor) md);
         if (!sd.getCompileInMPS()) {
@@ -101,26 +103,25 @@ class MPSModuleCollector {
         }
 
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(sd);
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
+        de.addSourcePath(getCanonicalPath(srcPath));
         String testPath = TestsFacetImpl.getTestsOutputPath(sd, moduleIFile).getPath();
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(testPath));
+        de.addSourcePath(getCanonicalPath(testPath));
+        myResult.add(de);
       } else if (md instanceof LanguageDescriptor) {
         LanguageDescriptor ld = ((LanguageDescriptor) md);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(ld);
-        result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
+        de.addSourcePath(getCanonicalPath(srcPath));
+        myResult.add(de);
         // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
         // all generators in the language. Using only first one for now.
-        boolean generatorAdded = false;
+        // HOWEVER, we can't add another source path to DE of a language as client code adds /classes_gen to all module roots
+        // and therefore we need a distinct DE for generators.
         for (GeneratorDescriptor generator : ld.getGenerators()) {
-          // FIXME (1) just break as the last statement would be better
-          //       (2) caller doesn't care about map keys. what we need here is *set* for values, so that if there's the same path for few
-          //           generators, we get it only once in the return map
-          if (generatorAdded) {
-            break;
-          }
+          DescriptorEntry generatorDE = new DescriptorEntry(moduleDir.getDescendant("generator"));
           String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(generator);
-          result.putValue(getCanonicalPath(moduleDir.getPath() + "/generator"), getCanonicalPath(generatorSrcPath));
-          generatorAdded = true;
+          generatorDE.addSourcePath(getCanonicalPath(generatorSrcPath));
+          myResult.add(generatorDE);
+          break;
         }
       }
     }

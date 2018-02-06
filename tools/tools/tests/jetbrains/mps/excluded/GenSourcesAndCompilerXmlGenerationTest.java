@@ -13,7 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.core.platform.Platform;
@@ -39,6 +38,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -124,11 +124,11 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     MultiMap<String, String> sources = GensourcesModuleFile.getSourceFolders(root);
     MPSModuleCollector moduleCollector = new MPSModuleCollector(ourPlatform);
     moduleCollector.collect(root);
-    MultiMap<String, String> mpsModules = moduleCollector.getOutcome();
+    Collection<DescriptorEntry> mpsModules = moduleCollector.getOutcome();
 
     Set<String> allSources = new HashSet<>();
     allSources.addAll(sources.values());
-    allSources.addAll(mpsModules.values());
+    mpsModules.stream().flatMap(de -> de.getSourcePaths().stream()).forEach(allSources::add);
 
     outer:
     for (File jFile : Utils.withExtension(".java", Utils.files(root))) {
