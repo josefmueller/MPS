@@ -2940,6 +2940,9 @@
           <node concept="L2wRC" id="5kC7eCQTQpR" role="39821P">
             <ref role="L2wRA" node="1R7DRqX9J7c" resolve="jetbrains.mps.devkit.aspect.constraints" />
           </node>
+          <node concept="L2wRC" id="LjzjD8FOg8" role="39821P">
+            <ref role="L2wRA" node="5d4qc2fzGWE" resolve="jetbrains.mps.devkit.aspect.migration" />
+          </node>
           <node concept="3_J27D" id="6X9_iRm9QQH" role="Nbhlr">
             <node concept="3Mxwew" id="6X9_iRm9QQI" role="3MwsjC">
               <property role="3MwjfP" value="devkits" />
@@ -6933,6 +6936,32 @@
         </node>
         <node concept="3LEDTM" id="1R7DRqX9McP" role="3LEDUa">
           <ref role="3LEDTN" node="4DalL5sdlK7" resolve="jetbrains.mps.lang.descriptor.aspects" />
+        </node>
+      </node>
+      <node concept="3LEwk6" id="5d4qc2fzGWE" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.devkit.aspect.migration" />
+        <property role="3LESm3" value="2787ae0c-1f54-4fbf-b0b7-caf2b5beecbc" />
+        <node concept="398BVA" id="5d4qc2fzGWF" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="5d4qc2fzGWG" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="5d4qc2fzGWH" role="2Ry0An">
+              <property role="2Ry0Am" value="devkits" />
+              <node concept="2Ry0Ak" id="5d4qc2fzHuC" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.devkit.aspect.migration.devkit" />
+                <node concept="2Ry0Ak" id="LjzjD8FKfY" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.devkit.aspect.migration.devkit" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3LEDTy" id="LjzjD8FKPn" role="3LEDUa">
+          <ref role="3LEDTV" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
+        </node>
+        <node concept="3LEDTM" id="LjzjD8FKPo" role="3LEDUa">
+          <ref role="3LEDTN" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
         </node>
       </node>
     </node>

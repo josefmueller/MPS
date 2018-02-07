@@ -571,6 +571,18 @@
       <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" prefix="module" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.constraints.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.migration.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.migration.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.migration.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.migration" type="devkit" uuid="2787ae0c-1f54-4fbf-b0b7-caf2b5beecbc">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.migration.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.migration.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.migration.devkit/jetbrains.mps.devkit.aspect.migration.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.migration.jar" />
+    </jar>
     <mkdir dir="${build.layout}/languages/make" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar/META-INF" />
@@ -6059,6 +6071,7 @@
         <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/jetbrains.mps.build.mps.runner.runtime.msd" />
         <module file="${mps_home}/core/tool/environment/jetbrains.mps.core.tool.environment.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.migration.devkit/jetbrains.mps.devkit.aspect.migration.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" />
         <module file="${mps_home}/editor/editing-runtime/jetbrains.mps.editing.runtime.msd" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
