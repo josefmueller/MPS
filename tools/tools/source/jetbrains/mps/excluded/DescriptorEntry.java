@@ -29,6 +29,7 @@ import java.util.Collections;
 
   private final IFile myModuleDir;
   private final ArrayList<String> mySourcePaths = new ArrayList<>(4);
+  private final ArrayList<IFile> myClassGenPaths = new ArrayList<>(4);
 
   DescriptorEntry(IFile moduleDir) {
     myModuleDir = moduleDir;
@@ -38,11 +39,19 @@ import java.util.Collections;
     mySourcePaths.add(sourcePath);
   }
 
+  /*package*/ void addClassGenPath(IFile path) {
+    myClassGenPaths.add(path);
+  }
+
   public IFile getModuleDir() {
     return myModuleDir;
   }
 
   public Collection<String> getSourcePaths() {
     return Collections.unmodifiableCollection(mySourcePaths);
+  }
+
+  public Collection<IFile> getClassGenPaths() {
+    return Collections.unmodifiableCollection(myClassGenPaths);
   }
 }

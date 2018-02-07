@@ -16,7 +16,6 @@
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.core.platform.Platform;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
@@ -38,6 +37,10 @@ class GensourcesModuleFile {
   public static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
   public static final String CONTENT = "content";
   public static final String URL = "url";
+  /**
+   * IDEA Module can declare path relative to MODULE_DIR only (i.e. no PROJECT_DIR). gensources.iml resides under tools/gensources/, hence ../../ to get
+   * to project root
+   */
   public static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
   public static final String SOURCE_FOLDER = "sourceFolder";
   public static final String EXCLUDE_FOLDER = "excludeFolder";
@@ -113,11 +116,11 @@ class GensourcesModuleFile {
             }
           }
         }
-        // todo: rewrite this code using ProjectPathUtil
-        IFile classesGen = module.getModuleDir().getDescendant(AbstractModule.CLASSES_GEN);
-        if (classesGen.exists()) { // why would anyone keep non-existing folders?
-          String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(classesGen.getPath());
-          classesGenFolders.add(cgFolder);
+        for (IFile classesGen : module.getClassGenPaths()) {
+          if (classesGen.exists()) { // why would anyone keep non-existing folders?
+            String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(classesGen.getPath());
+            classesGenFolders.add(cgFolder);
+          }
         }
       }
       Collections.sort(sourceGenFolders);
@@ -173,9 +176,10 @@ class GensourcesModuleFile {
             sourceGen.add(sourcePath);
           }
         }
-        IFile classes = module.getModuleDir().getDescendant(AbstractModule.CLASSES_GEN);
-        if (classes.exists()) {
-          classesGen.add(classes.getPath());
+        for (IFile classes : module.getClassGenPaths()) {
+          if (classes.exists()) {
+            classesGen.add(classes.getPath());
+          }
         }
       }
     }

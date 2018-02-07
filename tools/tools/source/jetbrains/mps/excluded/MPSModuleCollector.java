@@ -17,6 +17,7 @@ package jetbrains.mps.excluded;
 
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.excluded.Utils.MyMacroHelper;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.io.DescriptorIOException;
@@ -95,6 +96,8 @@ class MPSModuleCollector {
       }
 
       IFile moduleDir = moduleIFile.getParent();
+      // todo: rewrite this code using ProjectPathUtil
+      IFile classesGenDir = moduleDir.getDescendant(AbstractModule.CLASSES_GEN);
       DescriptorEntry de = new DescriptorEntry(moduleDir);
       if (md instanceof SolutionDescriptor) {
         SolutionDescriptor sd = ((SolutionDescriptor) md);
@@ -106,21 +109,21 @@ class MPSModuleCollector {
         de.addSourcePath(getCanonicalPath(srcPath));
         String testPath = TestsFacetImpl.getTestsOutputPath(sd, moduleIFile).getPath();
         de.addSourcePath(getCanonicalPath(testPath));
+        de.addClassGenPath(classesGenDir);
         myResult.add(de);
       } else if (md instanceof LanguageDescriptor) {
         LanguageDescriptor ld = ((LanguageDescriptor) md);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(ld);
         de.addSourcePath(getCanonicalPath(srcPath));
+        de.addClassGenPath(classesGenDir);
         myResult.add(de);
         // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
         // all generators in the language. Using only first one for now.
-        // HOWEVER, we can't add another source path to DE of a language as client code adds /classes_gen to all module roots
-        // and therefore we need a distinct DE for generators.
         for (GeneratorDescriptor generator : ld.getGenerators()) {
-          DescriptorEntry generatorDE = new DescriptorEntry(moduleDir.getDescendant("generator"));
           String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(generator);
-          generatorDE.addSourcePath(getCanonicalPath(generatorSrcPath));
-          myResult.add(generatorDE);
+          de.addSourcePath(getCanonicalPath(generatorSrcPath));
+          // FIXME need a proper mechanism to discover classesGen folder of a module. Shall use JavaModuleFacet!
+          de.addClassGenPath(moduleDir.getDescendant("generator").getDescendant(AbstractModule.CLASSES_GEN));
           break;
         }
       }
