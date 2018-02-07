@@ -91,8 +91,6 @@ class GensourcesModuleFile {
   }
 
   public void updateGenSourcesIml(File... sourceDirs) throws JDOMException, IOException {
-    Set<String> sourcesIncluded = myRegularModuleSources;
-
     for (File dir : sourceDirs) {
       Element contentRoot = new Element(CONTENT);
       contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
@@ -102,39 +100,18 @@ class GensourcesModuleFile {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<>();
       List<String> classesGenFolders = new ArrayList<>();
-      MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
-      moduleCollector.collect(dir);
-      for (DescriptorEntry module : moduleCollector.getOutcome()) {
-        for (String sourcePath : module.getSourcePaths()) {
-          String sourceCanonical = new File(sourcePath).getCanonicalPath();
-          if (!sourcesIncluded.contains(sourceCanonical)) {
-            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getModuleDir() + "\ngenerates into\n" + sourcePath;
-            if (new File(sourcePath).exists()) {
-              myGeneratedModuleSources.add(sourcePath);
-              String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
-              sourceGenFolders.add(sFolder);
-            }
-          }
-        }
-        for (IFile classesGen : module.getClassGenPaths()) {
-          if (classesGen.exists()) { // why would anyone keep non-existing folders?
-            String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(classesGen.getPath());
-            classesGenFolders.add(cgFolder);
-          }
-        }
-      }
-      Collections.sort(sourceGenFolders);
-      Collections.sort(classesGenFolders);
+      collectGeneratedSourcesAndClassesDirs(sourceGenFolders, classesGenFolders, dir);
+      myGeneratedModuleSources.addAll(sourceGenFolders);
 
       for (String sourceGenFolder : sourceGenFolders) {
         Element sourceFolder = new Element(SOURCE_FOLDER);
-        sourceFolder.setAttribute(URL, sourceGenFolder);
+        sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(sourceGenFolder));
         sourceFolder.setAttribute("isTestSource", "false");
         contentRoot.addContent(sourceFolder);
       }
       for (String classesGenFolder : classesGenFolders) {
         Element excludeFolder = new Element(EXCLUDE_FOLDER);
-        excludeFolder.setAttribute(URL, classesGenFolder);
+        excludeFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(classesGenFolder));
         contentRoot.addContent(excludeFolder);
       }
     }
@@ -159,17 +136,16 @@ class GensourcesModuleFile {
     JDOMUtil.writeDocument(myResult, myGensourcesIml);
   }
 
-  public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
-    Set<String> modelRoots = new HashSet<String>(myRegularModuleContentRoots);
-    modelRoots.addAll(myGeneratedModuleContentRoots);
-    List<String> sourceGen = new ArrayList<>();
-    List<String> classesGen = new ArrayList<>();
-    // FIXME BLOODY SH!T. QUITE SIMILAR CODE IS ABOVE. I BEG YOU TO FIX ME
-    for (File dir : sourceDirs) {
+  // param sourceGen and classesGen are filled with absolute paths of existing folders with generated source/classes of MPS modules discovered under specified location
+  private void collectGeneratedSourcesAndClassesDirs(List<String> sourceGen, List<String> classesGen, File... startFrom) throws IOException {
+    for (File dir : startFrom) {
       MPSModuleCollector moduleCollector = new MPSModuleCollector(myPlatform);
       moduleCollector.collect(dir);
       for (DescriptorEntry module : moduleCollector.getOutcome()) {
         for (String sourcePath : module.getSourcePaths()) {
+          if (myRegularModuleSources.contains(sourcePath)) {
+            continue;
+          }
           String sourceCanonical = new File(sourcePath).getCanonicalPath();
           assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getModuleDir() + "\ngenerates into\n" + sourcePath;
           if (new File(sourcePath).exists()) {
@@ -183,11 +159,20 @@ class GensourcesModuleFile {
         }
       }
     }
-
-    sourceGen.removeAll(myRegularModuleSources);
-    sourceGen.removeAll(myGeneratedModuleSources);
     Collections.sort(sourceGen);
     Collections.sort(classesGen);
+  }
+
+  // afaiu, the difference between this method and updateGenSourcesIml, above, is that this one follows some hideous logic to group
+  // discovered locations under deduced content roots.
+  public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
+    Set<String> modelRoots = new HashSet<String>(myRegularModuleContentRoots);
+    modelRoots.addAll(myGeneratedModuleContentRoots);
+    List<String> sourceGen = new ArrayList<>();
+    List<String> classesGen = new ArrayList<>();
+    collectGeneratedSourcesAndClassesDirs(sourceGen, classesGen, sourceDirs);
+    sourceGen.removeAll(myRegularModuleSources);
+    sourceGen.removeAll(myGeneratedModuleSources);
 
     Set<String> newRoots = new HashSet<String>();
     for (String sGen : sourceGen) {
