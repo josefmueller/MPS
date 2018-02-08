@@ -23211,6 +23211,7 @@
         </node>
         <node concept="1SiIV0" id="7u8Q3wDVFuO" role="3bR37C">
           <node concept="3bR9La" id="7u8Q3wDVFvd" role="1SiIV1">
+            <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
@@ -24256,10 +24257,10 @@
             <ref role="3bR37D" node="1d41uYMTVPB" resolve="jetbrains.mps.lang.scopes.runtime" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6EJHIrmNImQ" role="3bR37C">
-          <node concept="3bR9La" id="6EJHIrmNImR" role="1SiIV1">
+        <node concept="1SiIV0" id="1Cv76TH8lHV" role="3bR37C">
+          <node concept="3bR9La" id="1Cv76TH8lHW" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
+            <ref role="3bR37D" node="7Kfy9QB6LgV" resolve="jetbrains.mps.make.runtime" />
           </node>
         </node>
       </node>
