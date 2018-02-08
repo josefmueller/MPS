@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,11 +31,9 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.util.EqualUtil;
@@ -958,8 +956,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       }
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
-        // XXX why Language(SModule)#getUsedLanguages doesn't care about descriptor language being used?
-        result.add(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.descriptorLanguageRef(), Language.class));
       }
       if (AbstractModule.this instanceof Generator) {
         result.add(((Generator) AbstractModule.this).getSourceLanguage());
