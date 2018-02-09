@@ -67,28 +67,34 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public class NewModelDialog extends DialogWrapper {
-  private final MPSProject myProject;
-  private final AbstractModule myModule;
+  private final @NotNull MPSProject myProject;
+  private final @NotNull AbstractModule myModule;
+  private final @Nullable SModel myClone;
+  private final boolean myPreserveIds;
+
   private final JPanel myContentPane = new JPanel(new BorderLayout());
   private final JTextField myModelName = new JTextField();
   private final JComboBox<String> myModelStereotype = new JComboBox<String>();
   private final JComboBox<ModelRoot> myModelRoots = new JComboBox<ModelRoot>();
   private final JComboBox<ModelFactoryType> myModelStorageFormat = new JComboBox<ModelFactoryType>();
-  private SModel myClone;
-  private boolean myPreserveIds;
+
   private EditableSModel myResult;
-  private String myNamespace;
 
   public NewModelDialog(Project project, AbstractModule module, String namespace, String stereotype, boolean strict) throws HeadlessException {
+    this(project, module, namespace, stereotype, strict, null, false);
+  }
+
+  public NewModelDialog(Project project, @NotNull AbstractModule module, String namespace, String stereotype, boolean strict, @Nullable SModel clone, boolean preserveIds) throws HeadlessException {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Model");
     myProject = (MPSProject) project;
+    myPreserveIds = preserveIds;
+    myClone = clone;
     myModule = module;
-    myNamespace = (namespace == null ? "" : namespace);
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
-        initContentPane();
+        initContentPane(namespace);
       }
     });
     if (stereotype != null) {
@@ -99,21 +105,17 @@ public class NewModelDialog extends DialogWrapper {
     init();
   }
 
-  public NewModelDialog(Project project, SModel cloneModel) {
-    this(project, (AbstractModule) cloneModel.getModule(), null, cloneModel.getName().getStereotype(), false);
-    myClone = cloneModel;
-    myPreserveIds = false;
-    SModelName originalName = myClone.getName();
+  public NewModelDialog(Project project, @NotNull SModel cloneModel) {
+    this(project, (AbstractModule) cloneModel.getModule(), null, cloneModel.getName().getStereotype(), false, cloneModel, false);
+    SModelName originalName = cloneModel.getName();
     setTitle(String.format("Clone Model %s", originalName.getValue()));
     myModelName.setText(new SModelName(originalName.getLongName() + "_clone").getValue());
     check();
   }
 
-  public NewModelDialog(Project project, AbstractModule module, SModel cloneModel) {
-    this(project, module, null, cloneModel.getName().getStereotype(), false);
-    myClone = cloneModel;
-    myPreserveIds = true;
-    SModelName originalName = myClone.getName();
+  public NewModelDialog(Project project, AbstractModule module, @NotNull SModel cloneModel) {
+    this(project, module, null, cloneModel.getName().getStereotype(), false, cloneModel, true);
+    SModelName originalName = cloneModel.getName();
     setTitle(String.format("Move Model %s", originalName.getValue()));
     myModelName.setText(originalName.getValue());
     check();
@@ -123,7 +125,7 @@ public class NewModelDialog extends DialogWrapper {
     return myResult;
   }
 
-  private void initContentPane() {
+  private void initContentPane(String namespace) {
     JPanel mainPanel = new JPanel(new GridLayoutManager(6, 1));
     mainPanel.setPreferredSize(new Dimension(200, 50));
 
@@ -156,7 +158,7 @@ public class NewModelDialog extends DialogWrapper {
     });
     myModelRoots.setModel(model);
 
-    myModelName.setText((myNamespace.length() == 0 ? myNamespace : myNamespace + "."));
+    myModelName.setText((namespace.length() == 0 ? namespace : namespace + "."));
 
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Model name:"), constraints);
@@ -230,13 +232,14 @@ public class NewModelDialog extends DialogWrapper {
 
     super.doOKAction();
 
-    final ModelFactoryType storageFormat = (ModelFactoryType) myModelStorageFormat.getSelectedItem();
-    final String fqName = getFqName();
-    final Reference<ModelRoot> selectedModelRoot = new Reference<>();
-    selectedModelRoot.set((ModelRoot) myModelRoots.getSelectedItem());
+    myResult = createModelAndShowProperties((ModelFactoryType) myModelStorageFormat.getSelectedItem(), getFqName(), (ModelRoot) myModelRoots.getSelectedItem(), myModule, myProject, myPreserveIds, myClone);
+  }
 
-    if (!(selectedModelRoot.get().canCreateModel(getFqName())) && myModule instanceof Language && selectedModelRoot.get() instanceof FileBasedModelRoot) {
-      final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRoot.get();
+  private static EditableSModel createModelAndShowProperties(ModelFactoryType storageFormat, String fqName, ModelRoot selectedModelRoot, SModule myModule, MPSProject myProject, boolean myPreserveIds, SModel myClone) {
+    final Reference<ModelRoot> selectedModelRootRef = new Reference<>(selectedModelRoot);
+
+    if (!(selectedModelRootRef.get().canCreateModel(fqName)) && myModule instanceof Language && selectedModelRootRef.get() instanceof FileBasedModelRoot) {
+      final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRootRef.get();
 
       createAccessoryModelRoot(selectedFileBasedModelRoot, (Language) myModule, myProject);
 
@@ -244,7 +247,7 @@ public class NewModelDialog extends DialogWrapper {
         public void run() {
           for (ModelRoot modelRoot : myModule.getModelRoots()) {
             if (modelRoot instanceof FileBasedModelRoot && Objects.equals(((FileBasedModelRoot) modelRoot).getContentRoot(), selectedFileBasedModelRoot.getContentRoot())) {
-              selectedModelRoot.set(modelRoot);
+              selectedModelRootRef.set(modelRoot);
             }
           }
         }
@@ -252,9 +255,9 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     final Reference<ModelCannotBeCreatedException> refException = new Reference<>();
-    final ModelRoot modelRoot = selectedModelRoot.get();
+    final ModelRoot modelRoot = selectedModelRootRef.get();
 
-    myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
+    EditableSModel res = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
 
@@ -293,8 +296,8 @@ public class NewModelDialog extends DialogWrapper {
       Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + refException.get().getMessage() + "'", "Error");
     }
 
-    if (myResult != null) {
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
+    if (res != null) {
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(res, myProject);
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myProject), configurable, "#MPSPropertiesConfigurable");
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
@@ -302,6 +305,7 @@ public class NewModelDialog extends DialogWrapper {
         }
       }, ModalityState.current());
     }
+    return res;
   }
 
   private static void createAccessoryModelRoot(FileBasedModelRoot selectedModelRoot, Language module, Project project) {
