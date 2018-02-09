@@ -230,35 +230,40 @@ public class NewModelDialog extends DialogWrapper {
 
     super.doOKAction();
 
-    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
-      final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
+    final ModelFactoryType storageFormat = (ModelFactoryType) myModelStorageFormat.getSelectedItem();
+    final String fqName = getFqName();
+    final Reference<ModelRoot> selectedModelRoot = new Reference<>();
+    selectedModelRoot.set((ModelRoot) myModelRoots.getSelectedItem());
 
-      createAccessoryModelRoot(selectedModelRoot, (Language) myModule, myProject);
+    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && selectedModelRoot.get() instanceof FileBasedModelRoot) {
+      final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRoot.get();
+
+      createAccessoryModelRoot(selectedFileBasedModelRoot, (Language) myModule, myProject);
 
       myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           for (ModelRoot modelRoot : myModule.getModelRoots()) {
-            if (modelRoot instanceof FileBasedModelRoot && Objects.equals(((FileBasedModelRoot) modelRoot).getContentRoot(), selectedModelRoot.getContentRoot())) {
-              myModelRoots.addItem(modelRoot);
-              myModelRoots.setSelectedItem(modelRoot);
+            if (modelRoot instanceof FileBasedModelRoot && Objects.equals(((FileBasedModelRoot) modelRoot).getContentRoot(), selectedFileBasedModelRoot.getContentRoot())) {
+              selectedModelRoot.set(modelRoot);
             }
           }
         }
       });
     }
 
-    final Reference<ModelCannotBeCreatedException> refException = new Reference<ModelCannotBeCreatedException>();
+    final Reference<ModelCannotBeCreatedException> refException = new Reference<>();
+    final ModelRoot mr1 = selectedModelRoot.get();
+
     myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
-        String fqName = getFqName();
-        ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
+
         @NotNull EditableSModel result;
         try {
-          if (mr instanceof DefaultModelRoot) {
-            result = SModuleOperations.createModelWithAdjustments(fqName, mr, (ModelFactoryType) myModelStorageFormat.getSelectedItem());
+          if (mr1 instanceof DefaultModelRoot) {
+            result = SModuleOperations.createModelWithAdjustments(fqName, mr1, storageFormat);
           } else {
-            result = SModuleOperations.createModelWithAdjustments(fqName, mr, null);
+            result = SModuleOperations.createModelWithAdjustments(fqName, mr1, null);
           }
         } catch (ModelCannotBeCreatedException e) {
           refException.set(e);
