@@ -158,7 +158,7 @@ public class NewModelDialog extends DialogWrapper {
     });
     myModelRoots.setModel(model);
 
-    myModelName.setText((namespace.length() == 0 ? namespace : namespace + "."));
+    myModelName.setText((namespace == null || namespace.length() == 0 ? namespace : namespace + "."));
 
     constraints.setRow(constraints.getRow() + 1);
     mainPanel.add(new JLabel("Model name:"), constraints);
