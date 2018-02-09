@@ -235,7 +235,7 @@ public class NewModelDialog extends DialogWrapper {
     final Reference<ModelRoot> selectedModelRoot = new Reference<>();
     selectedModelRoot.set((ModelRoot) myModelRoots.getSelectedItem());
 
-    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && selectedModelRoot.get() instanceof FileBasedModelRoot) {
+    if (!(selectedModelRoot.get().canCreateModel(getFqName())) && myModule instanceof Language && selectedModelRoot.get() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedFileBasedModelRoot = (FileBasedModelRoot) selectedModelRoot.get();
 
       createAccessoryModelRoot(selectedFileBasedModelRoot, (Language) myModule, myProject);
@@ -252,7 +252,7 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     final Reference<ModelCannotBeCreatedException> refException = new Reference<>();
-    final ModelRoot mr1 = selectedModelRoot.get();
+    final ModelRoot modelRoot = selectedModelRoot.get();
 
     myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<EditableSModel>() {
       @Override
@@ -260,10 +260,10 @@ public class NewModelDialog extends DialogWrapper {
 
         @NotNull EditableSModel result;
         try {
-          if (mr1 instanceof DefaultModelRoot) {
-            result = SModuleOperations.createModelWithAdjustments(fqName, mr1, storageFormat);
+          if (modelRoot instanceof DefaultModelRoot) {
+            result = SModuleOperations.createModelWithAdjustments(fqName, modelRoot, storageFormat);
           } else {
-            result = SModuleOperations.createModelWithAdjustments(fqName, mr1, null);
+            result = SModuleOperations.createModelWithAdjustments(fqName, modelRoot, null);
           }
         } catch (ModelCannotBeCreatedException e) {
           refException.set(e);
