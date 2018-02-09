@@ -55,14 +55,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.CopyUtil;
-import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import java.util.ArrayDeque;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -239,37 +231,7 @@ public class NewModelDialog extends DialogWrapper {
     if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
-      Memento memento = new MementoImpl();
-      selectedModelRoot.save(memento);
-
-      final ModelRootDescriptor oldModelRootDescriptor = new ModelRootDescriptor(selectedModelRoot.getType(), memento);
-
-      final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceFacade.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
-      newModelRoot.load(memento);
-      newModelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, newModelRoot.getContentRoot() + File.separator + "languageAccessories");
-
-      memento = new MementoImpl();
-      newModelRoot.save(memento);
-      final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
-
-      myProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          final LanguageDescriptor languageDescriptor = ((Language) myModule).getModuleDescriptor();
-          Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
-          while (iterator.hasNext()) {
-            ModelRootDescriptor descriptor = iterator.next();
-            if (descriptor.getType().equals(oldModelRootDescriptor.getType()) && descriptor.getMemento().equals(oldModelRootDescriptor.getMemento())) {
-              iterator.remove();
-              break;
-            }
-          }
-          languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
-          // see MPS-18743 
-          myProject.getRepository().saveAll();
-          myModule.setModuleDescriptor(languageDescriptor);
-          myModule.save();
-        }
-      });
+      createAccessoryModelRoot(selectedModelRoot, (Language) myModule, myProject);
 
       myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
@@ -311,55 +273,7 @@ public class NewModelDialog extends DialogWrapper {
         if (myPreserveIds) {
           CopyUtil.copyModelContentAndPreserveIds(myClone, result);
         } else {
-          // copy content and update references for targets in the same model to point to copied counterparts 
-          // we gonna record each cloned node, map would be huge 
-          HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>(1 << 10);
-          ArrayList<SNode> newRoots = new ArrayList<SNode>();
-          ArrayDeque<SNode> queue = new ArrayDeque<SNode>();
-          for (SNode r : myClone.getRootNodes()) {
-            queue.addLast(r);
-            while (!(queue.isEmpty())) {
-              SNode n = queue.removeFirst();
-              SNode copy = result.createNode(n.getConcept());
-              nodeMap.put(n, copy);
-              CopyUtil.copyProperties(n, copy);
-              CopyUtil.copyUserObjects(n, copy);
-              SContainmentLink ownerLink = n.getContainmentLink();
-              if (ownerLink == null) {
-                newRoots.add(copy);
-              } else {
-                // add a copy as a child into our parent's copy. 
-                // We walk source model from top to bottom, no chance to lack mapping for parent node 
-                nodeMap.get(n.getParent()).addChild(ownerLink, copy);
-              }
-              for (SNode ch : n.getChildren()) {
-                queue.addLast(ch);
-              }
-            }
-          }
-          // Once map is ready, we can update references, so that references between original nodes are restored to their copies 
-          // despite lack of elements from newRoots, implicitly updates nodeMap.get(r) counterparts, i.e. new nodes 
-          for (SNode n : SNodeUtil.getDescendants(myClone.getRootNodes())) {
-            // XXX would be great to re-use code of CloneUtil from generator 
-            // This code is similar to CopyUtil.addReferences without odd arguments, static checks and dead branches. 
-            SNode copy = nodeMap.get(n);
-            if (copy == null) {
-              continue;
-            }
-            for (SReference ref : n.getReferences()) {
-              SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
-              if (targetNode != null) {
-                SNode newTarget = (nodeMap.containsKey(targetNode) ? nodeMap.get(targetNode) : targetNode);
-                copy.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), copy, newTarget));
-              } else {
-                String resolveInfo = (ref instanceof jetbrains.mps.smodel.SReference ? ((jetbrains.mps.smodel.SReference) ref).getResolveInfo() : null);
-                copy.setReference(ref.getLink(), jetbrains.mps.smodel.SReference.create(ref.getLink(), copy, ref.getTargetNodeReference(), resolveInfo));
-              }
-            }
-          }
-          for (SNode r : newRoots) {
-            result.addRootNode(r);
-          }
+          CopyUtil.copyModelContentAndUpdateCrossRootReferences(myClone, result);
         }
         result.setChanged(true);
         result.save();
@@ -383,6 +297,40 @@ public class NewModelDialog extends DialogWrapper {
         }
       }, ModalityState.current());
     }
+  }
+
+  private static void createAccessoryModelRoot(FileBasedModelRoot selectedModelRoot, Language module, Project project) {
+    Memento memento = new MementoImpl();
+    selectedModelRoot.save(memento);
+
+    final ModelRootDescriptor oldModelRootDescriptor = new ModelRootDescriptor(selectedModelRoot.getType(), memento);
+
+    final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceFacade.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
+    newModelRoot.load(memento);
+    newModelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, newModelRoot.getContentRoot() + File.separator + "languageAccessories");
+
+    memento = new MementoImpl();
+    newModelRoot.save(memento);
+    final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
+
+    project.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        final LanguageDescriptor languageDescriptor = module.getModuleDescriptor();
+        Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
+        while (iterator.hasNext()) {
+          ModelRootDescriptor descriptor = iterator.next();
+          if (descriptor.getType().equals(oldModelRootDescriptor.getType()) && descriptor.getMemento().equals(oldModelRootDescriptor.getMemento())) {
+            iterator.remove();
+            break;
+          }
+        }
+        languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
+        // see MPS-18743
+        project.getRepository().saveAll();
+        module.setModuleDescriptor(languageDescriptor);
+        module.save();
+      }
+    });
   }
 
   private String getFqName() {
