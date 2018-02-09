@@ -71,7 +71,7 @@ public class SolutionRef_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SModuleReference> getParameters(SubstituteMenuContext _context) {
-      Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
+      Iterable<Solution> allSolutions = new ModuleRepositoryFacade(_context.getEditorContext().getRepository()).getAllModules(Solution.class);
       return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
         public SModuleReference select(Solution s) {
           return s.getModuleReference();
