@@ -228,6 +228,8 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
+    super.doOKAction();
+
     if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
@@ -285,8 +287,6 @@ public class NewModelDialog extends DialogWrapper {
     if (!(refException.isNull())) {
       Messages.showErrorDialog(myProject.getProject(), "Could not create a new model because '" + refException.get().getMessage() + "'", "Error");
     }
-
-    super.doOKAction();
 
     if (myResult != null) {
       MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myProject);
