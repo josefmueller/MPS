@@ -42,6 +42,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private static final Logger LOG = LogManager.getLogger(BasePluginManager.class);
 
   protected final Object myPluginsLock = new Object(); //guarding my fields
+  // FIXME drop, the only use has context project to take repo from
   protected final SRepository myRepository;
   private final PluginLoaderRegistry myPluginLoaderRegistry;
 

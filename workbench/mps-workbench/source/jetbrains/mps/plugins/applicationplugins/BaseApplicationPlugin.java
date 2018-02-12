@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.plugins.part.ApplicationPluginPart;
@@ -31,6 +32,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 import jetbrains.mps.workbench.action.MPSActions;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +52,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private Set<Pair<DefaultActionGroup, DefaultActionGroup>> myXmlGroups = new HashSet<Pair<DefaultActionGroup, DefaultActionGroup>>();
 
   private Map<DefaultActionGroup, DefaultActionGroup> myAdjustedGroups = new HashMap<DefaultActionGroup, DefaultActionGroup>();
+  private Platform myPlatform;
 
   //----------plugin id------------
 
@@ -145,6 +148,7 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
     fillCustomParts(rv);
     for (ApplicationPluginPart part : rv) {
       try {
+        part.setPlatform(myPlatform);
         part.init();
       } catch (Throwable th) {
         LOG.error(String.format("Failed to initialize part %s of plugin %s", part.getClass(), getId()), th);
@@ -172,6 +176,14 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
 
   //-------------common-------------
 
+  /**
+   * This method is invoked once {@code BaseApplicationPlugin} is instantiated, prior to any other method.
+    * @param mpsPlatform never {@code null}
+   */
+  /*package*/ void setPlatform(@NotNull Platform mpsPlatform) {
+    myPlatform = mpsPlatform;
+  }
+
   public final void dispose() {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
@@ -179,6 +191,9 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
       // in fact, with 2018.1, part is instance of ApplicationPluginPart and guarded BaseCustomApplicationPlugin.dispose is not employed.
       try {
         part.dispose();
+        if (part instanceof ApplicationPluginPart) {
+          ((ApplicationPluginPart) part).setPlatform(null);
+        }
       } catch (Throwable th) {
         LOG.error(String.format("Failed to dispose part %s of plugin %s", part.getClass(), getId()), th);
       }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.plugins.part;
 
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 
 /**
@@ -28,6 +29,27 @@ import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
  * @since 2018.1
  */
 public class ApplicationPluginPart extends BaseCustomApplicationPlugin {
+  private Platform myPlatform;
+
+  /**
+   * This method is invoked right after instantiation of a plugin part, and before {@link #init()}.
+   * Code in {@link #init()} can use {@link #getPlatform()} to access various MPS {@linkplain jetbrains.mps.components.CoreComponent components}.
+   *
+   * DESIGN NOTE: after considering 2 alternatives, to pass platform via dedicated setter and as and argument to {@link #init()}, I've picked the
+   * one with setter: (a) not to expose Platform to every class out there unless I'm sure it's what is really reasonable; (b) there are few
+   * scenarios at the moment that might need a platform access, don't want to regenerate all subclasses; (c) it's easy to add init(Platform) later.
+   */
+  public final void setPlatform(Platform mpsPlatform) {
+    myPlatform = mpsPlatform;
+  }
+
+  /**
+   * Provides access to initialized MPS platform to subclasses.
+   * @return never {@code null} during lifetime of the plugin part (yes, still valid during {@link #dispose()}).
+   */
+  protected final Platform getPlatform() {
+    return myPlatform;
+  }
 
   @Override
   public void init() {
