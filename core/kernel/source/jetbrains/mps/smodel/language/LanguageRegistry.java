@@ -347,7 +347,7 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
   }
 
   /**
-   * @return snapshot of languages known to the registory at the given moment.
+   * @return snapshot of languages known to the registry at the given moment.
    *         May not reflect actual state (a language might get unloaded), but as long as it's about identity objects, it's not that important to
    *         keep the collection exact.
    */
