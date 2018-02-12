@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="16,0,60,0" name="jetbrains.mps.lang.plugin.standalone.editor.EditorAspectDescriptorImpl" />
+      <unit at="16,0,62,0" name="jetbrains.mps.lang.plugin.standalone.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GetPreferencesComponentInProjectOperation_SubstituteMenu.java">
       <unit at="68,0,93,0" name="jetbrains.mps.lang.plugin.standalone.editor.GetPreferencesComponentInProjectOperation_SubstituteMenu$SMP_ReferenceScope_r7b91_a$Item" />
@@ -185,6 +185,51 @@
       <unit id="1741258697587122055" at="82,0,158,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SMP_Param_bkyuyj_a$SMP_Action_bkyuyj_a0" />
       <unit id="1741258697587122055" at="60,0,160,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution$SMP_Param_bkyuyj_a" />
       <unit id="1741258697587122055" at="35,0,168,0" name="jetbrains.mps.lang.plugin.standalone.editor.AddWorkbenchToActionParameters_Contribution" />
+    </file>
+  </root>
+  <root nodeRef="r:dbd42a0c-01d0-4585-adc3-78799d2c649b(jetbrains.mps.lang.plugin.standalone.editor)/3418954410726344474">
+    <file name="PlatformAccessExpression_Editor.java">
+      <node id="3418954410726344474" at="11,79,12,90" concept="6" />
+      <node id="3418954410726344474" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="3418954410726344474" at="11,79,12,90" />
+      <scope id="3418954410726344474" at="11,0,14,0">
+        <var name="editorContext" id="3418954410726344474" />
+        <var name="node" id="3418954410726344474" />
+      </scope>
+      <unit id="3418954410726344474" at="10,0,15,0" name="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_Editor" />
+    </file>
+    <file name="PlatformAccessExpression_EditorBuilder_a.java">
+      <node id="3418954410726344474" at="16,104,17,19" concept="9" />
+      <node id="3418954410726344474" at="17,19,18,18" concept="1" />
+      <node id="3418954410726344474" at="23,26,24,18" concept="6" />
+      <node id="3418954410726344474" at="27,39,28,38" concept="6" />
+      <node id="3418954410726345283" at="31,49,32,119" concept="5" />
+      <node id="3418954410726345283" at="32,119,33,72" concept="5" />
+      <node id="3418954410726345283" at="34,26,35,27" concept="1" />
+      <node id="3418954410726345283" at="35,27,36,64" concept="1" />
+      <node id="3418954410726345283" at="37,5,38,22" concept="6" />
+      <node id="3418954410726344474" at="13,0,15,0" concept="2" trace="myNode" />
+      <node id="3418954410726344474" at="27,0,30,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="3418954410726344474" at="16,0,20,0" concept="0" trace="PlatformAccessExpression_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3418954410726345283" at="33,72,37,5" concept="3" />
+      <node id="3418954410726344474" at="21,0,26,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3418954410726345283" at="31,0,40,0" concept="4" trace="createComponent_8wuigu_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="3418954410726344474" at="23,26,24,18" />
+      <scope id="3418954410726344474" at="27,39,28,38" />
+      <scope id="3418954410726344474" at="16,104,18,18" />
+      <scope id="3418954410726345283" at="34,26,36,64" />
+      <scope id="3418954410726344474" at="27,0,30,0" />
+      <scope id="3418954410726344474" at="16,0,20,0">
+        <var name="context" id="3418954410726344474" />
+        <var name="node" id="3418954410726344474" />
+      </scope>
+      <scope id="3418954410726344474" at="21,0,26,0" />
+      <scope id="3418954410726345283" at="31,49,38,22">
+        <var name="bigCell" id="3418954410726345283" />
+        <var name="editorCell" id="3418954410726345283" />
+      </scope>
+      <scope id="3418954410726345283" at="31,0,40,0" />
+      <unit id="3418954410726344474" at="12,0,41,0" name="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:dbd42a0c-01d0-4585-adc3-78799d2c649b(jetbrains.mps.lang.plugin.standalone.editor)/481983775135178871">

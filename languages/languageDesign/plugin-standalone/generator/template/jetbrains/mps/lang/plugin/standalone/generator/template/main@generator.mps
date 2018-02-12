@@ -35,6 +35,7 @@
     <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="bwpj" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.part(MPS.Workbench/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -170,6 +171,7 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -258,6 +260,9 @@
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
+      <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
+        <child id="8900764248744213871" name="contentNode" index="1Koe22" />
+      </concept>
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
       <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
         <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
@@ -438,6 +443,30 @@
       </node>
       <node concept="j$656" id="6dSlb0bYnzh" role="1lVwrX">
         <ref role="v9R2y" node="6dSlb0bYnzf" resolve="reduce_ThisInCustomPlugins" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="2XM$eKiAqLQ" role="3acgRq">
+      <ref role="30HIoZ" to="tgbt:2XM$eKiAkrB" resolve="PlatformAccessExpression" />
+      <node concept="1Koe21" id="2XM$eKiArhY" role="1lVwrX">
+        <node concept="312cEu" id="2XM$eKiAri4" role="1Koe22">
+          <property role="TrG5h" value="A" />
+          <node concept="3clFb_" id="2XM$eKiAtnF" role="jymVt">
+            <property role="TrG5h" value="getPlatform" />
+            <node concept="3uibUv" id="2XM$eKiAtou" role="3clF45">
+              <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+            </node>
+            <node concept="3Tmbuc" id="2XM$eKiAtob" role="1B3o_S" />
+            <node concept="3clFbS" id="2XM$eKiAtnJ" role="3clF47">
+              <node concept="3clFbF" id="2XM$eKiAtxy" role="3cqZAp">
+                <node concept="1rXfSq" id="2XM$eKiAtxw" role="3clFbG">
+                  <ref role="37wK5l" node="2XM$eKiAtnF" resolve="getPlatform" />
+                  <node concept="raruj" id="2XM$eKiAt$1" role="lGtFl" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="2XM$eKiAri5" role="1B3o_S" />
+        </node>
       </node>
     </node>
     <node concept="2rT7sh" id="hzig6wG" role="2rTMjI">
