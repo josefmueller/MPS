@@ -133,14 +133,13 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_AppPluginPart" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" file="RunConfigurationsInitializer_CustomApplicationPlugin.java">
+  <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.RunConfigurationsInitializer_AppPluginPart" file="RunConfigurationsInitializer_AppPluginPart.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="com.intellij.openapi.extensions.ExtensionPoint" />
@@ -148,6 +147,7 @@
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -158,7 +158,7 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
 </dependenciesRoot>
 

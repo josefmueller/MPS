@@ -23,15 +23,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="BeforeTasksInitializer_CustomProjectPlugin.java">
-      <unit at="15,0,40,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
+    <file name="BeforeTasksInitializer_ProjectPluginPart.java">
+      <unit at="15,0,42,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BeforeTasksInitializer_ProjectPluginPart" />
     </file>
     <file name="IconContainer.java">
       <unit at="8,0,11,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
     </file>
-    <file name="RunConfigurationsInitializer_CustomApplicationPlugin.java">
-      <unit at="50,108,61,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
-      <unit at="19,0,100,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+    <file name="RunConfigurationsInitializer_AppPluginPart.java">
+      <unit at="51,108,62,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_AppPluginPart$1" />
+      <unit at="19,0,102,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_AppPluginPart" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/1353230511309561845">
@@ -4474,53 +4474,33 @@
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/7162597690968026150">
     <file name="Plugin_ApplicationPlugin.java">
-      <node id="7162597690968026150" at="13,0,14,0" concept="6" trace="myId" />
-      <node id="7162597690968026150" at="16,27,17,16" concept="11" />
-      <node id="7162597690968026150" at="19,62,20,112" concept="10" />
-      <node id="7162597690968026150" at="21,5,22,102" concept="10" />
-      <node id="7162597690968026150" at="22,102,23,52" concept="5" />
-      <node id="7162597690968026150" at="23,52,24,20" concept="5" />
-      <node id="7162597690968026150" at="25,5,26,15" concept="11" />
-      <node id="7162597690968026150" at="14,0,16,0" concept="3" trace="Plugin_ApplicationPlugin#()V" />
-      <node id="7162597690968026150" at="16,0,19,0" concept="9" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690968026150" at="20,112,25,5" concept="1" />
-      <node id="7162597690968026150" at="19,0,28,0" concept="9" trace="initCustomParts#()Ljava/util/List;" />
-      <scope id="7162597690968026150" at="14,37,14,37" />
-      <scope id="7162597690968026150" at="16,27,17,16" />
-      <scope id="7162597690968026150" at="14,0,16,0" />
-      <scope id="7162597690968026150" at="16,0,19,0" />
-      <scope id="7162597690968026150" at="21,5,24,20">
-        <var name="plugin" id="7162597690968026150" />
+      <node id="7162597690968026150" at="11,0,12,0" concept="6" trace="myId" />
+      <node id="7162597690968026150" at="14,27,15,16" concept="11" />
+      <node id="7162597690968026150" at="18,66,19,64" concept="5" />
+      <node id="7162597690968026150" at="12,0,14,0" concept="3" trace="Plugin_ApplicationPlugin#()V" />
+      <node id="7162597690968026150" at="14,0,17,0" concept="9" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7162597690968026150" at="17,0,21,0" concept="9" trace="fillCustomParts#(Ljava/util/List;)V" />
+      <scope id="7162597690968026150" at="12,37,12,37" />
+      <scope id="7162597690968026150" at="14,27,15,16" />
+      <scope id="7162597690968026150" at="18,66,19,64" />
+      <scope id="7162597690968026150" at="12,0,14,0" />
+      <scope id="7162597690968026150" at="14,0,17,0" />
+      <scope id="7162597690968026150" at="17,0,21,0">
+        <var name="parts" id="7162597690968026150" />
       </scope>
-      <scope id="7162597690968026150" at="19,62,26,15">
-        <var name="res" id="7162597690968026150" />
-      </scope>
-      <scope id="7162597690968026150" at="19,0,28,0" />
-      <unit id="7162597690968026150" at="12,0,29,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" />
+      <unit id="7162597690968026150" at="10,0,22,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" />
     </file>
     <file name="Plugin_ProjectPlugin.java">
-      <node id="7162597690968026150" at="16,73,17,104" concept="10" />
-      <node id="7162597690968026150" at="17,104,18,67" concept="10" />
-      <node id="7162597690968026150" at="19,5,20,88" concept="10" />
-      <node id="7162597690968026150" at="20,88,21,52" concept="5" />
-      <node id="7162597690968026150" at="21,52,22,30" concept="5" />
-      <node id="7162597690968026150" at="23,5,24,15" concept="11" />
-      <node id="7162597690968026150" at="14,0,16,0" concept="3" trace="Plugin_ProjectPlugin#()V" />
-      <node id="7162597690968026150" at="18,67,23,5" concept="1" />
-      <node id="7162597690968026150" at="16,0,26,0" concept="9" trace="initCustomParts#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
-      <scope id="7162597690968026150" at="14,33,14,33" />
-      <scope id="7162597690968026150" at="14,0,16,0" />
-      <scope id="7162597690968026150" at="19,5,22,30">
-        <var name="plugin" id="7162597690968026150" />
+      <node id="7162597690968026150" at="12,62,13,62" concept="5" />
+      <node id="7162597690968026150" at="10,0,12,0" concept="3" trace="Plugin_ProjectPlugin#()V" />
+      <node id="7162597690968026150" at="12,0,15,0" concept="9" trace="fillCustomParts#(Ljava/util/List;)V" />
+      <scope id="7162597690968026150" at="10,33,10,33" />
+      <scope id="7162597690968026150" at="12,62,13,62" />
+      <scope id="7162597690968026150" at="10,0,12,0" />
+      <scope id="7162597690968026150" at="12,0,15,0">
+        <var name="parts" id="7162597690968026150" />
       </scope>
-      <scope id="7162597690968026150" at="16,73,24,15">
-        <var name="mpsProject" id="7162597690968026150" />
-        <var name="res" id="7162597690968026150" />
-      </scope>
-      <scope id="7162597690968026150" at="16,0,26,0">
-        <var name="project" id="7162597690968026150" />
-      </scope>
-      <unit id="7162597690968026150" at="13,0,27,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
+      <unit id="7162597690968026150" at="9,0,16,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
     </file>
     <file name="startup.properties">
       <unit id="7162597690968026150" at="1,0,6,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.startup" />

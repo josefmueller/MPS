@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin" file="ClassLikeMenuAdjustment_CustomApplicationPlugin.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_AppPluginPart" file="ClassLikeMenuAdjustment_AppPluginPart.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -25,7 +26,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup" file="ClassLikes_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -124,11 +125,12 @@
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="javax.swing.Icon" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_CustomProjectPlugin" file="LightweightDSLUneditableMemberGutter_CustomProjectPlugin.java">
+  <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_ProjectPluginPart" file="LightweightDSLUneditableMemberGutter_ProjectPluginPart.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.DSLComponentChecker" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
+    <classNode extendsClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.NewClassLike_Action" file="NewClassLike_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -164,26 +166,23 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_AppPluginPart" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikes_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.GoToMemberDeclaration_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ApplicationPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.PluginSolution_ProjectPlugin" file="PluginSolution_ProjectPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_CustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.custom.BaseCustomProjectPlugin" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.LightweightDSLUneditableMemberGutter_ProjectPluginPart" />
+    <classNode dependClassName="jetbrains.mps.plugins.part.ProjectPluginPart" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
 </dependenciesRoot>
