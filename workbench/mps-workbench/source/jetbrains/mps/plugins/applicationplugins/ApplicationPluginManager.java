@@ -41,7 +41,7 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   private final Platform myPlatform;
 
   public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginLoaderRegistry pluginLoaderRegistry) {
-    super(coreComponents.getModuleRepository(), pluginLoaderRegistry);
+    super(pluginLoaderRegistry);
     myPlatform = coreComponents.getPlatform();
   }
 
@@ -62,7 +62,9 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   @Override
   protected BaseApplicationPlugin createPlugin(PluginContributor contributor) {
     BaseApplicationPlugin rv = contributor.createApplicationPlugin();
-    rv.setPlatform(myPlatform);
+    if (rv != null) {
+      rv.setPlatform(myPlatform);
+    }
     return rv;
   }
 
