@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,21 @@ import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
-import jetbrains.mps.workbench.action.IActionsRegistry;
-import jetbrains.mps.workbench.action.MPSActions;
+import jetbrains.mps.plugins.part.ApplicationPluginPart;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.IActionsRegistry;
+import jetbrains.mps.workbench.action.MPSActions;
 import org.apache.log4j.Logger;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public abstract class BaseApplicationPlugin implements IActionsRegistry {
   private static final Logger LOG = org.apache.log4j.LogManager.getLogger(BaseApplicationPlugin.class);
@@ -131,8 +138,23 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
     myCustomPlugins = initCustomParts();
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.1)
   protected List<BaseCustomApplicationPlugin> initCustomParts() {
-    return new ArrayList<BaseCustomApplicationPlugin>();
+    List<ApplicationPluginPart> rv = new ArrayList<>();
+    fillCustomParts(rv);
+    for (ApplicationPluginPart part : rv) {
+      try {
+        part.init();
+      } catch (Throwable th) {
+        LOG.error(String.format("Failed to initialize part %s of plugin %s", part.getClass(), getId()), th);
+      }
+    }
+    return new ArrayList<>(rv);
+  }
+
+  protected void fillCustomParts(List<ApplicationPluginPart> parts) {
+    // no-op, subclasses shall override if they want to supply any plugin parts.
   }
 
   //-------------keymaps------------
@@ -154,7 +176,12 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
     for (BaseCustomApplicationPlugin part : myCustomPlugins) {
-      part.dispose();
+      // in fact, with 2018.1, part is instance of ApplicationPluginPart and guarded BaseCustomApplicationPlugin.dispose is not employed.
+      try {
+        part.dispose();
+      } catch (Throwable th) {
+        LOG.error(String.format("Failed to dispose part %s of plugin %s", part.getClass(), getId()), th);
+      }
     }
 
     for (BaseKeymapChanges change : myKeymapChanges) {
