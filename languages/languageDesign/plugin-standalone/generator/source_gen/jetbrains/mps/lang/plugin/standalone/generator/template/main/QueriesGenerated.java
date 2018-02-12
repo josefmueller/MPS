@@ -135,12 +135,6 @@ public class QueriesGenerated extends QueryProviderBase {
       return _context.getOutputNodeByInputNodeAndMappingLabel(applicationPluginNode, "map_ApplicationPluginClass");
     }
   }
-  public static Object referenceMacro_GetReferent_1215283464729(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ProjectPluginConstructor");
-  }
-  public static Object referenceMacro_GetReferent_954695933596677589(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ApplicationPluginConstructor");
-  }
   public static Object referenceMacro_GetReferent_8540716876878811475(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ActionConstructor");
   }
@@ -586,8 +580,8 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
-    pvqMethods.put("1215281686866", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GeneratedCustomApplicationPlugin"));
-    pvqMethods.put("1206116795145", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GeneratedCustomProjectPlugin"));
+    pvqMethods.put("1215281686866", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GeneratedApplicationPluginPart"));
+    pvqMethods.put("1206116795145", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GeneratedProjectPluginPart"));
     pvqMethods.put("4911466715314111426", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1118e558c6dL, 0x1118e56212bL, "fqClassName"), "ToolClass"));
     pvqMethods.put("3336179199541569132", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1118e558c6dL, 0x1118e56212bL, "fqClassName"), "ToolClass"));
     pvqMethods.put("1215266495352", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GeneratedApplicationPlugin"));
@@ -723,18 +717,16 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, ReferenceTargetQuery> rtqMethods = new HashMap<String, ReferenceTargetQuery>();
   {
     rtqMethods.put("7167571922052020448", new QueriesGenerated.RTQ(0, "PluginClass"));
-    rtqMethods.put("1215283464728", new QueriesGenerated.RTQ(1, "GeneratedCustomProjectPlugin"));
-    rtqMethods.put("954695933596677588", new QueriesGenerated.RTQ(2, "GeneratedCustomApplicationPlugin"));
-    rtqMethods.put("8540716876878811474", new QueriesGenerated.RTQ(3, "GeneratedAction_Template"));
-    rtqMethods.put("8540716876878811523", new QueriesGenerated.RTQ(4, "MainGeneratedGroup"));
-    rtqMethods.put("1370142512206465070", new QueriesGenerated.RTQ(5, "MainGeneratedGroup"));
-    rtqMethods.put("1370142512206465093", new QueriesGenerated.RTQ(6, "ID"));
-    rtqMethods.put("4042687513231504091", new QueriesGenerated.RTQ(7, "KeymapChanges"));
-    rtqMethods.put("6062029294753276831", new QueriesGenerated.RTQ(8, "Object"));
-    rtqMethods.put("6769912430829060553", new QueriesGenerated.RTQ(9, "TabDescriptor_Template"));
-    rtqMethods.put("1238672255067", new QueriesGenerated.RTQ(10, "AbandonRuleInputException"));
-    rtqMethods.put("1238672255143", new QueriesGenerated.RTQ(11, "Object"));
-    rtqMethods.put("808558577750840228", new QueriesGenerated.RTQ(12, "Object"));
+    rtqMethods.put("8540716876878811474", new QueriesGenerated.RTQ(1, "GeneratedAction_Template"));
+    rtqMethods.put("8540716876878811523", new QueriesGenerated.RTQ(2, "MainGeneratedGroup"));
+    rtqMethods.put("1370142512206465070", new QueriesGenerated.RTQ(3, "MainGeneratedGroup"));
+    rtqMethods.put("1370142512206465093", new QueriesGenerated.RTQ(4, "ID"));
+    rtqMethods.put("4042687513231504091", new QueriesGenerated.RTQ(5, "KeymapChanges"));
+    rtqMethods.put("6062029294753276831", new QueriesGenerated.RTQ(6, "Object"));
+    rtqMethods.put("6769912430829060553", new QueriesGenerated.RTQ(7, "TabDescriptor_Template"));
+    rtqMethods.put("1238672255067", new QueriesGenerated.RTQ(8, "AbandonRuleInputException"));
+    rtqMethods.put("1238672255143", new QueriesGenerated.RTQ(9, "Object"));
+    rtqMethods.put("808558577750840228", new QueriesGenerated.RTQ(10, "Object"));
   }
   @NotNull
   @Override
@@ -757,28 +749,24 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.referenceMacro_GetReferent_7167571922052020449(ctx);
         case 1:
-          return QueriesGenerated.referenceMacro_GetReferent_1215283464729(ctx);
-        case 2:
-          return QueriesGenerated.referenceMacro_GetReferent_954695933596677589(ctx);
-        case 3:
           return QueriesGenerated.referenceMacro_GetReferent_8540716876878811475(ctx);
-        case 4:
+        case 2:
           return QueriesGenerated.referenceMacro_GetReferent_8540716876878811524(ctx);
-        case 5:
+        case 3:
           return QueriesGenerated.referenceMacro_GetReferent_1370142512206465071(ctx);
-        case 6:
+        case 4:
           return QueriesGenerated.referenceMacro_GetReferent_1370142512206465094(ctx);
-        case 7:
+        case 5:
           return QueriesGenerated.referenceMacro_GetReferent_4042687513231504092(ctx);
-        case 8:
+        case 6:
           return QueriesGenerated.referenceMacro_GetReferent_6062029294753276832(ctx);
-        case 9:
+        case 7:
           return QueriesGenerated.referenceMacro_GetReferent_6769912430829060554(ctx);
-        case 10:
+        case 8:
           return QueriesGenerated.referenceMacro_GetReferent_1238672255068(ctx);
-        case 11:
+        case 9:
           return QueriesGenerated.referenceMacro_GetReferent_1238672255144(ctx);
-        case 12:
+        case 10:
           return QueriesGenerated.referenceMacro_GetReferent_808558577750840229(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
