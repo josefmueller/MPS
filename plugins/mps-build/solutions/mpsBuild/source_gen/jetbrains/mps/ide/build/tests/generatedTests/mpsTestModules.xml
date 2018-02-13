@@ -2248,6 +2248,7 @@
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
       <pathelement location="${artifacts.mps}/plugins/migration" />
+      <pathelement location="${artifacts.mps}/plugins/modelchecker" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-make" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
@@ -2270,6 +2271,10 @@
     </patternset>
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/plugins/migration">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/modelchecker">
         <include name="lib/**/*.jar" />
         <include name="languages/**/*.jar" />
       </fileset>
