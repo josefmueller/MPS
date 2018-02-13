@@ -32,11 +32,11 @@
     <import index="qpn1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.index(MPS.Platform/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -2904,11 +2904,37 @@
             </node>
           </node>
           <node concept="3clFbJ" id="3Cep5Ce5gTx" role="3cqZAp">
-            <node concept="3clFbC" id="3Cep5Ce5gTy" role="3clFbw">
-              <node concept="37vLTw" id="5DqLs1Fk_jj" role="3uHU7B">
-                <ref role="3cqZAo" node="5DqLs1Fk$yD" resolve="targetNode" />
+            <node concept="22lmx$" id="3I59$qQ0quJ" role="3clFbw">
+              <node concept="3clFbC" id="3I59$qQ0rBE" role="3uHU7w">
+                <node concept="10Nm6u" id="3I59$qQ0rL$" role="3uHU7w" />
+                <node concept="2OqwBi" id="3I59$qQ0qTM" role="3uHU7B">
+                  <node concept="37vLTw" id="3I59$qQ0qKQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5DqLs1Fk$yD" resolve="targetNode" />
+                  </node>
+                  <node concept="liA8E" id="3I59$qQ0r0W" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                  </node>
+                </node>
               </node>
-              <node concept="10Nm6u" id="3Cep5Ce5gT$" role="3uHU7w" />
+              <node concept="22lmx$" id="3I59$qQ0pli" role="3uHU7B">
+                <node concept="3clFbC" id="3Cep5Ce5gTy" role="3uHU7B">
+                  <node concept="37vLTw" id="5DqLs1Fk_jj" role="3uHU7B">
+                    <ref role="3cqZAo" node="5DqLs1Fk$yD" resolve="targetNode" />
+                  </node>
+                  <node concept="10Nm6u" id="3Cep5Ce5gT$" role="3uHU7w" />
+                </node>
+                <node concept="3clFbC" id="3I59$qQ0qiw" role="3uHU7w">
+                  <node concept="2OqwBi" id="3I59$qQ0p_U" role="3uHU7B">
+                    <node concept="37vLTw" id="3I59$qQ0ptt" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5DqLs1Fk$yD" resolve="targetNode" />
+                    </node>
+                    <node concept="liA8E" id="3I59$qQ0pG_" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getModelReference" />
+                    </node>
+                  </node>
+                  <node concept="10Nm6u" id="3I59$qQ0qrT" role="3uHU7w" />
+                </node>
+              </node>
             </node>
             <node concept="3clFbS" id="3Cep5Ce5gT_" role="3clFbx">
               <node concept="3cpWs6" id="3Cep5Ce5gTA" role="3cqZAp" />
@@ -2991,33 +3017,7 @@
           </node>
           <node concept="3SKdUt" id="21GaM5PRQHH" role="3cqZAp">
             <node concept="3SKdUq" id="21GaM5PRQHJ" role="3SKWNk">
-              <property role="3SKdUp" value="being carefull with SNodePointer because node is not in a model" />
-            </node>
-          </node>
-          <node concept="3cpWs8" id="xQ1ke1Pk$U" role="3cqZAp">
-            <node concept="3cpWsn" id="xQ1ke1Pk$V" role="3cpWs9">
-              <property role="TrG5h" value="nodePointer" />
-              <node concept="3uibUv" id="xQ1ke1Pk$W" role="1tU5fm">
-                <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-              </node>
-              <node concept="2ShNRf" id="xQ1ke1PkHQ" role="33vP2m">
-                <node concept="1pGfFk" id="xQ1ke1PXvG" role="2ShVmc">
-                  <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId)" resolve="SNodePointer" />
-                  <node concept="37vLTw" id="xQ1ke1Q5Ar" role="37wK5m">
-                    <ref role="3cqZAo" node="xQ1ke1Q5xK" resolve="modelReference" />
-                  </node>
-                  <node concept="2OqwBi" id="xQ1ke1Q2i_" role="37wK5m">
-                    <node concept="2JrnkZ" id="xQ1ke1Q27q" role="2Oq$k0">
-                      <node concept="37vLTw" id="xQ1ke1Q0Su" role="2JrQYb">
-                        <ref role="3cqZAo" node="3Cep5Ce5gTp" resolve="node" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="xQ1ke1Q2zw" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+              <property role="3SKdUp" value="being careful with node.pointer because node is not in a model" />
             </node>
           </node>
           <node concept="3clFbF" id="3Cep5Ce5gTZ" role="3cqZAp">
@@ -3029,9 +3029,19 @@
                 <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
                 <node concept="2ShNRf" id="5DqLs1FkCJr" role="37wK5m">
                   <node concept="1pGfFk" id="5DqLs1FkDgk" role="2ShVmc">
-                    <ref role="37wK5l" to="qpn1:~SNodeEntry.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="SNodeEntry" />
-                    <node concept="37vLTw" id="xQ1ke1Q5uS" role="37wK5m">
-                      <ref role="3cqZAo" node="xQ1ke1Pk$V" resolve="nodePointer" />
+                    <ref role="37wK5l" to="qpn1:~SNodeEntry.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId)" resolve="SNodeEntry" />
+                    <node concept="37vLTw" id="3I59$qQ0Bpq" role="37wK5m">
+                      <ref role="3cqZAo" node="xQ1ke1Q5xK" resolve="modelReference" />
+                    </node>
+                    <node concept="2OqwBi" id="xQ1ke1Q2i_" role="37wK5m">
+                      <node concept="2JrnkZ" id="xQ1ke1Q27q" role="2Oq$k0">
+                        <node concept="37vLTw" id="xQ1ke1Q0Su" role="2JrQYb">
+                          <ref role="3cqZAo" node="3Cep5Ce5gTp" resolve="node" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="xQ1ke1Q2zw" role="2OqNvi">
+                        <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                      </node>
                     </node>
                   </node>
                 </node>
