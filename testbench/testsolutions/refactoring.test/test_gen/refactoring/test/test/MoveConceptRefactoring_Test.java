@@ -35,9 +35,7 @@ import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.ide.plugins.PluginManager;
-import com.intellij.openapi.extensions.PluginId;
-import java.lang.reflect.Method;
+import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ModalityState;
@@ -105,9 +103,7 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
         try {
-          Class<?> euClass = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.ide.migration.workbench")).getPluginClassLoader().loadClass("jetbrains.mps.ide.migration.AntTaskExecutionUtil");
-          Method method = euClass.getMethod("migrate", Project.class);
-          method.invoke(null, project);
+          AntTaskExecutionUtil.migrate(project);
           com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
           assert projects.length == 1 : "more than one project opened: " + projects.length;
           ProjectUtil.closeAndDispose(projects[0]);
