@@ -9,12 +9,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import junit.framework.Assert;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import junit.framework.Assert;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
@@ -56,6 +56,7 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "structure");
+        Assert.assertNotNull(targetModel);
         List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)", "3334961109014792701"));
         Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
 
@@ -79,6 +80,7 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "behavior");
+        Assert.assertNotNull(targetModel);
         List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)", "6426415869175149441"));
         Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
 
@@ -97,6 +99,7 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "constraints");
+        Assert.assertNotNull(targetModel);
         List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:bd146201-753a-4f62-9de3-080d0101373f(SourceLanguage.constraints)", "3794080752246611243"));
         Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
 
@@ -120,6 +123,7 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
     runCommand(new Runnable() {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("bf13acef-3fb7-4e3b-882a-bc94b7e487b3(TargetLanguage)")), "editor");
+        Assert.assertNotNull(targetModel);
         List<SNode> nodesToMove = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:44a0ff4c-6d4a-40cf-bc8a-75a422b1094a(SourceLanguage.editor)", "3794080752246611044"));
         Assert.assertFalse(ListSequence.fromList(nodesToMove).contains(null));
 
@@ -155,7 +159,6 @@ public class Refactoring_Test extends EnvironmentAwareTestCase {
   public void tearDown() {
     myEnvironment.closeProject(project);
   }
-
 
   public static Collection<ReportItem> getErrors(Iterable<SNode> roots) {
     final List<ReportItem> result = ListSequence.fromList(new ArrayList<ReportItem>());
