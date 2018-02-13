@@ -7,15 +7,12 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.FilteredGlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public class ShowInLogicalView_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.ProjectPane.LogicalView;
@@ -31,9 +28,12 @@ public class ShowInLogicalView_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    Iterable<SModule> modules = (Iterable<SModule>) new FilteredGlobalScope().getModules();
-    SModule currentModule = check_fx2sd0_a0b0e(check_fx2sd0_a0a1a4(((SNode) MapSequence.fromMap(_params).get("node"))));
-    return Sequence.fromIterable(modules).contains(currentModule);
+    ProjectPane pane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+    ProjectTreeFindHelper treeFinder = new ProjectTreeFindHelper(pane.getTree());
+    // it's fine if we could navigate to a module. If the module is not part of the project pane, no reason to expect more. 
+    // If, however, module is present, it's highly likely node's model would be there as well, and the node, too. 
+    // Just don't want to slow down by ensuring there's model and node in the tree. 
+    return treeFinder.findMostSuitableModuleTreeNode(((SNode) MapSequence.fromMap(_params).get("node")).getModel().getModule()) != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -65,17 +65,5 @@ public class ShowInLogicalView_Action extends BaseAction {
     ProjectPane pane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     SNode nodeToSelect = (pane.showNodeStructure() ? ((SNode) MapSequence.fromMap(_params).get("node")) : ((SNode) MapSequence.fromMap(_params).get("node")).getContainingRoot());
     pane.selectNode(nodeToSelect, true);
-  }
-  private static SModule check_fx2sd0_a0b0e(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static SModel check_fx2sd0_a0a1a4(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
-    }
-    return null;
   }
 }
