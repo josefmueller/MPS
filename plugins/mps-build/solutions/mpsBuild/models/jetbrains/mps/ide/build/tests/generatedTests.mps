@@ -1250,18 +1250,6 @@
             <ref role="3bR37D" to="ffeo:71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
           </node>
         </node>
-        <node concept="1SiIV0" id="5dt5FDZPRvo" role="3bR37C">
-          <node concept="3bR9La" id="5dt5FDZPRvp" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="5dt5FDZPQpM" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5dt5FDZPRDu" role="3bR37C">
-          <node concept="3bR9La" id="5dt5FDZPRDv" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="5dt5FDZPR6T" resolve="jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="5dt5FDZQsA_" role="3bR37C">
           <node concept="3bR9La" id="5dt5FDZQsAA" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -1272,6 +1260,12 @@
           <node concept="3bR9La" id="1BjfD$l$bra" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6LgV" resolve="jetbrains.mps.make.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="5lGJ4TajGwy" role="3bR37C">
+          <node concept="3bR9La" id="5lGJ4TajGwz" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:5lGJ4Tajp1p" resolve="jetbrains.mps.migration.component" />
           </node>
         </node>
       </node>
@@ -1286,6 +1280,15 @@
       <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
       <node concept="398BVA" id="3iBi5uuKFdh" role="2JcizS">
         <ref role="398BVh" node="3iBi5uuKFdi" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="2sgV4H" id="5lGJ4TajgHK" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:77ZqjhZbMC7" resolve="mpsMigration" />
+      <node concept="398BVA" id="5lGJ4TajnUD" role="2JcizS">
+        <ref role="398BVh" node="3iBi5uuKFdi" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="5lGJ4TajnX3" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
       </node>
     </node>
     <node concept="398rNT" id="3iBi5uuKFdi" role="1l3spd">

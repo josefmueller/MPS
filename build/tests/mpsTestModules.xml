@@ -6,6 +6,7 @@
   <property name="mps_home" location="" />
   <property name="idea_home" location="${mps_home}" />
   <property name="artifacts.mps" location="${mps_home}" />
+  <property name="artifacts.mpsMigration" location="${mps_home}/plugins" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
@@ -1071,7 +1072,9 @@
       <library file="${artifacts.mps}/lib/mps-tool.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${artifacts.mps}/lib/mps-workbench.jar" />
+      <library file="${artifacts.mps}/plugins/migration/src/jetbrains.mps.migration.component.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.testManifest.jar" />
+      <library file="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.migration.util.jar" />
       <library file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.migration.pluginSolution.jar" />
       <library file="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.structure.pluginSolution.jar" />
       <library file="${artifacts.mps}/plugins/mps-make/languages/jetbrains.mps.ide.make.jar" />
@@ -2077,7 +2080,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.refactoring.test" depends="java.compile.SourceLanguage, java.compile.jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution, java.compile.jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage, fetchDependencies">
+  <target name="java.compile.refactoring.test" depends="java.compile.SourceLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/refactoring.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/refactoring.test" />
     <javac2 destdir="${build.tmp}/java/out/refactoring.test" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -2104,8 +2107,6 @@
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <pathelement path="${build.tmp}/java/out/SourceLanguage" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tool.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
@@ -2225,7 +2226,9 @@
       <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
+      <pathelement location="${artifacts.mps}/plugins/migration/src/jetbrains.mps.migration.component.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.testManifest.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.migration.util.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.migration.pluginSolution.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.structure.pluginSolution.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-make/languages/jetbrains.mps.ide.make.jar" />
@@ -2235,8 +2238,6 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <pathelement location="${build.layout}/languages/SourceLanguage.jar" />
-      <pathelement location="${build.layout}/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.jar" />
-      <pathelement location="${build.layout}/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.jar" />
       <pathelement location="${build.layout}/languages/testAnnotatedType.jar" />
       <pathelement location="${build.layout}/languages/testOverridingType.jar" />
       <pathelement location="${build.layout}/languages/testPrimitiveType.jar" />
@@ -2246,6 +2247,7 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
+      <pathelement location="${artifacts.mps}/plugins/migration" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <pathelement location="${artifacts.mps}/plugins/mps-make" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
@@ -2267,6 +2269,10 @@
       <exclude name="**/*-src.jar" />
     </patternset>
     <path id="long.class.path">
+      <fileset dir="${artifacts.mps}/plugins/migration">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
         <patternset refid="plugin.deployed.jars" />
       </fileset>
