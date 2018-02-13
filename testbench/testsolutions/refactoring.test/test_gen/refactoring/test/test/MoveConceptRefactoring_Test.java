@@ -31,9 +31,15 @@ import java.util.Collection;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.ide.make.actions.MakeActionImpl;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.resources.MResource;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.project.ProjectManager;
@@ -94,10 +100,32 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
       }
     });
 
-    new MakeActionImpl(new MakeActionParameters(project).modules(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value))).executeAction();
-
+    // make 
+    new SaveRepositoryCommand(project.getRepository()).execute();
+    final MakeActionParameters myParams = new MakeActionParameters(project).modules(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value));
+    final MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), myParams.isCleanMake());
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      final Wrappers._T<List<IResource>> inputRes = new Wrappers._T<List<IResource>>(null);
+      final ArrayList<SModel> models = new ArrayList<SModel>();
+      try {
+        project.getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            inputRes.value = Sequence.fromIterable(myParams.collectInput()).toListSequence();
+            models.addAll(ListSequence.fromList(inputRes.value).translate(new ITranslator2<IResource, SModel>() {
+              public Iterable<SModel> translate(IResource it) {
+                return ((MResource) it).models();
+              }
+            }).toListSequence());
+            IMakeService.INSTANCE.get().make(session, inputRes.value);
+          }
+        });
+      } catch (RuntimeException e) {
+        IMakeService.INSTANCE.get().closeSession(session);
+        throw e;
+      }
+    }
     while (IMakeService.INSTANCE.isSessionActive()) {
-      // do nothing 
+      // do nothing, just wait 
     }
 
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
