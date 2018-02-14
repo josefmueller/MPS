@@ -19,11 +19,9 @@
       <separator/>
       <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
     </group>
-    <!--
     <group id="RunContextPopupGroup" popup="false">
       <reference ref="RunContextGroup"/>
     </group>
-    -->
 
     <group id="LangCodeInsightActions">
       <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
