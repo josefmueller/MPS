@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.BorderFactory;
@@ -304,7 +303,7 @@ public class UsagesView implements IExternalizeable {
     }
 
     public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery) {
-      setRunOptions(new SearchTaskImpl(resultProvider, searchQuery));
+      setRunOptions(new SearchTaskImpl(myView.getProject(), resultProvider, searchQuery));
     }
 
     public void setRunOptions(SearchTask searchTask) {
@@ -328,7 +327,7 @@ public class UsagesView implements IExternalizeable {
 
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
-          mySearchResults = mySearchTask.execute(myView.myProject.getModelAccess(), new ProgressMonitorAdapter(indicator));
+          mySearchResults = mySearchTask.execute(new ProgressMonitorAdapter(indicator));
         }
 
         @Override
@@ -342,13 +341,18 @@ public class UsagesView implements IExternalizeable {
     }
   }
 
+  /**
+   * This SearchTask executes SearchQuery with a read lock for a project repository.
+   */
   public static final class SearchTaskImpl implements SearchTask, Runnable {
+    private final Project myProject;
     private final IResultProvider myResultProvider;
     private final SearchQuery mySearchQuery;
     private SearchResults myLastResults;
     private ProgressMonitor myProgress;
 
-    public SearchTaskImpl(@NotNull IResultProvider resultProvider, @NotNull SearchQuery searchQuery) {
+    public SearchTaskImpl(Project mpsProject, @NotNull IResultProvider resultProvider, @NotNull SearchQuery searchQuery) {
+      myProject = mpsProject;
       myResultProvider = resultProvider;
       mySearchQuery = searchQuery;
     }
@@ -369,9 +373,9 @@ public class UsagesView implements IExternalizeable {
       return objectHolder.getObject();
     }
 
-    public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
+    public SearchResults execute(ProgressMonitor progressMonitor) {
       myProgress = progressMonitor;
-      modelAccess.runReadAction(this);
+      myProject.getModelAccess().runReadAction(this);
       return getSearchResults();
     }
 
@@ -394,7 +398,7 @@ public class UsagesView implements IExternalizeable {
           resultProvider.read(resultProviderXML, mpsProject);
           Element queryXML = element.getChild(QUERY);
           SearchQuery searchQuery = new SearchQuery(queryXML, mpsProject);
-          return new SearchTaskImpl(resultProvider, searchQuery);
+          return new SearchTaskImpl(mpsProject, resultProvider, searchQuery);
         } catch (Throwable t) {
           throw new CantLoadSomethingException("Can't instantiate result provider: " + className, t);
         }

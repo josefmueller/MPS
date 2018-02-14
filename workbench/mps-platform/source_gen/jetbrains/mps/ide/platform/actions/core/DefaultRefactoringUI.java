@@ -30,7 +30,6 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 public class DefaultRefactoringUI implements RefactoringUI {
   private static final Logger LOG = LogManager.getLogger(DefaultRefactoringUI.class);
@@ -112,9 +111,9 @@ public class DefaultRefactoringUI implements RefactoringUI {
           public boolean canExecute() {
             return rerunTask.canExecute();
           }
-          public SearchResults execute(ModelAccess modelAccess, ProgressMonitor progressMonitor) {
+          public SearchResults execute(ProgressMonitor progressMonitor) {
             usagesModelTracker.reset();
-            return rerunTask.execute(modelAccess, progressMonitor);
+            return rerunTask.execute(progressMonitor);
           }
         }, refactoringName);
       }

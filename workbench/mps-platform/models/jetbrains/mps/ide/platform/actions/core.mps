@@ -2784,13 +2784,6 @@
                     <property role="DiZV1" value="false" />
                     <property role="od$2w" value="false" />
                     <node concept="3Tm1VV" id="2FW2ExVjoOb" role="1B3o_S" />
-                    <node concept="37vLTG" id="2FW2ExVjoOc" role="3clF46">
-                      <property role="TrG5h" value="modelAccess" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="3uibUv" id="2FW2ExVklPv" role="1tU5fm">
-                        <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
-                      </node>
-                    </node>
                     <node concept="37vLTG" id="2FW2ExVjoOe" role="3clF46">
                       <property role="TrG5h" value="progressMonitor" />
                       <property role="3TUv4t" value="false" />
@@ -2813,8 +2806,13 @@
                       </node>
                       <node concept="3clFbF" id="2FW2ExVjZf_" role="3cqZAp">
                         <node concept="2OqwBi" id="2FW2ExVk0eK" role="3clFbG">
-                          <node concept="37vLTw" id="2FW2ExVjZfz" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2FW2ExVjoOc" resolve="modelAccess" />
+                          <node concept="2OqwBi" id="6MDTP4X2bSw" role="2Oq$k0">
+                            <node concept="37vLTw" id="6MDTP4X2blr" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4N6D1IQ1FaJ" resolve="repository" />
+                            </node>
+                            <node concept="liA8E" id="6MDTP4X2che" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                            </node>
                           </node>
                           <node concept="liA8E" id="2FW2ExVk0Ml" role="2OqNvi">
                             <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
@@ -3667,14 +3665,6 @@
                         </node>
                         <node concept="liA8E" id="2FW2ExVkOd9" role="2OqNvi">
                           <ref role="37wK5l" to="g4jo:7DGCeT2Ukpg" resolve="execute" />
-                          <node concept="2OqwBi" id="2FW2ExVkOda" role="37wK5m">
-                            <node concept="37vLTw" id="2FW2ExVkOdb" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4N6D1IQ3sbK" resolve="repository" />
-                            </node>
-                            <node concept="liA8E" id="2FW2ExVkOdc" role="2OqNvi">
-                              <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-                            </node>
-                          </node>
                           <node concept="37vLTw" id="2FW2ExVkOdd" role="37wK5m">
                             <ref role="3cqZAo" node="4N6D1IPLFIT" resolve="progressMonitor" />
                           </node>
@@ -6729,13 +6719,6 @@
                                 <property role="DiZV1" value="false" />
                                 <property role="od$2w" value="false" />
                                 <node concept="3Tm1VV" id="4$CbMOubKD_" role="1B3o_S" />
-                                <node concept="37vLTG" id="4$CbMOubKDA" role="3clF46">
-                                  <property role="TrG5h" value="modelAccess" />
-                                  <property role="3TUv4t" value="false" />
-                                  <node concept="3uibUv" id="4$CbMOubKDB" role="1tU5fm">
-                                    <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
-                                  </node>
-                                </node>
                                 <node concept="37vLTG" id="4$CbMOubKDC" role="3clF46">
                                   <property role="TrG5h" value="progressMonitor" />
                                   <property role="3TUv4t" value="false" />
@@ -6764,9 +6747,6 @@
                                       </node>
                                       <node concept="liA8E" id="4$CbMOubPJQ" role="2OqNvi">
                                         <ref role="37wK5l" to="g4jo:7DGCeT2Ukpg" resolve="execute" />
-                                        <node concept="37vLTw" id="4$CbMOubQlY" role="37wK5m">
-                                          <ref role="3cqZAo" node="4$CbMOubKDA" resolve="modelAccess" />
-                                        </node>
                                         <node concept="37vLTw" id="4$CbMOubQWf" role="37wK5m">
                                           <ref role="3cqZAo" node="4$CbMOubKDC" resolve="progressMonitor" />
                                         </node>
