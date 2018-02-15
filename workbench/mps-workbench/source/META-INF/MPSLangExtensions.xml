@@ -184,7 +184,7 @@
                         serviceImplementation="com.intellij.util.download.impl.DownloadableFileServiceImpl"/>
 
     <applicationService serviceInterface="com.intellij.psi.impl.DocumentCommitProcessor"
-                        serviceImplementation="com.intellij.core.MockDocumentCommitProcessor"/>
+                        serviceImplementation="com.intellij.psi.impl.DocumentCommitThread"/>
     <!--
 
     <applicationService serviceInterface="com.intellij.psi.stubs.StubTreeLoader"
@@ -228,7 +228,7 @@
     -->
 
     <!-- MPS Patch-->
-    <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
+    <applicationService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
                     serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
 
     <!--
@@ -260,11 +260,11 @@
     -->
     <projectService serviceInterface="com.intellij.psi.SmartPointerManager"
                     serviceImplementation="com.intellij.psi.impl.smartPointers.SmartPointerManagerImpl"/>
-    <!--
     <projectService serviceInterface="com.intellij.psi.codeStyle.CodeStyleManager"
                     serviceImplementation="com.intellij.psi.impl.source.codeStyle.CodeStyleManagerImpl"/>
     <projectService serviceInterface="com.intellij.pom.PomModel"
                     serviceImplementation="com.intellij.pom.core.impl.PomModelImpl"/>
+    <!--
     <projectService serviceInterface="com.intellij.psi.impl.include.FileIncludeManager"
                     serviceImplementation="com.intellij.psi.impl.include.FileIncludeManagerImpl"/>
     -->
