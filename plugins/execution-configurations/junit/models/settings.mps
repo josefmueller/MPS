@@ -49,6 +49,7 @@
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
+    <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -670,9 +671,13 @@
                         </node>
                         <node concept="liA8E" id="1KUoCipv$hm" role="2OqNvi">
                           <ref role="37wK5l" to="lui2:~FindUsagesFacade.findInstances(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,boolean,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findInstances" />
-                          <node concept="2YIFZM" id="1KUoCipv$hn" role="37wK5m">
-                            <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-                            <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
+                          <node concept="2ShNRf" id="2shlJwNK$2b" role="37wK5m">
+                            <node concept="1pGfFk" id="2shlJwNKBl0" role="2ShVmc">
+                              <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                              <node concept="37vLTw" id="2shlJwNKDpR" role="37wK5m">
+                                <ref role="3cqZAo" node="40zq_XSz9Zf" resolve="myMpsProject" />
+                              </node>
+                            </node>
                           </node>
                           <node concept="2YIFZM" id="1KUoCipv$ho" role="37wK5m">
                             <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
@@ -1098,9 +1103,13 @@
                         </node>
                         <node concept="liA8E" id="1KUoCipvEYV" role="2OqNvi">
                           <ref role="37wK5l" to="lui2:~FindUsagesFacade.findInstances(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,boolean,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findInstances" />
-                          <node concept="2YIFZM" id="1KUoCipvEYX" role="37wK5m">
-                            <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
-                            <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                          <node concept="2ShNRf" id="2shlJwNKrkW" role="37wK5m">
+                            <node concept="1pGfFk" id="2shlJwNKuDv" role="2ShVmc">
+                              <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                              <node concept="37vLTw" id="2shlJwNKwK4" role="37wK5m">
+                                <ref role="3cqZAo" node="40zq_XSwt3v" resolve="myMpsProject" />
+                              </node>
+                            </node>
                           </node>
                           <node concept="2YIFZM" id="1KUoCipvEYY" role="37wK5m">
                             <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
@@ -4450,6 +4459,22 @@
       </node>
       <node concept="3Tmbuc" id="1DeqbSMA_rt" role="1B3o_S" />
       <node concept="3clFbS" id="1DeqbSMA_rv" role="3clF47">
+        <node concept="3cpWs8" id="2shlJwNJIQ5" role="3cqZAp">
+          <node concept="3cpWsn" id="2shlJwNJIQ6" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="2shlJwNJIQ3" role="1tU5fm">
+              <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="2YIFZM" id="2shlJwNJIQ7" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="37vLTw" id="2shlJwNJIQ8" role="37wK5m">
+                <ref role="3cqZAo" to="xk9i:1DeqbSMDT0P" resolve="myProject" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1eZSuKdVOho" role="3cqZAp">
           <node concept="3cpWsn" id="1eZSuKdVOhp" role="3cpWs9">
             <property role="TrG5h" value="repo" />
@@ -4458,12 +4483,8 @@
               <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
             </node>
             <node concept="2OqwBi" id="1eZSuKdVOhq" role="33vP2m">
-              <node concept="2YIFZM" id="2_AUN5GpN4h" role="2Oq$k0">
-                <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
-                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <node concept="37vLTw" id="2_AUN5GpN4i" role="37wK5m">
-                  <ref role="3cqZAo" to="xk9i:1DeqbSMDT0P" resolve="myProject" />
-                </node>
+              <node concept="37vLTw" id="2shlJwNJIQ9" role="2Oq$k0">
+                <ref role="3cqZAo" node="2shlJwNJIQ6" resolve="mpsProject" />
               </node>
               <node concept="liA8E" id="1eZSuKdVOht" role="2OqNvi">
                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -4545,9 +4566,13 @@
                             </node>
                             <node concept="liA8E" id="1DeqbSMA_rW" role="2OqNvi">
                               <ref role="37wK5l" to="lui2:~FindUsagesFacade.findInstances(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,boolean,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findInstances" />
-                              <node concept="2YIFZM" id="1DeqbSMA_rX" role="37wK5m">
-                                <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
-                                <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+                              <node concept="2ShNRf" id="2shlJwNJV1k" role="37wK5m">
+                                <node concept="1pGfFk" id="2shlJwNK3aS" role="2ShVmc">
+                                  <ref role="37wK5l" to="mte5:~ProjectScope.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectScope" />
+                                  <node concept="37vLTw" id="2shlJwNK5ml" role="37wK5m">
+                                    <ref role="3cqZAo" node="2shlJwNJIQ6" resolve="mpsProject" />
+                                  </node>
+                                </node>
                               </node>
                               <node concept="2YIFZM" id="1DeqbSMA_rY" role="37wK5m">
                                 <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />

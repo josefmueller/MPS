@@ -20,20 +20,20 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/1037422844865376790">
-    <file name="GeneratorIDE_CustomApplicationPlugin.java">
+    <file name="GeneratorIDE_AppPluginPart.java">
       <node id="1037422844865376791" at="10,0,11,0" concept="7" trace="myRootTemplateAnnotator" />
-      <node id="1037422844865391242" at="13,24,14,123" concept="6" />
-      <node id="1037422844865392513" at="16,27,17,126" concept="6" />
-      <node id="1037422844865376790" at="11,0,13,0" concept="3" trace="GeneratorIDE_CustomApplicationPlugin#()V" />
-      <node id="1037422844865376790" at="13,0,16,0" concept="10" trace="doInit#()V" />
-      <node id="1037422844865376790" at="16,0,19,0" concept="10" trace="doDispose#()V" />
-      <scope id="1037422844865376790" at="11,49,11,49" />
-      <scope id="1037422844865390624" at="13,24,14,123" />
-      <scope id="1037422844865391869" at="16,27,17,126" />
+      <node id="1037422844865391242" at="14,22,15,113" concept="6" />
+      <node id="1037422844865392513" at="18,25,19,116" concept="6" />
+      <node id="1037422844865376790" at="11,0,13,0" concept="3" trace="GeneratorIDE_AppPluginPart#()V" />
+      <node id="1037422844865376790" at="13,0,17,0" concept="10" trace="init#()V" />
+      <node id="1037422844865376790" at="17,0,21,0" concept="10" trace="dispose#()V" />
+      <scope id="1037422844865376790" at="11,39,11,39" />
+      <scope id="1037422844865390624" at="14,22,15,113" />
+      <scope id="1037422844865391869" at="18,25,19,116" />
       <scope id="1037422844865376790" at="11,0,13,0" />
-      <scope id="1037422844865376790" at="13,0,16,0" />
-      <scope id="1037422844865376790" at="16,0,19,0" />
-      <unit id="1037422844865376790" at="9,0,20,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_CustomApplicationPlugin" />
+      <scope id="1037422844865376790" at="13,0,17,0" />
+      <scope id="1037422844865376790" at="17,0,21,0" />
+      <unit id="1037422844865376790" at="9,0,22,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.GeneratorIDE_AppPluginPart" />
     </file>
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/1223820185685441778">
@@ -1094,43 +1094,35 @@
   </root>
   <root nodeRef="r:5fa3dbe8-68dd-482e-b37c-ddafab2ef308(jetbrains.mps.lang.generator.pluginSolution.plugin)/7162597690967657580">
     <file name="PluginSolution_ApplicationPlugin.java">
-      <node id="7162597690967657580" at="13,0,14,0" concept="7" trace="myId" />
-      <node id="7162597690967657580" at="16,27,17,16" concept="12" />
-      <node id="7162597690967657580" at="19,30,20,30" concept="13" />
-      <node id="7162597690967657580" at="20,30,21,47" concept="6" />
-      <node id="7162597690967657580" at="21,47,22,47" concept="6" />
-      <node id="7162597690967657580" at="22,47,23,46" concept="6" />
-      <node id="7162597690967657580" at="23,46,24,47" concept="6" />
-      <node id="7162597690967657580" at="24,47,25,14" concept="13" />
-      <node id="7162597690967657580" at="25,14,26,59" concept="6" />
-      <node id="7162597690967657580" at="28,37,29,144" concept="6" />
-      <node id="7162597690967657580" at="31,62,32,112" concept="11" />
-      <node id="7162597690967657580" at="33,5,34,86" concept="11" />
-      <node id="7162597690967657580" at="34,86,35,52" concept="6" />
-      <node id="7162597690967657580" at="35,52,36,20" concept="6" />
-      <node id="7162597690967657580" at="37,5,38,15" concept="12" />
-      <node id="7162597690967657580" at="14,0,16,0" concept="3" trace="PluginSolution_ApplicationPlugin#()V" />
-      <node id="7162597690967657580" at="16,0,19,0" concept="10" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690967657580" at="28,0,31,0" concept="10" trace="adjustRegularGroups#()V" />
-      <node id="7162597690967657580" at="32,112,37,5" concept="1" />
-      <node id="7162597690967657580" at="19,0,28,0" concept="10" trace="createGroups#()V" />
-      <node id="7162597690967657580" at="31,0,40,0" concept="10" trace="initCustomParts#()Ljava/util/List;" />
-      <scope id="7162597690967657580" at="14,45,14,45" />
-      <scope id="7162597690967657580" at="16,27,17,16" />
-      <scope id="7162597690967657580" at="28,37,29,144" />
-      <scope id="7162597690967657580" at="14,0,16,0" />
-      <scope id="7162597690967657580" at="16,0,19,0" />
-      <scope id="7162597690967657580" at="28,0,31,0" />
-      <scope id="7162597690967657580" at="33,5,36,20">
-        <var name="plugin" id="7162597690967657580" />
+      <node id="7162597690967657580" at="11,0,12,0" concept="7" trace="myId" />
+      <node id="7162597690967657580" at="14,27,15,16" concept="12" />
+      <node id="7162597690967657580" at="17,30,18,30" concept="13" />
+      <node id="7162597690967657580" at="18,30,19,47" concept="6" />
+      <node id="7162597690967657580" at="19,47,20,47" concept="6" />
+      <node id="7162597690967657580" at="20,47,21,46" concept="6" />
+      <node id="7162597690967657580" at="21,46,22,47" concept="6" />
+      <node id="7162597690967657580" at="22,47,23,14" concept="13" />
+      <node id="7162597690967657580" at="23,14,24,59" concept="6" />
+      <node id="7162597690967657580" at="26,37,27,144" concept="6" />
+      <node id="7162597690967657580" at="30,66,31,48" concept="6" />
+      <node id="7162597690967657580" at="12,0,14,0" concept="3" trace="PluginSolution_ApplicationPlugin#()V" />
+      <node id="7162597690967657580" at="14,0,17,0" concept="10" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7162597690967657580" at="26,0,29,0" concept="10" trace="adjustRegularGroups#()V" />
+      <node id="7162597690967657580" at="29,0,33,0" concept="10" trace="fillCustomParts#(Ljava/util/List;)V" />
+      <node id="7162597690967657580" at="17,0,26,0" concept="10" trace="createGroups#()V" />
+      <scope id="7162597690967657580" at="12,45,12,45" />
+      <scope id="7162597690967657580" at="14,27,15,16" />
+      <scope id="7162597690967657580" at="26,37,27,144" />
+      <scope id="7162597690967657580" at="30,66,31,48" />
+      <scope id="7162597690967657580" at="12,0,14,0" />
+      <scope id="7162597690967657580" at="14,0,17,0" />
+      <scope id="7162597690967657580" at="26,0,29,0" />
+      <scope id="7162597690967657580" at="29,0,33,0">
+        <var name="parts" id="7162597690967657580" />
       </scope>
-      <scope id="7162597690967657580" at="19,30,26,59" />
-      <scope id="7162597690967657580" at="31,62,38,15">
-        <var name="res" id="7162597690967657580" />
-      </scope>
-      <scope id="7162597690967657580" at="19,0,28,0" />
-      <scope id="7162597690967657580" at="31,0,40,0" />
-      <unit id="7162597690967657580" at="12,0,41,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+      <scope id="7162597690967657580" at="17,30,24,59" />
+      <scope id="7162597690967657580" at="17,0,26,0" />
+      <unit id="7162597690967657580" at="10,0,34,0" name="jetbrains.mps.lang.generator.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
     </file>
   </root>
 </debug-info>

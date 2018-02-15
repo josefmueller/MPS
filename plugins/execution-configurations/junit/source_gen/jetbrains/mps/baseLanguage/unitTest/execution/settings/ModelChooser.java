@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -48,7 +48,7 @@ public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
     myMpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SAbstractConcept concept = MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
-        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(concept), false, new EmptyProgressMonitor());
+        Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ProjectScope(myMpsProject), Collections.singleton(concept), false, new EmptyProgressMonitor());
         for (SNode node : usages) {
           SModel model = SNodeOperations.getModel(node);
           SModelReference md = model.getReference();

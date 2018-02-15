@@ -37,7 +37,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEntry, List<SNodeEntry>> {
   private static final ID<SNodeEntry, List<SNodeEntry>> NAME = ID.create("mps.ClassifierSuccessors");
@@ -148,7 +147,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
 
     private void safeMap(Map<SNodeEntry, List<SNodeEntry>> result, SReference reference, SModelReference modelReference, SNode node) {
       SNodeReference targetNode = (reference == null ? null : reference.getTargetNodeReference());
-      if (targetNode == null) {
+      if (targetNode == null || targetNode.getModelReference() == null || targetNode.getNodeId() == null) {
         return;
       }
       SNodeEntry key = new SNodeEntry(targetNode);
@@ -157,9 +156,8 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeEn
         successors = new ArrayList<SNodeEntry>();
         MapSequence.fromMap(result).put(key, successors);
       }
-      // being carefull with SNodePointer because node is not in a model 
-      SNodePointer nodePointer = new SNodePointer(modelReference, node.getNodeId());
-      successors.add(new SNodeEntry(nodePointer));
+      // being careful with node.pointer because node is not in a model 
+      successors.add(new SNodeEntry(modelReference, node.getNodeId()));
     }
   }
 }

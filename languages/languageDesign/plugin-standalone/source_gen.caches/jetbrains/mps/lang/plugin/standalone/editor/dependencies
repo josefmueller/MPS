@@ -117,6 +117,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.GetPreferencesComponentInProjectOperation_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.GetToolInProjectOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.GetToolInProjectOperation_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.ProjectPluginDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.ProjectPluginType_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.StandalonePluginDescriptor_Editor" />
@@ -234,6 +235,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_Editor" file="PlatformAccessExpression_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.standalone.editor.PlatformAccessExpression_EditorBuilder_a" file="PlatformAccessExpression_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.standalone.editor.ProjectPluginDeclaration_Editor" file="ProjectPluginDeclaration_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.plugin.standalone.editor.ProjectPluginDeclaration_EditorBuilder_a" />

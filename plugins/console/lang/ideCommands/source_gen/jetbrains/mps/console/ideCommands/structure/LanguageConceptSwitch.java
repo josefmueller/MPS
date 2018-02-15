@@ -27,7 +27,7 @@ public final class LanguageConceptSwitch {
   public static final int ModelStatisticsTarget = 15;
   public static final int ModuleProperties = 16;
   public static final int NodeReference = 17;
-  public static final int OfAspectOperation = 18;
+  public static final int OfAspectOperation_old = 18;
   public static final int ProjectStatisticsTarget = 19;
   public static final int RebuildProjectCommand = 20;
   public static final int RemoveGenSources = 21;
@@ -60,7 +60,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x67f2bafb7a5cad96L, ModelStatisticsTarget);
     builder.put(0x4d7759afce9587b3L, ModuleProperties);
     builder.put(0x6c8954f4699443afL, NodeReference);
-    builder.put(0x5252d9021b8b45a8L, OfAspectOperation);
+    builder.put(0x5252d9021b8b45a8L, OfAspectOperation_old);
     builder.put(0x67f2bafb7a579e36L, ProjectStatisticsTarget);
     builder.put(0x75bb0160f191df02L, RebuildProjectCommand);
     builder.put(0x276b371e77c0a11bL, RemoveGenSources);

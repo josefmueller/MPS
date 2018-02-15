@@ -59,7 +59,6 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="5nvm" ref="r:27bc780b-59b2-4d26-9db5-a38b63c35884(jetbrains.mps.refactoring.participant)" />
     <import index="kz9k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.navigation(MPS.Editor/)" />
-    <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
@@ -71,6 +70,7 @@
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="crsq" ref="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)" />
+    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
@@ -7973,9 +7973,9 @@
       <node concept="3Tm1VV" id="6yOdP6c5BUB" role="1B3o_S" />
       <node concept="3clFbS" id="6yOdP6c5BUC" role="3clF47">
         <node concept="3clFbF" id="6yOdP6c5BUD" role="3cqZAp">
-          <node concept="2YIFZM" id="6yOdP6c5BUE" role="3clFbG">
-            <ref role="37wK5l" to="tpcc:6gEjUfBKG6M" resolve="replaceWithNewConcept" />
-            <ref role="1Pybhc" to="tpcc:4dr7st0kFTM" resolve="RefactoringRuntime" />
+          <node concept="2YIFZM" id="202dtvhRPqk" role="3clFbG">
+            <ref role="37wK5l" to="6f4m:6gEjUfBKG6M" resolve="replaceWithNewConcept" />
+            <ref role="1Pybhc" to="6f4m:4dr7st0kFTM" resolve="RefactoringRuntime" />
             <node concept="37vLTw" id="6yOdP6c5BUF" role="37wK5m">
               <ref role="3cqZAo" node="6yOdP6c5BUH" resolve="instance" />
             </node>
@@ -9290,9 +9290,9 @@
       <node concept="3Tm1VV" id="39r_V8zEoMh" role="1B3o_S" />
       <node concept="3clFbS" id="39r_V8zEoMi" role="3clF47">
         <node concept="3clFbF" id="39r_V8zEoMj" role="3cqZAp">
-          <node concept="2YIFZM" id="39r_V8zEuVP" role="3clFbG">
-            <ref role="37wK5l" to="tpcc:4dr7st0fFSe" resolve="changePropertyInstance" />
-            <ref role="1Pybhc" to="tpcc:4dr7st0kFTM" resolve="RefactoringRuntime" />
+          <node concept="2YIFZM" id="202dtvhRPqd" role="3clFbG">
+            <ref role="37wK5l" to="6f4m:4dr7st0fFSe" resolve="changePropertyInstance" />
+            <ref role="1Pybhc" to="6f4m:4dr7st0kFTM" resolve="RefactoringRuntime" />
             <node concept="37vLTw" id="39r_V8zEuVQ" role="37wK5m">
               <ref role="3cqZAo" node="39r_V8zEoMn" resolve="instance" />
             </node>
@@ -9860,9 +9860,9 @@
       <node concept="3Tm1VV" id="39r_V8zEKlG" role="1B3o_S" />
       <node concept="3clFbS" id="39r_V8zEKlH" role="3clF47">
         <node concept="3clFbF" id="39r_V8zEKlI" role="3cqZAp">
-          <node concept="2YIFZM" id="39r_V8zESkg" role="3clFbG">
-            <ref role="37wK5l" to="tpcc:4dr7st0fmC_" resolve="changeContainmentLinkInstance" />
-            <ref role="1Pybhc" to="tpcc:4dr7st0kFTM" resolve="RefactoringRuntime" />
+          <node concept="2YIFZM" id="202dtvhRPqg" role="3clFbG">
+            <ref role="37wK5l" to="6f4m:4dr7st0fmC_" resolve="changeContainmentLinkInstance" />
+            <ref role="1Pybhc" to="6f4m:4dr7st0kFTM" resolve="RefactoringRuntime" />
             <node concept="37vLTw" id="39r_V8zESkh" role="37wK5m">
               <ref role="3cqZAo" node="39r_V8zEKlN" resolve="instance" />
             </node>
@@ -10396,9 +10396,9 @@
       <node concept="3Tm1VV" id="39r_V8zEVIB" role="1B3o_S" />
       <node concept="3clFbS" id="39r_V8zEVIC" role="3clF47">
         <node concept="3clFbF" id="39r_V8zEVID" role="3cqZAp">
-          <node concept="2YIFZM" id="39r_V8zF2ob" role="3clFbG">
-            <ref role="37wK5l" to="tpcc:4dr7st0fyBy" resolve="changeReferenceLinkInstances" />
-            <ref role="1Pybhc" to="tpcc:4dr7st0kFTM" resolve="RefactoringRuntime" />
+          <node concept="2YIFZM" id="202dtvhRPqi" role="3clFbG">
+            <ref role="37wK5l" to="6f4m:4dr7st0fyBy" resolve="changeReferenceLinkInstances" />
+            <ref role="1Pybhc" to="6f4m:4dr7st0kFTM" resolve="RefactoringRuntime" />
             <node concept="37vLTw" id="39r_V8zF2oc" role="37wK5m">
               <ref role="3cqZAo" node="39r_V8zEVII" resolve="instance" />
             </node>

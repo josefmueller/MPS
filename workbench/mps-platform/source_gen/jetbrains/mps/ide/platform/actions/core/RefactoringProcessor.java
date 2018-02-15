@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.apache.log4j.Level;
@@ -65,9 +64,9 @@ public class RefactoringProcessor {
       public boolean canExecute() {
         return true;
       }
-      public SearchResults execute(ModelAccess modelAccess, final ProgressMonitor progressMonitor) {
+      public SearchResults execute(final ProgressMonitor progressMonitor) {
         final Wrappers._boolean cancelled = new Wrappers._boolean(false);
-        modelAccess.runReadAction(new Runnable() {
+        repository.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             int steps = ListSequence.fromList(participantStates).count();
             progressMonitor.start("Searching for usages", steps);
@@ -151,7 +150,7 @@ public class RefactoringProcessor {
     final Wrappers._T<SearchResults> searchResults = new Wrappers._T<SearchResults>();
     refactoringUI.runSearch(new _FunctionTypes._void_P1_E0<ProgressMonitor>() {
       public void invoke(ProgressMonitor progressMonitor) {
-        searchResults.value = participantChanges._1().execute(repository.getModelAccess(), progressMonitor);
+        searchResults.value = participantChanges._1().execute(progressMonitor);
       }
     });
 

@@ -26,7 +26,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myModelProperties__BehaviorDescriptor = new ModelProperties__BehaviorDescriptor();
   private final BHDescriptor myModuleProperties__BehaviorDescriptor = new ModuleProperties__BehaviorDescriptor();
   private final BHDescriptor myMake__BehaviorDescriptor = new Make__BehaviorDescriptor();
-  private final BHDescriptor myOfAspectOperation__BehaviorDescriptor = new OfAspectOperation__BehaviorDescriptor();
+  private final BHDescriptor myOfAspectOperation_old__BehaviorDescriptor = new OfAspectOperation_old__BehaviorDescriptor();
   private final BHDescriptor myShowGenPlan__BehaviorDescriptor = new ShowGenPlan__BehaviorDescriptor();
   private final BHDescriptor myStatCommand__BehaviorDescriptor = new StatCommand__BehaviorDescriptor();
   private final BHDescriptor myIStatisticsTarget__BehaviorDescriptor = new IStatisticsTarget__BehaviorDescriptor();
@@ -76,7 +76,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 14:
         return myModuleProperties__BehaviorDescriptor;
       case 15:
-        return myOfAspectOperation__BehaviorDescriptor;
+        return myOfAspectOperation_old__BehaviorDescriptor;
       case 16:
         return myProjectStatisticsTarget__BehaviorDescriptor;
       case 17:

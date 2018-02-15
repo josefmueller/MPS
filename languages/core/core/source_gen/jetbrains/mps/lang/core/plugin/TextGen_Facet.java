@@ -65,9 +65,6 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.resources.FResource;
-import jetbrains.mps.util.JavaNameUtil;
 
 public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -495,27 +492,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     continue;
                   }
 
-                  Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
-                  Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
-
                   _output_21gswx_a0c = Sequence.fromIterable(_output_21gswx_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(tgr.getModel(), tgr.getModel().getModule(), tgr))));
-
-                  for (TextUnit tu : tgr.getUnits()) {
-                    if (tu.getState() == TextUnit.Status.Failed) {
-                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text for " + tu.getFileName())));
-                      continue;
-                    }
-                    // compatibility code until all uses of FResource from TextGen are removed 
-                    String fname = tu.getFileName();
-                    MapSequence.fromMap(texts).put(fname, tu);
-                    SNodeReference sourceNode = TracingUtil.getInput(tu.getStartNode());
-                    if (sourceNode != null) {
-                      if ((MapSequence.fromMap(rootNodeToFileName).get(sourceNode) == null) || (fname.compareTo(MapSequence.fromMap(rootNodeToFileName).get(sourceNode)) < 0)) {
-                        MapSequence.fromMap(rootNodeToFileName).put(sourceNode, fname);
-                      }
-                    }
-                  }
-                  _output_21gswx_a0c = Sequence.fromIterable(_output_21gswx_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new FResource(JavaNameUtil.packageName(tgr.getModel()), texts, rootNodeToFileName, null, tgr.getModel()))));
                 }
               } catch (InterruptedException ex) {
                 // fine, no more text generation 

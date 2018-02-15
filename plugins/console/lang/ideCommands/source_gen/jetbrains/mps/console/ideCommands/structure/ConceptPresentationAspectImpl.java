@@ -27,7 +27,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModelStatisticsTarget;
   private ConceptPresentation props_ModuleProperties;
   private ConceptPresentation props_NodeReference;
-  private ConceptPresentation props_OfAspectOperation;
+  private ConceptPresentation props_OfAspectOperation_old;
   private ConceptPresentation props_ProjectStatisticsTarget;
   private ConceptPresentation props_RebuildProjectCommand;
   private ConceptPresentation props_RemoveGenSources;
@@ -171,15 +171,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodeReference = cpb.create();
         }
         return props_NodeReference;
-      case LanguageConceptSwitch.OfAspectOperation:
-        if (props_OfAspectOperation == null) {
+      case LanguageConceptSwitch.OfAspectOperation_old:
+        if (props_OfAspectOperation_old == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L);
-          cpb.deprecateAssociation(0x5252d9021b8c25b0L, "requestedAspect_old");
+          cpb.deprecated(true);
+          cpb.deprecateAssociation(0x7cd422dbfa7b06f8L, "requestedAspect_old");
           cpb.shortDesc("filter models by their aspect");
-          cpb.rawPresentation("ofAspect");
-          props_OfAspectOperation = cpb.create();
+          props_OfAspectOperation_old = cpb.create();
         }
-        return props_OfAspectOperation;
+        return props_OfAspectOperation_old;
       case LanguageConceptSwitch.ProjectStatisticsTarget:
         if (props_ProjectStatisticsTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

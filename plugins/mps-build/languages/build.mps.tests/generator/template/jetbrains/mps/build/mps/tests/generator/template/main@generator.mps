@@ -1126,6 +1126,12 @@
                     </node>
                   </node>
                 </node>
+                <node concept="2pNUuL" id="7DMAcD058qW" role="2pNNFR">
+                  <property role="2pNUuO" value="dir" />
+                  <node concept="2pMdtt" id="7DMAcD058qX" role="2pMdts">
+                    <property role="2pMdty" value="${basedir}" />
+                  </node>
+                </node>
                 <node concept="2pNNFK" id="6u4p9jnVkPy" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="jvmarg" />

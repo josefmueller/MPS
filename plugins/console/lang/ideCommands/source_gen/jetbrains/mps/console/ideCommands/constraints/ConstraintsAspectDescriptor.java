@@ -25,7 +25,7 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       case 2:
         return new NodeReference_Constraints();
       case 3:
-        return new OfAspectOperation_Constraints();
+        return new OfAspectOperation_old_Constraints();
       case 4:
         return new SubtreeStatisticsTarget_Constraints();
       default:

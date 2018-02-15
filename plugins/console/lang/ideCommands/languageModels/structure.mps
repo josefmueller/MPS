@@ -17,7 +17,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -382,31 +382,29 @@
     </node>
   </node>
   <node concept="1TIwiD" id="59iQg8ryOmC">
-    <property role="TrG5h" value="OfAspectOperation" />
+    <property role="TrG5h" value="OfAspectOperation_old" />
     <property role="34LRSv" value="ofAspect" />
     <property role="3GE5qa" value="expression" />
     <property role="R4oN_" value="filter models by their aspect" />
     <property role="EcuMT" value="5932042262275638696" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tp2q:gKAMqbp" resolve="SequenceOperation" />
-    <node concept="1TJgyj" id="59iQg8rz2mK" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20lbJX" value="0..1" />
-      <property role="20kJfa" value="requestedAspect_old" />
-      <property role="IQ2ns" value="5932042262275696048" />
-      <ref role="20lvS9" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
-      <node concept="asaX9" id="7Nk8HJUuNkF" role="lGtFl">
-        <property role="YLPcu" value="MPS 3.4" />
-      </node>
-    </node>
     <node concept="1TJgyj" id="7Nk8HJUuKrS" role="1TKVEi">
       <property role="IQ2ns" value="8994852683961272056" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="requestedAspect" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="requestedAspect_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+      <node concept="asaX9" id="q_ruBBvOei" role="lGtFl">
+        <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.slanguage.structure.OfAspectOperation&quot;" />
+      </node>
     </node>
     <node concept="PrWs8" id="59iQg8ryZAl" role="PzmwI">
       <ref role="PrY4T" to="3xdn:59iQg8ryQK3" resolve="OperationHelpProvider" />
+    </node>
+    <node concept="asaX9" id="q_ruBBvOe7" role="lGtFl">
+      <property role="YLQ7P" value="The concept was moved to language &quot;jetbrains.mps.lang.slanguage&quot;" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mV0m3L$tuv">
