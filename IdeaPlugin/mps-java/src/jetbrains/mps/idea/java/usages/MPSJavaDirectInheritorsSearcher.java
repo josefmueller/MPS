@@ -68,7 +68,7 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       if (!scope.isSearchInModuleContent(module)) continue;
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-      if (facet == null) continue;
+      if (facet == null || facet.getSolution() == null) continue;
 
       final Solution facetSolution = facet.getSolution();
       ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
