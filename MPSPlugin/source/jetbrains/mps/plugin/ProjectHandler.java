@@ -105,6 +105,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
   }
 
+  // guarantees NotNull return value
   public IdeaCompilationResult buildModules(final String[] paths) {
     final CountDownLatch latch = new CountDownLatch(1);
     final IdeaCompilationResult[] result = new IdeaCompilationResult[1];
@@ -123,6 +124,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
             }
 
             if (modules.isEmpty()) {
+              result[0] = new IdeaCompilationResult(0, 0, false, false);
               latch.countDown();
               return;
             }
