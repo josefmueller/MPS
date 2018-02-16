@@ -27,6 +27,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParenStyleClass;
 
 /*package*/ class ExecuteFindersGetSearchResults_EditorBuilder_a extends AbstractEditorBuilder {
@@ -249,8 +250,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       getCellFactory().pushCellContext();
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L, 0x585a05e7f411353fL, "scope")));
       try {
-        EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_scope");
+        EditorCell editorCell = createError_yvubny_a6a();
         installCellInfo(null, editorCell);
         setCellContext(editorCell);
         return editorCell;
@@ -258,8 +258,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
         getCellFactory().popCellContext();
       }
     }
-    protected String getNoTargetText() {
-      return "<global scope>";
+    private EditorCell createError_yvubny_a6a() {
+      EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "unspecified scope");
+      editorCell.setCellId("Error_yvubny_a6a");
+      return editorCell;
     }
   }
   private EditorCell createConstant_yvubny_h0() {
