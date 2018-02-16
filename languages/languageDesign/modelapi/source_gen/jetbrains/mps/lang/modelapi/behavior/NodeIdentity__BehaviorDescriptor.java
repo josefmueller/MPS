@@ -8,35 +8,45 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class ModelIdentity__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.modelapi.structure.ModelIdentity");
+public final class NodeIdentity__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L, "jetbrains.mps.lang.modelapi.structure.NodeIdentity");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SModelReference> toModelReference_id1Bs_61$mvvu = new SMethodBuilder<SModelReference>(new SJavaCompoundTypeImpl(SModelReference.class)).name("toModelReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Bs_61$mvvu").registry(REGISTRY).build();
+  public static final SMethod<SNodeReference> toNodeReference_id4nxIQVLmsc4 = new SMethodBuilder<SNodeReference>(new SJavaCompoundTypeImpl(SNodeReference.class)).name("toNodeReference").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4nxIQVLmsc4").registry(REGISTRY).build();
+  public static final SMethod<SNode> toNode_id46J8CTY3sAt = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl(SNode.class)).name("toNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46J8CTY3sAt").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SRepository.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(toModelReference_id1Bs_61$mvvu);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(toNodeReference_id4nxIQVLmsc4, toNode_id46J8CTY3sAt);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SModelReference toModelReference_id1Bs_61$mvvu(@NotNull SNode __thisNode__) {
+  /*package*/ static SNodeReference toNodeReference_id4nxIQVLmsc4(@NotNull SNode __thisNode__) {
     return null;
   }
+  /*package*/ static SNode toNode_id46J8CTY3sAt(@NotNull SNode __thisNode__, SRepository repo) {
+    SNodeReference nr = NodeIdentity__BehaviorDescriptor.toNodeReference_id4nxIQVLmsc4.invoke(__thisNode__);
+    if (nr == null) {
+      return null;
+    }
 
-  /*package*/ ModelIdentity__BehaviorDescriptor() {
+    return nr.resolve(repo);
+  }
+
+  /*package*/ NodeIdentity__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -53,7 +63,9 @@ public final class ModelIdentity__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((SModelReference) toModelReference_id1Bs_61$mvvu(node));
+        return (T) ((SNodeReference) toNodeReference_id4nxIQVLmsc4(node));
+      case 1:
+        return (T) ((SNode) toNode_id46J8CTY3sAt(node, (SRepository) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
