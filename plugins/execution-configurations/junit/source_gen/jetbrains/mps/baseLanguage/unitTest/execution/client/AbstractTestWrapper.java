@@ -171,7 +171,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
         return true;
       }
       // check java stub target only to avoid dependency from j.m.testbench module which is not part of MPS build (only via Testbench stub solution) 
-      if (SNodeOperations.is(clazz, new SNodePointer("r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)", "6452630887101907682"))) {
+      if (SNodeOperations.is(clazz, new SNodePointer("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)", "~EnvironmentAwareTestCase"))) {
         return true;
       }
       // check both java stub and regular node for EnvironmentAware as  j.m.tool.environment is part of MPS build (unlike j.m.testbench) 
@@ -190,7 +190,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     // MPSLaunch lives in j.m.testbench which is not part of MPS build, therefore check here for java stub only 
     return ListSequence.fromList(SLinkOperations.getChildren(withAnnotation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.is(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")), new SNodePointer("r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)", "5294483648489409013"));
+        return SNodeOperations.is(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")), new SNodePointer("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)", "~MPSLaunch"));
       }
     });
   }

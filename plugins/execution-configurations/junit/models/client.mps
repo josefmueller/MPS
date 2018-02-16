@@ -50,10 +50,10 @@
     <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
-    <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
-    <import index="yyt9" ref="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" />
-    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" implicit="true" />
+    <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" implicit="true" />
   </imports>
@@ -1559,8 +1559,8 @@
                   <ref role="3cqZAo" node="4Tkq3_eQgga" resolve="clazz" />
                 </node>
                 <node concept="1QLmlb" id="4Tkq3_eS1V2" role="2OqNvi">
-                  <node concept="ZC_QK" id="4Tkq3_eS20c" role="1QLmnL">
-                    <ref role="2aWVGs" to="3ebz:5AcmpEOr4by" resolve="EnvironmentAwareTestCase" />
+                  <node concept="ZC_QK" id="4k06bsQmEN8" role="1QLmnL">
+                    <ref role="2aWVGs" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
                   </node>
                 </node>
               </node>
@@ -1738,8 +1738,8 @@
                         </node>
                       </node>
                       <node concept="1QLmlb" id="4Tkq3_eQrTC" role="2OqNvi">
-                        <node concept="ZC_QK" id="4Tkq3_eQsbo" role="1QLmnL">
-                          <ref role="2aWVGs" to="yyt9:4_TMdeLkOBP" resolve="MPSLaunch" />
+                        <node concept="ZC_QK" id="4k06bsQmEPV" role="1QLmnL">
+                          <ref role="2aWVGs" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
                         </node>
                       </node>
                     </node>
