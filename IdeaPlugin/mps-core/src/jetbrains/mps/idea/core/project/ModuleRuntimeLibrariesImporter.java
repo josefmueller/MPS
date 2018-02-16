@@ -139,6 +139,10 @@ public abstract class ModuleRuntimeLibrariesImporter {
       UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
       for (SModuleReference moduleReference : moduleReferences) {
         SModule module = moduleReference.resolve(repository);
+        if (module == null) {
+          // module is absent, e.g. its providing plugin is not enabled
+          continue;
+        }
         LOG.assertTrue(module != null, "Can not find language by reference " + moduleReference);
         if (false == module instanceof Language) {
           continue;
