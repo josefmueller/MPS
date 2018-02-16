@@ -29,21 +29,33 @@
   </root>
   <root nodeRef="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)/2116919505573526175">
     <file name="MPSMake.java">
-      <node id="2116919505573642528" at="10,0,11,0" concept="3" trace="myLanguageRegistry" />
-      <node id="2116919505573642532" at="12,53,13,42" concept="2" />
-      <node id="2116919505573645731" at="17,22,18,78" concept="7" />
-      <node id="2116919505573526537" at="18,78,19,49" concept="2" />
-      <node id="2116919505573642287" at="12,0,15,0" concept="1" trace="MPSMake#(Ljetbrains/mps/smodel/language/LanguageRegistry;)V" />
-      <node id="2116919505573526238" at="16,0,21,0" concept="6" trace="init#()V" />
-      <scope id="2116919505573642290" at="12,53,13,42" />
-      <scope id="2116919505573526242" at="17,22,19,49">
-        <var name="facetRegistry" id="2116919505573645732" />
-      </scope>
-      <scope id="2116919505573642287" at="12,0,15,0">
+      <node id="2116919505573642528" at="15,0,16,0" concept="3" trace="myLanguageRegistry" />
+      <node id="2040744836616965439" at="16,0,17,0" concept="3" trace="myMakeServiceComponent" />
+      <node id="2116919505573642532" at="18,53,19,42" concept="2" />
+      <node id="2040744836616964413" at="23,22,24,62" concept="2" />
+      <node id="2116919505573645731" at="24,62,25,78" concept="7" />
+      <node id="2116919505573526537" at="25,78,26,49" concept="2" />
+      <node id="2040744836616966383" at="33,47,34,49" concept="8" />
+      <node id="2040744836616973560" at="35,5,36,68" concept="9" />
+      <node id="2040744836616967451" at="36,68,37,16" concept="8" />
+      <node id="2116919505573642287" at="18,0,21,0" concept="1" trace="MPSMake#(Ljetbrains/mps/smodel/language/LanguageRegistry;)V" />
+      <node id="2040744836616891360" at="32,78,35,5" concept="5" />
+      <node id="2116919505573526238" at="22,0,28,0" concept="6" trace="init#()V" />
+      <node id="2040744836616890555" at="30,0,39,0" concept="6" trace="findComponent#(Ljava/lang/Class;)null" />
+      <scope id="2116919505573642290" at="18,53,19,42" />
+      <scope id="2040744836616891362" at="33,47,34,49" />
+      <scope id="2116919505573642287" at="18,0,21,0">
         <var name="languageRegistry" id="2116919505573642413" />
       </scope>
-      <scope id="2116919505573526238" at="16,0,21,0" />
-      <unit id="2116919505573526175" at="9,0,22,0" name="jetbrains.mps.make.facets.MPSMake" />
+      <scope id="2116919505573526242" at="23,22,26,49">
+        <var name="facetRegistry" id="2116919505573645732" />
+      </scope>
+      <scope id="2040744836616890567" at="32,78,37,16" />
+      <scope id="2116919505573526238" at="22,0,28,0" />
+      <scope id="2040744836616890555" at="30,0,39,0">
+        <var name="aClass" id="2040744836616890562" />
+      </scope>
+      <unit id="2116919505573526175" at="14,0,40,0" name="jetbrains.mps.make.facets.MPSMake" />
     </file>
   </root>
   <root nodeRef="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)/2951837577273070526">
