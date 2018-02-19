@@ -37,6 +37,7 @@ teamcity-info.xml
 /plugins/svn4idea/lib
 /plugins/mps-testing/lib
 /plugins/terminal
+/plugins/migration/migration-platform/lib
 /lib/
 /mps-platform.zip
 /bin/linux
