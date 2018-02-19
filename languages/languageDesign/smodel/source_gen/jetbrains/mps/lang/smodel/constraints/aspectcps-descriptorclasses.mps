@@ -1424,7 +1424,7 @@
             <node concept="3clFbS" id="6B" role="1pnPq1">
               <node concept="3cpWs6" id="6D" role="3cqZAp">
                 <node concept="1nCR9W" id="6E" role="3cqZAk">
-                  <property role="1nD$Q0" value="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints" />
+                  <property role="1nD$Q0" value="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Old_Constraints" />
                   <node concept="3uibUv" id="6F" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -1432,7 +1432,7 @@
               </node>
             </node>
             <node concept="3gn64h" id="6C" role="1pnPq6">
-              <ref role="3gnhBz" to="tp25:1_vO5tEMrH9" resolve="NodePointerExpression" />
+              <ref role="3gnhBz" to="tp25:1_vO5tEMrH9" resolve="NodePointerExpression_Old" />
             </node>
           </node>
           <node concept="1pnPoh" id="4q" role="1_3QMm">
@@ -5493,7 +5493,7 @@
   </node>
   <node concept="312cEu" id="up">
     <property role="3GE5qa" value="Constraints" />
-    <property role="TrG5h" value="NodePointerExpression_Constraints" />
+    <property role="TrG5h" value="NodePointerExpression_Old_Constraints" />
     <node concept="3Tm1VV" id="uq" role="1B3o_S" />
     <node concept="3uibUv" id="ur" role="1zkMxy">
       <ref role="3uigEE" to="79pl:~BaseConstraintsDescriptor" resolve="BaseConstraintsDescriptor" />
@@ -5516,7 +5516,7 @@
               <property role="1adDun" value="0x195fd0576ac9bb49L" />
             </node>
             <node concept="Xl_RD" id="uB" role="37wK5m">
-              <property role="Xl_RC" value="jetbrains.mps.lang.smodel.structure.NodePointerExpression" />
+              <property role="Xl_RC" value="jetbrains.mps.lang.smodel.structure.NodePointerExpression_Old" />
             </node>
           </node>
         </node>

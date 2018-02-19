@@ -20,6 +20,10 @@
       </concept>
       <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
         <property id="7862711839422615217" name="text" index="t5JxN" />
+        <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
+      </concept>
+      <concept id="7862711839422615221" name="jetbrains.mps.lang.structure.structure.DocumentationObjectiveRef" flags="ng" index="t5JxR">
+        <reference id="7862711839422615222" name="target" index="t5JxO" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
@@ -2166,12 +2170,20 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="named node pointer" />
-    <property role="TrG5h" value="NodePointerExpression" />
+    <property role="TrG5h" value="NodePointerExpression_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
     <property role="34LRSv" value="nodePointer/&lt;name&gt;/" />
     <property role="EcuMT" value="1828409047608048457" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="6qMaajV39fW" role="lGtFl">
+      <property role="YLPcu" value="2018.1" />
+    </node>
+    <node concept="t5JxF" id="6qMaajV39fY" role="lGtFl">
+      <node concept="t5JxR" id="6qMaajV39ij" role="t5JxU">
+        <ref role="t5JxO" node="6qMaajV39gP" resolve="NodePointerExpression" />
+      </node>
+    </node>
     <node concept="1TJgyi" id="7Kvxa_nmhU5" role="1TKVEl">
       <property role="IQ2nx" value="8944013247830892165" />
       <property role="TrG5h" value="includeNonRoot" />
@@ -2893,6 +2905,21 @@
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="DevkitIdentity" />
     <property role="EcuMT" value="8222125370833325502" />
+  </node>
+  <node concept="1TIwiD" id="6qMaajV39gP">
+    <property role="EcuMT" value="7400021826774799413" />
+    <property role="3GE5qa" value="reference" />
+    <property role="TrG5h" value="NodePointerExpression" />
+    <property role="34LRSv" value="node-ptr/.../" />
+    <property role="R4oN_" value="make node pointer" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="6qMaajV39im" role="1TKVEi">
+      <property role="IQ2ns" value="7400021826774799510" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="ref" />
+      <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
   </node>
 </model>
 

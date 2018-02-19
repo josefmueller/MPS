@@ -65,7 +65,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.ModelReferenceExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.ModuleReferenceExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Old_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.NodeRefExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Node_ConceptMethodCall_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Node_GetReferentSearchScopeOperation_Constraints" />
@@ -379,7 +379,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Constraints" file="NodePointerExpression_Constraints.java">
+  <dependency className="jetbrains.mps.lang.smodel.constraints.NodePointerExpression_Old_Constraints" file="NodePointerExpression_Old_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />

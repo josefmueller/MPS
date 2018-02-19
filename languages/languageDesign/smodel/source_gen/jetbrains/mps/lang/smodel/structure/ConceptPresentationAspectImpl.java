@@ -95,6 +95,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModuleReferenceExpression;
   private ConceptPresentation props_NodeAttributeQualifier;
   private ConceptPresentation props_NodePointerExpression;
+  private ConceptPresentation props_NodePointerExpression_Old;
   private ConceptPresentation props_NodeRefExpression;
   private ConceptPresentation props_Node_ConceptMethodCall;
   private ConceptPresentation props_Node_ContainingLinkOperation;
@@ -813,11 +814,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodePointerExpression:
         if (props_NodePointerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("named node pointer");
-          cpb.rawPresentation("nodePointer/<name>/");
+          cpb.shortDesc("make node pointer");
+          cpb.rawPresentation("node-ptr/.../");
           props_NodePointerExpression = cpb.create();
         }
         return props_NodePointerExpression;
+      case LanguageConceptSwitch.NodePointerExpression_Old:
+        if (props_NodePointerExpression_Old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("named node pointer");
+          cpb.rawPresentation("nodePointer/<name>/");
+          props_NodePointerExpression_Old = cpb.create();
+        }
+        return props_NodePointerExpression_Old;
       case LanguageConceptSwitch.NodeRefExpression:
         if (props_NodeRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

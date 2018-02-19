@@ -49,7 +49,7 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
       case 14:
         return new NodeAttributeQualifier_Constraints();
       case 15:
-        return new NodePointerExpression_Constraints();
+        return new NodePointerExpression_Old_Constraints();
       case 16:
         return new NodeRefExpression_Constraints();
       case 17:
