@@ -42,8 +42,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.io.File;
@@ -132,9 +130,6 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
       public void run() {
         try {
           AntTaskExecutionUtil.migrate(project);
-          com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
-          assert projects.length == 1 : "more than one project opened: " + projects.length;
-          ProjectUtil.closeAndDispose(projects[0]);
         } catch (Exception e) {
           throw new RuntimeException("Exception during migration", e);
         }

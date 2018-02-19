@@ -79,10 +79,6 @@
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
-      <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
-        <child id="1173175577737" name="index" index="AHEQo" />
-        <child id="1173175590490" name="array" index="AHHXb" />
-      </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -137,9 +133,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
-      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
-        <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -176,7 +169,6 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
-      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -192,9 +184,6 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
-      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
-        <property id="1068580320021" name="value" index="3cmrfH" />
-      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -209,10 +198,6 @@
       </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-        <child id="1160998916832" name="message" index="1gVpfI" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -240,7 +225,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -3643,63 +3627,6 @@
                             <ref role="1Pybhc" to="bim2:75eqTYkpEpV" resolve="AntTaskExecutionUtil" />
                             <node concept="37vLTw" id="5lGJ4Tajf4w" role="37wK5m">
                               <ref role="3cqZAo" node="5dt5FDZHmIB" resolve="project" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3cpWs8" id="58MnPCMVwfJ" role="3cqZAp">
-                          <node concept="3cpWsn" id="58MnPCMVwfK" role="3cpWs9">
-                            <property role="TrG5h" value="projects" />
-                            <node concept="10Q1$e" id="58MnPCMVwfF" role="1tU5fm">
-                              <node concept="3uibUv" id="58MnPCMVB76" role="10Q1$1">
-                                <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="58MnPCMVwfL" role="33vP2m">
-                              <node concept="2YIFZM" id="58MnPCMVBmG" role="2Oq$k0">
-                                <ref role="1Pybhc" to="4nm9:~ProjectManager" resolve="ProjectManager" />
-                                <ref role="37wK5l" to="4nm9:~ProjectManager.getInstance():com.intellij.openapi.project.ProjectManager" resolve="getInstance" />
-                              </node>
-                              <node concept="liA8E" id="58MnPCMVwfN" role="2OqNvi">
-                                <ref role="37wK5l" to="4nm9:~ProjectManager.getOpenProjects():com.intellij.openapi.project.Project[]" resolve="getOpenProjects" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="1gVbGN" id="58MnPCMVBPL" role="3cqZAp">
-                          <node concept="3clFbC" id="58MnPCMVCQr" role="1gVkn0">
-                            <node concept="3cmrfG" id="58MnPCMVCS$" role="3uHU7w">
-                              <property role="3cmrfH" value="1" />
-                            </node>
-                            <node concept="2OqwBi" id="58MnPCMVCka" role="3uHU7B">
-                              <node concept="37vLTw" id="58MnPCMVCf5" role="2Oq$k0">
-                                <ref role="3cqZAo" node="58MnPCMVwfK" resolve="projects" />
-                              </node>
-                              <node concept="1Rwk04" id="58MnPCMVCtR" role="2OqNvi" />
-                            </node>
-                          </node>
-                          <node concept="3cpWs3" id="58MnPCMVDT8" role="1gVpfI">
-                            <node concept="2OqwBi" id="58MnPCMVE9i" role="3uHU7w">
-                              <node concept="37vLTw" id="58MnPCMVE4Z" role="2Oq$k0">
-                                <ref role="3cqZAo" node="58MnPCMVwfK" resolve="projects" />
-                              </node>
-                              <node concept="1Rwk04" id="58MnPCMVEn3" role="2OqNvi" />
-                            </node>
-                            <node concept="Xl_RD" id="58MnPCMVDbP" role="3uHU7B">
-                              <property role="Xl_RC" value="more than one project opened: " />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="58MnPCMVxNS" role="3cqZAp">
-                          <node concept="2YIFZM" id="58MnPCMVyuQ" role="3clFbG">
-                            <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                            <ref role="37wK5l" to="btn2:~ProjectUtil.closeAndDispose(com.intellij.openapi.project.Project):boolean" resolve="closeAndDispose" />
-                            <node concept="AH0OO" id="58MnPCMV_jM" role="37wK5m">
-                              <node concept="3cmrfG" id="58MnPCMV_r$" role="AHEQo">
-                                <property role="3cmrfH" value="0" />
-                              </node>
-                              <node concept="37vLTw" id="58MnPCMV_bX" role="AHHXb">
-                                <ref role="3cqZAo" node="58MnPCMVwfK" resolve="projects" />
-                              </node>
                             </node>
                           </node>
                         </node>
