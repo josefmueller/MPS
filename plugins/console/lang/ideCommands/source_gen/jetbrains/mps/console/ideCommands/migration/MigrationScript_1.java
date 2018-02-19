@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.DeprecatedConceptMemberNotMigratedProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class MigrationScript_1 extends MigrationScriptBase {
   public String getCaption() {
@@ -55,7 +56,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation"))) || SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation")));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, "jetbrains.mps.lang.slanguage"), 0x5252d9021b8b45a8L, "OfAspectOperation"))) || MigrationScript_1.isMovedConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation"));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
@@ -90,7 +91,7 @@ __switch__:
                       case 2:
                         this._2__yield_zc5nt1_a0a0c0a0e_it = Sequence.fromIterable(Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation")));
+                            return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation"))) && !(SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, "jetbrains.mps.lang.slanguage"), 0x5252d9021b8b45a8L, "OfAspectOperation"))));
                           }
                         }).select(new ISelector<SNode, Problem>() {
                           public Problem select(SNode it) {
@@ -164,5 +165,11 @@ __switch__:
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 1);
+  }
+  public static boolean isMovedConcept(SAbstractConcept c) {
+    if (SConceptOperations.isExactly(SNodeOperations.asSConcept(c), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation")))) {
+      return true;
+    }
+    return false;
   }
 }
