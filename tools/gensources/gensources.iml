@@ -1161,10 +1161,18 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/SourceLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/TargetLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/TargetLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/SourceLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/SourceLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/TargetLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/TargetLanguage/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" isTestSource="false" />
@@ -1391,6 +1399,7 @@
     <orderEntry type="module" module-name="execution-configurations-ant" />
     <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="module" module-name="httpsupport" />
+    <orderEntry type="module" module-name="migration-platform" />
   </component>
 </module>
 
