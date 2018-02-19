@@ -1268,6 +1268,12 @@
             <ref role="3bR37D" to="ffeo:5lGJ4Tajp1p" resolve="jetbrains.mps.migration.component" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2DLPrF009rl" role="3bR37C">
+          <node concept="3bR9La" id="2DLPrF009rm" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1ZViq9oppal" resolve="jetbrains.mps.make.facets" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="13uUGR" id="3iBi5uuKFde" role="1l3spa">
