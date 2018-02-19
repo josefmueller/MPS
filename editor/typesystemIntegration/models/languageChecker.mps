@@ -2363,6 +2363,24 @@
                                       <node concept="3Tm1VV" id="4zbx9kG0nuC" role="1B3o_S" />
                                       <node concept="3cqZAl" id="4zbx9kG0nuD" role="3clF45" />
                                       <node concept="3clFbS" id="4zbx9kG0nuE" role="3clF47">
+                                        <node concept="3clFbJ" id="1ZdOga76m94" role="3cqZAp">
+                                          <node concept="3clFbS" id="1ZdOga76m96" role="3clFbx">
+                                            <node concept="3cpWs6" id="1ZdOga76nrj" role="3cqZAp" />
+                                          </node>
+                                          <node concept="2OqwBi" id="1ZdOga76n4P" role="3clFbw">
+                                            <node concept="2OqwBi" id="1ZdOga76mMN" role="2Oq$k0">
+                                              <node concept="37vLTw" id="1ZdOga76mvI" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="77jjuPIalUF" resolve="editorContext" />
+                                              </node>
+                                              <node concept="liA8E" id="1ZdOga76mXS" role="2OqNvi">
+                                                <ref role="37wK5l" to="cj4x:~EditorContext.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                                              </node>
+                                            </node>
+                                            <node concept="liA8E" id="1ZdOga76nne" role="2OqNvi">
+                                              <ref role="37wK5l" to="cj4x:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+                                            </node>
+                                          </node>
+                                        </node>
                                         <node concept="3cpWs8" id="52L_vEWBaHX" role="3cqZAp">
                                           <node concept="3cpWsn" id="52L_vEWBaHY" role="3cpWs9">
                                             <property role="TrG5h" value="state" />
