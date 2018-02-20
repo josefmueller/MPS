@@ -15,12 +15,12 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
 
-public class TestSubstituteSubChildSmartReference_SubstituteMenu extends SubstituteMenuBase {
+public class TestSubstituteSubChildSmartReference_WithMenu_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstituteSubChildSmartReference_SubstituteMenu.SMP_ReferenceScope_s4h5qv_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new TestSubstituteSubChildSmartReference_WithMenu_SubstituteMenu.SMP_ReferenceScope_56lgov_a(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference_WithMenu")));
     return result;
   }
 
@@ -28,7 +28,7 @@ public class TestSubstituteSubChildSmartReference_SubstituteMenu extends Substit
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestSubstituteSubChildSmartReference. Generated from implicit smart reference attribute.", new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587451566")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestSubstituteSubChildSmartReference_WithMenu. Generated from implicit smart reference attribute.", new SNodePointer("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)", "8998492695587451566")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -37,10 +37,10 @@ public class TestSubstituteSubChildSmartReference_SubstituteMenu extends Substit
   }
 
 
-  public static class SMP_ReferenceScope_s4h5qv_a extends ReferenceScopeSubstituteMenuPart {
+  public static class SMP_ReferenceScope_56lgov_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_s4h5qv_a() {
-      super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, 0x7ce1116e3aa66222L, "childToReference"));
+    public SMP_ReferenceScope_56lgov_a() {
+      super(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference_WithMenu"), MetaAdapterFactory.getReferenceLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL, 0x7ce1116e3aa66222L, "childToReference"));
     }
     @NotNull
     @Override

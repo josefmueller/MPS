@@ -10,20 +10,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class TestSubstitute_SmartReference_Test extends BaseTransformationTest {
+public class TestSubstitute_SmartReferenceWithoutExplicitMenuSubconcept_Test extends BaseTransformationTest {
   @Test
-  public void test_TestSubstitute_SmartReference() throws Throwable {
+  public void test_TestSubstitute_SmartReferenceWithoutExplicitMenuSubconcept() throws Throwable {
     initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReference_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_SmartReferenceWithoutExplicitMenuSubconcept_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("8998492695590967117", "8998492695590967119");
+      initEditorComponent("7432042996949760582", "7432042996949760584");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      typeString("b");
+      typeString("subconceptNodeToReference2");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
