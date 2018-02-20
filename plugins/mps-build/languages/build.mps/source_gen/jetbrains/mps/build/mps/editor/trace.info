@@ -14,67 +14,81 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="BuildMps_DevKitExportLanguage_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu$SMP_ReferenceScope_37zm5j_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu$SMP_ReferenceScope_37zm5j_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu$SMP_Subconcepts_37zm5j_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu$SMP_ReferenceScope_37zm5j_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu$SMP_ReferenceScope_37zm5j_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportLanguage_SubstituteMenu" />
     </file>
     <file name="BuildMps_DevKitExportSolution_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_SubstituteMenu$SMP_ReferenceScope_to6rpi_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_SubstituteMenu$SMP_ReferenceScope_to6rpi_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_SubstituteMenu$SMP_Subconcepts_to6rpi_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitExportSolution_SubstituteMenu" />
     </file>
     <file name="BuildMps_DevKitRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_SubstituteMenu$SMP_ReferenceScope_sqpwld_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_SubstituteMenu$SMP_ReferenceScope_sqpwld_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_SubstituteMenu$SMP_Subconcepts_sqpwld_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_DevKitRef_SubstituteMenu" />
     </file>
     <file name="BuildMps_GeneratorRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_GeneratorRef_SubstituteMenu$SMP_ReferenceScope_1y4yql_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_GeneratorRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_GeneratorRef_SubstituteMenu$SMP_ReferenceScope_1y4yql_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_GeneratorRef_SubstituteMenu$SMP_Subconcepts_1y4yql_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_GeneratorRef_SubstituteMenu" />
     </file>
     <file name="BuildMps_IdeaPluginDependency_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_SubstituteMenu$SMP_ReferenceScope_45m643_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_SubstituteMenu$SMP_ReferenceScope_45m643_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_SubstituteMenu$SMP_Subconcepts_45m643_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginDependency_SubstituteMenu" />
     </file>
     <file name="BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu$SMP_ReferenceScope_splcsx_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu$SMP_ReferenceScope_splcsx_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu$SMP_Subconcepts_splcsx_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu$SMP_ReferenceScope_pjk97t_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu$SMP_ReferenceScope_pjk97t_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu$SMP_Subconcepts_pjk97t_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu$SMP_ReferenceScope_pjk97t_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu$SMP_ReferenceScope_pjk97t_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyOnDevKit_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu$SMP_ReferenceScope_shsbg2_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu$SMP_ReferenceScope_shsbg2_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu$SMP_Subconcepts_shsbg2_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_ReferenceScope_3t8pl7_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_ReferenceScope_3t8pl7_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_Subconcepts_3t8pl7_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyOnModule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu$SMP_ReferenceScope_ss9cng_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu$SMP_ReferenceScope_ss9cng_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu$SMP_Subconcepts_ss9cng_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyUseLanguage_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu$SMP_ReferenceScope_lfbsba_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu$SMP_ReferenceScope_lfbsba_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu$SMP_Subconcepts_lfbsba_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu$SMP_ReferenceScope_lfbsba_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu$SMP_ReferenceScope_lfbsba_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyUseLanguage_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleSolutionRuntime_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu$SMP_ReferenceScope_ge1ifl_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu$SMP_ReferenceScope_ge1ifl_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu$SMP_Subconcepts_ge1ifl_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu$SMP_ReferenceScope_ge1ifl_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu$SMP_ReferenceScope_ge1ifl_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleSolutionRuntime_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="20,0,324,0" name="jetbrains.mps.build.mps.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GeneratorInternal_BuildMps_Module_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_SubstituteMenu$SMP_ReferenceScope_3rdv73_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_SubstituteMenu$SMP_ReferenceScope_3rdv73_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_SubstituteMenu$SMP_Subconcepts_3rdv73_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildMps_Module_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSourcePath_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_SubstituteMenu$SMP_ReferenceScope_jsl8ks_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_SubstituteMenu$SMP_ReferenceScope_jsl8ks_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_SubstituteMenu$SMP_Subconcepts_jsl8ks_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.mps.editor.GeneratorInternal_BuildSourcePath_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="12,0,40,0" name="jetbrains.mps.build.mps.editor.PresentationProviders" />

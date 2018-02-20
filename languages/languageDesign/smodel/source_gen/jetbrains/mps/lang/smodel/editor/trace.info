@@ -17,66 +17,79 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="ConceptReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.ConceptReference_SubstituteMenu$SMP_ReferenceScope_f9hdvu_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.ConceptReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.ConceptReference_SubstituteMenu$SMP_ReferenceScope_f9hdvu_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.ConceptReference_SubstituteMenu$SMP_Subconcepts_f9hdvu_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.ConceptReference_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="20,0,588,0" name="jetbrains.mps.lang.smodel.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EnumMemberReference_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu$SMP_ReferenceScope_pzcnlg_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu$SMP_ReferenceScope_pzcnlg_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu$SMP_Subconcepts_pzcnlg_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu$SMP_ReferenceScope_pzcnlg_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu$SMP_ReferenceScope_pzcnlg_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.smodel.editor.EnumMemberReference_SubstituteMenu" />
     </file>
     <file name="IconContainer.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.editor.IconContainer" />
     </file>
     <file name="IfInstanceOfVarReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.IfInstanceOfVarReference_SubstituteMenu$SMP_ReferenceScope_30k9yd_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.IfInstanceOfVarReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.IfInstanceOfVarReference_SubstituteMenu$SMP_ReferenceScope_30k9yd_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.IfInstanceOfVarReference_SubstituteMenu$SMP_Subconcepts_30k9yd_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.IfInstanceOfVarReference_SubstituteMenu" />
     </file>
     <file name="LinkQualifier_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.LinkQualifier_SubstituteMenu$SMP_ReferenceScope_ryfxlg_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.LinkQualifier_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.LinkQualifier_SubstituteMenu$SMP_ReferenceScope_ryfxlg_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.LinkQualifier_SubstituteMenu$SMP_Subconcepts_ryfxlg_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.LinkQualifier_SubstituteMenu" />
     </file>
     <file name="LinkRefQualifier_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_SubstituteMenu$SMP_ReferenceScope_drj977_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_SubstituteMenu$SMP_ReferenceScope_drj977_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_SubstituteMenu$SMP_Subconcepts_drj977_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.LinkRefQualifier_SubstituteMenu" />
     </file>
     <file name="Node_ConceptMethodCall_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_SubstituteMenu$SMP_ReferenceScope_4xwxqv_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_SubstituteMenu$SMP_ReferenceScope_4xwxqv_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_SubstituteMenu$SMP_Subconcepts_4xwxqv_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="10,0,40,0" name="jetbrains.mps.lang.smodel.editor.PresentationProviders" />
     </file>
     <file name="PropertyQualifier_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.PropertyQualifier_SubstituteMenu$SMP_ReferenceScope_tf6bsx_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.PropertyQualifier_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.PropertyQualifier_SubstituteMenu$SMP_ReferenceScope_tf6bsx_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.PropertyQualifier_SubstituteMenu$SMP_Subconcepts_tf6bsx_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.PropertyQualifier_SubstituteMenu" />
     </file>
     <file name="RefConcept_Reference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_SubstituteMenu$SMP_ReferenceScope_lx70kr_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_SubstituteMenu$SMP_ReferenceScope_lx70kr_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_SubstituteMenu$SMP_Subconcepts_lx70kr_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_SubstituteMenu" />
     </file>
     <file name="SEnum_MemberOperation_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.SEnum_MemberOperation_SubstituteMenu$SMP_ReferenceScope_umo79n_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.SEnum_MemberOperation_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.SEnum_MemberOperation_SubstituteMenu$SMP_ReferenceScope_umo79n_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.SEnum_MemberOperation_SubstituteMenu$SMP_Subconcepts_umo79n_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.SEnum_MemberOperation_SubstituteMenu" />
     </file>
     <file name="SLinkAccess_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.SLinkAccess_SubstituteMenu$SMP_ReferenceScope_owr0ar_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.SLinkAccess_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.SLinkAccess_SubstituteMenu$SMP_ReferenceScope_owr0ar_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.SLinkAccess_SubstituteMenu$SMP_Subconcepts_owr0ar_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.SLinkAccess_SubstituteMenu" />
     </file>
     <file name="SLinkImplicitSelect_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.SLinkImplicitSelect_SubstituteMenu$SMP_ReferenceScope_ohf9xh_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.SLinkImplicitSelect_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.SLinkImplicitSelect_SubstituteMenu$SMP_ReferenceScope_ohf9xh_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.SLinkImplicitSelect_SubstituteMenu$SMP_Subconcepts_ohf9xh_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.SLinkImplicitSelect_SubstituteMenu" />
     </file>
     <file name="SLinkListAccess_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.SLinkListAccess_SubstituteMenu$SMP_ReferenceScope_x9z1qc_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.SLinkListAccess_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.SLinkListAccess_SubstituteMenu$SMP_ReferenceScope_x9z1qc_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.SLinkListAccess_SubstituteMenu$SMP_Subconcepts_x9z1qc_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.SLinkListAccess_SubstituteMenu" />
     </file>
     <file name="SPropertyAccess_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.smodel.editor.SPropertyAccess_SubstituteMenu$SMP_ReferenceScope_zbkghy_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.smodel.editor.SPropertyAccess_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.smodel.editor.SPropertyAccess_SubstituteMenu$SMP_ReferenceScope_zbkghy_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.smodel.editor.SPropertyAccess_SubstituteMenu$SMP_Subconcepts_zbkghy_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.smodel.editor.SPropertyAccess_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1138063451695">

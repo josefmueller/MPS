@@ -17,50 +17,60 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="DropAttributeRule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.DropAttributeRule_SubstituteMenu$SMP_ReferenceScope_pc9jmv_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.DropAttributeRule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.DropAttributeRule_SubstituteMenu$SMP_ReferenceScope_pc9jmv_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.DropAttributeRule_SubstituteMenu$SMP_Subconcepts_pc9jmv_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.DropAttributeRule_SubstituteMenu" />
     </file>
     <file name="DropRootRule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.DropRootRule_SubstituteMenu$SMP_ReferenceScope_tkfh39_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.DropRootRule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.DropRootRule_SubstituteMenu$SMP_ReferenceScope_tkfh39_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.DropRootRule_SubstituteMenu$SMP_Subconcepts_tkfh39_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.DropRootRule_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="19,0,290,0" name="jetbrains.mps.lang.generator.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GeneratorDebug_NodeRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_NodeRef_SubstituteMenu$SMP_ReferenceScope_qqztgz_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_NodeRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_NodeRef_SubstituteMenu$SMP_ReferenceScope_qqztgz_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_NodeRef_SubstituteMenu$SMP_Subconcepts_qqztgz_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.GeneratorDebug_NodeRef_SubstituteMenu" />
     </file>
     <file name="MappingScriptReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.MappingScriptReference_SubstituteMenu$SMP_ReferenceScope_co4dbn_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.MappingScriptReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.MappingScriptReference_SubstituteMenu$SMP_ReferenceScope_co4dbn_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.MappingScriptReference_SubstituteMenu$SMP_Subconcepts_co4dbn_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.MappingScriptReference_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="12,0,28,0" name="jetbrains.mps.lang.generator.editor.PresentationProviders" />
     </file>
     <file name="TemplateArgumentLinkPatternRefExpression_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_SubstituteMenu$SMP_ReferenceScope_ba8qhy_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_SubstituteMenu$SMP_ReferenceScope_ba8qhy_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_SubstituteMenu$SMP_Subconcepts_ba8qhy_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentLinkPatternRefExpression_SubstituteMenu" />
     </file>
     <file name="TemplateArgumentParameterExpression_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_SubstituteMenu$SMP_ReferenceScope_e5rkdz_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_SubstituteMenu$SMP_ReferenceScope_e5rkdz_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_SubstituteMenu$SMP_Subconcepts_e5rkdz_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_SubstituteMenu" />
     </file>
     <file name="TemplateArgumentPatternVarRefExpression_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_SubstituteMenu$SMP_ReferenceScope_xyrbhp_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_SubstituteMenu$SMP_ReferenceScope_xyrbhp_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_SubstituteMenu$SMP_Subconcepts_xyrbhp_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPatternVarRefExpression_SubstituteMenu" />
     </file>
     <file name="TemplateArgumentPropertyPatternRefExpression_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_SubstituteMenu$SMP_ReferenceScope_bp9vrc_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_SubstituteMenu$SMP_ReferenceScope_bp9vrc_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_SubstituteMenu$SMP_Subconcepts_bp9vrc_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateArgumentPropertyPatternRefExpression_SubstituteMenu" />
     </file>
     <file name="TemplateDeclarationReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_SubstituteMenu$SMP_ReferenceScope_oxkip2_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_SubstituteMenu$SMP_ReferenceScope_oxkip2_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_SubstituteMenu$SMP_Subconcepts_oxkip2_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateDeclarationReference_SubstituteMenu" />
     </file>
     <file name="TemplateSwitchReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_SubstituteMenu$SMP_ReferenceScope_ncgjod_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_SubstituteMenu$SMP_ReferenceScope_ncgjod_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_SubstituteMenu$SMP_Subconcepts_ncgjod_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.editor.TemplateSwitchReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)/1087903454703">

@@ -18,81 +18,98 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="AttributeStyleClassItem_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_SubstituteMenu$SMP_ReferenceScope_c5cn0h_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_SubstituteMenu$SMP_ReferenceScope_c5cn0h_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_SubstituteMenu$SMP_Subconcepts_c5cn0h_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_SubstituteMenu" />
     </file>
     <file name="CellIdReferenceSelector_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SubstituteMenu$SMP_ReferenceScope_onagb9_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SubstituteMenu$SMP_ReferenceScope_onagb9_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SubstituteMenu$SMP_Subconcepts_onagb9_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SubstituteMenu" />
     </file>
     <file name="CellMenuComponentFeature_Link_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_SubstituteMenu$SMP_ReferenceScope_hic4wc_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_SubstituteMenu$SMP_ReferenceScope_hic4wc_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_SubstituteMenu$SMP_Subconcepts_hic4wc_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_SubstituteMenu" />
     </file>
     <file name="CellMenuComponentFeature_Property_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_SubstituteMenu$SMP_ReferenceScope_3sbjhr_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_SubstituteMenu$SMP_ReferenceScope_3sbjhr_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_SubstituteMenu$SMP_Subconcepts_3sbjhr_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Property_SubstituteMenu" />
     </file>
     <file name="CellModel_Property_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu$SMP_ReferenceScope_pe92n9_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu$SMP_ReferenceScope_pe92n9_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu$SMP_Subconcepts_pe92n9_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu$SMP_ReferenceScope_pe92n9_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu$SMP_ReferenceScope_pe92n9_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.CellModel_Property_SubstituteMenu" />
     </file>
     <file name="CellModel_RefCell_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu$SMP_ReferenceScope_hnmfkt_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu$SMP_ReferenceScope_hnmfkt_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu$SMP_Subconcepts_hnmfkt_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu$SMP_ReferenceScope_hnmfkt_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu$SMP_ReferenceScope_hnmfkt_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefCell_SubstituteMenu" />
     </file>
     <file name="CellModel_RefNodeList_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu$SMP_ReferenceScope_t0nhu6_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu$SMP_ReferenceScope_t0nhu6_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu$SMP_Subconcepts_t0nhu6_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu$SMP_ReferenceScope_t0nhu6_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu$SMP_ReferenceScope_t0nhu6_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_SubstituteMenu" />
     </file>
     <file name="CellModel_RefNode_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu$SMP_ReferenceScope_bihiq5_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu$SMP_ReferenceScope_bihiq5_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu$SMP_Subconcepts_bihiq5_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu$SMP_ReferenceScope_bihiq5_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu$SMP_ReferenceScope_bihiq5_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNode_SubstituteMenu" />
     </file>
     <file name="ConceptEditorHintDeclarationReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_SubstituteMenu$SMP_ReferenceScope_u44k0l_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_SubstituteMenu$SMP_ReferenceScope_u44k0l_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_SubstituteMenu$SMP_Subconcepts_u44k0l_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.ConceptEditorHintDeclarationReference_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="20,0,712,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EditorComponentDeclarationReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.EditorComponentDeclarationReference_SubstituteMenu$SMP_ReferenceScope_1i5xcr_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.EditorComponentDeclarationReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.EditorComponentDeclarationReference_SubstituteMenu$SMP_ReferenceScope_1i5xcr_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.EditorComponentDeclarationReference_SubstituteMenu$SMP_Subconcepts_1i5xcr_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.EditorComponentDeclarationReference_SubstituteMenu" />
     </file>
     <file name="PropertyDeclarationCellSelector_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_SubstituteMenu$SMP_ReferenceScope_6blxrd_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_SubstituteMenu$SMP_ReferenceScope_6blxrd_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_SubstituteMenu$SMP_Subconcepts_6blxrd_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.PropertyDeclarationCellSelector_SubstituteMenu" />
     </file>
     <file name="StyleClassReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.StyleClassReference_SubstituteMenu$SMP_ReferenceScope_3j1ixm_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.StyleClassReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.StyleClassReference_SubstituteMenu$SMP_ReferenceScope_3j1ixm_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.StyleClassReference_SubstituteMenu$SMP_Subconcepts_3j1ixm_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.StyleClassReference_SubstituteMenu" />
     </file>
     <file name="StyleReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.StyleReference_SubstituteMenu$SMP_ReferenceScope_3y4dr_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.StyleReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.StyleReference_SubstituteMenu$SMP_ReferenceScope_3y4dr_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.StyleReference_SubstituteMenu$SMP_Subconcepts_3y4dr_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.StyleReference_SubstituteMenu" />
     </file>
     <file name="SubstituteMenuVariableReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuVariableReference_SubstituteMenu$SMP_ReferenceScope_g4q34h_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuVariableReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuVariableReference_SubstituteMenu$SMP_ReferenceScope_g4q34h_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuVariableReference_SubstituteMenu$SMP_Subconcepts_g4q34h_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.SubstituteMenuVariableReference_SubstituteMenu" />
     </file>
     <file name="TransformationMenuReference_Default_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu$SMP_ReferenceScope_fl7q7d_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu$SMP_ReferenceScope_fl7q7d_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu$SMP_Subconcepts_fl7q7d_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu$SMP_ReferenceScope_fl7q7d_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu$SMP_ReferenceScope_fl7q7d_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Default_SubstituteMenu" />
     </file>
     <file name="TransformationMenuReference_Named_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu$SMP_ReferenceScope_psoaul_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu$SMP_ReferenceScope_psoaul_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu$SMP_Subconcepts_psoaul_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu$SMP_ReferenceScope_psoaul_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu$SMP_ReferenceScope_psoaul_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuReference_Named_SubstituteMenu" />
     </file>
     <file name="TransformationMenuVariableReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuVariableReference_SubstituteMenu$SMP_ReferenceScope_t0y4lk_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuVariableReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuVariableReference_SubstituteMenu$SMP_ReferenceScope_t0y4lk_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuVariableReference_SubstituteMenu$SMP_Subconcepts_t0y4lk_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.editor.editor.TransformationMenuVariableReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/1077225164072300240">
