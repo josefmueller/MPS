@@ -13,6 +13,7 @@
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -298,6 +299,12 @@
       </concept>
       <concept id="8243879142738608185" name="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" flags="in" index="1KhYhu" />
       <concept id="8243879142738613213" name="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" flags="in" index="1KhZuU" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
@@ -3161,6 +3168,12 @@
                     </node>
                   </node>
                   <node concept="3clFbH" id="5dt5FDZHmAQ" role="3cqZAp" />
+                  <node concept="RRSsy" id="1D5MlFqq5cb" role="3cqZAp">
+                    <property role="RRSoG" value="info" />
+                    <node concept="Xl_RD" id="1D5MlFqq5cd" role="RRSoy">
+                      <property role="Xl_RC" value="Refactoring starting..." />
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="5dt5FDZHmAR" role="3cqZAp">
                     <node concept="2YIFZM" id="5dt5FDZHmAS" role="3clFbG">
                       <ref role="1Pybhc" to="lfzw:42LwYUtqJvj" resolve="MoveNodesUtil" />
@@ -3217,14 +3230,26 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="RRSsy" id="1D5MlFqq7Sc" role="3cqZAp">
+                    <property role="RRSoG" value="info" />
+                    <node concept="Xl_RD" id="1D5MlFqq7Sd" role="RRSoy">
+                      <property role="Xl_RC" value="Refactoring finished" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="5dt5FDZHQn8" role="3cqZAp" />
           <node concept="3SKdUt" id="5dt5FDZHRH1" role="3cqZAp">
             <node concept="3SKdUq" id="5dt5FDZHRH2" role="3SKWNk">
               <property role="3SKdUp" value="not really needed, but still let's end the transaction before checking" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="5dt5FDZHQn8" role="3cqZAp" />
+          <node concept="RRSsy" id="1D5MlFqqjHC" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqjHD" role="RRSoy">
+              <property role="Xl_RC" value="Checking for errors after refactoring..." />
             </node>
           </node>
           <node concept="1QHqEK" id="5dt5FDZHRH3" role="3cqZAp">
@@ -3317,10 +3342,17 @@
               </node>
             </node>
           </node>
+          <node concept="RRSsy" id="1D5MlFqqlvU" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqlvV" role="RRSoy">
+              <property role="Xl_RC" value="Checking finished" />
+            </node>
+          </node>
           <node concept="3clFbH" id="5dt5FDZHRFz" role="3cqZAp" />
-          <node concept="3SKdUt" id="5lGJ4TawwUA" role="3cqZAp">
-            <node concept="3SKdUq" id="5lGJ4TawwUC" role="3SKWNk">
-              <property role="3SKdUp" value="make" />
+          <node concept="RRSsy" id="1D5MlFqqoQ2" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqoQ3" role="RRSoy">
+              <property role="Xl_RC" value="Making newly created migrations..." />
             </node>
           </node>
           <node concept="3cpWs8" id="1AfPmE4ty$2" role="3cqZAp">
@@ -3512,7 +3544,19 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="1BjfD$lz_Ev" role="3cqZAp" />
+          <node concept="RRSsy" id="1D5MlFqqz0O" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqz0P" role="RRSoy">
+              <property role="Xl_RC" value="Make finished" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="1D5MlFqqytT" role="3cqZAp" />
+          <node concept="RRSsy" id="1D5MlFqq_it" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqq_iu" role="RRSoy">
+              <property role="Xl_RC" value="Migrating..." />
+            </node>
+          </node>
           <node concept="3clFbF" id="1_ciHgTaaxD" role="3cqZAp">
             <node concept="2OqwBi" id="1_ciHgTabVw" role="3clFbG">
               <node concept="2YIFZM" id="1_ciHgTabOz" role="2Oq$k0">
@@ -3568,7 +3612,19 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="5dt5FDZJinv" role="3cqZAp" />
+          <node concept="RRSsy" id="1D5MlFqqAYz" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqAY$" role="RRSoy">
+              <property role="Xl_RC" value="Migration finished" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="1D5MlFqqFT9" role="3cqZAp" />
+          <node concept="RRSsy" id="1D5MlFqqL19" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqL1a" role="RRSoy">
+              <property role="Xl_RC" value="Checking migration results..." />
+            </node>
+          </node>
           <node concept="1QHqEK" id="5dt5FDZJiL8" role="3cqZAp">
             <node concept="1QHqEC" id="5dt5FDZJiL9" role="1QHqEI">
               <node concept="3clFbS" id="5dt5FDZJiLa" role="1bW5cS">
@@ -3609,6 +3665,28 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3vwNmj" id="1D5MlFqr9hQ" role="3cqZAp">
+                  <node concept="2OqwBi" id="1D5MlFqrsIQ" role="3vwVQn">
+                    <node concept="2OqwBi" id="1D5MlFqrnRo" role="2Oq$k0">
+                      <node concept="2OqwBi" id="1D5MlFqrcZZ" role="2Oq$k0">
+                        <node concept="2JrnkZ" id="1D5MlFqrb2f" role="2Oq$k0">
+                          <node concept="3B5_sB" id="1D5MlFqrb2g" role="2JrQYb">
+                            <ref role="3B5MYn" to="ubmn:5dt5FDZHjsx" resolve="MoveConcept_A_Instance" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="1D5MlFqreSh" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNode.getProperties():java.lang.Iterable" resolve="getProperties" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1D5MlFqrsuF" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1D5MlFqruQ9" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Iterator.hasNext():boolean" resolve="hasNext" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="5dt5FDZJiLH" role="ukAjM">
@@ -3618,6 +3696,12 @@
               <node concept="liA8E" id="5dt5FDZJiLJ" role="2OqNvi">
                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
               </node>
+            </node>
+          </node>
+          <node concept="RRSsy" id="1D5MlFqqMfq" role="3cqZAp">
+            <property role="RRSoG" value="info" />
+            <node concept="Xl_RD" id="1D5MlFqqMfr" role="RRSoy">
+              <property role="Xl_RC" value="Check finished" />
             </node>
           </node>
         </node>
