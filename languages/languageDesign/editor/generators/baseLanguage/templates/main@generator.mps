@@ -47468,6 +47468,12 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="2pIpSj" id="6szUVE$FaH6" role="2pJxcM">
+                            <ref role="2pIpSl" to="tpc2:n0c53aH4X$" resolve="parts" />
+                            <node concept="2pJPED" id="6szUVE$FaH7" role="2pJxcZ">
+                              <ref role="2pJxaS" to="tpc2:yarZQNHfz6" resolve="SubstituteMenuPart_Subconcepts" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
