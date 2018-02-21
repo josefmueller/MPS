@@ -5736,7 +5736,7 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F0ifn" id="4o40NPkYE8k" role="3EZMnx">
-          <property role="3F0ifm" value="This operation gives access to serializable node pointer (aka SNodeReference)" />
+          <property role="3F0ifm" value="This operation gives access to serializable node pointer" />
           <node concept="Vb9p2" id="4o40NPkYECk" role="3F10Kt" />
         </node>
         <node concept="2iRfu4" id="4o40NPkYE7T" role="2iSdaV" />

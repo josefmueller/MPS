@@ -53,7 +53,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   private EditorCell createConstant_cl9gsi_a0a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "This operation gives access to serializable node pointer (aka SNodeReference)");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "This operation gives access to serializable node pointer");
     editorCell.setCellId("Constant_cl9gsi_a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
