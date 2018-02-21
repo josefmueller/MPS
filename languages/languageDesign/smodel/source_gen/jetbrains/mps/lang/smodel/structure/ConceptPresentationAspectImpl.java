@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AbstractLanguageIdentity;
   private ConceptPresentation props_AbstractNodeRefExpression;
   private ConceptPresentation props_AbstractOperationParameter;
+  private ConceptPresentation props_AbstractPointerResolveOperation;
   private ConceptPresentation props_AbstractTypeCastExpression;
   private ConceptPresentation props_AggregationIdentity;
   private ConceptPresentation props_AllAttributeQualifier;
@@ -78,6 +79,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Link_SetNewChildOperation;
   private ConceptPresentation props_Link_SetTargetOperation;
   private ConceptPresentation props_ModelPointerExpression;
+  private ConceptPresentation props_ModelPointer_ResolveOperation;
   private ConceptPresentation props_ModelReferenceExpression;
   private ConceptPresentation props_Model_AddRootOperation;
   private ConceptPresentation props_Model_CreateNewNodeOperation;
@@ -95,6 +97,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeAttributeQualifier;
   private ConceptPresentation props_NodePointerExpression;
   private ConceptPresentation props_NodePointerExpression_Old;
+  private ConceptPresentation props_NodePointer_ResolveOperation;
   private ConceptPresentation props_NodeRefExpression;
   private ConceptPresentation props_Node_ConceptMethodCall;
   private ConceptPresentation props_Node_ContainingLinkOperation;
@@ -215,6 +218,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_AbstractOperationParameter = cpb.create();
         }
         return props_AbstractOperationParameter;
+      case LanguageConceptSwitch.AbstractPointerResolveOperation:
+        if (props_AbstractPointerResolveOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractPointerResolveOperation = cpb.create();
+        }
+        return props_AbstractPointerResolveOperation;
       case LanguageConceptSwitch.AbstractTypeCastExpression:
         if (props_AbstractTypeCastExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L);
@@ -691,6 +700,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ModelPointerExpression = cpb.create();
         }
         return props_ModelPointerExpression;
+      case LanguageConceptSwitch.ModelPointer_ResolveOperation:
+        if (props_ModelPointer_ResolveOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("resolve model in repository");
+          cpb.rawPresentation("resolve");
+          props_ModelPointer_ResolveOperation = cpb.create();
+        }
+        return props_ModelPointer_ResolveOperation;
       case LanguageConceptSwitch.ModelReferenceExpression:
         if (props_ModelReferenceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L);
@@ -821,6 +838,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodePointerExpression_Old = cpb.create();
         }
         return props_NodePointerExpression_Old;
+      case LanguageConceptSwitch.NodePointer_ResolveOperation:
+        if (props_NodePointer_ResolveOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("resolve node in repository");
+          cpb.rawPresentation("resolve");
+          props_NodePointer_ResolveOperation = cpb.create();
+        }
+        return props_NodePointer_ResolveOperation;
       case LanguageConceptSwitch.NodeRefExpression:
         if (props_NodeRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

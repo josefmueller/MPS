@@ -195,6 +195,44 @@
       <unit id="1101499704720825413" at="22,0,103,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     </file>
   </root>
+  <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/3648723375514259436">
+    <file name="SPointerOperations.java">
+      <node id="3648723375514262725" at="19,22,20,18" concept="11" />
+      <node id="3648723375514262827" at="21,5,22,29" concept="11" />
+      <node id="5312793114534750393" at="26,22,27,18" concept="11" />
+      <node id="5312793114534750395" at="28,5,29,29" concept="11" />
+      <node id="5312793114534752890" at="33,22,34,18" concept="11" />
+      <node id="5312793114534753015" at="35,5,36,29" concept="11" />
+      <node id="3648723375514260097" at="15,0,17,0" concept="3" trace="SPointerOperations#()V" />
+      <node id="3648723375514261939" at="18,73,21,5" concept="8" />
+      <node id="5312793114534750388" at="25,76,28,5" concept="8" />
+      <node id="5312793114534752094" at="32,79,35,5" concept="8" />
+      <node id="3648723375514260208" at="18,0,24,0" concept="15" trace="resolveNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5312793114534750175" at="25,0,31,0" concept="15" trace="resolveModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="5312793114534751648" at="32,0,38,0" concept="15" trace="resolveModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <scope id="3648723375514260101" at="15,32,15,32" />
+      <scope id="3648723375514261941" at="19,22,20,18" />
+      <scope id="5312793114534750392" at="26,22,27,18" />
+      <scope id="5312793114534752096" at="33,22,34,18" />
+      <scope id="3648723375514260097" at="15,0,17,0" />
+      <scope id="3648723375514260211" at="18,73,22,29" />
+      <scope id="5312793114534750178" at="25,76,29,29" />
+      <scope id="5312793114534751651" at="32,79,36,29" />
+      <scope id="3648723375514260208" at="18,0,24,0">
+        <var name="ref" id="3648723375514261844" />
+        <var name="repo" id="3648723375514261863" />
+      </scope>
+      <scope id="5312793114534750175" at="25,0,31,0">
+        <var name="ref" id="5312793114534750292" />
+        <var name="repo" id="5312793114534750333" />
+      </scope>
+      <scope id="5312793114534751648" at="32,0,38,0">
+        <var name="ref" id="5312793114534751791" />
+        <var name="repo" id="5312793114534751812" />
+      </scope>
+      <unit id="3648723375514259436" at="13,0,39,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" />
+    </file>
+  </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6171083915388368126">
     <file name="SModuleOperations.java">
       <node id="2030416617761235936" at="20,37,21,18" concept="11" />

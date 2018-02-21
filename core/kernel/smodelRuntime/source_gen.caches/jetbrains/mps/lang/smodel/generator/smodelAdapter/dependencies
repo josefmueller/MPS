@@ -226,6 +226,15 @@
     <classNode dependClassName="org.jetbrains.mps.util.DescendantsTreeIterator" />
     <classNode dependClassName="org.jetbrains.mps.util.InstanceOfCondition" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations" file="SPointerOperations.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" file="SPropertyOperations.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />

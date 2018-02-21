@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,93,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,97,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/1213104840262">
@@ -1244,6 +1244,51 @@
       <unit id="4040588429969031617" at="17,0,45,0" name="jetbrains.mps.lang.smodel.constraints.ModuleReferenceExpression_Constraints" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/4065387505485843464">
+    <file name="ModelPointer_ResolveOperation_Constraints.java">
+      <node id="4065387505485843464" at="22,54,23,173" concept="11" />
+      <node id="4065387505485843464" at="30,127,31,128" concept="5" />
+      <node id="4065387505485843464" at="31,128,32,0" concept="8" />
+      <node id="4065387505485843464" at="33,55,34,71" concept="2" />
+      <node id="4065387505485843464" at="35,9,36,0" concept="8" />
+      <node id="4065387505485843464" at="36,0,37,22" concept="6" />
+      <node id="7726325683123737028" at="42,197,43,19" concept="6" />
+      <node id="7726325683123737035" at="44,5,45,388" concept="5" />
+      <node id="7726325683123737045" at="45,388,46,284" concept="6" />
+      <node id="4065387505485843464" at="48,0,49,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="4065387505485843464" at="22,0,25,0" concept="1" trace="ModelPointer_ResolveOperation_Constraints#()V" />
+      <node id="4065387505485843464" at="32,0,35,9" concept="3" />
+      <node id="7726325683123737026" at="41,128,44,5" concept="3" />
+      <node id="4065387505485843464" at="41,0,48,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="4065387505485843464" at="29,0,39,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="4065387505485843464" at="27,103,39,6" concept="6" />
+      <node id="4065387505485843464" at="26,0,41,0" concept="4" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="4065387505485843464" at="22,54,23,173" />
+      <scope id="4065387505485843464" at="33,55,34,71" />
+      <scope id="7726325683123737027" at="42,197,43,19" />
+      <scope id="4065387505485843464" at="22,0,25,0" />
+      <scope id="4065387505485843496" at="41,128,46,284">
+        <var name="operandType" id="7726325683123737036" />
+      </scope>
+      <scope id="4065387505485843464" at="30,127,37,22">
+        <var name="result" id="4065387505485843464" />
+      </scope>
+      <scope id="4065387505485843464" at="41,0,48,0">
+        <var name="childConcept" id="4065387505485843464" />
+        <var name="link" id="4065387505485843464" />
+        <var name="node" id="4065387505485843464" />
+        <var name="parentNode" id="4065387505485843464" />
+      </scope>
+      <scope id="4065387505485843464" at="29,0,39,0">
+        <var name="checkingNodeContext" id="4065387505485843464" />
+        <var name="context" id="4065387505485843464" />
+      </scope>
+      <scope id="4065387505485843464" at="27,103,39,6" />
+      <scope id="4065387505485843464" at="26,0,41,0" />
+      <unit id="4065387505485843464" at="28,15,39,5" name="jetbrains.mps.lang.smodel.constraints.ModelPointer_ResolveOperation_Constraints$1" />
+      <unit id="4065387505485843464" at="21,0,50,0" name="jetbrains.mps.lang.smodel.constraints.ModelPointer_ResolveOperation_Constraints" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/5253134957341833007">
     <file name="LinkNameRefExpression_Constraints.java">
       <node id="5253134957341833007" at="26,46,27,165" concept="11" />
@@ -1550,6 +1595,51 @@
       <unit id="7292653286930772283" at="41,19,50,9" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints$1$1" />
       <unit id="7292653286930772283" at="33,156,52,5" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints$1" />
       <unit id="7292653286930772283" at="25,0,57,0" name="jetbrains.mps.lang.smodel.constraints.ChildNodeRefExpression_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/7726325683123716641">
+    <file name="NodePointer_ResolveOperation_Constraints.java">
+      <node id="7726325683123716641" at="22,53,23,172" concept="11" />
+      <node id="7726325683123716641" at="30,127,31,128" concept="5" />
+      <node id="7726325683123716641" at="31,128,32,0" concept="8" />
+      <node id="7726325683123716641" at="33,55,34,71" concept="2" />
+      <node id="7726325683123716641" at="35,9,36,0" concept="8" />
+      <node id="7726325683123716641" at="36,0,37,22" concept="6" />
+      <node id="7726325683123717157" at="42,197,43,19" concept="6" />
+      <node id="7726325683123718926" at="44,5,45,388" concept="5" />
+      <node id="7726325683123717164" at="45,388,46,283" concept="6" />
+      <node id="7726325683123716641" at="48,0,49,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="7726325683123716641" at="22,0,25,0" concept="1" trace="NodePointer_ResolveOperation_Constraints#()V" />
+      <node id="7726325683123716641" at="32,0,35,9" concept="3" />
+      <node id="7726325683123717155" at="41,128,44,5" concept="3" />
+      <node id="7726325683123716641" at="41,0,48,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="7726325683123716641" at="29,0,39,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="7726325683123716641" at="27,103,39,6" concept="6" />
+      <node id="7726325683123716641" at="26,0,41,0" concept="4" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="7726325683123716641" at="22,53,23,172" />
+      <scope id="7726325683123716641" at="33,55,34,71" />
+      <scope id="7726325683123717156" at="42,197,43,19" />
+      <scope id="7726325683123716641" at="22,0,25,0" />
+      <scope id="7726325683123716673" at="41,128,46,283">
+        <var name="operandType" id="7726325683123718927" />
+      </scope>
+      <scope id="7726325683123716641" at="30,127,37,22">
+        <var name="result" id="7726325683123716641" />
+      </scope>
+      <scope id="7726325683123716641" at="41,0,48,0">
+        <var name="childConcept" id="7726325683123716641" />
+        <var name="link" id="7726325683123716641" />
+        <var name="node" id="7726325683123716641" />
+        <var name="parentNode" id="7726325683123716641" />
+      </scope>
+      <scope id="7726325683123716641" at="29,0,39,0">
+        <var name="checkingNodeContext" id="7726325683123716641" />
+        <var name="context" id="7726325683123716641" />
+      </scope>
+      <scope id="7726325683123716641" at="27,103,39,6" />
+      <scope id="7726325683123716641" at="26,0,41,0" />
+      <unit id="7726325683123716641" at="28,15,39,5" name="jetbrains.mps.lang.smodel.constraints.NodePointer_ResolveOperation_Constraints$1" />
+      <unit id="7726325683123716641" at="21,0,50,0" name="jetbrains.mps.lang.smodel.constraints.NodePointer_ResolveOperation_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/8405512791876074475">
