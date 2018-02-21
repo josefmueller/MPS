@@ -532,12 +532,12 @@
   <node concept="LiM7Y" id="7Nx4mSUDDuz">
     <property role="TrG5h" value="TestSubstitute_EmptyCell" />
     <node concept="16zE7j" id="7Nx4mSUDDu$" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJGLp" role="lGtFl">
+      <node concept="LIFWc" id="6szUVE_0jDZ" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_a62c0" />
+        <property role="LIFWd" value="Constant_tkqw7v_a03c0" />
       </node>
     </node>
     <node concept="16zE7j" id="7Nx4mSUDDuA" role="LiZbd">
@@ -823,12 +823,12 @@
   <node concept="LiM7Y" id="41ZU75XzcGW">
     <property role="TrG5h" value="TestSubstitute_WrapDefaultSubstituteMenuFromTransformMenu" />
     <node concept="16zE7j" id="41ZU75XzcGX" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJyFh" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_178Q" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_db2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a43c0" />
       </node>
     </node>
     <node concept="16zE7j" id="41ZU75XzcGZ" role="LiZbd">
@@ -2983,11 +2983,11 @@
     <node concept="16zE7j" id="4K0yewF4JBn" role="LiZbd">
       <node concept="16zIf0" id="4K0yewF4OiN" role="16$kqv">
         <ref role="16hRdc" node="7Nx4mSUE3OS" resolve="nodeToReference1" />
-        <node concept="LIFWc" id="4K0yewF4OHf" role="lGtFl">
+        <node concept="LIFWc" id="6szUVE_0pYb" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
+          <property role="p6zMq" value="16" />
+          <property role="p6zMs" value="16" />
           <property role="LIFWd" value="property_name" />
         </node>
       </node>
@@ -3024,8 +3024,8 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
             </node>
           </node>
-          <node concept="3cmrfG" id="4K0yewF4Q49" role="3uHU7w">
-            <property role="3cmrfH" value="4" />
+          <node concept="3cmrfG" id="6szUVE_0pV_" role="3uHU7w">
+            <property role="3cmrfH" value="6" />
           </node>
         </node>
       </node>
@@ -4249,12 +4249,12 @@
   <node concept="LiM7Y" id="6$E6NNC3cq8">
     <property role="TrG5h" value="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromTransformMenu" />
     <node concept="16zE7j" id="6$E6NNC3cq9" role="LiRBU">
-      <node concept="LIFWc" id="6$E6NNC3yeA" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_16Zk" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_fb2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a63c0" />
       </node>
     </node>
     <node concept="16zE7j" id="6$E6NNC3cqb" role="LiZbd">
@@ -4476,12 +4476,12 @@
   <node concept="LiM7Y" id="7clZIz_rK8w">
     <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu" />
     <node concept="16zE7j" id="7clZIz_rK8x" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJovR" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_16TN" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_hb2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a83c0" />
       </node>
     </node>
     <node concept="16zE7j" id="7clZIz_rK8z" role="LiZbd">

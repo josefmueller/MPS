@@ -783,9 +783,6 @@
           <node concept="ljvvj" id="7XjOxAicea1" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="A1WHu" id="7XjOxAicea2" role="3vIgyS">
-            <ref role="A1WHt" node="7clZIz_roF6" resolve="TestSubstituteParent_WrapDefaultSubstituteMenu" />
-          </node>
         </node>
         <node concept="3F2HdR" id="7XjOxAice9V" role="3EZMnx">
           <ref role="1NtTu8" to="wdez:7clZIz_rtFI" resolve="wrapDefaultSubstituteMenuFromTransform" />
@@ -799,14 +796,17 @@
           <node concept="pj6Ft" id="7XjOxAice9Z" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
+          <node concept="3F0ifn" id="6szUVE_0MuM" role="2czzBI">
+            <property role="3F0ifm" value="" />
+            <node concept="A1WHu" id="7XjOxAicea2" role="3vIgyS">
+              <ref role="A1WHt" node="7clZIz_roF6" resolve="TestSubstituteParent_WrapDefaultSubstituteMenu" />
+            </node>
+          </node>
         </node>
         <node concept="3F0ifn" id="6$E6NNC2U$T" role="3EZMnx">
           <property role="3F0ifm" value="wrap default substitute menu with function from transform" />
           <node concept="ljvvj" id="6$E6NNC2U$U" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="A1WHu" id="6$E6NNC2U$V" role="3vIgyS">
-            <ref role="A1WHt" node="6$E6NNC3cI2" resolve="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
           </node>
         </node>
         <node concept="3F2HdR" id="6$E6NNC2U$O" role="3EZMnx">
@@ -821,14 +821,17 @@
           <node concept="pj6Ft" id="6$E6NNC2U$S" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
+          <node concept="3F0ifn" id="6szUVE_0MuR" role="2czzBI">
+            <property role="3F0ifm" value="" />
+            <node concept="A1WHu" id="6$E6NNC2U$V" role="3vIgyS">
+              <ref role="A1WHt" node="6$E6NNC3cI2" resolve="TestSubstituteParent_WrapDefaultSubstituteMenuWithFunction" />
+            </node>
+          </node>
         </node>
         <node concept="3F0ifn" id="7clZIz_rtGA" role="3EZMnx">
           <property role="3F0ifm" value="wrap named substitute menu from transform" />
           <node concept="ljvvj" id="7clZIz_rtGB" role="3F10Kt">
             <property role="VOm3f" value="true" />
-          </node>
-          <node concept="A1WHu" id="7clZIz_rtGC" role="3vIgyS">
-            <ref role="A1WHt" node="41ZU75Xz32l" resolve="TestSubstituteParent_WrapNamedSubstituteMenu" />
           </node>
         </node>
         <node concept="3F2HdR" id="7clZIz_rtGx" role="3EZMnx">
@@ -842,6 +845,12 @@
           </node>
           <node concept="pj6Ft" id="7clZIz_rtG_" role="3F10Kt">
             <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3F0ifn" id="6szUVE_0MuV" role="2czzBI">
+            <property role="3F0ifm" value="" />
+            <node concept="A1WHu" id="7clZIz_rtGC" role="3vIgyS">
+              <ref role="A1WHt" node="41ZU75Xz32l" resolve="TestSubstituteParent_WrapNamedSubstituteMenu" />
+            </node>
           </node>
         </node>
         <node concept="3F0ifn" id="7W01XocYQAx" role="3EZMnx">
