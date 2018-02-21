@@ -23,6 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteChild;
   private ConceptPresentation props_TestSubstituteChildBrother;
   private ConceptPresentation props_TestSubstituteChildSuper;
+  private ConceptPresentation props_TestSubstituteChildToReferenceSubconcept;
   private ConceptPresentation props_TestSubstituteChildToSpecialize;
   private ConceptPresentation props_TestSubstituteChildWithConstraints1;
   private ConceptPresentation props_TestSubstituteChildWithConstraints2;
@@ -55,13 +56,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteParent;
   private ConceptPresentation props_TestSubstituteParentToReference;
   private ConceptPresentation props_TestSubstituteParentWithConstraints;
+  private ConceptPresentation props_TestSubstituteSmartRef_WithoutExplicitMenu;
+  private ConceptPresentation props_TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept;
   private ConceptPresentation props_TestSubstituteSpecialChild;
   private ConceptPresentation props_TestSubstituteSpecialChildAttribute;
   private ConceptPresentation props_TestSubstituteSpecialParent;
   private ConceptPresentation props_TestSubstituteSpecialSubChild;
   private ConceptPresentation props_TestSubstituteSubChild1;
   private ConceptPresentation props_TestSubstituteSubChild2;
-  private ConceptPresentation props_TestSubstituteSubChildSmartReference;
+  private ConceptPresentation props_TestSubstituteSubChildSmartReference_WithMenu;
   private ConceptPresentation props_TestSubstituteToWrapFromSubstituteMenu;
   private ConceptPresentation props_TestSubstituteToWrapFromTransformMenu;
   private ConceptPresentation props_TestSubstitute_IncludeDefaultAndNullMenu;
@@ -174,6 +177,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteChildSuper = cpb.create();
         }
         return props_TestSubstituteChildSuper;
+      case LanguageConceptSwitch.TestSubstituteChildToReferenceSubconcept:
+        if (props_TestSubstituteChildToReferenceSubconcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_TestSubstituteChildToReferenceSubconcept = cpb.create();
+        }
+        return props_TestSubstituteChildToReferenceSubconcept;
       case LanguageConceptSwitch.TestSubstituteChildToSpecialize:
         if (props_TestSubstituteChildToSpecialize == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -398,6 +408,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteParentWithConstraints = cpb.create();
         }
         return props_TestSubstituteParentWithConstraints;
+      case LanguageConceptSwitch.TestSubstituteSmartRef_WithoutExplicitMenu:
+        if (props_TestSubstituteSmartRef_WithoutExplicitMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa490bde6L, 0x6723ebbaa490bde7L, "childToReference", "", "");
+          props_TestSubstituteSmartRef_WithoutExplicitMenu = cpb.create();
+        }
+        return props_TestSubstituteSmartRef_WithoutExplicitMenu;
+      case LanguageConceptSwitch.TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept:
+        if (props_TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x6723ebbaa490bde6L, 0x6723ebbaa490bde7L, "childToReference", "", "");
+          props_TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept = cpb.create();
+        }
+        return props_TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept;
       case LanguageConceptSwitch.TestSubstituteSpecialChild:
         if (props_TestSubstituteSpecialChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -440,13 +464,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteSubChild2 = cpb.create();
         }
         return props_TestSubstituteSubChild2;
-      case LanguageConceptSwitch.TestSubstituteSubChildSmartReference:
-        if (props_TestSubstituteSubChildSmartReference == null) {
+      case LanguageConceptSwitch.TestSubstituteSubChildSmartReference_WithMenu:
+        if (props_TestSubstituteSubChildSmartReference_WithMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_TestSubstituteSubChildSmartReference = cpb.create();
+          props_TestSubstituteSubChildSmartReference_WithMenu = cpb.create();
         }
-        return props_TestSubstituteSubChildSmartReference;
+        return props_TestSubstituteSubChildSmartReference_WithMenu;
       case LanguageConceptSwitch.TestSubstituteToWrapFromSubstituteMenu:
         if (props_TestSubstituteToWrapFromSubstituteMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

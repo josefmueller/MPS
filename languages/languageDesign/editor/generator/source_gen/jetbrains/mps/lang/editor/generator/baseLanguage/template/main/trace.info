@@ -27,7 +27,7 @@
       <unit at="5817,0,6250,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$IfMC" />
       <unit at="5154,0,5594,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$PVQ" />
       <unit at="4167,0,4632,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated$SNQ" />
-      <unit at="119,0,6991,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated" />
+      <unit at="119,0,6993,0" name="jetbrains.mps.lang.editor.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/1020445033784190725">
@@ -1798,7 +1798,9 @@
       <node id="2097039734418457827" at="6981,248,6982,174" concept="1" />
       <node id="2097039734418457827" at="6983,23,6984,179" concept="1" />
       <node id="2097039734418457827" at="6985,7,6986,153" concept="1" />
-      <node id="2097039734418457827" at="6987,5,6988,14" concept="6" />
+      <node id="2097039734418457827" at="6986,153,6987,244" concept="5" />
+      <node id="2097039734418457827" at="6987,244,6988,153" concept="1" />
+      <node id="2097039734418457827" at="6989,5,6990,14" concept="6" />
       <node id="2097039734422078432" at="3409,21,3412,5" concept="3" />
       <node id="1782525708519923791" at="3416,67,3419,7" concept="3" />
       <node id="2097039734418442254" at="3425,0,3428,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1806,9 +1808,9 @@
       <node id="1782525708519921335" at="3414,89,3420,5" concept="2" />
       <node id="2097039734418505703" at="6969,0,6976,0" concept="9" trace="createSubstituteMenu_RefPresentationTemplate_x583g4_a0a1a0a7a189#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2097039734418440809" at="3423,97,3432,7" concept="3" />
-      <node id="2097039734418457827" at="6978,235,6987,5" concept="0" />
       <node id="2097039734418436654" at="3422,0,3433,5" concept="2" />
-      <node id="2097039734418457827" at="6976,0,6990,0" concept="9" trace="createSubstituteMenu_Default_x583g4_a0a2a0a7a189#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2097039734418457827" at="6978,235,6989,5" concept="0" />
+      <node id="2097039734418457827" at="6976,0,6992,0" concept="9" trace="createSubstituteMenu_Default_x583g4_a0a2a0a7a189#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2097039734422078434" at="3410,84,3411,13" />
       <scope id="1782525708519923793" at="3417,27,3418,64" />
       <scope id="2097039734418442255" at="3425,41,3426,231" />
@@ -1834,18 +1836,19 @@
         <var name="p0" id="2097039734418505703" />
         <var name="p1" id="2097039734418505703" />
       </scope>
-      <scope id="2097039734418457827" at="6979,5,6986,153">
-        <var name="n2" id="2097039734418457827" />
-      </scope>
       <scope id="2097039734418436660" at="3423,97,3432,7" />
+      <scope id="2097039734418457827" at="6979,5,6988,153">
+        <var name="n2" id="2097039734418457827" />
+        <var name="n3" id="2097039734418457827" />
+      </scope>
       <scope id="2097039734418436654" at="3422,0,3433,5">
         <var name="smartConceptEntry" id="2097039734418436656" />
       </scope>
-      <scope id="2097039734418457827" at="6976,106,6988,14">
+      <scope id="2097039734418457827" at="6976,106,6990,14">
         <var name="facade" id="2097039734418457827" />
         <var name="n1" id="2097039734418457827" />
       </scope>
-      <scope id="2097039734418457827" at="6976,0,6990,0">
+      <scope id="2097039734418457827" at="6976,0,6992,0">
         <var name="p0" id="2097039734418457827" />
         <var name="p1" id="2097039734418457827" />
         <var name="p2" id="2097039734418457827" />

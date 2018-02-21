@@ -18,20 +18,24 @@
       <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.builders.editor.PresentationProviders" />
     </file>
     <file name="SimpleBuilderChild_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_SubstituteMenu$SMP_ReferenceScope_nsaua_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_SubstituteMenu$SMP_ReferenceScope_nsaua_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_SubstituteMenu$SMP_Subconcepts_nsaua_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderChild_SubstituteMenu" />
     </file>
     <file name="SimpleBuilderParameterReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_SubstituteMenu$SMP_ReferenceScope_b5ripy_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_SubstituteMenu$SMP_ReferenceScope_b5ripy_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_SubstituteMenu$SMP_Subconcepts_b5ripy_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderParameterReference_SubstituteMenu" />
     </file>
     <file name="SimpleBuilderPropertyBuilder_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_SubstituteMenu$SMP_ReferenceScope_3dcfn1_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_SubstituteMenu$SMP_ReferenceScope_3dcfn1_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_SubstituteMenu$SMP_Subconcepts_3dcfn1_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilderPropertyBuilder_SubstituteMenu" />
     </file>
     <file name="SimpleBuilder_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_SubstituteMenu$SMP_ReferenceScope_sk38n_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_SubstituteMenu$SMP_ReferenceScope_sk38n_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_SubstituteMenu$SMP_Subconcepts_sk38n_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.baseLanguage.builders.editor.SimpleBuilder_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:4b2fc856-1e6f-49a5-825e-2904bdab655c(jetbrains.mps.baseLanguage.builders.editor)/1741258697587117601">

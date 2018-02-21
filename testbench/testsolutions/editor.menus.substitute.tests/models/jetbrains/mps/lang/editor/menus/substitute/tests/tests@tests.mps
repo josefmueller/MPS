@@ -27,6 +27,7 @@
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
+        <property id="1883175908513350760" name="description" index="3YCmrE" />
         <child id="5219531754069547112" name="logEvents" index="2ng5wh" />
         <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
         <child id="1229187707859" name="result" index="LiZbd" />
@@ -108,9 +109,15 @@
     </language>
     <language id="cb6d5703-7c8e-46a9-b993-c1373dc0942f" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage">
       <concept id="8292814565107675822" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteToWrapFromTransformMenu" flags="ng" index="2mu4L6" />
-      <concept id="1892012100483551196" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDiffernetMenus" flags="ng" index="Mks$B" />
-      <concept id="1892012100483553581" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapDifferentMenus" flags="ng" index="MktZm" />
+      <concept id="1892012100483551196" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDifferentMenus" flags="ng" index="Mks$B" />
+      <concept id="1892012100483553581" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapDifferentMenus" flags="ng" index="MktZm" />
+      <concept id="7432042996948844006" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSmartRef_WithoutExplicitMenu" flags="ng" index="33GPps">
+        <reference id="7432042996948844007" name="childToReference" index="33GPpt" />
+      </concept>
+      <concept id="7432042996949147798" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildToReferenceSubconcept" flags="ng" index="33HCGG" />
+      <concept id="7432042996949579847" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept" flags="ng" index="33I1fX" />
       <concept id="8998492695591110495" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentToReference" flags="ng" index="16hHoL">
+        <child id="7432042996949232839" name="childrenSubconcept" index="33HktX" />
         <child id="8998492695591110508" name="children" index="16hHo2" />
       </concept>
       <concept id="8998492695587434686" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChild" flags="ng" index="16zE7g" />
@@ -122,7 +129,9 @@
         <child id="7688582785734922504" name="multipleChildToSpecializeWithPrimaryReplaceGroup" index="2zmCh6" />
         <child id="7688582785734922480" name="singleChildToSpecializeWithPrimaryReplaceGroup" index="2zmCmY" />
         <child id="4647688914604929065" name="wrapNamedSubstituteMenuFromTransformMenu" index="XWXxo" />
-        <child id="8998492695590981091" name="smartReference" index="16hdMd" />
+        <child id="7432042996948844008" name="smartReferenceWithoutMenu" index="33GPpi" />
+        <child id="7432042996949579780" name="smartReferenceWithoutMenuSubconcept" index="33I1eY" />
+        <child id="8998492695590981091" name="smartReferenceWithMenu" index="16hdMd" />
         <child id="8998492695587434689" name="parameterizedQuery" index="16zE6J" />
         <child id="8998492695587434687" name="simpleAction" index="16zE7h" />
         <child id="8998492695587447534" name="conceptsMenu" index="16zJe0" />
@@ -143,7 +152,7 @@
         <child id="9151323058739046801" name="superChild" index="1NYQT7" />
         <child id="3893943280296439552" name="multipleChildToSpecializeInCustomEmptyCellWithCustomMenu" index="1VBbZ8" />
       </concept>
-      <concept id="8998492695587451566" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference" flags="ng" index="16zIf0">
+      <concept id="8998492695587451566" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChildSmartReference_WithMenu" flags="ng" index="16zIf0">
         <reference id="8998492695591019042" name="childToReference" index="16hRdc" />
       </concept>
       <concept id="8998492695587451562" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteToWrapFromSubstituteMenu" flags="ng" index="16zIf4" />
@@ -152,7 +161,7 @@
       </concept>
       <concept id="8998492695587451561" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2" flags="ng" index="16zIf7" />
       <concept id="8998492695587451568" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference" flags="ng" index="16zIfu" />
-      <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
+      <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
       <concept id="7153261420283491153" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionParent" flags="ng" index="3mLoSd" />
       <concept id="368966953912091576" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialChildAttribute" flags="ng" index="1oPLr5" />
       <concept id="3262439767570552768" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraints" flags="ng" index="3qo1hI" />
@@ -168,8 +177,8 @@
       </concept>
       <concept id="9174907873153018649" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition2" flags="ng" index="3HqV$0" />
       <concept id="9174907873153018648" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteSubChildAmbigousPosition1" flags="ng" index="3HqV$1" />
-      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildSubconcept" flags="ng" index="3TPuk3" />
-      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_Parent" flags="ng" index="3TPulU">
+      <concept id="4572725119287324743" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Subconcept" flags="ng" index="3TPuk3" />
+      <concept id="4572725119287324734" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_Parent" flags="ng" index="3TPulU">
         <child id="1892012100483553523" name="childIncludeDifferentMenus" index="MktS8" />
         <child id="1892012100483557462" name="childWrapDifferentMenus" index="MkuUH" />
         <child id="4695456347262394022" name="childIncludeDefaultAndNullMenu" index="3lL08d" />
@@ -177,8 +186,8 @@
         <child id="4572725119287325341" name="childIncludeSameMenuTwice" index="3TPuvp" />
         <child id="4572725119287325338" name="childWrapSameMenuTwice" index="3TPuvu" />
       </concept>
-      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildWrapSameMenuTwice" flags="ng" index="3TPunp" />
-      <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_DuplicationMenu_ChildIncludeSameMenuTwice" flags="ng" index="3TPunu" />
+      <concept id="4572725119287324829" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_WrapSameMenuTwice" flags="ng" index="3TPunp" />
+      <concept id="4572725119287324826" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeSameMenuTwice" flags="ng" index="3TPunu" />
       <concept id="705057939849542068" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1" flags="ng" index="3V12v1" />
       <concept id="705057939849542067" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2" flags="ng" index="3V12v6" />
       <concept id="705057939849506459" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints" flags="ng" index="3V1b3I">
@@ -482,24 +491,24 @@
     </node>
   </node>
   <node concept="LiM7Y" id="7Nx4mSUDptc">
-    <property role="TrG5h" value="TestSubstitute_SmartReference" />
+    <property role="TrG5h" value="TestSubstitute_SmartReferenceWithExplicitMenu" />
     <node concept="16zE7j" id="7Nx4mSUDptd" role="LiRBU">
-      <node concept="LIFWc" id="7Nx4mSUDB2t" role="lGtFl">
+      <node concept="LIFWc" id="6szUVE$$Hj8" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_smartReference" />
+        <property role="LIFWd" value="empty_smartReferenceWithMenu" />
       </node>
     </node>
     <node concept="16zE7j" id="7Nx4mSUDptf" role="LiZbd">
       <node concept="16zIf0" id="7Nx4mSUE6OP" role="16hdMd">
-        <ref role="16hRdc" node="7Nx4mSUE3OV" resolve="b" />
-        <node concept="LIFWc" id="7Nx4mSUE8gG" role="lGtFl">
+        <ref role="16hRdc" node="7Nx4mSUE3OV" resolve="nodeToReference2" />
+        <node concept="LIFWc" id="6szUVE$ATNh" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
+          <property role="p6zMq" value="16" />
+          <property role="p6zMs" value="16" />
           <property role="LIFWd" value="property_name" />
         </node>
       </node>
@@ -511,7 +520,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="7Nx4mSUDB2j" role="3cqZAp">
-        <property role="2TTd_B" value="b" />
+        <property role="2TTd_B" value="nodeToReference2" />
       </node>
       <node concept="yd1bK" id="7Nx4mSUE6OR" role="3cqZAp">
         <node concept="pLAjd" id="7Nx4mSUE6OS" role="yd6KS">
@@ -523,12 +532,12 @@
   <node concept="LiM7Y" id="7Nx4mSUDDuz">
     <property role="TrG5h" value="TestSubstitute_EmptyCell" />
     <node concept="16zE7j" id="7Nx4mSUDDu$" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJGLp" role="lGtFl">
+      <node concept="LIFWc" id="6szUVE_0jDZ" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_a62c0" />
+        <property role="LIFWd" value="Constant_tkqw7v_a03c0" />
       </node>
     </node>
     <node concept="16zE7j" id="7Nx4mSUDDuA" role="LiZbd">
@@ -628,11 +637,17 @@
   </node>
   <node concept="16hHoL" id="7Nx4mSUE18B">
     <property role="TrG5h" value="parentToReferene" />
+    <node concept="33HCGG" id="6szUVE$_ZFD" role="33HktX">
+      <property role="TrG5h" value="subconceptNodeToReference1" />
+    </node>
+    <node concept="33HCGG" id="6szUVE$_ZFF" role="33HktX">
+      <property role="TrG5h" value="subconceptNodeToReference2" />
+    </node>
     <node concept="16zIfu" id="7Nx4mSUE3OS" role="16hHo2">
-      <property role="TrG5h" value="a" />
+      <property role="TrG5h" value="nodeToReference1" />
     </node>
     <node concept="16zIfu" id="7Nx4mSUE3OV" role="16hHo2">
-      <property role="TrG5h" value="b" />
+      <property role="TrG5h" value="nodeToReference2" />
     </node>
   </node>
   <node concept="LiM7Y" id="6XSqyVeAU$j">
@@ -808,12 +823,12 @@
   <node concept="LiM7Y" id="41ZU75XzcGW">
     <property role="TrG5h" value="TestSubstitute_WrapDefaultSubstituteMenuFromTransformMenu" />
     <node concept="16zE7j" id="41ZU75XzcGX" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJyFh" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_178Q" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_db2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a43c0" />
       </node>
     </node>
     <node concept="16zE7j" id="41ZU75XzcGZ" role="LiZbd">
@@ -2967,12 +2982,12 @@
     </node>
     <node concept="16zE7j" id="4K0yewF4JBn" role="LiZbd">
       <node concept="16zIf0" id="4K0yewF4OiN" role="16$kqv">
-        <ref role="16hRdc" node="7Nx4mSUE3OS" resolve="a" />
-        <node concept="LIFWc" id="4K0yewF4OHf" role="lGtFl">
+        <ref role="16hRdc" node="7Nx4mSUE3OS" resolve="nodeToReference1" />
+        <node concept="LIFWc" id="6szUVE_0pYb" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="1" />
-          <property role="p6zMs" value="1" />
+          <property role="p6zMq" value="16" />
+          <property role="p6zMs" value="16" />
           <property role="LIFWd" value="property_name" />
         </node>
       </node>
@@ -3009,8 +3024,8 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
             </node>
           </node>
-          <node concept="3cmrfG" id="4K0yewF4Q49" role="3uHU7w">
-            <property role="3cmrfH" value="4" />
+          <node concept="3cmrfG" id="6szUVE_0pV_" role="3uHU7w">
+            <property role="3cmrfH" value="6" />
           </node>
         </node>
       </node>
@@ -4234,12 +4249,12 @@
   <node concept="LiM7Y" id="6$E6NNC3cq8">
     <property role="TrG5h" value="TestSubstitute_WrapDefaultSubstituteMenuWithFunctionFromTransformMenu" />
     <node concept="16zE7j" id="6$E6NNC3cq9" role="LiRBU">
-      <node concept="LIFWc" id="6$E6NNC3yeA" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_16Zk" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_fb2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a63c0" />
       </node>
     </node>
     <node concept="16zE7j" id="6$E6NNC3cqb" role="LiZbd">
@@ -4461,12 +4476,12 @@
   <node concept="LiM7Y" id="7clZIz_rK8w">
     <property role="TrG5h" value="TestSubstitute_WrapNamedSubstituteMenuFromTransformMenu" />
     <node concept="16zE7j" id="7clZIz_rK8x" role="LiRBU">
-      <node concept="LIFWc" id="3h50PypJovR" role="lGtFl">
-        <property role="LIFWa" value="0" />
+      <node concept="LIFWc" id="6szUVE_16TN" role="lGtFl">
+        <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
         <property role="p6zMq" value="0" />
         <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="Constant_tkqw7v_hb2a" />
+        <property role="LIFWd" value="Constant_tkqw7v_a83c0" />
       </node>
     </node>
     <node concept="16zE7j" id="7clZIz_rK8z" role="LiZbd">
@@ -5152,6 +5167,85 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6szUVE$$Hja">
+    <property role="TrG5h" value="TestSubstitute_SmartReferenceWithoutExplicitMenu" />
+    <node concept="16zE7j" id="6szUVE$$Hjb" role="LiRBU">
+      <node concept="LIFWc" id="6szUVE$Cbij" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_smartReferenceWithoutMenu" />
+      </node>
+    </node>
+    <node concept="16zE7j" id="6szUVE$$Hjd" role="LiZbd">
+      <node concept="33GPps" id="6szUVE$_m2b" role="33GPpi">
+        <ref role="33GPpt" node="7Nx4mSUE3OV" resolve="nodeToReference2" />
+        <node concept="LIFWc" id="6szUVE$ATKp" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="16" />
+          <property role="p6zMs" value="16" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="6szUVE$$Hjg" role="LjaKd">
+      <node concept="2HxZob" id="6szUVE$$Hjh" role="3cqZAp">
+        <node concept="1iFQzN" id="6szUVE$$Hji" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="6szUVE$$Hjj" role="3cqZAp">
+        <property role="2TTd_B" value="nodeToReference2" />
+      </node>
+      <node concept="yd1bK" id="6szUVE$$Hjk" role="3cqZAp">
+        <node concept="pLAjd" id="6szUVE$$Hjl" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="6szUVE$BFD5">
+    <property role="TrG5h" value="TestSubstitute_SmartReferenceWithoutExplicitMenuSubconcept" />
+    <property role="3YCmrE" value="see MPS-27514" />
+    <node concept="16zE7j" id="6szUVE$BFD6" role="LiRBU">
+      <node concept="LIFWc" id="6szUVE$CUJ8" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_smartReferenceWithoutMenuSubconcept" />
+      </node>
+    </node>
+    <node concept="16zE7j" id="6szUVE$BFD8" role="LiZbd">
+      <node concept="33I1fX" id="6szUVE$Crpu" role="33I1eY">
+        <ref role="33GPpt" node="6szUVE$_ZFF" resolve="subconceptNodeToReference2" />
+        <node concept="LIFWc" id="6szUVE$CrZ5" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="26" />
+          <property role="p6zMs" value="26" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="6szUVE$BFDb" role="LjaKd">
+      <node concept="2HxZob" id="6szUVE$BFDc" role="3cqZAp">
+        <node concept="1iFQzN" id="6szUVE$BFDd" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="6szUVE$BFDs" role="3cqZAp">
+        <property role="2TTd_B" value="subconceptNodeToReference2" />
+      </node>
+      <node concept="yd1bK" id="6szUVE$BFDt" role="3cqZAp">
+        <node concept="pLAjd" id="6szUVE$BFDu" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
