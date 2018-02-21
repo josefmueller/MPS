@@ -20,15 +20,11 @@ public class typeof_NodePointerArg_Identity_InferenceRule extends AbstractInfere
   public typeof_NodePointerArg_Identity_InferenceRule() {
   }
   public void applyRule(final SNode nodePointerArg, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode target = null;
-    try {
-      target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(SLinkOperations.getTarget(nodePointerArg, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91ebdL, 0x2e154e2e58d91f06L, "ref")), SNodeOperations.getModel(nodePointerArg).getRepository());
-    } catch (Exception e) {
-    }
+    SNode target = NodeIdentity__BehaviorDescriptor.toNodeSafe_id3bhfBP4572W.invoke(SLinkOperations.getTarget(nodePointerArg, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91ebdL, 0x2e154e2e58d91f06L, "ref")), SNodeOperations.getModel(nodePointerArg).getRepository());
     {
       SNode _nodeToCheck_1029348928467 = nodePointerArg;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3320646261221719938", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3320646261221719950", true), (SNode) createSNodePointerType_xw4dmd_a1a2a2a1(SNodeOperations.asNode(SNodeOperations.getConcept(target))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "3320646261221719950", true), (SNode) createSNodePointerType_xw4dmd_a1a2a1a1(SNodeOperations.asNode(SNodeOperations.getConcept(target))), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -40,7 +36,7 @@ public class typeof_NodePointerArg_Identity_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-  private static SNode createSNodePointerType_xw4dmd_a1a2a2a1(Object p0) {
+  private static SNode createSNodePointerType_xw4dmd_a1a2a1a1(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, "jetbrains.mps.lang.smodel.structure.SNodePointerType"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, 0x66b228a4fad6b2adL, "concept"), (SNode) p0);

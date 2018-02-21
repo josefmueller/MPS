@@ -6,7 +6,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.modelapi.typesystem.check_NodePointer_NonTypesystemRule" file="check_NodePointer_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />

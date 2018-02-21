@@ -712,4 +712,8 @@ public class SNodeOperations {
   public static SNodeReference getPointer(SNode node) {
     return (node == null ? null : node.getReference());
   }
+
+  public static boolean is(SNode node, SNodeReference nodePtr) {
+    return (node == null ? false : node.getReference().equals(nodePtr));
+  }
 }

@@ -20,15 +20,11 @@ public class typeof_NodePointerExpression_InferenceRule extends AbstractInferenc
   public typeof_NodePointerExpression_InferenceRule() {
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode target = null;
-    try {
-      target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(expr).getRepository());
-    } catch (Exception e) {
-    }
+    SNode target = NodeIdentity__BehaviorDescriptor.toNodeSafe_id3bhfBP4572W.invoke(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(expr).getRepository());
     {
       SNode _nodeToCheck_1029348928467 = expr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775224134", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775222158", true), (SNode) createSNodePointerType_xp3gkt_a1a2a2a1(SNodeOperations.asNode(SNodeOperations.getConcept(target))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775222158", true), (SNode) createSNodePointerType_xp3gkt_a1a2a1a1(SNodeOperations.asNode(SNodeOperations.getConcept(target))), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -40,7 +36,7 @@ public class typeof_NodePointerExpression_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return false;
   }
-  private static SNode createSNodePointerType_xp3gkt_a1a2a2a1(Object p0) {
+  private static SNode createSNodePointerType_xp3gkt_a1a2a1a1(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, "jetbrains.mps.lang.smodel.structure.SNodePointerType"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fad6b29eL, 0x66b228a4fad6b2adL, "concept"), (SNode) p0);

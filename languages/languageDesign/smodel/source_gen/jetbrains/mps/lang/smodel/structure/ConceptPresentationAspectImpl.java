@@ -137,6 +137,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Node_IsInstanceOfOperation;
   private ConceptPresentation props_Node_IsNotNullOperation;
   private ConceptPresentation props_Node_IsNullOperation;
+  private ConceptPresentation props_Node_IsOperation;
   private ConceptPresentation props_Node_IsRoleOperation;
   private ConceptPresentation props_Node_PointerOperation;
   private ConceptPresentation props_Node_ReplaceWithAnotherOperation;
@@ -1140,6 +1141,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Node_IsNullOperation = cpb.create();
         }
         return props_Node_IsNullOperation;
+      case LanguageConceptSwitch.Node_IsOperation:
+        if (props_Node_IsOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("test for a specific node");
+          cpb.rawPresentation("is");
+          props_Node_IsOperation = cpb.create();
+        }
+        return props_Node_IsOperation;
       case LanguageConceptSwitch.Node_IsRoleOperation:
         if (props_Node_IsRoleOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

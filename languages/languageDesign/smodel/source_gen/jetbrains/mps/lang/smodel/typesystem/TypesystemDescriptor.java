@@ -357,6 +357,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_Node_IsOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_Node_IsRoleOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -654,6 +658,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       ComparisonRule_Runtime comparisonRule = new SConceptType_comparable_SConcept_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new interface_node_pointer_types_are_comparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
     {

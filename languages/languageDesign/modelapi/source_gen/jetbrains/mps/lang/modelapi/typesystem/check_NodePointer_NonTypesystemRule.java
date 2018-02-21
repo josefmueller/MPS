@@ -25,11 +25,7 @@ public class check_NodePointer_NonTypesystemRule extends AbstractNonTypesystemRu
       return;
     }
 
-    SNode target = null;
-    try {
-      target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(nodePointer, repo);
-    } catch (Exception e) {
-    }
+    SNode target = NodeIdentity__BehaviorDescriptor.toNodeSafe_id3bhfBP4572W.invoke(nodePointer, repo);
     if (target == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

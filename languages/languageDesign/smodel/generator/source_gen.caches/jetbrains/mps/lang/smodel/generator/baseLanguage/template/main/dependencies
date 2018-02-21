@@ -1028,6 +1028,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsNotNullOperation" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsNullOperation" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_IsRoleOperation" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_NodeIdentity_SNodeReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ReplaceWithAnotherOperation" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ReplaceWithNewOperation" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

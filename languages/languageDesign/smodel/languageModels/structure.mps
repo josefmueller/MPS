@@ -3004,5 +3004,20 @@
       <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3bhfBP455GQ">
+    <property role="EcuMT" value="3661776679762942774" />
+    <property role="3GE5qa" value="operation.node" />
+    <property role="TrG5h" value="Node_IsOperation" />
+    <property role="34LRSv" value="is" />
+    <property role="R4oN_" value="test for a specific node" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyj" id="3bhfBP455Ic" role="1TKVEi">
+      <property role="IQ2ns" value="3661776679762942860" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ref" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
+  </node>
 </model>
 
