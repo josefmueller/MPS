@@ -1408,12 +1408,12 @@ public class Mapping_mc_main extends MapConfigBase implements TemplateMappingCon
   }
   public final class ReductionRule45 extends ReductionRuleBase {
     public ReductionRule45() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546135624"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelRefExpression"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546135624"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelPointerExpression"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      Collection<SNode> tlist1 = new Template_reduce_ModelRefExpression().apply(environment, context);
+      Collection<SNode> tlist1 = new Template_reduce_ModelPointerExpression().apply(environment, context);
       return tlist1;
     }
   }

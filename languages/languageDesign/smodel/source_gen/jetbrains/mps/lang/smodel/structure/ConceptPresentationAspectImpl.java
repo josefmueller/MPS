@@ -77,7 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_LinkRefQualifier;
   private ConceptPresentation props_Link_SetNewChildOperation;
   private ConceptPresentation props_Link_SetTargetOperation;
-  private ConceptPresentation props_ModelRefExpression;
+  private ConceptPresentation props_ModelPointerExpression;
   private ConceptPresentation props_ModelReferenceExpression;
   private ConceptPresentation props_Model_AddRootOperation;
   private ConceptPresentation props_Model_CreateNewNodeOperation;
@@ -683,14 +683,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Link_SetTargetOperation = cpb.create();
         }
         return props_Link_SetTargetOperation;
-      case LanguageConceptSwitch.ModelRefExpression:
-        if (props_ModelRefExpression == null) {
+      case LanguageConceptSwitch.ModelPointerExpression:
+        if (props_ModelPointerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Expression representing SModelReference of a model");
-          cpb.rawPresentation("model-reference");
-          props_ModelRefExpression = cpb.create();
+          cpb.shortDesc("make pointer to a model");
+          cpb.rawPresentation("model-ptr/.../");
+          props_ModelPointerExpression = cpb.create();
         }
-        return props_ModelRefExpression;
+        return props_ModelPointerExpression;
       case LanguageConceptSwitch.ModelReferenceExpression:
         if (props_ModelReferenceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L);
@@ -807,7 +807,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodePointerExpression:
         if (props_NodePointerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("make node pointer");
+          cpb.shortDesc("make pointer to a node");
           cpb.rawPresentation("node-ptr/.../");
           props_NodePointerExpression = cpb.create();
         }

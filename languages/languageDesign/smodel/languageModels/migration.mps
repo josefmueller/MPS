@@ -306,7 +306,7 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="nn" index="1N_AGu">
+      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression_Old" flags="nn" index="1N_AGu">
         <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -5121,14 +5121,14 @@
                         <node concept="3cpWsn" id="5C3R$hJnSE$" role="3cpWs9">
                           <property role="TrG5h" value="newRef" />
                           <node concept="3Tqbb2" id="5C3R$hJnSEx" role="1tU5fm">
-                            <ref role="ehGHo" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+                            <ref role="ehGHo" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
                           </node>
                           <node concept="2OqwBi" id="5C3R$hJo824" role="33vP2m">
                             <node concept="37vLTw" id="5C3R$hJo7MJ" role="2Oq$k0">
                               <ref role="3cqZAo" node="5C3R$hJnZ3F" resolve="where" />
                             </node>
                             <node concept="I8ghe" id="5C3R$hJo8sz" role="2OqNvi">
-                              <ref role="I8UWU" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+                              <ref role="I8UWU" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
                             </node>
                           </node>
                         </node>

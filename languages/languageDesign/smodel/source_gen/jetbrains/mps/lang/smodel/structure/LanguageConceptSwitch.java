@@ -77,7 +77,7 @@ public final class LanguageConceptSwitch {
   public static final int LinkRefQualifier = 65;
   public static final int Link_SetNewChildOperation = 66;
   public static final int Link_SetTargetOperation = 67;
-  public static final int ModelRefExpression = 68;
+  public static final int ModelPointerExpression = 68;
   public static final int ModelReferenceExpression = 69;
   public static final int Model_AddRootOperation = 70;
   public static final int Model_CreateNewNodeOperation = 71;
@@ -261,7 +261,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x11886c4bac0L, LinkRefQualifier);
     builder.put(0x109233dbca1L, Link_SetNewChildOperation);
     builder.put(0x1099887af60L, Link_SetTargetOperation);
-    builder.put(0x19dc9460645cfdd7L, ModelRefExpression);
+    builder.put(0x19dc9460645cfdd7L, ModelPointerExpression);
     builder.put(0x7c3f2da20e92b62L, ModelReferenceExpression);
     builder.put(0x118e7faea40L, Model_AddRootOperation);
     builder.put(0x10a2e210544L, Model_CreateNewNodeOperation);

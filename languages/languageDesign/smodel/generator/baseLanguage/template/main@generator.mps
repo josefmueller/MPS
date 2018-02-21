@@ -2932,9 +2932,9 @@
       </node>
     </node>
     <node concept="3aamgX" id="1Bs_61$nhh8" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+      <ref role="30HIoZ" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
       <node concept="j$656" id="1Bs_61$nmvO" role="1lVwrX">
-        <ref role="v9R2y" node="1Bs_61$nmvM" resolve="reduce_ModelRefExpression" />
+        <ref role="v9R2y" node="1Bs_61$nmvM" resolve="reduce_ModelPointerExpression" />
       </node>
     </node>
   </node>
@@ -21762,9 +21762,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="1Bs_61$nmvM">
-    <property role="TrG5h" value="reduce_ModelRefExpression" />
+    <property role="TrG5h" value="reduce_ModelPointerExpression" />
     <property role="3GE5qa" value="reference.model" />
-    <ref role="3gUMe" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+    <ref role="3gUMe" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
     <node concept="2OqwBi" id="1Bs_61$nqPM" role="13RCb5">
       <node concept="2YIFZM" id="1Bs_61$nqKe" role="2Oq$k0">
         <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />

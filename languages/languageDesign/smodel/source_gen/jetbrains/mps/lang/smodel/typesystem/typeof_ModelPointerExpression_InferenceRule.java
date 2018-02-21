@@ -13,18 +13,18 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeof_ModelRefExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public typeof_ModelRefExpression_InferenceRule() {
+public class typeof_ModelPointerExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+  public typeof_ModelPointerExpression_InferenceRule() {
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = expr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1863527487546135085", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1863527487546133823", true), (SNode) createSModelPointerType_4x9u6b_a1a2a0a1(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1863527487546133823", true), (SNode) createSModelPointerType_uayjdk_a1a2a0a1(), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelRefExpression");
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelPointerExpression");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -32,7 +32,7 @@ public class typeof_ModelRefExpression_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-  private static SNode createSModelPointerType_4x9u6b_a1a2a0a1() {
+  private static SNode createSModelPointerType_uayjdk_a1a2a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645d088bL, "jetbrains.mps.lang.smodel.structure.SModelPointerType"), null, null, false);
     return n1;

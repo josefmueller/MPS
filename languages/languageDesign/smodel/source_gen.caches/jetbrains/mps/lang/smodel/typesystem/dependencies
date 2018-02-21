@@ -210,7 +210,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkIdRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkNameRefExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_LinkRefExpression_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ModelRefExpression_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ModelPointerExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_ModelReferenceExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Model_AddRootOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.typesystem.typeof_Model_GetLongNameOperation_InferenceRule" />
@@ -1456,7 +1456,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.typesystem.typeof_ModelRefExpression_InferenceRule" file="typeof_ModelRefExpression_InferenceRule.java">
+  <dependency className="jetbrains.mps.lang.smodel.typesystem.typeof_ModelPointerExpression_InferenceRule" file="typeof_ModelPointerExpression_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

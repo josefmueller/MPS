@@ -9963,14 +9963,11 @@
   </node>
   <node concept="24kQdi" id="1Bs_61$nhee">
     <property role="3GE5qa" value="reference.model" />
-    <ref role="1XX52x" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+    <ref role="1XX52x" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
     <node concept="3EZMnI" id="1Bs_61$nheg" role="2wV5jI">
-      <node concept="PMmxH" id="1Bs_61$nheh" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" to="tpch:24YP6ZDyde4" resolve="Keyword" />
-        <node concept="3$7jql" id="1Bs_61$nhei" role="3F10Kt">
-          <property role="3$6WeP" value="0" />
-        </node>
+      <node concept="3F0ifn" id="_3Yz8RZnoQ" role="3EZMnx">
+        <property role="3F0ifm" value="model-ptr" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3F0ifn" id="1Bs_61$nhej" role="3EZMnx">
         <property role="3F0ifm" value="/" />
@@ -9978,6 +9975,7 @@
       </node>
       <node concept="3F1sOY" id="1Bs_61$nhek" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:1Bs_61$ngwB" resolve="modelRef" />
+        <ref role="1k5W1q" to="tpd3:hwSDXQa" resolve="ReferenceDecorated" />
         <node concept="A1WHu" id="4J$bixNY2QK" role="3vIgyS">
           <ref role="A1WHt" to="25zl:7cODfNsrd5u" resolve="AllRepositoryModels_TM" />
         </node>
@@ -10065,7 +10063,7 @@
                 <node concept="3bvxqY" id="6Qvu94t1Rlo" role="2Oq$k0" />
                 <node concept="1mIQ4w" id="6Qvu94t1RSA" role="2OqNvi">
                   <node concept="chp4Y" id="6Qvu94t1S52" role="cj9EA">
-                    <ref role="cht4Q" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+                    <ref role="cht4Q" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
                   </node>
                 </node>
               </node>

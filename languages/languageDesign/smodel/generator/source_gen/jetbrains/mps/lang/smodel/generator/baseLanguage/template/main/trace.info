@@ -600,10 +600,10 @@
       <node id="1139186732963" at="1403,103,1404,80" concept="8" />
       <node id="1139186732963" at="1404,80,1405,103" concept="8" />
       <node id="1139186732963" at="1405,103,1406,20" concept="9" />
-      <node id="1139186732963" at="1410,30,1411,328" concept="14" />
+      <node id="1139186732963" at="1410,30,1411,332" concept="14" />
       <node id="1139186732963" at="1414,103,1415,80" concept="8" />
-      <node id="1139186732963" at="1415,80,1416,102" concept="8" />
-      <node id="1139186732963" at="1416,102,1417,20" concept="9" />
+      <node id="1139186732963" at="1415,80,1416,106" concept="8" />
+      <node id="1139186732963" at="1416,106,1417,20" concept="9" />
       <node id="1139186732963" at="1420,0,1421,0" concept="12" trace="rule_rbibyw_b0a0c0b8" />
       <node id="1139186732963" at="1421,0,1422,0" concept="12" trace="copySrcMacro_rbibyw_b0a0c0d0c0c31" />
       <node id="1139186732963" at="1422,0,1423,0" concept="12" trace="includeMacro_rbibyw_b0a0a0a1a1a4a2a2n" />
@@ -1165,7 +1165,7 @@
       <scope id="1139186732963" at="1377,63,1378,166" />
       <scope id="1139186732963" at="1388,30,1389,331" />
       <scope id="1139186732963" at="1399,30,1400,329" />
-      <scope id="1139186732963" at="1410,30,1411,328" />
+      <scope id="1139186732963" at="1410,30,1411,332" />
       <scope id="1139186732963" at="39,56,41,1845" />
       <scope id="1139186732963" at="718,39,720,0" />
       <scope id="1139186732963" at="768,37,770,0" />
@@ -12315,7 +12315,7 @@
       <node id="1863527487546182759" at="896,112,897,307" concept="9" />
       <scope id="1863527487546175295" at="896,112,897,307" />
     </file>
-    <file name="Template_reduce_ModelRefExpression.java">
+    <file name="Template_reduce_ModelPointerExpression.java">
       <node id="1863527487546157042" at="33,43,34,167" concept="9" />
       <node id="1863527487546157042" at="36,97,37,78" concept="8" />
       <node id="1863527487546157042" at="37,78,38,69" concept="8" />
@@ -12358,8 +12358,8 @@
       <node id="1863527487546157042" at="111,135,112,141" concept="3" />
       <node id="1863527487546157042" at="112,141,113,137" concept="3" />
       <node id="1863527487546157042" at="113,137,114,14" concept="9" />
-      <node id="1863527487546157042" at="116,0,117,0" concept="12" trace="propertyMacro_a3vmob_c0a0c0a0b0c0b0c0c0e" />
-      <node id="1863527487546157042" at="30,0,32,0" concept="1" trace="Template_reduce_ModelRefExpression#()V" />
+      <node id="1863527487546157042" at="116,0,117,0" concept="12" trace="propertyMacro_fe9un4_c0a0c0a0b0c0b0c0c0e" />
+      <node id="1863527487546157042" at="30,0,32,0" concept="1" trace="Template_reduce_ModelPointerExpression#()V" />
       <node id="1863527487546157042" at="33,0,36,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1863527487546157042" at="57,77,61,13" concept="16" />
       <node id="1863527487546157042" at="74,0,78,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -12375,7 +12375,7 @@
       <node id="1863527487546157042" at="50,7,69,7" concept="0" />
       <node id="1863527487546157042" at="38,69,71,5" concept="16" />
       <node id="1863527487546157042" at="36,0,74,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1863527487546157042" at="30,47,30,47" />
+      <scope id="1863527487546157042" at="30,51,30,51" />
       <scope id="1863527487546157042" at="46,19,46,19" />
       <scope id="1863527487546157042" at="60,23,60,23" />
       <scope id="1863527487546157042" at="65,19,65,19" />
@@ -12436,7 +12436,7 @@
       <scope id="1863527487546157042" at="36,0,74,0">
         <var name="context" id="1863527487546157042" />
       </scope>
-      <unit id="1863527487546157042" at="27,0,118,0" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModelRefExpression" />
+      <unit id="1863527487546157042" at="27,0,118,0" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ModelPointerExpression" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)/1883223317721107150">

@@ -107,7 +107,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 41:
         return Collections.<ConceptEditor>singletonList(new Link_SetTargetOperation_Editor());
       case 42:
-        return Collections.<ConceptEditor>singletonList(new ModelRefExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ModelPointerExpression_Editor());
       case 43:
         return Collections.<ConceptEditor>singletonList(new ModelReferenceExpression_Editor());
       case 44:

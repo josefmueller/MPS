@@ -431,7 +431,7 @@ public class TemplateModelImpl extends TemplateModelBase implements TemplateMode
     }
     if (template.equals(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546157042"))) {
       TemplateUtil.assertTemplateParametersCount(template, 0, arguments.length);
-      return new Template_reduce_ModelRefExpression();
+      return new Template_reduce_ModelPointerExpression();
     }
     return null;
   }

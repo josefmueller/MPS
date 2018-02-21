@@ -13235,7 +13235,7 @@
               <node concept="2OqwBi" id="_3Yz8RBFWE" role="37vLTx">
                 <node concept="2OqwBi" id="_3Yz8RBFyv" role="2Oq$k0">
                   <node concept="1YBJjd" id="_3Yz8RBFyw" role="2Oq$k0">
-                    <ref role="1YBMHb" node="6qMaajV4KsX" resolve="nodePointer" />
+                    <ref role="1YBMHb" node="6qMaajV4KsX" resolve="expr" />
                   </node>
                   <node concept="3TrEf2" id="_3Yz8RBFyx" role="2OqNvi">
                     <ref role="3Tt5mk" to="tp25:6qMaajV39im" resolve="ref" />
@@ -13250,7 +13250,7 @@
                     <node concept="2JrnkZ" id="_3Yz8RBK4d" role="2Oq$k0">
                       <node concept="2OqwBi" id="_3Yz8RBItr" role="2JrQYb">
                         <node concept="1YBJjd" id="_3Yz8RBIhI" role="2Oq$k0">
-                          <ref role="1YBMHb" node="6qMaajV4KsX" resolve="nodePointer" />
+                          <ref role="1YBMHb" node="6qMaajV4KsX" resolve="expr" />
                         </node>
                         <node concept="I4A8Y" id="_3Yz8RBJ$V" role="2OqNvi" />
                       </node>
@@ -13299,14 +13299,14 @@
         <node concept="mw_s8" id="6qMaajV4KX9" role="1ZfhK$">
           <node concept="1Z2H0r" id="6qMaajV4Kue" role="mwGJk">
             <node concept="1YBJjd" id="6qMaajV4KvY" role="1Z2MuG">
-              <ref role="1YBMHb" node="6qMaajV4KsX" resolve="nodePointer" />
+              <ref role="1YBMHb" node="6qMaajV4KsX" resolve="expr" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="6qMaajV4KsX" role="1YuTPh">
-      <property role="TrG5h" value="nodePointer" />
+      <property role="TrG5h" value="expr" />
       <ref role="1YaFvo" to="tp25:6qMaajV39gP" resolve="NodePointerExpression" />
     </node>
   </node>
@@ -13329,7 +13329,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="1Bs_61$ngOS">
-    <property role="TrG5h" value="typeof_ModelRefExpression" />
+    <property role="TrG5h" value="typeof_ModelPointerExpression" />
     <property role="3GE5qa" value="reference.model" />
     <node concept="3clFbS" id="1Bs_61$ngOT" role="18ibNy">
       <node concept="1Z5TYs" id="1Bs_61$nh8H" role="3cqZAp">
@@ -13351,7 +13351,7 @@
     </node>
     <node concept="1YaCAy" id="1Bs_61$ngOV" role="1YuTPh">
       <property role="TrG5h" value="expr" />
-      <ref role="1YaFvo" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+      <ref role="1YaFvo" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
     </node>
   </node>
 </model>

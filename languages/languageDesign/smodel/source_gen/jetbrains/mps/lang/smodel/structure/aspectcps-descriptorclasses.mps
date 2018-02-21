@@ -888,7 +888,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_ModelRefExpression" />
+      <property role="TrG5h" value="props_ModelPointerExpression" />
       <node concept="3uibUv" id="52" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -6769,7 +6769,7 @@
                       <node concept="liA8E" id="Cm" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="Cn" role="37wK5m">
-                          <property role="Xl_RC" value="Expression representing SModelReference of a model" />
+                          <property role="Xl_RC" value="make pointer to a model" />
                         </node>
                       </node>
                     </node>
@@ -6782,7 +6782,7 @@
                       <node concept="liA8E" id="Cq" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="Cr" role="37wK5m">
-                          <property role="Xl_RC" value="model-reference" />
+                          <property role="Xl_RC" value="model-ptr/.../" />
                         </node>
                       </node>
                     </node>
@@ -6798,7 +6798,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="Cu" role="37vLTJ">
-                        <ref role="3cqZAo" node="16" resolve="props_ModelRefExpression" />
+                        <ref role="3cqZAo" node="16" resolve="props_ModelPointerExpression" />
                       </node>
                     </node>
                   </node>
@@ -6806,19 +6806,19 @@
                 <node concept="3clFbC" id="Cb" role="3clFbw">
                   <node concept="10Nm6u" id="Cx" role="3uHU7w" />
                   <node concept="37vLTw" id="Cy" role="3uHU7B">
-                    <ref role="3cqZAo" node="16" resolve="props_ModelRefExpression" />
+                    <ref role="3cqZAo" node="16" resolve="props_ModelPointerExpression" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="C9" role="3cqZAp">
                 <node concept="37vLTw" id="Cz" role="3cqZAk">
-                  <ref role="3cqZAo" node="16" resolve="props_ModelRefExpression" />
+                  <ref role="3cqZAo" node="16" resolve="props_ModelPointerExpression" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="C7" role="3Kbmr1">
               <ref role="1PxDUh" node="1qL" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="1rR" resolve="ModelRefExpression" />
+              <ref role="3cqZAo" node="1rR" resolve="ModelPointerExpression" />
             </node>
           </node>
           <node concept="3KbdKl" id="9W" role="3KbHQx">
@@ -6888,7 +6888,7 @@
                         </node>
                         <node concept="asaX9" id="D3" role="lGtFl">
                           <property role="YLPcu" value="2018.1" />
-                          <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-reference// instead and resolve with appropriate repository, if needed." />
+                          <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-ptr// instead and resolve with appropriate repository, if needed." />
                         </node>
                       </node>
                     </node>
@@ -7996,7 +7996,7 @@
                       <node concept="liA8E" id="JJ" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
                         <node concept="Xl_RD" id="JK" role="37wK5m">
-                          <property role="Xl_RC" value="make node pointer" />
+                          <property role="Xl_RC" value="make pointer to a node" />
                         </node>
                       </node>
                     </node>
@@ -15897,7 +15897,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="ModelRefExpression" />
+      <property role="TrG5h" value="ModelPointerExpression" />
       <node concept="3Tm1VV" id="1wX" role="1B3o_S" />
       <node concept="10Oyi0" id="1wY" role="1tU5fm" />
       <node concept="3cmrfG" id="1wZ" role="33vP2m">
@@ -18259,7 +18259,7 @@
                 <property role="1adDun" value="0x19dc9460645cfdd7L" />
               </node>
               <node concept="37vLTw" id="1IC" role="37wK5m">
-                <ref role="3cqZAo" node="1rR" resolve="ModelRefExpression" />
+                <ref role="3cqZAo" node="1rR" resolve="ModelPointerExpression" />
               </node>
             </node>
           </node>
@@ -20953,12 +20953,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptModelRefExpression" />
+      <property role="TrG5h" value="myConceptModelPointerExpression" />
       <node concept="3uibUv" id="1ZK" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="1ZL" role="33vP2m">
-        <ref role="37wK5l" node="1VR" resolve="createDescriptorForModelRefExpression" />
+        <ref role="37wK5l" node="1VR" resolve="createDescriptorForModelPointerExpression" />
       </node>
     </node>
     <node concept="312cEg" id="1SS" role="jymVt">
@@ -22549,7 +22549,7 @@
               <ref role="3cqZAo" node="1SQ" resolve="myConceptLink_SetTargetOperation" />
             </node>
             <node concept="37vLTw" id="24A" role="37wK5m">
-              <ref role="3cqZAo" node="1SR" resolve="myConceptModelRefExpression" />
+              <ref role="3cqZAo" node="1SR" resolve="myConceptModelPointerExpression" />
             </node>
             <node concept="37vLTw" id="24B" role="37wK5m">
               <ref role="3cqZAo" node="1SS" resolve="myConceptModelReferenceExpression" />
@@ -23804,13 +23804,13 @@
             <node concept="3clFbS" id="2dB" role="3Kbo56">
               <node concept="3cpWs6" id="2dD" role="3cqZAp">
                 <node concept="37vLTw" id="2dE" role="3cqZAk">
-                  <ref role="3cqZAo" node="1SR" resolve="myConceptModelRefExpression" />
+                  <ref role="3cqZAo" node="1SR" resolve="myConceptModelPointerExpression" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="2dC" role="3Kbmr1">
               <ref role="1PxDUh" node="1qL" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="1rR" resolve="ModelRefExpression" />
+              <ref role="3cqZAo" node="1rR" resolve="ModelPointerExpression" />
             </node>
           </node>
           <node concept="3KbdKl" id="27_" role="3KbHQx">
@@ -36043,7 +36043,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForModelRefExpression" />
+      <property role="TrG5h" value="createDescriptorForModelPointerExpression" />
       <node concept="3clFbS" id="3hi" role="3clF47">
         <node concept="3cpWs8" id="3hl" role="3cqZAp">
           <node concept="3cpWsn" id="3hs" role="3cpWs9">
@@ -36058,7 +36058,7 @@
                   <property role="Xl_RC" value="jetbrains.mps.lang.smodel" />
                 </node>
                 <node concept="Xl_RD" id="3hx" role="37wK5m">
-                  <property role="Xl_RC" value="ModelRefExpression" />
+                  <property role="Xl_RC" value="ModelPointerExpression" />
                 </node>
                 <node concept="1adDum" id="3hy" role="37wK5m">
                   <property role="1adDun" value="0x7866978ea0f04cc7L" />
@@ -36202,7 +36202,7 @@
             <node concept="liA8E" id="3ig" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.alias(java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="alias" />
               <node concept="Xl_RD" id="3ih" role="37wK5m">
-                <property role="Xl_RC" value="model-reference" />
+                <property role="Xl_RC" value="model-ptr/.../" />
               </node>
             </node>
           </node>

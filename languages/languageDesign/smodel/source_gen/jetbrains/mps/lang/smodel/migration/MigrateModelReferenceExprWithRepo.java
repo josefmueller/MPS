@@ -50,7 +50,7 @@ public class MigrateModelReferenceExprWithRepo extends MigrationScriptBase {
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           final SModel where = SNodeOperations.getModel(it);
-          SNode newRef = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelRefExpression"));
+          SNode newRef = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, "jetbrains.mps.lang.smodel.structure.ModelPointerExpression"));
           SLinkOperations.setTarget(newRef, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L, 0x19dc9460645d0827L, "modelRef"), ModelPointer__BehaviorDescriptor.create_id_GDk1qZ2JP.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L, "jetbrains.mps.lang.modelapi.structure.ModelPointer")), where, mrf.getModelByName(ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(it))));
 
           final SNode repoAccessExpr = SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x13bfe1ec0ddbc5f8L, "repo"));

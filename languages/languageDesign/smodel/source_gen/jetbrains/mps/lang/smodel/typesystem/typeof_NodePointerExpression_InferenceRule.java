@@ -19,14 +19,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_NodePointerExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NodePointerExpression_InferenceRule() {
   }
-  public void applyRule(final SNode nodePointer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode target = null;
     try {
-      target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(SLinkOperations.getTarget(nodePointer, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(nodePointer).getRepository());
+      target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(expr).getRepository());
     } catch (Exception e) {
     }
     {
-      SNode _nodeToCheck_1029348928467 = nodePointer;
+      SNode _nodeToCheck_1029348928467 = expr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775224134", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775222158", true), (SNode) createSNodePointerType_xp3gkt_a1a2a2a1(SNodeOperations.asNode(SNodeOperations.getConcept(target))), _info_12389875345);
     }

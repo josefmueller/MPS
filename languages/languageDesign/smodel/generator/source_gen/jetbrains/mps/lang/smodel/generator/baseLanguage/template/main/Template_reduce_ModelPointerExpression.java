@@ -25,9 +25,9 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 @Generated
-public class Template_reduce_ModelRefExpression extends TemplateDeclarationBase {
+public class Template_reduce_ModelPointerExpression extends TemplateDeclarationBase {
 
-  public Template_reduce_ModelRefExpression() {
+  public Template_reduce_ModelPointerExpression() {
   }
 
   public SNodeReference getTemplateNode() {
@@ -56,7 +56,7 @@ public class Template_reduce_ModelRefExpression extends TemplateDeclarationBase 
           {
             final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
             try {
-              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1863527487546175294(new PropertyMacroContext(context2, "", propertyMacro_a3vmob_c0a0c0a0b0c0b0c0c0e))));
+              SNodeAccessUtil.setProperty(tnode4, myProperties[0], TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1863527487546175294(new PropertyMacroContext(context2, "", propertyMacro_fe9un4_c0a0c0a0b0c0b0c0c0e))));
             } finally {
             }
             tnode3.addChild(myAggregationLinks[1], tnode4);
@@ -113,5 +113,5 @@ public class Template_reduce_ModelRefExpression extends TemplateDeclarationBase 
     rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation");
     return rv;
   }
-  private static SNodePointer propertyMacro_a3vmob_c0a0c0a0b0c0b0c0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546175293");
+  private static SNodePointer propertyMacro_fe9un4_c0a0c0a0b0c0b0c0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1863527487546175293");
 }

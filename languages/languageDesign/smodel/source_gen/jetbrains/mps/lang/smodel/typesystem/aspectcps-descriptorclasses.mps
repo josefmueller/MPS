@@ -2578,9 +2578,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="4j" role="39e3Y0">
-        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelRefExpression" />
+        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelPointerExpression" />
         <node concept="385nmt" id="bC" role="385vvn">
-          <property role="385vuF" value="typeof_ModelRefExpression" />
+          <property role="385vuF" value="typeof_ModelPointerExpression" />
           <node concept="2$VJBW" id="bE" role="385v07">
             <property role="2$VJBR" value="1863527487546133816" />
             <node concept="2x4n5u" id="bF" role="3iCydw">
@@ -2595,7 +2595,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bD" role="39e2AY">
-          <ref role="39e2AS" node="4bb" resolve="typeof_ModelRefExpression_InferenceRule" />
+          <ref role="39e2AS" node="4bb" resolve="typeof_ModelPointerExpression_InferenceRule" />
         </node>
       </node>
       <node concept="39e2AG" id="4k" role="39e3Y0">
@@ -5884,9 +5884,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="jl" role="39e3Y0">
-        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelRefExpression" />
+        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelPointerExpression" />
         <node concept="385nmt" id="qm" role="385vvn">
-          <property role="385vuF" value="typeof_ModelRefExpression" />
+          <property role="385vuF" value="typeof_ModelPointerExpression" />
           <node concept="2$VJBW" id="qo" role="385v07">
             <property role="2$VJBR" value="1863527487546133816" />
             <node concept="2x4n5u" id="qp" role="3iCydw">
@@ -9226,9 +9226,9 @@
         </node>
       </node>
       <node concept="39e2AG" id="xL" role="39e3Y0">
-        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelRefExpression" />
+        <ref role="39e2AK" to="tpeq:1Bs_61$ngOS" resolve="typeof_ModelPointerExpression" />
         <node concept="385nmt" id="Dg" role="385vvn">
-          <property role="385vuF" value="typeof_ModelRefExpression" />
+          <property role="385vuF" value="typeof_ModelPointerExpression" />
           <node concept="2$VJBW" id="Di" role="385v07">
             <property role="2$VJBR" value="1863527487546133816" />
             <node concept="2x4n5u" id="Dj" role="3iCydw">
@@ -16623,7 +16623,7 @@
                 <property role="TrG5h" value="inferenceRule" />
                 <node concept="2ShNRf" id="1kJ" role="33vP2m">
                   <node concept="1pGfFk" id="1kL" role="2ShVmc">
-                    <ref role="37wK5l" node="4bc" resolve="typeof_ModelRefExpression_InferenceRule" />
+                    <ref role="37wK5l" node="4bc" resolve="typeof_ModelPointerExpression_InferenceRule" />
                   </node>
                 </node>
                 <node concept="3uibUv" id="1kK" role="1tU5fm">
@@ -45323,7 +45323,7 @@
   </node>
   <node concept="312cEu" id="4bb">
     <property role="3GE5qa" value="definition.rule" />
-    <property role="TrG5h" value="typeof_ModelRefExpression_InferenceRule" />
+    <property role="TrG5h" value="typeof_ModelPointerExpression_InferenceRule" />
     <node concept="3clFbW" id="4bc" role="jymVt">
       <node concept="3clFbS" id="4bk" role="3clF47" />
       <node concept="3Tm1VV" id="4bl" role="1B3o_S" />
@@ -45470,7 +45470,7 @@
       <node concept="3clFbS" id="4ca" role="3clF47">
         <node concept="3cpWs6" id="4cc" role="3cqZAp">
           <node concept="35c_gC" id="4cd" role="3cqZAk">
-            <ref role="35c_gD" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+            <ref role="35c_gD" to="tp25:1Bs_61$nfRn" resolve="ModelPointerExpression" />
           </node>
         </node>
       </node>
@@ -47144,7 +47144,7 @@
       <node concept="3cqZAl" id="4mT" role="3clF45" />
       <node concept="37vLTG" id="4mU" role="3clF46">
         <property role="3TUv4t" value="true" />
-        <property role="TrG5h" value="nodePointer" />
+        <property role="TrG5h" value="expr" />
         <node concept="3Tqbb2" id="4mZ" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="4mV" role="3clF46">
@@ -47175,7 +47175,7 @@
                 <node concept="2OqwBi" id="4nc" role="37vLTx">
                   <node concept="2OqwBi" id="4ne" role="2Oq$k0">
                     <node concept="37vLTw" id="4ng" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4mU" resolve="nodePointer" />
+                      <ref role="3cqZAo" node="4mU" resolve="expr" />
                     </node>
                     <node concept="3TrEf2" id="4nh" role="2OqNvi">
                       <ref role="3Tt5mk" to="tp25:6qMaajV39im" resolve="ref" />
@@ -47190,7 +47190,7 @@
                       <node concept="2JrnkZ" id="4nk" role="2Oq$k0">
                         <node concept="2OqwBi" id="4nl" role="2JrQYb">
                           <node concept="37vLTw" id="4nm" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4mU" resolve="nodePointer" />
+                            <ref role="3cqZAo" node="4mU" resolve="expr" />
                           </node>
                           <node concept="I4A8Y" id="4nn" role="2OqNvi" />
                         </node>
@@ -47220,7 +47220,7 @@
               <node concept="3cpWsn" id="4nw" role="3cpWs9">
                 <property role="TrG5h" value="_nodeToCheck_1029348928467" />
                 <node concept="37vLTw" id="4nx" role="33vP2m">
-                  <ref role="3cqZAo" node="4mU" resolve="nodePointer" />
+                  <ref role="3cqZAo" node="4mU" resolve="expr" />
                   <node concept="6wLe0" id="4nz" role="lGtFl">
                     <property role="6wLej" value="7400021826775224134" />
                     <property role="6wLeW" value="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" />

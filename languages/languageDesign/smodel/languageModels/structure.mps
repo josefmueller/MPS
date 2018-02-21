@@ -2081,7 +2081,7 @@
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="asaX9" id="5C3R$hJlJ8f" role="lGtFl">
       <property role="YLPcu" value="2018.1" />
-      <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-reference// instead and resolve with appropriate repository, if needed." />
+      <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-ptr// instead and resolve with appropriate repository, if needed." />
     </node>
     <node concept="1TJgyj" id="1eZSuKdQWnS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2863,7 +2863,7 @@
     <property role="3GE5qa" value="reference" />
     <property role="TrG5h" value="NodePointerExpression" />
     <property role="34LRSv" value="node-ptr/.../" />
-    <property role="R4oN_" value="make node pointer" />
+    <property role="R4oN_" value="make pointer to a node" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="6qMaajV39im" role="1TKVEi">
       <property role="IQ2ns" value="7400021826774799510" />
@@ -2876,9 +2876,9 @@
   <node concept="1TIwiD" id="1Bs_61$nfRn">
     <property role="EcuMT" value="1863527487546129879" />
     <property role="3GE5qa" value="reference.model" />
-    <property role="TrG5h" value="ModelRefExpression" />
-    <property role="34LRSv" value="model-reference" />
-    <property role="R4oN_" value="Expression representing SModelReference of a model" />
+    <property role="TrG5h" value="ModelPointerExpression" />
+    <property role="34LRSv" value="model-ptr/.../" />
+    <property role="R4oN_" value="make pointer to a model" />
     <property role="R5$K2" value="true" />
     <property role="R5$K7" value="false" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
