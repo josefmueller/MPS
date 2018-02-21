@@ -58,6 +58,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ILinkAccessQualifier;
   private ConceptPresentation props_ILinkAccessQualifierContainer;
   private ConceptPresentation props_ILinkQualifier;
+  private ConceptPresentation props_INodePointerArg;
   private ConceptPresentation props_IPropertyQualifier;
   private ConceptPresentation props_IRefConceptArg;
   private ConceptPresentation props_IReferenceOperation;
@@ -78,6 +79,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_LinkRefQualifier;
   private ConceptPresentation props_Link_SetNewChildOperation;
   private ConceptPresentation props_Link_SetTargetOperation;
+  private ConceptPresentation props_Link_SetTargetPointerOperation;
   private ConceptPresentation props_ModelPointerExpression;
   private ConceptPresentation props_ModelPointer_ResolveOperation;
   private ConceptPresentation props_ModelReferenceExpression;
@@ -96,6 +98,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ModuleRefExpression;
   private ConceptPresentation props_ModuleReferenceExpression;
   private ConceptPresentation props_NodeAttributeQualifier;
+  private ConceptPresentation props_NodePointerArg_Identity;
   private ConceptPresentation props_NodePointerExpression;
   private ConceptPresentation props_NodePointerExpression_Old;
   private ConceptPresentation props_NodePointer_ResolveOperation;
@@ -544,6 +547,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ILinkQualifier = cpb.create();
         }
         return props_ILinkQualifier;
+      case LanguageConceptSwitch.INodePointerArg:
+        if (props_INodePointerArg == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_INodePointerArg = cpb.create();
+        }
+        return props_INodePointerArg;
       case LanguageConceptSwitch.IPropertyQualifier:
         if (props_IPropertyQualifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -693,6 +702,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Link_SetTargetOperation = cpb.create();
         }
         return props_Link_SetTargetOperation;
+      case LanguageConceptSwitch.Link_SetTargetPointerOperation:
+        if (props_Link_SetTargetPointerOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("set referent with pointer");
+          cpb.rawPresentation("set ptr");
+          props_Link_SetTargetPointerOperation = cpb.create();
+        }
+        return props_Link_SetTargetPointerOperation;
       case LanguageConceptSwitch.ModelPointerExpression:
         if (props_ModelPointerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -830,6 +847,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodeAttributeQualifier = cpb.create();
         }
         return props_NodeAttributeQualifier;
+      case LanguageConceptSwitch.NodePointerArg_Identity:
+        if (props_NodePointerArg_Identity == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodePointerArg_Identity");
+          props_NodePointerArg_Identity = cpb.create();
+        }
+        return props_NodePointerArg_Identity;
       case LanguageConceptSwitch.NodePointerExpression:
         if (props_NodePointerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

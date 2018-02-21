@@ -177,6 +177,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_Link_SetTargetPointerOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ModelPointerExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -210,6 +214,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ModuleReferenceExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_NodePointerArg_Identity_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

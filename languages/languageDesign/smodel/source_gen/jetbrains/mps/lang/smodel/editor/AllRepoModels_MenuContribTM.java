@@ -63,7 +63,7 @@ public class AllRepoModels_MenuContribTM extends TransformationMenuBase {
   public class TMP_Group_yx6o7s_a0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, "jetbrains.mps.lang.smodel.structure.NodePointerExpression"));
+      return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, "jetbrains.mps.lang.smodel.structure.NodePointerExpression")) || SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91ebdL, "jetbrains.mps.lang.smodel.structure.NodePointerArg_Identity"));
     }
 
     @NotNull

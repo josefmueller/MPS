@@ -63,6 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptILinkAccessQualifier = createDescriptorForILinkAccessQualifier();
   /*package*/ final ConceptDescriptor myConceptILinkAccessQualifierContainer = createDescriptorForILinkAccessQualifierContainer();
   /*package*/ final ConceptDescriptor myConceptILinkQualifier = createDescriptorForILinkQualifier();
+  /*package*/ final ConceptDescriptor myConceptINodePointerArg = createDescriptorForINodePointerArg();
   /*package*/ final ConceptDescriptor myConceptIPropertyQualifier = createDescriptorForIPropertyQualifier();
   /*package*/ final ConceptDescriptor myConceptIRefConceptArg = createDescriptorForIRefConceptArg();
   /*package*/ final ConceptDescriptor myConceptIReferenceOperation = createDescriptorForIReferenceOperation();
@@ -83,6 +84,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptLinkRefQualifier = createDescriptorForLinkRefQualifier();
   /*package*/ final ConceptDescriptor myConceptLink_SetNewChildOperation = createDescriptorForLink_SetNewChildOperation();
   /*package*/ final ConceptDescriptor myConceptLink_SetTargetOperation = createDescriptorForLink_SetTargetOperation();
+  /*package*/ final ConceptDescriptor myConceptLink_SetTargetPointerOperation = createDescriptorForLink_SetTargetPointerOperation();
   /*package*/ final ConceptDescriptor myConceptModelPointerExpression = createDescriptorForModelPointerExpression();
   /*package*/ final ConceptDescriptor myConceptModelPointer_ResolveOperation = createDescriptorForModelPointer_ResolveOperation();
   /*package*/ final ConceptDescriptor myConceptModelReferenceExpression = createDescriptorForModelReferenceExpression();
@@ -101,6 +103,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptModuleRefExpression = createDescriptorForModuleRefExpression();
   /*package*/ final ConceptDescriptor myConceptModuleReferenceExpression = createDescriptorForModuleReferenceExpression();
   /*package*/ final ConceptDescriptor myConceptNodeAttributeQualifier = createDescriptorForNodeAttributeQualifier();
+  /*package*/ final ConceptDescriptor myConceptNodePointerArg_Identity = createDescriptorForNodePointerArg_Identity();
   /*package*/ final ConceptDescriptor myConceptNodePointerExpression = createDescriptorForNodePointerExpression();
   /*package*/ final ConceptDescriptor myConceptNodePointerExpression_Old = createDescriptorForNodePointerExpression_Old();
   /*package*/ final ConceptDescriptor myConceptNodePointer_ResolveOperation = createDescriptorForNodePointer_ResolveOperation();
@@ -207,7 +210,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractLanguageIdentity, myConceptAbstractNodeRefExpression, myConceptAbstractOperationParameter, myConceptAbstractPointerResolveOperation, myConceptAbstractTypeCastExpression, myConceptAggregationIdentity, myConceptAllAttributeQualifier, myConceptAsNodeOperation, myConceptAsSConcept, myConceptAssociationIdentity, myConceptAttributeAccess, myConceptAttributeQualifier, myConceptBootstrapAwareMetaObject, myConceptChildAttributeQualifier, myConceptChildNodeRefExpression, myConceptConceptAliasOperation, myConceptConceptFqNameRefExpression, myConceptConceptId, myConceptConceptIdRefExpression, myConceptConceptIdentity, myConceptConceptMemberIdentity, myConceptConceptNodeType, myConceptConceptRefExpression, myConceptConceptReference, myConceptConceptShortDescriptionOperation, myConceptConceptSwitchStatement, myConceptConcept_GetAllSubConcepts, myConceptConcept_GetAllSuperConcepts, myConceptConcept_GetDirectSuperConcepts, myConceptConcept_IsExactlyOperation, myConceptConcept_IsSubConceptOfOperation, myConceptConcept_IsSuperConceptOfOperation, myConceptConcept_NewInstance, myConceptContainmentLinkId, myConceptDevkitIdentity, myConceptDevkitPointer, myConceptEnumMemberReference, myConceptEnumMemberValueRefExpression, myConceptEnumMember_NameOperation, myConceptEnumMember_ValueOperation, myConceptEqualsStructurallyExpression, myConceptExactConceptCase, myConceptGeneratorIdentity, myConceptGeneratorModulePointer, myConceptIConceptSwitchCase, myConceptILinkAccess, myConceptILinkAccessQualifier, myConceptILinkAccessQualifierContainer, myConceptILinkQualifier, myConceptIPropertyQualifier, myConceptIRefConceptArg, myConceptIReferenceOperation, myConceptIfInstanceOfStatement, myConceptIfInstanceOfVarReference, myConceptIfInstanceOfVariable, myConceptLanguageId, myConceptLanguageIdentity, myConceptLanguageIdentityBySourceModule, myConceptLanguageRefExpression, myConceptLanguageReferenceExpression, myConceptLinkAttributeQualifier, myConceptLinkIdRefExpression, myConceptLinkList_AddNewChildOperation, myConceptLinkNameRefExpression, myConceptLinkQualifier, myConceptLinkRefExpression, myConceptLinkRefQualifier, myConceptLink_SetNewChildOperation, myConceptLink_SetTargetOperation, myConceptModelPointerExpression, myConceptModelPointer_ResolveOperation, myConceptModelReferenceExpression, myConceptModel_AddRootOperation, myConceptModel_CreateNewNodeOperation, myConceptModel_CreateNewRootNodeOperation, myConceptModel_GetLongNameOperation, myConceptModel_GetModule, myConceptModel_NodesIncludingImportedOperation, myConceptModel_NodesOperation, myConceptModel_PointerOperation, myConceptModel_RootsIncludingImportedOperation, myConceptModel_RootsOperation, myConceptModuleIdentity, myConceptModulePointer, myConceptModuleRefExpression, myConceptModuleReferenceExpression, myConceptNodeAttributeQualifier, myConceptNodePointerExpression, myConceptNodePointerExpression_Old, myConceptNodePointer_ResolveOperation, myConceptNodeRefExpression, myConceptNode_ConceptMethodCall, myConceptNode_ContainingLinkOperation, myConceptNode_CopyOperation, myConceptNode_DeleteOperation, myConceptNode_DetachOperation, myConceptNode_GetAllSiblingsOperation, myConceptNode_GetAncestorOperation, myConceptNode_GetAncestorsOperation, myConceptNode_GetChildrenAndChildAttributesOperation, myConceptNode_GetChildrenOperation, myConceptNode_GetConceptOperation, myConceptNode_GetContainingLinkOperation, myConceptNode_GetContainingRoleOperation, myConceptNode_GetContainingRootOperation, myConceptNode_GetDescendantsOperation, myConceptNode_GetIndexInParentOperation, myConceptNode_GetModelOperation, myConceptNode_GetNextSiblingOperation, myConceptNode_GetNextSiblingsOperation, myConceptNode_GetParentOperation, myConceptNode_GetPrevSiblingOperation, myConceptNode_GetPrevSiblingsOperation, myConceptNode_GetReferenceOperation, myConceptNode_GetReferencesOperation, myConceptNode_GetReferentSearchScopeOperation, myConceptNode_GetSConceptOperation, myConceptNode_InsertNewNextSiblingOperation, myConceptNode_InsertNewPrevSiblingOperation, myConceptNode_InsertNextSiblingOperation, myConceptNode_InsertPrevSiblingOperation, myConceptNode_IsAttributeOperation, myConceptNode_IsInstanceOfOperation, myConceptNode_IsNotNullOperation, myConceptNode_IsNullOperation, myConceptNode_IsRoleOperation, myConceptNode_PointerOperation, myConceptNode_ReplaceWithAnotherOperation, myConceptNode_ReplaceWithNewOperation, myConceptOfConceptOperation, myConceptOperationParm_Concept, myConceptOperationParm_ConceptList, myConceptOperationParm_Inclusion, myConceptOperationParm_LinkQualifier, myConceptOperationParm_Root, myConceptOperationParm_SameMetaLevel, myConceptOperationParm_StopConceptList, myConceptPoundExpression, myConceptPropertyAttributeQualifier, myConceptPropertyId, myConceptPropertyIdRefExpression, myConceptPropertyIdentity, myConceptPropertyNameRefExpression, myConceptPropertyQualifier, myConceptProperty_HasValue_Enum, myConceptProperty_HasValue_Simple, myConceptProperty_RemoveOperation, myConceptProperty_SetOperation, myConceptRefConcept_Reference, myConceptReferenceLinkId, myConceptReference_ContainingLinkOperation, myConceptReference_GetLinkDeclarationOperation, myConceptReference_GetResolveInfo, myConceptReference_GetRoleOperation, myConceptReference_GetTargetOperation, myConceptSConceptOperation, myConceptSConceptType, myConceptSConceptTypeCastExpression, myConceptSConceptTypeLiteral, myConceptSEnumMemberOperation, myConceptSEnumMemberType, myConceptSEnumOperation, myConceptSEnumOperationInvocation, myConceptSEnum_MemberForNameOperation, myConceptSEnum_MemberForValueOperation, myConceptSEnum_MemberOperation, myConceptSEnum_MembersOperation, myConceptSLinkAccess, myConceptSLinkImplicitSelect, myConceptSLinkListAccess, myConceptSModelPointerType, myConceptSModelType, myConceptSNodeCreator, myConceptSNodeListCreator, myConceptSNodeListType, myConceptSNodeOperation, myConceptSNodePointerType, myConceptSNodeType, myConceptSNodeTypeCastExpression, myConceptSPropertyAccess, myConceptSReferenceType, myConceptSearchScopeType, myConceptSearchScope_ContainsOperation, myConceptSemanticDowncastExpression, myConceptSubconceptCase);
+    return Arrays.asList(myConceptAbstractLanguageIdentity, myConceptAbstractNodeRefExpression, myConceptAbstractOperationParameter, myConceptAbstractPointerResolveOperation, myConceptAbstractTypeCastExpression, myConceptAggregationIdentity, myConceptAllAttributeQualifier, myConceptAsNodeOperation, myConceptAsSConcept, myConceptAssociationIdentity, myConceptAttributeAccess, myConceptAttributeQualifier, myConceptBootstrapAwareMetaObject, myConceptChildAttributeQualifier, myConceptChildNodeRefExpression, myConceptConceptAliasOperation, myConceptConceptFqNameRefExpression, myConceptConceptId, myConceptConceptIdRefExpression, myConceptConceptIdentity, myConceptConceptMemberIdentity, myConceptConceptNodeType, myConceptConceptRefExpression, myConceptConceptReference, myConceptConceptShortDescriptionOperation, myConceptConceptSwitchStatement, myConceptConcept_GetAllSubConcepts, myConceptConcept_GetAllSuperConcepts, myConceptConcept_GetDirectSuperConcepts, myConceptConcept_IsExactlyOperation, myConceptConcept_IsSubConceptOfOperation, myConceptConcept_IsSuperConceptOfOperation, myConceptConcept_NewInstance, myConceptContainmentLinkId, myConceptDevkitIdentity, myConceptDevkitPointer, myConceptEnumMemberReference, myConceptEnumMemberValueRefExpression, myConceptEnumMember_NameOperation, myConceptEnumMember_ValueOperation, myConceptEqualsStructurallyExpression, myConceptExactConceptCase, myConceptGeneratorIdentity, myConceptGeneratorModulePointer, myConceptIConceptSwitchCase, myConceptILinkAccess, myConceptILinkAccessQualifier, myConceptILinkAccessQualifierContainer, myConceptILinkQualifier, myConceptINodePointerArg, myConceptIPropertyQualifier, myConceptIRefConceptArg, myConceptIReferenceOperation, myConceptIfInstanceOfStatement, myConceptIfInstanceOfVarReference, myConceptIfInstanceOfVariable, myConceptLanguageId, myConceptLanguageIdentity, myConceptLanguageIdentityBySourceModule, myConceptLanguageRefExpression, myConceptLanguageReferenceExpression, myConceptLinkAttributeQualifier, myConceptLinkIdRefExpression, myConceptLinkList_AddNewChildOperation, myConceptLinkNameRefExpression, myConceptLinkQualifier, myConceptLinkRefExpression, myConceptLinkRefQualifier, myConceptLink_SetNewChildOperation, myConceptLink_SetTargetOperation, myConceptLink_SetTargetPointerOperation, myConceptModelPointerExpression, myConceptModelPointer_ResolveOperation, myConceptModelReferenceExpression, myConceptModel_AddRootOperation, myConceptModel_CreateNewNodeOperation, myConceptModel_CreateNewRootNodeOperation, myConceptModel_GetLongNameOperation, myConceptModel_GetModule, myConceptModel_NodesIncludingImportedOperation, myConceptModel_NodesOperation, myConceptModel_PointerOperation, myConceptModel_RootsIncludingImportedOperation, myConceptModel_RootsOperation, myConceptModuleIdentity, myConceptModulePointer, myConceptModuleRefExpression, myConceptModuleReferenceExpression, myConceptNodeAttributeQualifier, myConceptNodePointerArg_Identity, myConceptNodePointerExpression, myConceptNodePointerExpression_Old, myConceptNodePointer_ResolveOperation, myConceptNodeRefExpression, myConceptNode_ConceptMethodCall, myConceptNode_ContainingLinkOperation, myConceptNode_CopyOperation, myConceptNode_DeleteOperation, myConceptNode_DetachOperation, myConceptNode_GetAllSiblingsOperation, myConceptNode_GetAncestorOperation, myConceptNode_GetAncestorsOperation, myConceptNode_GetChildrenAndChildAttributesOperation, myConceptNode_GetChildrenOperation, myConceptNode_GetConceptOperation, myConceptNode_GetContainingLinkOperation, myConceptNode_GetContainingRoleOperation, myConceptNode_GetContainingRootOperation, myConceptNode_GetDescendantsOperation, myConceptNode_GetIndexInParentOperation, myConceptNode_GetModelOperation, myConceptNode_GetNextSiblingOperation, myConceptNode_GetNextSiblingsOperation, myConceptNode_GetParentOperation, myConceptNode_GetPrevSiblingOperation, myConceptNode_GetPrevSiblingsOperation, myConceptNode_GetReferenceOperation, myConceptNode_GetReferencesOperation, myConceptNode_GetReferentSearchScopeOperation, myConceptNode_GetSConceptOperation, myConceptNode_InsertNewNextSiblingOperation, myConceptNode_InsertNewPrevSiblingOperation, myConceptNode_InsertNextSiblingOperation, myConceptNode_InsertPrevSiblingOperation, myConceptNode_IsAttributeOperation, myConceptNode_IsInstanceOfOperation, myConceptNode_IsNotNullOperation, myConceptNode_IsNullOperation, myConceptNode_IsRoleOperation, myConceptNode_PointerOperation, myConceptNode_ReplaceWithAnotherOperation, myConceptNode_ReplaceWithNewOperation, myConceptOfConceptOperation, myConceptOperationParm_Concept, myConceptOperationParm_ConceptList, myConceptOperationParm_Inclusion, myConceptOperationParm_LinkQualifier, myConceptOperationParm_Root, myConceptOperationParm_SameMetaLevel, myConceptOperationParm_StopConceptList, myConceptPoundExpression, myConceptPropertyAttributeQualifier, myConceptPropertyId, myConceptPropertyIdRefExpression, myConceptPropertyIdentity, myConceptPropertyNameRefExpression, myConceptPropertyQualifier, myConceptProperty_HasValue_Enum, myConceptProperty_HasValue_Simple, myConceptProperty_RemoveOperation, myConceptProperty_SetOperation, myConceptRefConcept_Reference, myConceptReferenceLinkId, myConceptReference_ContainingLinkOperation, myConceptReference_GetLinkDeclarationOperation, myConceptReference_GetResolveInfo, myConceptReference_GetRoleOperation, myConceptReference_GetTargetOperation, myConceptSConceptOperation, myConceptSConceptType, myConceptSConceptTypeCastExpression, myConceptSConceptTypeLiteral, myConceptSEnumMemberOperation, myConceptSEnumMemberType, myConceptSEnumOperation, myConceptSEnumOperationInvocation, myConceptSEnum_MemberForNameOperation, myConceptSEnum_MemberForValueOperation, myConceptSEnum_MemberOperation, myConceptSEnum_MembersOperation, myConceptSLinkAccess, myConceptSLinkImplicitSelect, myConceptSLinkListAccess, myConceptSModelPointerType, myConceptSModelType, myConceptSNodeCreator, myConceptSNodeListCreator, myConceptSNodeListType, myConceptSNodeOperation, myConceptSNodePointerType, myConceptSNodeType, myConceptSNodeTypeCastExpression, myConceptSPropertyAccess, myConceptSReferenceType, myConceptSearchScopeType, myConceptSearchScope_ContainsOperation, myConceptSemanticDowncastExpression, myConceptSubconceptCase);
   }
 
   @Override
@@ -312,6 +315,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptILinkAccessQualifierContainer;
       case LanguageConceptSwitch.ILinkQualifier:
         return myConceptILinkQualifier;
+      case LanguageConceptSwitch.INodePointerArg:
+        return myConceptINodePointerArg;
       case LanguageConceptSwitch.IPropertyQualifier:
         return myConceptIPropertyQualifier;
       case LanguageConceptSwitch.IRefConceptArg:
@@ -352,6 +357,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLink_SetNewChildOperation;
       case LanguageConceptSwitch.Link_SetTargetOperation:
         return myConceptLink_SetTargetOperation;
+      case LanguageConceptSwitch.Link_SetTargetPointerOperation:
+        return myConceptLink_SetTargetPointerOperation;
       case LanguageConceptSwitch.ModelPointerExpression:
         return myConceptModelPointerExpression;
       case LanguageConceptSwitch.ModelPointer_ResolveOperation:
@@ -388,6 +395,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptModuleReferenceExpression;
       case LanguageConceptSwitch.NodeAttributeQualifier:
         return myConceptNodeAttributeQualifier;
+      case LanguageConceptSwitch.NodePointerArg_Identity:
+        return myConceptNodePointerArg_Identity;
       case LanguageConceptSwitch.NodePointerExpression:
         return myConceptNodePointerExpression;
       case LanguageConceptSwitch.NodePointerExpression_Old:
@@ -1013,6 +1022,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/2788452359612124330");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForINodePointerArg() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel", "INodePointerArg", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91e65L);
+    b.interface_();
+    b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/3320646261221695077");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIPropertyQualifier() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel", "IPropertyQualifier", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccabL);
     b.interface_();
@@ -1193,6 +1208,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("set");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForLink_SetTargetPointerOperation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel", "Link_SetTargetPointerOperation", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0xd13da596bcfef4eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.smodel.structure.SNodeOperation", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL);
+    b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/942336824646299470");
+    b.aggregate("linkTarget", 0xd13da596bcfef4fL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91e65L).optional(false).ordered(true).multiple(false).origin("942336824646299471").done();
+    b.alias("set ptr");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForModelPointerExpression() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel", "ModelPointerExpression", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x19dc9460645cfdd7L);
     b.class_(true, false, false);
@@ -1364,6 +1388,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.smodel.structure.AttributeQualifier", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9abL);
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/6407023681583036853");
     b.associate("attributeConcept", 0x58ea5217b045b9b6L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(false).origin("6407023681583036854").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNodePointerArg_Identity() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.smodel", "NodePointerArg_Identity", 0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91ebdL);
+    b.class_(false, false, false);
+    b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91e65L);
+    b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/3320646261221695165");
+    b.aggregate("ref", 0x2e154e2e58d91f06L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L).optional(false).ordered(true).multiple(false).origin("3320646261221695238").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodePointerExpression() {
@@ -1841,6 +1873,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1188696e5f6L);
     b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x26b292a5afc7ccaaL);
     b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L);
+    b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2e154e2e58d91e65L);
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/1204834851141");
     b.aggregate("expression", 0x11885c11e0fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1204834868751").done();
     b.alias("# <expr>");

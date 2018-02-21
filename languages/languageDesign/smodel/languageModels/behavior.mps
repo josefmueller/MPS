@@ -8929,6 +8929,30 @@
       <node concept="3clFbS" id="6qMaajUPNCA" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="32EzhoU4lMk">
+    <property role="3GE5qa" value="operation.model" />
+    <ref role="13h7C2" to="tp25:32EzhoU4lKl" resolve="Model_PointerOperation" />
+    <node concept="13i0hz" id="32EzhoU4lOQ" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="applicableToModel" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="1653mnvAf1y" resolve="applicableToModel" />
+      <node concept="3Tm1VV" id="32EzhoU4lOR" role="1B3o_S" />
+      <node concept="3clFbS" id="32EzhoU4lOW" role="3clF47">
+        <node concept="3clFbF" id="32EzhoU4lVW" role="3cqZAp">
+          <node concept="3clFbT" id="32EzhoU4lVV" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="32EzhoU4lOX" role="3clF45" />
+    </node>
+    <node concept="13hLZK" id="32EzhoU4lMl" role="13h7CW">
+      <node concept="3clFbS" id="32EzhoU4lMm" role="2VODD2" />
+    </node>
+  </node>
   <node concept="13h7C7" id="78qQRpbgiwZ">
     <property role="3GE5qa" value="identity" />
     <ref role="13h7C2" to="tp25:78qQRpbfOQY" resolve="DevkitIdentity" />
@@ -9194,28 +9218,28 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="32EzhoU4lMk">
-    <property role="3GE5qa" value="operation.model" />
-    <ref role="13h7C2" to="tp25:32EzhoU4lKl" resolve="Model_PointerOperation" />
-    <node concept="13i0hz" id="32EzhoU4lOQ" role="13h7CS">
+  <node concept="13h7C7" id="OjQ__FNYYn">
+    <property role="3GE5qa" value="operation.link" />
+    <ref role="13h7C2" to="tp25:OjQ__FNYXe" resolve="Link_SetTargetPointerOperation" />
+    <node concept="13hLZK" id="OjQ__FNYYo" role="13h7CW">
+      <node concept="3clFbS" id="OjQ__FNYYp" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="27bmCWAkZMN" role="13h7CS">
       <property role="2Ki8OM" value="true" />
       <property role="13i0is" value="false" />
-      <property role="TrG5h" value="applicableToModel" />
+      <property role="TrG5h" value="applicableToLink" />
       <property role="13i0it" value="false" />
       <property role="13i0iv" value="false" />
-      <ref role="13i0hy" node="1653mnvAf1y" resolve="applicableToModel" />
-      <node concept="3Tm1VV" id="32EzhoU4lOR" role="1B3o_S" />
-      <node concept="3clFbS" id="32EzhoU4lOW" role="3clF47">
-        <node concept="3clFbF" id="32EzhoU4lVW" role="3cqZAp">
-          <node concept="3clFbT" id="32EzhoU4lVV" role="3clFbG">
+      <ref role="13i0hy" node="1653mnvAgvK" resolve="applicableToLink" />
+      <node concept="3Tm1VV" id="27bmCWAkZMO" role="1B3o_S" />
+      <node concept="3clFbS" id="27bmCWAkZMT" role="3clF47">
+        <node concept="3cpWs6" id="27bmCWAl17$" role="3cqZAp">
+          <node concept="3clFbT" id="27bmCWAl17D" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
-      <node concept="10P_77" id="32EzhoU4lOX" role="3clF45" />
-    </node>
-    <node concept="13hLZK" id="32EzhoU4lMl" role="13h7CW">
-      <node concept="3clFbS" id="32EzhoU4lMm" role="2VODD2" />
+      <node concept="10P_77" id="27bmCWAkZMU" role="3clF45" />
     </node>
   </node>
 </model>

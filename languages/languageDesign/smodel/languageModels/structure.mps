@@ -372,8 +372,8 @@
     <node concept="1TJgyj" id="gAoxUXx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="linkTarget" />
-      <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1140725362529" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -1176,6 +1176,9 @@
     </node>
     <node concept="PrWs8" id="hzM$pmB" role="PzmwI">
       <ref role="PrY4T" node="hzMxujR" resolve="IRefConceptArg" />
+    </node>
+    <node concept="PrWs8" id="2SljyToQnWx" role="PzmwI">
+      <ref role="PrY4T" node="2SljyToQhT_" resolve="INodePointerArg" />
     </node>
   </node>
   <node concept="PlHQZ" id="hy6_InQ">
@@ -2881,6 +2884,14 @@
     <property role="R4oN_" value="resolve node in repository" />
     <ref role="1TJDcQ" node="3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
   </node>
+  <node concept="1TIwiD" id="3xFa6mqMw9a">
+    <property role="EcuMT" value="4065387505485742666" />
+    <property role="3GE5qa" value="operation" />
+    <property role="TrG5h" value="ModelPointer_ResolveOperation" />
+    <property role="R4oN_" value="resolve model in repository" />
+    <property role="34LRSv" value="resolve" />
+    <ref role="1TJDcQ" node="3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
+  </node>
   <node concept="1TIwiD" id="3xFa6mqMwat">
     <property role="EcuMT" value="4065387505485742749" />
     <property role="3GE5qa" value="operation" />
@@ -2900,13 +2911,13 @@
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
-  <node concept="1TIwiD" id="3xFa6mqMw9a">
-    <property role="EcuMT" value="4065387505485742666" />
-    <property role="3GE5qa" value="operation" />
-    <property role="TrG5h" value="ModelPointer_ResolveOperation" />
-    <property role="R4oN_" value="resolve model in repository" />
-    <property role="34LRSv" value="resolve" />
-    <ref role="1TJDcQ" node="3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
+  <node concept="1TIwiD" id="32EzhoU4lKl">
+    <property role="EcuMT" value="3506770386464365589" />
+    <property role="3GE5qa" value="operation.model" />
+    <property role="TrG5h" value="Model_PointerOperation" />
+    <property role="34LRSv" value="pointer" />
+    <property role="R4oN_" value="persistable pointer to a model" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
   <node concept="1TIwiD" id="1Bs_61$nfRn">
     <property role="EcuMT" value="1863527487546129879" />
@@ -2957,13 +2968,41 @@
     <property role="TrG5h" value="DevkitIdentity" />
     <property role="EcuMT" value="8222125370833325502" />
   </node>
-  <node concept="1TIwiD" id="32EzhoU4lKl">
-    <property role="EcuMT" value="3506770386464365589" />
-    <property role="3GE5qa" value="operation.model" />
-    <property role="TrG5h" value="Model_PointerOperation" />
-    <property role="34LRSv" value="pointer" />
-    <property role="R4oN_" value="persistable pointer to a model" />
+  <node concept="1TIwiD" id="OjQ__FNYXe">
+    <property role="EcuMT" value="942336824646299470" />
+    <property role="3GE5qa" value="operation.link" />
+    <property role="TrG5h" value="Link_SetTargetPointerOperation" />
+    <property role="34LRSv" value="set ptr" />
+    <property role="R4oN_" value="set referent with pointer" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyj" id="OjQ__FNYXf" role="1TKVEi">
+      <property role="IQ2ns" value="942336824646299471" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="linkTarget" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2SljyToQhT_" resolve="INodePointerArg" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="2SljyToQhT_">
+    <property role="EcuMT" value="3320646261221695077" />
+    <property role="3GE5qa" value="operation.parameter" />
+    <property role="TrG5h" value="INodePointerArg" />
+  </node>
+  <node concept="1TIwiD" id="2SljyToQhUX">
+    <property role="EcuMT" value="3320646261221695165" />
+    <property role="3GE5qa" value="operation.parameter" />
+    <property role="TrG5h" value="NodePointerArg_Identity" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2SljyToQhW3" role="PzmwI">
+      <ref role="PrY4T" node="2SljyToQhT_" resolve="INodePointerArg" />
+    </node>
+    <node concept="1TJgyj" id="2SljyToQhW6" role="1TKVEi">
+      <property role="IQ2ns" value="3320646261221695238" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="ref" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
   </node>
 </model>
 
