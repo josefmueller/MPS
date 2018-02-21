@@ -3104,19 +3104,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="5dt5FDZHmAA" role="3cqZAp">
-                    <node concept="2OqwBi" id="5dt5FDZHmAB" role="3clFbG">
-                      <node concept="37vLTw" id="5dt5FDZHmAC" role="2Oq$k0">
-                        <ref role="3cqZAo" node="5dt5FDZHmAa" resolve="options" />
-                      </node>
-                      <node concept="TSZUe" id="5dt5FDZHmAD" role="2OqNvi">
-                        <node concept="10M0yZ" id="5dt5FDZHmAE" role="25WWJ7">
-                          <ref role="3cqZAo" to="5yex:5z_gLGeozXI" resolve="OPTION" />
-                          <ref role="1PxDUh" to="5yex:6yOdP6c3Y0b" resolve="UpdateLocalInstancesParticipant" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbH" id="5dt5FDZHmAF" role="3cqZAp" />
                   <node concept="3clFbF" id="5dt5FDZHmAG" role="3cqZAp">
                     <node concept="2OqwBi" id="5dt5FDZHmAH" role="3clFbG">

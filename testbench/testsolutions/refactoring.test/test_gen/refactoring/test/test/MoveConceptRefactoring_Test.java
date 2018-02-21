@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
@@ -82,7 +81,6 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
         ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
 
         ListSequence.fromList(options).addElement(MoveAspectsParticipant.OPTION);
-        ListSequence.fromList(options).addElement(UpdateLocalInstancesParticipant.OPTION);
 
         ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
         ListSequence.fromList(options).addElement(MoveNodeRefactoringLogParticipant.OPTION);
