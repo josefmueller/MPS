@@ -182,11 +182,18 @@
     <component>
       <implementation-class>jetbrains.mps.ide.findusages.caches.MPSIndexableFileSet</implementation-class>
     </component>
+
     <!-- language development workbench -->
     <component>
       <interface-class>jetbrains.mps.ide.make.StartupModuleMaker</interface-class>
       <headless-implementation-class>jetbrains.mps.ide.make.DummyStartupModuleMaker</headless-implementation-class>
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMakerImpl</implementation-class>
+    </component>
+
+    <!-- migration: versions handling -->
+    <component>
+      <interface-class>jetbrains.mps.migration.global.MigrationProperties</interface-class>
+      <implementation-class>jetbrains.mps.migration.global.ProjectMigrationProperties</implementation-class>
     </component>
   </project-components>
 

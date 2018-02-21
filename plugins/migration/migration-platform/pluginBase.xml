@@ -25,10 +25,6 @@
 
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.migration.global.MigrationProperties</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.ProjectMigrationProperties</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.ide.migration.IStartupMigrationExecutor</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.MigrationTrigger</implementation-class>
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
