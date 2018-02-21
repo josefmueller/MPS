@@ -31,6 +31,10 @@ public class AntTaskExecutionUtil {
    */
   private static final String OUT_FILE_NAME = "migration_result.properties";
 
+
+  /**
+   * Do not change this method's signature. It is used from MigrationWorker
+   */
   public static void migrate(final Project project) throws Exception {
     MigrationRegistry m = ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class);
 
