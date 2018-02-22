@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root>
+    <file name="ArgumentReference_SubstituteMenu.java">
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.test.generator.editor.ArgumentReference_SubstituteMenu$SMP_ReferenceScope_cdtjrp_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.test.generator.editor.ArgumentReference_SubstituteMenu" />
+    </file>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="15,0,32,0" name="jetbrains.mps.lang.test.generator.editor.EditorAspectDescriptorImpl" />
+    </file>
+  </root>
+</debug-info>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root nodeRef="r:da23e88f-09a4-4e69-a500-4e0698866fc9(jetbrains.mps.lang.test.generator.rt)/4153091185618203835">
+    <file name="BaseGeneratorTest.java">
+      <unit id="4153091185618203835" at="6,0,8,0" name="jetbrains.mps.lang.test.generator.rt.BaseGeneratorTest" />
+    </file>
+  </root>
+</debug-info>
+
