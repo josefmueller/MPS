@@ -4335,6 +4335,31 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbJ" id="1X04B8zJOlq" role="3cqZAp">
+                <property role="TyiWK" value="false" />
+                <property role="TyiWL" value="true" />
+                <node concept="3clFbS" id="1X04B8zJOls" role="3clFbx">
+                  <node concept="3clFbF" id="1X04B8zJRO2" role="3cqZAp">
+                    <node concept="37vLTI" id="1X04B8zJS3u" role="3clFbG">
+                      <node concept="1rXfSq" id="1X04B8zJSjp" role="37vLTx">
+                        <ref role="37wK5l" to="exr9:~DefaultEditorMessage.getCellForParentNodeInMainEditor(jetbrains.mps.nodeEditor.EditorComponent):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getCellForParentNodeInMainEditor" />
+                        <node concept="37vLTw" id="1X04B8zJTcq" role="37wK5m">
+                          <ref role="3cqZAo" node="42hl10VHacp" resolve="editor" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="1X04B8zJRO0" role="37vLTJ">
+                        <ref role="3cqZAo" node="42hl10VHabr" resolve="cell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbC" id="1X04B8zJQo2" role="3clFbw">
+                  <node concept="10Nm6u" id="1X04B8zJQv9" role="3uHU7w" />
+                  <node concept="37vLTw" id="1X04B8zJQ8B" role="3uHU7B">
+                    <ref role="3cqZAo" node="42hl10VHabr" resolve="cell" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbJ" id="42hl10VHabv" role="3cqZAp">
                 <node concept="3clFbC" id="42hl10VHabB" role="3clFbw">
                   <node concept="37vLTw" id="3GM_nagTrpt" role="3uHU7B">

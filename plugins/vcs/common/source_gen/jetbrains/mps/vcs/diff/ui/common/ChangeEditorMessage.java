@@ -310,6 +310,9 @@ __switch__:
         }
       });
       if (cell == null) {
+        cell = getCellForParentNodeInMainEditor(editor);
+      }
+      if (cell == null) {
         return new Bounds(-1, -1);
       }
       if (cmt.getRole().equals(cell.getRole())) {
