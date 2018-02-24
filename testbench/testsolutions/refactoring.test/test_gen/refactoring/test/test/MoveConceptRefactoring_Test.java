@@ -53,7 +53,7 @@ import jetbrains.mps.ide.ThreadUtils;
 
 public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
   private static final Logger LOG = LogManager.getLogger(MoveConceptRefactoring_Test.class);
-  private static final String PROJECT_PATH = "testbench/modules/testRefactoring/";
+  private static final String PROJECT_PATH = "testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/";
   private Project project;
   public void test_moveConcept_MPS_27372() throws Exception {
     // this is not formally correct to store SModule, but ok for testing purposes 

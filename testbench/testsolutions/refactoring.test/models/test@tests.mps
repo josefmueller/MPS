@@ -2914,7 +2914,7 @@
       <node concept="3Tm6S6" id="5dt5FDZHm_D" role="1B3o_S" />
       <node concept="17QB3L" id="5dt5FDZHm_E" role="1tU5fm" />
       <node concept="Xl_RD" id="5dt5FDZHm_F" role="33vP2m">
-        <property role="Xl_RC" value="testbench/modules/testRefactoring/" />
+        <property role="Xl_RC" value="testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/" />
       </node>
     </node>
     <node concept="3Tm1VV" id="5dt5FDZHm_G" role="1B3o_S" />
