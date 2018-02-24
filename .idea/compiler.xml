@@ -729,12 +729,12 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/SourceLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/TargetLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/TargetLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoring/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/modules/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSmartRefAttrMigration/languages/test.language.ext/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSmartRefAttrMigration/languages/test.language/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includeSubdirectories="true" />

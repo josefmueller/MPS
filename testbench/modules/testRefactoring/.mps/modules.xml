@@ -4,9 +4,6 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/SourceLanguage/SourceLanguage.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/TargetLanguage/TargetLanguage.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution/jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.msd" folder="tests.testRefactoring.material.moveConcept" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
-      <modulePath path="$PROJECT_DIR$/languages/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage/jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage.mpl" folder="tests.testRefactoring.material.moveConcept" />
     </projectModules>
   </component>
 </project>
