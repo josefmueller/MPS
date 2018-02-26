@@ -2,7 +2,7 @@
 <solution name="jetbrains.mps.smodel.test" uuid="d2213aeb-6827-43e6-8179-d5886cfd0bb6" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="jetbrains" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <sourcePath />
