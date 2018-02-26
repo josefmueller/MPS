@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="refactoring.test.test.HeadlessRefactoringUI" file="HeadlessRefactoringUI.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" file="HeadlessRefactoringUI.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -21,7 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
   </dependency>
-  <dependency className="refactoring.test.test.MoveConceptRefactoring_Test" file="MoveConceptRefactoring_Test.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test" file="MoveConceptRefactoring_Test.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.io.File" />
@@ -64,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
@@ -76,10 +77,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
-    <classNode dependClassName="refactoring.test.test.HeadlessRefactoringUI" />
     <classNode extendsClassName="jetbrains.mps.testbench.EnvironmentAwareTestCase" />
   </dependency>
-  <dependency className="refactoring.test.test.Refactoring_Test" file="Refactoring_Test.java">
+  <dependency className="jetbrains.mps.refactoring.test.test.Refactoring_Test" file="Refactoring_Test.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -121,6 +121,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
@@ -130,7 +131,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
-    <classNode dependClassName="refactoring.test.test.HeadlessRefactoringUI" />
     <classNode extendsClassName="jetbrains.mps.testbench.EnvironmentAwareTestCase" />
   </dependency>
 </dependenciesRoot>

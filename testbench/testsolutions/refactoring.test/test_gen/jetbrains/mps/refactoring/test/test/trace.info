@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(refactoring.test.test@tests)/6006982468244433255">
+  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(jetbrains.mps.refactoring.test.test@tests)/6006982468244433255">
     <file name="MoveConceptRefactoring_Test.java">
       <node id="6006982468244433255" at="55,0,56,0" concept="10" trace="LOG" />
       <node id="6006982468244433256" at="56,0,57,0" concept="10" trace="PROJECT_PATH" />
@@ -206,19 +206,19 @@
         <var name="targetModule" id="6006982468244684861" />
       </scope>
       <scope id="6006982468244433262" at="58,0,166,0" />
-      <unit id="6155501835151801369" at="119,63,123,5" name="refactoring.test.test.MoveConceptRefactoring_Test$4" />
-      <unit id="6006982468244433853" at="176,51,181,5" name="refactoring.test.test.MoveConceptRefactoring_Test$7" />
-      <unit id="6006982468244941897" at="155,63,161,5" name="refactoring.test.test.MoveConceptRefactoring_Test$6" />
-      <unit id="6006982468244725869" at="62,63,69,5" name="refactoring.test.test.MoveConceptRefactoring_Test$1" />
-      <unit id="6006982468244568900" at="102,63,109,5" name="refactoring.test.test.MoveConceptRefactoring_Test$3" />
-      <unit id="1592025086120665778" at="139,58,147,5" name="refactoring.test.test.MoveConceptRefactoring_Test$5" />
-      <unit id="6006982468244433893" at="189,52,198,9" name="refactoring.test.test.MoveConceptRefactoring_Test$8$1" />
-      <unit id="6006982468244433885" at="187,41,200,5" name="refactoring.test.test.MoveConceptRefactoring_Test$8" />
-      <unit id="6006982468244433268" at="71,19,96,5" name="refactoring.test.test.MoveConceptRefactoring_Test$2" />
-      <unit id="6006982468244433255" at="54,0,206,0" name="refactoring.test.test.MoveConceptRefactoring_Test" />
+      <unit id="6155501835151801369" at="119,63,123,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$4" />
+      <unit id="6006982468244433853" at="176,51,181,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$7" />
+      <unit id="6006982468244941897" at="155,63,161,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$6" />
+      <unit id="6006982468244725869" at="62,63,69,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$1" />
+      <unit id="6006982468244568900" at="102,63,109,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$3" />
+      <unit id="1592025086120665778" at="139,58,147,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$5" />
+      <unit id="6006982468244433893" at="189,52,198,9" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$8$1" />
+      <unit id="6006982468244433885" at="187,41,200,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$8" />
+      <unit id="6006982468244433268" at="71,19,96,5" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test$2" />
+      <unit id="6006982468244433255" at="54,0,206,0" name="jetbrains.mps.refactoring.test.test.MoveConceptRefactoring_Test" />
     </file>
   </root>
-  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(refactoring.test.test@tests)/6426415869175446607">
+  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(jetbrains.mps.refactoring.test.test@tests)/6426415869175446607">
     <file name="HeadlessRefactoringUI.java">
       <node id="3893167010912522108" at="22,0,23,0" concept="2" trace="myOptions" />
       <node id="3893167010912527634" at="23,77,24,24" concept="1" />
@@ -356,12 +356,12 @@
         <var name="session" id="3893167010912559600" />
         <var name="task" id="3893167010912559592" />
       </scope>
-      <unit id="3893167010911873838" at="46,0,71,0" name="refactoring.test.test.HeadlessRefactoringUI$OptionsChecker" />
-      <unit id="3893167010912559536" at="72,0,101,0" name="refactoring.test.test.HeadlessRefactoringUI$SearchResultsChecker" />
-      <unit id="6426415869175446607" at="21,0,102,0" name="refactoring.test.test.HeadlessRefactoringUI" />
+      <unit id="3893167010911873838" at="46,0,71,0" name="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI$OptionsChecker" />
+      <unit id="3893167010912559536" at="72,0,101,0" name="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI$SearchResultsChecker" />
+      <unit id="6426415869175446607" at="21,0,102,0" name="jetbrains.mps.refactoring.test.test.HeadlessRefactoringUI" />
     </file>
   </root>
-  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(refactoring.test.test@tests)/8449002106978639305">
+  <root nodeRef="r:7da8cb5d-b937-4ac8-a4e8-0f345dfd2711(jetbrains.mps.refactoring.test.test@tests)/8449002106978639305">
     <file name="Refactoring_Test.java">
       <node id="8449002106978639917" at="51,0,52,0" concept="10" trace="PROJECT_PATH" />
       <node id="8449002106978648755" at="52,0,53,0" concept="2" trace="project" />
@@ -549,18 +549,18 @@
       <scope id="7883921615535863974" at="96,0,120,0" />
       <scope id="8444106438216294740" at="120,68,152,7" />
       <scope id="8444106438216294737" at="120,0,154,0" />
-      <unit id="7883921615533993355" at="139,87,143,9" name="refactoring.test.test.Refactoring_Test$6$1" />
-      <unit id="7883921615532134474" at="146,219,150,9" name="refactoring.test.test.Refactoring_Test$6$2" />
-      <unit id="7883921615531239876" at="163,51,168,5" name="refactoring.test.test.Refactoring_Test$7" />
-      <unit id="6520659782568757933" at="111,63,118,5" name="refactoring.test.test.Refactoring_Test$4" />
-      <unit id="1646528537536977762" at="176,52,185,9" name="refactoring.test.test.Refactoring_Test$8$1" />
-      <unit id="7883921615535863980" at="97,19,108,5" name="refactoring.test.test.Refactoring_Test$3" />
-      <unit id="8444106438216294743" at="121,19,132,5" name="refactoring.test.test.Refactoring_Test$5" />
-      <unit id="4561536768497792346" at="174,41,187,5" name="refactoring.test.test.Refactoring_Test$8" />
-      <unit id="6426415869175649107" at="78,19,94,5" name="refactoring.test.test.Refactoring_Test$2" />
-      <unit id="6520659782568550545" at="135,63,152,5" name="refactoring.test.test.Refactoring_Test$6" />
-      <unit id="4198123050698075211" at="54,19,75,5" name="refactoring.test.test.Refactoring_Test$1" />
-      <unit id="8449002106978639305" at="50,0,193,0" name="refactoring.test.test.Refactoring_Test" />
+      <unit id="7883921615533993355" at="139,87,143,9" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$6$1" />
+      <unit id="7883921615532134474" at="146,219,150,9" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$6$2" />
+      <unit id="7883921615531239876" at="163,51,168,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$7" />
+      <unit id="6520659782568757933" at="111,63,118,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$4" />
+      <unit id="1646528537536977762" at="176,52,185,9" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$8$1" />
+      <unit id="7883921615535863980" at="97,19,108,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$3" />
+      <unit id="8444106438216294743" at="121,19,132,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$5" />
+      <unit id="4561536768497792346" at="174,41,187,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$8" />
+      <unit id="6426415869175649107" at="78,19,94,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$2" />
+      <unit id="6520659782568550545" at="135,63,152,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$6" />
+      <unit id="4198123050698075211" at="54,19,75,5" name="jetbrains.mps.refactoring.test.test.Refactoring_Test$1" />
+      <unit id="8449002106978639305" at="50,0,193,0" name="jetbrains.mps.refactoring.test.test.Refactoring_Test" />
     </file>
   </root>
 </debug-info>
