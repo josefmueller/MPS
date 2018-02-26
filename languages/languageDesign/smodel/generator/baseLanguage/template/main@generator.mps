@@ -21774,6 +21774,53 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="pO34dqle4O" role="3acgRq">
+      <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
+      <node concept="30G5F_" id="pO34dqle4P" role="30HLyM">
+        <node concept="3clFbS" id="pO34dqle4Q" role="2VODD2">
+          <node concept="3clFbF" id="pO34dqle4R" role="3cqZAp">
+            <node concept="2OqwBi" id="pO34dqle4S" role="3clFbG">
+              <node concept="2OqwBi" id="pO34dqle4T" role="2Oq$k0">
+                <node concept="2OqwBi" id="pO34dqle4U" role="2Oq$k0">
+                  <node concept="30H73N" id="pO34dqle4V" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="pO34dqle4W" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                  </node>
+                </node>
+                <node concept="2yIwOk" id="pO34dqle4X" role="2OqNvi" />
+              </node>
+              <node concept="2Zo12i" id="pO34dqle4Y" role="2OqNvi">
+                <node concept="chp4Y" id="pO34dqlfvJ" role="2Zo12j">
+                  <ref role="cht4Q" to="tp25:5kLyeZleWQw" resolve="NodePointer_GetModelOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="gft3U" id="pO34dqle50" role="1lVwrX">
+        <node concept="2YIFZM" id="pO34dqlfJ$" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:5kLyeZlfzW7" resolve="getModel" />
+          <ref role="1Pybhc" to="i8bi:3ayRDg9cgZG" resolve="SPointerOperations" />
+          <node concept="10Nm6u" id="pO34dqlfJI" role="37wK5m">
+            <node concept="29HgVG" id="pO34dqlfJZ" role="lGtFl">
+              <node concept="3NFfHV" id="pO34dqlfK0" role="3NFExx">
+                <node concept="3clFbS" id="pO34dqlfK1" role="2VODD2">
+                  <node concept="3clFbF" id="pO34dqlfK7" role="3cqZAp">
+                    <node concept="2OqwBi" id="pO34dqlfK2" role="3clFbG">
+                      <node concept="3TrEf2" id="pO34dqlfK5" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
+                      </node>
+                      <node concept="30H73N" id="pO34dqlfK6" role="2Oq$k0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="jVnub" id="3xFa6mqMI4K">
     <property role="TrG5h" value="switch_AbstractPointerResolveOperation" />

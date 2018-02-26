@@ -17212,6 +17212,48 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="5kLyeZlfy0R" role="jymVt" />
+    <node concept="2YIFZL" id="5kLyeZlfzW7" role="jymVt">
+      <property role="TrG5h" value="getModel" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5kLyeZlfzWa" role="3clF47">
+        <node concept="3clFbJ" id="5kLyeZlfzZF" role="3cqZAp">
+          <node concept="3clFbC" id="5kLyeZlfzZG" role="3clFbw">
+            <node concept="10Nm6u" id="5kLyeZlfzZH" role="3uHU7w" />
+            <node concept="37vLTw" id="5kLyeZlfzZI" role="3uHU7B">
+              <ref role="3cqZAo" node="5kLyeZlfzZa" resolve="ref" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="5kLyeZlfzZJ" role="3clFbx">
+            <node concept="3cpWs6" id="5kLyeZlfzZK" role="3cqZAp">
+              <node concept="10Nm6u" id="5kLyeZlfzZL" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5kLyeZlfzZM" role="3cqZAp">
+          <node concept="2OqwBi" id="5kLyeZlfzZN" role="3cqZAk">
+            <node concept="37vLTw" id="5kLyeZlfzZO" role="2Oq$k0">
+              <ref role="3cqZAo" node="5kLyeZlfzZa" resolve="ref" />
+            </node>
+            <node concept="liA8E" id="5kLyeZlf$8s" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getModelReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5kLyeZlfzTa" role="1B3o_S" />
+      <node concept="3uibUv" id="5kLyeZlfzVX" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+      </node>
+      <node concept="37vLTG" id="5kLyeZlfzZa" role="3clF46">
+        <property role="TrG5h" value="ref" />
+        <node concept="3uibUv" id="5kLyeZlfzZ9" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="3ayRDg9cgZH" role="1B3o_S" />
   </node>
 </model>

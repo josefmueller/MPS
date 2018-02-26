@@ -35,4 +35,11 @@ public final class SPointerOperations {
     }
     return ref.resolve(repo);
   }
+
+  public static SModelReference getModel(SNodeReference ref) {
+    if (ref == null) {
+      return null;
+    }
+    return ref.getModelReference();
+  }
 }

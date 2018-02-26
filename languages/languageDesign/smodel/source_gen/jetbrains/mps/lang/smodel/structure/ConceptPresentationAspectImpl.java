@@ -101,6 +101,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodePointerArg_Identity;
   private ConceptPresentation props_NodePointerExpression;
   private ConceptPresentation props_NodePointerExpression_Old;
+  private ConceptPresentation props_NodePointer_GetModelOperation;
   private ConceptPresentation props_NodePointer_ResolveOperation;
   private ConceptPresentation props_NodeRefExpression;
   private ConceptPresentation props_Node_ConceptMethodCall;
@@ -872,6 +873,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodePointerExpression_Old = cpb.create();
         }
         return props_NodePointerExpression_Old;
+      case LanguageConceptSwitch.NodePointer_GetModelOperation:
+        if (props_NodePointer_GetModelOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("model");
+          props_NodePointer_GetModelOperation = cpb.create();
+        }
+        return props_NodePointer_GetModelOperation;
       case LanguageConceptSwitch.NodePointer_ResolveOperation:
         if (props_NodePointer_ResolveOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

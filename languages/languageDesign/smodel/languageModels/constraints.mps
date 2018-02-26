@@ -2975,5 +2975,39 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="5kLyeZleWS_">
+    <property role="3GE5qa" value="operation.pointer" />
+    <ref role="1M2myG" to="tp25:5kLyeZleWQw" resolve="NodePointer_GetModelOperation" />
+    <node concept="9S07l" id="5kLyeZleWSG" role="9Vyp8">
+      <node concept="3clFbS" id="5kLyeZleWSH" role="2VODD2">
+        <node concept="3clFbF" id="5kLyeZlf5u6" role="3cqZAp">
+          <node concept="2OqwBi" id="5kLyeZlf6$O" role="3clFbG">
+            <node concept="1UdQGJ" id="5kLyeZlf5u3" role="2Oq$k0">
+              <node concept="1YaCAy" id="5kLyeZlf5L4" role="1Ub_4A">
+                <property role="TrG5h" value="t" />
+                <ref role="1YaFvo" to="tp25:6qMaajUPFau" resolve="SNodePointerType" />
+              </node>
+              <node concept="2OqwBi" id="5kLyeZlf03H" role="1Ub_4B">
+                <node concept="2OqwBi" id="5kLyeZleYXQ" role="2Oq$k0">
+                  <node concept="1PxgMI" id="5kLyeZleYzi" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="5kLyeZleYER" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                    </node>
+                    <node concept="nLn13" id="5kLyeZleWZR" role="1m5AlR" />
+                  </node>
+                  <node concept="3TrEf2" id="3ZNt0EF$2UF" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
+                  </node>
+                </node>
+                <node concept="3JvlWi" id="5kLyeZlf0m3" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="5kLyeZlf74O" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

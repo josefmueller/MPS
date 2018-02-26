@@ -372,8 +372,8 @@
     <node concept="1TJgyj" id="gAoxUXx" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="linkTarget" />
-      <property role="IQ2ns" value="1140725362529" />
       <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1140725362529" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -2983,11 +2983,6 @@
       <ref role="20lvS9" node="2SljyToQhT_" resolve="INodePointerArg" />
     </node>
   </node>
-  <node concept="PlHQZ" id="2SljyToQhT_">
-    <property role="EcuMT" value="3320646261221695077" />
-    <property role="3GE5qa" value="operation.parameter" />
-    <property role="TrG5h" value="INodePointerArg" />
-  </node>
   <node concept="1TIwiD" id="2SljyToQhUX">
     <property role="EcuMT" value="3320646261221695165" />
     <property role="3GE5qa" value="operation.parameter" />
@@ -3004,6 +2999,11 @@
       <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
     </node>
   </node>
+  <node concept="PlHQZ" id="2SljyToQhT_">
+    <property role="EcuMT" value="3320646261221695077" />
+    <property role="3GE5qa" value="operation.parameter" />
+    <property role="TrG5h" value="INodePointerArg" />
+  </node>
   <node concept="1TIwiD" id="3bhfBP455GQ">
     <property role="EcuMT" value="3661776679762942774" />
     <property role="3GE5qa" value="operation.node" />
@@ -3017,6 +3017,16 @@
       <property role="20kJfa" value="ref" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5kLyeZleWQw">
+    <property role="EcuMT" value="6138838330738724256" />
+    <property role="3GE5qa" value="operation.pointer" />
+    <property role="TrG5h" value="NodePointer_GetModelOperation" />
+    <property role="34LRSv" value="model" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5kLyeZleWQE" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
 </model>

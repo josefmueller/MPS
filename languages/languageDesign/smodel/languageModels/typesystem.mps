@@ -14035,5 +14035,29 @@
       <ref role="1YaFvo" to="tp25:6qMaajUPFau" resolve="SNodePointerType" />
     </node>
   </node>
+  <node concept="1YbPZF" id="5kLyeZlff86">
+    <property role="TrG5h" value="typeof_NodePointer_GetModelOperation" />
+    <property role="3GE5qa" value="operation.pointer" />
+    <node concept="3clFbS" id="5kLyeZlff87" role="18ibNy">
+      <node concept="1Z5TYs" id="5kLyeZlffM3" role="3cqZAp">
+        <node concept="mw_s8" id="5kLyeZlffMv" role="1ZfhKB">
+          <node concept="2c44tf" id="5kLyeZlffMr" role="mwGJk">
+            <node concept="1XwpNF" id="5kLyeZlffMS" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="5kLyeZlffM6" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5kLyeZlfff2" role="mwGJk">
+            <node concept="1YBJjd" id="5kLyeZlffgP" role="1Z2MuG">
+              <ref role="1YBMHb" node="5kLyeZlff89" resolve="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5kLyeZlff89" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:5kLyeZleWQw" resolve="NodePointer_GetModelOperation" />
+    </node>
+  </node>
 </model>
 
