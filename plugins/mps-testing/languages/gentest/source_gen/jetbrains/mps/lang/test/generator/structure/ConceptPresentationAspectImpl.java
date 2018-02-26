@@ -38,6 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModelArgument:
         if (props_ModelArgument == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("points to a model in a context repository");
           cpb.presentationByName();
           props_ModelArgument = cpb.create();
         }

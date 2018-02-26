@@ -68,7 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093187774");
     b.prop("description", 0x7b1db36ecf09c64L, "554465258093190244");
     b.aggregate("arguments", 0x7b1db36ecf09c67L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6aL).optional(true).ordered(true).multiple(true).origin("554465258093190247").done();
-    b.aggregate("tests", 0x7b1db36ecf0d067L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L).optional(true).ordered(true).multiple(false).origin("554465258093203559").done();
+    b.aggregate("tests", 0x7b1db36ecf0d067L).target(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf0d058L).optional(true).ordered(true).multiple(true).origin("554465258093203559").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForModelArgument() {
@@ -77,6 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf09c6aL);
     b.origin("r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)/554465258093190254");
     b.aggregate("param", 0x7b1db36ecf09c72L).target(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x7d58bd9fd9c8b6d3L).optional(false).ordered(true).multiple(false).origin("554465258093190258").done();
+    b.alias("model");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestArgument() {
