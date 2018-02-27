@@ -3429,7 +3429,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="3pzB6wMX0f2" role="2OqNvi">
-                  <ref role="37wK5l" to="hhlx:KL8Aqll4ak" resolve="make" />
+                  <ref role="37wK5l" to="hhlx:6deNqA_6OCj" resolve="makeAndReload" />
                   <node concept="37vLTw" id="3pzB6wMX0qK" role="37wK5m">
                     <ref role="3cqZAo" node="1AfPmE4ty$3" resolve="session" />
                   </node>

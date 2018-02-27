@@ -121,7 +121,7 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
         inputRes.value = Sequence.fromIterable(new MakeActionParameters(project).modules(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value)).collectInput()).toListSequence();
       }
     });
-    Future<IResult> res = new BuildMakeService().make(session, inputRes.value);
+    Future<IResult> res = new BuildMakeService().makeAndReload(session, inputRes.value);
     try {
       Assert.assertTrue("Make was not successful", res.get().isSucessful());
     } catch (InterruptedException e) {
