@@ -356,6 +356,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return mySourceVirtualFile;
   }
 
+  public DataSource getSource() {
+    SRepository repository = getProjectRepository();
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
+      SModel model = myModelReference.resolve(repository);
+      return model.getSource();
+    });
+  }
+
   /* package */
 
   boolean isRoot(MPSPsiNode psiNode) {
