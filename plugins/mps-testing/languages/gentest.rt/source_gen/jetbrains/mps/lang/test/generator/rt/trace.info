@@ -1,8 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373:jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200:jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:da23e88f-09a4-4e69-a500-4e0698866fc9(jetbrains.mps.lang.test.generator.rt)/4153091185618203835">
     <file name="BaseGeneratorTest.java">
-      <unit id="4153091185618203835" at="6,0,8,0" name="jetbrains.mps.lang.test.generator.rt.BaseGeneratorTest" />
+      <node id="7985317431307681831" at="17,0,18,0" concept="3" trace="myEnv" />
+      <node id="7985317431307692557" at="18,0,19,0" concept="3" trace="myProject" />
+      <node id="7985317431307681835" at="22,56,23,16" concept="2" />
+      <node id="7985317431307689607" at="23,16,24,43" concept="2" />
+      <node id="7985317431306595394" at="27,52,28,42" concept="7" />
+      <node id="7985317431306785777" at="31,55,32,88" concept="8" />
+      <node id="7985317431306787147" at="32,88,33,80" concept="8" />
+      <node id="7985317431306787409" at="33,80,34,79" concept="8" />
+      <node id="7985317431306784439" at="34,79,35,101" concept="8" />
+      <node id="7985317431306784996" at="35,101,36,97" concept="8" />
+      <node id="7985317431306785246" at="36,97,37,110" concept="8" />
+      <node id="7985317431306734930" at="37,110,38,125" concept="6" />
+      <node id="7985317431306741590" at="38,125,39,42" concept="7" />
+      <node id="7985317431307192873" at="42,65,43,16" concept="7" />
+      <node id="2681075272524420264" at="46,53,47,16" concept="7" />
+      <node id="7985317431306595308" at="27,0,30,0" concept="5" trace="newTransformer#()Ljetbrains/mps/lang/test/generator/rt/TransformHelper;" />
+      <node id="7985317431307192419" at="42,0,45,0" concept="5" trace="planFromModel#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/generator/ModelGenerationPlan;" />
+      <node id="2681075272524417081" at="46,0,49,0" concept="5" trace="findModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="7985317431307681523" at="21,0,26,0" concept="5" trace="setEnvironment#(Ljetbrains/mps/tool/environment/Environment;)V" />
+      <node id="7985317431306654291" at="31,0,41,0" concept="5" trace="match#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <scope id="7985317431306595311" at="27,52,28,42" />
+      <scope id="7985317431307192423" at="42,65,43,16" />
+      <scope id="2681075272524417084" at="46,53,47,16" />
+      <scope id="7985317431307681530" at="22,56,24,43" />
+      <scope id="7985317431306595308" at="27,0,30,0" />
+      <scope id="7985317431307192419" at="42,0,45,0">
+        <var name="gpm" id="7985317431307192751" />
+      </scope>
+      <scope id="2681075272524417081" at="46,0,49,0">
+        <var name="modelRef" id="2681075272524419898" />
+      </scope>
+      <scope id="7985317431307681523" at="21,0,26,0">
+        <var name="env" id="7985317431307681527" />
+      </scope>
+      <scope id="7985317431306654294" at="31,55,39,42">
+        <var name="diff" id="7985317431306734931" />
+      </scope>
+      <scope id="7985317431306654291" at="31,0,41,0">
+        <var name="m1" id="7985317431306654337" />
+        <var name="m2" id="7985317431306654373" />
+      </scope>
+      <unit id="4153091185618203835" at="16,0,50,0" name="jetbrains.mps.lang.test.generator.rt.BaseGeneratorTest" />
+    </file>
+  </root>
+  <root nodeRef="r:da23e88f-09a4-4e69-a500-4e0698866fc9(jetbrains.mps.lang.test.generator.rt)/7985317431306548040">
+    <file name="TransformHelper.java">
+      <node id="7985317431306592130" at="20,0,21,0" concept="3" trace="myInputModel" />
+      <node id="7985317431306592557" at="21,0,22,0" concept="3" trace="myGenerationPlan" />
+      <node id="7985317431307415220" at="22,0,23,0" concept="3" trace="myProject" />
+      <node id="7985317431307589568" at="23,0,24,0" concept="3" trace="myGenOutcome" />
+      <node id="7985317431307415224" at="25,51,26,27" concept="2" />
+      <node id="7985317431306592134" at="28,54,29,30" concept="2" />
+      <node id="7985317431306593946" at="29,30,30,16" concept="7" />
+      <node id="7985317431306592561" at="32,70,33,38" concept="2" />
+      <node id="7985317431306594573" at="33,38,34,16" concept="7" />
+      <node id="7985317431307416178" at="37,38,38,55" concept="6" />
+      <node id="7985317431307628694" at="38,55,39,68" concept="8" />
+      <node id="7985317431307629998" at="39,68,40,53" concept="8" />
+      <node id="7985317431307414221" at="40,53,41,80" concept="6" />
+      <node id="7985317431307637764" at="43,25,44,86" concept="6" />
+      <node id="7985317431307634170" at="45,39,46,64" concept="2" />
+      <node id="2302908691473018035" at="47,9,48,85" concept="6" />
+      <node id="2302908691473017899" at="48,85,49,114" concept="6" />
+      <node id="7985317431307703004" at="49,114,50,101" concept="8" />
+      <node id="7985317431307527076" at="50,101,51,98" concept="6" />
+      <node id="2302908691473018044" at="51,98,52,108" concept="2" />
+      <node id="2302908691473018055" at="52,108,53,68" concept="2" />
+      <node id="7985317431307582731" at="53,68,54,59" concept="2" />
+      <node id="7985317431307561349" at="56,7,57,16" concept="7" />
+      <node id="7985317431307417761" at="57,16,58,0" concept="9" />
+      <node id="7985317431307600089" at="61,39,62,62" concept="0" />
+      <node id="7985317431307596866" at="62,62,63,24" concept="7" />
+      <node id="7985317431306589923" at="66,34,67,40" concept="7" />
+      <node id="7985317431306548084" at="25,0,28,0" concept="1" trace="TransformHelper#(Ljetbrains/mps/project/Project;)V" />
+      <node id="7985317431307646773" at="44,86,47,9" concept="4" />
+      <node id="7985317431306589797" at="66,0,69,0" concept="5" trace="getOutputModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="7985317431306548125" at="28,0,32,0" concept="5" trace="setInput#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/lang/test/generator/rt/TransformHelper;" />
+      <node id="7985317431306548464" at="32,0,36,0" concept="5" trace="setPlan#(Ljetbrains/mps/generator/ModelGenerationPlan;)Ljetbrains/mps/lang/test/generator/rt/TransformHelper;" />
+      <node id="7985317431306583810" at="61,0,65,0" concept="5" trace="getResult#()Ljetbrains/mps/generator/GenerationStatus;" />
+      <node id="7985317431307615469" at="43,0,56,0" concept="5" trace="run#()V" />
+      <node id="7985317431307604278" at="41,80,56,7" concept="2" />
+      <node id="7985317431306582342" at="37,0,60,0" concept="5" trace="transform#()Ljetbrains/mps/lang/test/generator/rt/TransformHelper;" />
+      <scope id="7985317431306548088" at="25,51,26,27" />
+      <scope id="7985317431307646775" at="45,39,46,64" />
+      <scope id="7985317431306589800" at="66,34,67,40" />
+      <scope id="7985317431306548129" at="28,54,30,16" />
+      <scope id="7985317431306548470" at="32,70,34,16" />
+      <scope id="7985317431306583814" at="61,39,63,24" />
+      <scope id="7985317431306548084" at="25,0,28,0">
+        <var name="mpsProject" id="7985317431307415171" />
+      </scope>
+      <scope id="7985317431306589797" at="66,0,69,0" />
+      <scope id="7985317431306548125" at="28,0,32,0">
+        <var name="inputModel" id="7985317431306548294" />
+      </scope>
+      <scope id="7985317431306548464" at="32,0,36,0">
+        <var name="generationPlan" id="7985317431306570613" />
+      </scope>
+      <scope id="7985317431306583810" at="61,0,65,0" />
+      <scope id="7985317431307615470" at="43,25,54,59">
+        <var name="genFacade" id="2302908691473018036" />
+        <var name="ideaProject" id="7985317431307527077" />
+        <var name="optBuilder" id="7985317431307637765" />
+        <var name="taskHandler" id="2302908691473017900" />
+      </scope>
+      <scope id="7985317431307615469" at="43,0,56,0" />
+      <scope id="7985317431306582346" at="37,38,58,0">
+        <var name="repo" id="7985317431307416179" />
+        <var name="tmp" id="7985317431307414222" />
+      </scope>
+      <scope id="7985317431306582342" at="37,0,60,0" />
+      <unit id="7985317431307615469" at="42,60,56,5" name="jetbrains.mps.lang.test.generator.rt.TransformHelper$1" />
+      <unit id="7985317431306548040" at="19,0,70,0" name="jetbrains.mps.lang.test.generator.rt.TransformHelper" />
     </file>
   </root>
 </debug-info>
