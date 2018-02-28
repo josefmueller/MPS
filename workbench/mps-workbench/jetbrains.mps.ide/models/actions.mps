@@ -3090,93 +3090,87 @@
       <property role="TrG5h" value="getNamespace" />
       <node concept="17QB3L" id="hP3nEwP" role="3clF45" />
       <node concept="3clFbS" id="hIWiwYo" role="3clF47">
+        <node concept="3cpWs8" id="A5pt9OPTlD" role="3cqZAp">
+          <node concept="3cpWsn" id="A5pt9OPTlE" role="3cpWs9">
+            <property role="TrG5h" value="namespace" />
+            <node concept="17QB3L" id="A5pt9OPTlQ" role="1tU5fm" />
+            <node concept="2OqwBi" id="A5pt9OPTlG" role="33vP2m">
+              <node concept="2OqwBi" id="5gYZRXo12Pz" role="2Oq$k0">
+                <node concept="2WthIp" id="5gYZRXo12PA" role="2Oq$k0" />
+                <node concept="1DTwFV" id="5gYZRXo12PC" role="2OqNvi">
+                  <ref role="2WH_rO" node="hIWpGMe" resolve="module" />
+                </node>
+              </node>
+              <node concept="liA8E" id="A5pt9OPTlI" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="A5pt9OPSpM" role="3cqZAp">
           <node concept="3clFbS" id="A5pt9OPSpN" role="3clFbx">
-            <node concept="3cpWs8" id="A5pt9OPTlt" role="3cqZAp">
-              <node concept="3cpWsn" id="A5pt9OPTlu" role="3cpWs9">
-                <property role="TrG5h" value="gen" />
-                <node concept="3uibUv" id="A5pt9OPTlv" role="1tU5fm">
-                  <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
-                </node>
-                <node concept="10QFUN" id="A5pt9OPTlw" role="33vP2m">
-                  <node concept="2OqwBi" id="A5pt9OPTlx" role="10QFUP">
-                    <node concept="2WthIp" id="A5pt9OPTly" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="A5pt9OPTlz" role="2OqNvi">
-                      <ref role="2WH_rO" node="hIWpGMe" resolve="module" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="A5pt9OPTl$" role="10QFUM">
-                    <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
-                  </node>
-                </node>
+            <node concept="3SKdUt" id="5gYZRXo17Kc" role="3cqZAp">
+              <node concept="3SKdUq" id="5gYZRXo17Ke" role="3SKWNk">
+                <property role="3SKdUp" value="in fact, we could check any module name for # char. Though, at the moment one may encounter # in generator modules only." />
               </node>
             </node>
-            <node concept="3cpWs8" id="A5pt9OPTlD" role="3cqZAp">
-              <node concept="3cpWsn" id="A5pt9OPTlE" role="3cpWs9">
-                <property role="TrG5h" value="name" />
-                <node concept="17QB3L" id="A5pt9OPTlQ" role="1tU5fm" />
-                <node concept="2OqwBi" id="A5pt9OPTlG" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagTrQr" role="2Oq$k0">
-                    <ref role="3cqZAo" node="A5pt9OPTlu" resolve="gen" />
+            <node concept="3cpWs8" id="5gYZRXo0LoV" role="3cqZAp">
+              <node concept="3cpWsn" id="5gYZRXo0LoW" role="3cpWs9">
+                <property role="TrG5h" value="sharpIndex" />
+                <node concept="10Oyi0" id="5gYZRXo0LoS" role="1tU5fm" />
+                <node concept="2OqwBi" id="5gYZRXo0LoX" role="33vP2m">
+                  <node concept="37vLTw" id="5gYZRXo0LoY" role="2Oq$k0">
+                    <ref role="3cqZAo" node="A5pt9OPTlE" resolve="namespace" />
                   </node>
-                  <node concept="liA8E" id="A5pt9OPTlI" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="A5pt9OPTwS" role="3cqZAp">
-              <node concept="3cpWsn" id="A5pt9OPTwT" role="3cpWs9">
-                <property role="TrG5h" value="genNamespace" />
-                <node concept="17QB3L" id="A5pt9OPTwU" role="1tU5fm" />
-                <node concept="3cpWs3" id="A5pt9OPTwV" role="33vP2m">
-                  <node concept="Xl_RD" id="A5pt9OPTwW" role="3uHU7w">
-                    <property role="Xl_RC" value=".generator" />
-                  </node>
-                  <node concept="2OqwBi" id="A5pt9OPTwX" role="3uHU7B">
-                    <node concept="2OqwBi" id="A5pt9OPTwY" role="2Oq$k0">
-                      <node concept="37vLTw" id="3GM_nagTrz5" role="2Oq$k0">
-                        <ref role="3cqZAo" node="A5pt9OPTlu" resolve="gen" />
-                      </node>
-                      <node concept="liA8E" id="A5pt9OPTx0" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~Generator.getSourceLanguage():jetbrains.mps.smodel.Language" resolve="getSourceLanguage" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="A5pt9OPTx1" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                  <node concept="liA8E" id="5gYZRXo0LoZ" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.indexOf(int):int" resolve="indexOf" />
+                    <node concept="1Xhbcc" id="5gYZRXo0Lp0" role="37wK5m">
+                      <property role="1XhdNS" value="#" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="A5pt9OPTx3" role="3cqZAp" />
             <node concept="3clFbJ" id="A5pt9OPTlL" role="3cqZAp">
               <node concept="3clFbS" id="A5pt9OPTlM" role="3clFbx">
-                <node concept="3cpWs6" id="A5pt9OPTw$" role="3cqZAp">
-                  <node concept="37vLTw" id="3GM_nagTu$G" role="3cqZAk">
-                    <ref role="3cqZAo" node="A5pt9OPTwT" resolve="genNamespace" />
+                <node concept="3clFbF" id="5gYZRXo0Qq1" role="3cqZAp">
+                  <node concept="37vLTI" id="5gYZRXo0Rm$" role="3clFbG">
+                    <node concept="2OqwBi" id="5gYZRXo0RGM" role="37vLTx">
+                      <node concept="37vLTw" id="5gYZRXo0Rrj" role="2Oq$k0">
+                        <ref role="3cqZAo" node="A5pt9OPTlE" resolve="namespace" />
+                      </node>
+                      <node concept="liA8E" id="5gYZRXo0SBV" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.substring(int,int):java.lang.String" resolve="substring" />
+                        <node concept="3cmrfG" id="5gYZRXo0SQF" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="37vLTw" id="5gYZRXo0V6D" role="37wK5m">
+                          <ref role="3cqZAo" node="5gYZRXo0LoW" resolve="sharpIndex" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="5gYZRXo0QpY" role="37vLTJ">
+                      <ref role="3cqZAo" node="A5pt9OPTlE" resolve="namespace" />
+                    </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="A5pt9OPTlR" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTAo3" role="2Oq$k0">
-                  <ref role="3cqZAo" node="A5pt9OPTlE" resolve="name" />
+              <node concept="3y3z36" id="5gYZRXo0Pb$" role="3clFbw">
+                <node concept="3cmrfG" id="5gYZRXo0PRi" role="3uHU7w">
+                  <property role="3cmrfH" value="-1" />
                 </node>
-                <node concept="17RlXB" id="A5pt9OPTwz" role="2OqNvi" />
+                <node concept="37vLTw" id="5gYZRXo0Lp1" role="3uHU7B">
+                  <ref role="3cqZAo" node="5gYZRXo0LoW" resolve="sharpIndex" />
+                </node>
               </node>
             </node>
             <node concept="3cpWs6" id="A5pt9OPTwQ" role="3cqZAp">
-              <node concept="3cpWs3" id="A5pt9OPTxa" role="3cqZAk">
-                <node concept="37vLTw" id="3GM_nagTADF" role="3uHU7w">
-                  <ref role="3cqZAo" node="A5pt9OPTlE" resolve="name" />
+              <node concept="3cpWs3" id="A5pt9OPTx6" role="3cqZAk">
+                <node concept="37vLTw" id="5gYZRXo0WDp" role="3uHU7B">
+                  <ref role="3cqZAo" node="A5pt9OPTlE" resolve="namespace" />
                 </node>
-                <node concept="3cpWs3" id="A5pt9OPTx6" role="3uHU7B">
-                  <node concept="37vLTw" id="3GM_nagTAfg" role="3uHU7B">
-                    <ref role="3cqZAo" node="A5pt9OPTwT" resolve="genNamespace" />
-                  </node>
-                  <node concept="Xl_RD" id="A5pt9OPTx9" role="3uHU7w">
-                    <property role="Xl_RC" value="." />
-                  </node>
+                <node concept="Xl_RD" id="A5pt9OPTx9" role="3uHU7w">
+                  <property role="Xl_RC" value=".generator" />
                 </node>
               </node>
             </node>
@@ -3194,16 +3188,8 @@
           </node>
         </node>
         <node concept="3cpWs6" id="hIWiMR4" role="3cqZAp">
-          <node concept="2OqwBi" id="75gf1bhG9ba" role="3cqZAk">
-            <node concept="liA8E" id="75gf1bhG9bb" role="2OqNvi">
-              <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
-            </node>
-            <node concept="2OqwBi" id="75gf1bhG9bc" role="2Oq$k0">
-              <node concept="2WthIp" id="75gf1bhG9bd" role="2Oq$k0" />
-              <node concept="1DTwFV" id="75gf1bhG9be" role="2OqNvi">
-                <ref role="2WH_rO" node="hIWpGMe" resolve="module" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="5gYZRXo16lG" role="3cqZAk">
+            <ref role="3cqZAo" node="A5pt9OPTlE" resolve="namespace" />
           </node>
         </node>
       </node>
