@@ -19,10 +19,16 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     SAbstractConcept cncpt_a0c = concept;
     switch (index_2qnle6_a0c.index(cncpt_a0c)) {
       case 0:
+        return new ModelPointer_Constraints();
+      case 1:
+        return new ModulePointer_Constraints();
+      case 2:
         return new NamedNodeReference_Constraints();
+      case 3:
+        return new NodePointer_Constraints();
       default:
     }
     return new BaseConstraintsDescriptor(concept);
   }
-  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL)).seal();
+  private static final ConceptSwitchIndex index_2qnle6_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e361L), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL), MetaIdFactory.conceptId(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL)).seal();
 }

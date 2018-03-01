@@ -20,7 +20,7 @@ public class typeof_NodePointerExpression_InferenceRule extends AbstractInferenc
   public typeof_NodePointerExpression_InferenceRule() {
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode target = NodeIdentity__BehaviorDescriptor.toNodeSafe_id3bhfBP4572W.invoke(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(expr).getRepository());
+    SNode target = NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x66b228a4fb0c9435L, 0x66b228a4fb0c9496L, "ref")), SNodeOperations.getModel(expr).getRepository());
     {
       SNode _nodeToCheck_1029348928467 = expr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7400021826775224134", 0, null);

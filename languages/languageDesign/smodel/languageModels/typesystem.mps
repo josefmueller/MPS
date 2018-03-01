@@ -13385,7 +13385,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="_3Yz8RBGbA" role="2OqNvi">
-              <ref role="37wK5l" to="xlb7:3bhfBP4572W" resolve="toNodeSafe" />
+              <ref role="37wK5l" to="xlb7:46J8CTY3sAt" resolve="toNode" />
               <node concept="2OqwBi" id="_3Yz8RBK44" role="37wK5m">
                 <node concept="liA8E" id="_3Yz8RBKpI" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -13806,7 +13806,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="2SljyToQnXQ" role="2OqNvi">
-              <ref role="37wK5l" to="xlb7:3bhfBP4572W" resolve="toNodeSafe" />
+              <ref role="37wK5l" to="xlb7:46J8CTY3sAt" resolve="toNode" />
               <node concept="2OqwBi" id="2SljyToQnXR" role="37wK5m">
                 <node concept="liA8E" id="2SljyToQnXS" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
@@ -13898,7 +13898,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="3bhfBP48gn5" role="2OqNvi">
-              <ref role="37wK5l" to="xlb7:3bhfBP4572W" resolve="toNodeSafe" />
+              <ref role="37wK5l" to="xlb7:46J8CTY3sAt" resolve="toNode" />
               <node concept="2OqwBi" id="3bhfBP48i1_" role="37wK5m">
                 <node concept="liA8E" id="3bhfBP48im9" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />

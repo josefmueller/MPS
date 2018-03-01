@@ -139,6 +139,6 @@ import jetbrains.mps.lang.modelapi.behavior.NodeIdentity__BehaviorDescriptor;
     return editorCell;
   }
   private SNode _StyleParameter_QueryFunction_4hgp54_a0c0() {
-    return (SNode) NodeIdentity__BehaviorDescriptor.toNodeSafe_id3bhfBP4572W.invoke(getNode(), getEditorContext().getRepository());
+    return (SNode) NodeIdentity__BehaviorDescriptor.toNode_id46J8CTY3sAt.invoke(getNode(), getEditorContext().getRepository());
   }
 }

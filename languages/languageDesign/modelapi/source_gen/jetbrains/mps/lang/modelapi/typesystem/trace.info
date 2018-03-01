@@ -17,7 +17,7 @@
       <node id="855366892729591891" at="22,124,23,77" concept="4" />
       <node id="855366892729600009" at="24,23,25,13" concept="5" />
       <node id="855366892729600013" at="26,5,27,0" concept="6" />
-      <node id="855366892729600237" at="27,0,28,103" concept="4" />
+      <node id="855366892729600237" at="27,0,28,99" concept="4" />
       <node id="3138462966838136628" at="30,7,31,60" concept="4" />
       <node id="3138462966838136628" at="31,60,32,258" concept="4" />
       <node id="3138462966838142863" at="34,5,35,0" concept="6" />
@@ -30,7 +30,7 @@
       <node id="855366892729582606" at="40,0,43,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="855366892729582606" at="43,0,46,0" concept="3" trace="overrides#()Z" />
       <node id="3138462966838136628" at="29,25,33,7" concept="0" />
-      <node id="855366892729603896" at="28,103,34,5" concept="2" />
+      <node id="855366892729603896" at="28,99,34,5" concept="2" />
       <node id="855366892729582606" at="22,0,37,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="855366892729582606" at="20,48,20,48" />
       <scope id="855366892729597284" at="24,23,25,13" />
