@@ -183,7 +183,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       addNodeById("535833678905714232");
       SNode clType = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
 
-      SLinkOperations.setTargetPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678908607806"));
+      SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678908607806"));
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0e0d33());
@@ -191,7 +191,7 @@ public class NodePointers_Test extends BaseTransformationTest {
       }
 
       SNodeReference classifier = new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678908607934");
-      SLinkOperations.setTargetPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), classifier);
+      SLinkOperations.setPointer(clType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), classifier);
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), clType);
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_hosvw_a0a0b0i0d33());
@@ -229,6 +229,14 @@ public class NodePointers_Test extends BaseTransformationTest {
 
       Assert.assertNull(SNodeOperations.getPointer(n));
       Assert.assertNull(SModelOperations.getPointer(m));
+
+      Assert.assertFalse(SNodeOperations.is(n, new SNodePointer("r:6598b34f-7cc0-4465-ba61-6e5504d2a2be(jetbrains.mps.smodel.test.data)", "535833678907595165")));
+
+      SNode ctNode = null;
+      Assert.assertNull(SLinkOperations.setPointer(ctNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), null));
+      SNode ctNodeNN = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+      Assert.assertNull(SLinkOperations.setPointer(ctNodeNN, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), null));
+
     }
 
     public void test_NodeTypeCheck535833678907605667() throws Exception {
