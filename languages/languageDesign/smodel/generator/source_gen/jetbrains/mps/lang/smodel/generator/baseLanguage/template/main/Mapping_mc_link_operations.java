@@ -236,8 +236,8 @@ public class Mapping_mc_link_operations extends MapConfigBase implements Templat
         TemplateContext context1 = context.subContext();
         {
           Collection<SNode> tlist2 = null;
-          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_942336824646442587(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_jzpaek_b0a0c0d0c0b6));
-          tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_jzpaek_b0a0c0d0c0b6, "tpl/r:00000000-0000-4000-0000-011c89590303/942336824646442585", context1);
+          final SNode copySrcInput2 = QueriesGenerated.sourceNodeQuery_3719571763733973061(new SourceSubstituteMacroNodeContext(context1, copySrcMacro_jzpaek_b0a0c0d0c0b6));
+          tlist2 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput2), copySrcMacro_jzpaek_b0a0c0d0c0b6, "tpl/r:00000000-0000-4000-0000-011c89590303/3719571763733973059", context1);
           for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
           }
@@ -246,7 +246,7 @@ public class Mapping_mc_link_operations extends MapConfigBase implements Templat
         {
           Collection<SNode> tlist4 = null;
           {
-            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_942336824646442597(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jzpaek_b0a0a0a1a4a2a1g));
+            final SNode switchInput4 = QueriesGenerated.sourceNodeQuery_3719571763733973071(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jzpaek_b0a0a0a1a4a2a1g));
             if (switchInput4 == null) {
               tlist4 = Collections.emptyList();
             } else {
@@ -272,7 +272,7 @@ public class Mapping_mc_link_operations extends MapConfigBase implements Templat
         {
           Collection<SNode> tlist7 = null;
           {
-            final SNode switchInput7 = QueriesGenerated.sourceNodeQuery_3320646261222325278(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jzpaek_b0a0a0a1a5a2a1g));
+            final SNode switchInput7 = QueriesGenerated.sourceNodeQuery_3719571763733973079(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_jzpaek_b0a0a0a1a5a2a1g));
             if (switchInput7 == null) {
               tlist7 = Collections.emptyList();
             } else {
@@ -310,9 +310,9 @@ public class Mapping_mc_link_operations extends MapConfigBase implements Templat
   private static SNodePointer switchMacroRef_jzpaek_b0a0a0a1a4a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6246743999000995128");
   private static SNodePointer templateSwitchNode_jzpaek_a0a0c0a1a1a4a2a2f = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1205432344145");
   private static SNodePointer copySrcMacro_jzpaek_b0a0c0f0c0c5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6246743999000991667");
-  private static SNodePointer copySrcMacro_jzpaek_b0a0c0d0c0b6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "942336824646442586");
-  private static SNodePointer switchMacroRef_jzpaek_b0a0a0a1a4a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "942336824646442596");
+  private static SNodePointer copySrcMacro_jzpaek_b0a0c0d0c0b6 = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3719571763733973060");
+  private static SNodePointer switchMacroRef_jzpaek_b0a0a0a1a4a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3719571763733973070");
   private static SNodePointer templateSwitchNode_jzpaek_a0a0c0a1a1a4a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "1205432344145");
-  private static SNodePointer switchMacroRef_jzpaek_b0a0a0a1a5a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3320646261222324140");
+  private static SNodePointer switchMacroRef_jzpaek_b0a0a0a1a5a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3719571763733973078");
   private static SNodePointer templateSwitchNode_jzpaek_a0a0c0a1a1a5a2a1g = new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3320646261222008448");
 }

@@ -81,8 +81,8 @@ public class SLinkOperations {
     }
     return null;
   }
-  public static SNodeReference setTargetPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
-    if (node != null) {
+  public static SNodeReference setPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
+    if (node != null && targetPointer != null) {
       SNodeAccessUtil.setReference(node, role, SReference.create(role, node, targetPointer, null));
     }
     return targetPointer;
