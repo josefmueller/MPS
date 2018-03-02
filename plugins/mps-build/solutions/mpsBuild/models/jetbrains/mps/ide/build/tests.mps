@@ -6693,6 +6693,12 @@
             <ref role="3bR37D" to="ffeo:7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
           </node>
         </node>
+        <node concept="1SiIV0" id="76RZw1dH_9D" role="3bR37C">
+          <node concept="3bR9La" id="76RZw1dH_9E" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Nx4mSUEBa7" role="2G$12L">
         <property role="BnDLt" value="true" />

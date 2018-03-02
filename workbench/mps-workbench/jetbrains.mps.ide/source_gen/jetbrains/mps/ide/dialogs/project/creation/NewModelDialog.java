@@ -17,8 +17,6 @@ import jetbrains.mps.project.Project;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.model.SModelName;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Generator;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import java.awt.Dimension;
 import com.intellij.uiDesigner.core.GridConstraints;
@@ -37,6 +35,7 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.Generator;
 import com.intellij.ui.ColoredListCellRenderer;
 import javax.swing.JList;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
@@ -126,21 +125,6 @@ public class NewModelDialog extends DialogWrapper {
     setTitle(String.format("Move Model %s", originalName.getValue()));
     myModelName.setText(originalName.getValue());
     check();
-  }
-
-  public static String getNamespace(SModel model) {
-    SModule module = model.getModule();
-    if (module instanceof Generator) {
-      Generator gen = (Generator) module;
-      String name = gen.getModuleName();
-      String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
-
-      if ((name == null || name.length() == 0)) {
-        return genNamespace;
-      }
-      return genNamespace + "." + name;
-    }
-    return module.getModuleName();
   }
 
   public EditableSModel getResult() {

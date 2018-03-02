@@ -47,6 +47,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.IMakeService.INSTANCE;
+import jetbrains.mps.make.MakeServiceComponent;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -454,8 +456,9 @@ public class UsagesView implements IExternalizeable {
 
       if (myMakeSession.compareAndSet(null, new MakeSession(mpsProject, new DefaultMakeMessageHandler(mpsProject), false))) {
         try {
-          if (IMakeService.INSTANCE.get().openNewSession(myMakeSession.get())) {
-            IMakeService.INSTANCE.get().make(myMakeSession.get(), makeRes);
+          IMakeService makeService = mpsProject.getComponent(MakeServiceComponent.class).get();
+          if (makeService.openNewSession(myMakeSession.get())) {
+            makeService.make(myMakeSession.get(), makeRes);
           }
         } finally {
           myMakeSession.set(null);

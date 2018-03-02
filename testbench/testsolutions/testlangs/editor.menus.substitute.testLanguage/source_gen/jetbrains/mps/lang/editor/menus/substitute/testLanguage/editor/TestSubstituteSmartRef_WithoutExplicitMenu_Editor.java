@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class TestSubstituteSubChildSmartReference_Editor extends DefaultNodeEditor {
+public class TestSubstituteSmartRef_WithoutExplicitMenu_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new TestSubstituteSubChildSmartReference_EditorBuilder_a(editorContext, node).createCell();
+    return new TestSubstituteSmartRef_WithoutExplicitMenu_EditorBuilder_a(editorContext, node).createCell();
   }
 }

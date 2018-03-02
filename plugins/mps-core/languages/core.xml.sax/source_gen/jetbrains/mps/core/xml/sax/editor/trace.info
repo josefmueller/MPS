@@ -18,20 +18,24 @@
       <unit at="12,0,25,0" name="jetbrains.mps.core.xml.sax.editor.PresentationProviders" />
     </file>
     <file name="XMLSAXChildRule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXChildRule_SubstituteMenu$SMP_ReferenceScope_em1jvd_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXChildRule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXChildRule_SubstituteMenu$SMP_ReferenceScope_em1jvd_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXChildRule_SubstituteMenu$SMP_Subconcepts_em1jvd_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXChildRule_SubstituteMenu" />
     </file>
     <file name="XMLSAXFieldReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_SubstituteMenu$SMP_ReferenceScope_cooydm_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_SubstituteMenu$SMP_ReferenceScope_cooydm_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_SubstituteMenu$SMP_Subconcepts_cooydm_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXFieldReference_SubstituteMenu" />
     </file>
     <file name="XMLSAXNodeRuleParamRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParamRef_SubstituteMenu$SMP_ReferenceScope_rfbwj4_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParamRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParamRef_SubstituteMenu$SMP_ReferenceScope_rfbwj4_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParamRef_SubstituteMenu$SMP_Subconcepts_rfbwj4_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXNodeRuleParamRef_SubstituteMenu" />
     </file>
     <file name="XMLSAXParser_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_SubstituteMenu$SMP_ReferenceScope_42km6r_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_SubstituteMenu$SMP_ReferenceScope_42km6r_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_SubstituteMenu$SMP_Subconcepts_42km6r_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.core.xml.sax.editor.XMLSAXParser_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:1c9826ed-1ac5-4a4a-a16c-c4f33a9e7348(jetbrains.mps.core.xml.sax.editor)/1741258697587120273">

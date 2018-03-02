@@ -871,7 +871,7 @@ public final class ModuleChecker {
     // the module gets unloaded at the end of the check, to facilitate access to loaded instance for any child module (i.e. language's generators) 
 
     for (SLanguage lang : usedLanguage) {
-      SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
+      SNode resolved = myVisibleModules.resolve(lang);
       if (resolved == null) {
         report("cannot find used language in dependencies: " + lang.getQualifiedName());
         continue;

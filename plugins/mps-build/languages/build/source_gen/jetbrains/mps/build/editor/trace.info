@@ -19,52 +19,63 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="BuildExternalLayoutDependency_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_ReferenceScope_ye7991_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_ReferenceScope_ye7991_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu$SMP_Subconcepts_ye7991_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.BuildExternalLayoutDependency_SubstituteMenu" />
     </file>
     <file name="BuildProjectDependency_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_ReferenceScope_xm6e4h_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_ReferenceScope_xm6e4h_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu$SMP_Subconcepts_xm6e4h_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.BuildProjectDependency_SubstituteMenu" />
     </file>
     <file name="BuildSourceMacroRelativePath_SubstituteMenu.java">
-      <unit at="68,0,93,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a$Item" />
-      <unit at="46,0,94,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a" />
-      <unit at="24,0,95,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu" />
+      <unit at="101,0,122,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_Subconcepts_whou42_b" />
+      <unit at="75,0,100,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a$Item" />
+      <unit at="53,0,101,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu$SMP_ReferenceScope_whou42_a" />
+      <unit at="30,0,123,0" name="jetbrains.mps.build.editor.BuildSourceMacroRelativePath_SubstituteMenu" />
     </file>
     <file name="EditorAspectDescriptorImpl.java">
       <unit at="20,0,424,0" name="jetbrains.mps.build.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GeneratorInternal_BuildSource_JarFolder_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_ReferenceScope_o5vowq_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_ReferenceScope_o5vowq_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu$SMP_Subconcepts_o5vowq_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JarFolder_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaJar_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_ReferenceScope_1wkndu_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_ReferenceScope_1wkndu_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu$SMP_Subconcepts_1wkndu_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_ReferenceScope_vxr8sy_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_ReferenceScope_vxr8sy_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu$SMP_Subconcepts_vxr8sy_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_JavaModule_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_ReferenceScope_lnpg2_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_ReferenceScope_lnpg2_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu$SMP_Subconcepts_lnpg2_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_BuildSource_SingleFile_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_ReferenceScope_j0jkyf_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_ReferenceScope_j0jkyf_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu$SMP_Subconcepts_j0jkyf_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_ReferenceScope_4td9tv_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_ReferenceScope_4td9tv_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu$SMP_Subconcepts_4td9tv_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_IWorkfowParticipants_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_ReferenceScope_8wb9uy_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_ReferenceScope_8wb9uy_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu$SMP_Subconcepts_8wb9uy_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_IWorkfowParticipants_SubstituteMenu" />
     </file>
     <file name="GeneratorInternal_ProjectDependency_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_ReferenceScope_jp6td_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_ReferenceScope_jp6td_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu$SMP_Subconcepts_jp6td_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.build.editor.GeneratorInternal_ProjectDependency_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="19,0,110,0" name="jetbrains.mps.build.editor.PresentationProviders" />

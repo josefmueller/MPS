@@ -122,9 +122,23 @@
     <node concept="1TJgyj" id="7Nx4mSUDsRz" role="1TKVEi">
       <property role="IQ2ns" value="8998492695590981091" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="smartReference" />
+      <property role="20kJfa" value="smartReferenceWithMenu" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$$bRC" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996948844008" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="smartReferenceWithoutMenu" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$AZw4" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949579780" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="smartReferenceWithoutMenuSubconcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
     </node>
     <node concept="1TJgyj" id="7Nx4mSUsh9l" role="1TKVEi">
       <property role="IQ2ns" value="8998492695587525205" />
@@ -291,7 +305,7 @@
   </node>
   <node concept="1TIwiD" id="7Nx4mSUrZaI">
     <property role="EcuMT" value="8998492695587451566" />
-    <property role="TrG5h" value="TestSubstituteSubChildSmartReference" />
+    <property role="TrG5h" value="TestSubstituteSubChildSmartReference_WithMenu" />
     <ref role="1TJDcQ" node="7Nx4mSUrV2Y" resolve="TestSubstituteChild" />
     <node concept="1TJgyj" id="7Nx4mSUDA8y" role="1TKVEi">
       <property role="IQ2ns" value="8998492695591019042" />
@@ -320,6 +334,13 @@
       <property role="20kJfa" value="children" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="6szUVE$_EN7" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949232839" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="childrenSubconcept" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
     </node>
     <node concept="PrWs8" id="7Nx4mSUDWtE" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -1009,6 +1030,35 @@
     <property role="3GE5qa" value="exception" />
     <property role="TrG5h" value="TestSubstituteExceptionActionIconChild" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6szUVE$$bRA">
+    <property role="EcuMT" value="7432042996948844006" />
+    <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    <node concept="1TJgyj" id="6szUVE$$bRB" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996948844007" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="childToReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6szUVE$_m2m">
+    <property role="EcuMT" value="7432042996949147798" />
+    <property role="TrG5h" value="TestSubstituteChildToReferenceSubconcept" />
+    <ref role="1TJDcQ" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+  </node>
+  <node concept="1TIwiD" id="6szUVE$AZx7">
+    <property role="EcuMT" value="7432042996949579847" />
+    <property role="TrG5h" value="TestSubstituteSmartRef_WithoutExplicitMenu_Subconcept" />
+    <ref role="1TJDcQ" node="6szUVE$$bRA" resolve="TestSubstituteSmartRef_WithoutExplicitMenu" />
+    <node concept="1TJgyj" id="6szUVE$AZx8" role="1TKVEi">
+      <property role="IQ2ns" value="7432042996949579848" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="childToReferenceSpecial" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+      <ref role="20ksaX" node="6szUVE$$bRB" resolve="childToReference" />
+    </node>
   </node>
 </model>
 

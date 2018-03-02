@@ -19,24 +19,29 @@
       <unit at="18,0,129,0" name="jetbrains.mps.lang.generator.generationContext.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="GenerationContextOp_GenParameterRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_SubstituteMenu$SMP_ReferenceScope_p50d8y_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_SubstituteMenu$SMP_ReferenceScope_p50d8y_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_SubstituteMenu$SMP_Subconcepts_p50d8y_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_GenParameterRef_SubstituteMenu" />
     </file>
     <file name="GenerationContextOp_LinkPatternRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_SubstituteMenu$SMP_ReferenceScope_vgky1m_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_SubstituteMenu$SMP_ReferenceScope_vgky1m_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_SubstituteMenu$SMP_Subconcepts_vgky1m_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_LinkPatternRef_SubstituteMenu" />
     </file>
     <file name="GenerationContextOp_NodePatternRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_SubstituteMenu$SMP_ReferenceScope_k9cp1y_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_SubstituteMenu$SMP_ReferenceScope_k9cp1y_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_SubstituteMenu$SMP_Subconcepts_k9cp1y_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_NodePatternRef_SubstituteMenu" />
     </file>
     <file name="GenerationContextOp_ParameterRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_SubstituteMenu$SMP_ReferenceScope_e1w0yb_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_SubstituteMenu$SMP_ReferenceScope_e1w0yb_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_SubstituteMenu$SMP_Subconcepts_e1w0yb_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_ParameterRef_SubstituteMenu" />
     </file>
     <file name="GenerationContextOp_PropertyPatternRef_SubstituteMenu.java">
-      <unit at="40,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_SubstituteMenu$SMP_ReferenceScope_3uhqho_a" />
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_SubstituteMenu" />
+      <unit at="47,0,65,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_SubstituteMenu$SMP_ReferenceScope_3uhqho_a" />
+      <unit at="65,0,86,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_SubstituteMenu$SMP_Subconcepts_3uhqho_b" />
+      <unit at="24,0,87,0" name="jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_PropertyPatternRef_SubstituteMenu" />
     </file>
     <file name="PresentationProviders.java">
       <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.editor.PresentationProviders" />

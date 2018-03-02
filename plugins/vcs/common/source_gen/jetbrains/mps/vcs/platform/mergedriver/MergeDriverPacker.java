@@ -99,7 +99,7 @@ public abstract class MergeDriverPacker {
           for (String child : f.list()) {
             QueueSequence.fromQueue(pathQueue).addLastElement(path + "/" + child);
           }
-        } else if (path.endsWith(".class")) {
+        } else if (path.endsWith(".class") || path.contains("META-INF")) {
           MapSequence.fromMap(files).put(path, f);
         }
       }

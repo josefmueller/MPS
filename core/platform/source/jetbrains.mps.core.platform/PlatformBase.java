@@ -72,6 +72,9 @@ class PlatformBase implements Platform {
     if (rv == null && myPersistence != null) {
       rv = myPersistence.findComponent(componentClass);
     }
+    if (rv == null && myMake != null) {
+      rv = myMake.findComponent(componentClass);
+    }
     if (rv == null && myGenerator != null) {
       rv = myGenerator.findComponent(componentClass);
     }

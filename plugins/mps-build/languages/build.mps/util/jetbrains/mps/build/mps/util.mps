@@ -12,7 +12,6 @@
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
-    <import index="gn4j" ref="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="yg2w" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.containers(MPS.Core/)" />
     <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" />
@@ -41,8 +40,8 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="32g5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.library(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
-    <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="keqv" ref="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)" />
+    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -2245,22 +2244,74 @@
     <node concept="3clFb_" id="4wamkUdwVSy" role="jymVt">
       <property role="TrG5h" value="resolve" />
       <node concept="3Tqbb2" id="4wamkUdxm88" role="3clF45">
-        <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+        <ref role="ehGHo" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
       </node>
       <node concept="3Tm1VV" id="4wamkUdwVS_" role="1B3o_S" />
       <node concept="3clFbS" id="4wamkUdwVSA" role="3clF47">
-        <node concept="3cpWs6" id="4wamkUdx5IT" role="3cqZAp">
-          <node concept="1rXfSq" id="4wamkUdx8f8" role="3cqZAk">
-            <ref role="37wK5l" node="50RHf4RGXG2" resolve="resolve" />
-            <node concept="2OqwBi" id="4wamkUdxcja" role="37wK5m">
-              <node concept="37vLTw" id="4wamkUdxaOk" role="2Oq$k0">
-                <ref role="3cqZAo" node="4wamkUdx31B" resolve="language" />
-              </node>
-              <node concept="liA8E" id="4wamkUdxejQ" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+        <node concept="3SKdUt" id="JxgaYvE0Xa" role="3cqZAp">
+          <node concept="3SKdUq" id="JxgaYvE0Xc" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME need a better fix, shall record language modules using their id separately from " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="JxgaYvEcpD" role="3cqZAp">
+          <node concept="3SKdUq" id="JxgaYvEcpF" role="3SKWNk">
+            <property role="3SKdUp" value="solutions and generators, so that I can find by SLanguageId object" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="JxgaYvEjrj" role="3cqZAp">
+          <node concept="3SKdUq" id="JxgaYvEjrl" role="3SKWNk">
+            <property role="3SKdUp" value="i.e. take SLanguageId from SModuleReference from module descriptor, and use it as a map key instead of string" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="JxgaYvDBWi" role="3cqZAp">
+          <node concept="3cpWsn" id="JxgaYvDBWj" role="3cpWs9">
+            <property role="TrG5h" value="langModuleId" />
+            <node concept="3uibUv" id="JxgaYvDBWh" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~ModuleId" resolve="ModuleId" />
+            </node>
+            <node concept="2YIFZM" id="JxgaYvDBWk" role="33vP2m">
+              <ref role="1Pybhc" to="z1c3:~ModuleId" resolve="ModuleId" />
+              <ref role="37wK5l" to="z1c3:~ModuleId.regular(java.util.UUID):jetbrains.mps.project.ModuleId" resolve="regular" />
+              <node concept="2OqwBi" id="JxgaYvDBWl" role="37wK5m">
+                <node concept="2YIFZM" id="JxgaYvDBWm" role="2Oq$k0">
+                  <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLanguage(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguage" />
+                  <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                  <node concept="37vLTw" id="JxgaYvDBWn" role="37wK5m">
+                    <ref role="3cqZAo" node="4wamkUdx31B" resolve="language" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="JxgaYvDBWo" role="2OqNvi">
+                  <ref role="37wK5l" to="e8bb:~SLanguageId.getIdValue():java.util.UUID" resolve="getIdValue" />
+                </node>
               </node>
             </node>
-            <node concept="10Nm6u" id="4wamkUdxkfp" role="37wK5m" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4wamkUdx5IT" role="3cqZAp">
+          <node concept="1PxgMI" id="JxgaYvCtC0" role="3cqZAk">
+            <property role="1BlNFB" value="true" />
+            <node concept="chp4Y" id="JxgaYvCxqj" role="3oSUPX">
+              <ref role="cht4Q" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+            </node>
+            <node concept="1rXfSq" id="4wamkUdx8f8" role="1m5AlR">
+              <ref role="37wK5l" node="50RHf4RGXG2" resolve="resolve" />
+              <node concept="2OqwBi" id="4wamkUdxcja" role="37wK5m">
+                <node concept="37vLTw" id="4wamkUdxaOk" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4wamkUdx31B" resolve="language" />
+                </node>
+                <node concept="liA8E" id="4wamkUdxejQ" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="JxgaYvDRVI" role="37wK5m">
+                <node concept="37vLTw" id="JxgaYvDOGs" role="2Oq$k0">
+                  <ref role="3cqZAo" node="JxgaYvDBWj" resolve="langModuleId" />
+                </node>
+                <node concept="liA8E" id="JxgaYvDV8N" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -19162,21 +19213,15 @@
             <node concept="3cpWs8" id="2cypSucdf2a" role="3cqZAp">
               <node concept="3cpWsn" id="2cypSucdf2b" role="3cpWs9">
                 <property role="TrG5h" value="resolved" />
-                <node concept="1PxgMI" id="2cypSucdmTh" role="33vP2m">
-                  <property role="1BlNFB" value="true" />
-                  <node concept="2OqwBi" id="2cypSucdf2d" role="1m5AlR">
-                    <node concept="37vLTw" id="2BHiRxeuFLd" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6m8wrPAU3pr" resolve="myVisibleModules" />
-                    </node>
-                    <node concept="liA8E" id="2cypSucdf2f" role="2OqNvi">
-                      <ref role="37wK5l" node="4wamkUdwVSy" resolve="resolve" />
-                      <node concept="37vLTw" id="4fCiNXDCDV8" role="37wK5m">
-                        <ref role="3cqZAo" node="50RHf4RGVIh" resolve="lang" />
-                      </node>
-                    </node>
+                <node concept="2OqwBi" id="2cypSucdf2d" role="33vP2m">
+                  <node concept="37vLTw" id="2BHiRxeuFLd" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6m8wrPAU3pr" resolve="myVisibleModules" />
                   </node>
-                  <node concept="chp4Y" id="714IaVdGYXi" role="3oSUPX">
-                    <ref role="cht4Q" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                  <node concept="liA8E" id="2cypSucdf2f" role="2OqNvi">
+                    <ref role="37wK5l" node="4wamkUdwVSy" resolve="resolve" />
+                    <node concept="37vLTw" id="4fCiNXDCDV8" role="37wK5m">
+                      <ref role="3cqZAo" node="50RHf4RGVIh" resolve="lang" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3Tqbb2" id="2cypSucdf2c" role="1tU5fm">

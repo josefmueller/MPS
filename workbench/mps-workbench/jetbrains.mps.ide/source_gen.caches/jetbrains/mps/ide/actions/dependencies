@@ -702,6 +702,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DeletePropertyAction_Action" file="DeletePropertyAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -967,7 +968,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
@@ -1032,7 +1033,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsageToolOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
@@ -3043,6 +3044,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action" file="ShowInDependenciesViewer_Action.java">

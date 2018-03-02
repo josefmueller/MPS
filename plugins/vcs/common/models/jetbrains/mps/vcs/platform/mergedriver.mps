@@ -8352,14 +8352,27 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="2ouftQnpqny" role="3eO9$A">
-                      <node concept="37vLTw" id="2ouftQnpqnz" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2ouftQnovpi" resolve="path" />
+                    <node concept="22lmx$" id="4ke8F13vv2r" role="3eO9$A">
+                      <node concept="2OqwBi" id="4ke8F13vMrt" role="3uHU7w">
+                        <node concept="37vLTw" id="4ke8F13vMi5" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ouftQnovpi" resolve="path" />
+                        </node>
+                        <node concept="liA8E" id="4ke8F13vMAn" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                          <node concept="Xl_RD" id="4ke8F13vOen" role="37wK5m">
+                            <property role="Xl_RC" value="META-INF" />
+                          </node>
+                        </node>
                       </node>
-                      <node concept="liA8E" id="2ouftQnpqn$" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                        <node concept="Xl_RD" id="2ouftQnpqn_" role="37wK5m">
-                          <property role="Xl_RC" value=".class" />
+                      <node concept="2OqwBi" id="2ouftQnpqny" role="3uHU7B">
+                        <node concept="37vLTw" id="2ouftQnpqnz" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ouftQnovpi" resolve="path" />
+                        </node>
+                        <node concept="liA8E" id="2ouftQnpqn$" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                          <node concept="Xl_RD" id="2ouftQnpqn_" role="37wK5m">
+                            <property role="Xl_RC" value=".class" />
+                          </node>
                         </node>
                       </node>
                     </node>

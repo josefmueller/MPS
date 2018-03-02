@@ -33,7 +33,7 @@ public class TestSubstitute_Subconcepts_Test extends BaseTransformationTest {
       initEditorComponent("5476527677618977237", "5476527677618977239");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
-      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 4);
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 6);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
