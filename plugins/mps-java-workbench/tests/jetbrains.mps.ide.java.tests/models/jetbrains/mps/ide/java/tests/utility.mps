@@ -1528,8 +1528,10 @@
                 <property role="TrG5h" value="m" />
                 <node concept="H_c77" id="7q5dBpSi5Lk" role="1tU5fm" />
                 <node concept="2OqwBi" id="7q5dBpSiK_u" role="33vP2m">
-                  <node concept="2GrUjf" id="7q5dBpSiKoQ" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="7q5dBpSh9Kb" resolve="expmr" />
+                  <node concept="2JrnkZ" id="5zRZOg123rW" role="2Oq$k0">
+                    <node concept="2GrUjf" id="5zRZOg123rV" role="2JrQYb">
+                      <ref role="2Gs0qQ" node="7q5dBpSh9Kb" resolve="expmr" />
+                    </node>
                   </node>
                   <node concept="liA8E" id="7q5dBpSjdBw" role="2OqNvi">
                     <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
