@@ -5526,7 +5526,7 @@
                             <node concept="3cpWsn" id="5zRZOfVveoO" role="3cpWs9">
                               <property role="TrG5h" value="exprType" />
                               <node concept="3Tqbb2" id="5zRZOfVveo$" role="1tU5fm">
-                                <ref role="ehGHo" to="tp25:6qMaajUPFau" resolve="SNodePointerType" />
+                                <ref role="ehGHo" to="tp25:1Bs_61$ngyb" resolve="SModelPointerType" />
                               </node>
                               <node concept="1UdQGJ" id="5zRZOfVveoP" role="33vP2m">
                                 <node concept="1YaCAy" id="5zRZOfVveoQ" role="1Ub_4A">
