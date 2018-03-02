@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi" version="0" />
   </languages>
@@ -210,7 +210,7 @@
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelRefExpression" flags="ng" index="1Xw6AR">
+      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelPointerExpression" flags="ng" index="1Xw6AR">
         <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
       </concept>
     </language>
@@ -1072,20 +1072,22 @@
             <property role="TrG5h" value="sampleModel" />
             <node concept="H_c77" id="1yTFUP3AYi7" role="1tU5fm" />
             <node concept="2OqwBi" id="5kWneGu3MFD" role="33vP2m">
-              <node concept="1Xw6AR" id="5kWneGu3MF_" role="2Oq$k0">
-                <node concept="1dCxOl" id="5kWneGu3MFA" role="1XwpL7">
-                  <property role="1XweGQ" value="r:00000000-0000-4000-0000-011c895902ca" />
-                  <node concept="1j_P7g" id="5kWneGu3MFB" role="1j$8Uc">
-                    <property role="1j_P7h" value="jetbrains.mps.baseLanguage.structure" />
-                  </node>
-                </node>
-              </node>
               <node concept="liA8E" id="5kWneGu3MFC" role="2OqNvi">
                 <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
                 <node concept="2OqwBi" id="Tb4PsnoHOa" role="37wK5m">
                   <node concept="1jxXqW" id="Tb4PsnoHL3" role="2Oq$k0" />
                   <node concept="liA8E" id="Tb4PsnoHWj" role="2OqNvi">
                     <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2JrnkZ" id="7u2HgD1KsH5" role="2Oq$k0">
+                <node concept="1Xw6AR" id="7u2HgD1KsH2" role="2JrQYb">
+                  <node concept="1dCxOl" id="7u2HgD1KsH3" role="1XwpL7">
+                    <property role="1XweGQ" value="r:00000000-0000-4000-0000-011c895902ca" />
+                    <node concept="1j_P7g" id="7u2HgD1KsH4" role="1j$8Uc">
+                      <property role="1j_P7h" value="jetbrains.mps.baseLanguage.structure" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1154,20 +1156,22 @@
             <property role="TrG5h" value="sampleModel" />
             <node concept="H_c77" id="E9ySoS$Lq4" role="1tU5fm" />
             <node concept="2OqwBi" id="5kWneGu3MFI" role="33vP2m">
-              <node concept="1Xw6AR" id="5kWneGu3MFE" role="2Oq$k0">
-                <node concept="1dCxOl" id="5kWneGu3MFF" role="1XwpL7">
-                  <property role="1XweGQ" value="r:3ad93d2f-47fe-4070-8a77-383dab3a6def" />
-                  <node concept="1j_P7g" id="5kWneGu3MFG" role="1j$8Uc">
-                    <property role="1j_P7h" value="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test" />
-                  </node>
-                </node>
-              </node>
               <node concept="liA8E" id="5kWneGu3MFH" role="2OqNvi">
                 <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
                 <node concept="2OqwBi" id="Tb4PsnoI2z" role="37wK5m">
                   <node concept="1jxXqW" id="Tb4PsnoHZs" role="2Oq$k0" />
                   <node concept="liA8E" id="Tb4PsnoIa_" role="2OqNvi">
                     <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2JrnkZ" id="7u2HgD1KsH1" role="2Oq$k0">
+                <node concept="1Xw6AR" id="7u2HgD1KsGY" role="2JrQYb">
+                  <node concept="1dCxOl" id="7u2HgD1KsGZ" role="1XwpL7">
+                    <property role="1XweGQ" value="r:3ad93d2f-47fe-4070-8a77-383dab3a6def" />
+                    <node concept="1j_P7g" id="7u2HgD1KsH0" role="1j$8Uc">
+                      <property role="1j_P7h" value="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test" />
+                    </node>
                   </node>
                 </node>
               </node>

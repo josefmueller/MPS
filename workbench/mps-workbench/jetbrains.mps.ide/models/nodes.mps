@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
   </languages>
@@ -207,6 +207,9 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
@@ -321,11 +324,13 @@
                         <node concept="37vLTw" id="1GFZonK_qkd" role="37wK5m">
                           <ref role="3cqZAo" node="1GFZonK_oz7" resolve="mpsProject" />
                         </node>
-                        <node concept="2OqwBi" id="1GFZonK_pYd" role="37wK5m">
-                          <node concept="37vLTw" id="1GFZonK_pYe" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1GFZonK_oBV" resolve="nodeToSelect" />
+                        <node concept="2JrnkZ" id="7u2HgD1KsRi" role="37wK5m">
+                          <node concept="2OqwBi" id="1GFZonK_pYd" role="2JrQYb">
+                            <node concept="37vLTw" id="1GFZonK_pYe" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1GFZonK_oBV" resolve="nodeToSelect" />
+                            </node>
+                            <node concept="iZEcu" id="1GFZonK_pYf" role="2OqNvi" />
                           </node>
-                          <node concept="iZEcu" id="1GFZonK_pYf" role="2OqNvi" />
                         </node>
                         <node concept="Xl_RD" id="1GFZonK_pYg" role="37wK5m">
                           <property role="Xl_RC" value="" />

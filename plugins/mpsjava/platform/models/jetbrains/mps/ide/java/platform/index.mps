@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -1974,11 +1974,13 @@
               <node concept="2ShNRf" id="5DqLs1Fkpdb" role="37wK5m">
                 <node concept="1pGfFk" id="5DqLs1FkpOB" role="2ShVmc">
                   <ref role="37wK5l" to="qpn1:~SNodeEntry.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference)" resolve="SNodeEntry" />
-                  <node concept="2OqwBi" id="5DqLs1Fkq0g" role="37wK5m">
-                    <node concept="37vLTw" id="5DqLs1FkpRo" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5DqLs1Fjf1Z" resolve="nextClassifier" />
+                  <node concept="2JrnkZ" id="7u2HgD1KnMY" role="37wK5m">
+                    <node concept="2OqwBi" id="5DqLs1Fkq0g" role="2JrQYb">
+                      <node concept="37vLTw" id="5DqLs1FkpRo" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5DqLs1Fjf1Z" resolve="nextClassifier" />
+                      </node>
+                      <node concept="iZEcu" id="5DqLs1FkqhH" role="2OqNvi" />
                     </node>
-                    <node concept="iZEcu" id="5DqLs1FkqhH" role="2OqNvi" />
                   </node>
                 </node>
               </node>

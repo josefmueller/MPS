@@ -8,7 +8,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -6598,11 +6598,13 @@
             </node>
             <node concept="liA8E" id="1um9r$LUfuz" role="2OqNvi">
               <ref role="37wK5l" to="kz9k:~EditorNavigator.open(org.jetbrains.mps.openapi.model.SNodeReference):void" resolve="open" />
-              <node concept="2OqwBi" id="1um9r$LUfz4" role="37wK5m">
-                <node concept="37vLTw" id="1um9r$LUfwA" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2Nd7jcMoufT" resolve="targetNode" />
+              <node concept="2JrnkZ" id="7u2HgD1KsHn" role="37wK5m">
+                <node concept="2OqwBi" id="1um9r$LUfz4" role="2JrQYb">
+                  <node concept="37vLTw" id="1um9r$LUfwA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2Nd7jcMoufT" resolve="targetNode" />
+                  </node>
+                  <node concept="iZEcu" id="1um9r$LUfC2" role="2OqNvi" />
                 </node>
-                <node concept="iZEcu" id="1um9r$LUfC2" role="2OqNvi" />
               </node>
             </node>
           </node>
