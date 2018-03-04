@@ -54,6 +54,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSubstituteGrandChildWithConstraintsProhibited;
   private ConceptPresentation props_TestSubstituteNotSubconceptOfChild;
   private ConceptPresentation props_TestSubstituteParent;
+  private ConceptPresentation props_TestSubstituteParentPropertyAndReference;
   private ConceptPresentation props_TestSubstituteParentToReference;
   private ConceptPresentation props_TestSubstituteParentWithConstraints;
   private ConceptPresentation props_TestSubstituteSmartRef_WithoutExplicitMenu;
@@ -394,6 +395,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSubstituteParent = cpb.create();
         }
         return props_TestSubstituteParent;
+      case LanguageConceptSwitch.TestSubstituteParentPropertyAndReference:
+        if (props_TestSubstituteParentPropertyAndReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_TestSubstituteParentPropertyAndReference = cpb.create();
+        }
+        return props_TestSubstituteParentPropertyAndReference;
       case LanguageConceptSwitch.TestSubstituteParentToReference:
         if (props_TestSubstituteParentToReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

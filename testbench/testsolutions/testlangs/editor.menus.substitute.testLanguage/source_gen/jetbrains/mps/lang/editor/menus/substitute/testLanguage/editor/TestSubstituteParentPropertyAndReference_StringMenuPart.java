@@ -16,15 +16,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
-import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.editor.menus.transformation.PropertyMenuTransformationMenuPart;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu extends TransformationMenuBase {
+public class TestSubstituteParentPropertyAndReference_StringMenuPart extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.SUBSTITUTE);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -35,7 +31,7 @@ public class TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu extends
   @Override
   public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestSubstitute_IncludeDefaultAndNullMenu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4695456347262403787")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("named transformation menu " + "TestSubstituteParentPropertyAndReference_StringMenuPart", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "476103360382570878")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -48,20 +44,23 @@ public class TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu extends
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu.TMP_IncludeSM_lzm9mz_a0());
+      result.add(new TestSubstituteParentPropertyAndReference_StringMenuPart.TMP_Property_63mi2p_a0());
     }
     return result;
   }
 
-  public class TMP_IncludeSM_lzm9mz_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+  public class TMP_Property_63mi2p_a0 extends PropertyMenuTransformationMenuPart {
     @NotNull
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
       try {
-        SAbstractConcept targetConcept = getTargetConcept(context);
-        String name = (targetConcept == null ? "" : targetConcept.getName());
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu " + "named substitute menu " + "IncludeDefaultAndNullMenu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "4695456347262403795")));
+        SProperty property = getProperty(context);
+        String description = "Include menu for the property";
+        if (property != null) {
+          description += ": " + property.getName();
+        }
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "476103360382570881")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
@@ -69,13 +68,8 @@ public class TestSubstitute_IncludeDefaultAndNullMenu_TransformationMenu extends
     }
 
     @Override
-    protected SubstituteMenuLookup getSubstituteMenuLookup(TransformationMenuContext context) {
-      final EditorContext editorContext = context.getEditorContext();
-      SAbstractConcept conceptToFindMenuFor = getConceptToFindMenuFor(context);
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), conceptToFindMenuFor, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor.IncludeDefaultAndNullMenu");
-    }
-    private SAbstractConcept getConceptToFindMenuFor(TransformationMenuContext _context) {
-      return MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x41299cab94ed9982L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDefaultAndNullMenu");
+    protected SProperty getProperty(TransformationMenuContext context) {
+      return MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x69b757bd7bd1801L, 0x69b757bd7f90809L, "stringPropertyWithPropertyMenuPart");
     }
   }
 }

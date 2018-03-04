@@ -161,6 +161,14 @@
       </concept>
       <concept id="8998492695587451561" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2" flags="ng" index="16zIf7" />
       <concept id="8998492695587451568" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteConceptChildToReference" flags="ng" index="16zIfu" />
+      <concept id="476103360378640385" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParentPropertyAndReference" flags="ng" index="3h9APU">
+        <property id="476103360378640386" name="defaultBooleanProperty" index="3h9APT" />
+        <property id="476103360378640388" name="defaultEnumProperty" index="3h9APZ" />
+        <property id="476103360382568444" name="booleanPropertyWithPropertyMenuPart" index="3hoBa7" />
+        <property id="476103360382568450" name="enumPropertyWithPropertyMenuPart" index="3hoBPT" />
+        <reference id="476103360378640400" name="defaultReference" index="3h9APF" />
+        <reference id="8135300941718541171" name="referenceWithReferenceMenuPart" index="3$VFpD" />
+      </concept>
       <concept id="4695456347262392706" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitute_IncludeDefaultAndNullMenu" flags="ng" index="3lL0kD" />
       <concept id="7153261420283491153" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteExceptionParent" flags="ng" index="3mLoSd" />
       <concept id="368966953912091576" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSpecialChildAttribute" flags="ng" index="1oPLr5" />
@@ -5247,6 +5255,672 @@
         <node concept="pLAjd" id="6szUVE$BFDu" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk34Lw">
+    <property role="TrG5h" value="TestSubstitute_BooleanDefaultProperty" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk34LA" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk34LB" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk34LC" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36nt" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk36nu" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36nv" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk36nw" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk36nx" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk36ny" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36nz" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk36n$" role="3vwVQn">
+          <node concept="3cmrfG" id="73AphEk36n_" role="3uHU7w">
+            <property role="3cmrfH" value="2" />
+          </node>
+          <node concept="2OqwBi" id="73AphEk36nA" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk36nB" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk36nC" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk36nD" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk36nE" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk36wq" role="3cqZAp">
+        <property role="2TTd_B" value="true" />
+      </node>
+      <node concept="yd1bK" id="73AphEk34LD" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk34LE" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk358q" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk358v" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_defaultBooleanProperty" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk358x" role="LiZbd">
+      <property role="3h9APT" value="true" />
+      <node concept="LIFWc" id="73AphEk358D" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="4" />
+        <property role="p6zMs" value="4" />
+        <property role="LIFWd" value="property_defaultBooleanProperty" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk36yz">
+    <property role="TrG5h" value="TestSubstitute_BooleanPropertyMenuPart" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk36y$" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk36y_" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk36yA" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36yB" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk36yC" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36yD" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk36yE" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk36yF" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk36yG" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36yH" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk36yI" role="3vwVQn">
+          <node concept="3cmrfG" id="73AphEk36yJ" role="3uHU7w">
+            <property role="3cmrfH" value="2" />
+          </node>
+          <node concept="2OqwBi" id="73AphEk36yK" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk36yL" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk36yM" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk36yN" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk36yO" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk36yP" role="3cqZAp">
+        <property role="2TTd_B" value="true" />
+      </node>
+      <node concept="yd1bK" id="73AphEk36yQ" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk36yR" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36yS" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk36Fx" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_booleanPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36yU" role="LiZbd">
+      <property role="3hoBa7" value="true" />
+      <node concept="LIFWc" id="73AphEk36Hs" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="4" />
+        <property role="p6zMs" value="4" />
+        <property role="LIFWd" value="property_booleanPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk36Hu">
+    <property role="TrG5h" value="TestSubstitute_StringDefaultProperty" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk36Hv" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk36Hw" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk36Hx" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36Hy" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk36Hz" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36H$" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk36H_" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk36HA" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk36HB" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36HC" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk36HD" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36HF" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk36HG" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk36HH" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk36HI" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk36HJ" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk36Qk" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36HN" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk36MH" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_defaultStringProperty" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36HP" role="LiZbd">
+      <node concept="LIFWc" id="73AphEk36OC" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_defaultStringProperty" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk36QR">
+    <property role="TrG5h" value="TestSubstitute_StringPropertyMenuPart" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk36QS" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk36QT" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk36QU" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36QV" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk36QW" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36QX" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk36QY" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk36QZ" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk36R0" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk36R1" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk36R2" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk36R3" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk36R4" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk36R5" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk36R6" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk36R7" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk36R8" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36R9" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk6ltc" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_stringPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk36Rb" role="LiZbd">
+      <node concept="LIFWc" id="73AphEk37eT" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_stringPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk37gN">
+    <property role="TrG5h" value="TestSubstitute_EnumDefaultProperty" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk37gO" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk37oP" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk37oQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk37oR" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk37oS" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk37oT" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk37oU" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk37oV" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk37oW" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk37oX" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk37oY" role="3vwVQn">
+          <node concept="3cmrfG" id="73AphEk37oZ" role="3uHU7w">
+            <property role="3cmrfH" value="2" />
+          </node>
+          <node concept="2OqwBi" id="73AphEk37p0" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk37p1" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk37p2" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk37p3" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk37p4" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk37p5" role="3cqZAp">
+        <property role="2TTd_B" value="mySecond" />
+      </node>
+      <node concept="yd1bK" id="73AphEk37p6" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk37p7" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk37h5" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk37mN" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_defaultEnumProperty" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk37h7" role="LiZbd">
+      <property role="3h9APZ" value="mySecondValue" />
+      <node concept="LIFWc" id="73AphEk3Gx0" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="13" />
+        <property role="p6zMs" value="13" />
+        <property role="LIFWd" value="property_defaultEnumProperty" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk37wi">
+    <property role="TrG5h" value="TestSubstitute_EnumPropertyMenuPart" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk37wj" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk37wk" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk37wl" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk37wm" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk37wn" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk37wo" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk37wp" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk37wq" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk37wr" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk37ws" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk37wt" role="3vwVQn">
+          <node concept="3cmrfG" id="73AphEk37wu" role="3uHU7w">
+            <property role="3cmrfH" value="2" />
+          </node>
+          <node concept="2OqwBi" id="73AphEk37wv" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk37ww" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk37wx" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk37wy" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk37wz" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk37w$" role="3cqZAp">
+        <property role="2TTd_B" value="mySecond" />
+      </node>
+      <node concept="yd1bK" id="73AphEk37w_" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk37wA" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk37wB" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk621W" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_enumPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk37wD" role="LiZbd">
+      <property role="3hoBPT" value="mySecondValue" />
+      <node concept="LIFWc" id="73AphEk68w4" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="13" />
+        <property role="p6zMs" value="13" />
+        <property role="LIFWd" value="property_enumPropertyWithPropertyMenuPart" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk42L9">
+    <property role="TrG5h" value="TestSubstitute_CustomPropertyMenuPart" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk42La" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk42Lb" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk42Lc" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk42Ld" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk42Le" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk42Lf" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk42Lg" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk42Lh" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk42Li" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk42Lj" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk42Lk" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk42Lm" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk42Ln" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk42Lo" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk42Lp" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk42Lq" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk42TX" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk42Lr" role="3cqZAp">
+        <property role="2TTd_B" value="custom" />
+      </node>
+      <node concept="yd1bK" id="73AphEk42Ls" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk42Lt" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk42Lu" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk5u5N" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_propertyWithCustomActions" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk42Lw" role="LiZbd">
+      <property role="TrG5h" value="custom actions executed" />
+      <node concept="LIFWc" id="73AphEk4phL" role="lGtFl">
+        <property role="LIFWa" value="0" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="property_propertyWithCustomActions" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk4phN">
+    <property role="TrG5h" value="TestSubstitute_DefaultReference" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk4phO" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk4phP" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk4phQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4phR" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk4phS" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4phT" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk4phU" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk4phV" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk4phW" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4phX" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk4phY" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4phZ" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk4pi0" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk4pi1" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk4pi2" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk4pi3" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk4pts" role="3uHU7w">
+            <property role="3cmrfH" value="4" />
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="73AphEk4pi6" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk4pi7" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pi8" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk5P3m" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_defaultReference" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pia" role="LiZbd">
+      <ref role="3h9APF" node="7Nx4mSUE3OS" resolve="nodeToReference1" />
+      <node concept="LIFWc" id="73AphEk5Vz5" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="16" />
+        <property role="p6zMs" value="16" />
+        <property role="LIFWd" value="property_name_1" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk4pxb">
+    <property role="TrG5h" value="TestSubstitute_ReferenceWithCustomMenu" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk4pxc" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk4pxd" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk4pxe" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4pxf" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk4pxg" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4pxh" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk4pxi" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk4pxj" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk4pxk" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4pxl" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk4pxm" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4pxn" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk4pxo" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk4pxp" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk4pxq" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk4pxr" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk4pJH" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+        </node>
+      </node>
+      <node concept="2TK7Tu" id="73AphEk4pPx" role="3cqZAp">
+        <property role="2TTd_B" value="custom" />
+      </node>
+      <node concept="yd1bK" id="73AphEk4pxt" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk4pxu" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pxv" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk4pFP" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_referenceWithCustomMenu" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pxx" role="LiZbd">
+      <property role="TrG5h" value="custom action executed" />
+      <node concept="LIFWc" id="73AphEk4pJD" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_referenceWithCustomMenu" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="73AphEk4pS$">
+    <property role="TrG5h" value="TestSubstitute_ReferenceMenuPart" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <node concept="3clFbS" id="73AphEk4pS_" role="LjaKd">
+      <node concept="2HxZob" id="73AphEk4pSA" role="3cqZAp">
+        <node concept="1iFQzN" id="73AphEk4pSB" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4pSC" role="3cqZAp">
+        <node concept="2OqwBi" id="73AphEk4pSD" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4pSE" role="2Oq$k0">
+            <node concept="369mXd" id="73AphEk4pSF" role="2Oq$k0" />
+            <node concept="liA8E" id="73AphEk4pSG" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node concept="liA8E" id="73AphEk4pSH" role="2OqNvi">
+            <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.isVisible():boolean" resolve="isVisible" />
+          </node>
+        </node>
+      </node>
+      <node concept="3vwNmj" id="73AphEk4pSI" role="3cqZAp">
+        <node concept="3clFbC" id="73AphEk4pSJ" role="3vwVQn">
+          <node concept="2OqwBi" id="73AphEk4pSK" role="3uHU7B">
+            <node concept="2OqwBi" id="73AphEk4pSL" role="2Oq$k0">
+              <node concept="369mXd" id="73AphEk4pSM" role="2Oq$k0" />
+              <node concept="liA8E" id="73AphEk4pSN" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.getNodeSubstituteChooser():jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" resolve="getNodeSubstituteChooser" />
+              </node>
+            </node>
+            <node concept="liA8E" id="73AphEk4pSO" role="2OqNvi">
+              <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="73AphEk5mjV" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+        </node>
+      </node>
+      <node concept="yd1bK" id="73AphEk4pSQ" role="3cqZAp">
+        <node concept="pLAjd" id="73AphEk4pSR" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pSS" role="LiRBU">
+      <node concept="LIFWc" id="73AphEk5mjR" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_referenceWithReferenceMenuPart" />
+      </node>
+    </node>
+    <node concept="3h9APU" id="73AphEk4pSU" role="LiZbd">
+      <ref role="3$VFpD" node="7Nx4mSUE3OS" resolve="nodeToReference1" />
+      <node concept="LIFWc" id="73AphEk5mhW" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="16" />
+        <property role="p6zMs" value="16" />
+        <property role="LIFWd" value="property_name_3" />
       </node>
     </node>
   </node>

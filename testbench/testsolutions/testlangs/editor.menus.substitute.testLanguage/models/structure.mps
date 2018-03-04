@@ -12,6 +12,16 @@
       <concept id="6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" flags="ng" index="trNpa">
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
+      <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
+        <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
+        <reference id="1083171729157" name="memberDataType" index="M4eZT" />
+        <child id="1083172003582" name="member" index="M5hS2" />
+      </concept>
+      <concept id="1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ig" index="M4N5e">
+        <property id="1083923523172" name="externalValue" index="1uS6qo" />
+        <property id="1083923523171" name="internalValue" index="1uS6qv" />
+      </concept>
       <concept id="2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" flags="ng" index="M6xJ_">
         <property id="7588428831955550663" name="role" index="Hh88m" />
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
@@ -1058,6 +1068,84 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
       <ref role="20ksaX" node="6szUVE$$bRB" resolve="childToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qrtnJnJhw1">
+    <property role="EcuMT" value="476103360378640385" />
+    <property role="TrG5h" value="TestSubstituteParentPropertyAndReference" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="qrtnJnJhwg" role="1TKVEi">
+      <property role="IQ2ns" value="476103360378640400" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="defaultReference" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="qrtnJnJhwi" role="1TKVEi">
+      <property role="IQ2ns" value="476103360378640402" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithCustomMenu" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="73AphEk2ddN" role="1TKVEi">
+      <property role="IQ2ns" value="8135300941718541171" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithReferenceMenuPart" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhw2" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640386" />
+      <property role="TrG5h" value="defaultBooleanProperty" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgvW" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568444" />
+      <property role="TrG5h" value="booleanPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhw4" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640388" />
+      <property role="TrG5h" value="defaultEnumProperty" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgw2" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568450" />
+      <property role="TrG5h" value="enumPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnJhwc" role="1TKVEl">
+      <property role="IQ2nx" value="476103360378640396" />
+      <property role="TrG5h" value="defaultStringProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYgw9" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382568457" />
+      <property role="TrG5h" value="stringPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="qrtnJnYdUL" role="1TKVEl">
+      <property role="IQ2nx" value="476103360382557873" />
+      <property role="TrG5h" value="propertyWithCustomActions" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="PrWs8" id="qrtnJnYeBy" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="AxPO7" id="qrtnJnJhw7">
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="TrG5h" value="TestSubstituteEnumDataType" />
+    <property role="3lZH7k" value="derive_from_presentation" />
+    <property role="PDuV0" value="true" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="qrtnJnJhw8" role="M5hS2">
+      <property role="1uS6qo" value="myFirstValue" />
+      <property role="1uS6qv" value="myFirstValue" />
+    </node>
+    <node concept="M4N5e" id="qrtnJnJhw9" role="M5hS2">
+      <property role="1uS6qo" value="mySecondValue" />
+      <property role="1uS6qv" value="mySecondValue" />
     </node>
   </node>
 </model>
