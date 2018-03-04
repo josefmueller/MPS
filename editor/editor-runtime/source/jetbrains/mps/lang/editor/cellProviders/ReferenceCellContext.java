@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -30,5 +31,9 @@ public class ReferenceCellContext extends BasicCellContext {
     super(referenceNode);
     put(LINK_DECLARATION, linkDeclaration);
     put(CURRENT_REFERENT_NODE, currentReferent);
+  }
+
+  public ReferenceCellContext(SNode referenceNode, SNode currentReferent, SReferenceLink link) {
+    this(referenceNode, currentReferent, link.getDeclarationNode());
   }
 }

@@ -20,9 +20,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collection;
-import java.util.Set;
-
 /**
  * User: shatalin
  * Date: 4/24/13

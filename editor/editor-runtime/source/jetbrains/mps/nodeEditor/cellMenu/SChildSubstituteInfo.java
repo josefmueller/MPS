@@ -15,17 +15,24 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.ImplicitTransformationMenu;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
+import jetbrains.mps.lang.editor.menus.transformation.TransformationMenuPointer;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,21 +43,22 @@ import java.util.HashMap;
 /**
  * @author simon
  */
-public class SChildSubstituteInfo extends AbstractSubstituteInfo implements DefaultSubstituteInfo {
-  private SContainmentLink myLink;
-  private SNode myParentNode;
-  private SNode myCurrentChild;
+public class SChildSubstituteInfo extends TransformationMenuSubstituteInfo implements DefaultSubstituteInfo {
+  private DefaultTransformationMenuLookup myDefaultTransformationMenuLookup;
 
-  //todo remove
   public SChildSubstituteInfo(EditorCell editorCell) {
     super(editorCell);
+    myDefaultTransformationMenuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorCell().getContext().getRepository()),
+                                                                            getEditorCell().getSNode().getConcept());
   }
 
+  /**
+   * @deprecated use {@link #SChildSubstituteInfo(EditorCell)}
+   */
+
+  @Deprecated
   public SChildSubstituteInfo(EditorCell editorCell, SNode parentNode, SContainmentLink link, SNode currentChild) {
-    super(editorCell, parentNode);
-    myParentNode = parentNode;
-    myLink =  link;
-    myCurrentChild = currentChild;
+    this(editorCell);
   }
 
   @NotNull
@@ -59,20 +67,34 @@ public class SChildSubstituteInfo extends AbstractSubstituteInfo implements Defa
     return MenuLocations.SUBSTITUTE;
   }
 
+  @Nullable
+  @Override
+  protected TransformationMenuLookup getImplicitMenuLookup() {
+    return myDefaultTransformationMenuLookup;
+  }
+
   @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+    SNodeLocation nodeLocation = getEditorCell().getCellContext().getNodeLocation();
+
+    if (nodeLocation == null) {
+      return null;
+    }
+    SNode myParentNode = nodeLocation.getParent();
+    SContainmentLink myLink = nodeLocation.getContainmentLink();
     if (myParentNode == null || myLink == null) {
       return null;
     }
     //todo merge with DefaultSChildSubstituteInfo
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    final SNode copy = CopyUtil.copy(Collections.singletonList(getSourceNode().getContainingRoot()), mapping).get(0);
+    final SNode copy = CopyUtil.copy(Collections.singletonList(myParentNode.getContainingRoot()), mapping).get(0);
     getModelForTypechecking().addRootNode(copy);
 
     final SAbstractConcept concept = myLink.getTargetConcept();
     boolean holeIsAType = concept.isSubConceptOf(SNodeUtil.concept_IType);
 
 
+    SNode myCurrentChild = nodeLocation.getChild();
     SNode parent = mapping.get(myParentNode);
     SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
     if (myCurrentChild != null) {

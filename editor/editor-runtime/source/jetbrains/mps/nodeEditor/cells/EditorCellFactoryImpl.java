@@ -142,7 +142,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
         result = editorComponent.createEditorCell(myEditorContext, node);
       } catch (RuntimeException | AssertionError | NoClassDefFoundError e) {
         LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using editor component: " + editorComponent.getClass(), e,
-            node);
+                    node);
       }
     }
 
@@ -187,25 +187,25 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public void addCellContextHints(String... hints) {
-    if (myCellContextStack == null) {
-      throw new IllegalStateException("There is no CellContext in the stack");
-    }
+    checkContextExist();
     myCellContextStack.getLast().addHints(hints);
   }
 
   @Override
   public void removeCellContextHints(String... hints) {
-    if (myCellContextStack == null) {
-      throw new IllegalStateException("There is no CellContext in the stack");
-    }
+    checkContextExist();
     myCellContextStack.getLast().removeHints(hints);
   }
 
   public void setNodeLocation(SNodeLocation location) {
+    checkContextExist();
+    myCellContextStack.getLast().setNodeLocation(location);
+  }
+
+  private void checkContextExist() {
     if (myCellContextStack == null) {
       throw new IllegalStateException("There is no CellContext in the stack");
     }
-    myCellContextStack.getLast().setNodeLocation(location);
   }
 
   private ConceptEditor getCachedEditor(SConcept concept, Collection<Class<? extends ConceptEditor>> excludedEditors) {

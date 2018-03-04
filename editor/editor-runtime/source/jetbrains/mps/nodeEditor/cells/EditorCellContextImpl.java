@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -53,9 +54,7 @@ public class EditorCellContextImpl implements EditorCellContext {
   }
 
   public void addHints(String... hints) {
-    for (String hint : hints) {
-      myHints.add(hint);
-    }
+    myHints.addAll(Arrays.asList(hints));
   }
 
   public void removeHints(String... hints) {

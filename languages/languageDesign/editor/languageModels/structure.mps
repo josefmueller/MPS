@@ -2,6 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -4918,6 +4919,9 @@
     <property role="R4oN_" value="include another menu" />
     <property role="EcuMT" value="784421273959492578" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
     <node concept="1TJgyj" id="FyOJSsBmJY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeFunction" />
@@ -4935,10 +4939,8 @@
       <property role="IQ2ns" value="1873541086576603957" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="location" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="7L5lpRJH$EA" resolve="TransformationLocation" />
-    </node>
-    <node concept="PrWs8" id="2mcvySy2piN" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Sf$XywF4VC">
@@ -6281,7 +6283,7 @@
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="QueryFunctionParameter_TransformationMenu_targetNode" />
     <property role="34LRSv" value="targetNode" />
-    <property role="R4oN_" value="the node that the menu is being shown for" />
+    <property role="R4oN_" value="the target node of this menu" />
     <property role="EcuMT" value="4647688914602775700" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
@@ -6778,6 +6780,57 @@
     <ref role="1TJDcQ" node="FyOJSsBpEm" resolve="QueryFunction_TransformationMenu" />
     <node concept="PrWs8" id="2bhdjkq5YX6" role="PzmwI">
       <ref role="PrY4T" node="2bhdjkq5YX2" resolve="IConceptQuery" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2snskYs0Tuc">
+    <property role="EcuMT" value="2816844678677370764" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="TransformationMenuPart_PropertyMenu" />
+    <property role="34LRSv" value="include property menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="2snskYs0Tud" role="1TKVEi">
+      <property role="IQ2ns" value="2816844678677370765" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="property" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="ntKIfKkdVk">
+    <property role="EcuMT" value="422708224287891156" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <property role="TrG5h" value="TransformationMenuPart_ReferenceMenu" />
+    <property role="34LRSv" value="include reference menu" />
+    <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+    <node concept="1TJgyj" id="7pTz0_mttsO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="textFunction" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="8537008540390643508" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_ActionLabelText" />
+    </node>
+    <node concept="1TJgyj" id="6cap0kYbLKY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="visibleTextFunction" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="7136626533202861118" />
+      <ref role="20lvS9" node="4VZjoGvneVh" resolve="QueryFunction_TransformationMenu_ActionLabelText" />
+    </node>
+    <node concept="1TJgyj" id="73AphEjX_Db" role="1TKVEi">
+      <property role="IQ2ns" value="8135300941717330507" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canExecuteFunction" />
+      <ref role="20lvS9" node="5DJl6Ftwolg" resolve="QueryFunction_TransformationMenu_Condition" />
+    </node>
+    <node concept="1TJgyj" id="ntKIfKkdVl" role="1TKVEi">
+      <property role="IQ2ns" value="422708224287891157" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceLink" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="PrWs8" id="7pTz0_mrFOR" role="PzmwI">
+      <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
   </node>
 </model>

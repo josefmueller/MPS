@@ -16,15 +16,15 @@
 package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
-import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractSubstituteInfo;
-import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
+import jetbrains.mps.nodeEditor.cellMenu.TransformationMenuSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,18 +35,27 @@ import java.util.stream.Collectors;
 /**
  * @author simon
  */
-public class SideTransformSubstituteInfo extends AbstractSubstituteInfo {
+public class SideTransformSubstituteInfo extends TransformationMenuSubstituteInfo {
   private final Side mySide;
+  private final TransformationMenuLookup myDefaultTransformationMenuLookup;
 
 
   public SideTransformSubstituteInfo(EditorCell editorCell, Side side) {
     super(editorCell);
     mySide = side;
+    myDefaultTransformationMenuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorCell().getContext().getRepository()),
+                                                                            getEditorCell().getSNode().getConcept());
   }
 
   @Override
   protected List<SubstituteAction> createActions() {
     return wrapToRemovingSTInfoActions(super.createActions());
+  }
+
+  @Nullable
+  @Override
+  protected TransformationMenuLookup getImplicitMenuLookup() {
+    return myDefaultTransformationMenuLookup;
   }
 
   @NotNull

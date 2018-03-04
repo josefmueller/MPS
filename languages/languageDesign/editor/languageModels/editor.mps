@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -26369,6 +26369,110 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="ntKIfKkgIJ">
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <ref role="1XX52x" to="tpc2:ntKIfKkdVk" resolve="TransformationMenuPart_ReferenceMenu" />
+    <node concept="3EZMnI" id="ntKIfKkgIL" role="2wV5jI">
+      <node concept="3F0ifn" id="ntKIfKkgIM" role="3EZMnx">
+        <property role="3F0ifm" value="include reference menu for the reference" />
+        <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+      </node>
+      <node concept="1iCGBv" id="ntKIfKkgIN" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;context reference&gt;" />
+        <ref role="1NtTu8" to="tpc2:ntKIfKkdVl" resolve="referenceLink" />
+        <node concept="1sVBvm" id="ntKIfKkgIO" role="1sWHZn">
+          <node concept="3F0A7n" id="ntKIfKkgIP" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="73AphEjW2IG" role="3EZMnx">
+        <node concept="pVoyu" id="73AphEjTz1U" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="73AphEjU7IC" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="73AphEjW2IH" role="2iSdaV" />
+        <node concept="3F0ifn" id="73AphEjTz1B" role="3EZMnx">
+          <property role="3F0ifm" value="text" />
+          <property role="ilYzB" value="&lt;default matching text&gt;" />
+          <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+        </node>
+        <node concept="3F1sOY" id="7pTz0_mtttj" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;default text&gt;" />
+          <ref role="1NtTu8" to="tpc2:7pTz0_mttsO" resolve="textFunction" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="73AphEjW3$J" role="3EZMnx">
+        <node concept="pVoyu" id="73AphEjU4un" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="73AphEjU7VH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="73AphEjW3$K" role="2iSdaV" />
+        <node concept="3F0ifn" id="73AphEjU4gW" role="3EZMnx">
+          <property role="3F0ifm" value="visible text" />
+          <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+        </node>
+        <node concept="3F1sOY" id="6cap0kYbLLL" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;default visible text&gt;" />
+          <ref role="1NtTu8" to="tpc2:6cap0kYbLKY" resolve="visibleTextFunction" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="73AphEjX_Dg" role="3EZMnx">
+        <node concept="pVoyu" id="73AphEjX_Dh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="73AphEjX_Di" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="73AphEjX_Dj" role="2iSdaV" />
+        <node concept="3F0ifn" id="73AphEjX_Dk" role="3EZMnx">
+          <property role="3F0ifm" value="can execute" />
+          <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+        </node>
+        <node concept="3F1sOY" id="73AphEjX_Dt" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;always&gt;" />
+          <ref role="1NtTu8" to="tpc2:73AphEjX_Db" resolve="canExecuteFunction" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="7pTz0_mrZZ6" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7L5lpRJINkn" resolve="features" />
+        <node concept="l2Vlx" id="7pTz0_mrZZ8" role="2czzBx" />
+        <node concept="pVoyu" id="7pTz0_mrZZf" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="7pTz0_mrZZh" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="ntKIfKkgIQ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2snskYs0Tup">
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <ref role="1XX52x" to="tpc2:2snskYs0Tuc" resolve="TransformationMenuPart_PropertyMenu" />
+    <node concept="3EZMnI" id="2snskYs0Tur" role="2wV5jI">
+      <node concept="3F0ifn" id="2snskYs0Tuu" role="3EZMnx">
+        <property role="3F0ifm" value="include property menu for the property:" />
+        <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+      </node>
+      <node concept="1iCGBv" id="2snskYs0Tuv" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;current property&gt;" />
+        <ref role="1NtTu8" to="tpc2:2snskYs0Tud" resolve="property" />
+        <node concept="1sVBvm" id="2snskYs0Tuw" role="1sWHZn">
+          <node concept="3F0A7n" id="2snskYs0Tux" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="2snskYs0Tuy" role="2iSdaV" />
     </node>
   </node>
 </model>
