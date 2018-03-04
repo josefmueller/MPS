@@ -43,11 +43,6 @@ public class SPropertySubstituteInfo extends TransformationMenuSubstituteInfo im
     myTransformationMenuPointer = new TransformationMenuPointer(new ImplicitPropertyMenu(property));
   }
 
-  public SPropertySubstituteInfo(EditorCell cell) {
-    super(cell);
-    myTransformationMenuPointer = new TransformationMenuPointer(new ImplicitPropertyMenu(null));
-  }
-
   @Nullable
   @Override
   protected TransformationMenuLookup getImplicitMenuLookup() {

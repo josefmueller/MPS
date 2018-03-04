@@ -47,11 +47,6 @@ public class SReferenceSubstituteInfo extends TransformationMenuSubstituteInfo i
     myTransformationMenuPointer = new TransformationMenuPointer(new ImplicitReferenceMenu(referenceLink, targetConcept));
   }
 
-  public SReferenceSubstituteInfo(EditorCell cell) {
-    super(cell);
-    myTransformationMenuPointer = new TransformationMenuPointer(new ImplicitReferenceMenu(null, null));
-  }
-
   @Nullable
   @Override
   protected TransformationMenuLookup getImplicitMenuLookup() {

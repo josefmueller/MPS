@@ -49,16 +49,20 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
   @Nullable
   private String myNoTargetText;
   private SNode myNode;
+  private String myEmptyCellId;
 
-  public SReferenceCellProvider(SNode node, final SReferenceLink referenceLink, EditorContext editorContext, @Nullable String noTargetText) {
+  public SReferenceCellProvider(SNode node, final SReferenceLink referenceLink, EditorContext editorContext) {
     super(editorContext);
     myNode = node;
     myReferenceLink = referenceLink;
-    myNoTargetText = noTargetText;
   }
 
-  public SReferenceCellProvider(SNode node, final SReferenceLink referenceLink, EditorContext editorContext) {
-    this(node, referenceLink, editorContext, null);
+  public void setNoTargetText(String targetText) {
+    myNoTargetText = targetText;
+  }
+
+  public void setEmptyCellId(String emptyCellId) {
+    myEmptyCellId = emptyCellId;
   }
 
   @NotNull
@@ -87,7 +91,7 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
       result = createEmptyCell();
     }
 
-    if (result.getRole()!=null){
+    if (result.getRole() != null) {
       result.setRole(myReferenceLink.getName());
     }
     result.setReferenceCell(true);
@@ -106,7 +110,9 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
     noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getNode(), DeleteDirection.FORWARD));
     noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getNode(), DeleteDirection.BACKWARD));
 
-    noRefCell.setCellId("empty_" + myReferenceLink.getName());
+
+    String cellId = myEmptyCellId != null ? myEmptyCellId : "empty_" + myReferenceLink.getName();
+    noRefCell.setCellId(cellId);
     return noRefCell;
   }
 
