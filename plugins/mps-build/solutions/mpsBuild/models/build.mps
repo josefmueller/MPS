@@ -1565,6 +1565,9 @@
       <node concept="nCB5N" id="1WZWsoqIIKZ" role="nCB5Z">
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
+      <node concept="nCB5N" id="1Ipr_V_3ETz" role="nCB5Z">
+        <ref role="nCB5Y" node="TfcoydlQ6W" resolve="idea-platform" />
+      </node>
       <node concept="398b2D" id="5cCcm$KAKd2" role="398b2p">
         <node concept="398BVA" id="5cCcm$KAKd3" role="398b2C">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />

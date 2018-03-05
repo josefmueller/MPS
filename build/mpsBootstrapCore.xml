@@ -6881,7 +6881,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-migration" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence">
+  <target name="java.compile.mps-migration" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.idea-platform">
     <mkdir dir="${build.tmp}/java/out/mps-migration" />
     <javac2 destdir="${build.tmp}/java/out/mps-migration" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -6908,10 +6908,12 @@
         <pathelement path="${build.tmp}/java/out/mps-boot-util" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
+        <pathelement path="${build.tmp}/java/out/idea-platform" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.trove4j" />
+        <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
