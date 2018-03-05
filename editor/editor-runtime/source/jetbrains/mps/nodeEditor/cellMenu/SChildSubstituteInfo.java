@@ -44,12 +44,9 @@ import java.util.HashMap;
  * @author simon
  */
 public class SChildSubstituteInfo extends TransformationMenuSubstituteInfo implements DefaultSubstituteInfo {
-  private DefaultTransformationMenuLookup myDefaultTransformationMenuLookup;
 
   public SChildSubstituteInfo(EditorCell editorCell) {
     super(editorCell);
-    myDefaultTransformationMenuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorCell().getContext().getRepository()),
-                                                                            getEditorCell().getSNode().getConcept());
   }
 
   /**
@@ -69,8 +66,10 @@ public class SChildSubstituteInfo extends TransformationMenuSubstituteInfo imple
 
   @Nullable
   @Override
-  protected TransformationMenuLookup getImplicitMenuLookup() {
-    return myDefaultTransformationMenuLookup;
+  protected TransformationMenuLookup getImplicitMenuLookup(TransformationMenuContext context) {
+    SAbstractConcept targetConcept = context.getNodeLocation().getContextNode().getConcept();
+    return new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()),
+                                               targetConcept);
   }
 
   @Override

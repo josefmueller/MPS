@@ -76,8 +76,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     EditorContext editorContext = cell.getContext();
     SNodeLocation nodeLocation = nodeLocationFromCell(cell);
     return new DefaultTransformationMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultTransformationMenuItemFactory(MenuUtil.getUsedLanguages(
-        nodeLocation.getContextNode()))),
-                                                menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
+        nodeLocation.getContextNode()))), menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
   }
 
   @NotNull

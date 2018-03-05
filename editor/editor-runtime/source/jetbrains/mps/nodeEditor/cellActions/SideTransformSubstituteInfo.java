@@ -22,11 +22,13 @@ import jetbrains.mps.nodeEditor.cellMenu.TransformationMenuSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -37,14 +39,11 @@ import java.util.stream.Collectors;
  */
 public class SideTransformSubstituteInfo extends TransformationMenuSubstituteInfo {
   private final Side mySide;
-  private final TransformationMenuLookup myDefaultTransformationMenuLookup;
 
 
   public SideTransformSubstituteInfo(EditorCell editorCell, Side side) {
     super(editorCell);
     mySide = side;
-    myDefaultTransformationMenuLookup = new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(getEditorCell().getContext().getRepository()),
-                                                                            getEditorCell().getSNode().getConcept());
   }
 
   @Override
@@ -54,8 +53,10 @@ public class SideTransformSubstituteInfo extends TransformationMenuSubstituteInf
 
   @Nullable
   @Override
-  protected TransformationMenuLookup getImplicitMenuLookup() {
-    return myDefaultTransformationMenuLookup;
+  protected TransformationMenuLookup getImplicitMenuLookup(TransformationMenuContext context) {
+    SAbstractConcept targetConcept = context.getNodeLocation().getContextNode().getConcept();
+    return new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()),
+                                               targetConcept);
   }
 
   @NotNull

@@ -49,7 +49,7 @@ public class SReferenceSubstituteInfo extends TransformationMenuSubstituteInfo i
 
   @Nullable
   @Override
-  protected TransformationMenuLookup getImplicitMenuLookup() {
+  protected TransformationMenuLookup getImplicitMenuLookup(TransformationMenuContext context) {
     return myTransformationMenuPointer;
   }
 

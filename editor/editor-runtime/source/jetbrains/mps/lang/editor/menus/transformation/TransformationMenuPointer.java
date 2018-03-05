@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
 
 public class TransformationMenuPointer implements TransformationMenuLookup {
   @NotNull
@@ -35,5 +36,23 @@ public class TransformationMenuPointer implements TransformationMenuLookup {
   @Override
   public Collection<TransformationMenu> lookup(@NotNull Collection<SLanguage> usedLanguages, @NotNull String menuLocation) {
     return Collections.singletonList(myTransformationMenu);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    TransformationMenuPointer that = (TransformationMenuPointer) o;
+    return Objects.equals(myTransformationMenu, that.myTransformationMenu);
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(myTransformationMenu);
   }
 }

@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.descriptor.Menu;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
 import org.jetbrains.annotations.NotNull;
@@ -55,11 +56,11 @@ public abstract class TransformationMenuSubstituteInfo extends AbstractNodeSubst
     String menuLocation = getMenuLocation();
     TransformationMenuLookup menuLookup = myEditorCell.getTransformationMenuLookup();
 
+    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(myEditorCell, menuLocation);
     if (shouldAddImplicitMenu(menuLookup, menuLocation)) {
-      menuLookup = new CompositeMenuLookup(menuLookup, getImplicitMenuLookup());
+      menuLookup = new CompositeMenuLookup(menuLookup, getImplicitMenuLookup(context));
     }
 
-    DefaultTransformationMenuContext context = DefaultTransformationMenuContext.createInitialContextForCell(myEditorCell, menuLocation);
 
 
     List<TransformationMenuItem> items = context.createItems(menuLookup);
@@ -83,7 +84,7 @@ public abstract class TransformationMenuSubstituteInfo extends AbstractNodeSubst
    * @return menu lookup which will be used if there is no transformation menu attached to the lookup
    */
   @Nullable
-  protected abstract TransformationMenuLookup getImplicitMenuLookup();
+  protected abstract TransformationMenuLookup getImplicitMenuLookup(TransformationMenuContext context);
 
   /**
    * @return menu location, e.g. COMPLETION or RIGHT_TRANSFORM
@@ -104,6 +105,23 @@ public abstract class TransformationMenuSubstituteInfo extends AbstractNodeSubst
       return Arrays.stream(myMenuLookups).filter(Objects::nonNull)
                    .flatMap(menuLookup -> menuLookup.lookup(usedLanguages, menuLocation).stream())
                    .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      CompositeMenuLookup that = (CompositeMenuLookup) o;
+      return Arrays.equals(myMenuLookups, that.myMenuLookups);
+    }
+
+    @Override
+    public int hashCode() {
+      return Arrays.hashCode(myMenuLookups);
     }
   }
 }

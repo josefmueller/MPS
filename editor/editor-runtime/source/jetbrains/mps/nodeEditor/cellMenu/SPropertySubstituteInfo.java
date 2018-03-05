@@ -45,7 +45,7 @@ public class SPropertySubstituteInfo extends TransformationMenuSubstituteInfo im
 
   @Nullable
   @Override
-  protected TransformationMenuLookup getImplicitMenuLookup() {
+  protected TransformationMenuLookup getImplicitMenuLookup(TransformationMenuContext context) {
     return myTransformationMenuPointer;
   }
 
