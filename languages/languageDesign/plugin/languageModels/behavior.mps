@@ -131,6 +131,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -1713,8 +1714,8 @@
                     </node>
                     <node concept="3clFbS" id="2DsqYJx$M5" role="1bW5cS">
                       <node concept="3clFbF" id="2DsqYJx$M6" role="3cqZAp">
-                        <node concept="2OqwBi" id="2DsqYJx$M7" role="3clFbG">
-                          <node concept="2OqwBi" id="2DsqYJx$M8" role="2Oq$k0">
+                        <node concept="17R0WA" id="gQK$wAfqpZ" role="3clFbG">
+                          <node concept="2OqwBi" id="2DsqYJx$M8" role="3uHU7B">
                             <node concept="2OqwBi" id="2DsqYJx$M9" role="2Oq$k0">
                               <node concept="37vLTw" id="2BHiRxglwxB" role="2Oq$k0">
                                 <ref role="3cqZAo" node="2DsqYJx$M3" resolve="it" />
@@ -1727,11 +1728,8 @@
                               <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                             </node>
                           </node>
-                          <node concept="liA8E" id="2DsqYJx$Md" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                            <node concept="Xl_RD" id="2DsqYJx$Me" role="37wK5m">
-                              <property role="Xl_RC" value="description" />
-                            </node>
+                          <node concept="Xl_RD" id="2DsqYJx$Me" role="3uHU7w">
+                            <property role="Xl_RC" value="description" />
                           </node>
                         </node>
                       </node>
