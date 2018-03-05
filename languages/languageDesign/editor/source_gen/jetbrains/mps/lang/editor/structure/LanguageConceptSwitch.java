@@ -418,19 +418,21 @@ public final class LanguageConceptSwitch {
   public static final int TransformationMenuPart_IncludeSubstituteMenu = 406;
   public static final int TransformationMenuPart_Parameterized = 407;
   public static final int TransformationMenuPart_Placeholder = 408;
-  public static final int TransformationMenuPart_SubMenu = 409;
-  public static final int TransformationMenuPart_Super = 410;
-  public static final int TransformationMenuPart_WrapSubstituteMenu = 411;
-  public static final int TransformationMenuReference_Default = 412;
-  public static final int TransformationMenuReference_Named = 413;
-  public static final int TransformationMenuSection = 414;
-  public static final int TransformationMenuVariableDeclaration = 415;
-  public static final int TransformationMenuVariableReference = 416;
-  public static final int TransformationMenu_Default = 417;
-  public static final int TransformationMenu_Named = 418;
-  public static final int URLStyleClassItem = 419;
-  public static final int UnapplyStyle = 420;
-  public static final int UnderlinedStyleClassItem = 421;
+  public static final int TransformationMenuPart_PropertyMenu = 409;
+  public static final int TransformationMenuPart_ReferenceMenu = 410;
+  public static final int TransformationMenuPart_SubMenu = 411;
+  public static final int TransformationMenuPart_Super = 412;
+  public static final int TransformationMenuPart_WrapSubstituteMenu = 413;
+  public static final int TransformationMenuReference_Default = 414;
+  public static final int TransformationMenuReference_Named = 415;
+  public static final int TransformationMenuSection = 416;
+  public static final int TransformationMenuVariableDeclaration = 417;
+  public static final int TransformationMenuVariableReference = 418;
+  public static final int TransformationMenu_Default = 419;
+  public static final int TransformationMenu_Named = 420;
+  public static final int URLStyleClassItem = 421;
+  public static final int UnapplyStyle = 422;
+  public static final int UnderlinedStyleClassItem = 423;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL);
@@ -843,6 +845,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x6a77f9c87420a6caL, TransformationMenuPart_IncludeSubstituteMenu);
     builder.put(0x3abfebf456f8ad25L, TransformationMenuPart_Parameterized);
     builder.put(0x6ed0e5fc004ba432L, TransformationMenuPart_Placeholder);
+    builder.put(0x2717714f9c03978cL, TransformationMenuPart_PropertyMenu);
+    builder.put(0x5ddc2e3f050ded4L, TransformationMenuPart_ReferenceMenu);
     builder.put(0x384b3925671e99efL, TransformationMenuPart_SubMenu);
     builder.put(0x7541587144d24773L, TransformationMenuPart_Super);
     builder.put(0x1a533160d670600cL, TransformationMenuPart_WrapSubstituteMenu);
