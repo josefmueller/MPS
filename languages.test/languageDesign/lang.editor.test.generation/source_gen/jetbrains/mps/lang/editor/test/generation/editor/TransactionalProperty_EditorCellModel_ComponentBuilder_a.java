@@ -12,16 +12,26 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -80,11 +90,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     return var;
   }
   private EditorCell createProperty_vfuuik_a0() {
-    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("theProperty");
-    provider.setNoTargetText("<no theProperty>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
+    SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL, 0xbde89531aae3a9L, "theProperty");
+    EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+    editorCell.setDefaultText("<no theProperty>");
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(myNode, property, CellAction_DeleteNode.DeleteDirection.BACKWARD));
     editorCell.setCellId("idd");
     if (nodeCondition_vfuuik_a0a_0()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
@@ -92,11 +102,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     TestTargetActionMap.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.addKeyMap(new TestTargetKeymap());
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L, "jetbrains.mps.lang.editor.test.generation.structure.AbstractCellTest"), "jetbrains.mps.lang.editor.test.generation.editor.TestTargetTransformationMenu"));
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_a0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_b0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_customReplace_cellMenu_vfuuik_c0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_customReplace_cellMenu_vfuuik_d0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.ApplySideTransforms_left_cellMenu_vfuuik_e0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_component_cellMenu_vfuuik_f0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_g0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_theProperty_postfixCellMenu_vfuuik_h0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_theProperty_cellMenu_vfuuik_i0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.ReplaceWith_Constant_cellMenu_vfuuik_j0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new PropertyCellContext(myNode, property), new SubstituteInfoPartExt[]{new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_a0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_b0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_customReplace_cellMenu_vfuuik_c0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_customReplace_cellMenu_vfuuik_d0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.ApplySideTransforms_left_cellMenu_vfuuik_e0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_component_cellMenu_vfuuik_f0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_generic_cellMenu_vfuuik_g0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_theProperty_postfixCellMenu_vfuuik_h0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.TransactionalProperty_theProperty_cellMenu_vfuuik_i0a0(), new TransactionalProperty_EditorCellModel_ComponentBuilder_a.ReplaceWith_Constant_cellMenu_vfuuik_j0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    Iterable<SNode> attributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
+    if (Sequence.fromIterable(attributes).isNotEmpty()) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+      return manager.createNodeRoleAttributeCell(Sequence.fromIterable(attributes).first(), AttributeKind.PROPERTY, editorCell);
     } else
     return editorCell;
   }

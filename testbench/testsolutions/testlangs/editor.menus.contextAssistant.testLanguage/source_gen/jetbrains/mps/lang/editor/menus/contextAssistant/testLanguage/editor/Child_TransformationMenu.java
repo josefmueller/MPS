@@ -80,10 +80,10 @@ public class Child_TransformationMenu extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      SAbstractConcept targetConcept = getTargetConcept(context);
-      String name = (targetConcept == null ? "" : targetConcept.getName());
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu for the link target concept: " + name, new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "7173407872093664468")));
       try {
+        SAbstractConcept targetConcept = getTargetConcept(context);
+        String name = (targetConcept == null ? "" : targetConcept.getName());
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu for the link target concept: " + name, new SNodePointer("r:0f1cfce5-1514-42b6-8353-156be9a116e3(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor)", "7173407872093664468")));
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();

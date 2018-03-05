@@ -1524,15 +1524,15 @@
       <node id="8991930073415901008" at="44,119,45,65" concept="5" />
       <node id="8991930073415901008" at="46,5,47,18" concept="10" />
       <node id="8991930073415901049" at="53,97,54,51" concept="5" />
-      <node id="8991930073415901049" at="54,51,55,65" concept="9" />
-      <node id="8991930073415901049" at="55,65,56,75" concept="9" />
-      <node id="8991930073415901049" at="56,75,57,279" concept="5" />
-      <node id="8991930073415901049" at="58,11,59,42" concept="10" />
+      <node id="8991930073415901049" at="55,11,56,67" concept="9" />
+      <node id="8991930073415901049" at="56,67,57,77" concept="9" />
+      <node id="8991930073415901049" at="57,77,58,281" concept="5" />
+      <node id="8991930073415901049" at="58,281,59,42" concept="10" />
       <node id="8991930073415901049" at="60,17,61,52" concept="5" />
       <node id="8991930073415901008" at="43,156,46,5" concept="7" />
       <node id="8991930073415901008" at="23,0,27,0" concept="8" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="8991930073415901008" at="32,264,37,5" concept="17" />
-      <node id="8991930073415901049" at="57,279,62,7" concept="17" />
+      <node id="8991930073415901049" at="54,51,62,7" concept="17" />
       <node id="8991930073415901008" at="40,0,49,0" concept="8" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="8991930073415901008" at="28,0,39,0" concept="8" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <node id="8991930073415901049" at="51,0,64,0" concept="8" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
@@ -1540,10 +1540,13 @@
       <scope id="8991930073415901008" at="33,9,34,44" />
       <scope id="8991930073415901008" at="35,15,36,50" />
       <scope id="8991930073415901008" at="44,119,45,65" />
-      <scope id="8991930073415901049" at="58,11,59,42" />
       <scope id="8991930073415901049" at="60,17,61,52" />
       <scope id="8991930073415901008" at="23,0,27,0">
         <var name="location" id="8991930073415901008" />
+      </scope>
+      <scope id="8991930073415901049" at="55,11,59,42">
+        <var name="name" id="8991930073415901049" />
+        <var name="targetConcept" id="8991930073415901049" />
       </scope>
       <scope id="8991930073415901008" at="42,124,47,18">
         <var name="result" id="8991930073415901008" />
@@ -1552,10 +1555,7 @@
       <scope id="8991930073415901008" at="40,0,49,0">
         <var name="_context" id="8991930073415901008" />
       </scope>
-      <scope id="8991930073415901049" at="53,97,62,7">
-        <var name="name" id="8991930073415901049" />
-        <var name="targetConcept" id="8991930073415901049" />
-      </scope>
+      <scope id="8991930073415901049" at="53,97,62,7" />
       <scope id="8991930073415901008" at="28,0,39,0">
         <var name="context" id="8991930073415901008" />
       </scope>
