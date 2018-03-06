@@ -409,8 +409,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/vcs-core/languages/mergehints/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/vcs/languages/modelmetadata/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/vcs/languages/mergehints/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/agreementLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/agreementLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/framework/source_gen" includeSubdirectories="true" />
@@ -865,4 +865,3 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
-
