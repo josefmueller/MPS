@@ -14,7 +14,8 @@ import junit.framework.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,6 +45,8 @@ import java.util.concurrent.ExecutionException;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.application.ModalityState;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.io.File;
 import jetbrains.mps.project.validation.ValidationUtil;
@@ -72,7 +75,7 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
       public void run() {
         SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
         Assert.assertNotNull(targetModel);
-        SNode nodeToMove = SNodeOperations.getNode("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213");
+        SNode nodeToMove = SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213"), project.getRepository());
         Assert.assertNotNull(nodeToMove);
 
         List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
@@ -115,7 +118,7 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
       LOG.info("Making newly created migrations...");
     }
     MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), true);
-    final Wrappers._T<List<IResource>> inputRes = new Wrappers._T<List<IResource>>(null);
+    final Wrappers._T<List<? extends IResource>> inputRes = new Wrappers._T<List<? extends IResource>>(null);
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         inputRes.value = Sequence.fromIterable(new MakeActionParameters(project).modules(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value)).collectInput()).toListSequence();
@@ -154,9 +157,10 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
     }
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        String val = SNodeOperations.getNode("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385").getProperty(MetaAdapterFactory.getProperty(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x535d16ba7fb503adL, 0x535d16ba7fbdf83fL, "prop"));
-        Assert.assertNull("Old property value is: " + val, val);
-        Assert.assertTrue(SNodeOperations.getNode("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385").getProperties().iterator().hasNext());
+        SNode node = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
+        List<SProperty> props = IterableUtil.asList(node.getProperties());
+        Assert.assertEquals(props.size(), 1);
+        Assert.assertTrue(props.get(0).getOwner().getLanguage() != MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage"));
       }
     });
     if (LOG.isInfoEnabled()) {
