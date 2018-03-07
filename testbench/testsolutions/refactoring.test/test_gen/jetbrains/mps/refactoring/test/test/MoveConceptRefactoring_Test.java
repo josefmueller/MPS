@@ -46,7 +46,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.io.File;
 import jetbrains.mps.project.validation.ValidationUtil;
@@ -157,10 +157,19 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
     }
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        // the main difficulty here is not to use node<MoveConcept_A> and property/...:prop/ not to get module dep on source language 
         SNode node = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
-        List<SProperty> props = IterableUtil.asList(node.getProperties());
-        Assert.assertEquals(props.size(), 1);
-        Assert.assertTrue(props.get(0).getOwner().getLanguage() != MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage"));
+        Iterable<SProperty> properties = node.getProperties();
+        Assert.assertFalse(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage");
+          }
+        }));
+        Assert.assertTrue(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
+          }
+        }));
       }
     });
     if (LOG.isInfoEnabled()) {
