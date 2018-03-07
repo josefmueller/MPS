@@ -9515,5 +9515,112 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="35fpGdQRU_1">
+    <property role="3GE5qa" value="propertyAndReference" />
+    <ref role="1XX52x" to="wdez:35fpGdQRU$9" resolve="TestSubstituteParentPropertyAndReference_Subconcept" />
+    <node concept="3EZMnI" id="35fpGdQRUBH" role="2wV5jI">
+      <node concept="3F0ifn" id="35fpGdQRUBI" role="3EZMnx">
+        <property role="3F0ifm" value="test substitute parent property and reference subconcept" />
+      </node>
+      <node concept="3F0A7n" id="35fpGdQRUBJ" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="35fpGdQRUBK" role="3EZMnx">
+        <property role="3F0ifm" value="" />
+        <node concept="pVoyu" id="35fpGdQRUBL" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="35fpGdQRUBM" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="35fpGdQRUCu" role="3EZMnx">
+        <node concept="l2Vlx" id="35fpGdQRUCv" role="2iSdaV" />
+        <node concept="3F0ifn" id="35fpGdQRUCw" role="3EZMnx">
+          <property role="3F0ifm" value="references {" />
+        </node>
+        <node concept="3F0ifn" id="35fpGdQRUCx" role="3EZMnx">
+          <property role="3F0ifm" value="default special reference" />
+          <node concept="pVoyu" id="35fpGdQRUCy" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="35fpGdQRUCz" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="1iCGBv" id="35fpGdQRUC$" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:35fpGdQRU$l" resolve="defaultSpecialReference" />
+          <node concept="1sVBvm" id="35fpGdQRUC_" role="1sWHZn">
+            <node concept="3F0A7n" id="35fpGdQRUCA" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="35fpGdQRUCI" role="3EZMnx">
+          <property role="3F0ifm" value="special refefence with reference menu part" />
+          <node concept="pVoyu" id="35fpGdQRUCJ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="35fpGdQRUCK" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="1iCGBv" id="35fpGdQRUCL" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:35fpGdQRU$Q" resolve="specialReferenceWithMenuPart" />
+          <node concept="1sVBvm" id="35fpGdQRUCM" role="1sWHZn">
+            <node concept="3F0A7n" id="35fpGdQRUCN" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="A1WHu" id="35fpGdQRUCO" role="3vIgyS">
+            <ref role="A1WHt" node="35fpGdQT9uM" resolve="TestSubstituteParentPropertyAndRef_Subconcept_RefMenuPart" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="35fpGdQSLmT" role="3EZMnx">
+          <property role="3F0ifm" value="}" />
+          <node concept="pVoyu" id="35fpGdQSLoa" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="lj46D" id="35fpGdQRUCP" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="35fpGdQRUCQ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="3ICXOK" id="35fpGdQT9uM">
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="TrG5h" value="TestSubstituteParentPropertyAndRef_Subconcept_RefMenuPart" />
+    <ref role="aqKnT" to="wdez:35fpGdQRU$9" resolve="TestSubstituteParentPropertyAndReference_Subconcept" />
+    <node concept="1Qtc8_" id="35fpGdQT9vM" role="IW6Ez">
+      <node concept="3eGOoe" id="35fpGdQT9vQ" role="1Qtc8$" />
+      <node concept="3PzhKR" id="35fpGdQT9vT" role="1Qtc8A">
+        <ref role="3PzhKQ" to="wdez:35fpGdQRU$Q" resolve="specialReferenceWithMenuPart" />
+        <node concept="27VH4U" id="35fpGdQTwzd" role="3z43Xh">
+          <node concept="3clFbS" id="35fpGdQTwze" role="2VODD2">
+            <node concept="3clFbF" id="35fpGdQTwEF" role="3cqZAp">
+              <node concept="2OqwBi" id="35fpGdQTy_E" role="3clFbG">
+                <node concept="2OqwBi" id="35fpGdQTwWK" role="2Oq$k0">
+                  <node concept="1NM5Ph" id="35fpGdQTwEE" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="35fpGdQTxU6" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="35fpGdQTzma" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence):boolean" resolve="contains" />
+                  <node concept="Xl_RD" id="35fpGdQTzwK" role="37wK5m">
+                    <property role="Xl_RC" value="1" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -249,6 +249,52 @@
       <unit id="3262439767570580044" at="15,0,41,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestTransform_ChildWithConstraints_DifferentContext_CanBeParent_Test" />
     </file>
   </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3553171620717758149">
+    <file name="TestSubstitute_DefaultSpecialReference_Test.java">
+      <node id="3553171620717758149" at="20,56,21,25" concept="6" />
+      <node id="3553171620717758149" at="25,78,26,144" concept="1" />
+      <node id="3553171620717758149" at="32,51,33,72" concept="1" />
+      <node id="3553171620717758151" at="33,72,34,71" concept="1" />
+      <node id="3553171620717758153" at="34,71,35,85" concept="1" />
+      <node id="3553171620717758159" at="35,85,36,99" concept="1" />
+      <node id="3553171620717758167" at="36,99,37,82" concept="1" />
+      <node id="3553171620717758149" at="17,0,19,0" concept="5" trace="ourParamCache" />
+      <node id="3553171620717758149" at="20,0,23,0" concept="0" trace="TestSubstitute_DefaultSpecialReference_Test#()V" />
+      <node id="3553171620717758149" at="24,0,28,0" concept="2" trace="test_TestSubstitute_DefaultSpecialReference#()V" />
+      <node id="3553171620717758149" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3553171620717758149" at="20,56,21,25" />
+      <scope id="3553171620717758149" at="25,78,26,144" />
+      <scope id="3553171620717758149" at="20,0,23,0" />
+      <scope id="3553171620717758149" at="24,0,28,0" />
+      <scope id="3553171620717758149" at="32,51,37,82" />
+      <scope id="3553171620717758149" at="31,0,39,0" />
+      <unit id="3553171620717758149" at="29,0,40,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DefaultSpecialReference_Test$TestBody" />
+      <unit id="3553171620717758149" at="15,0,41,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_DefaultSpecialReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3553171620717955238">
+    <file name="TestSubstitute_ReferenceWithMenuPart_Special_Test.java">
+      <node id="3553171620717955238" at="20,62,21,25" concept="6" />
+      <node id="3553171620717955238" at="25,84,26,150" concept="1" />
+      <node id="3553171620717955238" at="32,51,33,72" concept="1" />
+      <node id="3553171620717955240" at="33,72,34,71" concept="1" />
+      <node id="3553171620717955242" at="34,71,35,85" concept="1" />
+      <node id="3553171620717955248" at="35,85,36,99" concept="1" />
+      <node id="3553171620717955256" at="36,99,37,82" concept="1" />
+      <node id="3553171620717955238" at="17,0,19,0" concept="5" trace="ourParamCache" />
+      <node id="3553171620717955238" at="20,0,23,0" concept="0" trace="TestSubstitute_ReferenceWithMenuPart_Special_Test#()V" />
+      <node id="3553171620717955238" at="24,0,28,0" concept="2" trace="test_TestSubstitute_ReferenceWithMenuPart_Special#()V" />
+      <node id="3553171620717955238" at="31,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3553171620717955238" at="20,62,21,25" />
+      <scope id="3553171620717955238" at="25,84,26,150" />
+      <scope id="3553171620717955238" at="20,0,23,0" />
+      <scope id="3553171620717955238" at="24,0,28,0" />
+      <scope id="3553171620717955238" at="32,51,37,82" />
+      <scope id="3553171620717955238" at="31,0,39,0" />
+      <unit id="3553171620717955238" at="29,0,40,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceWithMenuPart_Special_Test$TestBody" />
+      <unit id="3553171620717955238" at="15,0,41,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceWithMenuPart_Special_Test" />
+    </file>
+  </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3676420103152693397">
     <file name="TestSubstituteExceptionReferenceVisibleMatchingText_Test.java">
       <node id="3676420103152693397" at="19,69,20,25" concept="6" />

@@ -1148,5 +1148,28 @@
       <property role="1uS6qv" value="mySecondValue" />
     </node>
   </node>
+  <node concept="1TIwiD" id="35fpGdQRU$9">
+    <property role="EcuMT" value="3553171620717635849" />
+    <property role="TrG5h" value="TestSubstituteParentPropertyAndReference_Subconcept" />
+    <property role="3GE5qa" value="propertyAndReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="qrtnJnJhw1" resolve="TestSubstituteParentPropertyAndReference" />
+    <node concept="1TJgyj" id="35fpGdQRU$l" role="1TKVEi">
+      <property role="IQ2ns" value="3553171620717635861" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="defaultSpecialReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="qrtnJnJhwg" resolve="defaultReference" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+    </node>
+    <node concept="1TJgyj" id="35fpGdQRU$Q" role="1TKVEi">
+      <property role="IQ2ns" value="3553171620717635894" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="specialReferenceWithMenuPart" />
+      <property role="20lbJX" value="1" />
+      <ref role="20ksaX" node="73AphEk2ddN" resolve="referenceWithReferenceMenuPart" />
+      <ref role="20lvS9" node="6szUVE$_m2m" resolve="TestSubstituteChildToReferenceSubconcept" />
+    </node>
+  </node>
 </model>
 
