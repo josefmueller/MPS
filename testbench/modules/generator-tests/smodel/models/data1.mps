@@ -2,12 +2,11 @@
 <model ref="r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f(jetbrains.mps.test.smodel.data1)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="9" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
@@ -81,8 +80,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4065387505485742666" name="jetbrains.mps.lang.smodel.structure.ModelPointer_ResolveOperation" flags="ng" index="2yCiCJ" />
+      <concept id="4065387505485742749" name="jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation" flags="ng" index="2yCiFS">
+        <child id="3648723375513868575" name="repositoryArg" index="Vysub" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelRefExpression" flags="ng" index="1Xw6AR">
+      <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelPointerExpression" flags="ng" index="1Xw6AR">
         <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
       </concept>
     </language>
@@ -100,18 +103,17 @@
       <node concept="3Tm1VV" id="2kP5W5ySCEK" role="1B3o_S" />
       <node concept="3clFbS" id="2kP5W5ySCEL" role="3clF47">
         <node concept="3clFbF" id="2kP5W5ySDKs" role="3cqZAp">
-          <node concept="2OqwBi" id="2kP5W5ySDU9" role="3clFbG">
-            <node concept="1Xw6AR" id="2kP5W5ySDKq" role="2Oq$k0">
-              <node concept="1dCxOl" id="2kP5W5ySDNi" role="1XwpL7">
+          <node concept="2OqwBi" id="7Nxs5SV7MmH" role="3clFbG">
+            <node concept="1Xw6AR" id="7Nxs5SV7GQz" role="2Oq$k0">
+              <node concept="1dCxOl" id="7Nxs5SV7GQ$" role="1XwpL7">
                 <property role="1XweGQ" value="r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f" />
-                <node concept="1j_P7g" id="2kP5W5ySDNj" role="1j$8Uc">
+                <node concept="1j_P7g" id="7Nxs5SV7GQ_" role="1j$8Uc">
                   <property role="1j_P7h" value="jetbrains.mps.test.smodel.data1" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="2kP5W5ySE0e" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-              <node concept="10Nm6u" id="2kP5W5ySE23" role="37wK5m" />
+            <node concept="2yCiCJ" id="7Nxs5SV7MrK" role="2OqNvi">
+              <node concept="10Nm6u" id="7Nxs5SV7MuI" role="Vysub" />
             </node>
           </node>
         </node>
