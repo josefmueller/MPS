@@ -3274,6 +3274,7 @@
         <property role="TrG5h" value="jetbrains.mps.test.smodel" />
         <property role="3LESm3" value="494e76b6-a751-488a-8cfa-cbf8aead39e9" />
         <property role="2GAjPV" value="false" />
+        <property role="aoJFB" value="sources and tests" />
         <node concept="55IIr" id="2kP5W5yTHEZ" role="3LF7KH">
           <node concept="2Ry0Ak" id="2kP5W5yTHGV" role="iGT6I">
             <property role="2Ry0Am" value="testbench" />
