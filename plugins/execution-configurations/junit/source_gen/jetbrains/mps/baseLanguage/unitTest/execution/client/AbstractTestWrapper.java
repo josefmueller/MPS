@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
   @NotNull
   protected final SNodeReference myNodePointer;
-  private String myFqName;
   private final SRepository myRepo;
 
   public AbstractTestWrapper(@NotNull N node) {
@@ -121,9 +120,6 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Override
   public String getCachedFqName() {
-    if (myFqName == null) {
-      myFqName = getFqName();
-    }
-    return myFqName;
+    return getFqName();
   }
 }

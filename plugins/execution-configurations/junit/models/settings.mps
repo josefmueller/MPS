@@ -4426,7 +4426,7 @@
               <ref role="3cqZAo" node="1DeqbSM$GzJ" resolve="element" />
             </node>
             <node concept="liA8E" id="1DeqbSM$GzG" role="2OqNvi">
-              <ref role="37wK5l" to="sfqd:56tRMpP_ejD" resolve="getCachedFqName" />
+              <ref role="37wK5l" to="sfqd:56tRMpP_ej$" resolve="getFqName" />
             </node>
           </node>
         </node>
