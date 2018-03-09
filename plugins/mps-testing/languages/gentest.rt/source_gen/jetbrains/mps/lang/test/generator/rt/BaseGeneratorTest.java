@@ -7,11 +7,17 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.core.platform.Platform;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
@@ -21,6 +27,8 @@ public class BaseGeneratorTest implements EnvironmentAware {
   @Override
   public void setEnvironment(@NotNull Environment env) {
     myEnv = env;
+    // FIXME AntModuleTestSuite opens a project and I don't see a reason for the test to open another one. 
+    //       Project shall be external configuration setting. 
     myProject = myEnv.createEmptyProject();
   }
 
@@ -28,15 +36,21 @@ public class BaseGeneratorTest implements EnvironmentAware {
     return new TransformHelper(myProject);
   }
 
-  protected final boolean match(SModel m1, SModel m2) {
+  protected final boolean match(final SModel m1, final SModel m2) {
     // Next is wishful thinking, imagined contract, not necessarily real at the moment, 
     // IOW, what I'd like match(m1,m2) contract to look like. Have to refactor  
     // NodesMatcher first, and write some tests for it to ensure the contract: 
     // return true if models are the same from structure, metadata, value and reference perspectives 
     // equality from reference perspective means that references within the same model point to  
     // equal (in aforementioned sense) nodes, for external references that the target is equal is java sense. 
-    List<NodeDifference> diff = new NodesMatcher().match(SModelOperations.roots(m1, null), SModelOperations.roots(m2, null));
-    return diff == null || diff.isEmpty();
+    // FIXME use of myProject.getModelAccess() is wrong, empty project we've just created doesn't have modules with test data, 
+    //       however, at the moment I've got no better idea how to access project of MpsTestsSuite 
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        List<NodeDifference> diff = new NodesMatcher().match(SModelOperations.roots(m1, null), SModelOperations.roots(m2, null));
+        return diff == null || diff.isEmpty();
+      }
+    });
   }
 
   protected final ModelGenerationPlan planFromModel(SModel gpm) {
@@ -44,6 +58,11 @@ public class BaseGeneratorTest implements EnvironmentAware {
   }
 
   protected final SModel findModel(String modelRef) {
-    return null;
+    Platform plaf = myEnv.getPlatform();
+    SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
+    // FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project 
+    //       and I'd rather resolve them trough project of MpsTestsSuite. However, as long as I don't have access to the project created inside MpsTestsSuite, I decided to go  
+    //       through a CL repository for now. 
+    return mr.resolve(plaf.findComponent(MPSModuleRepository.class));
   }
 }

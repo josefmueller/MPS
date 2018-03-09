@@ -30281,6 +30281,12 @@
             <ref role="3bR37D" node="6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
           </node>
         </node>
+        <node concept="1SiIV0" id="2HHqIa5ESHZ" role="3bR37C">
+          <node concept="3bR9La" id="2HHqIa5ESI0" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
         <node concept="398BVA" id="3AyJARAAktY" role="3LF7KH">
           <ref role="398BVh" node="ymnOULASEN" resolve="mps_home" />
           <node concept="2Ry0Ak" id="3AyJARAAkw4" role="iGT6I">

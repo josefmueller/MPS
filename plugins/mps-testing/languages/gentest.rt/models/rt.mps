@@ -18,6 +18,11 @@
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
+    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -142,6 +147,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -201,6 +209,16 @@
             <node concept="37vLTw" id="6VhyYlfP40L" role="37vLTx">
               <ref role="3cqZAo" node="6VhyYlfP3VR" resolve="env" />
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2HHqIa5E8$h" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5E8$j" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME AntModuleTestSuite opens a project and I don't see a reason for the test to open another one." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2HHqIa5E8Iv" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5E8Ix" role="3SKWNk">
+            <property role="3SKdUp" value="      Project shall be external configuration setting." />
           </node>
         </node>
         <node concept="3clFbF" id="6VhyYlfP5U7" role="3cqZAp">
@@ -285,54 +303,88 @@
             <property role="3SKdUp" value="equal (in aforementioned sense) nodes, for external references that the target is equal is java sense." />
           </node>
         </node>
-        <node concept="3cpWs8" id="6VhyYlfLsPi" role="3cqZAp">
-          <node concept="3cpWsn" id="6VhyYlfLsPj" role="3cpWs9">
-            <property role="TrG5h" value="diff" />
-            <node concept="3uibUv" id="6VhyYlfLsPb" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="6VhyYlfLsPe" role="11_B2D">
-                <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="6VhyYlfLsPk" role="33vP2m">
-              <node concept="2ShNRf" id="6VhyYlfLsPl" role="2Oq$k0">
-                <node concept="1pGfFk" id="6VhyYlfLsPm" role="2ShVmc">
-                  <ref role="37wK5l" to="y5e1:7MIYyntE09A" resolve="NodesMatcher" />
-                </node>
-              </node>
-              <node concept="liA8E" id="6VhyYlfLsPn" role="2OqNvi">
-                <ref role="37wK5l" to="y5e1:4OzBQ_jpsdg" resolve="match" />
-                <node concept="2OqwBi" id="6VhyYlfLsPo" role="37wK5m">
-                  <node concept="37vLTw" id="6VhyYlfLsPp" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6VhyYlfL9a1" resolve="m1" />
-                  </node>
-                  <node concept="2RRcyG" id="6VhyYlfLsPq" role="2OqNvi" />
-                </node>
-                <node concept="2OqwBi" id="6VhyYlfLsPr" role="37wK5m">
-                  <node concept="37vLTw" id="6VhyYlfLsPs" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6VhyYlfL9a_" resolve="m2" />
-                  </node>
-                  <node concept="2RRcyG" id="6VhyYlfLsPt" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="2HHqIa5JOe_" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5JOeB" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME use of myProject.getModelAccess() is wrong, empty project we've just created doesn't have modules with test data," />
           </node>
         </node>
-        <node concept="3cpWs6" id="6VhyYlfLutm" role="3cqZAp">
-          <node concept="22lmx$" id="6VhyYlfLveo" role="3cqZAk">
-            <node concept="2OqwBi" id="6VhyYlfLvOg" role="3uHU7w">
-              <node concept="37vLTw" id="6VhyYlfLvhq" role="2Oq$k0">
-                <ref role="3cqZAo" node="6VhyYlfLsPj" resolve="diff" />
-              </node>
-              <node concept="liA8E" id="6VhyYlfLwTN" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+        <node concept="3SKdUt" id="2HHqIa5JRHx" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5JRHz" role="3SKWNk">
+            <property role="3SKdUp" value="      however, at the moment I've got no better idea how to access project of MpsTestsSuite" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2HHqIa5JQ6c" role="3cqZAp">
+          <node concept="2OqwBi" id="2HHqIa5JOxD" role="3cqZAk">
+            <node concept="2ShNRf" id="2HHqIa5J__7" role="2Oq$k0">
+              <node concept="1pGfFk" id="2HHqIa5JNQh" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="2HHqIa5J$oD" role="37wK5m">
+                  <node concept="37vLTw" id="2HHqIa5JzZ2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6VhyYlfP6Cd" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="2HHqIa5J$Og" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="3clFbC" id="6VhyYlfLv0D" role="3uHU7B">
-              <node concept="37vLTw" id="6VhyYlfLuto" role="3uHU7B">
-                <ref role="3cqZAo" node="6VhyYlfLsPj" resolve="diff" />
+            <node concept="liA8E" id="2HHqIa5JOTK" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <node concept="1bVj0M" id="2HHqIa5JP4q" role="37wK5m">
+                <node concept="3clFbS" id="2HHqIa5JP4t" role="1bW5cS">
+                  <node concept="3cpWs8" id="6VhyYlfLsPi" role="3cqZAp">
+                    <node concept="3cpWsn" id="6VhyYlfLsPj" role="3cpWs9">
+                      <property role="TrG5h" value="diff" />
+                      <node concept="3uibUv" id="6VhyYlfLsPb" role="1tU5fm">
+                        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                        <node concept="3uibUv" id="6VhyYlfLsPe" role="11_B2D">
+                          <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="6VhyYlfLsPk" role="33vP2m">
+                        <node concept="2ShNRf" id="6VhyYlfLsPl" role="2Oq$k0">
+                          <node concept="1pGfFk" id="6VhyYlfLsPm" role="2ShVmc">
+                            <ref role="37wK5l" to="y5e1:7MIYyntE09A" resolve="NodesMatcher" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6VhyYlfLsPn" role="2OqNvi">
+                          <ref role="37wK5l" to="y5e1:4OzBQ_jpsdg" resolve="match" />
+                          <node concept="2OqwBi" id="6VhyYlfLsPo" role="37wK5m">
+                            <node concept="37vLTw" id="6VhyYlfLsPp" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6VhyYlfL9a1" resolve="m1" />
+                            </node>
+                            <node concept="2RRcyG" id="6VhyYlfLsPq" role="2OqNvi" />
+                          </node>
+                          <node concept="2OqwBi" id="6VhyYlfLsPr" role="37wK5m">
+                            <node concept="37vLTw" id="6VhyYlfLsPs" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6VhyYlfL9a_" resolve="m2" />
+                            </node>
+                            <node concept="2RRcyG" id="6VhyYlfLsPt" role="2OqNvi" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="6VhyYlfLutm" role="3cqZAp">
+                    <node concept="22lmx$" id="6VhyYlfLveo" role="3cqZAk">
+                      <node concept="2OqwBi" id="6VhyYlfLvOg" role="3uHU7w">
+                        <node concept="37vLTw" id="6VhyYlfLvhq" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6VhyYlfLsPj" resolve="diff" />
+                        </node>
+                        <node concept="liA8E" id="6VhyYlfLwTN" role="2OqNvi">
+                          <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+                        </node>
+                      </node>
+                      <node concept="3clFbC" id="6VhyYlfLv0D" role="3uHU7B">
+                        <node concept="37vLTw" id="6VhyYlfLuto" role="3uHU7B">
+                          <ref role="3cqZAo" node="6VhyYlfLsPj" resolve="diff" />
+                        </node>
+                        <node concept="10Nm6u" id="6VhyYlfLvb1" role="3uHU7w" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
-              <node concept="10Nm6u" id="6VhyYlfLvb1" role="3uHU7w" />
             </node>
           </node>
         </node>
@@ -374,8 +426,77 @@
       <property role="DiZV1" value="true" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="2kP5W5yTGwW" role="3clF47">
-        <node concept="3clFbF" id="2kP5W5yTHiC" role="3cqZAp">
-          <node concept="10Nm6u" id="2kP5W5yTHiB" role="3clFbG" />
+        <node concept="3cpWs8" id="2HHqIa5Eh9Y" role="3cqZAp">
+          <node concept="3cpWsn" id="2HHqIa5Eh9Z" role="3cpWs9">
+            <property role="TrG5h" value="plaf" />
+            <node concept="3uibUv" id="2HHqIa5Eh9V" role="1tU5fm">
+              <ref role="3uigEE" to="4o98:~Platform" resolve="Platform" />
+            </node>
+            <node concept="2OqwBi" id="2HHqIa5Eha0" role="33vP2m">
+              <node concept="37vLTw" id="2HHqIa5Eha1" role="2Oq$k0">
+                <ref role="3cqZAo" node="6VhyYlfP40B" resolve="myEnv" />
+              </node>
+              <node concept="liA8E" id="2HHqIa5Eha2" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2HHqIa5EjXS" role="3cqZAp">
+          <node concept="3cpWsn" id="2HHqIa5EjXT" role="3cpWs9">
+            <property role="TrG5h" value="mr" />
+            <node concept="3uibUv" id="2HHqIa5EjXF" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+            </node>
+            <node concept="2OqwBi" id="2HHqIa5EjXU" role="33vP2m">
+              <node concept="2YIFZM" id="2HHqIa5EQty" role="2Oq$k0">
+                <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+              </node>
+              <node concept="liA8E" id="2HHqIa5EjXZ" role="2OqNvi">
+                <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
+                <node concept="37vLTw" id="2HHqIa5EjY0" role="37wK5m">
+                  <ref role="3cqZAo" node="2kP5W5yTHcU" resolve="modelRef" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2HHqIa5EmbK" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5EmbM" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2HHqIa5EMiU" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5EMiW" role="3SKWNk">
+            <property role="3SKdUp" value="      and I'd rather resolve them trough project of MpsTestsSuite. However, as long as I don't have access to the project created inside MpsTestsSuite, I decided to go " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2HHqIa5EMuP" role="3cqZAp">
+          <node concept="3SKdUq" id="2HHqIa5EMuQ" role="3SKWNk">
+            <property role="3SKdUp" value="      through a CL repository for now." />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2HHqIa5EkvG" role="3cqZAp">
+          <node concept="2OqwBi" id="2HHqIa5EkIs" role="3cqZAk">
+            <node concept="37vLTw" id="2HHqIa5EkvI" role="2Oq$k0">
+              <ref role="3cqZAo" node="2HHqIa5EjXT" resolve="mr" />
+            </node>
+            <node concept="liA8E" id="2HHqIa5El4$" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+              <node concept="2OqwBi" id="2HHqIa5E9nC" role="37wK5m">
+                <node concept="37vLTw" id="2HHqIa5Eha3" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2HHqIa5Eh9Z" resolve="plaf" />
+                </node>
+                <node concept="liA8E" id="2HHqIa5E9LN" role="2OqNvi">
+                  <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                  <node concept="3VsKOn" id="2HHqIa5Efu5" role="37wK5m">
+                    <ref role="3VsUkX" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="3Tmbuc" id="2kP5W5yTG7Z" role="1B3o_S" />
