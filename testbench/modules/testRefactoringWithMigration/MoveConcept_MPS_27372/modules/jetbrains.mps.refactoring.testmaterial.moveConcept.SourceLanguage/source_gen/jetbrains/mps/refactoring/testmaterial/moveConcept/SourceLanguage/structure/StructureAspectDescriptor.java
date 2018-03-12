@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoveConcept_A = createDescriptorForMoveConcept_A();
+  /*package*/ final ConceptDescriptor myConceptMoveConcept_B = createDescriptorForMoveConcept_B();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -21,7 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMoveConcept_A);
+    return Arrays.asList(myConceptMoveConcept_A, myConceptMoveConcept_B);
   }
 
   @Override
@@ -30,6 +31,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myConceptIndex.index(id)) {
       case LanguageConceptSwitch.MoveConcept_A:
         return myConceptMoveConcept_A;
+      case LanguageConceptSwitch.MoveConcept_B:
+        return myConceptMoveConcept_B;
       default:
         return null;
     }
@@ -45,6 +48,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/6006982468244407213");
     b.prop("prop", 0x535d16ba7fbdf83fL, "6006982468244994111");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMoveConcept_B() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage", "MoveConcept_B", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x44717f871a8a9L);
+    b.class_(false, false, true);
+    b.super_("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure.MoveConcept_A", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x535d16ba7fb503adL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/1204068184860841");
     return b.create();
   }
 }

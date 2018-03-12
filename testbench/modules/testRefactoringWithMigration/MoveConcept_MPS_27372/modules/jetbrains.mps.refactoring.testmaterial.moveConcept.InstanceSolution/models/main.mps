@@ -10,6 +10,7 @@
       <concept id="6006982468244407213" name="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure.MoveConcept_A" flags="ng" index="GU1kn">
         <property id="6006982468244994111" name="prop" index="GSeU5" />
       </concept>
+      <concept id="1204068184860841" name="jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure.MoveConcept_B" flags="ng" index="3StuYY" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -20,6 +21,10 @@
   <node concept="GU1kn" id="5dt5FDZHjsx">
     <property role="TrG5h" value="MoveConcept_A_Instance" />
     <property role="GSeU5" value="qwe" />
+  </node>
+  <node concept="3StuYY" id="4hLvSsruT">
+    <property role="TrG5h" value="MoveConcept_B_Instance" />
+    <property role="GSeU5" value="rtrtrtyty" />
   </node>
 </model>
 

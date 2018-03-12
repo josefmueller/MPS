@@ -47,5 +47,14 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="4hLvSsqyD">
+    <property role="EcuMT" value="1204068184860841" />
+    <property role="TrG5h" value="MoveConcept_B" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="5dt5FDZHgeH" resolve="MoveConcept_A" />
+    <node concept="PrWs8" id="4hLvSsqyF" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 

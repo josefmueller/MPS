@@ -158,14 +158,21 @@ public class MoveConceptRefactoring_Test extends EnvironmentAwareTestCase {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // the main difficulty here is not to use node<MoveConcept_A> and property/...:prop/ not to get module dep on source language 
-        SNode node = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
-        Iterable<SProperty> properties = node.getProperties();
-        Assert.assertFalse(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+        SNode node1 = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
+        final SNode node2 = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "1204068184864697"), project.getRepository());
+        Iterable<SProperty> properties1 = node1.getProperties();
+        Iterable<SProperty> properties2 = node2.getProperties();
+        Assert.assertTrue(Sequence.fromIterable(properties2).all(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return node2.getConcept().getProperties().contains(it);
+          }
+        }));
+        Assert.assertFalse(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
           public boolean accept(SProperty it) {
             return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage");
           }
         }));
-        Assert.assertTrue(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+        Assert.assertTrue(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
           public boolean accept(SProperty it) {
             return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
           }
