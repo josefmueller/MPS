@@ -22246,7 +22246,7 @@
           </node>
         </node>
         <node concept="nFU4i" id="1lMM4owFq8q" role="nFU4p">
-          <property role="nFU4j" value="languages/jetbrains.mps.ide.vcs/source_gen" />
+          <property role="nFU4j" value="solutions/jetbrains.mps.ide.vcs/source_gen" />
           <property role="3LZaj6" value="source" />
         </node>
       </node>
@@ -22467,7 +22467,7 @@
           <node concept="2Ry0Ak" id="39HJr_hyEuc" role="2Ry0An">
             <property role="2Ry0Am" value="vcs" />
             <node concept="2Ry0Ak" id="306QkZP2XBf" role="2Ry0An">
-              <property role="2Ry0Am" value="languages" />
+              <property role="2Ry0Am" value="solutions" />
               <node concept="2Ry0Ak" id="306QkZP2XDu" role="2Ry0An">
                 <property role="2Ry0Am" value="jetbrains.mps.ide.vcs" />
                 <node concept="2Ry0Ak" id="306QkZP2XDt" role="2Ry0An">
