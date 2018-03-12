@@ -35,6 +35,7 @@
   <path id="path.java.library.idea-vcs">
     <fileset dir="${artifacts.IDEA}/plugins/git4idea/lib" includes="*.jar" />
     <fileset dir="${artifacts.IDEA}/plugins/svn4idea/lib" includes="*.jar" />
+    <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
@@ -114,11 +115,14 @@
     </copy>
   </target>
   
-  <target name="java.compile.vcs-platform" depends="fetchDependencies">
+  <target name="java.compile.vcs-platform" depends="java.compile.vcs-core, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs-platform" />
     <javac2 destdir="${build.tmp}/java/out/vcs-platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src path="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen" />
+      <src>
+        <pathelement path="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen" />
+        <pathelement path="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source" />
+      </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
@@ -131,16 +135,25 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/vcs-core" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.7.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.java.library.idea-vcs" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/vcs-platform">
       <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

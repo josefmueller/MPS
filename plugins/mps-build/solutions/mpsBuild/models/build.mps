@@ -22261,10 +22261,11 @@
       <node concept="nCB5N" id="6PVLa2nYlyx" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzMQ" resolve="mps-tool" />
       </node>
-      <node concept="2GhqfE" id="1QfYSW$0n3U" role="nCB5Z">
-        <node concept="3yrxFa" id="1QfYSW$0n5g" role="3yrxIG">
-          <ref role="3yrxFb" node="1QfYSWzYzJN" resolve="vcs-core.jar" />
-        </node>
+      <node concept="nCB5N" id="1QfYSW$zyL$" role="nCB5Z">
+        <ref role="nCB5Y" node="1QfYSWzYzGH" resolve="vcs-core" />
+      </node>
+      <node concept="nCB5N" id="1QfYSW$zyNE" role="nCB5Z">
+        <ref role="nCB5Y" node="1QfYSWzYzGS" resolve="vcs-platform" />
       </node>
     </node>
     <node concept="1E1JtD" id="6ifcnI8$2j3" role="3989C9">
@@ -32418,70 +32419,11 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="398b33" id="7TqXBxc99Ft" role="3989C9">
-      <property role="TrG5h" value="vcs-core" />
-      <node concept="nCB5N" id="7TqXBxc99Fu" role="nCB5Z">
-        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
-      </node>
-      <node concept="nCB5N" id="7TqXBxc99Fv" role="nCB5Z">
-        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
-      </node>
-      <node concept="2sjeV3" id="7TqXBxc99Fw" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="7TqXBxc99Im" resolve="idea-vcs" />
-      </node>
-      <node concept="398b2D" id="7TqXBxc99Fx" role="398b2p">
-        <node concept="398BVA" id="7TqXBxc99Fy" role="398b2C">
-          <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="7TqXBxc99Fz" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
-            <node concept="2Ry0Ak" id="3GKcrjoPZRH" role="2Ry0An">
-              <property role="2Ry0Am" value="vcs" />
-              <node concept="2Ry0Ak" id="3GKcrjoPZRG" role="2Ry0An">
-                <property role="2Ry0Am" value="vcs-core" />
-              </node>
-            </node>
+      <node concept="25yagZ" id="1QfYSW$ddZ4" role="PiKyV">
+        <node concept="3yqFpY" id="1QfYSW$ddZ5" role="25yagT">
+          <node concept="3yqFqT" id="1QfYSW$ddZ6" role="3yqFpW">
+            <ref role="3yqFr6" node="6eCuTcwOvjK" resolve="lib" />
           </node>
-        </node>
-        <node concept="nFU4i" id="7TqXBxc99F_" role="nFU4p">
-          <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.core/source_gen" />
-          <property role="3LZaj6" value="source" />
-        </node>
-        <node concept="nFU4i" id="3GKcrjoQM4T" role="nFU4p">
-          <property role="nFU4j" value="modules/mergehints.runtime/source_gen" />
-          <property role="3LZaj6" value="source" />
-        </node>
-      </node>
-    </node>
-    <node concept="398b33" id="306QkZP3fW2" role="3989C9">
-      <property role="TrG5h" value="vcs-platform" />
-      <node concept="nCB5N" id="306QkZP3fW3" role="nCB5Z">
-        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
-      </node>
-      <node concept="nCB5N" id="306QkZP3fW4" role="nCB5Z">
-        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
-      </node>
-      <node concept="2sjeV3" id="306QkZP3fW5" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="7TqXBxc99Im" resolve="idea-vcs" />
-      </node>
-      <node concept="398b2D" id="306QkZP3fW6" role="398b2p">
-        <node concept="398BVA" id="306QkZP3fW7" role="398b2C">
-          <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="306QkZP3fW8" role="iGT6I">
-            <property role="2Ry0Am" value="plugins" />
-            <node concept="2Ry0Ak" id="306QkZP3fW9" role="2Ry0An">
-              <property role="2Ry0Am" value="vcs" />
-              <node concept="2Ry0Ak" id="306QkZP3gb9" role="2Ry0An">
-                <property role="2Ry0Am" value="vcs-platform" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="nFU4i" id="306QkZP3fWb" role="nFU4p">
-          <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.platform/source_gen" />
-          <property role="3LZaj6" value="source" />
         </node>
       </node>
     </node>
@@ -32509,8 +32451,8 @@
           </node>
         </node>
       </node>
-      <node concept="1E1SXE" id="7TqXBxc9NrL" role="3bR37C">
-        <ref role="1E1SXG" node="7TqXBxc99Ft" resolve="vcs-core" />
+      <node concept="1E1SXE" id="1QfYSW$de8F" role="3bR37C">
+        <ref role="1E1SXG" node="1QfYSWzYzGH" resolve="vcs-core" />
       </node>
       <node concept="398BVA" id="39HJr_hyAmX" role="3LF7KH">
         <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
@@ -36099,6 +36041,13 @@
           </node>
         </node>
       </node>
+      <node concept="25yagZ" id="1QfYSW$ddXv" role="PiKyV">
+        <node concept="3yqFpY" id="1QfYSW$ddXw" role="25yagT">
+          <node concept="3yqFqT" id="1QfYSW$ddXF" role="3yqFpW">
+            <ref role="3yqFr6" node="6eCuTcwOvjK" resolve="lib" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="398b33" id="1QfYSWzYzGH" role="3989C9">
       <property role="TrG5h" value="vcs-core" />
@@ -36143,6 +36092,15 @@
       <node concept="nCB5N" id="1QfYSWzYzGU" role="nCB5Z">
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
+      <node concept="nCB5N" id="1QfYSW$jqqc" role="nCB5Z">
+        <ref role="nCB5Y" node="16Vg0jOdbW2" resolve="mps-editor" />
+      </node>
+      <node concept="nCB5N" id="1QfYSW$ruxa" role="nCB5Z">
+        <ref role="nCB5Y" node="16Vg0jOco3P" resolve="mps-platform" />
+      </node>
+      <node concept="nCB5N" id="1QfYSW$nsIj" role="nCB5Z">
+        <ref role="nCB5Y" node="1QfYSWzYzGH" resolve="vcs-core" />
+      </node>
       <node concept="2sjeV3" id="1QfYSWzYzGV" role="nCB5Z">
         <property role="2a2d0E" value="true" />
         <ref role="2sjeV2" node="1QfYSWzYzGA" resolve="idea-vcs" />
@@ -36162,6 +36120,10 @@
         </node>
         <node concept="nFU4i" id="1QfYSWzYzH1" role="nFU4p">
           <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.platform/source_gen" />
+          <property role="3LZaj6" value="source" />
+        </node>
+        <node concept="nFU4i" id="1QfYSW$vwPV" role="nFU4p">
+          <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.platform/source" />
           <property role="3LZaj6" value="source" />
         </node>
       </node>
