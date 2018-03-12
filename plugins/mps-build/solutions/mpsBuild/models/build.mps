@@ -22732,15 +22732,15 @@
           <node concept="3_I8Xc" id="1QfYSWzYQxN" role="39821P">
             <ref role="3_I8Xa" node="1QfYSWzYzJN" resolve="vcs-core.jar" />
           </node>
-          <node concept="3981dx" id="306QkZP3ij$" role="39821P">
-            <node concept="3_J27D" id="306QkZP3ijA" role="Nbhlr">
-              <node concept="3Mxwew" id="306QkZP3ikp" role="3MwsjC">
-                <property role="3MwjfP" value="src.jar" />
-              </node>
+        </node>
+        <node concept="3981dx" id="306QkZP3ij$" role="39821P">
+          <node concept="3_J27D" id="306QkZP3ijA" role="Nbhlr">
+            <node concept="3Mxwew" id="306QkZP3ikp" role="3MwsjC">
+              <property role="3MwjfP" value="src.jar" />
             </node>
-            <node concept="3_I8Xc" id="1QfYSWzU4dI" role="39821P">
-              <ref role="3_I8Xa" node="306QkZP3hAU" resolve="modules" />
-            </node>
+          </node>
+          <node concept="3_I8Xc" id="1QfYSWzU4dI" role="39821P">
+            <ref role="3_I8Xa" node="306QkZP3hAU" resolve="modules" />
           </node>
         </node>
       </node>

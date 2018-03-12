@@ -166,7 +166,7 @@
     </jar>
     <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-platform.jar" todir="${build.layout}/mps-vcs/lib" />
     <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
-    <jar destfile="${build.layout}/mps-vcs/lib/src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/mps-vcs/src.jar" duplicate="preserve">
       <zipfileset dir="${artifacts.mpsVcsPlatform}/modules" prefix="modules" />
     </jar>
     <mkdir dir="${build.layout}/git4idea" />
