@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import java.util.function.Function;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -30,19 +31,24 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   private final ITestNodeWrapper myTestCase;
+  private final String myName;
+  private final String myQualifiedName;
 
   public LanguageTestWrapper(SNode test) {
     super(test, (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(test));
     myTestCase = null;
+    myName = ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(test);
+    myQualifiedName = ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(test);
   }
 
-  public LanguageTestWrapper(@NotNull ITestNodeWrapper testCase, SNode testMethod) {
+  public LanguageTestWrapper(@NotNull ITestNodeWrapper testCase, @NotNull SNode testMethod) {
     super(testMethod, testCase.canRunInProcess());
     myTestCase = testCase;
+    myName = ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(testMethod);
+    myQualifiedName = testCase.getFqName() + '.' + myName;
   }
 
   @Override
@@ -156,26 +162,12 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @NonNls
   @Override
   public String getFqName() {
-    return withNode(new Function<SNode, String>() {
-      public String apply(SNode n) {
-        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) ? ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) : LanguageTestWrapper.super.getFqName());
-      }
-    });
+    return myQualifiedName;
   }
 
   @NonNls
   @Override
   public String getName() {
-    return withNode(new Function<SNode, String>() {
-      public String apply(SNode n) {
-        return (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")) ? ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b27438a3dL, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))) : check_9og6tg_a0a0a0a0u(SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
-      }
-    });
-  }
-  private static String check_9og6tg_a0a0a0a0u(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(checkedDotOperand);
-    }
-    return null;
+    return myName;
   }
 }
