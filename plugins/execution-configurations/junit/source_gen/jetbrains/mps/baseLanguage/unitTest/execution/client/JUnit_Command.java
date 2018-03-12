@@ -10,7 +10,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.debug.api.IDebugger;
@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
+import java.util.LinkedList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import java.util.Set;
@@ -75,11 +76,7 @@ public class JUnit_Command {
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
-    List<ITestNodeWrapper> testsNoNull = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
-      public boolean accept(ITestNodeWrapper it) {
-        return it != null;
-      }
-    }).toListSequence();
+    List<ITestNodeWrapper> testsNoNull = ListSequence.fromList(tests).where(new NotNullWhereFilter<ITestNodeWrapper>()).toListSequence();
     if (ListSequence.fromList(testsNoNull).isEmpty()) {
       throw new ExecutionException("No tests to run");
     }
@@ -87,7 +84,7 @@ public class JUnit_Command {
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(testsToRun.getParameters().getClassPath()).union(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun.getTests()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun.getParameters().getJvmArgs()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ? " " + myVirtualMachineParameter_String : ""))).setClassPath_ListString(ListSequence.fromList(JUnit_Command.getClasspath(testsToRun)).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(JUnit_Command.getProgramParameters(testsToRun.getTests())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun.getParameters().getExecutorClass().getName());
   }
 
   public static IDebugger getDebugger() {
@@ -95,10 +92,10 @@ public class JUnit_Command {
   }
 
   private static String getProgramParameters(List<ITestNodeWrapper> tests) {
-    List<String> testsCommandLine = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count()));
+    List<String> testsCommandLine = ListSequence.fromList(new ArrayList<String>(ListSequence.fromList(tests).count() * 2));
     for (ITestNodeWrapper test : ListSequence.fromList(tests)) {
-      List<String> parametersPart = ListSequence.fromListAndArray(new ArrayList<String>(), (test.isTestCase() ? "-c" : "-m"), test.getFqName());
-      ListSequence.fromList(testsCommandLine).addSequence(ListSequence.fromList(parametersPart));
+      ListSequence.fromList(testsCommandLine).addElement((test.isTestCase() ? "-c" : "-m"));
+      ListSequence.fromList(testsCommandLine).addElement(test.getFqName());
     }
     return IterableUtils.join(ListSequence.fromList(testsCommandLine), " ");
   }
@@ -136,21 +133,26 @@ public class JUnit_Command {
     }
     return maxParams;
   }
-  private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
-    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+  private static List<String> getClasspath(final TestsWithParameters tests) {
+    List<String> classpath = ListSequence.fromList(new LinkedList<String>());
+    if (tests.getParameters().needsMPS()) {
+      // FIXME In fact, at the moment, DefaultTestExecutor always starts IDEA environment, and we need to control this better 
+      ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder()).distinct());
+      ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder()).distinct());
+    }
+    // FIXME i'm going to get rid of ITestNodeWrapper.getNode access anyway, therefore left MA.instance() as is. 
+    //       The idea is to pass list of SModuleReference through TestParameters 
+    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
-        for (ITestNodeWrapper testable : tests) {
+        for (ITestNodeWrapper testable : tests.getTests()) {
           SModule module = SNodeOperations.getModel(testable.getNode()).getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
-        List<String> classpath = Java_Command.getClasspath(uniqueModules);
-        // fixme need this to allow user to start MPS inside the BTestCase 
-        ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
-        ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
-        return classpath;
+        return Java_Command.getClasspath(uniqueModules);
       }
-    });
+    })));
+    return ListSequence.fromList(tests.getParameters().getClassPath()).union(ListSequence.fromList(classpath)).toListSequence();
   }
   private static List<String> collectFromLibFolder() {
     List<URL> urls = ListSequence.fromList(new ArrayList<URL>());

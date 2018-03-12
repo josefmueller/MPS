@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable__BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +14,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable__BehaviorDescriptor;
 import java.util.Set;
 import com.intellij.openapi.application.PathMacros;
 import java.util.List;
@@ -21,11 +21,6 @@ import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor;
 import java.util.ArrayList;
-import com.intellij.openapi.application.PathManager;
-import java.io.File;
-import com.intellij.util.lang.UrlClassLoader;
-import java.net.URL;
-import java.net.URI;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,12 +31,14 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   private final ITestNodeWrapper myTestCase;
   private final String myName;
   private final String myQualifiedName;
+  private final boolean myNeedsMPS;
 
   public LanguageTestWrapper(SNode test) {
     super(test, (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(test));
     myTestCase = null;
     myName = ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(test);
     myQualifiedName = ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(test);
+    myNeedsMPS = (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(test);
   }
 
   public LanguageTestWrapper(@NotNull ITestNodeWrapper testCase, @NotNull SNode testMethod) {
@@ -49,6 +46,8 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     myTestCase = testCase;
     myName = ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(testMethod);
     myQualifiedName = testCase.getFqName() + '.' + myName;
+    // perhaps, shall derive MPS requirement form ITestNodeWrapper, but as long as isMpsStartRequired is in ITestable, don't see a reason. 
+    myNeedsMPS = (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testMethod);
   }
 
   @Override
@@ -82,81 +81,36 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   @Override
   @NotNull
   public TestParameters getTestRunParameters() {
-    return withNode(new Function<SNode, TestParameters>() {
-      public TestParameters apply(SNode node) {
-        if (node != null && (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(node)) {
-          Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-          List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
-            public String select(String key) {
-              return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
-            }
-          })).toListSequence();
-          List<String> classPath = getIdeaClasspath();
-          return new TestParameters(CachingTestExecutor.class, ListSequence.fromList(classPath).union(ListSequence.fromList(LanguageTestWrapper.super.getTestRunParameters().getClassPath())).toListSequence(), jvmArgsWithMacros);
-        } else {
-          return LanguageTestWrapper.super.getTestRunParameters();
+    TestParameters rp = super.getTestRunParameters();
+    if (myNeedsMPS) {
+      // FIXME move macros into JUnit_Command, too 
+      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
+      List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
+        public String select(String key) {
+          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }
-      }
-    });
-  }
-
-  private List<String> getPluginClasspath() {
-    List<String> path = ListSequence.fromList(new ArrayList<String>());
-    String pluginsPath = PathManager.getPreInstalledPluginsPath();
-    File pluginsDir = new File(pluginsPath);
-    for (File pluginDirFile : pluginsDir.listFiles()) {
-      if (pluginDirFile.isDirectory()) {
-        // adding classes dir 
-        File classesDir = new File(pluginDirFile, "classes");
-        if (classesDir.exists()) {
-          ListSequence.fromList(path).addElement(classesDir.getAbsolutePath());
-        }
-        // adding contents of lib dir 
-        File libDir = new File(pluginDirFile, "lib");
-        if (libDir.exists()) {
-          for (File libChild : libDir.listFiles()) {
-            if (libChild.isFile()) {
-              String name = libChild.getName();
-              if (name.toLowerCase().endsWith(".jar") || name.toLowerCase().endsWith(".zip")) {
-                ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
-              }
-            } else {
-              ListSequence.fromList(path).addElement(libChild.getAbsolutePath());
-            }
-          }
-        }
-      } else {
-        ListSequence.fromList(path).addElement(pluginDirFile.getAbsolutePath());
-      }
+      })).toListSequence();
+      return new TestParameters(CachingTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
+    } else {
+      return rp;
     }
-    return path;
   }
 
-  private List<String> getIdeaClasspath() {
+
+  /**
+   * FIXME Dead code. Left as a reminder to check if there's need to do anything about classpath of runtime modules of lang.test; I don't see a reason to import them explicitly as
+   * they have to get there as a dependency of a test module anyway (after all, it's written using test languages)
+   */
+  private void getIdeaClasspath() {
     final List<String> result = ListSequence.fromList(new ArrayList<String>());
-    ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
-    Class cls = classLoader.getClass();
-    try {
-      List<URL> urls = ((List<URL>) cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
-      for (URL url : urls) {
-        ListSequence.fromList(result).addElement(new URI(url.toString()).getPath());
+    Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test").getLanguageRuntimes();
+    for (SModuleReference dep : Sequence.fromIterable(languageRuntimes)) {
+      SModule module = dep.resolve(getRepo());
+      JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+      if (facet != null) {
+        ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
       }
-    } catch (Exception ignored) {
     }
-    getRepo().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<SModuleReference> languageRuntimes = MetaAdapterFactory.getLanguage(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, "jetbrains.mps.lang.test").getLanguageRuntimes();
-        for (SModuleReference dep : Sequence.fromIterable(languageRuntimes)) {
-          SModule module = dep.resolve(getRepo());
-          JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-          if (facet != null) {
-            ListSequence.fromList(result).addSequence(SetSequence.fromSet(facet.getClassPath()));
-          }
-        }
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(getPluginClasspath()));
-      }
-    });
-    return result;
   }
 
   @NonNls
