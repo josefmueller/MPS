@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3TestWrapper(SNode classConcept) {
-    super(classConcept);
+    super(classConcept, false);
   }
   @Override
   public boolean isTestCase() {

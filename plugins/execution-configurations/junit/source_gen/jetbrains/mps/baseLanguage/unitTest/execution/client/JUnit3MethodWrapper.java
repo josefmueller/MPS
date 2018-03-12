@@ -15,7 +15,7 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
   private final ITestNodeWrapper myTestCase;
 
   public JUnit3MethodWrapper(@NotNull ITestNodeWrapper testCase, SNode method) {
-    super(method);
+    super(method, testCase.canRunInProcess());
     myTestCase = testCase;
   }
 

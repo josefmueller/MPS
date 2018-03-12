@@ -21,10 +21,16 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @NotNull
   protected final SNodeReference myNodePointer;
   private final SRepository myRepo;
+  private final boolean myRunsInProcess;
 
   public AbstractTestWrapper(@NotNull N node) {
+    this(node, false);
+  }
+
+  public AbstractTestWrapper(@NotNull N node, boolean runsInProcess) {
     myNodePointer = new SNodePointer(node);
     myRepo = SNodeOperations.getModel(node).getRepository();
+    myRunsInProcess = runsInProcess;
   }
 
   /*package*/ SRepository getRepo() {
@@ -121,5 +127,11 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Override
   public String getCachedFqName() {
     return getFqName();
+  }
+
+
+  @Override
+  public boolean canRunInProcess() {
+    return myRunsInProcess;
   }
 }

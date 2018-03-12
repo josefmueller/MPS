@@ -23,8 +23,6 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <import index="tp5o" ref="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
-    <import index="tpe5" ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)" />
-    <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
@@ -315,23 +313,11 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
-        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
-        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
-      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
-      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
-        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -5131,38 +5117,25 @@
         <node concept="3Tqbb2" id="MY2kIk9zFD" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5iYlssmW6oB" role="3clF47">
-        <node concept="3cpWs8" id="6uueKdE308J" role="3cqZAp">
-          <node concept="3cpWsn" id="6uueKdE308K" role="3cpWs9">
-            <property role="TrG5h" value="rootNode" />
-            <node concept="3Tqbb2" id="6uueKdE308L" role="1tU5fm" />
-            <node concept="2OqwBi" id="6uueKdE308M" role="33vP2m">
-              <node concept="37vLTw" id="6uueKdE308N" role="2Oq$k0">
-                <ref role="3cqZAo" node="MY2kIk9z3U" resolve="testNode" />
-              </node>
-              <node concept="2Rxl7S" id="6uueKdE308O" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="MY2kIk9_Fb" role="3cqZAp" />
-        <node concept="3clFbJ" id="6uueKdE308P" role="3cqZAp">
-          <node concept="3clFbS" id="6uueKdE308Q" role="3clFbx">
-            <node concept="YS8fn" id="5UFD5GhCAfO" role="3cqZAp">
-              <node concept="2ShNRf" id="7wE3E_r5Mi2" role="YScLw">
-                <node concept="1pGfFk" id="7wE3E_r5Mi3" role="2ShVmc">
+        <node concept="3clFbJ" id="hRmEtnk1p8" role="3cqZAp">
+          <node concept="3clFbS" id="hRmEtnk1pb" role="3clFbx">
+            <node concept="YS8fn" id="5UFD5GhCB6a" role="3cqZAp">
+              <node concept="2ShNRf" id="7wE3E_r5L0v" role="YScLw">
+                <node concept="1pGfFk" id="7wE3E_r5L0w" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
-                  <node concept="3cpWs3" id="7wE3E_r5Mi4" role="37wK5m">
-                    <node concept="Xl_RD" id="7wE3E_r5Mi5" role="3uHU7w">
+                  <node concept="3cpWs3" id="7wE3E_r5L0x" role="37wK5m">
+                    <node concept="Xl_RD" id="7wE3E_r5L0y" role="3uHU7w">
                       <property role="Xl_RC" value=" is ignored." />
                     </node>
-                    <node concept="3cpWs3" id="7wE3E_r5Mi6" role="3uHU7B">
-                      <node concept="Xl_RD" id="7wE3E_r5Mi7" role="3uHU7B">
-                        <property role="Xl_RC" value="The test concept must be an instance on ITestable concept. Test " />
+                    <node concept="3cpWs3" id="7wE3E_r5L0z" role="3uHU7B">
+                      <node concept="Xl_RD" id="7wE3E_r5L0$" role="3uHU7B">
+                        <property role="Xl_RC" value="The test is set not to be executed in-process. Test " />
                       </node>
-                      <node concept="2OqwBi" id="7wE3E_r5Mi8" role="3uHU7w">
-                        <node concept="37vLTw" id="7wE3E_r5Mi9" role="2Oq$k0">
+                      <node concept="2OqwBi" id="7wE3E_r5L0_" role="3uHU7w">
+                        <node concept="37vLTw" id="7wE3E_r5L0A" role="2Oq$k0">
                           <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
                         </node>
-                        <node concept="liA8E" id="7wE3E_r5Mia" role="2OqNvi">
+                        <node concept="liA8E" id="7wE3E_r5L0B" role="2OqNvi">
                           <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
                         </node>
                       </node>
@@ -5172,15 +5145,13 @@
               </node>
             </node>
           </node>
-          <node concept="3fqX7Q" id="6uueKdE308T" role="3clFbw">
-            <node concept="2OqwBi" id="6uueKdE308U" role="3fr31v">
-              <node concept="37vLTw" id="6uueKdE308V" role="2Oq$k0">
-                <ref role="3cqZAo" node="MY2kIk9z3U" resolve="testNode" />
+          <node concept="3fqX7Q" id="40J2CKBn6gY" role="3clFbw">
+            <node concept="2OqwBi" id="40J2CKBn6h0" role="3fr31v">
+              <node concept="37vLTw" id="40J2CKBn6h1" role="2Oq$k0">
+                <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
               </node>
-              <node concept="1mIQ4w" id="6uueKdE308W" role="2OqNvi">
-                <node concept="chp4Y" id="6uueKdE308X" role="cj9EA">
-                  <ref role="cht4Q" to="tpe3:hG8C14p" resolve="ITestable" />
-                </node>
+              <node concept="liA8E" id="40J2CKBn6h2" role="2OqNvi">
+                <ref role="37wK5l" to="sfqd:40J2CKBlFWh" resolve="canRunInProcess" />
               </node>
             </node>
           </node>
@@ -5217,178 +5188,14 @@
             <node concept="2qgKlT" id="6uueKdE309c" role="2OqNvi">
               <ref role="37wK5l" to="tp5o:ThWTaQhG7P" resolve="reOpenProject" />
               <node concept="2OqwBi" id="6uueKdE309d" role="37wK5m">
-                <node concept="37vLTw" id="6uueKdE309e" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6uueKdE308K" resolve="rootNode" />
+                <node concept="37vLTw" id="40J2CKBn9p1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="MY2kIk9z3U" resolve="testNode" />
                 </node>
                 <node concept="I4A8Y" id="6uueKdE309f" role="2OqNvi" />
               </node>
             </node>
             <node concept="35c_gC" id="7Ift4Hg3qKq" role="2Oq$k0">
               <ref role="35c_gD" to="tp5g:4qWC2JVrBca" resolve="TestInfo" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="hRmEtnk1p8" role="3cqZAp">
-          <node concept="3clFbS" id="hRmEtnk1pb" role="3clFbx">
-            <node concept="3clFbJ" id="7wE3E_r5JV4" role="3cqZAp">
-              <node concept="3clFbS" id="7wE3E_r5JV7" role="3clFbx">
-                <node concept="YS8fn" id="5UFD5GhCB6a" role="3cqZAp">
-                  <node concept="2ShNRf" id="7wE3E_r5L0v" role="YScLw">
-                    <node concept="1pGfFk" id="7wE3E_r5L0w" role="2ShVmc">
-                      <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
-                      <node concept="3cpWs3" id="7wE3E_r5L0x" role="37wK5m">
-                        <node concept="Xl_RD" id="7wE3E_r5L0y" role="3uHU7w">
-                          <property role="Xl_RC" value=" is ignored." />
-                        </node>
-                        <node concept="3cpWs3" id="7wE3E_r5L0z" role="3uHU7B">
-                          <node concept="Xl_RD" id="7wE3E_r5L0$" role="3uHU7B">
-                            <property role="Xl_RC" value="The test is set not to be executed in-process. Test " />
-                          </node>
-                          <node concept="2OqwBi" id="7wE3E_r5L0_" role="3uHU7w">
-                            <node concept="37vLTw" id="7wE3E_r5L0A" role="2Oq$k0">
-                              <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
-                            </node>
-                            <node concept="liA8E" id="7wE3E_r5L0B" role="2OqNvi">
-                              <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="7wE3E_r5K4g" role="3clFbw">
-                <node concept="2OqwBi" id="7wE3E_r5K4i" role="3fr31v">
-                  <node concept="1PxgMI" id="7wE3E_r5K4j" role="2Oq$k0">
-                    <node concept="37vLTw" id="7wE3E_r5K4k" role="1m5AlR">
-                      <ref role="3cqZAo" node="MY2kIk9z3U" resolve="testNode" />
-                    </node>
-                    <node concept="chp4Y" id="714IaVdGYy5" role="3oSUPX">
-                      <ref role="cht4Q" to="tpe3:hGB2rPm" resolve="ITestCase" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="7wE3E_r5K4l" role="2OqNvi">
-                    <ref role="37wK5l" to="tpe5:5_jSk8paieB" resolve="canRunInProcess" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="hRmEtnk1CM" role="3clFbw">
-            <node concept="37vLTw" id="hRmEtnk1u5" role="2Oq$k0">
-              <ref role="3cqZAo" node="MY2kIk9z3U" resolve="testNode" />
-            </node>
-            <node concept="1mIQ4w" id="hRmEtnk1QQ" role="2OqNvi">
-              <node concept="chp4Y" id="hRmEtnk1RR" role="cj9EA">
-                <ref role="cht4Q" to="tpe3:hGB2rPm" resolve="ITestCase" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="Fs2c5VsN3R" role="3cqZAp">
-          <node concept="3SKdUq" id="Fs2c5VsNc1" role="3SKWNk">
-            <property role="3SKdUp" value="cannot run (in-process) test methods from TestCase, which is not executable in the same process" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="Fs2c5Vsxtp" role="3cqZAp">
-          <node concept="3clFbS" id="Fs2c5Vsxts" role="3clFbx">
-            <node concept="3clFbJ" id="7wE3E_r5LEu" role="3cqZAp">
-              <node concept="3clFbS" id="7wE3E_r5LEx" role="3clFbx">
-                <node concept="3clFbJ" id="1yO7KZ4tPA$" role="3cqZAp">
-                  <node concept="3clFbS" id="1yO7KZ4tPAA" role="3clFbx">
-                    <node concept="YS8fn" id="5UFD5GhC$k3" role="3cqZAp">
-                      <node concept="2ShNRf" id="1yO7KZ4vqHM" role="YScLw">
-                        <node concept="1pGfFk" id="1yO7KZ4vqHN" role="2ShVmc">
-                          <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
-                          <node concept="3cpWs3" id="1yO7KZ4vqHO" role="37wK5m">
-                            <node concept="Xl_RD" id="1yO7KZ4vqHP" role="3uHU7w">
-                              <property role="Xl_RC" value=" is BTestCase which is not executed in-process. It is ignored for now." />
-                            </node>
-                            <node concept="3cpWs3" id="1yO7KZ4vqHQ" role="3uHU7B">
-                              <node concept="Xl_RD" id="1yO7KZ4vqHR" role="3uHU7B">
-                                <property role="Xl_RC" value="The test " />
-                              </node>
-                              <node concept="2OqwBi" id="1yO7KZ4vqHS" role="3uHU7w">
-                                <node concept="37vLTw" id="1yO7KZ4vqHT" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
-                                </node>
-                                <node concept="liA8E" id="1yO7KZ4vqHU" role="2OqNvi">
-                                  <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="1yO7KZ4ubrH" role="3clFbw">
-                    <node concept="37vLTw" id="1yO7KZ4tWEy" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6uueKdE308K" resolve="rootNode" />
-                    </node>
-                    <node concept="1mIQ4w" id="1yO7KZ4upoN" role="2OqNvi">
-                      <node concept="chp4Y" id="1yO7KZ4uI4X" role="cj9EA">
-                        <ref role="cht4Q" to="tpe3:h3s_e$z" resolve="BTestCase" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="9aQIb" id="1yO7KZ4vzTA" role="9aQIa">
-                    <node concept="3clFbS" id="1yO7KZ4vzTB" role="9aQI4">
-                      <node concept="YS8fn" id="5UFD5GhC$Mp" role="3cqZAp">
-                        <node concept="2ShNRf" id="7wE3E_r5L9G" role="YScLw">
-                          <node concept="1pGfFk" id="7wE3E_r5Qpr" role="2ShVmc">
-                            <ref role="37wK5l" to="wyt6:~Exception.&lt;init&gt;(java.lang.String)" resolve="Exception" />
-                            <node concept="3cpWs3" id="7wE3E_r5Qps" role="37wK5m">
-                              <node concept="Xl_RD" id="7wE3E_r5Qpt" role="3uHU7w">
-                                <property role="Xl_RC" value=" is ignored." />
-                              </node>
-                              <node concept="3cpWs3" id="7wE3E_r5Qpu" role="3uHU7B">
-                                <node concept="Xl_RD" id="7wE3E_r5Qpv" role="3uHU7B">
-                                  <property role="Xl_RC" value="The test is set not to be executed in-process. Test " />
-                                </node>
-                                <node concept="2OqwBi" id="7wE3E_r5Qpw" role="3uHU7w">
-                                  <node concept="37vLTw" id="7wE3E_r5Qpx" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
-                                  </node>
-                                  <node concept="liA8E" id="7wE3E_r5Qpy" role="2OqNvi">
-                                    <ref role="37wK5l" to="sfqd:56tRMpP_ejv" resolve="getName" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="7wE3E_r5M1W" role="3clFbw">
-                <node concept="2OqwBi" id="7wE3E_r5M1Y" role="3fr31v">
-                  <node concept="1PxgMI" id="7wE3E_r5M1Z" role="2Oq$k0">
-                    <node concept="37vLTw" id="7wE3E_r5M20" role="1m5AlR">
-                      <ref role="3cqZAo" node="6uueKdE308K" resolve="rootNode" />
-                    </node>
-                    <node concept="chp4Y" id="714IaVdGYy4" role="3oSUPX">
-                      <ref role="cht4Q" to="tpe3:hGB2rPm" resolve="ITestCase" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="4pSvA2g9_bK" role="2OqNvi">
-                    <ref role="37wK5l" to="tpe5:5_jSk8paieB" resolve="canRunInProcess" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="Fs2c5VsxDs" role="3clFbw">
-            <node concept="37vLTw" id="Fs2c5VsxAq" role="2Oq$k0">
-              <ref role="3cqZAo" node="6uueKdE308K" resolve="rootNode" />
-            </node>
-            <node concept="1mIQ4w" id="Fs2c5VsxSp" role="2OqNvi">
-              <node concept="chp4Y" id="Fs2c5VsxTq" role="cj9EA">
-                <ref role="cht4Q" to="tpe3:hGB2rPm" resolve="ITestCase" />
-              </node>
             </node>
           </node>
         </node>
@@ -5400,7 +5207,7 @@
     <node concept="3UR2Jj" id="MY2kIkabs5" role="lGtFl">
       <node concept="TZ5HA" id="MY2kIkabs6" role="TZ5H$">
         <node concept="1dT_AC" id="MY2kIkabs7" role="1dT_Ay">
-          <property role="1dT_AB" value="Check a node of an ITestNodeWrapper and if it's not suitable for in-process execution, replace original request with a failing one." />
+          <property role="1dT_AB" value="Check ITestNodeWrapper if it's suitable for in-process execution, replace original request with a failing one if not." />
         </node>
       </node>
     </node>

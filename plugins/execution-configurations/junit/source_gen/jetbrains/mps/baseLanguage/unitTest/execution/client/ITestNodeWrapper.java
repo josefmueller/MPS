@@ -43,4 +43,6 @@ public interface ITestNodeWrapper<N extends SNode> {
   String getCachedFqName();
   @NotNull
   TestParameters getTestRunParameters();
+
+  boolean canRunInProcess();
 }

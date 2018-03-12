@@ -20,7 +20,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   private final ITestNodeWrapper myTestCase;
 
   public JUnit4MethodWrapper(@NotNull ITestNodeWrapper testCase, SNode method) {
-    super(method);
+    super(method, testCase.canRunInProcess());
     myTestCase = testCase;
   }
 
