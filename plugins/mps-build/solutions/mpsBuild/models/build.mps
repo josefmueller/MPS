@@ -22568,12 +22568,6 @@
           <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
         </node>
       </node>
-      <node concept="1SiIV0" id="306QkZP2XEV" role="3bR37C">
-        <node concept="3bR9La" id="306QkZP2XEW" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" node="39HJr_hyEqi" resolve="jetbrains.mps.ide.vcs" />
-        </node>
-      </node>
     </node>
     <node concept="m$_wf" id="RJsmGEieyQ" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.vcs" />
@@ -22726,6 +22720,9 @@
             </node>
           </node>
           <node concept="3981dx" id="306QkZP3ij$" role="39821P">
+            <node concept="3ygNvl" id="306QkZP3imX" role="39821P">
+              <ref role="3ygNvj" node="3cKv9ny$Duu" resolve="src.jar" />
+            </node>
             <node concept="398223" id="I6XuqHayom" role="39821P">
               <node concept="3_J27D" id="I6XuqHayoo" role="Nbhlr">
                 <node concept="3Mxwew" id="I6XuqHayoJ" role="3MwsjC">
@@ -22735,9 +22732,6 @@
               <node concept="1bldCd" id="I6XuqHep1V" role="39821P">
                 <ref role="3$exzV" node="39HJr_hyEqi" resolve="jetbrains.mps.ide.vcs" />
               </node>
-              <node concept="3ygNvl" id="306QkZP3imX" role="39821P">
-                <ref role="3ygNvj" node="306QkZP3hAU" resolve="modules" />
-              </node>
             </node>
             <node concept="3_J27D" id="306QkZP3ijA" role="Nbhlr">
               <node concept="3Mxwew" id="306QkZP3ikp" role="3MwsjC">
@@ -22745,9 +22739,12 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3_I8Xc" id="306QkZP3h5E" role="39821P">
-          <ref role="3_I8Xa" node="306QkZP3ggM" resolve="lib" />
+          <node concept="3_I8Xc" id="306QkZP3h5E" role="39821P">
+            <ref role="3_I8Xa" node="306QkZP3gis" resolve="vcs-core.jar" />
+          </node>
+          <node concept="3_I8Xc" id="306QkZP4Fi$" role="39821P">
+            <ref role="3_I8Xa" node="306QkZP3gmA" resolve="vcs-platform.jar" />
+          </node>
         </node>
       </node>
       <node concept="3_I8Xc" id="6ifcnI8$H4f" role="39821P">
