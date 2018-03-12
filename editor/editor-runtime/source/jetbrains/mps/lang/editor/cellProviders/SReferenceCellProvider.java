@@ -140,11 +140,6 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getNode(), DeleteDirection.BACKWARD));
   }
 
-  protected void installDeleteActions_nullable_aggregation(EditorCell editorCell) {
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getNode(), DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getNode(), DeleteDirection.BACKWARD));
-  }
-
   protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSReference(getNode(), myReferenceLink));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSReference(getNode(), myReferenceLink));

@@ -50448,29 +50448,6 @@
                             </node>
                           </node>
                           <node concept="raruj" id="4FhFNJsKLlQ" role="lGtFl" />
-                          <node concept="1W57fq" id="4FhFNJsKLlR" role="lGtFl">
-                            <node concept="3IZrLx" id="4FhFNJsKLlS" role="3IZSJc">
-                              <node concept="3clFbS" id="4FhFNJsKLlT" role="2VODD2">
-                                <node concept="3clFbF" id="4FhFNJsKLlU" role="3cqZAp">
-                                  <node concept="2OqwBi" id="4FhFNJsKLlV" role="3clFbG">
-                                    <node concept="2OqwBi" id="4FhFNJsKLlW" role="2Oq$k0">
-                                      <node concept="v3LJS" id="4FhFNJsKLlX" role="2Oq$k0">
-                                        <ref role="v3LJV" node="4FhFNJsKLkx" resolve="linkDeclaration" />
-                                      </node>
-                                      <node concept="3TrcHB" id="4FhFNJsKLlY" role="2OqNvi">
-                                        <ref role="3TsBF5" to="tpce:fA0lm$B" resolve="metaClass" />
-                                      </node>
-                                    </node>
-                                    <node concept="3t7uKx" id="4FhFNJsKLlZ" role="2OqNvi">
-                                      <node concept="uoxfO" id="4FhFNJsKLm0" role="3t7uKA">
-                                        <ref role="uo_Cq" to="tpce:fLJjDmS" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
                         </node>
                         <node concept="3clFbF" id="4FhFNJsKLm1" role="3cqZAp">
                           <node concept="1rXfSq" id="4FhFNJsKLm2" role="3clFbG">
@@ -50586,55 +50563,6 @@
                                       </node>
                                       <node concept="2qgKlT" id="4FhFNJsKLmV" role="2OqNvi">
                                         <ref role="37wK5l" to="tpcn:2VYdUfnkjmB" resolve="isAtLeastOneCardinality" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="4FhFNJsKLmW" role="3cqZAp">
-                          <node concept="1rXfSq" id="4FhFNJsKLmX" role="3clFbG">
-                            <ref role="37wK5l" to="p9jd:~SReferenceCellProvider.installDeleteActions_nullable_aggregation(jetbrains.mps.openapi.editor.cells.EditorCell):void" resolve="installDeleteActions_nullable_aggregation" />
-                            <node concept="37vLTw" id="4FhFNJsKLmY" role="37wK5m">
-                              <ref role="3cqZAo" node="4FhFNJsKLkR" resolve="cell" />
-                            </node>
-                          </node>
-                          <node concept="raruj" id="4FhFNJsKLmZ" role="lGtFl" />
-                          <node concept="1W57fq" id="4FhFNJsKLn0" role="lGtFl">
-                            <node concept="3IZrLx" id="4FhFNJsKLn1" role="3IZSJc">
-                              <node concept="3clFbS" id="4FhFNJsKLn2" role="2VODD2">
-                                <node concept="3clFbF" id="4FhFNJsKLn3" role="3cqZAp">
-                                  <node concept="1Wc70l" id="4FhFNJsKLn4" role="3clFbG">
-                                    <node concept="2OqwBi" id="4FhFNJsKLn5" role="3uHU7w">
-                                      <node concept="2OqwBi" id="4FhFNJsKLn6" role="2Oq$k0">
-                                        <node concept="3TrcHB" id="4FhFNJsKLn7" role="2OqNvi">
-                                          <ref role="3TsBF5" to="tpce:fA0lm$B" resolve="metaClass" />
-                                        </node>
-                                        <node concept="v3LJS" id="4FhFNJsKLn8" role="2Oq$k0">
-                                          <ref role="v3LJV" node="4FhFNJsKLkx" resolve="linkDeclaration" />
-                                        </node>
-                                      </node>
-                                      <node concept="3t7uKx" id="4FhFNJsKLn9" role="2OqNvi">
-                                        <node concept="uoxfO" id="4FhFNJsKLna" role="3t7uKA">
-                                          <ref role="uo_Cq" to="tpce:fLJjDmT" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="3fqX7Q" id="4FhFNJsKLnb" role="3uHU7B">
-                                      <node concept="2OqwBi" id="4FhFNJsKLnc" role="3fr31v">
-                                        <node concept="2OqwBi" id="4FhFNJsKLnd" role="2Oq$k0">
-                                          <node concept="2qgKlT" id="4FhFNJsKLne" role="2OqNvi">
-                                            <ref role="37wK5l" to="tpcn:hEwIf_V" resolve="getGenuineLink" />
-                                          </node>
-                                          <node concept="v3LJS" id="4FhFNJsKLnf" role="2Oq$k0">
-                                            <ref role="v3LJV" node="4FhFNJsKLkx" resolve="linkDeclaration" />
-                                          </node>
-                                        </node>
-                                        <node concept="2qgKlT" id="4FhFNJsKLng" role="2OqNvi">
-                                          <ref role="37wK5l" to="tpcn:2VYdUfnkjmB" resolve="isAtLeastOneCardinality" />
-                                        </node>
                                       </node>
                                     </node>
                                   </node>
