@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -129,6 +130,33 @@ public enum TestNodeWrapperFactory {
       //     It seems that in this case we just create an odd testcase for the abstract class.  
       //     JUnit4MethodWrapper.getTestCase used to take node.ancestor<ClassConcept>, so it has been like that for a while. 
       return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && JUnit4MethodWrapper.isJUnit4TestMethod(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) && TestNodeWrapperFactory.JUnit4TestNodeWrapperFactory.canWrap(SNodeOperations.getParent(node));
+    }
+
+  },
+  GeneratorTest(MetaAdapterFactory.getConcept(0x68015e26cc4d49dbL, 0x8715b643faea1769L, 0x7b1db36ecf092beL, "jetbrains.mps.lang.test.generator.structure.GeneratorTest"), true) {
+    @Nullable
+    @Override
+    public ITestNodeWrapper wrap(@NotNull SNode node) {
+      return new AbstractTestWrapper<SNode>(node, true, true) {
+        private final String myQualifiedName;
+        {
+          myQualifiedName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node);
+        }
+
+        public boolean isTestCase() {
+          return true;
+        }
+
+        @Override
+        public String getName() {
+          return NameUtil.shortNameFromLongName(myQualifiedName);
+        }
+
+        @Override
+        public String getFqName() {
+          return myQualifiedName;
+        }
+      };
     }
 
   };
