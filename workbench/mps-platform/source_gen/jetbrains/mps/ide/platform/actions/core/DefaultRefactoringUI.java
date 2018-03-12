@@ -23,7 +23,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.refactoring.UsagesModelTracker;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -84,46 +83,42 @@ public class DefaultRefactoringUI implements RefactoringUI {
     });
   }
 
-  public void showRefactoringView(final Runnable performRefactoringTask, final String refactoringName, final SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
-        RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
-          public void performAction(final RefactoringViewItem refactoringViewItem) {
-            final Wrappers._boolean changed = new Wrappers._boolean();
-            myRepository.getModelAccess().executeCommand(new Runnable() {
-              public void run() {
-                changed.value = usagesModelTracker.isChanged();
-                if (!(changed.value)) {
-                  try {
-                    performRefactoringTask.run();
-                  } catch (RuntimeException exception) {
-                    if (LOG.isEnabledFor(Level.ERROR)) {
-                      LOG.error("Exception during refactoring: ", exception);
-                    }
-                  }
-                  refactoringViewItem.close();
+  public void showRefactoringView(final Runnable performRefactoringTask, String refactoringName, SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
+    final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
+    RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
+      public void performAction(final RefactoringViewItem refactoringViewItem) {
+        final Wrappers._boolean changed = new Wrappers._boolean();
+        myRepository.getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            changed.value = usagesModelTracker.isChanged();
+            if (!(changed.value)) {
+              try {
+                performRefactoringTask.run();
+              } catch (RuntimeException exception) {
+                if (LOG.isEnabledFor(Level.ERROR)) {
+                  LOG.error("Exception during refactoring: ", exception);
                 }
               }
-            });
-            if (changed.value) {
-              Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+              refactoringViewItem.close();
             }
           }
-        }, new Runnable() {
-          public void run() {
-            usagesModelTracker.dispose();
-          }
-        }, searchResults, new SearchTask() {
-          public boolean canExecute() {
-            return rerunTask.canExecute();
-          }
-          public SearchResults execute(ProgressMonitor progressMonitor) {
-            usagesModelTracker.reset();
-            return rerunTask.execute(progressMonitor);
-          }
-        }, refactoringName);
+        });
+        if (changed.value) {
+          Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+        }
       }
-    });
+    }, new Runnable() {
+      public void run() {
+        usagesModelTracker.dispose();
+      }
+    }, searchResults, new SearchTask() {
+      public boolean canExecute() {
+        return rerunTask.canExecute();
+      }
+      public SearchResults execute(ProgressMonitor progressMonitor) {
+        usagesModelTracker.reset();
+        return rerunTask.execute(progressMonitor);
+      }
+    }, refactoringName);
   }
 }
