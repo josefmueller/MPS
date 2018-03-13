@@ -32539,6 +32539,12 @@
           </node>
         </node>
       </node>
+      <node concept="1SiIV0" id="5p7yZr8wVrZ" role="3bR37C">
+        <node concept="3bR9La" id="5p7yZr8wVs0" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtA" id="4WGKd_KIwrs" role="3989C9">
       <property role="BnDLt" value="true" />
