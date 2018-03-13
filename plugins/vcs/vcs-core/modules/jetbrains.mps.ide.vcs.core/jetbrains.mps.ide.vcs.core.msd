@@ -9,6 +9,9 @@
       <sourceRoot location="svnkit.jar" />
     </modelRoot>
   </models>
+  <facets>
+    <facet type="ideaPlugin" />
+  </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/vcs/lib/vcs-core.jar" />
   </stubModelEntries>
