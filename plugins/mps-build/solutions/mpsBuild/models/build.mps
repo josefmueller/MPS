@@ -22734,16 +22734,6 @@
             <ref role="3_I8Xa" node="1QfYSWzYzJN" resolve="vcs-core.jar" />
           </node>
         </node>
-        <node concept="3981dx" id="306QkZP3ij$" role="39821P">
-          <node concept="3_J27D" id="306QkZP3ijA" role="Nbhlr">
-            <node concept="3Mxwew" id="306QkZP3ikp" role="3MwsjC">
-              <property role="3MwjfP" value="src.jar" />
-            </node>
-          </node>
-          <node concept="3_I8Xc" id="1QfYSWzU4dI" role="39821P">
-            <ref role="3_I8Xa" node="306QkZP3hAU" resolve="modules" />
-          </node>
-        </node>
       </node>
       <node concept="3_I8Xc" id="6ifcnI8$H4f" role="39821P">
         <ref role="3_I8Xa" node="I6XuqH2zYV" resolve="git4idea" />
@@ -32993,13 +32983,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-      </node>
-      <node concept="398223" id="306QkZP3hAU" role="39821P">
-        <node concept="3_J27D" id="306QkZP3hAV" role="Nbhlr">
-          <node concept="3Mxwew" id="306QkZP3hAW" role="3MwsjC">
-            <property role="3MwjfP" value="modules" />
           </node>
         </node>
         <node concept="L2wRC" id="1QfYSWzZooj" role="39821P">

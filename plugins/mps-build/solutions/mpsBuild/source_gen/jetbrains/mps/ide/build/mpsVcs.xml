@@ -166,9 +166,6 @@
     </jar>
     <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-platform.jar" todir="${build.layout}/mps-vcs/lib" />
     <copy file="${artifacts.mpsVcsPlatform}/lib/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
-    <jar destfile="${build.layout}/mps-vcs/src.jar" duplicate="preserve">
-      <zipfileset dir="${artifacts.mpsVcsPlatform}/modules" prefix="modules" />
-    </jar>
     <mkdir dir="${build.layout}/git4idea" />
     <copy todir="${build.layout}/git4idea">
       <fileset dir="${artifacts.mpsVcsPlatform}/git4idea" />
@@ -304,10 +301,10 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+      <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.core.jar" />
       <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
+      <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.ide.vcs.platform.jar" />
       <library file="${artifacts.mpsVcsPlatform}/languages/jetbrains.mps.vcs.mergehints.runtime.jar" />
-      <library file="${artifacts.mpsVcsPlatform}/modules/jetbrains.mps.ide.vcs.core.jar" />
-      <library file="${artifacts.mpsVcsPlatform}/modules/jetbrains.mps.ide.vcs.platform.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>

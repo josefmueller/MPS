@@ -162,7 +162,6 @@
       <zipfileset file="${mps_home}/plugins/vcs/vcs-core/modules/mergehints.runtime/jetbrains.mps.vcs.mergehints.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-core-modules-mergehints.runtime-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/modules" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.platform.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.platform.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.vcs.platform.jar/META-INF/module.xml">
@@ -188,14 +187,14 @@
         <sources jar="jetbrains.mps.ide.vcs.platform-src.jar" descriptor="jetbrains.mps.ide.vcs.platform.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/modules/jetbrains.mps.ide.vcs.platform.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.platform.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.platform.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-platform-modules-jetbrains.mps.ide.vcs.platform-models">
       <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/modules/jetbrains.mps.ide.vcs.platform-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.platform-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -228,7 +227,7 @@
         <sources jar="jetbrains.mps.ide.vcs.core-src.jar" descriptor="jetbrains.mps.ide.vcs.core.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/modules/jetbrains.mps.ide.vcs.core.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.core.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.core.jar" />
@@ -236,7 +235,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-core-modules-jetbrains.mps.ide.vcs.core-models">
       <fileset dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/modules/jetbrains.mps.ide.vcs.core-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.core-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
