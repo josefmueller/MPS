@@ -109,15 +109,15 @@
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/lib/mps-java-platform.jar"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/META-INF">
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/META-INF/MPSVcs.xml"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/META-INF/MPSVcs.xml"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/languages"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsIdeaVcs/mps-vcs/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-migration/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-migration/lib">
