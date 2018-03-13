@@ -170,7 +170,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestParameters" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.NotNullWhereFilter" />

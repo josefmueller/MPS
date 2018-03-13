@@ -6133,7 +6133,7 @@
                 <node concept="1pGfFk" id="40J2CKBtb57" role="2ShVmc">
                   <ref role="37wK5l" node="40J2CKBskg2" resolve="TestParameters" />
                   <node concept="3VsKOn" id="40J2CKBtdgm" role="37wK5m">
-                    <ref role="3VsUkX" to="4l68:2RMg39tndd6" resolve="CachingTestExecutor" />
+                    <ref role="3VsUkX" to="4l68:2RMg39tndd6" resolve="WithPlatformTestExecutor" />
                   </node>
                   <node concept="3clFbT" id="40J2CKBtjGZ" role="37wK5m">
                     <property role="3clFbU" value="true" />

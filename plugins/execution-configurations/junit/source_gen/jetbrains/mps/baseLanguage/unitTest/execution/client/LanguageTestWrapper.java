@@ -19,7 +19,7 @@ import com.intellij.openapi.application.PathMacros;
 import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -90,7 +90,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
           return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
         }
       })).toListSequence();
-      return new TestParameters(CachingTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
+      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
     } else {
       return rp;
     }
