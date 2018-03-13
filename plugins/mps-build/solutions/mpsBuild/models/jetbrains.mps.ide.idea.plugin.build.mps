@@ -1823,8 +1823,22 @@
               <property role="3MwjfP" value="META-INF" />
             </node>
           </node>
-          <node concept="3_I8Xc" id="iTJcDIxtRy" role="39821P">
-            <ref role="3_I8Xa" to="ffeo:3SChJ9XyqTP" />
+          <node concept="28jJK3" id="3SChJ9XyqTP" role="39821P">
+            <node concept="398BVA" id="3SChJ9XyqUH" role="28jJRO">
+              <ref role="398BVh" node="73fHb9hpul_" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="3SChJ9XyqVB" role="iGT6I">
+                <property role="2Ry0Am" value="plugins" />
+                <node concept="2Ry0Ak" id="3SChJ9XyqVG" role="2Ry0An">
+                  <property role="2Ry0Am" value="vcs" />
+                  <node concept="2Ry0Ak" id="3SChJ9XyqVL" role="2Ry0An">
+                    <property role="2Ry0Am" value="META-INF" />
+                    <node concept="2Ry0Ak" id="3SChJ9XyqVQ" role="2Ry0An">
+                      <property role="2Ry0Am" value="MPSVcs.xml" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3_I8Xc" id="1QfYSW$91pL" role="39821P">

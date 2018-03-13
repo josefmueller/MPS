@@ -58,7 +58,9 @@
       <fileset file="${mps_home}/IdeaPlugin/mps-vcs/META-INF/plugin.xml" />
     </copy>
     <mkdir dir="${build.layout}/mps-vcs/META-INF" />
-    <copy file="${build.layout}/mps-vcs/META-INF/MPSVcs.xml" todir="${build.layout}/mps-vcs/META-INF" />
+    <copy todir="${build.layout}/mps-vcs/META-INF">
+      <fileset file="${mps_home}/plugins/vcs/META-INF/MPSVcs.xml" />
+    </copy>
     <mkdir dir="${build.layout}/mps-vcs/languages" />
     <copy todir="${build.layout}/mps-vcs/languages">
       <fileset dir="${artifacts.mpsVcsPlatform}/languages" />
