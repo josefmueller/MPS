@@ -456,8 +456,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           }
           if (update) {
             toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
+            toRemove.add(rootDescriptor);
           }
-          toRemove.add(rootDescriptor);
         }
       }
       descriptor.getModelRootDescriptors().removeAll(toRemove);
