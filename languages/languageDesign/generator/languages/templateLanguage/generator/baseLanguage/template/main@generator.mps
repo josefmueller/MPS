@@ -3313,15 +3313,25 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="5lVMngw0jL_" role="3cqZAp">
+            <node concept="3SKdUq" id="5lVMngw0jLB" role="3SKWNk">
+              <property role="3SKdUp" value="XXX At the moment, we don't utilize non-reflective queries in generated templates (static methods" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="5lVMngw0kOn" role="3cqZAp">
+            <node concept="3SKdUq" id="5lVMngw0kOp" role="3SKWNk">
+              <property role="3SKdUp" value="get invoked directly)" />
+            </node>
+          </node>
           <node concept="3cpWs6" id="6A0eEAkLmaX" role="3cqZAp">
             <node concept="1Wc70l" id="6A0eEAkLouj" role="3cqZAk">
-              <node concept="3fqX7Q" id="6A0eEAkLqwx" role="3uHU7w">
-                <node concept="2OqwBi" id="6A0eEAkLqwz" role="3fr31v">
-                  <node concept="37vLTw" id="6A0eEAkLqw$" role="2Oq$k0">
+              <node concept="3fqX7Q" id="5lVMngw0ouf" role="3uHU7w">
+                <node concept="2OqwBi" id="5lVMngw0ouh" role="3fr31v">
+                  <node concept="37vLTw" id="5lVMngw0oui" role="2Oq$k0">
                     <ref role="3cqZAo" node="6A0eEAkLk3y" resolve="generator" />
                   </node>
-                  <node concept="3TrcHB" id="6A0eEAkLqw_" role="2OqNvi">
-                    <ref role="3TsBF5" to="hypd:6iByHjqzSmA" resolve="reflectiveQueries" />
+                  <node concept="3TrcHB" id="5lVMngw0ouj" role="2OqNvi">
+                    <ref role="3TsBF5" to="hypd:2A_smLtZHa0" resolve="generateTemplates" />
                   </node>
                 </node>
               </node>
@@ -25660,8 +25670,8 @@
                         <node concept="37vLTw" id="3XaAl51T8t2" role="2Oq$k0">
                           <ref role="3cqZAo" node="3XaAl51T8sP" resolve="generator" />
                         </node>
-                        <node concept="3TrcHB" id="3XaAl51T8t3" role="2OqNvi">
-                          <ref role="3TsBF5" to="hypd:6iByHjqzSmA" resolve="reflectiveQueries" />
+                        <node concept="3TrcHB" id="5lVMngw0xHo" role="2OqNvi">
+                          <ref role="3TsBF5" to="hypd:2A_smLtZHa0" resolve="generateTemplates" />
                         </node>
                       </node>
                     </node>

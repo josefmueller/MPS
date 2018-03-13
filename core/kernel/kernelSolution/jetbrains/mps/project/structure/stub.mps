@@ -1837,13 +1837,8 @@
         </node>
         <node concept="3clFbF" id="6iByHjq_iAT" role="3cqZAp">
           <node concept="37vLTI" id="6iByHjq_r0L" role="3clFbG">
-            <node concept="2OqwBi" id="6iByHjq_uaX" role="37vLTx">
-              <node concept="37vLTw" id="6iByHjq_rIa" role="2Oq$k0">
-                <ref role="3cqZAo" node="6mz0KzMF7AL" resolve="source" />
-              </node>
-              <node concept="liA8E" id="6iByHjq_vrX" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isReflectiveQueries():boolean" resolve="isReflectiveQueries" />
-              </node>
+            <node concept="3clFbT" id="5lVMngvZg4Q" role="37vLTx">
+              <property role="3clFbU" value="false" />
             </node>
             <node concept="2OqwBi" id="6iByHjq_lsV" role="37vLTJ">
               <node concept="37vLTw" id="6iByHjq_iAS" role="2Oq$k0">
