@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 
 public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4TestWrapper(SNode clazz) {
-    super(clazz, false);
+    super(clazz, false, AbstractTestWrapper.needsMPS(clazz));
   }
 
   @Override

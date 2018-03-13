@@ -14,40 +14,33 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
-import java.util.Set;
-import com.intellij.openapi.application.PathMacros;
 import java.util.List;
-import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NonNls;
 
 public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
   private final ITestNodeWrapper myTestCase;
   private final String myName;
   private final String myQualifiedName;
-  private final boolean myNeedsMPS;
 
   public LanguageTestWrapper(SNode test) {
-    super(test, (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(test));
+    super(test, (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(test), (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(test));
     myTestCase = null;
     myName = ITestCase__BehaviorDescriptor.getSimpleClassName_idhSQIE8p.invoke(test);
     myQualifiedName = ITestCase__BehaviorDescriptor.getClassName_idhGBnqtL.invoke(test);
-    myNeedsMPS = (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(test);
   }
 
   public LanguageTestWrapper(@NotNull ITestNodeWrapper testCase, @NotNull SNode testMethod) {
-    super(testMethod, testCase.canRunInProcess());
+    super(testMethod, testCase.canRunInProcess(), (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testMethod));
     myTestCase = testCase;
     myName = ITestMethod__BehaviorDescriptor.getTestName_idhGBohAB.invoke(testMethod);
     myQualifiedName = testCase.getFqName() + '.' + myName;
     // perhaps, shall derive MPS requirement form ITestNodeWrapper, but as long as isMpsStartRequired is in ITestable, don't see a reason. 
-    myNeedsMPS = (boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testMethod);
   }
 
   @Override
@@ -77,25 +70,6 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       }
     });
   }
-
-  @Override
-  @NotNull
-  public TestParameters getTestRunParameters() {
-    TestParameters rp = super.getTestRunParameters();
-    if (myNeedsMPS) {
-      // FIXME move macros into JUnit_Command, too 
-      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
-        public String select(String key) {
-          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
-        }
-      })).toListSequence();
-      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
-    } else {
-      return rp;
-    }
-  }
-
 
   /**
    * FIXME Dead code. Left as a reminder to check if there's need to do anything about classpath of runtime modules of lang.test; I don't see a reason to import them explicitly as
