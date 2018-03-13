@@ -762,11 +762,17 @@ class GenerationSession {
   }
 
   public void discardTransients() {
-    if (mySessionContext == null) return;
+    if (mySessionContext == null) {
+      return;
+    }
     if (!myGenerationOptions.isSaveTransientModels()) {
       mySessionContext.getModule().clearUnused();
     }
-    myQuerySource.dispose();
+    if (myQuerySource != null) {
+      // exception may happen prior to initialization of myQuerySource field
+      myQuerySource.dispose();
+      myQuerySource = null;
+    }
     mySessionContext = null;
   }
 }
