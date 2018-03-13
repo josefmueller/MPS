@@ -3,7 +3,7 @@
            xsi:schemaLocation="http://jetbrains.org/intellij/schema/application-info http://jetbrains.org/intellij/schema/ApplicationInfo.xsd">
   <version codename="MPS" major="2018" minor="1" eap="true" update-channel="MPS181"/>
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
-  <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
+  <build number="MPS-181.SNAPSHOT" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
   <logo url="/splash.png" textcolor="E5E5E5" progressColor="0383F9" progressX="117" progressY="280" progressHeight="3"/>
   <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="858585"/><!--linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
