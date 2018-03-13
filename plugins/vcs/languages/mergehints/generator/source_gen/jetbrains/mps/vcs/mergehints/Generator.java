@@ -29,6 +29,7 @@ public class Generator extends TemplateModuleInterpreted2 {
 
   @Override
   protected void fillTemplateModels(TemplateModuleInterpreted2.TemplateModels models) {
+    models.templates("r:c05ec6c2-cd0f-46c4-99d6-fdaf31643b2a", QueriesGenerated.class);
   }
 
   @Override
