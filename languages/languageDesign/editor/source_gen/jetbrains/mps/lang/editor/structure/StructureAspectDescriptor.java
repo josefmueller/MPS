@@ -5023,7 +5023,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.TransformationMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efffeL);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/2816844678677370764");
     b.associate("property", 0x2717714f9c03978dL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL).optional(false).origin("2816844678677370765").done();
-    b.alias("include property menu");
+    b.alias("include default property menu");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationMenuPart_ReferenceMenu() {
@@ -5036,7 +5036,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("textFunction", 0x76798c095675d734L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L).optional(true).ordered(true).multiple(false).origin("8537008540390643508").done();
     b.aggregate("visibleTextFunction", 0x630a64053e2f1c3eL).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L).optional(true).ordered(true).multiple(false).origin("7136626533202861118").done();
     b.aggregate("canExecuteFunction", 0x70e6651a93f65a4bL).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a6f546add818550L).optional(true).ordered(true).multiple(false).origin("8135300941717330507").done();
-    b.alias("include reference menu");
+    b.alias("include default reference menu");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationMenuPart_SubMenu() {

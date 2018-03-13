@@ -62,7 +62,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
     return editorCell;
   }
   private EditorCell createConstant_knae1m_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include property menu for the property:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include default property menu for the property:");
     editorCell.setCellId("Constant_knae1m_a0");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

@@ -26376,7 +26376,7 @@
     <ref role="1XX52x" to="tpc2:ntKIfKkdVk" resolve="TransformationMenuPart_ReferenceMenu" />
     <node concept="3EZMnI" id="ntKIfKkgIL" role="2wV5jI">
       <node concept="3F0ifn" id="ntKIfKkgIM" role="3EZMnx">
-        <property role="3F0ifm" value="include reference menu for the reference" />
+        <property role="3F0ifm" value="include default reference menu for the reference" />
         <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
       </node>
       <node concept="1iCGBv" id="ntKIfKkgIN" role="3EZMnx">
@@ -26459,7 +26459,7 @@
     <ref role="1XX52x" to="tpc2:2snskYs0Tuc" resolve="TransformationMenuPart_PropertyMenu" />
     <node concept="3EZMnI" id="2snskYs0Tur" role="2wV5jI">
       <node concept="3F0ifn" id="2snskYs0Tuu" role="3EZMnx">
-        <property role="3F0ifm" value="include property menu for the property:" />
+        <property role="3F0ifm" value="include default property menu for the property:" />
         <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
       </node>
       <node concept="1iCGBv" id="2snskYs0Tuv" role="3EZMnx">

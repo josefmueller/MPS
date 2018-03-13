@@ -6549,5 +6549,80 @@
       <ref role="1YaFvo" to="tpc2:6hgzQ4Z7bF1" resolve="FontFamilyContainer" />
     </node>
   </node>
+  <node concept="18kY7G" id="6eKAVO7W_RY">
+    <property role="TrG5h" value="check_TransformationMenuPart_PropertyMenu" />
+    <property role="3GE5qa" value="Menu.Transformation" />
+    <node concept="3clFbS" id="6eKAVO7W_RZ" role="18ibNy">
+      <node concept="3clFbJ" id="6eKAVO7W_Sn" role="3cqZAp">
+        <node concept="22lmx$" id="6eKAVO7WCZi" role="3clFbw">
+          <node concept="2OqwBi" id="6eKAVO7WDKD" role="3uHU7w">
+            <node concept="2OqwBi" id="6eKAVO7WDgG" role="2Oq$k0">
+              <node concept="1YBJjd" id="6eKAVO7WD6M" role="2Oq$k0">
+                <ref role="1YBMHb" node="6eKAVO7W_S1" resolve="node" />
+              </node>
+              <node concept="3TrEf2" id="6eKAVO7WDrh" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:2snskYs0Tud" resolve="property" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="6eKAVO7Z1qV" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:hT22swA" resolve="isPrimitiveString" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6eKAVO7WAxO" role="3uHU7B">
+            <node concept="2OqwBi" id="6eKAVO7WA2m" role="2Oq$k0">
+              <node concept="1YBJjd" id="6eKAVO7W_SG" role="2Oq$k0">
+                <ref role="1YBMHb" node="6eKAVO7W_S1" resolve="node" />
+              </node>
+              <node concept="3TrEf2" id="6eKAVO7WAaS" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:2snskYs0Tud" resolve="property" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="6eKAVO7WAMg" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:hT23WS5" resolve="isPrimitiveInteger" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="6eKAVO7W_Sp" role="3clFbx">
+          <node concept="a7r0C" id="6eKAVO7WExf" role="3cqZAp">
+            <node concept="3cpWs3" id="6eKAVO7WKxB" role="a7wSD">
+              <node concept="Xl_RD" id="6eKAVO7WKxE" role="3uHU7w">
+                <property role="Xl_RC" value=" property is empty" />
+              </node>
+              <node concept="3cpWs3" id="6eKAVO7WFWD" role="3uHU7B">
+                <node concept="Xl_RD" id="6eKAVO7WExx" role="3uHU7B">
+                  <property role="Xl_RC" value="default menu for the " />
+                </node>
+                <node concept="2OqwBi" id="6eKAVO7WHPW" role="3uHU7w">
+                  <node concept="2OqwBi" id="6eKAVO7WGSW" role="2Oq$k0">
+                    <node concept="2OqwBi" id="6eKAVO7WG94" role="2Oq$k0">
+                      <node concept="1YBJjd" id="6eKAVO7WFWK" role="2Oq$k0">
+                        <ref role="1YBMHb" node="6eKAVO7W_S1" resolve="node" />
+                      </node>
+                      <node concept="3TrEf2" id="6eKAVO7WGxf" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:2snskYs0Tud" resolve="property" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="6eKAVO7WHgU" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpce:fKAX2Z_" resolve="dataType" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="6eKAVO7WIAi" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1YBJjd" id="6eKAVO7WMN6" role="2OEOjV">
+              <ref role="1YBMHb" node="6eKAVO7W_S1" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6eKAVO7W_S1" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tpc2:2snskYs0Tuc" resolve="TransformationMenuPart_PropertyMenu" />
+    </node>
+  </node>
 </model>
 

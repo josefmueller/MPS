@@ -76,7 +76,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createConstant_bhyi1v_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include reference menu for the reference");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "include default reference menu for the reference");
     editorCell.setCellId("Constant_bhyi1v_a0");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

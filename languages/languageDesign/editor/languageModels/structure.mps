@@ -6786,7 +6786,7 @@
     <property role="EcuMT" value="2816844678677370764" />
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_PropertyMenu" />
-    <property role="34LRSv" value="include property menu" />
+    <property role="34LRSv" value="include default property menu" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="2snskYs0Tud" role="1TKVEi">
       <property role="IQ2ns" value="2816844678677370765" />
@@ -6800,7 +6800,7 @@
     <property role="EcuMT" value="422708224287891156" />
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_ReferenceMenu" />
-    <property role="34LRSv" value="include reference menu" />
+    <property role="34LRSv" value="include default reference menu" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="7pTz0_mttsO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

@@ -3354,14 +3354,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TransformationMenuPart_PropertyMenu:
         if (props_TransformationMenuPart_PropertyMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("include property menu");
+          cpb.rawPresentation("include default property menu");
           props_TransformationMenuPart_PropertyMenu = cpb.create();
         }
         return props_TransformationMenuPart_PropertyMenu;
       case LanguageConceptSwitch.TransformationMenuPart_ReferenceMenu:
         if (props_TransformationMenuPart_ReferenceMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("include reference menu");
+          cpb.rawPresentation("include default reference menu");
           props_TransformationMenuPart_ReferenceMenu = cpb.create();
         }
         return props_TransformationMenuPart_ReferenceMenu;
