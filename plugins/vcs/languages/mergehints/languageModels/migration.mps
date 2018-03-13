@@ -1076,7 +1076,9 @@
     <node concept="3clFb_" id="4WGKd_KE3GJ" role="jymVt">
       <property role="TrG5h" value="convertHint" />
       <node concept="3Tm6S6" id="4WGKd_KE3GK" role="1B3o_S" />
-      <node concept="3Tqbb2" id="4WGKd_KE3GL" role="3clF45" />
+      <node concept="3Tqbb2" id="4WGKd_KE3GL" role="3clF45">
+        <ref role="ehGHo" to="6p:4WGKd_KDsrX" resolve="MergeStrategy" />
+      </node>
       <node concept="37vLTG" id="4WGKd_KE3tS" role="3clF46">
         <property role="TrG5h" value="cNode" />
         <node concept="3Tqbb2" id="4WGKd_KE3tT" role="1tU5fm">
