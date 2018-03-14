@@ -116,7 +116,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
     final Wrappers._T<List<Generator>> genList = new Wrappers._T<List<Generator>>();
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(node);
         assert language.value != null : "Language shouldn't be null for " + node;
@@ -133,7 +133,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       }
       ListSequence.fromList(genList.value).addElement(createdGenerator);
     } else {
-      mpsProject.getModelAccess().executeCommand(new Runnable() {
+      mpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           for (Generator generator : genList.value) {
             if (generator.getOwnTemplateModels().isEmpty()) {
@@ -151,7 +151,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (Generator generator : genList.value) {
           for (SModel gm : generator.getOwnTemplateModels()) {
@@ -163,7 +163,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
     if (ListSequence.fromList(mappings).isEmpty()) {
       // generator is present - this means we don't have template models or mappings 
-      mpsProject.getModelAccess().executeCommand(new Runnable() {
+      mpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SModel model = null;
           for (Generator generator : genList.value) {
@@ -191,7 +191,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       mapping.value = ListSequence.fromList(mappings).first();
     }
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    mpsProject.getModelAccess().executeCommand(new Runnable() {
+    mpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(mapping.value);
         if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
