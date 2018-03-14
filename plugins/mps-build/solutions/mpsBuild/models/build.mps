@@ -13850,6 +13850,12 @@
             <ref role="1Busuk" node="4SM2EuqHUPF" resolve="jetbrains.mps.lang.modelapi" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5ls3GT1uxxY" role="3bR37C">
+          <node concept="3bR9La" id="5ls3GT1uxxZ" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L9c" resolve="jetbrains.mps.lang.quotation" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="74nECH1fdf5" role="2G$12L">
         <property role="BnDLt" value="true" />
