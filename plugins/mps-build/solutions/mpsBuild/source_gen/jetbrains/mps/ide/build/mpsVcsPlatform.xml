@@ -228,7 +228,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.core.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.core.jar" />
     </jar>

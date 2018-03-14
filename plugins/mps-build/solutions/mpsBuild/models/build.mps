@@ -32432,9 +32432,15 @@
             <node concept="2Ry0Ak" id="EpEP7iii1Y" role="iGT6I">
               <property role="2Ry0Am" value="plugins" />
               <node concept="2Ry0Ak" id="EpEP7iii1Z" role="2Ry0An">
-                <property role="2Ry0Am" value="vcs-core" />
-                <node concept="2Ry0Ak" id="EpEP7iii20" role="2Ry0An">
-                  <property role="2Ry0Am" value="core" />
+                <property role="2Ry0Am" value="vcs" />
+                <node concept="2Ry0Ak" id="4SHskzDu85v" role="2Ry0An">
+                  <property role="2Ry0Am" value="vcs-core" />
+                  <node concept="2Ry0Ak" id="4SHskzDu86U" role="2Ry0An">
+                    <property role="2Ry0Am" value="modules" />
+                    <node concept="2Ry0Ak" id="4SHskzDu86Z" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.ide.vcs.core" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
