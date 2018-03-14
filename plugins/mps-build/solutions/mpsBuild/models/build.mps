@@ -19743,7 +19743,7 @@
       </node>
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="E5E5E5" />
+          <property role="3MwjfP" value="FFFFFF" />
         </node>
       </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
@@ -19802,7 +19802,7 @@
       </node>
       <node concept="NbPM2" id="5VYK1npNzOD" role="27hGoL">
         <node concept="3Mxwew" id="5VYK1npNzOC" role="3MwsjC">
-          <property role="3MwjfP" value="0383F9" />
+          <property role="3MwjfP" value="FFFFFF" />
         </node>
       </node>
       <node concept="55IIr" id="5VYK1npK8$T" role="27igRh">
@@ -19985,7 +19985,7 @@
       </node>
       <node concept="3_J27D" id="54PfAP0EqnK" role="3KTKoD">
         <node concept="3Mxwew" id="54PfAP0EqnM" role="3MwsjC">
-          <property role="3MwjfP" value="858585" />
+          <property role="3MwjfP" value="FFFFFF" />
         </node>
       </node>
     </node>
