@@ -262,13 +262,15 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -1224,10 +1226,14 @@
                           <node concept="3clFbS" id="4osSLZaWFSP" role="1bW5cS">
                             <node concept="3clFbF" id="4osSLZaWGel" role="3cqZAp">
                               <node concept="2OqwBi" id="3XR0QgVCnW2" role="3clFbG">
-                                <node concept="37vLTw" id="3XR0QgVCnW1" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4osSLZaWFSQ" resolve="it" />
+                                <node concept="2JrnkZ" id="5ls3GT1yLPd" role="2Oq$k0">
+                                  <node concept="37vLTw" id="3XR0QgVCnW1" role="2JrQYb">
+                                    <ref role="3cqZAo" node="4osSLZaWFSQ" resolve="it" />
+                                  </node>
                                 </node>
-                                <node concept="iZEcu" id="3XR0QgVCnW3" role="2OqNvi" />
+                                <node concept="liA8E" id="5ls3GT1yNbh" role="2OqNvi">
+                                  <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                                </node>
                               </node>
                             </node>
                           </node>

@@ -270,6 +270,12 @@
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
+      <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
+        <child id="1154546920563" name="concept" index="3gmYPZ" />
+      </concept>
+      <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
+        <reference id="1154546997487" name="concept" index="3gnhBz" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -2813,9 +2819,12 @@
                 <ref role="3cqZAo" node="71Lc9uInERB" resolve="node" />
               </node>
               <node concept="2Xjw5R" id="71Lc9uInFiN" role="2OqNvi">
-                <node concept="1xMEDy" id="71Lc9uInLOt" role="1xVPHs">
-                  <node concept="chp4Y" id="71Lc9uInLPn" role="ri$Ld">
-                    <ref role="cht4Q" to="tpee:i2fhoOR" resolve="IMethodLike" />
+                <node concept="3gmYPX" id="5ls3GT1yPe8" role="1xVPHs">
+                  <node concept="3gn64h" id="5ls3GT1yPU7" role="3gmYPZ">
+                    <ref role="3gnhBz" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+                  </node>
+                  <node concept="3gn64h" id="5ls3GT1yPrO" role="3gmYPZ">
+                    <ref role="3gnhBz" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                   </node>
                 </node>
               </node>
