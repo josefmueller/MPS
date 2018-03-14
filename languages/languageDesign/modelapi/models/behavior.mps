@@ -130,9 +130,11 @@
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -141,9 +143,6 @@
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
-      </concept>
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -464,15 +463,11 @@
               <node concept="37vLTw" id="1Bs_61$mAN3" role="37wK5m">
                 <ref role="3cqZAo" node="_GDk1qZ2Kz" resolve="where" />
               </node>
-              <node concept="2OqwBi" id="1Bs_61$mBNn" role="37wK5m">
-                <node concept="2JrnkZ" id="1Bs_61$mBAg" role="2Oq$k0">
-                  <node concept="37vLTw" id="1Bs_61$mB1P" role="2JrQYb">
-                    <ref role="3cqZAo" node="_GDk1qZ2KV" resolve="target" />
-                  </node>
+              <node concept="2OqwBi" id="3XR0QgVCmwl" role="37wK5m">
+                <node concept="37vLTw" id="3XR0QgVCmwk" role="2Oq$k0">
+                  <ref role="3cqZAo" node="_GDk1qZ2KV" resolve="target" />
                 </node>
-                <node concept="liA8E" id="1Bs_61$mC5F" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                </node>
+                <node concept="aIX43" id="3XR0QgVCmwm" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -1206,15 +1201,11 @@
       <node concept="3Tm1VV" id="4nxIQVLmGX5" role="1B3o_S" />
       <node concept="3clFbS" id="4nxIQVLmGX8" role="3clF47">
         <node concept="3clFbF" id="4nxIQVLmH2v" role="3cqZAp">
-          <node concept="2OqwBi" id="6x8pYYbAY9d" role="3clFbG">
-            <node concept="2JrnkZ" id="6x8pYYbAXSP" role="2Oq$k0">
-              <node concept="BsUDl" id="4nxIQVLmH2u" role="2JrQYb">
-                <ref role="37wK5l" node="4nxIQVLmGTU" resolve="findTarget" />
-              </node>
+          <node concept="2OqwBi" id="3XR0QgVCmOJ" role="3clFbG">
+            <node concept="BsUDl" id="3XR0QgVCmOI" role="2Oq$k0">
+              <ref role="37wK5l" node="4nxIQVLmGTU" resolve="findTarget" />
             </node>
-            <node concept="liA8E" id="6x8pYYbAYg0" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-            </node>
+            <node concept="iZEcu" id="3XR0QgVCmOK" role="2OqNvi" />
           </node>
         </node>
       </node>

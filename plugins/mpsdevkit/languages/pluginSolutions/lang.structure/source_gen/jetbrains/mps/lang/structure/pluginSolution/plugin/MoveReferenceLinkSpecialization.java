@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MoveReferenceLinkSpecialization extends StructureSpecializationBase<SReferenceLink> {
   public Tuples._2<SReferenceLink, SNodeReference> fetchState(SNode movingNode) {
     if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && (SLinkOperations.getTarget(SNodeOperations.cast(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
-      return MultiTuple.<SReferenceLink,SNodeReference>from(MetaAdapterByDeclaration.getReferenceLink(movingNode), movingNode.getReference());
+      return MultiTuple.<SReferenceLink,SNodeReference>from(MetaAdapterByDeclaration.getReferenceLink(movingNode), SNodeOperations.getPointer(movingNode));
     } else {
       return null;
     }

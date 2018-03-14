@@ -158,6 +158,7 @@
       <concept id="1177458491964" name="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" flags="in" index="_ZGcI" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -699,18 +700,14 @@
             <node concept="3uibUv" id="6KNTF2XLQc_" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
-            <node concept="2OqwBi" id="6KNTF2XLQcG" role="33vP2m">
-              <node concept="2JrnkZ" id="6KNTF2XLQcH" role="2Oq$k0">
-                <node concept="2OqwBi" id="6KNTF2XLQcI" role="2JrQYb">
-                  <node concept="I4A8Y" id="6KNTF2XLQcJ" role="2OqNvi" />
-                  <node concept="37vLTw" id="6KNTF2XLQcK" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6KNTF2XLPNT" resolve="ruleNode" />
-                  </node>
+            <node concept="2OqwBi" id="3XR0QgVCoac" role="33vP2m">
+              <node concept="2OqwBi" id="3XR0QgVCoa9" role="2Oq$k0">
+                <node concept="I4A8Y" id="3XR0QgVCoaa" role="2OqNvi" />
+                <node concept="37vLTw" id="3XR0QgVCoab" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6KNTF2XLPNT" resolve="ruleNode" />
                 </node>
               </node>
-              <node concept="liA8E" id="6KNTF2XLQcL" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
+              <node concept="aIX43" id="3XR0QgVCoad" role="2OqNvi" />
             </node>
           </node>
         </node>

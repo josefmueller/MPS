@@ -138,7 +138,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);
-    myNode = evaluatorNode.getReference();
+    myNode = SNodeOperations.getPointer(evaluatorNode);
 
     // todo: variables 
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(((SNode) BHReflection.invoke0(evaluatorNode, MetaAdapterFactory.getInterfaceConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7f4a99699cea367bL, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))), nodesToImport);

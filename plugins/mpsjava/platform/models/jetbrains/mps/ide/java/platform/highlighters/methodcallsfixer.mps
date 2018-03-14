@@ -261,6 +261,7 @@
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -2345,15 +2346,11 @@
               <node concept="2ShNRf" id="36YhQHIewz_" role="37wK5m">
                 <node concept="1pGfFk" id="36YhQHIewzA" role="2ShVmc">
                   <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId)" resolve="SNodePointer" />
-                  <node concept="2OqwBi" id="36YhQHIewzB" role="37wK5m">
-                    <node concept="liA8E" id="36YhQHIewzC" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  <node concept="2OqwBi" id="3XR0QgVCmvm" role="37wK5m">
+                    <node concept="37vLTw" id="3XR0QgVCmvl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="36YhQHIewzs" resolve="m" />
                     </node>
-                    <node concept="2JrnkZ" id="36YhQHIewzD" role="2Oq$k0">
-                      <node concept="37vLTw" id="36YhQHIewzE" role="2JrQYb">
-                        <ref role="3cqZAo" node="36YhQHIewzs" resolve="m" />
-                      </node>
-                    </node>
+                    <node concept="aIX43" id="3XR0QgVCmvn" role="2OqNvi" />
                   </node>
                   <node concept="2OqwBi" id="36YhQHIewzF" role="37wK5m">
                     <node concept="liA8E" id="36YhQHIewzG" role="2OqNvi">

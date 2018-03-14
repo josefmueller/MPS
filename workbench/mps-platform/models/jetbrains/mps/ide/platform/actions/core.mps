@@ -424,6 +424,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -4812,7 +4813,7 @@
                                     <node concept="3clFbF" id="5$FcEFNikmb" role="3cqZAp">
                                       <node concept="2OqwBi" id="5$FcEFNilQh" role="3clFbG">
                                         <node concept="2JrnkZ" id="5$FcEFNilzZ" role="2Oq$k0">
-                                          <node concept="37vLTw" id="5$FcEFNikma" role="2JrQYb">
+                                          <node concept="37vLTw" id="5iUdt5cRlrg" role="2JrQYb">
                                             <ref role="3cqZAo" node="5$FcEFNijFW" resolve="it" />
                                           </node>
                                         </node>
@@ -4832,15 +4833,11 @@
                             <node concept="ANE8D" id="5$FcEFNisIp" role="2OqNvi" />
                           </node>
                           <node concept="3EllGN" id="5$FcEFNgTDr" role="37vLTJ">
-                            <node concept="2OqwBi" id="5$FcEFNi6Bb" role="3ElVtu">
-                              <node concept="2JrnkZ" id="5$FcEFNi6qE" role="2Oq$k0">
-                                <node concept="2GrUjf" id="5$FcEFNgTX8" role="2JrQYb">
-                                  <ref role="2Gs0qQ" node="5$FcEFNgMSy" resolve="moveRoot" />
-                                </node>
+                            <node concept="2OqwBi" id="5iUdt5cRs2e" role="3ElVtu">
+                              <node concept="2GrUjf" id="5iUdt5cRs2d" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="5$FcEFNgMSy" resolve="moveRoot" />
                               </node>
-                              <node concept="liA8E" id="5$FcEFNi6Un" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                              </node>
+                              <node concept="iZEcu" id="5iUdt5cRs2f" role="2OqNvi" />
                             </node>
                             <node concept="37vLTw" id="5$FcEFNgQWE" role="3ElQJh">
                               <ref role="3cqZAo" node="5$FcEFMZqk0" resolve="moveRootsToDescendants" />
@@ -4896,15 +4893,11 @@
                       <node concept="1bVj0M" id="5$FcEFNhn6f" role="23t8la">
                         <node concept="3clFbS" id="5$FcEFNhn6g" role="1bW5cS">
                           <node concept="3clFbF" id="5$FcEFNhnAg" role="3cqZAp">
-                            <node concept="2OqwBi" id="5$FcEFNhoBo" role="3clFbG">
-                              <node concept="2JrnkZ" id="5$FcEFNhooA" role="2Oq$k0">
-                                <node concept="37vLTw" id="5$FcEFNhnAf" role="2JrQYb">
-                                  <ref role="3cqZAo" node="5$FcEFNhn6h" resolve="it" />
-                                </node>
+                            <node concept="2OqwBi" id="3XR0QgVCmOB" role="3clFbG">
+                              <node concept="37vLTw" id="3XR0QgVCmOA" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5$FcEFNhn6h" resolve="it" />
                               </node>
-                              <node concept="liA8E" id="5$FcEFNhoRv" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                              </node>
+                              <node concept="iZEcu" id="3XR0QgVCmOC" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
@@ -5059,15 +5052,11 @@
                               <ref role="1Pybhc" to="5nvm:7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
                               <node concept="2OqwBi" id="3D2IEK82wQ0" role="37wK5m">
                                 <node concept="3EllGN" id="3D2IEK82wQ1" role="2Oq$k0">
-                                  <node concept="2OqwBi" id="3D2IEK82wQ2" role="3ElVtu">
-                                    <node concept="2JrnkZ" id="3D2IEK82wQ3" role="2Oq$k0">
-                                      <node concept="2GrUjf" id="3D2IEK82wQ4" role="2JrQYb">
-                                        <ref role="2Gs0qQ" node="3D2IEK82wPR" resolve="moveRoot" />
-                                      </node>
+                                  <node concept="2OqwBi" id="5iUdt5cRsup" role="3ElVtu">
+                                    <node concept="2GrUjf" id="5iUdt5cRsuo" role="2Oq$k0">
+                                      <ref role="2Gs0qQ" node="3D2IEK82wPR" resolve="moveRoot" />
                                     </node>
-                                    <node concept="liA8E" id="3D2IEK82wQ5" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                                    </node>
+                                    <node concept="iZEcu" id="5iUdt5cRsuq" role="2OqNvi" />
                                   </node>
                                   <node concept="37vLTw" id="3D2IEK82wQ6" role="3ElQJh">
                                     <ref role="3cqZAo" node="5$FcEFMZqk0" resolve="moveRootsToDescendants" />

@@ -218,6 +218,7 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -678,15 +679,11 @@
                                           <property role="Xl_RC" value="Enum member substitute action: " />
                                         </node>
                                       </node>
-                                      <node concept="2OqwBi" id="4EfPrVhh3rP" role="37wK5m">
-                                        <node concept="2JrnkZ" id="4EfPrVhh3eq" role="2Oq$k0">
-                                          <node concept="37vLTw" id="3Lqkb7sd9Kw" role="2JrQYb">
-                                            <ref role="3cqZAo" node="3NL5ivGjZyk" resolve="enumMemberDeclaration" />
-                                          </node>
+                                      <node concept="2OqwBi" id="3XR0QgVClPz" role="37wK5m">
+                                        <node concept="37vLTw" id="3XR0QgVClPy" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="3NL5ivGjZyk" resolve="enumMemberDeclaration" />
                                         </node>
-                                        <node concept="liA8E" id="4EfPrVhh3Lt" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                                        </node>
+                                        <node concept="iZEcu" id="3XR0QgVClP$" role="2OqNvi" />
                                       </node>
                                       <node concept="3clFbT" id="3Lqkb7sdohM" role="37wK5m">
                                         <property role="3clFbU" value="true" />
@@ -1501,15 +1498,11 @@
                                           <property role="Xl_RC" value="Enum member substitute action: " />
                                         </node>
                                       </node>
-                                      <node concept="2OqwBi" id="4EfPrVhhc5n" role="37wK5m">
-                                        <node concept="2JrnkZ" id="4EfPrVhhc5o" role="2Oq$k0">
-                                          <node concept="37vLTw" id="3Lqkb7sdc3a" role="2JrQYb">
-                                            <ref role="3cqZAo" node="6k4lHAwHQ50" resolve="enumMemberDeclaration" />
-                                          </node>
+                                      <node concept="2OqwBi" id="3XR0QgVClPE" role="37wK5m">
+                                        <node concept="37vLTw" id="3XR0QgVClPD" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="6k4lHAwHQ50" resolve="enumMemberDeclaration" />
                                         </node>
-                                        <node concept="liA8E" id="4EfPrVhhc5q" role="2OqNvi">
-                                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                                        </node>
+                                        <node concept="iZEcu" id="3XR0QgVClPF" role="2OqNvi" />
                                       </node>
                                       <node concept="3clFbT" id="3Lqkb7sdoLT" role="37wK5m">
                                         <property role="3clFbU" value="true" />
@@ -1697,15 +1690,11 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="5MysbrZYWim" role="37wK5m">
-                            <node concept="2JrnkZ" id="5MysbrZYWin" role="2Oq$k0">
-                              <node concept="37vLTw" id="5MysbrZYWio" role="2JrQYb">
-                                <ref role="3cqZAo" node="2snskYs2eel" resolve="enumMemberDeclaration" />
-                              </node>
+                          <node concept="2OqwBi" id="3XR0QgVClPL" role="37wK5m">
+                            <node concept="37vLTw" id="3XR0QgVClPK" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2snskYs2eel" resolve="enumMemberDeclaration" />
                             </node>
-                            <node concept="liA8E" id="5MysbrZYWip" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
+                            <node concept="iZEcu" id="3XR0QgVClPM" role="2OqNvi" />
                           </node>
                           <node concept="3clFbT" id="5MysbrZYWiq" role="37wK5m">
                             <property role="3clFbU" value="true" />

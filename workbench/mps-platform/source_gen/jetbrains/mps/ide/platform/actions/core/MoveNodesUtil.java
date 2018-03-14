@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.participant.RefactoringUI;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -31,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.refactoring.participant.NodeCopyTracker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -108,7 +108,7 @@ public class MoveNodesUtil {
           MoveNodesUtil.NodeProcessor processor = mapping.key();
           for (SNode moveRoot : ListSequence.fromList(mapping.value())) {
             List<SNode> nodesToSearch = processor.getNodesToSearch(moveRoot);
-            MapSequence.fromMap(moveRootsToDescendants).put(moveRoot.getReference(), ListSequence.fromList(nodesToSearch).select(new ISelector<SNode, SNodeReference>() {
+            MapSequence.fromMap(moveRootsToDescendants).put(SNodeOperations.getPointer(moveRoot), ListSequence.fromList(nodesToSearch).select(new ISelector<SNode, SNodeReference>() {
               public SNodeReference select(SNode it) {
                 return it.getReference();
               }
@@ -120,7 +120,7 @@ public class MoveNodesUtil {
     });
     final MoveNodesUtil.ListIndex<SNodeReference> nodeChangesCorrespondence = new MoveNodesUtil.ListIndex<SNodeReference>(ListSequence.fromList(allNodes).select(new ISelector<SNode, SNodeReference>() {
       public SNodeReference select(SNode it) {
-        return it.getReference();
+        return SNodeOperations.getPointer(it);
       }
     }).toListSequence());
 
@@ -133,7 +133,7 @@ public class MoveNodesUtil {
           MoveNodesUtil.NodeProcessor processor = mapping.key();
 
           for (SNode moveRoot : ListSequence.fromList(moveRoots)) {
-            MapSequence.fromMap(removeOldRoots).put(moveRoot, RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(MapSequence.fromMap(moveRootsToDescendants).get(moveRoot.getReference())).translate(new ITranslator2<SNodeReference, RefactoringParticipant.KeepOldNodes>() {
+            MapSequence.fromMap(removeOldRoots).put(moveRoot, RefactoringParticipant.KeepOldNodes.max(ListSequence.fromList(MapSequence.fromMap(moveRootsToDescendants).get(SNodeOperations.getPointer(moveRoot))).translate(new ITranslator2<SNodeReference, RefactoringParticipant.KeepOldNodes>() {
               public Iterable<RefactoringParticipant.KeepOldNodes> translate(final SNodeReference descendant) {
                 return Sequence.fromIterable(participantStates).select(new ISelector<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>, RefactoringParticipant.KeepOldNodes>() {
                   public RefactoringParticipant.KeepOldNodes select(RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode> participantState) {

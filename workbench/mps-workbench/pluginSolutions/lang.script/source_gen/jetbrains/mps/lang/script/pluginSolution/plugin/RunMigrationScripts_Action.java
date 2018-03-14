@@ -24,9 +24,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Component;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends BaseAction {
@@ -98,7 +98,7 @@ public class RunMigrationScripts_Action extends BaseAction {
           }
         }, true).select(new ISelector<SNode, SNodeReference>() {
           public SNodeReference select(SNode it) {
-            return it.getReference();
+            return SNodeOperations.getPointer(it);
           }
         }).toListSequence();
       }

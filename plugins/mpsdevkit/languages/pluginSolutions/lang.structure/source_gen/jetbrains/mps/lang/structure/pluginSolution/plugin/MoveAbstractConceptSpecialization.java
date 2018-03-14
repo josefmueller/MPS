@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MoveAbstractConceptSpecialization extends StructureSpecializationBase<SAbstractConcept> {
   public Tuples._2<SAbstractConcept, SNodeReference> fetchState(SNode movingNode) {
     if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
-      return MultiTuple.<SAbstractConcept,SNodeReference>from(MetaAdapterByDeclaration.getConcept(movingNode), movingNode.getReference());
+      return MultiTuple.<SAbstractConcept,SNodeReference>from(MetaAdapterByDeclaration.getConcept(movingNode), SNodeOperations.getPointer(movingNode));
     } else {
       return null;
     }

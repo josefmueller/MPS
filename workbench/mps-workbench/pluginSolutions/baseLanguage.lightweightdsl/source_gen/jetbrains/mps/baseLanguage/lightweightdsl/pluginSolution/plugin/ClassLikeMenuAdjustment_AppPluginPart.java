@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -70,7 +71,7 @@ public class ClassLikeMenuAdjustment_AppPluginPart extends ApplicationPluginPart
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return it != null && it != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198");
+                return it != null && !(SNodeOperations.is(it, new SNodePointer("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198")));
               }
             }).select(new ISelector<SNode, SAbstractConcept>() {
               public SAbstractConcept select(SNode it) {

@@ -241,7 +241,7 @@
       <node id="6425285003181623150" at="109,73,110,77" concept="9" />
       <node id="6425285003181639051" at="112,54,113,41" concept="10" />
       <node id="6425285003181607161" at="115,33,116,94" concept="3" />
-      <node id="6425285003181390224" at="122,46,123,33" concept="10" />
+      <node id="6425285003181390224" at="122,46,123,46" concept="10" />
       <node id="6425285003181470037" at="125,25,126,0" concept="12" />
       <node id="6425285003176682783" at="126,0,127,280" concept="9" />
       <node id="8609501485360963902" at="127,280,128,154" concept="9" />
@@ -350,7 +350,7 @@
       <scope id="4198123050695354990" at="87,147,88,94" />
       <scope id="6425285003180883492" at="96,58,97,49" />
       <scope id="6425285003181636347" at="112,54,113,41" />
-      <scope id="6425285003181388176" at="122,46,123,33" />
+      <scope id="6425285003181388176" at="122,46,123,46" />
       <scope id="4198123050694741411" at="142,117,143,153" />
       <scope id="4198123050694741462" at="158,127,159,79" />
       <scope id="1473188155722964362" at="166,0,167,0">
@@ -565,7 +565,7 @@
         <var name="refactoringUI" id="4198123050694677492" />
       </scope>
       <unit id="5863271989071947467" at="52,66,56,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$1$1" />
-      <unit id="6425285003181636346" at="111,133,115,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$3$1" />
+      <unit id="6425285003181636346" at="111,146,115,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$3$1" />
       <unit id="6425285003181388175" at="121,165,125,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$4" />
       <unit id="4198123050694741410" at="141,109,145,21" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$5$1$1$1" />
       <unit id="1473188155722778444" at="188,56,192,7" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$NodeCreatingProcessor$1" />
@@ -574,7 +574,7 @@
       <unit id="6425285003176682727" at="93,63,101,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$2" />
       <unit id="4198123050694741390" at="138,75,147,17" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$5$1$1" />
       <unit id="5863271989071947432" at="46,50,58,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$1" />
-      <unit id="4198123050694741384" at="136,212,149,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$5$1" />
+      <unit id="4198123050694741384" at="136,225,149,13" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$5$1" />
       <unit id="6425285003180952702" at="72,0,86,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$ListIndex" />
       <unit id="8609501485360791147" at="165,0,179,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$NodeProcessor" />
       <unit id="6425285003176682756" at="105,63,120,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil$3" />

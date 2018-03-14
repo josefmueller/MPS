@@ -45,7 +45,7 @@ public class NodeReferenceUtil {
     return SNodeOperations.getConcept(node).getName() + "@" + ((nodeId >>> 16) + (nodeId << 16 >>> 16));
   }
   public static SNode makeReflection(@NotNull SNode targetNode) {
-    return makeReflection(targetNode.getReference(), getNodePresentation(targetNode));
+    return makeReflection(SNodeOperations.getPointer(targetNode), getNodePresentation(targetNode));
   }
   public static SNode makeDirect(SNode targetNode) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, "jetbrains.mps.lang.migration.structure.DirectNodeReference"));

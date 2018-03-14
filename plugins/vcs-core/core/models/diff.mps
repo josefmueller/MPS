@@ -264,6 +264,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
@@ -6272,20 +6273,16 @@
                         <ref role="37wK5l" to="mhbf:~SReference.getTargetSModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getTargetSModelReference" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="4$lWBA3SWJO" role="3uHU7w">
-                      <node concept="2JrnkZ" id="4$lWBA3SWJP" role="2Oq$k0">
-                        <node concept="2OqwBi" id="4$lWBA3SWJQ" role="2JrQYb">
-                          <node concept="37vLTw" id="4$lWBA3SWJR" role="2Oq$k0">
-                            <ref role="3cqZAo" node="42UviMIlkto" resolve="myChangeSet" />
-                          </node>
-                          <node concept="liA8E" id="4$lWBA3SWJS" role="2OqNvi">
-                            <ref role="37wK5l" node="778KdJ_u7Dl" resolve="getOldModel" />
-                          </node>
+                    <node concept="2OqwBi" id="3XR0QgVCocJ" role="3uHU7w">
+                      <node concept="2OqwBi" id="3XR0QgVCocG" role="2Oq$k0">
+                        <node concept="37vLTw" id="3XR0QgVCocH" role="2Oq$k0">
+                          <ref role="3cqZAo" node="42UviMIlkto" resolve="myChangeSet" />
+                        </node>
+                        <node concept="liA8E" id="3XR0QgVCocI" role="2OqNvi">
+                          <ref role="37wK5l" node="778KdJ_u7Dl" resolve="getOldModel" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="4$lWBA3SWJT" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                      </node>
+                      <node concept="aIX43" id="3XR0QgVCocK" role="2OqNvi" />
                     </node>
                   </node>
                   <node concept="17R0WA" id="6tB8$r2qwjS" role="3uHU7w">
@@ -6297,20 +6294,16 @@
                         <ref role="37wK5l" to="btf5:4TJPS00dNE0" resolve="getTargetModelReference" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="4$lWBA3SVBx" role="3uHU7w">
-                      <node concept="2JrnkZ" id="4$lWBA3SVxH" role="2Oq$k0">
-                        <node concept="2OqwBi" id="4$lWBA3SVh_" role="2JrQYb">
-                          <node concept="37vLTw" id="4$lWBA3SV5d" role="2Oq$k0">
-                            <ref role="3cqZAo" node="42UviMIlkto" resolve="myChangeSet" />
-                          </node>
-                          <node concept="liA8E" id="4$lWBA3SVrl" role="2OqNvi">
-                            <ref role="37wK5l" node="778KdJ_u7Dt" resolve="getNewModel" />
-                          </node>
+                    <node concept="2OqwBi" id="3XR0QgVCof4" role="3uHU7w">
+                      <node concept="2OqwBi" id="3XR0QgVCof1" role="2Oq$k0">
+                        <node concept="37vLTw" id="3XR0QgVCof2" role="2Oq$k0">
+                          <ref role="3cqZAo" node="42UviMIlkto" resolve="myChangeSet" />
+                        </node>
+                        <node concept="liA8E" id="3XR0QgVCof3" role="2OqNvi">
+                          <ref role="37wK5l" node="778KdJ_u7Dt" resolve="getNewModel" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="4$lWBA3SVJj" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                      </node>
+                      <node concept="aIX43" id="3XR0QgVCof5" role="2OqNvi" />
                     </node>
                   </node>
                 </node>

@@ -335,6 +335,7 @@
         <property id="427659576753753627" name="moduleId" index="20Rdg5" />
         <property id="427659576753753625" name="moduleName" index="20Rdg7" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -4517,15 +4518,11 @@
                         <node concept="2ShNRf" id="6bWILpQTkqA" role="33vP2m">
                           <node concept="1pGfFk" id="6bWILpQTnH5" role="2ShVmc">
                             <ref role="37wK5l" to="w1kc:~SnapshotModelData.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SnapshotModelData" />
-                            <node concept="2OqwBi" id="6bWILpQTrc1" role="37wK5m">
-                              <node concept="2JrnkZ" id="6bWILpQTr5a" role="2Oq$k0">
-                                <node concept="37vLTw" id="6bWILpQTnKb" role="2JrQYb">
-                                  <ref role="3cqZAo" node="6bWILpQSVs5" resolve="testModel" />
-                                </node>
+                            <node concept="2OqwBi" id="3XR0QgXNyzF" role="37wK5m">
+                              <node concept="37vLTw" id="3XR0QgXNyzE" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6bWILpQSVs5" resolve="testModel" />
                               </node>
-                              <node concept="liA8E" id="6bWILpQTug8" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                              </node>
+                              <node concept="aIX43" id="3XR0QgXNyzG" role="2OqNvi" />
                             </node>
                           </node>
                         </node>

@@ -864,104 +864,82 @@
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1654804677203434347">
     <file name="comparable_IndexedTupleType_Object_ComparisonRule.java">
-      <node id="1654804677203434353" at="19,86,20,362" concept="7" />
-      <node id="1654804677203434347" at="22,27,23,16" concept="7" />
-      <node id="1654804677203434347" at="25,59,26,99" concept="7" />
-      <node id="1654804677203434347" at="28,60,29,99" concept="7" />
-      <node id="1654804677203434347" at="32,51,33,163" concept="7" />
-      <node id="1654804677203434347" at="35,51,36,154" concept="7" />
-      <node id="1654804677203434363" at="38,62,39,63" concept="6" />
-      <node id="1654804677203434363" at="39,63,40,30" concept="6" />
-      <node id="1654804677203434363" at="40,30,41,252" concept="2" />
-      <node id="1654804677203434363" at="41,252,42,435" concept="2" />
-      <node id="1654804677203434363" at="42,435,43,24" concept="7" />
-      <node id="1654804677203434347" at="17,0,19,0" concept="1" trace="comparable_IndexedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434347" at="19,0,22,0" concept="5" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
-      <node id="1654804677203434347" at="22,0,25,0" concept="5" trace="isWeak#()Z" />
-      <node id="1654804677203434347" at="25,0,28,0" concept="5" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1654804677203434347" at="28,0,31,0" concept="5" trace="isApplicableSecond#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1654804677203434347" at="32,0,35,0" concept="5" trace="getApplicableConcept1#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1654804677203434347" at="35,0,38,0" concept="5" trace="getApplicableConcept2#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1654804677203434363" at="38,0,45,0" concept="10" trace="_quotation_createNode_rflzby_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1654804677203434347" at="17,62,17,62" />
-      <scope id="1654804677203434349" at="19,86,20,362" />
-      <scope id="1654804677203434347" at="22,27,23,16" />
-      <scope id="1654804677203434347" at="25,59,26,99" />
-      <scope id="1654804677203434347" at="28,60,29,99" />
-      <scope id="1654804677203434347" at="32,51,33,163" />
-      <scope id="1654804677203434347" at="35,51,36,154" />
-      <scope id="1654804677203434347" at="17,0,19,0" />
-      <scope id="1654804677203434347" at="19,0,22,0">
+      <node id="1654804677203434353" at="18,86,19,279" concept="7" />
+      <node id="1654804677203434347" at="21,27,22,16" concept="7" />
+      <node id="1654804677203434347" at="24,59,25,99" concept="7" />
+      <node id="1654804677203434347" at="27,60,28,99" concept="7" />
+      <node id="1654804677203434347" at="31,51,32,163" concept="7" />
+      <node id="1654804677203434347" at="34,51,35,154" concept="7" />
+      <node id="1654804677203434347" at="16,0,18,0" concept="1" trace="comparable_IndexedTupleType_Object_ComparisonRule#()V" />
+      <node id="1654804677203434347" at="18,0,21,0" concept="5" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+      <node id="1654804677203434347" at="21,0,24,0" concept="5" trace="isWeak#()Z" />
+      <node id="1654804677203434347" at="24,0,27,0" concept="5" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1654804677203434347" at="27,0,30,0" concept="5" trace="isApplicableSecond#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1654804677203434347" at="31,0,34,0" concept="5" trace="getApplicableConcept1#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1654804677203434347" at="34,0,37,0" concept="5" trace="getApplicableConcept2#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <scope id="1654804677203434347" at="16,62,16,62" />
+      <scope id="1654804677203434349" at="18,86,19,279" />
+      <scope id="1654804677203434347" at="21,27,22,16" />
+      <scope id="1654804677203434347" at="24,59,25,99" />
+      <scope id="1654804677203434347" at="27,60,28,99" />
+      <scope id="1654804677203434347" at="31,51,32,163" />
+      <scope id="1654804677203434347" at="34,51,35,154" />
+      <scope id="1654804677203434347" at="16,0,18,0" />
+      <scope id="1654804677203434347" at="18,0,21,0">
         <var name="node1" id="1654804677203434347" />
         <var name="node2" id="1654804677203434347" />
         <var name="status" id="1654804677203434347" />
       </scope>
-      <scope id="1654804677203434347" at="22,0,25,0" />
-      <scope id="1654804677203434347" at="25,0,28,0">
+      <scope id="1654804677203434347" at="21,0,24,0" />
+      <scope id="1654804677203434347" at="24,0,27,0">
         <var name="node" id="1654804677203434347" />
       </scope>
-      <scope id="1654804677203434347" at="28,0,31,0">
+      <scope id="1654804677203434347" at="27,0,30,0">
         <var name="node" id="1654804677203434347" />
       </scope>
-      <scope id="1654804677203434347" at="32,0,35,0" />
-      <scope id="1654804677203434347" at="35,0,38,0" />
-      <scope id="1654804677203434363" at="38,62,43,24">
-        <var name="facade" id="1654804677203434363" />
-        <var name="quotedNode_1" id="1654804677203434363" />
-      </scope>
-      <scope id="1654804677203434363" at="38,0,45,0" />
-      <unit id="1654804677203434347" at="16,0,46,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_IndexedTupleType_Object_ComparisonRule" />
+      <scope id="1654804677203434347" at="31,0,34,0" />
+      <scope id="1654804677203434347" at="34,0,37,0" />
+      <unit id="1654804677203434347" at="15,0,38,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_IndexedTupleType_Object_ComparisonRule" />
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/1654804677203434372">
     <file name="comparable_NamedTupleType_Object_ComparisonRule.java">
-      <node id="1654804677203434375" at="19,86,20,362" concept="7" />
-      <node id="1654804677203434372" at="22,27,23,16" concept="7" />
-      <node id="1654804677203434372" at="25,59,26,99" concept="7" />
-      <node id="1654804677203434372" at="28,60,29,99" concept="7" />
-      <node id="1654804677203434372" at="32,51,33,161" concept="7" />
-      <node id="1654804677203434372" at="35,51,36,154" concept="7" />
-      <node id="1654804677203434378" at="38,62,39,63" concept="6" />
-      <node id="1654804677203434378" at="39,63,40,30" concept="6" />
-      <node id="1654804677203434378" at="40,30,41,252" concept="2" />
-      <node id="1654804677203434378" at="41,252,42,435" concept="2" />
-      <node id="1654804677203434378" at="42,435,43,24" concept="7" />
-      <node id="1654804677203434372" at="17,0,19,0" concept="1" trace="comparable_NamedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434372" at="19,0,22,0" concept="5" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
-      <node id="1654804677203434372" at="22,0,25,0" concept="5" trace="isWeak#()Z" />
-      <node id="1654804677203434372" at="25,0,28,0" concept="5" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1654804677203434372" at="28,0,31,0" concept="5" trace="isApplicableSecond#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1654804677203434372" at="32,0,35,0" concept="5" trace="getApplicableConcept1#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1654804677203434372" at="35,0,38,0" concept="5" trace="getApplicableConcept2#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="1654804677203434378" at="38,0,45,0" concept="10" trace="_quotation_createNode_6f56oq_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1654804677203434372" at="17,60,17,60" />
-      <scope id="1654804677203434374" at="19,86,20,362" />
-      <scope id="1654804677203434372" at="22,27,23,16" />
-      <scope id="1654804677203434372" at="25,59,26,99" />
-      <scope id="1654804677203434372" at="28,60,29,99" />
-      <scope id="1654804677203434372" at="32,51,33,161" />
-      <scope id="1654804677203434372" at="35,51,36,154" />
-      <scope id="1654804677203434372" at="17,0,19,0" />
-      <scope id="1654804677203434372" at="19,0,22,0">
+      <node id="1654804677203434375" at="18,86,19,279" concept="7" />
+      <node id="1654804677203434372" at="21,27,22,16" concept="7" />
+      <node id="1654804677203434372" at="24,59,25,99" concept="7" />
+      <node id="1654804677203434372" at="27,60,28,99" concept="7" />
+      <node id="1654804677203434372" at="31,51,32,161" concept="7" />
+      <node id="1654804677203434372" at="34,51,35,154" concept="7" />
+      <node id="1654804677203434372" at="16,0,18,0" concept="1" trace="comparable_NamedTupleType_Object_ComparisonRule#()V" />
+      <node id="1654804677203434372" at="18,0,21,0" concept="5" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+      <node id="1654804677203434372" at="21,0,24,0" concept="5" trace="isWeak#()Z" />
+      <node id="1654804677203434372" at="24,0,27,0" concept="5" trace="isApplicableFirst#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1654804677203434372" at="27,0,30,0" concept="5" trace="isApplicableSecond#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1654804677203434372" at="31,0,34,0" concept="5" trace="getApplicableConcept1#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1654804677203434372" at="34,0,37,0" concept="5" trace="getApplicableConcept2#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <scope id="1654804677203434372" at="16,60,16,60" />
+      <scope id="1654804677203434374" at="18,86,19,279" />
+      <scope id="1654804677203434372" at="21,27,22,16" />
+      <scope id="1654804677203434372" at="24,59,25,99" />
+      <scope id="1654804677203434372" at="27,60,28,99" />
+      <scope id="1654804677203434372" at="31,51,32,161" />
+      <scope id="1654804677203434372" at="34,51,35,154" />
+      <scope id="1654804677203434372" at="16,0,18,0" />
+      <scope id="1654804677203434372" at="18,0,21,0">
         <var name="node1" id="1654804677203434372" />
         <var name="node2" id="1654804677203434372" />
         <var name="status" id="1654804677203434372" />
       </scope>
-      <scope id="1654804677203434372" at="22,0,25,0" />
-      <scope id="1654804677203434372" at="25,0,28,0">
+      <scope id="1654804677203434372" at="21,0,24,0" />
+      <scope id="1654804677203434372" at="24,0,27,0">
         <var name="node" id="1654804677203434372" />
       </scope>
-      <scope id="1654804677203434372" at="28,0,31,0">
+      <scope id="1654804677203434372" at="27,0,30,0">
         <var name="node" id="1654804677203434372" />
       </scope>
-      <scope id="1654804677203434372" at="32,0,35,0" />
-      <scope id="1654804677203434372" at="35,0,38,0" />
-      <scope id="1654804677203434378" at="38,62,43,24">
-        <var name="facade" id="1654804677203434378" />
-        <var name="quotedNode_1" id="1654804677203434378" />
-      </scope>
-      <scope id="1654804677203434378" at="38,0,45,0" />
-      <unit id="1654804677203434372" at="16,0,46,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_NamedTupleType_Object_ComparisonRule" />
+      <scope id="1654804677203434372" at="31,0,34,0" />
+      <scope id="1654804677203434372" at="34,0,37,0" />
+      <unit id="1654804677203434372" at="15,0,38,0" name="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_NamedTupleType_Object_ComparisonRule" />
     </file>
   </root>
   <root nodeRef="r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)/2213502935616190236">

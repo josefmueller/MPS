@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MovePropertySpecialization extends StructureSpecializationBase<SProperty> {
   public Tuples._2<SProperty, SNodeReference> fetchState(SNode movingNode) {
     if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
-      return MultiTuple.<SProperty,SNodeReference>from(MetaAdapterByDeclaration.getProperty(movingNode), movingNode.getReference());
+      return MultiTuple.<SProperty,SNodeReference>from(MetaAdapterByDeclaration.getProperty(movingNode), SNodeOperations.getPointer(movingNode));
     } else {
       return null;
     }

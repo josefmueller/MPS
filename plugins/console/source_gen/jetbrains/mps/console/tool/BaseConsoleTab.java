@@ -607,7 +607,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
   }
   private static boolean check_6q36mf_a0a4a0a0a0a0a5ec(SModelReference checkedDotOperand, SModel myModel) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.equals(myModel.getReference());
+      return checkedDotOperand.equals(SModelOperations.getPointer(myModel));
     }
     return false;
   }
