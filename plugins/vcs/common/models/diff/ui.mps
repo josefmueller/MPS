@@ -287,6 +287,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
@@ -1117,15 +1118,11 @@
             <node concept="2ShNRf" id="2yL_twwKkc6" role="33vP2m">
               <node concept="1pGfFk" id="2yL_twwKkc7" role="2ShVmc">
                 <ref role="37wK5l" to="bmv6:1m2uLwrS0vs" resolve="MergeTemporaryModel" />
-                <node concept="2OqwBi" id="2yL_twwKkc8" role="37wK5m">
-                  <node concept="2JrnkZ" id="2yL_twwKkc9" role="2Oq$k0">
-                    <node concept="37vLTw" id="2yL_twwKkca" role="2JrQYb">
-                      <ref role="3cqZAo" node="6TJYyPqxMUt" resolve="model" />
-                    </node>
+                <node concept="2OqwBi" id="3XR0QgVCmvf" role="37wK5m">
+                  <node concept="37vLTw" id="3XR0QgVCmve" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6TJYyPqxMUt" resolve="model" />
                   </node>
-                  <node concept="liA8E" id="2yL_twwKkcb" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                  </node>
+                  <node concept="aIX43" id="3XR0QgVCmvg" role="2OqNvi" />
                 </node>
                 <node concept="3fqX7Q" id="2yL_twwKkcc" role="37wK5m">
                   <node concept="37vLTw" id="2yL_twwKkcd" role="3fr31v">

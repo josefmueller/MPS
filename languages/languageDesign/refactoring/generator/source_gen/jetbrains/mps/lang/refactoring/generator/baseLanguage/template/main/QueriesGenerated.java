@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -35,9 +36,6 @@ import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.ReferenceTargetQuery;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -112,11 +110,11 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object referenceMacro_GetReferent_4177632300646356772(final ReferenceMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget"))) {
-      return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0t(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"));
+      return new SNodePointer("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)", "4792031542972815538");
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056aL, "jetbrains.mps.lang.refactoring.structure.ModelTarget"))) {
-      return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0a91(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"));
+      return new SNodePointer("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)", "4792031542972815539");
     } else if (SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056bL, "jetbrains.mps.lang.refactoring.structure.ModuleTarget"))) {
-      return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0b0a91(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"));
+      return new SNodePointer("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)", "4792031542972815540");
     }
     return null;
   }
@@ -561,29 +559,5 @@ public class QueriesGenerated extends QueryProviderBase {
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
     }
-  }
-  private static SNode _quotation_createNode_x583g4_a0a0a0t() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc37588bc8L, "EnumConstantReference"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972815538")));
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972811326")));
-    return quotedNode_1;
-  }
-  private static SNode _quotation_createNode_x583g4_a0a0a0a91() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc37588bc8L, "EnumConstantReference"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972815539")));
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972811326")));
-    return quotedNode_1;
-  }
-  private static SNode _quotation_createNode_x583g4_a0a0b0a91() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc37588bc8L, "EnumConstantReference"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0xfc37588bcaL, "enumConstantDeclaration"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972815540")));
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, 0x10a758428feL, "enumClass"), quotedNode_1, facade.createModelReference("r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)"), facade.createNodeId("4792031542972811326")));
-    return quotedNode_1;
   }
 }

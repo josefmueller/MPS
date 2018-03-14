@@ -67,7 +67,7 @@ public final class NamedNodeReference__BehaviorDescriptor extends BaseBHDescript
     return candidates;
   }
   /*package*/ static SNodeReference toNodeReference_id4nxIQVLmsc4(@NotNull SNode __thisNode__) {
-    return NamedNodeReference__BehaviorDescriptor.findTarget_id4nxIQVLmGTU.invoke(__thisNode__).getReference();
+    return SNodeOperations.getPointer(NamedNodeReference__BehaviorDescriptor.findTarget_id4nxIQVLmGTU.invoke(__thisNode__));
   }
   /*package*/ static SNode toNode_id46J8CTY3sAt(@NotNull SNode __thisNode__, SRepository repo) {
     return ((SNode) NamedNodeReference__BehaviorDescriptor.findTarget_id4nxIQVLmGTU.invoke(__thisNode__));

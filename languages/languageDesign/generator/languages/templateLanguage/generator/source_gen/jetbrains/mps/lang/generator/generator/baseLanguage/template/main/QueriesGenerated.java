@@ -3804,7 +3804,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static void mappingScript_CodeBlock_6458924870074299562(final MappingScriptContext _context) {
-    SModelReference currentModel = _context.getModel().getReference();
+    SModelReference currentModel = SModelOperations.getPointer(_context.getModel());
     for (SNode node : SModelOperations.nodes(_context.getModel(), null)) {
       if (RuleUtil.isTemplateLanguageElement(node)) {
         continue;

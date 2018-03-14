@@ -531,6 +531,7 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -45814,13 +45815,9 @@
             <node concept="3uibUv" id="5AyHvbfHYGr" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
-            <node concept="2OqwBi" id="5AyHvbfHYGw" role="33vP2m">
-              <node concept="2JrnkZ" id="5AyHvbfHYGx" role="2Oq$k0">
-                <node concept="1Q6Npb" id="5AyHvbfHYGy" role="2JrQYb" />
-              </node>
-              <node concept="liA8E" id="5AyHvbfHYGz" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
+            <node concept="2OqwBi" id="3XR0QgXNzwt" role="33vP2m">
+              <node concept="1Q6Npb" id="3XR0QgXNzws" role="2Oq$k0" />
+              <node concept="aIX43" id="3XR0QgXNzwu" role="2OqNvi" />
             </node>
           </node>
         </node>

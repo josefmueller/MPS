@@ -305,6 +305,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -6507,15 +6508,11 @@
                 <node concept="37vLTw" id="6E2SOPzjKmB" role="37wK5m">
                   <ref role="3cqZAo" node="6E2SOPziqYC" resolve="resultModel" />
                 </node>
-                <node concept="2OqwBi" id="6E2SOPzhT0O" role="37wK5m">
-                  <node concept="2JrnkZ" id="6E2SOPzhOjJ" role="2Oq$k0">
-                    <node concept="2GrUjf" id="2pkw$wNL77S" role="2JrQYb">
-                      <ref role="2Gs0qQ" node="2pkw$wNHFUI" resolve="m" />
-                    </node>
+                <node concept="2OqwBi" id="3XR0QgVCmuG" role="37wK5m">
+                  <node concept="2GrUjf" id="3XR0QgVCmuF" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="2pkw$wNHFUI" resolve="m" />
                   </node>
-                  <node concept="liA8E" id="6E2SOPzi3dY" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                  </node>
+                  <node concept="aIX43" id="3XR0QgVCmuH" role="2OqNvi" />
                 </node>
               </node>
             </node>

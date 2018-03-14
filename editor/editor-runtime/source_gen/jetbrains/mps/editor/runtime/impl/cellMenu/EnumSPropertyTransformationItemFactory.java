@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.editor.menus.transformation.PropertyTransformationMenuItem;
 import org.jetbrains.annotations.Nullable;
@@ -32,7 +33,7 @@ public class EnumSPropertyTransformationItemFactory {
 
       try {
 
-        transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), enumMemberDeclaration.getReference(), true));
+        transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SNodeOperations.getPointer(enumMemberDeclaration), true));
         final EditorMenuTraceInfo info = transformationMenuContext.getEditorMenuTrace().getTraceInfo();
         PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(node, transformationMenuContext.getEditorContext(), property, SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"))) {
 

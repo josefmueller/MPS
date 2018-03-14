@@ -31,6 +31,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.vcs.diff.changes.NodeGroupStructChange;
 import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.RuntimeFlags;
@@ -195,7 +196,7 @@ outer:
       if (oldRef == null) {
         continue;
       }
-      if (Objects.equals(oldRef.getTargetSModelReference(), myChangeSet.getOldModel().getReference()) && Objects.equals(ch.getTargetModelReference(), myChangeSet.getNewModel().getReference()) && Objects.equals(MapSequence.fromMap(myOldToNewMap).get(oldRef.getTargetNodeId()), ch.getTargetNodeId())) {
+      if (Objects.equals(oldRef.getTargetSModelReference(), SModelOperations.getPointer(myChangeSet.getOldModel())) && Objects.equals(ch.getTargetModelReference(), SModelOperations.getPointer(myChangeSet.getNewModel())) && Objects.equals(MapSequence.fromMap(myOldToNewMap).get(oldRef.getTargetNodeId()), ch.getTargetNodeId())) {
         // ?? should the resolveInfo be the same ?? 
         ListSequence.fromList(myNewChanges).removeElement(ch);
       }

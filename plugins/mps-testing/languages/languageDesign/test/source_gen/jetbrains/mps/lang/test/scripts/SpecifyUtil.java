@@ -15,6 +15,7 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelImports;
 
 public class SpecifyUtil {
@@ -62,7 +63,7 @@ public class SpecifyUtil {
   }
 
   private static void addModelImports(SNode container, SNode ruleNode) {
-    SModelReference ruleModelRef = SNodeOperations.getModel(ruleNode).getReference();
+    SModelReference ruleModelRef = SModelOperations.getPointer(SNodeOperations.getModel(ruleNode));
     new ModelImports(SNodeOperations.getModel(container)).addModelImport(ruleModelRef);
   }
 }

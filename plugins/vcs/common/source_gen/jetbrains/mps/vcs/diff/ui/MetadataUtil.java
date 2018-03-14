@@ -4,13 +4,13 @@ package jetbrains.mps.vcs.diff.ui;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -32,7 +32,7 @@ public class MetadataUtil {
   public MetadataUtil() {
   }
   public static SModel createMetadataModel(SModel model, String version, boolean editable) {
-    MergeTemporaryModel metadataModel = new MergeTemporaryModel(model.getReference(), !(editable));
+    MergeTemporaryModel metadataModel = new MergeTemporaryModel(SModelOperations.getPointer(model), !(editable));
     metadataModel.addLanguage(MetaAdapterFactory.getLanguage(0x6df0089f32884998L, 0x9d57e698e7c8e145L, "jetbrains.mps.ide.vcs.modelmetadata"));
     metadataModel.addLanguage(MetaAdapterFactory.getLanguage(0x86ef829012bb4ca7L, 0x947f093788f263a9L, "jetbrains.mps.lang.project"));
     createModelRoot(metadataModel, model);

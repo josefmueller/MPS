@@ -60,7 +60,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (scriptAspect == null) {
       return null;
     }
-    final SNodeReference scriptNodeRef = scriptNode.getReference();
+    final SNodeReference scriptNodeRef = SNodeOperations.getPointer(scriptNode);
     for (RefactoringScript rs : scriptAspect.getRefactoringScripts()) {
       if (scriptNodeRef.equals(rs.getScriptNode())) {
         return rs;

@@ -558,6 +558,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAbstractConceptSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinkSpecialization" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.MovePropertySpecialization" />
@@ -616,7 +617,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />

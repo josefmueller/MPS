@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +44,7 @@ public final class DirectNodeReference__BehaviorDescriptor extends BaseBHDescrip
     return reference.getTargetNode() == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target"));
   }
   /*package*/ static SNodeReference getNodeReference_id4uVwhQyQbdz(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target")).getReference();
+    return SNodeOperations.getPointer(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target")));
   }
   /*package*/ static SNode tryToFindNode_id6szrkDoc2K7(@NotNull SNode __thisNode__, SRepository repository) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target"));

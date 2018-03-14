@@ -384,6 +384,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
@@ -1323,15 +1324,11 @@
         </node>
         <node concept="3clFbF" id="IYmOvnOKxO" role="3cqZAp">
           <node concept="37vLTI" id="IYmOvnOKDZ" role="3clFbG">
-            <node concept="2OqwBi" id="IYmOvnOLba" role="37vLTx">
-              <node concept="liA8E" id="IYmOvnONf6" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+            <node concept="2OqwBi" id="3XR0QgVClQ0" role="37vLTx">
+              <node concept="37vLTw" id="3XR0QgVClPZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="IYmOvnOKqq" resolve="evaluatorNode" />
               </node>
-              <node concept="2JrnkZ" id="IYmOvnOMCd" role="2Oq$k0">
-                <node concept="37vLTw" id="IYmOvnOL1v" role="2JrQYb">
-                  <ref role="3cqZAo" node="IYmOvnOKqq" resolve="evaluatorNode" />
-                </node>
-              </node>
+              <node concept="iZEcu" id="3XR0QgVClQ1" role="2OqNvi" />
             </node>
             <node concept="37vLTw" id="IYmOvnOKxN" role="37vLTJ">
               <ref role="3cqZAo" node="IYmOvnMC4i" resolve="myNode" />

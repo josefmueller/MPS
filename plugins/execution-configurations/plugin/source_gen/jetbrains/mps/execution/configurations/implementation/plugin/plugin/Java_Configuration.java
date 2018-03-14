@@ -146,7 +146,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
                 return false;
               }
             }
-            return Objects.equals(source.getReference(), Java_Configuration.this.getNode().getNode());
+            return Objects.equals(SNodeOperations.getPointer(source), Java_Configuration.this.getNode().getNode());
           }
         });
       }

@@ -48,7 +48,7 @@ public class AttributeOperations {
         LOG.error(Sequence.fromIterable(list).count() + " nodes match single value attribute. The first found node returned as the value.");
       }
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("  node=" + node.getReference() + "; concept=" + SNodeOperations.getConcept(Sequence.fromIterable(list).first()).getQualifiedName() + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
+        LOG.error("  node=" + SNodeOperations.getPointer(node) + "; concept=" + SNodeOperations.getConcept(Sequence.fromIterable(list).first()).getQualifiedName() + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
       }
     }
     return Sequence.fromIterable(list).first();
@@ -89,7 +89,7 @@ public class AttributeOperations {
           LOG.error(Sequence.fromIterable(oldlist).count() + " nodes match single value attribute during attribute replacing. Only the first found node replaced.");
         }
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("  node=" + node.getReference() + "; attribute=" + SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first()).getQualifiedName() + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
+          LOG.error("  node=" + SNodeOperations.getPointer(node) + "; attribute=" + SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first()).getQualifiedName() + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
         }
       }
       SNodeOperations.replaceWithAnother(Sequence.fromIterable(oldlist).first(), value);

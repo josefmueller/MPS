@@ -577,6 +577,7 @@
       <concept id="5480835971642155304" name="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation" flags="nn" index="15TzpJ" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -4633,21 +4634,17 @@
                     </node>
                     <node concept="liA8E" id="5VaWw4eye7B" role="2OqNvi">
                       <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTraceInputData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTraceInputData" />
-                      <node concept="2OqwBi" id="5VaWw4eye7C" role="37wK5m">
-                        <node concept="liA8E" id="5VaWw4eye7D" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                        </node>
-                        <node concept="2JrnkZ" id="5VaWw4eye7E" role="2Oq$k0">
-                          <node concept="2OqwBi" id="5VaWw4eye7F" role="2JrQYb">
-                            <node concept="2OqwBi" id="2Ex1te_vRFY" role="2Oq$k0">
-                              <node concept="2WthIp" id="2Ex1te_vRG1" role="2Oq$k0" />
-                              <node concept="3gHZIF" id="2Ex1te_vRG3" role="2OqNvi">
-                                <ref role="2WH_rO" node="5VaWw4ey5cG" resolve="node" />
-                              </node>
+                      <node concept="2OqwBi" id="3XR0QgVCo9B" role="37wK5m">
+                        <node concept="2OqwBi" id="3XR0QgVCo9y" role="2Oq$k0">
+                          <node concept="2OqwBi" id="3XR0QgVCo9z" role="2Oq$k0">
+                            <node concept="2WthIp" id="3XR0QgVCo9$" role="2Oq$k0" />
+                            <node concept="3gHZIF" id="3XR0QgVCo9_" role="2OqNvi">
+                              <ref role="2WH_rO" node="5VaWw4ey5cG" resolve="node" />
                             </node>
-                            <node concept="I4A8Y" id="5VaWw4eye7J" role="2OqNvi" />
                           </node>
+                          <node concept="I4A8Y" id="3XR0QgVCo9A" role="2OqNvi" />
                         </node>
+                        <node concept="aIX43" id="3XR0QgVCo9C" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -4809,18 +4806,14 @@
                     </node>
                     <node concept="liA8E" id="14z8V6nEsaq" role="2OqNvi">
                       <ref role="37wK5l" to="a0yo:~GenerationTracerViewTool.hasTracebackData(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="hasTracebackData" />
-                      <node concept="2OqwBi" id="2n9zn0CqNgv" role="37wK5m">
-                        <node concept="liA8E" id="2n9zn0CqNgw" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                        </node>
-                        <node concept="2JrnkZ" id="2n9zn0CqNgx" role="2Oq$k0">
-                          <node concept="2OqwBi" id="2n9zn0CqNgy" role="2JrQYb">
-                            <node concept="37vLTw" id="fZiNr5L7sV" role="2Oq$k0">
-                              <ref role="3cqZAo" node="fZiNr5L7sP" resolve="n" />
-                            </node>
-                            <node concept="I4A8Y" id="2n9zn0CqNgA" role="2OqNvi" />
+                      <node concept="2OqwBi" id="3XR0QgVCo9Y" role="37wK5m">
+                        <node concept="2OqwBi" id="3XR0QgVCo9V" role="2Oq$k0">
+                          <node concept="37vLTw" id="3XR0QgVCo9W" role="2Oq$k0">
+                            <ref role="3cqZAo" node="fZiNr5L7sP" resolve="n" />
                           </node>
+                          <node concept="I4A8Y" id="3XR0QgVCo9X" role="2OqNvi" />
                         </node>
+                        <node concept="aIX43" id="3XR0QgVCo9Z" role="2OqNvi" />
                       </node>
                     </node>
                   </node>

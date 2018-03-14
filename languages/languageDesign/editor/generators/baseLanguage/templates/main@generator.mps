@@ -687,6 +687,12 @@
         <child id="8182547171709752112" name="expression" index="36biLW" />
       </concept>
     </language>
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+        <child id="7256306938026143676" name="child" index="2aWVGa" />
+      </concept>
+    </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="1174914042989" name="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" flags="in" index="2eloPW">
         <property id="1174914081067" name="fqClassName" index="2ely0U" />
@@ -722,6 +728,9 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
+      </concept>
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -767,10 +776,6 @@
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
-      <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
-        <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
-        <child id="597763930871272014" name="parent" index="3fl3PI" />
-      </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
@@ -27496,10 +27501,12 @@
               <node concept="3clFbJ" id="7zL4upE_nCl" role="3cqZAp">
                 <node concept="3clFbS" id="7zL4upE_nCm" role="3clFbx">
                   <node concept="3cpWs6" id="7zL4upE_o7_" role="3cqZAp">
-                    <node concept="3fl2lp" id="7zL4upE_oD6" role="3cqZAk">
-                      <ref role="3fl3PK" to="5ueo:~InheritableStyleAttribute.&lt;init&gt;(java.lang.String)" resolve="InheritableStyleAttribute" />
-                      <node concept="3B5_sB" id="7zL4upE_ocX" role="3fl3PI">
-                        <ref role="3B5MYn" to="5ueo:~InheritableStyleAttribute" resolve="InheritableStyleAttribute" />
+                    <node concept="2tJFMh" id="3XR0QgWyHCt" role="3cqZAk">
+                      <node concept="ZC_QK" id="3XR0QgWyHCs" role="2tJFKM">
+                        <ref role="2aWVGs" to="5ueo:~InheritableStyleAttribute" resolve="InheritableStyleAttribute" />
+                        <node concept="ZC_QK" id="3XR0QgWyHCr" role="2aWVGa">
+                          <ref role="2aWVGs" to="5ueo:~InheritableStyleAttribute.&lt;init&gt;(java.lang.String)" resolve="InheritableStyleAttribute" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -27513,10 +27520,12 @@
                 <node concept="9aQIb" id="7zL4upE_oqR" role="9aQIa">
                   <node concept="3clFbS" id="7zL4upE_oqS" role="9aQI4">
                     <node concept="3cpWs6" id="7zL4upE_oL1" role="3cqZAp">
-                      <node concept="3fl2lp" id="7zL4upE_rbI" role="3cqZAk">
-                        <ref role="3fl3PK" to="5ueo:~SimpleStyleAttribute.&lt;init&gt;(java.lang.String)" resolve="SimpleStyleAttribute" />
-                        <node concept="3B5_sB" id="7zL4upE_oSJ" role="3fl3PI">
-                          <ref role="3B5MYn" to="5ueo:~SimpleStyleAttribute" resolve="SimpleStyleAttribute" />
+                      <node concept="2tJFMh" id="3XR0QgWyHCw" role="3cqZAk">
+                        <node concept="ZC_QK" id="3XR0QgWyHCv" role="2tJFKM">
+                          <ref role="2aWVGs" to="5ueo:~SimpleStyleAttribute" resolve="SimpleStyleAttribute" />
+                          <node concept="ZC_QK" id="3XR0QgWyHCu" role="2aWVGa">
+                            <ref role="2aWVGs" to="5ueo:~SimpleStyleAttribute.&lt;init&gt;(java.lang.String)" resolve="SimpleStyleAttribute" />
+                          </node>
                         </node>
                       </node>
                     </node>

@@ -123,6 +123,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -273,15 +274,11 @@
               </node>
               <node concept="liA8E" id="6ON23Nkaaeb" role="2OqNvi">
                 <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="asString" />
-                <node concept="2OqwBi" id="6ON23Nka4VG" role="37wK5m">
-                  <node concept="2JrnkZ" id="6ON23Nka4Ho" role="2Oq$k0">
-                    <node concept="37vLTw" id="6ON23Nk9A$M" role="2JrQYb">
-                      <ref role="3cqZAo" node="6ON23Nk9dtD" resolve="modelOfSelectedMC" />
-                    </node>
+                <node concept="2OqwBi" id="3XR0QgVClSL" role="37wK5m">
+                  <node concept="37vLTw" id="3XR0QgVClSK" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6ON23Nk9dtD" resolve="modelOfSelectedMC" />
                   </node>
-                  <node concept="liA8E" id="6ON23Nka5i$" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                  </node>
+                  <node concept="aIX43" id="3XR0QgVClSM" role="2OqNvi" />
                 </node>
               </node>
             </node>

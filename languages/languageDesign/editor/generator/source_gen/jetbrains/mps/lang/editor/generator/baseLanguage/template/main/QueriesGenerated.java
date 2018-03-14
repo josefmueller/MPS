@@ -1437,9 +1437,9 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object referenceMacro_GetReferent_8714766435266938791(final ReferenceMacroContext _context) {
     if (SPropertyOperations.getBoolean_def(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, 0x78f111e66a6f8530L, "inherited"), "true")) {
-      return SNodeOperations.getNode("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)", "~InheritableStyleAttribute.<init>(java.lang.String)");
+      return new SNodePointer("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)", "~InheritableStyleAttribute.<init>(java.lang.String)");
     } else {
-      return SNodeOperations.getNode("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)", "~SimpleStyleAttribute.<init>(java.lang.String)");
+      return new SNodePointer("1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)", "~SimpleStyleAttribute.<init>(java.lang.String)");
     }
   }
   public static Object referenceMacro_GetReferent_5302599516798077472(final ReferenceMacroContext _context) {

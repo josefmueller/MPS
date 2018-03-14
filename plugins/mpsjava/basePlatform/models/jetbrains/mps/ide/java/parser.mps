@@ -469,6 +469,7 @@
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -38736,15 +38737,11 @@
             <node concept="3uibUv" id="3ypfuX5QcGX" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
-            <node concept="2OqwBi" id="3ypfuX5QcH2" role="33vP2m">
-              <node concept="2JrnkZ" id="3ypfuX5QcH3" role="2Oq$k0">
-                <node concept="37vLTw" id="3ypfuX5SNap" role="2JrQYb">
-                  <ref role="3cqZAo" node="3ypfuX5SKBJ" resolve="myModel" />
-                </node>
+            <node concept="2OqwBi" id="3XR0QgXNyVi" role="33vP2m">
+              <node concept="37vLTw" id="3XR0QgXNyVh" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ypfuX5SKBJ" resolve="myModel" />
               </node>
-              <node concept="liA8E" id="3ypfuX5QcH5" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
+              <node concept="aIX43" id="3XR0QgXNyVj" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -38838,15 +38835,11 @@
             <node concept="3uibUv" id="3ypfuX60SZx" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
-            <node concept="2OqwBi" id="3ypfuX60SZy" role="33vP2m">
-              <node concept="2JrnkZ" id="3ypfuX60SZz" role="2Oq$k0">
-                <node concept="37vLTw" id="3ypfuX60SZ$" role="2JrQYb">
-                  <ref role="3cqZAo" node="3ypfuX5SKBJ" resolve="myModel" />
-                </node>
+            <node concept="2OqwBi" id="3XR0QgXNyW7" role="33vP2m">
+              <node concept="37vLTw" id="3XR0QgXNyW6" role="2Oq$k0">
+                <ref role="3cqZAo" node="3ypfuX5SKBJ" resolve="myModel" />
               </node>
-              <node concept="liA8E" id="3ypfuX60SZ_" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
+              <node concept="aIX43" id="3XR0QgXNyW8" role="2OqNvi" />
             </node>
           </node>
         </node>

@@ -18,9 +18,9 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -46,7 +46,7 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   }
 
   /*package*/ static Runnable execute_id7oNS25df64x(@NotNull SNode __thisNode__, final MPSProject project) {
-    final SNodeReference targetNode = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")).getReference();
+    final SNodeReference targetNode = SNodeOperations.getPointer(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")));
     return new Runnable() {
       public void run() {
         project.getRepository().getModelAccess().executeCommand(new Runnable() {

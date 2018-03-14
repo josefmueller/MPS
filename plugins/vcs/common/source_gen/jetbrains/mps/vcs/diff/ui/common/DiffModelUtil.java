@@ -11,10 +11,10 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -45,11 +45,11 @@ public class DiffModelUtil {
   }
 
   public static void renameModel(SModel model, String version) {
-    SModelReference modelRef = model.getReference();
+    SModelReference modelRef = SModelOperations.getPointer(model);
     as_5x16vn_a0a1a4(model, SModelBase.class).changeModelReference(genDiffSModelRef(modelRef, version));
   }
   public static void restoreModelName(SModel model) {
-    SModelReference modelRef = model.getReference();
+    SModelReference modelRef = SModelOperations.getPointer(model);
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
     as_5x16vn_a0a2a5(model, SModelBase.class).changeModelReference(getOriginalSModelRef(modelRef));
   }

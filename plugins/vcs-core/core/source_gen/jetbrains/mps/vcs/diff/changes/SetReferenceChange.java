@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -70,7 +71,7 @@ public class SetReferenceChange extends NodeChange {
     if (myTargetNodeId == null && myResolveInfo == null) {
       node.setReferenceTarget(myRole, null);
     } else {
-      SModelReference targetModelReference = (myTargetModelReference == null ? model.getReference() : myTargetModelReference);
+      SModelReference targetModelReference = (myTargetModelReference == null ? SModelOperations.getPointer(model) : myTargetModelReference);
       SReference reference;
       if (myTargetNodeId == null) {
         reference = new DynamicReference(myRole, node, targetModelReference, myResolveInfo);
@@ -157,7 +158,7 @@ public class SetReferenceChange extends NodeChange {
     assert node != null;
     SReference ref = node.getReference(getRoleLink());
     SModelReference targetModel = check_mgdhcs_a0d0t(ref);
-    if (Objects.equals(getChangeSet().getOldModel().getReference(), targetModel)) {
+    if (Objects.equals(SModelOperations.getPointer(getChangeSet().getOldModel()), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }

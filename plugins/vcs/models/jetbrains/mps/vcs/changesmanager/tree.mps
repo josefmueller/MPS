@@ -325,6 +325,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -1632,25 +1633,21 @@
         <node concept="3cpWs8" id="3ghtVL8TtbT" role="3cqZAp">
           <node concept="3cpWsn" id="3ghtVL8TtbU" role="3cpWs9">
             <property role="TrG5h" value="modelReference" />
-            <node concept="2OqwBi" id="2n9zn0CqN2m" role="33vP2m">
-              <node concept="liA8E" id="2n9zn0CqN2n" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-              </node>
-              <node concept="2JrnkZ" id="2n9zn0CqN2o" role="2Oq$k0">
-                <node concept="2OqwBi" id="2n9zn0CqN2p" role="2JrQYb">
-                  <node concept="2OqwBi" id="2n9zn0CqN2q" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxgm9Cj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3ghtVL8TsOv" resolve="change" />
-                    </node>
-                    <node concept="liA8E" id="2n9zn0CqN2s" role="2OqNvi">
-                      <ref role="37wK5l" to="btf5:5x0q8wkvS4u" resolve="getChangeSet" />
-                    </node>
+            <node concept="2OqwBi" id="3XR0QgVClSb" role="33vP2m">
+              <node concept="2OqwBi" id="3XR0QgVClS6" role="2Oq$k0">
+                <node concept="2OqwBi" id="3XR0QgVClS7" role="2Oq$k0">
+                  <node concept="37vLTw" id="3XR0QgVClS8" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3ghtVL8TsOv" resolve="change" />
                   </node>
-                  <node concept="liA8E" id="2n9zn0CqN2t" role="2OqNvi">
-                    <ref role="37wK5l" to="bfxj:3kRMfhMv9u8" resolve="getNewModel" />
+                  <node concept="liA8E" id="3XR0QgVClS9" role="2OqNvi">
+                    <ref role="37wK5l" to="btf5:5x0q8wkvS4u" resolve="getChangeSet" />
                   </node>
                 </node>
+                <node concept="liA8E" id="3XR0QgVClSa" role="2OqNvi">
+                  <ref role="37wK5l" to="bfxj:3kRMfhMv9u8" resolve="getNewModel" />
+                </node>
               </node>
+              <node concept="aIX43" id="3XR0QgVClSc" role="2OqNvi" />
             </node>
             <node concept="3uibUv" id="1PVFwJzQeWv" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
