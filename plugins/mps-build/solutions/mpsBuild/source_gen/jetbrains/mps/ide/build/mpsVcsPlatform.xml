@@ -107,22 +107,22 @@
     </echoxml>
     <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
-      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-platform-modules-modelmetadata-languageModels">
-      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-platform-languages-modelmetadata-languageModels">
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen">
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <zipfileset file="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-platform-modules-modelmetadata-languageModels" prefix="module/languageModels" />
+      <zipfileset file="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-vcs-platform-languages-modelmetadata-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.runtime.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.runtime.jar/META-INF" />
@@ -344,7 +344,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/jetbrains.mps.ide.vcs.core.msd" />
-        <module file="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" />
+        <module file="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" />
         <module file="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/jetbrains.mps.ide.vcs.platform.msd" />
         <module file="${mps_home}/plugins/vcs/vcs-core/modules/mergehints.runtime/jetbrains.mps.vcs.mergehints.runtime.msd" />
       </chunk>
@@ -386,12 +386,12 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" />
+    <mkdir dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" />
+        <path location="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
@@ -423,13 +423,13 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata">
-      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/vcs/vcs-core/modules/jetbrains.mps.ide.vcs.core/source_gen" />
-    <delete dir="${mps_home}/plugins/vcs/vcs-platform/modules/modelmetadata/source_gen" />
+    <delete dir="${mps_home}/plugins/vcs/vcs-platform/languages/modelmetadata/source_gen" />
     <delete dir="${mps_home}/plugins/vcs/vcs-platform/modules/jetbrains.mps.ide.vcs.platform/source_gen" />
     <delete dir="${mps_home}/plugins/vcs/vcs-core/modules/mergehints.runtime/source_gen" />
   </target>

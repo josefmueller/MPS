@@ -32789,7 +32789,7 @@
                 <node concept="2Ry0Ak" id="EpEP7iii6D" role="2Ry0An">
                   <property role="2Ry0Am" value="vcs-platform" />
                   <node concept="2Ry0Ak" id="1QfYSWzYzrA" role="2Ry0An">
-                    <property role="2Ry0Am" value="modules" />
+                    <property role="2Ry0Am" value="languages" />
                     <node concept="2Ry0Ak" id="1QfYSWzYzvx" role="2Ry0An">
                       <property role="2Ry0Am" value="modelmetadata" />
                     </node>
@@ -32809,7 +32809,7 @@
             <node concept="2Ry0Ak" id="18rR16N8zm6" role="2Ry0An">
               <property role="2Ry0Am" value="vcs-platform" />
               <node concept="2Ry0Ak" id="18rR16N8zm3" role="2Ry0An">
-                <property role="2Ry0Am" value="modules" />
+                <property role="2Ry0Am" value="languages" />
                 <node concept="2Ry0Ak" id="18rR16N8zm4" role="2Ry0An">
                   <property role="2Ry0Am" value="modelmetadata" />
                   <node concept="2Ry0Ak" id="18rR16N8zm5" role="2Ry0An">
