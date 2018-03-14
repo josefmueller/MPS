@@ -4,13 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
-    <modelRoot contentPath="${mps_home}/plugins/svn4idea/lib" type="java_classes">
-      <sourceRoot location="sequence-library.jar" />
-      <sourceRoot location="svnkit.jar" />
-    </modelRoot>
   </models>
   <facets>
-    <facet type="ideaPlugin" />
+    <facet type="ideaPlugin" pluginId="jetbrains.mps.vcs" />
   </facets>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/vcs/lib/vcs-core.jar" />
