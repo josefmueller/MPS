@@ -32651,7 +32651,7 @@
             <node concept="2Ry0Ak" id="39HJr_hyEHB" role="2Ry0An">
               <property role="2Ry0Am" value="vcs-platform" />
               <node concept="2Ry0Ak" id="306QkZP211s" role="2Ry0An">
-                <property role="2Ry0Am" value="modules" />
+                <property role="2Ry0Am" value="solutions" />
                 <node concept="2Ry0Ak" id="306QkZP213t" role="2Ry0An">
                   <property role="2Ry0Am" value="jetbrains.mps.ide.vcs.platform" />
                   <node concept="2Ry0Ak" id="306QkZP213s" role="2Ry0An">
@@ -36114,11 +36114,11 @@
           </node>
         </node>
         <node concept="nFU4i" id="1QfYSWzYzH1" role="nFU4p">
-          <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.platform/source_gen" />
+          <property role="nFU4j" value="solutions/jetbrains.mps.ide.vcs.platform/source_gen" />
           <property role="3LZaj6" value="source" />
         </node>
         <node concept="nFU4i" id="1QfYSW$vwPV" role="nFU4p">
-          <property role="nFU4j" value="modules/jetbrains.mps.ide.vcs.platform/source" />
+          <property role="nFU4j" value="solutions/jetbrains.mps.ide.vcs.platform/source" />
           <property role="3LZaj6" value="source" />
         </node>
       </node>
