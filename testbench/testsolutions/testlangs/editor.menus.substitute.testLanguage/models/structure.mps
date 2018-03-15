@@ -1094,6 +1094,18 @@
       <property role="20kJfa" value="referenceWithReferenceMenuPart" />
       <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
     </node>
+    <node concept="1TJgyj" id="1o9RazLqGZY" role="1TKVEi">
+      <property role="IQ2ns" value="1588042961787736062" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithScope" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
+    <node concept="1TJgyj" id="1o9RazLqH0D" role="1TKVEi">
+      <property role="IQ2ns" value="1588042961787736105" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="referenceWithSetHandler" />
+      <ref role="20lvS9" node="7Nx4mSUrZaK" resolve="TestSubstituteConceptChildToReference" />
+    </node>
     <node concept="1TJgyi" id="qrtnJnJhw2" role="1TKVEl">
       <property role="IQ2nx" value="476103360378640386" />
       <property role="TrG5h" value="defaultBooleanProperty" />
@@ -1112,6 +1124,21 @@
     <node concept="1TJgyi" id="qrtnJnYgw2" role="1TKVEl">
       <property role="IQ2nx" value="476103360382568450" />
       <property role="TrG5h" value="enumPropertyWithPropertyMenuPart" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLpuEJ" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787415215" />
+      <property role="TrG5h" value="enumPropertyWithIsValidConstraints" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLqfzx" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787615457" />
+      <property role="TrG5h" value="enumPropertyWithSetter" />
+      <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
+    </node>
+    <node concept="1TJgyi" id="1o9RazLqg7J" role="1TKVEl">
+      <property role="IQ2nx" value="1588042961787617775" />
+      <property role="TrG5h" value="enumPropertyWithGetter" />
       <ref role="AX2Wp" node="qrtnJnJhw7" resolve="TestSubstituteEnumDataType" />
     </node>
     <node concept="1TJgyi" id="qrtnJnJhwc" role="1TKVEl">

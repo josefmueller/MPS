@@ -552,6 +552,51 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EnumPropertyWithGetter_Test" file="TestSubstitute_EnumPropertyWithGetter_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EnumPropertyWithIsValidConstraints_Test" file="TestSubstitute_EnumPropertyWithIsValidConstraints_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_EnumPropertyWithSetter_Test" file="TestSubstitute_EnumPropertyWithSetter_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Group_Test" file="TestSubstitute_Group_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
@@ -737,6 +782,36 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceWithMenuPart_Special_Test" file="TestSubstitute_ReferenceWithMenuPart_Special_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceWithScope_Test" file="TestSubstitute_ReferenceWithScope_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestParametersCache" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.ClassRule" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_ReferenceWithSetHandler_Test" file="TestSubstitute_ReferenceWithSetHandler_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

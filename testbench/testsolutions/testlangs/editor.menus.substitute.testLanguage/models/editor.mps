@@ -9068,6 +9068,51 @@
             <ref role="A1WHt" node="qrtnJnYh5U" resolve="TestSubstituteParentPropertyAndReference_EnumMenuPart" />
           </node>
         </node>
+        <node concept="3F0ifn" id="1o9RazLpve0" role="3EZMnx">
+          <property role="3F0ifm" value="enum property with is valid constraints" />
+          <node concept="pVoyu" id="1o9RazLpve1" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="1o9RazLpve2" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="1o9RazLpvdX" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1o9RazLpuEJ" resolve="enumPropertyWithIsValidConstraints" />
+          <node concept="ljvvj" id="1o9RazLpvdY" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1o9RazLqj8f" role="3EZMnx">
+          <property role="3F0ifm" value="enum property with getter" />
+          <node concept="pVoyu" id="1o9RazLqj8g" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="1o9RazLqj8h" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="1o9RazLqj8c" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1o9RazLqg7J" resolve="enumPropertyWithGetter" />
+          <node concept="ljvvj" id="1o9RazLqj8d" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1o9RazLqj7l" role="3EZMnx">
+          <property role="3F0ifm" value="enum property with setter" />
+          <node concept="pVoyu" id="1o9RazLqj7m" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="1o9RazLqj7n" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="1o9RazLqj7i" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1o9RazLqfzx" resolve="enumPropertyWithSetter" />
+          <node concept="ljvvj" id="1o9RazLqj7j" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="3F0ifn" id="qrtnJnJhEJ" role="3EZMnx">
           <property role="3F0ifm" value="property with custom menu" />
           <node concept="pVoyu" id="qrtnJnJhEU" role="3F10Kt">
@@ -9153,6 +9198,42 @@
           </node>
           <node concept="A1WHu" id="73AphEk2de9" role="3vIgyS">
             <ref role="A1WHt" node="qrtnJnYhit" resolve="TestSubstituteParentPropertyAndReference_ReferenceMenuPart" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1o9RazLqKgx" role="3EZMnx">
+          <property role="3F0ifm" value="refefence with scope" />
+          <node concept="pVoyu" id="1o9RazLqKgy" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="1o9RazLqKgz" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="1iCGBv" id="1o9RazLqKgt" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1o9RazLqGZY" resolve="referenceWithScope" />
+          <node concept="1sVBvm" id="1o9RazLqKgu" role="1sWHZn">
+            <node concept="3F0A7n" id="1o9RazLqKgv" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1o9RazLqKh4" role="3EZMnx">
+          <property role="3F0ifm" value="refefence with set handler" />
+          <node concept="pVoyu" id="1o9RazLqKh5" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="1o9RazLqKh6" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="1iCGBv" id="1o9RazLqKh0" role="3EZMnx">
+          <ref role="1NtTu8" to="wdez:1o9RazLqH0D" resolve="referenceWithSetHandler" />
+          <node concept="1sVBvm" id="1o9RazLqKh1" role="1sWHZn">
+            <node concept="3F0A7n" id="1o9RazLqKh2" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
           </node>
         </node>
         <node concept="lj46D" id="qrtnJnJhIQ" role="3F10Kt">

@@ -608,12 +608,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("booleanPropertyWithPropertyMenuPart", 0x69b757bd7f907fcL, "476103360382568444");
     b.prop("defaultEnumProperty", 0x69b757bd7bd1804L, "476103360378640388");
     b.prop("enumPropertyWithPropertyMenuPart", 0x69b757bd7f90802L, "476103360382568450");
+    b.prop("enumPropertyWithIsValidConstraints", 0x1609dca8f165eaafL, "1588042961787415215");
+    b.prop("enumPropertyWithSetter", 0x1609dca8f168f8e1L, "1588042961787615457");
+    b.prop("enumPropertyWithGetter", 0x1609dca8f16901efL, "1588042961787617775");
     b.prop("defaultStringProperty", 0x69b757bd7bd180cL, "476103360378640396");
     b.prop("stringPropertyWithPropertyMenuPart", 0x69b757bd7f90809L, "476103360382568457");
     b.prop("propertyWithCustomActions", 0x69b757bd7f8deb1L, "476103360382557873");
     b.associate("defaultReference", 0x69b757bd7bd1810L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).origin("476103360378640400").done();
     b.associate("referenceWithCustomMenu", 0x69b757bd7bd1812L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).origin("476103360378640402").done();
     b.associate("referenceWithReferenceMenuPart", 0x70e6651a9408d373L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).origin("8135300941718541171").done();
+    b.associate("referenceWithScope", 0x1609dca8f16acffeL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).origin("1588042961787736062").done();
+    b.associate("referenceWithSetHandler", 0x1609dca8f16ad029L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).origin("1588042961787736105").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSubstituteParentPropertyAndReference_Subconcept() {
