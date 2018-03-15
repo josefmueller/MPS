@@ -34,7 +34,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.FeatureVCSDescriptor:
         if (props_FeatureVCSDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("FeatureVCSDescriptor");
           props_FeatureVCSDescriptor = cpb.create();
         }
         return props_FeatureVCSDescriptor;
