@@ -6787,6 +6787,7 @@
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_PropertyMenu" />
     <property role="34LRSv" value="include default property menu" />
+    <property role="R4oN_" value="all the possible values of the specific property" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="2snskYs0Tud" role="1TKVEi">
       <property role="IQ2ns" value="2816844678677370765" />
@@ -6801,6 +6802,7 @@
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuPart_ReferenceMenu" />
     <property role="34LRSv" value="include default reference menu" />
+    <property role="R4oN_" value="all the target nodes from the scope of the specific reference" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
     <node concept="1TJgyj" id="7pTz0_mttsO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

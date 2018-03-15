@@ -3354,6 +3354,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TransformationMenuPart_PropertyMenu:
         if (props_TransformationMenuPart_PropertyMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("all the possible values of the specific property");
           cpb.rawPresentation("include default property menu");
           props_TransformationMenuPart_PropertyMenu = cpb.create();
         }
@@ -3361,6 +3362,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TransformationMenuPart_ReferenceMenu:
         if (props_TransformationMenuPart_ReferenceMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("all the target nodes from the scope of the specific reference");
           cpb.rawPresentation("include default reference menu");
           props_TransformationMenuPart_ReferenceMenu = cpb.create();
         }
