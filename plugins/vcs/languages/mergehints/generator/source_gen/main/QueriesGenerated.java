@@ -83,7 +83,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object referenceMacro_GetReferent_1277106018273988068(final ReferenceMacroContext _context) {
     // TODO genContext.get output VCSDescriptorCons for model model; 
-    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".VCSAspectDescriptor";
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".VCSDescriptor";
   }
   public static boolean ifMacro_Condition_4382682660188245698(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy")) != null);

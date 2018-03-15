@@ -1001,7 +1001,7 @@
                                 <node concept="3cpWs6" id="71FvR51faQV" role="3cqZAp">
                                   <node concept="3cpWs3" id="71FvR51fckV" role="3cqZAk">
                                     <node concept="Xl_RD" id="71FvR51fcvz" role="3uHU7w">
-                                      <property role="Xl_RC" value=".VCSAspectDescriptor" />
+                                      <property role="Xl_RC" value=".VCSDescriptor" />
                                     </node>
                                     <node concept="2OqwBi" id="71FvR51fbH0" role="3uHU7B">
                                       <node concept="v3LJS" id="71FvR51fbQK" role="2Oq$k0">
