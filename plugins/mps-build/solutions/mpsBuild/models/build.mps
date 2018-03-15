@@ -34797,8 +34797,8 @@
                   <property role="2Ry0Am" value="migration" />
                   <node concept="2Ry0Ak" id="1d6huufKSWn" role="2Ry0An">
                     <property role="2Ry0Am" value="META-INF" />
-                    <node concept="2Ry0Ak" id="1d6huufKSWp" role="2Ry0An">
-                      <property role="2Ry0Am" value="plugin.xml" />
+                    <node concept="2Ry0Ak" id="6prxl$ztH$T" role="2Ry0An">
+                      <property role="2Ry0Am" value="pluginBaseDispatch.xml" />
                     </node>
                   </node>
                 </node>
