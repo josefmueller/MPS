@@ -1225,13 +1225,13 @@
                         <node concept="1bVj0M" id="4osSLZaWFSO" role="23t8la">
                           <node concept="3clFbS" id="4osSLZaWFSP" role="1bW5cS">
                             <node concept="3clFbF" id="4osSLZaWGel" role="3cqZAp">
-                              <node concept="2OqwBi" id="4osSLZaWGy5" role="3clFbG">
-                                <node concept="2JrnkZ" id="4osSLZaWHA8" role="2Oq$k0">
-                                  <node concept="37vLTw" id="4osSLZaWGek" role="2JrQYb">
+                              <node concept="2OqwBi" id="3XR0QgVCnW2" role="3clFbG">
+                                <node concept="2JrnkZ" id="5ls3GT1yLPd" role="2Oq$k0">
+                                  <node concept="37vLTw" id="3XR0QgVCnW1" role="2JrQYb">
                                     <ref role="3cqZAo" node="4osSLZaWFSQ" resolve="it" />
                                   </node>
                                 </node>
-                                <node concept="liA8E" id="4osSLZaWHVX" role="2OqNvi">
+                                <node concept="liA8E" id="5ls3GT1yNbh" role="2OqNvi">
                                   <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                                 </node>
                               </node>

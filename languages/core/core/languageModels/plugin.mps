@@ -2907,28 +2907,20 @@
               </node>
             </node>
             <node concept="3clFbF" id="74FiyOsLQlb" role="3cqZAp">
-              <node concept="2OqwBi" id="5L5h3brvz9v" role="3clFbG">
-                <node concept="2OqwBi" id="5L5h3brvz9y" role="2Oq$k0">
-                  <node concept="1aIXbY" id="5L5h3brvz9z" role="2Oq$k0">
-                    <node concept="1aIXbZ" id="5L5h3brvz9$" role="2Oq$k0" />
-                    <node concept="2sxana" id="5L5h3brvz9_" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="5L5h3brvz9A" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.saveTransientModels(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="saveTransientModels" />
-                    <node concept="1aIXbY" id="5L5h3brvz9B" role="37wK5m">
-                      <node concept="1aIXbZ" id="5L5h3brvz9C" role="2Oq$k0" />
-                      <node concept="2sxana" id="5L5h3brvz9D" role="2OqNvi">
-                        <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
-                      </node>
-                    </node>
+              <node concept="2OqwBi" id="5L5h3brvz9y" role="3clFbG">
+                <node concept="1aIXbY" id="5L5h3brvz9z" role="2Oq$k0">
+                  <node concept="1aIXbZ" id="5L5h3brvz9$" role="2Oq$k0" />
+                  <node concept="2sxana" id="5L5h3brvz9_" role="2OqNvi">
+                    <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
                   </node>
                 </node>
-                <node concept="liA8E" id="5L5h3brvz9N" role="2OqNvi">
-                  <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.keepOutputModel(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="keepOutputModel" />
-                  <node concept="3clFbT" id="5L5h3brvz9O" role="37wK5m">
-                    <property role="3clFbU" value="true" />
+                <node concept="liA8E" id="5L5h3brvz9A" role="2OqNvi">
+                  <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.saveTransientModels(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="saveTransientModels" />
+                  <node concept="1aIXbY" id="5L5h3brvz9B" role="37wK5m">
+                    <node concept="1aIXbZ" id="5L5h3brvz9C" role="2Oq$k0" />
+                    <node concept="2sxana" id="5L5h3brvz9D" role="2OqNvi">
+                      <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
+                    </node>
                   </node>
                 </node>
               </node>

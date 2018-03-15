@@ -79,9 +79,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028a(jetbrains.mps.lang.structure.actions)/1163111159679">
     <file name="STRL_node_factories.java">
-      <node id="1163111233683" at="14,91,15,280" concept="0" />
+      <node id="1163111233683" at="14,91,15,274" concept="0" />
       <node id="1163111194508" at="14,0,17,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1163111194508" at="14,91,15,280" />
+      <scope id="1163111194508" at="14,91,15,274" />
       <scope id="1163111194508" at="14,0,17,0">
         <var name="enclosingNode" id="1163111194508" />
         <var name="model" id="1163111194508" />

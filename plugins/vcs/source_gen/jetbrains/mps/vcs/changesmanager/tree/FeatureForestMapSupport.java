@@ -16,6 +16,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.smodel.SNodePointer;
@@ -56,7 +57,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
   }
   /*package*/ static Feature[] getFeaturesForChange(@NotNull ModelChange change) {
     List<Feature> result = ListSequence.fromList(new ArrayList<Feature>());
-    SModelReference modelReference = change.getChangeSet().getNewModel().getReference();
+    SModelReference modelReference = SModelOperations.getPointer(change.getChangeSet().getNewModel());
     if (change instanceof AddRootChange) {
       AddRootChange arc = ((AddRootChange) change);
       ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, arc.getRootId())));

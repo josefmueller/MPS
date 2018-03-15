@@ -84,7 +84,7 @@ public class MoveFeatureUp implements MoveNodesAction {
     }
 
     if (merge) {
-      MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.ExistingTargetProcessor(mergeTarget.value.getReference(), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
+      MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.ExistingTargetProcessor(SNodeOperations.getPointer(mergeTarget.value), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));
 
     } else {
       MoveNodesUtil.moveTo(project, getName(), MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), feature)));

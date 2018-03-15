@@ -275,6 +275,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -1086,16 +1087,12 @@
                 <node concept="2YIFZM" id="2ZDBRmjSWMy" role="3uHU7w">
                   <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                   <ref role="37wK5l" to="18ew:~NameUtil.compactModelName(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="compactModelName" />
-                  <node concept="2OqwBi" id="2ZDBRmjSWMz" role="37wK5m">
-                    <node concept="liA8E" id="2ZDBRmjSWM$" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  <node concept="2OqwBi" id="3XR0QgVCjSo" role="37wK5m">
+                    <node concept="2OqwBi" id="3XR0QgVCjSl" role="2Oq$k0">
+                      <node concept="EsrRn" id="3XR0QgVCjSm" role="2Oq$k0" />
+                      <node concept="I4A8Y" id="3XR0QgVCjSn" role="2OqNvi" />
                     </node>
-                    <node concept="2JrnkZ" id="2ZDBRmjSWM_" role="2Oq$k0">
-                      <node concept="2OqwBi" id="2ZDBRmjSWMA" role="2JrQYb">
-                        <node concept="EsrRn" id="2ZDBRmjSWMB" role="2Oq$k0" />
-                        <node concept="I4A8Y" id="2ZDBRmjSWMC" role="2OqNvi" />
-                      </node>
-                    </node>
+                    <node concept="aIX43" id="3XR0QgVCjSp" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3cpWs3" id="hDMFJoX" role="3uHU7B">

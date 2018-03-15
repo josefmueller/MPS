@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
@@ -47,12 +48,12 @@ public class DefaultEditorBuilder {
 
     Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+        return it != nameProperty && !(SNodeOperations.is(SNodeOperations.getParent(it), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")));
       }
     });
     List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+        return !(SNodeOperations.is(SNodeOperations.getParent(it), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")));
       }
     }).toListSequence();
     List<SNode> references = ListSequence.fromList(children).where(new IWhereFilter<SNode>() {
@@ -71,7 +72,7 @@ public class DefaultEditorBuilder {
       indent();
       boolean first = true;
       for (SNode property : Sequence.fromIterable(props)) {
-        if (SNodeOperations.getParent(property) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+        if (SNodeOperations.is(SNodeOperations.getParent(property), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) {
           continue;
         }
 
@@ -119,12 +120,12 @@ public class DefaultEditorBuilder {
 
     Iterable<SNode> props = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != nameProperty && SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+        return it != nameProperty && !(SNodeOperations.is(SNodeOperations.getParent(it), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")));
       }
     });
     List<SNode> children = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(conceptDeclaration)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+        return !(SNodeOperations.is(SNodeOperations.getParent(it), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")));
       }
     }).toListSequence();
     List<SNode> references = ListSequence.fromList(children).where(new IWhereFilter<SNode>() {
@@ -322,7 +323,7 @@ public class DefaultEditorBuilder {
   private SNode getNameProperty(SNode concept) {
     final Map<SNode, Integer> idProperties = MapSequence.fromMap(new HashMap<SNode, Integer>());
     for (SNode property : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
-      if (SNodeOperations.getParent(property) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+      if (SNodeOperations.is(SNodeOperations.getParent(property), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) {
         continue;
       }
       if (!(isStringProperty(property))) {
@@ -350,7 +351,7 @@ public class DefaultEditorBuilder {
       return false;
     }
     for (SNode prop : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(concept))) {
-      if (SNodeOperations.getParent(prop) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+      if (SNodeOperations.is(SNodeOperations.getParent(prop), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) {
         continue;
       }
       return false;
@@ -358,7 +359,7 @@ public class DefaultEditorBuilder {
 
     int count = 0;
     for (SNode link : ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(concept))) {
-      if (SNodeOperations.getParent(link) == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
+      if (SNodeOperations.is(SNodeOperations.getParent(link), new SNodePointer("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) {
         continue;
       }
       if (SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1") && SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && (SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null)) {

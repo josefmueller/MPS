@@ -10,6 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.vcs.diff.StructChangeSet;
@@ -36,7 +37,7 @@ public class SetReferenceStructChange extends SetReferenceChange {
     if (getTargetNodeId() == null && getResolveInfo() == null) {
       node.setReferenceTarget(getRoleLink(), null);
     } else {
-      SModelReference targetModelReference = (getTargetModelReference() == null ? model.getReference() : getTargetModelReference());
+      SModelReference targetModelReference = (getTargetModelReference() == null ? SModelOperations.getPointer(model) : getTargetModelReference());
       SReference reference;
       if (getTargetNodeId() == null) {
         reference = new DynamicReference(getRoleLink(), node, targetModelReference, getResolveInfo());
@@ -45,7 +46,7 @@ public class SetReferenceStructChange extends SetReferenceChange {
         StructChangeSet changeset = (StructChangeSet) getChangeSet();
         SNodeId targetNodeId = getTargetNodeId();
         SNodeId mapToOldId = changeset.mapToOldId(targetNodeId);
-        if (mapToOldId != null && Objects.equals(targetModelReference, changeset.getNewModel().getReference())) {
+        if (mapToOldId != null && Objects.equals(targetModelReference, SModelOperations.getPointer(changeset.getNewModel()))) {
           targetNodeId = mapToOldId;
         }
         reference = new StaticReference(getRoleLink(), node, targetModelReference, targetNodeId, getResolveInfo());
@@ -61,7 +62,7 @@ public class SetReferenceStructChange extends SetReferenceChange {
     assert node != null;
     SReference ref = node.getReference(getRoleLink());
     SModelReference targetModel = check_xjb9w7_a0d0e(ref);
-    if (Objects.equals(getChangeSet().getOldModel().getReference(), targetModel)) {
+    if (Objects.equals(SModelOperations.getPointer(getChangeSet().getOldModel()), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }

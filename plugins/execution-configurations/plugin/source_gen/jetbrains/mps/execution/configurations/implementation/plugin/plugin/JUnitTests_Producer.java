@@ -32,9 +32,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod__BehaviorDescriptor;
 
 public class JUnitTests_Producer {
@@ -209,7 +209,7 @@ public class JUnitTests_Producer {
         }
       }
 
-      SNode testNode = SNodeOperations.cast(TestNodeWrapperFactory.findWrappableAncestor(source, true), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
+      SNode testNode = TestNodeWrapperFactory.findWrappableAncestor(source, true);
       if (testNode == null) {
         return null;
       }
@@ -219,7 +219,7 @@ public class JUnitTests_Producer {
         return null;
       }
 
-      String name = SPropertyOperations.getString(testNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      String name = wrapper.getName();
       if (name == null) {
         return null;
       }
@@ -227,11 +227,7 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + name, (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.NODE);
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodeToCloneableList(testNode));
-      boolean canRunInProcess = false;
-      if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-        canRunInProcess = (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
-      }
-      configuration.getJUnitSettings().setInProcess(canRunInProcess);
+      configuration.getJUnitSettings().setInProcess(wrapper.canRunInProcess());
       return configuration;
     }
 
@@ -266,12 +262,7 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + wrapper.getName(), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.METHOD);
       configuration.getJUnitSettings().setTestMethods(PointerUtils.nodeToCloneableList(method));
-
-      SNode testNode = TestNodeWrapperFactory.findWrappableAncestor(source, true);
-      if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-        boolean canRunInProcess = (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
-        configuration.getJUnitSettings().setInProcess(canRunInProcess);
-      }
+      configuration.getJUnitSettings().setInProcess(wrapper.canRunInProcess());
       return configuration;
     }
 

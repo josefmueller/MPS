@@ -43,7 +43,7 @@ public final class ModelPointer__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static SNode create_id_GDk1qZ2JP(@NotNull SAbstractConcept __thisConcept__, SModel where, SModel target) {
-    return (SNode) ModelPointer__BehaviorDescriptor.create_id_GDk1qZ2LQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L, "jetbrains.mps.lang.modelapi.structure.ModelPointer")), where, target.getReference());
+    return (SNode) ModelPointer__BehaviorDescriptor.create_id_GDk1qZ2LQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L, "jetbrains.mps.lang.modelapi.structure.ModelPointer")), where, SModelOperations.getPointer(target));
   }
   /*package*/ static SNode create_id_GDk1qZ2LQ(@NotNull SAbstractConcept __thisConcept__, SModel where, SModelReference target) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L, "jetbrains.mps.lang.modelapi.structure.ModelPointer"));

@@ -190,7 +190,7 @@ public class ProjectStructureBuilder {
     fillModule(generator);
     SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x3be012d639e8a44L, "generatorUID"), source.getNamespace());
     SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates"), "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries"), "" + (source.isReflectiveQueries()));
+    SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries"), "" + (false));
     SPropertyOperations.set(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x2cf7cb696461a282L, "generatorAlias"), (isNotEmptyString(source.getAlias()) ? source.getAlias() : null));
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getChildren(generator, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules")).add(convert(rule));

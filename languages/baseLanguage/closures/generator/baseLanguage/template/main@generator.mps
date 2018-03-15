@@ -476,9 +476,9 @@
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="1217004708011" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" flags="nn" index="1r8y6K" />
     </language>
-    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
-        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+    <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -522,6 +522,9 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
+      </concept>
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
@@ -7355,14 +7358,9 @@
                             <node concept="3clFbJ" id="hx14b_w" role="3cqZAp">
                               <node concept="3clFbS" id="hx14b_x" role="3clFbx">
                                 <node concept="3cpWs6" id="hx14e9b" role="3cqZAp">
-                                  <node concept="2OqwBi" id="hxx$ZAb" role="3cqZAk">
-                                    <node concept="2c44tf" id="hx14ePS" role="2Oq$k0">
-                                      <node concept="3uibUv" id="hx14fpX" role="2c44tc">
-                                        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                                      </node>
-                                    </node>
-                                    <node concept="3TrEf2" id="hx14gtG" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
+                                  <node concept="2tJFMh" id="3XR0QgWyHCh" role="3cqZAk">
+                                    <node concept="ZC_QK" id="3XR0QgWyHCg" role="2tJFKM">
+                                      <ref role="2aWVGs" to="wyt6:~Iterable" resolve="Iterable" />
                                     </node>
                                   </node>
                                 </node>

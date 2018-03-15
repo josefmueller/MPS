@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -270,7 +270,7 @@ class GenerationSession {
         // since session objects might include objects with disposed class loaders
         mySessionContext.clearTransientObjects();
 
-        if (myGenerationOptions.isKeepOutputModel() && currOutput != null) {
+        if (currOutput != null) {
           mySessionContext.getModule().addModelToKeep(currOutput.getReference(), true);
         }
 
@@ -762,11 +762,17 @@ class GenerationSession {
   }
 
   public void discardTransients() {
-    if (mySessionContext == null) return;
+    if (mySessionContext == null) {
+      return;
+    }
     if (!myGenerationOptions.isSaveTransientModels()) {
       mySessionContext.getModule().clearUnused();
     }
-    myQuerySource.dispose();
+    if (myQuerySource != null) {
+      // exception may happen prior to initialization of myQuerySource field
+      myQuerySource.dispose();
+      myQuerySource = null;
+    }
     mySessionContext = null;
   }
 }

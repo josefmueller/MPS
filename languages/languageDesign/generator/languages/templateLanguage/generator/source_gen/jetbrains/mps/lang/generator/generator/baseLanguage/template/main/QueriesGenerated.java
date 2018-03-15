@@ -2194,7 +2194,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static boolean ifMacro_Condition_4560626146942934528(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"));
-    return (generator != null) && !(SPropertyOperations.getBoolean(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries")));
+    return (generator != null) && !(SPropertyOperations.getBoolean(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates")));
   }
   public static boolean ifMacro_Condition_7664108699562497131(final IfMacroContext _context) {
     Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
@@ -3804,7 +3804,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static void mappingScript_CodeBlock_6458924870074299562(final MappingScriptContext _context) {
-    SModelReference currentModel = _context.getModel().getReference();
+    SModelReference currentModel = SModelOperations.getPointer(_context.getModel());
     for (SNode node : SModelOperations.nodes(_context.getModel(), null)) {
       if (RuleUtil.isTemplateLanguageElement(node)) {
         continue;
@@ -3834,7 +3834,9 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object insertMacro_varValue_3115958756406550621(final TemplateVarContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, "jetbrains.mps.lang.project.structure.Generator"));
-    return (generator != null) && !(SPropertyOperations.getBoolean(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries")));
+    // XXX At the moment, we don't utilize non-reflective queries in generated templates (static methods 
+    // get invoked directly) 
+    return (generator != null) && !(SPropertyOperations.getBoolean(generator, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates")));
   }
   public static Object insertMacro_varValue_3257252407656969170(final TemplateVarContext _context) {
     return GenUtil.createMetaObjectHelper(_context, _context.getNode());

@@ -22,6 +22,7 @@ import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,7 +52,7 @@ public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
         Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ProjectScope(myMpsProject), Collections.singleton(concept), false, new EmptyProgressMonitor());
         for (SNode node : usages) {
           SModel model = SNodeOperations.getModel(node);
-          SModelReference md = model.getReference();
+          SModelReference md = SModelOperations.getPointer(model);
           modelRefs.add(md);
         }
       }

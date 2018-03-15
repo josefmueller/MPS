@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class NodeFileStatusMapping extends AbstractProjectComponent {
@@ -168,7 +169,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
     private void addAffectedRoot(@NotNull ModelChange change) {
       if (change.getRootId() != null) {
-        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getReference(), change.getRootId()));
+        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(SModelOperations.getPointer(change.getChangeSet().getNewModel()), change.getRootId()));
       }
     }
     @Override

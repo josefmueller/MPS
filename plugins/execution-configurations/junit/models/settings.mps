@@ -372,6 +372,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
@@ -718,15 +719,11 @@
                       <node concept="3cpWs8" id="1KUoCipv$hH" role="3cqZAp">
                         <node concept="3cpWsn" id="1KUoCipv$hI" role="3cpWs9">
                           <property role="TrG5h" value="md" />
-                          <node concept="2OqwBi" id="1KUoCipv$hJ" role="33vP2m">
-                            <node concept="liA8E" id="1KUoCipv$hK" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                          <node concept="2OqwBi" id="3XR0QgVCmwe" role="33vP2m">
+                            <node concept="37vLTw" id="3XR0QgVCmwd" role="2Oq$k0">
+                              <ref role="3cqZAo" node="1KUoCipv$hC" resolve="model" />
                             </node>
-                            <node concept="2JrnkZ" id="1KUoCipv$hL" role="2Oq$k0">
-                              <node concept="37vLTw" id="3GM_nagTt$c" role="2JrQYb">
-                                <ref role="3cqZAo" node="1KUoCipv$hC" resolve="model" />
-                              </node>
-                            </node>
+                            <node concept="aIX43" id="3XR0QgVCmwf" role="2OqNvi" />
                           </node>
                           <node concept="3uibUv" id="1KUoCipv$hN" role="1tU5fm">
                             <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
@@ -4426,7 +4423,7 @@
               <ref role="3cqZAo" node="1DeqbSM$GzJ" resolve="element" />
             </node>
             <node concept="liA8E" id="1DeqbSM$GzG" role="2OqNvi">
-              <ref role="37wK5l" to="sfqd:56tRMpP_ejD" resolve="getCachedFqName" />
+              <ref role="37wK5l" to="sfqd:56tRMpP_ej$" resolve="getFqName" />
             </node>
           </node>
         </node>

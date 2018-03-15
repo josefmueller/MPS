@@ -245,6 +245,7 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -3577,15 +3578,11 @@
                           </node>
                           <node concept="liA8E" id="4Bh6nQ4wKbP" role="2OqNvi">
                             <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                            <node concept="2OqwBi" id="4Bh6nQ4wMiF" role="37wK5m">
-                              <node concept="2JrnkZ" id="4Bh6nQ4wM4v" role="2Oq$k0">
-                                <node concept="37vLTw" id="4Bh6nQ4wKkF" role="2JrQYb">
-                                  <ref role="3cqZAo" node="4Bh6nQ4wI82" resolve="m" />
-                                </node>
+                            <node concept="2OqwBi" id="3XR0QgVCkec" role="37wK5m">
+                              <node concept="37vLTw" id="3XR0QgVCkeb" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4Bh6nQ4wI82" resolve="m" />
                               </node>
-                              <node concept="liA8E" id="4Bh6nQ4wMAg" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                              </node>
+                              <node concept="aIX43" id="3XR0QgVCked" role="2OqNvi" />
                             </node>
                           </node>
                         </node>

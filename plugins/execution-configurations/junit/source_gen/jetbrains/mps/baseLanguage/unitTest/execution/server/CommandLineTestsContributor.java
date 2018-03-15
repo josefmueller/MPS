@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
-import jetbrains.mps.tool.environment.Environment;
+import org.junit.runners.model.RunnerBuilder;
 import java.io.IOException;
+import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.testbench.junit.runners.PushEnvironmentRunnerBuilder;
 import java.util.List;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
@@ -21,7 +23,12 @@ import org.apache.log4j.Level;
 public class CommandLineTestsContributor implements TestsContributor {
   private static final Logger LOG = LogManager.getLogger(CommandLineTestsContributor.class);
   private final String[] myArgs;
-  private final PushEnvironmentRunnerBuilder myRunnerBuilder;
+  private final RunnerBuilder myRunnerBuilder;
+
+  public CommandLineTestsContributor(String[] args) throws IOException {
+    myArgs = inlineFilesContents(args);
+    myRunnerBuilder = new AllDefaultPossibilitiesBuilder(true);
+  }
 
   public CommandLineTestsContributor(Environment env, String[] args) throws IOException {
     myArgs = inlineFilesContents(args);

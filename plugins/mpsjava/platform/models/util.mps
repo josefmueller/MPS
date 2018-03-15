@@ -234,6 +234,7 @@
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
+      <concept id="3506770386464365589" name="jetbrains.mps.lang.smodel.structure.Model_PointerOperation" flags="ng" index="aIX43" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -1834,15 +1835,11 @@
                     <node concept="1bVj0M" id="7RFU_zilv_W" role="23t8la">
                       <node concept="3clFbS" id="7RFU_zilv_X" role="1bW5cS">
                         <node concept="3clFbF" id="7RFU_zilvA0" role="3cqZAp">
-                          <node concept="2OqwBi" id="2n9zn0CqNj2" role="3clFbG">
-                            <node concept="liA8E" id="2n9zn0CqNj3" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                          <node concept="2OqwBi" id="3XR0QgVCoja" role="3clFbG">
+                            <node concept="37vLTw" id="3XR0QgVCoj9" role="2Oq$k0">
+                              <ref role="3cqZAo" node="7RFU_zilv_Y" resolve="it" />
                             </node>
-                            <node concept="2JrnkZ" id="2n9zn0CqNj4" role="2Oq$k0">
-                              <node concept="37vLTw" id="2BHiRxglKVS" role="2JrQYb">
-                                <ref role="3cqZAo" node="7RFU_zilv_Y" resolve="it" />
-                              </node>
-                            </node>
+                            <node concept="aIX43" id="3XR0QgVCojb" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -2716,18 +2713,14 @@
                                               </node>
                                               <node concept="liA8E" id="2odTO7An4Q9" role="2OqNvi">
                                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                                                <node concept="2OqwBi" id="2n9zn0CqN4Q" role="37wK5m">
-                                                  <node concept="liA8E" id="2n9zn0CqN4R" role="2OqNvi">
-                                                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                                                  </node>
-                                                  <node concept="2JrnkZ" id="2n9zn0CqN4S" role="2Oq$k0">
-                                                    <node concept="2OqwBi" id="2n9zn0CqN4T" role="2JrQYb">
-                                                      <node concept="37vLTw" id="2BHiRxglGV9" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="5RQ13Jxrfyq" resolve="n" />
-                                                      </node>
-                                                      <node concept="I4A8Y" id="2n9zn0CqN4V" role="2OqNvi" />
+                                                <node concept="2OqwBi" id="3XR0QgVCoQg" role="37wK5m">
+                                                  <node concept="2OqwBi" id="3XR0QgVCoQd" role="2Oq$k0">
+                                                    <node concept="37vLTw" id="3XR0QgVCoQe" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="5RQ13Jxrfyq" resolve="n" />
                                                     </node>
+                                                    <node concept="I4A8Y" id="3XR0QgVCoQf" role="2OqNvi" />
                                                   </node>
+                                                  <node concept="aIX43" id="3XR0QgVCoQh" role="2OqNvi" />
                                                 </node>
                                               </node>
                                             </node>

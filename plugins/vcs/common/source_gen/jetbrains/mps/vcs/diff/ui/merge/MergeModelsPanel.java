@@ -46,6 +46,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -223,7 +224,7 @@ public class MergeModelsPanel extends JPanel {
     DiffModelUtil.restoreModelName(resultModel);
     // fix??? 
     for (SModel m : new SModel[]{myMergeSession.getMyModel(), myMergeSession.getRepositoryModel()}) {
-      DiffModelUtil.fixModelReferences(resultModel, m.getReference());
+      DiffModelUtil.fixModelReferences(resultModel, SModelOperations.getPointer(m));
     }
     return resultModel;
   }

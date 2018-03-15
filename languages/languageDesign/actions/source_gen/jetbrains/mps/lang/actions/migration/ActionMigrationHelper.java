@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -30,7 +31,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -105,7 +105,7 @@ public class ActionMigrationHelper {
   }
   public static void addModelImport(SModel model, SModel modelToImport) {
     if (!(Objects.equals(modelToImport, model))) {
-      SModelReference reference = modelToImport.getReference();
+      SModelReference reference = SModelOperations.getPointer(modelToImport);
       if (model instanceof SModelInternal && !(((SModelInternal) model).getModelImports().contains(reference))) {
         ((SModelInternal) model).addModelImport(reference);
       }
