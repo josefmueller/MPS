@@ -163,6 +163,7 @@
       <property role="IQ2ns" value="5705146868101924671" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="strategy" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4WGKd_KDsrX" resolve="MergeStrategy" />
     </node>
   </node>

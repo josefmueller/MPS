@@ -77,7 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.vcs.mergehints", "FeatureVCSDescriptor", 0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a4f875L);
     b.class_(false, true, false);
     b.origin("r:134c8eea-8ea6-4b50-ba87-7cf1b28ce5ba(jetbrains.mps.vcs.mergehints.structure)/5705146868101871733");
-    b.aggregate("strategy", 0x4f2cc0d970a5c73fL).target(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL).optional(true).ordered(true).multiple(false).origin("5705146868101924671").done();
+    b.aggregate("strategy", 0x4f2cc0d970a5c73fL).target(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x4f2cc0d970a5c6fdL).optional(false).ordered(true).multiple(false).origin("5705146868101924671").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLinkVCSDescriptor() {
