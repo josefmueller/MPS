@@ -26251,7 +26251,7 @@
         </node>
         <node concept="l2Vlx" id="73AphEjW2IH" role="2iSdaV" />
         <node concept="3F0ifn" id="73AphEjTz1B" role="3EZMnx">
-          <property role="3F0ifm" value="text" />
+          <property role="3F0ifm" value="matching text" />
           <property role="ilYzB" value="&lt;default matching text&gt;" />
           <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
         </node>
@@ -26269,7 +26269,7 @@
         </node>
         <node concept="l2Vlx" id="73AphEjW3$K" role="2iSdaV" />
         <node concept="3F0ifn" id="73AphEjU4gW" role="3EZMnx">
-          <property role="3F0ifm" value="visible text" />
+          <property role="3F0ifm" value="visible matching text" />
           <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
         </node>
         <node concept="3F1sOY" id="6cap0kYbLLL" role="3EZMnx">

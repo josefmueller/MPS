@@ -164,7 +164,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createConstant_bhyi1v_a2a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "matching text");
     editorCell.setCellId("Constant_bhyi1v_a2a");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -239,7 +239,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createConstant_bhyi1v_a3a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "visible text");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "visible matching text");
     editorCell.setCellId("Constant_bhyi1v_a3a");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
