@@ -22430,6 +22430,11 @@
           <ref role="3bR37D" node="1d41uYMTVPB" resolve="jetbrains.mps.lang.scopes.runtime" />
         </node>
       </node>
+      <node concept="1SiIV0" id="5FWxsE0EGgE" role="3bR37C">
+        <node concept="1Busua" id="5FWxsE0EGgF" role="1SiIV1">
+          <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+        </node>
+      </node>
     </node>
     <node concept="3LEwk6" id="4WGKd_KIKma" role="3989C9">
       <property role="BnDLt" value="true" />
