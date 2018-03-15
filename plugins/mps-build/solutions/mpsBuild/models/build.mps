@@ -22418,6 +22418,18 @@
       <node concept="1E0d5M" id="4WGKd_KIwxe" role="1E1XAP">
         <ref role="1E0d5P" node="4WGKd_KIwrs" resolve="jetbrains.mps.vcs.mergehints.runtime" />
       </node>
+      <node concept="1SiIV0" id="3NiqEyNPaRe" role="3bR37C">
+        <node concept="3bR9La" id="3NiqEyNPaRf" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="6ifcnI8$2j3" resolve="jetbrains.mps.vcs.mergehints" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="3NiqEyNPaRg" role="3bR37C">
+        <node concept="3bR9La" id="3NiqEyNPaRh" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="1d41uYMTVPB" resolve="jetbrains.mps.lang.scopes.runtime" />
+        </node>
+      </node>
     </node>
     <node concept="3LEwk6" id="4WGKd_KIKma" role="3989C9">
       <property role="BnDLt" value="true" />
