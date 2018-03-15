@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 
 public final class EditingUtil {
   public static boolean isNodeMacroApplicable(SNode node) {
@@ -176,8 +177,10 @@ public final class EditingUtil {
     if (cell instanceof EditorCell_Property) {
       ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {
-        String propertyName = ((PropertyAccessor) modelAccessor).getPropertyName();
-        return propertyName;
+        return ((PropertyAccessor) modelAccessor).getPropertyName();
+      }
+      if (modelAccessor instanceof SPropertyAccessor) {
+        return ((SPropertyAccessor) modelAccessor).getPropertyName();
       }
     }
     return null;
