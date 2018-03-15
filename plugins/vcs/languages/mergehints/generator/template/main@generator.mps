@@ -181,6 +181,7 @@
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
+      <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
       <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
         <child id="8900764248744213871" name="contentNode" index="1Koe22" />
@@ -189,6 +190,10 @@
         <child id="1805153994415893199" name="type" index="1N15GL" />
       </concept>
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
+      <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
+        <child id="1194989344771" name="alternativeConsequence" index="UU_$l" />
+        <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
+      </concept>
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
       </concept>
@@ -247,6 +252,7 @@
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="5944356402132808749" name="jetbrains.mps.lang.smodel.structure.ConceptSwitchStatement" flags="nn" index="1_3QMa">
         <child id="6039268229365417680" name="defaultBlock" index="1prKM_" />
         <child id="5944356402132808753" name="case" index="1_3QMm" />
@@ -387,6 +393,28 @@
                             <node concept="Rm8GO" id="4WGKd_KFERC" role="3clFbG">
                               <ref role="1Px2BO" to="ur19:16TciwZIYCr" resolve="MergeStrategy" />
                               <ref role="Rm8GQ" to="ur19:16TciwZIYE0" resolve="OURS" />
+                            </node>
+                            <node concept="1W57fq" id="3NiqEyNMcV0" role="lGtFl">
+                              <node concept="3IZrLx" id="3NiqEyNMcV2" role="3IZSJc">
+                                <node concept="3clFbS" id="3NiqEyNMcV4" role="2VODD2">
+                                  <node concept="3clFbF" id="3NiqEyNMdk7" role="3cqZAp">
+                                    <node concept="2OqwBi" id="3NiqEyNMfc4" role="3clFbG">
+                                      <node concept="2OqwBi" id="3NiqEyNMdxj" role="2Oq$k0">
+                                        <node concept="30H73N" id="3NiqEyNMdk6" role="2Oq$k0" />
+                                        <node concept="3TrEf2" id="3NiqEyNMexh" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="6p:4WGKd_KDst1" resolve="strategy" />
+                                        </node>
+                                      </node>
+                                      <node concept="3x8VRR" id="3NiqEyNMfE$" role="2OqNvi" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="gft3U" id="3NiqEyNMfQC" role="UU_$l">
+                                <node concept="3cpWs6" id="3NiqEyNMmZi" role="gfFT$">
+                                  <node concept="10Nm6u" id="3NiqEyNMog4" role="3cqZAk" />
+                                </node>
+                              </node>
                             </node>
                             <node concept="1sPUBX" id="4WGKd_KFFPr" role="lGtFl">
                               <ref role="v9R2y" node="4WGKd_KFGOJ" resolve="MergeStrategy" />
