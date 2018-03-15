@@ -49,7 +49,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static boolean createRootRule_Condition_3125857749401203974(final CreateRootRuleContext _context) {
     // see MPS-24613 
-    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "structure");
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "vcs");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
     // see MPS-24613 

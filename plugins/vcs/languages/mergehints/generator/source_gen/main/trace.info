@@ -17,8 +17,8 @@
   <root nodeRef="r:c05ec6c2-cd0f-46c4-99d6-fdaf31643b2a(main@generator)/1277106018273766026">
     <file name="QueriesGenerated.java">
       <node id="7228083082548025708" at="50,108,51,21" concept="2" />
-      <node id="3125857749401203976" at="51,21,52,85" concept="1" />
-      <scope id="3125857749401203975" at="50,108,52,85" />
+      <node id="3125857749401203976" at="51,21,52,79" concept="1" />
+      <scope id="3125857749401203975" at="50,108,52,79" />
     </file>
   </root>
   <root nodeRef="r:c05ec6c2-cd0f-46c4-99d6-fdaf31643b2a(main@generator)/2897519568668637315">
