@@ -765,6 +765,9 @@
     <node concept="PrWs8" id="4SdtvCaA7QL" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>
+    <node concept="PrWs8" id="1o9RazL_bTn" role="PzmwI">
+      <ref role="PrY4T" node="1o9RazL_awo" resolve="IReferenceContextProvider" />
+    </node>
     <node concept="RPilO" id="47y0FrqaLd8" role="lGtFl">
       <ref role="RPilL" node="fPiD8ey" resolve="linkDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLd9" role="ROhUF">
@@ -1783,6 +1786,9 @@
     <property role="3GE5qa" value="CellMenu" />
     <property role="EcuMT" value="1164824854750" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1o9RazL_aLN" role="PzmwI">
+      <ref role="PrY4T" node="1o9RazL_awo" resolve="IReferenceContextProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gWPvTER">
     <property role="R5$K7" value="false" />
@@ -6834,6 +6840,13 @@
     <node concept="PrWs8" id="7pTz0_mrFOR" role="PzmwI">
       <ref role="PrY4T" node="6kJcyCQj9CC" resolve="IExtensibleTransformationMenuPart" />
     </node>
+    <node concept="PrWs8" id="1o9RazL_hdj" role="PzmwI">
+      <ref role="PrY4T" node="1o9RazL_awo" resolve="IReferenceContextProvider" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1o9RazL_awo">
+    <property role="EcuMT" value="1588042961790478360" />
+    <property role="TrG5h" value="IReferenceContextProvider" />
   </node>
 </model>
 

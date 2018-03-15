@@ -824,6 +824,26 @@
         <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
     </node>
+    <node concept="13i0hz" id="1o9RazL_cM4" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getReferenceDeclaration" />
+      <ref role="13i0hy" node="1o9RazL_axx" resolve="getReferenceDeclaration" />
+      <node concept="3Tm1VV" id="1o9RazL_cM5" role="1B3o_S" />
+      <node concept="3clFbS" id="1o9RazL_cM8" role="3clF47">
+        <node concept="3clFbF" id="1o9RazL_fV8" role="3cqZAp">
+          <node concept="2OqwBi" id="1o9RazL_giU" role="3clFbG">
+            <node concept="13iPFW" id="1o9RazL_fV7" role="2Oq$k0" />
+            <node concept="3TrEf2" id="1o9RazL_gY1" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:fPiD8ey" resolve="linkDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1o9RazL_cM9" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="hEwIlRO">
     <property role="3GE5qa" value="CellMenu" />
@@ -5539,6 +5559,23 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="hJEvvJ2" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="1o9RazL_aLP" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getReferenceDeclaration" />
+      <ref role="13i0hy" node="1o9RazL_axx" resolve="getReferenceDeclaration" />
+      <node concept="3Tm1VV" id="1o9RazL_aLQ" role="1B3o_S" />
+      <node concept="3clFbS" id="1o9RazL_aLT" role="3clF47">
+        <node concept="3cpWs6" id="1o9RazL_boD" role="3cqZAp">
+          <node concept="BsUDl" id="1o9RazL_bpe" role="3cqZAk">
+            <ref role="37wK5l" node="hJEvotS" resolve="getEditedLink" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1o9RazL_aLU" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
     </node>
   </node>
   <node concept="13h7C7" id="hJF5Ktg">
@@ -23350,6 +23387,42 @@
           <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
         </node>
       </node>
+    </node>
+    <node concept="13i0hz" id="1o9RazL_hdn" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getReferenceDeclaration" />
+      <ref role="13i0hy" node="1o9RazL_axx" resolve="getReferenceDeclaration" />
+      <node concept="3Tm1VV" id="1o9RazL_hdo" role="1B3o_S" />
+      <node concept="3clFbS" id="1o9RazL_hdr" role="3clF47">
+        <node concept="3clFbF" id="1o9RazL_hfY" role="3cqZAp">
+          <node concept="2OqwBi" id="1o9RazL_hvU" role="3clFbG">
+            <node concept="13iPFW" id="1o9RazL_hfX" role="2Oq$k0" />
+            <node concept="3TrEf2" id="1o9RazL_hHV" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:ntKIfKkdVl" resolve="referenceLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1o9RazL_hds" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1o9RazL_ax4">
+    <ref role="13h7C2" to="tpc2:1o9RazL_awo" resolve="IReferenceContextProvider" />
+    <node concept="13i0hz" id="1o9RazL_axx" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getReferenceDeclaration" />
+      <node concept="3Tm1VV" id="1o9RazL_axy" role="1B3o_S" />
+      <node concept="3Tqbb2" id="1o9RazL_aEO" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
+      <node concept="3clFbS" id="1o9RazL_ax$" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="1o9RazL_ax5" role="13h7CW">
+      <node concept="3clFbS" id="1o9RazL_ax6" role="2VODD2" />
     </node>
   </node>
 </model>
