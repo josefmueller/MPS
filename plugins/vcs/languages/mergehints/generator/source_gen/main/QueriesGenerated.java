@@ -85,10 +85,10 @@ public class QueriesGenerated extends QueryProviderBase {
     // TODO genContext.get output VCSDescriptorCons for model model; 
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".VCSDescriptor";
   }
-  public static boolean ifMacro_Condition_4382682660188245698(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6556262262332529202(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy")) != null);
   }
-  public static SNode sourceNodeQuery_5705146868102511979(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6556262262332544742(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a5c741L, "strategy"));
   }
   public static SNode sourceNodeQuery_5705146868102630310(final SourceSubstituteMacroNodeContext _context) {
@@ -185,7 +185,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
   {
     int i = 0;
-    snqMethods.put("5705146868102511979", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("6556262262332544742", new QueriesGenerated.SNQ(i++));
     snqMethods.put("5705146868102630310", new QueriesGenerated.SNQ(i++));
     snqMethods.put("5705146868102657123", new QueriesGenerated.SNQ(i++));
     snqMethods.put("5705146868102723409", new QueriesGenerated.SNQ(i++));
@@ -208,7 +208,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.sourceNodeQuery_5705146868102511979(ctx);
+          return QueriesGenerated.sourceNodeQuery_6556262262332544742(ctx);
         case 1:
           return QueriesGenerated.sourceNodeQuery_5705146868102630310(ctx);
         case 2:
@@ -291,7 +291,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
   {
     int i = 0;
-    imcMethods.put("4382682660188245696", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("6556262262332529200", new QueriesGenerated.IfMC(i++));
   }
   @NotNull
   @Override
@@ -311,7 +311,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_4382682660188245698(ctx);
+          return QueriesGenerated.ifMacro_Condition_6556262262332529202(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
