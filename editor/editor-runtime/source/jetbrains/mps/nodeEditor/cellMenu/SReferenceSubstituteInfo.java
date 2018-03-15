@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.ReferenceMenuTransformationMenuPart;
@@ -65,6 +66,18 @@ public class SReferenceSubstituteInfo extends TransformationMenuSubstituteInfo i
     private ImplicitReferenceMenu(SReferenceLink reference, SAbstractConcept targetConcept) {
       myReference = reference;
       myTargetConcept = targetConcept;
+    }
+
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Implicit transformation menu for the reference cell: include all the reference targets from the scope", null));
+        return super.createMenuItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @NotNull

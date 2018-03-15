@@ -17,12 +17,15 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.nodeEditor.cellMenu.BaseCompletionActionItem;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.smodel.PropertySupport;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertyTransformationMenuItem extends ActionItemBase implements BaseCompletionActionItem {
   @NotNull
@@ -33,13 +36,15 @@ public class PropertyTransformationMenuItem extends ActionItemBase implements Ba
   private final PropertySupport myPropertySupport;
   private final String myValue;
   private final EditorContext myEditorContext;
+  private final EditorMenuTraceInfo myTraceInfo;
 
-  public PropertyTransformationMenuItem(@NotNull SNode node, @NotNull EditorContext editorContext, @NotNull SProperty property, String value) {
-    myNode = node;
-    myEditorContext = editorContext;
+  public PropertyTransformationMenuItem(@NotNull SProperty property, String value, @NotNull TransformationMenuContext context) {
+    myNode = context.getNode();
+    myEditorContext = context.getEditorContext();
     myProperty = property;
     myPropertySupport = PropertySupport.getPropertySupport(property);
     myValue = value;
+    myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
   }
 
   @Nullable
@@ -50,16 +55,23 @@ public class PropertyTransformationMenuItem extends ActionItemBase implements Ba
 
   @Override
   public void execute(@NotNull String pattern) {
-    myNode.setProperty(myProperty, myValue);
+    SNodeAccessUtil.setProperty(myNode, myProperty, myValue);
     myEditorContext.flushEvents();
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = myEditorContext.getSelectedCell();
-    if (selectedCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell_Label && ((jetbrains.mps.nodeEditor.cells.EditorCell_Label) selectedCell).isEditable()) {
+    if (selectedCell instanceof jetbrains.mps.nodeEditor.cells.EditorCell_Label &&
+        ((jetbrains.mps.nodeEditor.cells.EditorCell_Label) selectedCell).isEditable()) {
       jetbrains.mps.nodeEditor.cells.EditorCell_Label cell = (jetbrains.mps.nodeEditor.cells.EditorCell_Label) selectedCell;
       cell.end();
     }
   }
 
-  String getValue(){
+  String getValue() {
     return myValue;
+  }
+
+  @Nullable
+  @Override
+  public EditorMenuTraceInfo getTraceInfo() {
+    return myTraceInfo;
   }
 }

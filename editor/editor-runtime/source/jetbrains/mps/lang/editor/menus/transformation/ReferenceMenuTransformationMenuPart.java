@@ -48,7 +48,6 @@ public abstract class ReferenceMenuTransformationMenuPart implements Transformat
     }
 
     List<TransformationMenuItem> result = new ArrayList<>();
-
     if (referenceLink != null) {
       Scope scope = ModelConstraints.getReferenceDescriptor(context.getNode(), referenceLink).getScope();
       Iterable<SNode> referents = scope.getAvailableElements(null);
@@ -61,15 +60,14 @@ public abstract class ReferenceMenuTransformationMenuPart implements Transformat
           continue;
         }
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace()
-               .setDescriptor(new EditorMenuDescriptorBase("reference action with target node: " + referent.getPresentation(), null));
         try {
+          context.getEditorMenuTrace()
+                 .setDescriptor(new EditorMenuDescriptorBase("reference action with target node: " + referent.getPresentation(), null));
           result.add(createItem(context, referenceLink, referent));
         } finally {
           context.getEditorMenuTrace().popTraceInfo();
         }
       }
-      return result;
     }
 
     return result;

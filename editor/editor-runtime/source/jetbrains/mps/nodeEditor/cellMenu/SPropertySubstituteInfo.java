@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import jetbrains.mps.lang.editor.menus.transformation.PropertyMenuTransformationMenuPart;
@@ -60,6 +61,18 @@ public class SPropertySubstituteInfo extends TransformationMenuSubstituteInfo im
 
     private ImplicitPropertyMenu(SProperty property) {
       myProperty = property;
+    }
+
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Implicit transformation menu for the property cell: include all the valid property values", null));
+        return super.createMenuItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @NotNull

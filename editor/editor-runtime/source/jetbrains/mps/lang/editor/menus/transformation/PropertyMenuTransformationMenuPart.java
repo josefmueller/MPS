@@ -53,10 +53,9 @@ public abstract class PropertyMenuTransformationMenuPart implements Transformati
       SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(property.getDeclarationNode());
       if (dataType != null) {
         if (Primitives.BOOLEAN_TYPE.equals(dataType.getName())) {
-          result.add(new PropertyTransformationMenuItem(context.getNode(), context.getEditorContext(), property, "true"));
-          result.add(new PropertyTransformationMenuItem(context.getNode(), context.getEditorContext(), property, null));
+          result.addAll(BooleanSPropertyTransformationItemFactory.createItems(context, property));
         } else if (SNodeUtil.isInstanceOfEnumerationDataTypeDeclaration(dataType)) {
-          result.addAll(EnumSPropertyTransformationItemFactory.createItems(context.getNode(), context, property));
+          result.addAll(EnumSPropertyTransformationItemFactory.createItems(property, context));
         }
       }
     }
