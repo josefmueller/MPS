@@ -260,36 +260,25 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createIndentCell_94pzwf_a1a());
-    editorCell.addEditorCell(createCollection_94pzwf_b1a());
+    editorCell.addEditorCell(createRefNodeList_94pzwf_b1a());
     return editorCell;
   }
   private EditorCell createIndentCell_94pzwf_a1a() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createCollection_94pzwf_b1a() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_94pzwf_b1a");
-    editorCell.addEditorCell(createIndentCell_94pzwf_a1b0());
-    editorCell.addEditorCell(createRefNodeList_94pzwf_b1b0());
-    return editorCell;
-  }
-  private EditorCell createIndentCell_94pzwf_a1b0() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createRefNodeList_94pzwf_b1b0() {
-    AbstractCellListHandler handler = new ConceptVCSDescriptor_EditorBuilder_a.featuresListHandler_94pzwf_b1b0(myNode, "features", getEditorContext());
+  private EditorCell createRefNodeList_94pzwf_b1a() {
+    AbstractCellListHandler handler = new ConceptVCSDescriptor_EditorBuilder_a.featuresListHandler_94pzwf_b1a(myNode, "features", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_features");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class featuresListHandler_94pzwf_b1b0 extends RefNodeListHandler {
+  private static class featuresListHandler_94pzwf_b1a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public featuresListHandler_94pzwf_b1b0(SNode ownerNode, String childRole, EditorContext context) {
+    public featuresListHandler_94pzwf_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
       myNode = ownerNode;
     }
@@ -310,7 +299,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(featuresListHandler_94pzwf_b1b0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(featuresListHandler_94pzwf_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x39744cf955c648fcL, 0x4f2cc0d970a4f8c9L, "features")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();

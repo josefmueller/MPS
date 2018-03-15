@@ -60,7 +60,6 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
-      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -117,14 +116,6 @@
   <node concept="24kQdi" id="3_Ojf_lL$AN">
     <ref role="1XX52x" to="6p:3_Ojf_lL$zW" resolve="ConceptVCSDescriptor" />
     <node concept="b$f91" id="4WGKd_KDf_B" role="2wV5jI">
-      <node concept="3EZMnI" id="4WGKd_KDfAw" role="b$wch">
-        <node concept="3XFhqQ" id="4WGKd_KDfAB" role="3EZMnx" />
-        <node concept="3F2HdR" id="4WGKd_KDfAC" role="3EZMnx">
-          <ref role="1NtTu8" to="6p:4WGKd_KDfz9" resolve="features" />
-          <node concept="2iRkQZ" id="4WGKd_KDfAD" role="2czzBx" />
-        </node>
-        <node concept="2iRfu4" id="4WGKd_KDfAz" role="2iSdaV" />
-      </node>
       <node concept="3EZMnI" id="4WGKd_KDf_W" role="b$u42">
         <node concept="3F0ifn" id="4WGKd_KDf$J" role="3EZMnx">
           <property role="3F0ifm" value="concept" />
@@ -146,6 +137,10 @@
           <ref role="1NtTu8" to="6p:4WGKd_KDst1" resolve="strategy" />
         </node>
         <node concept="2iRfu4" id="4WGKd_KDf_X" role="2iSdaV" />
+      </node>
+      <node concept="3F2HdR" id="4WGKd_KDfAC" role="b$wch">
+        <ref role="1NtTu8" to="6p:4WGKd_KDfz9" resolve="features" />
+        <node concept="2iRkQZ" id="4WGKd_KDfAD" role="2czzBx" />
       </node>
     </node>
   </node>
