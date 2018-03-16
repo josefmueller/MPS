@@ -430,6 +430,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalPropertyReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalStaticFieldReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalStaticMethodCall_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalVariableDeclarationStatement_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LocalVariableDeclaration_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.LoopLabelReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.NestedNewExpression_Constraints" />
@@ -883,6 +884,22 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.LocalVariableDeclarationStatement_Constraints" file="LocalVariableDeclarationStatement_Constraints.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Objects" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintFunction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.LocalVariableDeclaration_Constraints" file="LocalVariableDeclaration_Constraints.java">
