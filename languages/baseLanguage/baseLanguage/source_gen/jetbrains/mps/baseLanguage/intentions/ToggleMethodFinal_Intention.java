@@ -21,14 +21,14 @@ import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class MakeMethodFinal_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class ToggleMethodFinal_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public MakeMethodFinal_Intention() {
+  public ToggleMethodFinal_Intention() {
     super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1240248297859"));
   }
   @Override
   public String getPresentation() {
-    return "MakeMethodFinal";
+    return "ToggleMethodFinal";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -59,7 +59,7 @@ public final class MakeMethodFinal_Intention extends AbstractIntentionDescriptor
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeMethodFinal_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleMethodFinal_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -76,7 +76,7 @@ public final class MakeMethodFinal_Intention extends AbstractIntentionDescriptor
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return MakeMethodFinal_Intention.this;
+      return ToggleMethodFinal_Intention.this;
     }
   }
 }

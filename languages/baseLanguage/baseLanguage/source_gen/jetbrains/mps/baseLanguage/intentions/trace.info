@@ -3505,10 +3505,10 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1240248297859">
-    <file name="MakeMethodFinal_Intention.java">
+    <file name="ToggleMethodFinal_Intention.java">
       <node id="1240248297859" at="25,0,26,0" concept="5" trace="myCachedExecutable" />
-      <node id="1240248297859" at="26,38,27,145" concept="14" />
-      <node id="1240248297859" at="30,35,31,29" concept="10" />
+      <node id="1240248297859" at="26,40,27,145" concept="14" />
+      <node id="1240248297859" at="30,35,31,31" concept="10" />
       <node id="1240248297859" at="35,53,36,19" concept="10" />
       <node id="1240248297859" at="37,5,38,16" concept="10" />
       <node id="2469577538346738531" at="41,400,42,19" concept="10" />
@@ -3518,13 +3518,13 @@
       <node id="4975090607137411429" at="50,39,51,162" concept="10" />
       <node id="4975090607137411270" at="53,7,54,60" concept="10" />
       <node id="1240248297859" at="57,35,58,17" concept="10" />
-      <node id="1240248297859" at="61,37,62,131" concept="4" />
+      <node id="1240248297859" at="61,37,62,133" concept="4" />
       <node id="1240248297859" at="63,5,64,30" concept="10" />
       <node id="1240248371782" at="70,87,71,216" concept="10" />
       <node id="1240248350514" at="74,78,75,316" concept="4" />
-      <node id="1240248297859" at="78,48,79,44" concept="10" />
+      <node id="1240248297859" at="78,48,79,46" concept="10" />
       <node id="1240248297859" at="67,0,69,0" concept="2" trace="IntentionImplementation#()V" />
-      <node id="1240248297859" at="26,0,29,0" concept="2" trace="MakeMethodFinal_Intention#()V" />
+      <node id="1240248297859" at="26,0,29,0" concept="2" trace="ToggleMethodFinal_Intention#()V" />
       <node id="1240248297859" at="34,84,37,5" concept="7" />
       <node id="2469577538346738517" at="40,91,43,5" concept="7" />
       <node id="4975090607137411257" at="44,56,47,5" concept="7" />
@@ -3540,17 +3540,17 @@
       <node id="1240248297859" at="33,0,40,0" concept="8" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1240248297859" at="40,0,56,0" concept="8" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="1240248297859" at="67,38,67,38" />
-      <scope id="1240248297859" at="26,38,27,145" />
-      <scope id="1240248297859" at="30,35,31,29" />
+      <scope id="1240248297859" at="26,40,27,145" />
+      <scope id="1240248297859" at="30,35,31,31" />
       <scope id="1240248297859" at="35,53,36,19" />
       <scope id="2469577538346738518" at="41,400,42,19" />
       <scope id="4975090607137411258" at="45,30,46,18" />
       <scope id="4975090607137411428" at="50,39,51,162" />
       <scope id="1240248297859" at="57,35,58,17" />
-      <scope id="1240248297859" at="61,37,62,131" />
+      <scope id="1240248297859" at="61,37,62,133" />
       <scope id="1240248297861" at="70,87,71,216" />
       <scope id="1240248297863" at="74,78,75,316" />
-      <scope id="1240248297859" at="78,48,79,44" />
+      <scope id="1240248297859" at="78,48,79,46" />
       <scope id="1240248297859" at="67,0,69,0" />
       <scope id="1240248297859" at="26,0,29,0" />
       <scope id="4975090607137411427" at="50,0,53,0">
@@ -3586,9 +3586,9 @@
         <var name="editorContext" id="1240248297859" />
         <var name="node" id="1240248297859" />
       </scope>
-      <unit id="4975090607137411427" at="49,95,53,5" name="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention$1" />
-      <unit id="1240248297859" at="66,0,82,0" name="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention$IntentionImplementation" />
-      <unit id="1240248297859" at="24,0,83,0" name="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
+      <unit id="4975090607137411427" at="49,95,53,5" name="jetbrains.mps.baseLanguage.intentions.ToggleMethodFinal_Intention$1" />
+      <unit id="1240248297859" at="66,0,82,0" name="jetbrains.mps.baseLanguage.intentions.ToggleMethodFinal_Intention$IntentionImplementation" />
+      <unit id="1240248297859" at="24,0,83,0" name="jetbrains.mps.baseLanguage.intentions.ToggleMethodFinal_Intention" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1240251547040">
@@ -6156,23 +6156,23 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/4276006055363816691">
-    <file name="MakeSynchronized_Intention.java">
+    <file name="ToggleMethodSynchronized_Intention.java">
       <node id="4276006055363816691" at="22,0,23,0" concept="5" trace="myCachedExecutable" />
-      <node id="4276006055363816691" at="23,39,24,152" concept="14" />
-      <node id="4276006055363816691" at="27,35,28,30" concept="10" />
+      <node id="4276006055363816691" at="23,47,24,152" concept="14" />
+      <node id="4276006055363816691" at="27,35,28,38" concept="10" />
       <node id="4276006055363816691" at="32,53,33,19" concept="10" />
       <node id="4276006055363816691" at="34,5,35,16" concept="10" />
       <node id="4276006055363818748" at="38,213,39,19" concept="10" />
       <node id="4276006055363818708" at="41,96,42,19" concept="10" />
       <node id="4276006055363818724" at="43,5,44,16" concept="10" />
       <node id="4276006055363816691" at="47,35,48,17" concept="10" />
-      <node id="4276006055363816691" at="51,37,52,132" concept="4" />
+      <node id="4276006055363816691" at="51,37,52,140" concept="4" />
       <node id="4276006055363816691" at="53,5,54,30" concept="10" />
       <node id="4276006055363818683" at="60,87,61,242" concept="10" />
       <node id="4276006055363818765" at="64,78,65,340" concept="4" />
-      <node id="4276006055363816691" at="68,48,69,45" concept="10" />
+      <node id="4276006055363816691" at="68,48,69,53" concept="10" />
       <node id="4276006055363816691" at="57,0,59,0" concept="2" trace="IntentionImplementation#()V" />
-      <node id="4276006055363816691" at="23,0,26,0" concept="2" trace="MakeSynchronized_Intention#()V" />
+      <node id="4276006055363816691" at="23,0,26,0" concept="2" trace="ToggleMethodSynchronized_Intention#()V" />
       <node id="4276006055363816691" at="31,84,34,5" concept="7" />
       <node id="4276006055363818729" at="37,91,40,5" concept="7" />
       <node id="4276006055363818699" at="40,5,43,5" concept="7" />
@@ -6186,16 +6186,16 @@
       <node id="4276006055363816691" at="30,0,37,0" concept="8" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="4276006055363816691" at="37,0,46,0" concept="8" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="4276006055363816691" at="57,38,57,38" />
-      <scope id="4276006055363816691" at="23,39,24,152" />
-      <scope id="4276006055363816691" at="27,35,28,30" />
+      <scope id="4276006055363816691" at="23,47,24,152" />
+      <scope id="4276006055363816691" at="27,35,28,38" />
       <scope id="4276006055363816691" at="32,53,33,19" />
       <scope id="4276006055363818730" at="38,213,39,19" />
       <scope id="4276006055363818701" at="41,96,42,19" />
       <scope id="4276006055363816691" at="47,35,48,17" />
-      <scope id="4276006055363816691" at="51,37,52,132" />
+      <scope id="4276006055363816691" at="51,37,52,140" />
       <scope id="4276006055363816693" at="60,87,61,242" />
       <scope id="4276006055363816695" at="64,78,65,340" />
-      <scope id="4276006055363816691" at="68,48,69,45" />
+      <scope id="4276006055363816691" at="68,48,69,53" />
       <scope id="4276006055363816691" at="57,0,59,0" />
       <scope id="4276006055363816691" at="23,0,26,0" />
       <scope id="4276006055363816691" at="26,0,30,0" />
@@ -6224,8 +6224,8 @@
         <var name="editorContext" id="4276006055363816691" />
         <var name="node" id="4276006055363816691" />
       </scope>
-      <unit id="4276006055363816691" at="56,0,72,0" name="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention$IntentionImplementation" />
-      <unit id="4276006055363816691" at="21,0,73,0" name="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention" />
+      <unit id="4276006055363816691" at="56,0,72,0" name="jetbrains.mps.baseLanguage.intentions.ToggleMethodSynchronized_Intention$IntentionImplementation" />
+      <unit id="4276006055363816691" at="21,0,73,0" name="jetbrains.mps.baseLanguage.intentions.ToggleMethodSynchronized_Intention" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/4467513934994688403">

@@ -59,8 +59,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
           intentions = new IntentionFactory[5];
           intentions[0] = new MakeGeneric_Intention();
           intentions[1] = new AddThrows_Intention();
-          intentions[2] = new MakeMethodFinal_Intention();
-          intentions[3] = new MakeSynchronized_Intention();
+          intentions[2] = new ToggleMethodFinal_Intention();
+          intentions[3] = new ToggleMethodSynchronized_Intention();
           intentions[4] = new AddModifiers_Intention();
         }
         break;
@@ -419,7 +419,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[35] = new AddThrows_Intention();
     rv[36] = new MakeMethodAbstract_Intention();
     rv[37] = new IterateOverIterable_Intention();
-    rv[38] = new MakeMethodFinal_Intention();
+    rv[38] = new ToggleMethodFinal_Intention();
     rv[39] = new MakeFieldVolatile_Intention();
     rv[40] = new MakeClassAbstractFromMethod_Intention();
     rv[41] = new ChangeStaticInInner_Intention();
@@ -449,7 +449,7 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[65] = new SurroundWithIfClause_Intention();
     rv[66] = new SurroundWithIfElseClause_Intention();
     rv[67] = new AddTypeParameters_Intention();
-    rv[68] = new MakeSynchronized_Intention();
+    rv[68] = new ToggleMethodSynchronized_Intention();
     rv[69] = new ConvertToClosure_Intention();
     rv[70] = new UnwrapIfThenBlock_Intention();
     rv[71] = new UnwrapTryCatch_Intention();
