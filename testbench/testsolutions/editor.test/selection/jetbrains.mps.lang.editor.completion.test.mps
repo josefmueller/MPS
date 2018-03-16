@@ -7318,6 +7318,7 @@
                     <node concept="37vLTw" id="39A5F7XH1NV" role="37wK5m">
                       <ref role="3cqZAo" node="39A5F7XH1NI" resolve="enumMemberDeclaration" />
                     </node>
+                    <node concept="10Nm6u" id="4v6I$adEuxZ" role="37wK5m" />
                   </node>
                 </node>
               </node>

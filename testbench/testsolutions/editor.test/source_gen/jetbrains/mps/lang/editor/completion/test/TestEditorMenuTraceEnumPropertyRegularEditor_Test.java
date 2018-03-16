@@ -47,7 +47,7 @@ public class TestEditorMenuTraceEnumPropertyRegularEditor_Test extends BaseTrans
 
           EditorMenuTraceInfo editorMenuTraceInfo = action.getEditorMenuTraceInfo();
           SNodeReference enumMemberDeclaration = SNodeOperations.getPointer(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "3631615103242154418"), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).first());
-          EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, enumMemberDeclaration);
+          EditorMenuTraceTestUtil.checkTraceInfoPath(editorMenuTraceInfo, enumMemberDeclaration, null);
         }
       });
     }
