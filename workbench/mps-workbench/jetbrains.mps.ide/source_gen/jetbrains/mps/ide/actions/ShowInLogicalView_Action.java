@@ -7,11 +7,12 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
 public class ShowInLogicalView_Action extends BaseAction {
@@ -28,12 +29,16 @@ public class ShowInLogicalView_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    SModule module = (((SNode) MapSequence.fromMap(_params).get("node")).getModel() == null ? null : ((SNode) MapSequence.fromMap(_params).get("node")).getModel().getModule());
+    if (module == null) {
+      return false;
+    }
     ProjectPane pane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     ProjectTreeFindHelper treeFinder = new ProjectTreeFindHelper(pane.getTree());
     // it's fine if we could navigate to a module. If the module is not part of the project pane, no reason to expect more. 
     // If, however, module is present, it's highly likely node's model would be there as well, and the node, too. 
     // Just don't want to slow down by ensuring there's model and node in the tree. 
-    return treeFinder.findMostSuitableModuleTreeNode(((SNode) MapSequence.fromMap(_params).get("node")).getModel().getModule()) != null;
+    return treeFinder.findMostSuitableModuleTreeNode(module) != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

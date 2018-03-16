@@ -11,98 +11,98 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <root nodeRef="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)/8258351465735794199">
     <file name="TestPackagedLanguage_Test.java">
-      <node id="8970160220945047479" at="26,0,27,0" concept="2" trace="projectRepository" />
-      <node id="2002276751247846873" at="29,25,30,56" concept="6" />
-      <node id="2002276751247846877" at="30,56,31,39" concept="1" />
-      <node id="1000993208133067916" at="31,39,32,56" concept="1" />
-      <node id="2002276751247800529" at="38,25,39,94" concept="6" />
-      <node id="2002276751247829504" at="39,94,40,36" concept="1" />
-      <node id="2002276751247832467" at="40,36,41,99" concept="1" />
-      <node id="2002276751247847450" at="47,25,48,92" concept="6" />
-      <node id="2002276751247847457" at="48,92,49,37" concept="1" />
-      <node id="2002276751247847459" at="49,37,50,100" concept="1" />
-      <node id="7523571704661535896" at="56,25,57,30" concept="1" />
-      <node id="1000993208133261891" at="57,30,58,114" concept="6" />
-      <node id="2002276751247880080" at="58,114,59,183" concept="6" />
-      <node id="2002276751247906761" at="59,183,60,35" concept="1" />
-      <node id="2002276751247908213" at="60,35,61,53" concept="1" />
-      <node id="2002276751247912867" at="61,53,62,54" concept="1" />
-      <node id="2002276751247819636" at="68,25,69,35" concept="6" />
-      <node id="1000993208133086560" at="69,35,70,64" concept="6" />
-      <node id="2002276751247819649" at="72,45,73,29" concept="1" />
-      <node id="2002276751247819653" at="73,29,74,18" concept="0" />
-      <node id="2002276751247922714" at="76,9,77,43" concept="1" />
-      <node id="2002276751247922716" at="77,43,78,106" concept="1" />
-      <node id="2002276751247944717" at="78,106,79,440" concept="1" />
-      <node id="8970160220945068146" at="83,23,84,113" concept="8" />
-      <node id="8970160220945058335" at="84,113,85,93" concept="1" />
-      <node id="1000993208133080057" at="87,48,88,154" concept="7" />
-      <node id="1000993208133072633" at="87,0,90,0" concept="5" trace="testPackagedLanguageModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="2002276751247819642" at="71,67,75,11" concept="4" />
-      <node id="8258351465735794199" at="83,0,87,0" concept="5" trace="setUp#()V" />
-      <node id="2961837941531615398" at="29,0,34,0" concept="5" trace="run#()V" />
-      <node id="2961837941531615573" at="38,0,43,0" concept="5" trace="run#()V" />
-      <node id="2961837941531615919" at="47,0,52,0" concept="5" trace="run#()V" />
-      <node id="2002276751247819639" at="70,64,76,9" concept="3" />
-      <node id="2961837941531615396" at="27,59,34,7" concept="1" />
-      <node id="2961837941531615571" at="36,58,43,7" concept="1" />
-      <node id="2961837941531615917" at="45,55,52,7" concept="1" />
-      <node id="2961837941531616255" at="56,0,64,0" concept="5" trace="run#()V" />
-      <node id="2002276751247844794" at="27,0,36,0" concept="5" trace="test_testLanguagePresent#()V" />
-      <node id="2249764655697855321" at="36,0,45,0" concept="5" trace="test_testStructureModel#()V" />
-      <node id="5973657458022228899" at="45,0,54,0" concept="5" trace="test_testEditorModel#()V" />
-      <node id="2961837941531616253" at="54,49,64,7" concept="1" />
-      <node id="2249764655697855337" at="54,0,66,0" concept="5" trace="test_testIcons#()V" />
-      <node id="2961837941531616817" at="68,0,81,0" concept="5" trace="run#()V" />
-      <node id="2961837941531616815" at="66,49,81,7" concept="1" />
-      <node id="2249764655697855353" at="66,0,83,0" concept="5" trace="test_testStubs#()V" />
-      <scope id="1000993208133072637" at="87,48,88,154" />
-      <scope id="2002276751247819648" at="72,45,74,18" />
-      <scope id="8970160220945047643" at="83,23,85,93" />
-      <scope id="2961837941531615400" at="29,25,32,56">
+      <node id="8970160220945047479" at="28,0,29,0" concept="2" trace="projectRepository" />
+      <node id="2002276751247846873" at="31,25,32,56" concept="6" />
+      <node id="2002276751247846877" at="32,56,33,39" concept="1" />
+      <node id="1000993208133067916" at="33,39,34,56" concept="1" />
+      <node id="2002276751247800529" at="40,25,41,94" concept="6" />
+      <node id="2002276751247829504" at="41,94,42,36" concept="1" />
+      <node id="2002276751247832467" at="42,36,43,99" concept="1" />
+      <node id="2002276751247847450" at="49,25,50,92" concept="6" />
+      <node id="2002276751247847457" at="50,92,51,37" concept="1" />
+      <node id="2002276751247847459" at="51,37,52,100" concept="1" />
+      <node id="7523571704661535896" at="58,25,59,30" concept="1" />
+      <node id="1000993208133261891" at="59,30,60,114" concept="6" />
+      <node id="2002276751247880080" at="60,114,61,183" concept="6" />
+      <node id="2002276751247906761" at="61,183,62,35" concept="1" />
+      <node id="2002276751247908213" at="62,35,63,53" concept="1" />
+      <node id="2002276751247912867" at="63,53,64,54" concept="1" />
+      <node id="2002276751247819636" at="70,25,71,35" concept="6" />
+      <node id="1000993208133086560" at="71,35,72,64" concept="6" />
+      <node id="2002276751247819649" at="74,45,75,29" concept="1" />
+      <node id="2002276751247819653" at="75,29,76,18" concept="0" />
+      <node id="2002276751247922714" at="78,9,79,43" concept="1" />
+      <node id="2002276751247922716" at="79,43,80,106" concept="1" />
+      <node id="2002276751247944717" at="80,106,81,440" concept="1" />
+      <node id="8970160220945068146" at="85,23,86,113" concept="8" />
+      <node id="8970160220945058335" at="86,113,87,93" concept="1" />
+      <node id="1000993208133080057" at="89,48,90,154" concept="7" />
+      <node id="1000993208133072633" at="89,0,92,0" concept="5" trace="testPackagedLanguageModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="2002276751247819642" at="73,67,77,11" concept="4" />
+      <node id="8258351465735794199" at="85,0,89,0" concept="5" trace="setUp#()V" />
+      <node id="2961837941531615398" at="31,0,36,0" concept="5" trace="run#()V" />
+      <node id="2961837941531615573" at="40,0,45,0" concept="5" trace="run#()V" />
+      <node id="2961837941531615919" at="49,0,54,0" concept="5" trace="run#()V" />
+      <node id="2002276751247819639" at="72,64,78,9" concept="3" />
+      <node id="2961837941531615396" at="29,59,36,7" concept="1" />
+      <node id="2961837941531615571" at="38,58,45,7" concept="1" />
+      <node id="2961837941531615917" at="47,55,54,7" concept="1" />
+      <node id="2961837941531616255" at="58,0,66,0" concept="5" trace="run#()V" />
+      <node id="2002276751247844794" at="29,0,38,0" concept="5" trace="test_testLanguagePresent#()V" />
+      <node id="2249764655697855321" at="38,0,47,0" concept="5" trace="test_testStructureModel#()V" />
+      <node id="5973657458022228899" at="47,0,56,0" concept="5" trace="test_testEditorModel#()V" />
+      <node id="2961837941531616253" at="56,49,66,7" concept="1" />
+      <node id="2249764655697855337" at="56,0,68,0" concept="5" trace="test_testIcons#()V" />
+      <node id="2961837941531616817" at="70,0,83,0" concept="5" trace="run#()V" />
+      <node id="2961837941531616815" at="68,49,83,7" concept="1" />
+      <node id="2249764655697855353" at="68,0,85,0" concept="5" trace="test_testStubs#()V" />
+      <scope id="1000993208133072637" at="89,48,90,154" />
+      <scope id="2002276751247819648" at="74,45,76,18" />
+      <scope id="8970160220945047643" at="85,23,87,93" />
+      <scope id="2961837941531615400" at="31,25,34,56">
         <var name="language" id="2002276751247846874" />
       </scope>
-      <scope id="2961837941531615575" at="38,25,41,99">
+      <scope id="2961837941531615575" at="40,25,43,99">
         <var name="struc" id="2002276751247800528" />
       </scope>
-      <scope id="2961837941531615921" at="47,25,50,100">
+      <scope id="2961837941531615921" at="49,25,52,100">
         <var name="editor" id="2002276751247847451" />
       </scope>
-      <scope id="1000993208133072633" at="87,0,90,0" />
-      <scope id="2002276751247819641" at="71,67,75,11" />
-      <scope id="8258351465735794199" at="83,0,87,0" />
-      <scope id="2961837941531615398" at="29,0,34,0" />
-      <scope id="2961837941531615573" at="38,0,43,0" />
-      <scope id="2961837941531615919" at="47,0,52,0" />
-      <scope id="2961837941531616257" at="56,25,62,54">
+      <scope id="1000993208133072633" at="89,0,92,0" />
+      <scope id="2002276751247819641" at="73,67,77,11" />
+      <scope id="8258351465735794199" at="85,0,89,0" />
+      <scope id="2961837941531615398" at="31,0,36,0" />
+      <scope id="2961837941531615573" at="40,0,45,0" />
+      <scope id="2961837941531615919" at="49,0,54,0" />
+      <scope id="2961837941531616257" at="58,25,64,54">
         <var name="icon" id="2002276751247880081" />
         <var name="iconManager" id="1000993208133261892" />
       </scope>
-      <scope id="2002276751247819639" at="70,64,76,9">
+      <scope id="2002276751247819639" at="72,64,78,9">
         <var name="m" id="2002276751247819654" />
       </scope>
-      <scope id="2002276751247844799" at="27,59,34,7" />
-      <scope id="2249764655697855324" at="36,58,43,7" />
-      <scope id="5973657458022228904" at="45,55,52,7" />
-      <scope id="2961837941531616255" at="56,0,64,0" />
-      <scope id="2002276751247844794" at="27,0,36,0" />
-      <scope id="2249764655697855321" at="36,0,45,0" />
-      <scope id="5973657458022228899" at="45,0,54,0" />
-      <scope id="2249764655697855340" at="54,49,64,7" />
-      <scope id="2961837941531616819" at="68,25,79,440">
+      <scope id="2002276751247844799" at="29,59,36,7" />
+      <scope id="2249764655697855324" at="38,58,45,7" />
+      <scope id="5973657458022228904" at="47,55,54,7" />
+      <scope id="2961837941531616255" at="58,0,66,0" />
+      <scope id="2002276751247844794" at="29,0,38,0" />
+      <scope id="2249764655697855321" at="38,0,47,0" />
+      <scope id="5973657458022228899" at="47,0,56,0" />
+      <scope id="2249764655697855340" at="56,49,66,7" />
+      <scope id="2961837941531616819" at="70,25,81,440">
         <var name="expected" id="1000993208133086561" />
         <var name="libraryModel" id="2002276751247819635" />
       </scope>
-      <scope id="2249764655697855337" at="54,0,66,0" />
-      <scope id="2961837941531616817" at="68,0,81,0" />
-      <scope id="2249764655697855356" at="66,49,81,7" />
-      <scope id="2249764655697855353" at="66,0,83,0" />
-      <unit id="2961837941531615398" at="28,57,34,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$1" />
-      <unit id="2961837941531615573" at="37,57,43,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$2" />
-      <unit id="2961837941531615919" at="46,57,52,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$3" />
-      <unit id="2961837941531616255" at="55,57,64,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$4" />
-      <unit id="2961837941531616817" at="67,57,81,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$5" />
-      <unit id="8258351465735794199" at="25,0,91,0" name="testPackagedLanguage.test.TestPackagedLanguage_Test" />
+      <scope id="2249764655697855337" at="56,0,68,0" />
+      <scope id="2961837941531616817" at="70,0,83,0" />
+      <scope id="2249764655697855356" at="68,49,83,7" />
+      <scope id="2249764655697855353" at="68,0,85,0" />
+      <unit id="2961837941531615398" at="30,57,36,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$1" />
+      <unit id="2961837941531615573" at="39,57,45,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$2" />
+      <unit id="2961837941531615919" at="48,57,54,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$3" />
+      <unit id="2961837941531616255" at="57,57,66,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$4" />
+      <unit id="2961837941531616817" at="69,57,83,5" name="testPackagedLanguage.test.TestPackagedLanguage_Test$5" />
+      <unit id="8258351465735794199" at="26,0,93,0" name="testPackagedLanguage.test.TestPackagedLanguage_Test" />
     </file>
   </root>
 </debug-info>
