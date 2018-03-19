@@ -33,9 +33,9 @@ public class WithPlatformTestExecutor extends DefaultTestExecutor {
     try {
       executor.run();
     } finally {
-      executor.exit();
       env.dispose();
       CachesUtil.cleanupCaches();
+      executor.exit();
     }
   }
 
