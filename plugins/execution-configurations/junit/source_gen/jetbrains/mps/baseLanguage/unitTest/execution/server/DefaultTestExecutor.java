@@ -54,16 +54,17 @@ public class DefaultTestExecutor extends JUnitTestExecutor {
     DefaultTestExecutor executor = new DefaultTestExecutor(new CommandLineTestsContributor(args));
     try {
       executor.run();
-    } catch (Throwable t) {
-      executor.processThrowable(t);
+    } finally {
+      executor.exit();
     }
-    executor.exit();
   }
 
   protected void run() {
     try {
       init();
       execute();
+    } catch (Throwable t) {
+      processThrowable(t);
     } finally {
       dispose();
     }
