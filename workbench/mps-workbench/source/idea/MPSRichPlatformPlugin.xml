@@ -466,5 +466,9 @@
     <xi:fallback/>
   </xi:include>
   -->
+  <!-- Copy paste from XmlPlugin.xml-->
+  <extensions defaultExtensionNs="org.jetbrains">
+    <urlOpener implementation="com.intellij.ide.browsers.impl.DefaultUrlOpener" order="last"/>
+  </extensions>
   <xi:include href="/META-INF/built-in-server.xml" xpointer="xpointer(/idea-plugin/*)"/>
 </idea-plugin>
