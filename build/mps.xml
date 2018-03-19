@@ -60,7 +60,7 @@
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
         <version codename="MPS" major="2018" minor="1" eap="false" update-channel="MPS181" />
-        <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
+        <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" copyrightStart="2009" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="FFFFFF" progressColor="FFFFFF" progressX="117" progressY="280" progressHeight="3" />
         <about url="/mpsAbout.png" foreground="FFFFFF" copyrightForeground="FFFFFF" />
