@@ -876,6 +876,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodePointer_GetModelOperation:
         if (props_NodePointer_GetModelOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("get model pointer");
           cpb.rawPresentation("model");
           props_NodePointer_GetModelOperation = cpb.create();
         }

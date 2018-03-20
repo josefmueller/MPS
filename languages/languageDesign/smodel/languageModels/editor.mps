@@ -9834,8 +9834,8 @@
     <node concept="3EZMnI" id="3ayRDg9aL_A" role="2wV5jI">
       <node concept="3F0ifn" id="3ayRDg9aL_B" role="3EZMnx">
         <property role="3F0ifm" value="resolve" />
-        <node concept="3$7jql" id="3ayRDg9aL_C" role="3F10Kt">
-          <property role="3$6WeP" value="0.0" />
+        <node concept="A1WHr" id="7QspFwTtAMB" role="3vIgyS">
+          <ref role="2ZyFGn" to="tp25:3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
         </node>
       </node>
       <node concept="3F0ifn" id="3ayRDg9aL_D" role="3EZMnx">
@@ -10533,12 +10533,9 @@
   <node concept="24kQdi" id="5kLyeZleWR6">
     <property role="3GE5qa" value="operation.pointer" />
     <ref role="1XX52x" to="tp25:5kLyeZleWQw" resolve="NodePointer_GetModelOperation" />
-    <node concept="3EZMnI" id="5kLyeZlf7ya" role="2wV5jI">
-      <node concept="PMmxH" id="5kLyeZlf7yk" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="l2Vlx" id="5kLyeZlf7yd" role="2iSdaV" />
-      <node concept="VPM3Z" id="5kLyeZlff7h" role="3F10Kt">
+    <node concept="PMmxH" id="5kLyeZlf7yk" role="2wV5jI">
+      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      <node concept="VPxyj" id="7QspFwTqR4z" role="3F10Kt">
         <property role="VOm3f" value="false" />
       </node>
     </node>

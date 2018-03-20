@@ -3024,6 +3024,7 @@
     <property role="3GE5qa" value="operation.pointer" />
     <property role="TrG5h" value="NodePointer_GetModelOperation" />
     <property role="34LRSv" value="model" />
+    <property role="R4oN_" value="get model pointer" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5kLyeZleWQE" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
