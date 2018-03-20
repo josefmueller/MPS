@@ -167,7 +167,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
       private void installCellInfo(SNode child, EditorCell editorCell) {
         if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"), child));
+          editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
         }
         if (editorCell.getRole() == null) {
           editorCell.setRole("highType");
@@ -309,7 +309,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
       private void installCellInfo(SNode child, EditorCell editorCell) {
         if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25ed9L, "lowType"), child));
+          editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
         }
         if (editorCell.getRole() == null) {
           editorCell.setRole("lowType");
