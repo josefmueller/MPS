@@ -14,6 +14,7 @@
 /contrib/build/artifacts/
 /build/resources/help/
 /build/resources/JDK/
+/build/resources/openJDK
 classes
 classes_gen
 testclasses
