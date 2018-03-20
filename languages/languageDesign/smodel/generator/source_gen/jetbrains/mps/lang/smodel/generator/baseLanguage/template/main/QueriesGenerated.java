@@ -2288,9 +2288,6 @@ public class QueriesGenerated {
   public static boolean mappingConfiguration_Condition_3624172675690776407(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x412437525e297780L, "jetbrains.mps.lang.smodel.structure.OfConceptOperation"))).isNotEmpty();
   }
-  public static boolean mappingConfiguration_Condition_3648723375514217928(final TemplateQueryContext _context) {
-    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x386b28659aca029dL, "jetbrains.mps.lang.smodel.structure.AbstractPointerResolveOperation"))).isNotEmpty();
-  }
   public static Object insertMacro_varValue_2837022116960117135(final TemplateVarContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept"))).first();
   }

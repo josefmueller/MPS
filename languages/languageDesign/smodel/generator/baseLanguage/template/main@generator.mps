@@ -21725,26 +21725,6 @@
   </node>
   <node concept="bUwia" id="3ayRDg9c6R4">
     <property role="TrG5h" value="mc_pointer_operations" />
-    <node concept="avzCv" id="3ayRDg9c6R8" role="avys_">
-      <node concept="3clFbS" id="3ayRDg9c6R9" role="2VODD2">
-        <node concept="3clFbF" id="3ayRDg9c6Ra" role="3cqZAp">
-          <node concept="2OqwBi" id="3ayRDg9c6Rb" role="3clFbG">
-            <node concept="2OqwBi" id="3ayRDg9c6Rc" role="2Oq$k0">
-              <node concept="2OqwBi" id="3ayRDg9c6Rd" role="2Oq$k0">
-                <node concept="1iwH7S" id="3ayRDg9c6Re" role="2Oq$k0" />
-                <node concept="1r8y6K" id="3ayRDg9c6Rf" role="2OqNvi" />
-              </node>
-              <node concept="2SmgA7" id="3ayRDg9c6Rg" role="2OqNvi">
-                <node concept="chp4Y" id="3xFa6mqM_In" role="1dBWTz">
-                  <ref role="cht4Q" to="tp25:3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
-                </node>
-              </node>
-            </node>
-            <node concept="3GX2aA" id="3ayRDg9c6Ri" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="3ayRDg9c98a" role="3acgRq">
       <ref role="30HIoZ" to="tpee:hqOqwz4" resolve="DotExpression" />
       <node concept="30G5F_" id="3ayRDg9c98e" role="30HLyM">

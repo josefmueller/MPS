@@ -367,11 +367,9 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateArgumentContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
