@@ -257,7 +257,6 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
-      <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
@@ -2103,28 +2102,13 @@
               </node>
             </node>
             <node concept="3cpWs6" id="2KtaGVsDU$s" role="3cqZAp">
-              <node concept="1Wc70l" id="2KtaGVsDY2J" role="3cqZAk">
-                <node concept="2OqwBi" id="2KtaGVsE0ej" role="3uHU7w">
-                  <node concept="2OqwBi" id="2KtaGVsDYIM" role="2Oq$k0">
-                    <node concept="37vLTw" id="2KtaGVsDYj_" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2KtaGVsDTeF" resolve="targetNode" />
-                    </node>
-                    <node concept="2Rxl7S" id="2KtaGVsDZ2Z" role="2OqNvi" />
-                  </node>
-                  <node concept="1mIQ4w" id="2KtaGVsE0BM" role="2OqNvi">
-                    <node concept="chp4Y" id="2KtaGVsE0QV" role="cj9EA">
-                      <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                    </node>
-                  </node>
+              <node concept="2OqwBi" id="2KtaGVsDV85" role="3cqZAk">
+                <node concept="37vLTw" id="2KtaGVsDUMh" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2KtaGVsDTeF" resolve="targetNode" />
                 </node>
-                <node concept="2OqwBi" id="2KtaGVsDV85" role="3uHU7B">
-                  <node concept="37vLTw" id="2KtaGVsDUMh" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2KtaGVsDTeF" resolve="targetNode" />
-                  </node>
-                  <node concept="1mIQ4w" id="2KtaGVsDVwO" role="2OqNvi">
-                    <node concept="chp4Y" id="2KtaGVsDVJv" role="cj9EA">
-                      <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
-                    </node>
+                <node concept="1mIQ4w" id="2KtaGVsDVwO" role="2OqNvi">
+                  <node concept="chp4Y" id="2KtaGVsDVJv" role="cj9EA">
+                    <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
                   </node>
                 </node>
               </node>
