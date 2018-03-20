@@ -18,14 +18,14 @@ import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
-public final class MakeSynchronized_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class ToggleMethodSynchronized_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public MakeSynchronized_Intention() {
+  public ToggleMethodSynchronized_Intention() {
     super(Kind.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4276006055363816691"));
   }
   @Override
   public String getPresentation() {
-    return "MakeSynchronized";
+    return "ToggleMethodSynchronized";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -49,7 +49,7 @@ public final class MakeSynchronized_Intention extends AbstractIntentionDescripto
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeSynchronized_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleMethodSynchronized_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -66,7 +66,7 @@ public final class MakeSynchronized_Intention extends AbstractIntentionDescripto
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return MakeSynchronized_Intention.this;
+      return ToggleMethodSynchronized_Intention.this;
     }
   }
 }

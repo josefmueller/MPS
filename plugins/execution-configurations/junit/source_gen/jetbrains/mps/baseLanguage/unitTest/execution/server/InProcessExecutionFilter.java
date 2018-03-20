@@ -13,12 +13,22 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
  */
 /*package*/ class InProcessExecutionFilter {
 
-  public void check(ITestNodeWrapper testNodeWrapper, SNode testNode) throws Exception {
+  public void check(ITestNodeWrapper testNodeWrapper, SNode testNode) throws InProcessExecutionFilter.MPSException {
     if (!(testNodeWrapper.canRunInProcess())) {
-      throw new Exception("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+      throw new InProcessExecutionFilter.MPSException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
     }
     if ((boolean) TestInfo__BehaviorDescriptor.reOpenProject_idThWTaQhG7P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo")), SNodeOperations.getModel(testNode))) {
-      throw new Exception("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+      throw new InProcessExecutionFilter.MPSException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
+    }
+  }
+
+  /*package*/ static final class MPSException extends Exception {
+    public MPSException(String msg) {
+      super(msg);
+    }
+
+    public Throwable fillInStackTrace() {
+      return this;
     }
   }
 }

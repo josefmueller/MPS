@@ -44,7 +44,10 @@ import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CreateRootNodeGroup extends BaseGroup {
   private String myPackage;
@@ -113,23 +116,21 @@ public class CreateRootNodeGroup extends BaseGroup {
       mainLanguages.add(BootstrapLanguages.getGeneratorLang());
     }
     mainLanguages.addAll(LanguageAspectSupport.getMainLanguages(targetModel));
-    for (SLanguage lang : LanguageAspectSupport.getDefaultDevkitLanguages(targetModel)) {
-      if (!mainLanguages.contains(lang)) {
-        mainLanguages.add(lang);
-      }
-    }
     for (SLanguage mainLang : mainLanguages) {
       addActionsForRoots(mainLang, targetModel, this);
     }
     addSeparator();
 
-    Collection<SLanguage> additionalLanguages = LanguageAspectSupport.getAdditionalLanguages(targetModel);
+    Set<SLanguage> additionalLanguages = new LinkedHashSet<>(LanguageAspectSupport.getAdditionalLanguages(targetModel));
+    additionalLanguages.addAll(LanguageAspectSupport.getDefaultDevkitLanguages(targetModel));
     additionalLanguages.removeAll(mainLanguages);
     for (SLanguage addLang : additionalLanguages) {
       String name = addLang.getQualifiedName();
       DefaultActionGroup langGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
       addActionsForRoots(addLang, targetModel, langGroup);
-      add(langGroup);
+      if (langGroup.getChildrenCount() > 0) {
+        add(langGroup);
+      }
     }
     addSeparator();
 

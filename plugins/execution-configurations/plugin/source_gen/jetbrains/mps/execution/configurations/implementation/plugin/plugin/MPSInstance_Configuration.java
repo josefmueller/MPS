@@ -13,7 +13,6 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import java.io.File;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -85,9 +84,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   public DeployPluginsSettings_Configuration getPluginsSettings() {
     return myPluginsSettings;
   }
-  public File getPluginsPath() {
-    return new File(this.getMpsSettings().expandPath(this.getMpsSettings().getConfigurationPath()), "plugins");
-  }
   @Override
   public MPSInstance_Configuration clone() {
     MPSInstance_Configuration clone = null;
@@ -150,6 +146,6 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createDeployPluginsTask() {
-    return new Object[]{this.getPluginsSettings().getPluginsListToDeploy(), this.getPluginsPath()};
+    return new Object[]{this.getPluginsSettings().getPluginsListToDeploy(), this.getMpsSettings().getPluginsPath()};
   }
 }

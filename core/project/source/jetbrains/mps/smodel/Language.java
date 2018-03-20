@@ -548,7 +548,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       if (!initialDevKits.isEmpty()) {
         return initialDevKits;
       }
-      return Collections.singleton(BootstrapLanguages.getLanguageDesignDevKit());
+      return Collections.singleton(BootstrapLanguages.getGeneralPurposeDevKit());
     }
   }
 }
