@@ -6965,6 +6965,9 @@
         <node concept="3LEDTM" id="LjzjD8FKPo" role="3LEDUa">
           <ref role="3LEDTN" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
         </node>
+        <node concept="3LEz8M" id="4M5IDeMSLk_" role="3LEz9a">
+          <ref role="3LEz8N" node="7Kfy9QB6KXK" resolve="jetbrains.mps.devkit.general-purpose" />
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="1jjYQYShOpH" role="3989C9">
