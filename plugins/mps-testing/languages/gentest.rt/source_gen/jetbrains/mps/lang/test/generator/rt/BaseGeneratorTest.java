@@ -4,8 +4,11 @@ package jetbrains.mps.lang.test.generator.rt;
 
 import jetbrains.mps.tool.environment.EnvironmentAware;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.messages.LogHandler;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -17,11 +20,10 @@ import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class BaseGeneratorTest implements EnvironmentAware {
   private Environment myEnv;
-  private Project myProject;
+  private SRepository myRepository;
 
 
   @Override
@@ -29,11 +31,13 @@ public class BaseGeneratorTest implements EnvironmentAware {
     myEnv = env;
     // FIXME AntModuleTestSuite opens a project and I don't see a reason for the test to open another one. 
     //       Project shall be external configuration setting. 
-    myProject = myEnv.createEmptyProject();
+    myRepository = myEnv.getPlatform().findComponent(MPSModuleRepository.class);
   }
 
   protected final TransformHelper newTransformer() {
-    return new TransformHelper(myProject);
+    // Perhaps, we shall use a handler that pipes everything to stdout (warn -> stdout, error -> stderr?), but for now it's just 
+    // a logger with a category matching name of a test class 
+    return new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
   }
 
   protected final boolean match(final SModel m1, final SModel m2) {
@@ -45,7 +49,7 @@ public class BaseGeneratorTest implements EnvironmentAware {
     // equal (in aforementioned sense) nodes, for external references that the target is equal is java sense. 
     // FIXME use of myProject.getModelAccess() is wrong, empty project we've just created doesn't have modules with test data, 
     //       however, at the moment I've got no better idea how to access project of MpsTestsSuite 
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         List<NodeDifference> diff = new NodesMatcher().match(SModelOperations.roots(m1, null), SModelOperations.roots(m2, null));
         return diff == null || diff.isEmpty();
