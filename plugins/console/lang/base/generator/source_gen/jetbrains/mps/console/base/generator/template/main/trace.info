@@ -41,7 +41,7 @@
   </root>
   <root nodeRef="r:834d62e5-8e63-445b-ae58-4c325432808d(jetbrains.mps.console.base.generator.template.main@generator)/7600370246415688284">
     <file name="QueriesGenerated.java">
-      <node id="3395429865810173269" at="48,110,49,325" concept="2" />
+      <node id="3395429865810173269" at="48,110,49,555" concept="2" />
       <node id="7600370246421450740" at="51,110,52,325" concept="2" />
       <node id="648136571574025919" at="54,110,55,233" concept="2" />
       <node id="3492877759612498559" at="57,110,58,492" concept="1" />
@@ -52,7 +52,7 @@
       <node id="9010839353951768774" at="85,108,86,190" concept="2" />
       <node id="7600370246429334110" at="88,108,89,190" concept="2" />
       <node id="7600370246419387225" at="91,108,92,190" concept="2" />
-      <node id="3395429865810173271" at="332,62,333,63" concept="1" />
+      <node id="3395429865810173271" at="332,63,333,63" concept="1" />
       <node id="3395429865810173271" at="333,63,334,30" concept="1" />
       <node id="3395429865810173271" at="334,30,335,245" concept="0" />
       <node id="3395429865810173271" at="335,245,336,24" concept="2" />
@@ -60,9 +60,9 @@
       <node id="7600370246421453722" at="339,63,340,30" concept="1" />
       <node id="7600370246421453722" at="340,30,341,246" concept="0" />
       <node id="7600370246421453722" at="341,246,342,24" concept="2" />
-      <node id="3395429865810173271" at="332,0,338,0" concept="3" trace="_quotation_createNode_x583g4_b0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3395429865810173271" at="332,0,338,0" concept="3" trace="_quotation_createNode_x583g4_b0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7600370246421453722" at="338,0,344,0" concept="3" trace="_quotation_createNode_x583g4_b0a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3395429865810138643" at="48,110,49,325" />
+      <scope id="3395429865810138643" at="48,110,49,555" />
       <scope id="7600370246419375460" at="51,110,52,325" />
       <scope id="7600370246421231723" at="54,110,55,233" />
       <scope id="3786816536599965791" at="61,110,62,282" />
@@ -74,7 +74,7 @@
       <scope id="3856122757887589573" at="57,110,59,32">
         <var name="functionType" id="3492877759612498562" />
       </scope>
-      <scope id="3395429865810173271" at="332,62,336,24">
+      <scope id="3395429865810173271" at="332,63,336,24">
         <var name="facade" id="3395429865810173271" />
         <var name="quotedNode_1" id="3395429865810173271" />
       </scope>
