@@ -13,6 +13,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="xlb7" ref="r:cf42fd0a-68d2-493b-8b77-961658617704(jetbrains.mps.lang.modelapi.behavior)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -105,6 +106,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -681,6 +683,49 @@
         <property role="TrG5h" value="initialNodes" />
         <node concept="_YKpA" id="3AgLsfUhkVi" role="1tU5fm">
           <node concept="3Tqbb2" id="3AgLsfUhkVU" role="_ZDj9" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7QspFwTvBe8">
+    <property role="3GE5qa" value="openapi" />
+    <ref role="1M2myG" to="dvox:_GDk1qYZig" resolve="ModelName" />
+    <node concept="EnEH3" id="7QspFwTvBe9" role="1MhHOB">
+      <ref role="EomxK" to="dvox:_GDk1qYZih" resolve="value" />
+      <node concept="QB0g5" id="7QspFwTvBeb" role="QCWH9">
+        <node concept="3clFbS" id="7QspFwTvBec" role="2VODD2">
+          <node concept="SfApY" id="7QspFwTvBlu" role="3cqZAp">
+            <node concept="3clFbS" id="7QspFwTvBlv" role="SfCbr">
+              <node concept="3clFbF" id="7QspFwTvCMR" role="3cqZAp">
+                <node concept="2ShNRf" id="7QspFwTvCMP" role="3clFbG">
+                  <node concept="1pGfFk" id="7QspFwTvE1j" role="2ShVmc">
+                    <ref role="37wK5l" to="mhbf:~SModelName.&lt;init&gt;(java.lang.String)" resolve="SModelName" />
+                    <node concept="1Wqviy" id="7QspFwTvE8V" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="7QspFwTvEpH" role="3cqZAp">
+                <node concept="3clFbT" id="7QspFwTvEDl" role="3cqZAk">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
+            <node concept="TDmWw" id="7QspFwTvBlw" role="TEbGg">
+              <node concept="3cpWsn" id="7QspFwTvBlx" role="TDEfY">
+                <property role="TrG5h" value="exception" />
+                <node concept="3uibUv" id="7QspFwTvF14" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~IllegalArgumentException" resolve="IllegalArgumentException" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="7QspFwTvBlz" role="TDEfX">
+                <node concept="3cpWs6" id="7QspFwTvBsZ" role="3cqZAp">
+                  <node concept="3clFbT" id="7QspFwTvB$t" role="3cqZAk">
+                    <property role="3clFbU" value="false" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
