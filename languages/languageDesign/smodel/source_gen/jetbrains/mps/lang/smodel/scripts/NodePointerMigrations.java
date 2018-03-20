@@ -86,11 +86,15 @@ public final class NodePointerMigrations {
     SNode quotaion = SNodeOperations.cast(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"));
     SNode link = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, "jetbrains.mps.lang.smodel.structure.SLinkAccess")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96ea2caL, 0x108f974549cL, "link"));
     SNode targetNode = extractNodeFromQuotation(quotaion, link);
+    return nodeIdentityForNamedNode(SNodeOperations.as(targetNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")));
+  }
+
+  public static SNode nodeIdentityForNamedNode(SNode targetNode) {
     List<SNode> targetNodeTree = SNodeOperations.getNodeAncestors(targetNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), true);
 
     SNode result = null;
     for (SNode node : ListSequence.fromList(targetNodeTree)) {
-      result = createNamedNodeReference_svssow_a0a0h0o(node, SNodeOperations.cast(HUtil.copyIfNecessary(result), MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference")));
+      result = createNamedNodeReference_svssow_a0a0d0q(node, SNodeOperations.cast(HUtil.copyIfNecessary(result), MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference")));
     }
     return result;
   }
@@ -100,11 +104,11 @@ public final class NodePointerMigrations {
   }
 
   public static SNode getEqualityReplacement_Quotation(SNode nodeInstExpression, SNode nodeRefExpression) {
-    return createDotExpression_svssow_a0a81(SNodeOperations.cast(HUtil.copyIfNecessary(nodeInstExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SNodeOperations.cast(HUtil.copyIfNecessary(NodePointerMigrations.quotationToNodeIdentity(nodeRefExpression)), MetaAdapterFactory.getInterfaceConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L, "jetbrains.mps.lang.modelapi.structure.NodeIdentity")));
+    return createDotExpression_svssow_a0a02(SNodeOperations.cast(HUtil.copyIfNecessary(nodeInstExpression), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), SNodeOperations.cast(HUtil.copyIfNecessary(NodePointerMigrations.quotationToNodeIdentity(nodeRefExpression)), MetaAdapterFactory.getInterfaceConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a208f7L, "jetbrains.mps.lang.modelapi.structure.NodeIdentity")));
   }
 
   public static SNode getNotEqualityReplacement_Quotation(SNode nodeInstExpression, SNode nodeRefExpression) {
-    return createNotExpression_svssow_a0a02(SNodeOperations.cast(HUtil.copyIfNecessary(getEqualityReplacement_Quotation(nodeInstExpression, nodeRefExpression)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+    return createNotExpression_svssow_a0a22(SNodeOperations.cast(HUtil.copyIfNecessary(getEqualityReplacement_Quotation(nodeInstExpression, nodeRefExpression)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
   }
 
   public static boolean isDowncastToGetReferenceMethod_Node(SNode node) {
@@ -136,11 +140,11 @@ public final class NodePointerMigrations {
   }
 
   public static void replaceDowncastToGetReferenceMethod_Node(SNode node) {
-    SNodeOperations.replaceWithAnother(node, createDotExpression_svssow_a0a0a13(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, 0x10aaf6f6e81L, "leftExpression"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))));
+    SNodeOperations.replaceWithAnother(node, createDotExpression_svssow_a0a0a33(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, 0x10aaf6f6e81L, "leftExpression"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))));
   }
 
   public static void replaceDowncastToGetReferenceMethod_Model(SNode node) {
-    SNodeOperations.replaceWithAnother(node, createDotExpression_svssow_a0a0a33(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, 0x10aaf6f6e81L, "leftExpression"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))));
+    SNodeOperations.replaceWithAnother(node, createDotExpression_svssow_a0a0a53(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aaf6d7435L, 0x10aaf6f6e81L, "leftExpression"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))));
   }
 
   private static SNode createDotExpression_svssow_a0a6(Object p0, Object p1) {
@@ -166,7 +170,7 @@ public final class NodePointerMigrations {
     }
     return n1;
   }
-  private static SNode createNamedNodeReference_svssow_a0a0h0o(Object p0, Object p1) {
+  private static SNode createNamedNodeReference_svssow_a0a0d0q(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target"), (SNode) p0);
@@ -175,7 +179,7 @@ public final class NodePointerMigrations {
     }
     return n1;
   }
-  private static SNode createDotExpression_svssow_a0a81(Object p0, Object p1) {
+  private static SNode createDotExpression_svssow_a0a02(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     {
@@ -190,7 +194,7 @@ public final class NodePointerMigrations {
     }
     return n1;
   }
-  private static SNode createNotExpression_svssow_a0a02(Object p0) {
+  private static SNode createNotExpression_svssow_a0a22(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), null, null, false);
     if (p0 != null) {
@@ -198,7 +202,7 @@ public final class NodePointerMigrations {
     }
     return n1;
   }
-  private static SNode createDotExpression_svssow_a0a0a13(Object p0) {
+  private static SNode createDotExpression_svssow_a0a0a33(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     {
@@ -210,7 +214,7 @@ public final class NodePointerMigrations {
     }
     return n1;
   }
-  private static SNode createDotExpression_svssow_a0a0a33(Object p0) {
+  private static SNode createDotExpression_svssow_a0a0a53(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), null, null, false);
     {
