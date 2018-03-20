@@ -4,37 +4,46 @@ package jetbrains.mps.refactoring.test.test;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import junit.framework.Assert;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateModelImports;
 import jetbrains.mps.lang.core.pluginSolution.plugin.UpdateReferencesParticipantBase;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.MoveAspectsParticipant;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SProperty;
+import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Collection;
+import jetbrains.mps.errors.item.ReportItem;
+import java.util.ArrayList;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.util.Reference;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPointerOperations;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
-import java.util.Collection;
-import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -43,18 +52,147 @@ import java.util.concurrent.ExecutionException;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.application.ModalityState;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.project.validation.ValidationUtil;
-import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.util.Reference;
-import jetbrains.mps.ide.ThreadUtils;
 
 public class MoveConceptRefactoring_Test extends AbstractRefactoringTest_Test {
   private static final Logger LOG = LogManager.getLogger(MoveConceptRefactoring_Test.class);
   private static final String PROJECT_PATH = "testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/";
+  public void test_failingTest() throws Exception {
+    commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
+      public void invoke(List<RefactoringParticipant.Option> options) {
+        ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
+        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
+
+        ListSequence.fromList(options).addElement(MoveAspectsParticipant.OPTION);
+
+        ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
+        ListSequence.fromList(options).addElement(MoveNodeRefactoringLogParticipant.OPTION);
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        SNodeOperations.deleteNode(getInstanceB());
+        SNodeOperations.deleteNode(getConceptB());
+      }
+    }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
+      public void invoke(List<SNode> nodesToMove) {
+        ListSequence.fromList(nodesToMove).addElement(getConceptA());
+
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Iterable<SProperty> properties1 = getInstanceA().getProperties();
+        Assert.assertFalse(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage");
+          }
+        }));
+        Assert.assertTrue(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
+          }
+        }));
+      }
+    });
+  }
   public void test_moveConcept_MPS_27372() throws Exception {
+    commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
+      public void invoke(List<RefactoringParticipant.Option> options) {
+        ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
+        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
+
+        ListSequence.fromList(options).addElement(MoveAspectsParticipant.OPTION);
+
+        ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
+        ListSequence.fromList(options).addElement(MoveNodeRefactoringLogParticipant.OPTION);
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        // do nothing 
+        // do nothing 
+      }
+    }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
+      public void invoke(List<SNode> nodesToMove) {
+        ListSequence.fromList(nodesToMove).addElement(getConceptA());
+
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Iterable<SProperty> properties1 = getInstanceA().getProperties();
+        Iterable<SProperty> properties2 = getInstanceB().getProperties();
+        Assert.assertTrue(Sequence.fromIterable(properties2).all(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return getInstanceB().getConcept().getProperties().contains(it);
+          }
+        }));
+        Assert.assertFalse(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage");
+          }
+        }));
+        Assert.assertTrue(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
+          }
+        }));
+      }
+    });
+  }
+
+  public MoveConceptRefactoring_Test() {
+    super(PROJECT_PATH);
+  }
+
+  public static Collection<ReportItem> getErrors(Iterable<SNode> roots) {
+    final List<ReportItem> result = ListSequence.fromList(new ArrayList<ReportItem>());
+    ValidationUtil.validateModelContent(roots, new Processor<ReportItem>() {
+      public boolean process(ReportItem problem) {
+        ListSequence.fromList(result).addElement(problem);
+        return true;
+      }
+    });
+    return result;
+  }
+
+  public void runCommand(final Runnable runnable) {
+    final Reference<Throwable> ref = new Reference();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        project.getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            try {
+              runnable.run();
+            } catch (Throwable t) {
+              ref.set(t);
+            }
+
+          }
+        });
+      }
+    });
+    if (!(ref.isNull())) {
+      throw new RuntimeException(ref.get());
+    }
+  }
+
+  public SNode getConceptA() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213"), project.getRepository());
+  }
+  public SNode getConceptB() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "1204068184860841"), project.getRepository());
+  }
+  public SNode getInstanceA() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
+  }
+  public SNode getInstanceB() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "1204068184864697"), project.getRepository());
+  }
+  public SModel getTargetModel() {
+    SModule targetModule = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage)"));
+    Assert.assertNotNull(targetModule);
+    return SModuleOperations.getAspect(targetModule, "structure");
+  }
+
+
+  public void commonTest(final _FunctionTypes._void_P1_E0<? super List<RefactoringParticipant.Option>> setOptions, final _FunctionTypes._void_P0_E0 prepareNodes, final _FunctionTypes._void_P1_E0<? super List<SNode>> setNodesToMove, final _FunctionTypes._void_P0_E0 additionalCheck) {
     // this is not formally correct to store SModule, but ok for testing purposes 
     final Wrappers._T<SModule> sourceModule = new Wrappers._T<SModule>();
     final Wrappers._T<SModule> targetModule = new Wrappers._T<SModule>();
@@ -64,30 +202,26 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest_Test {
         Assert.assertNotNull(sourceModule.value);
         targetModule.value = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage)"));
         Assert.assertNotNull(targetModule.value);
+        SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
+        Assert.assertNotNull(targetModel);
+        Assert.assertNotNull(getConceptA());
+        Assert.assertNotNull(getConceptB());
+        Assert.assertNotNull(getInstanceA());
+        Assert.assertNotNull(getInstanceB());
       }
     });
 
+    final List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
+    setOptions.invoke(options);
     runCommand(new Runnable() {
       public void run() {
-        SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
-        Assert.assertNotNull(targetModel);
-        SNode nodeToMove = SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213"), project.getRepository());
-        Assert.assertNotNull(nodeToMove);
-
-        List<RefactoringParticipant.Option> options = ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
-
-        ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
-        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
-
-        ListSequence.fromList(options).addElement(MoveAspectsParticipant.OPTION);
-
-        ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
-        ListSequence.fromList(options).addElement(MoveNodeRefactoringLogParticipant.OPTION);
-
+        prepareNodes.invoke();
         if (LOG.isInfoEnabled()) {
           LOG.info("Refactoring starting...");
         }
-        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(targetModel), project)).withValues(ListSequence.fromListAndArray(new ArrayList<SNode>(), nodeToMove)), new HeadlessRefactoringUI(options));
+        List<SNode> nodesToMove = ListSequence.fromList(new ArrayList<SNode>());
+        setNodesToMove.invoke(nodesToMove);
+        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(getTargetModel()), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
         if (LOG.isInfoEnabled()) {
           LOG.info("Refactoring finished");
         }
@@ -153,66 +287,11 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest_Test {
     }
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        // the main difficulty here is not to use node<MoveConcept_A> and property/...:prop/ not to get module dep on source language 
-        SNode node1 = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
-        final SNode node2 = SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "1204068184864697"), project.getRepository());
-        Iterable<SProperty> properties1 = node1.getProperties();
-        Iterable<SProperty> properties2 = node2.getProperties();
-        Assert.assertTrue(Sequence.fromIterable(properties2).all(new IWhereFilter<SProperty>() {
-          public boolean accept(SProperty it) {
-            return node2.getConcept().getProperties().contains(it);
-          }
-        }));
-        Assert.assertFalse(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
-          public boolean accept(SProperty it) {
-            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x3e00419d48014badL, 0xbf2a50479218fb53L, "jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage");
-          }
-        }));
-        Assert.assertTrue(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
-          public boolean accept(SProperty it) {
-            return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
-          }
-        }));
+        additionalCheck.invoke();
       }
     });
     if (LOG.isInfoEnabled()) {
       LOG.info("Check finished");
-    }
-  }
-
-  public MoveConceptRefactoring_Test() {
-    super(PROJECT_PATH);
-  }
-
-  public static Collection<ReportItem> getErrors(Iterable<SNode> roots) {
-    final List<ReportItem> result = ListSequence.fromList(new ArrayList<ReportItem>());
-    ValidationUtil.validateModelContent(roots, new Processor<ReportItem>() {
-      public boolean process(ReportItem problem) {
-        ListSequence.fromList(result).addElement(problem);
-        return true;
-      }
-    });
-    return result;
-  }
-
-  public void runCommand(final Runnable runnable) {
-    final Reference<Throwable> ref = new Reference();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        project.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            try {
-              runnable.run();
-            } catch (Throwable t) {
-              ref.set(t);
-            }
-
-          }
-        });
-      }
-    });
-    if (!(ref.isNull())) {
-      throw new RuntimeException(ref.get());
     }
   }
 }
