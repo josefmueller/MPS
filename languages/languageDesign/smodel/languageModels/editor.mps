@@ -10152,9 +10152,6 @@
     <node concept="PMmxH" id="_3Yz8RSN4g" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
-      <node concept="VPxyj" id="_3Yz8RYKel" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-      </node>
     </node>
   </node>
   <node concept="3p309x" id="6Qvu94t1Pcq">
