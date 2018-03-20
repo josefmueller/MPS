@@ -10,7 +10,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -471,6 +471,9 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -532,9 +535,6 @@
       </concept>
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
-      </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression_Old" flags="nn" index="1N_AGu">
-        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="3320646261221695165" name="jetbrains.mps.lang.smodel.structure.NodePointerArg_Identity" flags="ng" index="1QN52j">
@@ -5902,8 +5902,12 @@
                 <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
               </node>
               <node concept="2OqwBi" id="2HbrBpSk9k1" role="1m5AlR">
-                <node concept="1N_AGu" id="2HbrBpSk5mD" role="2Oq$k0">
-                  <ref role="1N_AGt" to="vybg:5dDci$OX7JB" resolve="SimpleClass" />
+                <node concept="2JrnkZ" id="7uvxILPmWS9" role="2Oq$k0">
+                  <node concept="2tJFMh" id="7uvxILPmWS8" role="2JrQYb">
+                    <node concept="ZC_QK" id="7uvxILPmWS7" role="2tJFKM">
+                      <ref role="2aWVGs" to="vybg:5dDci$OX7JB" resolve="SimpleClass" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="liA8E" id="2HbrBpSkbI4" role="2OqNvi">
                   <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
@@ -7720,8 +7724,12 @@
                   </node>
                   <node concept="2OqwBi" id="4CruXksvwjy" role="37vLTx">
                     <node concept="2JrnkZ" id="4CruXksvwjz" role="2Oq$k0">
-                      <node concept="1N_AGu" id="2HoLY$CiMP3" role="2JrQYb">
-                        <ref role="1N_AGt" to="1k94:56cvcsnDMz9" resolve="Root" />
+                      <node concept="2JrnkZ" id="7uvxILPmWSc" role="2JrQYb">
+                        <node concept="2tJFMh" id="7uvxILPmWSb" role="2JrQYb">
+                          <node concept="ZC_QK" id="7uvxILPmWSa" role="2tJFKM">
+                            <ref role="2aWVGs" to="1k94:56cvcsnDMz9" resolve="Root" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="4CruXksvwj_" role="2OqNvi">
