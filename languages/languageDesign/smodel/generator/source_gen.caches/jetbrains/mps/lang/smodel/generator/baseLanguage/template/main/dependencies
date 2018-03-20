@@ -241,6 +241,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_ConceptDeclaration2SConcept" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_LinkDeclaration_SLink" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main.Template_reduce_NodeIdentity_SNodeReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
