@@ -1167,11 +1167,11 @@
     <property role="PDuV0" value="true" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="qrtnJnJhw8" role="M5hS2">
-      <property role="1uS6qo" value="myFirstValue" />
+      <property role="1uS6qo" value="first presentation" />
       <property role="1uS6qv" value="myFirstValue" />
     </node>
     <node concept="M4N5e" id="qrtnJnJhw9" role="M5hS2">
-      <property role="1uS6qo" value="mySecondValue" />
+      <property role="1uS6qo" value="second presentation" />
       <property role="1uS6qv" value="mySecondValue" />
     </node>
   </node>

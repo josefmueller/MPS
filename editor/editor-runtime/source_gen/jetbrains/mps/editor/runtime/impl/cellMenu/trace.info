@@ -19,61 +19,63 @@
     <file name="EnumSPropertyTransformationItemFactory.java">
       <node id="2816844678677717794" at="28,131,29,223" concept="7" />
       <node id="2816844678677717808" at="29,223,30,297" concept="7" />
-      <node id="5990947186864105649" at="31,210,32,203" concept="7" />
-      <node id="6675021528997550731" at="33,131,34,71" concept="2" />
-      <node id="6675021528997582794" at="34,71,35,0" concept="10" />
-      <node id="6675021528997567748" at="36,13,37,369" concept="2" />
-      <node id="6675021528997545050" at="43,57,44,84" concept="8" />
-      <node id="6675021528997545064" at="50,76,51,81" concept="8" />
-      <node id="6675021528997545084" at="55,56,56,195" concept="8" />
-      <node id="2816844678677717822" at="58,12,59,56" concept="2" />
-      <node id="6675021528997619348" at="60,19,61,72" concept="2" />
-      <node id="2816844678677717911" at="64,5,65,0" concept="10" />
-      <node id="2816844678677717912" at="65,0,66,17" concept="8" />
+      <node id="4139735583357204272" at="30,297,31,83" concept="7" />
+      <node id="4139735583357182020" at="32,210,33,209" concept="7" />
+      <node id="6675021528997550731" at="34,102,35,71" concept="2" />
+      <node id="6675021528997582794" at="35,71,36,0" concept="10" />
+      <node id="6675021528997567748" at="37,13,38,369" concept="2" />
+      <node id="6675021528997545050" at="44,57,45,84" concept="8" />
+      <node id="6675021528997545064" at="51,76,52,81" concept="8" />
+      <node id="6675021528997545084" at="56,56,57,35" concept="8" />
+      <node id="2816844678677717822" at="59,12,60,56" concept="2" />
+      <node id="6675021528997619348" at="61,19,62,72" concept="2" />
+      <node id="2816844678677717911" at="65,5,66,0" concept="10" />
+      <node id="2816844678677717912" at="66,0,67,17" concept="8" />
       <node id="2816844678677715512" at="26,0,28,0" concept="1" trace="EnumSPropertyTransformationItemFactory#()V" />
-      <node id="6675021528997545078" at="54,0,58,0" concept="6" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6675021528997545043" at="41,0,46,0" concept="6" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
-      <node id="6675021528997545056" at="48,0,53,0" concept="6" trace="getShortDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6675021528997545036" at="37,369,58,12" concept="7" />
-      <node id="6675021528997610463" at="35,0,62,9" concept="14" />
-      <node id="5990947186864071143" at="32,203,63,7" concept="5" />
-      <node id="2816844678677717820" at="30,297,64,5" concept="4" />
-      <node id="2816844678677717791" at="28,0,68,0" concept="12" trace="createItems#(Lorg/jetbrains/mps/openapi/language/SProperty;Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <node id="6675021528997545078" at="55,0,59,0" concept="6" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6675021528997545043" at="42,0,47,0" concept="6" trace="getIcon#(Ljava/lang/String;)Ljetbrains/mps/smodel/runtime/IconResource;" />
+      <node id="6675021528997545056" at="49,0,54,0" concept="6" trace="getShortDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6675021528997545036" at="38,369,59,12" concept="7" />
+      <node id="6675021528997610463" at="36,0,63,9" concept="14" />
+      <node id="5990947186864071143" at="33,209,64,7" concept="5" />
+      <node id="2816844678677717820" at="31,83,65,5" concept="4" />
+      <node id="2816844678677717791" at="28,0,69,0" concept="12" trace="createItems#(Lorg/jetbrains/mps/openapi/language/SProperty;Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
       <scope id="2816844678677715516" at="26,52,26,52" />
-      <scope id="6675021528997545049" at="43,57,44,84" />
-      <scope id="6675021528997545063" at="50,76,51,81" />
-      <scope id="6675021528997545083" at="55,56,56,195" />
-      <scope id="6675021528997610466" at="60,19,61,72" />
+      <scope id="6675021528997545049" at="44,57,45,84" />
+      <scope id="6675021528997545063" at="51,76,52,81" />
+      <scope id="6675021528997545083" at="56,56,57,35" />
+      <scope id="6675021528997610466" at="61,19,62,72" />
       <scope id="2816844678677715512" at="26,0,28,0" />
-      <scope id="6675021528997545078" at="54,0,58,0">
+      <scope id="6675021528997545078" at="55,0,59,0">
         <var name="pattern" id="6675021528997545081" />
       </scope>
-      <scope id="6675021528997545043" at="41,0,46,0">
+      <scope id="6675021528997545043" at="42,0,47,0">
         <var name="pattern" id="6675021528997545047" />
       </scope>
-      <scope id="6675021528997545056" at="48,0,53,0">
+      <scope id="6675021528997545056" at="49,0,54,0">
         <var name="pattern" id="6675021528997545060" />
       </scope>
-      <scope id="6675021528997610465" at="36,13,59,56">
+      <scope id="6675021528997610465" at="37,13,60,56">
         <var name="item" id="6675021528997545037" />
       </scope>
-      <scope id="5990947186864071145" at="33,131,62,9" />
-      <scope id="2816844678677717821" at="31,210,63,7">
-        <var name="internalValue" id="5990947186864105650" />
+      <scope id="5990947186864071145" at="34,102,63,9" />
+      <scope id="2816844678677717821" at="32,210,64,7">
+        <var name="externalValue" id="4139735583357182021" />
       </scope>
-      <scope id="2816844678677717820" at="30,297,64,5">
+      <scope id="2816844678677717820" at="31,83,65,5">
         <var name="enumMemberDeclaration" id="2816844678677717909" />
       </scope>
-      <scope id="2816844678677717793" at="28,131,66,17">
+      <scope id="2816844678677717793" at="28,131,67,17">
         <var name="enumDataType" id="2816844678677717795" />
         <var name="items" id="2816844678677717809" />
+        <var name="propertySupport" id="4139735583357204273" />
       </scope>
-      <scope id="2816844678677717791" at="28,0,68,0">
+      <scope id="2816844678677717791" at="28,0,69,0">
         <var name="property" id="2816844678677717921" />
         <var name="transformationMenuContext" id="2816844678677717919" />
       </scope>
-      <unit id="6675021528997545040" at="38,52,58,11" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory$1" />
-      <unit id="2816844678677465131" at="25,0,69,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory" />
+      <unit id="6675021528997545040" at="39,52,59,11" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory$1" />
+      <unit id="2816844678677465131" at="25,0,70,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertyTransformationItemFactory" />
     </file>
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/3368017140643570595">

@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 
 public enum TestSubstituteEnumDataType {
-  myFirstValue("myFirstValue", "myFirstValue"),
-  mySecondValue("mySecondValue", "mySecondValue");
+  first_presentation("first presentation", "myFirstValue"),
+  second_presentation("second presentation", "mySecondValue");
 
   private final String myName;
   public String getName() {
@@ -27,8 +27,8 @@ public enum TestSubstituteEnumDataType {
   }
   public static List<TestSubstituteEnumDataType> getConstants() {
     List<TestSubstituteEnumDataType> list = ListSequence.fromList(new LinkedList<TestSubstituteEnumDataType>());
-    ListSequence.fromList(list).addElement(TestSubstituteEnumDataType.myFirstValue);
-    ListSequence.fromList(list).addElement(TestSubstituteEnumDataType.mySecondValue);
+    ListSequence.fromList(list).addElement(TestSubstituteEnumDataType.first_presentation);
+    ListSequence.fromList(list).addElement(TestSubstituteEnumDataType.second_presentation);
     return list;
   }
   public static TestSubstituteEnumDataType getDefault() {
@@ -38,11 +38,11 @@ public enum TestSubstituteEnumDataType {
     if (value == null) {
       return TestSubstituteEnumDataType.getDefault();
     }
-    if (value.equals(TestSubstituteEnumDataType.myFirstValue.getValueAsString())) {
-      return TestSubstituteEnumDataType.myFirstValue;
+    if (value.equals(TestSubstituteEnumDataType.first_presentation.getValueAsString())) {
+      return TestSubstituteEnumDataType.first_presentation;
     }
-    if (value.equals(TestSubstituteEnumDataType.mySecondValue.getValueAsString())) {
-      return TestSubstituteEnumDataType.mySecondValue;
+    if (value.equals(TestSubstituteEnumDataType.second_presentation.getValueAsString())) {
+      return TestSubstituteEnumDataType.second_presentation;
     }
     return TestSubstituteEnumDataType.getDefault();
   }

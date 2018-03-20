@@ -11,8 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.menus.transformation.PropertyTransformationMenuItem;
@@ -28,14 +28,15 @@ public class EnumSPropertyTransformationItemFactory {
   public static List<TransformationMenuItem> createItems(SProperty property, TransformationMenuContext transformationMenuContext) {
     SNode enumDataType = ((SNode) SLinkOperations.getTarget(((SNode) property.getDeclarationNode()), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType")));
     List<TransformationMenuItem> items = ListSequence.fromList(new ArrayList<TransformationMenuItem>(ListSequence.fromList(SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).count()));
+    PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
     for (final SNode enumMemberDeclaration : SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))) {
-      String internalValue = SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue"));
-      if (PropertySupport.getPropertySupport(property).canSetValue(transformationMenuContext.getNode(), property, internalValue)) {
+      final String externalValue = SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
+      if (propertySupport.canSetValue(transformationMenuContext.getNode(), property, externalValue)) {
         transformationMenuContext.getEditorMenuTrace().pushTraceInfo();
 
         try {
           transformationMenuContext.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue")), SNodeOperations.getPointer(enumMemberDeclaration), true));
-          PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(property, internalValue, transformationMenuContext) {
+          PropertyTransformationMenuItem item = new PropertyTransformationMenuItem(property, SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06663L, "internalValue")), transformationMenuContext) {
 
 
             @Nullable
@@ -53,7 +54,7 @@ public class EnumSPropertyTransformationItemFactory {
 
             @Override
             public String getLabelText(String pattern) {
-              return SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
+              return externalValue;
             }
           };
           ListSequence.fromList(items).addElement(item);

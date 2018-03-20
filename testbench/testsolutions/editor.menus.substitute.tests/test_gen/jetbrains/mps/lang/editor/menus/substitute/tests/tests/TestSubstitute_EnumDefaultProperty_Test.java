@@ -34,7 +34,7 @@ public class TestSubstitute_EnumDefaultProperty_Test extends BaseTransformationT
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible());
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2);
-      typeString("mySecond");
+      typeString("second present");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

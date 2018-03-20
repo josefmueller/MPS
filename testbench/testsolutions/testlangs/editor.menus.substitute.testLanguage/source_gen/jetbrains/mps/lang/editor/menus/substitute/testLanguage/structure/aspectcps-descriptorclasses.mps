@@ -5447,7 +5447,7 @@
       <node concept="39e2AG" id="vP" role="39e3Y0">
         <ref role="39e2AK" to="wdez:qrtnJnJhw8" />
         <node concept="385nmt" id="vR" role="385vvn">
-          <property role="385vuF" value="myFirstValue" />
+          <property role="385vuF" value="first presentation" />
           <node concept="2$VJBW" id="vT" role="385v07">
             <property role="2$VJBR" value="476103360378640392" />
             <node concept="2x4n5u" id="vU" role="3iCydw">
@@ -5462,13 +5462,13 @@
           </node>
         </node>
         <node concept="39e2AT" id="vS" role="39e2AY">
-          <ref role="39e2AS" node="1UC" resolve="myFirstValue" />
+          <ref role="39e2AS" node="1UC" resolve="first_presentation" />
         </node>
       </node>
       <node concept="39e2AG" id="vQ" role="39e3Y0">
         <ref role="39e2AK" to="wdez:qrtnJnJhw9" />
         <node concept="385nmt" id="vW" role="385vvn">
-          <property role="385vuF" value="mySecondValue" />
+          <property role="385vuF" value="second presentation" />
           <node concept="2$VJBW" id="vY" role="385v07">
             <property role="2$VJBR" value="476103360378640393" />
             <node concept="2x4n5u" id="vZ" role="3iCydw">
@@ -5483,7 +5483,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="vX" role="39e2AY">
-          <ref role="39e2AS" node="1UD" resolve="mySecondValue" />
+          <ref role="39e2AS" node="1UD" resolve="second_presentation" />
         </node>
       </node>
     </node>
@@ -21425,20 +21425,20 @@
   <node concept="Qs71p" id="1UB">
     <property role="TrG5h" value="TestSubstituteEnumDataType" />
     <node concept="QsSxf" id="1UC" role="Qtgdg">
-      <property role="TrG5h" value="myFirstValue" />
+      <property role="TrG5h" value="first_presentation" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="1UO" role="37wK5m">
-        <property role="Xl_RC" value="myFirstValue" />
+        <property role="Xl_RC" value="first presentation" />
       </node>
       <node concept="Xl_RD" id="1UP" role="37wK5m">
         <property role="Xl_RC" value="myFirstValue" />
       </node>
     </node>
     <node concept="QsSxf" id="1UD" role="Qtgdg">
-      <property role="TrG5h" value="mySecondValue" />
+      <property role="TrG5h" value="second_presentation" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="1UQ" role="37wK5m">
-        <property role="Xl_RC" value="mySecondValue" />
+        <property role="Xl_RC" value="second presentation" />
       </node>
       <node concept="Xl_RD" id="1UR" role="37wK5m">
         <property role="Xl_RC" value="mySecondValue" />
@@ -21554,7 +21554,7 @@
             </node>
             <node concept="TSZUe" id="1VD" role="2OqNvi">
               <node concept="Rm8GO" id="1VE" role="25WWJ7">
-                <ref role="Rm8GQ" node="1UC" resolve="myFirstValue" />
+                <ref role="Rm8GQ" node="1UC" resolve="first_presentation" />
                 <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
               </node>
             </node>
@@ -21567,7 +21567,7 @@
             </node>
             <node concept="TSZUe" id="1VH" role="2OqNvi">
               <node concept="Rm8GO" id="1VI" role="25WWJ7">
-                <ref role="Rm8GQ" node="1UD" resolve="mySecondValue" />
+                <ref role="Rm8GQ" node="1UD" resolve="second_presentation" />
                 <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
               </node>
             </node>
@@ -21621,7 +21621,7 @@
           <node concept="3clFbS" id="1W4" role="3clFbx">
             <node concept="3cpWs6" id="1W6" role="3cqZAp">
               <node concept="Rm8GO" id="1W7" role="3cqZAk">
-                <ref role="Rm8GQ" node="1UC" resolve="myFirstValue" />
+                <ref role="Rm8GQ" node="1UC" resolve="first_presentation" />
                 <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
               </node>
             </node>
@@ -21634,7 +21634,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="1Wa" role="37wK5m">
                 <node concept="Rm8GO" id="1Wb" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="1UC" resolve="myFirstValue" />
+                  <ref role="Rm8GQ" node="1UC" resolve="first_presentation" />
                   <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
                 </node>
                 <node concept="liA8E" id="1Wc" role="2OqNvi">
@@ -21648,7 +21648,7 @@
           <node concept="3clFbS" id="1Wd" role="3clFbx">
             <node concept="3cpWs6" id="1Wf" role="3cqZAp">
               <node concept="Rm8GO" id="1Wg" role="3cqZAk">
-                <ref role="Rm8GQ" node="1UD" resolve="mySecondValue" />
+                <ref role="Rm8GQ" node="1UD" resolve="second_presentation" />
                 <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
               </node>
             </node>
@@ -21661,7 +21661,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="1Wj" role="37wK5m">
                 <node concept="Rm8GO" id="1Wk" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="1UD" resolve="mySecondValue" />
+                  <ref role="Rm8GQ" node="1UD" resolve="second_presentation" />
                   <ref role="1Px2BO" node="1UB" resolve="TestSubstituteEnumDataType" />
                 </node>
                 <node concept="liA8E" id="1Wl" role="2OqNvi">

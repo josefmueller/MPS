@@ -5562,7 +5562,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="73AphEk37p5" role="3cqZAp">
-        <property role="2TTd_B" value="mySecond" />
+        <property role="2TTd_B" value="second present" />
       </node>
       <node concept="yd1bK" id="73AphEk37p6" role="3cqZAp">
         <node concept="pLAjd" id="73AphEk37p7" role="yd6KS">
@@ -5581,11 +5581,11 @@
     </node>
     <node concept="3h9APU" id="73AphEk37h7" role="LiZbd">
       <property role="3h9APZ" value="mySecondValue" />
-      <node concept="LIFWc" id="73AphEk3Gx0" role="lGtFl">
+      <node concept="LIFWc" id="3_NiThI2LvX" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="13" />
-        <property role="p6zMs" value="13" />
+        <property role="p6zMq" value="19" />
+        <property role="p6zMs" value="19" />
         <property role="LIFWd" value="property_defaultEnumProperty" />
       </node>
     </node>
@@ -5631,7 +5631,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="73AphEk37w$" role="3cqZAp">
-        <property role="2TTd_B" value="mySecond" />
+        <property role="2TTd_B" value="second presentation" />
       </node>
       <node concept="yd1bK" id="73AphEk37w_" role="3cqZAp">
         <node concept="pLAjd" id="73AphEk37wA" role="yd6KS">
@@ -5650,11 +5650,11 @@
     </node>
     <node concept="3h9APU" id="73AphEk37wD" role="LiZbd">
       <property role="3hoBPT" value="mySecondValue" />
-      <node concept="LIFWc" id="73AphEk68w4" role="lGtFl">
+      <node concept="LIFWc" id="3_NiThI2Uo3" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="13" />
-        <property role="p6zMs" value="13" />
+        <property role="p6zMq" value="19" />
+        <property role="p6zMs" value="19" />
         <property role="LIFWd" value="property_enumPropertyWithPropertyMenuPart" />
       </node>
     </node>
@@ -6118,11 +6118,11 @@
     </node>
     <node concept="3h9APU" id="1o9RazLrtcl" role="LiZbd">
       <property role="3Br3o7" value="myFirstValue" />
-      <node concept="LIFWc" id="1o9RazLrRsd" role="lGtFl">
+      <node concept="LIFWc" id="3_NiThI30iK" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="12" />
-        <property role="p6zMs" value="12" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
         <property role="LIFWd" value="property_enumPropertyWithIsValidConstraints" />
       </node>
     </node>
@@ -6169,7 +6169,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="1o9RazLsjnT" role="3cqZAp">
-        <property role="2TTd_B" value="mySecond" />
+        <property role="2TTd_B" value="second pre" />
       </node>
       <node concept="yd1bK" id="1o9RazLrRsx" role="3cqZAp">
         <node concept="pLAjd" id="1o9RazLrRsy" role="yd6KS">
@@ -6189,11 +6189,11 @@
     </node>
     <node concept="3h9APU" id="1o9RazLrRs_" role="LiZbd">
       <property role="3BodP7" value="mySecondValue" />
-      <node concept="LIFWc" id="1o9RazLsQtu" role="lGtFl">
+      <node concept="LIFWc" id="3_NiThI2Uxj" role="lGtFl">
         <property role="ZRATv" value="true" />
         <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="12" />
-        <property role="p6zMs" value="12" />
+        <property role="p6zMq" value="18" />
+        <property role="p6zMs" value="18" />
         <property role="LIFWd" value="property_enumPropertyWithGetter" />
       </node>
     </node>

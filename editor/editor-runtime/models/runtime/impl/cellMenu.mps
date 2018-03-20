@@ -1642,18 +1642,34 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3_NiThI3fsK" role="3cqZAp">
+          <node concept="3cpWsn" id="3_NiThI3fsL" role="3cpWs9">
+            <property role="TrG5h" value="propertySupport" />
+            <node concept="3uibUv" id="3_NiThI3fsI" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~PropertySupport" resolve="PropertySupport" />
+            </node>
+            <node concept="2YIFZM" id="3_NiThI3fsM" role="33vP2m">
+              <ref role="37wK5l" to="w1kc:~PropertySupport.getPropertySupport(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.PropertySupport" resolve="getPropertySupport" />
+              <ref role="1Pybhc" to="w1kc:~PropertySupport" resolve="PropertySupport" />
+              <node concept="37vLTw" id="3_NiThI3fsN" role="37wK5m">
+                <ref role="3cqZAo" node="2snskYs2eex" resolve="property" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="2snskYs2ecW" role="3cqZAp">
           <node concept="3clFbS" id="2snskYs2ecX" role="2LFqv$">
-            <node concept="3cpWs8" id="5c$7FAtaiyL" role="3cqZAp">
-              <node concept="3cpWsn" id="5c$7FAtaiyM" role="3cpWs9">
-                <property role="TrG5h" value="internalValue" />
-                <node concept="17QB3L" id="5c$7FAtaiyH" role="1tU5fm" />
-                <node concept="2OqwBi" id="5c$7FAtaiyN" role="33vP2m">
-                  <node concept="37vLTw" id="5c$7FAtaiyO" role="2Oq$k0">
+            <node concept="3cpWs8" id="3_NiThI3a14" role="3cqZAp">
+              <node concept="3cpWsn" id="3_NiThI3a15" role="3cpWs9">
+                <property role="TrG5h" value="externalValue" />
+                <property role="3TUv4t" value="true" />
+                <node concept="17QB3L" id="3_NiThI3a12" role="1tU5fm" />
+                <node concept="2OqwBi" id="3_NiThI3a16" role="33vP2m">
+                  <node concept="37vLTw" id="3_NiThI3a17" role="2Oq$k0">
                     <ref role="3cqZAo" node="2snskYs2eel" resolve="enumMemberDeclaration" />
                   </node>
-                  <node concept="3TrcHB" id="5c$7FAtaiyP" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
+                  <node concept="3TrcHB" id="3_NiThI3a18" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:fLuS6p$" resolve="externalValue" />
                   </node>
                 </node>
               </node>
@@ -1808,8 +1824,13 @@
                               <node concept="37vLTw" id="5c$7FAtar4Y" role="37wK5m">
                                 <ref role="3cqZAo" node="2snskYs2eex" resolve="property" />
                               </node>
-                              <node concept="37vLTw" id="5c$7FAtaiyQ" role="37wK5m">
-                                <ref role="3cqZAo" node="5c$7FAtaiyM" resolve="internalValue" />
+                              <node concept="2OqwBi" id="3_NiThI3cbL" role="37wK5m">
+                                <node concept="37vLTw" id="3_NiThI3cbM" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2snskYs2eel" resolve="enumMemberDeclaration" />
+                                </node>
+                                <node concept="3TrcHB" id="3_NiThI3cMo" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpce:fLuS6pz" resolve="internalValue" />
+                                </node>
                               </node>
                               <node concept="37vLTw" id="5c$7FAtarGM" role="37wK5m">
                                 <ref role="3cqZAo" node="2snskYs2eev" resolve="transformationMenuContext" />
@@ -1825,13 +1846,8 @@
                                 </node>
                                 <node concept="3clFbS" id="5MysbrZYWhV" role="3clF47">
                                   <node concept="3cpWs6" id="5MysbrZYWhW" role="3cqZAp">
-                                    <node concept="2OqwBi" id="5MysbrZYWhX" role="3cqZAk">
-                                      <node concept="37vLTw" id="5MysbrZYWhY" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="2snskYs2eel" resolve="enumMemberDeclaration" />
-                                      </node>
-                                      <node concept="3TrcHB" id="5MysbrZYWhZ" role="2OqNvi">
-                                        <ref role="3TsBF5" to="tpce:fLuS6p$" resolve="externalValue" />
-                                      </node>
+                                    <node concept="37vLTw" id="3_NiThI3a19" role="3cqZAk">
+                                      <ref role="3cqZAo" node="3_NiThI3a15" resolve="externalValue" />
                                     </node>
                                   </node>
                                 </node>
@@ -1877,12 +1893,8 @@
                 </node>
               </node>
               <node concept="2OqwBi" id="5c$7FAtahkU" role="3clFbw">
-                <node concept="2YIFZM" id="5c$7FAtahbN" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~PropertySupport.getPropertySupport(org.jetbrains.mps.openapi.language.SProperty):jetbrains.mps.smodel.PropertySupport" resolve="getPropertySupport" />
-                  <ref role="1Pybhc" to="w1kc:~PropertySupport" resolve="PropertySupport" />
-                  <node concept="37vLTw" id="5c$7FAtahei" role="37wK5m">
-                    <ref role="3cqZAo" node="2snskYs2eex" resolve="property" />
-                  </node>
+                <node concept="37vLTw" id="3_NiThI3fsO" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3_NiThI3fsL" resolve="propertySupport" />
                 </node>
                 <node concept="liA8E" id="5c$7FAtahs3" role="2OqNvi">
                   <ref role="37wK5l" to="w1kc:~PropertySupport.canSetValue(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):boolean" resolve="canSetValue" />
@@ -1897,8 +1909,8 @@
                   <node concept="37vLTw" id="5c$7FAtahx$" role="37wK5m">
                     <ref role="3cqZAo" node="2snskYs2eex" resolve="property" />
                   </node>
-                  <node concept="37vLTw" id="5c$7FAtakZq" role="37wK5m">
-                    <ref role="3cqZAo" node="5c$7FAtaiyM" resolve="internalValue" />
+                  <node concept="37vLTw" id="3_NiThI3fpA" role="37wK5m">
+                    <ref role="3cqZAo" node="3_NiThI3a15" resolve="externalValue" />
                   </node>
                 </node>
               </node>
