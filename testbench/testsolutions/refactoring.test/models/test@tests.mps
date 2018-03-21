@@ -7,7 +7,7 @@
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="3" />
@@ -415,6 +415,9 @@
   </registry>
   <node concept="3s_ewN" id="7l0SErcZhR9">
     <property role="3s_ewP" value="Refactoring" />
+    <node concept="2AHcQZ" id="5CL$HpprH16" role="2AJF6D">
+      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
+    </node>
     <node concept="Wx3nA" id="7l0SErcZi0H" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
@@ -2005,9 +2008,6 @@
     </node>
     <node concept="3uibUv" id="3iBi5uuKc4p" role="1zkMxy">
       <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
-    </node>
-    <node concept="2AHcQZ" id="5CL$HpprH16" role="2AJF6D">
-      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
     </node>
   </node>
   <node concept="2UguNb" id="6rP_NjK3fBF">

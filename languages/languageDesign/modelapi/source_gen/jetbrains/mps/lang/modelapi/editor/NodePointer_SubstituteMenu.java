@@ -21,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
@@ -77,14 +79,13 @@ public class NodePointer_SubstituteMenu extends SubstituteMenuBase {
         @Override
         public SNode createNode(@NotNull String pattern) {
           SNode nodeToWrap = super.createNode(pattern);
-          myCreatedNode = nodeToWrap;
           SNode nodePtr = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, "jetbrains.mps.lang.modelapi.structure.NodePointer"));
           SLinkOperations.setTarget(nodePtr, MetaAdapterFactory.getContainmentLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf84L, "modelRef"), nodeToWrap);
           return nodePtr;
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {
-          super.select(myCreatedNode, pattern);
+          SelectionUtil.selectCell(_context.getEditorContext(), createdNode, "*" + CellIdManager.createPropertyId("nodeId"));
         }
       };
     }

@@ -19,9 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.ListScope;
-import jetbrains.mps.lang.modelapi.behavior.NamedNodeReference__BehaviorDescriptor;
-import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NamedNodeReference_Constraints extends BaseConstraintsDescriptor {
@@ -50,9 +48,9 @@ public class NamedNodeReference_Constraints extends BaseConstraintsDescriptor {
             {
               SNode parent = ((_context.getReferenceNode() == null) ? _context.getContextNode() : SNodeOperations.getParent(_context.getReferenceNode()));
               if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"))) {
-                return ListScope.forNamedElements(NamedNodeReference__BehaviorDescriptor.getChildCandidates_id6iN_brIgiQS.invoke(SNodeOperations.as(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference"))));
+                return NamedNodeReferencesScope.createDescendantsScope(SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, "jetbrains.mps.lang.modelapi.structure.NamedNodeReference")), MetaAdapterFactory.getReferenceLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x41af228e7e0d7f3eL, 0x64b394b6ee402faaL, "target")));
               } else {
-                return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
+                return NamedNodeReferencesScope.createRootsScope(SNodeOperations.getModel(_context.getContextNode()));
               }
             }
           }

@@ -135,7 +135,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_IndexedTupleType_Object_ComparisonRule" file="comparable_IndexedTupleType_Object_ComparisonRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -146,7 +145,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.typesystem.comparable_NamedTupleType_Object_ComparisonRule" file="comparable_NamedTupleType_Object_ComparisonRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

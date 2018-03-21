@@ -6,7 +6,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="0" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -214,6 +214,9 @@
   </node>
   <node concept="3s_ewN" id="1ZVcZhrX4HH">
     <property role="3s_ewP" value="RunCodeFromSolution" />
+    <node concept="2AHcQZ" id="5CL$HpprSc8" role="2AJF6D">
+      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
+    </node>
     <node concept="Wx3nA" id="74sHQpDbWx3" role="jymVt">
       <property role="TrG5h" value="PROJECT_PATH" />
       <property role="3TUv4t" value="true" />
@@ -696,9 +699,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2AHcQZ" id="5CL$HpprSc8" role="2AJF6D">
-      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
     </node>
   </node>
 </model>

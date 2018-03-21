@@ -10,7 +10,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
@@ -24,7 +23,7 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
   }
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    if (SNodeOperations.is(SLinkOperations.getTarget(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024311"))) {
+    if (SLinkOperations.hasPointer(ct, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024311"))) {
       res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getChildren(ct, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"));
       if (ListSequence.fromList(ptypes).isNotEmpty()) {

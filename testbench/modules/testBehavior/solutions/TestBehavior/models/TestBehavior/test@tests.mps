@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="43359135-f67c-4a3d-9fdd-a3d7dba50995" name="BHL1" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
@@ -27,9 +27,9 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="8jon" ref="r:28855287-2116-4523-9c44-f18e3449e08d(BHL1.structure)" />
     <import index="4uhy" ref="r:e76e445e-2173-496b-9059-50cca123009f(BHL1.behavior)" />
-    <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
-    <import index="ymld" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.suites(Testbench/)" />
     <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
+    <import index="ymld" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.suites(Testbench/)" />
+    <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="y8hp" ref="r:5b70af1a-32d2-494c-b96c-b52619ec490d(BHL2.behavior)" implicit="true" />
     <import index="ugot" ref="r:8d9d5d2a-4503-4714-9fa6-17c2b8928601(BHL6.behavior)" implicit="true" />
@@ -262,9 +262,6 @@
   </registry>
   <node concept="3s_ewN" id="6EMTxOPT2R6">
     <property role="3s_ewP" value="BHTest" />
-    <node concept="3uibUv" id="1D4tfYtgpJ9" role="1zkMxy">
-      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
-    </node>
     <node concept="2AHcQZ" id="5CL$HppqhKE" role="2AJF6D">
       <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
     </node>
@@ -4486,6 +4483,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="1D4tfYtgpJ9" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
 </model>

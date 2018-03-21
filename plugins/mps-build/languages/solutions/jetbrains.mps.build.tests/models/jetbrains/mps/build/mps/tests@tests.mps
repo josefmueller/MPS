@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
@@ -193,6 +193,9 @@
   </registry>
   <node concept="3s_ewN" id="6MogiNnQtO8">
     <property role="3s_ewP" value="ModuleClosure" />
+    <node concept="2AHcQZ" id="5CL$HpprhNE" role="2AJF6D">
+      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
+    </node>
     <node concept="312cEg" id="47fY$PLJDZu" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <node concept="3Tm6S6" id="47fY$PLJDZv" role="1B3o_S" />
@@ -1207,9 +1210,6 @@
     </node>
     <node concept="3uibUv" id="nUYGvAGbbO" role="1zkMxy">
       <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
-    </node>
-    <node concept="2AHcQZ" id="5CL$HpprhNE" role="2AJF6D">
-      <ref role="2AI5Lk" to="fyhk:~MPSLaunch" resolve="MPSLaunch" />
     </node>
   </node>
 </model>

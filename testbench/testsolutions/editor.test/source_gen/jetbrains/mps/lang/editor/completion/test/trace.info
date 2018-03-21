@@ -334,7 +334,7 @@
       <node id="1384684774804610338" at="49,126,50,44" concept="1" />
       <node id="1384684774804610342" at="50,44,51,0" concept="6" />
       <node id="1384684774804610343" at="51,0,52,84" concept="4" />
-      <node id="4573127675650085033" at="54,45,55,336" concept="5" />
+      <node id="4573127675650085033" at="54,45,55,317" concept="5" />
       <node id="1384684774804610304" at="27,0,29,0" concept="7" trace="ourParamCache" />
       <node id="1384684774804610304" at="30,0,33,0" concept="0" trace="TestEditorMenuTraceCellMenuPropertyPostfixHints_Test#()V" />
       <node id="4573127675650085031" at="54,0,57,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -345,7 +345,7 @@
       <node id="1384684774804610304" at="41,0,61,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774804610304" at="30,65,31,25" />
       <scope id="1384684774804610304" at="35,87,36,140" />
-      <scope id="4573127675650085032" at="54,45,55,336" />
+      <scope id="4573127675650085032" at="54,45,55,317" />
       <scope id="1384684774804610304" at="30,0,33,0" />
       <scope id="4573127675650085031" at="54,0,57,0">
         <var name="it" id="4573127675650085031" />
@@ -376,7 +376,7 @@
       <node id="1384684774804915589" at="49,126,50,44" concept="1" />
       <node id="1384684774804915593" at="50,44,51,0" concept="6" />
       <node id="1384684774804915594" at="51,0,52,84" concept="4" />
-      <node id="4573127675672901569" at="54,45,55,336" concept="5" />
+      <node id="4573127675672901569" at="54,45,55,317" concept="5" />
       <node id="1384684774804915555" at="27,0,29,0" concept="7" trace="ourParamCache" />
       <node id="1384684774804915555" at="30,0,33,0" concept="0" trace="TestEditorMenuTraceCellMenuPropertyPostfixValues_Test#()V" />
       <node id="4573127675672901567" at="54,0,57,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -387,7 +387,7 @@
       <node id="1384684774804915555" at="41,0,61,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774804915555" at="30,66,31,25" />
       <scope id="1384684774804915555" at="35,88,36,141" />
-      <scope id="4573127675672901568" at="54,45,55,336" />
+      <scope id="4573127675672901568" at="54,45,55,317" />
       <scope id="1384684774804915555" at="30,0,33,0" />
       <scope id="4573127675672901567" at="54,0,57,0">
         <var name="it" id="4573127675672901567" />
@@ -420,7 +420,7 @@
       <node id="1384684774805064875" at="52,0,53,84" concept="4" />
       <node id="7912617346311994246" at="53,84,54,589" concept="4" />
       <node id="7912617346311996374" at="54,589,55,0" concept="6" />
-      <node id="4573127675686557140" at="57,45,58,336" concept="5" />
+      <node id="4573127675686557140" at="57,45,58,317" concept="5" />
       <node id="7912617346312006646" at="60,454,61,0" concept="6" />
       <node id="1384684774805064881" at="61,0,62,244" concept="1" />
       <node id="1384684774805049143" at="28,0,30,0" concept="7" trace="ourParamCache" />
@@ -433,7 +433,7 @@
       <node id="1384684774805049143" at="42,0,66,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774805049143" at="31,64,32,25" />
       <scope id="1384684774805049143" at="36,86,37,139" />
-      <scope id="4573127675686557139" at="57,45,58,336" />
+      <scope id="4573127675686557139" at="57,45,58,317" />
       <scope id="1384684774805049143" at="31,0,34,0" />
       <scope id="4573127675686557138" at="57,0,60,0">
         <var name="it" id="4573127675686557138" />
@@ -468,7 +468,7 @@
       <node id="1384684774805381157" at="51,0,52,84" concept="4" />
       <node id="1384684774805381167" at="52,84,53,0" concept="6" />
       <node id="1384684774805381184" at="53,0,54,0" concept="6" />
-      <node id="4573127675686556596" at="56,45,57,336" concept="5" />
+      <node id="4573127675686556596" at="56,45,57,317" concept="5" />
       <node id="1384684774805381118" at="27,0,29,0" concept="7" trace="ourParamCache" />
       <node id="1384684774805381118" at="30,0,33,0" concept="0" trace="TestEditorMenuTraceCellMenuReplaceChildItem_Test#()V" />
       <node id="4573127675686556594" at="56,0,59,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -479,7 +479,7 @@
       <node id="1384684774805381118" at="41,0,63,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774805381118" at="30,61,31,25" />
       <scope id="1384684774805381118" at="35,83,36,136" />
-      <scope id="4573127675686556595" at="56,45,57,336" />
+      <scope id="4573127675686556595" at="56,45,57,317" />
       <scope id="1384684774805381118" at="30,0,33,0" />
       <scope id="4573127675686556594" at="56,0,59,0">
         <var name="it" id="4573127675686556594" />
@@ -512,7 +512,7 @@
       <node id="1384684774805524115" at="51,0,52,84" concept="4" />
       <node id="1384684774805524121" at="52,84,53,0" concept="6" />
       <node id="1384684774805524122" at="53,0,54,0" concept="6" />
-      <node id="4573127675686556170" at="56,45,57,336" concept="5" />
+      <node id="4573127675686556170" at="56,45,57,317" concept="5" />
       <node id="1384684774805524076" at="27,0,29,0" concept="7" trace="ourParamCache" />
       <node id="1384684774805524076" at="30,0,33,0" concept="0" trace="TestEditorMenuTraceCellMenuReplaceChildGroup_Test#()V" />
       <node id="4573127675686556168" at="56,0,59,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -523,7 +523,7 @@
       <node id="1384684774805524076" at="41,0,63,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774805524076" at="30,62,31,25" />
       <scope id="1384684774805524076" at="35,84,36,137" />
-      <scope id="4573127675686556169" at="56,45,57,336" />
+      <scope id="4573127675686556169" at="56,45,57,317" />
       <scope id="1384684774805524076" at="30,0,33,0" />
       <scope id="4573127675686556168" at="56,0,59,0">
         <var name="it" id="4573127675686556168" />
@@ -562,7 +562,7 @@
       <node id="1384684774805732194" at="57,82,58,0" concept="6" />
       <node id="1384684774805732195" at="58,0,59,64" concept="1" />
       <node id="1384684774805732201" at="59,64,60,0" concept="6" />
-      <node id="4573127675686555744" at="62,45,63,336" concept="5" />
+      <node id="4573127675686555744" at="62,45,63,317" concept="5" />
       <node id="1384684774805732239" at="65,467,66,64" concept="1" />
       <node id="1384684774805732245" at="66,64,67,57" concept="1" />
       <node id="1384684774805732128" at="27,0,29,0" concept="7" trace="ourParamCache" />
@@ -575,7 +575,7 @@
       <node id="1384684774805732128" at="41,0,71,0" concept="3" trace="testMethodImpl#()V" />
       <scope id="1384684774805732128" at="30,75,31,25" />
       <scope id="1384684774805732128" at="35,97,36,150" />
-      <scope id="4573127675686555743" at="62,45,63,336" />
+      <scope id="4573127675686555743" at="62,45,63,317" />
       <scope id="1384684774805732128" at="30,0,33,0" />
       <scope id="4573127675686555742" at="62,0,65,0">
         <var name="it" id="4573127675686555742" />

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)">
+<model ref="r:a8dde698-9468-4a76-b89d-abdfa4716001(jetbrains.mps.baseLanguage.unitTest.execution.server)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -345,18 +345,6 @@
   </registry>
   <node concept="312cEu" id="56tRMpP_bxe">
     <property role="TrG5h" value="DefaultTestExecutor" />
-    <node concept="3UR2Jj" id="4Tkq3_ePqJJ" role="lGtFl">
-      <node concept="TZ5HA" id="4Tkq3_ePqJK" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePqJL" role="1dT_Ay">
-          <property role="1dT_AB" value="Command-line front-end to launch BTestCase or JUnit3/JUnit4 ClassConcept without need for MPS instance/environment" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4Tkq3_ePr7z" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePr7$" role="1dT_Ay">
-          <property role="1dT_AB" value="XXX Unfortunate name, no idea what 'default' refers to." />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="1_D5Bk1TffL" role="jymVt" />
     <node concept="Wx3nA" id="6HElkBZJ3Lo" role="jymVt">
       <property role="2dlcS1" value="false" />
@@ -713,9 +701,6 @@
       <property role="TrG5h" value="processThrowable" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="2AHcQZ" id="4br3RNOLZgB" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
       <node concept="3clFbS" id="5vTxdEzG54H" role="3clF47">
         <node concept="3clFbF" id="4br3RNOP_7_" role="3cqZAp">
           <node concept="3nyPlj" id="4br3RNOP_7w" role="3clFbG">
@@ -747,6 +732,9 @@
         <node concept="3uibUv" id="5vTxdEzG5FX" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
         </node>
+      </node>
+      <node concept="2AHcQZ" id="4br3RNOLZgB" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
     <node concept="2tJIrI" id="5vTxdEzG6V_" role="jymVt" />
@@ -796,6 +784,18 @@
       </node>
       <node concept="3Tmbuc" id="5vTxdEzG7Z7" role="1B3o_S" />
       <node concept="3cqZAl" id="5vTxdEzG8rR" role="3clF45" />
+    </node>
+    <node concept="3UR2Jj" id="4Tkq3_ePqJJ" role="lGtFl">
+      <node concept="TZ5HA" id="4Tkq3_ePqJK" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePqJL" role="1dT_Ay">
+          <property role="1dT_AB" value="Command-line front-end to launch BTestCase or JUnit3/JUnit4 ClassConcept without need for MPS instance/environment" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4Tkq3_ePr7z" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePr7$" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX Unfortunate name, no idea what 'default' refers to." />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="56tRMpP_bCe">
@@ -1215,31 +1215,10 @@
   </node>
   <node concept="312cEu" id="2RMg39tndd6">
     <property role="TrG5h" value="WithPlatformTestExecutor" />
-    <node concept="3UR2Jj" id="4Tkq3_ePry_" role="lGtFl">
-      <node concept="TZ5HA" id="4Tkq3_ePryA" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePryB" role="1dT_Ay">
-          <property role="1dT_AB" value="Command-line front-end to launch MPS tests that need MPS environment (ITestable, incliding BTestCase, and JUnit3/JUnit4 ClassConcept with respective annotation/superclass) " />
-        </node>
-        <node concept="1dT_AC" id="4Tkq3_ePsg5" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4Tkq3_ePvaN" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePvaO" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4Tkq3_ePvav" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePvaw" role="1dT_Ay">
-          <property role="1dT_AB" value="FIXME At the moment, starts MPS on top of IDEA platform with no explicitly specified plugins (effectively means any available). " />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4Tkq3_ePy_v" role="TZ5H$">
-        <node concept="1dT_AC" id="4Tkq3_ePy_w" role="1dT_Ay">
-          <property role="1dT_AB" value="      Would be great to configure that." />
-        </node>
-      </node>
+    <node concept="3uibUv" id="2RMg39tndd7" role="1zkMxy">
+      <ref role="3uigEE" node="56tRMpP_bxe" resolve="DefaultTestExecutor" />
     </node>
+    <node concept="3Tm1VV" id="2RMg39tndeV" role="1B3o_S" />
     <node concept="Wx3nA" id="2jln2Vr6Rld" role="jymVt">
       <property role="TrG5h" value="PATH_MACRO_PREFIX" />
       <property role="3TUv4t" value="true" />
@@ -1250,10 +1229,6 @@
       <node concept="3Tm6S6" id="2jln2Vr6Wjt" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4Tkq3_ePo$S" role="jymVt" />
-    <node concept="3uibUv" id="2RMg39tndd7" role="1zkMxy">
-      <ref role="3uigEE" node="56tRMpP_bxe" resolve="DefaultTestExecutor" />
-    </node>
-    <node concept="3Tm1VV" id="2RMg39tndeV" role="1B3o_S" />
     <node concept="3clFbW" id="2RMg39tndeW" role="jymVt">
       <node concept="3cqZAl" id="2RMg39tndeX" role="3clF45" />
       <node concept="3Tm1VV" id="2RMg39tndeY" role="1B3o_S" />
@@ -1607,6 +1582,31 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4Tkq3_eP8sK" role="jymVt" />
+    <node concept="3UR2Jj" id="4Tkq3_ePry_" role="lGtFl">
+      <node concept="TZ5HA" id="4Tkq3_ePryA" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePryB" role="1dT_Ay">
+          <property role="1dT_AB" value="Command-line front-end to launch MPS tests that need MPS environment (ITestable, incliding BTestCase, and JUnit3/JUnit4 ClassConcept with respective annotation/superclass) " />
+        </node>
+        <node concept="1dT_AC" id="4Tkq3_ePsg5" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4Tkq3_ePvaN" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePvaO" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4Tkq3_ePvav" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePvaw" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME At the moment, starts MPS on top of IDEA platform with no explicitly specified plugins (effectively means any available). " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4Tkq3_ePy_v" role="TZ5H$">
+        <node concept="1dT_AC" id="4Tkq3_ePy_w" role="1dT_Ay">
+          <property role="1dT_AB" value="      Would be great to configure that." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="5Ti9jVZ8rxi">
     <property role="3GE5qa" value="" />
@@ -1634,18 +1634,6 @@
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="JUnitTestExecutor" />
     <property role="1sVAO0" value="false" />
-    <node concept="3UR2Jj" id="4br3RNOLmlr" role="lGtFl">
-      <node concept="TZ5HA" id="4br3RNOLmls" role="TZ5H$">
-        <node concept="1dT_AC" id="4br3RNOLmlt" role="1dT_Ay">
-          <property role="1dT_AB" value="Mechanism to execute tests using JUnit." />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="4br3RNOR$ch" role="TZ5H$">
-        <node concept="1dT_AC" id="4br3RNOR$ci" role="1dT_Ay">
-          <property role="1dT_AB" value="Tests are executed in the same thread." />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="2SyXq5NjTJJ" role="jymVt" />
     <node concept="312cEg" id="4qWYmcp4tuh" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -1710,8 +1698,8 @@
     </node>
     <node concept="2tJIrI" id="2qFJdjDCsm4" role="jymVt" />
     <node concept="3clFbW" id="2qFJdjDCsCs" role="jymVt">
-      <node concept="3Tm1VV" id="4br3RNOS1o3" role="1B3o_S" />
       <node concept="3cqZAl" id="2qFJdjDCsCu" role="3clF45" />
+      <node concept="3Tm1VV" id="4br3RNOS1o3" role="1B3o_S" />
       <node concept="3clFbS" id="2qFJdjDCsCw" role="3clF47">
         <node concept="3clFbF" id="2qFJdjDCsWD" role="3cqZAp">
           <node concept="37vLTI" id="2qFJdjDCsWF" role="3clFbG">
@@ -2369,6 +2357,18 @@
     <node concept="3uibUv" id="5Ti9jVZ8rzd" role="EKbjA">
       <ref role="3uigEE" node="5Ti9jVZ8rCq" resolve="TestExecutor" />
     </node>
+    <node concept="3UR2Jj" id="4br3RNOLmlr" role="lGtFl">
+      <node concept="TZ5HA" id="4br3RNOLmls" role="TZ5H$">
+        <node concept="1dT_AC" id="4br3RNOLmlt" role="1dT_Ay">
+          <property role="1dT_AB" value="Mechanism to execute tests using JUnit." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="4br3RNOR$ch" role="TZ5H$">
+        <node concept="1dT_AC" id="4br3RNOR$ci" role="1dT_Ay">
+          <property role="1dT_AB" value="Tests are executed in the same thread." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="5Ti9jVZ8rCq">
     <property role="3GE5qa" value="" />
@@ -2445,13 +2445,6 @@
   <node concept="312cEu" id="5Ti9jVZ8rCG">
     <property role="3GE5qa" value="" />
     <property role="TrG5h" value="NodeWrappersTestsContributor" />
-    <node concept="3UR2Jj" id="5UFD5GhDD7M" role="lGtFl">
-      <node concept="TZ5HA" id="5UFD5GhDD7N" role="TZ5H$">
-        <node concept="1dT_AC" id="5UFD5GhDD7O" role="1dT_Ay">
-          <property role="1dT_AB" value="Knows hot to launch TransformationTest with TestRunner suited for in-process test execution" />
-        </node>
-      </node>
-    </node>
     <node concept="312cEg" id="5Ti9jVZ8rCH" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -3541,6 +3534,13 @@
     <node concept="3uibUv" id="5Ti9jVZ8rD_" role="EKbjA">
       <ref role="3uigEE" node="5Ti9jVZ8rxi" resolve="TestsContributor" />
     </node>
+    <node concept="3UR2Jj" id="5UFD5GhDD7M" role="lGtFl">
+      <node concept="TZ5HA" id="5UFD5GhDD7N" role="TZ5H$">
+        <node concept="1dT_AC" id="5UFD5GhDD7O" role="1dT_Ay">
+          <property role="1dT_AB" value="Knows hot to launch TransformationTest with TestRunner suited for in-process test execution" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="5Ti9jVZ8rIH">
     <property role="3GE5qa" value="" />
@@ -4530,18 +4530,6 @@
   </node>
   <node concept="312cEu" id="77hRUeKhvqy">
     <property role="TrG5h" value="DefaultRunListener" />
-    <node concept="3UR2Jj" id="31Rnc327Iq0" role="lGtFl">
-      <node concept="TZ5HA" id="31Rnc327Iq1" role="TZ5H$">
-        <node concept="1dT_AC" id="31Rnc327Iq2" role="1dT_Ay">
-          <property role="1dT_AB" value="JUnit test listener that spits out control sequences into supplied stream. " />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="31Rnc327ICF" role="TZ5H$">
-        <node concept="1dT_AC" id="31Rnc327ICG" role="1dT_Ay">
-          <property role="1dT_AB" value="These control sequences are for external process to receive JUnit events." />
-        </node>
-      </node>
-    </node>
     <node concept="312cEg" id="56tRMpP_bx_" role="jymVt">
       <property role="TrG5h" value="myOutput" />
       <property role="3TUv4t" value="true" />
@@ -4879,10 +4867,10 @@
         </node>
         <node concept="3clFbJ" id="1zHDQsywvkL" role="3cqZAp">
           <node concept="3y3z36" id="1zHDQsywvkM" role="3clFbw">
+            <node concept="10Nm6u" id="1zHDQsywvkN" role="3uHU7w" />
             <node concept="37vLTw" id="6NKjxRILYHl" role="3uHU7B">
               <ref role="3cqZAo" node="6NKjxRILYHh" resolve="methodName" />
             </node>
-            <node concept="10Nm6u" id="1zHDQsywvkN" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="1zHDQsywvkR" role="3clFbx">
             <node concept="3clFbF" id="1zHDQsywvkS" role="3cqZAp">
@@ -5036,6 +5024,18 @@
     <node concept="3uibUv" id="77hRUeKhB$L" role="1zkMxy">
       <ref role="3uigEE" to="k76n:~RunListener" resolve="RunListener" />
     </node>
+    <node concept="3UR2Jj" id="31Rnc327Iq0" role="lGtFl">
+      <node concept="TZ5HA" id="31Rnc327Iq1" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc327Iq2" role="1dT_Ay">
+          <property role="1dT_AB" value="JUnit test listener that spits out control sequences into supplied stream. " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="31Rnc327ICF" role="TZ5H$">
+        <node concept="1dT_AC" id="31Rnc327ICG" role="1dT_Ay">
+          <property role="1dT_AB" value="These control sequences are for external process to receive JUnit events." />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="1b7CZFPGW70">
     <property role="TrG5h" value="InProcessExecutionFilter" />
@@ -5061,16 +5061,6 @@
       </node>
       <node concept="3clFbS" id="5iYlssmW6oB" role="3clF47">
         <node concept="3clFbJ" id="hRmEtnk1p8" role="3cqZAp">
-          <node concept="3fqX7Q" id="40J2CKBn6gY" role="3clFbw">
-            <node concept="2OqwBi" id="40J2CKBn6h0" role="3fr31v">
-              <node concept="37vLTw" id="40J2CKBn6h1" role="2Oq$k0">
-                <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
-              </node>
-              <node concept="liA8E" id="40J2CKBn6h2" role="2OqNvi">
-                <ref role="37wK5l" to="sfqd:40J2CKBlFWh" resolve="canRunInProcess" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbS" id="hRmEtnk1pb" role="3clFbx">
             <node concept="YS8fn" id="5UFD5GhCB6a" role="3cqZAp">
               <node concept="2ShNRf" id="7wE3E_r5L0v" role="YScLw">
@@ -5095,6 +5085,16 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="40J2CKBn6gY" role="3clFbw">
+            <node concept="2OqwBi" id="40J2CKBn6h0" role="3fr31v">
+              <node concept="37vLTw" id="40J2CKBn6h1" role="2Oq$k0">
+                <ref role="3cqZAo" node="MY2kIk9D46" resolve="testNodeWrapper" />
+              </node>
+              <node concept="liA8E" id="40J2CKBn6h2" role="2OqNvi">
+                <ref role="37wK5l" to="sfqd:40J2CKBlFWh" resolve="canRunInProcess" />
               </node>
             </node>
           </node>

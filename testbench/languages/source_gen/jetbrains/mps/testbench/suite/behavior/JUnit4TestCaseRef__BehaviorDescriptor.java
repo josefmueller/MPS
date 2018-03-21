@@ -89,7 +89,7 @@ public final class JUnit4TestCaseRef__BehaviorDescriptor extends BaseBHDescripto
               }
             }).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode ann) {
-                return SNodeOperations.is(SLinkOperations.getTarget(ann, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")), new SNodePointer("49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)", "~Test"));
+                return SLinkOperations.hasPointer(ann, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation"), new SNodePointer("49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)", "~Test"));
               }
             });
           }

@@ -30,7 +30,7 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     } else {
       ListSequence.fromList(supertypes).addElement(_quotation_createNode_os9pe9_a0a0a0c0b());
     }
-    if (SNodeOperations.is(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256"))) {
+    if (SLinkOperations.hasPointer(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256"))) {
       ListSequence.fromList(supertypes).addElement(_quotation_createNode_os9pe9_a0a0a3a1());
     }
     return supertypes;

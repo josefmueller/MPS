@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -334,6 +334,9 @@
         <node concept="3cpWs8" id="WvgGJd6440" role="3cqZAp">
           <node concept="3cpWsn" id="WvgGJd6441" role="3cpWs9">
             <property role="TrG5h" value="checker" />
+            <node concept="3uibUv" id="7ofrMmP9NSU" role="1tU5fm">
+              <ref role="3uigEE" to="tp6m:3fCX6WCBvHP" resolve="TestsErrorsChecker" />
+            </node>
             <node concept="3K4zz7" id="1CWvv8TgJbd" role="33vP2m">
               <node concept="10Nm6u" id="1CWvv8TgJkV" role="3K4E3e" />
               <node concept="2OqwBi" id="1CWvv8TgKb5" role="3K4GZi">
@@ -350,9 +353,6 @@
                   <ref role="3cqZAo" node="1CWvv8TgHDH" resolve="ourLastCheck" />
                 </node>
               </node>
-            </node>
-            <node concept="3uibUv" id="7ofrMmP9NSU" role="1tU5fm">
-              <ref role="3uigEE" to="tp6m:3fCX6WCBvHP" resolve="TestsErrorsChecker" />
             </node>
           </node>
         </node>
@@ -717,6 +717,9 @@
         <node concept="3cpWs8" id="6KNTF2XLQcE" role="3cqZAp">
           <node concept="3cpWsn" id="6KNTF2XLQcF" role="3cpWs9">
             <property role="TrG5h" value="ruleModelRef" />
+            <node concept="3uibUv" id="6KNTF2XLQc_" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+            </node>
             <node concept="2OqwBi" id="3XR0QgVCoac" role="33vP2m">
               <node concept="2OqwBi" id="3XR0QgVCoa9" role="2Oq$k0">
                 <node concept="I4A8Y" id="3XR0QgVCoaa" role="2OqNvi" />
@@ -725,9 +728,6 @@
                 </node>
               </node>
               <node concept="aIX43" id="3XR0QgVCoad" role="2OqNvi" />
-            </node>
-            <node concept="3uibUv" id="6KNTF2XLQc_" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
           </node>
         </node>

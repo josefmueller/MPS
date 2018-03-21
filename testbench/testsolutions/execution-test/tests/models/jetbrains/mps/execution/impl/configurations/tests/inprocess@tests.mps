@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="10" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
   </languages>
   <imports>
@@ -203,6 +203,9 @@
       </concept>
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
+      <concept id="4733039728785194814" name="jetbrains.mps.lang.modelapi.structure.NamedNodeReference" flags="ng" index="ZC_QK">
+        <reference id="7256306938026143658" name="target" index="2aWVGs" />
+      </concept>
       <concept id="361130699826193248" name="jetbrains.mps.lang.modelapi.structure.ModelPointer" flags="ng" index="1dCxOl">
         <property id="1863527487546097494" name="modelId" index="1XweGQ" />
         <child id="679099339649067980" name="name" index="1j$8Uc" />
@@ -233,12 +236,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="7400021826774799413" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression" flags="ng" index="2tJFMh">
+        <child id="7400021826774799510" name="ref" index="2tJFKM" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
-      <concept id="1828409047608048457" name="jetbrains.mps.lang.smodel.structure.NodePointerExpression_Old" flags="nn" index="1N_AGu">
-        <reference id="1828409047608048458" name="referentNode" index="1N_AGt" />
       </concept>
       <concept id="1863527487546129879" name="jetbrains.mps.lang.smodel.structure.ModelPointerExpression" flags="ng" index="1Xw6AR">
         <child id="1863527487546132519" name="modelRef" index="1XwpL7" />
@@ -747,8 +750,10 @@
               </node>
               <node concept="liA8E" id="2_AUN5Gs1X0" role="2OqNvi">
                 <ref role="37wK5l" to="v3va:7hSRFL3KjZH" resolve="discover" />
-                <node concept="1N_AGu" id="2_AUN5Gs1X7" role="37wK5m">
-                  <ref role="1N_AGt" to="n8jl:617g7o6hhfk" resolve="SimpleTestCase_Test" />
+                <node concept="2tJFMh" id="7uvxILPmWWi" role="37wK5m">
+                  <node concept="ZC_QK" id="7uvxILPmWWh" role="2tJFKM">
+                    <ref role="2aWVGs" to="n8jl:617g7o6hhfk" resolve="SimpleTestCase_Test" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -800,8 +805,10 @@
               </node>
               <node concept="liA8E" id="7hSRFL3KL$b" role="2OqNvi">
                 <ref role="37wK5l" to="v3va:7hSRFL3KjZH" resolve="discover" />
-                <node concept="1N_AGu" id="2_AUN5GsxmB" role="37wK5m">
-                  <ref role="1N_AGt" to="n8jl:5vTxdEzy3vs" resolve="FailedTestCase_Test" />
+                <node concept="2tJFMh" id="7uvxILPmWWe" role="37wK5m">
+                  <node concept="ZC_QK" id="7uvxILPmWWd" role="2tJFKM">
+                    <ref role="2aWVGs" to="n8jl:5vTxdEzy3vs" resolve="FailedTestCase_Test" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -1385,8 +1392,10 @@
                 </node>
                 <node concept="liA8E" id="7hSRFL3KRmO" role="2OqNvi">
                   <ref role="37wK5l" to="v3va:7hSRFL3KjZH" resolve="discover" />
-                  <node concept="1N_AGu" id="7hSRFL3KRmP" role="37wK5m">
-                    <ref role="1N_AGt" to="n8jl:5vTxdEz_CuU" resolve="WaitingTestCase_Test" />
+                  <node concept="2tJFMh" id="7uvxILPmWWm" role="37wK5m">
+                    <node concept="ZC_QK" id="7uvxILPmWWl" role="2tJFKM">
+                      <ref role="2aWVGs" to="n8jl:5vTxdEz_CuU" resolve="WaitingTestCase_Test" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1773,8 +1782,10 @@
               </node>
               <node concept="liA8E" id="7hSRFL3KT62" role="2OqNvi">
                 <ref role="37wK5l" to="v3va:7hSRFL3KjZH" resolve="discover" />
-                <node concept="1N_AGu" id="2_AUN5GsHku" role="37wK5m">
-                  <ref role="1N_AGt" to="ryl9:3BRJPwFQ4xK" resolve="TrickyUndoTest" />
+                <node concept="2tJFMh" id="7uvxILPmWWc" role="37wK5m">
+                  <node concept="ZC_QK" id="7uvxILPmWWb" role="2tJFKM">
+                    <ref role="2aWVGs" to="ryl9:3BRJPwFQ4xK" resolve="TrickyUndoTest" />
+                  </node>
                 </node>
               </node>
             </node>

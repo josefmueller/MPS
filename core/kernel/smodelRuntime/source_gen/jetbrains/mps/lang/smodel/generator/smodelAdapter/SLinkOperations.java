@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SReference;
+import java.util.Objects;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -86,6 +87,26 @@ public class SLinkOperations {
       SNodeAccessUtil.setReference(node, role, SReference.create(role, node, targetPointer, null));
     }
     return targetPointer;
+  }
+  public static SNodeReference getPointer(SNode node, SReferenceLink role) {
+    if (node != null) {
+      org.jetbrains.mps.openapi.model.SReference reference = node.getReference(role);
+      if (reference != null) {
+        return reference.getTargetNodeReference();
+      }
+    }
+    return null;
+  }
+  public static boolean hasPointer(SNode node, SReferenceLink role, SNodeReference targetPointer) {
+    if (node != null) {
+      org.jetbrains.mps.openapi.model.SReference reference = node.getReference(role);
+      if (reference != null) {
+        return Objects.equals(targetPointer, reference.getTargetNodeReference());
+      } else {
+        return targetPointer == null;
+      }
+    }
+    return false;
   }
   public static List<SNode> getChildren(SNode node, SContainmentLink role) {
     if (node != null && role != null) {

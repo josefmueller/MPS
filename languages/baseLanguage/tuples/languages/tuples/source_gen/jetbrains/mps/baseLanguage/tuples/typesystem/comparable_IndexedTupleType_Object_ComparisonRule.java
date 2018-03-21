@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.tuples.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SNodePointer;
@@ -16,7 +15,7 @@ public class comparable_IndexedTupleType_Object_ComparisonRule extends Compariso
   public comparable_IndexedTupleType_Object_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    return SNodeOperations.is(SLinkOperations.getTarget(node2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"));
+    return SLinkOperations.hasPointer(node2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Object"));
   }
   public boolean isWeak() {
     return true;
