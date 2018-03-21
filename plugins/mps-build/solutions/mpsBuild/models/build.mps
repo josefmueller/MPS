@@ -30257,18 +30257,6 @@
             <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7DhDAVvtzkM" role="3bR37C">
-          <node concept="3bR9La" id="7DhDAVvtzkN" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7DhDAVvtzkO" role="3bR37C">
-          <node concept="3bR9La" id="7DhDAVvtzkP" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1TaHNgiIbJb" resolve="MPS.Platform" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="7DhDAVvtzkQ" role="3bR37C">
           <node concept="3bR9La" id="7DhDAVvtzkR" role="1SiIV1">
             <property role="3bR36h" value="false" />

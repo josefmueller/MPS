@@ -3304,6 +3304,12 @@
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6NpSidvt0dT" role="3bR37C">
+          <node concept="3bR9La" id="6NpSidvt0dU" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="55IIr" id="3yaq6Y8lhoe" role="auvoZ">

@@ -26,7 +26,7 @@ public class BasicTest1 extends BaseGeneratorTest {
     t.setInput(i);
     t.transform();
     SModel rm = myArg_B;
-    boolean match = match(i, rm);
+    boolean match = match(t.getOutputModel(), rm);
     Assert.assertTrue("Transformation output model doesn't match reference one", match);
   }
 }

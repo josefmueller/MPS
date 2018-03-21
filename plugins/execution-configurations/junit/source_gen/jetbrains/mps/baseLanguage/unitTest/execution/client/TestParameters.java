@@ -72,6 +72,7 @@ public final class TestParameters {
 
   /**
    * 
+   * 
    * @return {@code true} if tests need a running MPS instance to get executed.
    */
   public boolean needsMPS() {

@@ -7,6 +7,7 @@
   <imports>
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
   </imports>
@@ -94,9 +95,11 @@
       </node>
       <node concept="3Tm1VV" id="2kP5W5ySE5d" role="1B3o_S" />
       <node concept="3clFbS" id="2kP5W5ySE5e" role="3clF47">
-        <node concept="3cpWs6" id="2kP5W5yTgVy" role="3cqZAp">
-          <node concept="2OqwBi" id="2kP5W5yThoQ" role="3cqZAk">
-            <node concept="2OqwBi" id="2kP5W5yTh9U" role="2Oq$k0">
+        <node concept="3cpWs6" id="6NpSidvrGA7" role="3cqZAp">
+          <node concept="2YIFZM" id="6NpSidvrGIx" role="3cqZAk">
+            <ref role="37wK5l" to="i8bi:4AUPj1OZ2vv" resolve="resolveModel" />
+            <ref role="1Pybhc" to="i8bi:3ayRDg9cgZG" resolve="SPointerOperations" />
+            <node concept="2OqwBi" id="2kP5W5yTh9U" role="37wK5m">
               <node concept="2YIFZM" id="2kP5W5yTh5I" role="2Oq$k0">
                 <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
                 <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
@@ -104,14 +107,11 @@
               <node concept="liA8E" id="2kP5W5yThey" role="2OqNvi">
                 <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
                 <node concept="Xl_RD" id="2kP5W5yThhW" role="37wK5m">
-                  <property role="Xl_RC" value="r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f(jetbrains.mps.test.smodel.data2)" />
+                  <property role="Xl_RC" value="r:a0bda7de-bcb5-44a6-828e-6ce19d09a34f(jetbrains.mps.test.smodel.data1)" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="2kP5W5yThxn" role="2OqNvi">
-              <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-              <node concept="10Nm6u" id="2kP5W5yThA9" role="37wK5m" />
-            </node>
+            <node concept="10Nm6u" id="6NpSidvrGYS" role="37wK5m" />
           </node>
         </node>
       </node>
