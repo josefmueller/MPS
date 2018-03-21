@@ -185,14 +185,14 @@
                   <property role="1XweGQ" value="r:6598b34f-7cc0-4465-ba61-6e5504d2a2be" />
                   <node concept="1j_P7g" id="5dMpO2w1$dJ" role="1j$8Uc">
                     <property role="1j_P7h" value="jetbrains.mps.smodel.test.data" />
-                    <node concept="LIFWc" id="5dMpO2w1$ja" role="lGtFl">
-                      <property role="ZRATv" value="true" />
-                      <property role="OXtK3" value="true" />
-                      <property role="p6zMq" value="30" />
-                      <property role="p6zMs" value="30" />
-                      <property role="LIFWd" value="property_value" />
-                    </node>
                   </node>
+                </node>
+                <node concept="LIFWc" id="32RkMkffbOr" role="lGtFl">
+                  <property role="ZRATv" value="true" />
+                  <property role="OXtK3" value="true" />
+                  <property role="p6zMq" value="0" />
+                  <property role="p6zMs" value="0" />
+                  <property role="LIFWd" value="property_nodeId" />
                 </node>
               </node>
             </node>
@@ -223,14 +223,14 @@
           <property role="1XweGQ" value="r:6598b34f-7cc0-4465-ba61-6e5504d2a2be" />
           <node concept="1j_P7g" id="5dMpO2w1n9P" role="1j$8Uc">
             <property role="1j_P7h" value="jetbrains.mps.smodel.test.data" />
-            <node concept="LIFWc" id="5dMpO2w1naj" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="30" />
-              <property role="p6zMs" value="30" />
-              <property role="LIFWd" value="property_value" />
-            </node>
           </node>
+        </node>
+        <node concept="LIFWc" id="32RkMkffbPg" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_nodeId" />
         </node>
       </node>
     </node>
@@ -306,14 +306,14 @@
                     <property role="1XweGQ" value="r:6598b34f-7cc0-4465-ba61-6e5504d2a2be" />
                     <node concept="1j_P7g" id="5dMpO2w1KTu" role="1j$8Uc">
                       <property role="1j_P7h" value="jetbrains.mps.smodel.test.data" />
-                      <node concept="LIFWc" id="5dMpO2w1L2Y" role="lGtFl">
-                        <property role="ZRATv" value="true" />
-                        <property role="OXtK3" value="true" />
-                        <property role="p6zMq" value="30" />
-                        <property role="p6zMs" value="30" />
-                        <property role="LIFWd" value="property_value" />
-                      </node>
                     </node>
+                  </node>
+                  <node concept="LIFWc" id="32RkMkffc8F" role="lGtFl">
+                    <property role="ZRATv" value="true" />
+                    <property role="OXtK3" value="true" />
+                    <property role="p6zMq" value="0" />
+                    <property role="p6zMs" value="0" />
+                    <property role="LIFWd" value="property_nodeId" />
                   </node>
                 </node>
               </node>
