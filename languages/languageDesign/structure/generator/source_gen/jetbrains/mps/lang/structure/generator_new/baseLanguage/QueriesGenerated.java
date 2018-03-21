@@ -609,7 +609,7 @@ public class QueriesGenerated extends QueryProviderBase {
       // if it points to a node in the same transient model, use it, but warn user not to expect anything good. 
       _context.showWarningMessage(_context.getNode(), "Concept's source node is from the same transient model");
     }
-    return SNodeOperations.getPointer(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")));
+    return SLinkOperations.getPointer(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode"));
   }
   public static Object insertMacro_varValue_2181124456585750556(final TemplateVarContext _context) {
     SNode cd = SNodeOperations.as(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));

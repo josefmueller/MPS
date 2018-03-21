@@ -7,10 +7,10 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -39,7 +39,7 @@ public final class MigrateCanBeCoerced_MigrationScript extends BaseMigrationScri
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.is(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod")), new SNodePointer("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "6321644624958501287"));
+        return SLinkOperations.hasPointer(node, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"), new SNodePointer("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "6321644624958501287"));
       }
       @Override
       public void doUpdateInstanceNode(final SNode node) {

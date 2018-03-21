@@ -184,10 +184,10 @@
   </root>
   <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/855965222210829927">
     <file name="QueriesGenerated.java">
-      <node id="855965222210837091" at="75,109,76,1119" concept="4" />
-      <node id="3727642986274028985" at="78,110,79,1116" concept="4" />
-      <scope id="855965222210829930" at="75,109,76,1119" />
-      <scope id="3727642986274028984" at="78,110,79,1116" />
+      <node id="855965222210837091" at="75,109,76,1100" concept="4" />
+      <node id="3727642986274028985" at="78,110,79,1097" concept="4" />
+      <scope id="855965222210829930" at="75,109,76,1100" />
+      <scope id="3727642986274028984" at="78,110,79,1097" />
     </file>
   </root>
   <root nodeRef="r:a906d1cd-0886-4e6d-bb7e-484119b7a54f(jetbrains.mps.lang.dataFlow.analyzers.generator.template.main@generator)/8656002014371075955">
