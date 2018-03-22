@@ -82,8 +82,12 @@ public final class Renamer {
           }
         }
       }
+
       // Rename module in new place after containing folder rename
-      module.rename(newModuleName);
+      // Skip if current & old names are the same - can happen for submodule
+      if (!module.getModuleName().equals(newModuleName)) {
+        module.rename(newModuleName);
+      }
     }
 
     updateModelAndModuleReferences(project.getRepository());
