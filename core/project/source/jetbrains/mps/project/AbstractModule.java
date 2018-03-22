@@ -656,10 +656,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     ModuleDescriptor descriptor = getModuleDescriptor();
     IFile descriptorFile = getDescriptorFile();
     if (descriptorFile != null) {
-      String newDescriptorName = newModuleName + MPSExtentions.DOT + FileUtil.getExtension(descriptorFile.getName());
+      final String newDescriptorName = newModuleName + MPSExtentions.DOT + FileUtil.getExtension(descriptorFile.getName());
 
-      // In case we just update descriptor
-      if (!descriptorFile.getName().equals(newDescriptorName)) {
         //noinspection ConstantConditions
         if (descriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
           throw new DescriptorTargetFileAlreadyExistsException(descriptorFile, newDescriptorName);
@@ -668,14 +666,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         descriptorFile.rename(newNameWithExt);
         // update descriptor since IFile is immutable like java.io.File
         myDescriptorFile = descriptorFile.getParent().getDescendant(newNameWithExt);
-      }
-
-      // Rename module folder iff it is equals to module name
-      if (myDescriptorFile.getParent().getName().equals(oldModuleName) && !oldModuleName.equals(newModuleName)) {
-        myDescriptorFile.getParent().rename(newModuleName);
-      }
-
-      updateModuleDescriptor(descriptor, newModuleName);
     }
 
     if (descriptor != null) {
@@ -689,46 +679,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     fireModuleRenamed(oldRef);
   }
 
-  private void updateModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor, @NotNull String newModuleName) {
-    // Update output path for generated files
-    final String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(moduleDescriptor);
-    if (generatorOutputPath != null && generatorOutputPath.contains(moduleDescriptor.getNamespace())) {
-      ProjectPathUtil.setGeneratorOutputPath(moduleDescriptor, generatorOutputPath.replace(moduleDescriptor.getNamespace(), newModuleName));
-    }
-
-    /* Update model roots in descriptor:
-     * After module folder was renamed model roots are updated in SModule,
-     * because IFile used here to store location,
-     * but not in ModuleDescriptor - location is stored as string.
-     * */
-    final Collection<ModelRootDescriptor> modelRootDescriptors = moduleDescriptor.getModelRootDescriptors();
-    modelRootDescriptors.clear();
-    for (ModelRoot root : myModuleReference.resolve(getRepository()).getModelRoots()) {
-      Memento memento = new MementoImpl();
-      root.save(memento);
-      ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
-      modelRootDescriptors.add(modelRootDescriptor);
-    }
-
-    // TODO: as soon as generator will have it's own descriptor file - remove this!
-    /* Have explicitly update generators model roots in language (there are no own descriptors for generators),
-     * because generators have been already renamed before language without folder rename,
-     * so they can't update their model roots earlier in own rename method.
-     * */
-    if (this instanceof Language) {
-      for(Generator generator : ((Language) this).getGenerators()) {
-        final Collection<ModelRootDescriptor> generatorMRDescriptors = generator.getModuleDescriptor().getModelRootDescriptors();
-        generatorMRDescriptors.clear();
-        for (ModelRoot root : generator.getModelRoots()) {
-          Memento memento = new MementoImpl();
-          root.save(memento);
-          ModelRootDescriptor modelRootDescriptor = new ModelRootDescriptor(root.getType(), memento);
-          generatorMRDescriptors.add(modelRootDescriptor);
-        }
-      }
-    }
-  }
-
   /**
    * Must be transferred to workbench or elsewhere as
    * a separate listening mechanism. An induced contract is
@@ -739,15 +689,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    */
   /*@Deprecated*/
   public void renameModels(String oldName, String newName, boolean moveModels) {
-    //if module name is a prefix of it's model's name - rename the model, too
+    //if module name is a prefix of it's model's name or they are equals - rename the model, too
     for (SModel m : getModels()) {
       if (!m.isReadOnly()) {
         SModelName oldModelName = m.getName();
-        if (oldModelName.getNamespace().startsWith(oldName)) {
+        if (oldModelName.getNamespace().startsWith(oldName) || oldModelName.getLongName().equals(oldName)) {
           if (m instanceof EditableSModel) {
-            SModelName newModelName = new SModelName(newName + oldModelName.getNamespace().substring(oldName.length()),
-                                                     oldModelName.getSimpleName(),
-                                                     oldModelName.getStereotype());
+            final String namespace = oldModelName.getLongName().equals(oldName)
+                                     ? newName.substring(0, newName.lastIndexOf("." + oldModelName.getSimpleName())) // handle equal module & model names
+                                     : newName + oldModelName.getNamespace().substring(oldName.length());
+            SModelName newModelName = new SModelName(namespace, oldModelName.getSimpleName(), oldModelName.getStereotype());
             ((EditableSModel) m).rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
           }
         }

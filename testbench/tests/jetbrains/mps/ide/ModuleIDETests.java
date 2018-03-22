@@ -205,7 +205,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       boolean mustBeMoved = module.getModuleName().equals(module.getModuleSourceDir().getName());
 
       try {
-        Renamer.renameModuleWithSubModules(module, newModuleName, subModules);
+        Renamer.renameModuleWithSubModules(module, newModuleName, subModules, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }
@@ -335,7 +335,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
       try {
-        Renamer.renameModule(lang, newModuleName);
+        Renamer.renameModule(lang, newModuleName, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }
@@ -360,7 +360,7 @@ public class ModuleIDETests extends ModuleInProjectTest {
       saveProjectInTest();
       projectBackup.doBackup();
       try {
-        Renamer.renameModule(lang, newModuleName);
+        Renamer.renameModule(lang, newModuleName, myProject);
       } catch (DescriptorTargetFileAlreadyExistsException e) {
         throw new RuntimeException(e);
       }

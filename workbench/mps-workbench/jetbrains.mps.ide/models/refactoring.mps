@@ -2736,8 +2736,8 @@
                 <node concept="3clFbS" id="16Fpg60PyXC" role="SfCbr">
                   <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
                     <node concept="2YIFZM" id="684ZMLPnvvy" role="3clFbG">
-                      <ref role="37wK5l" to="smoa:~Renamer.renameModuleWithSubModules(jetbrains.mps.project.AbstractModule,java.lang.String,java.util.Collection):void" resolve="renameModuleWithSubModules" />
                       <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
+                      <ref role="37wK5l" to="smoa:~Renamer.renameModuleWithSubModules(jetbrains.mps.project.AbstractModule,java.lang.String,java.util.Collection,jetbrains.mps.project.Project):void" resolve="renameModuleWithSubModules" />
                       <node concept="37vLTw" id="684ZMLPnvvz" role="37wK5m">
                         <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
                       </node>
@@ -2746,6 +2746,9 @@
                       </node>
                       <node concept="37vLTw" id="684ZMLPn$9$" role="37wK5m">
                         <ref role="3cqZAo" node="52AFxJVoR3s" resolve="mySubModules" />
+                      </node>
+                      <node concept="37vLTw" id="44aRABLn0_F" role="37wK5m">
+                        <ref role="3cqZAo" node="2sTGsLqeK$D" resolve="myProject" />
                       </node>
                     </node>
                   </node>
