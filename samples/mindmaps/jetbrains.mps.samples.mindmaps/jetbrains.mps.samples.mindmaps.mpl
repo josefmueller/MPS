@@ -10,7 +10,6 @@
   <dependencies>
     <dependency reexport="false">5a283d13-799d-4cf6-a6a7-5c3e11d79dcb(jetbrains.mps.lang.editor.diagram.runtime)</dependency>
     <dependency reexport="false">9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)</dependency>
-    <dependency reexport="false">3368d218-0562-4953-8c2f-d10609f72361(jetbrains.mps.samples.mindmaps.figures)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="6" />
