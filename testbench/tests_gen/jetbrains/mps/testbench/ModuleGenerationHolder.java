@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import difflib.Patch;
 import difflib.DiffUtils;
+import difflib.Delta;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
@@ -186,8 +187,13 @@ public class ModuleGenerationHolder {
           }
           List<String> olines = fileToStrings(onext);
           Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
-          if (!(patch.getDeltas().isEmpty())) {
-            ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 5)));
+          List<Delta> deltas = patch.getDeltas();
+          if (!(deltas.isEmpty())) {
+            if (deltas.size() < 5) {
+              ListSequence.fromList(diffs).addSequence(ListSequence.fromList(DiffUtils.generateUnifiedDiff(onext.getPath(), rnext.getPath(), olines, patch, 3)));
+            } else {
+              ListSequence.fromList(diffs).addElement(String.format("Too many changes (%d) in file %s", deltas.size(), onext.getPath()));
+            }
           }
         } else {
           diffDirs(onext, rnext, diffs);

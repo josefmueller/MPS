@@ -1834,41 +1834,113 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3cpWs8" id="7f6Fg0uM7Oz" role="3cqZAp">
+                      <node concept="3cpWsn" id="7f6Fg0uM7O$" role="3cpWs9">
+                        <property role="TrG5h" value="deltas" />
+                        <node concept="3uibUv" id="7f6Fg0uM7NZ" role="1tU5fm">
+                          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                          <node concept="3uibUv" id="7f6Fg0uM7O2" role="11_B2D">
+                            <ref role="3uigEE" to="2o:~Delta" resolve="Delta" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="7f6Fg0uM7O_" role="33vP2m">
+                          <node concept="37vLTw" id="7f6Fg0uM7OA" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2XCiAnQPSOX" resolve="patch" />
+                          </node>
+                          <node concept="liA8E" id="7f6Fg0uM7OB" role="2OqNvi">
+                            <ref role="37wK5l" to="2o:~Patch.getDeltas():java.util.List" resolve="getDeltas" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbJ" id="2O3Uzn05via" role="3cqZAp">
                       <node concept="3clFbS" id="2O3Uzn05vib" role="3clFbx">
-                        <node concept="3clFbF" id="2XCiAnQPSP6" role="3cqZAp">
-                          <node concept="2OqwBi" id="2XCiAnQPSP7" role="3clFbG">
-                            <node concept="37vLTw" id="2BHiRxgm9DV" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2XCiAnQPDFX" resolve="diffs" />
+                        <node concept="3clFbJ" id="7f6Fg0uMc$G" role="3cqZAp">
+                          <node concept="3clFbS" id="7f6Fg0uMc$I" role="3clFbx">
+                            <node concept="3clFbF" id="2XCiAnQPSP6" role="3cqZAp">
+                              <node concept="2OqwBi" id="2XCiAnQPSP7" role="3clFbG">
+                                <node concept="37vLTw" id="2BHiRxgm9DV" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2XCiAnQPDFX" resolve="diffs" />
+                                </node>
+                                <node concept="X8dFx" id="4E$kaclSel8" role="2OqNvi">
+                                  <node concept="2YIFZM" id="65IE4qV7T8j" role="25WWJ7">
+                                    <ref role="37wK5l" to="2o:~DiffUtils.generateUnifiedDiff(java.lang.String,java.lang.String,java.util.List,difflib.Patch,int):java.util.List" resolve="generateUnifiedDiff" />
+                                    <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
+                                    <node concept="2OqwBi" id="65IE4qV7T8k" role="37wK5m">
+                                      <node concept="37vLTw" id="65IE4qV7T8l" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                                      </node>
+                                      <node concept="liA8E" id="65IE4qV7T8m" role="2OqNvi">
+                                        <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                                      </node>
+                                    </node>
+                                    <node concept="2OqwBi" id="65IE4qV7T8n" role="37wK5m">
+                                      <node concept="37vLTw" id="65IE4qV7T8o" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
+                                      </node>
+                                      <node concept="liA8E" id="65IE4qV7T8p" role="2OqNvi">
+                                        <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                                      </node>
+                                    </node>
+                                    <node concept="37vLTw" id="65IE4qV7T8q" role="37wK5m">
+                                      <ref role="3cqZAo" node="4E$kaclSekD" resolve="olines" />
+                                    </node>
+                                    <node concept="37vLTw" id="65IE4qV7T8r" role="37wK5m">
+                                      <ref role="3cqZAo" node="2XCiAnQPSOX" resolve="patch" />
+                                    </node>
+                                    <node concept="3cmrfG" id="65IE4qV7T8s" role="37wK5m">
+                                      <property role="3cmrfH" value="3" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
-                            <node concept="X8dFx" id="4E$kaclSel8" role="2OqNvi">
-                              <node concept="2YIFZM" id="65IE4qV7T8j" role="25WWJ7">
-                                <ref role="37wK5l" to="2o:~DiffUtils.generateUnifiedDiff(java.lang.String,java.lang.String,java.util.List,difflib.Patch,int):java.util.List" resolve="generateUnifiedDiff" />
-                                <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
-                                <node concept="2OqwBi" id="65IE4qV7T8k" role="37wK5m">
-                                  <node concept="37vLTw" id="65IE4qV7T8l" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                          </node>
+                          <node concept="3eOVzh" id="7f6Fg0uMe$b" role="3clFbw">
+                            <node concept="2OqwBi" id="7f6Fg0uMdaA" role="3uHU7B">
+                              <node concept="37vLTw" id="7f6Fg0uMcK_" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7f6Fg0uM7O$" resolve="deltas" />
+                              </node>
+                              <node concept="liA8E" id="7f6Fg0uMdqC" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                              </node>
+                            </node>
+                            <node concept="3cmrfG" id="7f6Fg0uMfqi" role="3uHU7w">
+                              <property role="3cmrfH" value="5" />
+                            </node>
+                          </node>
+                          <node concept="9aQIb" id="7f6Fg0uMgdp" role="9aQIa">
+                            <node concept="3clFbS" id="7f6Fg0uMgdq" role="9aQI4">
+                              <node concept="3clFbF" id="7f6Fg0uMgtq" role="3cqZAp">
+                                <node concept="2OqwBi" id="7f6Fg0uMgQD" role="3clFbG">
+                                  <node concept="37vLTw" id="7f6Fg0uMgtp" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="2XCiAnQPDFX" resolve="diffs" />
                                   </node>
-                                  <node concept="liA8E" id="65IE4qV7T8m" role="2OqNvi">
-                                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                                  <node concept="TSZUe" id="7f6Fg0uMhn2" role="2OqNvi">
+                                    <node concept="2YIFZM" id="7f6Fg0uMhAc" role="25WWJ7">
+                                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                                      <node concept="Xl_RD" id="7f6Fg0uMhDM" role="37wK5m">
+                                        <property role="Xl_RC" value="Too many changes (%d) in file %s" />
+                                      </node>
+                                      <node concept="2OqwBi" id="7f6Fg0uMj8Z" role="37wK5m">
+                                        <node concept="37vLTw" id="7f6Fg0uMi_7" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="7f6Fg0uM7O$" resolve="deltas" />
+                                        </node>
+                                        <node concept="liA8E" id="7f6Fg0uMjsh" role="2OqNvi">
+                                          <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="7f6Fg0uMkDz" role="37wK5m">
+                                        <node concept="37vLTw" id="7f6Fg0uMklP" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                                        </node>
+                                        <node concept="liA8E" id="7f6Fg0uMl42" role="2OqNvi">
+                                          <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                                        </node>
+                                      </node>
+                                    </node>
                                   </node>
-                                </node>
-                                <node concept="2OqwBi" id="65IE4qV7T8n" role="37wK5m">
-                                  <node concept="37vLTw" id="65IE4qV7T8o" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
-                                  </node>
-                                  <node concept="liA8E" id="65IE4qV7T8p" role="2OqNvi">
-                                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
-                                  </node>
-                                </node>
-                                <node concept="37vLTw" id="65IE4qV7T8q" role="37wK5m">
-                                  <ref role="3cqZAo" node="4E$kaclSekD" resolve="olines" />
-                                </node>
-                                <node concept="37vLTw" id="65IE4qV7T8r" role="37wK5m">
-                                  <ref role="3cqZAo" node="2XCiAnQPSOX" resolve="patch" />
-                                </node>
-                                <node concept="3cmrfG" id="65IE4qV7T8s" role="37wK5m">
-                                  <property role="3cmrfH" value="5" />
                                 </node>
                               </node>
                             </node>
@@ -1877,13 +1949,8 @@
                       </node>
                       <node concept="3fqX7Q" id="2O3Uzn05IJi" role="3clFbw">
                         <node concept="2OqwBi" id="2O3Uzn05IJj" role="3fr31v">
-                          <node concept="2OqwBi" id="2O3Uzn05IJk" role="2Oq$k0">
-                            <node concept="37vLTw" id="3GM_nagTtdf" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2XCiAnQPSOX" resolve="patch" />
-                            </node>
-                            <node concept="liA8E" id="2O3Uzn05IJm" role="2OqNvi">
-                              <ref role="37wK5l" to="2o:~Patch.getDeltas():java.util.List" resolve="getDeltas" />
-                            </node>
+                          <node concept="37vLTw" id="7f6Fg0uM7OC" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7f6Fg0uM7O$" resolve="deltas" />
                           </node>
                           <node concept="liA8E" id="2O3Uzn05IJn" role="2OqNvi">
                             <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
