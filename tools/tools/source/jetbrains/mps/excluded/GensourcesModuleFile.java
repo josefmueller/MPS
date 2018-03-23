@@ -153,8 +153,13 @@ class GensourcesModuleFile {
           }
         }
         for (IFile classes : module.getClassGenPaths()) {
-          if (classes.exists()) {
-            classesGen.add(classes.getPath());
+          // FIXME IFile.getPath() always gives path with unix slashes, while MPSModuleCollector has platform-dependent paths in getSourcePaths (due to the odd
+          // way paths are represented in module descriptor, which we shall address anyway (i.e. replace strings with IFile or Path)).
+          // To make sourceGen and classesGen lists consistent, I transform to platform paths here, although the better fix would be to collect IFile for sourcePath
+          // and to match IFile instead of string in Utils.getRelativeProjectPath. See https://youtrack.jetbrains.com/issue/MPS-27673.
+          File localFile = new File(classes.getPath());
+          if (localFile.exists()) {
+            classesGen.add(localFile.getCanonicalPath());
           }
         }
       }
