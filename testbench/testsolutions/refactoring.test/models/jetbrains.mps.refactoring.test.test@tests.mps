@@ -91,9 +91,6 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
-        <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
@@ -151,6 +148,7 @@
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
+        <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -190,6 +188,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
@@ -284,8 +283,6 @@
       <concept id="1171931851043" name="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" flags="ig" index="3s_ewN">
         <property id="1171931851045" name="testCaseName" index="3s_ewP" />
         <child id="1171931851044" name="testMethodList" index="3s_ewO" />
-        <child id="8243879142738613220" name="afterTest" index="1KhZu3" />
-        <child id="8243879142738613219" name="beforeTest" index="1KhZu4" />
       </concept>
       <concept id="1171931858461" name="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" flags="ng" index="3s_gsd">
         <child id="1171931858462" name="testMethod" index="3s_gse" />
@@ -308,8 +305,6 @@
       <concept id="1172075514136" name="jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder" flags="ng" index="3_9gw8">
         <child id="1172075534298" name="message" index="3_9lra" />
       </concept>
-      <concept id="8243879142738608185" name="jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest" flags="in" index="1KhYhu" />
-      <concept id="8243879142738613213" name="jetbrains.mps.baseLanguage.unitTest.structure.AfterTest" flags="in" index="1KhZuU" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
@@ -1953,7 +1948,7 @@
       <node concept="3Tm1VV" id="4Rb4I4dpEZB" role="1B3o_S" />
       <node concept="3clFbS" id="4Rb4I4dpEZC" role="3clF47">
         <node concept="XkiVB" id="4Rb4I4dpPvG" role="3cqZAp">
-          <ref role="37wK5l" node="4Rb4I4dp0Es" resolve="AbstractRefactoringTest_Test" />
+          <ref role="37wK5l" node="4Rb4I4dp0Es" resolve="AbstractRefactoringTest" />
           <node concept="37vLTw" id="4Rb4I4dpRMu" role="37wK5m">
             <ref role="3cqZAo" node="7l0SErcZi0H" resolve="PROJECT_PATH" />
           </node>
@@ -2185,8 +2180,8 @@
       </node>
       <node concept="3Tm1VV" id="2_jX3OnKGFz" role="1B3o_S" />
     </node>
-    <node concept="3uibUv" id="4Rb4I4dpLZk" role="1zkMxy">
-      <ref role="3uigEE" node="4Rb4I4doRXD" resolve="AbstractRefactoringTest_Test" />
+    <node concept="3uibUv" id="4Srvtk83pRZ" role="1zkMxy">
+      <ref role="3uigEE" node="4Srvtk83agY" resolve="AbstractRefactoringTest" />
     </node>
   </node>
   <node concept="2UguNb" id="6rP_NjK3fBF">
@@ -3584,7 +3579,7 @@
       <node concept="3Tm1VV" id="4Rb4I4dpird" role="1B3o_S" />
       <node concept="3clFbS" id="4Rb4I4dpire" role="3clF47">
         <node concept="XkiVB" id="4Rb4I4dpn2D" role="3cqZAp">
-          <ref role="37wK5l" node="4Rb4I4dp0Es" resolve="AbstractRefactoringTest_Test" />
+          <ref role="37wK5l" node="4Rb4I4dp0Es" resolve="AbstractRefactoringTest" />
           <node concept="37vLTw" id="4Rb4I4dpn3x" role="37wK5m">
             <ref role="3cqZAo" node="5dt5FDZHm_C" resolve="PROJECT_PATH" />
           </node>
@@ -4669,12 +4664,12 @@
         </node>
       </node>
     </node>
-    <node concept="3uibUv" id="4Rb4I4dpg2V" role="1zkMxy">
-      <ref role="3uigEE" node="4Rb4I4doRXD" resolve="AbstractRefactoringTest_Test" />
+    <node concept="3uibUv" id="4Srvtk83hOF" role="1zkMxy">
+      <ref role="3uigEE" node="4Srvtk83agY" resolve="AbstractRefactoringTest" />
     </node>
   </node>
-  <node concept="3s_ewN" id="4Rb4I4doRXD">
-    <property role="3s_ewP" value="AbstractRefactoringTest" />
+  <node concept="312cEu" id="4Srvtk83agY">
+    <property role="TrG5h" value="AbstractRefactoringTest" />
     <property role="1sVAO0" value="true" />
     <node concept="312cEg" id="4Rb4I4doYSK" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -4728,18 +4723,32 @@
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="4Rb4I4doRXE" role="1B3o_S" />
-    <node concept="3s_gsd" id="4Rb4I4doRXF" role="3s_ewO" />
-    <node concept="1KhYhu" id="4Rb4I4doRXY" role="1KhZu4">
-      <node concept="3clFbS" id="4Rb4I4doRXZ" role="2VODD2">
+    <node concept="2tJIrI" id="4Srvtk83b2z" role="jymVt" />
+    <node concept="3clFb_" id="4Srvtk83b9g" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setUp" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="4Srvtk83b9h" role="1B3o_S" />
+      <node concept="3cqZAl" id="4Srvtk83b9j" role="3clF45" />
+      <node concept="3uibUv" id="4Srvtk83b9k" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="3clFbS" id="4Srvtk83b9n" role="3clF47">
+        <node concept="3clFbF" id="4Srvtk83dhM" role="3cqZAp">
+          <node concept="3nyPlj" id="4Srvtk83dhK" role="3clFbG">
+            <ref role="37wK5l" to="u132:~TestCase.setUp():void" resolve="setUp" />
+          </node>
+        </node>
         <node concept="SfApY" id="4Rb4I4dn4hM" role="3cqZAp">
           <node concept="3clFbS" id="4Rb4I4dn4hO" role="SfCbr">
-            <node concept="3clFbF" id="4Rb4I4dnYnC" role="3cqZAp">
-              <node concept="37vLTI" id="4Rb4I4dnYSi" role="3clFbG">
-                <node concept="37vLTw" id="4Rb4I4dp4YZ" role="37vLTJ">
-                  <ref role="3cqZAo" node="4Rb4I4doYSN" resolve="projectTempDir" />
+            <node concept="3cpWs8" id="4Srvtk82VDi" role="3cqZAp">
+              <node concept="3cpWsn" id="4Srvtk82VDj" role="3cpWs9">
+                <property role="TrG5h" value="dirPrefix" />
+                <node concept="3uibUv" id="4Srvtk82VDk" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-                <node concept="2YIFZM" id="4Rb4I4dmmQE" role="37vLTx">
+                <node concept="2YIFZM" id="4Rb4I4dmmQE" role="33vP2m">
                   <ref role="37wK5l" to="18ew:~NameUtil.toConstantName(java.lang.String):java.lang.String" resolve="toConstantName" />
                   <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
                   <node concept="2YIFZM" id="4Rb4I4dmpJ2" role="37wK5m">
@@ -4765,12 +4774,27 @@
                   <node concept="2YIFZM" id="4Rb4I4dmtZZ" role="2Oq$k0">
                     <ref role="37wK5l" to="eoo2:~Files.createTempDirectory(java.lang.String,java.nio.file.attribute.FileAttribute...):java.nio.file.Path" resolve="createTempDirectory" />
                     <ref role="1Pybhc" to="eoo2:~Files" resolve="Files" />
-                    <node concept="37vLTw" id="4Rb4I4dp527" role="37wK5m">
-                      <ref role="3cqZAo" node="4Rb4I4doYSN" resolve="projectTempDir" />
+                    <node concept="37vLTw" id="4Srvtk82Wn6" role="37wK5m">
+                      <ref role="3cqZAo" node="4Srvtk82VDj" resolve="dirPrefix" />
                     </node>
                   </node>
                   <node concept="liA8E" id="4Rb4I4dmWj$" role="2OqNvi">
                     <ref role="37wK5l" to="eoo2:~Path.toFile():java.io.File" resolve="toFile" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="4Rb4I4dnYnC" role="3cqZAp">
+              <node concept="37vLTI" id="4Rb4I4dnYSi" role="3clFbG">
+                <node concept="37vLTw" id="4Rb4I4dp4YZ" role="37vLTJ">
+                  <ref role="3cqZAo" node="4Rb4I4doYSN" resolve="projectTempDir" />
+                </node>
+                <node concept="2OqwBi" id="4Srvtk82WX4" role="37vLTx">
+                  <node concept="37vLTw" id="4Srvtk82WKM" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4Rb4I4dmtZY" resolve="tempDir" />
+                  </node>
+                  <node concept="liA8E" id="4Srvtk82Xu6" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getCanonicalPath():java.lang.String" resolve="getCanonicalPath" />
                   </node>
                 </node>
               </node>
@@ -4833,12 +4857,27 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="4Srvtk83b9o" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
-    <node concept="3uibUv" id="4Rb4I4doZSs" role="1zkMxy">
-      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
-    </node>
-    <node concept="1KhZuU" id="4Rb4I4dp8TL" role="1KhZu3">
-      <node concept="3clFbS" id="4Rb4I4dp8TM" role="2VODD2">
+    <node concept="2tJIrI" id="4Srvtk83dNv" role="jymVt" />
+    <node concept="3clFb_" id="4Srvtk83edL" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="tearDown" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="4Srvtk83edM" role="1B3o_S" />
+      <node concept="3cqZAl" id="4Srvtk83edO" role="3clF45" />
+      <node concept="3uibUv" id="4Srvtk83edP" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="3clFbS" id="4Srvtk83edS" role="3clF47">
+        <node concept="3clFbF" id="4Srvtk83edV" role="3cqZAp">
+          <node concept="3nyPlj" id="4Srvtk83edU" role="3clFbG">
+            <ref role="37wK5l" to="u132:~TestCase.tearDown():void" resolve="tearDown" />
+          </node>
+        </node>
         <node concept="3clFbF" id="5dt5FDZHmKk" role="3cqZAp">
           <node concept="2OqwBi" id="5dt5FDZHmKl" role="3clFbG">
             <node concept="37vLTw" id="5dt5FDZHmKm" role="2Oq$k0">
@@ -4868,6 +4907,14 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="4Srvtk83edT" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4Srvtk83b$s" role="jymVt" />
+    <node concept="3Tm1VV" id="4Srvtk83agZ" role="1B3o_S" />
+    <node concept="3uibUv" id="4Srvtk83aIh" role="1zkMxy">
+      <ref role="3uigEE" to="83ig:~EnvironmentAwareTestCase" resolve="EnvironmentAwareTestCase" />
     </node>
   </node>
 </model>

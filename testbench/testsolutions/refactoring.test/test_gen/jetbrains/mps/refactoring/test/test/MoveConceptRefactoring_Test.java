@@ -53,7 +53,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.application.ModalityState;
 
-public class MoveConceptRefactoring_Test extends AbstractRefactoringTest_Test {
+public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
   private static final Logger LOG = LogManager.getLogger(MoveConceptRefactoring_Test.class);
   private static final String PROJECT_PATH = "testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/";
   public void test_failingTest() throws Exception {

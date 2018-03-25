@@ -124,6 +124,7 @@
       </concept>
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD" />
       <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
+        <property id="8369506495128725901" name="compact" index="BnDLt" />
         <property id="322010710375892619" name="uuid" index="3LESm3" />
         <child id="322010710375956261" name="path" index="3LF7KH" />
       </concept>
@@ -864,6 +865,7 @@
         <property role="3LESm3" value="64b24ebe-97a2-466e-83d8-bd3afefcbb41" />
         <property role="aoJFB" value="sources and tests" />
         <property role="2GAjPV" value="false" />
+        <property role="BnDLt" value="false" />
         <node concept="55IIr" id="1D5MlFqyaV1" role="3LF7KH">
           <node concept="2Ry0Ak" id="1D5MlFqyaV2" role="iGT6I">
             <property role="2Ry0Am" value="testbench" />
@@ -904,7 +906,7 @@
         </node>
         <node concept="1SiIV0" id="1D5MlFqyaXU" role="3bR37C">
           <node concept="3bR9La" id="1D5MlFqyaXV" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
           </node>
         </node>
@@ -1014,6 +1016,12 @@
           <node concept="3bR9La" id="1D5MlFqyaYv" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:7Kfy9QB6L4p" resolve="jetbrains.mps.lang.behavior" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4Srvtk83NYJ" role="3bR37C">
+          <node concept="3bR9La" id="4Srvtk83NYK" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
           </node>
         </node>
       </node>

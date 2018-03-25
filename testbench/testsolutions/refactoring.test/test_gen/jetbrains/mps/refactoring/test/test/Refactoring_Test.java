@@ -48,7 +48,7 @@ import jetbrains.mps.util.Reference;
 import jetbrains.mps.ide.ThreadUtils;
 
 @MPSLaunch
-public class Refactoring_Test extends AbstractRefactoringTest_Test {
+public class Refactoring_Test extends AbstractRefactoringTest {
   private static final String PROJECT_PATH = "testbench/modules/testRefactoring/";
   public void test_moveConceptOptions() throws Exception {
     runCommand(new Runnable() {
