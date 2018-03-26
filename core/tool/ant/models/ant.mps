@@ -2109,60 +2109,19 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="3ufQioQQtpH" role="SfCbr">
-                  <node concept="3cpWs8" id="3ufQioQQtpI" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ufQioQQtpJ" role="3cpWs9">
-                      <property role="TrG5h" value="whatToGenerateClass" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="3uibUv" id="3ufQioQQtpK" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                        <node concept="3qTvmN" id="3ufQioQQtpL" role="11_B2D" />
-                      </node>
-                      <node concept="2OqwBi" id="3ufQioQQtpM" role="33vP2m">
-                        <node concept="37vLTw" id="3GM_nagTu17" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
-                        </node>
-                        <node concept="liA8E" id="3ufQioQQtpO" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                          <node concept="2OqwBi" id="3ufQioQQtpP" role="37wK5m">
-                            <node concept="3VsKOn" id="3ufQioQQtpQ" role="2Oq$k0">
-                              <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
-                            </node>
-                            <node concept="liA8E" id="3ufQioQQtpR" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~Class.getCanonicalName():java.lang.String" resolve="getCanonicalName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                  <node concept="3SKdUt" id="6tzA4yIqN3Q" role="3cqZAp">
+                    <node concept="3SKdUq" id="6tzA4yIqN3S" role="3SKWNk">
+                      <property role="3SKdUp" value="XXX here used to be some (broken) magic around reflective re-asignment of myWhatToDo values into a Script instance created through the classLoader." />
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="3ufQioQQtpS" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ufQioQQtpT" role="3cpWs9">
-                      <property role="TrG5h" value="whatToGenerate" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="3uibUv" id="3ufQioQQtpU" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                      </node>
-                      <node concept="2OqwBi" id="3ufQioQQtpV" role="33vP2m">
-                        <node concept="37vLTw" id="3GM_nagTATx" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtpJ" resolve="whatToGenerateClass" />
-                        </node>
-                        <node concept="liA8E" id="3ufQioQQtpX" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Class.newInstance():java.lang.Object" resolve="newInstance" />
-                        </node>
-                      </node>
+                  <node concept="3SKdUt" id="6tzA4yIqO_p" role="3cqZAp">
+                    <node concept="3SKdUq" id="6tzA4yIqO_r" role="3SKWNk">
+                      <property role="3SKdUp" value="I don't see a reason to keep this method, the only way to fail with current approach is to use worker's classloader to load Script class again" />
                     </node>
                   </node>
-                  <node concept="3clFbF" id="3ufQioQQtpY" role="3cqZAp">
-                    <node concept="2OqwBi" id="3ufQioQQtpZ" role="3clFbG">
-                      <node concept="37vLTw" id="2BHiRxeuyNq" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
-                      </node>
-                      <node concept="liA8E" id="3ufQioQQtq1" role="2OqNvi">
-                        <ref role="37wK5l" to="asz6:KL8Aql8ewC" resolve="cloneTo" />
-                        <node concept="37vLTw" id="3GM_nagTvlV" role="37wK5m">
-                          <ref role="3cqZAo" node="3ufQioQQtpT" resolve="whatToGenerate" />
-                        </node>
-                      </node>
+                  <node concept="3SKdUt" id="6tzA4yIqPFp" role="3cqZAp">
+                    <node concept="3SKdUq" id="6tzA4yIqPFr" role="3SKWNk">
+                      <property role="3SKdUp" value="and then to fail with an assert like suppliedScriptObject.getClass() == newlyLoadedScriptClass, which I can't imagine." />
                     </node>
                   </node>
                   <node concept="3cpWs8" id="3ufQioQQtq3" role="3cqZAp">
@@ -2200,8 +2159,8 @@
                         </node>
                         <node concept="liA8E" id="3ufQioQQtqj" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Class.getConstructor(java.lang.Class...):java.lang.reflect.Constructor" resolve="getConstructor" />
-                          <node concept="37vLTw" id="3GM_nagTveB" role="37wK5m">
-                            <ref role="3cqZAo" node="3ufQioQQtpJ" resolve="whatToGenerateClass" />
+                          <node concept="3VsKOn" id="6tzA4yIqL3E" role="37wK5m">
+                            <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
                           </node>
                           <node concept="3VsKOn" id="3ufQioQQtql" role="37wK5m">
                             <ref role="3VsUkX" to="gola:~ProjectComponent" resolve="ProjectComponent" />
@@ -2223,8 +2182,8 @@
                         </node>
                         <node concept="liA8E" id="3ufQioQQtqr" role="2OqNvi">
                           <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
-                          <node concept="37vLTw" id="3GM_nagTt2J" role="37wK5m">
-                            <ref role="3cqZAo" node="3ufQioQQtpT" resolve="whatToGenerate" />
+                          <node concept="37vLTw" id="6tzA4yIqLP8" role="37wK5m">
+                            <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
                           </node>
                           <node concept="Xjq3P" id="3ufQioQQtqt" role="37wK5m" />
                         </node>

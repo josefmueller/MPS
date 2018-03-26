@@ -11,8 +11,6 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.Collections;
 import org.apache.log4j.Level;
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
 import org.jdom.Element;
 import java.io.FileNotFoundException;
 import org.jdom.Document;
@@ -175,29 +173,6 @@ public class Script {
     myStartupData.getLibraryJars().addAll(libraryJars);
   }
 
-  public void cloneTo(Object dest) {
-    // TODO get rid of generic cloneTo 
-    Class<? extends Script> srcClass = this.getClass();
-    Class<? extends Object> destClass = dest.getClass();
-    Method[] srcMethods = srcClass.getMethods();
-    for (Method srcMethod : srcMethods) {
-      String srcMethodName = srcMethod.getName();
-      if (srcMethodName.startsWith("get")) {
-        String dstMethodName = srcMethodName.replace("get", "update");
-        try {
-          Method destMethod = destClass.getMethod(dstMethodName, srcMethod.getReturnType());
-          destMethod.invoke(dest, srcMethod.invoke(this));
-        } catch (NoSuchMethodException e) {
-          //  doing nothing 
-        } catch (InvocationTargetException e) {
-          throw new IllegalArgumentException("cannot clone", e);
-        } catch (IllegalAccessException e) {
-          throw new IllegalArgumentException("cannot clone", e);
-        }
-      }
-    }
-  }
-
   private Element prepareTaskCustomData() {
     Element data = new Element(ELEMENT_TODO);
     for (File f : myModels) {
@@ -222,7 +197,6 @@ public class Script {
       }
       data.addContent(element);
     }
-
     return data;
   }
 

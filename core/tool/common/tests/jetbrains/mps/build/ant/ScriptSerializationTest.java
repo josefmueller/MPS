@@ -96,17 +96,9 @@ public class ScriptSerializationTest extends TestCase {
   private void testToDoConsistency(Script toDo) {
     try {
       Script toDoFromString = Script.fromDumpInFile(toDo.dumpToTmpFile());
-      Script toDoCloned = new Script();
-      toDo.cloneTo(toDoCloned);
 
-      assertDeepObjectEquals(toDoCloned, toDoFromString);
       assertDeepObjectEquals(toDo, toDoFromString);
-      assertDeepObjectEquals(toDoCloned, toDo);
-    } catch (IllegalAccessException e) {
-      fail(e.getMessage());
-    } catch (InvocationTargetException e) {
-      fail(e.getMessage());
-    } catch (FileNotFoundException e) {
+    } catch (IllegalAccessException | InvocationTargetException | FileNotFoundException e) {
       fail(e.getMessage());
     }
   }

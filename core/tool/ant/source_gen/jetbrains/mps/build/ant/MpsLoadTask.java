@@ -177,12 +177,12 @@ public abstract class MpsLoadTask extends Task {
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       Thread.currentThread().setContextClassLoader(classLoader);
       try {
-        Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
-        Object whatToGenerate = whatToGenerateClass.newInstance();
-        myWhatToDo.cloneTo(whatToGenerate);
+        // XXX here used to be some (broken) magic around reflective re-asignment of myWhatToDo values into a Script instance created through the classLoader. 
+        // I don't see a reason to keep this method, the only way to fail with current approach is to use worker's classloader to load Script class again 
+        // and then to fail with an assert like suppliedScriptObject.getClass() == newlyLoadedScriptClass, which I can't imagine. 
         Class<?> generatorClass = classLoader.loadClass(getWorkerClass());
-        Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
-        Object generator = constructor.newInstance(whatToGenerate, this);
+        Constructor<?> constructor = generatorClass.getConstructor(Script.class, ProjectComponent.class);
+        Object generator = constructor.newInstance(myWhatToDo, this);
         Method method = generatorClass.getMethod("work");
         method.invoke(generator);
       } catch (Throwable t) {
