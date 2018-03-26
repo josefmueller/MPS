@@ -8,14 +8,15 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.List;
 import java.util.LinkedHashMap;
-import org.apache.log4j.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import org.apache.log4j.Level;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import org.jdom.Element;
 import java.io.FileNotFoundException;
+import org.jdom.Document;
 import java.io.IOException;
 import org.jdom.JDOMException;
 
@@ -33,34 +34,27 @@ public class Script {
   private static final String ATTRIBUTE_BOOTSTRAP = "bootstrap";
   private static final String ELEMENT_LIBRARYJAR = "libraryJar";
 
-  private RepositoryDescriptor myRepo = null;
+  private final ScriptData myStartupData = new ScriptData();
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
-  private boolean myFailOnError = true;
+  /**
+   * FIXME drop these, are of no use
+   */
   private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
-  private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
-  private Level myLogLevel = Level.INFO;
-  private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private final List<String> myParameters = new ArrayList<String>();
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
 
-  /**
-   * 
-   * @deprecated use repository descriptor instead
-   */
-  @Deprecated
-  private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
 
   public Script() {
   }
   public RepositoryDescriptor getRepoDescriptor() {
-    return myRepo;
+    return myStartupData.getRepo();
   }
   public void setRepoDescriptor(RepositoryDescriptor repo) {
-    myRepo = repo;
+    myStartupData.setRepo(repo);
   }
   public void addModuleFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
@@ -102,47 +96,60 @@ public class Script {
   public void updateModels(Set<File> models) {
     myModels.addAll(models);
   }
+
   public Set<File> getExcludedFromDiffFiles() {
     return Collections.unmodifiableSet(myExcludedFromDiff);
   }
   public void updateExcludedFromDiffFiles(Set<File> excluded) {
     myExcludedFromDiff.addAll(excluded);
   }
+
   public Set<File> getModules() {
     return Collections.unmodifiableSet(myModules);
   }
   public void updateModules(Set<File> modules) {
     myModules.addAll(modules);
   }
+
   public Map<File, List<String>> getMPSProjectFiles() {
     return Collections.unmodifiableMap(myMPSProjects);
   }
   public void updateMPSProjectFiles(Map<File, List<String>> mpsProjects) {
     myMPSProjects.putAll(mpsProjects);
   }
+
   public boolean getFailOnError() {
-    return myFailOnError;
+    return myStartupData.getFailOnError();
   }
   public void updateFailOnError(boolean showError) {
-    myFailOnError = showError;
+    myStartupData.setFailOnError(showError);
   }
+
   public Map<String, String> getProperties() {
-    return Collections.unmodifiableMap(myProperties);
+    return Collections.unmodifiableMap(myStartupData.getProperties());
   }
   public void updateProperties(Map<String, String> properties) {
-    myProperties.putAll(properties);
+    myStartupData.getProperties().putAll(properties);
   }
+  public void putProperty(String name, String value) {
+    myStartupData.addProperty(name, value);
+  }
+  public String getProperty(String name) {
+    return myStartupData.getProperties().get(name);
+  }
+
+
   public void addLibrary(String name, File dir, boolean compile) {
-    myLibraries.put(name, dir);
+    myStartupData.addLibrary(name, dir);
     if (compile) {
       myCompiledLibraries.add(name);
     }
   }
   public Map<String, File> getLibraries() {
-    return Collections.unmodifiableMap(myLibraries);
+    return Collections.unmodifiableMap(myStartupData.getLibraries());
   }
   public void updateLibraries(Map<String, File> libraries) {
-    myLibraries.putAll(libraries);
+    myStartupData.getLibraries().putAll(libraries);
   }
   public Set<String> getCompiledLibraries() {
     return Collections.unmodifiableSet(myCompiledLibraries);
@@ -151,19 +158,20 @@ public class Script {
     myCompiledLibraries.addAll(libraries);
   }
   public void addMacro(String name, String value) {
-    myMacro.put(name, value);
+    myStartupData.addMacro(name, value);
+
   }
   public Map<String, String> getMacro() {
-    return Collections.unmodifiableMap(myMacro);
+    return Collections.unmodifiableMap(myStartupData.getMacros());
   }
   public void updateMacro(Map<String, String> macro) {
-    myMacro.putAll(macro);
+    myStartupData.getMacros().putAll(macro);
   }
   public void updateLogLevel(Level level) {
-    myLogLevel = level;
+    myStartupData.setLogLevel(level);
   }
   public Level getLogLevel() {
-    return myLogLevel;
+    return myStartupData.getLogLevel();
   }
   public void addParameter(String parameter) {
     myParameters.add(parameter);
@@ -186,6 +194,7 @@ public class Script {
   public void updateLibraryJars(List<String> libraryJars) {
     myLibraryJars.addAll(libraryJars);
   }
+
   public void cloneTo(Object dest) {
     // TODO get rid of generic cloneTo 
     Class<? extends Script> srcClass = this.getClass();
@@ -208,7 +217,8 @@ public class Script {
       }
     }
   }
-  private Element prepareData() {
+
+  private Element prepareTaskCustomData() {
     Element data = new Element(ELEMENT_TODO);
     for (File f : myModels) {
       data.addContent(new Element(ELEMENT_MODEL).setAttribute(PATH, f.getAbsolutePath()));
@@ -242,9 +252,9 @@ public class Script {
 
     return data;
   }
-  public void parseData(Element elem) {
-    for (Object o : elem.getChildren()) {
-      Element e = (Element) o;
+
+  private void parseTaskCustomData(Element elem) {
+    for (Element e : elem.getChildren()) {
       String elementName = e.getName();
       if (ELEMENT_MODEL.equals(elementName)) {
         addModelFile(new File(e.getAttributeValue(PATH)));
@@ -282,30 +292,23 @@ public class Script {
     }
   }
   public File dumpToTmpFile() throws FileNotFoundException {
-    File tmpFile = Script.createTmpFile();
-    ScriptData data = new ScriptData();
-    data.setFailOnError(myFailOnError);
-    data.setLogLevel(myLogLevel);
-    data.setLibraries(myLibraries);
-    data.setMacros(myMacro);
-    data.setProperties(myProperties);
-    data.setRepo(myRepo);
-    data.setData(ELEMENT_TODO, prepareData());
+    Element root = new Element("script");
+    Element startup = new Element("startup");
+    myStartupData.write(startup);
+    root.addContent(startup);
+    root.addContent(prepareTaskCustomData());
     try {
-      data.save(tmpFile);
+      File tmpFile = Script.createTmpFile();
+      JDOMUtil.writeDocument(new Document(root), tmpFile);
+      return tmpFile;
     } catch (IOException e) {
       e.printStackTrace();
+      throw new RuntimeException(e);
     }
-    return tmpFile;
   }
-  public void putProperty(String name, String value) {
-    myProperties.put(name, value);
-  }
-  public String getProperty(String name) {
-    return myProperties.get(name);
-  }
+
   public void addPerfomanceReport(String s) {
-    String reports = myProperties.get(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
+    String reports = getProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
     if (reports == null) {
       reports = "";
     }
@@ -313,9 +316,10 @@ public class Script {
       reports += ",";
     }
     reports += s;
-    myProperties.put(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
+    putProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
   }
-  public static File createTmpFile() {
+
+  private static File createTmpFile() {
     File tmp = new File(System.getProperty("java.io.tmpdir"));
     int i = 0;
     while (true) {
@@ -332,28 +336,24 @@ public class Script {
     }
     return result;
   }
+
   public static Script fromDumpInFile(File file) {
-    ScriptData data = new ScriptData();
+    Script whatToDo = new Script();
     try {
-      data.load(file);
+      Document doc = JDOMUtil.loadDocument(file);
+      Element root = doc.getRootElement();
+      whatToDo.myStartupData.read(root.getChild("startup"));
+      whatToDo.parseTaskCustomData(root.getChild(ELEMENT_TODO));
     } catch (JDOMException e) {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
     } finally {
+      // XXX why on earth do we remove the file here 
       if (!(file.delete())) {
         throw new RuntimeException("File " + file + " was not deleted.");
       }
     }
-
-    Script whatToDo = new Script();
-    whatToDo.myFailOnError = data.getFailOnError();
-    whatToDo.myLogLevel = data.getLogLevel();
-    whatToDo.myProperties.putAll(data.getProperties());
-    whatToDo.myMacro.putAll(data.getMacros());
-    whatToDo.myLibraries.putAll(data.getLibraries());
-    whatToDo.myRepo = data.getRepo();
-    whatToDo.parseData(data.getData(ELEMENT_TODO));
     return whatToDo;
   }
 }
