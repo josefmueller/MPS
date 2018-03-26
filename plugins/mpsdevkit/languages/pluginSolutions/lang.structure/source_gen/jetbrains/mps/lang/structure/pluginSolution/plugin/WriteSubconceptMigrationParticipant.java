@@ -86,6 +86,9 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
 
   @Override
   public List<RefactoringParticipant.Option> getAvailableOptions(Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef> initialState, SRepository repository) {
+    if (initialState == null) {
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
+    }
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
   }
 
