@@ -6,32 +6,38 @@ import org.apache.log4j.Level;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
 import org.jdom.Element;
 
 /**
  * Keeps properties necessary to start an MPS instance and to execute a worker class within this new instance. 
  * Primary purpose is to supply persistence of the attributes to ensure they get passed between Java process boundaries.
  * Primary scenario for this class is to get MPS started in a dtinct setup (e.g. by configuring IdeaEnvionment with EnvironmentConfig which gets populated with the properties serialized by this class)
- * Inlike Script counterpart, doesn't know anything about specific ant tasks and their possible arguments.
+ * Unlike Script counterpart, doesn't know anything about specific ant tasks and their possible arguments.
+ * 
+ * Collections are returned by-reference and could be modified from outside (this class is just a data holder + persistence)
+ * 
  * FIXME deserves better name
  * 
  * FIXME auxiliary properties are likely not part of MPS statup sequence
  * FIXME myLibraries - what the hell is 'name' key, and do I really want to stick to File there provided I may use macro values as part of a library path
  */
 public class ScriptData {
-  public static final String ROOT_TASKDATA = "taskdata";
-  public static final String PROP_WORKER = "worker";
-  public static final String PROP_FAILONERROR = "failOnError";
-  public static final String PROP_LOGLEVEL = "logLevel";
-  public static final String PROP_LOADBOOTSTRAPLIBRARIES = "loadBootstrapLibraries";
-  public static final String ELEM_PROPERTY = "property";
-  public static final String ELEM_MACRO = "macro";
-  public static final String NAME = "name";
-  public static final String VALUE = "value";
-  public static final String PATH = "path";
+  private static final String ROOT_TASKDATA = "taskdata";
+  private static final String PROP_WORKER = "worker";
+  private static final String PROP_FAILONERROR = "failOnError";
+  private static final String PROP_LOGLEVEL = "logLevel";
+  private static final String PROP_LOADBOOTSTRAPLIBRARIES = "loadBootstrapLibraries";
+  private static final String ELEM_PROPERTY = "property";
+  private static final String ELEM_MACRO = "macro";
+  private static final String NAME = "name";
+  private static final String VALUE = "value";
+  private static final String PATH = "path";
 
-  public static final String ELEM_LIBRARIES = "libraries";
-  public static final String ELEM_LIBRARY = "library";
+  private static final String ELEM_LIBRARIES = "libraries";
+  private static final String ELEM_LIBRARY = "library";
+  private static final String ELEM_LIBRARYJAR = "jar";
 
   private static final String ELEM_REPO = "repository";
   private static final String ELEM_REPO_FOLDER = "folder";
@@ -44,6 +50,8 @@ public class ScriptData {
   private Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private Map<String, String> myMacros = new LinkedHashMap<String, String>();
   private Map<String, File> myLibraries = new LinkedHashMap<String, File>();
+  private final List<String> myLibraryJars = new ArrayList<String>();
+
   private RepositoryDescriptor myRepo = null;
 
   public ScriptData() {
@@ -59,13 +67,17 @@ public class ScriptData {
     misc.setAttribute(PROP_LOADBOOTSTRAPLIBRARIES, Boolean.toString(myLoadBootstrapLibraries));
     root.addContent(misc);
 
-    if (!(myLibraries.isEmpty())) {
+    if (!(myLibraries.isEmpty()) || !(myLibraryJars.isEmpty())) {
       Element libraries = new Element(ELEM_LIBRARIES);
       for (String key : myLibraries.keySet()) {
         libraries.addContent(new Element(ELEM_LIBRARY).setAttribute(NAME, key).setAttribute(PATH, myLibraries.get(key).getAbsolutePath()));
       }
+      for (String jar : myLibraryJars) {
+        libraries.addContent(new Element(ELEM_LIBRARYJAR).setAttribute(PATH, jar));
+      }
       root.addContent(libraries);
     }
+
     if (myRepo != null) {
       Element repo = new Element(ELEM_REPO);
       for (String f : myRepo.folders) {
@@ -99,6 +111,9 @@ public class ScriptData {
         File file = new File(lib.getAttributeValue(PATH));
         addLibrary(lib.getAttributeValue(NAME), file);
       }
+      for (Element lib : e.getChildren(ELEM_LIBRARYJAR)) {
+        addLibraryJar(lib.getAttributeValue(PATH));
+      }
     }
 
     for (Element e : root.getChildren(ELEM_REPO)) {
@@ -113,14 +128,12 @@ public class ScriptData {
       setRepo(repo);
     }
 
-    for (Element e : root.getChildren(ELEM_PROPERTY)) {
+    for (Element e : root.getChildren(ELEM_MACRO)) {
       addMacro(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));
     }
     for (Element e : root.getChildren(ELEM_PROPERTY)) {
       addProperty(e.getAttributeValue(NAME), e.getAttributeValue(VALUE));
     }
-
-
   }
 
   public void setWorker(String workerClass) {
@@ -171,13 +184,27 @@ public class ScriptData {
   public void addMacro(String key, String value) {
     myMacros.put(key, value);
   }
+
   public void setLibraries(Map<String, File> libraries) {
     myLibraries = libraries;
   }
   public Map<String, File> getLibraries() {
     return myLibraries;
   }
+  /**
+   * XXX seems to be identical to library jar, both end up in EnvironmentConfig.addLib(). Deprecate?
+   * 
+   * @param name unused
+   * @param library library location
+   */
   public void addLibrary(String name, File library) {
     myLibraries.put(name, library);
+  }
+
+  public void addLibraryJar(String libraryJar) {
+    myLibraryJars.add(libraryJar);
+  }
+  public List<String> getLibraryJars() {
+    return myLibraryJars;
   }
 }

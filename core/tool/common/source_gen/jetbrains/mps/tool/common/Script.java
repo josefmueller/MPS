@@ -30,7 +30,6 @@ public class Script {
   private static final String VALUE = "value";
   private static final String ELEMENT_CHUNK = "chunk";
   private static final String ATTRIBUTE_BOOTSTRAP = "bootstrap";
-  private static final String ELEMENT_LIBRARYJAR = "libraryJar";
 
   private final ScriptData myStartupData = new ScriptData();
   private final Set<File> myModels = new LinkedHashSet<File>();
@@ -42,7 +41,6 @@ public class Script {
   private final List<File> myMPSProjects = new ArrayList<File>(3);
   private final List<String> myParameters = new ArrayList<String>();
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
-  private final List<String> myLibraryJars = new ArrayList<String>();
 
   public Script() {
   }
@@ -58,13 +56,6 @@ public class Script {
     if (!(myMPSProjects.contains(projectFile))) {
       myMPSProjects.add(projectFile);
     }
-  }
-
-  public void addChunk(List<String> modules, boolean isBootstrap) {
-    myChunks.put(modules, isBootstrap);
-  }
-  public void addLibraryJar(String libraryJar) {
-    myLibraryJars.add(libraryJar);
   }
 
   public void addModelFile(File file) {
@@ -163,17 +154,25 @@ public class Script {
   public void updateParameters(List<String> parameters) {
     myParameters.addAll(parameters);
   }
+
+  public void addChunk(List<String> modules, boolean isBootstrap) {
+    myChunks.put(modules, isBootstrap);
+  }
   public Map<List<String>, Boolean> getChunks() {
     return Collections.unmodifiableMap(myChunks);
   }
   public void updateChunks(Map<List<String>, Boolean> chunks) {
     myChunks.putAll(chunks);
   }
+
+  public void addLibraryJar(String libraryJar) {
+    myStartupData.addLibraryJar(libraryJar);
+  }
   public List<String> getLibraryJars() {
-    return Collections.unmodifiableList(myLibraryJars);
+    return Collections.unmodifiableList(myStartupData.getLibraryJars());
   }
   public void updateLibraryJars(List<String> libraryJars) {
-    myLibraryJars.addAll(libraryJars);
+    myStartupData.getLibraryJars().addAll(libraryJars);
   }
 
   public void cloneTo(Object dest) {
@@ -223,9 +222,6 @@ public class Script {
       }
       data.addContent(element);
     }
-    for (String jar : myLibraryJars) {
-      data.addContent(new Element(ELEMENT_LIBRARYJAR).setAttribute(PATH, jar));
-    }
 
     return data;
   }
@@ -256,11 +252,6 @@ public class Script {
           }
         }
         addChunk(chunkModules, Boolean.parseBoolean(e.getAttributeValue(ATTRIBUTE_BOOTSTRAP)));
-      } else if (ELEMENT_LIBRARYJAR.equals(elementName)) {
-        String path = e.getAttributeValue(PATH);
-        if ((path != null && path.length() > 0)) {
-          addLibraryJar(path);
-        }
       }
     }
   }
