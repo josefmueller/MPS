@@ -527,29 +527,6 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="KL8Aql8epb" role="jymVt">
-      <property role="TrG5h" value="myCompiledLibraries" />
-      <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="KL8Aql8epc" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-        <node concept="17QB3L" id="KL8Aql8epd" role="11_B2D" />
-      </node>
-      <node concept="3Tm6S6" id="KL8Aql8epe" role="1B3o_S" />
-      <node concept="2ShNRf" id="KL8Aql8epf" role="33vP2m">
-        <node concept="1pGfFk" id="KL8Aql8epg" role="2ShVmc">
-          <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
-          <node concept="17QB3L" id="KL8Aql8eph" role="1pMfVU" />
-        </node>
-      </node>
-      <node concept="z59LJ" id="1288c6EhgOW" role="lGtFl">
-        <node concept="TZ5HA" id="1288c6EhgOX" role="TZ5H$">
-          <node concept="1dT_AC" id="1288c6EhgOY" role="1dT_Ay">
-            <property role="1dT_AB" value="FIXME drop these, are of no use" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="312cEg" id="KL8Aql8epC" role="jymVt">
       <property role="TrG5h" value="myParameters" />
       <property role="3TUv4t" value="true" />
@@ -1510,11 +1487,6 @@
           <ref role="3uigEE" to="guwi:~File" resolve="File" />
         </node>
       </node>
-      <node concept="37vLTG" id="KL8Aql8eub" role="3clF46">
-        <property role="TrG5h" value="compile" />
-        <property role="3TUv4t" value="false" />
-        <node concept="10P_77" id="KL8Aql8euc" role="1tU5fm" />
-      </node>
       <node concept="3clFbS" id="KL8Aql8eud" role="3clF47">
         <node concept="3clFbF" id="1288c6Ee2Ae" role="3cqZAp">
           <node concept="2OqwBi" id="1288c6Ee2Ag" role="3clFbG">
@@ -1528,26 +1500,6 @@
               </node>
               <node concept="37vLTw" id="1288c6Ee32U" role="37wK5m">
                 <ref role="3cqZAo" node="KL8Aql8eu9" resolve="dir" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="KL8Aql8euk" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxgma3N" role="3clFbw">
-            <ref role="3cqZAo" node="KL8Aql8eub" resolve="compile" />
-          </node>
-          <node concept="3clFbS" id="KL8Aql8eum" role="3clFbx">
-            <node concept="3clFbF" id="KL8Aql8eun" role="3cqZAp">
-              <node concept="2OqwBi" id="KL8Aql8euo" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeunaU" role="2Oq$k0">
-                  <ref role="3cqZAo" node="KL8Aql8epb" resolve="myCompiledLibraries" />
-                </node>
-                <node concept="liA8E" id="KL8Aql8euq" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="2BHiRxglnnk" role="37wK5m">
-                    <ref role="3cqZAo" node="KL8Aql8eu7" resolve="name" />
-                  </node>
-                </node>
               </node>
             </node>
           </node>
@@ -1621,57 +1573,7 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="KL8Aql8euM" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getCompiledLibraries" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="KL8Aql8euN" role="1B3o_S" />
-      <node concept="3uibUv" id="KL8Aql8euO" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-        <node concept="17QB3L" id="KL8Aql8euP" role="11_B2D" />
-      </node>
-      <node concept="3clFbS" id="KL8Aql8euQ" role="3clF47">
-        <node concept="3cpWs6" id="KL8Aql8euR" role="3cqZAp">
-          <node concept="2YIFZM" id="KL8Aql8euS" role="3cqZAk">
-            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            <ref role="37wK5l" to="33ny:~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolve="unmodifiableSet" />
-            <node concept="37vLTw" id="2BHiRxeuVar" role="37wK5m">
-              <ref role="3cqZAo" node="KL8Aql8epb" resolve="myCompiledLibraries" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="KL8Aql8euU" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="updateCompiledLibraries" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="KL8Aql8euV" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aql8euW" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aql8euX" role="3clF46">
-        <property role="TrG5h" value="libraries" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aql8euY" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
-          <node concept="17QB3L" id="KL8Aql8euZ" role="11_B2D" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="KL8Aql8ev0" role="3clF47">
-        <node concept="3clFbF" id="KL8Aql8ev1" role="3cqZAp">
-          <node concept="2OqwBi" id="KL8Aql8ev2" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuIz5" role="2Oq$k0">
-              <ref role="3cqZAo" node="KL8Aql8epb" resolve="myCompiledLibraries" />
-            </node>
-            <node concept="liA8E" id="KL8Aql8ev4" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
-              <node concept="37vLTw" id="2BHiRxgm$96" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aql8euX" resolve="libraries" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="6tzA4yIgl17" role="jymVt" />
     <node concept="3clFb_" id="KL8Aql8ev6" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="addMacro" />
@@ -1705,7 +1607,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1288c6Ee6zb" role="3cqZAp" />
       </node>
     </node>
     <node concept="3clFb_" id="KL8Aql8evk" role="jymVt">
@@ -1771,6 +1672,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6tzA4yIgqS4" role="jymVt" />
     <node concept="3clFb_" id="KL8Aql8evE" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="updateLogLevel" />

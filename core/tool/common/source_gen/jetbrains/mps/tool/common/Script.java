@@ -39,10 +39,6 @@ public class Script {
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
   private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
-  /**
-   * FIXME drop these, are of no use
-   */
-  private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
   private final List<String> myParameters = new ArrayList<String>();
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
@@ -139,11 +135,8 @@ public class Script {
   }
 
 
-  public void addLibrary(String name, File dir, boolean compile) {
+  public void addLibrary(String name, File dir) {
     myStartupData.addLibrary(name, dir);
-    if (compile) {
-      myCompiledLibraries.add(name);
-    }
   }
   public Map<String, File> getLibraries() {
     return Collections.unmodifiableMap(myStartupData.getLibraries());
@@ -151,15 +144,9 @@ public class Script {
   public void updateLibraries(Map<String, File> libraries) {
     myStartupData.getLibraries().putAll(libraries);
   }
-  public Set<String> getCompiledLibraries() {
-    return Collections.unmodifiableSet(myCompiledLibraries);
-  }
-  public void updateCompiledLibraries(Set<String> libraries) {
-    myCompiledLibraries.addAll(libraries);
-  }
+
   public void addMacro(String name, String value) {
     myStartupData.addMacro(name, value);
-
   }
   public Map<String, String> getMacro() {
     return Collections.unmodifiableMap(myStartupData.getMacros());
@@ -167,6 +154,7 @@ public class Script {
   public void updateMacro(Map<String, String> macro) {
     myStartupData.getMacros().putAll(macro);
   }
+
   public void updateLogLevel(Level level) {
     myStartupData.setLogLevel(level);
   }
