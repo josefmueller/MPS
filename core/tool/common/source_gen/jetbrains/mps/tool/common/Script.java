@@ -5,11 +5,10 @@ package jetbrains.mps.tool.common;
 import java.util.Set;
 import java.io.File;
 import java.util.LinkedHashSet;
-import java.util.Map;
 import java.util.List;
-import java.util.LinkedHashMap;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Collections;
 import org.apache.log4j.Level;
 import java.lang.reflect.Method;
@@ -27,7 +26,6 @@ public class Script {
   private static final String ELEMENT_EXCLUDEDFROMDIFF = "excludedFromDiff";
   private static final String ELEMENT_PROJECT = "project";
   private static final String ELEMENT_PARAMETER = "parameter";
-  private static final String ELEMENT_PROPERTY = "property";
   private static final String PATH = "path";
   private static final String VALUE = "value";
   private static final String ELEMENT_CHUNK = "chunk";
@@ -38,11 +36,13 @@ public class Script {
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
-  private final Map<File, List<String>> myMPSProjects = new LinkedHashMap<File, List<String>>();
+  /**
+   * XXX why File, can't I use some macro to specify project location?
+   */
+  private final List<File> myMPSProjects = new ArrayList<File>(3);
   private final List<String> myParameters = new ArrayList<String>();
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
-
 
   public Script() {
   }
@@ -52,33 +52,14 @@ public class Script {
   public void setRepoDescriptor(RepositoryDescriptor repo) {
     myStartupData.setRepo(repo);
   }
-  public void addModuleFile(File file) {
-    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
-    myModules.add(file);
-  }
-  public void addModelFile(File file) {
-    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
-    myModels.add(file);
-  }
-  public void excludeFileFromDiff(File file) {
-    assert file.exists() && !(file.isDirectory());
-    myExcludedFromDiff.add(file);
-  }
+
   public void addProjectFile(File projectFile) {
     assert projectFile.exists() && projectFile.isFile();
-    if (!(myMPSProjects.containsKey(projectFile))) {
-      myMPSProjects.put(projectFile, new ArrayList<String>());
+    if (!(myMPSProjects.contains(projectFile))) {
+      myMPSProjects.add(projectFile);
     }
   }
-  public void addProjectFile(File projectFile, String... property) {
-    assert projectFile.exists() && projectFile.isFile();
-    List<String> projectProperties = myMPSProjects.get(projectFile);
-    if (projectProperties == null) {
-      projectProperties = new ArrayList<String>();
-      myMPSProjects.put(projectFile, projectProperties);
-    }
-    projectProperties.addAll(Arrays.asList(property));
-  }
+
   public void addChunk(List<String> modules, boolean isBootstrap) {
     myChunks.put(modules, isBootstrap);
   }
@@ -86,6 +67,10 @@ public class Script {
     myLibraryJars.add(libraryJar);
   }
 
+  public void addModelFile(File file) {
+    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
+    myModels.add(file);
+  }
   public Set<File> getModels() {
     return Collections.unmodifiableSet(myModels);
   }
@@ -93,6 +78,10 @@ public class Script {
     myModels.addAll(models);
   }
 
+  public void excludeFileFromDiff(File file) {
+    assert file.exists() && !(file.isDirectory());
+    myExcludedFromDiff.add(file);
+  }
   public Set<File> getExcludedFromDiffFiles() {
     return Collections.unmodifiableSet(myExcludedFromDiff);
   }
@@ -100,6 +89,10 @@ public class Script {
     myExcludedFromDiff.addAll(excluded);
   }
 
+  public void addModuleFile(File file) {
+    assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
+    myModules.add(file);
+  }
   public Set<File> getModules() {
     return Collections.unmodifiableSet(myModules);
   }
@@ -107,11 +100,11 @@ public class Script {
     myModules.addAll(modules);
   }
 
-  public Map<File, List<String>> getMPSProjectFiles() {
-    return Collections.unmodifiableMap(myMPSProjects);
+  public List<File> getMPSProjectFiles() {
+    return Collections.unmodifiableList(myMPSProjects);
   }
-  public void updateMPSProjectFiles(Map<File, List<String>> mpsProjects) {
-    myMPSProjects.putAll(mpsProjects);
+  public void updateMPSProjectFiles(List<File> mpsProjects) {
+    myMPSProjects.addAll(mpsProjects);
   }
 
   public boolean getFailOnError() {
@@ -217,12 +210,8 @@ public class Script {
     for (File f : myExcludedFromDiff) {
       data.addContent(new Element(ELEMENT_EXCLUDEDFROMDIFF).setAttribute(PATH, f.getAbsolutePath()));
     }
-    for (File f : myMPSProjects.keySet()) {
-      Element elem = new Element(ELEMENT_PROJECT).setAttribute(PATH, f.getAbsolutePath());
-      for (String s : myMPSProjects.get(f)) {
-        elem.addContent(new Element(ELEMENT_PROPERTY).setAttribute(VALUE, s));
-      }
-      data.addContent(elem);
+    for (File f : myMPSProjects) {
+      data.addContent(new Element(ELEMENT_PROJECT).setAttribute(PATH, f.getAbsolutePath()));
     }
     for (String p : myParameters) {
       data.addContent(new Element(ELEMENT_PARAMETER).setAttribute(VALUE, p));
@@ -251,11 +240,7 @@ public class Script {
       } else if (ELEMENT_EXCLUDEDFROMDIFF.equals(elementName)) {
         excludeFileFromDiff(new File(e.getAttributeValue(PATH)));
       } else if (ELEMENT_PROJECT.equals(elementName)) {
-        List<String> properties = new ArrayList<String>();
-        for (Object prop : e.getChildren(ELEMENT_PROPERTY)) {
-          properties.add(((Element) prop).getAttributeValue(VALUE));
-        }
-        addProjectFile(new File(e.getAttributeValue(PATH)), properties.toArray(new String[properties.size()]));
+        addProjectFile(new File(e.getAttributeValue(PATH)));
       } else if (ELEMENT_PARAMETER.equals(elementName)) {
         addParameter(e.getAttributeValue(VALUE));
       } else if (ELEMENT_CHUNK.equals(elementName)) {
