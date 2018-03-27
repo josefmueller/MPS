@@ -2111,22 +2111,117 @@
                 <node concept="3clFbS" id="3ufQioQQtpH" role="SfCbr">
                   <node concept="3SKdUt" id="6tzA4yIqN3Q" role="3cqZAp">
                     <node concept="3SKdUq" id="6tzA4yIqN3S" role="3SKWNk">
-                      <property role="3SKdUp" value="XXX here used to be some (broken) magic around reflective re-asignment of myWhatToDo values into a Script instance created through the classLoader." />
+                      <property role="3SKdUp" value="Next code is to deal with an dubious scenario, when this class along with myWhatToDo(Script) is loaded using a classloader which is completely" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3QFNug6y0d0" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6y0d2" role="3SKWNk">
+                      <property role="3SKdUp" value="unrelated to the one of ProjectComponent.class. Without that magic, there are chances (of course, provided parent CL of URLClassLoader, above," />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3QFNug6y0HZ" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6y0I0" role="3SKWNk">
+                      <property role="3SKdUp" value=" doesn't know what Script class is) that Script class loaded by worker class using newly created CL would be different from the Script class we've got" />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3QFNug6y1Ky" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6y1K$" role="3SKWNk">
+                      <property role="3SKdUp" value="here, and therefore getConstructor(Script.class,...) may fail." />
                     </node>
                   </node>
                   <node concept="3SKdUt" id="6tzA4yIqO_p" role="3cqZAp">
                     <node concept="3SKdUq" id="6tzA4yIqO_r" role="3SKWNk">
-                      <property role="3SKdUp" value="I don't see a reason to keep this method, the only way to fail with current approach is to use worker's classloader to load Script class again" />
+                      <property role="3SKdUp" value="Though the scenario is technically feasible, I don't quite buy this idea, and would rather use getClass().getClassLoader() as parent CL " />
                     </node>
                   </node>
-                  <node concept="3SKdUt" id="6tzA4yIqPFp" role="3cqZAp">
-                    <node concept="3SKdUq" id="6tzA4yIqPFr" role="3SKWNk">
-                      <property role="3SKdUp" value="and then to fail with an assert like suppliedScriptObject.getClass() == newlyLoadedScriptClass, which I can't imagine." />
+                  <node concept="3SKdUt" id="3QFNug6ygrG" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6ygrH" role="3SKWNk">
+                      <property role="3SKdUp" value="for URLClassloader above (since we have to pass this to the worker, we have to reuse at least ProjectComponent's classloader) or " />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3QFNug6yjK7" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6yjK8" role="3SKWNk">
+                      <property role="3SKdUp" value="would drop ProjectComponent argument altogether (to keep Worker independent from any Ant stuff)." />
+                    </node>
+                  </node>
+                  <node concept="3SKdUt" id="3QFNug6yys6" role="3cqZAp">
+                    <node concept="3SKdUq" id="3QFNug6yys8" role="3SKWNk">
+                      <property role="3SKdUp" value="XXX Besides, I don't see a reason to invoke 'work()' instead of 'main', so that entry point for the worker would be the same regardless of execution (fork/!fork) method." />
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="3QFNug6xqSY" role="3cqZAp">
+                    <node concept="3cpWsn" id="3QFNug6xqSZ" role="3cpWs9">
+                      <property role="TrG5h" value="scriptClassProperCL" />
+                      <property role="3TUv4t" value="true" />
+                      <node concept="3uibUv" id="3QFNug6xqSf" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                        <node concept="3qTvmN" id="3QFNug6xqSi" role="11_B2D" />
+                      </node>
+                      <node concept="2OqwBi" id="3QFNug6xqT0" role="33vP2m">
+                        <node concept="37vLTw" id="3QFNug6xqT1" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
+                        </node>
+                        <node concept="liA8E" id="3QFNug6xqT2" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
+                          <node concept="2OqwBi" id="3QFNug6xqT3" role="37wK5m">
+                            <node concept="3VsKOn" id="3QFNug6xqT4" role="2Oq$k0">
+                              <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
+                            </node>
+                            <node concept="liA8E" id="3QFNug6xqT5" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Class.getCanonicalName():java.lang.String" resolve="getCanonicalName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="3QFNug6xwYe" role="3cqZAp">
+                    <node concept="3cpWsn" id="3QFNug6xwYf" role="3cpWs9">
+                      <property role="TrG5h" value="serializedWhat2Do" />
+                      <node concept="3uibUv" id="3QFNug6xwUK" role="1tU5fm">
+                        <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                      </node>
+                      <node concept="2OqwBi" id="3QFNug6xwYg" role="33vP2m">
+                        <node concept="37vLTw" id="3QFNug6xwYh" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+                        </node>
+                        <node concept="liA8E" id="3QFNug6xwYi" role="2OqNvi">
+                          <ref role="37wK5l" to="asz6:KL8Aql8eAb" resolve="dumpToTmpFile" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs8" id="3QFNug6xIj5" role="3cqZAp">
+                    <node concept="3cpWsn" id="3QFNug6xIj6" role="3cpWs9">
+                      <property role="TrG5h" value="scriptInstanceProperCL" />
+                      <node concept="3uibUv" id="3QFNug6xIhW" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                      </node>
+                      <node concept="2OqwBi" id="3QFNug6xIj7" role="33vP2m">
+                        <node concept="2OqwBi" id="3QFNug6xIj8" role="2Oq$k0">
+                          <node concept="37vLTw" id="3QFNug6xIj9" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3QFNug6xqSZ" resolve="scriptClassProperCL" />
+                          </node>
+                          <node concept="liA8E" id="3QFNug6xIja" role="2OqNvi">
+                            <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
+                            <node concept="Xl_RD" id="3QFNug6xIjb" role="37wK5m">
+                              <property role="Xl_RC" value="fromDumpInFile" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="3QFNug6xIjc" role="2OqNvi">
+                          <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                          <node concept="10Nm6u" id="3QFNug6xIjd" role="37wK5m" />
+                          <node concept="37vLTw" id="3QFNug6xIje" role="37wK5m">
+                            <ref role="3cqZAo" node="3QFNug6xwYf" resolve="serializedWhat2Do" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                   <node concept="3cpWs8" id="3ufQioQQtq3" role="3cqZAp">
                     <node concept="3cpWsn" id="3ufQioQQtq4" role="3cpWs9">
-                      <property role="TrG5h" value="generatorClass" />
+                      <property role="TrG5h" value="workerClass" />
                       <property role="3TUv4t" value="false" />
                       <node concept="3uibUv" id="3ufQioQQtq5" role="1tU5fm">
                         <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
@@ -2155,14 +2250,14 @@
                       </node>
                       <node concept="2OqwBi" id="3ufQioQQtqh" role="33vP2m">
                         <node concept="37vLTw" id="3GM_nagT$tw" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="generatorClass" />
+                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
                         </node>
                         <node concept="liA8E" id="3ufQioQQtqj" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Class.getConstructor(java.lang.Class...):java.lang.reflect.Constructor" resolve="getConstructor" />
-                          <node concept="3VsKOn" id="6tzA4yIqL3E" role="37wK5m">
-                            <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
+                          <node concept="37vLTw" id="3QFNug6xPnw" role="37wK5m">
+                            <ref role="3cqZAo" node="3QFNug6xqSZ" resolve="scriptClassProperCL" />
                           </node>
-                          <node concept="3VsKOn" id="3ufQioQQtql" role="37wK5m">
+                          <node concept="3VsKOn" id="3QFNug6xTEF" role="37wK5m">
                             <ref role="3VsUkX" to="gola:~ProjectComponent" resolve="ProjectComponent" />
                           </node>
                         </node>
@@ -2182,8 +2277,8 @@
                         </node>
                         <node concept="liA8E" id="3ufQioQQtqr" role="2OqNvi">
                           <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
-                          <node concept="37vLTw" id="6tzA4yIqLP8" role="37wK5m">
-                            <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+                          <node concept="37vLTw" id="3QFNug6xRO5" role="37wK5m">
+                            <ref role="3cqZAo" node="3QFNug6xIj6" resolve="scriptInstanceProperCL" />
                           </node>
                           <node concept="Xjq3P" id="3ufQioQQtqt" role="37wK5m" />
                         </node>
@@ -2199,7 +2294,7 @@
                       </node>
                       <node concept="2OqwBi" id="3ufQioQQtqx" role="33vP2m">
                         <node concept="37vLTw" id="3GM_nagTx4x" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="generatorClass" />
+                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
                         </node>
                         <node concept="liA8E" id="3ufQioQQtqz" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />

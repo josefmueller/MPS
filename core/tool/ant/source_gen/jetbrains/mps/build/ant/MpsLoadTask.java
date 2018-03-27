@@ -177,13 +177,21 @@ public abstract class MpsLoadTask extends Task {
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       Thread.currentThread().setContextClassLoader(classLoader);
       try {
-        // XXX here used to be some (broken) magic around reflective re-asignment of myWhatToDo values into a Script instance created through the classLoader. 
-        // I don't see a reason to keep this method, the only way to fail with current approach is to use worker's classloader to load Script class again 
-        // and then to fail with an assert like suppliedScriptObject.getClass() == newlyLoadedScriptClass, which I can't imagine. 
-        Class<?> generatorClass = classLoader.loadClass(getWorkerClass());
-        Constructor<?> constructor = generatorClass.getConstructor(Script.class, ProjectComponent.class);
-        Object generator = constructor.newInstance(myWhatToDo, this);
-        Method method = generatorClass.getMethod("work");
+        // Next code is to deal with an dubious scenario, when this class along with myWhatToDo(Script) is loaded using a classloader which is completely 
+        // unrelated to the one of ProjectComponent.class. Without that magic, there are chances (of course, provided parent CL of URLClassLoader, above, 
+        //  doesn't know what Script class is) that Script class loaded by worker class using newly created CL would be different from the Script class we've got 
+        // here, and therefore getConstructor(Script.class,...) may fail. 
+        // Though the scenario is technically feasible, I don't quite buy this idea, and would rather use getClass().getClassLoader() as parent CL  
+        // for URLClassloader above (since we have to pass this to the worker, we have to reuse at least ProjectComponent's classloader) or  
+        // would drop ProjectComponent argument altogether (to keep Worker independent from any Ant stuff). 
+        // XXX Besides, I don't see a reason to invoke 'work()' instead of 'main', so that entry point for the worker would be the same regardless of execution (fork/!fork) method. 
+        final Class<?> scriptClassProperCL = classLoader.loadClass(Script.class.getCanonicalName());
+        File serializedWhat2Do = myWhatToDo.dumpToTmpFile();
+        Object scriptInstanceProperCL = scriptClassProperCL.getMethod("fromDumpInFile").invoke(null, serializedWhat2Do);
+        Class<?> workerClass = classLoader.loadClass(getWorkerClass());
+        Constructor<?> constructor = workerClass.getConstructor(scriptClassProperCL, ProjectComponent.class);
+        Object generator = constructor.newInstance(scriptInstanceProperCL, this);
+        Method method = workerClass.getMethod("work");
         method.invoke(generator);
       } catch (Throwable t) {
         throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
