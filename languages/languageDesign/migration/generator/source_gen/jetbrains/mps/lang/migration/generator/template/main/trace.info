@@ -30,7 +30,7 @@
       <node id="1123359097945169333" at="378,108,379,382" concept="5" />
       <scope id="1123359097945169316" at="195,109,196,422" />
       <scope id="1123359097945169305" at="252,94,253,58" />
-      <scope id="1123359097945169332" at="378,108,379,382" />
+      <scope id="2683094057117798613" at="378,108,379,382" />
     </file>
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/1123359097945578099">
@@ -64,7 +64,7 @@
       <node id="1123359097945619030" at="387,108,388,382" concept="5" />
       <scope id="1123359097945619013" at="210,109,211,414" />
       <scope id="1123359097945619004" at="261,94,262,58" />
-      <scope id="1123359097945619029" at="387,108,388,382" />
+      <scope id="2683094057117803707" at="387,108,388,382" />
     </file>
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/1123359097945644041">
@@ -74,7 +74,7 @@
       <node id="1123359097945644074" at="390,108,391,382" concept="5" />
       <scope id="1123359097945644057" at="213,109,214,414" />
       <scope id="1123359097945644048" at="264,94,265,58" />
-      <scope id="1123359097945644073" at="390,108,391,382" />
+      <scope id="2683094057117793569" at="390,108,391,382" />
     </file>
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/1123359097945644079">
@@ -96,7 +96,7 @@
       <node id="1123359097945761594" at="396,108,397,48" concept="5" />
       <scope id="1123359097945761579" at="222,109,223,338" />
       <scope id="1123359097945761568" at="270,94,271,58" />
-      <scope id="1123359097945761593" at="396,108,397,48" />
+      <scope id="2683094057117789004" at="396,108,397,48" />
     </file>
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/2664852246014116073">
