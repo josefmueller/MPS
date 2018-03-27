@@ -312,16 +312,16 @@ public class MergeTest extends ChangesTestBase {
 
   @Test
   public void testAddChildAndSetPropertyDontConflict() {
-    testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelChanger() {
-      public void changeModel(SModel expectedModel) {
+    testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new _Adapters._return_P1_E0_to_ModelChanger_adapter(new _FunctionTypes._return_P1_E0<String, SModel>() {
+      public String invoke(SModel expectedModel) {
         SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0xb();
         SPropertyOperations.set(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         insertMemberPreservingId(getTheirsClassRoot(), newChild, -1);
 
         insertMemberPreservingId(getClassRoot(expectedModel), newChild, -1);
-        SPropertyOperations.set(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        return SPropertyOperations.set(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
       }
-    });
+    }));
   }
 
   private void insertPreservingId(SNode clazz, SNode member, int position, SContainmentLink link) {
