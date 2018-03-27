@@ -1789,6 +1789,16 @@
       <node concept="3Tm1VV" id="3ufQioQQtnM" role="1B3o_S" />
       <node concept="3cqZAl" id="3ufQioQQtnN" role="3clF45" />
       <node concept="3clFbS" id="3ufQioQQtnO" role="3clF47">
+        <node concept="3SKdUt" id="3QFNug6zPhh" role="3cqZAp">
+          <node concept="3SKdUq" id="3QFNug6zPhj" role="3SKWNk">
+            <property role="3SKdUp" value="XXX classpath contains MPS jars, which is odd in 'fork' scenario where AntBootstrap class adds" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3QFNug6zVeG" role="3cqZAp">
+          <node concept="3SKdUq" id="3QFNug6zVeI" role="3SKWNk">
+            <property role="3SKdUp" value="relevant MPS jars again (it also re-uses urls of the calculated classpath). Is there's any reason to do that?" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="3ufQioQQtnR" role="3cqZAp">
           <node concept="3cpWsn" id="3ufQioQQtnS" role="3cpWs9">
             <property role="TrG5h" value="classPaths" />

@@ -8994,6 +8994,53 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="1O4zZOk7aFm" role="1B3o_S" />
+    <node concept="3UR2Jj" id="3QFNug6zY$7" role="lGtFl">
+      <node concept="TZ5HA" id="3QFNug6zY$8" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6zY$9" role="1dT_Ay">
+          <property role="1dT_AB" value="Intended as a generic replacement for 'library jar' and 'named library' of MpsLoadTask/Script." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2ab" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2ac" role="1dT_Ay">
+          <property role="1dT_AB" value="Gives a mechanism to include whole folder with modules or just a single module (with a reference to module descriptor file)." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2bd" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2be" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2ah" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2ai" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX It's unspecified whether location strings have to be complete file paths or macro could be used in there, would be great to have this covered (perhaps, leave to owing task?)" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2aX" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2aY" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2ap" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2aq" role="1dT_Ay">
+          <property role="1dT_AB" value="XXX Though one could reference source module descriptors (i.e. .mpl, .msd, .devkit) and modules would get loaded into a repository, this scenario is dubious - generally one should" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2aJ" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2aK" role="1dT_Ay">
+          <property role="1dT_AB" value="stick to MPS Project to keep source modules. At the moment, referenced modules are injected into EnvironmentConfig.addLib() and consumed by ModulesMiner. It's recommended to treat this" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2bv" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2bw" role="1dT_Ay">
+          <property role="1dT_AB" value="class as 'deployed modules repository' and avoid use of source module descriptors." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="3QFNug6$2az" role="TZ5H$">
+        <node concept="1dT_AC" id="3QFNug6$2a$" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

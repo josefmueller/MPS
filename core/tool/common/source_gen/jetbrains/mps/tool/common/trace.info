@@ -234,9 +234,9 @@
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7110336455353370861">
     <file name="RepositoryDescriptor.java">
-      <node id="7110336455353422315" at="9,0,10,0" concept="5" trace="files" />
-      <node id="7110336455353429679" at="10,0,11,0" concept="5" trace="folders" />
-      <unit id="7110336455353370861" at="8,0,12,0" name="jetbrains.mps.tool.common.RepositoryDescriptor" />
+      <node id="7110336455353422315" at="20,0,21,0" concept="5" trace="files" />
+      <node id="7110336455353429679" at="21,0,22,0" concept="5" trace="folders" />
+      <unit id="7110336455353370861" at="19,0,23,0" name="jetbrains.mps.tool.common.RepositoryDescriptor" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/7910428321252775322">

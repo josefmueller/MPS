@@ -102,6 +102,8 @@ public abstract class MpsLoadTask extends Task {
 
   @Override
   public void execute() throws BuildException {
+    // XXX classpath contains MPS jars, which is odd in 'fork' scenario where AntBootstrap class adds 
+    // relevant MPS jars again (it also re-uses urls of the calculated classpath). Is there's any reason to do that? 
     Set<File> classPaths = calculateClassPath(myFork);
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
