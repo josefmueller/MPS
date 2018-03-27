@@ -18,10 +18,11 @@ import org.apache.tools.ant.taskdefs.Execute;
 import java.net.URL;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
-import org.apache.tools.ant.ProjectComponent;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import org.jetbrains.annotations.NotNull;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Constructor;
+import org.apache.tools.ant.ProjectComponent;
 import java.util.Collections;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
@@ -176,29 +177,42 @@ public abstract class MpsLoadTask extends Task {
           throw new BuildException(e);
         }
       }
-      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
+      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), getClass().getClassLoader());
       Thread.currentThread().setContextClassLoader(classLoader);
       try {
-        // Next code is to deal with an dubious scenario, when this class along with myWhatToDo(Script) is loaded using a classloader which is completely 
-        // unrelated to the one of ProjectComponent.class. Without that magic, there are chances (of course, provided parent CL of URLClassLoader, above, 
-        //  doesn't know what Script class is) that Script class loaded by worker class using newly created CL would be different from the Script class we've got 
-        // here, and therefore getConstructor(Script.class,...) may fail. 
-        // Though the scenario is technically feasible, I don't quite buy this idea, and would rather use getClass().getClassLoader() as parent CL  
-        // for URLClassloader above (since we have to pass this to the worker, we have to reuse at least ProjectComponent's classloader) or  
-        // would drop ProjectComponent argument altogether (to keep Worker independent from any Ant stuff). 
-        // XXX Besides, I don't see a reason to invoke 'work()' instead of 'main', so that entry point for the worker would be the same regardless of execution (fork/!fork) method. 
-        final Class<?> scriptClassProperCL = classLoader.loadClass(Script.class.getCanonicalName());
-        File serializedWhat2Do = myWhatToDo.dumpToTmpFile();
-        Object scriptInstanceProperCL = scriptClassProperCL.getMethod("fromDumpInFile").invoke(null, serializedWhat2Do);
         Class<?> workerClass = classLoader.loadClass(getWorkerClass());
-        Constructor<?> constructor = workerClass.getConstructor(scriptClassProperCL, ProjectComponent.class);
-        Object generator = constructor.newInstance(scriptInstanceProperCL, this);
+        Object worker = instantiateInProcessWorker(workerClass);
         Method method = workerClass.getMethod("work");
-        method.invoke(generator);
+        method.invoke(worker);
       } catch (Throwable t) {
         throw new BuildException(t.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
       }
     }
+  }
+
+  protected Object instantiateInProcessWorker(@NotNull Class<?> workerClass) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+    // First, check if there's a desire to get ProjectComponent, i.e. a worker that is Ant-aware 
+    for (Constructor<?> constructor : workerClass.getConstructors()) {
+      if (constructor.getParameterCount() != 2) {
+        continue;
+      }
+      Class<?>[] parameterTypes = constructor.getParameterTypes();
+      if (parameterTypes[0].isAssignableFrom(Script.class) && parameterTypes[1].isAssignableFrom(ProjectComponent.class)) {
+        return constructor.newInstance(myWhatToDo, this);
+      }
+    }
+    // Then, resort to a worker that doesn't depend from Ant  
+    for (Constructor<?> constructor : workerClass.getConstructors()) {
+      if (constructor.getParameterCount() != 1) {
+        continue;
+      }
+      Class<?>[] parameterTypes = constructor.getParameterTypes();
+      if (parameterTypes[0].isAssignableFrom(Script.class)) {
+        return constructor.newInstance(myWhatToDo);
+      }
+    }
+    // Last, respect the case worker doesn't need anything 
+    return workerClass.newInstance();
   }
 
   @NotNull

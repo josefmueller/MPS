@@ -40,6 +40,10 @@
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
+      <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
+        <child id="1173175577737" name="index" index="AHEQo" />
+        <child id="1173175590490" name="array" index="AHHXb" />
+      </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -2046,8 +2050,8 @@
                         </node>
                       </node>
                       <node concept="2OqwBi" id="3ufQioQQtpn" role="37wK5m">
-                        <node concept="3VsKOn" id="3ufQioQQtpo" role="2Oq$k0">
-                          <ref role="3VsUkX" to="gola:~ProjectComponent" resolve="ProjectComponent" />
+                        <node concept="1rXfSq" id="3QFNug6$cj$" role="2Oq$k0">
+                          <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
                         </node>
                         <node concept="liA8E" id="3ufQioQQtpp" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Class.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
@@ -2119,116 +2123,6 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="3ufQioQQtpH" role="SfCbr">
-                  <node concept="3SKdUt" id="6tzA4yIqN3Q" role="3cqZAp">
-                    <node concept="3SKdUq" id="6tzA4yIqN3S" role="3SKWNk">
-                      <property role="3SKdUp" value="Next code is to deal with an dubious scenario, when this class along with myWhatToDo(Script) is loaded using a classloader which is completely" />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6y0d0" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6y0d2" role="3SKWNk">
-                      <property role="3SKdUp" value="unrelated to the one of ProjectComponent.class. Without that magic, there are chances (of course, provided parent CL of URLClassLoader, above," />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6y0HZ" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6y0I0" role="3SKWNk">
-                      <property role="3SKdUp" value=" doesn't know what Script class is) that Script class loaded by worker class using newly created CL would be different from the Script class we've got" />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6y1Ky" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6y1K$" role="3SKWNk">
-                      <property role="3SKdUp" value="here, and therefore getConstructor(Script.class,...) may fail." />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="6tzA4yIqO_p" role="3cqZAp">
-                    <node concept="3SKdUq" id="6tzA4yIqO_r" role="3SKWNk">
-                      <property role="3SKdUp" value="Though the scenario is technically feasible, I don't quite buy this idea, and would rather use getClass().getClassLoader() as parent CL " />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6ygrG" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6ygrH" role="3SKWNk">
-                      <property role="3SKdUp" value="for URLClassloader above (since we have to pass this to the worker, we have to reuse at least ProjectComponent's classloader) or " />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6yjK7" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6yjK8" role="3SKWNk">
-                      <property role="3SKdUp" value="would drop ProjectComponent argument altogether (to keep Worker independent from any Ant stuff)." />
-                    </node>
-                  </node>
-                  <node concept="3SKdUt" id="3QFNug6yys6" role="3cqZAp">
-                    <node concept="3SKdUq" id="3QFNug6yys8" role="3SKWNk">
-                      <property role="3SKdUp" value="XXX Besides, I don't see a reason to invoke 'work()' instead of 'main', so that entry point for the worker would be the same regardless of execution (fork/!fork) method." />
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="3QFNug6xqSY" role="3cqZAp">
-                    <node concept="3cpWsn" id="3QFNug6xqSZ" role="3cpWs9">
-                      <property role="TrG5h" value="scriptClassProperCL" />
-                      <property role="3TUv4t" value="true" />
-                      <node concept="3uibUv" id="3QFNug6xqSf" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                        <node concept="3qTvmN" id="3QFNug6xqSi" role="11_B2D" />
-                      </node>
-                      <node concept="2OqwBi" id="3QFNug6xqT0" role="33vP2m">
-                        <node concept="37vLTw" id="3QFNug6xqT1" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtp9" resolve="classLoader" />
-                        </node>
-                        <node concept="liA8E" id="3QFNug6xqT2" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                          <node concept="2OqwBi" id="3QFNug6xqT3" role="37wK5m">
-                            <node concept="3VsKOn" id="3QFNug6xqT4" role="2Oq$k0">
-                              <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
-                            </node>
-                            <node concept="liA8E" id="3QFNug6xqT5" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~Class.getCanonicalName():java.lang.String" resolve="getCanonicalName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="3QFNug6xwYe" role="3cqZAp">
-                    <node concept="3cpWsn" id="3QFNug6xwYf" role="3cpWs9">
-                      <property role="TrG5h" value="serializedWhat2Do" />
-                      <node concept="3uibUv" id="3QFNug6xwUK" role="1tU5fm">
-                        <ref role="3uigEE" to="guwi:~File" resolve="File" />
-                      </node>
-                      <node concept="2OqwBi" id="3QFNug6xwYg" role="33vP2m">
-                        <node concept="37vLTw" id="3QFNug6xwYh" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
-                        </node>
-                        <node concept="liA8E" id="3QFNug6xwYi" role="2OqNvi">
-                          <ref role="37wK5l" to="asz6:KL8Aql8eAb" resolve="dumpToTmpFile" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs8" id="3QFNug6xIj5" role="3cqZAp">
-                    <node concept="3cpWsn" id="3QFNug6xIj6" role="3cpWs9">
-                      <property role="TrG5h" value="scriptInstanceProperCL" />
-                      <node concept="3uibUv" id="3QFNug6xIhW" role="1tU5fm">
-                        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                      </node>
-                      <node concept="2OqwBi" id="3QFNug6xIj7" role="33vP2m">
-                        <node concept="2OqwBi" id="3QFNug6xIj8" role="2Oq$k0">
-                          <node concept="37vLTw" id="3QFNug6xIj9" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3QFNug6xqSZ" resolve="scriptClassProperCL" />
-                          </node>
-                          <node concept="liA8E" id="3QFNug6xIja" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
-                            <node concept="Xl_RD" id="3QFNug6xIjb" role="37wK5m">
-                              <property role="Xl_RC" value="fromDumpInFile" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="3QFNug6xIjc" role="2OqNvi">
-                          <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                          <node concept="10Nm6u" id="3QFNug6xIjd" role="37wK5m" />
-                          <node concept="37vLTw" id="3QFNug6xIje" role="37wK5m">
-                            <ref role="3cqZAo" node="3QFNug6xwYf" resolve="serializedWhat2Do" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="3ufQioQQtq3" role="3cqZAp">
                     <node concept="3cpWsn" id="3ufQioQQtq4" role="3cpWs9">
                       <property role="TrG5h" value="workerClass" />
@@ -2250,47 +2144,17 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="3ufQioQQtqd" role="3cqZAp">
-                    <node concept="3cpWsn" id="3ufQioQQtqe" role="3cpWs9">
-                      <property role="TrG5h" value="constructor" />
-                      <property role="3TUv4t" value="false" />
-                      <node concept="3uibUv" id="3ufQioQQtqf" role="1tU5fm">
-                        <ref role="3uigEE" to="t6h5:~Constructor" resolve="Constructor" />
-                        <node concept="3qTvmN" id="3ufQioQQtqg" role="11_B2D" />
-                      </node>
-                      <node concept="2OqwBi" id="3ufQioQQtqh" role="33vP2m">
-                        <node concept="37vLTw" id="3GM_nagT$tw" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
-                        </node>
-                        <node concept="liA8E" id="3ufQioQQtqj" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Class.getConstructor(java.lang.Class...):java.lang.reflect.Constructor" resolve="getConstructor" />
-                          <node concept="37vLTw" id="3QFNug6xPnw" role="37wK5m">
-                            <ref role="3cqZAo" node="3QFNug6xqSZ" resolve="scriptClassProperCL" />
-                          </node>
-                          <node concept="3VsKOn" id="3QFNug6xTEF" role="37wK5m">
-                            <ref role="3VsUkX" to="gola:~ProjectComponent" resolve="ProjectComponent" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="3ufQioQQtqm" role="3cqZAp">
                     <node concept="3cpWsn" id="3ufQioQQtqn" role="3cpWs9">
-                      <property role="TrG5h" value="generator" />
+                      <property role="TrG5h" value="worker" />
                       <property role="3TUv4t" value="false" />
                       <node concept="3uibUv" id="3ufQioQQtqo" role="1tU5fm">
                         <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                       </node>
-                      <node concept="2OqwBi" id="3ufQioQQtqp" role="33vP2m">
-                        <node concept="37vLTw" id="3GM_nagTwmZ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3ufQioQQtqe" resolve="constructor" />
-                        </node>
-                        <node concept="liA8E" id="3ufQioQQtqr" role="2OqNvi">
-                          <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
-                          <node concept="37vLTw" id="3QFNug6xRO5" role="37wK5m">
-                            <ref role="3cqZAo" node="3QFNug6xIj6" resolve="scriptInstanceProperCL" />
-                          </node>
-                          <node concept="Xjq3P" id="3ufQioQQtqt" role="37wK5m" />
+                      <node concept="1rXfSq" id="3QFNug6AsP3" role="33vP2m">
+                        <ref role="37wK5l" node="3QFNug6_7d9" resolve="instantiateInProcessWorker" />
+                        <node concept="37vLTw" id="3QFNug6ClLb" role="37wK5m">
+                          <ref role="3cqZAo" node="3ufQioQQtq4" resolve="workerClass" />
                         </node>
                       </node>
                     </node>
@@ -2323,7 +2187,7 @@
                       <node concept="liA8E" id="3ufQioQQtqC" role="2OqNvi">
                         <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
                         <node concept="37vLTw" id="3GM_nagTzQ2" role="37wK5m">
-                          <ref role="3cqZAo" node="3ufQioQQtqn" resolve="generator" />
+                          <ref role="3cqZAo" node="3ufQioQQtqn" resolve="worker" />
                         </node>
                       </node>
                     </node>
@@ -2966,6 +2830,261 @@
       </node>
       <node concept="3uibUv" id="3ufQioQQttq" role="Sfmx6">
         <ref role="3uigEE" to="gola:~BuildException" resolve="BuildException" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3QFNug6$TSH" role="jymVt" />
+    <node concept="3clFb_" id="3QFNug6_7d9" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="instantiateInProcessWorker" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3QFNug6_7dc" role="3clF47">
+        <node concept="3SKdUt" id="3QFNug6$qZd" role="3cqZAp">
+          <node concept="3SKdUq" id="3QFNug6$qZf" role="3SKWNk">
+            <property role="3SKdUp" value="First, check if there's a desire to get ProjectComponent, i.e. a worker that is Ant-aware" />
+          </node>
+        </node>
+        <node concept="1DcWWT" id="3QFNug6$iae" role="3cqZAp">
+          <node concept="3clFbS" id="3QFNug6$iag" role="2LFqv$">
+            <node concept="3clFbJ" id="3QFNug6$mzp" role="3cqZAp">
+              <node concept="3clFbS" id="3QFNug6$mzr" role="3clFbx">
+                <node concept="3N13vt" id="3QFNug6$pZF" role="3cqZAp" />
+              </node>
+              <node concept="3y3z36" id="3QFNug6$pba" role="3clFbw">
+                <node concept="3cmrfG" id="3QFNug6$py8" role="3uHU7w">
+                  <property role="3cmrfH" value="2" />
+                </node>
+                <node concept="2OqwBi" id="3QFNug6$nja" role="3uHU7B">
+                  <node concept="37vLTw" id="3QFNug6$mQa" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3QFNug6$iah" resolve="constructor" />
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$nHE" role="2OqNvi">
+                    <ref role="37wK5l" to="t6h5:~Constructor.getParameterCount():int" resolve="getParameterCount" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="3QFNug6$wex" role="3cqZAp">
+              <node concept="3cpWsn" id="3QFNug6$wey" role="3cpWs9">
+                <property role="TrG5h" value="parameterTypes" />
+                <node concept="10Q1$e" id="3QFNug6$weo" role="1tU5fm">
+                  <node concept="3uibUv" id="3QFNug6$wev" role="10Q1$1">
+                    <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                    <node concept="3qTvmN" id="3QFNug6$wew" role="11_B2D" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3QFNug6$wez" role="33vP2m">
+                  <node concept="37vLTw" id="3QFNug6$we$" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3QFNug6$iah" resolve="constructor" />
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$we_" role="2OqNvi">
+                    <ref role="37wK5l" to="t6h5:~Constructor.getParameterTypes():java.lang.Class[]" resolve="getParameterTypes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3QFNug6$uP0" role="3cqZAp">
+              <node concept="3clFbS" id="3QFNug6$uP2" role="3clFbx">
+                <node concept="3cpWs6" id="3QFNug6_Ip8" role="3cqZAp">
+                  <node concept="2OqwBi" id="3QFNug6_NjJ" role="3cqZAk">
+                    <node concept="37vLTw" id="3QFNug6_NjK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3QFNug6$iah" resolve="constructor" />
+                    </node>
+                    <node concept="liA8E" id="3QFNug6_NjL" role="2OqNvi">
+                      <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
+                      <node concept="37vLTw" id="3QFNug6_NjM" role="37wK5m">
+                        <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+                      </node>
+                      <node concept="Xjq3P" id="3QFNug6_NjN" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1Wc70l" id="3QFNug6$EgY" role="3clFbw">
+                <node concept="2OqwBi" id="3QFNug6$GKD" role="3uHU7w">
+                  <node concept="AH0OO" id="3QFNug6$Fu$" role="2Oq$k0">
+                    <node concept="3cmrfG" id="3QFNug6$Fvd" role="AHEQo">
+                      <property role="3cmrfH" value="1" />
+                    </node>
+                    <node concept="37vLTw" id="3QFNug6$EW8" role="AHHXb">
+                      <ref role="3cqZAo" node="3QFNug6$wey" resolve="parameterTypes" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$Hoy" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                    <node concept="3VsKOn" id="3QFNug6$I1P" role="37wK5m">
+                      <ref role="3VsUkX" to="gola:~ProjectComponent" resolve="ProjectComponent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3QFNug6$xE1" role="3uHU7B">
+                  <node concept="AH0OO" id="3QFNug6$wPx" role="2Oq$k0">
+                    <node concept="3cmrfG" id="3QFNug6$xdG" role="AHEQo">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="37vLTw" id="3QFNug6$weA" role="AHHXb">
+                      <ref role="3cqZAo" node="3QFNug6$wey" resolve="parameterTypes" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$y0P" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                    <node concept="3VsKOn" id="3QFNug6$zG2" role="37wK5m">
+                      <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="3QFNug6$iah" role="1Duv9x">
+            <property role="TrG5h" value="constructor" />
+            <node concept="3uibUv" id="3QFNug6$iKi" role="1tU5fm">
+              <ref role="3uigEE" to="t6h5:~Constructor" resolve="Constructor" />
+              <node concept="3qTvmN" id="3QFNug6$jze" role="11_B2D" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3QFNug6$fuA" role="1DdaDG">
+            <node concept="37vLTw" id="3QFNug6$fe0" role="2Oq$k0">
+              <ref role="3cqZAo" node="3QFNug6_BrL" resolve="workerClass" />
+            </node>
+            <node concept="liA8E" id="3QFNug6$g0u" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getConstructors():java.lang.reflect.Constructor[]" resolve="getConstructors" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3QFNug6AT8r" role="3cqZAp">
+          <node concept="3SKdUq" id="3QFNug6AT8t" role="3SKWNk">
+            <property role="3SKdUp" value="Then, resort to a worker that doesn't depend from Ant " />
+          </node>
+        </node>
+        <node concept="1DcWWT" id="3QFNug6$RMd" role="3cqZAp">
+          <node concept="3clFbS" id="3QFNug6$RMe" role="2LFqv$">
+            <node concept="3clFbJ" id="3QFNug6$RMf" role="3cqZAp">
+              <node concept="3clFbS" id="3QFNug6$RMg" role="3clFbx">
+                <node concept="3N13vt" id="3QFNug6$RMh" role="3cqZAp" />
+              </node>
+              <node concept="3y3z36" id="3QFNug6$RMi" role="3clFbw">
+                <node concept="2OqwBi" id="3QFNug6$RMk" role="3uHU7B">
+                  <node concept="37vLTw" id="3QFNug6$RMl" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3QFNug6$RMR" resolve="constructor" />
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$RMm" role="2OqNvi">
+                    <ref role="37wK5l" to="t6h5:~Constructor.getParameterCount():int" resolve="getParameterCount" />
+                  </node>
+                </node>
+                <node concept="3cmrfG" id="3QFNug6$T$p" role="3uHU7w">
+                  <property role="3cmrfH" value="1" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="3QFNug6$RMn" role="3cqZAp">
+              <node concept="3cpWsn" id="3QFNug6$RMo" role="3cpWs9">
+                <property role="TrG5h" value="parameterTypes" />
+                <node concept="10Q1$e" id="3QFNug6$RMp" role="1tU5fm">
+                  <node concept="3uibUv" id="3QFNug6$RMq" role="10Q1$1">
+                    <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                    <node concept="3qTvmN" id="3QFNug6$RMr" role="11_B2D" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="3QFNug6$RMs" role="33vP2m">
+                  <node concept="37vLTw" id="3QFNug6$RMt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3QFNug6$RMR" resolve="constructor" />
+                  </node>
+                  <node concept="liA8E" id="3QFNug6$RMu" role="2OqNvi">
+                    <ref role="37wK5l" to="t6h5:~Constructor.getParameterTypes():java.lang.Class[]" resolve="getParameterTypes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3QFNug6$RMv" role="3cqZAp">
+              <node concept="3clFbS" id="3QFNug6$RMw" role="3clFbx">
+                <node concept="3cpWs6" id="3QFNug6B6xd" role="3cqZAp">
+                  <node concept="2OqwBi" id="3QFNug6$RMz" role="3cqZAk">
+                    <node concept="37vLTw" id="3QFNug6$RM$" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3QFNug6$RMR" resolve="constructor" />
+                    </node>
+                    <node concept="liA8E" id="3QFNug6$RM_" role="2OqNvi">
+                      <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
+                      <node concept="37vLTw" id="3QFNug6$RMA" role="37wK5m">
+                        <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="3QFNug6$RML" role="3clFbw">
+                <node concept="AH0OO" id="3QFNug6$RMM" role="2Oq$k0">
+                  <node concept="3cmrfG" id="3QFNug6$RMN" role="AHEQo">
+                    <property role="3cmrfH" value="0" />
+                  </node>
+                  <node concept="37vLTw" id="3QFNug6$RMO" role="AHHXb">
+                    <ref role="3cqZAo" node="3QFNug6$RMo" resolve="parameterTypes" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3QFNug6$RMP" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Class.isAssignableFrom(java.lang.Class):boolean" resolve="isAssignableFrom" />
+                  <node concept="3VsKOn" id="3QFNug6$RMQ" role="37wK5m">
+                    <ref role="3VsUkX" to="asz6:KL8Aql8enO" resolve="Script" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="3QFNug6$RMR" role="1Duv9x">
+            <property role="TrG5h" value="constructor" />
+            <node concept="3uibUv" id="3QFNug6$RMS" role="1tU5fm">
+              <ref role="3uigEE" to="t6h5:~Constructor" resolve="Constructor" />
+              <node concept="3qTvmN" id="3QFNug6$RMT" role="11_B2D" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3QFNug6$RMU" role="1DdaDG">
+            <node concept="37vLTw" id="3QFNug6$RMV" role="2Oq$k0">
+              <ref role="3cqZAo" node="3QFNug6_BrL" resolve="workerClass" />
+            </node>
+            <node concept="liA8E" id="3QFNug6$RMW" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getConstructors():java.lang.reflect.Constructor[]" resolve="getConstructors" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3QFNug6BG58" role="3cqZAp">
+          <node concept="3SKdUq" id="3QFNug6BG5a" role="3SKWNk">
+            <property role="3SKdUp" value="Last, respect the case worker doesn't need anything" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3QFNug6BUv1" role="3cqZAp">
+          <node concept="2OqwBi" id="3QFNug6C7$B" role="3cqZAk">
+            <node concept="37vLTw" id="3QFNug6C3p4" role="2Oq$k0">
+              <ref role="3cqZAo" node="3QFNug6_BrL" resolve="workerClass" />
+            </node>
+            <node concept="liA8E" id="3QFNug6Ccu0" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.newInstance():java.lang.Object" resolve="newInstance" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="3QFNug6_c3b" role="1B3o_S" />
+      <node concept="3uibUv" id="3QFNug6_g_J" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+      </node>
+      <node concept="37vLTG" id="3QFNug6_BrL" role="3clF46">
+        <property role="TrG5h" value="workerClass" />
+        <node concept="3uibUv" id="3QFNug6_BrK" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qTvmN" id="3QFNug6_G8W" role="11_B2D" />
+        </node>
+        <node concept="2AHcQZ" id="3QFNug6ArmL" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="3QFNug6A8S3" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~IllegalAccessException" resolve="IllegalAccessException" />
+      </node>
+      <node concept="3uibUv" id="3QFNug6Adm8" role="Sfmx6">
+        <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
+      </node>
+      <node concept="3uibUv" id="3QFNug6AhOl" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~InstantiationException" resolve="InstantiationException" />
       </node>
     </node>
     <node concept="2tJIrI" id="1_4F7FNq2WC" role="jymVt" />

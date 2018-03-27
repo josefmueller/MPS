@@ -276,7 +276,6 @@ public class Script {
   }
 
   /**
-   * IMPORTANT this method is invoked through reflection from MpsLoadTask, keep its name intact or update both.
    * XXX InputStream would be better than File, but I'm lazy to get this fixed now
    */
   public static Script fromDumpInFile(File file) {
