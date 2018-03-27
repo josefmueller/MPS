@@ -9,10 +9,12 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.EqualUtil;
 
 public class SPropertyOperations {
-  public static void set(SNode node, SProperty property, String propertyValue) {
-    if (node != null) {
-      SNodeAccessUtil.setProperty(node, property, propertyValue);
+  public static String set(SNode node, SProperty property, String propertyValue) {
+    if (node == null) {
+      return null;
     }
+    SNodeAccessUtil.setProperty(node, property, propertyValue);
+    return propertyValue;
   }
   public static String getString(SNode node, SProperty property) {
     if (node != null) {
