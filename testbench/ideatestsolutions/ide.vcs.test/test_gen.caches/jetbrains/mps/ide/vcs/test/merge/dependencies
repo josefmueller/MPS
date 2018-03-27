@@ -299,7 +299,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
     <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.ChangesTestUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge._Adapters" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -397,8 +396,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.vcs.test.merge.MergeTest" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
 </dependenciesRoot>
 
