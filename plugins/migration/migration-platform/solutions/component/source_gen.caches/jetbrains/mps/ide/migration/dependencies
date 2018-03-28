@@ -216,6 +216,10 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationTrigger" file="MigrationTrigger.java">
+    <classNode dependClassName="com.intellij.notification.Notification" />
+    <classNode dependClassName="com.intellij.notification.NotificationListener" />
+    <classNode dependClassName="com.intellij.notification.NotificationType" />
+    <classNode dependClassName="com.intellij.notification.Notifications" />
     <classNode dependClassName="com.intellij.openapi.application.Application" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -239,6 +243,7 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.event.HyperlinkEvent" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />

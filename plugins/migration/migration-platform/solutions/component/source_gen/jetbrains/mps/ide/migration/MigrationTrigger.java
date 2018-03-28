@@ -10,6 +10,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
+import com.intellij.notification.Notification;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -44,6 +45,10 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.NotificationListener;
+import javax.swing.event.HyperlinkEvent;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
@@ -94,6 +99,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private boolean myMigrationForbidden = false;
   private boolean myMigrationPostponed = false;
   private int myBlocked = 0;
+
+  private Notification myLastNotification = null;
 
   private ProjectMigrationProperties myProperties;
 
@@ -297,10 +304,32 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               }
             });
 
-            if (resave.value || migrate.value) {
-              myMigrationPostponed = runMigration(resave.value, migrate.value);
-            }
             myMigrationForbidden = false;
+            if (myMigrationPostponed) {
+              if (myLastNotification != null && !(myLastNotification.isExpired())) {
+                return;
+              }
+              myLastNotification = new Notification("Migration", "Migration required", "<p>This project requires migration.</p><p><a href=\"migrate\">Migrate</a></p>", NotificationType.INFORMATION, new NotificationListener() {
+                @Override
+                public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
+                  if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
+                    return;
+                  }
+                  if ("migrate".equals(e.getDescription())) {
+                    synchronized (MigrationTrigger.this) {
+                      myMigrationPostponed = false;
+                    }
+                    postponeMigration();
+                  }
+                  notification.expire();
+                }
+              });
+              Notifications.Bus.notify(myLastNotification, myProject);
+            } else {
+              if (resave.value || migrate.value) {
+                myMigrationPostponed = runMigration(resave.value, migrate.value);
+              }
+            }
           }
         }, ModalityState.NON_MODAL);
       }
