@@ -312,16 +312,16 @@ public class MergeTest extends ChangesTestBase {
 
   @Test
   public void testAddChildAndSetPropertyDontConflict() {
-    testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new _Adapters._return_P1_E0_to_ModelChanger_adapter(new _FunctionTypes._return_P1_E0<String, SModel>() {
-      public String invoke(SModel expectedModel) {
-        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0xb();
+    testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelChanger() {
+      public void changeModel(SModel expectedModel) {
+        SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a94();
         SPropertyOperations.set(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         insertMemberPreservingId(getTheirsClassRoot(), newChild, -1);
 
         insertMemberPreservingId(getClassRoot(expectedModel), newChild, -1);
-        return SPropertyOperations.set(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.set(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
       }
-    }));
+    });
   }
 
   private void insertPreservingId(SNode clazz, SNode member, int position, SContainmentLink link) {
@@ -441,10 +441,10 @@ public class MergeTest extends ChangesTestBase {
     return buf.toString();
   }
 
-  private interface ModelChanger {
+  /*package*/ interface ModelChanger {
     void changeModel(SModel model);
   }
-  private interface ModelCreator {
+  /*package*/ interface ModelCreator {
     SModel createModel();
   }
   private static SNode createClassConcept_u0wfvp_a0a0a0a0s() {
@@ -464,7 +464,7 @@ public class MergeTest extends ChangesTestBase {
     }
     return n1;
   }
-  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0xb() {
+  private static SNode createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a94() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null, null, false);
     {
