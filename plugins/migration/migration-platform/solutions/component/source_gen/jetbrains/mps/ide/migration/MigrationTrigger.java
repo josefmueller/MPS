@@ -218,10 +218,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     return "MigrationTrigger";
   }
 
-  public synchronized void resetMigrationQueuedFlag() {
-    myMigrationQueued = false;
-  }
-
   /*package*/ void checkMigrationNeeded() {
     myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
@@ -299,9 +295,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             });
 
             if (resave.value || migrate.value) {
-              startMigration(resave.value, migrate.value);
+              myMigrationQueued = runMigration(resave.value, migrate.value);
             } else {
-              resetMigrationQueuedFlag();
+              myMigrationQueued = false;
             }
           }
         }, ModalityState.NON_MODAL);
@@ -309,17 +305,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     });
   }
 
-  private void startMigration(boolean update, boolean migrate) {
+  private boolean runMigration(boolean update, boolean migrate) {
     MigrationTrigger.MyMigrationSession session = new MigrationTrigger.MyMigrationSession(update, migrate);
     final MigrationWizard wizard = new MigrationWizard(myProject, session);
     boolean finished = wizard.showAndGet();
     final MigrationError errors = session.getError();
     if (!(finished) && errors == null) {
       // user has postponed migration 
-      return;
+      return true;
     }
-
-    resetMigrationQueuedFlag();
 
     if (errors == null) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -352,6 +346,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         }
       });
     }
+
+    return false;
   }
 
   private void syncRefresh() {
