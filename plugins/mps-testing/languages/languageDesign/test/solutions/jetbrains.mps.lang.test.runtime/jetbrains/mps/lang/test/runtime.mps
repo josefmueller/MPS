@@ -12654,24 +12654,6 @@
               <ref role="37wK5l" node="wUiM63ScWZ" resolve="runUndoableCommandInEDTAndWait" />
               <node concept="1bVj0M" id="wUiM63SxiH" role="37wK5m">
                 <node concept="3clFbS" id="wUiM63SxiI" role="1bW5cS">
-                  <node concept="3clFbF" id="wUiM63SxiJ" role="3cqZAp">
-                    <node concept="2OqwBi" id="wUiM63SxiK" role="3clFbG">
-                      <node concept="liA8E" id="wUiM63SxiL" role="2OqNvi">
-                        <ref role="37wK5l" to="cj4x:~EditorContext.select(org.jetbrains.mps.openapi.model.SNode):void" resolve="select" />
-                        <node concept="37vLTw" id="wUiM63SxiM" role="37wK5m">
-                          <ref role="3cqZAo" node="wUiM63PU8u" resolve="node" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="wUiM63SxiN" role="2Oq$k0">
-                        <node concept="37vLTw" id="wUiM63SxiO" role="2Oq$k0">
-                          <ref role="3cqZAo" node="wUiM63PSGQ" resolve="myEditorTest" />
-                        </node>
-                        <node concept="liA8E" id="wUiM63SxiP" role="2OqNvi">
-                          <ref role="37wK5l" node="wUiM63Q2iD" resolve="getEditorContext" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs8" id="wUiM63SxiQ" role="3cqZAp">
                     <node concept="3cpWsn" id="wUiM63SxiR" role="3cpWs9">
                       <property role="TrG5h" value="singleMatch" />

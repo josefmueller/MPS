@@ -1319,85 +1319,88 @@
       <node id="592868908271020424" at="32,130,33,66" concept="11" />
       <node id="592868908271327553" at="35,25,36,115" concept="6" />
       <node id="592868908271081243" at="38,7,39,24" concept="12" />
-      <node id="592868908271277231" at="44,25,45,53" concept="6" />
-      <node id="592868908271277238" at="45,53,46,108" concept="11" />
-      <node id="592868908271277246" at="46,108,47,80" concept="6" />
-      <node id="897913670084641815" at="54,25,55,79" concept="11" />
-      <node id="897913670084655198" at="56,35,57,17" concept="12" />
-      <node id="897913670084555123" at="58,9,59,116" concept="11" />
-      <node id="897913670084555131" at="59,116,60,80" concept="6" />
-      <node id="592868908270592569" at="65,140,66,141" concept="11" />
-      <node id="592868908270592591" at="66,141,67,0" concept="14" />
-      <node id="592868908270592594" at="68,54,69,145" concept="19" />
-      <node id="592868908270592611" at="70,5,71,0" concept="14" />
-      <node id="592868908270592612" at="71,0,72,56" concept="12" />
-      <node id="592868908271295356" at="75,136,76,91" concept="11" />
-      <node id="592868908271299021" at="78,66,79,36" concept="12" />
-      <node id="592868908270592625" at="84,97,85,86" concept="11" />
-      <node id="592868908270592630" at="85,86,86,36" concept="6" />
-      <node id="1227269295334220000" at="86,36,87,42" concept="6" />
-      <node id="592868908270592635" at="87,42,88,112" concept="12" />
+      <node id="592868908271277238" at="44,25,45,108" concept="11" />
+      <node id="592868908271277246" at="45,108,46,80" concept="6" />
+      <node id="897913670084641815" at="53,25,54,79" concept="11" />
+      <node id="897913670084655198" at="55,35,56,17" concept="12" />
+      <node id="897913670084555123" at="57,9,58,116" concept="11" />
+      <node id="897913670084555131" at="58,116,59,80" concept="6" />
+      <node id="592868908270592569" at="64,140,65,141" concept="11" />
+      <node id="592868908270592591" at="65,141,66,0" concept="14" />
+      <node id="592868908270592594" at="67,54,68,145" concept="19" />
+      <node id="592868908270592611" at="69,5,70,0" concept="14" />
+      <node id="592868908270592612" at="70,0,71,56" concept="12" />
+      <node id="592868908271295356" at="74,136,75,91" concept="11" />
+      <node id="592868908271299021" at="77,66,78,36" concept="12" />
+      <node id="592868908270592625" at="83,97,84,86" concept="11" />
+      <node id="592868908270592630" at="84,86,85,36" concept="6" />
+      <node id="1227269295334220000" at="85,36,86,42" concept="6" />
+      <node id="592868908270592635" at="86,42,87,112" concept="12" />
       <node id="592868908270586839" at="23,0,26,0" concept="3" trace="IntentionTester#(Ljetbrains/mps/lang/test/runtime/BaseEditorTestBody;)V" />
       <node id="592868908271271207" at="35,0,38,0" concept="10" trace="run#()V" />
-      <node id="897913670084643402" at="55,79,58,9" concept="9" />
-      <node id="592868908270592592" at="67,0,70,5" concept="9" />
-      <node id="592868908271299019" at="78,0,81,0" concept="10" trace="accept#(Ljetbrains/mps/util/Pair;)Z" />
+      <node id="897913670084643402" at="54,79,57,9" concept="9" />
+      <node id="592868908270592592" at="66,0,69,5" concept="9" />
+      <node id="592868908271299019" at="77,0,80,0" concept="10" trace="accept#(Ljetbrains/mps/util/Pair;)Z" />
       <node id="1227269295334156385" at="27,0,31,0" concept="3" trace="IntentionTester#(Ljetbrains/mps/lang/test/runtime/BaseEditorTestBody;Z)V" />
+      <node id="592868908271277229" at="44,0,48,0" concept="10" trace="run#()V" />
       <node id="592868908271268303" at="33,66,38,7" concept="6" />
-      <node id="592868908271277229" at="44,0,49,0" concept="10" trace="run#()V" />
-      <node id="592868908271299014" at="76,91,81,7" concept="12" />
-      <node id="592868908270592620" at="84,0,90,0" concept="10" trace="getAvailableIntentions#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
-      <node id="592868908271274142" at="42,169,49,7" concept="6" />
-      <node id="897913670084555114" at="54,0,62,0" concept="10" trace="run#()V" />
-      <node id="592868908271289524" at="75,0,83,0" concept="10" trace="getMatchingIntentions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)Ljava/lang/Iterable;" />
+      <node id="592868908271299014" at="75,91,80,7" concept="12" />
+      <node id="592868908271274142" at="42,169,48,7" concept="6" />
+      <node id="592868908270592620" at="83,0,89,0" concept="10" trace="getAvailableIntentions#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
+      <node id="592868908270592501" at="42,0,50,0" concept="10" trace="invokeMatchingIntention#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)V" />
+      <node id="897913670084555114" at="53,0,61,0" concept="10" trace="run#()V" />
+      <node id="592868908271289524" at="74,0,82,0" concept="10" trace="getMatchingIntentions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)Ljava/lang/Iterable;" />
       <node id="592868908270979024" at="32,0,41,0" concept="10" trace="isIntentionApplicable#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="592868908270592501" at="42,0,51,0" concept="10" trace="invokeMatchingIntention#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)V" />
-      <node id="592868908270592552" at="65,0,74,0" concept="10" trace="getSingleMatchingIntention#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)Ljetbrains/mps/util/Pair;" />
-      <node id="897913670084555110" at="52,151,62,7" concept="6" />
-      <node id="897913670084555108" at="52,0,64,0" concept="10" trace="invokeMatchingIntention#(Lorg/jetbrains/mps/util/Condition;)V" />
+      <node id="592868908270592552" at="64,0,73,0" concept="10" trace="getSingleMatchingIntention#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/util/Condition;)Ljetbrains/mps/util/Pair;" />
+      <node id="897913670084555110" at="51,151,61,7" concept="6" />
+      <node id="897913670084555108" at="51,0,63,0" concept="10" trace="invokeMatchingIntention#(Lorg/jetbrains/mps/util/Condition;)V" />
       <scope id="592868908270586843" at="23,57,24,28" />
       <scope id="592868908271271208" at="35,25,36,115" />
-      <scope id="897913670084643404" at="56,35,57,17" />
-      <scope id="592868908270592593" at="68,54,69,145" />
-      <scope id="592868908271299020" at="78,66,79,36" />
+      <scope id="897913670084643404" at="55,35,56,17" />
+      <scope id="592868908270592593" at="67,54,68,145" />
+      <scope id="592868908271299020" at="77,66,78,36" />
       <scope id="1227269295334156389" at="27,79,29,34" />
+      <scope id="592868908271277230" at="44,25,46,80">
+        <var name="singleMatch" id="592868908271277239" />
+      </scope>
       <scope id="592868908270586839" at="23,0,26,0">
         <var name="editorTest" id="592868908270586846" />
       </scope>
       <scope id="592868908271271207" at="35,0,38,0" />
-      <scope id="592868908271277230" at="44,25,47,80">
-        <var name="singleMatch" id="592868908271277239" />
-      </scope>
-      <scope id="592868908271299019" at="78,0,81,0">
+      <scope id="592868908271299019" at="77,0,80,0">
         <var name="it" id="592868908271299019" />
       </scope>
       <scope id="1227269295334156385" at="27,0,31,0">
         <var name="editorTest" id="1227269295334162471" />
         <var name="surroundWith" id="1227269295334162497" />
       </scope>
-      <scope id="592868908270592624" at="84,97,88,112">
+      <scope id="592868908271277229" at="44,0,48,0" />
+      <scope id="592868908270592624" at="83,97,87,112">
         <var name="query" id="592868908270592626" />
       </scope>
-      <scope id="592868908271277229" at="44,0,49,0" />
-      <scope id="897913670084555115" at="54,25,60,80">
+      <scope id="592868908270592502" at="42,169,48,7" />
+      <scope id="897913670084555115" at="53,25,59,80">
         <var name="selectedNode" id="897913670084641816" />
         <var name="singleMatch" id="897913670084555124" />
       </scope>
-      <scope id="592868908271289527" at="75,136,81,7">
+      <scope id="592868908271289527" at="74,136,80,7">
         <var name="intentions" id="592868908271295357" />
       </scope>
-      <scope id="592868908270592620" at="84,0,90,0">
+      <scope id="592868908270592620" at="83,0,89,0">
         <var name="node" id="592868908270592622" />
       </scope>
       <scope id="592868908270979027" at="32,130,39,24">
         <var name="result" id="592868908271020427" />
       </scope>
-      <scope id="592868908270592502" at="42,169,49,7" />
-      <scope id="592868908270592559" at="65,140,72,56">
+      <scope id="592868908270592559" at="64,140,71,56">
         <var name="matches" id="592868908270592570" />
       </scope>
-      <scope id="897913670084555114" at="54,0,62,0" />
-      <scope id="592868908271289524" at="75,0,83,0">
+      <scope id="592868908270592501" at="42,0,50,0">
+        <var name="intentionCondition" id="592868908270592544" />
+        <var name="node" id="592868908270592542" />
+      </scope>
+      <scope id="897913670084555114" at="53,0,61,0" />
+      <scope id="592868908271289524" at="74,0,82,0">
         <var name="condition" id="592868908271295606" />
         <var name="node" id="592868908271292628" />
       </scope>
@@ -1405,23 +1408,19 @@
         <var name="id" id="592868908270982404" />
         <var name="node" id="592868908271024241" />
       </scope>
-      <scope id="592868908270592501" at="42,0,51,0">
-        <var name="intentionCondition" id="592868908270592544" />
-        <var name="node" id="592868908270592542" />
-      </scope>
-      <scope id="592868908270592552" at="65,0,74,0">
+      <scope id="592868908270592552" at="64,0,73,0">
         <var name="intentionCondition" id="592868908270592556" />
         <var name="node" id="592868908270592554" />
       </scope>
-      <scope id="897913670084555109" at="52,151,62,7" />
-      <scope id="897913670084555108" at="52,0,64,0">
+      <scope id="897913670084555109" at="51,151,61,7" />
+      <scope id="897913670084555108" at="51,0,63,0">
         <var name="intentionCondition" id="897913670084555145" />
       </scope>
       <unit id="592868908271271207" at="34,52,38,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$1" />
-      <unit id="592868908271299019" at="77,67,81,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$4" />
-      <unit id="592868908271277229" at="43,52,49,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$2" />
-      <unit id="897913670084555114" at="53,52,62,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$3" />
-      <unit id="592868908270586229" at="19,0,91,0" name="jetbrains.mps.lang.test.runtime.IntentionTester" />
+      <unit id="592868908271299019" at="76,67,80,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$4" />
+      <unit id="592868908271277229" at="43,52,48,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$2" />
+      <unit id="897913670084555114" at="52,52,61,5" name="jetbrains.mps.lang.test.runtime.IntentionTester$3" />
+      <unit id="592868908270586229" at="19,0,90,0" name="jetbrains.mps.lang.test.runtime.IntentionTester" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/592868908270845831">

@@ -2440,6 +2440,12 @@
             <ref role="3bR37D" to="ffeo:1xb0AuwN7WS" resolve="JUnit" />
           </node>
         </node>
+        <node concept="1SiIV0" id="37SPlFxo3y1" role="3bR37C">
+          <node concept="3bR9La" id="37SPlFxo3y2" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6L6C" resolve="jetbrains.mps.lang.generator" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="3yaq6Y8lnOk" role="3989C9">
