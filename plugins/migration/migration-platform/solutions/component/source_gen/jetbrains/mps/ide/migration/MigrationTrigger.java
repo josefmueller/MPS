@@ -14,7 +14,6 @@ import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
@@ -92,7 +91,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private final MigrationRegistry myMigrationRegistry;
   private final ReloadManager myReloadManager;
 
-  private boolean myMigrationQueued = false;
+  private boolean myMigrationForbidden = false;
+  private boolean myMigrationPostponed = false;
+  private int myBlocked = 0;
 
   private ProjectMigrationProperties myProperties;
 
@@ -111,16 +112,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myReloadManager = reloadManager;
   }
 
-  private final AtomicInteger myBlocked = new AtomicInteger(0);
 
-  public void blockMigrationsCheck() {
-    myBlocked.incrementAndGet();
+  public synchronized void blockMigrationsCheck() {
+    myBlocked++;
+    myMigrationForbidden = true;
   }
 
-  public void unblockMigrationsCheck() {
-    int locks = myBlocked.decrementAndGet();
-    assert locks >= 0 : "Non-paired block-unblock method usage";
-    if (locks == 0) {
+  public synchronized void unblockMigrationsCheck() {
+    assert myBlocked >= 1 : "Non-paired block-unblock method usage";
+    myBlocked--;
+    if (myBlocked == 0) {
+      myMigrationForbidden = false;
       checkMigrationNeeded();
     }
   }
@@ -227,9 +229,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private synchronized void checkMigrationNeededOnModuleChange(Iterable<SModule> modules) {
-    if (myMigrationQueued) {
+    if (myMigrationForbidden) {
       return;
     }
+
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
     if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty()) {
       postponeMigration();
@@ -237,7 +240,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
-    if (myMigrationQueued) {
+    if (myMigrationForbidden) {
       return;
     }
 
@@ -264,12 +267,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   public synchronized void postponeMigration() {
-    if (myBlocked.get() != 0) {
+    if (myMigrationForbidden) {
       return;
     }
 
     final Project ideaProject = myProject;
-    myMigrationQueued = true;
+    myMigrationForbidden = true;
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -295,14 +298,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             });
 
             if (resave.value || migrate.value) {
-              myMigrationQueued = runMigration(resave.value, migrate.value);
-            } else {
-              myMigrationQueued = false;
+              myMigrationPostponed = runMigration(resave.value, migrate.value);
             }
+            myMigrationForbidden = false;
           }
         }, ModalityState.NON_MODAL);
       }
     });
+
   }
 
   private boolean runMigration(boolean update, boolean migrate) {
