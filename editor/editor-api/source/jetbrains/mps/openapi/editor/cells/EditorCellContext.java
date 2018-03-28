@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.Collection;
@@ -27,7 +28,14 @@ import java.util.Collection;
 public interface EditorCellContext {
   Collection<String> getHints();
 
-  default SNodeLocation getNodeLocation(){
+  default SNodeLocation getNodeLocation() {
+    return null;
+  }
+
+  /**
+   * Information about the property edited by the cell
+   */
+  default SPropertyInfo getPropertyInfo() {
     return null;
   }
 

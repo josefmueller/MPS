@@ -22,8 +22,7 @@ import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import java.util.Objects;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.CellMessagesUtil;
@@ -41,7 +40,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
   private static final Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
@@ -125,8 +126,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && cell.isBig() || super.acceptCell(cell, component);
   }
   private boolean isNameCell(EditorCell cell) {
-    PropertyAccessor pa = as_myu41h_a0a0a81(check_myu41h_a0a0a71((as_myu41h_a0a0a0a0a81(cell, EditorCell_Property.class))), PropertyAccessor.class);
-    return getNode() == check_myu41h_a0a1a71(pa) && NAME_PROPERTY.equals(check_myu41h_a0a0b0r(pa));
+    return Objects.equals(check_myu41h_a0a0r(check_myu41h_a0a0a71(check_myu41h_a0a0a0r(cell.getCellContext()))), NAME_PROPERTY);
   }
   private void repaintConflictedMessages(Graphics graphics, EditorCell cell) {
     // This is a workaround for case when any change message is going to be painted over 
@@ -396,21 +396,21 @@ __switch__:
   public interface ConflictChecker {
     boolean isChangeConflicted(ModelChange change);
   }
-  private static ModelAccessor check_myu41h_a0a0a71(EditorCell_Property checkedDotOperand) {
+  private static String check_myu41h_a0a0r(SProperty checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelAccessor();
+      return checkedDotOperand.getName();
     }
     return null;
   }
-  private static SNode check_myu41h_a0a1a71(PropertyAccessor checkedDotOperand) {
+  private static SProperty check_myu41h_a0a0a71(SPropertyInfo checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.getProperty();
     }
     return null;
   }
-  private static String check_myu41h_a0a0b0r(PropertyAccessor checkedDotOperand) {
+  private static SPropertyInfo check_myu41h_a0a0a0r(EditorCellContext checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getPropertyName();
+      return checkedDotOperand.getPropertyInfo();
     }
     return null;
   }
@@ -419,11 +419,5 @@ __switch__:
       return checkedDotOperand.getParent();
     }
     return null;
-  }
-  private static <T> T as_myu41h_a0a0a81(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-  private static <T> T as_myu41h_a0a0a0a0a81(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

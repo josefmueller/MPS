@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public class PropertyAccessor implements ModelAccessor {
+public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
   private SNode myNode;
   private String myPropertyName;
   private boolean myReadOnly;

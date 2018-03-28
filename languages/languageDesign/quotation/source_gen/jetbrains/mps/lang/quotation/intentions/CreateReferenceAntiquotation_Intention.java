@@ -92,6 +92,7 @@ public final class CreateReferenceAntiquotation_Intention extends AbstractIntent
         if (selectedCell.isSingleNodeCell()) {
           SPropertyOperations.set(referenceAntiquotation, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104656L, 0x5a0ec74a8bd5aeb2L, "label"), SNodeOperations.getConcept(contextNode).getName());
         }
+        editorContext.selectWRTFocusPolicy(referenceAntiquotation);
       }
     }
     @Override
