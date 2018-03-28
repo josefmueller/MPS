@@ -2708,6 +2708,16 @@
         </node>
         <node concept="SfApY" id="4nPCR7KFTJE" role="3cqZAp">
           <node concept="3clFbS" id="4nPCR7KFTJF" role="SfCbr">
+            <node concept="3SKdUt" id="6njQefeaaWL" role="3cqZAp">
+              <node concept="3SKdUq" id="6njQefeaaWN" role="3SKWNk">
+                <property role="3SKdUp" value="beware, PersistenceConfiguration.this of newly created MyState instance would be the same as" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6njQefeadyg" role="3cqZAp">
+              <node concept="3SKdUq" id="6njQefeadyi" role="3SKWNk">
+                <property role="3SKdUp" value="the value of myState, and != clone as regular Java passer-by would expect." />
+              </node>
+            </node>
             <node concept="3clFbF" id="4nPCR7KFTJK" role="3cqZAp">
               <node concept="37vLTI" id="4nPCR7KFTJL" role="3clFbG">
                 <node concept="10QFUN" id="4nPCR7KFTJM" role="37vLTx">
@@ -2917,7 +2927,7 @@
     </node>
     <node concept="312cEu" id="4nPCR7KFTBD" role="jymVt">
       <property role="TrG5h" value="MyState" />
-      <property role="2bfB8j" value="false" />
+      <property role="2bfB8j" value="true" />
       <property role="1EXbeo" value="true" />
       <node concept="1W57fq" id="6njQefe57lA" role="lGtFl">
         <node concept="3IZrLx" id="6njQefe57lC" role="3IZSJc">
