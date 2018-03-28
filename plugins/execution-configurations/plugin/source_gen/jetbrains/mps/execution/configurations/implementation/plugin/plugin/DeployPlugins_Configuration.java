@@ -112,20 +112,20 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   }
   @Override
   public DeployPlugins_Configuration clone() {
-    DeployPlugins_Configuration clone = null;
+    DeployPlugins_Configuration clone = createCloneTemplate();
     try {
-      clone = createCloneTemplate();
+      // beware, PersistenceConfiguration.this of newly created MyState instance would be the same as 
+      // the value of myState, and != clone as regular Java passer-by would expect. 
       clone.myState = (DeployPlugins_Configuration.MyState) myState.clone();
-      clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
-      return clone;
     } catch (CloneNotSupportedException ex) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }
+    clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
     return clone;
   }
-  public class MyState {
+  public final class MyState {
     public boolean mySkipModulesLoading = true;
     public boolean myRestartCurrentInstance = true;
     public MyState() {

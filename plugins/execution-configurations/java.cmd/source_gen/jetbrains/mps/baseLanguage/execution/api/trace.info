@@ -786,10 +786,10 @@
       <node id="695186566913696966" at="47,11,48,50" concept="2" />
       <node id="695186566913728192" at="49,31,50,38" concept="14" />
       <node id="5782450787797439459" at="52,5,53,19" concept="8" />
-      <node id="7500974686090462458" at="56,50,57,49" concept="7" />
-      <node id="7500974686090462458" at="58,9,59,36" concept="2" />
-      <node id="7500974686090462458" at="59,36,60,80" concept="2" />
-      <node id="7500974686090462458" at="60,80,61,19" concept="8" />
+      <node id="7500974686090462458" at="56,50,57,66" concept="7" />
+      <node id="7500974686090462458" at="58,9,59,102" concept="9" />
+      <node id="7500974686090462458" at="59,102,60,84" concept="9" />
+      <node id="7500974686090462458" at="60,84,61,80" concept="2" />
       <node id="7500974686090462458" at="63,42,64,26" concept="2" />
       <node id="7500974686090462458" at="66,5,67,17" concept="8" />
       <node id="7500974686090462492" at="70,0,71,0" concept="3" trace="myJavaRunParameters" />
@@ -816,7 +816,7 @@
       <node id="7500974686090462458" at="31,0,38,0" concept="6" trace="readExternal#(Lorg/jdom/Element;)V" />
       <node id="695186566913694230" at="45,46,52,5" concept="5" />
       <node id="7500974686090462458" at="73,0,81,0" concept="6" trace="clone#()Ljava/lang/Object;" />
-      <node id="7500974686090462458" at="57,49,66,5" concept="15" />
+      <node id="7500974686090462458" at="57,66,66,5" concept="15" />
       <node id="7500974686090462458" at="44,0,55,0" concept="6" trace="getDefaultWorkingDir#()Ljava/lang/String;" />
       <node id="7500974686090462458" at="55,0,69,0" concept="6" trace="clone#()Ljetbrains/mps/baseLanguage/execution/api/JavaRunParameters_Configuration;" />
       <scope id="7500974686090462458" at="25,117,25,117" />
@@ -843,7 +843,7 @@
       <scope id="7500974686090462458" at="41,0,44,0">
         <var name="value" id="7500974686090462458" />
       </scope>
-      <scope id="7500974686090462458" at="58,9,61,19" />
+      <scope id="7500974686090462458" at="58,9,61,80" />
       <scope id="7500974686090462458" at="62,0,65,7">
         <var name="ex" id="7500974686090462458" />
       </scope>

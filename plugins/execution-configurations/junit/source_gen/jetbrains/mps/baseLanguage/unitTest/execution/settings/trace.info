@@ -948,10 +948,10 @@
       <node id="5740494279800874970" at="194,25,195,51" concept="6" />
       <node id="6062668769034855177" at="199,57,200,35" concept="13" />
       <node id="6857586439137216022" at="204,73,205,52" concept="13" />
-      <node id="6062668769034854986" at="208,46,209,45" concept="12" />
-      <node id="6062668769034854986" at="210,9,211,36" concept="6" />
-      <node id="6062668769034854986" at="211,36,212,76" concept="6" />
-      <node id="6062668769034854986" at="212,76,213,19" concept="13" />
+      <node id="6062668769034854986" at="208,46,209,62" concept="12" />
+      <node id="6062668769034854986" at="210,9,211,102" concept="14" />
+      <node id="6062668769034854986" at="211,102,212,84" concept="14" />
+      <node id="6062668769034854986" at="212,84,213,76" concept="6" />
       <node id="6062668769034854986" at="215,42,216,26" concept="6" />
       <node id="6062668769034854986" at="218,5,219,17" concept="13" />
       <node id="6062668769034855185" at="222,0,223,0" concept="7" trace="myModelRef" />
@@ -1039,7 +1039,7 @@
       <node id="7356943059533617316" at="167,54,173,7" concept="12" />
       <node id="6062668769034854986" at="62,0,69,0" concept="11" trace="readExternal#(Lorg/jdom/Element;)V" />
       <node id="6062668769034854986" at="132,0,139,0" concept="11" trace="getCachesLocation#()Ljava/lang/String;" />
-      <node id="6062668769034854986" at="209,45,218,5" concept="21" />
+      <node id="6062668769034854986" at="209,62,218,5" concept="21" />
       <node id="6062668769034854986" at="166,0,178,0" concept="11" trace="check#(Ljetbrains/mps/project/MPSProject;)V" />
       <node id="6062668769034854986" at="191,0,204,0" concept="11" trace="getTestsToMake#(Ljetbrains/mps/project/MPSProject;)Ljava/util/List;" />
       <node id="6062668769034854986" at="44,0,58,0" concept="11" trace="checkConfiguration#(Ljetbrains/mps/execution/api/settings/PersistentConfigurationContext;)V" />
@@ -1161,7 +1161,7 @@
       <scope id="6062668769034854986" at="204,0,207,0">
         <var name="project" id="4060237634468687024" />
       </scope>
-      <scope id="6062668769034854986" at="210,9,213,19" />
+      <scope id="6062668769034854986" at="210,9,213,76" />
       <scope id="6062668769034854986" at="214,0,217,7">
         <var name="ex" id="6062668769034854986" />
       </scope>
