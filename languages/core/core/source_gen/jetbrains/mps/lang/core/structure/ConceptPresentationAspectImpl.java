@@ -93,12 +93,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExportScope:
         if (props_ExportScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           props_ExportScope = cpb.create();
         }
         return props_ExportScope;
       case LanguageConceptSwitch.ExportScopeModule:
         if (props_ExportScopeModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("@export(module)");
           props_ExportScopeModule = cpb.create();
         }
@@ -106,6 +108,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExportScopeNamespace:
         if (props_ExportScopeNamespace == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("@export(namespace)");
           props_ExportScopeNamespace = cpb.create();
         }
@@ -113,6 +116,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExportScopePublic:
         if (props_ExportScopePublic == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("@export(public)");
           props_ExportScopePublic = cpb.create();
         }
