@@ -56,7 +56,7 @@ public class MigrationScript_1 extends MigrationScriptBase {
       });
       Sequence.fromIterable(CommandUtil.nodes(CommandUtil.selectScope(null, context))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, "jetbrains.mps.lang.slanguage"), 0x5252d9021b8b45a8L, "OfAspectOperation"))) || MigrationScript_1.isMovedConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, "jetbrains.mps.console.ideCommands"), 0x5252d9021b8b45a8L, "OfAspectOperation"));
+          return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x69b8a9939b874d96L, 0xbf0c3559f4bb0c63L, "jetbrains.mps.lang.slanguage"), 0x5252d9021b8b45a8L, "OfAspectOperation"))) || MigrationScript_1.isMovedConcept(SNodeOperations.getConcept(it));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode node) {
