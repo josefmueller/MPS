@@ -83,6 +83,7 @@
     <import index="1p3" ref="r:79655025-bd36-445f-8b79-189312ab627e(jetbrains.mps.smodel.undo)" />
     <import index="oulx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.commands(MPS.Editor/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
   </imports>
@@ -154,6 +155,10 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -9459,60 +9464,33 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7USPsgtS0LF" role="3cqZAp">
-          <node concept="3cpWsn" id="7USPsgtS0LI" role="3cpWs9">
-            <property role="TrG5h" value="messagesListName" />
-            <property role="3TUv4t" value="true" />
-            <node concept="17QB3L" id="7USPsgtS0LD" role="1tU5fm" />
-            <node concept="Xl_RD" id="7USPsgtS1_3" role="33vP2m">
-              <property role="Xl_RC" value="Console Make" />
+        <node concept="3cpWs8" id="4r7$w0l3Xt6" role="3cqZAp">
+          <node concept="3cpWsn" id="4r7$w0l3Xt7" role="3cpWs9">
+            <property role="TrG5h" value="messageHandler" />
+            <node concept="3uibUv" id="4r7$w0l3Xt5" role="1tU5fm">
+              <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1yZF04$BoZH" role="3cqZAp">
-          <node concept="2OqwBi" id="4bpkYf9rJWv" role="3clFbG">
-            <node concept="2OqwBi" id="1yZF04$Bpfn" role="2Oq$k0">
-              <node concept="37vLTw" id="1yZF04$BoZG" role="2Oq$k0">
-                <ref role="3cqZAo" node="7USPsgtRSJb" resolve="mvt" />
-              </node>
-              <node concept="liA8E" id="4bpkYf9rJmD" role="2OqNvi">
-                <ref role="37wK5l" to="57ty:~MessagesViewTool.getAvailableList(java.lang.String,boolean):jetbrains.mps.ide.messages.MessageList" resolve="getAvailableList" />
-                <node concept="37vLTw" id="4bpkYf9rJv9" role="37wK5m">
-                  <ref role="3cqZAo" node="7USPsgtS0LI" resolve="messagesListName" />
+            <node concept="2OqwBi" id="4r7$w0l3Xt8" role="33vP2m">
+              <node concept="2OqwBi" id="4r7$w0l3Xt9" role="2Oq$k0">
+                <node concept="37vLTw" id="4r7$w0l3Xta" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7USPsgtRSJb" resolve="mvt" />
                 </node>
-                <node concept="3clFbT" id="4bpkYf9rJLe" role="37wK5m">
-                  <property role="3clFbU" value="true" />
+                <node concept="liA8E" id="4r7$w0l3Xtb" role="2OqNvi">
+                  <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler(java.lang.String,boolean):jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
+                  <node concept="Xl_RD" id="7USPsgtS1_3" role="37wK5m">
+                    <property role="Xl_RC" value="Console Make" />
+                  </node>
+                  <node concept="3clFbT" id="4r7$w0l3Xtd" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
                 </node>
               </node>
-            </node>
-            <node concept="liA8E" id="4bpkYf9rM4t" role="2OqNvi">
-              <ref role="37wK5l" to="57ty:~MessageList.setWarningsEnabled(boolean):void" resolve="setWarningsEnabled" />
-              <node concept="3clFbT" id="4bpkYf9rMeM" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4bpkYf9rOlY" role="3cqZAp">
-          <node concept="2OqwBi" id="4bpkYf9rOlZ" role="3clFbG">
-            <node concept="2OqwBi" id="4bpkYf9rOm0" role="2Oq$k0">
-              <node concept="37vLTw" id="4bpkYf9rOm1" role="2Oq$k0">
-                <ref role="3cqZAo" node="7USPsgtRSJb" resolve="mvt" />
-              </node>
-              <node concept="liA8E" id="4bpkYf9rOm2" role="2OqNvi">
-                <ref role="37wK5l" to="57ty:~MessagesViewTool.getAvailableList(java.lang.String,boolean):jetbrains.mps.ide.messages.MessageList" resolve="getAvailableList" />
-                <node concept="37vLTw" id="4bpkYf9rOm3" role="37wK5m">
-                  <ref role="3cqZAo" node="7USPsgtS0LI" resolve="messagesListName" />
+              <node concept="liA8E" id="4r7$w0l3Xte" role="2OqNvi">
+                <ref role="37wK5l" to="et5u:~IMessageHandler.restrict(jetbrains.mps.messages.MessageKind):jetbrains.mps.messages.IMessageHandler" resolve="restrict" />
+                <node concept="Rm8GO" id="4r7$w0l3Xtf" role="37wK5m">
+                  <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
+                  <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
                 </node>
-                <node concept="3clFbT" id="4bpkYf9rOm4" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="4bpkYf9rOm5" role="2OqNvi">
-              <ref role="37wK5l" to="57ty:~MessageList.setInfoEnabled(boolean):void" resolve="setInfoEnabled" />
-              <node concept="3clFbT" id="4bpkYf9rOm6" role="37wK5m">
-                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>
@@ -9529,16 +9507,8 @@
                 <node concept="37vLTw" id="2BjwmTxYILh" role="37wK5m">
                   <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
                 </node>
-                <node concept="2OqwBi" id="59UVr$K8qaq" role="37wK5m">
-                  <node concept="37vLTw" id="59UVr$K8pRR" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7USPsgtRSJb" resolve="mvt" />
-                  </node>
-                  <node concept="liA8E" id="59UVr$K8rAB" role="2OqNvi">
-                    <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler(java.lang.String):jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
-                    <node concept="37vLTw" id="59UVr$K8rWP" role="37wK5m">
-                      <ref role="3cqZAo" node="7USPsgtS0LI" resolve="messagesListName" />
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="4r7$w0l3YgU" role="37wK5m">
+                  <ref role="3cqZAo" node="4r7$w0l3Xt7" resolve="messageHandler" />
                 </node>
                 <node concept="3clFbT" id="1xyr94TevDk" role="37wK5m">
                   <property role="3clFbU" value="true" />
