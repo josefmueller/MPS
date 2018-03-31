@@ -14,6 +14,9 @@
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -55,6 +58,34 @@
     <node concept="PrWs8" id="4hLvSsqyF" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="roGsVXGraX">
+    <property role="EcuMT" value="493339661774729917" />
+    <property role="TrG5h" value="MovePropertyContainer" />
+    <node concept="1TJgyi" id="roGsVXGraY" role="1TKVEl">
+      <property role="IQ2nx" value="493339661774729918" />
+      <property role="TrG5h" value="moveProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="roGsVXGrbn" role="PrDN$">
+      <ref role="PrY4T" node="roGsVXGrb3" resolve="MovePropertySupercontainer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="roGsVXGrb0">
+    <property role="EcuMT" value="493339661774729920" />
+    <property role="TrG5h" value="MovePropertyInstance" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="roGsVXGrb1" role="PzmwI">
+      <ref role="PrY4T" node="roGsVXGraX" resolve="MovePropertyContainer" />
+    </node>
+    <node concept="PrWs8" id="roGsVXMIaX" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="roGsVXGrb3">
+    <property role="EcuMT" value="493339661774729923" />
+    <property role="TrG5h" value="MovePropertySupercontainer" />
   </node>
 </model>
 

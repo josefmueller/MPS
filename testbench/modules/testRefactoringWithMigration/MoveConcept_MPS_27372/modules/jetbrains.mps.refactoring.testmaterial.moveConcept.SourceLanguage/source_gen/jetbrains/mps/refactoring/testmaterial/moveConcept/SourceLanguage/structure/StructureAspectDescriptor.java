@@ -14,6 +14,9 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptMoveConcept_A = createDescriptorForMoveConcept_A();
   /*package*/ final ConceptDescriptor myConceptMoveConcept_B = createDescriptorForMoveConcept_B();
+  /*package*/ final ConceptDescriptor myConceptMovePropertyContainer = createDescriptorForMovePropertyContainer();
+  /*package*/ final ConceptDescriptor myConceptMovePropertyInstance = createDescriptorForMovePropertyInstance();
+  /*package*/ final ConceptDescriptor myConceptMovePropertySupercontainer = createDescriptorForMovePropertySupercontainer();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptMoveConcept_A, myConceptMoveConcept_B);
+    return Arrays.asList(myConceptMoveConcept_A, myConceptMoveConcept_B, myConceptMovePropertyContainer, myConceptMovePropertyInstance, myConceptMovePropertySupercontainer);
   }
 
   @Override
@@ -33,6 +36,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptMoveConcept_A;
       case LanguageConceptSwitch.MoveConcept_B:
         return myConceptMoveConcept_B;
+      case LanguageConceptSwitch.MovePropertyContainer:
+        return myConceptMovePropertyContainer;
+      case LanguageConceptSwitch.MovePropertyInstance:
+        return myConceptMovePropertyInstance;
+      case LanguageConceptSwitch.MovePropertySupercontainer:
+        return myConceptMovePropertySupercontainer;
       default:
         return null;
     }
@@ -56,6 +65,28 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure.MoveConcept_A", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x535d16ba7fb503adL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/1204068184860841");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMovePropertyContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage", "MovePropertyContainer", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2bdL);
+    b.interface_();
+    b.parent(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c3L);
+    b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/493339661774729917");
+    b.prop("moveProperty", 0x6d8b1cefdb1b2beL, "493339661774729918");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMovePropertyInstance() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage", "MovePropertyInstance", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c0L);
+    b.class_(false, false, true);
+    b.parent(0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2bdL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/493339661774729920");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMovePropertySupercontainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage", "MovePropertySupercontainer", 0x3e00419d48014badL, 0xbf2a50479218fb53L, 0x6d8b1cefdb1b2c3L);
+    b.interface_();
+    b.origin("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)/493339661774729923");
     return b.create();
   }
 }

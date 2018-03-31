@@ -15,11 +15,14 @@ import jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigra
 import jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import org.jetbrains.mps.openapi.language.SProperty;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.Objects;
 import java.util.Collection;
 import jetbrains.mps.errors.item.ReportItem;
 import java.util.ArrayList;
@@ -35,10 +38,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.make.MakeSession;
@@ -56,7 +57,7 @@ import com.intellij.openapi.application.ModalityState;
 public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
   private static final Logger LOG = LogManager.getLogger(MoveConceptRefactoring_Test.class);
   private static final String PROJECT_PATH = "testbench/modules/testRefactoringWithMigration/MoveConcept_MPS_27372/";
-  public void test_failingTest() throws Exception {
+  public void test_moveConcept_MPS_27372() throws Exception {
     commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
       public void invoke(List<RefactoringParticipant.Option> options) {
         ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
@@ -70,11 +71,16 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         SNodeOperations.deleteNode(getInstanceB());
-        SNodeOperations.deleteNode(getConceptB());
+        SNodeOperations.deleteNode(getConcept_B());
       }
     }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
       public void invoke(List<SNode> nodesToMove) {
-        ListSequence.fromList(nodesToMove).addElement(getConceptA());
+        ListSequence.fromList(nodesToMove).addElement(getConcept_A());
+
+      }
+    }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
+      public MoveNodesUtil.NodeCreatingProcessor invoke() {
+        return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(getTargetModel()), project);
 
       }
     }, new _FunctionTypes._void_P0_E0() {
@@ -93,7 +99,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
       }
     });
   }
-  public void test_moveConcept_MPS_27372() throws Exception {
+  public void test_moveConcept_MPS_27701() throws Exception {
     commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
       public void invoke(List<RefactoringParticipant.Option> options) {
         ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
@@ -111,7 +117,12 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
       }
     }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
       public void invoke(List<SNode> nodesToMove) {
-        ListSequence.fromList(nodesToMove).addElement(getConceptA());
+        ListSequence.fromList(nodesToMove).addElement(getConcept_A());
+
+      }
+    }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
+      public MoveNodesUtil.NodeCreatingProcessor invoke() {
+        return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(getTargetModel()), project);
 
       }
     }, new _FunctionTypes._void_P0_E0() {
@@ -131,6 +142,51 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
         Assert.assertTrue(Sequence.fromIterable(properties1).any(new IWhereFilter<SProperty>() {
           public boolean accept(SProperty it) {
             return it.getOwner().getLanguage() == MetaAdapterFactory.getLanguage(0x2f6eb168481148adL, 0xbecb56fd47d21d59L, "jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage");
+          }
+        }));
+      }
+    });
+  }
+  public void test_moveProperty_MPS_27700() throws Exception {
+    commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
+      public void invoke(List<RefactoringParticipant.Option> options) {
+        ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
+        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
+
+
+        ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        // do nothing 
+        // do nothing 
+      }
+    }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
+      public void invoke(List<SNode> nodesToMove) {
+        ListSequence.fromList(nodesToMove).addElement(getProperty_MovedProperty());
+
+      }
+    }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
+      public MoveNodesUtil.NodeCreatingProcessor invoke() {
+        return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(getConcept_PropertySupercontainer(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), project);
+
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Iterable<SProperty> properties = getPropertyConceptInstance().getProperties();
+        Assert.assertTrue(Sequence.fromIterable(properties).all(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return getPropertyConceptInstance().getConcept().getProperties().contains(it);
+          }
+        }));
+        Assert.assertFalse(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return Objects.equals(it.getOwner().getSourceNode(), getConcept_PropertyContainer().getReference());
+          }
+        }));
+        Assert.assertTrue(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return Objects.equals(it.getOwner().getSourceNode(), getConcept_PropertySupercontainer().getReference());
           }
         }));
       }
@@ -173,17 +229,32 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     }
   }
 
-  public SNode getConceptA() {
+  public SNode getConcept_A() {
     return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "6006982468244407213"), project.getRepository());
   }
-  public SNode getConceptB() {
+  public SNode getConcept_B() {
     return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "1204068184860841"), project.getRepository());
+  }
+  public SNode getConcept_PropertyContainer() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "493339661774729917"), project.getRepository());
+  }
+  public SNode getConcept_PropertySupercontainer() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "493339661774729923"), project.getRepository());
+  }
+  public SNode getConcept_PropertyInstance() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "493339661774729920"), project.getRepository());
+  }
+  public SNode getProperty_MovedProperty() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:469ff9d9-5a2e-4029-9891-ce478377a661(jetbrains.mps.refactoring.testmaterial.moveConcept.SourceLanguage.structure)", "493339661774729918"), project.getRepository());
   }
   public SNode getInstanceA() {
     return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "6006982468244420385"), project.getRepository());
   }
   public SNode getInstanceB() {
     return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "1204068184864697"), project.getRepository());
+  }
+  public SNode getPropertyConceptInstance() {
+    return SPointerOperations.resolveNode(new SNodePointer("r:ac08359f-193b-493f-92ef-48848aecee7b(jetbrains.mps.refactoring.testmaterial.moveConcept.InstanceSolution.main)", "493339661776050901"), project.getRepository());
   }
   public SModel getTargetModel() {
     SModule targetModule = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2f6eb168-4811-48ad-becb-56fd47d21d59(jetbrains.mps.refactoring.testmaterial.moveConcept.TargetLanguage)"));
@@ -192,7 +263,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
   }
 
 
-  public void commonTest(final _FunctionTypes._void_P1_E0<? super List<RefactoringParticipant.Option>> setOptions, final _FunctionTypes._void_P0_E0 prepareNodes, final _FunctionTypes._void_P1_E0<? super List<SNode>> setNodesToMove, final _FunctionTypes._void_P0_E0 additionalCheck) {
+  public void commonTest(final _FunctionTypes._void_P1_E0<? super List<RefactoringParticipant.Option>> setOptions, final _FunctionTypes._void_P0_E0 prepareNodes, final _FunctionTypes._void_P1_E0<? super List<SNode>> setNodesToMove, final _FunctionTypes._return_P0_E0<? extends MoveNodesUtil.NodeProcessor> nodeProcessor, final _FunctionTypes._void_P0_E0 additionalCheck) {
     // this is not formally correct to store SModule, but ok for testing purposes 
     final Wrappers._T<SModule> sourceModule = new Wrappers._T<SModule>();
     final Wrappers._T<SModule> targetModule = new Wrappers._T<SModule>();
@@ -204,8 +275,8 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
         Assert.assertNotNull(targetModule.value);
         SModel targetModel = SModuleOperations.getAspect(targetModule.value, "structure");
         Assert.assertNotNull(targetModel);
-        Assert.assertNotNull(getConceptA());
-        Assert.assertNotNull(getConceptB());
+        Assert.assertNotNull(getConcept_A());
+        Assert.assertNotNull(getConcept_B());
         Assert.assertNotNull(getInstanceA());
         Assert.assertNotNull(getInstanceB());
       }
@@ -221,7 +292,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
         }
         List<SNode> nodesToMove = ListSequence.fromList(new ArrayList<SNode>());
         setNodesToMove.invoke(nodesToMove);
-        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationRoot(getTargetModel()), project)).withValues(nodesToMove), new HeadlessRefactoringUI(options));
+        MoveNodesUtil.moveTo(project, "", MapSequence.<MoveNodesUtil.NodeProcessor, List<SNode>>fromMapAndKeysArray(new HashMap<MoveNodesUtil.NodeProcessor, List<SNode>>(), nodeProcessor.invoke()).withValues(nodesToMove), new HeadlessRefactoringUI(options));
         if (LOG.isInfoEnabled()) {
           LOG.info("Refactoring finished");
         }
