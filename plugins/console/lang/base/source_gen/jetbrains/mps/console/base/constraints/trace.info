@@ -129,42 +129,64 @@
   </root>
   <root nodeRef="r:a35e9456-af18-4589-b3c4-ed9896a657c9(jetbrains.mps.console.base.constraints)/7820875636624865058">
     <file name="CommandHolder_Constraints.java">
-      <node id="7820875636624865058" at="19,38,20,157" concept="10" />
-      <node id="7820875636624865058" at="27,130,28,161" concept="5" />
-      <node id="7820875636624865058" at="28,161,29,0" concept="7" />
-      <node id="7820875636624865058" at="30,55,31,70" concept="2" />
-      <node id="7820875636624865058" at="32,9,33,0" concept="7" />
-      <node id="7820875636624865058" at="33,0,34,22" concept="6" />
-      <node id="1227128029536564540" at="38,149,39,188" concept="6" />
-      <node id="7820875636624865058" at="41,0,42,0" concept="8" trace="canBeRootBreakingPoint" />
-      <node id="7820875636624865058" at="19,0,22,0" concept="1" trace="CommandHolder_Constraints#()V" />
-      <node id="7820875636624865058" at="29,0,32,9" concept="3" />
-      <node id="7820875636624865058" at="38,0,41,0" concept="9" trace="staticCanBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
-      <node id="7820875636624865058" at="26,0,36,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeAncestor;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
-      <node id="7820875636624865058" at="24,109,36,6" concept="6" />
-      <node id="7820875636624865058" at="23,0,38,0" concept="4" trace="calculateCanBeAncestorConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
-      <scope id="7820875636624865058" at="19,38,20,157" />
-      <scope id="7820875636624865058" at="30,55,31,70" />
-      <scope id="1227128029536564539" at="38,149,39,188" />
-      <scope id="7820875636624865058" at="19,0,22,0" />
-      <scope id="7820875636624865058" at="38,0,41,0">
+      <node id="7820875636624865058" at="25,38,26,157" concept="10" />
+      <node id="7820875636624865058" at="33,130,34,161" concept="5" />
+      <node id="7820875636624865058" at="34,161,35,0" concept="7" />
+      <node id="7820875636624865058" at="36,55,37,70" concept="2" />
+      <node id="7820875636624865058" at="38,9,39,0" concept="7" />
+      <node id="7820875636624865058" at="39,0,40,22" concept="6" />
+      <node id="7820875636624865058" at="45,84,46,119" concept="5" />
+      <node id="7820875636624865058" at="49,37,50,20" concept="6" />
+      <node id="7820875636624865058" at="53,42,54,37" concept="5" />
+      <node id="8088264230303573643" at="54,37,55,58" concept="6" />
+      <node id="7820875636624865058" at="57,7,58,22" concept="6" />
+      <node id="1227128029536564540" at="60,149,61,188" concept="6" />
+      <node id="7820875636624865058" at="63,0,64,0" concept="8" trace="canBeRootBreakingPoint" />
+      <node id="7820875636624865058" at="25,0,28,0" concept="1" trace="CommandHolder_Constraints#()V" />
+      <node id="7820875636624865058" at="35,0,38,9" concept="3" />
+      <node id="7820875636624865058" at="60,0,63,0" concept="9" trace="staticCanBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="7820875636624865058" at="48,0,52,0" concept="4" trace="hasOwnGetter#()Z" />
+      <node id="7820875636624865058" at="52,0,57,0" concept="4" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="7820875636624865058" at="32,0,42,0" concept="4" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeAncestor;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="7820875636624865058" at="46,119,57,7" concept="2" />
+      <node id="7820875636624865058" at="30,109,42,6" concept="6" />
+      <node id="7820875636624865058" at="29,0,44,0" concept="4" trace="calculateCanBeAncestorConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <node id="7820875636624865058" at="44,0,60,0" concept="4" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="7820875636624865058" at="25,38,26,157" />
+      <scope id="7820875636624865058" at="36,55,37,70" />
+      <scope id="7820875636624865058" at="49,37,50,20" />
+      <scope id="1227128029536564539" at="60,149,61,188" />
+      <scope id="7820875636624865058" at="53,42,55,58">
+        <var name="propertyName" id="7820875636624865058" />
+      </scope>
+      <scope id="7820875636624865058" at="25,0,28,0" />
+      <scope id="7820875636624865058" at="60,0,63,0">
         <var name="childConcept" id="7820875636624865058" />
         <var name="childNode" id="7820875636624865058" />
         <var name="link" id="7820875636624865058" />
         <var name="node" id="7820875636624865058" />
         <var name="parentNode" id="7820875636624865058" />
       </scope>
-      <scope id="7820875636624865058" at="27,130,34,22">
+      <scope id="7820875636624865058" at="48,0,52,0" />
+      <scope id="7820875636624865058" at="52,0,57,0">
+        <var name="node" id="7820875636624865058" />
+      </scope>
+      <scope id="7820875636624865058" at="33,130,40,22">
         <var name="result" id="7820875636624865058" />
       </scope>
-      <scope id="7820875636624865058" at="26,0,36,0">
+      <scope id="7820875636624865058" at="32,0,42,0">
         <var name="checkingNodeContext" id="7820875636624865058" />
         <var name="context" id="7820875636624865058" />
       </scope>
-      <scope id="7820875636624865058" at="24,109,36,6" />
-      <scope id="7820875636624865058" at="23,0,38,0" />
-      <unit id="7820875636624865058" at="25,15,36,5" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints$1" />
-      <unit id="7820875636624865058" at="18,0,43,0" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints" />
+      <scope id="7820875636624865058" at="30,109,42,6" />
+      <scope id="7820875636624865058" at="45,84,58,22">
+        <var name="properties" id="7820875636624865058" />
+      </scope>
+      <scope id="7820875636624865058" at="29,0,44,0" />
+      <scope id="7820875636624865058" at="44,0,60,0" />
+      <unit id="7820875636624865058" at="47,137,57,5" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints$2" />
+      <unit id="7820875636624865058" at="31,15,42,5" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints$1" />
+      <unit id="7820875636624865058" at="24,0,65,0" name="jetbrains.mps.console.base.constraints.CommandHolder_Constraints" />
     </file>
   </root>
 </debug-info>

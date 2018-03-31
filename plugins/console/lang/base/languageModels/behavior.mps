@@ -825,21 +825,7 @@
       </node>
     </node>
     <node concept="13hLZK" id="2AE$NLUoXqq" role="13h7CW">
-      <node concept="3clFbS" id="2AE$NLUoXqr" role="2VODD2">
-        <node concept="3clFbF" id="6tSARFM3zDy" role="3cqZAp">
-          <node concept="37vLTI" id="6tSARFM3_Iv" role="3clFbG">
-            <node concept="Xl_RD" id="6tSARFM3_SB" role="37vLTx">
-              <property role="Xl_RC" value="CommandHolder" />
-            </node>
-            <node concept="2OqwBi" id="6tSARFM3zH8" role="37vLTJ">
-              <node concept="13iPFW" id="6tSARFM3zDx" role="2Oq$k0" />
-              <node concept="3TrcHB" id="6tSARFM3$OQ" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+      <node concept="3clFbS" id="2AE$NLUoXqr" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="7oNS25de_xI">
