@@ -37,20 +37,29 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
 import java.util.concurrent.ExecutionException;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.model.ModelDeleteHelper;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.migration.AntTaskExecutionUtil;
 import com.intellij.openapi.application.ModalityState;
 
@@ -147,7 +156,10 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
       }
     });
   }
-  public void test_moveProperty_MPS_27700() throws Exception {
+  public void test_movePropertyWithIllegalConceptDescriptors() throws Exception {
+    // The intention of this test was to perform refactoring in case of absent compiled concept descriptors 
+    // to catch problem where migration cannot determine if concept returned by SProperty.getOwner() is 
+    // interface or SConcept 
     commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
       public void invoke(List<RefactoringParticipant.Option> options) {
         ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
@@ -155,6 +167,55 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
 
 
         ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        // do nothing 
+        // do nothing 
+      }
+    }, new _FunctionTypes._void_P1_E0<List<SNode>>() {
+      public void invoke(List<SNode> nodesToMove) {
+        ListSequence.fromList(nodesToMove).addElement(getProperty_MovedProperty());
+
+      }
+    }, new _FunctionTypes._return_P0_E0<MoveNodesUtil.NodeCreatingProcessor>() {
+      public MoveNodesUtil.NodeCreatingProcessor invoke() {
+        return new MoveNodesUtil.NodeCreatingProcessor(new NodeLocation.NodeLocationChild(getConcept_PropertySupercontainer(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration")), project);
+
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        Iterable<SProperty> properties = getPropertyConceptInstance().getProperties();
+        Assert.assertTrue(Sequence.fromIterable(properties).all(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return getPropertyConceptInstance().getConcept().getProperties().contains(it);
+          }
+        }));
+        Assert.assertFalse(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return Objects.equals(it.getOwner().getSourceNode(), getConcept_PropertyContainer().getReference());
+          }
+        }));
+        Assert.assertTrue(Sequence.fromIterable(properties).any(new IWhereFilter<SProperty>() {
+          public boolean accept(SProperty it) {
+            return Objects.equals(it.getOwner().getSourceNode(), getConcept_PropertySupercontainer().getReference());
+          }
+        }));
+      }
+    });
+  }
+  public void test_moveProperty_MPS_27700() throws Exception {
+    commonTest(new _FunctionTypes._void_P1_E0<List<RefactoringParticipant.Option>>() {
+      public void invoke(List<RefactoringParticipant.Option> options) {
+
+        ListSequence.fromList(options).addElement(UpdateModelImports.OPTION);
+        ListSequence.fromList(options).addElement(UpdateReferencesParticipantBase.UpdateReferencesParticipant.OPTION);
+
+
+        ListSequence.fromList(options).addElement(LanguageStructureMigrationParticipant.OPTION);
+
+        // here we need compiled classed to avoid bug tested in movePropertyWithIllegalConceptDescriptors() 
+        doMake(project.getProjectModulesWithGenerators(), false);
       }
     }, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -263,7 +324,56 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
   }
 
 
+  public void doMake(final List<SModule> modules, final boolean cleanMake) {
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Making modules: " + ListSequence.fromList(modules).toListSequence());
+    }
+    MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), true);
+    final Wrappers._T<List<? extends IResource>> inputRes = new Wrappers._T<List<? extends IResource>>(null);
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        inputRes.value = Sequence.fromIterable(new MakeActionParameters(project).cleanMake(cleanMake).modules(modules).collectInput()).toListSequence();
+      }
+    });
+    Future<IResult> res = new BuildMakeService().makeAndReload(session, inputRes.value);
+    try {
+      Assert.assertTrue("Make was not successful", res.get().isSucessful());
+    } catch (InterruptedException e) {
+      Assert.fail(e.toString());
+    } catch (ExecutionException e) {
+      Assert.fail(e.toString());
+    }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Make finished");
+    }
+  }
+
   public void commonTest(final _FunctionTypes._void_P1_E0<? super List<RefactoringParticipant.Option>> setOptions, final _FunctionTypes._void_P0_E0 prepareNodes, final _FunctionTypes._void_P1_E0<? super List<SNode>> setNodesToMove, final _FunctionTypes._return_P0_E0<? extends MoveNodesUtil.NodeProcessor> nodeProcessor, final _FunctionTypes._void_P0_E0 additionalCheck) {
+    // cleaning class files to make test behavior determinate: 
+    // local execution might have .class filess copied from project 
+    // on the buildserver there are no .class files 
+    runCommand(new Runnable() {
+      public void run() {
+        List<SModule> projectModules = project.getProjectModules();
+        ListSequence.fromList(projectModules).translate(new ITranslator2<SModule, SModel>() {
+          public Iterable<SModel> translate(SModule it) {
+            return it.getModels();
+          }
+        }).visitAll(new IVisitor<SModel>() {
+          public void visit(SModel it) {
+            new ModelDeleteHelper(it).removeGeneratedArtifacts();
+          }
+        });
+        ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager().reloadModules(projectModules);
+        Iterable<LanguageRuntime> projectLanguages = ListSequence.fromList(projectModules).ofType(Language.class).select(new ISelector<Language, LanguageRuntime>() {
+          public LanguageRuntime select(Language it) {
+            return LanguageRegistry.getInstance(project.getRepository()).getLanguage(it);
+          }
+        });
+        // this is a hack needed to clear global registry to unload languages like no languages were loaded at all 
+        ConceptRegistry.getInstance().afterLanguagesLoaded(projectLanguages);
+      }
+    });
     // this is not formally correct to store SModule, but ok for testing purposes 
     final Wrappers._T<SModule> sourceModule = new Wrappers._T<SModule>();
     final Wrappers._T<SModule> targetModule = new Wrappers._T<SModule>();
@@ -318,24 +428,7 @@ public class MoveConceptRefactoring_Test extends AbstractRefactoringTest {
     if (LOG.isInfoEnabled()) {
       LOG.info("Making newly created migrations...");
     }
-    MakeSession session = new MakeSession(project, new DefaultMakeMessageHandler(project), true);
-    final Wrappers._T<List<? extends IResource>> inputRes = new Wrappers._T<List<? extends IResource>>(null);
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        inputRes.value = Sequence.fromIterable(new MakeActionParameters(project).modules(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value)).collectInput()).toListSequence();
-      }
-    });
-    Future<IResult> res = new BuildMakeService().makeAndReload(session, inputRes.value);
-    try {
-      Assert.assertTrue("Make was not successful", res.get().isSucessful());
-    } catch (InterruptedException e) {
-      Assert.fail(e.toString());
-    } catch (ExecutionException e) {
-      Assert.fail(e.toString());
-    }
-    if (LOG.isInfoEnabled()) {
-      LOG.info("Make finished");
-    }
+    doMake(ListSequence.fromListAndArray(new ArrayList<SModule>(), sourceModule.value, targetModule.value), false);
 
     if (LOG.isInfoEnabled()) {
       LOG.info("Migrating...");

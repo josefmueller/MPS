@@ -4,16 +4,17 @@ package jetbrains.mps.refactoring.test.test;
 
 import jetbrains.mps.testbench.EnvironmentAwareTestCase;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.util.NameUtil;
 import java.io.File;
 import java.nio.file.Files;
 import jetbrains.mps.util.FileUtil;
-import java.io.IOException;
 
 public abstract class AbstractRefactoringTest extends EnvironmentAwareTestCase {
   protected Project project;
   private String projectTempDir;
   private String projectSourcePath;
+  private boolean wasUsingInterpreted;
   public AbstractRefactoringTest(String path) {
     projectSourcePath = path;
   }
@@ -22,21 +23,28 @@ public abstract class AbstractRefactoringTest extends EnvironmentAwareTestCase {
   protected void setUp() throws Exception {
     super.setUp();
     try {
+      wasUsingInterpreted = RuntimeFlags.isUseInterpretedLanguages();
+      RuntimeFlags.setUseInterpretedLanguages(false);
       String dirPrefix = NameUtil.toConstantName(NameUtil.toValidIdentifier(this.getName()));
       File tempDir = Files.createTempDirectory(dirPrefix).toFile();
       projectTempDir = tempDir.getCanonicalPath();
       FileUtil.copyDir(new File(projectSourcePath), tempDir);
       project = myEnvironment.openProject(tempDir);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
+    } catch (Exception e) {
+      RuntimeFlags.setUseInterpretedLanguages(wasUsingInterpreted);
+      throw e;
     }
   }
 
   @Override
   protected void tearDown() throws Exception {
-    super.tearDown();
-    myEnvironment.closeProject(project);
-    com.intellij.openapi.util.io.FileUtil.delete(new File(projectTempDir));
+    try {
+      super.tearDown();
+      myEnvironment.closeProject(project);
+      com.intellij.openapi.util.io.FileUtil.delete(new File(projectTempDir));
+    } finally {
+      RuntimeFlags.setUseInterpretedLanguages(wasUsingInterpreted);
+    }
   }
 
 }
