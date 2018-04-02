@@ -24,6 +24,7 @@ package jetbrains.mps;
  */
 public final class RuntimeFlags {
   private static TestMode ourTestMode = TestMode.NONE;
+  private static Boolean ourInternalMode = null;
   private static boolean ourMergeDriverMode = false;
   private static Boolean ourCastException = null;
 
@@ -41,6 +42,17 @@ public final class RuntimeFlags {
 
   public static void setTestMode(TestMode testMode) {
     ourTestMode = testMode;
+  }
+
+  public static boolean isInternalMode() {
+    if (ourInternalMode == null) {
+      ourInternalMode = "true".equals(System.getProperty("mps.internal"));
+    }
+    return ourInternalMode;
+  }
+
+  public static void setInternalMode(boolean internalMode) {
+    ourInternalMode = internalMode;
   }
 
   /**
