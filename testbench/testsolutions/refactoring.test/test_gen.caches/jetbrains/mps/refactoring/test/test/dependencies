@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.refactoring.test.test.AbstractRefactoringTest" file="AbstractRefactoringTest.java">
+    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />

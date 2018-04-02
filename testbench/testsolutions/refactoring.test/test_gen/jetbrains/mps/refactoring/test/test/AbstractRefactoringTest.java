@@ -36,7 +36,7 @@ public abstract class AbstractRefactoringTest extends EnvironmentAwareTestCase {
   protected void tearDown() throws Exception {
     super.tearDown();
     myEnvironment.closeProject(project);
-    new File(projectTempDir).delete();
+    com.intellij.openapi.util.io.FileUtil.delete(new File(projectTempDir));
   }
 
 }

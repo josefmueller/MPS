@@ -55,6 +55,7 @@
     <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
     <import index="eoo2" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
     <import index="u132" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:junit.framework(JUnit/)" />
+    <import index="snbe" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util.io(MPS.IDEA/)" />
     <import index="f3o1" ref="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)" implicit="true" />
     <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" implicit="true" />
   </imports>
@@ -5445,18 +5446,17 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4Rb4I4dopDy" role="3cqZAp">
-          <node concept="2OqwBi" id="4Rb4I4dosyT" role="3clFbG">
-            <node concept="2ShNRf" id="4Rb4I4dopDw" role="2Oq$k0">
+        <node concept="3clFbF" id="2Z44d$XFEU8" role="3cqZAp">
+          <node concept="2YIFZM" id="2Z44d$XFG5F" role="3clFbG">
+            <ref role="37wK5l" to="snbe:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
+            <ref role="1Pybhc" to="snbe:~FileUtil" resolve="FileUtil" />
+            <node concept="2ShNRf" id="4Rb4I4dopDw" role="37wK5m">
               <node concept="1pGfFk" id="4Rb4I4dos1N" role="2ShVmc">
                 <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                 <node concept="37vLTw" id="4Rb4I4dp9r8" role="37wK5m">
                   <ref role="3cqZAo" node="4Rb4I4doYSN" resolve="projectTempDir" />
                 </node>
               </node>
-            </node>
-            <node concept="liA8E" id="4Rb4I4douET" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~File.delete():boolean" resolve="delete" />
             </node>
           </node>
         </node>
