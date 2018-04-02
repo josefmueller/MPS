@@ -25,6 +25,7 @@ package jetbrains.mps;
 public final class RuntimeFlags {
   private static TestMode ourTestMode = TestMode.NONE;
   private static Boolean ourInternalMode = null;
+  private static boolean ourUseInterpretedLanguages = true;
   private static boolean ourMergeDriverMode = false;
   private static Boolean ourCastException = null;
 
@@ -66,6 +67,14 @@ public final class RuntimeFlags {
 
   public static void setMergeDriverMode(boolean mergeDriverMode) {
     ourMergeDriverMode = mergeDriverMode;
+  }
+
+  public static boolean isUseInterpretedLanguages() {
+    return ourUseInterpretedLanguages;
+  }
+
+  public static void setUseInterpretedLanguages(boolean useInterpretedLanguages) {
+    ourUseInterpretedLanguages = useInterpretedLanguages;
   }
 
   /**
