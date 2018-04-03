@@ -1831,9 +1831,6 @@
       <node concept="nCB5N" id="1nB28s7q7d" role="nCB5Z">
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
       </node>
-      <node concept="nCB5N" id="1nB28s8yoa" role="nCB5Z">
-        <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
-      </node>
       <node concept="nCB5N" id="1nB28s8zl2" role="nCB5Z">
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
@@ -1874,13 +1871,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="2sjeV3" id="6PVLa2nPsae" role="nCB5Z">
-        <ref role="2sjeV2" node="16Vg0jOcomR" resolve="idea-libraries" />
-      </node>
-      <node concept="2sjeV3" id="1FaKCGJSzN3" role="nCB5Z">
-        <property role="2a2d0E" value="true" />
-        <ref role="2sjeV2" node="1FaKCGJSzMS" resolve="idea-ant" />
       </node>
       <node concept="2sjeV3" id="16Vg0jOcon_" role="nCB5Z">
         <ref role="2sjeV2" node="16Vg0jOconl" resolve="junit-4.12" />
