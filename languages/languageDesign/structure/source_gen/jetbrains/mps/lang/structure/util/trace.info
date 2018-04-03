@@ -13,13 +13,13 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)/1135871461211125082">
     <file name="ConceptIdSetter.java">
-      <node id="2932555422957882420" at="14,194,15,209" concept="1" />
+      <node id="2932555422957882420" at="14,194,15,212" concept="1" />
       <node id="241647608299582758" at="16,5,17,0" concept="8" />
       <node id="1135871461211193043" at="18,213,19,54" concept="1" />
       <node id="241647608299611659" at="20,5,21,0" concept="8" />
       <node id="1135871461211189545" at="22,209,23,50" concept="1" />
-      <node id="1135871461211193006" at="28,193,29,212" concept="1" />
-      <node id="1135871461211189508" at="34,189,35,204" concept="1" />
+      <node id="1135871461211193006" at="28,193,29,215" concept="1" />
+      <node id="1135871461211189508" at="34,189,35,207" concept="1" />
       <node id="241647608299579900" at="38,52,39,44" concept="6" />
       <node id="241647608299568355" at="13,74,16,5" concept="3" />
       <node id="241647608299588393" at="17,0,20,5" concept="2" />
@@ -30,11 +30,11 @@
       <node id="1135871461211193036" at="27,0,32,0" concept="9" trace="processProperty#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
       <node id="1135871461211189538" at="33,0,38,0" concept="9" trace="processLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
       <node id="1135871461211125154" at="13,0,26,0" concept="9" trace="processConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Z)V" />
-      <scope id="241647608299568357" at="14,194,15,209" />
+      <scope id="241647608299568357" at="14,194,15,212" />
       <scope id="241647608299588399" at="18,213,19,54" />
       <scope id="241647608299609785" at="22,209,23,50" />
-      <scope id="1135871461211193005" at="28,193,29,212" />
-      <scope id="1135871461211189507" at="34,189,35,204" />
+      <scope id="1135871461211193005" at="28,193,29,215" />
+      <scope id="1135871461211189507" at="34,189,35,207" />
       <scope id="241647608299579900" at="38,52,39,44" />
       <scope id="241647608299588393" at="17,0,20,5">
         <var name="p" id="241647608299588395" />

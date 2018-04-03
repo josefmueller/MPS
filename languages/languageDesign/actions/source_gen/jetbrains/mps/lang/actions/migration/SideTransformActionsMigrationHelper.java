@@ -127,10 +127,10 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       }
     } else {
       mainMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
-      SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getMainMenuName(concept, tag));
+      SPropertyOperations.assign(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getMainMenuName(concept, tag));
       SLinkOperations.setTarget(SNodeOperations.cast(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
       AttributeOperations.createAndSetAttrbiute(SNodeOperations.cast(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"));
-      SPropertyOperations.set(AttributeOperations.getAttribute(SNodeOperations.cast(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, 0x7ce019825aa4f13L, "transformTag"), tag);
+      SPropertyOperations.assign(AttributeOperations.getAttribute(SNodeOperations.cast(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, "jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute"))), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce019825aa4e82L, 0x7ce019825aa4f13L, "transformTag"), tag);
       editorAspect.addRootNode(mainMenu);
     }
     myMainMenus.put(new Pair(concept, tag), mainMenu);
@@ -152,7 +152,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         }
       }
     }
-    SPropertyOperations.set(contribution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ActionMigrationHelper.getMainMenuContributionName(concept, tag));
+    SPropertyOperations.assign(contribution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ActionMigrationHelper.getMainMenuContributionName(concept, tag));
     myMainMenus.put(new Pair(concept, tag), contribution);
     myNewlyCreatedMenus.add(contribution);
     editorAspect.addRootNode(contribution);
@@ -174,7 +174,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
   private SNode createAdditionalMenu(SNode concept, String tag, SNode actions, SModel editorAspect) {
     String newName = getAdditionalMenuName(actions, concept, tag);
     SNode menu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
-    SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+    SPropertyOperations.assign(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
     myNewlyCreatedMenus.add(menu);
     SLinkOperations.setTarget(menu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
     editorAspect.addRootNode(menu);
@@ -248,9 +248,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     } else {
       migrateBuilders(mainMenu, actionBuilders);
       if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"))) {
-        SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag) + "_Contribution");
+        SPropertyOperations.assign(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag) + "_Contribution");
       } else if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"))) {
-        SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag));
+        SPropertyOperations.assign(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept, tag));
       }
     }
   }

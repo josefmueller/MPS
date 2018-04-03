@@ -46,7 +46,7 @@ public class IncrementalChangeUpdateTest_Nodes extends ChangesTestBase {
   public void testPropertyChange() {
     testChanges(new Runnable() {
       public void run() {
-        SPropertyOperations.set(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RenamedRoot");
+        SPropertyOperations.assign(SNodeOperations.getNode("r:296ba97d-4b26-4d06-be61-297d86180cce(jetbrains.mps.ide.vcs.test.testModel)", "5876208808348821705"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RenamedRoot");
       }
     });
   }

@@ -49,9 +49,9 @@ public class MetadataUtil {
     SModelBase modelBase = (SModelBase) origin;
     SNodeId nodeId = PersistenceFacade.getInstance().createNodeId("~root");
     SNode root = SModelOperations.createNewNode(target, nodeId, MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model"));
-    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(origin));
+    SPropertyOperations.assign(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11e6L, "longname"), SModelOperations.getModelName(origin));
     if (origin instanceof GeneratableSModel) {
-      SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0e0d(((GeneratableSModel) origin))));
+      SPropertyOperations.assign(root, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x7439be589a4e11f4L, "donotgenerate"), "" + (check_ca1g54_a0a0e0d(((GeneratableSModel) origin))));
     }
     for (SLanguage language : CollectionSequence.fromCollection(modelBase.importedLanguageIds())) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d80188636L, "language"))).addElement(createLanguageNode(language));
@@ -65,7 +65,7 @@ public class MetadataUtil {
     for (SModelReference impmodel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(modelBase))) {
       ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x7439be589a4e116dL, 0x4104ff8d8018863fL, "import"))).addElement(createModelRefNode(impmodel));
     }
-    SPropertyOperations.set(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Model Properties");
+    SPropertyOperations.assign(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "Model Properties");
     SModelOperations.addRootNode(target, root);
   }
 
@@ -75,7 +75,7 @@ public class MetadataUtil {
     // (although the right way is to extract part of smodel language related to metadata handling, like LanguageIdentity 
     // into separate language and re-use it here).  
     // After all, there's be no need in all concepts but Model in mps.ide.vcs.modelmetadata language. 
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, 0x660570953ee5dadfL, "value"), ((SLanguageAdapter) lang).serialize());
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, 0x660570953ee5dadfL, "value"), ((SLanguageAdapter) lang).serialize());
     //  see createModuleRefNode, below, for explanation why we need custom id 
     ((jetbrains.mps.smodel.SNode) rv).setId(new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(rv, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x660570953ee5d6b9L, 0x660570953ee5dadfL, "value"))));
     return rv;
@@ -87,7 +87,7 @@ public class MetadataUtil {
 
   private static SNode createModuleRefNode(SModuleReference module) {
     SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModuleReference"));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue"), PersistenceFacade.getInstance().asString(module));
+    SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafe1L, 0x39c8ca3b79aaafe2L, "stringValue"), PersistenceFacade.getInstance().asString(module));
     // The purpose of custom node id here is to have identical IDs for the same imports in different models  
     // That's why don't we rely on automatic node id. 
     // FIXME keep model as instance field and use model.new node smodel clause, with id set at construction time, without cast to SNode impl 
@@ -99,7 +99,7 @@ public class MetadataUtil {
   }
   private static SNode createModelRefNode(SModelReference modelReference) {
     SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, "jetbrains.mps.ide.vcs.modelmetadata.structure.ModelReference"));
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"), PersistenceFacade.getInstance().asString(modelReference));
+    SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"), PersistenceFacade.getInstance().asString(modelReference));
     ((jetbrains.mps.smodel.SNode) node).setId(new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6df0089f32884998L, 0x9d57e698e7c8e145L, 0x39c8ca3b79aaafdeL, 0x39c8ca3b79aaafdfL, "stringValue"))));
     return node;
   }

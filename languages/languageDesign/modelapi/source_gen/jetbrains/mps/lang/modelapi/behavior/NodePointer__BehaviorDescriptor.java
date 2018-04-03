@@ -44,7 +44,7 @@ public final class NodePointer__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static SNode create_id4nxIQVL$eu9(@NotNull SAbstractConcept __thisConcept__, SModel where, SNodeReference target) {
     SNode rv = SModelOperations.createNewNode(where, null, MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, "jetbrains.mps.lang.modelapi.structure.NodePointer"));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf88L, "nodeId"), check_c22mgr_a0b0a(target.getNodeId()));
+    SPropertyOperations.assign(rv, MetaAdapterFactory.getProperty(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf88L, "nodeId"), check_c22mgr_a0b0a(target.getNodeId()));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e35fL, 0x45e1bb6ef159cf84L, "modelRef"), ModelPointer__BehaviorDescriptor.create_id_GDk1qZ2LQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x446c26eb2b7b4bf0L, 0x9b35f83fa582753eL, 0x502fe7548a0e360L, "jetbrains.mps.lang.modelapi.structure.ModelPointer")), where, target.getModelReference()));
     return rv;
   }

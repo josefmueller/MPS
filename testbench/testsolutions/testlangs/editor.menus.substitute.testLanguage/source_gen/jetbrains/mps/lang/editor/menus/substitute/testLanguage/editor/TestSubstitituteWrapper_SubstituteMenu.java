@@ -82,8 +82,8 @@ public class TestSubstitituteWrapper_SubstituteMenu extends SubstituteMenuBase {
           myCreatedNode = nodeToWrap;
           SNode wrapper = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteWrapper"));
           SLinkOperations.setTarget(wrapper, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x401156263ff3470fL, "child"), nodeToWrap);
-          SPropertyOperations.set(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c00L, "wrappedMatchingText"), wrappedItem.getMatchingText(pattern));
-          SPropertyOperations.set(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c02L, "wrappedDescriptionText"), wrappedItem.getDescriptionText(pattern));
+          SPropertyOperations.assign(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c00L, "wrappedMatchingText"), wrappedItem.getMatchingText(pattern));
+          SPropertyOperations.assign(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c02L, "wrappedDescriptionText"), wrappedItem.getDescriptionText(pattern));
           return wrapper;
         }
         @Override
@@ -161,7 +161,7 @@ public class TestSubstitituteWrapper_SubstituteMenu extends SubstituteMenuBase {
           myCreatedNode = nodeToWrap;
           SNode wrapper = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteWrapper"));
           SLinkOperations.setTarget(wrapper, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x401156263ff3470fL, "child"), nodeToWrap);
-          SPropertyOperations.set(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c05L, "wrappedConceptAlias"), SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()));
+          SPropertyOperations.assign(wrapper, MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c05L, "wrappedConceptAlias"), SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()));
           return wrapper;
         }
         @Override

@@ -194,12 +194,12 @@ public class CellsWithSideTransformMigrationHelper {
   private SNode createAdditionalMenu(SNode concept, Map<SNode, Integer> conceptToCounter, List<SNode> menuReferences, SNode cell) {
     SNode additionalMenu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac4ee8L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Named"));
     SLinkOperations.setTarget(additionalMenu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
-    SPropertyOperations.set(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), concept + "_ApplySideTransforms");
+    SPropertyOperations.assign(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), concept + "_ApplySideTransforms");
 
     if (MapSequence.fromMap(conceptToCounter).get(concept) == null) {
       MapSequence.fromMap(conceptToCounter).put(concept, 1);
     } else {
-      SPropertyOperations.set(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "_" + MapSequence.fromMap(conceptToCounter).get(concept));
+      SPropertyOperations.assign(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString_def(additionalMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "") + "_" + MapSequence.fromMap(conceptToCounter).get(concept));
       MapSequence.fromMap(conceptToCounter).put(concept, MapSequence.fromMap(conceptToCounter).get(concept) + 1);
     }
     SNode includeMigratedReferencesSection = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, "jetbrains.mps.lang.editor.structure.TransformationMenuSection"));

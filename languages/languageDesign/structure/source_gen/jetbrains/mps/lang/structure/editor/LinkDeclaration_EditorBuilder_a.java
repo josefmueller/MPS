@@ -124,7 +124,7 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
           }))) {
             getEditorContext().getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(getEditorContext(), "role_" + myNode.getNodeId().toString()) {
               protected void doExecute() {
-                SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), newValue);
+                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), newValue);
               }
             });
           }

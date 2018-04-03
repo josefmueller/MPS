@@ -518,7 +518,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
       }
       public void addClosure(Runnable closure, String text) {
         SNode nodeWithClosure = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure"));
-        SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
+        SPropertyOperations.assign(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
         ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
         addNode(nodeWithClosure);
       }

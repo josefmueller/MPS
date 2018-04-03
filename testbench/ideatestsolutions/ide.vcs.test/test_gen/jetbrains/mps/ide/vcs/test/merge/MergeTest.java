@@ -80,7 +80,7 @@ public class MergeTest extends ChangesTestBase {
   public void testOnlyMineChanges() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SPropertyOperations.set(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         return myMineModel;
       }
     });
@@ -90,7 +90,7 @@ public class MergeTest extends ChangesTestBase {
   public void testOnlyTheirsChanges() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SPropertyOperations.set(getTheirsClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getTheirsClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         return myTheirsModel;
       }
     });
@@ -179,8 +179,8 @@ public class MergeTest extends ChangesTestBase {
   public void testSymmetricChanges_Property() {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelCreator() {
       public SModel createModel() {
-        SPropertyOperations.set(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
-        SPropertyOperations.set(getTheirsClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getTheirsClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         return myMineModel;
       }
     });
@@ -315,11 +315,11 @@ public class MergeTest extends ChangesTestBase {
     testMergeNoConflictingChangesAndCheckNoDifferencesWithExpectedModel(new MergeTest.ModelChanger() {
       public void changeModel(SModel expectedModel) {
         SNode newChild = createInstanceMethodDeclaration_u0wfvp_a0a0a0a0a0a94();
-        SPropertyOperations.set(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getMineClassRoot(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
         insertMemberPreservingId(getTheirsClassRoot(), newChild, -1);
 
         insertMemberPreservingId(getClassRoot(expectedModel), newChild, -1);
-        SPropertyOperations.set(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
+        SPropertyOperations.assign(getClassRoot(expectedModel), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
       }
     });
   }

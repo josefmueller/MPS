@@ -49,7 +49,7 @@ public class Migrate_EditorCellModelShowIfConditionsToEmptyCell extends Migratio
       });
       for (SNode cellModel : Sequence.fromIterable(cellModels)) {
         SNodeOperations.deleteNode(SLinkOperations.getTarget(cellModel, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10a19696199L, "renderingCondition")));
-        SPropertyOperations.set(cellModel, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, 0x3a4d559b401214L, "customizeEmptyCell"), "" + (true));
+        SPropertyOperations.assign(cellModel, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, 0x3a4d559b401214L, "customizeEmptyCell"), "" + (true));
         SLinkOperations.setTarget(cellModel, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, 0x3a4d559b42e5cbL, "emptyCellModel"), _quotation_createNode_i6fkmm_a0c0b0a0h());
       }
     }

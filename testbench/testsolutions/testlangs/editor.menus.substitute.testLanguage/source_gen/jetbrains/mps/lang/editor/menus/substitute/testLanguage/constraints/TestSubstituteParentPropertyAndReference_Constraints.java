@@ -67,7 +67,7 @@ public class TestSubstituteParentPropertyAndReference_Constraints extends BaseCo
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "enumPropertyWithSetter";
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "custom property setter executed");
+        SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "custom property setter executed");
       }
     });
     return properties;
@@ -111,7 +111,7 @@ public class TestSubstituteParentPropertyAndReference_Constraints extends BaseCo
       }
       @Override
       public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
-        SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "custom reference set handler executed");
+        SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "custom reference set handler executed");
       }
       @Nullable
       @Override

@@ -199,7 +199,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     } else {
       migrateBuilders(mainMenu, null, actionBuilders);
       if (SNodeOperations.isInstanceOf(mainMenu, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"))) {
-        SPropertyOperations.set(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept) + "_Contribution");
+        SPropertyOperations.assign(mainMenu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), getAdditionalMenuName(actions, concept) + "_Contribution");
       }
     }
   }
@@ -222,7 +222,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
         for (SNode builder : Sequence.fromIterable(nodesWithConditionAndRemoveDefaults)) {
           SNode variableDeclaration = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableDeclaration"));
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_oeedwc_a0b0d0b0a0y());
-          SPropertyOperations.set(variableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (counter == 0 ? "condition" : "condition_" + counter));
+          SPropertyOperations.assign(variableDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), (counter == 0 ? "condition" : "condition_" + counter));
           SLinkOperations.setTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer")));
           SubstituteBuildersMigrationHelper helper = new SubstituteBuildersMigrationHelper(builder, null, null);
           SLinkOperations.setTarget(SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987bL, 0x780e672842435c4L, "initializerBlock")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"), helper.getConditionStatementList(SLinkOperations.getTarget(builder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"))));
@@ -290,7 +290,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     if (!(isConceptFromSameLanguage)) {
       SNode contribution = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"));
       SLinkOperations.setTarget(contribution, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, 0x638d10740d3d77d4L, "menuReference"), _quotation_createNode_oeedwc_a0b0e0gb(concept));
-      SPropertyOperations.set(contribution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ActionMigrationHelper.getMainMenuContributionName(concept));
+      SPropertyOperations.assign(contribution, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ActionMigrationHelper.getMainMenuContributionName(concept));
       myMainMenus.put(concept, contribution);
       myNewlyCreatedMenus.add(contribution);
       editorAspect.addRootNode(contribution);
@@ -311,7 +311,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
   private SNode getAdditionalMenu(SNode concept, SNode actions, SModel editorAspect) {
     String newName = getAdditionalMenuName(actions, concept);
     SNode menu = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"));
-    SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+    SPropertyOperations.assign(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
     SLinkOperations.setTarget(menu, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration"), concept);
     editorAspect.addRootNode(menu);
     myNewlyCreatedMenus.add(menu);

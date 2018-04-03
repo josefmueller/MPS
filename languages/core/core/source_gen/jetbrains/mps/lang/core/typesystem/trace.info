@@ -438,13 +438,13 @@
       <node id="5394253938404215446" at="14,48,15,129" concept="9" />
       <node id="5394253938404233184" at="17,44,18,296" concept="7" />
       <node id="5394253938404231139" at="20,35,21,204" concept="6" />
-      <node id="5394253938404221505" at="21,204,22,280" concept="2" />
+      <node id="5394253938404221505" at="21,204,22,283" concept="2" />
       <node id="5394253938404215446" at="14,0,17,0" concept="1" trace="fix_PropertyAttribute_name_QuickFix#()V" />
       <node id="5394253938404215446" at="17,0,20,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5394253938404215446" at="20,0,24,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="5394253938404215446" at="14,48,15,129" />
       <scope id="5394253938404231982" at="17,44,18,296" />
-      <scope id="5394253938404215448" at="20,35,22,280">
+      <scope id="5394253938404215448" at="20,35,22,283">
         <var name="propertyAttribute" id="5394253938404231140" />
       </scope>
       <scope id="5394253938404215446" at="14,0,17,0" />
@@ -462,13 +462,13 @@
       <node id="5394253938404329108" at="14,44,15,129" concept="9" />
       <node id="5394253938404329129" at="17,44,18,288" concept="7" />
       <node id="5394253938404329111" at="20,35,21,196" concept="6" />
-      <node id="5394253938404329116" at="21,196,22,264" concept="2" />
+      <node id="5394253938404329116" at="21,196,22,267" concept="2" />
       <node id="5394253938404329108" at="14,0,17,0" concept="1" trace="fix_LinkAttribute_name_QuickFix#()V" />
       <node id="5394253938404329108" at="17,0,20,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5394253938404329108" at="20,0,24,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="5394253938404329108" at="14,44,15,129" />
       <scope id="5394253938404329128" at="17,44,18,288" />
-      <scope id="5394253938404329110" at="20,35,22,264">
+      <scope id="5394253938404329110" at="20,35,22,267">
         <var name="linkAttribute" id="5394253938404329112" />
       </scope>
       <scope id="5394253938404329108" at="14,0,17,0" />

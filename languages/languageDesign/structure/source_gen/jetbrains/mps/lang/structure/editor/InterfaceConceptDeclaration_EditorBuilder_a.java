@@ -125,7 +125,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
           }))) {
             getEditorContext().getRepository().getModelAccess().executeCommand(new ChangePropertyEditorCommand(getEditorContext(), "name_" + myNode.getNodeId().toString()) {
               protected void doExecute() {
-                SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
+                SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newValue);
               }
             });
           }

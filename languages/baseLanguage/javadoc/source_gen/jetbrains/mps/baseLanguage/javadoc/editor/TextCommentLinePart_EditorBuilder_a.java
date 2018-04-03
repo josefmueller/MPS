@@ -61,7 +61,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
         return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"));
       }
       public void setText(String text) {
-        SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), text);
+        SPropertyOperations.assign(myNode, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x7c7f5b2f31990287L, 0x7c7f5b2f31990288L, "text"), text);
         TextCommentPartUtil.processCellText(getEditorContext(), myNode, text);
       }
       public boolean isValidText(String text) {

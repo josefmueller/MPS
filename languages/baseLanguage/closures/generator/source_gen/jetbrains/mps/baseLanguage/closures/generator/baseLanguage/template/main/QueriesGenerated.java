@@ -2233,8 +2233,8 @@ public class QueriesGenerated extends QueryProviderBase {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, "jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -2344,8 +2344,8 @@ public class QueriesGenerated extends QueryProviderBase {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, "jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -2455,8 +2455,8 @@ public class QueriesGenerated extends QueryProviderBase {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, "jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -2566,8 +2566,8 @@ public class QueriesGenerated extends QueryProviderBase {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, "jetbrains.mps.baseLanguage.closures.structure.PairOfInts"));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
-        SPropertyOperations.set(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0ce97c7L, "first"), "" + (params));
+        SPropertyOperations.assign(poi, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x11ae0cda05aL, 0x11ae0cea6c7L, "second"), "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }

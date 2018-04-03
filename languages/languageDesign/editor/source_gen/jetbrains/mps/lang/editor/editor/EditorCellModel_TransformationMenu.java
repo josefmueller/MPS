@@ -669,7 +669,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
         EditorAssistantUtilities assistantUtils = new EditorAssistantUtilities(_context.getNode());
         SNode concept = SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration"));
         _context.getEditorContext().getEditorPanelManager().openEditor(concept);
-        SPropertyOperations.set(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), "<" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Alias>");
+        SPropertyOperations.assign(concept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), "<" + SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Alias>");
         SelectionUtil.selectLabelCellWithSelection(_context.getEditorContext(), concept, "*" + CellIdManager.createPropertyId("conceptAlias"), 0, -1);
       }
 

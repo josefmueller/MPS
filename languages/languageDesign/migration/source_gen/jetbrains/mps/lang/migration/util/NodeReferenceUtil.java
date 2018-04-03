@@ -20,9 +20,9 @@ import org.jetbrains.annotations.NotNull;
 public class NodeReferenceUtil {
   public static SNode makeReflection(SNodeReference nodeReference, String presentation) {
     SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.structure.ReflectionNodeReference"));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f44fL, "nodeId"), nodeReference.getNodeId().toString());
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f443L, "modelRef"), PersistenceFacade.getInstance().asString(nodeReference.getModelReference()));
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"), presentation);
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f44fL, "nodeId"), nodeReference.getNodeId().toString());
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f443L, "modelRef"), PersistenceFacade.getInstance().asString(nodeReference.getModelReference()));
+    SPropertyOperations.assign(result, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"), presentation);
     return result;
   }
   public static String getNodePresentation(SNode node) {

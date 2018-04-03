@@ -208,12 +208,12 @@ public class DefaultEditorBuilder {
   }
   private void addLabel(String text) {
     SNode nameCell = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant")), null);
-    SPropertyOperations.set(nameCell, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text"), text);
+    SPropertyOperations.assign(nameCell, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text"), text);
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDequeNew(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).addElement(nameCell);
   }
   private void setMatchingLabel(String matchingLabel) {
     SNode style = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem")), null);
-    SPropertyOperations.set(style, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, 0x12044043b24L, "labelName"), matchingLabel);
+    SPropertyOperations.assign(style, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, 0x12044043b24L, "labelName"), matchingLabel);
     setStyle(style);
   }
   private void addPunctuation(String text) {
@@ -237,7 +237,7 @@ public class DefaultEditorBuilder {
     SNode collection = DequeSequence.fromDequeNew(collectionsStack).peekElement();
     SNode cell = (ListSequence.fromList(SLinkOperations.getChildren(collection, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).isEmpty() ? collection : ListSequence.fromList(SLinkOperations.getChildren(collection, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).last());
     SNode classItem = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
-    SPropertyOperations.set(classItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (true));
+    SPropertyOperations.assign(classItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (true));
     ListSequence.fromList(SLinkOperations.getChildren(cell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))).addElement(classItem);
   }
   private void setStyle(SNode style) {
@@ -260,7 +260,7 @@ public class DefaultEditorBuilder {
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"), link);
     SLinkOperations.setTarget(linkCell, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")), null));
     if (separatorText != null) {
-      SPropertyOperations.set(linkCell, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02fdL, "separatorText"), separatorText);
+      SPropertyOperations.assign(linkCell, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02fdL, "separatorText"), separatorText);
     }
     ListSequence.fromList(SLinkOperations.getChildren(DequeSequence.fromDequeNew(collectionsStack).peekElement(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2518L, "childCellModel"))).addElement(linkCell);
   }

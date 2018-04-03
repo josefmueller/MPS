@@ -3689,12 +3689,12 @@
       <node id="1240400999425" at="21,49,22,25" concept="2" />
       <node id="1240400999425" at="24,54,25,56" concept="2" />
       <node id="5324782470188398427" at="28,78,29,15" concept="8" />
-      <node id="1240401033211" at="30,7,31,165" concept="2" />
+      <node id="1240401033211" at="30,7,31,168" concept="2" />
       <node id="1240400999425" at="35,0,36,0" concept="3" trace="myNode" />
       <node id="1240400999425" at="36,52,37,25" concept="2" />
       <node id="1240400999425" at="39,54,40,56" concept="2" />
       <node id="5324782470188398427" at="43,78,44,15" concept="8" />
-      <node id="1240401033211" at="45,7,46,165" concept="2" />
+      <node id="1240401033211" at="45,7,46,168" concept="2" />
       <node id="1240400999425" at="21,0,24,0" concept="1" trace="NTCD_delete_final_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1240400999425" at="24,0,27,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="5324782470188392678" at="27,75,30,7" concept="5" />
@@ -3728,8 +3728,8 @@
         <var name="editorCell" id="1240400999425" />
         <var name="node" id="1240400999425" />
       </scope>
-      <scope id="1240401003114" at="27,75,31,165" />
-      <scope id="1240401003114" at="42,75,46,165" />
+      <scope id="1240401003114" at="27,75,31,168" />
+      <scope id="1240401003114" at="42,75,46,168" />
       <scope id="1240400999425" at="27,0,33,0">
         <var name="editorContext" id="1240400999425" />
         <var name="node" id="1240400999425" />
@@ -4631,8 +4631,8 @@
       <node id="1741258697587186791" at="113,57,114,29" concept="2" />
       <node id="1741258697587186791" at="116,61,117,39" concept="2" />
       <node id="1741258697587186808" at="121,52,122,25" concept="8" />
-      <node id="1741258697587186812" at="126,54,127,396" concept="2" />
-      <node id="1741258697587186830" at="127,396,128,262" concept="2" />
+      <node id="1741258697587186812" at="126,54,127,399" concept="2" />
+      <node id="1741258697587186830" at="127,399,128,262" concept="2" />
       <node id="1741258697587186791" at="134,52,135,183" concept="8" />
       <node id="1741258697587186791" at="140,51,141,39" concept="8" />
       <node id="1741258697587186787" at="37,0,40,0" concept="1" trace="NTCD_add_final_Contribution#()V" />

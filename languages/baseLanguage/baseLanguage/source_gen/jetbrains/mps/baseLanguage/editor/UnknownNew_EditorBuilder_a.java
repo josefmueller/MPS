@@ -138,7 +138,7 @@ import jetbrains.mps.smodel.SNodePointer;
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode choosen = parameterObject;
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, 0x2dda7700ec3bb537L, "className"), Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(choosen));
+      SPropertyOperations.assign(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L, 0x2dda7700ec3bb537L, "className"), Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(choosen));
     }
     public boolean isReferentPresentation() {
       return false;

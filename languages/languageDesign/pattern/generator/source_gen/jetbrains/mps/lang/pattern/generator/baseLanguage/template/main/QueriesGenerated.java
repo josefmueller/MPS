@@ -500,7 +500,7 @@ public class QueriesGenerated extends QueryProviderBase {
       }
       SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor"));
       SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x746e600f0bda9e9bL, "property"), (SNode) property.getDeclarationNode());
-      SPropertyOperations.set(propertyNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f77L, "value"), _context.getNode().getProperty(property));
+      SPropertyOperations.assign(propertyNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f77L, "value"), _context.getNode().getProperty(property));
       SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, 0x7e881d31a4198f6fL, "mainNode"), _context.getNode());
       ListSequence.fromList(result).addElement(propertyNode);
     }
@@ -529,8 +529,8 @@ public class QueriesGenerated extends QueryProviderBase {
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor"));
       SNode referent = ((SNode) ref.getTargetNode());
       SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x79ac26fe422b8688L, "referenceLinkDeclaration"), (SNode) ref.getLink().getDeclarationNode());
-      SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a419916eL, "model"), referent.getModel().getReference().toString());
-      SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a419916dL, "id"), referent.getNodeId().toString());
+      SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a419916eL, "model"), referent.getModel().getReference().toString());
+      SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a419916dL, "id"), referent.getNodeId().toString());
       SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, 0x7e881d31a4198b58L, "mainNode"), _context.getNode());
       ListSequence.fromList(result).addElement(referenceNode);
     }

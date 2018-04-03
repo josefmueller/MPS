@@ -426,7 +426,7 @@ public class QueriesGenerated {
       SNode pid = SModelOperations.createNewNode(_context.getOutputModel(), null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefc235cL, "jetbrains.mps.lang.smodel.structure.PropertyId"));
       PropertyId__BehaviorDescriptor.setProperty_id5ZE7FBYZ2jW.invoke(pid, property);
       SLinkOperations.setTarget(propertyNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, 0x166bab613f6f633aL, "propertyIdentity"), pid);
-      SPropertyOperations.set(propertyNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, 0x746e600f0bda67f9L, "propertyValue"), _context.getNode().getProperty(property));
+      SPropertyOperations.assign(propertyNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, 0x746e600f0bda67f9L, "propertyValue"), _context.getNode().getProperty(property));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
@@ -482,10 +482,10 @@ public class QueriesGenerated {
       // This is merely to replace smodel.SModelReference.update() call which used to be here, I'm not 100% confident there's any reason to update references this way 
       SModel targetModel = ref.getTargetSModelReference().resolve(repo);
       final PersistenceFacade pf = PersistenceFacade.getInstance();
-      SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a480044dL, "targetModel"), pf.asString((targetModel == null ? ref.getTargetSModelReference() : targetModel.getReference())));
+      SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a480044dL, "targetModel"), pf.asString((targetModel == null ? ref.getTargetSModelReference() : targetModel.getReference())));
       SLinkOperations.setTarget(referenceNode, MetaAdapterFactory.getReferenceLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973eL, "role"), (SNode) ref.getLink().getDeclarationNode());
       if (targetNode != null) {
-        SPropertyOperations.set(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973fL, "targetNodeId"), targetNode.getNodeId().toString());
+        SPropertyOperations.assign(referenceNode, MetaAdapterFactory.getProperty(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x24cfe382a47f973dL, 0x24cfe382a47f973fL, "targetNodeId"), targetNode.getNodeId().toString());
       }
       ListSequence.fromList(result).addElement(referenceNode);
     }

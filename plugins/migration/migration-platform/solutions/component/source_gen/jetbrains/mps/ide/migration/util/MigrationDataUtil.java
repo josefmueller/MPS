@@ -48,7 +48,7 @@ public class MigrationDataUtil {
     }
     for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
       SNode stepData = SModelOperations.createNewRootNode(model, MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, "jetbrains.mps.lang.migration.util.structure.StepData"));
-      SPropertyOperations.set(stepData, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, 0x1b62b551c10bc5f4L, "script"), p._0().serialize());
+      SPropertyOperations.assign(stepData, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, 0x1b62b551c10bc5f4L, "script"), p._0().serialize());
       SLinkOperations.setTarget(stepData, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x66eed171c5f82709L, 0x66eed171c5f90226L, "data"), p._1());
     }
     try {

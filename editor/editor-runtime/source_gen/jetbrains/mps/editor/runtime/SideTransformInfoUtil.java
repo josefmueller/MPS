@@ -46,15 +46,15 @@ public class SideTransformInfoUtil {
   @ToRemove(version = 3.5)
   private static void addTransformInfo(@NotNull SNode node, @NotNull String cellId, @NotNull String anchorTag, boolean isRight) {
     SNode info = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"));
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), cellId);
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1bf58L, "anchorTag"), anchorTag);
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), (isRight ? "right" : "left"));
+    SPropertyOperations.assign(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), cellId);
+    SPropertyOperations.assign(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1bf58L, "anchorTag"), anchorTag);
+    SPropertyOperations.assign(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), (isRight ? "right" : "left"));
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo")), info);
   }
   private static void addTransformInfo(@NotNull SNode node, @NotNull String cellId, boolean isRight) {
     SNode info = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo"));
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), cellId);
-    SPropertyOperations.set(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), (isRight ? "right" : "left"));
+    SPropertyOperations.assign(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), cellId);
+    SPropertyOperations.assign(info, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), (isRight ? "right" : "left"));
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo")), info);
   }
 

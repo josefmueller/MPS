@@ -96,9 +96,9 @@ public class TestSubstitituteWrapper_TransformationMenu extends TransformationMe
         public void execute(@NotNull String pattern) {
           SNode createdNode = item.createNode(pattern);
           SLinkOperations.setTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x401156263ff3470fL, "child"), createdNode);
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c00L, "wrappedMatchingText"), wrappedItem.getMatchingText(pattern));
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c02L, "wrappedDescriptionText"), wrappedItem.getDescriptionText(pattern));
-          SPropertyOperations.set(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c05L, "wrappedConceptAlias"), SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()));
+          SPropertyOperations.assign(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c00L, "wrappedMatchingText"), wrappedItem.getMatchingText(pattern));
+          SPropertyOperations.assign(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c02L, "wrappedDescriptionText"), wrappedItem.getDescriptionText(pattern));
+          SPropertyOperations.assign(_context.getNode(), MetaAdapterFactory.getProperty(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x52ae9daefcc45c05L, "wrappedConceptAlias"), SConceptOperations.conceptAlias(wrappedItem.getOutputConcept()));
           SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x401156263ff3470bL, 0x401156263ff3470fL, "child")), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
         }
         @Override

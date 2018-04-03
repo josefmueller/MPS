@@ -206,7 +206,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode tagWrapper = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper")), null);
-      SPropertyOperations.set(tagWrapper, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, 0x3212fe82cb95ffeaL, "tag"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x11abb1e8d86L, "tag"), null));
+      SPropertyOperations.assign(tagWrapper, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3212fe82cb95ffe7L, 0x3212fe82cb95ffeaL, "tag"), SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x11abb1e8d86L, "tag"), null));
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x3212fe82cb95ffe6L, "tags"))).addElement(tagWrapper);
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11abb1e8d85L, 0x11abb1e8d86L, "tag"), null);
     }

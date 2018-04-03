@@ -117,7 +117,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   /*package*/ static void setLanguageIdFromModule_id7NTi8jM8SJY(@NotNull SNode __thisNode__, SModule m) {
     SModuleId mid = m.getModuleId();
     assert mid instanceof ModuleId.Regular;
-    SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId"), ((ModuleId.Regular) mid).getUUID().toString());
+    SPropertyOperations.assign(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId"), ((ModuleId.Regular) mid).getUUID().toString());
   }
   /*package*/ static SNode findConceptAspect_id7g4OXB0yku$(@NotNull SNode __thisNode__, SModel model) {
     if (model == null) {
