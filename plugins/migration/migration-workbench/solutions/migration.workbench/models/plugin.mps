@@ -6095,6 +6095,9 @@
                   </node>
                   <node concept="liA8E" id="7lByCvU_3f2" role="2OqNvi">
                     <ref role="37wK5l" to="bim2:1AzqgyAh5MG" resolve="postponeMigration" />
+                    <node concept="3clFbT" id="26DkYAc7fKt" role="37wK5m">
+                      <property role="3clFbU" value="true" />
+                    </node>
                   </node>
                 </node>
               </node>

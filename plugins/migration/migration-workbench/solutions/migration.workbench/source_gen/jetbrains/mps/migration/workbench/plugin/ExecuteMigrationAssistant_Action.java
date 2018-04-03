@@ -68,7 +68,7 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
     if (!(migrationRequired.value)) {
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
     } else {
-      mt.postponeMigration();
+      mt.postponeMigration(true);
     }
   }
 }

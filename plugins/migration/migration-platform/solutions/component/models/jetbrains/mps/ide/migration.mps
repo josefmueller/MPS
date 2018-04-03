@@ -1690,6 +1690,9 @@
             <node concept="3clFbF" id="3UuU2hft7O0" role="3cqZAp">
               <node concept="1rXfSq" id="1AzqgyAh8$6" role="3clFbG">
                 <ref role="37wK5l" node="1AzqgyAh5MG" resolve="postponeMigration" />
+                <node concept="3clFbT" id="26DkYAc7e3s" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
               </node>
             </node>
           </node>
@@ -1884,6 +1887,9 @@
             <node concept="3clFbF" id="1AzqgyAh7jX" role="3cqZAp">
               <node concept="1rXfSq" id="1AzqgyAh7jV" role="3clFbG">
                 <ref role="37wK5l" node="1AzqgyAh5MG" resolve="postponeMigration" />
+                <node concept="3clFbT" id="26DkYAc7dYn" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
               </node>
             </node>
           </node>
@@ -1934,6 +1940,10 @@
       <property role="od$2w" value="true" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="26DkYAc72u2" role="3clF46">
+        <property role="TrG5h" value="forceAssistant" />
+        <node concept="10P_77" id="26DkYAc7bsk" role="1tU5fm" />
+      </node>
       <node concept="3Tm1VV" id="7lByCvU$Zy0" role="1B3o_S" />
       <node concept="3clFbS" id="1AzqgyAh5MJ" role="3clF47">
         <node concept="3clFbJ" id="JfvRzma4cX" role="3cqZAp">
@@ -2272,6 +2282,9 @@
                                                       <node concept="3clFbF" id="48XdI$UFeHg" role="3cqZAp">
                                                         <node concept="1rXfSq" id="48XdI$UFeHe" role="3clFbG">
                                                           <ref role="37wK5l" node="1AzqgyAh5MG" resolve="postponeMigration" />
+                                                          <node concept="3clFbT" id="26DkYAc7bKH" role="37wK5m">
+                                                            <property role="3clFbU" value="true" />
+                                                          </node>
                                                         </node>
                                                       </node>
                                                     </node>
@@ -2327,8 +2340,15 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="37vLTw" id="JfvRzmb8jb" role="3clFbw">
-                                <ref role="3cqZAo" node="JfvRzm82hm" resolve="myMigrationPostponed" />
+                              <node concept="1Wc70l" id="26DkYAc7cxV" role="3clFbw">
+                                <node concept="3fqX7Q" id="26DkYAc7d8c" role="3uHU7w">
+                                  <node concept="37vLTw" id="26DkYAc7dwn" role="3fr31v">
+                                    <ref role="3cqZAo" node="26DkYAc72u2" resolve="forceAssistant" />
+                                  </node>
+                                </node>
+                                <node concept="37vLTw" id="JfvRzmb8jb" role="3uHU7B">
+                                  <ref role="3cqZAo" node="JfvRzm82hm" resolve="myMigrationPostponed" />
+                                </node>
                               </node>
                               <node concept="9aQIb" id="JfvRzmb8L3" role="9aQIa">
                                 <node concept="3clFbS" id="JfvRzmb8L4" role="9aQI4">

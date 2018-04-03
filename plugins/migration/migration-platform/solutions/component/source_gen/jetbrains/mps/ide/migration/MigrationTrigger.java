@@ -242,7 +242,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
     if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty()) {
-      postponeMigration();
+      postponeMigration(false);
     }
   }
 
@@ -269,11 +269,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       }
     });
     if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty()) {
-      postponeMigration();
+      postponeMigration(false);
     }
   }
 
-  public synchronized void postponeMigration() {
+  public synchronized void postponeMigration(final boolean forceAssistant) {
     if (myMigrationForbidden) {
       return;
     }
@@ -305,7 +305,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             });
 
             myMigrationForbidden = false;
-            if (myMigrationPostponed) {
+            if (myMigrationPostponed && !(forceAssistant)) {
               if (myLastNotification != null && !(myLastNotification.isExpired())) {
                 return;
               }
@@ -319,7 +319,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                     synchronized (MigrationTrigger.this) {
                       myMigrationPostponed = false;
                     }
-                    postponeMigration();
+                    postponeMigration(true);
                   }
                   notification.expire();
                 }
