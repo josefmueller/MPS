@@ -83,6 +83,7 @@
     <import index="kip1" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.nodefs(MPS.Platform/)" />
     <import index="vpbl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.commands(MPS.Editor/)" />
     <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
+    <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -3023,63 +3024,32 @@
     <node concept="3clFb_" id="2eW8$DBPLtd" role="jymVt">
       <property role="TrG5h" value="isNameCell" />
       <node concept="3clFbS" id="2eW8$DBPLth" role="3clF47">
-        <node concept="3cpWs8" id="2AhhU8rzMuS" role="3cqZAp">
-          <node concept="3cpWsn" id="2AhhU8rzMuT" role="3cpWs9">
-            <property role="TrG5h" value="pa" />
-            <node concept="3uibUv" id="2AhhU8rzMuU" role="1tU5fm">
-              <ref role="3uigEE" to="g51k:~PropertyAccessor" resolve="PropertyAccessor" />
+        <node concept="3clFbF" id="2hj6Qpwnb9C" role="3cqZAp">
+          <node concept="17R0WA" id="2hj6QpwnC4y" role="3clFbG">
+            <node concept="37vLTw" id="2hj6QpwnEkC" role="3uHU7w">
+              <ref role="3cqZAo" node="2eW8$DBPLu7" resolve="NAME_PROPERTY" />
             </node>
-            <node concept="0kSF2" id="2AhhU8rzMuV" role="33vP2m">
-              <node concept="3uibUv" id="2AhhU8rzMuW" role="0kSFW">
-                <ref role="3uigEE" to="g51k:~PropertyAccessor" resolve="PropertyAccessor" />
-              </node>
-              <node concept="2EnYce" id="2AhhU8rzMuX" role="0kSFX">
-                <node concept="1eOMI4" id="2AhhU8rzMuY" role="2Oq$k0">
-                  <node concept="0kSF2" id="2AhhU8rzMuZ" role="1eOMHV">
-                    <node concept="37vLTw" id="2BHiRxghiTe" role="0kSFX">
+            <node concept="2EnYce" id="2hj6Qpwn$Hv" role="3uHU7B">
+              <node concept="2EnYce" id="2hj6QpwnATh" role="2Oq$k0">
+                <node concept="2EnYce" id="2hj6Qpwnkwr" role="2Oq$k0">
+                  <node concept="2OqwBi" id="2hj6Qpwng97" role="2Oq$k0">
+                    <node concept="37vLTw" id="2hj6Qpwnb9A" role="2Oq$k0">
                       <ref role="3cqZAo" node="2eW8$DBPLtc" resolve="cell" />
                     </node>
-                    <node concept="3uibUv" id="2AhhU8rzMv0" role="0kSFW">
-                      <ref role="3uigEE" to="g51k:~EditorCell_Property" resolve="EditorCell_Property" />
+                    <node concept="liA8E" id="2hj6Qpwniai" role="2OqNvi">
+                      <ref role="37wK5l" to="f4zo:~EditorCell.getCellContext():jetbrains.mps.openapi.editor.cells.EditorCellContext" resolve="getCellContext" />
                     </node>
                   </node>
-                </node>
-                <node concept="liA8E" id="2AhhU8rzMv2" role="2OqNvi">
-                  <ref role="37wK5l" to="g51k:~EditorCell_Property.getModelAccessor():jetbrains.mps.nodeEditor.cells.ModelAccessor" resolve="getModelAccessor" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="2eW8$DBPLti" role="3cqZAp">
-          <node concept="1Wc70l" id="2AhhU8rzMv6" role="3cqZAk">
-            <node concept="3clFbC" id="2AhhU8rzMvm" role="3uHU7B">
-              <node concept="2EnYce" id="2AhhU8rzMvn" role="3uHU7w">
-                <node concept="37vLTw" id="3GM_nagTuIc" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2AhhU8rzMuT" resolve="pa" />
-                </node>
-                <node concept="liA8E" id="2AhhU8rzMvp" role="2OqNvi">
-                  <ref role="37wK5l" to="g51k:~PropertyAccessor.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                </node>
-              </node>
-              <node concept="1rXfSq" id="4hiugqyzhRJ" role="3uHU7B">
-                <ref role="37wK5l" to="exr9:~DefaultEditorMessage.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="2AhhU8rzMvr" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeonTa" role="2Oq$k0">
-                <ref role="3cqZAo" node="2eW8$DBPLu7" resolve="NAME_PROPERTY" />
-              </node>
-              <node concept="liA8E" id="2AhhU8rzMvt" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="2EnYce" id="2AhhU8rzMvu" role="37wK5m">
-                  <node concept="liA8E" id="2AhhU8rzMvw" role="2OqNvi">
-                    <ref role="37wK5l" to="g51k:~PropertyAccessor.getPropertyName():java.lang.String" resolve="getPropertyName" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagTv2N" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2AhhU8rzMuT" resolve="pa" />
+                  <node concept="liA8E" id="2hj6QpwnmxW" role="2OqNvi">
+                    <ref role="37wK5l" to="f4zo:~EditorCellContext.getPropertyInfo():jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo" resolve="getPropertyInfo" />
                   </node>
                 </node>
+                <node concept="liA8E" id="2hj6Qpwny65" role="2OqNvi">
+                  <ref role="37wK5l" to="uddc:~SPropertyInfo.getProperty():org.jetbrains.mps.openapi.language.SProperty" resolve="getProperty" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2hj6QpwnB$R" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SProperty.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
           </node>

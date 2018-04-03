@@ -17,9 +17,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 
 public class _CreateAntiquotationKeyMap extends KeyMapImpl {
   public _CreateAntiquotationKeyMap() {
@@ -232,12 +232,10 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       if (contextNode == null) {
         return;
       }
-      if (!(selectedCell instanceof EditorCell_Property)) {
+      SProperty p = check_lhzuzq_a0d0a3(check_lhzuzq_a0a3a0d(check_lhzuzq_a0a0d0a3(selectedCell)));
+      if (p == null) {
         return;
       }
-      EditorCell_Property editorCell_Property = (EditorCell_Property) selectedCell;
-      PropertyAccessor acc = (PropertyAccessor) editorCell_Property.getModelAccessor();
-      SProperty p = ((ConceptMetaInfoConverter) acc.getNode().getConcept()).convertProperty(acc.getPropertyName());
       if (SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x116aac96587L, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation"))) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
         assert attributedNode != null;
@@ -255,6 +253,24 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
     }
     public String getKeyStroke() {
       return " $";
+    }
+    private static SProperty check_lhzuzq_a0d0a3(SPropertyInfo checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getProperty();
+      }
+      return null;
+    }
+    private static SPropertyInfo check_lhzuzq_a0a3a0d(EditorCellContext checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getPropertyInfo();
+      }
+      return null;
+    }
+    private static EditorCellContext check_lhzuzq_a0a0d0a3(EditorCell checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getCellContext();
+      }
+      return null;
     }
   }
 }

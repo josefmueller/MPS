@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -122,9 +123,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
-
-    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-    result.setCellContext(getCellContext());
     return result;
   }
 
@@ -149,8 +147,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     if (result == null) {
       result = new DefaultEditorComponent(editorComponentId).createEditorCell(myEditorContext, node);
     }
-    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-    result.setCellContext(getCellContext());
     return result;
 
   }
@@ -200,6 +196,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   public void setNodeLocation(SNodeLocation location) {
     checkContextExist();
     myCellContextStack.getLast().setNodeLocation(location);
+  }
+
+  @Override
+  public void setPropertyInfo(SPropertyInfo propertyInfo) {
+    checkContextExist();
+    myCellContextStack.getLast().setPropertyInfo(propertyInfo);
   }
 
   private void checkContextExist() {
