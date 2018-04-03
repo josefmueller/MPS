@@ -855,6 +855,9 @@
       <entry name="!?*.flex" />
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
+      <entry name="!*.mps" />
+      <entry name="!*.mpsr" />
+      <entry name="!*.model" />
     </wildcardResourcePatterns>
   </component>
   <component name="EclipseCompilerSettings">
@@ -865,4 +868,3 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
-
