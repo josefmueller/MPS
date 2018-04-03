@@ -7069,7 +7069,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-environment" depends="java.compile.mps-project, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.platform, java.compile.mps-persistence, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt">
+  <target name="java.compile.mps-environment" depends="java.compile.mps-project, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.platform, java.compile.kernel-resources, java.compile.mps-make-rt">
     <mkdir dir="${mps_home}/core/tool/environment/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-environment" />
     <javac2 destdir="${build.tmp}/java/out/mps-environment" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -7095,8 +7095,6 @@
         <pathelement path="${build.tmp}/java/out/mps-boot-util" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
         <pathelement path="${build.tmp}/java/out/platform" />
-        <pathelement path="${build.tmp}/java/out/mps-persistence" />
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
         <pathelement path="${build.tmp}/java/out/kernel-resources" />
         <pathelement path="${build.tmp}/java/out/mps-make-rt" />
         <path refid="path.java.library.annotations-lib" />

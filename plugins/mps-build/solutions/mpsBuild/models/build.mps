@@ -1810,12 +1810,6 @@
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
       </node>
-      <node concept="nCB5N" id="1nB28s5yeB" role="nCB5Z">
-        <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
-      </node>
-      <node concept="nCB5N" id="1nB28s5zbr" role="nCB5Z">
-        <ref role="nCB5Y" node="75RBgxKm6HY" resolve="mps-generator" />
-      </node>
       <node concept="nCB5N" id="1nB28s6goM" role="nCB5Z">
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
       </node>
@@ -15920,12 +15914,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3zjMY$9628B" role="3bR37C">
-          <node concept="3bR9La" id="3zjMY$9628C" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
         <node concept="1SiIV0" id="1nB28s3Q_g" role="3bR37C">
