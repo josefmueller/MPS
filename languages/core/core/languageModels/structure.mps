@@ -171,6 +171,10 @@
         <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
+    <node concept="asaX9" id="uvctZnTqDE" role="lGtFl">
+      <property role="YLQ7P" value="will be removed in 2018.2 (no usages, no alternative provided)" />
+      <property role="YLPcu" value="2018.1" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2erkSmBSEUQ">
     <property role="R5$K7" value="false" />
@@ -183,6 +187,10 @@
     <node concept="24uvON" id="3ye0wbzmDhi" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeP5" role="lGtFl">
       <property role="Hh88m" value="" />
+    </node>
+    <node concept="asaX9" id="uvctZnTqDQ" role="lGtFl">
+      <property role="YLQ7P" value="will be removed in 2018.2 (no usages, no alternative provided)" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="2erkSmBSEUR">
@@ -202,6 +210,10 @@
     <node concept="M6xJ_" id="6_gUeuqOeTm" role="lGtFl">
       <property role="Hh88m" value="" />
     </node>
+    <node concept="asaX9" id="uvctZnTqDM" role="lGtFl">
+      <property role="YLQ7P" value="will be removed in 2018.2 (no usages, no alternative provided)" />
+      <property role="YLPcu" value="2018.1" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2erkSmBSEUU">
     <property role="R5$K7" value="false" />
@@ -214,6 +226,10 @@
     <node concept="24uvON" id="3ye0wbzmDhg" role="lGtFl" />
     <node concept="M6xJ_" id="6_gUeuqOeQ2" role="lGtFl">
       <property role="Hh88m" value="" />
+    </node>
+    <node concept="asaX9" id="uvctZnTqDI" role="lGtFl">
+      <property role="YLQ7P" value="will be removed in 2018.2 (no usages, no alternative provided)" />
+      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="4uZwTti3_$T">
