@@ -14155,5 +14155,29 @@
       </node>
     </node>
   </node>
+  <node concept="1YbPZF" id="2O_ty0xZ6Ed">
+    <property role="TrG5h" value="typeof_Property_RemoveOperation" />
+    <property role="3GE5qa" value="operation.property" />
+    <node concept="3clFbS" id="2O_ty0xZ6Ee" role="18ibNy">
+      <node concept="1Z5TYs" id="2O_ty0xZ756" role="3cqZAp">
+        <node concept="mw_s8" id="2O_ty0xZ75q" role="1ZfhKB">
+          <node concept="2c44tf" id="2O_ty0xZ75m" role="mwGJk">
+            <node concept="3cqZAl" id="2O_ty0xZ76q" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="2O_ty0xZ759" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2O_ty0xZ6Py" role="mwGJk">
+            <node concept="1YBJjd" id="2O_ty0xZ6Rk" role="1Z2MuG">
+              <ref role="1YBMHb" node="2O_ty0xZ6Eg" resolve="pro" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2O_ty0xZ6Eg" role="1YuTPh">
+      <property role="TrG5h" value="pro" />
+      <ref role="1YaFvo" to="tp25:hFZvMIM" resolve="Property_RemoveOperation" />
+    </node>
+  </node>
 </model>
 
