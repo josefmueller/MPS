@@ -52,9 +52,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
     });
     myGitGlobal.addIfNeeded();
     myGitRepos.addIfNeeded();
-    myCommonSvn.addIfNeeded();
     if (myIdeSvn != null) {
-      myIdeSvn.addIfNeeded();
     }
     myMainPanel.add(myPanel);
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
@@ -80,9 +78,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
     if (myGitGlobal.myInstaller.getCurrentState() == AbstractInstaller.State.INSTALLED) {
       myGitRepos.installIfNeeded();
     }
-    myCommonSvn.installIfNeeded();
     if (myIdeSvn != null) {
-      myIdeSvn.installIfNeeded();
     }
     close(DialogWrapper.OK_EXIT_CODE);
   }
