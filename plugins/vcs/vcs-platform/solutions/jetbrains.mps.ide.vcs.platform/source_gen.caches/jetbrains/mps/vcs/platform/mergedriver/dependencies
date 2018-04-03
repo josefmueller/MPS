@@ -102,7 +102,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.GitGlobalInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.MergeDriverOptionsDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.platform.mergedriver.SvnInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification" file="MergeDriverNotification.java">
