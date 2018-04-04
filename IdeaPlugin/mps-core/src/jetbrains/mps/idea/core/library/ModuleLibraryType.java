@@ -133,7 +133,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
   private Set<OrderRoot> createRootsFor(SRepository repository, List<SModuleReference> chosenElements) {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
     for (SModuleReference moduleReference : chosenElements) {
-      AbstractModule module = (AbstractModule) moduleReference.resolve(repository);
+      AbstractModule module = new ModelAccessHelper(repository).runReadAction(() -> (AbstractModule) moduleReference.resolve(repository));
       roots.add(new OrderRoot(VirtualFileUtils.getOrCreateVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
       for (VirtualFile virtualFile : getModuleJars(module)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
