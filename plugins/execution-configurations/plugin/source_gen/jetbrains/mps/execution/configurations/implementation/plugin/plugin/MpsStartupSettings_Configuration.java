@@ -82,8 +82,8 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
     return expandPath(notExpanded);
   }
   public File getPluginsPath() {
-    String defaultPluginPathForOurSettings = PathManager.getDefaultPluginPathFor(getExpandedSettingsPath());
-    return new File(defaultPluginPathForOurSettings);
+    String configPath = new File(getExpandedSettingsPath(), "config").getAbsolutePath();
+    return new File(configPath, "plugins");
   }
   @Override
   public MpsStartupSettings_Configuration clone() {

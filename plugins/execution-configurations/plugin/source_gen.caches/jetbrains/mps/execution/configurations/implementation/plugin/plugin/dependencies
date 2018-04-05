@@ -879,6 +879,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.run.IDebuggerConfiguration" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings" />
+    <classNode dependClassName="jetbrains.mps.execution.api.commands.CommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ListCommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.PropertyCommandPart" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MpsInstanceLock" />
