@@ -77,7 +77,9 @@ public class Mps_Command {
     if ((settingsPath != null && settingsPath.length() > 0)) {
       String configPath = new File(settingsPath, "config").getAbsolutePath();
       String systemPath = new File(settingsPath, "system").getAbsolutePath();
-      return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), virtualMachineParameters, new PropertyCommandPart(PathManager.PROPERTY_CONFIG_PATH, configPath), new PropertyCommandPart(PathManager.PROPERTY_SYSTEM_PATH, systemPath)));
+      String pluginsPath = new File(configPath, "plugins").getAbsolutePath();
+      String logPath = new File(systemPath, "log").getAbsolutePath();
+      return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart(PathManager.PROPERTY_CONFIG_PATH, configPath), new PropertyCommandPart(PathManager.PROPERTY_SYSTEM_PATH, systemPath), new PropertyCommandPart(PathManager.PROPERTY_PLUGINS_PATH, pluginsPath), new PropertyCommandPart(PathManager.PROPERTY_LOG_PATH, logPath), virtualMachineParameters));
     } else {
       // actually we must fail here and settingsPath must be NotNull 
       return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), virtualMachineParameters));

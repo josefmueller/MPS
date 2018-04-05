@@ -4928,11 +4928,52 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="6T9rif_YE1A" role="3cqZAp">
+              <node concept="3cpWsn" id="6T9rif_YE1B" role="3cpWs9">
+                <property role="TrG5h" value="pluginsPath" />
+                <node concept="17QB3L" id="6T9rif_YE1C" role="1tU5fm" />
+                <node concept="2OqwBi" id="6T9rif_YE1D" role="33vP2m">
+                  <node concept="2ShNRf" id="6T9rif_YE1E" role="2Oq$k0">
+                    <node concept="1pGfFk" id="6T9rif_YE1F" role="2ShVmc">
+                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
+                      <node concept="37vLTw" id="6T9rif_YFvn" role="37wK5m">
+                        <ref role="3cqZAo" node="75c$k6X27Mf" resolve="configPath" />
+                      </node>
+                      <node concept="Xl_RD" id="6T9rif_YE1H" role="37wK5m">
+                        <property role="Xl_RC" value="plugins" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6T9rif_YE1I" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs8" id="6T9rif_YEh2" role="3cqZAp">
+              <node concept="3cpWsn" id="6T9rif_YEh3" role="3cpWs9">
+                <property role="TrG5h" value="logPath" />
+                <node concept="17QB3L" id="6T9rif_YEh4" role="1tU5fm" />
+                <node concept="2OqwBi" id="6T9rif_YEh5" role="33vP2m">
+                  <node concept="2ShNRf" id="6T9rif_YEh6" role="2Oq$k0">
+                    <node concept="1pGfFk" id="6T9rif_YEh7" role="2ShVmc">
+                      <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
+                      <node concept="37vLTw" id="6T9rif_YFxt" role="37wK5m">
+                        <ref role="3cqZAo" node="75c$k6X2oxC" resolve="systemPath" />
+                      </node>
+                      <node concept="Xl_RD" id="6T9rif_YEh9" role="37wK5m">
+                        <property role="Xl_RC" value="log" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6T9rif_YEha" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs6" id="75c$k6X2PUN" role="3cqZAp">
               <node concept="1tenjt" id="75c$k6X2K59" role="3cqZAk">
-                <node concept="37vLTw" id="75c$k6X2PDl" role="1r8FgC">
-                  <ref role="3cqZAo" node="75c$k6X2Pup" resolve="virtualMachineParameters" />
-                </node>
                 <node concept="2TNRMO" id="75c$k6X2K5b" role="1r8FgC">
                   <node concept="10M0yZ" id="75c$k6X2K5c" role="2TNRMP">
                     <ref role="1PxDUh" to="bd8o:~PathManager" resolve="PathManager" />
@@ -4950,6 +4991,27 @@
                   <node concept="37vLTw" id="75c$k6X2K5g" role="2TNRME">
                     <ref role="3cqZAo" node="75c$k6X2oxC" resolve="systemPath" />
                   </node>
+                </node>
+                <node concept="2TNRMO" id="6T9rif_YEIc" role="1r8FgC">
+                  <node concept="10M0yZ" id="6T9rif_YF8k" role="2TNRMP">
+                    <ref role="3cqZAo" to="bd8o:~PathManager.PROPERTY_PLUGINS_PATH" resolve="PROPERTY_PLUGINS_PATH" />
+                    <ref role="1PxDUh" to="bd8o:~PathManager" resolve="PathManager" />
+                  </node>
+                  <node concept="37vLTw" id="6T9rif_YFun" role="2TNRME">
+                    <ref role="3cqZAo" node="6T9rif_YE1B" resolve="pluginsPath" />
+                  </node>
+                </node>
+                <node concept="2TNRMO" id="6T9rif_YEMV" role="1r8FgC">
+                  <node concept="10M0yZ" id="6T9rif_YF6G" role="2TNRMP">
+                    <ref role="3cqZAo" to="bd8o:~PathManager.PROPERTY_LOG_PATH" resolve="PROPERTY_LOG_PATH" />
+                    <ref role="1PxDUh" to="bd8o:~PathManager" resolve="PathManager" />
+                  </node>
+                  <node concept="37vLTw" id="6T9rif_YF7v" role="2TNRME">
+                    <ref role="3cqZAo" node="6T9rif_YEh3" resolve="logPath" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6T9rif_YF1C" role="1r8FgC">
+                  <ref role="3cqZAo" node="75c$k6X2Pup" resolve="virtualMachineParameters" />
                 </node>
               </node>
             </node>
