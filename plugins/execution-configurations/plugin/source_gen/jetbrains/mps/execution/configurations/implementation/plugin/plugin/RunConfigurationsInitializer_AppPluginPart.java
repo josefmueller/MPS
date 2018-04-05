@@ -37,7 +37,7 @@ public class RunConfigurationsInitializer_AppPluginPart extends ApplicationPlugi
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
     {
-      MPSApplication_Kind runConfigurationKind = new MPSApplication_Kind();
+      MPS_Kind runConfigurationKind = new MPS_Kind();
       ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
