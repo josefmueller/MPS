@@ -5,15 +5,17 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import java.io.File;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.execution.api.commands.CommandPart;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.PropertyCommandPart;
 import com.intellij.openapi.application.PathManager;
-import java.io.File;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
-import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
 import java.util.List;
@@ -22,7 +24,6 @@ import java.io.IOException;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
@@ -55,7 +56,7 @@ public class Mps_Command {
   public ProcessHandler createProcess(String settingsPath) throws ExecutionException {
     final boolean runNotLocked = MpsInstanceLock.acquireLock();
     if (runNotLocked) {
-      ProcessHandler process = new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameters_String, new PropertyCommandPart(PathManager.PROPERTY_PATHS_SELECTOR, settingsPath)))).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess("jetbrains.mps.Launcher", Mps_Command.getClassPath());
+      ProcessHandler process = new Java_Command().setVirtualMachineParameter_ProcessBuilderCommandPart(Mps_Command.getVmParameters(myVirtualMachineParameters_String, settingsPath)).setDebuggerSettings_String(myDebuggerSettings_String).setWorkingDirectory_File(new File(System.getProperty("user.dir"))).setJrePath_String(myJrePath_String).createProcess(null, "jetbrains.mps.Launcher", Mps_Command.getClassPath());
       process.addProcessListener(new ProcessAdapter() {
         @Override
         public void processTerminated(ProcessEvent p0) {
@@ -72,6 +73,18 @@ public class Mps_Command {
     return getDebuggerConfiguration().getDebugger();
   }
 
+  private static CommandPart getVmParameters(String virtualMachineParameters, @Nullable String settingsPath) {
+    if ((settingsPath != null && settingsPath.length() > 0)) {
+      String configPath = new File(settingsPath, "config").getAbsolutePath();
+      String systemPath = new File(settingsPath, "system").getAbsolutePath();
+      String pluginsPath = new File(configPath, "plugins").getAbsolutePath();
+      String logPath = new File(systemPath, "log").getAbsolutePath();
+      return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart(PathManager.PROPERTY_CONFIG_PATH, configPath), new PropertyCommandPart(PathManager.PROPERTY_SYSTEM_PATH, systemPath), new PropertyCommandPart(PathManager.PROPERTY_PLUGINS_PATH, pluginsPath), new PropertyCommandPart(PathManager.PROPERTY_LOG_PATH, logPath), virtualMachineParameters));
+    } else {
+      // actually we must fail here and settingsPath must be NotNull 
+      return new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), virtualMachineParameters));
+    }
+  }
   public static String getDefaultVirtualMachineParameters() {
     return IterableUtils.join(ListSequence.fromList(JvmArgs.getDefaultJvmArgs()), " ");
   }
