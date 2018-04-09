@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -32,6 +33,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   private final SRepository myRepo;
   private final boolean myRunsInProcess;
   protected final boolean myNeedsMPS;
+  protected final SModuleReference myTestModule;
 
   public AbstractTestWrapper(@NotNull N node) {
     this(node, false, false);
@@ -42,10 +44,17 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     myRepo = SNodeOperations.getModel(node).getRepository();
     myRunsInProcess = runsInProcess;
     myNeedsMPS = needsMPS;
+    myTestModule = SNodeOperations.getModel(node).getModule().getModuleReference();
   }
 
   /*package*/ SRepository getRepo() {
     return myRepo;
+  }
+
+  @NotNull
+  @Override
+  public final SModuleReference getTestNodeModule() {
+    return myTestModule;
   }
 
   /**
