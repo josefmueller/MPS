@@ -14,8 +14,6 @@ import org.apache.log4j.Logger;
 import jetbrains.mps.tool.common.RepositoryDescriptor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.Properties;
-import jetbrains.mps.core.tool.environment.util.CanonicalPath;
 
 /**
  * Command-line front-end to launch MPS tests that need MPS environment (ITestable, incliding BTestCase, and JUnit3/JUnit4 ClassConcept with respective annotation/superclass) 
@@ -80,24 +78,6 @@ public class WithPlatformTestExecutor extends DefaultTestExecutor {
     }
     for (IMapping<String, String> m : MapSequence.fromMap(startupArguments.getMacros())) {
       cfg.addMacro(m.key(), new File(m.value()));
-    }
-
-
-    // test parameters of LanguageTestWrapper may supply path variables this way. Not sure it's the right way to move on, though. 
-    // There are mps.macro. values in MpsTestsSuite that end up as EnvironmentConfig's macros and eventually as PathMacros's PathMacrosProvider, 
-    // why do we duplicate same logic here but with "path.macro." prefix? 
-    // FWIW, comment in TransformationTestRunner used to read: "to enable such macros as ${charisma}; see MPS-10568" 
-    Properties sysProps = System.getProperties();
-    for (String key : sysProps.stringPropertyNames()) {
-      String value = sysProps.getProperty(key);
-      if (key.startsWith(PATH_MACRO_PREFIX) && (value != null && value.length() > 0)) {
-        CanonicalPath path = new CanonicalPath(value);
-        if (path.isValidDirectory()) {
-          // XXX the reason we limit path macros to directories only is hidden deep in the history, perhaps, there's no reason to? 
-          // Besides, I don't like the idea we restrict this to *paths*, it's just a macro/property with a value, after all. 
-          cfg.addMacro(key.substring(PATH_MACRO_PREFIX.length()), new File(path.getValue()));
-        }
-      }
     }
     IdeaEnvironment rv = new IdeaEnvironment(cfg);
     rv.init();

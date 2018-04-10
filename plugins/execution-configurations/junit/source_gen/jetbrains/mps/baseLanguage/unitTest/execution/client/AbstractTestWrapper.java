@@ -15,12 +15,6 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import com.intellij.openapi.application.PathMacros;
-import java.util.List;
-import jetbrains.mps.baseLanguage.execution.api.JvmArgs;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -120,15 +114,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   public TestParameters getTestRunParameters() {
     TestParameters rp = TestParameters.calcDefault(myRepo);
     if (myNeedsMPS) {
-      // FIXME move macros into JUnit_Command, too 
-      // FIXME Use same PathMacros instance 
-      Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
-      List<String> jvmArgsWithMacros = ListSequence.fromList(JvmArgs.getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
-        public String select(String key) {
-          return String.format("-Dpath.macro.%s=\"%s\"", key, jetbrains.mps.project.PathMacros.getInstance().getValue(key));
-        }
-      })).toListSequence();
-      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), jvmArgsWithMacros);
+      return new TestParameters(WithPlatformTestExecutor.class, true, ListSequence.fromList(rp.getClassPath()).toListSequence(), null);
     } else {
       return rp;
     }

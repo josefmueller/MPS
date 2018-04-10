@@ -28,6 +28,8 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.PathMacros;
+import org.apache.log4j.Level;
 import org.jdom.Element;
 import jetbrains.mps.tool.common.JDOMUtil;
 import org.jdom.Document;
@@ -35,7 +37,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedList;
 import java.net.URL;
@@ -139,6 +140,22 @@ public class JUnit_Command {
         }
       });
       startupArgs.setRepo(rd);
+      // FIXME Shall use proper ComponentHost.findComponent to access PathMacros instance 
+      PathMacros pathMacros = PathMacros.getInstance();
+      // XXX not sure why we iterate over user names only (not getNames()), it's the way it used to be in LanguageTestWrapper/AbstractTestWrapper for a long time 
+      for (String key : pathMacros.getUserNames()) {
+        String value = pathMacros.getValue(key);
+        if (value != null) {
+          startupArgs.addMacro(key, value);
+        } else {
+          // XXX EnvironmentBase is not quite friendly to null macro values. I can't decide whether it's better to relax this restriction (who cares what macro value is 
+          // except its consumer?), to report a warning here or to let EnvironmentBase do that. 
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn(String.format("No value for macro %s, ignored", key));
+          }
+        }
+      }
+      // XXX could deduce required plugins from IdeaPluginModuleFacet of required modules. 
       // startupArgs.addPlugin() 
       startupArgs.setLoadBootstrapLibraries(true);
       // XXX May want to pass value of idea.additional.classpath system property further to new IdeaApplication instance to ensure plugins that are  

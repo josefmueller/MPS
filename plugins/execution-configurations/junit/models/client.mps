@@ -538,13 +538,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
     </language>
     <language id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp">
       <concept id="1222260469397" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" flags="nn" index="2kpEY9" />
@@ -1282,93 +1275,6 @@
         </node>
         <node concept="3clFbJ" id="4Tkq3_eTVqi" role="3cqZAp">
           <node concept="3clFbS" id="4Tkq3_eTVqj" role="3clFbx">
-            <node concept="3SKdUt" id="4Tkq3_eTVqk" role="3cqZAp">
-              <node concept="3SKdUq" id="4Tkq3_eTVql" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME move macros into JUnit_Command, too" />
-              </node>
-            </node>
-            <node concept="3SKdUt" id="4Tkq3_eU4W4" role="3cqZAp">
-              <node concept="3SKdUq" id="4Tkq3_eU4W6" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME Use same PathMacros instance" />
-              </node>
-            </node>
-            <node concept="3cpWs8" id="4Tkq3_eTVqm" role="3cqZAp">
-              <node concept="3cpWsn" id="4Tkq3_eTVqn" role="3cpWs9">
-                <property role="TrG5h" value="userMacroNames" />
-                <node concept="2hMVRd" id="4Tkq3_eTVqo" role="1tU5fm">
-                  <node concept="3uibUv" id="4Tkq3_eTVqp" role="2hN53Y">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="4Tkq3_eTVqq" role="33vP2m">
-                  <node concept="2YIFZM" id="4Tkq3_eTVqr" role="2Oq$k0">
-                    <ref role="37wK5l" to="bd8o:~PathMacros.getInstance():com.intellij.openapi.application.PathMacros" resolve="getInstance" />
-                    <ref role="1Pybhc" to="bd8o:~PathMacros" resolve="PathMacros" />
-                  </node>
-                  <node concept="liA8E" id="4Tkq3_eTVqs" role="2OqNvi">
-                    <ref role="37wK5l" to="bd8o:~PathMacros.getUserMacroNames():java.util.Set" resolve="getUserMacroNames" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="4Tkq3_eTVqt" role="3cqZAp">
-              <node concept="3cpWsn" id="4Tkq3_eTVqu" role="3cpWs9">
-                <property role="TrG5h" value="jvmArgsWithMacros" />
-                <node concept="_YKpA" id="4Tkq3_eTVqv" role="1tU5fm">
-                  <node concept="17QB3L" id="4Tkq3_eTVqw" role="_ZDj9" />
-                </node>
-                <node concept="2OqwBi" id="4Tkq3_eTVqx" role="33vP2m">
-                  <node concept="2OqwBi" id="4Tkq3_eTVqy" role="2Oq$k0">
-                    <node concept="2YIFZM" id="4Tkq3_eTVqz" role="2Oq$k0">
-                      <ref role="37wK5l" to="go48:46IpDBbYZ8G" resolve="getDefaultJvmArgs" />
-                      <ref role="1Pybhc" to="go48:7jEXsfiNGiU" resolve="JvmArgs" />
-                    </node>
-                    <node concept="4Tj9Z" id="4Tkq3_eTVq$" role="2OqNvi">
-                      <node concept="2OqwBi" id="4Tkq3_eTVq_" role="576Qk">
-                        <node concept="37vLTw" id="4Tkq3_eTVqA" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4Tkq3_eTVqn" resolve="userMacroNames" />
-                        </node>
-                        <node concept="3$u5V9" id="4Tkq3_eTVqB" role="2OqNvi">
-                          <node concept="1bVj0M" id="4Tkq3_eTVqC" role="23t8la">
-                            <node concept="3clFbS" id="4Tkq3_eTVqD" role="1bW5cS">
-                              <node concept="3clFbF" id="4Tkq3_eTVqE" role="3cqZAp">
-                                <node concept="2YIFZM" id="4Tkq3_eTVqF" role="3clFbG">
-                                  <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                                  <node concept="Xl_RD" id="4Tkq3_eTVqG" role="37wK5m">
-                                    <property role="Xl_RC" value="-Dpath.macro.%s=\&quot;%s\&quot;" />
-                                  </node>
-                                  <node concept="37vLTw" id="4Tkq3_eTVqH" role="37wK5m">
-                                    <ref role="3cqZAo" node="4Tkq3_eTVqM" resolve="key" />
-                                  </node>
-                                  <node concept="2OqwBi" id="4Tkq3_eTVqI" role="37wK5m">
-                                    <node concept="2YIFZM" id="4Tkq3_eTVqJ" role="2Oq$k0">
-                                      <ref role="37wK5l" to="z1c3:~PathMacros.getInstance():jetbrains.mps.project.PathMacros" resolve="getInstance" />
-                                      <ref role="1Pybhc" to="z1c3:~PathMacros" resolve="PathMacros" />
-                                    </node>
-                                    <node concept="liA8E" id="4Tkq3_eTVqK" role="2OqNvi">
-                                      <ref role="37wK5l" to="z1c3:~PathMacros.getValue(java.lang.String):java.lang.String" resolve="getValue" />
-                                      <node concept="37vLTw" id="4Tkq3_eTVqL" role="37wK5m">
-                                        <ref role="3cqZAo" node="4Tkq3_eTVqM" resolve="key" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="Rh6nW" id="4Tkq3_eTVqM" role="1bW2Oz">
-                              <property role="TrG5h" value="key" />
-                              <node concept="2jxLKc" id="4Tkq3_eTVqN" role="1tU5fm" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="ANE8D" id="4Tkq3_eTVqO" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs6" id="4Tkq3_eTVqP" role="3cqZAp">
               <node concept="2ShNRf" id="4Tkq3_eTVqQ" role="3cqZAk">
                 <node concept="1pGfFk" id="4Tkq3_eTVqR" role="2ShVmc">
@@ -1390,9 +1296,7 @@
                     </node>
                     <node concept="ANE8D" id="4Tkq3_eTVqY" role="2OqNvi" />
                   </node>
-                  <node concept="37vLTw" id="4Tkq3_eTVqZ" role="37wK5m">
-                    <ref role="3cqZAo" node="4Tkq3_eTVqu" resolve="jvmArgsWithMacros" />
-                  </node>
+                  <node concept="10Nm6u" id="4djPN1tN27j" role="37wK5m" />
                 </node>
               </node>
             </node>
@@ -8939,18 +8843,118 @@
                 </node>
               </node>
             </node>
-            <node concept="1X3_iC" id="1lYY8Nv9hX7" role="lGtFl">
-              <property role="3V$3am" value="statement" />
-              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-              <node concept="3clFbF" id="1lYY8Nv96Cs" role="8Wnug">
-                <node concept="2OqwBi" id="1lYY8Nv9hIT" role="3clFbG">
-                  <node concept="37vLTw" id="1lYY8Nv9h$C" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1lYY8Nv9h$$" resolve="startupArgs" />
-                  </node>
-                  <node concept="liA8E" id="1lYY8Nv9hU6" role="2OqNvi">
-                    <ref role="37wK5l" to="asz6:KL8Aql8eNF" resolve="addMacro" />
+            <node concept="3SKdUt" id="4Tkq3_eU4W4" role="3cqZAp">
+              <node concept="3SKdUq" id="4Tkq3_eU4W6" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME Shall use proper ComponentHost.findComponent to access PathMacros instance" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="4djPN1tN5oD" role="3cqZAp">
+              <node concept="3cpWsn" id="4djPN1tN5oE" role="3cpWs9">
+                <property role="TrG5h" value="pathMacros" />
+                <node concept="3uibUv" id="4djPN1tN5oC" role="1tU5fm">
+                  <ref role="3uigEE" to="z1c3:~PathMacros" resolve="PathMacros" />
+                </node>
+                <node concept="2YIFZM" id="4djPN1tN5oF" role="33vP2m">
+                  <ref role="37wK5l" to="z1c3:~PathMacros.getInstance():jetbrains.mps.project.PathMacros" resolve="getInstance" />
+                  <ref role="1Pybhc" to="z1c3:~PathMacros" resolve="PathMacros" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4djPN1tNi2L" role="3cqZAp">
+              <node concept="3SKdUq" id="4djPN1tNi2N" role="3SKWNk">
+                <property role="3SKdUp" value="XXX not sure why we iterate over user names only (not getNames()), it's the way it used to be in LanguageTestWrapper/AbstractTestWrapper for a long time" />
+              </node>
+            </node>
+            <node concept="2Gpval" id="4djPN1tNaSm" role="3cqZAp">
+              <node concept="2GrKxI" id="4djPN1tNaSo" role="2Gsz3X">
+                <property role="TrG5h" value="key" />
+              </node>
+              <node concept="3clFbS" id="4djPN1tNaSs" role="2LFqv$">
+                <node concept="3cpWs8" id="4djPN1tNDx6" role="3cqZAp">
+                  <node concept="3cpWsn" id="4djPN1tNDx7" role="3cpWs9">
+                    <property role="TrG5h" value="value" />
+                    <node concept="3uibUv" id="4djPN1tNDwU" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="2OqwBi" id="4djPN1tNDx8" role="33vP2m">
+                      <node concept="37vLTw" id="4djPN1tNDx9" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4djPN1tN5oE" resolve="pathMacros" />
+                      </node>
+                      <node concept="liA8E" id="4djPN1tNDxa" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~PathMacros.getValue(java.lang.String):java.lang.String" resolve="getValue" />
+                        <node concept="2GrUjf" id="4djPN1tNDxb" role="37wK5m">
+                          <ref role="2Gs0qQ" node="4djPN1tNaSo" resolve="key" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
+                <node concept="3clFbJ" id="4djPN1tNDXN" role="3cqZAp">
+                  <node concept="3clFbS" id="4djPN1tNDXP" role="3clFbx">
+                    <node concept="3clFbF" id="4djPN1tMJpf" role="3cqZAp">
+                      <node concept="2OqwBi" id="4djPN1tMK0s" role="3clFbG">
+                        <node concept="37vLTw" id="4djPN1tMJpd" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1lYY8Nv9h$$" resolve="startupArgs" />
+                        </node>
+                        <node concept="liA8E" id="4djPN1tMKi4" role="2OqNvi">
+                          <ref role="37wK5l" to="asz6:KL8Aql8eNF" resolve="addMacro" />
+                          <node concept="2GrUjf" id="4djPN1tNdGg" role="37wK5m">
+                            <ref role="2Gs0qQ" node="4djPN1tNaSo" resolve="key" />
+                          </node>
+                          <node concept="37vLTw" id="4djPN1tNDxc" role="37wK5m">
+                            <ref role="3cqZAo" node="4djPN1tNDx7" resolve="value" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="4djPN1tNM93" role="3clFbw">
+                    <node concept="10Nm6u" id="4djPN1tNMfU" role="3uHU7w" />
+                    <node concept="37vLTw" id="4djPN1tNEaZ" role="3uHU7B">
+                      <ref role="3cqZAo" node="4djPN1tNDx7" resolve="value" />
+                    </node>
+                  </node>
+                  <node concept="9aQIb" id="4djPN1tNNCt" role="9aQIa">
+                    <node concept="3clFbS" id="4djPN1tNNCu" role="9aQI4">
+                      <node concept="3SKdUt" id="4djPN1tNN0y" role="3cqZAp">
+                        <node concept="3SKdUq" id="4djPN1tNN0$" role="3SKWNk">
+                          <property role="3SKdUp" value="XXX EnvironmentBase is not quite friendly to null macro values. I can't decide whether it's better to relax this restriction (who cares what macro value is" />
+                        </node>
+                      </node>
+                      <node concept="3SKdUt" id="4djPN1tNNr2" role="3cqZAp">
+                        <node concept="3SKdUq" id="4djPN1tNNr4" role="3SKWNk">
+                          <property role="3SKdUp" value="except its consumer?), to report a warning here or to let EnvironmentBase do that." />
+                        </node>
+                      </node>
+                      <node concept="RRSsy" id="4djPN1tNO9v" role="3cqZAp">
+                        <property role="RRSoG" value="warn" />
+                        <node concept="2YIFZM" id="4djPN1tNOtU" role="RRSoy">
+                          <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                          <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                          <node concept="Xl_RD" id="4djPN1tNO_1" role="37wK5m">
+                            <property role="Xl_RC" value="No value for macro %s, ignored" />
+                          </node>
+                          <node concept="2GrUjf" id="4djPN1tNQBK" role="37wK5m">
+                            <ref role="2Gs0qQ" node="4djPN1tNaSo" resolve="key" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4djPN1tN9ta" role="2GsD0m">
+                <node concept="37vLTw" id="4djPN1tN8I4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4djPN1tN5oE" resolve="pathMacros" />
+                </node>
+                <node concept="liA8E" id="4djPN1tNa3e" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~PathMacros.getUserNames():java.util.Set" resolve="getUserNames" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4djPN1tNkL2" role="3cqZAp">
+              <node concept="3SKdUq" id="4djPN1tNkL4" role="3SKWNk">
+                <property role="3SKdUp" value="XXX could deduce required plugins from IdeaPluginModuleFacet of required modules." />
               </node>
             </node>
             <node concept="3SKdUt" id="1lYY8Nv9iwK" role="3cqZAp">
