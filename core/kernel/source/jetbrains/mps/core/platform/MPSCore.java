@@ -218,7 +218,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     if (SRepositoryRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myRepositoryRegistry);
     }
-    if (FacetsFacade.class.isAssignableFrom(componentClass)) {
+    if (FacetsFacade.class.isAssignableFrom(componentClass) || FacetsRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myModuleFacetsRegistry);
     }
     if (PathMacros.class.isAssignableFrom(componentClass)) {
