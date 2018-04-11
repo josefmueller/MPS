@@ -23,6 +23,10 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
+import java.awt.GraphicsEnvironment;
+import java.awt.datatransfer.Clipboard;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import org.junit.After;
 
 public abstract class BaseTransformationTest implements TransformationTest, EnvironmentAware {
@@ -119,6 +123,8 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
         throw new RuntimeException(exception);
       }
 
+      clearSystemClipboard();
+
       // XXX do I need that? 
       myEnvironment.flushAllEvents();
     }
@@ -204,6 +210,16 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithAllImports();
   }
+
+  private static void clearSystemClipboard() {
+    if (GraphicsEnvironment.isHeadless()) {
+      return;
+    }
+    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+    StringSelection empty = new StringSelection("");
+    clipboard.setContents(empty, empty);
+  }
+
 
   /**
    * FIXME explain/justify contract, see {@link jetbrains.mps.lang.test.runtime.BaseTransformationTest#init() }

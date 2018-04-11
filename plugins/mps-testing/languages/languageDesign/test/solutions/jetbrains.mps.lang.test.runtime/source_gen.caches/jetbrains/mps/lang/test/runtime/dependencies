@@ -112,6 +112,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest" file="BaseTransformationTest.java">
+    <classNode dependClassName="java.awt.GraphicsEnvironment" />
+    <classNode dependClassName="java.awt.Toolkit" />
+    <classNode dependClassName="java.awt.datatransfer.Clipboard" />
+    <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
