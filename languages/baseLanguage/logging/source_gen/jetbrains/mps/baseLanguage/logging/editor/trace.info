@@ -1216,7 +1216,7 @@
       <node id="2034914114981570653" at="141,62,142,22" concept="6" />
       <node id="2034914114981570666" at="146,64,147,76" concept="6" />
       <node id="2034914114981570673" at="151,67,152,44" concept="6" />
-      <node id="2034914114981570747" at="155,81,156,114" concept="1" />
+      <node id="2034914114981570747" at="155,81,156,276" concept="1" />
       <node id="2034914114981570653" at="34,0,37,0" concept="0" trace="loggingLowLevel_nodeSubstitute_Contribution#()V" />
       <node id="2034914114981570653" at="82,0,85,0" concept="0" trace="SMP_Action_35gsnl_a0#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)V" />
       <node id="2034914114981570653" at="117,0,120,0" concept="4" trace="setTraceInfo#(Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;)V" />
@@ -1252,7 +1252,7 @@
       <scope id="2034914114981570653" at="141,62,142,22" />
       <scope id="2034914114981570663" at="146,64,147,76" />
       <scope id="2034914114981570670" at="151,67,152,44" />
-      <scope id="2034914114981570746" at="155,81,156,114" />
+      <scope id="2034914114981570746" at="155,81,156,276" />
       <scope id="2034914114981570653" at="91,13,93,68" />
       <scope id="2034914114981570653" at="94,0,96,22">
         <var name="t" id="2034914114981570653" />
@@ -1375,7 +1375,7 @@
       <node id="5721587534047270770" at="141,62,142,22" concept="6" />
       <node id="5721587534047270783" at="146,64,147,80" concept="6" />
       <node id="5721587534047270792" at="151,67,152,47" concept="6" />
-      <node id="5721587534047270859" at="155,81,156,114" concept="1" />
+      <node id="5721587534047270859" at="155,81,156,276" concept="1" />
       <node id="5721587534047270770" at="34,0,37,0" concept="0" trace="loggingMsg_nodeSubstitute_Contribution#()V" />
       <node id="5721587534047270770" at="82,0,85,0" concept="0" trace="SMP_Action_ax7x23_a0#(Lorg/jetbrains/mps/openapi/language/SEnumerationLiteral;)V" />
       <node id="5721587534047270770" at="117,0,120,0" concept="4" trace="setTraceInfo#(Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;)V" />
@@ -1411,7 +1411,7 @@
       <scope id="5721587534047270770" at="141,62,142,22" />
       <scope id="5721587534047270780" at="146,64,147,80" />
       <scope id="5721587534047270789" at="151,67,152,47" />
-      <scope id="5721587534047270858" at="155,81,156,114" />
+      <scope id="5721587534047270858" at="155,81,156,276" />
       <scope id="5721587534047270770" at="91,13,93,68" />
       <scope id="5721587534047270770" at="94,0,96,22">
         <var name="t" id="5721587534047270770" />
