@@ -1799,6 +1799,106 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3clFbJ" id="78bJneGY0Z5" role="3cqZAp">
+                      <node concept="3clFbS" id="78bJneGY0Z7" role="3clFbx">
+                        <node concept="3SKdUt" id="78bJneGYlIc" role="3cqZAp">
+                          <node concept="3SKdUq" id="78bJneGYlIe" role="3SKWNk">
+                            <property role="3SKdUp" value=" no reason to dump whole file single diff for a completely replaced file." />
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="78bJneGYbK5" role="3cqZAp">
+                          <node concept="2OqwBi" id="78bJneGYcag" role="3clFbG">
+                            <node concept="37vLTw" id="78bJneGYbK3" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2XCiAnQPDFX" resolve="diffs" />
+                            </node>
+                            <node concept="TSZUe" id="78bJneGYcFf" role="2OqNvi">
+                              <node concept="2YIFZM" id="78bJneGYcVq" role="25WWJ7">
+                                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                                <node concept="Xl_RD" id="78bJneGYd46" role="37wK5m">
+                                  <property role="Xl_RC" value="Content replaced: %s (%d -&gt; %d)" />
+                                </node>
+                                <node concept="2OqwBi" id="78bJneGYgXQ" role="37wK5m">
+                                  <node concept="37vLTw" id="78bJneGYgAW" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                                  </node>
+                                  <node concept="liA8E" id="78bJneGYhlq" role="2OqNvi">
+                                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="78bJneGYejj" role="37wK5m">
+                                  <node concept="37vLTw" id="78bJneGYe0Z" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                                  </node>
+                                  <node concept="liA8E" id="78bJneGYeE3" role="2OqNvi">
+                                    <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="78bJneGYfDd" role="37wK5m">
+                                  <node concept="37vLTw" id="78bJneGYfj2" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
+                                  </node>
+                                  <node concept="liA8E" id="78bJneGYg3S" role="2OqNvi">
+                                    <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3N13vt" id="78bJneGYliq" role="3cqZAp" />
+                      </node>
+                      <node concept="1Wc70l" id="78bJneGY79G" role="3clFbw">
+                        <node concept="3y3z36" id="78bJneGYaf3" role="3uHU7w">
+                          <node concept="2OqwBi" id="78bJneGYb6a" role="3uHU7w">
+                            <node concept="37vLTw" id="78bJneGYaxn" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
+                            </node>
+                            <node concept="liA8E" id="78bJneGYbwd" role="2OqNvi">
+                              <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="78bJneGY8YJ" role="3uHU7B">
+                            <node concept="37vLTw" id="78bJneGY8_C" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                            </node>
+                            <node concept="liA8E" id="78bJneGY9ig" role="2OqNvi">
+                              <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="1eOMI4" id="78bJneGY8hp" role="3uHU7B">
+                          <node concept="22lmx$" id="78bJneGY43O" role="1eOMHV">
+                            <node concept="3clFbC" id="78bJneGY2zz" role="3uHU7B">
+                              <node concept="2OqwBi" id="78bJneGY1HD" role="3uHU7B">
+                                <node concept="37vLTw" id="78bJneGY1xb" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
+                                </node>
+                                <node concept="liA8E" id="78bJneGY1Op" role="2OqNvi">
+                                  <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                                </node>
+                              </node>
+                              <node concept="3cmrfG" id="78bJneGY2CJ" role="3uHU7w">
+                                <property role="3cmrfH" value="0" />
+                              </node>
+                            </node>
+                            <node concept="3clFbC" id="78bJneGY62T" role="3uHU7w">
+                              <node concept="2OqwBi" id="78bJneGY4HJ" role="3uHU7B">
+                                <node concept="37vLTw" id="78bJneGY4kG" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
+                                </node>
+                                <node concept="liA8E" id="78bJneGY56Z" role="2OqNvi">
+                                  <ref role="37wK5l" to="guwi:~File.length():long" resolve="length" />
+                                </node>
+                              </node>
+                              <node concept="3cmrfG" id="78bJneGY6kE" role="3uHU7w">
+                                <property role="3cmrfH" value="0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3cpWs8" id="4E$kaclSekC" role="3cqZAp">
                       <node concept="3cpWsn" id="4E$kaclSekD" role="3cpWs9">
                         <property role="TrG5h" value="olines" />

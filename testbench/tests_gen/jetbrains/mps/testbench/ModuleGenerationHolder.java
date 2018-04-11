@@ -185,6 +185,11 @@ public class ModuleGenerationHolder {
           if (isBinary(name)) {
             continue;
           }
+          if ((onext.length() == 0 || rnext.length() == 0) && onext.length() != rnext.length()) {
+            //  no reason to dump whole file single diff for a completely replaced file. 
+            ListSequence.fromList(diffs).addElement(String.format("Content replaced: %s (%d -> %d)", onext.getPath(), onext.length(), rnext.length()));
+            continue;
+          }
           List<String> olines = fileToStrings(onext);
           Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
           List<Delta> deltas = patch.getDeltas();
