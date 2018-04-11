@@ -34,7 +34,6 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   private Project myProject;
   private SModel myModel;
   private SModel myTransientModel;
-  private TestRunner myRunner;
   private final TestParametersCache myParamCache;
   private Environment myEnvironment;
 
@@ -51,16 +50,6 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     myEnvironment = env;
   }
 
-  @Override
-  public void setTestRunner(TestRunner runner) {
-    myRunner = runner;
-  }
-
-  @Override
-  public TestRunner getTestRunner() {
-    return myRunner;
-  }
-
   @Before
   public void setup() throws Exception {
     if (myParamCache != null) {
@@ -74,60 +63,55 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
   }
 
   public void initTest(@NotNull String projectPath, final String model, boolean reOpenProject) throws Exception {
-    if (myRunner != null) {
-      //  fallback for tests that still use TestRunner (e.g. editor tests from mps-as-idea-plugin) 
-      myRunner.initTest(this, projectPath, model, reOpenProject);
-    } else {
-      // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
-      // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
-      if (myEnvironment == null) {
-        String m = String.format("Test %s needs an Environment instance to access %s project instance", getClass().getName(), projectPath);
-        throw new IllegalStateException(m);
-      }
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Initializing the test");
-      }
-
-      // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
-      String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
-      if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
-        throw new IllegalStateException("You shall specify project path with TestInfo root.");
-      }
-      File projectToOpen = new File(expandedProjectPath);
-      Project p = myEnvironment.openProject(projectToOpen);
-      if (reOpenProject) {
-        myEnvironment.closeProject(p);
-        p = myEnvironment.openProject(projectToOpen);
-      }
-      setProject(p);
-      final SRepository repository = p.getRepository();
-      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          // FIXME drop command, needed for transient/temp model initialization only 
-          repository.getModelAccess().executeCommand(new Runnable() {
-            @Override
-            public void run() {
-              SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
-              SModel modelDescriptor = modelRef.resolve(repository);
-              if (modelDescriptor == null) {
-                throw new IllegalStateException(String.format("Can't find model %s in supplied repository %s.", model, repository));
-              }
-              BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
-              // FIXME drop init(), move to TestParametersCache 
-              BaseTransformationTest.this.init();
-            }
-          });
-        }
-      });
-      if (exception != null) {
-        throw new RuntimeException(exception);
-      }
-
-      clearSystemClipboard();
-
-      // XXX do I need that? 
-      myEnvironment.flushAllEvents();
+    // MPS's in-process, out-of-process and ant script executors supply Environment through EnvironmentAware and custom RunnerBuilder  
+    // namely, PushEnvironmentRunnerBuilder. IDEA MPS plugin and IDEA test configurations use this RunnerBuilder, too. 
+    if (myEnvironment == null) {
+      String m = String.format("Test %s needs an Environment instance to access %s project instance", getClass().getName(), projectPath);
+      throw new IllegalStateException(m);
     }
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Initializing the test");
+    }
+
+    // FIXME can access MacrosFactory through environment.getPlatform, if necessary. 
+    String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPath);
+    if ((expandedProjectPath == null || expandedProjectPath.length() == 0)) {
+      throw new IllegalStateException("You shall specify project path with TestInfo root.");
+    }
+    File projectToOpen = new File(expandedProjectPath);
+    Project p = myEnvironment.openProject(projectToOpen);
+    if (reOpenProject) {
+      myEnvironment.closeProject(p);
+      p = myEnvironment.openProject(projectToOpen);
+    }
+    setProject(p);
+    final SRepository repository = p.getRepository();
+    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        // FIXME drop command, needed for transient/temp model initialization only 
+        repository.getModelAccess().executeCommand(new Runnable() {
+          @Override
+          public void run() {
+            SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(model);
+            SModel modelDescriptor = modelRef.resolve(repository);
+            if (modelDescriptor == null) {
+              throw new IllegalStateException(String.format("Can't find model %s in supplied repository %s.", model, repository));
+            }
+            BaseTransformationTest.this.setModelDescriptor(modelDescriptor);
+            // FIXME drop init(), move to TestParametersCache 
+            BaseTransformationTest.this.init();
+          }
+        });
+      }
+    });
+    if (exception != null) {
+      throw new RuntimeException(exception);
+    }
+
+    clearSystemClipboard();
+
+    // XXX do I need that? 
+    myEnvironment.flushAllEvents();
   }
 
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
@@ -200,7 +184,7 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
    * FIXME Poor/unspecified contract. The method used to be invoked only once for a class with tests, although it's not apparent from the name.
    */
   @Override
-  public void init() {
+  public final void init() {
     // if we got here with myParamCache != null, it means it is being initialized, has invoked runner.initTest() which in turn got here. 
     // In this case, the code below shall move into TestParametersCache which is responsible to manage (i.e. dispose) transient model. 
     // However, for transition/migration period, we create a transient model here and let TPC pick it afterwards. This is to support tests that do not use 
@@ -225,7 +209,7 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
    * FIXME explain/justify contract, see {@link jetbrains.mps.lang.test.runtime.BaseTransformationTest#init() }
    */
   @Override
-  public void dispose() {
+  public final void dispose() {
     TemporaryModels.getInstance().dispose(myTransientModel);
     myTransientModel = null;
   }
