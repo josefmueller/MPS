@@ -614,6 +614,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
           Notification notification = new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
           Notifications.Bus.notify(notification, myProject);
+
+          myLastNotification = null;
         }
       }
     }
