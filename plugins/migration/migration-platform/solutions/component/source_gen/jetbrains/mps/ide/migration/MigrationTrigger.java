@@ -73,6 +73,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
+import jetbrains.mps.classloading.DeployListener;
+import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 /**
  * At the first startup, migration is not required
@@ -108,6 +114,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationTrigger.MyReloadListener myReloadListener = new MigrationTrigger.MyReloadListener();
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
+  private MigrationTrigger.MyDeployListener myDeployListener;
   private boolean myListenersAdded = false;
 
   public MigrationTrigger(Project ideaProject, MPSProject p, MigrationRegistry migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
@@ -117,6 +124,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myProperties = props;
     myClassLoaderManager = mpsCore.getClassLoaderManager();
     myReloadManager = reloadManager;
+    this.myDeployListener = new MigrationTrigger.MyDeployListener(ideaProject);
   }
 
 
@@ -211,6 +219,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
   private void addListeners() {
     myListenersAdded = true;
+    myClassLoaderManager.addListener(this.myDeployListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
     myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
@@ -225,6 +234,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
     myReloadManager.removeReloadListener(myReloadListener);
+    myClassLoaderManager.removeListener(this.myDeployListener);
     return false;
   }
 
@@ -248,9 +258,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
 
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty()) {
+    if (isMigrationRequired(modules2Check)) {
       postponeMigration(false);
     }
+  }
+
+  private boolean isMigrationRequired(Iterable<SModule> modules2Check) {
+    return myMigrationRegistry.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationRegistry.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationRegistry.getProjectMigrations()).isNotEmpty();
   }
 
   private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
@@ -572,5 +586,50 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     public MigrationExecutor getExecutor() {
       return this.myExecutor;
     }
+  }
+
+  private class MyDeployListener implements DeployListener {
+    private final Project myIdeaProject;
+    public MyDeployListener(Project ideaProject) {
+      this.myIdeaProject = ideaProject;
+    }
+    public void onUnloaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+    }
+    public void onLoaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+      Iterable<SLanguage> problems = getNotDeployedUsedLanguages(ProjectHelper.fromIdeaProject(this.myIdeaProject));
+      if (Sequence.fromIterable(problems).isEmpty()) {
+        unblockMigrationsCheck();
+      } else {
+        blockMigrationsCheck();
+        if (isMigrationRequired(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject))) {
+          StringBuilder sb = new StringBuilder();
+          sb.append("Migration is required for this project, but some used languages are not deployed.<br>");
+          sb.append("Please make the following languages:");
+          sb.append("<p>");
+          for (SLanguage langProblem : Sequence.fromIterable(problems)) {
+            sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+            sb.append("<br>");
+          }
+          sb.append("</p>");
+
+          Notification notification = new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
+          Notifications.Bus.notify(notification, myProject);
+        }
+      }
+    }
+  }
+
+  private Iterable<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
+    Iterable<SModule> projectModules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
+    Iterable<SLanguage> languages = Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
+      public Iterable<SLanguage> translate(SModule it) {
+        return it.getUsedLanguages();
+      }
+    });
+    return Sequence.fromIterable(languages).where(new IWhereFilter<SLanguage>() {
+      public boolean accept(SLanguage it) {
+        return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
+      }
+    });
   }
 }
