@@ -30,8 +30,7 @@
       <unit at="8,0,11,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.IconContainer" />
     </file>
     <file name="RunConfigurationsInitializer_AppPluginPart.java">
-      <unit at="62,108,73,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_AppPluginPart$1" />
-      <unit at="25,0,117,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_AppPluginPart" />
+      <unit at="20,0,99,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_AppPluginPart" />
     </file>
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/1353230511309561845">
