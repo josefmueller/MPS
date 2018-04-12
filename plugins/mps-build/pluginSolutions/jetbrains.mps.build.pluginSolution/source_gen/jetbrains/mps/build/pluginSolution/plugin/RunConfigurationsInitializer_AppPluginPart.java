@@ -5,30 +5,36 @@ package jetbrains.mps.build.pluginSolution.plugin;
 import jetbrains.mps.plugins.part.ApplicationPluginPart;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.util.Deque;
+import jetbrains.mps.execution.api.configurations.ConfigTypeEnvoy;
+import java.util.ArrayDeque;
 import java.util.List;
-import com.intellij.execution.configurations.ConfigurationType;
+import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.extensions.ExtensionPoint;
+import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import com.intellij.util.containers.ContainerUtil;
+import java.util.Iterator;
 
 public class RunConfigurationsInitializer_AppPluginPart extends ApplicationPluginPart {
   private static final Logger LOG = LogManager.getLogger(RunConfigurationsInitializer_AppPluginPart.class);
-  private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
+  private Deque<ConfigTypeEnvoy> myRegisteredKinds = new ArrayDeque<ConfigTypeEnvoy>();
   private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
   public RunConfigurationsInitializer_AppPluginPart() {
   }
   @Override
   public void init() {
     // register kinds 
-    ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+    ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getRootArea().getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     {
-      BuildScript_Kind runConfigurationKind = new BuildScript_Kind();
-      ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds).addElement(runConfigurationKind);
+      ConfigTypeEnvoy runConfigurationKind = new ConfigTypeEnvoy("Build Script", AllIcons.RunConfigurations.Application, "Build Script", "Build Script");
+      runConfigurationKind.addFactory(new BuildScript_Configuration_Factory(runConfigurationKind));
+      RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.add(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
 
@@ -61,13 +67,17 @@ public class RunConfigurationsInitializer_AppPluginPart extends ApplicationPlugi
   }
   @Override
   public void dispose() {
-    ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    for (ConfigurationType configurationKind : ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds).reversedList()) {
-      configurationExtensionPoint.unregisterExtension(configurationKind);
+    ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getRootArea().getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+    for (Iterator<ConfigTypeEnvoy> it = RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.descendingIterator(); it.hasNext();) {
+      ConfigTypeEnvoy configKind = it.next();
+      configKind.invalidate();
+      configurationExtensionPoint.unregisterExtension(configKind);
     }
-    ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds).clear();
+    RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.clear();
 
-    ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
+    // FIXME why there's no code to unregister 'foreign' configuration factories? 
+
+    ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getRootArea().getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
     for (RuntimeConfigurationProducer producer : ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredProducers)) {
       producerExtensionPoint.unregisterExtension(producer);
     }
