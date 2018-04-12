@@ -71,6 +71,15 @@
     <classNode extendsClassName="com.intellij.execution.configurations.LocatableConfiguration" />
     <classNode extendsClassName="com.intellij.execution.configurations.RunConfigurationBase" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.api.configurations.ConfigTypeEnvoy" file="ConfigTypeEnvoy.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.api.configurations.ConsoleCreator" file="ConsoleCreator.java">
     <classNode dependClassName="com.intellij.execution.impl.ConsoleViewImpl" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
