@@ -125,11 +125,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     myMigrationForbidden = true;
   }
 
-  public synchronized void unblockMigrationsCheck() {
-    assert myBlocked >= 1 : "Non-paired block-unblock method usage";
-    myBlocked--;
-    if (myBlocked == 0) {
-      myMigrationForbidden = false;
+  public void unblockMigrationsCheck() {
+    boolean check = false;
+    synchronized (this) {
+      assert myBlocked >= 1 : "Non-paired block-unblock method usage";
+      myBlocked--;
+      if (myBlocked == 0) {
+        myMigrationForbidden = false;
+        check = true;
+      }
+    }
+
+    if (check) {
       checkMigrationNeeded();
     }
   }
