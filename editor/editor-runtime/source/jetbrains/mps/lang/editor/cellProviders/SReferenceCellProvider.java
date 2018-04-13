@@ -21,9 +21,8 @@ import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorSReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSReference;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -149,8 +148,8 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
 
   protected EditorCell createErrorCell(String error) {
     EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getNode(), error);
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getNode(), DeleteDirection.FORWARD));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getNode(), DeleteDirection.BACKWARD));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorSReference(getNode(), myReferenceLink));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorSReference(getNode(), myReferenceLink));
     return errorCell;
   }
 }
