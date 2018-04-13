@@ -5823,72 +5823,31 @@
                     <property role="Xl_RC" value="" />
                   </node>
                 </node>
-                <node concept="10QFUN" id="5DSVq22ynfx" role="37wK5m">
-                  <node concept="2eloPW" id="5DSVq22ynfO" role="10QFUM">
-                    <property role="2ely0U" value="configuration.name" />
-                    <ref role="3uigEE" to="dj99:~RunConfiguration" resolve="RunConfiguration" />
-                    <node concept="17Uvod" id="5DSVq22yntA" role="lGtFl">
-                      <property role="2qtEX9" value="fqClassName" />
-                      <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1174914042989/1174914081067" />
-                      <node concept="3zFVjK" id="5DSVq22yntB" role="3zH0cK">
-                        <node concept="3clFbS" id="5DSVq22yntC" role="2VODD2">
-                          <node concept="3clFbF" id="5DSVq22yntT" role="3cqZAp">
-                            <node concept="2OqwBi" id="2eOtvO7hROa" role="3clFbG">
-                              <node concept="2OqwBi" id="2eOtvO7hRO5" role="2Oq$k0">
-                                <node concept="1PxgMI" id="2eOtvO7hRO3" role="2Oq$k0">
-                                  <node concept="2OqwBi" id="2eOtvO7hRNY" role="1m5AlR">
-                                    <node concept="30H73N" id="2eOtvO7hRNX" role="2Oq$k0" />
-                                    <node concept="3TrEf2" id="2eOtvO7hRO2" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="tpee:gEShVi6" resolve="creator" />
-                                    </node>
-                                  </node>
-                                  <node concept="chp4Y" id="714IaVdGZ8r" role="3oSUPX">
-                                    <ref role="cht4Q" to="uhxm:3aewtBM3d7u" resolve="RunConfigurationCreator" />
-                                  </node>
-                                </node>
-                                <node concept="3TrEf2" id="2eOtvO7hRO9" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="uhxm:3aewtBM3d7v" resolve="configuration" />
-                                </node>
-                              </node>
-                              <node concept="2qgKlT" id="2eOtvO7hROf" role="2OqNvi">
-                                <ref role="37wK5l" to="i1mc:O$iR4JBsSv" resolve="getFullName" />
-                              </node>
-                            </node>
-                          </node>
+                <node concept="2OqwBi" id="6zMwJmzE9sB" role="37wK5m">
+                  <node concept="2OqwBi" id="5DSVq22y3U9" role="2Oq$k0">
+                    <node concept="liA8E" id="5DSVq22y3Ux" role="2OqNvi">
+                      <ref role="37wK5l" to="3v5a:~RunManager.getConfigurationTemplate(com.intellij.execution.configurations.ConfigurationFactory):com.intellij.execution.RunnerAndConfigurationSettings" resolve="getConfigurationTemplate" />
+                      <node concept="1DoJHT" id="5DSVq22y3W7" role="37wK5m">
+                        <property role="1Dpdpm" value="getConfigurationFactory" />
+                        <node concept="3uibUv" id="5DSVq22y3W8" role="1Ez5kq">
+                          <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
                         </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="5DSVq22y3Tt" role="2Oq$k0">
+                      <node concept="1DoJHT" id="5DSVq22y3Tu" role="2Oq$k0">
+                        <property role="1Dpdpm" value="getContext" />
+                        <node concept="3uibUv" id="5DSVq22y3Tv" role="1Ez5kq">
+                          <ref role="3uigEE" to="feyl:~ConfigurationContext" resolve="ConfigurationContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5DSVq22y3Tw" role="2OqNvi">
+                        <ref role="37wK5l" to="feyl:~ConfigurationContext.getRunManager():com.intellij.execution.RunManager" resolve="getRunManager" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="6zMwJmzE9sB" role="10QFUP">
-                    <node concept="2OqwBi" id="5DSVq22y3U9" role="2Oq$k0">
-                      <node concept="2YIFZM" id="5DSVq22y3Ts" role="2Oq$k0">
-                        <ref role="37wK5l" to="zjj4:~RunManagerImpl.getInstanceImpl(com.intellij.openapi.project.Project):com.intellij.execution.impl.RunManagerImpl" resolve="getInstanceImpl" />
-                        <ref role="1Pybhc" to="zjj4:~RunManagerImpl" resolve="RunManagerImpl" />
-                        <node concept="2OqwBi" id="5DSVq22y3Tt" role="37wK5m">
-                          <node concept="1DoJHT" id="5DSVq22y3Tu" role="2Oq$k0">
-                            <property role="1Dpdpm" value="getContext" />
-                            <node concept="3uibUv" id="5DSVq22y3Tv" role="1Ez5kq">
-                              <ref role="3uigEE" to="feyl:~ConfigurationContext" resolve="ConfigurationContext" />
-                            </node>
-                          </node>
-                          <node concept="liA8E" id="5DSVq22y3Tw" role="2OqNvi">
-                            <ref role="37wK5l" to="feyl:~ConfigurationContext.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="5DSVq22y3Ux" role="2OqNvi">
-                        <ref role="37wK5l" to="zjj4:~RunManagerImpl.getConfigurationTemplate(com.intellij.execution.configurations.ConfigurationFactory):com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl" resolve="getConfigurationTemplate" />
-                        <node concept="1DoJHT" id="5DSVq22y3W7" role="37wK5m">
-                          <property role="1Dpdpm" value="getConfigurationFactory" />
-                          <node concept="3uibUv" id="5DSVq22y3W8" role="1Ez5kq">
-                            <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6zMwJmzE9sH" role="2OqNvi">
-                      <ref role="37wK5l" to="zjj4:~RunnerAndConfigurationSettingsImpl.getConfiguration():com.intellij.execution.configurations.RunConfiguration" resolve="getConfiguration" />
-                    </node>
+                  <node concept="liA8E" id="6zMwJmzE9sH" role="2OqNvi">
+                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getConfiguration():com.intellij.execution.configurations.RunConfiguration" resolve="getConfiguration" />
                   </node>
                 </node>
               </node>

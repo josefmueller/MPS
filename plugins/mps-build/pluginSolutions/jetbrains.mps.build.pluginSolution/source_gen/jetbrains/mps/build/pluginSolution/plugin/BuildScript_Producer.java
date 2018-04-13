@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.intellij.execution.impl.RunManagerImpl;
 
 public class BuildScript_Producer {
   private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory";
@@ -46,7 +45,7 @@ public class BuildScript_Producer {
         if (name == null) {
           return null;
         }
-        BuildScript_Configuration configuration = ((BuildScript_Configuration) getConfigurationFactory().createConfiguration("" + name, (BuildScript_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+        BuildScript_Configuration configuration = ((BuildScript_Configuration) getConfigurationFactory().createConfiguration("" + name, getContext().getRunManager().getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
         configuration.getNodePointer().setNode(containingRoot);
         return configuration;
       }
