@@ -5,8 +5,10 @@ package jetbrains.mps.execution.api.configurations;
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
 import java.util.concurrent.CopyOnWriteArrayList;
-import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
 
 /**
  * IDEA doesn't support RunConfiguration instances that come and go (reloadable; see RunnerAndConfigurationSettingsImpl, which stores RunConfiguration instance), therefore, we have to register
@@ -22,7 +24,7 @@ public final class ConfigTypeEnvoy implements ConfigurationType {
   private final Icon myIcon;
   private final String myDisplayName;
   private final String myDescription;
-  private final CopyOnWriteArrayList<ConfigurationFactory> myFactories = new CopyOnWriteArrayList<ConfigurationFactory>();
+  private final CopyOnWriteArrayList<ConfigFactoryEnvoy> myFactories = new CopyOnWriteArrayList<ConfigFactoryEnvoy>();
   private boolean myIsInvalid;
 
   public ConfigTypeEnvoy(@NotNull String id, Icon icon, String displayName, String description) {
@@ -72,16 +74,19 @@ public final class ConfigTypeEnvoy implements ConfigurationType {
    */
   public void invalidate() {
     myIsInvalid = true;
+    for (ConfigFactoryEnvoy f : ListSequence.fromList(myFactories)) {
+      f.invalidate();
+    }
   }
+
   /**
    * MPS INTERNAL API, DO NOT USE OUTSIDE OF MPS OR MPS-GENERATED CODE
    * 
-   * Register a factory with the configuration type
-   * 
+   * Register a factory with the configuration type for given run configuration implementation class
    */
-  public void addFactory(ConfigurationFactory factory) {
+  public void addFactoryFor(@NotNull String runConfigId, @NotNull Class<? extends BaseMpsRunConfiguration> runCfg) {
     assert !(myIsInvalid);
-    myFactories.add(factory);
+    myFactories.add(new ConfigFactoryEnvoy(this, runCfg, runConfigId));
   }
 
   /**
@@ -89,7 +94,14 @@ public final class ConfigTypeEnvoy implements ConfigurationType {
    * 
    * Unregister a previosul registerd factory with the configuration type
    */
-  public void removeFactory(ConfigurationFactory factory) {
-    myFactories.remove(factory);
+  public void removeFactoryFor(@NotNull Class<? extends BaseMpsRunConfiguration> runCfg) {
+    for (Iterator<ConfigFactoryEnvoy> it = myFactories.iterator(); it.hasNext();) {
+      ConfigFactoryEnvoy next = it.next();
+      if (next.getRunConfigClass() == runCfg) {
+        next.invalidate();
+        it.remove();
+        // intentionally do not break as there's no check to ensure no duplicated addFactoryFor(sameClass) calls. 
+      }
+    }
   }
 }

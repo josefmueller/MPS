@@ -34,7 +34,10 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
-    <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="hq8m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.options(MPS.IDEA/)" />
+    <import index="ic0f" ref="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
+    <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
+    <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -170,6 +173,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -214,6 +218,10 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -243,6 +251,9 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="1144231330558" name="jetbrains.mps.baseLanguage.structure.ForStatement" flags="nn" index="1Dw8fO">
+        <child id="1144231399730" name="condition" index="1Dwp0S" />
+      </concept>
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -257,6 +268,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -279,6 +293,9 @@
       <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
         <child id="2546654756694997556" name="reference" index="92FcQ" />
         <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
       <concept id="6832197706140518107" name="jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference" flags="ng" index="zr_56" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
@@ -479,6 +496,75 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Uobb" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="CZHNfvxzta" role="jymVt" />
+    <node concept="3clFb_" id="CZHNfvxzVC" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isValid" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="true" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="CZHNfvxzVF" role="3clF47">
+        <node concept="3cpWs8" id="CZHNfvx$Ch" role="3cqZAp">
+          <node concept="3cpWsn" id="CZHNfvx$Ci" role="3cpWs9">
+            <property role="TrG5h" value="factory" />
+            <node concept="3uibUv" id="CZHNfvx$Cg" role="1tU5fm">
+              <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+            </node>
+            <node concept="1rXfSq" id="CZHNfvx$Cj" role="33vP2m">
+              <ref role="37wK5l" to="dj99:~RunConfigurationBase.getFactory():com.intellij.execution.configurations.ConfigurationFactory" resolve="getFactory" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="CZHNfvx$Ti" role="3cqZAp">
+          <node concept="3clFbS" id="CZHNfvx$Tk" role="3clFbx">
+            <node concept="3cpWs6" id="CZHNfvx_zh" role="3cqZAp">
+              <node concept="2OqwBi" id="CZHNfvxBJw" role="3cqZAk">
+                <node concept="1eOMI4" id="CZHNfvxB$v" role="2Oq$k0">
+                  <node concept="10QFUN" id="CZHNfvxAPC" role="1eOMHV">
+                    <node concept="3uibUv" id="CZHNfvxB5k" role="10QFUM">
+                      <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
+                    </node>
+                    <node concept="37vLTw" id="CZHNfvx_zj" role="10QFUP">
+                      <ref role="3cqZAo" node="CZHNfvx$Ci" resolve="factory" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="CZHNfvxBTF" role="2OqNvi">
+                  <ref role="37wK5l" node="LPAYBxZiit" resolve="isValid" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="CZHNfvx_bM" role="3clFbw">
+            <node concept="3uibUv" id="CZHNfvx_mA" role="2ZW6by">
+              <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
+            </node>
+            <node concept="37vLTw" id="CZHNfvx_2_" role="2ZW6bz">
+              <ref role="3cqZAo" node="CZHNfvx$Ci" resolve="factory" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="CZHNfvx_Tp" role="3cqZAp">
+          <node concept="3clFbT" id="CZHNfvxAa1" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="CZHNfvxzC$" role="1B3o_S" />
+      <node concept="10P_77" id="CZHNfvxzTh" role="3clF45" />
+      <node concept="P$JXv" id="CZHNfvxC1F" role="lGtFl">
+        <node concept="TZ5HA" id="CZHNfvxC1G" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxC1H" role="1dT_Ay">
+            <property role="1dT_AB" value="MPS plugin part manages validity of configuration factories it provides according to MPS module/plugin/class reloading events." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="CZHNfvxC93" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxC94" role="1dT_Ay">
+            <property role="1dT_AB" value="When invalid, run configuration shall assume its classes are about to be disposed and its classloader is likely already non-functional." />
+          </node>
+        </node>
       </node>
     </node>
   </node>
@@ -1907,6 +1993,27 @@
         <property role="TrG5h" value="factoryClassName" />
         <node concept="17QB3L" id="7pREJKpbIha" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="CZHNfvzPh9" role="lGtFl">
+        <node concept="TZ5HI" id="CZHNfvzS7H" role="3nqlJM">
+          <node concept="TZ5HA" id="CZHNfvzS7I" role="3HnX3l">
+            <node concept="1dT_AC" id="CZHNfvzS81" role="1dT_Ay">
+              <property role="1dT_AB" value="there's no value in specific factory class. The cons left for compatibility with generated code, templates use counterpart with ConfigurationFactory now." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="CZHNfvzRJz" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="CZHNfvzRJ$" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="CZHNfvzRJ_" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="CZHNfvzRJA" role="2B70Vg">
+            <property role="$nhwW" value="2018.2" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="224UGqZGPH8" role="jymVt" />
     <node concept="3clFbW" id="7pREJKpbIhb" role="jymVt">
@@ -2992,6 +3099,18 @@
       <node concept="2AHcQZ" id="7pREJKpbIlu" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
+      <node concept="2AHcQZ" id="CZHNfvzPtA" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="CZHNfvzQ8P" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="CZHNfvzR11" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="CZHNfvzRzj" role="2B70Vg">
+            <property role="$nhwW" value="2018.2" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3Tm1VV" id="7pREJKpbIlv" role="1B3o_S" />
     <node concept="16euLQ" id="7pREJKpbIlw" role="16eVyc">
@@ -3047,15 +3166,15 @@
       <node concept="3Tm6S6" id="6Frip1ceUTO" role="1B3o_S" />
       <node concept="3uibUv" id="6Frip1cf316" role="1tU5fm">
         <ref role="3uigEE" to="5zyv:~CopyOnWriteArrayList" resolve="CopyOnWriteArrayList" />
-        <node concept="3uibUv" id="6Frip1cf3vv" role="11_B2D">
-          <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+        <node concept="3uibUv" id="CZHNfv$8m2" role="11_B2D">
+          <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
         </node>
       </node>
       <node concept="2ShNRf" id="6Frip1cf3EJ" role="33vP2m">
         <node concept="1pGfFk" id="6Frip1cfsyq" role="2ShVmc">
           <ref role="37wK5l" to="5zyv:~CopyOnWriteArrayList.&lt;init&gt;()" resolve="CopyOnWriteArrayList" />
-          <node concept="3uibUv" id="6Frip1cfsV0" role="1pMfVU">
-            <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+          <node concept="3uibUv" id="CZHNfv$8_a" role="1pMfVU">
+            <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
           </node>
         </node>
       </node>
@@ -3369,6 +3488,26 @@
             </node>
           </node>
         </node>
+        <node concept="2Gpval" id="CZHNfv$R8O" role="3cqZAp">
+          <node concept="2GrKxI" id="CZHNfv$R8Q" role="2Gsz3X">
+            <property role="TrG5h" value="f" />
+          </node>
+          <node concept="37vLTw" id="CZHNfv$Rl2" role="2GsD0m">
+            <ref role="3cqZAo" node="6Frip1cf36M" resolve="myFactories" />
+          </node>
+          <node concept="3clFbS" id="CZHNfv$R8U" role="2LFqv$">
+            <node concept="3clFbF" id="CZHNfv$RFH" role="3cqZAp">
+              <node concept="2OqwBi" id="CZHNfv$RI2" role="3clFbG">
+                <node concept="2GrUjf" id="CZHNfv$RFG" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="CZHNfv$R8Q" resolve="f" />
+                </node>
+                <node concept="liA8E" id="CZHNfv$Sri" role="2OqNvi">
+                  <ref role="37wK5l" node="LPAYBxYKzb" resolve="invalidate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="P$JXv" id="6Frip1cfHm8" role="lGtFl">
         <node concept="TZ5HA" id="6Frip1cfHm9" role="TZ5H$">
@@ -3388,61 +3527,83 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="6Frip1ceT4I" role="jymVt">
+    <node concept="2tJIrI" id="7N43e7FZiID" role="jymVt" />
+    <node concept="3clFb_" id="7N43e7FZi3k" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addFactory" />
+      <property role="TrG5h" value="addFactoryFor" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="6Frip1ceT4L" role="3clF47">
-        <node concept="1gVbGN" id="6Frip1cfFZK" role="3cqZAp">
-          <node concept="3fqX7Q" id="6Frip1cfG7l" role="1gVkn0">
-            <node concept="37vLTw" id="6Frip1cfGk6" role="3fr31v">
+      <node concept="3clFbS" id="7N43e7FZi3l" role="3clF47">
+        <node concept="1gVbGN" id="7N43e7FZi3m" role="3cqZAp">
+          <node concept="3fqX7Q" id="7N43e7FZi3n" role="1gVkn0">
+            <node concept="37vLTw" id="7N43e7FZi3o" role="3fr31v">
               <ref role="3cqZAo" node="6Frip1cfAh$" resolve="myIsInvalid" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6Frip1cfwPC" role="3cqZAp">
-          <node concept="2OqwBi" id="6Frip1cfxfg" role="3clFbG">
-            <node concept="37vLTw" id="6Frip1cfwPB" role="2Oq$k0">
+        <node concept="3clFbF" id="7N43e7FZi3p" role="3cqZAp">
+          <node concept="2OqwBi" id="7N43e7FZi3q" role="3clFbG">
+            <node concept="37vLTw" id="7N43e7FZi3r" role="2Oq$k0">
               <ref role="3cqZAo" node="6Frip1cf36M" resolve="myFactories" />
             </node>
-            <node concept="liA8E" id="6Frip1cfxHv" role="2OqNvi">
+            <node concept="liA8E" id="7N43e7FZi3s" role="2OqNvi">
               <ref role="37wK5l" to="5zyv:~CopyOnWriteArrayList.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="37vLTw" id="6Frip1cfy1D" role="37wK5m">
-                <ref role="3cqZAo" node="6Frip1ceTlx" resolve="factory" />
+              <node concept="2ShNRf" id="7N43e7FZi3t" role="37wK5m">
+                <node concept="1pGfFk" id="7N43e7FZi3u" role="2ShVmc">
+                  <ref role="37wK5l" node="LPAYBxYuHd" resolve="ConfigFactoryEnvoy" />
+                  <node concept="Xjq3P" id="7N43e7FZi3v" role="37wK5m" />
+                  <node concept="37vLTw" id="7N43e7FZi3w" role="37wK5m">
+                    <ref role="3cqZAo" node="7N43e7FZi3A" resolve="runCfg" />
+                  </node>
+                  <node concept="37vLTw" id="7N43e7FZlpr" role="37wK5m">
+                    <ref role="3cqZAo" node="7N43e7FZji$" resolve="runConfigId" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="6Frip1ceSLo" role="1B3o_S" />
-      <node concept="3cqZAl" id="6Frip1ceSZ2" role="3clF45" />
-      <node concept="37vLTG" id="6Frip1ceTlx" role="3clF46">
-        <property role="TrG5h" value="factory" />
-        <node concept="3uibUv" id="6Frip1ceTlw" role="1tU5fm">
-          <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+      <node concept="3Tm1VV" id="7N43e7FZi3$" role="1B3o_S" />
+      <node concept="3cqZAl" id="7N43e7FZi3_" role="3clF45" />
+      <node concept="37vLTG" id="7N43e7FZji$" role="3clF46">
+        <property role="TrG5h" value="runConfigId" />
+        <node concept="3uibUv" id="7N43e7FZjPx" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+        <node concept="2AHcQZ" id="7N43e7FZjXl" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
-      <node concept="P$JXv" id="6Frip1cf$4V" role="lGtFl">
-        <node concept="TZ5HA" id="6Frip1cf$4W" role="TZ5H$">
-          <node concept="1dT_AC" id="6Frip1cf$4X" role="1dT_Ay">
+      <node concept="37vLTG" id="7N43e7FZi3A" role="3clF46">
+        <property role="TrG5h" value="runCfg" />
+        <node concept="3uibUv" id="7N43e7FZi3B" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qUE_q" id="7N43e7FZi3C" role="11_B2D">
+            <node concept="3uibUv" id="7N43e7FZi3D" role="3qUE_r">
+              <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="7N43e7FZk4R" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="7N43e7FZi3E" role="lGtFl">
+        <node concept="TZ5HA" id="7N43e7FZi3F" role="TZ5H$">
+          <node concept="1dT_AC" id="7N43e7FZi3G" role="1dT_Ay">
             <property role="1dT_AB" value="MPS INTERNAL API, DO NOT USE OUTSIDE OF MPS OR MPS-GENERATED CODE" />
           </node>
         </node>
-        <node concept="TZ5HA" id="6Frip1cf$kg" role="TZ5H$">
-          <node concept="1dT_AC" id="6Frip1cf$kh" role="1dT_Ay">
+        <node concept="TZ5HA" id="7N43e7FZi3H" role="TZ5H$">
+          <node concept="1dT_AC" id="7N43e7FZi3I" role="1dT_Ay">
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TZ5HA" id="6Frip1cf$kI" role="TZ5H$">
-          <node concept="1dT_AC" id="6Frip1cf$kJ" role="1dT_Ay">
-            <property role="1dT_AB" value="Register a factory with the configuration type" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="6Frip1cf$ku" role="TZ5H$">
-          <node concept="1dT_AC" id="6Frip1cf$kv" role="1dT_Ay">
-            <property role="1dT_AB" value="" />
+        <node concept="TZ5HA" id="7N43e7FZi3J" role="TZ5H$">
+          <node concept="1dT_AC" id="7N43e7FZi3K" role="1dT_Ay">
+            <property role="1dT_AB" value="Register a factory with the configuration type for given run configuration implementation class" />
           </node>
         </node>
       </node>
@@ -3450,31 +3611,113 @@
     <node concept="2tJIrI" id="6Frip1ceTRc" role="jymVt" />
     <node concept="3clFb_" id="6Frip1ceTFd" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="removeFactory" />
+      <property role="TrG5h" value="removeFactoryFor" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="6Frip1ceTFe" role="3clF47">
-        <node concept="3clFbF" id="6Frip1cfyoR" role="3cqZAp">
-          <node concept="2OqwBi" id="6Frip1cfyMB" role="3clFbG">
-            <node concept="37vLTw" id="6Frip1cfyoQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="6Frip1cf36M" resolve="myFactories" />
-            </node>
-            <node concept="liA8E" id="6Frip1cfzC0" role="2OqNvi">
-              <ref role="37wK5l" to="5zyv:~CopyOnWriteArrayList.remove(java.lang.Object):boolean" resolve="remove" />
-              <node concept="37vLTw" id="6Frip1cfzWa" role="37wK5m">
-                <ref role="3cqZAo" node="6Frip1ceTFh" resolve="factory" />
+        <node concept="1Dw8fO" id="CZHNfv$oyc" role="3cqZAp">
+          <node concept="3clFbS" id="CZHNfv$oye" role="2LFqv$">
+            <node concept="3cpWs8" id="CZHNfv$s76" role="3cqZAp">
+              <node concept="3cpWsn" id="CZHNfv$s77" role="3cpWs9">
+                <property role="TrG5h" value="next" />
+                <node concept="3uibUv" id="CZHNfv$s6S" role="1tU5fm">
+                  <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
+                </node>
+                <node concept="2OqwBi" id="CZHNfv$s78" role="33vP2m">
+                  <node concept="37vLTw" id="CZHNfv$s79" role="2Oq$k0">
+                    <ref role="3cqZAo" node="CZHNfv$oyf" resolve="it" />
+                  </node>
+                  <node concept="liA8E" id="CZHNfv$s7a" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+                  </node>
+                </node>
               </node>
+            </node>
+            <node concept="3clFbJ" id="CZHNfv$u07" role="3cqZAp">
+              <node concept="3clFbS" id="CZHNfv$u09" role="3clFbx">
+                <node concept="3clFbF" id="CZHNfv$uTE" role="3cqZAp">
+                  <node concept="2OqwBi" id="CZHNfv$v1J" role="3clFbG">
+                    <node concept="37vLTw" id="CZHNfv$uTC" role="2Oq$k0">
+                      <ref role="3cqZAo" node="CZHNfv$s77" resolve="next" />
+                    </node>
+                    <node concept="liA8E" id="CZHNfv$v5b" role="2OqNvi">
+                      <ref role="37wK5l" node="LPAYBxYKzb" resolve="invalidate" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="CZHNfv$uvo" role="3cqZAp">
+                  <node concept="2OqwBi" id="CZHNfv$uxV" role="3clFbG">
+                    <node concept="37vLTw" id="CZHNfv$uvm" role="2Oq$k0">
+                      <ref role="3cqZAo" node="CZHNfv$oyf" resolve="it" />
+                    </node>
+                    <node concept="liA8E" id="CZHNfv$uF3" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Iterator.remove():void" resolve="remove" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="CZHNfv$vKm" role="3cqZAp">
+                  <node concept="3SKdUq" id="CZHNfv$vKo" role="3SKWNk">
+                    <property role="3SKdUp" value="intentionally do not break as there's no check to ensure no duplicated addFactoryFor(sameClass) calls." />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="CZHNfv$t73" role="3clFbw">
+                <node concept="37vLTw" id="CZHNfv$tNM" role="3uHU7w">
+                  <ref role="3cqZAo" node="CZHNfv$24K" resolve="runCfg" />
+                </node>
+                <node concept="2OqwBi" id="CZHNfv$slo" role="3uHU7B">
+                  <node concept="37vLTw" id="CZHNfv$s7b" role="2Oq$k0">
+                    <ref role="3cqZAo" node="CZHNfv$s77" resolve="next" />
+                  </node>
+                  <node concept="liA8E" id="CZHNfv$srM" role="2OqNvi">
+                    <ref role="37wK5l" node="CZHNfv$bpY" resolve="getRunConfigClass" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="CZHNfv$oyf" role="1Duv9x">
+            <property role="TrG5h" value="it" />
+            <node concept="3uibUv" id="CZHNfv$oGs" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Iterator" resolve="Iterator" />
+              <node concept="3uibUv" id="CZHNfv$oO_" role="11_B2D">
+                <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="CZHNfv$qjX" role="33vP2m">
+              <node concept="37vLTw" id="CZHNfv$poo" role="2Oq$k0">
+                <ref role="3cqZAo" node="6Frip1cf36M" resolve="myFactories" />
+              </node>
+              <node concept="liA8E" id="CZHNfv$qMr" role="2OqNvi">
+                <ref role="37wK5l" to="5zyv:~CopyOnWriteArrayList.iterator():java.util.Iterator" resolve="iterator" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="CZHNfv$rfO" role="1Dwp0S">
+            <node concept="37vLTw" id="CZHNfv$qZV" role="2Oq$k0">
+              <ref role="3cqZAo" node="CZHNfv$oyf" resolve="it" />
+            </node>
+            <node concept="liA8E" id="CZHNfv$ruD" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Iterator.hasNext():boolean" resolve="hasNext" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="6Frip1ceTFf" role="1B3o_S" />
       <node concept="3cqZAl" id="6Frip1ceTFg" role="3clF45" />
-      <node concept="37vLTG" id="6Frip1ceTFh" role="3clF46">
-        <property role="TrG5h" value="factory" />
-        <node concept="3uibUv" id="6Frip1ceTFi" role="1tU5fm">
-          <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+      <node concept="37vLTG" id="CZHNfv$24K" role="3clF46">
+        <property role="TrG5h" value="runCfg" />
+        <node concept="3uibUv" id="CZHNfv$24L" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qUE_q" id="CZHNfv$24M" role="11_B2D">
+            <node concept="3uibUv" id="CZHNfv$24N" role="3qUE_r">
+              <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="7N43e7FZkir" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="P$JXv" id="6Frip1cf$l2" role="lGtFl">
@@ -3492,6 +3735,837 @@
           <node concept="1dT_AC" id="6Frip1cf$$g" role="1dT_Ay">
             <property role="1dT_AB" value="Unregister a previosul registerd factory with the configuration type" />
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="LPAYBxYlTL">
+    <property role="TrG5h" value="ConfigFactoryEnvoy" />
+    <property role="1EXbeo" value="true" />
+    <node concept="312cEg" id="LPAYBxYKMO" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myIsIvalid" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="LPAYBxYKGk" role="1B3o_S" />
+      <node concept="10P_77" id="LPAYBxYKKK" role="1tU5fm" />
+    </node>
+    <node concept="312cEg" id="LPAYBxZk6X" role="jymVt">
+      <property role="TrG5h" value="myDelegateClass" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="LPAYBxZk6Y" role="1B3o_S" />
+      <node concept="3uibUv" id="LPAYBxZk70" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3qUE_q" id="LPAYBxZk71" role="11_B2D">
+          <node concept="3uibUv" id="79O2sWFR0VL" role="3qUE_r">
+            <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="7N43e7FZcDX" role="jymVt">
+      <property role="TrG5h" value="myName" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7N43e7FZcDY" role="1B3o_S" />
+      <node concept="3uibUv" id="7N43e7FZcE0" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxYuFo" role="jymVt" />
+    <node concept="3clFbW" id="LPAYBxYuHd" role="jymVt">
+      <node concept="3cqZAl" id="LPAYBxYuHf" role="3clF45" />
+      <node concept="3clFbS" id="LPAYBxYuHh" role="3clF47">
+        <node concept="XkiVB" id="LPAYBxYuNF" role="3cqZAp">
+          <ref role="37wK5l" to="dj99:~ConfigurationFactory.&lt;init&gt;(com.intellij.execution.configurations.ConfigurationType)" resolve="ConfigurationFactory" />
+          <node concept="37vLTw" id="LPAYBxYuPn" role="37wK5m">
+            <ref role="3cqZAo" node="LPAYBxYuLC" resolve="configType" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="LPAYBxZk73" role="3cqZAp">
+          <node concept="37vLTI" id="LPAYBxZk75" role="3clFbG">
+            <node concept="37vLTw" id="LPAYBxZk78" role="37vLTJ">
+              <ref role="3cqZAo" node="LPAYBxZk6X" resolve="myDelegateClass" />
+            </node>
+            <node concept="37vLTw" id="LPAYBxZk79" role="37vLTx">
+              <ref role="3cqZAo" node="LPAYBxZjTD" resolve="delegateClass" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7N43e7FZcE1" role="3cqZAp">
+          <node concept="37vLTI" id="7N43e7FZcE3" role="3clFbG">
+            <node concept="37vLTw" id="7N43e7FZcE6" role="37vLTJ">
+              <ref role="3cqZAo" node="7N43e7FZcDX" resolve="myName" />
+            </node>
+            <node concept="37vLTw" id="7N43e7FZcE7" role="37vLTx">
+              <ref role="3cqZAo" node="7N43e7FZaCL" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxYuLC" role="3clF46">
+        <property role="TrG5h" value="configType" />
+        <node concept="3uibUv" id="LPAYBxYuLB" role="1tU5fm">
+          <ref role="3uigEE" node="6Frip1ceDsW" resolve="ConfigTypeEnvoy" />
+        </node>
+        <node concept="2AHcQZ" id="CZHNfvxYse" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxZjTD" role="3clF46">
+        <property role="TrG5h" value="delegateClass" />
+        <node concept="3uibUv" id="LPAYBxZjWT" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+          <node concept="3qUE_q" id="LPAYBxZk0j" role="11_B2D">
+            <node concept="3uibUv" id="79O2sWFR0Nx" role="3qUE_r">
+              <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="CZHNfvxYiQ" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7N43e7FZaCL" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="3uibUv" id="7N43e7FZcBe" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="CZHNfv$94I" role="jymVt" />
+    <node concept="3clFb_" id="CZHNfv$bpY" role="jymVt">
+      <property role="TrG5h" value="getRunConfigClass" />
+      <node concept="3uibUv" id="CZHNfv$bX0" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+        <node concept="3qTvmN" id="CZHNfv$cut" role="11_B2D" />
+      </node>
+      <node concept="3clFbS" id="CZHNfv$bq1" role="3clF47">
+        <node concept="3clFbF" id="CZHNfv$ia8" role="3cqZAp">
+          <node concept="37vLTw" id="CZHNfv$ia7" role="3clFbG">
+            <ref role="3cqZAo" node="LPAYBxZk6X" resolve="myDelegateClass" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="CZHNfv$if3" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYKzb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="invalidate" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="LPAYBxYKze" role="3clF47">
+        <node concept="3SKdUt" id="LPAYBxZjSo" role="3cqZAp">
+          <node concept="3SKdUq" id="LPAYBxZjSq" role="3SKWNk">
+            <property role="3SKdUp" value="package-local, perhaps, with ConfigType.invalidateFactory(Class&lt;RunConfiguration&gt;)" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="LPAYBxYLdB" role="3cqZAp">
+          <node concept="37vLTI" id="LPAYBxYLnQ" role="3clFbG">
+            <node concept="3clFbT" id="LPAYBxYLoZ" role="37vLTx">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="37vLTw" id="LPAYBxYLdA" role="37vLTJ">
+              <ref role="3cqZAo" node="LPAYBxYKMO" resolve="myIsIvalid" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="CZHNfvxGp$" role="3cqZAp">
+          <node concept="3SKdUq" id="CZHNfvxGpA" role="3SKWNk">
+            <property role="3SKdUp" value=" perhaps, shall nullify myDelegateClass to release any reference to stale class?" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="LPAYBxYKx7" role="3clF45" />
+      <node concept="P$JXv" id="CZHNfvxq7w" role="lGtFl">
+        <node concept="TZ5HA" id="CZHNfvxq7x" role="TZ5H$">
+          <node concept="1dT_AC" id="CZHNfvxq7y" role="1dT_Ay">
+            <property role="1dT_AB" value="Factory may get invalidated independent from ConfigurationType (i.e. if the latter is defined in another, non-reloaded plugin)" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxYuST" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYuV_" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getId" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYuVA" role="1B3o_S" />
+      <node concept="2AHcQZ" id="LPAYBxYuVC" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+      </node>
+      <node concept="3uibUv" id="LPAYBxYuVD" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="LPAYBxYuVE" role="3clF47">
+        <node concept="3SKdUt" id="LPAYBxYLsN" role="3cqZAp">
+          <node concept="3SKdUq" id="LPAYBxYLsP" role="3SKWNk">
+            <property role="3SKdUp" value="though javadoc in superclass suggests to use getType().getId(), it doesn't allow to distinguish multiple factories for the same type" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="7N43e7FZg3k" role="3cqZAp">
+          <node concept="3SKdUq" id="7N43e7FZg3m" role="3SKWNk">
+            <property role="3SKdUp" value="However, would be better to distinguish id from user-friendly name" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="7N43e7FZfKz" role="3cqZAp">
+          <node concept="37vLTw" id="7N43e7FZfKu" role="3clFbG">
+            <ref role="3cqZAo" node="7N43e7FZcDX" resolve="myName" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYuVF" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7N43e7FZdlw" role="jymVt" />
+    <node concept="3clFb_" id="7N43e7FZetk" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getName" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="7N43e7FZetl" role="1B3o_S" />
+      <node concept="2AHcQZ" id="7N43e7FZetn" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nls" resolve="Nls" />
+      </node>
+      <node concept="3uibUv" id="7N43e7FZeto" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="7N43e7FZetp" role="3clF47">
+        <node concept="3clFbF" id="7N43e7FZfOX" role="3cqZAp">
+          <node concept="37vLTw" id="7N43e7FZfOU" role="3clFbG">
+            <ref role="3cqZAo" node="7N43e7FZcDX" resolve="myName" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7N43e7FZetq" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxZhzX" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYuD5" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createTemplateConfiguration" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYuD6" role="1B3o_S" />
+      <node concept="2AHcQZ" id="LPAYBxYuD8" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="LPAYBxYuD9" role="3clF45">
+        <ref role="3uigEE" to="dj99:~RunConfiguration" resolve="RunConfiguration" />
+      </node>
+      <node concept="37vLTG" id="LPAYBxYuDa" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="LPAYBxYuDb" role="1tU5fm">
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="LPAYBxYuDc" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="LPAYBxYuDd" role="3clF47">
+        <node concept="3clFbJ" id="LPAYBxYLxP" role="3cqZAp">
+          <node concept="3clFbS" id="LPAYBxYLxR" role="3clFbx">
+            <node concept="3cpWs6" id="LPAYBxYL_I" role="3cqZAp">
+              <node concept="2ShNRf" id="LPAYBxYLA8" role="3cqZAk">
+                <node concept="1pGfFk" id="LPAYBxZdxY" role="2ShVmc">
+                  <ref role="37wK5l" to="dj99:~UnknownRunConfiguration.&lt;init&gt;(com.intellij.execution.configurations.ConfigurationFactory,com.intellij.openapi.project.Project)" resolve="UnknownRunConfiguration" />
+                  <node concept="Xjq3P" id="LPAYBxZdCQ" role="37wK5m" />
+                  <node concept="37vLTw" id="LPAYBxZdKC" role="37wK5m">
+                    <ref role="3cqZAo" node="LPAYBxYuDa" resolve="project" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="LPAYBxYLyo" role="3clFbw">
+            <ref role="3cqZAo" node="LPAYBxYKMO" resolve="myIsIvalid" />
+          </node>
+        </node>
+        <node concept="SfApY" id="79O2sWFQXxn" role="3cqZAp">
+          <node concept="3clFbS" id="79O2sWFQXxp" role="SfCbr">
+            <node concept="3SKdUt" id="CZHNfvxMoe" role="3cqZAp">
+              <node concept="3SKdUq" id="CZHNfvxMog" role="3SKWNk">
+                <property role="3SKdUp" value="Constructor signature to match one in weave_RunConfigurationConstructor" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="CZHNfvxO_x" role="3cqZAp">
+              <node concept="3cpWsn" id="CZHNfvxO_y" role="3cpWs9">
+                <property role="TrG5h" value="c" />
+                <node concept="3uibUv" id="CZHNfvxO_o" role="1tU5fm">
+                  <ref role="3uigEE" to="t6h5:~Constructor" resolve="Constructor" />
+                  <node concept="3qUE_q" id="CZHNfvxO_v" role="11_B2D">
+                    <node concept="3uibUv" id="CZHNfvxO_w" role="3qUE_r">
+                      <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="CZHNfvxO_z" role="33vP2m">
+                  <node concept="37vLTw" id="CZHNfvxO_$" role="2Oq$k0">
+                    <ref role="3cqZAo" node="LPAYBxZk6X" resolve="myDelegateClass" />
+                  </node>
+                  <node concept="liA8E" id="CZHNfvxO__" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Class.getConstructor(java.lang.Class...):java.lang.reflect.Constructor" resolve="getConstructor" />
+                    <node concept="3VsKOn" id="CZHNfvxO_A" role="37wK5m">
+                      <ref role="3VsUkX" to="4nm9:~Project" resolve="Project" />
+                    </node>
+                    <node concept="3VsKOn" id="CZHNfvxO_B" role="37wK5m">
+                      <ref role="3VsUkX" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+                    </node>
+                    <node concept="3VsKOn" id="CZHNfvxO_C" role="37wK5m">
+                      <ref role="3VsUkX" to="wyt6:~String" resolve="String" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="LPAYBxZe02" role="3cqZAp">
+              <node concept="2OqwBi" id="CZHNfvxMSV" role="3cqZAk">
+                <node concept="37vLTw" id="CZHNfvxO_D" role="2Oq$k0">
+                  <ref role="3cqZAo" node="CZHNfvxO_y" resolve="c" />
+                </node>
+                <node concept="liA8E" id="CZHNfvxNNd" role="2OqNvi">
+                  <ref role="37wK5l" to="t6h5:~Constructor.newInstance(java.lang.Object...):java.lang.Object" resolve="newInstance" />
+                  <node concept="37vLTw" id="CZHNfvxQGB" role="37wK5m">
+                    <ref role="3cqZAo" node="LPAYBxYuDa" resolve="project" />
+                  </node>
+                  <node concept="Xjq3P" id="CZHNfvxRt8" role="37wK5m" />
+                  <node concept="Xl_RD" id="CZHNfvxSR$" role="37wK5m">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="79O2sWFQXxq" role="TEbGg">
+            <node concept="3cpWsn" id="79O2sWFQXxs" role="TDEfY">
+              <property role="TrG5h" value="ex" />
+              <node concept="3uibUv" id="79O2sWFR0sR" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="79O2sWFQXxw" role="TDEfX">
+              <node concept="RRSsy" id="CZHNfvxTJJ" role="3cqZAp">
+                <property role="RRSoG" value="error" />
+                <node concept="37vLTw" id="CZHNfvxTJN" role="RRSow">
+                  <ref role="3cqZAo" node="79O2sWFQXxs" resolve="ex" />
+                </node>
+                <node concept="2YIFZM" id="CZHNfvxU_K" role="RRSoy">
+                  <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                  <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                  <node concept="Xl_RD" id="CZHNfvxTJL" role="37wK5m">
+                    <property role="Xl_RC" value="Failed to instantiate run configuration %s of type %s" />
+                  </node>
+                  <node concept="2OqwBi" id="CZHNfvxVF8" role="37wK5m">
+                    <node concept="37vLTw" id="CZHNfvxVmv" role="2Oq$k0">
+                      <ref role="3cqZAo" node="LPAYBxZk6X" resolve="myDelegateClass" />
+                    </node>
+                    <node concept="liA8E" id="CZHNfvxWdi" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                    </node>
+                  </node>
+                  <node concept="1rXfSq" id="CZHNfvxXrP" role="37wK5m">
+                    <ref role="37wK5l" node="LPAYBxYuV_" resolve="getId" />
+                  </node>
+                </node>
+              </node>
+              <node concept="YS8fn" id="79O2sWFR1fF" role="3cqZAp">
+                <node concept="2ShNRf" id="79O2sWFR1z2" role="YScLw">
+                  <node concept="1pGfFk" id="79O2sWFR2vf" role="2ShVmc">
+                    <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYuDe" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxYlVv" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxZiit" role="jymVt">
+      <property role="TrG5h" value="isValid" />
+      <node concept="10P_77" id="LPAYBxZi$J" role="3clF45" />
+      <node concept="3clFbS" id="LPAYBxZiix" role="3clF47">
+        <node concept="3cpWs6" id="LPAYBxZjg5" role="3cqZAp">
+          <node concept="3fqX7Q" id="LPAYBxZjyO" role="3cqZAk">
+            <node concept="37vLTw" id="LPAYBxZjyQ" role="3fr31v">
+              <ref role="3cqZAo" node="LPAYBxYKMO" resolve="myIsIvalid" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="LPAYBxZjFH" role="lGtFl">
+        <node concept="x79VA" id="LPAYBxZjFK" role="3nqlJM">
+          <property role="x79VB" value="true iff this factory has not been notified that " />
+        </node>
+      </node>
+    </node>
+    <node concept="3uibUv" id="LPAYBxYuCS" role="1zkMxy">
+      <ref role="3uigEE" to="dj99:~ConfigurationFactory" resolve="ConfigurationFactory" />
+    </node>
+    <node concept="3UR2Jj" id="CZHNfvxEYH" role="lGtFl">
+      <node concept="TZ5HA" id="CZHNfvxEYI" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxEYJ" role="1dT_Ay">
+          <property role="1dT_AB" value="Non-reloadable factory for Run Configurations. Instances of this class are safe to operate even once original " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxFiE" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxFiF" role="1dT_Ay">
+          <property role="1dT_AB" value="MPS module that contributed them (with a help of app plugin part) has been disposed - IDEA's RunnerAndConfigurationSettingsImpl holds" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxGo7" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxGo8" role="1dT_Ay">
+          <property role="1dT_AB" value="run configuration instance and accesses its factory." />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="LPAYBxYvi5">
+    <property role="TrG5h" value="RunConfigurationProxy" />
+    <property role="1EXbeo" value="true" />
+    <node concept="312cEg" id="LPAYBxZnqZ" role="jymVt">
+      <property role="TrG5h" value="myDelegate" />
+      <node concept="3Tm6S6" id="LPAYBxZnr0" role="1B3o_S" />
+      <node concept="3uibUv" id="79O2sWFOLSF" role="1tU5fm">
+        <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxYvXD" role="jymVt" />
+    <node concept="3clFbW" id="LPAYBxYwOS" role="jymVt">
+      <node concept="3cqZAl" id="LPAYBxYwOU" role="3clF45" />
+      <node concept="3Tm1VV" id="LPAYBxYwOV" role="1B3o_S" />
+      <node concept="3clFbS" id="LPAYBxYwOW" role="3clF47">
+        <node concept="XkiVB" id="79O2sWFOIhZ" role="3cqZAp">
+          <ref role="37wK5l" node="3oW7HLfqDh0" resolve="BaseMpsRunConfiguration" />
+          <node concept="37vLTw" id="79O2sWFOJDT" role="37wK5m">
+            <ref role="3cqZAo" node="LPAYBxYyQv" resolve="project" />
+          </node>
+          <node concept="37vLTw" id="79O2sWFOK2h" role="37wK5m">
+            <ref role="3cqZAo" node="LPAYBxYywB" resolve="configFactory" />
+          </node>
+          <node concept="Xl_RD" id="79O2sWFOKfr" role="37wK5m">
+            <property role="Xl_RC" value="" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="LPAYBxZnr3" role="3cqZAp">
+          <node concept="37vLTI" id="LPAYBxZnr5" role="3clFbG">
+            <node concept="37vLTw" id="LPAYBxZnr8" role="37vLTJ">
+              <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+            </node>
+            <node concept="37vLTw" id="LPAYBxZnr9" role="37vLTx">
+              <ref role="3cqZAo" node="LPAYBxZmA5" resolve="delegate" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxYywB" role="3clF46">
+        <property role="TrG5h" value="configFactory" />
+        <node concept="3uibUv" id="LPAYBxYywA" role="1tU5fm">
+          <ref role="3uigEE" node="LPAYBxYlTL" resolve="ConfigFactoryEnvoy" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxYyQv" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="LPAYBxZgOj" role="1tU5fm">
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxZmA5" role="3clF46">
+        <property role="TrG5h" value="delegate" />
+        <node concept="3uibUv" id="79O2sWFOKrr" role="1tU5fm">
+          <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="LPAYBxYvjr" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYvjZ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getConfigurationEditor" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYvk0" role="1B3o_S" />
+      <node concept="2AHcQZ" id="LPAYBxYvk2" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="LPAYBxYvk3" role="3clF45">
+        <ref role="3uigEE" to="hq8m:~SettingsEditor" resolve="SettingsEditor" />
+        <node concept="3qUE_q" id="LPAYBxYvk4" role="11_B2D">
+          <node concept="3uibUv" id="LPAYBxYvk5" role="3qUE_r">
+            <ref role="3uigEE" to="dj99:~RunConfiguration" resolve="RunConfiguration" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="LPAYBxYvk6" role="3clF47">
+        <node concept="3clFbF" id="CZHNfvwtqZ" role="3cqZAp">
+          <node concept="2OqwBi" id="CZHNfvwuiy" role="3clFbG">
+            <node concept="37vLTw" id="CZHNfvwtqY" role="2Oq$k0">
+              <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+            </node>
+            <node concept="liA8E" id="CZHNfvwv46" role="2OqNvi">
+              <ref role="37wK5l" to="dj99:~RunConfiguration.getConfigurationEditor():com.intellij.openapi.options.SettingsEditor" resolve="getConfigurationEditor" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYvk7" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFOPHV" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYvlD" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getState" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYvlE" role="1B3o_S" />
+      <node concept="2AHcQZ" id="LPAYBxYvlG" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3uibUv" id="LPAYBxYvlH" role="3clF45">
+        <ref role="3uigEE" to="dj99:~RunProfileState" resolve="RunProfileState" />
+      </node>
+      <node concept="37vLTG" id="LPAYBxYvlI" role="3clF46">
+        <property role="TrG5h" value="executor" />
+        <node concept="3uibUv" id="LPAYBxYvlJ" role="1tU5fm">
+          <ref role="3uigEE" to="3v5a:~Executor" resolve="Executor" />
+        </node>
+        <node concept="2AHcQZ" id="LPAYBxYvlK" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="LPAYBxYvlL" role="3clF46">
+        <property role="TrG5h" value="environment" />
+        <node concept="3uibUv" id="LPAYBxYvlM" role="1tU5fm">
+          <ref role="3uigEE" to="fhz7:~ExecutionEnvironment" resolve="ExecutionEnvironment" />
+        </node>
+        <node concept="2AHcQZ" id="LPAYBxYvlN" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="LPAYBxYvlO" role="Sfmx6">
+        <ref role="3uigEE" to="3v5a:~ExecutionException" resolve="ExecutionException" />
+      </node>
+      <node concept="3clFbS" id="LPAYBxYvlR" role="3clF47">
+        <node concept="3clFbF" id="CZHNfvwCHa" role="3cqZAp">
+          <node concept="2OqwBi" id="CZHNfvwD_E" role="3clFbG">
+            <node concept="37vLTw" id="CZHNfvwCH7" role="2Oq$k0">
+              <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+            </node>
+            <node concept="liA8E" id="CZHNfvwEAj" role="2OqNvi">
+              <ref role="37wK5l" to="dj99:~RunProfile.getState(com.intellij.execution.Executor,com.intellij.execution.runners.ExecutionEnvironment):com.intellij.execution.configurations.RunProfileState" resolve="getState" />
+              <node concept="37vLTw" id="CZHNfvwFH7" role="37wK5m">
+                <ref role="3cqZAo" node="LPAYBxYvlI" resolve="executor" />
+              </node>
+              <node concept="37vLTw" id="CZHNfvwHFl" role="37wK5m">
+                <ref role="3cqZAo" node="LPAYBxYvlL" resolve="environment" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYvlS" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFPrrl" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYvkX" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="checkConfiguration" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYvkY" role="1B3o_S" />
+      <node concept="3cqZAl" id="LPAYBxYvl0" role="3clF45" />
+      <node concept="3uibUv" id="LPAYBxYvl1" role="Sfmx6">
+        <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
+      </node>
+      <node concept="3clFbS" id="LPAYBxYvl2" role="3clF47">
+        <node concept="3cpWs8" id="79O2sWFPKps" role="3cqZAp">
+          <node concept="3cpWsn" id="79O2sWFPKpt" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="79O2sWFPKpr" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="2YIFZM" id="79O2sWFPKpu" role="33vP2m">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+              <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <node concept="1rXfSq" id="79O2sWFPKpv" role="37wK5m">
+                <ref role="37wK5l" to="dj99:~RunConfigurationBase.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="79O2sWFPLJa" role="3cqZAp">
+          <node concept="1rXfSq" id="79O2sWFPLJ7" role="3clFbG">
+            <ref role="37wK5l" node="79O2sWFPtSH" resolve="checkConfiguration" />
+            <node concept="2ShNRf" id="79O2sWFPNcq" role="37wK5m">
+              <node concept="YeOm9" id="79O2sWFQkVb" role="2ShVmc">
+                <node concept="1Y3b0j" id="79O2sWFQkVe" role="YeSDq">
+                  <property role="2bfB8j" value="true" />
+                  <ref role="1Y3XeK" to="ic0f:qCQmZRT2wq" resolve="PersistentConfigurationContext" />
+                  <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                  <node concept="3Tm1VV" id="79O2sWFQkVf" role="1B3o_S" />
+                  <node concept="3clFb_" id="79O2sWFQkVg" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="2aFKle" value="false" />
+                    <property role="TrG5h" value="getProject" />
+                    <node concept="3Tm1VV" id="79O2sWFQkVi" role="1B3o_S" />
+                    <node concept="3uibUv" id="79O2sWFQkVj" role="3clF45">
+                      <ref role="3uigEE" to="z1c4:~Project" resolve="Project" />
+                    </node>
+                    <node concept="3clFbS" id="79O2sWFQkVm" role="3clF47">
+                      <node concept="3clFbF" id="79O2sWFQmt0" role="3cqZAp">
+                        <node concept="37vLTw" id="79O2sWFQmsZ" role="3clFbG">
+                          <ref role="3cqZAo" node="79O2sWFPKpt" resolve="mpsProject" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYvl3" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="CZHNfvx1Lu" role="jymVt" />
+    <node concept="2tJIrI" id="CZHNfvx24W" role="jymVt" />
+    <node concept="3clFb_" id="CZHNfvx3D8" role="jymVt">
+      <property role="TrG5h" value="canExecute" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="37vLTG" id="CZHNfvx3D9" role="3clF46">
+        <property role="TrG5h" value="executorId" />
+        <node concept="17QB3L" id="CZHNfvx3Da" role="1tU5fm" />
+      </node>
+      <node concept="10P_77" id="CZHNfvx3Db" role="3clF45" />
+      <node concept="3Tm1VV" id="CZHNfvx3Dc" role="1B3o_S" />
+      <node concept="3clFbS" id="CZHNfvx3Dj" role="3clF47">
+        <node concept="3clFbF" id="CZHNfvx5HH" role="3cqZAp">
+          <node concept="2OqwBi" id="CZHNfvx6cA" role="3clFbG">
+            <node concept="37vLTw" id="CZHNfvx5HD" role="2Oq$k0">
+              <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+            </node>
+            <node concept="liA8E" id="CZHNfvx7dq" role="2OqNvi">
+              <ref role="37wK5l" node="3oW7HLfqDgN" resolve="canExecute" />
+              <node concept="37vLTw" id="CZHNfvx8lT" role="37wK5m">
+                <ref role="3cqZAo" node="CZHNfvx3D9" resolve="executorId" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="CZHNfvx3Dk" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFPt7i" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYvl4" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="readExternal" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYvl5" role="1B3o_S" />
+      <node concept="3cqZAl" id="LPAYBxYvl7" role="3clF45" />
+      <node concept="37vLTG" id="LPAYBxYvl8" role="3clF46">
+        <property role="TrG5h" value="element" />
+        <node concept="3uibUv" id="LPAYBxYvl9" role="1tU5fm">
+          <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+        </node>
+        <node concept="2AHcQZ" id="LPAYBxYvla" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="LPAYBxYvlb" role="3clF47">
+        <node concept="3SKdUt" id="79O2sWFP$le" role="3cqZAp">
+          <node concept="3SKdUq" id="79O2sWFP$lf" role="3SKWNk">
+            <property role="3SKdUp" value="both IPersistentConfiguration and superclass" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYvlc" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFOUN6" role="jymVt" />
+    <node concept="3clFb_" id="LPAYBxYvld" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="writeExternal" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="LPAYBxYvle" role="1B3o_S" />
+      <node concept="3cqZAl" id="LPAYBxYvlg" role="3clF45" />
+      <node concept="37vLTG" id="LPAYBxYvlh" role="3clF46">
+        <property role="TrG5h" value="element" />
+        <node concept="3uibUv" id="LPAYBxYvli" role="1tU5fm">
+          <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="LPAYBxYvlj" role="3clF47">
+        <node concept="3SKdUt" id="79O2sWFP$lq" role="3cqZAp">
+          <node concept="3SKdUq" id="79O2sWFP$lr" role="3SKWNk">
+            <property role="3SKdUp" value="both IPersistentConfiguration and superclass" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LPAYBxYvlk" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFPC2i" role="jymVt" />
+    <node concept="3clFb_" id="79O2sWFPtSH" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="checkConfiguration" />
+      <node concept="3cqZAl" id="79O2sWFPtSI" role="3clF45" />
+      <node concept="3Tm1VV" id="79O2sWFPtSJ" role="1B3o_S" />
+      <node concept="3uibUv" id="79O2sWFPtSL" role="Sfmx6">
+        <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
+      </node>
+      <node concept="37vLTG" id="79O2sWFPtSM" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="79O2sWFPtSN" role="1tU5fm">
+          <ref role="3uigEE" to="ic0f:qCQmZRT2wq" resolve="PersistentConfigurationContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="79O2sWFPtSQ" role="3clF47">
+        <node concept="3SKdUt" id="79O2sWFPzs6" role="3cqZAp">
+          <node concept="3SKdUq" id="79O2sWFPzs8" role="3SKWNk">
+            <property role="3SKdUp" value="IPersistentConfiguration" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="CZHNfvw_nB" role="3cqZAp">
+          <node concept="2OqwBi" id="CZHNfvw_nC" role="3clFbG">
+            <node concept="1eOMI4" id="CZHNfvw_nD" role="2Oq$k0">
+              <node concept="10QFUN" id="CZHNfvw_nE" role="1eOMHV">
+                <node concept="3uibUv" id="CZHNfvw_nF" role="10QFUM">
+                  <ref role="3uigEE" to="ic0f:3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+                </node>
+                <node concept="37vLTw" id="CZHNfvw_nG" role="10QFUP">
+                  <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="CZHNfvw_nH" role="2OqNvi">
+              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
+              <node concept="37vLTw" id="CZHNfvwBl8" role="37wK5m">
+                <ref role="3cqZAo" node="79O2sWFPtSM" resolve="context" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="79O2sWFPtSR" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFPvH0" role="jymVt" />
+    <node concept="2tJIrI" id="79O2sWFPvIG" role="jymVt" />
+    <node concept="3clFb_" id="79O2sWFPwxG" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getEditor" />
+      <node concept="3uibUv" id="79O2sWFPwxH" role="3clF45">
+        <ref role="3uigEE" to="ic0f:3oW7HLfqDrn" resolve="SettingsEditorEx" />
+        <node concept="3qUE_q" id="79O2sWFPwxI" role="11_B2D">
+          <node concept="3uibUv" id="79O2sWFPwxJ" role="3qUE_r">
+            <ref role="3uigEE" to="ic0f:3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="79O2sWFPwxK" role="1B3o_S" />
+      <node concept="3clFbS" id="79O2sWFPwxO" role="3clF47">
+        <node concept="3SKdUt" id="79O2sWFPzuB" role="3cqZAp">
+          <node concept="3SKdUq" id="79O2sWFPzuC" role="3SKWNk">
+            <property role="3SKdUp" value="IPersistentConfiguration" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="CZHNfvwwlC" role="3cqZAp">
+          <node concept="2OqwBi" id="CZHNfvwwHq" role="3clFbG">
+            <node concept="1eOMI4" id="CZHNfvwyim" role="2Oq$k0">
+              <node concept="10QFUN" id="CZHNfvwz20" role="1eOMHV">
+                <node concept="3uibUv" id="CZHNfvwzS3" role="10QFUM">
+                  <ref role="3uigEE" to="ic0f:3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+                </node>
+                <node concept="37vLTw" id="CZHNfvwwl_" role="10QFUP">
+                  <ref role="3cqZAo" node="LPAYBxZnqZ" resolve="myDelegate" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="CZHNfvw$z4" role="2OqNvi">
+              <ref role="37wK5l" to="ic0f:3oW7HLfqDr2" resolve="getEditor" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="79O2sWFPwxP" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="79O2sWFPxpX" role="jymVt" />
+    <node concept="3clFb_" id="79O2sWFPygf" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createCloneTemplate" />
+      <node concept="3Tm1VV" id="79O2sWFPygg" role="1B3o_S" />
+      <node concept="3uibUv" id="79O2sWFPygi" role="3clF45">
+        <ref role="3uigEE" to="ic0f:3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+      </node>
+      <node concept="3clFbS" id="79O2sWFPygl" role="3clF47">
+        <node concept="3SKdUt" id="79O2sWFP$kX" role="3cqZAp">
+          <node concept="3SKdUq" id="79O2sWFP$kY" role="3SKWNk">
+            <property role="3SKdUp" value="IPersistentConfiguration" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="79O2sWFP$kJ" role="3cqZAp" />
+        <node concept="3clFbF" id="79O2sWFPygo" role="3cqZAp">
+          <node concept="10Nm6u" id="79O2sWFPygn" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="79O2sWFPygm" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="79O2sWFO$xa" role="EKbjA">
+      <ref role="3uigEE" to="ic0f:3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+    </node>
+    <node concept="3uibUv" id="79O2sWFOu1j" role="1zkMxy">
+      <ref role="3uigEE" node="3oW7HLfqDgM" resolve="BaseMpsRunConfiguration" />
+    </node>
+    <node concept="3UR2Jj" id="CZHNfvxDaN" role="lGtFl">
+      <node concept="TZ5HA" id="CZHNfvxDaO" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxDaP" role="1dT_Ay">
+          <property role="1dT_AB" value="NOT IN USE" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxZf5" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxZf6" role="1dT_Ay">
+          <property role="1dT_AB" value="Idea is to replace generated RunConfiguration classes with this proxy so that IDEA's RunnerAndConfigurationSettingsImpl can hold" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxZ$H" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxZ$I" role="1dT_Ay">
+          <property role="1dT_AB" value="an instance after generated delegate RunConfiguration class has been disposed/got invalid classloader." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxZ_1" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxZ_2" role="1dT_Ay">
+          <property role="1dT_AB" value="I don't use it at the moment as there are producers that expect specific instance of RunConfiguration to come from ConfigurationFactory" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxZGI" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxZGJ" role="1dT_Ay">
+          <property role="1dT_AB" value="(see reduce_RunConfigurationCreator), and I'd like to refactor producers first (including switch to RunConfigurationProducer instead of " />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="CZHNfvxZH6" role="TZ5H$">
+        <node concept="1dT_AC" id="CZHNfvxZH7" role="1dT_Ay">
+          <property role="1dT_AB" value="deprecated RuntimeConfigurationProducer) and then consider options for use of the proxy." />
         </node>
       </node>
     </node>
