@@ -113,6 +113,7 @@
     <classNode extendsClassName="com.intellij.execution.configurations.RunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Producer" file="BuildScript_Producer.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="java.lang.Object" />

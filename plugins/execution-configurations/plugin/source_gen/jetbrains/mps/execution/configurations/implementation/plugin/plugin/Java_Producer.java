@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import java.util.List;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
@@ -21,23 +22,33 @@ import com.intellij.execution.actions.ConfigurationContext;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.execution.util.behavior.IMainClass__BehaviorDescriptor;
 
-public class Java_Producer {
-  private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory";
-
-  public Java_Producer() {
-  }
+public final class Java_Producer {
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
+    ConfigurationFactory configurationFactory = null;
+    // assume the one with id matching configuration kind is the primary one. 
+    // In fact, though technically we support more that one factory per type (aka 'foreign' factories), all factories 
+    // bear same id (due to overlook of template author, I believe), and we effectively take the fist registerd one, which I don't  
+    // mind as 'foreign' factories do not work anyway. 
+    for (ConfigurationFactory f : configurationType.getConfigurationFactories()) {
+      if (f.getId().equals(configurationType.getId())) {
+        configurationFactory = f;
+        break;
+      }
+    }
+    if (configurationFactory == null) {
+      configurationFactory = configurationType.getConfigurationFactories()[0];
+    }
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_Node_d1i8dk_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationFactory));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_Node_d1i8dk_b(configurationFactory));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationFactory));
     return creators;
   }
 
   public static final class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseMpsProducer<SNode> {
-    public ProducerPart_NodeClassConcept_d1i8dk_a(ConfigurationType configurationType, String factoryName) {
-      super(configurationType, factoryName);
+    public ProducerPart_NodeClassConcept_d1i8dk_a(ConfigurationFactory configurationFactory) {
+      super(configurationFactory);
     }
 
     @Override
@@ -74,8 +85,8 @@ public class Java_Producer {
     }
   }
   public static final class ProducerPart_Node_d1i8dk_b extends BaseMpsProducer<SNode> {
-    public ProducerPart_Node_d1i8dk_b(ConfigurationType configurationType, String factoryName) {
-      super(configurationType, factoryName);
+    public ProducerPart_Node_d1i8dk_b(ConfigurationFactory configurationFactory) {
+      super(configurationFactory);
     }
 
     @Override
@@ -120,8 +131,8 @@ public class Java_Producer {
     }
   }
   public static final class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseMpsProducer<SNode> {
-    public ProducerPart_NodeIMainClass_d1i8dk_c(ConfigurationType configurationType, String factoryName) {
-      super(configurationType, factoryName);
+    public ProducerPart_NodeIMainClass_d1i8dk_c(ConfigurationFactory configurationFactory) {
+      super(configurationFactory);
     }
 
     @Override

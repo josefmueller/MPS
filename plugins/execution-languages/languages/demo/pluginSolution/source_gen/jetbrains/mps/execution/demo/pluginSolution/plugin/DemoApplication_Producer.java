@@ -5,6 +5,7 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 import java.util.List;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
@@ -14,21 +15,31 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class DemoApplication_Producer {
-  private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Factory";
-
-  public DemoApplication_Producer() {
-  }
+public final class DemoApplication_Producer {
 
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
+    ConfigurationFactory configurationFactory = null;
+    // assume the one with id matching configuration kind is the primary one. 
+    // In fact, though technically we support more that one factory per type (aka 'foreign' factories), all factories 
+    // bear same id (due to overlook of template author, I believe), and we effectively take the fist registerd one, which I don't  
+    // mind as 'foreign' factories do not work anyway. 
+    for (ConfigurationFactory f : configurationType.getConfigurationFactories()) {
+      if (f.getId().equals(configurationType.getId())) {
+        configurationFactory = f;
+        break;
+      }
+    }
+    if (configurationFactory == null) {
+      configurationFactory = configurationType.getConfigurationFactories()[0];
+    }
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-    ListSequence.fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationFactory));
     return creators;
   }
 
   public static final class ProducerPart_NodeSomeConcept_rh22bz_a extends BaseMpsProducer<SNode> {
-    public ProducerPart_NodeSomeConcept_rh22bz_a(ConfigurationType configurationType, String factoryName) {
-      super(configurationType, factoryName);
+    public ProducerPart_NodeSomeConcept_rh22bz_a(ConfigurationFactory configurationFactory) {
+      super(configurationFactory);
     }
 
     @Override

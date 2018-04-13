@@ -485,6 +485,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Producer" file="JUnitTests_Producer.java">
     <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
@@ -635,6 +636,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Producer" file="Java_Producer.java">
     <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />

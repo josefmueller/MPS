@@ -97,11 +97,11 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Producer" file="DemoApplication_Producer.java">
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsProducer" />
