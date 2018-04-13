@@ -16,6 +16,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.debugger.java.api.settings.RemoteConnectionSettings;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -78,7 +79,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       return state;
     }
   }
-  public Remote_Configuration(Project project, Remote_Configuration_Factory factory, String name) {
+  public Remote_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

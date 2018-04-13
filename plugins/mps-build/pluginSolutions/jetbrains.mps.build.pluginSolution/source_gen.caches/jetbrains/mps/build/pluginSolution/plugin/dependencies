@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" file="BuildScript_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
@@ -24,7 +25,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Editor" />
-    <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
@@ -58,18 +58,6 @@
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" file="BuildScript_Configuration_Factory.java">
-    <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
-    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
-    <classNode dependClassName="com.intellij.icons.AllIcons" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
   </dependency>
   <dependency className="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" file="BuildScript_Configuration_RunProfileState.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
@@ -150,7 +138,7 @@
     <classNode dependClassName="java.util.Deque" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" />
+    <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Producer" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConfigTypeEnvoy" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -18,6 +18,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -77,7 +78,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     clone.myNode = (NodeByConcept_Configuration) myNode.clone();
     return clone;
   }
-  public DemoApplication_Configuration(Project project, DemoApplication_Configuration_Factory factory, String name) {
+  public DemoApplication_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

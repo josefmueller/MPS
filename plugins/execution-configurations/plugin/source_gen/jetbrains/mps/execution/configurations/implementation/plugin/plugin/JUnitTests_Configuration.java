@@ -24,6 +24,7 @@ import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -109,7 +110,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
     return clone;
   }
-  public JUnitTests_Configuration(Project project, JUnitTests_Configuration_Factory factory, String name) {
+  public JUnitTests_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

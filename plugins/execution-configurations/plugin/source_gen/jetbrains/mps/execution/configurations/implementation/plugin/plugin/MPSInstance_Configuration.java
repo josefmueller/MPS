@@ -12,6 +12,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +86,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
     clone.myPluginsSettings = (DeployPluginsSettings_Configuration) myPluginsSettings.clone();
     return clone;
   }
-  public MPSInstance_Configuration(Project project, MPSInstance_Configuration_Factory factory, String name) {
+  public MPSInstance_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

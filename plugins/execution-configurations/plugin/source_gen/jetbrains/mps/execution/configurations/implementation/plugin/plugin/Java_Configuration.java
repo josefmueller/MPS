@@ -37,6 +37,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration__BehaviorDescriptor;
 import java.util.Objects;
 import com.intellij.openapi.project.Project;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -154,7 +155,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
     return clone;
   }
-  public Java_Configuration(Project project, Java_Configuration_Factory factory, String name) {
+  public Java_Configuration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
   @Nullable

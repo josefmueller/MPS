@@ -27,7 +27,7 @@ public class RunConfigurationsInitializer_AppPluginPart extends ApplicationPlugi
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getRootArea().getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     {
       ConfigTypeEnvoy runConfigurationKind = new ConfigTypeEnvoy("Demo", AllIcons.RunConfigurations.Application, "Demo", "Demo");
-      runConfigurationKind.addFactory(new DemoApplication_Configuration_Factory(runConfigurationKind));
+      runConfigurationKind.addFactoryFor("Demo Application", DemoApplication_Configuration.class);
       RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.add(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
@@ -50,14 +50,16 @@ public class RunConfigurationsInitializer_AppPluginPart extends ApplicationPlugi
   @Override
   public void dispose() {
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getRootArea().getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+
+    // invalidate factories from this plugin for types declared elsewhere (we have no idea whether that plugins would be reloaded/invalidated as well) 
+
+    // factories from this plugin would get invalidated along with configuration types, no need to do that explicitly (although it wouldn't hurt either) 
     for (Iterator<ConfigTypeEnvoy> it = RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.descendingIterator(); it.hasNext();) {
       ConfigTypeEnvoy configKind = it.next();
       configKind.invalidate();
       configurationExtensionPoint.unregisterExtension(configKind);
     }
     RunConfigurationsInitializer_AppPluginPart.this.myRegisteredKinds.clear();
-
-    // FIXME why there's no code to unregister 'foreign' configuration factories? 
 
     ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getRootArea().getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
     for (RuntimeConfigurationProducer producer : ListSequence.fromList(RunConfigurationsInitializer_AppPluginPart.this.myRegisteredProducers)) {
