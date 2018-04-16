@@ -3079,6 +3079,7 @@
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

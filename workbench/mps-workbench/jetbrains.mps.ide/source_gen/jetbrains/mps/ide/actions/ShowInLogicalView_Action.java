@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,7 +35,11 @@ public class ShowInLogicalView_Action extends BaseAction {
       return false;
     }
     ProjectPane pane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-    ProjectTreeFindHelper treeFinder = new ProjectTreeFindHelper(pane.getTree());
+    ProjectTree tree = pane.getTree();
+    if (tree == null) {
+      return false;
+    }
+    ProjectTreeFindHelper treeFinder = new ProjectTreeFindHelper(tree);
     // it's fine if we could navigate to a module. If the module is not part of the project pane, no reason to expect more. 
     // If, however, module is present, it's highly likely node's model would be there as well, and the node, too. 
     // Just don't want to slow down by ensuring there's model and node in the tree. 

@@ -4079,6 +4079,37 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6iF_j2BosrD" role="3cqZAp">
+          <node concept="3cpWsn" id="6iF_j2BosrE" role="3cpWs9">
+            <property role="TrG5h" value="tree" />
+            <node concept="3uibUv" id="6iF_j2Bosry" role="1tU5fm">
+              <ref role="3uigEE" to="paf:~ProjectTree" resolve="ProjectTree" />
+            </node>
+            <node concept="2OqwBi" id="6iF_j2BosrF" role="33vP2m">
+              <node concept="37vLTw" id="6iF_j2BosrG" role="2Oq$k0">
+                <ref role="3cqZAo" node="2shlJwNHJhp" resolve="pane" />
+              </node>
+              <node concept="liA8E" id="6iF_j2BosrH" role="2OqNvi">
+                <ref role="37wK5l" to="rvbb:~ProjectPane.getTree():jetbrains.mps.ide.projectPane.logicalview.ProjectTree" resolve="getTree" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6iF_j2Bp2aP" role="3cqZAp">
+          <node concept="3clFbS" id="6iF_j2Bp2aR" role="3clFbx">
+            <node concept="3cpWs6" id="6iF_j2Bp6wq" role="3cqZAp">
+              <node concept="3clFbT" id="6iF_j2Bp6Jl" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6iF_j2Bp5IB" role="3clFbw">
+            <node concept="10Nm6u" id="6iF_j2Bp6dw" role="3uHU7w" />
+            <node concept="37vLTw" id="6iF_j2Bp2qp" role="3uHU7B">
+              <ref role="3cqZAo" node="6iF_j2BosrE" resolve="tree" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="2shlJwNHLCp" role="3cqZAp">
           <node concept="3cpWsn" id="2shlJwNHLCq" role="3cpWs9">
             <property role="TrG5h" value="treeFinder" />
@@ -4088,13 +4119,8 @@
             <node concept="2ShNRf" id="2shlJwNHLCr" role="33vP2m">
               <node concept="1pGfFk" id="2shlJwNHLCs" role="2ShVmc">
                 <ref role="37wK5l" to="paf:~ProjectTreeFindHelper.&lt;init&gt;(jetbrains.mps.ide.projectPane.logicalview.ProjectTree)" resolve="ProjectTreeFindHelper" />
-                <node concept="2OqwBi" id="2shlJwNHLCt" role="37wK5m">
-                  <node concept="37vLTw" id="2shlJwNHLCu" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2shlJwNHJhp" resolve="pane" />
-                  </node>
-                  <node concept="liA8E" id="2shlJwNHLCv" role="2OqNvi">
-                    <ref role="37wK5l" to="rvbb:~ProjectPane.getTree():jetbrains.mps.ide.projectPane.logicalview.ProjectTree" resolve="getTree" />
-                  </node>
+                <node concept="37vLTw" id="6iF_j2BosrI" role="37wK5m">
+                  <ref role="3cqZAo" node="6iF_j2BosrE" resolve="tree" />
                 </node>
               </node>
             </node>
