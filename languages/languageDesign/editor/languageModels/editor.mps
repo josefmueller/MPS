@@ -13993,11 +13993,6 @@
       <node concept="PMmxH" id="7L5lpRJLZbQ" role="1QoVPY">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <node concept="Vb9p2" id="4sA1wzjqloO" role="3F10Kt" />
-        <node concept="OXEIz" id="7ZeGB_HCL02" role="P5bDN">
-          <node concept="UkePV" id="7ZeGB_HCL05" role="OY2wv">
-            <ref role="Ul1FP" to="tpc2:7L5lpRJH$EA" resolve="TransformationLocation" />
-          </node>
-        </node>
       </node>
     </node>
   </node>
