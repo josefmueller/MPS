@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,7 +189,7 @@ public final class CommonPaths {
           return ourClassPathCachingFacility.createFromPath(canonicalPath, REQUESTER_STRING);
         }
       } catch (URISyntaxException | IOException e) {
-        LOG.error(null, e);
+        LOG.error(String.format("Bad bootstrap jar '%s'", url), e);
       }
     }
     return null;
