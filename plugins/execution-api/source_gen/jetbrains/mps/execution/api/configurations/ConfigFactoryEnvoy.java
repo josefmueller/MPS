@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nls;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
-import com.intellij.execution.configurations.UnknownRunConfiguration;
 import java.lang.reflect.Constructor;
 import org.apache.log4j.Level;
+import com.intellij.execution.configurations.UnknownRunConfiguration;
 
 /**
  * Non-reloadable factory for Run Configurations. Instances of this class are safe to operate even once original 
@@ -61,9 +61,6 @@ import org.apache.log4j.Level;
   @NotNull
   @Override
   public RunConfiguration createTemplateConfiguration(@NotNull Project project) {
-    if (myIsIvalid) {
-      return new UnknownRunConfiguration(this, project);
-    }
     try {
       // Constructor signature to match one in weave_RunConfigurationConstructor 
       Constructor<? extends BaseMpsRunConfiguration> c = myDelegateClass.getConstructor(Project.class, ConfigurationFactory.class, String.class);
@@ -72,7 +69,7 @@ import org.apache.log4j.Level;
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(String.format("Failed to instantiate run configuration %s of type %s", myDelegateClass.getName(), getId()), ex);
       }
-      throw new RuntimeException();
+      return new UnknownRunConfiguration(this, project);
     }
   }
 
@@ -82,5 +79,15 @@ import org.apache.log4j.Level;
    */
   /*package*/ boolean isValid() {
     return !(myIsIvalid);
+  }
+
+
+  @Override
+  public String toString() {
+    if (isValid()) {
+      return String.format("Factory for %s", myName);
+    } else {
+      return String.format("Factory for %s, INVALID", myName);
+    }
   }
 }
