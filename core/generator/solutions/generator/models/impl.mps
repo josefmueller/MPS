@@ -34,6 +34,7 @@
     <import index="cgca" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.plan(MPS.Core/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
+    <import index="tp68" ref="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -381,6 +382,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -814,6 +822,71 @@
       <node concept="10P_77" id="4_2twMIW7ek" role="3clF45" />
       <node concept="3Tm1VV" id="4_2twMIW6Z4" role="1B3o_S" />
       <node concept="3clFbS" id="4_2twMIW6Z5" role="3clF47">
+        <node concept="3clFbJ" id="26PfAtHKKDy" role="3cqZAp">
+          <node concept="3clFbS" id="26PfAtHKKD$" role="3clFbx">
+            <node concept="3SKdUt" id="26PfAtHPd$7" role="3cqZAp">
+              <node concept="3SKdUq" id="26PfAtHPd$9" role="3SKWNk">
+                <property role="3SKdUp" value="Some Expressions (e.g. genContext.variable) get wrapped with TypeHintExpression at startup (see AddTypeHints script)," />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="26PfAtHPd_B" role="3cqZAp">
+              <node concept="3SKdUq" id="26PfAtHPd_D" role="3SKWNk">
+                <property role="3SKdUp" value="therefore, we shall look into original expression, instead." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="26PfAtHPdBb" role="3cqZAp">
+              <node concept="3SKdUq" id="26PfAtHPdBd" role="3SKWNk">
+                <property role="3SKdUp" value="Indeed, at the moment we don't handle here any of expressions that are replaced with TypeHintExpression (i.e. GenerationContextOp operations)" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="26PfAtHPnYx" role="3cqZAp">
+              <node concept="3SKdUq" id="26PfAtHPnYz" role="3SKWNk">
+                <property role="3SKdUp" value=" nevertheless, I feel important to prevent future errors, i.e. when this function report different result during codegen (with TypeHintExpr) and at runtime (no TypeHintExpr)." />
+              </node>
+            </node>
+            <node concept="3clFbF" id="26PfAtHKR7D" role="3cqZAp">
+              <node concept="37vLTI" id="26PfAtHKRee" role="3clFbG">
+                <node concept="2OqwBi" id="26PfAtHKS3h" role="37vLTx">
+                  <node concept="1PxgMI" id="26PfAtHKRUB" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="26PfAtHKRVA" role="3oSUPX">
+                      <ref role="cht4Q" to="tp68:htzuhxA" resolve="TypeHintExpression" />
+                    </node>
+                    <node concept="37vLTw" id="26PfAtHKRhh" role="1m5AlR">
+                      <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="26PfAtHKSfC" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tp68:htzuj6W" resolve="expression" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="26PfAtHKR7B" role="37vLTJ">
+                  <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="26PfAtHKKOP" role="3clFbw">
+            <node concept="37vLTw" id="26PfAtHKKGB" role="2Oq$k0">
+              <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+            </node>
+            <node concept="1mIQ4w" id="26PfAtHKL2l" role="2OqNvi">
+              <node concept="chp4Y" id="26PfAtHKNm4" role="cj9EA">
+                <ref role="cht4Q" to="tp68:htzuhxA" resolve="TypeHintExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="26PfAtHKKr5" role="3cqZAp">
+          <node concept="3SKdUq" id="26PfAtHKKr7" role="3SKWNk">
+            <property role="3SKdUp" value="For generated templates, assumptions here shall match switch_Argument," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="26PfAtHKK$r" role="3cqZAp">
+          <node concept="3SKdUq" id="26PfAtHKK$t" role="3SKWNk">
+            <property role="3SKdUp" value="for interpreted, TemplateCall#toExpressionRuntime" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="4_2twMIWGhZ" role="3cqZAp">
           <node concept="3clFbS" id="4_2twMIWGi1" role="3clFbx">
             <node concept="3cpWs6" id="4_2twMIWGnq" role="3cqZAp">
@@ -883,43 +956,57 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2acMJ6NmWsY" role="3cqZAp">
-          <node concept="3vZ8r8" id="2acMJ6NmWI1" role="3clFbG">
-            <node concept="1Wc70l" id="2acMJ6NmXtU" role="37vLTx">
-              <node concept="2OqwBi" id="2acMJ6NmYM1" role="3uHU7w">
-                <node concept="2OqwBi" id="2acMJ6NmYgY" role="2Oq$k0">
-                  <node concept="1PxgMI" id="2acMJ6NmY5A" role="2Oq$k0">
-                    <property role="1BlNFB" value="true" />
-                    <node concept="37vLTw" id="2acMJ6NmXyZ" role="1m5AlR">
-                      <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+        <node concept="3SKdUt" id="26PfAtHKSo6" role="3cqZAp">
+          <node concept="3SKdUq" id="26PfAtHKSo8" role="3SKWNk">
+            <property role="3SKdUp" value="XXX generated templates are fine with genContext operations, however, there's no support for these in TemplateCall#toExpressionRuntime() yet." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="26PfAtHPo2j" role="3cqZAp">
+          <node concept="3SKdUq" id="26PfAtHPo2l" role="3SKWNk">
+            <property role="3SKdUp" value="I'd need a switch by GenerationContextOp_Base subconcepts that get translated into respective TemplateContext call." />
+          </node>
+        </node>
+        <node concept="1X3_iC" id="26PfAtHKSq$" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="2acMJ6NmWsY" role="8Wnug">
+            <node concept="3vZ8r8" id="2acMJ6NmWI1" role="3clFbG">
+              <node concept="1Wc70l" id="2acMJ6NmXtU" role="37vLTx">
+                <node concept="2OqwBi" id="2acMJ6NmYM1" role="3uHU7w">
+                  <node concept="2OqwBi" id="2acMJ6NmYgY" role="2Oq$k0">
+                    <node concept="1PxgMI" id="2acMJ6NmY5A" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="37vLTw" id="2acMJ6NmXyZ" role="1m5AlR">
+                        <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZ9K" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                      </node>
                     </node>
-                    <node concept="chp4Y" id="714IaVdGZ9K" role="3oSUPX">
+                    <node concept="3TrEf2" id="2acMJ6NmYy3" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="2acMJ6NmZ2a" role="2OqNvi">
+                    <node concept="chp4Y" id="2acMJ6NmZ9W" role="cj9EA">
+                      <ref role="cht4Q" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2acMJ6NmWNA" role="3uHU7B">
+                  <node concept="37vLTw" id="2acMJ6NmWJb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
+                  </node>
+                  <node concept="1mIQ4w" id="2acMJ6NmWZk" role="2OqNvi">
+                    <node concept="chp4Y" id="2acMJ6NmX4T" role="cj9EA">
                       <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                     </node>
                   </node>
-                  <node concept="3TrEf2" id="2acMJ6NmYy3" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
-                  </node>
-                </node>
-                <node concept="1mIQ4w" id="2acMJ6NmZ2a" role="2OqNvi">
-                  <node concept="chp4Y" id="2acMJ6NmZ9W" role="cj9EA">
-                    <ref role="cht4Q" to="tpf3:hHiwH3j" resolve="GenerationContextOp_Base" />
-                  </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="2acMJ6NmWNA" role="3uHU7B">
-                <node concept="37vLTw" id="2acMJ6NmWJb" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4_2twMIW7es" resolve="expr" />
-                </node>
-                <node concept="1mIQ4w" id="2acMJ6NmWZk" role="2OqNvi">
-                  <node concept="chp4Y" id="2acMJ6NmX4T" role="cj9EA">
-                    <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="2acMJ6NmWsW" role="37vLTJ">
+                <ref role="3cqZAo" node="4_2twMIWQh_" resolve="customProcessing" />
               </node>
-            </node>
-            <node concept="37vLTw" id="2acMJ6NmWsW" role="37vLTJ">
-              <ref role="3cqZAo" node="4_2twMIWQh_" resolve="customProcessing" />
             </node>
           </node>
         </node>
