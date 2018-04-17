@@ -20,7 +20,7 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
   public Collection<DataFlowConstructor> getConstructors(String analyzerId) {
     switch (Arrays.binarySearch(stringSwitchCases_vhxjlb_a0a0a, analyzerId)) {
       case 0:
-        return Arrays.asList(new DataFlowConstructor[]{new RuleAfterDotExpression(), new RuleAssertNotNull(), new RuleCreator(), new RuleEqualsExpression(), new RuleFieldReference(), new RuleMethodCall(), new RuleNotEqualsExpression(), new RuleNullLiteral(), new RuleTernaryOperation(), new RuleVariableDeclaration()});
+        return Arrays.asList(new DataFlowConstructor[]{new RuleAfterDotExpression(), new RuleAssertNotNull(), new RuleCreator(), new RuleEqualsExpression(), new RuleFieldReference(), new RuleInstanceofExpression(), new RuleMethodCall(), new RuleNotEqualsExpression(), new RuleNullLiteral(), new RuleTernaryOperation(), new RuleVariableDeclaration()});
       default:
     }
     return Collections.<DataFlowConstructor>emptyList();
