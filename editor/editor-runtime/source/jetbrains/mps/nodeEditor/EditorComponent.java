@@ -2892,10 +2892,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  private void executeCommandInEDT(EditorCommand command) {
+    if (ApplicationManager.getApplication().isDispatchThread()) {
+      getModelAccess().executeCommand(command);
+    } else {
+      getModelAccess().executeCommandInEDT(command);
+    }
+  }
+
   private class MyCutProvider implements CutProvider {
     @Override
     public void performCut(@NotNull final DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
+      executeCommandInEDT(new EditorCommand(getCommandContext()) {
         @Override
         protected void doExecute() {
           if (isInvalid() || !isCutEnabled(dataContext)) {
@@ -2926,7 +2934,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class MyCopyProvider implements CopyProvider {
     @Override
     public void performCopy(@NotNull DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
+      executeCommandInEDT(new EditorCommand(getCommandContext()) {
         @Override
         protected void doExecute() {
           if (isDisposed() || isInvalid()) {
@@ -2971,7 +2979,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void performPaste() {
-    getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
+    executeCommandInEDT(new EditorCommand(getCommandContext()) {
       @Override
       protected void doExecute() {
         if (isInvalid() || !isPastePossible()) {
