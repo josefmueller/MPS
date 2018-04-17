@@ -6,42 +6,31 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.platform.integration.ConflictingModelsUtil;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import git4idea.GitVcs;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.merge.MergeSession;
 import com.intellij.openapi.vcs.merge.MergeProvider2;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.openapi.ui.Messages;
 
 public class ResolveNonconflictingChanges_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ResolveNonconflictingChanges_Action() {
-    super("Resolve non-conflicting changes in MPS models", "", ICON);
+    super("Try to resolve non-conflicting changes in MPS models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
     return true;
-  }
-  @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<VirtualFile> conflictedModelFiles = ConflictingModelsUtil.getConflictingModelFiles(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject());
-    MergeProvider provider = GitVcs.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).getMergeProvider();
-
-    return ConflictingModelsUtil.hasResolvableConflicts(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject(), provider, conflictedModelFiles);
-  }
-  @Override
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -61,6 +50,12 @@ public class ResolveNonconflictingChanges_Action extends BaseAction {
     List<VirtualFile> conflictedModelFiles = ConflictingModelsUtil.getConflictingModelFiles(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject());
     // merge with git provider 
     MergeProvider provider = GitVcs.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).getMergeProvider();
+    boolean hasResolvableConflicts = ConflictingModelsUtil.hasResolvableConflicts(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject(), provider, conflictedModelFiles);
+    if (!(hasResolvableConflicts)) {
+      Messages.showInfoMessage(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject(), "No autoresolvable conflicts were found", "Conflict Resolver");
+      return;
+    }
+
     MergeSession session = (provider instanceof MergeProvider2 ? ((MergeProvider2) provider).createMergeSession(conflictedModelFiles) : null);
 
     ConflictingModelsUtil.ModelConflictResolver resolver = ConflictingModelsUtil.getModelConflictResolverTask(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject(), provider, session, conflictedModelFiles);
