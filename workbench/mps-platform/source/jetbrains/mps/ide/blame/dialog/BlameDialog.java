@@ -82,6 +82,7 @@ public class BlameDialog extends DialogWrapper {
   private JCheckBox myDoNotIncludeAppInfo;
   private JPanel myExceptionContainer;
   private JTextArea myException;
+  private JCheckBox mySkipTrace;
   private JCheckBox myHiddenCheckBox;
   private HyperlinkLabel myCredentialsLabel;
   private JBCheckBox myShareDataAgreementCheck;
@@ -187,13 +188,17 @@ public class BlameDialog extends DialogWrapper {
     decorator.setOn(false);
     myPanel.add(appInfoHolder, getConstraints(myPanel.getComponentCount()));
 
-    myExceptionContainer = new JPanel(new GridLayoutManager(2, 1, JBUI.emptyInsets(), -1, -1));
+    myExceptionContainer = new JPanel(new GridLayoutManager(3, 1, JBUI.emptyInsets(), -1, -1));
 
     myExceptionContainer.add(new JBLabel("Exception:"), getConstraints(myExceptionContainer.getComponentCount()));
     myException = new JTextArea();
+    myException.setEditable(false);
     final JBScrollPane exceptionScrollPane = new JBScrollPane();
     exceptionScrollPane.setViewportView(myException);
     myExceptionContainer.add(exceptionScrollPane, getConstraints(myExceptionContainer.getComponentCount()));
+    mySkipTrace = new JBCheckBox("Exclude exception trace from description", false);
+    mySkipTrace.addChangeListener(changeEvent -> myException.setEnabled(!mySkipTrace.isSelected()));
+    myExceptionContainer.add(mySkipTrace, getConstraints(myExceptionContainer.getComponentCount()));
 
     myPanel.add(myExceptionContainer, getConstraints(myPanel.getComponentCount()));
 
@@ -229,6 +234,7 @@ public class BlameDialog extends DialogWrapper {
     myShareDataAgreement.setBackground(UIUtil.getPanelBackground());
     myShareDataAgreement.addHyperlinkListener(new BrowserHyperlinkListener());
     myShareDataAgreement.setBorder(JBUI.Borders.empty());
+    myShareDataAgreement.setFocusable(false);
     constraints = getConstraints(0);
     constraints.setColumn(1);
     constraints.setAnchor(GridConstraints.ANCHOR_NORTHWEST);
@@ -395,8 +401,12 @@ public class BlameDialog extends DialogWrapper {
     }
 
     if (!myThrowableList.isEmpty()) {
-      for (Throwable ex : myThrowableList) {
-        description.append(ex2str(ex)).append("\n\n");
+      if (!mySkipTrace.isSelected()) {
+        for (Throwable ex : myThrowableList) {
+          description.append(ex2str(ex)).append("\n\n");
+        }
+      } else {
+        description.append("Exception trace was hidden by submitter\n");
       }
     }
 
