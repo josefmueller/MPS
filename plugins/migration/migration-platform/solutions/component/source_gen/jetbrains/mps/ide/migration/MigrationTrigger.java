@@ -163,6 +163,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             initModuleVersionsWhereNeeded();
 
             addListeners();
+
+            myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+              public void run() {
+                checkNotDeployedLanguages();
+              }
+            });
             checkMigrationNeeded();
           }
         });
@@ -596,27 +602,31 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     public void onUnloaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
     }
     public void onLoaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
-      Iterable<SLanguage> problems = getNotDeployedUsedLanguages(ProjectHelper.fromIdeaProject(this.myIdeaProject));
-      if (Sequence.fromIterable(problems).isEmpty()) {
-        unblockMigrationsCheck();
-      } else {
-        blockMigrationsCheck();
-        StringBuilder sb = new StringBuilder();
-        sb.append("Some languages used in project are not deployed.<br>");
-        sb.append("Can't check migrations applicability.<br>");
-        sb.append("Please make the following languages:");
-        sb.append("<p>");
-        for (SLanguage langProblem : Sequence.fromIterable(problems)) {
-          sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
-          sb.append("<br>");
-        }
-        sb.append("</p>");
+      checkNotDeployedLanguages();
+    }
+  }
 
-        Notification notification = new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
-        Notifications.Bus.notify(notification, myProject);
-
-        myLastNotification = null;
+  private void checkNotDeployedLanguages() {
+    Iterable<SLanguage> problems = getNotDeployedUsedLanguages(ProjectHelper.fromIdeaProject(this.myIdeaProject));
+    if (Sequence.fromIterable(problems).isEmpty()) {
+      unblockMigrationsCheck();
+    } else {
+      blockMigrationsCheck();
+      StringBuilder sb = new StringBuilder();
+      sb.append("Some languages used in project are not deployed.<br>");
+      sb.append("Can't check migrations applicability.<br>");
+      sb.append("Please make the following languages:");
+      sb.append("<p>");
+      for (SLanguage langProblem : Sequence.fromIterable(problems)) {
+        sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+        sb.append("<br>");
       }
+      sb.append("</p>");
+
+      Notification notification = new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
+      Notifications.Bus.notify(notification, myProject);
+
+      myLastNotification = null;
     }
   }
 

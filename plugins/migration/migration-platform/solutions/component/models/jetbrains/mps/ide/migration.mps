@@ -994,6 +994,26 @@
                                 <ref role="37wK5l" node="7lByCvUySng" resolve="addListeners" />
                               </node>
                             </node>
+                            <node concept="3clFbH" id="6Va2kqwrpVO" role="3cqZAp" />
+                            <node concept="1QHqEK" id="6Va2kqwrtXL" role="3cqZAp">
+                              <node concept="1QHqEC" id="6Va2kqwrtXN" role="1QHqEI">
+                                <node concept="3clFbS" id="6Va2kqwrtXP" role="1bW5cS">
+                                  <node concept="3clFbF" id="6Va2kqwrDbq" role="3cqZAp">
+                                    <node concept="1rXfSq" id="6Va2kqwrDbp" role="3clFbG">
+                                      <ref role="37wK5l" node="6Va2kqwrehf" resolve="checkNotDeployedLanguages" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="6Va2kqwrGbM" role="ukAjM">
+                                <node concept="37vLTw" id="6Va2kqwrFwO" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+                                </node>
+                                <node concept="liA8E" id="6Va2kqwrH1z" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="45$_j8AUejz" role="3cqZAp">
                               <node concept="1rXfSq" id="45$_j8AUejy" role="3clFbG">
                                 <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
@@ -4223,234 +4243,247 @@
           </node>
         </node>
         <node concept="3clFbS" id="3SyvI1qzD8C" role="3clF47">
-          <node concept="3cpWs8" id="3SyvI1qzFt3" role="3cqZAp">
-            <node concept="3cpWsn" id="3SyvI1qzFt4" role="3cpWs9">
-              <property role="TrG5h" value="problems" />
-              <node concept="A3Dl8" id="3SyvI1qzFsW" role="1tU5fm">
-                <node concept="3uibUv" id="3SyvI1qzFsZ" role="A3Ik2">
-                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-                </node>
-              </node>
-              <node concept="1rXfSq" id="3SyvI1qzFt5" role="33vP2m">
-                <ref role="37wK5l" node="3SyvI1qyQDr" resolve="getNotDeployedUsedLanguages" />
-                <node concept="2YIFZM" id="3SyvI1qzFt6" role="37wK5m">
-                  <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <node concept="2OqwBi" id="3SyvI1qzGDR" role="37wK5m">
-                    <node concept="Xjq3P" id="3SyvI1qzGDS" role="2Oq$k0" />
-                    <node concept="2OwXpG" id="3SyvI1qzGDT" role="2OqNvi">
-                      <ref role="2Oxat5" node="3SyvI1qzGD_" resolve="myIdeaProject" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbJ" id="3SyvI1qzDDE" role="3cqZAp">
-            <node concept="2OqwBi" id="3SyvI1qzGaB" role="3clFbw">
-              <node concept="37vLTw" id="3SyvI1qzFt8" role="2Oq$k0">
-                <ref role="3cqZAo" node="3SyvI1qzFt4" resolve="problems" />
-              </node>
-              <node concept="1v1jN8" id="5if8ZnstT_e" role="2OqNvi" />
-            </node>
-            <node concept="3clFbS" id="3SyvI1qzDDG" role="3clFbx">
-              <node concept="3clFbF" id="3SyvI1q_2zd" role="3cqZAp">
-                <node concept="1rXfSq" id="3SyvI1q_2z8" role="3clFbG">
-                  <ref role="37wK5l" node="7RkTcA9EM7H" resolve="unblockMigrationsCheck" />
-                </node>
-              </node>
-            </node>
-            <node concept="9aQIb" id="3SyvI1qzG_g" role="9aQIa">
-              <node concept="3clFbS" id="3SyvI1qzG_h" role="9aQI4">
-                <node concept="3clFbF" id="3SyvI1q_v7E" role="3cqZAp">
-                  <node concept="1rXfSq" id="3SyvI1q_v7C" role="3clFbG">
-                    <ref role="37wK5l" node="7RkTcA9EKKP" resolve="blockMigrationsCheck" />
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="3SyvI1qAQWQ" role="3cqZAp">
-                  <node concept="3cpWsn" id="3SyvI1qAQWR" role="3cpWs9">
-                    <property role="TrG5h" value="sb" />
-                    <node concept="3uibUv" id="3SyvI1qAQWS" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
-                    </node>
-                    <node concept="2ShNRf" id="3SyvI1qARDT" role="33vP2m">
-                      <node concept="1pGfFk" id="3SyvI1qARAA" role="2ShVmc">
-                        <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3SyvI1qASkQ" role="3cqZAp">
-                  <node concept="2OqwBi" id="3SyvI1qAT1E" role="3clFbG">
-                    <node concept="37vLTw" id="3SyvI1qASkO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                    </node>
-                    <node concept="liA8E" id="3SyvI1qATr5" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                      <node concept="Xl_RD" id="3SyvI1qA1n5" role="37wK5m">
-                        <property role="Xl_RC" value="Some languages used in project are not deployed.&lt;br&gt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3UgBxdA6gNK" role="3cqZAp">
-                  <node concept="2OqwBi" id="3UgBxdA6gNL" role="3clFbG">
-                    <node concept="37vLTw" id="3UgBxdA6gNM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                    </node>
-                    <node concept="liA8E" id="3UgBxdA6gNN" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                      <node concept="Xl_RD" id="3UgBxdA6gNO" role="37wK5m">
-                        <property role="Xl_RC" value="Can't check migrations applicability.&lt;br&gt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3SyvI1qAVg6" role="3cqZAp">
-                  <node concept="2OqwBi" id="3SyvI1qAVTw" role="3clFbG">
-                    <node concept="37vLTw" id="3SyvI1qAVg4" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                    </node>
-                    <node concept="liA8E" id="3SyvI1qAWqI" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                      <node concept="Xl_RD" id="3SyvI1qAWBe" role="37wK5m">
-                        <property role="Xl_RC" value="Please make the following languages:" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3SyvI1qAXmj" role="3cqZAp">
-                  <node concept="2OqwBi" id="3SyvI1qAXZO" role="3clFbG">
-                    <node concept="37vLTw" id="3SyvI1qAXmh" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                    </node>
-                    <node concept="liA8E" id="3SyvI1qAYp5" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                      <node concept="Xl_RD" id="3SyvI1qAYtF" role="37wK5m">
-                        <property role="Xl_RC" value="&lt;p&gt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="2Gpval" id="3SyvI1qB3kH" role="3cqZAp">
-                  <node concept="2GrKxI" id="3SyvI1qB3kJ" role="2Gsz3X">
-                    <property role="TrG5h" value="langProblem" />
-                  </node>
-                  <node concept="37vLTw" id="3SyvI1qB3Zi" role="2GsD0m">
-                    <ref role="3cqZAo" node="3SyvI1qzFt4" resolve="problems" />
-                  </node>
-                  <node concept="3clFbS" id="3SyvI1qB3kN" role="2LFqv$">
-                    <node concept="3clFbF" id="3SyvI1qB4bC" role="3cqZAp">
-                      <node concept="2OqwBi" id="3SyvI1qB4rP" role="3clFbG">
-                        <node concept="37vLTw" id="3SyvI1qB4bB" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                        </node>
-                        <node concept="liA8E" id="3SyvI1qB4X3" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                          <node concept="2YIFZM" id="3SyvI1qB6jr" role="37wK5m">
-                            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-                            <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
-                            <node concept="2OqwBi" id="3SyvI1qB6AP" role="37wK5m">
-                              <node concept="2GrUjf" id="3SyvI1qB6uZ" role="2Oq$k0">
-                                <ref role="2Gs0qQ" node="3SyvI1qB3kJ" resolve="langProblem" />
-                              </node>
-                              <node concept="liA8E" id="3SyvI1qB6N_" role="2OqNvi">
-                                <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="3SyvI1qB53N" role="3cqZAp">
-                      <node concept="2OqwBi" id="3SyvI1qB5nM" role="3clFbG">
-                        <node concept="37vLTw" id="3SyvI1qB53L" role="2Oq$k0">
-                          <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                        </node>
-                        <node concept="liA8E" id="3SyvI1qB5Tq" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                          <node concept="Xl_RD" id="3SyvI1qB5Y0" role="37wK5m">
-                            <property role="Xl_RC" value="&lt;br&gt;" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3SyvI1qAYBy" role="3cqZAp">
-                  <node concept="2OqwBi" id="3SyvI1qAYBz" role="3clFbG">
-                    <node concept="37vLTw" id="3SyvI1qAYB$" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                    </node>
-                    <node concept="liA8E" id="3SyvI1qAYB_" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-                      <node concept="Xl_RD" id="3SyvI1qAYBA" role="37wK5m">
-                        <property role="Xl_RC" value="&lt;/p&gt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="3SyvI1qAU6K" role="3cqZAp" />
-                <node concept="3cpWs8" id="3SyvI1qA1n0" role="3cqZAp">
-                  <node concept="3cpWsn" id="3SyvI1qA1n1" role="3cpWs9">
-                    <property role="TrG5h" value="notification" />
-                    <node concept="3uibUv" id="3SyvI1qA1mS" role="1tU5fm">
-                      <ref role="3uigEE" to="fnpx:~Notification" resolve="Notification" />
-                    </node>
-                    <node concept="2ShNRf" id="3SyvI1qA1n2" role="33vP2m">
-                      <node concept="1pGfFk" id="3SyvI1qA1n3" role="2ShVmc">
-                        <ref role="37wK5l" to="fnpx:~Notification.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String,com.intellij.notification.NotificationType,com.intellij.notification.NotificationListener)" resolve="Notification" />
-                        <node concept="Xl_RD" id="3SyvI1qALBq" role="37wK5m">
-                          <property role="Xl_RC" value="Migration" />
-                        </node>
-                        <node concept="Xl_RD" id="3SyvI1qA1n4" role="37wK5m">
-                          <property role="Xl_RC" value="Migration suspended" />
-                        </node>
-                        <node concept="2OqwBi" id="3SyvI1qB14Y" role="37wK5m">
-                          <node concept="37vLTw" id="3SyvI1qB0k0" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3SyvI1qAQWR" resolve="sb" />
-                          </node>
-                          <node concept="liA8E" id="3SyvI1qB27i" role="2OqNvi">
-                            <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
-                          </node>
-                        </node>
-                        <node concept="Rm8GO" id="3SyvI1qAOVA" role="37wK5m">
-                          <ref role="Rm8GQ" to="fnpx:~NotificationType.WARNING" resolve="WARNING" />
-                          <ref role="1Px2BO" to="fnpx:~NotificationType" resolve="NotificationType" />
-                        </node>
-                        <node concept="10Nm6u" id="3SyvI1qBaQz" role="37wK5m" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3SyvI1q_vx0" role="3cqZAp">
-                  <node concept="2YIFZM" id="3SyvI1q_vx1" role="3clFbG">
-                    <ref role="1Pybhc" to="fnpx:~Notifications$Bus" resolve="Notifications.Bus" />
-                    <ref role="37wK5l" to="fnpx:~Notifications$Bus.notify(com.intellij.notification.Notification,com.intellij.openapi.project.Project):void" resolve="notify" />
-                    <node concept="37vLTw" id="3SyvI1qA6s_" role="37wK5m">
-                      <ref role="3cqZAo" node="3SyvI1qA1n1" resolve="notification" />
-                    </node>
-                    <node concept="37vLTw" id="3SyvI1q_vx3" role="37wK5m">
-                      <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="3SyvI1qBGvW" role="3cqZAp" />
-                <node concept="3clFbF" id="3SyvI1qBHzl" role="3cqZAp">
-                  <node concept="37vLTI" id="3SyvI1qBImJ" role="3clFbG">
-                    <node concept="10Nm6u" id="3SyvI1qBIr0" role="37vLTx" />
-                    <node concept="37vLTw" id="3SyvI1qBHzj" role="37vLTJ">
-                      <ref role="3cqZAo" node="6lEzp8ArlVb" resolve="myLastNotification" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+          <node concept="3clFbF" id="6Va2kqwrehj" role="3cqZAp">
+            <node concept="1rXfSq" id="6Va2kqwrehi" role="3clFbG">
+              <ref role="37wK5l" node="6Va2kqwrehf" resolve="checkNotDeployedLanguages" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3uibUv" id="3SyvI1qzGDG" role="EKbjA">
         <ref role="3uigEE" to="3qmy:~DeployListener" resolve="DeployListener" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6Va2kqwrkNs" role="jymVt" />
+    <node concept="3clFb_" id="6Va2kqwrehf" role="jymVt">
+      <property role="TrG5h" value="checkNotDeployedLanguages" />
+      <node concept="3Tm6S6" id="6Va2kqwrehg" role="1B3o_S" />
+      <node concept="3cqZAl" id="6Va2kqwrehh" role="3clF45" />
+      <node concept="3clFbS" id="6Va2kqwrefN" role="3clF47">
+        <node concept="3cpWs8" id="6Va2kqwrefO" role="3cqZAp">
+          <node concept="3cpWsn" id="6Va2kqwrefP" role="3cpWs9">
+            <property role="TrG5h" value="problems" />
+            <node concept="A3Dl8" id="6Va2kqwrefQ" role="1tU5fm">
+              <node concept="3uibUv" id="6Va2kqwrefR" role="A3Ik2">
+                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+              </node>
+            </node>
+            <node concept="1rXfSq" id="6Va2kqwrefS" role="33vP2m">
+              <ref role="37wK5l" node="3SyvI1qyQDr" resolve="getNotDeployedUsedLanguages" />
+              <node concept="2YIFZM" id="6Va2kqwrefT" role="37wK5m">
+                <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <node concept="2OqwBi" id="6Va2kqwrefU" role="37wK5m">
+                  <node concept="Xjq3P" id="6Va2kqwrefV" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="6Va2kqwrefW" role="2OqNvi">
+                    <ref role="2Oxat5" node="3SyvI1qzGD_" resolve="myIdeaProject" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6Va2kqwrefX" role="3cqZAp">
+          <node concept="2OqwBi" id="6Va2kqwrefY" role="3clFbw">
+            <node concept="37vLTw" id="6Va2kqwrefZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="6Va2kqwrefP" resolve="problems" />
+            </node>
+            <node concept="1v1jN8" id="6Va2kqwreg0" role="2OqNvi" />
+          </node>
+          <node concept="3clFbS" id="6Va2kqwreg1" role="3clFbx">
+            <node concept="3clFbF" id="6Va2kqwreg2" role="3cqZAp">
+              <node concept="1rXfSq" id="6Va2kqwreg3" role="3clFbG">
+                <ref role="37wK5l" node="7RkTcA9EM7H" resolve="unblockMigrationsCheck" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="6Va2kqwreg4" role="9aQIa">
+            <node concept="3clFbS" id="6Va2kqwreg5" role="9aQI4">
+              <node concept="3clFbF" id="6Va2kqwreg6" role="3cqZAp">
+                <node concept="1rXfSq" id="6Va2kqwreg7" role="3clFbG">
+                  <ref role="37wK5l" node="7RkTcA9EKKP" resolve="blockMigrationsCheck" />
+                </node>
+              </node>
+              <node concept="3cpWs8" id="6Va2kqwreg8" role="3cqZAp">
+                <node concept="3cpWsn" id="6Va2kqwreg9" role="3cpWs9">
+                  <property role="TrG5h" value="sb" />
+                  <node concept="3uibUv" id="6Va2kqwrega" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
+                  </node>
+                  <node concept="2ShNRf" id="6Va2kqwregb" role="33vP2m">
+                    <node concept="1pGfFk" id="6Va2kqwregc" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwregd" role="3cqZAp">
+                <node concept="2OqwBi" id="6Va2kqwrege" role="3clFbG">
+                  <node concept="37vLTw" id="6Va2kqwregf" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="6Va2kqwregg" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                    <node concept="Xl_RD" id="6Va2kqwregh" role="37wK5m">
+                      <property role="Xl_RC" value="Some languages used in project are not deployed.&lt;br&gt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwregi" role="3cqZAp">
+                <node concept="2OqwBi" id="6Va2kqwregj" role="3clFbG">
+                  <node concept="37vLTw" id="6Va2kqwregk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="6Va2kqwregl" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                    <node concept="Xl_RD" id="6Va2kqwregm" role="37wK5m">
+                      <property role="Xl_RC" value="Can't check migrations applicability.&lt;br&gt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwregn" role="3cqZAp">
+                <node concept="2OqwBi" id="6Va2kqwrego" role="3clFbG">
+                  <node concept="37vLTw" id="6Va2kqwregp" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="6Va2kqwregq" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                    <node concept="Xl_RD" id="6Va2kqwregr" role="37wK5m">
+                      <property role="Xl_RC" value="Please make the following languages:" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwregs" role="3cqZAp">
+                <node concept="2OqwBi" id="6Va2kqwregt" role="3clFbG">
+                  <node concept="37vLTw" id="6Va2kqwregu" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="6Va2kqwregv" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                    <node concept="Xl_RD" id="6Va2kqwregw" role="37wK5m">
+                      <property role="Xl_RC" value="&lt;p&gt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2Gpval" id="6Va2kqwregx" role="3cqZAp">
+                <node concept="2GrKxI" id="6Va2kqwregy" role="2Gsz3X">
+                  <property role="TrG5h" value="langProblem" />
+                </node>
+                <node concept="37vLTw" id="6Va2kqwregz" role="2GsD0m">
+                  <ref role="3cqZAo" node="6Va2kqwrefP" resolve="problems" />
+                </node>
+                <node concept="3clFbS" id="6Va2kqwreg$" role="2LFqv$">
+                  <node concept="3clFbF" id="6Va2kqwreg_" role="3cqZAp">
+                    <node concept="2OqwBi" id="6Va2kqwregA" role="3clFbG">
+                      <node concept="37vLTw" id="6Va2kqwregB" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                      </node>
+                      <node concept="liA8E" id="6Va2kqwregC" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                        <node concept="2YIFZM" id="6Va2kqwregD" role="37wK5m">
+                          <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                          <ref role="37wK5l" to="18ew:~NameUtil.compactNamespace(java.lang.String):java.lang.String" resolve="compactNamespace" />
+                          <node concept="2OqwBi" id="6Va2kqwregE" role="37wK5m">
+                            <node concept="2GrUjf" id="6Va2kqwregF" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="6Va2kqwregy" resolve="langProblem" />
+                            </node>
+                            <node concept="liA8E" id="6Va2kqwregG" role="2OqNvi">
+                              <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6Va2kqwregH" role="3cqZAp">
+                    <node concept="2OqwBi" id="6Va2kqwregI" role="3clFbG">
+                      <node concept="37vLTw" id="6Va2kqwregJ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                      </node>
+                      <node concept="liA8E" id="6Va2kqwregK" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                        <node concept="Xl_RD" id="6Va2kqwregL" role="37wK5m">
+                          <property role="Xl_RC" value="&lt;br&gt;" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwregM" role="3cqZAp">
+                <node concept="2OqwBi" id="6Va2kqwregN" role="3clFbG">
+                  <node concept="37vLTw" id="6Va2kqwregO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                  </node>
+                  <node concept="liA8E" id="6Va2kqwregP" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                    <node concept="Xl_RD" id="6Va2kqwregQ" role="37wK5m">
+                      <property role="Xl_RC" value="&lt;/p&gt;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6Va2kqwregR" role="3cqZAp" />
+              <node concept="3cpWs8" id="6Va2kqwregS" role="3cqZAp">
+                <node concept="3cpWsn" id="6Va2kqwregT" role="3cpWs9">
+                  <property role="TrG5h" value="notification" />
+                  <node concept="3uibUv" id="6Va2kqwregU" role="1tU5fm">
+                    <ref role="3uigEE" to="fnpx:~Notification" resolve="Notification" />
+                  </node>
+                  <node concept="2ShNRf" id="6Va2kqwregV" role="33vP2m">
+                    <node concept="1pGfFk" id="6Va2kqwregW" role="2ShVmc">
+                      <ref role="37wK5l" to="fnpx:~Notification.&lt;init&gt;(java.lang.String,java.lang.String,java.lang.String,com.intellij.notification.NotificationType,com.intellij.notification.NotificationListener)" resolve="Notification" />
+                      <node concept="Xl_RD" id="6Va2kqwregX" role="37wK5m">
+                        <property role="Xl_RC" value="Migration" />
+                      </node>
+                      <node concept="Xl_RD" id="6Va2kqwregY" role="37wK5m">
+                        <property role="Xl_RC" value="Migration suspended" />
+                      </node>
+                      <node concept="2OqwBi" id="6Va2kqwregZ" role="37wK5m">
+                        <node concept="37vLTw" id="6Va2kqwreh0" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6Va2kqwreg9" resolve="sb" />
+                        </node>
+                        <node concept="liA8E" id="6Va2kqwreh1" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                        </node>
+                      </node>
+                      <node concept="Rm8GO" id="6Va2kqwreh2" role="37wK5m">
+                        <ref role="Rm8GQ" to="fnpx:~NotificationType.WARNING" resolve="WARNING" />
+                        <ref role="1Px2BO" to="fnpx:~NotificationType" resolve="NotificationType" />
+                      </node>
+                      <node concept="10Nm6u" id="6Va2kqwreh3" role="37wK5m" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6Va2kqwreh4" role="3cqZAp">
+                <node concept="2YIFZM" id="6Va2kqwreh5" role="3clFbG">
+                  <ref role="1Pybhc" to="fnpx:~Notifications$Bus" resolve="Notifications.Bus" />
+                  <ref role="37wK5l" to="fnpx:~Notifications$Bus.notify(com.intellij.notification.Notification,com.intellij.openapi.project.Project):void" resolve="notify" />
+                  <node concept="37vLTw" id="6Va2kqwreh6" role="37wK5m">
+                    <ref role="3cqZAo" node="6Va2kqwregT" resolve="notification" />
+                  </node>
+                  <node concept="37vLTw" id="6Va2kqwreh7" role="37wK5m">
+                    <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6Va2kqwreh8" role="3cqZAp" />
+              <node concept="3clFbF" id="6Va2kqwreh9" role="3cqZAp">
+                <node concept="37vLTI" id="6Va2kqwreha" role="3clFbG">
+                  <node concept="10Nm6u" id="6Va2kqwrehb" role="37vLTx" />
+                  <node concept="37vLTw" id="6Va2kqwrehc" role="37vLTJ">
+                    <ref role="3cqZAo" node="6lEzp8ArlVb" resolve="myLastNotification" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3SyvI1q$wny" role="jymVt" />
