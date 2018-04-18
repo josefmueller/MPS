@@ -76,7 +76,6 @@ import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
@@ -107,6 +106,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private int myBlocked = 0;
 
   private Notification myLastNotification = null;
+  private Notification myLastDeployWarning = null;
 
   private ProjectMigrationProperties myProperties;
 
@@ -600,6 +600,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       this.myIdeaProject = ideaProject;
     }
     public void onUnloaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
+      checkNotDeployedLanguages();
     }
     public void onLoaded(Set<ReloadableModule> modules, @NotNull ProgressMonitor p) {
       checkNotDeployedLanguages();
@@ -607,27 +608,46 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private void checkNotDeployedLanguages() {
-    Iterable<SLanguage> problems = getNotDeployedUsedLanguages(ProjectHelper.fromIdeaProject(this.myIdeaProject));
+    Iterable<SLanguage> problems = getNotDeployedUsedLanguages(myMpsProject);
     if (Sequence.fromIterable(problems).isEmpty()) {
-      unblockMigrationsCheck();
-    } else {
-      blockMigrationsCheck();
-      StringBuilder sb = new StringBuilder();
-      sb.append("Some languages used in project are not deployed.<br>");
-      sb.append("Can't check migrations applicability.<br>");
-      sb.append("Please make the following languages:");
-      sb.append("<p>");
-      for (SLanguage langProblem : Sequence.fromIterable(problems)) {
-        sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
-        sb.append("<br>");
+      if (myLastDeployWarning != null) {
+        myLastNotification = null;
+        myLastDeployWarning = null;
+
+        unblockMigrationsCheck();
       }
-      sb.append("</p>");
+    } else {
+      if (myLastDeployWarning != null && myLastDeployWarning.getBalloon() != null) {
+        return;
+      }
+      // migrations already blocked, warning is showing 
 
-      Notification notification = new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
-      Notifications.Bus.notify(notification, myProject);
+      if (myLastDeployWarning == null) {
+        blockMigrationsCheck();
+      } else {
+        // expire old, show new to get the balloon again 
+        if (!((myLastDeployWarning.isExpired()))) {
+          myLastDeployWarning.expire();
+        }
+      }
 
-      myLastNotification = null;
+      myLastDeployWarning = createDeployWarn(problems);
+      Notifications.Bus.notify(myLastDeployWarning, myProject);
     }
+  }
+  private Notification createDeployWarn(Iterable<SLanguage> problems) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Some languages used in project are not deployed.<br>");
+    sb.append("Can't check migrations applicability.<br>");
+    sb.append("Please make the following languages:");
+    sb.append("<p>");
+    for (SLanguage langProblem : Sequence.fromIterable(problems)) {
+      sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+      sb.append("<br>");
+    }
+    sb.append("</p>");
+
+    return new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
   }
 
   private Iterable<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
