@@ -20,6 +20,7 @@
     </language>
     <language id="68015e26-cc4d-49db-8715-b643faea1769" name="jetbrains.mps.lang.test.generator">
       <concept id="554465258093203543" name="jetbrains.mps.lang.test.generator.structure.TransformationMatchAssertion" flags="ng" index="3FggHx">
+        <child id="554465258093203555" name="transformationPlan" index="3FggHl" />
         <child id="554465258093203552" name="referenceModel" index="3FggHm" />
         <child id="554465258093203550" name="inputModel" index="3FggHC" />
       </concept>
@@ -52,6 +53,17 @@
         <ref role="3FggHE" node="2kP5W5ySLxB" resolve="B" />
       </node>
     </node>
+    <node concept="3FggHx" id="354Yu58sl3v" role="3FggHh">
+      <node concept="3FggHH" id="354Yu58sl3F" role="3FggHC">
+        <ref role="3FggHE" node="2kP5W5ySLxk" resolve="A" />
+      </node>
+      <node concept="3FggHH" id="354Yu58sl4p" role="3FggHm">
+        <ref role="3FggHE" node="354Yu58snUn" resolve="NoClosures" />
+      </node>
+      <node concept="3FggHH" id="354Yu58sl45" role="3FggHl">
+        <ref role="3FggHE" node="354Yu58sl3Q" resolve="ClosuresOnlyPlan" />
+      </node>
+    </node>
     <node concept="3Fgkto" id="2kP5W5ySLxk" role="3Fgkth">
       <property role="TrG5h" value="A" />
       <node concept="1dCxOl" id="2kP5W5yTe4F" role="3Fgkt4">
@@ -67,6 +79,24 @@
         <property role="1XweGQ" value="r:c850a08e-438b-4a8e-9ce5-5acf32b55cff" />
         <node concept="1j_P7g" id="2kP5W5yTe4K" role="1j$8Uc">
           <property role="1j_P7h" value="jetbrains.mps.test.smodel.refdata1" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Fgkto" id="354Yu58snUn" role="3Fgkth">
+      <property role="TrG5h" value="NoClosures" />
+      <node concept="1dCxOl" id="354Yu58snU_" role="3Fgkt4">
+        <property role="1XweGQ" value="r:d382ffc4-6e9a-4c52-be08-af9b6c16348f" />
+        <node concept="1j_P7g" id="354Yu58snUA" role="1j$8Uc">
+          <property role="1j_P7h" value="jetbrains.mps.test.smodel.refdata2" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Fgkto" id="354Yu58sl3Q" role="3Fgkth">
+      <property role="TrG5h" value="ClosuresOnlyPlan" />
+      <node concept="1dCxOl" id="354Yu58sl41" role="3Fgkt4">
+        <property role="1XweGQ" value="r:6c5a5754-7997-4ba5-9273-c58651ab632d" />
+        <node concept="1j_P7g" id="354Yu58sl42" role="1j$8Uc">
+          <property role="1j_P7h" value="jetbrains.mps.test.smodel.gp@genplan" />
         </node>
       </node>
     </node>

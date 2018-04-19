@@ -8,27 +8,47 @@
     <file name="BasicTest1.java">
       <node id="9177601187676038197" at="13,0,14,0" concept="1" trace="myArg_A" />
       <node id="9177601187676038197" at="14,0,15,0" concept="1" trace="myArg_B" />
-      <node id="9177601187676038197" at="17,34,18,99" concept="0" />
-      <node id="9177601187676038197" at="18,99,19,102" concept="0" />
-      <node id="9177601187676038197" at="23,40,24,41" concept="3" />
-      <node id="9177601187676038197" at="24,41,25,23" concept="3" />
-      <node id="9177601187676038197" at="25,23,26,18" concept="0" />
-      <node id="9177601187676038197" at="26,18,27,18" concept="0" />
-      <node id="9177601187676038197" at="27,18,28,24" concept="3" />
-      <node id="9177601187676038197" at="28,24,29,50" concept="3" />
-      <node id="9177601187676038197" at="29,50,30,88" concept="0" />
-      <node id="9177601187676038197" at="16,0,21,0" concept="2" trace="prepareArguments#()V" />
-      <node id="9177601187676038197" at="22,0,32,0" concept="2" trace="testTransformAndMatch0#()V" />
-      <scope id="9177601187676038197" at="17,34,19,102" />
-      <scope id="9177601187676038197" at="16,0,21,0" />
-      <scope id="9177601187676038197" at="23,40,30,88">
+      <node id="9177601187676038197" at="15,0,16,0" concept="1" trace="myArg_NoClosures" />
+      <node id="9177601187676038197" at="16,0,17,0" concept="1" trace="myArg_ClosuresOnlyPlan" />
+      <node id="9177601187676038197" at="19,34,20,99" concept="0" />
+      <node id="9177601187676038197" at="20,99,21,102" concept="0" />
+      <node id="9177601187676038197" at="21,102,22,111" concept="0" />
+      <node id="9177601187676038197" at="22,111,23,119" concept="0" />
+      <node id="9177601187676038197" at="27,40,28,41" concept="3" />
+      <node id="9177601187676038197" at="28,41,29,23" concept="3" />
+      <node id="9177601187676038197" at="29,23,30,18" concept="0" />
+      <node id="9177601187676038197" at="30,18,31,18" concept="0" />
+      <node id="9177601187676038197" at="31,18,32,24" concept="3" />
+      <node id="9177601187676038197" at="32,24,33,50" concept="3" />
+      <node id="9177601187676038197" at="33,50,34,88" concept="0" />
+      <node id="9177601187676038197" at="37,40,38,41" concept="3" />
+      <node id="9177601187676038197" at="38,41,39,23" concept="3" />
+      <node id="9177601187676038197" at="39,23,40,18" concept="0" />
+      <node id="9177601187676038197" at="40,18,41,69" concept="0" />
+      <node id="9177601187676038197" at="41,69,42,18" concept="0" />
+      <node id="9177601187676038197" at="42,18,43,33" concept="3" />
+      <node id="9177601187676038197" at="43,33,44,50" concept="3" />
+      <node id="9177601187676038197" at="44,50,45,88" concept="0" />
+      <node id="9177601187676038197" at="18,0,25,0" concept="2" trace="prepareArguments#()V" />
+      <node id="9177601187676038197" at="26,0,36,0" concept="2" trace="testTransformAndMatch0#()V" />
+      <node id="9177601187676038197" at="36,0,47,0" concept="2" trace="testTransformAndMatch1#()V" />
+      <scope id="9177601187676038197" at="19,34,23,119" />
+      <scope id="9177601187676038197" at="18,0,25,0" />
+      <scope id="9177601187676038197" at="27,40,34,88">
         <var name="i" id="9177601187676038197" />
         <var name="match" id="9177601187676038197" />
         <var name="rm" id="9177601187676038197" />
         <var name="t" id="9177601187676038197" />
       </scope>
-      <scope id="9177601187676038197" at="22,0,32,0" />
-      <unit id="9177601187676038197" at="12,0,33,0" name="jetbrains.mps.test.smodel.BasicTest1" />
+      <scope id="9177601187676038197" at="37,40,45,88">
+        <var name="i" id="9177601187676038197" />
+        <var name="match" id="9177601187676038197" />
+        <var name="rm" id="9177601187676038197" />
+        <var name="t" id="9177601187676038197" />
+      </scope>
+      <scope id="9177601187676038197" at="26,0,36,0" />
+      <scope id="9177601187676038197" at="36,0,47,0" />
+      <unit id="9177601187676038197" at="12,0,48,0" name="jetbrains.mps.test.smodel.BasicTest1" />
     </file>
   </root>
 </debug-info>
