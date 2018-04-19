@@ -10,6 +10,8 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
+import java.util.function.Consumer;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import com.intellij.notification.Notification;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.project.Project;
@@ -77,6 +79,7 @@ import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 /**
@@ -104,6 +107,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private boolean myMigrationForbidden = false;
   private boolean myMigrationPostponed = false;
   private int myBlocked = 0;
+  private Consumer<Iterable<SModuleReference>> myRebuildHandler = null;
 
   private Notification myLastNotification = null;
   private Notification myLastDeployWarning = null;
@@ -127,6 +131,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     this.myDeployListener = new MigrationTrigger.MyDeployListener(ideaProject);
   }
 
+  public void setRebuildHandler(Consumer<Iterable<SModuleReference>> rebuildHandler) {
+    myRebuildHandler = rebuildHandler;
+  }
 
   public synchronized void blockMigrationsCheck() {
     myBlocked++;
@@ -635,22 +642,52 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       Notifications.Bus.notify(myLastDeployWarning, myProject);
     }
   }
-  private Notification createDeployWarn(Iterable<SLanguage> problems) {
+  private Notification createDeployWarn(final Iterable<SLanguage> problems) {
+    final int treshold = 20;
+    Iterable<SLanguage> sortedProblems = Sequence.fromIterable(problems).sort(new ISelector<SLanguage, String>() {
+      public String select(SLanguage it) {
+        return NameUtil.compactNamespace(it.getQualifiedName());
+      }
+    }, true);
+
     StringBuilder sb = new StringBuilder();
-    sb.append("Some languages used in project are not deployed.<br>");
-    sb.append("Can't check migrations applicability.<br>");
-    sb.append("Please make the following languages:");
+    sb.append("Some languages used in project are not deployed. Can't check migrations applicability.<br><br>");
+    sb.append("Not deployed languages");
+    if (Sequence.fromIterable(sortedProblems).count() > treshold) {
+      sb.append(" (first " + treshold + " shown)");
+    }
+    sb.append(":");
     sb.append("<p>");
-    for (SLanguage langProblem : Sequence.fromIterable(problems)) {
+    for (SLanguage langProblem : Sequence.fromIterable(sortedProblems).take(treshold)) {
+      sb.append("  -");
       sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+      sb.append(" (" + ((langProblem.getSourceModule() == null ? "absent" : "dependency problem")) + ")");
       sb.append("<br>");
     }
     sb.append("</p>");
 
-    return new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, null);
+    if (myRebuildHandler != null) {
+      sb.append("<br><p><a href=\"rebuild\">Rebuild broken languages</a></p>");
+    }
+
+    return new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, new NotificationListener() {
+      @Override
+      public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
+        if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
+          return;
+        }
+        if ("rebuild".equals(e.getDescription())) {
+          myRebuildHandler.accept(Sequence.fromIterable(problems).select(new ISelector<SLanguage, SModuleReference>() {
+            public SModuleReference select(SLanguage it) {
+              return it.getSourceModuleReference();
+            }
+          }).where(new NotNullWhereFilter<SModuleReference>()));
+        }
+      }
+    });
   }
 
-  private Iterable<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
+  private Collection<SLanguage> getNotDeployedUsedLanguages(jetbrains.mps.project.Project p) {
     Iterable<SModule> projectModules = MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject);
     Iterable<SLanguage> languages = Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule it) {
@@ -661,6 +698,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       public boolean accept(SLanguage it) {
         return !(myClassLoaderManager.getModulesWatcher().getStatus(it.getSourceModuleReference()).isValid());
       }
-    });
+    }).toListSequence();
   }
 }
