@@ -17,6 +17,12 @@ import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.InterpretedPlanProvider;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -57,11 +63,19 @@ public class BaseGeneratorTest implements EnvironmentAware {
     });
   }
 
-  protected final ModelGenerationPlan planFromModel(SModel gpm) {
-    return null;
+  protected final ModelGenerationPlan.Provider planProviderFromModel(final SModel gpm) {
+    return new ModelAccessHelper(gpm.getRepository()).runReadAction(new Computable<InterpretedPlanProvider>() {
+      public InterpretedPlanProvider compute() {
+        LanguageRegistry lreg = myEnv.getPlatform().findComponent(LanguageRegistry.class);
+        LogHandler mh = new LogHandler(Logger.getLogger(getClass()));
+        SNodeReference planNode = SNodeOperations.getPointer(ListSequence.fromList(SModelOperations.roots(gpm, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, "jetbrains.mps.lang.generator.plan.structure.Plan"))).first());
+        return new InterpretedPlanProvider(lreg, mh, planNode, myRepository);
+      }
+    });
   }
 
   protected final SModel findModel(String modelRef) {
+    // FIXME lacking proper model access, works as mr.resolve just complains with WARN if there's no model read 
     Platform plaf = myEnv.getPlatform();
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(modelRef);
     // FIXME I use global (classloading) repository as AntModuleTestSuite/MpsTestsSuite loads modules with tests, though technically they shall be part of a project 

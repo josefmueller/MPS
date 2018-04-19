@@ -18,7 +18,7 @@ public final class TransformHelper {
   private final SRepository myRepository;
   private final IMessageHandler myMessages;
   private SModel myInputModel;
-  private ModelGenerationPlan myGenerationPlan;
+  private ModelGenerationPlan.Provider myPlanProvider;
   private GenerationStatus myGenOutcome;
 
   /*package*/ TransformHelper(SRepository repository, IMessageHandler messages) {
@@ -30,7 +30,11 @@ public final class TransformHelper {
     return this;
   }
   public TransformHelper setPlan(ModelGenerationPlan generationPlan) {
-    myGenerationPlan = generationPlan;
+    return this;
+  }
+
+  public TransformHelper setPlanProvider(ModelGenerationPlan.Provider gpProvider) {
+    myPlanProvider = gpProvider;
     return this;
   }
 
@@ -41,8 +45,9 @@ public final class TransformHelper {
     tmp.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
-        if (myGenerationPlan != null) {
-          optBuilder.customPlan(myInputModel, myGenerationPlan);
+        ModelGenerationPlan plan = (myPlanProvider == null ? null : myPlanProvider.getPlan(myInputModel));
+        if (plan != null) {
+          optBuilder.customPlan(myInputModel, plan);
         }
         GenerationFacade genFacade = new GenerationFacade(myRepository, optBuilder.create());
         final GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
