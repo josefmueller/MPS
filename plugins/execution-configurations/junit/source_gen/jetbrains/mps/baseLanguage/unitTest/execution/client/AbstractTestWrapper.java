@@ -16,9 +16,8 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.WithPlatformTestExecutor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeWrapper<N> {
@@ -121,26 +120,12 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   @Override
-  public String getName() {
-    return withNode(new Function<N, String>() {
-      public String apply(N node) {
-        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-          return SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        } else if (node != null) {
-          throw new UnsupportedOperationException("Should override getName for not INamedConcept: " + SNodeOperations.getConcept(node));
-        }
-        return null;
-      }
-    });
-  }
-
-  @Override
   public String getFqName() {
     ITestNodeWrapper testCase;
     if (isTestCase() || (testCase = getTestCase()) == null) {
       return getName();
     }
-    return testCase.getFqName() + "." + getName();
+    return testCase.getFqName() + '.' + getName();
   }
 
   @Override
