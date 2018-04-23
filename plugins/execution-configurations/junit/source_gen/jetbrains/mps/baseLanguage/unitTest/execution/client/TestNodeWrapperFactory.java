@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -137,26 +136,7 @@ public enum TestNodeWrapperFactory {
     @Nullable
     @Override
     public ITestNodeWrapper wrap(@NotNull SNode node) {
-      return new AbstractTestWrapper<SNode>(node, true, true) {
-        private final String myQualifiedName;
-        {
-          myQualifiedName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(node);
-        }
-
-        public boolean isTestCase() {
-          return true;
-        }
-
-        @Override
-        public String getName() {
-          return NameUtil.shortNameFromLongName(myQualifiedName);
-        }
-
-        @Override
-        public String getFqName() {
-          return myQualifiedName;
-        }
-      };
+      return new GeneratorTestWrapper(node);
     }
 
   };
@@ -223,6 +203,7 @@ public enum TestNodeWrapperFactory {
     Iterable<SAbstractConcept> concepts = (isRoot ? TestNodeWrapperFactory.getWrappedRootConcepts() : TestNodeWrapperFactory.getWrappedNonRootConcepts());
     return SNodeOperations.getNodeAncestorWhereConceptInList(source, Sequence.fromIterable(concepts).toGenericArray(SAbstractConcept.class), true, isRoot);
   }
+
   private static SNode check_kl7j79_a0a0d0b0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
