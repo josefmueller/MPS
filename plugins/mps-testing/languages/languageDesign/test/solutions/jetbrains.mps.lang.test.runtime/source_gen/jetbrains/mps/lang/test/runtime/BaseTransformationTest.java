@@ -191,7 +191,7 @@ public abstract class BaseTransformationTest implements TransformationTest, Envi
     // TestParametersCache as ClassRule 
     // FIXME move to TestParametersCache as there are no more tests that do not supply paramCache at construction time.  
     // XXX UNLESS THERE ARE MBEDDR TESTS THAT SUBCLASS OURS! 
-    this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+    this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.nonReloadableModule());
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithAllImports();
   }
 
