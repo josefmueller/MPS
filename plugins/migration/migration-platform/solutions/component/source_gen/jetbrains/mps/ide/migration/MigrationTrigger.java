@@ -659,7 +659,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     sb.append(":");
     sb.append("<p>");
     for (SLanguage langProblem : Sequence.fromIterable(sortedProblems).take(treshold)) {
-      sb.append("  -");
+      String space = "&nbsp;";
+      sb.append(space + space + "-" + space);
       sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
       sb.append(" (" + ((langProblem.getSourceModule() == null ? "absent" : "dependency problem")) + ")");
       sb.append("<br>");
