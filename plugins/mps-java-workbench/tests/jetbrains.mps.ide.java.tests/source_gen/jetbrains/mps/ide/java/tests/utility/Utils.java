@@ -140,7 +140,7 @@ public class Utils {
     {
       List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), expected);
       List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), result);
-      Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
+      Assert.assertTrue("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher(nodesBefore, nodesAfter).diff().isEmpty());
     }
 
   }

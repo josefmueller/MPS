@@ -33,7 +33,7 @@
       <node id="1230052406734" at="58,86,59,25" concept="2" />
       <node id="1230052406738" at="60,9,61,336" concept="6" />
       <node id="1230052406738" at="61,336,62,335" concept="6" />
-      <node id="1230052406738" at="62,335,63,153" concept="2" />
+      <node id="1230052406738" at="62,335,63,162" concept="2" />
       <node id="1230052406553" at="28,0,30,0" concept="9" trace="ourParamCache" />
       <node id="1230052406553" at="32,0,35,0" concept="1" trace="ChangeMethodParametersForStatement_Test#()V" />
       <node id="1230052406553" at="36,0,40,0" concept="5" trace="test_changeMethodParametersForStatement#()V" />
@@ -43,7 +43,7 @@
       <scope id="1230052406553" at="32,52,33,25" />
       <scope id="1230052406553" at="37,74,38,143" />
       <scope id="1230052406553" at="32,0,35,0" />
-      <scope id="1230052406738" at="60,9,63,153">
+      <scope id="1230052406738" at="60,9,63,162">
         <var name="nodesAfter" id="1230052406738" />
         <var name="nodesBefore" id="1230052406738" />
       </scope>
@@ -96,7 +96,7 @@
       <node id="1230052406956" at="45,84,46,23" concept="2" />
       <node id="1230052406960" at="47,7,48,334" concept="6" />
       <node id="1230052406960" at="48,334,49,333" concept="6" />
-      <node id="1230052406960" at="49,333,50,151" concept="2" />
+      <node id="1230052406960" at="49,333,50,160" concept="2" />
       <node id="1230052406933" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052406933" at="29,0,32,0" concept="1" trace="ExtractFromAnonymous_Test#()V" />
       <node id="1230052406933" at="33,0,37,0" concept="5" trace="test_ExtractFromAnonymous#()V" />
@@ -105,7 +105,7 @@
       <scope id="1230052406933" at="29,38,30,25" />
       <scope id="1230052406933" at="34,60,35,115" />
       <scope id="1230052406933" at="29,0,32,0" />
-      <scope id="1230052406960" at="47,7,50,151">
+      <scope id="1230052406960" at="47,7,50,160">
         <var name="nodesAfter" id="1230052406960" />
         <var name="nodesBefore" id="1230052406960" />
       </scope>
@@ -131,7 +131,7 @@
       <node id="1230052407127" at="45,84,46,23" concept="2" />
       <node id="1230052407131" at="47,7,48,334" concept="6" />
       <node id="1230052407131" at="48,334,49,333" concept="6" />
-      <node id="1230052407131" at="49,333,50,151" concept="2" />
+      <node id="1230052407131" at="49,333,50,160" concept="2" />
       <node id="1230052407024" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052407024" at="29,0,32,0" concept="1" trace="ExtractFromStatements_Test#()V" />
       <node id="1230052407024" at="33,0,37,0" concept="5" trace="test_extractFromStatements#()V" />
@@ -140,7 +140,7 @@
       <scope id="1230052407024" at="29,39,30,25" />
       <scope id="1230052407024" at="34,61,35,117" />
       <scope id="1230052407024" at="29,0,32,0" />
-      <scope id="1230052407131" at="47,7,50,151">
+      <scope id="1230052407131" at="47,7,50,160">
         <var name="nodesAfter" id="1230052407131" />
         <var name="nodesBefore" id="1230052407131" />
       </scope>
@@ -166,7 +166,7 @@
       <node id="1230052407186" at="45,84,46,23" concept="2" />
       <node id="1230052407190" at="47,7,48,334" concept="6" />
       <node id="1230052407190" at="48,334,49,333" concept="6" />
-      <node id="1230052407190" at="49,333,50,151" concept="2" />
+      <node id="1230052407190" at="49,333,50,160" concept="2" />
       <node id="1230052407134" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052407134" at="29,0,32,0" concept="1" trace="ExtractMethodFromConstructor_Test#()V" />
       <node id="1230052407134" at="33,0,37,0" concept="5" trace="test_ExtractMethodFromConstructor#()V" />
@@ -175,7 +175,7 @@
       <scope id="1230052407134" at="29,46,30,25" />
       <scope id="1230052407134" at="34,68,35,131" />
       <scope id="1230052407134" at="29,0,32,0" />
-      <scope id="1230052407190" at="47,7,50,151">
+      <scope id="1230052407190" at="47,7,50,160">
         <var name="nodesAfter" id="1230052407190" />
         <var name="nodesBefore" id="1230052407190" />
       </scope>
@@ -275,7 +275,7 @@
       <node id="1230052480431" at="47,68,48,23" concept="2" />
       <node id="1230052480435" at="49,7,50,334" concept="6" />
       <node id="1230052480435" at="50,334,51,333" concept="6" />
-      <node id="1230052480435" at="51,333,52,151" concept="2" />
+      <node id="1230052480435" at="51,333,52,160" concept="2" />
       <node id="1230052480332" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1230052480332" at="30,0,33,0" concept="1" trace="ExtractBreak_Test#()V" />
       <node id="1230052480332" at="34,0,38,0" concept="5" trace="test_ExtractBreak#()V" />
@@ -284,7 +284,7 @@
       <scope id="1230052480332" at="30,30,31,25" />
       <scope id="1230052480332" at="35,52,36,99" />
       <scope id="1230052480332" at="30,0,33,0" />
-      <scope id="1230052480435" at="49,7,52,151">
+      <scope id="1230052480435" at="49,7,52,160">
         <var name="nodesAfter" id="1230052480435" />
         <var name="nodesBefore" id="1230052480435" />
       </scope>
@@ -311,7 +311,7 @@
       <node id="1230052480520" at="47,68,48,23" concept="2" />
       <node id="1230052480524" at="49,7,50,334" concept="6" />
       <node id="1230052480524" at="50,334,51,333" concept="6" />
-      <node id="1230052480524" at="51,333,52,151" concept="2" />
+      <node id="1230052480524" at="51,333,52,160" concept="2" />
       <node id="1230052480438" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1230052480438" at="30,0,33,0" concept="1" trace="ExtractContinue_Test#()V" />
       <node id="1230052480438" at="34,0,38,0" concept="5" trace="test_ExtractContinue#()V" />
@@ -320,7 +320,7 @@
       <scope id="1230052480438" at="30,33,31,25" />
       <scope id="1230052480438" at="35,55,36,105" />
       <scope id="1230052480438" at="30,0,33,0" />
-      <scope id="1230052480524" at="49,7,52,151">
+      <scope id="1230052480524" at="49,7,52,160">
         <var name="nodesAfter" id="1230052480524" />
         <var name="nodesBefore" id="1230052480524" />
       </scope>
@@ -348,7 +348,7 @@
       <node id="1230052509366" at="50,84,51,23" concept="2" />
       <node id="1230052509370" at="52,7,53,339" concept="6" />
       <node id="1230052509370" at="53,339,54,338" concept="6" />
-      <node id="1230052509370" at="54,338,55,151" concept="2" />
+      <node id="1230052509370" at="54,338,55,160" concept="2" />
       <node id="1230052509373" at="58,60,59,35" concept="2" />
       <node id="1230052509373" at="59,35,60,35" concept="2" />
       <node id="1230052509373" at="60,35,61,35" concept="2" />
@@ -358,7 +358,7 @@
       <node id="1230052509395" at="64,84,65,23" concept="2" />
       <node id="1230052509399" at="66,7,67,339" concept="6" />
       <node id="1230052509399" at="67,339,68,338" concept="6" />
-      <node id="1230052509399" at="68,338,69,151" concept="2" />
+      <node id="1230052509399" at="68,338,69,160" concept="2" />
       <node id="1230052509258" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052509258" at="29,0,32,0" concept="1" trace="ExtractDefaultClassifierMethodDeclaration_Test#()V" />
       <node id="1230052509258" at="33,0,37,0" concept="5" trace="test_extractFromMethod#()V" />
@@ -371,11 +371,11 @@
       <scope id="1230052509258" at="34,57,35,133" />
       <scope id="1230052509258" at="38,58,39,134" />
       <scope id="1230052509258" at="29,0,32,0" />
-      <scope id="1230052509370" at="52,7,55,151">
+      <scope id="1230052509370" at="52,7,55,160">
         <var name="nodesAfter" id="1230052509370" />
         <var name="nodesBefore" id="1230052509370" />
       </scope>
-      <scope id="1230052509399" at="66,7,69,151">
+      <scope id="1230052509399" at="66,7,69,160">
         <var name="nodesAfter" id="1230052509399" />
         <var name="nodesBefore" id="1230052509399" />
       </scope>
@@ -407,7 +407,7 @@
       <node id="1230052552053" at="45,84,46,23" concept="2" />
       <node id="1230052552057" at="47,7,48,334" concept="6" />
       <node id="1230052552057" at="48,334,49,333" concept="6" />
-      <node id="1230052552057" at="49,333,50,151" concept="2" />
+      <node id="1230052552057" at="49,333,50,160" concept="2" />
       <node id="1230052551970" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052551970" at="29,0,32,0" concept="1" trace="ExtractFromExpression_Test#()V" />
       <node id="1230052551970" at="33,0,37,0" concept="5" trace="test_extractFromExpression#()V" />
@@ -416,7 +416,7 @@
       <scope id="1230052551970" at="29,39,30,25" />
       <scope id="1230052551970" at="34,61,35,117" />
       <scope id="1230052551970" at="29,0,32,0" />
-      <scope id="1230052552057" at="47,7,50,151">
+      <scope id="1230052552057" at="47,7,50,160">
         <var name="nodesAfter" id="1230052552057" />
         <var name="nodesBefore" id="1230052552057" />
       </scope>
@@ -442,7 +442,7 @@
       <node id="1230052552123" at="45,84,46,23" concept="2" />
       <node id="1230052552127" at="47,7,48,334" concept="6" />
       <node id="1230052552127" at="48,334,49,333" concept="6" />
-      <node id="1230052552127" at="49,333,50,151" concept="2" />
+      <node id="1230052552127" at="49,333,50,160" concept="2" />
       <node id="1230052552060" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052552060" at="29,0,32,0" concept="1" trace="ExtractFromExpressionWithoutReturn_Test#()V" />
       <node id="1230052552060" at="33,0,37,0" concept="5" trace="test_extractFromExpressionWithoutReturn#()V" />
@@ -451,7 +451,7 @@
       <scope id="1230052552060" at="29,52,30,25" />
       <scope id="1230052552060" at="34,74,35,143" />
       <scope id="1230052552060" at="29,0,32,0" />
-      <scope id="1230052552127" at="47,7,50,151">
+      <scope id="1230052552127" at="47,7,50,160">
         <var name="nodesAfter" id="1230052552127" />
         <var name="nodesBefore" id="1230052552127" />
       </scope>
@@ -478,7 +478,7 @@
       <node id="1230052641906" at="47,64,48,23" concept="2" />
       <node id="1230052641910" at="49,7,50,334" concept="6" />
       <node id="1230052641910" at="50,334,51,333" concept="6" />
-      <node id="1230052641910" at="51,333,52,151" concept="2" />
+      <node id="1230052641910" at="51,333,52,160" concept="2" />
       <node id="1230052641811" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1230052641811" at="30,0,33,0" concept="1" trace="ExtractDifferentReturns_Test#()V" />
       <node id="1230052641811" at="34,0,38,0" concept="5" trace="test_extractDifferentReturns#()V" />
@@ -487,7 +487,7 @@
       <scope id="1230052641811" at="30,41,31,25" />
       <scope id="1230052641811" at="35,63,36,121" />
       <scope id="1230052641811" at="30,0,33,0" />
-      <scope id="1230052641910" at="49,7,52,151">
+      <scope id="1230052641910" at="49,7,52,160">
         <var name="nodesAfter" id="1230052641910" />
         <var name="nodesBefore" id="1230052641910" />
       </scope>
@@ -513,7 +513,7 @@
       <node id="1230052642032" at="45,84,46,23" concept="2" />
       <node id="1230052642036" at="47,7,48,334" concept="6" />
       <node id="1230052642036" at="48,334,49,333" concept="6" />
-      <node id="1230052642036" at="49,333,50,151" concept="2" />
+      <node id="1230052642036" at="49,333,50,160" concept="2" />
       <node id="1230052641913" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052641913" at="29,0,32,0" concept="1" trace="ExtractFromStatementWithReturnValue_Test#()V" />
       <node id="1230052641913" at="33,0,37,0" concept="5" trace="test_extractFromStatementWithReturnValue#()V" />
@@ -522,7 +522,7 @@
       <scope id="1230052641913" at="29,53,30,25" />
       <scope id="1230052641913" at="34,75,35,145" />
       <scope id="1230052641913" at="29,0,32,0" />
-      <scope id="1230052642036" at="47,7,50,151">
+      <scope id="1230052642036" at="47,7,50,160">
         <var name="nodesAfter" id="1230052642036" />
         <var name="nodesBefore" id="1230052642036" />
       </scope>
@@ -548,7 +548,7 @@
       <node id="1230052642093" at="45,84,46,23" concept="2" />
       <node id="1230052642097" at="47,7,48,334" concept="6" />
       <node id="1230052642097" at="48,334,49,333" concept="6" />
-      <node id="1230052642097" at="49,333,50,151" concept="2" />
+      <node id="1230052642097" at="49,333,50,160" concept="2" />
       <node id="1230052642039" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052642039" at="29,0,32,0" concept="1" trace="ExtractFromStatementsEndsWithReturn_Test#()V" />
       <node id="1230052642039" at="33,0,37,0" concept="5" trace="test_extractFromStatementsEndsWithReturn#()V" />
@@ -557,7 +557,7 @@
       <scope id="1230052642039" at="29,53,30,25" />
       <scope id="1230052642039" at="34,75,35,145" />
       <scope id="1230052642039" at="29,0,32,0" />
-      <scope id="1230052642097" at="47,7,50,151">
+      <scope id="1230052642097" at="47,7,50,160">
         <var name="nodesAfter" id="1230052642097" />
         <var name="nodesBefore" id="1230052642097" />
       </scope>
@@ -583,7 +583,7 @@
       <node id="1230052642167" at="45,84,46,23" concept="2" />
       <node id="1230052642171" at="47,7,48,334" concept="6" />
       <node id="1230052642171" at="48,334,49,333" concept="6" />
-      <node id="1230052642171" at="49,333,50,151" concept="2" />
+      <node id="1230052642171" at="49,333,50,160" concept="2" />
       <node id="1230052642100" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052642100" at="29,0,32,0" concept="1" trace="MethodsWithoutReturnStatement_Test#()V" />
       <node id="1230052642100" at="33,0,37,0" concept="5" trace="test_checkReturnWithoutReturn#()V" />
@@ -592,7 +592,7 @@
       <scope id="1230052642100" at="29,47,30,25" />
       <scope id="1230052642100" at="34,64,35,128" />
       <scope id="1230052642100" at="29,0,32,0" />
-      <scope id="1230052642171" at="47,7,50,151">
+      <scope id="1230052642171" at="47,7,50,160">
         <var name="nodesAfter" id="1230052642171" />
         <var name="nodesBefore" id="1230052642171" />
       </scope>
@@ -647,7 +647,7 @@
       <node id="1230052642337" at="45,84,46,23" concept="2" />
       <node id="1230052642341" at="47,7,48,334" concept="6" />
       <node id="1230052642341" at="48,334,49,333" concept="6" />
-      <node id="1230052642341" at="49,333,50,151" concept="2" />
+      <node id="1230052642341" at="49,333,50,160" concept="2" />
       <node id="1230052642255" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052642255" at="29,0,32,0" concept="1" trace="OneReturnTransformation_Test#()V" />
       <node id="1230052642255" at="33,0,37,0" concept="5" trace="test_oneReturnTransformation#()V" />
@@ -656,7 +656,7 @@
       <scope id="1230052642255" at="29,41,30,25" />
       <scope id="1230052642255" at="34,63,35,121" />
       <scope id="1230052642255" at="29,0,32,0" />
-      <scope id="1230052642341" at="47,7,50,151">
+      <scope id="1230052642341" at="47,7,50,160">
         <var name="nodesAfter" id="1230052642341" />
         <var name="nodesBefore" id="1230052642341" />
       </scope>
@@ -727,7 +727,7 @@
       <node id="1230052684501" at="53,275,54,23" concept="2" />
       <node id="1230052684505" at="55,7,56,592" concept="6" />
       <node id="1230052684505" at="56,592,57,591" concept="6" />
-      <node id="1230052684505" at="57,591,58,151" concept="2" />
+      <node id="1230052684505" at="57,591,58,160" concept="2" />
       <node id="1230052684456" at="27,0,29,0" concept="9" trace="ourParamCache" />
       <node id="1230052684456" at="31,0,34,0" concept="1" trace="ExtractFromIntention_Test#()V" />
       <node id="1230052684456" at="35,0,39,0" concept="5" trace="test_extractExpression#()V" />
@@ -736,7 +736,7 @@
       <scope id="1230052684456" at="31,38,32,25" />
       <scope id="1230052684456" at="36,57,37,112" />
       <scope id="1230052684456" at="31,0,34,0" />
-      <scope id="1230052684505" at="55,7,58,151">
+      <scope id="1230052684505" at="55,7,58,160">
         <var name="nodesAfter" id="1230052684505" />
         <var name="nodesBefore" id="1230052684505" />
       </scope>
@@ -769,7 +769,7 @@
       <node id="1230052684772" at="54,275,55,23" concept="2" />
       <node id="1230052684776" at="56,7,57,585" concept="6" />
       <node id="1230052684776" at="57,585,58,584" concept="6" />
-      <node id="1230052684776" at="58,584,59,151" concept="2" />
+      <node id="1230052684776" at="58,584,59,160" concept="2" />
       <node id="1230052684686" at="27,0,29,0" concept="9" trace="ourParamCache" />
       <node id="1230052684686" at="31,0,34,0" concept="1" trace="staticContainerClassTest_Test#()V" />
       <node id="1230052684686" at="35,0,39,0" concept="5" trace="test_staticContainerClassTest#()V" />
@@ -778,7 +778,7 @@
       <scope id="1230052684686" at="31,42,32,25" />
       <scope id="1230052684686" at="36,64,37,123" />
       <scope id="1230052684686" at="31,0,34,0" />
-      <scope id="1230052684776" at="56,7,59,151">
+      <scope id="1230052684776" at="56,7,59,160">
         <var name="nodesAfter" id="1230052684776" />
         <var name="nodesBefore" id="1230052684776" />
       </scope>
@@ -805,7 +805,7 @@
       <node id="1230052902970" at="48,349,49,26" concept="2" />
       <node id="1230052902974" at="50,7,51,334" concept="6" />
       <node id="1230052902974" at="51,334,52,333" concept="6" />
-      <node id="1230052902974" at="52,333,53,151" concept="2" />
+      <node id="1230052902974" at="52,333,53,160" concept="2" />
       <node id="1230052902961" at="58,65,59,65" concept="6" />
       <node id="1230052902961" at="59,65,60,32" concept="6" />
       <node id="1230052902961" at="60,32,61,254" concept="2" />
@@ -820,7 +820,7 @@
       <scope id="1230052902925" at="32,37,33,25" />
       <scope id="1230052902925" at="37,59,38,113" />
       <scope id="1230052902925" at="32,0,35,0" />
-      <scope id="1230052902974" at="50,7,53,151">
+      <scope id="1230052902974" at="50,7,53,160">
         <var name="nodesAfter" id="1230052902974" />
         <var name="nodesBefore" id="1230052902974" />
       </scope>
@@ -851,7 +851,7 @@
       <node id="1230052903019" at="45,349,46,26" concept="2" />
       <node id="1230052903023" at="47,7,48,334" concept="6" />
       <node id="1230052903023" at="48,334,49,333" concept="6" />
-      <node id="1230052903023" at="49,333,50,151" concept="2" />
+      <node id="1230052903023" at="49,333,50,160" concept="2" />
       <node id="1230052902977" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052902977" at="29,0,32,0" concept="1" trace="ChangeMethodName_Test#()V" />
       <node id="1230052902977" at="33,0,37,0" concept="5" trace="test_ChangeMethodName#()V" />
@@ -860,7 +860,7 @@
       <scope id="1230052902977" at="29,34,30,25" />
       <scope id="1230052902977" at="34,56,35,107" />
       <scope id="1230052902977" at="29,0,32,0" />
-      <scope id="1230052903023" at="47,7,50,151">
+      <scope id="1230052903023" at="47,7,50,160">
         <var name="nodesAfter" id="1230052903023" />
         <var name="nodesBefore" id="1230052903023" />
       </scope>
@@ -886,7 +886,7 @@
       <node id="1230052903071" at="45,349,46,26" concept="2" />
       <node id="1230052903075" at="47,7,48,334" concept="6" />
       <node id="1230052903075" at="48,334,49,333" concept="6" />
-      <node id="1230052903075" at="49,333,50,151" concept="2" />
+      <node id="1230052903075" at="49,333,50,160" concept="2" />
       <node id="1230052903026" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052903026" at="29,0,32,0" concept="1" trace="ChangeReturningType_Test#()V" />
       <node id="1230052903026" at="33,0,37,0" concept="5" trace="test_ChangeReturningType#()V" />
@@ -895,7 +895,7 @@
       <scope id="1230052903026" at="29,37,30,25" />
       <scope id="1230052903026" at="34,59,35,113" />
       <scope id="1230052903026" at="29,0,32,0" />
-      <scope id="1230052903075" at="47,7,50,151">
+      <scope id="1230052903075" at="47,7,50,160">
         <var name="nodesAfter" id="1230052903075" />
         <var name="nodesBefore" id="1230052903075" />
       </scope>
@@ -929,7 +929,7 @@
       <node id="1230052903224" at="53,29,54,26" concept="2" />
       <node id="1230052903228" at="55,7,56,334" concept="6" />
       <node id="1230052903228" at="56,334,57,333" concept="6" />
-      <node id="1230052903228" at="57,333,58,151" concept="2" />
+      <node id="1230052903228" at="57,333,58,160" concept="2" />
       <node id="1230052903078" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052903078" at="29,0,32,0" concept="1" trace="ChangeSignatureOfStaticMethod_Test#()V" />
       <node id="1230052903078" at="33,0,37,0" concept="5" trace="test_ChangeSignatureOfStaticMethod#()V" />
@@ -938,7 +938,7 @@
       <scope id="1230052903078" at="29,47,30,25" />
       <scope id="1230052903078" at="34,69,35,133" />
       <scope id="1230052903078" at="29,0,32,0" />
-      <scope id="1230052903228" at="55,7,58,151">
+      <scope id="1230052903228" at="55,7,58,160">
         <var name="nodesAfter" id="1230052903228" />
         <var name="nodesBefore" id="1230052903228" />
       </scope>
@@ -967,7 +967,7 @@
       <node id="1230052943810" at="48,349,49,26" concept="2" />
       <node id="1230052943814" at="50,7,51,334" concept="6" />
       <node id="1230052943814" at="51,334,52,333" concept="6" />
-      <node id="1230052943814" at="52,333,53,151" concept="2" />
+      <node id="1230052943814" at="52,333,53,160" concept="2" />
       <node id="1230052943800" at="58,65,59,65" concept="6" />
       <node id="1230052943800" at="59,65,60,32" concept="6" />
       <node id="1230052943800" at="60,32,61,32" concept="6" />
@@ -985,7 +985,7 @@
       <scope id="1230052943763" at="32,30,33,25" />
       <scope id="1230052943763" at="37,52,38,99" />
       <scope id="1230052943763" at="32,0,35,0" />
-      <scope id="1230052943814" at="50,7,53,151">
+      <scope id="1230052943814" at="50,7,53,160">
         <var name="nodesAfter" id="1230052943814" />
         <var name="nodesBefore" id="1230052943814" />
       </scope>
@@ -1017,7 +1017,7 @@
       <node id="1230052943876" at="46,349,47,26" concept="2" />
       <node id="1230052943880" at="48,7,49,334" concept="6" />
       <node id="1230052943880" at="49,334,50,333" concept="6" />
-      <node id="1230052943880" at="50,333,51,151" concept="2" />
+      <node id="1230052943880" at="50,333,51,160" concept="2" />
       <node id="1230052943817" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1230052943817" at="30,0,33,0" concept="1" trace="ChangeParameterName_Test#()V" />
       <node id="1230052943817" at="34,0,38,0" concept="5" trace="test_ChangeParameterName#()V" />
@@ -1026,7 +1026,7 @@
       <scope id="1230052943817" at="30,37,31,25" />
       <scope id="1230052943817" at="35,59,36,113" />
       <scope id="1230052943817" at="30,0,33,0" />
-      <scope id="1230052943880" at="48,7,51,151">
+      <scope id="1230052943880" at="48,7,51,160">
         <var name="nodesAfter" id="1230052943880" />
         <var name="nodesBefore" id="1230052943880" />
       </scope>
@@ -1052,7 +1052,7 @@
       <node id="1230052943939" at="47,349,48,26" concept="2" />
       <node id="1230052943943" at="49,7,50,334" concept="6" />
       <node id="1230052943943" at="50,334,51,333" concept="6" />
-      <node id="1230052943943" at="51,333,52,151" concept="2" />
+      <node id="1230052943943" at="51,333,52,160" concept="2" />
       <node id="1230052943920" at="57,64,58,65" concept="6" />
       <node id="1230052943920" at="58,65,59,32" concept="6" />
       <node id="1230052943920" at="59,32,60,250" concept="2" />
@@ -1066,7 +1066,7 @@
       <scope id="1230052943883" at="31,37,32,25" />
       <scope id="1230052943883" at="36,59,37,113" />
       <scope id="1230052943883" at="31,0,34,0" />
-      <scope id="1230052943943" at="49,7,52,151">
+      <scope id="1230052943943" at="49,7,52,160">
         <var name="nodesAfter" id="1230052943943" />
         <var name="nodesBefore" id="1230052943943" />
       </scope>
@@ -1104,7 +1104,7 @@
       <node id="1230052944074" at="52,29,53,26" concept="2" />
       <node id="1230052944078" at="54,7,55,334" concept="6" />
       <node id="1230052944078" at="55,334,56,333" concept="6" />
-      <node id="1230052944078" at="56,333,57,151" concept="2" />
+      <node id="1230052944078" at="56,333,57,160" concept="2" />
       <node id="1230052943946" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052943946" at="29,0,32,0" concept="1" trace="ChangeParametersOrder_Test#()V" />
       <node id="1230052943946" at="33,0,37,0" concept="5" trace="test_ChangeParametersOrder#()V" />
@@ -1113,7 +1113,7 @@
       <scope id="1230052943946" at="29,39,30,25" />
       <scope id="1230052943946" at="34,61,35,117" />
       <scope id="1230052943946" at="29,0,32,0" />
-      <scope id="1230052944078" at="54,7,57,151">
+      <scope id="1230052944078" at="54,7,57,160">
         <var name="nodesAfter" id="1230052944078" />
         <var name="nodesBefore" id="1230052944078" />
       </scope>
@@ -1142,7 +1142,7 @@
       <node id="1230052944125" at="45,349,46,26" concept="2" />
       <node id="1230052944129" at="47,7,48,334" concept="6" />
       <node id="1230052944129" at="48,334,49,333" concept="6" />
-      <node id="1230052944129" at="49,333,50,151" concept="2" />
+      <node id="1230052944129" at="49,333,50,160" concept="2" />
       <node id="1230052944081" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230052944081" at="29,0,32,0" concept="1" trace="RemoveParameter_Test#()V" />
       <node id="1230052944081" at="33,0,37,0" concept="5" trace="test_RemoveParameter#()V" />
@@ -1151,7 +1151,7 @@
       <scope id="1230052944081" at="29,33,30,25" />
       <scope id="1230052944081" at="34,55,35,105" />
       <scope id="1230052944081" at="29,0,32,0" />
-      <scope id="1230052944129" at="47,7,50,151">
+      <scope id="1230052944129" at="47,7,50,160">
         <var name="nodesAfter" id="1230052944129" />
         <var name="nodesBefore" id="1230052944129" />
       </scope>
@@ -1178,7 +1178,7 @@
       <node id="1230052944204" at="47,349,48,26" concept="2" />
       <node id="1230052944208" at="49,7,50,334" concept="6" />
       <node id="1230052944208" at="50,334,51,333" concept="6" />
-      <node id="1230052944208" at="51,333,52,151" concept="2" />
+      <node id="1230052944208" at="51,333,52,160" concept="2" />
       <node id="1230052944132" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1230052944132" at="30,0,33,0" concept="1" trace="TwoParametersWithSameType_Test#()V" />
       <node id="1230052944132" at="34,0,38,0" concept="5" trace="test_TwoParametersWithSameType#()V" />
@@ -1187,7 +1187,7 @@
       <scope id="1230052944132" at="30,43,31,25" />
       <scope id="1230052944132" at="35,65,36,125" />
       <scope id="1230052944132" at="30,0,33,0" />
-      <scope id="1230052944208" at="49,7,52,151">
+      <scope id="1230052944208" at="49,7,52,160">
         <var name="nodesAfter" id="1230052944208" />
         <var name="nodesBefore" id="1230052944208" />
       </scope>
@@ -1211,7 +1211,7 @@
       <node id="1230052989074" at="41,326,42,23" concept="2" />
       <node id="1230052989078" at="43,7,44,334" concept="6" />
       <node id="1230052989078" at="44,334,45,333" concept="6" />
-      <node id="1230052989078" at="45,333,46,151" concept="2" />
+      <node id="1230052989078" at="45,333,46,160" concept="2" />
       <node id="1230052989007" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230052989007" at="27,0,30,0" concept="1" trace="DeclarationVariablesInMethod_Test#()V" />
       <node id="1230052989007" at="31,0,35,0" concept="5" trace="test_DeclarationVariablesInMethod#()V" />
@@ -1220,7 +1220,7 @@
       <scope id="1230052989007" at="27,46,28,25" />
       <scope id="1230052989007" at="32,68,33,131" />
       <scope id="1230052989007" at="27,0,30,0" />
-      <scope id="1230052989078" at="43,7,46,151">
+      <scope id="1230052989078" at="43,7,46,160">
         <var name="nodesAfter" id="1230052989078" />
         <var name="nodesBefore" id="1230052989078" />
       </scope>
@@ -1243,7 +1243,7 @@
       <node id="1230052989165" at="41,326,42,23" concept="2" />
       <node id="1230052989169" at="43,7,44,334" concept="6" />
       <node id="1230052989169" at="44,334,45,333" concept="6" />
-      <node id="1230052989169" at="45,333,46,151" concept="2" />
+      <node id="1230052989169" at="45,333,46,160" concept="2" />
       <node id="1230052989081" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230052989081" at="27,0,30,0" concept="1" trace="InlineFromAnotherClass_Test#()V" />
       <node id="1230052989081" at="31,0,35,0" concept="5" trace="test_InlineFromAnotherClass#()V" />
@@ -1252,7 +1252,7 @@
       <scope id="1230052989081" at="27,40,28,25" />
       <scope id="1230052989081" at="32,62,33,119" />
       <scope id="1230052989081" at="27,0,30,0" />
-      <scope id="1230052989169" at="43,7,46,151">
+      <scope id="1230052989169" at="43,7,46,160">
         <var name="nodesAfter" id="1230052989169" />
         <var name="nodesBefore" id="1230052989169" />
       </scope>
@@ -1275,7 +1275,7 @@
       <node id="1230052989275" at="41,326,42,23" concept="2" />
       <node id="1230052989279" at="43,7,44,334" concept="6" />
       <node id="1230052989279" at="44,334,45,333" concept="6" />
-      <node id="1230052989279" at="45,333,46,151" concept="2" />
+      <node id="1230052989279" at="45,333,46,160" concept="2" />
       <node id="1230052989172" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230052989172" at="27,0,30,0" concept="1" trace="InlineFromExpression_Test#()V" />
       <node id="1230052989172" at="31,0,35,0" concept="5" trace="test_InlineFromExpression#()V" />
@@ -1284,7 +1284,7 @@
       <scope id="1230052989172" at="27,38,28,25" />
       <scope id="1230052989172" at="32,60,33,115" />
       <scope id="1230052989172" at="27,0,30,0" />
-      <scope id="1230052989279" at="43,7,46,151">
+      <scope id="1230052989279" at="43,7,46,160">
         <var name="nodesAfter" id="1230052989279" />
         <var name="nodesBefore" id="1230052989279" />
       </scope>
@@ -1347,7 +1347,7 @@
       <node id="1230052989387" at="41,326,42,23" concept="2" />
       <node id="1230052989391" at="43,7,44,334" concept="6" />
       <node id="1230052989391" at="44,334,45,333" concept="6" />
-      <node id="1230052989391" at="45,333,46,151" concept="2" />
+      <node id="1230052989391" at="45,333,46,160" concept="2" />
       <node id="1230052989334" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230052989334" at="27,0,30,0" concept="1" trace="SimpleInlineWithOneReturn_Test#()V" />
       <node id="1230052989334" at="31,0,35,0" concept="5" trace="test_SimpleInlineWithOneReturn#()V" />
@@ -1356,7 +1356,7 @@
       <scope id="1230052989334" at="27,43,28,25" />
       <scope id="1230052989334" at="32,65,33,125" />
       <scope id="1230052989334" at="27,0,30,0" />
-      <scope id="1230052989391" at="43,7,46,151">
+      <scope id="1230052989391" at="43,7,46,160">
         <var name="nodesAfter" id="1230052989391" />
         <var name="nodesBefore" id="1230052989391" />
       </scope>
@@ -1379,7 +1379,7 @@
       <node id="1230053040760" at="41,320,42,23" concept="2" />
       <node id="1230053040764" at="43,7,44,334" concept="6" />
       <node id="1230053040764" at="44,334,45,333" concept="6" />
-      <node id="1230053040764" at="45,333,46,151" concept="2" />
+      <node id="1230053040764" at="45,333,46,160" concept="2" />
       <node id="1230053040715" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053040715" at="27,0,30,0" concept="1" trace="InlineFromBehavior_Test#()V" />
       <node id="1230053040715" at="31,0,35,0" concept="5" trace="test_InlineFromBehavior#()V" />
@@ -1388,7 +1388,7 @@
       <scope id="1230053040715" at="27,36,28,25" />
       <scope id="1230053040715" at="32,58,33,111" />
       <scope id="1230053040715" at="27,0,30,0" />
-      <scope id="1230053040764" at="43,7,46,151">
+      <scope id="1230053040764" at="43,7,46,160">
         <var name="nodesAfter" id="1230053040764" />
         <var name="nodesBefore" id="1230053040764" />
       </scope>
@@ -1413,7 +1413,7 @@
       <node id="1230053040881" at="43,320,44,23" concept="2" />
       <node id="1230053040885" at="45,7,46,339" concept="6" />
       <node id="1230053040885" at="46,339,47,338" concept="6" />
-      <node id="1230053040885" at="47,338,48,151" concept="2" />
+      <node id="1230053040885" at="47,338,48,160" concept="2" />
       <node id="1230053040767" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053040767" at="27,0,30,0" concept="1" trace="InlineFromBehaviorWithMethods_Test#()V" />
       <node id="1230053040767" at="31,0,35,0" concept="5" trace="test_InlineFromBehaviorWithMethods#()V" />
@@ -1422,7 +1422,7 @@
       <scope id="1230053040767" at="27,47,28,25" />
       <scope id="1230053040767" at="32,69,33,133" />
       <scope id="1230053040767" at="27,0,30,0" />
-      <scope id="1230053040885" at="45,7,48,151">
+      <scope id="1230053040885" at="45,7,48,160">
         <var name="nodesAfter" id="1230053040885" />
         <var name="nodesBefore" id="1230053040885" />
       </scope>
@@ -1445,7 +1445,7 @@
       <node id="1230053040931" at="41,320,42,23" concept="2" />
       <node id="1230053040935" at="43,7,44,339" concept="6" />
       <node id="1230053040935" at="44,339,45,338" concept="6" />
-      <node id="1230053040935" at="45,338,46,151" concept="2" />
+      <node id="1230053040935" at="45,338,46,160" concept="2" />
       <node id="1230053040888" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053040888" at="27,0,30,0" concept="1" trace="InlineInBehaviorWithThis_Test#()V" />
       <node id="1230053040888" at="31,0,35,0" concept="5" trace="test_InlineInBehaviorWithThis#()V" />
@@ -1454,7 +1454,7 @@
       <scope id="1230053040888" at="27,42,28,25" />
       <scope id="1230053040888" at="32,64,33,123" />
       <scope id="1230053040888" at="27,0,30,0" />
-      <scope id="1230053040935" at="43,7,46,151">
+      <scope id="1230053040935" at="43,7,46,160">
         <var name="nodesAfter" id="1230053040935" />
         <var name="nodesBefore" id="1230053040935" />
       </scope>
@@ -1477,7 +1477,7 @@
       <node id="1230053073239" at="41,326,42,23" concept="2" />
       <node id="1230053073243" at="43,7,44,334" concept="6" />
       <node id="1230053073243" at="44,334,45,333" concept="6" />
-      <node id="1230053073243" at="45,333,46,151" concept="2" />
+      <node id="1230053073243" at="45,333,46,160" concept="2" />
       <node id="1230053073153" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053073153" at="27,0,30,0" concept="1" trace="InlineMethodThatChangesParameters_Test#()V" />
       <node id="1230053073153" at="31,0,35,0" concept="5" trace="test_InlineMethodThatChangesParameters#()V" />
@@ -1486,7 +1486,7 @@
       <scope id="1230053073153" at="27,51,28,25" />
       <scope id="1230053073153" at="32,73,33,141" />
       <scope id="1230053073153" at="27,0,30,0" />
-      <scope id="1230053073243" at="43,7,46,151">
+      <scope id="1230053073243" at="43,7,46,160">
         <var name="nodesAfter" id="1230053073243" />
         <var name="nodesBefore" id="1230053073243" />
       </scope>
@@ -1509,7 +1509,7 @@
       <node id="1230053073329" at="41,326,42,23" concept="2" />
       <node id="1230053073333" at="43,7,44,334" concept="6" />
       <node id="1230053073333" at="44,334,45,333" concept="6" />
-      <node id="1230053073333" at="45,333,46,151" concept="2" />
+      <node id="1230053073333" at="45,333,46,160" concept="2" />
       <node id="1230053073246" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053073246" at="27,0,30,0" concept="1" trace="InlineModelWithConstants_Test#()V" />
       <node id="1230053073246" at="31,0,35,0" concept="5" trace="test_InlineModelWithConstants#()V" />
@@ -1518,7 +1518,7 @@
       <scope id="1230053073246" at="27,42,28,25" />
       <scope id="1230053073246" at="32,64,33,123" />
       <scope id="1230053073246" at="27,0,30,0" />
-      <scope id="1230053073333" at="43,7,46,151">
+      <scope id="1230053073333" at="43,7,46,160">
         <var name="nodesAfter" id="1230053073333" />
         <var name="nodesBefore" id="1230053073333" />
       </scope>
@@ -1541,7 +1541,7 @@
       <node id="1230053073428" at="41,326,42,23" concept="2" />
       <node id="1230053073432" at="43,7,44,334" concept="6" />
       <node id="1230053073432" at="44,334,45,333" concept="6" />
-      <node id="1230053073432" at="45,333,46,151" concept="2" />
+      <node id="1230053073432" at="45,333,46,160" concept="2" />
       <node id="1230053073336" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053073336" at="27,0,30,0" concept="1" trace="OneReturnWithNotVariableParameters_Test#()V" />
       <node id="1230053073336" at="31,0,35,0" concept="5" trace="test_OneReturnWithNotVariableParameters#()V" />
@@ -1550,7 +1550,7 @@
       <scope id="1230053073336" at="27,52,28,25" />
       <scope id="1230053073336" at="32,74,33,143" />
       <scope id="1230053073336" at="27,0,30,0" />
-      <scope id="1230053073432" at="43,7,46,151">
+      <scope id="1230053073432" at="43,7,46,160">
         <var name="nodesAfter" id="1230053073432" />
         <var name="nodesBefore" id="1230053073432" />
       </scope>
@@ -1573,7 +1573,7 @@
       <node id="1230053073507" at="41,326,42,23" concept="2" />
       <node id="1230053073511" at="43,7,44,334" concept="6" />
       <node id="1230053073511" at="44,334,45,333" concept="6" />
-      <node id="1230053073511" at="45,333,46,151" concept="2" />
+      <node id="1230053073511" at="45,333,46,160" concept="2" />
       <node id="1230053073435" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053073435" at="27,0,30,0" concept="1" trace="OneReturnWithParameteres_Test#()V" />
       <node id="1230053073435" at="31,0,35,0" concept="5" trace="test_OneReturnWithParameteres#()V" />
@@ -1582,7 +1582,7 @@
       <scope id="1230053073435" at="27,42,28,25" />
       <scope id="1230053073435" at="32,64,33,123" />
       <scope id="1230053073435" at="27,0,30,0" />
-      <scope id="1230053073511" at="43,7,46,151">
+      <scope id="1230053073511" at="43,7,46,160">
         <var name="nodesAfter" id="1230053073511" />
         <var name="nodesBefore" id="1230053073511" />
       </scope>
@@ -1705,7 +1705,7 @@
       <node id="1230053187640" at="41,326,42,23" concept="2" />
       <node id="1230053187644" at="43,7,44,334" concept="6" />
       <node id="1230053187644" at="44,334,45,333" concept="6" />
-      <node id="1230053187644" at="45,333,46,151" concept="2" />
+      <node id="1230053187644" at="45,333,46,160" concept="2" />
       <node id="1230053187531" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053187531" at="27,0,30,0" concept="1" trace="InlineManyReturns_Test#()V" />
       <node id="1230053187531" at="31,0,35,0" concept="5" trace="test_InlineManyReturns#()V" />
@@ -1714,7 +1714,7 @@
       <scope id="1230053187531" at="27,35,28,25" />
       <scope id="1230053187531" at="32,57,33,109" />
       <scope id="1230053187531" at="27,0,30,0" />
-      <scope id="1230053187644" at="43,7,46,151">
+      <scope id="1230053187644" at="43,7,46,160">
         <var name="nodesAfter" id="1230053187644" />
         <var name="nodesBefore" id="1230053187644" />
       </scope>
@@ -1737,7 +1737,7 @@
       <node id="1230053187745" at="41,326,42,23" concept="2" />
       <node id="1230053187749" at="43,7,44,334" concept="6" />
       <node id="1230053187749" at="44,334,45,333" concept="6" />
-      <node id="1230053187749" at="45,333,46,151" concept="2" />
+      <node id="1230053187749" at="45,333,46,160" concept="2" />
       <node id="1230053187647" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053187647" at="27,0,30,0" concept="1" trace="InlineMethodWithReturnAtTheEnd_Test#()V" />
       <node id="1230053187647" at="31,0,35,0" concept="5" trace="test_InlineMethodWithReturnAtTheEnd#()V" />
@@ -1746,7 +1746,7 @@
       <scope id="1230053187647" at="27,48,28,25" />
       <scope id="1230053187647" at="32,70,33,135" />
       <scope id="1230053187647" at="27,0,30,0" />
-      <scope id="1230053187749" at="43,7,46,151">
+      <scope id="1230053187749" at="43,7,46,160">
         <var name="nodesAfter" id="1230053187749" />
         <var name="nodesBefore" id="1230053187749" />
       </scope>
@@ -1769,7 +1769,7 @@
       <node id="1230053187837" at="41,326,42,23" concept="2" />
       <node id="1230053187841" at="43,7,44,334" concept="6" />
       <node id="1230053187841" at="44,334,45,333" concept="6" />
-      <node id="1230053187841" at="45,333,46,151" concept="2" />
+      <node id="1230053187841" at="45,333,46,160" concept="2" />
       <node id="1230053187752" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053187752" at="27,0,30,0" concept="1" trace="InlineMethodWithVoidType_Test#()V" />
       <node id="1230053187752" at="31,0,35,0" concept="5" trace="test_InlineMethodWithVoidType#()V" />
@@ -1778,7 +1778,7 @@
       <scope id="1230053187752" at="27,42,28,25" />
       <scope id="1230053187752" at="32,64,33,123" />
       <scope id="1230053187752" at="27,0,30,0" />
-      <scope id="1230053187841" at="43,7,46,151">
+      <scope id="1230053187841" at="43,7,46,160">
         <var name="nodesAfter" id="1230053187841" />
         <var name="nodesBefore" id="1230053187841" />
       </scope>
@@ -1801,7 +1801,7 @@
       <node id="1230053187893" at="41,326,42,23" concept="2" />
       <node id="1230053187897" at="43,7,44,334" concept="6" />
       <node id="1230053187897" at="44,334,45,333" concept="6" />
-      <node id="1230053187897" at="45,333,46,151" concept="2" />
+      <node id="1230053187897" at="45,333,46,160" concept="2" />
       <node id="1230053187844" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053187844" at="27,0,30,0" concept="1" trace="InlineWithVoidTypeAndBug_Test#()V" />
       <node id="1230053187844" at="31,0,35,0" concept="5" trace="test_InlineWithVoidTypeAndBug#()V" />
@@ -1810,7 +1810,7 @@
       <scope id="1230053187844" at="27,42,28,25" />
       <scope id="1230053187844" at="32,64,33,123" />
       <scope id="1230053187844" at="27,0,30,0" />
-      <scope id="1230053187897" at="43,7,46,151">
+      <scope id="1230053187897" at="43,7,46,160">
         <var name="nodesAfter" id="1230053187897" />
         <var name="nodesBefore" id="1230053187897" />
       </scope>
@@ -1833,7 +1833,7 @@
       <node id="1230053187910" at="41,326,42,23" concept="2" />
       <node id="1230053187914" at="43,7,44,334" concept="6" />
       <node id="1230053187914" at="44,334,45,333" concept="6" />
-      <node id="1230053187914" at="45,333,46,151" concept="2" />
+      <node id="1230053187914" at="45,333,46,160" concept="2" />
       <node id="1230053187900" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053187900" at="27,0,30,0" concept="1" trace="InlineWithoutReturnStatement_Test#()V" />
       <node id="1230053187900" at="31,0,35,0" concept="5" trace="test_InlineWithoutReturnStatement#()V" />
@@ -1842,7 +1842,7 @@
       <scope id="1230053187900" at="27,46,28,25" />
       <scope id="1230053187900" at="32,68,33,131" />
       <scope id="1230053187900" at="27,0,30,0" />
-      <scope id="1230053187914" at="43,7,46,151">
+      <scope id="1230053187914" at="43,7,46,160">
         <var name="nodesAfter" id="1230053187914" />
         <var name="nodesBefore" id="1230053187914" />
       </scope>
@@ -1866,7 +1866,7 @@
       <node id="1230053223876" at="42,314,43,23" concept="2" />
       <node id="1230053223880" at="44,7,45,334" concept="6" />
       <node id="1230053223880" at="45,334,46,333" concept="6" />
-      <node id="1230053223880" at="46,333,47,151" concept="2" />
+      <node id="1230053223880" at="46,333,47,160" concept="2" />
       <node id="1230053223832" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053223832" at="27,0,30,0" concept="1" trace="InlineStaticFromAnotherClass_Test#()V" />
       <node id="1230053223832" at="31,0,35,0" concept="5" trace="test_InlineStaticFromAnotherClass#()V" />
@@ -1875,7 +1875,7 @@
       <scope id="1230053223832" at="27,46,28,25" />
       <scope id="1230053223832" at="32,68,33,131" />
       <scope id="1230053223832" at="27,0,30,0" />
-      <scope id="1230053223880" at="44,7,47,151">
+      <scope id="1230053223880" at="44,7,47,160">
         <var name="nodesAfter" id="1230053223880" />
         <var name="nodesBefore" id="1230053223880" />
       </scope>
@@ -1898,7 +1898,7 @@
       <node id="1230053223945" at="41,319,42,23" concept="2" />
       <node id="1230053223949" at="43,7,44,334" concept="6" />
       <node id="1230053223949" at="44,334,45,333" concept="6" />
-      <node id="1230053223949" at="45,333,46,151" concept="2" />
+      <node id="1230053223949" at="45,333,46,160" concept="2" />
       <node id="1230053223883" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053223883" at="27,0,30,0" concept="1" trace="StaticMethod_Test#()V" />
       <node id="1230053223883" at="31,0,35,0" concept="5" trace="test_StaticMethod#()V" />
@@ -1907,7 +1907,7 @@
       <scope id="1230053223883" at="27,30,28,25" />
       <scope id="1230053223883" at="32,52,33,99" />
       <scope id="1230053223883" at="27,0,30,0" />
-      <scope id="1230053223949" at="43,7,46,151">
+      <scope id="1230053223949" at="43,7,46,160">
         <var name="nodesAfter" id="1230053223949" />
         <var name="nodesBefore" id="1230053223949" />
       </scope>
@@ -1931,14 +1931,14 @@
       <node id="1230053266397" at="47,336,48,26" concept="2" />
       <node id="1230053266401" at="49,7,50,338" concept="6" />
       <node id="1230053266401" at="50,338,51,337" concept="6" />
-      <node id="1230053266401" at="51,337,52,151" concept="2" />
+      <node id="1230053266401" at="51,337,52,160" concept="2" />
       <node id="1230053266404" at="55,51,56,35" concept="2" />
       <node id="1230053266404" at="56,35,57,35" concept="2" />
       <node id="1230053266407" at="57,35,58,328" concept="6" />
       <node id="1230053266413" at="58,328,59,26" concept="2" />
       <node id="1230053266417" at="60,7,61,338" concept="6" />
       <node id="1230053266417" at="61,338,62,337" concept="6" />
-      <node id="1230053266417" at="62,337,63,151" concept="2" />
+      <node id="1230053266417" at="62,337,63,160" concept="2" />
       <node id="1230053266365" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="1230053266365" at="29,0,32,0" concept="1" trace="InlineFromConceptFunction_Test#()V" />
       <node id="1230053266365" at="33,0,37,0" concept="5" trace="test_deinition#()V" />
@@ -1951,11 +1951,11 @@
       <scope id="1230053266365" at="34,49,35,109" />
       <scope id="1230053266365" at="38,49,39,109" />
       <scope id="1230053266365" at="29,0,32,0" />
-      <scope id="1230053266401" at="49,7,52,151">
+      <scope id="1230053266401" at="49,7,52,160">
         <var name="nodesAfter" id="1230053266401" />
         <var name="nodesBefore" id="1230053266401" />
       </scope>
-      <scope id="1230053266417" at="60,7,63,151">
+      <scope id="1230053266417" at="60,7,63,160">
         <var name="nodesAfter" id="1230053266417" />
         <var name="nodesBefore" id="1230053266417" />
       </scope>
@@ -1983,7 +1983,7 @@
       <node id="1230053266429" at="41,333,42,26" concept="2" />
       <node id="1230053266433" at="43,7,44,334" concept="6" />
       <node id="1230053266433" at="44,334,45,333" concept="6" />
-      <node id="1230053266433" at="45,333,46,151" concept="2" />
+      <node id="1230053266433" at="45,333,46,160" concept="2" />
       <node id="1230053266420" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053266420" at="27,0,30,0" concept="1" trace="InlineLocalVariableReferenceWithoutDeclarationDeleting_Test#()V" />
       <node id="1230053266420" at="31,0,35,0" concept="5" trace="test_InlineLocalVariableReferenceWithoutDeclarationDeleting#()V" />
@@ -1992,7 +1992,7 @@
       <scope id="1230053266420" at="27,72,28,25" />
       <scope id="1230053266420" at="32,94,33,183" />
       <scope id="1230053266420" at="27,0,30,0" />
-      <scope id="1230053266433" at="43,7,46,151">
+      <scope id="1230053266433" at="43,7,46,160">
         <var name="nodesAfter" id="1230053266433" />
         <var name="nodesBefore" id="1230053266433" />
       </scope>
@@ -2015,7 +2015,7 @@
       <node id="1230053266519" at="41,333,42,26" concept="2" />
       <node id="1230053266523" at="43,7,44,334" concept="6" />
       <node id="1230053266523" at="44,334,45,333" concept="6" />
-      <node id="1230053266523" at="45,333,46,151" concept="2" />
+      <node id="1230053266523" at="45,333,46,160" concept="2" />
       <node id="1230053266477" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053266477" at="27,0,30,0" concept="1" trace="InlineLocalVariableReferense_Test#()V" />
       <node id="1230053266477" at="31,0,35,0" concept="5" trace="test_InlineLocalVariableReferense#()V" />
@@ -2024,7 +2024,7 @@
       <scope id="1230053266477" at="27,46,28,25" />
       <scope id="1230053266477" at="32,68,33,131" />
       <scope id="1230053266477" at="27,0,30,0" />
-      <scope id="1230053266523" at="43,7,46,151">
+      <scope id="1230053266523" at="43,7,46,160">
         <var name="nodesAfter" id="1230053266523" />
         <var name="nodesBefore" id="1230053266523" />
       </scope>
@@ -2047,7 +2047,7 @@
       <node id="1230053266535" at="41,333,42,26" concept="2" />
       <node id="1230053266539" at="43,7,44,334" concept="6" />
       <node id="1230053266539" at="44,334,45,333" concept="6" />
-      <node id="1230053266539" at="45,333,46,151" concept="2" />
+      <node id="1230053266539" at="45,333,46,160" concept="2" />
       <node id="1230053266526" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053266526" at="27,0,30,0" concept="1" trace="InlineReferenceWithAssignment_Test#()V" />
       <node id="1230053266526" at="31,0,35,0" concept="5" trace="test_InlineReferenceWithAssignment#()V" />
@@ -2056,7 +2056,7 @@
       <scope id="1230053266526" at="27,47,28,25" />
       <scope id="1230053266526" at="32,69,33,133" />
       <scope id="1230053266526" at="27,0,30,0" />
-      <scope id="1230053266539" at="43,7,46,151">
+      <scope id="1230053266539" at="43,7,46,160">
         <var name="nodesAfter" id="1230053266539" />
         <var name="nodesBefore" id="1230053266539" />
       </scope>
@@ -2079,7 +2079,7 @@
       <node id="1230053266631" at="41,340,42,26" concept="2" />
       <node id="1230053266635" at="43,7,44,334" concept="6" />
       <node id="1230053266635" at="44,334,45,333" concept="6" />
-      <node id="1230053266635" at="45,333,46,151" concept="2" />
+      <node id="1230053266635" at="45,333,46,160" concept="2" />
       <node id="1230053266582" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053266582" at="27,0,30,0" concept="1" trace="InlineWithoutDeclarationDeletion_Test#()V" />
       <node id="1230053266582" at="31,0,35,0" concept="5" trace="test_inlineWithoutDeclarationDeletion#()V" />
@@ -2088,7 +2088,7 @@
       <scope id="1230053266582" at="27,50,28,25" />
       <scope id="1230053266582" at="32,72,33,139" />
       <scope id="1230053266582" at="27,0,30,0" />
-      <scope id="1230053266635" at="43,7,46,151">
+      <scope id="1230053266635" at="43,7,46,160">
         <var name="nodesAfter" id="1230053266635" />
         <var name="nodesBefore" id="1230053266635" />
       </scope>
@@ -2111,7 +2111,7 @@
       <node id="1230053266647" at="41,340,42,26" concept="2" />
       <node id="1230053266651" at="43,7,44,334" concept="6" />
       <node id="1230053266651" at="44,334,45,333" concept="6" />
-      <node id="1230053266651" at="45,333,46,151" concept="2" />
+      <node id="1230053266651" at="45,333,46,160" concept="2" />
       <node id="1230053266638" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053266638" at="27,0,30,0" concept="1" trace="SimpleInlineVariable_Test#()V" />
       <node id="1230053266638" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -2120,7 +2120,7 @@
       <scope id="1230053266638" at="27,38,28,25" />
       <scope id="1230053266638" at="32,60,33,115" />
       <scope id="1230053266638" at="27,0,30,0" />
-      <scope id="1230053266651" at="43,7,46,151">
+      <scope id="1230053266651" at="43,7,46,160">
         <var name="nodesAfter" id="1230053266651" />
         <var name="nodesBefore" id="1230053266651" />
       </scope>
@@ -2145,7 +2145,7 @@
       <node id="1230053302516" at="43,575,44,26" concept="2" />
       <node id="1230053302520" at="45,7,46,580" concept="6" />
       <node id="1230053302520" at="46,580,47,579" concept="6" />
-      <node id="1230053302520" at="47,579,48,151" concept="2" />
+      <node id="1230053302520" at="47,579,48,160" concept="2" />
       <node id="1230053302505" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053302505" at="27,0,30,0" concept="1" trace="MoveMethodWithFields_Test#()V" />
       <node id="1230053302505" at="31,0,35,0" concept="5" trace="test_MoveMethodWithFields#()V" />
@@ -2154,7 +2154,7 @@
       <scope id="1230053302505" at="27,38,28,25" />
       <scope id="1230053302505" at="32,60,33,115" />
       <scope id="1230053302505" at="27,0,30,0" />
-      <scope id="1230053302520" at="45,7,48,151">
+      <scope id="1230053302520" at="45,7,48,160">
         <var name="nodesAfter" id="1230053302520" />
         <var name="nodesBefore" id="1230053302520" />
       </scope>
@@ -2179,7 +2179,7 @@
       <node id="1230053302575" at="43,575,44,26" concept="2" />
       <node id="1230053302579" at="45,7,46,580" concept="6" />
       <node id="1230053302579" at="46,580,47,579" concept="6" />
-      <node id="1230053302579" at="47,579,48,151" concept="2" />
+      <node id="1230053302579" at="47,579,48,160" concept="2" />
       <node id="1230053302564" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053302564" at="27,0,30,0" concept="1" trace="MoveMethodWithMethods_Test#()V" />
       <node id="1230053302564" at="31,0,35,0" concept="5" trace="test_MoveMethodWithMethods#()V" />
@@ -2188,7 +2188,7 @@
       <scope id="1230053302564" at="27,39,28,25" />
       <scope id="1230053302564" at="32,61,33,117" />
       <scope id="1230053302564" at="27,0,30,0" />
-      <scope id="1230053302579" at="45,7,48,151">
+      <scope id="1230053302579" at="45,7,48,160">
         <var name="nodesAfter" id="1230053302579" />
         <var name="nodesBefore" id="1230053302579" />
       </scope>
@@ -2214,7 +2214,7 @@
       <node id="6745858777349326404" at="44,26,45,279" concept="2" />
       <node id="1230053302648" at="46,7,47,580" concept="6" />
       <node id="1230053302648" at="47,580,48,579" concept="6" />
-      <node id="1230053302648" at="48,579,49,151" concept="2" />
+      <node id="1230053302648" at="48,579,49,160" concept="2" />
       <node id="1230053302625" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053302625" at="27,0,30,0" concept="1" trace="MoveMethodWithUssages_Test#()V" />
       <node id="1230053302625" at="31,0,35,0" concept="5" trace="test_check#()V" />
@@ -2223,7 +2223,7 @@
       <scope id="1230053302625" at="27,39,28,25" />
       <scope id="1230053302625" at="32,45,33,101" />
       <scope id="1230053302625" at="27,0,30,0" />
-      <scope id="1230053302648" at="46,7,49,151">
+      <scope id="1230053302648" at="46,7,49,160">
         <var name="nodesAfter" id="1230053302648" />
         <var name="nodesBefore" id="1230053302648" />
       </scope>
@@ -2248,7 +2248,7 @@
       <node id="1230053302702" at="43,575,44,26" concept="2" />
       <node id="1230053302706" at="45,7,46,580" concept="6" />
       <node id="1230053302706" at="46,580,47,579" concept="6" />
-      <node id="1230053302706" at="47,579,48,151" concept="2" />
+      <node id="1230053302706" at="47,579,48,160" concept="2" />
       <node id="1230053302691" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230053302691" at="27,0,30,0" concept="1" trace="SimpleMoveMethod_Test#()V" />
       <node id="1230053302691" at="31,0,35,0" concept="5" trace="test_check#()V" />
@@ -2257,7 +2257,7 @@
       <scope id="1230053302691" at="27,34,28,25" />
       <scope id="1230053302691" at="32,45,33,96" />
       <scope id="1230053302691" at="27,0,30,0" />
-      <scope id="1230053302706" at="45,7,48,151">
+      <scope id="1230053302706" at="45,7,48,160">
         <var name="nodesAfter" id="1230053302706" />
         <var name="nodesBefore" id="1230053302706" />
       </scope>
@@ -2280,7 +2280,7 @@
       <node id="1230057984855" at="41,347,42,23" concept="2" />
       <node id="1230057984859" at="43,7,44,333" concept="6" />
       <node id="1230057984859" at="44,333,45,332" concept="6" />
-      <node id="1230057984859" at="45,332,46,151" concept="2" />
+      <node id="1230057984859" at="45,332,46,160" concept="2" />
       <node id="1230057984816" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="1230057984816" at="27,0,30,0" concept="1" trace="InlineMethodInTest_Test#()V" />
       <node id="1230057984816" at="31,0,35,0" concept="5" trace="test_InlineMethodTest#()V" />
@@ -2289,7 +2289,7 @@
       <scope id="1230057984816" at="27,36,28,25" />
       <scope id="1230057984816" at="32,56,33,109" />
       <scope id="1230057984816" at="27,0,30,0" />
-      <scope id="1230057984859" at="43,7,46,151">
+      <scope id="1230057984859" at="43,7,46,160">
         <var name="nodesAfter" id="1230057984859" />
         <var name="nodesBefore" id="1230057984859" />
       </scope>
@@ -2316,7 +2316,7 @@
       <node id="1300615610528534135" at="49,140,50,42" concept="2" />
       <node id="1300615610528534141" at="52,7,53,340" concept="6" />
       <node id="1300615610528534141" at="53,340,54,339" concept="6" />
-      <node id="1300615610528534141" at="54,339,55,151" concept="2" />
+      <node id="1300615610528534141" at="54,339,55,160" concept="2" />
       <node id="1300615610528534002" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1300615610528534002" at="30,0,33,0" concept="1" trace="FindForMethodWithIVariableLikeNodes_Test#()V" />
       <node id="1300615610528534002" at="34,0,38,0" concept="5" trace="test_FindForMethodWithIVariableLikeNodesTest#()V" />
@@ -2329,7 +2329,7 @@
         <var name="matchRef" id="1300615610528534128" />
       </scope>
       <scope id="1300615610528534002" at="30,0,33,0" />
-      <scope id="1300615610528534141" at="52,7,55,151">
+      <scope id="1300615610528534141" at="52,7,55,160">
         <var name="nodesAfter" id="1300615610528534141" />
         <var name="nodesBefore" id="1300615610528534141" />
       </scope>
@@ -2361,7 +2361,7 @@
       <node id="8155843501977582860" at="49,140,50,42" concept="2" />
       <node id="1998477585418805750" at="52,7,53,340" concept="6" />
       <node id="1998477585418805750" at="53,340,54,339" concept="6" />
-      <node id="1998477585418805750" at="54,339,55,151" concept="2" />
+      <node id="1998477585418805750" at="54,339,55,160" concept="2" />
       <node id="1998477585418803771" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="1998477585418803771" at="30,0,33,0" concept="1" trace="SimpleFindForExtractWithReturn_Test#()V" />
       <node id="1998477585418803771" at="34,0,38,0" concept="5" trace="test_SimpleFindForExtractWithReturnTest#()V" />
@@ -2374,7 +2374,7 @@
         <var name="matchRef" id="8155843501977582852" />
       </scope>
       <scope id="1998477585418803771" at="30,0,33,0" />
-      <scope id="1998477585418805750" at="52,7,55,151">
+      <scope id="1998477585418805750" at="52,7,55,160">
         <var name="nodesAfter" id="1998477585418805750" />
         <var name="nodesBefore" id="1998477585418805750" />
       </scope>
@@ -2404,7 +2404,7 @@
       <node id="2004738378939038833" at="45,84,46,23" concept="2" />
       <node id="2004738378939038837" at="47,7,48,340" concept="6" />
       <node id="2004738378939038837" at="48,340,49,339" concept="6" />
-      <node id="2004738378939038837" at="49,339,50,151" concept="2" />
+      <node id="2004738378939038837" at="49,339,50,160" concept="2" />
       <node id="2004738378939038818" at="51,7,52,0" concept="8" />
       <node id="2004738378939038817" at="52,0,53,0" concept="8" />
       <node id="2004738378939035560" at="25,0,27,0" concept="9" trace="ourParamCache" />
@@ -2415,7 +2415,7 @@
       <scope id="2004738378939035560" at="29,52,30,25" />
       <scope id="2004738378939035560" at="34,78,35,147" />
       <scope id="2004738378939035560" at="29,0,32,0" />
-      <scope id="2004738378939038837" at="47,7,50,151">
+      <scope id="2004738378939038837" at="47,7,50,160">
         <var name="nodesAfter" id="2004738378939038837" />
         <var name="nodesBefore" id="2004738378939038837" />
       </scope>
@@ -2443,7 +2443,7 @@
       <node id="2163048091639855092" at="46,61,47,34" concept="2" />
       <node id="2163048091639855096" at="48,7,49,340" concept="6" />
       <node id="2163048091639855096" at="49,340,50,339" concept="6" />
-      <node id="2163048091639855096" at="50,339,51,151" concept="2" />
+      <node id="2163048091639855096" at="50,339,51,160" concept="2" />
       <node id="2163048091639854868" at="24,0,26,0" concept="9" trace="ourParamCache" />
       <node id="2163048091639854868" at="28,0,31,0" concept="1" trace="IntroduceConstantFromAnonimousClass_Test#()V" />
       <node id="2163048091639854868" at="32,0,36,0" concept="5" trace="test_IntroduceConstantFromAnonimousClassTest#()V" />
@@ -2452,7 +2452,7 @@
       <scope id="2163048091639854868" at="28,53,29,25" />
       <scope id="2163048091639854868" at="33,79,34,149" />
       <scope id="2163048091639854868" at="28,0,31,0" />
-      <scope id="2163048091639855096" at="48,7,51,151">
+      <scope id="2163048091639855096" at="48,7,51,160">
         <var name="nodesAfter" id="2163048091639855096" />
         <var name="nodesBefore" id="2163048091639855096" />
       </scope>
@@ -2475,7 +2475,7 @@
       <node id="637963823611492209" at="41,41,42,317" concept="2" />
       <node id="637963823611492216" at="43,7,44,340" concept="6" />
       <node id="637963823611492216" at="44,340,45,339" concept="6" />
-      <node id="637963823611492216" at="45,339,46,151" concept="2" />
+      <node id="637963823611492216" at="45,339,46,160" concept="2" />
       <node id="2230400082817266597" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="2230400082817266597" at="27,0,30,0" concept="1" trace="ConvertAnonymousWithTypeVariablesTest_Test#()V" />
       <node id="2230400082817266597" at="31,0,35,0" concept="5" trace="test_TypeVariablesTest#()V" />
@@ -2484,7 +2484,7 @@
       <scope id="2230400082817266597" at="27,55,28,25" />
       <scope id="2230400082817266597" at="32,57,33,129" />
       <scope id="2230400082817266597" at="27,0,30,0" />
-      <scope id="637963823611492216" at="43,7,46,151">
+      <scope id="637963823611492216" at="43,7,46,160">
         <var name="nodesAfter" id="637963823611492216" />
         <var name="nodesBefore" id="637963823611492216" />
       </scope>
@@ -2505,7 +2505,7 @@
       <node id="637963823611492185" at="41,41,42,319" concept="2" />
       <node id="637963823611492192" at="43,7,44,340" concept="6" />
       <node id="637963823611492192" at="44,340,45,339" concept="6" />
-      <node id="637963823611492192" at="45,339,46,151" concept="2" />
+      <node id="637963823611492192" at="45,339,46,160" concept="2" />
       <node id="2230400082818031588" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="2230400082818031588" at="27,0,30,0" concept="1" trace="ConvertAnonymousToStaticTest_Test#()V" />
       <node id="2230400082818031588" at="31,0,35,0" concept="5" trace="test_ToStaticTest#()V" />
@@ -2514,7 +2514,7 @@
       <scope id="2230400082818031588" at="27,46,28,25" />
       <scope id="2230400082818031588" at="32,52,33,115" />
       <scope id="2230400082818031588" at="27,0,30,0" />
-      <scope id="637963823611492192" at="43,7,46,151">
+      <scope id="637963823611492192" at="43,7,46,160">
         <var name="nodesAfter" id="637963823611492192" />
         <var name="nodesBefore" id="637963823611492192" />
       </scope>
@@ -2565,7 +2565,7 @@
       <node id="30987049746108587" at="41,330,42,23" concept="2" />
       <node id="30987049746108591" at="43,7,44,338" concept="6" />
       <node id="30987049746108591" at="44,338,45,337" concept="6" />
-      <node id="30987049746108591" at="45,337,46,151" concept="2" />
+      <node id="30987049746108591" at="45,337,46,160" concept="2" />
       <node id="30987049746108520" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="30987049746108520" at="27,0,30,0" concept="1" trace="VariableDeclarationInitializer_Test#()V" />
       <node id="30987049746108520" at="31,0,35,0" concept="5" trace="test_DeclarationVariablesInMethod#()V" />
@@ -2574,7 +2574,7 @@
       <scope id="30987049746108520" at="27,48,28,25" />
       <scope id="30987049746108520" at="32,68,33,133" />
       <scope id="30987049746108520" at="27,0,30,0" />
-      <scope id="30987049746108591" at="43,7,46,151">
+      <scope id="30987049746108591" at="43,7,46,160">
         <var name="nodesAfter" id="30987049746108591" />
         <var name="nodesBefore" id="30987049746108591" />
       </scope>
@@ -2597,7 +2597,7 @@
       <node id="30987049746113479" at="41,323,42,23" concept="2" />
       <node id="30987049746113483" at="43,7,44,338" concept="6" />
       <node id="30987049746113483" at="44,338,45,337" concept="6" />
-      <node id="30987049746113483" at="45,337,46,151" concept="2" />
+      <node id="30987049746113483" at="45,337,46,160" concept="2" />
       <node id="30987049746113412" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="30987049746113412" at="27,0,30,0" concept="1" trace="OperandOfDotExpression_Test#()V" />
       <node id="30987049746113412" at="31,0,35,0" concept="5" trace="test_DeclarationVariablesInMethod#()V" />
@@ -2606,7 +2606,7 @@
       <scope id="30987049746113412" at="27,40,28,25" />
       <scope id="30987049746113412" at="32,68,33,125" />
       <scope id="30987049746113412" at="27,0,30,0" />
-      <scope id="30987049746113483" at="43,7,46,151">
+      <scope id="30987049746113483" at="43,7,46,160">
         <var name="nodesAfter" id="30987049746113483" />
         <var name="nodesBefore" id="30987049746113483" />
       </scope>
@@ -2633,7 +2633,7 @@
       <node id="3109730807963644925" at="45,40,46,34" concept="2" />
       <node id="3109730807963545092" at="47,7,48,340" concept="6" />
       <node id="3109730807963545092" at="48,340,49,339" concept="6" />
-      <node id="3109730807963545092" at="49,339,50,151" concept="2" />
+      <node id="3109730807963545092" at="49,339,50,160" concept="2" />
       <node id="3109730807963541425" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="3109730807963541425" at="27,0,30,0" concept="1" trace="IntroduceVariableFromAnonimousClass_Test#()V" />
       <node id="3109730807963541425" at="31,0,35,0" concept="5" trace="test_IntroduceVariableFromAnonimousClassTest#()V" />
@@ -2642,7 +2642,7 @@
       <scope id="3109730807963541425" at="27,53,28,25" />
       <scope id="3109730807963541425" at="32,79,33,149" />
       <scope id="3109730807963541425" at="27,0,30,0" />
-      <scope id="3109730807963545092" at="47,7,50,151">
+      <scope id="3109730807963545092" at="47,7,50,160">
         <var name="nodesAfter" id="3109730807963545092" />
         <var name="nodesBefore" id="3109730807963545092" />
       </scope>
@@ -2664,7 +2664,7 @@
       <node id="3109730807963748295" at="40,41,41,322" concept="2" />
       <node id="3109730807963748302" at="42,7,43,340" concept="6" />
       <node id="3109730807963748302" at="43,340,44,339" concept="6" />
-      <node id="3109730807963748302" at="44,339,45,151" concept="2" />
+      <node id="3109730807963748302" at="44,339,45,160" concept="2" />
       <node id="3109730807963748196" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="3109730807963748196" at="27,0,30,0" concept="1" trace="ConvertAnonymousWithLocalVariables_Test#()V" />
       <node id="3109730807963748196" at="31,0,35,0" concept="5" trace="test_AbstractClassTest#()V" />
@@ -2673,7 +2673,7 @@
       <scope id="3109730807963748196" at="27,52,28,25" />
       <scope id="3109730807963748196" at="32,57,33,126" />
       <scope id="3109730807963748196" at="27,0,30,0" />
-      <scope id="3109730807963748302" at="42,7,45,151">
+      <scope id="3109730807963748302" at="42,7,45,160">
         <var name="nodesAfter" id="3109730807963748302" />
         <var name="nodesBefore" id="3109730807963748302" />
       </scope>
@@ -2694,7 +2694,7 @@
       <node id="637963823611492195" at="41,41,42,318" concept="2" />
       <node id="637963823611492202" at="43,7,44,340" concept="6" />
       <node id="637963823611492202" at="44,340,45,339" concept="6" />
-      <node id="637963823611492202" at="45,339,46,151" concept="2" />
+      <node id="637963823611492202" at="45,339,46,160" concept="2" />
       <node id="3145818413496050321" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="3145818413496050321" at="27,0,30,0" concept="1" trace="ConvertAnonymousWithLocalVariablesTest_Test#()V" />
       <node id="3145818413496050321" at="31,0,35,0" concept="5" trace="test_WithLocalVariablesTest#()V" />
@@ -2703,7 +2703,7 @@
       <scope id="3145818413496050321" at="27,56,28,25" />
       <scope id="3145818413496050321" at="32,62,33,135" />
       <scope id="3145818413496050321" at="27,0,30,0" />
-      <scope id="637963823611492202" at="43,7,46,151">
+      <scope id="637963823611492202" at="43,7,46,160">
         <var name="nodesAfter" id="637963823611492202" />
         <var name="nodesBefore" id="637963823611492202" />
       </scope>
@@ -2724,7 +2724,7 @@
       <node id="637963823611492165" at="41,41,42,318" concept="2" />
       <node id="637963823611492172" at="43,7,44,340" concept="6" />
       <node id="637963823611492172" at="44,340,45,339" concept="6" />
-      <node id="637963823611492172" at="45,339,46,151" concept="2" />
+      <node id="637963823611492172" at="45,339,46,160" concept="2" />
       <node id="3145818413497245718" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="3145818413497245718" at="27,0,30,0" concept="1" trace="ConvertAnonymousAbstractClassWithConstructorTest_Test#()V" />
       <node id="3145818413497245718" at="31,0,35,0" concept="5" trace="test_AbstractClassWithConstructorTest#()V" />
@@ -2733,7 +2733,7 @@
       <scope id="3145818413497245718" at="27,66,28,25" />
       <scope id="3145818413497245718" at="32,72,33,155" />
       <scope id="3145818413497245718" at="27,0,30,0" />
-      <scope id="637963823611492172" at="43,7,46,151">
+      <scope id="637963823611492172" at="43,7,46,160">
         <var name="nodesAfter" id="637963823611492172" />
         <var name="nodesBefore" id="637963823611492172" />
       </scope>
@@ -2754,7 +2754,7 @@
       <node id="3269652460099718086" at="41,346,42,26" concept="2" />
       <node id="3269652460099718090" at="43,7,44,340" concept="6" />
       <node id="3269652460099718090" at="44,340,45,339" concept="6" />
-      <node id="3269652460099718090" at="45,339,46,151" concept="2" />
+      <node id="3269652460099718090" at="45,339,46,160" concept="2" />
       <node id="3269652460099718077" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="3269652460099718077" at="27,0,30,0" concept="1" trace="InlineAssignment_Test#()V" />
       <node id="3269652460099718077" at="31,0,35,0" concept="5" trace="test_InlineAssingmentInClosure#()V" />
@@ -2763,7 +2763,7 @@
       <scope id="3269652460099718077" at="27,34,28,25" />
       <scope id="3269652460099718077" at="32,65,33,116" />
       <scope id="3269652460099718077" at="27,0,30,0" />
-      <scope id="3269652460099718090" at="43,7,46,151">
+      <scope id="3269652460099718090" at="43,7,46,160">
         <var name="nodesAfter" id="3269652460099718090" />
         <var name="nodesBefore" id="3269652460099718090" />
       </scope>
@@ -2789,7 +2789,7 @@
       <node id="418758558327166210" at="46,358,47,26" concept="2" />
       <node id="418758558327166218" at="48,7,49,339" concept="6" />
       <node id="418758558327166218" at="49,339,50,338" concept="6" />
-      <node id="418758558327166218" at="50,338,51,151" concept="2" />
+      <node id="418758558327166218" at="50,338,51,160" concept="2" />
       <node id="3925159399320841060" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="3925159399320841060" at="29,0,32,0" concept="1" trace="ChangeSigantureOfInterface_Test#()V" />
       <node id="3925159399320841060" at="33,0,37,0" concept="5" trace="test_ChangeSigantureOfInterface#()V" />
@@ -2798,7 +2798,7 @@
       <scope id="3925159399320841060" at="29,44,30,25" />
       <scope id="3925159399320841060" at="34,66,35,127" />
       <scope id="3925159399320841060" at="29,0,32,0" />
-      <scope id="418758558327166218" at="48,7,51,151">
+      <scope id="418758558327166218" at="48,7,51,160">
         <var name="nodesAfter" id="418758558327166218" />
         <var name="nodesBefore" id="418758558327166218" />
       </scope>
@@ -2825,7 +2825,7 @@
       <node id="4038232163186978840" at="44,35,45,34" concept="2" />
       <node id="4038232163186978844" at="46,7,47,340" concept="6" />
       <node id="4038232163186978844" at="47,340,48,339" concept="6" />
-      <node id="4038232163186978844" at="48,339,49,151" concept="2" />
+      <node id="4038232163186978844" at="48,339,49,160" concept="2" />
       <node id="4038232163186978773" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="4038232163186978773" at="27,0,30,0" concept="1" trace="IntroduceFinalLocalVariable_Test#()V" />
       <node id="4038232163186978773" at="31,0,35,0" concept="5" trace="test_IntroduceFinalLocalVariable#()V" />
@@ -2834,7 +2834,7 @@
       <scope id="4038232163186978773" at="27,45,28,25" />
       <scope id="4038232163186978773" at="32,67,33,129" />
       <scope id="4038232163186978773" at="27,0,30,0" />
-      <scope id="4038232163186978844" at="46,7,49,151">
+      <scope id="4038232163186978844" at="46,7,49,160">
         <var name="nodesAfter" id="4038232163186978844" />
         <var name="nodesBefore" id="4038232163186978844" />
       </scope>
@@ -2862,7 +2862,7 @@
       <node id="4038232163187008815" at="48,62,49,34" concept="2" />
       <node id="4038232163187008819" at="50,7,51,340" concept="6" />
       <node id="4038232163187008819" at="51,340,52,339" concept="6" />
-      <node id="4038232163187008819" at="52,339,53,151" concept="2" />
+      <node id="4038232163187008819" at="52,339,53,160" concept="2" />
       <node id="4038232163187008743" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="4038232163187008743" at="29,0,32,0" concept="1" trace="IntroduceFinalField_Test#()V" />
       <node id="4038232163187008743" at="33,0,37,0" concept="5" trace="test_IntroduceFinalField#()V" />
@@ -2871,7 +2871,7 @@
       <scope id="4038232163187008743" at="29,37,30,25" />
       <scope id="4038232163187008743" at="34,59,35,113" />
       <scope id="4038232163187008743" at="29,0,32,0" />
-      <scope id="4038232163187008819" at="50,7,53,151">
+      <scope id="4038232163187008819" at="50,7,53,160">
         <var name="nodesAfter" id="4038232163187008819" />
         <var name="nodesBefore" id="4038232163187008819" />
       </scope>
@@ -2894,7 +2894,7 @@
       <node id="4412735672778826658" at="41,325,42,23" concept="2" />
       <node id="4412735672778826662" at="43,7,44,340" concept="6" />
       <node id="4412735672778826662" at="44,340,45,339" concept="6" />
-      <node id="4412735672778826662" at="45,339,46,151" concept="2" />
+      <node id="4412735672778826662" at="45,339,46,160" concept="2" />
       <node id="4412735672778824686" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="4412735672778824686" at="27,0,30,0" concept="1" trace="InlineMethodWithUnusedParameters_Test#()V" />
       <node id="4412735672778824686" at="31,0,35,0" concept="5" trace="test_InlineMethodWithUnusedParameters#()V" />
@@ -2903,7 +2903,7 @@
       <scope id="4412735672778824686" at="27,50,28,25" />
       <scope id="4412735672778824686" at="32,72,33,139" />
       <scope id="4412735672778824686" at="27,0,30,0" />
-      <scope id="4412735672778826662" at="43,7,46,151">
+      <scope id="4412735672778826662" at="43,7,46,160">
         <var name="nodesAfter" id="4412735672778826662" />
         <var name="nodesBefore" id="4412735672778826662" />
       </scope>
@@ -2927,7 +2927,7 @@
       <node id="4412735672780116667" at="42,320,43,23" concept="2" />
       <node id="4412735672780116671" at="44,7,45,348" concept="6" />
       <node id="4412735672780116671" at="45,348,46,347" concept="6" />
-      <node id="4412735672780116671" at="46,347,47,151" concept="2" />
+      <node id="4412735672780116671" at="46,347,47,160" concept="2" />
       <node id="4412735672780105517" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="4412735672780105517" at="27,0,30,0" concept="1" trace="InlineMethodWithConceptFunctionParameters_Test#()V" />
       <node id="4412735672780105517" at="31,0,35,0" concept="5" trace="test_InlineMethodWithConceptFunctionParameters#()V" />
@@ -2936,7 +2936,7 @@
       <scope id="4412735672780105517" at="27,59,28,25" />
       <scope id="4412735672780105517" at="32,81,33,157" />
       <scope id="4412735672780105517" at="27,0,30,0" />
-      <scope id="4412735672780116671" at="44,7,47,151">
+      <scope id="4412735672780116671" at="44,7,47,160">
         <var name="nodesAfter" id="4412735672780116671" />
         <var name="nodesBefore" id="4412735672780116671" />
       </scope>
@@ -2962,7 +2962,7 @@
       <node id="6745858777349293248" at="44,26,45,285" concept="2" />
       <node id="5142438244427184254" at="46,7,47,592" concept="6" />
       <node id="5142438244427184254" at="47,592,48,591" concept="6" />
-      <node id="5142438244427184254" at="48,591,49,151" concept="2" />
+      <node id="5142438244427184254" at="48,591,49,160" concept="2" />
       <node id="5142438244427169026" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="5142438244427169026" at="27,0,30,0" concept="1" trace="MoveMethodWithParameters_Test#()V" />
       <node id="5142438244427169026" at="31,0,35,0" concept="5" trace="test_check#()V" />
@@ -2971,7 +2971,7 @@
       <scope id="5142438244427169026" at="27,42,28,25" />
       <scope id="5142438244427169026" at="32,45,33,104" />
       <scope id="5142438244427169026" at="27,0,30,0" />
-      <scope id="5142438244427184254" at="46,7,49,151">
+      <scope id="5142438244427184254" at="46,7,49,160">
         <var name="nodesAfter" id="5142438244427184254" />
         <var name="nodesBefore" id="5142438244427184254" />
       </scope>
@@ -3000,7 +3000,7 @@
       <node id="5161277940733601074" at="52,84,53,23" concept="2" />
       <node id="5161277940733601078" at="54,7,55,340" concept="6" />
       <node id="5161277940733601078" at="55,340,56,339" concept="6" />
-      <node id="5161277940733601078" at="56,339,57,151" concept="2" />
+      <node id="5161277940733601078" at="56,339,57,160" concept="2" />
       <node id="5161277940733600913" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="5161277940733600913" at="30,0,33,0" concept="1" trace="ExtractMethodFromClosure_Test#()V" />
       <node id="5161277940733600913" at="34,0,38,0" concept="5" trace="test_ExtractMethodFromClosure#()V" />
@@ -3011,7 +3011,7 @@
       <scope id="5161277940733600913" at="35,64,36,123" />
       <scope id="5604183372188209900" at="48,215,50,72" />
       <scope id="5161277940733600913" at="30,0,33,0" />
-      <scope id="5161277940733601078" at="54,7,57,151">
+      <scope id="5161277940733601078" at="54,7,57,160">
         <var name="nodesAfter" id="5161277940733601078" />
         <var name="nodesBefore" id="5161277940733601078" />
       </scope>
@@ -3036,7 +3036,7 @@
       <node id="5907083257159871976" at="40,41,41,320" concept="2" />
       <node id="5907083257159871983" at="42,7,43,340" concept="6" />
       <node id="5907083257159871983" at="43,340,44,339" concept="6" />
-      <node id="5907083257159871983" at="44,339,45,151" concept="2" />
+      <node id="5907083257159871983" at="44,339,45,160" concept="2" />
       <node id="5907083257159818727" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="5907083257159818727" at="27,0,30,0" concept="1" trace="ConvertAnonymousGenGenericFields_Test#()V" />
       <node id="5907083257159818727" at="31,0,35,0" concept="5" trace="test_TypeParametersTest#()V" />
@@ -3045,7 +3045,7 @@
       <scope id="5907083257159818727" at="27,50,28,25" />
       <scope id="5907083257159818727" at="32,58,33,125" />
       <scope id="5907083257159818727" at="27,0,30,0" />
-      <scope id="5907083257159871983" at="42,7,45,151">
+      <scope id="5907083257159871983" at="42,7,45,160">
         <var name="nodesAfter" id="5907083257159871983" />
         <var name="nodesBefore" id="5907083257159871983" />
       </scope>
@@ -3068,7 +3068,7 @@
       <node id="6195342755328023726" at="45,84,46,23" concept="2" />
       <node id="6195342755328023730" at="47,7,48,340" concept="6" />
       <node id="6195342755328023730" at="48,340,49,339" concept="6" />
-      <node id="6195342755328023730" at="49,339,50,151" concept="2" />
+      <node id="6195342755328023730" at="49,339,50,160" concept="2" />
       <node id="6195342755328023609" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="6195342755328023609" at="29,0,32,0" concept="1" trace="ExtractAddingNewDeclaration_Test#()V" />
       <node id="6195342755328023609" at="33,0,37,0" concept="5" trace="test_ExtractAddingNewDeclaration#()V" />
@@ -3077,7 +3077,7 @@
       <scope id="6195342755328023609" at="29,45,30,25" />
       <scope id="6195342755328023609" at="34,67,35,129" />
       <scope id="6195342755328023609" at="29,0,32,0" />
-      <scope id="6195342755328023730" at="47,7,50,151">
+      <scope id="6195342755328023730" at="47,7,50,160">
         <var name="nodesAfter" id="6195342755328023730" />
         <var name="nodesBefore" id="6195342755328023730" />
       </scope>
@@ -3105,7 +3105,7 @@
       <node id="6195342755328044338" at="49,140,50,42" concept="2" />
       <node id="6195342755328044344" at="52,7,53,340" concept="6" />
       <node id="6195342755328044344" at="53,340,54,339" concept="6" />
-      <node id="6195342755328044344" at="54,339,55,151" concept="2" />
+      <node id="6195342755328044344" at="54,339,55,160" concept="2" />
       <node id="6195342755328044201" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="6195342755328044201" at="30,0,33,0" concept="1" trace="FindForMethodWithOutputVariable_Test#()V" />
       <node id="6195342755328044201" at="34,0,38,0" concept="5" trace="test_FindForMethodWithOutputVariableTest#()V" />
@@ -3118,7 +3118,7 @@
         <var name="matchRef" id="6195342755328044331" />
       </scope>
       <scope id="6195342755328044201" at="30,0,33,0" />
-      <scope id="6195342755328044344" at="52,7,55,151">
+      <scope id="6195342755328044344" at="52,7,55,160">
         <var name="nodesAfter" id="6195342755328044344" />
         <var name="nodesBefore" id="6195342755328044344" />
       </scope>
@@ -3146,7 +3146,7 @@
       <node id="6351584993764365837" at="41,346,42,26" concept="2" />
       <node id="6351584993764365841" at="43,7,44,340" concept="6" />
       <node id="6351584993764365841" at="44,340,45,339" concept="6" />
-      <node id="6351584993764365841" at="45,339,46,151" concept="2" />
+      <node id="6351584993764365841" at="45,339,46,160" concept="2" />
       <node id="6351584993764365770" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6351584993764365770" at="27,0,30,0" concept="1" trace="InlineAssignmentInClosure_Test#()V" />
       <node id="6351584993764365770" at="31,0,35,0" concept="5" trace="test_InlineAssingmentInClosure#()V" />
@@ -3155,7 +3155,7 @@
       <scope id="6351584993764365770" at="27,43,28,25" />
       <scope id="6351584993764365770" at="32,65,33,125" />
       <scope id="6351584993764365770" at="27,0,30,0" />
-      <scope id="6351584993764365841" at="43,7,46,151">
+      <scope id="6351584993764365841" at="43,7,46,160">
         <var name="nodesAfter" id="6351584993764365841" />
         <var name="nodesBefore" id="6351584993764365841" />
       </scope>
@@ -3178,7 +3178,7 @@
       <node id="668606183334155434" at="41,325,42,23" concept="2" />
       <node id="668606183334155438" at="43,7,44,344" concept="6" />
       <node id="668606183334155438" at="44,344,45,343" concept="6" />
-      <node id="668606183334155438" at="45,343,46,151" concept="2" />
+      <node id="668606183334155438" at="45,343,46,160" concept="2" />
       <node id="668606183334155391" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="668606183334155391" at="27,0,30,0" concept="1" trace="InlineFromAnotherBehavior_Test#()V" />
       <node id="668606183334155391" at="31,0,35,0" concept="5" trace="test_InlineInBehaviorWithThis#()V" />
@@ -3187,7 +3187,7 @@
       <scope id="668606183334155391" at="27,43,28,25" />
       <scope id="668606183334155391" at="32,64,33,124" />
       <scope id="668606183334155391" at="27,0,30,0" />
-      <scope id="668606183334155438" at="43,7,46,151">
+      <scope id="668606183334155438" at="43,7,46,160">
         <var name="nodesAfter" id="668606183334155438" />
         <var name="nodesBefore" id="668606183334155438" />
       </scope>
@@ -3210,7 +3210,7 @@
       <node id="6791439617122315500" at="41,41,42,313" concept="2" />
       <node id="6791439617122315507" at="43,7,44,340" concept="6" />
       <node id="6791439617122315507" at="44,340,45,339" concept="6" />
-      <node id="6791439617122315507" at="45,339,46,151" concept="2" />
+      <node id="6791439617122315507" at="45,339,46,160" concept="2" />
       <node id="6791439617122300870" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6791439617122300870" at="27,0,30,0" concept="1" trace="ConvertAnonymousInterfaceTest_Test#()V" />
       <node id="6791439617122300870" at="31,0,35,0" concept="5" trace="test_InterfaceTest#()V" />
@@ -3219,7 +3219,7 @@
       <scope id="6791439617122300870" at="27,47,28,25" />
       <scope id="6791439617122300870" at="32,53,33,117" />
       <scope id="6791439617122300870" at="27,0,30,0" />
-      <scope id="6791439617122315507" at="43,7,46,151">
+      <scope id="6791439617122315507" at="43,7,46,160">
         <var name="nodesAfter" id="6791439617122315507" />
         <var name="nodesBefore" id="6791439617122315507" />
       </scope>
@@ -3240,7 +3240,7 @@
       <node id="6791439617122640186" at="41,41,42,320" concept="2" />
       <node id="6791439617122640193" at="43,7,44,340" concept="6" />
       <node id="6791439617122640193" at="44,340,45,339" concept="6" />
-      <node id="6791439617122640193" at="45,339,46,151" concept="2" />
+      <node id="6791439617122640193" at="45,339,46,160" concept="2" />
       <node id="6791439617122628436" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6791439617122628436" at="27,0,30,0" concept="1" trace="ConvertAnonymousAbstractClassTest_Test#()V" />
       <node id="6791439617122628436" at="31,0,35,0" concept="5" trace="test_AbstractClassTest#()V" />
@@ -3249,7 +3249,7 @@
       <scope id="6791439617122628436" at="27,51,28,25" />
       <scope id="6791439617122628436" at="32,57,33,125" />
       <scope id="6791439617122628436" at="27,0,30,0" />
-      <scope id="6791439617122640193" at="43,7,46,151">
+      <scope id="6791439617122640193" at="43,7,46,160">
         <var name="nodesAfter" id="6791439617122640193" />
         <var name="nodesBefore" id="6791439617122640193" />
       </scope>
@@ -3270,7 +3270,7 @@
       <node id="6923327169066808593" at="41,339,42,26" concept="2" />
       <node id="6923327169066808597" at="43,7,44,340" concept="6" />
       <node id="6923327169066808597" at="44,340,45,339" concept="6" />
-      <node id="6923327169066808597" at="45,339,46,151" concept="2" />
+      <node id="6923327169066808597" at="45,339,46,160" concept="2" />
       <node id="6923327169066808584" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066808584" at="27,0,30,0" concept="1" trace="InlineVariableBinaryInBinary_Test#()V" />
       <node id="6923327169066808584" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3279,7 +3279,7 @@
       <scope id="6923327169066808584" at="27,46,28,25" />
       <scope id="6923327169066808584" at="32,60,33,123" />
       <scope id="6923327169066808584" at="27,0,30,0" />
-      <scope id="6923327169066808597" at="43,7,46,151">
+      <scope id="6923327169066808597" at="43,7,46,160">
         <var name="nodesAfter" id="6923327169066808597" />
         <var name="nodesBefore" id="6923327169066808597" />
       </scope>
@@ -3302,7 +3302,7 @@
       <node id="6923327169066891903" at="41,339,42,26" concept="2" />
       <node id="6923327169066891907" at="43,7,44,340" concept="6" />
       <node id="6923327169066891907" at="44,340,45,339" concept="6" />
-      <node id="6923327169066891907" at="45,339,46,151" concept="2" />
+      <node id="6923327169066891907" at="45,339,46,160" concept="2" />
       <node id="6923327169066891894" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066891894" at="27,0,30,0" concept="1" trace="InlineVariableBinaryInCast_Test#()V" />
       <node id="6923327169066891894" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3311,7 +3311,7 @@
       <scope id="6923327169066891894" at="27,44,28,25" />
       <scope id="6923327169066891894" at="32,60,33,121" />
       <scope id="6923327169066891894" at="27,0,30,0" />
-      <scope id="6923327169066891907" at="43,7,46,151">
+      <scope id="6923327169066891907" at="43,7,46,160">
         <var name="nodesAfter" id="6923327169066891907" />
         <var name="nodesBefore" id="6923327169066891907" />
       </scope>
@@ -3334,7 +3334,7 @@
       <node id="6923327169066897736" at="41,346,42,26" concept="2" />
       <node id="6923327169066897740" at="43,7,44,340" concept="6" />
       <node id="6923327169066897740" at="44,340,45,339" concept="6" />
-      <node id="6923327169066897740" at="45,339,46,151" concept="2" />
+      <node id="6923327169066897740" at="45,339,46,160" concept="2" />
       <node id="6923327169066897727" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066897727" at="27,0,30,0" concept="1" trace="InlineVariableBinaryInCastOnDeclaration_Test#()V" />
       <node id="6923327169066897727" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3343,7 +3343,7 @@
       <scope id="6923327169066897727" at="27,57,28,25" />
       <scope id="6923327169066897727" at="32,60,33,134" />
       <scope id="6923327169066897727" at="27,0,30,0" />
-      <scope id="6923327169066897740" at="43,7,46,151">
+      <scope id="6923327169066897740" at="43,7,46,160">
         <var name="nodesAfter" id="6923327169066897740" />
         <var name="nodesBefore" id="6923327169066897740" />
       </scope>
@@ -3366,7 +3366,7 @@
       <node id="6923327169066955751" at="41,346,42,26" concept="2" />
       <node id="6923327169066955755" at="43,7,44,340" concept="6" />
       <node id="6923327169066955755" at="44,340,45,339" concept="6" />
-      <node id="6923327169066955755" at="45,339,46,151" concept="2" />
+      <node id="6923327169066955755" at="45,339,46,160" concept="2" />
       <node id="6923327169066955742" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066955742" at="27,0,30,0" concept="1" trace="InlineVariableBinaryInBinaryOnDeclaration_Test#()V" />
       <node id="6923327169066955742" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3375,7 +3375,7 @@
       <scope id="6923327169066955742" at="27,59,28,25" />
       <scope id="6923327169066955742" at="32,60,33,136" />
       <scope id="6923327169066955742" at="27,0,30,0" />
-      <scope id="6923327169066955755" at="43,7,46,151">
+      <scope id="6923327169066955755" at="43,7,46,160">
         <var name="nodesAfter" id="6923327169066955755" />
         <var name="nodesBefore" id="6923327169066955755" />
       </scope>
@@ -3397,7 +3397,7 @@
       <node id="2359164386490623624" at="40,41,41,331" concept="2" />
       <node id="6923327169066964269" at="42,7,43,340" concept="6" />
       <node id="6923327169066964269" at="43,340,44,339" concept="6" />
-      <node id="6923327169066964269" at="44,339,45,151" concept="2" />
+      <node id="6923327169066964269" at="44,339,45,160" concept="2" />
       <node id="6923327169066964256" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066964256" at="27,0,30,0" concept="1" trace="InlineFieldOperationBinary_Test#()V" />
       <node id="6923327169066964256" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3406,7 +3406,7 @@
       <scope id="6923327169066964256" at="27,44,28,25" />
       <scope id="6923327169066964256" at="32,60,33,121" />
       <scope id="6923327169066964256" at="27,0,30,0" />
-      <scope id="6923327169066964269" at="42,7,45,151">
+      <scope id="6923327169066964269" at="42,7,45,160">
         <var name="nodesAfter" id="6923327169066964269" />
         <var name="nodesBefore" id="6923327169066964269" />
       </scope>
@@ -3426,7 +3426,7 @@
       <node id="6923327169067101874" at="40,41,41,337" concept="2" />
       <node id="6923327169066983473" at="42,7,43,340" concept="6" />
       <node id="6923327169066983473" at="43,340,44,339" concept="6" />
-      <node id="6923327169066983473" at="44,339,45,151" concept="2" />
+      <node id="6923327169066983473" at="44,339,45,160" concept="2" />
       <node id="6923327169066983460" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066983460" at="27,0,30,0" concept="1" trace="InlineFieldOperationBinaryOnDeclaration_Test#()V" />
       <node id="6923327169066983460" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3435,7 +3435,7 @@
       <scope id="6923327169066983460" at="27,57,28,25" />
       <scope id="6923327169066983460" at="32,60,33,134" />
       <scope id="6923327169066983460" at="27,0,30,0" />
-      <scope id="6923327169066983473" at="42,7,45,151">
+      <scope id="6923327169066983473" at="42,7,45,160">
         <var name="nodesAfter" id="6923327169066983473" />
         <var name="nodesBefore" id="6923327169066983473" />
       </scope>
@@ -3455,7 +3455,7 @@
       <node id="6923327169067094389" at="40,41,41,329" concept="2" />
       <node id="6923327169066992508" at="42,7,43,340" concept="6" />
       <node id="6923327169066992508" at="43,340,44,339" concept="6" />
-      <node id="6923327169066992508" at="44,339,45,151" concept="2" />
+      <node id="6923327169066992508" at="44,339,45,160" concept="2" />
       <node id="6923327169066992495" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169066992495" at="27,0,30,0" concept="1" trace="InlineFieldBinary_Test#()V" />
       <node id="6923327169066992495" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3464,7 +3464,7 @@
       <scope id="6923327169066992495" at="27,35,28,25" />
       <scope id="6923327169066992495" at="32,60,33,112" />
       <scope id="6923327169066992495" at="27,0,30,0" />
-      <scope id="6923327169066992508" at="42,7,45,151">
+      <scope id="6923327169066992508" at="42,7,45,160">
         <var name="nodesAfter" id="6923327169066992508" />
         <var name="nodesBefore" id="6923327169066992508" />
       </scope>
@@ -3484,7 +3484,7 @@
       <node id="6923327169067001403" at="40,41,41,328" concept="2" />
       <node id="6923327169067001407" at="42,7,43,340" concept="6" />
       <node id="6923327169067001407" at="43,340,44,339" concept="6" />
-      <node id="6923327169067001407" at="44,339,45,151" concept="2" />
+      <node id="6923327169067001407" at="44,339,45,160" concept="2" />
       <node id="6923327169067001394" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169067001394" at="27,0,30,0" concept="1" trace="InlineFieldBinaryOnDeclaration_Test#()V" />
       <node id="6923327169067001394" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3493,7 +3493,7 @@
       <scope id="6923327169067001394" at="27,48,28,25" />
       <scope id="6923327169067001394" at="32,60,33,125" />
       <scope id="6923327169067001394" at="27,0,30,0" />
-      <scope id="6923327169067001407" at="42,7,45,151">
+      <scope id="6923327169067001407" at="42,7,45,160">
         <var name="nodesAfter" id="6923327169067001407" />
         <var name="nodesBefore" id="6923327169067001407" />
       </scope>
@@ -3514,7 +3514,7 @@
       <node id="6923327169067008014" at="41,339,42,26" concept="2" />
       <node id="6923327169067008018" at="43,7,44,340" concept="6" />
       <node id="6923327169067008018" at="44,340,45,339" concept="6" />
-      <node id="6923327169067008018" at="45,339,46,151" concept="2" />
+      <node id="6923327169067008018" at="45,339,46,160" concept="2" />
       <node id="6923327169067008005" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6923327169067008005" at="27,0,30,0" concept="1" trace="InlineVariableBinaryInTernary_Test#()V" />
       <node id="6923327169067008005" at="31,0,35,0" concept="5" trace="test_simpleInlineVariable#()V" />
@@ -3523,7 +3523,7 @@
       <scope id="6923327169067008005" at="27,47,28,25" />
       <scope id="6923327169067008005" at="32,60,33,124" />
       <scope id="6923327169067008005" at="27,0,30,0" />
-      <scope id="6923327169067008018" at="43,7,46,151">
+      <scope id="6923327169067008018" at="43,7,46,160">
         <var name="nodesAfter" id="6923327169067008018" />
         <var name="nodesBefore" id="6923327169067008018" />
       </scope>
@@ -3557,7 +3557,7 @@
       <node id="6974242407276777380" at="52,40,53,34" concept="2" />
       <node id="6974242407276777336" at="54,7,55,340" concept="6" />
       <node id="6974242407276777336" at="55,340,56,339" concept="6" />
-      <node id="6974242407276777336" at="56,339,57,151" concept="2" />
+      <node id="6974242407276777336" at="56,339,57,160" concept="2" />
       <node id="6974242407276765599" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="6974242407276765599" at="27,0,30,0" concept="1" trace="IntroduceVariableFromWildcards_Test#()V" />
       <node id="6974242407276765599" at="31,0,35,0" concept="5" trace="test_IntroduceVariableFromWildcardsTest#()V" />
@@ -3566,7 +3566,7 @@
       <scope id="6974242407276765599" at="27,48,28,25" />
       <scope id="6974242407276765599" at="32,74,33,139" />
       <scope id="6974242407276765599" at="27,0,30,0" />
-      <scope id="6974242407276777336" at="54,7,57,151">
+      <scope id="6974242407276777336" at="54,7,57,160">
         <var name="nodesAfter" id="6974242407276777336" />
         <var name="nodesBefore" id="6974242407276777336" />
       </scope>
@@ -3589,7 +3589,7 @@
       <node id="7093131866560585742" at="42,334,43,26" concept="2" />
       <node id="7093131866560585746" at="44,7,45,340" concept="6" />
       <node id="7093131866560585746" at="45,340,46,339" concept="6" />
-      <node id="7093131866560585746" at="46,339,47,151" concept="2" />
+      <node id="7093131866560585746" at="46,339,47,160" concept="2" />
       <node id="7093131866560585661" at="24,0,26,0" concept="9" trace="ourParamCache" />
       <node id="7093131866560585661" at="28,0,31,0" concept="1" trace="InlineInsideClosure_Test#()V" />
       <node id="7093131866560585661" at="32,0,36,0" concept="5" trace="test_InlineInsideClosureTest#()V" />
@@ -3598,7 +3598,7 @@
       <scope id="7093131866560585661" at="28,37,29,25" />
       <scope id="7093131866560585661" at="33,63,34,117" />
       <scope id="7093131866560585661" at="28,0,31,0" />
-      <scope id="7093131866560585746" at="44,7,47,151">
+      <scope id="7093131866560585746" at="44,7,47,160">
         <var name="nodesAfter" id="7093131866560585746" />
         <var name="nodesBefore" id="7093131866560585746" />
       </scope>
@@ -3621,7 +3621,7 @@
       <node id="7093131866560585860" at="42,334,43,26" concept="2" />
       <node id="7093131866560585864" at="44,7,45,340" concept="6" />
       <node id="7093131866560585864" at="45,340,46,339" concept="6" />
-      <node id="7093131866560585864" at="46,339,47,151" concept="2" />
+      <node id="7093131866560585864" at="46,339,47,160" concept="2" />
       <node id="7093131866560585771" at="24,0,26,0" concept="9" trace="ourParamCache" />
       <node id="7093131866560585771" at="28,0,31,0" concept="1" trace="InlineInClosureWithOutsideAssignment_Test#()V" />
       <node id="7093131866560585771" at="32,0,36,0" concept="5" trace="test_InlineInClosureWithOutsideAssingmentTest#()V" />
@@ -3630,7 +3630,7 @@
       <scope id="7093131866560585771" at="28,54,29,25" />
       <scope id="7093131866560585771" at="33,80,34,151" />
       <scope id="7093131866560585771" at="28,0,31,0" />
-      <scope id="7093131866560585864" at="44,7,47,151">
+      <scope id="7093131866560585864" at="44,7,47,160">
         <var name="nodesAfter" id="7093131866560585864" />
         <var name="nodesBefore" id="7093131866560585864" />
       </scope>
@@ -3656,7 +3656,7 @@
       <node id="7475692990584612219" at="46,84,47,23" concept="2" />
       <node id="7475692990584612223" at="48,7,49,340" concept="6" />
       <node id="7475692990584612223" at="49,340,50,339" concept="6" />
-      <node id="7475692990584612223" at="50,339,51,151" concept="2" />
+      <node id="7475692990584612223" at="50,339,51,160" concept="2" />
       <node id="7475692990584612119" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="7475692990584612119" at="29,0,32,0" concept="1" trace="ExtractWithFieldReference_Test#()V" />
       <node id="7475692990584612119" at="33,0,37,0" concept="5" trace="test_extractFromStatements#()V" />
@@ -3665,7 +3665,7 @@
       <scope id="7475692990584612119" at="29,43,30,25" />
       <scope id="7475692990584612119" at="34,61,35,121" />
       <scope id="7475692990584612119" at="29,0,32,0" />
-      <scope id="7475692990584612223" at="48,7,51,151">
+      <scope id="7475692990584612223" at="48,7,51,160">
         <var name="nodesAfter" id="7475692990584612223" />
         <var name="nodesBefore" id="7475692990584612223" />
       </scope>
@@ -3692,7 +3692,7 @@
       <node id="7475692990584681500" at="46,84,47,23" concept="2" />
       <node id="7475692990584681504" at="48,7,49,340" concept="6" />
       <node id="7475692990584681504" at="49,340,50,339" concept="6" />
-      <node id="7475692990584681504" at="50,339,51,151" concept="2" />
+      <node id="7475692990584681504" at="50,339,51,160" concept="2" />
       <node id="7475692990584681432" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="7475692990584681432" at="29,0,32,0" concept="1" trace="ExtractWithStaticFieldReference_Test#()V" />
       <node id="7475692990584681432" at="33,0,37,0" concept="5" trace="test_extractFromStatements#()V" />
@@ -3701,7 +3701,7 @@
       <scope id="7475692990584681432" at="29,49,30,25" />
       <scope id="7475692990584681432" at="34,61,35,127" />
       <scope id="7475692990584681432" at="29,0,32,0" />
-      <scope id="7475692990584681504" at="48,7,51,151">
+      <scope id="7475692990584681504" at="48,7,51,160">
         <var name="nodesAfter" id="7475692990584681504" />
         <var name="nodesBefore" id="7475692990584681504" />
       </scope>
@@ -3728,7 +3728,7 @@
       <node id="2163048091639836880" at="44,40,45,34" concept="2" />
       <node id="7568753874916167980" at="46,7,47,340" concept="6" />
       <node id="7568753874916167980" at="47,340,48,339" concept="6" />
-      <node id="7568753874916167980" at="48,339,49,151" concept="2" />
+      <node id="7568753874916167980" at="48,339,49,160" concept="2" />
       <node id="7568753874916167799" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="7568753874916167799" at="27,0,30,0" concept="1" trace="SimpleFindAndMoveForIntroduceLocalVar_Test#()V" />
       <node id="7568753874916167799" at="31,0,35,0" concept="5" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
@@ -3737,7 +3737,7 @@
       <scope id="7568753874916167799" at="27,55,28,25" />
       <scope id="7568753874916167799" at="32,81,33,153" />
       <scope id="7568753874916167799" at="27,0,30,0" />
-      <scope id="7568753874916167980" at="46,7,49,151">
+      <scope id="7568753874916167980" at="46,7,49,160">
         <var name="nodesAfter" id="7568753874916167980" />
         <var name="nodesBefore" id="7568753874916167980" />
       </scope>
@@ -3764,7 +3764,7 @@
       <node id="2163048091639836885" at="46,62,47,34" concept="2" />
       <node id="7568753874916187455" at="48,7,49,340" concept="6" />
       <node id="7568753874916187455" at="49,340,50,339" concept="6" />
-      <node id="7568753874916187455" at="50,339,51,151" concept="2" />
+      <node id="7568753874916187455" at="50,339,51,160" concept="2" />
       <node id="7568753874916187325" at="24,0,26,0" concept="9" trace="ourParamCache" />
       <node id="7568753874916187325" at="28,0,31,0" concept="1" trace="SimpleFindForIntroduceConstant_Test#()V" />
       <node id="7568753874916187325" at="32,0,36,0" concept="5" trace="test_SimpleFindForIntroduceConstantTest#()V" />
@@ -3773,7 +3773,7 @@
       <scope id="7568753874916187325" at="28,48,29,25" />
       <scope id="7568753874916187325" at="33,74,34,139" />
       <scope id="7568753874916187325" at="28,0,31,0" />
-      <scope id="7568753874916187455" at="48,7,51,151">
+      <scope id="7568753874916187455" at="48,7,51,160">
         <var name="nodesAfter" id="7568753874916187455" />
         <var name="nodesBefore" id="7568753874916187455" />
       </scope>
@@ -3799,7 +3799,7 @@
       <node id="2163048091639836890" at="44,31,45,34" concept="2" />
       <node id="7568753874916226620" at="46,7,47,340" concept="6" />
       <node id="7568753874916226620" at="47,340,48,339" concept="6" />
-      <node id="7568753874916226620" at="48,339,49,151" concept="2" />
+      <node id="7568753874916226620" at="48,339,49,160" concept="2" />
       <node id="7568753874916226562" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="7568753874916226562" at="27,0,30,0" concept="1" trace="SimpleFindForIntroduceLocalVariable_Test#()V" />
       <node id="7568753874916226562" at="31,0,35,0" concept="5" trace="test_SimpleFindAndMoveForIntroduceLocalVariableTest#()V" />
@@ -3808,7 +3808,7 @@
       <scope id="7568753874916226562" at="27,53,28,25" />
       <scope id="7568753874916226562" at="32,86,33,156" />
       <scope id="7568753874916226562" at="27,0,30,0" />
-      <scope id="7568753874916226620" at="46,7,49,151">
+      <scope id="7568753874916226620" at="46,7,49,160">
         <var name="nodesAfter" id="7568753874916226620" />
         <var name="nodesBefore" id="7568753874916226620" />
       </scope>
@@ -3834,7 +3834,7 @@
       <node id="2163048091639836872" at="44,40,45,34" concept="2" />
       <node id="7568753874916244304" at="46,7,47,340" concept="6" />
       <node id="7568753874916244304" at="47,340,48,339" concept="6" />
-      <node id="7568753874916244304" at="48,339,49,151" concept="2" />
+      <node id="7568753874916244304" at="48,339,49,160" concept="2" />
       <node id="7568753874916244224" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="7568753874916244224" at="27,0,30,0" concept="1" trace="FindAndMoveFromIfForIntroduceLocalVar_Test#()V" />
       <node id="7568753874916244224" at="31,0,35,0" concept="5" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
@@ -3843,7 +3843,7 @@
       <scope id="7568753874916244224" at="27,55,28,25" />
       <scope id="7568753874916244224" at="32,81,33,153" />
       <scope id="7568753874916244224" at="27,0,30,0" />
-      <scope id="7568753874916244304" at="46,7,49,151">
+      <scope id="7568753874916244304" at="46,7,49,160">
         <var name="nodesAfter" id="7568753874916244304" />
         <var name="nodesBefore" id="7568753874916244304" />
       </scope>
@@ -3870,7 +3870,7 @@
       <node id="8155843501977582830" at="49,140,50,42" concept="2" />
       <node id="7793057097608416413" at="52,7,53,340" concept="6" />
       <node id="7793057097608416413" at="53,340,54,339" concept="6" />
-      <node id="7793057097608416413" at="54,339,55,151" concept="2" />
+      <node id="7793057097608416413" at="54,339,55,160" concept="2" />
       <node id="7793057097608406463" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="7793057097608406463" at="30,0,33,0" concept="1" trace="SimpleFindForExtractFromManyStatements_Test#()V" />
       <node id="7793057097608406463" at="34,0,38,0" concept="5" trace="test_SimpleFindForExtractFromManyStatementsTest#()V" />
@@ -3883,7 +3883,7 @@
         <var name="matchRef" id="8155843501977582822" />
       </scope>
       <scope id="7793057097608406463" at="30,0,33,0" />
-      <scope id="7793057097608416413" at="52,7,55,151">
+      <scope id="7793057097608416413" at="52,7,55,160">
         <var name="nodesAfter" id="7793057097608416413" />
         <var name="nodesBefore" id="7793057097608416413" />
       </scope>
@@ -3913,7 +3913,7 @@
       <node id="8155843501976328873" at="45,84,46,23" concept="2" />
       <node id="8155843501976328877" at="47,7,48,340" concept="6" />
       <node id="8155843501976328877" at="48,340,49,339" concept="6" />
-      <node id="8155843501976328877" at="49,339,50,151" concept="2" />
+      <node id="8155843501976328877" at="49,339,50,160" concept="2" />
       <node id="8155843501976326915" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="8155843501976326915" at="29,0,32,0" concept="1" trace="ExtractMethodWithOutputVaryableFromStatement_Test#()V" />
       <node id="8155843501976326915" at="33,0,37,0" concept="5" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
@@ -3922,7 +3922,7 @@
       <scope id="8155843501976326915" at="29,62,30,25" />
       <scope id="8155843501976326915" at="34,88,35,167" />
       <scope id="8155843501976326915" at="29,0,32,0" />
-      <scope id="8155843501976328877" at="47,7,50,151">
+      <scope id="8155843501976328877" at="47,7,50,160">
         <var name="nodesAfter" id="8155843501976328877" />
         <var name="nodesBefore" id="8155843501976328877" />
       </scope>
@@ -3950,7 +3950,7 @@
       <node id="8155843501977560969" at="49,140,50,42" concept="2" />
       <node id="8155843501977560975" at="52,7,53,340" concept="6" />
       <node id="8155843501977560975" at="53,340,54,339" concept="6" />
-      <node id="8155843501977560975" at="54,339,55,151" concept="2" />
+      <node id="8155843501977560975" at="54,339,55,160" concept="2" />
       <node id="8155843501977546256" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="8155843501977546256" at="30,0,33,0" concept="1" trace="ReplaceOutputVaryable_Test#()V" />
       <node id="8155843501977546256" at="34,0,38,0" concept="5" trace="test_ReplaceOutputVaryableTest#()V" />
@@ -3963,7 +3963,7 @@
         <var name="matchRef" id="8155843501977582330" />
       </scope>
       <scope id="8155843501977546256" at="30,0,33,0" />
-      <scope id="8155843501977560975" at="52,7,55,151">
+      <scope id="8155843501977560975" at="52,7,55,160">
         <var name="nodesAfter" id="8155843501977560975" />
         <var name="nodesBefore" id="8155843501977560975" />
       </scope>
@@ -3993,7 +3993,7 @@
       <node id="8155843501978461979" at="45,84,46,23" concept="2" />
       <node id="8155843501978461983" at="47,7,48,340" concept="6" />
       <node id="8155843501978461983" at="48,340,49,339" concept="6" />
-      <node id="8155843501978461983" at="49,339,50,151" concept="2" />
+      <node id="8155843501978461983" at="49,339,50,160" concept="2" />
       <node id="8155843501978460076" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="8155843501978460076" at="29,0,32,0" concept="1" trace="ExtractMethodWithOutputVaryableFromExpression_Test#()V" />
       <node id="8155843501978460076" at="33,0,37,0" concept="5" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
@@ -4002,7 +4002,7 @@
       <scope id="8155843501978460076" at="29,63,30,25" />
       <scope id="8155843501978460076" at="34,88,35,168" />
       <scope id="8155843501978460076" at="29,0,32,0" />
-      <scope id="8155843501978461983" at="47,7,50,151">
+      <scope id="8155843501978461983" at="47,7,50,160">
         <var name="nodesAfter" id="8155843501978461983" />
         <var name="nodesBefore" id="8155843501978461983" />
       </scope>
@@ -4028,7 +4028,7 @@
       <node id="8495840634674647656" at="43,592,44,34" concept="2" />
       <node id="8495840634675216166" at="45,7,46,592" concept="6" />
       <node id="8495840634675216166" at="46,592,47,591" concept="6" />
-      <node id="8495840634675216166" at="47,591,48,151" concept="2" />
+      <node id="8495840634675216166" at="47,591,48,160" concept="2" />
       <node id="8495840634674645158" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="8495840634674645158" at="27,0,30,0" concept="1" trace="MoveStaticFieldSimpleTest_Test#()V" />
       <node id="8495840634674645158" at="31,0,35,0" concept="5" trace="test_SimpleTest#()V" />
@@ -4037,7 +4037,7 @@
       <scope id="8495840634674645158" at="27,43,28,25" />
       <scope id="8495840634674645158" at="32,50,33,110" />
       <scope id="8495840634674645158" at="27,0,30,0" />
-      <scope id="8495840634675216166" at="45,7,48,151">
+      <scope id="8495840634675216166" at="45,7,48,160">
         <var name="nodesAfter" id="8495840634675216166" />
         <var name="nodesBefore" id="8495840634675216166" />
       </scope>
@@ -4063,7 +4063,7 @@
       <node id="8495840634675645888" at="44,34,45,297" concept="2" />
       <node id="8495840634675285767" at="46,7,47,592" concept="6" />
       <node id="8495840634675285767" at="47,592,48,591" concept="6" />
-      <node id="8495840634675285767" at="48,591,49,151" concept="2" />
+      <node id="8495840634675285767" at="48,591,49,160" concept="2" />
       <node id="8495840634675243977" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="8495840634675243977" at="27,0,30,0" concept="1" trace="MoveStaticFieldWithUsageTest_Test#()V" />
       <node id="8495840634675243977" at="31,0,35,0" concept="5" trace="test_UsageTest#()V" />
@@ -4072,7 +4072,7 @@
       <scope id="8495840634675243977" at="27,46,28,25" />
       <scope id="8495840634675243977" at="32,49,33,112" />
       <scope id="8495840634675243977" at="27,0,30,0" />
-      <scope id="8495840634675285767" at="46,7,49,151">
+      <scope id="8495840634675285767" at="46,7,49,160">
         <var name="nodesAfter" id="8495840634675285767" />
         <var name="nodesBefore" id="8495840634675285767" />
       </scope>
@@ -4099,7 +4099,7 @@
       <node id="8155843501977582814" at="49,140,50,42" concept="2" />
       <node id="8556882668095202220" at="52,7,53,340" concept="6" />
       <node id="8556882668095202220" at="53,340,54,339" concept="6" />
-      <node id="8556882668095202220" at="54,339,55,151" concept="2" />
+      <node id="8556882668095202220" at="54,339,55,160" concept="2" />
       <node id="8556882668095192252" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="8556882668095192252" at="30,0,33,0" concept="1" trace="SimpleFindForExtractFromExpression_Test#()V" />
       <node id="8556882668095192252" at="34,0,38,0" concept="5" trace="test_SimpleFindForExtractFromExpressionTest#()V" />
@@ -4112,7 +4112,7 @@
         <var name="matchRef" id="8155843501977582806" />
       </scope>
       <scope id="8556882668095192252" at="30,0,33,0" />
-      <scope id="8556882668095202220" at="52,7,55,151">
+      <scope id="8556882668095202220" at="52,7,55,160">
         <var name="nodesAfter" id="8556882668095202220" />
         <var name="nodesBefore" id="8556882668095202220" />
       </scope>
@@ -4144,7 +4144,7 @@
       <node id="8155843501977582845" at="49,140,50,42" concept="2" />
       <node id="8556882668095222253" at="52,7,53,340" concept="6" />
       <node id="8556882668095222253" at="53,340,54,339" concept="6" />
-      <node id="8556882668095222253" at="54,339,55,151" concept="2" />
+      <node id="8556882668095222253" at="54,339,55,160" concept="2" />
       <node id="8556882668095222061" at="26,0,28,0" concept="9" trace="ourParamCache" />
       <node id="8556882668095222061" at="30,0,33,0" concept="1" trace="SimpleFindForExtractFromStatement_Test#()V" />
       <node id="8556882668095222061" at="34,0,38,0" concept="5" trace="test_SimpleFindForExtractFromStatementTest#()V" />
@@ -4157,7 +4157,7 @@
         <var name="matchRef" id="8155843501977582837" />
       </scope>
       <scope id="8556882668095222061" at="30,0,33,0" />
-      <scope id="8556882668095222253" at="52,7,55,151">
+      <scope id="8556882668095222253" at="52,7,55,160">
         <var name="nodesAfter" id="8556882668095222253" />
         <var name="nodesBefore" id="8556882668095222253" />
       </scope>
@@ -4187,7 +4187,7 @@
       <node id="8823815475437525750" at="45,84,46,23" concept="2" />
       <node id="8823815475437525754" at="47,7,48,340" concept="6" />
       <node id="8823815475437525754" at="48,340,49,339" concept="6" />
-      <node id="8823815475437525754" at="49,339,50,151" concept="2" />
+      <node id="8823815475437525754" at="49,339,50,160" concept="2" />
       <node id="8823815475437525602" at="25,0,27,0" concept="9" trace="ourParamCache" />
       <node id="8823815475437525602" at="29,0,32,0" concept="1" trace="ExtractMethodWithThrows_Test#()V" />
       <node id="8823815475437525602" at="33,0,37,0" concept="5" trace="test_ExtractMethodWithThrowsTest#()V" />
@@ -4196,7 +4196,7 @@
       <scope id="8823815475437525602" at="29,41,30,25" />
       <scope id="8823815475437525602" at="34,67,35,125" />
       <scope id="8823815475437525602" at="29,0,32,0" />
-      <scope id="8823815475437525754" at="47,7,50,151">
+      <scope id="8823815475437525754" at="47,7,50,160">
         <var name="nodesAfter" id="8823815475437525754" />
         <var name="nodesBefore" id="8823815475437525754" />
       </scope>
@@ -4220,7 +4220,7 @@
       <node id="9118878263582085173" at="41,346,42,26" concept="2" />
       <node id="9118878263582085177" at="43,7,44,340" concept="6" />
       <node id="9118878263582085177" at="44,340,45,339" concept="6" />
-      <node id="9118878263582085177" at="45,339,46,151" concept="2" />
+      <node id="9118878263582085177" at="45,339,46,160" concept="2" />
       <node id="9118878263582083310" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="9118878263582083310" at="27,0,30,0" concept="1" trace="InlineAssignmentWithClosures_Test#()V" />
       <node id="9118878263582083310" at="31,0,35,0" concept="5" trace="test_InlineAssingmentWithClosures#()V" />
@@ -4229,7 +4229,7 @@
       <scope id="9118878263582083310" at="27,46,28,25" />
       <scope id="9118878263582083310" at="32,68,33,131" />
       <scope id="9118878263582083310" at="27,0,30,0" />
-      <scope id="9118878263582085177" at="43,7,46,151">
+      <scope id="9118878263582085177" at="43,7,46,160">
         <var name="nodesAfter" id="9118878263582085177" />
         <var name="nodesBefore" id="9118878263582085177" />
       </scope>
@@ -4251,7 +4251,7 @@
       <node id="9160497614872188993" at="40,41,41,320" concept="2" />
       <node id="9160497614872189001" at="42,7,43,340" concept="6" />
       <node id="9160497614872189001" at="43,340,44,339" concept="6" />
-      <node id="9160497614872189001" at="44,339,45,151" concept="2" />
+      <node id="9160497614872189001" at="44,339,45,160" concept="2" />
       <node id="9160497614871931685" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="9160497614871931685" at="27,0,30,0" concept="1" trace="ConvertAnonymousWithTypeParameters_Test#()V" />
       <node id="9160497614871931685" at="31,0,35,0" concept="5" trace="test_TypeParametersTest#()V" />
@@ -4260,7 +4260,7 @@
       <scope id="9160497614871931685" at="27,52,28,25" />
       <scope id="9160497614871931685" at="32,58,33,127" />
       <scope id="9160497614871931685" at="27,0,30,0" />
-      <scope id="9160497614872189001" at="42,7,45,151">
+      <scope id="9160497614872189001" at="42,7,45,160">
         <var name="nodesAfter" id="9160497614872189001" />
         <var name="nodesBefore" id="9160497614872189001" />
       </scope>
@@ -4280,7 +4280,7 @@
       <node id="995475547969868023" at="40,40,41,321" concept="2" />
       <node id="995475547969868030" at="42,7,43,339" concept="6" />
       <node id="995475547969868030" at="43,339,44,338" concept="6" />
-      <node id="995475547969868030" at="44,338,45,151" concept="2" />
+      <node id="995475547969868030" at="44,338,45,160" concept="2" />
       <node id="995475547969867885" at="23,0,25,0" concept="9" trace="ourParamCache" />
       <node id="995475547969867885" at="27,0,30,0" concept="1" trace="ConvertAnonymousWithParameterReference_Test#()V" />
       <node id="995475547969867885" at="31,0,35,0" concept="5" trace="test_WithParameterReferenceTest#()V" />
@@ -4289,7 +4289,7 @@
       <scope id="995475547969867885" at="27,56,28,25" />
       <scope id="995475547969867885" at="32,66,33,139" />
       <scope id="995475547969867885" at="27,0,30,0" />
-      <scope id="995475547969868030" at="42,7,45,151">
+      <scope id="995475547969868030" at="42,7,45,160">
         <var name="nodesAfter" id="995475547969868030" />
         <var name="nodesBefore" id="995475547969868030" />
       </scope>
