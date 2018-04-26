@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
-import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Map;
 import jetbrains.mps.testbench.util.CachingAppender;
@@ -160,9 +159,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
             if (myResult != null) {
               try {
                 SNode editedNode = myBefore;
-                NodesMatcher nm = new NodesMatcher();
-                List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
-                Assert.assertEquals(null, diff);
+                NodesMatcher nm = new NodesMatcher(editedNode, myResult);
+                List<NodeDifference> diff = nm.diff();
+                Assert.assertTrue(diff.isEmpty());
                 if (myFinish != null) {
                   myFinish.assertSelectionIsTheSame(myCurrentEditorComponent, (Map<SNode, SNode>) nm.getMap());
                 }

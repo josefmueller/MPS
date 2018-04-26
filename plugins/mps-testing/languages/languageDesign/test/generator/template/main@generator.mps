@@ -294,8 +294,8 @@
       </concept>
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
-      <concept id="1172028177041" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" flags="nn" index="3ykFI1">
-        <child id="1172028236559" name="expression" index="3ykU8v" />
+      <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
+        <child id="1171981057159" name="condition" index="3vwVQn" />
       </concept>
       <concept id="1172073500303" name="jetbrains.mps.baseLanguage.unitTest.structure.Message" flags="ng" index="3_1$Yv">
         <child id="1172073511101" name="message" index="3_1BAH" />
@@ -1676,24 +1676,8 @@
               </node>
             </node>
           </node>
-          <node concept="3ykFI1" id="2LEXDCdQA6c" role="3cqZAp">
-            <node concept="2OqwBi" id="ORe5oE7eh7" role="3ykU8v">
-              <node concept="2ShNRf" id="ORe5oE6ZQk" role="2Oq$k0">
-                <node concept="1pGfFk" id="ORe5oE7efZ" role="2ShVmc">
-                  <ref role="37wK5l" to="y5e1:7MIYyntE09A" resolve="NodesMatcher" />
-                </node>
-              </node>
-              <node concept="liA8E" id="ORe5oE7eqO" role="2OqNvi">
-                <ref role="37wK5l" to="y5e1:4OzBQ_jpsdg" resolve="match" />
-                <node concept="37vLTw" id="ORe5oE7fa6" role="37wK5m">
-                  <ref role="3cqZAo" node="3KvkLt3BeAA" resolve="nodesBefore" />
-                </node>
-                <node concept="37vLTw" id="ORe5oE7fke" role="37wK5m">
-                  <ref role="3cqZAo" node="3KvkLt3B_CB" resolve="nodesAfter" />
-                </node>
-              </node>
-            </node>
-            <node concept="3_1$Yv" id="2LEXDCdQCtr" role="3_9lra">
+          <node concept="3vwNmj" id="5wEVZcC3ck3" role="3cqZAp">
+            <node concept="3_1$Yv" id="5wEVZcC3dpu" role="3_9lra">
               <node concept="3cpWs3" id="2LEXDCdQJ47" role="3_1BAH">
                 <node concept="1W57fq" id="2ZO5wSvHYTE" role="lGtFl">
                   <node concept="3IZrLx" id="2ZO5wSvHYTG" role="3IZSJc">
@@ -1756,6 +1740,27 @@
                     <ref role="3cqZAo" node="3KvkLt3B_CB" resolve="nodesAfter" />
                   </node>
                 </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5wEVZcC3eI2" role="3vwVQn">
+              <node concept="2OqwBi" id="ORe5oE7eh7" role="2Oq$k0">
+                <node concept="2ShNRf" id="ORe5oE6ZQk" role="2Oq$k0">
+                  <node concept="1pGfFk" id="ORe5oE7efZ" role="2ShVmc">
+                    <ref role="37wK5l" to="y5e1:39D1ywqVAMq" resolve="NodesMatcher" />
+                    <node concept="37vLTw" id="5wEVZcC2QbW" role="37wK5m">
+                      <ref role="3cqZAo" node="3KvkLt3BeAA" resolve="nodesBefore" />
+                    </node>
+                    <node concept="37vLTw" id="5wEVZcC2QbX" role="37wK5m">
+                      <ref role="3cqZAo" node="3KvkLt3B_CB" resolve="nodesAfter" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="ORe5oE7eqO" role="2OqNvi">
+                  <ref role="37wK5l" to="y5e1:39D1ywqVH_i" resolve="diff" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5wEVZcC3gSD" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
               </node>
             </node>
           </node>

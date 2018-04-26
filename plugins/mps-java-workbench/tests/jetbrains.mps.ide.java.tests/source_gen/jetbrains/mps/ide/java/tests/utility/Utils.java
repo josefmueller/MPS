@@ -101,13 +101,14 @@ public class Utils {
 
       final Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildClassifierNodeMap(result, expected, nodeMap);
-      NodeDifference diff = TypeContextManager.getInstance().runResolveAction(new Computable<NodeDifference>() {
-        public NodeDifference compute() {
-          return new NodesMatcher(nodeMap).match(result, expected);
+      List<NodeDifference> diff = TypeContextManager.getInstance().runResolveAction(new Computable<List<NodeDifference>>() {
+        public List<NodeDifference> compute() {
+          return new NodesMatcher(result, expected).diff(nodeMap);
         }
       });
 
-      Assert.assertEquals(null, diff);
+      Assert.assertTrue(diff.toString(), diff.isEmpty());
+
 
     } catch (JavaParseException e) {
       throw new RuntimeException(e);
@@ -304,27 +305,28 @@ public class Utils {
   }
 
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
-    boolean wereErrors = false;
-    List<SNode> binRoots = SModelOperations.roots(left, null);
-    List<SNode> srcRoots = SModelOperations.roots(right, null);
+    List<SNode> binRoots = SModelOperations.roots(left, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    List<SNode> srcRoots = SModelOperations.roots(right, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
 
     binRoots = ListSequence.fromList(binRoots).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true).toListSequence();
     srcRoots = ListSequence.fromList(srcRoots).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     }, true).toListSequence();
 
-    List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
-    if (diff != null) {
-      wereErrors = true;
-      System.out.println("Diff: " + diff);
+    List<NodeDifference> diff = new NodesMatcher(binRoots, srcRoots).diff(nodeMap);
+    if (ListSequence.fromList(diff).isEmpty()) {
+      return false;
     }
-    return wereErrors;
+    for (NodeDifference nd : ListSequence.fromList(diff)) {
+      System.out.println("Diff: " + nd.print());
+    }
+    return true;
   }
 
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
