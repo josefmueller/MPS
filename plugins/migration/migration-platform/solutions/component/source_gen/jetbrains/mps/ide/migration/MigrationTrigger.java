@@ -657,7 +657,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       sb.append(" (first " + treshold + " shown)");
     }
     sb.append(":");
-    sb.append("<p>");
     for (SLanguage langProblem : Sequence.fromIterable(sortedProblems).take(treshold)) {
       String space = "&nbsp;";
       sb.append(space + space + "-" + space);
@@ -665,10 +664,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       sb.append(" (" + ((langProblem.getSourceModule() == null ? "absent" : "dependency problem")) + ")");
       sb.append("<br>");
     }
-    sb.append("</p>");
 
     if (myRebuildHandler != null) {
-      sb.append("<br><p><a href=\"rebuild\">Rebuild broken languages</a></p>");
+      sb.append("<br><p><a href=\"rebuild\">Rebuild and deploy listed languages</a></p>");
     }
 
     return new Notification("Migration", "Migration suspended", sb.toString(), NotificationType.WARNING, new NotificationListener() {

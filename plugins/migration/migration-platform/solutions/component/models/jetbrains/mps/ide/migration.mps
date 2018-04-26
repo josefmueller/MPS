@@ -4663,19 +4663,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6Va2kqwt87M" role="3cqZAp">
-          <node concept="2OqwBi" id="6Va2kqwt87N" role="3clFbG">
-            <node concept="37vLTw" id="6Va2kqwt87O" role="2Oq$k0">
-              <ref role="3cqZAo" node="6Va2kqwt87v" resolve="sb" />
-            </node>
-            <node concept="liA8E" id="6Va2kqwt87P" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="6Va2kqwt87Q" role="37wK5m">
-                <property role="Xl_RC" value="&lt;p&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="2Gpval" id="6Va2kqwt87R" role="3cqZAp">
           <node concept="2GrKxI" id="6Va2kqwt87S" role="2Gsz3X">
             <property role="TrG5h" value="langProblem" />
@@ -4806,19 +4793,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6Va2kqwt888" role="3cqZAp">
-          <node concept="2OqwBi" id="6Va2kqwt889" role="3clFbG">
-            <node concept="37vLTw" id="6Va2kqwt88a" role="2Oq$k0">
-              <ref role="3cqZAo" node="6Va2kqwt87v" resolve="sb" />
-            </node>
-            <node concept="liA8E" id="6Va2kqwt88b" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
-              <node concept="Xl_RD" id="6Va2kqwt88c" role="37wK5m">
-                <property role="Xl_RC" value="&lt;/p&gt;" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="6Va2kqwF17E" role="3cqZAp" />
         <node concept="3clFbJ" id="6Va2kqwFaXQ" role="3cqZAp">
           <node concept="3clFbS" id="6Va2kqwFaXS" role="3clFbx">
@@ -4830,7 +4804,7 @@
                 <node concept="liA8E" id="6Va2kqww84e" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                   <node concept="Xl_RD" id="6Va2kqww84f" role="37wK5m">
-                    <property role="Xl_RC" value="&lt;br&gt;&lt;p&gt;&lt;a href=\&quot;rebuild\&quot;&gt;Rebuild broken languages&lt;/a&gt;&lt;/p&gt;" />
+                    <property role="Xl_RC" value="&lt;br&gt;&lt;p&gt;&lt;a href=\&quot;rebuild\&quot;&gt;Rebuild and deploy listed languages&lt;/a&gt;&lt;/p&gt;" />
                   </node>
                 </node>
               </node>
