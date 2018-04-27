@@ -52,7 +52,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4305752832749937830">
     <file name="mpsDiagramEditor.xml">
-      <unit id="4305752832749937830" at="1,0,824,10" name="jetbrains.mps.ide.build.mpsDiagramEditor" />
+      <unit id="4305752832749937830" at="1,0,834,10" name="jetbrains.mps.ide.build.mpsDiagramEditor" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/5548512857136492214">
@@ -132,7 +132,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8214399919540084172">
     <file name="mpsMigrationCore.xml">
-      <unit id="8214399919540084172" at="1,0,115,10" name="jetbrains.mps.ide.build.mpsMigrationCore" />
+      <unit id="8214399919540084172" at="1,0,116,10" name="jetbrains.mps.ide.build.mpsMigrationCore" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8214399919540087303">

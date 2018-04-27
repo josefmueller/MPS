@@ -40,7 +40,6 @@
     <classNode extendsClassName="java.io.FilterOutputStream" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultRunListener" file="DefaultRunListener.java">
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runtime" />
     <classNode dependClassName="java.lang.String" />
