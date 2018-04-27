@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.Before;
 import org.junit.Test;
 import jetbrains.mps.lang.test.generator.rt.TransformHelper;
-import org.junit.Assert;
 
 public class BasicTest1 extends BaseGeneratorTest {
   private SModel myArg_A;
@@ -30,8 +29,7 @@ public class BasicTest1 extends BaseGeneratorTest {
     t.setInput(i);
     t.transform();
     SModel rm = myArg_B;
-    boolean match = match(t.getOutputModel(), rm);
-    Assert.assertTrue("Transformation output model doesn't match reference one", match);
+    assertMatch(t.getOutputModel(), rm);
   }
   @Test
   public void testTransformAndMatch1() {
@@ -41,7 +39,6 @@ public class BasicTest1 extends BaseGeneratorTest {
     t.setPlanProvider(planProviderFromModel(myArg_ClosuresOnlyPlan));
     t.transform();
     SModel rm = myArg_NoClosures;
-    boolean match = match(t.getOutputModel(), rm);
-    Assert.assertTrue("Transformation output model doesn't match reference one", match);
+    assertMatch(t.getOutputModel(), rm);
   }
 }

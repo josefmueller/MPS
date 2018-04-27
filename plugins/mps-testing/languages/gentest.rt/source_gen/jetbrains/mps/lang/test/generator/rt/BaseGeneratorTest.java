@@ -10,12 +10,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.messages.LogHandler;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.junit.Assert;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.InterpretedPlanProvider;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -46,7 +47,7 @@ public class BaseGeneratorTest implements EnvironmentAware {
     return new TransformHelper(myRepository, new LogHandler(Logger.getLogger(getClass())));
   }
 
-  protected final boolean match(final SModel m1, final SModel m2) {
+  protected final void assertMatch(final SModel m1, final SModel m2) {
     // Next is wishful thinking, imagined contract, not necessarily real at the moment, 
     // IOW, what I'd like match(m1,m2) contract to look like. Have to refactor  
     // NodesMatcher first, and write some tests for it to ensure the contract: 
@@ -55,12 +56,19 @@ public class BaseGeneratorTest implements EnvironmentAware {
     // equal (in aforementioned sense) nodes, for external references that the target is equal is java sense. 
     // FIXME use of myProject.getModelAccess() is wrong, empty project we've just created doesn't have modules with test data, 
     //       however, at the moment I've got no better idea how to access project of MpsTestsSuite 
-    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        List<NodeDifference> diff = new NodesMatcher().match(SModelOperations.roots(m1, null), SModelOperations.roots(m2, null));
-        return diff == null || diff.isEmpty();
+    List<NodeDifference> diff = new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(new Computable<List<NodeDifference>>() {
+      public List<NodeDifference> compute() {
+        return new NodesMatcher(SModelOperations.roots(m1, null), SModelOperations.roots(m2, null)).diff();
       }
     });
+    if (diff.isEmpty()) {
+      return;
+    }
+    StringBuilder sb = new StringBuilder();
+    for (NodeDifference nd : diff) {
+      sb.append(nd.print());
+    }
+    Assert.fail("Transformation output model doesn't match reference one:\n" + sb.toString());
   }
 
   protected final ModelGenerationPlan.Provider planProviderFromModel(final SModel gpm) {

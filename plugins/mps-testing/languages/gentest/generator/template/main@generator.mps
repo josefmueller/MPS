@@ -7,10 +7,8 @@
   <imports>
     <import index="lur" ref="r:fc8379f0-84d2-4927-817e-ae0057474174(jetbrains.mps.lang.test.generator.structure)" />
     <import index="9gdl" ref="r:da23e88f-09a4-4e69-a500-4e0698866fc9(jetbrains.mps.lang.test.generator.rt)" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="xlb7" ref="r:cf42fd0a-68d2-493b-8b77-961658617704(jetbrains.mps.lang.modelapi.behavior)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -44,7 +42,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
@@ -465,35 +462,19 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="6VhyYlfMoDC" role="3cqZAp">
-          <node concept="3cpWsn" id="6VhyYlfMoDD" role="3cpWs9">
-            <property role="TrG5h" value="match" />
-            <node concept="10P_77" id="6VhyYlfMoD$" role="1tU5fm" />
-            <node concept="1rXfSq" id="6VhyYlfMoDE" role="33vP2m">
-              <ref role="37wK5l" to="9gdl:6VhyYlfL99j" resolve="match" />
-              <node concept="2OqwBi" id="6NpSidvrzsE" role="37wK5m">
-                <node concept="37vLTw" id="6NpSidvrzls" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6VhyYlfKW1j" resolve="t" />
-                </node>
-                <node concept="liA8E" id="6NpSidvrzzu" role="2OqNvi">
-                  <ref role="37wK5l" to="9gdl:6VhyYlfKTp_" resolve="getOutputModel" />
-                </node>
+        <node concept="3clFbF" id="6YXK3BUcpG" role="3cqZAp">
+          <node concept="1rXfSq" id="6VhyYlfMoDE" role="3clFbG">
+            <ref role="37wK5l" to="9gdl:6VhyYlfL99j" resolve="assertMatch" />
+            <node concept="2OqwBi" id="6NpSidvrzsE" role="37wK5m">
+              <node concept="37vLTw" id="6NpSidvrzls" role="2Oq$k0">
+                <ref role="3cqZAo" node="6VhyYlfKW1j" resolve="t" />
               </node>
-              <node concept="37vLTw" id="6VhyYlfMoDG" role="37wK5m">
-                <ref role="3cqZAo" node="6VhyYlfMmTf" resolve="rm" />
+              <node concept="liA8E" id="6NpSidvrzzu" role="2OqNvi">
+                <ref role="37wK5l" to="9gdl:6VhyYlfKTp_" resolve="getOutputModel" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6VhyYlfMn00" role="3cqZAp">
-          <node concept="2YIFZM" id="6VhyYlfMoit" role="3clFbG">
-            <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(java.lang.String,boolean):void" resolve="assertTrue" />
-            <node concept="Xl_RD" id="6VhyYlfMoNu" role="37wK5m">
-              <property role="Xl_RC" value="Transformation output model doesn't match reference one" />
-            </node>
-            <node concept="37vLTw" id="6VhyYlfMqz2" role="37wK5m">
-              <ref role="3cqZAo" node="6VhyYlfMoDD" resolve="match" />
+            <node concept="37vLTw" id="6VhyYlfMoDG" role="37wK5m">
+              <ref role="3cqZAo" node="6VhyYlfMmTf" resolve="rm" />
             </node>
           </node>
         </node>

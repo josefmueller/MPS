@@ -623,6 +623,7 @@
       <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
         <child id="4611582986551314344" name="requestedType" index="UnYnz" />
       </concept>
+      <concept id="1171391069720" name="jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation" flags="nn" index="2WmjW8" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" flags="nn" index="32Fmki" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
@@ -11391,6 +11392,58 @@
                   <node concept="3$u5V9" id="5vXSwNTl1Qg" role="2OqNvi">
                     <node concept="1bVj0M" id="5vXSwNTl1Qh" role="23t8la">
                       <node concept="3clFbS" id="5vXSwNTl1Qi" role="1bW5cS">
+                        <node concept="3cpWs8" id="2HC6xieGgx2" role="3cqZAp">
+                          <node concept="3cpWsn" id="2HC6xieGgx3" role="3cpWs9">
+                            <property role="TrG5h" value="i" />
+                            <property role="3TUv4t" value="true" />
+                            <node concept="10Oyi0" id="2HC6xieGgwQ" role="1tU5fm" />
+                            <node concept="2OqwBi" id="2HC6xieGgx4" role="33vP2m">
+                              <node concept="2OqwBi" id="2HC6xieGgx5" role="2Oq$k0">
+                                <node concept="37vLTw" id="2HC6xieGgx6" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5vXSwNTitYd" resolve="node" />
+                                </node>
+                                <node concept="3Tsc0h" id="2HC6xieGgx7" role="2OqNvi">
+                                  <ref role="3TtcxE" to="lur:uLQNrGWd1B" resolve="tests" />
+                                </node>
+                              </node>
+                              <node concept="2WmjW8" id="2HC6xieGgx8" role="2OqNvi">
+                                <node concept="37vLTw" id="2HC6xieGgx9" role="25WWJ7">
+                                  <ref role="3cqZAo" node="5vXSwNTl1QO" resolve="it" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="2HC6xieGoZp" role="3cqZAp">
+                          <node concept="3SKdUq" id="2HC6xieGoZr" role="3SKWNk">
+                            <property role="3SKdUp" value="FIXME this is a hack. I don't want to introduce getMethodName into TestAssertion, and the only information passed during test " />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="2HC6xieGy6l" role="3cqZAp">
+                          <node concept="3SKdUq" id="2HC6xieGy6n" role="3SKWNk">
+                            <property role="3SKdUp" value="execution is method name (JUnit's Request/Description), therefore I'm forced to use method name to match ITestNodeWrappers in UI." />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="2HC6xieGSIO" role="3cqZAp">
+                          <node concept="3SKdUq" id="2HC6xieGSIQ" role="3SKWNk">
+                            <property role="3SKdUp" value="Perhaps, with JUnit5 there's a way to pass additional identification of a test so that we are not bound to generated method names." />
+                          </node>
+                        </node>
+                        <node concept="3cpWs8" id="2HC6xieGiF2" role="3cqZAp">
+                          <node concept="3cpWsn" id="2HC6xieGiF0" role="3cpWs9">
+                            <property role="3TUv4t" value="true" />
+                            <property role="TrG5h" value="methodName" />
+                            <node concept="17QB3L" id="2HC6xieGiFX" role="1tU5fm" />
+                            <node concept="3cpWs3" id="2HC6xieGi1M" role="33vP2m">
+                              <node concept="37vLTw" id="2HC6xieGi3X" role="3uHU7w">
+                                <ref role="3cqZAo" node="2HC6xieGgx3" resolve="i" />
+                              </node>
+                              <node concept="Xl_RD" id="5vXSwNTl1QJ" role="3uHU7B">
+                                <property role="Xl_RC" value="testTransformAndMatch" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3clFbF" id="5vXSwNTl1Qj" role="3cqZAp">
                           <node concept="2ShNRf" id="5vXSwNTl1Qk" role="3clFbG">
                             <node concept="YeOm9" id="5vXSwNTl1Ql" role="2ShVmc">
@@ -11445,8 +11498,8 @@
                                   </node>
                                   <node concept="3clFbS" id="5vXSwNTl1QH" role="3clF47">
                                     <node concept="3clFbF" id="5vXSwNTl1QI" role="3cqZAp">
-                                      <node concept="Xl_RD" id="5vXSwNTl1QJ" role="3clFbG">
-                                        <property role="Xl_RC" value="assertion" />
+                                      <node concept="37vLTw" id="2HC6xieGoxO" role="3clFbG">
+                                        <ref role="3cqZAo" node="2HC6xieGiF0" resolve="methodName" />
                                       </node>
                                     </node>
                                   </node>

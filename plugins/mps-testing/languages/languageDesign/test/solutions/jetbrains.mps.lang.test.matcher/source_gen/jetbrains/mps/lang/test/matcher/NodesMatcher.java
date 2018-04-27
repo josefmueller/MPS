@@ -21,12 +21,12 @@ import org.jetbrains.mps.openapi.language.SProperty;
  */
 public final class NodesMatcher {
   /**
-   * AFAIU, it's a map of 'structural' correspondence, which is used to ensure reference
+   * AFAIU, it's a map of 'structural' correspondence, which is used to ensure reference 
    * targets of nodes being matched point to the same element within the model structure.
-   * Personally, I don't see why it's reasonable to keep map of a e.g. whole model just to
-   * ensure structural match provided we ensure equal structure by regular parent-child
-   * walk approach. I'd rather perform matching of reference targets (if they are from the same
-   * model; and do it only once). However, there's code that uses the map (editor tests)
+   * Personally, I don't see why it's reasonable to keep map of a e.g. whole model just to 
+   * ensure structural match provided we ensure equal structure by regular parent-child 
+   * walk approach. I'd rather perform matching of reference targets (if they are from the same 
+   * model; and do it only once). However, there's code that uses the map (editor tests) 
    * which  I need to refactor first.
    */
   private final Map<SNode, SNode> myMap;
@@ -34,7 +34,7 @@ public final class NodesMatcher {
   private final List<SNode> mySecond;
 
   /**
-   *
+   * 
    * @deprecated use cons that takes matched nodes
    */
   @Deprecated
@@ -46,7 +46,7 @@ public final class NodesMatcher {
   }
 
   /**
-   *
+   * 
    * @deprecated use cons that takes matched nodes
    */
   @Deprecated
@@ -75,11 +75,11 @@ public final class NodesMatcher {
   }
 
   /**
-   * Collection of differences in initial nodes, in an order that corresponds to order of original collections
+   * Collection of differences in initial nodes, in an order that corresponds to order of original collections 
    * (not necessarily identical as original collections are not necessarily of the same size)
-   *
+   * 
    * Builds a map of corresponding nodes later available through {@link jetbrains.mps.lang.test.matcher.NodesMatcher#getMap() }
-   *
+   * 
    * @return differences, or empty collection if all nodes match
    */
   @NotNull
@@ -105,7 +105,7 @@ public final class NodesMatcher {
       mi.match(iteratorA.next(), iteratorB.next());
     }
     for (DifferenceItem di : mi.myDifferences) {
-      // we can't get anything but NodeDifference elements after mi.match() execution as it replaces any DI item created with an ND
+      // we can't get anything but NodeDifference elements after mi.match() execution as it replaces any DI item created with an ND 
       assert di instanceof NodeDifference;
       if (di instanceof NodeDifference) {
         ret.add((NodeDifference) di);
@@ -144,7 +144,7 @@ public final class NodesMatcher {
   }
 
   /**
-   *
+   * 
    * @deprecated use {@link jetbrains.mps.lang.test.matcher.NodesMatcher#diff() } instead
    */
   @Deprecated
@@ -184,7 +184,7 @@ public final class NodesMatcher {
   }
 
   /**
-   *
+   * 
    * @deprecated use cons with args and {@link jetbrains.mps.lang.test.matcher.NodesMatcher#diff() }
    */
   @Deprecated
@@ -222,7 +222,7 @@ public final class NodesMatcher {
       if (after != before) {
         assert after > before;
         NodeDifference nd = new NodeDifference(a.getPresentation(), new ArrayList<DifferenceItem>(myDifferences.subList(before, after)));
-        // i>before, not >=, as we replace element @before with nd afterwards
+        // i>before, not >=, as we replace element @before with nd afterwards 
         for (int i = after - 1; i > before; i--) {
           myDifferences.remove(i);
         }
