@@ -80,6 +80,8 @@ import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 /**
@@ -657,10 +659,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       sb.append(" (first " + treshold + " shown)");
     }
     sb.append(":");
+    sb.append("<p>");
+
+    final String space = "&nbsp;";
+    final String gotoPrefix = "goto_";
     for (SLanguage langProblem : Sequence.fromIterable(sortedProblems).take(treshold)) {
-      String space = "&nbsp;";
-      sb.append(space + space + "-" + space);
+      sb.append(space + space + "-");
+      sb.append("<a href=\"").append(gotoPrefix).append(langProblem.getSourceModuleReference().toString()).append("\">");
       sb.append(NameUtil.compactNamespace(langProblem.getQualifiedName()));
+      sb.append("</a>");
       sb.append(" (" + ((langProblem.getSourceModule() == null ? "absent" : "dependency problem")) + ")");
       sb.append("<br>");
     }
@@ -681,6 +688,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               return it.getSourceModuleReference();
             }
           }).where(new NotNullWhereFilter<SModuleReference>()));
+        }
+        if (e.getDescription().startsWith(gotoPrefix)) {
+          String ref = e.getDescription().substring(gotoPrefix.length());
+          SModuleReference module = ModuleReference.parseReference(ref);
+          new ProjectPaneNavigator(myMpsProject).shallFocus(true).select(module);
         }
       }
     });
