@@ -1980,16 +1980,21 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="7eHFHBMjIbD" role="3cqZAp">
-                <node concept="37vLTI" id="7eHFHBMjIbE" role="3clFbG">
-                  <node concept="2YIFZM" id="7eHFHBMkBHo" role="37vLTx">
-                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <ref role="37wK5l" to="sn11:57eXx5f9CcF" resolve="getIconFor" />
-                    <node concept="37vLTw" id="7eHFHBMkBHp" role="37wK5m">
-                      <ref role="3cqZAo" node="7eHFHBMjIbw" resolve="concept" />
+              <node concept="3clFbF" id="7eHFHBMn8_d" role="3cqZAp">
+                <node concept="37vLTI" id="7eHFHBMn8_e" role="3clFbG">
+                  <node concept="2OqwBi" id="7eHFHBMn8_f" role="37vLTx">
+                    <node concept="2YIFZM" id="7eHFHBMn8_g" role="2Oq$k0">
+                      <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                      <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                    </node>
+                    <node concept="liA8E" id="7eHFHBMn8_h" role="2OqNvi">
+                      <ref role="37wK5l" to="sn11:192HKKPOcza" resolve="getIconFor" />
+                      <node concept="37vLTw" id="7eHFHBMn8_i" role="37wK5m">
+                        <ref role="3cqZAo" node="7eHFHBMjIbw" resolve="concept" />
+                      </node>
                     </node>
                   </node>
-                  <node concept="37vLTw" id="7eHFHBMjIbH" role="37vLTJ">
+                  <node concept="37vLTw" id="7eHFHBMn8_j" role="37vLTJ">
                     <ref role="3cqZAo" node="75MLXfcuTeW" resolve="myIcon" />
                   </node>
                 </node>

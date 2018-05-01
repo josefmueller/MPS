@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,10 +52,10 @@ public class NewClassLike_Action extends BaseAction {
     if (pc != null) {
       // viva la interpretation! 
       SAbstractConcept concept = SNodeOperations.asSConcept(pc);
-      icon = getIconFor(concept);
+      icon = GlobalIconManager.getInstance().getIconFor(concept);
     } else {
       SAbstractConcept concept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      icon = getIconFor(concept);
+      icon = GlobalIconManager.getInstance().getIconFor(concept);
     }
     event.getPresentation().setIcon(icon);
   }
