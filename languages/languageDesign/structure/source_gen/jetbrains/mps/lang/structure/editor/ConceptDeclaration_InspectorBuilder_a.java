@@ -77,7 +77,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLite
       editorCell.addEditorCell(createCollection_ueqr71_d0());
     }
     editorCell.addEditorCell(createCollection_ueqr71_e0());
-    editorCell.addEditorCell(createConstant_ueqr71_f0());
     return editorCell;
   }
   private boolean nodeCondition_ueqr71_a0a() {
@@ -365,12 +364,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLite
     protected String getNoTargetText() {
       return "<no icon>";
     }
-  }
-  private EditorCell createConstant_ueqr71_f0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_ueqr71_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
