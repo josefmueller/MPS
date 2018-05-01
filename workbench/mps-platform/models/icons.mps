@@ -1605,7 +1605,16 @@
     <node concept="3Tm1VV" id="57eXx5f912d" role="1B3o_S" />
     <node concept="3UR2Jj" id="192HKKPOzXY" role="lGtFl">
       <node concept="TZ5HI" id="192HKKPOzXZ" role="3nqlJM">
-        <node concept="TZ5HA" id="192HKKPOzY0" role="3HnX3l" />
+        <node concept="TZ5HA" id="192HKKPOzY0" role="3HnX3l">
+          <node concept="1dT_AC" id="7eHFHBMvMA6" role="1dT_Ay">
+            <property role="1dT_AB" value="GlobalIconManager should be used for icon management. This class is not intended to be used outside of MPS" />
+          </node>
+        </node>
+      </node>
+      <node concept="TZ5HA" id="7eHFHBMvMA8" role="TZ5H$">
+        <node concept="1dT_AC" id="7eHFHBMvMA9" role="1dT_Ay">
+          <property role="1dT_AB" value="Remove after 2018.2 as there could be usages in generated code before" />
+        </node>
       </node>
     </node>
     <node concept="2AHcQZ" id="192HKKPOzY1" role="2AJF6D">
@@ -1615,8 +1624,8 @@
       <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
       <node concept="2B6LJw" id="192HKKPO$iT" role="2B76xF">
         <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-        <node concept="3b6qkQ" id="192HKKPO$ya" role="2B70Vg">
-          <property role="$nhwW" value="3.5" />
+        <node concept="3b6qkQ" id="7eHFHBMvM_6" role="2B70Vg">
+          <property role="$nhwW" value="2018.2" />
         </node>
       </node>
     </node>
