@@ -7,7 +7,7 @@ import jetbrains.mps.migration.global.MigrationProblemHandler;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.migration.MigrationTrigger;
+import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.errors.item.IssueKindReportItem;
@@ -50,9 +50,9 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   private UsagesViewTool myUsagesTool;
   private ModelCheckerTool myMcTool;
   private Project myMpsProject;
-  private MigrationTrigger myMigrationTrigger;
+  private IStartupMigrationExecutor myMigrationTrigger;
 
-  public WorkbenchMigrationProblemHandler(MPSProject project, MigrationTrigger migrationTrigger, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
+  public WorkbenchMigrationProblemHandler(MPSProject project, IStartupMigrationExecutor migrationTrigger, UsagesViewTool usagesTool, ModelCheckerTool mcTool) {
     super(project.getProject());
     myUsagesTool = usagesTool;
     myMcTool = mcTool;

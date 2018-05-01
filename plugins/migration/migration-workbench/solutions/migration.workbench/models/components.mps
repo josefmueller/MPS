@@ -280,8 +280,8 @@
     <node concept="312cEg" id="6Va2kqwGiPW" role="jymVt">
       <property role="TrG5h" value="myMigrationTrigger" />
       <node concept="3Tm6S6" id="6Va2kqwGiPX" role="1B3o_S" />
-      <node concept="3uibUv" id="6Va2kqwGiPZ" role="1tU5fm">
-        <ref role="3uigEE" to="bim2:5SsFeroaajZ" resolve="MigrationTrigger" />
+      <node concept="3uibUv" id="xb$P2Bh6d2" role="1tU5fm">
+        <ref role="3uigEE" to="bim2:4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
       </node>
     </node>
     <node concept="2tJIrI" id="3_S1WmRGxYu" role="jymVt" />
@@ -349,8 +349,8 @@
       </node>
       <node concept="37vLTG" id="6Va2kqwGicf" role="3clF46">
         <property role="TrG5h" value="migrationTrigger" />
-        <node concept="3uibUv" id="6Va2kqwGiNq" role="1tU5fm">
-          <ref role="3uigEE" to="bim2:5SsFeroaajZ" resolve="MigrationTrigger" />
+        <node concept="3uibUv" id="xb$P2Bh671" role="1tU5fm">
+          <ref role="3uigEE" to="bim2:4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
         </node>
       </node>
       <node concept="37vLTG" id="3_S1WmRGu$_" role="3clF46">
@@ -806,7 +806,7 @@
               <ref role="3cqZAo" node="6Va2kqwGiPW" resolve="myMigrationTrigger" />
             </node>
             <node concept="liA8E" id="6Va2kqwGlHK" role="2OqNvi">
-              <ref role="37wK5l" to="bim2:6Va2kqwF_fo" resolve="setRebuildHandler" />
+              <ref role="37wK5l" to="bim2:xb$P2Bh9Hu" resolve="setRebuildHandler" />
               <node concept="1bVj0M" id="6Va2kqwGmOk" role="37wK5m">
                 <node concept="37vLTG" id="6Va2kqwGn0c" role="1bW2Oz">
                   <property role="TrG5h" value="modules" />
@@ -1231,7 +1231,7 @@
               <ref role="3cqZAo" node="6Va2kqwGiPW" resolve="myMigrationTrigger" />
             </node>
             <node concept="liA8E" id="6Va2kqwG_K2" role="2OqNvi">
-              <ref role="37wK5l" to="bim2:6Va2kqwF_fo" resolve="setRebuildHandler" />
+              <ref role="37wK5l" to="bim2:xb$P2Bh9Hu" resolve="setRebuildHandler" />
               <node concept="10Nm6u" id="6Va2kqwG_Zv" role="37wK5m" />
             </node>
           </node>

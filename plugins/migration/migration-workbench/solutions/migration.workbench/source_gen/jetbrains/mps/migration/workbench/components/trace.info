@@ -17,7 +17,7 @@
       <node id="4141068403139035769" at="51,0,52,0" concept="3" trace="myMcTool" />
       <node id="3554342617404367780" at="52,0,53,0" concept="3" trace="myMpsProject" />
       <node id="7983203488415952252" at="53,0,54,0" concept="3" trace="myMigrationTrigger" />
-      <node id="4141068403138989464" at="55,150,56,32" concept="10" />
+      <node id="4141068403138989464" at="55,159,56,32" concept="10" />
       <node id="4141068403139014125" at="56,32,57,30" concept="2" />
       <node id="4141068403139035773" at="57,30,58,22" concept="2" />
       <node id="3554342617404385270" at="58,22,59,27" concept="2" />
@@ -76,7 +76,7 @@
       <node id="7133788473465053028" at="155,71,160,30" concept="7" />
       <node id="7526186345427790256" at="164,21,169,19" concept="4" />
       <node id="4141068403138599617" at="182,0,187,0" concept="5" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="4141068403138989458" at="55,0,62,0" concept="1" trace="WorkbenchMigrationProblemHandler#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/ide/migration/MigrationTrigger;Ljetbrains/mps/ide/findusages/view/UsagesViewTool;Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerTool;)V" />
+      <node id="4141068403138989458" at="55,0,62,0" concept="1" trace="WorkbenchMigrationProblemHandler#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/ide/migration/IStartupMigrationExecutor;Ljetbrains/mps/ide/findusages/view/UsagesViewTool;Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerTool;)V" />
       <node id="4141068403138593772" at="77,0,84,6" concept="6" />
       <node id="5785495490417442007" at="99,0,106,0" concept="5" trace="translate#(Ljava/lang/String;)Ljava/lang/Iterable;" />
       <node id="7133788473465020823" at="155,0,162,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
@@ -143,7 +143,7 @@
         <var name="model" id="7133788473465161722" />
       </scope>
       <scope id="4141068403138599608" at="178,0,182,0" />
-      <scope id="4141068403138989462" at="55,150,60,42" />
+      <scope id="4141068403138989462" at="55,159,60,42" />
       <scope id="4141068403138593781" at="79,0,84,0" />
       <scope id="5785495490417442008" at="99,64,104,11" />
       <scope id="7133788473465020824" at="155,71,160,30" />

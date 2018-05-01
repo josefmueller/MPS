@@ -75,6 +75,7 @@
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="bim2" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)" />
     <import index="kz9k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.navigation(MPS.Editor/)" />
+    <import index="gspm" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui.popup(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -5442,6 +5443,24 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="xb$P2Bhhl6" role="jymVt" />
+    <node concept="3clFb_" id="xb$P2BhhpC" role="jymVt">
+      <property role="TrG5h" value="setRebuildHandler" />
+      <node concept="3cqZAl" id="xb$P2BhhpD" role="3clF45" />
+      <node concept="3Tm1VV" id="xb$P2BhhpE" role="1B3o_S" />
+      <node concept="3clFbS" id="xb$P2BhhpF" role="3clF47" />
+      <node concept="37vLTG" id="xb$P2BhhpK" role="3clF46">
+        <property role="TrG5h" value="rebuildHandler" />
+        <node concept="3uibUv" id="xb$P2BhhpL" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
+          <node concept="A3Dl8" id="xb$P2BhhpM" role="11_B2D">
+            <node concept="3uibUv" id="xb$P2BhhpN" role="A3Ik2">
+              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="4D3Y1hNyApZ" role="1B3o_S" />
     <node concept="3uibUv" id="285c2S_XCWa" role="EKbjA">
       <ref role="3uigEE" node="4D3Y1hNxTJF" resolve="IStartupMigrationExecutor" />
@@ -5452,6 +5471,24 @@
   </node>
   <node concept="3HP615" id="4D3Y1hNxTJF">
     <property role="TrG5h" value="IStartupMigrationExecutor" />
+    <node concept="3clFb_" id="xb$P2Bh9Hu" role="jymVt">
+      <property role="TrG5h" value="setRebuildHandler" />
+      <property role="1EzhhJ" value="true" />
+      <node concept="3cqZAl" id="xb$P2Bh9Hv" role="3clF45" />
+      <node concept="3Tm1VV" id="xb$P2Bh9Hw" role="1B3o_S" />
+      <node concept="3clFbS" id="xb$P2Bh9Hx" role="3clF47" />
+      <node concept="37vLTG" id="xb$P2Bh9HA" role="3clF46">
+        <property role="TrG5h" value="rebuildHandler" />
+        <node concept="3uibUv" id="xb$P2Bh9HB" role="1tU5fm">
+          <ref role="3uigEE" to="82uw:~Consumer" resolve="Consumer" />
+          <node concept="A3Dl8" id="xb$P2Bh9HC" role="11_B2D">
+            <node concept="3uibUv" id="xb$P2Bh9HD" role="A3Ik2">
+              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="4D3Y1hNxTJG" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7rAJ3yo1L1I">

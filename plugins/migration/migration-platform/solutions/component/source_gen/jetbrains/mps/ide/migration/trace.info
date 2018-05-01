@@ -751,24 +751,33 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967582699">
     <file name="IStartupMigrationExecutor.java">
-      <unit id="5351393548967582699" at="6,0,8,0" name="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
+      <node id="597733350169680734" at="9,0,10,0" concept="10" trace="setRebuildHandler#(Ljava/util/function/Consumer;)V" />
+      <scope id="597733350169680734" at="9,0,10,0">
+        <var name="rebuildHandler" id="597733350169680742" />
+      </scope>
+      <unit id="5351393548967582699" at="8,0,11,0" name="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967765630">
     <file name="HeadlessMigrationExecutor.java">
-      <node id="5351393548967862369" at="9,0,10,0" concept="6" trace="myMigrationManager" />
-      <node id="5351393548967812714" at="10,89,11,19" concept="17" />
-      <node id="5351393548967862674" at="11,19,12,42" concept="5" />
-      <node id="5351393548967805621" at="15,0,18,0" concept="10" trace="projectOpened#()V" />
-      <node id="5351393548967812280" at="10,0,14,0" concept="3" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationRegistry;)V" />
-      <scope id="5351393548967805625" at="16,31,16,31" />
-      <scope id="5351393548967812284" at="10,89,12,42" />
-      <scope id="5351393548967805621" at="15,0,18,0" />
-      <scope id="5351393548967812280" at="10,0,14,0">
+      <node id="5351393548967862369" at="11,0,12,0" concept="6" trace="myMigrationManager" />
+      <node id="5351393548967812714" at="12,89,13,19" concept="17" />
+      <node id="5351393548967862674" at="13,19,14,42" concept="5" />
+      <node id="597733350169712232" at="21,0,23,0" concept="10" trace="setRebuildHandler#(Ljava/util/function/Consumer;)V" />
+      <node id="5351393548967805621" at="17,0,20,0" concept="10" trace="projectOpened#()V" />
+      <node id="5351393548967812280" at="12,0,16,0" concept="3" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationRegistry;)V" />
+      <scope id="5351393548967805625" at="18,31,18,31" />
+      <scope id="597733350169712235" at="21,86,21,86" />
+      <scope id="5351393548967812284" at="12,89,14,42" />
+      <scope id="597733350169712232" at="21,0,23,0">
+        <var name="rebuildHandler" id="597733350169712240" />
+      </scope>
+      <scope id="5351393548967805621" at="17,0,20,0" />
+      <scope id="5351393548967812280" at="12,0,16,0">
         <var name="migrationManager" id="5351393548967861414" />
         <var name="project" id="5351393548967812594" />
       </scope>
-      <unit id="5351393548967765630" at="8,0,19,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
+      <unit id="5351393548967765630" at="10,0,24,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/605495270532748015">

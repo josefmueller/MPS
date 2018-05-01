@@ -20,7 +20,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationTrigger" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer" />
     <classNode dependClassName="jetbrains.mps.ide.save.SaveRepositoryCommand" />
