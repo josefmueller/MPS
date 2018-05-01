@@ -1299,16 +1299,21 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="BmcO$nNSqx" role="3cqZAp">
-                <node concept="37vLTI" id="BmcO$nNSAB" role="3clFbG">
-                  <node concept="2YIFZM" id="BmcO$nNTHo" role="37vLTx">
-                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <ref role="37wK5l" to="sn11:277Nzj6qTFM" resolve="getIconFor" />
-                    <node concept="37vLTw" id="BmcO$nNTR8" role="37wK5m">
-                      <ref role="3cqZAo" node="BmcO$nNKkn" resolve="myMetaBlock" />
+              <node concept="3clFbF" id="7eHFHBMiZkS" role="3cqZAp">
+                <node concept="37vLTI" id="7eHFHBMiZkT" role="3clFbG">
+                  <node concept="2OqwBi" id="7eHFHBMiZkU" role="37vLTx">
+                    <node concept="2YIFZM" id="7eHFHBMiZkV" role="2Oq$k0">
+                      <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                      <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                    </node>
+                    <node concept="liA8E" id="7eHFHBMiZkW" role="2OqNvi">
+                      <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />
+                      <node concept="37vLTw" id="7eHFHBMiZkX" role="37wK5m">
+                        <ref role="3cqZAo" node="BmcO$nNKkn" resolve="myMetaBlock" />
+                      </node>
                     </node>
                   </node>
-                  <node concept="37vLTw" id="BmcO$nNSqw" role="37vLTJ">
+                  <node concept="37vLTw" id="7eHFHBMiZkY" role="37vLTJ">
                     <ref role="3cqZAo" node="BmcO$nNPAW" resolve="myIcon" />
                   </node>
                 </node>

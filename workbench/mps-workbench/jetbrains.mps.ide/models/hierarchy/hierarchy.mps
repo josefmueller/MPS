@@ -11990,14 +11990,19 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="51NkKCgB4pN" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyzhKl" role="3clFbG">
+        <node concept="3clFbF" id="7eHFHBMiZky" role="3cqZAp">
+          <node concept="1rXfSq" id="7eHFHBMiZkz" role="3clFbG">
             <ref role="37wK5l" to="7e8u:~MPSTreeNode.setIcon(javax.swing.Icon):void" resolve="setIcon" />
-            <node concept="2YIFZM" id="29tNPunPBLx" role="37wK5m">
-              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <ref role="37wK5l" to="sn11:277Nzj6qTFM" resolve="getIconFor" />
-              <node concept="37vLTw" id="4$kvR95_hlF" role="37wK5m">
-                <ref role="3cqZAo" node="51NkKCgB4ot" resolve="declaration" />
+            <node concept="2OqwBi" id="7eHFHBMiZk$" role="37wK5m">
+              <node concept="2YIFZM" id="7eHFHBMiZk_" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMiZkA" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />
+                <node concept="37vLTw" id="7eHFHBMiZkB" role="37wK5m">
+                  <ref role="3cqZAo" node="51NkKCgB4ot" resolve="declaration" />
+                </node>
               </node>
             </node>
           </node>

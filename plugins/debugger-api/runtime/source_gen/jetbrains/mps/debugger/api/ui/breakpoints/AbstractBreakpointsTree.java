@@ -26,7 +26,6 @@ import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -232,7 +231,7 @@ import javax.swing.UIManager;
     }
     @Override
     public Icon getIcon(SNode group) {
-      return IconManager.getIconFor(group);
+      return GlobalIconManager.getInstance().getIconFor(group);
     }
   }
   protected class BreakpointNodeData implements CheckBoxNodeRenderer.NodeData {

@@ -6,6 +6,7 @@ import com.intellij.ui.treeStructure.SimpleTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.util.Ref;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -37,7 +38,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.icons.IconManager;
+
 import javax.swing.tree.DefaultMutableTreeNode;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Color;
@@ -246,7 +247,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
             myVirtualPackage = (SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")) == null ? "" : SPropertyOperations.getString(root, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
           }
           if (icon == null) {
-            icon = IconManager.getIconFor(root);
+            icon = GlobalIconManager.getInstance().getIconFor(root);
           }
         }
       }

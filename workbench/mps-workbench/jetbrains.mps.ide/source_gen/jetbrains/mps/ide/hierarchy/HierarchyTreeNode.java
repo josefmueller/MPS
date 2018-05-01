@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private final SNodeReference myNodeRef;
@@ -23,7 +23,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     setToggleClickCount(-1);
     setAutoExpandable(false);
     setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
-    setIcon(IconManager.getIconFor(declaration));
+    setIcon(GlobalIconManager.getInstance().getIconFor(declaration));
   }
 
   @NotNull

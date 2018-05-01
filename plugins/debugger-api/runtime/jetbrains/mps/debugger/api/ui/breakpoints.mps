@@ -3274,12 +3274,17 @@
           </node>
         </node>
         <node concept="3clFbS" id="3SnNvqCbxEa" role="3clF47">
-          <node concept="3cpWs6" id="3SnNvqCbxEb" role="3cqZAp">
-            <node concept="2YIFZM" id="3SnNvqCccDy" role="3cqZAk">
-              <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <ref role="37wK5l" to="sn11:277Nzj6qTFM" resolve="getIconFor" />
-              <node concept="37vLTw" id="2BHiRxgllaC" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCbxxJ" resolve="group" />
+          <node concept="3cpWs6" id="7eHFHBMiZj9" role="3cqZAp">
+            <node concept="2OqwBi" id="7eHFHBMiZja" role="3cqZAk">
+              <node concept="2YIFZM" id="7eHFHBMiZjb" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMiZjc" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />
+                <node concept="37vLTw" id="7eHFHBMiZjd" role="37wK5m">
+                  <ref role="3cqZAo" node="3SnNvqCbxxJ" resolve="group" />
+                </node>
               </node>
             </node>
           </node>

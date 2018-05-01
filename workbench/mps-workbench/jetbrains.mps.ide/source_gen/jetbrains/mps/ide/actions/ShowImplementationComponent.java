@@ -43,7 +43,6 @@ import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -174,7 +173,7 @@ public class ShowImplementationComponent extends JPanel {
     public ImplementationNode(SNode node) {
       myNode = SNodeOperations.copyNode(((SNode) node));
       myNodePresentation = (SNodeOperations.isInstanceOf(((SNode) node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && node.getParent() != null ? node.getParent() + "." + node.getPresentation() : node.getPresentation());
-      myNodeIcon = IconManager.getIconFor(node);
+      myNodeIcon = GlobalIconManager.getInstance().getIconFor(node);
       myModuleName = node.getModel().getModule().getModuleName();
       myModuleIcon = GlobalIconManager.getInstance().getIconFor(node.getModel().getModule());
       myOriginalNodePointer = node.getReference();

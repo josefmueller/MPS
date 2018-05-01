@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -31,7 +31,7 @@ public class MyBlockCreationAction implements PaletteToggleAction {
     myDiagramCell.getContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myText = SPropertyOperations.getString(block, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        myIcon = IconManager.getIconFor(myMetaBlock);
+        myIcon = GlobalIconManager.getInstance().getIconFor(myMetaBlock);
       }
     });
   }

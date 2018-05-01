@@ -602,13 +602,13 @@
       <node id="5102596871687873702" at="22,58,23,28" concept="4" />
       <node id="5797068448049415802" at="23,28,24,29" concept="4" />
       <node id="5265973993073323916" at="24,29,25,92" concept="4" />
-      <node id="5797068448049415795" at="25,92,26,49" concept="4" />
+      <node id="8335510736428856610" at="25,92,26,69" concept="4" />
       <node id="8991903957479218179" at="30,44,31,21" concept="11" />
       <node id="8991903957479214225" at="29,0,33,0" concept="9" trace="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="5797068448049415706" at="16,0,28,0" concept="2" trace="HierarchyTreeNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="8991903957479214229" at="30,44,31,21" />
       <scope id="8991903957479214225" at="29,0,33,0" />
-      <scope id="5797068448049415717" at="16,56,26,49">
+      <scope id="5797068448049415717" at="16,56,26,69">
         <var name="name" id="5265973993073606244" />
       </scope>
       <scope id="5797068448049415706" at="16,0,28,0">

@@ -45,7 +45,7 @@ import com.intellij.util.containers.FactoryMap;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.tree.TreeUtil;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NonNls;
@@ -195,7 +195,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   protected Icon getIcon(SNode node) {
-    return IconManager.getIconFor(node);
+    return GlobalIconManager.getInstance().getIconFor(node);
   }
 
   protected String getText(SNode node) {

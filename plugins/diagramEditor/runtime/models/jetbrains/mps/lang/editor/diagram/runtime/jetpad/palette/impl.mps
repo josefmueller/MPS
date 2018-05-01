@@ -3017,60 +3017,65 @@
                 <property role="3SKdUp" value="todo should pass concept here, not concept node" />
               </node>
             </node>
-            <node concept="3clFbF" id="5nQpa4sU0Hs" role="3cqZAp">
-              <node concept="37vLTI" id="5nQpa4sU0Ht" role="3clFbG">
-                <node concept="37vLTw" id="5nQpa4sU0Hu" role="37vLTJ">
+            <node concept="3clFbF" id="7eHFHBMiZju" role="3cqZAp">
+              <node concept="37vLTI" id="7eHFHBMiZjv" role="3clFbG">
+                <node concept="37vLTw" id="7eHFHBMiZjw" role="37vLTJ">
                   <ref role="3cqZAo" node="5nQpa4sU0H7" resolve="icon" />
                 </node>
-                <node concept="3K4zz7" id="5nQpa4sU0Hv" role="37vLTx">
-                  <node concept="1eOMI4" id="5nQpa4sU0Hw" role="3K4Cdx">
-                    <node concept="1Wc70l" id="5nQpa4sU0Hx" role="1eOMHV">
-                      <node concept="3fqX7Q" id="5nQpa4sU0Hy" role="3uHU7w">
-                        <node concept="1eOMI4" id="5nQpa4sU0Hz" role="3fr31v">
-                          <node concept="2OqwBi" id="5nQpa4sU0H$" role="1eOMHV">
-                            <node concept="37vLTw" id="5nQpa4sU3nC" role="2Oq$k0">
+                <node concept="3K4zz7" id="7eHFHBMiZjx" role="37vLTx">
+                  <node concept="1eOMI4" id="7eHFHBMiZjy" role="3K4Cdx">
+                    <node concept="1Wc70l" id="7eHFHBMiZjz" role="1eOMHV">
+                      <node concept="3fqX7Q" id="7eHFHBMiZj$" role="3uHU7w">
+                        <node concept="1eOMI4" id="7eHFHBMiZj_" role="3fr31v">
+                          <node concept="2OqwBi" id="7eHFHBMiZjA" role="1eOMHV">
+                            <node concept="37vLTw" id="7eHFHBMiZjB" role="2Oq$k0">
                               <ref role="3cqZAo" node="5nQpa4sU2Bk" resolve="mySubstituteAction" />
                             </node>
-                            <node concept="liA8E" id="5nQpa4sU0HA" role="2OqNvi">
+                            <node concept="liA8E" id="7eHFHBMiZjC" role="2OqNvi">
                               <ref role="37wK5l" to="f4zo:~SubstituteAction.isReferentPresentation():boolean" resolve="isReferentPresentation" />
                             </node>
                           </node>
                         </node>
                       </node>
-                      <node concept="2OqwBi" id="5vfjF5c9uD3" role="3uHU7B">
-                        <node concept="37vLTw" id="5vfjF5c9ulP" role="2Oq$k0">
+                      <node concept="2OqwBi" id="7eHFHBMiZjD" role="3uHU7B">
+                        <node concept="37vLTw" id="7eHFHBMiZjE" role="2Oq$k0">
                           <ref role="3cqZAo" node="5nQpa4sU0Ha" resolve="iconNode" />
                         </node>
-                        <node concept="1mIQ4w" id="5vfjF5c9vSA" role="2OqNvi">
-                          <node concept="chp4Y" id="5vfjF5c9wds" role="cj9EA">
+                        <node concept="1mIQ4w" id="7eHFHBMiZjF" role="2OqNvi">
+                          <node concept="chp4Y" id="7eHFHBMiZjG" role="cj9EA">
                             <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="5nQpa4sU0HG" role="3K4GZi">
-                    <ref role="37wK5l" to="sn11:277Nzj6qTFM" resolve="getIconFor" />
-                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <node concept="37vLTw" id="5nQpa4sU0HH" role="37wK5m">
-                      <ref role="3cqZAo" node="5nQpa4sU0Ha" resolve="iconNode" />
+                  <node concept="2OqwBi" id="7eHFHBMiZjH" role="3K4GZi">
+                    <node concept="2YIFZM" id="7eHFHBMiZjI" role="2Oq$k0">
+                      <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                      <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                    </node>
+                    <node concept="liA8E" id="7eHFHBMiZjJ" role="2OqNvi">
+                      <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />
+                      <node concept="37vLTw" id="7eHFHBMiZjK" role="37wK5m">
+                        <ref role="3cqZAo" node="5nQpa4sU0Ha" resolve="iconNode" />
+                      </node>
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="N34cyRDiAd" role="3K4E3e">
+                  <node concept="2YIFZM" id="7eHFHBMiZjL" role="3K4E3e">
                     <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
                     <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <node concept="2OqwBi" id="5vfjF5c9qzp" role="37wK5m">
-                      <node concept="1eOMI4" id="5VcKDTTlXP6" role="2Oq$k0">
-                        <node concept="10QFUN" id="5VcKDTTlXP7" role="1eOMHV">
-                          <node concept="37vLTw" id="5VcKDTTlXP5" role="10QFUP">
+                    <node concept="2OqwBi" id="7eHFHBMiZjM" role="37wK5m">
+                      <node concept="1eOMI4" id="7eHFHBMiZjN" role="2Oq$k0">
+                        <node concept="10QFUN" id="7eHFHBMiZjO" role="1eOMHV">
+                          <node concept="37vLTw" id="7eHFHBMiZjP" role="10QFUP">
                             <ref role="3cqZAo" node="5nQpa4sU0Ha" resolve="iconNode" />
                           </node>
-                          <node concept="3Tqbb2" id="5VcKDTTlXP4" role="10QFUM">
+                          <node concept="3Tqbb2" id="7eHFHBMiZjQ" role="10QFUM">
                             <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                           </node>
                         </node>
                       </node>
-                      <node concept="1rGIog" id="5vfjF5c9qZc" role="2OqNvi" />
+                      <node concept="1rGIog" id="7eHFHBMiZjR" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
