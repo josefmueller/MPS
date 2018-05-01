@@ -4,6 +4,8 @@ package jetbrains.mps.ide.icons;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import javax.swing.Icon;
+import java.awt.Component;
+import java.awt.Graphics;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,6 +26,19 @@ import jetbrains.mps.project.AbstractModule;
 @Deprecated
 @ToRemove(version = 2018.2)
 public final class IconManager {
+  public static final Icon EMPTY_ICON = new Icon() {
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+    }
+    @Override
+    public int getIconWidth() {
+      return 18;
+    }
+    @Override
+    public int getIconHeight() {
+      return 18;
+    }
+  };
   @Deprecated
   private IconManager() {
   }

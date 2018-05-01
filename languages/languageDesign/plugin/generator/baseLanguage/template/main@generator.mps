@@ -10050,10 +10050,7 @@
                               <node concept="3w_OXm" id="7hpVa1P$BM0" role="2OqNvi" />
                             </node>
                             <node concept="2c44tf" id="7hpVa1P$BLU" role="3K4E3e">
-                              <node concept="10M0yZ" id="kv6JvdD7mE" role="2c44tc">
-                                <ref role="3cqZAo" to="xnls:~IconManager.EMPTY_ICON" resolve="EMPTY_ICON" />
-                                <ref role="1PxDUh" to="xnls:~IconManager" resolve="IconManager" />
-                              </node>
+                              <node concept="10Nm6u" id="7eHFHBMY0y_" role="2c44tc" />
                             </node>
                           </node>
                         </node>
