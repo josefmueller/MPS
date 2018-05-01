@@ -6,9 +6,8 @@ import javax.swing.event.TreeExpansionListener;
 import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.DefaultTreeModel;
-
-import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.icons.IdeIcons;

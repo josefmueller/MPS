@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions.nodes;
 
 import java.util.Collection;
 import javax.swing.Action;
-
-import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;

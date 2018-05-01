@@ -6,7 +6,6 @@ import com.intellij.ui.treeStructure.SimpleTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.util.Ref;
-import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -38,7 +37,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Color;
