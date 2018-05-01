@@ -163,11 +163,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
                     }
                   });
                   if (inputRes != null) {
-                    makeService.make(session, ListSequence.fromList(inputRes).select(new ISelector<IResource, IResource>() {
-                      public IResource select(IResource it) {
-                        return (? extends IResource) it;
-                      }
-                    }));
+                    makeService.make(session, inputRes);
                   } else {
                     makeService.closeSession(session);
                   }
