@@ -89,7 +89,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
       final SNode node = getSNodeReference().resolve(repository);
       if (node == null) return IdeIcons.UNKNOWN_ICON;
-      final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+      final GlobalIconManager globalIconManager = GlobalIconManager.getInstance();
       return globalIconManager == null ? Nodes.Node : globalIconManager.getIconFor(node);
     });
   }

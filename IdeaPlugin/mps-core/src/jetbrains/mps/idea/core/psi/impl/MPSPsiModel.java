@@ -107,7 +107,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
   @Override
   protected Icon getBaseIcon() {
-    final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+    final GlobalIconManager globalIconManager = GlobalIconManager.getInstance();
     if (globalIconManager == null) {
       return Nodes.Model;
     }

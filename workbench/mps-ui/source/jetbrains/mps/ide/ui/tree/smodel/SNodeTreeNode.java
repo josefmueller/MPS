@@ -96,7 +96,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
     } else {
       setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
     }
-    Icon nodeIcon = ApplicationManager.getApplication().getComponent(GlobalIconManager.class).getIconFor(myNode);
+    Icon nodeIcon = GlobalIconManager.getInstance().getIconFor(myNode);
     setIcon(nodeIcon);
 
     if (!myNode.getConcept().isValid()) {

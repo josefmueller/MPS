@@ -64,7 +64,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
     DepLink deps = new DependencyUtil(myModule.getRepository()).trackRuntime(isShowRuntime()).build(myModule);
     TextTreeNode root = new TextTreeNode(myModule.getModuleName());
-    root.setIcon(myProject.getComponent(GlobalIconManager.class).getIconFor(myModule));
+    root.setIcon(GlobalIconManager.getInstance().getIconFor(myModule));
     populate(root, deps.allDependencies());
     return root;
   }
