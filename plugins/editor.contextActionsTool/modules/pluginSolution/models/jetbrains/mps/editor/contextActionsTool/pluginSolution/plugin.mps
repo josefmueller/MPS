@@ -8395,15 +8395,20 @@
                     <node concept="37vLTw" id="5Xa7gk5cbC3" role="37vLTJ">
                       <ref role="3cqZAo" node="5Xa7gk5cafr" resolve="icon" />
                     </node>
-                    <node concept="2YIFZM" id="3uJzduifvvD" role="37vLTx">
-                      <ref role="37wK5l" to="sn11:Z6TQiSQgL4" resolve="getIconForResource" />
-                      <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                      <node concept="2OqwBi" id="5Xa7gk5c998" role="37wK5m">
-                        <node concept="37vLTw" id="5Xa7gk5c999" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
-                        </node>
-                        <node concept="liA8E" id="5Xa7gk5c99a" role="2OqNvi">
-                          <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
+                    <node concept="2OqwBi" id="7eHFHBMo5xj" role="37vLTx">
+                      <node concept="2YIFZM" id="7eHFHBMo5fg" role="2Oq$k0">
+                        <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                        <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                      </node>
+                      <node concept="liA8E" id="7eHFHBMo6b8" role="2OqNvi">
+                        <ref role="37wK5l" to="sn11:192HKKPP2rb" resolve="getIconForResource" />
+                        <node concept="2OqwBi" id="7eHFHBMo5fh" role="37wK5m">
+                          <node concept="37vLTw" id="7eHFHBMo5fi" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5Xa7gk5c991" resolve="sidebarItem" />
+                          </node>
+                          <node concept="liA8E" id="7eHFHBMo5fj" role="2OqNvi">
+                            <ref role="37wK5l" to="dfte:601$vVQgJ2b" resolve="getIcon" />
+                          </node>
                         </node>
                       </node>
                     </node>

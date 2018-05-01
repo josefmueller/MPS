@@ -14351,15 +14351,20 @@
             <node concept="3uibUv" id="2_UAdqjPQj2" role="1tU5fm">
               <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
-            <node concept="2YIFZM" id="2_UAdqjPQjb" role="33vP2m">
-              <ref role="37wK5l" to="xnls:~IconManager.getIconForResource(jetbrains.mps.smodel.runtime.IconResource):javax.swing.Icon" resolve="getIconForResource" />
-              <ref role="1Pybhc" to="xnls:~IconManager" resolve="IconManager" />
-              <node concept="2OqwBi" id="2_UAdqjPQjc" role="37wK5m">
-                <node concept="37vLTw" id="2_UAdqjPQjd" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7IH442cRUc4" resolve="ad" />
-                </node>
-                <node concept="liA8E" id="2_UAdqjPQje" role="2OqNvi">
-                  <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIconResource():jetbrains.mps.smodel.runtime.IconResource" resolve="getIconResource" />
+            <node concept="2OqwBi" id="7eHFHBMozfZ" role="33vP2m">
+              <node concept="2YIFZM" id="7eHFHBMozr6" role="2Oq$k0">
+                <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+              <node concept="liA8E" id="7eHFHBMozLa" role="2OqNvi">
+                <ref role="37wK5l" to="sn11:192HKKPP2rb" resolve="getIconForResource" />
+                <node concept="2OqwBi" id="7eHFHBMozOE" role="37wK5m">
+                  <node concept="37vLTw" id="7eHFHBMozOF" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7IH442cRUc4" resolve="ad" />
+                  </node>
+                  <node concept="liA8E" id="7eHFHBMozOG" role="2OqNvi">
+                    <ref role="37wK5l" to="vndm:~LanguageAspectDescriptor.getIconResource():jetbrains.mps.smodel.runtime.IconResource" resolve="getIconResource" />
+                  </node>
                 </node>
               </node>
             </node>

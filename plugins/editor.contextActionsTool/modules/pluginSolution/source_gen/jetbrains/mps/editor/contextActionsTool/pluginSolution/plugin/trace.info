@@ -880,7 +880,7 @@
       <node id="6866332489278860476" at="62,21,63,26" concept="9" />
       <node id="6866332489278907192" at="63,26,64,0" concept="12" />
       <node id="6866332489278853696" at="65,50,66,69" concept="9" />
-      <node id="6866332489278853702" at="67,11,68,69" concept="4" />
+      <node id="6866332489278853702" at="67,11,68,89" concept="4" />
       <node id="3818729150937329490" at="70,43,71,72" concept="4" />
       <node id="3818729150937329502" at="74,43,75,80" concept="4" />
       <node id="6866332489278907718" at="77,7,78,0" concept="12" />
@@ -931,7 +931,7 @@
       <node id="6866332489278853694" at="64,0,90,5" concept="7" />
       <node id="6866332489278847650" at="61,0,94,0" concept="14" trace="convertActionItem#(Ljetbrains/mps/openapi/editor/menus/transformation/ActionItem;Ljava/lang/String;)Ljetbrains/mps/editor/contextActionsTool/pluginSolution/plugin/ToolComponent/IItem;" />
       <scope id="6866332489278652212" at="28,60,29,34" />
-      <scope id="6866332489278886643" at="67,11,68,69" />
+      <scope id="6866332489278886643" at="67,11,68,89" />
       <scope id="3818729150937329490" at="70,43,71,72" />
       <scope id="3818729150937329502" at="74,43,75,80" />
       <scope id="6866332489278902351" at="79,11,80,47" />

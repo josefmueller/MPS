@@ -190,7 +190,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
   private Icon getIcon(SubstituteAction action, String pattern) {
     Icon icon = null;
     if (action instanceof CompletionActionItemAsSubstituteAction) {
-      icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
+      icon = GlobalIconManager.getInstance().getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
     }
     if (icon != null) {
       return icon;
