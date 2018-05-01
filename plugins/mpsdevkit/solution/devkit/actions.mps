@@ -14814,19 +14814,9 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="7qD5Q2HsArL" role="2BLOvy">
-                  <node concept="2OqwBi" id="7qD5Q2Hs_KR" role="2Oq$k0">
-                    <node concept="2OqwBi" id="7qD5Q2Hs_nx" role="2Oq$k0">
-                      <node concept="2WthIp" id="7qD5Q2Hs_n$" role="2Oq$k0" />
-                      <node concept="2BZ7hE" id="7qD5Q2Hs_nA" role="2OqNvi">
-                        <ref role="2WH_rO" node="2JE3Qz1OxdH" resolve="myProject" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="7qD5Q2HsA6T" role="2OqNvi">
-                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                      <node concept="3VsKOn" id="7qD5Q2HsAdc" role="37wK5m">
-                        <ref role="3VsUkX" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
-                      </node>
-                    </node>
+                  <node concept="2YIFZM" id="5UC$YgehYP0" role="2Oq$k0">
+                    <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                    <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
                   </node>
                   <node concept="liA8E" id="7qD5Q2HsAPg" role="2OqNvi">
                     <ref role="37wK5l" to="sn11:192HKKPOd3m" resolve="getIconFor" />

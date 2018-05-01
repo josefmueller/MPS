@@ -68,6 +68,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.icons.BaseIconManager" />
   </dependency>
   <dependency className="jetbrains.mps.ide.icons.GlobalIconManager" file="GlobalIconManager.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />

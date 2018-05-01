@@ -41,6 +41,7 @@
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3430,6 +3431,32 @@
       </node>
     </node>
     <node concept="2tJIrI" id="192HKKPN4i6" role="jymVt" />
+    <node concept="2YIFZL" id="5UC$YgehaLf" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getInstance" />
+      <node concept="3clFbS" id="5UC$Ygehawe" role="3clF47">
+        <node concept="3clFbF" id="5UC$YgehcOj" role="3cqZAp">
+          <node concept="2OqwBi" id="5UC$YgehcOk" role="3clFbG">
+            <node concept="2YIFZM" id="5UC$YgehiGO" role="2Oq$k0">
+              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+            </node>
+            <node concept="liA8E" id="5UC$YgehcOm" role="2OqNvi">
+              <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+              <node concept="3VsKOn" id="5UC$YgehcOo" role="37wK5m">
+                <ref role="3VsUkX" node="192HKKPMXeL" resolve="GlobalIconManager" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="5UC$Ygehb9V" role="3clF45">
+        <ref role="3uigEE" node="192HKKPMXeL" resolve="GlobalIconManager" />
+      </node>
+      <node concept="3Tm1VV" id="5UC$Ygehawd" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="5UC$YgehbZm" role="jymVt" />
     <node concept="3clFb_" id="192HKKPN0tb" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="initComponent" />

@@ -2481,23 +2481,15 @@
                     <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
                   </node>
                   <node concept="2OqwBi" id="5e4Ig8XAosO" role="33vP2m">
-                    <node concept="2OqwBi" id="5e4Ig8XAeZG" role="2Oq$k0">
-                      <node concept="2YIFZM" id="5e4Ig8XAd8i" role="2Oq$k0">
-                        <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                        <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-                      </node>
-                      <node concept="liA8E" id="5e4Ig8XAh0$" role="2OqNvi">
-                        <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                        <node concept="3VsKOn" id="5e4Ig8XAkEQ" role="37wK5m">
-                          <ref role="3VsUkX" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
-                        </node>
-                      </node>
-                    </node>
                     <node concept="liA8E" id="5e4Ig8XAqs$" role="2OqNvi">
                       <ref role="37wK5l" to="sn11:192HKKPOcza" resolve="getIconFor" />
                       <node concept="35c_gC" id="5e4Ig8XAsv5" role="37wK5m">
                         <ref role="35c_gD" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
                       </node>
+                    </node>
+                    <node concept="2YIFZM" id="5UC$YgehYP0" role="2Oq$k0">
+                      <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                      <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
                     </node>
                   </node>
                 </node>

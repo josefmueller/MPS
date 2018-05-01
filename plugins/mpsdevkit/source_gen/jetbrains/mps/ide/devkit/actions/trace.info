@@ -4304,7 +4304,7 @@
       <node id="8878628697752593564" at="24,25,25,20" concept="5" />
       <node id="3164358630783845609" at="27,36,28,144" concept="10" />
       <node id="70914372931753788" at="30,25,31,54" concept="5" />
-      <node id="3164358630783836267" at="33,7,34,166" concept="5" />
+      <node id="3164358630783836267" at="33,7,34,127" concept="5" />
       <node id="8878628697752593564" at="17,0,20,0" concept="3" trace="NodeExplorer_Tool#(Lcom/intellij/openapi/project/Project;)V" />
       <node id="8878628697752593564" at="24,0,27,0" concept="9" trace="dispose#()V" />
       <node id="70914372931753170" at="30,0,33,0" concept="9" trace="run#()V" />
@@ -4323,7 +4323,7 @@
       <scope id="8878628697752593564" at="20,0,24,0">
         <var name="project" id="8878628697752593564" />
       </scope>
-      <scope id="3164358630783752840" at="27,36,34,166">
+      <scope id="3164358630783752840" at="27,36,34,127">
         <var name="nodeExplorer" id="3164358630783845610" />
       </scope>
       <scope id="3164358630783752838" at="27,0,36,0">

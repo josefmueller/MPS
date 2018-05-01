@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.ide.icons.GlobalIconManager;
-import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModelName;
@@ -57,7 +56,7 @@ public class TestPackagedLanguage_Test extends EnvironmentAwareTestCase {
     projectRepository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         IconLoader.activate();
-        GlobalIconManager iconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+        GlobalIconManager iconManager = GlobalIconManager.getInstance();
         Icon icon = iconManager.getIconFor(MetaAdapterFactory.getConcept(0x2d9a25d302b84024L, 0xafe2bb9457a02cbfL, 0x6005c4080114d50fL, "testPackagedLanguage.structure.TestConcept"));
         Assert.assertNotNull(icon);
         Assert.assertEquals(icon.getIconWidth(), 16);

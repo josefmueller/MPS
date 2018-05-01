@@ -423,17 +423,9 @@
                     <node concept="3uibUv" id="R$fwjLn9CW" role="1tU5fm">
                       <ref role="3uigEE" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
                     </node>
-                    <node concept="2OqwBi" id="R$fwjLn9D5" role="33vP2m">
-                      <node concept="2YIFZM" id="R$fwjLn9D6" role="2Oq$k0">
-                        <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                        <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-                      </node>
-                      <node concept="liA8E" id="R$fwjLn9D7" role="2OqNvi">
-                        <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                        <node concept="3VsKOn" id="R$fwjLn9D8" role="37wK5m">
-                          <ref role="3VsUkX" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
-                        </node>
-                      </node>
+                    <node concept="2YIFZM" id="5UC$YgehYP0" role="33vP2m">
+                      <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                      <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
                     </node>
                   </node>
                 </node>
