@@ -7,6 +7,7 @@ import com.intellij.openapi.ui.ComboBox;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import com.intellij.openapi.ui.popup.JBPopup;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -175,7 +176,7 @@ public class ShowImplementationComponent extends JPanel {
       myNodePresentation = (SNodeOperations.isInstanceOf(((SNode) node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && node.getParent() != null ? node.getParent() + "." + node.getPresentation() : node.getPresentation());
       myNodeIcon = IconManager.getIconFor(node);
       myModuleName = node.getModel().getModule().getModuleName();
-      myModuleIcon = IconManager.getIconFor(node.getModel().getModule());
+      myModuleIcon = GlobalIconManager.getInstance().getIconFor(node.getModel().getModule());
       myOriginalNodePointer = node.getReference();
     }
     @Override

@@ -5,6 +5,8 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,7 +30,6 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -102,7 +103,7 @@ public class MappingDialog extends DialogWrapper {
       MPSTreeNode generatorTreeNode = newTreeNode(MPSIcons.Nodes.Generator, generator.getModuleName(), "generator/" + generator.getModuleName());
       root.add(generatorTreeNode);
       for (SModel md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = newTreeNode(IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
+        MPSTreeNode modelTreeNode = newTreeNode(GlobalIconManager.getInstance().getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + '@' + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md;
         for (SNode node : SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {

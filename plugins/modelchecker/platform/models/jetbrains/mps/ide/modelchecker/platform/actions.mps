@@ -4763,14 +4763,19 @@
                   <node concept="34oBXx" id="3pNk_u$3pon" role="2OqNvi" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="3pNk_u$3sif" role="3K4E3e">
-                <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                <ref role="37wK5l" to="sn11:277Nzj6qTKB" resolve="getIconFor" />
-                <node concept="2OqwBi" id="3pNk_u$3upg" role="37wK5m">
-                  <node concept="37vLTw" id="3pNk_u$3sx8" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4aNWY1v2hQc" resolve="modules" />
+              <node concept="2OqwBi" id="7eHFHBMiEAu" role="3K4E3e">
+                <node concept="2YIFZM" id="7eHFHBMiDKY" role="2Oq$k0">
+                  <ref role="37wK5l" to="sn11:5UC$YgehaLf" resolve="getInstance" />
+                  <ref role="1Pybhc" to="sn11:192HKKPMXeL" resolve="GlobalIconManager" />
+                </node>
+                <node concept="liA8E" id="7eHFHBMiFwY" role="2OqNvi">
+                  <ref role="37wK5l" to="sn11:192HKKPOe1b" resolve="getIconFor" />
+                  <node concept="2OqwBi" id="7eHFHBMiDKZ" role="37wK5m">
+                    <node concept="37vLTw" id="7eHFHBMiDL0" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4aNWY1v2hQc" resolve="modules" />
+                    </node>
+                    <node concept="1uHKPH" id="7eHFHBMiDL1" role="2OqNvi" />
                   </node>
-                  <node concept="1uHKPH" id="3pNk_u$3vbF" role="2OqNvi" />
                 </node>
               </node>
               <node concept="10M0yZ" id="4VE3_mvPxuF" role="3K4GZi">

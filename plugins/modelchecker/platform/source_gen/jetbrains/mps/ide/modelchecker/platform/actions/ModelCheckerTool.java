@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.errors.item.IssueKindReportItem;
@@ -57,7 +57,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     ModelCheckerViewer newViewer = createViewerForTab();
     String title = (ListSequence.fromList(modules).count() == 1 ? ListSequence.fromList(modules).first().getModuleName() : "modules");
     newViewer.checkModules(modules, title);
-    Icon icon = (ListSequence.fromList(modules).count() == 1 ? IconManager.getIconFor(ListSequence.fromList(modules).first()) : AllIcons.Nodes.ModuleGroup);
+    Icon icon = (ListSequence.fromList(modules).count() == 1 ? GlobalIconManager.getInstance().getIconFor(ListSequence.fromList(modules).first()) : AllIcons.Nodes.ModuleGroup);
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {

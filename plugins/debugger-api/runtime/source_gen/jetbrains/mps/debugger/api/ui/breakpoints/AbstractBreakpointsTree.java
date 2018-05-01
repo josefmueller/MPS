@@ -22,10 +22,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -187,7 +188,7 @@ import javax.swing.UIManager;
     }
     @Override
     public Icon getIcon(SModule m) {
-      return IconManager.getIconFor(m);
+      return GlobalIconManager.getInstance().getIconFor(m);
     }
   }
   private class ModelGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SModelReference> {
@@ -212,7 +213,7 @@ import javax.swing.UIManager;
     }
     @Override
     public Icon getIcon(SModelReference model) {
-      return IconManager.getIconFor(model.resolve(myProject.getRepository()));
+      return GlobalIconManager.getInstance().getIconFor(model.resolve(myProject.getRepository()));
     }
   }
   private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNode> {
