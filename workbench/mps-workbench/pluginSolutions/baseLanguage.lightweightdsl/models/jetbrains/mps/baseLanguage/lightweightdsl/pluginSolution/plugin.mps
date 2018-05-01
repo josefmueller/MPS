@@ -1045,19 +1045,29 @@
                 <property role="3SKdUp" value="viva la interpretation!" />
               </node>
             </node>
-            <node concept="3clFbF" id="5vfjF5cdS8_" role="3cqZAp">
-              <node concept="37vLTI" id="5vfjF5cdSet" role="3clFbG">
-                <node concept="2YIFZM" id="N34cyRD9SL" role="37vLTx">
-                  <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
-                  <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                  <node concept="2OqwBi" id="5vfjF5cdSri" role="37wK5m">
-                    <node concept="37vLTw" id="5vfjF5cdSgr" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
-                    </node>
-                    <node concept="1rGIog" id="5vfjF5cdSYY" role="2OqNvi" />
+            <node concept="3cpWs8" id="7eHFHBMjIbO" role="3cqZAp">
+              <node concept="3cpWsn" id="7eHFHBMjIbM" role="3cpWs9">
+                <property role="TrG5h" value="concept" />
+                <node concept="3uibUv" id="7eHFHBMjIbN" role="1tU5fm">
+                  <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
+                </node>
+                <node concept="2OqwBi" id="5vfjF5cdSri" role="33vP2m">
+                  <node concept="37vLTw" id="5vfjF5cdSgr" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5u1dFJQIBMp" resolve="pc" />
+                  </node>
+                  <node concept="1rGIog" id="5vfjF5cdSYY" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7eHFHBMjIbT" role="3cqZAp">
+              <node concept="37vLTI" id="7eHFHBMjIbU" role="3clFbG">
+                <node concept="1rXfSq" id="7eHFHBMjIbV" role="37vLTx">
+                  <ref role="37wK5l" to="sn11:57eXx5f9CcF" resolve="getIconFor" />
+                  <node concept="37vLTw" id="7eHFHBMjIbW" role="37wK5m">
+                    <ref role="3cqZAo" node="7eHFHBMjIbM" resolve="concept" />
                   </node>
                 </node>
-                <node concept="37vLTw" id="5vfjF5cdS8$" role="37vLTJ">
+                <node concept="37vLTw" id="7eHFHBMjIbX" role="37vLTJ">
                   <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
                 </node>
               </node>
@@ -1065,16 +1075,26 @@
           </node>
           <node concept="9aQIb" id="5vfjF5cdRSv" role="9aQIa">
             <node concept="3clFbS" id="5u1dFJQICbZ" role="9aQI4">
-              <node concept="3clFbF" id="5vfjF5cdQdm" role="3cqZAp">
-                <node concept="37vLTI" id="5vfjF5cdQhZ" role="3clFbG">
-                  <node concept="37vLTw" id="5vfjF5cdQdk" role="37vLTJ">
+              <node concept="3cpWs8" id="7eHFHBMjIc4" role="3cqZAp">
+                <node concept="3cpWsn" id="7eHFHBMjIc2" role="3cpWs9">
+                  <property role="TrG5h" value="concept" />
+                  <node concept="3uibUv" id="7eHFHBMjIc3" role="1tU5fm">
+                    <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
+                  </node>
+                  <node concept="35c_gC" id="5vfjF5cdQjU" role="33vP2m">
+                    <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="7eHFHBMjIc9" role="3cqZAp">
+                <node concept="37vLTI" id="7eHFHBMjIca" role="3clFbG">
+                  <node concept="37vLTw" id="7eHFHBMjIcb" role="37vLTJ">
                     <ref role="3cqZAo" node="5vfjF5cdPVc" resolve="icon" />
                   </node>
-                  <node concept="2YIFZM" id="N34cyRD9L2" role="37vLTx">
-                    <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
-                    <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <node concept="35c_gC" id="5vfjF5cdQjU" role="37wK5m">
-                      <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  <node concept="1rXfSq" id="7eHFHBMjIcc" role="37vLTx">
+                    <ref role="37wK5l" to="sn11:57eXx5f9CcF" resolve="getIconFor" />
+                    <node concept="37vLTw" id="7eHFHBMjIcd" role="37wK5m">
+                      <ref role="3cqZAo" node="7eHFHBMjIc2" resolve="concept" />
                     </node>
                   </node>
                 </node>

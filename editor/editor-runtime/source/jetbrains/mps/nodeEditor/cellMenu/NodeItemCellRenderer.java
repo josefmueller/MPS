@@ -205,7 +205,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
       }
       if (icon == null) {
         if (isConcept) {
-          icon = IconManager.getIcon(MetaAdapterByDeclaration.getConcept(iconNode));
+          icon = IconManager.getIconFor(MetaAdapterByDeclaration.getConcept(iconNode));
           if (icon == null) {
             icon = IdeIcons.DEFAULT_NODE_ICON;
           }

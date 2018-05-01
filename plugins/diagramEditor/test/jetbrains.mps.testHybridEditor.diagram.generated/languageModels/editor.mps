@@ -330,6 +330,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1970,16 +1971,25 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="75MLXfcuTfk" role="3cqZAp">
-                <node concept="37vLTI" id="75MLXfcuTfl" role="3clFbG">
-                  <node concept="2YIFZM" id="N34cyRDlZi" role="37vLTx">
-                    <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+              <node concept="3cpWs8" id="7eHFHBMjIb$" role="3cqZAp">
+                <node concept="3cpWsn" id="7eHFHBMjIbw" role="3cpWs9">
+                  <property role="TrG5h" value="concept" />
+                  <node concept="3bZ5Sz" id="7eHFHBMkYIE" role="1tU5fm" />
+                  <node concept="35c_gC" id="5vfjF5c9kmq" role="33vP2m">
+                    <ref role="35c_gD" to="adck:22C1ebGh1km" resolve="ConnectorInstance" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="7eHFHBMjIbD" role="3cqZAp">
+                <node concept="37vLTI" id="7eHFHBMjIbE" role="3clFbG">
+                  <node concept="2YIFZM" id="7eHFHBMkBHo" role="37vLTx">
                     <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                    <node concept="35c_gC" id="5vfjF5c9kmq" role="37wK5m">
-                      <ref role="35c_gD" to="adck:22C1ebGh1km" resolve="ConnectorInstance" />
+                    <ref role="37wK5l" to="sn11:57eXx5f9CcF" resolve="getIconFor" />
+                    <node concept="37vLTw" id="7eHFHBMkBHp" role="37wK5m">
+                      <ref role="3cqZAo" node="7eHFHBMjIbw" resolve="concept" />
                     </node>
                   </node>
-                  <node concept="37vLTw" id="75MLXfcuTfo" role="37vLTJ">
+                  <node concept="37vLTw" id="7eHFHBMjIbH" role="37vLTJ">
                     <ref role="3cqZAo" node="75MLXfcuTeW" resolve="myIcon" />
                   </node>
                 </node>

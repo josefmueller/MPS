@@ -48,7 +48,7 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childConcept, containingLink, canCreateConnector, setConnectorCallback)});
-    myIcon = IconManager.getIcon(childConcept);
+    myIcon = IconManager.getIconFor(childConcept);
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();

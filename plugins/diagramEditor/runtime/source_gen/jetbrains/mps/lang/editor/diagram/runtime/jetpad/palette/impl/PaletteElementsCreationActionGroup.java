@@ -37,7 +37,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
     myCallback = setNodePositionCallback;
 
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childConcept, containingLink)});
-    myIcon = IconManager.getIcon(childConcept);
+    myIcon = IconManager.getIconFor(childConcept);
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();
