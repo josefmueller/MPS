@@ -36,7 +36,7 @@
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
     <language slang="l:f4ad079d-bc71-4ffb-9600-9328705cf998:jetbrains.mps.lang.descriptor" version="0" />
     <language slang="l:18bc6592-03a6-4e29-a83a-7ff23bde13ba:jetbrains.mps.lang.editor" version="11" />
-    <language slang="l:6106f611-7a74-42d1-80de-edc5c602bfd1:jetbrains.mps.lang.editor.diagram" version="0" />
+    <language slang="l:6106f611-7a74-42d1-80de-edc5c602bfd1:jetbrains.mps.lang.editor.diagram" version="1" />
     <language slang="l:d7722d50-4b93-4c3a-ae06-1903d05f95a7:jetbrains.mps.lang.editor.figures" version="0" />
     <language slang="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" version="0" />
     <language slang="l:d4615e3b-d671-4ba9-af01-2b78369b0ba7:jetbrains.mps.lang.pattern" version="1" />
