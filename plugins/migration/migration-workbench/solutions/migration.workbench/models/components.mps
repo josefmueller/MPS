@@ -155,6 +155,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -1037,8 +1040,10 @@
                                         <property role="TrG5h" value="inputRes" />
                                         <property role="3TUv4t" value="false" />
                                         <node concept="_YKpA" id="6xMoDGgBhxl" role="1tU5fm">
-                                          <node concept="3uibUv" id="6xMoDGgBhxn" role="_ZDj9">
-                                            <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+                                          <node concept="3qUE_q" id="3sjottLchrC" role="_ZDj9">
+                                            <node concept="3uibUv" id="3sjottLcitm" role="3qUE_r">
+                                              <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
+                                            </node>
                                           </node>
                                         </node>
                                         <node concept="2ShNRf" id="6c0jH7RDXyR" role="33vP2m">
