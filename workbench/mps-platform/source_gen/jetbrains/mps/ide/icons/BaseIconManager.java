@@ -13,6 +13,7 @@ import java.util.HashMap;
 import javax.swing.Icon;
 import java.util.Set;
 import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -66,13 +67,17 @@ public class BaseIconManager {
 
     IconResource actual = MapSequence.fromMap(myConceptToIcon).get(concept);
     if (actual == null) {
-      return IdeIcons.DEFAULT_CONCEPT_ICON;
+      return getDefaultConceptIcon(concept);
     }
     Icon icon = getIconForResource(actual);
     if (icon == null) {
-      return IdeIcons.DEFAULT_CONCEPT_ICON;
+      return getDefaultConceptIcon(concept);
     }
     return icon;
+  }
+
+  private static Icon getDefaultConceptIcon(SAbstractConcept concept) {
+    return (concept instanceof SConcept && ((SConcept) concept).isRootable() ? IdeIcons.DEFAULT_ROOT_ICON : IdeIcons.DEFAULT_CONCEPT_ICON);
   }
 
   public Icon getIconFor(@NotNull final SNode node) {
