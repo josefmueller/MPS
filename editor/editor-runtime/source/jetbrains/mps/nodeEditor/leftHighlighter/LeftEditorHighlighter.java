@@ -532,6 +532,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return new Dimension(myWidth + 1, myEditorComponent.getPreferredSize().height);
   }
 
+  //used in plugin
+  @SuppressWarnings("unused")
+  public int getIconCoordinate(EditorMessageIconRenderer renderer) {
+    return new IconPositionCalculator(myIconRenderers, getIconRenderersOffset(), myEditorComponent).getIconCoordinate(renderer);
+  }
+
   @Override
   public String getMPSTooltipText(MouseEvent e) {
     if (isInFoldingArea(e)) {
