@@ -2565,7 +2565,6 @@
           <ref role="1NtTu8" to="tpce:5vfjF5cjTVP" resolve="icon" />
         </node>
       </node>
-      <node concept="3F0ifn" id="5vfjF5cjYX1" role="3EZMnx" />
       <node concept="2iRkQZ" id="i2IuJLQ" role="2iSdaV" />
     </node>
   </node>

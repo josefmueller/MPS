@@ -8,6 +8,7 @@
     <import index="ny2" ref="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -425,6 +426,12 @@
     <property role="34LRSv" value="creation" />
     <property role="EcuMT" value="6619018968335599081" />
     <ref role="1TJDcQ" node="tdMhUur7Q2" resolve="ActionReference" />
+    <node concept="1TJgyj" id="5vfjF5cjTVP" role="1TKVEi">
+      <property role="IQ2ns" value="6327362524875300597" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="1oap:2p1v3tOa9VI" resolve="Icon" />
+    </node>
     <node concept="1TJgyi" id="3NXJmdrmJUd" role="1TKVEl">
       <property role="TrG5h" value="iconPath" />
       <property role="IQ2nx" value="4394877045815574157" />
