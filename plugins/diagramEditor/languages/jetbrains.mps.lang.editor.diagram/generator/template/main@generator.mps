@@ -10894,13 +10894,10 @@
                         </node>
                         <node concept="3cpWs6" id="5p6mbsDKCcA" role="3cqZAp">
                           <node concept="2YIFZM" id="5XBRz5LL1cf" role="3cqZAk">
-                            <ref role="37wK5l" to="sn11:5XBRz5LKZRC" resolve="loadIcon" />
-                            <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                            <ref role="1Pybhc" to="sn11:57eXx5f912c" resolve="IconLoadHelper" />
+                            <ref role="37wK5l" to="sn11:Z6TQiSUz$I" resolve="loadIcon" />
                             <node concept="37vLTw" id="5XBRz5LL1cg" role="37wK5m">
                               <ref role="3cqZAo" node="5p6mbsDKCcl" resolve="path" />
-                            </node>
-                            <node concept="3clFbT" id="5XBRz5LL1ch" role="37wK5m">
-                              <property role="3clFbU" value="false" />
                             </node>
                           </node>
                         </node>
@@ -11457,14 +11454,11 @@
                           </node>
                         </node>
                         <node concept="3cpWs6" id="5p6mbsDI_mi" role="3cqZAp">
-                          <node concept="2YIFZM" id="5XBRz5LL1aL" role="3cqZAk">
-                            <ref role="37wK5l" to="sn11:5XBRz5LKZRC" resolve="loadIcon" />
-                            <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                            <node concept="37vLTw" id="5XBRz5LL1aM" role="37wK5m">
+                          <node concept="2YIFZM" id="7eHFHBMpaZC" role="3cqZAk">
+                            <ref role="37wK5l" to="sn11:Z6TQiSUz$I" resolve="loadIcon" />
+                            <ref role="1Pybhc" to="sn11:57eXx5f912c" resolve="IconLoadHelper" />
+                            <node concept="37vLTw" id="7eHFHBMpaZD" role="37wK5m">
                               <ref role="3cqZAo" node="5p6mbsDILuU" resolve="path" />
-                            </node>
-                            <node concept="3clFbT" id="5XBRz5LL1aN" role="37wK5m">
-                              <property role="3clFbU" value="false" />
                             </node>
                           </node>
                         </node>

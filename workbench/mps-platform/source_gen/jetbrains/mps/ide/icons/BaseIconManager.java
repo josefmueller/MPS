@@ -4,7 +4,6 @@ package jetbrains.mps.ide.icons;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.awt.MediaTracker;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -48,8 +47,6 @@ import org.apache.log4j.Level;
 
 public class BaseIconManager {
   private static final Logger LOG = LogManager.getLogger(BaseIconManager.class);
-  private static final int IMAGE_LOADED = ~(((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING)));
-
   private Map<SAbstractConcept, IconResource> myConceptToIcon = MapSequence.fromMap(new HashMap<SAbstractConcept, IconResource>());
   private Map<IconResource, Icon> myResToIcon = MapSequence.fromMap(new HashMap<IconResource, Icon>());
 
