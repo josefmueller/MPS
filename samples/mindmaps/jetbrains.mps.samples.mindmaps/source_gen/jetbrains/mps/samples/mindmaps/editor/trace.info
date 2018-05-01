@@ -992,8 +992,8 @@
       <node id="5871420002487610749" at="260,64,261,200" concept="7" />
       <node id="5871420002487610533" at="261,200,262,177" concept="2" />
       <node id="650270285024712134" at="266,35,267,29" concept="8" />
-      <node id="650270285024711858" at="270,11,271,63" concept="2" />
-      <node id="650270285024711858" at="271,63,272,24" concept="2" />
+      <node id="650270285024711858" at="269,11,270,63" concept="2" />
+      <node id="650270285024711858" at="270,63,271,24" concept="2" />
       <node id="79242395703887343" at="62,0,64,0" concept="3" trace="myNode" />
       <node id="79242395703887343" at="203,20,205,15" concept="0" />
       <node id="79242395703887343" at="76,0,79,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1032,14 +1032,14 @@
       <node id="79242395703887343" at="172,86,182,10" concept="8" />
       <node id="79242395703887343" at="209,0,219,0" concept="6" trace="set#(Ljava/lang/Boolean;)V" />
       <node id="79242395703887343" at="242,0,252,0" concept="6" trace="synchronize#()V" />
+      <node id="650270285024712134" at="258,27,269,11" concept="2" />
       <node id="79242395703887343" at="80,0,92,0" concept="6" trace="createCollection_e8klwn_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="79242395703887343" at="172,0,184,0" concept="6" trace="createPaletteConnectorSubstituteInfoPartExts#()[Ljetbrains/mps/nodeEditor/cellMenu/SubstituteInfoPartExt;" />
       <node id="79242395703887343" at="207,14,219,14" concept="2" />
-      <node id="650270285024712134" at="258,27,270,11" concept="2" />
       <node id="79242395703887343" at="226,0,240,0" concept="6" trace="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
       <node id="79242395703887343" at="144,33,159,12" concept="2" />
       <node id="79242395703887343" at="224,83,240,8" concept="8" />
-      <node id="650270285024711858" at="257,0,274,0" concept="1" trace="DiagramPaletteImpl_e8klwn_a3a#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
+      <node id="650270285024711858" at="257,0,273,0" concept="1" trace="DiagramPaletteImpl_e8klwn_a3a#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
       <node id="79242395703887343" at="224,0,242,0" concept="6" trace="createDecorationMapper#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/jetpad/mapper/Mapper;" />
       <node id="79242395703887343" at="143,0,163,0" concept="1" trace="DiagramCellImpl_e8klwn_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="79242395703887923" at="99,39,126,5" concept="12" />
@@ -1187,9 +1187,9 @@
       <scope id="79242395703887343" at="226,0,240,0">
         <var name="configuration" id="79242395703887343" />
       </scope>
-      <scope id="650270285024711858" at="257,70,272,24" />
+      <scope id="650270285024711858" at="257,70,271,24" />
       <scope id="79242395703887343" at="224,83,240,8" />
-      <scope id="650270285024711858" at="257,0,274,0">
+      <scope id="650270285024711858" at="257,0,273,0">
         <var name="diagramCell" id="650270285024711858" />
       </scope>
       <scope id="79242395703887343" at="143,80,161,20" />
@@ -1230,13 +1230,13 @@
       <unit id="5871420002487614336" at="177,13,182,7" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$6" />
       <unit id="650270285024712134" at="259,372,264,9" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$DiagramPaletteImpl_e8klwn_a3a$1$1" />
       <unit id="79242395703887343" at="199,83,207,11" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$7$3" />
+      <unit id="650270285024712134" at="259,30,269,9" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$DiagramPaletteImpl_e8klwn_a3a$1" />
       <unit id="79242395703887343" at="208,74,219,11" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$7$4" />
-      <unit id="650270285024712134" at="259,30,270,9" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$DiagramPaletteImpl_e8klwn_a3a$1" />
       <unit id="79242395703887343" at="225,17,240,7" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$8" />
-      <unit id="650270285024711858" at="256,0,275,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$DiagramPaletteImpl_e8klwn_a3a" />
+      <unit id="650270285024711858" at="256,0,274,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$DiagramPaletteImpl_e8klwn_a3a" />
       <unit id="79242395703887343" at="185,17,222,7" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0$7" />
-      <unit id="79242395703887343" at="142,0,276,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0" />
-      <unit id="79242395703887343" at="61,0,277,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a" />
+      <unit id="79242395703887343" at="142,0,275,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a$DiagramCellImpl_e8klwn_d0" />
+      <unit id="79242395703887343" at="61,0,276,0" name="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/79242395703954207">

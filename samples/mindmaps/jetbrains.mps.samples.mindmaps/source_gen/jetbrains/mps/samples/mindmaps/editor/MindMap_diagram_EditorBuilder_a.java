@@ -266,7 +266,6 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
           public String getText() {
             return "Thought";
           }
-
         });
         addPaletteElement(new DiagramTraitButton(diagramCell));
         createPalette();
