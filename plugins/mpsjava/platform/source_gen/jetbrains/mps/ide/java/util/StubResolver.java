@@ -132,7 +132,7 @@ public class StubResolver {
         continue;
       }
       for (SModel model : Sequence.fromIterable(module.getModels())) {
-        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
+        if (!(SModelStereotype.isStubModel(model)) && model instanceof EditableSModel) {
           resolveInModel(model);
         }
       }

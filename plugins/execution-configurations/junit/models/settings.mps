@@ -8668,11 +8668,13 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2YIFZM" id="3vnmwWFFwbu" role="3clFbw">
-                    <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                    <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                    <node concept="2GrUjf" id="3vnmwWFFwck" role="37wK5m">
-                      <ref role="2Gs0qQ" node="3vnmwWFFvP$" resolve="model" />
+                  <node concept="3fqX7Q" id="7d$WBe31Vz2" role="3clFbw">
+                    <node concept="2YIFZM" id="7d$WBe31Vz4" role="3fr31v">
+                      <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                      <node concept="2GrUjf" id="7d$WBe31Vz5" role="37wK5m">
+                        <ref role="2Gs0qQ" node="3vnmwWFFvP$" resolve="model" />
+                      </node>
                     </node>
                   </node>
                 </node>

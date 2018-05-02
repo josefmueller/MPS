@@ -1034,13 +1034,11 @@
       <node concept="10P_77" id="4KDfkUwMp9R" role="3clF45" />
       <node concept="3clFbS" id="4KDfkUwMp9S" role="3clF47">
         <node concept="3clFbJ" id="4KDfkUwMp9T" role="3cqZAp">
-          <node concept="3fqX7Q" id="4KDfkUwMp9U" role="3clFbw">
-            <node concept="2YIFZM" id="4KDfkUwMp9V" role="3fr31v">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-              <node concept="37vLTw" id="2BHiRxgm5O9" role="37wK5m">
-                <ref role="3cqZAo" node="4KDfkUwMpad" resolve="md" />
-              </node>
+          <node concept="2YIFZM" id="7d$WBe368yC" role="3clFbw">
+            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+            <node concept="37vLTw" id="7d$WBe368yD" role="37wK5m">
+              <ref role="3cqZAo" node="4KDfkUwMpad" resolve="md" />
             </node>
           </node>
           <node concept="3clFbS" id="4KDfkUwMp9X" role="3clFbx">

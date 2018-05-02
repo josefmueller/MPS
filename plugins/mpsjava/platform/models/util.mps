@@ -2505,11 +2505,13 @@
                         <ref role="2Gs0qQ" node="7WIQM6zDr0Z" resolve="model" />
                       </node>
                     </node>
-                    <node concept="2YIFZM" id="7HaeaCziqhq" role="3uHU7B">
-                      <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                      <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                      <node concept="2GrUjf" id="7HaeaCziqhr" role="37wK5m">
-                        <ref role="2Gs0qQ" node="7WIQM6zDr0Z" resolve="model" />
+                    <node concept="3fqX7Q" id="7d$WBe34FbW" role="3uHU7B">
+                      <node concept="2YIFZM" id="7d$WBe34FbY" role="3fr31v">
+                        <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                        <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                        <node concept="2GrUjf" id="7d$WBe34FbZ" role="37wK5m">
+                          <ref role="2Gs0qQ" node="7WIQM6zDr0Z" resolve="model" />
+                        </node>
                       </node>
                     </node>
                   </node>

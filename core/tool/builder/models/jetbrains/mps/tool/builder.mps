@@ -1817,11 +1817,13 @@
       <node concept="3clFbS" id="KL8Aqlj5ta" role="3clF47">
         <node concept="3cpWs6" id="KL8Aqlj5tb" role="3cqZAp">
           <node concept="1Wc70l" id="KL8Aqlj5tc" role="3cqZAk">
-            <node concept="2YIFZM" id="KL8Aqlj5td" role="3uHU7B">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-              <node concept="37vLTw" id="2BHiRxgma64" role="37wK5m">
-                <ref role="3cqZAo" node="KL8Aqlj5t8" resolve="model" />
+            <node concept="3fqX7Q" id="7d$WBe36$Zs" role="3uHU7B">
+              <node concept="2YIFZM" id="7d$WBe36$Zu" role="3fr31v">
+                <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                <node concept="37vLTw" id="7d$WBe36$Zv" role="37wK5m">
+                  <ref role="3cqZAo" node="KL8Aqlj5t8" resolve="model" />
+                </node>
               </node>
             </node>
             <node concept="2YIFZM" id="KL8Aqlj5tf" role="3uHU7w">

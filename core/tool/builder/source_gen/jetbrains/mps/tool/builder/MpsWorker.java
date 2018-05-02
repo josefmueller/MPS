@@ -210,7 +210,7 @@ public abstract class MpsWorker {
     }
   }
   private boolean includeModel(SModel model) {
-    return SModelStereotype.isUserModel(model) && GenerationFacade.canGenerate(model);
+    return !(SModelStereotype.isStubModel(model)) && GenerationFacade.canGenerate(model);
   }
   protected void extractModels(Collection<SModel> modelsList, SModule m) {
     for (SModel d : m.getModels()) {

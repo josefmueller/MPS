@@ -271,7 +271,7 @@ public class ProjectStructureBuilder {
 
   protected void collectModels(SNode module) {
     for (SModel m : Sequence.fromIterable(mySourceModule.getModels())) {
-      if (SModelStereotype.isUserModel(m)) {
+      if (!(SModelStereotype.isStubModel(m))) {
         ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe2bL, "model"))).addElement(convert(m.getReference()));
       }
     }

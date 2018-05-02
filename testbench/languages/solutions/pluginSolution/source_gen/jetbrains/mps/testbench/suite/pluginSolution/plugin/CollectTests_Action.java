@@ -197,7 +197,7 @@ public class CollectTests_Action extends BaseAction {
     return true;
   }
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
-    if (!(SModelStereotype.isUserModel(md))) {
+    if (SModelStereotype.isStubModel(md)) {
       return false;
     }
     return md instanceof EditableSModel && !(md.isReadOnly());
