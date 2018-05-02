@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,7 +105,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         }
         inputData.putUserData(PARSED_MODEL, modelData);
       } catch (URLNotSupportedException | URISyntaxException | IOException e) {
-        LOG.error("", e);
+        LOG.error(String.format("Failed to index %s", inputData.getFileName()), e);
         return null;
       }
     }
