@@ -31,7 +31,6 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="7lvn" ref="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)" />
     <import index="tvc" ref="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="rkxj" ref="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
@@ -12935,20 +12934,14 @@
               </node>
             </node>
           </node>
-          <node concept="2YIFZM" id="7ECFGRPAHFd" role="3clFbw">
-            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
+          <node concept="2YIFZM" id="7d$WBe3cp9d" role="3clFbw">
+            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
             <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-            <node concept="2YIFZM" id="2n9zn0CqMWH" role="37wK5m">
-              <ref role="37wK5l" to="unno:7WvVJ3rO1Xl" resolve="getModelStereotype" />
-              <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-              <node concept="2JrnkZ" id="2n9zn0CqMWI" role="37wK5m">
-                <node concept="2OqwBi" id="2n9zn0CqMWJ" role="2JrQYb">
-                  <node concept="37vLTw" id="2BHiRxgh9Wz" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7ECFGRPAHHH" resolve="baseMethod" />
-                  </node>
-                  <node concept="I4A8Y" id="2n9zn0CqMWL" role="2OqNvi" />
-                </node>
+            <node concept="2OqwBi" id="7d$WBe3cp9g" role="37wK5m">
+              <node concept="37vLTw" id="7d$WBe3cp9h" role="2Oq$k0">
+                <ref role="3cqZAo" node="7ECFGRPAHHH" resolve="baseMethod" />
               </node>
+              <node concept="I4A8Y" id="7d$WBe3cp9i" role="2OqNvi" />
             </node>
           </node>
         </node>

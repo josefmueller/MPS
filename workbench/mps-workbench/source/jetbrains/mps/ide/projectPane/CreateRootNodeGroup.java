@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2017 JetBrains s.r.o.
+ * Copyright 2003-2018 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -37,14 +35,10 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -73,8 +67,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    boolean isStubModel = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(targetModel));
-    if (isStubModel) {
+    if (SModelStereotype.isStubModel(targetModel)) {
       disable(event.getPresentation());
       return;
     }

@@ -5051,21 +5051,11 @@
           </node>
         </node>
         <node concept="3clFbJ" id="5TGjZPCODyl" role="3cqZAp">
-          <node concept="2YIFZM" id="5TGjZPCODyF" role="3clFbw">
-            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
+          <node concept="2YIFZM" id="7d$WBe3dsrz" role="3clFbw">
+            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
             <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-            <node concept="2OqwBi" id="RN3DCEb0q_" role="37wK5m">
-              <node concept="2OqwBi" id="RN3DCEb0fG" role="2Oq$k0">
-                <node concept="37vLTw" id="mYZ1Lju4K_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="mYZ1Lju4Kw" resolve="model" />
-                </node>
-                <node concept="liA8E" id="RN3DCEb0lK" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
-                </node>
-              </node>
-              <node concept="liA8E" id="RN3DCEb0$K" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModelName.getStereotype():java.lang.String" resolve="getStereotype" />
-              </node>
+            <node concept="37vLTw" id="7d$WBe3dsrA" role="37wK5m">
+              <ref role="3cqZAo" node="mYZ1Lju4Kw" resolve="model" />
             </node>
           </node>
           <node concept="3clFbS" id="5TGjZPCODyu" role="3clFbx">

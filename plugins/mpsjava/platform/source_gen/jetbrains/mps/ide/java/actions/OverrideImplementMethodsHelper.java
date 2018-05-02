@@ -65,7 +65,7 @@ public class OverrideImplementMethodsHelper {
     return result;
   }
   /*package*/ void update(SNode method, SNode baseMethod) {
-    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
+    if (SModelStereotype.isStubModel(SNodeOperations.getModel(baseMethod))) {
       // we only need to find good names for parameters, if they are cryptic e.g. java_sourcestubs deliver proper names 
       final SNode startNode = (ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).all(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

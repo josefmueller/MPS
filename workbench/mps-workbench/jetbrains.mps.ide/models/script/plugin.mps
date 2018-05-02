@@ -1313,7 +1313,7 @@
             <ref role="37wK5l" node="2UMnak9BAmZ" resolve="createMigrationScopeInternal" />
             <node concept="2OqwBi" id="_5aXW7Peof" role="37wK5m">
               <node concept="liA8E" id="_5aXW7Pgbn" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
               </node>
               <node concept="37vLTw" id="_5aXW7PcSi" role="2Oq$k0">
                 <ref role="3cqZAo" node="_5aXW7Iw7y" resolve="project" />
@@ -1522,15 +1522,13 @@
       <node concept="3clFbS" id="2UMnak9BLX6" role="3clF47">
         <node concept="3clFbJ" id="2UMnak9BMQb" role="3cqZAp">
           <node concept="3fqX7Q" id="2UMnak9BMQc" role="3clFbw">
-            <node concept="1eOMI4" id="2UMnak9BMQd" role="3fr31v">
-              <node concept="1eOMI4" id="2UMnak9BMQe" role="1eOMHV">
-                <node concept="2ZW3vV" id="2UMnak9BMQf" role="1eOMHV">
-                  <node concept="3uibUv" id="78q3$VKsP8_" role="2ZW6by">
-                    <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
-                  </node>
-                  <node concept="37vLTw" id="2UMnak9BMQg" role="2ZW6bz">
-                    <ref role="3cqZAo" node="2UMnak9BM1N" resolve="model" />
-                  </node>
+            <node concept="1eOMI4" id="7d$WBe3c3KB" role="3fr31v">
+              <node concept="2ZW3vV" id="2UMnak9BMQf" role="1eOMHV">
+                <node concept="3uibUv" id="78q3$VKsP8_" role="2ZW6by">
+                  <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
+                </node>
+                <node concept="37vLTw" id="2UMnak9BMQg" role="2ZW6bz">
+                  <ref role="3cqZAo" node="2UMnak9BM1N" resolve="model" />
                 </node>
               </node>
             </node>
@@ -1560,41 +1558,18 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2UMnak9BMQt" role="3cqZAp">
-          <node concept="3cpWsn" id="2UMnak9BMQu" role="3cpWs9">
-            <property role="TrG5h" value="modelStereotype" />
-            <node concept="2YIFZM" id="2UMnak9BMQv" role="33vP2m">
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-              <node concept="37vLTw" id="2UMnak9BMQw" role="37wK5m">
-                <ref role="3cqZAo" node="2UMnak9BM1N" resolve="model" />
-              </node>
+        <node concept="3clFbJ" id="2UMnak9BMQB" role="3cqZAp">
+          <node concept="2YIFZM" id="7d$WBe3bYor" role="3clFbw">
+            <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+            <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+            <node concept="37vLTw" id="7d$WBe3c0J1" role="37wK5m">
+              <ref role="3cqZAo" node="2UMnak9BM1N" resolve="model" />
             </node>
-            <node concept="17QB3L" id="2UMnak9BMQx" role="1tU5fm" />
           </node>
-        </node>
-        <node concept="3clFbJ" id="2UMnak9BMQy" role="3cqZAp">
-          <node concept="3y3z36" id="2UMnak9BMQz" role="3clFbw">
-            <node concept="37vLTw" id="2UMnak9BMQ$" role="3uHU7B">
-              <ref role="3cqZAo" node="2UMnak9BMQu" resolve="modelStereotype" />
-            </node>
-            <node concept="10Nm6u" id="2UMnak9BMQ_" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="2UMnak9BMQA" role="3clFbx">
-            <node concept="3clFbJ" id="2UMnak9BMQB" role="3cqZAp">
-              <node concept="2YIFZM" id="2UMnak9BMQD" role="3clFbw">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolve="isStubModelStereotype" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="37vLTw" id="2UMnak9BMQE" role="37wK5m">
-                  <ref role="3cqZAo" node="2UMnak9BMQu" resolve="modelStereotype" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="2UMnak9BMQO" role="3clFbx">
-                <node concept="3cpWs6" id="2UMnak9BMQP" role="3cqZAp">
-                  <node concept="3clFbT" id="2UMnak9BQkD" role="3cqZAk">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                </node>
+          <node concept="3clFbS" id="2UMnak9BMQO" role="3clFbx">
+            <node concept="3cpWs6" id="2UMnak9BMQP" role="3cqZAp">
+              <node concept="3clFbT" id="2UMnak9BQkD" role="3cqZAk">
+                <property role="3clFbU" value="false" />
               </node>
             </node>
           </node>

@@ -77,6 +77,7 @@ public class SModelStereotype {
   @Deprecated
   @ToRemove(version = 2018.2)
   public static boolean isStubModelStereotype(String stereotype) {
+    // there's 1 use in mbeddr
     return stereotype.endsWith(STUB_SUFFIX);
   }
 
