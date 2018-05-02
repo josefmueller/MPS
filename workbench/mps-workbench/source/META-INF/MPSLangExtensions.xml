@@ -38,10 +38,12 @@
                     serviceImplementation="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl"/>
     <projectService serviceImplementation="com.intellij.ide.fileTemplates.impl.FileTemplateSettings"/>
     <applicationService serviceImplementation="com.intellij.ide.fileTemplates.impl.ExportableFileTemplateSettings"/>
+    -->
 
     <applicationService serviceInterface="com.intellij.ide.PsiCopyPasteManager"
                         serviceImplementation="com.intellij.ide.PsiCopyPasteManager"/>
 
+    <!--
     <applicationService serviceImplementation="com.intellij.usages.UsageViewSettings"/>
     <applicationService serviceImplementation="com.intellij.usages.ShowUsagesSettings"/>
     <applicationService serviceImplementation="com.intellij.refactoring.RefactoringSettings"/>
