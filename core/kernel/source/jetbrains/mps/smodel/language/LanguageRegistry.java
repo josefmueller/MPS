@@ -181,7 +181,10 @@ public class LanguageRegistry implements CoreComponent, DeployListener {
       return new InterpretedLanguageRuntime(l);
     } catch (ClassNotFoundException ex) {
       // would like to have error + exception here, but there are tests (e.g. ModulesReloadTest) that legitimately expect non-compiled modules
-      LOG.warn(String.format("Missing language runtime class for module %s (make failed?); resort to interpreted runtime", l.getModuleName()));
+      // and no distinction between source and deployed modules. Now, we try to load any module added to the global repository, even if it's
+      // a source module just added to a project. Once we tell deployed modules from sources (two distinct repositories would likely suffice),
+      // AND LanguageRegistry listens to the proper one, we can have an error here.
+      LOG.debug(String.format("Missing language runtime class for module %s (make failed?); resort to interpreted runtime", l.getModuleName()));
       return new InterpretedLanguageRuntime(l);
     } catch (InstantiationException | IllegalAccessException e) {
       LOG.error(String.format("Failed to load language %s", l.getModuleName()), e);
