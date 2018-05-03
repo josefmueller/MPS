@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="-1" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="11" />
@@ -25,6 +25,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="twe9" ref="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
+    <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -165,6 +166,9 @@
       <concept id="6171083915388330090" name="jetbrains.mps.lang.slanguage.structure.AspectModelRefExpression" flags="ng" index="1qvjxa">
         <reference id="6171083915388597767" name="aspect" index="1quiSB" />
         <child id="6171083915388330091" name="lang" index="1qvjxb" />
+      </concept>
+      <concept id="2030416617761226491" name="jetbrains.mps.lang.slanguage.structure.Model_IsAspectOperation" flags="nn" index="3zA4fs">
+        <reference id="2030416617761226680" name="aspect" index="3zA4av" />
       </concept>
     </language>
     <language id="446c26eb-2b7b-4bf0-9b35-f83fa582753e" name="jetbrains.mps.lang.modelapi">
@@ -3437,6 +3441,25 @@
   <node concept="18kY7G" id="1o9qxtfa_BN">
     <property role="TrG5h" value="check_AbstractConceptDeclaration_Ids" />
     <node concept="3clFbS" id="1o9qxtfa_BO" role="18ibNy">
+      <node concept="3clFbJ" id="EPN70N9dia" role="3cqZAp">
+        <node concept="3clFbS" id="EPN70N9dic" role="3clFbx">
+          <node concept="3cpWs6" id="EPN70N9oNx" role="3cqZAp" />
+        </node>
+        <node concept="3fqX7Q" id="EPN70N9oun" role="3clFbw">
+          <node concept="2OqwBi" id="EPN70N9oup" role="3fr31v">
+            <node concept="2OqwBi" id="EPN70N9ouq" role="2Oq$k0">
+              <node concept="1YBJjd" id="EPN70N9our" role="2Oq$k0">
+                <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+              </node>
+              <node concept="I4A8Y" id="EPN70N9ous" role="2OqNvi" />
+            </node>
+            <node concept="3zA4fs" id="EPN70N9out" role="2OqNvi">
+              <ref role="3zA4av" to="tpcc:2LiUEk8oQ$g" resolve="structure" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="EPN70N9cQQ" role="3cqZAp" />
       <node concept="3clFbJ" id="1o9qxtfa_CH" role="3cqZAp">
         <node concept="9aQIb" id="4H96pIbEkfg" role="9aQIa">
           <node concept="3clFbS" id="4H96pIbEkfh" role="9aQI4">
@@ -3840,7 +3863,7 @@
                     <node concept="3clFbS" id="4ZW4vbPOwOU" role="3eOfB_">
                       <node concept="a7r0C" id="2sxsDnZyDeu" role="3cqZAp">
                         <node concept="Xl_RD" id="2sxsDnZyDev" role="a7wSD">
-                          <property role="Xl_RC" value="Node id and property id differ. It's recommended to keep ids synchronised until MPS 3.5. Use quickfix to set corrected id" />
+                          <property role="Xl_RC" value="Node id and property id differ. It's recommended to keep ids synchronised. Use quickfix to set corrected id" />
                         </node>
                         <node concept="3Cnw8n" id="2sxsDnZyDex" role="2OEOjU">
                           <ref role="QpYPw" node="4H96pIbEyix" resolve="CorrectDuplicateId" />
