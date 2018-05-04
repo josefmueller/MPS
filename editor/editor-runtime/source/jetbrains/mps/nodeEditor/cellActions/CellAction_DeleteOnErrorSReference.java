@@ -31,10 +31,6 @@ public class CellAction_DeleteOnErrorSReference extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    if (mySource.getReference(myReferenceLink) != null && mySource.getReferenceTarget(myReferenceLink) == null) {
-      mySource.setReference(myReferenceLink, null);
-    } else {
-      mySource.delete();
-    }
+    mySource.setReference(myReferenceLink, null);
   }
 }
