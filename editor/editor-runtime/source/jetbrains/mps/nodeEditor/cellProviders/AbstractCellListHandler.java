@@ -50,14 +50,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     myEditorContext = editorContext;
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #AbstractCellListHandler(String, EditorContext)}
-   */
-  @Deprecated
-  public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
-    this(elementRole, editorContext);
-  }
-
   public String getElementRole() {
     return myElementRole;
   }

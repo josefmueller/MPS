@@ -48,8 +48,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private boolean myIsReverseOrder = false;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    // TODO: remove ownerNode parameter after MPS 3.5
-    super(ownerNode, childRole, editorContext);
+    super(childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
