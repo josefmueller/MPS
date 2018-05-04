@@ -179,12 +179,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     setInnerCellsContext(myListEditorCell_Collection);
   }
 
-  /**
-   * TODO: remove after MPS 3.5 was introduced for backward compatibility
-   */
   @NotNull
   @Override
-  public SNode getNode() {
-    return myOwnerNode;
-  }
+  public abstract SNode getNode();
 }
