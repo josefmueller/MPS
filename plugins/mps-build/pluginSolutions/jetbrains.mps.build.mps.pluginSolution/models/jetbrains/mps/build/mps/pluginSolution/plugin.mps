@@ -15561,24 +15561,45 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="reSgCPMzHC" role="3cqZAp">
-          <node concept="2YIFZM" id="6AYu2TP2$VE" role="3cqZAk">
-            <ref role="1Pybhc" to="tprr:56Y$nab_bZy" resolve="NewModuleUtil" />
-            <ref role="37wK5l" to="tprr:3WcIkZauat2" resolve="createSolution" />
-            <node concept="37vLTw" id="2BHiRxgm6BA" role="37wK5m">
-              <ref role="3cqZAo" node="7$e6lgA3B$g" resolve="solutionName" />
+        <node concept="3cpWs8" id="1hiSUCgwOlq" role="3cqZAp">
+          <node concept="3cpWsn" id="1hiSUCgwOlr" role="3cpWs9">
+            <property role="TrG5h" value="solution" />
+            <node concept="3uibUv" id="1hiSUCgwOlp" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
             </node>
-            <node concept="2OqwBi" id="reSgCPMMEr" role="37wK5m">
-              <node concept="37vLTw" id="reSgCPMMk1" role="2Oq$k0">
-                <ref role="3cqZAo" node="7$e6lgA3B$i" resolve="solutionBaseDirFile" />
+            <node concept="2YIFZM" id="1hiSUCgwOls" role="33vP2m">
+              <ref role="1Pybhc" to="tprr:56Y$nab_bZy" resolve="NewModuleUtil" />
+              <ref role="37wK5l" to="tprr:3WcIkZauat2" resolve="createSolution" />
+              <node concept="37vLTw" id="1hiSUCgwOlt" role="37wK5m">
+                <ref role="3cqZAo" node="7$e6lgA3B$g" resolve="solutionName" />
               </node>
-              <node concept="liA8E" id="reSgCPMN64" role="2OqNvi">
-                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+              <node concept="2OqwBi" id="1hiSUCgwOlu" role="37wK5m">
+                <node concept="37vLTw" id="1hiSUCgwOlv" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7$e6lgA3B$i" resolve="solutionBaseDirFile" />
+                </node>
+                <node concept="liA8E" id="1hiSUCgwOlw" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="1hiSUCgwOlx" role="37wK5m">
+                <ref role="3cqZAo" node="7$e6lgA3B$e" resolve="mpsProject" />
               </node>
             </node>
-            <node concept="37vLTw" id="2BHiRxghfwY" role="37wK5m">
+          </node>
+        </node>
+        <node concept="3clFbF" id="1hiSUCgwPGe" role="3cqZAp">
+          <node concept="2OqwBi" id="1hiSUCgwQo1" role="3clFbG">
+            <node concept="37vLTw" id="1hiSUCgwPGc" role="2Oq$k0">
               <ref role="3cqZAo" node="7$e6lgA3B$e" resolve="mpsProject" />
             </node>
+            <node concept="liA8E" id="1hiSUCgwRk5" role="2OqNvi">
+              <ref role="37wK5l" to="z1c5:~MPSProject.save():void" resolve="save" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="reSgCPMzHC" role="3cqZAp">
+          <node concept="37vLTw" id="1hiSUCgwOly" role="3cqZAk">
+            <ref role="3cqZAo" node="1hiSUCgwOlr" resolve="solution" />
           </node>
         </node>
       </node>

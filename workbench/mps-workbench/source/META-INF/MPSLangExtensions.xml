@@ -38,10 +38,12 @@
                     serviceImplementation="com.intellij.ide.fileTemplates.impl.FileTemplateManagerImpl"/>
     <projectService serviceImplementation="com.intellij.ide.fileTemplates.impl.FileTemplateSettings"/>
     <applicationService serviceImplementation="com.intellij.ide.fileTemplates.impl.ExportableFileTemplateSettings"/>
+    -->
 
     <applicationService serviceInterface="com.intellij.ide.PsiCopyPasteManager"
                         serviceImplementation="com.intellij.ide.PsiCopyPasteManager"/>
 
+    <!--
     <applicationService serviceImplementation="com.intellij.usages.UsageViewSettings"/>
     <applicationService serviceImplementation="com.intellij.usages.ShowUsagesSettings"/>
     <applicationService serviceImplementation="com.intellij.refactoring.RefactoringSettings"/>
@@ -416,6 +418,7 @@
 
     <moduleService serviceImplementation="com.intellij.openapi.module.impl.ModuleImpl$DeprecatedModuleOptionManager"/>
     <moduleService serviceInterface="com.intellij.openapi.components.PathMacroManager" serviceImplementation="com.intellij.openapi.components.impl.ModulePathMacroManager"/>
+    -->
 
     <projectViewPane implementation="com.intellij.ide.scratch.ScratchProjectViewPane"/>
     <applicationService serviceInterface="com.intellij.ide.scratch.ScratchFileService"
@@ -432,7 +435,6 @@
     <useScopeEnlarger implementation="com.intellij.ide.scratch.ScratchFileServiceImpl$UseScopeExtension"/>
     <usageTypeProvider implementation="com.intellij.ide.scratch.ScratchFileServiceImpl$UsageTypeExtension" order="last"/>
 
-    -->
     <scratch.rootType implementation="com.intellij.ide.scratch.ScratchRootType" />
     <!--
     <scratch.rootType implementation="com.intellij.execution.console.HistoryRootType"/>
