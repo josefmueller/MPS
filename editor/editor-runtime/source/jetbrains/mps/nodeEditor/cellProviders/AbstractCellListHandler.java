@@ -36,18 +36,12 @@ import java.util.List;
 public abstract class AbstractCellListHandler extends AbstractEditorBuilder implements EditorBuilderEnvironment {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will become private in the next release
-   */
-  @Deprecated
-  protected EditorContext myEditorContext;
   protected EditorCell_Collection myListEditorCell_Collection;
   protected String myElementRole;
 
   public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
     super(editorContext);
     myElementRole = elementRole;
-    myEditorContext = editorContext;
   }
 
   public String getElementRole() {
