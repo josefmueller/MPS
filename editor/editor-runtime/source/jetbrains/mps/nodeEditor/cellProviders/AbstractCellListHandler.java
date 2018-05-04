@@ -64,14 +64,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     myOwnerNode = ownerNode;
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #getNode()} method
-   */
-  @Deprecated
-  public SNode getOwner() {
-    return myOwnerNode;
-  }
-
   public String getElementRole() {
     return myElementRole;
   }
