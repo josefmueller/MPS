@@ -58,41 +58,16 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     doInsertNode(nodeToInsert, anchorNode, insertBefore);
   }
 
-  public EditorCell createNodeCell(SNode node) {
-    // TODO: after MPS 3.5 make this method abstract
-    return createNodeCell(getEditorContext(), node);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createNodeCell(SNode)}
-   */
-  @Deprecated
-  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
+  public EditorCell createNodeCell(SNode node){
     return null;
   }
 
-  protected EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
-    return createSeparatorCell(getEditorContext(), prevNode, nextNode);
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createSeparatorCell(SNode, SNode)}
-   */
-  @Deprecated
-  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
+  protected EditorCell createSeparatorCell(SNode prevNode, SNode nextNode){
     return null;
   }
 
-  protected EditorCell createEmptyCell() {
+  protected EditorCell createEmptyCell(){
     // TODO: after MPS 3.5 make this method abstract
-    return createEmptyCell(getEditorContext());
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createEmptyCell()}
-   */
-  @Deprecated
-  protected EditorCell createEmptyCell(EditorContext editorContext) {
     return null;
   }
 
@@ -123,14 +98,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_InsertIntoCollection(this, true));
 
     return myListEditorCell_Collection;
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createInnerCells()}
-   */
-  protected void createInnerCells(SNode node, EditorContext editorContext) {
-    //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
-    createInnerCells(getNode(), getEditorContext());
   }
 
   protected void createInnerCells() {

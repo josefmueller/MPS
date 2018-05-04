@@ -95,14 +95,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   @Override
-  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
-    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
-    return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
-  }
-
-  @Override
-  protected EditorCell createEmptyCell(EditorContext editorContext) {
-    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
+  protected EditorCell createEmptyCell() {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
