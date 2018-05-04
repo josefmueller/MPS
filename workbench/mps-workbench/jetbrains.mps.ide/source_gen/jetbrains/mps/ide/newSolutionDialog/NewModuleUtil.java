@@ -108,14 +108,10 @@ public class NewModuleUtil {
     module.save();
 
     project.addModule(module);
-    project.save();
     return module;
   }
 
-  /**
-   * create new language module with nested generator and register both with the project
-   */
-  public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
+  public static Language createLanguage(String namespace, String rootPath, MPSProject project, boolean saveProject) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_LANGUAGE);
 
     if (descriptorFile.exists()) {
@@ -151,8 +147,17 @@ public class NewModuleUtil {
     new VersionFixer(project, generator, false).updateImportVersions();
     language.save();
     generator.save();
-    project.save();
+    if (saveProject) {
+      project.save();
+    }
     return language;
+  }
+
+  /**
+   * create new language module with nested generator and register both with the project
+   */
+  public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
+    return createLanguage(namespace, rootPath, project, true);
   }
 
   /**

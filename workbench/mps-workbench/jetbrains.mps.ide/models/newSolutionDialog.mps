@@ -922,16 +922,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5pK7k4tc$im" role="3cqZAp">
-          <node concept="2OqwBi" id="5pK7k4tc$in" role="3clFbG">
-            <node concept="37vLTw" id="5pK7k4tc$io" role="2Oq$k0">
-              <ref role="3cqZAo" node="3WcIkZauaum" resolve="project" />
-            </node>
-            <node concept="liA8E" id="5pK7k4tc$ip" role="2OqNvi">
-              <ref role="37wK5l" to="z1c4:~MPSProject.save():void" resolve="save" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="7vEL9Rt8x2P" role="3cqZAp">
           <node concept="37vLTw" id="7vEL9Rt8xhf" role="3cqZAk">
             <ref role="3cqZAo" node="7vEL9Rt8tTO" resolve="module" />
@@ -962,15 +952,12 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="6s6LYnVtP3_" role="jymVt" />
-    <node concept="2YIFZL" id="7BBl3KIzam7" role="jymVt">
+    <node concept="2tJIrI" id="3$_CEdJfF5m" role="jymVt" />
+    <node concept="2YIFZL" id="1hiSUCgvvR3" role="jymVt">
       <property role="TrG5h" value="createLanguage" />
-      <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="3uibUv" id="7BBl3KIzm2M" role="3clF45">
-        <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-      </node>
-      <node concept="3clFbS" id="7BBl3KIzam8" role="3clF47">
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="3$_CEdJfFMD" role="3clF47">
         <node concept="3cpWs8" id="7vEL9Rt8DVA" role="3cqZAp">
           <node concept="3cpWsn" id="7vEL9Rt8DVB" role="3cpWs9">
             <property role="TrG5h" value="descriptorFile" />
@@ -978,17 +965,17 @@
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
             <node concept="2YIFZM" id="7vEL9Rt8DVD" role="33vP2m">
-              <ref role="37wK5l" node="5AqjJyeyiwa" resolve="getModuleFile" />
               <ref role="1Pybhc" node="56Y$nab_bZy" resolve="NewModuleUtil" />
+              <ref role="37wK5l" node="5AqjJyeyiwa" resolve="getModuleFile" />
               <node concept="37vLTw" id="7vEL9Rt8DVE" role="37wK5m">
-                <ref role="3cqZAo" node="7BBl3KIzamy" resolve="namespace" />
+                <ref role="3cqZAo" node="3$_CEdJfGcE" resolve="namespace" />
               </node>
               <node concept="37vLTw" id="7vEL9Rt8DVF" role="37wK5m">
-                <ref role="3cqZAo" node="7BBl3KIzam$" resolve="rootPath" />
+                <ref role="3cqZAo" node="3$_CEdJfGcG" resolve="rootPath" />
               </node>
               <node concept="10M0yZ" id="7vEL9Rt8DVG" role="37wK5m">
-                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
                 <ref role="3cqZAo" to="z1c3:~MPSExtentions.DOT_LANGUAGE" resolve="DOT_LANGUAGE" />
+                <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
               </node>
             </node>
           </node>
@@ -1033,7 +1020,7 @@
             <node concept="1rXfSq" id="6Hfjuo1zdee" role="33vP2m">
               <ref role="37wK5l" node="1Yd98ZZnqHS" resolve="createNewLanguageDescriptor" />
               <node concept="37vLTw" id="6Hfjuo1zdef" role="37wK5m">
-                <ref role="3cqZAo" node="7BBl3KIzamy" resolve="namespace" />
+                <ref role="3cqZAo" node="3$_CEdJfGcE" resolve="namespace" />
               </node>
               <node concept="37vLTw" id="6Hfjuo1zdeg" role="37wK5m">
                 <ref role="3cqZAo" node="7vEL9Rt8DVB" resolve="descriptorFile" />
@@ -1182,7 +1169,7 @@
               <node concept="1pGfFk" id="6Hfjuo1zzSa" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
                 <node concept="37vLTw" id="6Hfjuo1zzSb" role="37wK5m">
-                  <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+                  <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
                 </node>
               </node>
             </node>
@@ -1213,7 +1200,7 @@
                     </node>
                   </node>
                   <node concept="37vLTw" id="6Hfjuo1zzSo" role="37wK5m">
-                    <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+                    <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
                   </node>
                 </node>
               </node>
@@ -1251,7 +1238,7 @@
                     </node>
                   </node>
                   <node concept="37vLTw" id="6Hfjuo1zUH8" role="37wK5m">
-                    <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+                    <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
                   </node>
                 </node>
               </node>
@@ -1309,7 +1296,7 @@
         <node concept="3clFbF" id="7vEL9Rt8Go9" role="3cqZAp">
           <node concept="2OqwBi" id="7vEL9Rt8GFQ" role="3clFbG">
             <node concept="37vLTw" id="7vEL9Rt8Go7" role="2Oq$k0">
-              <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+              <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
             </node>
             <node concept="liA8E" id="7vEL9Rt8H9t" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~ProjectBase.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
@@ -1330,7 +1317,7 @@
               <node concept="1pGfFk" id="5Z9NTYZ15de" role="2ShVmc">
                 <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
                 <node concept="37vLTw" id="5pK7k4tcGau" role="37wK5m">
-                  <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+                  <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
                 </node>
                 <node concept="37vLTw" id="6Hfjuo1$0Zr" role="37wK5m">
                   <ref role="3cqZAo" node="6Hfjuo1zzSd" resolve="language" />
@@ -1351,7 +1338,7 @@
               <node concept="1pGfFk" id="5pK7k4tcGJT" role="2ShVmc">
                 <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
                 <node concept="37vLTw" id="5pK7k4tcGJV" role="37wK5m">
-                  <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+                  <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
                 </node>
                 <node concept="37vLTw" id="6Hfjuo1$28X" role="37wK5m">
                   <ref role="3cqZAo" node="6Hfjuo1zTTI" resolve="generator" />
@@ -1386,19 +1373,76 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5pK7k4tcza2" role="3cqZAp">
-          <node concept="2OqwBi" id="5pK7k4tcza3" role="3clFbG">
-            <node concept="37vLTw" id="5pK7k4tcza4" role="2Oq$k0">
-              <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+        <node concept="3clFbJ" id="1hiSUCgwk0w" role="3cqZAp">
+          <node concept="3clFbS" id="1hiSUCgwk0y" role="3clFbx">
+            <node concept="3clFbF" id="5pK7k4tcza2" role="3cqZAp">
+              <node concept="2OqwBi" id="5pK7k4tcza3" role="3clFbG">
+                <node concept="37vLTw" id="5pK7k4tcza4" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3$_CEdJfGcI" resolve="project" />
+                </node>
+                <node concept="liA8E" id="5pK7k4tcza5" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~MPSProject.save():void" resolve="save" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="5pK7k4tcza5" role="2OqNvi">
-              <ref role="37wK5l" to="z1c4:~MPSProject.save():void" resolve="save" />
-            </node>
+          </node>
+          <node concept="37vLTw" id="1hiSUCgwkIP" role="3clFbw">
+            <ref role="3cqZAo" node="3$_CEdJfGgo" resolve="saveProject" />
           </node>
         </node>
         <node concept="3cpWs6" id="7vEL9Rt8J8N" role="3cqZAp">
           <node concept="37vLTw" id="6Hfjuo1$8TX" role="3cqZAk">
             <ref role="3cqZAo" node="6Hfjuo1zzSd" resolve="language" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3$_CEdJfGcE" role="3clF46">
+        <property role="TrG5h" value="namespace" />
+        <node concept="17QB3L" id="3$_CEdJfGcF" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="3$_CEdJfGcG" role="3clF46">
+        <property role="TrG5h" value="rootPath" />
+        <node concept="17QB3L" id="3$_CEdJfGcH" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="3$_CEdJfGcI" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="3$_CEdJfGcJ" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="3$_CEdJfGgo" role="3clF46">
+        <property role="TrG5h" value="saveProject" />
+        <node concept="10P_77" id="3$_CEdJfGjM" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="1hiSUCgvr32" role="3clF45">
+        <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+      </node>
+      <node concept="3Tm1VV" id="3$_CEdJfFMC" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="6s6LYnVtP3_" role="jymVt" />
+    <node concept="2YIFZL" id="7BBl3KIzam7" role="jymVt">
+      <property role="TrG5h" value="createLanguage" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3uibUv" id="7BBl3KIzm2M" role="3clF45">
+        <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+      </node>
+      <node concept="3clFbS" id="7BBl3KIzam8" role="3clF47">
+        <node concept="3cpWs6" id="1hiSUCgvrJ4" role="3cqZAp">
+          <node concept="1rXfSq" id="1hiSUCgvrMe" role="3cqZAk">
+            <ref role="37wK5l" node="1hiSUCgvvR3" resolve="createLanguage" />
+            <node concept="37vLTw" id="1hiSUCgvrPs" role="37wK5m">
+              <ref role="3cqZAo" node="7BBl3KIzamy" resolve="namespace" />
+            </node>
+            <node concept="37vLTw" id="1hiSUCgvrSQ" role="37wK5m">
+              <ref role="3cqZAo" node="7BBl3KIzam$" resolve="rootPath" />
+            </node>
+            <node concept="37vLTw" id="1hiSUCgvrXi" role="37wK5m">
+              <ref role="3cqZAo" node="7BBl3KIzamA" resolve="project" />
+            </node>
+            <node concept="3clFbT" id="1hiSUCgvs0D" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
           </node>
         </node>
       </node>
