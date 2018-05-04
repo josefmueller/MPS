@@ -37,11 +37,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   /**
-   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will become private in the next release
-   */
-  @Deprecated
-  protected SNode myOwnerNode;
-  /**
    * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will become private in the next release
    */
   @Deprecated
@@ -61,7 +56,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   @Deprecated
   public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
     this(elementRole, editorContext);
-    myOwnerNode = ownerNode;
   }
 
   public String getElementRole() {
