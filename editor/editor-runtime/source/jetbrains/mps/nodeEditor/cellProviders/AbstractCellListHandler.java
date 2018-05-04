@@ -98,22 +98,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
 
   public abstract SNode createNodeToInsert(EditorContext editorContext);
 
-  public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
-    return createCells(editorContext, new CellLayout_Vertical());
-  }
-
-  public EditorCell_Collection createCells_Horizontal(EditorContext editorContext) {
-    return createCells(editorContext, new CellLayout_Horizontal());
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout, boolean)}
-   */
-  @Deprecated
-  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout, boolean selectable) {
-    return createCells(cellLayout, selectable);
-  }
-
   public EditorCell_Collection createCells(CellLayout cellLayout, boolean selectable) {
     EditorCell_Collection cellsCollection = createCells(cellLayout);
     if (!selectable) {
@@ -126,14 +110,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     wrapperCell.setSelectable(true);
     wrapperCell.addEditorCell(cellsCollection);
     return wrapperCell;
-  }
-
-  /**
-   * @deprecated since MPS 3.5 use {@link #createCells(CellLayout)}
-   */
-  @Deprecated
-  public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout) {
-    return createCells(cellLayout);
   }
 
   public EditorCell_Collection createCells(CellLayout cellLayout) {
