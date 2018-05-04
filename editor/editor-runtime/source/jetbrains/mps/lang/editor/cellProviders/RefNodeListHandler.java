@@ -178,8 +178,4 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected void setInnerCellsContext() {
     setInnerCellsContext(myListEditorCell_Collection);
   }
-
-  @NotNull
-  @Override
-  public abstract SNode getNode();
 }

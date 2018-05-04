@@ -24,9 +24,6 @@ public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment 
     return myEditorContext;
   }
 
-  @NotNull
-  public abstract SNode getNode();
-
   public EditorCellFactory getCellFactory() {
     return getUpdateSession().getCellFactory();
   }
