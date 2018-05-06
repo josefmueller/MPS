@@ -48,6 +48,7 @@
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -107,9 +108,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -190,6 +196,9 @@
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -1449,11 +1458,28 @@
       <property role="13i0it" value="true" />
       <node concept="17QB3L" id="4druX3VZWxN" role="3clF45" />
       <node concept="3clFbS" id="hGPLstw" role="3clF47">
+        <node concept="3SKdUt" id="vtdRpb8dA7" role="3cqZAp">
+          <node concept="3SKdUq" id="vtdRpb8dA9" role="3SKWNk">
+            <property role="3SKdUp" value="use getLinkForCell/getPropertyForCell in inheritors instead" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="hGPLy65" role="3cqZAp">
           <node concept="10Nm6u" id="hGPLyds" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="hJrm0vL" role="1B3o_S" />
+      <node concept="2AHcQZ" id="vtdRpb80Xg" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="vtdRpb80XF" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="vtdRpb8dma" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="vtdRpb8dsy" role="2B70Vg">
+            <property role="$nhwW" value="2018.2" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="13h7C7" id="hEwI$M4">
@@ -2009,6 +2035,25 @@
         </node>
       </node>
       <node concept="17QB3L" id="11BHxZ7BTFl" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="vtdRpb8dAv" role="13h7CS">
+      <property role="TrG5h" value="getLinkForCell" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <node concept="3Tm1VV" id="vtdRpb8dAw" role="1B3o_S" />
+      <node concept="3Tqbb2" id="vtdRpb8dAV" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
+      <node concept="3clFbS" id="vtdRpb8dAy" role="3clF47">
+        <node concept="3clFbF" id="vtdRpb8fut" role="3cqZAp">
+          <node concept="2OqwBi" id="vtdRpb8fuv" role="3clFbG">
+            <node concept="13iPFW" id="vtdRpb8fuw" role="2Oq$k0" />
+            <node concept="3TrEf2" id="vtdRpb8fux" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:fBF2Hej" resolve="linkDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="13h7C7" id="hEwIGoC">
