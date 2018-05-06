@@ -66,6 +66,13 @@ public class PropertyAccessor implements ModelAccessor, IPropertyAccessor {
     return myRepository;
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
+  // can't remove before 2018.2 as it was used in mbeddr
+  public String getPropertyName() {
+    return myProperty.getName();
+  }
+
   @Override
   public String getText() {
     return fromInternal(doGetValue());
