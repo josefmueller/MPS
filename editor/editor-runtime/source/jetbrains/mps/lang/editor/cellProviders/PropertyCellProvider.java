@@ -80,12 +80,6 @@ public class PropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
-  @Deprecated
-  @ToRemove(version = 2018.2)
-  public void setProperty(SProperty property) {
-    myProperty = property;
-  }
-
   @Override
   public EditorCell createEditorCell(EditorContext context) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myProperty, myReadOnly, myAllowsEmptyTarget, context);
