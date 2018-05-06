@@ -70,10 +70,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.nodeEditor.EditorManager;
-import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
@@ -2440,10 +2440,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return var;
     }
     private EditorCell createTransactionalProperty_i8r80j_a31a0a() {
-      PropertyCellProvider provider = new PropertyCellProvider(myNode, MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty"), getEditorContext());
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty");
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
       EditorCell_Property editorCell = null;
       {
-        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, false, getEditorContext()) {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
           public void doCommit(final String oldValue, final String newValue) {
             doCommitImpl(oldValue, newValue);
           }
@@ -2463,10 +2464,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return editorCell;
     }
     private EditorCell createTransactionalProperty_i8r80j_b31a0a() {
-      PropertyCellProvider provider = new PropertyCellProvider(myNode, MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty"), getEditorContext());
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty");
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
       EditorCell_Property editorCell = null;
       {
-        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, true, getEditorContext()) {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, true, getEditorContext()) {
           public void doCommit(final String oldValue, final String newValue) {
             doCommitImpl(oldValue, newValue);
           }
@@ -2750,10 +2752,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
     }
     private EditorCell createTransactionalProperty_i8r80j_d31a0a() {
-      PropertyCellProvider provider = new PropertyCellProvider(myNode, MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty"), getEditorContext());
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty");
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
       EditorCell_Property editorCell = null;
       {
-        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, false, getEditorContext()) {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
           public void doCommit(final String oldValue, final String newValue) {
             doCommitImpl(oldValue, newValue);
           }
@@ -2776,10 +2779,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return editorCell;
     }
     private EditorCell createTransactionalProperty_i8r80j_e31a0a() {
-      PropertyCellProvider provider = new PropertyCellProvider(myNode, MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty"), getEditorContext());
+      SProperty property = MetaAdapterFactory.getProperty(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL, 0x7c6821e104561b9fL, "theProperty");
+      PropertyCellProvider provider = new PropertyCellProvider(myNode, property, getEditorContext());
       EditorCell_Property editorCell = null;
       {
-        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, "theProperty", false, false, getEditorContext()) {
+        ModelAccessor modelAccessor = new TransactionalPropertyAccessor(myNode, property, false, false, getEditorContext()) {
           public void doCommit(final String oldValue, final String newValue) {
             doCommitImpl(oldValue, newValue);
           }
