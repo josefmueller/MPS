@@ -3116,10 +3116,10 @@
                 <ref role="3cqZAo" node="fYhB1BF" resolve="editorCell" />
               </node>
               <node concept="liA8E" id="h_XJ7s4" role="2OqNvi">
-                <ref role="37wK5l" to="g51k:~EditorCell_Basic.setRole(java.lang.String):void" resolve="setRole" />
+                <ref role="37wK5l" to="g51k:~EditorCell_Basic.setSRole(org.jetbrains.mps.openapi.language.SConceptFeature):void" resolve="setSRole" />
                 <node concept="2OqwBi" id="h_XJ9fQ" role="37wK5m">
                   <node concept="liA8E" id="h_XJ9fR" role="2OqNvi">
-                    <ref role="37wK5l" to="emqf:~AbstractCellListHandler.getElementRole():java.lang.String" resolve="getElementRole" />
+                    <ref role="37wK5l" to="emqf:~AbstractCellListHandler.getElementSRole():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getElementSRole" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTuuZ" role="2Oq$k0">
                     <ref role="3cqZAo" node="1y7DiaV$6AR" resolve="handler" />
@@ -18023,7 +18023,7 @@
               <node concept="10Nm6u" id="308lJa6VzhP" role="3uHU7w" />
               <node concept="2OqwBi" id="308lJa6VzhQ" role="3uHU7B">
                 <node concept="liA8E" id="308lJa6VzhR" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell.getRole():java.lang.String" resolve="getRole" />
+                  <ref role="37wK5l" to="f4zo:~EditorCell.getSRole():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getSRole" />
                 </node>
                 <node concept="37vLTw" id="308lJa6VzhS" role="2Oq$k0">
                   <ref role="3cqZAo" node="308lJa6Vzhe" resolve="editorCell" />
@@ -18065,14 +18065,12 @@
               <node concept="3clFbF" id="308lJa6Vzi8" role="3cqZAp">
                 <node concept="2OqwBi" id="308lJa6Vzi9" role="3clFbG">
                   <node concept="liA8E" id="308lJa6Vzia" role="2OqNvi">
-                    <ref role="37wK5l" to="f4zo:~EditorCell.setRole(java.lang.String):void" resolve="setRole" />
-                    <node concept="Xl_RD" id="308lJa6Vzib" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                      <node concept="17Uvod" id="308lJa6Vzic" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="308lJa6Vzid" role="3zH0cK">
-                          <node concept="3clFbS" id="308lJa6Vzie" role="2VODD2">
+                    <ref role="37wK5l" to="f4zo:~EditorCell.setSRole(org.jetbrains.mps.openapi.language.SConceptFeature):void" resolve="setSRole" />
+                    <node concept="10Nm6u" id="4RlVV88eZxW" role="37wK5m">
+                      <node concept="5jKBG" id="4RlVV88f4Yg" role="lGtFl">
+                        <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+                        <node concept="3NFfHV" id="4RlVV88f6Tz" role="5jGum">
+                          <node concept="3clFbS" id="4RlVV88f6T$" role="2VODD2">
                             <node concept="3cpWs8" id="308lJa6Vzif" role="3cqZAp">
                               <node concept="3cpWsn" id="308lJa6Vzig" role="3cpWs9">
                                 <property role="TrG5h" value="linkDeclaration" />
@@ -18114,10 +18112,10 @@
                               </node>
                             </node>
                             <node concept="3cpWs6" id="308lJa6Vziv" role="3cqZAp">
-                              <node concept="2YIFZM" id="308lJa6Vziw" role="3cqZAk">
-                                <ref role="37wK5l" to="iwwu:i1dughm" resolve="getGenuineLinkRole" />
+                              <node concept="2YIFZM" id="4RlVV88f9oI" role="3cqZAk">
+                                <ref role="37wK5l" to="iwwu:i0YipjE" resolve="getGenuineLinkDeclaration" />
                                 <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-                                <node concept="37vLTw" id="308lJa6Vzix" role="37wK5m">
+                                <node concept="37vLTw" id="4RlVV88f9oJ" role="37wK5m">
                                   <ref role="3cqZAo" node="308lJa6Vzig" resolve="linkDeclaration" />
                                 </node>
                               </node>
@@ -30573,7 +30571,7 @@
               <node concept="10Nm6u" id="5DTV$TR_3Fq" role="3uHU7w" />
               <node concept="2OqwBi" id="5DTV$TR_3Fr" role="3uHU7B">
                 <node concept="liA8E" id="5DTV$TR_3Fs" role="2OqNvi">
-                  <ref role="37wK5l" to="f4zo:~EditorCell.getRole():java.lang.String" resolve="getRole" />
+                  <ref role="37wK5l" to="f4zo:~EditorCell.getSRole():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getSRole" />
                 </node>
                 <node concept="37vLTw" id="5DTV$TR_3Ft" role="2Oq$k0">
                   <ref role="3cqZAo" node="5DTV$TR_6Fe" resolve="editorCell" />
@@ -30584,14 +30582,12 @@
               <node concept="3clFbF" id="5DTV$TR_3Fv" role="3cqZAp">
                 <node concept="2OqwBi" id="5DTV$TR_3Fw" role="3clFbG">
                   <node concept="liA8E" id="5DTV$TR_3Fx" role="2OqNvi">
-                    <ref role="37wK5l" to="f4zo:~EditorCell.setRole(java.lang.String):void" resolve="setRole" />
-                    <node concept="Xl_RD" id="5DTV$TR_3Fy" role="37wK5m">
-                      <property role="Xl_RC" value="" />
-                      <node concept="17Uvod" id="5DTV$TR_3Fz" role="lGtFl">
-                        <property role="2qtEX9" value="value" />
-                        <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                        <node concept="3zFVjK" id="5DTV$TR_3F$" role="3zH0cK">
-                          <node concept="3clFbS" id="5DTV$TR_3F_" role="2VODD2">
+                    <ref role="37wK5l" to="f4zo:~EditorCell.setSRole(org.jetbrains.mps.openapi.language.SConceptFeature):void" resolve="setSRole" />
+                    <node concept="10Nm6u" id="4RlVV88fcaQ" role="37wK5m">
+                      <node concept="5jKBG" id="4RlVV88fcaR" role="lGtFl">
+                        <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+                        <node concept="3NFfHV" id="4RlVV88fcaS" role="5jGum">
+                          <node concept="3clFbS" id="4RlVV88fcaT" role="2VODD2">
                             <node concept="3cpWs8" id="5DTV$TR_3FA" role="3cqZAp">
                               <node concept="3cpWsn" id="5DTV$TR_3FB" role="3cpWs9">
                                 <property role="TrG5h" value="linkDeclaration" />
@@ -30612,10 +30608,10 @@
                               </node>
                             </node>
                             <node concept="3cpWs6" id="5DTV$TR_3FH" role="3cqZAp">
-                              <node concept="2YIFZM" id="5DTV$TR_3FI" role="3cqZAk">
-                                <ref role="37wK5l" to="iwwu:i1dughm" resolve="getGenuineLinkRole" />
+                              <node concept="2YIFZM" id="4RlVV88fegd" role="3cqZAk">
+                                <ref role="37wK5l" to="iwwu:i0YipjE" resolve="getGenuineLinkDeclaration" />
                                 <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-                                <node concept="37vLTw" id="5DTV$TR_3FJ" role="37wK5m">
+                                <node concept="37vLTw" id="4RlVV88fege" role="37wK5m">
                                   <ref role="3cqZAo" node="5DTV$TR_3FB" resolve="linkDeclaration" />
                                 </node>
                               </node>
