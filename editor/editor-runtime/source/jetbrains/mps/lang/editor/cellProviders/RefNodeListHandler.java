@@ -87,7 +87,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   public String getElementRole() {
-    return mySLink.getName();
+    return getSLink().getName();
   }
 
   /**
@@ -119,7 +119,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     SNode anchorNodeResult = null;
     if (anchorNodeTemp != null) {
       Collection<? extends SNode> listElements = IterableUtil.asCollection(
-          AttributeOperations.getChildNodesAndAttributes(getNode(), mySLink));
+          AttributeOperations.getChildNodesAndAttributes(getNode(), getSLink()));
       if (!listElements.isEmpty()) {
         // anchor should be directly referenced from "list owner"
         while (anchorNodeTemp != null && anchorNodeTemp != getNode()) {
@@ -146,7 +146,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
     Iterable<SNode> nodesAndComments =
-        AttributeOperations.getChildNodesAndAttributes(getNode(), mySLink);
+        AttributeOperations.getChildNodesAndAttributes(getNode(), getSLink());
     if (!myIsReverseOrder) {
       resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
