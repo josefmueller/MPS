@@ -38,8 +38,9 @@ public final class CellModel_RefNodeList__BehaviorDescriptor extends BaseBHDescr
   public static final SMethod<String> getOpeningText_idhKxU$w9 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxU$w9").registry(REGISTRY).build();
   public static final SMethod<String> getClosingText_idhKxUEwj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxUEwj").registry(REGISTRY).build();
   public static final SMethod<String> getRoleForCell_idhGPLstu = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRoleForCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGPLstu").registry(REGISTRY).build();
+  public static final SMethod<SNode> getLinkForCell_idvtdRpb8dAv = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLinkForCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("vtdRpb8dAv").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getDefaultCellId_id3VYF6qfIQs_, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getRoleForCell_idhGPLstu);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getDefaultCellId_id3VYF6qfIQs_, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getRoleForCell_idhGPLstu, getLinkForCell_idvtdRpb8dAv);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -81,6 +82,9 @@ public final class CellModel_RefNodeList__BehaviorDescriptor extends BaseBHDescr
   /*package*/ static String getRoleForCell_idhGPLstu(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
   }
+  /*package*/ static SNode getLinkForCell_idvtdRpb8dAv(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
+  }
 
   /*package*/ CellModel_RefNodeList__BehaviorDescriptor() {
     super(REGISTRY);
@@ -108,6 +112,8 @@ public final class CellModel_RefNodeList__BehaviorDescriptor extends BaseBHDescr
         return (T) ((String) getClosingText_idhKxUEwj(node));
       case 4:
         return (T) ((String) getRoleForCell_idhGPLstu(node));
+      case 5:
+        return (T) ((SNode) getLinkForCell_idvtdRpb8dAv(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

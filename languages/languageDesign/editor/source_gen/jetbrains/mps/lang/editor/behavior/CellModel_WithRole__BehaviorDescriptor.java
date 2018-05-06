@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -31,7 +32,10 @@ public final class CellModel_WithRole__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   /*package*/ static String getRoleForCell_idhGPLstu(@NotNull SNode __thisNode__) {
+    // use getLinkForCell/getPropertyForCell in inheritors instead 
     return null;
   }
 
