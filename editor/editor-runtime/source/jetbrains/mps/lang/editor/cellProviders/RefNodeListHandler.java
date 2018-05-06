@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -93,11 +92,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return getSLink().getName();
   }
 
-  @Override
-  public SConceptFeature getElementSRole() {
-    return getSLink();
-  }
-
   /**
    * @return original link (not specialized)
    */
@@ -116,8 +110,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSRole(getElementSRole());
-    emptyCell.setCellId("empty_" + getElementSRole().getName());
+    emptyCell.setRole(getElementRole());
+    emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
   }
 

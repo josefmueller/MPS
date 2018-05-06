@@ -59,7 +59,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -80,7 +79,11 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-public abstract class EditorCell_Basic<Role extends SConceptFeature> implements EditorCell<Role>, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
+/**
+ * Author: Sergey Dmitriev
+ * Created Sep 14, 2003
+ */
+public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
   public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
   public static final int BRACKET_WIDTH = 7;
@@ -111,8 +114,7 @@ public abstract class EditorCell_Basic<Role extends SConceptFeature> implements 
   private KeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private Role mySRole;
-
+  private SNodeReference myLinkDeclarationPointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -397,20 +399,6 @@ public abstract class EditorCell_Basic<Role extends SConceptFeature> implements 
   @Override
   public void setRole(String role) {
     myRole = role;
-  }
-
-  @Override
-  public Role getSRole() {
-    Role role = ((Role) getStyle().get(StyleAttributes.NAVIGATABLE_SREFERENCE));
-    if (role != null) {
-      return role;
-    }
-    return mySRole;
-  }
-
-  @Override
-  public void setSRole(Role role) {
-    mySRole = role;
   }
 
   @Override

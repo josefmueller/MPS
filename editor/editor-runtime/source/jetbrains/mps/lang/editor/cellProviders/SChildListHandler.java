@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -58,11 +57,6 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
     return myElementRole;
   }
 
-  @Override
-  public SConceptFeature getElementSRole() {
-    return myLink;
-  }
-
   @NotNull
   @Override
   public SNode getNode() {
@@ -80,7 +74,7 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
     emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), myLink, getEditorContext()));
-    emptyCell.setSRole(getElementSRole());
+    emptyCell.setRole(getElementRole());
     emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
   }

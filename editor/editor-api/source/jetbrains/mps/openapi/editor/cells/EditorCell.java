@@ -24,7 +24,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
 
@@ -34,7 +33,7 @@ import java.util.List;
 /**
  * evgeny, 11/17/11
  */
-public interface EditorCell<Role extends SConceptFeature> {
+public interface EditorCell {
 
   int getX();
 
@@ -124,19 +123,13 @@ public interface EditorCell<Role extends SConceptFeature> {
 
   String getCellId();
 
-  //use setSRole
   @Deprecated
   @ToRemove(version = 2018.2)
   void setRole(String role);
 
-  //use getSRole
   @Deprecated
   @ToRemove(version = 2018.2)
   String getRole();
-
-  void setSRole(Role role);
-
-  Role getSRole();
 
   boolean isErrorState();
 
