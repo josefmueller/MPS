@@ -71,23 +71,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     myIsReverseOrder = isReverseOrder;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public SNode getLinkDeclaration() {
-    return myLinkDeclaration;
-  }
-
   /**
    * @return original link (not specialized)
    */
   public SContainmentLink getSLink() {
     return MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration));
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public SNode getChildConcept() {
-    return myChildConcept;
   }
 
   public SAbstractConcept getChildSConcept() {
