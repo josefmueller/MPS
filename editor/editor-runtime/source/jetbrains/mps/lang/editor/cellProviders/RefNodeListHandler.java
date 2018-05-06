@@ -44,7 +44,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private SAbstractConcept myChildSConcept;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    super(childRole, editorContext);
+    super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
@@ -57,7 +57,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
           throw new RuntimeException("Only Aggregation links can be used in list");
         }
-        myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
         mySLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDecl));
         myChildSConcept = MetaAdapterByDeclaration.getConcept(childConcept);
       }
@@ -67,6 +66,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {
     this(ownerNode, childRole, editorContext);
     myIsReverseOrder = isReverseOrder;
+  }
+
+  @Override
+  public String getElementRole() {
+    return mySLink.getName();
   }
 
   /**

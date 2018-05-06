@@ -37,19 +37,15 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   protected EditorCell_Collection myListEditorCell_Collection;
-  protected String myElementRole;
 
-  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
+  public AbstractCellListHandler(EditorContext editorContext) {
     super(editorContext);
-    myElementRole = elementRole;
   }
 
   @Deprecated
   @ToRemove(version = 2018.2)
   //use getLink/getReference instead
-  public String getElementRole() {
-    return myElementRole;
-  }
+  public abstract String getElementRole();
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 

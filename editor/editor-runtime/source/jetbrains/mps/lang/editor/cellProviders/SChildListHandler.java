@@ -38,9 +38,11 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
   private final SNode myNode;
   protected SContainmentLink myLink;
   private boolean myIsReverseOrder = false;
+  private String myElementRole;
 
   public SChildListHandler(final SNode ownerNode, final SContainmentLink link, EditorContext editorContext) {
-    super(link.getRoleName(), editorContext);
+    super(editorContext);
+    myElementRole = link.getRoleName();
     myNode = ownerNode;
     myLink = link;
   }
@@ -48,6 +50,11 @@ public abstract class SChildListHandler extends AbstractCellListHandler {
   public SChildListHandler(SNode ownerNode, SContainmentLink link, EditorContext editorContext, boolean isReverseOrder) {
     this(ownerNode, link, editorContext);
     myIsReverseOrder = isReverseOrder;
+  }
+
+  @Override
+  public String getElementRole() {
+    return myElementRole;
   }
 
   @NotNull
