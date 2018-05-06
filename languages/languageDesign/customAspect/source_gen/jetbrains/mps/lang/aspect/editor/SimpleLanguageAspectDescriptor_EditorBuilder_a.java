@@ -578,7 +578,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink(), super.getChildSConcept()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b4b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, getSLink(), getChildSConcept()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b4b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }
@@ -669,7 +669,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
           elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, super.getSLink(), super.getChildSConcept()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b5b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
+          elementCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), elementNode, getSLink(), getChildSConcept()), new SubstituteInfoPartExt[]{new SimpleLanguageAspectDescriptor_EditorBuilder_a.SimpleLanguageAspectDescriptor_component_cellMenu_rpszz1_a0b5b1a(), new SChildSubstituteInfoPartEx(elementCell)}));
         }
       }
     }

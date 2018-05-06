@@ -29351,11 +29351,11 @@
                                   <node concept="37vLTw" id="XrrhtvD5Bn" role="37wK5m">
                                     <ref role="3cqZAo" node="XrrhtvD5CE" resolve="elementNode" />
                                   </node>
-                                  <node concept="3nyPlj" id="XrrhtvD5Bo" role="37wK5m">
-                                    <ref role="37wK5l" to="p9jd:~RefNodeListHandler.getSLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getSLink" />
+                                  <node concept="1rXfSq" id="4NYUbDJkPTX" role="37wK5m">
+                                    <ref role="37wK5l" node="vtdRpb70Dd" resolve="getSLink" />
                                   </node>
-                                  <node concept="3nyPlj" id="4SKDyi$0D7M" role="37wK5m">
-                                    <ref role="37wK5l" to="p9jd:~RefNodeListHandler.getChildSConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getChildSConcept" />
+                                  <node concept="1rXfSq" id="4NYUbDJkSpl" role="37wK5m">
+                                    <ref role="37wK5l" node="vtdRpb70Dl" resolve="getChildSConcept" />
                                   </node>
                                 </node>
                               </node>
