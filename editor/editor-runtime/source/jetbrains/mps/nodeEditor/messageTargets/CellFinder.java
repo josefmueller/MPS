@@ -79,8 +79,7 @@ public class CellFinder {
   }
 
   static boolean isCellForProperty(@NotNull EditorCell cell, @Nullable SNode node, @NotNull String name) {
-
-    if (cell.getRole() != null) {
+    if (cell.getSRole() != null) {
       // Ignore property cells with a role since they do not display the property of their node but rather the property of the target node.
       return false;
     }
@@ -90,7 +89,6 @@ public class CellFinder {
       return node == propertyInfo.getNode() && name.equals(propertyInfo.getProperty().getName());
     }
     return false;
-
   }
 
   @Nullable

@@ -23,6 +23,9 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -91,17 +94,12 @@ public class ChildrenCollectionFinder {
   }
 
   private static boolean isMultipleCollectionCell(EditorCell current) {
-    if (current.getRole() != null) {
-      String role = current.getRole();
-      SNode currentNode = current.getSNode();
-      SNode linkDeclaration = new SNodeLegacy(currentNode).getLinkDeclaration(role);
-      if (linkDeclaration != null &&
-        !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
-        SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
-        return true;
-      }
+    if (current.getSRole() == null) {
+      return false;
     }
-    return false;
+
+    SAbstractLink role = ((SAbstractLink) current.getSRole());
+    return role != null && (!(role instanceof SReferenceLink)) && role.isMultiple();
   }
 
   private static SNode getLCA(SNode left, SNode right) {

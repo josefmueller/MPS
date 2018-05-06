@@ -28,6 +28,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -53,8 +55,8 @@ public class APICellAdapter {
       return target;
     }
     SNode node = cell.getSNode();
-    String role = cell.getRole();
-    SNode referentNode = role == null ? null : node.getReferenceTarget(role);
+    SConceptFeature role = cell.getSRole();
+    SNode referentNode = role == null ? null : node.getReferenceTarget(((SReferenceLink) role));
     return referentNode != null ? referentNode : node;
   }
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.menus.transformation;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.CachingPredicate;
@@ -100,6 +99,10 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     SNode cellNode = cell.getSNode();
     if (cellNode == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);
+    }
+
+    if (!(cell.getSRole() instanceof SContainmentLink)) {
+      return new SNodeLocation.FromNode(cellNode);
     }
 
     SContainmentLink link;
