@@ -25908,8 +25908,8 @@
                     <node concept="YeOm9" id="3Y_Qdl0DKKd" role="2ShVmc">
                       <node concept="1Y3b0j" id="3Y_Qdl0DKKe" role="YeSDq">
                         <property role="2bfB8j" value="true" />
+                        <ref role="37wK5l" to="p9jd:~RefCellCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SAbstractLink,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,jetbrains.mps.openapi.editor.EditorContext)" resolve="RefCellCellProvider" />
                         <ref role="1Y3XeK" to="p9jd:~RefCellCellProvider" resolve="RefCellCellProvider" />
-                        <ref role="37wK5l" to="p9jd:~RefCellCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,jetbrains.mps.openapi.editor.EditorContext)" resolve="RefCellCellProvider" />
                         <node concept="2tJIrI" id="3Y_Qdl0DKKf" role="jymVt" />
                         <node concept="3clFb_" id="3Y_Qdl0DKKg" role="jymVt">
                           <property role="1EzhhJ" value="false" />
@@ -44382,8 +44382,8 @@
                 <node concept="YeOm9" id="5e5aeHSnOHE" role="2ShVmc">
                   <node concept="1Y3b0j" id="5e5aeHSnOHF" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="37wK5l" to="p9jd:~RefCellCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext)" resolve="RefCellCellProvider" />
                     <ref role="1Y3XeK" to="p9jd:~RefCellCellProvider" resolve="RefCellCellProvider" />
+                    <ref role="37wK5l" to="p9jd:~RefCellCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SAbstractLink,org.jetbrains.mps.openapi.language.SAbstractConcept,java.lang.String,jetbrains.mps.openapi.editor.EditorContext)" resolve="RefCellCellProvider" />
                     <node concept="2tJIrI" id="5e5aeHSnOHG" role="jymVt" />
                     <node concept="3clFb_" id="5e5aeHSnOHH" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -44573,6 +44573,9 @@
                     <node concept="37vLTw" id="5e5aeHSnOKP" role="37wK5m">
                       <ref role="3cqZAo" node="7GOmDNDA2zg" resolve="myNode" />
                     </node>
+                    <node concept="10Nm6u" id="3Lp5DsIIlFt" role="37wK5m" />
+                    <node concept="10Nm6u" id="3Lp5DsIIm4i" role="37wK5m" />
+                    <node concept="10Nm6u" id="3Lp5DsIImJV" role="37wK5m" />
                     <node concept="1rXfSq" id="5e5aeHSnOKQ" role="37wK5m">
                       <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                     </node>
