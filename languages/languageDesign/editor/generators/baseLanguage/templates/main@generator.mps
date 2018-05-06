@@ -14839,22 +14839,18 @@
     <node concept="3aamgX" id="hRz5BMC" role="3aUrZf">
       <ref role="30HIoZ" to="tpc2:hRyfXGv" resolve="NavigatableReferenceStyleClassItem" />
       <node concept="gft3U" id="4A7H4EzoQQQ" role="1lVwrX">
-        <node concept="Xl_RD" id="4A7H4EzoQRI" role="gfFT$">
-          <property role="Xl_RC" value="tag" />
-          <node concept="17Uvod" id="4A7H4EzoQRJ" role="lGtFl">
-            <property role="2qtEX9" value="value" />
-            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-            <node concept="3zFVjK" id="4A7H4EzoQRK" role="3zH0cK">
-              <node concept="3clFbS" id="4A7H4EzoQRL" role="2VODD2">
-                <node concept="3clFbF" id="21Iif$auQA$" role="3cqZAp">
-                  <node concept="2YIFZM" id="21Iif$auQAA" role="3clFbG">
-                    <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-                    <ref role="37wK5l" to="iwwu:i1dughm" resolve="getGenuineLinkRole" />
-                    <node concept="2OqwBi" id="21Iif$avd_i" role="37wK5m">
-                      <node concept="30H73N" id="21Iif$avduS" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="21Iif$aveq_" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpc2:hRygfii" resolve="link" />
-                      </node>
+        <node concept="359W_D" id="38EqbMIf7G1" role="gfFT$">
+          <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+          <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
+          <node concept="5jKBG" id="38EqbMIf7G2" role="lGtFl">
+            <ref role="v9R2y" to="tp27:5DcBNiM8ykU" resolve="reduce_LinkDeclaration_SLink" />
+            <node concept="3NFfHV" id="38EqbMIf7G3" role="5jGum">
+              <node concept="3clFbS" id="38EqbMIf7G4" role="2VODD2">
+                <node concept="3clFbF" id="38EqbMIf7G5" role="3cqZAp">
+                  <node concept="2OqwBi" id="38EqbMIf7G9" role="3clFbG">
+                    <node concept="30H73N" id="38EqbMIf7Ga" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="38EqbMIf9Lj" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpc2:hRygfii" resolve="link" />
                     </node>
                   </node>
                 </node>
@@ -21466,9 +21462,9 @@
     <node concept="3aamgX" id="5hGzT1$5a6v" role="3aUrZf">
       <ref role="30HIoZ" to="tpc2:hRyfXGv" resolve="NavigatableReferenceStyleClassItem" />
       <node concept="gft3U" id="5hGzT1$5a6w" role="1lVwrX">
-        <node concept="10M0yZ" id="5hGzT1$5a6x" role="gfFT$">
+        <node concept="10M0yZ" id="38EqbMIeQfQ" role="gfFT$">
+          <ref role="3cqZAo" to="5ueo:~StyleAttributes.NAVIGATABLE_SREFERENCE" resolve="NAVIGATABLE_SREFERENCE" />
           <ref role="1PxDUh" to="5ueo:~StyleAttributes" resolve="StyleAttributes" />
-          <ref role="3cqZAo" to="5ueo:~StyleAttributes.NAVIGATABLE_REFERENCE" resolve="NAVIGATABLE_REFERENCE" />
         </node>
       </node>
     </node>

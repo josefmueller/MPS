@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -194,6 +195,8 @@ public class StyleAttributes {
   public static final StyleAttribute<String> POSITION = new SimpleStyleAttribute<String>("position", null, true);
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children", null, true);
 
+  @Deprecated
+  @ToRemove(version = 2018.2)
   public static final StyleAttribute<String> NAVIGATABLE_REFERENCE = new SimpleStyleAttribute<String>("navigatableReference", null, true);
   public static final StyleAttribute<SConceptFeature> NAVIGATABLE_SREFERENCE = new SimpleStyleAttribute<SConceptFeature>("navigatableSReference", null, true);
 
