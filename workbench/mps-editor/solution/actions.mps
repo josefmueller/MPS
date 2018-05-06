@@ -4435,7 +4435,7 @@
                 <ref role="3cqZAo" node="6KwcZ1G4081" resolve="cell" />
               </node>
               <node concept="liA8E" id="6KwcZ1G408a" role="2OqNvi">
-                <ref role="37wK5l" to="f4zo:~EditorCell.getRole():java.lang.String" resolve="getRole" />
+                <ref role="37wK5l" to="f4zo:~EditorCell.getSRole():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getSRole" />
               </node>
             </node>
           </node>
