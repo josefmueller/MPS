@@ -50,7 +50,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.property.InvalidProperty;
+import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ListMap;
@@ -59,6 +65,10 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -79,10 +89,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-/**
- * Author: Sergey Dmitriev
- * Created Sep 14, 2003
- */
 public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mps.openapi.editor.cells.EditorCell> {
   public static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorCell_Basic.class));
 
@@ -113,8 +119,8 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
 
   private KeyMap myKeyMap;
   private String myCellId;
-  private String myRole;
-  private SNodeReference myLinkDeclarationPointer;
+  private SConceptFeature mySRole;
+
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -391,14 +397,63 @@ public abstract class EditorCell_Basic implements EditorCell, Entry<jetbrains.mp
     if (role != null) {
       return role;
     }
-    return myRole;
+    SConceptFeature sRole = getSRole();
+    return sRole == null ? null : sRole.getName();
   }
 
   @Deprecated
   @ToRemove(version = 2018.2)
   @Override
   public void setRole(String role) {
-    myRole = role;
+    mySRole = extractRole(role);
+  }
+
+  private SConceptFeature extractRole(String role) {
+    SProperty prop = ((ConceptMetaInfoConverter) myNode.getConcept()).convertProperty(role);
+    SReferenceLink link = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAssociation(role);
+    SContainmentLink child = ((ConceptMetaInfoConverter) myNode.getConcept()).convertAggregation(role);
+
+    boolean validProp = !(prop instanceof InvalidProperty);
+    boolean validLink = !(link instanceof InvalidReferenceLink);
+    boolean validChild = !(child instanceof InvalidContainmentLink);
+
+    if(!validChild && !validLink && !validProp) return null;
+
+    //if more than one valid
+    if (!(validProp ^ validChild ^ validLink)) {
+      LOG.error("Can't determine the feature for cell. Editor may work incorrectly. Node:" + myNode + "; role:" + role +
+                ". Please rebuild editor model in language " +
+                myNode.getConcept().getLanguage().getQualifiedName());
+    }
+
+    if (validProp) {
+      return prop;
+    } else if (validLink) {
+      return link;
+    } else {
+      return child;
+    }
+  }
+
+  @Override
+  public SConceptFeature getSRole() {
+    //todo remove following lines after 2018.2
+    String oldRole = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
+    if (oldRole != null) {
+      return extractRole(oldRole);
+    }
+    //todo end
+
+    SConceptFeature role = getStyle().get(StyleAttributes.NAVIGATABLE_SREFERENCE);
+    if (role != null) {
+      return role;
+    }
+    return mySRole;
+  }
+
+  @Override
+  public void setSRole(SConceptFeature role) {
+    mySRole = role;
   }
 
   @Override

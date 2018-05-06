@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -194,6 +195,7 @@ public class StyleAttributes {
   public static final StyleAttribute<String> POSITION_CHILDREN = new SimpleStyleAttribute<String>("position-children", null, true);
 
   public static final StyleAttribute<String> NAVIGATABLE_REFERENCE = new SimpleStyleAttribute<String>("navigatableReference", null, true);
+  public static final StyleAttribute<SConceptFeature> NAVIGATABLE_SREFERENCE = new SimpleStyleAttribute<SConceptFeature>("navigatableSReference", null, true);
 
   public static final StyleAttribute<CellAlign> HORIZONTAL_ALIGN = new SimpleStyleAttribute<CellAlign>("horizontal-align", CellAlign.LEFT, true);
 

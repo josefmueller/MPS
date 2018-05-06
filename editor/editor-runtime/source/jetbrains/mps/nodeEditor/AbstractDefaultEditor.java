@@ -319,7 +319,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
         return EqualUtil.equals(s, getText());
       }
     }, targetNode);
-    result.setRole(link.getName());
+    result.setSRole(link);
     result.setReferenceCell(true);
     return result;
   }

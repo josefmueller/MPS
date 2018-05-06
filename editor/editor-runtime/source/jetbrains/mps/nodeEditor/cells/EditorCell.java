@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.util.Condition;
 
 import java.awt.Color;

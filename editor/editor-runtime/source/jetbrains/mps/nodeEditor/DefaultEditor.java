@@ -123,7 +123,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
     if (link.isMultiple()) {
       AbstractCellListHandler handler = new ListHandler(getNode(), link, getEditorContext());
       EditorCell editorCell = handler.createCells(new CellLayout_Indent(), false);
-      editorCell.setRole(handler.getElementRole());
+      editorCell.setSRole(handler.getElementSRole());
       addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
       setIndent(editorCell);
       addCell(editorCell);
@@ -138,7 +138,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
           try {
             EditorCell emptyCell = super.createEmptyCell();
             emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), link, getEditorContext()));
-            emptyCell.setRole(link.getName());
+            emptyCell.setSRole(link);
             emptyCell.setCellId("empty_" + link.getName());
             return emptyCell;
           } finally {
@@ -155,8 +155,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
             cell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
             cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
             cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), child, link, getEditorContext()));
-            if (cell.getRole() == null) {
-              cell.setRole(link.getName());
+            if (cell.getSRole() == null) {
+              cell.setSRole(link);
             }
             return cell;
           } finally {
@@ -191,10 +191,10 @@ public class DefaultEditor extends AbstractDefaultEditor {
       noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getNode(), DeleteDirection.BACKWARD));
 
       noRefCell.setCellId("empty_" + referenceLink.getName());
-      noRefCell.setRole(referenceLink.getName());
+      noRefCell.setSRole(referenceLink);
       noRefCell.setReferenceCell(true);
       noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getNode(), referenceLink, getEditorContext()));
-      noRefCell.setRole(referenceLink.getName());
+      noRefCell.setSRole(referenceLink);
       setIndent(noRefCell);
       addCell(noRefCell);
     } else {

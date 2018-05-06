@@ -90,8 +90,8 @@ public abstract class SReferenceCellProvider extends AbstractEditorBuilder imple
       result = createEmptyCell();
     }
 
-    if (result.getRole() != null) {
-      result.setRole(myReferenceLink.getName());
+    if (result.getSRole() != null) {
+      result.setSRole(myReferenceLink);
     }
     result.setReferenceCell(true);
 
